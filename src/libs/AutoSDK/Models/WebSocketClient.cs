@@ -33,4 +33,14 @@ public record struct WebSocketClient(
     /// When true, the null-coalescing pattern (?? throw) cannot be used in deserialization.
     /// </summary>
     public bool IsReceiveEventValueType { get; set; }
+
+    /// <summary>
+    /// The unresolved base URL template for this client.
+    /// </summary>
+    public string BaseUrlTemplate { get; set; } = string.Empty;
+
+    /// <summary>
+    /// Typed server variables declared by the selected AsyncAPI server.
+    /// </summary>
+    public EquatableArray<MethodParameter> ServerVariables { get; set; }
 }

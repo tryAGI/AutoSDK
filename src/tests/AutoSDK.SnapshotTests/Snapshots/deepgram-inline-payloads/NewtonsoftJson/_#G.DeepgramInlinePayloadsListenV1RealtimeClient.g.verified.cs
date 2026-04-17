@@ -71,8 +71,90 @@ namespace G
 
 
 
+
+        private void ApplyConnectionOptions(
+            global::System.Collections.Generic.IDictionary<string, string>? additionalHeaders,
+            global::System.Collections.Generic.IEnumerable<string>? additionalSubProtocols,
+            global::System.TimeSpan? keepAliveInterval)
+        {
+            if (keepAliveInterval is not null)
+            {
+                _clientWebSocket.Options.KeepAliveInterval = keepAliveInterval.Value;
+            }
+
+            if (additionalHeaders is not null)
+            {
+                foreach (var header in additionalHeaders)
+                {
+                    _clientWebSocket.Options.SetRequestHeader(header.Key, header.Value);
+                }
+            }
+
+            if (additionalSubProtocols is not null)
+            {
+                foreach (var subProtocol in additionalSubProtocols)
+                {
+                    _clientWebSocket.Options.AddSubProtocol(subProtocol);
+                }
+            }
+        }
+
+        private async global::System.Threading.Tasks.Task ConnectAsyncCore(
+            global::System.Uri uri,
+            global::System.TimeSpan? connectTimeout,
+            global::System.Threading.CancellationToken cancellationToken)
+        {
+            global::System.Threading.CancellationTokenSource? __timeoutCancellationTokenSource = null;
+            var __effectiveCancellationToken = cancellationToken;
+
+            if (connectTimeout is not null)
+            {
+                __timeoutCancellationTokenSource = global::System.Threading.CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);
+                __timeoutCancellationTokenSource.CancelAfter(connectTimeout.Value);
+                __effectiveCancellationToken = __timeoutCancellationTokenSource.Token;
+            }
+
+            try
+            {
+                await _clientWebSocket.ConnectAsync(uri, __effectiveCancellationToken).ConfigureAwait(false);
+            }
+            finally
+            {
+                __timeoutCancellationTokenSource?.Dispose();
+            }
+        }
+
+        private const string DefaultBaseUrlTemplate = "wss://api.deepgram.com/v1/listen";
+
+
+        /// <inheritdoc cref="global::System.Net.WebSockets.ClientWebSocket.ConnectAsync(global::System.Uri, global::System.Threading.CancellationToken)"/>
+        public async global::System.Threading.Tasks.Task ConnectAsync(
+            global::System.Uri? uri = null,
+            global::System.Collections.Generic.IDictionary<string, string>? additionalHeaders = null,
+            global::System.Collections.Generic.IEnumerable<string>? additionalSubProtocols = null,
+            global::System.TimeSpan? keepAliveInterval = null,
+            global::System.TimeSpan? connectTimeout = null,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
+            global::System.Uri __uri;
+            if (uri is not null)
+            {
+                __uri = uri;
+            }
+            else
+            {
+                var __pathBuilder = new global::G.PathBuilder(
+                    path: DefaultBaseUrl);
+
+                __uri = new global::System.Uri(__pathBuilder.ToString());
+            }
+
+            ApplyConnectionOptions(additionalHeaders, additionalSubProtocols, keepAliveInterval);
+            await ConnectAsyncCore(__uri, connectTimeout, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
-        /// Connects to the WebSocket server with typed query parameters.
+        /// Connects to the WebSocket server with typed connection parameters.
         /// </summary>
         /// <param name="model">AI model used for transcription.</param>
         /// <param name="channels">Audio channels to transcribe.</param>
@@ -82,6 +164,10 @@ namespace G
         /// <param name="language">BCP-47 language tag for the primary spoken language.</param>
         /// <param name="sampleRate">Sample rate of the audio stream in Hz.</param>
         /// <param name="uri">Optional WebSocket endpoint override.</param>
+        /// <param name="additionalHeaders">Additional headers applied before connecting.</param>
+        /// <param name="additionalSubProtocols">Additional WebSocket subprotocols applied before connecting.</param>
+        /// <param name="keepAliveInterval">Optional keep-alive interval.</param>
+        /// <param name="connectTimeout">Optional connect timeout.</param>
         /// <param name="cancellationToken">A cancellation token.</param>
         public async global::System.Threading.Tasks.Task ConnectAsync(
             global::G.ListenV1Model model,
@@ -92,11 +178,23 @@ namespace G
             string? language = default,
             int? sampleRate = default,
             global::System.Uri? uri = null,
+            global::System.Collections.Generic.IDictionary<string, string>? additionalHeaders = null,
+            global::System.Collections.Generic.IEnumerable<string>? additionalSubProtocols = null,
+            global::System.TimeSpan? keepAliveInterval = null,
+            global::System.TimeSpan? connectTimeout = null,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __pathBuilder = new global::G.PathBuilder(
-                path: uri?.ToString() ?? DefaultBaseUrl);
-            __pathBuilder
+            global::System.Uri __uri;
+            if (uri is not null)
+            {
+                __uri = uri;
+            }
+            else
+            {
+                var __baseUrl = DefaultBaseUrlTemplate;
+                var __pathBuilder = new global::G.PathBuilder(
+                    path: __baseUrl);
+                __pathBuilder
                 .AddRequiredParameter("model", model.ToValueString())
                 .AddOptionalParameter("channels", channels, selector: static x => x.ToString()!, delimiter: ",", explode: true)
                 .AddOptionalParameter("encoding", encoding?.ToValueString())
@@ -106,20 +204,12 @@ namespace G
                 .AddOptionalParameter("language", language)
                 .AddOptionalParameter("sample_rate", sampleRate?.ToString())
                 ;
-            var __path = __pathBuilder.ToString();
 
-            await _clientWebSocket.ConnectAsync(
-                new global::System.Uri(__path), cancellationToken).ConfigureAwait(false);
-        }
+                __uri = new global::System.Uri(__pathBuilder.ToString());
+            }
 
-        /// <inheritdoc cref="global::System.Net.WebSockets.ClientWebSocket.ConnectAsync(global::System.Uri, global::System.Threading.CancellationToken)"/>
-        public async global::System.Threading.Tasks.Task ConnectAsync(
-            global::System.Uri? uri = null,
-            global::System.Threading.CancellationToken cancellationToken = default)
-        {
-            uri ??= new global::System.Uri(DefaultBaseUrl);
-
-            await _clientWebSocket.ConnectAsync(uri, cancellationToken).ConfigureAwait(false);
+            ApplyConnectionOptions(additionalHeaders, additionalSubProtocols, keepAliveInterval);
+            await ConnectAsyncCore(__uri, connectTimeout, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

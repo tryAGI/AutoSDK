@@ -539,13 +539,65 @@ public static class AsyncApiExtensions
 
     private static AsyncApiServer ParseServer(JsonObject serverObj)
     {
-        return new AsyncApiServer
+        var server = new AsyncApiServer
         {
             Host = serverObj["host"]?.GetValue<string>() ?? string.Empty,
             Pathname = serverObj["pathname"]?.GetValue<string>() ?? string.Empty,
             Protocol = serverObj["protocol"]?.GetValue<string>() ?? string.Empty,
             Description = serverObj["description"]?.GetValue<string>() ?? string.Empty,
         };
+
+        if (serverObj["variables"] is JsonObject variables)
+        {
+            foreach (var kvp in variables)
+            {
+                if (kvp.Value is not JsonObject variableObj)
+                {
+                    continue;
+                }
+
+                var variable = new AsyncApiServerVariable
+                {
+                    Description = variableObj["description"]?.GetValue<string>() ?? string.Empty,
+                    Default = GetJsonNodeString(variableObj["default"]),
+                };
+
+                if (variableObj["enum"] is JsonArray enumValues)
+                {
+                    foreach (var enumValue in enumValues)
+                    {
+                        var value = GetJsonNodeString(enumValue);
+                        if (!string.IsNullOrWhiteSpace(value))
+                        {
+                            variable.Enum.Add(value);
+                        }
+                    }
+                }
+
+                if (variableObj["examples"] is JsonArray exampleValues)
+                {
+                    foreach (var exampleValue in exampleValues)
+                    {
+                        var value = GetJsonNodeString(exampleValue);
+                        if (!string.IsNullOrWhiteSpace(value))
+                        {
+                            variable.Examples.Add(value);
+                        }
+                    }
+                }
+
+                server.Variables[kvp.Key] = variable;
+            }
+        }
+
+        return server;
+    }
+
+    private static string GetJsonNodeString(JsonNode? node)
+    {
+        return node is JsonValue value
+            ? value.ToString()
+            : string.Empty;
     }
 
     private static AsyncApiChannel ParseChannel(JsonObject channelObj, JsonObject root)

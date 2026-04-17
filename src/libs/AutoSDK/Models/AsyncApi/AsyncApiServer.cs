@@ -34,13 +34,20 @@ public sealed class AsyncApiServer
     public Collection<Dictionary<string, List<string>>> Security { get; set; } = new();
 
     /// <summary>
+    /// Variables declared for this server.
+    /// </summary>
+    public Dictionary<string, AsyncApiServerVariable> Variables { get; set; } = new(StringComparer.Ordinal);
+
+    /// <summary>
     /// Constructs the full WebSocket URL.
     /// </summary>
     [SuppressMessage("Design", "CA1055:Uri return values should not be strings", Justification = "Generated sources consume this helper as a plain URL string.")]
-    public string GetUrl()
+    public string GetUrl(bool resolveVariables = true)
     {
-        var host = Host.TrimEnd('/');
-        var path = string.IsNullOrEmpty(Pathname) ? string.Empty : "/" + Pathname.TrimStart('/');
+        var host = ReplaceVariablePlaceholders(Host.TrimEnd('/'), resolveVariables);
+        var path = string.IsNullOrEmpty(Pathname)
+            ? string.Empty
+            : "/" + ReplaceVariablePlaceholders(Pathname.TrimStart('/'), resolveVariables);
         return $"{Protocol}://{host}{path}";
     }
 
@@ -49,9 +56,30 @@ public sealed class AsyncApiServer
     /// where each channel's address provides the path.
     /// </summary>
     [SuppressMessage("Design", "CA1055:Uri return values should not be strings", Justification = "Generated sources consume this helper as a plain URL string.")]
-    public string GetHostUrl()
+    public string GetHostUrl(bool resolveVariables = true)
     {
-        var host = Host.TrimEnd('/');
+        var host = ReplaceVariablePlaceholders(Host.TrimEnd('/'), resolveVariables);
         return $"{Protocol}://{host}";
+    }
+
+    private string ReplaceVariablePlaceholders(string value, bool resolveVariables)
+    {
+        if (!resolveVariables || Variables.Count == 0)
+        {
+            return value;
+        }
+
+        foreach (var kvp in Variables)
+        {
+            var resolvedValue = kvp.Value.GetResolvedValue();
+            if (string.IsNullOrWhiteSpace(resolvedValue))
+            {
+                continue;
+            }
+
+            value = value.Replace("{" + kvp.Key + "}", resolvedValue);
+        }
+
+        return value;
     }
 }

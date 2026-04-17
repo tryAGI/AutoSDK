@@ -453,6 +453,9 @@ public static class AsyncApiData
                 : classNamePrefix;
 
             // Determine base URL for this channel
+            var baseUrlTemplate = isMultiChannel
+                ? (channelServer?.GetHostUrl(resolveVariables: false) ?? string.Empty) + (string.IsNullOrEmpty(channel.Address) ? string.Empty : "/" + channel.Address.TrimStart('/'))
+                : channelServer?.GetUrl(resolveVariables: false) ?? string.Empty;
             var baseUrl = isMultiChannel
                 ? (channelServer?.GetHostUrl() ?? string.Empty) + (string.IsNullOrEmpty(channel.Address) ? string.Empty : "/" + channel.Address.TrimStart('/'))
                 : channelServer?.GetUrl() ?? string.Empty;
@@ -532,6 +535,7 @@ public static class AsyncApiData
             // Build query parameters from channel bindings (ws.query)
             var (signatureParams, serializedParams) = BuildChannelQueryParameters(
                 channel, componentSchemas, settings);
+            var serverVariables = BuildServerVariableParameters(channelServer, settings);
 
             var wsClient = new WebSocketClient(
                 Id: isMultiChannel ? $"WebSocketClient_{channelName}" : "WebSocketClient",
@@ -552,12 +556,91 @@ public static class AsyncApiData
             {
                 BaseReceiveEventType = baseReceiveEventType,
                 IsReceiveEventValueType = isReceiveEventValueType,
+                BaseUrlTemplate = baseUrlTemplate,
+                ServerVariables = serverVariables.AsEquatableArray(),
             };
 
             wsClients.Add(wsClient);
         }
 
         return (wsClients, wsOperations);
+    }
+
+    private static ImmutableArray<MethodParameter> BuildServerVariableParameters(
+        AsyncApiServer? server,
+        CSharpSettings settings)
+    {
+        if (server is null || server.Variables.Count == 0)
+        {
+            return ImmutableArray<MethodParameter>.Empty;
+        }
+
+        var stringType = (TypeData.Default with
+        {
+            CSharpTypeRaw = "string",
+            Namespace = "System",
+            GeneratedNamespace = settings.Namespace,
+        }).WithCSharpComputedValues();
+
+        var result = new List<MethodParameter>();
+
+        foreach (var kvp in server.Variables)
+        {
+            var variableName = kvp.Key;
+            var variable = kvp.Value;
+
+            var name = variableName.ToPropertyName();
+            name = CSharpPropertyNameGenerator.HandleWordSeparators(name);
+            name = CSharpPropertyNameGenerator.SanitizeName(
+                name,
+                settings.ClsCompliantEnumPrefix,
+                true,
+                settings.IdentifierCharacterSet);
+
+            var hasDefault = !string.IsNullOrWhiteSpace(variable.Default);
+            var methodParameter = new MethodParameter(
+                Id: variableName,
+                Name: name,
+                ParameterName: string.Empty,
+                ArgumentName: string.Empty,
+                Value: string.Empty,
+                Delimiter: string.Empty,
+                Selector: string.Empty,
+                Type: stringType,
+                IsRequired: !hasDefault,
+                IsMultiPartFormDataFilename: false,
+                Location: ParameterLocation.Query,
+                Style: ParameterStyle.Form,
+                Explode: true,
+                Settings: settings.ToEmitterSettings(),
+                DefaultValue: hasDefault ? variable.Default.ToCSharpStringLiteral() : null,
+                IsDeprecated: false,
+                Summary: string.Empty,
+                Description: variable.Description,
+                ContentType: null,
+                ConverterType: stringType.ConverterType,
+                Properties: ImmutableArray<PropertyData>.Empty,
+                HasSchemaDefault: false,
+                ParameterDefaultValue: "default",
+                ProducesDeprecationWarning: false,
+                DisableDeprecationWarningIfRequired: " ")
+                .WithCSharpParameterNames()
+                .WithCSharpComputedValues();
+
+            result.Add(methodParameter);
+        }
+
+        result.Sort(static (a, b) =>
+        {
+            if (a.IsRequired != b.IsRequired)
+            {
+                return a.IsRequired ? -1 : 1;
+            }
+
+            return string.Compare(a.Id, b.Id, StringComparison.Ordinal);
+        });
+
+        return result.ToImmutableArray();
     }
 
     private static (ImmutableArray<MethodParameter> Signature, ImmutableArray<MethodParameter> Serialized) BuildChannelQueryParameters(

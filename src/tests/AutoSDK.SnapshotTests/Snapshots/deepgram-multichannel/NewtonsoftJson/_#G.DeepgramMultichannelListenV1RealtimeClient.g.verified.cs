@@ -71,14 +71,83 @@ namespace G
 
 
 
+
+        private void ApplyConnectionOptions(
+            global::System.Collections.Generic.IDictionary<string, string>? additionalHeaders,
+            global::System.Collections.Generic.IEnumerable<string>? additionalSubProtocols,
+            global::System.TimeSpan? keepAliveInterval)
+        {
+            if (keepAliveInterval is not null)
+            {
+                _clientWebSocket.Options.KeepAliveInterval = keepAliveInterval.Value;
+            }
+
+            if (additionalHeaders is not null)
+            {
+                foreach (var header in additionalHeaders)
+                {
+                    _clientWebSocket.Options.SetRequestHeader(header.Key, header.Value);
+                }
+            }
+
+            if (additionalSubProtocols is not null)
+            {
+                foreach (var subProtocol in additionalSubProtocols)
+                {
+                    _clientWebSocket.Options.AddSubProtocol(subProtocol);
+                }
+            }
+        }
+
+        private async global::System.Threading.Tasks.Task ConnectAsyncCore(
+            global::System.Uri uri,
+            global::System.TimeSpan? connectTimeout,
+            global::System.Threading.CancellationToken cancellationToken)
+        {
+            global::System.Threading.CancellationTokenSource? __timeoutCancellationTokenSource = null;
+            var __effectiveCancellationToken = cancellationToken;
+
+            if (connectTimeout is not null)
+            {
+                __timeoutCancellationTokenSource = global::System.Threading.CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);
+                __timeoutCancellationTokenSource.CancelAfter(connectTimeout.Value);
+                __effectiveCancellationToken = __timeoutCancellationTokenSource.Token;
+            }
+
+            try
+            {
+                await _clientWebSocket.ConnectAsync(uri, __effectiveCancellationToken).ConfigureAwait(false);
+            }
+            finally
+            {
+                __timeoutCancellationTokenSource?.Dispose();
+            }
+        }
+
         /// <inheritdoc cref="global::System.Net.WebSockets.ClientWebSocket.ConnectAsync(global::System.Uri, global::System.Threading.CancellationToken)"/>
         public async global::System.Threading.Tasks.Task ConnectAsync(
             global::System.Uri? uri = null,
+            global::System.Collections.Generic.IDictionary<string, string>? additionalHeaders = null,
+            global::System.Collections.Generic.IEnumerable<string>? additionalSubProtocols = null,
+            global::System.TimeSpan? keepAliveInterval = null,
+            global::System.TimeSpan? connectTimeout = null,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            uri ??= new global::System.Uri(DefaultBaseUrl);
+            global::System.Uri __uri;
+            if (uri is not null)
+            {
+                __uri = uri;
+            }
+            else
+            {
+                var __pathBuilder = new global::G.PathBuilder(
+                    path: DefaultBaseUrl);
 
-            await _clientWebSocket.ConnectAsync(uri, cancellationToken).ConfigureAwait(false);
+                __uri = new global::System.Uri(__pathBuilder.ToString());
+            }
+
+            ApplyConnectionOptions(additionalHeaders, additionalSubProtocols, keepAliveInterval);
+            await ConnectAsyncCore(__uri, connectTimeout, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

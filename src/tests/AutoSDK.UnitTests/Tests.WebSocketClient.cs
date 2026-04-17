@@ -56,6 +56,8 @@ public partial class Tests
         var source = Sources.WebSocketClient(client).Text;
 
         source.Should().Contain("/// <param name=\"uri\">Optional WebSocket endpoint override.</param>");
+        source.Should().Contain("/// <param name=\"additionalHeaders\">Additional headers applied before connecting.</param>");
+        source.Should().Contain("/// <param name=\"connectTimeout\">Optional connect timeout.</param>");
         source.Should().Contain("/// <param name=\"cancellationToken\">A cancellation token.</param>");
     }
 
@@ -102,5 +104,63 @@ public partial class Tests
         receiveSource.Should().Contain("__messageBuffer.Write(buffer, 0, result.Count);");
         receiveSource.Should().Contain("OnReceiveException(exception, ref rethrow);");
         receiveSource.Should().Contain("if (!__receivedTextMessage)");
+    }
+
+    [TestMethod]
+    public void AsyncApiServerVariables_GenerateTypedConnectAsync_UsesTemplateAndConnectionOptions()
+    {
+        const string yaml = """
+asyncapi: 3.0.0
+info:
+  title: Realtime API
+  version: 1.0.0
+servers:
+  production:
+    host: "{region}.example.com"
+    pathname: /v1/realtime
+    protocol: wss
+    variables:
+      region:
+        description: Region name.
+        default: us
+      model:
+        description: Realtime model identifier.
+channels:
+  realtime:
+    address: /v1/realtime
+    messages:
+      Ping:
+        payload:
+          type: object
+operations:
+  sendPing:
+    action: send
+    channel:
+      $ref: '#/channels/realtime'
+    messages:
+      - $ref: '#/channels/realtime/messages/Ping'
+""";
+
+        var settings = Settings.Default with
+        {
+            Namespace = "G",
+            JsonSerializerContext = "G.SourceGenerationContext",
+        };
+
+        var data = AsyncApiData.Prepare(((yaml, settings), GlobalSettings: settings));
+        var client = data.WebSocketClients.Should().ContainSingle().Subject;
+        var source = Sources.WebSocketClient(client).Text;
+
+        client.BaseUrl.Should().Be("wss://us.example.com/v1/realtime");
+        client.BaseUrlTemplate.Should().Be("wss://{region}.example.com/v1/realtime");
+        source.Should().Contain("private const string DefaultBaseUrlTemplate = \"wss://{region}.example.com/v1/realtime\";");
+        source.Should().Contain("string model,");
+        source.Should().Contain("string region = \"us\"");
+        source.Should().Contain("__baseUrl = __baseUrl.Replace(\"{region}\", global::System.Uri.EscapeDataString(region));");
+        source.Should().Contain(".AddRequiredParameter(\"model\", model)");
+        source.Should().Contain("global::System.Collections.Generic.IDictionary<string, string>? additionalHeaders = null");
+        source.Should().Contain("global::System.Collections.Generic.IEnumerable<string>? additionalSubProtocols = null");
+        source.Should().Contain("_clientWebSocket.Options.KeepAliveInterval = keepAliveInterval.Value;");
+        source.Should().Contain("global::System.Threading.CancellationTokenSource.CreateLinkedTokenSource(cancellationToken)");
     }
 }

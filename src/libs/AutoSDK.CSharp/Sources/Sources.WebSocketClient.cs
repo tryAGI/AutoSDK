@@ -264,38 +264,120 @@ namespace {wsClient.Settings.Namespace}
 
     private static string GenerateConnectAsync(WebSocketClient wsClient)
     {
+        var serverVariables = wsClient.ServerVariables.ToArray();
         var signatureParams = wsClient.QueryParameters.ToArray();
         var serializedParams = wsClient.SerializedQueryParameters.ToArray();
+        var hasTypedParameters = serverVariables.Length > 0 || signatureParams.Length > 0;
+        var hasRequiredParameters = serverVariables.Any(static x => x.IsRequired) || signatureParams.Any(static x => x.IsRequired);
+        var supportsQueryApiKeyAuth = wsClient.Authorizations.Any(
+            static x => x.Type == SecuritySchemeType.ApiKey &&
+                        x.In == ParameterLocation.Query);
+        var appendQueryApiKeyIfNeeded = supportsQueryApiKeyAuth
+            ? @"
+                if (_queryApiKey is not null && _queryApiKeyName is not null)
+                {
+                    __pathBuilder.AddRequiredParameter(_queryApiKeyName, _queryApiKey);
+                }"
+            : string.Empty;
 
-        if (signatureParams.Length == 0)
+        var connectionHelpers = @"
+        private void ApplyConnectionOptions(
+            global::System.Collections.Generic.IDictionary<string, string>? additionalHeaders,
+            global::System.Collections.Generic.IEnumerable<string>? additionalSubProtocols,
+            global::System.TimeSpan? keepAliveInterval)
         {
-            // No query parameters — simple ConnectAsync
+            if (keepAliveInterval is not null)
+            {
+                _clientWebSocket.Options.KeepAliveInterval = keepAliveInterval.Value;
+            }
+
+            if (additionalHeaders is not null)
+            {
+                foreach (var header in additionalHeaders)
+                {
+                    _clientWebSocket.Options.SetRequestHeader(header.Key, header.Value);
+                }
+            }
+
+            if (additionalSubProtocols is not null)
+            {
+                foreach (var subProtocol in additionalSubProtocols)
+                {
+                    _clientWebSocket.Options.AddSubProtocol(subProtocol);
+                }
+            }
+        }
+
+        private async global::System.Threading.Tasks.Task ConnectAsyncCore(
+            global::System.Uri uri,
+            global::System.TimeSpan? connectTimeout,
+            global::System.Threading.CancellationToken cancellationToken)
+        {
+            global::System.Threading.CancellationTokenSource? __timeoutCancellationTokenSource = null;
+            var __effectiveCancellationToken = cancellationToken;
+
+            if (connectTimeout is not null)
+            {
+                __timeoutCancellationTokenSource = global::System.Threading.CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);
+                __timeoutCancellationTokenSource.CancelAfter(connectTimeout.Value);
+                __effectiveCancellationToken = __timeoutCancellationTokenSource.Token;
+            }
+
+            try
+            {
+                await _clientWebSocket.ConnectAsync(uri, __effectiveCancellationToken).ConfigureAwait(false);
+            }
+            finally
+            {
+                __timeoutCancellationTokenSource?.Dispose();
+            }
+        }";
+
+        if (!hasTypedParameters)
+        {
             return $@"
+{connectionHelpers}
+
         /// <inheritdoc cref=""global::System.Net.WebSockets.ClientWebSocket.ConnectAsync(global::System.Uri, global::System.Threading.CancellationToken)""/>
         public async global::System.Threading.Tasks.Task ConnectAsync(
             global::System.Uri? uri = null,
+            global::System.Collections.Generic.IDictionary<string, string>? additionalHeaders = null,
+            global::System.Collections.Generic.IEnumerable<string>? additionalSubProtocols = null,
+            global::System.TimeSpan? keepAliveInterval = null,
+            global::System.TimeSpan? connectTimeout = null,
             global::System.Threading.CancellationToken cancellationToken = default)
         {{
-            uri ??= new global::System.Uri(DefaultBaseUrl);
+            global::System.Uri __uri;
+            if (uri is not null)
+            {{
+                __uri = uri;
+            }}
+            else
+            {{
+                var __pathBuilder = new global::{wsClient.Settings.Namespace}.PathBuilder(
+                    path: DefaultBaseUrl);
+{appendQueryApiKeyIfNeeded}
+                __uri = new global::System.Uri(__pathBuilder.ToString());
+            }}
 
-            await _clientWebSocket.ConnectAsync(uri, cancellationToken).ConfigureAwait(false);
+            ApplyConnectionOptions(additionalHeaders, additionalSubProtocols, keepAliveInterval);
+            await ConnectAsyncCore(__uri, connectTimeout, cancellationToken).ConfigureAwait(false);
         }}";
         }
 
-        // Generate typed ConnectAsync with query parameters
         var xmlDoc = new System.Text.StringBuilder();
         var parameterSignature = new System.Text.StringBuilder();
+        var baseUrlReplacements = new System.Text.StringBuilder();
         var pathBuilderCalls = new System.Text.StringBuilder();
 
         xmlDoc.AppendLine("        /// <summary>");
-        xmlDoc.AppendLine("        /// Connects to the WebSocket server with typed query parameters.");
+        xmlDoc.AppendLine("        /// Connects to the WebSocket server with typed connection parameters.");
         xmlDoc.AppendLine("        /// </summary>");
 
-        // Method signature uses original (unserialized) parameters
         var isFirst = true;
-        foreach (var param in signatureParams)
+
+        void AppendParameter(MethodParameter param, bool preferNonNullableDefaultType)
         {
-            // XML doc for this parameter — collapse to single line
             var xmlSummary = !string.IsNullOrWhiteSpace(param.Description)
                 ? param.Description.ClearForXml()
                 : !string.IsNullOrWhiteSpace(param.Summary)
@@ -304,7 +386,6 @@ namespace {wsClient.Settings.Namespace}
 
             if (!string.IsNullOrWhiteSpace(xmlSummary))
             {
-                // Replace newlines with spaces to keep XML doc on one line
                 xmlSummary = xmlSummary
                     .Replace("\r\n", " ")
                     .Replace("\r", " ")
@@ -314,14 +395,13 @@ namespace {wsClient.Settings.Namespace}
                 xmlDoc.AppendLine(xmlParamDoc);
             }
 
-            // Parameter signature
             if (!isFirst)
             {
                 parameterSignature.AppendLine(",");
             }
             isFirst = false;
 
-            if (param.IsRequired)
+            if (param.IsRequired && !param.HasSchemaDefault)
             {
                 var parameterDeclaration =
                     $"            {param.Type.CSharpTypeWithoutNullability} {param.ParameterName}";
@@ -329,16 +409,48 @@ namespace {wsClient.Settings.Namespace}
             }
             else
             {
+                var parameterType = preferNonNullableDefaultType && param.HasSchemaDefault
+                    ? param.Type.CSharpTypeWithoutNullability
+                    : param.Type.CSharpType;
+                var parameterDefaultValue = param.HasSchemaDefault
+                    ? param.ParameterDefaultValue
+                    : "default";
                 var parameterDeclaration =
-                    $"            {param.Type.CSharpType} {param.ParameterName} = default";
+                    $"            {parameterType} {param.ParameterName} = {parameterDefaultValue}";
                 parameterSignature.Append(parameterDeclaration);
             }
         }
 
+        foreach (var param in serverVariables)
+        {
+            AppendParameter(param, preferNonNullableDefaultType: true);
+
+            if (wsClient.BaseUrlTemplate.Contains("{" + param.Id + "}", StringComparison.Ordinal))
+            {
+                var replacementLine =
+                    $"                __baseUrl = __baseUrl.Replace(\"{{{param.Id}}}\", global::System.Uri.EscapeDataString({param.ParameterName}));";
+                baseUrlReplacements.AppendLine(replacementLine);
+            }
+            else
+            {
+                var pathBuilderCall =
+                    $"                .AddRequiredParameter(\"{param.Id}\", {param.ParameterName})";
+                pathBuilderCalls.AppendLine(pathBuilderCall);
+            }
+        }
+
+        foreach (var param in signatureParams)
+        {
+            AppendParameter(param, preferNonNullableDefaultType: false);
+        }
+
         xmlDoc.AppendLine("        /// <param name=\"uri\">Optional WebSocket endpoint override.</param>");
+        xmlDoc.AppendLine("        /// <param name=\"additionalHeaders\">Additional headers applied before connecting.</param>");
+        xmlDoc.AppendLine("        /// <param name=\"additionalSubProtocols\">Additional WebSocket subprotocols applied before connecting.</param>");
+        xmlDoc.AppendLine("        /// <param name=\"keepAliveInterval\">Optional keep-alive interval.</param>");
+        xmlDoc.AppendLine("        /// <param name=\"connectTimeout\">Optional connect timeout.</param>");
         xmlDoc.AppendLine("        /// <param name=\"cancellationToken\">A cancellation token.</param>");
 
-        // PathBuilder uses serialized (expanded) parameters
         foreach (var param in serializedParams)
         {
             var additionalArguments = param.Type.IsArray
@@ -365,36 +477,75 @@ namespace {wsClient.Settings.Namespace}
             }
         }
 
-        var hasRequired = signatureParams.Any(p => p.IsRequired);
+        var templateConstant = !string.IsNullOrWhiteSpace(wsClient.BaseUrlTemplate)
+            ? $@"
 
-        // Only generate simple overload when there are required params,
-        // otherwise it's ambiguous with the typed overload (all optional)
-        var simpleOverload = hasRequired ? $@"
+        private const string DefaultBaseUrlTemplate = {wsClient.BaseUrlTemplate.ToCSharpStringLiteral()};"
+            : string.Empty;
+
+        var simpleOverload = hasRequiredParameters ? $@"
 
         /// <inheritdoc cref=""global::System.Net.WebSockets.ClientWebSocket.ConnectAsync(global::System.Uri, global::System.Threading.CancellationToken)""/>
         public async global::System.Threading.Tasks.Task ConnectAsync(
             global::System.Uri? uri = null,
+            global::System.Collections.Generic.IDictionary<string, string>? additionalHeaders = null,
+            global::System.Collections.Generic.IEnumerable<string>? additionalSubProtocols = null,
+            global::System.TimeSpan? keepAliveInterval = null,
+            global::System.TimeSpan? connectTimeout = null,
             global::System.Threading.CancellationToken cancellationToken = default)
         {{
-            uri ??= new global::System.Uri(DefaultBaseUrl);
+            global::System.Uri __uri;
+            if (uri is not null)
+            {{
+                __uri = uri;
+            }}
+            else
+            {{
+                var __pathBuilder = new global::{wsClient.Settings.Namespace}.PathBuilder(
+                    path: DefaultBaseUrl);
+{appendQueryApiKeyIfNeeded}
+                __uri = new global::System.Uri(__pathBuilder.ToString());
+            }}
 
-            await _clientWebSocket.ConnectAsync(uri, cancellationToken).ConfigureAwait(false);
+            ApplyConnectionOptions(additionalHeaders, additionalSubProtocols, keepAliveInterval);
+            await ConnectAsyncCore(__uri, connectTimeout, cancellationToken).ConfigureAwait(false);
         }}" : string.Empty;
 
+        var baseUrlSource = !string.IsNullOrWhiteSpace(wsClient.BaseUrlTemplate)
+            ? "DefaultBaseUrlTemplate"
+            : "DefaultBaseUrl";
+
         return $@"
+{connectionHelpers}{templateConstant}
+{simpleOverload}
+
 {xmlDoc}        public async global::System.Threading.Tasks.Task ConnectAsync(
 {parameterSignature},
             global::System.Uri? uri = null,
+            global::System.Collections.Generic.IDictionary<string, string>? additionalHeaders = null,
+            global::System.Collections.Generic.IEnumerable<string>? additionalSubProtocols = null,
+            global::System.TimeSpan? keepAliveInterval = null,
+            global::System.TimeSpan? connectTimeout = null,
             global::System.Threading.CancellationToken cancellationToken = default)
         {{
-            var __pathBuilder = new global::{wsClient.Settings.Namespace}.PathBuilder(
-                path: uri?.ToString() ?? DefaultBaseUrl);
-            __pathBuilder
+            global::System.Uri __uri;
+            if (uri is not null)
+            {{
+                __uri = uri;
+            }}
+            else
+            {{
+                var __baseUrl = {baseUrlSource};
+{baseUrlReplacements}                var __pathBuilder = new global::{wsClient.Settings.Namespace}.PathBuilder(
+                    path: __baseUrl);
+                __pathBuilder
 {pathBuilderCalls}                ;
-            var __path = __pathBuilder.ToString();
+{appendQueryApiKeyIfNeeded}
+                __uri = new global::System.Uri(__pathBuilder.ToString());
+            }}
 
-            await _clientWebSocket.ConnectAsync(
-                new global::System.Uri(__path), cancellationToken).ConfigureAwait(false);
-        }}{simpleOverload}";
+            ApplyConnectionOptions(additionalHeaders, additionalSubProtocols, keepAliveInterval);
+            await ConnectAsyncCore(__uri, connectTimeout, cancellationToken).ConfigureAwait(false);
+        }}";
     }
 }
