@@ -157,6 +157,12 @@ public class SdkGenerator : IIncrementalGenerator
             .SelectAndReportExceptions((x, c) => Sources.ClassJsonExtensions(x, c)
                 .AsFileWithName(), context, Id)
             .AddSource(context);
+        data
+            .SelectMany(static (x, _) => x.Classes
+                .Where(y => x.WebSocketOperations.Any(z => z.MessageType.CSharpTypeWithoutNullability == y.GlobalClassName)))
+            .SelectAndReportExceptions((x, c) => Sources.ClassWebSocketBinaryPayloadHelpers(x, c)
+                .AsFileWithName(), context, Id)
+            .AddSource(context);
         
         data
             .SelectMany(static (x, _) => x.Enums)
@@ -214,9 +220,10 @@ public class SdkGenerator : IIncrementalGenerator
                 .AsFileWithName(), context, Id)
             .AddSource(context);
         data
-            .SelectMany(static (x, _) => x.WebSocketOperations)
-            .Where(static x => x.Direction == AutoSDK.Models.WebSocketDirection.Send)
-            .SelectAndReportExceptions((x, c) => Sources.WebSocketSendMethod(x, c)
+            .SelectMany(static (x, _) => x.WebSocketOperations
+                .Where(y => y.Direction == AutoSDK.Models.WebSocketDirection.Send)
+                .Select(y => (Operation: y, MessageModel: x.Classes.FirstOrDefault(z => z.GlobalClassName == y.MessageType.CSharpTypeWithoutNullability))))
+            .SelectAndReportExceptions((x, c) => Sources.WebSocketSendMethod(x.Operation, x.MessageModel, c)
                 .AsFileWithName(), context, Id)
             .AddSource(context);
         data

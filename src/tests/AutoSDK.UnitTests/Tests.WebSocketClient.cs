@@ -1,5 +1,6 @@
 using System.Collections.Immutable;
 using AutoSDK.Generation;
+using AutoSDK.Helpers;
 using AutoSDK.Models;
 using AutoSDK.Naming.Parameters;
 using AutoSDK.TypeMapping;
@@ -162,5 +163,98 @@ operations:
         source.Should().Contain("global::System.Collections.Generic.IEnumerable<string>? additionalSubProtocols = null");
         source.Should().Contain("_clientWebSocket.Options.KeepAliveInterval = keepAliveInterval.Value;");
         source.Should().Contain("global::System.Threading.CancellationTokenSource.CreateLinkedTokenSource(cancellationToken)");
+    }
+
+    [TestMethod]
+    public void WebSocketBinaryPayloadHelpers_GenerateDecodedBytesProperty_AndConvenienceSendOverload()
+    {
+        var settings = Settings.Default with
+        {
+            Namespace = "G",
+            JsonSerializerContext = "G.SourceGenerationContext",
+        };
+        var stringType = (TypeData.Default with
+        {
+            CSharpTypeRaw = "string",
+            CSharpTypeNullability = false,
+            Namespace = "System",
+            GeneratedNamespace = "G",
+        }).WithCSharpComputedValues();
+        var optionalStringType = (stringType with
+        {
+            CSharpTypeNullability = true,
+        }).WithCSharpComputedValues();
+        var payloadModel = new ModelData(
+            SchemaContext: null!,
+            Id: "InputAudioBufferAppendPayload",
+            Parents: ImmutableArray<Box>.Empty,
+            Namespace: "G",
+            Settings: settings.ToEmitterSettings(),
+            Style: ModelStyle.Class,
+            Properties:
+            [
+                (PropertyData.Default with
+                {
+                    Id = "event_id",
+                    Name = "EventId",
+                    ParameterName = "eventId",
+                    Type = optionalStringType,
+                    Description = "Optional client-generated ID.",
+                }),
+                (PropertyData.Default with
+                {
+                    Id = "audio",
+                    Name = "Audio",
+                    ParameterName = "audio",
+                    Type = stringType,
+                    IsRequired = true,
+                    Description = "Base64-encoded audio bytes.",
+                }),
+            ],
+            EnumValues: [],
+            IsOpenEnum: false,
+            Summary: "Append input audio.",
+            Description: string.Empty,
+            IsDeprecated: false,
+            DeprecationMessage: string.Empty,
+            BaseClass: string.Empty,
+            HasDeprecatedBaseClass: false,
+            IsBaseClass: false,
+            IsDerivedClass: false,
+            InheritedPropertyNames: [],
+            InheritedRequiredProperties: [],
+            DiscriminatorPropertyName: string.Empty,
+            DerivedTypes: [],
+            ClassName: "InputAudioBufferAppendPayload",
+            GlobalClassName: "global::G.InputAudioBufferAppendPayload",
+            ExternalClassName: string.Empty,
+            FileNameWithoutExtension: "G.Models.InputAudioBufferAppendPayload");
+        var endPoint = new WebSocketEndPoint(
+            Id: "InputAudioBufferAppend",
+            ClassName: "RealtimeClient",
+            MethodName: "SendInputAudioBufferAppendAsync",
+            FileNameWithoutExtension: "G.RealtimeClient.InputAudioBufferAppend",
+            ChannelAddress: "/realtime",
+            Direction: WebSocketDirection.Send,
+            MessageType: (TypeData.Default with
+            {
+                CSharpTypeRaw = "global::G.InputAudioBufferAppendPayload",
+                Namespace = "G",
+                GeneratedNamespace = "G",
+            }).WithCSharpComputedValues(),
+            MessageName: "InputAudioBufferAppend",
+            Summary: "Sends audio to the realtime session.",
+            Settings: settings,
+            GlobalSettings: settings);
+
+        var helperSource = Sources.ClassWebSocketBinaryPayloadHelpers(payloadModel).Text;
+        var sendSource = Sources.WebSocketSendMethod(endPoint, payloadModel).Text;
+
+        helperSource.Should().Contain("public global::System.ReadOnlyMemory<byte> AudioBytes => Audio is null");
+        helperSource.Should().Contain("[global::System.Text.Json.Serialization.JsonIgnore]");
+        sendSource.Should().Contain("global::System.ReadOnlyMemory<byte> audio");
+        sendSource.Should().Contain("string? eventId = default");
+        sendSource.Should().Contain("Audio = global::System.Convert.ToBase64String(audio.Span),");
+        sendSource.Should().Contain("EventId = eventId,");
     }
 }

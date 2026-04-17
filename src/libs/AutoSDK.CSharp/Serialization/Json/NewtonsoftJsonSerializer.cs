@@ -17,6 +17,11 @@ public class NewtonsoftJsonSerializer : IJsonSerializer
     {
         return "[global::Newtonsoft.Json.JsonExtensionData]";
     }
+
+    public string GenerateIgnoreAttribute()
+    {
+        return "[global::Newtonsoft.Json.JsonIgnore]";
+    }
     
     public string GenerateRequiredAttribute()
     {

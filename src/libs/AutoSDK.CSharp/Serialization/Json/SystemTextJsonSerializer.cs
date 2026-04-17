@@ -18,6 +18,11 @@ public class SystemTextJsonSerializer : IJsonSerializer
         return "[global::System.Text.Json.Serialization.JsonExtensionData]";
     }
 
+    public string GenerateIgnoreAttribute()
+    {
+        return "[global::System.Text.Json.Serialization.JsonIgnore]";
+    }
+
     public string GenerateRequiredAttribute()
     {
         return "[global::System.Text.Json.Serialization.JsonRequired]";

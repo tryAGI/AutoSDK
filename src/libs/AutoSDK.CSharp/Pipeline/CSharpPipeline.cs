@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Linq;
@@ -90,6 +91,12 @@ public static class CSharpPipeline
         CancellationToken cancellationToken = default)
     {
         var settings = data.Converters.Settings;
+        var webSocketMessageModels = data.Classes
+            .Where(x => data.WebSocketOperations.Any(y => string.Equals(
+                y.MessageType.CSharpTypeWithoutNullability,
+                x.GlobalClassName,
+                StringComparison.Ordinal)))
+            .ToDictionary(x => x.GlobalClassName, x => x, StringComparer.Ordinal);
 
         return settings.GenerateCli
             ? data.Methods
@@ -119,6 +126,9 @@ public static class CSharpPipeline
                         .SelectMany(x => new[]
                         {
                             Sources.Class(x, cancellationToken),
+                            webSocketMessageModels.ContainsKey(x.GlobalClassName)
+                                ? Sources.ClassWebSocketBinaryPayloadHelpers(x, cancellationToken)
+                                : FileWithName.Empty,
                             Sources.ClassJsonExtensions(x, cancellationToken),
                             Sources.ClassValidation(x, cancellationToken),
                         }))
@@ -198,7 +208,12 @@ public static class CSharpPipeline
                         .Select(x => Sources.PathBuilder(x, cancellationToken)))
                     .Concat(data.WebSocketOperations
                         .Where(x => x.Direction == AutoSDK.Models.WebSocketDirection.Send)
-                        .Select(x => Sources.WebSocketSendMethod(x, cancellationToken)))
+                        .Select(x => Sources.WebSocketSendMethod(
+                            x,
+                            webSocketMessageModels.TryGetValue(x.MessageType.CSharpTypeWithoutNullability, out var model)
+                                ? model
+                                : default,
+                            cancellationToken)))
                     .Where(x => !x.IsEmpty)
                     .ToArray()
                 : data.WebSocketClients
@@ -209,7 +224,12 @@ public static class CSharpPipeline
                     })
                     .Concat(data.WebSocketOperations
                         .Where(x => x.Direction == AutoSDK.Models.WebSocketDirection.Send)
-                        .Select(x => Sources.WebSocketSendMethod(x, cancellationToken)))
+                        .Select(x => Sources.WebSocketSendMethod(
+                            x,
+                            webSocketMessageModels.TryGetValue(x.MessageType.CSharpTypeWithoutNullability, out var model)
+                                ? model
+                                : default,
+                            cancellationToken)))
                     .Where(x => !x.IsEmpty)
                     .ToArray();
     }

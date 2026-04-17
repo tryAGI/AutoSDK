@@ -21,5 +21,29 @@ namespace G
 
             await SendAsync(json, cancellationToken).ConfigureAwait(false);
         }
+
+
+        /// <summary>
+        /// Base64-encoded audio data.
+        /// </summary>
+        /// <param name="audioBase64">The binary payload to send.</param>
+        /// <param name="messageType"></param>
+        /// <param name="sampleRate">Audio sample rate in Hz.</param>
+        /// <param name="cancellationToken">A cancellation token.</param>
+        public global::System.Threading.Tasks.Task SendAudioDataAsync(
+            global::System.ReadOnlyMemory<byte> audioBase64,
+            global::G.AudioDataPayloadMessageType messageType = default,
+            int? sampleRate = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
+            return SendAudioDataAsync(
+                new global::G.AudioDataPayload
+                {
+                AudioBase64 = global::System.Convert.ToBase64String(audioBase64.Span),
+                MessageType = messageType,
+                SampleRate = sampleRate,
+                },
+                cancellationToken);
+        }
     }
 }
