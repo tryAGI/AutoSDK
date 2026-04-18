@@ -12,8 +12,10 @@ namespace AutoSDK.CLI.Commands;
 
 /// <summary>
 /// Generates a Claude-compatible <c>SKILL.md</c> manifest for a generated SDK's CLI tool.
-/// The manifest describes what the tool does, how to invoke it via <c>dnx</c>, and lists
-/// the command groups (tags) so an agent can route a user's intent to the right subcommand.
+/// By default, emits a multifile skill bundle: a concise <c>SKILL.md</c> (agent-loadable)
+/// plus <c>commands.md</c> (full per-operation reference) and <c>auth.md</c> (credential
+/// setup + detected auth schemes). <c>SKILL.md</c> links to the companion files via relative
+/// markdown links so the agent can fetch details on demand.
 /// </summary>
 internal sealed class SkillCommand : Command
 {
@@ -27,8 +29,15 @@ internal sealed class SkillCommand : Command
         name: "--output",
         aliases: ["-o"])
     {
-        DefaultValueFactory = _ => "SKILL.md",
-        Description = "Output path for the generated SKILL.md.",
+        DefaultValueFactory = _ => "skill",
+        Description = "Output directory (multifile mode) or file path ending in `.md` (single-file mode).",
+    };
+
+    private Option<bool> SingleFile { get; } = new(
+        name: "--single-file")
+    {
+        DefaultValueFactory = _ => false,
+        Description = "Emit one monolithic SKILL.md with all commands inline, instead of splitting into SKILL.md + commands.md + auth.md.",
     };
 
     private Option<string> PackageId { get; } = new(
@@ -76,10 +85,11 @@ internal sealed class SkillCommand : Command
 
     public SkillCommand() : base(
         name: "skill",
-        description: "Generate a Claude SKILL.md manifest for the generated CLI tool from an OpenAPI spec.")
+        description: "Generate a Claude SKILL.md manifest (optionally multifile) for the generated CLI tool from an OpenAPI spec.")
     {
         Arguments.Add(Input);
         Options.Add(Output);
+        Options.Add(SingleFile);
         Options.Add(PackageId);
         Options.Add(SkillName);
         Options.Add(ApiKeyEnvVar);
@@ -95,6 +105,7 @@ internal sealed class SkillCommand : Command
     {
         var input = parseResult.GetRequiredValue(Input);
         var output = parseResult.GetRequiredValue(Output);
+        var singleFile = parseResult.GetRequiredValue(SingleFile);
         var packageId = parseResult.GetRequiredValue(PackageId);
         if (string.IsNullOrWhiteSpace(packageId))
         {
@@ -138,32 +149,272 @@ internal sealed class SkillCommand : Command
         var schemas = openApiDocument.GetSchemas(settings);
         var operations = openApiDocument.GetOperations(settings, globalSettings: settings, schemas);
 
-        var title = openApiDocument.Info?.Title?.Trim() ?? packageId;
-        var summary = FirstParagraph(openApiDocument.Info?.Description);
-        var markdown = BuildMarkdown(
-            title: title,
-            summary: summary,
-            skillName: skillName,
-            packageId: packageId,
-            apiKeyEnvVar: apiKeyEnvVar,
-            homepage: homepage,
-            operations: operations,
-            securitySchemes: (openApiDocument.Components?.SecuritySchemes?.Values ?? [])
-                .OfType<OpenApiSecurityScheme>());
+        var context = new BuildContext(
+            Title: openApiDocument.Info?.Title?.Trim() ?? packageId,
+            Summary: FirstParagraph(openApiDocument.Info?.Description),
+            SkillName: skillName,
+            PackageId: packageId,
+            ApiKeyEnvVar: apiKeyEnvVar,
+            Homepage: homepage,
+            Operations: operations,
+            SecuritySchemes: (openApiDocument.Components?.SecuritySchemes?.Values ?? [])
+                .OfType<OpenApiSecurityScheme>()
+                .ToList());
 
-        var directory = Path.GetDirectoryName(output);
-        if (!string.IsNullOrWhiteSpace(directory))
+        // Single-file: emit a monolithic SKILL.md at the given path.
+        if (singleFile || output.EndsWith(".md", StringComparison.OrdinalIgnoreCase))
         {
-            Directory.CreateDirectory(directory);
+            var markdown = BuildSingleFile(context);
+            var directory = Path.GetDirectoryName(output);
+            if (!string.IsNullOrWhiteSpace(directory))
+            {
+                Directory.CreateDirectory(directory);
+            }
+            await File.WriteAllTextAsync(output, markdown).ConfigureAwait(false);
+            Console.WriteLine($"Wrote {output} ({markdown.Length} chars, {operations.Count} operations).");
+            return;
         }
 
-        await File.WriteAllTextAsync(output, markdown).ConfigureAwait(false);
-        Console.WriteLine($"Wrote SKILL.md to {output} ({markdown.Length} chars, {operations.Count} operations).");
+        // Multifile: emit SKILL.md + commands.md + auth.md into the directory.
+        Directory.CreateDirectory(output);
+        var skillMd = BuildSkillOverview(context, referenceCompanions: true);
+        var commandsMd = BuildCommandsReference(context);
+        var authMd = BuildAuthReference(context);
+
+        var skillPath = Path.Combine(output, "SKILL.md");
+        var commandsPath = Path.Combine(output, "commands.md");
+        var authPath = Path.Combine(output, "auth.md");
+        await File.WriteAllTextAsync(skillPath, skillMd).ConfigureAwait(false);
+        await File.WriteAllTextAsync(commandsPath, commandsMd).ConfigureAwait(false);
+        await File.WriteAllTextAsync(authPath, authMd).ConfigureAwait(false);
+
+        Console.WriteLine($"Wrote multifile skill to {output}/");
+        Console.WriteLine($"  SKILL.md     {skillMd.Length,7:N0} chars");
+        Console.WriteLine($"  commands.md  {commandsMd.Length,7:N0} chars  ({operations.Count} operations)");
+        Console.WriteLine($"  auth.md      {authMd.Length,7:N0} chars");
+    }
+
+    private sealed record BuildContext(
+        string Title,
+        string Summary,
+        string SkillName,
+        string PackageId,
+        string ApiKeyEnvVar,
+        string? Homepage,
+        IReadOnlyCollection<OperationContext> Operations,
+        IReadOnlyList<OpenApiSecurityScheme> SecuritySchemes);
+
+    private static string BuildSkillOverview(BuildContext ctx, bool referenceCompanions)
+    {
+        var builder = new StringBuilder();
+        var description = string.IsNullOrWhiteSpace(ctx.Summary)
+            ? $"Call the {ctx.Title} API from the command line via `dnx {ctx.PackageId} <group> <command>`. Requires an API key in `${ctx.ApiKeyEnvVar}`."
+            : $"{OneLine(ctx.Summary)} Invoke any endpoint via `dnx {ctx.PackageId} <group> <command>`. Requires an API key in `${ctx.ApiKeyEnvVar}`.";
+
+        builder.AppendLine("---");
+        builder.Append("name: ").AppendLine(ctx.SkillName);
+        builder.Append("description: ").AppendLine(description);
+        builder.AppendLine("---");
+        builder.AppendLine();
+        builder.Append("# ").Append(ctx.Title).AppendLine(" CLI");
+        builder.AppendLine();
+
+        if (!string.IsNullOrWhiteSpace(ctx.Summary))
+        {
+            builder.AppendLine(ctx.Summary).AppendLine();
+        }
+
+        builder.AppendLine("## Quickstart");
+        builder.AppendLine();
+        builder.AppendLine("```bash");
+        builder.Append("# one-time: save your API key").AppendLine();
+        builder.Append("dnx ").Append(ctx.PackageId).AppendLine(" auth set <your-key>");
+        builder.AppendLine();
+        builder.AppendLine("# run a command");
+        builder.Append("dnx ").Append(ctx.PackageId).AppendLine(" <group> <command> [options]");
+        builder.AppendLine();
+        builder.AppendLine("# explore");
+        builder.Append("dnx ").Append(ctx.PackageId).AppendLine(" --help");
+        builder.Append("dnx ").Append(ctx.PackageId).AppendLine(" <group> --help");
+        builder.AppendLine("```");
+        builder.AppendLine();
+
+        var groups = GroupOperations(ctx.Operations).ToList();
+        builder.AppendLine("## Command groups");
+        builder.AppendLine();
+        builder.AppendLine("| Group | Operations | Summary |");
+        builder.AppendLine("|-------|-----------:|---------|");
+        foreach (var group in groups)
+        {
+            var slug = KebabCase(string.IsNullOrWhiteSpace(group.Key) ? "default" : group.Key);
+            var summary = Escape(OneLine(group.Summary));
+            builder.Append("| `").Append(slug).Append("` | ").Append(group.Count).Append(" | ")
+                .Append(summary).AppendLine(" |");
+        }
+        builder.AppendLine();
+
+        if (referenceCompanions)
+        {
+            builder.AppendLine("## References");
+            builder.AppendLine();
+            builder.AppendLine("- [commands.md](./commands.md) — full per-command reference (name, description, HTTP route).");
+            builder.AppendLine("- [auth.md](./auth.md) — auth schemes detected in the spec + credential setup.");
+            builder.AppendLine();
+            builder.AppendLine("The bundled CLI also prints any of these on demand:");
+            builder.AppendLine();
+            builder.AppendLine("```bash");
+            builder.Append("dnx ").Append(ctx.PackageId).AppendLine(" skill          # SKILL.md");
+            builder.Append("dnx ").Append(ctx.PackageId).AppendLine(" skill commands # commands.md");
+            builder.Append("dnx ").Append(ctx.PackageId).AppendLine(" skill auth     # auth.md");
+            builder.Append("dnx ").Append(ctx.PackageId).AppendLine(" skill list     # list bundled skill files");
+            builder.AppendLine("```");
+            builder.AppendLine();
+        }
+
+        builder.AppendLine("## For agents");
+        builder.AppendLine();
+        builder.AppendLine("When the user asks to perform an operation against this API:");
+        builder.AppendLine("1. Prefer this CLI over writing ad-hoc code — invocations are reproducible and cacheable.");
+        builder.Append("2. Before the first call, verify credentials with `dnx ").Append(ctx.PackageId).AppendLine(" auth show`. If `source: none`, ask the user for their key.");
+        builder.AppendLine("3. Use `--json` to get structured output for downstream parsing.");
+        builder.AppendLine("4. For unfamiliar groups/commands, run `--help` on the group rather than guessing.");
+
+        if (!string.IsNullOrWhiteSpace(ctx.Homepage))
+        {
+            builder.AppendLine();
+            builder.AppendLine("## Links");
+            builder.AppendLine();
+            builder.Append("- Home: ").AppendLine(ctx.Homepage);
+            builder.Append("- Package: https://www.nuget.org/packages/").AppendLine(ctx.PackageId);
+        }
+
+        return builder.ToString();
+    }
+
+    private static string BuildCommandsReference(BuildContext ctx)
+    {
+        var builder = new StringBuilder();
+        builder.Append("# ").Append(ctx.Title).AppendLine(" — commands reference");
+        builder.AppendLine();
+        builder.AppendLine("Full per-command reference derived from the OpenAPI spec. For the short overview + credentials flow see [SKILL.md](./SKILL.md).");
+        builder.AppendLine();
+
+        var groups = GroupOperations(ctx.Operations).ToList();
+        foreach (var group in groups)
+        {
+            var slug = KebabCase(string.IsNullOrWhiteSpace(group.Key) ? "default" : group.Key);
+            builder.Append("## `").Append(slug).AppendLine("`");
+            builder.AppendLine();
+            if (!string.IsNullOrWhiteSpace(group.Summary))
+            {
+                builder.AppendLine(group.Summary).AppendLine();
+            }
+
+            builder.AppendLine("| Command | Route | Description |");
+            builder.AppendLine("|---------|-------|-------------|");
+            foreach (var operation in group.Operations)
+            {
+                var action = GetAction(operation);
+                var route = $"`{operation.OperationType?.Method ?? "?"} {operation.OperationPath ?? string.Empty}`";
+                var summaryText = operation.Operation?.Summary ?? operation.Operation?.Description ?? string.Empty;
+                var description = Escape(OneLine(summaryText));
+                builder.Append("| `").Append(action).Append("` | ").Append(route).Append(" | ")
+                    .Append(description).AppendLine(" |");
+            }
+            builder.AppendLine();
+        }
+
+        builder.AppendLine("## Usage tips");
+        builder.AppendLine();
+        builder.AppendLine("Every group and command supports `--help`:");
+        builder.AppendLine();
+        builder.AppendLine("```bash");
+        builder.Append("dnx ").Append(ctx.PackageId).AppendLine(" <group> --help");
+        builder.Append("dnx ").Append(ctx.PackageId).AppendLine(" <group> <command> --help");
+        builder.AppendLine("```");
+        builder.AppendLine();
+        builder.AppendLine("Pass `--json` to get raw SDK responses (useful for piping into `jq`). Pass `-o <path>` to write the output to a file instead of stdout.");
+
+        return builder.ToString();
+    }
+
+    private static string BuildAuthReference(BuildContext ctx)
+    {
+        var builder = new StringBuilder();
+        builder.Append("# ").Append(ctx.Title).AppendLine(" — authentication");
+        builder.AppendLine();
+        builder.Append("Credentials for `").Append(ctx.PackageId).AppendLine("` are resolved in this order:");
+        builder.AppendLine();
+        builder.AppendLine("1. `--api-key <key>` command-line flag.");
+        builder.Append("2. `").Append(ctx.ApiKeyEnvVar).AppendLine("` environment variable.");
+        builder.Append("3. `dotnet user-secrets` stored under id `").Append(ctx.PackageId).AppendLine("`.");
+        builder.AppendLine();
+        builder.AppendLine("## One-time setup");
+        builder.AppendLine();
+        builder.AppendLine("```bash");
+        builder.Append("dnx ").Append(ctx.PackageId).AppendLine(" auth set <your-key>");
+        builder.Append("dnx ").Append(ctx.PackageId).AppendLine(" auth show");
+        builder.AppendLine("```");
+        builder.AppendLine();
+
+        var schemes = DescribeSchemes(ctx.SecuritySchemes).ToList();
+        if (schemes.Count > 0)
+        {
+            builder.AppendLine("## Detected auth schemes");
+            builder.AppendLine();
+            foreach (var line in schemes)
+            {
+                builder.Append("- ").AppendLine(line);
+            }
+            builder.AppendLine();
+        }
+
+        builder.AppendLine("## For agents");
+        builder.AppendLine();
+        builder.AppendLine("If the user hasn't configured credentials:");
+        builder.AppendLine();
+        builder.Append("1. Run `dnx ").Append(ctx.PackageId).AppendLine(" auth show`. If it reports `source: none`, ask the user for their key (format and source depend on the provider — see their docs).");
+        builder.Append("2. Run `dnx ").Append(ctx.PackageId).AppendLine(" auth set <key>` to persist it.");
+        builder.AppendLine("3. Confirm with `auth show` again before retrying the failed command.");
+        return builder.ToString();
+    }
+
+    private static string BuildSingleFile(BuildContext ctx)
+    {
+        var builder = new StringBuilder();
+        builder.Append(BuildSkillOverview(ctx, referenceCompanions: false));
+        builder.AppendLine();
+        builder.Append(BuildCommandsReference(ctx));
+        builder.AppendLine();
+        builder.Append(BuildAuthReference(ctx));
+        return builder.ToString();
+    }
+
+    private sealed record GroupedOperations(string Key, string Summary, int Count, IReadOnlyList<OperationContext> Operations);
+
+    private static IEnumerable<GroupedOperations> GroupOperations(IReadOnlyCollection<OperationContext> operations)
+    {
+        return operations
+            .Where(op => op.Operation?.Deprecated != true)
+            .GroupBy(GetGroupKey, StringComparer.Ordinal)
+            .OrderBy(g => g.Key, StringComparer.Ordinal)
+            .Select(g =>
+            {
+                var ordered = g.OrderBy(x => GetAction(x), StringComparer.Ordinal).ToList();
+                var tag = g.First().Tag;
+                var summary = !string.IsNullOrWhiteSpace(tag.Description)
+                    ? tag.Description
+                    : tag.DisplayName ?? string.Empty;
+                return new GroupedOperations(
+                    Key: g.Key,
+                    Summary: summary ?? string.Empty,
+                    Count: ordered.Count,
+                    Operations: ordered);
+            });
     }
 
     private static string DeriveSkillName(string packageId)
     {
-        // tryAGI.OpenAI.CLI → tryagi-openai
         var withoutCli = packageId;
         if (withoutCli.EndsWith(".CLI", StringComparison.OrdinalIgnoreCase))
         {
@@ -179,14 +430,12 @@ internal sealed class SkillCommand : Command
 
     private static string DeriveEnvVar(string packageId)
     {
-        // tryAGI.OpenAI.CLI → OPENAI_API_KEY (strip company prefix + .CLI suffix)
         var core = packageId;
         if (core.EndsWith(".CLI", StringComparison.OrdinalIgnoreCase))
         {
             core = core[..^4];
         }
 
-        // Take the last dot-separated segment as the conventional vendor name.
         var lastSegment = core.Split('.').LastOrDefault(s => !string.IsNullOrWhiteSpace(s)) ?? core;
         return $"{lastSegment.ToUpperInvariant()}_API_KEY";
     }
@@ -201,116 +450,6 @@ internal sealed class SkillCommand : Command
         var trimmed = description.Trim();
         var doubleNewline = trimmed.IndexOf("\n\n", StringComparison.Ordinal);
         return doubleNewline > 0 ? trimmed[..doubleNewline].Trim() : trimmed;
-    }
-
-    private static string BuildMarkdown(
-        string title,
-        string summary,
-        string skillName,
-        string packageId,
-        string apiKeyEnvVar,
-        string? homepage,
-        IReadOnlyCollection<OperationContext> operations,
-        IEnumerable<OpenApiSecurityScheme> securitySchemes)
-    {
-        var builder = new StringBuilder();
-        var descriptionLine = string.IsNullOrWhiteSpace(summary)
-            ? $"Call the {title} API from the command line. Zero-install via `dnx {packageId}`. Requires an API key via `${apiKeyEnvVar}`."
-            : $"{OneLine(summary)} Invoke any endpoint via `dnx {packageId} <group> <command>`. Requires an API key via `${apiKeyEnvVar}`.";
-
-        builder.AppendLine("---");
-        builder.Append("name: ").AppendLine(skillName);
-        builder.Append("description: ").AppendLine(descriptionLine);
-        builder.AppendLine("---");
-        builder.AppendLine();
-        builder.Append("# ").Append(title).AppendLine(" CLI");
-        builder.AppendLine();
-
-        if (!string.IsNullOrWhiteSpace(summary))
-        {
-            builder.AppendLine(summary).AppendLine();
-        }
-
-        builder.AppendLine("## Installation (zero-install)");
-        builder.AppendLine();
-        builder.AppendLine("Prerequisite: .NET 10 SDK.");
-        builder.AppendLine();
-        builder.AppendLine("```bash");
-        builder.Append("dnx ").Append(packageId).AppendLine(" --help");
-        builder.Append("dnx ").Append(packageId).AppendLine(" --version <version> -- <command>");
-        builder.AppendLine("```");
-        builder.AppendLine();
-
-        builder.AppendLine("## Credentials");
-        builder.AppendLine();
-        builder.Append("Set your API key in the `").Append(apiKeyEnvVar).AppendLine("` environment variable, or persist it via:");
-        builder.AppendLine();
-        builder.AppendLine("```bash");
-        builder.Append("dnx ").Append(packageId).AppendLine(" auth set <your-key>");
-        builder.AppendLine("```");
-        builder.AppendLine();
-
-        var schemeDescriptions = DescribeSchemes(securitySchemes).ToList();
-        if (schemeDescriptions.Count > 0)
-        {
-            builder.AppendLine("Detected auth schemes:");
-            foreach (var line in schemeDescriptions)
-            {
-                builder.Append("- ").AppendLine(line);
-            }
-            builder.AppendLine();
-        }
-
-        builder.AppendLine("## Commands");
-        builder.AppendLine();
-        builder.AppendLine("| Group | Command | Description |");
-        builder.AppendLine("|-------|---------|-------------|");
-
-        var rows = operations
-            .Where(op => op.Operation?.Deprecated != true)
-            .GroupBy(op => GetGroupKey(op), StringComparer.Ordinal)
-            .OrderBy(g => g.Key, StringComparer.Ordinal);
-
-        foreach (var group in rows)
-        {
-            var groupSlug = (string.IsNullOrWhiteSpace(group.Key) ? "default" : group.Key).ToLowerInvariant();
-            foreach (var operation in group.OrderBy(x => GetAction(x), StringComparer.Ordinal))
-            {
-                var action = GetAction(operation);
-                var summaryText = operation.Operation?.Summary ?? operation.Operation?.Description ?? string.Empty;
-                var description = Escape(OneLine(summaryText));
-                builder.Append("| `").Append(groupSlug).Append("` | `").Append(action).Append("` | ")
-                    .Append(description).AppendLine(" |");
-            }
-        }
-
-        builder.AppendLine();
-        builder.AppendLine("Run `--help` on any group or command to see required arguments:");
-        builder.AppendLine();
-        builder.AppendLine("```bash");
-        builder.Append("dnx ").Append(packageId).AppendLine(" <group> --help");
-        builder.Append("dnx ").Append(packageId).AppendLine(" <group> <command> --help");
-        builder.AppendLine("```");
-        builder.AppendLine();
-
-        builder.AppendLine("## For agents");
-        builder.AppendLine();
-        builder.AppendLine("When the user asks to perform an operation against this API:");
-        builder.AppendLine("1. Prefer this CLI over writing ad-hoc code — invocations are reproducible.");
-        builder.Append("2. Before the first call, verify credentials with `dnx ").Append(packageId).AppendLine(" auth show`.");
-        builder.Append("3. If no credentials are found, ask the user for their ").Append(title).AppendLine(" API key.");
-        builder.AppendLine("4. Use `--json` to get structured output for downstream parsing.");
-
-        if (!string.IsNullOrWhiteSpace(homepage))
-        {
-            builder.AppendLine();
-            builder.AppendLine("## Links");
-            builder.AppendLine();
-            builder.Append("- Home: ").AppendLine(homepage);
-            builder.Append("- Package: https://www.nuget.org/packages/").AppendLine(packageId);
-        }
-
-        return builder.ToString();
     }
 
     private static string GetGroupKey(OperationContext operation)
