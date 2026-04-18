@@ -25,10 +25,10 @@
     <AdditionalFiles Remove="Resources\bin\**" />
     <EmbeddedResource Remove="Resources\obj\**" />
     <EmbeddedResource Remove="Resources\bin\**" />
-    <PackageReference Include="Microsoft.OpenApi" Version="3.5.1" />
-    <PackageReference Include="Microsoft.OpenApi.YamlReader" Version="3.5.1" />
+    <PackageReference Include="Microsoft.OpenApi" Version="3.5.2" />
+    <PackageReference Include="Microsoft.OpenApi.YamlReader" Version="3.5.2" />
     <PackageReference Include="Google.Protobuf" Version="3.34.1" />
-    <PackageReference Include="System.CommandLine" Version="2.0.5" />
+    <PackageReference Include="System.CommandLine" Version="2.0.6" />
   </ItemGroup>
 
   <ItemGroup>
