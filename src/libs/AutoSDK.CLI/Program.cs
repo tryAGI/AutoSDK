@@ -11,5 +11,6 @@ rootCommand.Subcommands.Add(new SimplifyCommand());
 rootCommand.Subcommands.Add(new ConvertCommand());
 rootCommand.Subcommands.Add(new InitializeCommand());
 rootCommand.Subcommands.Add(new TrimCommand());
+rootCommand.Subcommands.Add(new SkillCommand());
 
 return await rootCommand.Parse(args).InvokeAsync().ConfigureAwait(false);
