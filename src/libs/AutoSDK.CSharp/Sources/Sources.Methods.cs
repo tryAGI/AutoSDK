@@ -899,7 +899,7 @@ namespace {endPoint.Settings.Namespace}
         return GenerateSerializedValueExpression(
             type,
             expression,
-            IsNullableLike(type),
+            isNullableLike: false,
             settings);
     }
 
@@ -1389,7 +1389,7 @@ namespace {endPoint.Settings.Namespace}
         string expression,
         bool isNullableLike)
     {
-        return isNullableLike && type.IsValueType
+        return ShouldGenerateNullableValueTypeAccess(type, isNullableLike)
             ? $"({expression}).GetValueOrDefault()"
             : expression;
     }
@@ -1400,9 +1400,18 @@ namespace {endPoint.Settings.Namespace}
         bool isNullableLike,
         string serializedExpression)
     {
-        return isNullableLike && type.IsValueType
+        return ShouldGenerateNullableValueTypeAccess(type, isNullableLike)
             ? $"({expression}).HasValue ? {serializedExpression} : string.Empty"
             : serializedExpression;
+    }
+
+    private static bool ShouldGenerateNullableValueTypeAccess(
+        TypeData type,
+        bool isNullableLike)
+    {
+        return isNullableLike &&
+               type.IsValueType &&
+               type.CSharpType.TrimEnd().EndsWith("?", StringComparison.Ordinal);
     }
 
     private static bool IsInvariantCultureFormattable(TypeData type)
