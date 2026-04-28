@@ -66,10 +66,12 @@ paths:
         var method = data.Methods.Single(x => x.NotAsyncMethodName == "CreateSpeechToText");
         var methodCode = Sources.GenerateEndPoint(method);
 
-        methodCode.Should().Contain("ToString().ToLowerInvariant()");
-        methodCode.Should().Contain("ToString(global::System.Globalization.CultureInfo.InvariantCulture)");
+        methodCode.Should().Contain("(global::System.Convert.ToString(request.Diarize, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()");
+        methodCode.Should().Contain("global::System.Convert.ToString(request.NumSpeakers, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty");
+        methodCode.Should().Contain("global::System.Convert.ToString(request.Temperature, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty");
         methodCode.Should().Contain("\".m4a\" => \"audio/mp4\"");
         methodCode.Should().Contain("\"application/octet-stream\"");
+        methodCode.Should().NotContain(".Value.ToString(global::System.Globalization.CultureInfo.InvariantCulture)");
         methodCode.Should().NotContain("$\"{request.Diarize}");
         methodCode.Should().NotContain("$\"{request.NumSpeakers}");
         methodCode.Should().NotContain("$\"{request.Temperature}");

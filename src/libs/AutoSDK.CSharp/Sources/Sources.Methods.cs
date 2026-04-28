@@ -514,6 +514,13 @@ namespace {endPoint.Settings.Namespace}
             : $"global::{endPoint.Settings.Namespace}.AutoSDKHttpResponse<{bodyType}>";
     }
 
+    private static string GeneratePrepareRequestParameterArgument(MethodParameter parameter)
+    {
+        return !parameter.Type.CSharpType.TrimEnd().EndsWith("?", StringComparison.Ordinal)
+            ? $"{parameter.ParameterName}!"
+            : parameter.ParameterName;
+    }
+
     private static string GenerateMethodInvocationArguments(EndPoint endPoint)
     {
         return $@"{endPoint.Parameters.Where(x => x is { Location: not null, IsRequired: true } && !x.HasSchemaDefault).Select(x => $@"
@@ -744,7 +751,7 @@ namespace {endPoint.Settings.Namespace}
                     httpRequestMessage: __httpRequest{endPoint.Parameters
                     .Where(x => x.Location != null)
                     .Select(x => $@",
-                    {x.ParameterName}: {x.ParameterName}").Inject(emptyValue: "")}{(string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType) ? "" : @",
+                    {x.ParameterName}: {GeneratePrepareRequestParameterArgument(x)}").Inject(emptyValue: "")}{(string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType) ? "" : @",
                     request: request")});
 
                 return __httpRequest;
@@ -889,16 +896,11 @@ namespace {endPoint.Settings.Namespace}
         string expression,
         EmitterSettings settings)
     {
-        var isNullableLike = IsNullableLike(type);
-        var serializedExpression = GenerateSerializedValueExpression(
+        return GenerateSerializedValueExpression(
             type,
             expression,
-            isNullableLike,
+            IsNullableLike(type),
             settings);
-
-        return isNullableLike
-            ? $"{expression} != null ? {serializedExpression} : string.Empty"
-            : serializedExpression;
     }
 
     private static string GenerateMultipartBinaryContentTypeAssignment(
@@ -1331,10 +1333,12 @@ namespace {endPoint.Settings.Namespace}
         if (type.IsEnum &&
             !type.IsAnyOfLike)
         {
-            var enumExpression = isNullableLike && type.IsValueType
-                ? $"{expression}.Value"
-                : expression;
-            return $"{enumExpression}.ToValueString()";
+            var enumExpression = GenerateValueTypeValueExpression(type, expression, isNullableLike);
+            return WrapNullableValueTypeSerialization(
+                type,
+                expression,
+                isNullableLike,
+                $"{enumExpression}.ToValueString()");
         }
 
         if (type.IsAnyOfLike)
@@ -1344,34 +1348,32 @@ namespace {endPoint.Settings.Namespace}
 
         if (type.IsDate)
         {
-            var dateExpression = isNullableLike && type.IsValueType
-                ? $"{expression}.Value"
-                : expression;
-            return $"{dateExpression}.ToString(\"yyyy-MM-dd\")";
+            var dateExpression = GenerateValueTypeValueExpression(type, expression, isNullableLike);
+            return WrapNullableValueTypeSerialization(
+                type,
+                expression,
+                isNullableLike,
+                $"{dateExpression}.ToString(\"yyyy-MM-dd\")");
         }
 
         if (type.IsDateTime)
         {
-            var dateTimeExpression = isNullableLike && type.IsValueType
-                ? $"{expression}.Value"
-                : expression;
-            return $"{dateTimeExpression}.ToString(\"yyyy-MM-ddTHH:mm:ssZ\")";
+            var dateTimeExpression = GenerateValueTypeValueExpression(type, expression, isNullableLike);
+            return WrapNullableValueTypeSerialization(
+                type,
+                expression,
+                isNullableLike,
+                $"{dateTimeExpression}.ToString(\"yyyy-MM-ddTHH:mm:ssZ\")");
         }
 
         if (type.CSharpTypeWithoutNullability == "bool")
         {
-            var boolExpression = isNullableLike && type.IsValueType
-                ? $"{expression}.Value"
-                : expression;
-            return $"{boolExpression}.ToString().ToLowerInvariant()";
+            return $"(global::System.Convert.ToString({expression}, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()";
         }
 
         if (IsInvariantCultureFormattable(type))
         {
-            var formattableExpression = isNullableLike && type.IsValueType
-                ? $"{expression}.Value"
-                : expression;
-            return $"{formattableExpression}.ToString(global::System.Globalization.CultureInfo.InvariantCulture)";
+            return $"global::System.Convert.ToString({expression}, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty";
         }
 
         if (type.Properties.Length > 0)
@@ -1380,6 +1382,27 @@ namespace {endPoint.Settings.Namespace}
         }
 
         return $"{expression}.ToString() ?? string.Empty";
+    }
+
+    private static string GenerateValueTypeValueExpression(
+        TypeData type,
+        string expression,
+        bool isNullableLike)
+    {
+        return isNullableLike && type.IsValueType
+            ? $"({expression}).GetValueOrDefault()"
+            : expression;
+    }
+
+    private static string WrapNullableValueTypeSerialization(
+        TypeData type,
+        string expression,
+        bool isNullableLike,
+        string serializedExpression)
+    {
+        return isNullableLike && type.IsValueType
+            ? $"({expression}).HasValue ? {serializedExpression} : string.Empty"
+            : serializedExpression;
     }
 
     private static bool IsInvariantCultureFormattable(TypeData type)
