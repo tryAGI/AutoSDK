@@ -873,19 +873,71 @@ namespace {endPoint.Settings.Namespace}
         if (property.Type.IsArray)
         {
             var subType = property.Type.SubTypes.First();
-            var additionalConvertSubtype = subType.Unbox<TypeData>().IsEnum
-                ? ".ToValueString()"
-                : string.Empty;
-            return $"$\"[{{string.Join(\",\", global::System.Linq.Enumerable.Select({name}, x => x{additionalConvertSubtype}))}}]\"";
+            var subTypeData = subType.Unbox<TypeData>();
+            return $"$\"[{{string.Join(\",\", global::System.Linq.Enumerable.Select({name}, x => {GenerateSerializedArrayItemValueExpression(subTypeData, "x", property.Settings)}))}}]\"";
         }
 
-        var additionalConvert = property.Type.IsEnum
-            ? $"{(property.Type.CSharpTypeNullability ? "?" : "")}.ToValueString()"
-            : string.Empty;
+        return GenerateSerializedValueExpression(
+            type: property.Type,
+            expression: name,
+            isNullableLike: IsNullableLike(property.Type),
+            settings: property.Settings);
+    }
 
-        return property.Type.IsAnyOfLike
-            ? $"{name}{(property.Type.CSharpTypeNullability ? "?" : "")}.ToString() ?? string.Empty"
-            : $"$\"{{{name}{additionalConvert}}}\"";
+    private static string GenerateSerializedArrayItemValueExpression(
+        TypeData type,
+        string expression,
+        EmitterSettings settings)
+    {
+        var isNullableLike = IsNullableLike(type);
+        var serializedExpression = GenerateSerializedValueExpression(
+            type,
+            expression,
+            isNullableLike,
+            settings);
+
+        return isNullableLike
+            ? $"{expression} != null ? {serializedExpression} : string.Empty"
+            : serializedExpression;
+    }
+
+    private static string GenerateMultipartBinaryContentTypeAssignment(
+        string contentVariableName,
+        string? fileNameExpression)
+    {
+        if (string.IsNullOrWhiteSpace(fileNameExpression))
+        {
+            return $@"            {contentVariableName}.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue(""application/octet-stream"");";
+        }
+
+        return $@"            {contentVariableName}.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue(
+                {fileNameExpression} is null
+                    ? ""application/octet-stream""
+                    : (global::System.IO.Path.GetExtension({fileNameExpression}) ?? string.Empty).ToLowerInvariant() switch
+                    {{
+                        "".aac"" => ""audio/aac"",
+                        "".flac"" => ""audio/flac"",
+                        "".gif"" => ""image/gif"",
+                        "".jpeg"" => ""image/jpeg"",
+                        "".jpg"" => ""image/jpeg"",
+                        "".json"" => ""application/json"",
+                        "".m4a"" => ""audio/mp4"",
+                        "".mp3"" => ""audio/mpeg"",
+                        "".mp4"" => ""video/mp4"",
+                        "".mpeg"" => ""audio/mpeg"",
+                        "".mpga"" => ""audio/mpeg"",
+                        "".oga"" => ""audio/ogg"",
+                        "".ogg"" => ""audio/ogg"",
+                        "".opus"" => ""audio/ogg"",
+                        "".pdf"" => ""application/pdf"",
+                        "".png"" => ""image/png"",
+                        "".txt"" => ""text/plain"",
+                        "".wav"" => ""audio/wav"",
+                        "".weba"" => ""audio/webm"",
+                        "".webm"" => ""video/webm"",
+                        "".webp"" => ""image/webp"",
+                        _ => ""application/octet-stream"",
+                    }});";
     }
 
     private static string GenerateCookieParameterHandling(
@@ -1089,6 +1141,17 @@ namespace {endPoint.Settings.Namespace}
         string valueExpression,
         Settings settings)
     {
+        return GenerateJsonSerializeExpression(
+            type,
+            valueExpression,
+            settings.ToEmitterSettings());
+    }
+
+    private static string GenerateJsonSerializeExpression(
+        TypeData type,
+        string valueExpression,
+        EmitterSettings settings)
+    {
         if (!settings.UsesSystemTextJson())
         {
             return type.UsesGeneratedJsonHelpers
@@ -1245,10 +1308,23 @@ namespace {endPoint.Settings.Namespace}
         bool isNullableLike,
         Settings settings)
     {
+        return GenerateSerializedValueExpression(
+            type,
+            expression,
+            isNullableLike,
+            settings.ToEmitterSettings());
+    }
+
+    private static string GenerateSerializedValueExpression(
+        TypeData type,
+        string expression,
+        bool isNullableLike,
+        EmitterSettings settings)
+    {
         if (type.CSharpTypeWithoutNullability == "string")
         {
             return isNullableLike
-                ? $"{expression}.ToString() ?? string.Empty"
+                ? $"{expression} ?? string.Empty"
                 : expression;
         }
 
@@ -1290,12 +1366,36 @@ namespace {endPoint.Settings.Namespace}
             return $"{boolExpression}.ToString().ToLowerInvariant()";
         }
 
+        if (IsInvariantCultureFormattable(type))
+        {
+            var formattableExpression = isNullableLike && type.IsValueType
+                ? $"{expression}.Value"
+                : expression;
+            return $"{formattableExpression}.ToString(global::System.Globalization.CultureInfo.InvariantCulture)";
+        }
+
         if (type.Properties.Length > 0)
         {
             return GenerateJsonSerializeExpression(type, expression, settings);
         }
 
         return $"{expression}.ToString() ?? string.Empty";
+    }
+
+    private static bool IsInvariantCultureFormattable(TypeData type)
+    {
+        return type.CSharpTypeWithoutNullability is
+            "byte" or
+            "sbyte" or
+            "short" or
+            "ushort" or
+            "int" or
+            "uint" or
+            "long" or
+            "ulong" or
+            "float" or
+            "double" or
+            "decimal";
     }
 
     public static string GeneratePathAndQuery(
@@ -1992,6 +2092,7 @@ namespace {endPoint.Settings.Namespace}
         : string.Empty;
     var add = x.Type.IsBinary ? @$"
             var __content{x.Name} = new global::System.Net.Http.ByteArrayContent(request.{x.Name} ?? global::System.Array.Empty<byte>());
+{GenerateMultipartBinaryContentTypeAssignment($"__content{x.Name}", $"request.{filenamePropName}")}
             __httpRequestContent.Add(
                 content: __content{x.Name},
                 name: ""\""{x.Id}\"""",
@@ -2004,6 +2105,7 @@ namespace {endPoint.Settings.Namespace}
             for (var __i{x.Name} = 0; __i{x.Name} < request.{x.Name}.Count; __i{x.Name}++)
             {{
                 var __content{x.Name} = new global::System.Net.Http.ByteArrayContent(request.{x.Name}[__i{x.Name}]);
+{GenerateMultipartBinaryContentTypeAssignment($"__content{x.Name}", null)}
                 __httpRequestContent.Add(
                     content: __content{x.Name},
                     name: ""\""{x.Id}\"""",
