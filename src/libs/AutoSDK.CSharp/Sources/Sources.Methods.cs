@@ -1271,7 +1271,7 @@ namespace {endPoint.Settings.Namespace}
 
         return urlEncode
             ? $"{collectionName}.Add(\"{segmentName}=\" + global::System.Uri.EscapeDataString({valueExpression}))"
-            : $"{collectionName}.Add($\"{segmentName}={{{valueExpression}}}\")";
+            : $"{collectionName}.Add(\"{segmentName}=\" + ({valueExpression}))";
     }
 
     private static string GetParameterPropertyAccessExpression(

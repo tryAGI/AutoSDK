@@ -1485,11 +1485,11 @@ paths:
                 content.Should().Contain("method: new global::System.Net.Http.HttpMethod(\"QUERY\")");
                 content.Should().Contain("method: new global::System.Net.Http.HttpMethod(\"purge\")");
                 content.Should().Contain("__pathBuilder = __pathBuilder.AddRawQueryString(string.Join(\"&\", __queryStringSegments_filters));");
-                content.Should().Contain("__queryStringSegments_filters.Add(\"q=\" + global::System.Uri.EscapeDataString(__filters_Q.ToString() ?? string.Empty));");
-                content.Should().Contain("__queryStringSegments_filters.Add(\"page=\" + global::System.Uri.EscapeDataString(__filters_Page.ToString() ?? string.Empty));");
+                content.Should().Contain("__queryStringSegments_filters.Add(\"q=\" + global::System.Uri.EscapeDataString(__filters_Q ?? string.Empty));");
+                content.Should().Contain("__queryStringSegments_filters.Add(\"page=\" + global::System.Uri.EscapeDataString(global::System.Convert.ToString(__filters_Page, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty));");
                 content.Should().Contain("__httpRequest.Headers.TryAddWithoutValidation(\"Cookie\", string.Join(\"; \", __cookies));");
-                content.Should().Contain("__cookies.Add($\"theme={__prefs_Theme.ToString() ?? string.Empty}\")");
-                content.Should().Contain("__cookies.Add($\"pageSize={__prefs_PageSize.ToString() ?? string.Empty}\")");
+                content.Should().Contain("__cookies.Add(\"theme=\" + (__prefs_Theme ?? string.Empty))");
+                content.Should().Contain("__cookies.Add(\"pageSize=\" + (global::System.Convert.ToString(__prefs_PageSize, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty))");
             });
     }
 
