@@ -74,7 +74,7 @@ namespace {client.Settings.Namespace}
 
 {(client.Clients.Length != 0 ? "\n" + client.Clients.Select(x => $@"
         {x.Summary.ToXmlDocumentationSummary(level: 8)}
-        public {x.Type.CSharpType} {x.Name} => new {x.Type.CSharpType}(HttpClient, authorizations: Authorizations, options: Options)
+        public {x.Type.CSharpType} {x.Name} => new {x.Type.CSharpType}(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {{
             ReadResponseAsString = ReadResponseAsString,
             {(client.HasIdempotencySupport ? "CreateIdempotencyKey = CreateIdempotencyKey," : TrimmedLine)}
@@ -138,10 +138,10 @@ namespace {client.Settings.Namespace}
         /// <param name=""options"">Client-wide request defaults such as headers, query parameters, retries, and timeout.</param>
         /// <param name=""disposeHttpClient"">Dispose the HttpClient when the instance is disposed. True by default.</param>
         public {client.ClassName}(
-            global::System.Net.Http.HttpClient? httpClient = null,
-            global::System.Uri? baseUri = null,
-            global::System.Collections.Generic.List<global::{client.GlobalSettings.Namespace}.EndPointAuthorization>? authorizations = null,
-            global::{client.Settings.Namespace}.AutoSDKClientOptions? options = null,
+            global::System.Net.Http.HttpClient? httpClient,
+            global::System.Uri? baseUri,
+            global::System.Collections.Generic.List<global::{client.GlobalSettings.Namespace}.EndPointAuthorization>? authorizations,
+            global::{client.Settings.Namespace}.AutoSDKClientOptions? options,
             bool disposeHttpClient = true)
         {{
 {((client.Id == "MainConstructor" && client.HasMutualTlsSupport) ? @"

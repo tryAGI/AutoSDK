@@ -36,8 +36,28 @@ public static partial class Sources
             var deserializeCall = hasOptions
                 ? $"global::System.Text.Json.JsonSerializer.Deserialize<{eventTypeName}>(json, JsonSerializerOptions)"
                 : $"({eventTypeName})global::System.Text.Json.JsonSerializer.Deserialize(json, typeof({eventTypeName}), JsonSerializerContext)!";
-            deserializeAndYield = $@"                    var @event = {deserializeCall};
+            deserializeAndYield = $@"                    {eventTypeName} @event;
+                    try
+                    {{
+                        @event = {deserializeCall};
+                    }}
+                    catch (global::System.Exception exception) when (
+                        exception is global::System.Text.Json.JsonException ||
+                        exception is global::System.NotSupportedException ||
+                        exception is global::System.InvalidOperationException)
+                    {{
+                        var rethrow = false;
+                        OnReceiveException(exception, ref rethrow);
+                        DispatchUnknownMessage(json);
+                        if (rethrow)
+                        {{
+                            throw;
+                        }}
 
+                        continue;
+                    }}
+
+                    DispatchReceivedMessage(@event, json);
                     yield return @event;";
         }
         else
@@ -46,12 +66,34 @@ public static partial class Sources
             var deserializeCall = hasOptions
                 ? $"global::System.Text.Json.JsonSerializer.Deserialize<{eventTypeName}>(json, JsonSerializerOptions)"
                 : $"({eventTypeName}?)global::System.Text.Json.JsonSerializer.Deserialize(json, typeof({eventTypeName}), JsonSerializerContext)";
-            deserializeAndYield = $@"                    var @event = {deserializeCall} ??
+            deserializeAndYield = $@"                    {eventTypeName} @event;
+                    try
+                    {{
+                        @event = {deserializeCall} ??
                                  throw new global::System.InvalidOperationException(
                                      $""Response deserialization failed for \""{{json}}\"" "");
+                    }}
+                    catch (global::System.Exception exception) when (
+                        exception is global::System.Text.Json.JsonException ||
+                        exception is global::System.NotSupportedException ||
+                        exception is global::System.InvalidOperationException)
+                    {{
+                        var rethrow = false;
+                        OnReceiveException(exception, ref rethrow);
+                        DispatchUnknownMessage(json);
+                        if (rethrow)
+                        {{
+                            throw;
+                        }}
 
+                        continue;
+                    }}
+
+                    DispatchReceivedMessage(@event, json);
                     yield return @event;";
         }
+
+        var dispatchHelpers = GenerateWebSocketReceiveDispatchHelpers(wsClient, eventTypeName, isValueType);
 
         return $@"
 #nullable enable
@@ -96,8 +138,14 @@ namespace {wsClient.Settings.Namespace}
                     }}
                     catch (global::System.Net.WebSockets.WebSocketException exception)
                     {{
+                        RaiseException(exception);
                         var rethrow = false;
                         OnReceiveException(exception, ref rethrow);
+                        if (await TryReconnectAsync(exception, cancellationToken).ConfigureAwait(false))
+                        {{
+                            continue;
+                        }}
+
                         if (rethrow)
                         {{
                             throw;
@@ -107,6 +155,11 @@ namespace {wsClient.Settings.Namespace}
                     }}
                     catch (global::System.OperationCanceledException exception)
                     {{
+                        if (!cancellationToken.IsCancellationRequested)
+                        {{
+                            RaiseException(exception);
+                        }}
+
                         var rethrow = false;
                         OnReceiveException(exception, ref rethrow);
                         if (rethrow)
@@ -119,6 +172,7 @@ namespace {wsClient.Settings.Namespace}
 
                     if (result.MessageType == global::System.Net.WebSockets.WebSocketMessageType.Close)
                     {{
+                        RaiseClosed(result.CloseStatus, result.CloseStatusDescription);
                         await _clientWebSocket.CloseAsync(
                             closeStatus: global::System.Net.WebSockets.WebSocketCloseStatus.NormalClosure,
                             statusDescription: ""Closing"",
@@ -151,7 +205,130 @@ namespace {wsClient.Settings.Namespace}
 {deserializeAndYield}
             }}
         }}
+
+{dispatchHelpers}
     }}
 }}".RemoveBlankLinesWhereOnlyWhitespaces();
+    }
+
+    private static string GenerateWebSocketReceiveDispatchHelpers(
+        WebSocketClient wsClient,
+        string eventTypeName,
+        bool isValueType)
+    {
+        var typedDispatch = new System.Text.StringBuilder();
+        var seenEventNames = new HashSet<string>(StringComparer.Ordinal);
+        var receiveEventProperties = wsClient.BaseReceiveEventType.Properties.ToArray();
+
+        foreach (var operation in wsClient.ReceiveOperations)
+        {
+            var messageType = operation.MessageType.CSharpTypeWithoutNullability;
+            if (string.IsNullOrWhiteSpace(messageType) ||
+                !CanGenerateTypedWebSocketMessageEvent(wsClient, operation.MessageType))
+            {
+                continue;
+            }
+
+            var eventName = operation.MessageName.ToPropertyName() + "Received";
+            if (!seenEventNames.Add(eventName))
+            {
+                continue;
+            }
+
+            if (string.Equals(messageType, eventTypeName, StringComparison.Ordinal))
+            {
+                var directDispatch = $@"
+            {eventName}?.Invoke(
+                this,
+                new AutoSDKWebSocketMessageEventArgs<{messageType}>(
+                    @event,
+                    rawText,
+                    json));";
+                typedDispatch.Append(directDispatch);
+                continue;
+            }
+
+            if (!isValueType)
+            {
+                var referenceDispatch = $@"
+            if (@event is {messageType} __{eventName})
+            {{
+                {eventName}?.Invoke(
+                    this,
+                    new AutoSDKWebSocketMessageEventArgs<{messageType}>(
+                        __{eventName},
+                        rawText,
+                        json));
+            }}";
+                typedDispatch.Append(referenceDispatch);
+                continue;
+            }
+
+            var preferredPropertyName = operation.MessageName.ToPropertyName();
+            var messageTypePropertyName = operation.MessageType.ShortCSharpTypeWithoutNullability.ToPropertyName();
+            var messageTypeWithoutPayloadPropertyName = messageTypePropertyName.EndsWith("Payload", StringComparison.Ordinal)
+                ? messageTypePropertyName.Substring(0, messageTypePropertyName.Length - "Payload".Length)
+                : messageTypePropertyName;
+            var propertyName = receiveEventProperties.FirstOrDefault(property =>
+                string.Equals(property, preferredPropertyName, StringComparison.Ordinal) ||
+                string.Equals(property, messageTypePropertyName, StringComparison.Ordinal) ||
+                string.Equals(property, messageTypeWithoutPayloadPropertyName, StringComparison.Ordinal));
+
+            if (string.IsNullOrWhiteSpace(propertyName))
+            {
+                propertyName = preferredPropertyName;
+            }
+
+            var unionDispatch = $@"
+            if (@event.{propertyName} is {{ }} __{eventName})
+            {{
+                {eventName}?.Invoke(
+                    this,
+                    new AutoSDKWebSocketMessageEventArgs<{messageType}>(
+                        __{eventName},
+                        rawText,
+                        json));
+            }}";
+            typedDispatch.Append(unionDispatch);
+        }
+
+        return $@"
+        private static global::System.Text.Json.JsonElement? TryParseMessageJson(
+            string rawText)
+        {{
+            try
+            {{
+                using var document = global::System.Text.Json.JsonDocument.Parse(rawText);
+                return document.RootElement.Clone();
+            }}
+            catch (global::System.Text.Json.JsonException)
+            {{
+                return null;
+            }}
+        }}
+
+        private void DispatchUnknownMessage(
+            string rawText)
+        {{
+            UnknownMessage?.Invoke(
+                this,
+                new AutoSDKWebSocketUnknownMessageEventArgs(
+                    rawText,
+                    TryParseMessageJson(rawText)));
+        }}
+
+        private void DispatchReceivedMessage(
+            {eventTypeName} @event,
+            string rawText)
+        {{
+            var json = TryParseMessageJson(rawText);
+            MessageReceived?.Invoke(
+                this,
+                new AutoSDKWebSocketMessageEventArgs<{eventTypeName}>(
+                    @event,
+                    rawText,
+                    json));
+{typedDispatch}
+        }}";
     }
 }

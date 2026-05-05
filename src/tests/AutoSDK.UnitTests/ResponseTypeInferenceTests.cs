@@ -65,10 +65,17 @@ paths:
         endPoint.SuccessResponse.Type.CSharpTypeWithoutNullability.Should().Be("byte[]");
 
         var generatedCode = Sources.GenerateEndPoint(endPoint);
+        var generatedInterface = Sources.GenerateEndPointInterface(endPoint);
 
         generatedCode.Should().Contain("Task<byte[]> GetAudioAsync(");
+        generatedCode.Should().Contain("Task<global::System.IO.Stream> GetAudioAsStreamAsync(");
         generatedCode.Should().Contain("ReadAsByteArrayAsync(");
-        generatedCode.Should().Contain("return __content;");
+        generatedCode.Should().Contain("HttpCompletionOption.ResponseHeadersRead");
+        generatedCode.Should().Contain("return new global::G.ResponseStream(__response, __content);");
+        generatedCode.Should().Contain("return __response.Body;");
+        generatedCode.Should().Contain("body: __content");
+        generatedInterface.Should().Contain("Task<global::System.IO.Stream> GetAudioAsStreamAsync(");
+        Sources.ShouldGenerateResponseStreamSupport(endPoint).Should().BeTrue();
     }
 
     [TestMethod]
@@ -98,8 +105,13 @@ paths:
         var generatedCode = Sources.GenerateEndPoint(endPoint);
 
         generatedCode.Should().Contain("Task<byte[]> GetDocumentAsync(");
+        generatedCode.Should().Contain("Task<global::System.IO.Stream> GetDocumentAsStreamAsync(");
         generatedCode.Should().Contain("ReadAsByteArrayAsync(");
-        generatedCode.Should().Contain("return __content;");
+        generatedCode.Should().Contain("HttpCompletionOption.ResponseHeadersRead");
+        generatedCode.Should().Contain("return new global::G.ResponseStream(__response, __content);");
+        generatedCode.Should().Contain("return __response.Body;");
+        generatedCode.Should().Contain("body: __content");
+        Sources.ShouldGenerateResponseStreamSupport(endPoint).Should().BeTrue();
     }
 
     [TestMethod]
@@ -122,8 +134,13 @@ paths:
             var generatedCode = Sources.GenerateEndPoint(endPoint);
 
             generatedCode.Should().Contain("Task<byte[]>");
+            generatedCode.Should().Contain("Task<global::System.IO.Stream>");
+            generatedCode.Should().Contain("HttpCompletionOption.ResponseHeadersRead");
+            generatedCode.Should().Contain("return new global::G.ResponseStream(__response, __content);");
             generatedCode.Should().Contain("ReadAsByteArrayAsync(");
-            generatedCode.Should().Contain("return __content;");
+            generatedCode.Should().Contain("return __response.Body;");
+            generatedCode.Should().Contain("body: __content");
+            Sources.ShouldGenerateResponseStreamSupport(endPoint).Should().BeTrue();
         }
     }
 
@@ -153,9 +170,10 @@ paths:
 
             generatedCode.Should().Contain("Task<global::System.IO.Stream>");
             generatedCode.Should().Contain("HttpCompletionOption.ResponseHeadersRead");
-            generatedCode.Should().Contain("return new global::G.ResponseStream(__response, __content);");
+            generatedCode.Should().Contain("body: new global::G.ResponseStream(__response, __content)");
             generatedCode.Should().NotContain("using var __response = await HttpClient.SendAsync(");
             generatedCode.Should().NotContain("ReadAsByteArrayAsync(");
+            Sources.ShouldGenerateResponseStreamSupport(endPoint).Should().BeTrue();
         }
     }
 

@@ -51,5 +51,51 @@ namespace G
             string? xiApiKey = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Get Characters Usage Metrics<br/>
+        /// Returns the usage metrics for the current user or the entire workspace they are part of. The response provides a time axis based on the specified aggregation interval (default: day), with usage values for each interval along that axis. Usage is broken down by the selected breakdown type. For example, breakdown type "voice" will return the usage of each voice for each interval along the time axis.
+        /// </summary>
+        /// <param name="startUnix">
+        /// UTC Unix timestamp for the start of the usage window, in milliseconds. To include the first day of the window, the timestamp should be at 00:00:00 of that day.
+        /// </param>
+        /// <param name="endUnix">
+        /// UTC Unix timestamp for the end of the usage window, in milliseconds. To include the last day of the window, the timestamp should be at 23:59:59 of that day.
+        /// </param>
+        /// <param name="includeWorkspaceMetrics">
+        /// Whether or not to include the statistics of the entire workspace.<br/>
+        /// Default Value: false
+        /// </param>
+        /// <param name="breakdownType">
+        /// How to break down the information. Cannot be "user" if include_workspace_metrics is False.<br/>
+        /// Default Value: none
+        /// </param>
+        /// <param name="aggregationInterval">
+        /// How to aggregate usage data over time. Can be "hour", "day", "week", "month", or "cumulative".<br/>
+        /// Default Value: day
+        /// </param>
+        /// <param name="aggregationBucketSize">
+        /// Aggregation bucket size in seconds. Overrides the aggregation interval.
+        /// </param>
+        /// <param name="metric">
+        /// Which metric to aggregate.<br/>
+        /// Default Value: credits
+        /// </param>
+        /// <param name="xiApiKey">
+        /// Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the 'Profile' tab on the website.
+        /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.UsageCharactersResponseModel>> Get3AsResponseAsync(
+            global::System.DateTimeOffset startUnix,
+            global::System.DateTimeOffset endUnix,
+            bool? includeWorkspaceMetrics = default,
+            global::G.BreakdownTypes? breakdownType = default,
+            global::G.UsageAggregationInterval? aggregationInterval = default,
+            int? aggregationBucketSize = default,
+            global::G.MetricType? metric = default,
+            string? xiApiKey = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

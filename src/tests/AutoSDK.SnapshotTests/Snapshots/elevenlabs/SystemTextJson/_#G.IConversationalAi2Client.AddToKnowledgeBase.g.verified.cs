@@ -33,6 +33,26 @@ namespace G
         /// <param name="xiApiKey">
         /// Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the 'Profile' tab on the website.
         /// </param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        [global::System.Obsolete("This method marked as deprecated.")]
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.AddKnowledgeBaseResponseModel>> AddToKnowledgeBaseAsResponseAsync(
+
+            global::G.BodyAddToKnowledgeBaseV1ConvaiKnowledgeBasePost request,
+            string? agentId = default,
+            string? xiApiKey = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Add To Knowledge Base<br/>
+        /// Uploads a file or reference a webpage to use as part of the shared knowledge base
+        /// </summary>
+        /// <param name="agentId"></param>
+        /// <param name="xiApiKey">
+        /// Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the 'Profile' tab on the website.
+        /// </param>
         /// <param name="name">
         /// A custom, human-readable name for the document.
         /// </param>

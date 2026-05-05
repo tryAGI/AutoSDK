@@ -38,6 +38,28 @@ namespace G
         /// <param name="xiApiKey">
         /// Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the 'Profile' tab on the website.
         /// </param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::System.IO.Stream>> StreamAsResponseAsync(
+
+            global::G.BodyTextToDialogueMultiVoiceStreamingV1TextToDialogueStreamPost request,
+            global::G.AllowedOutputFormats? outputFormat = default,
+            string? xiApiKey = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Text To Dialogue (Multi-Voice) Streaming<br/>
+        /// Converts a list of text and voice ID pairs into speech (dialogue) and returns an audio stream.
+        /// </summary>
+        /// <param name="outputFormat">
+        /// Output format of the generated audio. Formatted as codec_sample_rate_bitrate. So an mp3 with 22.05kHz sample rate at 32kbs is represented as mp3_22050_32. MP3 with 192kbps bitrate requires you to be subscribed to Creator tier or above. PCM with 44.1kHz sample rate requires you to be subscribed to Pro tier or above. Note that the μ-law format (sometimes written mu-law, often approximated as u-law) is commonly used for Twilio audio inputs.<br/>
+        /// Default Value: mp3_44100_128
+        /// </param>
+        /// <param name="xiApiKey">
+        /// Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the 'Profile' tab on the website.
+        /// </param>
         /// <param name="inputs">
         /// A list of dialogue inputs, each containing text and a voice ID which will be converted into speech. The maximum number of unique voice IDs is 10.
         /// </param>

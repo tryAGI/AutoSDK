@@ -5,9 +5,10 @@
   </PropertyGroup>
   
   <Import Project="$(MSBuildThisFileDirectory)../../libs/AutoSDK.SourceGenerators/AutoSDK.SourceGenerators.props" />
+  <Import Project="$(MSBuildThisFileDirectory)..\AutoSDK.SourceGeneratorProjectReference.targets" />
 
   <ItemGroup>
-    <AdditionalFiles Include="$(MSBuildThisFileDirectory)../../../specs/ollama.yaml" />
+    <AdditionalFiles Include="$(MSBuildThisFileDirectory)../../../specs/ollama.yaml" AutoSDK_OpenApiSpecification="true" />
   </ItemGroup>
 
   <PropertyGroup>
@@ -25,10 +26,10 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.13.0" />
-    <PackageReference Include="Microsoft.OpenApi" Version="1.6.23" />
+    <PackageReference Include="Microsoft.OpenApi" Version="3.5.2" />
     <PackageReference Include="Microsoft.OpenApi.Readers" Version="1.6.23" />
-    <PackageReference Include="SharpYaml" Version="2.1.1" />
-    <PackageReference Include="System.Collections.Immutable" Version="10.0.5" />
+    <PackageReference Include="SharpYaml" Version="3.7.0" />
+    <PackageReference Include="System.Collections.Immutable" Version="10.0.7" />
   </ItemGroup>
 
   <ItemGroup>

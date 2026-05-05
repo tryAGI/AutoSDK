@@ -38,6 +38,28 @@ namespace G
         /// <param name="xiApiKey">
         /// Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the 'Profile' tab on the website.
         /// </param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.AnyOf<global::G.SpeechToTextChunkResponseModel, global::G.MultichannelSpeechToTextResponseModel, global::G.SpeechToTextWebhookResponseModel>>> ConvertAsResponseAsync(
+
+            global::G.BodySpeechToTextV1SpeechToTextPost request,
+            bool? enableLogging = default,
+            string? xiApiKey = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Speech To Text<br/>
+        /// Transcribe an audio or video file. If webhook is set to true, the request will be processed asynchronously and results sent to configured webhooks. When use_multi_channel is true and the provided audio has multiple channels, a 'transcripts' object with separate transcripts for each channel is returned. Otherwise, returns a single transcript. The optional webhook_metadata parameter allows you to attach custom data that will be included in webhook responses for request correlation and tracking.
+        /// </summary>
+        /// <param name="enableLogging">
+        /// When enable_logging is set to false zero retention mode will be used for the request. This will mean log and transcript storage features are unavailable for this request. Zero retention mode may only be used by enterprise customers.<br/>
+        /// Default Value: true
+        /// </param>
+        /// <param name="xiApiKey">
+        /// Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the 'Profile' tab on the website.
+        /// </param>
         /// <param name="modelId">
         /// The ID of the model to use for transcription.
         /// </param>

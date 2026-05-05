@@ -25,5 +25,25 @@ namespace G
             string? xiApiKey = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Get All Batch Calls For A Workspace.<br/>
+        /// Get all batch calls for the current workspace.
+        /// </summary>
+        /// <param name="limit">
+        /// Default Value: 100
+        /// </param>
+        /// <param name="lastDoc"></param>
+        /// <param name="xiApiKey">
+        /// Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the 'Profile' tab on the website.
+        /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.WorkspaceBatchCallsResponse>> List9AsResponseAsync(
+            int? limit = default,
+            string? lastDoc = default,
+            string? xiApiKey = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

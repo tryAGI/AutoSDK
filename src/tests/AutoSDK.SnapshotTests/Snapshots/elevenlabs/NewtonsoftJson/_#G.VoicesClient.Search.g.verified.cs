@@ -105,6 +105,86 @@ namespace G
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var __response = await SearchAsResponseAsync(
+                nextPageToken: nextPageToken,
+                pageSize: pageSize,
+                search: search,
+                sort: sort,
+                sortDirection: sortDirection,
+                voiceType: voiceType,
+                category: category,
+                fineTuningState: fineTuningState,
+                collectionId: collectionId,
+                includeTotalCount: includeTotalCount,
+                voiceIds: voiceIds,
+                xiApiKey: xiApiKey,
+                requestOptions: requestOptions,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// Get Voices V2<br/>
+        /// Gets a list of all available voices for a user with search, filtering and pagination.
+        /// </summary>
+        /// <param name="nextPageToken">
+        /// The next page token to use for pagination. Returned from the previous request. Use this in combination with the has_more flag for reliable pagination.
+        /// </param>
+        /// <param name="pageSize">
+        /// How many voices to return at maximum. Can not exceed 100, defaults to 10. Page 0 may include more voices due to default voices being included.<br/>
+        /// Default Value: 10
+        /// </param>
+        /// <param name="search">
+        /// Search term to filter voices by. Searches in name, description, labels, category.
+        /// </param>
+        /// <param name="sort">
+        /// Which field to sort by, one of 'created_at_unix' or 'name'. 'created_at_unix' may not be available for older voices.
+        /// </param>
+        /// <param name="sortDirection">
+        /// Which direction to sort the voices in. 'asc' or 'desc'.
+        /// </param>
+        /// <param name="voiceType">
+        /// Type of the voice to filter by. One of 'personal', 'community', 'default', 'workspace', 'non-default', 'saved'. 'non-default' is equal to all but 'default'. 'saved' is equal to non-default, but includes default voices if they have been added to a collection.
+        /// </param>
+        /// <param name="category">
+        /// Category of the voice to filter by. One of 'premade', 'cloned', 'generated', 'professional'
+        /// </param>
+        /// <param name="fineTuningState">
+        /// State of the voice's fine tuning to filter by. Applicable only to professional voices clones. One of 'draft', 'not_verified', 'not_started', 'queued', 'fine_tuning', 'fine_tuned', 'failed', 'delayed'
+        /// </param>
+        /// <param name="collectionId">
+        /// Collection ID to filter voices by.
+        /// </param>
+        /// <param name="includeTotalCount">
+        /// Whether to include the total count of voices found in the response. NOTE: The total_count value is a live snapshot and may change between requests as users create, modify, or delete voices. For pagination, rely on the has_more flag instead. Only enable this when you actually need the total count (e.g., for display purposes), as it incurs a performance cost.<br/>
+        /// Default Value: true
+        /// </param>
+        /// <param name="voiceIds">
+        /// Voice IDs to lookup by. Maximum 100 voice IDs.
+        /// </param>
+        /// <param name="xiApiKey">
+        /// Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the 'Profile' tab on the website.
+        /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.GetVoicesV2ResponseModel>> SearchAsResponseAsync(
+            string? nextPageToken = default,
+            int? pageSize = default,
+            string? search = default,
+            string? sort = default,
+            string? sortDirection = default,
+            string? voiceType = default,
+            string? category = default,
+            string? fineTuningState = default,
+            string? collectionId = default,
+            bool? includeTotalCount = default,
+            global::System.Collections.Generic.IList<string>? voiceIds = default,
+            string? xiApiKey = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             PrepareArguments(
                 client: HttpClient);
             PrepareSearchArguments(
@@ -138,9 +218,10 @@ namespace G
 
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
+
                             var __pathBuilder = new global::G.PathBuilder(
                                 path: "/v2/voices",
-                                baseUri: HttpClient.BaseAddress); 
+                                baseUri: HttpClient.BaseAddress);
                             __pathBuilder
                                 .AddOptionalParameter("next_page_token", nextPageToken)
                                 .AddOptionalParameter("page_size", pageSize?.ToString())
@@ -152,7 +233,7 @@ namespace G
                                 .AddOptionalParameter("fine_tuning_state", fineTuningState)
                                 .AddOptionalParameter("collection_id", collectionId)
                                 .AddOptionalParameter("include_total_count", includeTotalCount?.ToString().ToLowerInvariant())
-                                .AddOptionalParameter("voice_ids", voiceIds?.ToString()) 
+                                .AddOptionalParameter("voice_ids", voiceIds?.ToString())
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::G.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -167,10 +248,10 @@ namespace G
                 __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-                if (xiApiKey != default)
-                {
-                    __httpRequest.Headers.TryAddWithoutValidation("xi-api-key", xiApiKey.ToString());
-                }
+            if (xiApiKey != default)
+            {
+                __httpRequest.Headers.TryAddWithoutValidation("xi-api-key", xiApiKey.ToString());
+            }
 
                 global::G.AutoSDKRequestOptionsSupport.ApplyHeaders(
                     request: __httpRequest,
@@ -224,6 +305,8 @@ namespace G
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                     try
                     {
@@ -234,6 +317,11 @@ namespace G
                     }
                     catch (global::System.Net.Http.HttpRequestException __exception)
                     {
+                        var __retryDelay = global::G.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: null,
+                            attempt: __attempt);
                         var __willRetry = __attempt < __maxAttempts && !__effectiveCancellationToken.IsCancellationRequested;
                         await global::G.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
@@ -251,6 +339,8 @@ namespace G
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: __willRetry,
+                                retryDelay: __willRetry ? __retryDelay : (global::System.TimeSpan?)null,
+                                retryReason: "exception",
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         if (!__willRetry)
                         {
@@ -260,8 +350,7 @@ namespace G
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::G.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -270,6 +359,11 @@ namespace G
                         __attempt < __maxAttempts &&
                         global::G.AutoSDKRequestOptionsSupport.ShouldRetryStatusCode(__response.StatusCode))
                     {
+                        var __retryDelay = global::G.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: __response,
+                            attempt: __attempt);
                         await global::G.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
@@ -286,14 +380,15 @@ namespace G
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: true,
+                                retryDelay: __retryDelay,
+                                retryReason: "status:" + ((int)__response.StatusCode).ToString(global::System.Globalization.CultureInfo.InvariantCulture),
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         __response.Dispose();
                         __response = null;
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::G.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -333,6 +428,8 @@ namespace G
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
                 else
@@ -353,6 +450,8 @@ namespace G
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
                             // Validation Error
@@ -415,9 +514,13 @@ namespace G
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    return
-                                        global::G.GetVoicesV2ResponseModel.FromJson(__content, JsonSerializerOptions) ??
+                                    var __value = global::G.GetVoicesV2ResponseModel.FromJson(__content, JsonSerializerOptions) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                                    return new global::G.AutoSDKHttpResponse<global::G.GetVoicesV2ResponseModel>(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri,
+                                        body: __value);
                                 }
                                 catch (global::System.Exception __ex)
                                 {
@@ -445,9 +548,13 @@ namespace G
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    return
-                                        await global::G.GetVoicesV2ResponseModel.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                                    var __value = await global::G.GetVoicesV2ResponseModel.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
+                                    return new global::G.AutoSDKHttpResponse<global::G.GetVoicesV2ResponseModel>(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri,
+                                        body: __value);
                                 }
                                 catch (global::System.Exception __ex)
                                 {

@@ -96,6 +96,7 @@ namespace {endPoint.Settings.Namespace}
             ref {contentType} content);")}
 
 {GenerateMethod(endPoint)}
+{(ShouldGenerateStreamResponseMethod(endPoint) ? GenerateMethod(endPoint, returnStreamResponse: true) : TrimmedLine)}
 {(ShouldGenerateResponseWrapperMethod(endPoint) ? GenerateMethod(endPoint, returnResponseWrapper: true) : TrimmedLine)}
 {GeneratePollingMethods(endPoint)}
 {GenerateExtensionMethod(endPoint)}
@@ -121,6 +122,7 @@ namespace {endPoint.Settings.Namespace}
     public partial interface I{endPoint.ClassName}
     {{
 {GenerateMethod(endPoint, isInterface: true)}
+{(ShouldGenerateStreamResponseMethod(endPoint) ? GenerateMethod(endPoint, isInterface: true, returnStreamResponse: true) : TrimmedLine)}
 {(ShouldGenerateResponseWrapperMethod(endPoint) ? GenerateMethod(endPoint, isInterface: true, returnResponseWrapper: true) : TrimmedLine)}
 {GeneratePollingMethods(endPoint, isInterface: true)}
 {GenerateExtensionMethod(endPoint, isInterface: true)}
@@ -269,9 +271,35 @@ namespace {endPoint.Settings.Namespace}
         return endPoint.GenerateResponseWrapper && !endPoint.EnumerableStream;
     }
 
+    public static bool ShouldGenerateResponseStreamSupport(EndPoint endPoint)
+    {
+        return endPoint.RawStream || ShouldGenerateStreamResponseMethod(endPoint);
+    }
+
+    private static bool ShouldGenerateStreamResponseMethod(EndPoint endPoint)
+    {
+        return !endPoint.RawStream &&
+               !endPoint.EnumerableStream &&
+               endPoint.ContentType == ContentType.ByteArray &&
+               endPoint.SuccessResponse.Type.IsBinary &&
+               endPoint.SuccessResponse.Type.CSharpTypeWithoutNullability == "byte[]";
+    }
+
+    private static bool SupportsRequestRetry(EndPoint endPoint)
+    {
+        return !endPoint.IsMultipartFormData &&
+               !endPoint.RequestMediaType.IsSequentialJsonMimeType() &&
+               !endPoint.Parameters.Any(IsRequestStreamParameter);
+    }
+
     private static string GetResponseWrapperMethodName(EndPoint endPoint)
     {
         return $"{endPoint.NotAsyncMethodName}AsResponseAsync";
+    }
+
+    private static string GetStreamResponseMethodName(EndPoint endPoint)
+    {
+        return $"{endPoint.NotAsyncMethodName}AsStreamAsync";
     }
 
     private static string GetPollingMethodName(
@@ -441,11 +469,12 @@ namespace {endPoint.Settings.Namespace}
     private static string GetSendExpression(
         EndPoint endPoint,
         string requestVariableName,
-        string cancellationTokenVariableName)
+        string cancellationTokenVariableName,
+        bool forceResponseHeadersRead = false)
     {
         var hasOAuth2Authorization = endPoint.Authorizations.Any(static x => x.Type is SecuritySchemeType.OAuth2);
         var rootClassName = endPoint.Settings.ClassName.Replace(".", string.Empty);
-        var completionOption = $"global::System.Net.Http.HttpCompletionOption.{(endPoint.Stream
+        var completionOption = $"global::System.Net.Http.HttpCompletionOption.{(forceResponseHeadersRead || endPoint.Stream
             ? nameof(HttpCompletionOption.ResponseHeadersRead)
             : nameof(HttpCompletionOption.ResponseContentRead))}";
 
@@ -473,7 +502,9 @@ namespace {endPoint.Settings.Namespace}
         string attemptExpression,
         string maxAttemptsExpression,
         string willRetryExpression,
-        string cancellationTokenVariableName)
+        string cancellationTokenVariableName,
+        string retryDelayExpression = "null",
+        string retryReasonExpression = "global::System.String.Empty")
     {
         return $@"await global::{endPoint.Settings.Namespace}.AutoSDKRequestOptionsSupport.{helperMethodName}Async(
                             clientOptions: Options,
@@ -491,6 +522,8 @@ namespace {endPoint.Settings.Namespace}
                                 attempt: {attemptExpression},
                                 maxAttempts: {maxAttemptsExpression},
                                 willRetry: {willRetryExpression},
+                                retryDelay: {retryDelayExpression},
+                                retryReason: {retryReasonExpression},
                                 cancellationToken: {cancellationTokenVariableName})).ConfigureAwait(false);";
     }
 
@@ -534,12 +567,25 @@ namespace {endPoint.Settings.Namespace}
     }
 
     public static string GenerateMethod(
-        EndPoint endPoint, bool isInterface = false, bool returnResponseWrapper = false)
+        EndPoint endPoint,
+        bool isInterface = false,
+        bool returnResponseWrapper = false,
+        bool returnStreamResponse = false)
     {
-        var sendExpression = GetSendExpression(endPoint, "__httpRequest", "__effectiveCancellationToken");
+        if (returnResponseWrapper && returnStreamResponse)
+        {
+            throw new ArgumentException("A method cannot return both a response wrapper and a stream response.");
+        }
+
+        var sendExpression = GetSendExpression(
+            endPoint,
+            "__httpRequest",
+            "__effectiveCancellationToken",
+            forceResponseHeadersRead: returnStreamResponse);
+        var methodReturnsResponseStream = endPoint.RawStream || returnStreamResponse;
         var taskType = returnResponseWrapper
             ? $"global::System.Threading.Tasks.Task<{GetResponseWrapperType(endPoint)}>"
-            : endPoint.RawStream
+            : methodReturnsResponseStream
             ? "global::System.Threading.Tasks.Task<global::System.IO.Stream>"
             : endPoint.EnumerableStream
             ? string.IsNullOrWhiteSpace(endPoint.SuccessResponse.Type.CSharpType)
@@ -548,7 +594,9 @@ namespace {endPoint.Settings.Namespace}
             : string.IsNullOrWhiteSpace(endPoint.SuccessResponse.Type.CSharpType)
                 ? "global::System.Threading.Tasks.Task"
                 : $"global::System.Threading.Tasks.Task<{endPoint.SuccessResponse.Type.CSharpTypeWithoutNullability}>";
-        var methodName = returnResponseWrapper
+        var methodName = returnStreamResponse
+            ? GetStreamResponseMethodName(endPoint)
+            : returnResponseWrapper
             ? GetResponseWrapperMethodName(endPoint)
             : endPoint.MethodName;
         var cancellationTokenAttribute = endPoint.EnumerableStream && !isInterface
@@ -586,7 +634,9 @@ namespace {endPoint.Settings.Namespace}
             attemptExpression: "__attempt",
             maxAttemptsExpression: "__maxAttempts",
             willRetryExpression: "true",
-            cancellationTokenVariableName: "__effectiveCancellationToken");
+            cancellationTokenVariableName: "__effectiveCancellationToken",
+            retryDelayExpression: "__retryDelay",
+            retryReasonExpression: "\"status:\" + ((int)__response.StatusCode).ToString(global::System.Globalization.CultureInfo.InvariantCulture)");
         var afterErrorStatusHook = GenerateHookInvocation(
             endPoint,
             endPoint.MethodName,
@@ -608,10 +658,12 @@ namespace {endPoint.Settings.Namespace}
             attemptExpression: "__attempt",
             maxAttemptsExpression: "__maxAttempts",
             willRetryExpression: "__willRetry",
-            cancellationTokenVariableName: "__effectiveCancellationToken");
+            cancellationTokenVariableName: "__effectiveCancellationToken",
+            retryDelayExpression: "__willRetry ? __retryDelay : (global::System.TimeSpan?)null",
+            retryReasonExpression: "\"exception\"");
         var body = isInterface
             ? ";"
-            : !returnResponseWrapper && ShouldGenerateResponseWrapperMethod(endPoint)
+            : !returnStreamResponse && !returnResponseWrapper && ShouldGenerateResponseWrapperMethod(endPoint)
             ? string.IsNullOrWhiteSpace(endPoint.SuccessResponse.Type.CSharpType)
             ? @$"
         {{
@@ -671,7 +723,7 @@ namespace {endPoint.Settings.Namespace}
             var __maxAttempts = global::{endPoint.Settings.Namespace}.AutoSDKRequestOptionsSupport.GetMaxAttempts(
                 clientOptions: Options,
                 requestOptions: requestOptions,
-                supportsRetry: true);
+                supportsRetry: {(SupportsRequestRetry(endPoint) ? "true" : "false")});
 
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {{
@@ -773,6 +825,11 @@ namespace {endPoint.Settings.Namespace}
                     }}
                     catch (global::System.Net.Http.HttpRequestException __exception)
                     {{
+                        var __retryDelay = global::{endPoint.Settings.Namespace}.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: null,
+                            attempt: __attempt);
                         var __willRetry = __attempt < __maxAttempts && !__effectiveCancellationToken.IsCancellationRequested;
                         {afterExceptionHook}
                         if (!__willRetry)
@@ -783,8 +840,7 @@ namespace {endPoint.Settings.Namespace}
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::{endPoint.Settings.Namespace}.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }}
@@ -793,14 +849,18 @@ namespace {endPoint.Settings.Namespace}
                         __attempt < __maxAttempts &&
                         global::{endPoint.Settings.Namespace}.AutoSDKRequestOptionsSupport.ShouldRetryStatusCode(__response.StatusCode))
                     {{
+                        var __retryDelay = global::{endPoint.Settings.Namespace}.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: __response,
+                            attempt: __attempt);
                         {afterRetryableStatusHook}
                         __response.Dispose();
                         __response = null;
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::{endPoint.Settings.Namespace}.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }}
@@ -812,7 +872,7 @@ namespace {endPoint.Settings.Namespace}
                 {{
                     throw new global::System.InvalidOperationException(""No response received."");
                 }}
-{(endPoint.RawStream ? @"
+{(methodReturnsResponseStream ? @"
                 try
                 {" : @"
                 using (__response)
@@ -832,8 +892,8 @@ namespace {endPoint.Settings.Namespace}
                 {{
                     {afterErrorStatusHook}
                 }}
-{GenerateResponse(endPoint, wrapSuccessResponse: returnResponseWrapper, cancellationTokenVariableName: "__effectiveCancellationToken", readResponseAsStringExpression: "__effectiveReadResponseAsString").AddIndent(4)}
-{(endPoint.RawStream ? @"
+{GenerateResponse(endPoint, wrapSuccessResponse: returnResponseWrapper, returnStreamResponse: returnStreamResponse, cancellationTokenVariableName: "__effectiveCancellationToken", readResponseAsStringExpression: "__effectiveReadResponseAsString").AddIndent(4)}
+{(methodReturnsResponseStream ? @"
                 }
                 catch
                 {
@@ -1442,7 +1502,7 @@ namespace {endPoint.Settings.Namespace}
             : endPoint.HasServerOverride && !string.IsNullOrWhiteSpace(endPoint.BaseUrl)
                 ? $@"HttpClient.BaseAddress ?? new global::System.Uri(""{escapedBaseUrl}"", global::System.UriKind.RelativeOrAbsolute)"
                 : "HttpClient.BaseAddress";
-        var code = @$" 
+        var code = @$"
             var __pathBuilder = new global::{endPoint.GlobalSettings.Namespace}.PathBuilder(
                 path: {endPoint.Path},
                 baseUri: {baseUriExpression});";
@@ -1463,7 +1523,7 @@ namespace {endPoint.Settings.Namespace}
 
         if (queryParameters.Length > 0)
         {
-            code += @" 
+            code += @"
             __pathBuilder";
         }
 
@@ -1491,13 +1551,13 @@ namespace {endPoint.Settings.Namespace}
 
         if (queryParameters.Length > 0)
         {
-            code += @" 
+            code += @"
                 ;";
         }
 
         code += "\n" + GenerateQueryStringParameterHandling(endPoint);
 
-        code += @" 
+        code += @"
             var __path = __pathBuilder.ToString();";
 
         return code.RemoveBlankLinesWhereOnlyWhitespaces();
@@ -1521,6 +1581,7 @@ namespace {endPoint.Settings.Namespace}
         return $@"return new global::{endPoint.Settings.Namespace}.AutoSDKHttpResponse<{GetSuccessResponseBodyType(endPoint)}>(
                         statusCode: __response.StatusCode,
                         headers: {GetSuccessResponseHeadersExpression(endPoint)},
+                        requestUri: __response.RequestMessage?.RequestUri,
                         body: {bodyExpression});";
     }
 
@@ -1535,7 +1596,8 @@ namespace {endPoint.Settings.Namespace}
 
         return $@"return new global::{endPoint.Settings.Namespace}.AutoSDKHttpResponse(
                         statusCode: __response.StatusCode,
-                        headers: {GetSuccessResponseHeadersExpression(endPoint)});";
+                        headers: {GetSuccessResponseHeadersExpression(endPoint)},
+                        requestUri: __response.RequestMessage?.RequestUri);";
     }
 
     private static bool IsJsonMediaType(string mediaType)
@@ -1681,6 +1743,7 @@ namespace {endPoint.Settings.Namespace}
     public static string GenerateResponse(
         EndPoint endPoint,
         bool wrapSuccessResponse = false,
+        bool returnStreamResponse = false,
         string cancellationTokenVariableName = "cancellationToken",
         string readResponseAsStringExpression = "ReadResponseAsString")
     {
@@ -1950,7 +2013,7 @@ namespace {endPoint.Settings.Namespace}
                 }};
             }}").Inject() : TrimmedLine;
 
-        if (endPoint.RawStream)
+        if (endPoint.RawStream || returnStreamResponse)
         {
             return @$"{errors}
 
@@ -1968,6 +2031,7 @@ namespace {endPoint.Settings.Namespace}
     ? $@"                return new global::{endPoint.Settings.Namespace}.AutoSDKHttpResponse<global::System.IO.Stream>(
                     statusCode: __response.StatusCode,
                     headers: {GetSuccessResponseHeadersExpression(endPoint)},
+                    requestUri: __response.RequestMessage?.RequestUri,
                     body: new global::{endPoint.GlobalSettings.Namespace}.ResponseStream(__response, __content));"
     : $"                return new global::{endPoint.GlobalSettings.Namespace}.ResponseStream(__response, __content);")}
             }}
@@ -2109,7 +2173,7 @@ namespace {endPoint.Settings.Namespace}
         var jsonSerializer = endPoint.Settings.JsonSerializerType.GetSerializer();
         if (endPoint.IsMultipartFormData)
         {
-            return $@" 
+            return $@"
             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
 {endPoint.Parameters.Where(x => !x.IsMultiPartFormDataFilename).Select(x =>
 {
@@ -2133,7 +2197,7 @@ namespace {endPoint.Settings.Namespace}
             {{
                 __content{x.Name}.Headers.ContentDisposition.FileNameStar = null;
             }}
- " : isBinaryArray ? @$"
+" : isBinaryArray ? @$"
             for (var __i{x.Name} = 0; __i{x.Name} < request.{x.Name}.Count; __i{x.Name}++)
             {{
                 var __content{x.Name} = new global::System.Net.Http.ByteArrayContent(request.{x.Name}[__i{x.Name}]);
@@ -2147,25 +2211,25 @@ namespace {endPoint.Settings.Namespace}
                     __content{x.Name}.Headers.ContentDisposition.FileNameStar = null;
                 }}
             }}
- " : @$"
+" : @$"
             __httpRequestContent.Add(
                 content: new global::System.Net.Http.StringContent({SerializePropertyAsString(x)}),
                 name: ""\""{x.Id}\"""");
- ";
+";
     if (x.IsRequired)
     {
         return add;
     }
 
-    return $@" 
+    return $@"
             if ({(x.Location != null ? x.ParameterName : "request." + x.Name)} != {x.ParameterDefaultValue})
             {{
 {add.AddIndent(1)}
             }}";
 }).Inject()}
-            
+
             __httpRequest.Content = __httpRequestContent;
- ".RemoveBlankLinesWhereOnlyWhitespaces();
+".RemoveBlankLinesWhereOnlyWhitespaces();
         }
 
         if (endPoint.RequestType.IsBinary || endPoint.RequestMediaType == "application/octet-stream")

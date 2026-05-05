@@ -43,6 +43,31 @@ namespace G
         /// <param name="xiApiKey">
         /// Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the 'Profile' tab on the website.
         /// </param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.AddVoiceResponseModel>> ShareAsResponseAsync(
+            string publicUserId,
+            string voiceId,
+
+            global::G.BodyAddSharedVoiceV1VoicesAddPublicUserIdVoiceIdPost request,
+            string? xiApiKey = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Add Shared Voice<br/>
+        /// Add a shared voice to your collection of voices.
+        /// </summary>
+        /// <param name="publicUserId">
+        /// Public user ID used to publicly identify ElevenLabs users.
+        /// </param>
+        /// <param name="voiceId">
+        /// Voice ID to be used, you can use https://api.elevenlabs.io/v1/voices to list all the available voices.
+        /// </param>
+        /// <param name="xiApiKey">
+        /// Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the 'Profile' tab on the website.
+        /// </param>
         /// <param name="newName">
         /// The name that identifies this voice. This will be displayed in the dropdown of the website.
         /// </param>

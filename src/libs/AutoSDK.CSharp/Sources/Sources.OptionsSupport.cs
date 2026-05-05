@@ -113,9 +113,45 @@ namespace {settings.Namespace}
         public int MaxAttempts {{ get; set; }} = 1;
 
         /// <summary>
-        /// Optional fixed delay between retry attempts.
+        /// Optional fixed delay between retry attempts. When set, this takes precedence over exponential backoff.
         /// </summary>
         public global::System.TimeSpan? Delay {{ get; set; }}
+
+        /// <summary>
+        /// Initial exponential backoff delay used when <see cref=""Delay""/> is not set.
+        /// </summary>
+        public global::System.TimeSpan InitialDelay {{ get; set; }} = global::System.TimeSpan.FromSeconds(1);
+
+        /// <summary>
+        /// Maximum retry delay after applying retry headers, backoff, and jitter.
+        /// </summary>
+        public global::System.TimeSpan MaxDelay {{ get; set; }} = global::System.TimeSpan.FromSeconds(30);
+
+        /// <summary>
+        /// Multiplier applied to exponential backoff after each failed attempt.
+        /// Values below 1 are normalized to 1.
+        /// </summary>
+        public double BackoffMultiplier {{ get; set; }} = 2D;
+
+        /// <summary>
+        /// Randomizes computed backoff by plus or minus this ratio. Values are clamped to 0..1.
+        /// </summary>
+        public double JitterRatio {{ get; set; }} = 0.2D;
+
+        /// <summary>
+        /// Whether Retry-After response headers should control retry delay when present.
+        /// </summary>
+        public bool UseRetryAfterHeader {{ get; set; }} = true;
+
+        /// <summary>
+        /// Whether a rate-limit reset response header should control retry delay when present.
+        /// </summary>
+        public bool UseRateLimitResetHeader {{ get; set; }}
+
+        /// <summary>
+        /// Optional provider-specific rate-limit reset header name. Values may be Unix seconds or an HTTP date.
+        /// </summary>
+        public string? RateLimitResetHeaderName {{ get; set; }} = ""X-RateLimit-Reset"";
     }}
 
 {(includePollingSupport ? GeneratePollingOptionsSurface(settings) : TrimmedLine)}
@@ -245,6 +281,16 @@ namespace {settings.Namespace}
         public bool WillRetry {{ get; set; }}
 
         /// <summary>
+        /// The computed retry delay when <see cref=""WillRetry""/> is true.
+        /// </summary>
+        public global::System.TimeSpan? RetryDelay {{ get; set; }}
+
+        /// <summary>
+        /// A short retry reason such as exception or status:429.
+        /// </summary>
+        public string RetryReason {{ get; set; }} = string.Empty;
+
+        /// <summary>
         /// The effective cancellation token for the current request attempt.
         /// </summary>
         public global::System.Threading.CancellationToken CancellationToken {{ get; set; }}
@@ -268,6 +314,8 @@ namespace {settings.Namespace}
             int attempt,
             int maxAttempts,
             bool willRetry,
+            global::System.TimeSpan? retryDelay,
+            string retryReason,
             global::System.Threading.CancellationToken cancellationToken)
         {{
             return new global::{settings.Namespace}.AutoSDKHookContext
@@ -285,6 +333,8 @@ namespace {settings.Namespace}
                 Attempt = attempt,
                 MaxAttempts = maxAttempts,
                 WillRetry = willRetry,
+                RetryDelay = retryDelay,
+                RetryReason = retryReason ?? string.Empty,
                 CancellationToken = cancellationToken,
             }};
         }}
@@ -352,19 +402,188 @@ namespace {settings.Namespace}
             return maxAttempts < 1 ? 1 : maxAttempts;
         }}
 
-        internal static async global::System.Threading.Tasks.Task DelayBeforeRetryAsync(
+        internal static global::System.TimeSpan GetRetryDelay(
             global::{settings.Namespace}.AutoSDKClientOptions clientOptions,
             global::{settings.Namespace}.AutoSDKRequestOptions? requestOptions,
+            global::System.Net.Http.HttpResponseMessage? response,
+            int attempt)
+        {{
+            var retryOptions = requestOptions?.Retry ?? clientOptions.Retry ?? new global::{settings.Namespace}.AutoSDKRetryOptions();
+
+            if (retryOptions.UseRetryAfterHeader &&
+                TryGetRetryAfterDelay(response, out var retryAfterDelay))
+            {{
+                return ClampRetryDelay(retryAfterDelay, retryOptions);
+            }}
+
+            if (retryOptions.UseRateLimitResetHeader &&
+                TryGetRateLimitResetDelay(response, retryOptions.RateLimitResetHeaderName, out var rateLimitResetDelay))
+            {{
+                return ClampRetryDelay(rateLimitResetDelay, retryOptions);
+            }}
+
+            if (retryOptions.Delay.HasValue)
+            {{
+                return ClampRetryDelay(retryOptions.Delay.Value, retryOptions);
+            }}
+
+            var initialDelay = retryOptions.InitialDelay;
+            if (initialDelay <= global::System.TimeSpan.Zero)
+            {{
+                return global::System.TimeSpan.Zero;
+            }}
+
+            var multiplier = retryOptions.BackoffMultiplier < 1D ? 1D : retryOptions.BackoffMultiplier;
+            var exponent = attempt <= 1 ? 0 : attempt - 1;
+            var delayMilliseconds = initialDelay.TotalMilliseconds * global::System.Math.Pow(multiplier, exponent);
+            if (double.IsNaN(delayMilliseconds) || double.IsInfinity(delayMilliseconds) || delayMilliseconds < 0D)
+            {{
+                delayMilliseconds = 0D;
+            }}
+
+            var delay = global::System.TimeSpan.FromMilliseconds(delayMilliseconds);
+            delay = ApplyJitter(delay, retryOptions.JitterRatio);
+            return ClampRetryDelay(delay, retryOptions);
+        }}
+
+        internal static async global::System.Threading.Tasks.Task DelayBeforeRetryAsync(
+            global::System.TimeSpan retryDelay,
             global::System.Threading.CancellationToken cancellationToken)
         {{
-            var delay = requestOptions?.Retry?.Delay ??
-                        clientOptions.Retry?.Delay;
-            if (!delay.HasValue || delay.Value <= global::System.TimeSpan.Zero)
+            if (retryDelay <= global::System.TimeSpan.Zero)
             {{
                 return;
             }}
 
-            await global::System.Threading.Tasks.Task.Delay(delay.Value, cancellationToken).ConfigureAwait(false);
+            await global::System.Threading.Tasks.Task.Delay(retryDelay, cancellationToken).ConfigureAwait(false);
+        }}
+
+        private static bool TryGetRetryAfterDelay(
+            global::System.Net.Http.HttpResponseMessage? response,
+            out global::System.TimeSpan delay)
+        {{
+            delay = global::System.TimeSpan.Zero;
+            var retryAfter = response?.Headers.RetryAfter;
+            if (retryAfter == null)
+            {{
+                return false;
+            }}
+
+            if (retryAfter.Delta.HasValue)
+            {{
+                delay = retryAfter.Delta.Value;
+                return delay > global::System.TimeSpan.Zero;
+            }}
+
+            if (retryAfter.Date.HasValue)
+            {{
+                delay = retryAfter.Date.Value - global::System.DateTimeOffset.UtcNow;
+                return delay > global::System.TimeSpan.Zero;
+            }}
+
+            return false;
+        }}
+
+        private static bool TryGetRateLimitResetDelay(
+            global::System.Net.Http.HttpResponseMessage? response,
+            string? headerName,
+            out global::System.TimeSpan delay)
+        {{
+            delay = global::System.TimeSpan.Zero;
+            if (response == null || string.IsNullOrWhiteSpace(headerName))
+            {{
+                return false;
+            }}
+
+            if (!response.Headers.TryGetValues(headerName, out var values) &&
+                (response.Content?.Headers == null || !response.Content.Headers.TryGetValues(headerName, out values)))
+            {{
+                return false;
+            }}
+
+            var value = global::System.Linq.Enumerable.FirstOrDefault(values);
+            if (string.IsNullOrWhiteSpace(value))
+            {{
+                return false;
+            }}
+
+            value = value.Trim();
+            if (long.TryParse(
+                value,
+                global::System.Globalization.NumberStyles.Integer,
+                global::System.Globalization.CultureInfo.InvariantCulture,
+                out var unixSeconds))
+            {{
+                delay = global::System.DateTimeOffset.FromUnixTimeSeconds(unixSeconds) - global::System.DateTimeOffset.UtcNow;
+                return delay > global::System.TimeSpan.Zero;
+            }}
+
+            if (global::System.DateTimeOffset.TryParse(
+                value,
+                global::System.Globalization.CultureInfo.InvariantCulture,
+                global::System.Globalization.DateTimeStyles.AssumeUniversal | global::System.Globalization.DateTimeStyles.AdjustToUniversal,
+                out var resetAt))
+            {{
+                delay = resetAt - global::System.DateTimeOffset.UtcNow;
+                return delay > global::System.TimeSpan.Zero;
+            }}
+
+            return false;
+        }}
+
+        private static global::System.TimeSpan ApplyJitter(
+            global::System.TimeSpan delay,
+            double jitterRatio)
+        {{
+            if (delay <= global::System.TimeSpan.Zero || jitterRatio <= 0D)
+            {{
+                return delay;
+            }}
+
+            if (jitterRatio > 1D)
+            {{
+                jitterRatio = 1D;
+            }}
+
+            var sample = NextJitterSample();
+            var multiplier = 1D - jitterRatio + (sample * jitterRatio * 2D);
+            var milliseconds = delay.TotalMilliseconds * multiplier;
+            if (double.IsNaN(milliseconds) || double.IsInfinity(milliseconds) || milliseconds < 0D)
+            {{
+                milliseconds = 0D;
+            }}
+
+            return global::System.TimeSpan.FromMilliseconds(milliseconds);
+        }}
+
+        private static double NextJitterSample()
+        {{
+            var bytes = new byte[8];
+            using (var randomNumberGenerator = global::System.Security.Cryptography.RandomNumberGenerator.Create())
+            {{
+                randomNumberGenerator.GetBytes(bytes);
+            }}
+
+            var value = global::System.BitConverter.ToUInt64(bytes, 0);
+            return value / (double)ulong.MaxValue;
+        }}
+
+        private static global::System.TimeSpan ClampRetryDelay(
+            global::System.TimeSpan delay,
+            global::{settings.Namespace}.AutoSDKRetryOptions retryOptions)
+        {{
+            if (delay <= global::System.TimeSpan.Zero)
+            {{
+                return global::System.TimeSpan.Zero;
+            }}
+
+            var maxDelay = retryOptions.MaxDelay;
+            if (maxDelay > global::System.TimeSpan.Zero && delay > maxDelay)
+            {{
+                return maxDelay;
+            }}
+
+            return delay;
         }}
 
         internal static bool ShouldRetryStatusCode(

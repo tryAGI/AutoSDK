@@ -100,11 +100,89 @@ public partial class Tests
         var receiveSource = Sources.WebSocketReceiveMethod(client).Text;
 
         clientSource.Should().Contain("partial void OnReceiveException(");
+        clientSource.Should().Contain("public AutoSDKWebSocketConnectionStatus Status { get; private set; }");
+        clientSource.Should().Contain("public AutoSDKWebSocketReconnectOptions ReconnectOptions { get; }");
+        clientSource.Should().Contain("public event global::System.EventHandler? Connected;");
+        clientSource.Should().Contain("public event global::System.EventHandler<AutoSDKWebSocketClosedEventArgs>? Closed;");
+        clientSource.Should().Contain("public event global::System.EventHandler<AutoSDKWebSocketExceptionEventArgs>? ExceptionOccurred;");
+        clientSource.Should().Contain("public event global::System.EventHandler<AutoSDKWebSocketReconnectEventArgs>? Reconnecting;");
+        clientSource.Should().Contain("public event global::System.EventHandler<AutoSDKWebSocketUnknownMessageEventArgs>? UnknownMessage;");
+        clientSource.Should().Contain("public event global::System.EventHandler<AutoSDKWebSocketMessageEventArgs<ServerEvent>>? MessageReceived;");
+        clientSource.Should().Contain("private async global::System.Threading.Tasks.Task<bool> TryReconnectAsync(");
         receiveSource.Should().Contain("using var __messageBuffer = new global::System.IO.MemoryStream();");
         receiveSource.Should().Contain("if (result.EndOfMessage)");
         receiveSource.Should().Contain("__messageBuffer.Write(buffer, 0, result.Count);");
         receiveSource.Should().Contain("OnReceiveException(exception, ref rethrow);");
         receiveSource.Should().Contain("if (!__receivedTextMessage)");
+        receiveSource.Should().Contain("RaiseException(exception);");
+        receiveSource.Should().Contain("if (await TryReconnectAsync(exception, cancellationToken).ConfigureAwait(false))");
+        receiveSource.Should().Contain("RaiseClosed(result.CloseStatus, result.CloseStatusDescription);");
+        receiveSource.Should().Contain("DispatchUnknownMessage(json);");
+        receiveSource.Should().Contain("DispatchReceivedMessage(@event, json);");
+    }
+
+    [TestMethod]
+    public void WebSocketReceiveMethod_WithUnionReceiveTypes_EmitsTypedMessageEvents()
+    {
+        var settings = Settings.Default with
+        {
+            Namespace = "G",
+            JsonSerializerContext = "G.SourceGenerationContext",
+        };
+        var receiveEventType = (TypeData.Default with
+        {
+            CSharpTypeRaw = "ServerEvent",
+            Namespace = "G",
+            GeneratedNamespace = "G",
+            IsValueType = true,
+            Properties = ImmutableArray.Create("SessionStarted").AsEquatableArray(),
+        }).WithCSharpComputedValues();
+        var sessionStartedType = (TypeData.Default with
+        {
+            CSharpTypeRaw = "SessionStartedPayload",
+            Namespace = "G",
+            GeneratedNamespace = "G",
+        }).WithCSharpComputedValues();
+        var receiveOperation = new WebSocketEndPoint(
+            Id: "SessionStarted",
+            ClassName: "RealtimeClient",
+            MethodName: "ReceiveSessionStartedAsync",
+            FileNameWithoutExtension: "G.RealtimeClient.SessionStarted",
+            ChannelAddress: "/realtime",
+            Direction: WebSocketDirection.Receive,
+            MessageType: sessionStartedType,
+            MessageName: "SessionStarted",
+            Summary: string.Empty,
+            Settings: settings,
+            GlobalSettings: settings);
+        var client = new WebSocketClient(
+            Id: "Realtime",
+            ClassName: "RealtimeClient",
+            FileNameWithoutExtension: "G.RealtimeClient",
+            InterfaceFileNameWithoutExtension: "G.IRealtimeClient",
+            BaseUrl: "wss://example.com/realtime",
+            Protocol: string.Empty,
+            SendOperations: ImmutableArray<WebSocketEndPoint>.Empty.AsEquatableArray(),
+            ReceiveOperations: ImmutableArray.Create(receiveOperation).AsEquatableArray(),
+            Authorizations: ImmutableArray<Authorization>.Empty.AsEquatableArray(),
+            QueryParameters: ImmutableArray<MethodParameter>.Empty.AsEquatableArray(),
+            SerializedQueryParameters: ImmutableArray<MethodParameter>.Empty.AsEquatableArray(),
+            Summary: string.Empty,
+            Settings: settings,
+            GlobalSettings: settings,
+            Converters: ImmutableArray<string>.Empty)
+        {
+            BaseReceiveEventType = receiveEventType,
+            IsReceiveEventValueType = true,
+        };
+
+        var clientSource = Sources.WebSocketClient(client).Text;
+        var receiveSource = Sources.WebSocketReceiveMethod(client).Text;
+
+        clientSource.Should().Contain("public event global::System.EventHandler<AutoSDKWebSocketMessageEventArgs<SessionStartedPayload>>? SessionStartedReceived;");
+        receiveSource.Should().Contain("if (@event.SessionStarted is { } __SessionStartedReceived)");
+        receiveSource.Should().Contain("SessionStartedReceived?.Invoke(");
+        receiveSource.Should().Contain("new AutoSDKWebSocketMessageEventArgs<SessionStartedPayload>");
     }
 
     [TestMethod]

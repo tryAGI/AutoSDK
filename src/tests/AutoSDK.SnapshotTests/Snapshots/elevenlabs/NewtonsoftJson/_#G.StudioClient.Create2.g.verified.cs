@@ -42,6 +42,34 @@ namespace G
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var __response = await Create2AsResponseAsync(
+
+                request: request,
+                xiApiKey: xiApiKey,
+                requestOptions: requestOptions,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// Create Studio Project<br/>
+        /// Creates a new Studio project, it can be either initialized as blank, from a document or from a URL.
+        /// </summary>
+        /// <param name="xiApiKey">
+        /// Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the 'Profile' tab on the website.
+        /// </param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.AddProjectResponseModel>> Create2AsResponseAsync(
+
+            global::G.BodyCreateStudioProjectV1StudioProjectsPost request,
+            string? xiApiKey = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 
             PrepareArguments(
@@ -63,10 +91,11 @@ namespace G
             var __maxAttempts = global::G.AutoSDKRequestOptionsSupport.GetMaxAttempts(
                 clientOptions: Options,
                 requestOptions: requestOptions,
-                supportsRetry: true);
+                supportsRetry: false);
 
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
+
                             var __pathBuilder = new global::G.PathBuilder(
                                 path: "/v1/studio/projects",
                                 baseUri: HttpClient.BaseAddress);
@@ -83,54 +112,89 @@ namespace G
                 __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-                if (xiApiKey != default)
-                {
-                    __httpRequest.Headers.TryAddWithoutValidation("xi-api-key", xiApiKey.ToString());
-                }
+            if (xiApiKey != default)
+            {
+                __httpRequest.Headers.TryAddWithoutValidation("xi-api-key", xiApiKey.ToString());
+            }
+
 
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
                             if (xiApiKey != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{xiApiKey}"),
+                                    content: new global::System.Net.Http.StringContent(xiApiKey ?? string.Empty),
                                     name: "\"xi-api-key\"");
+
                             }
                             __httpRequestContent.Add(
-                                content: new global::System.Net.Http.StringContent($"{request.Name}"),
+                                content: new global::System.Net.Http.StringContent(request.Name ?? string.Empty),
                                 name: "\"name\"");
+
                             if (request.DefaultTitleVoiceId != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.DefaultTitleVoiceId}"),
+                                    content: new global::System.Net.Http.StringContent(request.DefaultTitleVoiceId ?? string.Empty),
                                     name: "\"default_title_voice_id\"");
-                            } 
+
+                            }
                             if (request.DefaultParagraphVoiceId != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.DefaultParagraphVoiceId}"),
+                                    content: new global::System.Net.Http.StringContent(request.DefaultParagraphVoiceId ?? string.Empty),
                                     name: "\"default_paragraph_voice_id\"");
-                            } 
+
+                            }
                             if (request.DefaultModelId != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.DefaultModelId}"),
+                                    content: new global::System.Net.Http.StringContent(request.DefaultModelId ?? string.Empty),
                                     name: "\"default_model_id\"");
-                            } 
+
+                            }
                             if (request.FromUrl != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.FromUrl}"),
+                                    content: new global::System.Net.Http.StringContent(request.FromUrl ?? string.Empty),
                                     name: "\"from_url\"");
-                            } 
+
+                            }
                             if (request.FromDocument != default)
                             {
 
                                 var __contentFromDocument = new global::System.Net.Http.ByteArrayContent(request.FromDocument ?? global::System.Array.Empty<byte>());
+                                __contentFromDocument.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue(
+                                    request.FromDocumentname is null
+                                        ? "application/octet-stream"
+                                        : (global::System.IO.Path.GetExtension(request.FromDocumentname) ?? string.Empty).ToLowerInvariant() switch
+                                        {
+                                            ".aac" => "audio/aac",
+                                            ".flac" => "audio/flac",
+                                            ".gif" => "image/gif",
+                                            ".jpeg" => "image/jpeg",
+                                            ".jpg" => "image/jpeg",
+                                            ".json" => "application/json",
+                                            ".m4a" => "audio/mp4",
+                                            ".mp3" => "audio/mpeg",
+                                            ".mp4" => "video/mp4",
+                                            ".mpeg" => "audio/mpeg",
+                                            ".mpga" => "audio/mpeg",
+                                            ".oga" => "audio/ogg",
+                                            ".ogg" => "audio/ogg",
+                                            ".opus" => "audio/ogg",
+                                            ".pdf" => "application/pdf",
+                                            ".png" => "image/png",
+                                            ".txt" => "text/plain",
+                                            ".wav" => "audio/wav",
+                                            ".weba" => "audio/webm",
+                                            ".webm" => "video/webm",
+                                            ".webp" => "image/webp",
+                                            _ => "application/octet-stream",
+                                        });
                                 __httpRequestContent.Add(
                                     content: __contentFromDocument,
                                     name: "\"from_document\"",
@@ -139,169 +203,195 @@ namespace G
                                 {
                                     __contentFromDocument.Headers.ContentDisposition.FileNameStar = null;
                                 }
-                            } 
+
+                            }
                             if (request.FromContentJson != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.FromContentJson}"),
+                                    content: new global::System.Net.Http.StringContent(request.FromContentJson ?? string.Empty),
                                     name: "\"from_content_json\"");
-                            } 
+
+                            }
                             if (request.QualityPreset != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.QualityPreset?.ToValueString()}"),
+                                    content: new global::System.Net.Http.StringContent((request.QualityPreset).HasValue ? (request.QualityPreset).GetValueOrDefault().ToValueString() : string.Empty),
                                     name: "\"quality_preset\"");
-                            } 
+
+                            }
                             if (request.Title != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.Title}"),
+                                    content: new global::System.Net.Http.StringContent(request.Title ?? string.Empty),
                                     name: "\"title\"");
-                            } 
+
+                            }
                             if (request.Author != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.Author}"),
+                                    content: new global::System.Net.Http.StringContent(request.Author ?? string.Empty),
                                     name: "\"author\"");
-                            } 
+
+                            }
                             if (request.Description != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.Description}"),
+                                    content: new global::System.Net.Http.StringContent(request.Description ?? string.Empty),
                                     name: "\"description\"");
-                            } 
+
+                            }
                             if (request.Genres != default)
                             {
 
                                 __httpRequestContent.Add(
                                     content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.Genres, x => x))}]"),
                                     name: "\"genres\"");
-                            } 
+
+                            }
                             if (request.TargetAudience != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.TargetAudience}"),
+                                    content: new global::System.Net.Http.StringContent(request.TargetAudience.ToString() ?? string.Empty),
                                     name: "\"target_audience\"");
-                            } 
+
+                            }
                             if (request.Language != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.Language}"),
+                                    content: new global::System.Net.Http.StringContent(request.Language ?? string.Empty),
                                     name: "\"language\"");
-                            } 
+
+                            }
                             if (request.ContentType != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.ContentType}"),
+                                    content: new global::System.Net.Http.StringContent(request.ContentType ?? string.Empty),
                                     name: "\"content_type\"");
-                            } 
+
+                            }
                             if (request.OriginalPublicationDate != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.OriginalPublicationDate}"),
+                                    content: new global::System.Net.Http.StringContent(request.OriginalPublicationDate ?? string.Empty),
                                     name: "\"original_publication_date\"");
-                            } 
+
+                            }
                             if (request.MatureContent != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.MatureContent}"),
+                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.MatureContent, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
                                     name: "\"mature_content\"");
-                            } 
+
+                            }
                             if (request.IsbnNumber != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.IsbnNumber}"),
+                                    content: new global::System.Net.Http.StringContent(request.IsbnNumber ?? string.Empty),
                                     name: "\"isbn_number\"");
-                            } 
+
+                            }
                             if (request.AcxVolumeNormalization != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.AcxVolumeNormalization}"),
+                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.AcxVolumeNormalization, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
                                     name: "\"acx_volume_normalization\"");
-                            } 
+
+                            }
                             if (request.VolumeNormalization != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.VolumeNormalization}"),
+                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.VolumeNormalization, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
                                     name: "\"volume_normalization\"");
-                            } 
+
+                            }
                             if (request.PronunciationDictionaryLocators != default)
                             {
 
                                 __httpRequestContent.Add(
                                     content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.PronunciationDictionaryLocators, x => x))}]"),
                                     name: "\"pronunciation_dictionary_locators\"");
-                            } 
+
+                            }
                             if (request.CallbackUrl != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.CallbackUrl}"),
+                                    content: new global::System.Net.Http.StringContent(request.CallbackUrl ?? string.Empty),
                                     name: "\"callback_url\"");
-                            } 
+
+                            }
                             if (request.Fiction != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.Fiction}"),
+                                    content: new global::System.Net.Http.StringContent(request.Fiction.ToString() ?? string.Empty),
                                     name: "\"fiction\"");
-                            } 
+
+                            }
                             if (request.ApplyTextNormalization != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.ApplyTextNormalization}"),
+                                    content: new global::System.Net.Http.StringContent(request.ApplyTextNormalization.ToString() ?? string.Empty),
                                     name: "\"apply_text_normalization\"");
-                            } 
+
+                            }
                             if (request.AutoConvert != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.AutoConvert}"),
+                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.AutoConvert, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
                                     name: "\"auto_convert\"");
-                            } 
+
+                            }
                             if (request.AutoAssignVoices != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.AutoAssignVoices}"),
+                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.AutoAssignVoices, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
                                     name: "\"auto_assign_voices\"");
-                            } 
+
+                            }
                             if (request.SourceType != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.SourceType}"),
+                                    content: new global::System.Net.Http.StringContent(request.SourceType.ToString() ?? string.Empty),
                                     name: "\"source_type\"");
-                            } 
+
+                            }
                             if (request.VoiceSettings != default)
                             {
 
                                 __httpRequestContent.Add(
                                     content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.VoiceSettings, x => x))}]"),
                                     name: "\"voice_settings\"");
-                            } 
+
+                            }
                             if (request.CreatePublishingRead != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.CreatePublishingRead}"),
+                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.CreatePublishingRead, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
                                     name: "\"create_publishing_read\"");
+
                             }
+
                             __httpRequest.Content = __httpRequestContent;
+
                 global::G.AutoSDKRequestOptionsSupport.ApplyHeaders(
                     request: __httpRequest,
                     clientHeaders: Options.Headers,
@@ -344,6 +434,8 @@ namespace G
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                     try
                     {
@@ -354,6 +446,11 @@ namespace G
                     }
                     catch (global::System.Net.Http.HttpRequestException __exception)
                     {
+                        var __retryDelay = global::G.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: null,
+                            attempt: __attempt);
                         var __willRetry = __attempt < __maxAttempts && !__effectiveCancellationToken.IsCancellationRequested;
                         await global::G.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
@@ -371,6 +468,8 @@ namespace G
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: __willRetry,
+                                retryDelay: __willRetry ? __retryDelay : (global::System.TimeSpan?)null,
+                                retryReason: "exception",
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         if (!__willRetry)
                         {
@@ -380,8 +479,7 @@ namespace G
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::G.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -390,6 +488,11 @@ namespace G
                         __attempt < __maxAttempts &&
                         global::G.AutoSDKRequestOptionsSupport.ShouldRetryStatusCode(__response.StatusCode))
                     {
+                        var __retryDelay = global::G.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: __response,
+                            attempt: __attempt);
                         await global::G.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
@@ -406,14 +509,15 @@ namespace G
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: true,
+                                retryDelay: __retryDelay,
+                                retryReason: "status:" + ((int)__response.StatusCode).ToString(global::System.Globalization.CultureInfo.InvariantCulture),
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         __response.Dispose();
                         __response = null;
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::G.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -453,6 +557,8 @@ namespace G
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
                 else
@@ -473,6 +579,8 @@ namespace G
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
                             // Validation Error
@@ -535,9 +643,13 @@ namespace G
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    return
-                                        global::G.AddProjectResponseModel.FromJson(__content, JsonSerializerOptions) ??
+                                    var __value = global::G.AddProjectResponseModel.FromJson(__content, JsonSerializerOptions) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                                    return new global::G.AutoSDKHttpResponse<global::G.AddProjectResponseModel>(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri,
+                                        body: __value);
                                 }
                                 catch (global::System.Exception __ex)
                                 {
@@ -565,9 +677,13 @@ namespace G
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    return
-                                        await global::G.AddProjectResponseModel.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                                    var __value = await global::G.AddProjectResponseModel.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
+                                    return new global::G.AutoSDKHttpResponse<global::G.AddProjectResponseModel>(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri,
+                                        body: __value);
                                 }
                                 catch (global::System.Exception __ex)
                                 {

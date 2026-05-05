@@ -47,7 +47,7 @@ internal sealed class TrimCommand : Command
         SetAction(HandleAsync);
     }
 
-    private async Task HandleAsync(ParseResult parseResult)
+    private async Task<int> HandleAsync(ParseResult parseResult)
     {
         var csprojPath = parseResult.GetRequiredValue(CsprojPath);
         var targetFramework = parseResult.GetRequiredValue(TargetFramework);
@@ -58,7 +58,7 @@ internal sealed class TrimCommand : Command
         if (!File.Exists(fullCsprojPath))
         {
             await Console.Error.WriteLineAsync($"Error: File not found: {fullCsprojPath}").ConfigureAwait(false);
-            return;
+            return 1;
         }
 
         var projectDir = Path.GetDirectoryName(fullCsprojPath)!;
@@ -95,7 +95,7 @@ internal sealed class TrimCommand : Command
 
             // Write Program.cs
             var programCs = """
-                Console.WriteLine("Trimming check.");
+                return 0;
                 """;
             await File.WriteAllTextAsync(
                 Path.Combine(tempDir, "Program.cs"),
@@ -111,6 +111,9 @@ internal sealed class TrimCommand : Command
                     <TargetFramework>{targetFramework}</TargetFramework>
                     <ImplicitUsings>enable</ImplicitUsings>
                     <PublishTrimmed>true</PublishTrimmed>
+                    <EnableNETAnalyzers>false</EnableNETAnalyzers>
+                    <AnalysisMode>None</AnalysisMode>
+                    <NoWarn>$(NoWarn);CA1303</NoWarn>
                   </PropertyGroup>
 
                   <ItemGroup>
@@ -154,7 +157,7 @@ internal sealed class TrimCommand : Command
             if (process == null)
             {
                 await Console.Error.WriteLineAsync("Error: Failed to start dotnet process.").ConfigureAwait(false);
-                return;
+                return 1;
             }
 
             var stdout = await process.StandardOutput.ReadToEndAsync().ConfigureAwait(false);
@@ -215,17 +218,17 @@ internal sealed class TrimCommand : Command
                     await Console.Error.WriteLineAsync().ConfigureAwait(false);
                 }
 
-                Environment.ExitCode = 1;
-                return;
+                return 1;
             }
 
             if (trimmingWarnings.Count == 0)
             {
                 await Console.Out.WriteLineAsync("No trimming warnings found. The project is trimming-compatible.").ConfigureAwait(false);
+                return 0;
             }
             else
             {
-                Environment.ExitCode = 1;
+                return 1;
             }
         }
         finally

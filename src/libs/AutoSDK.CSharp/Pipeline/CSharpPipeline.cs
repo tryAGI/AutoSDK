@@ -190,7 +190,7 @@ public static class CSharpPipeline
                     .Concat(data.Methods.Any(static x => x.GenerateResponseWrapper && !x.EnumerableStream)
                         ? [Sources.HttpResponse(settings, cancellationToken)]
                         : [])
-                    .Concat(data.Methods.Any(static x => x.RawStream)
+                    .Concat(data.Methods.Any(static x => Sources.ShouldGenerateResponseStreamSupport(x))
                         ? [Sources.ResponseStream(data.Converters.Settings, cancellationToken)]
                         : [])
                     .Concat([Sources.UnixTimestampJsonConverter(settings, cancellationToken)])

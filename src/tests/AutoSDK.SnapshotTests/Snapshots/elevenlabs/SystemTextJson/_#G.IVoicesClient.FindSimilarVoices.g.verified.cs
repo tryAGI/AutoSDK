@@ -29,6 +29,23 @@ namespace G
         /// <param name="xiApiKey">
         /// Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the 'Profile' tab on the website.
         /// </param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.GetLibraryVoicesResponseModel>> FindSimilarVoicesAsResponseAsync(
+
+            global::G.BodyGetSimilarLibraryVoicesV1SimilarVoicesPost request,
+            string? xiApiKey = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Get Similar Library Voices<br/>
+        /// Returns a list of shared voices similar to the provided audio sample. If neither similarity_threshold nor top_k is provided, we will apply default values.
+        /// </summary>
+        /// <param name="xiApiKey">
+        /// Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the 'Profile' tab on the website.
+        /// </param>
         /// <param name="audioFile"></param>
         /// <param name="audioFilename"></param>
         /// <param name="similarityThreshold">

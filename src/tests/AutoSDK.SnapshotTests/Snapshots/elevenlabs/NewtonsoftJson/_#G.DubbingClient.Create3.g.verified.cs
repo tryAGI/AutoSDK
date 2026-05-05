@@ -42,6 +42,34 @@ namespace G
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var __response = await Create3AsResponseAsync(
+
+                request: request,
+                xiApiKey: xiApiKey,
+                requestOptions: requestOptions,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// Dub A Video Or An Audio File<br/>
+        /// Dubs a provided audio or video file into given language.
+        /// </summary>
+        /// <param name="xiApiKey">
+        /// Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the 'Profile' tab on the website.
+        /// </param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.DoDubbingResponseModel>> Create3AsResponseAsync(
+
+            global::G.BodyDubAVideoOrAnAudioFileV1DubbingPost request,
+            string? xiApiKey = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 
             PrepareArguments(
@@ -63,10 +91,11 @@ namespace G
             var __maxAttempts = global::G.AutoSDKRequestOptionsSupport.GetMaxAttempts(
                 clientOptions: Options,
                 requestOptions: requestOptions,
-                supportsRetry: true);
+                supportsRetry: false);
 
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
+
                             var __pathBuilder = new global::G.PathBuilder(
                                 path: "/v1/dubbing",
                                 baseUri: HttpClient.BaseAddress);
@@ -83,23 +112,53 @@ namespace G
                 __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-                if (xiApiKey != default)
-                {
-                    __httpRequest.Headers.TryAddWithoutValidation("xi-api-key", xiApiKey.ToString());
-                }
+            if (xiApiKey != default)
+            {
+                __httpRequest.Headers.TryAddWithoutValidation("xi-api-key", xiApiKey.ToString());
+            }
+
 
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
                             if (xiApiKey != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{xiApiKey}"),
+                                    content: new global::System.Net.Http.StringContent(xiApiKey ?? string.Empty),
                                     name: "\"xi-api-key\"");
-                            } 
+
+                            }
                             if (request.File != default)
                             {
 
                                 var __contentFile = new global::System.Net.Http.ByteArrayContent(request.File ?? global::System.Array.Empty<byte>());
+                                __contentFile.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue(
+                                    request.Filename is null
+                                        ? "application/octet-stream"
+                                        : (global::System.IO.Path.GetExtension(request.Filename) ?? string.Empty).ToLowerInvariant() switch
+                                        {
+                                            ".aac" => "audio/aac",
+                                            ".flac" => "audio/flac",
+                                            ".gif" => "image/gif",
+                                            ".jpeg" => "image/jpeg",
+                                            ".jpg" => "image/jpeg",
+                                            ".json" => "application/json",
+                                            ".m4a" => "audio/mp4",
+                                            ".mp3" => "audio/mpeg",
+                                            ".mp4" => "video/mp4",
+                                            ".mpeg" => "audio/mpeg",
+                                            ".mpga" => "audio/mpeg",
+                                            ".oga" => "audio/ogg",
+                                            ".ogg" => "audio/ogg",
+                                            ".opus" => "audio/ogg",
+                                            ".pdf" => "application/pdf",
+                                            ".png" => "image/png",
+                                            ".txt" => "text/plain",
+                                            ".wav" => "audio/wav",
+                                            ".weba" => "audio/webm",
+                                            ".webm" => "video/webm",
+                                            ".webp" => "image/webp",
+                                            _ => "application/octet-stream",
+                                        });
                                 __httpRequestContent.Add(
                                     content: __contentFile,
                                     name: "\"file\"",
@@ -108,11 +167,40 @@ namespace G
                                 {
                                     __contentFile.Headers.ContentDisposition.FileNameStar = null;
                                 }
-                            } 
+
+                            }
                             if (request.CsvFile != default)
                             {
 
                                 var __contentCsvFile = new global::System.Net.Http.ByteArrayContent(request.CsvFile ?? global::System.Array.Empty<byte>());
+                                __contentCsvFile.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue(
+                                    request.CsvFilename is null
+                                        ? "application/octet-stream"
+                                        : (global::System.IO.Path.GetExtension(request.CsvFilename) ?? string.Empty).ToLowerInvariant() switch
+                                        {
+                                            ".aac" => "audio/aac",
+                                            ".flac" => "audio/flac",
+                                            ".gif" => "image/gif",
+                                            ".jpeg" => "image/jpeg",
+                                            ".jpg" => "image/jpeg",
+                                            ".json" => "application/json",
+                                            ".m4a" => "audio/mp4",
+                                            ".mp3" => "audio/mpeg",
+                                            ".mp4" => "video/mp4",
+                                            ".mpeg" => "audio/mpeg",
+                                            ".mpga" => "audio/mpeg",
+                                            ".oga" => "audio/ogg",
+                                            ".ogg" => "audio/ogg",
+                                            ".opus" => "audio/ogg",
+                                            ".pdf" => "application/pdf",
+                                            ".png" => "image/png",
+                                            ".txt" => "text/plain",
+                                            ".wav" => "audio/wav",
+                                            ".weba" => "audio/webm",
+                                            ".webm" => "video/webm",
+                                            ".webp" => "image/webp",
+                                            _ => "application/octet-stream",
+                                        });
                                 __httpRequestContent.Add(
                                     content: __contentCsvFile,
                                     name: "\"csv_file\"",
@@ -121,11 +209,40 @@ namespace G
                                 {
                                     __contentCsvFile.Headers.ContentDisposition.FileNameStar = null;
                                 }
-                            } 
+
+                            }
                             if (request.ForegroundAudioFile != default)
                             {
 
                                 var __contentForegroundAudioFile = new global::System.Net.Http.ByteArrayContent(request.ForegroundAudioFile ?? global::System.Array.Empty<byte>());
+                                __contentForegroundAudioFile.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue(
+                                    request.ForegroundAudioFilename is null
+                                        ? "application/octet-stream"
+                                        : (global::System.IO.Path.GetExtension(request.ForegroundAudioFilename) ?? string.Empty).ToLowerInvariant() switch
+                                        {
+                                            ".aac" => "audio/aac",
+                                            ".flac" => "audio/flac",
+                                            ".gif" => "image/gif",
+                                            ".jpeg" => "image/jpeg",
+                                            ".jpg" => "image/jpeg",
+                                            ".json" => "application/json",
+                                            ".m4a" => "audio/mp4",
+                                            ".mp3" => "audio/mpeg",
+                                            ".mp4" => "video/mp4",
+                                            ".mpeg" => "audio/mpeg",
+                                            ".mpga" => "audio/mpeg",
+                                            ".oga" => "audio/ogg",
+                                            ".ogg" => "audio/ogg",
+                                            ".opus" => "audio/ogg",
+                                            ".pdf" => "application/pdf",
+                                            ".png" => "image/png",
+                                            ".txt" => "text/plain",
+                                            ".wav" => "audio/wav",
+                                            ".weba" => "audio/webm",
+                                            ".webm" => "video/webm",
+                                            ".webp" => "image/webp",
+                                            _ => "application/octet-stream",
+                                        });
                                 __httpRequestContent.Add(
                                     content: __contentForegroundAudioFile,
                                     name: "\"foreground_audio_file\"",
@@ -134,11 +251,40 @@ namespace G
                                 {
                                     __contentForegroundAudioFile.Headers.ContentDisposition.FileNameStar = null;
                                 }
-                            } 
+
+                            }
                             if (request.BackgroundAudioFile != default)
                             {
 
                                 var __contentBackgroundAudioFile = new global::System.Net.Http.ByteArrayContent(request.BackgroundAudioFile ?? global::System.Array.Empty<byte>());
+                                __contentBackgroundAudioFile.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue(
+                                    request.BackgroundAudioFilename is null
+                                        ? "application/octet-stream"
+                                        : (global::System.IO.Path.GetExtension(request.BackgroundAudioFilename) ?? string.Empty).ToLowerInvariant() switch
+                                        {
+                                            ".aac" => "audio/aac",
+                                            ".flac" => "audio/flac",
+                                            ".gif" => "image/gif",
+                                            ".jpeg" => "image/jpeg",
+                                            ".jpg" => "image/jpeg",
+                                            ".json" => "application/json",
+                                            ".m4a" => "audio/mp4",
+                                            ".mp3" => "audio/mpeg",
+                                            ".mp4" => "video/mp4",
+                                            ".mpeg" => "audio/mpeg",
+                                            ".mpga" => "audio/mpeg",
+                                            ".oga" => "audio/ogg",
+                                            ".ogg" => "audio/ogg",
+                                            ".opus" => "audio/ogg",
+                                            ".pdf" => "application/pdf",
+                                            ".png" => "image/png",
+                                            ".txt" => "text/plain",
+                                            ".wav" => "audio/wav",
+                                            ".weba" => "audio/webm",
+                                            ".webm" => "video/webm",
+                                            ".webp" => "image/webp",
+                                            _ => "application/octet-stream",
+                                        });
                                 __httpRequestContent.Add(
                                     content: __contentBackgroundAudioFile,
                                     name: "\"background_audio_file\"",
@@ -147,120 +293,139 @@ namespace G
                                 {
                                     __contentBackgroundAudioFile.Headers.ContentDisposition.FileNameStar = null;
                                 }
-                            } 
+
+                            }
                             if (request.Name != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.Name}"),
+                                    content: new global::System.Net.Http.StringContent(request.Name ?? string.Empty),
                                     name: "\"name\"");
-                            } 
+
+                            }
                             if (request.SourceUrl != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.SourceUrl}"),
+                                    content: new global::System.Net.Http.StringContent(request.SourceUrl ?? string.Empty),
                                     name: "\"source_url\"");
-                            } 
+
+                            }
                             if (request.SourceLang != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.SourceLang}"),
+                                    content: new global::System.Net.Http.StringContent(request.SourceLang ?? string.Empty),
                                     name: "\"source_lang\"");
-                            } 
+
+                            }
                             if (request.TargetLang != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.TargetLang}"),
+                                    content: new global::System.Net.Http.StringContent(request.TargetLang ?? string.Empty),
                                     name: "\"target_lang\"");
-                            } 
+
+                            }
                             if (request.TargetAccent != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.TargetAccent}"),
+                                    content: new global::System.Net.Http.StringContent(request.TargetAccent ?? string.Empty),
                                     name: "\"target_accent\"");
-                            } 
+
+                            }
                             if (request.NumSpeakers != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.NumSpeakers}"),
+                                    content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(request.NumSpeakers, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
                                     name: "\"num_speakers\"");
-                            } 
+
+                            }
                             if (request.Watermark != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.Watermark}"),
+                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.Watermark, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
                                     name: "\"watermark\"");
-                            } 
+
+                            }
                             if (request.StartTime != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.StartTime}"),
+                                    content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(request.StartTime, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
                                     name: "\"start_time\"");
-                            } 
+
+                            }
                             if (request.EndTime != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.EndTime}"),
+                                    content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(request.EndTime, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
                                     name: "\"end_time\"");
-                            } 
+
+                            }
                             if (request.HighestResolution != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.HighestResolution}"),
+                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.HighestResolution, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
                                     name: "\"highest_resolution\"");
-                            } 
+
+                            }
                             if (request.DropBackgroundAudio != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.DropBackgroundAudio}"),
+                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.DropBackgroundAudio, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
                                     name: "\"drop_background_audio\"");
-                            } 
+
+                            }
                             if (request.UseProfanityFilter != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.UseProfanityFilter}"),
+                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.UseProfanityFilter, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
                                     name: "\"use_profanity_filter\"");
-                            } 
+
+                            }
                             if (request.DubbingStudio != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.DubbingStudio}"),
+                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.DubbingStudio, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
                                     name: "\"dubbing_studio\"");
-                            } 
+
+                            }
                             if (request.DisableVoiceCloning != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.DisableVoiceCloning}"),
+                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.DisableVoiceCloning, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
                                     name: "\"disable_voice_cloning\"");
-                            } 
+
+                            }
                             if (request.Mode != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.Mode?.ToValueString()}"),
+                                    content: new global::System.Net.Http.StringContent((request.Mode).HasValue ? (request.Mode).GetValueOrDefault().ToValueString() : string.Empty),
                                     name: "\"mode\"");
-                            } 
+
+                            }
                             if (request.CsvFps != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.CsvFps}"),
+                                    content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(request.CsvFps, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
                                     name: "\"csv_fps\"");
+
                             }
+
                             __httpRequest.Content = __httpRequestContent;
+
                 global::G.AutoSDKRequestOptionsSupport.ApplyHeaders(
                     request: __httpRequest,
                     clientHeaders: Options.Headers,
@@ -303,6 +468,8 @@ namespace G
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                     try
                     {
@@ -313,6 +480,11 @@ namespace G
                     }
                     catch (global::System.Net.Http.HttpRequestException __exception)
                     {
+                        var __retryDelay = global::G.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: null,
+                            attempt: __attempt);
                         var __willRetry = __attempt < __maxAttempts && !__effectiveCancellationToken.IsCancellationRequested;
                         await global::G.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
@@ -330,6 +502,8 @@ namespace G
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: __willRetry,
+                                retryDelay: __willRetry ? __retryDelay : (global::System.TimeSpan?)null,
+                                retryReason: "exception",
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         if (!__willRetry)
                         {
@@ -339,8 +513,7 @@ namespace G
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::G.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -349,6 +522,11 @@ namespace G
                         __attempt < __maxAttempts &&
                         global::G.AutoSDKRequestOptionsSupport.ShouldRetryStatusCode(__response.StatusCode))
                     {
+                        var __retryDelay = global::G.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: __response,
+                            attempt: __attempt);
                         await global::G.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
@@ -365,14 +543,15 @@ namespace G
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: true,
+                                retryDelay: __retryDelay,
+                                retryReason: "status:" + ((int)__response.StatusCode).ToString(global::System.Globalization.CultureInfo.InvariantCulture),
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         __response.Dispose();
                         __response = null;
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::G.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -412,6 +591,8 @@ namespace G
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
                 else
@@ -432,6 +613,8 @@ namespace G
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
                             // Validation Error
@@ -494,9 +677,13 @@ namespace G
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    return
-                                        global::G.DoDubbingResponseModel.FromJson(__content, JsonSerializerOptions) ??
+                                    var __value = global::G.DoDubbingResponseModel.FromJson(__content, JsonSerializerOptions) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                                    return new global::G.AutoSDKHttpResponse<global::G.DoDubbingResponseModel>(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri,
+                                        body: __value);
                                 }
                                 catch (global::System.Exception __ex)
                                 {
@@ -524,9 +711,13 @@ namespace G
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    return
-                                        await global::G.DoDubbingResponseModel.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                                    var __value = await global::G.DoDubbingResponseModel.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
+                                    return new global::G.AutoSDKHttpResponse<global::G.DoDubbingResponseModel>(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri,
+                                        body: __value);
                                 }
                                 catch (global::System.Exception __ex)
                                 {

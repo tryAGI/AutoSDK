@@ -132,6 +132,7 @@ namespace {client.Settings.Namespace}
                         return new global::{client.Settings.Namespace}.{client.ClassName}(
                             httpClient: httpClient,
                             baseUri: resolveBaseUri(serviceProvider),
+                            authorizations: null,
                             options: clientOptions,
                             disposeHttpClient: false);
                     }});

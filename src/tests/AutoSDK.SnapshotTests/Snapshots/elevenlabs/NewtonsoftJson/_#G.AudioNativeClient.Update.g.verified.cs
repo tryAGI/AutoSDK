@@ -48,6 +48,39 @@ namespace G
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var __response = await UpdateAsResponseAsync(
+                projectId: projectId,
+
+                request: request,
+                xiApiKey: xiApiKey,
+                requestOptions: requestOptions,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// Update Audio-Native Project Content<br/>
+        /// Updates content for the specific AudioNative Project.
+        /// </summary>
+        /// <param name="projectId">
+        /// The ID of the Studio project.
+        /// </param>
+        /// <param name="xiApiKey">
+        /// Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the 'Profile' tab on the website.
+        /// </param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.AudioNativeEditContentResponseModel>> UpdateAsResponseAsync(
+            string projectId,
+
+            global::G.BodyUpdateAudioNativeProjectContentV1AudioNativeProjectIdContentPost request,
+            string? xiApiKey = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 
             PrepareArguments(
@@ -70,10 +103,11 @@ namespace G
             var __maxAttempts = global::G.AutoSDKRequestOptionsSupport.GetMaxAttempts(
                 clientOptions: Options,
                 requestOptions: requestOptions,
-                supportsRetry: true);
+                supportsRetry: false);
 
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
+
                             var __pathBuilder = new global::G.PathBuilder(
                                 path: $"/v1/audio-native/{projectId}/content",
                                 baseUri: HttpClient.BaseAddress);
@@ -90,26 +124,57 @@ namespace G
                 __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-                if (xiApiKey != default)
-                {
-                    __httpRequest.Headers.TryAddWithoutValidation("xi-api-key", xiApiKey.ToString());
-                }
+            if (xiApiKey != default)
+            {
+                __httpRequest.Headers.TryAddWithoutValidation("xi-api-key", xiApiKey.ToString());
+            }
+
 
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
                             __httpRequestContent.Add(
-                                content: new global::System.Net.Http.StringContent($"{projectId}"),
+                                content: new global::System.Net.Http.StringContent(projectId ?? string.Empty),
                                 name: "\"project_id\"");
+
                             if (xiApiKey != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{xiApiKey}"),
+                                    content: new global::System.Net.Http.StringContent(xiApiKey ?? string.Empty),
                                     name: "\"xi-api-key\"");
-                            } 
+
+                            }
                             if (request.File != default)
                             {
 
                                 var __contentFile = new global::System.Net.Http.ByteArrayContent(request.File ?? global::System.Array.Empty<byte>());
+                                __contentFile.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue(
+                                    request.Filename is null
+                                        ? "application/octet-stream"
+                                        : (global::System.IO.Path.GetExtension(request.Filename) ?? string.Empty).ToLowerInvariant() switch
+                                        {
+                                            ".aac" => "audio/aac",
+                                            ".flac" => "audio/flac",
+                                            ".gif" => "image/gif",
+                                            ".jpeg" => "image/jpeg",
+                                            ".jpg" => "image/jpeg",
+                                            ".json" => "application/json",
+                                            ".m4a" => "audio/mp4",
+                                            ".mp3" => "audio/mpeg",
+                                            ".mp4" => "video/mp4",
+                                            ".mpeg" => "audio/mpeg",
+                                            ".mpga" => "audio/mpeg",
+                                            ".oga" => "audio/ogg",
+                                            ".ogg" => "audio/ogg",
+                                            ".opus" => "audio/ogg",
+                                            ".pdf" => "application/pdf",
+                                            ".png" => "image/png",
+                                            ".txt" => "text/plain",
+                                            ".wav" => "audio/wav",
+                                            ".weba" => "audio/webm",
+                                            ".webm" => "video/webm",
+                                            ".webp" => "image/webp",
+                                            _ => "application/octet-stream",
+                                        });
                                 __httpRequestContent.Add(
                                     content: __contentFile,
                                     name: "\"file\"",
@@ -118,22 +183,27 @@ namespace G
                                 {
                                     __contentFile.Headers.ContentDisposition.FileNameStar = null;
                                 }
-                            } 
+
+                            }
                             if (request.AutoConvert != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.AutoConvert}"),
+                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.AutoConvert, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
                                     name: "\"auto_convert\"");
-                            } 
+
+                            }
                             if (request.AutoPublish != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.AutoPublish}"),
+                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.AutoPublish, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
                                     name: "\"auto_publish\"");
+
                             }
+
                             __httpRequest.Content = __httpRequestContent;
+
                 global::G.AutoSDKRequestOptionsSupport.ApplyHeaders(
                     request: __httpRequest,
                     clientHeaders: Options.Headers,
@@ -145,7 +215,7 @@ namespace G
                 PrepareUpdateRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    projectId: projectId,
+                    projectId: projectId!,
                     xiApiKey: xiApiKey,
                     request: request);
 
@@ -177,6 +247,8 @@ namespace G
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                     try
                     {
@@ -187,6 +259,11 @@ namespace G
                     }
                     catch (global::System.Net.Http.HttpRequestException __exception)
                     {
+                        var __retryDelay = global::G.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: null,
+                            attempt: __attempt);
                         var __willRetry = __attempt < __maxAttempts && !__effectiveCancellationToken.IsCancellationRequested;
                         await global::G.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
@@ -204,6 +281,8 @@ namespace G
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: __willRetry,
+                                retryDelay: __willRetry ? __retryDelay : (global::System.TimeSpan?)null,
+                                retryReason: "exception",
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         if (!__willRetry)
                         {
@@ -213,8 +292,7 @@ namespace G
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::G.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -223,6 +301,11 @@ namespace G
                         __attempt < __maxAttempts &&
                         global::G.AutoSDKRequestOptionsSupport.ShouldRetryStatusCode(__response.StatusCode))
                     {
+                        var __retryDelay = global::G.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: __response,
+                            attempt: __attempt);
                         await global::G.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
@@ -239,14 +322,15 @@ namespace G
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: true,
+                                retryDelay: __retryDelay,
+                                retryReason: "status:" + ((int)__response.StatusCode).ToString(global::System.Globalization.CultureInfo.InvariantCulture),
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         __response.Dispose();
                         __response = null;
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::G.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -286,6 +370,8 @@ namespace G
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
                 else
@@ -306,6 +392,8 @@ namespace G
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
                             // Validation Error
@@ -368,9 +456,13 @@ namespace G
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    return
-                                        global::G.AudioNativeEditContentResponseModel.FromJson(__content, JsonSerializerOptions) ??
+                                    var __value = global::G.AudioNativeEditContentResponseModel.FromJson(__content, JsonSerializerOptions) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                                    return new global::G.AutoSDKHttpResponse<global::G.AudioNativeEditContentResponseModel>(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri,
+                                        body: __value);
                                 }
                                 catch (global::System.Exception __ex)
                                 {
@@ -398,9 +490,13 @@ namespace G
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    return
-                                        await global::G.AudioNativeEditContentResponseModel.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                                    var __value = await global::G.AudioNativeEditContentResponseModel.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
+                                    return new global::G.AutoSDKHttpResponse<global::G.AudioNativeEditContentResponseModel>(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri,
+                                        body: __value);
                                 }
                                 catch (global::System.Exception __ex)
                                 {
