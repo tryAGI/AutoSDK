@@ -43,6 +43,31 @@ namespace G
         /// <param name="xiApiKey">
         /// Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the 'Profile' tab on the website.
         /// </param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.EditChapterResponseModel>> Update3AsResponseAsync(
+            string projectId,
+            string chapterId,
+
+            global::G.BodyUpdateChapterV1StudioProjectsProjectIdChaptersChapterIdPost request,
+            string? xiApiKey = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Update Chapter<br/>
+        /// Updates a chapter.
+        /// </summary>
+        /// <param name="projectId">
+        /// The ID of the Studio project.
+        /// </param>
+        /// <param name="chapterId">
+        /// The ID of the chapter.
+        /// </param>
+        /// <param name="xiApiKey">
+        /// Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the 'Profile' tab on the website.
+        /// </param>
         /// <param name="name">
         /// The name of the chapter, used for identification only.
         /// </param>

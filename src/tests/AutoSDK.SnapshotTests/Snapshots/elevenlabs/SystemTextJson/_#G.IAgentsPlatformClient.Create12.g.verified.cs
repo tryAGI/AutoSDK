@@ -36,6 +36,27 @@ namespace G
         /// <param name="xiApiKey">
         /// Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the 'Profile' tab on the website.
         /// </param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.CreateAgentBranchResponseModel>> Create12AsResponseAsync(
+            string agentId,
+
+            global::G.BodyCreateANewBranchV1ConvaiAgentsAgentIdBranchesPost request,
+            string? xiApiKey = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create A New Branch<br/>
+        /// Create a new branch from a given version of main branch
+        /// </summary>
+        /// <param name="agentId">
+        /// The id of an agent. This is returned on agent creation.
+        /// </param>
+        /// <param name="xiApiKey">
+        /// Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the 'Profile' tab on the website.
+        /// </param>
         /// <param name="parentVersionId">
         /// ID of the version to branch from
         /// </param>

@@ -50,6 +50,35 @@ namespace G
         /// <param name="xiApiKey">
         /// Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the 'Profile' tab on the website.
         /// </param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::System.IO.Stream>> Stream2AsResponseAsync(
+            string projectId,
+            string chapterId,
+            string chapterSnapshotId,
+
+            global::G.BodyStreamChapterAudioV1StudioProjectsProjectIdChaptersChapterIdSnapshotsChapterSnapshotIdStreamPost request,
+            string? xiApiKey = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Stream Chapter Audio<br/>
+        /// Stream the audio from a chapter snapshot. Use `GET /v1/studio/projects/{project_id}/chapters/{chapter_id}/snapshots` to return the snapshots of a chapter.
+        /// </summary>
+        /// <param name="projectId">
+        /// The ID of the Studio project.
+        /// </param>
+        /// <param name="chapterId">
+        /// The ID of the chapter.
+        /// </param>
+        /// <param name="chapterSnapshotId">
+        /// The ID of the chapter snapshot.
+        /// </param>
+        /// <param name="xiApiKey">
+        /// Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the 'Profile' tab on the website.
+        /// </param>
         /// <param name="convertToMpeg">
         /// Whether to convert the audio to mpeg format.<br/>
         /// Default Value: false

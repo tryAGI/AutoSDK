@@ -21,7 +21,8 @@ public partial class Tests
     {
         return CheckDependencyInjectionSnapshotAsync(
             callerName: nameof(DependencyInjectionBaseline),
-            globalOptions: CreateDependencyInjectionGlobalOptions());
+            globalOptions: CreateDependencyInjectionGlobalOptions(),
+            supportSources: [CreateConstructorConsumerSource()]);
     }
 
     [TestMethod]
@@ -149,7 +150,8 @@ public partial class Tests
         string callerName,
         Dictionary<string, string> globalOptions,
         ReferenceAssemblies? referenceAssemblies = null,
-        IEnumerable<PackageIdentity>? additionalPackages = null)
+        IEnumerable<PackageIdentity>? additionalPackages = null,
+        IEnumerable<string>? supportSources = null)
     {
         return CheckSourceAsync<SdkGenerator>(
             jsonSerializerType: JsonSerializerType.SystemTextJson,
@@ -157,7 +159,8 @@ public partial class Tests
             callerName: callerName,
             globalOptions: globalOptions,
             referenceAssemblies: referenceAssemblies,
-            additionalPackages: additionalPackages);
+            additionalPackages: additionalPackages,
+            supportSources: supportSources);
     }
 
     private static List<AdditionalText> CreateDependencyInjectionAdditionalTexts()
@@ -206,5 +209,31 @@ public partial class Tests
         }
 
         return options;
+    }
+
+    private static string CreateConstructorConsumerSource()
+    {
+        return """
+               #nullable enable
+
+               namespace IXSocial;
+
+               internal static class ConstructorConsumer
+               {
+                   public static void UseConstructors()
+                   {
+                       _ = new IXSocialClient();
+
+                       var httpClient = new global::System.Net.Http.HttpClient();
+                       var baseUri = new global::System.Uri("https://api.example.com");
+                       var authorizations = new global::System.Collections.Generic.List<EndPointAuthorization>();
+
+                       _ = new IXSocialClient(httpClient);
+                       _ = new IXSocialClient(httpClient, baseUri);
+                       _ = new IXSocialClient(httpClient, baseUri, authorizations);
+                       _ = new IXSocialClient(httpClient, baseUri, authorizations, new AutoSDKClientOptions());
+                   }
+               }
+               """;
     }
 }

@@ -23,36 +23,38 @@ public class OpenAiTests
     {
         using var api = GetAuthorizedApi();
         var response = await api.Chat.CreateChatCompletionAsync(
-            messages: new ChatCompletionRequestMessage[]
+            request: new CreateChatCompletionRequest(new CreateChatCompletionRequestVariant2
             {
-                new ChatCompletionRequestSystemMessage
+                Messages = new ChatCompletionRequestMessage[]
                 {
-                    Content = "You are a helpful weather assistant.",
-                    Role = ChatCompletionRequestSystemMessageRole.System,
-                },
-                new ChatCompletionRequestUserMessage
-                {
-                    Content = new ChatCompletionRequestUserMessageContentPart[]
+                    new ChatCompletionRequestSystemMessage
                     {
-                        new ChatCompletionRequestMessageContentPartText
+                        Content = "You are a helpful weather assistant.",
+                        Role = ChatCompletionRequestSystemMessageRole.System,
+                    },
+                    new ChatCompletionRequestUserMessage
+                    {
+                        Content = new ChatCompletionRequestUserMessageContentPart[]
                         {
-                            Type = ChatCompletionRequestMessageContentPartTextType.Text,
-                            Text = "What's on this image?",
-                        },
-                        new ChatCompletionRequestMessageContentPartImage
-                        {
-                            Type = ChatCompletionRequestMessageContentPartImageType.ImageUrl,
-                            ImageUrl = new ChatCompletionRequestMessageContentPartImageImageUrl
+                            new ChatCompletionRequestMessageContentPartText
                             {
-                                Url = await new Uri("https://raw.githubusercontent.com/srirammanikumar/DogBreedClassifier/master/images/Labrador_retriever_06455.jpg").DownloadAsBase64UrlAsync().ConfigureAwait(false),
+                                Type = ChatCompletionRequestMessageContentPartTextType.Text,
+                                Text = "What's on this image?",
+                            },
+                            new ChatCompletionRequestMessageContentPartImage
+                            {
+                                Type = ChatCompletionRequestMessageContentPartImageType.ImageUrl,
+                                ImageUrl = new ChatCompletionRequestMessageContentPartImageImageUrl
+                                {
+                                    Url = await new Uri("https://raw.githubusercontent.com/srirammanikumar/DogBreedClassifier/master/images/Labrador_retriever_06455.jpg").DownloadAsBase64UrlAsync().ConfigureAwait(false),
+                                },
                             },
                         },
+                        Role = ChatCompletionRequestUserMessageRole.User,
                     },
-                    Role = ChatCompletionRequestUserMessageRole.User,
                 },
-            },
-            model: CreateChatCompletionRequestModel.Gpt4o,
-            user: "OpenApiGenerator.IntegrationTests.Tests.CreateChatCompletion").ConfigureAwait(false);
+                Model = ModelIdsSharedEnum.Gpt4o,
+            })).ConfigureAwait(false);
         response.Choices.ElementAt(0).Message.Content.Should().NotBeEmpty();
 
         Console.WriteLine(response.Choices.ElementAt(0).Message.Content);
@@ -61,7 +63,7 @@ public class OpenAiTests
     [TestMethod]
     public void CreateChatCompletionRequestSerialization()
     {
-        var request = new CreateChatCompletionRequest
+        var request = new CreateChatCompletionRequestVariant2
         {
             Messages = new ChatCompletionRequestMessage[]
             {
@@ -91,10 +93,9 @@ public class OpenAiTests
                     Role = ChatCompletionRequestUserMessageRole.User,
                 },
             },
-            Model = CreateChatCompletionRequestModel.Gpt35Turbo,
-            User = "OpenApiGenerator.IntegrationTests.Tests.CreateChatCompletion",
+            Model = ModelIdsSharedEnum.Gpt35Turbo,
         };
-        var json = JsonSerializer.Serialize(request, SourceGenerationContext.Default.CreateChatCompletionRequest);
+        var json = JsonSerializer.Serialize(request, SourceGenerationContext.Default.CreateChatCompletionRequestVariant2);
 
         json.Should().Be(@"{
   ""messages"": [
@@ -111,23 +112,14 @@ public class OpenAiTests
         {
           ""type"": ""image_url"",
           ""image_url"": {
-            ""url"": ""https://raw.githubusercontent.com/srirammanikumar/DogBreedClassifier/master/images/Labrador_retriever_06455.jpg"",
-            ""detail"": ""auto""
+            ""url"": ""https://raw.githubusercontent.com/srirammanikumar/DogBreedClassifier/master/images/Labrador_retriever_06455.jpg""
           }
         }
       ],
       ""role"": ""user""
     }
   ],
-  ""model"": ""gpt-3.5-turbo"",
-  ""frequency_penalty"": 0,
-  ""logprobs"": false,
-  ""n"": 1,
-  ""presence_penalty"": 0,
-  ""stream"": false,
-  ""temperature"": 1,
-  ""top_p"": 1,
-  ""user"": ""OpenApiGenerator.IntegrationTests.Tests.CreateChatCompletion""
+  ""model"": ""gpt-3.5-turbo""
 }");
     }
 }

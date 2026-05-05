@@ -96,9 +96,11 @@ namespace {endPoint.Settings.Namespace}
             ref {contentType} content);")}
 
 {GenerateMethod(endPoint)}
+{(ShouldGenerateStreamResponseMethod(endPoint) ? GenerateMethod(endPoint, returnStreamResponse: true) : TrimmedLine)}
 {(ShouldGenerateResponseWrapperMethod(endPoint) ? GenerateMethod(endPoint, returnResponseWrapper: true) : TrimmedLine)}
 {GeneratePollingMethods(endPoint)}
 {GenerateExtensionMethod(endPoint)}
+{GenerateMultipartStreamMethods(endPoint)}
     }}
 }}".RemoveBlankLinesWhereOnlyWhitespaces();
     }
@@ -121,9 +123,11 @@ namespace {endPoint.Settings.Namespace}
     public partial interface I{endPoint.ClassName}
     {{
 {GenerateMethod(endPoint, isInterface: true)}
+{(ShouldGenerateStreamResponseMethod(endPoint) ? GenerateMethod(endPoint, isInterface: true, returnStreamResponse: true) : TrimmedLine)}
 {(ShouldGenerateResponseWrapperMethod(endPoint) ? GenerateMethod(endPoint, isInterface: true, returnResponseWrapper: true) : TrimmedLine)}
 {GeneratePollingMethods(endPoint, isInterface: true)}
 {GenerateExtensionMethod(endPoint, isInterface: true)}
+{GenerateMultipartStreamMethods(endPoint, isInterface: true)}
     }}
 }}".RemoveBlankLinesWhereOnlyWhitespaces();
     }
@@ -150,6 +154,183 @@ namespace {endPoint.Settings.Namespace}
     {
         return parameter.Location == null &&
                string.Equals(parameter.Id, "stream", StringComparison.OrdinalIgnoreCase);
+    }
+
+    private static bool IsBinaryArrayParameter(MethodParameter parameter)
+    {
+        return parameter.Type.IsArray &&
+               !parameter.Type.SubTypes.IsEmpty &&
+               parameter.Type.SubTypes[0].Unbox<TypeData>().IsBinary;
+    }
+
+    private static bool IsMultipartBinaryParameter(MethodParameter parameter)
+    {
+        return parameter.Location == null &&
+               !parameter.IsMultiPartFormDataFilename &&
+               (parameter.Type.IsBinary || IsBinaryArrayParameter(parameter));
+    }
+
+    private static bool ShouldGenerateMultipartStreamMethods(EndPoint endPoint)
+    {
+        return endPoint.IsMultipartFormData &&
+               !string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType) &&
+               endPoint.Parameters.Any(IsMultipartBinaryParameter);
+    }
+
+    private static TypeData CreateMultipartStreamParameterType(
+        string csharpType,
+        bool nullable)
+    {
+        var nullableType = nullable ? $"{csharpType}?" : csharpType;
+        return TypeData.Default with
+        {
+            CSharpTypeRaw = csharpType,
+            CSharpTypeNullability = nullable,
+            Namespace = string.Empty,
+            GeneratedNamespace = string.Empty,
+            CSharpTypeWithoutNullability = csharpType,
+            CSharpTypeWithNullability = $"{csharpType}?",
+            ShortCSharpTypeWithoutNullability = csharpType,
+            ShortCSharpTypeWithNullability = $"{csharpType}?",
+            CSharpTypeWithNullabilityForValueTypes = nullableType,
+            CSharpTypeWithNullabilityForNonValueTypes = $"{csharpType}?",
+            CSharpType = nullableType,
+            IsReferenceable = true,
+        };
+    }
+
+    private static MethodParameter ToMultipartStreamParameter(MethodParameter parameter)
+    {
+        if (parameter.Type.IsBinary)
+        {
+            return parameter with
+            {
+                Type = CreateMultipartStreamParameterType(
+                    "global::System.IO.Stream",
+                    nullable: parameter.Type.CSharpTypeNullability),
+                Summary = string.IsNullOrWhiteSpace(parameter.Summary)
+                    ? $"The stream to send as the multipart '{parameter.Id}' file part."
+                    : parameter.Summary,
+            };
+        }
+
+        if (IsBinaryArrayParameter(parameter))
+        {
+            return parameter with
+            {
+                Type = CreateMultipartStreamParameterType(
+                    "global::System.Collections.Generic.IReadOnlyList<global::System.IO.Stream>",
+                    nullable: parameter.Type.CSharpTypeNullability),
+                Summary = string.IsNullOrWhiteSpace(parameter.Summary)
+                    ? $"The streams to send as multipart '{parameter.Id}' file parts."
+                    : parameter.Summary,
+            };
+        }
+
+        return parameter;
+    }
+
+    private static MethodParameter CreateMultipartStreamFileNamesParameter(MethodParameter binaryArrayParameter)
+    {
+        var parameterName = binaryArrayParameter.ParameterName + "FileNames";
+        return MethodParameter.Default with
+        {
+            Id = binaryArrayParameter.Id + "FileNames",
+            Name = binaryArrayParameter.Name + "FileNames",
+            ParameterName = parameterName,
+            ArgumentName = parameterName,
+            Type = CreateMultipartStreamParameterType(
+                "global::System.Collections.Generic.IReadOnlyList<string>",
+                nullable: true),
+            IsRequired = false,
+            Location = null,
+            Settings = binaryArrayParameter.Settings,
+            Summary = $"Optional file names to use for the multipart '{binaryArrayParameter.Id}' file parts.",
+            ParameterDefaultValue = "default",
+            DisableDeprecationWarningIfRequired = " ",
+        };
+    }
+
+    private static string NormalizeMultipartStreamParameterSummary(string summary)
+    {
+        if (string.IsNullOrWhiteSpace(summary))
+        {
+            return string.Empty;
+        }
+
+        return string.Join(
+            "\n",
+            summary
+                .NormalizeLineEndings()
+                .Split(['\n'], StringSplitOptions.None)
+                .Select(static x => x.Trim())
+                .Where(static x => x.Length > 0));
+    }
+
+    private static IEnumerable<MethodParameter> GetMultipartStreamMethodParameters(EndPoint endPoint)
+    {
+        foreach (var parameter in GetExtensionMethodParameters(endPoint))
+        {
+            var streamParameter = ToMultipartStreamParameter(parameter);
+            streamParameter = streamParameter with
+            {
+                Summary = NormalizeMultipartStreamParameterSummary(streamParameter.Summary),
+            };
+            yield return streamParameter;
+
+            if (IsBinaryArrayParameter(parameter))
+            {
+                yield return CreateMultipartStreamFileNamesParameter(parameter);
+            }
+        }
+    }
+
+    private static string GenerateMultipartStreamParameterDeclarations(
+        IReadOnlyCollection<MethodParameter> parameters)
+    {
+        return $@"{parameters.Where(static x => x.IsRequired && !x.HasSchemaDefault).Select(x => $@"
+{x.DisableDeprecationWarningIfRequired}
+            {x.Type.CSharpType} {x.ParameterName},
+{x.DisableDeprecationWarningIfRequired}".TrimEnd()).Inject()}
+{parameters.Where(static x => !x.IsRequired || x.HasSchemaDefault).Select(x => $@"
+{x.DisableDeprecationWarningIfRequired}
+            {x.Type.CSharpType} {x.ParameterName} = {x.ParameterDefaultValue},
+{x.DisableDeprecationWarningIfRequired}".TrimEnd()).Inject()}";
+    }
+
+    private static string GenerateMultipartStreamRequestInitialization(EndPoint endPoint)
+    {
+        var nullChecks = endPoint.Parameters
+            .Where(x => IsMultipartBinaryParameter(x) && x.IsRequired && !x.Type.CSharpTypeNullability)
+            .Select(x => $@"
+            {x.ParameterName} = {x.ParameterName} ?? throw new global::System.ArgumentNullException(nameof({x.ParameterName}));")
+            .Inject();
+
+        return $@"
+{nullChecks}
+{GenerateRequestInitialization(
+    endPoint,
+    "request",
+    x => IsMultipartBinaryParameter(x)
+        ? x.Type.IsBinary
+            ? "global::System.Array.Empty<byte>()"
+            : "new global::System.Collections.Generic.List<byte[]>()"
+        : x.ParameterName)}";
+    }
+
+    private static string GenerateMultipartStreamMethods(
+        EndPoint endPoint,
+        bool isInterface = false)
+    {
+        if (!ShouldGenerateMultipartStreamMethods(endPoint))
+        {
+            return TrimmedLine;
+        }
+
+        return $@"
+{GenerateMethod(endPoint, isInterface: isInterface, multipartStreamRequest: true)}
+{(ShouldGenerateStreamResponseMethod(endPoint) ? GenerateMethod(endPoint, isInterface: isInterface, returnStreamResponse: true, multipartStreamRequest: true) : TrimmedLine)}
+{(ShouldGenerateResponseWrapperMethod(endPoint) ? GenerateMethod(endPoint, isInterface: isInterface, returnResponseWrapper: true, multipartStreamRequest: true) : TrimmedLine)}".RemoveBlankLinesWhereOnlyWhitespaces();
     }
 
     private static string GetRequestPropertyName(MethodParameter parameter)
@@ -269,9 +450,35 @@ namespace {endPoint.Settings.Namespace}
         return endPoint.GenerateResponseWrapper && !endPoint.EnumerableStream;
     }
 
+    public static bool ShouldGenerateResponseStreamSupport(EndPoint endPoint)
+    {
+        return endPoint.RawStream || ShouldGenerateStreamResponseMethod(endPoint);
+    }
+
+    private static bool ShouldGenerateStreamResponseMethod(EndPoint endPoint)
+    {
+        return !endPoint.RawStream &&
+               !endPoint.EnumerableStream &&
+               endPoint.ContentType == ContentType.ByteArray &&
+               endPoint.SuccessResponse.Type.IsBinary &&
+               endPoint.SuccessResponse.Type.CSharpTypeWithoutNullability == "byte[]";
+    }
+
+    private static bool SupportsRequestRetry(EndPoint endPoint)
+    {
+        return !endPoint.IsMultipartFormData &&
+               !endPoint.RequestMediaType.IsSequentialJsonMimeType() &&
+               !endPoint.Parameters.Any(IsRequestStreamParameter);
+    }
+
     private static string GetResponseWrapperMethodName(EndPoint endPoint)
     {
         return $"{endPoint.NotAsyncMethodName}AsResponseAsync";
+    }
+
+    private static string GetStreamResponseMethodName(EndPoint endPoint)
+    {
+        return $"{endPoint.NotAsyncMethodName}AsStreamAsync";
     }
 
     private static string GetPollingMethodName(
@@ -441,11 +648,12 @@ namespace {endPoint.Settings.Namespace}
     private static string GetSendExpression(
         EndPoint endPoint,
         string requestVariableName,
-        string cancellationTokenVariableName)
+        string cancellationTokenVariableName,
+        bool forceResponseHeadersRead = false)
     {
         var hasOAuth2Authorization = endPoint.Authorizations.Any(static x => x.Type is SecuritySchemeType.OAuth2);
         var rootClassName = endPoint.Settings.ClassName.Replace(".", string.Empty);
-        var completionOption = $"global::System.Net.Http.HttpCompletionOption.{(endPoint.Stream
+        var completionOption = $"global::System.Net.Http.HttpCompletionOption.{(forceResponseHeadersRead || endPoint.Stream
             ? nameof(HttpCompletionOption.ResponseHeadersRead)
             : nameof(HttpCompletionOption.ResponseContentRead))}";
 
@@ -473,7 +681,9 @@ namespace {endPoint.Settings.Namespace}
         string attemptExpression,
         string maxAttemptsExpression,
         string willRetryExpression,
-        string cancellationTokenVariableName)
+        string cancellationTokenVariableName,
+        string retryDelayExpression = "null",
+        string retryReasonExpression = "global::System.String.Empty")
     {
         return $@"await global::{endPoint.Settings.Namespace}.AutoSDKRequestOptionsSupport.{helperMethodName}Async(
                             clientOptions: Options,
@@ -491,6 +701,8 @@ namespace {endPoint.Settings.Namespace}
                                 attempt: {attemptExpression},
                                 maxAttempts: {maxAttemptsExpression},
                                 willRetry: {willRetryExpression},
+                                retryDelay: {retryDelayExpression},
+                                retryReason: {retryReasonExpression},
                                 cancellationToken: {cancellationTokenVariableName})).ConfigureAwait(false);";
     }
 
@@ -534,12 +746,32 @@ namespace {endPoint.Settings.Namespace}
     }
 
     public static string GenerateMethod(
-        EndPoint endPoint, bool isInterface = false, bool returnResponseWrapper = false)
+        EndPoint endPoint,
+        bool isInterface = false,
+        bool returnResponseWrapper = false,
+        bool returnStreamResponse = false,
+        bool multipartStreamRequest = false)
     {
-        var sendExpression = GetSendExpression(endPoint, "__httpRequest", "__effectiveCancellationToken");
+        if (returnResponseWrapper && returnStreamResponse)
+        {
+            throw new ArgumentException("A method cannot return both a response wrapper and a stream response.");
+        }
+
+        var useMultipartStreamRequest = multipartStreamRequest && ShouldGenerateMultipartStreamMethods(endPoint);
+        if (multipartStreamRequest && !useMultipartStreamRequest)
+        {
+            return TrimmedLine;
+        }
+
+        var sendExpression = GetSendExpression(
+            endPoint,
+            "__httpRequest",
+            "__effectiveCancellationToken",
+            forceResponseHeadersRead: returnStreamResponse);
+        var methodReturnsResponseStream = endPoint.RawStream || returnStreamResponse;
         var taskType = returnResponseWrapper
             ? $"global::System.Threading.Tasks.Task<{GetResponseWrapperType(endPoint)}>"
-            : endPoint.RawStream
+            : methodReturnsResponseStream
             ? "global::System.Threading.Tasks.Task<global::System.IO.Stream>"
             : endPoint.EnumerableStream
             ? string.IsNullOrWhiteSpace(endPoint.SuccessResponse.Type.CSharpType)
@@ -548,7 +780,9 @@ namespace {endPoint.Settings.Namespace}
             : string.IsNullOrWhiteSpace(endPoint.SuccessResponse.Type.CSharpType)
                 ? "global::System.Threading.Tasks.Task"
                 : $"global::System.Threading.Tasks.Task<{endPoint.SuccessResponse.Type.CSharpTypeWithoutNullability}>";
-        var methodName = returnResponseWrapper
+        var methodName = returnStreamResponse
+            ? GetStreamResponseMethodName(endPoint)
+            : returnResponseWrapper
             ? GetResponseWrapperMethodName(endPoint)
             : endPoint.MethodName;
         var cancellationTokenAttribute = endPoint.EnumerableStream && !isInterface
@@ -586,7 +820,9 @@ namespace {endPoint.Settings.Namespace}
             attemptExpression: "__attempt",
             maxAttemptsExpression: "__maxAttempts",
             willRetryExpression: "true",
-            cancellationTokenVariableName: "__effectiveCancellationToken");
+            cancellationTokenVariableName: "__effectiveCancellationToken",
+            retryDelayExpression: "__retryDelay",
+            retryReasonExpression: "\"status:\" + ((int)__response.StatusCode).ToString(global::System.Globalization.CultureInfo.InvariantCulture)");
         var afterErrorStatusHook = GenerateHookInvocation(
             endPoint,
             endPoint.MethodName,
@@ -608,10 +844,15 @@ namespace {endPoint.Settings.Namespace}
             attemptExpression: "__attempt",
             maxAttemptsExpression: "__maxAttempts",
             willRetryExpression: "__willRetry",
-            cancellationTokenVariableName: "__effectiveCancellationToken");
+            cancellationTokenVariableName: "__effectiveCancellationToken",
+            retryDelayExpression: "__willRetry ? __retryDelay : (global::System.TimeSpan?)null",
+            retryReasonExpression: "\"exception\"");
+        var multipartStreamParameters = useMultipartStreamRequest
+            ? GetMultipartStreamMethodParameters(endPoint).ToArray()
+            : Array.Empty<MethodParameter>();
         var body = isInterface
             ? ";"
-            : !returnResponseWrapper && ShouldGenerateResponseWrapperMethod(endPoint)
+            : !useMultipartStreamRequest && !returnStreamResponse && !returnResponseWrapper && ShouldGenerateResponseWrapperMethod(endPoint)
             ? string.IsNullOrWhiteSpace(endPoint.SuccessResponse.Type.CSharpType)
             ? @$"
         {{
@@ -629,10 +870,12 @@ namespace {endPoint.Settings.Namespace}
         }}"
             : @$"
         {{
-{(string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType) || endPoint.RequestType.IsAnyOfLike ? TrimmedLine : @" 
+{(useMultipartStreamRequest
+    ? GenerateMultipartStreamRequestInitialization(endPoint)
+    : string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType) || endPoint.RequestType.IsAnyOfLike ? TrimmedLine : $@"{TrimmedLine}
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 ")}
-{(string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType) || endPoint.RequestType.IsAnyOfLike ? TrimmedLine : GeneratePinnedRequestCopy(endPoint, "request"))}
+{(useMultipartStreamRequest || string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType) || endPoint.RequestType.IsAnyOfLike ? TrimmedLine : GeneratePinnedRequestCopy(endPoint, "request"))}
             PrepareArguments(
                 client: HttpClient);
             Prepare{endPoint.NotAsyncMethodName}Arguments(
@@ -671,7 +914,7 @@ namespace {endPoint.Settings.Namespace}
             var __maxAttempts = global::{endPoint.Settings.Namespace}.AutoSDKRequestOptionsSupport.GetMaxAttempts(
                 clientOptions: Options,
                 requestOptions: requestOptions,
-                supportsRetry: true);
+                supportsRetry: {(SupportsRequestRetry(endPoint) ? "true" : "false")});
 
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {{
@@ -737,7 +980,7 @@ namespace {endPoint.Settings.Namespace}
 {GenerateCookieParameterHandling(endPoint).AddIndent(4)}
 {GenerateCookieHeaderHandling(endPoint).AddIndent(4)}
  
-{GenerateRequestData(endPoint).AddIndent(4)}
+{GenerateRequestData(endPoint, multipartStreamRequest: useMultipartStreamRequest).AddIndent(4)}
                 global::{endPoint.Settings.Namespace}.AutoSDKRequestOptionsSupport.ApplyHeaders(
                     request: __httpRequest,
                     clientHeaders: Options.Headers,
@@ -773,6 +1016,11 @@ namespace {endPoint.Settings.Namespace}
                     }}
                     catch (global::System.Net.Http.HttpRequestException __exception)
                     {{
+                        var __retryDelay = global::{endPoint.Settings.Namespace}.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: null,
+                            attempt: __attempt);
                         var __willRetry = __attempt < __maxAttempts && !__effectiveCancellationToken.IsCancellationRequested;
                         {afterExceptionHook}
                         if (!__willRetry)
@@ -783,8 +1031,7 @@ namespace {endPoint.Settings.Namespace}
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::{endPoint.Settings.Namespace}.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }}
@@ -793,14 +1040,18 @@ namespace {endPoint.Settings.Namespace}
                         __attempt < __maxAttempts &&
                         global::{endPoint.Settings.Namespace}.AutoSDKRequestOptionsSupport.ShouldRetryStatusCode(__response.StatusCode))
                     {{
+                        var __retryDelay = global::{endPoint.Settings.Namespace}.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: __response,
+                            attempt: __attempt);
                         {afterRetryableStatusHook}
                         __response.Dispose();
                         __response = null;
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::{endPoint.Settings.Namespace}.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }}
@@ -812,7 +1063,7 @@ namespace {endPoint.Settings.Namespace}
                 {{
                     throw new global::System.InvalidOperationException(""No response received."");
                 }}
-{(endPoint.RawStream ? @"
+{(methodReturnsResponseStream ? @"
                 try
                 {" : @"
                 using (__response)
@@ -832,8 +1083,8 @@ namespace {endPoint.Settings.Namespace}
                 {{
                     {afterErrorStatusHook}
                 }}
-{GenerateResponse(endPoint, wrapSuccessResponse: returnResponseWrapper, cancellationTokenVariableName: "__effectiveCancellationToken", readResponseAsStringExpression: "__effectiveReadResponseAsString").AddIndent(4)}
-{(endPoint.RawStream ? @"
+{GenerateResponse(endPoint, wrapSuccessResponse: returnResponseWrapper, returnStreamResponse: returnStreamResponse, cancellationTokenVariableName: "__effectiveCancellationToken", readResponseAsStringExpression: "__effectiveReadResponseAsString").AddIndent(4)}
+{(methodReturnsResponseStream ? @"
                 }
                 catch
                 {
@@ -850,9 +1101,9 @@ namespace {endPoint.Settings.Namespace}
 
         return $@" 
         {endPoint.Summary.ToXmlDocumentationSummary(level: 8)}
-{endPoint.Parameters.Where(x => x.Location != null).Select(x => $@"
+{(useMultipartStreamRequest ? multipartStreamParameters : endPoint.Parameters.Where(x => x.Location != null)).Select(x => $@"
         {x.Summary.ToXmlDocumentationForParam(x.ParameterName, level: 8)}").Inject()}
-{(string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType) ? TrimmedLine : @" 
+{(useMultipartStreamRequest || string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType) ? TrimmedLine : $@"{TrimmedLine}
         /// <param name=""request""></param>")}
         /// <param name=""requestOptions"">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name=""cancellationToken"">The token to cancel the operation with</param>
@@ -860,12 +1111,12 @@ namespace {endPoint.Settings.Namespace}
         {endPoint.Remarks.ToXmlDocumentationRemarks(level: 8)}")}
         {GenerateEndPointAttributes(endPoint)}
         {(isInterface ? "" : "public async ")}{taskType} {methodName}(
-{endPoint.Parameters.Where(x => x is { Location: not null, IsRequired: true } && !x.HasSchemaDefault).Select(x => $@"
+{(useMultipartStreamRequest ? GenerateMultipartStreamParameterDeclarations(multipartStreamParameters) : $@"{endPoint.Parameters.Where(x => x is { Location: not null, IsRequired: true } && !x.HasSchemaDefault).Select(x => $@"
             {x.Type.CSharpType} {x.ParameterName},").Inject()}
 {(string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType) ? TrimmedLine : @$"
             {endPoint.RequestType.CSharpTypeWithoutNullability} request,")}
 {endPoint.Parameters.Where(x => x is { Location: not null } && (!x.IsRequired || x.HasSchemaDefault)).Select(x => $@"
-            {x.Type.CSharpType} {x.ParameterName} = {x.ParameterDefaultValue},").Inject()}
+            {x.Type.CSharpType} {x.ParameterName} = {x.ParameterDefaultValue},").Inject()}")}
             global::{endPoint.Settings.Namespace}.AutoSDKRequestOptions? requestOptions = default,
             {cancellationTokenAttribute}global::System.Threading.CancellationToken cancellationToken = default){body}
  ".RemoveBlankLinesWhereOnlyWhitespaces();
@@ -1442,7 +1693,7 @@ namespace {endPoint.Settings.Namespace}
             : endPoint.HasServerOverride && !string.IsNullOrWhiteSpace(endPoint.BaseUrl)
                 ? $@"HttpClient.BaseAddress ?? new global::System.Uri(""{escapedBaseUrl}"", global::System.UriKind.RelativeOrAbsolute)"
                 : "HttpClient.BaseAddress";
-        var code = @$" 
+        var code = @$"
             var __pathBuilder = new global::{endPoint.GlobalSettings.Namespace}.PathBuilder(
                 path: {endPoint.Path},
                 baseUri: {baseUriExpression});";
@@ -1463,7 +1714,7 @@ namespace {endPoint.Settings.Namespace}
 
         if (queryParameters.Length > 0)
         {
-            code += @" 
+            code += @"
             __pathBuilder";
         }
 
@@ -1491,13 +1742,13 @@ namespace {endPoint.Settings.Namespace}
 
         if (queryParameters.Length > 0)
         {
-            code += @" 
+            code += @"
                 ;";
         }
 
         code += "\n" + GenerateQueryStringParameterHandling(endPoint);
 
-        code += @" 
+        code += @"
             var __path = __pathBuilder.ToString();";
 
         return code.RemoveBlankLinesWhereOnlyWhitespaces();
@@ -1521,6 +1772,7 @@ namespace {endPoint.Settings.Namespace}
         return $@"return new global::{endPoint.Settings.Namespace}.AutoSDKHttpResponse<{GetSuccessResponseBodyType(endPoint)}>(
                         statusCode: __response.StatusCode,
                         headers: {GetSuccessResponseHeadersExpression(endPoint)},
+                        requestUri: __response.RequestMessage?.RequestUri,
                         body: {bodyExpression});";
     }
 
@@ -1535,7 +1787,8 @@ namespace {endPoint.Settings.Namespace}
 
         return $@"return new global::{endPoint.Settings.Namespace}.AutoSDKHttpResponse(
                         statusCode: __response.StatusCode,
-                        headers: {GetSuccessResponseHeadersExpression(endPoint)});";
+                        headers: {GetSuccessResponseHeadersExpression(endPoint)},
+                        requestUri: __response.RequestMessage?.RequestUri);";
     }
 
     private static bool IsJsonMediaType(string mediaType)
@@ -1681,6 +1934,7 @@ namespace {endPoint.Settings.Namespace}
     public static string GenerateResponse(
         EndPoint endPoint,
         bool wrapSuccessResponse = false,
+        bool returnStreamResponse = false,
         string cancellationTokenVariableName = "cancellationToken",
         string readResponseAsStringExpression = "ReadResponseAsString")
     {
@@ -1950,7 +2204,7 @@ namespace {endPoint.Settings.Namespace}
                 }};
             }}").Inject() : TrimmedLine;
 
-        if (endPoint.RawStream)
+        if (endPoint.RawStream || returnStreamResponse)
         {
             return @$"{errors}
 
@@ -1968,6 +2222,7 @@ namespace {endPoint.Settings.Namespace}
     ? $@"                return new global::{endPoint.Settings.Namespace}.AutoSDKHttpResponse<global::System.IO.Stream>(
                     statusCode: __response.StatusCode,
                     headers: {GetSuccessResponseHeadersExpression(endPoint)},
+                    requestUri: __response.RequestMessage?.RequestUri,
                     body: new global::{endPoint.GlobalSettings.Namespace}.ResponseStream(__response, __content));"
     : $"                return new global::{endPoint.GlobalSettings.Namespace}.ResponseStream(__response, __content);")}
             }}
@@ -2099,7 +2354,8 @@ namespace {endPoint.Settings.Namespace}
     }
 
     public static string GenerateRequestData(
-        EndPoint endPoint)
+        EndPoint endPoint,
+        bool multipartStreamRequest = false)
     {
         if (string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType))
         {
@@ -2109,11 +2365,11 @@ namespace {endPoint.Settings.Namespace}
         var jsonSerializer = endPoint.Settings.JsonSerializerType.GetSerializer();
         if (endPoint.IsMultipartFormData)
         {
-            return $@" 
+            return $@"
             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
 {endPoint.Parameters.Where(x => !x.IsMultiPartFormDataFilename).Select(x =>
 {
-    var isBinaryArray = x.Type.IsArray && !x.Type.SubTypes.IsEmpty && x.Type.SubTypes[0].Unbox<TypeData>().IsBinary;
+    var isBinaryArray = IsBinaryArrayParameter(x);
     // Resolve the actual filename property: prefer the synthetic companion, fall back to
     // a case-insensitive match among siblings (e.g. FileName from file_name for binary file)
     var filenamePropName = x.Type.IsBinary
@@ -2122,7 +2378,19 @@ namespace {endPoint.Settings.Namespace}
             .Select(p => p.Name)
             .FirstOrDefault() ?? (x.Name + "name")
         : string.Empty;
-    var add = x.Type.IsBinary ? @$"
+    var arrayFileNameParameterName = x.ParameterName + "FileNames";
+    var add = multipartStreamRequest && x.Type.IsBinary ? @$"
+            var __content{x.Name} = new global::System.Net.Http.StreamContent({x.ParameterName});
+{GenerateMultipartBinaryContentTypeAssignment($"__content{x.Name}", $"request.{filenamePropName}")}
+            __httpRequestContent.Add(
+                content: __content{x.Name},
+                name: ""\""{x.Id}\"""",
+                fileName: request.{filenamePropName} != null ? $""\""{{request.{filenamePropName}}}\"""" : string.Empty);
+            if (__content{x.Name}.Headers.ContentDisposition != null)
+            {{
+                __content{x.Name}.Headers.ContentDisposition.FileNameStar = null;
+            }}
+" : x.Type.IsBinary ? @$"
             var __content{x.Name} = new global::System.Net.Http.ByteArrayContent(request.{x.Name} ?? global::System.Array.Empty<byte>());
 {GenerateMultipartBinaryContentTypeAssignment($"__content{x.Name}", $"request.{filenamePropName}")}
             __httpRequestContent.Add(
@@ -2133,7 +2401,26 @@ namespace {endPoint.Settings.Namespace}
             {{
                 __content{x.Name}.Headers.ContentDisposition.FileNameStar = null;
             }}
- " : isBinaryArray ? @$"
+" : multipartStreamRequest && isBinaryArray ? @$"
+            for (var __i{x.Name} = 0; __i{x.Name} < {x.ParameterName}.Count; __i{x.Name}++)
+            {{
+                var __fileName{x.Name} = {arrayFileNameParameterName} != null &&
+                    __i{x.Name} < {arrayFileNameParameterName}.Count &&
+                    {arrayFileNameParameterName}[__i{x.Name}] != null
+                    ? {arrayFileNameParameterName}[__i{x.Name}]
+                    : $""file{{__i{x.Name}}}.bin"";
+                var __content{x.Name} = new global::System.Net.Http.StreamContent({x.ParameterName}[__i{x.Name}]);
+{GenerateMultipartBinaryContentTypeAssignment($"__content{x.Name}", $"__fileName{x.Name}")}
+                __httpRequestContent.Add(
+                    content: __content{x.Name},
+                    name: ""\""{x.Id}\"""",
+                    fileName: $""\""{{__fileName{x.Name}}}\"""");
+                if (__content{x.Name}.Headers.ContentDisposition != null)
+                {{
+                    __content{x.Name}.Headers.ContentDisposition.FileNameStar = null;
+                }}
+            }}
+" : isBinaryArray ? @$"
             for (var __i{x.Name} = 0; __i{x.Name} < request.{x.Name}.Count; __i{x.Name}++)
             {{
                 var __content{x.Name} = new global::System.Net.Http.ByteArrayContent(request.{x.Name}[__i{x.Name}]);
@@ -2147,25 +2434,29 @@ namespace {endPoint.Settings.Namespace}
                     __content{x.Name}.Headers.ContentDisposition.FileNameStar = null;
                 }}
             }}
- " : @$"
+" : @$"
             __httpRequestContent.Add(
                 content: new global::System.Net.Http.StringContent({SerializePropertyAsString(x)}),
                 name: ""\""{x.Id}\"""");
- ";
+";
     if (x.IsRequired)
     {
         return add;
     }
 
-    return $@" 
-            if ({(x.Location != null ? x.ParameterName : "request." + x.Name)} != {x.ParameterDefaultValue})
+    var optionalValueExpression = multipartStreamRequest && IsMultipartBinaryParameter(x)
+        ? x.ParameterName
+        : x.Location != null ? x.ParameterName : "request." + x.Name;
+
+    return $@"
+            if ({optionalValueExpression} != {x.ParameterDefaultValue})
             {{
 {add.AddIndent(1)}
             }}";
 }).Inject()}
-            
+
             __httpRequest.Content = __httpRequestContent;
- ".RemoveBlankLinesWhereOnlyWhitespaces();
+".RemoveBlankLinesWhereOnlyWhitespaces();
         }
 
         if (endPoint.RequestType.IsBinary || endPoint.RequestMediaType == "application/octet-stream")

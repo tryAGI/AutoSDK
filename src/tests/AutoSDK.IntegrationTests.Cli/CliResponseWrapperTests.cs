@@ -62,6 +62,7 @@ paths:
                 content.Should().Contain("CreateTextToSpeechByVoiceIdAsResponseAsync");
                 content.Should().Contain("global::Oag.AutoSDKHttpResponse<byte[]>");
                 content.Should().Contain("headers: global::Oag.AutoSDKHttpResponse.CreateHeaders(__response)");
+                content.Should().Contain("requestUri: __response.RequestMessage?.RequestUri");
             });
     }
 

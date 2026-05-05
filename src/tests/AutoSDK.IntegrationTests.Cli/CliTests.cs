@@ -410,7 +410,8 @@ public class CliTests
                 combinedSource.Should().Contain("public sealed class AutoSDKRequestOptions");
                 combinedSource.Should().Contain("public interface IAutoSDKHook");
                 combinedSource.Should().Contain("public sealed class AutoSDKHookContext");
-                combinedSource.Should().Contain("global::Generated.Options.AutoSDKClientOptions? options = null");
+                combinedSource.Should().Contain("options: null");
+                combinedSource.Should().Contain("global::Generated.Options.AutoSDKClientOptions? options,");
                 combinedSource.Should().Contain("global::Generated.Options.AutoSDKRequestOptions? requestOptions = default");
                 combinedSource.Should().Contain("AutoSDKRequestOptionsSupport.AppendQueryParameters(");
                 combinedSource.Should().Contain("AutoSDKRequestOptionsSupport.ApplyHeaders(");
@@ -2095,6 +2096,108 @@ components:
                 allOfContent.Should().Contain("private static class RequirementCache<[global::System.Diagnostics.CodeAnalysis.DynamicallyAccessedMembers(");
                 converterContent.Should().Contain("public class AllOfJsonConverter<[global::System.Diagnostics.CodeAnalysis.DynamicallyAccessedMembers(");
             });
+    }
+
+    [TestMethod]
+    public async Task Trim_WhenValidationBuildFails_ReturnsNonZeroExitCode()
+    {
+        var tempDirectory = Path.Combine(Path.GetTempPath(), Path.GetRandomFileName());
+        try
+        {
+            Directory.CreateDirectory(tempDirectory);
+
+            var csprojPath = Path.Combine(tempDirectory, "Broken.csproj");
+            await File.WriteAllTextAsync(
+                csprojPath,
+                """
+                <Project Sdk="Microsoft.NET.Sdk">
+                  <PropertyGroup>
+                    <TargetFramework>net10.0</TargetFramework>
+                  </PropertyGroup>
+                </Project>
+                """);
+            await File.WriteAllTextAsync(
+                Path.Combine(tempDirectory, "Broken.cs"),
+                "this is not valid csharp");
+
+            var currentDirectory = Directory.GetCurrentDirectory();
+            var repositoryDirectory = Path.GetFullPath(Path.Combine(currentDirectory, "../../../../../.."));
+            var result = await RunDotnetAsync(
+                repositoryDirectory,
+                "run",
+                "--disable-build-servers",
+                "--no-launch-profile",
+                "--project", "src/libs/AutoSDK.CLI",
+                "trim",
+                csprojPath,
+                "--target-framework", "net10.0");
+
+            Console.WriteLine(result.StandardOutput);
+            Console.WriteLine(result.StandardError);
+
+            result.ExitCode.Should().Be(1);
+            result.StandardError.Should().Contain("Build failed");
+        }
+        finally
+        {
+            TryDeleteDirectory(tempDirectory);
+        }
+    }
+
+    [TestMethod]
+    public async Task Trim_WithAnalysisModeAll_DoesNotFailGeneratedTemporaryProgram()
+    {
+        var tempDirectory = Path.Combine(Path.GetTempPath(), Path.GetRandomFileName());
+        try
+        {
+            Directory.CreateDirectory(tempDirectory);
+
+            await File.WriteAllTextAsync(
+                Path.Combine(tempDirectory, "Directory.Build.props"),
+                """
+                <Project>
+                  <PropertyGroup>
+                    <EnableNETAnalyzers>true</EnableNETAnalyzers>
+                    <AnalysisLevel>latest</AnalysisLevel>
+                    <AnalysisMode>All</AnalysisMode>
+                    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+                  </PropertyGroup>
+                </Project>
+                """);
+
+            var csprojPath = Path.Combine(tempDirectory, "TrimTarget.csproj");
+            await File.WriteAllTextAsync(
+                csprojPath,
+                """
+                <Project Sdk="Microsoft.NET.Sdk">
+                  <PropertyGroup>
+                    <TargetFramework>net10.0</TargetFramework>
+                  </PropertyGroup>
+                </Project>
+                """);
+
+            var currentDirectory = Directory.GetCurrentDirectory();
+            var repositoryDirectory = Path.GetFullPath(Path.Combine(currentDirectory, "../../../../../.."));
+            var result = await RunDotnetAsync(
+                repositoryDirectory,
+                "run",
+                "--disable-build-servers",
+                "--no-launch-profile",
+                "--project", "src/libs/AutoSDK.CLI",
+                "trim",
+                csprojPath,
+                "--target-framework", "net10.0");
+
+            Console.WriteLine(result.StandardOutput);
+            Console.WriteLine(result.StandardError);
+
+            result.ExitCode.Should().Be(0);
+            (result.StandardOutput + result.StandardError).Should().NotContain("CA1303");
+        }
+        finally
+        {
+            TryDeleteDirectory(tempDirectory);
+        }
     }
 
     [TestMethod]

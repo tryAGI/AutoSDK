@@ -42,8 +42,14 @@ namespace G
                     }
                     catch (global::System.Net.WebSockets.WebSocketException exception)
                     {
+                        RaiseException(exception);
                         var rethrow = false;
                         OnReceiveException(exception, ref rethrow);
+                        if (await TryReconnectAsync(exception, cancellationToken).ConfigureAwait(false))
+                        {
+                            continue;
+                        }
+
                         if (rethrow)
                         {
                             throw;
@@ -53,6 +59,11 @@ namespace G
                     }
                     catch (global::System.OperationCanceledException exception)
                     {
+                        if (!cancellationToken.IsCancellationRequested)
+                        {
+                            RaiseException(exception);
+                        }
+
                         var rethrow = false;
                         OnReceiveException(exception, ref rethrow);
                         if (rethrow)
@@ -65,6 +76,7 @@ namespace G
 
                     if (result.MessageType == global::System.Net.WebSockets.WebSocketMessageType.Close)
                     {
+                        RaiseClosed(result.CloseStatus, result.CloseStatusDescription);
                         await _clientWebSocket.CloseAsync(
                             closeStatus: global::System.Net.WebSockets.WebSocketCloseStatus.NormalClosure,
                             statusDescription: "Closing",
@@ -94,9 +106,86 @@ namespace G
                 }
 
                 string json = global::System.Text.Encoding.UTF8.GetString(__messageBuffer.ToArray());
-                    var @event = (global::G.AgentV1ServerEvent)global::System.Text.Json.JsonSerializer.Deserialize(json, typeof(global::G.AgentV1ServerEvent), JsonSerializerContext)!;
+                    global::G.AgentV1ServerEvent @event;
+                    try
+                    {
+                        @event = (global::G.AgentV1ServerEvent)global::System.Text.Json.JsonSerializer.Deserialize(json, typeof(global::G.AgentV1ServerEvent), JsonSerializerContext)!;
+                    }
+                    catch (global::System.Exception exception) when (
+                        exception is global::System.Text.Json.JsonException ||
+                        exception is global::System.NotSupportedException ||
+                        exception is global::System.InvalidOperationException)
+                    {
+                        var rethrow = false;
+                        OnReceiveException(exception, ref rethrow);
+                        DispatchUnknownMessage(json);
+                        if (rethrow)
+                        {
+                            throw;
+                        }
 
+                        continue;
+                    }
+
+                    DispatchReceivedMessage(@event, json);
                     yield return @event;
+            }
+        }
+
+
+        private static global::System.Text.Json.JsonElement? TryParseMessageJson(
+            string rawText)
+        {
+            try
+            {
+                using var document = global::System.Text.Json.JsonDocument.Parse(rawText);
+                return document.RootElement.Clone();
+            }
+            catch (global::System.Text.Json.JsonException)
+            {
+                return null;
+            }
+        }
+
+        private void DispatchUnknownMessage(
+            string rawText)
+        {
+            UnknownMessage?.Invoke(
+                this,
+                new AutoSDKWebSocketUnknownMessageEventArgs(
+                    rawText,
+                    TryParseMessageJson(rawText)));
+        }
+
+        private void DispatchReceivedMessage(
+            global::G.AgentV1ServerEvent @event,
+            string rawText)
+        {
+            var json = TryParseMessageJson(rawText);
+            MessageReceived?.Invoke(
+                this,
+                new AutoSDKWebSocketMessageEventArgs<global::G.AgentV1ServerEvent>(
+                    @event,
+                    rawText,
+                    json));
+
+            if (@event.AgentStarted is { } __AgentStartedReceived)
+            {
+                AgentStartedReceived?.Invoke(
+                    this,
+                    new AutoSDKWebSocketMessageEventArgs<global::G.AgentStarted>(
+                        __AgentStartedReceived,
+                        rawText,
+                        json));
+            }
+            if (@event.AgentThinking is { } __AgentThinkingReceived)
+            {
+                AgentThinkingReceived?.Invoke(
+                    this,
+                    new AutoSDKWebSocketMessageEventArgs<global::G.AgentThinking>(
+                        __AgentThinkingReceived,
+                        rawText,
+                        json));
             }
         }
     }

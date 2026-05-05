@@ -100,7 +100,7 @@ public class SdkGenerator : IIncrementalGenerator
             .AddSource(context);
 
         data
-            .SelectAndReportExceptions((x, c) => x.Methods.Any(y => y.RawStream)
+            .SelectAndReportExceptions((x, c) => x.Methods.Any(static y => Sources.ShouldGenerateResponseStreamSupport(y))
                 ? Sources.ResponseStream(x.Converters.Settings, c)
                 : FileWithName.Empty
                 .AsFileWithName(), context, Id)

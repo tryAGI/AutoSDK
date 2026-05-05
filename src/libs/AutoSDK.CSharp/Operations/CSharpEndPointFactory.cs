@@ -177,8 +177,8 @@ public static class CSharpEndPointFactory
             : operation.Settings.ClassName.Replace(".", string.Empty);
         var notAsyncMethodName = endPointId.ToPropertyName();
         var generateResponseWrapper =
-            responses.Any(x => x.HasHeaders && (x.Is2XX || x.IsDefault)) ||
-            !pollingOperations.IsEmpty ||
+            streamFormat == StreamFormat.None ||
+            streamFormat == StreamFormat.Binary ||
             OpenApiExtensions.GetExtensionBooleanValue(
                 operation.Operation.Extensions,
                 "x-autosdk-response-wrapper");
