@@ -287,9 +287,6 @@ namespace G
 
     internal static class AutoSDKRequestOptionsSupport
     {
-        private static readonly object s_retryJitterRandomLock = new object();
-        private static readonly global::System.Random s_retryJitterRandom = new global::System.Random();
-
         internal static global::G.AutoSDKHookContext CreateHookContext(
             string operationId,
             string methodName,
@@ -535,12 +532,7 @@ namespace G
                 jitterRatio = 1D;
             }
 
-            double sample;
-            lock (s_retryJitterRandomLock)
-            {
-                sample = s_retryJitterRandom.NextDouble();
-            }
-
+            var sample = NextJitterSample();
             var multiplier = 1D - jitterRatio + (sample * jitterRatio * 2D);
             var milliseconds = delay.TotalMilliseconds * multiplier;
             if (double.IsNaN(milliseconds) || double.IsInfinity(milliseconds) || milliseconds < 0D)
@@ -549,6 +541,18 @@ namespace G
             }
 
             return global::System.TimeSpan.FromMilliseconds(milliseconds);
+        }
+
+        private static double NextJitterSample()
+        {
+            var bytes = new byte[8];
+            using (var randomNumberGenerator = global::System.Security.Cryptography.RandomNumberGenerator.Create())
+            {
+                randomNumberGenerator.GetBytes(bytes);
+            }
+
+            var value = global::System.BitConverter.ToUInt64(bytes, 0);
+            return value / (double)ulong.MaxValue;
         }
 
         private static global::System.TimeSpan ClampRetryDelay(

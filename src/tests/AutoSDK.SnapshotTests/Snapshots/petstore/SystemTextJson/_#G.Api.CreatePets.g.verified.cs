@@ -61,6 +61,7 @@ namespace G
 
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
+
                             var __pathBuilder = new global::G.PathBuilder(
                                 path: "/pets",
                                 baseUri: HttpClient.BaseAddress);

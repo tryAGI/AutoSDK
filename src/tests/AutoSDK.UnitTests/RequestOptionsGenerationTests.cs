@@ -131,7 +131,7 @@ public class RequestOptionsGenerationTests
         supportSource.Should().Contain("TryGetRateLimitResetDelay(");
         supportSource.Should().Contain("DateTimeOffset.FromUnixTimeSeconds");
         supportSource.Should().Contain("global::System.Math.Pow(multiplier, exponent)");
-        supportSource.Should().Contain("s_retryJitterRandom.NextDouble()");
+        supportSource.Should().Contain("NextJitterSample()");
         supportSource.Should().Contain("1D - jitterRatio + (sample * jitterRatio * 2D)");
         supportSource.Should().Contain("ClampRetryDelay(");
     }
