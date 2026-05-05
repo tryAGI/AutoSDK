@@ -315,6 +315,8 @@ namespace {endPoint.Settings.Namespace}
         ? x.Type.IsBinary
             ? "global::System.Array.Empty<byte>()"
             : "new global::System.Collections.Generic.List<byte[]>()"
+        : IsRequestStreamParameter(x) && endPoint.ForcedRequestStreamValue is bool forcedRequestStreamValue
+            ? forcedRequestStreamValue ? "true" : "false"
         : x.ParameterName)}";
     }
 

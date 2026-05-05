@@ -130,4 +130,62 @@ paths:
         methodCode.Should().Contain(": $\"file{__iFiles}.bin\";");
         methodCode.Should().Contain("supportsRetry: false");
     }
+
+    [TestMethod]
+    public void MultipartFormData_StreamVariantPinsHiddenStreamDiscriminator()
+    {
+        const string yaml = """
+openapi: 3.0.3
+info:
+  title: Multipart
+  version: 1.0.0
+paths:
+  /audio/transcriptions:
+    post:
+      operationId: createTranscription
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required:
+                - file
+                - model
+              properties:
+                file:
+                  type: string
+                  format: binary
+                model:
+                  type: string
+                stream:
+                  type: boolean
+      responses:
+        '200':
+          description: ok
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  text:
+                    type: string
+            text/event-stream:
+              schema:
+                type: object
+                properties:
+                  delta:
+                    type: string
+""";
+
+        var data = AutoSDK.Generation.Data.Prepare(((yaml, DefaultSettings), GlobalSettings: DefaultSettings));
+        var method = data.Methods.Single(x => x.ForcedRequestStreamValue == true);
+        var methodCode = Sources.GenerateEndPoint(method);
+
+        methodCode.Should().Contain("global::System.IO.Stream file,");
+        methodCode.Should().Contain("Stream = true,");
+        methodCode.Should().Contain("var __contentFile = new global::System.Net.Http.StreamContent(file);");
+        methodCode.Should().NotContain("Stream = stream,");
+        methodCode.Should().NotContain("bool? stream = default");
+    }
 }
