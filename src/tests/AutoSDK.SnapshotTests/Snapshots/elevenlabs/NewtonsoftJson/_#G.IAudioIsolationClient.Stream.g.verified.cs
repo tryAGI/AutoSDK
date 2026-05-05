@@ -66,5 +66,60 @@ namespace G
             global::G.BodyAudioIsolationStreamV1AudioIsolationStreamPostFileFormat2? fileFormat = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Audio Isolation Stream<br/>
+        /// Removes background noise from audio and streams the result
+        /// </summary>
+        /// <param name="xiApiKey">
+        /// Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the 'Profile' tab on the website.
+        /// </param>
+        /// <param name="audio">
+        /// The audio file from which vocals/speech will be isolated from.
+        /// </param>
+        /// <param name="audioname">
+        /// The audio file from which vocals/speech will be isolated from.
+        /// </param>
+        /// <param name="fileFormat">
+        /// The format of input audio. Options are 'pcm_s16le_16' or 'other' For `pcm_s16le_16`, the input audio must be 16-bit PCM at a 16kHz sample rate, single channel (mono), and little-endian byte order. Latency will be lower than with passing an encoded waveform.<br/>
+        /// Default Value: other
+        /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::System.IO.Stream> StreamAsync(
+            global::System.IO.Stream audio,
+            string audioname,
+            string? xiApiKey = default,
+            global::G.BodyAudioIsolationStreamV1AudioIsolationStreamPostFileFormat2? fileFormat = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Audio Isolation Stream<br/>
+        /// Removes background noise from audio and streams the result
+        /// </summary>
+        /// <param name="xiApiKey">
+        /// Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the 'Profile' tab on the website.
+        /// </param>
+        /// <param name="audio">
+        /// The audio file from which vocals/speech will be isolated from.
+        /// </param>
+        /// <param name="audioname">
+        /// The audio file from which vocals/speech will be isolated from.
+        /// </param>
+        /// <param name="fileFormat">
+        /// The format of input audio. Options are 'pcm_s16le_16' or 'other' For `pcm_s16le_16`, the input audio must be 16-bit PCM at a 16kHz sample rate, single channel (mono), and little-endian byte order. Latency will be lower than with passing an encoded waveform.<br/>
+        /// Default Value: other
+        /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::System.IO.Stream>> StreamAsResponseAsync(
+            global::System.IO.Stream audio,
+            string audioname,
+            string? xiApiKey = default,
+            global::G.BodyAudioIsolationStreamV1AudioIsolationStreamPostFileFormat2? fileFormat = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

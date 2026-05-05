@@ -73,5 +73,66 @@ namespace G
             string? extraText = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Request Manual Verification<br/>
+        /// Request manual verification for a PVC voice.
+        /// </summary>
+        /// <param name="voiceId">
+        /// Voice ID to be used, you can use https://api.elevenlabs.io/v1/voices to list all the available voices.
+        /// </param>
+        /// <param name="xiApiKey">
+        /// Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the 'Profile' tab on the website.
+        /// </param>
+        /// <param name="files">
+        /// Verification documents
+        /// </param>
+        /// <param name="filesFileNames">
+        /// Optional file names to use for the multipart 'files' file parts.
+        /// </param>
+        /// <param name="extraText">
+        /// Extra text to be used in the manual verification process.
+        /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.RequestPVCManualVerificationResponseModel> RequestAsync(
+            string voiceId,
+            global::System.Collections.Generic.IReadOnlyList<global::System.IO.Stream> files,
+            string? xiApiKey = default,
+            global::System.Collections.Generic.IReadOnlyList<string>? filesFileNames = default,
+            string? extraText = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Request Manual Verification<br/>
+        /// Request manual verification for a PVC voice.
+        /// </summary>
+        /// <param name="voiceId">
+        /// Voice ID to be used, you can use https://api.elevenlabs.io/v1/voices to list all the available voices.
+        /// </param>
+        /// <param name="xiApiKey">
+        /// Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the 'Profile' tab on the website.
+        /// </param>
+        /// <param name="files">
+        /// Verification documents
+        /// </param>
+        /// <param name="filesFileNames">
+        /// Optional file names to use for the multipart 'files' file parts.
+        /// </param>
+        /// <param name="extraText">
+        /// Extra text to be used in the manual verification process.
+        /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.RequestPVCManualVerificationResponseModel>> RequestAsResponseAsync(
+            string voiceId,
+            global::System.Collections.Generic.IReadOnlyList<global::System.IO.Stream> files,
+            string? xiApiKey = default,
+            global::System.Collections.Generic.IReadOnlyList<string>? filesFileNames = default,
+            string? extraText = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

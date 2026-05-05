@@ -558,5 +558,962 @@ namespace G
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
         }
+
+        /// <summary>
+        /// Get Similar Library Voices<br/>
+        /// Returns a list of shared voices similar to the provided audio sample. If neither similarity_threshold nor top_k is provided, we will apply default values.
+        /// </summary>
+        /// <param name="xiApiKey">
+        /// Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the 'Profile' tab on the website.
+        /// </param>
+        /// <param name="audioFile">
+        /// The stream to send as the multipart 'audio_file' file part.
+        /// </param>
+        /// <param name="audioFilename"></param>
+        /// <param name="similarityThreshold">
+        /// Threshold for voice similarity between provided sample and library voices. Values range from 0 to 2. The smaller the value the more similar voices will be returned.
+        /// </param>
+        /// <param name="topK">
+        /// Number of most similar voices to return. If similarity_threshold is provided, less than this number of voices may be returned. Values range from 1 to 100.
+        /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::G.GetLibraryVoicesResponseModel> FindSimilarVoicesAsync(
+            string? xiApiKey = default,
+            global::System.IO.Stream? audioFile = default,
+            string? audioFilename = default,
+            double? similarityThreshold = default,
+            int? topK = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
+
+            var request = new global::G.BodyGetSimilarLibraryVoicesV1SimilarVoicesPost
+            {
+                AudioFile = global::System.Array.Empty<byte>(),
+                AudioFilename = audioFilename,
+                SimilarityThreshold = similarityThreshold,
+                TopK = topK,
+            };
+            PrepareArguments(
+                client: HttpClient);
+            PrepareFindSimilarVoicesArguments(
+                httpClient: HttpClient,
+                xiApiKey: ref xiApiKey,
+                request: request);
+
+            using var __timeoutCancellationTokenSource = global::G.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
+                clientOptions: Options,
+                requestOptions: requestOptions,
+                cancellationToken: cancellationToken);
+            var __effectiveCancellationToken = __timeoutCancellationTokenSource?.Token ?? cancellationToken;
+            var __effectiveReadResponseAsString = global::G.AutoSDKRequestOptionsSupport.GetReadResponseAsString(
+                clientOptions: Options,
+                requestOptions: requestOptions,
+                fallbackValue: ReadResponseAsString);
+            var __maxAttempts = global::G.AutoSDKRequestOptionsSupport.GetMaxAttempts(
+                clientOptions: Options,
+                requestOptions: requestOptions,
+                supportsRetry: false);
+
+            global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
+            {
+
+                            var __pathBuilder = new global::G.PathBuilder(
+                                path: "/v1/similar-voices",
+                                baseUri: HttpClient.BaseAddress);
+                            var __path = __pathBuilder.ToString();
+                __path = global::G.AutoSDKRequestOptionsSupport.AppendQueryParameters(
+                    path: __path,
+                    clientParameters: Options.QueryParameters,
+                    requestParameters: requestOptions?.QueryParameters);
+                var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
+                    method: global::System.Net.Http.HttpMethod.Post,
+                    requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
+#if NET6_0_OR_GREATER
+                __httpRequest.Version = global::System.Net.HttpVersion.Version11;
+                __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
+#endif
+
+            if (xiApiKey != default)
+            {
+                __httpRequest.Headers.TryAddWithoutValidation("xi-api-key", xiApiKey.ToString());
+            }
+
+
+                            var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
+                            if (xiApiKey != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(xiApiKey ?? string.Empty),
+                                    name: "\"xi-api-key\"");
+
+                            }
+                            if (audioFile != default)
+                            {
+
+                                var __contentAudioFile = new global::System.Net.Http.StreamContent(audioFile);
+                                __contentAudioFile.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue(
+                                    request.AudioFilename is null
+                                        ? "application/octet-stream"
+                                        : (global::System.IO.Path.GetExtension(request.AudioFilename) ?? string.Empty).ToLowerInvariant() switch
+                                        {
+                                            ".aac" => "audio/aac",
+                                            ".flac" => "audio/flac",
+                                            ".gif" => "image/gif",
+                                            ".jpeg" => "image/jpeg",
+                                            ".jpg" => "image/jpeg",
+                                            ".json" => "application/json",
+                                            ".m4a" => "audio/mp4",
+                                            ".mp3" => "audio/mpeg",
+                                            ".mp4" => "video/mp4",
+                                            ".mpeg" => "audio/mpeg",
+                                            ".mpga" => "audio/mpeg",
+                                            ".oga" => "audio/ogg",
+                                            ".ogg" => "audio/ogg",
+                                            ".opus" => "audio/ogg",
+                                            ".pdf" => "application/pdf",
+                                            ".png" => "image/png",
+                                            ".txt" => "text/plain",
+                                            ".wav" => "audio/wav",
+                                            ".weba" => "audio/webm",
+                                            ".webm" => "video/webm",
+                                            ".webp" => "image/webp",
+                                            _ => "application/octet-stream",
+                                        });
+                                __httpRequestContent.Add(
+                                    content: __contentAudioFile,
+                                    name: "\"audio_file\"",
+                                    fileName: request.AudioFilename != null ? $"\"{request.AudioFilename}\"" : string.Empty);
+                                if (__contentAudioFile.Headers.ContentDisposition != null)
+                                {
+                                    __contentAudioFile.Headers.ContentDisposition.FileNameStar = null;
+                                }
+
+                            }
+                            if (request.SimilarityThreshold != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(request.SimilarityThreshold, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
+                                    name: "\"similarity_threshold\"");
+
+                            }
+                            if (request.TopK != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(request.TopK, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
+                                    name: "\"top_k\"");
+
+                            }
+
+                            __httpRequest.Content = __httpRequestContent;
+
+                global::G.AutoSDKRequestOptionsSupport.ApplyHeaders(
+                    request: __httpRequest,
+                    clientHeaders: Options.Headers,
+                    requestHeaders: requestOptions?.Headers);
+
+                PrepareRequest(
+                    client: HttpClient,
+                    request: __httpRequest);
+                PrepareFindSimilarVoicesRequest(
+                    httpClient: HttpClient,
+                    httpRequestMessage: __httpRequest,
+                    xiApiKey: xiApiKey,
+                    request: request);
+
+                return __httpRequest;
+            }
+
+            global::System.Net.Http.HttpRequestMessage? __httpRequest = null;
+            global::System.Net.Http.HttpResponseMessage? __response = null;
+            var __attemptNumber = 0;
+            try
+            {
+                for (var __attempt = 1; __attempt <= __maxAttempts; __attempt++)
+                {
+                    __attemptNumber = __attempt;
+                    __httpRequest = __CreateHttpRequest();
+                    await global::G.AutoSDKRequestOptionsSupport.OnBeforeRequestAsync(
+                            clientOptions: Options,
+                            context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
+                                operationId: "FindSimilarVoices",
+                                methodName: "FindSimilarVoicesAsync",
+                                pathTemplate: "\"/v1/similar-voices\"",
+                                httpMethod: "POST",
+                                baseUri: BaseUri,
+                                request: __httpRequest!,
+                                response: null,
+                                exception: null,
+                                clientOptions: Options,
+                                requestOptions: requestOptions,
+                                attempt: __attempt,
+                                maxAttempts: __maxAttempts,
+                                willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
+                                cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
+                    try
+                    {
+                        __response = await HttpClient.SendAsync(
+                request: __httpRequest,
+                completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
+                cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
+                    }
+                    catch (global::System.Net.Http.HttpRequestException __exception)
+                    {
+                        var __retryDelay = global::G.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: null,
+                            attempt: __attempt);
+                        var __willRetry = __attempt < __maxAttempts && !__effectiveCancellationToken.IsCancellationRequested;
+                        await global::G.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
+                            clientOptions: Options,
+                            context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
+                                operationId: "FindSimilarVoices",
+                                methodName: "FindSimilarVoicesAsync",
+                                pathTemplate: "\"/v1/similar-voices\"",
+                                httpMethod: "POST",
+                                baseUri: BaseUri,
+                                request: __httpRequest!,
+                                response: null,
+                                exception: __exception,
+                                clientOptions: Options,
+                                requestOptions: requestOptions,
+                                attempt: __attempt,
+                                maxAttempts: __maxAttempts,
+                                willRetry: __willRetry,
+                                retryDelay: __willRetry ? __retryDelay : (global::System.TimeSpan?)null,
+                                retryReason: "exception",
+                                cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
+                        if (!__willRetry)
+                        {
+                            throw;
+                        }
+
+                        __httpRequest.Dispose();
+                        __httpRequest = null;
+                        await global::G.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
+                            retryDelay: __retryDelay,
+                            cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
+                        continue;
+                    }
+
+                    if (__response != null &&
+                        __attempt < __maxAttempts &&
+                        global::G.AutoSDKRequestOptionsSupport.ShouldRetryStatusCode(__response.StatusCode))
+                    {
+                        var __retryDelay = global::G.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: __response,
+                            attempt: __attempt);
+                        await global::G.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
+                            clientOptions: Options,
+                            context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
+                                operationId: "FindSimilarVoices",
+                                methodName: "FindSimilarVoicesAsync",
+                                pathTemplate: "\"/v1/similar-voices\"",
+                                httpMethod: "POST",
+                                baseUri: BaseUri,
+                                request: __httpRequest!,
+                                response: __response,
+                                exception: null,
+                                clientOptions: Options,
+                                requestOptions: requestOptions,
+                                attempt: __attempt,
+                                maxAttempts: __maxAttempts,
+                                willRetry: true,
+                                retryDelay: __retryDelay,
+                                retryReason: "status:" + ((int)__response.StatusCode).ToString(global::System.Globalization.CultureInfo.InvariantCulture),
+                                cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
+                        __response.Dispose();
+                        __response = null;
+                        __httpRequest.Dispose();
+                        __httpRequest = null;
+                        await global::G.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
+                            retryDelay: __retryDelay,
+                            cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
+                        continue;
+                    }
+
+                    break;
+                }
+
+                if (__response == null)
+                {
+                    throw new global::System.InvalidOperationException("No response received.");
+                }
+
+                using (__response)
+                {
+
+                ProcessResponse(
+                    client: HttpClient,
+                    response: __response);
+                ProcessFindSimilarVoicesResponse(
+                    httpClient: HttpClient,
+                    httpResponseMessage: __response);
+                if (__response.IsSuccessStatusCode)
+                {
+                    await global::G.AutoSDKRequestOptionsSupport.OnAfterSuccessAsync(
+                            clientOptions: Options,
+                            context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
+                                operationId: "FindSimilarVoices",
+                                methodName: "FindSimilarVoicesAsync",
+                                pathTemplate: "\"/v1/similar-voices\"",
+                                httpMethod: "POST",
+                                baseUri: BaseUri,
+                                request: __httpRequest!,
+                                response: __response,
+                                exception: null,
+                                clientOptions: Options,
+                                requestOptions: requestOptions,
+                                attempt: __attemptNumber,
+                                maxAttempts: __maxAttempts,
+                                willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
+                                cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
+                }
+                else
+                {
+                    await global::G.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
+                            clientOptions: Options,
+                            context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
+                                operationId: "FindSimilarVoices",
+                                methodName: "FindSimilarVoicesAsync",
+                                pathTemplate: "\"/v1/similar-voices\"",
+                                httpMethod: "POST",
+                                baseUri: BaseUri,
+                                request: __httpRequest!,
+                                response: __response,
+                                exception: null,
+                                clientOptions: Options,
+                                requestOptions: requestOptions,
+                                attempt: __attemptNumber,
+                                maxAttempts: __maxAttempts,
+                                willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
+                                cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
+                }
+                            // Validation Error
+                            if ((int)__response.StatusCode == 422)
+                            {
+                                string? __content_422 = null;
+                                global::System.Exception? __exception_422 = null;
+                                global::G.HTTPValidationError? __value_422 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_422 = global::G.HTTPValidationError.FromJson(__content_422, JsonSerializerOptions);
+                                    }
+                                    else
+                                    {
+                                        __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_422 = global::G.HTTPValidationError.FromJson(__content_422, JsonSerializerOptions);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_422 = __ex;
+                                }
+
+                                throw new global::G.ApiException<global::G.HTTPValidationError>(
+                                    message: __content_422 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_422,
+                                    statusCode: __response.StatusCode)
+                                {
+                                    ResponseBody = __content_422,
+                                    ResponseObject = __value_422,
+                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value),
+                                };
+                            }
+
+                            if (__effectiveReadResponseAsString)
+                            {
+                                var __content = await __response.Content.ReadAsStringAsync(
+                #if NET5_0_OR_GREATER
+                                    __effectiveCancellationToken
+                #endif
+                                ).ConfigureAwait(false);
+
+                                ProcessResponseContent(
+                                    client: HttpClient,
+                                    response: __response,
+                                    content: ref __content);
+                                ProcessFindSimilarVoicesResponseContent(
+                                    httpClient: HttpClient,
+                                    httpResponseMessage: __response,
+                                    content: ref __content);
+
+                                try
+                                {
+                                    __response.EnsureSuccessStatusCode();
+
+                                    return
+                                        global::G.GetLibraryVoicesResponseModel.FromJson(__content, JsonSerializerOptions) ??
+                                        throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    throw new global::G.ApiException(
+                                        message: __content ?? __response.ReasonPhrase ?? string.Empty,
+                                        innerException: __ex,
+                                        statusCode: __response.StatusCode)
+                                    {
+                                        ResponseBody = __content,
+                                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                            __response.Headers,
+                                            h => h.Key,
+                                            h => h.Value),
+                                    };
+                                }
+                            }
+                            else
+                            {
+                                try
+                                {
+                                    __response.EnsureSuccessStatusCode();
+                                    using var __content = await __response.Content.ReadAsStreamAsync(
+                #if NET5_0_OR_GREATER
+                                        __effectiveCancellationToken
+                #endif
+                                    ).ConfigureAwait(false);
+
+                                    return
+                                        await global::G.GetLibraryVoicesResponseModel.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                                        throw new global::System.InvalidOperationException("Response deserialization failed.");
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    string? __content = null;
+                                    try
+                                    {
+                                        __content = await __response.Content.ReadAsStringAsync(
+                #if NET5_0_OR_GREATER
+                                            __effectiveCancellationToken
+                #endif
+                                        ).ConfigureAwait(false);
+                                    }
+                                    catch (global::System.Exception)
+                                    {
+                                    }
+
+                                    throw new global::G.ApiException(
+                                        message: __content ?? __response.ReasonPhrase ?? string.Empty,
+                                        innerException: __ex,
+                                        statusCode: __response.StatusCode)
+                                    {
+                                        ResponseBody = __content,
+                                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                            __response.Headers,
+                                            h => h.Key,
+                                            h => h.Value),
+                                    };
+                                }
+                            }
+
+                }
+            }
+            finally
+            {
+                __httpRequest?.Dispose();
+            }
+        }
+        /// <summary>
+        /// Get Similar Library Voices<br/>
+        /// Returns a list of shared voices similar to the provided audio sample. If neither similarity_threshold nor top_k is provided, we will apply default values.
+        /// </summary>
+        /// <param name="xiApiKey">
+        /// Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the 'Profile' tab on the website.
+        /// </param>
+        /// <param name="audioFile">
+        /// The stream to send as the multipart 'audio_file' file part.
+        /// </param>
+        /// <param name="audioFilename"></param>
+        /// <param name="similarityThreshold">
+        /// Threshold for voice similarity between provided sample and library voices. Values range from 0 to 2. The smaller the value the more similar voices will be returned.
+        /// </param>
+        /// <param name="topK">
+        /// Number of most similar voices to return. If similarity_threshold is provided, less than this number of voices may be returned. Values range from 1 to 100.
+        /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.GetLibraryVoicesResponseModel>> FindSimilarVoicesAsResponseAsync(
+            string? xiApiKey = default,
+            global::System.IO.Stream? audioFile = default,
+            string? audioFilename = default,
+            double? similarityThreshold = default,
+            int? topK = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
+
+            var request = new global::G.BodyGetSimilarLibraryVoicesV1SimilarVoicesPost
+            {
+                AudioFile = global::System.Array.Empty<byte>(),
+                AudioFilename = audioFilename,
+                SimilarityThreshold = similarityThreshold,
+                TopK = topK,
+            };
+            PrepareArguments(
+                client: HttpClient);
+            PrepareFindSimilarVoicesArguments(
+                httpClient: HttpClient,
+                xiApiKey: ref xiApiKey,
+                request: request);
+
+            using var __timeoutCancellationTokenSource = global::G.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
+                clientOptions: Options,
+                requestOptions: requestOptions,
+                cancellationToken: cancellationToken);
+            var __effectiveCancellationToken = __timeoutCancellationTokenSource?.Token ?? cancellationToken;
+            var __effectiveReadResponseAsString = global::G.AutoSDKRequestOptionsSupport.GetReadResponseAsString(
+                clientOptions: Options,
+                requestOptions: requestOptions,
+                fallbackValue: ReadResponseAsString);
+            var __maxAttempts = global::G.AutoSDKRequestOptionsSupport.GetMaxAttempts(
+                clientOptions: Options,
+                requestOptions: requestOptions,
+                supportsRetry: false);
+
+            global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
+            {
+
+                            var __pathBuilder = new global::G.PathBuilder(
+                                path: "/v1/similar-voices",
+                                baseUri: HttpClient.BaseAddress);
+                            var __path = __pathBuilder.ToString();
+                __path = global::G.AutoSDKRequestOptionsSupport.AppendQueryParameters(
+                    path: __path,
+                    clientParameters: Options.QueryParameters,
+                    requestParameters: requestOptions?.QueryParameters);
+                var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
+                    method: global::System.Net.Http.HttpMethod.Post,
+                    requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
+#if NET6_0_OR_GREATER
+                __httpRequest.Version = global::System.Net.HttpVersion.Version11;
+                __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
+#endif
+
+            if (xiApiKey != default)
+            {
+                __httpRequest.Headers.TryAddWithoutValidation("xi-api-key", xiApiKey.ToString());
+            }
+
+
+                            var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
+                            if (xiApiKey != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(xiApiKey ?? string.Empty),
+                                    name: "\"xi-api-key\"");
+
+                            }
+                            if (audioFile != default)
+                            {
+
+                                var __contentAudioFile = new global::System.Net.Http.StreamContent(audioFile);
+                                __contentAudioFile.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue(
+                                    request.AudioFilename is null
+                                        ? "application/octet-stream"
+                                        : (global::System.IO.Path.GetExtension(request.AudioFilename) ?? string.Empty).ToLowerInvariant() switch
+                                        {
+                                            ".aac" => "audio/aac",
+                                            ".flac" => "audio/flac",
+                                            ".gif" => "image/gif",
+                                            ".jpeg" => "image/jpeg",
+                                            ".jpg" => "image/jpeg",
+                                            ".json" => "application/json",
+                                            ".m4a" => "audio/mp4",
+                                            ".mp3" => "audio/mpeg",
+                                            ".mp4" => "video/mp4",
+                                            ".mpeg" => "audio/mpeg",
+                                            ".mpga" => "audio/mpeg",
+                                            ".oga" => "audio/ogg",
+                                            ".ogg" => "audio/ogg",
+                                            ".opus" => "audio/ogg",
+                                            ".pdf" => "application/pdf",
+                                            ".png" => "image/png",
+                                            ".txt" => "text/plain",
+                                            ".wav" => "audio/wav",
+                                            ".weba" => "audio/webm",
+                                            ".webm" => "video/webm",
+                                            ".webp" => "image/webp",
+                                            _ => "application/octet-stream",
+                                        });
+                                __httpRequestContent.Add(
+                                    content: __contentAudioFile,
+                                    name: "\"audio_file\"",
+                                    fileName: request.AudioFilename != null ? $"\"{request.AudioFilename}\"" : string.Empty);
+                                if (__contentAudioFile.Headers.ContentDisposition != null)
+                                {
+                                    __contentAudioFile.Headers.ContentDisposition.FileNameStar = null;
+                                }
+
+                            }
+                            if (request.SimilarityThreshold != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(request.SimilarityThreshold, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
+                                    name: "\"similarity_threshold\"");
+
+                            }
+                            if (request.TopK != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(request.TopK, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
+                                    name: "\"top_k\"");
+
+                            }
+
+                            __httpRequest.Content = __httpRequestContent;
+
+                global::G.AutoSDKRequestOptionsSupport.ApplyHeaders(
+                    request: __httpRequest,
+                    clientHeaders: Options.Headers,
+                    requestHeaders: requestOptions?.Headers);
+
+                PrepareRequest(
+                    client: HttpClient,
+                    request: __httpRequest);
+                PrepareFindSimilarVoicesRequest(
+                    httpClient: HttpClient,
+                    httpRequestMessage: __httpRequest,
+                    xiApiKey: xiApiKey,
+                    request: request);
+
+                return __httpRequest;
+            }
+
+            global::System.Net.Http.HttpRequestMessage? __httpRequest = null;
+            global::System.Net.Http.HttpResponseMessage? __response = null;
+            var __attemptNumber = 0;
+            try
+            {
+                for (var __attempt = 1; __attempt <= __maxAttempts; __attempt++)
+                {
+                    __attemptNumber = __attempt;
+                    __httpRequest = __CreateHttpRequest();
+                    await global::G.AutoSDKRequestOptionsSupport.OnBeforeRequestAsync(
+                            clientOptions: Options,
+                            context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
+                                operationId: "FindSimilarVoices",
+                                methodName: "FindSimilarVoicesAsync",
+                                pathTemplate: "\"/v1/similar-voices\"",
+                                httpMethod: "POST",
+                                baseUri: BaseUri,
+                                request: __httpRequest!,
+                                response: null,
+                                exception: null,
+                                clientOptions: Options,
+                                requestOptions: requestOptions,
+                                attempt: __attempt,
+                                maxAttempts: __maxAttempts,
+                                willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
+                                cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
+                    try
+                    {
+                        __response = await HttpClient.SendAsync(
+                request: __httpRequest,
+                completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
+                cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
+                    }
+                    catch (global::System.Net.Http.HttpRequestException __exception)
+                    {
+                        var __retryDelay = global::G.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: null,
+                            attempt: __attempt);
+                        var __willRetry = __attempt < __maxAttempts && !__effectiveCancellationToken.IsCancellationRequested;
+                        await global::G.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
+                            clientOptions: Options,
+                            context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
+                                operationId: "FindSimilarVoices",
+                                methodName: "FindSimilarVoicesAsync",
+                                pathTemplate: "\"/v1/similar-voices\"",
+                                httpMethod: "POST",
+                                baseUri: BaseUri,
+                                request: __httpRequest!,
+                                response: null,
+                                exception: __exception,
+                                clientOptions: Options,
+                                requestOptions: requestOptions,
+                                attempt: __attempt,
+                                maxAttempts: __maxAttempts,
+                                willRetry: __willRetry,
+                                retryDelay: __willRetry ? __retryDelay : (global::System.TimeSpan?)null,
+                                retryReason: "exception",
+                                cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
+                        if (!__willRetry)
+                        {
+                            throw;
+                        }
+
+                        __httpRequest.Dispose();
+                        __httpRequest = null;
+                        await global::G.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
+                            retryDelay: __retryDelay,
+                            cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
+                        continue;
+                    }
+
+                    if (__response != null &&
+                        __attempt < __maxAttempts &&
+                        global::G.AutoSDKRequestOptionsSupport.ShouldRetryStatusCode(__response.StatusCode))
+                    {
+                        var __retryDelay = global::G.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: __response,
+                            attempt: __attempt);
+                        await global::G.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
+                            clientOptions: Options,
+                            context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
+                                operationId: "FindSimilarVoices",
+                                methodName: "FindSimilarVoicesAsync",
+                                pathTemplate: "\"/v1/similar-voices\"",
+                                httpMethod: "POST",
+                                baseUri: BaseUri,
+                                request: __httpRequest!,
+                                response: __response,
+                                exception: null,
+                                clientOptions: Options,
+                                requestOptions: requestOptions,
+                                attempt: __attempt,
+                                maxAttempts: __maxAttempts,
+                                willRetry: true,
+                                retryDelay: __retryDelay,
+                                retryReason: "status:" + ((int)__response.StatusCode).ToString(global::System.Globalization.CultureInfo.InvariantCulture),
+                                cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
+                        __response.Dispose();
+                        __response = null;
+                        __httpRequest.Dispose();
+                        __httpRequest = null;
+                        await global::G.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
+                            retryDelay: __retryDelay,
+                            cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
+                        continue;
+                    }
+
+                    break;
+                }
+
+                if (__response == null)
+                {
+                    throw new global::System.InvalidOperationException("No response received.");
+                }
+
+                using (__response)
+                {
+
+                ProcessResponse(
+                    client: HttpClient,
+                    response: __response);
+                ProcessFindSimilarVoicesResponse(
+                    httpClient: HttpClient,
+                    httpResponseMessage: __response);
+                if (__response.IsSuccessStatusCode)
+                {
+                    await global::G.AutoSDKRequestOptionsSupport.OnAfterSuccessAsync(
+                            clientOptions: Options,
+                            context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
+                                operationId: "FindSimilarVoices",
+                                methodName: "FindSimilarVoicesAsync",
+                                pathTemplate: "\"/v1/similar-voices\"",
+                                httpMethod: "POST",
+                                baseUri: BaseUri,
+                                request: __httpRequest!,
+                                response: __response,
+                                exception: null,
+                                clientOptions: Options,
+                                requestOptions: requestOptions,
+                                attempt: __attemptNumber,
+                                maxAttempts: __maxAttempts,
+                                willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
+                                cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
+                }
+                else
+                {
+                    await global::G.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
+                            clientOptions: Options,
+                            context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
+                                operationId: "FindSimilarVoices",
+                                methodName: "FindSimilarVoicesAsync",
+                                pathTemplate: "\"/v1/similar-voices\"",
+                                httpMethod: "POST",
+                                baseUri: BaseUri,
+                                request: __httpRequest!,
+                                response: __response,
+                                exception: null,
+                                clientOptions: Options,
+                                requestOptions: requestOptions,
+                                attempt: __attemptNumber,
+                                maxAttempts: __maxAttempts,
+                                willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
+                                cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
+                }
+                            // Validation Error
+                            if ((int)__response.StatusCode == 422)
+                            {
+                                string? __content_422 = null;
+                                global::System.Exception? __exception_422 = null;
+                                global::G.HTTPValidationError? __value_422 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_422 = global::G.HTTPValidationError.FromJson(__content_422, JsonSerializerOptions);
+                                    }
+                                    else
+                                    {
+                                        __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_422 = global::G.HTTPValidationError.FromJson(__content_422, JsonSerializerOptions);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_422 = __ex;
+                                }
+
+                                throw new global::G.ApiException<global::G.HTTPValidationError>(
+                                    message: __content_422 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_422,
+                                    statusCode: __response.StatusCode)
+                                {
+                                    ResponseBody = __content_422,
+                                    ResponseObject = __value_422,
+                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value),
+                                };
+                            }
+
+                            if (__effectiveReadResponseAsString)
+                            {
+                                var __content = await __response.Content.ReadAsStringAsync(
+                #if NET5_0_OR_GREATER
+                                    __effectiveCancellationToken
+                #endif
+                                ).ConfigureAwait(false);
+
+                                ProcessResponseContent(
+                                    client: HttpClient,
+                                    response: __response,
+                                    content: ref __content);
+                                ProcessFindSimilarVoicesResponseContent(
+                                    httpClient: HttpClient,
+                                    httpResponseMessage: __response,
+                                    content: ref __content);
+
+                                try
+                                {
+                                    __response.EnsureSuccessStatusCode();
+
+                                    var __value = global::G.GetLibraryVoicesResponseModel.FromJson(__content, JsonSerializerOptions) ??
+                                        throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                                    return new global::G.AutoSDKHttpResponse<global::G.GetLibraryVoicesResponseModel>(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri,
+                                        body: __value);
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    throw new global::G.ApiException(
+                                        message: __content ?? __response.ReasonPhrase ?? string.Empty,
+                                        innerException: __ex,
+                                        statusCode: __response.StatusCode)
+                                    {
+                                        ResponseBody = __content,
+                                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                            __response.Headers,
+                                            h => h.Key,
+                                            h => h.Value),
+                                    };
+                                }
+                            }
+                            else
+                            {
+                                try
+                                {
+                                    __response.EnsureSuccessStatusCode();
+                                    using var __content = await __response.Content.ReadAsStreamAsync(
+                #if NET5_0_OR_GREATER
+                                        __effectiveCancellationToken
+                #endif
+                                    ).ConfigureAwait(false);
+
+                                    var __value = await global::G.GetLibraryVoicesResponseModel.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                                        throw new global::System.InvalidOperationException("Response deserialization failed.");
+                                    return new global::G.AutoSDKHttpResponse<global::G.GetLibraryVoicesResponseModel>(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri,
+                                        body: __value);
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    string? __content = null;
+                                    try
+                                    {
+                                        __content = await __response.Content.ReadAsStringAsync(
+                #if NET5_0_OR_GREATER
+                                            __effectiveCancellationToken
+                #endif
+                                        ).ConfigureAwait(false);
+                                    }
+                                    catch (global::System.Exception)
+                                    {
+                                    }
+
+                                    throw new global::G.ApiException(
+                                        message: __content ?? __response.ReasonPhrase ?? string.Empty,
+                                        innerException: __ex,
+                                        statusCode: __response.StatusCode)
+                                    {
+                                        ResponseBody = __content,
+                                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                            __response.Headers,
+                                            h => h.Key,
+                                            h => h.Value),
+                                    };
+                                }
+                            }
+
+                }
+            }
+            finally
+            {
+                __httpRequest?.Dispose();
+            }
+        }
     }
 }
