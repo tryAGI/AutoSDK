@@ -11,7 +11,7 @@ src/libs/MyApi/
 ├── Generated/                          # Auto-generated -- never edit
 │   ├── MyApiClient.g.cs
 │   └── ...
-├── MyApiClient.Streaming.cs            # Hand-written streaming support
+├── MyApiClient.Streaming.cs            # Optional custom streaming helpers
 ├── MyApiClient.AdditionalConstructors.cs  # Extra constructors
 └── Extensions/
     └── StringExtensions.cs             # Helper methods
@@ -216,7 +216,7 @@ This injects the security schemes into the OpenAPI document at generation time, 
 
 ## Inline Spec Patching In generate.sh
 
-AutoSDK now parses OpenAPI 3.1 specs directly, so scaffolded SDKs do not include a separate fixer project. When an upstream spec still needs local cleanup, patch it inline in `generate.sh` before calling `autosdk generate`.
+OpenAPI.NET 3.x parses OpenAPI 3.1 specs directly, and AutoSDK runs a compatibility normalization pass for JSON Schema 2020-12 keywords it can safely map. Scaffolded SDKs do not include a separate fixer project. When an upstream spec still needs local cleanup, patch it inline in `generate.sh` before calling `autosdk generate`.
 
 Common approaches:
 
@@ -231,6 +231,7 @@ Typical customizations:
 - Fix invalid schema references
 - Inject missing `info` / `servers` metadata
 - Normalize defaults or examples that create noisy diffs
+- Simplify unsupported OpenAPI 3.1 shapes reported by AutoSDK, such as regex-keyed `patternProperties` or `contains` constraints
 
 ## CI Auto-Update Workflow
 
@@ -273,7 +274,7 @@ The generated polyfills ensure compatibility across all target frameworks.
 
 ## Trimming / NativeAOT Support
 
-CLI-generated code is NativeAOT-compatible by default. It uses `JsonSerializerContext` for source-generated JSON serialization (no reflection).
+CLI-generated code is trimming-friendly by default. It uses `JsonSerializerContext` for source-generated JSON serialization where possible, which is the intended path for NativeAOT-oriented SDKs.
 
 For the source generator approach, you need a two-project pattern:
 

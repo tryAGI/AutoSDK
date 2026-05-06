@@ -1,23 +1,26 @@
 ---
 name: generating-dotnet-sdks
 description: >-
-  Generates .NET/C# SDKs from OpenAPI specifications using the AutoSDK CLI tool
-  (autosdk.cli). Use when the user wants to create a C# client library from an
-  OpenAPI/Swagger spec, scaffold a new SDK project, regenerate existing SDK code,
-  or customize generated .NET API clients.
+  Generates .NET/C# SDKs from OpenAPI and AsyncAPI specifications using the
+  AutoSDK CLI tool (autosdk.cli). Use when the user wants to create a C# client
+  library, scaffold a new SDK project, generate typed WebSocket clients, scaffold
+  C# gRPC client projects, regenerate existing SDK code, or customize generated
+  .NET API clients.
 ---
 
-# Generating .NET SDKs from OpenAPI Specs with AutoSDK
+# Generating .NET SDKs with AutoSDK
 
 ## Overview
 
-AutoSDK is a .NET CLI tool and Roslyn source generator that produces production-quality C# SDKs from OpenAPI specifications. Generated SDKs include:
+AutoSDK is a .NET CLI tool and Roslyn source generator that produces production-quality C# SDKs from OpenAPI and AsyncAPI specifications. The CLI can also scaffold C# gRPC client projects from local `.proto` files, descriptor sets, or Buf module references. Generated SDKs include:
 
 - Fully typed C# clients with async methods and CancellationToken support
 - System.Text.Json serialization (no reflection, NativeAOT/trimming compatible)
 - Nullable reference types enabled
 - Support for OneOf/AnyOf/AllOf schemas
-- Server-Sent Events (SSE) streaming via `application/x-ndjson`
+- Server-Sent Events through `text/event-stream`
+- Sequential JSON streaming through `application/x-ndjson`, `application/jsonl`, and `application/json-seq`
+- Typed WebSocket clients from AsyncAPI specs
 - Enum serialization for System.Text.Json
 - Polyfills for .NET Framework / .NET Standard targets
 - Strong-named assemblies
@@ -32,7 +35,7 @@ AutoSDK is used in 30+ real SDKs (OpenAI, Anthropic, Ollama, HuggingFace, etc.) 
 dotnet tool install --global autosdk.cli --prerelease
 ```
 
-### Step 2: Obtain the OpenAPI specification
+### Step 2: Obtain the API specification
 
 Either download it or point to a local file:
 
@@ -44,7 +47,7 @@ curl -o openapi.yaml https://example.com/api/openapi.yaml
 ls openapi.yaml
 ```
 
-AutoSDK accepts both YAML and JSON formats. It supports OpenAPI 3.0 and 3.1 specs (3.1 is internally converted to 3.0).
+AutoSDK accepts YAML and JSON OpenAPI or AsyncAPI specs. OpenAPI.NET 3.x parses OpenAPI 3.1 natively; AutoSDK adds a compatibility normalization pass for JSON Schema 2020-12 keywords it can safely map, and fails fast with targeted paths for unsupported shapes such as regex-keyed `patternProperties` and `contains` constraints.
 
 ### Step 3: Generate the SDK
 
@@ -71,7 +74,7 @@ The generated code compiles as part of any .NET project that includes the `Gener
 
 ### `autosdk generate <input>`
 
-Main command. Generates a C# SDK from an OpenAPI spec file or URL.
+Main command. Generates C# SDK code from OpenAPI or AsyncAPI, or scaffolds a C# gRPC client project from protobuf input.
 
 ```bash
 autosdk generate openapi.yaml \
@@ -90,7 +93,7 @@ Key options:
 | `--targetFramework` | `-t` | `net10.0` | Target framework (e.g., `net8.0`, `netstandard2.0`) |
 | `--namespace` | `-n` | Derived from filename | C# namespace for generated code |
 | `--clientClassName` | `-c` | Derived from filename | Name of the generated client class |
-| `--methodNamingConvention` | `-m` | `SimpleOperationId` | How method names are derived |
+| `--methodNamingConvention` | `-m` | `OperationId` | How method names are derived |
 | `--single-file` | `-s` | `false` | Output all code in a single .cs file |
 | `--exclude-deprecated-operations` | `-e` | `false` | Skip deprecated API operations |
 | `--ignore-openapi-errors` | | `true` | Continue generation despite spec errors |
@@ -99,6 +102,11 @@ Key options:
 | `--generate-cli` | | `false` | Generate a CLI wrapper for the client |
 | `--security-scheme` | | (none) | Inject auth scheme as `Type:Location:Name` (repeatable) |
 | `--base-url` | | (none) | Server base URL to inject for specs missing `servers` |
+| `--openapi-override` | | (none) | Apply targeted spec overrides as `path=object`, `path=dictionary`, or `path=remove` |
+| `--websocket-class-name` | | (none) | Override generated AsyncAPI WebSocket client class name |
+| `--types-namespace` | | (none) | Reference model types from an existing namespace |
+| `--generate-models` | | `true` | Disable model generation when using an existing types namespace |
+| `--grpc-input` | | (none) | Add protobuf sidecar inputs for mixed OpenAPI plus gRPC output |
 
 See [CLI-REFERENCE.md](CLI-REFERENCE.md) for the complete option reference.
 
@@ -128,13 +136,24 @@ Generates `.http` files from an OpenAPI spec for API testing.
 autosdk http openapi.yaml --output Testing
 ```
 
+### Other commands
+
+| Command | Purpose |
+|---------|---------|
+| `autosdk cli <input>` | Generate System.CommandLine command classes for an OpenAPI SDK |
+| `autosdk docs sync <path>` | Sync generated examples into README, docs pages, and MkDocs navigation |
+| `autosdk simplify <input>` | Simplify an OpenAPI spec |
+| `autosdk convert-to-openapi30 <input>` | Convert OpenAPI 3.1 to OpenAPI 3.0 for downstream tools that still require 3.0 |
+| `autosdk trim <csproj-path>` | Validate trimming and NativeAOT compatibility |
+| `autosdk skill <input>` | Generate an agent skill bundle for a generated SDK CLI package |
+
 ## Project Structure Convention
 
 AutoSDK-based SDK projects follow a standard layout:
 
 ```
 MyApi/
-├── MyApi.sln
+├── MyApi.slnx
 ├── src/
 │   ├── libs/MyApi/
 │   │   ├── MyApi.csproj
@@ -217,7 +236,7 @@ public partial class MyApiClient
 
 Place hand-written code alongside `Generated/` (not inside it):
 
-- `MyApiClient.Streaming.cs` -- SSE/streaming extensions
+- `MyApiClient.Streaming.cs` -- custom streaming helpers when generated methods need hand-written conveniences
 - `MyApiClient.AdditionalConstructors.cs` -- extra constructor overloads
 - `JsonSerializerContextTypes.AdditionalTypes.cs` -- extra types for JSON source gen
 - `Extensions/` -- helper extension methods
@@ -239,8 +258,10 @@ The `generate` command's most important configuration flags:
 | `--compute-discriminators` | Polymorphic model support | APIs with oneOf/anyOf discriminators |
 | `--validation` | Model validation methods | When input validation is needed |
 | `--generate-cli` | Generate CLI wrapper | When you want a CLI for the API |
-| `--methodNamingConvention` | Method name style | `SimpleOperationId` (default), `MethodAndPath`, `OperationIdWithDots` |
+| `--methodNamingConvention` | Method name style | `OperationId` (default), `MethodAndPath`, `OperationIdSplit`, `OperationIdWithDots`, `Summary` |
 | `--security-scheme` | Inject auth for specs missing `securitySchemes` | `ApiKey:Header:x-api-key`, `Http:Header:Bearer` (repeatable) |
+| `--base-url` | Inject a missing server URL | Specs without a `servers` field |
+| `--openapi-override` | Patch a specific spec path before generation | `path=object`, `path=dictionary`, or `path=remove` |
 
 ## Troubleshooting
 
@@ -248,6 +269,7 @@ Common issues and solutions:
 
 - **"Could not find part of the path"** -- Enable Windows long paths in registry
 - **Malformed or incomplete specs** -- Patch the downloaded spec inline in `generate.sh` with `jq`, `yq`, `sed`, or `perl` before generation
+- **Unsupported OpenAPI 3.1 schema keywords** -- Simplify the schema or use `--openapi-override` for the specific path reported by AutoSDK
 - **Missing operations** -- Check that operationIds exist in the spec; use `--ignore-openapi-errors` if needed
 - **Naming collisions** -- AutoSDK resolves these automatically via suffixes
 - **No auth constructors generated** -- Spec is missing `securitySchemes`; use `--security-scheme "ApiKey:Header:x-api-key"` to inject auth

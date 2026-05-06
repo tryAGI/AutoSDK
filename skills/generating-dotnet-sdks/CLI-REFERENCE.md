@@ -18,37 +18,48 @@ dotnet tool update --global autosdk.cli --prerelease
 
 ### `autosdk generate <input>`
 
-Generates a C# SDK from an OpenAPI or AsyncAPI specification.
+Generates C# SDK code from OpenAPI or AsyncAPI, or scaffolds a C# gRPC client project from protobuf input.
 
 **Arguments:**
 
 | Argument | Type | Description |
 |----------|------|-------------|
-| `input` | string | Path to OpenAPI or AsyncAPI spec file or URL (YAML or JSON) |
+| `input` | string | Path to an OpenAPI or AsyncAPI spec file/URL, or a local `.proto`, descriptor set, or Buf module reference |
 
 **Options:**
 
 | Option | Alias | Type | Default | Description |
 |--------|-------|------|---------|-------------|
 | `--output` | `-o` | string | `Generated` | Output directory for generated files |
+| `--grpc-input` | | string[] | (none) | Additional protobuf inputs to scaffold alongside a primary OpenAPI/AsyncAPI input. Repeatable |
+| `--api-output-subdirectory` | | string | `rest` | In mixed OpenAPI plus gRPC output, place primary API files under this subdirectory |
+| `--grpc-output-subdirectory` | | string | `grpc` | In mixed OpenAPI plus gRPC output, place scaffolded gRPC projects under this subdirectory |
 | `--targetFramework` | `-t` | string | `net10.0` | Target framework for generated code (e.g., `net8.0`, `net9.0`, `net10.0`, `netstandard2.0`, `net462`) |
 | `--namespace` | `-n` | string | Derived from input filename | C# namespace for all generated code |
 | `--clientClassName` | `-c` | string | Derived from input filename + `Client` | Name of the main generated client class |
-| `--methodNamingConvention` | `-m` | enum | `SimpleOperationId` | How API method names are generated. Values: `SimpleOperationId`, `MethodAndPath`, `OperationIdWithDots` |
+| `--methodNamingConvention` | `-m` | enum | `OperationId` | How API method names are generated. Values: `OperationId`, `OperationIdSplit`, `MethodAndPath`, `OperationIdWithDots`, `Summary` |
 | `--single-file` | `-s` | bool | `false` | Generate all models and methods in a single .cs file instead of one file per type |
 | `--exclude-deprecated-operations` | `-e` | bool | `false` | Skip operations marked as deprecated in the OpenAPI spec |
 | `--clsCompliantEnumPrefix` | | string | `x` | Prefix for enum values starting with a number (for CLS compliance). Pass empty string to disable (uses `_` prefix instead) |
+| `--identifier-character-set` | | enum | `UnicodeLetters` | Identifier sanitizer mode: `Ascii`, `UnicodeLetters`, or `CSharpSpec` |
 | `--ignore-openapi-errors` | | bool | `true` | Continue generation even if the OpenAPI spec has validation errors |
 | `--ignore-openapi-warnings` | | bool | `true` | Continue generation even if the OpenAPI spec has validation warnings |
 | `--validation` | | bool | `false` | Generate `IValidatableObject` validation methods for models |
 | `--compute-discriminators` | | bool | `false` | Compute discriminator mappings for polymorphic models (oneOf/anyOf schemas) |
 | `--generate-cli` | | bool | `false` | Generate CLI command classes for the API (System.CommandLine-based) |
+| `--use-system-net-http-json` | | bool | `false` | Use `System.Net.Http.Json` helper methods where generation can do so safely |
 | `--security-scheme` | | string[] | (none) | Inject a security scheme as `Type:Location:Name`. Repeatable. See below for format |
 | `--base-url` | | string | (none) | Server base URL to inject (e.g., `https://api.example.com`). Useful for specs missing a `servers` field |
+| `--openapi-override` | | string[] | (none) | Apply a targeted override as `path=action`. Actions: `object`, `dictionary`, `remove`. Repeatable |
 | `--websocket-class-name` | | string | (none) | Override class name for the generated WebSocket client (AsyncAPI specs only) |
 | `--types-namespace` | | string | (none) | Namespace for type references instead of the main namespace. Used for cross-namespace schema referencing where models live in a different namespace |
+| `--namespace-delimiter` | | string | (none) | Split component schema ids into namespaces using a single-character delimiter |
+| `--include-models` | | string[] | (none) | Only include these component model ids. Repeatable or pass multiple values |
+| `--exclude-models` | | string[] | (none) | Exclude these component model ids. Repeatable or pass multiple values |
+| `--excluded-model-namespace-mode` | | enum | `External` | Reference mode for filtered-out dotted models: `External` or `SdkRoot` |
 | `--generate-models` | | bool | `true` | Generate model classes, enums, and JSON converters. Set to `false` when referencing types from an existing namespace via `--types-namespace` |
 | `--json-serializer-context` | | string | `SourceGenerationContext` | Override the `JsonSerializerContext` class name. Useful when generating multiple specs into the same project |
+| `--language` | | string | `csharp` | Generation backend. Currently only `csharp` is supported |
 
 **Examples:**
 
@@ -136,6 +147,18 @@ autosdk generate asyncapi.yaml \
   --types-namespace MyApi \
   --generate-models false \
   --json-serializer-context MyApi.SourceGenerationContext \
+  --output Generated
+
+# Standalone gRPC project from a local proto
+autosdk generate greeter.proto \
+  --namespace Demo.Grpc \
+  --targetFramework net8.0 \
+  --output GeneratedGrpc
+
+# Mixed REST plus gRPC sidecar output
+autosdk generate openapi.yaml \
+  --grpc-input greeter.proto \
+  --namespace MyApi \
   --output Generated
 ```
 
@@ -251,6 +274,19 @@ Generates `.http` files for testing API endpoints.
 autosdk http openapi.yaml --output Testing
 ```
 
+---
+
+## Additional Commands
+
+| Command | Purpose |
+|---------|---------|
+| `autosdk cli <input>` | Generate System.CommandLine command classes for an OpenAPI SDK |
+| `autosdk docs sync <path>` | Sync generated examples into README, docs pages, and MkDocs navigation |
+| `autosdk simplify <input>` | Simplify an OpenAPI spec and write the result to a file |
+| `autosdk convert-to-openapi30 <input>` | Convert OpenAPI 3.1 to OpenAPI 3.0 for downstream tools that still require 3.0 |
+| `autosdk trim <csproj-path>` | Validate trimming and NativeAOT compatibility for a `.csproj` |
+| `autosdk skill <input>` | Generate an agent skill bundle for a generated SDK CLI package |
+
 ## Security Scheme Format
 
 The `--security-scheme` option injects authentication schemes into OpenAPI specs that lack `securitySchemes` definitions. Format: `Type:Location:Name`.
@@ -314,15 +350,41 @@ The URL must be a valid absolute URL (e.g., `https://api.example.com`). Invalid 
 
 ---
 
+## OpenAPI Overrides
+
+The `--openapi-override` option applies a targeted cleanup before generation. Format: `path=action`.
+
+Supported actions:
+
+| Action | Purpose |
+|--------|---------|
+| `object` | Force the schema at the path to be treated as an object |
+| `dictionary` | Force the schema at the path to be treated as a dictionary |
+| `remove` | Remove the schema or node at the path |
+
+Use overrides for isolated upstream spec issues or unsupported OpenAPI 3.1 shapes reported with a JSON-pointer-style path.
+
+**MSBuild property equivalent**:
+
+```xml
+<PropertyGroup>
+  <AutoSDK_OpenApiOverrides>#/components/schemas/Foo=object;#/components/schemas/Bar=remove</AutoSDK_OpenApiOverrides>
+</PropertyGroup>
+```
+
+---
+
 ## Method Naming Conventions
 
 The `--methodNamingConvention` option controls how C# method names are derived from OpenAPI operations:
 
 | Convention | Description | Example |
 |------------|-------------|---------|
-| `SimpleOperationId` (default) | Uses the operationId directly, simplified to PascalCase | `listPets` -> `ListPets` |
+| `OperationId` (default) | Uses the operationId directly, simplified to PascalCase | `listPets` -> `ListPets` |
+| `OperationIdSplit` | Splits compound operationIds before converting to PascalCase | `pets/list` -> `PetsList` |
 | `MethodAndPath` | Combines HTTP method + path | `GET /pets/{id}` -> `GetPetsById` |
 | `OperationIdWithDots` | Preserves dots in operationId as namespace separators | `pets.list` -> `PetsList` |
+| `Summary` | Uses the OpenAPI operation summary when available | `List pets` -> `ListPets` |
 
 If the primary convention fails to produce a unique name, the fallback convention `MethodAndPath` is used automatically.
 
@@ -372,3 +434,32 @@ autosdk generate asyncapi.yaml \
 - [tryAGI/OpenAI](https://github.com/tryAGI/OpenAI) — REST + Realtime WebSocket API
 - [tryAGI/ElevenLabs](https://github.com/tryAGI/ElevenLabs) — REST + Realtime Speech-to-Text WebSocket API
 - [tryAGI/Xai](https://github.com/tryAGI/Xai) — REST + Realtime Voice Agent WebSocket API
+
+---
+
+## Streaming Media Types
+
+AutoSDK emits streamed `IAsyncEnumerable<T>` methods when it can safely deserialize response items incrementally.
+
+Supported streaming media types:
+
+| Media type | Meaning |
+|------------|---------|
+| `text/event-stream` | Server-Sent Events |
+| `application/x-ndjson` | Newline-delimited JSON |
+| `application/jsonl` | JSON Lines |
+| `application/json-seq` | JSON text sequences |
+
+Fern `x-fern-streaming` metadata can also select SSE or NDJSON stream handling.
+
+---
+
+## gRPC Project Scaffolding
+
+`autosdk generate` can scaffold a C# gRPC client project from:
+
+- Local `.proto` files
+- Binary protobuf descriptor sets / Buf images
+- Buf module references
+
+Generated gRPC projects use `Grpc.Tools` at build time and include helper types for channel creation, auth headers, deadlines, retries, and DI registration. Remote `.proto` URLs are not scaffolded directly; use a local file, descriptor set, or Buf module reference.

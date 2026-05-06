@@ -21,9 +21,9 @@ Official docs: https://learn.microsoft.com/en-us/windows/win32/fileio/maximum-fi
 
 **Symptom:** Parse errors or unexpected behavior when using an OpenAPI 3.1 specification.
 
-**Cause:** AutoSDK parses OpenAPI 3.1 natively now, but some upstream specs are still malformed or omit required metadata.
+**Cause:** OpenAPI.NET 3.x parses OpenAPI 3.1 natively, and AutoSDK normalizes JSON Schema 2020-12 keywords it can safely map into the current .NET model pipeline. Some upstream specs are still malformed, omit required metadata, or use schema shapes AutoSDK cannot represent yet.
 
-**Solution:** Patch the downloaded spec inline in `generate.sh` before calling `autosdk generate`. Use the lightest tool that fits the problem:
+**Solution:** For malformed metadata, patch the downloaded spec inline in `generate.sh` before calling `autosdk generate`. Use the lightest tool that fits the problem:
 
 ```bash
 jq '.info.title //= "My API"' openapi.yaml > openapi.fixed.json && mv openapi.fixed.json openapi.yaml
@@ -32,6 +32,8 @@ jq '.info.title //= "My API"' openapi.yaml > openapi.fixed.json && mv openapi.fi
 Other common tools:
 - `yq` for YAML-aware structural edits
 - `sed` / `perl` for small text replacements
+
+If AutoSDK reports an unsupported OpenAPI 3.1 keyword, use the JSON-pointer-style path in the error to simplify that schema or apply `--openapi-override path=action`. Common unsupported shapes include regex-keyed `patternProperties`, `contains` / `minContains` / `maxContains`, and `unevaluatedProperties` cases that conflict with composition or existing `additionalProperties`.
 
 ## Spec Parse Errors
 
@@ -103,6 +105,8 @@ See [CUSTOMIZATION-PATTERNS.md](CUSTOMIZATION-PATTERNS.md) for the full two-proj
 ## Validate trimming compatibility:
 
 ```bash
+autosdk trim src/libs/MyApi/MyApi.csproj
+# Or use the scaffolded helper project:
 dotnet build src/helpers/TrimmingHelper/TrimmingHelper.csproj
 ```
 
@@ -186,7 +190,7 @@ For the source generator, use the MSBuild property:
 
 **Solutions:**
 
-1. Ensure .NET SDK 8.0+ is installed: `dotnet --version`
+1. Ensure a current .NET SDK compatible with the installed `autosdk.cli` target is installed: `dotnet --version`
 2. Clear NuGet cache: `dotnet nuget locals all --clear`
 3. Ensure nuget.org is in your sources: `dotnet nuget list source`
 4. Try specifying the source explicitly:
