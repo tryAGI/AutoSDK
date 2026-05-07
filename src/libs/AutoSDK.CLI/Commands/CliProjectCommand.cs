@@ -707,7 +707,29 @@ internal static class CliProjectScaffolder
             Directory.CreateDirectory(directory);
         }
 
-        await File.WriteAllTextAsync(path, content).ConfigureAwait(false);
+        await File.WriteAllTextAsync(path, NormalizeGeneratedContent(content)).ConfigureAwait(false);
+    }
+
+    private static string NormalizeGeneratedContent(string content)
+    {
+        var normalized = content.Replace("\r\n", "\n", StringComparison.Ordinal);
+        var endsWithNewLine = normalized.EndsWith('\n');
+        var lines = normalized.Split('\n');
+        var builder = new StringBuilder(normalized.Length);
+        var count = endsWithNewLine ? lines.Length - 1 : lines.Length;
+
+        for (var index = 0; index < count; index++)
+        {
+            builder.Append(lines[index].TrimEnd(' ', '\t'));
+            builder.Append('\n');
+        }
+
+        if (!endsWithNewLine && lines.Length > 0)
+        {
+            builder.Length--;
+        }
+
+        return builder.ToString();
     }
 
     private static string GenerateProjectFile(CliProjectModel model)
