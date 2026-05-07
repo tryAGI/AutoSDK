@@ -1085,6 +1085,98 @@ public partial class DataTests
     }
 
     [TestMethod]
+    public void DiscriminatorOneOf_GeneratesTryPickAndSwitchHelpers()
+    {
+        var settings = DefaultSettings with
+        {
+            GenerateModels = true,
+            JsonSerializerType = JsonSerializerType.SystemTextJson,
+            TargetFramework = "net8.0",
+        };
+        const string yaml = """
+                            openapi: 3.0.3
+                            info:
+                              title: UnionHelpers
+                              version: 1.0.0
+                            paths:
+                              /events:
+                                get:
+                                  operationId: listEvents
+                                  responses:
+                                    '200':
+                                      description: ok
+                                      content:
+                                        application/json:
+                                          schema:
+                                            $ref: '#/components/schemas/StreamEvent'
+                            components:
+                              schemas:
+                                StreamEvent:
+                                  discriminator:
+                                    propertyName: type
+                                    mapping:
+                                      message: '#/components/schemas/MessageEvent'
+                                      tool_call: '#/components/schemas/ToolCallEvent'
+                                      error: '#/components/schemas/ErrorEvent'
+                                  oneOf:
+                                    - $ref: '#/components/schemas/MessageEvent'
+                                    - $ref: '#/components/schemas/ToolCallEvent'
+                                    - $ref: '#/components/schemas/ErrorEvent'
+                                MessageEvent:
+                                  type: object
+                                  required:
+                                    - type
+                                    - text
+                                  properties:
+                                    type:
+                                      type: string
+                                      enum:
+                                        - message
+                                    text:
+                                      type: string
+                                ToolCallEvent:
+                                  type: object
+                                  required:
+                                    - type
+                                    - tool_name
+                                  properties:
+                                    type:
+                                      type: string
+                                      enum:
+                                        - tool_call
+                                    tool_name:
+                                      type: string
+                                ErrorEvent:
+                                  type: object
+                                  required:
+                                    - type
+                                    - message
+                                  properties:
+                                    type:
+                                      type: string
+                                      enum:
+                                        - error
+                                    message:
+                                      type: string
+                            """;
+
+        var data = Data.Prepare(((yaml, settings), GlobalSettings: settings));
+        var anyOf = data.AnyOfs.Single(x => x.Name == "StreamEvent");
+        var generatedAnyOf = Sources.GenerateAnyOf(anyOf);
+
+        anyOf.SubType.Should().Be("OneOf");
+        anyOf.Properties.Select(x => x.Name).Should().ContainInOrder(["Message", "ToolCall", "Error"]);
+        generatedAnyOf.Should().Contain("public bool TryPickMessage(");
+        generatedAnyOf.Should().Contain("[global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]");
+        generatedAnyOf.Should().Contain("out global::G.MessageEvent? value");
+        generatedAnyOf.Should().Contain("public TResult? Match<TResult>(");
+        generatedAnyOf.Should().Contain("global::System.Func<global::G.ToolCallEvent, TResult>? toolCall = null");
+        generatedAnyOf.Should().Contain("public void Match(");
+        generatedAnyOf.Should().Contain("public void Switch(");
+        generatedAnyOf.Should().Contain("global::System.Action<global::G.ErrorEvent>? error = null");
+    }
+
+    [TestMethod]
     public void OpenAiOfficialSpec_CreateChatCompletionRequest_UsesNamedMixedAllOfMembers()
     {
         var settings = DefaultSettings with

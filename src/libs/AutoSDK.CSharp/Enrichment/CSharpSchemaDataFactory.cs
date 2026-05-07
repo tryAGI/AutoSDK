@@ -432,6 +432,7 @@ public static class CSharpSchemaDataFactory
         {
             "Object" => "ObjectValue",
             "Match" => "MatchValue",
+            "Switch" => "SwitchValue",
             "Validate" => "ValidateValue",
             _ => name,
         };

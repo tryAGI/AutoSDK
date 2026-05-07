@@ -111,6 +111,17 @@ namespace {anyOfData.Namespace}
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof({x.Name}))]
 #endif
         public bool Is{x.Name} => {x.Name} != null;
+
+        {string.Empty.ToXmlDocumentationSummary(level: 8)}
+        public bool TryPick{x.Name}(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out {x.Type.CSharpTypeWithNullability} value)
+        {{
+            value = {x.Name};
+            return Is{x.Name};
+        }}
 ").Inject()}
 {anyOfData.Properties
     .GroupBy(x => x.Type.CSharpTypeWithoutNullability) // Deduplicate by type
@@ -156,7 +167,7 @@ namespace {anyOfData.Namespace}
         {string.Empty.ToXmlDocumentationSummary(level: 8)}
         public TResult? Match<TResult>(
 {anyOfData.Properties.Select(x => $@" 
-            global::System.Func<{x.Type.CSharpType}, TResult>? {x.ParameterName} = null,
+            global::System.Func<{x.Type.CSharpTypeWithNullabilityForValueTypes}, TResult>? {x.ParameterName} = null,
 ").Inject()}
             bool validate = true)
         {{
@@ -176,8 +187,27 @@ namespace {anyOfData.Namespace}
 
         {string.Empty.ToXmlDocumentationSummary(level: 8)}
         public void Match(
+{anyOfData.Properties.Select(x => $@"
+            global::System.Action<{x.Type.CSharpTypeWithNullabilityForValueTypes}>? {x.ParameterName} = null,
+").Inject()}
+            bool validate = true)
+        {{
+            if (validate)
+            {{
+                Validate();
+            }}
+
+{anyOfData.Properties.Select((x, i) => $@"
+            {(i > 0 ? "else " : "")}if (Is{x.Name})
+            {{
+                {x.ParameterName}?.Invoke({x.Name}!);
+            }}").Inject()}
+        }}
+
+        {string.Empty.ToXmlDocumentationSummary(level: 8)}
+        public void Switch(
 {anyOfData.Properties.Select(x => $@" 
-            global::System.Action<{x.Type.CSharpType}>? {x.ParameterName} = null,
+            global::System.Action<{x.Type.CSharpTypeWithNullabilityForValueTypes}>? {x.ParameterName} = null,
 ").Inject()}
             bool validate = true)
         {{

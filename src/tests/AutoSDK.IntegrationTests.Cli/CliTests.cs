@@ -2450,6 +2450,131 @@ components:
     }
 
     [TestMethod]
+    public async Task Generate_WithDiscriminatorOneOf_EmitsTryPickSwitchHelpers_AndBuildsNullableFlow()
+    {
+        const string spec = """
+openapi: 3.0.3
+info:
+  title: UnionHelpers
+  version: 1.0.0
+paths:
+  /events:
+    get:
+      operationId: listEvents
+      responses:
+        '200':
+          description: ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StreamEvent'
+components:
+  schemas:
+    StreamEvent:
+      discriminator:
+        propertyName: type
+        mapping:
+          message: '#/components/schemas/MessageEvent'
+          tool_call: '#/components/schemas/ToolCallEvent'
+          error: '#/components/schemas/ErrorEvent'
+      oneOf:
+        - $ref: '#/components/schemas/MessageEvent'
+        - $ref: '#/components/schemas/ToolCallEvent'
+        - $ref: '#/components/schemas/ErrorEvent'
+    MessageEvent:
+      type: object
+      required:
+        - type
+        - text
+      properties:
+        type:
+          type: string
+          enum:
+            - message
+        text:
+          type: string
+    ToolCallEvent:
+      type: object
+      required:
+        - type
+        - tool_name
+      properties:
+        type:
+          type: string
+          enum:
+            - tool_call
+        tool_name:
+          type: string
+    ErrorEvent:
+      type: object
+      required:
+        - type
+        - message
+      properties:
+        type:
+          type: string
+          enum:
+            - error
+        message:
+          type: string
+""";
+
+        await GenerateFromContentAsync(
+            fileName: "discriminator-oneof-helpers.yaml",
+            specContent: spec,
+            targetFramework: "net10.0",
+            assertGeneratedOutput: async outputDirectory =>
+            {
+                var generatedContents = await Task.WhenAll(
+                    Directory.EnumerateFiles(outputDirectory, "*.g.cs", SearchOption.AllDirectories)
+                        .Select(path => File.ReadAllTextAsync(path)));
+                var content = string.Join("\n\n", generatedContents);
+
+                content.Should().Contain("public bool TryPickMessage(");
+                content.Should().Contain("[global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]");
+                content.Should().Contain("public void Switch(");
+
+                await File.WriteAllTextAsync(
+                    Path.Combine(outputDirectory, "UnionConsumer.cs"),
+                    """
+                    #nullable enable
+                    namespace Oag;
+
+                    internal static class UnionConsumer
+                    {
+                        public static string ReadMessage(StreamEvent value)
+                        {
+                            if (value.TryPickMessage(out var message))
+                            {
+                                return message.Text;
+                            }
+
+                            return string.Empty;
+                        }
+
+                        public static string Describe(StreamEvent value)
+                        {
+                            return value.Match(
+                                message: x => x.Text,
+                                toolCall: x => x.ToolName,
+                                error: x => x.Message) ?? string.Empty;
+                        }
+
+                        public static string DescribeWithSwitch(StreamEvent value)
+                        {
+                            var result = string.Empty;
+                            value.Switch(
+                                message: x => result = x.Text,
+                                toolCall: x => result = x.ToolName,
+                                error: x => result = x.Message);
+                            return result;
+                        }
+                    }
+                    """);
+            });
+    }
+
+    [TestMethod]
     public async Task Generate_WithRequiredNonNullableObjectProperty_FromAllOfRequest_Builds()
     {
         const string spec = """
