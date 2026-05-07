@@ -462,6 +462,22 @@ public static partial class Sources
             Text: GenerateSecuritySupport(settings, cancellationToken: cancellationToken));
     }
 
+    public static FileWithName WebhookVerifier(
+        CSharpSettings settings,
+        CancellationToken cancellationToken = default)
+    {
+        if (!settings.GenerateWebhookVerifier)
+        {
+            return FileWithName.Empty;
+        }
+
+        var className = GetWebhookVerifierClassName(settings);
+
+        return new FileWithName(
+            Name: $"{settings.Namespace}.{className}.g.cs",
+            Text: GenerateWebhookVerifier(settings, className, cancellationToken: cancellationToken));
+    }
+
     public static FileWithName ResponseStream(
         CSharpSettings settings,
         CancellationToken cancellationToken = default)

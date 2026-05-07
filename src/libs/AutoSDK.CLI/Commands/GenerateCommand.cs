@@ -159,6 +159,55 @@ internal sealed class GenerateCommand : Command
         Description = "Generate System.Text.Json HTTP method bodies via System.Net.Http.Json helpers where safe.",
     };
 
+    private Option<bool> GenerateWebhookVerifier { get; } = new(
+        name: "--generate-webhook-verifier")
+    {
+        DefaultValueFactory = _ => Settings.Default.GenerateWebhookVerifier,
+        Description = "Generate an opt-in HMAC webhook signature verifier.",
+    };
+
+    private Option<string> WebhookVerifierClassName { get; } = new(
+        name: "--webhook-verifier-class-name")
+    {
+        DefaultValueFactory = _ => Settings.Default.WebhookVerifierClassName,
+        Description = "Class name for the generated webhook verifier.",
+    };
+
+    private Option<string> WebhookIdHeaderName { get; } = new(
+        name: "--webhook-id-header")
+    {
+        DefaultValueFactory = _ => Settings.Default.WebhookIdHeaderName,
+        Description = "Webhook id header name used by the generated verifier.",
+    };
+
+    private Option<string> WebhookTimestampHeaderName { get; } = new(
+        name: "--webhook-timestamp-header")
+    {
+        DefaultValueFactory = _ => Settings.Default.WebhookTimestampHeaderName,
+        Description = "Webhook timestamp header name used by the generated verifier.",
+    };
+
+    private Option<string> WebhookSignatureHeaderName { get; } = new(
+        name: "--webhook-signature-header")
+    {
+        DefaultValueFactory = _ => Settings.Default.WebhookSignatureHeaderName,
+        Description = "Webhook signature header name used by the generated verifier.",
+    };
+
+    private Option<string> WebhookSignatureVersion { get; } = new(
+        name: "--webhook-signature-version")
+    {
+        DefaultValueFactory = _ => Settings.Default.WebhookSignatureVersion,
+        Description = "Webhook signature version prefix used by the generated verifier.",
+    };
+
+    private Option<int> WebhookTimestampToleranceSeconds { get; } = new(
+        name: "--webhook-timestamp-tolerance-seconds")
+    {
+        DefaultValueFactory = _ => Settings.Default.WebhookTimestampToleranceSeconds,
+        Description = "Webhook timestamp tolerance in seconds used by the generated verifier.",
+    };
+
     private Option<string[]> SecuritySchemes { get; } = new(
         name: "--security-scheme")
     {
@@ -289,6 +338,13 @@ internal sealed class GenerateCommand : Command
         Options.Add(ComputeDiscriminators);
         Options.Add(GenerateCli);
         Options.Add(UseSystemNetHttpJson);
+        Options.Add(GenerateWebhookVerifier);
+        Options.Add(WebhookVerifierClassName);
+        Options.Add(WebhookIdHeaderName);
+        Options.Add(WebhookTimestampHeaderName);
+        Options.Add(WebhookSignatureHeaderName);
+        Options.Add(WebhookSignatureVersion);
+        Options.Add(WebhookTimestampToleranceSeconds);
         Options.Add(SecuritySchemes);
         Options.Add(AuthorizationEnvironmentVariables);
         Options.Add(BaseUrl);
@@ -382,6 +438,13 @@ internal sealed class GenerateCommand : Command
             IgnoreOpenApiErrors = parseResult.GetRequiredValue(IgnoreOpenApiErrors),
             IgnoreOpenApiWarnings = parseResult.GetRequiredValue(IgnoreOpenApiWarnings),
             GenerateMethodsUsingSystemNetHttpJson = parseResult.GetRequiredValue(UseSystemNetHttpJson),
+            GenerateWebhookVerifier = parseResult.GetRequiredValue(GenerateWebhookVerifier),
+            WebhookVerifierClassName = parseResult.GetRequiredValue(WebhookVerifierClassName),
+            WebhookIdHeaderName = parseResult.GetRequiredValue(WebhookIdHeaderName),
+            WebhookTimestampHeaderName = parseResult.GetRequiredValue(WebhookTimestampHeaderName),
+            WebhookSignatureHeaderName = parseResult.GetRequiredValue(WebhookSignatureHeaderName),
+            WebhookSignatureVersion = parseResult.GetRequiredValue(WebhookSignatureVersion),
+            WebhookTimestampToleranceSeconds = parseResult.GetRequiredValue(WebhookTimestampToleranceSeconds),
             FromCli = true,
             GenerateCli = parseResult.GetRequiredValue(GenerateCli),
             SecuritySchemes = parseResult.GetRequiredValue(SecuritySchemes).ToImmutableArray(),

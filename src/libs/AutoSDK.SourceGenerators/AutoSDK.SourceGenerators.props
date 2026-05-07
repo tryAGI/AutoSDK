@@ -54,6 +54,20 @@
     <CompilerVisibleProperty Include="AutoSDK_GenerateConfigurationBinding"/>
     <!-- true/false. Default: false. Generates opt-in Microsoft.Extensions.Http.Resilience IHttpClientBuilder helpers. Requires the generated SDK project to reference Microsoft.Extensions.Http.Resilience. -->
     <CompilerVisibleProperty Include="AutoSDK_GenerateHttpResilienceExtensions"/>
+    <!-- true/false. Default: false. Generates opt-in Replicate/Svix-style HMAC webhook signature verifier helpers. -->
+    <CompilerVisibleProperty Include="AutoSDK_GenerateWebhookVerifier"/>
+    <!-- Class name for generated webhook verifier. Default: WebhookVerifier -->
+    <CompilerVisibleProperty Include="AutoSDK_WebhookVerifierClassName"/>
+    <!-- Webhook id header name. Default: webhook-id -->
+    <CompilerVisibleProperty Include="AutoSDK_WebhookIdHeaderName"/>
+    <!-- Webhook timestamp header name. Default: webhook-timestamp -->
+    <CompilerVisibleProperty Include="AutoSDK_WebhookTimestampHeaderName"/>
+    <!-- Webhook signature header name. Default: webhook-signature -->
+    <CompilerVisibleProperty Include="AutoSDK_WebhookSignatureHeaderName"/>
+    <!-- Webhook signature version prefix. Default: v1 -->
+    <CompilerVisibleProperty Include="AutoSDK_WebhookSignatureVersion"/>
+    <!-- Webhook timestamp tolerance in seconds. Default: 300 -->
+    <CompilerVisibleProperty Include="AutoSDK_WebhookTimestampToleranceSeconds"/>
     <!-- List of ids separated by ;. Default: Empty(all models) -->
     <CompilerVisibleProperty Include="AutoSDK_IncludeOperationIds"/>
     <!-- List of ids separated by ;. Default: Empty -->

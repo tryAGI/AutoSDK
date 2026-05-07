@@ -51,6 +51,13 @@ public static class OptionsExtensions
             GenerateDependencyInjection: options.GetBoolGlobalOption(nameof(Settings.GenerateDependencyInjection), prefix, defaultValue: Settings.Default.GenerateDependencyInjection),
             GenerateConfigurationBinding: options.GetBoolGlobalOption(nameof(Settings.GenerateConfigurationBinding), prefix, defaultValue: Settings.Default.GenerateConfigurationBinding),
             GenerateHttpResilienceExtensions: options.GetBoolGlobalOption(nameof(Settings.GenerateHttpResilienceExtensions), prefix, defaultValue: Settings.Default.GenerateHttpResilienceExtensions),
+            GenerateWebhookVerifier: options.GetBoolGlobalOption(nameof(Settings.GenerateWebhookVerifier), prefix, defaultValue: Settings.Default.GenerateWebhookVerifier),
+            WebhookVerifierClassName: options.GetGlobalOption(nameof(Settings.WebhookVerifierClassName), prefix) ?? Settings.Default.WebhookVerifierClassName,
+            WebhookIdHeaderName: options.GetGlobalOption(nameof(Settings.WebhookIdHeaderName), prefix) ?? Settings.Default.WebhookIdHeaderName,
+            WebhookTimestampHeaderName: options.GetGlobalOption(nameof(Settings.WebhookTimestampHeaderName), prefix) ?? Settings.Default.WebhookTimestampHeaderName,
+            WebhookSignatureHeaderName: options.GetGlobalOption(nameof(Settings.WebhookSignatureHeaderName), prefix) ?? Settings.Default.WebhookSignatureHeaderName,
+            WebhookSignatureVersion: options.GetGlobalOption(nameof(Settings.WebhookSignatureVersion), prefix) ?? Settings.Default.WebhookSignatureVersion,
+            WebhookTimestampToleranceSeconds: options.GetIntGlobalOption(nameof(Settings.WebhookTimestampToleranceSeconds), prefix, defaultValue: Settings.Default.WebhookTimestampToleranceSeconds),
             IncludeOperationIds: (options.GetGlobalOption(nameof(Settings.IncludeOperationIds), prefix)?.Split(';') ??
                                    []).ToImmutableArray(),
             ExcludeOperationIds: (options.GetGlobalOption(nameof(Settings.ExcludeOperationIds), prefix)?.Split(';') ??
@@ -142,6 +149,20 @@ public static class OptionsExtensions
             $"{defaultValue:G}",
             ignoreCase: true,
             out var value) ? value : default;
+    }
+
+    public static int GetIntGlobalOption(
+        this AnalyzerConfigOptionsProvider provider,
+        string name,
+        string? prefix = null,
+        int defaultValue = 0)
+    {
+        provider = provider ?? throw new ArgumentNullException(nameof(provider));
+        name = name ?? throw new ArgumentNullException(nameof(name));
+
+        return int.TryParse(
+            provider.GetGlobalOption(name, prefix),
+            out var value) ? value : defaultValue;
     }
 
     public static IncrementalValueProvider<Settings> DetectSettings(

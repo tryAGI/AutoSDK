@@ -184,6 +184,7 @@ public static class CSharpPipeline
                     .Concat(settings.GenerateHttpResilienceExtensions
                         ? [Sources.HttpResilienceExtensions(settings, cancellationToken)]
                         : [])
+                    .Concat([Sources.WebhookVerifier(settings, cancellationToken)])
                     .Concat(!data.Authorizations.IsEmpty
                         ? [Sources.SecuritySupport(settings, cancellationToken)]
                         : [])

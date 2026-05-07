@@ -50,6 +50,11 @@ Fast-moving APIs can return fields that are not present in the OpenAPI schema ye
 
 With System.Text.Json, unknown fields are preserved as `JsonElement` values in `AdditionalProperties`, and generated models also expose `FromRawUnchecked(...)` / `ToRawJson(...)` helper aliases. This mode is useful for SDK repos where provider docs or live responses move faster than the checked-in spec, while the default lightweight model shape remains unchanged.
 
+## Webhook Verification
+OpenAPI does not standardize receiver-side webhook signing metadata, so webhook verification helpers are opt-in. Enable `--generate-webhook-verifier` in the CLI, or set `<AutoSDK_GenerateWebhookVerifier>true</AutoSDK_GenerateWebhookVerifier>` for the source generator, to emit a Replicate/Svix-style HMAC SHA-256 verifier.
+
+The generated verifier validates `webhook-id`, `webhook-timestamp`, and `webhook-signature` by default, rejects stale timestamps, supports multiple versioned signatures such as `v1,<base64>`, decodes Replicate/Svix-style `whsec_<base64>` secrets, and uses constant-time signature comparison. Header names, verifier class name, signature version, and timestamp tolerance can be configured through the `AutoSDK_Webhook*` properties or matching CLI flags.
+
 ## Vendor Extension Compatibility
 When `AutoSDK_UseExtensionNaming` or `--use-extension-naming` is enabled, AutoSDK consumes a curated set of third-party SDK metadata instead of treating every vendor extension as noise.
 

@@ -1412,6 +1412,172 @@ components:
     }
 
     [TestMethod]
+    public async Task Generate_WithWebhookVerifier_RunsReplicateStyleVerificationCases()
+    {
+        const string spec = """
+openapi: 3.0.3
+info:
+  title: Webhook Verifier
+  version: 1.0.0
+paths:
+  /ping:
+    get:
+      operationId: ping
+      responses:
+        '204':
+          description: OK
+""";
+
+        var tempDirectory = Path.Combine(Path.GetTempPath(), Path.GetRandomFileName());
+        var specPath = Path.Combine(tempDirectory, "webhook.yaml");
+        var outputDirectory = Path.Combine(tempDirectory, "Generated");
+
+        try
+        {
+            Directory.CreateDirectory(tempDirectory);
+            await File.WriteAllTextAsync(specPath, spec);
+
+            var currentDirectory = Directory.GetCurrentDirectory();
+            var repositoryDirectory = Path.GetFullPath(Path.Combine(currentDirectory, "../../../../../.."));
+
+            var generateResult = await RunDotnetAsync(
+                repositoryDirectory,
+                "run",
+                "--disable-build-servers",
+                "--no-launch-profile",
+                "--project", "src/libs/AutoSDK.CLI",
+                "generate", specPath,
+                "--namespace", "Hooks",
+                "--clientClassName", "HooksClient",
+                "--targetFramework", "net10.0",
+                "--output", outputDirectory,
+                "--generate-webhook-verifier",
+                "--webhook-verifier-class-name", "HooksWebhookVerifier");
+            Console.WriteLine(generateResult.StandardOutput);
+            Console.WriteLine(generateResult.StandardError);
+            generateResult.ExitCode.Should().Be(0);
+
+            var verifierFile = Path.Combine(outputDirectory, "Hooks.HooksWebhookVerifier.g.cs");
+            File.Exists(verifierFile).Should().BeTrue();
+            var verifierContent = await File.ReadAllTextAsync(verifierFile);
+            verifierContent.Should().Contain("WebhookVerificationError.MalformedSignature");
+            verifierContent.Should().Contain("WebhookVerificationError.InvalidSignature");
+
+            await File.WriteAllTextAsync(Path.Combine(outputDirectory, "HooksVerifierConsumer.csproj"), """
+                <Project Sdk="Microsoft.NET.Sdk">
+                  <PropertyGroup>
+                    <OutputType>Exe</OutputType>
+                    <TargetFramework>net10.0</TargetFramework>
+                    <LangVersion>preview</LangVersion>
+                    <Nullable>enable</Nullable>
+                    <ImplicitUsings>enable</ImplicitUsings>
+                    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+                    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+                  </PropertyGroup>
+                  <ItemGroup>
+                    <Compile Include="Hooks.HooksWebhookVerifier.g.cs" />
+                    <Compile Include="Program.cs" />
+                  </ItemGroup>
+                </Project>
+                """);
+
+            await File.WriteAllTextAsync(Path.Combine(outputDirectory, "Program.cs"), """
+                using System.Net.Http;
+                using System.Security.Cryptography;
+                using System.Text;
+                using Hooks;
+
+                const string secret = "whsec_d2hzZWNfdGVzdA==";
+                const string payload = "{\"ok\":true}";
+                const string id = "msg_123";
+                const long timestamp = 1700000000;
+
+                var verifier = new HooksWebhookVerifier(secret);
+                verifier.Clock = () => DateTimeOffset.FromUnixTimeSeconds(timestamp).AddSeconds(1);
+
+                var signature = Sign(secret, id, timestamp.ToString(System.Globalization.CultureInfo.InvariantCulture), payload);
+                var validHeaders = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase)
+                {
+                    [HooksWebhookVerifier.IdHeaderName] = id,
+                    [HooksWebhookVerifier.TimestampHeaderName] = timestamp.ToString(System.Globalization.CultureInfo.InvariantCulture),
+                    [HooksWebhookVerifier.SignatureHeaderName] = "v0,ignored v1," + signature,
+                };
+
+                Require(verifier.Verify(validHeaders, payload).IsValid, "valid dictionary signature");
+                verifier.VerifyOrThrow(validHeaders, Encoding.UTF8.GetBytes(payload));
+
+                using var request = new HttpRequestMessage(HttpMethod.Post, "https://example.test/webhook");
+                request.Headers.TryAddWithoutValidation(HooksWebhookVerifier.IdHeaderName, id);
+                request.Headers.TryAddWithoutValidation(HooksWebhookVerifier.TimestampHeaderName, timestamp.ToString(System.Globalization.CultureInfo.InvariantCulture));
+                request.Headers.TryAddWithoutValidation(HooksWebhookVerifier.SignatureHeaderName, "v1," + signature);
+                Require(verifier.Verify(request, payload).IsValid, "valid request signature");
+
+                var missingSignature = new Dictionary<string, string>(validHeaders, StringComparer.OrdinalIgnoreCase);
+                missingSignature.Remove(HooksWebhookVerifier.SignatureHeaderName);
+                RequireError(verifier.Verify(missingSignature, payload), WebhookVerificationError.MissingHeader, "missing signature");
+
+                verifier.Clock = () => DateTimeOffset.FromUnixTimeSeconds(timestamp).AddSeconds(600);
+                RequireError(verifier.Verify(validHeaders, payload), WebhookVerificationError.StaleTimestamp, "stale timestamp");
+                verifier.Clock = () => DateTimeOffset.FromUnixTimeSeconds(timestamp).AddSeconds(1);
+
+                var malformedSignature = new Dictionary<string, string>(validHeaders, StringComparer.OrdinalIgnoreCase)
+                {
+                    [HooksWebhookVerifier.SignatureHeaderName] = "v1,not-base64",
+                };
+                RequireError(verifier.Verify(malformedSignature, payload), WebhookVerificationError.MalformedSignature, "malformed signature");
+
+                var invalidSignature = new Dictionary<string, string>(validHeaders, StringComparer.OrdinalIgnoreCase)
+                {
+                    [HooksWebhookVerifier.SignatureHeaderName] = "v1," + Convert.ToBase64String(Encoding.UTF8.GetBytes("wrong")),
+                };
+                RequireError(verifier.Verify(invalidSignature, payload), WebhookVerificationError.InvalidSignature, "invalid signature");
+
+                var malformedTimestamp = new Dictionary<string, string>(validHeaders, StringComparer.OrdinalIgnoreCase)
+                {
+                    [HooksWebhookVerifier.TimestampHeaderName] = "not-a-timestamp",
+                };
+                RequireError(verifier.Verify(malformedTimestamp, payload), WebhookVerificationError.MalformedTimestamp, "malformed timestamp");
+
+                static string Sign(string secret, string id, string timestamp, string payload)
+                {
+                    var secretBytes = Convert.FromBase64String(secret.Substring("whsec_".Length));
+                    using var hmac = new HMACSHA256(secretBytes);
+                    return Convert.ToBase64String(hmac.ComputeHash(Encoding.UTF8.GetBytes(id + "." + timestamp + "." + payload)));
+                }
+
+                static void Require(bool condition, string caseName)
+                {
+                    if (!condition)
+                    {
+                        throw new InvalidOperationException(caseName);
+                    }
+                }
+
+                static void RequireError(WebhookVerificationResult result, WebhookVerificationError expected, string caseName)
+                {
+                    if (result.IsValid || result.Error != expected)
+                    {
+                        throw new InvalidOperationException(caseName + ": " + result.Error + " " + result.Message);
+                    }
+                }
+                """);
+
+            var runResult = await RunDotnetAsync(
+                outputDirectory,
+                "run",
+                "--disable-build-servers",
+                "--project", Path.Combine(outputDirectory, "HooksVerifierConsumer.csproj"));
+            Console.WriteLine(runResult.StandardOutput);
+            Console.WriteLine(runResult.StandardError);
+            runResult.ExitCode.Should().Be(0);
+        }
+        finally
+        {
+            TryDeleteDirectory(tempDirectory);
+        }
+    }
+
+    [TestMethod]
     public async Task Generate_WithSecuritySchemeOverride_ReplacesAuthAndSuppressesDuplicateParameters()
     {
         const string spec = """
