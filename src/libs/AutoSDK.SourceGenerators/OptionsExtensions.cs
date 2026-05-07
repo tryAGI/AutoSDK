@@ -66,6 +66,8 @@ public static class OptionsExtensions
             ObservabilityLifecycleHelperClassName: options.GetGlobalOption(nameof(Settings.ObservabilityLifecycleHelperClassName), prefix) ?? Settings.Default.ObservabilityLifecycleHelperClassName,
             GeneratePredictionWorkflowHelpers: options.GetBoolGlobalOption(nameof(Settings.GeneratePredictionWorkflowHelpers), prefix, defaultValue: Settings.Default.GeneratePredictionWorkflowHelpers),
             PredictionWorkflowHelperClassName: options.GetGlobalOption(nameof(Settings.PredictionWorkflowHelperClassName), prefix) ?? Settings.Default.PredictionWorkflowHelperClassName,
+            GenerateEvaluationWorkflowHelpers: options.GetBoolGlobalOption(nameof(Settings.GenerateEvaluationWorkflowHelpers), prefix, defaultValue: Settings.Default.GenerateEvaluationWorkflowHelpers),
+            EvaluationWorkflowHelperClassName: options.GetGlobalOption(nameof(Settings.EvaluationWorkflowHelperClassName), prefix) ?? Settings.Default.EvaluationWorkflowHelperClassName,
             IncludeOperationIds: (options.GetGlobalOption(nameof(Settings.IncludeOperationIds), prefix)?.Split(';') ??
                                    []).ToImmutableArray(),
             ExcludeOperationIds: (options.GetGlobalOption(nameof(Settings.ExcludeOperationIds), prefix)?.Split(';') ??

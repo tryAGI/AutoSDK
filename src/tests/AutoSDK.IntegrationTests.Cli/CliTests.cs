@@ -2630,6 +2630,406 @@ components:
     }
 
     [TestMethod]
+    public async Task Generate_WithEvaluationWorkflowHelpers_RunsDatasetScoringFailuresAndBatchPublishCases()
+    {
+        const string spec = """
+openapi: 3.0.3
+info:
+  title: Evaluation Workflows
+  version: 1.0.0
+paths:
+  /datasets/{datasetId}/items:
+    get:
+      operationId: listDatasetItems
+      x-autosdk-evaluation-workflow:
+        datasetItemsOperationId: listDatasetItems
+        createExperimentOperationId: createExperiment
+        createExperimentItemsOperationId: batchCreateExperimentItems
+        batchCreateScoresOperationId: batchCreateScores
+      parameters:
+        - name: datasetId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: cursor
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Dataset items
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DatasetItemPage'
+          links:
+            createExperiment:
+              operationId: createExperiment
+  /experiments:
+    post:
+      operationId: createExperiment
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateExperimentRequest'
+      responses:
+        '201':
+          description: Experiment
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Experiment'
+          links:
+            createItems:
+              operationId: batchCreateExperimentItems
+              parameters:
+                experimentId: $response.body#/id
+  /experiments/{experimentId}/items:
+    post:
+      operationId: batchCreateExperimentItems
+      parameters:
+        - name: experimentId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ExperimentItemBatch'
+      responses:
+        '202':
+          description: Accepted
+          links:
+            createScores:
+              operationId: batchCreateScores
+              parameters:
+                experimentId: $request.path.experimentId
+  /experiments/{experimentId}/scores:
+    post:
+      operationId: batchCreateScores
+      parameters:
+        - name: experimentId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ScoreBatch'
+      responses:
+        '202':
+          description: Accepted
+  /feedback/batch:
+    post:
+      operationId: batchCreateFeedback
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FeedbackBatch'
+      responses:
+        '202':
+          description: Accepted
+components:
+  schemas:
+    DatasetItemPage:
+      type: object
+      properties:
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/DatasetItem'
+        nextCursor:
+          type: string
+    DatasetItem:
+      type: object
+      required:
+        - id
+        - input
+      properties:
+        id:
+          type: string
+        input:
+          type: string
+        expected:
+          type: string
+    CreateExperimentRequest:
+      type: object
+      properties:
+        name:
+          type: string
+        datasetId:
+          type: string
+    Experiment:
+      type: object
+      required:
+        - id
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+    ExperimentItemBatch:
+      type: object
+      properties:
+        items:
+          type: array
+          items:
+            type: object
+            properties:
+              datasetItemId:
+                type: string
+              output:
+                type: string
+              traceId:
+                type: string
+              spanId:
+                type: string
+              runId:
+                type: string
+    ScoreBatch:
+      type: object
+      properties:
+        scores:
+          type: array
+          items:
+            $ref: '#/components/schemas/Score'
+    Score:
+      type: object
+      properties:
+        name:
+          type: string
+        value:
+          type: number
+          format: double
+        label:
+          type: string
+        traceId:
+          type: string
+        runId:
+          type: string
+    FeedbackBatch:
+      type: object
+      properties:
+        feedback:
+          type: array
+          items:
+            type: object
+            properties:
+              traceId:
+                type: string
+              comment:
+                type: string
+""";
+
+        var tempDirectory = Path.Combine(Path.GetTempPath(), Path.GetRandomFileName());
+        var specPath = Path.Combine(tempDirectory, "evaluations.yaml");
+        var outputDirectory = Path.Combine(tempDirectory, "Generated");
+
+        try
+        {
+            Directory.CreateDirectory(tempDirectory);
+            await File.WriteAllTextAsync(specPath, spec);
+
+            var currentDirectory = Directory.GetCurrentDirectory();
+            var repositoryDirectory = Path.GetFullPath(Path.Combine(currentDirectory, "../../../../../.."));
+
+            var generateResult = await RunDotnetAsync(
+                repositoryDirectory,
+                "run",
+                "--disable-build-servers",
+                "--no-launch-profile",
+                "--project", "src/libs/AutoSDK.CLI",
+                "generate", specPath,
+                "--namespace", "Evaluations",
+                "--clientClassName", "EvaluationsClient",
+                "--targetFramework", "net10.0",
+                "--output", outputDirectory,
+                "--generate-evaluation-workflow-helpers",
+                "--evaluation-workflow-helper-class-name", "DatasetEvaluationRunner");
+            Console.WriteLine(generateResult.StandardOutput);
+            Console.WriteLine(generateResult.StandardError);
+            generateResult.ExitCode.Should().Be(0);
+
+            var helperFile = Path.Combine(outputDirectory, "Evaluations.DatasetEvaluationRunner.g.cs");
+            File.Exists(helperFile).Should().BeTrue();
+            var helperContent = await File.ReadAllTextAsync(helperFile);
+            helperContent.Should().Contain("public sealed class DatasetEvaluationRunner");
+            helperContent.Should().Contain("EvaluationWorkflowMetadata");
+            Directory.GetFiles(outputDirectory, "*.g.cs")
+                .Select(Path.GetFileName)
+                .Any(static name => name?.Contains("ListDatasetItems", StringComparison.Ordinal) == true)
+                .Should().BeTrue("raw dataset listing generation remains additive");
+            Directory.GetFiles(outputDirectory, "*.g.cs")
+                .Select(Path.GetFileName)
+                .Any(static name => name?.Contains("BatchCreateScores", StringComparison.Ordinal) == true)
+                .Should().BeTrue("raw score batch generation remains additive");
+
+            await File.WriteAllTextAsync(Path.Combine(outputDirectory, "EvaluationWorkflowConsumer.csproj"), """
+                <Project Sdk="Microsoft.NET.Sdk">
+                  <PropertyGroup>
+                    <OutputType>Exe</OutputType>
+                    <TargetFramework>net10.0</TargetFramework>
+                    <LangVersion>preview</LangVersion>
+                    <Nullable>enable</Nullable>
+                    <ImplicitUsings>enable</ImplicitUsings>
+                    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+                    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+                  </PropertyGroup>
+                  <ItemGroup>
+                    <Compile Include="Evaluations.DatasetEvaluationRunner.g.cs" />
+                    <Compile Include="Program.cs" />
+                  </ItemGroup>
+                </Project>
+                """);
+
+            await File.WriteAllTextAsync(Path.Combine(outputDirectory, "Program.cs"), """
+                using Evaluations;
+
+                var metadata = new EvaluationWorkflowMetadata
+                {
+                    ListDatasetItemsOperationId = "listDatasetItems",
+                    CreateExperimentOperationId = "createExperiment",
+                    CreateExperimentItemsOperationId = "batchCreateExperimentItems",
+                    BatchCreateScoresOperationId = "batchCreateScores",
+                    BatchCreateFeedbackOperationId = "batchCreateFeedback",
+                };
+                metadata.ScorerNames.Add("length");
+                metadata.ScorerNames.Add("guard");
+                Require(metadata.TraceIdPropertyName == "traceId", "trace metadata");
+                Require(metadata.ScorerNames.Count == 2, "scorer metadata");
+
+                var active = 0;
+                var maxActive = 0;
+                var experimentCreates = 0;
+                var gate = new object();
+                var published = new List<IReadOnlyList<EvaluationItemResult<string, string>>>();
+                var scorers = new[]
+                {
+                    EvaluationScorer<string, string>.FromValue(
+                        "length",
+                        (context, cancellationToken) => Task.FromResult<double?>(context.Output.Length)),
+                    new EvaluationScorer<string, string>(
+                        "guard",
+                        (context, cancellationToken) =>
+                        {
+                            if (context.Item == "scorer-fails")
+                            {
+                                throw new InvalidOperationException("score failed");
+                            }
+
+                            return Task.FromResult(new EvaluationScore("guard", 1, label: "ok"));
+                        }),
+                };
+
+                var runner = new DatasetEvaluationRunner<string, string>(
+                    taskAsync: async (context, cancellationToken) =>
+                    {
+                        var current = Interlocked.Increment(ref active);
+                        lock (gate)
+                        {
+                            if (current > maxActive)
+                            {
+                                maxActive = current;
+                            }
+                        }
+
+                        try
+                        {
+                            await Task.Delay(25, cancellationToken);
+                            if (context.Item == "task-fails")
+                            {
+                                throw new InvalidOperationException("task failed");
+                            }
+
+                            return new EvaluationTaskResult<string>(
+                                "output-" + context.Item,
+                                traceId: "trace-" + context.Index,
+                                spanId: "span-" + context.Index,
+                                runId: "run-" + context.Index);
+                        }
+                        finally
+                        {
+                            Interlocked.Decrement(ref active);
+                        }
+                    },
+                    scorers: scorers,
+                    publishBatchAsync: (batch, cancellationToken) =>
+                    {
+                        published.Add(batch.ToArray());
+                        return Task.CompletedTask;
+                    },
+                    createExperimentAsync: cancellationToken =>
+                    {
+                        experimentCreates++;
+                        return Task.FromResult<string?>("exp-1");
+                    },
+                    options: new EvaluationWorkflowOptions
+                    {
+                        MaxConcurrency = 2,
+                        PublishBatchSize = 2,
+                    });
+
+                var result = await runner.RunAsync(new[] { "ok", "task-fails", "scorer-fails", "later" });
+                Require(experimentCreates == 1, "created experiment");
+                Require(result.ExperimentId == "exp-1", "experiment id");
+                Require(result.TotalCount == 4, "total count");
+                Require(result.SucceededCount == 2, "succeeded count");
+                Require(result.FailedCount == 2, "failed count");
+                Require(!result.IsSuccessful, "not successful");
+                Require(result.Items[0].TraceId == "trace-0", "trace id preserved");
+                Require(result.Items[0].RunId == "run-0", "run id preserved");
+                Require(result.Items[1].Exception?.Message == "task failed", "task failure captured");
+                Require(result.Items[2].Output == "output-scorer-fails", "scorer failure keeps output");
+                Require(result.Items[2].Scores.Count == 1, "scorer failure keeps earlier scores");
+                Require(result.Items[2].Exceptions[0].Message == "score failed", "scorer failure captured");
+                Require(result.Items[3].Output == "output-later", "later item still processed");
+                Require(result.Scores.Count == 5, "aggregated scores");
+                Require(result.Exceptions.Count == 2, "aggregated exceptions");
+                Require(result.PublishedBatchCount == 2, "published batches");
+                Require(published.Count == 2, "publish callback count");
+                Require(published.Sum(static batch => batch.Count) == 4, "published all item results");
+                Require(maxActive <= 2, "max concurrency");
+
+                var explicitExperiment = await runner.RunAsync(new[] { "ok" }, experimentId: "exp-existing");
+                Require(explicitExperiment.ExperimentId == "exp-existing", "explicit experiment id");
+                Require(experimentCreates == 1, "existing experiment skips create");
+
+                static void Require(bool condition, string caseName)
+                {
+                    if (!condition)
+                    {
+                        throw new InvalidOperationException(caseName);
+                    }
+                }
+                """);
+
+            var runResult = await RunDotnetAsync(
+                outputDirectory,
+                "run",
+                "--disable-build-servers",
+                "--project", Path.Combine(outputDirectory, "EvaluationWorkflowConsumer.csproj"));
+            Console.WriteLine(runResult.StandardOutput);
+            Console.WriteLine(runResult.StandardError);
+            runResult.ExitCode.Should().Be(0);
+        }
+        finally
+        {
+            TryDeleteDirectory(tempDirectory);
+        }
+    }
+
+    [TestMethod]
     public async Task Generate_WithSecuritySchemeOverride_ReplacesAuthAndSuppressesDuplicateParameters()
     {
         const string spec = """

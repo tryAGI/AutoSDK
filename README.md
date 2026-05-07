@@ -75,6 +75,11 @@ Prediction, job, and actor-run APIs often need a provider-style create, wait, po
 
 The generated runner composes raw create, reload, optional cancel, status selector, and result selector delegates. It supports configurable success/failure/canceled terminal states, timeout and poll interval handling, best-effort cancellation-link invocation when the caller cancels, metadata for Replicate-style `Prefer: wait` and Apify-style `waitForFinish` workflows, and result projection such as returning `output` while preserving the final envelope. The helper class name can be configured with `--prediction-workflow-helper-class-name` or `<AutoSDK_PredictionWorkflowHelperClassName>`.
 
+## Evaluation Workflow Helpers
+Dataset-backed evaluation APIs usually need an experiment loop around raw dataset, trace, score, and feedback endpoints. Enable `--generate-evaluation-workflow-helpers` in the CLI, or set `<AutoSDK_GenerateEvaluationWorkflowHelpers>true</AutoSDK_GenerateEvaluationWorkflowHelpers>` for the source generator, to emit a `DatasetEvaluationRunner` helper.
+
+The generated runner accepts dataset items, an async task delegate, scorer delegates, optional experiment creation, and optional batch publishing for experiment items, scores, or feedback. It supports bounded concurrency, cancellation, trace/span/run id preservation, item-level failure capture, aggregate score/exception summaries, and batch-size controls while keeping raw endpoint methods intact. The helper class name can be configured with `--evaluation-workflow-helper-class-name` or `<AutoSDK_EvaluationWorkflowHelperClassName>`.
+
 ## Vendor Extension Compatibility
 When `AutoSDK_UseExtensionNaming` or `--use-extension-naming` is enabled, AutoSDK consumes a curated set of third-party SDK metadata instead of treating every vendor extension as noise.
 

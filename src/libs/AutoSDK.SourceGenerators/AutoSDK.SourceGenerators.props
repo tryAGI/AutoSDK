@@ -84,6 +84,10 @@
     <CompilerVisibleProperty Include="AutoSDK_GeneratePredictionWorkflowHelpers"/>
     <!-- Class name for generated prediction workflow helper. Default: PredictionWorkflowRunner -->
     <CompilerVisibleProperty Include="AutoSDK_PredictionWorkflowHelperClassName"/>
+    <!-- true/false. Default: false. Generates opt-in dataset evaluation and experiment workflow helpers. -->
+    <CompilerVisibleProperty Include="AutoSDK_GenerateEvaluationWorkflowHelpers"/>
+    <!-- Class name for generated evaluation workflow helper. Default: DatasetEvaluationRunner -->
+    <CompilerVisibleProperty Include="AutoSDK_EvaluationWorkflowHelperClassName"/>
     <!-- List of ids separated by ;. Default: Empty(all models) -->
     <CompilerVisibleProperty Include="AutoSDK_IncludeOperationIds"/>
     <!-- List of ids separated by ;. Default: Empty -->

@@ -189,6 +189,7 @@ public static class CSharpPipeline
                     .Concat([Sources.PromptTemplateHelpers(settings, cancellationToken)])
                     .Concat([Sources.ObservabilityLifecycleHelpers(settings, cancellationToken)])
                     .Concat([Sources.PredictionWorkflowHelpers(settings, cancellationToken)])
+                    .Concat([Sources.EvaluationWorkflowHelpers(settings, cancellationToken)])
                     .Concat(!data.Authorizations.IsEmpty
                         ? [Sources.SecuritySupport(settings, cancellationToken)]
                         : [])

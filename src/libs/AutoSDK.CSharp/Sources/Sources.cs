@@ -542,6 +542,22 @@ public static partial class Sources
             Text: GeneratePredictionWorkflowHelpers(settings, className, cancellationToken: cancellationToken));
     }
 
+    public static FileWithName EvaluationWorkflowHelpers(
+        CSharpSettings settings,
+        CancellationToken cancellationToken = default)
+    {
+        if (!settings.GenerateEvaluationWorkflowHelpers)
+        {
+            return FileWithName.Empty;
+        }
+
+        var className = GetEvaluationWorkflowHelperClassName(settings);
+
+        return new FileWithName(
+            Name: $"{settings.Namespace}.{className}.g.cs",
+            Text: GenerateEvaluationWorkflowHelpers(settings, className, cancellationToken: cancellationToken));
+    }
+
     public static FileWithName ResponseStream(
         CSharpSettings settings,
         CancellationToken cancellationToken = default)
