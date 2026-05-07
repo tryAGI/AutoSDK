@@ -72,6 +72,10 @@
     <CompilerVisibleProperty Include="AutoSDK_GenerateDynamicMultipartHelpers"/>
     <!-- Class name for generated dynamic multipart helper. Default: DynamicMultipartContentBuilder -->
     <CompilerVisibleProperty Include="AutoSDK_DynamicMultipartHelperClassName"/>
+    <!-- true/false. Default: false. Generates opt-in prompt template manager helpers. -->
+    <CompilerVisibleProperty Include="AutoSDK_GeneratePromptTemplateHelpers"/>
+    <!-- Class name for generated prompt template helper. Default: PromptTemplateManager -->
+    <CompilerVisibleProperty Include="AutoSDK_PromptTemplateHelperClassName"/>
     <!-- List of ids separated by ;. Default: Empty(all models) -->
     <CompilerVisibleProperty Include="AutoSDK_IncludeOperationIds"/>
     <!-- List of ids separated by ;. Default: Empty -->

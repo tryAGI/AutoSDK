@@ -222,6 +222,20 @@ internal sealed class GenerateCommand : Command
         Description = "Class name for the generated dynamic multipart helper.",
     };
 
+    private Option<bool> GeneratePromptTemplateHelpers { get; } = new(
+        name: "--generate-prompt-template-helpers")
+    {
+        DefaultValueFactory = _ => Settings.Default.GeneratePromptTemplateHelpers,
+        Description = "Generate opt-in prompt template manager helper APIs.",
+    };
+
+    private Option<string> PromptTemplateHelperClassName { get; } = new(
+        name: "--prompt-template-helper-class-name")
+    {
+        DefaultValueFactory = _ => Settings.Default.PromptTemplateHelperClassName,
+        Description = "Class name for the generated prompt template helper.",
+    };
+
     private Option<string[]> SecuritySchemes { get; } = new(
         name: "--security-scheme")
     {
@@ -361,6 +375,8 @@ internal sealed class GenerateCommand : Command
         Options.Add(WebhookTimestampToleranceSeconds);
         Options.Add(GenerateDynamicMultipartHelpers);
         Options.Add(DynamicMultipartHelperClassName);
+        Options.Add(GeneratePromptTemplateHelpers);
+        Options.Add(PromptTemplateHelperClassName);
         Options.Add(SecuritySchemes);
         Options.Add(AuthorizationEnvironmentVariables);
         Options.Add(BaseUrl);
@@ -463,6 +479,8 @@ internal sealed class GenerateCommand : Command
             WebhookTimestampToleranceSeconds = parseResult.GetRequiredValue(WebhookTimestampToleranceSeconds),
             GenerateDynamicMultipartHelpers = parseResult.GetRequiredValue(GenerateDynamicMultipartHelpers),
             DynamicMultipartHelperClassName = parseResult.GetRequiredValue(DynamicMultipartHelperClassName),
+            GeneratePromptTemplateHelpers = parseResult.GetRequiredValue(GeneratePromptTemplateHelpers),
+            PromptTemplateHelperClassName = parseResult.GetRequiredValue(PromptTemplateHelperClassName),
             FromCli = true,
             GenerateCli = parseResult.GetRequiredValue(GenerateCli),
             SecuritySchemes = parseResult.GetRequiredValue(SecuritySchemes).ToImmutableArray(),

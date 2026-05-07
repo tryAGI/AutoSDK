@@ -494,6 +494,22 @@ public static partial class Sources
             Text: GenerateDynamicMultipartHelpers(settings, className, cancellationToken: cancellationToken));
     }
 
+    public static FileWithName PromptTemplateHelpers(
+        CSharpSettings settings,
+        CancellationToken cancellationToken = default)
+    {
+        if (!settings.GeneratePromptTemplateHelpers)
+        {
+            return FileWithName.Empty;
+        }
+
+        var className = GetPromptTemplateHelperClassName(settings);
+
+        return new FileWithName(
+            Name: $"{settings.Namespace}.{className}.g.cs",
+            Text: GeneratePromptTemplateHelpers(settings, className, cancellationToken: cancellationToken));
+    }
+
     public static FileWithName ResponseStream(
         CSharpSettings settings,
         CancellationToken cancellationToken = default)

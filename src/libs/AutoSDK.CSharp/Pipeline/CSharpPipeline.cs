@@ -186,6 +186,7 @@ public static class CSharpPipeline
                         : [])
                     .Concat([Sources.WebhookVerifier(settings, cancellationToken)])
                     .Concat([Sources.DynamicMultipartHelpers(settings, cancellationToken)])
+                    .Concat([Sources.PromptTemplateHelpers(settings, cancellationToken)])
                     .Concat(!data.Authorizations.IsEmpty
                         ? [Sources.SecuritySupport(settings, cancellationToken)]
                         : [])

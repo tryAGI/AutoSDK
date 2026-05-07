@@ -60,6 +60,11 @@ Some ingestion APIs derive multipart part names from trace/run ids and attachmen
 
 The generated builder adds byte, stream, text, and external URL attachments, preserves run id/key relationships, computes part names like `run_123.image`, carries content type and filename metadata, and returns `MultipartFormDataContent` for raw generated endpoints. The helper class name can be configured with `--dynamic-multipart-helper-class-name` or `<AutoSDK_DynamicMultipartHelperClassName>`.
 
+## Prompt Template Helpers
+Prompt/version APIs often need a small manager layer for resolving templates, rendering variables, and caching versions. Enable `--generate-prompt-template-helpers` in the CLI, or set `<AutoSDK_GeneratePromptTemplateHelpers>true</AutoSDK_GeneratePromptTemplateHelpers>` for the source generator, to emit a `PromptTemplateManager` helper.
+
+The generated manager accepts a resolver delegate that can call raw generated prompt endpoints, caches resolved prompt versions with a configurable TTL, renders `{{variable}}` placeholders for string and chat-message prompts, supports `{{>partial}}` composition, and reports missing variables with `PromptTemplateRenderException`. The helper class name can be configured with `--prompt-template-helper-class-name` or `<AutoSDK_PromptTemplateHelperClassName>`.
+
 ## Vendor Extension Compatibility
 When `AutoSDK_UseExtensionNaming` or `--use-extension-naming` is enabled, AutoSDK consumes a curated set of third-party SDK metadata instead of treating every vendor extension as noise.
 

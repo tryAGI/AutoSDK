@@ -1738,6 +1738,249 @@ paths:
     }
 
     [TestMethod]
+    public async Task Generate_WithPromptTemplateHelpers_RendersAndCachesPromptVersions()
+    {
+        const string spec = """
+openapi: 3.0.3
+info:
+  title: Prompt Template Manager
+  version: 1.0.0
+paths:
+  /prompts/{promptId}/versions/{version}:
+    get:
+      operationId: getPromptVersion
+      x-autosdk-prompt-template: true
+      parameters:
+        - name: promptId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: version
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: environment
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Prompt version
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - id
+                  - body
+                  - variables
+                properties:
+                  id:
+                    type: string
+                  version:
+                    type: string
+                  environment:
+                    type: string
+                  body:
+                    type: string
+                    example: Hello {{name}}
+                  messages:
+                    type: array
+                    items:
+                      type: object
+                      required:
+                        - role
+                        - content
+                      properties:
+                        role:
+                          type: string
+                        content:
+                          type: string
+                  variables:
+                    type: object
+                    additionalProperties:
+                      type: string
+                  modelConfig:
+                    type: object
+                    additionalProperties:
+                      type: string
+""";
+
+        var tempDirectory = Path.Combine(Path.GetTempPath(), Path.GetRandomFileName());
+        var specPath = Path.Combine(tempDirectory, "prompts.yaml");
+        var outputDirectory = Path.Combine(tempDirectory, "Generated");
+
+        try
+        {
+            Directory.CreateDirectory(tempDirectory);
+            await File.WriteAllTextAsync(specPath, spec);
+
+            var currentDirectory = Directory.GetCurrentDirectory();
+            var repositoryDirectory = Path.GetFullPath(Path.Combine(currentDirectory, "../../../../../.."));
+
+            var generateResult = await RunDotnetAsync(
+                repositoryDirectory,
+                "run",
+                "--disable-build-servers",
+                "--no-launch-profile",
+                "--project", "src/libs/AutoSDK.CLI",
+                "generate", specPath,
+                "--namespace", "Prompts",
+                "--clientClassName", "PromptsClient",
+                "--targetFramework", "net10.0",
+                "--output", outputDirectory,
+                "--generate-prompt-template-helpers",
+                "--prompt-template-helper-class-name", "PromptTemplateManager");
+            Console.WriteLine(generateResult.StandardOutput);
+            Console.WriteLine(generateResult.StandardError);
+            generateResult.ExitCode.Should().Be(0);
+
+            var helperFile = Path.Combine(outputDirectory, "Prompts.PromptTemplateManager.g.cs");
+            File.Exists(helperFile).Should().BeTrue();
+            var helperContent = await File.ReadAllTextAsync(helperFile);
+            helperContent.Should().Contain("public sealed class PromptTemplateManager");
+            helperContent.Should().Contain("RenderMessagesAsync");
+
+            await File.WriteAllTextAsync(Path.Combine(outputDirectory, "PromptTemplateConsumer.csproj"), """
+                <Project Sdk="Microsoft.NET.Sdk">
+                  <PropertyGroup>
+                    <OutputType>Exe</OutputType>
+                    <TargetFramework>net10.0</TargetFramework>
+                    <LangVersion>preview</LangVersion>
+                    <Nullable>enable</Nullable>
+                    <ImplicitUsings>enable</ImplicitUsings>
+                    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+                    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+                  </PropertyGroup>
+                  <ItemGroup>
+                    <Compile Include="Prompts.PromptTemplateManager.g.cs" />
+                    <Compile Include="Program.cs" />
+                  </ItemGroup>
+                </Project>
+                """);
+
+            await File.WriteAllTextAsync(Path.Combine(outputDirectory, "Program.cs"), """
+                using Prompts;
+
+                var resolverCalls = 0;
+                var now = DateTimeOffset.FromUnixTimeSeconds(1700000000);
+                var manager = new PromptTemplateManager(
+                    (request, cancellationToken) =>
+                    {
+                        resolverCalls++;
+                        Require(request.Id == "support", "request id");
+                        Require(request.Version == "v1", "request version");
+
+                        return Task.FromResult(new PromptTemplate(
+                            id: request.Id,
+                            version: request.Version,
+                            environment: request.Environment,
+                            body: "Hello {{name}}, {{>signature}} v" + resolverCalls,
+                            messages:
+                            [
+                                new PromptTemplateMessage("system", "You are {{role}}."),
+                                new PromptTemplateMessage("user", "Question: {{question}} {{>signature}}"),
+                            ],
+                            variables: new Dictionary<string, string>(StringComparer.Ordinal)
+                            {
+                                ["name"] = "Recipient name",
+                                ["role"] = "Assistant role",
+                                ["question"] = "User question",
+                            },
+                            metadata: new Dictionary<string, string>(StringComparer.Ordinal)
+                            {
+                                ["provider"] = "fixture",
+                            },
+                            modelConfig: new Dictionary<string, string>(StringComparer.Ordinal)
+                            {
+                                ["model"] = "test-model",
+                            }));
+                    },
+                    cacheTtl: TimeSpan.FromMinutes(5));
+                manager.Clock = () => now;
+
+                var variables = new Dictionary<string, string>(StringComparer.Ordinal)
+                {
+                    ["name"] = "Ada",
+                    ["role"] = "assistant",
+                    ["question"] = "status?",
+                };
+                var partials = new Dictionary<string, string>(StringComparer.Ordinal)
+                {
+                    ["signature"] = "thanks",
+                };
+
+                var first = await manager.RenderStringAsync("support", variables, version: "v1", environment: "prod", partials: partials);
+                Require(first == "Hello Ada, thanks v1", "string prompt render");
+                Require(resolverCalls == 1, "first resolve");
+
+                var second = await manager.RenderStringAsync("support", variables, version: "v1", environment: "prod", partials: partials);
+                Require(second == first, "cached string prompt render");
+                Require(resolverCalls == 1, "cache hit");
+
+                var refreshed = await manager.RenderStringAsync("support", variables, version: "v1", environment: "prod", partials: partials, refresh: true);
+                Require(refreshed == "Hello Ada, thanks v2", "refresh render");
+                Require(resolverCalls == 2, "refresh resolve");
+
+                var messages = await manager.RenderMessagesAsync("support", variables, version: "v1", environment: "prod", partials: partials);
+                Require(messages.Count == 2, "message count");
+                Require(messages[0].Role == "system" && messages[0].Content == "You are assistant.", "system message render");
+                Require(messages[1].Role == "user" && messages[1].Content == "Question: status? thanks", "user message render");
+
+                var prompt = await manager.GetPromptVersionAsync("support", "v1", "prod");
+                Require(prompt.Metadata["provider"] == "fixture", "metadata preserved");
+                Require(prompt.ModelConfig["model"] == "test-model", "model config preserved");
+                Require(prompt.Variables.ContainsKey("name"), "variables preserved");
+
+                var missingWasReported = false;
+                try
+                {
+                    await manager.RenderStringAsync(
+                        "support",
+                        new Dictionary<string, string>(StringComparer.Ordinal),
+                        version: "v1",
+                        environment: "dev",
+                        partials: partials,
+                        refresh: true);
+                }
+                catch (PromptTemplateRenderException ex)
+                {
+                    missingWasReported = ex.MissingVariables.Contains("name");
+                }
+
+                Require(missingWasReported, "missing variable");
+
+                now = now.AddMinutes(6);
+                await manager.GetPromptAsync("support", version: "v1", environment: "prod");
+                Require(resolverCalls == 4, "expired cache refresh");
+
+                static void Require(bool condition, string caseName)
+                {
+                    if (!condition)
+                    {
+                        throw new InvalidOperationException(caseName);
+                    }
+                }
+                """);
+
+            var runResult = await RunDotnetAsync(
+                outputDirectory,
+                "run",
+                "--disable-build-servers",
+                "--project", Path.Combine(outputDirectory, "PromptTemplateConsumer.csproj"));
+            Console.WriteLine(runResult.StandardOutput);
+            Console.WriteLine(runResult.StandardError);
+            runResult.ExitCode.Should().Be(0);
+        }
+        finally
+        {
+            TryDeleteDirectory(tempDirectory);
+        }
+    }
+
+    [TestMethod]
     public async Task Generate_WithSecuritySchemeOverride_ReplacesAuthAndSuppressesDuplicateParameters()
     {
         const string spec = """
