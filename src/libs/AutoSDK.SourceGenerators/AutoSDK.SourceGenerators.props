@@ -76,6 +76,10 @@
     <CompilerVisibleProperty Include="AutoSDK_GeneratePromptTemplateHelpers"/>
     <!-- Class name for generated prompt template helper. Default: PromptTemplateManager -->
     <CompilerVisibleProperty Include="AutoSDK_PromptTemplateHelperClassName"/>
+    <!-- true/false. Default: false. Generates opt-in observability ingestion lifecycle helpers. -->
+    <CompilerVisibleProperty Include="AutoSDK_GenerateObservabilityLifecycleHelpers"/>
+    <!-- Class name for generated observability lifecycle helper. Default: ObservabilityIngestionLifecycle -->
+    <CompilerVisibleProperty Include="AutoSDK_ObservabilityLifecycleHelperClassName"/>
     <!-- List of ids separated by ;. Default: Empty(all models) -->
     <CompilerVisibleProperty Include="AutoSDK_IncludeOperationIds"/>
     <!-- List of ids separated by ;. Default: Empty -->

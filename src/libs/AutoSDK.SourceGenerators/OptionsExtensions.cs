@@ -62,6 +62,8 @@ public static class OptionsExtensions
             DynamicMultipartHelperClassName: options.GetGlobalOption(nameof(Settings.DynamicMultipartHelperClassName), prefix) ?? Settings.Default.DynamicMultipartHelperClassName,
             GeneratePromptTemplateHelpers: options.GetBoolGlobalOption(nameof(Settings.GeneratePromptTemplateHelpers), prefix, defaultValue: Settings.Default.GeneratePromptTemplateHelpers),
             PromptTemplateHelperClassName: options.GetGlobalOption(nameof(Settings.PromptTemplateHelperClassName), prefix) ?? Settings.Default.PromptTemplateHelperClassName,
+            GenerateObservabilityLifecycleHelpers: options.GetBoolGlobalOption(nameof(Settings.GenerateObservabilityLifecycleHelpers), prefix, defaultValue: Settings.Default.GenerateObservabilityLifecycleHelpers),
+            ObservabilityLifecycleHelperClassName: options.GetGlobalOption(nameof(Settings.ObservabilityLifecycleHelperClassName), prefix) ?? Settings.Default.ObservabilityLifecycleHelperClassName,
             IncludeOperationIds: (options.GetGlobalOption(nameof(Settings.IncludeOperationIds), prefix)?.Split(';') ??
                                    []).ToImmutableArray(),
             ExcludeOperationIds: (options.GetGlobalOption(nameof(Settings.ExcludeOperationIds), prefix)?.Split(';') ??

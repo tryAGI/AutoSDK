@@ -65,6 +65,11 @@ Prompt/version APIs often need a small manager layer for resolving templates, re
 
 The generated manager accepts a resolver delegate that can call raw generated prompt endpoints, caches resolved prompt versions with a configurable TTL, renders `{{variable}}` placeholders for string and chat-message prompts, supports `{{>partial}}` composition, and reports missing variables with `PromptTemplateRenderException`. The helper class name can be configured with `--prompt-template-helper-class-name` or `<AutoSDK_PromptTemplateHelperClassName>`.
 
+## Observability Ingestion Lifecycle
+Trace, log, span, score, and feedback ingestion APIs often need lifecycle behavior around raw batch endpoints. Enable `--generate-observability-lifecycle-helpers` in the CLI, or set `<AutoSDK_GenerateObservabilityLifecycleHelpers>true</AutoSDK_GenerateObservabilityLifecycleHelpers>` for the source generator, to emit an `ObservabilityIngestionLifecycle` helper.
+
+The generated lifecycle helper accepts a raw batch-ingest delegate, reads common env-backed options such as API key, endpoint, project, sampling rate, batch size, queue size, and flush interval, then provides bounded enqueueing, drop/error hooks, `FlushAsync`, `ShutdownAsync`, and `IAsyncDisposable`/`IDisposable` behavior. The helper class name can be configured with `--observability-lifecycle-helper-class-name` or `<AutoSDK_ObservabilityLifecycleHelperClassName>`.
+
 ## Vendor Extension Compatibility
 When `AutoSDK_UseExtensionNaming` or `--use-extension-naming` is enabled, AutoSDK consumes a curated set of third-party SDK metadata instead of treating every vendor extension as noise.
 

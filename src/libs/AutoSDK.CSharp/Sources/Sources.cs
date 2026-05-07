@@ -510,6 +510,22 @@ public static partial class Sources
             Text: GeneratePromptTemplateHelpers(settings, className, cancellationToken: cancellationToken));
     }
 
+    public static FileWithName ObservabilityLifecycleHelpers(
+        CSharpSettings settings,
+        CancellationToken cancellationToken = default)
+    {
+        if (!settings.GenerateObservabilityLifecycleHelpers)
+        {
+            return FileWithName.Empty;
+        }
+
+        var className = GetObservabilityLifecycleHelperClassName(settings);
+
+        return new FileWithName(
+            Name: $"{settings.Namespace}.{className}.g.cs",
+            Text: GenerateObservabilityLifecycleHelpers(settings, className, cancellationToken: cancellationToken));
+    }
+
     public static FileWithName ResponseStream(
         CSharpSettings settings,
         CancellationToken cancellationToken = default)

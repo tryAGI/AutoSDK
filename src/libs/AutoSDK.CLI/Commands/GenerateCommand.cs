@@ -236,6 +236,20 @@ internal sealed class GenerateCommand : Command
         Description = "Class name for the generated prompt template helper.",
     };
 
+    private Option<bool> GenerateObservabilityLifecycleHelpers { get; } = new(
+        name: "--generate-observability-lifecycle-helpers")
+    {
+        DefaultValueFactory = _ => Settings.Default.GenerateObservabilityLifecycleHelpers,
+        Description = "Generate opt-in observability ingestion lifecycle helper APIs.",
+    };
+
+    private Option<string> ObservabilityLifecycleHelperClassName { get; } = new(
+        name: "--observability-lifecycle-helper-class-name")
+    {
+        DefaultValueFactory = _ => Settings.Default.ObservabilityLifecycleHelperClassName,
+        Description = "Class name for the generated observability lifecycle helper.",
+    };
+
     private Option<string[]> SecuritySchemes { get; } = new(
         name: "--security-scheme")
     {
@@ -377,6 +391,8 @@ internal sealed class GenerateCommand : Command
         Options.Add(DynamicMultipartHelperClassName);
         Options.Add(GeneratePromptTemplateHelpers);
         Options.Add(PromptTemplateHelperClassName);
+        Options.Add(GenerateObservabilityLifecycleHelpers);
+        Options.Add(ObservabilityLifecycleHelperClassName);
         Options.Add(SecuritySchemes);
         Options.Add(AuthorizationEnvironmentVariables);
         Options.Add(BaseUrl);
@@ -481,6 +497,8 @@ internal sealed class GenerateCommand : Command
             DynamicMultipartHelperClassName = parseResult.GetRequiredValue(DynamicMultipartHelperClassName),
             GeneratePromptTemplateHelpers = parseResult.GetRequiredValue(GeneratePromptTemplateHelpers),
             PromptTemplateHelperClassName = parseResult.GetRequiredValue(PromptTemplateHelperClassName),
+            GenerateObservabilityLifecycleHelpers = parseResult.GetRequiredValue(GenerateObservabilityLifecycleHelpers),
+            ObservabilityLifecycleHelperClassName = parseResult.GetRequiredValue(ObservabilityLifecycleHelperClassName),
             FromCli = true,
             GenerateCli = parseResult.GetRequiredValue(GenerateCli),
             SecuritySchemes = parseResult.GetRequiredValue(SecuritySchemes).ToImmutableArray(),

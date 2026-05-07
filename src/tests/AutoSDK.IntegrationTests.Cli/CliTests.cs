@@ -1981,6 +1981,271 @@ paths:
     }
 
     [TestMethod]
+    public async Task Generate_WithObservabilityLifecycleHelpers_BatchesFlushesAndShutsDown()
+    {
+        const string spec = """
+openapi: 3.0.3
+info:
+  title: Observability Lifecycle
+  version: 1.0.0
+paths:
+  /traces/batch:
+    post:
+      operationId: ingestTraceBatch
+      x-autosdk-observability-lifecycle: true
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - events
+              properties:
+                events:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      name:
+                        type: string
+                      eventType:
+                        type: string
+                      traceId:
+                        type: string
+                      spanId:
+                        type: string
+                      body:
+                        type: string
+                      attributes:
+                        type: object
+                        additionalProperties:
+                          type: string
+      responses:
+        '202':
+          description: Accepted
+""";
+
+        var tempDirectory = Path.Combine(Path.GetTempPath(), Path.GetRandomFileName());
+        var specPath = Path.Combine(tempDirectory, "telemetry.yaml");
+        var outputDirectory = Path.Combine(tempDirectory, "Generated");
+
+        try
+        {
+            Directory.CreateDirectory(tempDirectory);
+            await File.WriteAllTextAsync(specPath, spec);
+
+            var currentDirectory = Directory.GetCurrentDirectory();
+            var repositoryDirectory = Path.GetFullPath(Path.Combine(currentDirectory, "../../../../../.."));
+
+            var generateResult = await RunDotnetAsync(
+                repositoryDirectory,
+                "run",
+                "--disable-build-servers",
+                "--no-launch-profile",
+                "--project", "src/libs/AutoSDK.CLI",
+                "generate", specPath,
+                "--namespace", "Telemetry",
+                "--clientClassName", "TelemetryClient",
+                "--targetFramework", "net10.0",
+                "--output", outputDirectory,
+                "--generate-observability-lifecycle-helpers",
+                "--observability-lifecycle-helper-class-name", "TelemetryLifecycle");
+            Console.WriteLine(generateResult.StandardOutput);
+            Console.WriteLine(generateResult.StandardError);
+            generateResult.ExitCode.Should().Be(0);
+
+            var helperFile = Path.Combine(outputDirectory, "Telemetry.TelemetryLifecycle.g.cs");
+            File.Exists(helperFile).Should().BeTrue();
+            var helperContent = await File.ReadAllTextAsync(helperFile);
+            helperContent.Should().Contain("public sealed class TelemetryLifecycle");
+            helperContent.Should().Contain("ObservabilityIngestionOptions");
+
+            await File.WriteAllTextAsync(Path.Combine(outputDirectory, "TelemetryLifecycleConsumer.csproj"), """
+                <Project Sdk="Microsoft.NET.Sdk">
+                  <PropertyGroup>
+                    <OutputType>Exe</OutputType>
+                    <TargetFramework>net10.0</TargetFramework>
+                    <LangVersion>preview</LangVersion>
+                    <Nullable>enable</Nullable>
+                    <ImplicitUsings>enable</ImplicitUsings>
+                    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+                    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+                  </PropertyGroup>
+                  <ItemGroup>
+                    <Compile Include="Telemetry.TelemetryLifecycle.g.cs" />
+                    <Compile Include="Program.cs" />
+                  </ItemGroup>
+                </Project>
+                """);
+
+            await File.WriteAllTextAsync(Path.Combine(outputDirectory, "Program.cs"), """
+                using Telemetry;
+
+                Environment.SetEnvironmentVariable("AUTOSDK_OBSERVABILITY_BATCH_SIZE", "7");
+                Environment.SetEnvironmentVariable("AUTOSDK_OBSERVABILITY_QUEUE_SIZE", "11");
+                Environment.SetEnvironmentVariable("AUTOSDK_OBSERVABILITY_FLUSH_INTERVAL_SECONDS", "0");
+                Environment.SetEnvironmentVariable("AUTOSDK_OBSERVABILITY_PROJECT", "demo-project");
+                Environment.SetEnvironmentVariable("AUTOSDK_OBSERVABILITY_SAMPLING_RATE", "0.5");
+                var envOptions = ObservabilityIngestionOptions.FromEnvironment();
+                Require(envOptions.BatchSize == 7, "env batch size");
+                Require(envOptions.QueueSize == 11, "env queue size");
+                Require(envOptions.FlushInterval == TimeSpan.Zero, "env flush interval");
+                Require(envOptions.Project == "demo-project", "env project");
+                Require(Math.Abs(envOptions.SamplingRate - 0.5) < 0.001, "env sampling rate");
+
+                var batches = new List<IReadOnlyList<ObservabilityIngestionEvent>>();
+                var dropped = new List<ObservabilityIngestionEvent>();
+                var failed = new List<Exception>();
+                var options = new ObservabilityIngestionOptions
+                {
+                    BatchSize = 10,
+                    QueueSize = 2,
+                    FlushInterval = TimeSpan.Zero,
+                };
+                using var lifecycle = new TelemetryLifecycle(
+                    (events, cancellationToken) =>
+                    {
+                        batches.Add(events.ToArray());
+                        return Task.CompletedTask;
+                    },
+                    options);
+                lifecycle.EventDropped = dropped.Add;
+                lifecycle.FlushFailed = failed.Add;
+
+                Require(lifecycle.EnqueueLog("first", "body-1"), "enqueue first");
+                Require(lifecycle.Enqueue(new ObservabilityIngestionEvent(
+                    "span-one",
+                    eventType: "span",
+                    traceId: "trace-1",
+                    spanId: "span-1",
+                    attributes: new Dictionary<string, string>(StringComparer.Ordinal)
+                    {
+                        ["http.method"] = "POST",
+                    })), "enqueue span");
+                Require(!lifecycle.EnqueueLog("dropped", "body-3"), "queue drop");
+                Require(dropped.Count == 1, "drop hook");
+                Require(lifecycle.QueuedCount == 2, "queued count before flush");
+
+                await lifecycle.FlushAsync();
+                Require(batches.Count == 1, "single flush batch");
+                Require(batches[0].Count == 2, "flush batch count");
+                Require(batches[0][0].EventType == "log", "log event type");
+                Require(batches[0][0].Body == "body-1", "log body");
+                Require(batches[0][1].TraceId == "trace-1", "trace relationship");
+                Require(batches[0][1].Attributes["http.method"] == "POST", "attributes preserved");
+                Require(lifecycle.QueuedCount == 0, "queued count after flush");
+                Require(failed.Count == 0, "no flush failure");
+
+                var failNextFlush = true;
+                var failureHooks = 0;
+                using var retryLifecycle = new TelemetryLifecycle(
+                    (events, cancellationToken) =>
+                    {
+                        if (failNextFlush)
+                        {
+                            failNextFlush = false;
+                            throw new InvalidOperationException("ingest failed");
+                        }
+
+                        batches.Add(events.ToArray());
+                        return Task.CompletedTask;
+                    },
+                    new ObservabilityIngestionOptions
+                    {
+                        BatchSize = 10,
+                        QueueSize = 5,
+                        FlushInterval = TimeSpan.Zero,
+                    });
+                retryLifecycle.FlushFailed = _ => failureHooks++;
+                retryLifecycle.EnqueueException("failure", new InvalidOperationException("boom"));
+                try
+                {
+                    await retryLifecycle.FlushAsync();
+                    throw new InvalidOperationException("flush should fail");
+                }
+                catch (InvalidOperationException ex) when (ex.Message == "ingest failed")
+                {
+                }
+
+                Require(failureHooks == 1, "flush failure hook");
+                Require(retryLifecycle.QueuedCount == 1, "failed batch requeued");
+                await retryLifecycle.FlushAsync();
+                Require(retryLifecycle.QueuedCount == 0, "requeued batch flushed");
+
+                var shutdownBatches = new List<IReadOnlyList<ObservabilityIngestionEvent>>();
+                var shutdownLifecycle = new TelemetryLifecycle(
+                    (events, cancellationToken) =>
+                    {
+                        shutdownBatches.Add(events.ToArray());
+                        return Task.CompletedTask;
+                    },
+                    new ObservabilityIngestionOptions
+                    {
+                        BatchSize = 10,
+                        QueueSize = 10,
+                        FlushInterval = TimeSpan.Zero,
+                    });
+                shutdownLifecycle.EnqueueLog("shutdown-event");
+                await shutdownLifecycle.ShutdownAsync();
+                Require(shutdownBatches.Count == 1, "shutdown drains queue");
+                RequireThrows<InvalidOperationException>(() => shutdownLifecycle.EnqueueLog("after-shutdown"), "enqueue after shutdown");
+                shutdownLifecycle.Dispose();
+
+                var sampledDrops = 0;
+                using var sampledLifecycle = new TelemetryLifecycle(
+                    (events, cancellationToken) => Task.CompletedTask,
+                    new ObservabilityIngestionOptions
+                    {
+                        BatchSize = 10,
+                        QueueSize = 10,
+                        FlushInterval = TimeSpan.Zero,
+                        SamplingRate = 0,
+                    });
+                sampledLifecycle.EventDropped = _ => sampledDrops++;
+                Require(!sampledLifecycle.EnqueueLog("sampled-out"), "sampling drop");
+                Require(sampledDrops == 1, "sampling drop hook");
+
+                static void Require(bool condition, string caseName)
+                {
+                    if (!condition)
+                    {
+                        throw new InvalidOperationException(caseName);
+                    }
+                }
+
+                static void RequireThrows<TException>(Action action, string caseName)
+                    where TException : Exception
+                {
+                    try
+                    {
+                        action();
+                    }
+                    catch (TException)
+                    {
+                        return;
+                    }
+
+                    throw new InvalidOperationException(caseName);
+                }
+                """);
+
+            var runResult = await RunDotnetAsync(
+                outputDirectory,
+                "run",
+                "--disable-build-servers",
+                "--project", Path.Combine(outputDirectory, "TelemetryLifecycleConsumer.csproj"));
+            Console.WriteLine(runResult.StandardOutput);
+            Console.WriteLine(runResult.StandardError);
+            runResult.ExitCode.Should().Be(0);
+        }
+        finally
+        {
+            TryDeleteDirectory(tempDirectory);
+        }
+    }
+
+    [TestMethod]
     public async Task Generate_WithSecuritySchemeOverride_ReplacesAuthAndSuppressesDuplicateParameters()
     {
         const string spec = """
