@@ -111,9 +111,13 @@
 
     <!-- Security schemes to inject as 'Type:Location:Name' separated by ;. Default: Empty -->
     <CompilerVisibleProperty Include="AutoSDK_SecuritySchemes"/>
+    <!-- Auth credential environment variable names to use for generated root-client environment factories, separated by ;. Default: Empty -->
+    <CompilerVisibleProperty Include="AutoSDK_AuthorizationEnvironmentVariables"/>
 
     <!-- Server base URL to inject (e.g., 'https://api.elevenlabs.io'). Default: Empty -->
     <CompilerVisibleProperty Include="AutoSDK_BaseUrl"/>
+    <!-- Server base URL environment variable names to use for generated root-client environment factories, separated by ;. Default: Empty -->
+    <CompilerVisibleProperty Include="AutoSDK_BaseUrlEnvironmentVariables"/>
     <!-- OpenAPI overrides as 'path=action' separated by ;. Actions: object, dictionary, remove. Default: Empty -->
     <CompilerVisibleProperty Include="AutoSDK_OpenApiOverrides"/>
 

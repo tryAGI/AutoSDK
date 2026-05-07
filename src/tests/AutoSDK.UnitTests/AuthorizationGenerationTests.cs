@@ -448,6 +448,121 @@ public class AuthorizationGenerationTests
     }
 
     [TestMethod]
+    public void GenerateMainAuthorizationConstructor_ApiKeyWithEnvironmentVariables_EmitsEnvironmentFactory()
+    {
+        const string yaml = """
+                            openapi: 3.0.3
+                            info:
+                              title: Env Auth
+                              version: 1.0.0
+                            paths:
+                              /orders:
+                                get:
+                                  operationId: getOrders
+                                  security:
+                                    - apiKeyAuth: []
+                                  responses:
+                                    '200':
+                                      description: OK
+                            components:
+                              securitySchemes:
+                                apiKeyAuth:
+                                  type: apiKey
+                                  in: header
+                                  name: X-Custom-Key
+                            """;
+
+        var settings = DefaultSettings with
+        {
+            AuthorizationEnvironmentVariables = ImmutableArray.Create("PRIMARY_API_KEY", "SECONDARY_API_KEY"),
+            BaseUrlEnvironmentVariables = ImmutableArray.Create("PRIMARY_BASE_URL"),
+        };
+        var authorization = GetSingleAuthorization(yaml, settings);
+        var constructor = Sources.MainAuthorizationConstructor(ImmutableArray.Create(authorization).AsEquatableArray());
+
+        constructor.Text.Should().Contain("public static Api CreateFromEnvironment(");
+        constructor.Text.Should().Contain("public static bool TryCreateFromEnvironment(");
+        constructor.Text.Should().Contain("\"PRIMARY_API_KEY\"");
+        constructor.Text.Should().Contain("\"SECONDARY_API_KEY\"");
+        constructor.Text.Should().Contain("\"PRIMARY_BASE_URL\"");
+        constructor.Text.Should().Contain("global::System.Environment.GetEnvironmentVariable(name)");
+        constructor.Text.Should().Contain("string.IsNullOrWhiteSpace(value)");
+        constructor.Text.Should().Contain("No non-empty credential environment variable value was found. Checked: PRIMARY_API_KEY, SECONDARY_API_KEY.");
+        constructor.Text.Should().Contain("client.Authorizing(client.HttpClient, ref apiKey);");
+        constructor.Text.Should().Contain("client.AuthorizeUsingApiKeyInHeader(apiKey);");
+        constructor.Text.Should().Contain("client.Authorized(client.HttpClient);");
+        constructor.Text.Should().Contain("global::System.UriKind.Absolute");
+    }
+
+    [TestMethod]
+    public void GenerateMainAuthorizationConstructor_BearerWithEnvironmentVariables_UsesBearerAuthorizationMethod()
+    {
+        const string yaml = """
+                            openapi: 3.0.3
+                            info:
+                              title: Bearer Env Auth
+                              version: 1.0.0
+                            paths:
+                              /orders:
+                                get:
+                                  operationId: getOrders
+                                  security:
+                                    - bearerAuth: []
+                                  responses:
+                                    '200':
+                                      description: OK
+                            components:
+                              securitySchemes:
+                                bearerAuth:
+                                  type: http
+                                  scheme: bearer
+                            """;
+
+        var settings = DefaultSettings with
+        {
+            AuthorizationEnvironmentVariables = ImmutableArray.Create("BEARER_TOKEN"),
+        };
+        var authorization = GetSingleAuthorization(yaml, settings);
+        var constructor = Sources.MainAuthorizationConstructor(ImmutableArray.Create(authorization).AsEquatableArray());
+
+        constructor.Text.Should().Contain("\"BEARER_TOKEN\"");
+        constructor.Text.Should().Contain("client.AuthorizeUsingBearer(apiKey);");
+        constructor.Text.Should().Contain("return false;");
+    }
+
+    [TestMethod]
+    public void GenerateMainAuthorizationConstructor_WithoutEnvironmentVariables_DoesNotEmitEnvironmentFactory()
+    {
+        const string yaml = """
+                            openapi: 3.0.3
+                            info:
+                              title: Header Auth
+                              version: 1.0.0
+                            paths:
+                              /orders:
+                                get:
+                                  operationId: getOrders
+                                  security:
+                                    - apiKeyAuth: []
+                                  responses:
+                                    '200':
+                                      description: OK
+                            components:
+                              securitySchemes:
+                                apiKeyAuth:
+                                  type: apiKey
+                                  in: header
+                                  name: X-API-Key
+                            """;
+
+        var authorization = GetSingleAuthorization(yaml);
+        var constructor = Sources.MainAuthorizationConstructor(ImmutableArray.Create(authorization).AsEquatableArray());
+
+        constructor.Text.Should().NotContain("CreateFromEnvironment");
+        constructor.Text.Should().NotContain("TryCreateFromEnvironment");
+    }
+
+    [TestMethod]
     public void GenerateAuthorization_OAuth2ClientCredentials_UsesFlowTokenUrl()
     {
         const string yaml = """
@@ -729,21 +844,23 @@ public class AuthorizationGenerationTests
         content.Should().Contain("oAuth2Coordinator: AutoSDKOAuth2State");
     }
 
-    private static Authorization GetSingleAuthorization(string yaml)
+    private static Authorization GetSingleAuthorization(
+        string yaml,
+        Settings? settings = null)
     {
-        var settings = DefaultSettings with
+        var effectiveSettings = settings.GetValueOrDefault(DefaultSettings) with
         {
             GenerateSdk = true,
             GenerateConstructors = true,
         };
 
-        var document = yaml.GetOpenApiDocument(settings);
+        var document = yaml.GetOpenApiDocument(effectiveSettings);
         var operation = document.Paths["/orders"]!.Operations![System.Net.Http.HttpMethod.Get];
 
         return operation.Security!
             .SelectMany(x => x)
             .Select(x => CSharpAuthorizationFactory.FromOpenApiSecurityScheme(
-                x.Key, settings, settings))
+                x.Key, effectiveSettings, effectiveSettings))
             .Single();
     }
 }

@@ -175,8 +175,213 @@ namespace {authorization.Settings.Namespace}
             ref string {x},")).TrimEnd(',')});
         partial void Authorized(
             global::System.Net.Http.HttpClient client);
+{GenerateEnvironmentFactoryMembers(authorization, constructorParameters)}
     }}
 }}".RemoveBlankLinesWhereOnlyWhitespaces();
+    }
+
+    private static string GenerateEnvironmentFactoryMembers(
+        Authorization authorization,
+        string[] constructorParameters)
+    {
+        if (constructorParameters.Length != 1)
+        {
+            return string.Empty;
+        }
+
+        var authorizationEnvironmentVariables = authorization.Settings.AuthorizationEnvironmentVariables
+            .Where(static x => !string.IsNullOrWhiteSpace(x))
+            .Distinct(StringComparer.Ordinal)
+            .ToArray();
+        if (authorizationEnvironmentVariables.Length == 0)
+        {
+            return string.Empty;
+        }
+
+        var baseUrlEnvironmentVariables = authorization.Settings.BaseUrlEnvironmentVariables
+            .Where(static x => !string.IsNullOrWhiteSpace(x))
+            .Distinct(StringComparer.Ordinal)
+            .ToArray();
+        var credentialParameter = constructorParameters[0];
+        var checkedAuthorizationEnvironmentVariables = string.Join(", ", authorizationEnvironmentVariables);
+
+        return $@"
+
+        private static readonly string[] s_authorizationEnvironmentVariables = new string[]
+        {{{GenerateEnvironmentVariableArrayInitializer(authorizationEnvironmentVariables)}
+        }};
+
+        private static readonly string[] s_baseUrlEnvironmentVariables = new string[]
+        {{{GenerateEnvironmentVariableArrayInitializer(baseUrlEnvironmentVariables)}
+        }};
+
+        /// <summary>
+        /// Creates an authenticated {authorization.Settings.ClassName} by resolving the configured credential environment variables.
+        /// </summary>
+        /// <param name=""httpClient"">The HttpClient instance. If not provided, a new one will be created.</param>
+        /// <param name=""baseUri"">The base URL for the API. If not provided, configured base URL environment variables are checked before using the OpenAPI default.</param>
+        /// <param name=""authorizations"">The authorizations to use for the requests.</param>
+        /// <param name=""options"">Client-wide request defaults such as headers, query parameters, retries, and timeout.</param>
+        /// <param name=""disposeHttpClient"">Dispose the HttpClient when the instance is disposed. True by default.</param>
+{GetAuthorizationObsoleteAttribute(authorization, 8)}
+        public static {authorization.Settings.ClassName} CreateFromEnvironment(
+            global::System.Net.Http.HttpClient? httpClient = null,
+            global::System.Uri? baseUri = null,
+            global::System.Collections.Generic.List<global::{authorization.GlobalSettings.Namespace}.EndPointAuthorization>? authorizations = null,
+            global::{authorization.Settings.Namespace}.AutoSDKClientOptions? options = null,
+            bool disposeHttpClient = true)
+        {{
+            var credentialValue = GetFirstEnvironmentVariableValue(
+                s_authorizationEnvironmentVariables,
+                out _);
+            if (credentialValue is null)
+            {{
+                throw new global::System.InvalidOperationException(
+                    {($"No non-empty credential environment variable value was found. Checked: {checkedAuthorizationEnvironmentVariables}.").ToCSharpStringLiteral()});
+            }}
+
+            string {credentialParameter} = credentialValue;
+            if (baseUri is null)
+            {{
+                baseUri = ResolveEnvironmentBaseUriOrThrow();
+            }}
+
+            var client = new {authorization.Settings.ClassName}(
+                httpClient,
+                baseUri,
+                authorizations,
+                options,
+                disposeHttpClient);
+
+            client.Authorizing(client.HttpClient, ref {credentialParameter});
+            {GenerateEnvironmentFactoryAuthorizationInvocation(authorization, constructorParameters, "client.")}
+            client.Authorized(client.HttpClient);
+
+            return client;
+        }}
+
+        /// <summary>
+        /// Tries to create an authenticated {authorization.Settings.ClassName} by resolving the configured credential environment variables.
+        /// </summary>
+        /// <param name=""client"">The created client when a non-empty credential and valid base URL environment value are available; otherwise null.</param>
+        /// <param name=""httpClient"">The HttpClient instance. If not provided, a new one will be created.</param>
+        /// <param name=""baseUri"">The base URL for the API. If not provided, configured base URL environment variables are checked before using the OpenAPI default.</param>
+        /// <param name=""authorizations"">The authorizations to use for the requests.</param>
+        /// <param name=""options"">Client-wide request defaults such as headers, query parameters, retries, and timeout.</param>
+        /// <param name=""disposeHttpClient"">Dispose the HttpClient when the instance is disposed. True by default.</param>
+{GetAuthorizationObsoleteAttribute(authorization, 8)}
+        public static bool TryCreateFromEnvironment(
+            out {authorization.Settings.ClassName}? client,
+            global::System.Net.Http.HttpClient? httpClient = null,
+            global::System.Uri? baseUri = null,
+            global::System.Collections.Generic.List<global::{authorization.GlobalSettings.Namespace}.EndPointAuthorization>? authorizations = null,
+            global::{authorization.Settings.Namespace}.AutoSDKClientOptions? options = null,
+            bool disposeHttpClient = true)
+        {{
+            client = null;
+
+            var credentialValue = GetFirstEnvironmentVariableValue(
+                s_authorizationEnvironmentVariables,
+                out _);
+            if (credentialValue is null)
+            {{
+                return false;
+            }}
+
+            string {credentialParameter} = credentialValue;
+            if (baseUri is null && !TryResolveEnvironmentBaseUri(out baseUri))
+            {{
+                return false;
+            }}
+
+            client = new {authorization.Settings.ClassName}(
+                httpClient,
+                baseUri,
+                authorizations,
+                options,
+                disposeHttpClient);
+
+            client.Authorizing(client.HttpClient, ref {credentialParameter});
+            {GenerateEnvironmentFactoryAuthorizationInvocation(authorization, constructorParameters, "client.")}
+            client.Authorized(client.HttpClient);
+
+            return true;
+        }}
+
+        private static global::System.Uri? ResolveEnvironmentBaseUriOrThrow()
+        {{
+            var baseUriValue = GetFirstEnvironmentVariableValue(
+                s_baseUrlEnvironmentVariables,
+                out var baseUriEnvironmentVariableName);
+            if (baseUriValue is null)
+            {{
+                return null;
+            }}
+
+            if (global::System.Uri.TryCreate(baseUriValue, global::System.UriKind.Absolute, out var baseUri))
+            {{
+                return baseUri;
+            }}
+
+            throw new global::System.InvalidOperationException(
+                ""Environment variable '"" + baseUriEnvironmentVariableName + ""' must contain an absolute URI."");
+        }}
+
+        private static bool TryResolveEnvironmentBaseUri(
+            out global::System.Uri? baseUri)
+        {{
+            baseUri = null;
+            var baseUriValue = GetFirstEnvironmentVariableValue(
+                s_baseUrlEnvironmentVariables,
+                out _);
+            return baseUriValue is null ||
+                   global::System.Uri.TryCreate(baseUriValue, global::System.UriKind.Absolute, out baseUri);
+        }}
+
+        private static string? GetFirstEnvironmentVariableValue(
+            string[] names,
+            out string? resolvedName)
+        {{
+            foreach (var name in names)
+            {{
+                if (string.IsNullOrWhiteSpace(name))
+                {{
+                    continue;
+                }}
+
+                var value = global::System.Environment.GetEnvironmentVariable(name);
+                if (!string.IsNullOrWhiteSpace(value))
+                {{
+                    resolvedName = name;
+                    return value;
+                }}
+            }}
+
+            resolvedName = null;
+            return null;
+        }}";
+    }
+
+    private static string GenerateEnvironmentVariableArrayInitializer(
+        IEnumerable<string> environmentVariables)
+    {
+        return environmentVariables
+            .Select(static x => $@"
+            {x.ToCSharpStringLiteral()},")
+            .Inject();
+    }
+
+    private static string GenerateEnvironmentFactoryAuthorizationInvocation(
+        Authorization authorization,
+        string[] constructorParameters,
+        string receiver)
+    {
+        return authorization.Type switch
+        {
+            SecuritySchemeType.OAuth2 => $"{receiver}{authorization.MethodName}(accessToken);",
+            SecuritySchemeType.OpenIdConnect => $"{receiver}{authorization.MethodName}(accessToken);",
+            _ => $"{receiver}{authorization.MethodName}({string.Join(", ", constructorParameters)});",
+        };
     }
 
     private static string GetMatchingAuthorizationCondition(

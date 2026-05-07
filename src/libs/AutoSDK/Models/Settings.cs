@@ -58,7 +58,9 @@ public record struct Settings(
     bool GenerateCli,
 
     ImmutableArray<string> SecuritySchemes,
+    ImmutableArray<string> AuthorizationEnvironmentVariables,
     string BaseUrl,
+    ImmutableArray<string> BaseUrlEnvironmentVariables,
     ImmutableArray<string> OpenApiOverrides,
 
     bool GenerateWebSocketClient,
@@ -112,7 +114,9 @@ public record struct Settings(
         FromCli: false,
         GenerateCli: false,
         SecuritySchemes: ImmutableArray<string>.Empty,
+        AuthorizationEnvironmentVariables: ImmutableArray<string>.Empty,
         BaseUrl: string.Empty,
+        BaseUrlEnvironmentVariables: ImmutableArray<string>.Empty,
         OpenApiOverrides: ImmutableArray<string>.Empty,
         GenerateWebSocketClient: true,
         WebSocketClientClassName: string.Empty,

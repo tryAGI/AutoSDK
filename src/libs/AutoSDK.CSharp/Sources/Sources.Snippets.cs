@@ -288,6 +288,18 @@ public static partial class Sources
 
         var authorization = endPoint.Authorizations[0];
         var parameters = GetMainAuthorizationConstructorParameters(authorization);
+        if (parameters.Length == 1 &&
+            endPoint.Settings.AuthorizationEnvironmentVariables.Any(static x => !string.IsNullOrWhiteSpace(x)))
+        {
+            clientInstantiation = $"using var client = {rootClientClassName}.CreateFromEnvironment();";
+            var environmentVariables = endPoint.Settings.AuthorizationEnvironmentVariables
+                .Where(static x => !string.IsNullOrWhiteSpace(x))
+                .Distinct(StringComparer.Ordinal)
+                .Select(x => $"`{x}`");
+            setup = $"This example assumes `using {endPoint.Settings.Namespace};` is in scope and a configured credential environment variable is set: {string.Join(" / ", environmentVariables)}.";
+            return true;
+        }
+
         clientInstantiation = $"using var client = new {rootClientClassName}({string.Join(", ", parameters)});";
         setup = parameters.Length == 1 && parameters[0] == "accessToken"
             ? $"This example assumes `using {endPoint.Settings.Namespace};` is in scope and `accessToken` contains the required {(authorization.Type == SecuritySchemeType.OpenIdConnect ? "OpenID Connect" : "OAuth2")} access token."

@@ -1267,6 +1267,73 @@ components:
     }
 
     [TestMethod]
+    public async Task Generate_WithEnvironmentFactoryOptions_BuildsAndUpdatesSnippets()
+    {
+        const string spec = """
+openapi: 3.0.3
+info:
+  title: Env Auth
+  version: 1.0.0
+paths:
+  /test:
+    get:
+      operationId: getTest
+      security:
+        - apiKeyAuth: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  ok:
+                    type: boolean
+                example:
+                  ok: true
+components:
+  securitySchemes:
+    apiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-Custom-Key
+""";
+
+        await GenerateFromContentAsync(
+            fileName: "env-auth.yaml",
+            specContent: spec,
+            targetFramework: "net10.0",
+            namespaceValue: "Env",
+            clientClassName: "EnvClient",
+            expectedGeneratedFile: "Env.EnvClient.Constructors.ApiKeyInHeader.g.cs",
+            assertGeneratedOutput: async outputDirectory =>
+            {
+                var constructorFile = Path.Combine(outputDirectory, "Env.EnvClient.Constructors.ApiKeyInHeader.g.cs");
+                var constructorContent = await File.ReadAllTextAsync(constructorFile);
+                constructorContent.Should().Contain("public static EnvClient CreateFromEnvironment(");
+                constructorContent.Should().Contain("public static bool TryCreateFromEnvironment(");
+                constructorContent.Should().Contain("\"PRIMARY_API_KEY\"");
+                constructorContent.Should().Contain("\"SECONDARY_API_KEY\"");
+                constructorContent.Should().Contain("\"PRIMARY_BASE_URL\"");
+                constructorContent.Should().Contain("\"SECONDARY_BASE_URL\"");
+                constructorContent.Should().Contain("client.AuthorizeUsingApiKeyInHeader(apiKey);");
+
+                var snippetsFile = Path.Combine(outputDirectory, "autosdk.generated-examples.json");
+                File.Exists(snippetsFile).Should().BeTrue();
+                var snippetsContent = await File.ReadAllTextAsync(snippetsFile);
+                snippetsContent.Should().Contain("using var client = EnvClient.CreateFromEnvironment();");
+            },
+            additionalArguments:
+            [
+                "--auth-env-var", "PRIMARY_API_KEY",
+                "--api-key-env", "SECONDARY_API_KEY",
+                "--base-url-env", "PRIMARY_BASE_URL",
+                "--base-url-env-var", "SECONDARY_BASE_URL",
+            ]);
+    }
+
+    [TestMethod]
     public async Task Generate_WithSecuritySchemeOverride_ReplacesAuthAndSuppressesDuplicateParameters()
     {
         const string spec = """

@@ -160,11 +160,29 @@ internal sealed class GenerateCommand : Command
         AllowMultipleArgumentsPerToken = true,
     };
 
+    private Option<string[]> AuthorizationEnvironmentVariables { get; } = new(
+        name: "--auth-env-var",
+        aliases: ["--api-key-env", "--api-key-env-var"])
+    {
+        DefaultValueFactory = _ => Array.Empty<string>(),
+        Description = "Credential environment variable name for the generated root-client environment factory. Repeatable.",
+        AllowMultipleArgumentsPerToken = true,
+    };
+
     private Option<string> BaseUrl { get; } = new(
         name: "--base-url")
     {
         DefaultValueFactory = _ => string.Empty,
         Description = "Server base URL to inject (e.g., 'https://api.elevenlabs.io'). Useful for specs missing a servers field.",
+    };
+
+    private Option<string[]> BaseUrlEnvironmentVariables { get; } = new(
+        name: "--base-url-env-var",
+        aliases: ["--base-url-env"])
+    {
+        DefaultValueFactory = _ => Array.Empty<string>(),
+        Description = "Base URL environment variable name for the generated root-client environment factory. Repeatable.",
+        AllowMultipleArgumentsPerToken = true,
     };
 
     private Option<string[]> OpenApiOverrides { get; } = new(
@@ -264,7 +282,9 @@ internal sealed class GenerateCommand : Command
         Options.Add(GenerateCli);
         Options.Add(UseSystemNetHttpJson);
         Options.Add(SecuritySchemes);
+        Options.Add(AuthorizationEnvironmentVariables);
         Options.Add(BaseUrl);
+        Options.Add(BaseUrlEnvironmentVariables);
         Options.Add(OpenApiOverrides);
         Options.Add(WebSocketClientClassName);
         Options.Add(JsonSerializerContextName);
@@ -356,7 +376,9 @@ internal sealed class GenerateCommand : Command
             FromCli = true,
             GenerateCli = parseResult.GetRequiredValue(GenerateCli),
             SecuritySchemes = parseResult.GetRequiredValue(SecuritySchemes).ToImmutableArray(),
+            AuthorizationEnvironmentVariables = parseResult.GetRequiredValue(AuthorizationEnvironmentVariables).ToImmutableArray(),
             BaseUrl = parseResult.GetRequiredValue(BaseUrl),
+            BaseUrlEnvironmentVariables = parseResult.GetRequiredValue(BaseUrlEnvironmentVariables).ToImmutableArray(),
             OpenApiOverrides = parseResult.GetRequiredValue(OpenApiOverrides).ToImmutableArray(),
             GenerateWebSocketClient = true,
             WebSocketClientClassName = parseResult.GetRequiredValue(WebSocketClientClassName),

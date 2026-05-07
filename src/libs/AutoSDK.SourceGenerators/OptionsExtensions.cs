@@ -91,7 +91,11 @@ public static class OptionsExtensions
             GenerateCli: options.GetBoolGlobalOption(nameof(Settings.GenerateCli), prefix, defaultValue: Settings.Default.GenerateCli),
             SecuritySchemes: (options.GetGlobalOption(nameof(Settings.SecuritySchemes), prefix)?.Split(';') ??
                               []).ToImmutableArray(),
+            AuthorizationEnvironmentVariables: (options.GetGlobalOption(nameof(Settings.AuthorizationEnvironmentVariables), prefix)?.Split(';') ??
+                                                []).Where(static x => !string.IsNullOrWhiteSpace(x)).ToImmutableArray(),
             BaseUrl: options.GetGlobalOption(nameof(Settings.BaseUrl), prefix) ?? string.Empty,
+            BaseUrlEnvironmentVariables: (options.GetGlobalOption(nameof(Settings.BaseUrlEnvironmentVariables), prefix)?.Split(';') ??
+                                          []).Where(static x => !string.IsNullOrWhiteSpace(x)).ToImmutableArray(),
             OpenApiOverrides: (options.GetGlobalOption(nameof(Settings.OpenApiOverrides), prefix)?.Split(';') ??
                                []).Where(static x => !string.IsNullOrWhiteSpace(x)).ToImmutableArray(),
             GenerateWebSocketClient: options.GetBoolGlobalOption(nameof(Settings.GenerateWebSocketClient), prefix, defaultValue: Settings.Default.GenerateWebSocketClient),
