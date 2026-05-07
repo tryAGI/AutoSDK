@@ -526,6 +526,22 @@ public static partial class Sources
             Text: GenerateObservabilityLifecycleHelpers(settings, className, cancellationToken: cancellationToken));
     }
 
+    public static FileWithName PredictionWorkflowHelpers(
+        CSharpSettings settings,
+        CancellationToken cancellationToken = default)
+    {
+        if (!settings.GeneratePredictionWorkflowHelpers)
+        {
+            return FileWithName.Empty;
+        }
+
+        var className = GetPredictionWorkflowHelperClassName(settings);
+
+        return new FileWithName(
+            Name: $"{settings.Namespace}.{className}.g.cs",
+            Text: GeneratePredictionWorkflowHelpers(settings, className, cancellationToken: cancellationToken));
+    }
+
     public static FileWithName ResponseStream(
         CSharpSettings settings,
         CancellationToken cancellationToken = default)

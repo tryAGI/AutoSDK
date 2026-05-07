@@ -70,6 +70,11 @@ Trace, log, span, score, and feedback ingestion APIs often need lifecycle behavi
 
 The generated lifecycle helper accepts a raw batch-ingest delegate, reads common env-backed options such as API key, endpoint, project, sampling rate, batch size, queue size, and flush interval, then provides bounded enqueueing, drop/error hooks, `FlushAsync`, `ShutdownAsync`, and `IAsyncDisposable`/`IDisposable` behavior. The helper class name can be configured with `--observability-lifecycle-helper-class-name` or `<AutoSDK_ObservabilityLifecycleHelperClassName>`.
 
+## Prediction Workflow Helpers
+Prediction, job, and actor-run APIs often need a provider-style create, wait, poll, cancel, and result-projection layer over raw generated endpoints. Enable `--generate-prediction-workflow-helpers` in the CLI, or set `<AutoSDK_GeneratePredictionWorkflowHelpers>true</AutoSDK_GeneratePredictionWorkflowHelpers>` for the source generator, to emit a `PredictionWorkflowRunner` helper.
+
+The generated runner composes raw create, reload, optional cancel, status selector, and result selector delegates. It supports configurable success/failure/canceled terminal states, timeout and poll interval handling, best-effort cancellation-link invocation when the caller cancels, metadata for Replicate-style `Prefer: wait` and Apify-style `waitForFinish` workflows, and result projection such as returning `output` while preserving the final envelope. The helper class name can be configured with `--prediction-workflow-helper-class-name` or `<AutoSDK_PredictionWorkflowHelperClassName>`.
+
 ## Vendor Extension Compatibility
 When `AutoSDK_UseExtensionNaming` or `--use-extension-naming` is enabled, AutoSDK consumes a curated set of third-party SDK metadata instead of treating every vendor extension as noise.
 

@@ -64,6 +64,8 @@ public static class OptionsExtensions
             PromptTemplateHelperClassName: options.GetGlobalOption(nameof(Settings.PromptTemplateHelperClassName), prefix) ?? Settings.Default.PromptTemplateHelperClassName,
             GenerateObservabilityLifecycleHelpers: options.GetBoolGlobalOption(nameof(Settings.GenerateObservabilityLifecycleHelpers), prefix, defaultValue: Settings.Default.GenerateObservabilityLifecycleHelpers),
             ObservabilityLifecycleHelperClassName: options.GetGlobalOption(nameof(Settings.ObservabilityLifecycleHelperClassName), prefix) ?? Settings.Default.ObservabilityLifecycleHelperClassName,
+            GeneratePredictionWorkflowHelpers: options.GetBoolGlobalOption(nameof(Settings.GeneratePredictionWorkflowHelpers), prefix, defaultValue: Settings.Default.GeneratePredictionWorkflowHelpers),
+            PredictionWorkflowHelperClassName: options.GetGlobalOption(nameof(Settings.PredictionWorkflowHelperClassName), prefix) ?? Settings.Default.PredictionWorkflowHelperClassName,
             IncludeOperationIds: (options.GetGlobalOption(nameof(Settings.IncludeOperationIds), prefix)?.Split(';') ??
                                    []).ToImmutableArray(),
             ExcludeOperationIds: (options.GetGlobalOption(nameof(Settings.ExcludeOperationIds), prefix)?.Split(';') ??

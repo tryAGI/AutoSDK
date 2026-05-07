@@ -80,6 +80,10 @@
     <CompilerVisibleProperty Include="AutoSDK_GenerateObservabilityLifecycleHelpers"/>
     <!-- Class name for generated observability lifecycle helper. Default: ObservabilityIngestionLifecycle -->
     <CompilerVisibleProperty Include="AutoSDK_ObservabilityLifecycleHelperClassName"/>
+    <!-- true/false. Default: false. Generates opt-in prediction/job create-wait-result workflow helpers. -->
+    <CompilerVisibleProperty Include="AutoSDK_GeneratePredictionWorkflowHelpers"/>
+    <!-- Class name for generated prediction workflow helper. Default: PredictionWorkflowRunner -->
+    <CompilerVisibleProperty Include="AutoSDK_PredictionWorkflowHelperClassName"/>
     <!-- List of ids separated by ;. Default: Empty(all models) -->
     <CompilerVisibleProperty Include="AutoSDK_IncludeOperationIds"/>
     <!-- List of ids separated by ;. Default: Empty -->

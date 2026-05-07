@@ -2246,6 +2246,390 @@ paths:
     }
 
     [TestMethod]
+    public async Task Generate_WithPredictionWorkflowHelpers_RunsWaitPollFailureTimeoutAndCancelCases()
+    {
+        const string spec = """
+openapi: 3.0.3
+info:
+  title: Prediction Workflows
+  version: 1.0.0
+paths:
+  /predictions:
+    post:
+      operationId: createPrediction
+      x-autosdk-prediction-workflow:
+        startOperationId: createPrediction
+        statusField: status
+        resultField: output
+        reloadLink: urls.get
+        cancelLink: urls.cancel
+      parameters:
+        - name: Prefer
+          in: header
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PredictionRequest'
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Prediction'
+  /predictions/{predictionId}:
+    get:
+      operationId: getPrediction
+      parameters:
+        - name: predictionId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Prediction
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Prediction'
+  /predictions/{predictionId}/cancel:
+    post:
+      operationId: cancelPrediction
+      parameters:
+        - name: predictionId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Canceled prediction
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Prediction'
+  /acts/{actorId}/runs:
+    post:
+      operationId: startActorRun
+      x-autosdk-prediction-workflow:
+        startOperationId: startActorRun
+        statusField: status
+        resultField: defaultDatasetId
+        waitQueryParameter: waitForFinish
+        reloadOperationId: getActorRun
+      parameters:
+        - name: actorId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: waitForFinish
+          in: query
+          schema:
+            type: integer
+            format: int32
+      responses:
+        '201':
+          description: Actor run
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ActorRun'
+  /actor-runs/{runId}:
+    get:
+      operationId: getActorRun
+      parameters:
+        - name: runId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Actor run
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ActorRun'
+components:
+  schemas:
+    PredictionRequest:
+      type: object
+      properties:
+        input:
+          type: object
+          additionalProperties:
+            type: string
+    Prediction:
+      type: object
+      required:
+        - id
+        - status
+      properties:
+        id:
+          type: string
+        status:
+          type: string
+          enum:
+            - starting
+            - processing
+            - succeeded
+            - failed
+            - canceled
+        output:
+          type: string
+        urls:
+          type: object
+          properties:
+            get:
+              type: string
+              format: uri
+            cancel:
+              type: string
+              format: uri
+            stream:
+              type: string
+              format: uri
+    ActorRun:
+      type: object
+      properties:
+        id:
+          type: string
+        status:
+          type: string
+        defaultDatasetId:
+          type: string
+""";
+
+        var tempDirectory = Path.Combine(Path.GetTempPath(), Path.GetRandomFileName());
+        var specPath = Path.Combine(tempDirectory, "predictions.yaml");
+        var outputDirectory = Path.Combine(tempDirectory, "Generated");
+
+        try
+        {
+            Directory.CreateDirectory(tempDirectory);
+            await File.WriteAllTextAsync(specPath, spec);
+
+            var currentDirectory = Directory.GetCurrentDirectory();
+            var repositoryDirectory = Path.GetFullPath(Path.Combine(currentDirectory, "../../../../../.."));
+
+            var generateResult = await RunDotnetAsync(
+                repositoryDirectory,
+                "run",
+                "--disable-build-servers",
+                "--no-launch-profile",
+                "--project", "src/libs/AutoSDK.CLI",
+                "generate", specPath,
+                "--namespace", "Jobs",
+                "--clientClassName", "JobsClient",
+                "--targetFramework", "net10.0",
+                "--output", outputDirectory,
+                "--generate-prediction-workflow-helpers",
+                "--prediction-workflow-helper-class-name", "PredictionWorkflowRunner");
+            Console.WriteLine(generateResult.StandardOutput);
+            Console.WriteLine(generateResult.StandardError);
+            generateResult.ExitCode.Should().Be(0);
+
+            var helperFile = Path.Combine(outputDirectory, "Jobs.PredictionWorkflowRunner.g.cs");
+            File.Exists(helperFile).Should().BeTrue();
+            var helperContent = await File.ReadAllTextAsync(helperFile);
+            helperContent.Should().Contain("public sealed class PredictionWorkflowRunner");
+            helperContent.Should().Contain("PredictionWorkflowMetadata");
+            Directory.GetFiles(outputDirectory, "*.g.cs")
+                .Select(Path.GetFileName)
+                .Any(static name => name?.Contains("CreatePrediction", StringComparison.Ordinal) == true)
+                .Should().BeTrue("raw create endpoint generation remains additive");
+            Directory.GetFiles(outputDirectory, "*.g.cs")
+                .Select(Path.GetFileName)
+                .Any(static name => name?.Contains("GetPrediction", StringComparison.Ordinal) == true)
+                .Should().BeTrue("raw reload endpoint generation remains additive");
+
+            await File.WriteAllTextAsync(Path.Combine(outputDirectory, "PredictionWorkflowConsumer.csproj"), """
+                <Project Sdk="Microsoft.NET.Sdk">
+                  <PropertyGroup>
+                    <OutputType>Exe</OutputType>
+                    <TargetFramework>net10.0</TargetFramework>
+                    <LangVersion>preview</LangVersion>
+                    <Nullable>enable</Nullable>
+                    <ImplicitUsings>enable</ImplicitUsings>
+                    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+                    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+                  </PropertyGroup>
+                  <ItemGroup>
+                    <Compile Include="Jobs.PredictionWorkflowRunner.g.cs" />
+                    <Compile Include="Program.cs" />
+                  </ItemGroup>
+                </Project>
+                """);
+
+            await File.WriteAllTextAsync(Path.Combine(outputDirectory, "Program.cs"), """
+                using Jobs;
+
+                var metadata = new PredictionWorkflowMetadata
+                {
+                    StartOperationId = "createPrediction",
+                    ReloadOperationId = "getPrediction",
+                    CancelOperationId = "cancelPrediction",
+                    WaitQueryParameterName = "waitForFinish",
+                    ResultPropertyName = "output",
+                };
+                metadata.SuccessStatuses.Clear();
+                metadata.SuccessStatuses.Add("ready");
+                var metadataOptions = metadata.CreateOptions();
+                Require(metadataOptions.SuccessStatuses.Contains("ready"), "metadata success status");
+                Require(metadataOptions.PreferWaitHeaderValue == "wait", "metadata wait header");
+
+                var options = new PredictionWorkflowOptions
+                {
+                    PollInterval = TimeSpan.Zero,
+                    Timeout = TimeSpan.FromSeconds(5),
+                };
+
+                var immediateRunner = new PredictionWorkflowRunner<string, PredictionEnvelope, string>(
+                    createAsync: (request, cancellationToken) => Task.FromResult(new PredictionEnvelope("immediate", "succeeded", "done")),
+                    reloadAsync: (envelope, cancellationToken) => throw new InvalidOperationException("immediate success should not reload"),
+                    resultSelector: envelope => envelope.Output,
+                    statusSelector: envelope => envelope.Status,
+                    options: options);
+                var immediate = await immediateRunner.RunAsync("cat");
+                Require(immediate.Result == "done", "immediate result projection");
+                Require(immediate.CompletedSynchronously, "immediate sync completion");
+                Require(immediate.PollCount == 0, "immediate poll count");
+                Require((await immediateRunner.RunForResultAsync("cat")) == "done", "run for result");
+                Require((await immediateRunner.CreateAndWaitForEnvelopeAsync("cat")).Id == "immediate", "create and wait envelope");
+
+                var reloads = new Queue<PredictionEnvelope>(new[]
+                {
+                    new PredictionEnvelope("polling", "processing", ""),
+                    new PredictionEnvelope("polling", "succeeded", "polled-output"),
+                });
+                var pollingRunner = new PredictionWorkflowRunner<string, PredictionEnvelope, string>(
+                    createAsync: (request, cancellationToken) => Task.FromResult(new PredictionEnvelope("polling", "starting", "")),
+                    reloadAsync: (envelope, cancellationToken) => Task.FromResult(reloads.Dequeue()),
+                    resultSelector: envelope => envelope.Output,
+                    statusSelector: envelope => envelope.Status,
+                    options: options);
+                var polled = await pollingRunner.RunAsync("cat");
+                Require(polled.Result == "polled-output", "polling result projection");
+                Require(!polled.CompletedSynchronously, "polling async completion");
+                Require(polled.PollCount == 2, "polling reload count");
+
+                var failedRunner = new PredictionWorkflowRunner<string, PredictionEnvelope, string>(
+                    createAsync: (request, cancellationToken) => Task.FromResult(new PredictionEnvelope("failed", "failed", "")),
+                    reloadAsync: (envelope, cancellationToken) => throw new InvalidOperationException("failed state should not reload"),
+                    resultSelector: envelope => envelope.Output,
+                    statusSelector: envelope => envelope.Status,
+                    options: options);
+                var failedWasRaised = false;
+                try
+                {
+                    await failedRunner.RunAsync("cat");
+                }
+                catch (PredictionWorkflowException ex) when (ex.Status == "failed" && ex.Envelope is PredictionEnvelope)
+                {
+                    failedWasRaised = true;
+                }
+                Require(failedWasRaised, "failed terminal exception");
+
+                var timeoutRunner = new PredictionWorkflowRunner<string, PredictionEnvelope, string>(
+                    createAsync: (request, cancellationToken) => Task.FromResult(new PredictionEnvelope("timeout", "processing", "")),
+                    reloadAsync: (envelope, cancellationToken) => Task.FromResult(envelope),
+                    resultSelector: envelope => envelope.Output,
+                    statusSelector: envelope => envelope.Status,
+                    options: new PredictionWorkflowOptions
+                    {
+                        PollInterval = TimeSpan.FromMilliseconds(5),
+                        Timeout = TimeSpan.FromMilliseconds(1),
+                    });
+                var timeoutWasRaised = false;
+                try
+                {
+                    await timeoutRunner.RunAsync("cat");
+                }
+                catch (PredictionWorkflowTimeoutException ex) when (ex.LastStatus == "processing" && ex.LastEnvelope is PredictionEnvelope)
+                {
+                    timeoutWasRaised = true;
+                }
+                Require(timeoutWasRaised, "processing timeout");
+
+                using var cts = new CancellationTokenSource();
+                var cancelCalled = false;
+                var reloadCalls = 0;
+                var cancelRunner = new PredictionWorkflowRunner<string, PredictionEnvelope, string>(
+                    createAsync: (request, cancellationToken) => Task.FromResult(new PredictionEnvelope("cancel", "processing", "")),
+                    reloadAsync: async (envelope, cancellationToken) =>
+                    {
+                        reloadCalls++;
+                        cts.Cancel();
+                        await Task.Delay(TimeSpan.FromSeconds(5), cancellationToken);
+                        return envelope;
+                    },
+                    resultSelector: envelope => envelope.Output,
+                    statusSelector: envelope => envelope.Status,
+                    cancelAsync: (envelope, cancellationToken) =>
+                    {
+                        cancelCalled = envelope.Id == "cancel";
+                        return Task.CompletedTask;
+                    },
+                    options: options);
+                var cancellationWasRaised = false;
+                try
+                {
+                    await cancelRunner.RunAsync("cat", cancelOnCancellation: true, cancellationToken: cts.Token);
+                }
+                catch (OperationCanceledException)
+                {
+                    cancellationWasRaised = true;
+                }
+                Require(cancellationWasRaised, "operation cancellation");
+                Require(cancelCalled, "cancel link delegate invoked");
+                Require(reloadCalls == 1, "cancel reload count");
+
+                var resourceCancelCalled = false;
+                var actions = new PredictionResourceActions<PredictionEnvelope>(
+                    reloadAsync: (envelope, cancellationToken) => Task.FromResult(envelope with { Status = "succeeded" }),
+                    cancelAsync: (envelope, cancellationToken) =>
+                    {
+                        resourceCancelCalled = envelope.Id == "resource";
+                        return Task.CompletedTask;
+                    });
+                var reloaded = await actions.ReloadAsync(new PredictionEnvelope("resource", "processing", ""));
+                Require(reloaded.Status == "succeeded", "resource reload action");
+                await actions.CancelAsync(new PredictionEnvelope("resource", "processing", ""));
+                Require(resourceCancelCalled, "resource cancel action");
+
+                static void Require(bool condition, string caseName)
+                {
+                    if (!condition)
+                    {
+                        throw new InvalidOperationException(caseName);
+                    }
+                }
+
+                internal sealed record PredictionEnvelope(string Id, string Status, string Output);
+                """);
+
+            var runResult = await RunDotnetAsync(
+                outputDirectory,
+                "run",
+                "--disable-build-servers",
+                "--project", Path.Combine(outputDirectory, "PredictionWorkflowConsumer.csproj"));
+            Console.WriteLine(runResult.StandardOutput);
+            Console.WriteLine(runResult.StandardError);
+            runResult.ExitCode.Should().Be(0);
+        }
+        finally
+        {
+            TryDeleteDirectory(tempDirectory);
+        }
+    }
+
+    [TestMethod]
     public async Task Generate_WithSecuritySchemeOverride_ReplacesAuthAndSuppressesDuplicateParameters()
     {
         const string spec = """
