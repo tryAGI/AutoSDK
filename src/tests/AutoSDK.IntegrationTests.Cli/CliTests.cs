@@ -1578,6 +1578,166 @@ paths:
     }
 
     [TestMethod]
+    public async Task Generate_WithDynamicMultipartHelpers_BuildsComputedAttachmentParts()
+    {
+        const string spec = """
+openapi: 3.0.3
+info:
+  title: Dynamic Multipart Ingestion
+  version: 1.0.0
+paths:
+  /runs/multipart:
+    post:
+      operationId: ingestRunMultipart
+      x-autosdk-dynamic-multipart: true
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              additionalProperties:
+                type: string
+                format: binary
+      responses:
+        '204':
+          description: Accepted
+""";
+
+        var tempDirectory = Path.Combine(Path.GetTempPath(), Path.GetRandomFileName());
+        var specPath = Path.Combine(tempDirectory, "multipart.yaml");
+        var outputDirectory = Path.Combine(tempDirectory, "Generated");
+
+        try
+        {
+            Directory.CreateDirectory(tempDirectory);
+            await File.WriteAllTextAsync(specPath, spec);
+
+            var currentDirectory = Directory.GetCurrentDirectory();
+            var repositoryDirectory = Path.GetFullPath(Path.Combine(currentDirectory, "../../../../../.."));
+
+            var generateResult = await RunDotnetAsync(
+                repositoryDirectory,
+                "run",
+                "--disable-build-servers",
+                "--no-launch-profile",
+                "--project", "src/libs/AutoSDK.CLI",
+                "generate", specPath,
+                "--namespace", "Ingestion",
+                "--clientClassName", "IngestionClient",
+                "--targetFramework", "net10.0",
+                "--output", outputDirectory,
+                "--generate-dynamic-multipart-helpers",
+                "--dynamic-multipart-helper-class-name", "TraceMultipartBuilder");
+            Console.WriteLine(generateResult.StandardOutput);
+            Console.WriteLine(generateResult.StandardError);
+            generateResult.ExitCode.Should().Be(0);
+
+            var helperFile = Path.Combine(outputDirectory, "Ingestion.TraceMultipartBuilder.g.cs");
+            File.Exists(helperFile).Should().BeTrue();
+            var helperContent = await File.ReadAllTextAsync(helperFile);
+            helperContent.Should().Contain("public sealed class TraceMultipartBuilder");
+            helperContent.Should().Contain("CreateAttachmentPartName");
+
+            await File.WriteAllTextAsync(Path.Combine(outputDirectory, "DynamicMultipartConsumer.csproj"), """
+                <Project Sdk="Microsoft.NET.Sdk">
+                  <PropertyGroup>
+                    <OutputType>Exe</OutputType>
+                    <TargetFramework>net10.0</TargetFramework>
+                    <LangVersion>preview</LangVersion>
+                    <Nullable>enable</Nullable>
+                    <ImplicitUsings>enable</ImplicitUsings>
+                    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+                    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+                  </PropertyGroup>
+                  <ItemGroup>
+                    <Compile Include="Ingestion.TraceMultipartBuilder.g.cs" />
+                    <Compile Include="Program.cs" />
+                  </ItemGroup>
+                </Project>
+                """);
+
+            await File.WriteAllTextAsync(Path.Combine(outputDirectory, "Program.cs"), """
+                using System.Text;
+                using Ingestion;
+
+                using var builder = new TraceMultipartBuilder();
+                using var stream = new MemoryStream(Encoding.UTF8.GetBytes("stream-body"));
+
+                builder
+                    .AddBytes("run_123", "image", Encoding.UTF8.GetBytes("byte-body"), "image.txt", "text/plain")
+                    .AddStream("run_123", "log", stream, "log.txt", "text/plain")
+                    .AddExternalUrl("run_123", "external", new Uri("https://example.test/file.txt"));
+
+                Require(builder.Attachments.Count == 3, "attachment count");
+                Require(builder.Attachments[0].RunId == "run_123", "run relationship");
+                Require(builder.Attachments[0].AttachmentKey == "image", "attachment key");
+                Require(builder.Attachments[0].PartName == "run_123.image", "computed byte part");
+                Require(builder.Attachments[1].PartName == "run_123.log", "computed stream part");
+                Require(builder.Attachments[1].FileName == "log.txt", "stream filename");
+                Require(builder.Attachments[2].ContentType == "text/uri-list", "external content type");
+                Require(TraceMultipartBuilder.CreatePartName("run_123", "nested", "asset") == "run_123.nested.asset", "nested part name");
+                RequireThrows<ArgumentException>(() => TraceMultipartBuilder.CreatePartName("run_123", "bad\"key"), "quoted part segment");
+
+                using var content = builder.Build();
+                RequireThrows<InvalidOperationException>(() => builder.AddBytes("run_123", "late", Array.Empty<byte>()), "add after build");
+
+                var body = await content.ReadAsStringAsync();
+                Require(content.Headers.ContentType?.MediaType == "multipart/form-data", "multipart content type");
+                Require(ContainsDispositionValue(body, "name", "run_123.image"), "byte part name");
+                Require(ContainsDispositionValue(body, "filename", "image.txt"), "byte filename");
+                Require(body.Contains("byte-body", StringComparison.Ordinal), "byte payload");
+                Require(ContainsDispositionValue(body, "name", "run_123.log"), "stream part name");
+                Require(body.Contains("stream-body", StringComparison.Ordinal), "stream payload");
+                Require(ContainsDispositionValue(body, "name", "run_123.external"), "external part name");
+                Require(body.Contains("https://example.test/file.txt", StringComparison.Ordinal), "external payload");
+
+                static void Require(bool condition, string caseName)
+                {
+                    if (!condition)
+                    {
+                        throw new InvalidOperationException(caseName);
+                    }
+                }
+
+                static bool ContainsDispositionValue(string body, string name, string value)
+                {
+                    return body.Contains(name + "=\"" + value + "\"", StringComparison.Ordinal) ||
+                        body.Contains(name + "=" + value, StringComparison.Ordinal);
+                }
+
+                static void RequireThrows<TException>(Action action, string caseName)
+                    where TException : Exception
+                {
+                    try
+                    {
+                        action();
+                    }
+                    catch (TException)
+                    {
+                        return;
+                    }
+
+                    throw new InvalidOperationException(caseName);
+                }
+                """);
+
+            var runResult = await RunDotnetAsync(
+                outputDirectory,
+                "run",
+                "--disable-build-servers",
+                "--project", Path.Combine(outputDirectory, "DynamicMultipartConsumer.csproj"));
+            Console.WriteLine(runResult.StandardOutput);
+            Console.WriteLine(runResult.StandardError);
+            runResult.ExitCode.Should().Be(0);
+        }
+        finally
+        {
+            TryDeleteDirectory(tempDirectory);
+        }
+    }
+
+    [TestMethod]
     public async Task Generate_WithSecuritySchemeOverride_ReplacesAuthAndSuppressesDuplicateParameters()
     {
         const string spec = """

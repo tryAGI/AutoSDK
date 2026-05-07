@@ -55,6 +55,11 @@ OpenAPI does not standardize receiver-side webhook signing metadata, so webhook 
 
 The generated verifier validates `webhook-id`, `webhook-timestamp`, and `webhook-signature` by default, rejects stale timestamps, supports multiple versioned signatures such as `v1,<base64>`, decodes Replicate/Svix-style `whsec_<base64>` secrets, and uses constant-time signature comparison. Header names, verifier class name, signature version, and timestamp tolerance can be configured through the `AutoSDK_Webhook*` properties or matching CLI flags.
 
+## Dynamic Multipart Attachments
+Some ingestion APIs derive multipart part names from trace/run ids and attachment keys instead of fixed OpenAPI schema properties. Enable `--generate-dynamic-multipart-helpers` in the CLI, or set `<AutoSDK_GenerateDynamicMultipartHelpers>true</AutoSDK_GenerateDynamicMultipartHelpers>` for the source generator, to emit a `DynamicMultipartContentBuilder` helper.
+
+The generated builder adds byte, stream, text, and external URL attachments, preserves run id/key relationships, computes part names like `run_123.image`, carries content type and filename metadata, and returns `MultipartFormDataContent` for raw generated endpoints. The helper class name can be configured with `--dynamic-multipart-helper-class-name` or `<AutoSDK_DynamicMultipartHelperClassName>`.
+
 ## Vendor Extension Compatibility
 When `AutoSDK_UseExtensionNaming` or `--use-extension-naming` is enabled, AutoSDK consumes a curated set of third-party SDK metadata instead of treating every vendor extension as noise.
 

@@ -58,6 +58,8 @@ public static class OptionsExtensions
             WebhookSignatureHeaderName: options.GetGlobalOption(nameof(Settings.WebhookSignatureHeaderName), prefix) ?? Settings.Default.WebhookSignatureHeaderName,
             WebhookSignatureVersion: options.GetGlobalOption(nameof(Settings.WebhookSignatureVersion), prefix) ?? Settings.Default.WebhookSignatureVersion,
             WebhookTimestampToleranceSeconds: options.GetIntGlobalOption(nameof(Settings.WebhookTimestampToleranceSeconds), prefix, defaultValue: Settings.Default.WebhookTimestampToleranceSeconds),
+            GenerateDynamicMultipartHelpers: options.GetBoolGlobalOption(nameof(Settings.GenerateDynamicMultipartHelpers), prefix, defaultValue: Settings.Default.GenerateDynamicMultipartHelpers),
+            DynamicMultipartHelperClassName: options.GetGlobalOption(nameof(Settings.DynamicMultipartHelperClassName), prefix) ?? Settings.Default.DynamicMultipartHelperClassName,
             IncludeOperationIds: (options.GetGlobalOption(nameof(Settings.IncludeOperationIds), prefix)?.Split(';') ??
                                    []).ToImmutableArray(),
             ExcludeOperationIds: (options.GetGlobalOption(nameof(Settings.ExcludeOperationIds), prefix)?.Split(';') ??

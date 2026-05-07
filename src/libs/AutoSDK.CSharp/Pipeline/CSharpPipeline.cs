@@ -185,6 +185,7 @@ public static class CSharpPipeline
                         ? [Sources.HttpResilienceExtensions(settings, cancellationToken)]
                         : [])
                     .Concat([Sources.WebhookVerifier(settings, cancellationToken)])
+                    .Concat([Sources.DynamicMultipartHelpers(settings, cancellationToken)])
                     .Concat(!data.Authorizations.IsEmpty
                         ? [Sources.SecuritySupport(settings, cancellationToken)]
                         : [])

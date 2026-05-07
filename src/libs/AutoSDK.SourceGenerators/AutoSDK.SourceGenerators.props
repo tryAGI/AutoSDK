@@ -68,6 +68,10 @@
     <CompilerVisibleProperty Include="AutoSDK_WebhookSignatureVersion"/>
     <!-- Webhook timestamp tolerance in seconds. Default: 300 -->
     <CompilerVisibleProperty Include="AutoSDK_WebhookTimestampToleranceSeconds"/>
+    <!-- true/false. Default: false. Generates opt-in dynamic multipart attachment helpers. -->
+    <CompilerVisibleProperty Include="AutoSDK_GenerateDynamicMultipartHelpers"/>
+    <!-- Class name for generated dynamic multipart helper. Default: DynamicMultipartContentBuilder -->
+    <CompilerVisibleProperty Include="AutoSDK_DynamicMultipartHelperClassName"/>
     <!-- List of ids separated by ;. Default: Empty(all models) -->
     <CompilerVisibleProperty Include="AutoSDK_IncludeOperationIds"/>
     <!-- List of ids separated by ;. Default: Empty -->

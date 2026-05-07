@@ -478,6 +478,22 @@ public static partial class Sources
             Text: GenerateWebhookVerifier(settings, className, cancellationToken: cancellationToken));
     }
 
+    public static FileWithName DynamicMultipartHelpers(
+        CSharpSettings settings,
+        CancellationToken cancellationToken = default)
+    {
+        if (!settings.GenerateDynamicMultipartHelpers)
+        {
+            return FileWithName.Empty;
+        }
+
+        var className = GetDynamicMultipartHelperClassName(settings);
+
+        return new FileWithName(
+            Name: $"{settings.Namespace}.{className}.g.cs",
+            Text: GenerateDynamicMultipartHelpers(settings, className, cancellationToken: cancellationToken));
+    }
+
     public static FileWithName ResponseStream(
         CSharpSettings settings,
         CancellationToken cancellationToken = default)

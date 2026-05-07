@@ -208,6 +208,20 @@ internal sealed class GenerateCommand : Command
         Description = "Webhook timestamp tolerance in seconds used by the generated verifier.",
     };
 
+    private Option<bool> GenerateDynamicMultipartHelpers { get; } = new(
+        name: "--generate-dynamic-multipart-helpers")
+    {
+        DefaultValueFactory = _ => Settings.Default.GenerateDynamicMultipartHelpers,
+        Description = "Generate opt-in dynamic multipart attachment helper APIs.",
+    };
+
+    private Option<string> DynamicMultipartHelperClassName { get; } = new(
+        name: "--dynamic-multipart-helper-class-name")
+    {
+        DefaultValueFactory = _ => Settings.Default.DynamicMultipartHelperClassName,
+        Description = "Class name for the generated dynamic multipart helper.",
+    };
+
     private Option<string[]> SecuritySchemes { get; } = new(
         name: "--security-scheme")
     {
@@ -345,6 +359,8 @@ internal sealed class GenerateCommand : Command
         Options.Add(WebhookSignatureHeaderName);
         Options.Add(WebhookSignatureVersion);
         Options.Add(WebhookTimestampToleranceSeconds);
+        Options.Add(GenerateDynamicMultipartHelpers);
+        Options.Add(DynamicMultipartHelperClassName);
         Options.Add(SecuritySchemes);
         Options.Add(AuthorizationEnvironmentVariables);
         Options.Add(BaseUrl);
@@ -445,6 +461,8 @@ internal sealed class GenerateCommand : Command
             WebhookSignatureHeaderName = parseResult.GetRequiredValue(WebhookSignatureHeaderName),
             WebhookSignatureVersion = parseResult.GetRequiredValue(WebhookSignatureVersion),
             WebhookTimestampToleranceSeconds = parseResult.GetRequiredValue(WebhookTimestampToleranceSeconds),
+            GenerateDynamicMultipartHelpers = parseResult.GetRequiredValue(GenerateDynamicMultipartHelpers),
+            DynamicMultipartHelperClassName = parseResult.GetRequiredValue(DynamicMultipartHelperClassName),
             FromCli = true,
             GenerateCli = parseResult.GetRequiredValue(GenerateCli),
             SecuritySchemes = parseResult.GetRequiredValue(SecuritySchemes).ToImmutableArray(),
