@@ -1,0 +1,144 @@
+openapi: 3.1.0
+info:
+  title: Replicate Workflow Lifecycle Fixture
+  version: 1.0.0
+paths:
+  /predictions:
+    post:
+      operationId: createPrediction
+      summary: Create a prediction
+      tags:
+        - predictions
+      parameters:
+        - in: header
+          name: Prefer
+          required: false
+          description: Leave the request open and wait for output, for example `wait=60`.
+          schema:
+            type: string
+            pattern: "^wait=([1-9]|[1-5][0-9]|60)$"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/PredictionRequest"
+      responses:
+        "201":
+          description: 'Prediction created. If `Prefer: wait` is provided, the response may already contain final output.'
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Prediction"
+          links:
+            getPrediction:
+              operationId: getPrediction
+              parameters:
+                predictionId: "$response.body#/id"
+            cancelPrediction:
+              operationId: cancelPrediction
+              parameters:
+                predictionId: "$response.body#/id"
+  /predictions/{predictionId}:
+    get:
+      operationId: getPrediction
+      summary: Get a prediction
+      tags:
+        - predictions
+      parameters:
+        - in: path
+          name: predictionId
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Current prediction state.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Prediction"
+    delete:
+      operationId: cancelPrediction
+      summary: Cancel a prediction
+      tags:
+        - predictions
+      parameters:
+        - in: path
+          name: predictionId
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Prediction cancellation state.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Prediction"
+components:
+  schemas:
+    PredictionRequest:
+      type: object
+      required:
+        - version
+        - input
+      properties:
+        version:
+          type: string
+        input:
+          type: object
+          additionalProperties: true
+        webhook:
+          type: string
+          format: uri
+        webhook_events_filter:
+          type: array
+          items:
+            type: string
+            enum:
+              - start
+              - output
+              - logs
+              - completed
+    Prediction:
+      type: object
+      required:
+        - id
+        - status
+        - urls
+      properties:
+        id:
+          type: string
+        status:
+          type: string
+          enum:
+            - starting
+            - processing
+            - succeeded
+            - failed
+            - canceled
+        output:
+          type: object
+          additionalProperties: true
+        error:
+          type:
+            - string
+            - "null"
+        logs:
+          type: string
+        urls:
+          type: object
+          required:
+            - get
+            - cancel
+          properties:
+            get:
+              type: string
+              format: uri
+            cancel:
+              type: string
+              format: uri
+            stream:
+              type: string
+              format: uri

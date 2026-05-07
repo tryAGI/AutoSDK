@@ -10,9 +10,6 @@ public static partial class Sources
         CancellationToken cancellationToken = default)
     {
         var types = $"<{string.Join(", ", Enumerable.Range(1, anyOfData.Count).Select(x => $"T{x}"))}>";
-        var typeParameterDeclarations = anyOfData is { IsNamed: false, SubType: "AllOf" }
-            ? $"<{string.Join(", ", Enumerable.Range(1, anyOfData.Count).Select(x => $"[global::System.Diagnostics.CodeAnalysis.DynamicallyAccessedMembers(global::System.Diagnostics.CodeAnalysis.DynamicallyAccessedMemberTypes.PublicProperties)] T{x}"))}>"
-            : types;
         var classNameWithoutTypes = !anyOfData.IsNamed
             ? $"{anyOfData.SubType}"
             : anyOfData.Name;
@@ -20,7 +17,7 @@ public static partial class Sources
             ? $"{anyOfData.SubType}{types}"
             : anyOfData.Name;
         var declarationName = !anyOfData.IsNamed
-            ? $"{anyOfData.SubType}{typeParameterDeclarations}"
+            ? $"{anyOfData.SubType}{types}"
             : anyOfData.Name;
         var validation = anyOfData.SubType switch
         {
@@ -69,42 +66,17 @@ public static partial class Sources
         var allOfRequirementHelper = anyOfData.SubType == "AllOf" && !anyOfData.IsNamed
             ? @"
 
-        private static bool RequiresValue<[global::System.Diagnostics.CodeAnalysis.DynamicallyAccessedMembers(global::System.Diagnostics.CodeAnalysis.DynamicallyAccessedMemberTypes.PublicProperties)] TValue>() => RequirementCache<TValue>.Value;
-
-        private static bool DetermineRequiresValue([global::System.Diagnostics.CodeAnalysis.DynamicallyAccessedMembers(global::System.Diagnostics.CodeAnalysis.DynamicallyAccessedMemberTypes.PublicProperties)] global::System.Type type)
+        private static bool RequiresValue<TValue>()
         {
+            var type = typeof(TValue);
             if (global::System.Nullable.GetUnderlyingType(type) != null)
             {
                 return false;
             }
 
-            if (type.IsValueType ||
-                type == typeof(string) ||
-                type.IsArray)
-            {
-                return true;
-            }
-
-            foreach (var property in type.GetProperties(global::System.Reflection.BindingFlags.Instance | global::System.Reflection.BindingFlags.Public))
-            {
-                foreach (var attributeData in property.CustomAttributes)
-                {
-                    var attributeTypeName = attributeData.AttributeType.FullName;
-                    if (attributeTypeName == ""System.Text.Json.Serialization.JsonRequiredAttribute"" ||
-                        attributeTypeName == ""Newtonsoft.Json.JsonRequiredAttribute"" ||
-                        attributeTypeName == ""System.Runtime.CompilerServices.RequiredMemberAttribute"")
-                    {
-                        return true;
-                    }
-                }
-            }
-
-            return false;
-        }
-
-        private static class RequirementCache<[global::System.Diagnostics.CodeAnalysis.DynamicallyAccessedMembers(global::System.Diagnostics.CodeAnalysis.DynamicallyAccessedMemberTypes.PublicProperties)] TValue>
-        {
-            public static readonly bool Value = DetermineRequiresValue(typeof(TValue));
+            return type.IsValueType ||
+                   type == typeof(string) ||
+                   type.IsArray;
         }
 
 "

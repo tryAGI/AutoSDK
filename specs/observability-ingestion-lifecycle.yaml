@@ -1,0 +1,217 @@
+openapi: 3.1.0
+info:
+  title: Observability Ingestion Lifecycle Fixture
+  version: 1.0.0
+paths:
+  /api/ingestion/config:
+    get:
+      operationId: getIngestionConfig
+      summary: Get ingestion client configuration
+      tags:
+        - ingestion
+      responses:
+        "200":
+          description: Configuration values a high-level observability client uses for queueing and lifecycle behavior.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/IngestionClientOptions"
+  /api/traces/batch:
+    post:
+      operationId: batchIngestTraceEvents
+      summary: Batch ingest trace events
+      tags:
+        - ingestion
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/TraceIngestionBatchRequest"
+      responses:
+        "202":
+          description: Trace events were queued for ingestion.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/IngestionBatchAccepted"
+          links:
+            getIngestionStatus:
+              operationId: getIngestionStatus
+              parameters:
+                batchId: "$response.body#/batch_id"
+  /api/ingestion/{batchId}:
+    get:
+      operationId: getIngestionStatus
+      summary: Get ingestion batch status
+      tags:
+        - ingestion
+      parameters:
+        - in: path
+          name: batchId
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Current ingestion batch status.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/IngestionBatchStatus"
+components:
+  schemas:
+    TraceIngestionBatchRequest:
+      type: object
+      required:
+        - client_options
+        - events
+      properties:
+        client_options:
+          $ref: "#/components/schemas/IngestionClientOptions"
+        events:
+          type: array
+          items:
+            $ref: "#/components/schemas/TraceEvent"
+    IngestionClientOptions:
+      type: object
+      required:
+        - tracing_enabled
+        - flush_at
+        - flush_interval_ms
+        - queue_size
+      properties:
+        tracing_enabled:
+          type: boolean
+          description: Allows official-SDK-style tracing to be disabled without changing call sites.
+        project_name:
+          type: string
+        workspace_id:
+          type: string
+        environment:
+          type: string
+        sample_rate:
+          type: number
+          format: double
+          minimum: 0
+          maximum: 1
+        flush_at:
+          type: integer
+          minimum: 1
+        flush_interval_ms:
+          type: integer
+          minimum: 1
+        queue_size:
+          type: integer
+          minimum: 1
+        worker_count:
+          type: integer
+          minimum: 1
+        shutdown_timeout_ms:
+          type: integer
+          minimum: 1
+        drop_policy:
+          type: string
+          enum:
+            - block
+            - drop_oldest
+            - drop_newest
+    TraceEvent:
+      type: object
+      required:
+        - event_type
+        - trace_id
+        - span_id
+        - name
+        - timestamp
+      properties:
+        event_type:
+          type: string
+          enum:
+            - trace_start
+            - span_start
+            - span_end
+            - score
+            - media_upload
+        trace_id:
+          type: string
+        span_id:
+          type: string
+        parent_span_id:
+          type:
+            - string
+            - "null"
+        name:
+          type: string
+        timestamp:
+          type: string
+          format: date-time
+        input:
+          type: object
+          additionalProperties: true
+        output:
+          type: object
+          additionalProperties: true
+        metadata:
+          type: object
+          additionalProperties: true
+        error:
+          type:
+            - string
+            - "null"
+        attachments:
+          type: array
+          items:
+            $ref: "#/components/schemas/TraceAttachmentReference"
+    TraceAttachmentReference:
+      type: object
+      required:
+        - attachment_key
+        - content_type
+      properties:
+        attachment_key:
+          type: string
+        content_type:
+          type: string
+        file_name:
+          type: string
+        size_bytes:
+          type: integer
+          format: int64
+          minimum: 0
+    IngestionBatchAccepted:
+      type: object
+      required:
+        - batch_id
+        - accepted_count
+      properties:
+        batch_id:
+          type: string
+        accepted_count:
+          type: integer
+          minimum: 0
+        next_flush_after_ms:
+          type: integer
+          minimum: 0
+    IngestionBatchStatus:
+      type: object
+      required:
+        - batch_id
+        - status
+      properties:
+        batch_id:
+          type: string
+        status:
+          type: string
+          enum:
+            - queued
+            - flushing
+            - flushed
+            - failed
+        dropped_count:
+          type: integer
+          minimum: 0
+        error:
+          type:
+            - string
+            - "null"

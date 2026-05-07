@@ -1,4 +1,6 @@
 ﻿using System.Diagnostics;
+using System.Text;
+using System.Text.RegularExpressions;
 using Google.Protobuf;
 using Google.Protobuf.Reflection;
 
@@ -2035,7 +2037,7 @@ components:
     }
 
     [TestMethod]
-    public async Task Generate_WithInlineAllOf_PropagatesTrimAnnotations()
+    public async Task Generate_WithInlineAllOf_DoesNotEmitReflectionValidation()
     {
         const string spec = """
 openapi: 3.0.3
@@ -2091,10 +2093,70 @@ components:
                 var allOfContent = await File.ReadAllTextAsync(allOfFile);
                 var converterContent = await File.ReadAllTextAsync(converterFile);
 
-                allOfContent.Should().Contain("public readonly partial struct AllOf<[global::System.Diagnostics.CodeAnalysis.DynamicallyAccessedMembers(");
-                allOfContent.Should().Contain("private static bool RequiresValue<[global::System.Diagnostics.CodeAnalysis.DynamicallyAccessedMembers(");
-                allOfContent.Should().Contain("private static class RequirementCache<[global::System.Diagnostics.CodeAnalysis.DynamicallyAccessedMembers(");
-                converterContent.Should().Contain("public class AllOfJsonConverter<[global::System.Diagnostics.CodeAnalysis.DynamicallyAccessedMembers(");
+                allOfContent.Should().Contain("public readonly partial struct AllOf<T1, T2>");
+                allOfContent.Should().Contain("private static bool RequiresValue<TValue>()");
+                allOfContent.Should().NotContain("DynamicallyAccessedMembers");
+                allOfContent.Should().NotContain("GetProperties(");
+                allOfContent.Should().NotContain("CustomAttributes");
+                converterContent.Should().Contain("public class AllOfJsonConverter<T1, T2>");
+                converterContent.Should().NotContain("DynamicallyAccessedMembers");
+            });
+    }
+
+    [TestMethod]
+    public async Task Generate_WithLargeJsonSerializerContext_SplitsIntoChunkResolvers()
+    {
+        var schemas = new StringBuilder();
+        const int schemaCount = 520;
+        for (var index = 0; index < schemaCount; index++)
+        {
+            schemas.AppendLine($"""
+    Model{index}:
+      type: object
+      properties:
+        value:
+          type: string
+""");
+        }
+
+        var spec = $$"""
+openapi: 3.0.3
+info:
+  title: LargeContext
+  version: 1.0.0
+paths:
+  /model:
+    get:
+      operationId: getModel
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Model0'
+components:
+  schemas:
+{{schemas}}
+""";
+
+        await GenerateFromContentAsync(
+            fileName: "large-json-context.yaml",
+            specContent: spec,
+            targetFramework: "net10.0",
+            namespaceValue: "LargeContext",
+            assertGeneratedOutput: async outputDirectory =>
+            {
+                var contextFile = Path.Combine(outputDirectory, "LargeContext.JsonSerializerContext.g.cs");
+                File.Exists(contextFile).Should().BeTrue();
+
+                var contextContent = await File.ReadAllTextAsync(contextFile);
+                contextContent.Should().Contain("internal sealed partial class SourceGenerationContextChunk0");
+                contextContent.Should().Contain("internal sealed partial class SourceGenerationContextChunk1");
+                contextContent.Should().Contain("global::System.Text.Json.Serialization.Metadata.JsonTypeInfoResolver.Combine(");
+                contextContent.Should().Contain("public static SourceGenerationContext Default { get; } = new(DefaultOptions);");
+                Regex.Matches(contextContent, "\\[global::System.Text.Json.Serialization.JsonSerializable").Count
+                    .Should().BeGreaterThan(schemaCount);
             });
     }
 

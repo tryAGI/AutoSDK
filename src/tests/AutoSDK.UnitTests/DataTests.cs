@@ -1269,9 +1269,12 @@ public partial class DataTests
         var allOf = data.AnyOfs.Single(x => x.SubType == "AllOf" && !x.IsNamed && x.Count == 2);
         var generatedAllOf = Sources.GenerateAnyOf(allOf);
 
-        generatedAllOf.Should().Contain("private static bool RequiresValue<[global::System.Diagnostics.CodeAnalysis.DynamicallyAccessedMembers(global::System.Diagnostics.CodeAnalysis.DynamicallyAccessedMemberTypes.PublicProperties)] TValue>() => RequirementCache<TValue>.Value;");
+        generatedAllOf.Should().Contain("private static bool RequiresValue<TValue>()");
         generatedAllOf.Should().Contain("return (!RequiresValue<T1>() || IsValue1) && (!RequiresValue<T2>() || IsValue2);");
         generatedAllOf.Should().NotContain("return IsValue1 && IsValue2;");
+        generatedAllOf.Should().NotContain("DynamicallyAccessedMembers");
+        generatedAllOf.Should().NotContain("GetProperties(");
+        generatedAllOf.Should().NotContain("CustomAttributes");
     }
 
     [TestMethod]

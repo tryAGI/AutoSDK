@@ -1,0 +1,144 @@
+openapi: 3.1.0
+info:
+  title: Dynamic Multipart Attachments Fixture
+  version: 1.0.0
+paths:
+  /runs/multipart:
+    post:
+      operationId: createRunsMultipart
+      summary: Ingest runs with dynamic attachment parts
+      tags:
+        - attachments
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              $ref: "#/components/schemas/RunMultipartRequest"
+            encoding:
+              run:
+                contentType: application/json
+              attachment_metadata:
+                contentType: application/json
+              attachments:
+                contentType: application/octet-stream
+            examples:
+              dynamicAttachmentParts:
+                summary: Dynamic attachment part names
+                value: |
+                  --boundary
+                  Content-Disposition: form-data; name="run"
+                  Content-Type: application/json
+
+                  {"id":"run_123","trace_id":"trace_123","name":"root"}
+                  --boundary
+                  Content-Disposition: form-data; name="attachment.{{run_id}}.{{attachment_key}}"; filename="trace.log"
+                  Content-Type: application/octet-stream
+
+                  <binary>
+                  --boundary--
+      responses:
+        "202":
+          description: Runs and attachments were accepted for asynchronous ingestion.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/MultipartIngestionResponse"
+          links:
+            getRun:
+              operationId: getRun
+              parameters:
+                runId: "$response.body#/run_ids/0"
+  /runs/{runId}:
+    get:
+      operationId: getRun
+      summary: Get an ingested run
+      tags:
+        - attachments
+      parameters:
+        - in: path
+          name: runId
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Run and attachment metadata.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/RunRecord"
+components:
+  schemas:
+    RunMultipartRequest:
+      type: object
+      required:
+        - run
+        - attachments
+      properties:
+        run:
+          type: string
+          description: JSON serialized run payload.
+        attachment_metadata:
+          type: string
+          description: JSON serialized map from attachment key to content type, file name, and parent run id.
+        attachments:
+          type: object
+          description: Dynamic multipart file parts keyed by provider-specific attachment names.
+          additionalProperties:
+            type: string
+            format: binary
+    MultipartIngestionResponse:
+      type: object
+      required:
+        - run_ids
+        - attachment_count
+      properties:
+        run_ids:
+          type: array
+          items:
+            type: string
+        attachment_count:
+          type: integer
+          minimum: 0
+        fallback_endpoint:
+          type:
+            - string
+            - "null"
+    RunRecord:
+      type: object
+      required:
+        - id
+        - trace_id
+        - name
+      properties:
+        id:
+          type: string
+        trace_id:
+          type: string
+        parent_run_id:
+          type:
+            - string
+            - "null"
+        name:
+          type: string
+        attachments:
+          type: object
+          additionalProperties:
+            $ref: "#/components/schemas/AttachmentMetadata"
+    AttachmentMetadata:
+      type: object
+      required:
+        - attachment_key
+        - content_type
+      properties:
+        attachment_key:
+          type: string
+        content_type:
+          type: string
+        file_name:
+          type: string
+        size_bytes:
+          type: integer
+          format: int64
+          minimum: 0

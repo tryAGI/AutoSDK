@@ -257,4 +257,146 @@ public partial class JsonTests
         propertyNames.Select(static value => value.Length).Max().Should().BeLessThanOrEqualTo(120);
         propertyNames.Should().OnlyContain(value => value.Contains("_", StringComparison.Ordinal));
     }
+
+    [TestMethod]
+    public void JsonSerializerContext_RegistersCollidingNullableValueTypeMetadataExplicitly()
+    {
+        var settings = Settings.Default with
+        {
+            Namespace = "G",
+            JsonSerializerType = JsonSerializerType.SystemTextJson,
+            JsonSerializerContext = "G.SourceGenerationContext",
+            GenerateJsonSerializerContextTypes = true,
+            FromCli = true,
+        };
+        var client = new Client(
+            Id: "NullableCollision",
+            ClassName: "NullableCollisionClient",
+            FileNameWithoutExtension: "G",
+            InterfaceFileNameWithoutExtension: "IG",
+            BaseUrl: string.Empty,
+            Clients: ImmutableArray<PropertyData>.Empty,
+            Summary: string.Empty,
+            BaseUrlSummary: string.Empty,
+            Settings: settings,
+            GlobalSettings: settings,
+            Converters: ImmutableArray<string>.Empty);
+        var types = ImmutableArray.Create(
+            T(TypeData.Default with
+            {
+                Namespace = "G",
+                GeneratedNamespace = "G",
+                CSharpTypeRaw = "global::G.SavedFunctionId",
+                CSharpTypeNullability = true,
+                IsValueType = true,
+            }),
+            T(TypeData.Default with
+            {
+                Namespace = "G",
+                GeneratedNamespace = "G",
+                CSharpTypeRaw = "global::G.NullableSavedFunctionId",
+                IsValueType = true,
+            }))
+            .AsEquatableArray();
+
+        var file = Sources.JsonSerializerContext(client, types);
+        var contextTypesFile = Sources.JsonSerializerContextTypes(client, types);
+
+        file.Text.Should().Contain("JsonSerializable(typeof(global::G.SavedFunctionId?), TypeInfoPropertyName = ");
+        file.Text.Should().Contain("JsonSerializable(typeof(global::G.NullableSavedFunctionId), TypeInfoPropertyName = ");
+        file.Text.Should().NotContain("TypeInfoPropertyName = \"NullableSavedFunctionId\"");
+        contextTypesFile.Text.Should().NotContain("public global::G.SavedFunctionId? Type");
+    }
+
+    [TestMethod]
+    public void JsonSerializerContext_RegistersCollidingConcreteListMetadataExplicitly()
+    {
+        var settings = Settings.Default with
+        {
+            Namespace = "G",
+            JsonSerializerType = JsonSerializerType.SystemTextJson,
+            JsonSerializerContext = "G.SourceGenerationContext",
+            GenerateJsonSerializerContextTypes = true,
+            FromCli = true,
+        };
+        var client = new Client(
+            Id: "ListCollision",
+            ClassName: "ListCollisionClient",
+            FileNameWithoutExtension: "G",
+            InterfaceFileNameWithoutExtension: "IG",
+            BaseUrl: string.Empty,
+            Clients: ImmutableArray<PropertyData>.Empty,
+            Summary: string.Empty,
+            BaseUrlSummary: string.Empty,
+            Settings: settings,
+            GlobalSettings: settings,
+            Converters: ImmutableArray<string>.Empty);
+        var types = ImmutableArray.Create(
+            T(TypeData.Default with
+            {
+                Namespace = "G",
+                GeneratedNamespace = "G",
+                CSharpTypeRaw = "global::G.ListChatResponse",
+            }),
+            T(TypeData.Default with
+            {
+                Namespace = "System.Collections.Generic",
+                GeneratedNamespace = "G",
+                CSharpTypeRaw = "global::System.Collections.Generic.IList<global::G.ChatResponse>",
+                IsArray = true,
+            }))
+            .AsEquatableArray();
+
+        var file = Sources.JsonSerializerContext(client, types);
+        var contextTypesFile = Sources.JsonSerializerContextTypes(client, types);
+
+        file.Text.Should().Contain("JsonSerializable(typeof(global::G.ListChatResponse), TypeInfoPropertyName = ");
+        file.Text.Should().Contain("JsonSerializable(typeof(global::System.Collections.Generic.List<global::G.ChatResponse>), TypeInfoPropertyName = ");
+        file.Text.Should().NotContain("TypeInfoPropertyName = \"ListChatResponse\"");
+        contextTypesFile.Text.Should().NotContain("public global::G.ListChatResponse? Type");
+        contextTypesFile.Text.Should().NotContain("public global::System.Collections.Generic.List<global::G.ChatResponse>? ListType");
+    }
+
+    [TestMethod]
+    public void JsonSerializerContext_SplitsLargeContexts()
+    {
+        var settings = Settings.Default with
+        {
+            Namespace = "G",
+            JsonSerializerType = JsonSerializerType.SystemTextJson,
+            JsonSerializerContext = "G.SourceGenerationContext",
+            GenerateJsonSerializerContextTypes = true,
+            FromCli = true,
+        };
+        var client = new Client(
+            Id: "LargeContext",
+            ClassName: "LargeContextClient",
+            FileNameWithoutExtension: "G",
+            InterfaceFileNameWithoutExtension: "IG",
+            BaseUrl: string.Empty,
+            Clients: ImmutableArray<PropertyData>.Empty,
+            Summary: string.Empty,
+            BaseUrlSummary: string.Empty,
+            Settings: settings,
+            GlobalSettings: settings,
+            Converters: ImmutableArray<string>.Empty);
+        var types = Enumerable.Range(0, 520)
+            .Select(index => T(TypeData.Default with
+            {
+                Namespace = "G",
+                GeneratedNamespace = "G",
+                CSharpTypeRaw = $"global::G.Model{index}",
+            }))
+            .ToImmutableArray()
+            .AsEquatableArray();
+
+        var file = Sources.JsonSerializerContext(client, types);
+
+        file.Text.Should().Contain("internal sealed partial class SourceGenerationContextChunk0");
+        file.Text.Should().Contain("internal sealed partial class SourceGenerationContextChunk1");
+        file.Text.Should().Contain("global::System.Text.Json.Serialization.Metadata.JsonTypeInfoResolver.Combine(");
+        file.Text.Should().Contain("public static SourceGenerationContext Default { get; } = new(DefaultOptions);");
+        Regex.Matches(file.Text, "\\[global::System.Text.Json.Serialization.JsonSerializable").Count
+            .Should().Be(521);
+    }
 }

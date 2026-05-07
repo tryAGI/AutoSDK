@@ -1,0 +1,121 @@
+openapi: 3.1.0
+info:
+  title: Apify Workflow Lifecycle Fixture
+  version: 1.0.0
+paths:
+  /v2/acts/{actorId}/runs:
+    post:
+      operationId: startActorRun
+      summary: Start an actor run
+      tags:
+        - actor-runs
+      parameters:
+        - in: path
+          name: actorId
+          required: true
+          schema:
+            type: string
+        - in: query
+          name: waitForFinish
+          required: false
+          description: Maximum seconds to wait for the actor run to finish before returning.
+          schema:
+            type: integer
+            minimum: 0
+            maximum: 120
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      responses:
+        "201":
+          description: Actor run started. If `waitForFinish` is provided, the response may already contain a terminal status.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ActorRun"
+          links:
+            getActorRun:
+              operationId: getActorRun
+              parameters:
+                runId: "$response.body#/id"
+            listDatasetItems:
+              operationId: listDatasetItems
+              parameters:
+                datasetId: "$response.body#/defaultDatasetId"
+  /v2/actor-runs/{runId}:
+    get:
+      operationId: getActorRun
+      summary: Get an actor run
+      tags:
+        - actor-runs
+      parameters:
+        - in: path
+          name: runId
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Current actor run state.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ActorRun"
+  /v2/datasets/{datasetId}/items:
+    get:
+      operationId: listDatasetItems
+      summary: List run dataset items
+      tags:
+        - datasets
+      parameters:
+        - in: path
+          name: datasetId
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Dataset items produced by the completed actor run.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  additionalProperties: true
+components:
+  schemas:
+    ActorRun:
+      type: object
+      required:
+        - id
+        - actId
+        - status
+      properties:
+        id:
+          type: string
+        actId:
+          type: string
+        defaultDatasetId:
+          type: string
+        status:
+          type: string
+          enum:
+            - READY
+            - RUNNING
+            - SUCCEEDED
+            - FAILED
+            - TIMED-OUT
+            - ABORTED
+        startedAt:
+          type: string
+          format: date-time
+        finishedAt:
+          type:
+            - string
+            - "null"
+          format: date-time

@@ -18,12 +18,15 @@ public static partial class Sources
             .Select(x => x.CSharpTypeWithNullability)
             .Distinct()
             .ToArray();
+        var skippedContextTypes = GetCollidingJsonSerializerContextTypes(types, allDistinctTypes);
         var distinctTypes = allDistinctTypes
             .Where(ShouldIncludeInJsonSerializerContextTypes)
+            .Where(x => !skippedContextTypes.Contains(x))
             .ToArray();
 
         var concreteListTypes = GetConcreteListTypes(allDistinctTypes)
             .Where(ShouldIncludeInJsonSerializerContextTypes)
+            .Where(x => !skippedContextTypes.Contains(x))
             .ToArray();
 
         return $@"
