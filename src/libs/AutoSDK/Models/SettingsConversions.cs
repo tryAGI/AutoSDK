@@ -27,6 +27,7 @@ public static class SettingsConversions
             UseSetsRequiredMembersAttributes: settings.UseSetsRequiredMembersAttributes,
             GenerateModelValidationMethods: settings.GenerateModelValidationMethods,
             ValidateAnyOfs: settings.ValidateAnyOfs,
+            GenerateRawModelData: settings.GenerateRawModelData,
             GenerateJsonSerializerContextTypes: settings.GenerateJsonSerializerContextTypes,
             UseNewtonsoftJson: settings.JsonSerializerType == Serialization.Json.JsonSerializerType.NewtonsoftJson,
             UseSystemTextJson: settings.JsonSerializerType == Serialization.Json.JsonSerializerType.SystemTextJson);
@@ -73,6 +74,7 @@ public static class SettingsConversions
             UseSetsRequiredMembersAttributes: settings.UseSetsRequiredMembersAttributes,
             GenerateModelValidationMethods: settings.GenerateModelValidationMethods,
             ValidateAnyOfs: settings.ValidateAnyOfs,
+            GenerateRawModelData: settings.GenerateRawModelData,
             GenerateJsonSerializerContextTypes: settings.GenerateJsonSerializerContextTypes,
             UseNewtonsoftJson: settings.JsonSerializerType == Serialization.Json.JsonSerializerType.NewtonsoftJson,
             UseSystemTextJson: settings.JsonSerializerType == Serialization.Json.JsonSerializerType.SystemTextJson,
@@ -95,6 +97,7 @@ public static class SettingsConversions
             UseSetsRequiredMembersAttributes: settings.UseSetsRequiredMembersAttributes,
             GenerateModelValidationMethods: settings.GenerateModelValidationMethods,
             ValidateAnyOfs: settings.ValidateAnyOfs,
+            GenerateRawModelData: settings.GenerateRawModelData,
             GenerateJsonSerializerContextTypes: settings.GenerateJsonSerializerContextTypes,
             UseNewtonsoftJson: settings.UseNewtonsoftJson,
             UseSystemTextJson: settings.UseSystemTextJson);

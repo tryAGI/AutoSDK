@@ -1334,6 +1334,84 @@ components:
     }
 
     [TestMethod]
+    public async Task Generate_WithRawModelData_BuildsTypedExtensionDataHelpers()
+    {
+        const string spec = """
+openapi: 3.0.3
+info:
+  title: Raw Model Data
+  version: 1.0.0
+paths:
+  /models/{id}:
+    get:
+      operationId: getModel
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ClosedModel'
+components:
+  schemas:
+    ClosedModel:
+      type: object
+      additionalProperties: false
+      properties:
+        name:
+          type: string
+""";
+
+        await GenerateFromContentAsync(
+            fileName: "raw-model-data.yaml",
+            specContent: spec,
+            targetFramework: "net10.0",
+            namespaceValue: "Raw",
+            clientClassName: "RawClient",
+            assertGeneratedOutput: async outputDirectory =>
+            {
+                var modelFile = Path.Combine(outputDirectory, "Raw.Models.ClosedModel.g.cs");
+                var modelContent = await File.ReadAllTextAsync(modelFile);
+                modelContent.Should().Contain("IDictionary<string, global::System.Text.Json.JsonElement> AdditionalProperties");
+                modelContent.Should().Contain("Raw JSON properties that are not explicitly defined in the schema");
+
+                var jsonFile = Path.Combine(outputDirectory, "Raw.Models.ClosedModel.Json.g.cs");
+                var jsonContent = await File.ReadAllTextAsync(jsonFile);
+                jsonContent.Should().Contain("FromRawUnchecked(");
+                jsonContent.Should().Contain("ToRawJson(");
+
+                await File.WriteAllTextAsync(
+                    Path.Combine(outputDirectory, "RawModelConsumer.cs"),
+                    """
+                    #nullable enable
+
+                    namespace Raw;
+
+                    internal static class RawModelConsumer
+                    {
+                        public static string ReadUnknownProperty()
+                        {
+                            var model = ClosedModel.FromRawUnchecked(
+                                "{\"name\":\"Ada\",\"unknown\":{\"nested\":true}}",
+                                SourceGenerationContext.Default)!;
+
+                            return model.AdditionalProperties["unknown"]
+                                .GetProperty("nested")
+                                .GetRawText();
+                        }
+                    }
+                    """);
+            },
+            additionalArguments: ["--generate-raw-model-data"]);
+    }
+
+    [TestMethod]
     public async Task Generate_WithSecuritySchemeOverride_ReplacesAuthAndSuppressesDuplicateParameters()
     {
         const string spec = """

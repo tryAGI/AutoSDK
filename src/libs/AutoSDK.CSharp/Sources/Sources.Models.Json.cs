@@ -55,6 +55,11 @@ public static partial class Sources
         var modifiers = isValueType
             ? "readonly partial struct"
             : $"{(isBaseClass ? "" : "sealed ")}partial class";
+        var rawModelDataMethods = settings.GenerateRawModelData && !isValueType
+            ? settings.UsesSystemTextJson()
+                ? GenerateSystemTextJsonRawModelDataMethods(typeName, className, isBaseClass)
+                : GenerateNewtonsoftRawModelDataMethods(typeName)
+            : TrimmedLine;
         
         return settings.UsesSystemTextJson()
             ? @$"#nullable enable
@@ -160,6 +165,7 @@ namespace {@namespace}
                 jsonStream,
                 jsonSerializerOptions);
         }}")}
+{rawModelDataMethods}
     }}
 }}
 ".RemoveBlankLinesWhereOnlyWhitespaces()
@@ -212,8 +218,90 @@ namespace {@namespace}
             var serializer = global::Newtonsoft.Json.JsonSerializer.Create(jsonSerializerOptions);
             return new global::System.Threading.Tasks.ValueTask<{typeName}?>(serializer.Deserialize<{typeName}>(jsonReader));
         }}
+{rawModelDataMethods}
     }}
 }}
 ".RemoveBlankLinesWhereOnlyWhitespaces();
+    }
+
+    private static string GenerateSystemTextJsonRawModelDataMethods(
+        string typeName,
+        string className,
+        bool isBaseClass)
+    {
+        var contextReturnType = isBaseClass ? "T" : typeName;
+        var contextGenericSuffix = isBaseClass ? "<T>" : string.Empty;
+        var contextWhereClause = isBaseClass ? $"where T : {className}" : string.Empty;
+
+        return $@"
+
+        {("Serializes the current instance to raw JSON using the provided JsonSerializerContext.").ToXmlDocumentationSummary(level: 8)}
+        public string ToRawJson(
+            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
+        {{
+            return ToJson(jsonSerializerContext);
+        }}
+
+        {("Serializes the current instance to raw JSON using the provided JsonSerializerOptions.").ToXmlDocumentationSummary(level: 8)}
+#if NET8_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(""JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved."")]
+        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode(""JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications."")]
+#endif
+        public string ToRawJson(
+            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
+        {{
+            return ToJson(jsonSerializerOptions);
+        }}
+
+        {("Deserializes raw JSON while preserving unknown JSON properties.").ToXmlDocumentationSummary(level: 8)}
+        public static {contextReturnType}? FromRawUnchecked{contextGenericSuffix}(
+            string json,
+            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
+            {contextWhereClause}
+        {{
+            return FromJson{contextGenericSuffix}(json, jsonSerializerContext);
+        }}
+
+        {("Deserializes raw JSON while preserving unknown JSON properties.").ToXmlDocumentationSummary(level: 8)}
+#if NET8_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(""JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved."")]
+        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode(""JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications."")]
+#endif
+        public static {contextReturnType}? FromRawUnchecked{contextGenericSuffix}(
+            string json,
+            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
+            {contextWhereClause}
+        {{
+            return FromJson{contextGenericSuffix}(json, jsonSerializerOptions);
+        }}";
+    }
+
+    private static string GenerateNewtonsoftRawModelDataMethods(
+        string typeName)
+    {
+        return $@"
+
+        {("Serializes the current instance to raw JSON using the provided JsonSerializerOptions.").ToXmlDocumentationSummary(level: 8)}
+#if NET8_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(""JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved."")]
+        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode(""JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications."")]
+#endif
+        public string ToRawJson(
+            global::Newtonsoft.Json.JsonSerializerSettings? jsonSerializerOptions = null)
+        {{
+            return ToJson(jsonSerializerOptions);
+        }}
+
+        {("Deserializes raw JSON while preserving unknown JSON properties.").ToXmlDocumentationSummary(level: 8)}
+#if NET8_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(""JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved."")]
+        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode(""JSON serialization and deserialization might require types that cannot be statically analyzed. Use System.Text.Json source generation for native AOT applications."")]
+#endif
+        public static {typeName}? FromRawUnchecked(
+            string json,
+            global::Newtonsoft.Json.JsonSerializerSettings? jsonSerializerOptions = null)
+        {{
+            return FromJson(json, jsonSerializerOptions);
+        }}";
     }
 }

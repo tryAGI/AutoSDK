@@ -128,6 +128,7 @@ public static class CSharpSettingsExtensions
             UseSetsRequiredMembersAttributes: settings.UseSetsRequiredMembersAttributes,
             GenerateModelValidationMethods: settings.GenerateModelValidationMethods,
             ValidateAnyOfs: settings.ValidateAnyOfs,
+            GenerateRawModelData: settings.GenerateRawModelData,
             GenerateJsonSerializerContextTypes: settings.GenerateJsonSerializerContextTypes,
             UseNewtonsoftJson: settings.UsesNewtonsoftJson(),
             UseSystemTextJson: settings.UsesSystemTextJson());
@@ -155,6 +156,7 @@ public static class CSharpSettingsExtensions
             UseSetsRequiredMembersAttributes: settings.UseSetsRequiredMembersAttributes,
             GenerateModelValidationMethods: settings.GenerateModelValidationMethods,
             ValidateAnyOfs: settings.ValidateAnyOfs,
+            GenerateRawModelData: settings.GenerateRawModelData,
             GenerateJsonSerializerContextTypes: settings.GenerateJsonSerializerContextTypes,
             UseNewtonsoftJson: settings.UsesNewtonsoftJson(),
             UseSystemTextJson: settings.UsesSystemTextJson(),

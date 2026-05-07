@@ -275,6 +275,10 @@ public sealed partial class {modelData.Parents[level].Unbox<ModelData>().ClassNa
         var additionalPropertiesPostfix = modelData.ClassName == "AdditionalProperties" || hasAdditionalPropertiesProperty
             ? "2"
             : string.Empty;
+        var additionalPropertiesValueType = GetAdditionalPropertiesValueType(modelData.Settings);
+        var additionalPropertiesSummary = modelData.Settings.GenerateRawModelData
+            ? "Raw JSON properties that are not explicitly defined in the schema"
+            : "Additional properties that are not explicitly defined in the schema";
 
         var inheritedPropertyNames = new HashSet<string>(
             modelData.InheritedPropertyNames,
@@ -395,9 +399,9 @@ public sealed partial class {modelData.Parents[level].Unbox<ModelData>().ClassNa
 {propertyDeclarations}
 
 {(!modelData.IsDerivedClass ? $@" 
-        {"Additional properties that are not explicitly defined in the schema".ToXmlDocumentationSummary(level: 8)}
+        {additionalPropertiesSummary.ToXmlDocumentationSummary(level: 8)}
         {jsonSerializer.GenerateExtensionDataAttribute()}
-        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties{additionalPropertiesPostfix} {{ get; set; }} = new global::System.Collections.Generic.Dictionary<string, object>();
+        public global::System.Collections.Generic.IDictionary<string, {additionalPropertiesValueType}> AdditionalProperties{additionalPropertiesPostfix} {{ get; set; }} = new global::System.Collections.Generic.Dictionary<string, {additionalPropertiesValueType}>();
  " : TrimmedLine)}
  
 {(hasConstructor ? $@"
@@ -427,5 +431,26 @@ public sealed partial class {modelData.Parents[level].Unbox<ModelData>().ClassNa
         }}
  " : TrimmedLine)}
     }}".RemoveBlankLinesWhereOnlyWhitespaces();
+    }
+
+    private static string GetAdditionalPropertiesValueType(
+        EmitterSettings settings)
+    {
+        if (!settings.GenerateRawModelData)
+        {
+            return "object";
+        }
+
+        if (settings.UsesSystemTextJson())
+        {
+            return "global::System.Text.Json.JsonElement";
+        }
+
+        if (settings.UsesNewtonsoftJson())
+        {
+            return "global::Newtonsoft.Json.Linq.JToken";
+        }
+
+        return "object";
     }
 }

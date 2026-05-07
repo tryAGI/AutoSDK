@@ -80,6 +80,8 @@
     <CompilerVisibleProperty Include="AutoSDK_GenerateModelValidationMethods"/>
     <!-- true/false. Default: false -->
     <CompilerVisibleProperty Include="AutoSDK_ValidateAnyOfs"/>
+    <!-- true/false. Default: false. Uses typed raw JSON extension data and raw model helper methods for forward-compatible models. -->
+    <CompilerVisibleProperty Include="AutoSDK_GenerateRawModelData"/>
     <!-- Class/Record/ReadonlyRecordStruct. Default: Class -->
     <CompilerVisibleProperty Include="AutoSDK_ModelStyle"/>
     <!-- List of ids separated by ;. Default: Empty(all models) -->

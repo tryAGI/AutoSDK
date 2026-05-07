@@ -45,6 +45,11 @@ AutoSDK normalizes the OpenAPI 3.1 / JSON Schema 2020-12 keywords it can transla
 
 Keywords that are still not representable in the current .NET model pipeline, such as `patternProperties` and `contains`/`minContains`/`maxContains`, now fail fast with a targeted error instead of being silently ignored.
 
+## Raw Model Data
+Fast-moving APIs can return fields that are not present in the OpenAPI schema yet. Enable `--generate-raw-model-data` in the CLI, or set `<AutoSDK_GenerateRawModelData>true</AutoSDK_GenerateRawModelData>` for the source generator, to emit typed raw JSON extension data on generated models.
+
+With System.Text.Json, unknown fields are preserved as `JsonElement` values in `AdditionalProperties`, and generated models also expose `FromRawUnchecked(...)` / `ToRawJson(...)` helper aliases. This mode is useful for SDK repos where provider docs or live responses move faster than the checked-in spec, while the default lightweight model shape remains unchanged.
+
 ## Vendor Extension Compatibility
 When `AutoSDK_UseExtensionNaming` or `--use-extension-naming` is enabled, AutoSDK consumes a curated set of third-party SDK metadata instead of treating every vendor extension as noise.
 

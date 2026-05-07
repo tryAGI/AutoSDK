@@ -10,6 +10,7 @@ public record struct EmitterSettings(
     SdkFeatureUsage UseSetsRequiredMembersAttributes,
     bool GenerateModelValidationMethods,
     bool ValidateAnyOfs,
+    bool GenerateRawModelData,
     bool GenerateJsonSerializerContextTypes,
     bool UseNewtonsoftJson,
     bool UseSystemTextJson)
@@ -24,6 +25,7 @@ public record struct EmitterSettings(
         UseSetsRequiredMembersAttributes: default,
         GenerateModelValidationMethods: false,
         ValidateAnyOfs: false,
+        GenerateRawModelData: false,
         GenerateJsonSerializerContextTypes: false,
         UseNewtonsoftJson: false,
         UseSystemTextJson: true);

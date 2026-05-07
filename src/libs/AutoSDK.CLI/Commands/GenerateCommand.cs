@@ -130,7 +130,14 @@ internal sealed class GenerateCommand : Command
         DefaultValueFactory = _ => Settings.Default.GenerateModelValidationMethods,
         Description = "Generate validation methods for models",
     };
-    
+
+    private Option<bool> GenerateRawModelData { get; } = new(
+        name: "--generate-raw-model-data")
+    {
+        DefaultValueFactory = _ => Settings.Default.GenerateRawModelData,
+        Description = "Generate typed raw JSON extension data and raw model helper methods for forward-compatible models.",
+    };
+
     private Option<bool> ComputeDiscriminators { get; } = new(
         name: "--compute-discriminators")
     {
@@ -278,6 +285,7 @@ internal sealed class GenerateCommand : Command
         Options.Add(IgnoreOpenApiErrors);
         Options.Add(IgnoreOpenApiWarnings);
         Options.Add(GenerateModelValidationMethods);
+        Options.Add(GenerateRawModelData);
         Options.Add(ComputeDiscriminators);
         Options.Add(GenerateCli);
         Options.Add(UseSystemNetHttpJson);
@@ -370,6 +378,7 @@ internal sealed class GenerateCommand : Command
             ExcludedModelNamespaceMode = parseResult.GetRequiredValue(ExcludedModelNamespaceMode),
             ComputeDiscriminators = parseResult.GetRequiredValue(ComputeDiscriminators),
             GenerateModelValidationMethods = parseResult.GetRequiredValue(GenerateModelValidationMethods),
+            GenerateRawModelData = parseResult.GetRequiredValue(GenerateRawModelData),
             IgnoreOpenApiErrors = parseResult.GetRequiredValue(IgnoreOpenApiErrors),
             IgnoreOpenApiWarnings = parseResult.GetRequiredValue(IgnoreOpenApiWarnings),
             GenerateMethodsUsingSystemNetHttpJson = parseResult.GetRequiredValue(UseSystemNetHttpJson),
