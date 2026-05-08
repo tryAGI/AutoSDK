@@ -399,4 +399,67 @@ public partial class JsonTests
         Regex.Matches(file.Text, "\\[global::System.Text.Json.Serialization.JsonSerializable").Count
             .Should().Be(521);
     }
+
+    [TestMethod]
+    public void JsonSerializerContext_ChunksOversizedGuardSetsLinearly()
+    {
+        var settings = Settings.Default with
+        {
+            Namespace = "G",
+            JsonSerializerType = JsonSerializerType.SystemTextJson,
+            JsonSerializerContext = "G.SourceGenerationContext",
+            GenerateJsonSerializerContextTypes = true,
+            FromCli = true,
+        };
+        var client = new Client(
+            Id: "VercelSizedContext",
+            ClassName: "VercelSizedContextClient",
+            FileNameWithoutExtension: "G",
+            InterfaceFileNameWithoutExtension: "IG",
+            BaseUrl: string.Empty,
+            Clients: ImmutableArray<PropertyData>.Empty,
+            Summary: string.Empty,
+            BaseUrlSummary: string.Empty,
+            Settings: settings,
+            GlobalSettings: settings,
+            Converters: ImmutableArray<string>.Empty);
+        var collidingTypes = Enumerable.Range(0, 600)
+            .SelectMany(index => new[]
+            {
+                T(TypeData.Default with
+                {
+                    Namespace = "G",
+                    GeneratedNamespace = "G",
+                    CSharpTypeRaw = $"global::G.Model{index}",
+                    CSharpTypeNullability = true,
+                    IsValueType = true,
+                }),
+                T(TypeData.Default with
+                {
+                    Namespace = "G",
+                    GeneratedNamespace = "G",
+                    CSharpTypeRaw = $"global::G.NullableModel{index}",
+                    IsValueType = true,
+                }),
+            });
+        var regularTypes = Enumerable.Range(0, 600)
+            .Select(index => T(TypeData.Default with
+            {
+                Namespace = "G",
+                GeneratedNamespace = "G",
+                CSharpTypeRaw = $"global::G.RegularModel{index}",
+            }));
+        var types = collidingTypes
+            .Concat(regularTypes)
+            .ToImmutableArray()
+            .AsEquatableArray();
+
+        var file = Sources.JsonSerializerContext(client, types);
+
+        Regex.Matches(file.Text, "\\[global::System.Text.Json.Serialization.JsonSerializable").Count
+            .Should().BeLessThan(3000);
+        Regex.Matches(file.Text, "internal sealed partial class SourceGenerationContextChunk").Count
+            .Should().BeGreaterThan(1);
+        file.Text.Should().Contain("global::System.Text.Json.Serialization.Metadata.JsonTypeInfoResolver.Combine(");
+    }
 }

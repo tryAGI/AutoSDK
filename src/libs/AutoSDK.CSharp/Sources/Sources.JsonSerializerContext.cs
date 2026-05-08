@@ -147,6 +147,17 @@ namespace {client.Settings.Namespace}
         var regularAttributes = jsonSerializableAttributes
             .Where(x => !guardAttributeSet.Contains(x))
             .ToArray();
+
+        if (guardAttributes.Length >= MaxJsonSerializableAttributesPerContext)
+        {
+            foreach (var chunk in ChunkJsonSerializableAttributes(jsonSerializableAttributes))
+            {
+                yield return chunk;
+            }
+
+            yield break;
+        }
+
         var regularAttributesPerContext = Math.Max(
             1,
             MaxJsonSerializableAttributesPerContext - guardAttributes.Length);
@@ -164,6 +175,17 @@ namespace {client.Settings.Namespace}
             guardAttributes.Length > 0)
         {
             yield return guardAttributes;
+        }
+    }
+
+    private static IEnumerable<string[]> ChunkJsonSerializableAttributes(string[] jsonSerializableAttributes)
+    {
+        for (var start = 0; start < jsonSerializableAttributes.Length; start += MaxJsonSerializableAttributesPerContext)
+        {
+            var count = Math.Min(MaxJsonSerializableAttributesPerContext, jsonSerializableAttributes.Length - start);
+            var chunk = new string[count];
+            Array.Copy(jsonSerializableAttributes, start, chunk, 0, count);
+            yield return chunk;
         }
     }
 
