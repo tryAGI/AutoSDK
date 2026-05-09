@@ -109,7 +109,10 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (openAiResponsesToolChoiceOneOf4Type0 == null && openAiResponsesToolChoiceOneOf4Type1 == null)
+            {
                 try
                 {
 

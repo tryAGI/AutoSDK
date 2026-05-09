@@ -89,6 +89,7 @@ namespace G.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CropVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CropVariant1> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CropVariant1).Name}");
                     cropVariant1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -99,9 +100,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (cropVariant1 == null && cropVariant2 == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CropVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CropVariant2> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CropVariant2).Name}");
                     cropVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

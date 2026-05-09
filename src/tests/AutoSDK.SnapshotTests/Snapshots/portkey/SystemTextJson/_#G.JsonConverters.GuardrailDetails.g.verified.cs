@@ -98,6 +98,7 @@ namespace G.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GuardrailSummary), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GuardrailSummary> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.GuardrailSummary).Name}");
                     summary = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -108,9 +109,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (summary == null && guardrailDetailsVariant2 == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GuardrailDetailsVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GuardrailDetailsVariant2> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.GuardrailDetailsVariant2).Name}");
                     guardrailDetailsVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

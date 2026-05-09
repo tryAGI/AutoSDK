@@ -95,6 +95,7 @@ namespace G.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.EmbeddingFunctionConfigurationVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.EmbeddingFunctionConfigurationVariant1> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.EmbeddingFunctionConfigurationVariant1).Name}");
                     embeddingFunctionConfigurationVariant1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -105,9 +106,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (embeddingFunctionConfigurationVariant1 == null && embeddingFunctionConfigurationVariant2 == null && embeddingFunctionConfigurationVariant3 == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AllOf<global::G.EmbeddingFunctionNewConfiguration, global::G.EmbeddingFunctionConfigurationVariant22>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AllOf<global::G.EmbeddingFunctionNewConfiguration, global::G.EmbeddingFunctionConfigurationVariant22>> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AllOf<global::G.EmbeddingFunctionNewConfiguration, global::G.EmbeddingFunctionConfigurationVariant22>).Name}");
                     embeddingFunctionConfigurationVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -118,9 +123,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (embeddingFunctionConfigurationVariant1 == null && embeddingFunctionConfigurationVariant2 == null && embeddingFunctionConfigurationVariant3 == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.EmbeddingFunctionConfigurationVariant3), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.EmbeddingFunctionConfigurationVariant3> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.EmbeddingFunctionConfigurationVariant3).Name}");
                     embeddingFunctionConfigurationVariant3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

@@ -78,6 +78,7 @@ namespace G.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.SmsDestinationVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.SmsDestinationVariant1> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.SmsDestinationVariant1).Name}");
                     smsDestinationVariant1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -88,9 +89,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (smsDestinationVariant1 == null && smsDestinationVariant2 == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.SmsDestinationVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.SmsDestinationVariant2> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.SmsDestinationVariant2).Name}");
                     smsDestinationVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

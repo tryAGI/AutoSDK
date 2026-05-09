@@ -109,7 +109,10 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (webhookConfigInsecureSslVariant1 == null && webhookConfigInsecureSslVariant2 == null)
+            {
                 try
                 {
 

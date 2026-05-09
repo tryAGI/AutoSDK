@@ -79,6 +79,7 @@ namespace G.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.SmsContentPredefined), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.SmsContentPredefined> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.SmsContentPredefined).Name}");
                     predefined = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -89,9 +90,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (predefined == null && inferred == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.SmsContentInferred), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.SmsContentInferred> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.SmsContentInferred).Name}");
                     inferred = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

@@ -109,7 +109,10 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (conversationFlow == null && createConversationFlowRequestVariant2 == null)
+            {
                 try
                 {
 

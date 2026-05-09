@@ -102,6 +102,7 @@ namespace G.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.OutputItemWebSearchCallAction0), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.OutputItemWebSearchCallAction0> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.OutputItemWebSearchCallAction0).Name}");
                     outputItemWebSearchCallAction0 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -112,9 +113,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (outputItemWebSearchCallAction0 == null && outputItemWebSearchCallAction1 == null && outputItemWebSearchCallAction2 == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.OutputItemWebSearchCallAction1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.OutputItemWebSearchCallAction1> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.OutputItemWebSearchCallAction1).Name}");
                     outputItemWebSearchCallAction1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -125,9 +130,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (outputItemWebSearchCallAction0 == null && outputItemWebSearchCallAction1 == null && outputItemWebSearchCallAction2 == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.OutputItemWebSearchCallAction2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.OutputItemWebSearchCallAction2> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.OutputItemWebSearchCallAction2).Name}");
                     outputItemWebSearchCallAction2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

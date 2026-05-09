@@ -158,6 +158,7 @@ namespace G.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.Message), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.Message> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.Message).Name}");
                     message = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -168,9 +169,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (message == null && invocation == null && result == null && nodeTransition == null && stateTransition == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ToolCallInvocationMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ToolCallInvocationMessage> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ToolCallInvocationMessage).Name}");
                     invocation = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -181,9 +186,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (message == null && invocation == null && result == null && nodeTransition == null && stateTransition == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ToolCallResultMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ToolCallResultMessage> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ToolCallResultMessage).Name}");
                     result = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -194,9 +203,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (message == null && invocation == null && result == null && nodeTransition == null && stateTransition == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.NodeTransitionMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.NodeTransitionMessage> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.NodeTransitionMessage).Name}");
                     nodeTransition = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -207,9 +220,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (message == null && invocation == null && result == null && nodeTransition == null && stateTransition == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.StateTransitionMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.StateTransitionMessage> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.StateTransitionMessage).Name}");
                     stateTransition = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

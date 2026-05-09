@@ -141,6 +141,7 @@ namespace G.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PickFilterLeafRequestResponseRmt), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PickFilterLeafRequestResponseRmt> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.PickFilterLeafRequestResponseRmt).Name}");
                     pickLeafRequestResponseRmt = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -151,9 +152,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (pickLeafRequestResponseRmt == null && branch == null && @enum == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.EvalFilterBranch), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.EvalFilterBranch> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.EvalFilterBranch).Name}");
                     branch = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -164,9 +169,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (pickLeafRequestResponseRmt == null && branch == null && @enum == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.EvalFilterNodeEnum), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.EvalFilterNodeEnum> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.EvalFilterNodeEnum).Name}");
                     @enum = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

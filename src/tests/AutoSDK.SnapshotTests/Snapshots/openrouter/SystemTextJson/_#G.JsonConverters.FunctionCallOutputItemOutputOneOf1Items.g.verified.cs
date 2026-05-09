@@ -103,6 +103,7 @@ namespace G.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.InputText), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.InputText> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.InputText).Name}");
                     inputText = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -113,9 +114,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (inputText == null && functionCallOutputItemOutputOneOf1Items1 == null && inputFile == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.FunctionCallOutputItemOutputOneOf1Items1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.FunctionCallOutputItemOutputOneOf1Items1> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.FunctionCallOutputItemOutputOneOf1Items1).Name}");
                     functionCallOutputItemOutputOneOf1Items1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -126,9 +131,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (inputText == null && functionCallOutputItemOutputOneOf1Items1 == null && inputFile == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.InputFile), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.InputFile> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.InputFile).Name}");
                     inputFile = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

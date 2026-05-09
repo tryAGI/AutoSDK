@@ -80,6 +80,7 @@ namespace G.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TransferDestinationPredefined), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TransferDestinationPredefined> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TransferDestinationPredefined).Name}");
                     predefined = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -90,9 +91,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (predefined == null && inferred == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TransferDestinationInferred), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TransferDestinationInferred> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TransferDestinationInferred).Name}");
                     inferred = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

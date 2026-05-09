@@ -154,6 +154,7 @@ namespace G.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatContentText), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatContentText> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatContentText).Name}");
                     chatContentText = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -164,9 +165,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (chatContentText == null && chatContentImage == null && chatContentAudio == null && chatContentItems3 == null && chatContentFile == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatContentImage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatContentImage> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatContentImage).Name}");
                     chatContentImage = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -177,9 +182,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (chatContentText == null && chatContentImage == null && chatContentAudio == null && chatContentItems3 == null && chatContentFile == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatContentAudio), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatContentAudio> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatContentAudio).Name}");
                     chatContentAudio = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -190,9 +199,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (chatContentText == null && chatContentImage == null && chatContentAudio == null && chatContentItems3 == null && chatContentFile == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatContentItems3), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatContentItems3> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatContentItems3).Name}");
                     chatContentItems3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -203,9 +216,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (chatContentText == null && chatContentImage == null && chatContentAudio == null && chatContentItems3 == null && chatContentFile == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatContentFile), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatContentFile> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatContentFile).Name}");
                     chatContentFile = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

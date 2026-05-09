@@ -114,6 +114,7 @@ namespace G.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.Object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.Object> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.Object).Name}");
                     objectValue = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -124,9 +125,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (objectValue == null && objectsGetResponseVariant2 == null && objectsGetResponseVariant3 == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ObjectsGetResponseVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ObjectsGetResponseVariant2> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ObjectsGetResponseVariant2).Name}");
                     objectsGetResponseVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -137,9 +142,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (objectValue == null && objectsGetResponseVariant2 == null && objectsGetResponseVariant3 == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ObjectsGetResponseVariant3), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ObjectsGetResponseVariant3> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ObjectsGetResponseVariant3).Name}");
                     objectsGetResponseVariant3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

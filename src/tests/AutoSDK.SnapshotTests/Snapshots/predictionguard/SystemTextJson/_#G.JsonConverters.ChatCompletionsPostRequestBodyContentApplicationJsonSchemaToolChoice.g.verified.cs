@@ -77,6 +77,7 @@ namespace G.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
                     chatCompletionsPostRequestBodyContentApplicationJsonSchemaToolChoiceVariant1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -87,9 +88,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (chatCompletionsPostRequestBodyContentApplicationJsonSchemaToolChoiceVariant1 == null && chatCompletionsPostRequestBodyContentApplicationJsonSchemaToolChoice1 == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatCompletionsPostRequestBodyContentApplicationJsonSchemaToolChoice1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatCompletionsPostRequestBodyContentApplicationJsonSchemaToolChoice1> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatCompletionsPostRequestBodyContentApplicationJsonSchemaToolChoice1).Name}");
                     chatCompletionsPostRequestBodyContentApplicationJsonSchemaToolChoice1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

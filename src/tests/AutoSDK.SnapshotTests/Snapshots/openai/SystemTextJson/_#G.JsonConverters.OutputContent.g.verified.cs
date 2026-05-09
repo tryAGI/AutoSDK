@@ -81,6 +81,7 @@ namespace G.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.OutputTextContent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.OutputTextContent> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.OutputTextContent).Name}");
                     outputText = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -91,9 +92,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (outputText == null && refusal == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RefusalContent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RefusalContent> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RefusalContent).Name}");
                     refusal = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

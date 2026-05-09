@@ -117,6 +117,7 @@ namespace G.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AgentPresenterPhotoAvatar), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AgentPresenterPhotoAvatar> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AgentPresenterPhotoAvatar).Name}");
                     photoAvatar = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -127,9 +128,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (photoAvatar == null && videoAvatar == null && expressiveAvatar == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AgentPresenterVideoAvatar), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AgentPresenterVideoAvatar> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AgentPresenterVideoAvatar).Name}");
                     videoAvatar = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -140,9 +145,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (photoAvatar == null && videoAvatar == null && expressiveAvatar == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AgentPresenterExpressiveAvatar), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AgentPresenterExpressiveAvatar> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AgentPresenterExpressiveAvatar).Name}");
                     expressiveAvatar = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

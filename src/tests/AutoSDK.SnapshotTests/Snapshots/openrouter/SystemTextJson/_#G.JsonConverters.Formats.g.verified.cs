@@ -100,6 +100,7 @@ namespace G.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.FormatTextConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.FormatTextConfig> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.FormatTextConfig).Name}");
                     formatTextConfig = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -110,9 +111,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (formatTextConfig == null && formatJsonObjectConfig == null && formatJsonSchemaConfig == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.FormatJsonObjectConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.FormatJsonObjectConfig> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.FormatJsonObjectConfig).Name}");
                     formatJsonObjectConfig = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -123,9 +128,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (formatTextConfig == null && formatJsonObjectConfig == null && formatJsonSchemaConfig == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.FormatJsonSchemaConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.FormatJsonSchemaConfig> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.FormatJsonSchemaConfig).Name}");
                     formatJsonSchemaConfig = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

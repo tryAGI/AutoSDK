@@ -109,7 +109,10 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (providerName == null && chatRequestProviderIgnoreItemsVariant2 == null)
+            {
                 try
                 {
 

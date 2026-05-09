@@ -148,6 +148,7 @@ namespace G.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResponseEasyInputMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResponseEasyInputMessage> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResponseEasyInputMessage).Name}");
                     easyInputMessage = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -158,9 +159,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (easyInputMessage == null && message == null && itemReference == null && functionCall == null && functionCallOutput == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResponseInputMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResponseInputMessage> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResponseInputMessage).Name}");
                     message = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -171,9 +176,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (easyInputMessage == null && message == null && itemReference == null && functionCall == null && functionCallOutput == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResponseItemReference), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResponseItemReference> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResponseItemReference).Name}");
                     itemReference = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -184,9 +193,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (easyInputMessage == null && message == null && itemReference == null && functionCall == null && functionCallOutput == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResponseFunctionCall), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResponseFunctionCall> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResponseFunctionCall).Name}");
                     functionCall = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -197,9 +210,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (easyInputMessage == null && message == null && itemReference == null && functionCall == null && functionCallOutput == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResponseFunctionCallOutput), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResponseFunctionCallOutput> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResponseFunctionCallOutput).Name}");
                     functionCallOutput = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

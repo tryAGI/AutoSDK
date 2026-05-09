@@ -114,6 +114,7 @@ namespace G.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MessagesRequestContextManagementEditsItems0), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MessagesRequestContextManagementEditsItems0> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.MessagesRequestContextManagementEditsItems0).Name}");
                     messagesRequestContextManagementEditsItems0 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -124,9 +125,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (messagesRequestContextManagementEditsItems0 == null && messagesRequestContextManagementEditsItems1 == null && messagesRequestContextManagementEditsItems2 == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MessagesRequestContextManagementEditsItems1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MessagesRequestContextManagementEditsItems1> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.MessagesRequestContextManagementEditsItems1).Name}");
                     messagesRequestContextManagementEditsItems1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -137,9 +142,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (messagesRequestContextManagementEditsItems0 == null && messagesRequestContextManagementEditsItems1 == null && messagesRequestContextManagementEditsItems2 == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MessagesRequestContextManagementEditsItems2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MessagesRequestContextManagementEditsItems2> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.MessagesRequestContextManagementEditsItems2).Name}");
                     messagesRequestContextManagementEditsItems2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

@@ -128,16 +128,16 @@ public static partial class Sources
 ").Inject().TrimEnd(',')}
             }}
 
-            if ({string.Join(" && ", anyOfData.Properties.Select(x => $"{x.ParameterName} == null"))})
-            {{
 {anyOfData.Properties.Select(x => $@"
+            if ({string.Join(" && ", anyOfData.Properties.Select(y => $"{y.ParameterName} == null"))})
+            {{
                 try
                 {{
-{(anyOfData.IsTrimming ? $@" 
+{(anyOfData.IsTrimming ? $@"
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof({x.Type.CSharpTypeWithoutNullability}), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<{x.Type.CSharpTypeWithoutNullability}> ??
                                    throw new global::System.InvalidOperationException($""Cannot get type info for {{typeof({x.Type.CSharpTypeWithoutNullability}).Name}}"");
                     {x.ParameterName} = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
- " : $@" 
+ " : $@"
                     {x.ParameterName} = global::System.Text.Json.JsonSerializer.Deserialize<{x.Type.CSharpTypeWithoutNullability}>(__rawJson, options);
  ")}
                 }}
@@ -147,8 +147,8 @@ public static partial class Sources
                 catch (global::System.InvalidOperationException)
                 {{
                 }}
-").Inject()}
             }}
+").Inject()}
 
             var __value = new {typeNameWithTypes}(
 {anyOfData.Properties.Select(x => $@"
@@ -219,9 +219,9 @@ public static partial class Sources
 ").Inject().TrimEnd(',')}
             }}
 
-            if ({string.Join(" && ", anyOfData.Properties.Select(x => $"{x.ParameterName} == null"))})
-            {{
 {anyOfData.Properties.Select(x => $@"
+            if ({string.Join(" && ", anyOfData.Properties.Select(y => $"{y.ParameterName} == null"))})
+            {{
                 try
                 {{
 {(anyOfData.IsTrimming ? $@"
@@ -238,8 +238,8 @@ public static partial class Sources
                 catch (global::System.InvalidOperationException)
                 {{
                 }}
-").Inject()}
             }}
+").Inject()}
 
             var __value = new {typeNameWithTypes}(
 {anyOfData.Properties.Select(x => $@"

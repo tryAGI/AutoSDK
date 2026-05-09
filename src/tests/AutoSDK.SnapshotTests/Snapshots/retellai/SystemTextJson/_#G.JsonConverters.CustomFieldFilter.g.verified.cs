@@ -76,6 +76,7 @@ namespace G.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ValueFilter), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ValueFilter> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ValueFilter).Name}");
                     value = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -86,9 +87,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (value == null && customFieldFilterVariant2 == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CustomFieldFilterVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CustomFieldFilterVariant2> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CustomFieldFilterVariant2).Name}");
                     customFieldFilterVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

@@ -139,7 +139,10 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (guid == null && idVariant2 == null && idVariant3 == null)
+            {
                 try
                 {
 
@@ -153,7 +156,10 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (guid == null && idVariant2 == null && idVariant3 == null)
+            {
                 try
                 {
 

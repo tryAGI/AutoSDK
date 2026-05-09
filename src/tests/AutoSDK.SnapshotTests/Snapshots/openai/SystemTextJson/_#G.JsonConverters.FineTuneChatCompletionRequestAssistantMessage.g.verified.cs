@@ -93,6 +93,7 @@ namespace G.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.FineTuneChatCompletionRequestAssistantMessageAssistantMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.FineTuneChatCompletionRequestAssistantMessageAssistantMessage> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.FineTuneChatCompletionRequestAssistantMessageAssistantMessage).Name}");
                     assistantMessage1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -103,9 +104,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (assistantMessage1 == null && assistantMessage2 == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatCompletionRequestAssistantMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatCompletionRequestAssistantMessage> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatCompletionRequestAssistantMessage).Name}");
                     assistantMessage2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

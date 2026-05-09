@@ -109,7 +109,10 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (shardSnapshotLocationVariant1 == null && shardSnapshotLocationVariant2 == null)
+            {
                 try
                 {
 

@@ -99,6 +99,7 @@ namespace G.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatCompletionRequestMessageContentPartText), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatCompletionRequestMessageContentPartText> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatCompletionRequestMessageContentPartText).Name}");
                     textContentPart = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -109,9 +110,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (textContentPart == null && thinkingContentPart == null && redactedThinkingContentPart == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatCompletionMessageContentPartThinking), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatCompletionMessageContentPartThinking> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatCompletionMessageContentPartThinking).Name}");
                     thinkingContentPart = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -122,9 +127,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (textContentPart == null && thinkingContentPart == null && redactedThinkingContentPart == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatCompletionMessageContentPartRedactedThinking), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatCompletionMessageContentPartRedactedThinking> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatCompletionMessageContentPartRedactedThinking).Name}");
                     redactedThinkingContentPart = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

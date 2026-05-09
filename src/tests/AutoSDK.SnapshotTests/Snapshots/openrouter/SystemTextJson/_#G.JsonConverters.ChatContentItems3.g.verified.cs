@@ -88,6 +88,7 @@ namespace G.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.LegacyChatContentVideo), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.LegacyChatContentVideo> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.LegacyChatContentVideo).Name}");
                     legacyChatContentVideo = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -98,9 +99,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (legacyChatContentVideo == null && chatContentVideo == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatContentVideo), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatContentVideo> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatContentVideo).Name}");
                     chatContentVideo = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

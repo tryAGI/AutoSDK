@@ -169,7 +169,10 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (scoreVariant1 == null && scoreVariant2 == null && scoreVariant3 == null && scoreVariant4 == null)
+            {
                 try
                 {
 
@@ -183,7 +186,10 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (scoreVariant1 == null && scoreVariant2 == null && scoreVariant3 == null && scoreVariant4 == null)
+            {
                 try
                 {
 
@@ -197,7 +203,10 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (scoreVariant1 == null && scoreVariant2 == null && scoreVariant3 == null && scoreVariant4 == null)
+            {
                 try
                 {
 

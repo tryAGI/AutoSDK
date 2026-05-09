@@ -106,6 +106,7 @@ namespace G.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.UpdateAuthSecretRequestDtoBasicAuthentication), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.UpdateAuthSecretRequestDtoBasicAuthentication> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.UpdateAuthSecretRequestDtoBasicAuthentication).Name}");
                     basicAuthentication = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -116,9 +117,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (basicAuthentication == null && bearerToken == null && apiKey == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.UpdateAuthSecretRequestDtoBearerToken), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.UpdateAuthSecretRequestDtoBearerToken> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.UpdateAuthSecretRequestDtoBearerToken).Name}");
                     bearerToken = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -129,9 +134,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (basicAuthentication == null && bearerToken == null && apiKey == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.UpdateAuthSecretRequestDtoApiKey), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.UpdateAuthSecretRequestDtoApiKey> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.UpdateAuthSecretRequestDtoApiKey).Name}");
                     apiKey = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

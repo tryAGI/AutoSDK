@@ -62,6 +62,7 @@ namespace G.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ModelResponseProperties), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ModelResponseProperties> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ModelResponseProperties).Name}");
                     modelResponseProperties = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

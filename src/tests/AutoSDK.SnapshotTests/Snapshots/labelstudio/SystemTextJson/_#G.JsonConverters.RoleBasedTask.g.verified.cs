@@ -205,6 +205,7 @@ namespace G.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.LseTask), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.LseTask> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.LseTask).Name}");
                     lse = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -215,9 +216,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (lse == null && lseSerializerForReviewers == null && lseSerializerForAnnotators == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.LseTaskSerializerForReviewers), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.LseTaskSerializerForReviewers> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.LseTaskSerializerForReviewers).Name}");
                     lseSerializerForReviewers = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -228,9 +233,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (lse == null && lseSerializerForReviewers == null && lseSerializerForAnnotators == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.LseTaskSerializerForAnnotators), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.LseTaskSerializerForAnnotators> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.LseTaskSerializerForAnnotators).Name}");
                     lseSerializerForAnnotators = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

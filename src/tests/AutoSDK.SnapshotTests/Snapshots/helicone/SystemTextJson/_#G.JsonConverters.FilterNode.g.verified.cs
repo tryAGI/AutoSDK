@@ -306,6 +306,7 @@ namespace G.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PartialTablesAndViews), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PartialTablesAndViews> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.PartialTablesAndViews).Name}");
                     partialTablesAndViews = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -316,9 +317,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (partialTablesAndViews == null && branch == null && @enum == null && enum2 == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.FilterBranch), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.FilterBranch> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.FilterBranch).Name}");
                     branch = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -329,9 +334,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (partialTablesAndViews == null && branch == null && @enum == null && enum2 == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
                     @enum = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -342,9 +351,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (partialTablesAndViews == null && branch == null && @enum == null && enum2 == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.FilterNodeEnum2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.FilterNodeEnum2> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.FilterNodeEnum2).Name}");
                     enum2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

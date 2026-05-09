@@ -77,6 +77,7 @@ namespace G.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::System.Collections.Generic.IList<global::G.MessagesMessageParamContentOneOf1ItemsOneOf8ContentOneOf0Items>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::System.Collections.Generic.IList<global::G.MessagesMessageParamContentOneOf1ItemsOneOf8ContentOneOf0Items>> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::System.Collections.Generic.IList<global::G.MessagesMessageParamContentOneOf1ItemsOneOf8ContentOneOf0Items>).Name}");
                     messagesMessageParamContentOneOf1ItemsOneOf8Content0 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -87,9 +88,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (messagesMessageParamContentOneOf1ItemsOneOf8Content0 == null && messagesMessageParamContentOneOf1ItemsOneOf8Content1 == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MessagesMessageParamContentOneOf1ItemsOneOf8Content1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MessagesMessageParamContentOneOf1ItemsOneOf8Content1> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.MessagesMessageParamContentOneOf1ItemsOneOf8Content1).Name}");
                     messagesMessageParamContentOneOf1ItemsOneOf8Content1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

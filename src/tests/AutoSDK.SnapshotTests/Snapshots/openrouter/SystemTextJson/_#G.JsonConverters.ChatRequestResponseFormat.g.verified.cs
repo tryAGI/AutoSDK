@@ -147,6 +147,7 @@ namespace G.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatFormatTextConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatFormatTextConfig> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatFormatTextConfig).Name}");
                     chatFormatTextConfig = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -157,9 +158,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (chatFormatTextConfig == null && formatJsonObjectConfig == null && chatFormatJsonSchemaConfig == null && chatFormatGrammarConfig == null && chatFormatPythonConfig == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.FormatJsonObjectConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.FormatJsonObjectConfig> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.FormatJsonObjectConfig).Name}");
                     formatJsonObjectConfig = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -170,9 +175,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (chatFormatTextConfig == null && formatJsonObjectConfig == null && chatFormatJsonSchemaConfig == null && chatFormatGrammarConfig == null && chatFormatPythonConfig == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatFormatJsonSchemaConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatFormatJsonSchemaConfig> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatFormatJsonSchemaConfig).Name}");
                     chatFormatJsonSchemaConfig = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -183,9 +192,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (chatFormatTextConfig == null && formatJsonObjectConfig == null && chatFormatJsonSchemaConfig == null && chatFormatGrammarConfig == null && chatFormatPythonConfig == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatFormatGrammarConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatFormatGrammarConfig> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatFormatGrammarConfig).Name}");
                     chatFormatGrammarConfig = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -196,9 +209,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (chatFormatTextConfig == null && formatJsonObjectConfig == null && chatFormatJsonSchemaConfig == null && chatFormatGrammarConfig == null && chatFormatPythonConfig == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatFormatPythonConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatFormatPythonConfig> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatFormatPythonConfig).Name}");
                     chatFormatPythonConfig = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

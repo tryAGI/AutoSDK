@@ -81,6 +81,7 @@ namespace G.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResponseOutputText), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResponseOutputText> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResponseOutputText).Name}");
                     responseOutputText = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -91,9 +92,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (responseOutputText == null && openAIResponsesRefusalContent == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.OpenAIResponsesRefusalContent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.OpenAIResponsesRefusalContent> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.OpenAIResponsesRefusalContent).Name}");
                     openAIResponsesRefusalContent = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

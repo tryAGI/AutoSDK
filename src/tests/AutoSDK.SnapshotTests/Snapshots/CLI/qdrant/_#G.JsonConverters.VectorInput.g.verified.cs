@@ -176,6 +176,7 @@ namespace G.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::System.Collections.Generic.IList<float>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::System.Collections.Generic.IList<float>> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::System.Collections.Generic.IList<float>).Name}");
                     vectorInputVariant1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -186,9 +187,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (vectorInputVariant1 == null && sparse == null && vectorInputVariant3 == null && extendedPointId == null && document == null && image == null && inferenceObject == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.SparseVector), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.SparseVector> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.SparseVector).Name}");
                     sparse = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -199,9 +204,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (vectorInputVariant1 == null && sparse == null && vectorInputVariant3 == null && extendedPointId == null && document == null && image == null && inferenceObject == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>).Name}");
                     vectorInputVariant3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -212,9 +221,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (vectorInputVariant1 == null && sparse == null && vectorInputVariant3 == null && extendedPointId == null && document == null && image == null && inferenceObject == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ExtendedPointId), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ExtendedPointId> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ExtendedPointId).Name}");
                     extendedPointId = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -225,9 +238,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (vectorInputVariant1 == null && sparse == null && vectorInputVariant3 == null && extendedPointId == null && document == null && image == null && inferenceObject == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.Document), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.Document> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.Document).Name}");
                     document = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -238,9 +255,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (vectorInputVariant1 == null && sparse == null && vectorInputVariant3 == null && extendedPointId == null && document == null && image == null && inferenceObject == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.Image), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.Image> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.Image).Name}");
                     image = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -251,9 +272,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (vectorInputVariant1 == null && sparse == null && vectorInputVariant3 == null && extendedPointId == null && document == null && image == null && inferenceObject == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.InferenceObject), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.InferenceObject> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.InferenceObject).Name}");
                     inferenceObject = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

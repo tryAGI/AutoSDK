@@ -79,6 +79,7 @@ namespace G.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.NodeInstructionPrompt), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.NodeInstructionPrompt> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.NodeInstructionPrompt).Name}");
                     prompt = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -89,9 +90,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (prompt == null && staticText == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.NodeInstructionStaticText), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.NodeInstructionStaticText> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.NodeInstructionStaticText).Name}");
                     staticText = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

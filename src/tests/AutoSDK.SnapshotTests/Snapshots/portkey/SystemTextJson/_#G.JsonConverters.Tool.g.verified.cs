@@ -137,6 +137,7 @@ namespace G.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.FileSearchTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.FileSearchTool> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.FileSearchTool).Name}");
                     fileSearch = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -147,9 +148,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (fileSearch == null && function == null && computerUse == null && webSearch == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.FunctionTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.FunctionTool> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.FunctionTool).Name}");
                     function = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -160,9 +165,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (fileSearch == null && function == null && computerUse == null && webSearch == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ComputerTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ComputerTool> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ComputerTool).Name}");
                     computerUse = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -173,9 +182,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (fileSearch == null && function == null && computerUse == null && webSearch == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.WebSearchTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.WebSearchTool> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.WebSearchTool).Name}");
                     webSearch = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

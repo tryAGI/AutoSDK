@@ -109,7 +109,10 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (fileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant1 == null && fileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant2 == null)
+            {
                 try
                 {
 

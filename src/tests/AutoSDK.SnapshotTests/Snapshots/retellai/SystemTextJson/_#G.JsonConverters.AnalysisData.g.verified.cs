@@ -129,6 +129,7 @@ namespace G.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.StringAnalysisData), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.StringAnalysisData> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.StringAnalysisData).Name}");
                     @string = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -139,9 +140,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (@string == null && @enum == null && boolean == null && number == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.EnumAnalysisData), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.EnumAnalysisData> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.EnumAnalysisData).Name}");
                     @enum = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -152,9 +157,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (@string == null && @enum == null && boolean == null && number == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BooleanAnalysisData), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BooleanAnalysisData> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.BooleanAnalysisData).Name}");
                     boolean = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -165,9 +174,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (@string == null && @enum == null && boolean == null && number == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.NumberAnalysisData), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.NumberAnalysisData> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.NumberAnalysisData).Name}");
                     number = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

@@ -109,7 +109,10 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (providerName == null && providerPreferencesOnlyItemsVariant2 == null)
+            {
                 try
                 {
 

@@ -194,6 +194,7 @@ namespace G.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.FieldCondition), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.FieldCondition> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.FieldCondition).Name}");
                     field = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -204,9 +205,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (field == null && isEmpty == null && isNull == null && hasId == null && hasVector == null && nested == null && filter == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.IsEmptyCondition), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.IsEmptyCondition> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.IsEmptyCondition).Name}");
                     isEmpty = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -217,9 +222,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (field == null && isEmpty == null && isNull == null && hasId == null && hasVector == null && nested == null && filter == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.IsNullCondition), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.IsNullCondition> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.IsNullCondition).Name}");
                     isNull = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -230,9 +239,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (field == null && isEmpty == null && isNull == null && hasId == null && hasVector == null && nested == null && filter == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.HasIdCondition), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.HasIdCondition> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.HasIdCondition).Name}");
                     hasId = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -243,9 +256,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (field == null && isEmpty == null && isNull == null && hasId == null && hasVector == null && nested == null && filter == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.HasVectorCondition), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.HasVectorCondition> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.HasVectorCondition).Name}");
                     hasVector = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -256,9 +273,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (field == null && isEmpty == null && isNull == null && hasId == null && hasVector == null && nested == null && filter == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.NestedCondition), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.NestedCondition> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.NestedCondition).Name}");
                     nested = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -269,9 +290,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (field == null && isEmpty == null && isNull == null && hasId == null && hasVector == null && nested == null && filter == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.Filter), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.Filter> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.Filter).Name}");
                     filter = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

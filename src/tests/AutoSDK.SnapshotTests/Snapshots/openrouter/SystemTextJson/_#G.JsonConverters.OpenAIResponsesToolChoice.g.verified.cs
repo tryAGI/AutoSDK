@@ -132,6 +132,7 @@ namespace G.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.OpenAiResponsesToolChoice0), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.OpenAiResponsesToolChoice0> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.OpenAiResponsesToolChoice0).Name}");
                     openAiResponsesToolChoice0 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -142,9 +143,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (openAiResponsesToolChoice0 == null && openAiResponsesToolChoice1 == null && openAiResponsesToolChoice2 == null && openAiResponsesToolChoice3 == null && openAiResponsesToolChoice4 == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.OpenAiResponsesToolChoice1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.OpenAiResponsesToolChoice1> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.OpenAiResponsesToolChoice1).Name}");
                     openAiResponsesToolChoice1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -155,9 +160,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (openAiResponsesToolChoice0 == null && openAiResponsesToolChoice1 == null && openAiResponsesToolChoice2 == null && openAiResponsesToolChoice3 == null && openAiResponsesToolChoice4 == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.OpenAiResponsesToolChoice2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.OpenAiResponsesToolChoice2> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.OpenAiResponsesToolChoice2).Name}");
                     openAiResponsesToolChoice2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -168,9 +177,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (openAiResponsesToolChoice0 == null && openAiResponsesToolChoice1 == null && openAiResponsesToolChoice2 == null && openAiResponsesToolChoice3 == null && openAiResponsesToolChoice4 == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.OpenAiResponsesToolChoice3), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.OpenAiResponsesToolChoice3> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.OpenAiResponsesToolChoice3).Name}");
                     openAiResponsesToolChoice3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -181,9 +194,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (openAiResponsesToolChoice0 == null && openAiResponsesToolChoice1 == null && openAiResponsesToolChoice2 == null && openAiResponsesToolChoice3 == null && openAiResponsesToolChoice4 == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.OpenAiResponsesToolChoice4), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.OpenAiResponsesToolChoice4> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.OpenAiResponsesToolChoice4).Name}");
                     openAiResponsesToolChoice4 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

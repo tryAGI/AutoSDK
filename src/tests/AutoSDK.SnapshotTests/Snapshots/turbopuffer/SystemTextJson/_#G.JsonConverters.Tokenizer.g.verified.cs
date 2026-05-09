@@ -199,7 +199,10 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (tokenizerVariant1 == null && tokenizerVariant2 == null && tokenizerVariant3 == null && tokenizerVariant4 == null && tokenizerVariant5 == null)
+            {
                 try
                 {
 
@@ -213,7 +216,10 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (tokenizerVariant1 == null && tokenizerVariant2 == null && tokenizerVariant3 == null && tokenizerVariant4 == null && tokenizerVariant5 == null)
+            {
                 try
                 {
 
@@ -227,7 +233,10 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (tokenizerVariant1 == null && tokenizerVariant2 == null && tokenizerVariant3 == null && tokenizerVariant4 == null && tokenizerVariant5 == null)
+            {
                 try
                 {
 
@@ -241,7 +250,10 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (tokenizerVariant1 == null && tokenizerVariant2 == null && tokenizerVariant3 == null && tokenizerVariant4 == null && tokenizerVariant5 == null)
+            {
                 try
                 {
 

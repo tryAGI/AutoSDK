@@ -79,6 +79,7 @@ namespace G.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RawWhereFields), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RawWhereFields> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RawWhereFields).Name}");
                     rawWhereFields = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -89,9 +90,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (rawWhereFields == null && deleteCollectionRecordsPayloadVariant2 == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.DeleteCollectionRecordsPayloadVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.DeleteCollectionRecordsPayloadVariant2> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.DeleteCollectionRecordsPayloadVariant2).Name}");
                     deleteCollectionRecordsPayloadVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

@@ -98,6 +98,7 @@ namespace G.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BaseMessagesResultContentItemsOneOf4Caller0), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BaseMessagesResultContentItemsOneOf4Caller0> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.BaseMessagesResultContentItemsOneOf4Caller0).Name}");
                     baseMessagesResultContentItemsOneOf4Caller0 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -108,9 +109,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (baseMessagesResultContentItemsOneOf4Caller0 == null && baseMessagesResultContentItemsOneOf4Caller1 == null && baseMessagesResultContentItemsOneOf4Caller2 == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BaseMessagesResultContentItemsOneOf4Caller1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BaseMessagesResultContentItemsOneOf4Caller1> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.BaseMessagesResultContentItemsOneOf4Caller1).Name}");
                     baseMessagesResultContentItemsOneOf4Caller1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -121,9 +126,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (baseMessagesResultContentItemsOneOf4Caller0 == null && baseMessagesResultContentItemsOneOf4Caller1 == null && baseMessagesResultContentItemsOneOf4Caller2 == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BaseMessagesResultContentItemsOneOf4Caller2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BaseMessagesResultContentItemsOneOf4Caller2> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.BaseMessagesResultContentItemsOneOf4Caller2).Name}");
                     baseMessagesResultContentItemsOneOf4Caller2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

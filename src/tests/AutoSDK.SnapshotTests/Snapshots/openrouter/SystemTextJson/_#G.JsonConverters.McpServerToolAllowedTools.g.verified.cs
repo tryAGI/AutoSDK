@@ -113,6 +113,7 @@ namespace G.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::System.Collections.Generic.IList<string>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::System.Collections.Generic.IList<string>> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::System.Collections.Generic.IList<string>).Name}");
                     mcpServerToolAllowedToolsVariant1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -123,9 +124,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (mcpServerToolAllowedToolsVariant1 == null && mcpServerToolAllowedTools1 == null && mcpServerToolAllowedToolsVariant3 == null && mcpServerToolAllowedToolsVariant4 == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.McpServerToolAllowedTools1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.McpServerToolAllowedTools1> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.McpServerToolAllowedTools1).Name}");
                     mcpServerToolAllowedTools1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -136,9 +141,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (mcpServerToolAllowedToolsVariant1 == null && mcpServerToolAllowedTools1 == null && mcpServerToolAllowedToolsVariant3 == null && mcpServerToolAllowedToolsVariant4 == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
                     mcpServerToolAllowedToolsVariant3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -149,9 +158,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (mcpServerToolAllowedToolsVariant1 == null && mcpServerToolAllowedTools1 == null && mcpServerToolAllowedToolsVariant3 == null && mcpServerToolAllowedToolsVariant4 == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
                     mcpServerToolAllowedToolsVariant4 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

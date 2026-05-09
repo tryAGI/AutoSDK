@@ -113,6 +113,7 @@ namespace G.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatCompletionContentPartTextWithTitle), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatCompletionContentPartTextWithTitle> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatCompletionContentPartTextWithTitle).Name}");
                     text = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -123,9 +124,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (text == null && imageUrl == null && file == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatCompletionContentPartImageWithTitle), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatCompletionContentPartImageWithTitle> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatCompletionContentPartImageWithTitle).Name}");
                     imageUrl = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -136,9 +141,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (text == null && imageUrl == null && file == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatCompletionContentPartFileWithTitle), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatCompletionContentPartFileWithTitle> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatCompletionContentPartFileWithTitle).Name}");
                     file = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

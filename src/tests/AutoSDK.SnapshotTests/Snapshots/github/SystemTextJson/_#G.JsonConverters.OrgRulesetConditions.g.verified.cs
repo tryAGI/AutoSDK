@@ -139,7 +139,10 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (repositoryNameAndRefName == null && repositoryIdAndRefName == null && repositoryPropertyAndRefName == null)
+            {
                 try
                 {
 
@@ -153,7 +156,10 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (repositoryNameAndRefName == null && repositoryIdAndRefName == null && repositoryPropertyAndRefName == null)
+            {
                 try
                 {
 

@@ -109,7 +109,10 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (aISecretTypeVariant1 == null && aISecretTypeVariant2 == null)
+            {
                 try
                 {
 

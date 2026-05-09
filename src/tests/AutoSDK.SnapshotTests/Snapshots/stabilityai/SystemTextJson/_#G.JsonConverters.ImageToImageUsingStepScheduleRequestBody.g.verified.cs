@@ -86,6 +86,7 @@ namespace G.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ImageToImageUsingStepScheduleRequestBodyVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ImageToImageUsingStepScheduleRequestBodyVariant1> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ImageToImageUsingStepScheduleRequestBodyVariant1).Name}");
                     imageToImageUsingStepScheduleRequestBodyVariant1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -96,9 +97,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (imageToImageUsingStepScheduleRequestBodyVariant1 == null && generationOptionalParams == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GenerationRequestOptionalParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GenerationRequestOptionalParams> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.GenerationRequestOptionalParams).Name}");
                     generationOptionalParams = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

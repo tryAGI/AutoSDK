@@ -99,6 +99,7 @@ namespace G.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.NullableSavedFunctionIdFunction), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.NullableSavedFunctionIdFunction> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.NullableSavedFunctionIdFunction).Name}");
                     function = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -109,9 +110,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (function == null && global == null && nullableSavedFunctionIdVariant3 == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.NullableSavedFunctionIdGlobal), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.NullableSavedFunctionIdGlobal> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.NullableSavedFunctionIdGlobal).Name}");
                     global = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -122,9 +127,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (function == null && global == null && nullableSavedFunctionIdVariant3 == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
                     nullableSavedFunctionIdVariant3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

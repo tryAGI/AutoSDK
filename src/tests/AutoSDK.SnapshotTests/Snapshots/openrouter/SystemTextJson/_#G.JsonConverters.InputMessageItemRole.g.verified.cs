@@ -139,7 +139,10 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (inputMessageItemRole0 == null && inputMessageItemRole1 == null && inputMessageItemRole2 == null)
+            {
                 try
                 {
 
@@ -153,7 +156,10 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (inputMessageItemRole0 == null && inputMessageItemRole1 == null && inputMessageItemRole2 == null)
+            {
                 try
                 {
 

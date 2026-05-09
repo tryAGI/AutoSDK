@@ -109,7 +109,10 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (responsesRequestImageConfigVariant1 == null && responsesRequestImageConfigVariant2 == null)
+            {
                 try
                 {
 

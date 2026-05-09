@@ -139,7 +139,10 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (jsonListStringExperimentItemBulkWriteViewVariant1 == null && jsonListStringExperimentItemBulkWriteViewVariant2 == null && jsonListStringExperimentItemBulkWriteViewVariant3 == null)
+            {
                 try
                 {
 
@@ -153,7 +156,10 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (jsonListStringExperimentItemBulkWriteViewVariant1 == null && jsonListStringExperimentItemBulkWriteViewVariant2 == null && jsonListStringExperimentItemBulkWriteViewVariant3 == null)
+            {
                 try
                 {
 

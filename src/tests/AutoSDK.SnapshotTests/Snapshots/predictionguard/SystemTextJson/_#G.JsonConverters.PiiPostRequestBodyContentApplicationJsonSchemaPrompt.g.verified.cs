@@ -109,7 +109,10 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (piiPostRequestBodyContentApplicationJsonSchemaPromptVariant1 == null && piiPostRequestBodyContentApplicationJsonSchemaPromptVariant2 == null)
+            {
                 try
                 {
 

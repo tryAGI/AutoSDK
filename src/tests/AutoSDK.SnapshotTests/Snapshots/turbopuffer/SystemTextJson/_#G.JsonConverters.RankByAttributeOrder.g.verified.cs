@@ -109,7 +109,10 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (rankByAttributeOrderVariant1 == null && rankByAttributeOrderVariant2 == null)
+            {
                 try
                 {
 

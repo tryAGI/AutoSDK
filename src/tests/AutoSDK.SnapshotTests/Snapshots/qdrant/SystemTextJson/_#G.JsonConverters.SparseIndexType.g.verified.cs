@@ -139,7 +139,10 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (sparseIndexTypeVariant1 == null && sparseIndexTypeVariant2 == null && sparseIndexTypeVariant3 == null)
+            {
                 try
                 {
 
@@ -153,7 +156,10 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (sparseIndexTypeVariant1 == null && sparseIndexTypeVariant2 == null && sparseIndexTypeVariant3 == null)
+            {
                 try
                 {
 

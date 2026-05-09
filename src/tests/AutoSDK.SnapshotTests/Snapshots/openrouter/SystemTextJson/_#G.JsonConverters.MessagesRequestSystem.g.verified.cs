@@ -109,7 +109,10 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (messagesRequestSystemVariant1 == null && messagesRequestSystem1 == null)
+            {
                 try
                 {
 

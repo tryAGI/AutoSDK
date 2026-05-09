@@ -102,6 +102,7 @@ namespace G.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.FinetuneExampleUtteranceVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.FinetuneExampleUtteranceVariant1> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.FinetuneExampleUtteranceVariant1).Name}");
                     finetuneExampleUtteranceVariant1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -112,9 +113,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (finetuneExampleUtteranceVariant1 == null && finetuneExampleUtteranceVariant2 == null && finetuneExampleUtteranceVariant3 == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.FinetuneExampleUtteranceVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.FinetuneExampleUtteranceVariant2> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.FinetuneExampleUtteranceVariant2).Name}");
                     finetuneExampleUtteranceVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -125,9 +130,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (finetuneExampleUtteranceVariant1 == null && finetuneExampleUtteranceVariant2 == null && finetuneExampleUtteranceVariant3 == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.FinetuneExampleUtteranceVariant3), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.FinetuneExampleUtteranceVariant3> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.FinetuneExampleUtteranceVariant3).Name}");
                     finetuneExampleUtteranceVariant3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

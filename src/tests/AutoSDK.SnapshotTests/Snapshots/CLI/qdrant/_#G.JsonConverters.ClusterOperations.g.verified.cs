@@ -265,6 +265,7 @@ namespace G.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MoveShardOperation), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MoveShardOperation> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.MoveShardOperation).Name}");
                     moveShardOperation = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -275,9 +276,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (moveShardOperation == null && replicateShardOperation == null && abortTransferOperation == null && dropReplicaOperation == null && createShardingKeyOperation == null && dropShardingKeyOperation == null && restartTransferOperation == null && startReshardingOperation == null && abortReshardingOperation == null && replicatePointsOperation == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ReplicateShardOperation), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ReplicateShardOperation> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ReplicateShardOperation).Name}");
                     replicateShardOperation = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -288,9 +293,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (moveShardOperation == null && replicateShardOperation == null && abortTransferOperation == null && dropReplicaOperation == null && createShardingKeyOperation == null && dropShardingKeyOperation == null && restartTransferOperation == null && startReshardingOperation == null && abortReshardingOperation == null && replicatePointsOperation == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AbortTransferOperation), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AbortTransferOperation> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AbortTransferOperation).Name}");
                     abortTransferOperation = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -301,9 +310,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (moveShardOperation == null && replicateShardOperation == null && abortTransferOperation == null && dropReplicaOperation == null && createShardingKeyOperation == null && dropShardingKeyOperation == null && restartTransferOperation == null && startReshardingOperation == null && abortReshardingOperation == null && replicatePointsOperation == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.DropReplicaOperation), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.DropReplicaOperation> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.DropReplicaOperation).Name}");
                     dropReplicaOperation = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -314,9 +327,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (moveShardOperation == null && replicateShardOperation == null && abortTransferOperation == null && dropReplicaOperation == null && createShardingKeyOperation == null && dropShardingKeyOperation == null && restartTransferOperation == null && startReshardingOperation == null && abortReshardingOperation == null && replicatePointsOperation == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CreateShardingKeyOperation), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CreateShardingKeyOperation> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CreateShardingKeyOperation).Name}");
                     createShardingKeyOperation = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -327,9 +344,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (moveShardOperation == null && replicateShardOperation == null && abortTransferOperation == null && dropReplicaOperation == null && createShardingKeyOperation == null && dropShardingKeyOperation == null && restartTransferOperation == null && startReshardingOperation == null && abortReshardingOperation == null && replicatePointsOperation == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.DropShardingKeyOperation), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.DropShardingKeyOperation> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.DropShardingKeyOperation).Name}");
                     dropShardingKeyOperation = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -340,9 +361,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (moveShardOperation == null && replicateShardOperation == null && abortTransferOperation == null && dropReplicaOperation == null && createShardingKeyOperation == null && dropShardingKeyOperation == null && restartTransferOperation == null && startReshardingOperation == null && abortReshardingOperation == null && replicatePointsOperation == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RestartTransferOperation), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RestartTransferOperation> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RestartTransferOperation).Name}");
                     restartTransferOperation = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -353,9 +378,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (moveShardOperation == null && replicateShardOperation == null && abortTransferOperation == null && dropReplicaOperation == null && createShardingKeyOperation == null && dropShardingKeyOperation == null && restartTransferOperation == null && startReshardingOperation == null && abortReshardingOperation == null && replicatePointsOperation == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.StartReshardingOperation), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.StartReshardingOperation> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.StartReshardingOperation).Name}");
                     startReshardingOperation = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -366,9 +395,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (moveShardOperation == null && replicateShardOperation == null && abortTransferOperation == null && dropReplicaOperation == null && createShardingKeyOperation == null && dropShardingKeyOperation == null && restartTransferOperation == null && startReshardingOperation == null && abortReshardingOperation == null && replicatePointsOperation == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AbortReshardingOperation), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AbortReshardingOperation> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AbortReshardingOperation).Name}");
                     abortReshardingOperation = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -379,9 +412,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (moveShardOperation == null && replicateShardOperation == null && abortTransferOperation == null && dropReplicaOperation == null && createShardingKeyOperation == null && dropShardingKeyOperation == null && restartTransferOperation == null && startReshardingOperation == null && abortReshardingOperation == null && replicatePointsOperation == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ReplicatePointsOperation), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ReplicatePointsOperation> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ReplicatePointsOperation).Name}");
                     replicatePointsOperation = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

@@ -81,6 +81,7 @@ namespace G.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.SearchCorpus), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.SearchCorpus> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.SearchCorpus).Name}");
                     searchCorpus = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -91,9 +92,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (searchCorpus == null && keyedSearchCorpusVariant2 == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.KeyedSearchCorpusVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.KeyedSearchCorpusVariant2> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.KeyedSearchCorpusVariant2).Name}");
                     keyedSearchCorpusVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

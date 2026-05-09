@@ -139,7 +139,10 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (easyInputMessageContent0 == null && easyInputMessageContentVariant2 == null && easyInputMessageContentVariant3 == null)
+            {
                 try
                 {
 
@@ -153,7 +156,10 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (easyInputMessageContent0 == null && easyInputMessageContentVariant2 == null && easyInputMessageContentVariant3 == null)
+            {
                 try
                 {
 

@@ -90,6 +90,7 @@ namespace G.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.UsageLimitsPolicy), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.UsageLimitsPolicy> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.UsageLimitsPolicy).Name}");
                     usageLimitsPolicy = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -100,9 +101,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (usageLimitsPolicy == null && usageLimitsPolicyResponseVariant2 == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.UsageLimitsPolicyResponseVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.UsageLimitsPolicyResponseVariant2> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.UsageLimitsPolicyResponseVariant2).Name}");
                     usageLimitsPolicyResponseVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

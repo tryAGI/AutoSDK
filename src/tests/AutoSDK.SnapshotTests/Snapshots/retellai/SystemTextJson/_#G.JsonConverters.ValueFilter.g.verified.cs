@@ -164,6 +164,7 @@ namespace G.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.StringFilter), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.StringFilter> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.StringFilter).Name}");
                     @string = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -174,9 +175,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (@string == null && number == null && boolean == null && range == null && @enum == null && present == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.NumberFilter), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.NumberFilter> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.NumberFilter).Name}");
                     number = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -187,9 +192,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (@string == null && number == null && boolean == null && range == null && @enum == null && present == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BooleanFilter), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BooleanFilter> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.BooleanFilter).Name}");
                     boolean = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -200,9 +209,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (@string == null && number == null && boolean == null && range == null && @enum == null && present == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RangeFilter), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RangeFilter> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RangeFilter).Name}");
                     range = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -213,9 +226,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (@string == null && number == null && boolean == null && range == null && @enum == null && present == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.EnumFilter), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.EnumFilter> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.EnumFilter).Name}");
                     @enum = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -226,9 +243,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (@string == null && number == null && boolean == null && range == null && @enum == null && present == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PresentFilter), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PresentFilter> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.PresentFilter).Name}");
                     present = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

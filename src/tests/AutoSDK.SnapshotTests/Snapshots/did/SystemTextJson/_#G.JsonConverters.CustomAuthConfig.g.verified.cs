@@ -92,6 +92,7 @@ namespace G.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CustomAuthConfigBasic), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CustomAuthConfigBasic> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CustomAuthConfigBasic).Name}");
                     basic = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -102,9 +103,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (basic == null && oAuth2 == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CustomAuthConfigOAuth2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CustomAuthConfigOAuth2> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CustomAuthConfigOAuth2).Name}");
                     oAuth2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

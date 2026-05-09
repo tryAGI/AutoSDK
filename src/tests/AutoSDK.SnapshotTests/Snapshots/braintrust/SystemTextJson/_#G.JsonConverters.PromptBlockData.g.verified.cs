@@ -80,6 +80,7 @@ namespace G.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PromptBlockDataChat), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PromptBlockDataChat> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.PromptBlockDataChat).Name}");
                     chat = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -90,9 +91,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (chat == null && completion == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PromptBlockDataCompletion), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PromptBlockDataCompletion> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.PromptBlockDataCompletion).Name}");
                     completion = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

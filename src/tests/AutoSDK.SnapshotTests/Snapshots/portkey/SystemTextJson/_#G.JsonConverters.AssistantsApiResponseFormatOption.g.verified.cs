@@ -76,6 +76,7 @@ namespace G.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AssistantsApiResponseFormatOptionEnum), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AssistantsApiResponseFormatOptionEnum> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AssistantsApiResponseFormatOptionEnum).Name}");
                     @enum = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -86,9 +87,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (@enum == null && assistantsApiResponseFormat == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AssistantsApiResponseFormat), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AssistantsApiResponseFormat> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AssistantsApiResponseFormat).Name}");
                     assistantsApiResponseFormat = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

@@ -109,7 +109,10 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (distanceMetricVariant1 == null && distanceMetricVariant2 == null)
+            {
                 try
                 {
 

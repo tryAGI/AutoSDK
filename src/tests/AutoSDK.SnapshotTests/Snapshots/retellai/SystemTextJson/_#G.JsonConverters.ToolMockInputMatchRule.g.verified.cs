@@ -78,6 +78,7 @@ namespace G.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ToolMockInputMatchRuleVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ToolMockInputMatchRuleVariant1> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ToolMockInputMatchRuleVariant1).Name}");
                     toolMockInputMatchRuleVariant1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -88,9 +89,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (toolMockInputMatchRuleVariant1 == null && toolMockInputMatchRuleVariant2 == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ToolMockInputMatchRuleVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ToolMockInputMatchRuleVariant2> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ToolMockInputMatchRuleVariant2).Name}");
                     toolMockInputMatchRuleVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

@@ -94,6 +94,7 @@ namespace G.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.NodeBaseCommon), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.NodeBaseCommon> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.NodeBaseCommon).Name}");
                     common = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -104,9 +105,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (common == null && nodeBaseVariant2 == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.NodeBaseVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.NodeBaseVariant2> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.NodeBaseVariant2).Name}");
                     nodeBaseVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

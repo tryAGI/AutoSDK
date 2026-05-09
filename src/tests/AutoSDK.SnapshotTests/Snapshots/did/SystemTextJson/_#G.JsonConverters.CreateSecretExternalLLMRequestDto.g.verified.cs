@@ -88,6 +88,7 @@ namespace G.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CreateSecretExternalLLMRequestDtoOpenAIConfiguration), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CreateSecretExternalLLMRequestDtoOpenAIConfiguration> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CreateSecretExternalLLMRequestDtoOpenAIConfiguration).Name}");
                     openAIConfiguration = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -98,9 +99,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (openAIConfiguration == null && createSecretExternalLLMRequestDtoVariant2 == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CreateSecretExternalLLMRequestDtoVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CreateSecretExternalLLMRequestDtoVariant2> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CreateSecretExternalLLMRequestDtoVariant2).Name}");
                     createSecretExternalLLMRequestDtoVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

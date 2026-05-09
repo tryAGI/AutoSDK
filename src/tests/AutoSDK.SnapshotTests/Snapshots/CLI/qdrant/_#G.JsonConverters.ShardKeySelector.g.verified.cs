@@ -95,6 +95,7 @@ namespace G.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ShardKey), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ShardKey> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ShardKey).Name}");
                     shardKey = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -105,9 +106,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (shardKey == null && shardKeySelectorVariant2 == null && withFallback == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::System.Collections.Generic.IList<global::G.ShardKey>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::System.Collections.Generic.IList<global::G.ShardKey>> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::System.Collections.Generic.IList<global::G.ShardKey>).Name}");
                     shardKeySelectorVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -118,9 +123,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (shardKey == null && shardKeySelectorVariant2 == null && withFallback == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ShardKeyWithFallback), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ShardKeyWithFallback> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ShardKeyWithFallback).Name}");
                     withFallback = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

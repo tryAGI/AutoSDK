@@ -219,6 +219,7 @@ namespace G.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.UpsertOperation), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.UpsertOperation> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.UpsertOperation).Name}");
                     upsert = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -229,9 +230,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (upsert == null && delete == null && setPayload == null && overwritePayload == null && deletePayload == null && clearPayload == null && vectors == null && deleteVectors == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.DeleteOperation), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.DeleteOperation> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.DeleteOperation).Name}");
                     delete = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -242,9 +247,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (upsert == null && delete == null && setPayload == null && overwritePayload == null && deletePayload == null && clearPayload == null && vectors == null && deleteVectors == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.SetPayloadOperation), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.SetPayloadOperation> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.SetPayloadOperation).Name}");
                     setPayload = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -255,9 +264,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (upsert == null && delete == null && setPayload == null && overwritePayload == null && deletePayload == null && clearPayload == null && vectors == null && deleteVectors == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.OverwritePayloadOperation), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.OverwritePayloadOperation> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.OverwritePayloadOperation).Name}");
                     overwritePayload = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -268,9 +281,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (upsert == null && delete == null && setPayload == null && overwritePayload == null && deletePayload == null && clearPayload == null && vectors == null && deleteVectors == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.DeletePayloadOperation), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.DeletePayloadOperation> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.DeletePayloadOperation).Name}");
                     deletePayload = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -281,9 +298,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (upsert == null && delete == null && setPayload == null && overwritePayload == null && deletePayload == null && clearPayload == null && vectors == null && deleteVectors == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ClearPayloadOperation), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ClearPayloadOperation> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ClearPayloadOperation).Name}");
                     clearPayload = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -294,9 +315,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (upsert == null && delete == null && setPayload == null && overwritePayload == null && deletePayload == null && clearPayload == null && vectors == null && deleteVectors == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.UpdateVectorsOperation), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.UpdateVectorsOperation> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.UpdateVectorsOperation).Name}");
                     vectors = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -307,9 +332,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (upsert == null && delete == null && setPayload == null && overwritePayload == null && deletePayload == null && clearPayload == null && vectors == null && deleteVectors == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.DeleteVectorsOperation), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.DeleteVectorsOperation> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.DeleteVectorsOperation).Name}");
                     deleteVectors = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

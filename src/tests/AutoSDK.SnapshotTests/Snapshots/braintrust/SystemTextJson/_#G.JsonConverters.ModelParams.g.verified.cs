@@ -169,6 +169,7 @@ namespace G.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ModelParamsOpenAIModelParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ModelParamsOpenAIModelParams> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ModelParamsOpenAIModelParams).Name}");
                     openAIModelParams = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -179,9 +180,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (openAIModelParams == null && anthropicModelParams == null && googleModelParams == null && windowAIModelParams == null && jsCompletionParams == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ModelParamsAnthropicModelParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ModelParamsAnthropicModelParams> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ModelParamsAnthropicModelParams).Name}");
                     anthropicModelParams = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -192,9 +197,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (openAIModelParams == null && anthropicModelParams == null && googleModelParams == null && windowAIModelParams == null && jsCompletionParams == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ModelParamsGoogleModelParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ModelParamsGoogleModelParams> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ModelParamsGoogleModelParams).Name}");
                     googleModelParams = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -205,9 +214,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (openAIModelParams == null && anthropicModelParams == null && googleModelParams == null && windowAIModelParams == null && jsCompletionParams == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ModelParamsWindowAIModelParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ModelParamsWindowAIModelParams> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ModelParamsWindowAIModelParams).Name}");
                     windowAIModelParams = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -218,9 +231,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (openAIModelParams == null && anthropicModelParams == null && googleModelParams == null && windowAIModelParams == null && jsCompletionParams == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ModelParamsJsCompletionParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ModelParamsJsCompletionParams> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ModelParamsJsCompletionParams).Name}");
                     jsCompletionParams = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

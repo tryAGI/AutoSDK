@@ -115,6 +115,7 @@ namespace G.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PayloadStorageTypeVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PayloadStorageTypeVariant1> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.PayloadStorageTypeVariant1).Name}");
                     payloadStorageTypeVariant1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -125,9 +126,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (payloadStorageTypeVariant1 == null && payloadStorageTypeVariant2 == null && payloadStorageTypeVariant3 == null && payloadStorageTypeVariant4 == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PayloadStorageTypeVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PayloadStorageTypeVariant2> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.PayloadStorageTypeVariant2).Name}");
                     payloadStorageTypeVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -138,9 +143,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (payloadStorageTypeVariant1 == null && payloadStorageTypeVariant2 == null && payloadStorageTypeVariant3 == null && payloadStorageTypeVariant4 == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PayloadStorageTypeVariant3), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PayloadStorageTypeVariant3> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.PayloadStorageTypeVariant3).Name}");
                     payloadStorageTypeVariant3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -151,9 +160,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (payloadStorageTypeVariant1 == null && payloadStorageTypeVariant2 == null && payloadStorageTypeVariant3 == null && payloadStorageTypeVariant4 == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PayloadStorageTypeVariant4), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PayloadStorageTypeVariant4> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.PayloadStorageTypeVariant4).Name}");
                     payloadStorageTypeVariant4 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

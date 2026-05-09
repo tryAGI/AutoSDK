@@ -77,6 +77,7 @@ namespace G.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.Language), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.Language> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.Language).Name}");
                     language = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -87,9 +88,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (language == null && set == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.StopwordsSet), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.StopwordsSet> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.StopwordsSet).Name}");
                     set = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

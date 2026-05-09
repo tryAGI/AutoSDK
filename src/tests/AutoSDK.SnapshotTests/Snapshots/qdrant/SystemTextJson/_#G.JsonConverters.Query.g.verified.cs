@@ -248,6 +248,7 @@ namespace G.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.NearestQuery), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.NearestQuery> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.NearestQuery).Name}");
                     nearest = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -258,9 +259,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (nearest == null && recommend == null && discover == null && context == null && orderBy == null && fusion == null && rrf == null && formula == null && sample == null && relevanceFeedback == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RecommendQuery), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RecommendQuery> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RecommendQuery).Name}");
                     recommend = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -271,9 +276,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (nearest == null && recommend == null && discover == null && context == null && orderBy == null && fusion == null && rrf == null && formula == null && sample == null && relevanceFeedback == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.DiscoverQuery), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.DiscoverQuery> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.DiscoverQuery).Name}");
                     discover = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -284,9 +293,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (nearest == null && recommend == null && discover == null && context == null && orderBy == null && fusion == null && rrf == null && formula == null && sample == null && relevanceFeedback == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ContextQuery), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ContextQuery> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ContextQuery).Name}");
                     context = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -297,9 +310,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (nearest == null && recommend == null && discover == null && context == null && orderBy == null && fusion == null && rrf == null && formula == null && sample == null && relevanceFeedback == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.OrderByQuery), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.OrderByQuery> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.OrderByQuery).Name}");
                     orderBy = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -310,9 +327,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (nearest == null && recommend == null && discover == null && context == null && orderBy == null && fusion == null && rrf == null && formula == null && sample == null && relevanceFeedback == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.FusionQuery), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.FusionQuery> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.FusionQuery).Name}");
                     fusion = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -323,9 +344,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (nearest == null && recommend == null && discover == null && context == null && orderBy == null && fusion == null && rrf == null && formula == null && sample == null && relevanceFeedback == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RrfQuery), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RrfQuery> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RrfQuery).Name}");
                     rrf = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -336,9 +361,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (nearest == null && recommend == null && discover == null && context == null && orderBy == null && fusion == null && rrf == null && formula == null && sample == null && relevanceFeedback == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.FormulaQuery), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.FormulaQuery> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.FormulaQuery).Name}");
                     formula = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -349,9 +378,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (nearest == null && recommend == null && discover == null && context == null && orderBy == null && fusion == null && rrf == null && formula == null && sample == null && relevanceFeedback == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.SampleQuery), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.SampleQuery> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.SampleQuery).Name}");
                     sample = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -362,9 +395,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (nearest == null && recommend == null && discover == null && context == null && orderBy == null && fusion == null && rrf == null && formula == null && sample == null && relevanceFeedback == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RelevanceFeedbackQuery), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RelevanceFeedbackQuery> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RelevanceFeedbackQuery).Name}");
                     relevanceFeedback = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

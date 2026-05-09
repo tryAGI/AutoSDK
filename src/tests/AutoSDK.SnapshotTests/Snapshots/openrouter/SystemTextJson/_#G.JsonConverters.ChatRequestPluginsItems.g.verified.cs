@@ -174,6 +174,7 @@ namespace G.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatRequestPluginsItems0), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatRequestPluginsItems0> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatRequestPluginsItems0).Name}");
                     chatRequestPluginsItems0 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -184,9 +185,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (chatRequestPluginsItems0 == null && chatRequestPluginsItems1 == null && chatRequestPluginsItems2 == null && chatRequestPluginsItems3 == null && chatRequestPluginsItems4 == null && chatRequestPluginsItems5 == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatRequestPluginsItems1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatRequestPluginsItems1> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatRequestPluginsItems1).Name}");
                     chatRequestPluginsItems1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -197,9 +202,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (chatRequestPluginsItems0 == null && chatRequestPluginsItems1 == null && chatRequestPluginsItems2 == null && chatRequestPluginsItems3 == null && chatRequestPluginsItems4 == null && chatRequestPluginsItems5 == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatRequestPluginsItems2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatRequestPluginsItems2> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatRequestPluginsItems2).Name}");
                     chatRequestPluginsItems2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -210,9 +219,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (chatRequestPluginsItems0 == null && chatRequestPluginsItems1 == null && chatRequestPluginsItems2 == null && chatRequestPluginsItems3 == null && chatRequestPluginsItems4 == null && chatRequestPluginsItems5 == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatRequestPluginsItems3), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatRequestPluginsItems3> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatRequestPluginsItems3).Name}");
                     chatRequestPluginsItems3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -223,9 +236,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (chatRequestPluginsItems0 == null && chatRequestPluginsItems1 == null && chatRequestPluginsItems2 == null && chatRequestPluginsItems3 == null && chatRequestPluginsItems4 == null && chatRequestPluginsItems5 == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatRequestPluginsItems4), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatRequestPluginsItems4> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatRequestPluginsItems4).Name}");
                     chatRequestPluginsItems4 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -236,9 +253,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (chatRequestPluginsItems0 == null && chatRequestPluginsItems1 == null && chatRequestPluginsItems2 == null && chatRequestPluginsItems3 == null && chatRequestPluginsItems4 == null && chatRequestPluginsItems5 == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatRequestPluginsItems5), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatRequestPluginsItems5> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatRequestPluginsItems5).Name}");
                     chatRequestPluginsItems5 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

@@ -169,7 +169,10 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (getScoresResponseDataVariant1 == null && getScoresResponseDataVariant2 == null && getScoresResponseDataVariant3 == null && getScoresResponseDataVariant4 == null)
+            {
                 try
                 {
 
@@ -183,7 +186,10 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (getScoresResponseDataVariant1 == null && getScoresResponseDataVariant2 == null && getScoresResponseDataVariant3 == null && getScoresResponseDataVariant4 == null)
+            {
                 try
                 {
 
@@ -197,7 +203,10 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (getScoresResponseDataVariant1 == null && getScoresResponseDataVariant2 == null && getScoresResponseDataVariant3 == null && getScoresResponseDataVariant4 == null)
+            {
                 try
                 {
 

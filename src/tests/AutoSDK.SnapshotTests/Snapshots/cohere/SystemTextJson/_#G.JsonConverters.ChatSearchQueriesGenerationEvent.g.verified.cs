@@ -77,6 +77,7 @@ namespace G.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatStreamEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatStreamEvent> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatStreamEvent).Name}");
                     stream = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -87,9 +88,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (stream == null && event6evypd == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatSearchQueriesGenerationEvent6evypd), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatSearchQueriesGenerationEvent6evypd> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatSearchQueriesGenerationEvent6evypd).Name}");
                     event6evypd = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

@@ -110,6 +110,7 @@ namespace G.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.StreamStartResponse), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.StreamStartResponse> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.StreamStartResponse).Name}");
                     streamStartResponse = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -120,9 +121,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (streamStartResponse == null && streamTextResponse == null && streamEndResponse == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.StreamTextResponse), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.StreamTextResponse> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.StreamTextResponse).Name}");
                     streamTextResponse = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -133,9 +138,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (streamStartResponse == null && streamTextResponse == null && streamEndResponse == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.StreamEndResponse), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.StreamEndResponse> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.StreamEndResponse).Name}");
                     streamEndResponse = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

@@ -79,6 +79,7 @@ namespace G.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MessagesRequestContextManagementEditsItemsOneOf0Trigger0), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MessagesRequestContextManagementEditsItemsOneOf0Trigger0> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.MessagesRequestContextManagementEditsItemsOneOf0Trigger0).Name}");
                     messagesRequestContextManagementEditsItemsOneOf0Trigger0 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -89,9 +90,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (messagesRequestContextManagementEditsItemsOneOf0Trigger0 == null && messagesRequestContextManagementEditsItemsOneOf0Trigger1 == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MessagesRequestContextManagementEditsItemsOneOf0Trigger1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MessagesRequestContextManagementEditsItemsOneOf0Trigger1> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.MessagesRequestContextManagementEditsItemsOneOf0Trigger1).Name}");
                     messagesRequestContextManagementEditsItemsOneOf0Trigger1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

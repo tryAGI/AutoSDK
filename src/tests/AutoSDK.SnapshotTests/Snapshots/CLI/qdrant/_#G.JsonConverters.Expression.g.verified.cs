@@ -423,6 +423,7 @@ namespace G.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(float), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<float> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(float).Name}");
                     expressionVariant1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -433,9 +434,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (expressionVariant1 == null && expressionVariant2 == null && condition == null && geoDistance == null && datetime == null && datetimeKey == null && mult == null && sum == null && neg == null && abs == null && div == null && sqrt == null && pow == null && exp == null && log10 == null && ln == null && linDecay == null && expDecay == null && gaussDecay == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
                     expressionVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -446,9 +451,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (expressionVariant1 == null && expressionVariant2 == null && condition == null && geoDistance == null && datetime == null && datetimeKey == null && mult == null && sum == null && neg == null && abs == null && div == null && sqrt == null && pow == null && exp == null && log10 == null && ln == null && linDecay == null && expDecay == null && gaussDecay == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.Condition), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.Condition> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.Condition).Name}");
                     condition = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -459,9 +468,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (expressionVariant1 == null && expressionVariant2 == null && condition == null && geoDistance == null && datetime == null && datetimeKey == null && mult == null && sum == null && neg == null && abs == null && div == null && sqrt == null && pow == null && exp == null && log10 == null && ln == null && linDecay == null && expDecay == null && gaussDecay == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GeoDistance), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GeoDistance> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.GeoDistance).Name}");
                     geoDistance = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -472,9 +485,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (expressionVariant1 == null && expressionVariant2 == null && condition == null && geoDistance == null && datetime == null && datetimeKey == null && mult == null && sum == null && neg == null && abs == null && div == null && sqrt == null && pow == null && exp == null && log10 == null && ln == null && linDecay == null && expDecay == null && gaussDecay == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.DatetimeExpression), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.DatetimeExpression> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.DatetimeExpression).Name}");
                     datetime = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -485,9 +502,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (expressionVariant1 == null && expressionVariant2 == null && condition == null && geoDistance == null && datetime == null && datetimeKey == null && mult == null && sum == null && neg == null && abs == null && div == null && sqrt == null && pow == null && exp == null && log10 == null && ln == null && linDecay == null && expDecay == null && gaussDecay == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.DatetimeKeyExpression), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.DatetimeKeyExpression> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.DatetimeKeyExpression).Name}");
                     datetimeKey = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -498,9 +519,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (expressionVariant1 == null && expressionVariant2 == null && condition == null && geoDistance == null && datetime == null && datetimeKey == null && mult == null && sum == null && neg == null && abs == null && div == null && sqrt == null && pow == null && exp == null && log10 == null && ln == null && linDecay == null && expDecay == null && gaussDecay == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MultExpression), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MultExpression> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.MultExpression).Name}");
                     mult = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -511,9 +536,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (expressionVariant1 == null && expressionVariant2 == null && condition == null && geoDistance == null && datetime == null && datetimeKey == null && mult == null && sum == null && neg == null && abs == null && div == null && sqrt == null && pow == null && exp == null && log10 == null && ln == null && linDecay == null && expDecay == null && gaussDecay == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.SumExpression), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.SumExpression> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.SumExpression).Name}");
                     sum = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -524,9 +553,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (expressionVariant1 == null && expressionVariant2 == null && condition == null && geoDistance == null && datetime == null && datetimeKey == null && mult == null && sum == null && neg == null && abs == null && div == null && sqrt == null && pow == null && exp == null && log10 == null && ln == null && linDecay == null && expDecay == null && gaussDecay == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.NegExpression), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.NegExpression> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.NegExpression).Name}");
                     neg = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -537,9 +570,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (expressionVariant1 == null && expressionVariant2 == null && condition == null && geoDistance == null && datetime == null && datetimeKey == null && mult == null && sum == null && neg == null && abs == null && div == null && sqrt == null && pow == null && exp == null && log10 == null && ln == null && linDecay == null && expDecay == null && gaussDecay == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AbsExpression), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AbsExpression> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AbsExpression).Name}");
                     abs = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -550,9 +587,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (expressionVariant1 == null && expressionVariant2 == null && condition == null && geoDistance == null && datetime == null && datetimeKey == null && mult == null && sum == null && neg == null && abs == null && div == null && sqrt == null && pow == null && exp == null && log10 == null && ln == null && linDecay == null && expDecay == null && gaussDecay == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.DivExpression), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.DivExpression> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.DivExpression).Name}");
                     div = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -563,9 +604,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (expressionVariant1 == null && expressionVariant2 == null && condition == null && geoDistance == null && datetime == null && datetimeKey == null && mult == null && sum == null && neg == null && abs == null && div == null && sqrt == null && pow == null && exp == null && log10 == null && ln == null && linDecay == null && expDecay == null && gaussDecay == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.SqrtExpression), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.SqrtExpression> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.SqrtExpression).Name}");
                     sqrt = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -576,9 +621,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (expressionVariant1 == null && expressionVariant2 == null && condition == null && geoDistance == null && datetime == null && datetimeKey == null && mult == null && sum == null && neg == null && abs == null && div == null && sqrt == null && pow == null && exp == null && log10 == null && ln == null && linDecay == null && expDecay == null && gaussDecay == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PowExpression), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PowExpression> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.PowExpression).Name}");
                     pow = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -589,9 +638,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (expressionVariant1 == null && expressionVariant2 == null && condition == null && geoDistance == null && datetime == null && datetimeKey == null && mult == null && sum == null && neg == null && abs == null && div == null && sqrt == null && pow == null && exp == null && log10 == null && ln == null && linDecay == null && expDecay == null && gaussDecay == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ExpExpression), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ExpExpression> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ExpExpression).Name}");
                     exp = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -602,9 +655,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (expressionVariant1 == null && expressionVariant2 == null && condition == null && geoDistance == null && datetime == null && datetimeKey == null && mult == null && sum == null && neg == null && abs == null && div == null && sqrt == null && pow == null && exp == null && log10 == null && ln == null && linDecay == null && expDecay == null && gaussDecay == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.Log10Expression), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.Log10Expression> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.Log10Expression).Name}");
                     log10 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -615,9 +672,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (expressionVariant1 == null && expressionVariant2 == null && condition == null && geoDistance == null && datetime == null && datetimeKey == null && mult == null && sum == null && neg == null && abs == null && div == null && sqrt == null && pow == null && exp == null && log10 == null && ln == null && linDecay == null && expDecay == null && gaussDecay == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.LnExpression), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.LnExpression> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.LnExpression).Name}");
                     ln = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -628,9 +689,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (expressionVariant1 == null && expressionVariant2 == null && condition == null && geoDistance == null && datetime == null && datetimeKey == null && mult == null && sum == null && neg == null && abs == null && div == null && sqrt == null && pow == null && exp == null && log10 == null && ln == null && linDecay == null && expDecay == null && gaussDecay == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.LinDecayExpression), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.LinDecayExpression> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.LinDecayExpression).Name}");
                     linDecay = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -641,9 +706,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (expressionVariant1 == null && expressionVariant2 == null && condition == null && geoDistance == null && datetime == null && datetimeKey == null && mult == null && sum == null && neg == null && abs == null && div == null && sqrt == null && pow == null && exp == null && log10 == null && ln == null && linDecay == null && expDecay == null && gaussDecay == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ExpDecayExpression), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ExpDecayExpression> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ExpDecayExpression).Name}");
                     expDecay = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -654,9 +723,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (expressionVariant1 == null && expressionVariant2 == null && condition == null && geoDistance == null && datetime == null && datetimeKey == null && mult == null && sum == null && neg == null && abs == null && div == null && sqrt == null && pow == null && exp == null && log10 == null && ln == null && linDecay == null && expDecay == null && gaussDecay == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GaussDecayExpression), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GaussDecayExpression> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.GaussDecayExpression).Name}");
                     gaussDecay = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

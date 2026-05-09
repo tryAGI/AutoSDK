@@ -88,6 +88,7 @@ namespace G.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.NodeEdge), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.NodeEdge> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.NodeEdge).Name}");
                     node = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -98,9 +99,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (node == null && smsFailedEdgeVariant2 == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.SmsFailedEdgeVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.SmsFailedEdgeVariant2> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.SmsFailedEdgeVariant2).Name}");
                     smsFailedEdgeVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

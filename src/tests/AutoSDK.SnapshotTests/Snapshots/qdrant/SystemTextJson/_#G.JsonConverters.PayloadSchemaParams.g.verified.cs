@@ -222,6 +222,7 @@ namespace G.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.KeywordIndexParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.KeywordIndexParams> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.KeywordIndexParams).Name}");
                     keywordIndex = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -232,9 +233,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (keywordIndex == null && integerIndex == null && floatIndex == null && geoIndex == null && textIndex == null && boolIndex == null && datetimeIndex == null && uuidIndex == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.IntegerIndexParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.IntegerIndexParams> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.IntegerIndexParams).Name}");
                     integerIndex = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -245,9 +250,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (keywordIndex == null && integerIndex == null && floatIndex == null && geoIndex == null && textIndex == null && boolIndex == null && datetimeIndex == null && uuidIndex == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.FloatIndexParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.FloatIndexParams> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.FloatIndexParams).Name}");
                     floatIndex = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -258,9 +267,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (keywordIndex == null && integerIndex == null && floatIndex == null && geoIndex == null && textIndex == null && boolIndex == null && datetimeIndex == null && uuidIndex == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GeoIndexParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GeoIndexParams> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.GeoIndexParams).Name}");
                     geoIndex = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -271,9 +284,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (keywordIndex == null && integerIndex == null && floatIndex == null && geoIndex == null && textIndex == null && boolIndex == null && datetimeIndex == null && uuidIndex == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TextIndexParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TextIndexParams> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TextIndexParams).Name}");
                     textIndex = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -284,9 +301,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (keywordIndex == null && integerIndex == null && floatIndex == null && geoIndex == null && textIndex == null && boolIndex == null && datetimeIndex == null && uuidIndex == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BoolIndexParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BoolIndexParams> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.BoolIndexParams).Name}");
                     boolIndex = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -297,9 +318,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (keywordIndex == null && integerIndex == null && floatIndex == null && geoIndex == null && textIndex == null && boolIndex == null && datetimeIndex == null && uuidIndex == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.DatetimeIndexParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.DatetimeIndexParams> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.DatetimeIndexParams).Name}");
                     datetimeIndex = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -310,9 +335,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (keywordIndex == null && integerIndex == null && floatIndex == null && geoIndex == null && textIndex == null && boolIndex == null && datetimeIndex == null && uuidIndex == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.UuidIndexParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.UuidIndexParams> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.UuidIndexParams).Name}");
                     uuidIndex = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

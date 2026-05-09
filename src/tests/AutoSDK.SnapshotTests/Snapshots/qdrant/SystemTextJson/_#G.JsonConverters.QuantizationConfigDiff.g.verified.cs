@@ -129,6 +129,7 @@ namespace G.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ScalarQuantization), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ScalarQuantization> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ScalarQuantization).Name}");
                     scalar = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -139,9 +140,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (scalar == null && product == null && binary == null && disabledType == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ProductQuantization), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ProductQuantization> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ProductQuantization).Name}");
                     product = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -152,9 +157,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (scalar == null && product == null && binary == null && disabledType == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BinaryQuantization), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BinaryQuantization> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.BinaryQuantization).Name}");
                     binary = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -165,9 +174,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (scalar == null && product == null && binary == null && disabledType == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.DisabledType), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.DisabledType> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.DisabledType).Name}");
                     disabledType = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

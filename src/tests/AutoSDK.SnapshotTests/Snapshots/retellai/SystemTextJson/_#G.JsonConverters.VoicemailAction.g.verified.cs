@@ -117,6 +117,7 @@ namespace G.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.VoicemailActionPrompt), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.VoicemailActionPrompt> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.VoicemailActionPrompt).Name}");
                     prompt = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -127,9 +128,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (prompt == null && staticText == null && hangup == null && bridgeTransfer == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.VoicemailActionStaticText), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.VoicemailActionStaticText> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.VoicemailActionStaticText).Name}");
                     staticText = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -140,9 +145,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (prompt == null && staticText == null && hangup == null && bridgeTransfer == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.VoicemailActionHangup), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.VoicemailActionHangup> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.VoicemailActionHangup).Name}");
                     hangup = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -153,9 +162,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (prompt == null && staticText == null && hangup == null && bridgeTransfer == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.VoicemailActionBridgeTransfer), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.VoicemailActionBridgeTransfer> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.VoicemailActionBridgeTransfer).Name}");
                     bridgeTransfer = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

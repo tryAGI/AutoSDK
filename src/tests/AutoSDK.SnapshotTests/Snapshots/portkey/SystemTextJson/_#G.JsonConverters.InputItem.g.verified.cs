@@ -98,6 +98,7 @@ namespace G.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.EasyInputMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.EasyInputMessage> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.EasyInputMessage).Name}");
                     message = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -108,9 +109,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (message == null && item == null && itemReference == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.Item), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.Item> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.Item).Name}");
                     item = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -121,9 +126,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (message == null && item == null && itemReference == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ItemReference), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ItemReference> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ItemReference).Name}");
                     itemReference = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

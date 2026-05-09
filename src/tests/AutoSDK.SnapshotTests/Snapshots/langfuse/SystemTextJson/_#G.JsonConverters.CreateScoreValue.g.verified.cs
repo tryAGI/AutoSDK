@@ -109,7 +109,10 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (createScoreValueVariant1 == null && createScoreValueVariant2 == null)
+            {
                 try
                 {
 

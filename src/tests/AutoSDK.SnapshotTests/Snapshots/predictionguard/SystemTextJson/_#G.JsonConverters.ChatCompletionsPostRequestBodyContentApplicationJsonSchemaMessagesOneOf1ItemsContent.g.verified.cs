@@ -109,7 +109,10 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (chatCompletionsPostRequestBodyContentApplicationJsonSchemaMessagesOneOf1ItemsContentVariant1 == null && chatCompletionsPostRequestBodyContentApplicationJsonSchemaMessagesOneOf1ItemsContent1 == null)
+            {
                 try
                 {
 

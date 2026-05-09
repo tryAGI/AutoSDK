@@ -77,6 +77,7 @@ namespace G.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PayloadSelectorInclude), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PayloadSelectorInclude> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.PayloadSelectorInclude).Name}");
                     include = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -87,9 +88,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (include == null && exclude == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PayloadSelectorExclude), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PayloadSelectorExclude> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.PayloadSelectorExclude).Name}");
                     exclude = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

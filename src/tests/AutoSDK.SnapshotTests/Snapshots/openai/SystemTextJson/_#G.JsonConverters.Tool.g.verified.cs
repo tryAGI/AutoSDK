@@ -230,6 +230,7 @@ namespace G.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.FunctionTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.FunctionTool> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.FunctionTool).Name}");
                     function = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -240,9 +241,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (function == null && fileSearch == null && webSearchPreview == null && computerUsePreview == null && mcp == null && codeInterpreter == null && imageGeneration == null && localShell == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.FileSearchTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.FileSearchTool> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.FileSearchTool).Name}");
                     fileSearch = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -253,9 +258,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (function == null && fileSearch == null && webSearchPreview == null && computerUsePreview == null && mcp == null && codeInterpreter == null && imageGeneration == null && localShell == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.WebSearchPreviewTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.WebSearchPreviewTool> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.WebSearchPreviewTool).Name}");
                     webSearchPreview = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -266,9 +275,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (function == null && fileSearch == null && webSearchPreview == null && computerUsePreview == null && mcp == null && codeInterpreter == null && imageGeneration == null && localShell == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ComputerUsePreviewTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ComputerUsePreviewTool> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ComputerUsePreviewTool).Name}");
                     computerUsePreview = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -279,9 +292,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (function == null && fileSearch == null && webSearchPreview == null && computerUsePreview == null && mcp == null && codeInterpreter == null && imageGeneration == null && localShell == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MCPTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MCPTool> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.MCPTool).Name}");
                     mcp = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -292,9 +309,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (function == null && fileSearch == null && webSearchPreview == null && computerUsePreview == null && mcp == null && codeInterpreter == null && imageGeneration == null && localShell == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CodeInterpreterTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CodeInterpreterTool> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CodeInterpreterTool).Name}");
                     codeInterpreter = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -305,9 +326,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (function == null && fileSearch == null && webSearchPreview == null && computerUsePreview == null && mcp == null && codeInterpreter == null && imageGeneration == null && localShell == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ImageGenTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ImageGenTool> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ImageGenTool).Name}");
                     imageGeneration = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -318,9 +343,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (function == null && fileSearch == null && webSearchPreview == null && computerUsePreview == null && mcp == null && codeInterpreter == null && imageGeneration == null && localShell == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.LocalShellTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.LocalShellTool> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.LocalShellTool).Name}");
                     localShell = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

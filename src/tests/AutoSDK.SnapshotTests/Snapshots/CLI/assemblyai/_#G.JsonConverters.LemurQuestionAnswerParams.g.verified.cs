@@ -82,6 +82,7 @@ namespace G.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.LemurBaseParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.LemurBaseParams> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.LemurBaseParams).Name}");
                     @base = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -92,9 +93,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (@base == null && lemurQuestionAnswerParamsVariant2 == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.LemurQuestionAnswerParamsVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.LemurQuestionAnswerParamsVariant2> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.LemurQuestionAnswerParamsVariant2).Name}");
                     lemurQuestionAnswerParamsVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

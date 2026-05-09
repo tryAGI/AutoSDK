@@ -95,6 +95,7 @@ namespace G.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ExtendedPointId), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ExtendedPointId> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ExtendedPointId).Name}");
                     extendedPointId = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -105,9 +106,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (extendedPointId == null && recommendExampleVariant2 == null && sparseVector == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::System.Collections.Generic.IList<float>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::System.Collections.Generic.IList<float>> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::System.Collections.Generic.IList<float>).Name}");
                     recommendExampleVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -118,9 +123,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (extendedPointId == null && recommendExampleVariant2 == null && sparseVector == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.SparseVector), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.SparseVector> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.SparseVector).Name}");
                     sparseVector = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

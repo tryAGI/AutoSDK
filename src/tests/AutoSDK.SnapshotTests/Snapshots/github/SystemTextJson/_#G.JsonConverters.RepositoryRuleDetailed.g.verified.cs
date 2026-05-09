@@ -559,7 +559,10 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (repositoryRuleDetailedVariant1 == null && repositoryRuleDetailedVariant2 == null && repositoryRuleDetailedVariant3 == null && repositoryRuleDetailedVariant4 == null && repositoryRuleDetailedVariant5 == null && repositoryRuleDetailedVariant6 == null && repositoryRuleDetailedVariant7 == null && repositoryRuleDetailedVariant8 == null && repositoryRuleDetailedVariant9 == null && repositoryRuleDetailedVariant10 == null && repositoryRuleDetailedVariant11 == null && repositoryRuleDetailedVariant12 == null && repositoryRuleDetailedVariant13 == null && repositoryRuleDetailedVariant14 == null && repositoryRuleDetailedVariant15 == null && repositoryRuleDetailedVariant16 == null && repositoryRuleDetailedVariant17 == null)
+            {
                 try
                 {
 
@@ -573,7 +576,10 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (repositoryRuleDetailedVariant1 == null && repositoryRuleDetailedVariant2 == null && repositoryRuleDetailedVariant3 == null && repositoryRuleDetailedVariant4 == null && repositoryRuleDetailedVariant5 == null && repositoryRuleDetailedVariant6 == null && repositoryRuleDetailedVariant7 == null && repositoryRuleDetailedVariant8 == null && repositoryRuleDetailedVariant9 == null && repositoryRuleDetailedVariant10 == null && repositoryRuleDetailedVariant11 == null && repositoryRuleDetailedVariant12 == null && repositoryRuleDetailedVariant13 == null && repositoryRuleDetailedVariant14 == null && repositoryRuleDetailedVariant15 == null && repositoryRuleDetailedVariant16 == null && repositoryRuleDetailedVariant17 == null)
+            {
                 try
                 {
 
@@ -587,7 +593,10 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (repositoryRuleDetailedVariant1 == null && repositoryRuleDetailedVariant2 == null && repositoryRuleDetailedVariant3 == null && repositoryRuleDetailedVariant4 == null && repositoryRuleDetailedVariant5 == null && repositoryRuleDetailedVariant6 == null && repositoryRuleDetailedVariant7 == null && repositoryRuleDetailedVariant8 == null && repositoryRuleDetailedVariant9 == null && repositoryRuleDetailedVariant10 == null && repositoryRuleDetailedVariant11 == null && repositoryRuleDetailedVariant12 == null && repositoryRuleDetailedVariant13 == null && repositoryRuleDetailedVariant14 == null && repositoryRuleDetailedVariant15 == null && repositoryRuleDetailedVariant16 == null && repositoryRuleDetailedVariant17 == null)
+            {
                 try
                 {
 
@@ -601,7 +610,10 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (repositoryRuleDetailedVariant1 == null && repositoryRuleDetailedVariant2 == null && repositoryRuleDetailedVariant3 == null && repositoryRuleDetailedVariant4 == null && repositoryRuleDetailedVariant5 == null && repositoryRuleDetailedVariant6 == null && repositoryRuleDetailedVariant7 == null && repositoryRuleDetailedVariant8 == null && repositoryRuleDetailedVariant9 == null && repositoryRuleDetailedVariant10 == null && repositoryRuleDetailedVariant11 == null && repositoryRuleDetailedVariant12 == null && repositoryRuleDetailedVariant13 == null && repositoryRuleDetailedVariant14 == null && repositoryRuleDetailedVariant15 == null && repositoryRuleDetailedVariant16 == null && repositoryRuleDetailedVariant17 == null)
+            {
                 try
                 {
 
@@ -615,7 +627,10 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (repositoryRuleDetailedVariant1 == null && repositoryRuleDetailedVariant2 == null && repositoryRuleDetailedVariant3 == null && repositoryRuleDetailedVariant4 == null && repositoryRuleDetailedVariant5 == null && repositoryRuleDetailedVariant6 == null && repositoryRuleDetailedVariant7 == null && repositoryRuleDetailedVariant8 == null && repositoryRuleDetailedVariant9 == null && repositoryRuleDetailedVariant10 == null && repositoryRuleDetailedVariant11 == null && repositoryRuleDetailedVariant12 == null && repositoryRuleDetailedVariant13 == null && repositoryRuleDetailedVariant14 == null && repositoryRuleDetailedVariant15 == null && repositoryRuleDetailedVariant16 == null && repositoryRuleDetailedVariant17 == null)
+            {
                 try
                 {
 
@@ -629,7 +644,10 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (repositoryRuleDetailedVariant1 == null && repositoryRuleDetailedVariant2 == null && repositoryRuleDetailedVariant3 == null && repositoryRuleDetailedVariant4 == null && repositoryRuleDetailedVariant5 == null && repositoryRuleDetailedVariant6 == null && repositoryRuleDetailedVariant7 == null && repositoryRuleDetailedVariant8 == null && repositoryRuleDetailedVariant9 == null && repositoryRuleDetailedVariant10 == null && repositoryRuleDetailedVariant11 == null && repositoryRuleDetailedVariant12 == null && repositoryRuleDetailedVariant13 == null && repositoryRuleDetailedVariant14 == null && repositoryRuleDetailedVariant15 == null && repositoryRuleDetailedVariant16 == null && repositoryRuleDetailedVariant17 == null)
+            {
                 try
                 {
 
@@ -643,7 +661,10 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (repositoryRuleDetailedVariant1 == null && repositoryRuleDetailedVariant2 == null && repositoryRuleDetailedVariant3 == null && repositoryRuleDetailedVariant4 == null && repositoryRuleDetailedVariant5 == null && repositoryRuleDetailedVariant6 == null && repositoryRuleDetailedVariant7 == null && repositoryRuleDetailedVariant8 == null && repositoryRuleDetailedVariant9 == null && repositoryRuleDetailedVariant10 == null && repositoryRuleDetailedVariant11 == null && repositoryRuleDetailedVariant12 == null && repositoryRuleDetailedVariant13 == null && repositoryRuleDetailedVariant14 == null && repositoryRuleDetailedVariant15 == null && repositoryRuleDetailedVariant16 == null && repositoryRuleDetailedVariant17 == null)
+            {
                 try
                 {
 
@@ -657,7 +678,10 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (repositoryRuleDetailedVariant1 == null && repositoryRuleDetailedVariant2 == null && repositoryRuleDetailedVariant3 == null && repositoryRuleDetailedVariant4 == null && repositoryRuleDetailedVariant5 == null && repositoryRuleDetailedVariant6 == null && repositoryRuleDetailedVariant7 == null && repositoryRuleDetailedVariant8 == null && repositoryRuleDetailedVariant9 == null && repositoryRuleDetailedVariant10 == null && repositoryRuleDetailedVariant11 == null && repositoryRuleDetailedVariant12 == null && repositoryRuleDetailedVariant13 == null && repositoryRuleDetailedVariant14 == null && repositoryRuleDetailedVariant15 == null && repositoryRuleDetailedVariant16 == null && repositoryRuleDetailedVariant17 == null)
+            {
                 try
                 {
 
@@ -671,7 +695,10 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (repositoryRuleDetailedVariant1 == null && repositoryRuleDetailedVariant2 == null && repositoryRuleDetailedVariant3 == null && repositoryRuleDetailedVariant4 == null && repositoryRuleDetailedVariant5 == null && repositoryRuleDetailedVariant6 == null && repositoryRuleDetailedVariant7 == null && repositoryRuleDetailedVariant8 == null && repositoryRuleDetailedVariant9 == null && repositoryRuleDetailedVariant10 == null && repositoryRuleDetailedVariant11 == null && repositoryRuleDetailedVariant12 == null && repositoryRuleDetailedVariant13 == null && repositoryRuleDetailedVariant14 == null && repositoryRuleDetailedVariant15 == null && repositoryRuleDetailedVariant16 == null && repositoryRuleDetailedVariant17 == null)
+            {
                 try
                 {
 
@@ -685,7 +712,10 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (repositoryRuleDetailedVariant1 == null && repositoryRuleDetailedVariant2 == null && repositoryRuleDetailedVariant3 == null && repositoryRuleDetailedVariant4 == null && repositoryRuleDetailedVariant5 == null && repositoryRuleDetailedVariant6 == null && repositoryRuleDetailedVariant7 == null && repositoryRuleDetailedVariant8 == null && repositoryRuleDetailedVariant9 == null && repositoryRuleDetailedVariant10 == null && repositoryRuleDetailedVariant11 == null && repositoryRuleDetailedVariant12 == null && repositoryRuleDetailedVariant13 == null && repositoryRuleDetailedVariant14 == null && repositoryRuleDetailedVariant15 == null && repositoryRuleDetailedVariant16 == null && repositoryRuleDetailedVariant17 == null)
+            {
                 try
                 {
 
@@ -699,7 +729,10 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (repositoryRuleDetailedVariant1 == null && repositoryRuleDetailedVariant2 == null && repositoryRuleDetailedVariant3 == null && repositoryRuleDetailedVariant4 == null && repositoryRuleDetailedVariant5 == null && repositoryRuleDetailedVariant6 == null && repositoryRuleDetailedVariant7 == null && repositoryRuleDetailedVariant8 == null && repositoryRuleDetailedVariant9 == null && repositoryRuleDetailedVariant10 == null && repositoryRuleDetailedVariant11 == null && repositoryRuleDetailedVariant12 == null && repositoryRuleDetailedVariant13 == null && repositoryRuleDetailedVariant14 == null && repositoryRuleDetailedVariant15 == null && repositoryRuleDetailedVariant16 == null && repositoryRuleDetailedVariant17 == null)
+            {
                 try
                 {
 
@@ -713,7 +746,10 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (repositoryRuleDetailedVariant1 == null && repositoryRuleDetailedVariant2 == null && repositoryRuleDetailedVariant3 == null && repositoryRuleDetailedVariant4 == null && repositoryRuleDetailedVariant5 == null && repositoryRuleDetailedVariant6 == null && repositoryRuleDetailedVariant7 == null && repositoryRuleDetailedVariant8 == null && repositoryRuleDetailedVariant9 == null && repositoryRuleDetailedVariant10 == null && repositoryRuleDetailedVariant11 == null && repositoryRuleDetailedVariant12 == null && repositoryRuleDetailedVariant13 == null && repositoryRuleDetailedVariant14 == null && repositoryRuleDetailedVariant15 == null && repositoryRuleDetailedVariant16 == null && repositoryRuleDetailedVariant17 == null)
+            {
                 try
                 {
 
@@ -727,7 +763,10 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (repositoryRuleDetailedVariant1 == null && repositoryRuleDetailedVariant2 == null && repositoryRuleDetailedVariant3 == null && repositoryRuleDetailedVariant4 == null && repositoryRuleDetailedVariant5 == null && repositoryRuleDetailedVariant6 == null && repositoryRuleDetailedVariant7 == null && repositoryRuleDetailedVariant8 == null && repositoryRuleDetailedVariant9 == null && repositoryRuleDetailedVariant10 == null && repositoryRuleDetailedVariant11 == null && repositoryRuleDetailedVariant12 == null && repositoryRuleDetailedVariant13 == null && repositoryRuleDetailedVariant14 == null && repositoryRuleDetailedVariant15 == null && repositoryRuleDetailedVariant16 == null && repositoryRuleDetailedVariant17 == null)
+            {
                 try
                 {
 
@@ -741,7 +780,10 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (repositoryRuleDetailedVariant1 == null && repositoryRuleDetailedVariant2 == null && repositoryRuleDetailedVariant3 == null && repositoryRuleDetailedVariant4 == null && repositoryRuleDetailedVariant5 == null && repositoryRuleDetailedVariant6 == null && repositoryRuleDetailedVariant7 == null && repositoryRuleDetailedVariant8 == null && repositoryRuleDetailedVariant9 == null && repositoryRuleDetailedVariant10 == null && repositoryRuleDetailedVariant11 == null && repositoryRuleDetailedVariant12 == null && repositoryRuleDetailedVariant13 == null && repositoryRuleDetailedVariant14 == null && repositoryRuleDetailedVariant15 == null && repositoryRuleDetailedVariant16 == null && repositoryRuleDetailedVariant17 == null)
+            {
                 try
                 {
 
@@ -755,7 +797,10 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (repositoryRuleDetailedVariant1 == null && repositoryRuleDetailedVariant2 == null && repositoryRuleDetailedVariant3 == null && repositoryRuleDetailedVariant4 == null && repositoryRuleDetailedVariant5 == null && repositoryRuleDetailedVariant6 == null && repositoryRuleDetailedVariant7 == null && repositoryRuleDetailedVariant8 == null && repositoryRuleDetailedVariant9 == null && repositoryRuleDetailedVariant10 == null && repositoryRuleDetailedVariant11 == null && repositoryRuleDetailedVariant12 == null && repositoryRuleDetailedVariant13 == null && repositoryRuleDetailedVariant14 == null && repositoryRuleDetailedVariant15 == null && repositoryRuleDetailedVariant16 == null && repositoryRuleDetailedVariant17 == null)
+            {
                 try
                 {
 
@@ -769,7 +814,10 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (repositoryRuleDetailedVariant1 == null && repositoryRuleDetailedVariant2 == null && repositoryRuleDetailedVariant3 == null && repositoryRuleDetailedVariant4 == null && repositoryRuleDetailedVariant5 == null && repositoryRuleDetailedVariant6 == null && repositoryRuleDetailedVariant7 == null && repositoryRuleDetailedVariant8 == null && repositoryRuleDetailedVariant9 == null && repositoryRuleDetailedVariant10 == null && repositoryRuleDetailedVariant11 == null && repositoryRuleDetailedVariant12 == null && repositoryRuleDetailedVariant13 == null && repositoryRuleDetailedVariant14 == null && repositoryRuleDetailedVariant15 == null && repositoryRuleDetailedVariant16 == null && repositoryRuleDetailedVariant17 == null)
+            {
                 try
                 {
 

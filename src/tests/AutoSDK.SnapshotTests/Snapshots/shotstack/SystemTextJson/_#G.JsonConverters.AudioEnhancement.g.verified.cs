@@ -67,6 +67,7 @@ namespace G.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.DolbyEnhancement), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.DolbyEnhancement> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.DolbyEnhancement).Name}");
                     dolby = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

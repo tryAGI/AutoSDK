@@ -153,6 +153,7 @@ namespace G.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MatchValue), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MatchValue> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.MatchValue).Name}");
                     value = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -163,9 +164,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (value == null && text == null && textAny == null && phrase == null && any == null && except == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MatchText), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MatchText> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.MatchText).Name}");
                     text = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -176,9 +181,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (value == null && text == null && textAny == null && phrase == null && any == null && except == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MatchTextAny), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MatchTextAny> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.MatchTextAny).Name}");
                     textAny = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -189,9 +198,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (value == null && text == null && textAny == null && phrase == null && any == null && except == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MatchPhrase), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MatchPhrase> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.MatchPhrase).Name}");
                     phrase = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -202,9 +215,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (value == null && text == null && textAny == null && phrase == null && any == null && except == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MatchAny), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MatchAny> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.MatchAny).Name}");
                     any = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -215,9 +232,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (value == null && text == null && textAny == null && phrase == null && any == null && except == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MatchExcept), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MatchExcept> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.MatchExcept).Name}");
                     except = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

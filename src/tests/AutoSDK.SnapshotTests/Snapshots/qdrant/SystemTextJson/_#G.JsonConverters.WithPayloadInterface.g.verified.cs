@@ -139,7 +139,10 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (withPayloadInterfaceVariant1 == null && withPayloadInterfaceVariant2 == null && selector == null)
+            {
                 try
                 {
 
@@ -153,7 +156,10 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (withPayloadInterfaceVariant1 == null && withPayloadInterfaceVariant2 == null && selector == null)
+            {
                 try
                 {
 

@@ -85,6 +85,7 @@ namespace G.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AssistantsApiToolChoiceOptionEnum), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AssistantsApiToolChoiceOptionEnum> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AssistantsApiToolChoiceOptionEnum).Name}");
                     @enum = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -95,9 +96,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (@enum == null && named == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AssistantsNamedToolChoice), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AssistantsNamedToolChoice> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AssistantsNamedToolChoice).Name}");
                     named = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

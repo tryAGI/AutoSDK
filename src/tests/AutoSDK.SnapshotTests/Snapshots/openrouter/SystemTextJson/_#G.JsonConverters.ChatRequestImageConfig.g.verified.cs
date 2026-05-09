@@ -139,7 +139,10 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (chatRequestImageConfigVariant1 == null && chatRequestImageConfigVariant2 == null && chatRequestImageConfigVariant3 == null)
+            {
                 try
                 {
 
@@ -153,7 +156,10 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (chatRequestImageConfigVariant1 == null && chatRequestImageConfigVariant2 == null && chatRequestImageConfigVariant3 == null)
+            {
                 try
                 {
 

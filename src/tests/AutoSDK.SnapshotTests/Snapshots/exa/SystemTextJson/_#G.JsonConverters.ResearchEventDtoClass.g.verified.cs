@@ -139,7 +139,10 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (researchEventDtoClassVariant1 == null && researchEventDtoClassVariant2 == null && researchEventDtoClassVariant3 == null)
+            {
                 try
                 {
 
@@ -153,7 +156,10 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (researchEventDtoClassVariant1 == null && researchEventDtoClassVariant2 == null && researchEventDtoClassVariant3 == null)
+            {
                 try
                 {
 

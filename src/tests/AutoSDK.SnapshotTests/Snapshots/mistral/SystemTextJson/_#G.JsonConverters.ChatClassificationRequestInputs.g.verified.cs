@@ -76,6 +76,7 @@ namespace G.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.InstructRequest), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.InstructRequest> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.InstructRequest).Name}");
                     instructRequest = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -86,9 +87,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (instructRequest == null && chatClassificationRequestInputsVariant2 == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::System.Collections.Generic.IList<global::G.InstructRequest>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::System.Collections.Generic.IList<global::G.InstructRequest>> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::System.Collections.Generic.IList<global::G.InstructRequest>).Name}");
                     chatClassificationRequestInputsVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

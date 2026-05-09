@@ -109,7 +109,10 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (updateEmbeddingsPayloadVariant1 == null && updateEmbeddingsPayloadVariant2 == null)
+            {
                 try
                 {
 

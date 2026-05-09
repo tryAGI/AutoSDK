@@ -83,6 +83,7 @@ namespace G.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.Range), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.Range> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.Range).Name}");
                     range = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -93,9 +94,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (range == null && datetime == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.DatetimeRange), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.DatetimeRange> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.DatetimeRange).Name}");
                     datetime = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

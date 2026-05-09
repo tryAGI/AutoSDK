@@ -240,6 +240,7 @@ namespace G.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.FunctionDataPrompt), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.FunctionDataPrompt> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.FunctionDataPrompt).Name}");
                     prompt = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -250,9 +251,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (prompt == null && code == null && graph == null && remoteEval == null && global == null && facet == null && batchedFacet == null && parameters == null && functionDataVariant9 == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.FunctionDataCode), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.FunctionDataCode> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.FunctionDataCode).Name}");
                     code = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -263,9 +268,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (prompt == null && code == null && graph == null && remoteEval == null && global == null && facet == null && batchedFacet == null && parameters == null && functionDataVariant9 == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GraphData), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GraphData> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.GraphData).Name}");
                     graph = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -276,9 +285,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (prompt == null && code == null && graph == null && remoteEval == null && global == null && facet == null && batchedFacet == null && parameters == null && functionDataVariant9 == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.FunctionDataRemoteEval), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.FunctionDataRemoteEval> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.FunctionDataRemoteEval).Name}");
                     remoteEval = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -289,9 +302,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (prompt == null && code == null && graph == null && remoteEval == null && global == null && facet == null && batchedFacet == null && parameters == null && functionDataVariant9 == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.FunctionDataGlobal), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.FunctionDataGlobal> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.FunctionDataGlobal).Name}");
                     global = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -302,9 +319,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (prompt == null && code == null && graph == null && remoteEval == null && global == null && facet == null && batchedFacet == null && parameters == null && functionDataVariant9 == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.FacetData), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.FacetData> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.FacetData).Name}");
                     facet = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -315,9 +336,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (prompt == null && code == null && graph == null && remoteEval == null && global == null && facet == null && batchedFacet == null && parameters == null && functionDataVariant9 == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BatchedFacetData), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BatchedFacetData> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.BatchedFacetData).Name}");
                     batchedFacet = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -328,9 +353,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (prompt == null && code == null && graph == null && remoteEval == null && global == null && facet == null && batchedFacet == null && parameters == null && functionDataVariant9 == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.FunctionDataParameters), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.FunctionDataParameters> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.FunctionDataParameters).Name}");
                     parameters = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -341,9 +370,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (prompt == null && code == null && graph == null && remoteEval == null && global == null && facet == null && batchedFacet == null && parameters == null && functionDataVariant9 == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AllOf<global::G.TopicMapData, object>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AllOf<global::G.TopicMapData, object>> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AllOf<global::G.TopicMapData, object>).Name}");
                     functionDataVariant9 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

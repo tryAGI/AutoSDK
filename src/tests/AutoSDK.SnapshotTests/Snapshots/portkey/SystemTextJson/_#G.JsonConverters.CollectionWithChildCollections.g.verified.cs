@@ -85,6 +85,7 @@ namespace G.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.Collection), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.Collection> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.Collection).Name}");
                     collection = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -95,9 +96,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (collection == null && collectionWithChildCollectionsVariant2 == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CollectionWithChildCollectionsVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CollectionWithChildCollectionsVariant2> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CollectionWithChildCollectionsVariant2).Name}");
                     collectionWithChildCollectionsVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

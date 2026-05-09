@@ -80,6 +80,7 @@ namespace G.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CreateEvalItemSimpleInputMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CreateEvalItemSimpleInputMessage> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CreateEvalItemSimpleInputMessage).Name}");
                     simpleInputMessage = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -90,9 +91,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (simpleInputMessage == null && evalMessageObject == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.EvalItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.EvalItem> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.EvalItem).Name}");
                     evalMessageObject = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

@@ -108,6 +108,7 @@ namespace G.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TextEmbeddingInput), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TextEmbeddingInput> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TextEmbeddingInput).Name}");
                     textEmbeddingInput = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -118,9 +119,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (textEmbeddingInput == null && imageEmbeddingInput == null && mixedEmbeddingInput == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ImageEmbeddingInput), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ImageEmbeddingInput> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ImageEmbeddingInput).Name}");
                     imageEmbeddingInput = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -131,9 +136,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (textEmbeddingInput == null && imageEmbeddingInput == null && mixedEmbeddingInput == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MixedEmbeddingInput), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MixedEmbeddingInput> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.MixedEmbeddingInput).Name}");
                     mixedEmbeddingInput = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

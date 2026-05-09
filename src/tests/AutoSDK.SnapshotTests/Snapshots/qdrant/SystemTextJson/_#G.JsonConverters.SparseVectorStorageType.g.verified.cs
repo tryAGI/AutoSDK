@@ -109,7 +109,10 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (sparseVectorStorageTypeVariant1 == null && sparseVectorStorageTypeVariant2 == null)
+            {
                 try
                 {
 

@@ -97,6 +97,7 @@ namespace G.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RetellLLMResponseVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RetellLLMResponseVariant1> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RetellLLMResponseVariant1).Name}");
                     retellLLMResponseVariant1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -107,9 +108,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (retellLLMResponseVariant1 == null && llmRequest == null && retellLLMResponseVariant3 == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RetellLlmRequest), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RetellLlmRequest> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RetellLlmRequest).Name}");
                     llmRequest = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -120,9 +125,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (retellLLMResponseVariant1 == null && llmRequest == null && retellLLMResponseVariant3 == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RetellLLMResponseVariant3), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RetellLLMResponseVariant3> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RetellLLMResponseVariant3).Name}");
                     retellLLMResponseVariant3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

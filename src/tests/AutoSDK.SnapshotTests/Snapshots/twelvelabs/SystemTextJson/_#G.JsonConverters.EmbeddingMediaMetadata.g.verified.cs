@@ -153,6 +153,7 @@ namespace G.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.EmbeddingImageMetadata), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.EmbeddingImageMetadata> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.EmbeddingImageMetadata).Name}");
                     embeddingImageMetadata = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -163,9 +164,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (embeddingImageMetadata == null && embeddingTextImageMetadata == null && embeddingAudioMetadata == null && embeddingVideoMetadata == null && embeddingMultiInputMetadata == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.EmbeddingTextImageMetadata), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.EmbeddingTextImageMetadata> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.EmbeddingTextImageMetadata).Name}");
                     embeddingTextImageMetadata = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -176,9 +181,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (embeddingImageMetadata == null && embeddingTextImageMetadata == null && embeddingAudioMetadata == null && embeddingVideoMetadata == null && embeddingMultiInputMetadata == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.EmbeddingAudioMetadata), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.EmbeddingAudioMetadata> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.EmbeddingAudioMetadata).Name}");
                     embeddingAudioMetadata = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -189,9 +198,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (embeddingImageMetadata == null && embeddingTextImageMetadata == null && embeddingAudioMetadata == null && embeddingVideoMetadata == null && embeddingMultiInputMetadata == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.EmbeddingVideoMetadata), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.EmbeddingVideoMetadata> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.EmbeddingVideoMetadata).Name}");
                     embeddingVideoMetadata = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -202,9 +215,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (embeddingImageMetadata == null && embeddingTextImageMetadata == null && embeddingAudioMetadata == null && embeddingVideoMetadata == null && embeddingMultiInputMetadata == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.EmbeddingMultiInputMetadata), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.EmbeddingMultiInputMetadata> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.EmbeddingMultiInputMetadata).Name}");
                     embeddingMultiInputMetadata = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

@@ -169,7 +169,10 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (baseInputsOneOf1ItemsOneOf0Role0 == null && baseInputsOneOf1ItemsOneOf0Role1 == null && baseInputsOneOf1ItemsOneOf0Role2 == null && baseInputsOneOf1ItemsOneOf0Role3 == null)
+            {
                 try
                 {
 
@@ -183,7 +186,10 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (baseInputsOneOf1ItemsOneOf0Role0 == null && baseInputsOneOf1ItemsOneOf0Role1 == null && baseInputsOneOf1ItemsOneOf0Role2 == null && baseInputsOneOf1ItemsOneOf0Role3 == null)
+            {
                 try
                 {
 
@@ -197,7 +203,10 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (baseInputsOneOf1ItemsOneOf0Role0 == null && baseInputsOneOf1ItemsOneOf0Role1 == null && baseInputsOneOf1ItemsOneOf0Role2 == null && baseInputsOneOf1ItemsOneOf0Role3 == null)
+            {
                 try
                 {
 

@@ -79,6 +79,7 @@ namespace G.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ToolResultOutputVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ToolResultOutputVariant1> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ToolResultOutputVariant1).Name}");
                     toolResultOutputVariant1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -89,9 +90,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (toolResultOutputVariant1 == null && toolResultOutputVariant2 == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ToolResultOutputVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ToolResultOutputVariant2> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ToolResultOutputVariant2).Name}");
                     toolResultOutputVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

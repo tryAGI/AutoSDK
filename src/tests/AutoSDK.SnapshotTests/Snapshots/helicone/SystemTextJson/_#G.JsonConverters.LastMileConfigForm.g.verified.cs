@@ -78,6 +78,7 @@ namespace G.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BaseLastMileConfigForm), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BaseLastMileConfigForm> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.BaseLastMileConfigForm).Name}");
                     @base = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -88,9 +89,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (@base == null && lastMileConfigFormVariant2 == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AnyOf<global::G.LastMileConfigFormVariant2Variant1, global::G.LastMileConfigFormVariant2Variant2>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AnyOf<global::G.LastMileConfigFormVariant2Variant1, global::G.LastMileConfigFormVariant2Variant2>> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AnyOf<global::G.LastMileConfigFormVariant2Variant1, global::G.LastMileConfigFormVariant2Variant2>).Name}");
                     lastMileConfigFormVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

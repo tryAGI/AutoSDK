@@ -382,6 +382,7 @@ namespace G.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.EndCallTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.EndCallTool> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.EndCallTool).Name}");
                     endCall = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -392,9 +393,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (endCall == null && transferCall == null && checkAvailabilityCal == null && bookAppointmentCal == null && agentSwap == null && pressDigit == null && sendSM == null && custom == null && code == null && extractDynamicVariable == null && bridgeTransfer == null && cancelTransfer == null && mcp == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TransferCallTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TransferCallTool> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TransferCallTool).Name}");
                     transferCall = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -405,9 +410,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (endCall == null && transferCall == null && checkAvailabilityCal == null && bookAppointmentCal == null && agentSwap == null && pressDigit == null && sendSM == null && custom == null && code == null && extractDynamicVariable == null && bridgeTransfer == null && cancelTransfer == null && mcp == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CheckAvailabilityCalTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CheckAvailabilityCalTool> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CheckAvailabilityCalTool).Name}");
                     checkAvailabilityCal = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -418,9 +427,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (endCall == null && transferCall == null && checkAvailabilityCal == null && bookAppointmentCal == null && agentSwap == null && pressDigit == null && sendSM == null && custom == null && code == null && extractDynamicVariable == null && bridgeTransfer == null && cancelTransfer == null && mcp == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BookAppointmentCalTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BookAppointmentCalTool> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.BookAppointmentCalTool).Name}");
                     bookAppointmentCal = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -431,9 +444,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (endCall == null && transferCall == null && checkAvailabilityCal == null && bookAppointmentCal == null && agentSwap == null && pressDigit == null && sendSM == null && custom == null && code == null && extractDynamicVariable == null && bridgeTransfer == null && cancelTransfer == null && mcp == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AgentSwapTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AgentSwapTool> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AgentSwapTool).Name}");
                     agentSwap = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -444,9 +461,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (endCall == null && transferCall == null && checkAvailabilityCal == null && bookAppointmentCal == null && agentSwap == null && pressDigit == null && sendSM == null && custom == null && code == null && extractDynamicVariable == null && bridgeTransfer == null && cancelTransfer == null && mcp == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PressDigitTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PressDigitTool> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.PressDigitTool).Name}");
                     pressDigit = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -457,9 +478,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (endCall == null && transferCall == null && checkAvailabilityCal == null && bookAppointmentCal == null && agentSwap == null && pressDigit == null && sendSM == null && custom == null && code == null && extractDynamicVariable == null && bridgeTransfer == null && cancelTransfer == null && mcp == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.SendSMSTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.SendSMSTool> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.SendSMSTool).Name}");
                     sendSM = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -470,9 +495,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (endCall == null && transferCall == null && checkAvailabilityCal == null && bookAppointmentCal == null && agentSwap == null && pressDigit == null && sendSM == null && custom == null && code == null && extractDynamicVariable == null && bridgeTransfer == null && cancelTransfer == null && mcp == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CustomTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CustomTool> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CustomTool).Name}");
                     custom = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -483,9 +512,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (endCall == null && transferCall == null && checkAvailabilityCal == null && bookAppointmentCal == null && agentSwap == null && pressDigit == null && sendSM == null && custom == null && code == null && extractDynamicVariable == null && bridgeTransfer == null && cancelTransfer == null && mcp == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CodeTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CodeTool> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CodeTool).Name}");
                     code = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -496,9 +529,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (endCall == null && transferCall == null && checkAvailabilityCal == null && bookAppointmentCal == null && agentSwap == null && pressDigit == null && sendSM == null && custom == null && code == null && extractDynamicVariable == null && bridgeTransfer == null && cancelTransfer == null && mcp == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ExtractDynamicVariableTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ExtractDynamicVariableTool> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ExtractDynamicVariableTool).Name}");
                     extractDynamicVariable = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -509,9 +546,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (endCall == null && transferCall == null && checkAvailabilityCal == null && bookAppointmentCal == null && agentSwap == null && pressDigit == null && sendSM == null && custom == null && code == null && extractDynamicVariable == null && bridgeTransfer == null && cancelTransfer == null && mcp == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BridgeTransferTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BridgeTransferTool> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.BridgeTransferTool).Name}");
                     bridgeTransfer = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -522,9 +563,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (endCall == null && transferCall == null && checkAvailabilityCal == null && bookAppointmentCal == null && agentSwap == null && pressDigit == null && sendSM == null && custom == null && code == null && extractDynamicVariable == null && bridgeTransfer == null && cancelTransfer == null && mcp == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CancelTransferTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CancelTransferTool> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CancelTransferTool).Name}");
                     cancelTransfer = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -535,9 +580,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (endCall == null && transferCall == null && checkAvailabilityCal == null && bookAppointmentCal == null && agentSwap == null && pressDigit == null && sendSM == null && custom == null && code == null && extractDynamicVariable == null && bridgeTransfer == null && cancelTransfer == null && mcp == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MCPTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MCPTool> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.MCPTool).Name}");
                     mcp = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

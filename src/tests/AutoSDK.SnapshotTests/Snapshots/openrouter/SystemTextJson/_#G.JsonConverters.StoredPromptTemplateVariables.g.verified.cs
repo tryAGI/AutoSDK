@@ -121,6 +121,7 @@ namespace G.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
                     storedPromptTemplateVariablesVariant1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -131,9 +132,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (storedPromptTemplateVariablesVariant1 == null && inputText == null && inputImage == null && inputFile == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.InputText), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.InputText> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.InputText).Name}");
                     inputText = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -144,9 +149,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (storedPromptTemplateVariablesVariant1 == null && inputText == null && inputImage == null && inputFile == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.InputImage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.InputImage> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.InputImage).Name}");
                     inputImage = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -157,9 +166,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (storedPromptTemplateVariablesVariant1 == null && inputText == null && inputImage == null && inputFile == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.InputFile), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.InputFile> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.InputFile).Name}");
                     inputFile = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

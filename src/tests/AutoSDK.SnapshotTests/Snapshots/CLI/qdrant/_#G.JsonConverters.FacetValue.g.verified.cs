@@ -139,7 +139,10 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (facetValueVariant1 == null && facetValueVariant2 == null && facetValueVariant3 == null)
+            {
                 try
                 {
 
@@ -153,7 +156,10 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (facetValueVariant1 == null && facetValueVariant2 == null && facetValueVariant3 == null)
+            {
                 try
                 {
 

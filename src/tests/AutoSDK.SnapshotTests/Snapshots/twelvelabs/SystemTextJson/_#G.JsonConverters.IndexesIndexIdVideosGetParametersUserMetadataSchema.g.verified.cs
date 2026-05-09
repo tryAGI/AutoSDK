@@ -139,7 +139,10 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (indexesIndexIdVideosGetParametersUserMetadataSchemaVariant1 == null && indexesIndexIdVideosGetParametersUserMetadataSchemaVariant2 == null && indexesIndexIdVideosGetParametersUserMetadataSchemaVariant3 == null)
+            {
                 try
                 {
 
@@ -153,7 +156,10 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (indexesIndexIdVideosGetParametersUserMetadataSchemaVariant1 == null && indexesIndexIdVideosGetParametersUserMetadataSchemaVariant2 == null && indexesIndexIdVideosGetParametersUserMetadataSchemaVariant3 == null)
+            {
                 try
                 {
 

@@ -59,6 +59,7 @@ namespace G.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RawOutputFormat), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RawOutputFormat> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RawOutputFormat).Name}");
                     rawOutputFormat = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

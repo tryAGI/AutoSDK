@@ -81,6 +81,7 @@ namespace G.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResponseEngineRetellLm), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResponseEngineRetellLm> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResponseEngineRetellLm).Name}");
                     lm = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -91,9 +92,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (lm == null && conversationFlow == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResponseEngineConversationFlow), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResponseEngineConversationFlow> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResponseEngineConversationFlow).Name}");
                     conversationFlow = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

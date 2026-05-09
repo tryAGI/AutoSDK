@@ -105,6 +105,7 @@ namespace G.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.FileCitation), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.FileCitation> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.FileCitation).Name}");
                     fileCitation = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -115,9 +116,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (fileCitation == null && uRLCitation == null && filePath == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.URLCitation), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.URLCitation> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.URLCitation).Name}");
                     uRLCitation = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -128,9 +133,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (fileCitation == null && uRLCitation == null && filePath == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.FilePath), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.FilePath> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.FilePath).Name}");
                     filePath = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

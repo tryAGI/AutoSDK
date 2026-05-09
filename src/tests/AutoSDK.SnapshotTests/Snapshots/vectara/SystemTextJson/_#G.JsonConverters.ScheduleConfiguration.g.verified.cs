@@ -79,6 +79,7 @@ namespace G.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.IntervalScheduleConfiguration), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.IntervalScheduleConfiguration> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.IntervalScheduleConfiguration).Name}");
                     interval = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -89,9 +90,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (interval == null && cron == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CronScheduleConfiguration), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CronScheduleConfiguration> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CronScheduleConfiguration).Name}");
                     cron = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

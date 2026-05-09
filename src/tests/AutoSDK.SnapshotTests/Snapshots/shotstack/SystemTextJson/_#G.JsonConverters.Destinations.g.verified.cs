@@ -255,6 +255,7 @@ namespace G.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ShotstackDestination), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ShotstackDestination> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ShotstackDestination).Name}");
                     shotstackDestination = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -265,9 +266,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (shotstackDestination == null && muxDestination == null && s3Destination == null && googleCloudStorageDestination == null && googleDriveDestination == null && vimeoDestination == null && tiktokDestination == null && akamaiNetStorageDestination == null && azureBlobStorageDestination == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MuxDestination), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MuxDestination> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.MuxDestination).Name}");
                     muxDestination = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -278,9 +283,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (shotstackDestination == null && muxDestination == null && s3Destination == null && googleCloudStorageDestination == null && googleDriveDestination == null && vimeoDestination == null && tiktokDestination == null && akamaiNetStorageDestination == null && azureBlobStorageDestination == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.S3Destination), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.S3Destination> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.S3Destination).Name}");
                     s3Destination = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -291,9 +300,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (shotstackDestination == null && muxDestination == null && s3Destination == null && googleCloudStorageDestination == null && googleDriveDestination == null && vimeoDestination == null && tiktokDestination == null && akamaiNetStorageDestination == null && azureBlobStorageDestination == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GoogleCloudStorageDestination), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GoogleCloudStorageDestination> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.GoogleCloudStorageDestination).Name}");
                     googleCloudStorageDestination = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -304,9 +317,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (shotstackDestination == null && muxDestination == null && s3Destination == null && googleCloudStorageDestination == null && googleDriveDestination == null && vimeoDestination == null && tiktokDestination == null && akamaiNetStorageDestination == null && azureBlobStorageDestination == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GoogleDriveDestination), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GoogleDriveDestination> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.GoogleDriveDestination).Name}");
                     googleDriveDestination = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -317,9 +334,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (shotstackDestination == null && muxDestination == null && s3Destination == null && googleCloudStorageDestination == null && googleDriveDestination == null && vimeoDestination == null && tiktokDestination == null && akamaiNetStorageDestination == null && azureBlobStorageDestination == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.VimeoDestination), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.VimeoDestination> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.VimeoDestination).Name}");
                     vimeoDestination = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -330,9 +351,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (shotstackDestination == null && muxDestination == null && s3Destination == null && googleCloudStorageDestination == null && googleDriveDestination == null && vimeoDestination == null && tiktokDestination == null && akamaiNetStorageDestination == null && azureBlobStorageDestination == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TiktokDestination), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TiktokDestination> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TiktokDestination).Name}");
                     tiktokDestination = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -343,9 +368,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (shotstackDestination == null && muxDestination == null && s3Destination == null && googleCloudStorageDestination == null && googleDriveDestination == null && vimeoDestination == null && tiktokDestination == null && akamaiNetStorageDestination == null && azureBlobStorageDestination == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AkamaiNetStorageDestination), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AkamaiNetStorageDestination> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AkamaiNetStorageDestination).Name}");
                     akamaiNetStorageDestination = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -356,9 +385,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (shotstackDestination == null && muxDestination == null && s3Destination == null && googleCloudStorageDestination == null && googleDriveDestination == null && vimeoDestination == null && tiktokDestination == null && akamaiNetStorageDestination == null && azureBlobStorageDestination == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AzureBlobStorageDestination), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AzureBlobStorageDestination> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AzureBlobStorageDestination).Name}");
                     azureBlobStorageDestination = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

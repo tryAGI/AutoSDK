@@ -139,7 +139,10 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (chatAssistantMessageContentVariant1 == null && chatAssistantMessageContent1 == null && chatAssistantMessageContentVariant3 == null)
+            {
                 try
                 {
 
@@ -153,7 +156,10 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (chatAssistantMessageContentVariant1 == null && chatAssistantMessageContent1 == null && chatAssistantMessageContentVariant3 == null)
+            {
                 try
                 {
 

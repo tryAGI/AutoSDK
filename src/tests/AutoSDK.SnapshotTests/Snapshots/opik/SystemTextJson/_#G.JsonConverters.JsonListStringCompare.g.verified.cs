@@ -139,7 +139,10 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (jsonListStringCompareVariant1 == null && jsonListStringCompareVariant2 == null && jsonListStringCompareVariant3 == null)
+            {
                 try
                 {
 
@@ -153,7 +156,10 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (jsonListStringCompareVariant1 == null && jsonListStringCompareVariant2 == null && jsonListStringCompareVariant3 == null)
+            {
                 try
                 {
 

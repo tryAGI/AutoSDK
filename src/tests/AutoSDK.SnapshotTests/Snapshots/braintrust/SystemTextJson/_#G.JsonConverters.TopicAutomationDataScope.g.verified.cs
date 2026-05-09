@@ -115,6 +115,7 @@ namespace G.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TopicAutomationDataScopeVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TopicAutomationDataScopeVariant1> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TopicAutomationDataScopeVariant1).Name}");
                     topicAutomationDataScopeVariant1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -125,9 +126,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (topicAutomationDataScopeVariant1 == null && topicAutomationDataScopeVariant2 == null && topicAutomationDataScopeVariant3 == null && topicAutomationDataScopeVariant4 == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TopicAutomationDataScopeVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TopicAutomationDataScopeVariant2> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TopicAutomationDataScopeVariant2).Name}");
                     topicAutomationDataScopeVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -138,9 +143,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (topicAutomationDataScopeVariant1 == null && topicAutomationDataScopeVariant2 == null && topicAutomationDataScopeVariant3 == null && topicAutomationDataScopeVariant4 == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TopicAutomationDataScopeVariant3), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TopicAutomationDataScopeVariant3> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TopicAutomationDataScopeVariant3).Name}");
                     topicAutomationDataScopeVariant3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -151,9 +160,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (topicAutomationDataScopeVariant1 == null && topicAutomationDataScopeVariant2 == null && topicAutomationDataScopeVariant3 == null && topicAutomationDataScopeVariant4 == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
                     topicAutomationDataScopeVariant4 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

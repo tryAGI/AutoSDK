@@ -109,6 +109,7 @@ namespace G.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ReasoningDetailSummary), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ReasoningDetailSummary> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ReasoningDetailSummary).Name}");
                     reasoningDetailSummary = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -119,9 +120,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (reasoningDetailSummary == null && reasoningDetailEncrypted == null && reasoningDetailText == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ReasoningDetailEncrypted), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ReasoningDetailEncrypted> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ReasoningDetailEncrypted).Name}");
                     reasoningDetailEncrypted = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -132,9 +137,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (reasoningDetailSummary == null && reasoningDetailEncrypted == null && reasoningDetailText == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ReasoningDetailText), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ReasoningDetailText> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ReasoningDetailText).Name}");
                     reasoningDetailText = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

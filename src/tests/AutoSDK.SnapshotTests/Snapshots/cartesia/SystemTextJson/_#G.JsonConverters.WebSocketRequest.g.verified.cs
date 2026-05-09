@@ -107,6 +107,7 @@ namespace G.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GenerationRequest), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GenerationRequest> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.GenerationRequest).Name}");
                     generationRequest = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -117,9 +118,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (generationRequest == null && cancelContextRequest == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CancelContextRequest), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CancelContextRequest> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CancelContextRequest).Name}");
                     cancelContextRequest = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

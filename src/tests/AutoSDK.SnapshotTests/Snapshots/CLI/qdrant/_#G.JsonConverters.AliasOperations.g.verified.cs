@@ -108,6 +108,7 @@ namespace G.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CreateAliasOperation), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CreateAliasOperation> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CreateAliasOperation).Name}");
                     createOperation = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -118,9 +119,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (createOperation == null && deleteOperation == null && renameOperation == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.DeleteAliasOperation), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.DeleteAliasOperation> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.DeleteAliasOperation).Name}");
                     deleteOperation = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -131,9 +136,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (createOperation == null && deleteOperation == null && renameOperation == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RenameAliasOperation), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RenameAliasOperation> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RenameAliasOperation).Name}");
                     renameOperation = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

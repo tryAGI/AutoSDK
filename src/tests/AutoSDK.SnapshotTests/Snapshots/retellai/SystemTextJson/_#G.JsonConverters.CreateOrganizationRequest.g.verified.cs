@@ -77,6 +77,7 @@ namespace G.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CreateOrganizationRequestNew), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CreateOrganizationRequestNew> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CreateOrganizationRequestNew).Name}");
                     @new = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -87,9 +88,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (@new == null && old == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CreateOrganizationRequestOld), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CreateOrganizationRequestOld> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CreateOrganizationRequestOld).Name}");
                     old = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

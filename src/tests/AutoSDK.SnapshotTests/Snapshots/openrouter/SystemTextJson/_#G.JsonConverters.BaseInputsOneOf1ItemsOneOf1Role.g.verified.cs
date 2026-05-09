@@ -139,7 +139,10 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (baseInputsOneOf1ItemsOneOf1Role0 == null && baseInputsOneOf1ItemsOneOf1Role1 == null && baseInputsOneOf1ItemsOneOf1Role2 == null)
+            {
                 try
                 {
 
@@ -153,7 +156,10 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (baseInputsOneOf1ItemsOneOf1Role0 == null && baseInputsOneOf1ItemsOneOf1Role1 == null && baseInputsOneOf1ItemsOneOf1Role2 == null)
+            {
                 try
                 {
 

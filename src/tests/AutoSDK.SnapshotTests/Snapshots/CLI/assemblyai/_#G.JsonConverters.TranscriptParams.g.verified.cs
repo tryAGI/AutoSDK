@@ -113,6 +113,7 @@ namespace G.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TranscriptParamsVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TranscriptParamsVariant1> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TranscriptParamsVariant1).Name}");
                     transcriptParamsVariant1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -123,9 +124,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (transcriptParamsVariant1 == null && optional == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TranscriptOptionalParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TranscriptOptionalParams> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TranscriptOptionalParams).Name}");
                     optional = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

@@ -139,7 +139,10 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (chatReasoningSummaryVerbosityEnum == null && chatRequestReasoningSummaryVariant2 == null && chatRequestReasoningSummaryVariant3 == null)
+            {
                 try
                 {
 
@@ -153,7 +156,10 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (chatReasoningSummaryVerbosityEnum == null && chatRequestReasoningSummaryVariant2 == null && chatRequestReasoningSummaryVariant3 == null)
+            {
                 try
                 {
 

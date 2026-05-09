@@ -89,6 +89,7 @@ namespace G.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CreateChatPromptRequest), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CreateChatPromptRequest> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CreateChatPromptRequest).Name}");
                     createChatPromptRequest = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -99,9 +100,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (createChatPromptRequest == null && createTextPromptRequest == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CreateTextPromptRequest), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CreateTextPromptRequest> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CreateTextPromptRequest).Name}");
                     createTextPromptRequest = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

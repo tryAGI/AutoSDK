@@ -126,6 +126,7 @@ namespace G.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TransferOptionColdTransfer), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TransferOptionColdTransfer> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TransferOptionColdTransfer).Name}");
                     coldTransfer = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -136,9 +137,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (coldTransfer == null && warmTransfer == null && agenticWarmTransfer == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TransferOptionWarmTransfer), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TransferOptionWarmTransfer> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TransferOptionWarmTransfer).Name}");
                     warmTransfer = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -149,9 +154,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (coldTransfer == null && warmTransfer == null && agenticWarmTransfer == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TransferOptionAgenticWarmTransfer), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TransferOptionAgenticWarmTransfer> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TransferOptionAgenticWarmTransfer).Name}");
                     agenticWarmTransfer = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

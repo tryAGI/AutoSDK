@@ -79,6 +79,7 @@ namespace G.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TranscriptionChunkingStrategyEnum), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TranscriptionChunkingStrategyEnum> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TranscriptionChunkingStrategyEnum).Name}");
                     @enum = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -89,9 +90,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (@enum == null && vadConfig == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.VadConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.VadConfig> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.VadConfig).Name}");
                     vadConfig = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

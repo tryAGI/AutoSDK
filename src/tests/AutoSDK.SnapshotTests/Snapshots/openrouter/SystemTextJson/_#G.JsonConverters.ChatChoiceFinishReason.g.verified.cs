@@ -139,7 +139,10 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (chatFinishReasonEnum == null && chatChoiceFinishReasonVariant2 == null && chatChoiceFinishReasonVariant3 == null)
+            {
                 try
                 {
 
@@ -153,7 +156,10 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (chatFinishReasonEnum == null && chatChoiceFinishReasonVariant2 == null && chatChoiceFinishReasonVariant3 == null)
+            {
                 try
                 {
 

@@ -103,6 +103,7 @@ namespace G.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::System.Collections.Generic.Dictionary<string, int>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::System.Collections.Generic.Dictionary<string, int>> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::System.Collections.Generic.Dictionary<string, int>).Name}");
                     usageDetailsVariant1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -113,9 +114,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (usageDetailsVariant1 == null && openAICompletionUsageSchema == null && openAIResponseUsageSchema == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.OpenAICompletionUsageSchema), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.OpenAICompletionUsageSchema> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.OpenAICompletionUsageSchema).Name}");
                     openAICompletionUsageSchema = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -126,9 +131,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (usageDetailsVariant1 == null && openAICompletionUsageSchema == null && openAIResponseUsageSchema == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.OpenAIResponseUsageSchema), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.OpenAIResponseUsageSchema> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.OpenAIResponseUsageSchema).Name}");
                     openAIResponseUsageSchema = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

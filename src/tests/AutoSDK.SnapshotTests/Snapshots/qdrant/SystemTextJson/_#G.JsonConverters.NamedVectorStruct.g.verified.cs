@@ -106,6 +106,7 @@ namespace G.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::System.Collections.Generic.IList<float>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::System.Collections.Generic.IList<float>> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::System.Collections.Generic.IList<float>).Name}");
                     namedVectorStructVariant1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -116,9 +117,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (namedVectorStructVariant1 == null && namedVector == null && sparse == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.NamedVector), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.NamedVector> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.NamedVector).Name}");
                     namedVector = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -129,9 +134,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (namedVectorStructVariant1 == null && namedVector == null && sparse == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.NamedSparseVector), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.NamedSparseVector> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.NamedSparseVector).Name}");
                     sparse = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

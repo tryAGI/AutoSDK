@@ -139,7 +139,10 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant1 == null && messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2 == null && messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant3 == null)
+            {
                 try
                 {
 
@@ -153,7 +156,10 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant1 == null && messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2 == null && messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant3 == null)
+            {
                 try
                 {
 

@@ -109,7 +109,10 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (createModelStatusVariant1 == null && @enum == null)
+            {
                 try
                 {
 

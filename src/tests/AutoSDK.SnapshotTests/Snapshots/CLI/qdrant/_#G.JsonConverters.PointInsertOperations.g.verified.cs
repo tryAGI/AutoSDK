@@ -93,6 +93,7 @@ namespace G.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PointsBatch), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PointsBatch> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.PointsBatch).Name}");
                     pointsBatch = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -103,9 +104,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (pointsBatch == null && pointsList == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PointsList), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PointsList> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.PointsList).Name}");
                     pointsList = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

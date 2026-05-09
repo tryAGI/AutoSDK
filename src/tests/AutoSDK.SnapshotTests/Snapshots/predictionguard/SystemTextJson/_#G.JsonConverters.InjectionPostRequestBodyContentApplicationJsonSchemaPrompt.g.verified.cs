@@ -109,7 +109,10 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (injectionPostRequestBodyContentApplicationJsonSchemaPromptVariant1 == null && injectionPostRequestBodyContentApplicationJsonSchemaPromptVariant2 == null)
+            {
                 try
                 {
 

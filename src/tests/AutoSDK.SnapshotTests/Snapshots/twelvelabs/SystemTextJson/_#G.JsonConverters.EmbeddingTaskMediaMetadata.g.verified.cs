@@ -92,6 +92,7 @@ namespace G.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.EmbeddingAudioMetadata), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.EmbeddingAudioMetadata> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.EmbeddingAudioMetadata).Name}");
                     embeddingAudioMetadata = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -102,9 +103,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (embeddingAudioMetadata == null && embeddingVideoMetadata == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.EmbeddingVideoMetadata), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.EmbeddingVideoMetadata> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.EmbeddingVideoMetadata).Name}");
                     embeddingVideoMetadata = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

@@ -87,6 +87,7 @@ namespace G.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.StreamAnalyzeResponse), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.StreamAnalyzeResponse> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.StreamAnalyzeResponse).Name}");
                     streamAnalyzeResponse = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -97,9 +98,13 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (streamAnalyzeResponse == null && nonStreamAnalyzeResponse == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.NonStreamAnalyzeResponse), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.NonStreamAnalyzeResponse> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.NonStreamAnalyzeResponse).Name}");
                     nonStreamAnalyzeResponse = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
