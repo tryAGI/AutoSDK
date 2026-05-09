@@ -161,6 +161,10 @@ namespace G
 
                     new global::G.JsonConverters.OutputAudioTypeNullableJsonConverter(),
 
+                    new global::G.JsonConverters.OutputItemDiscriminatorTypeJsonConverter(),
+
+                    new global::G.JsonConverters.OutputItemDiscriminatorTypeNullableJsonConverter(),
+
                     new global::G.JsonConverters.OutputMessageTypeJsonConverter(),
 
                     new global::G.JsonConverters.OutputMessageTypeNullableJsonConverter(),
@@ -300,6 +304,10 @@ namespace G
                     new global::G.JsonConverters.InputImageDetailJsonConverter(),
 
                     new global::G.JsonConverters.InputImageDetailNullableJsonConverter(),
+
+                    new global::G.JsonConverters.InputItemDiscriminatorTypeJsonConverter(),
+
+                    new global::G.JsonConverters.InputItemDiscriminatorTypeNullableJsonConverter(),
 
                     new global::G.JsonConverters.InputMessageTypeJsonConverter(),
 
@@ -717,6 +725,10 @@ namespace G
 
                     new global::G.JsonConverters.ResponseRefusalDoneEventTypeNullableJsonConverter(),
 
+                    new global::G.JsonConverters.ResponseStreamEventDiscriminatorTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ResponseStreamEventDiscriminatorTypeNullableJsonConverter(),
+
                     new global::G.JsonConverters.ResponseTextAnnotationDeltaEventTypeJsonConverter(),
 
                     new global::G.JsonConverters.ResponseTextAnnotationDeltaEventTypeNullableJsonConverter(),
@@ -773,9 +785,17 @@ namespace G
 
                     new global::G.JsonConverters.DeleteAssistantResponseObjectNullableJsonConverter(),
 
+                    new global::G.JsonConverters.ItemDiscriminatorTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ItemDiscriminatorTypeNullableJsonConverter(),
+
                     new global::G.JsonConverters.ItemReferenceTypeJsonConverter(),
 
                     new global::G.JsonConverters.ItemReferenceTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ItemResourceDiscriminatorTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ItemResourceDiscriminatorTypeNullableJsonConverter(),
 
                     new global::G.JsonConverters.KeyPressTypeJsonConverter(),
 
@@ -1316,6 +1336,10 @@ namespace G
                     new global::G.JsonConverters.CreateSecretReferenceRequestManagerTypeJsonConverter(),
 
                     new global::G.JsonConverters.CreateSecretReferenceRequestManagerTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateSecretReferenceRequestAuthConfigDiscriminatorAwsAuthTypeJsonConverter(),
+
+                    new global::G.JsonConverters.CreateSecretReferenceRequestAuthConfigDiscriminatorAwsAuthTypeNullableJsonConverter(),
 
                     new global::G.JsonConverters.SecretReferenceListItemManagerTypeJsonConverter(),
 

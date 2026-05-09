@@ -13,7 +13,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public string? GenerationType { get; }
+        public global::G.GenerationRequestDiscriminatorGenerationType? GenerationType { get; }
 
         /// <summary>
         /// The generation request object
@@ -114,7 +114,7 @@ namespace G
         /// 
         /// </summary>
         public Request(
-            string? generationType,
+            global::G.GenerationRequestDiscriminatorGenerationType? generationType,
             global::G.GenerationRequest? video,
             global::G.ImageGenerationRequest? image
             )

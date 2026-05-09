@@ -13,7 +13,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public string? Model { get; }
+        public global::G.CreateTextToImageRequestDiscriminatorModel? Model { get; }
 
         /// <summary>
         /// 
@@ -162,7 +162,7 @@ namespace G
         /// 
         /// </summary>
         public CreateTextToImageRequest(
-            string? model,
+            global::G.CreateTextToImageRequestDiscriminatorModel? model,
             global::G.CreateTextToImageRequestGen4ImageTurbo? gen4ImageTurbo,
             global::G.CreateTextToImageRequestGen4Image? gen4Image,
             global::G.CreateTextToImageRequestGemini25Flash? gemini25Flash

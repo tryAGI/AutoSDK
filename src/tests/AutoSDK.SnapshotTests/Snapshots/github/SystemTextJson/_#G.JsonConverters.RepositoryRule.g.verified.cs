@@ -23,147 +23,147 @@ namespace G.JsonConverters
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
             global::G.RepositoryRuleCreation? creation = default;
-            if (discriminator?.Type == "creation")
+            if (discriminator?.Type == global::G.RepositoryRuleDiscriminatorType.Creation)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RepositoryRuleCreation), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RepositoryRuleCreation> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.RepositoryRuleCreation)}");
                 creation = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.RepositoryRuleUpdate? update = default;
-            if (discriminator?.Type == "update")
+            if (discriminator?.Type == global::G.RepositoryRuleDiscriminatorType.Update)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RepositoryRuleUpdate), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RepositoryRuleUpdate> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.RepositoryRuleUpdate)}");
                 update = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.RepositoryRuleDeletion? deletion = default;
-            if (discriminator?.Type == "deletion")
+            if (discriminator?.Type == global::G.RepositoryRuleDiscriminatorType.Deletion)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RepositoryRuleDeletion), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RepositoryRuleDeletion> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.RepositoryRuleDeletion)}");
                 deletion = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.RepositoryRuleRequiredLinearHistory? requiredLinearHistory = default;
-            if (discriminator?.Type == "required_linear_history")
+            if (discriminator?.Type == global::G.RepositoryRuleDiscriminatorType.RequiredLinearHistory)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RepositoryRuleRequiredLinearHistory), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RepositoryRuleRequiredLinearHistory> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.RepositoryRuleRequiredLinearHistory)}");
                 requiredLinearHistory = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.RepositoryRuleMergeQueue? mergeQueue = default;
-            if (discriminator?.Type == "merge_queue")
+            if (discriminator?.Type == global::G.RepositoryRuleDiscriminatorType.MergeQueue)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RepositoryRuleMergeQueue), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RepositoryRuleMergeQueue> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.RepositoryRuleMergeQueue)}");
                 mergeQueue = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.RepositoryRuleRequiredDeployments? requiredDeployments = default;
-            if (discriminator?.Type == "required_deployments")
+            if (discriminator?.Type == global::G.RepositoryRuleDiscriminatorType.RequiredDeployments)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RepositoryRuleRequiredDeployments), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RepositoryRuleRequiredDeployments> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.RepositoryRuleRequiredDeployments)}");
                 requiredDeployments = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.RepositoryRuleRequiredSignatures? requiredSignatures = default;
-            if (discriminator?.Type == "required_signatures")
+            if (discriminator?.Type == global::G.RepositoryRuleDiscriminatorType.RequiredSignatures)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RepositoryRuleRequiredSignatures), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RepositoryRuleRequiredSignatures> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.RepositoryRuleRequiredSignatures)}");
                 requiredSignatures = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.RepositoryRulePullRequest? pullRequest = default;
-            if (discriminator?.Type == "pull_request")
+            if (discriminator?.Type == global::G.RepositoryRuleDiscriminatorType.PullRequest)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RepositoryRulePullRequest), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RepositoryRulePullRequest> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.RepositoryRulePullRequest)}");
                 pullRequest = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.RepositoryRuleRequiredStatusChecks? requiredStatusChecks = default;
-            if (discriminator?.Type == "required_status_checks")
+            if (discriminator?.Type == global::G.RepositoryRuleDiscriminatorType.RequiredStatusChecks)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RepositoryRuleRequiredStatusChecks), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RepositoryRuleRequiredStatusChecks> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.RepositoryRuleRequiredStatusChecks)}");
                 requiredStatusChecks = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.RepositoryRuleNonFastForward? nonFastForward = default;
-            if (discriminator?.Type == "non_fast_forward")
+            if (discriminator?.Type == global::G.RepositoryRuleDiscriminatorType.NonFastForward)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RepositoryRuleNonFastForward), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RepositoryRuleNonFastForward> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.RepositoryRuleNonFastForward)}");
                 nonFastForward = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.RepositoryRuleCommitMessagePattern? commitMessagePattern = default;
-            if (discriminator?.Type == "commit_message_pattern")
+            if (discriminator?.Type == global::G.RepositoryRuleDiscriminatorType.CommitMessagePattern)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RepositoryRuleCommitMessagePattern), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RepositoryRuleCommitMessagePattern> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.RepositoryRuleCommitMessagePattern)}");
                 commitMessagePattern = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.RepositoryRuleCommitAuthorEmailPattern? commitAuthorEmailPattern = default;
-            if (discriminator?.Type == "commit_author_email_pattern")
+            if (discriminator?.Type == global::G.RepositoryRuleDiscriminatorType.CommitAuthorEmailPattern)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RepositoryRuleCommitAuthorEmailPattern), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RepositoryRuleCommitAuthorEmailPattern> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.RepositoryRuleCommitAuthorEmailPattern)}");
                 commitAuthorEmailPattern = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.RepositoryRuleCommitterEmailPattern? committerEmailPattern = default;
-            if (discriminator?.Type == "committer_email_pattern")
+            if (discriminator?.Type == global::G.RepositoryRuleDiscriminatorType.CommitterEmailPattern)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RepositoryRuleCommitterEmailPattern), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RepositoryRuleCommitterEmailPattern> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.RepositoryRuleCommitterEmailPattern)}");
                 committerEmailPattern = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.RepositoryRuleBranchNamePattern? branchNamePattern = default;
-            if (discriminator?.Type == "branch_name_pattern")
+            if (discriminator?.Type == global::G.RepositoryRuleDiscriminatorType.BranchNamePattern)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RepositoryRuleBranchNamePattern), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RepositoryRuleBranchNamePattern> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.RepositoryRuleBranchNamePattern)}");
                 branchNamePattern = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.RepositoryRuleTagNamePattern? tagNamePattern = default;
-            if (discriminator?.Type == "tag_name_pattern")
+            if (discriminator?.Type == global::G.RepositoryRuleDiscriminatorType.TagNamePattern)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RepositoryRuleTagNamePattern), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RepositoryRuleTagNamePattern> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.RepositoryRuleTagNamePattern)}");
                 tagNamePattern = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.RepositoryRuleFilePathRestriction? filePathRestriction = default;
-            if (discriminator?.Type == "file_path_restriction")
+            if (discriminator?.Type == global::G.RepositoryRuleDiscriminatorType.FilePathRestriction)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RepositoryRuleFilePathRestriction), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RepositoryRuleFilePathRestriction> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.RepositoryRuleFilePathRestriction)}");
                 filePathRestriction = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.RepositoryRuleMaxFilePathLength? maxFilePathLength = default;
-            if (discriminator?.Type == "max_file_path_length")
+            if (discriminator?.Type == global::G.RepositoryRuleDiscriminatorType.MaxFilePathLength)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RepositoryRuleMaxFilePathLength), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RepositoryRuleMaxFilePathLength> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.RepositoryRuleMaxFilePathLength)}");
                 maxFilePathLength = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.RepositoryRuleFileExtensionRestriction? fileExtensionRestriction = default;
-            if (discriminator?.Type == "file_extension_restriction")
+            if (discriminator?.Type == global::G.RepositoryRuleDiscriminatorType.FileExtensionRestriction)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RepositoryRuleFileExtensionRestriction), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RepositoryRuleFileExtensionRestriction> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.RepositoryRuleFileExtensionRestriction)}");
                 fileExtensionRestriction = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.RepositoryRuleMaxFileSize? maxFileSize = default;
-            if (discriminator?.Type == "max_file_size")
+            if (discriminator?.Type == global::G.RepositoryRuleDiscriminatorType.MaxFileSize)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RepositoryRuleMaxFileSize), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RepositoryRuleMaxFileSize> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.RepositoryRuleMaxFileSize)}");
                 maxFileSize = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.RepositoryRuleWorkflows? workflows = default;
-            if (discriminator?.Type == "workflows")
+            if (discriminator?.Type == global::G.RepositoryRuleDiscriminatorType.Workflows)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RepositoryRuleWorkflows), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RepositoryRuleWorkflows> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.RepositoryRuleWorkflows)}");
                 workflows = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.RepositoryRuleCodeScanning? codeScanning = default;
-            if (discriminator?.Type == "code_scanning")
+            if (discriminator?.Type == global::G.RepositoryRuleDiscriminatorType.CodeScanning)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RepositoryRuleCodeScanning), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RepositoryRuleCodeScanning> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.RepositoryRuleCodeScanning)}");

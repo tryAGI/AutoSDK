@@ -13,7 +13,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public string? Type { get; }
+        public global::G.ResearchOperationDtoClassDiscriminatorType? Type { get; }
 
         /// <summary>
         /// 
@@ -162,7 +162,7 @@ namespace G
         /// 
         /// </summary>
         public ResearchOperationDtoClass(
-            string? type,
+            global::G.ResearchOperationDtoClassDiscriminatorType? type,
             global::G.ResearchOperationDtoClassVariant1? think,
             global::G.ResearchOperationDtoClassVariant2? search,
             global::G.ResearchOperationDtoClassVariant3? crawl

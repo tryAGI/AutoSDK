@@ -13,7 +13,8 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        public string? Status { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.GetTasksResponseDiscriminatorStatusJsonConverter))]
+        public global::G.GetTasksResponseDiscriminatorStatus? Status { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -29,7 +30,7 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public GetTasksResponseDiscriminator(
-            string? status)
+            global::G.GetTasksResponseDiscriminatorStatus? status)
         {
             this.Status = status;
         }

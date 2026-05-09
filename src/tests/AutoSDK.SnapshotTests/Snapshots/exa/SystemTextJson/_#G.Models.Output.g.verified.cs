@@ -13,7 +13,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public string? OutputType { get; }
+        public global::G.ResearchEventDtoClassVariant1Variant2OutputDiscriminatorOutputType? OutputType { get; }
 
         /// <summary>
         /// 
@@ -114,7 +114,7 @@ namespace G
         /// 
         /// </summary>
         public Output(
-            string? outputType,
+            global::G.ResearchEventDtoClassVariant1Variant2OutputDiscriminatorOutputType? outputType,
             global::G.ResearchEventDtoClassVariant1Variant2OutputVariant1? completed,
             global::G.ResearchEventDtoClassVariant1Variant2OutputVariant2? failed
             )

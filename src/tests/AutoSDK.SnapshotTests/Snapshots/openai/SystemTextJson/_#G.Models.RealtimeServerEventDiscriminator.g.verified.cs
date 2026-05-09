@@ -13,7 +13,8 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        public string? Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.RealtimeServerEventDiscriminatorTypeJsonConverter))]
+        public global::G.RealtimeServerEventDiscriminatorType? Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -29,7 +30,7 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RealtimeServerEventDiscriminator(
-            string? type)
+            global::G.RealtimeServerEventDiscriminatorType? type)
         {
             this.Type = type;
         }

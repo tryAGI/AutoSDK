@@ -57,6 +57,8 @@ namespace G
                     new global::G.JsonConverters.GenerationRequestGenerationTypeNullableJsonConverter(),
                     new global::G.JsonConverters.GenerationTypeJsonConverter(),
                     new global::G.JsonConverters.GenerationTypeNullableJsonConverter(),
+                    new global::G.JsonConverters.GenerationRequestDiscriminatorGenerationTypeJsonConverter(),
+                    new global::G.JsonConverters.GenerationRequestDiscriminatorGenerationTypeNullableJsonConverter(),
                     new global::G.JsonConverters.KeyframeDiscriminatorTypeJsonConverter(),
                     new global::G.JsonConverters.KeyframeDiscriminatorTypeNullableJsonConverter(),
                     new global::G.JsonConverters.ImageModelJsonConverter(),

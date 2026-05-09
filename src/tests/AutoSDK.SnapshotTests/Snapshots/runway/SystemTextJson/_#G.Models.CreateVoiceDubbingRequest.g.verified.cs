@@ -13,7 +13,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public string? Model { get; }
+        public global::G.CreateVoiceDubbingRequestDiscriminatorModel? Model { get; }
 
         /// <summary>
         /// 
@@ -66,7 +66,7 @@ namespace G
         /// 
         /// </summary>
         public CreateVoiceDubbingRequest(
-            string? model,
+            global::G.CreateVoiceDubbingRequestDiscriminatorModel? model,
             global::G.CreateVoiceDubbingRequestElevenVoiceDubbing? elevenVoiceDubbing
             )
         {

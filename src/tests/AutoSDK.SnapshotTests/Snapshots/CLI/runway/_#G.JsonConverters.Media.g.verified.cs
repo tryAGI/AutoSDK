@@ -23,14 +23,14 @@ namespace G.JsonConverters
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
             global::G.CreateSpeechToSpeechRequestElevenMultilingualStsV2MediaSpeechToSpeechAudio? audio = default;
-            if (discriminator?.Type == "audio")
+            if (discriminator?.Type == global::G.CreateSpeechToSpeechRequestElevenMultilingualStsV2MediaDiscriminatorType.Audio)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CreateSpeechToSpeechRequestElevenMultilingualStsV2MediaSpeechToSpeechAudio), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CreateSpeechToSpeechRequestElevenMultilingualStsV2MediaSpeechToSpeechAudio> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.CreateSpeechToSpeechRequestElevenMultilingualStsV2MediaSpeechToSpeechAudio)}");
                 audio = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.CreateSpeechToSpeechRequestElevenMultilingualStsV2MediaSpeechToSpeechVideo? video = default;
-            if (discriminator?.Type == "video")
+            if (discriminator?.Type == global::G.CreateSpeechToSpeechRequestElevenMultilingualStsV2MediaDiscriminatorType.Video)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CreateSpeechToSpeechRequestElevenMultilingualStsV2MediaSpeechToSpeechVideo), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CreateSpeechToSpeechRequestElevenMultilingualStsV2MediaSpeechToSpeechVideo> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.CreateSpeechToSpeechRequestElevenMultilingualStsV2MediaSpeechToSpeechVideo)}");

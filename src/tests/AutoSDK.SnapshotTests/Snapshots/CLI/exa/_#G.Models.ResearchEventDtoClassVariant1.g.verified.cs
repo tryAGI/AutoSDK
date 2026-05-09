@@ -13,7 +13,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public string? EventType { get; }
+        public global::G.ResearchEventDtoClassVariant1DiscriminatorEventType? EventType { get; }
 
         /// <summary>
         /// 
@@ -114,7 +114,7 @@ namespace G
         /// 
         /// </summary>
         public ResearchEventDtoClassVariant1(
-            string? eventType,
+            global::G.ResearchEventDtoClassVariant1DiscriminatorEventType? eventType,
             global::G.ResearchEventDtoClassVariant1Variant1? researchDefinition,
             global::G.ResearchEventDtoClassVariant1Variant2? researchOutput
             )

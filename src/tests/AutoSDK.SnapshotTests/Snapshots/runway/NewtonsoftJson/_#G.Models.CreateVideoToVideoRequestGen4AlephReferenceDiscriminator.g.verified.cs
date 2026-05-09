@@ -13,7 +13,8 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
-        public string? Type { get; set; }
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateVideoToVideoRequestGen4AlephReferenceDiscriminatorTypeJsonConverter))]
+        public global::G.CreateVideoToVideoRequestGen4AlephReferenceDiscriminatorType? Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -26,7 +27,7 @@ namespace G
         /// </summary>
         /// <param name="type"></param>
         public CreateVideoToVideoRequestGen4AlephReferenceDiscriminator(
-            string? type)
+            global::G.CreateVideoToVideoRequestGen4AlephReferenceDiscriminatorType? type)
         {
             this.Type = type;
         }

@@ -13,7 +13,8 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("outputType")]
-        public string? OutputType { get; set; }
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ResearchEventDtoClassVariant1Variant2OutputDiscriminatorOutputTypeJsonConverter))]
+        public global::G.ResearchEventDtoClassVariant1Variant2OutputDiscriminatorOutputType? OutputType { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -26,7 +27,7 @@ namespace G
         /// </summary>
         /// <param name="outputType"></param>
         public ResearchEventDtoClassVariant1Variant2OutputDiscriminator(
-            string? outputType)
+            global::G.ResearchEventDtoClassVariant1Variant2OutputDiscriminatorOutputType? outputType)
         {
             this.OutputType = outputType;
         }

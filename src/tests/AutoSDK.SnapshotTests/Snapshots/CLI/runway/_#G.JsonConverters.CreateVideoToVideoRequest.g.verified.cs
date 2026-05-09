@@ -23,7 +23,7 @@ namespace G.JsonConverters
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
             global::G.CreateVideoToVideoRequestGen4Aleph? gen4Aleph = default;
-            if (discriminator?.Model == "gen4_aleph")
+            if (discriminator?.Model == global::G.CreateVideoToVideoRequestDiscriminatorModel.Gen4Aleph)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CreateVideoToVideoRequestGen4Aleph), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CreateVideoToVideoRequestGen4Aleph> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.CreateVideoToVideoRequestGen4Aleph)}");

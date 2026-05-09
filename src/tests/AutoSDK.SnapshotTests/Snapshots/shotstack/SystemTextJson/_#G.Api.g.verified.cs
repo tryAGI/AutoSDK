@@ -223,6 +223,8 @@ namespace G
                     new global::G.JsonConverters.TranscriptionFormatNullableJsonConverter(),
                     new global::G.JsonConverters.DolbyEnhancementOptionsPresetJsonConverter(),
                     new global::G.JsonConverters.DolbyEnhancementOptionsPresetNullableJsonConverter(),
+                    new global::G.JsonConverters.GeneratedAssetDiscriminatorProviderJsonConverter(),
+                    new global::G.JsonConverters.GeneratedAssetDiscriminatorProviderNullableJsonConverter(),
                     new global::G.JsonConverters.ShotstackGeneratedAssetProviderJsonConverter(),
                     new global::G.JsonConverters.ShotstackGeneratedAssetProviderNullableJsonConverter(),
                     new global::G.JsonConverters.ShotstackGeneratedAssetOptionsDiscriminatorTypeJsonConverter(),

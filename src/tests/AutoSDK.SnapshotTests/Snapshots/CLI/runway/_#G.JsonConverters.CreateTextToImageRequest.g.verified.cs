@@ -23,21 +23,21 @@ namespace G.JsonConverters
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
             global::G.CreateTextToImageRequestGen4ImageTurbo? gen4ImageTurbo = default;
-            if (discriminator?.Model == "gen4_image_turbo")
+            if (discriminator?.Model == global::G.CreateTextToImageRequestDiscriminatorModel.Gen4ImageTurbo)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CreateTextToImageRequestGen4ImageTurbo), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CreateTextToImageRequestGen4ImageTurbo> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.CreateTextToImageRequestGen4ImageTurbo)}");
                 gen4ImageTurbo = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.CreateTextToImageRequestGen4Image? gen4Image = default;
-            if (discriminator?.Model == "gen4_image")
+            if (discriminator?.Model == global::G.CreateTextToImageRequestDiscriminatorModel.Gen4Image)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CreateTextToImageRequestGen4Image), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CreateTextToImageRequestGen4Image> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.CreateTextToImageRequestGen4Image)}");
                 gen4Image = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.CreateTextToImageRequestGemini25Flash? gemini25Flash = default;
-            if (discriminator?.Model == "gemini_2.5_flash")
+            if (discriminator?.Model == global::G.CreateTextToImageRequestDiscriminatorModel.Gemini25Flash)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CreateTextToImageRequestGemini25Flash), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CreateTextToImageRequestGemini25Flash> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.CreateTextToImageRequestGemini25Flash)}");

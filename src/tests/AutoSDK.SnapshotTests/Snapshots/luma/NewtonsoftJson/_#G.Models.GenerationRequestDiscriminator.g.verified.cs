@@ -13,7 +13,8 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("generation_type")]
-        public string? GenerationType { get; set; }
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GenerationRequestDiscriminatorGenerationTypeJsonConverter))]
+        public global::G.GenerationRequestDiscriminatorGenerationType? GenerationType { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -26,7 +27,7 @@ namespace G
         /// </summary>
         /// <param name="generationType"></param>
         public GenerationRequestDiscriminator(
-            string? generationType)
+            global::G.GenerationRequestDiscriminatorGenerationType? generationType)
         {
             this.GenerationType = generationType;
         }

@@ -13,7 +13,8 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        public string? Status { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ResearchDtoClassDiscriminatorStatusJsonConverter))]
+        public global::G.ResearchDtoClassDiscriminatorStatus? Status { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -29,7 +30,7 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ResearchDtoClassDiscriminator(
-            string? status)
+            global::G.ResearchDtoClassDiscriminatorStatus? status)
         {
             this.Status = status;
         }

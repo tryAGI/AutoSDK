@@ -1,0 +1,61 @@
+﻿//HintName: G.JsonConverters.ResearchDtoClassDiscriminatorStatusNullable.g.cs
+#nullable enable
+
+namespace G.JsonConverters
+{
+    /// <inheritdoc />
+    public sealed class ResearchDtoClassDiscriminatorStatusNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.ResearchDtoClassDiscriminatorStatus?>
+    {
+        /// <inheritdoc />
+        public override global::G.ResearchDtoClassDiscriminatorStatus? Read(
+            ref global::System.Text.Json.Utf8JsonReader reader,
+            global::System.Type typeToConvert,
+            global::System.Text.Json.JsonSerializerOptions options)
+        {
+            switch (reader.TokenType)
+            {
+                case global::System.Text.Json.JsonTokenType.String:
+                {
+                    var stringValue = reader.GetString();
+                    if (stringValue != null)
+                    {
+                        return global::G.ResearchDtoClassDiscriminatorStatusExtensions.ToEnum(stringValue);
+                    }
+                    
+                    break;
+                }
+                case global::System.Text.Json.JsonTokenType.Number:
+                {
+                    var numValue = reader.GetInt32();
+                    return (global::G.ResearchDtoClassDiscriminatorStatus)numValue;
+                }
+                case global::System.Text.Json.JsonTokenType.Null:
+                {
+                    return default(global::G.ResearchDtoClassDiscriminatorStatus?);
+                }
+                default:
+                    throw new global::System.ArgumentOutOfRangeException(nameof(reader));
+            }
+
+            return default;
+        }
+
+        /// <inheritdoc />
+        public override void Write(
+            global::System.Text.Json.Utf8JsonWriter writer,
+            global::G.ResearchDtoClassDiscriminatorStatus? value,
+            global::System.Text.Json.JsonSerializerOptions options)
+        {
+            writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
+
+            if (value == null)
+            {
+                writer.WriteNullValue();
+            }
+            else
+            {
+                writer.WriteStringValue(global::G.ResearchDtoClassDiscriminatorStatusExtensions.ToValueString(value.Value));
+            }
+        }
+    }
+}

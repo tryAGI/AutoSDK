@@ -13,7 +13,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public string? Role { get; }
+        public global::G.ChatCompletionMessageParamDiscriminatorRole? Role { get; }
 
         /// <summary>
         /// 
@@ -258,7 +258,7 @@ namespace G
         /// 
         /// </summary>
         public ChatCompletionMessageParam(
-            string? role,
+            global::G.ChatCompletionMessageParamDiscriminatorRole? role,
             global::G.ChatCompletionSystemMessageParam? system,
             global::G.ChatCompletionUserMessageParam? user,
             global::G.ChatCompletionAssistantMessageParam? assistant,

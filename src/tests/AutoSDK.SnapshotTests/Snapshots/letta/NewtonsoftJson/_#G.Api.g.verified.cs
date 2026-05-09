@@ -580,6 +580,10 @@ namespace G
 
                     new global::G.JsonConverters.TemplatesCreateTemplateNoProjectRequestVariant2TypeNullableJsonConverter(),
 
+                    new global::G.JsonConverters.TemplatesCreateTemplateNoProjectRequestDiscriminatorTypeJsonConverter(),
+
+                    new global::G.JsonConverters.TemplatesCreateTemplateNoProjectRequestDiscriminatorTypeNullableJsonConverter(),
+
                     new global::G.JsonConverters.TemplatesSaveTemplateVersionNoProjectRequestBlockReconciliationStrategyJsonConverter(),
 
                     new global::G.JsonConverters.TemplatesSaveTemplateVersionNoProjectRequestBlockReconciliationStrategyNullableJsonConverter(),
@@ -596,6 +600,10 @@ namespace G
 
                     new global::G.JsonConverters.TemplatesCreateTemplateRequestVariant2TypeNullableJsonConverter(),
 
+                    new global::G.JsonConverters.TemplatesCreateTemplateRequestDiscriminatorTypeJsonConverter(),
+
+                    new global::G.JsonConverters.TemplatesCreateTemplateRequestDiscriminatorTypeNullableJsonConverter(),
+
                     new global::G.JsonConverters.ClientSideAccessTokensCreateClientSideAccessTokenRequestPolicyItemVariant1TypeJsonConverter(),
 
                     new global::G.JsonConverters.ClientSideAccessTokensCreateClientSideAccessTokenRequestPolicyItemVariant1TypeNullableJsonConverter(),
@@ -603,6 +611,10 @@ namespace G
                     new global::G.JsonConverters.ClientSideAccessTokensCreateClientSideAccessTokenRequestPolicyItemVariant1AccesJsonConverter(),
 
                     new global::G.JsonConverters.ClientSideAccessTokensCreateClientSideAccessTokenRequestPolicyItemVariant1AccesNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ClientSideAccessTokensCreateClientSideAccessTokenRequestPolicyItemDiscriminatorTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ClientSideAccessTokensCreateClientSideAccessTokenRequestPolicyItemDiscriminatorTypeNullableJsonConverter(),
 
                     new global::G.JsonConverters.MetadataSendFeedbackRequestFeatureJsonConverter(),
 
@@ -631,6 +643,10 @@ namespace G
                     new global::G.JsonConverters.MetadataSendTelemetryRequestEventVariant5TypeJsonConverter(),
 
                     new global::G.JsonConverters.MetadataSendTelemetryRequestEventVariant5TypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.MetadataSendTelemetryRequestEventDiscriminatorTypeJsonConverter(),
+
+                    new global::G.JsonConverters.MetadataSendTelemetryRequestEventDiscriminatorTypeNullableJsonConverter(),
 
                     new global::G.JsonConverters.ScheduledMessagesScheduleAgentMessageRequestMessageContentVariant1ItemVariant1TypeJsonConverter(),
 
@@ -676,6 +692,10 @@ namespace G
 
                     new global::G.JsonConverters.PipelinesCreatePipelineRequestProducerConfigVariant2TypeNullableJsonConverter(),
 
+                    new global::G.JsonConverters.PipelinesCreatePipelineRequestProducerConfigDiscriminatorTypeJsonConverter(),
+
+                    new global::G.JsonConverters.PipelinesCreatePipelineRequestProducerConfigDiscriminatorTypeNullableJsonConverter(),
+
                     new global::G.JsonConverters.PipelinesUpdatePipelineProducerConfigRequestProducerConfigVariant1TypeJsonConverter(),
 
                     new global::G.JsonConverters.PipelinesUpdatePipelineProducerConfigRequestProducerConfigVariant1TypeNullableJsonConverter(),
@@ -683,6 +703,10 @@ namespace G
                     new global::G.JsonConverters.PipelinesUpdatePipelineProducerConfigRequestProducerConfigVariant2TypeJsonConverter(),
 
                     new global::G.JsonConverters.PipelinesUpdatePipelineProducerConfigRequestProducerConfigVariant2TypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.PipelinesUpdatePipelineProducerConfigRequestProducerConfigDiscriminatorTypeJsonConverter(),
+
+                    new global::G.JsonConverters.PipelinesUpdatePipelineProducerConfigRequestProducerConfigDiscriminatorTypeNullableJsonConverter(),
 
                     new global::G.JsonConverters.PipelinesPreviewPipelineRequestIntegrationTypeJsonConverter(),
 
@@ -695,6 +719,10 @@ namespace G
                     new global::G.JsonConverters.PipelinesPreviewPipelineRequestProducerConfigVariant2TypeJsonConverter(),
 
                     new global::G.JsonConverters.PipelinesPreviewPipelineRequestProducerConfigVariant2TypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.PipelinesPreviewPipelineRequestProducerConfigDiscriminatorTypeJsonConverter(),
+
+                    new global::G.JsonConverters.PipelinesPreviewPipelineRequestProducerConfigDiscriminatorTypeNullableJsonConverter(),
 
                     new global::G.JsonConverters.EnvironmentsSendMessageRequestMessageVariant1RoleJsonConverter(),
 
@@ -1060,6 +1088,10 @@ namespace G
 
                     new global::G.JsonConverters.ClientSideAccessTokensCreateClientSideAccessTokenResponsePolicyDataItemVariant1AccesNullableJsonConverter(),
 
+                    new global::G.JsonConverters.ClientSideAccessTokensCreateClientSideAccessTokenResponsePolicyDataItemDiscriminatorTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ClientSideAccessTokensCreateClientSideAccessTokenResponsePolicyDataItemDiscriminatorTypeNullableJsonConverter(),
+
                     new global::G.JsonConverters.ClientSideAccessTokensListClientSideAccessTokensResponseTokenPolicyVersionJsonConverter(),
 
                     new global::G.JsonConverters.ClientSideAccessTokensListClientSideAccessTokensResponseTokenPolicyVersionNullableJsonConverter(),
@@ -1071,6 +1103,10 @@ namespace G
                     new global::G.JsonConverters.ClientSideAccessTokensListClientSideAccessTokensResponseTokenPolicyDataItemVariant1AccesJsonConverter(),
 
                     new global::G.JsonConverters.ClientSideAccessTokensListClientSideAccessTokensResponseTokenPolicyDataItemVariant1AccesNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ClientSideAccessTokensListClientSideAccessTokensResponseTokenPolicyDataItemDiscriminatorTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ClientSideAccessTokensListClientSideAccessTokensResponseTokenPolicyDataItemDiscriminatorTypeNullableJsonConverter(),
 
                     new global::G.JsonConverters.ScheduledMessagesListScheduledMessagesResponseScheduledMessageMessageMessageContentVariant1ItemVariant1TypeJsonConverter(),
 
@@ -1184,6 +1220,10 @@ namespace G
 
                     new global::G.JsonConverters.PipelinesCreatePipelineResponsePipelineConfigVariant2TypeNullableJsonConverter(),
 
+                    new global::G.JsonConverters.PipelinesCreatePipelineResponsePipelineConfigDiscriminatorTypeJsonConverter(),
+
+                    new global::G.JsonConverters.PipelinesCreatePipelineResponsePipelineConfigDiscriminatorTypeNullableJsonConverter(),
+
                     new global::G.JsonConverters.PipelinesCreatePipelineResponseErrorCodeJsonConverter(),
 
                     new global::G.JsonConverters.PipelinesCreatePipelineResponseErrorCodeNullableJsonConverter(),
@@ -1200,6 +1240,10 @@ namespace G
 
                     new global::G.JsonConverters.PipelinesListPipelinesResponsePipelineConfigVariant2TypeNullableJsonConverter(),
 
+                    new global::G.JsonConverters.PipelinesListPipelinesResponsePipelineConfigDiscriminatorTypeJsonConverter(),
+
+                    new global::G.JsonConverters.PipelinesListPipelinesResponsePipelineConfigDiscriminatorTypeNullableJsonConverter(),
+
                     new global::G.JsonConverters.PipelinesGetPipelineResponsePipelineIntegrationTypeJsonConverter(),
 
                     new global::G.JsonConverters.PipelinesGetPipelineResponsePipelineIntegrationTypeNullableJsonConverter(),
@@ -1211,6 +1255,10 @@ namespace G
                     new global::G.JsonConverters.PipelinesGetPipelineResponsePipelineConfigVariant2TypeJsonConverter(),
 
                     new global::G.JsonConverters.PipelinesGetPipelineResponsePipelineConfigVariant2TypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.PipelinesGetPipelineResponsePipelineConfigDiscriminatorTypeJsonConverter(),
+
+                    new global::G.JsonConverters.PipelinesGetPipelineResponsePipelineConfigDiscriminatorTypeNullableJsonConverter(),
 
                     new global::G.JsonConverters.PipelinesGetPipelineResponseErrorCodeJsonConverter(),
 
@@ -1227,6 +1275,10 @@ namespace G
                     new global::G.JsonConverters.PipelinesUpdatePipelineResponsePipelineConfigVariant2TypeJsonConverter(),
 
                     new global::G.JsonConverters.PipelinesUpdatePipelineResponsePipelineConfigVariant2TypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.PipelinesUpdatePipelineResponsePipelineConfigDiscriminatorTypeJsonConverter(),
+
+                    new global::G.JsonConverters.PipelinesUpdatePipelineResponsePipelineConfigDiscriminatorTypeNullableJsonConverter(),
 
                     new global::G.JsonConverters.PipelinesUpdatePipelineResponseErrorCodeJsonConverter(),
 
@@ -1247,6 +1299,10 @@ namespace G
                     new global::G.JsonConverters.PipelinesUpdatePipelineProducerConfigResponsePipelineConfigVariant2TypeJsonConverter(),
 
                     new global::G.JsonConverters.PipelinesUpdatePipelineProducerConfigResponsePipelineConfigVariant2TypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.PipelinesUpdatePipelineProducerConfigResponsePipelineConfigDiscriminatorTypeJsonConverter(),
+
+                    new global::G.JsonConverters.PipelinesUpdatePipelineProducerConfigResponsePipelineConfigDiscriminatorTypeNullableJsonConverter(),
 
                     new global::G.JsonConverters.PipelinesUpdatePipelineProducerConfigResponseErrorCodeJsonConverter(),
 

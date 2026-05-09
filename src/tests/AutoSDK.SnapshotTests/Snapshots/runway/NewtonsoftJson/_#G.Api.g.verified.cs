@@ -82,6 +82,10 @@ namespace G
 
                     new global::G.JsonConverters.CreateImageToVideoRequestVeo3RatioNullableJsonConverter(),
 
+                    new global::G.JsonConverters.CreateImageToVideoRequestDiscriminatorModelJsonConverter(),
+
+                    new global::G.JsonConverters.CreateImageToVideoRequestDiscriminatorModelNullableJsonConverter(),
+
                     new global::G.JsonConverters.CreateTextToVideoRequestVeo31RatioJsonConverter(),
 
                     new global::G.JsonConverters.CreateTextToVideoRequestVeo31RatioNullableJsonConverter(),
@@ -94,13 +98,25 @@ namespace G
 
                     new global::G.JsonConverters.CreateTextToVideoRequestVeo3RatioNullableJsonConverter(),
 
+                    new global::G.JsonConverters.CreateTextToVideoRequestDiscriminatorModelJsonConverter(),
+
+                    new global::G.JsonConverters.CreateTextToVideoRequestDiscriminatorModelNullableJsonConverter(),
+
                     new global::G.JsonConverters.CreateVideoToVideoRequestGen4AlephRatioJsonConverter(),
 
                     new global::G.JsonConverters.CreateVideoToVideoRequestGen4AlephRatioNullableJsonConverter(),
 
+                    new global::G.JsonConverters.CreateVideoToVideoRequestGen4AlephReferenceDiscriminatorTypeJsonConverter(),
+
+                    new global::G.JsonConverters.CreateVideoToVideoRequestGen4AlephReferenceDiscriminatorTypeNullableJsonConverter(),
+
                     new global::G.JsonConverters.CreateVideoToVideoRequestGen4AlephContentModerationPublicFigureThresholdJsonConverter(),
 
                     new global::G.JsonConverters.CreateVideoToVideoRequestGen4AlephContentModerationPublicFigureThresholdNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateVideoToVideoRequestDiscriminatorModelJsonConverter(),
+
+                    new global::G.JsonConverters.CreateVideoToVideoRequestDiscriminatorModelNullableJsonConverter(),
 
                     new global::G.JsonConverters.CreateTextToImageRequestGen4ImageTurboRatioJsonConverter(),
 
@@ -122,6 +138,18 @@ namespace G
 
                     new global::G.JsonConverters.CreateTextToImageRequestGemini25FlashRatioNullableJsonConverter(),
 
+                    new global::G.JsonConverters.CreateTextToImageRequestDiscriminatorModelJsonConverter(),
+
+                    new global::G.JsonConverters.CreateTextToImageRequestDiscriminatorModelNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateCharacterPerformanceRequestActTwoCharacterDiscriminatorTypeJsonConverter(),
+
+                    new global::G.JsonConverters.CreateCharacterPerformanceRequestActTwoCharacterDiscriminatorTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateCharacterPerformanceRequestActTwoReferenceDiscriminatorTypeJsonConverter(),
+
+                    new global::G.JsonConverters.CreateCharacterPerformanceRequestActTwoReferenceDiscriminatorTypeNullableJsonConverter(),
+
                     new global::G.JsonConverters.CreateCharacterPerformanceRequestActTwoRatioJsonConverter(),
 
                     new global::G.JsonConverters.CreateCharacterPerformanceRequestActTwoRatioNullableJsonConverter(),
@@ -130,21 +158,61 @@ namespace G
 
                     new global::G.JsonConverters.CreateCharacterPerformanceRequestActTwoContentModerationPublicFigureThresholdNullableJsonConverter(),
 
+                    new global::G.JsonConverters.CreateCharacterPerformanceRequestDiscriminatorModelJsonConverter(),
+
+                    new global::G.JsonConverters.CreateCharacterPerformanceRequestDiscriminatorModelNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateSoundEffectRequestDiscriminatorModelJsonConverter(),
+
+                    new global::G.JsonConverters.CreateSoundEffectRequestDiscriminatorModelNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateSpeechToSpeechRequestElevenMultilingualStsV2MediaDiscriminatorTypeJsonConverter(),
+
+                    new global::G.JsonConverters.CreateSpeechToSpeechRequestElevenMultilingualStsV2MediaDiscriminatorTypeNullableJsonConverter(),
+
                     new global::G.JsonConverters.CreateSpeechToSpeechRequestElevenMultilingualStsV2VoiceRunwayPresetVoicePresetIdJsonConverter(),
 
                     new global::G.JsonConverters.CreateSpeechToSpeechRequestElevenMultilingualStsV2VoiceRunwayPresetVoicePresetIdNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateSpeechToSpeechRequestElevenMultilingualStsV2VoiceDiscriminatorTypeJsonConverter(),
+
+                    new global::G.JsonConverters.CreateSpeechToSpeechRequestElevenMultilingualStsV2VoiceDiscriminatorTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateSpeechToSpeechRequestDiscriminatorModelJsonConverter(),
+
+                    new global::G.JsonConverters.CreateSpeechToSpeechRequestDiscriminatorModelNullableJsonConverter(),
 
                     new global::G.JsonConverters.CreateTextToSpeechRequestElevenMultilingualV2VoiceRunwayPresetVoicePresetIdJsonConverter(),
 
                     new global::G.JsonConverters.CreateTextToSpeechRequestElevenMultilingualV2VoiceRunwayPresetVoicePresetIdNullableJsonConverter(),
 
+                    new global::G.JsonConverters.CreateTextToSpeechRequestElevenMultilingualV2VoiceDiscriminatorTypeJsonConverter(),
+
+                    new global::G.JsonConverters.CreateTextToSpeechRequestElevenMultilingualV2VoiceDiscriminatorTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateTextToSpeechRequestDiscriminatorModelJsonConverter(),
+
+                    new global::G.JsonConverters.CreateTextToSpeechRequestDiscriminatorModelNullableJsonConverter(),
+
                     new global::G.JsonConverters.CreateVoiceDubbingRequestElevenVoiceDubbingTargetLangJsonConverter(),
 
                     new global::G.JsonConverters.CreateVoiceDubbingRequestElevenVoiceDubbingTargetLangNullableJsonConverter(),
 
+                    new global::G.JsonConverters.CreateVoiceDubbingRequestDiscriminatorModelJsonConverter(),
+
+                    new global::G.JsonConverters.CreateVoiceDubbingRequestDiscriminatorModelNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateVoiceIsolationRequestDiscriminatorModelJsonConverter(),
+
+                    new global::G.JsonConverters.CreateVoiceIsolationRequestDiscriminatorModelNullableJsonConverter(),
+
                     new global::G.JsonConverters.CreateUploadsRequestTypeJsonConverter(),
 
                     new global::G.JsonConverters.CreateUploadsRequestTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.GetTasksResponseDiscriminatorStatusJsonConverter(),
+
+                    new global::G.JsonConverters.GetTasksResponseDiscriminatorStatusNullableJsonConverter(),
 
                     new global::G.JsonConverters.CreateOrganizationUsageResponseResultUsedCreditModelJsonConverter(),
 

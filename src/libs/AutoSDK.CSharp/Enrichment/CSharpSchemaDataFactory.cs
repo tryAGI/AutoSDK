@@ -211,7 +211,7 @@ public static class CSharpSchemaDataFactory
 
             discriminatorPropertyName = (context.Schema.Discriminator.PropertyName ?? string.Empty).ToPropertyName()
                 .ToCSharpName(context.Settings, context.Parent);
-            discriminatorPropertyIsEnum = (context.Schema.Discriminator.Mapping?.Count ?? 0) != 0;
+            discriminatorPropertyIsEnum = HasAnyDiscriminatorEnumValue(context);
         }
 
         var count = context.IsAnyOf
@@ -312,6 +312,46 @@ public static class CSharpSchemaDataFactory
         return string.IsNullOrEmpty(raw)
             ? string.Empty
             : raw.ToEnumValue(string.Empty, context.Settings.ToEnumNamingSettings()).Name;
+    }
+
+    private static bool HasAnyDiscriminatorEnumValue(SchemaContext context)
+    {
+        var discriminator = context.Schema.Discriminator;
+        if (discriminator is null || string.IsNullOrEmpty(discriminator.PropertyName))
+        {
+            return false;
+        }
+
+        if ((discriminator.Mapping?.Count ?? 0) != 0)
+        {
+            return true;
+        }
+
+        var variantSchemas =
+            (context.Schema.OneOf as System.Collections.Generic.IEnumerable<IOpenApiSchema>) ??
+            (context.Schema.AnyOf as System.Collections.Generic.IEnumerable<IOpenApiSchema>) ??
+            (context.Schema.AllOf as System.Collections.Generic.IEnumerable<IOpenApiSchema>) ??
+            [];
+        foreach (var variant in variantSchemas)
+        {
+            var resolved = variant.ResolveIfRequired();
+            if (resolved.Properties is null ||
+                !resolved.Properties.TryGetValue(discriminator.PropertyName!, out var discProp))
+            {
+                continue;
+            }
+
+            if (!string.IsNullOrEmpty(discProp.Const))
+            {
+                return true;
+            }
+            if (discProp.Enum is { Count: 1 })
+            {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     private static string ComputeDiscriminatorRawValue(

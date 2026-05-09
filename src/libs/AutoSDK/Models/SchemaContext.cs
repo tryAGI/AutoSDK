@@ -571,6 +571,51 @@ public class SchemaContext(
             (schema.IsOneOf() || schema.IsAnyOf() || schema.IsAllOf() ||
              schema.Discriminator.Mapping is { Count: > 0 }))
         {
+            var discriminatorEnumValues = new List<JsonNode>();
+            if (schema.Discriminator.Mapping is { Count: > 0 } mapping)
+            {
+                foreach (var key in mapping.Keys)
+                {
+                    if (JsonValue.Create(key) is { } node)
+                    {
+                        discriminatorEnumValues.Add(node);
+                    }
+                }
+            }
+            else
+            {
+                var variantSchemas = (schema.OneOf as IEnumerable<IOpenApiSchema>)
+                    ?? (schema.AnyOf as IEnumerable<IOpenApiSchema>)
+                    ?? (schema.AllOf as IEnumerable<IOpenApiSchema>)
+                    ?? [];
+                var seen = new HashSet<string>(StringComparer.Ordinal);
+                foreach (var variant in variantSchemas)
+                {
+                    var resolved = variant.ResolveIfRequired();
+                    if (resolved.Properties is null ||
+                        !resolved.Properties.TryGetValue(schema.Discriminator.PropertyName, out var discProp))
+                    {
+                        continue;
+                    }
+
+                    string? raw = null;
+                    if (!string.IsNullOrEmpty(discProp.Const))
+                    {
+                        raw = discProp.Const;
+                    }
+                    else if (discProp.Enum is { Count: 1 } singleEnum)
+                    {
+                        raw = singleEnum[0]?.GetString();
+                    }
+
+                    if (!string.IsNullOrEmpty(raw) && seen.Add(raw!) &&
+                        JsonValue.Create(raw) is { } node)
+                    {
+                        discriminatorEnumValues.Add(node);
+                    }
+                }
+            }
+
             var discriminatorSchema = new OpenApiSchema
             {
                 Type = JsonSchemaType.Object,
@@ -579,10 +624,7 @@ public class SchemaContext(
                     [schema.Discriminator.PropertyName] = new OpenApiSchema
                     {
                         Type = JsonSchemaType.String,
-                        Enum = schema.Discriminator.Mapping?.Keys
-                            .Select(x => JsonValue.Create(x))
-                            .OfType<JsonNode>()
-                            .ToList() ?? [],
+                        Enum = discriminatorEnumValues,
                     }
                 }
             };

@@ -13,7 +13,8 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("eventType")]
-        public string? EventType { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ResearchEventDtoClassVariant1DiscriminatorEventTypeJsonConverter))]
+        public global::G.ResearchEventDtoClassVariant1DiscriminatorEventType? EventType { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -29,7 +30,7 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ResearchEventDtoClassVariant1Discriminator(
-            string? eventType)
+            global::G.ResearchEventDtoClassVariant1DiscriminatorEventType? eventType)
         {
             this.EventType = eventType;
         }

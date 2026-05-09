@@ -13,7 +13,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public string? Type { get; }
+        public global::G.FinetuneResponseTrainingTypeDiscriminatorType? Type { get; }
 
         /// <summary>
         /// 
@@ -114,7 +114,7 @@ namespace G
         /// 
         /// </summary>
         public FinetuneResponseTrainingType(
-            string? type,
+            global::G.FinetuneResponseTrainingTypeDiscriminatorType? type,
             global::G.FullTrainingType? full,
             global::G.LoRATrainingType? lora
             )

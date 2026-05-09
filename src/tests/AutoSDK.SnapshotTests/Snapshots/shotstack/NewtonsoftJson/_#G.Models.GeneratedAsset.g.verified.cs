@@ -13,7 +13,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public string? Provider { get; }
+        public global::G.GeneratedAssetDiscriminatorProvider? Provider { get; }
 
         /// <summary>
         /// Generate assets using the native Shotstack provider. Shotstack provides a text-to-speech and a text-to-image service. The Shotstack provider works natively with your existing API key, no additional credentials are required.
@@ -306,7 +306,7 @@ namespace G
         /// 
         /// </summary>
         public GeneratedAsset(
-            string? provider,
+            global::G.GeneratedAssetDiscriminatorProvider? provider,
             global::G.ShotstackGeneratedAsset? shotstack,
             global::G.DIDGeneratedAsset? dId,
             global::G.ElevenLabsGeneratedAsset? elevenlabs,

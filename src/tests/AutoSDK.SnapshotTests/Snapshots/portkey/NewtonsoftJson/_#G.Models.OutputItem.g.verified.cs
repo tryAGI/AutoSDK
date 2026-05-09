@@ -13,7 +13,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public string? Type { get; }
+        public global::G.OutputItemDiscriminatorType? Type { get; }
 
         /// <summary>
         /// An output message from the model.
@@ -311,7 +311,7 @@ namespace G
         /// 
         /// </summary>
         public OutputItem(
-            string? type,
+            global::G.OutputItemDiscriminatorType? type,
             global::G.OutputMessage? message,
             global::G.FileSearchToolCall? fileSearchCall,
             global::G.FunctionToolCall? functionCall,

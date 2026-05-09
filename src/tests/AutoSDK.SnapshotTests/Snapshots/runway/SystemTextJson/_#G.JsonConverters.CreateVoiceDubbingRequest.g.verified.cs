@@ -23,7 +23,7 @@ namespace G.JsonConverters
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
             global::G.CreateVoiceDubbingRequestElevenVoiceDubbing? elevenVoiceDubbing = default;
-            if (discriminator?.Model == "eleven_voice_dubbing")
+            if (discriminator?.Model == global::G.CreateVoiceDubbingRequestDiscriminatorModel.ElevenVoiceDubbing)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CreateVoiceDubbingRequestElevenVoiceDubbing), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CreateVoiceDubbingRequestElevenVoiceDubbing> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.CreateVoiceDubbingRequestElevenVoiceDubbing)}");

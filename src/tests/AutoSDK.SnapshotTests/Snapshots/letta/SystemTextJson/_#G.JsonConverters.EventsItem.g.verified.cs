@@ -23,35 +23,35 @@ namespace G.JsonConverters
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
             global::G.MetadataSendTelemetryRequestEventVariant1? sessionStart = default;
-            if (discriminator?.Type == "session_start")
+            if (discriminator?.Type == global::G.MetadataSendTelemetryRequestEventDiscriminatorType.SessionStart)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MetadataSendTelemetryRequestEventVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MetadataSendTelemetryRequestEventVariant1> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.MetadataSendTelemetryRequestEventVariant1)}");
                 sessionStart = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.MetadataSendTelemetryRequestEventVariant2? sessionEnd = default;
-            if (discriminator?.Type == "session_end")
+            if (discriminator?.Type == global::G.MetadataSendTelemetryRequestEventDiscriminatorType.SessionEnd)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MetadataSendTelemetryRequestEventVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MetadataSendTelemetryRequestEventVariant2> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.MetadataSendTelemetryRequestEventVariant2)}");
                 sessionEnd = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.MetadataSendTelemetryRequestEventVariant3? toolUsage = default;
-            if (discriminator?.Type == "tool_usage")
+            if (discriminator?.Type == global::G.MetadataSendTelemetryRequestEventDiscriminatorType.ToolUsage)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MetadataSendTelemetryRequestEventVariant3), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MetadataSendTelemetryRequestEventVariant3> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.MetadataSendTelemetryRequestEventVariant3)}");
                 toolUsage = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.MetadataSendTelemetryRequestEventVariant4? error = default;
-            if (discriminator?.Type == "error")
+            if (discriminator?.Type == global::G.MetadataSendTelemetryRequestEventDiscriminatorType.Error)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MetadataSendTelemetryRequestEventVariant4), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MetadataSendTelemetryRequestEventVariant4> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.MetadataSendTelemetryRequestEventVariant4)}");
                 error = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.MetadataSendTelemetryRequestEventVariant5? userInput = default;
-            if (discriminator?.Type == "user_input")
+            if (discriminator?.Type == global::G.MetadataSendTelemetryRequestEventDiscriminatorType.UserInput)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MetadataSendTelemetryRequestEventVariant5), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MetadataSendTelemetryRequestEventVariant5> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.MetadataSendTelemetryRequestEventVariant5)}");

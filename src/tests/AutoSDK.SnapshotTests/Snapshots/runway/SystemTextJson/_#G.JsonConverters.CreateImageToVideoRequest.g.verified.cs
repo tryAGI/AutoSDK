@@ -23,35 +23,35 @@ namespace G.JsonConverters
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
             global::G.CreateImageToVideoRequestGen4Turbo? gen4Turbo = default;
-            if (discriminator?.Model == "gen4_turbo")
+            if (discriminator?.Model == global::G.CreateImageToVideoRequestDiscriminatorModel.Gen4Turbo)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CreateImageToVideoRequestGen4Turbo), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CreateImageToVideoRequestGen4Turbo> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.CreateImageToVideoRequestGen4Turbo)}");
                 gen4Turbo = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.CreateImageToVideoRequestVeo31? veo31 = default;
-            if (discriminator?.Model == "veo3.1")
+            if (discriminator?.Model == global::G.CreateImageToVideoRequestDiscriminatorModel.Veo31)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CreateImageToVideoRequestVeo31), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CreateImageToVideoRequestVeo31> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.CreateImageToVideoRequestVeo31)}");
                 veo31 = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.CreateImageToVideoRequestGen3aTurbo? gen3aTurbo = default;
-            if (discriminator?.Model == "gen3a_turbo")
+            if (discriminator?.Model == global::G.CreateImageToVideoRequestDiscriminatorModel.Gen3aTurbo)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CreateImageToVideoRequestGen3aTurbo), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CreateImageToVideoRequestGen3aTurbo> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.CreateImageToVideoRequestGen3aTurbo)}");
                 gen3aTurbo = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.CreateImageToVideoRequestVeo31Fast? veo31Fast = default;
-            if (discriminator?.Model == "veo3.1_fast")
+            if (discriminator?.Model == global::G.CreateImageToVideoRequestDiscriminatorModel.Veo31Fast)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CreateImageToVideoRequestVeo31Fast), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CreateImageToVideoRequestVeo31Fast> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.CreateImageToVideoRequestVeo31Fast)}");
                 veo31Fast = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.CreateImageToVideoRequestVeo3? veo3 = default;
-            if (discriminator?.Model == "veo3")
+            if (discriminator?.Model == global::G.CreateImageToVideoRequestDiscriminatorModel.Veo3)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CreateImageToVideoRequestVeo3), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CreateImageToVideoRequestVeo3> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.CreateImageToVideoRequestVeo3)}");

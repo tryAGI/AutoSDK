@@ -13,7 +13,8 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model")]
-        public string? Model { get; set; }
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateSoundEffectRequestDiscriminatorModelJsonConverter))]
+        public global::G.CreateSoundEffectRequestDiscriminatorModel? Model { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -26,7 +27,7 @@ namespace G
         /// </summary>
         /// <param name="model"></param>
         public CreateSoundEffectRequestDiscriminator(
-            string? model)
+            global::G.CreateSoundEffectRequestDiscriminatorModel? model)
         {
             this.Model = model;
         }

@@ -23,14 +23,14 @@ namespace G.JsonConverters
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
             global::G.FullTrainingType? full = default;
-            if (discriminator?.Type == "Full")
+            if (discriminator?.Type == global::G.FinetuneResponseTrainingTypeDiscriminatorType.Full)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.FullTrainingType), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.FullTrainingType> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.FullTrainingType)}");
                 full = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.LoRATrainingType? lora = default;
-            if (discriminator?.Type == "Lora")
+            if (discriminator?.Type == global::G.FinetuneResponseTrainingTypeDiscriminatorType.Lora)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.LoRATrainingType), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.LoRATrainingType> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.LoRATrainingType)}");

@@ -13,7 +13,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public string? Model { get; }
+        public global::G.CreateTextToVideoRequestDiscriminatorModel? Model { get; }
 
         /// <summary>
         /// 
@@ -162,7 +162,7 @@ namespace G
         /// 
         /// </summary>
         public CreateTextToVideoRequest(
-            string? model,
+            global::G.CreateTextToVideoRequestDiscriminatorModel? model,
             global::G.CreateTextToVideoRequestVeo31? veo31,
             global::G.CreateTextToVideoRequestVeo31Fast? veo31Fast,
             global::G.CreateTextToVideoRequestVeo3? veo3

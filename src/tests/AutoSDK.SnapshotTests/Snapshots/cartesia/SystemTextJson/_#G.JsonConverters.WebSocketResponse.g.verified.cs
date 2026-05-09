@@ -23,42 +23,42 @@ namespace G.JsonConverters
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
             global::G.WebSocketResponseVariant1? chunk = default;
-            if (discriminator?.Type == "chunk")
+            if (discriminator?.Type == global::G.WebSocketResponseDiscriminatorType.Chunk)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.WebSocketResponseVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.WebSocketResponseVariant1> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.WebSocketResponseVariant1)}");
                 chunk = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.WebSocketResponseVariant2? flushDone = default;
-            if (discriminator?.Type == "flush_done")
+            if (discriminator?.Type == global::G.WebSocketResponseDiscriminatorType.FlushDone)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.WebSocketResponseVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.WebSocketResponseVariant2> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.WebSocketResponseVariant2)}");
                 flushDone = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.WebSocketResponseVariant3? done = default;
-            if (discriminator?.Type == "done")
+            if (discriminator?.Type == global::G.WebSocketResponseDiscriminatorType.Done)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.WebSocketResponseVariant3), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.WebSocketResponseVariant3> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.WebSocketResponseVariant3)}");
                 done = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.WebSocketResponseVariant4? timestamps = default;
-            if (discriminator?.Type == "timestamps")
+            if (discriminator?.Type == global::G.WebSocketResponseDiscriminatorType.Timestamps)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.WebSocketResponseVariant4), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.WebSocketResponseVariant4> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.WebSocketResponseVariant4)}");
                 timestamps = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.WebSocketResponseVariant5? error = default;
-            if (discriminator?.Type == "error")
+            if (discriminator?.Type == global::G.WebSocketResponseDiscriminatorType.Error)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.WebSocketResponseVariant5), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.WebSocketResponseVariant5> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.WebSocketResponseVariant5)}");
                 error = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.WebSocketResponseVariant6? phonemeTimestamps = default;
-            if (discriminator?.Type == "phoneme_timestamps")
+            if (discriminator?.Type == global::G.WebSocketResponseDiscriminatorType.PhonemeTimestamps)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.WebSocketResponseVariant6), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.WebSocketResponseVariant6> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.WebSocketResponseVariant6)}");

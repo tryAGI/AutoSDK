@@ -23,35 +23,35 @@ namespace G.JsonConverters
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
             global::G.ResearchDtoClassVariant1? pending = default;
-            if (discriminator?.Status == "pending")
+            if (discriminator?.Status == global::G.ResearchDtoClassDiscriminatorStatus.Pending)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResearchDtoClassVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResearchDtoClassVariant1> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ResearchDtoClassVariant1)}");
                 pending = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.ResearchDtoClassVariant2? running = default;
-            if (discriminator?.Status == "running")
+            if (discriminator?.Status == global::G.ResearchDtoClassDiscriminatorStatus.Running)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResearchDtoClassVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResearchDtoClassVariant2> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ResearchDtoClassVariant2)}");
                 running = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.ResearchDtoClassVariant3? completed = default;
-            if (discriminator?.Status == "completed")
+            if (discriminator?.Status == global::G.ResearchDtoClassDiscriminatorStatus.Completed)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResearchDtoClassVariant3), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResearchDtoClassVariant3> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ResearchDtoClassVariant3)}");
                 completed = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.ResearchDtoClassVariant4? canceled = default;
-            if (discriminator?.Status == "canceled")
+            if (discriminator?.Status == global::G.ResearchDtoClassDiscriminatorStatus.Canceled)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResearchDtoClassVariant4), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResearchDtoClassVariant4> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ResearchDtoClassVariant4)}");
                 canceled = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.ResearchDtoClassVariant5? failed = default;
-            if (discriminator?.Status == "failed")
+            if (discriminator?.Status == global::G.ResearchDtoClassDiscriminatorStatus.Failed)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResearchDtoClassVariant5), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResearchDtoClassVariant5> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ResearchDtoClassVariant5)}");

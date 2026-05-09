@@ -13,7 +13,8 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        public string? Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.CodeInterpreterToolOutputDiscriminatorTypeJsonConverter))]
+        public global::G.CodeInterpreterToolOutputDiscriminatorType? Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -29,7 +30,7 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CodeInterpreterToolOutputDiscriminator(
-            string? type)
+            global::G.CodeInterpreterToolOutputDiscriminatorType? type)
         {
             this.Type = type;
         }

@@ -23,7 +23,7 @@ namespace G.JsonConverters
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
             global::G.CreateCharacterPerformanceRequestActTwo? actTwo = default;
-            if (discriminator?.Model == "act_two")
+            if (discriminator?.Model == global::G.CreateCharacterPerformanceRequestDiscriminatorModel.ActTwo)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CreateCharacterPerformanceRequestActTwo), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CreateCharacterPerformanceRequestActTwo> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.CreateCharacterPerformanceRequestActTwo)}");

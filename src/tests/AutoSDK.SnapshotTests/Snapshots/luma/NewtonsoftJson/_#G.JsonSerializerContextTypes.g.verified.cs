@@ -121,63 +121,67 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Keyframe? Type23 { get; set; }
+        public global::G.GenerationRequestDiscriminatorGenerationType? Type23 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.KeyframeDiscriminator? Type24 { get; set; }
+        public global::G.Keyframe? Type24 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.KeyframeDiscriminatorType? Type25 { get; set; }
+        public global::G.KeyframeDiscriminator? Type25 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Credits? Type26 { get; set; }
+        public global::G.KeyframeDiscriminatorType? Type26 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public float? Type27 { get; set; }
+        public global::G.Credits? Type27 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ImageRef? Type28 { get; set; }
+        public float? Type28 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public double? Type29 { get; set; }
+        public global::G.ImageRef? Type29 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ImageIdentity? Type30 { get; set; }
+        public double? Type30 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<string>? Type31 { get; set; }
+        public global::G.ImageIdentity? Type31 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ModifyImageRef? Type32 { get; set; }
+        public global::System.Collections.Generic.IList<string>? Type32 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ImageModel? Type33 { get; set; }
+        public global::G.ModifyImageRef? Type33 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ImageGenerationRequestGenerationType? Type34 { get; set; }
+        public global::G.ImageModel? Type34 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.ImageRef>? Type35 { get; set; }
+        public global::G.ImageGenerationRequestGenerationType? Type35 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ImageGenerationRequestCharacterRef? Type36 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ImageRef>? Type36 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PingResponse? Type37 { get; set; }
+        public global::G.ImageGenerationRequestCharacterRef? Type37 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.PingResponse? Type38 { get; set; }
 
         /// <summary>
         /// 

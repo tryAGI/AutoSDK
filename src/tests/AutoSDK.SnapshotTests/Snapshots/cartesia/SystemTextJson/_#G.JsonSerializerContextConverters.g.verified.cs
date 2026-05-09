@@ -43,6 +43,8 @@ namespace G
             typeof(global::G.JsonConverters.WebSocketResponseVariant5TypeNullableJsonConverter),
             typeof(global::G.JsonConverters.WebSocketResponseVariant6TypeJsonConverter),
             typeof(global::G.JsonConverters.WebSocketResponseVariant6TypeNullableJsonConverter),
+            typeof(global::G.JsonConverters.WebSocketResponseDiscriminatorTypeJsonConverter),
+            typeof(global::G.JsonConverters.WebSocketResponseDiscriminatorTypeNullableJsonConverter),
             typeof(global::G.JsonConverters.WebSocketRawOutputFormatContainerJsonConverter),
             typeof(global::G.JsonConverters.WebSocketRawOutputFormatContainerNullableJsonConverter),
             typeof(global::G.JsonConverters.EmotionJsonConverter),

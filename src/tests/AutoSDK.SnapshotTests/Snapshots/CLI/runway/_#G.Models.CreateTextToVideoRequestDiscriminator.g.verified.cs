@@ -13,7 +13,8 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
-        public string? Model { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.CreateTextToVideoRequestDiscriminatorModelJsonConverter))]
+        public global::G.CreateTextToVideoRequestDiscriminatorModel? Model { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -29,7 +30,7 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CreateTextToVideoRequestDiscriminator(
-            string? model)
+            global::G.CreateTextToVideoRequestDiscriminatorModel? model)
         {
             this.Model = model;
         }

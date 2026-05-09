@@ -13,7 +13,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public string? Type { get; }
+        public global::G.RealtimeServerEventDiscriminatorType? Type { get; }
 
         /// <summary>
         /// Returned when a conversation is created. Emitted right after session creation.
@@ -1718,7 +1718,7 @@ namespace G
         /// 
         /// </summary>
         public RealtimeServerEvent(
-            string? type,
+            global::G.RealtimeServerEventDiscriminatorType? type,
             global::G.RealtimeServerEventConversationCreated? conversationCreated,
             global::G.RealtimeServerEventConversationItemCreated? conversationItemCreated,
             global::G.RealtimeServerEventConversationItemDeleted? conversationItemDeleted,

@@ -66,6 +66,10 @@ namespace G
 
                     new global::G.JsonConverters.GenerationTypeNullableJsonConverter(),
 
+                    new global::G.JsonConverters.GenerationRequestDiscriminatorGenerationTypeJsonConverter(),
+
+                    new global::G.JsonConverters.GenerationRequestDiscriminatorGenerationTypeNullableJsonConverter(),
+
                     new global::G.JsonConverters.KeyframeDiscriminatorTypeJsonConverter(),
 
                     new global::G.JsonConverters.KeyframeDiscriminatorTypeNullableJsonConverter(),

@@ -13,7 +13,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public string? Type { get; }
+        public global::G.TemplatesCreateTemplateNoProjectRequestDiscriminatorType? Type { get; }
 
         /// <summary>
         /// Create a template from an existing agent
@@ -114,7 +114,7 @@ namespace G
         /// 
         /// </summary>
         public TemplatesCreateTemplateNoProjectRequest(
-            string? type,
+            global::G.TemplatesCreateTemplateNoProjectRequestDiscriminatorType? type,
             global::G.TemplatesCreateTemplateNoProjectRequestVariant1? agent,
             global::G.TemplatesCreateTemplateNoProjectRequestVariant2? agentFile
             )

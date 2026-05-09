@@ -13,7 +13,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public string? Type { get; }
+        public global::G.ClientSideAccessTokensCreateClientSideAccessTokenResponsePolicyDataItemDiscriminatorType? Type { get; }
 
         /// <summary>
         /// 
@@ -66,7 +66,7 @@ namespace G
         /// 
         /// </summary>
         public DataItem(
-            string? type,
+            global::G.ClientSideAccessTokensCreateClientSideAccessTokenResponsePolicyDataItemDiscriminatorType? type,
             global::G.ClientSideAccessTokensCreateClientSideAccessTokenResponsePolicyDataItemVariant1? agent
             )
         {

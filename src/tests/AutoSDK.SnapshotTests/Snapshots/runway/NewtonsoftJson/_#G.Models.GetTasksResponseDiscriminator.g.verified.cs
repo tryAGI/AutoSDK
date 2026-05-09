@@ -13,7 +13,8 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
-        public string? Status { get; set; }
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GetTasksResponseDiscriminatorStatusJsonConverter))]
+        public global::G.GetTasksResponseDiscriminatorStatus? Status { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -26,7 +27,7 @@ namespace G
         /// </summary>
         /// <param name="status"></param>
         public GetTasksResponseDiscriminator(
-            string? status)
+            global::G.GetTasksResponseDiscriminatorStatus? status)
         {
             this.Status = status;
         }

@@ -13,7 +13,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public string? Type { get; }
+        public global::G.MetadataSendTelemetryRequestEventDiscriminatorType? Type { get; }
 
         /// <summary>
         /// 
@@ -258,7 +258,7 @@ namespace G
         /// 
         /// </summary>
         public EventsItem(
-            string? type,
+            global::G.MetadataSendTelemetryRequestEventDiscriminatorType? type,
             global::G.MetadataSendTelemetryRequestEventVariant1? sessionStart,
             global::G.MetadataSendTelemetryRequestEventVariant2? sessionEnd,
             global::G.MetadataSendTelemetryRequestEventVariant3? toolUsage,

@@ -13,7 +13,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public string? Type { get; }
+        public global::G.RepositoryRuleDiscriminatorType? Type { get; }
 
         /// <summary>
         /// Only allow users with bypass permission to create matching refs.
@@ -1026,7 +1026,7 @@ namespace G
         /// 
         /// </summary>
         public RepositoryRule(
-            string? type,
+            global::G.RepositoryRuleDiscriminatorType? type,
             global::G.RepositoryRuleCreation? creation,
             global::G.RepositoryRuleUpdate? update,
             global::G.RepositoryRuleDeletion? deletion,

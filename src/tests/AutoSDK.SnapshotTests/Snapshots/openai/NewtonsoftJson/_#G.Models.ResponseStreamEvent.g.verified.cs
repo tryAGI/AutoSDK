@@ -13,7 +13,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public string? Type { get; }
+        public global::G.ResponseStreamEventDiscriminatorType? Type { get; }
 
         /// <summary>
         /// Emitted when there is a partial audio response.
@@ -2562,7 +2562,7 @@ namespace G
         /// 
         /// </summary>
         public ResponseStreamEvent(
-            string? type,
+            global::G.ResponseStreamEventDiscriminatorType? type,
             global::G.ResponseAudioDeltaEvent? responseAudioDelta,
             global::G.ResponseAudioDoneEvent? responseAudioDone,
             global::G.ResponseAudioTranscriptDeltaEvent? responseAudioTranscriptDelta,

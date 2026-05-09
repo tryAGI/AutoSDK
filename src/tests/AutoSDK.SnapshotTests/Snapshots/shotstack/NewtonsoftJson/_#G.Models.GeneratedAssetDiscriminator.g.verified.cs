@@ -13,7 +13,8 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("provider")]
-        public string? Provider { get; set; }
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GeneratedAssetDiscriminatorProviderJsonConverter))]
+        public global::G.GeneratedAssetDiscriminatorProvider? Provider { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -26,7 +27,7 @@ namespace G
         /// </summary>
         /// <param name="provider"></param>
         public GeneratedAssetDiscriminator(
-            string? provider)
+            global::G.GeneratedAssetDiscriminatorProvider? provider)
         {
             this.Provider = provider;
         }

@@ -13,7 +13,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public string? OutputType { get; }
+        public global::G.ResearchEventDtoClassVariant2Variant3OutputDiscriminatorOutputType? OutputType { get; }
 
         /// <summary>
         /// 
@@ -114,7 +114,7 @@ namespace G
         /// 
         /// </summary>
         public Output2(
-            string? outputType,
+            global::G.ResearchEventDtoClassVariant2Variant3OutputDiscriminatorOutputType? outputType,
             global::G.ResearchEventDtoClassVariant2Variant3OutputVariant1? tasks,
             global::G.ResearchEventDtoClassVariant2Variant3OutputVariant2? stop
             )

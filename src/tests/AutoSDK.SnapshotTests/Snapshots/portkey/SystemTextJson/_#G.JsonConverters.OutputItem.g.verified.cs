@@ -23,42 +23,42 @@ namespace G.JsonConverters
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
             global::G.OutputMessage? message = default;
-            if (discriminator?.Type == "message")
+            if (discriminator?.Type == global::G.OutputItemDiscriminatorType.Message)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.OutputMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.OutputMessage> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.OutputMessage)}");
                 message = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.FileSearchToolCall? fileSearchCall = default;
-            if (discriminator?.Type == "file_search_call")
+            if (discriminator?.Type == global::G.OutputItemDiscriminatorType.FileSearchCall)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.FileSearchToolCall), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.FileSearchToolCall> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.FileSearchToolCall)}");
                 fileSearchCall = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.FunctionToolCall? functionCall = default;
-            if (discriminator?.Type == "function_call")
+            if (discriminator?.Type == global::G.OutputItemDiscriminatorType.FunctionCall)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.FunctionToolCall), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.FunctionToolCall> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.FunctionToolCall)}");
                 functionCall = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.WebSearchToolCall? webSearchCall = default;
-            if (discriminator?.Type == "web_search_call")
+            if (discriminator?.Type == global::G.OutputItemDiscriminatorType.WebSearchCall)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.WebSearchToolCall), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.WebSearchToolCall> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.WebSearchToolCall)}");
                 webSearchCall = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.ComputerToolCall? computerCall = default;
-            if (discriminator?.Type == "computer_call")
+            if (discriminator?.Type == global::G.OutputItemDiscriminatorType.ComputerCall)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ComputerToolCall), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ComputerToolCall> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ComputerToolCall)}");
                 computerCall = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.ReasoningItem? reasoning = default;
-            if (discriminator?.Type == "reasoning")
+            if (discriminator?.Type == global::G.OutputItemDiscriminatorType.Reasoning)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ReasoningItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ReasoningItem> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ReasoningItem)}");

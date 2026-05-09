@@ -13,7 +13,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public string? Model { get; }
+        public global::G.CreateVideoToVideoRequestDiscriminatorModel? Model { get; }
 
         /// <summary>
         /// 
@@ -66,7 +66,7 @@ namespace G
         /// 
         /// </summary>
         public CreateVideoToVideoRequest(
-            string? model,
+            global::G.CreateVideoToVideoRequestDiscriminatorModel? model,
             global::G.CreateVideoToVideoRequestGen4Aleph? gen4Aleph
             )
         {

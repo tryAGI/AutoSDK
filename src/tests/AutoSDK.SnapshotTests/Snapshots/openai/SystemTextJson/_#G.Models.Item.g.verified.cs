@@ -13,7 +13,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public string? Type { get; }
+        public global::G.ItemDiscriminatorType? Type { get; }
 
         /// <summary>
         /// A message input to the model with a role indicating instruction following<br/>
@@ -843,7 +843,7 @@ namespace G
         /// 
         /// </summary>
         public Item(
-            string? type,
+            global::G.ItemDiscriminatorType? type,
             global::G.InputMessage? message1,
             global::G.OutputMessage? message2,
             global::G.FileSearchToolCall? fileSearchCall,

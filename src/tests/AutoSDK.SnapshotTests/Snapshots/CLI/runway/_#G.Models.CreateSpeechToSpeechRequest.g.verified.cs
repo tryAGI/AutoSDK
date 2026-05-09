@@ -13,7 +13,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public string? Model { get; }
+        public global::G.CreateSpeechToSpeechRequestDiscriminatorModel? Model { get; }
 
         /// <summary>
         /// 
@@ -66,7 +66,7 @@ namespace G
         /// 
         /// </summary>
         public CreateSpeechToSpeechRequest(
-            string? model,
+            global::G.CreateSpeechToSpeechRequestDiscriminatorModel? model,
             global::G.CreateSpeechToSpeechRequestElevenMultilingualStsV2? elevenMultilingualStsV2
             )
         {

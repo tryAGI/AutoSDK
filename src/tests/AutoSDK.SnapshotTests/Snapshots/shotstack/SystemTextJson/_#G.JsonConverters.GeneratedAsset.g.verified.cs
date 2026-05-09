@@ -23,42 +23,42 @@ namespace G.JsonConverters
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
             global::G.ShotstackGeneratedAsset? shotstack = default;
-            if (discriminator?.Provider == "shotstack")
+            if (discriminator?.Provider == global::G.GeneratedAssetDiscriminatorProvider.Shotstack)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ShotstackGeneratedAsset), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ShotstackGeneratedAsset> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ShotstackGeneratedAsset)}");
                 shotstack = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.DIDGeneratedAsset? dId = default;
-            if (discriminator?.Provider == "d-id")
+            if (discriminator?.Provider == global::G.GeneratedAssetDiscriminatorProvider.DId)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.DIDGeneratedAsset), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.DIDGeneratedAsset> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.DIDGeneratedAsset)}");
                 dId = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.ElevenLabsGeneratedAsset? elevenlabs = default;
-            if (discriminator?.Provider == "elevenlabs")
+            if (discriminator?.Provider == global::G.GeneratedAssetDiscriminatorProvider.Elevenlabs)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ElevenLabsGeneratedAsset), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ElevenLabsGeneratedAsset> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ElevenLabsGeneratedAsset)}");
                 elevenlabs = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.HeyGenGeneratedAsset? heygen = default;
-            if (discriminator?.Provider == "heygen")
+            if (discriminator?.Provider == global::G.GeneratedAssetDiscriminatorProvider.Heygen)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.HeyGenGeneratedAsset), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.HeyGenGeneratedAsset> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.HeyGenGeneratedAsset)}");
                 heygen = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.OpenAiGeneratedAsset? openai = default;
-            if (discriminator?.Provider == "openai")
+            if (discriminator?.Provider == global::G.GeneratedAssetDiscriminatorProvider.Openai)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.OpenAiGeneratedAsset), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.OpenAiGeneratedAsset> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.OpenAiGeneratedAsset)}");
                 openai = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.StabilityAiGeneratedAsset? stabilityAi = default;
-            if (discriminator?.Provider == "stability-ai")
+            if (discriminator?.Provider == global::G.GeneratedAssetDiscriminatorProvider.StabilityAi)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.StabilityAiGeneratedAsset), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.StabilityAiGeneratedAsset> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.StabilityAiGeneratedAsset)}");

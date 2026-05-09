@@ -13,7 +13,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public string? Status { get; }
+        public global::G.GetTasksResponseDiscriminatorStatus? Status { get; }
 
         /// <summary>
         /// A pending task
@@ -306,7 +306,7 @@ namespace G
         /// 
         /// </summary>
         public GetTasksResponse(
-            string? status,
+            global::G.GetTasksResponseDiscriminatorStatus? status,
             global::G.GetTasksResponseVariant1? pending,
             global::G.GetTasksResponseVariant2? throttled,
             global::G.GetTasksResponseVariant3? cancelled,

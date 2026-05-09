@@ -13,7 +13,8 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
-        public string? Role { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ChatCompletionMessageParamDiscriminatorRoleJsonConverter))]
+        public global::G.ChatCompletionMessageParamDiscriminatorRole? Role { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -29,7 +30,7 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ChatCompletionMessageParamDiscriminator(
-            string? role)
+            global::G.ChatCompletionMessageParamDiscriminatorRole? role)
         {
             this.Role = role;
         }

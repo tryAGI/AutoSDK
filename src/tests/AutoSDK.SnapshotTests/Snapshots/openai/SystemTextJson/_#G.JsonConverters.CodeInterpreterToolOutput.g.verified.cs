@@ -23,14 +23,14 @@ namespace G.JsonConverters
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
             global::G.CodeInterpreterTextOutput? logs = default;
-            if (discriminator?.Type == "logs")
+            if (discriminator?.Type == global::G.CodeInterpreterToolOutputDiscriminatorType.Logs)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CodeInterpreterTextOutput), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CodeInterpreterTextOutput> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.CodeInterpreterTextOutput)}");
                 logs = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.CodeInterpreterFileOutput? files = default;
-            if (discriminator?.Type == "files")
+            if (discriminator?.Type == global::G.CodeInterpreterToolOutputDiscriminatorType.Files)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CodeInterpreterFileOutput), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CodeInterpreterFileOutput> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.CodeInterpreterFileOutput)}");

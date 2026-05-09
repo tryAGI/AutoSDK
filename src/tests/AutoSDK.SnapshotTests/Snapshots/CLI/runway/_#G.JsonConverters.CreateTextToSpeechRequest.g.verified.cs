@@ -23,7 +23,7 @@ namespace G.JsonConverters
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
             global::G.CreateTextToSpeechRequestElevenMultilingualV2? elevenMultilingualV2 = default;
-            if (discriminator?.Model == "eleven_multilingual_v2")
+            if (discriminator?.Model == global::G.CreateTextToSpeechRequestDiscriminatorModel.ElevenMultilingualV2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CreateTextToSpeechRequestElevenMultilingualV2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CreateTextToSpeechRequestElevenMultilingualV2> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.CreateTextToSpeechRequestElevenMultilingualV2)}");

@@ -13,7 +13,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public string? Model { get; }
+        public global::G.CreateCharacterPerformanceRequestDiscriminatorModel? Model { get; }
 
         /// <summary>
         /// 
@@ -66,7 +66,7 @@ namespace G
         /// 
         /// </summary>
         public CreateCharacterPerformanceRequest(
-            string? model,
+            global::G.CreateCharacterPerformanceRequestDiscriminatorModel? model,
             global::G.CreateCharacterPerformanceRequestActTwo? actTwo
             )
         {

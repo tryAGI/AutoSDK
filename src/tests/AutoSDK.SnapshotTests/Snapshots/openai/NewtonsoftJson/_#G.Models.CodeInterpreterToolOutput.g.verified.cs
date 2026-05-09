@@ -13,7 +13,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public string? Type { get; }
+        public global::G.CodeInterpreterToolOutputDiscriminatorType? Type { get; }
 
         /// <summary>
         /// The output of a code interpreter tool call that is text.
@@ -114,7 +114,7 @@ namespace G
         /// 
         /// </summary>
         public CodeInterpreterToolOutput(
-            string? type,
+            global::G.CodeInterpreterToolOutputDiscriminatorType? type,
             global::G.CodeInterpreterTextOutput? logs,
             global::G.CodeInterpreterFileOutput? files
             )

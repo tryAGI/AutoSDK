@@ -13,7 +13,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public string? Model { get; }
+        public global::G.CreateSoundEffectRequestDiscriminatorModel? Model { get; }
 
         /// <summary>
         /// 
@@ -66,7 +66,7 @@ namespace G
         /// 
         /// </summary>
         public CreateSoundEffectRequest(
-            string? model,
+            global::G.CreateSoundEffectRequestDiscriminatorModel? model,
             global::G.CreateSoundEffectRequestElevenTextToSoundV2? elevenTextToSoundV2
             )
         {

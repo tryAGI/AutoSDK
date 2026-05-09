@@ -13,7 +13,8 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("provider")]
-        public string? Provider { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.GeneratedAssetDiscriminatorProviderJsonConverter))]
+        public global::G.GeneratedAssetDiscriminatorProvider? Provider { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -29,7 +30,7 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public GeneratedAssetDiscriminator(
-            string? provider)
+            global::G.GeneratedAssetDiscriminatorProvider? provider)
         {
             this.Provider = provider;
         }

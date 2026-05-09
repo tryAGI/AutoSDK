@@ -400,6 +400,8 @@ namespace G
                     new global::G.JsonConverters.RepositoryRuleFileExtensionRestrictionTypeNullableJsonConverter(),
                     new global::G.JsonConverters.RepositoryRuleMaxFileSizeTypeJsonConverter(),
                     new global::G.JsonConverters.RepositoryRuleMaxFileSizeTypeNullableJsonConverter(),
+                    new global::G.JsonConverters.RepositoryRuleDiscriminatorTypeJsonConverter(),
+                    new global::G.JsonConverters.RepositoryRuleDiscriminatorTypeNullableJsonConverter(),
                     new global::G.JsonConverters.RepositoryRulesetTargetJsonConverter(),
                     new global::G.JsonConverters.RepositoryRulesetTargetNullableJsonConverter(),
                     new global::G.JsonConverters.RepositoryRulesetSourceTypeJsonConverter(),

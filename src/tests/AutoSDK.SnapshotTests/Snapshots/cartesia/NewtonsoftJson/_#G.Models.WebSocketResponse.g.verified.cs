@@ -13,7 +13,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public string? Type { get; }
+        public global::G.WebSocketResponseDiscriminatorType? Type { get; }
 
         /// <summary>
         /// 
@@ -306,7 +306,7 @@ namespace G
         /// 
         /// </summary>
         public WebSocketResponse(
-            string? type,
+            global::G.WebSocketResponseDiscriminatorType? type,
             global::G.WebSocketResponseVariant1? chunk,
             global::G.WebSocketResponseVariant2? flushDone,
             global::G.WebSocketResponseVariant3? done,

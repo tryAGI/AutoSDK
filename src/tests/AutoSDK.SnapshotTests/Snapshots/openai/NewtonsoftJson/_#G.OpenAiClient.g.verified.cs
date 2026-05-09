@@ -238,6 +238,10 @@ namespace G
 
                     new global::G.JsonConverters.CodeInterpreterToolTypeNullableJsonConverter(),
 
+                    new global::G.JsonConverters.CodeInterpreterToolContainerDiscriminatorTypeJsonConverter(),
+
+                    new global::G.JsonConverters.CodeInterpreterToolContainerDiscriminatorTypeNullableJsonConverter(),
+
                     new global::G.JsonConverters.CodeInterpreterToolAutoTypeJsonConverter(),
 
                     new global::G.JsonConverters.CodeInterpreterToolAutoTypeNullableJsonConverter(),
@@ -249,6 +253,10 @@ namespace G
                     new global::G.JsonConverters.CodeInterpreterToolCallStatusJsonConverter(),
 
                     new global::G.JsonConverters.CodeInterpreterToolCallStatusNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CodeInterpreterToolOutputDiscriminatorTypeJsonConverter(),
+
+                    new global::G.JsonConverters.CodeInterpreterToolOutputDiscriminatorTypeNullableJsonConverter(),
 
                     new global::G.JsonConverters.ComparisonFilterTypeJsonConverter(),
 
@@ -593,6 +601,10 @@ namespace G
                     new global::G.JsonConverters.CreateTranscriptionRequestChunkingStrategyJsonConverter(),
 
                     new global::G.JsonConverters.CreateTranscriptionRequestChunkingStrategyNullableJsonConverter(),
+
+                    new global::G.JsonConverters.CreateTranscriptionResponseStreamEventDiscriminatorTypeJsonConverter(),
+
+                    new global::G.JsonConverters.CreateTranscriptionResponseStreamEventDiscriminatorTypeNullableJsonConverter(),
 
                     new global::G.JsonConverters.CreateTranslationRequestModelJsonConverter(),
 
@@ -950,6 +962,10 @@ namespace G
 
                     new global::G.JsonConverters.InputAudioFormatNullableJsonConverter(),
 
+                    new global::G.JsonConverters.InputItemDiscriminatorTypeJsonConverter(),
+
+                    new global::G.JsonConverters.InputItemDiscriminatorTypeNullableJsonConverter(),
+
                     new global::G.JsonConverters.InputMessageTypeJsonConverter(),
 
                     new global::G.JsonConverters.InputMessageTypeNullableJsonConverter(),
@@ -993,6 +1009,14 @@ namespace G
                     new global::G.JsonConverters.InviteRequestProjectRoleJsonConverter(),
 
                     new global::G.JsonConverters.InviteRequestProjectRoleNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ItemDiscriminatorTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ItemDiscriminatorTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ItemResourceDiscriminatorTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ItemResourceDiscriminatorTypeNullableJsonConverter(),
 
                     new global::G.JsonConverters.KeyPressTypeJsonConverter(),
 
@@ -1230,6 +1254,10 @@ namespace G
 
                     new global::G.JsonConverters.OutputAudioTypeNullableJsonConverter(),
 
+                    new global::G.JsonConverters.OutputItemDiscriminatorTypeJsonConverter(),
+
+                    new global::G.JsonConverters.OutputItemDiscriminatorTypeNullableJsonConverter(),
+
                     new global::G.JsonConverters.OutputMessageTypeJsonConverter(),
 
                     new global::G.JsonConverters.OutputMessageTypeNullableJsonConverter(),
@@ -1329,6 +1357,10 @@ namespace G
                     new global::G.JsonConverters.ProjectUserUpdateRequestRoleJsonConverter(),
 
                     new global::G.JsonConverters.ProjectUserUpdateRequestRoleNullableJsonConverter(),
+
+                    new global::G.JsonConverters.RealtimeClientEventDiscriminatorTypeJsonConverter(),
+
+                    new global::G.JsonConverters.RealtimeClientEventDiscriminatorTypeNullableJsonConverter(),
 
                     new global::G.JsonConverters.RealtimeClientEventConversationItemCreateTypeJsonConverter(),
 
@@ -1465,6 +1497,10 @@ namespace G
                     new global::G.JsonConverters.RealtimeResponseCreateParamsConversationJsonConverter(),
 
                     new global::G.JsonConverters.RealtimeResponseCreateParamsConversationNullableJsonConverter(),
+
+                    new global::G.JsonConverters.RealtimeServerEventDiscriminatorTypeJsonConverter(),
+
+                    new global::G.JsonConverters.RealtimeServerEventDiscriminatorTypeNullableJsonConverter(),
 
                     new global::G.JsonConverters.RealtimeServerEventConversationCreatedTypeJsonConverter(),
 
@@ -2014,6 +2050,10 @@ namespace G
 
                     new global::G.JsonConverters.ResponseRefusalDoneEventTypeNullableJsonConverter(),
 
+                    new global::G.JsonConverters.ResponseStreamEventDiscriminatorTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ResponseStreamEventDiscriminatorTypeNullableJsonConverter(),
+
                     new global::G.JsonConverters.ResponseTextDeltaEventTypeJsonConverter(),
 
                     new global::G.JsonConverters.ResponseTextDeltaEventTypeNullableJsonConverter(),
@@ -2237,6 +2277,10 @@ namespace G
                     new global::G.JsonConverters.ThreadStreamEventVariant1EventJsonConverter(),
 
                     new global::G.JsonConverters.ThreadStreamEventVariant1EventNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ToolDiscriminatorTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ToolDiscriminatorTypeNullableJsonConverter(),
 
                     new global::G.JsonConverters.ToolChoiceFunctionTypeJsonConverter(),
 
@@ -2477,6 +2521,10 @@ namespace G
                     new global::G.JsonConverters.ContainerFileCitationBodyTypeJsonConverter(),
 
                     new global::G.JsonConverters.ContainerFileCitationBodyTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.AnnotationDiscriminatorTypeJsonConverter(),
+
+                    new global::G.JsonConverters.AnnotationDiscriminatorTypeNullableJsonConverter(),
 
                     new global::G.JsonConverters.OutputTextContentTypeJsonConverter(),
 

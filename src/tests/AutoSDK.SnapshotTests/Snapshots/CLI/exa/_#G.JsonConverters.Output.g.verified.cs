@@ -23,14 +23,14 @@ namespace G.JsonConverters
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
             global::G.ResearchEventDtoClassVariant1Variant2OutputVariant1? completed = default;
-            if (discriminator?.OutputType == "completed")
+            if (discriminator?.OutputType == global::G.ResearchEventDtoClassVariant1Variant2OutputDiscriminatorOutputType.Completed)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResearchEventDtoClassVariant1Variant2OutputVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResearchEventDtoClassVariant1Variant2OutputVariant1> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ResearchEventDtoClassVariant1Variant2OutputVariant1)}");
                 completed = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.ResearchEventDtoClassVariant1Variant2OutputVariant2? failed = default;
-            if (discriminator?.OutputType == "failed")
+            if (discriminator?.OutputType == global::G.ResearchEventDtoClassVariant1Variant2OutputDiscriminatorOutputType.Failed)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResearchEventDtoClassVariant1Variant2OutputVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResearchEventDtoClassVariant1Variant2OutputVariant2> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ResearchEventDtoClassVariant1Variant2OutputVariant2)}");

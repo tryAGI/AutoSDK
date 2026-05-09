@@ -70,6 +70,10 @@ namespace G
 
                     new global::G.JsonConverters.ChatCompletionRequestFunctionCallEnumNullableJsonConverter(),
 
+                    new global::G.JsonConverters.ChatCompletionMessageParamDiscriminatorRoleJsonConverter(),
+
+                    new global::G.JsonConverters.ChatCompletionMessageParamDiscriminatorRoleNullableJsonConverter(),
+
                     new global::G.JsonConverters.ChatCompletionSystemMessageParamRoleJsonConverter(),
 
                     new global::G.JsonConverters.ChatCompletionSystemMessageParamRoleNullableJsonConverter(),
@@ -137,6 +141,10 @@ namespace G
                     new global::G.JsonConverters.FileResponseFileTypeJsonConverter(),
 
                     new global::G.JsonConverters.FileResponseFileTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.FinetuneResponseTrainingTypeDiscriminatorTypeJsonConverter(),
+
+                    new global::G.JsonConverters.FinetuneResponseTrainingTypeDiscriminatorTypeNullableJsonConverter(),
 
                     new global::G.JsonConverters.FinetuneJobStatusJsonConverter(),
 

@@ -23,21 +23,21 @@ namespace G.JsonConverters
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
             global::G.ResearchEventDtoClassVariant2Variant1? planDefinition = default;
-            if (discriminator?.EventType == "plan-definition")
+            if (discriminator?.EventType == global::G.ResearchEventDtoClassVariant2DiscriminatorEventType.PlanDefinition)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResearchEventDtoClassVariant2Variant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResearchEventDtoClassVariant2Variant1> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ResearchEventDtoClassVariant2Variant1)}");
                 planDefinition = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.ResearchEventDtoClassVariant2Variant2? planOperation = default;
-            if (discriminator?.EventType == "plan-operation")
+            if (discriminator?.EventType == global::G.ResearchEventDtoClassVariant2DiscriminatorEventType.PlanOperation)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResearchEventDtoClassVariant2Variant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResearchEventDtoClassVariant2Variant2> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ResearchEventDtoClassVariant2Variant2)}");
                 planOperation = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.ResearchEventDtoClassVariant2Variant3? planOutput = default;
-            if (discriminator?.EventType == "plan-output")
+            if (discriminator?.EventType == global::G.ResearchEventDtoClassVariant2DiscriminatorEventType.PlanOutput)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResearchEventDtoClassVariant2Variant3), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResearchEventDtoClassVariant2Variant3> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ResearchEventDtoClassVariant2Variant3)}");

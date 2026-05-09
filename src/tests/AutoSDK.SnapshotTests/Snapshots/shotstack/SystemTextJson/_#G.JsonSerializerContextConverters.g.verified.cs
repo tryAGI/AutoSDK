@@ -177,6 +177,8 @@ namespace G
             typeof(global::G.JsonConverters.TranscriptionFormatNullableJsonConverter),
             typeof(global::G.JsonConverters.DolbyEnhancementOptionsPresetJsonConverter),
             typeof(global::G.JsonConverters.DolbyEnhancementOptionsPresetNullableJsonConverter),
+            typeof(global::G.JsonConverters.GeneratedAssetDiscriminatorProviderJsonConverter),
+            typeof(global::G.JsonConverters.GeneratedAssetDiscriminatorProviderNullableJsonConverter),
             typeof(global::G.JsonConverters.ShotstackGeneratedAssetProviderJsonConverter),
             typeof(global::G.JsonConverters.ShotstackGeneratedAssetProviderNullableJsonConverter),
             typeof(global::G.JsonConverters.ShotstackGeneratedAssetOptionsDiscriminatorTypeJsonConverter),

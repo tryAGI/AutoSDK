@@ -23,21 +23,21 @@ namespace G.JsonConverters
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
             global::G.CreateTextToVideoRequestVeo31? veo31 = default;
-            if (discriminator?.Model == "veo3.1")
+            if (discriminator?.Model == global::G.CreateTextToVideoRequestDiscriminatorModel.Veo31)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CreateTextToVideoRequestVeo31), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CreateTextToVideoRequestVeo31> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.CreateTextToVideoRequestVeo31)}");
                 veo31 = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.CreateTextToVideoRequestVeo31Fast? veo31Fast = default;
-            if (discriminator?.Model == "veo3.1_fast")
+            if (discriminator?.Model == global::G.CreateTextToVideoRequestDiscriminatorModel.Veo31Fast)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CreateTextToVideoRequestVeo31Fast), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CreateTextToVideoRequestVeo31Fast> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.CreateTextToVideoRequestVeo31Fast)}");
                 veo31Fast = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.CreateTextToVideoRequestVeo3? veo3 = default;
-            if (discriminator?.Model == "veo3")
+            if (discriminator?.Model == global::G.CreateTextToVideoRequestDiscriminatorModel.Veo3)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CreateTextToVideoRequestVeo3), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CreateTextToVideoRequestVeo3> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.CreateTextToVideoRequestVeo3)}");

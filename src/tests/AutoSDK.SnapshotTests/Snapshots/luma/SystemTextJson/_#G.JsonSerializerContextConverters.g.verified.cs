@@ -23,6 +23,8 @@ namespace G
             typeof(global::G.JsonConverters.GenerationRequestGenerationTypeNullableJsonConverter),
             typeof(global::G.JsonConverters.GenerationTypeJsonConverter),
             typeof(global::G.JsonConverters.GenerationTypeNullableJsonConverter),
+            typeof(global::G.JsonConverters.GenerationRequestDiscriminatorGenerationTypeJsonConverter),
+            typeof(global::G.JsonConverters.GenerationRequestDiscriminatorGenerationTypeNullableJsonConverter),
             typeof(global::G.JsonConverters.KeyframeDiscriminatorTypeJsonConverter),
             typeof(global::G.JsonConverters.KeyframeDiscriminatorTypeNullableJsonConverter),
             typeof(global::G.JsonConverters.ImageModelJsonConverter),

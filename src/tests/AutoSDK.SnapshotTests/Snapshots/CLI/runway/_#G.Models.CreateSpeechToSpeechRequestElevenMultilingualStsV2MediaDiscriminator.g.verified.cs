@@ -13,7 +13,8 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        public string? Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.CreateSpeechToSpeechRequestElevenMultilingualStsV2MediaDiscriminatorTypeJsonConverter))]
+        public global::G.CreateSpeechToSpeechRequestElevenMultilingualStsV2MediaDiscriminatorType? Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -29,7 +30,7 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CreateSpeechToSpeechRequestElevenMultilingualStsV2MediaDiscriminator(
-            string? type)
+            global::G.CreateSpeechToSpeechRequestElevenMultilingualStsV2MediaDiscriminatorType? type)
         {
             this.Type = type;
         }

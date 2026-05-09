@@ -13,7 +13,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public string? Model { get; }
+        public global::G.CreateVoiceIsolationRequestDiscriminatorModel? Model { get; }
 
         /// <summary>
         /// 
@@ -66,7 +66,7 @@ namespace G
         /// 
         /// </summary>
         public CreateVoiceIsolationRequest(
-            string? model,
+            global::G.CreateVoiceIsolationRequestDiscriminatorModel? model,
             global::G.CreateVoiceIsolationRequestElevenVoiceIsolation? elevenVoiceIsolation
             )
         {

@@ -13,7 +13,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public string? Model { get; }
+        public global::G.CreateImageToVideoRequestDiscriminatorModel? Model { get; }
 
         /// <summary>
         /// 
@@ -258,7 +258,7 @@ namespace G
         /// 
         /// </summary>
         public CreateImageToVideoRequest(
-            string? model,
+            global::G.CreateImageToVideoRequestDiscriminatorModel? model,
             global::G.CreateImageToVideoRequestGen4Turbo? gen4Turbo,
             global::G.CreateImageToVideoRequestVeo31? veo31,
             global::G.CreateImageToVideoRequestGen3aTurbo? gen3aTurbo,

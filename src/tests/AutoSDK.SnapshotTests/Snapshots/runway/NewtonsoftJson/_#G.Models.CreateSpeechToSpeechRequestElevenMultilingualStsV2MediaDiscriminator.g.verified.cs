@@ -13,7 +13,8 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
-        public string? Type { get; set; }
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateSpeechToSpeechRequestElevenMultilingualStsV2MediaDiscriminatorTypeJsonConverter))]
+        public global::G.CreateSpeechToSpeechRequestElevenMultilingualStsV2MediaDiscriminatorType? Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -26,7 +27,7 @@ namespace G
         /// </summary>
         /// <param name="type"></param>
         public CreateSpeechToSpeechRequestElevenMultilingualStsV2MediaDiscriminator(
-            string? type)
+            global::G.CreateSpeechToSpeechRequestElevenMultilingualStsV2MediaDiscriminatorType? type)
         {
             this.Type = type;
         }

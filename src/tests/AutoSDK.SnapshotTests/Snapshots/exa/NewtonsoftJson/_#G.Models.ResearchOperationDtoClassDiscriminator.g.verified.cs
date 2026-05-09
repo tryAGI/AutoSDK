@@ -13,7 +13,8 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
-        public string? Type { get; set; }
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ResearchOperationDtoClassDiscriminatorTypeJsonConverter))]
+        public global::G.ResearchOperationDtoClassDiscriminatorType? Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -26,7 +27,7 @@ namespace G
         /// </summary>
         /// <param name="type"></param>
         public ResearchOperationDtoClassDiscriminator(
-            string? type)
+            global::G.ResearchOperationDtoClassDiscriminatorType? type)
         {
             this.Type = type;
         }

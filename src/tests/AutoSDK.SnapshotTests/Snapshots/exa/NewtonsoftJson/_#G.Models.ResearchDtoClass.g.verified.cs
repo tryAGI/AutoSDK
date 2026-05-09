@@ -13,7 +13,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public string? Status { get; }
+        public global::G.ResearchDtoClassDiscriminatorStatus? Status { get; }
 
         /// <summary>
         /// 
@@ -258,7 +258,7 @@ namespace G
         /// 
         /// </summary>
         public ResearchDtoClass(
-            string? status,
+            global::G.ResearchDtoClassDiscriminatorStatus? status,
             global::G.ResearchDtoClassVariant1? pending,
             global::G.ResearchDtoClassVariant2? running,
             global::G.ResearchDtoClassVariant3? completed,

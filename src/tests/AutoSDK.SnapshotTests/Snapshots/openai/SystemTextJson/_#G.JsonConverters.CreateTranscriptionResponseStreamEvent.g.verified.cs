@@ -23,14 +23,14 @@ namespace G.JsonConverters
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
             global::G.TranscriptTextDeltaEvent? transcriptTextDelta = default;
-            if (discriminator?.Type == "transcript.text.delta")
+            if (discriminator?.Type == global::G.CreateTranscriptionResponseStreamEventDiscriminatorType.TranscriptTextDelta)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TranscriptTextDeltaEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TranscriptTextDeltaEvent> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.TranscriptTextDeltaEvent)}");
                 transcriptTextDelta = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.TranscriptTextDoneEvent? transcriptTextDone = default;
-            if (discriminator?.Type == "transcript.text.done")
+            if (discriminator?.Type == global::G.CreateTranscriptionResponseStreamEventDiscriminatorType.TranscriptTextDone)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TranscriptTextDoneEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TranscriptTextDoneEvent> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.TranscriptTextDoneEvent)}");

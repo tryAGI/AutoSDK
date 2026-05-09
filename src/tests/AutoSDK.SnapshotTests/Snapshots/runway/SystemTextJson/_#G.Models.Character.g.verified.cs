@@ -13,7 +13,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public string? Type { get; }
+        public global::G.CreateCharacterPerformanceRequestActTwoCharacterDiscriminatorType? Type { get; }
 
         /// <summary>
         /// An image of your character. In the output, the character will use the reference video performance in its original static environment.
@@ -114,7 +114,7 @@ namespace G
         /// 
         /// </summary>
         public Character(
-            string? type,
+            global::G.CreateCharacterPerformanceRequestActTwoCharacterDiscriminatorType? type,
             global::G.CreateCharacterPerformanceRequestActTwoCharacterCharacterImage? image,
             global::G.CreateCharacterPerformanceRequestActTwoCharacterCharacterVideo? video
             )

@@ -13,7 +13,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public string? Type { get; }
+        public global::G.PipelinesUpdatePipelineProducerConfigResponsePipelineConfigDiscriminatorType? Type { get; }
 
         /// <summary>
         /// 
@@ -114,7 +114,7 @@ namespace G
         /// 
         /// </summary>
         public Config9(
-            string? type,
+            global::G.PipelinesUpdatePipelineProducerConfigResponsePipelineConfigDiscriminatorType? type,
             global::G.PipelinesUpdatePipelineProducerConfigResponsePipelineConfigVariant1? slackChannelReader,
             global::G.PipelinesUpdatePipelineProducerConfigResponsePipelineConfigVariant2? customWebhook
             )

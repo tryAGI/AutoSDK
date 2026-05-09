@@ -377,283 +377,311 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResearchOperationDtoClass? Type87 { get; set; }
+        public global::G.ResearchDtoClassDiscriminatorStatus? Type87 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResearchOperationDtoClassVariant1? Type88 { get; set; }
+        public global::G.ResearchOperationDtoClass? Type88 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResearchOperationDtoClassVariant1Type? Type89 { get; set; }
+        public global::G.ResearchOperationDtoClassVariant1? Type89 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResearchOperationDtoClassVariant2? Type90 { get; set; }
+        public global::G.ResearchOperationDtoClassVariant1Type? Type90 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResearchOperationDtoClassVariant2Type? Type91 { get; set; }
+        public global::G.ResearchOperationDtoClassVariant2? Type91 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResearchOperationDtoClassVariant2SearchType? Type92 { get; set; }
+        public global::G.ResearchOperationDtoClassVariant2Type? Type92 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.ResearchOperationDtoClassVariant2Result>? Type93 { get; set; }
+        public global::G.ResearchOperationDtoClassVariant2SearchType? Type93 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResearchOperationDtoClassVariant2Result? Type94 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ResearchOperationDtoClassVariant2Result>? Type94 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResearchOperationDtoClassVariant3? Type95 { get; set; }
+        public global::G.ResearchOperationDtoClassVariant2Result? Type95 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResearchOperationDtoClassVariant3Type? Type96 { get; set; }
+        public global::G.ResearchOperationDtoClassVariant3? Type96 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResearchOperationDtoClassVariant3Result? Type97 { get; set; }
+        public global::G.ResearchOperationDtoClassVariant3Type? Type97 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResearchOperationDtoClassDiscriminator? Type98 { get; set; }
+        public global::G.ResearchOperationDtoClassVariant3Result? Type98 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResearchEventDtoClassVariant1? Type99 { get; set; }
+        public global::G.ResearchOperationDtoClassDiscriminator? Type99 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResearchEventDtoClassVariant1Variant1? Type100 { get; set; }
+        public global::G.ResearchOperationDtoClassDiscriminatorType? Type100 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResearchEventDtoClassVariant1Variant1EventType? Type101 { get; set; }
+        public global::G.ResearchEventDtoClassVariant1? Type101 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResearchEventDtoClassVariant1Variant2? Type102 { get; set; }
+        public global::G.ResearchEventDtoClassVariant1Variant1? Type102 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResearchEventDtoClassVariant1Variant2EventType? Type103 { get; set; }
+        public global::G.ResearchEventDtoClassVariant1Variant1EventType? Type103 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Output? Type104 { get; set; }
+        public global::G.ResearchEventDtoClassVariant1Variant2? Type104 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResearchEventDtoClassVariant1Variant2OutputVariant1? Type105 { get; set; }
+        public global::G.ResearchEventDtoClassVariant1Variant2EventType? Type105 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResearchEventDtoClassVariant1Variant2OutputVariant1OutputType? Type106 { get; set; }
+        public global::G.Output? Type106 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResearchEventDtoClassVariant1Variant2OutputVariant1CostDollars? Type107 { get; set; }
+        public global::G.ResearchEventDtoClassVariant1Variant2OutputVariant1? Type107 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResearchEventDtoClassVariant1Variant2OutputVariant2? Type108 { get; set; }
+        public global::G.ResearchEventDtoClassVariant1Variant2OutputVariant1OutputType? Type108 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResearchEventDtoClassVariant1Variant2OutputVariant2OutputType? Type109 { get; set; }
+        public global::G.ResearchEventDtoClassVariant1Variant2OutputVariant1CostDollars? Type109 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResearchEventDtoClassVariant1Variant2OutputDiscriminator? Type110 { get; set; }
+        public global::G.ResearchEventDtoClassVariant1Variant2OutputVariant2? Type110 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResearchEventDtoClassVariant1Discriminator? Type111 { get; set; }
+        public global::G.ResearchEventDtoClassVariant1Variant2OutputVariant2OutputType? Type111 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResearchEventDtoClassVariant2? Type112 { get; set; }
+        public global::G.ResearchEventDtoClassVariant1Variant2OutputDiscriminator? Type112 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResearchEventDtoClassVariant2Variant1? Type113 { get; set; }
+        public global::G.ResearchEventDtoClassVariant1Variant2OutputDiscriminatorOutputType? Type113 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResearchEventDtoClassVariant2Variant1EventType? Type114 { get; set; }
+        public global::G.ResearchEventDtoClassVariant1Discriminator? Type114 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResearchEventDtoClassVariant2Variant2? Type115 { get; set; }
+        public global::G.ResearchEventDtoClassVariant1DiscriminatorEventType? Type115 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResearchEventDtoClassVariant2Variant2EventType? Type116 { get; set; }
+        public global::G.ResearchEventDtoClassVariant2? Type116 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResearchEventDtoClassVariant2Variant3? Type117 { get; set; }
+        public global::G.ResearchEventDtoClassVariant2Variant1? Type117 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResearchEventDtoClassVariant2Variant3EventType? Type118 { get; set; }
+        public global::G.ResearchEventDtoClassVariant2Variant1EventType? Type118 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Output2? Type119 { get; set; }
+        public global::G.ResearchEventDtoClassVariant2Variant2? Type119 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResearchEventDtoClassVariant2Variant3OutputVariant1? Type120 { get; set; }
+        public global::G.ResearchEventDtoClassVariant2Variant2EventType? Type120 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResearchEventDtoClassVariant2Variant3OutputVariant1OutputType? Type121 { get; set; }
+        public global::G.ResearchEventDtoClassVariant2Variant3? Type121 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResearchEventDtoClassVariant2Variant3OutputVariant2? Type122 { get; set; }
+        public global::G.ResearchEventDtoClassVariant2Variant3EventType? Type122 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResearchEventDtoClassVariant2Variant3OutputVariant2OutputType? Type123 { get; set; }
+        public global::G.Output2? Type123 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResearchEventDtoClassVariant2Variant3OutputDiscriminator? Type124 { get; set; }
+        public global::G.ResearchEventDtoClassVariant2Variant3OutputVariant1? Type124 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResearchEventDtoClassVariant2Discriminator? Type125 { get; set; }
+        public global::G.ResearchEventDtoClassVariant2Variant3OutputVariant1OutputType? Type125 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResearchEventDtoClassVariant3? Type126 { get; set; }
+        public global::G.ResearchEventDtoClassVariant2Variant3OutputVariant2? Type126 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResearchEventDtoClassVariant3Variant1? Type127 { get; set; }
+        public global::G.ResearchEventDtoClassVariant2Variant3OutputVariant2OutputType? Type127 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResearchEventDtoClassVariant3Variant1EventType? Type128 { get; set; }
+        public global::G.ResearchEventDtoClassVariant2Variant3OutputDiscriminator? Type128 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResearchEventDtoClassVariant3Variant2? Type129 { get; set; }
+        public global::G.ResearchEventDtoClassVariant2Variant3OutputDiscriminatorOutputType? Type129 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResearchEventDtoClassVariant3Variant2EventType? Type130 { get; set; }
+        public global::G.ResearchEventDtoClassVariant2Discriminator? Type130 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResearchEventDtoClassVariant3Variant3? Type131 { get; set; }
+        public global::G.ResearchEventDtoClassVariant2DiscriminatorEventType? Type131 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResearchEventDtoClassVariant3Variant3EventType? Type132 { get; set; }
+        public global::G.ResearchEventDtoClassVariant3? Type132 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResearchEventDtoClassVariant3Variant3Output? Type133 { get; set; }
+        public global::G.ResearchEventDtoClassVariant3Variant1? Type133 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResearchEventDtoClassVariant3Variant3OutputOutputType? Type134 { get; set; }
+        public global::G.ResearchEventDtoClassVariant3Variant1EventType? Type134 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResearchEventDtoClassVariant3Discriminator? Type135 { get; set; }
+        public global::G.ResearchEventDtoClassVariant3Variant2? Type135 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AllOf<global::G.SearchRequest2, global::G.CommonRequest>? Type136 { get; set; }
+        public global::G.ResearchEventDtoClassVariant3Variant2EventType? Type136 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SearchRequest2? Type137 { get; set; }
+        public global::G.ResearchEventDtoClassVariant3Variant3? Type137 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SearchRequestType? Type138 { get; set; }
+        public global::G.ResearchEventDtoClassVariant3Variant3EventType? Type138 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SearchRequestCategory? Type139 { get; set; }
+        public global::G.ResearchEventDtoClassVariant3Variant3Output? Type139 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AllOf<global::G.FindSimilarRequest2, global::G.CommonRequest>? Type140 { get; set; }
+        public global::G.ResearchEventDtoClassVariant3Variant3OutputOutputType? Type140 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.FindSimilarRequest2? Type141 { get; set; }
+        public global::G.ResearchEventDtoClassVariant3Discriminator? Type141 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AllOf<global::G.GetContentsRequest2, global::G.ContentsRequest>? Type142 { get; set; }
+        public global::G.ResearchEventDtoClassVariant3DiscriminatorEventType? Type142 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetContentsRequest2? Type143 { get; set; }
+        public global::G.AllOf<global::G.SearchRequest2, global::G.CommonRequest>? Type143 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnswerRequest? Type144 { get; set; }
+        public global::G.SearchRequest2? Type144 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SearchResponse? Type145 { get; set; }
+        public global::G.SearchRequestType? Type145 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SearchResponseSearchType? Type146 { get; set; }
+        public global::G.SearchRequestCategory? Type146 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.FindSimilarResponse? Type147 { get; set; }
+        public global::G.AllOf<global::G.FindSimilarRequest2, global::G.CommonRequest>? Type147 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetContentsResponse? Type148 { get; set; }
+        public global::G.FindSimilarRequest2? Type148 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.GetContentsResponseStatuse>? Type149 { get; set; }
+        public global::G.AllOf<global::G.GetContentsRequest2, global::G.ContentsRequest>? Type149 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetContentsResponseStatuse? Type150 { get; set; }
+        public global::G.GetContentsRequest2? Type150 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetContentsResponseStatuseStatus? Type151 { get; set; }
+        public global::G.AnswerRequest? Type151 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetContentsResponseStatuseError? Type152 { get; set; }
+        public global::G.SearchResponse? Type152 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetContentsResponseStatuseErrorTag? Type153 { get; set; }
+        public global::G.SearchResponseSearchType? Type153 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AllOf<global::G.AnswerResult, global::G.AnswerResponse2>? Type154 { get; set; }
+        public global::G.FindSimilarResponse? Type154 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnswerResponse2? Type155 { get; set; }
+        public global::G.GetContentsResponse? Type155 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnswerResponse3? Type156 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.GetContentsResponseStatuse>? Type156 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.GetContentsResponseStatuse? Type157 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.GetContentsResponseStatuseStatus? Type158 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.GetContentsResponseStatuseError? Type159 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.GetContentsResponseStatuseErrorTag? Type160 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.AllOf<global::G.AnswerResult, global::G.AnswerResponse2>? Type161 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.AnswerResponse2? Type162 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.AnswerResponse3? Type163 { get; set; }
 
         /// <summary>
         /// 

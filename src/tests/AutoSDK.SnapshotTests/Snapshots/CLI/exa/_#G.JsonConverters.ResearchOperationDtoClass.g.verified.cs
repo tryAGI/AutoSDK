@@ -23,21 +23,21 @@ namespace G.JsonConverters
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
             global::G.ResearchOperationDtoClassVariant1? think = default;
-            if (discriminator?.Type == "think")
+            if (discriminator?.Type == global::G.ResearchOperationDtoClassDiscriminatorType.Think)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResearchOperationDtoClassVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResearchOperationDtoClassVariant1> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ResearchOperationDtoClassVariant1)}");
                 think = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.ResearchOperationDtoClassVariant2? search = default;
-            if (discriminator?.Type == "search")
+            if (discriminator?.Type == global::G.ResearchOperationDtoClassDiscriminatorType.Search)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResearchOperationDtoClassVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResearchOperationDtoClassVariant2> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ResearchOperationDtoClassVariant2)}");
                 search = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.ResearchOperationDtoClassVariant3? crawl = default;
-            if (discriminator?.Type == "crawl")
+            if (discriminator?.Type == global::G.ResearchOperationDtoClassDiscriminatorType.Crawl)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResearchOperationDtoClassVariant3), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResearchOperationDtoClassVariant3> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ResearchOperationDtoClassVariant3)}");

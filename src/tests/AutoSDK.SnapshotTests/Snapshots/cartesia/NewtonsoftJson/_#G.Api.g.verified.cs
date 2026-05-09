@@ -105,6 +105,10 @@ namespace G
 
                     new global::G.JsonConverters.WebSocketResponseVariant6TypeNullableJsonConverter(),
 
+                    new global::G.JsonConverters.WebSocketResponseDiscriminatorTypeJsonConverter(),
+
+                    new global::G.JsonConverters.WebSocketResponseDiscriminatorTypeNullableJsonConverter(),
+
                     new global::G.JsonConverters.WebSocketRawOutputFormatContainerJsonConverter(),
 
                     new global::G.JsonConverters.WebSocketRawOutputFormatContainerNullableJsonConverter(),

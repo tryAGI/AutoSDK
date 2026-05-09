@@ -386,6 +386,10 @@ namespace G
 
                     new global::G.JsonConverters.DolbyEnhancementOptionsPresetNullableJsonConverter(),
 
+                    new global::G.JsonConverters.GeneratedAssetDiscriminatorProviderJsonConverter(),
+
+                    new global::G.JsonConverters.GeneratedAssetDiscriminatorProviderNullableJsonConverter(),
+
                     new global::G.JsonConverters.ShotstackGeneratedAssetProviderJsonConverter(),
 
                     new global::G.JsonConverters.ShotstackGeneratedAssetProviderNullableJsonConverter(),

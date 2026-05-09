@@ -363,6 +363,8 @@ namespace G
             typeof(global::G.JsonConverters.RepositoryRuleFileExtensionRestrictionTypeNullableJsonConverter),
             typeof(global::G.JsonConverters.RepositoryRuleMaxFileSizeTypeJsonConverter),
             typeof(global::G.JsonConverters.RepositoryRuleMaxFileSizeTypeNullableJsonConverter),
+            typeof(global::G.JsonConverters.RepositoryRuleDiscriminatorTypeJsonConverter),
+            typeof(global::G.JsonConverters.RepositoryRuleDiscriminatorTypeNullableJsonConverter),
             typeof(global::G.JsonConverters.RepositoryRulesetTargetJsonConverter),
             typeof(global::G.JsonConverters.RepositoryRulesetTargetNullableJsonConverter),
             typeof(global::G.JsonConverters.RepositoryRulesetSourceTypeJsonConverter),

@@ -102,6 +102,10 @@ namespace G
 
                     new global::G.JsonConverters.ResearchDtoClassVariant5StatusNullableJsonConverter(),
 
+                    new global::G.JsonConverters.ResearchDtoClassDiscriminatorStatusJsonConverter(),
+
+                    new global::G.JsonConverters.ResearchDtoClassDiscriminatorStatusNullableJsonConverter(),
+
                     new global::G.JsonConverters.ResearchOperationDtoClassVariant1TypeJsonConverter(),
 
                     new global::G.JsonConverters.ResearchOperationDtoClassVariant1TypeNullableJsonConverter(),
@@ -118,6 +122,10 @@ namespace G
 
                     new global::G.JsonConverters.ResearchOperationDtoClassVariant3TypeNullableJsonConverter(),
 
+                    new global::G.JsonConverters.ResearchOperationDtoClassDiscriminatorTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ResearchOperationDtoClassDiscriminatorTypeNullableJsonConverter(),
+
                     new global::G.JsonConverters.ResearchEventDtoClassVariant1Variant1EventTypeJsonConverter(),
 
                     new global::G.JsonConverters.ResearchEventDtoClassVariant1Variant1EventTypeNullableJsonConverter(),
@@ -133,6 +141,14 @@ namespace G
                     new global::G.JsonConverters.ResearchEventDtoClassVariant1Variant2OutputVariant2OutputTypeJsonConverter(),
 
                     new global::G.JsonConverters.ResearchEventDtoClassVariant1Variant2OutputVariant2OutputTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ResearchEventDtoClassVariant1Variant2OutputDiscriminatorOutputTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ResearchEventDtoClassVariant1Variant2OutputDiscriminatorOutputTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ResearchEventDtoClassVariant1DiscriminatorEventTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ResearchEventDtoClassVariant1DiscriminatorEventTypeNullableJsonConverter(),
 
                     new global::G.JsonConverters.ResearchEventDtoClassVariant2Variant1EventTypeJsonConverter(),
 
@@ -154,6 +170,14 @@ namespace G
 
                     new global::G.JsonConverters.ResearchEventDtoClassVariant2Variant3OutputVariant2OutputTypeNullableJsonConverter(),
 
+                    new global::G.JsonConverters.ResearchEventDtoClassVariant2Variant3OutputDiscriminatorOutputTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ResearchEventDtoClassVariant2Variant3OutputDiscriminatorOutputTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ResearchEventDtoClassVariant2DiscriminatorEventTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ResearchEventDtoClassVariant2DiscriminatorEventTypeNullableJsonConverter(),
+
                     new global::G.JsonConverters.ResearchEventDtoClassVariant3Variant1EventTypeJsonConverter(),
 
                     new global::G.JsonConverters.ResearchEventDtoClassVariant3Variant1EventTypeNullableJsonConverter(),
@@ -169,6 +193,10 @@ namespace G
                     new global::G.JsonConverters.ResearchEventDtoClassVariant3Variant3OutputOutputTypeJsonConverter(),
 
                     new global::G.JsonConverters.ResearchEventDtoClassVariant3Variant3OutputOutputTypeNullableJsonConverter(),
+
+                    new global::G.JsonConverters.ResearchEventDtoClassVariant3DiscriminatorEventTypeJsonConverter(),
+
+                    new global::G.JsonConverters.ResearchEventDtoClassVariant3DiscriminatorEventTypeNullableJsonConverter(),
 
                     new global::G.JsonConverters.SearchRequestTypeJsonConverter(),
 

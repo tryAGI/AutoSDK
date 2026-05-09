@@ -13,7 +13,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public string? Type { get; }
+        public global::G.RealtimeClientEventDiscriminatorType? Type { get; }
 
         /// <summary>
         /// Add a new Item to the Conversation's context, including messages, function <br/>
@@ -655,7 +655,7 @@ namespace G
         /// 
         /// </summary>
         public RealtimeClientEvent(
-            string? type,
+            global::G.RealtimeClientEventDiscriminatorType? type,
             global::G.RealtimeClientEventConversationItemCreate? conversationItemCreate,
             global::G.RealtimeClientEventConversationItemDelete? conversationItemDelete,
             global::G.RealtimeClientEventConversationItemRetrieve? conversationItemRetrieve,

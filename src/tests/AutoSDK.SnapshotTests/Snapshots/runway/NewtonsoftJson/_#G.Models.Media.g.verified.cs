@@ -13,7 +13,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public string? Type { get; }
+        public global::G.CreateSpeechToSpeechRequestElevenMultilingualStsV2MediaDiscriminatorType? Type { get; }
 
         /// <summary>
         /// An audio file containing dialogue to be processed.
@@ -114,7 +114,7 @@ namespace G
         /// 
         /// </summary>
         public Media(
-            string? type,
+            global::G.CreateSpeechToSpeechRequestElevenMultilingualStsV2MediaDiscriminatorType? type,
             global::G.CreateSpeechToSpeechRequestElevenMultilingualStsV2MediaSpeechToSpeechAudio? audio,
             global::G.CreateSpeechToSpeechRequestElevenMultilingualStsV2MediaSpeechToSpeechVideo? video
             )

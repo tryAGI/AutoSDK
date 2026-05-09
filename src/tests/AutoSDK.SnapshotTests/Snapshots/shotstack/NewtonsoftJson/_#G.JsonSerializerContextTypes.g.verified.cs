@@ -961,447 +961,451 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ShotstackGeneratedAssetProvider? Type233 { get; set; }
+        public global::G.GeneratedAssetDiscriminatorProvider? Type233 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ShotstackGeneratedAssetOptions? Type234 { get; set; }
+        public global::G.ShotstackGeneratedAssetProvider? Type234 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ShotstackTextToSpeechOptions? Type235 { get; set; }
+        public global::G.ShotstackGeneratedAssetOptions? Type235 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ShotstackTextToImageOptions? Type236 { get; set; }
+        public global::G.ShotstackTextToSpeechOptions? Type236 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ShotstackTextGeneratorOptions? Type237 { get; set; }
+        public global::G.ShotstackTextToImageOptions? Type237 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ShotstackImageToVideoOptions? Type238 { get; set; }
+        public global::G.ShotstackTextGeneratorOptions? Type238 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ShotstackGeneratedAssetOptionsDiscriminator? Type239 { get; set; }
+        public global::G.ShotstackImageToVideoOptions? Type239 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ShotstackGeneratedAssetOptionsDiscriminatorType? Type240 { get; set; }
+        public global::G.ShotstackGeneratedAssetOptionsDiscriminator? Type240 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ShotstackTextToSpeechOptionsType? Type241 { get; set; }
+        public global::G.ShotstackGeneratedAssetOptionsDiscriminatorType? Type241 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ShotstackTextToSpeechOptionsVoice? Type242 { get; set; }
+        public global::G.ShotstackTextToSpeechOptionsType? Type242 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ShotstackTextToSpeechOptionsLanguage? Type243 { get; set; }
+        public global::G.ShotstackTextToSpeechOptionsVoice? Type243 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ShotstackTextToImageOptionsType? Type244 { get; set; }
+        public global::G.ShotstackTextToSpeechOptionsLanguage? Type244 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ShotstackImageToVideoOptionsType? Type245 { get; set; }
+        public global::G.ShotstackTextToImageOptionsType? Type245 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ShotstackTextGeneratorOptionsType? Type246 { get; set; }
+        public global::G.ShotstackImageToVideoOptionsType? Type246 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DIDGeneratedAssetProvider? Type247 { get; set; }
+        public global::G.ShotstackTextGeneratorOptionsType? Type247 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DIDGeneratedAssetOptions? Type248 { get; set; }
+        public global::G.DIDGeneratedAssetProvider? Type248 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DIDTextToAvatarOptions? Type249 { get; set; }
+        public global::G.DIDGeneratedAssetOptions? Type249 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DIDGeneratedAssetOptionsDiscriminator? Type250 { get; set; }
+        public global::G.DIDTextToAvatarOptions? Type250 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DIDGeneratedAssetOptionsDiscriminatorType? Type251 { get; set; }
+        public global::G.DIDGeneratedAssetOptionsDiscriminator? Type251 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DIDTextToAvatarOptionsType? Type252 { get; set; }
+        public global::G.DIDGeneratedAssetOptionsDiscriminatorType? Type252 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DIDTextToAvatarOptionsAvatar? Type253 { get; set; }
+        public global::G.DIDTextToAvatarOptionsType? Type253 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ElevenLabsGeneratedAssetProvider? Type254 { get; set; }
+        public global::G.DIDTextToAvatarOptionsAvatar? Type254 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ElevenLabsGeneratedAssetOptions? Type255 { get; set; }
+        public global::G.ElevenLabsGeneratedAssetProvider? Type255 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ElevenLabsTextToSpeechOptions? Type256 { get; set; }
+        public global::G.ElevenLabsGeneratedAssetOptions? Type256 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ElevenLabsGeneratedAssetOptionsDiscriminator? Type257 { get; set; }
+        public global::G.ElevenLabsTextToSpeechOptions? Type257 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ElevenLabsGeneratedAssetOptionsDiscriminatorType? Type258 { get; set; }
+        public global::G.ElevenLabsGeneratedAssetOptionsDiscriminator? Type258 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ElevenLabsTextToSpeechOptionsType? Type259 { get; set; }
+        public global::G.ElevenLabsGeneratedAssetOptionsDiscriminatorType? Type259 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ElevenLabsTextToSpeechOptionsVoice? Type260 { get; set; }
+        public global::G.ElevenLabsTextToSpeechOptionsType? Type260 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.HeyGenGeneratedAssetProvider? Type261 { get; set; }
+        public global::G.ElevenLabsTextToSpeechOptionsVoice? Type261 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.HeyGenGeneratedAssetOptions? Type262 { get; set; }
+        public global::G.HeyGenGeneratedAssetProvider? Type262 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.HeyGenTextToAvatarOptions? Type263 { get; set; }
+        public global::G.HeyGenGeneratedAssetOptions? Type263 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.HeyGenGeneratedAssetOptionsDiscriminator? Type264 { get; set; }
+        public global::G.HeyGenTextToAvatarOptions? Type264 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.HeyGenGeneratedAssetOptionsDiscriminatorType? Type265 { get; set; }
+        public global::G.HeyGenGeneratedAssetOptionsDiscriminator? Type265 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.HeyGenTextToAvatarOptionsType? Type266 { get; set; }
+        public global::G.HeyGenGeneratedAssetOptionsDiscriminatorType? Type266 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.HeyGenTextToAvatarOptionsAvatar? Type267 { get; set; }
+        public global::G.HeyGenTextToAvatarOptionsType? Type267 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.HeyGenTextToAvatarOptionsVoice? Type268 { get; set; }
+        public global::G.HeyGenTextToAvatarOptionsAvatar? Type268 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.HeyGenTextToAvatarOptionsAvatarStyle? Type269 { get; set; }
+        public global::G.HeyGenTextToAvatarOptionsVoice? Type269 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.HeyGenTextToAvatarOptionsRatio? Type270 { get; set; }
+        public global::G.HeyGenTextToAvatarOptionsAvatarStyle? Type270 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OpenAiGeneratedAssetProvider? Type271 { get; set; }
+        public global::G.HeyGenTextToAvatarOptionsRatio? Type271 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OpenAiGeneratedAssetOptions? Type272 { get; set; }
+        public global::G.OpenAiGeneratedAssetProvider? Type272 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OpenAiTextGeneratorOptions? Type273 { get; set; }
+        public global::G.OpenAiGeneratedAssetOptions? Type273 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OpenAiGeneratedAssetOptionsDiscriminator? Type274 { get; set; }
+        public global::G.OpenAiTextGeneratorOptions? Type274 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OpenAiGeneratedAssetOptionsDiscriminatorType? Type275 { get; set; }
+        public global::G.OpenAiGeneratedAssetOptionsDiscriminator? Type275 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OpenAiTextGeneratorOptionsType? Type276 { get; set; }
+        public global::G.OpenAiGeneratedAssetOptionsDiscriminatorType? Type276 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OpenAiTextGeneratorOptionsModel? Type277 { get; set; }
+        public global::G.OpenAiTextGeneratorOptionsType? Type277 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.StabilityAiGeneratedAssetProvider? Type278 { get; set; }
+        public global::G.OpenAiTextGeneratorOptionsModel? Type278 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.StabilityAiGeneratedAssetOptions? Type279 { get; set; }
+        public global::G.StabilityAiGeneratedAssetProvider? Type279 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.StabilityAiTextToImageOptions? Type280 { get; set; }
+        public global::G.StabilityAiGeneratedAssetOptions? Type280 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.StabilityAiGeneratedAssetOptionsDiscriminator? Type281 { get; set; }
+        public global::G.StabilityAiTextToImageOptions? Type281 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.StabilityAiGeneratedAssetOptionsDiscriminatorType? Type282 { get; set; }
+        public global::G.StabilityAiGeneratedAssetOptionsDiscriminator? Type282 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.StabilityAiTextToImageOptionsType? Type283 { get; set; }
+        public global::G.StabilityAiGeneratedAssetOptionsDiscriminatorType? Type283 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.StabilityAiTextToImageOptionsEngine? Type284 { get; set; }
+        public global::G.StabilityAiTextToImageOptionsType? Type284 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.StabilityAiTextToImageOptionsStylePreset? Type285 { get; set; }
+        public global::G.StabilityAiTextToImageOptionsEngine? Type285 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.QueuedResponse? Type286 { get; set; }
+        public global::G.StabilityAiTextToImageOptionsStylePreset? Type286 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.QueuedResponseData? Type287 { get; set; }
+        public global::G.QueuedResponse? Type287 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RenderResponse? Type288 { get; set; }
+        public global::G.QueuedResponseData? Type288 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RenderResponseData? Type289 { get; set; }
+        public global::G.RenderResponse? Type289 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RenderResponseDataStatus? Type290 { get; set; }
+        public global::G.RenderResponseData? Type290 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TemplateResponse? Type291 { get; set; }
+        public global::G.RenderResponseDataStatus? Type291 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TemplateResponseData? Type292 { get; set; }
+        public global::G.TemplateResponse? Type292 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TemplateDataResponse? Type293 { get; set; }
+        public global::G.TemplateResponseData? Type293 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TemplateDataResponseData? Type294 { get; set; }
+        public global::G.TemplateDataResponse? Type294 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TemplateListResponse? Type295 { get; set; }
+        public global::G.TemplateDataResponseData? Type295 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TemplateListResponseData? Type296 { get; set; }
+        public global::G.TemplateListResponse? Type296 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.TemplateListResponseItem>? Type297 { get; set; }
+        public global::G.TemplateListResponseData? Type297 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TemplateListResponseItem? Type298 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.TemplateListResponseItem>? Type298 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ProbeResponse? Type299 { get; set; }
+        public global::G.TemplateListResponseItem? Type299 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AssetResponse? Type300 { get; set; }
+        public global::G.ProbeResponse? Type300 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AssetResponseData? Type301 { get; set; }
+        public global::G.AssetResponse? Type301 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AssetRenderResponse? Type302 { get; set; }
+        public global::G.AssetResponseData? Type302 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.AssetResponseData>? Type303 { get; set; }
+        public global::G.AssetRenderResponse? Type303 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AssetResponseAttributes? Type304 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.AssetResponseData>? Type304 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AssetResponseAttributesStatus? Type305 { get; set; }
+        public global::G.AssetResponseAttributes? Type305 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TransferResponse? Type306 { get; set; }
+        public global::G.AssetResponseAttributesStatus? Type306 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TransferResponseData? Type307 { get; set; }
+        public global::G.TransferResponse? Type307 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TransferResponseAttributes? Type308 { get; set; }
+        public global::G.TransferResponseData? Type308 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TransferResponseAttributesStatus? Type309 { get; set; }
+        public global::G.TransferResponseAttributes? Type309 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.QueuedSourceResponse? Type310 { get; set; }
+        public global::G.TransferResponseAttributesStatus? Type310 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.QueuedSourceResponseData? Type311 { get; set; }
+        public global::G.QueuedSourceResponse? Type311 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SourceListResponse? Type312 { get; set; }
+        public global::G.QueuedSourceResponseData? Type312 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.SourceResponseData>? Type313 { get; set; }
+        public global::G.SourceListResponse? Type313 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SourceResponseData? Type314 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.SourceResponseData>? Type314 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SourceResponse? Type315 { get; set; }
+        public global::G.SourceResponseData? Type315 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SourceResponseAttributes? Type316 { get; set; }
+        public global::G.SourceResponse? Type316 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SourceResponseAttributesStatus? Type317 { get; set; }
+        public global::G.SourceResponseAttributes? Type317 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OutputsResponse? Type318 { get; set; }
+        public global::G.SourceResponseAttributesStatus? Type318 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.RenditionResponseAttributes>? Type319 { get; set; }
+        public global::G.OutputsResponse? Type319 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RenditionResponseAttributes? Type320 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.RenditionResponseAttributes>? Type320 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RenditionResponseAttributesStatus? Type321 { get; set; }
+        public global::G.RenditionResponseAttributes? Type321 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.UploadResponse? Type322 { get; set; }
+        public global::G.RenditionResponseAttributesStatus? Type322 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.UploadResponseData? Type323 { get; set; }
+        public global::G.UploadResponse? Type323 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.UploadResponseAttributes? Type324 { get; set; }
+        public global::G.UploadResponseData? Type324 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.IngestErrorResponse? Type325 { get; set; }
+        public global::G.UploadResponseAttributes? Type325 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.IngestErrorResponseData>? Type326 { get; set; }
+        public global::G.IngestErrorResponse? Type326 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.IngestErrorResponseData? Type327 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.IngestErrorResponseData>? Type327 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GeneratedAssetResponse? Type328 { get; set; }
+        public global::G.IngestErrorResponseData? Type328 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GeneratedAssetResponseData? Type329 { get; set; }
+        public global::G.GeneratedAssetResponse? Type329 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GeneratedAssetResponseAttributes? Type330 { get; set; }
+        public global::G.GeneratedAssetResponseData? Type330 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GeneratedAssetResponseAttributesProvider? Type331 { get; set; }
+        public global::G.GeneratedAssetResponseAttributes? Type331 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GeneratedAssetResponseAttributesType? Type332 { get; set; }
+        public global::G.GeneratedAssetResponseAttributesProvider? Type332 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GeneratedAssetResponseAttributesStatus? Type333 { get; set; }
+        public global::G.GeneratedAssetResponseAttributesType? Type333 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GeneratedAssetErrorResponse? Type334 { get; set; }
+        public global::G.GeneratedAssetResponseAttributesStatus? Type334 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.GeneratedAssetErrorResponseData>? Type335 { get; set; }
+        public global::G.GeneratedAssetErrorResponse? Type335 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GeneratedAssetErrorResponseData? Type336 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.GeneratedAssetErrorResponseData>? Type336 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TextAnimationPreset? Type337 { get; set; }
+        public global::G.GeneratedAssetErrorResponseData? Type337 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RichCaptionStyleTextTransform? Type338 { get; set; }
+        public global::G.TextAnimationPreset? Type338 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RichCaptionStyleTextDecoration? Type339 { get; set; }
+        public global::G.RichCaptionStyleTextTransform? Type339 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TiktokDestinationOptions? Type340 { get; set; }
+        public global::G.RichCaptionStyleTextDecoration? Type340 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TiktokDestinationOptionsPrivacyLevel? Type341 { get; set; }
+        public global::G.TiktokDestinationOptions? Type341 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AkamaiNetStorageDestinationOptions? Type342 { get; set; }
+        public global::G.TiktokDestinationOptionsPrivacyLevel? Type342 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AzureBlobStorageDestinationOptions? Type343 { get; set; }
+        public global::G.AkamaiNetStorageDestinationOptions? Type343 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.AzureBlobStorageDestinationOptions? Type344 { get; set; }
 
         /// <summary>
         /// 

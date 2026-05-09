@@ -23,14 +23,14 @@ namespace G.JsonConverters
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
             global::G.CreateCharacterPerformanceRequestActTwoCharacterCharacterImage? image = default;
-            if (discriminator?.Type == "image")
+            if (discriminator?.Type == global::G.CreateCharacterPerformanceRequestActTwoCharacterDiscriminatorType.Image)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CreateCharacterPerformanceRequestActTwoCharacterCharacterImage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CreateCharacterPerformanceRequestActTwoCharacterCharacterImage> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.CreateCharacterPerformanceRequestActTwoCharacterCharacterImage)}");
                 image = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.CreateCharacterPerformanceRequestActTwoCharacterCharacterVideo? video = default;
-            if (discriminator?.Type == "video")
+            if (discriminator?.Type == global::G.CreateCharacterPerformanceRequestActTwoCharacterDiscriminatorType.Video)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CreateCharacterPerformanceRequestActTwoCharacterCharacterVideo), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CreateCharacterPerformanceRequestActTwoCharacterCharacterVideo> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.CreateCharacterPerformanceRequestActTwoCharacterCharacterVideo)}");

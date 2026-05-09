@@ -13,7 +13,8 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("eventType")]
-        public string? EventType { get; set; }
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ResearchEventDtoClassVariant1DiscriminatorEventTypeJsonConverter))]
+        public global::G.ResearchEventDtoClassVariant1DiscriminatorEventType? EventType { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -26,7 +27,7 @@ namespace G
         /// </summary>
         /// <param name="eventType"></param>
         public ResearchEventDtoClassVariant1Discriminator(
-            string? eventType)
+            global::G.ResearchEventDtoClassVariant1DiscriminatorEventType? eventType)
         {
             this.EventType = eventType;
         }

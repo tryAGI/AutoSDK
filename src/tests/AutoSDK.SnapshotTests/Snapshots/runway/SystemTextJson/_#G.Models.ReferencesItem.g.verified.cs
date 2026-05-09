@@ -13,7 +13,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public string? Type { get; }
+        public global::G.CreateVideoToVideoRequestGen4AlephReferenceDiscriminatorType? Type { get; }
 
         /// <summary>
         /// Passing an image reference allows the model to emulate the style or content of the reference in the output.
@@ -66,7 +66,7 @@ namespace G
         /// 
         /// </summary>
         public ReferencesItem(
-            string? type,
+            global::G.CreateVideoToVideoRequestGen4AlephReferenceDiscriminatorType? type,
             global::G.CreateVideoToVideoRequestGen4AlephReferenceImageReference? image
             )
         {

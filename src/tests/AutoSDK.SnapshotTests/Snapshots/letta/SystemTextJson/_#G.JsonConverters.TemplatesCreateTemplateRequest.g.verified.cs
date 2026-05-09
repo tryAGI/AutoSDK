@@ -23,14 +23,14 @@ namespace G.JsonConverters
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
             global::G.TemplatesCreateTemplateRequestVariant1? agent = default;
-            if (discriminator?.Type == "agent")
+            if (discriminator?.Type == global::G.TemplatesCreateTemplateRequestDiscriminatorType.Agent)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TemplatesCreateTemplateRequestVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TemplatesCreateTemplateRequestVariant1> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.TemplatesCreateTemplateRequestVariant1)}");
                 agent = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.TemplatesCreateTemplateRequestVariant2? agentFile = default;
-            if (discriminator?.Type == "agent_file")
+            if (discriminator?.Type == global::G.TemplatesCreateTemplateRequestDiscriminatorType.AgentFile)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TemplatesCreateTemplateRequestVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TemplatesCreateTemplateRequestVariant2> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.TemplatesCreateTemplateRequestVariant2)}");

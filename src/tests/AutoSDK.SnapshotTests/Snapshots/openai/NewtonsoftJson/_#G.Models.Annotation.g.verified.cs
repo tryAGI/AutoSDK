@@ -13,7 +13,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public string? Type { get; }
+        public global::G.AnnotationDiscriminatorType? Type { get; }
 
         /// <summary>
         /// A citation to a file.
@@ -210,7 +210,7 @@ namespace G
         /// 
         /// </summary>
         public Annotation(
-            string? type,
+            global::G.AnnotationDiscriminatorType? type,
             global::G.FileCitationBody? fileCitation,
             global::G.UrlCitationBody? urlCitation,
             global::G.ContainerFileCitationBody? containerFileCitation,

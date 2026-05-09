@@ -23,42 +23,42 @@ namespace G.JsonConverters
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
             global::G.GetTasksResponseVariant1? pending = default;
-            if (discriminator?.Status == "PENDING")
+            if (discriminator?.Status == global::G.GetTasksResponseDiscriminatorStatus.Pending)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GetTasksResponseVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GetTasksResponseVariant1> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.GetTasksResponseVariant1)}");
                 pending = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.GetTasksResponseVariant2? throttled = default;
-            if (discriminator?.Status == "THROTTLED")
+            if (discriminator?.Status == global::G.GetTasksResponseDiscriminatorStatus.Throttled)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GetTasksResponseVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GetTasksResponseVariant2> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.GetTasksResponseVariant2)}");
                 throttled = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.GetTasksResponseVariant3? cancelled = default;
-            if (discriminator?.Status == "CANCELLED")
+            if (discriminator?.Status == global::G.GetTasksResponseDiscriminatorStatus.Cancelled)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GetTasksResponseVariant3), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GetTasksResponseVariant3> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.GetTasksResponseVariant3)}");
                 cancelled = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.GetTasksResponseVariant4? running = default;
-            if (discriminator?.Status == "RUNNING")
+            if (discriminator?.Status == global::G.GetTasksResponseDiscriminatorStatus.Running)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GetTasksResponseVariant4), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GetTasksResponseVariant4> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.GetTasksResponseVariant4)}");
                 running = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.GetTasksResponseVariant5? failed = default;
-            if (discriminator?.Status == "FAILED")
+            if (discriminator?.Status == global::G.GetTasksResponseDiscriminatorStatus.Failed)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GetTasksResponseVariant5), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GetTasksResponseVariant5> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.GetTasksResponseVariant5)}");
                 failed = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.GetTasksResponseVariant6? succeeded = default;
-            if (discriminator?.Status == "SUCCEEDED")
+            if (discriminator?.Status == global::G.GetTasksResponseDiscriminatorStatus.Succeeded)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GetTasksResponseVariant6), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GetTasksResponseVariant6> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.GetTasksResponseVariant6)}");

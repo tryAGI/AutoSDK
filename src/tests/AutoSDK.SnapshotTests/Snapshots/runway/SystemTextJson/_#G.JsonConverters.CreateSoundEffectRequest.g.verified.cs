@@ -23,7 +23,7 @@ namespace G.JsonConverters
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
             global::G.CreateSoundEffectRequestElevenTextToSoundV2? elevenTextToSoundV2 = default;
-            if (discriminator?.Model == "eleven_text_to_sound_v2")
+            if (discriminator?.Model == global::G.CreateSoundEffectRequestDiscriminatorModel.ElevenTextToSoundV2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CreateSoundEffectRequestElevenTextToSoundV2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CreateSoundEffectRequestElevenTextToSoundV2> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.CreateSoundEffectRequestElevenTextToSoundV2)}");
