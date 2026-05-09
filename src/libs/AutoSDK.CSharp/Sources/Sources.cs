@@ -558,6 +558,22 @@ public static partial class Sources
             Text: GenerateEvaluationWorkflowHelpers(settings, className, cancellationToken: cancellationToken));
     }
 
+    public static FileWithName CloudSigningHelpers(
+        CSharpSettings settings,
+        CancellationToken cancellationToken = default)
+    {
+        if (!settings.GenerateCloudSigningHelpers)
+        {
+            return FileWithName.Empty;
+        }
+
+        var className = GetCloudSigningHelperClassName(settings);
+
+        return new FileWithName(
+            Name: $"{settings.Namespace}.{className}.g.cs",
+            Text: GenerateCloudSigningHelpers(settings, className, cancellationToken: cancellationToken));
+    }
+
     public static FileWithName ResponseStream(
         CSharpSettings settings,
         CancellationToken cancellationToken = default)

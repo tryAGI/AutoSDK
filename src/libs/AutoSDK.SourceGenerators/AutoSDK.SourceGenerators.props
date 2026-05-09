@@ -88,6 +88,10 @@
     <CompilerVisibleProperty Include="AutoSDK_GenerateEvaluationWorkflowHelpers"/>
     <!-- Class name for generated evaluation workflow helper. Default: DatasetEvaluationRunner -->
     <CompilerVisibleProperty Include="AutoSDK_EvaluationWorkflowHelperClassName"/>
+    <!-- true/false. Default: false. Generates opt-in cloud credential and request-signing helper adapters. -->
+    <CompilerVisibleProperty Include="AutoSDK_GenerateCloudSigningHelpers"/>
+    <!-- Class name for generated cloud signing helper factory. Default: CloudRequestSigner -->
+    <CompilerVisibleProperty Include="AutoSDK_CloudSigningHelperClassName"/>
     <!-- List of ids separated by ;. Default: Empty(all models) -->
     <CompilerVisibleProperty Include="AutoSDK_IncludeOperationIds"/>
     <!-- List of ids separated by ;. Default: Empty -->

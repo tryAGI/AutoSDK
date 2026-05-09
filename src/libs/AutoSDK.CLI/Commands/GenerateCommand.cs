@@ -278,6 +278,20 @@ internal sealed class GenerateCommand : Command
         Description = "Class name for the generated evaluation workflow helper.",
     };
 
+    private Option<bool> GenerateCloudSigningHelpers { get; } = new(
+        name: "--generate-cloud-signing-helpers")
+    {
+        DefaultValueFactory = _ => Settings.Default.GenerateCloudSigningHelpers,
+        Description = "Generate opt-in cloud credential and request-signing helper adapters.",
+    };
+
+    private Option<string> CloudSigningHelperClassName { get; } = new(
+        name: "--cloud-signing-helper-class-name")
+    {
+        DefaultValueFactory = _ => Settings.Default.CloudSigningHelperClassName,
+        Description = "Class name for the generated cloud signing helper factory.",
+    };
+
     private Option<string[]> SecuritySchemes { get; } = new(
         name: "--security-scheme")
     {
@@ -425,6 +439,8 @@ internal sealed class GenerateCommand : Command
         Options.Add(PredictionWorkflowHelperClassName);
         Options.Add(GenerateEvaluationWorkflowHelpers);
         Options.Add(EvaluationWorkflowHelperClassName);
+        Options.Add(GenerateCloudSigningHelpers);
+        Options.Add(CloudSigningHelperClassName);
         Options.Add(SecuritySchemes);
         Options.Add(AuthorizationEnvironmentVariables);
         Options.Add(BaseUrl);
@@ -535,6 +551,8 @@ internal sealed class GenerateCommand : Command
             PredictionWorkflowHelperClassName = parseResult.GetRequiredValue(PredictionWorkflowHelperClassName),
             GenerateEvaluationWorkflowHelpers = parseResult.GetRequiredValue(GenerateEvaluationWorkflowHelpers),
             EvaluationWorkflowHelperClassName = parseResult.GetRequiredValue(EvaluationWorkflowHelperClassName),
+            GenerateCloudSigningHelpers = parseResult.GetRequiredValue(GenerateCloudSigningHelpers),
+            CloudSigningHelperClassName = parseResult.GetRequiredValue(CloudSigningHelperClassName),
             FromCli = true,
             GenerateCli = parseResult.GetRequiredValue(GenerateCli),
             SecuritySchemes = parseResult.GetRequiredValue(SecuritySchemes).ToImmutableArray(),

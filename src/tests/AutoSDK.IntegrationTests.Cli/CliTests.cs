@@ -3030,6 +3030,282 @@ components:
     }
 
     [TestMethod]
+    public async Task Generate_WithCloudSigningHelpers_SignsAwsAzureAndTencentRequests()
+    {
+        const string spec = """
+openapi: 3.0.3
+info:
+  title: Cloud Signing
+  version: 1.0.0
+paths:
+  /model/{modelId}/invoke:
+    post:
+      operationId: invokeBedrockModel
+      x-autosdk-cloud-signing:
+        provider: aws-sigv4
+        region: us-east-1
+        service: bedrock
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: modelId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties:
+                type: string
+      responses:
+        '200':
+          description: Inference response
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  type: string
+  /azure/chat/completions:
+    post:
+      operationId: createAzureChatCompletion
+      x-autosdk-cloud-signing:
+        provider: azure
+        apiKeyHeaderName: api-key
+        tokenScope: https://cognitiveservices.azure.com/.default
+      security:
+        - azureApiKey: []
+        - azureBearer: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                prompt:
+                  type: string
+      responses:
+        '200':
+          description: Chat response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  output:
+                    type: string
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+    azureApiKey:
+      type: apiKey
+      in: header
+      name: api-key
+    azureBearer:
+      type: http
+      scheme: bearer
+""";
+
+        var tempDirectory = Path.Combine(Path.GetTempPath(), Path.GetRandomFileName());
+        var specPath = Path.Combine(tempDirectory, "cloud-signing.yaml");
+        var outputDirectory = Path.Combine(tempDirectory, "Generated");
+
+        try
+        {
+            Directory.CreateDirectory(tempDirectory);
+            await File.WriteAllTextAsync(specPath, spec);
+
+            var currentDirectory = Directory.GetCurrentDirectory();
+            var repositoryDirectory = Path.GetFullPath(Path.Combine(currentDirectory, "../../../../../.."));
+
+            var generateResult = await RunDotnetAsync(
+                repositoryDirectory,
+                "run",
+                "--disable-build-servers",
+                "--no-launch-profile",
+                "--project", "src/libs/AutoSDK.CLI",
+                "generate", specPath,
+                "--namespace", "Cloud",
+                "--clientClassName", "CloudClient",
+                "--targetFramework", "net10.0",
+                "--output", outputDirectory,
+                "--generate-cloud-signing-helpers",
+                "--cloud-signing-helper-class-name", "CloudRequestSigner");
+            Console.WriteLine(generateResult.StandardOutput);
+            Console.WriteLine(generateResult.StandardError);
+            generateResult.ExitCode.Should().Be(0);
+
+            var helperFile = Path.Combine(outputDirectory, "Cloud.CloudRequestSigner.g.cs");
+            File.Exists(helperFile).Should().BeTrue();
+            var helperContent = await File.ReadAllTextAsync(helperFile);
+            helperContent.Should().Contain("public static class CloudRequestSigner");
+            helperContent.Should().Contain("CloudRequestSigningHook");
+            helperContent.Should().Contain("AwsSigV4RequestSigner");
+            helperContent.Should().Contain("AzureBearerTokenRequestSigner");
+            helperContent.Should().Contain("TencentTc3RequestSigner");
+            Directory.GetFiles(outputDirectory, "*.g.cs")
+                .Select(Path.GetFileName)
+                .Any(static name => name?.Contains("InvokeBedrockModel", StringComparison.Ordinal) == true)
+                .Should().BeTrue("raw AWS operation generation remains additive");
+            Directory.GetFiles(outputDirectory, "*.g.cs")
+                .Select(Path.GetFileName)
+                .Any(static name => name?.Contains("CreateAzureChatCompletion", StringComparison.Ordinal) == true)
+                .Should().BeTrue("raw Azure operation generation remains additive");
+
+            await File.WriteAllTextAsync(Path.Combine(outputDirectory, "CloudSigningConsumer.csproj"), """
+                <Project Sdk="Microsoft.NET.Sdk">
+                  <PropertyGroup>
+                    <OutputType>Exe</OutputType>
+                    <TargetFramework>net10.0</TargetFramework>
+                    <LangVersion>preview</LangVersion>
+                    <Nullable>enable</Nullable>
+                    <ImplicitUsings>enable</ImplicitUsings>
+                    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+                    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+                  </PropertyGroup>
+                  <ItemGroup>
+                    <Compile Include="Cloud.CloudRequestSigner.g.cs" />
+                    <Compile Include="Cloud.OptionsSupport.g.cs" />
+                    <Compile Include="Program.cs" />
+                  </ItemGroup>
+                </Project>
+                """);
+
+            await File.WriteAllTextAsync(Path.Combine(outputDirectory, "Program.cs"), """
+                using System.Net.Http.Headers;
+                using System.Text;
+                using Cloud;
+
+                var metadata = new CloudSigningMetadata
+                {
+                    Provider = CloudSigningProvider.AwsSigV4,
+                    Region = "us-east-1",
+                    Service = "bedrock",
+                    ApiKeyHeaderName = "api-key",
+                    TokenScope = "https://cognitiveservices.azure.com/.default",
+                };
+                metadata.CredentialEnvironmentVariables.Add("AWS_ACCESS_KEY_ID");
+                Require(metadata.Provider == CloudSigningProvider.AwsSigV4, "metadata provider");
+                Require(metadata.CredentialEnvironmentVariables.Count == 1, "metadata env vars");
+
+                var awsSigner = CloudRequestSigner.CreateAwsSigV4(
+                    new CloudCredential("AKIDEXAMPLE", "SECRET", "SESSION"),
+                    "us-east-1",
+                    "bedrock");
+                var fixedAwsSigner = new AwsSigV4RequestSigner(
+                    new CloudCredential("AKIDEXAMPLE", "SECRET", "SESSION"),
+                    "us-east-1",
+                    "bedrock",
+                    () => new DateTimeOffset(2024, 1, 2, 3, 4, 5, TimeSpan.Zero));
+                using var awsRequest = new HttpRequestMessage(
+                    HttpMethod.Post,
+                    "https://bedrock-runtime.us-east-1.amazonaws.com/model/demo/invoke?b=2&a=1")
+                {
+                    Content = new StringContent("{\"input\":\"hello\"}", Encoding.UTF8, "application/json"),
+                };
+                await fixedAwsSigner.SignAsync(awsRequest);
+                var awsAuthorization = GetHeader(awsRequest, "Authorization");
+                Require(awsAuthorization.StartsWith("AWS4-HMAC-SHA256 Credential=AKIDEXAMPLE/20240102/us-east-1/bedrock/aws4_request", StringComparison.Ordinal), "aws credential scope");
+                Require(awsAuthorization.Contains("SignedHeaders=host;x-amz-content-sha256;x-amz-date;x-amz-security-token", StringComparison.Ordinal), "aws signed headers");
+                Require(GetHeader(awsRequest, "x-amz-date") == "20240102T030405Z", "aws date");
+                Require(GetHeader(awsRequest, "x-amz-security-token") == "SESSION", "aws session token");
+                Require(GetHeader(awsRequest, "x-amz-content-sha256").Length == 64, "aws payload hash");
+
+                using var factoryAwsRequest = new HttpRequestMessage(HttpMethod.Get, "https://example.amazonaws.com/");
+                await awsSigner.SignAsync(factoryAwsRequest);
+                Require(GetHeader(factoryAwsRequest, "Authorization").StartsWith("AWS4-HMAC-SHA256", StringComparison.Ordinal), "aws factory");
+
+                using var azureKeyRequest = new HttpRequestMessage(HttpMethod.Post, "https://example.openai.azure.com/openai/deployments/demo/chat/completions");
+                await CloudRequestSigner.CreateAzureApiKey("azure-key").SignAsync(azureKeyRequest);
+                Require(GetHeader(azureKeyRequest, "api-key") == "azure-key", "azure api key");
+
+                using var hookRequest = new HttpRequestMessage(HttpMethod.Post, "https://example.openai.azure.com/openai/deployments/demo/chat/completions")
+                {
+                    Content = new StringContent("{\"prompt\":\"hello\"}", Encoding.UTF8, "application/json"),
+                };
+                await CloudRequestSigner.CreateHook(CloudRequestSigner.CreateAzureApiKey("hook-key")).OnBeforeRequestAsync(
+                    new AutoSDKHookContext
+                    {
+                        Request = hookRequest,
+                        CancellationToken = CancellationToken.None,
+                    });
+                Require(GetHeader(hookRequest, "api-key") == "hook-key", "cloud signing hook");
+
+                IReadOnlyList<string>? requestedScopes = null;
+                using var azureTokenRequest = new HttpRequestMessage(HttpMethod.Post, "https://example.openai.azure.com/openai/deployments/demo/chat/completions");
+                var tokenSigner = CloudRequestSigner.CreateAzureBearerToken(
+                    (scopes, cancellationToken) =>
+                    {
+                        requestedScopes = scopes;
+                        return Task.FromResult("azure-token");
+                    },
+                    new[] { "scope-a" });
+                await tokenSigner.SignAsync(azureTokenRequest);
+                Require(azureTokenRequest.Headers.Authorization?.Scheme == "Bearer", "azure bearer scheme");
+                Require(azureTokenRequest.Headers.Authorization?.Parameter == "azure-token", "azure bearer token");
+                Require(requestedScopes?.Count == 1 && requestedScopes[0] == "scope-a", "azure scopes");
+
+                var tencentSigner = new TencentTc3RequestSigner(
+                    new CloudCredential("TENCENTID", "TENCENTSECRET", "TENCENTTOKEN"),
+                    "ap-guangzhou",
+                    "hunyuan",
+                    () => new DateTimeOffset(2024, 1, 2, 3, 4, 5, TimeSpan.Zero));
+                using var tencentRequest = new HttpRequestMessage(
+                    HttpMethod.Post,
+                    "https://hunyuan.tencentcloudapi.com/?Action=ChatCompletions")
+                {
+                    Content = new StringContent("{}", Encoding.UTF8, "application/json"),
+                };
+                await tencentSigner.SignAsync(tencentRequest);
+                var tencentAuthorization = GetHeader(tencentRequest, "Authorization");
+                Require(tencentAuthorization.StartsWith("TC3-HMAC-SHA256 Credential=TENCENTID/2024-01-02/hunyuan/tc3_request", StringComparison.Ordinal), "tencent credential scope");
+                Require(tencentAuthorization.Contains("SignedHeaders=host;x-tc-date;x-tc-region;x-tc-token", StringComparison.Ordinal), "tencent signed headers");
+                Require(GetHeader(tencentRequest, "x-tc-date") == "1704164645", "tencent date");
+                Require(GetHeader(tencentRequest, "x-tc-region") == "ap-guangzhou", "tencent region");
+                Require(GetHeader(tencentRequest, "x-tc-token") == "TENCENTTOKEN", "tencent token");
+
+                static string GetHeader(HttpRequestMessage request, string name)
+                {
+                    if (request.Headers.TryGetValues(name, out var values))
+                    {
+                        return values.Single();
+                    }
+
+                    throw new InvalidOperationException("Missing header: " + name);
+                }
+
+                static void Require(bool condition, string caseName)
+                {
+                    if (!condition)
+                    {
+                        throw new InvalidOperationException(caseName);
+                    }
+                }
+                """);
+
+            var runResult = await RunDotnetAsync(
+                outputDirectory,
+                "run",
+                "--disable-build-servers",
+                "--project", Path.Combine(outputDirectory, "CloudSigningConsumer.csproj"));
+            Console.WriteLine(runResult.StandardOutput);
+            Console.WriteLine(runResult.StandardError);
+            runResult.ExitCode.Should().Be(0);
+        }
+        finally
+        {
+            TryDeleteDirectory(tempDirectory);
+        }
+    }
+
+    [TestMethod]
     public async Task Generate_WithSecuritySchemeOverride_ReplacesAuthAndSuppressesDuplicateParameters()
     {
         const string spec = """

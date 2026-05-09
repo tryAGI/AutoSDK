@@ -80,6 +80,11 @@ Dataset-backed evaluation APIs usually need an experiment loop around raw datase
 
 The generated runner accepts dataset items, an async task delegate, scorer delegates, optional experiment creation, and optional batch publishing for experiment items, scores, or feedback. It supports bounded concurrency, cancellation, trace/span/run id preservation, item-level failure capture, aggregate score/exception summaries, and batch-size controls while keeping raw endpoint methods intact. The helper class name can be configured with `--evaluation-workflow-helper-class-name` or `<AutoSDK_EvaluationWorkflowHelperClassName>`.
 
+## Cloud Request Signing Helpers
+Cloud-hosted APIs often describe only bearer or API-key auth in OpenAPI even when official clients require request signing. Enable `--generate-cloud-signing-helpers` in the CLI, or set `<AutoSDK_GenerateCloudSigningHelpers>true</AutoSDK_GenerateCloudSigningHelpers>` for the source generator, to emit a `CloudRequestSigner` helper factory.
+
+The generated helper includes provider metadata, environment-backed cloud credentials, AWS SigV4 signing with region/service/session-token support, Azure API-key and bearer-token signers that can be backed by `TokenCredential`, Tencent TC3-HMAC-SHA256 signing, and an `AutoSDKHook` adapter for signing after request serialization and before send. These helpers mutate `HttpRequestMessage` without replacing existing generated bearer/API-key constructors for providers that do not opt in. The helper class name can be configured with `--cloud-signing-helper-class-name` or `<AutoSDK_CloudSigningHelperClassName>`.
+
 ## Vendor Extension Compatibility
 When `AutoSDK_UseExtensionNaming` or `--use-extension-naming` is enabled, AutoSDK consumes a curated set of third-party SDK metadata instead of treating every vendor extension as noise.
 

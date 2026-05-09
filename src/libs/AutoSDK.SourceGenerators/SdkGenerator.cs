@@ -86,6 +86,11 @@ public class SdkGenerator : IIncrementalGenerator
             .SelectMany(static (x, _) => GetHttpResilienceExtensionSettings(x))
             .SelectAndReportExceptions((x, c) => Sources.HttpResilienceExtensions(x, c), context, Id)
             .AddSource(context);
+        data
+            .Collect()
+            .SelectMany(static (x, _) => GetCloudSigningHelperSettings(x))
+            .SelectAndReportExceptions((x, c) => Sources.CloudSigningHelpers(x, c), context, Id)
+            .AddSource(context);
         supportData
             .SelectAndReportExceptions((x, c) => ShouldGenerateSecuritySupport(x.Right)
                 ? Sources.SecuritySupport(x.Left, c)
@@ -305,6 +310,16 @@ public class SdkGenerator : IIncrementalGenerator
                 x.Converters.Settings.GenerateHttpResilienceExtensions &&
                 (!x.Methods.IsEmpty || !x.Clients.IsEmpty))
             .GroupBy(static x => x.Converters.Settings.Namespace, StringComparer.Ordinal)
+            .Select(static x => CSharpSettings.FromSettings(x.First().Converters.Settings));
+    }
+
+    private static IEnumerable<CSharpSettings> GetCloudSigningHelperSettings(ImmutableArray<AutoSDK.Models.Data> data)
+    {
+        return data
+            .Where(static x => x.Converters.Settings.GenerateCloudSigningHelpers)
+            .GroupBy(
+                static x => $"{x.Converters.Settings.Namespace}\n{x.Converters.Settings.CloudSigningHelperClassName}",
+                StringComparer.Ordinal)
             .Select(static x => CSharpSettings.FromSettings(x.First().Converters.Settings));
     }
 

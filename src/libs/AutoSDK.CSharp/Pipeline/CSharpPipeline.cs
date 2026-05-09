@@ -190,6 +190,7 @@ public static class CSharpPipeline
                     .Concat([Sources.ObservabilityLifecycleHelpers(settings, cancellationToken)])
                     .Concat([Sources.PredictionWorkflowHelpers(settings, cancellationToken)])
                     .Concat([Sources.EvaluationWorkflowHelpers(settings, cancellationToken)])
+                    .Concat([Sources.CloudSigningHelpers(settings, cancellationToken)])
                     .Concat(!data.Authorizations.IsEmpty
                         ? [Sources.SecuritySupport(settings, cancellationToken)]
                         : [])

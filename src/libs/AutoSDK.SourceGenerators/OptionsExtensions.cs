@@ -68,6 +68,8 @@ public static class OptionsExtensions
             PredictionWorkflowHelperClassName: options.GetGlobalOption(nameof(Settings.PredictionWorkflowHelperClassName), prefix) ?? Settings.Default.PredictionWorkflowHelperClassName,
             GenerateEvaluationWorkflowHelpers: options.GetBoolGlobalOption(nameof(Settings.GenerateEvaluationWorkflowHelpers), prefix, defaultValue: Settings.Default.GenerateEvaluationWorkflowHelpers),
             EvaluationWorkflowHelperClassName: options.GetGlobalOption(nameof(Settings.EvaluationWorkflowHelperClassName), prefix) ?? Settings.Default.EvaluationWorkflowHelperClassName,
+            GenerateCloudSigningHelpers: options.GetBoolGlobalOption(nameof(Settings.GenerateCloudSigningHelpers), prefix, defaultValue: Settings.Default.GenerateCloudSigningHelpers),
+            CloudSigningHelperClassName: options.GetGlobalOption(nameof(Settings.CloudSigningHelperClassName), prefix) ?? Settings.Default.CloudSigningHelperClassName,
             IncludeOperationIds: (options.GetGlobalOption(nameof(Settings.IncludeOperationIds), prefix)?.Split(';') ??
                                    []).ToImmutableArray(),
             ExcludeOperationIds: (options.GetGlobalOption(nameof(Settings.ExcludeOperationIds), prefix)?.Split(';') ??
