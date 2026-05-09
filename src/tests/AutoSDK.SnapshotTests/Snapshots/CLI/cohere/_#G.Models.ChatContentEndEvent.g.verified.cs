@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickStreamType(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ChatStreamEventType? value)
+        {
+            value = StreamType;
+            return IsStreamType;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ChatContentEndEventMa278i? Ma278i { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Ma278i))]
 #endif
         public bool IsMa278i => Ma278i != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMa278i(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ChatContentEndEventMa278i? value)
+        {
+            value = Ma278i;
+            return IsMa278i;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -119,8 +145,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.ChatStreamEventType?, TResult>? streamType = null,
-            global::System.Func<global::G.ChatContentEndEventMa278i?, TResult>? ma278i = null,
+            global::System.Func<global::G.ChatStreamEventType, TResult>? streamType = null,
+            global::System.Func<global::G.ChatContentEndEventMa278i, TResult>? ma278i = null,
             bool validate = true)
         {
             if (validate)
@@ -144,8 +170,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.ChatStreamEventType?>? streamType = null,
-            global::System.Action<global::G.ChatContentEndEventMa278i?>? ma278i = null,
+            global::System.Action<global::G.ChatStreamEventType>? streamType = null,
+
+            global::System.Action<global::G.ChatContentEndEventMa278i>? ma278i = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsStreamType)
+            {
+                streamType?.Invoke(StreamType!);
+            }
+            else if (IsMa278i)
+            {
+                ma278i?.Invoke(Ma278i!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.ChatStreamEventType>? streamType = null,
+            global::System.Action<global::G.ChatContentEndEventMa278i>? ma278i = null,
             bool validate = true)
         {
             if (validate)

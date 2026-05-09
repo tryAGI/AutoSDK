@@ -33,6 +33,25 @@ namespace G
         /// operation.
         /// </summary>
         /// <param name="namespaceId"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.CreateNamespaceModelResponse>> ModelPublicServiceCreateNamespaceModelAsResponseAsync(
+            string namespaceId,
+
+            global::G.Model request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create a new model<br/>
+        /// Creates a new model under the parenthood of a namespace. This is an<br/>
+        /// asynchronous endpoint, i.e., the server will not wait for the model to be<br/>
+        /// created in order to respond. Instead, it will return a response with the<br/>
+        /// necessary information to access the result and status of the creation<br/>
+        /// operation.
+        /// </summary>
+        /// <param name="namespaceId"></param>
         /// <param name="id">
         /// Model resource ID (used in `name` as the last segment). This conforms to<br/>
         /// RFC-1034, which restricts to letters, numbers, and hyphen, with the first<br/>

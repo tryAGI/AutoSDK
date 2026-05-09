@@ -28,6 +28,23 @@ namespace G
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="username"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse> ProjectsAddCollaboratorAsResponseAsync(
+            int projectId,
+            string username,
+
+            global::G.ProjectsAddCollaboratorRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Add project collaborator<br/>
+        /// Adds a collaborator to an organization project and sets their permission level. You must be an organization owner or a project `admin` to add a collaborator.
+        /// </summary>
+        /// <param name="projectId"></param>
+        /// <param name="username"></param>
         /// <param name="permission">
         /// The permission to grant the collaborator.<br/>
         /// Default Value: write<br/>

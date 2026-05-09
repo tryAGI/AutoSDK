@@ -31,6 +31,19 @@ namespace G
         public bool IsNamedVectorStructVariant1 => NamedVectorStructVariant1 != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickNamedVectorStructVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::System.Collections.Generic.IList<float>? value)
+        {
+            value = NamedVectorStructVariant1;
+            return IsNamedVectorStructVariant1;
+        }
+
+        /// <summary>
         /// Dense vector data with name
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -48,6 +61,19 @@ namespace G
         public bool IsNamedVector => NamedVector != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickNamedVector(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.NamedVector? value)
+        {
+            value = NamedVector;
+            return IsNamedVector;
+        }
+
+        /// <summary>
         /// Sparse vector data with name
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -63,6 +89,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Sparse))]
 #endif
         public bool IsSparse => Sparse != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSparse(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.NamedSparseVector? value)
+        {
+            value = Sparse;
+            return IsSparse;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -143,9 +182,9 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::System.Collections.Generic.IList<float>?, TResult>? namedVectorStructVariant1 = null,
-            global::System.Func<global::G.NamedVector?, TResult>? namedVector = null,
-            global::System.Func<global::G.NamedSparseVector?, TResult>? sparse = null,
+            global::System.Func<global::System.Collections.Generic.IList<float>, TResult>? namedVectorStructVariant1 = null,
+            global::System.Func<global::G.NamedVector, TResult>? namedVector = null,
+            global::System.Func<global::G.NamedSparseVector, TResult>? sparse = null,
             bool validate = true)
         {
             if (validate)
@@ -173,9 +212,39 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::System.Collections.Generic.IList<float>?>? namedVectorStructVariant1 = null,
-            global::System.Action<global::G.NamedVector?>? namedVector = null,
-            global::System.Action<global::G.NamedSparseVector?>? sparse = null,
+            global::System.Action<global::System.Collections.Generic.IList<float>>? namedVectorStructVariant1 = null,
+
+            global::System.Action<global::G.NamedVector>? namedVector = null,
+
+            global::System.Action<global::G.NamedSparseVector>? sparse = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsNamedVectorStructVariant1)
+            {
+                namedVectorStructVariant1?.Invoke(NamedVectorStructVariant1!);
+            }
+            else if (IsNamedVector)
+            {
+                namedVector?.Invoke(NamedVector!);
+            }
+            else if (IsSparse)
+            {
+                sparse?.Invoke(Sparse!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::System.Collections.Generic.IList<float>>? namedVectorStructVariant1 = null,
+            global::System.Action<global::G.NamedVector>? namedVector = null,
+            global::System.Action<global::G.NamedSparseVector>? sparse = null,
             bool validate = true)
         {
             if (validate)

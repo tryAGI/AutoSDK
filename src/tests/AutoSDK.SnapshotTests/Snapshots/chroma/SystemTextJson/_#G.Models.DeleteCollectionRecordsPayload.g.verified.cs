@@ -32,6 +32,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickRawWhereFields(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.RawWhereFields? value)
+        {
+            value = RawWhereFields;
+            return IsRawWhereFields;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.DeleteCollectionRecordsPayloadVariant2? DeleteCollectionRecordsPayloadVariant2 { get; init; }
 #else
@@ -45,6 +58,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(DeleteCollectionRecordsPayloadVariant2))]
 #endif
         public bool IsDeleteCollectionRecordsPayloadVariant2 => DeleteCollectionRecordsPayloadVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickDeleteCollectionRecordsPayloadVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.DeleteCollectionRecordsPayloadVariant2? value)
+        {
+            value = DeleteCollectionRecordsPayloadVariant2;
+            return IsDeleteCollectionRecordsPayloadVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -121,8 +147,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.RawWhereFields?, TResult>? rawWhereFields = null,
-            global::System.Func<global::G.DeleteCollectionRecordsPayloadVariant2?, TResult>? deleteCollectionRecordsPayloadVariant2 = null,
+            global::System.Func<global::G.RawWhereFields, TResult>? rawWhereFields = null,
+            global::System.Func<global::G.DeleteCollectionRecordsPayloadVariant2, TResult>? deleteCollectionRecordsPayloadVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -146,8 +172,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.RawWhereFields?>? rawWhereFields = null,
-            global::System.Action<global::G.DeleteCollectionRecordsPayloadVariant2?>? deleteCollectionRecordsPayloadVariant2 = null,
+            global::System.Action<global::G.RawWhereFields>? rawWhereFields = null,
+
+            global::System.Action<global::G.DeleteCollectionRecordsPayloadVariant2>? deleteCollectionRecordsPayloadVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsRawWhereFields)
+            {
+                rawWhereFields?.Invoke(RawWhereFields!);
+            }
+            else if (IsDeleteCollectionRecordsPayloadVariant2)
+            {
+                deleteCollectionRecordsPayloadVariant2?.Invoke(DeleteCollectionRecordsPayloadVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.RawWhereFields>? rawWhereFields = null,
+            global::System.Action<global::G.DeleteCollectionRecordsPayloadVariant2>? deleteCollectionRecordsPayloadVariant2 = null,
             bool validate = true)
         {
             if (validate)

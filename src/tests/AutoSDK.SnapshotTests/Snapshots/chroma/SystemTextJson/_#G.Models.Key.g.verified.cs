@@ -75,6 +75,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickKeyVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.KeyVariant1? value)
+        {
+            value = KeyVariant1;
+            return IsKeyVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.KeyVariant2? KeyVariant2 { get; init; }
 #else
@@ -88,6 +101,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(KeyVariant2))]
 #endif
         public bool IsKeyVariant2 => KeyVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickKeyVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.KeyVariant2? value)
+        {
+            value = KeyVariant2;
+            return IsKeyVariant2;
+        }
 
         /// <summary>
         /// 
@@ -109,6 +135,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickKeyVariant3(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.KeyVariant3? value)
+        {
+            value = KeyVariant3;
+            return IsKeyVariant3;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.KeyVariant4? KeyVariant4 { get; init; }
 #else
@@ -126,6 +165,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickKeyVariant4(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.KeyVariant4? value)
+        {
+            value = KeyVariant4;
+            return IsKeyVariant4;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.KeyVariant5? KeyVariant5 { get; init; }
 #else
@@ -139,6 +191,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(KeyVariant5))]
 #endif
         public bool IsKeyVariant5 => KeyVariant5 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickKeyVariant5(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.KeyVariant5? value)
+        {
+            value = KeyVariant5;
+            return IsKeyVariant5;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -285,7 +350,7 @@ namespace G
             global::System.Func<global::G.KeyVariant2?, TResult>? keyVariant2 = null,
             global::System.Func<global::G.KeyVariant3?, TResult>? keyVariant3 = null,
             global::System.Func<global::G.KeyVariant4?, TResult>? keyVariant4 = null,
-            global::System.Func<global::G.KeyVariant5?, TResult>? keyVariant5 = null,
+            global::System.Func<global::G.KeyVariant5, TResult>? keyVariant5 = null,
             bool validate = true)
         {
             if (validate)
@@ -322,10 +387,52 @@ namespace G
         /// </summary>
         public void Match(
             global::System.Action<global::G.KeyVariant1?>? keyVariant1 = null,
+
+            global::System.Action<global::G.KeyVariant2?>? keyVariant2 = null,
+
+            global::System.Action<global::G.KeyVariant3?>? keyVariant3 = null,
+
+            global::System.Action<global::G.KeyVariant4?>? keyVariant4 = null,
+
+            global::System.Action<global::G.KeyVariant5>? keyVariant5 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsKeyVariant1)
+            {
+                keyVariant1?.Invoke(KeyVariant1!);
+            }
+            else if (IsKeyVariant2)
+            {
+                keyVariant2?.Invoke(KeyVariant2!);
+            }
+            else if (IsKeyVariant3)
+            {
+                keyVariant3?.Invoke(KeyVariant3!);
+            }
+            else if (IsKeyVariant4)
+            {
+                keyVariant4?.Invoke(KeyVariant4!);
+            }
+            else if (IsKeyVariant5)
+            {
+                keyVariant5?.Invoke(KeyVariant5!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.KeyVariant1?>? keyVariant1 = null,
             global::System.Action<global::G.KeyVariant2?>? keyVariant2 = null,
             global::System.Action<global::G.KeyVariant3?>? keyVariant3 = null,
             global::System.Action<global::G.KeyVariant4?>? keyVariant4 = null,
-            global::System.Action<global::G.KeyVariant5?>? keyVariant5 = null,
+            global::System.Action<global::G.KeyVariant5>? keyVariant5 = null,
             bool validate = true)
         {
             if (validate)

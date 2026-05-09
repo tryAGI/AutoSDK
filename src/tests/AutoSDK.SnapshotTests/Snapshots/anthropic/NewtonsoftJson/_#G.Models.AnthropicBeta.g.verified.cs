@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickAnthropicBetaVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = AnthropicBetaVariant1;
+            return IsAnthropicBetaVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.AnthropicBetaEnum? Enum { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Enum))]
 #endif
         public bool IsEnum => Enum != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickEnum(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.AnthropicBetaEnum? value)
+        {
+            value = Enum;
+            return IsEnum;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -119,7 +145,7 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<string?, TResult>? anthropicBetaVariant1 = null,
+            global::System.Func<string, TResult>? anthropicBetaVariant1 = null,
             global::System.Func<global::G.AnthropicBetaEnum?, TResult>? @enum = null,
             bool validate = true)
         {
@@ -144,7 +170,31 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<string?>? anthropicBetaVariant1 = null,
+            global::System.Action<string>? anthropicBetaVariant1 = null,
+
+            global::System.Action<global::G.AnthropicBetaEnum?>? @enum = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsAnthropicBetaVariant1)
+            {
+                anthropicBetaVariant1?.Invoke(AnthropicBetaVariant1!);
+            }
+            else if (IsEnum)
+            {
+                @enum?.Invoke(Enum!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<string>? anthropicBetaVariant1 = null,
             global::System.Action<global::G.AnthropicBetaEnum?>? @enum = null,
             bool validate = true)
         {

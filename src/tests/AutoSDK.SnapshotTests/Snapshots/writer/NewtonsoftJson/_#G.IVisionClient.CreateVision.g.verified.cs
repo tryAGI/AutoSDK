@@ -28,6 +28,25 @@ namespace G
         /// Analyze images<br/>
         /// Submit images and documents with a prompt to generate an analysis. Supports JPG, PNG, PDF, and TXT files up to 7MB each.
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        /// <remarks>
+        /// curl --location --request POST https://api.writer.com/v1/vision \<br/>
+        ///  --header "Authorization: Bearer &lt;token&gt;" \<br/>
+        ///  --header "Content-Type: application/json" \<br/>
+        /// --data-raw '{"model":"palmyra-vision","variables":[{"name":"image_1","file_id":"f1234"},{"name":"image_2","file_id":"f9876"}],"prompt":"Describe the difference between the image {{image_1}} and the image {{image_2}}."}'
+        /// </remarks>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.VisionResponse>> CreateVisionAsResponseAsync(
+
+            global::G.VisionRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Analyze images<br/>
+        /// Submit images and documents with a prompt to generate an analysis. Supports JPG, PNG, PDF, and TXT files up to 7MB each.
+        /// </summary>
         /// <param name="model">
         /// The model to use for image analysis.
         /// </param>

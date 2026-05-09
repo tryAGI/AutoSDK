@@ -35,6 +35,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickUrl(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.GetKnowledgeBaseURLResponseModel? value)
+        {
+            value = Url;
+            return IsUrl;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.GetKnowledgeBaseFileResponseModel? File { get; init; }
 #else
@@ -48,6 +61,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(File))]
 #endif
         public bool IsFile => File != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFile(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.GetKnowledgeBaseFileResponseModel? value)
+        {
+            value = File;
+            return IsFile;
+        }
 
         /// <summary>
         /// 
@@ -69,6 +95,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickText(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.GetKnowledgeBaseTextResponseModel? value)
+        {
+            value = Text;
+            return IsText;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.GetKnowledgeBaseFolderResponseModel? Folder { get; init; }
 #else
@@ -82,6 +121,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Folder))]
 #endif
         public bool IsFolder => Folder != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFolder(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.GetKnowledgeBaseFolderResponseModel? value)
+        {
+            value = Folder;
+            return IsFolder;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -205,10 +257,10 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.GetKnowledgeBaseURLResponseModel?, TResult>? url = null,
-            global::System.Func<global::G.GetKnowledgeBaseFileResponseModel?, TResult>? file = null,
-            global::System.Func<global::G.GetKnowledgeBaseTextResponseModel?, TResult>? text = null,
-            global::System.Func<global::G.GetKnowledgeBaseFolderResponseModel?, TResult>? folder = null,
+            global::System.Func<global::G.GetKnowledgeBaseURLResponseModel, TResult>? url = null,
+            global::System.Func<global::G.GetKnowledgeBaseFileResponseModel, TResult>? file = null,
+            global::System.Func<global::G.GetKnowledgeBaseTextResponseModel, TResult>? text = null,
+            global::System.Func<global::G.GetKnowledgeBaseFolderResponseModel, TResult>? folder = null,
             bool validate = true)
         {
             if (validate)
@@ -240,10 +292,46 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.GetKnowledgeBaseURLResponseModel?>? url = null,
-            global::System.Action<global::G.GetKnowledgeBaseFileResponseModel?>? file = null,
-            global::System.Action<global::G.GetKnowledgeBaseTextResponseModel?>? text = null,
-            global::System.Action<global::G.GetKnowledgeBaseFolderResponseModel?>? folder = null,
+            global::System.Action<global::G.GetKnowledgeBaseURLResponseModel>? url = null,
+
+            global::System.Action<global::G.GetKnowledgeBaseFileResponseModel>? file = null,
+
+            global::System.Action<global::G.GetKnowledgeBaseTextResponseModel>? text = null,
+
+            global::System.Action<global::G.GetKnowledgeBaseFolderResponseModel>? folder = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsUrl)
+            {
+                url?.Invoke(Url!);
+            }
+            else if (IsFile)
+            {
+                file?.Invoke(File!);
+            }
+            else if (IsText)
+            {
+                text?.Invoke(Text!);
+            }
+            else if (IsFolder)
+            {
+                folder?.Invoke(Folder!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.GetKnowledgeBaseURLResponseModel>? url = null,
+            global::System.Action<global::G.GetKnowledgeBaseFileResponseModel>? file = null,
+            global::System.Action<global::G.GetKnowledgeBaseTextResponseModel>? text = null,
+            global::System.Action<global::G.GetKnowledgeBaseFolderResponseModel>? folder = null,
             bool validate = true)
         {
             if (validate)

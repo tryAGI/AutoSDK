@@ -28,6 +28,19 @@ namespace G
         public bool IsField => Field != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickField(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.FieldCondition? value)
+        {
+            value = Field;
+            return IsField;
+        }
+
+        /// <summary>
         /// Select points with empty payload for a specified field
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(IsEmpty))]
 #endif
         public bool IsIsEmpty => IsEmpty != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickIsEmpty(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.IsEmptyCondition? value)
+        {
+            value = IsEmpty;
+            return IsIsEmpty;
+        }
 
         /// <summary>
         /// Select points with null payload for a specified field
@@ -62,6 +88,19 @@ namespace G
         public bool IsIsNull => IsNull != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickIsNull(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.IsNullCondition? value)
+        {
+            value = IsNull;
+            return IsIsNull;
+        }
+
+        /// <summary>
         /// ID-based filtering condition
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -77,6 +116,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(HasId))]
 #endif
         public bool IsHasId => HasId != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickHasId(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.HasIdCondition? value)
+        {
+            value = HasId;
+            return IsHasId;
+        }
 
         /// <summary>
         /// Filter points which have specific vector assigned
@@ -98,6 +150,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickHasVector(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.HasVectorCondition? value)
+        {
+            value = HasVector;
+            return IsHasVector;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.NestedCondition? Nested { get; init; }
 #else
@@ -115,6 +180,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickNested(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.NestedCondition? value)
+        {
+            value = Nested;
+            return IsNested;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.Filter? Filter { get; init; }
 #else
@@ -128,6 +206,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Filter))]
 #endif
         public bool IsFilter => Filter != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFilter(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.Filter? value)
+        {
+            value = Filter;
+            return IsFilter;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -314,13 +405,13 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.FieldCondition?, TResult>? field = null,
-            global::System.Func<global::G.IsEmptyCondition?, TResult>? isEmpty = null,
-            global::System.Func<global::G.IsNullCondition?, TResult>? isNull = null,
-            global::System.Func<global::G.HasIdCondition?, TResult>? hasId = null,
-            global::System.Func<global::G.HasVectorCondition?, TResult>? hasVector = null,
-            global::System.Func<global::G.NestedCondition?, TResult>? nested = null,
-            global::System.Func<global::G.Filter?, TResult>? filter = null,
+            global::System.Func<global::G.FieldCondition, TResult>? field = null,
+            global::System.Func<global::G.IsEmptyCondition, TResult>? isEmpty = null,
+            global::System.Func<global::G.IsNullCondition, TResult>? isNull = null,
+            global::System.Func<global::G.HasIdCondition, TResult>? hasId = null,
+            global::System.Func<global::G.HasVectorCondition, TResult>? hasVector = null,
+            global::System.Func<global::G.NestedCondition, TResult>? nested = null,
+            global::System.Func<global::G.Filter, TResult>? filter = null,
             bool validate = true)
         {
             if (validate)
@@ -364,13 +455,67 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.FieldCondition?>? field = null,
-            global::System.Action<global::G.IsEmptyCondition?>? isEmpty = null,
-            global::System.Action<global::G.IsNullCondition?>? isNull = null,
-            global::System.Action<global::G.HasIdCondition?>? hasId = null,
-            global::System.Action<global::G.HasVectorCondition?>? hasVector = null,
-            global::System.Action<global::G.NestedCondition?>? nested = null,
-            global::System.Action<global::G.Filter?>? filter = null,
+            global::System.Action<global::G.FieldCondition>? field = null,
+
+            global::System.Action<global::G.IsEmptyCondition>? isEmpty = null,
+
+            global::System.Action<global::G.IsNullCondition>? isNull = null,
+
+            global::System.Action<global::G.HasIdCondition>? hasId = null,
+
+            global::System.Action<global::G.HasVectorCondition>? hasVector = null,
+
+            global::System.Action<global::G.NestedCondition>? nested = null,
+
+            global::System.Action<global::G.Filter>? filter = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsField)
+            {
+                field?.Invoke(Field!);
+            }
+            else if (IsIsEmpty)
+            {
+                isEmpty?.Invoke(IsEmpty!);
+            }
+            else if (IsIsNull)
+            {
+                isNull?.Invoke(IsNull!);
+            }
+            else if (IsHasId)
+            {
+                hasId?.Invoke(HasId!);
+            }
+            else if (IsHasVector)
+            {
+                hasVector?.Invoke(HasVector!);
+            }
+            else if (IsNested)
+            {
+                nested?.Invoke(Nested!);
+            }
+            else if (IsFilter)
+            {
+                filter?.Invoke(Filter!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.FieldCondition>? field = null,
+            global::System.Action<global::G.IsEmptyCondition>? isEmpty = null,
+            global::System.Action<global::G.IsNullCondition>? isNull = null,
+            global::System.Action<global::G.HasIdCondition>? hasId = null,
+            global::System.Action<global::G.HasVectorCondition>? hasVector = null,
+            global::System.Action<global::G.NestedCondition>? nested = null,
+            global::System.Action<global::G.Filter>? filter = null,
             bool validate = true)
         {
             if (validate)

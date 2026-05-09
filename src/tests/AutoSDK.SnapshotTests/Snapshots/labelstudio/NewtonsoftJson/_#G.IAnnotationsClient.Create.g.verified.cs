@@ -51,6 +51,34 @@ namespace G
         ///         
         /// </summary>
         /// <param name="id"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.Annotation>> CreateAsResponseAsync(
+            int id,
+
+            global::G.ApiTasksAnnotationsCreateRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create annotation<br/>
+        ///         Add annotations to a task like an annotator does. The content of the result field depends on your<br/>
+        ///         labeling configuration. For example, send the following data as part of your POST<br/>
+        ///         request to send an empty annotation with the ID of the user who completed the task:<br/>
+        ///         ```json<br/>
+        ///         {<br/>
+        ///         "result": {},<br/>
+        ///         "was_cancelled": true,<br/>
+        ///         "ground_truth": true,<br/>
+        ///         "lead_time": 0,<br/>
+        ///         "task": 0<br/>
+        ///         "completed_by": 123<br/>
+        ///         }<br/>
+        ///         ```<br/>
+        ///         
+        /// </summary>
+        /// <param name="id"></param>
         /// <param name="completedBy">
         /// User ID of the person who created this annotation
         /// </param>

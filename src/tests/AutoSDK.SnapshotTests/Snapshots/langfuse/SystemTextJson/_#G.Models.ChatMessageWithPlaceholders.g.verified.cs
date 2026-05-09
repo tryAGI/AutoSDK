@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickChatMessage(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ChatMessage? value)
+        {
+            value = ChatMessage;
+            return IsChatMessage;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.PlaceholderMessage? PlaceholderMessage { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(PlaceholderMessage))]
 #endif
         public bool IsPlaceholderMessage => PlaceholderMessage != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickPlaceholderMessage(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.PlaceholderMessage? value)
+        {
+            value = PlaceholderMessage;
+            return IsPlaceholderMessage;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -119,8 +145,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.ChatMessage?, TResult>? chatMessage = null,
-            global::System.Func<global::G.PlaceholderMessage?, TResult>? placeholderMessage = null,
+            global::System.Func<global::G.ChatMessage, TResult>? chatMessage = null,
+            global::System.Func<global::G.PlaceholderMessage, TResult>? placeholderMessage = null,
             bool validate = true)
         {
             if (validate)
@@ -144,8 +170,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.ChatMessage?>? chatMessage = null,
-            global::System.Action<global::G.PlaceholderMessage?>? placeholderMessage = null,
+            global::System.Action<global::G.ChatMessage>? chatMessage = null,
+
+            global::System.Action<global::G.PlaceholderMessage>? placeholderMessage = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsChatMessage)
+            {
+                chatMessage?.Invoke(ChatMessage!);
+            }
+            else if (IsPlaceholderMessage)
+            {
+                placeholderMessage?.Invoke(PlaceholderMessage!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.ChatMessage>? chatMessage = null,
+            global::System.Action<global::G.PlaceholderMessage>? placeholderMessage = null,
             bool validate = true)
         {
             if (validate)

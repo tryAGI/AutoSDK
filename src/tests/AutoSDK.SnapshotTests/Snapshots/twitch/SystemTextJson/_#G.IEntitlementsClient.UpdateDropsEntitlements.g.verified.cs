@@ -36,6 +36,26 @@ namespace G
         /// __Authorization:__<br/>
         /// Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens). The client ID in the access token must own the game.
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.UpdateDropsEntitlementsResponse>> UpdateDropsEntitlementsAsResponseAsync(
+
+            global::G.UpdateDropsEntitlementsBody request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Updates the Drop entitlement’s fulfillment status.<br/>
+        /// Updates the Drop entitlement’s fulfillment status.<br/>
+        /// The following table identifies which entitlements are updated based on the type of access token used.<br/>
+        /// | Access token type | Data that’s updated |<br/>
+        /// | - | - |<br/>
+        /// | App | Updates all entitlements with benefits owned by the organization in the access token. |<br/>
+        /// | User | Updates all entitlements owned by the user in the access token and where the benefits are owned by the organization in the access token. |<br/>
+        /// __Authorization:__<br/>
+        /// Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens). The client ID in the access token must own the game.
+        /// </summary>
         /// <param name="entitlementIds">
         /// A list of IDs that identify the entitlements to update. You may specify a maximum of 100 IDs.
         /// </param>

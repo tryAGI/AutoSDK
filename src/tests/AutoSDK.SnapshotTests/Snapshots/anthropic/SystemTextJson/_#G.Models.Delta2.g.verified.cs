@@ -35,6 +35,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickTextDelta(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.TextContentBlockDelta? value)
+        {
+            value = TextDelta;
+            return IsTextDelta;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.InputJsonContentBlockDelta? InputJsonDelta { get; init; }
 #else
@@ -48,6 +61,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputJsonDelta))]
 #endif
         public bool IsInputJsonDelta => InputJsonDelta != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickInputJsonDelta(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.InputJsonContentBlockDelta? value)
+        {
+            value = InputJsonDelta;
+            return IsInputJsonDelta;
+        }
 
         /// <summary>
         /// 
@@ -69,6 +95,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickCitationsDelta(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CitationsDelta? value)
+        {
+            value = CitationsDelta;
+            return IsCitationsDelta;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ThinkingContentBlockDelta? ThinkingDelta { get; init; }
 #else
@@ -86,6 +125,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickThinkingDelta(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ThinkingContentBlockDelta? value)
+        {
+            value = ThinkingDelta;
+            return IsThinkingDelta;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.SignatureContentBlockDelta? SignatureDelta { get; init; }
 #else
@@ -99,6 +151,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SignatureDelta))]
 #endif
         public bool IsSignatureDelta => SignatureDelta != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSignatureDelta(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.SignatureContentBlockDelta? value)
+        {
+            value = SignatureDelta;
+            return IsSignatureDelta;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -244,11 +309,11 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.TextContentBlockDelta?, TResult>? textDelta = null,
-            global::System.Func<global::G.InputJsonContentBlockDelta?, TResult>? inputJsonDelta = null,
-            global::System.Func<global::G.CitationsDelta?, TResult>? citationsDelta = null,
-            global::System.Func<global::G.ThinkingContentBlockDelta?, TResult>? thinkingDelta = null,
-            global::System.Func<global::G.SignatureContentBlockDelta?, TResult>? signatureDelta = null,
+            global::System.Func<global::G.TextContentBlockDelta, TResult>? textDelta = null,
+            global::System.Func<global::G.InputJsonContentBlockDelta, TResult>? inputJsonDelta = null,
+            global::System.Func<global::G.CitationsDelta, TResult>? citationsDelta = null,
+            global::System.Func<global::G.ThinkingContentBlockDelta, TResult>? thinkingDelta = null,
+            global::System.Func<global::G.SignatureContentBlockDelta, TResult>? signatureDelta = null,
             bool validate = true)
         {
             if (validate)
@@ -284,11 +349,53 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.TextContentBlockDelta?>? textDelta = null,
-            global::System.Action<global::G.InputJsonContentBlockDelta?>? inputJsonDelta = null,
-            global::System.Action<global::G.CitationsDelta?>? citationsDelta = null,
-            global::System.Action<global::G.ThinkingContentBlockDelta?>? thinkingDelta = null,
-            global::System.Action<global::G.SignatureContentBlockDelta?>? signatureDelta = null,
+            global::System.Action<global::G.TextContentBlockDelta>? textDelta = null,
+
+            global::System.Action<global::G.InputJsonContentBlockDelta>? inputJsonDelta = null,
+
+            global::System.Action<global::G.CitationsDelta>? citationsDelta = null,
+
+            global::System.Action<global::G.ThinkingContentBlockDelta>? thinkingDelta = null,
+
+            global::System.Action<global::G.SignatureContentBlockDelta>? signatureDelta = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsTextDelta)
+            {
+                textDelta?.Invoke(TextDelta!);
+            }
+            else if (IsInputJsonDelta)
+            {
+                inputJsonDelta?.Invoke(InputJsonDelta!);
+            }
+            else if (IsCitationsDelta)
+            {
+                citationsDelta?.Invoke(CitationsDelta!);
+            }
+            else if (IsThinkingDelta)
+            {
+                thinkingDelta?.Invoke(ThinkingDelta!);
+            }
+            else if (IsSignatureDelta)
+            {
+                signatureDelta?.Invoke(SignatureDelta!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.TextContentBlockDelta>? textDelta = null,
+            global::System.Action<global::G.InputJsonContentBlockDelta>? inputJsonDelta = null,
+            global::System.Action<global::G.CitationsDelta>? citationsDelta = null,
+            global::System.Action<global::G.ThinkingContentBlockDelta>? thinkingDelta = null,
+            global::System.Action<global::G.SignatureContentBlockDelta>? signatureDelta = null,
             bool validate = true)
         {
             if (validate)

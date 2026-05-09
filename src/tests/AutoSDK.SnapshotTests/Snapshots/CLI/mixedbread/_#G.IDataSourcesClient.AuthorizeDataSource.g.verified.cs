@@ -29,5 +29,29 @@ namespace G
             global::System.Guid dataSourceId,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Authorize a data source<br/>
+        /// Start OAuth2 authorization flow for a data source.<br/>
+        /// Initiates the OAuth2 authorization process by redirecting the user<br/>
+        /// to the external service's authorization page. After authorization,<br/>
+        /// the user will be redirected back to the oauth2_callback endpoint.<br/>
+        /// Args:<br/>
+        ///     data_source_id: The ID of the data source to authorize<br/>
+        /// Returns:<br/>
+        ///     Redirect to the OAuth2 provider's authorization page<br/>
+        /// Raises:<br/>
+        ///     DataSourceNotFoundError: When data source doesn't exist<br/>
+        ///     DataSourceAuthTypeNotSupportedError: When OAuth2 is not supported for this data source type
+        /// </summary>
+        /// <param name="dataSourceId">
+        /// The ID of the data source to authorize
+        /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<string>> AuthorizeDataSourceAsResponseAsync(
+            global::System.Guid dataSourceId,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

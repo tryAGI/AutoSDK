@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickLogoDtoVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.LogoDtoVariant1? value)
+        {
+            value = LogoDtoVariant1;
+            return IsLogoDtoVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public bool? LogoDtoVariant2 { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(LogoDtoVariant2))]
 #endif
         public bool IsLogoDtoVariant2 => LogoDtoVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickLogoDtoVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out bool? value)
+        {
+            value = LogoDtoVariant2;
+            return IsLogoDtoVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -119,7 +145,7 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.LogoDtoVariant1?, TResult>? logoDtoVariant1 = null,
+            global::System.Func<global::G.LogoDtoVariant1, TResult>? logoDtoVariant1 = null,
             global::System.Func<bool?, TResult>? logoDtoVariant2 = null,
             bool validate = true)
         {
@@ -144,7 +170,31 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.LogoDtoVariant1?>? logoDtoVariant1 = null,
+            global::System.Action<global::G.LogoDtoVariant1>? logoDtoVariant1 = null,
+
+            global::System.Action<bool?>? logoDtoVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsLogoDtoVariant1)
+            {
+                logoDtoVariant1?.Invoke(LogoDtoVariant1!);
+            }
+            else if (IsLogoDtoVariant2)
+            {
+                logoDtoVariant2?.Invoke(LogoDtoVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.LogoDtoVariant1>? logoDtoVariant1 = null,
             global::System.Action<bool?>? logoDtoVariant2 = null,
             bool validate = true)
         {

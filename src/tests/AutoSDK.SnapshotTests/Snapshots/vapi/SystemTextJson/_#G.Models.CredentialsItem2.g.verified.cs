@@ -35,6 +35,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickAnthropic(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateAnthropicCredentialDTO? value)
+        {
+            value = Anthropic;
+            return IsAnthropic;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CreateAnthropicBedrockCredentialDTO? AnthropicBedrock { get; init; }
 #else
@@ -48,6 +61,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AnthropicBedrock))]
 #endif
         public bool IsAnthropicBedrock => AnthropicBedrock != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickAnthropicBedrock(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateAnthropicBedrockCredentialDTO? value)
+        {
+            value = AnthropicBedrock;
+            return IsAnthropicBedrock;
+        }
 
         /// <summary>
         /// 
@@ -69,6 +95,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickAnyscale(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateAnyscaleCredentialDTO? value)
+        {
+            value = Anyscale;
+            return IsAnyscale;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CreateAssemblyAICredentialDTO? AssemblyAi { get; init; }
 #else
@@ -82,6 +121,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AssemblyAi))]
 #endif
         public bool IsAssemblyAi => AssemblyAi != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickAssemblyAi(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateAssemblyAICredentialDTO? value)
+        {
+            value = AssemblyAi;
+            return IsAssemblyAi;
+        }
 
         /// <summary>
         /// 
@@ -103,6 +155,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickAzure(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateAzureCredentialDTO? value)
+        {
+            value = Azure;
+            return IsAzure;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CreateAzureOpenAICredentialDTO? AzureOpenai { get; init; }
 #else
@@ -116,6 +181,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AzureOpenai))]
 #endif
         public bool IsAzureOpenai => AzureOpenai != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickAzureOpenai(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateAzureOpenAICredentialDTO? value)
+        {
+            value = AzureOpenai;
+            return IsAzureOpenai;
+        }
 
         /// <summary>
         /// 
@@ -137,6 +215,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickByoSipTrunk(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateByoSipTrunkCredentialDTO? value)
+        {
+            value = ByoSipTrunk;
+            return IsByoSipTrunk;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CreateCartesiaCredentialDTO? Cartesia { get; init; }
 #else
@@ -150,6 +241,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Cartesia))]
 #endif
         public bool IsCartesia => Cartesia != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickCartesia(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateCartesiaCredentialDTO? value)
+        {
+            value = Cartesia;
+            return IsCartesia;
+        }
 
         /// <summary>
         /// 
@@ -171,6 +275,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickCerebras(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateCerebrasCredentialDTO? value)
+        {
+            value = Cerebras;
+            return IsCerebras;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CreateCloudflareCredentialDTO? Cloudflare { get; init; }
 #else
@@ -184,6 +301,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Cloudflare))]
 #endif
         public bool IsCloudflare => Cloudflare != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickCloudflare(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateCloudflareCredentialDTO? value)
+        {
+            value = Cloudflare;
+            return IsCloudflare;
+        }
 
         /// <summary>
         /// 
@@ -205,6 +335,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickCustomLlm(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateCustomLLMCredentialDTO? value)
+        {
+            value = CustomLlm;
+            return IsCustomLlm;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CreateDeepgramCredentialDTO? Deepgram { get; init; }
 #else
@@ -218,6 +361,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Deepgram))]
 #endif
         public bool IsDeepgram => Deepgram != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickDeepgram(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateDeepgramCredentialDTO? value)
+        {
+            value = Deepgram;
+            return IsDeepgram;
+        }
 
         /// <summary>
         /// 
@@ -239,6 +395,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickDeepinfra(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateDeepInfraCredentialDTO? value)
+        {
+            value = Deepinfra;
+            return IsDeepinfra;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CreateDeepSeekCredentialDTO? DeepSeek { get; init; }
 #else
@@ -252,6 +421,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(DeepSeek))]
 #endif
         public bool IsDeepSeek => DeepSeek != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickDeepSeek(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateDeepSeekCredentialDTO? value)
+        {
+            value = DeepSeek;
+            return IsDeepSeek;
+        }
 
         /// <summary>
         /// 
@@ -273,6 +455,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickElevenlabs(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateElevenLabsCredentialDTO? value)
+        {
+            value = Elevenlabs;
+            return IsElevenlabs;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CreateGcpCredentialDTO? Gcp { get; init; }
 #else
@@ -286,6 +481,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Gcp))]
 #endif
         public bool IsGcp => Gcp != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickGcp(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateGcpCredentialDTO? value)
+        {
+            value = Gcp;
+            return IsGcp;
+        }
 
         /// <summary>
         /// 
@@ -307,6 +515,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickGladia(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateGladiaCredentialDTO? value)
+        {
+            value = Gladia;
+            return IsGladia;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CreateGoHighLevelCredentialDTO? Gohighlevel { get; init; }
 #else
@@ -320,6 +541,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Gohighlevel))]
 #endif
         public bool IsGohighlevel => Gohighlevel != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickGohighlevel(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateGoHighLevelCredentialDTO? value)
+        {
+            value = Gohighlevel;
+            return IsGohighlevel;
+        }
 
         /// <summary>
         /// 
@@ -341,6 +575,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickGoogle(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateGoogleCredentialDTO? value)
+        {
+            value = Google;
+            return IsGoogle;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CreateGroqCredentialDTO? Groq { get; init; }
 #else
@@ -354,6 +601,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Groq))]
 #endif
         public bool IsGroq => Groq != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickGroq(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateGroqCredentialDTO? value)
+        {
+            value = Groq;
+            return IsGroq;
+        }
 
         /// <summary>
         /// 
@@ -375,6 +635,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickHume(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateHumeCredentialDTO? value)
+        {
+            value = Hume;
+            return IsHume;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CreateInflectionAICredentialDTO? InflectionAi { get; init; }
 #else
@@ -388,6 +661,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InflectionAi))]
 #endif
         public bool IsInflectionAi => InflectionAi != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickInflectionAi(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateInflectionAICredentialDTO? value)
+        {
+            value = InflectionAi;
+            return IsInflectionAi;
+        }
 
         /// <summary>
         /// 
@@ -409,6 +695,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickLangfuse(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateLangfuseCredentialDTO? value)
+        {
+            value = Langfuse;
+            return IsLangfuse;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CreateLmntCredentialDTO? Lmnt { get; init; }
 #else
@@ -422,6 +721,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Lmnt))]
 #endif
         public bool IsLmnt => Lmnt != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickLmnt(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateLmntCredentialDTO? value)
+        {
+            value = Lmnt;
+            return IsLmnt;
+        }
 
         /// <summary>
         /// 
@@ -443,6 +755,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickMake(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateMakeCredentialDTO? value)
+        {
+            value = Make;
+            return IsMake;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CreateMistralCredentialDTO? Mistral { get; init; }
 #else
@@ -456,6 +781,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Mistral))]
 #endif
         public bool IsMistral => Mistral != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMistral(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateMistralCredentialDTO? value)
+        {
+            value = Mistral;
+            return IsMistral;
+        }
 
         /// <summary>
         /// 
@@ -477,6 +815,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickNeuphonic(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateNeuphonicCredentialDTO? value)
+        {
+            value = Neuphonic;
+            return IsNeuphonic;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CreateOpenAICredentialDTO? Openai { get; init; }
 #else
@@ -490,6 +841,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Openai))]
 #endif
         public bool IsOpenai => Openai != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickOpenai(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateOpenAICredentialDTO? value)
+        {
+            value = Openai;
+            return IsOpenai;
+        }
 
         /// <summary>
         /// 
@@ -511,6 +875,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickOpenrouter(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateOpenRouterCredentialDTO? value)
+        {
+            value = Openrouter;
+            return IsOpenrouter;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CreatePerplexityAICredentialDTO? PerplexityAi { get; init; }
 #else
@@ -524,6 +901,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(PerplexityAi))]
 #endif
         public bool IsPerplexityAi => PerplexityAi != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickPerplexityAi(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreatePerplexityAICredentialDTO? value)
+        {
+            value = PerplexityAi;
+            return IsPerplexityAi;
+        }
 
         /// <summary>
         /// 
@@ -545,6 +935,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickPlayht(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreatePlayHTCredentialDTO? value)
+        {
+            value = Playht;
+            return IsPlayht;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CreateRimeAICredentialDTO? RimeAi { get; init; }
 #else
@@ -558,6 +961,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RimeAi))]
 #endif
         public bool IsRimeAi => RimeAi != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickRimeAi(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateRimeAICredentialDTO? value)
+        {
+            value = RimeAi;
+            return IsRimeAi;
+        }
 
         /// <summary>
         /// 
@@ -579,6 +995,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickRunpod(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateRunpodCredentialDTO? value)
+        {
+            value = Runpod;
+            return IsRunpod;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CreateS3CredentialDTO? S3 { get; init; }
 #else
@@ -592,6 +1021,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(S3))]
 #endif
         public bool IsS3 => S3 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickS3(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateS3CredentialDTO? value)
+        {
+            value = S3;
+            return IsS3;
+        }
 
         /// <summary>
         /// 
@@ -613,6 +1055,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickSmallestAi(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateSmallestAICredentialDTO? value)
+        {
+            value = SmallestAi;
+            return IsSmallestAi;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CreateSpeechmaticsCredentialDTO? Speechmatics { get; init; }
 #else
@@ -626,6 +1081,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Speechmatics))]
 #endif
         public bool IsSpeechmatics => Speechmatics != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSpeechmatics(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateSpeechmaticsCredentialDTO? value)
+        {
+            value = Speechmatics;
+            return IsSpeechmatics;
+        }
 
         /// <summary>
         /// 
@@ -647,6 +1115,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickSoniox(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateSonioxCredentialDTO? value)
+        {
+            value = Soniox;
+            return IsSoniox;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CreateSupabaseCredentialDTO? Supabase { get; init; }
 #else
@@ -660,6 +1141,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Supabase))]
 #endif
         public bool IsSupabase => Supabase != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSupabase(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateSupabaseCredentialDTO? value)
+        {
+            value = Supabase;
+            return IsSupabase;
+        }
 
         /// <summary>
         /// 
@@ -681,6 +1175,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickTavus(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateTavusCredentialDTO? value)
+        {
+            value = Tavus;
+            return IsTavus;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CreateTogetherAICredentialDTO? TogetherAi { get; init; }
 #else
@@ -694,6 +1201,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TogetherAi))]
 #endif
         public bool IsTogetherAi => TogetherAi != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickTogetherAi(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateTogetherAICredentialDTO? value)
+        {
+            value = TogetherAi;
+            return IsTogetherAi;
+        }
 
         /// <summary>
         /// 
@@ -715,6 +1235,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickTrieve(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateTrieveCredentialDTO? value)
+        {
+            value = Trieve;
+            return IsTrieve;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CreateTwilioCredentialDTO? Twilio { get; init; }
 #else
@@ -728,6 +1261,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Twilio))]
 #endif
         public bool IsTwilio => Twilio != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickTwilio(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateTwilioCredentialDTO? value)
+        {
+            value = Twilio;
+            return IsTwilio;
+        }
 
         /// <summary>
         /// 
@@ -749,6 +1295,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickVonage(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateVonageCredentialDTO? value)
+        {
+            value = Vonage;
+            return IsVonage;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CreateWebhookCredentialDTO? Webhook { get; init; }
 #else
@@ -762,6 +1321,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Webhook))]
 #endif
         public bool IsWebhook => Webhook != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickWebhook(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateWebhookCredentialDTO? value)
+        {
+            value = Webhook;
+            return IsWebhook;
+        }
 
         /// <summary>
         /// 
@@ -783,6 +1355,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickCustomCredential(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateCustomCredentialDTO? value)
+        {
+            value = CustomCredential;
+            return IsCustomCredential;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CreateXAiCredentialDTO? Xai { get; init; }
 #else
@@ -796,6 +1381,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Xai))]
 #endif
         public bool IsXai => Xai != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickXai(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateXAiCredentialDTO? value)
+        {
+            value = Xai;
+            return IsXai;
+        }
 
         /// <summary>
         /// 
@@ -817,6 +1415,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickGoogleCalendarOauth2Client(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateGoogleCalendarOAuth2ClientCredentialDTO? value)
+        {
+            value = GoogleCalendarOauth2Client;
+            return IsGoogleCalendarOauth2Client;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CreateGoogleCalendarOAuth2AuthorizationCredentialDTO? GoogleCalendarOauth2Authorization { get; init; }
 #else
@@ -830,6 +1441,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(GoogleCalendarOauth2Authorization))]
 #endif
         public bool IsGoogleCalendarOauth2Authorization => GoogleCalendarOauth2Authorization != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickGoogleCalendarOauth2Authorization(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateGoogleCalendarOAuth2AuthorizationCredentialDTO? value)
+        {
+            value = GoogleCalendarOauth2Authorization;
+            return IsGoogleCalendarOauth2Authorization;
+        }
 
         /// <summary>
         /// 
@@ -851,6 +1475,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickGoogleSheetsOauth2Authorization(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateGoogleSheetsOAuth2AuthorizationCredentialDTO? value)
+        {
+            value = GoogleSheetsOauth2Authorization;
+            return IsGoogleSheetsOauth2Authorization;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CreateSlackOAuth2AuthorizationCredentialDTO? SlackOauth2Authorization { get; init; }
 #else
@@ -864,6 +1501,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SlackOauth2Authorization))]
 #endif
         public bool IsSlackOauth2Authorization => SlackOauth2Authorization != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSlackOauth2Authorization(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateSlackOAuth2AuthorizationCredentialDTO? value)
+        {
+            value = SlackOauth2Authorization;
+            return IsSlackOauth2Authorization;
+        }
 
         /// <summary>
         /// 
@@ -885,6 +1535,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickGhlOauth2Authorization(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateGoHighLevelMCPCredentialDTO? value)
+        {
+            value = GhlOauth2Authorization;
+            return IsGhlOauth2Authorization;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CreateInworldCredentialDTO? Inworld { get; init; }
 #else
@@ -898,6 +1561,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Inworld))]
 #endif
         public bool IsInworld => Inworld != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickInworld(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateInworldCredentialDTO? value)
+        {
+            value = Inworld;
+            return IsInworld;
+        }
 
         /// <summary>
         /// 
@@ -919,6 +1595,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickMinimax(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateMinimaxCredentialDTO? value)
+        {
+            value = Minimax;
+            return IsMinimax;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CreateWellSaidCredentialDTO? Wellsaid { get; init; }
 #else
@@ -932,6 +1621,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Wellsaid))]
 #endif
         public bool IsWellsaid => Wellsaid != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickWellsaid(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateWellSaidCredentialDTO? value)
+        {
+            value = Wellsaid;
+            return IsWellsaid;
+        }
 
         /// <summary>
         /// 
@@ -953,6 +1655,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickEmail(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateEmailCredentialDTO? value)
+        {
+            value = Email;
+            return IsEmail;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CreateSlackWebhookCredentialDTO? SlackWebhook { get; init; }
 #else
@@ -966,6 +1681,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SlackWebhook))]
 #endif
         public bool IsSlackWebhook => SlackWebhook != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSlackWebhook(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateSlackWebhookCredentialDTO? value)
+        {
+            value = SlackWebhook;
+            return IsSlackWebhook;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -2233,62 +2961,62 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.CreateAnthropicCredentialDTO?, TResult>? anthropic = null,
-            global::System.Func<global::G.CreateAnthropicBedrockCredentialDTO?, TResult>? anthropicBedrock = null,
-            global::System.Func<global::G.CreateAnyscaleCredentialDTO?, TResult>? anyscale = null,
-            global::System.Func<global::G.CreateAssemblyAICredentialDTO?, TResult>? assemblyAi = null,
-            global::System.Func<global::G.CreateAzureCredentialDTO?, TResult>? azure = null,
-            global::System.Func<global::G.CreateAzureOpenAICredentialDTO?, TResult>? azureOpenai = null,
-            global::System.Func<global::G.CreateByoSipTrunkCredentialDTO?, TResult>? byoSipTrunk = null,
-            global::System.Func<global::G.CreateCartesiaCredentialDTO?, TResult>? cartesia = null,
-            global::System.Func<global::G.CreateCerebrasCredentialDTO?, TResult>? cerebras = null,
-            global::System.Func<global::G.CreateCloudflareCredentialDTO?, TResult>? cloudflare = null,
-            global::System.Func<global::G.CreateCustomLLMCredentialDTO?, TResult>? customLlm = null,
-            global::System.Func<global::G.CreateDeepgramCredentialDTO?, TResult>? deepgram = null,
-            global::System.Func<global::G.CreateDeepInfraCredentialDTO?, TResult>? deepinfra = null,
-            global::System.Func<global::G.CreateDeepSeekCredentialDTO?, TResult>? deepSeek = null,
-            global::System.Func<global::G.CreateElevenLabsCredentialDTO?, TResult>? elevenlabs = null,
-            global::System.Func<global::G.CreateGcpCredentialDTO?, TResult>? gcp = null,
-            global::System.Func<global::G.CreateGladiaCredentialDTO?, TResult>? gladia = null,
-            global::System.Func<global::G.CreateGoHighLevelCredentialDTO?, TResult>? gohighlevel = null,
-            global::System.Func<global::G.CreateGoogleCredentialDTO?, TResult>? google = null,
-            global::System.Func<global::G.CreateGroqCredentialDTO?, TResult>? groq = null,
-            global::System.Func<global::G.CreateHumeCredentialDTO?, TResult>? hume = null,
-            global::System.Func<global::G.CreateInflectionAICredentialDTO?, TResult>? inflectionAi = null,
-            global::System.Func<global::G.CreateLangfuseCredentialDTO?, TResult>? langfuse = null,
-            global::System.Func<global::G.CreateLmntCredentialDTO?, TResult>? lmnt = null,
-            global::System.Func<global::G.CreateMakeCredentialDTO?, TResult>? make = null,
-            global::System.Func<global::G.CreateMistralCredentialDTO?, TResult>? mistral = null,
-            global::System.Func<global::G.CreateNeuphonicCredentialDTO?, TResult>? neuphonic = null,
-            global::System.Func<global::G.CreateOpenAICredentialDTO?, TResult>? openai = null,
-            global::System.Func<global::G.CreateOpenRouterCredentialDTO?, TResult>? openrouter = null,
-            global::System.Func<global::G.CreatePerplexityAICredentialDTO?, TResult>? perplexityAi = null,
-            global::System.Func<global::G.CreatePlayHTCredentialDTO?, TResult>? playht = null,
-            global::System.Func<global::G.CreateRimeAICredentialDTO?, TResult>? rimeAi = null,
-            global::System.Func<global::G.CreateRunpodCredentialDTO?, TResult>? runpod = null,
-            global::System.Func<global::G.CreateS3CredentialDTO?, TResult>? s3 = null,
-            global::System.Func<global::G.CreateSmallestAICredentialDTO?, TResult>? smallestAi = null,
-            global::System.Func<global::G.CreateSpeechmaticsCredentialDTO?, TResult>? speechmatics = null,
-            global::System.Func<global::G.CreateSonioxCredentialDTO?, TResult>? soniox = null,
-            global::System.Func<global::G.CreateSupabaseCredentialDTO?, TResult>? supabase = null,
-            global::System.Func<global::G.CreateTavusCredentialDTO?, TResult>? tavus = null,
-            global::System.Func<global::G.CreateTogetherAICredentialDTO?, TResult>? togetherAi = null,
-            global::System.Func<global::G.CreateTrieveCredentialDTO?, TResult>? trieve = null,
-            global::System.Func<global::G.CreateTwilioCredentialDTO?, TResult>? twilio = null,
-            global::System.Func<global::G.CreateVonageCredentialDTO?, TResult>? vonage = null,
-            global::System.Func<global::G.CreateWebhookCredentialDTO?, TResult>? webhook = null,
-            global::System.Func<global::G.CreateCustomCredentialDTO?, TResult>? customCredential = null,
-            global::System.Func<global::G.CreateXAiCredentialDTO?, TResult>? xai = null,
-            global::System.Func<global::G.CreateGoogleCalendarOAuth2ClientCredentialDTO?, TResult>? googleCalendarOauth2Client = null,
-            global::System.Func<global::G.CreateGoogleCalendarOAuth2AuthorizationCredentialDTO?, TResult>? googleCalendarOauth2Authorization = null,
-            global::System.Func<global::G.CreateGoogleSheetsOAuth2AuthorizationCredentialDTO?, TResult>? googleSheetsOauth2Authorization = null,
-            global::System.Func<global::G.CreateSlackOAuth2AuthorizationCredentialDTO?, TResult>? slackOauth2Authorization = null,
-            global::System.Func<global::G.CreateGoHighLevelMCPCredentialDTO?, TResult>? ghlOauth2Authorization = null,
-            global::System.Func<global::G.CreateInworldCredentialDTO?, TResult>? inworld = null,
-            global::System.Func<global::G.CreateMinimaxCredentialDTO?, TResult>? minimax = null,
-            global::System.Func<global::G.CreateWellSaidCredentialDTO?, TResult>? wellsaid = null,
-            global::System.Func<global::G.CreateEmailCredentialDTO?, TResult>? email = null,
-            global::System.Func<global::G.CreateSlackWebhookCredentialDTO?, TResult>? slackWebhook = null,
+            global::System.Func<global::G.CreateAnthropicCredentialDTO, TResult>? anthropic = null,
+            global::System.Func<global::G.CreateAnthropicBedrockCredentialDTO, TResult>? anthropicBedrock = null,
+            global::System.Func<global::G.CreateAnyscaleCredentialDTO, TResult>? anyscale = null,
+            global::System.Func<global::G.CreateAssemblyAICredentialDTO, TResult>? assemblyAi = null,
+            global::System.Func<global::G.CreateAzureCredentialDTO, TResult>? azure = null,
+            global::System.Func<global::G.CreateAzureOpenAICredentialDTO, TResult>? azureOpenai = null,
+            global::System.Func<global::G.CreateByoSipTrunkCredentialDTO, TResult>? byoSipTrunk = null,
+            global::System.Func<global::G.CreateCartesiaCredentialDTO, TResult>? cartesia = null,
+            global::System.Func<global::G.CreateCerebrasCredentialDTO, TResult>? cerebras = null,
+            global::System.Func<global::G.CreateCloudflareCredentialDTO, TResult>? cloudflare = null,
+            global::System.Func<global::G.CreateCustomLLMCredentialDTO, TResult>? customLlm = null,
+            global::System.Func<global::G.CreateDeepgramCredentialDTO, TResult>? deepgram = null,
+            global::System.Func<global::G.CreateDeepInfraCredentialDTO, TResult>? deepinfra = null,
+            global::System.Func<global::G.CreateDeepSeekCredentialDTO, TResult>? deepSeek = null,
+            global::System.Func<global::G.CreateElevenLabsCredentialDTO, TResult>? elevenlabs = null,
+            global::System.Func<global::G.CreateGcpCredentialDTO, TResult>? gcp = null,
+            global::System.Func<global::G.CreateGladiaCredentialDTO, TResult>? gladia = null,
+            global::System.Func<global::G.CreateGoHighLevelCredentialDTO, TResult>? gohighlevel = null,
+            global::System.Func<global::G.CreateGoogleCredentialDTO, TResult>? google = null,
+            global::System.Func<global::G.CreateGroqCredentialDTO, TResult>? groq = null,
+            global::System.Func<global::G.CreateHumeCredentialDTO, TResult>? hume = null,
+            global::System.Func<global::G.CreateInflectionAICredentialDTO, TResult>? inflectionAi = null,
+            global::System.Func<global::G.CreateLangfuseCredentialDTO, TResult>? langfuse = null,
+            global::System.Func<global::G.CreateLmntCredentialDTO, TResult>? lmnt = null,
+            global::System.Func<global::G.CreateMakeCredentialDTO, TResult>? make = null,
+            global::System.Func<global::G.CreateMistralCredentialDTO, TResult>? mistral = null,
+            global::System.Func<global::G.CreateNeuphonicCredentialDTO, TResult>? neuphonic = null,
+            global::System.Func<global::G.CreateOpenAICredentialDTO, TResult>? openai = null,
+            global::System.Func<global::G.CreateOpenRouterCredentialDTO, TResult>? openrouter = null,
+            global::System.Func<global::G.CreatePerplexityAICredentialDTO, TResult>? perplexityAi = null,
+            global::System.Func<global::G.CreatePlayHTCredentialDTO, TResult>? playht = null,
+            global::System.Func<global::G.CreateRimeAICredentialDTO, TResult>? rimeAi = null,
+            global::System.Func<global::G.CreateRunpodCredentialDTO, TResult>? runpod = null,
+            global::System.Func<global::G.CreateS3CredentialDTO, TResult>? s3 = null,
+            global::System.Func<global::G.CreateSmallestAICredentialDTO, TResult>? smallestAi = null,
+            global::System.Func<global::G.CreateSpeechmaticsCredentialDTO, TResult>? speechmatics = null,
+            global::System.Func<global::G.CreateSonioxCredentialDTO, TResult>? soniox = null,
+            global::System.Func<global::G.CreateSupabaseCredentialDTO, TResult>? supabase = null,
+            global::System.Func<global::G.CreateTavusCredentialDTO, TResult>? tavus = null,
+            global::System.Func<global::G.CreateTogetherAICredentialDTO, TResult>? togetherAi = null,
+            global::System.Func<global::G.CreateTrieveCredentialDTO, TResult>? trieve = null,
+            global::System.Func<global::G.CreateTwilioCredentialDTO, TResult>? twilio = null,
+            global::System.Func<global::G.CreateVonageCredentialDTO, TResult>? vonage = null,
+            global::System.Func<global::G.CreateWebhookCredentialDTO, TResult>? webhook = null,
+            global::System.Func<global::G.CreateCustomCredentialDTO, TResult>? customCredential = null,
+            global::System.Func<global::G.CreateXAiCredentialDTO, TResult>? xai = null,
+            global::System.Func<global::G.CreateGoogleCalendarOAuth2ClientCredentialDTO, TResult>? googleCalendarOauth2Client = null,
+            global::System.Func<global::G.CreateGoogleCalendarOAuth2AuthorizationCredentialDTO, TResult>? googleCalendarOauth2Authorization = null,
+            global::System.Func<global::G.CreateGoogleSheetsOAuth2AuthorizationCredentialDTO, TResult>? googleSheetsOauth2Authorization = null,
+            global::System.Func<global::G.CreateSlackOAuth2AuthorizationCredentialDTO, TResult>? slackOauth2Authorization = null,
+            global::System.Func<global::G.CreateGoHighLevelMCPCredentialDTO, TResult>? ghlOauth2Authorization = null,
+            global::System.Func<global::G.CreateInworldCredentialDTO, TResult>? inworld = null,
+            global::System.Func<global::G.CreateMinimaxCredentialDTO, TResult>? minimax = null,
+            global::System.Func<global::G.CreateWellSaidCredentialDTO, TResult>? wellsaid = null,
+            global::System.Func<global::G.CreateEmailCredentialDTO, TResult>? email = null,
+            global::System.Func<global::G.CreateSlackWebhookCredentialDTO, TResult>? slackWebhook = null,
             bool validate = true)
         {
             if (validate)
@@ -2528,62 +3256,410 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.CreateAnthropicCredentialDTO?>? anthropic = null,
-            global::System.Action<global::G.CreateAnthropicBedrockCredentialDTO?>? anthropicBedrock = null,
-            global::System.Action<global::G.CreateAnyscaleCredentialDTO?>? anyscale = null,
-            global::System.Action<global::G.CreateAssemblyAICredentialDTO?>? assemblyAi = null,
-            global::System.Action<global::G.CreateAzureCredentialDTO?>? azure = null,
-            global::System.Action<global::G.CreateAzureOpenAICredentialDTO?>? azureOpenai = null,
-            global::System.Action<global::G.CreateByoSipTrunkCredentialDTO?>? byoSipTrunk = null,
-            global::System.Action<global::G.CreateCartesiaCredentialDTO?>? cartesia = null,
-            global::System.Action<global::G.CreateCerebrasCredentialDTO?>? cerebras = null,
-            global::System.Action<global::G.CreateCloudflareCredentialDTO?>? cloudflare = null,
-            global::System.Action<global::G.CreateCustomLLMCredentialDTO?>? customLlm = null,
-            global::System.Action<global::G.CreateDeepgramCredentialDTO?>? deepgram = null,
-            global::System.Action<global::G.CreateDeepInfraCredentialDTO?>? deepinfra = null,
-            global::System.Action<global::G.CreateDeepSeekCredentialDTO?>? deepSeek = null,
-            global::System.Action<global::G.CreateElevenLabsCredentialDTO?>? elevenlabs = null,
-            global::System.Action<global::G.CreateGcpCredentialDTO?>? gcp = null,
-            global::System.Action<global::G.CreateGladiaCredentialDTO?>? gladia = null,
-            global::System.Action<global::G.CreateGoHighLevelCredentialDTO?>? gohighlevel = null,
-            global::System.Action<global::G.CreateGoogleCredentialDTO?>? google = null,
-            global::System.Action<global::G.CreateGroqCredentialDTO?>? groq = null,
-            global::System.Action<global::G.CreateHumeCredentialDTO?>? hume = null,
-            global::System.Action<global::G.CreateInflectionAICredentialDTO?>? inflectionAi = null,
-            global::System.Action<global::G.CreateLangfuseCredentialDTO?>? langfuse = null,
-            global::System.Action<global::G.CreateLmntCredentialDTO?>? lmnt = null,
-            global::System.Action<global::G.CreateMakeCredentialDTO?>? make = null,
-            global::System.Action<global::G.CreateMistralCredentialDTO?>? mistral = null,
-            global::System.Action<global::G.CreateNeuphonicCredentialDTO?>? neuphonic = null,
-            global::System.Action<global::G.CreateOpenAICredentialDTO?>? openai = null,
-            global::System.Action<global::G.CreateOpenRouterCredentialDTO?>? openrouter = null,
-            global::System.Action<global::G.CreatePerplexityAICredentialDTO?>? perplexityAi = null,
-            global::System.Action<global::G.CreatePlayHTCredentialDTO?>? playht = null,
-            global::System.Action<global::G.CreateRimeAICredentialDTO?>? rimeAi = null,
-            global::System.Action<global::G.CreateRunpodCredentialDTO?>? runpod = null,
-            global::System.Action<global::G.CreateS3CredentialDTO?>? s3 = null,
-            global::System.Action<global::G.CreateSmallestAICredentialDTO?>? smallestAi = null,
-            global::System.Action<global::G.CreateSpeechmaticsCredentialDTO?>? speechmatics = null,
-            global::System.Action<global::G.CreateSonioxCredentialDTO?>? soniox = null,
-            global::System.Action<global::G.CreateSupabaseCredentialDTO?>? supabase = null,
-            global::System.Action<global::G.CreateTavusCredentialDTO?>? tavus = null,
-            global::System.Action<global::G.CreateTogetherAICredentialDTO?>? togetherAi = null,
-            global::System.Action<global::G.CreateTrieveCredentialDTO?>? trieve = null,
-            global::System.Action<global::G.CreateTwilioCredentialDTO?>? twilio = null,
-            global::System.Action<global::G.CreateVonageCredentialDTO?>? vonage = null,
-            global::System.Action<global::G.CreateWebhookCredentialDTO?>? webhook = null,
-            global::System.Action<global::G.CreateCustomCredentialDTO?>? customCredential = null,
-            global::System.Action<global::G.CreateXAiCredentialDTO?>? xai = null,
-            global::System.Action<global::G.CreateGoogleCalendarOAuth2ClientCredentialDTO?>? googleCalendarOauth2Client = null,
-            global::System.Action<global::G.CreateGoogleCalendarOAuth2AuthorizationCredentialDTO?>? googleCalendarOauth2Authorization = null,
-            global::System.Action<global::G.CreateGoogleSheetsOAuth2AuthorizationCredentialDTO?>? googleSheetsOauth2Authorization = null,
-            global::System.Action<global::G.CreateSlackOAuth2AuthorizationCredentialDTO?>? slackOauth2Authorization = null,
-            global::System.Action<global::G.CreateGoHighLevelMCPCredentialDTO?>? ghlOauth2Authorization = null,
-            global::System.Action<global::G.CreateInworldCredentialDTO?>? inworld = null,
-            global::System.Action<global::G.CreateMinimaxCredentialDTO?>? minimax = null,
-            global::System.Action<global::G.CreateWellSaidCredentialDTO?>? wellsaid = null,
-            global::System.Action<global::G.CreateEmailCredentialDTO?>? email = null,
-            global::System.Action<global::G.CreateSlackWebhookCredentialDTO?>? slackWebhook = null,
+            global::System.Action<global::G.CreateAnthropicCredentialDTO>? anthropic = null,
+
+            global::System.Action<global::G.CreateAnthropicBedrockCredentialDTO>? anthropicBedrock = null,
+
+            global::System.Action<global::G.CreateAnyscaleCredentialDTO>? anyscale = null,
+
+            global::System.Action<global::G.CreateAssemblyAICredentialDTO>? assemblyAi = null,
+
+            global::System.Action<global::G.CreateAzureCredentialDTO>? azure = null,
+
+            global::System.Action<global::G.CreateAzureOpenAICredentialDTO>? azureOpenai = null,
+
+            global::System.Action<global::G.CreateByoSipTrunkCredentialDTO>? byoSipTrunk = null,
+
+            global::System.Action<global::G.CreateCartesiaCredentialDTO>? cartesia = null,
+
+            global::System.Action<global::G.CreateCerebrasCredentialDTO>? cerebras = null,
+
+            global::System.Action<global::G.CreateCloudflareCredentialDTO>? cloudflare = null,
+
+            global::System.Action<global::G.CreateCustomLLMCredentialDTO>? customLlm = null,
+
+            global::System.Action<global::G.CreateDeepgramCredentialDTO>? deepgram = null,
+
+            global::System.Action<global::G.CreateDeepInfraCredentialDTO>? deepinfra = null,
+
+            global::System.Action<global::G.CreateDeepSeekCredentialDTO>? deepSeek = null,
+
+            global::System.Action<global::G.CreateElevenLabsCredentialDTO>? elevenlabs = null,
+
+            global::System.Action<global::G.CreateGcpCredentialDTO>? gcp = null,
+
+            global::System.Action<global::G.CreateGladiaCredentialDTO>? gladia = null,
+
+            global::System.Action<global::G.CreateGoHighLevelCredentialDTO>? gohighlevel = null,
+
+            global::System.Action<global::G.CreateGoogleCredentialDTO>? google = null,
+
+            global::System.Action<global::G.CreateGroqCredentialDTO>? groq = null,
+
+            global::System.Action<global::G.CreateHumeCredentialDTO>? hume = null,
+
+            global::System.Action<global::G.CreateInflectionAICredentialDTO>? inflectionAi = null,
+
+            global::System.Action<global::G.CreateLangfuseCredentialDTO>? langfuse = null,
+
+            global::System.Action<global::G.CreateLmntCredentialDTO>? lmnt = null,
+
+            global::System.Action<global::G.CreateMakeCredentialDTO>? make = null,
+
+            global::System.Action<global::G.CreateMistralCredentialDTO>? mistral = null,
+
+            global::System.Action<global::G.CreateNeuphonicCredentialDTO>? neuphonic = null,
+
+            global::System.Action<global::G.CreateOpenAICredentialDTO>? openai = null,
+
+            global::System.Action<global::G.CreateOpenRouterCredentialDTO>? openrouter = null,
+
+            global::System.Action<global::G.CreatePerplexityAICredentialDTO>? perplexityAi = null,
+
+            global::System.Action<global::G.CreatePlayHTCredentialDTO>? playht = null,
+
+            global::System.Action<global::G.CreateRimeAICredentialDTO>? rimeAi = null,
+
+            global::System.Action<global::G.CreateRunpodCredentialDTO>? runpod = null,
+
+            global::System.Action<global::G.CreateS3CredentialDTO>? s3 = null,
+
+            global::System.Action<global::G.CreateSmallestAICredentialDTO>? smallestAi = null,
+
+            global::System.Action<global::G.CreateSpeechmaticsCredentialDTO>? speechmatics = null,
+
+            global::System.Action<global::G.CreateSonioxCredentialDTO>? soniox = null,
+
+            global::System.Action<global::G.CreateSupabaseCredentialDTO>? supabase = null,
+
+            global::System.Action<global::G.CreateTavusCredentialDTO>? tavus = null,
+
+            global::System.Action<global::G.CreateTogetherAICredentialDTO>? togetherAi = null,
+
+            global::System.Action<global::G.CreateTrieveCredentialDTO>? trieve = null,
+
+            global::System.Action<global::G.CreateTwilioCredentialDTO>? twilio = null,
+
+            global::System.Action<global::G.CreateVonageCredentialDTO>? vonage = null,
+
+            global::System.Action<global::G.CreateWebhookCredentialDTO>? webhook = null,
+
+            global::System.Action<global::G.CreateCustomCredentialDTO>? customCredential = null,
+
+            global::System.Action<global::G.CreateXAiCredentialDTO>? xai = null,
+
+            global::System.Action<global::G.CreateGoogleCalendarOAuth2ClientCredentialDTO>? googleCalendarOauth2Client = null,
+
+            global::System.Action<global::G.CreateGoogleCalendarOAuth2AuthorizationCredentialDTO>? googleCalendarOauth2Authorization = null,
+
+            global::System.Action<global::G.CreateGoogleSheetsOAuth2AuthorizationCredentialDTO>? googleSheetsOauth2Authorization = null,
+
+            global::System.Action<global::G.CreateSlackOAuth2AuthorizationCredentialDTO>? slackOauth2Authorization = null,
+
+            global::System.Action<global::G.CreateGoHighLevelMCPCredentialDTO>? ghlOauth2Authorization = null,
+
+            global::System.Action<global::G.CreateInworldCredentialDTO>? inworld = null,
+
+            global::System.Action<global::G.CreateMinimaxCredentialDTO>? minimax = null,
+
+            global::System.Action<global::G.CreateWellSaidCredentialDTO>? wellsaid = null,
+
+            global::System.Action<global::G.CreateEmailCredentialDTO>? email = null,
+
+            global::System.Action<global::G.CreateSlackWebhookCredentialDTO>? slackWebhook = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsAnthropic)
+            {
+                anthropic?.Invoke(Anthropic!);
+            }
+            else if (IsAnthropicBedrock)
+            {
+                anthropicBedrock?.Invoke(AnthropicBedrock!);
+            }
+            else if (IsAnyscale)
+            {
+                anyscale?.Invoke(Anyscale!);
+            }
+            else if (IsAssemblyAi)
+            {
+                assemblyAi?.Invoke(AssemblyAi!);
+            }
+            else if (IsAzure)
+            {
+                azure?.Invoke(Azure!);
+            }
+            else if (IsAzureOpenai)
+            {
+                azureOpenai?.Invoke(AzureOpenai!);
+            }
+            else if (IsByoSipTrunk)
+            {
+                byoSipTrunk?.Invoke(ByoSipTrunk!);
+            }
+            else if (IsCartesia)
+            {
+                cartesia?.Invoke(Cartesia!);
+            }
+            else if (IsCerebras)
+            {
+                cerebras?.Invoke(Cerebras!);
+            }
+            else if (IsCloudflare)
+            {
+                cloudflare?.Invoke(Cloudflare!);
+            }
+            else if (IsCustomLlm)
+            {
+                customLlm?.Invoke(CustomLlm!);
+            }
+            else if (IsDeepgram)
+            {
+                deepgram?.Invoke(Deepgram!);
+            }
+            else if (IsDeepinfra)
+            {
+                deepinfra?.Invoke(Deepinfra!);
+            }
+            else if (IsDeepSeek)
+            {
+                deepSeek?.Invoke(DeepSeek!);
+            }
+            else if (IsElevenlabs)
+            {
+                elevenlabs?.Invoke(Elevenlabs!);
+            }
+            else if (IsGcp)
+            {
+                gcp?.Invoke(Gcp!);
+            }
+            else if (IsGladia)
+            {
+                gladia?.Invoke(Gladia!);
+            }
+            else if (IsGohighlevel)
+            {
+                gohighlevel?.Invoke(Gohighlevel!);
+            }
+            else if (IsGoogle)
+            {
+                google?.Invoke(Google!);
+            }
+            else if (IsGroq)
+            {
+                groq?.Invoke(Groq!);
+            }
+            else if (IsHume)
+            {
+                hume?.Invoke(Hume!);
+            }
+            else if (IsInflectionAi)
+            {
+                inflectionAi?.Invoke(InflectionAi!);
+            }
+            else if (IsLangfuse)
+            {
+                langfuse?.Invoke(Langfuse!);
+            }
+            else if (IsLmnt)
+            {
+                lmnt?.Invoke(Lmnt!);
+            }
+            else if (IsMake)
+            {
+                make?.Invoke(Make!);
+            }
+            else if (IsMistral)
+            {
+                mistral?.Invoke(Mistral!);
+            }
+            else if (IsNeuphonic)
+            {
+                neuphonic?.Invoke(Neuphonic!);
+            }
+            else if (IsOpenai)
+            {
+                openai?.Invoke(Openai!);
+            }
+            else if (IsOpenrouter)
+            {
+                openrouter?.Invoke(Openrouter!);
+            }
+            else if (IsPerplexityAi)
+            {
+                perplexityAi?.Invoke(PerplexityAi!);
+            }
+            else if (IsPlayht)
+            {
+                playht?.Invoke(Playht!);
+            }
+            else if (IsRimeAi)
+            {
+                rimeAi?.Invoke(RimeAi!);
+            }
+            else if (IsRunpod)
+            {
+                runpod?.Invoke(Runpod!);
+            }
+            else if (IsS3)
+            {
+                s3?.Invoke(S3!);
+            }
+            else if (IsSmallestAi)
+            {
+                smallestAi?.Invoke(SmallestAi!);
+            }
+            else if (IsSpeechmatics)
+            {
+                speechmatics?.Invoke(Speechmatics!);
+            }
+            else if (IsSoniox)
+            {
+                soniox?.Invoke(Soniox!);
+            }
+            else if (IsSupabase)
+            {
+                supabase?.Invoke(Supabase!);
+            }
+            else if (IsTavus)
+            {
+                tavus?.Invoke(Tavus!);
+            }
+            else if (IsTogetherAi)
+            {
+                togetherAi?.Invoke(TogetherAi!);
+            }
+            else if (IsTrieve)
+            {
+                trieve?.Invoke(Trieve!);
+            }
+            else if (IsTwilio)
+            {
+                twilio?.Invoke(Twilio!);
+            }
+            else if (IsVonage)
+            {
+                vonage?.Invoke(Vonage!);
+            }
+            else if (IsWebhook)
+            {
+                webhook?.Invoke(Webhook!);
+            }
+            else if (IsCustomCredential)
+            {
+                customCredential?.Invoke(CustomCredential!);
+            }
+            else if (IsXai)
+            {
+                xai?.Invoke(Xai!);
+            }
+            else if (IsGoogleCalendarOauth2Client)
+            {
+                googleCalendarOauth2Client?.Invoke(GoogleCalendarOauth2Client!);
+            }
+            else if (IsGoogleCalendarOauth2Authorization)
+            {
+                googleCalendarOauth2Authorization?.Invoke(GoogleCalendarOauth2Authorization!);
+            }
+            else if (IsGoogleSheetsOauth2Authorization)
+            {
+                googleSheetsOauth2Authorization?.Invoke(GoogleSheetsOauth2Authorization!);
+            }
+            else if (IsSlackOauth2Authorization)
+            {
+                slackOauth2Authorization?.Invoke(SlackOauth2Authorization!);
+            }
+            else if (IsGhlOauth2Authorization)
+            {
+                ghlOauth2Authorization?.Invoke(GhlOauth2Authorization!);
+            }
+            else if (IsInworld)
+            {
+                inworld?.Invoke(Inworld!);
+            }
+            else if (IsMinimax)
+            {
+                minimax?.Invoke(Minimax!);
+            }
+            else if (IsWellsaid)
+            {
+                wellsaid?.Invoke(Wellsaid!);
+            }
+            else if (IsEmail)
+            {
+                email?.Invoke(Email!);
+            }
+            else if (IsSlackWebhook)
+            {
+                slackWebhook?.Invoke(SlackWebhook!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.CreateAnthropicCredentialDTO>? anthropic = null,
+            global::System.Action<global::G.CreateAnthropicBedrockCredentialDTO>? anthropicBedrock = null,
+            global::System.Action<global::G.CreateAnyscaleCredentialDTO>? anyscale = null,
+            global::System.Action<global::G.CreateAssemblyAICredentialDTO>? assemblyAi = null,
+            global::System.Action<global::G.CreateAzureCredentialDTO>? azure = null,
+            global::System.Action<global::G.CreateAzureOpenAICredentialDTO>? azureOpenai = null,
+            global::System.Action<global::G.CreateByoSipTrunkCredentialDTO>? byoSipTrunk = null,
+            global::System.Action<global::G.CreateCartesiaCredentialDTO>? cartesia = null,
+            global::System.Action<global::G.CreateCerebrasCredentialDTO>? cerebras = null,
+            global::System.Action<global::G.CreateCloudflareCredentialDTO>? cloudflare = null,
+            global::System.Action<global::G.CreateCustomLLMCredentialDTO>? customLlm = null,
+            global::System.Action<global::G.CreateDeepgramCredentialDTO>? deepgram = null,
+            global::System.Action<global::G.CreateDeepInfraCredentialDTO>? deepinfra = null,
+            global::System.Action<global::G.CreateDeepSeekCredentialDTO>? deepSeek = null,
+            global::System.Action<global::G.CreateElevenLabsCredentialDTO>? elevenlabs = null,
+            global::System.Action<global::G.CreateGcpCredentialDTO>? gcp = null,
+            global::System.Action<global::G.CreateGladiaCredentialDTO>? gladia = null,
+            global::System.Action<global::G.CreateGoHighLevelCredentialDTO>? gohighlevel = null,
+            global::System.Action<global::G.CreateGoogleCredentialDTO>? google = null,
+            global::System.Action<global::G.CreateGroqCredentialDTO>? groq = null,
+            global::System.Action<global::G.CreateHumeCredentialDTO>? hume = null,
+            global::System.Action<global::G.CreateInflectionAICredentialDTO>? inflectionAi = null,
+            global::System.Action<global::G.CreateLangfuseCredentialDTO>? langfuse = null,
+            global::System.Action<global::G.CreateLmntCredentialDTO>? lmnt = null,
+            global::System.Action<global::G.CreateMakeCredentialDTO>? make = null,
+            global::System.Action<global::G.CreateMistralCredentialDTO>? mistral = null,
+            global::System.Action<global::G.CreateNeuphonicCredentialDTO>? neuphonic = null,
+            global::System.Action<global::G.CreateOpenAICredentialDTO>? openai = null,
+            global::System.Action<global::G.CreateOpenRouterCredentialDTO>? openrouter = null,
+            global::System.Action<global::G.CreatePerplexityAICredentialDTO>? perplexityAi = null,
+            global::System.Action<global::G.CreatePlayHTCredentialDTO>? playht = null,
+            global::System.Action<global::G.CreateRimeAICredentialDTO>? rimeAi = null,
+            global::System.Action<global::G.CreateRunpodCredentialDTO>? runpod = null,
+            global::System.Action<global::G.CreateS3CredentialDTO>? s3 = null,
+            global::System.Action<global::G.CreateSmallestAICredentialDTO>? smallestAi = null,
+            global::System.Action<global::G.CreateSpeechmaticsCredentialDTO>? speechmatics = null,
+            global::System.Action<global::G.CreateSonioxCredentialDTO>? soniox = null,
+            global::System.Action<global::G.CreateSupabaseCredentialDTO>? supabase = null,
+            global::System.Action<global::G.CreateTavusCredentialDTO>? tavus = null,
+            global::System.Action<global::G.CreateTogetherAICredentialDTO>? togetherAi = null,
+            global::System.Action<global::G.CreateTrieveCredentialDTO>? trieve = null,
+            global::System.Action<global::G.CreateTwilioCredentialDTO>? twilio = null,
+            global::System.Action<global::G.CreateVonageCredentialDTO>? vonage = null,
+            global::System.Action<global::G.CreateWebhookCredentialDTO>? webhook = null,
+            global::System.Action<global::G.CreateCustomCredentialDTO>? customCredential = null,
+            global::System.Action<global::G.CreateXAiCredentialDTO>? xai = null,
+            global::System.Action<global::G.CreateGoogleCalendarOAuth2ClientCredentialDTO>? googleCalendarOauth2Client = null,
+            global::System.Action<global::G.CreateGoogleCalendarOAuth2AuthorizationCredentialDTO>? googleCalendarOauth2Authorization = null,
+            global::System.Action<global::G.CreateGoogleSheetsOAuth2AuthorizationCredentialDTO>? googleSheetsOauth2Authorization = null,
+            global::System.Action<global::G.CreateSlackOAuth2AuthorizationCredentialDTO>? slackOauth2Authorization = null,
+            global::System.Action<global::G.CreateGoHighLevelMCPCredentialDTO>? ghlOauth2Authorization = null,
+            global::System.Action<global::G.CreateInworldCredentialDTO>? inworld = null,
+            global::System.Action<global::G.CreateMinimaxCredentialDTO>? minimax = null,
+            global::System.Action<global::G.CreateWellSaidCredentialDTO>? wellsaid = null,
+            global::System.Action<global::G.CreateEmailCredentialDTO>? email = null,
+            global::System.Action<global::G.CreateSlackWebhookCredentialDTO>? slackWebhook = null,
             bool validate = true)
         {
             if (validate)

@@ -51,6 +51,7 @@ namespace IXSocial
                         return new global::IXSocial.IXSocialClient(
                             httpClient: httpClient,
                             baseUri: resolveBaseUri(serviceProvider),
+                            authorizations: null,
                             options: clientOptions,
                             disposeHttpClient: false);
                     });

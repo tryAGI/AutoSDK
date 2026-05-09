@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickInjectionPostRequestBodyContentApplicationJsonSchemaPromptVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = InjectionPostRequestBodyContentApplicationJsonSchemaPromptVariant1;
+            return IsInjectionPostRequestBodyContentApplicationJsonSchemaPromptVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<string>? InjectionPostRequestBodyContentApplicationJsonSchemaPromptVariant2 { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InjectionPostRequestBodyContentApplicationJsonSchemaPromptVariant2))]
 #endif
         public bool IsInjectionPostRequestBodyContentApplicationJsonSchemaPromptVariant2 => InjectionPostRequestBodyContentApplicationJsonSchemaPromptVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickInjectionPostRequestBodyContentApplicationJsonSchemaPromptVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::System.Collections.Generic.IList<string>? value)
+        {
+            value = InjectionPostRequestBodyContentApplicationJsonSchemaPromptVariant2;
+            return IsInjectionPostRequestBodyContentApplicationJsonSchemaPromptVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -101,8 +127,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<string?, TResult>? injectionPostRequestBodyContentApplicationJsonSchemaPromptVariant1 = null,
-            global::System.Func<global::System.Collections.Generic.IList<string>?, TResult>? injectionPostRequestBodyContentApplicationJsonSchemaPromptVariant2 = null,
+            global::System.Func<string, TResult>? injectionPostRequestBodyContentApplicationJsonSchemaPromptVariant1 = null,
+            global::System.Func<global::System.Collections.Generic.IList<string>, TResult>? injectionPostRequestBodyContentApplicationJsonSchemaPromptVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -126,8 +152,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<string?>? injectionPostRequestBodyContentApplicationJsonSchemaPromptVariant1 = null,
-            global::System.Action<global::System.Collections.Generic.IList<string>?>? injectionPostRequestBodyContentApplicationJsonSchemaPromptVariant2 = null,
+            global::System.Action<string>? injectionPostRequestBodyContentApplicationJsonSchemaPromptVariant1 = null,
+
+            global::System.Action<global::System.Collections.Generic.IList<string>>? injectionPostRequestBodyContentApplicationJsonSchemaPromptVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsInjectionPostRequestBodyContentApplicationJsonSchemaPromptVariant1)
+            {
+                injectionPostRequestBodyContentApplicationJsonSchemaPromptVariant1?.Invoke(InjectionPostRequestBodyContentApplicationJsonSchemaPromptVariant1!);
+            }
+            else if (IsInjectionPostRequestBodyContentApplicationJsonSchemaPromptVariant2)
+            {
+                injectionPostRequestBodyContentApplicationJsonSchemaPromptVariant2?.Invoke(InjectionPostRequestBodyContentApplicationJsonSchemaPromptVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<string>? injectionPostRequestBodyContentApplicationJsonSchemaPromptVariant1 = null,
+            global::System.Action<global::System.Collections.Generic.IList<string>>? injectionPostRequestBodyContentApplicationJsonSchemaPromptVariant2 = null,
             bool validate = true)
         {
             if (validate)

@@ -93,6 +93,68 @@ namespace G
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            await GetTrainingsAsResponseAsync(
+                trainingId: trainingId,
+                requestOptions: requestOptions,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+        }
+        /// <summary>
+        /// Get a training<br/>
+        /// Get the current state of a training.<br/>
+        /// Example cURL request:<br/>
+        /// ```console<br/>
+        /// curl -s \<br/>
+        ///   -H "Authorization: Bearer $REPLICATE_API_TOKEN" \<br/>
+        ///   https://api.replicate.com/v1/trainings/zz4ibbonubfz7carwiefibzgga<br/>
+        /// ```<br/>
+        /// The response will be the training object:<br/>
+        /// ```json<br/>
+        /// {<br/>
+        ///   "completed_at": "2023-09-08T16:41:19.826523Z",<br/>
+        ///   "created_at": "2023-09-08T16:32:57.018467Z",<br/>
+        ///   "error": null,<br/>
+        ///   "id": "zz4ibbonubfz7carwiefibzgga",<br/>
+        ///   "input": {<br/>
+        ///     "input_images": "https://example.com/my-input-images.zip"<br/>
+        ///   },<br/>
+        ///   "logs": "...",<br/>
+        ///   "metrics": {<br/>
+        ///     "predict_time": 502.713876<br/>
+        ///   },<br/>
+        ///   "output": {<br/>
+        ///     "version": "...",<br/>
+        ///     "weights": "..."<br/>
+        ///   },<br/>
+        ///   "started_at": "2023-09-08T16:32:57.112647Z",<br/>
+        ///   "status": "succeeded",<br/>
+        ///   "urls": {<br/>
+        ///     "get": "https://api.replicate.com/v1/trainings/zz4ibbonubfz7carwiefibzgga",<br/>
+        ///     "cancel": "https://api.replicate.com/v1/trainings/zz4ibbonubfz7carwiefibzgga/cancel"<br/>
+        ///   },<br/>
+        ///   "model": "stability-ai/sdxl",<br/>
+        ///   "version": "da77bc59ee60423279fd632efb4795ab731d9e3ca9705ef3341091fb989b7eaf",<br/>
+        /// }<br/>
+        /// ```<br/>
+        /// `status` will be one of:<br/>
+        /// - `starting`: the training is starting up. If this status lasts longer than a few seconds, then it's typically because a new worker is being started to run the training.<br/>
+        /// - `processing`: the `train()` method of the model is currently running.<br/>
+        /// - `succeeded`: the training completed successfully.<br/>
+        /// - `failed`: the training encountered an error during processing.<br/>
+        /// - `canceled`: the training was canceled by its creator.<br/>
+        /// In the case of success, `output` will be an object containing the output of the model. Any files will be represented as HTTPS URLs. You'll need to pass the `Authorization` header to request them.<br/>
+        /// In the case of failure, `error` will contain the error encountered during the training.<br/>
+        /// Terminated trainings (with a status of `succeeded`, `failed`, or `canceled`) will include a `metrics` object with a `predict_time` property showing the amount of CPU or GPU time, in seconds, that the training used while running. It won't include time waiting for the training to start.
+        /// </summary>
+        /// <param name="trainingId"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse> GetTrainingsAsResponseAsync(
+            string trainingId,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             PrepareArguments(
                 client: HttpClient);
             PrepareGetTrainingsArguments(
@@ -121,6 +183,7 @@ namespace G
 
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
+
                             var __pathBuilder = new global::G.PathBuilder(
                                 path: $"/trainings/{trainingId}",
                                 baseUri: HttpClient.BaseAddress);
@@ -164,7 +227,7 @@ namespace G
                 PrepareGetTrainingsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    trainingId: trainingId);
+                    trainingId: trainingId!);
 
                 return __httpRequest;
             }
@@ -194,6 +257,8 @@ namespace G
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                     try
                     {
@@ -204,6 +269,11 @@ namespace G
                     }
                     catch (global::System.Net.Http.HttpRequestException __exception)
                     {
+                        var __retryDelay = global::G.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: null,
+                            attempt: __attempt);
                         var __willRetry = __attempt < __maxAttempts && !__effectiveCancellationToken.IsCancellationRequested;
                         await global::G.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
@@ -221,6 +291,8 @@ namespace G
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: __willRetry,
+                                retryDelay: __willRetry ? __retryDelay : (global::System.TimeSpan?)null,
+                                retryReason: "exception",
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         if (!__willRetry)
                         {
@@ -230,8 +302,7 @@ namespace G
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::G.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -240,6 +311,11 @@ namespace G
                         __attempt < __maxAttempts &&
                         global::G.AutoSDKRequestOptionsSupport.ShouldRetryStatusCode(__response.StatusCode))
                     {
+                        var __retryDelay = global::G.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: __response,
+                            attempt: __attempt);
                         await global::G.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
@@ -256,14 +332,15 @@ namespace G
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: true,
+                                retryDelay: __retryDelay,
+                                retryReason: "status:" + ((int)__response.StatusCode).ToString(global::System.Globalization.CultureInfo.InvariantCulture),
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         __response.Dispose();
                         __response = null;
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::G.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -303,6 +380,8 @@ namespace G
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
                 else
@@ -323,6 +402,8 @@ namespace G
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
 
@@ -343,6 +424,10 @@ namespace G
                                 {
                                     __response.EnsureSuccessStatusCode();
 
+                return new global::G.AutoSDKHttpResponse(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri);
                                 }
                                 catch (global::System.Exception __ex)
                                 {
@@ -364,6 +449,10 @@ namespace G
                                 try
                                 {
                                     __response.EnsureSuccessStatusCode();
+                                    return new global::G.AutoSDKHttpResponse(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri);
                                 }
                                 catch (global::System.Exception __ex)
                                 {

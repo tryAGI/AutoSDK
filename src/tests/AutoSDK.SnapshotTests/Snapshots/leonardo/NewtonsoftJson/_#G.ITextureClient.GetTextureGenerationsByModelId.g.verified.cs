@@ -39,6 +39,29 @@ namespace G
         /// Default Value: 10
         /// </param>
         /// <param name="modelId"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.GetTextureGenerationsByModelIdResponse>> GetTextureGenerationsByModelIdAsResponseAsync(
+            string modelId,
+
+            global::G.GetTextureGenerationsByModelIdRequest request,
+            int? offset = default,
+            int? limit = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Get texture generations by 3D Model ID<br/>
+        /// This endpoint gets the specific texture generations by the 3d model id.
+        /// </summary>
+        /// <param name="offset">
+        /// Default Value: 0
+        /// </param>
+        /// <param name="limit">
+        /// Default Value: 10
+        /// </param>
+        /// <param name="modelId"></param>
         /// <param name="requestLimit"></param>
         /// <param name="requestModelId"></param>
         /// <param name="requestOffset"></param>

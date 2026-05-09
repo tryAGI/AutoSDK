@@ -33,6 +33,19 @@ namespace G
         public bool IsText => Text != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickText(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.AgentTextInput? value)
+        {
+            value = Text;
+            return IsText;
+        }
+
+        /// <summary>
         /// An input that invokes a skill by name.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -48,6 +61,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Skill))]
 #endif
         public bool IsSkill => Skill != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSkill(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.AgentSkillInput? value)
+        {
+            value = Skill;
+            return IsSkill;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -127,8 +153,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.AgentTextInput?, TResult>? text = null,
-            global::System.Func<global::G.AgentSkillInput?, TResult>? skill = null,
+            global::System.Func<global::G.AgentTextInput, TResult>? text = null,
+            global::System.Func<global::G.AgentSkillInput, TResult>? skill = null,
             bool validate = true)
         {
             if (validate)
@@ -152,8 +178,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.AgentTextInput?>? text = null,
-            global::System.Action<global::G.AgentSkillInput?>? skill = null,
+            global::System.Action<global::G.AgentTextInput>? text = null,
+
+            global::System.Action<global::G.AgentSkillInput>? skill = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsText)
+            {
+                text?.Invoke(Text!);
+            }
+            else if (IsSkill)
+            {
+                skill?.Invoke(Skill!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.AgentTextInput>? text = null,
+            global::System.Action<global::G.AgentSkillInput>? skill = null,
             bool validate = true)
         {
             if (validate)

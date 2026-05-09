@@ -41,6 +41,30 @@ namespace G
         /// <param name="owner"></param>
         /// <param name="repo"></param>
         /// <param name="environmentName"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.Environment>> ReposCreateOrUpdateEnvironmentAsResponseAsync(
+            string owner,
+            string repo,
+            string environmentName,
+
+            global::G.ReposCreateOrUpdateEnvironmentRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create or update an environment<br/>
+        /// Create or update an environment with protection rules, such as required reviewers. For more information about environment protection rules, see "[Environments](/actions/reference/environments#environment-protection-rules)."<br/>
+        /// &gt; [!NOTE]<br/>
+        /// &gt; To create or update name patterns that branches must match in order to deploy to this environment, see "[Deployment branch policies](/rest/deployments/branch-policies)."<br/>
+        /// &gt; [!NOTE]<br/>
+        /// &gt; To create or update secrets for an environment, see "[GitHub Actions secrets](/rest/actions/secrets)."<br/>
+        /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+        /// </summary>
+        /// <param name="owner"></param>
+        /// <param name="repo"></param>
+        /// <param name="environmentName"></param>
         /// <param name="waitTimer">
         /// The amount of time to delay a job after the job is initially triggered. The time (in minutes) must be an integer between 0 and 43,200 (30 days).<br/>
         /// Example: 30

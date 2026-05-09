@@ -29,6 +29,23 @@ namespace G
         /// Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the **channel:manage:schedule** scope.
         /// </summary>
         /// <param name="broadcasterId"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.CreateChannelStreamScheduleSegmentResponse>> CreateChannelStreamScheduleSegmentAsResponseAsync(
+            string broadcasterId,
+
+            global::G.CreateChannelStreamScheduleSegmentBody request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Adds a single or recurring broadcast to the broadcaster’s streaming schedule.<br/>
+        /// Adds a single or recurring broadcast to the broadcaster’s streaming schedule. For information about scheduling broadcasts, see [Stream Schedule](https://help.twitch.tv/s/article/channel-page-setup#Schedule).<br/>
+        /// __Authorization:__<br/>
+        /// Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the **channel:manage:schedule** scope.
+        /// </summary>
+        /// <param name="broadcasterId"></param>
         /// <param name="startTime">
         /// The date and time that the broadcast segment starts. Specify the date and time in RFC3339 format (for example, 2021-07-01T18:00:00Z).
         /// </param>

@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickBaseMessagesResultContentItemsOneOf10Content0(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.BaseMessagesResultContentItemsOneOf10Content0? value)
+        {
+            value = BaseMessagesResultContentItemsOneOf10Content0;
+            return IsBaseMessagesResultContentItemsOneOf10Content0;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.BaseMessagesResultContentItemsOneOf10Content1? BaseMessagesResultContentItemsOneOf10Content1 { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BaseMessagesResultContentItemsOneOf10Content1))]
 #endif
         public bool IsBaseMessagesResultContentItemsOneOf10Content1 => BaseMessagesResultContentItemsOneOf10Content1 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickBaseMessagesResultContentItemsOneOf10Content1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.BaseMessagesResultContentItemsOneOf10Content1? value)
+        {
+            value = BaseMessagesResultContentItemsOneOf10Content1;
+            return IsBaseMessagesResultContentItemsOneOf10Content1;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -119,8 +145,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.BaseMessagesResultContentItemsOneOf10Content0?, TResult>? baseMessagesResultContentItemsOneOf10Content0 = null,
-            global::System.Func<global::G.BaseMessagesResultContentItemsOneOf10Content1?, TResult>? baseMessagesResultContentItemsOneOf10Content1 = null,
+            global::System.Func<global::G.BaseMessagesResultContentItemsOneOf10Content0, TResult>? baseMessagesResultContentItemsOneOf10Content0 = null,
+            global::System.Func<global::G.BaseMessagesResultContentItemsOneOf10Content1, TResult>? baseMessagesResultContentItemsOneOf10Content1 = null,
             bool validate = true)
         {
             if (validate)
@@ -144,8 +170,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.BaseMessagesResultContentItemsOneOf10Content0?>? baseMessagesResultContentItemsOneOf10Content0 = null,
-            global::System.Action<global::G.BaseMessagesResultContentItemsOneOf10Content1?>? baseMessagesResultContentItemsOneOf10Content1 = null,
+            global::System.Action<global::G.BaseMessagesResultContentItemsOneOf10Content0>? baseMessagesResultContentItemsOneOf10Content0 = null,
+
+            global::System.Action<global::G.BaseMessagesResultContentItemsOneOf10Content1>? baseMessagesResultContentItemsOneOf10Content1 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsBaseMessagesResultContentItemsOneOf10Content0)
+            {
+                baseMessagesResultContentItemsOneOf10Content0?.Invoke(BaseMessagesResultContentItemsOneOf10Content0!);
+            }
+            else if (IsBaseMessagesResultContentItemsOneOf10Content1)
+            {
+                baseMessagesResultContentItemsOneOf10Content1?.Invoke(BaseMessagesResultContentItemsOneOf10Content1!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.BaseMessagesResultContentItemsOneOf10Content0>? baseMessagesResultContentItemsOneOf10Content0 = null,
+            global::System.Action<global::G.BaseMessagesResultContentItemsOneOf10Content1>? baseMessagesResultContentItemsOneOf10Content1 = null,
             bool validate = true)
         {
             if (validate)

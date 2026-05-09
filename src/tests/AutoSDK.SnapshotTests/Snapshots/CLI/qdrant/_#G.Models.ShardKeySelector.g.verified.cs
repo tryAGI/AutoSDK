@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickShardKey(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ShardKey? value)
+        {
+            value = ShardKey;
+            return IsShardKey;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<global::G.ShardKey>? ShardKeySelectorVariant2 { get; init; }
 #else
@@ -47,6 +60,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickShardKeySelectorVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::System.Collections.Generic.IList<global::G.ShardKey>? value)
+        {
+            value = ShardKeySelectorVariant2;
+            return IsShardKeySelectorVariant2;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ShardKeyWithFallback? WithFallback { get; init; }
 #else
@@ -60,6 +86,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(WithFallback))]
 #endif
         public bool IsWithFallback => WithFallback != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickWithFallback(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ShardKeyWithFallback? value)
+        {
+            value = WithFallback;
+            return IsWithFallback;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -141,8 +180,8 @@ namespace G
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::G.ShardKey?, TResult>? shardKey = null,
-            global::System.Func<global::System.Collections.Generic.IList<global::G.ShardKey>?, TResult>? shardKeySelectorVariant2 = null,
-            global::System.Func<global::G.ShardKeyWithFallback?, TResult>? withFallback = null,
+            global::System.Func<global::System.Collections.Generic.IList<global::G.ShardKey>, TResult>? shardKeySelectorVariant2 = null,
+            global::System.Func<global::G.ShardKeyWithFallback, TResult>? withFallback = null,
             bool validate = true)
         {
             if (validate)
@@ -171,8 +210,38 @@ namespace G
         /// </summary>
         public void Match(
             global::System.Action<global::G.ShardKey?>? shardKey = null,
-            global::System.Action<global::System.Collections.Generic.IList<global::G.ShardKey>?>? shardKeySelectorVariant2 = null,
-            global::System.Action<global::G.ShardKeyWithFallback?>? withFallback = null,
+
+            global::System.Action<global::System.Collections.Generic.IList<global::G.ShardKey>>? shardKeySelectorVariant2 = null,
+
+            global::System.Action<global::G.ShardKeyWithFallback>? withFallback = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsShardKey)
+            {
+                shardKey?.Invoke(ShardKey!);
+            }
+            else if (IsShardKeySelectorVariant2)
+            {
+                shardKeySelectorVariant2?.Invoke(ShardKeySelectorVariant2!);
+            }
+            else if (IsWithFallback)
+            {
+                withFallback?.Invoke(WithFallback!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.ShardKey?>? shardKey = null,
+            global::System.Action<global::System.Collections.Generic.IList<global::G.ShardKey>>? shardKeySelectorVariant2 = null,
+            global::System.Action<global::G.ShardKeyWithFallback>? withFallback = null,
             bool validate = true)
         {
             if (validate)

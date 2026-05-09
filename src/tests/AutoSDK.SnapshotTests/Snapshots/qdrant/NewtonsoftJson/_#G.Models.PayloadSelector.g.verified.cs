@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickInclude(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.PayloadSelectorInclude? value)
+        {
+            value = Include;
+            return IsInclude;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.PayloadSelectorExclude? Exclude { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Exclude))]
 #endif
         public bool IsExclude => Exclude != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickExclude(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.PayloadSelectorExclude? value)
+        {
+            value = Exclude;
+            return IsExclude;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -119,8 +145,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.PayloadSelectorInclude?, TResult>? include = null,
-            global::System.Func<global::G.PayloadSelectorExclude?, TResult>? exclude = null,
+            global::System.Func<global::G.PayloadSelectorInclude, TResult>? include = null,
+            global::System.Func<global::G.PayloadSelectorExclude, TResult>? exclude = null,
             bool validate = true)
         {
             if (validate)
@@ -144,8 +170,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.PayloadSelectorInclude?>? include = null,
-            global::System.Action<global::G.PayloadSelectorExclude?>? exclude = null,
+            global::System.Action<global::G.PayloadSelectorInclude>? include = null,
+
+            global::System.Action<global::G.PayloadSelectorExclude>? exclude = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsInclude)
+            {
+                include?.Invoke(Include!);
+            }
+            else if (IsExclude)
+            {
+                exclude?.Invoke(Exclude!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.PayloadSelectorInclude>? include = null,
+            global::System.Action<global::G.PayloadSelectorExclude>? exclude = null,
             bool validate = true)
         {
             if (validate)

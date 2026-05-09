@@ -35,6 +35,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickManagedOpenaiEmbedding(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ManagedOpenAIEmbeddingConfig? value)
+        {
+            value = ManagedOpenaiEmbedding;
+            return IsManagedOpenaiEmbedding;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.AzureOpenAIEmbeddingConfig? AzureEmbedding1 { get; init; }
 #else
@@ -48,6 +61,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AzureEmbedding1))]
 #endif
         public bool IsAzureEmbedding1 => AzureEmbedding1 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickAzureEmbedding1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.AzureOpenAIEmbeddingConfig? value)
+        {
+            value = AzureEmbedding1;
+            return IsAzureEmbedding1;
+        }
 
         /// <summary>
         /// 
@@ -69,6 +95,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickCohereEmbedding(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CohereEmbeddingConfig? value)
+        {
+            value = CohereEmbedding;
+            return IsCohereEmbedding;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.GeminiEmbeddingConfig? GeminiEmbedding { get; init; }
 #else
@@ -82,6 +121,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(GeminiEmbedding))]
 #endif
         public bool IsGeminiEmbedding => GeminiEmbedding != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickGeminiEmbedding(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.GeminiEmbeddingConfig? value)
+        {
+            value = GeminiEmbedding;
+            return IsGeminiEmbedding;
+        }
 
         /// <summary>
         /// 
@@ -103,6 +155,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickHuggingfaceApiEmbedding(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.HuggingFaceInferenceAPIEmbeddingConfig? value)
+        {
+            value = HuggingfaceApiEmbedding;
+            return IsHuggingfaceApiEmbedding;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.OpenAIEmbeddingConfig? AzureEmbedding2 { get; init; }
 #else
@@ -116,6 +181,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AzureEmbedding2))]
 #endif
         public bool IsAzureEmbedding2 => AzureEmbedding2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickAzureEmbedding2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.OpenAIEmbeddingConfig? value)
+        {
+            value = AzureEmbedding2;
+            return IsAzureEmbedding2;
+        }
 
         /// <summary>
         /// 
@@ -137,6 +215,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickVertexaiEmbedding(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.VertexAIEmbeddingConfig? value)
+        {
+            value = VertexaiEmbedding;
+            return IsVertexaiEmbedding;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.BedrockEmbeddingConfig? BedrockEmbedding { get; init; }
 #else
@@ -150,6 +241,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BedrockEmbedding))]
 #endif
         public bool IsBedrockEmbedding => BedrockEmbedding != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickBedrockEmbedding(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.BedrockEmbeddingConfig? value)
+        {
+            value = BedrockEmbedding;
+            return IsBedrockEmbedding;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -361,14 +465,14 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.ManagedOpenAIEmbeddingConfig?, TResult>? managedOpenaiEmbedding = null,
-            global::System.Func<global::G.AzureOpenAIEmbeddingConfig?, TResult>? azureEmbedding1 = null,
-            global::System.Func<global::G.CohereEmbeddingConfig?, TResult>? cohereEmbedding = null,
-            global::System.Func<global::G.GeminiEmbeddingConfig?, TResult>? geminiEmbedding = null,
-            global::System.Func<global::G.HuggingFaceInferenceAPIEmbeddingConfig?, TResult>? huggingfaceApiEmbedding = null,
-            global::System.Func<global::G.OpenAIEmbeddingConfig?, TResult>? azureEmbedding2 = null,
-            global::System.Func<global::G.VertexAIEmbeddingConfig?, TResult>? vertexaiEmbedding = null,
-            global::System.Func<global::G.BedrockEmbeddingConfig?, TResult>? bedrockEmbedding = null,
+            global::System.Func<global::G.ManagedOpenAIEmbeddingConfig, TResult>? managedOpenaiEmbedding = null,
+            global::System.Func<global::G.AzureOpenAIEmbeddingConfig, TResult>? azureEmbedding1 = null,
+            global::System.Func<global::G.CohereEmbeddingConfig, TResult>? cohereEmbedding = null,
+            global::System.Func<global::G.GeminiEmbeddingConfig, TResult>? geminiEmbedding = null,
+            global::System.Func<global::G.HuggingFaceInferenceAPIEmbeddingConfig, TResult>? huggingfaceApiEmbedding = null,
+            global::System.Func<global::G.OpenAIEmbeddingConfig, TResult>? azureEmbedding2 = null,
+            global::System.Func<global::G.VertexAIEmbeddingConfig, TResult>? vertexaiEmbedding = null,
+            global::System.Func<global::G.BedrockEmbeddingConfig, TResult>? bedrockEmbedding = null,
             bool validate = true)
         {
             if (validate)
@@ -416,14 +520,74 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.ManagedOpenAIEmbeddingConfig?>? managedOpenaiEmbedding = null,
-            global::System.Action<global::G.AzureOpenAIEmbeddingConfig?>? azureEmbedding1 = null,
-            global::System.Action<global::G.CohereEmbeddingConfig?>? cohereEmbedding = null,
-            global::System.Action<global::G.GeminiEmbeddingConfig?>? geminiEmbedding = null,
-            global::System.Action<global::G.HuggingFaceInferenceAPIEmbeddingConfig?>? huggingfaceApiEmbedding = null,
-            global::System.Action<global::G.OpenAIEmbeddingConfig?>? azureEmbedding2 = null,
-            global::System.Action<global::G.VertexAIEmbeddingConfig?>? vertexaiEmbedding = null,
-            global::System.Action<global::G.BedrockEmbeddingConfig?>? bedrockEmbedding = null,
+            global::System.Action<global::G.ManagedOpenAIEmbeddingConfig>? managedOpenaiEmbedding = null,
+
+            global::System.Action<global::G.AzureOpenAIEmbeddingConfig>? azureEmbedding1 = null,
+
+            global::System.Action<global::G.CohereEmbeddingConfig>? cohereEmbedding = null,
+
+            global::System.Action<global::G.GeminiEmbeddingConfig>? geminiEmbedding = null,
+
+            global::System.Action<global::G.HuggingFaceInferenceAPIEmbeddingConfig>? huggingfaceApiEmbedding = null,
+
+            global::System.Action<global::G.OpenAIEmbeddingConfig>? azureEmbedding2 = null,
+
+            global::System.Action<global::G.VertexAIEmbeddingConfig>? vertexaiEmbedding = null,
+
+            global::System.Action<global::G.BedrockEmbeddingConfig>? bedrockEmbedding = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsManagedOpenaiEmbedding)
+            {
+                managedOpenaiEmbedding?.Invoke(ManagedOpenaiEmbedding!);
+            }
+            else if (IsAzureEmbedding1)
+            {
+                azureEmbedding1?.Invoke(AzureEmbedding1!);
+            }
+            else if (IsCohereEmbedding)
+            {
+                cohereEmbedding?.Invoke(CohereEmbedding!);
+            }
+            else if (IsGeminiEmbedding)
+            {
+                geminiEmbedding?.Invoke(GeminiEmbedding!);
+            }
+            else if (IsHuggingfaceApiEmbedding)
+            {
+                huggingfaceApiEmbedding?.Invoke(HuggingfaceApiEmbedding!);
+            }
+            else if (IsAzureEmbedding2)
+            {
+                azureEmbedding2?.Invoke(AzureEmbedding2!);
+            }
+            else if (IsVertexaiEmbedding)
+            {
+                vertexaiEmbedding?.Invoke(VertexaiEmbedding!);
+            }
+            else if (IsBedrockEmbedding)
+            {
+                bedrockEmbedding?.Invoke(BedrockEmbedding!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.ManagedOpenAIEmbeddingConfig>? managedOpenaiEmbedding = null,
+            global::System.Action<global::G.AzureOpenAIEmbeddingConfig>? azureEmbedding1 = null,
+            global::System.Action<global::G.CohereEmbeddingConfig>? cohereEmbedding = null,
+            global::System.Action<global::G.GeminiEmbeddingConfig>? geminiEmbedding = null,
+            global::System.Action<global::G.HuggingFaceInferenceAPIEmbeddingConfig>? huggingfaceApiEmbedding = null,
+            global::System.Action<global::G.OpenAIEmbeddingConfig>? azureEmbedding2 = null,
+            global::System.Action<global::G.VertexAIEmbeddingConfig>? vertexaiEmbedding = null,
+            global::System.Action<global::G.BedrockEmbeddingConfig>? bedrockEmbedding = null,
             bool validate = true)
         {
             if (validate)

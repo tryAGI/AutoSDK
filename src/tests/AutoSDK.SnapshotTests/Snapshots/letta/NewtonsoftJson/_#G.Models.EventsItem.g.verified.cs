@@ -13,6 +13,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public string? Type { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.MetadataSendTelemetryRequestEventVariant1? SessionStart { get; init; }
 #else
@@ -26,6 +31,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SessionStart))]
 #endif
         public bool IsSessionStart => SessionStart != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSessionStart(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.MetadataSendTelemetryRequestEventVariant1? value)
+        {
+            value = SessionStart;
+            return IsSessionStart;
+        }
 
         /// <summary>
         /// 
@@ -47,6 +65,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickSessionEnd(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.MetadataSendTelemetryRequestEventVariant2? value)
+        {
+            value = SessionEnd;
+            return IsSessionEnd;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.MetadataSendTelemetryRequestEventVariant3? ToolUsage { get; init; }
 #else
@@ -60,6 +91,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ToolUsage))]
 #endif
         public bool IsToolUsage => ToolUsage != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickToolUsage(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.MetadataSendTelemetryRequestEventVariant3? value)
+        {
+            value = ToolUsage;
+            return IsToolUsage;
+        }
 
         /// <summary>
         /// 
@@ -81,6 +125,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickError(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.MetadataSendTelemetryRequestEventVariant4? value)
+        {
+            value = Error;
+            return IsError;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.MetadataSendTelemetryRequestEventVariant5? UserInput { get; init; }
 #else
@@ -94,6 +151,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(UserInput))]
 #endif
         public bool IsUserInput => UserInput != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickUserInput(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.MetadataSendTelemetryRequestEventVariant5? value)
+        {
+            value = UserInput;
+            return IsUserInput;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -188,6 +258,7 @@ namespace G
         /// 
         /// </summary>
         public EventsItem(
+            string? type,
             global::G.MetadataSendTelemetryRequestEventVariant1? sessionStart,
             global::G.MetadataSendTelemetryRequestEventVariant2? sessionEnd,
             global::G.MetadataSendTelemetryRequestEventVariant3? toolUsage,
@@ -195,6 +266,8 @@ namespace G
             global::G.MetadataSendTelemetryRequestEventVariant5? userInput
             )
         {
+            Type = type;
+
             SessionStart = sessionStart;
             SessionEnd = sessionEnd;
             ToolUsage = toolUsage;
@@ -236,11 +309,11 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.MetadataSendTelemetryRequestEventVariant1?, TResult>? sessionStart = null,
-            global::System.Func<global::G.MetadataSendTelemetryRequestEventVariant2?, TResult>? sessionEnd = null,
-            global::System.Func<global::G.MetadataSendTelemetryRequestEventVariant3?, TResult>? toolUsage = null,
-            global::System.Func<global::G.MetadataSendTelemetryRequestEventVariant4?, TResult>? error = null,
-            global::System.Func<global::G.MetadataSendTelemetryRequestEventVariant5?, TResult>? userInput = null,
+            global::System.Func<global::G.MetadataSendTelemetryRequestEventVariant1, TResult>? sessionStart = null,
+            global::System.Func<global::G.MetadataSendTelemetryRequestEventVariant2, TResult>? sessionEnd = null,
+            global::System.Func<global::G.MetadataSendTelemetryRequestEventVariant3, TResult>? toolUsage = null,
+            global::System.Func<global::G.MetadataSendTelemetryRequestEventVariant4, TResult>? error = null,
+            global::System.Func<global::G.MetadataSendTelemetryRequestEventVariant5, TResult>? userInput = null,
             bool validate = true)
         {
             if (validate)
@@ -276,11 +349,53 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.MetadataSendTelemetryRequestEventVariant1?>? sessionStart = null,
-            global::System.Action<global::G.MetadataSendTelemetryRequestEventVariant2?>? sessionEnd = null,
-            global::System.Action<global::G.MetadataSendTelemetryRequestEventVariant3?>? toolUsage = null,
-            global::System.Action<global::G.MetadataSendTelemetryRequestEventVariant4?>? error = null,
-            global::System.Action<global::G.MetadataSendTelemetryRequestEventVariant5?>? userInput = null,
+            global::System.Action<global::G.MetadataSendTelemetryRequestEventVariant1>? sessionStart = null,
+
+            global::System.Action<global::G.MetadataSendTelemetryRequestEventVariant2>? sessionEnd = null,
+
+            global::System.Action<global::G.MetadataSendTelemetryRequestEventVariant3>? toolUsage = null,
+
+            global::System.Action<global::G.MetadataSendTelemetryRequestEventVariant4>? error = null,
+
+            global::System.Action<global::G.MetadataSendTelemetryRequestEventVariant5>? userInput = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsSessionStart)
+            {
+                sessionStart?.Invoke(SessionStart!);
+            }
+            else if (IsSessionEnd)
+            {
+                sessionEnd?.Invoke(SessionEnd!);
+            }
+            else if (IsToolUsage)
+            {
+                toolUsage?.Invoke(ToolUsage!);
+            }
+            else if (IsError)
+            {
+                error?.Invoke(Error!);
+            }
+            else if (IsUserInput)
+            {
+                userInput?.Invoke(UserInput!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.MetadataSendTelemetryRequestEventVariant1>? sessionStart = null,
+            global::System.Action<global::G.MetadataSendTelemetryRequestEventVariant2>? sessionEnd = null,
+            global::System.Action<global::G.MetadataSendTelemetryRequestEventVariant3>? toolUsage = null,
+            global::System.Action<global::G.MetadataSendTelemetryRequestEventVariant4>? error = null,
+            global::System.Action<global::G.MetadataSendTelemetryRequestEventVariant5>? userInput = null,
             bool validate = true)
         {
             if (validate)

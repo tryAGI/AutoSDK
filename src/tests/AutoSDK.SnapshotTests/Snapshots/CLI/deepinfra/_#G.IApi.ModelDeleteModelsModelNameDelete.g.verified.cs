@@ -22,5 +22,22 @@ namespace G
             string? xiApiKey = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Model Delete
+        /// </summary>
+        /// <param name="modelName"></param>
+        /// <param name="version">
+        /// delete a particular version, pass 'ALL' to wipe everything
+        /// </param>
+        /// <param name="xiApiKey"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<string>> ModelDeleteModelsModelNameDeleteAsResponseAsync(
+            string modelName,
+            string version,
+            string? xiApiKey = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

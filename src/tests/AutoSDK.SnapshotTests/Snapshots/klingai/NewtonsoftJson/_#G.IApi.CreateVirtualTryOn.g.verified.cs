@@ -22,6 +22,19 @@ namespace G
         /// Create virtual try-on task<br/>
         /// Generate a virtual try-on image by placing garments on a person image.
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.CreateTaskResponse>> CreateVirtualTryOnAsResponseAsync(
+
+            global::G.CreateVirtualTryOnRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create virtual try-on task<br/>
+        /// Generate a virtual try-on image by placing garments on a person image.
+        /// </summary>
         /// <param name="modelName">
         /// Model to use for virtual try-on.<br/>
         /// Default Value: kolors-virtual-try-on-v1-5

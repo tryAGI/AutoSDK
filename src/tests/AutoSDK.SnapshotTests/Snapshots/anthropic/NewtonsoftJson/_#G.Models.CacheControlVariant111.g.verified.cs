@@ -31,6 +31,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Ephemeral))]
 #endif
         public bool IsEphemeral => Ephemeral != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickEphemeral(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.BetaCacheControlEphemeral? value)
+        {
+            value = Ephemeral;
+            return IsEphemeral;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -88,7 +101,7 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.BetaCacheControlEphemeral?, TResult>? ephemeral = null,
+            global::System.Func<global::G.BetaCacheControlEphemeral, TResult>? ephemeral = null,
             bool validate = true)
         {
             if (validate)
@@ -108,7 +121,25 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.BetaCacheControlEphemeral?>? ephemeral = null,
+            global::System.Action<global::G.BetaCacheControlEphemeral>? ephemeral = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsEphemeral)
+            {
+                ephemeral?.Invoke(Ephemeral!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.BetaCacheControlEphemeral>? ephemeral = null,
             bool validate = true)
         {
             if (validate)

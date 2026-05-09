@@ -28,6 +28,19 @@ namespace G
         public bool IsColorPaletteWithPresetName => ColorPaletteWithPresetName != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickColorPaletteWithPresetName(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ColorPaletteWithPresetName? value)
+        {
+            value = ColorPaletteWithPresetName;
+            return IsColorPaletteWithPresetName;
+        }
+
+        /// <summary>
         /// A color palette represented only via its members
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ColorPaletteWithMembers))]
 #endif
         public bool IsColorPaletteWithMembers => ColorPaletteWithMembers != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickColorPaletteWithMembers(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ColorPaletteWithMembers? value)
+        {
+            value = ColorPaletteWithMembers;
+            return IsColorPaletteWithMembers;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -119,8 +145,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.ColorPaletteWithPresetName?, TResult>? colorPaletteWithPresetName = null,
-            global::System.Func<global::G.ColorPaletteWithMembers?, TResult>? colorPaletteWithMembers = null,
+            global::System.Func<global::G.ColorPaletteWithPresetName, TResult>? colorPaletteWithPresetName = null,
+            global::System.Func<global::G.ColorPaletteWithMembers, TResult>? colorPaletteWithMembers = null,
             bool validate = true)
         {
             if (validate)
@@ -144,8 +170,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.ColorPaletteWithPresetName?>? colorPaletteWithPresetName = null,
-            global::System.Action<global::G.ColorPaletteWithMembers?>? colorPaletteWithMembers = null,
+            global::System.Action<global::G.ColorPaletteWithPresetName>? colorPaletteWithPresetName = null,
+
+            global::System.Action<global::G.ColorPaletteWithMembers>? colorPaletteWithMembers = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsColorPaletteWithPresetName)
+            {
+                colorPaletteWithPresetName?.Invoke(ColorPaletteWithPresetName!);
+            }
+            else if (IsColorPaletteWithMembers)
+            {
+                colorPaletteWithMembers?.Invoke(ColorPaletteWithMembers!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.ColorPaletteWithPresetName>? colorPaletteWithPresetName = null,
+            global::System.Action<global::G.ColorPaletteWithMembers>? colorPaletteWithMembers = null,
             bool validate = true)
         {
             if (validate)

@@ -35,6 +35,19 @@ namespace G
         public bool IsRectangle => Rectangle != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickRectangle(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.SvgRectangleShape? value)
+        {
+            value = Rectangle;
+            return IsRectangle;
+        }
+
+        /// <summary>
         /// A perfect circle shape defined by its radius.<br/>
         /// The circle is centered at the shape's position.
         /// </summary>
@@ -51,6 +64,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Circle))]
 #endif
         public bool IsCircle => Circle != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickCircle(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.SvgCircleShape? value)
+        {
+            value = Circle;
+            return IsCircle;
+        }
 
         /// <summary>
         /// An ellipse (oval) shape with separate horizontal and vertical radii.<br/>
@@ -71,6 +97,19 @@ namespace G
         public bool IsEllipse => Ellipse != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickEllipse(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.SvgEllipseShape? value)
+        {
+            value = Ellipse;
+            return IsEllipse;
+        }
+
+        /// <summary>
         /// A straight line shape with a specified length and thickness.<br/>
         /// The line is drawn horizontally by default and can be rotated using transform.
         /// </summary>
@@ -87,6 +126,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Line))]
 #endif
         public bool IsLine => Line != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickLine(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.SvgLineShape? value)
+        {
+            value = Line;
+            return IsLine;
+        }
 
         /// <summary>
         /// A regular polygon shape with a specified number of sides.<br/>
@@ -108,6 +160,19 @@ namespace G
         public bool IsPolygon => Polygon != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickPolygon(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.SvgPolygonShape? value)
+        {
+            value = Polygon;
+            return IsPolygon;
+        }
+
+        /// <summary>
         /// A star shape with a specified number of points.<br/>
         /// The star is defined by outer and inner radii, creating the characteristic<br/>
         /// pointed appearance.
@@ -125,6 +190,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Star))]
 #endif
         public bool IsStar => Star != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickStar(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.SvgStarShape? value)
+        {
+            value = Star;
+            return IsStar;
+        }
 
         /// <summary>
         /// An arrow shape pointing to the right by default.<br/>
@@ -145,6 +223,19 @@ namespace G
         public bool IsArrow => Arrow != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickArrow(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.SvgArrowShape? value)
+        {
+            value = Arrow;
+            return IsArrow;
+        }
+
+        /// <summary>
         /// A heart shape commonly used for love/like icons.<br/>
         /// The heart is defined by a single size parameter.
         /// </summary>
@@ -161,6 +252,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Heart))]
 #endif
         public bool IsHeart => Heart != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickHeart(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.SvgHeartShape? value)
+        {
+            value = Heart;
+            return IsHeart;
+        }
 
         /// <summary>
         /// A cross or plus shape with equal or different arm lengths.<br/>
@@ -181,6 +285,19 @@ namespace G
         public bool IsCross => Cross != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickCross(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.SvgCrossShape? value)
+        {
+            value = Cross;
+            return IsCross;
+        }
+
+        /// <summary>
         /// A ring (donut/annulus) shape - a circle with a circular hole in the center.<br/>
         /// The ring is defined by outer and inner radii.
         /// </summary>
@@ -197,6 +314,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Ring))]
 #endif
         public bool IsRing => Ring != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickRing(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.SvgRingShape? value)
+        {
+            value = Ring;
+            return IsRing;
+        }
 
         /// <summary>
         /// A custom shape defined by SVG path data.<br/>
@@ -226,6 +356,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Path))]
 #endif
         public bool IsPath => Path != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickPath(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.SvgPathShape? value)
+        {
+            value = Path;
+            return IsPath;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -503,17 +646,17 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.SvgRectangleShape?, TResult>? rectangle = null,
-            global::System.Func<global::G.SvgCircleShape?, TResult>? circle = null,
-            global::System.Func<global::G.SvgEllipseShape?, TResult>? ellipse = null,
-            global::System.Func<global::G.SvgLineShape?, TResult>? line = null,
-            global::System.Func<global::G.SvgPolygonShape?, TResult>? polygon = null,
-            global::System.Func<global::G.SvgStarShape?, TResult>? star = null,
-            global::System.Func<global::G.SvgArrowShape?, TResult>? arrow = null,
-            global::System.Func<global::G.SvgHeartShape?, TResult>? heart = null,
-            global::System.Func<global::G.SvgCrossShape?, TResult>? cross = null,
-            global::System.Func<global::G.SvgRingShape?, TResult>? ring = null,
-            global::System.Func<global::G.SvgPathShape?, TResult>? path = null,
+            global::System.Func<global::G.SvgRectangleShape, TResult>? rectangle = null,
+            global::System.Func<global::G.SvgCircleShape, TResult>? circle = null,
+            global::System.Func<global::G.SvgEllipseShape, TResult>? ellipse = null,
+            global::System.Func<global::G.SvgLineShape, TResult>? line = null,
+            global::System.Func<global::G.SvgPolygonShape, TResult>? polygon = null,
+            global::System.Func<global::G.SvgStarShape, TResult>? star = null,
+            global::System.Func<global::G.SvgArrowShape, TResult>? arrow = null,
+            global::System.Func<global::G.SvgHeartShape, TResult>? heart = null,
+            global::System.Func<global::G.SvgCrossShape, TResult>? cross = null,
+            global::System.Func<global::G.SvgRingShape, TResult>? ring = null,
+            global::System.Func<global::G.SvgPathShape, TResult>? path = null,
             bool validate = true)
         {
             if (validate)
@@ -573,17 +716,95 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.SvgRectangleShape?>? rectangle = null,
-            global::System.Action<global::G.SvgCircleShape?>? circle = null,
-            global::System.Action<global::G.SvgEllipseShape?>? ellipse = null,
-            global::System.Action<global::G.SvgLineShape?>? line = null,
-            global::System.Action<global::G.SvgPolygonShape?>? polygon = null,
-            global::System.Action<global::G.SvgStarShape?>? star = null,
-            global::System.Action<global::G.SvgArrowShape?>? arrow = null,
-            global::System.Action<global::G.SvgHeartShape?>? heart = null,
-            global::System.Action<global::G.SvgCrossShape?>? cross = null,
-            global::System.Action<global::G.SvgRingShape?>? ring = null,
-            global::System.Action<global::G.SvgPathShape?>? path = null,
+            global::System.Action<global::G.SvgRectangleShape>? rectangle = null,
+
+            global::System.Action<global::G.SvgCircleShape>? circle = null,
+
+            global::System.Action<global::G.SvgEllipseShape>? ellipse = null,
+
+            global::System.Action<global::G.SvgLineShape>? line = null,
+
+            global::System.Action<global::G.SvgPolygonShape>? polygon = null,
+
+            global::System.Action<global::G.SvgStarShape>? star = null,
+
+            global::System.Action<global::G.SvgArrowShape>? arrow = null,
+
+            global::System.Action<global::G.SvgHeartShape>? heart = null,
+
+            global::System.Action<global::G.SvgCrossShape>? cross = null,
+
+            global::System.Action<global::G.SvgRingShape>? ring = null,
+
+            global::System.Action<global::G.SvgPathShape>? path = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsRectangle)
+            {
+                rectangle?.Invoke(Rectangle!);
+            }
+            else if (IsCircle)
+            {
+                circle?.Invoke(Circle!);
+            }
+            else if (IsEllipse)
+            {
+                ellipse?.Invoke(Ellipse!);
+            }
+            else if (IsLine)
+            {
+                line?.Invoke(Line!);
+            }
+            else if (IsPolygon)
+            {
+                polygon?.Invoke(Polygon!);
+            }
+            else if (IsStar)
+            {
+                star?.Invoke(Star!);
+            }
+            else if (IsArrow)
+            {
+                arrow?.Invoke(Arrow!);
+            }
+            else if (IsHeart)
+            {
+                heart?.Invoke(Heart!);
+            }
+            else if (IsCross)
+            {
+                cross?.Invoke(Cross!);
+            }
+            else if (IsRing)
+            {
+                ring?.Invoke(Ring!);
+            }
+            else if (IsPath)
+            {
+                path?.Invoke(Path!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.SvgRectangleShape>? rectangle = null,
+            global::System.Action<global::G.SvgCircleShape>? circle = null,
+            global::System.Action<global::G.SvgEllipseShape>? ellipse = null,
+            global::System.Action<global::G.SvgLineShape>? line = null,
+            global::System.Action<global::G.SvgPolygonShape>? polygon = null,
+            global::System.Action<global::G.SvgStarShape>? star = null,
+            global::System.Action<global::G.SvgArrowShape>? arrow = null,
+            global::System.Action<global::G.SvgHeartShape>? heart = null,
+            global::System.Action<global::G.SvgCrossShape>? cross = null,
+            global::System.Action<global::G.SvgRingShape>? ring = null,
+            global::System.Action<global::G.SvgPathShape>? path = null,
             bool validate = true)
         {
             if (validate)

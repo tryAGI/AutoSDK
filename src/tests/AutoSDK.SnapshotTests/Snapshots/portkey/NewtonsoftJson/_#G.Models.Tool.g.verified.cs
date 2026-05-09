@@ -29,6 +29,19 @@ namespace G
         public bool IsFileSearch => FileSearch != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFileSearch(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.FileSearchTool? value)
+        {
+            value = FileSearch;
+            return IsFileSearch;
+        }
+
+        /// <summary>
         /// Defines a function in your own code the model can choose to call. Learn more<br/>
         /// about [function calling](/docs/guides/function-calling).
         /// </summary>
@@ -45,6 +58,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Function))]
 #endif
         public bool IsFunction => Function != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFunction(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.FunctionTool? value)
+        {
+            value = Function;
+            return IsFunction;
+        }
 
         /// <summary>
         /// A tool that controls a virtual computer. Learn more about the <br/>
@@ -65,6 +91,19 @@ namespace G
         public bool IsComputerUse => ComputerUse != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickComputerUse(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ComputerTool? value)
+        {
+            value = ComputerUse;
+            return IsComputerUse;
+        }
+
+        /// <summary>
         /// This tool searches the web for relevant results to use in a response.<br/>
         /// Learn more about the [web search tool](/docs/guides/tools-web-search).
         /// </summary>
@@ -81,6 +120,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(WebSearch))]
 #endif
         public bool IsWebSearch => WebSearch != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickWebSearch(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.WebSearchTool? value)
+        {
+            value = WebSearch;
+            return IsWebSearch;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -201,10 +253,10 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.FileSearchTool?, TResult>? fileSearch = null,
-            global::System.Func<global::G.FunctionTool?, TResult>? function = null,
-            global::System.Func<global::G.ComputerTool?, TResult>? computerUse = null,
-            global::System.Func<global::G.WebSearchTool?, TResult>? webSearch = null,
+            global::System.Func<global::G.FileSearchTool, TResult>? fileSearch = null,
+            global::System.Func<global::G.FunctionTool, TResult>? function = null,
+            global::System.Func<global::G.ComputerTool, TResult>? computerUse = null,
+            global::System.Func<global::G.WebSearchTool, TResult>? webSearch = null,
             bool validate = true)
         {
             if (validate)
@@ -236,10 +288,46 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.FileSearchTool?>? fileSearch = null,
-            global::System.Action<global::G.FunctionTool?>? function = null,
-            global::System.Action<global::G.ComputerTool?>? computerUse = null,
-            global::System.Action<global::G.WebSearchTool?>? webSearch = null,
+            global::System.Action<global::G.FileSearchTool>? fileSearch = null,
+
+            global::System.Action<global::G.FunctionTool>? function = null,
+
+            global::System.Action<global::G.ComputerTool>? computerUse = null,
+
+            global::System.Action<global::G.WebSearchTool>? webSearch = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsFileSearch)
+            {
+                fileSearch?.Invoke(FileSearch!);
+            }
+            else if (IsFunction)
+            {
+                function?.Invoke(Function!);
+            }
+            else if (IsComputerUse)
+            {
+                computerUse?.Invoke(ComputerUse!);
+            }
+            else if (IsWebSearch)
+            {
+                webSearch?.Invoke(WebSearch!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.FileSearchTool>? fileSearch = null,
+            global::System.Action<global::G.FunctionTool>? function = null,
+            global::System.Action<global::G.ComputerTool>? computerUse = null,
+            global::System.Action<global::G.WebSearchTool>? webSearch = null,
             bool validate = true)
         {
             if (validate)

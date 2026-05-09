@@ -35,6 +35,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickText(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.TextContent? value)
+        {
+            value = Text;
+            return IsText;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ImageContent? Image { get; init; }
 #else
@@ -48,6 +61,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Image))]
 #endif
         public bool IsImage => Image != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickImage(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ImageContent? value)
+        {
+            value = Image;
+            return IsImage;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -127,8 +153,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.TextContent?, TResult>? text = null,
-            global::System.Func<global::G.ImageContent?, TResult>? image = null,
+            global::System.Func<global::G.TextContent, TResult>? text = null,
+            global::System.Func<global::G.ImageContent, TResult>? image = null,
             bool validate = true)
         {
             if (validate)
@@ -152,8 +178,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.TextContent?>? text = null,
-            global::System.Action<global::G.ImageContent?>? image = null,
+            global::System.Action<global::G.TextContent>? text = null,
+
+            global::System.Action<global::G.ImageContent>? image = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsText)
+            {
+                text?.Invoke(Text!);
+            }
+            else if (IsImage)
+            {
+                image?.Invoke(Image!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.TextContent>? text = null,
+            global::System.Action<global::G.ImageContent>? image = null,
             bool validate = true)
         {
             if (validate)

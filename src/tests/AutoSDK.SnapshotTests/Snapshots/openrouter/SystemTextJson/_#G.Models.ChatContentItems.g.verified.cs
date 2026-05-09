@@ -28,6 +28,19 @@ namespace G
         public bool IsChatContentText => ChatContentText != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickChatContentText(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ChatContentText? value)
+        {
+            value = ChatContentText;
+            return IsChatContentText;
+        }
+
+        /// <summary>
         /// Image content part for vision models
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ChatContentImage))]
 #endif
         public bool IsChatContentImage => ChatContentImage != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickChatContentImage(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ChatContentImage? value)
+        {
+            value = ChatContentImage;
+            return IsChatContentImage;
+        }
 
         /// <summary>
         /// Audio input content part. Supported audio formats vary by provider.
@@ -64,6 +90,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickChatContentAudio(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ChatContentAudio? value)
+        {
+            value = ChatContentAudio;
+            return IsChatContentAudio;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ChatContentItems3? ChatContentItems3 { get; init; }
 #else
@@ -77,6 +116,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ChatContentItems3))]
 #endif
         public bool IsChatContentItems3 => ChatContentItems3 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickChatContentItems3(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ChatContentItems3? value)
+        {
+            value = ChatContentItems3;
+            return IsChatContentItems3;
+        }
 
         /// <summary>
         /// File content part for document processing
@@ -94,6 +146,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ChatContentFile))]
 #endif
         public bool IsChatContentFile => ChatContentFile != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickChatContentFile(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ChatContentFile? value)
+        {
+            value = ChatContentFile;
+            return IsChatContentFile;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -236,11 +301,11 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.ChatContentText?, TResult>? chatContentText = null,
-            global::System.Func<global::G.ChatContentImage?, TResult>? chatContentImage = null,
-            global::System.Func<global::G.ChatContentAudio?, TResult>? chatContentAudio = null,
+            global::System.Func<global::G.ChatContentText, TResult>? chatContentText = null,
+            global::System.Func<global::G.ChatContentImage, TResult>? chatContentImage = null,
+            global::System.Func<global::G.ChatContentAudio, TResult>? chatContentAudio = null,
             global::System.Func<global::G.ChatContentItems3?, TResult>? chatContentItems3 = null,
-            global::System.Func<global::G.ChatContentFile?, TResult>? chatContentFile = null,
+            global::System.Func<global::G.ChatContentFile, TResult>? chatContentFile = null,
             bool validate = true)
         {
             if (validate)
@@ -276,11 +341,53 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.ChatContentText?>? chatContentText = null,
-            global::System.Action<global::G.ChatContentImage?>? chatContentImage = null,
-            global::System.Action<global::G.ChatContentAudio?>? chatContentAudio = null,
+            global::System.Action<global::G.ChatContentText>? chatContentText = null,
+
+            global::System.Action<global::G.ChatContentImage>? chatContentImage = null,
+
+            global::System.Action<global::G.ChatContentAudio>? chatContentAudio = null,
+
             global::System.Action<global::G.ChatContentItems3?>? chatContentItems3 = null,
-            global::System.Action<global::G.ChatContentFile?>? chatContentFile = null,
+
+            global::System.Action<global::G.ChatContentFile>? chatContentFile = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsChatContentText)
+            {
+                chatContentText?.Invoke(ChatContentText!);
+            }
+            else if (IsChatContentImage)
+            {
+                chatContentImage?.Invoke(ChatContentImage!);
+            }
+            else if (IsChatContentAudio)
+            {
+                chatContentAudio?.Invoke(ChatContentAudio!);
+            }
+            else if (IsChatContentItems3)
+            {
+                chatContentItems3?.Invoke(ChatContentItems3!);
+            }
+            else if (IsChatContentFile)
+            {
+                chatContentFile?.Invoke(ChatContentFile!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.ChatContentText>? chatContentText = null,
+            global::System.Action<global::G.ChatContentImage>? chatContentImage = null,
+            global::System.Action<global::G.ChatContentAudio>? chatContentAudio = null,
+            global::System.Action<global::G.ChatContentItems3?>? chatContentItems3 = null,
+            global::System.Action<global::G.ChatContentFile>? chatContentFile = null,
             bool validate = true)
         {
             if (validate)

@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickUtterance(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.Utterance? value)
+        {
+            value = Utterance;
+            return IsUtterance;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ToolCallInvocationUtterance? Invocation { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Invocation))]
 #endif
         public bool IsInvocation => Invocation != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickInvocation(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ToolCallInvocationUtterance? value)
+        {
+            value = Invocation;
+            return IsInvocation;
+        }
 
         /// <summary>
         /// 
@@ -64,6 +90,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickResult(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ToolCallResultUtterance? value)
+        {
+            value = Result;
+            return IsResult;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.NodeTransitionUtterance? NodeTransition { get; init; }
 #else
@@ -81,6 +120,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickNodeTransition(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.NodeTransitionUtterance? value)
+        {
+            value = NodeTransition;
+            return IsNodeTransition;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.DTMFUtterance? Dtmf { get; init; }
 #else
@@ -94,6 +146,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Dtmf))]
 #endif
         public bool IsDtmf => Dtmf != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickDtmf(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.DTMFUtterance? value)
+        {
+            value = Dtmf;
+            return IsDtmf;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -236,11 +301,11 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.Utterance?, TResult>? utterance = null,
-            global::System.Func<global::G.ToolCallInvocationUtterance?, TResult>? invocation = null,
-            global::System.Func<global::G.ToolCallResultUtterance?, TResult>? result = null,
-            global::System.Func<global::G.NodeTransitionUtterance?, TResult>? nodeTransition = null,
-            global::System.Func<global::G.DTMFUtterance?, TResult>? dtmf = null,
+            global::System.Func<global::G.Utterance, TResult>? utterance = null,
+            global::System.Func<global::G.ToolCallInvocationUtterance, TResult>? invocation = null,
+            global::System.Func<global::G.ToolCallResultUtterance, TResult>? result = null,
+            global::System.Func<global::G.NodeTransitionUtterance, TResult>? nodeTransition = null,
+            global::System.Func<global::G.DTMFUtterance, TResult>? dtmf = null,
             bool validate = true)
         {
             if (validate)
@@ -276,11 +341,53 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.Utterance?>? utterance = null,
-            global::System.Action<global::G.ToolCallInvocationUtterance?>? invocation = null,
-            global::System.Action<global::G.ToolCallResultUtterance?>? result = null,
-            global::System.Action<global::G.NodeTransitionUtterance?>? nodeTransition = null,
-            global::System.Action<global::G.DTMFUtterance?>? dtmf = null,
+            global::System.Action<global::G.Utterance>? utterance = null,
+
+            global::System.Action<global::G.ToolCallInvocationUtterance>? invocation = null,
+
+            global::System.Action<global::G.ToolCallResultUtterance>? result = null,
+
+            global::System.Action<global::G.NodeTransitionUtterance>? nodeTransition = null,
+
+            global::System.Action<global::G.DTMFUtterance>? dtmf = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsUtterance)
+            {
+                utterance?.Invoke(Utterance!);
+            }
+            else if (IsInvocation)
+            {
+                invocation?.Invoke(Invocation!);
+            }
+            else if (IsResult)
+            {
+                result?.Invoke(Result!);
+            }
+            else if (IsNodeTransition)
+            {
+                nodeTransition?.Invoke(NodeTransition!);
+            }
+            else if (IsDtmf)
+            {
+                dtmf?.Invoke(Dtmf!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.Utterance>? utterance = null,
+            global::System.Action<global::G.ToolCallInvocationUtterance>? invocation = null,
+            global::System.Action<global::G.ToolCallResultUtterance>? result = null,
+            global::System.Action<global::G.NodeTransitionUtterance>? nodeTransition = null,
+            global::System.Action<global::G.DTMFUtterance>? dtmf = null,
             bool validate = true)
         {
             if (validate)

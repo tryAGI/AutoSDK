@@ -33,6 +33,19 @@ namespace G
         public bool IsAuto => Auto != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickAuto(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ToolChoiceAuto? value)
+        {
+            value = Auto;
+            return IsAuto;
+        }
+
+        /// <summary>
         /// The model will use any available tools.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -50,6 +63,19 @@ namespace G
         public bool IsAny => Any != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickAny(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ToolChoiceAny? value)
+        {
+            value = Any;
+            return IsAny;
+        }
+
+        /// <summary>
         /// The model will use the specified tool with `tool_choice.name`.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -65,6 +91,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Tool))]
 #endif
         public bool IsTool => Tool != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickTool(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ToolChoiceTool? value)
+        {
+            value = Tool;
+            return IsTool;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -166,9 +205,9 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.ToolChoiceAuto?, TResult>? auto = null,
-            global::System.Func<global::G.ToolChoiceAny?, TResult>? any = null,
-            global::System.Func<global::G.ToolChoiceTool?, TResult>? tool = null,
+            global::System.Func<global::G.ToolChoiceAuto, TResult>? auto = null,
+            global::System.Func<global::G.ToolChoiceAny, TResult>? any = null,
+            global::System.Func<global::G.ToolChoiceTool, TResult>? tool = null,
             bool validate = true)
         {
             if (validate)
@@ -196,9 +235,39 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.ToolChoiceAuto?>? auto = null,
-            global::System.Action<global::G.ToolChoiceAny?>? any = null,
-            global::System.Action<global::G.ToolChoiceTool?>? tool = null,
+            global::System.Action<global::G.ToolChoiceAuto>? auto = null,
+
+            global::System.Action<global::G.ToolChoiceAny>? any = null,
+
+            global::System.Action<global::G.ToolChoiceTool>? tool = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsAuto)
+            {
+                auto?.Invoke(Auto!);
+            }
+            else if (IsAny)
+            {
+                any?.Invoke(Any!);
+            }
+            else if (IsTool)
+            {
+                tool?.Invoke(Tool!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.ToolChoiceAuto>? auto = null,
+            global::System.Action<global::G.ToolChoiceAny>? any = null,
+            global::System.Action<global::G.ToolChoiceTool>? tool = null,
             bool validate = true)
         {
             if (validate)

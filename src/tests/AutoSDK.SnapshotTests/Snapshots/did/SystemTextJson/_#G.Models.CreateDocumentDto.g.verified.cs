@@ -28,6 +28,19 @@ namespace G
         public bool IsCreateDocumentDtoVariant1 => CreateDocumentDtoVariant1 != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickCreateDocumentDtoVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateDocumentDtoVariant1? value)
+        {
+            value = CreateDocumentDtoVariant1;
+            return IsCreateDocumentDtoVariant1;
+        }
+
+        /// <summary>
         /// Construct a type with the properties of T except for those in type K.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CreateDocumentDtoVariant2))]
 #endif
         public bool IsCreateDocumentDtoVariant2 => CreateDocumentDtoVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickCreateDocumentDtoVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateDocumentDtoVariant2? value)
+        {
+            value = CreateDocumentDtoVariant2;
+            return IsCreateDocumentDtoVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -119,8 +145,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.CreateDocumentDtoVariant1?, TResult>? createDocumentDtoVariant1 = null,
-            global::System.Func<global::G.CreateDocumentDtoVariant2?, TResult>? createDocumentDtoVariant2 = null,
+            global::System.Func<global::G.CreateDocumentDtoVariant1, TResult>? createDocumentDtoVariant1 = null,
+            global::System.Func<global::G.CreateDocumentDtoVariant2, TResult>? createDocumentDtoVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -144,8 +170,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.CreateDocumentDtoVariant1?>? createDocumentDtoVariant1 = null,
-            global::System.Action<global::G.CreateDocumentDtoVariant2?>? createDocumentDtoVariant2 = null,
+            global::System.Action<global::G.CreateDocumentDtoVariant1>? createDocumentDtoVariant1 = null,
+
+            global::System.Action<global::G.CreateDocumentDtoVariant2>? createDocumentDtoVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsCreateDocumentDtoVariant1)
+            {
+                createDocumentDtoVariant1?.Invoke(CreateDocumentDtoVariant1!);
+            }
+            else if (IsCreateDocumentDtoVariant2)
+            {
+                createDocumentDtoVariant2?.Invoke(CreateDocumentDtoVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.CreateDocumentDtoVariant1>? createDocumentDtoVariant1 = null,
+            global::System.Action<global::G.CreateDocumentDtoVariant2>? createDocumentDtoVariant2 = null,
             bool validate = true)
         {
             if (validate)

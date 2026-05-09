@@ -33,6 +33,19 @@ namespace G
         public bool IsTextToSpeech => TextToSpeech != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickTextToSpeech(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ShotstackTextToSpeechOptions? value)
+        {
+            value = TextToSpeech;
+            return IsTextToSpeech;
+        }
+
+        /// <summary>
         /// Options for the Shotstack text-to-image service. Set a text prompt to generate an image from. The output will be  generated as a PNG file available at the URL returned in the response.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -48,6 +61,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TextToImage))]
 #endif
         public bool IsTextToImage => TextToImage != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickTextToImage(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ShotstackTextToImageOptions? value)
+        {
+            value = TextToImage;
+            return IsTextToImage;
+        }
 
         /// <summary>
         /// Options for the Shotstack text-generator service. Set a text prompt that will be used to generate a new body of text. The output will be generated as a text (txt) file available at the URL returned in the response.
@@ -67,6 +93,19 @@ namespace G
         public bool IsTextGenerator => TextGenerator != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickTextGenerator(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ShotstackTextGeneratorOptions? value)
+        {
+            value = TextGenerator;
+            return IsTextGenerator;
+        }
+
+        /// <summary>
         /// Options for the Shotstack image-to-video service. Set the URL of an image to convert in to a video. The output will be generated as an MP4 file available at the URL returned in the response.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -82,6 +121,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ImageToVideo))]
 #endif
         public bool IsImageToVideo => ImageToVideo != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickImageToVideo(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ShotstackImageToVideoOptions? value)
+        {
+            value = ImageToVideo;
+            return IsImageToVideo;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -205,10 +257,10 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.ShotstackTextToSpeechOptions?, TResult>? textToSpeech = null,
-            global::System.Func<global::G.ShotstackTextToImageOptions?, TResult>? textToImage = null,
-            global::System.Func<global::G.ShotstackTextGeneratorOptions?, TResult>? textGenerator = null,
-            global::System.Func<global::G.ShotstackImageToVideoOptions?, TResult>? imageToVideo = null,
+            global::System.Func<global::G.ShotstackTextToSpeechOptions, TResult>? textToSpeech = null,
+            global::System.Func<global::G.ShotstackTextToImageOptions, TResult>? textToImage = null,
+            global::System.Func<global::G.ShotstackTextGeneratorOptions, TResult>? textGenerator = null,
+            global::System.Func<global::G.ShotstackImageToVideoOptions, TResult>? imageToVideo = null,
             bool validate = true)
         {
             if (validate)
@@ -240,10 +292,46 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.ShotstackTextToSpeechOptions?>? textToSpeech = null,
-            global::System.Action<global::G.ShotstackTextToImageOptions?>? textToImage = null,
-            global::System.Action<global::G.ShotstackTextGeneratorOptions?>? textGenerator = null,
-            global::System.Action<global::G.ShotstackImageToVideoOptions?>? imageToVideo = null,
+            global::System.Action<global::G.ShotstackTextToSpeechOptions>? textToSpeech = null,
+
+            global::System.Action<global::G.ShotstackTextToImageOptions>? textToImage = null,
+
+            global::System.Action<global::G.ShotstackTextGeneratorOptions>? textGenerator = null,
+
+            global::System.Action<global::G.ShotstackImageToVideoOptions>? imageToVideo = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsTextToSpeech)
+            {
+                textToSpeech?.Invoke(TextToSpeech!);
+            }
+            else if (IsTextToImage)
+            {
+                textToImage?.Invoke(TextToImage!);
+            }
+            else if (IsTextGenerator)
+            {
+                textGenerator?.Invoke(TextGenerator!);
+            }
+            else if (IsImageToVideo)
+            {
+                imageToVideo?.Invoke(ImageToVideo!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.ShotstackTextToSpeechOptions>? textToSpeech = null,
+            global::System.Action<global::G.ShotstackTextToImageOptions>? textToImage = null,
+            global::System.Action<global::G.ShotstackTextGeneratorOptions>? textGenerator = null,
+            global::System.Action<global::G.ShotstackImageToVideoOptions>? imageToVideo = null,
             bool validate = true)
         {
             if (validate)

@@ -21,5 +21,21 @@ namespace G
             global::System.Collections.Generic.IList<string> emoteSetId,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Gets emotes for one or more specified emote sets.<br/>
+        /// Gets emotes for one or more specified emote sets.<br/>
+        /// An emote set groups emotes that have a similar context. For example, Twitch places all the subscriber emotes that a broadcaster uploads for their channel in the same emote set.<br/>
+        /// [Learn More](https://dev.twitch.tv/docs/irc/emotes)<br/>
+        /// __Authorization:__<br/>
+        /// Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens).
+        /// </summary>
+        /// <param name="emoteSetId"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.GetEmoteSetsResponse>> GetEmoteSetsAsResponseAsync(
+            global::System.Collections.Generic.IList<string> emoteSetId,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

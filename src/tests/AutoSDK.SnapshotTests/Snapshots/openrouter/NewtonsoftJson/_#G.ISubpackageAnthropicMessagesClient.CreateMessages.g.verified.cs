@@ -22,6 +22,19 @@ namespace G
         /// Create a message<br/>
         /// Creates a message using the Anthropic Messages API format. Supports text, images, PDFs, tools, and extended thinking.
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.MessagesResult>> CreateMessagesAsResponseAsync(
+
+            global::G.MessagesRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create a message<br/>
+        /// Creates a message using the Anthropic Messages API format. Supports text, images, PDFs, tools, and extended thinking.
+        /// </summary>
         /// <param name="model"></param>
         /// <param name="maxTokens"></param>
         /// <param name="messages"></param>

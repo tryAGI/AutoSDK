@@ -24,6 +24,14 @@ namespace G.JsonConverters
                 foreach (var __jsonProp in __jsonDocument.RootElement.EnumerateObject())
                 {
                     __jsonProps.Add(__jsonProp.Name);
+                    if (__jsonProp.Value.ValueKind == global::System.Text.Json.JsonValueKind.Object)
+                    {
+                        foreach (var __nestedJsonProp in __jsonProp.Value.EnumerateObject())
+                        {
+                            __jsonProps.Add(__jsonProp.Name + "." + __nestedJsonProp.Name);
+                        }
+                    }
+
                 }
             }
 
@@ -31,37 +39,53 @@ namespace G.JsonConverters
             if (__jsonProps.Contains("description")) __score0++;
             if (__jsonProps.Contains("function")) __score0++;
             if (__jsonProps.Contains("position")) __score0++;
+            if (__jsonProps.Contains("position.x")) __score0++;
+            if (__jsonProps.Contains("position.y")) __score0++;
             if (__jsonProps.Contains("type")) __score0++;
             var __score1 = 0;
             if (__jsonProps.Contains("description")) __score1++;
             if (__jsonProps.Contains("position")) __score1++;
+            if (__jsonProps.Contains("position.x")) __score1++;
+            if (__jsonProps.Contains("position.y")) __score1++;
             if (__jsonProps.Contains("type")) __score1++;
             var __score2 = 0;
             if (__jsonProps.Contains("description")) __score2++;
             if (__jsonProps.Contains("position")) __score2++;
+            if (__jsonProps.Contains("position.x")) __score2++;
+            if (__jsonProps.Contains("position.y")) __score2++;
             if (__jsonProps.Contains("type")) __score2++;
             var __score3 = 0;
             if (__jsonProps.Contains("description")) __score3++;
             if (__jsonProps.Contains("position")) __score3++;
+            if (__jsonProps.Contains("position.x")) __score3++;
+            if (__jsonProps.Contains("position.y")) __score3++;
             if (__jsonProps.Contains("type")) __score3++;
             if (__jsonProps.Contains("value")) __score3++;
             var __score4 = 0;
             if (__jsonProps.Contains("description")) __score4++;
             if (__jsonProps.Contains("expr")) __score4++;
             if (__jsonProps.Contains("position")) __score4++;
+            if (__jsonProps.Contains("position.x")) __score4++;
+            if (__jsonProps.Contains("position.y")) __score4++;
             if (__jsonProps.Contains("type")) __score4++;
             var __score5 = 0;
             if (__jsonProps.Contains("condition")) __score5++;
             if (__jsonProps.Contains("description")) __score5++;
             if (__jsonProps.Contains("position")) __score5++;
+            if (__jsonProps.Contains("position.x")) __score5++;
+            if (__jsonProps.Contains("position.y")) __score5++;
             if (__jsonProps.Contains("type")) __score5++;
             var __score6 = 0;
             if (__jsonProps.Contains("description")) __score6++;
             if (__jsonProps.Contains("position")) __score6++;
+            if (__jsonProps.Contains("position.x")) __score6++;
+            if (__jsonProps.Contains("position.y")) __score6++;
             if (__jsonProps.Contains("type")) __score6++;
             var __score7 = 0;
             if (__jsonProps.Contains("description")) __score7++;
             if (__jsonProps.Contains("position")) __score7++;
+            if (__jsonProps.Contains("position.x")) __score7++;
+            if (__jsonProps.Contains("position.y")) __score7++;
             if (__jsonProps.Contains("prompt")) __score7++;
             if (__jsonProps.Contains("type")) __score7++;
             var __bestScore = 0;

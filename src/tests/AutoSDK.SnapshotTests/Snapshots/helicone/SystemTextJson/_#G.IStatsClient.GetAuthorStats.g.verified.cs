@@ -19,5 +19,19 @@ namespace G
             global::G.StatsTimeFrame? timeframe = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Get statistics for a specific model author.<br/>
+        /// Returns time series data and a leaderboard of top models by that author.
+        /// </summary>
+        /// <param name="author"></param>
+        /// <param name="timeframe"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.ResultAuthorStatsResponseString>> GetAuthorStatsAsResponseAsync(
+            string author,
+            global::G.StatsTimeFrame? timeframe = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

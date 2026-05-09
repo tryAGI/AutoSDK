@@ -7,6 +7,19 @@ namespace G
     public partial class Api
     {
 
+        private static readonly global::G.AutoSDKServer[] s_OpenGetSpaceFolderServers = new global::G.AutoSDKServer[]
+        {            new global::G.AutoSDKServer(
+                id: "https-api-coze-com",
+                name: "International",
+                url: "https://api.coze.com/",
+                description: "International"),
+            new global::G.AutoSDKServer(
+                id: "https-api-coze-cn",
+                name: "China",
+                url: "https://api.coze.cn/",
+                description: "China"),
+        };
+
 
         private static readonly global::G.EndPointSecurityRequirement s_OpenGetSpaceFolderSecurityRequirement0 =
             new global::G.EndPointSecurityRequirement
@@ -71,6 +84,39 @@ namespace G
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var __response = await OpenGetSpaceFolderAsResponseAsync(
+                workspaceId: workspaceId,
+                folderType: folderType,
+                parentFolderId: parentFolderId,
+                pageNum: pageNum,
+                pageSize: pageSize,
+                requestOptions: requestOptions,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// 查询文件夹列表<br/>
+        /// {"0":{"ops":[{"insert":"工作空间中的用户可以查询工作空间中的文件夹列表。\n"},{"attributes":{"anchor":"6aa831bb","heading":"h2","lmkr":"1"},"insert":"*"},{"insert":"接口描述\n"},{"attributes":{"lmkr":"1"},"insert":"*"},{"insert":"你可以查询某个文件夹或工作空间根目录下的子文件夹列表。每次查询仅返回下一层级的文件夹信息，不包含更深层级的子文件夹。若需要获取更深层级的文件夹信息，你可以多次调用本 API，利用上一次查询返回的文件夹 ID 继续查询。\n"}],"zoneId":"0","zoneType":"Z"}}
+        /// </summary>
+        /// <param name="workspaceId"></param>
+        /// <param name="folderType"></param>
+        /// <param name="parentFolderId"></param>
+        /// <param name="pageNum"></param>
+        /// <param name="pageSize"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.OpenGetSpaceFolderResponse>> OpenGetSpaceFolderAsResponseAsync(
+            string workspaceId,
+            global::G.FolderType folderType,
+            string? parentFolderId = default,
+            int? pageNum = default,
+            int? pageSize = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             PrepareArguments(
                 client: HttpClient);
             PrepareOpenGetSpaceFolderArguments(
@@ -103,15 +149,18 @@ namespace G
 
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
+
                             var __pathBuilder = new global::G.PathBuilder(
                                 path: "/v1/folders",
-                                baseUri: HttpClient.BaseAddress); 
+                                baseUri: ResolveBaseUri(
+                                servers: s_OpenGetSpaceFolderServers,
+                                defaultBaseUrl: "https://api.coze.com/"));
                             __pathBuilder
                                 .AddRequiredParameter("workspace_id", workspaceId)
                                 .AddRequiredParameter("folder_type", folderType.ToValueString())
                                 .AddOptionalParameter("parent_folder_id", parentFolderId)
                                 .AddOptionalParameter("page_num", pageNum?.ToString())
-                                .AddOptionalParameter("page_size", pageSize?.ToString()) 
+                                .AddOptionalParameter("page_size", pageSize?.ToString())
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::G.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -153,8 +202,8 @@ namespace G
                 PrepareOpenGetSpaceFolderRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    workspaceId: workspaceId,
-                    folderType: folderType,
+                    workspaceId: workspaceId!,
+                    folderType: folderType!,
                     parentFolderId: parentFolderId,
                     pageNum: pageNum,
                     pageSize: pageSize);
@@ -187,6 +236,8 @@ namespace G
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                     try
                     {
@@ -197,6 +248,11 @@ namespace G
                     }
                     catch (global::System.Net.Http.HttpRequestException __exception)
                     {
+                        var __retryDelay = global::G.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: null,
+                            attempt: __attempt);
                         var __willRetry = __attempt < __maxAttempts && !__effectiveCancellationToken.IsCancellationRequested;
                         await global::G.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
@@ -214,6 +270,8 @@ namespace G
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: __willRetry,
+                                retryDelay: __willRetry ? __retryDelay : (global::System.TimeSpan?)null,
+                                retryReason: "exception",
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         if (!__willRetry)
                         {
@@ -223,8 +281,7 @@ namespace G
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::G.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -233,6 +290,11 @@ namespace G
                         __attempt < __maxAttempts &&
                         global::G.AutoSDKRequestOptionsSupport.ShouldRetryStatusCode(__response.StatusCode))
                     {
+                        var __retryDelay = global::G.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: __response,
+                            attempt: __attempt);
                         await global::G.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
@@ -249,14 +311,15 @@ namespace G
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: true,
+                                retryDelay: __retryDelay,
+                                retryReason: "status:" + ((int)__response.StatusCode).ToString(global::System.Globalization.CultureInfo.InvariantCulture),
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         __response.Dispose();
                         __response = null;
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::G.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -296,6 +359,8 @@ namespace G
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
                 else
@@ -316,6 +381,8 @@ namespace G
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
 
@@ -340,9 +407,13 @@ namespace G
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    return
-                                        global::G.OpenGetSpaceFolderResponse.FromJson(__content, JsonSerializerOptions) ??
+                                    var __value = global::G.OpenGetSpaceFolderResponse.FromJson(__content, JsonSerializerOptions) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                                    return new global::G.AutoSDKHttpResponse<global::G.OpenGetSpaceFolderResponse>(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri,
+                                        body: __value);
                                 }
                                 catch (global::System.Exception __ex)
                                 {
@@ -370,9 +441,13 @@ namespace G
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    return
-                                        await global::G.OpenGetSpaceFolderResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                                    var __value = await global::G.OpenGetSpaceFolderResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
+                                    return new global::G.AutoSDKHttpResponse<global::G.OpenGetSpaceFolderResponse>(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri,
+                                        body: __value);
                                 }
                                 catch (global::System.Exception __ex)
                                 {

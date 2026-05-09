@@ -125,6 +125,94 @@ namespace G
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var __response = await ImportTasksAsResponseAsync(
+                id: id,
+
+                request: request,
+                commitToProject: commitToProject,
+                preannotatedFromFields: preannotatedFromFields,
+                returnTaskIds: returnTaskIds,
+                requestOptions: requestOptions,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// Import tasks<br/>
+        ///             Import data as labeling tasks in bulk using this API endpoint. You can use this API endpoint to import multiple tasks.<br/>
+        ///             One POST request is limited at 250K tasks and 200 MB.<br/>
+        ///             **Note:** Imported data is verified against a project *label_config* and must<br/>
+        ///             include all variables that were used in the *label_config*. For example,<br/>
+        ///             if the label configuration has a *$text* variable, then each item in a data object<br/>
+        ///             must include a "text" field.<br/>
+        ///             <br/>
+        ///             ## Async Import Behavior<br/>
+        ///             &lt;hr style="opacity:0.3"&gt;<br/>
+        ///             **For non-Community editions, this endpoint processes imports asynchronously.**<br/>
+        ///             <br/>
+        ///             - The POST request **can fail** for invalid parameters, malformed request body, or other request-level validation errors.<br/>
+        ///             - However, **data validation errors** that occur during import processing are handled asynchronously and will not cause the POST request to fail.<br/>
+        ///             - Upon successful request validation, a response is returned: `{"import": &lt;import_id&gt;}`<br/>
+        ///             - Use the returned `import_id` to poll the GET `/api/projects/{project_id}/imports/{import_id}` endpoint to check the import status and see any data validation errors.<br/>
+        ///             - Data-level errors and import failures will only be visible in the GET request response.<br/>
+        ///             For Community edition, imports are processed synchronously and return task counts immediately.<br/>
+        ///             <br/>
+        ///             ## POST requests<br/>
+        ///             &lt;hr style="opacity:0.3"&gt;<br/>
+        ///             There are three possible ways to import tasks with this endpoint:<br/>
+        ///             ### 1. **POST with data**<br/>
+        ///             Send JSON tasks as POST data. Only JSON is supported for POSTing files directly.<br/>
+        ///             Update this example to specify your authorization token and Label Studio instance host, then run the following from<br/>
+        ///             the command line.<br/>
+        ///             ```bash<br/>
+        ///             curl -H 'Content-Type: application/json' -H 'Authorization: Token abc123' \<br/>
+        ///             -X POST 'http://localhost:8000/api/projects/1/import' --data '[{"text": "Some text 1"}, {"text": "Some text 2"}]'<br/>
+        ///             ```<br/>
+        ///             ### 2. **POST with files**<br/>
+        ///             Send tasks as files. You can attach multiple files with different names.<br/>
+        ///             - **JSON**: text files in JavaScript object notation format<br/>
+        ///             - **CSV**: text files with tables in Comma Separated Values format<br/>
+        ///             - **TSV**: text files with tables in Tab Separated Value format<br/>
+        ///             - **TXT**: simple text files are similar to CSV with one column and no header, supported for projects with one source only<br/>
+        ///             Update this example to specify your authorization token, Label Studio instance host, and file name and path,<br/>
+        ///             then run the following from the command line:<br/>
+        ///             ```bash<br/>
+        ///             curl -H 'Authorization: Token abc123' \<br/>
+        ///             -X POST 'http://localhost:8000/api/projects/1/import' -F 'file=@path/to/my_file.csv'<br/>
+        ///             ```<br/>
+        ///             ### 3. **POST with URL**<br/>
+        ///             You can also provide a URL to a file with labeling tasks. Supported file formats are the same as in option 2.<br/>
+        ///             ```bash<br/>
+        ///             curl -H 'Content-Type: application/json' -H 'Authorization: Token abc123' \<br/>
+        ///             -X POST 'http://localhost:8000/api/projects/1/import' \<br/>
+        ///             --data '[{"url": "http://example.com/test1.csv"}, {"url": "http://example.com/test2.csv"}]'<br/>
+        ///             ```<br/>
+        ///             <br/>
+        ///         
+        /// </summary>
+        /// <param name="commitToProject">
+        /// Default Value: true
+        /// </param>
+        /// <param name="id"></param>
+        /// <param name="preannotatedFromFields"></param>
+        /// <param name="returnTaskIds">
+        /// Default Value: false
+        /// </param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.ApiProjectsImportCreateResponse>> ImportTasksAsResponseAsync(
+            int id,
+
+            global::System.Collections.Generic.IList<global::G.ImportApiRequest> request,
+            bool? commitToProject = default,
+            global::System.Collections.Generic.IList<string>? preannotatedFromFields = default,
+            bool? returnTaskIds = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 
             PrepareArguments(
@@ -159,13 +247,14 @@ namespace G
 
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
+
                             var __pathBuilder = new global::G.PathBuilder(
                                 path: $"/api/projects/{id}/import",
-                                baseUri: HttpClient.BaseAddress); 
+                                baseUri: HttpClient.BaseAddress);
                             __pathBuilder
                                 .AddOptionalParameter("commit_to_project", commitToProject?.ToString().ToLowerInvariant())
                                 .AddOptionalParameter("preannotated_from_fields", preannotatedFromFields, delimiter: ",", explode: true)
-                                .AddOptionalParameter("return_task_ids", returnTaskIds?.ToString().ToLowerInvariant()) 
+                                .AddOptionalParameter("return_task_ids", returnTaskIds?.ToString().ToLowerInvariant())
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::G.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -214,7 +303,7 @@ namespace G
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
                     commitToProject: commitToProject,
-                    id: id,
+                    id: id!,
                     preannotatedFromFields: preannotatedFromFields,
                     returnTaskIds: returnTaskIds,
                     request: request);
@@ -247,6 +336,8 @@ namespace G
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                     try
                     {
@@ -257,6 +348,11 @@ namespace G
                     }
                     catch (global::System.Net.Http.HttpRequestException __exception)
                     {
+                        var __retryDelay = global::G.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: null,
+                            attempt: __attempt);
                         var __willRetry = __attempt < __maxAttempts && !__effectiveCancellationToken.IsCancellationRequested;
                         await global::G.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
@@ -274,6 +370,8 @@ namespace G
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: __willRetry,
+                                retryDelay: __willRetry ? __retryDelay : (global::System.TimeSpan?)null,
+                                retryReason: "exception",
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         if (!__willRetry)
                         {
@@ -283,8 +381,7 @@ namespace G
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::G.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -293,6 +390,11 @@ namespace G
                         __attempt < __maxAttempts &&
                         global::G.AutoSDKRequestOptionsSupport.ShouldRetryStatusCode(__response.StatusCode))
                     {
+                        var __retryDelay = global::G.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: __response,
+                            attempt: __attempt);
                         await global::G.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
@@ -309,14 +411,15 @@ namespace G
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: true,
+                                retryDelay: __retryDelay,
+                                retryReason: "status:" + ((int)__response.StatusCode).ToString(global::System.Globalization.CultureInfo.InvariantCulture),
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         __response.Dispose();
                         __response = null;
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::G.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -356,6 +459,8 @@ namespace G
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
                 else
@@ -376,6 +481,8 @@ namespace G
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
                             // Bad Request
@@ -438,9 +545,13 @@ namespace G
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    return
-                                        global::G.ApiProjectsImportCreateResponse.FromJson(__content, JsonSerializerOptions) ??
+                                    var __value = global::G.ApiProjectsImportCreateResponse.FromJson(__content, JsonSerializerOptions) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                                    return new global::G.AutoSDKHttpResponse<global::G.ApiProjectsImportCreateResponse>(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri,
+                                        body: __value);
                                 }
                                 catch (global::System.Exception __ex)
                                 {
@@ -468,9 +579,13 @@ namespace G
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    return
-                                        await global::G.ApiProjectsImportCreateResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                                    var __value = await global::G.ApiProjectsImportCreateResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
+                                    return new global::G.AutoSDKHttpResponse<global::G.ApiProjectsImportCreateResponse>(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri,
+                                        body: __value);
                                 }
                                 catch (global::System.Exception __ex)
                                 {

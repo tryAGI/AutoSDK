@@ -34,6 +34,26 @@ namespace G
         /// <param name="version">
         /// Example: 1
         /// </param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.ChatAgentResponse>> UpdateChatAgentAsResponseAsync(
+            string agentId,
+
+            global::G.ChatAgentRequest request,
+            int? version = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Update an existing chat agent
+        /// </summary>
+        /// <param name="agentId">
+        /// Example: 16b980523634a6dc504898cda492e939
+        /// </param>
+        /// <param name="version">
+        /// Example: 1
+        /// </param>
         /// <param name="responseEngine"></param>
         /// <param name="agentName">
         /// The name of the chat agent. Only used for your own reference.<br/>

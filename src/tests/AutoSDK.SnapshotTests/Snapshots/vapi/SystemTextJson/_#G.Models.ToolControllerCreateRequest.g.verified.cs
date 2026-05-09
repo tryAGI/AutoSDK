@@ -35,6 +35,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickApiRequest(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateApiRequestToolDTO? value)
+        {
+            value = ApiRequest;
+            return IsApiRequest;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CreateCodeToolDTO? Code { get; init; }
 #else
@@ -48,6 +61,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Code))]
 #endif
         public bool IsCode => Code != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickCode(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateCodeToolDTO? value)
+        {
+            value = Code;
+            return IsCode;
+        }
 
         /// <summary>
         /// 
@@ -69,6 +95,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickDtmf(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateDtmfToolDTO? value)
+        {
+            value = Dtmf;
+            return IsDtmf;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CreateEndCallToolDTO? EndCall { get; init; }
 #else
@@ -82,6 +121,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(EndCall))]
 #endif
         public bool IsEndCall => EndCall != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickEndCall(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateEndCallToolDTO? value)
+        {
+            value = EndCall;
+            return IsEndCall;
+        }
 
         /// <summary>
         /// 
@@ -103,6 +155,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickFunction(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateFunctionToolDTO? value)
+        {
+            value = Function;
+            return IsFunction;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CreateTransferCallToolDTO? TransferCall { get; init; }
 #else
@@ -116,6 +181,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TransferCall))]
 #endif
         public bool IsTransferCall => TransferCall != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickTransferCall(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateTransferCallToolDTO? value)
+        {
+            value = TransferCall;
+            return IsTransferCall;
+        }
 
         /// <summary>
         /// 
@@ -137,6 +215,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickHandoff(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateHandoffToolDTO? value)
+        {
+            value = Handoff;
+            return IsHandoff;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CreateBashToolDTO? Bash { get; init; }
 #else
@@ -150,6 +241,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Bash))]
 #endif
         public bool IsBash => Bash != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickBash(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateBashToolDTO? value)
+        {
+            value = Bash;
+            return IsBash;
+        }
 
         /// <summary>
         /// 
@@ -171,6 +275,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickComputer(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateComputerToolDTO? value)
+        {
+            value = Computer;
+            return IsComputer;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CreateTextEditorToolDTO? TextEditor { get; init; }
 #else
@@ -184,6 +301,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TextEditor))]
 #endif
         public bool IsTextEditor => TextEditor != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickTextEditor(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateTextEditorToolDTO? value)
+        {
+            value = TextEditor;
+            return IsTextEditor;
+        }
 
         /// <summary>
         /// 
@@ -205,6 +335,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickQuery(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateQueryToolDTO? value)
+        {
+            value = Query;
+            return IsQuery;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CreateGoogleCalendarCreateEventToolDTO? GoogleCalendarEventCreate { get; init; }
 #else
@@ -218,6 +361,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(GoogleCalendarEventCreate))]
 #endif
         public bool IsGoogleCalendarEventCreate => GoogleCalendarEventCreate != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickGoogleCalendarEventCreate(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateGoogleCalendarCreateEventToolDTO? value)
+        {
+            value = GoogleCalendarEventCreate;
+            return IsGoogleCalendarEventCreate;
+        }
 
         /// <summary>
         /// 
@@ -239,6 +395,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickGoogleSheetsRowAppend(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateGoogleSheetsRowAppendToolDTO? value)
+        {
+            value = GoogleSheetsRowAppend;
+            return IsGoogleSheetsRowAppend;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CreateGoogleCalendarCheckAvailabilityToolDTO? GoogleCalendarAvailabilityCheck { get; init; }
 #else
@@ -252,6 +421,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(GoogleCalendarAvailabilityCheck))]
 #endif
         public bool IsGoogleCalendarAvailabilityCheck => GoogleCalendarAvailabilityCheck != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickGoogleCalendarAvailabilityCheck(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateGoogleCalendarCheckAvailabilityToolDTO? value)
+        {
+            value = GoogleCalendarAvailabilityCheck;
+            return IsGoogleCalendarAvailabilityCheck;
+        }
 
         /// <summary>
         /// 
@@ -273,6 +455,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickSlackMessageSend(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateSlackSendMessageToolDTO? value)
+        {
+            value = SlackMessageSend;
+            return IsSlackMessageSend;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CreateSmsToolDTO? Sms { get; init; }
 #else
@@ -286,6 +481,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Sms))]
 #endif
         public bool IsSms => Sms != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSms(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateSmsToolDTO? value)
+        {
+            value = Sms;
+            return IsSms;
+        }
 
         /// <summary>
         /// 
@@ -307,6 +515,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickMcp(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateMcpToolDTO? value)
+        {
+            value = Mcp;
+            return IsMcp;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CreateGoHighLevelCalendarAvailabilityToolDTO? GohighlevelCalendarAvailabilityCheck { get; init; }
 #else
@@ -320,6 +541,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(GohighlevelCalendarAvailabilityCheck))]
 #endif
         public bool IsGohighlevelCalendarAvailabilityCheck => GohighlevelCalendarAvailabilityCheck != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickGohighlevelCalendarAvailabilityCheck(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateGoHighLevelCalendarAvailabilityToolDTO? value)
+        {
+            value = GohighlevelCalendarAvailabilityCheck;
+            return IsGohighlevelCalendarAvailabilityCheck;
+        }
 
         /// <summary>
         /// 
@@ -341,6 +575,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickGohighlevelCalendarEventCreate(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateGoHighLevelCalendarEventCreateToolDTO? value)
+        {
+            value = GohighlevelCalendarEventCreate;
+            return IsGohighlevelCalendarEventCreate;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CreateGoHighLevelContactCreateToolDTO? GohighlevelContactCreate { get; init; }
 #else
@@ -354,6 +601,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(GohighlevelContactCreate))]
 #endif
         public bool IsGohighlevelContactCreate => GohighlevelContactCreate != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickGohighlevelContactCreate(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateGoHighLevelContactCreateToolDTO? value)
+        {
+            value = GohighlevelContactCreate;
+            return IsGohighlevelContactCreate;
+        }
 
         /// <summary>
         /// 
@@ -375,6 +635,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickGohighlevelContactGet(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateGoHighLevelContactGetToolDTO? value)
+        {
+            value = GohighlevelContactGet;
+            return IsGohighlevelContactGet;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CreateSipRequestToolDTO? SipRequest { get; init; }
 #else
@@ -392,6 +665,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickSipRequest(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateSipRequestToolDTO? value)
+        {
+            value = SipRequest;
+            return IsSipRequest;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CreateVoicemailToolDTO? Voicemail { get; init; }
 #else
@@ -405,6 +691,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Voicemail))]
 #endif
         public bool IsVoicemail => Voicemail != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickVoicemail(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateVoicemailToolDTO? value)
+        {
+            value = Voicemail;
+            return IsVoicemail;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -946,29 +1245,29 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.CreateApiRequestToolDTO?, TResult>? apiRequest = null,
-            global::System.Func<global::G.CreateCodeToolDTO?, TResult>? code = null,
-            global::System.Func<global::G.CreateDtmfToolDTO?, TResult>? dtmf = null,
-            global::System.Func<global::G.CreateEndCallToolDTO?, TResult>? endCall = null,
-            global::System.Func<global::G.CreateFunctionToolDTO?, TResult>? function = null,
-            global::System.Func<global::G.CreateTransferCallToolDTO?, TResult>? transferCall = null,
-            global::System.Func<global::G.CreateHandoffToolDTO?, TResult>? handoff = null,
-            global::System.Func<global::G.CreateBashToolDTO?, TResult>? bash = null,
-            global::System.Func<global::G.CreateComputerToolDTO?, TResult>? computer = null,
-            global::System.Func<global::G.CreateTextEditorToolDTO?, TResult>? textEditor = null,
-            global::System.Func<global::G.CreateQueryToolDTO?, TResult>? query = null,
-            global::System.Func<global::G.CreateGoogleCalendarCreateEventToolDTO?, TResult>? googleCalendarEventCreate = null,
-            global::System.Func<global::G.CreateGoogleSheetsRowAppendToolDTO?, TResult>? googleSheetsRowAppend = null,
-            global::System.Func<global::G.CreateGoogleCalendarCheckAvailabilityToolDTO?, TResult>? googleCalendarAvailabilityCheck = null,
-            global::System.Func<global::G.CreateSlackSendMessageToolDTO?, TResult>? slackMessageSend = null,
-            global::System.Func<global::G.CreateSmsToolDTO?, TResult>? sms = null,
-            global::System.Func<global::G.CreateMcpToolDTO?, TResult>? mcp = null,
-            global::System.Func<global::G.CreateGoHighLevelCalendarAvailabilityToolDTO?, TResult>? gohighlevelCalendarAvailabilityCheck = null,
-            global::System.Func<global::G.CreateGoHighLevelCalendarEventCreateToolDTO?, TResult>? gohighlevelCalendarEventCreate = null,
-            global::System.Func<global::G.CreateGoHighLevelContactCreateToolDTO?, TResult>? gohighlevelContactCreate = null,
-            global::System.Func<global::G.CreateGoHighLevelContactGetToolDTO?, TResult>? gohighlevelContactGet = null,
-            global::System.Func<global::G.CreateSipRequestToolDTO?, TResult>? sipRequest = null,
-            global::System.Func<global::G.CreateVoicemailToolDTO?, TResult>? voicemail = null,
+            global::System.Func<global::G.CreateApiRequestToolDTO, TResult>? apiRequest = null,
+            global::System.Func<global::G.CreateCodeToolDTO, TResult>? code = null,
+            global::System.Func<global::G.CreateDtmfToolDTO, TResult>? dtmf = null,
+            global::System.Func<global::G.CreateEndCallToolDTO, TResult>? endCall = null,
+            global::System.Func<global::G.CreateFunctionToolDTO, TResult>? function = null,
+            global::System.Func<global::G.CreateTransferCallToolDTO, TResult>? transferCall = null,
+            global::System.Func<global::G.CreateHandoffToolDTO, TResult>? handoff = null,
+            global::System.Func<global::G.CreateBashToolDTO, TResult>? bash = null,
+            global::System.Func<global::G.CreateComputerToolDTO, TResult>? computer = null,
+            global::System.Func<global::G.CreateTextEditorToolDTO, TResult>? textEditor = null,
+            global::System.Func<global::G.CreateQueryToolDTO, TResult>? query = null,
+            global::System.Func<global::G.CreateGoogleCalendarCreateEventToolDTO, TResult>? googleCalendarEventCreate = null,
+            global::System.Func<global::G.CreateGoogleSheetsRowAppendToolDTO, TResult>? googleSheetsRowAppend = null,
+            global::System.Func<global::G.CreateGoogleCalendarCheckAvailabilityToolDTO, TResult>? googleCalendarAvailabilityCheck = null,
+            global::System.Func<global::G.CreateSlackSendMessageToolDTO, TResult>? slackMessageSend = null,
+            global::System.Func<global::G.CreateSmsToolDTO, TResult>? sms = null,
+            global::System.Func<global::G.CreateMcpToolDTO, TResult>? mcp = null,
+            global::System.Func<global::G.CreateGoHighLevelCalendarAvailabilityToolDTO, TResult>? gohighlevelCalendarAvailabilityCheck = null,
+            global::System.Func<global::G.CreateGoHighLevelCalendarEventCreateToolDTO, TResult>? gohighlevelCalendarEventCreate = null,
+            global::System.Func<global::G.CreateGoHighLevelContactCreateToolDTO, TResult>? gohighlevelContactCreate = null,
+            global::System.Func<global::G.CreateGoHighLevelContactGetToolDTO, TResult>? gohighlevelContactGet = null,
+            global::System.Func<global::G.CreateSipRequestToolDTO, TResult>? sipRequest = null,
+            global::System.Func<global::G.CreateVoicemailToolDTO, TResult>? voicemail = null,
             bool validate = true)
         {
             if (validate)
@@ -1076,29 +1375,179 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.CreateApiRequestToolDTO?>? apiRequest = null,
-            global::System.Action<global::G.CreateCodeToolDTO?>? code = null,
-            global::System.Action<global::G.CreateDtmfToolDTO?>? dtmf = null,
-            global::System.Action<global::G.CreateEndCallToolDTO?>? endCall = null,
-            global::System.Action<global::G.CreateFunctionToolDTO?>? function = null,
-            global::System.Action<global::G.CreateTransferCallToolDTO?>? transferCall = null,
-            global::System.Action<global::G.CreateHandoffToolDTO?>? handoff = null,
-            global::System.Action<global::G.CreateBashToolDTO?>? bash = null,
-            global::System.Action<global::G.CreateComputerToolDTO?>? computer = null,
-            global::System.Action<global::G.CreateTextEditorToolDTO?>? textEditor = null,
-            global::System.Action<global::G.CreateQueryToolDTO?>? query = null,
-            global::System.Action<global::G.CreateGoogleCalendarCreateEventToolDTO?>? googleCalendarEventCreate = null,
-            global::System.Action<global::G.CreateGoogleSheetsRowAppendToolDTO?>? googleSheetsRowAppend = null,
-            global::System.Action<global::G.CreateGoogleCalendarCheckAvailabilityToolDTO?>? googleCalendarAvailabilityCheck = null,
-            global::System.Action<global::G.CreateSlackSendMessageToolDTO?>? slackMessageSend = null,
-            global::System.Action<global::G.CreateSmsToolDTO?>? sms = null,
-            global::System.Action<global::G.CreateMcpToolDTO?>? mcp = null,
-            global::System.Action<global::G.CreateGoHighLevelCalendarAvailabilityToolDTO?>? gohighlevelCalendarAvailabilityCheck = null,
-            global::System.Action<global::G.CreateGoHighLevelCalendarEventCreateToolDTO?>? gohighlevelCalendarEventCreate = null,
-            global::System.Action<global::G.CreateGoHighLevelContactCreateToolDTO?>? gohighlevelContactCreate = null,
-            global::System.Action<global::G.CreateGoHighLevelContactGetToolDTO?>? gohighlevelContactGet = null,
-            global::System.Action<global::G.CreateSipRequestToolDTO?>? sipRequest = null,
-            global::System.Action<global::G.CreateVoicemailToolDTO?>? voicemail = null,
+            global::System.Action<global::G.CreateApiRequestToolDTO>? apiRequest = null,
+
+            global::System.Action<global::G.CreateCodeToolDTO>? code = null,
+
+            global::System.Action<global::G.CreateDtmfToolDTO>? dtmf = null,
+
+            global::System.Action<global::G.CreateEndCallToolDTO>? endCall = null,
+
+            global::System.Action<global::G.CreateFunctionToolDTO>? function = null,
+
+            global::System.Action<global::G.CreateTransferCallToolDTO>? transferCall = null,
+
+            global::System.Action<global::G.CreateHandoffToolDTO>? handoff = null,
+
+            global::System.Action<global::G.CreateBashToolDTO>? bash = null,
+
+            global::System.Action<global::G.CreateComputerToolDTO>? computer = null,
+
+            global::System.Action<global::G.CreateTextEditorToolDTO>? textEditor = null,
+
+            global::System.Action<global::G.CreateQueryToolDTO>? query = null,
+
+            global::System.Action<global::G.CreateGoogleCalendarCreateEventToolDTO>? googleCalendarEventCreate = null,
+
+            global::System.Action<global::G.CreateGoogleSheetsRowAppendToolDTO>? googleSheetsRowAppend = null,
+
+            global::System.Action<global::G.CreateGoogleCalendarCheckAvailabilityToolDTO>? googleCalendarAvailabilityCheck = null,
+
+            global::System.Action<global::G.CreateSlackSendMessageToolDTO>? slackMessageSend = null,
+
+            global::System.Action<global::G.CreateSmsToolDTO>? sms = null,
+
+            global::System.Action<global::G.CreateMcpToolDTO>? mcp = null,
+
+            global::System.Action<global::G.CreateGoHighLevelCalendarAvailabilityToolDTO>? gohighlevelCalendarAvailabilityCheck = null,
+
+            global::System.Action<global::G.CreateGoHighLevelCalendarEventCreateToolDTO>? gohighlevelCalendarEventCreate = null,
+
+            global::System.Action<global::G.CreateGoHighLevelContactCreateToolDTO>? gohighlevelContactCreate = null,
+
+            global::System.Action<global::G.CreateGoHighLevelContactGetToolDTO>? gohighlevelContactGet = null,
+
+            global::System.Action<global::G.CreateSipRequestToolDTO>? sipRequest = null,
+
+            global::System.Action<global::G.CreateVoicemailToolDTO>? voicemail = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsApiRequest)
+            {
+                apiRequest?.Invoke(ApiRequest!);
+            }
+            else if (IsCode)
+            {
+                code?.Invoke(Code!);
+            }
+            else if (IsDtmf)
+            {
+                dtmf?.Invoke(Dtmf!);
+            }
+            else if (IsEndCall)
+            {
+                endCall?.Invoke(EndCall!);
+            }
+            else if (IsFunction)
+            {
+                function?.Invoke(Function!);
+            }
+            else if (IsTransferCall)
+            {
+                transferCall?.Invoke(TransferCall!);
+            }
+            else if (IsHandoff)
+            {
+                handoff?.Invoke(Handoff!);
+            }
+            else if (IsBash)
+            {
+                bash?.Invoke(Bash!);
+            }
+            else if (IsComputer)
+            {
+                computer?.Invoke(Computer!);
+            }
+            else if (IsTextEditor)
+            {
+                textEditor?.Invoke(TextEditor!);
+            }
+            else if (IsQuery)
+            {
+                query?.Invoke(Query!);
+            }
+            else if (IsGoogleCalendarEventCreate)
+            {
+                googleCalendarEventCreate?.Invoke(GoogleCalendarEventCreate!);
+            }
+            else if (IsGoogleSheetsRowAppend)
+            {
+                googleSheetsRowAppend?.Invoke(GoogleSheetsRowAppend!);
+            }
+            else if (IsGoogleCalendarAvailabilityCheck)
+            {
+                googleCalendarAvailabilityCheck?.Invoke(GoogleCalendarAvailabilityCheck!);
+            }
+            else if (IsSlackMessageSend)
+            {
+                slackMessageSend?.Invoke(SlackMessageSend!);
+            }
+            else if (IsSms)
+            {
+                sms?.Invoke(Sms!);
+            }
+            else if (IsMcp)
+            {
+                mcp?.Invoke(Mcp!);
+            }
+            else if (IsGohighlevelCalendarAvailabilityCheck)
+            {
+                gohighlevelCalendarAvailabilityCheck?.Invoke(GohighlevelCalendarAvailabilityCheck!);
+            }
+            else if (IsGohighlevelCalendarEventCreate)
+            {
+                gohighlevelCalendarEventCreate?.Invoke(GohighlevelCalendarEventCreate!);
+            }
+            else if (IsGohighlevelContactCreate)
+            {
+                gohighlevelContactCreate?.Invoke(GohighlevelContactCreate!);
+            }
+            else if (IsGohighlevelContactGet)
+            {
+                gohighlevelContactGet?.Invoke(GohighlevelContactGet!);
+            }
+            else if (IsSipRequest)
+            {
+                sipRequest?.Invoke(SipRequest!);
+            }
+            else if (IsVoicemail)
+            {
+                voicemail?.Invoke(Voicemail!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.CreateApiRequestToolDTO>? apiRequest = null,
+            global::System.Action<global::G.CreateCodeToolDTO>? code = null,
+            global::System.Action<global::G.CreateDtmfToolDTO>? dtmf = null,
+            global::System.Action<global::G.CreateEndCallToolDTO>? endCall = null,
+            global::System.Action<global::G.CreateFunctionToolDTO>? function = null,
+            global::System.Action<global::G.CreateTransferCallToolDTO>? transferCall = null,
+            global::System.Action<global::G.CreateHandoffToolDTO>? handoff = null,
+            global::System.Action<global::G.CreateBashToolDTO>? bash = null,
+            global::System.Action<global::G.CreateComputerToolDTO>? computer = null,
+            global::System.Action<global::G.CreateTextEditorToolDTO>? textEditor = null,
+            global::System.Action<global::G.CreateQueryToolDTO>? query = null,
+            global::System.Action<global::G.CreateGoogleCalendarCreateEventToolDTO>? googleCalendarEventCreate = null,
+            global::System.Action<global::G.CreateGoogleSheetsRowAppendToolDTO>? googleSheetsRowAppend = null,
+            global::System.Action<global::G.CreateGoogleCalendarCheckAvailabilityToolDTO>? googleCalendarAvailabilityCheck = null,
+            global::System.Action<global::G.CreateSlackSendMessageToolDTO>? slackMessageSend = null,
+            global::System.Action<global::G.CreateSmsToolDTO>? sms = null,
+            global::System.Action<global::G.CreateMcpToolDTO>? mcp = null,
+            global::System.Action<global::G.CreateGoHighLevelCalendarAvailabilityToolDTO>? gohighlevelCalendarAvailabilityCheck = null,
+            global::System.Action<global::G.CreateGoHighLevelCalendarEventCreateToolDTO>? gohighlevelCalendarEventCreate = null,
+            global::System.Action<global::G.CreateGoHighLevelContactCreateToolDTO>? gohighlevelContactCreate = null,
+            global::System.Action<global::G.CreateGoHighLevelContactGetToolDTO>? gohighlevelContactGet = null,
+            global::System.Action<global::G.CreateSipRequestToolDTO>? sipRequest = null,
+            global::System.Action<global::G.CreateVoicemailToolDTO>? voicemail = null,
             bool validate = true)
         {
             if (validate)

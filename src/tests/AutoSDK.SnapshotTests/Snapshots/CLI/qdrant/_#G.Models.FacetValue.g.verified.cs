@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickFacetValueVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = FacetValueVariant1;
+            return IsFacetValueVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public long? FacetValueVariant2 { get; init; }
 #else
@@ -47,6 +60,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickFacetValueVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out long? value)
+        {
+            value = FacetValueVariant2;
+            return IsFacetValueVariant2;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public bool? FacetValueVariant3 { get; init; }
 #else
@@ -60,6 +86,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FacetValueVariant3))]
 #endif
         public bool IsFacetValueVariant3 => FacetValueVariant3 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFacetValueVariant3(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out bool? value)
+        {
+            value = FacetValueVariant3;
+            return IsFacetValueVariant3;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -158,7 +197,7 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<string?, TResult>? facetValueVariant1 = null,
+            global::System.Func<string, TResult>? facetValueVariant1 = null,
             global::System.Func<long?, TResult>? facetValueVariant2 = null,
             global::System.Func<bool?, TResult>? facetValueVariant3 = null,
             bool validate = true)
@@ -188,7 +227,37 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<string?>? facetValueVariant1 = null,
+            global::System.Action<string>? facetValueVariant1 = null,
+
+            global::System.Action<long?>? facetValueVariant2 = null,
+
+            global::System.Action<bool?>? facetValueVariant3 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsFacetValueVariant1)
+            {
+                facetValueVariant1?.Invoke(FacetValueVariant1!);
+            }
+            else if (IsFacetValueVariant2)
+            {
+                facetValueVariant2?.Invoke(FacetValueVariant2!);
+            }
+            else if (IsFacetValueVariant3)
+            {
+                facetValueVariant3?.Invoke(FacetValueVariant3!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<string>? facetValueVariant1 = null,
             global::System.Action<long?>? facetValueVariant2 = null,
             global::System.Action<bool?>? facetValueVariant3 = null,
             bool validate = true)

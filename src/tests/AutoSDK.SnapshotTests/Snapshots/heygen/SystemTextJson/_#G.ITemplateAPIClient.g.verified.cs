@@ -12,7 +12,7 @@ namespace G
     /// - **Template Videos:** In contrast, template videos offer a wide canvas for creativity. They enable you to customize existing text, images, videos, audios, voices and avatars seamlessly. If you need a richer, more versatile content format for your workflow, templates are the perfect choice.<br/>
     ///     <br/>
     /// **Guide**: [https://docs.heygen.com/docs/generate-video-from-template-v2](https://docs.heygen.com/docs/generate-video-from-template-v2)  <br/>
-    /// **Reference**: [https://docs.heygen.com/reference/generate-from-template-v2](https://docs.heygen.com/reference/generate-from-template-v2)[](https://docs.heygen.com/reference/create-an-avatar-video-v2).<br/>
+    /// **Reference**: [https://docs.heygen.com/reference/generate-from-template-v2](https://docs.heygen.com/reference/generate-from-template-v2)[](https://docs.heygen.com/reference/create-an-avatar-video-v2)<br/>
     /// If no httpClient is provided, a new one will be created.<br/>
     /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
     /// </summary>
@@ -28,6 +28,27 @@ namespace G
         /// </summary>
         public System.Uri? BaseUri { get; }
 
+
+        /// <summary>
+        /// The server options available for this client.
+        /// </summary>
+        public global::System.Collections.Generic.IReadOnlyList<global::G.AutoSDKServer> AvailableServers { get; }
+
+        /// <summary>
+        /// The currently selected server for this client, if any.
+        /// </summary>
+        public global::G.AutoSDKServer? SelectedServer { get; set; }
+
+        /// <summary>
+        /// Selects one of the generated server options by id.
+        /// </summary>
+        public bool TrySelectServer(string serverId);
+
+        /// <summary>
+        /// Clears the currently selected server.
+        /// </summary>
+        public void ClearSelectedServer();
+
         /// <summary>
         /// The authorizations to use for the requests.
         /// </summary>
@@ -41,11 +62,11 @@ namespace G
         /// ensuring <see cref="ApiException.ResponseBody"/> is populated.
         /// </summary>
         public bool ReadResponseAsString { get; set; }
-
         /// <summary>
         /// Client-wide request defaults such as headers, query parameters, retries, and timeout.
         /// </summary>
         public global::G.AutoSDKClientOptions Options { get; }
+
 
         /// <summary>
         /// 

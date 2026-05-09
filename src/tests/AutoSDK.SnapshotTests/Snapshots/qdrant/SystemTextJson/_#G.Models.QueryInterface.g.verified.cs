@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickVectorInput(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.VectorInput? value)
+        {
+            value = VectorInput;
+            return IsVectorInput;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.Query? Query { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Query))]
 #endif
         public bool IsQuery => Query != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickQuery(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.Query? value)
+        {
+            value = Query;
+            return IsQuery;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -144,6 +170,30 @@ namespace G
         /// 
         /// </summary>
         public void Match(
+            global::System.Action<global::G.VectorInput?>? vectorInput = null,
+
+            global::System.Action<global::G.Query?>? query = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsVectorInput)
+            {
+                vectorInput?.Invoke(VectorInput!);
+            }
+            else if (IsQuery)
+            {
+                query?.Invoke(Query!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
             global::System.Action<global::G.VectorInput?>? vectorInput = null,
             global::System.Action<global::G.Query?>? query = null,
             bool validate = true)

@@ -35,6 +35,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickSuccess(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.RAGIndexBatchSuccessfulResponseModel? value)
+        {
+            value = Success;
+            return IsSuccess;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.BatchFailureResponseModel? Failure { get; init; }
 #else
@@ -48,6 +61,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Failure))]
 #endif
         public bool IsFailure => Failure != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFailure(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.BatchFailureResponseModel? value)
+        {
+            value = Failure;
+            return IsFailure;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -127,8 +153,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.RAGIndexBatchSuccessfulResponseModel?, TResult>? success = null,
-            global::System.Func<global::G.BatchFailureResponseModel?, TResult>? failure = null,
+            global::System.Func<global::G.RAGIndexBatchSuccessfulResponseModel, TResult>? success = null,
+            global::System.Func<global::G.BatchFailureResponseModel, TResult>? failure = null,
             bool validate = true)
         {
             if (validate)
@@ -152,8 +178,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.RAGIndexBatchSuccessfulResponseModel?>? success = null,
-            global::System.Action<global::G.BatchFailureResponseModel?>? failure = null,
+            global::System.Action<global::G.RAGIndexBatchSuccessfulResponseModel>? success = null,
+
+            global::System.Action<global::G.BatchFailureResponseModel>? failure = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsSuccess)
+            {
+                success?.Invoke(Success!);
+            }
+            else if (IsFailure)
+            {
+                failure?.Invoke(Failure!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.RAGIndexBatchSuccessfulResponseModel>? success = null,
+            global::System.Action<global::G.BatchFailureResponseModel>? failure = null,
             bool validate = true)
         {
             if (validate)

@@ -29,5 +29,6 @@ namespace G
             ref string password);
         partial void Authorized(
             global::System.Net.Http.HttpClient client);
+
     }
 }

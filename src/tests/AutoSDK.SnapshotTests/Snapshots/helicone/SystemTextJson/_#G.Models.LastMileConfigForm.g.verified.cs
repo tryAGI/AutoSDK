@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickBase(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.BaseLastMileConfigForm? value)
+        {
+            value = Base;
+            return IsBase;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.AnyOf<global::G.LastMileConfigFormVariant2Variant1, global::G.LastMileConfigFormVariant2Variant2>? LastMileConfigFormVariant2 { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(LastMileConfigFormVariant2))]
 #endif
         public bool IsLastMileConfigFormVariant2 => LastMileConfigFormVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickLastMileConfigFormVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.AnyOf<global::G.LastMileConfigFormVariant2Variant1, global::G.LastMileConfigFormVariant2Variant2>? value)
+        {
+            value = LastMileConfigFormVariant2;
+            return IsLastMileConfigFormVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -119,7 +145,7 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.BaseLastMileConfigForm?, TResult>? @base = null,
+            global::System.Func<global::G.BaseLastMileConfigForm, TResult>? @base = null,
             global::System.Func<global::G.AnyOf<global::G.LastMileConfigFormVariant2Variant1, global::G.LastMileConfigFormVariant2Variant2>?, TResult>? lastMileConfigFormVariant2 = null,
             bool validate = true)
         {
@@ -144,7 +170,31 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.BaseLastMileConfigForm?>? @base = null,
+            global::System.Action<global::G.BaseLastMileConfigForm>? @base = null,
+
+            global::System.Action<global::G.AnyOf<global::G.LastMileConfigFormVariant2Variant1, global::G.LastMileConfigFormVariant2Variant2>?>? lastMileConfigFormVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsBase)
+            {
+                @base?.Invoke(Base!);
+            }
+            else if (IsLastMileConfigFormVariant2)
+            {
+                lastMileConfigFormVariant2?.Invoke(LastMileConfigFormVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.BaseLastMileConfigForm>? @base = null,
             global::System.Action<global::G.AnyOf<global::G.LastMileConfigFormVariant2Variant1, global::G.LastMileConfigFormVariant2Variant2>?>? lastMileConfigFormVariant2 = null,
             bool validate = true)
         {

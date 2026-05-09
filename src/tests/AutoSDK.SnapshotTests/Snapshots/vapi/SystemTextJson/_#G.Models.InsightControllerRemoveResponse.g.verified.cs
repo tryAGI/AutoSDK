@@ -35,6 +35,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickBar(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.BarInsight? value)
+        {
+            value = Bar;
+            return IsBar;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.PieInsight? Pie { get; init; }
 #else
@@ -48,6 +61,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Pie))]
 #endif
         public bool IsPie => Pie != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickPie(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.PieInsight? value)
+        {
+            value = Pie;
+            return IsPie;
+        }
 
         /// <summary>
         /// 
@@ -69,6 +95,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickLine(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.LineInsight? value)
+        {
+            value = Line;
+            return IsLine;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.TextInsight? Text { get; init; }
 #else
@@ -82,6 +121,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Text))]
 #endif
         public bool IsText => Text != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickText(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.TextInsight? value)
+        {
+            value = Text;
+            return IsText;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -205,10 +257,10 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.BarInsight?, TResult>? bar = null,
-            global::System.Func<global::G.PieInsight?, TResult>? pie = null,
-            global::System.Func<global::G.LineInsight?, TResult>? line = null,
-            global::System.Func<global::G.TextInsight?, TResult>? text = null,
+            global::System.Func<global::G.BarInsight, TResult>? bar = null,
+            global::System.Func<global::G.PieInsight, TResult>? pie = null,
+            global::System.Func<global::G.LineInsight, TResult>? line = null,
+            global::System.Func<global::G.TextInsight, TResult>? text = null,
             bool validate = true)
         {
             if (validate)
@@ -240,10 +292,46 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.BarInsight?>? bar = null,
-            global::System.Action<global::G.PieInsight?>? pie = null,
-            global::System.Action<global::G.LineInsight?>? line = null,
-            global::System.Action<global::G.TextInsight?>? text = null,
+            global::System.Action<global::G.BarInsight>? bar = null,
+
+            global::System.Action<global::G.PieInsight>? pie = null,
+
+            global::System.Action<global::G.LineInsight>? line = null,
+
+            global::System.Action<global::G.TextInsight>? text = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsBar)
+            {
+                bar?.Invoke(Bar!);
+            }
+            else if (IsPie)
+            {
+                pie?.Invoke(Pie!);
+            }
+            else if (IsLine)
+            {
+                line?.Invoke(Line!);
+            }
+            else if (IsText)
+            {
+                text?.Invoke(Text!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.BarInsight>? bar = null,
+            global::System.Action<global::G.PieInsight>? pie = null,
+            global::System.Action<global::G.LineInsight>? line = null,
+            global::System.Action<global::G.TextInsight>? text = null,
             bool validate = true)
         {
             if (validate)

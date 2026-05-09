@@ -28,6 +28,25 @@ namespace G
         /// Context-aware text splitting<br/>
         /// Splits a long block of text (maximum 4000 words) into smaller chunks while preserving the semantic meaning of the text and context between the chunks.
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        /// <remarks>
+        /// curl --location --request POST https://api.writer.com/v1/tools/context-aware-splitting \<br/>
+        ///  --header "Authorization: Bearer &lt;token&gt;" \<br/>
+        ///  --header "Content-Type: application/json" \<br/>
+        /// --data-raw '{"text":"text to split","strategy":"llm_split"}'
+        /// </remarks>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.ContextAwareSplittingResponse>> CreateToolsContextAwareSplittingAsResponseAsync(
+
+            global::G.ContextAwareTextSplittingRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Context-aware text splitting<br/>
+        /// Splits a long block of text (maximum 4000 words) into smaller chunks while preserving the semantic meaning of the text and context between the chunks.
+        /// </summary>
         /// <param name="text">
         /// The text to split into chunks.
         /// </param>

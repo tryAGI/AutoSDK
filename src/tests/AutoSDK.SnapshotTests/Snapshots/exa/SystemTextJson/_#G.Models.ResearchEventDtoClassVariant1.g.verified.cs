@@ -13,6 +13,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public string? EventType { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ResearchEventDtoClassVariant1Variant1? ResearchDefinition { get; init; }
 #else
@@ -30,6 +35,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickResearchDefinition(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ResearchEventDtoClassVariant1Variant1? value)
+        {
+            value = ResearchDefinition;
+            return IsResearchDefinition;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ResearchEventDtoClassVariant1Variant2? ResearchOutput { get; init; }
 #else
@@ -43,6 +61,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResearchOutput))]
 #endif
         public bool IsResearchOutput => ResearchOutput != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResearchOutput(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ResearchEventDtoClassVariant1Variant2? value)
+        {
+            value = ResearchOutput;
+            return IsResearchOutput;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -83,10 +114,13 @@ namespace G
         /// 
         /// </summary>
         public ResearchEventDtoClassVariant1(
+            string? eventType,
             global::G.ResearchEventDtoClassVariant1Variant1? researchDefinition,
             global::G.ResearchEventDtoClassVariant1Variant2? researchOutput
             )
         {
+            EventType = eventType;
+
             ResearchDefinition = researchDefinition;
             ResearchOutput = researchOutput;
         }
@@ -119,8 +153,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.ResearchEventDtoClassVariant1Variant1?, TResult>? researchDefinition = null,
-            global::System.Func<global::G.ResearchEventDtoClassVariant1Variant2?, TResult>? researchOutput = null,
+            global::System.Func<global::G.ResearchEventDtoClassVariant1Variant1, TResult>? researchDefinition = null,
+            global::System.Func<global::G.ResearchEventDtoClassVariant1Variant2, TResult>? researchOutput = null,
             bool validate = true)
         {
             if (validate)
@@ -144,8 +178,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.ResearchEventDtoClassVariant1Variant1?>? researchDefinition = null,
-            global::System.Action<global::G.ResearchEventDtoClassVariant1Variant2?>? researchOutput = null,
+            global::System.Action<global::G.ResearchEventDtoClassVariant1Variant1>? researchDefinition = null,
+
+            global::System.Action<global::G.ResearchEventDtoClassVariant1Variant2>? researchOutput = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsResearchDefinition)
+            {
+                researchDefinition?.Invoke(ResearchDefinition!);
+            }
+            else if (IsResearchOutput)
+            {
+                researchOutput?.Invoke(ResearchOutput!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.ResearchEventDtoClassVariant1Variant1>? researchDefinition = null,
+            global::System.Action<global::G.ResearchEventDtoClassVariant1Variant2>? researchOutput = null,
             bool validate = true)
         {
             if (validate)

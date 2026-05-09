@@ -28,6 +28,23 @@ namespace G
         /// </summary>
         /// <param name="requestTimeout"></param>
         /// <param name="authorization"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<string>> CreateVectordbCollectionsReleaseAsResponseAsync(
+
+            global::G.CreateVectordbCollectionsReleaseRequest request,
+            int? requestTimeout = default,
+            string? authorization = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Release Collection<br/>
+        /// This operation releases the data of the current collection from memory.
+        /// </summary>
+        /// <param name="requestTimeout"></param>
+        /// <param name="authorization"></param>
         /// <param name="dbName">
         /// The name of the database to which the cpllection belongs.<br/>
         /// Setting this to a non-existing database results in a **MilvusException**.

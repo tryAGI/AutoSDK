@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickPhotoAvatar(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.AgentPresenterPhotoAvatar? value)
+        {
+            value = PhotoAvatar;
+            return IsPhotoAvatar;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.AgentPresenterVideoAvatar? VideoAvatar { get; init; }
 #else
@@ -47,6 +60,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickVideoAvatar(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.AgentPresenterVideoAvatar? value)
+        {
+            value = VideoAvatar;
+            return IsVideoAvatar;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.AgentPresenterExpressiveAvatar? ExpressiveAvatar { get; init; }
 #else
@@ -60,6 +86,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ExpressiveAvatar))]
 #endif
         public bool IsExpressiveAvatar => ExpressiveAvatar != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickExpressiveAvatar(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.AgentPresenterExpressiveAvatar? value)
+        {
+            value = ExpressiveAvatar;
+            return IsExpressiveAvatar;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -158,9 +197,9 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.AgentPresenterPhotoAvatar?, TResult>? photoAvatar = null,
-            global::System.Func<global::G.AgentPresenterVideoAvatar?, TResult>? videoAvatar = null,
-            global::System.Func<global::G.AgentPresenterExpressiveAvatar?, TResult>? expressiveAvatar = null,
+            global::System.Func<global::G.AgentPresenterPhotoAvatar, TResult>? photoAvatar = null,
+            global::System.Func<global::G.AgentPresenterVideoAvatar, TResult>? videoAvatar = null,
+            global::System.Func<global::G.AgentPresenterExpressiveAvatar, TResult>? expressiveAvatar = null,
             bool validate = true)
         {
             if (validate)
@@ -188,9 +227,39 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.AgentPresenterPhotoAvatar?>? photoAvatar = null,
-            global::System.Action<global::G.AgentPresenterVideoAvatar?>? videoAvatar = null,
-            global::System.Action<global::G.AgentPresenterExpressiveAvatar?>? expressiveAvatar = null,
+            global::System.Action<global::G.AgentPresenterPhotoAvatar>? photoAvatar = null,
+
+            global::System.Action<global::G.AgentPresenterVideoAvatar>? videoAvatar = null,
+
+            global::System.Action<global::G.AgentPresenterExpressiveAvatar>? expressiveAvatar = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsPhotoAvatar)
+            {
+                photoAvatar?.Invoke(PhotoAvatar!);
+            }
+            else if (IsVideoAvatar)
+            {
+                videoAvatar?.Invoke(VideoAvatar!);
+            }
+            else if (IsExpressiveAvatar)
+            {
+                expressiveAvatar?.Invoke(ExpressiveAvatar!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.AgentPresenterPhotoAvatar>? photoAvatar = null,
+            global::System.Action<global::G.AgentPresenterVideoAvatar>? videoAvatar = null,
+            global::System.Action<global::G.AgentPresenterExpressiveAvatar>? expressiveAvatar = null,
             bool validate = true)
         {
             if (validate)

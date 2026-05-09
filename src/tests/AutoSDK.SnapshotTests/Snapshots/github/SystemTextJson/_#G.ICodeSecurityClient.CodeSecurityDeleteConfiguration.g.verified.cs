@@ -23,5 +23,23 @@ namespace G
             int configurationId,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Delete a code security configuration<br/>
+        /// Deletes the desired code security configuration from an organization.<br/>
+        /// Repositories attached to the configuration will retain their settings but will no longer be associated with<br/>
+        /// the configuration.<br/>
+        /// The authenticated user must be an administrator or security manager for the organization to use this endpoint.<br/>
+        /// OAuth app tokens and personal access tokens (classic) need the `write:org` scope to use this endpoint.
+        /// </summary>
+        /// <param name="org"></param>
+        /// <param name="configurationId"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse> CodeSecurityDeleteConfigurationAsResponseAsync(
+            string org,
+            int configurationId,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -24,29 +24,66 @@ namespace G.JsonConverters
                 foreach (var __jsonProp in __jsonDocument.RootElement.EnumerateObject())
                 {
                     __jsonProps.Add(__jsonProp.Name);
+                    if (__jsonProp.Value.ValueKind == global::System.Text.Json.JsonValueKind.Object)
+                    {
+                        foreach (var __nestedJsonProp in __jsonProp.Value.EnumerateObject())
+                        {
+                            __jsonProps.Add(__jsonProp.Name + "." + __nestedJsonProp.Name);
+                        }
+                    }
+
                 }
             }
 
             var __score0 = 0;
             if (__jsonProps.Contains("move_shard")) __score0++;
+            if (__jsonProps.Contains("move_shard.from_peer_id")) __score0++;
+            if (__jsonProps.Contains("move_shard.method")) __score0++;
+            if (__jsonProps.Contains("move_shard.shard_id")) __score0++;
+            if (__jsonProps.Contains("move_shard.to_peer_id")) __score0++;
             var __score1 = 0;
             if (__jsonProps.Contains("replicate_shard")) __score1++;
+            if (__jsonProps.Contains("replicate_shard.from_peer_id")) __score1++;
+            if (__jsonProps.Contains("replicate_shard.method")) __score1++;
+            if (__jsonProps.Contains("replicate_shard.shard_id")) __score1++;
+            if (__jsonProps.Contains("replicate_shard.to_peer_id")) __score1++;
             var __score2 = 0;
             if (__jsonProps.Contains("abort_transfer")) __score2++;
+            if (__jsonProps.Contains("abort_transfer.from_peer_id")) __score2++;
+            if (__jsonProps.Contains("abort_transfer.shard_id")) __score2++;
+            if (__jsonProps.Contains("abort_transfer.to_peer_id")) __score2++;
             var __score3 = 0;
             if (__jsonProps.Contains("drop_replica")) __score3++;
+            if (__jsonProps.Contains("drop_replica.peer_id")) __score3++;
+            if (__jsonProps.Contains("drop_replica.shard_id")) __score3++;
             var __score4 = 0;
             if (__jsonProps.Contains("create_sharding_key")) __score4++;
+            if (__jsonProps.Contains("create_sharding_key.initial_state")) __score4++;
+            if (__jsonProps.Contains("create_sharding_key.placement")) __score4++;
+            if (__jsonProps.Contains("create_sharding_key.replication_factor")) __score4++;
+            if (__jsonProps.Contains("create_sharding_key.shard_key")) __score4++;
+            if (__jsonProps.Contains("create_sharding_key.shards_number")) __score4++;
             var __score5 = 0;
             if (__jsonProps.Contains("drop_sharding_key")) __score5++;
+            if (__jsonProps.Contains("drop_sharding_key.shard_key")) __score5++;
             var __score6 = 0;
             if (__jsonProps.Contains("restart_transfer")) __score6++;
+            if (__jsonProps.Contains("restart_transfer.from_peer_id")) __score6++;
+            if (__jsonProps.Contains("restart_transfer.method")) __score6++;
+            if (__jsonProps.Contains("restart_transfer.shard_id")) __score6++;
+            if (__jsonProps.Contains("restart_transfer.to_peer_id")) __score6++;
             var __score7 = 0;
             if (__jsonProps.Contains("start_resharding")) __score7++;
+            if (__jsonProps.Contains("start_resharding.direction")) __score7++;
+            if (__jsonProps.Contains("start_resharding.peer_id")) __score7++;
+            if (__jsonProps.Contains("start_resharding.shard_key")) __score7++;
             var __score8 = 0;
             if (__jsonProps.Contains("abort_resharding")) __score8++;
             var __score9 = 0;
             if (__jsonProps.Contains("replicate_points")) __score9++;
+            if (__jsonProps.Contains("replicate_points.filter")) __score9++;
+            if (__jsonProps.Contains("replicate_points.from_shard_key")) __score9++;
+            if (__jsonProps.Contains("replicate_points.to_shard_key")) __score9++;
             var __bestScore = 0;
             var __bestIndex = -1;
             if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }

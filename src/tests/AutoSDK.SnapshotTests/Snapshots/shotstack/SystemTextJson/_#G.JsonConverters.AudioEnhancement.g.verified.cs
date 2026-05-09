@@ -24,11 +24,20 @@ namespace G.JsonConverters
                 foreach (var __jsonProp in __jsonDocument.RootElement.EnumerateObject())
                 {
                     __jsonProps.Add(__jsonProp.Name);
+                    if (__jsonProp.Value.ValueKind == global::System.Text.Json.JsonValueKind.Object)
+                    {
+                        foreach (var __nestedJsonProp in __jsonProp.Value.EnumerateObject())
+                        {
+                            __jsonProps.Add(__jsonProp.Name + "." + __nestedJsonProp.Name);
+                        }
+                    }
+
                 }
             }
 
             var __score0 = 0;
             if (__jsonProps.Contains("options")) __score0++;
+            if (__jsonProps.Contains("options.preset")) __score0++;
             if (__jsonProps.Contains("provider")) __score0++;
             var __bestScore = 0;
             var __bestIndex = -1;

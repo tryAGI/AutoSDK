@@ -31,6 +31,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Text))]
 #endif
         public bool IsText => Text != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickText(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.TextContent? value)
+        {
+            value = Text;
+            return IsText;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -88,7 +101,7 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.TextContent?, TResult>? text = null,
+            global::System.Func<global::G.TextContent, TResult>? text = null,
             bool validate = true)
         {
             if (validate)
@@ -108,7 +121,25 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.TextContent?>? text = null,
+            global::System.Action<global::G.TextContent>? text = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsText)
+            {
+                text?.Invoke(Text!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.TextContent>? text = null,
             bool validate = true)
         {
             if (validate)

@@ -37,6 +37,26 @@ namespace G
         /// The version of the Anthropic API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://docs.anthropic.com/en/api/versioning).
         /// </param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.Message>> MessagesPostAsResponseAsync(
+
+            global::G.CreateMessageParams request,
+            string? anthropicVersion = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create a Message<br/>
+        /// Send a structured list of input messages with text and/or image content, and the model will generate the next message in the conversation.<br/>
+        /// The Messages API can be used for either single queries or stateless multi-turn conversations.<br/>
+        /// Learn more about the Messages API in our [user guide](/en/docs/initial-setup)
+        /// </summary>
+        /// <param name="anthropicVersion">
+        /// The version of the Anthropic API you want to use.<br/>
+        /// Read more about versioning and our version history [here](https://docs.anthropic.com/en/api/versioning).
+        /// </param>
         /// <param name="model">
         /// The model that will complete your prompt.\n\nSee [models](https://docs.anthropic.com/en/docs/models-overview) for additional details and options.
         /// </param>

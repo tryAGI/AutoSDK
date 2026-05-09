@@ -27,6 +27,22 @@ namespace G
         /// Only GitHub Apps can use this endpoint.
         /// </summary>
         /// <param name="org"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<string>> OrgsUpdatePatAccessesAsResponseAsync(
+            string org,
+
+            global::G.OrgsUpdatePatAccessesRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Update the access to organization resources via fine-grained personal access tokens<br/>
+        /// Updates the access organization members have to organization resources via fine-grained personal access tokens. Limited to revoking a token's existing access.<br/>
+        /// Only GitHub Apps can use this endpoint.
+        /// </summary>
+        /// <param name="org"></param>
         /// <param name="action">
         /// Action to apply to the fine-grained personal access token.
         /// </param>

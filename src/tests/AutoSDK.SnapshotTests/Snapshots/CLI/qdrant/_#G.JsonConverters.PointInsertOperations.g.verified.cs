@@ -24,11 +24,22 @@ namespace G.JsonConverters
                 foreach (var __jsonProp in __jsonDocument.RootElement.EnumerateObject())
                 {
                     __jsonProps.Add(__jsonProp.Name);
+                    if (__jsonProp.Value.ValueKind == global::System.Text.Json.JsonValueKind.Object)
+                    {
+                        foreach (var __nestedJsonProp in __jsonProp.Value.EnumerateObject())
+                        {
+                            __jsonProps.Add(__jsonProp.Name + "." + __nestedJsonProp.Name);
+                        }
+                    }
+
                 }
             }
 
             var __score0 = 0;
             if (__jsonProps.Contains("batch")) __score0++;
+            if (__jsonProps.Contains("batch.ids")) __score0++;
+            if (__jsonProps.Contains("batch.payloads")) __score0++;
+            if (__jsonProps.Contains("batch.vectors")) __score0++;
             if (__jsonProps.Contains("shard_key")) __score0++;
             if (__jsonProps.Contains("update_filter")) __score0++;
             if (__jsonProps.Contains("update_mode")) __score0++;

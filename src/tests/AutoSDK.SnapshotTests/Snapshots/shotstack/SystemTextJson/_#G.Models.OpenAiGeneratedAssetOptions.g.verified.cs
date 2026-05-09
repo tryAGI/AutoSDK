@@ -34,6 +34,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TextGenerator))]
 #endif
         public bool IsTextGenerator => TextGenerator != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickTextGenerator(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.OpenAiTextGeneratorOptions? value)
+        {
+            value = TextGenerator;
+            return IsTextGenerator;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -91,7 +104,7 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.OpenAiTextGeneratorOptions?, TResult>? textGenerator = null,
+            global::System.Func<global::G.OpenAiTextGeneratorOptions, TResult>? textGenerator = null,
             bool validate = true)
         {
             if (validate)
@@ -111,7 +124,25 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.OpenAiTextGeneratorOptions?>? textGenerator = null,
+            global::System.Action<global::G.OpenAiTextGeneratorOptions>? textGenerator = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsTextGenerator)
+            {
+                textGenerator?.Invoke(TextGenerator!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.OpenAiTextGeneratorOptions>? textGenerator = null,
             bool validate = true)
         {
             if (validate)

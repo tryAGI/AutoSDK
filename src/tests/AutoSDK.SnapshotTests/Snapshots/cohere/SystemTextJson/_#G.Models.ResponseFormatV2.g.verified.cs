@@ -40,6 +40,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickText(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.TextResponseFormatV2? value)
+        {
+            value = Text;
+            return IsText;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.JsonResponseFormatV2? JsonObject { get; init; }
 #else
@@ -53,6 +66,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(JsonObject))]
 #endif
         public bool IsJsonObject => JsonObject != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickJsonObject(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.JsonResponseFormatV2? value)
+        {
+            value = JsonObject;
+            return IsJsonObject;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -132,8 +158,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.TextResponseFormatV2?, TResult>? text = null,
-            global::System.Func<global::G.JsonResponseFormatV2?, TResult>? jsonObject = null,
+            global::System.Func<global::G.TextResponseFormatV2, TResult>? text = null,
+            global::System.Func<global::G.JsonResponseFormatV2, TResult>? jsonObject = null,
             bool validate = true)
         {
             if (validate)
@@ -157,8 +183,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.TextResponseFormatV2?>? text = null,
-            global::System.Action<global::G.JsonResponseFormatV2?>? jsonObject = null,
+            global::System.Action<global::G.TextResponseFormatV2>? text = null,
+
+            global::System.Action<global::G.JsonResponseFormatV2>? jsonObject = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsText)
+            {
+                text?.Invoke(Text!);
+            }
+            else if (IsJsonObject)
+            {
+                jsonObject?.Invoke(JsonObject!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.TextResponseFormatV2>? text = null,
+            global::System.Action<global::G.JsonResponseFormatV2>? jsonObject = null,
             bool validate = true)
         {
             if (validate)

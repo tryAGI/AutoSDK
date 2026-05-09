@@ -73,7 +73,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageAuthClient SubpackageAuth => new SubpackageAuthClient(HttpClient, authorizations: Authorizations, options: Options)
+        public SubpackageAuthClient SubpackageAuth => new SubpackageAuthClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -82,7 +82,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageDubbingSubpackageDubbingJobsClient SubpackageDubbingSubpackageDubbingJobs => new SubpackageDubbingSubpackageDubbingJobsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public SubpackageDubbingSubpackageDubbingJobsClient SubpackageDubbingSubpackageDubbingJobs => new SubpackageDubbingSubpackageDubbingJobsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -91,7 +91,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageDubbingSubpackageDubbingLanguagesClient SubpackageDubbingSubpackageDubbingLanguages => new SubpackageDubbingSubpackageDubbingLanguagesClient(HttpClient, authorizations: Authorizations, options: Options)
+        public SubpackageDubbingSubpackageDubbingLanguagesClient SubpackageDubbingSubpackageDubbingLanguages => new SubpackageDubbingSubpackageDubbingLanguagesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -100,7 +100,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageDubbingSubpackageDubbingProjectsClient SubpackageDubbingSubpackageDubbingProjects => new SubpackageDubbingSubpackageDubbingProjectsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public SubpackageDubbingSubpackageDubbingProjectsClient SubpackageDubbingSubpackageDubbingProjects => new SubpackageDubbingSubpackageDubbingProjectsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -109,7 +109,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageTextClient SubpackageText => new SubpackageTextClient(HttpClient, authorizations: Authorizations, options: Options)
+        public SubpackageTextClient SubpackageText => new SubpackageTextClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -118,7 +118,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageTextToSpeechClient SubpackageTextToSpeech => new SubpackageTextToSpeechClient(HttpClient, authorizations: Authorizations, options: Options)
+        public SubpackageTextToSpeechClient SubpackageTextToSpeech => new SubpackageTextToSpeechClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -127,7 +127,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageVoiceChangerClient SubpackageVoiceChanger => new SubpackageVoiceChangerClient(HttpClient, authorizations: Authorizations, options: Options)
+        public SubpackageVoiceChangerClient SubpackageVoiceChanger => new SubpackageVoiceChangerClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -166,10 +166,10 @@ namespace G
         /// <param name="options">Client-wide request defaults such as headers, query parameters, retries, and timeout.</param>
         /// <param name="disposeHttpClient">Dispose the HttpClient when the instance is disposed. True by default.</param>
         public Api(
-            global::System.Net.Http.HttpClient? httpClient = null,
-            global::System.Uri? baseUri = null,
-            global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations = null,
-            global::G.AutoSDKClientOptions? options = null,
+            global::System.Net.Http.HttpClient? httpClient,
+            global::System.Uri? baseUri,
+            global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations,
+            global::G.AutoSDKClientOptions? options,
             bool disposeHttpClient = true)
         {
 

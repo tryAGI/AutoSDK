@@ -37,6 +37,28 @@ namespace G
         /// <param name="owner"></param>
         /// <param name="repo"></param>
         /// <param name="checkRunId"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.CheckRun>> ChecksUpdateAsResponseAsync(
+            string owner,
+            string repo,
+            int checkRunId,
+
+            global::G.ChecksUpdateRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Update a check run<br/>
+        /// Updates a check run for a specific commit in a repository.<br/>
+        /// &gt; [!NOTE]<br/>
+        /// &gt; The endpoints to manage checks only look for pushes in the repository where the check suite or check run were created. Pushes to a branch in a forked repository are not detected and return an empty `pull_requests` array.<br/>
+        /// OAuth apps and personal access tokens (classic) cannot use this endpoint.
+        /// </summary>
+        /// <param name="owner"></param>
+        /// <param name="repo"></param>
+        /// <param name="checkRunId"></param>
         /// <param name="name">
         /// The name of the check. For example, "code-coverage".
         /// </param>

@@ -142,7 +142,7 @@ namespace G
         /// <summary>
         /// Import media, edit projects with AI, and query jobs and projects.
         /// </summary>
-        public ApiEndpointsClient ApiEndpoints => new ApiEndpointsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public ApiEndpointsClient ApiEndpoints => new ApiEndpointsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -184,7 +184,7 @@ namespace G
         /// Descript Project should be created.<br/>
         /// They'll then be redirected to the Project, where they can monitor the progress of the import and start editing.
         /// </summary>
-        public EditInDescriptClient EditInDescript => new EditInDescriptClient(HttpClient, authorizations: Authorizations, options: Options)
+        public EditInDescriptClient EditInDescript => new EditInDescriptClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -204,7 +204,7 @@ namespace G
         /// &lt;meta property="descript:source" content="409148bd-81aa-4af6-a9c3-29b761506f3a" /&gt;<br/>
         /// ```.
         /// </summary>
-        public ExportFromDescriptClient ExportFromDescript => new ExportFromDescriptClient(HttpClient, authorizations: Authorizations, options: Options)
+        public ExportFromDescriptClient ExportFromDescript => new ExportFromDescriptClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -243,10 +243,10 @@ namespace G
         /// <param name="options">Client-wide request defaults such as headers, query parameters, retries, and timeout.</param>
         /// <param name="disposeHttpClient">Dispose the HttpClient when the instance is disposed. True by default.</param>
         public Api(
-            global::System.Net.Http.HttpClient? httpClient = null,
-            global::System.Uri? baseUri = null,
-            global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations = null,
-            global::G.AutoSDKClientOptions? options = null,
+            global::System.Net.Http.HttpClient? httpClient,
+            global::System.Uri? baseUri,
+            global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations,
+            global::G.AutoSDKClientOptions? options,
             bool disposeHttpClient = true)
         {
 

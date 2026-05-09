@@ -24,12 +24,22 @@ namespace G.JsonConverters
                 foreach (var __jsonProp in __jsonDocument.RootElement.EnumerateObject())
                 {
                     __jsonProps.Add(__jsonProp.Name);
+                    if (__jsonProp.Value.ValueKind == global::System.Text.Json.JsonValueKind.Object)
+                    {
+                        foreach (var __nestedJsonProp in __jsonProp.Value.EnumerateObject())
+                        {
+                            __jsonProps.Add(__jsonProp.Name + "." + __nestedJsonProp.Name);
+                        }
+                    }
+
                 }
             }
 
             var __score0 = 0;
             if (__jsonProps.Contains("begin_after_user_silence_ms")) __score0++;
             if (__jsonProps.Contains("kb_config")) __score0++;
+            if (__jsonProps.Contains("kb_config.filter_score")) __score0++;
+            if (__jsonProps.Contains("kb_config.top_k")) __score0++;
             if (__jsonProps.Contains("knowledge_base_ids")) __score0++;
             if (__jsonProps.Contains("model_choice")) __score0++;
             if (__jsonProps.Contains("model_temperature")) __score0++;
@@ -37,6 +47,8 @@ namespace G.JsonConverters
             if (__jsonProps.Contains("tool_call_strict_mode")) __score0++;
             var __score1 = 0;
             if (__jsonProps.Contains("begin_tag_display_position")) __score1++;
+            if (__jsonProps.Contains("begin_tag_display_position.x")) __score1++;
+            if (__jsonProps.Contains("begin_tag_display_position.y")) __score1++;
             if (__jsonProps.Contains("components")) __score1++;
             if (__jsonProps.Contains("default_dynamic_variables")) __score1++;
             if (__jsonProps.Contains("global_prompt")) __score1++;

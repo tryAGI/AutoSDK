@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickPrompt(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.FunctionDataNullishPrompt? value)
+        {
+            value = Prompt;
+            return IsPrompt;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.FunctionDataNullishCode? Code { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Code))]
 #endif
         public bool IsCode => Code != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickCode(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.FunctionDataNullishCode? value)
+        {
+            value = Code;
+            return IsCode;
+        }
 
         /// <summary>
         /// This feature is preliminary and unsupported.
@@ -60,6 +86,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Graph))]
 #endif
         public bool IsGraph => Graph != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickGraph(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.GraphData? value)
+        {
+            value = Graph;
+            return IsGraph;
+        }
 
         /// <summary>
         /// A remote eval to run
@@ -81,6 +120,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickRemoteEval(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.FunctionDataNullishRemoteEval? value)
+        {
+            value = RemoteEval;
+            return IsRemoteEval;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.FunctionDataNullishGlobal? Global { get; init; }
 #else
@@ -94,6 +146,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Global))]
 #endif
         public bool IsGlobal => Global != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickGlobal(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.FunctionDataNullishGlobal? value)
+        {
+            value = Global;
+            return IsGlobal;
+        }
 
         /// <summary>
         /// 
@@ -115,6 +180,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickFacet(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.FacetData? value)
+        {
+            value = Facet;
+            return IsFacet;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.BatchedFacetData? BatchedFacet { get; init; }
 #else
@@ -128,6 +206,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BatchedFacet))]
 #endif
         public bool IsBatchedFacet => BatchedFacet != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickBatchedFacet(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.BatchedFacetData? value)
+        {
+            value = BatchedFacet;
+            return IsBatchedFacet;
+        }
 
         /// <summary>
         /// 
@@ -149,6 +240,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickParameters(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.FunctionDataNullishParameters? value)
+        {
+            value = Parameters;
+            return IsParameters;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.AllOf<global::G.TopicMapData, object>? FunctionDataNullishVariant9 { get; init; }
 #else
@@ -166,6 +270,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickFunctionDataNullishVariant9(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.AllOf<global::G.TopicMapData, object>? value)
+        {
+            value = FunctionDataNullishVariant9;
+            return IsFunctionDataNullishVariant9;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public object? FunctionDataNullishVariant10 { get; init; }
 #else
@@ -179,6 +296,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FunctionDataNullishVariant10))]
 #endif
         public bool IsFunctionDataNullishVariant10 => FunctionDataNullishVariant10 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFunctionDataNullishVariant10(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out object? value)
+        {
+            value = FunctionDataNullishVariant10;
+            return IsFunctionDataNullishVariant10;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -413,16 +543,16 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.FunctionDataNullishPrompt?, TResult>? prompt = null,
-            global::System.Func<global::G.FunctionDataNullishCode?, TResult>? code = null,
-            global::System.Func<global::G.GraphData?, TResult>? graph = null,
-            global::System.Func<global::G.FunctionDataNullishRemoteEval?, TResult>? remoteEval = null,
-            global::System.Func<global::G.FunctionDataNullishGlobal?, TResult>? global = null,
-            global::System.Func<global::G.FacetData?, TResult>? facet = null,
-            global::System.Func<global::G.BatchedFacetData?, TResult>? batchedFacet = null,
-            global::System.Func<global::G.FunctionDataNullishParameters?, TResult>? parameters = null,
+            global::System.Func<global::G.FunctionDataNullishPrompt, TResult>? prompt = null,
+            global::System.Func<global::G.FunctionDataNullishCode, TResult>? code = null,
+            global::System.Func<global::G.GraphData, TResult>? graph = null,
+            global::System.Func<global::G.FunctionDataNullishRemoteEval, TResult>? remoteEval = null,
+            global::System.Func<global::G.FunctionDataNullishGlobal, TResult>? global = null,
+            global::System.Func<global::G.FacetData, TResult>? facet = null,
+            global::System.Func<global::G.BatchedFacetData, TResult>? batchedFacet = null,
+            global::System.Func<global::G.FunctionDataNullishParameters, TResult>? parameters = null,
             global::System.Func<global::G.AllOf<global::G.TopicMapData, object>?, TResult>? functionDataNullishVariant9 = null,
-            global::System.Func<object?, TResult>? functionDataNullishVariant10 = null,
+            global::System.Func<object, TResult>? functionDataNullishVariant10 = null,
             bool validate = true)
         {
             if (validate)
@@ -478,16 +608,88 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.FunctionDataNullishPrompt?>? prompt = null,
-            global::System.Action<global::G.FunctionDataNullishCode?>? code = null,
-            global::System.Action<global::G.GraphData?>? graph = null,
-            global::System.Action<global::G.FunctionDataNullishRemoteEval?>? remoteEval = null,
-            global::System.Action<global::G.FunctionDataNullishGlobal?>? global = null,
-            global::System.Action<global::G.FacetData?>? facet = null,
-            global::System.Action<global::G.BatchedFacetData?>? batchedFacet = null,
-            global::System.Action<global::G.FunctionDataNullishParameters?>? parameters = null,
+            global::System.Action<global::G.FunctionDataNullishPrompt>? prompt = null,
+
+            global::System.Action<global::G.FunctionDataNullishCode>? code = null,
+
+            global::System.Action<global::G.GraphData>? graph = null,
+
+            global::System.Action<global::G.FunctionDataNullishRemoteEval>? remoteEval = null,
+
+            global::System.Action<global::G.FunctionDataNullishGlobal>? global = null,
+
+            global::System.Action<global::G.FacetData>? facet = null,
+
+            global::System.Action<global::G.BatchedFacetData>? batchedFacet = null,
+
+            global::System.Action<global::G.FunctionDataNullishParameters>? parameters = null,
+
             global::System.Action<global::G.AllOf<global::G.TopicMapData, object>?>? functionDataNullishVariant9 = null,
-            global::System.Action<object?>? functionDataNullishVariant10 = null,
+
+            global::System.Action<object>? functionDataNullishVariant10 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsPrompt)
+            {
+                prompt?.Invoke(Prompt!);
+            }
+            else if (IsCode)
+            {
+                code?.Invoke(Code!);
+            }
+            else if (IsGraph)
+            {
+                graph?.Invoke(Graph!);
+            }
+            else if (IsRemoteEval)
+            {
+                remoteEval?.Invoke(RemoteEval!);
+            }
+            else if (IsGlobal)
+            {
+                global?.Invoke(Global!);
+            }
+            else if (IsFacet)
+            {
+                facet?.Invoke(Facet!);
+            }
+            else if (IsBatchedFacet)
+            {
+                batchedFacet?.Invoke(BatchedFacet!);
+            }
+            else if (IsParameters)
+            {
+                parameters?.Invoke(Parameters!);
+            }
+            else if (IsFunctionDataNullishVariant9)
+            {
+                functionDataNullishVariant9?.Invoke(FunctionDataNullishVariant9!);
+            }
+            else if (IsFunctionDataNullishVariant10)
+            {
+                functionDataNullishVariant10?.Invoke(FunctionDataNullishVariant10!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.FunctionDataNullishPrompt>? prompt = null,
+            global::System.Action<global::G.FunctionDataNullishCode>? code = null,
+            global::System.Action<global::G.GraphData>? graph = null,
+            global::System.Action<global::G.FunctionDataNullishRemoteEval>? remoteEval = null,
+            global::System.Action<global::G.FunctionDataNullishGlobal>? global = null,
+            global::System.Action<global::G.FacetData>? facet = null,
+            global::System.Action<global::G.BatchedFacetData>? batchedFacet = null,
+            global::System.Action<global::G.FunctionDataNullishParameters>? parameters = null,
+            global::System.Action<global::G.AllOf<global::G.TopicMapData, object>?>? functionDataNullishVariant9 = null,
+            global::System.Action<object>? functionDataNullishVariant10 = null,
             bool validate = true)
         {
             if (validate)

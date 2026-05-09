@@ -13,6 +13,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public string? Type { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ResearchOperationDtoClassVariant1? Think { get; init; }
 #else
@@ -26,6 +31,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Think))]
 #endif
         public bool IsThink => Think != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickThink(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ResearchOperationDtoClassVariant1? value)
+        {
+            value = Think;
+            return IsThink;
+        }
 
         /// <summary>
         /// 
@@ -47,6 +65,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickSearch(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ResearchOperationDtoClassVariant2? value)
+        {
+            value = Search;
+            return IsSearch;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ResearchOperationDtoClassVariant3? Crawl { get; init; }
 #else
@@ -60,6 +91,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Crawl))]
 #endif
         public bool IsCrawl => Crawl != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickCrawl(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ResearchOperationDtoClassVariant3? value)
+        {
+            value = Crawl;
+            return IsCrawl;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -118,11 +162,14 @@ namespace G
         /// 
         /// </summary>
         public ResearchOperationDtoClass(
+            string? type,
             global::G.ResearchOperationDtoClassVariant1? think,
             global::G.ResearchOperationDtoClassVariant2? search,
             global::G.ResearchOperationDtoClassVariant3? crawl
             )
         {
+            Type = type;
+
             Think = think;
             Search = search;
             Crawl = crawl;
@@ -158,9 +205,9 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.ResearchOperationDtoClassVariant1?, TResult>? think = null,
-            global::System.Func<global::G.ResearchOperationDtoClassVariant2?, TResult>? search = null,
-            global::System.Func<global::G.ResearchOperationDtoClassVariant3?, TResult>? crawl = null,
+            global::System.Func<global::G.ResearchOperationDtoClassVariant1, TResult>? think = null,
+            global::System.Func<global::G.ResearchOperationDtoClassVariant2, TResult>? search = null,
+            global::System.Func<global::G.ResearchOperationDtoClassVariant3, TResult>? crawl = null,
             bool validate = true)
         {
             if (validate)
@@ -188,9 +235,39 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.ResearchOperationDtoClassVariant1?>? think = null,
-            global::System.Action<global::G.ResearchOperationDtoClassVariant2?>? search = null,
-            global::System.Action<global::G.ResearchOperationDtoClassVariant3?>? crawl = null,
+            global::System.Action<global::G.ResearchOperationDtoClassVariant1>? think = null,
+
+            global::System.Action<global::G.ResearchOperationDtoClassVariant2>? search = null,
+
+            global::System.Action<global::G.ResearchOperationDtoClassVariant3>? crawl = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsThink)
+            {
+                think?.Invoke(Think!);
+            }
+            else if (IsSearch)
+            {
+                search?.Invoke(Search!);
+            }
+            else if (IsCrawl)
+            {
+                crawl?.Invoke(Crawl!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.ResearchOperationDtoClassVariant1>? think = null,
+            global::System.Action<global::G.ResearchOperationDtoClassVariant2>? search = null,
+            global::System.Action<global::G.ResearchOperationDtoClassVariant3>? crawl = null,
             bool validate = true)
         {
             if (validate)

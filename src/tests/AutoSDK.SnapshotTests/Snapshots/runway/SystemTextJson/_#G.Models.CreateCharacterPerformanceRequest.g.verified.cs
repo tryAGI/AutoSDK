@@ -13,6 +13,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public string? Model { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CreateCharacterPerformanceRequestActTwo? ActTwo { get; init; }
 #else
@@ -26,6 +31,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ActTwo))]
 #endif
         public bool IsActTwo => ActTwo != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickActTwo(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateCharacterPerformanceRequestActTwo? value)
+        {
+            value = ActTwo;
+            return IsActTwo;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -42,6 +60,19 @@ namespace G
         public CreateCharacterPerformanceRequest(global::G.CreateCharacterPerformanceRequestActTwo? value)
         {
             ActTwo = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public CreateCharacterPerformanceRequest(
+            string? model,
+            global::G.CreateCharacterPerformanceRequestActTwo? actTwo
+            )
+        {
+            Model = model;
+
+            ActTwo = actTwo;
         }
 
         /// <summary>
@@ -70,7 +101,7 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.CreateCharacterPerformanceRequestActTwo?, TResult>? actTwo = null,
+            global::System.Func<global::G.CreateCharacterPerformanceRequestActTwo, TResult>? actTwo = null,
             bool validate = true)
         {
             if (validate)
@@ -90,7 +121,25 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.CreateCharacterPerformanceRequestActTwo?>? actTwo = null,
+            global::System.Action<global::G.CreateCharacterPerformanceRequestActTwo>? actTwo = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsActTwo)
+            {
+                actTwo?.Invoke(ActTwo!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.CreateCharacterPerformanceRequestActTwo>? actTwo = null,
             bool validate = true)
         {
             if (validate)

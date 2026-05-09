@@ -35,6 +35,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickEmbeddingsFloats(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.EmbedFloatsResponse? value)
+        {
+            value = EmbeddingsFloats;
+            return IsEmbeddingsFloats;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.EmbedByTypeResponse? EmbeddingsByType { get; init; }
 #else
@@ -48,6 +61,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(EmbeddingsByType))]
 #endif
         public bool IsEmbeddingsByType => EmbeddingsByType != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickEmbeddingsByType(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.EmbedByTypeResponse? value)
+        {
+            value = EmbeddingsByType;
+            return IsEmbeddingsByType;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -127,8 +153,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.EmbedFloatsResponse?, TResult>? embeddingsFloats = null,
-            global::System.Func<global::G.EmbedByTypeResponse?, TResult>? embeddingsByType = null,
+            global::System.Func<global::G.EmbedFloatsResponse, TResult>? embeddingsFloats = null,
+            global::System.Func<global::G.EmbedByTypeResponse, TResult>? embeddingsByType = null,
             bool validate = true)
         {
             if (validate)
@@ -152,8 +178,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.EmbedFloatsResponse?>? embeddingsFloats = null,
-            global::System.Action<global::G.EmbedByTypeResponse?>? embeddingsByType = null,
+            global::System.Action<global::G.EmbedFloatsResponse>? embeddingsFloats = null,
+
+            global::System.Action<global::G.EmbedByTypeResponse>? embeddingsByType = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsEmbeddingsFloats)
+            {
+                embeddingsFloats?.Invoke(EmbeddingsFloats!);
+            }
+            else if (IsEmbeddingsByType)
+            {
+                embeddingsByType?.Invoke(EmbeddingsByType!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.EmbedFloatsResponse>? embeddingsFloats = null,
+            global::System.Action<global::G.EmbedByTypeResponse>? embeddingsByType = null,
             bool validate = true)
         {
             if (validate)

@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickBase(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ToolBase? value)
+        {
+            value = Base;
+            return IsBase;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.DynamicVectaraToolVariant2? DynamicVectaraToolVariant2 { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(DynamicVectaraToolVariant2))]
 #endif
         public bool IsDynamicVectaraToolVariant2 => DynamicVectaraToolVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickDynamicVectaraToolVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.DynamicVectaraToolVariant2? value)
+        {
+            value = DynamicVectaraToolVariant2;
+            return IsDynamicVectaraToolVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -119,8 +145,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.ToolBase?, TResult>? @base = null,
-            global::System.Func<global::G.DynamicVectaraToolVariant2?, TResult>? dynamicVectaraToolVariant2 = null,
+            global::System.Func<global::G.ToolBase, TResult>? @base = null,
+            global::System.Func<global::G.DynamicVectaraToolVariant2, TResult>? dynamicVectaraToolVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -144,8 +170,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.ToolBase?>? @base = null,
-            global::System.Action<global::G.DynamicVectaraToolVariant2?>? dynamicVectaraToolVariant2 = null,
+            global::System.Action<global::G.ToolBase>? @base = null,
+
+            global::System.Action<global::G.DynamicVectaraToolVariant2>? dynamicVectaraToolVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsBase)
+            {
+                @base?.Invoke(Base!);
+            }
+            else if (IsDynamicVectaraToolVariant2)
+            {
+                dynamicVectaraToolVariant2?.Invoke(DynamicVectaraToolVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.ToolBase>? @base = null,
+            global::System.Action<global::G.DynamicVectaraToolVariant2>? dynamicVectaraToolVariant2 = null,
             bool validate = true)
         {
             if (validate)

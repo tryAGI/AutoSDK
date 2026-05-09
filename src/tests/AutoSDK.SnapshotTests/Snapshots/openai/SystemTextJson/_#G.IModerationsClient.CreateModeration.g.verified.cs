@@ -22,6 +22,19 @@ namespace G
         /// Classifies if text and/or image inputs are potentially harmful. Learn<br/>
         /// more in the [moderation guide](/docs/guides/moderation).
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.CreateModerationResponse>> CreateModerationAsResponseAsync(
+
+            global::G.CreateModerationRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Classifies if text and/or image inputs are potentially harmful. Learn<br/>
+        /// more in the [moderation guide](/docs/guides/moderation).
+        /// </summary>
         /// <param name="input">
         /// Input (or inputs) to classify. Can be a single string, an array of strings, or<br/>
         /// an array of multi-modal input objects similar to other models.

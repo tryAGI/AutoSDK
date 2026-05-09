@@ -28,6 +28,23 @@ namespace G
         /// </summary>
         /// <param name="id"></param>
         /// <param name="xClientName"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.UpdateConnectorResponse>> UpdateAsResponseAsync(
+            string id,
+
+            global::G.UpdateConnectorRequest request,
+            string? xClientName = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Update a Connector<br/>
+        /// Update a connector by ID. Omitted fields will not be updated. See ['Managing your Connector'](https://docs.cohere.com/docs/managing-your-connector) for more information.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="xClientName"></param>
         /// <param name="name">
         /// A human-readable name for the connector.
         /// </param>

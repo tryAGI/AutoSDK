@@ -104,6 +104,58 @@ namespace G
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var __response = await CreateAsResponseAsync(
+                agentKey: agentKey,
+
+                request: request,
+                requestTimeout: requestTimeout,
+                requestTimeoutMillis: requestTimeoutMillis,
+                requestOptions: requestOptions,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// Create agent session<br/>
+        /// Create a new session for interacting with an agent. A session is the conversation container that maintains state across all messages, events, tool use, and agent responses.<br/>
+        /// This endpoint initializes the session and enables you to configure its initial properties, including optional metadata. Metadata can influence agent behavior, personalize responses, or apply access controls. Instructions and tools can also reference metadata using `${\session.metadata.field}` or `$\ref` syntax.<br/>
+        /// A session also serves as the workspace for artifacts, enabling file uploads and multi-step workflows. For more information, see [Working with artifacts in sessions](https://docs.vectara.com/docs/agent-os/sessions#working-with-artifacts-in-sessions).<br/>
+        /// ## Example request<br/>
+        /// ```json<br/>
+        /// \$ curl -X POST https://api.vectara.io/v2/agents/support-agent/sessions \<br/>
+        /// -H "Authorization: Bearer YOUR_API_KEY" \<br/>
+        /// -H "Content-Type: application/json" \<br/>
+        /// -d '{<br/>
+        ///   "key": "user_12345_session",<br/>
+        ///   "name": "Customer Support Session",<br/>
+        ///   "metadata": {<br/>
+        ///     "user_role": "premium",<br/>
+        ///     "language": "en"<br/>
+        ///   }<br/>
+        /// }'<br/>
+        /// ```<br/>
+        /// A successful response includes the unique session key, configuration metadata, and timestamps for creation and last update.
+        /// </summary>
+        /// <param name="requestTimeout"></param>
+        /// <param name="requestTimeoutMillis"></param>
+        /// <param name="agentKey">
+        /// A unique key that identifies an agent.<br/>
+        /// Example: customer_support
+        /// </param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.AgentSession>> CreateAsResponseAsync(
+            string agentKey,
+
+            global::G.CreateAgentSessionRequest request,
+            int? requestTimeout = default,
+            int? requestTimeoutMillis = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 
             PrepareArguments(
@@ -137,6 +189,7 @@ namespace G
 
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
+
                             var __pathBuilder = new global::G.PathBuilder(
                                 path: $"/v2/agents/{agentKey}/sessions",
                                 baseUri: HttpClient.BaseAddress);
@@ -170,14 +223,14 @@ namespace G
                 } 
             }
 
-                if (requestTimeout != default)
-                {
-                    __httpRequest.Headers.TryAddWithoutValidation("Request-Timeout", requestTimeout.ToString());
-                }
-                if (requestTimeoutMillis != default)
-                {
-                    __httpRequest.Headers.TryAddWithoutValidation("Request-Timeout-Millis", requestTimeoutMillis.ToString());
-                }
+            if (requestTimeout != default)
+            {
+                __httpRequest.Headers.TryAddWithoutValidation("Request-Timeout", requestTimeout.ToString());
+            }
+            if (requestTimeoutMillis != default)
+            {
+                __httpRequest.Headers.TryAddWithoutValidation("Request-Timeout-Millis", requestTimeoutMillis.ToString());
+            }
 
                             var __httpRequestContentBody = request.ToJson(JsonSerializerOptions);
                             var __httpRequestContent = new global::System.Net.Http.StringContent(
@@ -198,7 +251,7 @@ namespace G
                     httpRequestMessage: __httpRequest,
                     requestTimeout: requestTimeout,
                     requestTimeoutMillis: requestTimeoutMillis,
-                    agentKey: agentKey,
+                    agentKey: agentKey!,
                     request: request);
 
                 return __httpRequest;
@@ -229,6 +282,8 @@ namespace G
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                     try
                     {
@@ -242,6 +297,11 @@ namespace G
                     }
                     catch (global::System.Net.Http.HttpRequestException __exception)
                     {
+                        var __retryDelay = global::G.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: null,
+                            attempt: __attempt);
                         var __willRetry = __attempt < __maxAttempts && !__effectiveCancellationToken.IsCancellationRequested;
                         await global::G.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
@@ -259,6 +319,8 @@ namespace G
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: __willRetry,
+                                retryDelay: __willRetry ? __retryDelay : (global::System.TimeSpan?)null,
+                                retryReason: "exception",
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         if (!__willRetry)
                         {
@@ -268,8 +330,7 @@ namespace G
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::G.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -278,6 +339,11 @@ namespace G
                         __attempt < __maxAttempts &&
                         global::G.AutoSDKRequestOptionsSupport.ShouldRetryStatusCode(__response.StatusCode))
                     {
+                        var __retryDelay = global::G.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: __response,
+                            attempt: __attempt);
                         await global::G.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
@@ -294,14 +360,15 @@ namespace G
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: true,
+                                retryDelay: __retryDelay,
+                                retryReason: "status:" + ((int)__response.StatusCode).ToString(global::System.Globalization.CultureInfo.InvariantCulture),
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         __response.Dispose();
                         __response = null;
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::G.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -341,6 +408,8 @@ namespace G
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
                 else
@@ -361,6 +430,8 @@ namespace G
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
                             // Session creation request was malformed or references invalid agent.
@@ -499,9 +570,13 @@ namespace G
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    return
-                                        global::G.AgentSession.FromJson(__content, JsonSerializerOptions) ??
+                                    var __value = global::G.AgentSession.FromJson(__content, JsonSerializerOptions) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                                    return new global::G.AutoSDKHttpResponse<global::G.AgentSession>(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri,
+                                        body: __value);
                                 }
                                 catch (global::System.Exception __ex)
                                 {
@@ -529,9 +604,13 @@ namespace G
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    return
-                                        await global::G.AgentSession.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                                    var __value = await global::G.AgentSession.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
+                                    return new global::G.AutoSDKHttpResponse<global::G.AgentSession>(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri,
+                                        body: __value);
                                 }
                                 catch (global::System.Exception __ex)
                                 {

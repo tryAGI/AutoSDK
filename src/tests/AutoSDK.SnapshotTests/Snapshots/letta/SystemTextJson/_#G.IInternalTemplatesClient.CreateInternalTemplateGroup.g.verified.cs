@@ -24,6 +24,19 @@ namespace G
         /// Create Group<br/>
         /// Create a new multi-agent group with the specified configuration.
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.Group>> CreateInternalTemplateGroupAsResponseAsync(
+
+            global::G.InternalTemplateGroupCreate request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create Group<br/>
+        /// Create a new multi-agent group with the specified configuration.
+        /// </summary>
         /// <param name="agentIds"></param>
         /// <param name="description"></param>
         /// <param name="managerConfig">

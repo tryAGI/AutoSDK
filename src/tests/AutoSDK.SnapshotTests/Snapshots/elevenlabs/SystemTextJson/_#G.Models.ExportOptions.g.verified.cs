@@ -35,6 +35,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickSegmentedJson(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.SegmentedJsonExportOptions? value)
+        {
+            value = SegmentedJson;
+            return IsSegmentedJson;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.DocxExportOptions? Docx { get; init; }
 #else
@@ -48,6 +61,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Docx))]
 #endif
         public bool IsDocx => Docx != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickDocx(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.DocxExportOptions? value)
+        {
+            value = Docx;
+            return IsDocx;
+        }
 
         /// <summary>
         /// 
@@ -69,6 +95,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickPdf(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.PdfExportOptions? value)
+        {
+            value = Pdf;
+            return IsPdf;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.TxtExportOptions? Txt { get; init; }
 #else
@@ -82,6 +121,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Txt))]
 #endif
         public bool IsTxt => Txt != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickTxt(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.TxtExportOptions? value)
+        {
+            value = Txt;
+            return IsTxt;
+        }
 
         /// <summary>
         /// 
@@ -103,6 +155,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickHtml(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.HtmlExportOptions? value)
+        {
+            value = Html;
+            return IsHtml;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.SrtExportOptions? Srt { get; init; }
 #else
@@ -116,6 +181,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Srt))]
 #endif
         public bool IsSrt => Srt != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSrt(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.SrtExportOptions? value)
+        {
+            value = Srt;
+            return IsSrt;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -283,12 +361,12 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.SegmentedJsonExportOptions?, TResult>? segmentedJson = null,
-            global::System.Func<global::G.DocxExportOptions?, TResult>? docx = null,
-            global::System.Func<global::G.PdfExportOptions?, TResult>? pdf = null,
-            global::System.Func<global::G.TxtExportOptions?, TResult>? txt = null,
-            global::System.Func<global::G.HtmlExportOptions?, TResult>? html = null,
-            global::System.Func<global::G.SrtExportOptions?, TResult>? srt = null,
+            global::System.Func<global::G.SegmentedJsonExportOptions, TResult>? segmentedJson = null,
+            global::System.Func<global::G.DocxExportOptions, TResult>? docx = null,
+            global::System.Func<global::G.PdfExportOptions, TResult>? pdf = null,
+            global::System.Func<global::G.TxtExportOptions, TResult>? txt = null,
+            global::System.Func<global::G.HtmlExportOptions, TResult>? html = null,
+            global::System.Func<global::G.SrtExportOptions, TResult>? srt = null,
             bool validate = true)
         {
             if (validate)
@@ -328,12 +406,60 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.SegmentedJsonExportOptions?>? segmentedJson = null,
-            global::System.Action<global::G.DocxExportOptions?>? docx = null,
-            global::System.Action<global::G.PdfExportOptions?>? pdf = null,
-            global::System.Action<global::G.TxtExportOptions?>? txt = null,
-            global::System.Action<global::G.HtmlExportOptions?>? html = null,
-            global::System.Action<global::G.SrtExportOptions?>? srt = null,
+            global::System.Action<global::G.SegmentedJsonExportOptions>? segmentedJson = null,
+
+            global::System.Action<global::G.DocxExportOptions>? docx = null,
+
+            global::System.Action<global::G.PdfExportOptions>? pdf = null,
+
+            global::System.Action<global::G.TxtExportOptions>? txt = null,
+
+            global::System.Action<global::G.HtmlExportOptions>? html = null,
+
+            global::System.Action<global::G.SrtExportOptions>? srt = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsSegmentedJson)
+            {
+                segmentedJson?.Invoke(SegmentedJson!);
+            }
+            else if (IsDocx)
+            {
+                docx?.Invoke(Docx!);
+            }
+            else if (IsPdf)
+            {
+                pdf?.Invoke(Pdf!);
+            }
+            else if (IsTxt)
+            {
+                txt?.Invoke(Txt!);
+            }
+            else if (IsHtml)
+            {
+                html?.Invoke(Html!);
+            }
+            else if (IsSrt)
+            {
+                srt?.Invoke(Srt!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.SegmentedJsonExportOptions>? segmentedJson = null,
+            global::System.Action<global::G.DocxExportOptions>? docx = null,
+            global::System.Action<global::G.PdfExportOptions>? pdf = null,
+            global::System.Action<global::G.TxtExportOptions>? txt = null,
+            global::System.Action<global::G.HtmlExportOptions>? html = null,
+            global::System.Action<global::G.SrtExportOptions>? srt = null,
             bool validate = true)
         {
             if (validate)

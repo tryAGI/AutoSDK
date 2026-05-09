@@ -22,6 +22,19 @@ namespace G
         /// Create Texture Generation<br/>
         /// This endpoint will generate a texture generation.
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.CreateTextureGenerationResponse>> CreateTextureGenerationAsResponseAsync(
+
+            global::G.CreateTextureGenerationRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create Texture Generation<br/>
+        /// This endpoint will generate a texture generation.
+        /// </summary>
         /// <param name="frontRotationOffset"></param>
         /// <param name="modelAssetId"></param>
         /// <param name="negativePrompt"></param>

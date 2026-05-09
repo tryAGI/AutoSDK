@@ -20,5 +20,20 @@ namespace G
             int repositoryId,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Remove a repository from an app installation<br/>
+        /// Remove a single repository from an installation. The authenticated user must have admin access to the repository. The installation must have the `repository_selection` of `selected`. <br/>
+        /// This endpoint only works for PATs (classic) with the `repo` scope.
+        /// </summary>
+        /// <param name="installationId"></param>
+        /// <param name="repositoryId"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse> AppsRemoveRepoFromInstallationForAuthenticatedUserAsResponseAsync(
+            int installationId,
+            int repositoryId,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -31,6 +31,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Templated))]
 #endif
         public bool IsTemplated => Templated != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickTemplated(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.TemplatedReminder? value)
+        {
+            value = Templated;
+            return IsTemplated;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -88,7 +101,7 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.TemplatedReminder?, TResult>? templated = null,
+            global::System.Func<global::G.TemplatedReminder, TResult>? templated = null,
             bool validate = true)
         {
             if (validate)
@@ -108,7 +121,25 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.TemplatedReminder?>? templated = null,
+            global::System.Action<global::G.TemplatedReminder>? templated = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsTemplated)
+            {
+                templated?.Invoke(Templated!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.TemplatedReminder>? templated = null,
             bool validate = true)
         {
             if (validate)

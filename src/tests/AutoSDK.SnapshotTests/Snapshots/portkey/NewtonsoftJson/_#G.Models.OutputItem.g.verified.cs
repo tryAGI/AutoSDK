@@ -11,6 +11,11 @@ namespace G
     public readonly partial struct OutputItem : global::System.IEquatable<OutputItem>
     {
         /// <summary>
+        /// 
+        /// </summary>
+        public string? Type { get; }
+
+        /// <summary>
         /// An output message from the model.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -26,6 +31,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Message))]
 #endif
         public bool IsMessage => Message != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMessage(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.OutputMessage? value)
+        {
+            value = Message;
+            return IsMessage;
+        }
 
         /// <summary>
         /// The results of a file search tool call. See the <br/>
@@ -46,6 +64,19 @@ namespace G
         public bool IsFileSearchCall => FileSearchCall != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFileSearchCall(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.FileSearchToolCall? value)
+        {
+            value = FileSearchCall;
+            return IsFileSearchCall;
+        }
+
+        /// <summary>
         /// A tool call to run a function. See the <br/>
         /// [function calling guide](/docs/guides/function-calling) for more information.
         /// </summary>
@@ -62,6 +93,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FunctionCall))]
 #endif
         public bool IsFunctionCall => FunctionCall != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFunctionCall(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.FunctionToolCall? value)
+        {
+            value = FunctionCall;
+            return IsFunctionCall;
+        }
 
         /// <summary>
         /// The results of a web search tool call. See the <br/>
@@ -82,6 +126,19 @@ namespace G
         public bool IsWebSearchCall => WebSearchCall != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickWebSearchCall(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.WebSearchToolCall? value)
+        {
+            value = WebSearchCall;
+            return IsWebSearchCall;
+        }
+
+        /// <summary>
         /// A tool call to a computer use tool. See the <br/>
         /// [computer use guide](/docs/guides/tools-computer-use) for more information.
         /// </summary>
@@ -100,6 +157,19 @@ namespace G
         public bool IsComputerCall => ComputerCall != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickComputerCall(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ComputerToolCall? value)
+        {
+            value = ComputerCall;
+            return IsComputerCall;
+        }
+
+        /// <summary>
         /// A description of the chain of thought used by a reasoning model while generating<br/>
         /// a response.
         /// </summary>
@@ -116,6 +186,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Reasoning))]
 #endif
         public bool IsReasoning => Reasoning != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickReasoning(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ReasoningItem? value)
+        {
+            value = Reasoning;
+            return IsReasoning;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -228,6 +311,7 @@ namespace G
         /// 
         /// </summary>
         public OutputItem(
+            string? type,
             global::G.OutputMessage? message,
             global::G.FileSearchToolCall? fileSearchCall,
             global::G.FunctionToolCall? functionCall,
@@ -236,6 +320,8 @@ namespace G
             global::G.ReasoningItem? reasoning
             )
         {
+            Type = type;
+
             Message = message;
             FileSearchCall = fileSearchCall;
             FunctionCall = functionCall;
@@ -280,12 +366,12 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.OutputMessage?, TResult>? message = null,
-            global::System.Func<global::G.FileSearchToolCall?, TResult>? fileSearchCall = null,
-            global::System.Func<global::G.FunctionToolCall?, TResult>? functionCall = null,
-            global::System.Func<global::G.WebSearchToolCall?, TResult>? webSearchCall = null,
-            global::System.Func<global::G.ComputerToolCall?, TResult>? computerCall = null,
-            global::System.Func<global::G.ReasoningItem?, TResult>? reasoning = null,
+            global::System.Func<global::G.OutputMessage, TResult>? message = null,
+            global::System.Func<global::G.FileSearchToolCall, TResult>? fileSearchCall = null,
+            global::System.Func<global::G.FunctionToolCall, TResult>? functionCall = null,
+            global::System.Func<global::G.WebSearchToolCall, TResult>? webSearchCall = null,
+            global::System.Func<global::G.ComputerToolCall, TResult>? computerCall = null,
+            global::System.Func<global::G.ReasoningItem, TResult>? reasoning = null,
             bool validate = true)
         {
             if (validate)
@@ -325,12 +411,60 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.OutputMessage?>? message = null,
-            global::System.Action<global::G.FileSearchToolCall?>? fileSearchCall = null,
-            global::System.Action<global::G.FunctionToolCall?>? functionCall = null,
-            global::System.Action<global::G.WebSearchToolCall?>? webSearchCall = null,
-            global::System.Action<global::G.ComputerToolCall?>? computerCall = null,
-            global::System.Action<global::G.ReasoningItem?>? reasoning = null,
+            global::System.Action<global::G.OutputMessage>? message = null,
+
+            global::System.Action<global::G.FileSearchToolCall>? fileSearchCall = null,
+
+            global::System.Action<global::G.FunctionToolCall>? functionCall = null,
+
+            global::System.Action<global::G.WebSearchToolCall>? webSearchCall = null,
+
+            global::System.Action<global::G.ComputerToolCall>? computerCall = null,
+
+            global::System.Action<global::G.ReasoningItem>? reasoning = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsMessage)
+            {
+                message?.Invoke(Message!);
+            }
+            else if (IsFileSearchCall)
+            {
+                fileSearchCall?.Invoke(FileSearchCall!);
+            }
+            else if (IsFunctionCall)
+            {
+                functionCall?.Invoke(FunctionCall!);
+            }
+            else if (IsWebSearchCall)
+            {
+                webSearchCall?.Invoke(WebSearchCall!);
+            }
+            else if (IsComputerCall)
+            {
+                computerCall?.Invoke(ComputerCall!);
+            }
+            else if (IsReasoning)
+            {
+                reasoning?.Invoke(Reasoning!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.OutputMessage>? message = null,
+            global::System.Action<global::G.FileSearchToolCall>? fileSearchCall = null,
+            global::System.Action<global::G.FunctionToolCall>? functionCall = null,
+            global::System.Action<global::G.WebSearchToolCall>? webSearchCall = null,
+            global::System.Action<global::G.ComputerToolCall>? computerCall = null,
+            global::System.Action<global::G.ReasoningItem>? reasoning = null,
             bool validate = true)
         {
             if (validate)

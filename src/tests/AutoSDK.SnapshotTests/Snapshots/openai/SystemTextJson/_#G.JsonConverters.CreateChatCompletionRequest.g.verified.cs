@@ -24,12 +24,22 @@ namespace G.JsonConverters
                 foreach (var __jsonProp in __jsonDocument.RootElement.EnumerateObject())
                 {
                     __jsonProps.Add(__jsonProp.Name);
+                    if (__jsonProp.Value.ValueKind == global::System.Text.Json.JsonValueKind.Object)
+                    {
+                        foreach (var __nestedJsonProp in __jsonProp.Value.EnumerateObject())
+                        {
+                            __jsonProps.Add(__jsonProp.Name + "." + __nestedJsonProp.Name);
+                        }
+                    }
+
                 }
             }
 
             var __score0 = 0;
             var __score1 = 0;
             if (__jsonProps.Contains("audio")) __score1++;
+            if (__jsonProps.Contains("audio.format")) __score1++;
+            if (__jsonProps.Contains("audio.voice")) __score1++;
             if (__jsonProps.Contains("frequency_penalty")) __score1++;
             if (__jsonProps.Contains("function_call")) __score1++;
             if (__jsonProps.Contains("functions")) __score1++;
@@ -51,10 +61,13 @@ namespace G.JsonConverters
             if (__jsonProps.Contains("store")) __score1++;
             if (__jsonProps.Contains("stream")) __score1++;
             if (__jsonProps.Contains("stream_options")) __score1++;
+            if (__jsonProps.Contains("stream_options.include_usage")) __score1++;
             if (__jsonProps.Contains("tool_choice")) __score1++;
             if (__jsonProps.Contains("tools")) __score1++;
             if (__jsonProps.Contains("top_logprobs")) __score1++;
             if (__jsonProps.Contains("web_search_options")) __score1++;
+            if (__jsonProps.Contains("web_search_options.search_context_size")) __score1++;
+            if (__jsonProps.Contains("web_search_options.user_location")) __score1++;
             var __bestScore = 0;
             var __bestIndex = -1;
             if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }

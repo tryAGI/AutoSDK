@@ -35,6 +35,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickOpenai(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.OpenAIModelSettings? value)
+        {
+            value = Openai;
+            return IsOpenai;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.AnthropicModelSettings? Anthropic { get; init; }
 #else
@@ -48,6 +61,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Anthropic))]
 #endif
         public bool IsAnthropic => Anthropic != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickAnthropic(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.AnthropicModelSettings? value)
+        {
+            value = Anthropic;
+            return IsAnthropic;
+        }
 
         /// <summary>
         /// 
@@ -69,6 +95,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickGoogleAi(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.GoogleAIModelSettings? value)
+        {
+            value = GoogleAi;
+            return IsGoogleAi;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.GoogleVertexModelSettings? GoogleVertex { get; init; }
 #else
@@ -82,6 +121,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(GoogleVertex))]
 #endif
         public bool IsGoogleVertex => GoogleVertex != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickGoogleVertex(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.GoogleVertexModelSettings? value)
+        {
+            value = GoogleVertex;
+            return IsGoogleVertex;
+        }
 
         /// <summary>
         /// Azure OpenAI model configuration (OpenAI-compatible).
@@ -101,6 +153,19 @@ namespace G
         public bool IsAzure => Azure != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickAzure(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.AzureModelSettings? value)
+        {
+            value = Azure;
+            return IsAzure;
+        }
+
+        /// <summary>
         /// xAI model configuration (OpenAI-compatible).
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -116,6 +181,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Xai))]
 #endif
         public bool IsXai => Xai != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickXai(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.XAIModelSettings? value)
+        {
+            value = Xai;
+            return IsXai;
+        }
 
         /// <summary>
         /// Z.ai (ZhipuAI) model configuration (OpenAI-compatible).
@@ -135,6 +213,19 @@ namespace G
         public bool IsZai => Zai != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickZai(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ZAIModelSettings? value)
+        {
+            value = Zai;
+            return IsZai;
+        }
+
+        /// <summary>
         /// Groq model configuration (OpenAI-compatible).
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -150,6 +241,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Groq))]
 #endif
         public bool IsGroq => Groq != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickGroq(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.GroqModelSettings? value)
+        {
+            value = Groq;
+            return IsGroq;
+        }
 
         /// <summary>
         /// Deepseek model configuration (OpenAI-compatible).
@@ -169,6 +273,19 @@ namespace G
         public bool IsDeepseek => Deepseek != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickDeepseek(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.DeepseekModelSettings? value)
+        {
+            value = Deepseek;
+            return IsDeepseek;
+        }
+
+        /// <summary>
         /// Together AI model configuration (OpenAI-compatible).
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -184,6 +301,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Together))]
 #endif
         public bool IsTogether => Together != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickTogether(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.TogetherModelSettings? value)
+        {
+            value = Together;
+            return IsTogether;
+        }
 
         /// <summary>
         /// AWS Bedrock model configuration.
@@ -203,6 +333,19 @@ namespace G
         public bool IsBedrock => Bedrock != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickBedrock(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.BedrockModelSettings? value)
+        {
+            value = Bedrock;
+            return IsBedrock;
+        }
+
+        /// <summary>
         /// OpenRouter model configuration (OpenAI-compatible).
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -220,6 +363,19 @@ namespace G
         public bool IsOpenrouter => Openrouter != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickOpenrouter(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.OpenRouterModelSettings? value)
+        {
+            value = Openrouter;
+            return IsOpenrouter;
+        }
+
+        /// <summary>
         /// ChatGPT OAuth model configuration (uses ChatGPT backend API).
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -235,6 +391,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ChatgptOauth))]
 #endif
         public bool IsChatgptOauth => ChatgptOauth != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickChatgptOauth(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ChatGPTOAuthModelSettings? value)
+        {
+            value = ChatgptOauth;
+            return IsChatgptOauth;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -556,19 +725,19 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.OpenAIModelSettings?, TResult>? openai = null,
-            global::System.Func<global::G.AnthropicModelSettings?, TResult>? anthropic = null,
-            global::System.Func<global::G.GoogleAIModelSettings?, TResult>? googleAi = null,
-            global::System.Func<global::G.GoogleVertexModelSettings?, TResult>? googleVertex = null,
-            global::System.Func<global::G.AzureModelSettings?, TResult>? azure = null,
-            global::System.Func<global::G.XAIModelSettings?, TResult>? xai = null,
-            global::System.Func<global::G.ZAIModelSettings?, TResult>? zai = null,
-            global::System.Func<global::G.GroqModelSettings?, TResult>? groq = null,
-            global::System.Func<global::G.DeepseekModelSettings?, TResult>? deepseek = null,
-            global::System.Func<global::G.TogetherModelSettings?, TResult>? together = null,
-            global::System.Func<global::G.BedrockModelSettings?, TResult>? bedrock = null,
-            global::System.Func<global::G.OpenRouterModelSettings?, TResult>? openrouter = null,
-            global::System.Func<global::G.ChatGPTOAuthModelSettings?, TResult>? chatgptOauth = null,
+            global::System.Func<global::G.OpenAIModelSettings, TResult>? openai = null,
+            global::System.Func<global::G.AnthropicModelSettings, TResult>? anthropic = null,
+            global::System.Func<global::G.GoogleAIModelSettings, TResult>? googleAi = null,
+            global::System.Func<global::G.GoogleVertexModelSettings, TResult>? googleVertex = null,
+            global::System.Func<global::G.AzureModelSettings, TResult>? azure = null,
+            global::System.Func<global::G.XAIModelSettings, TResult>? xai = null,
+            global::System.Func<global::G.ZAIModelSettings, TResult>? zai = null,
+            global::System.Func<global::G.GroqModelSettings, TResult>? groq = null,
+            global::System.Func<global::G.DeepseekModelSettings, TResult>? deepseek = null,
+            global::System.Func<global::G.TogetherModelSettings, TResult>? together = null,
+            global::System.Func<global::G.BedrockModelSettings, TResult>? bedrock = null,
+            global::System.Func<global::G.OpenRouterModelSettings, TResult>? openrouter = null,
+            global::System.Func<global::G.ChatGPTOAuthModelSettings, TResult>? chatgptOauth = null,
             bool validate = true)
         {
             if (validate)
@@ -636,19 +805,109 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.OpenAIModelSettings?>? openai = null,
-            global::System.Action<global::G.AnthropicModelSettings?>? anthropic = null,
-            global::System.Action<global::G.GoogleAIModelSettings?>? googleAi = null,
-            global::System.Action<global::G.GoogleVertexModelSettings?>? googleVertex = null,
-            global::System.Action<global::G.AzureModelSettings?>? azure = null,
-            global::System.Action<global::G.XAIModelSettings?>? xai = null,
-            global::System.Action<global::G.ZAIModelSettings?>? zai = null,
-            global::System.Action<global::G.GroqModelSettings?>? groq = null,
-            global::System.Action<global::G.DeepseekModelSettings?>? deepseek = null,
-            global::System.Action<global::G.TogetherModelSettings?>? together = null,
-            global::System.Action<global::G.BedrockModelSettings?>? bedrock = null,
-            global::System.Action<global::G.OpenRouterModelSettings?>? openrouter = null,
-            global::System.Action<global::G.ChatGPTOAuthModelSettings?>? chatgptOauth = null,
+            global::System.Action<global::G.OpenAIModelSettings>? openai = null,
+
+            global::System.Action<global::G.AnthropicModelSettings>? anthropic = null,
+
+            global::System.Action<global::G.GoogleAIModelSettings>? googleAi = null,
+
+            global::System.Action<global::G.GoogleVertexModelSettings>? googleVertex = null,
+
+            global::System.Action<global::G.AzureModelSettings>? azure = null,
+
+            global::System.Action<global::G.XAIModelSettings>? xai = null,
+
+            global::System.Action<global::G.ZAIModelSettings>? zai = null,
+
+            global::System.Action<global::G.GroqModelSettings>? groq = null,
+
+            global::System.Action<global::G.DeepseekModelSettings>? deepseek = null,
+
+            global::System.Action<global::G.TogetherModelSettings>? together = null,
+
+            global::System.Action<global::G.BedrockModelSettings>? bedrock = null,
+
+            global::System.Action<global::G.OpenRouterModelSettings>? openrouter = null,
+
+            global::System.Action<global::G.ChatGPTOAuthModelSettings>? chatgptOauth = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsOpenai)
+            {
+                openai?.Invoke(Openai!);
+            }
+            else if (IsAnthropic)
+            {
+                anthropic?.Invoke(Anthropic!);
+            }
+            else if (IsGoogleAi)
+            {
+                googleAi?.Invoke(GoogleAi!);
+            }
+            else if (IsGoogleVertex)
+            {
+                googleVertex?.Invoke(GoogleVertex!);
+            }
+            else if (IsAzure)
+            {
+                azure?.Invoke(Azure!);
+            }
+            else if (IsXai)
+            {
+                xai?.Invoke(Xai!);
+            }
+            else if (IsZai)
+            {
+                zai?.Invoke(Zai!);
+            }
+            else if (IsGroq)
+            {
+                groq?.Invoke(Groq!);
+            }
+            else if (IsDeepseek)
+            {
+                deepseek?.Invoke(Deepseek!);
+            }
+            else if (IsTogether)
+            {
+                together?.Invoke(Together!);
+            }
+            else if (IsBedrock)
+            {
+                bedrock?.Invoke(Bedrock!);
+            }
+            else if (IsOpenrouter)
+            {
+                openrouter?.Invoke(Openrouter!);
+            }
+            else if (IsChatgptOauth)
+            {
+                chatgptOauth?.Invoke(ChatgptOauth!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.OpenAIModelSettings>? openai = null,
+            global::System.Action<global::G.AnthropicModelSettings>? anthropic = null,
+            global::System.Action<global::G.GoogleAIModelSettings>? googleAi = null,
+            global::System.Action<global::G.GoogleVertexModelSettings>? googleVertex = null,
+            global::System.Action<global::G.AzureModelSettings>? azure = null,
+            global::System.Action<global::G.XAIModelSettings>? xai = null,
+            global::System.Action<global::G.ZAIModelSettings>? zai = null,
+            global::System.Action<global::G.GroqModelSettings>? groq = null,
+            global::System.Action<global::G.DeepseekModelSettings>? deepseek = null,
+            global::System.Action<global::G.TogetherModelSettings>? together = null,
+            global::System.Action<global::G.BedrockModelSettings>? bedrock = null,
+            global::System.Action<global::G.OpenRouterModelSettings>? openrouter = null,
+            global::System.Action<global::G.ChatGPTOAuthModelSettings>? chatgptOauth = null,
             bool validate = true)
         {
             if (validate)

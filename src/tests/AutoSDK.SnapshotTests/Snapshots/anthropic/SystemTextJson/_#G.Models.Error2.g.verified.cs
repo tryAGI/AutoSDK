@@ -35,6 +35,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickInvalidRequestError(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.InvalidRequestError? value)
+        {
+            value = InvalidRequestError;
+            return IsInvalidRequestError;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.AuthenticationError? AuthenticationError { get; init; }
 #else
@@ -48,6 +61,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AuthenticationError))]
 #endif
         public bool IsAuthenticationError => AuthenticationError != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickAuthenticationError(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.AuthenticationError? value)
+        {
+            value = AuthenticationError;
+            return IsAuthenticationError;
+        }
 
         /// <summary>
         /// 
@@ -69,6 +95,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickBillingError(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.BillingError? value)
+        {
+            value = BillingError;
+            return IsBillingError;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.PermissionError? PermissionError { get; init; }
 #else
@@ -82,6 +121,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(PermissionError))]
 #endif
         public bool IsPermissionError => PermissionError != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickPermissionError(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.PermissionError? value)
+        {
+            value = PermissionError;
+            return IsPermissionError;
+        }
 
         /// <summary>
         /// 
@@ -103,6 +155,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickNotFoundError(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.NotFoundError? value)
+        {
+            value = NotFoundError;
+            return IsNotFoundError;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.RateLimitError? RateLimitError { get; init; }
 #else
@@ -116,6 +181,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RateLimitError))]
 #endif
         public bool IsRateLimitError => RateLimitError != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickRateLimitError(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.RateLimitError? value)
+        {
+            value = RateLimitError;
+            return IsRateLimitError;
+        }
 
         /// <summary>
         /// 
@@ -137,6 +215,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickTimeoutError(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.GatewayTimeoutError? value)
+        {
+            value = TimeoutError;
+            return IsTimeoutError;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.APIError? ApiError { get; init; }
 #else
@@ -154,6 +245,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickApiError(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.APIError? value)
+        {
+            value = ApiError;
+            return IsApiError;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.OverloadedError? OverloadedError { get; init; }
 #else
@@ -167,6 +271,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OverloadedError))]
 #endif
         public bool IsOverloadedError => OverloadedError != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickOverloadedError(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.OverloadedError? value)
+        {
+            value = OverloadedError;
+            return IsOverloadedError;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -400,15 +517,15 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.InvalidRequestError?, TResult>? invalidRequestError = null,
-            global::System.Func<global::G.AuthenticationError?, TResult>? authenticationError = null,
-            global::System.Func<global::G.BillingError?, TResult>? billingError = null,
-            global::System.Func<global::G.PermissionError?, TResult>? permissionError = null,
-            global::System.Func<global::G.NotFoundError?, TResult>? notFoundError = null,
-            global::System.Func<global::G.RateLimitError?, TResult>? rateLimitError = null,
-            global::System.Func<global::G.GatewayTimeoutError?, TResult>? timeoutError = null,
-            global::System.Func<global::G.APIError?, TResult>? apiError = null,
-            global::System.Func<global::G.OverloadedError?, TResult>? overloadedError = null,
+            global::System.Func<global::G.InvalidRequestError, TResult>? invalidRequestError = null,
+            global::System.Func<global::G.AuthenticationError, TResult>? authenticationError = null,
+            global::System.Func<global::G.BillingError, TResult>? billingError = null,
+            global::System.Func<global::G.PermissionError, TResult>? permissionError = null,
+            global::System.Func<global::G.NotFoundError, TResult>? notFoundError = null,
+            global::System.Func<global::G.RateLimitError, TResult>? rateLimitError = null,
+            global::System.Func<global::G.GatewayTimeoutError, TResult>? timeoutError = null,
+            global::System.Func<global::G.APIError, TResult>? apiError = null,
+            global::System.Func<global::G.OverloadedError, TResult>? overloadedError = null,
             bool validate = true)
         {
             if (validate)
@@ -460,15 +577,81 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.InvalidRequestError?>? invalidRequestError = null,
-            global::System.Action<global::G.AuthenticationError?>? authenticationError = null,
-            global::System.Action<global::G.BillingError?>? billingError = null,
-            global::System.Action<global::G.PermissionError?>? permissionError = null,
-            global::System.Action<global::G.NotFoundError?>? notFoundError = null,
-            global::System.Action<global::G.RateLimitError?>? rateLimitError = null,
-            global::System.Action<global::G.GatewayTimeoutError?>? timeoutError = null,
-            global::System.Action<global::G.APIError?>? apiError = null,
-            global::System.Action<global::G.OverloadedError?>? overloadedError = null,
+            global::System.Action<global::G.InvalidRequestError>? invalidRequestError = null,
+
+            global::System.Action<global::G.AuthenticationError>? authenticationError = null,
+
+            global::System.Action<global::G.BillingError>? billingError = null,
+
+            global::System.Action<global::G.PermissionError>? permissionError = null,
+
+            global::System.Action<global::G.NotFoundError>? notFoundError = null,
+
+            global::System.Action<global::G.RateLimitError>? rateLimitError = null,
+
+            global::System.Action<global::G.GatewayTimeoutError>? timeoutError = null,
+
+            global::System.Action<global::G.APIError>? apiError = null,
+
+            global::System.Action<global::G.OverloadedError>? overloadedError = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsInvalidRequestError)
+            {
+                invalidRequestError?.Invoke(InvalidRequestError!);
+            }
+            else if (IsAuthenticationError)
+            {
+                authenticationError?.Invoke(AuthenticationError!);
+            }
+            else if (IsBillingError)
+            {
+                billingError?.Invoke(BillingError!);
+            }
+            else if (IsPermissionError)
+            {
+                permissionError?.Invoke(PermissionError!);
+            }
+            else if (IsNotFoundError)
+            {
+                notFoundError?.Invoke(NotFoundError!);
+            }
+            else if (IsRateLimitError)
+            {
+                rateLimitError?.Invoke(RateLimitError!);
+            }
+            else if (IsTimeoutError)
+            {
+                timeoutError?.Invoke(TimeoutError!);
+            }
+            else if (IsApiError)
+            {
+                apiError?.Invoke(ApiError!);
+            }
+            else if (IsOverloadedError)
+            {
+                overloadedError?.Invoke(OverloadedError!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.InvalidRequestError>? invalidRequestError = null,
+            global::System.Action<global::G.AuthenticationError>? authenticationError = null,
+            global::System.Action<global::G.BillingError>? billingError = null,
+            global::System.Action<global::G.PermissionError>? permissionError = null,
+            global::System.Action<global::G.NotFoundError>? notFoundError = null,
+            global::System.Action<global::G.RateLimitError>? rateLimitError = null,
+            global::System.Action<global::G.GatewayTimeoutError>? timeoutError = null,
+            global::System.Action<global::G.APIError>? apiError = null,
+            global::System.Action<global::G.OverloadedError>? overloadedError = null,
             bool validate = true)
         {
             if (validate)

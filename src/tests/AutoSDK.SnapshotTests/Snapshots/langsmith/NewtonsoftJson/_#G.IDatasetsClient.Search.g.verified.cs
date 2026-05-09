@@ -25,6 +25,21 @@ namespace G
         /// Search a dataset.
         /// </summary>
         /// <param name="datasetId"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.SearchDatasetResponse>> SearchAsResponseAsync(
+            global::System.Guid datasetId,
+
+            global::G.SearchDatasetRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Search<br/>
+        /// Search a dataset.
+        /// </summary>
+        /// <param name="datasetId"></param>
         /// <param name="inputs"></param>
         /// <param name="limit">
         /// Default Value: 5

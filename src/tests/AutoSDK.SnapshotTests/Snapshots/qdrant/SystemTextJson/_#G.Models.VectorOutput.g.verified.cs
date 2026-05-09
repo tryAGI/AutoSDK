@@ -28,6 +28,19 @@ namespace G
         public bool IsVectorOutputVariant1 => VectorOutputVariant1 != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickVectorOutputVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::System.Collections.Generic.IList<float>? value)
+        {
+            value = VectorOutputVariant1;
+            return IsVectorOutputVariant1;
+        }
+
+        /// <summary>
         /// Sparse vector structure
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -47,6 +60,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickSparse(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.SparseVector? value)
+        {
+            value = Sparse;
+            return IsSparse;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>? VectorOutputVariant3 { get; init; }
 #else
@@ -60,6 +86,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(VectorOutputVariant3))]
 #endif
         public bool IsVectorOutputVariant3 => VectorOutputVariant3 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickVectorOutputVariant3(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>? value)
+        {
+            value = VectorOutputVariant3;
+            return IsVectorOutputVariant3;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -122,9 +161,9 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::System.Collections.Generic.IList<float>?, TResult>? vectorOutputVariant1 = null,
-            global::System.Func<global::G.SparseVector?, TResult>? sparse = null,
-            global::System.Func<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>?, TResult>? vectorOutputVariant3 = null,
+            global::System.Func<global::System.Collections.Generic.IList<float>, TResult>? vectorOutputVariant1 = null,
+            global::System.Func<global::G.SparseVector, TResult>? sparse = null,
+            global::System.Func<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>, TResult>? vectorOutputVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -152,9 +191,39 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::System.Collections.Generic.IList<float>?>? vectorOutputVariant1 = null,
-            global::System.Action<global::G.SparseVector?>? sparse = null,
-            global::System.Action<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>?>? vectorOutputVariant3 = null,
+            global::System.Action<global::System.Collections.Generic.IList<float>>? vectorOutputVariant1 = null,
+
+            global::System.Action<global::G.SparseVector>? sparse = null,
+
+            global::System.Action<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>>? vectorOutputVariant3 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsVectorOutputVariant1)
+            {
+                vectorOutputVariant1?.Invoke(VectorOutputVariant1!);
+            }
+            else if (IsSparse)
+            {
+                sparse?.Invoke(Sparse!);
+            }
+            else if (IsVectorOutputVariant3)
+            {
+                vectorOutputVariant3?.Invoke(VectorOutputVariant3!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::System.Collections.Generic.IList<float>>? vectorOutputVariant1 = null,
+            global::System.Action<global::G.SparseVector>? sparse = null,
+            global::System.Action<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>>? vectorOutputVariant3 = null,
             bool validate = true)
         {
             if (validate)

@@ -61,6 +61,39 @@ namespace G
         /// &lt;/Note&gt;
         /// </summary>
         /// <param name="xApiKey"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.SearchResults>> CreateAsResponseAsync(
+            string xApiKey,
+
+            global::G.CreateRequest7 request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Make any-to-video search requests<br/>
+        /// Use this endpoint to search for relevant matches in an index using text, media, or a combination of both as your query.<br/>
+        /// **Text queries**:<br/>
+        /// - Use the `query_text` parameter to specify your query.<br/>
+        /// **Media queries**:<br/>
+        /// - Set the `query_media_type` parameter to the corresponding media type (example: `image`).<br/>
+        /// - Provide up to 10 images by specifying the following parameters multiple times:<br/>
+        ///   - `query_media_url`: Publicly accessible URL of your media file.<br/>
+        ///   - `query_media_file`: Local media file.<br/>
+        /// - Marengo 2.7 supports a single image per request.<br/>
+        /// **Composed text and media queries** (Marengo 3.0 only):<br/>
+        /// - Use the `query_text` parameter for your text query.<br/>
+        /// - Set `query_media_type` to `image`.<br/>
+        /// - Provide up to 10 images by specifying the `query_media_url` and `query_media_file` parameters multiple times.<br/>
+        /// **Entity search** (Marengo 3.0 only and in beta):<br/>
+        /// - To find a specific person in your videos, enclose the unique identifier of the entity you want to find in the `query_text` parameter.<br/>
+        /// &lt;Note title="Notes"&gt;<br/>
+        /// - When using images in your search queries (either as media queries or in composed searches), ensure your image files meet the [requirements](/v1.3/docs/concepts/models/marengo#image-file-requirements).<br/>
+        /// - This endpoint is rate-limited. For details, see the [Rate limits](/v1.3/docs/get-started/rate-limits) page.<br/>
+        /// &lt;/Note&gt;
+        /// </summary>
+        /// <param name="xApiKey"></param>
         /// <param name="queryMediaType">
         /// The type of media you wish to use. This parameter is required for media queries. For example, to perform an image-based search, set this parameter to `image`. Use `query_text` together with this parameter when you want to perform a composed image+text search.
         /// </param>

@@ -32,6 +32,25 @@ namespace G
         /// </summary>
         /// <param name="broadcasterId"></param>
         /// <param name="moderatorId"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse> SendChatAnnouncementAsResponseAsync(
+            string broadcasterId,
+            string moderatorId,
+
+            global::G.SendChatAnnouncementBody request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Sends an announcement to the broadcaster’s chat room.<br/>
+        /// Sends an announcement to the broadcaster’s chat room.<br/>
+        /// __Authorization:__<br/>
+        /// Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the **moderator:manage:announcements** scope.
+        /// </summary>
+        /// <param name="broadcasterId"></param>
+        /// <param name="moderatorId"></param>
         /// <param name="message">
         /// The announcement to make in the broadcaster’s chat room. Announcements are limited to a maximum of 500 characters; announcements longer than 500 characters are truncated.
         /// </param>

@@ -28,6 +28,19 @@ namespace G
         public bool IsSparseIndexTypeVariant1 => SparseIndexTypeVariant1 != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSparseIndexTypeVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.SparseIndexTypeVariant1? value)
+        {
+            value = SparseIndexTypeVariant1;
+            return IsSparseIndexTypeVariant1;
+        }
+
+        /// <summary>
         /// Immutable RAM sparse index
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -45,6 +58,19 @@ namespace G
         public bool IsSparseIndexTypeVariant2 => SparseIndexTypeVariant2 != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSparseIndexTypeVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.SparseIndexTypeVariant2? value)
+        {
+            value = SparseIndexTypeVariant2;
+            return IsSparseIndexTypeVariant2;
+        }
+
+        /// <summary>
         /// Mmap sparse index
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -60,6 +86,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SparseIndexTypeVariant3))]
 #endif
         public bool IsSparseIndexTypeVariant3 => SparseIndexTypeVariant3 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSparseIndexTypeVariant3(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.SparseIndexTypeVariant3? value)
+        {
+            value = SparseIndexTypeVariant3;
+            return IsSparseIndexTypeVariant3;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -188,6 +227,36 @@ namespace G
         /// 
         /// </summary>
         public void Match(
+            global::System.Action<global::G.SparseIndexTypeVariant1?>? sparseIndexTypeVariant1 = null,
+
+            global::System.Action<global::G.SparseIndexTypeVariant2?>? sparseIndexTypeVariant2 = null,
+
+            global::System.Action<global::G.SparseIndexTypeVariant3?>? sparseIndexTypeVariant3 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsSparseIndexTypeVariant1)
+            {
+                sparseIndexTypeVariant1?.Invoke(SparseIndexTypeVariant1!);
+            }
+            else if (IsSparseIndexTypeVariant2)
+            {
+                sparseIndexTypeVariant2?.Invoke(SparseIndexTypeVariant2!);
+            }
+            else if (IsSparseIndexTypeVariant3)
+            {
+                sparseIndexTypeVariant3?.Invoke(SparseIndexTypeVariant3!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
             global::System.Action<global::G.SparseIndexTypeVariant1?>? sparseIndexTypeVariant1 = null,
             global::System.Action<global::G.SparseIndexTypeVariant2?>? sparseIndexTypeVariant2 = null,
             global::System.Action<global::G.SparseIndexTypeVariant3?>? sparseIndexTypeVariant3 = null,

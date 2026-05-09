@@ -28,6 +28,19 @@ namespace G
         public bool IsFileSearchServerToolFilters0 => FileSearchServerToolFilters0 != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFileSearchServerToolFilters0(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.FileSearchServerToolFilters0? value)
+        {
+            value = FileSearchServerToolFilters0;
+            return IsFileSearchServerToolFilters0;
+        }
+
+        /// <summary>
         /// A compound filter that combines multiple comparison or compound filters
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -45,6 +58,19 @@ namespace G
         public bool IsCompoundFilter => CompoundFilter != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickCompoundFilter(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CompoundFilter? value)
+        {
+            value = CompoundFilter;
+            return IsCompoundFilter;
+        }
+
+        /// <summary>
         /// Any type
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -60,6 +86,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FileSearchServerToolFiltersVariant3))]
 #endif
         public bool IsFileSearchServerToolFiltersVariant3 => FileSearchServerToolFiltersVariant3 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFileSearchServerToolFiltersVariant3(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out object? value)
+        {
+            value = FileSearchServerToolFiltersVariant3;
+            return IsFileSearchServerToolFiltersVariant3;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -140,9 +179,9 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.FileSearchServerToolFilters0?, TResult>? fileSearchServerToolFilters0 = null,
-            global::System.Func<global::G.CompoundFilter?, TResult>? compoundFilter = null,
-            global::System.Func<object?, TResult>? fileSearchServerToolFiltersVariant3 = null,
+            global::System.Func<global::G.FileSearchServerToolFilters0, TResult>? fileSearchServerToolFilters0 = null,
+            global::System.Func<global::G.CompoundFilter, TResult>? compoundFilter = null,
+            global::System.Func<object, TResult>? fileSearchServerToolFiltersVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -170,9 +209,39 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.FileSearchServerToolFilters0?>? fileSearchServerToolFilters0 = null,
-            global::System.Action<global::G.CompoundFilter?>? compoundFilter = null,
-            global::System.Action<object?>? fileSearchServerToolFiltersVariant3 = null,
+            global::System.Action<global::G.FileSearchServerToolFilters0>? fileSearchServerToolFilters0 = null,
+
+            global::System.Action<global::G.CompoundFilter>? compoundFilter = null,
+
+            global::System.Action<object>? fileSearchServerToolFiltersVariant3 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsFileSearchServerToolFilters0)
+            {
+                fileSearchServerToolFilters0?.Invoke(FileSearchServerToolFilters0!);
+            }
+            else if (IsCompoundFilter)
+            {
+                compoundFilter?.Invoke(CompoundFilter!);
+            }
+            else if (IsFileSearchServerToolFiltersVariant3)
+            {
+                fileSearchServerToolFiltersVariant3?.Invoke(FileSearchServerToolFiltersVariant3!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.FileSearchServerToolFilters0>? fileSearchServerToolFilters0 = null,
+            global::System.Action<global::G.CompoundFilter>? compoundFilter = null,
+            global::System.Action<object>? fileSearchServerToolFiltersVariant3 = null,
             bool validate = true)
         {
             if (validate)

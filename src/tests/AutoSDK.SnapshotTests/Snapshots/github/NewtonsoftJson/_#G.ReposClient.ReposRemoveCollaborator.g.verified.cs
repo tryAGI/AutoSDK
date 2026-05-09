@@ -6,6 +6,14 @@ namespace G
 {
     public partial class ReposClient
     {
+
+        private static readonly global::G.AutoSDKServer[] s_ReposRemoveCollaboratorServers = new global::G.AutoSDKServer[]
+        {            new global::G.AutoSDKServer(
+                id: "https-api-github-com",
+                name: "api.github.com",
+                url: "https://api.github.com/",
+                description: ""),
+        };
         partial void PrepareReposRemoveCollaboratorArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string owner,
@@ -53,6 +61,46 @@ namespace G
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            await ReposRemoveCollaboratorAsResponseAsync(
+                owner: owner,
+                repo: repo,
+                username: username,
+                requestOptions: requestOptions,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+        }
+        /// <summary>
+        /// Remove a repository collaborator<br/>
+        /// Removes a collaborator from a repository.<br/>
+        /// To use this endpoint, the authenticated user must either be an administrator of the repository or target themselves for removal.<br/>
+        /// This endpoint also:<br/>
+        /// - Cancels any outstanding invitations<br/>
+        /// - Unasigns the user from any issues<br/>
+        /// - Removes access to organization projects if the user is not an organization member and is not a collaborator on any other organization repositories.<br/>
+        /// - Unstars the repository<br/>
+        /// - Updates access permissions to packages<br/>
+        /// Removing a user as a collaborator has the following effects on forks:<br/>
+        ///  - If the user had access to a fork through their membership to this repository, the user will also be removed from the fork.<br/>
+        ///  - If the user had their own fork of the repository, the fork will be deleted.<br/>
+        ///  - If the user still has read access to the repository, open pull requests by this user from a fork will be denied.<br/>
+        /// &gt; [!NOTE]<br/>
+        /// &gt; A user can still have access to the repository through organization permissions like base repository permissions.<br/>
+        /// Although the API responds immediately, the additional permission updates might take some extra time to complete in the background.<br/>
+        /// For more information on fork permissions, see "[About permissions and visibility of forks](https://docs.github.com/pull-requests/collaborating-with-pull-requests/working-with-forks/about-permissions-and-visibility-of-forks)".
+        /// </summary>
+        /// <param name="owner"></param>
+        /// <param name="repo"></param>
+        /// <param name="username"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse> ReposRemoveCollaboratorAsResponseAsync(
+            string owner,
+            string repo,
+            string username,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             PrepareArguments(
                 client: HttpClient);
             PrepareReposRemoveCollaboratorArguments(
@@ -77,9 +125,12 @@ namespace G
 
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
+
                             var __pathBuilder = new global::G.PathBuilder(
                                 path: $"/repos/{owner}/{repo}/collaborators/{username}",
-                                baseUri: HttpClient.BaseAddress);
+                                baseUri: ResolveBaseUri(
+                                servers: s_ReposRemoveCollaboratorServers,
+                                defaultBaseUrl: "https://api.github.com/"));
                             var __path = __pathBuilder.ToString();
                 __path = global::G.AutoSDKRequestOptionsSupport.AppendQueryParameters(
                     path: __path,
@@ -103,9 +154,9 @@ namespace G
                 PrepareReposRemoveCollaboratorRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    owner: owner,
-                    repo: repo,
-                    username: username);
+                    owner: owner!,
+                    repo: repo!,
+                    username: username!);
 
                 return __httpRequest;
             }
@@ -135,6 +186,8 @@ namespace G
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                     try
                     {
@@ -145,6 +198,11 @@ namespace G
                     }
                     catch (global::System.Net.Http.HttpRequestException __exception)
                     {
+                        var __retryDelay = global::G.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: null,
+                            attempt: __attempt);
                         var __willRetry = __attempt < __maxAttempts && !__effectiveCancellationToken.IsCancellationRequested;
                         await global::G.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
@@ -162,6 +220,8 @@ namespace G
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: __willRetry,
+                                retryDelay: __willRetry ? __retryDelay : (global::System.TimeSpan?)null,
+                                retryReason: "exception",
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         if (!__willRetry)
                         {
@@ -171,8 +231,7 @@ namespace G
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::G.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -181,6 +240,11 @@ namespace G
                         __attempt < __maxAttempts &&
                         global::G.AutoSDKRequestOptionsSupport.ShouldRetryStatusCode(__response.StatusCode))
                     {
+                        var __retryDelay = global::G.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: __response,
+                            attempt: __attempt);
                         await global::G.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
@@ -197,14 +261,15 @@ namespace G
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: true,
+                                retryDelay: __retryDelay,
+                                retryReason: "status:" + ((int)__response.StatusCode).ToString(global::System.Globalization.CultureInfo.InvariantCulture),
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         __response.Dispose();
                         __response = null;
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::G.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -244,6 +309,8 @@ namespace G
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
                 else
@@ -264,6 +331,8 @@ namespace G
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
                             // Validation failed, or the endpoint has been spammed.
@@ -360,6 +429,10 @@ namespace G
                                 {
                                     __response.EnsureSuccessStatusCode();
 
+                return new global::G.AutoSDKHttpResponse(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri);
                                 }
                                 catch (global::System.Exception __ex)
                                 {
@@ -381,6 +454,10 @@ namespace G
                                 try
                                 {
                                     __response.EnsureSuccessStatusCode();
+                                    return new global::G.AutoSDKHttpResponse(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri);
                                 }
                                 catch (global::System.Exception __ex)
                                 {

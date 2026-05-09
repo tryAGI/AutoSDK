@@ -11,6 +11,11 @@ namespace G
     public readonly partial struct Media : global::System.IEquatable<Media>
     {
         /// <summary>
+        /// 
+        /// </summary>
+        public string? Type { get; }
+
+        /// <summary>
         /// An audio file containing dialogue to be processed.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -28,6 +33,19 @@ namespace G
         public bool IsAudio => Audio != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickAudio(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateSpeechToSpeechRequestElevenMultilingualStsV2MediaSpeechToSpeechAudio? value)
+        {
+            value = Audio;
+            return IsAudio;
+        }
+
+        /// <summary>
         /// A video file containing dialogue to be processed.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -43,6 +61,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Video))]
 #endif
         public bool IsVideo => Video != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickVideo(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateSpeechToSpeechRequestElevenMultilingualStsV2MediaSpeechToSpeechVideo? value)
+        {
+            value = Video;
+            return IsVideo;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -83,10 +114,13 @@ namespace G
         /// 
         /// </summary>
         public Media(
+            string? type,
             global::G.CreateSpeechToSpeechRequestElevenMultilingualStsV2MediaSpeechToSpeechAudio? audio,
             global::G.CreateSpeechToSpeechRequestElevenMultilingualStsV2MediaSpeechToSpeechVideo? video
             )
         {
+            Type = type;
+
             Audio = audio;
             Video = video;
         }
@@ -119,8 +153,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.CreateSpeechToSpeechRequestElevenMultilingualStsV2MediaSpeechToSpeechAudio?, TResult>? audio = null,
-            global::System.Func<global::G.CreateSpeechToSpeechRequestElevenMultilingualStsV2MediaSpeechToSpeechVideo?, TResult>? video = null,
+            global::System.Func<global::G.CreateSpeechToSpeechRequestElevenMultilingualStsV2MediaSpeechToSpeechAudio, TResult>? audio = null,
+            global::System.Func<global::G.CreateSpeechToSpeechRequestElevenMultilingualStsV2MediaSpeechToSpeechVideo, TResult>? video = null,
             bool validate = true)
         {
             if (validate)
@@ -144,8 +178,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.CreateSpeechToSpeechRequestElevenMultilingualStsV2MediaSpeechToSpeechAudio?>? audio = null,
-            global::System.Action<global::G.CreateSpeechToSpeechRequestElevenMultilingualStsV2MediaSpeechToSpeechVideo?>? video = null,
+            global::System.Action<global::G.CreateSpeechToSpeechRequestElevenMultilingualStsV2MediaSpeechToSpeechAudio>? audio = null,
+
+            global::System.Action<global::G.CreateSpeechToSpeechRequestElevenMultilingualStsV2MediaSpeechToSpeechVideo>? video = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsAudio)
+            {
+                audio?.Invoke(Audio!);
+            }
+            else if (IsVideo)
+            {
+                video?.Invoke(Video!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.CreateSpeechToSpeechRequestElevenMultilingualStsV2MediaSpeechToSpeechAudio>? audio = null,
+            global::System.Action<global::G.CreateSpeechToSpeechRequestElevenMultilingualStsV2MediaSpeechToSpeechVideo>? video = null,
             bool validate = true)
         {
             if (validate)

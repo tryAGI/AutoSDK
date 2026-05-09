@@ -23,6 +23,20 @@ namespace G
         /// Move a project card
         /// </summary>
         /// <param name="cardId"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.ProjectsMoveCardResponse>> ProjectsMoveCardAsResponseAsync(
+            int cardId,
+
+            global::G.ProjectsMoveCardRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Move a project card
+        /// </summary>
+        /// <param name="cardId"></param>
         /// <param name="position">
         /// The position of the card in a column. Can be one of: `top`, `bottom`, or `after:&lt;card_id&gt;` to place after the specified card.<br/>
         /// Example: bottom

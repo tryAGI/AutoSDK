@@ -25,6 +25,21 @@ namespace G
         /// Update trace by id
         /// </summary>
         /// <param name="id"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse> UpdateTraceAsResponseAsync(
+            global::System.Guid id,
+
+            global::G.TraceUpdate request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Update trace by id<br/>
+        /// Update trace by id
+        /// </summary>
+        /// <param name="id"></param>
         /// <param name="projectName">
         /// If null and project_id not specified, Default Project is assumed
         /// </param>

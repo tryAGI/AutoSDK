@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickCreateScoreValueVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out double? value)
+        {
+            value = CreateScoreValueVariant1;
+            return IsCreateScoreValueVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public string? CreateScoreValueVariant2 { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CreateScoreValueVariant2))]
 #endif
         public bool IsCreateScoreValueVariant2 => CreateScoreValueVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickCreateScoreValueVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = CreateScoreValueVariant2;
+            return IsCreateScoreValueVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -120,7 +146,7 @@ namespace G
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<double?, TResult>? createScoreValueVariant1 = null,
-            global::System.Func<string?, TResult>? createScoreValueVariant2 = null,
+            global::System.Func<string, TResult>? createScoreValueVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -145,7 +171,31 @@ namespace G
         /// </summary>
         public void Match(
             global::System.Action<double?>? createScoreValueVariant1 = null,
-            global::System.Action<string?>? createScoreValueVariant2 = null,
+
+            global::System.Action<string>? createScoreValueVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsCreateScoreValueVariant1)
+            {
+                createScoreValueVariant1?.Invoke(CreateScoreValueVariant1!);
+            }
+            else if (IsCreateScoreValueVariant2)
+            {
+                createScoreValueVariant2?.Invoke(CreateScoreValueVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<double?>? createScoreValueVariant1 = null,
+            global::System.Action<string>? createScoreValueVariant2 = null,
             bool validate = true)
         {
             if (validate)

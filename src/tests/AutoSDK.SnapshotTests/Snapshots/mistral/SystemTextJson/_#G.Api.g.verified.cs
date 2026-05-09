@@ -244,7 +244,7 @@ namespace G
         /// <summary>
         /// Agents. Agents API.
         /// </summary>
-        public AgentsClient Agents => new AgentsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public AgentsClient Agents => new AgentsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -253,7 +253,7 @@ namespace G
         /// <summary>
         /// Batch. Batch API.
         /// </summary>
-        public BatchClient Batch => new BatchClient(HttpClient, authorizations: Authorizations, options: Options)
+        public BatchClient Batch => new BatchClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -262,7 +262,7 @@ namespace G
         /// <summary>
         /// Chat. Chat Completion API.
         /// </summary>
-        public ChatClient Chat => new ChatClient(HttpClient, authorizations: Authorizations, options: Options)
+        public ChatClient Chat => new ChatClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -271,7 +271,7 @@ namespace G
         /// <summary>
         /// Classifiers. Classifiers API.
         /// </summary>
-        public ClassifiersClient Classifiers => new ClassifiersClient(HttpClient, authorizations: Authorizations, options: Options)
+        public ClassifiersClient Classifiers => new ClassifiersClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -280,7 +280,7 @@ namespace G
         /// <summary>
         /// Embeddings. Embeddings API.
         /// </summary>
-        public EmbeddingsClient Embeddings => new EmbeddingsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public EmbeddingsClient Embeddings => new EmbeddingsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -289,7 +289,7 @@ namespace G
         /// <summary>
         /// Files. Files API.
         /// </summary>
-        public FilesClient Files => new FilesClient(HttpClient, authorizations: Authorizations, options: Options)
+        public FilesClient Files => new FilesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -298,7 +298,7 @@ namespace G
         /// <summary>
         /// FIM. Fill-in-the-middle API.
         /// </summary>
-        public FimClient Fim => new FimClient(HttpClient, authorizations: Authorizations, options: Options)
+        public FimClient Fim => new FimClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -307,7 +307,7 @@ namespace G
         /// <summary>
         /// Fine Tuning. Fine-tuning API.
         /// </summary>
-        public FineTuningClient FineTuning => new FineTuningClient(HttpClient, authorizations: Authorizations, options: Options)
+        public FineTuningClient FineTuning => new FineTuningClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -316,7 +316,7 @@ namespace G
         /// <summary>
         /// Models. Model Management API.
         /// </summary>
-        public ModelsClient Models => new ModelsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public ModelsClient Models => new ModelsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -325,7 +325,7 @@ namespace G
         /// <summary>
         /// OCR API.
         /// </summary>
-        public OcrClient Ocr => new OcrClient(HttpClient, authorizations: Authorizations, options: Options)
+        public OcrClient Ocr => new OcrClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -364,10 +364,10 @@ namespace G
         /// <param name="options">Client-wide request defaults such as headers, query parameters, retries, and timeout.</param>
         /// <param name="disposeHttpClient">Dispose the HttpClient when the instance is disposed. True by default.</param>
         public Api(
-            global::System.Net.Http.HttpClient? httpClient = null,
-            global::System.Uri? baseUri = null,
-            global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations = null,
-            global::G.AutoSDKClientOptions? options = null,
+            global::System.Net.Http.HttpClient? httpClient,
+            global::System.Uri? baseUri,
+            global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations,
+            global::G.AutoSDKClientOptions? options,
             bool disposeHttpClient = true)
         {
 

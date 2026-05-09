@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickNearest(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.NearestQuery? value)
+        {
+            value = Nearest;
+            return IsNearest;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.RecommendQuery? Recommend { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Recommend))]
 #endif
         public bool IsRecommend => Recommend != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickRecommend(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.RecommendQuery? value)
+        {
+            value = Recommend;
+            return IsRecommend;
+        }
 
         /// <summary>
         /// 
@@ -64,6 +90,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickDiscover(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.DiscoverQuery? value)
+        {
+            value = Discover;
+            return IsDiscover;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ContextQuery? Context { get; init; }
 #else
@@ -77,6 +116,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Context))]
 #endif
         public bool IsContext => Context != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickContext(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ContextQuery? value)
+        {
+            value = Context;
+            return IsContext;
+        }
 
         /// <summary>
         /// 
@@ -98,6 +150,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickOrderBy(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.OrderByQuery? value)
+        {
+            value = OrderBy;
+            return IsOrderBy;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.FusionQuery? Fusion { get; init; }
 #else
@@ -111,6 +176,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Fusion))]
 #endif
         public bool IsFusion => Fusion != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFusion(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.FusionQuery? value)
+        {
+            value = Fusion;
+            return IsFusion;
+        }
 
         /// <summary>
         /// 
@@ -132,6 +210,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickRrf(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.RrfQuery? value)
+        {
+            value = Rrf;
+            return IsRrf;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.FormulaQuery? Formula { get; init; }
 #else
@@ -145,6 +236,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Formula))]
 #endif
         public bool IsFormula => Formula != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFormula(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.FormulaQuery? value)
+        {
+            value = Formula;
+            return IsFormula;
+        }
 
         /// <summary>
         /// 
@@ -166,6 +270,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickSample(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.SampleQuery? value)
+        {
+            value = Sample;
+            return IsSample;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.RelevanceFeedbackQuery? RelevanceFeedback { get; init; }
 #else
@@ -179,6 +296,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RelevanceFeedback))]
 #endif
         public bool IsRelevanceFeedback => RelevanceFeedback != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickRelevanceFeedback(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.RelevanceFeedbackQuery? value)
+        {
+            value = RelevanceFeedback;
+            return IsRelevanceFeedback;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -431,16 +561,16 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.NearestQuery?, TResult>? nearest = null,
-            global::System.Func<global::G.RecommendQuery?, TResult>? recommend = null,
-            global::System.Func<global::G.DiscoverQuery?, TResult>? discover = null,
-            global::System.Func<global::G.ContextQuery?, TResult>? context = null,
-            global::System.Func<global::G.OrderByQuery?, TResult>? orderBy = null,
-            global::System.Func<global::G.FusionQuery?, TResult>? fusion = null,
-            global::System.Func<global::G.RrfQuery?, TResult>? rrf = null,
-            global::System.Func<global::G.FormulaQuery?, TResult>? formula = null,
-            global::System.Func<global::G.SampleQuery?, TResult>? sample = null,
-            global::System.Func<global::G.RelevanceFeedbackQuery?, TResult>? relevanceFeedback = null,
+            global::System.Func<global::G.NearestQuery, TResult>? nearest = null,
+            global::System.Func<global::G.RecommendQuery, TResult>? recommend = null,
+            global::System.Func<global::G.DiscoverQuery, TResult>? discover = null,
+            global::System.Func<global::G.ContextQuery, TResult>? context = null,
+            global::System.Func<global::G.OrderByQuery, TResult>? orderBy = null,
+            global::System.Func<global::G.FusionQuery, TResult>? fusion = null,
+            global::System.Func<global::G.RrfQuery, TResult>? rrf = null,
+            global::System.Func<global::G.FormulaQuery, TResult>? formula = null,
+            global::System.Func<global::G.SampleQuery, TResult>? sample = null,
+            global::System.Func<global::G.RelevanceFeedbackQuery, TResult>? relevanceFeedback = null,
             bool validate = true)
         {
             if (validate)
@@ -496,16 +626,88 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.NearestQuery?>? nearest = null,
-            global::System.Action<global::G.RecommendQuery?>? recommend = null,
-            global::System.Action<global::G.DiscoverQuery?>? discover = null,
-            global::System.Action<global::G.ContextQuery?>? context = null,
-            global::System.Action<global::G.OrderByQuery?>? orderBy = null,
-            global::System.Action<global::G.FusionQuery?>? fusion = null,
-            global::System.Action<global::G.RrfQuery?>? rrf = null,
-            global::System.Action<global::G.FormulaQuery?>? formula = null,
-            global::System.Action<global::G.SampleQuery?>? sample = null,
-            global::System.Action<global::G.RelevanceFeedbackQuery?>? relevanceFeedback = null,
+            global::System.Action<global::G.NearestQuery>? nearest = null,
+
+            global::System.Action<global::G.RecommendQuery>? recommend = null,
+
+            global::System.Action<global::G.DiscoverQuery>? discover = null,
+
+            global::System.Action<global::G.ContextQuery>? context = null,
+
+            global::System.Action<global::G.OrderByQuery>? orderBy = null,
+
+            global::System.Action<global::G.FusionQuery>? fusion = null,
+
+            global::System.Action<global::G.RrfQuery>? rrf = null,
+
+            global::System.Action<global::G.FormulaQuery>? formula = null,
+
+            global::System.Action<global::G.SampleQuery>? sample = null,
+
+            global::System.Action<global::G.RelevanceFeedbackQuery>? relevanceFeedback = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsNearest)
+            {
+                nearest?.Invoke(Nearest!);
+            }
+            else if (IsRecommend)
+            {
+                recommend?.Invoke(Recommend!);
+            }
+            else if (IsDiscover)
+            {
+                discover?.Invoke(Discover!);
+            }
+            else if (IsContext)
+            {
+                context?.Invoke(Context!);
+            }
+            else if (IsOrderBy)
+            {
+                orderBy?.Invoke(OrderBy!);
+            }
+            else if (IsFusion)
+            {
+                fusion?.Invoke(Fusion!);
+            }
+            else if (IsRrf)
+            {
+                rrf?.Invoke(Rrf!);
+            }
+            else if (IsFormula)
+            {
+                formula?.Invoke(Formula!);
+            }
+            else if (IsSample)
+            {
+                sample?.Invoke(Sample!);
+            }
+            else if (IsRelevanceFeedback)
+            {
+                relevanceFeedback?.Invoke(RelevanceFeedback!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.NearestQuery>? nearest = null,
+            global::System.Action<global::G.RecommendQuery>? recommend = null,
+            global::System.Action<global::G.DiscoverQuery>? discover = null,
+            global::System.Action<global::G.ContextQuery>? context = null,
+            global::System.Action<global::G.OrderByQuery>? orderBy = null,
+            global::System.Action<global::G.FusionQuery>? fusion = null,
+            global::System.Action<global::G.RrfQuery>? rrf = null,
+            global::System.Action<global::G.FormulaQuery>? formula = null,
+            global::System.Action<global::G.SampleQuery>? sample = null,
+            global::System.Action<global::G.RelevanceFeedbackQuery>? relevanceFeedback = null,
             bool validate = true)
         {
             if (validate)

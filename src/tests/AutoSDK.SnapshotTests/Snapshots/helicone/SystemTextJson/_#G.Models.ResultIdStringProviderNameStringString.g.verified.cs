@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickSuccess(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ResultSuccessIdStringProviderNameString? value)
+        {
+            value = Success;
+            return IsSuccess;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ResultErrorString? Error { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Error))]
 #endif
         public bool IsError => Error != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickError(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ResultErrorString? value)
+        {
+            value = Error;
+            return IsError;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -119,8 +145,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.ResultSuccessIdStringProviderNameString?, TResult>? success = null,
-            global::System.Func<global::G.ResultErrorString?, TResult>? error = null,
+            global::System.Func<global::G.ResultSuccessIdStringProviderNameString, TResult>? success = null,
+            global::System.Func<global::G.ResultErrorString, TResult>? error = null,
             bool validate = true)
         {
             if (validate)
@@ -144,8 +170,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.ResultSuccessIdStringProviderNameString?>? success = null,
-            global::System.Action<global::G.ResultErrorString?>? error = null,
+            global::System.Action<global::G.ResultSuccessIdStringProviderNameString>? success = null,
+
+            global::System.Action<global::G.ResultErrorString>? error = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsSuccess)
+            {
+                success?.Invoke(Success!);
+            }
+            else if (IsError)
+            {
+                error?.Invoke(Error!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.ResultSuccessIdStringProviderNameString>? success = null,
+            global::System.Action<global::G.ResultErrorString>? error = null,
             bool validate = true)
         {
             if (validate)

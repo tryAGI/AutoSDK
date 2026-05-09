@@ -33,6 +33,19 @@ namespace G
         public bool IsAudioResponse => AudioResponse != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickAudioResponse(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.AudioResponsePayload? value)
+        {
+            value = AudioResponse;
+            return IsAudioResponse;
+        }
+
+        /// <summary>
         /// Metadata for the speak session.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -48,6 +61,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SpeakMetadata))]
 #endif
         public bool IsSpeakMetadata => SpeakMetadata != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSpeakMetadata(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.SpeakMetadataPayload? value)
+        {
+            value = SpeakMetadata;
+            return IsSpeakMetadata;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -127,8 +153,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.AudioResponsePayload?, TResult>? audioResponse = null,
-            global::System.Func<global::G.SpeakMetadataPayload?, TResult>? speakMetadata = null,
+            global::System.Func<global::G.AudioResponsePayload, TResult>? audioResponse = null,
+            global::System.Func<global::G.SpeakMetadataPayload, TResult>? speakMetadata = null,
             bool validate = true)
         {
             if (validate)
@@ -152,8 +178,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.AudioResponsePayload?>? audioResponse = null,
-            global::System.Action<global::G.SpeakMetadataPayload?>? speakMetadata = null,
+            global::System.Action<global::G.AudioResponsePayload>? audioResponse = null,
+
+            global::System.Action<global::G.SpeakMetadataPayload>? speakMetadata = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsAudioResponse)
+            {
+                audioResponse?.Invoke(AudioResponse!);
+            }
+            else if (IsSpeakMetadata)
+            {
+                speakMetadata?.Invoke(SpeakMetadata!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.AudioResponsePayload>? audioResponse = null,
+            global::System.Action<global::G.SpeakMetadataPayload>? speakMetadata = null,
             bool validate = true)
         {
             if (validate)

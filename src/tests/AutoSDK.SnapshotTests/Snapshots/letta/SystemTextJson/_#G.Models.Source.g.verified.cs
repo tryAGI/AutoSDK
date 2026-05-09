@@ -35,6 +35,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickUrl(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.UrlImage? value)
+        {
+            value = Url;
+            return IsUrl;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.Base64Image? Base64 { get; init; }
 #else
@@ -52,6 +65,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickBase64(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.Base64Image? value)
+        {
+            value = Base64;
+            return IsBase64;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.LettaImage? Letta { get; init; }
 #else
@@ -65,6 +91,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Letta))]
 #endif
         public bool IsLetta => Letta != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickLetta(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.LettaImage? value)
+        {
+            value = Letta;
+            return IsLetta;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -166,9 +205,9 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.UrlImage?, TResult>? url = null,
-            global::System.Func<global::G.Base64Image?, TResult>? base64 = null,
-            global::System.Func<global::G.LettaImage?, TResult>? letta = null,
+            global::System.Func<global::G.UrlImage, TResult>? url = null,
+            global::System.Func<global::G.Base64Image, TResult>? base64 = null,
+            global::System.Func<global::G.LettaImage, TResult>? letta = null,
             bool validate = true)
         {
             if (validate)
@@ -196,9 +235,39 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.UrlImage?>? url = null,
-            global::System.Action<global::G.Base64Image?>? base64 = null,
-            global::System.Action<global::G.LettaImage?>? letta = null,
+            global::System.Action<global::G.UrlImage>? url = null,
+
+            global::System.Action<global::G.Base64Image>? base64 = null,
+
+            global::System.Action<global::G.LettaImage>? letta = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsUrl)
+            {
+                url?.Invoke(Url!);
+            }
+            else if (IsBase64)
+            {
+                base64?.Invoke(Base64!);
+            }
+            else if (IsLetta)
+            {
+                letta?.Invoke(Letta!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.UrlImage>? url = null,
+            global::System.Action<global::G.Base64Image>? base64 = null,
+            global::System.Action<global::G.LettaImage>? letta = null,
             bool validate = true)
         {
             if (validate)

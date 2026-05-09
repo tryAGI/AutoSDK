@@ -13,6 +13,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public string? EventType { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ResearchEventDtoClassVariant2Variant1? PlanDefinition { get; init; }
 #else
@@ -26,6 +31,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(PlanDefinition))]
 #endif
         public bool IsPlanDefinition => PlanDefinition != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickPlanDefinition(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ResearchEventDtoClassVariant2Variant1? value)
+        {
+            value = PlanDefinition;
+            return IsPlanDefinition;
+        }
 
         /// <summary>
         /// 
@@ -47,6 +65,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickPlanOperation(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ResearchEventDtoClassVariant2Variant2? value)
+        {
+            value = PlanOperation;
+            return IsPlanOperation;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ResearchEventDtoClassVariant2Variant3? PlanOutput { get; init; }
 #else
@@ -60,6 +91,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(PlanOutput))]
 #endif
         public bool IsPlanOutput => PlanOutput != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickPlanOutput(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ResearchEventDtoClassVariant2Variant3? value)
+        {
+            value = PlanOutput;
+            return IsPlanOutput;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -118,11 +162,14 @@ namespace G
         /// 
         /// </summary>
         public ResearchEventDtoClassVariant2(
+            string? eventType,
             global::G.ResearchEventDtoClassVariant2Variant1? planDefinition,
             global::G.ResearchEventDtoClassVariant2Variant2? planOperation,
             global::G.ResearchEventDtoClassVariant2Variant3? planOutput
             )
         {
+            EventType = eventType;
+
             PlanDefinition = planDefinition;
             PlanOperation = planOperation;
             PlanOutput = planOutput;
@@ -158,9 +205,9 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.ResearchEventDtoClassVariant2Variant1?, TResult>? planDefinition = null,
-            global::System.Func<global::G.ResearchEventDtoClassVariant2Variant2?, TResult>? planOperation = null,
-            global::System.Func<global::G.ResearchEventDtoClassVariant2Variant3?, TResult>? planOutput = null,
+            global::System.Func<global::G.ResearchEventDtoClassVariant2Variant1, TResult>? planDefinition = null,
+            global::System.Func<global::G.ResearchEventDtoClassVariant2Variant2, TResult>? planOperation = null,
+            global::System.Func<global::G.ResearchEventDtoClassVariant2Variant3, TResult>? planOutput = null,
             bool validate = true)
         {
             if (validate)
@@ -188,9 +235,39 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.ResearchEventDtoClassVariant2Variant1?>? planDefinition = null,
-            global::System.Action<global::G.ResearchEventDtoClassVariant2Variant2?>? planOperation = null,
-            global::System.Action<global::G.ResearchEventDtoClassVariant2Variant3?>? planOutput = null,
+            global::System.Action<global::G.ResearchEventDtoClassVariant2Variant1>? planDefinition = null,
+
+            global::System.Action<global::G.ResearchEventDtoClassVariant2Variant2>? planOperation = null,
+
+            global::System.Action<global::G.ResearchEventDtoClassVariant2Variant3>? planOutput = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsPlanDefinition)
+            {
+                planDefinition?.Invoke(PlanDefinition!);
+            }
+            else if (IsPlanOperation)
+            {
+                planOperation?.Invoke(PlanOperation!);
+            }
+            else if (IsPlanOutput)
+            {
+                planOutput?.Invoke(PlanOutput!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.ResearchEventDtoClassVariant2Variant1>? planDefinition = null,
+            global::System.Action<global::G.ResearchEventDtoClassVariant2Variant2>? planOperation = null,
+            global::System.Action<global::G.ResearchEventDtoClassVariant2Variant3>? planOutput = null,
             bool validate = true)
         {
             if (validate)

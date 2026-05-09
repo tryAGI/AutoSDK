@@ -35,6 +35,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickBase64(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.Base64ImageSource? value)
+        {
+            value = Base64;
+            return IsBase64;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.URLImageSource? Url { get; init; }
 #else
@@ -48,6 +61,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Url))]
 #endif
         public bool IsUrl => Url != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickUrl(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.URLImageSource? value)
+        {
+            value = Url;
+            return IsUrl;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -127,8 +153,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.Base64ImageSource?, TResult>? base64 = null,
-            global::System.Func<global::G.URLImageSource?, TResult>? url = null,
+            global::System.Func<global::G.Base64ImageSource, TResult>? base64 = null,
+            global::System.Func<global::G.URLImageSource, TResult>? url = null,
             bool validate = true)
         {
             if (validate)
@@ -152,8 +178,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.Base64ImageSource?>? base64 = null,
-            global::System.Action<global::G.URLImageSource?>? url = null,
+            global::System.Action<global::G.Base64ImageSource>? base64 = null,
+
+            global::System.Action<global::G.URLImageSource>? url = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsBase64)
+            {
+                base64?.Invoke(Base64!);
+            }
+            else if (IsUrl)
+            {
+                url?.Invoke(Url!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.Base64ImageSource>? base64 = null,
+            global::System.Action<global::G.URLImageSource>? url = null,
             bool validate = true)
         {
             if (validate)

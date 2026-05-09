@@ -28,6 +28,19 @@ namespace G
         public bool IsLegacyChatContentVideo => LegacyChatContentVideo != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickLegacyChatContentVideo(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.LegacyChatContentVideo? value)
+        {
+            value = LegacyChatContentVideo;
+            return IsLegacyChatContentVideo;
+        }
+
+        /// <summary>
         /// Video input content part
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ChatContentVideo))]
 #endif
         public bool IsChatContentVideo => ChatContentVideo != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickChatContentVideo(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ChatContentVideo? value)
+        {
+            value = ChatContentVideo;
+            return IsChatContentVideo;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -119,8 +145,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.LegacyChatContentVideo?, TResult>? legacyChatContentVideo = null,
-            global::System.Func<global::G.ChatContentVideo?, TResult>? chatContentVideo = null,
+            global::System.Func<global::G.LegacyChatContentVideo, TResult>? legacyChatContentVideo = null,
+            global::System.Func<global::G.ChatContentVideo, TResult>? chatContentVideo = null,
             bool validate = true)
         {
             if (validate)
@@ -144,8 +170,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.LegacyChatContentVideo?>? legacyChatContentVideo = null,
-            global::System.Action<global::G.ChatContentVideo?>? chatContentVideo = null,
+            global::System.Action<global::G.LegacyChatContentVideo>? legacyChatContentVideo = null,
+
+            global::System.Action<global::G.ChatContentVideo>? chatContentVideo = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsLegacyChatContentVideo)
+            {
+                legacyChatContentVideo?.Invoke(LegacyChatContentVideo!);
+            }
+            else if (IsChatContentVideo)
+            {
+                chatContentVideo?.Invoke(ChatContentVideo!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.LegacyChatContentVideo>? legacyChatContentVideo = null,
+            global::System.Action<global::G.ChatContentVideo>? chatContentVideo = null,
             bool validate = true)
         {
             if (validate)

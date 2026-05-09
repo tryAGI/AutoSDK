@@ -35,6 +35,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickStayOnLine(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.RecordingConsentPlanStayOnLine? value)
+        {
+            value = StayOnLine;
+            return IsStayOnLine;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.RecordingConsentPlanVerbal? Verbal { get; init; }
 #else
@@ -48,6 +61,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Verbal))]
 #endif
         public bool IsVerbal => Verbal != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickVerbal(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.RecordingConsentPlanVerbal? value)
+        {
+            value = Verbal;
+            return IsVerbal;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -127,8 +153,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.RecordingConsentPlanStayOnLine?, TResult>? stayOnLine = null,
-            global::System.Func<global::G.RecordingConsentPlanVerbal?, TResult>? verbal = null,
+            global::System.Func<global::G.RecordingConsentPlanStayOnLine, TResult>? stayOnLine = null,
+            global::System.Func<global::G.RecordingConsentPlanVerbal, TResult>? verbal = null,
             bool validate = true)
         {
             if (validate)
@@ -152,8 +178,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.RecordingConsentPlanStayOnLine?>? stayOnLine = null,
-            global::System.Action<global::G.RecordingConsentPlanVerbal?>? verbal = null,
+            global::System.Action<global::G.RecordingConsentPlanStayOnLine>? stayOnLine = null,
+
+            global::System.Action<global::G.RecordingConsentPlanVerbal>? verbal = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsStayOnLine)
+            {
+                stayOnLine?.Invoke(StayOnLine!);
+            }
+            else if (IsVerbal)
+            {
+                verbal?.Invoke(Verbal!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.RecordingConsentPlanStayOnLine>? stayOnLine = null,
+            global::System.Action<global::G.RecordingConsentPlanVerbal>? verbal = null,
             bool validate = true)
         {
             if (validate)

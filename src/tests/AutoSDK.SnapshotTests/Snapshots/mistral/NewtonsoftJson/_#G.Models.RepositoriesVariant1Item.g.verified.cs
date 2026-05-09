@@ -31,6 +31,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Github))]
 #endif
         public bool IsGithub => Github != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickGithub(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.GithubRepositoryIn? value)
+        {
+            value = Github;
+            return IsGithub;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -88,7 +101,7 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.GithubRepositoryIn?, TResult>? github = null,
+            global::System.Func<global::G.GithubRepositoryIn, TResult>? github = null,
             bool validate = true)
         {
             if (validate)
@@ -108,7 +121,25 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.GithubRepositoryIn?>? github = null,
+            global::System.Action<global::G.GithubRepositoryIn>? github = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsGithub)
+            {
+                github?.Invoke(Github!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.GithubRepositoryIn>? github = null,
             bool validate = true)
         {
             if (validate)

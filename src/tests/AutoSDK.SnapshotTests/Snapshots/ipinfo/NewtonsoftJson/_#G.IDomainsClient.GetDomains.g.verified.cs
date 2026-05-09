@@ -23,5 +23,23 @@ namespace G
             int? limit = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Our Hosted Domains, or Reverse IP API returns a list of all of the domains hosted on the provided IP address.<br/>
+        /// Returns a list of all of the domains hosted on the provided IP address.
+        /// </summary>
+        /// <param name="ip"></param>
+        /// <param name="page"></param>
+        /// <param name="limit">
+        /// Default Value: 100
+        /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.DomainsResponse>> GetDomainsAsResponseAsync(
+            string ip,
+            int? page = default,
+            int? limit = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

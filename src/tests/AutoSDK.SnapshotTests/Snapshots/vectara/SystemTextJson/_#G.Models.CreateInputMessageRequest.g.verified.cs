@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickBase(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateInputRequestBase? value)
+        {
+            value = Base;
+            return IsBase;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CreateInputMessageRequestVariant2? CreateInputMessageRequestVariant2 { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CreateInputMessageRequestVariant2))]
 #endif
         public bool IsCreateInputMessageRequestVariant2 => CreateInputMessageRequestVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickCreateInputMessageRequestVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateInputMessageRequestVariant2? value)
+        {
+            value = CreateInputMessageRequestVariant2;
+            return IsCreateInputMessageRequestVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -119,8 +145,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.CreateInputRequestBase?, TResult>? @base = null,
-            global::System.Func<global::G.CreateInputMessageRequestVariant2?, TResult>? createInputMessageRequestVariant2 = null,
+            global::System.Func<global::G.CreateInputRequestBase, TResult>? @base = null,
+            global::System.Func<global::G.CreateInputMessageRequestVariant2, TResult>? createInputMessageRequestVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -144,8 +170,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.CreateInputRequestBase?>? @base = null,
-            global::System.Action<global::G.CreateInputMessageRequestVariant2?>? createInputMessageRequestVariant2 = null,
+            global::System.Action<global::G.CreateInputRequestBase>? @base = null,
+
+            global::System.Action<global::G.CreateInputMessageRequestVariant2>? createInputMessageRequestVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsBase)
+            {
+                @base?.Invoke(Base!);
+            }
+            else if (IsCreateInputMessageRequestVariant2)
+            {
+                createInputMessageRequestVariant2?.Invoke(CreateInputMessageRequestVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.CreateInputRequestBase>? @base = null,
+            global::System.Action<global::G.CreateInputMessageRequestVariant2>? createInputMessageRequestVariant2 = null,
             bool validate = true)
         {
             if (validate)

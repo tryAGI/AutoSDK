@@ -28,6 +28,19 @@ namespace G
         public bool IsDropdown => Dropdown != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickDropdown(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ApplicationInputDropdownOptions? value)
+        {
+            value = Dropdown;
+            return IsDropdown;
+        }
+
+        /// <summary>
         /// Configuration options specific to file upload input fields.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(File))]
 #endif
         public bool IsFile => File != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFile(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ApplicationInputFileOptions? value)
+        {
+            value = File;
+            return IsFile;
+        }
 
         /// <summary>
         /// Configuration options specific to media upload input fields.
@@ -62,6 +88,19 @@ namespace G
         public bool IsMedia => Media != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMedia(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ApplicationInputMediaOptions? value)
+        {
+            value = Media;
+            return IsMedia;
+        }
+
+        /// <summary>
         /// Configuration options specific to text input fields.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -77,6 +116,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Text))]
 #endif
         public bool IsText => Text != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickText(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ApplicationInputTextOptions? value)
+        {
+            value = Text;
+            return IsText;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -197,10 +249,10 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.ApplicationInputDropdownOptions?, TResult>? dropdown = null,
-            global::System.Func<global::G.ApplicationInputFileOptions?, TResult>? file = null,
-            global::System.Func<global::G.ApplicationInputMediaOptions?, TResult>? media = null,
-            global::System.Func<global::G.ApplicationInputTextOptions?, TResult>? text = null,
+            global::System.Func<global::G.ApplicationInputDropdownOptions, TResult>? dropdown = null,
+            global::System.Func<global::G.ApplicationInputFileOptions, TResult>? file = null,
+            global::System.Func<global::G.ApplicationInputMediaOptions, TResult>? media = null,
+            global::System.Func<global::G.ApplicationInputTextOptions, TResult>? text = null,
             bool validate = true)
         {
             if (validate)
@@ -232,10 +284,46 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.ApplicationInputDropdownOptions?>? dropdown = null,
-            global::System.Action<global::G.ApplicationInputFileOptions?>? file = null,
-            global::System.Action<global::G.ApplicationInputMediaOptions?>? media = null,
-            global::System.Action<global::G.ApplicationInputTextOptions?>? text = null,
+            global::System.Action<global::G.ApplicationInputDropdownOptions>? dropdown = null,
+
+            global::System.Action<global::G.ApplicationInputFileOptions>? file = null,
+
+            global::System.Action<global::G.ApplicationInputMediaOptions>? media = null,
+
+            global::System.Action<global::G.ApplicationInputTextOptions>? text = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsDropdown)
+            {
+                dropdown?.Invoke(Dropdown!);
+            }
+            else if (IsFile)
+            {
+                file?.Invoke(File!);
+            }
+            else if (IsMedia)
+            {
+                media?.Invoke(Media!);
+            }
+            else if (IsText)
+            {
+                text?.Invoke(Text!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.ApplicationInputDropdownOptions>? dropdown = null,
+            global::System.Action<global::G.ApplicationInputFileOptions>? file = null,
+            global::System.Action<global::G.ApplicationInputMediaOptions>? media = null,
+            global::System.Action<global::G.ApplicationInputTextOptions>? text = null,
             bool validate = true)
         {
             if (validate)

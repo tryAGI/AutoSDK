@@ -26,6 +26,21 @@ namespace G
         /// Supports three modes: transcription only, translation (text output), and<br/>
         /// speech-to-speech translation (with audio output).
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.TranscribeOrTranslateResponse>> TranscribeOrTranslateAsResponseAsync(
+
+            global::G.TranscribeOrTranslateRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Transcribe or translate audio<br/>
+        /// Transcribes audio to text and optionally translates it to a target language.<br/>
+        /// Supports three modes: transcription only, translation (text output), and<br/>
+        /// speech-to-speech translation (with audio output).
+        /// </summary>
         /// <param name="audioUrl">
         /// URL to a WAV audio file (http/https) or a base64-encoded data URI (data:audio/wav;base64,...).
         /// </param>

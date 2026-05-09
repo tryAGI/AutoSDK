@@ -33,6 +33,19 @@ namespace G
         public bool IsFileCitation => FileCitation != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFileCitation(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ResponseFileCitation? value)
+        {
+            value = FileCitation;
+            return IsFileCitation;
+        }
+
+        /// <summary>
         /// A citation for a web resource.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -48,6 +61,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(UrlCitation))]
 #endif
         public bool IsUrlCitation => UrlCitation != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickUrlCitation(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ResponseUrlCitation? value)
+        {
+            value = UrlCitation;
+            return IsUrlCitation;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -127,8 +153,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.ResponseFileCitation?, TResult>? fileCitation = null,
-            global::System.Func<global::G.ResponseUrlCitation?, TResult>? urlCitation = null,
+            global::System.Func<global::G.ResponseFileCitation, TResult>? fileCitation = null,
+            global::System.Func<global::G.ResponseUrlCitation, TResult>? urlCitation = null,
             bool validate = true)
         {
             if (validate)
@@ -152,8 +178,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.ResponseFileCitation?>? fileCitation = null,
-            global::System.Action<global::G.ResponseUrlCitation?>? urlCitation = null,
+            global::System.Action<global::G.ResponseFileCitation>? fileCitation = null,
+
+            global::System.Action<global::G.ResponseUrlCitation>? urlCitation = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsFileCitation)
+            {
+                fileCitation?.Invoke(FileCitation!);
+            }
+            else if (IsUrlCitation)
+            {
+                urlCitation?.Invoke(UrlCitation!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.ResponseFileCitation>? fileCitation = null,
+            global::System.Action<global::G.ResponseUrlCitation>? urlCitation = null,
             bool validate = true)
         {
             if (validate)

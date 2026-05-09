@@ -26,6 +26,21 @@ namespace G
         /// files and fonts. Once ingested, new [output renditions](#tocs_outputs) can be created from the source file.<br/>
         /// **Base URL:** &lt;a href="#"&gt;https://api.shotstack.io/ingest/{version}&lt;/a&gt;
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.QueuedSourceResponse>> PostSourceAsResponseAsync(
+
+            global::G.Source request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Fetch Source<br/>
+        /// Queue a source file to be fetched from a URL and stored by Shotstack. Source files can be videos, images, audio<br/>
+        /// files and fonts. Once ingested, new [output renditions](#tocs_outputs) can be created from the source file.<br/>
+        /// **Base URL:** &lt;a href="#"&gt;https://api.shotstack.io/ingest/{version}&lt;/a&gt;
+        /// </summary>
         /// <param name="url">
         /// The URL of the file to be ingested. The URL must be publicly accessible or include credentials.<br/>
         /// Example: https://github.com/shotstack/test-media/raw/main/captioning/scott-ko.mp4

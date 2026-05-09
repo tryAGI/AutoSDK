@@ -31,6 +31,25 @@ namespace G
         /// <param name="modelId"></param>
         /// <param name="countinference"></param>
         /// <param name="serviceSecret"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.AnyOf<global::G.LMMInferenceResponse, global::System.Collections.Generic.IList<global::G.LMMInferenceResponse>, global::G.StubResponse>>> InferLmmWithModelIdInferLmmModelIdPostAsResponseAsync(
+            string modelId,
+
+            global::G.LMMInferenceRequest request,
+            bool? countinference = default,
+            string? serviceSecret = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Large multi-modal model infer with model ID in path<br/>
+        /// Run inference with the specified large multi-modal model. Model ID is specified in the URL path (can contain slashes).
+        /// </summary>
+        /// <param name="modelId"></param>
+        /// <param name="countinference"></param>
+        /// <param name="serviceSecret"></param>
         /// <param name="id"></param>
         /// <param name="apiKey">
         /// Roboflow API Key that will be passed to the model during initialization for artifact retrieval

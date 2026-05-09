@@ -38,6 +38,29 @@ namespace G
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>
         /// <param name="session"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.FileIdPresignedUrl>> GeneratePresignedUrlApiV1FilesPutAsResponseAsync(
+
+            global::G.FileCreate request,
+            int? expiresAtSeconds = default,
+            global::System.Guid? projectId = default,
+            global::System.Guid? organizationId = default,
+            string? session = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Generate Presigned Url<br/>
+        /// Create a presigned URL for uploading a file.<br/>
+        /// The URL is valid for a limited time. Use it to upload the file<br/>
+        /// content directly to storage via an HTTP PUT request.
+        /// </summary>
+        /// <param name="expiresAtSeconds"></param>
+        /// <param name="projectId"></param>
+        /// <param name="organizationId"></param>
+        /// <param name="session"></param>
         /// <param name="name">
         /// Name that will be used for created file. If possible, always include the file extension in the name.
         /// </param>

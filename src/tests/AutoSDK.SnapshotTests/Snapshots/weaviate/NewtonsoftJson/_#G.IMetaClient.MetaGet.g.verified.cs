@@ -15,5 +15,15 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.Meta> MetaGetAsync(
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Get instance metadata.<br/>
+        /// Returns meta information about the server. Can be used to provide information to another Weaviate instance that wants to interact with the current instance.
+        /// </summary>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.Meta>> MetaGetAsResponseAsync(
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

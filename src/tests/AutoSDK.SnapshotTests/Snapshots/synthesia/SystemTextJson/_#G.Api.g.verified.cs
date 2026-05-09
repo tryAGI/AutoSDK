@@ -169,7 +169,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public AssetsClient Assets => new AssetsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public AssetsClient Assets => new AssetsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -178,7 +178,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public AuditLogsClient AuditLogs => new AuditLogsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public AuditLogsClient AuditLogs => new AuditLogsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -187,7 +187,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public DubbingClient Dubbing => new DubbingClient(HttpClient, authorizations: Authorizations, options: Options)
+        public DubbingClient Dubbing => new DubbingClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -196,7 +196,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public TemplatesClient Templates => new TemplatesClient(HttpClient, authorizations: Authorizations, options: Options)
+        public TemplatesClient Templates => new TemplatesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -205,7 +205,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public TranslationsClient Translations => new TranslationsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public TranslationsClient Translations => new TranslationsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -214,7 +214,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public VideosClient Videos => new VideosClient(HttpClient, authorizations: Authorizations, options: Options)
+        public VideosClient Videos => new VideosClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -223,7 +223,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public WebhooksClient Webhooks => new WebhooksClient(HttpClient, authorizations: Authorizations, options: Options)
+        public WebhooksClient Webhooks => new WebhooksClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -262,10 +262,10 @@ namespace G
         /// <param name="options">Client-wide request defaults such as headers, query parameters, retries, and timeout.</param>
         /// <param name="disposeHttpClient">Dispose the HttpClient when the instance is disposed. True by default.</param>
         public Api(
-            global::System.Net.Http.HttpClient? httpClient = null,
-            global::System.Uri? baseUri = null,
-            global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations = null,
-            global::G.AutoSDKClientOptions? options = null,
+            global::System.Net.Http.HttpClient? httpClient,
+            global::System.Uri? baseUri,
+            global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations,
+            global::G.AutoSDKClientOptions? options,
             bool disposeHttpClient = true)
         {
 

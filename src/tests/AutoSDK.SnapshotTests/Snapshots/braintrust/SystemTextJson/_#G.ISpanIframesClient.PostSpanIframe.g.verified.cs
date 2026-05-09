@@ -22,6 +22,19 @@ namespace G
         /// Create span_iframe<br/>
         /// Create a new span_iframe. If there is an existing span_iframe with the same name as the one specified in the request, will return the existing span_iframe unmodified
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.SpanIFrame>> PostSpanIframeAsResponseAsync(
+
+            global::G.CreateSpanIFrame request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create span_iframe<br/>
+        /// Create a new span_iframe. If there is an existing span_iframe with the same name as the one specified in the request, will return the existing span_iframe unmodified
+        /// </summary>
         /// <param name="projectId">
         /// Unique identifier for the project that the span iframe belongs under
         /// </param>

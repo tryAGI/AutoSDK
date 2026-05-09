@@ -22,6 +22,19 @@ namespace G
         /// Generate an image with FLUX.1 Fill [pro] using an input image and mask.<br/>
         /// Submits an image generation task with the FLUX.1 Fill [pro] model using an input image and mask. Mask can be applied to alpha channel or submitted as a separate image.
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.AnyOf<global::G.AsyncResponse, global::G.AsyncWebhookResponse>>> FillV1FluxPro10FillPostAsResponseAsync(
+
+            global::G.FluxProFillInputs request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Generate an image with FLUX.1 Fill [pro] using an input image and mask.<br/>
+        /// Submits an image generation task with the FLUX.1 Fill [pro] model using an input image and mask. Mask can be applied to alpha channel or submitted as a separate image.
+        /// </summary>
         /// <param name="image">
         /// A Base64-encoded string representing the image you wish to modify. Can contain alpha mask if desired.
         /// </param>

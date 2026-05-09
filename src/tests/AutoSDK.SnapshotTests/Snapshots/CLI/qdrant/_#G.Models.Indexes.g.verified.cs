@@ -28,6 +28,19 @@ namespace G
         public bool IsIndexesVariant1 => IndexesVariant1 != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickIndexesVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.IndexesVariant1? value)
+        {
+            value = IndexesVariant1;
+            return IsIndexesVariant1;
+        }
+
+        /// <summary>
         /// Use filterable HNSW index for approximate search. Is very fast even on a very huge collections, but require additional space to store index and additional time to build it.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(IndexesVariant2))]
 #endif
         public bool IsIndexesVariant2 => IndexesVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickIndexesVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.IndexesVariant2? value)
+        {
+            value = IndexesVariant2;
+            return IsIndexesVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -119,8 +145,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.IndexesVariant1?, TResult>? indexesVariant1 = null,
-            global::System.Func<global::G.IndexesVariant2?, TResult>? indexesVariant2 = null,
+            global::System.Func<global::G.IndexesVariant1, TResult>? indexesVariant1 = null,
+            global::System.Func<global::G.IndexesVariant2, TResult>? indexesVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -144,8 +170,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.IndexesVariant1?>? indexesVariant1 = null,
-            global::System.Action<global::G.IndexesVariant2?>? indexesVariant2 = null,
+            global::System.Action<global::G.IndexesVariant1>? indexesVariant1 = null,
+
+            global::System.Action<global::G.IndexesVariant2>? indexesVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsIndexesVariant1)
+            {
+                indexesVariant1?.Invoke(IndexesVariant1!);
+            }
+            else if (IsIndexesVariant2)
+            {
+                indexesVariant2?.Invoke(IndexesVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.IndexesVariant1>? indexesVariant1 = null,
+            global::System.Action<global::G.IndexesVariant2>? indexesVariant2 = null,
             bool validate = true)
         {
             if (validate)

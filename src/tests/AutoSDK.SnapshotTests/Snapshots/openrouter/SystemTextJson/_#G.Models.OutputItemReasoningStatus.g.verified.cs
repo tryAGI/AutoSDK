@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickOutputItemReasoningStatus0(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.OutputItemReasoningStatus0? value)
+        {
+            value = OutputItemReasoningStatus0;
+            return IsOutputItemReasoningStatus0;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.OutputItemReasoningStatus1? OutputItemReasoningStatus1 { get; init; }
 #else
@@ -47,6 +60,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickOutputItemReasoningStatus1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.OutputItemReasoningStatus1? value)
+        {
+            value = OutputItemReasoningStatus1;
+            return IsOutputItemReasoningStatus1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.OutputItemReasoningStatus2? OutputItemReasoningStatus2 { get; init; }
 #else
@@ -60,6 +86,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OutputItemReasoningStatus2))]
 #endif
         public bool IsOutputItemReasoningStatus2 => OutputItemReasoningStatus2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickOutputItemReasoningStatus2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.OutputItemReasoningStatus2? value)
+        {
+            value = OutputItemReasoningStatus2;
+            return IsOutputItemReasoningStatus2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -188,6 +227,36 @@ namespace G
         /// 
         /// </summary>
         public void Match(
+            global::System.Action<global::G.OutputItemReasoningStatus0?>? outputItemReasoningStatus0 = null,
+
+            global::System.Action<global::G.OutputItemReasoningStatus1?>? outputItemReasoningStatus1 = null,
+
+            global::System.Action<global::G.OutputItemReasoningStatus2?>? outputItemReasoningStatus2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsOutputItemReasoningStatus0)
+            {
+                outputItemReasoningStatus0?.Invoke(OutputItemReasoningStatus0!);
+            }
+            else if (IsOutputItemReasoningStatus1)
+            {
+                outputItemReasoningStatus1?.Invoke(OutputItemReasoningStatus1!);
+            }
+            else if (IsOutputItemReasoningStatus2)
+            {
+                outputItemReasoningStatus2?.Invoke(OutputItemReasoningStatus2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
             global::System.Action<global::G.OutputItemReasoningStatus0?>? outputItemReasoningStatus0 = null,
             global::System.Action<global::G.OutputItemReasoningStatus1?>? outputItemReasoningStatus1 = null,
             global::System.Action<global::G.OutputItemReasoningStatus2?>? outputItemReasoningStatus2 = null,

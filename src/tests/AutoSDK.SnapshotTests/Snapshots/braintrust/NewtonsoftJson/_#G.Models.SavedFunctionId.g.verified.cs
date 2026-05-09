@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickFunction(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.SavedFunctionIdFunction? value)
+        {
+            value = Function;
+            return IsFunction;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.SavedFunctionIdGlobal? Global { get; init; }
 #else
@@ -47,6 +60,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickGlobal(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.SavedFunctionIdGlobal? value)
+        {
+            value = Global;
+            return IsGlobal;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public object? SavedFunctionIdVariant3 { get; init; }
 #else
@@ -60,6 +86,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SavedFunctionIdVariant3))]
 #endif
         public bool IsSavedFunctionIdVariant3 => SavedFunctionIdVariant3 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSavedFunctionIdVariant3(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out object? value)
+        {
+            value = SavedFunctionIdVariant3;
+            return IsSavedFunctionIdVariant3;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -140,9 +179,9 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.SavedFunctionIdFunction?, TResult>? function = null,
-            global::System.Func<global::G.SavedFunctionIdGlobal?, TResult>? global = null,
-            global::System.Func<object?, TResult>? savedFunctionIdVariant3 = null,
+            global::System.Func<global::G.SavedFunctionIdFunction, TResult>? function = null,
+            global::System.Func<global::G.SavedFunctionIdGlobal, TResult>? global = null,
+            global::System.Func<object, TResult>? savedFunctionIdVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -170,9 +209,39 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.SavedFunctionIdFunction?>? function = null,
-            global::System.Action<global::G.SavedFunctionIdGlobal?>? global = null,
-            global::System.Action<object?>? savedFunctionIdVariant3 = null,
+            global::System.Action<global::G.SavedFunctionIdFunction>? function = null,
+
+            global::System.Action<global::G.SavedFunctionIdGlobal>? global = null,
+
+            global::System.Action<object>? savedFunctionIdVariant3 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsFunction)
+            {
+                function?.Invoke(Function!);
+            }
+            else if (IsGlobal)
+            {
+                global?.Invoke(Global!);
+            }
+            else if (IsSavedFunctionIdVariant3)
+            {
+                savedFunctionIdVariant3?.Invoke(SavedFunctionIdVariant3!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.SavedFunctionIdFunction>? function = null,
+            global::System.Action<global::G.SavedFunctionIdGlobal>? global = null,
+            global::System.Action<object>? savedFunctionIdVariant3 = null,
             bool validate = true)
         {
             if (validate)

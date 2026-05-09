@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickPair(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ContextPair? value)
+        {
+            value = Pair;
+            return IsPair;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<global::G.ContextPair>? ContextInputVariant2 { get; init; }
 #else
@@ -47,6 +60,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickContextInputVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::System.Collections.Generic.IList<global::G.ContextPair>? value)
+        {
+            value = ContextInputVariant2;
+            return IsContextInputVariant2;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public object? ContextInputVariant3 { get; init; }
 #else
@@ -60,6 +86,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ContextInputVariant3))]
 #endif
         public bool IsContextInputVariant3 => ContextInputVariant3 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickContextInputVariant3(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out object? value)
+        {
+            value = ContextInputVariant3;
+            return IsContextInputVariant3;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -122,9 +161,9 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.ContextPair?, TResult>? pair = null,
-            global::System.Func<global::System.Collections.Generic.IList<global::G.ContextPair>?, TResult>? contextInputVariant2 = null,
-            global::System.Func<object?, TResult>? contextInputVariant3 = null,
+            global::System.Func<global::G.ContextPair, TResult>? pair = null,
+            global::System.Func<global::System.Collections.Generic.IList<global::G.ContextPair>, TResult>? contextInputVariant2 = null,
+            global::System.Func<object, TResult>? contextInputVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -152,9 +191,39 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.ContextPair?>? pair = null,
-            global::System.Action<global::System.Collections.Generic.IList<global::G.ContextPair>?>? contextInputVariant2 = null,
-            global::System.Action<object?>? contextInputVariant3 = null,
+            global::System.Action<global::G.ContextPair>? pair = null,
+
+            global::System.Action<global::System.Collections.Generic.IList<global::G.ContextPair>>? contextInputVariant2 = null,
+
+            global::System.Action<object>? contextInputVariant3 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsPair)
+            {
+                pair?.Invoke(Pair!);
+            }
+            else if (IsContextInputVariant2)
+            {
+                contextInputVariant2?.Invoke(ContextInputVariant2!);
+            }
+            else if (IsContextInputVariant3)
+            {
+                contextInputVariant3?.Invoke(ContextInputVariant3!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.ContextPair>? pair = null,
+            global::System.Action<global::System.Collections.Generic.IList<global::G.ContextPair>>? contextInputVariant2 = null,
+            global::System.Action<object>? contextInputVariant3 = null,
             bool validate = true)
         {
             if (validate)

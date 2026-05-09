@@ -33,6 +33,26 @@ namespace G
         /// <param name="owner"></param>
         /// <param name="repo"></param>
         /// <param name="jobId"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.EmptyObject>> ActionsReRunJobForWorkflowRunAsResponseAsync(
+            string owner,
+            string repo,
+            int jobId,
+
+            global::G.ActionsReRunJobForWorkflowRunRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Re-run a job from a workflow run<br/>
+        /// Re-run a job and its dependent jobs in a workflow run.<br/>
+        /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+        /// </summary>
+        /// <param name="owner"></param>
+        /// <param name="repo"></param>
+        /// <param name="jobId"></param>
         /// <param name="enableDebugLogging">
         /// Whether to enable debug logging for the re-run.<br/>
         /// Default Value: false

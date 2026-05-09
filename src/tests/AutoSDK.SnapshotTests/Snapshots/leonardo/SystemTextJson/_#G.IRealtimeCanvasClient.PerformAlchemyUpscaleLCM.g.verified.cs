@@ -22,6 +22,19 @@ namespace G
         /// Perform Alchemy Upscale on a LCM image<br/>
         /// This endpoint will perform Alchemy Upscale on a LCM image
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.PerformAlchemyUpscaleLCMResponse>> PerformAlchemyUpscaleLCMAsResponseAsync(
+
+            global::G.PerformAlchemyUpscaleLCMRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Perform Alchemy Upscale on a LCM image<br/>
+        /// This endpoint will perform Alchemy Upscale on a LCM image
+        /// </summary>
         /// <param name="imageDataUrl">
         /// Image data used to generate image. In base64 format. Prefix: `data:image/jpeg;base64,`
         /// </param>

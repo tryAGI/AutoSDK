@@ -33,6 +33,19 @@ namespace G
         public bool IsOpenaiCompatible => OpenaiCompatible != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickOpenaiCompatible(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.UpdateOpenAILLMRequest? value)
+        {
+            value = OpenaiCompatible;
+            return IsOpenaiCompatible;
+        }
+
+        /// <summary>
         /// Request to update an OpenAI Responses API Large Language Model connection. All fields are optional.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -48,6 +61,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OpenaiResponses))]
 #endif
         public bool IsOpenaiResponses => OpenaiResponses != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickOpenaiResponses(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.UpdateOpenAIResponsesLLMRequest? value)
+        {
+            value = OpenaiResponses;
+            return IsOpenaiResponses;
+        }
 
         /// <summary>
         /// Request to update a Vertex AI Large Language Model connection. All fields are optional.
@@ -67,6 +93,19 @@ namespace G
         public bool IsVertexAi => VertexAi != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickVertexAi(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.UpdateVertexAILLMRequest? value)
+        {
+            value = VertexAi;
+            return IsVertexAi;
+        }
+
+        /// <summary>
         /// Request to update an Anthropic Large Language Model connection. All fields are optional.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -82,6 +121,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Anthropic))]
 #endif
         public bool IsAnthropic => Anthropic != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickAnthropic(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.UpdateAnthropicLLMRequest? value)
+        {
+            value = Anthropic;
+            return IsAnthropic;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -207,8 +259,8 @@ namespace G
         public TResult? Match<TResult>(
             global::System.Func<global::G.UpdateOpenAILLMRequest?, TResult>? openaiCompatible = null,
             global::System.Func<global::G.UpdateOpenAIResponsesLLMRequest?, TResult>? openaiResponses = null,
-            global::System.Func<global::G.UpdateVertexAILLMRequest?, TResult>? vertexAi = null,
-            global::System.Func<global::G.UpdateAnthropicLLMRequest?, TResult>? anthropic = null,
+            global::System.Func<global::G.UpdateVertexAILLMRequest, TResult>? vertexAi = null,
+            global::System.Func<global::G.UpdateAnthropicLLMRequest, TResult>? anthropic = null,
             bool validate = true)
         {
             if (validate)
@@ -241,9 +293,45 @@ namespace G
         /// </summary>
         public void Match(
             global::System.Action<global::G.UpdateOpenAILLMRequest?>? openaiCompatible = null,
+
             global::System.Action<global::G.UpdateOpenAIResponsesLLMRequest?>? openaiResponses = null,
-            global::System.Action<global::G.UpdateVertexAILLMRequest?>? vertexAi = null,
-            global::System.Action<global::G.UpdateAnthropicLLMRequest?>? anthropic = null,
+
+            global::System.Action<global::G.UpdateVertexAILLMRequest>? vertexAi = null,
+
+            global::System.Action<global::G.UpdateAnthropicLLMRequest>? anthropic = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsOpenaiCompatible)
+            {
+                openaiCompatible?.Invoke(OpenaiCompatible!);
+            }
+            else if (IsOpenaiResponses)
+            {
+                openaiResponses?.Invoke(OpenaiResponses!);
+            }
+            else if (IsVertexAi)
+            {
+                vertexAi?.Invoke(VertexAi!);
+            }
+            else if (IsAnthropic)
+            {
+                anthropic?.Invoke(Anthropic!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.UpdateOpenAILLMRequest?>? openaiCompatible = null,
+            global::System.Action<global::G.UpdateOpenAIResponsesLLMRequest?>? openaiResponses = null,
+            global::System.Action<global::G.UpdateVertexAILLMRequest>? vertexAi = null,
+            global::System.Action<global::G.UpdateAnthropicLLMRequest>? anthropic = null,
             bool validate = true)
         {
             if (validate)

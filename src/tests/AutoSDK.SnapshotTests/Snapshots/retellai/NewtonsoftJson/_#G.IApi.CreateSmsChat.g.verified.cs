@@ -20,6 +20,18 @@ namespace G
         /// <summary>
         /// Start an outbound SMS chat conversation with a phone number using the specified agent. The agent must be configured for chat mode. The initial SMS message will be automatically generated and sent based on the agent's configuration.
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.ChatResponse>> CreateSmsChatAsResponseAsync(
+
+            global::G.CreateSmsChatRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Start an outbound SMS chat conversation with a phone number using the specified agent. The agent must be configured for chat mode. The initial SMS message will be automatically generated and sent based on the agent's configuration.
+        /// </summary>
         /// <param name="fromNumber">
         /// The phone number to send SMS from in E.164 format. Must be a number purchased from Retell or imported to Retell with SMS capability.<br/>
         /// Example: +12137771234

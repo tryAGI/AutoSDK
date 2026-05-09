@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickOrganization(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.Organization? value)
+        {
+            value = Organization;
+            return IsOrganization;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.OrganizationResponseVariant2? OrganizationResponseVariant2 { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OrganizationResponseVariant2))]
 #endif
         public bool IsOrganizationResponseVariant2 => OrganizationResponseVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickOrganizationResponseVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.OrganizationResponseVariant2? value)
+        {
+            value = OrganizationResponseVariant2;
+            return IsOrganizationResponseVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -119,8 +145,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.Organization?, TResult>? organization = null,
-            global::System.Func<global::G.OrganizationResponseVariant2?, TResult>? organizationResponseVariant2 = null,
+            global::System.Func<global::G.Organization, TResult>? organization = null,
+            global::System.Func<global::G.OrganizationResponseVariant2, TResult>? organizationResponseVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -144,8 +170,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.Organization?>? organization = null,
-            global::System.Action<global::G.OrganizationResponseVariant2?>? organizationResponseVariant2 = null,
+            global::System.Action<global::G.Organization>? organization = null,
+
+            global::System.Action<global::G.OrganizationResponseVariant2>? organizationResponseVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsOrganization)
+            {
+                organization?.Invoke(Organization!);
+            }
+            else if (IsOrganizationResponseVariant2)
+            {
+                organizationResponseVariant2?.Invoke(OrganizationResponseVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.Organization>? organization = null,
+            global::System.Action<global::G.OrganizationResponseVariant2>? organizationResponseVariant2 = null,
             bool validate = true)
         {
             if (validate)

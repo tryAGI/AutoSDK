@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickEvent(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.GenerateStreamEvent? value)
+        {
+            value = Event;
+            return IsEvent;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.GenerateStreamEndUbzr0t? Ubzr0t { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Ubzr0t))]
 #endif
         public bool IsUbzr0t => Ubzr0t != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickUbzr0t(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.GenerateStreamEndUbzr0t? value)
+        {
+            value = Ubzr0t;
+            return IsUbzr0t;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -119,8 +145,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.GenerateStreamEvent?, TResult>? @event = null,
-            global::System.Func<global::G.GenerateStreamEndUbzr0t?, TResult>? ubzr0t = null,
+            global::System.Func<global::G.GenerateStreamEvent, TResult>? @event = null,
+            global::System.Func<global::G.GenerateStreamEndUbzr0t, TResult>? ubzr0t = null,
             bool validate = true)
         {
             if (validate)
@@ -144,8 +170,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.GenerateStreamEvent?>? @event = null,
-            global::System.Action<global::G.GenerateStreamEndUbzr0t?>? ubzr0t = null,
+            global::System.Action<global::G.GenerateStreamEvent>? @event = null,
+
+            global::System.Action<global::G.GenerateStreamEndUbzr0t>? ubzr0t = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsEvent)
+            {
+                @event?.Invoke(Event!);
+            }
+            else if (IsUbzr0t)
+            {
+                ubzr0t?.Invoke(Ubzr0t!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.GenerateStreamEvent>? @event = null,
+            global::System.Action<global::G.GenerateStreamEndUbzr0t>? ubzr0t = null,
             bool validate = true)
         {
             if (validate)

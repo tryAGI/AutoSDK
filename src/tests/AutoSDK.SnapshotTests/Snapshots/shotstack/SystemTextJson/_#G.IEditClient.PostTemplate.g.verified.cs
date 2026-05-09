@@ -28,6 +28,22 @@ namespace G
         /// [render](#render-template) it in a single request.<br/>
         /// **Base URL:** &lt;a href="#"&gt;https://api.shotstack.io/edit/{version}&lt;/a&gt;
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.TemplateResponse>> PostTemplateAsResponseAsync(
+
+            global::G.Template request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create Template<br/>
+        /// Save an [Edit](#tocs_edit) as a re-usable template. Templates can be retrieved and modified in your application<br/>
+        /// before being rendered. [Merge fields](#tocs_mergefield) can be also used to merge data in to a template and<br/>
+        /// [render](#render-template) it in a single request.<br/>
+        /// **Base URL:** &lt;a href="#"&gt;https://api.shotstack.io/edit/{version}&lt;/a&gt;
+        /// </summary>
         /// <param name="name">
         /// The template name<br/>
         /// Example: My template

@@ -25,6 +25,21 @@ namespace G
         /// Use the Update a video endpoint to make the video public and accessible via the share page or update its title and description.
         /// </summary>
         /// <param name="videoId"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.VideoResponse>> EditVideosByVideoIdAsResponseAsync(
+            string videoId,
+
+            global::G.UpdateVideoMetadataRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Update a video<br/>
+        /// Use the Update a video endpoint to make the video public and accessible via the share page or update its title and description.
+        /// </summary>
+        /// <param name="videoId"></param>
         /// <param name="ctaSettings"></param>
         /// <param name="description"></param>
         /// <param name="title"></param>

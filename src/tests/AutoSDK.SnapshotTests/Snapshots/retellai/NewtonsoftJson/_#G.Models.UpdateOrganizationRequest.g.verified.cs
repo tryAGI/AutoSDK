@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickCreate(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateOrganizationRequest? value)
+        {
+            value = Create;
+            return IsCreate;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.UpdateOrganizationRequestVariant2? UpdateOrganizationRequestVariant2 { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(UpdateOrganizationRequestVariant2))]
 #endif
         public bool IsUpdateOrganizationRequestVariant2 => UpdateOrganizationRequestVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickUpdateOrganizationRequestVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.UpdateOrganizationRequestVariant2? value)
+        {
+            value = UpdateOrganizationRequestVariant2;
+            return IsUpdateOrganizationRequestVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -120,7 +146,7 @@ namespace G
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::G.CreateOrganizationRequest?, TResult>? create = null,
-            global::System.Func<global::G.UpdateOrganizationRequestVariant2?, TResult>? updateOrganizationRequestVariant2 = null,
+            global::System.Func<global::G.UpdateOrganizationRequestVariant2, TResult>? updateOrganizationRequestVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -145,7 +171,31 @@ namespace G
         /// </summary>
         public void Match(
             global::System.Action<global::G.CreateOrganizationRequest?>? create = null,
-            global::System.Action<global::G.UpdateOrganizationRequestVariant2?>? updateOrganizationRequestVariant2 = null,
+
+            global::System.Action<global::G.UpdateOrganizationRequestVariant2>? updateOrganizationRequestVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsCreate)
+            {
+                create?.Invoke(Create!);
+            }
+            else if (IsUpdateOrganizationRequestVariant2)
+            {
+                updateOrganizationRequestVariant2?.Invoke(UpdateOrganizationRequestVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.CreateOrganizationRequest?>? create = null,
+            global::System.Action<global::G.UpdateOrganizationRequestVariant2>? updateOrganizationRequestVariant2 = null,
             bool validate = true)
         {
             if (validate)

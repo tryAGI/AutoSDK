@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickPickLeafUsersViewOrRequestResponseRmt(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.PickFilterLeafUsersViewOrRequestResponseRmt? value)
+        {
+            value = PickLeafUsersViewOrRequestResponseRmt;
+            return IsPickLeafUsersViewOrRequestResponseRmt;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.UserFilterBranch? Branch { get; init; }
 #else
@@ -47,6 +60,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickBranch(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.UserFilterBranch? value)
+        {
+            value = Branch;
+            return IsBranch;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.UserFilterNodeEnum? Enum { get; init; }
 #else
@@ -60,6 +86,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Enum))]
 #endif
         public bool IsEnum => Enum != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickEnum(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.UserFilterNodeEnum? value)
+        {
+            value = Enum;
+            return IsEnum;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -158,8 +197,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.PickFilterLeafUsersViewOrRequestResponseRmt?, TResult>? pickLeafUsersViewOrRequestResponseRmt = null,
-            global::System.Func<global::G.UserFilterBranch?, TResult>? branch = null,
+            global::System.Func<global::G.PickFilterLeafUsersViewOrRequestResponseRmt, TResult>? pickLeafUsersViewOrRequestResponseRmt = null,
+            global::System.Func<global::G.UserFilterBranch, TResult>? branch = null,
             global::System.Func<global::G.UserFilterNodeEnum?, TResult>? @enum = null,
             bool validate = true)
         {
@@ -188,8 +227,38 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.PickFilterLeafUsersViewOrRequestResponseRmt?>? pickLeafUsersViewOrRequestResponseRmt = null,
-            global::System.Action<global::G.UserFilterBranch?>? branch = null,
+            global::System.Action<global::G.PickFilterLeafUsersViewOrRequestResponseRmt>? pickLeafUsersViewOrRequestResponseRmt = null,
+
+            global::System.Action<global::G.UserFilterBranch>? branch = null,
+
+            global::System.Action<global::G.UserFilterNodeEnum?>? @enum = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsPickLeafUsersViewOrRequestResponseRmt)
+            {
+                pickLeafUsersViewOrRequestResponseRmt?.Invoke(PickLeafUsersViewOrRequestResponseRmt!);
+            }
+            else if (IsBranch)
+            {
+                branch?.Invoke(Branch!);
+            }
+            else if (IsEnum)
+            {
+                @enum?.Invoke(Enum!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.PickFilterLeafUsersViewOrRequestResponseRmt>? pickLeafUsersViewOrRequestResponseRmt = null,
+            global::System.Action<global::G.UserFilterBranch>? branch = null,
             global::System.Action<global::G.UserFilterNodeEnum?>? @enum = null,
             bool validate = true)
         {

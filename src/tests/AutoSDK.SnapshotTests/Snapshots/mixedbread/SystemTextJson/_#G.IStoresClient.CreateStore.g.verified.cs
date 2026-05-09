@@ -30,6 +30,23 @@ namespace G
         /// Returns:<br/>
         ///     VectorStore: The response containing the created vector store details.
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.Store>> CreateStoreAsResponseAsync(
+
+            global::G.StoreCreateParams request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create a store<br/>
+        /// Create a new vector store.<br/>
+        /// Args:<br/>
+        ///     vector_store_create: VectorStoreCreate object containing the name, description, and metadata.<br/>
+        /// Returns:<br/>
+        ///     VectorStore: The response containing the created vector store details.
+        /// </summary>
         /// <param name="name">
         /// Name for the new store. Can only contain lowercase letters, numbers, periods (.), and hyphens (-).
         /// </param>

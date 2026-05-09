@@ -46,6 +46,30 @@ namespace G
         /// for more details.<br/>
         /// **Base URL:** &lt;a href="#"&gt;https://api.shotstack.io/edit/{version}&lt;/a&gt;
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.QueuedResponse>> PostRenderAsResponseAsync(
+
+            global::G.Edit request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Render Asset<br/>
+        /// Queue and render the contents of an [Edit](#tocs_edit) as a video, image or audio file.<br/>
+        /// **Rendering Process:**<br/>
+        /// 1. **Validation**: The edit JSON is validated<br/>
+        /// 2. **Download**: All assets are downloaded and cached  <br/>
+        /// 3. **Preprocessing**: Video assets are automatically processed to fix compatibility issues<br/>
+        /// 4. **Rendering**: The timeline is rendered using the processed assets<br/>
+        /// 5. **Output**: The final media file is generated and stored<br/>
+        /// **Video Preprocessing:**<br/>
+        /// Video assets undergo automatic preprocessing to ensure compatibility. You can force <br/>
+        /// preprocessing by setting `"transcode": true` on video assets. See [Preprocessing](#preprocessing) <br/>
+        /// for more details.<br/>
+        /// **Base URL:** &lt;a href="#"&gt;https://api.shotstack.io/edit/{version}&lt;/a&gt;
+        /// </summary>
         /// <param name="timeline">
         /// A timeline represents the contents of a video edit over time, an audio edit over time, in seconds, or an image layout. A timeline consists of layers called tracks. Tracks are composed of titles, images, audio, html or video segments referred to as clips which are placed along the track at specific starting point and lasting for a specific amount of time.
         /// </param>

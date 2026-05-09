@@ -85,7 +85,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public BillingClient Billing => new BillingClient(HttpClient, authorizations: Authorizations, options: Options)
+        public BillingClient Billing => new BillingClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -94,7 +94,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public CloudClient Cloud => new CloudClient(HttpClient, authorizations: Authorizations, options: Options)
+        public CloudClient Cloud => new CloudClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -103,7 +103,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public ClusterClient Cluster => new ClusterClient(HttpClient, authorizations: Authorizations, options: Options)
+        public ClusterClient Cluster => new ClusterClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -112,7 +112,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public FilesClient Files => new FilesClient(HttpClient, authorizations: Authorizations, options: Options)
+        public FilesClient Files => new FilesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -121,7 +121,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public LogsClient Logs => new LogsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public LogsClient Logs => new LogsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -130,7 +130,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public MetricsClient Metrics => new MetricsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public MetricsClient Metrics => new MetricsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -139,7 +139,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public PipelineFamiliesClient PipelineFamilies => new PipelineFamiliesClient(HttpClient, authorizations: Authorizations, options: Options)
+        public PipelineFamiliesClient PipelineFamilies => new PipelineFamiliesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -148,7 +148,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public PipelinesClient Pipelines => new PipelinesClient(HttpClient, authorizations: Authorizations, options: Options)
+        public PipelinesClient Pipelines => new PipelinesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -157,7 +157,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public PointersClient Pointers => new PointersClient(HttpClient, authorizations: Authorizations, options: Options)
+        public PointersClient Pointers => new PointersClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -166,7 +166,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public ResourcesClient Resources => new ResourcesClient(HttpClient, authorizations: Authorizations, options: Options)
+        public ResourcesClient Resources => new ResourcesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -175,7 +175,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public RunsClient Runs => new RunsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public RunsClient Runs => new RunsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -184,7 +184,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public ScalingConfigurationsClient ScalingConfigurations => new ScalingConfigurationsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public ScalingConfigurationsClient ScalingConfigurations => new ScalingConfigurationsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -193,7 +193,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public TokensClient Tokens => new TokensClient(HttpClient, authorizations: Authorizations, options: Options)
+        public TokensClient Tokens => new TokensClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -202,7 +202,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public UsersClient Users => new UsersClient(HttpClient, authorizations: Authorizations, options: Options)
+        public UsersClient Users => new UsersClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -241,10 +241,10 @@ namespace G
         /// <param name="options">Client-wide request defaults such as headers, query parameters, retries, and timeout.</param>
         /// <param name="disposeHttpClient">Dispose the HttpClient when the instance is disposed. True by default.</param>
         public Api(
-            global::System.Net.Http.HttpClient? httpClient = null,
-            global::System.Uri? baseUri = null,
-            global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations = null,
-            global::G.AutoSDKClientOptions? options = null,
+            global::System.Net.Http.HttpClient? httpClient,
+            global::System.Uri? baseUri,
+            global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations,
+            global::G.AutoSDKClientOptions? options,
             bool disposeHttpClient = true)
         {
 

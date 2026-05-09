@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickGenerationRequest(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.GenerationRequest? value)
+        {
+            value = GenerationRequest;
+            return IsGenerationRequest;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CancelContextRequest? CancelContextRequest { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CancelContextRequest))]
 #endif
         public bool IsCancelContextRequest => CancelContextRequest != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickCancelContextRequest(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CancelContextRequest? value)
+        {
+            value = CancelContextRequest;
+            return IsCancelContextRequest;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -119,8 +145,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.GenerationRequest?, TResult>? generationRequest = null,
-            global::System.Func<global::G.CancelContextRequest?, TResult>? cancelContextRequest = null,
+            global::System.Func<global::G.GenerationRequest, TResult>? generationRequest = null,
+            global::System.Func<global::G.CancelContextRequest, TResult>? cancelContextRequest = null,
             bool validate = true)
         {
             if (validate)
@@ -144,8 +170,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.GenerationRequest?>? generationRequest = null,
-            global::System.Action<global::G.CancelContextRequest?>? cancelContextRequest = null,
+            global::System.Action<global::G.GenerationRequest>? generationRequest = null,
+
+            global::System.Action<global::G.CancelContextRequest>? cancelContextRequest = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsGenerationRequest)
+            {
+                generationRequest?.Invoke(GenerationRequest!);
+            }
+            else if (IsCancelContextRequest)
+            {
+                cancelContextRequest?.Invoke(CancelContextRequest!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.GenerationRequest>? generationRequest = null,
+            global::System.Action<global::G.CancelContextRequest>? cancelContextRequest = null,
             bool validate = true)
         {
             if (validate)

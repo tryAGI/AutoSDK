@@ -31,6 +31,24 @@ namespace G
         /// <param name="archiveId">
         /// The ID of the archive in the format 'archive-&lt;uuid4&gt;'
         /// </param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.Passage>> CreatePassageInArchiveAsResponseAsync(
+            string archiveId,
+
+            global::G.PassageCreateRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create Passage In Archive<br/>
+        /// Create a new passage in an archive.<br/>
+        /// This adds a passage to the archive and creates embeddings for vector storage.
+        /// </summary>
+        /// <param name="archiveId">
+        /// The ID of the archive in the format 'archive-&lt;uuid4&gt;'
+        /// </param>
         /// <param name="text">
         /// The text content of the passage
         /// </param>

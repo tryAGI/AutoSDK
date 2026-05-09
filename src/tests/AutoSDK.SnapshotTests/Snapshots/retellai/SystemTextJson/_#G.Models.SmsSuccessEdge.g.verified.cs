@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickNode(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.NodeEdge? value)
+        {
+            value = Node;
+            return IsNode;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.SmsSuccessEdgeVariant2? SmsSuccessEdgeVariant2 { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SmsSuccessEdgeVariant2))]
 #endif
         public bool IsSmsSuccessEdgeVariant2 => SmsSuccessEdgeVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSmsSuccessEdgeVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.SmsSuccessEdgeVariant2? value)
+        {
+            value = SmsSuccessEdgeVariant2;
+            return IsSmsSuccessEdgeVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -119,8 +145,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.NodeEdge?, TResult>? node = null,
-            global::System.Func<global::G.SmsSuccessEdgeVariant2?, TResult>? smsSuccessEdgeVariant2 = null,
+            global::System.Func<global::G.NodeEdge, TResult>? node = null,
+            global::System.Func<global::G.SmsSuccessEdgeVariant2, TResult>? smsSuccessEdgeVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -144,8 +170,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.NodeEdge?>? node = null,
-            global::System.Action<global::G.SmsSuccessEdgeVariant2?>? smsSuccessEdgeVariant2 = null,
+            global::System.Action<global::G.NodeEdge>? node = null,
+
+            global::System.Action<global::G.SmsSuccessEdgeVariant2>? smsSuccessEdgeVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsNode)
+            {
+                node?.Invoke(Node!);
+            }
+            else if (IsSmsSuccessEdgeVariant2)
+            {
+                smsSuccessEdgeVariant2?.Invoke(SmsSuccessEdgeVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.NodeEdge>? node = null,
+            global::System.Action<global::G.SmsSuccessEdgeVariant2>? smsSuccessEdgeVariant2 = null,
             bool validate = true)
         {
             if (validate)

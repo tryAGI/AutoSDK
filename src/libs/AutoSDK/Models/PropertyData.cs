@@ -27,6 +27,7 @@ public record struct PropertyData(
     string Description,
     string ConverterType,
     string DiscriminatorValue,
+    string DiscriminatorJsonValue,
     EquatableArray<string> JsonPropertyNames)
 {
     public static PropertyData Default => new(
@@ -55,5 +56,6 @@ public record struct PropertyData(
         Description: string.Empty,
         ConverterType: string.Empty,
         DiscriminatorValue: string.Empty,
+        DiscriminatorJsonValue: string.Empty,
         JsonPropertyNames: ImmutableArray<string>.Empty.AsEquatableArray());
 }

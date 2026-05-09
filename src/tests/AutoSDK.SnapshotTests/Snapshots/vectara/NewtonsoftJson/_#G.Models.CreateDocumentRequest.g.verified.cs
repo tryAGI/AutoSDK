@@ -35,6 +35,19 @@ namespace G
         public bool IsCore => Core != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickCore(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CoreDocument? value)
+        {
+            value = Core;
+            return IsCore;
+        }
+
+        /// <summary>
         /// A document with layout features.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -50,6 +63,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Structured))]
 #endif
         public bool IsStructured => Structured != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickStructured(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.StructuredDocument? value)
+        {
+            value = Structured;
+            return IsStructured;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -129,8 +155,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.CoreDocument?, TResult>? core = null,
-            global::System.Func<global::G.StructuredDocument?, TResult>? structured = null,
+            global::System.Func<global::G.CoreDocument, TResult>? core = null,
+            global::System.Func<global::G.StructuredDocument, TResult>? structured = null,
             bool validate = true)
         {
             if (validate)
@@ -154,8 +180,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.CoreDocument?>? core = null,
-            global::System.Action<global::G.StructuredDocument?>? structured = null,
+            global::System.Action<global::G.CoreDocument>? core = null,
+
+            global::System.Action<global::G.StructuredDocument>? structured = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsCore)
+            {
+                core?.Invoke(Core!);
+            }
+            else if (IsStructured)
+            {
+                structured?.Invoke(Structured!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.CoreDocument>? core = null,
+            global::System.Action<global::G.StructuredDocument>? structured = null,
             bool validate = true)
         {
             if (validate)

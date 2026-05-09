@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickStreamingResponseVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.StreamingResponseVariant1? value)
+        {
+            value = StreamingResponseVariant1;
+            return IsStreamingResponseVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.StreamingResponseVariant2? StreamingResponseVariant2 { get; init; }
 #else
@@ -47,6 +60,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickStreamingResponseVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.StreamingResponseVariant2? value)
+        {
+            value = StreamingResponseVariant2;
+            return IsStreamingResponseVariant2;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.StreamingResponseVariant3? StreamingResponseVariant3 { get; init; }
 #else
@@ -60,6 +86,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(StreamingResponseVariant3))]
 #endif
         public bool IsStreamingResponseVariant3 => StreamingResponseVariant3 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickStreamingResponseVariant3(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.StreamingResponseVariant3? value)
+        {
+            value = StreamingResponseVariant3;
+            return IsStreamingResponseVariant3;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -158,9 +197,9 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.StreamingResponseVariant1?, TResult>? streamingResponseVariant1 = null,
-            global::System.Func<global::G.StreamingResponseVariant2?, TResult>? streamingResponseVariant2 = null,
-            global::System.Func<global::G.StreamingResponseVariant3?, TResult>? streamingResponseVariant3 = null,
+            global::System.Func<global::G.StreamingResponseVariant1, TResult>? streamingResponseVariant1 = null,
+            global::System.Func<global::G.StreamingResponseVariant2, TResult>? streamingResponseVariant2 = null,
+            global::System.Func<global::G.StreamingResponseVariant3, TResult>? streamingResponseVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -188,9 +227,39 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.StreamingResponseVariant1?>? streamingResponseVariant1 = null,
-            global::System.Action<global::G.StreamingResponseVariant2?>? streamingResponseVariant2 = null,
-            global::System.Action<global::G.StreamingResponseVariant3?>? streamingResponseVariant3 = null,
+            global::System.Action<global::G.StreamingResponseVariant1>? streamingResponseVariant1 = null,
+
+            global::System.Action<global::G.StreamingResponseVariant2>? streamingResponseVariant2 = null,
+
+            global::System.Action<global::G.StreamingResponseVariant3>? streamingResponseVariant3 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsStreamingResponseVariant1)
+            {
+                streamingResponseVariant1?.Invoke(StreamingResponseVariant1!);
+            }
+            else if (IsStreamingResponseVariant2)
+            {
+                streamingResponseVariant2?.Invoke(StreamingResponseVariant2!);
+            }
+            else if (IsStreamingResponseVariant3)
+            {
+                streamingResponseVariant3?.Invoke(StreamingResponseVariant3!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.StreamingResponseVariant1>? streamingResponseVariant1 = null,
+            global::System.Action<global::G.StreamingResponseVariant2>? streamingResponseVariant2 = null,
+            global::System.Action<global::G.StreamingResponseVariant3>? streamingResponseVariant3 = null,
             bool validate = true)
         {
             if (validate)

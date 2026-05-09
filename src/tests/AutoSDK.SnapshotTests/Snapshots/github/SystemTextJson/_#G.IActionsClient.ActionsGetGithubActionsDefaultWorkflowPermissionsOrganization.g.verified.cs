@@ -20,5 +20,20 @@ namespace G
             string org,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Get default workflow permissions for an organization<br/>
+        /// Gets the default workflow permissions granted to the `GITHUB_TOKEN` when running workflows in an organization,<br/>
+        /// as well as whether GitHub Actions can submit approving pull request reviews. For more information, see<br/>
+        /// "[Setting the permissions of the GITHUB_TOKEN for your organization](https://docs.github.com/organizations/managing-organization-settings/disabling-or-limiting-github-actions-for-your-organization#setting-the-permissions-of-the-github_token-for-your-organization)."<br/>
+        /// OAuth tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
+        /// </summary>
+        /// <param name="org"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.ActionsGetDefaultWorkflowPermissions>> ActionsGetGithubActionsDefaultWorkflowPermissionsOrganizationAsResponseAsync(
+            string org,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

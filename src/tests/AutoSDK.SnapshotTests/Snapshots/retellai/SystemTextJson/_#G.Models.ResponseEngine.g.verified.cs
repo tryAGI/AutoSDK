@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickRetellLm(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ResponseEngineRetellLm? value)
+        {
+            value = RetellLm;
+            return IsRetellLm;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ResponseEngineCustomLm? CustomLm { get; init; }
 #else
@@ -47,6 +60,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickCustomLm(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ResponseEngineCustomLm? value)
+        {
+            value = CustomLm;
+            return IsCustomLm;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ResponseEngineConversationFlow? ConversationFlow { get; init; }
 #else
@@ -60,6 +86,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ConversationFlow))]
 #endif
         public bool IsConversationFlow => ConversationFlow != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickConversationFlow(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ResponseEngineConversationFlow? value)
+        {
+            value = ConversationFlow;
+            return IsConversationFlow;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -158,9 +197,9 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.ResponseEngineRetellLm?, TResult>? retellLm = null,
-            global::System.Func<global::G.ResponseEngineCustomLm?, TResult>? customLm = null,
-            global::System.Func<global::G.ResponseEngineConversationFlow?, TResult>? conversationFlow = null,
+            global::System.Func<global::G.ResponseEngineRetellLm, TResult>? retellLm = null,
+            global::System.Func<global::G.ResponseEngineCustomLm, TResult>? customLm = null,
+            global::System.Func<global::G.ResponseEngineConversationFlow, TResult>? conversationFlow = null,
             bool validate = true)
         {
             if (validate)
@@ -188,9 +227,39 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.ResponseEngineRetellLm?>? retellLm = null,
-            global::System.Action<global::G.ResponseEngineCustomLm?>? customLm = null,
-            global::System.Action<global::G.ResponseEngineConversationFlow?>? conversationFlow = null,
+            global::System.Action<global::G.ResponseEngineRetellLm>? retellLm = null,
+
+            global::System.Action<global::G.ResponseEngineCustomLm>? customLm = null,
+
+            global::System.Action<global::G.ResponseEngineConversationFlow>? conversationFlow = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsRetellLm)
+            {
+                retellLm?.Invoke(RetellLm!);
+            }
+            else if (IsCustomLm)
+            {
+                customLm?.Invoke(CustomLm!);
+            }
+            else if (IsConversationFlow)
+            {
+                conversationFlow?.Invoke(ConversationFlow!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.ResponseEngineRetellLm>? retellLm = null,
+            global::System.Action<global::G.ResponseEngineCustomLm>? customLm = null,
+            global::System.Action<global::G.ResponseEngineConversationFlow>? conversationFlow = null,
             bool validate = true)
         {
             if (validate)

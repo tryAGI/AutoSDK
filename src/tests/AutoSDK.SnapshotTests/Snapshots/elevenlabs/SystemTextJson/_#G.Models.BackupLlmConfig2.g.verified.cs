@@ -35,6 +35,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickDefault(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.BackupLLMDefault? value)
+        {
+            value = Default;
+            return IsDefault;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.BackupLLMDisabled? Disabled { get; init; }
 #else
@@ -52,6 +65,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickDisabled(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.BackupLLMDisabled? value)
+        {
+            value = Disabled;
+            return IsDisabled;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.BackupLLMOverride? Override { get; init; }
 #else
@@ -65,6 +91,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Override))]
 #endif
         public bool IsOverride => Override != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickOverride(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.BackupLLMOverride? value)
+        {
+            value = Override;
+            return IsOverride;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -166,9 +205,9 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.BackupLLMDefault?, TResult>? @default = null,
-            global::System.Func<global::G.BackupLLMDisabled?, TResult>? disabled = null,
-            global::System.Func<global::G.BackupLLMOverride?, TResult>? @override = null,
+            global::System.Func<global::G.BackupLLMDefault, TResult>? @default = null,
+            global::System.Func<global::G.BackupLLMDisabled, TResult>? disabled = null,
+            global::System.Func<global::G.BackupLLMOverride, TResult>? @override = null,
             bool validate = true)
         {
             if (validate)
@@ -196,9 +235,39 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.BackupLLMDefault?>? @default = null,
-            global::System.Action<global::G.BackupLLMDisabled?>? disabled = null,
-            global::System.Action<global::G.BackupLLMOverride?>? @override = null,
+            global::System.Action<global::G.BackupLLMDefault>? @default = null,
+
+            global::System.Action<global::G.BackupLLMDisabled>? disabled = null,
+
+            global::System.Action<global::G.BackupLLMOverride>? @override = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsDefault)
+            {
+                @default?.Invoke(Default!);
+            }
+            else if (IsDisabled)
+            {
+                disabled?.Invoke(Disabled!);
+            }
+            else if (IsOverride)
+            {
+                @override?.Invoke(Override!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.BackupLLMDefault>? @default = null,
+            global::System.Action<global::G.BackupLLMDisabled>? disabled = null,
+            global::System.Action<global::G.BackupLLMOverride>? @override = null,
             bool validate = true)
         {
             if (validate)

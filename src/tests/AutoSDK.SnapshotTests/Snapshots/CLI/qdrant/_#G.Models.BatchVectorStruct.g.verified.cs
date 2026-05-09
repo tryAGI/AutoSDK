@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickBatchVectorStructVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>? value)
+        {
+            value = BatchVectorStructVariant1;
+            return IsBatchVectorStructVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>>? BatchVectorStructVariant2 { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BatchVectorStructVariant2))]
 #endif
         public bool IsBatchVectorStructVariant2 => BatchVectorStructVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickBatchVectorStructVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>>? value)
+        {
+            value = BatchVectorStructVariant2;
+            return IsBatchVectorStructVariant2;
+        }
 
         /// <summary>
         /// 
@@ -64,6 +90,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickBatchVectorStructVariant3(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<global::G.Vector>>? value)
+        {
+            value = BatchVectorStructVariant3;
+            return IsBatchVectorStructVariant3;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<global::G.Document>? BatchVectorStructVariant4 { get; init; }
 #else
@@ -77,6 +116,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BatchVectorStructVariant4))]
 #endif
         public bool IsBatchVectorStructVariant4 => BatchVectorStructVariant4 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickBatchVectorStructVariant4(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::System.Collections.Generic.IList<global::G.Document>? value)
+        {
+            value = BatchVectorStructVariant4;
+            return IsBatchVectorStructVariant4;
+        }
 
         /// <summary>
         /// 
@@ -98,6 +150,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickBatchVectorStructVariant5(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::System.Collections.Generic.IList<global::G.Image>? value)
+        {
+            value = BatchVectorStructVariant5;
+            return IsBatchVectorStructVariant5;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<global::G.InferenceObject>? BatchVectorStructVariant6 { get; init; }
 #else
@@ -111,6 +176,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BatchVectorStructVariant6))]
 #endif
         public bool IsBatchVectorStructVariant6 => BatchVectorStructVariant6 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickBatchVectorStructVariant6(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::System.Collections.Generic.IList<global::G.InferenceObject>? value)
+        {
+            value = BatchVectorStructVariant6;
+            return IsBatchVectorStructVariant6;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -185,12 +263,12 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>?, TResult>? batchVectorStructVariant1 = null,
-            global::System.Func<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>>?, TResult>? batchVectorStructVariant2 = null,
-            global::System.Func<global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<global::G.Vector>>?, TResult>? batchVectorStructVariant3 = null,
-            global::System.Func<global::System.Collections.Generic.IList<global::G.Document>?, TResult>? batchVectorStructVariant4 = null,
-            global::System.Func<global::System.Collections.Generic.IList<global::G.Image>?, TResult>? batchVectorStructVariant5 = null,
-            global::System.Func<global::System.Collections.Generic.IList<global::G.InferenceObject>?, TResult>? batchVectorStructVariant6 = null,
+            global::System.Func<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>, TResult>? batchVectorStructVariant1 = null,
+            global::System.Func<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>>, TResult>? batchVectorStructVariant2 = null,
+            global::System.Func<global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<global::G.Vector>>, TResult>? batchVectorStructVariant3 = null,
+            global::System.Func<global::System.Collections.Generic.IList<global::G.Document>, TResult>? batchVectorStructVariant4 = null,
+            global::System.Func<global::System.Collections.Generic.IList<global::G.Image>, TResult>? batchVectorStructVariant5 = null,
+            global::System.Func<global::System.Collections.Generic.IList<global::G.InferenceObject>, TResult>? batchVectorStructVariant6 = null,
             bool validate = true)
         {
             if (validate)
@@ -230,12 +308,60 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>?>? batchVectorStructVariant1 = null,
-            global::System.Action<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>>?>? batchVectorStructVariant2 = null,
-            global::System.Action<global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<global::G.Vector>>?>? batchVectorStructVariant3 = null,
-            global::System.Action<global::System.Collections.Generic.IList<global::G.Document>?>? batchVectorStructVariant4 = null,
-            global::System.Action<global::System.Collections.Generic.IList<global::G.Image>?>? batchVectorStructVariant5 = null,
-            global::System.Action<global::System.Collections.Generic.IList<global::G.InferenceObject>?>? batchVectorStructVariant6 = null,
+            global::System.Action<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>>? batchVectorStructVariant1 = null,
+
+            global::System.Action<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>>>? batchVectorStructVariant2 = null,
+
+            global::System.Action<global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<global::G.Vector>>>? batchVectorStructVariant3 = null,
+
+            global::System.Action<global::System.Collections.Generic.IList<global::G.Document>>? batchVectorStructVariant4 = null,
+
+            global::System.Action<global::System.Collections.Generic.IList<global::G.Image>>? batchVectorStructVariant5 = null,
+
+            global::System.Action<global::System.Collections.Generic.IList<global::G.InferenceObject>>? batchVectorStructVariant6 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsBatchVectorStructVariant1)
+            {
+                batchVectorStructVariant1?.Invoke(BatchVectorStructVariant1!);
+            }
+            else if (IsBatchVectorStructVariant2)
+            {
+                batchVectorStructVariant2?.Invoke(BatchVectorStructVariant2!);
+            }
+            else if (IsBatchVectorStructVariant3)
+            {
+                batchVectorStructVariant3?.Invoke(BatchVectorStructVariant3!);
+            }
+            else if (IsBatchVectorStructVariant4)
+            {
+                batchVectorStructVariant4?.Invoke(BatchVectorStructVariant4!);
+            }
+            else if (IsBatchVectorStructVariant5)
+            {
+                batchVectorStructVariant5?.Invoke(BatchVectorStructVariant5!);
+            }
+            else if (IsBatchVectorStructVariant6)
+            {
+                batchVectorStructVariant6?.Invoke(BatchVectorStructVariant6!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>>? batchVectorStructVariant1 = null,
+            global::System.Action<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>>>? batchVectorStructVariant2 = null,
+            global::System.Action<global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<global::G.Vector>>>? batchVectorStructVariant3 = null,
+            global::System.Action<global::System.Collections.Generic.IList<global::G.Document>>? batchVectorStructVariant4 = null,
+            global::System.Action<global::System.Collections.Generic.IList<global::G.Image>>? batchVectorStructVariant5 = null,
+            global::System.Action<global::System.Collections.Generic.IList<global::G.InferenceObject>>? batchVectorStructVariant6 = null,
             bool validate = true)
         {
             if (validate)

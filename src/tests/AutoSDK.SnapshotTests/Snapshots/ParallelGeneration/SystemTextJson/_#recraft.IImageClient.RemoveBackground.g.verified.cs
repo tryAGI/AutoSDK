@@ -20,6 +20,18 @@ namespace recraft
         /// <summary>
         /// Remove background
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::recraft.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::recraft.AutoSDKHttpResponse<global::recraft.ProcessImageResponse>> RemoveBackgroundAsResponseAsync(
+
+            global::recraft.ProcessImageRequest request,
+            global::recraft.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Remove background
+        /// </summary>
         /// <param name="image"></param>
         /// <param name="imagename"></param>
         /// <param name="responseFormat"></param>
@@ -28,6 +40,41 @@ namespace recraft
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::recraft.ProcessImageResponse> RemoveBackgroundAsync(
             byte[] image,
+            string imagename,
+            global::recraft.ResponseFormat? responseFormat = default,
+            global::recraft.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Remove background
+        /// </summary>
+        /// <param name="image">
+        /// The stream to send as the multipart 'image' file part.
+        /// </param>
+        /// <param name="imagename"></param>
+        /// <param name="responseFormat"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::recraft.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::recraft.ProcessImageResponse> RemoveBackgroundAsync(
+            global::System.IO.Stream image,
+            string imagename,
+            global::recraft.ResponseFormat? responseFormat = default,
+            global::recraft.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Remove background
+        /// </summary>
+        /// <param name="image">
+        /// The stream to send as the multipart 'image' file part.
+        /// </param>
+        /// <param name="imagename"></param>
+        /// <param name="responseFormat"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::recraft.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::recraft.AutoSDKHttpResponse<global::recraft.ProcessImageResponse>> RemoveBackgroundAsResponseAsync(
+            global::System.IO.Stream image,
             string imagename,
             global::recraft.ResponseFormat? responseFormat = default,
             global::recraft.AutoSDKRequestOptions? requestOptions = default,

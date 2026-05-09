@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickAccessKey(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.AwsAccessKeyAuthConfig? value)
+        {
+            value = AccessKey;
+            return IsAccessKey;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.AwsAssumedRoleAuthConfig? AssumedRole { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AssumedRole))]
 #endif
         public bool IsAssumedRole => AssumedRole != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickAssumedRole(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.AwsAssumedRoleAuthConfig? value)
+        {
+            value = AssumedRole;
+            return IsAssumedRole;
+        }
 
         /// <summary>
         /// 
@@ -64,6 +90,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickServiceRole(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.AwsServiceRoleAuthConfig? value)
+        {
+            value = ServiceRole;
+            return IsServiceRole;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.AzureEntraAuthConfig? AzureEntra { get; init; }
 #else
@@ -77,6 +116,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AzureEntra))]
 #endif
         public bool IsAzureEntra => AzureEntra != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickAzureEntra(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.AzureEntraAuthConfig? value)
+        {
+            value = AzureEntra;
+            return IsAzureEntra;
+        }
 
         /// <summary>
         /// 
@@ -98,6 +150,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickAzureManaged(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.AzureManagedAuthConfig? value)
+        {
+            value = AzureManaged;
+            return IsAzureManaged;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.AzureDefaultAuthConfig? AzureDefault { get; init; }
 #else
@@ -111,6 +176,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AzureDefault))]
 #endif
         public bool IsAzureDefault => AzureDefault != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickAzureDefault(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.AzureDefaultAuthConfig? value)
+        {
+            value = AzureDefault;
+            return IsAzureDefault;
+        }
 
         /// <summary>
         /// 
@@ -132,6 +210,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickHashicorpToken(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.HashicorpTokenAuthConfig? value)
+        {
+            value = HashicorpToken;
+            return IsHashicorpToken;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.HashicorpAppRoleAuthConfig? HashicorpAppRole { get; init; }
 #else
@@ -149,6 +240,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickHashicorpAppRole(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.HashicorpAppRoleAuthConfig? value)
+        {
+            value = HashicorpAppRole;
+            return IsHashicorpAppRole;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.HashicorpKubernetesAuthConfig? HashicorpKubernetes { get; init; }
 #else
@@ -162,6 +266,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(HashicorpKubernetes))]
 #endif
         public bool IsHashicorpKubernetes => HashicorpKubernetes != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickHashicorpKubernetes(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.HashicorpKubernetesAuthConfig? value)
+        {
+            value = HashicorpKubernetes;
+            return IsHashicorpKubernetes;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -392,15 +509,15 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.AwsAccessKeyAuthConfig?, TResult>? accessKey = null,
-            global::System.Func<global::G.AwsAssumedRoleAuthConfig?, TResult>? assumedRole = null,
-            global::System.Func<global::G.AwsServiceRoleAuthConfig?, TResult>? serviceRole = null,
-            global::System.Func<global::G.AzureEntraAuthConfig?, TResult>? azureEntra = null,
-            global::System.Func<global::G.AzureManagedAuthConfig?, TResult>? azureManaged = null,
-            global::System.Func<global::G.AzureDefaultAuthConfig?, TResult>? azureDefault = null,
-            global::System.Func<global::G.HashicorpTokenAuthConfig?, TResult>? hashicorpToken = null,
-            global::System.Func<global::G.HashicorpAppRoleAuthConfig?, TResult>? hashicorpAppRole = null,
-            global::System.Func<global::G.HashicorpKubernetesAuthConfig?, TResult>? hashicorpKubernetes = null,
+            global::System.Func<global::G.AwsAccessKeyAuthConfig, TResult>? accessKey = null,
+            global::System.Func<global::G.AwsAssumedRoleAuthConfig, TResult>? assumedRole = null,
+            global::System.Func<global::G.AwsServiceRoleAuthConfig, TResult>? serviceRole = null,
+            global::System.Func<global::G.AzureEntraAuthConfig, TResult>? azureEntra = null,
+            global::System.Func<global::G.AzureManagedAuthConfig, TResult>? azureManaged = null,
+            global::System.Func<global::G.AzureDefaultAuthConfig, TResult>? azureDefault = null,
+            global::System.Func<global::G.HashicorpTokenAuthConfig, TResult>? hashicorpToken = null,
+            global::System.Func<global::G.HashicorpAppRoleAuthConfig, TResult>? hashicorpAppRole = null,
+            global::System.Func<global::G.HashicorpKubernetesAuthConfig, TResult>? hashicorpKubernetes = null,
             bool validate = true)
         {
             if (validate)
@@ -452,15 +569,81 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.AwsAccessKeyAuthConfig?>? accessKey = null,
-            global::System.Action<global::G.AwsAssumedRoleAuthConfig?>? assumedRole = null,
-            global::System.Action<global::G.AwsServiceRoleAuthConfig?>? serviceRole = null,
-            global::System.Action<global::G.AzureEntraAuthConfig?>? azureEntra = null,
-            global::System.Action<global::G.AzureManagedAuthConfig?>? azureManaged = null,
-            global::System.Action<global::G.AzureDefaultAuthConfig?>? azureDefault = null,
-            global::System.Action<global::G.HashicorpTokenAuthConfig?>? hashicorpToken = null,
-            global::System.Action<global::G.HashicorpAppRoleAuthConfig?>? hashicorpAppRole = null,
-            global::System.Action<global::G.HashicorpKubernetesAuthConfig?>? hashicorpKubernetes = null,
+            global::System.Action<global::G.AwsAccessKeyAuthConfig>? accessKey = null,
+
+            global::System.Action<global::G.AwsAssumedRoleAuthConfig>? assumedRole = null,
+
+            global::System.Action<global::G.AwsServiceRoleAuthConfig>? serviceRole = null,
+
+            global::System.Action<global::G.AzureEntraAuthConfig>? azureEntra = null,
+
+            global::System.Action<global::G.AzureManagedAuthConfig>? azureManaged = null,
+
+            global::System.Action<global::G.AzureDefaultAuthConfig>? azureDefault = null,
+
+            global::System.Action<global::G.HashicorpTokenAuthConfig>? hashicorpToken = null,
+
+            global::System.Action<global::G.HashicorpAppRoleAuthConfig>? hashicorpAppRole = null,
+
+            global::System.Action<global::G.HashicorpKubernetesAuthConfig>? hashicorpKubernetes = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsAccessKey)
+            {
+                accessKey?.Invoke(AccessKey!);
+            }
+            else if (IsAssumedRole)
+            {
+                assumedRole?.Invoke(AssumedRole!);
+            }
+            else if (IsServiceRole)
+            {
+                serviceRole?.Invoke(ServiceRole!);
+            }
+            else if (IsAzureEntra)
+            {
+                azureEntra?.Invoke(AzureEntra!);
+            }
+            else if (IsAzureManaged)
+            {
+                azureManaged?.Invoke(AzureManaged!);
+            }
+            else if (IsAzureDefault)
+            {
+                azureDefault?.Invoke(AzureDefault!);
+            }
+            else if (IsHashicorpToken)
+            {
+                hashicorpToken?.Invoke(HashicorpToken!);
+            }
+            else if (IsHashicorpAppRole)
+            {
+                hashicorpAppRole?.Invoke(HashicorpAppRole!);
+            }
+            else if (IsHashicorpKubernetes)
+            {
+                hashicorpKubernetes?.Invoke(HashicorpKubernetes!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.AwsAccessKeyAuthConfig>? accessKey = null,
+            global::System.Action<global::G.AwsAssumedRoleAuthConfig>? assumedRole = null,
+            global::System.Action<global::G.AwsServiceRoleAuthConfig>? serviceRole = null,
+            global::System.Action<global::G.AzureEntraAuthConfig>? azureEntra = null,
+            global::System.Action<global::G.AzureManagedAuthConfig>? azureManaged = null,
+            global::System.Action<global::G.AzureDefaultAuthConfig>? azureDefault = null,
+            global::System.Action<global::G.HashicorpTokenAuthConfig>? hashicorpToken = null,
+            global::System.Action<global::G.HashicorpAppRoleAuthConfig>? hashicorpAppRole = null,
+            global::System.Action<global::G.HashicorpKubernetesAuthConfig>? hashicorpKubernetes = null,
             bool validate = true)
         {
             if (validate)

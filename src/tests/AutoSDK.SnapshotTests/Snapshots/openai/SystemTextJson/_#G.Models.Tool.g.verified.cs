@@ -28,6 +28,19 @@ namespace G
         public bool IsFunction => Function != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFunction(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.FunctionTool? value)
+        {
+            value = Function;
+            return IsFunction;
+        }
+
+        /// <summary>
         /// A tool that searches for relevant content from uploaded files. Learn more about the [file search tool](https://platform.openai.com/docs/guides/tools-file-search).
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FileSearch))]
 #endif
         public bool IsFileSearch => FileSearch != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFileSearch(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.FileSearchTool? value)
+        {
+            value = FileSearch;
+            return IsFileSearch;
+        }
 
         /// <summary>
         /// This tool searches the web for relevant results to use in a response. Learn more about the [web search tool](https://platform.openai.com/docs/guides/tools-web-search).
@@ -62,6 +88,19 @@ namespace G
         public bool IsWebSearchPreview => WebSearchPreview != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickWebSearchPreview(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.WebSearchPreviewTool? value)
+        {
+            value = WebSearchPreview;
+            return IsWebSearchPreview;
+        }
+
+        /// <summary>
         /// A tool that controls a virtual computer. Learn more about the [computer tool](https://platform.openai.com/docs/guides/tools-computer-use).
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -77,6 +116,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ComputerUsePreview))]
 #endif
         public bool IsComputerUsePreview => ComputerUsePreview != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickComputerUsePreview(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ComputerUsePreviewTool? value)
+        {
+            value = ComputerUsePreview;
+            return IsComputerUsePreview;
+        }
 
         /// <summary>
         /// Give the model access to additional tools via remote Model Context Protocol <br/>
@@ -97,6 +149,19 @@ namespace G
         public bool IsMcp => Mcp != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMcp(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.MCPTool? value)
+        {
+            value = Mcp;
+            return IsMcp;
+        }
+
+        /// <summary>
         /// A tool that runs Python code to help generate a response to a prompt.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -112,6 +177,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CodeInterpreter))]
 #endif
         public bool IsCodeInterpreter => CodeInterpreter != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickCodeInterpreter(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CodeInterpreterTool? value)
+        {
+            value = CodeInterpreter;
+            return IsCodeInterpreter;
+        }
 
         /// <summary>
         /// A tool that generates images using a model like `gpt-image-1`.
@@ -131,6 +209,19 @@ namespace G
         public bool IsImageGeneration => ImageGeneration != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickImageGeneration(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ImageGenTool? value)
+        {
+            value = ImageGeneration;
+            return IsImageGeneration;
+        }
+
+        /// <summary>
         /// A tool that allows the model to execute shell commands in a local environment.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -146,6 +237,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(LocalShell))]
 #endif
         public bool IsLocalShell => LocalShell != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickLocalShell(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.LocalShellTool? value)
+        {
+            value = LocalShell;
+            return IsLocalShell;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -354,14 +458,14 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.FunctionTool?, TResult>? function = null,
-            global::System.Func<global::G.FileSearchTool?, TResult>? fileSearch = null,
-            global::System.Func<global::G.WebSearchPreviewTool?, TResult>? webSearchPreview = null,
-            global::System.Func<global::G.ComputerUsePreviewTool?, TResult>? computerUsePreview = null,
-            global::System.Func<global::G.MCPTool?, TResult>? mcp = null,
-            global::System.Func<global::G.CodeInterpreterTool?, TResult>? codeInterpreter = null,
-            global::System.Func<global::G.ImageGenTool?, TResult>? imageGeneration = null,
-            global::System.Func<global::G.LocalShellTool?, TResult>? localShell = null,
+            global::System.Func<global::G.FunctionTool, TResult>? function = null,
+            global::System.Func<global::G.FileSearchTool, TResult>? fileSearch = null,
+            global::System.Func<global::G.WebSearchPreviewTool, TResult>? webSearchPreview = null,
+            global::System.Func<global::G.ComputerUsePreviewTool, TResult>? computerUsePreview = null,
+            global::System.Func<global::G.MCPTool, TResult>? mcp = null,
+            global::System.Func<global::G.CodeInterpreterTool, TResult>? codeInterpreter = null,
+            global::System.Func<global::G.ImageGenTool, TResult>? imageGeneration = null,
+            global::System.Func<global::G.LocalShellTool, TResult>? localShell = null,
             bool validate = true)
         {
             if (validate)
@@ -409,14 +513,74 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.FunctionTool?>? function = null,
-            global::System.Action<global::G.FileSearchTool?>? fileSearch = null,
-            global::System.Action<global::G.WebSearchPreviewTool?>? webSearchPreview = null,
-            global::System.Action<global::G.ComputerUsePreviewTool?>? computerUsePreview = null,
-            global::System.Action<global::G.MCPTool?>? mcp = null,
-            global::System.Action<global::G.CodeInterpreterTool?>? codeInterpreter = null,
-            global::System.Action<global::G.ImageGenTool?>? imageGeneration = null,
-            global::System.Action<global::G.LocalShellTool?>? localShell = null,
+            global::System.Action<global::G.FunctionTool>? function = null,
+
+            global::System.Action<global::G.FileSearchTool>? fileSearch = null,
+
+            global::System.Action<global::G.WebSearchPreviewTool>? webSearchPreview = null,
+
+            global::System.Action<global::G.ComputerUsePreviewTool>? computerUsePreview = null,
+
+            global::System.Action<global::G.MCPTool>? mcp = null,
+
+            global::System.Action<global::G.CodeInterpreterTool>? codeInterpreter = null,
+
+            global::System.Action<global::G.ImageGenTool>? imageGeneration = null,
+
+            global::System.Action<global::G.LocalShellTool>? localShell = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsFunction)
+            {
+                function?.Invoke(Function!);
+            }
+            else if (IsFileSearch)
+            {
+                fileSearch?.Invoke(FileSearch!);
+            }
+            else if (IsWebSearchPreview)
+            {
+                webSearchPreview?.Invoke(WebSearchPreview!);
+            }
+            else if (IsComputerUsePreview)
+            {
+                computerUsePreview?.Invoke(ComputerUsePreview!);
+            }
+            else if (IsMcp)
+            {
+                mcp?.Invoke(Mcp!);
+            }
+            else if (IsCodeInterpreter)
+            {
+                codeInterpreter?.Invoke(CodeInterpreter!);
+            }
+            else if (IsImageGeneration)
+            {
+                imageGeneration?.Invoke(ImageGeneration!);
+            }
+            else if (IsLocalShell)
+            {
+                localShell?.Invoke(LocalShell!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.FunctionTool>? function = null,
+            global::System.Action<global::G.FileSearchTool>? fileSearch = null,
+            global::System.Action<global::G.WebSearchPreviewTool>? webSearchPreview = null,
+            global::System.Action<global::G.ComputerUsePreviewTool>? computerUsePreview = null,
+            global::System.Action<global::G.MCPTool>? mcp = null,
+            global::System.Action<global::G.CodeInterpreterTool>? codeInterpreter = null,
+            global::System.Action<global::G.ImageGenTool>? imageGeneration = null,
+            global::System.Action<global::G.LocalShellTool>? localShell = null,
             bool validate = true)
         {
             if (validate)

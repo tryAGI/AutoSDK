@@ -24,5 +24,24 @@ namespace G
             byte[] request,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Upload File<br/>
+        /// Uploads a file to the storage system and returns the file path.
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="projectId"></param>
+        /// <param name="uploadType"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<string>> UploadToFileStorageAsResponseAsync(
+            string name,
+            global::System.Guid projectId,
+            int uploadType,
+
+            byte[] request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

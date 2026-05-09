@@ -19,5 +19,19 @@ namespace G
             global::System.Guid uploadId,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Abort multipart upload<br/>
+        /// Abort a multipart upload and clean up any uploaded parts.
+        /// </summary>
+        /// <param name="uploadId">
+        /// The ID of the multipart upload to abort
+        /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.FileDeleted>> AbortMultipartUploadAsResponseAsync(
+            global::System.Guid uploadId,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

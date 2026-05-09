@@ -28,6 +28,19 @@ namespace G
         public bool IsVideoSegmentation0 => VideoSegmentation0 != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickVideoSegmentation0(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.VideoSegmentation0? value)
+        {
+            value = VideoSegmentation0;
+            return IsVideoSegmentation0;
+        }
+
+        /// <summary>
         /// Configuration for fixed segmentation. This field is required when `strategy` is `fixed`.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(VideoSegmentation1))]
 #endif
         public bool IsVideoSegmentation1 => VideoSegmentation1 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickVideoSegmentation1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.VideoSegmentation1? value)
+        {
+            value = VideoSegmentation1;
+            return IsVideoSegmentation1;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -119,8 +145,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.VideoSegmentation0?, TResult>? videoSegmentation0 = null,
-            global::System.Func<global::G.VideoSegmentation1?, TResult>? videoSegmentation1 = null,
+            global::System.Func<global::G.VideoSegmentation0, TResult>? videoSegmentation0 = null,
+            global::System.Func<global::G.VideoSegmentation1, TResult>? videoSegmentation1 = null,
             bool validate = true)
         {
             if (validate)
@@ -144,8 +170,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.VideoSegmentation0?>? videoSegmentation0 = null,
-            global::System.Action<global::G.VideoSegmentation1?>? videoSegmentation1 = null,
+            global::System.Action<global::G.VideoSegmentation0>? videoSegmentation0 = null,
+
+            global::System.Action<global::G.VideoSegmentation1>? videoSegmentation1 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsVideoSegmentation0)
+            {
+                videoSegmentation0?.Invoke(VideoSegmentation0!);
+            }
+            else if (IsVideoSegmentation1)
+            {
+                videoSegmentation1?.Invoke(VideoSegmentation1!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.VideoSegmentation0>? videoSegmentation0 = null,
+            global::System.Action<global::G.VideoSegmentation1>? videoSegmentation1 = null,
             bool validate = true)
         {
             if (validate)

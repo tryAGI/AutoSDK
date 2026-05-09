@@ -48,6 +48,33 @@ namespace G
         /// <param name="fileIdentifier">
         /// The ID or name of the file to update
         /// </param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.StoreFile>> UpdateStoreFileAsResponseAsync(
+            global::G.AnyOf<string, global::System.Guid?> storeIdentifier,
+            global::G.AnyOf<string, global::System.Guid?> fileIdentifier,
+
+            global::G.StoreFileMetadataUpdateParams request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Update store file metadata<br/>
+        /// Update metadata on a file within a store.<br/>
+        /// Args:<br/>
+        ///     store_identifier: The ID or name of the store.<br/>
+        ///     file_identifier: The ID or name of the file to update.<br/>
+        ///     update_params: Metadata update payload.<br/>
+        /// Returns:<br/>
+        ///     StoreFile: The updated file details.
+        /// </summary>
+        /// <param name="storeIdentifier">
+        /// The ID or name of the store
+        /// </param>
+        /// <param name="fileIdentifier">
+        /// The ID or name of the file to update
+        /// </param>
         /// <param name="metadata">
         /// Updated metadata for the file
         /// </param>

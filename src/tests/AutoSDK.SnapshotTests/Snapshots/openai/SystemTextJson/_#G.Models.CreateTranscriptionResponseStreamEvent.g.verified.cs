@@ -11,6 +11,11 @@ namespace G
     public readonly partial struct CreateTranscriptionResponseStreamEvent : global::System.IEquatable<CreateTranscriptionResponseStreamEvent>
     {
         /// <summary>
+        /// 
+        /// </summary>
+        public string? Type { get; }
+
+        /// <summary>
         /// Emitted when there is an additional text delta. This is also the first event emitted when the transcription starts. Only emitted when you [create a transcription](/docs/api-reference/audio/create-transcription) with the `Stream` parameter set to `true`.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -28,6 +33,19 @@ namespace G
         public bool IsTranscriptTextDelta => TranscriptTextDelta != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickTranscriptTextDelta(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.TranscriptTextDeltaEvent? value)
+        {
+            value = TranscriptTextDelta;
+            return IsTranscriptTextDelta;
+        }
+
+        /// <summary>
         /// Emitted when the transcription is complete. Contains the complete transcription text. Only emitted when you [create a transcription](/docs/api-reference/audio/create-transcription) with the `Stream` parameter set to `true`.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -43,6 +61,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TranscriptTextDone))]
 #endif
         public bool IsTranscriptTextDone => TranscriptTextDone != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickTranscriptTextDone(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.TranscriptTextDoneEvent? value)
+        {
+            value = TranscriptTextDone;
+            return IsTranscriptTextDone;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -83,10 +114,13 @@ namespace G
         /// 
         /// </summary>
         public CreateTranscriptionResponseStreamEvent(
+            string? type,
             global::G.TranscriptTextDeltaEvent? transcriptTextDelta,
             global::G.TranscriptTextDoneEvent? transcriptTextDone
             )
         {
+            Type = type;
+
             TranscriptTextDelta = transcriptTextDelta;
             TranscriptTextDone = transcriptTextDone;
         }
@@ -119,8 +153,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.TranscriptTextDeltaEvent?, TResult>? transcriptTextDelta = null,
-            global::System.Func<global::G.TranscriptTextDoneEvent?, TResult>? transcriptTextDone = null,
+            global::System.Func<global::G.TranscriptTextDeltaEvent, TResult>? transcriptTextDelta = null,
+            global::System.Func<global::G.TranscriptTextDoneEvent, TResult>? transcriptTextDone = null,
             bool validate = true)
         {
             if (validate)
@@ -144,8 +178,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.TranscriptTextDeltaEvent?>? transcriptTextDelta = null,
-            global::System.Action<global::G.TranscriptTextDoneEvent?>? transcriptTextDone = null,
+            global::System.Action<global::G.TranscriptTextDeltaEvent>? transcriptTextDelta = null,
+
+            global::System.Action<global::G.TranscriptTextDoneEvent>? transcriptTextDone = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsTranscriptTextDelta)
+            {
+                transcriptTextDelta?.Invoke(TranscriptTextDelta!);
+            }
+            else if (IsTranscriptTextDone)
+            {
+                transcriptTextDone?.Invoke(TranscriptTextDone!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.TranscriptTextDeltaEvent>? transcriptTextDelta = null,
+            global::System.Action<global::G.TranscriptTextDoneEvent>? transcriptTextDone = null,
             bool validate = true)
         {
             if (validate)

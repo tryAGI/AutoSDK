@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickCodeInterpreterServerToolContainerVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = CodeInterpreterServerToolContainerVariant1;
+            return IsCodeInterpreterServerToolContainerVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CodeInterpreterServerToolContainer1? CodeInterpreterServerToolContainer1 { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CodeInterpreterServerToolContainer1))]
 #endif
         public bool IsCodeInterpreterServerToolContainer1 => CodeInterpreterServerToolContainer1 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickCodeInterpreterServerToolContainer1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CodeInterpreterServerToolContainer1? value)
+        {
+            value = CodeInterpreterServerToolContainer1;
+            return IsCodeInterpreterServerToolContainer1;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -119,8 +145,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<string?, TResult>? codeInterpreterServerToolContainerVariant1 = null,
-            global::System.Func<global::G.CodeInterpreterServerToolContainer1?, TResult>? codeInterpreterServerToolContainer1 = null,
+            global::System.Func<string, TResult>? codeInterpreterServerToolContainerVariant1 = null,
+            global::System.Func<global::G.CodeInterpreterServerToolContainer1, TResult>? codeInterpreterServerToolContainer1 = null,
             bool validate = true)
         {
             if (validate)
@@ -144,8 +170,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<string?>? codeInterpreterServerToolContainerVariant1 = null,
-            global::System.Action<global::G.CodeInterpreterServerToolContainer1?>? codeInterpreterServerToolContainer1 = null,
+            global::System.Action<string>? codeInterpreterServerToolContainerVariant1 = null,
+
+            global::System.Action<global::G.CodeInterpreterServerToolContainer1>? codeInterpreterServerToolContainer1 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsCodeInterpreterServerToolContainerVariant1)
+            {
+                codeInterpreterServerToolContainerVariant1?.Invoke(CodeInterpreterServerToolContainerVariant1!);
+            }
+            else if (IsCodeInterpreterServerToolContainer1)
+            {
+                codeInterpreterServerToolContainer1?.Invoke(CodeInterpreterServerToolContainer1!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<string>? codeInterpreterServerToolContainerVariant1 = null,
+            global::System.Action<global::G.CodeInterpreterServerToolContainer1>? codeInterpreterServerToolContainer1 = null,
             bool validate = true)
         {
             if (validate)

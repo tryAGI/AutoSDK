@@ -11,6 +11,11 @@ namespace G
     public readonly partial struct ReferencesItem : global::System.IEquatable<ReferencesItem>
     {
         /// <summary>
+        /// 
+        /// </summary>
+        public string? Type { get; }
+
+        /// <summary>
         /// Passing an image reference allows the model to emulate the style or content of the reference in the output.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -26,6 +31,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Image))]
 #endif
         public bool IsImage => Image != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickImage(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateVideoToVideoRequestGen4AlephReferenceImageReference? value)
+        {
+            value = Image;
+            return IsImage;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -42,6 +60,19 @@ namespace G
         public ReferencesItem(global::G.CreateVideoToVideoRequestGen4AlephReferenceImageReference? value)
         {
             Image = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ReferencesItem(
+            string? type,
+            global::G.CreateVideoToVideoRequestGen4AlephReferenceImageReference? image
+            )
+        {
+            Type = type;
+
+            Image = image;
         }
 
         /// <summary>
@@ -70,7 +101,7 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.CreateVideoToVideoRequestGen4AlephReferenceImageReference?, TResult>? image = null,
+            global::System.Func<global::G.CreateVideoToVideoRequestGen4AlephReferenceImageReference, TResult>? image = null,
             bool validate = true)
         {
             if (validate)
@@ -90,7 +121,25 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.CreateVideoToVideoRequestGen4AlephReferenceImageReference?>? image = null,
+            global::System.Action<global::G.CreateVideoToVideoRequestGen4AlephReferenceImageReference>? image = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsImage)
+            {
+                image?.Invoke(Image!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.CreateVideoToVideoRequestGen4AlephReferenceImageReference>? image = null,
             bool validate = true)
         {
             if (validate)

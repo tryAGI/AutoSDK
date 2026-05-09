@@ -28,6 +28,19 @@ namespace G
         public bool IsInputMessage => InputMessage != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickInputMessage(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.InputMessageResource? value)
+        {
+            value = InputMessage;
+            return IsInputMessage;
+        }
+
+        /// <summary>
         /// An output message from the model.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Message))]
 #endif
         public bool IsMessage => Message != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMessage(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.OutputMessage? value)
+        {
+            value = Message;
+            return IsMessage;
+        }
 
         /// <summary>
         /// The results of a file search tool call. See the <br/>
@@ -61,6 +87,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FileSearchCall))]
 #endif
         public bool IsFileSearchCall => FileSearchCall != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFileSearchCall(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.FileSearchToolCall? value)
+        {
+            value = FileSearchCall;
+            return IsFileSearchCall;
+        }
 
         /// <summary>
         /// A tool call to a computer use tool. See the <br/>
@@ -83,6 +122,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickComputerCall(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ComputerToolCall? value)
+        {
+            value = ComputerCall;
+            return IsComputerCall;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ComputerToolCallOutputResource? ComputerToolCallOutput { get; init; }
 #else
@@ -96,6 +148,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ComputerToolCallOutput))]
 #endif
         public bool IsComputerToolCallOutput => ComputerToolCallOutput != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickComputerToolCallOutput(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ComputerToolCallOutputResource? value)
+        {
+            value = ComputerToolCallOutput;
+            return IsComputerToolCallOutput;
+        }
 
         /// <summary>
         /// The results of a web search tool call. See the <br/>
@@ -118,6 +183,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickWebSearchCall(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.WebSearchToolCall? value)
+        {
+            value = WebSearchCall;
+            return IsWebSearchCall;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.FunctionToolCallResource? FunctionToolCall { get; init; }
 #else
@@ -135,6 +213,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickFunctionToolCall(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.FunctionToolCallResource? value)
+        {
+            value = FunctionToolCall;
+            return IsFunctionToolCall;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.FunctionToolCallOutputResource? FunctionToolCallOutput { get; init; }
 #else
@@ -148,6 +239,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FunctionToolCallOutput))]
 #endif
         public bool IsFunctionToolCallOutput => FunctionToolCallOutput != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFunctionToolCallOutput(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.FunctionToolCallOutputResource? value)
+        {
+            value = FunctionToolCallOutput;
+            return IsFunctionToolCallOutput;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -357,11 +461,11 @@ namespace G
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::G.InputMessageResource?, TResult>? inputMessage = null,
-            global::System.Func<global::G.OutputMessage?, TResult>? message = null,
-            global::System.Func<global::G.FileSearchToolCall?, TResult>? fileSearchCall = null,
-            global::System.Func<global::G.ComputerToolCall?, TResult>? computerCall = null,
+            global::System.Func<global::G.OutputMessage, TResult>? message = null,
+            global::System.Func<global::G.FileSearchToolCall, TResult>? fileSearchCall = null,
+            global::System.Func<global::G.ComputerToolCall, TResult>? computerCall = null,
             global::System.Func<global::G.ComputerToolCallOutputResource?, TResult>? computerToolCallOutput = null,
-            global::System.Func<global::G.WebSearchToolCall?, TResult>? webSearchCall = null,
+            global::System.Func<global::G.WebSearchToolCall, TResult>? webSearchCall = null,
             global::System.Func<global::G.FunctionToolCallResource?, TResult>? functionToolCall = null,
             global::System.Func<global::G.FunctionToolCallOutputResource?, TResult>? functionToolCallOutput = null,
             bool validate = true)
@@ -412,11 +516,71 @@ namespace G
         /// </summary>
         public void Match(
             global::System.Action<global::G.InputMessageResource?>? inputMessage = null,
-            global::System.Action<global::G.OutputMessage?>? message = null,
-            global::System.Action<global::G.FileSearchToolCall?>? fileSearchCall = null,
-            global::System.Action<global::G.ComputerToolCall?>? computerCall = null,
+
+            global::System.Action<global::G.OutputMessage>? message = null,
+
+            global::System.Action<global::G.FileSearchToolCall>? fileSearchCall = null,
+
+            global::System.Action<global::G.ComputerToolCall>? computerCall = null,
+
             global::System.Action<global::G.ComputerToolCallOutputResource?>? computerToolCallOutput = null,
-            global::System.Action<global::G.WebSearchToolCall?>? webSearchCall = null,
+
+            global::System.Action<global::G.WebSearchToolCall>? webSearchCall = null,
+
+            global::System.Action<global::G.FunctionToolCallResource?>? functionToolCall = null,
+
+            global::System.Action<global::G.FunctionToolCallOutputResource?>? functionToolCallOutput = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsInputMessage)
+            {
+                inputMessage?.Invoke(InputMessage!);
+            }
+            else if (IsMessage)
+            {
+                message?.Invoke(Message!);
+            }
+            else if (IsFileSearchCall)
+            {
+                fileSearchCall?.Invoke(FileSearchCall!);
+            }
+            else if (IsComputerCall)
+            {
+                computerCall?.Invoke(ComputerCall!);
+            }
+            else if (IsComputerToolCallOutput)
+            {
+                computerToolCallOutput?.Invoke(ComputerToolCallOutput!);
+            }
+            else if (IsWebSearchCall)
+            {
+                webSearchCall?.Invoke(WebSearchCall!);
+            }
+            else if (IsFunctionToolCall)
+            {
+                functionToolCall?.Invoke(FunctionToolCall!);
+            }
+            else if (IsFunctionToolCallOutput)
+            {
+                functionToolCallOutput?.Invoke(FunctionToolCallOutput!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.InputMessageResource?>? inputMessage = null,
+            global::System.Action<global::G.OutputMessage>? message = null,
+            global::System.Action<global::G.FileSearchToolCall>? fileSearchCall = null,
+            global::System.Action<global::G.ComputerToolCall>? computerCall = null,
+            global::System.Action<global::G.ComputerToolCallOutputResource?>? computerToolCallOutput = null,
+            global::System.Action<global::G.WebSearchToolCall>? webSearchCall = null,
             global::System.Action<global::G.FunctionToolCallResource?>? functionToolCall = null,
             global::System.Action<global::G.FunctionToolCallOutputResource?>? functionToolCallOutput = null,
             bool validate = true)

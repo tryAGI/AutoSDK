@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickUsageLimitsPolicy(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.UsageLimitsPolicy? value)
+        {
+            value = UsageLimitsPolicy;
+            return IsUsageLimitsPolicy;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.UsageLimitsPolicyResponseVariant2? UsageLimitsPolicyResponseVariant2 { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(UsageLimitsPolicyResponseVariant2))]
 #endif
         public bool IsUsageLimitsPolicyResponseVariant2 => UsageLimitsPolicyResponseVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickUsageLimitsPolicyResponseVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.UsageLimitsPolicyResponseVariant2? value)
+        {
+            value = UsageLimitsPolicyResponseVariant2;
+            return IsUsageLimitsPolicyResponseVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -119,8 +145,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.UsageLimitsPolicy?, TResult>? usageLimitsPolicy = null,
-            global::System.Func<global::G.UsageLimitsPolicyResponseVariant2?, TResult>? usageLimitsPolicyResponseVariant2 = null,
+            global::System.Func<global::G.UsageLimitsPolicy, TResult>? usageLimitsPolicy = null,
+            global::System.Func<global::G.UsageLimitsPolicyResponseVariant2, TResult>? usageLimitsPolicyResponseVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -144,8 +170,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.UsageLimitsPolicy?>? usageLimitsPolicy = null,
-            global::System.Action<global::G.UsageLimitsPolicyResponseVariant2?>? usageLimitsPolicyResponseVariant2 = null,
+            global::System.Action<global::G.UsageLimitsPolicy>? usageLimitsPolicy = null,
+
+            global::System.Action<global::G.UsageLimitsPolicyResponseVariant2>? usageLimitsPolicyResponseVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsUsageLimitsPolicy)
+            {
+                usageLimitsPolicy?.Invoke(UsageLimitsPolicy!);
+            }
+            else if (IsUsageLimitsPolicyResponseVariant2)
+            {
+                usageLimitsPolicyResponseVariant2?.Invoke(UsageLimitsPolicyResponseVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.UsageLimitsPolicy>? usageLimitsPolicy = null,
+            global::System.Action<global::G.UsageLimitsPolicyResponseVariant2>? usageLimitsPolicyResponseVariant2 = null,
             bool validate = true)
         {
             if (validate)

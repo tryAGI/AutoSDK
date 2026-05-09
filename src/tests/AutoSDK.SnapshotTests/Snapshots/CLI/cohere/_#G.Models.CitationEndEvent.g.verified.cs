@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickChatStreamType(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ChatStreamEventType? value)
+        {
+            value = ChatStreamType;
+            return IsChatStreamType;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CitationEndEventFs3igt? Fs3igt { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Fs3igt))]
 #endif
         public bool IsFs3igt => Fs3igt != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFs3igt(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CitationEndEventFs3igt? value)
+        {
+            value = Fs3igt;
+            return IsFs3igt;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -119,8 +145,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.ChatStreamEventType?, TResult>? chatStreamType = null,
-            global::System.Func<global::G.CitationEndEventFs3igt?, TResult>? fs3igt = null,
+            global::System.Func<global::G.ChatStreamEventType, TResult>? chatStreamType = null,
+            global::System.Func<global::G.CitationEndEventFs3igt, TResult>? fs3igt = null,
             bool validate = true)
         {
             if (validate)
@@ -144,8 +170,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.ChatStreamEventType?>? chatStreamType = null,
-            global::System.Action<global::G.CitationEndEventFs3igt?>? fs3igt = null,
+            global::System.Action<global::G.ChatStreamEventType>? chatStreamType = null,
+
+            global::System.Action<global::G.CitationEndEventFs3igt>? fs3igt = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsChatStreamType)
+            {
+                chatStreamType?.Invoke(ChatStreamType!);
+            }
+            else if (IsFs3igt)
+            {
+                fs3igt?.Invoke(Fs3igt!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.ChatStreamEventType>? chatStreamType = null,
+            global::System.Action<global::G.CitationEndEventFs3igt>? fs3igt = null,
             bool validate = true)
         {
             if (validate)

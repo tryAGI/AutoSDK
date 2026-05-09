@@ -11,6 +11,11 @@ namespace G
     public readonly partial struct RealtimeServerEvent : global::System.IEquatable<RealtimeServerEvent>
     {
         /// <summary>
+        /// 
+        /// </summary>
+        public string? Type { get; }
+
+        /// <summary>
         /// Returned when a conversation is created. Emitted right after session creation.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -26,6 +31,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ConversationCreated))]
 #endif
         public bool IsConversationCreated => ConversationCreated != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickConversationCreated(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.RealtimeServerEventConversationCreated? value)
+        {
+            value = ConversationCreated;
+            return IsConversationCreated;
+        }
 
         /// <summary>
         /// Returned when a conversation item is created. There are several scenarios that produce this event:<br/>
@@ -53,6 +71,19 @@ namespace G
         public bool IsConversationItemCreated => ConversationItemCreated != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickConversationItemCreated(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.RealtimeServerEventConversationItemCreated? value)
+        {
+            value = ConversationItemCreated;
+            return IsConversationItemCreated;
+        }
+
+        /// <summary>
         /// Returned when an item in the conversation is deleted by the client with a <br/>
         /// `conversation.item.delete` event. This event is used to synchronize the <br/>
         /// server's understanding of the conversation history with the client's view.
@@ -70,6 +101,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ConversationItemDeleted))]
 #endif
         public bool IsConversationItemDeleted => ConversationItemDeleted != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickConversationItemDeleted(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.RealtimeServerEventConversationItemDeleted? value)
+        {
+            value = ConversationItemDeleted;
+            return IsConversationItemDeleted;
+        }
 
         /// <summary>
         /// This event is the output of audio transcription for user audio written to the <br/>
@@ -97,6 +141,19 @@ namespace G
         public bool IsConversationItemInputAudioTranscriptionCompleted => ConversationItemInputAudioTranscriptionCompleted != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickConversationItemInputAudioTranscriptionCompleted(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.RealtimeServerEventConversationItemInputAudioTranscriptionCompleted? value)
+        {
+            value = ConversationItemInputAudioTranscriptionCompleted;
+            return IsConversationItemInputAudioTranscriptionCompleted;
+        }
+
+        /// <summary>
         /// Returned when the text value of an input audio transcription content part is updated.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -112,6 +169,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ConversationItemInputAudioTranscriptionDelta))]
 #endif
         public bool IsConversationItemInputAudioTranscriptionDelta => ConversationItemInputAudioTranscriptionDelta != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickConversationItemInputAudioTranscriptionDelta(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.RealtimeServerEventConversationItemInputAudioTranscriptionDelta? value)
+        {
+            value = ConversationItemInputAudioTranscriptionDelta;
+            return IsConversationItemInputAudioTranscriptionDelta;
+        }
 
         /// <summary>
         /// Returned when input audio transcription is configured, and a transcription <br/>
@@ -133,6 +203,19 @@ namespace G
         public bool IsConversationItemInputAudioTranscriptionFailed => ConversationItemInputAudioTranscriptionFailed != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickConversationItemInputAudioTranscriptionFailed(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.RealtimeServerEventConversationItemInputAudioTranscriptionFailed? value)
+        {
+            value = ConversationItemInputAudioTranscriptionFailed;
+            return IsConversationItemInputAudioTranscriptionFailed;
+        }
+
+        /// <summary>
         /// Returned when a conversation item is retrieved with `conversation.item.retrieve`.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -148,6 +231,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ConversationItemRetrieved))]
 #endif
         public bool IsConversationItemRetrieved => ConversationItemRetrieved != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickConversationItemRetrieved(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.RealtimeServerEventConversationItemRetrieved? value)
+        {
+            value = ConversationItemRetrieved;
+            return IsConversationItemRetrieved;
+        }
 
         /// <summary>
         /// Returned when an earlier assistant audio message item is truncated by the <br/>
@@ -171,6 +267,19 @@ namespace G
         public bool IsConversationItemTruncated => ConversationItemTruncated != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickConversationItemTruncated(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.RealtimeServerEventConversationItemTruncated? value)
+        {
+            value = ConversationItemTruncated;
+            return IsConversationItemTruncated;
+        }
+
+        /// <summary>
         /// Returned when an error occurs, which could be a client problem or a server <br/>
         /// problem. Most errors are recoverable and the session will stay open, we <br/>
         /// recommend to implementors to monitor and log error messages by default.
@@ -188,6 +297,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Error))]
 #endif
         public bool IsError => Error != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickError(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.RealtimeServerEventError? value)
+        {
+            value = Error;
+            return IsError;
+        }
 
         /// <summary>
         /// Returned when the input audio buffer is cleared by the client with a <br/>
@@ -208,6 +330,19 @@ namespace G
         public bool IsInputAudioBufferCleared => InputAudioBufferCleared != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickInputAudioBufferCleared(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.RealtimeServerEventInputAudioBufferCleared? value)
+        {
+            value = InputAudioBufferCleared;
+            return IsInputAudioBufferCleared;
+        }
+
+        /// <summary>
         /// Returned when an input audio buffer is committed, either by the client or <br/>
         /// automatically in server VAD mode. The `item_id` property is the ID of the user<br/>
         /// message item that will be created, thus a `conversation.item.created` event <br/>
@@ -226,6 +361,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputAudioBufferCommitted))]
 #endif
         public bool IsInputAudioBufferCommitted => InputAudioBufferCommitted != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickInputAudioBufferCommitted(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.RealtimeServerEventInputAudioBufferCommitted? value)
+        {
+            value = InputAudioBufferCommitted;
+            return IsInputAudioBufferCommitted;
+        }
 
         /// <summary>
         /// Sent by the server when in `server_vad` mode to indicate that speech has been <br/>
@@ -253,6 +401,19 @@ namespace G
         public bool IsInputAudioBufferSpeechStarted => InputAudioBufferSpeechStarted != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickInputAudioBufferSpeechStarted(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.RealtimeServerEventInputAudioBufferSpeechStarted? value)
+        {
+            value = InputAudioBufferSpeechStarted;
+            return IsInputAudioBufferSpeechStarted;
+        }
+
+        /// <summary>
         /// Returned in `server_vad` mode when the server detects the end of speech in <br/>
         /// the audio buffer. The server will also send an `conversation.item.created` <br/>
         /// event with the user message item that is created from the audio buffer.
@@ -270,6 +431,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputAudioBufferSpeechStopped))]
 #endif
         public bool IsInputAudioBufferSpeechStopped => InputAudioBufferSpeechStopped != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickInputAudioBufferSpeechStopped(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.RealtimeServerEventInputAudioBufferSpeechStopped? value)
+        {
+            value = InputAudioBufferSpeechStopped;
+            return IsInputAudioBufferSpeechStopped;
+        }
 
         /// <summary>
         /// Emitted at the beginning of a Response to indicate the updated rate limits. <br/>
@@ -292,6 +466,19 @@ namespace G
         public bool IsRateLimitsUpdated => RateLimitsUpdated != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickRateLimitsUpdated(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.RealtimeServerEventRateLimitsUpdated? value)
+        {
+            value = RateLimitsUpdated;
+            return IsRateLimitsUpdated;
+        }
+
+        /// <summary>
         /// Returned when the model-generated audio is updated.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -307,6 +494,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseAudioDelta))]
 #endif
         public bool IsResponseAudioDelta => ResponseAudioDelta != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResponseAudioDelta(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.RealtimeServerEventResponseAudioDelta? value)
+        {
+            value = ResponseAudioDelta;
+            return IsResponseAudioDelta;
+        }
 
         /// <summary>
         /// Returned when the model-generated audio is done. Also emitted when a Response<br/>
@@ -327,6 +527,19 @@ namespace G
         public bool IsResponseAudioDone => ResponseAudioDone != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResponseAudioDone(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.RealtimeServerEventResponseAudioDone? value)
+        {
+            value = ResponseAudioDone;
+            return IsResponseAudioDone;
+        }
+
+        /// <summary>
         /// Returned when the model-generated transcription of audio output is updated.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -342,6 +555,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseAudioTranscriptDelta))]
 #endif
         public bool IsResponseAudioTranscriptDelta => ResponseAudioTranscriptDelta != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResponseAudioTranscriptDelta(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.RealtimeServerEventResponseAudioTranscriptDelta? value)
+        {
+            value = ResponseAudioTranscriptDelta;
+            return IsResponseAudioTranscriptDelta;
+        }
 
         /// <summary>
         /// Returned when the model-generated transcription of audio output is done<br/>
@@ -363,6 +589,19 @@ namespace G
         public bool IsResponseAudioTranscriptDone => ResponseAudioTranscriptDone != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResponseAudioTranscriptDone(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.RealtimeServerEventResponseAudioTranscriptDone? value)
+        {
+            value = ResponseAudioTranscriptDone;
+            return IsResponseAudioTranscriptDone;
+        }
+
+        /// <summary>
         /// Returned when a new content part is added to an assistant message item during<br/>
         /// response generation.
         /// </summary>
@@ -379,6 +618,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseContentPartAdded))]
 #endif
         public bool IsResponseContentPartAdded => ResponseContentPartAdded != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResponseContentPartAdded(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.RealtimeServerEventResponseContentPartAdded? value)
+        {
+            value = ResponseContentPartAdded;
+            return IsResponseContentPartAdded;
+        }
 
         /// <summary>
         /// Returned when a content part is done streaming in an assistant message item.<br/>
@@ -399,6 +651,19 @@ namespace G
         public bool IsResponseContentPartDone => ResponseContentPartDone != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResponseContentPartDone(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.RealtimeServerEventResponseContentPartDone? value)
+        {
+            value = ResponseContentPartDone;
+            return IsResponseContentPartDone;
+        }
+
+        /// <summary>
         /// Returned when a new Response is created. The first event of response creation,<br/>
         /// where the response is in an initial state of `in_progress`.
         /// </summary>
@@ -415,6 +680,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseCreated))]
 #endif
         public bool IsResponseCreated => ResponseCreated != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResponseCreated(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.RealtimeServerEventResponseCreated? value)
+        {
+            value = ResponseCreated;
+            return IsResponseCreated;
+        }
 
         /// <summary>
         /// Returned when a Response is done streaming. Always emitted, no matter the <br/>
@@ -436,6 +714,19 @@ namespace G
         public bool IsResponseDone => ResponseDone != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResponseDone(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.RealtimeServerEventResponseDone? value)
+        {
+            value = ResponseDone;
+            return IsResponseDone;
+        }
+
+        /// <summary>
         /// Returned when the model-generated function call arguments are updated.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -451,6 +742,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseFunctionCallArgumentsDelta))]
 #endif
         public bool IsResponseFunctionCallArgumentsDelta => ResponseFunctionCallArgumentsDelta != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResponseFunctionCallArgumentsDelta(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.RealtimeServerEventResponseFunctionCallArgumentsDelta? value)
+        {
+            value = ResponseFunctionCallArgumentsDelta;
+            return IsResponseFunctionCallArgumentsDelta;
+        }
 
         /// <summary>
         /// Returned when the model-generated function call arguments are done streaming.<br/>
@@ -471,6 +775,19 @@ namespace G
         public bool IsResponseFunctionCallArgumentsDone => ResponseFunctionCallArgumentsDone != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResponseFunctionCallArgumentsDone(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.RealtimeServerEventResponseFunctionCallArgumentsDone? value)
+        {
+            value = ResponseFunctionCallArgumentsDone;
+            return IsResponseFunctionCallArgumentsDone;
+        }
+
+        /// <summary>
         /// Returned when a new Item is created during Response generation.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -486,6 +803,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseOutputItemAdded))]
 #endif
         public bool IsResponseOutputItemAdded => ResponseOutputItemAdded != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResponseOutputItemAdded(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.RealtimeServerEventResponseOutputItemAdded? value)
+        {
+            value = ResponseOutputItemAdded;
+            return IsResponseOutputItemAdded;
+        }
 
         /// <summary>
         /// Returned when an Item is done streaming. Also emitted when a Response is <br/>
@@ -506,6 +836,19 @@ namespace G
         public bool IsResponseOutputItemDone => ResponseOutputItemDone != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResponseOutputItemDone(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.RealtimeServerEventResponseOutputItemDone? value)
+        {
+            value = ResponseOutputItemDone;
+            return IsResponseOutputItemDone;
+        }
+
+        /// <summary>
         /// Returned when the text value of a "text" content part is updated.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -521,6 +864,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseTextDelta))]
 #endif
         public bool IsResponseTextDelta => ResponseTextDelta != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResponseTextDelta(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.RealtimeServerEventResponseTextDelta? value)
+        {
+            value = ResponseTextDelta;
+            return IsResponseTextDelta;
+        }
 
         /// <summary>
         /// Returned when the text value of a "text" content part is done streaming. Also<br/>
@@ -539,6 +895,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseTextDone))]
 #endif
         public bool IsResponseTextDone => ResponseTextDone != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResponseTextDone(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.RealtimeServerEventResponseTextDone? value)
+        {
+            value = ResponseTextDone;
+            return IsResponseTextDone;
+        }
 
         /// <summary>
         /// Returned when a Session is created. Emitted automatically when a new <br/>
@@ -560,6 +929,19 @@ namespace G
         public bool IsSessionCreated => SessionCreated != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSessionCreated(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.RealtimeServerEventSessionCreated? value)
+        {
+            value = SessionCreated;
+            return IsSessionCreated;
+        }
+
+        /// <summary>
         /// Returned when a session is updated with a `session.update` event, unless <br/>
         /// there is an error.
         /// </summary>
@@ -578,6 +960,19 @@ namespace G
         public bool IsSessionUpdated => SessionUpdated != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSessionUpdated(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.RealtimeServerEventSessionUpdated? value)
+        {
+            value = SessionUpdated;
+            return IsSessionUpdated;
+        }
+
+        /// <summary>
         /// Returned when a transcription session is updated with a `transcription_session.update` event, unless <br/>
         /// there is an error.
         /// </summary>
@@ -594,6 +989,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TranscriptionSessionUpdated))]
 #endif
         public bool IsTranscriptionSessionUpdated => TranscriptionSessionUpdated != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickTranscriptionSessionUpdated(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.RealtimeServerEventTranscriptionSessionUpdated? value)
+        {
+            value = TranscriptionSessionUpdated;
+            return IsTranscriptionSessionUpdated;
+        }
 
         /// <summary>
         /// **WebRTC Only:** Emitted when the server begins streaming audio to the client. This event is<br/>
@@ -616,6 +1024,19 @@ namespace G
         public bool IsOutputAudioBufferStarted => OutputAudioBufferStarted != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickOutputAudioBufferStarted(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.RealtimeServerEventOutputAudioBufferStarted? value)
+        {
+            value = OutputAudioBufferStarted;
+            return IsOutputAudioBufferStarted;
+        }
+
+        /// <summary>
         /// **WebRTC Only:** Emitted when the output audio buffer has been completely drained on the server,<br/>
         /// and no more audio is forthcoming. This event is emitted after the full response<br/>
         /// data has been sent to the client (`response.done`).<br/>
@@ -634,6 +1055,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OutputAudioBufferStopped))]
 #endif
         public bool IsOutputAudioBufferStopped => OutputAudioBufferStopped != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickOutputAudioBufferStopped(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.RealtimeServerEventOutputAudioBufferStopped? value)
+        {
+            value = OutputAudioBufferStopped;
+            return IsOutputAudioBufferStopped;
+        }
 
         /// <summary>
         /// **WebRTC Only:** Emitted when the output audio buffer is cleared. This happens either in VAD<br/>
@@ -655,6 +1089,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OutputAudioBufferCleared))]
 #endif
         public bool IsOutputAudioBufferCleared => OutputAudioBufferCleared != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickOutputAudioBufferCleared(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.RealtimeServerEventOutputAudioBufferCleared? value)
+        {
+            value = OutputAudioBufferCleared;
+            return IsOutputAudioBufferCleared;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -1271,6 +1718,7 @@ namespace G
         /// 
         /// </summary>
         public RealtimeServerEvent(
+            string? type,
             global::G.RealtimeServerEventConversationCreated? conversationCreated,
             global::G.RealtimeServerEventConversationItemCreated? conversationItemCreated,
             global::G.RealtimeServerEventConversationItemDeleted? conversationItemDeleted,
@@ -1307,6 +1755,8 @@ namespace G
             global::G.RealtimeServerEventOutputAudioBufferCleared? outputAudioBufferCleared
             )
         {
+            Type = type;
+
             ConversationCreated = conversationCreated;
             ConversationItemCreated = conversationItemCreated;
             ConversationItemDeleted = conversationItemDeleted;
@@ -1435,40 +1885,40 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.RealtimeServerEventConversationCreated?, TResult>? conversationCreated = null,
-            global::System.Func<global::G.RealtimeServerEventConversationItemCreated?, TResult>? conversationItemCreated = null,
-            global::System.Func<global::G.RealtimeServerEventConversationItemDeleted?, TResult>? conversationItemDeleted = null,
-            global::System.Func<global::G.RealtimeServerEventConversationItemInputAudioTranscriptionCompleted?, TResult>? conversationItemInputAudioTranscriptionCompleted = null,
-            global::System.Func<global::G.RealtimeServerEventConversationItemInputAudioTranscriptionDelta?, TResult>? conversationItemInputAudioTranscriptionDelta = null,
-            global::System.Func<global::G.RealtimeServerEventConversationItemInputAudioTranscriptionFailed?, TResult>? conversationItemInputAudioTranscriptionFailed = null,
-            global::System.Func<global::G.RealtimeServerEventConversationItemRetrieved?, TResult>? conversationItemRetrieved = null,
-            global::System.Func<global::G.RealtimeServerEventConversationItemTruncated?, TResult>? conversationItemTruncated = null,
-            global::System.Func<global::G.RealtimeServerEventError?, TResult>? error = null,
-            global::System.Func<global::G.RealtimeServerEventInputAudioBufferCleared?, TResult>? inputAudioBufferCleared = null,
-            global::System.Func<global::G.RealtimeServerEventInputAudioBufferCommitted?, TResult>? inputAudioBufferCommitted = null,
-            global::System.Func<global::G.RealtimeServerEventInputAudioBufferSpeechStarted?, TResult>? inputAudioBufferSpeechStarted = null,
-            global::System.Func<global::G.RealtimeServerEventInputAudioBufferSpeechStopped?, TResult>? inputAudioBufferSpeechStopped = null,
-            global::System.Func<global::G.RealtimeServerEventRateLimitsUpdated?, TResult>? rateLimitsUpdated = null,
-            global::System.Func<global::G.RealtimeServerEventResponseAudioDelta?, TResult>? responseAudioDelta = null,
-            global::System.Func<global::G.RealtimeServerEventResponseAudioDone?, TResult>? responseAudioDone = null,
-            global::System.Func<global::G.RealtimeServerEventResponseAudioTranscriptDelta?, TResult>? responseAudioTranscriptDelta = null,
-            global::System.Func<global::G.RealtimeServerEventResponseAudioTranscriptDone?, TResult>? responseAudioTranscriptDone = null,
-            global::System.Func<global::G.RealtimeServerEventResponseContentPartAdded?, TResult>? responseContentPartAdded = null,
-            global::System.Func<global::G.RealtimeServerEventResponseContentPartDone?, TResult>? responseContentPartDone = null,
-            global::System.Func<global::G.RealtimeServerEventResponseCreated?, TResult>? responseCreated = null,
-            global::System.Func<global::G.RealtimeServerEventResponseDone?, TResult>? responseDone = null,
-            global::System.Func<global::G.RealtimeServerEventResponseFunctionCallArgumentsDelta?, TResult>? responseFunctionCallArgumentsDelta = null,
-            global::System.Func<global::G.RealtimeServerEventResponseFunctionCallArgumentsDone?, TResult>? responseFunctionCallArgumentsDone = null,
-            global::System.Func<global::G.RealtimeServerEventResponseOutputItemAdded?, TResult>? responseOutputItemAdded = null,
-            global::System.Func<global::G.RealtimeServerEventResponseOutputItemDone?, TResult>? responseOutputItemDone = null,
-            global::System.Func<global::G.RealtimeServerEventResponseTextDelta?, TResult>? responseTextDelta = null,
-            global::System.Func<global::G.RealtimeServerEventResponseTextDone?, TResult>? responseTextDone = null,
-            global::System.Func<global::G.RealtimeServerEventSessionCreated?, TResult>? sessionCreated = null,
-            global::System.Func<global::G.RealtimeServerEventSessionUpdated?, TResult>? sessionUpdated = null,
-            global::System.Func<global::G.RealtimeServerEventTranscriptionSessionUpdated?, TResult>? transcriptionSessionUpdated = null,
-            global::System.Func<global::G.RealtimeServerEventOutputAudioBufferStarted?, TResult>? outputAudioBufferStarted = null,
-            global::System.Func<global::G.RealtimeServerEventOutputAudioBufferStopped?, TResult>? outputAudioBufferStopped = null,
-            global::System.Func<global::G.RealtimeServerEventOutputAudioBufferCleared?, TResult>? outputAudioBufferCleared = null,
+            global::System.Func<global::G.RealtimeServerEventConversationCreated, TResult>? conversationCreated = null,
+            global::System.Func<global::G.RealtimeServerEventConversationItemCreated, TResult>? conversationItemCreated = null,
+            global::System.Func<global::G.RealtimeServerEventConversationItemDeleted, TResult>? conversationItemDeleted = null,
+            global::System.Func<global::G.RealtimeServerEventConversationItemInputAudioTranscriptionCompleted, TResult>? conversationItemInputAudioTranscriptionCompleted = null,
+            global::System.Func<global::G.RealtimeServerEventConversationItemInputAudioTranscriptionDelta, TResult>? conversationItemInputAudioTranscriptionDelta = null,
+            global::System.Func<global::G.RealtimeServerEventConversationItemInputAudioTranscriptionFailed, TResult>? conversationItemInputAudioTranscriptionFailed = null,
+            global::System.Func<global::G.RealtimeServerEventConversationItemRetrieved, TResult>? conversationItemRetrieved = null,
+            global::System.Func<global::G.RealtimeServerEventConversationItemTruncated, TResult>? conversationItemTruncated = null,
+            global::System.Func<global::G.RealtimeServerEventError, TResult>? error = null,
+            global::System.Func<global::G.RealtimeServerEventInputAudioBufferCleared, TResult>? inputAudioBufferCleared = null,
+            global::System.Func<global::G.RealtimeServerEventInputAudioBufferCommitted, TResult>? inputAudioBufferCommitted = null,
+            global::System.Func<global::G.RealtimeServerEventInputAudioBufferSpeechStarted, TResult>? inputAudioBufferSpeechStarted = null,
+            global::System.Func<global::G.RealtimeServerEventInputAudioBufferSpeechStopped, TResult>? inputAudioBufferSpeechStopped = null,
+            global::System.Func<global::G.RealtimeServerEventRateLimitsUpdated, TResult>? rateLimitsUpdated = null,
+            global::System.Func<global::G.RealtimeServerEventResponseAudioDelta, TResult>? responseAudioDelta = null,
+            global::System.Func<global::G.RealtimeServerEventResponseAudioDone, TResult>? responseAudioDone = null,
+            global::System.Func<global::G.RealtimeServerEventResponseAudioTranscriptDelta, TResult>? responseAudioTranscriptDelta = null,
+            global::System.Func<global::G.RealtimeServerEventResponseAudioTranscriptDone, TResult>? responseAudioTranscriptDone = null,
+            global::System.Func<global::G.RealtimeServerEventResponseContentPartAdded, TResult>? responseContentPartAdded = null,
+            global::System.Func<global::G.RealtimeServerEventResponseContentPartDone, TResult>? responseContentPartDone = null,
+            global::System.Func<global::G.RealtimeServerEventResponseCreated, TResult>? responseCreated = null,
+            global::System.Func<global::G.RealtimeServerEventResponseDone, TResult>? responseDone = null,
+            global::System.Func<global::G.RealtimeServerEventResponseFunctionCallArgumentsDelta, TResult>? responseFunctionCallArgumentsDelta = null,
+            global::System.Func<global::G.RealtimeServerEventResponseFunctionCallArgumentsDone, TResult>? responseFunctionCallArgumentsDone = null,
+            global::System.Func<global::G.RealtimeServerEventResponseOutputItemAdded, TResult>? responseOutputItemAdded = null,
+            global::System.Func<global::G.RealtimeServerEventResponseOutputItemDone, TResult>? responseOutputItemDone = null,
+            global::System.Func<global::G.RealtimeServerEventResponseTextDelta, TResult>? responseTextDelta = null,
+            global::System.Func<global::G.RealtimeServerEventResponseTextDone, TResult>? responseTextDone = null,
+            global::System.Func<global::G.RealtimeServerEventSessionCreated, TResult>? sessionCreated = null,
+            global::System.Func<global::G.RealtimeServerEventSessionUpdated, TResult>? sessionUpdated = null,
+            global::System.Func<global::G.RealtimeServerEventTranscriptionSessionUpdated, TResult>? transcriptionSessionUpdated = null,
+            global::System.Func<global::G.RealtimeServerEventOutputAudioBufferStarted, TResult>? outputAudioBufferStarted = null,
+            global::System.Func<global::G.RealtimeServerEventOutputAudioBufferStopped, TResult>? outputAudioBufferStopped = null,
+            global::System.Func<global::G.RealtimeServerEventOutputAudioBufferCleared, TResult>? outputAudioBufferCleared = null,
             bool validate = true)
         {
             if (validate)
@@ -1620,40 +2070,256 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.RealtimeServerEventConversationCreated?>? conversationCreated = null,
-            global::System.Action<global::G.RealtimeServerEventConversationItemCreated?>? conversationItemCreated = null,
-            global::System.Action<global::G.RealtimeServerEventConversationItemDeleted?>? conversationItemDeleted = null,
-            global::System.Action<global::G.RealtimeServerEventConversationItemInputAudioTranscriptionCompleted?>? conversationItemInputAudioTranscriptionCompleted = null,
-            global::System.Action<global::G.RealtimeServerEventConversationItemInputAudioTranscriptionDelta?>? conversationItemInputAudioTranscriptionDelta = null,
-            global::System.Action<global::G.RealtimeServerEventConversationItemInputAudioTranscriptionFailed?>? conversationItemInputAudioTranscriptionFailed = null,
-            global::System.Action<global::G.RealtimeServerEventConversationItemRetrieved?>? conversationItemRetrieved = null,
-            global::System.Action<global::G.RealtimeServerEventConversationItemTruncated?>? conversationItemTruncated = null,
-            global::System.Action<global::G.RealtimeServerEventError?>? error = null,
-            global::System.Action<global::G.RealtimeServerEventInputAudioBufferCleared?>? inputAudioBufferCleared = null,
-            global::System.Action<global::G.RealtimeServerEventInputAudioBufferCommitted?>? inputAudioBufferCommitted = null,
-            global::System.Action<global::G.RealtimeServerEventInputAudioBufferSpeechStarted?>? inputAudioBufferSpeechStarted = null,
-            global::System.Action<global::G.RealtimeServerEventInputAudioBufferSpeechStopped?>? inputAudioBufferSpeechStopped = null,
-            global::System.Action<global::G.RealtimeServerEventRateLimitsUpdated?>? rateLimitsUpdated = null,
-            global::System.Action<global::G.RealtimeServerEventResponseAudioDelta?>? responseAudioDelta = null,
-            global::System.Action<global::G.RealtimeServerEventResponseAudioDone?>? responseAudioDone = null,
-            global::System.Action<global::G.RealtimeServerEventResponseAudioTranscriptDelta?>? responseAudioTranscriptDelta = null,
-            global::System.Action<global::G.RealtimeServerEventResponseAudioTranscriptDone?>? responseAudioTranscriptDone = null,
-            global::System.Action<global::G.RealtimeServerEventResponseContentPartAdded?>? responseContentPartAdded = null,
-            global::System.Action<global::G.RealtimeServerEventResponseContentPartDone?>? responseContentPartDone = null,
-            global::System.Action<global::G.RealtimeServerEventResponseCreated?>? responseCreated = null,
-            global::System.Action<global::G.RealtimeServerEventResponseDone?>? responseDone = null,
-            global::System.Action<global::G.RealtimeServerEventResponseFunctionCallArgumentsDelta?>? responseFunctionCallArgumentsDelta = null,
-            global::System.Action<global::G.RealtimeServerEventResponseFunctionCallArgumentsDone?>? responseFunctionCallArgumentsDone = null,
-            global::System.Action<global::G.RealtimeServerEventResponseOutputItemAdded?>? responseOutputItemAdded = null,
-            global::System.Action<global::G.RealtimeServerEventResponseOutputItemDone?>? responseOutputItemDone = null,
-            global::System.Action<global::G.RealtimeServerEventResponseTextDelta?>? responseTextDelta = null,
-            global::System.Action<global::G.RealtimeServerEventResponseTextDone?>? responseTextDone = null,
-            global::System.Action<global::G.RealtimeServerEventSessionCreated?>? sessionCreated = null,
-            global::System.Action<global::G.RealtimeServerEventSessionUpdated?>? sessionUpdated = null,
-            global::System.Action<global::G.RealtimeServerEventTranscriptionSessionUpdated?>? transcriptionSessionUpdated = null,
-            global::System.Action<global::G.RealtimeServerEventOutputAudioBufferStarted?>? outputAudioBufferStarted = null,
-            global::System.Action<global::G.RealtimeServerEventOutputAudioBufferStopped?>? outputAudioBufferStopped = null,
-            global::System.Action<global::G.RealtimeServerEventOutputAudioBufferCleared?>? outputAudioBufferCleared = null,
+            global::System.Action<global::G.RealtimeServerEventConversationCreated>? conversationCreated = null,
+
+            global::System.Action<global::G.RealtimeServerEventConversationItemCreated>? conversationItemCreated = null,
+
+            global::System.Action<global::G.RealtimeServerEventConversationItemDeleted>? conversationItemDeleted = null,
+
+            global::System.Action<global::G.RealtimeServerEventConversationItemInputAudioTranscriptionCompleted>? conversationItemInputAudioTranscriptionCompleted = null,
+
+            global::System.Action<global::G.RealtimeServerEventConversationItemInputAudioTranscriptionDelta>? conversationItemInputAudioTranscriptionDelta = null,
+
+            global::System.Action<global::G.RealtimeServerEventConversationItemInputAudioTranscriptionFailed>? conversationItemInputAudioTranscriptionFailed = null,
+
+            global::System.Action<global::G.RealtimeServerEventConversationItemRetrieved>? conversationItemRetrieved = null,
+
+            global::System.Action<global::G.RealtimeServerEventConversationItemTruncated>? conversationItemTruncated = null,
+
+            global::System.Action<global::G.RealtimeServerEventError>? error = null,
+
+            global::System.Action<global::G.RealtimeServerEventInputAudioBufferCleared>? inputAudioBufferCleared = null,
+
+            global::System.Action<global::G.RealtimeServerEventInputAudioBufferCommitted>? inputAudioBufferCommitted = null,
+
+            global::System.Action<global::G.RealtimeServerEventInputAudioBufferSpeechStarted>? inputAudioBufferSpeechStarted = null,
+
+            global::System.Action<global::G.RealtimeServerEventInputAudioBufferSpeechStopped>? inputAudioBufferSpeechStopped = null,
+
+            global::System.Action<global::G.RealtimeServerEventRateLimitsUpdated>? rateLimitsUpdated = null,
+
+            global::System.Action<global::G.RealtimeServerEventResponseAudioDelta>? responseAudioDelta = null,
+
+            global::System.Action<global::G.RealtimeServerEventResponseAudioDone>? responseAudioDone = null,
+
+            global::System.Action<global::G.RealtimeServerEventResponseAudioTranscriptDelta>? responseAudioTranscriptDelta = null,
+
+            global::System.Action<global::G.RealtimeServerEventResponseAudioTranscriptDone>? responseAudioTranscriptDone = null,
+
+            global::System.Action<global::G.RealtimeServerEventResponseContentPartAdded>? responseContentPartAdded = null,
+
+            global::System.Action<global::G.RealtimeServerEventResponseContentPartDone>? responseContentPartDone = null,
+
+            global::System.Action<global::G.RealtimeServerEventResponseCreated>? responseCreated = null,
+
+            global::System.Action<global::G.RealtimeServerEventResponseDone>? responseDone = null,
+
+            global::System.Action<global::G.RealtimeServerEventResponseFunctionCallArgumentsDelta>? responseFunctionCallArgumentsDelta = null,
+
+            global::System.Action<global::G.RealtimeServerEventResponseFunctionCallArgumentsDone>? responseFunctionCallArgumentsDone = null,
+
+            global::System.Action<global::G.RealtimeServerEventResponseOutputItemAdded>? responseOutputItemAdded = null,
+
+            global::System.Action<global::G.RealtimeServerEventResponseOutputItemDone>? responseOutputItemDone = null,
+
+            global::System.Action<global::G.RealtimeServerEventResponseTextDelta>? responseTextDelta = null,
+
+            global::System.Action<global::G.RealtimeServerEventResponseTextDone>? responseTextDone = null,
+
+            global::System.Action<global::G.RealtimeServerEventSessionCreated>? sessionCreated = null,
+
+            global::System.Action<global::G.RealtimeServerEventSessionUpdated>? sessionUpdated = null,
+
+            global::System.Action<global::G.RealtimeServerEventTranscriptionSessionUpdated>? transcriptionSessionUpdated = null,
+
+            global::System.Action<global::G.RealtimeServerEventOutputAudioBufferStarted>? outputAudioBufferStarted = null,
+
+            global::System.Action<global::G.RealtimeServerEventOutputAudioBufferStopped>? outputAudioBufferStopped = null,
+
+            global::System.Action<global::G.RealtimeServerEventOutputAudioBufferCleared>? outputAudioBufferCleared = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsConversationCreated)
+            {
+                conversationCreated?.Invoke(ConversationCreated!);
+            }
+            else if (IsConversationItemCreated)
+            {
+                conversationItemCreated?.Invoke(ConversationItemCreated!);
+            }
+            else if (IsConversationItemDeleted)
+            {
+                conversationItemDeleted?.Invoke(ConversationItemDeleted!);
+            }
+            else if (IsConversationItemInputAudioTranscriptionCompleted)
+            {
+                conversationItemInputAudioTranscriptionCompleted?.Invoke(ConversationItemInputAudioTranscriptionCompleted!);
+            }
+            else if (IsConversationItemInputAudioTranscriptionDelta)
+            {
+                conversationItemInputAudioTranscriptionDelta?.Invoke(ConversationItemInputAudioTranscriptionDelta!);
+            }
+            else if (IsConversationItemInputAudioTranscriptionFailed)
+            {
+                conversationItemInputAudioTranscriptionFailed?.Invoke(ConversationItemInputAudioTranscriptionFailed!);
+            }
+            else if (IsConversationItemRetrieved)
+            {
+                conversationItemRetrieved?.Invoke(ConversationItemRetrieved!);
+            }
+            else if (IsConversationItemTruncated)
+            {
+                conversationItemTruncated?.Invoke(ConversationItemTruncated!);
+            }
+            else if (IsError)
+            {
+                error?.Invoke(Error!);
+            }
+            else if (IsInputAudioBufferCleared)
+            {
+                inputAudioBufferCleared?.Invoke(InputAudioBufferCleared!);
+            }
+            else if (IsInputAudioBufferCommitted)
+            {
+                inputAudioBufferCommitted?.Invoke(InputAudioBufferCommitted!);
+            }
+            else if (IsInputAudioBufferSpeechStarted)
+            {
+                inputAudioBufferSpeechStarted?.Invoke(InputAudioBufferSpeechStarted!);
+            }
+            else if (IsInputAudioBufferSpeechStopped)
+            {
+                inputAudioBufferSpeechStopped?.Invoke(InputAudioBufferSpeechStopped!);
+            }
+            else if (IsRateLimitsUpdated)
+            {
+                rateLimitsUpdated?.Invoke(RateLimitsUpdated!);
+            }
+            else if (IsResponseAudioDelta)
+            {
+                responseAudioDelta?.Invoke(ResponseAudioDelta!);
+            }
+            else if (IsResponseAudioDone)
+            {
+                responseAudioDone?.Invoke(ResponseAudioDone!);
+            }
+            else if (IsResponseAudioTranscriptDelta)
+            {
+                responseAudioTranscriptDelta?.Invoke(ResponseAudioTranscriptDelta!);
+            }
+            else if (IsResponseAudioTranscriptDone)
+            {
+                responseAudioTranscriptDone?.Invoke(ResponseAudioTranscriptDone!);
+            }
+            else if (IsResponseContentPartAdded)
+            {
+                responseContentPartAdded?.Invoke(ResponseContentPartAdded!);
+            }
+            else if (IsResponseContentPartDone)
+            {
+                responseContentPartDone?.Invoke(ResponseContentPartDone!);
+            }
+            else if (IsResponseCreated)
+            {
+                responseCreated?.Invoke(ResponseCreated!);
+            }
+            else if (IsResponseDone)
+            {
+                responseDone?.Invoke(ResponseDone!);
+            }
+            else if (IsResponseFunctionCallArgumentsDelta)
+            {
+                responseFunctionCallArgumentsDelta?.Invoke(ResponseFunctionCallArgumentsDelta!);
+            }
+            else if (IsResponseFunctionCallArgumentsDone)
+            {
+                responseFunctionCallArgumentsDone?.Invoke(ResponseFunctionCallArgumentsDone!);
+            }
+            else if (IsResponseOutputItemAdded)
+            {
+                responseOutputItemAdded?.Invoke(ResponseOutputItemAdded!);
+            }
+            else if (IsResponseOutputItemDone)
+            {
+                responseOutputItemDone?.Invoke(ResponseOutputItemDone!);
+            }
+            else if (IsResponseTextDelta)
+            {
+                responseTextDelta?.Invoke(ResponseTextDelta!);
+            }
+            else if (IsResponseTextDone)
+            {
+                responseTextDone?.Invoke(ResponseTextDone!);
+            }
+            else if (IsSessionCreated)
+            {
+                sessionCreated?.Invoke(SessionCreated!);
+            }
+            else if (IsSessionUpdated)
+            {
+                sessionUpdated?.Invoke(SessionUpdated!);
+            }
+            else if (IsTranscriptionSessionUpdated)
+            {
+                transcriptionSessionUpdated?.Invoke(TranscriptionSessionUpdated!);
+            }
+            else if (IsOutputAudioBufferStarted)
+            {
+                outputAudioBufferStarted?.Invoke(OutputAudioBufferStarted!);
+            }
+            else if (IsOutputAudioBufferStopped)
+            {
+                outputAudioBufferStopped?.Invoke(OutputAudioBufferStopped!);
+            }
+            else if (IsOutputAudioBufferCleared)
+            {
+                outputAudioBufferCleared?.Invoke(OutputAudioBufferCleared!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.RealtimeServerEventConversationCreated>? conversationCreated = null,
+            global::System.Action<global::G.RealtimeServerEventConversationItemCreated>? conversationItemCreated = null,
+            global::System.Action<global::G.RealtimeServerEventConversationItemDeleted>? conversationItemDeleted = null,
+            global::System.Action<global::G.RealtimeServerEventConversationItemInputAudioTranscriptionCompleted>? conversationItemInputAudioTranscriptionCompleted = null,
+            global::System.Action<global::G.RealtimeServerEventConversationItemInputAudioTranscriptionDelta>? conversationItemInputAudioTranscriptionDelta = null,
+            global::System.Action<global::G.RealtimeServerEventConversationItemInputAudioTranscriptionFailed>? conversationItemInputAudioTranscriptionFailed = null,
+            global::System.Action<global::G.RealtimeServerEventConversationItemRetrieved>? conversationItemRetrieved = null,
+            global::System.Action<global::G.RealtimeServerEventConversationItemTruncated>? conversationItemTruncated = null,
+            global::System.Action<global::G.RealtimeServerEventError>? error = null,
+            global::System.Action<global::G.RealtimeServerEventInputAudioBufferCleared>? inputAudioBufferCleared = null,
+            global::System.Action<global::G.RealtimeServerEventInputAudioBufferCommitted>? inputAudioBufferCommitted = null,
+            global::System.Action<global::G.RealtimeServerEventInputAudioBufferSpeechStarted>? inputAudioBufferSpeechStarted = null,
+            global::System.Action<global::G.RealtimeServerEventInputAudioBufferSpeechStopped>? inputAudioBufferSpeechStopped = null,
+            global::System.Action<global::G.RealtimeServerEventRateLimitsUpdated>? rateLimitsUpdated = null,
+            global::System.Action<global::G.RealtimeServerEventResponseAudioDelta>? responseAudioDelta = null,
+            global::System.Action<global::G.RealtimeServerEventResponseAudioDone>? responseAudioDone = null,
+            global::System.Action<global::G.RealtimeServerEventResponseAudioTranscriptDelta>? responseAudioTranscriptDelta = null,
+            global::System.Action<global::G.RealtimeServerEventResponseAudioTranscriptDone>? responseAudioTranscriptDone = null,
+            global::System.Action<global::G.RealtimeServerEventResponseContentPartAdded>? responseContentPartAdded = null,
+            global::System.Action<global::G.RealtimeServerEventResponseContentPartDone>? responseContentPartDone = null,
+            global::System.Action<global::G.RealtimeServerEventResponseCreated>? responseCreated = null,
+            global::System.Action<global::G.RealtimeServerEventResponseDone>? responseDone = null,
+            global::System.Action<global::G.RealtimeServerEventResponseFunctionCallArgumentsDelta>? responseFunctionCallArgumentsDelta = null,
+            global::System.Action<global::G.RealtimeServerEventResponseFunctionCallArgumentsDone>? responseFunctionCallArgumentsDone = null,
+            global::System.Action<global::G.RealtimeServerEventResponseOutputItemAdded>? responseOutputItemAdded = null,
+            global::System.Action<global::G.RealtimeServerEventResponseOutputItemDone>? responseOutputItemDone = null,
+            global::System.Action<global::G.RealtimeServerEventResponseTextDelta>? responseTextDelta = null,
+            global::System.Action<global::G.RealtimeServerEventResponseTextDone>? responseTextDone = null,
+            global::System.Action<global::G.RealtimeServerEventSessionCreated>? sessionCreated = null,
+            global::System.Action<global::G.RealtimeServerEventSessionUpdated>? sessionUpdated = null,
+            global::System.Action<global::G.RealtimeServerEventTranscriptionSessionUpdated>? transcriptionSessionUpdated = null,
+            global::System.Action<global::G.RealtimeServerEventOutputAudioBufferStarted>? outputAudioBufferStarted = null,
+            global::System.Action<global::G.RealtimeServerEventOutputAudioBufferStopped>? outputAudioBufferStopped = null,
+            global::System.Action<global::G.RealtimeServerEventOutputAudioBufferCleared>? outputAudioBufferCleared = null,
             bool validate = true)
         {
             if (validate)

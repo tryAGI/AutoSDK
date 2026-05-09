@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickPointIdsList(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.PointIdsList? value)
+        {
+            value = PointIdsList;
+            return IsPointIdsList;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.FilterSelector? Filter { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Filter))]
 #endif
         public bool IsFilter => Filter != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFilter(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.FilterSelector? value)
+        {
+            value = Filter;
+            return IsFilter;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -119,8 +145,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.PointIdsList?, TResult>? pointIdsList = null,
-            global::System.Func<global::G.FilterSelector?, TResult>? filter = null,
+            global::System.Func<global::G.PointIdsList, TResult>? pointIdsList = null,
+            global::System.Func<global::G.FilterSelector, TResult>? filter = null,
             bool validate = true)
         {
             if (validate)
@@ -144,8 +170,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.PointIdsList?>? pointIdsList = null,
-            global::System.Action<global::G.FilterSelector?>? filter = null,
+            global::System.Action<global::G.PointIdsList>? pointIdsList = null,
+
+            global::System.Action<global::G.FilterSelector>? filter = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsPointIdsList)
+            {
+                pointIdsList?.Invoke(PointIdsList!);
+            }
+            else if (IsFilter)
+            {
+                filter?.Invoke(Filter!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.PointIdsList>? pointIdsList = null,
+            global::System.Action<global::G.FilterSelector>? filter = null,
             bool validate = true)
         {
             if (validate)

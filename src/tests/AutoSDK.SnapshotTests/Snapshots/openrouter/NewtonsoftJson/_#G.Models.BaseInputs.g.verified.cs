@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickBaseInputsVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = BaseInputsVariant1;
+            return IsBaseInputsVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<global::G.BaseInputsOneOf1Items>? BaseInputs1 { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BaseInputs1))]
 #endif
         public bool IsBaseInputs1 => BaseInputs1 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickBaseInputs1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::System.Collections.Generic.IList<global::G.BaseInputsOneOf1Items>? value)
+        {
+            value = BaseInputs1;
+            return IsBaseInputs1;
+        }
 
         /// <summary>
         /// Any type
@@ -60,6 +86,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BaseInputsVariant3))]
 #endif
         public bool IsBaseInputsVariant3 => BaseInputsVariant3 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickBaseInputsVariant3(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out object? value)
+        {
+            value = BaseInputsVariant3;
+            return IsBaseInputsVariant3;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -122,9 +161,9 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<string?, TResult>? baseInputsVariant1 = null,
-            global::System.Func<global::System.Collections.Generic.IList<global::G.BaseInputsOneOf1Items>?, TResult>? baseInputs1 = null,
-            global::System.Func<object?, TResult>? baseInputsVariant3 = null,
+            global::System.Func<string, TResult>? baseInputsVariant1 = null,
+            global::System.Func<global::System.Collections.Generic.IList<global::G.BaseInputsOneOf1Items>, TResult>? baseInputs1 = null,
+            global::System.Func<object, TResult>? baseInputsVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -152,9 +191,39 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<string?>? baseInputsVariant1 = null,
-            global::System.Action<global::System.Collections.Generic.IList<global::G.BaseInputsOneOf1Items>?>? baseInputs1 = null,
-            global::System.Action<object?>? baseInputsVariant3 = null,
+            global::System.Action<string>? baseInputsVariant1 = null,
+
+            global::System.Action<global::System.Collections.Generic.IList<global::G.BaseInputsOneOf1Items>>? baseInputs1 = null,
+
+            global::System.Action<object>? baseInputsVariant3 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsBaseInputsVariant1)
+            {
+                baseInputsVariant1?.Invoke(BaseInputsVariant1!);
+            }
+            else if (IsBaseInputs1)
+            {
+                baseInputs1?.Invoke(BaseInputs1!);
+            }
+            else if (IsBaseInputsVariant3)
+            {
+                baseInputsVariant3?.Invoke(BaseInputsVariant3!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<string>? baseInputsVariant1 = null,
+            global::System.Action<global::System.Collections.Generic.IList<global::G.BaseInputsOneOf1Items>>? baseInputs1 = null,
+            global::System.Action<object>? baseInputsVariant3 = null,
             bool validate = true)
         {
             if (validate)

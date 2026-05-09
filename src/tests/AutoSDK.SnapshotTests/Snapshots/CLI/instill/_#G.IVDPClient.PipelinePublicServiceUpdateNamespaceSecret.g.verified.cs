@@ -32,6 +32,25 @@ namespace G
         /// </summary>
         /// <param name="namespaceId"></param>
         /// <param name="secretId"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.UpdateNamespaceSecretResponse>> PipelinePublicServiceUpdateNamespaceSecretAsResponseAsync(
+            string namespaceId,
+            string secretId,
+
+            global::G.Secret request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Update a secret<br/>
+        /// Udpates a secret, accessing it by its resource name, which is defined by<br/>
+        /// In REST requests, only the supplied secret fields will be taken into<br/>
+        /// account when updating the resource.
+        /// </summary>
+        /// <param name="namespaceId"></param>
+        /// <param name="secretId"></param>
         /// <param name="id">
         /// Secret resource ID (used in `name` as the last segment). This conforms<br/>
         /// to RFC-1034, which restricts to letters, numbers, and hyphen, with the<br/>

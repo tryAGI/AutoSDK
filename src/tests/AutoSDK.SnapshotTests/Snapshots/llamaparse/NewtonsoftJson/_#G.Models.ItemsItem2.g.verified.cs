@@ -35,6 +35,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickText(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.TextItem? value)
+        {
+            value = Text;
+            return IsText;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.HeadingItem? Heading { get; init; }
 #else
@@ -48,6 +61,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Heading))]
 #endif
         public bool IsHeading => Heading != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickHeading(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.HeadingItem? value)
+        {
+            value = Heading;
+            return IsHeading;
+        }
 
         /// <summary>
         /// 
@@ -69,6 +95,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickList(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ListItem? value)
+        {
+            value = List;
+            return IsList;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CodeItem? Code { get; init; }
 #else
@@ -82,6 +121,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Code))]
 #endif
         public bool IsCode => Code != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickCode(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CodeItem? value)
+        {
+            value = Code;
+            return IsCode;
+        }
 
         /// <summary>
         /// 
@@ -103,6 +155,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickTable(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.TableItem? value)
+        {
+            value = Table;
+            return IsTable;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ImageItem? Image { get; init; }
 #else
@@ -120,6 +185,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickImage(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ImageItem? value)
+        {
+            value = Image;
+            return IsImage;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.LinkItem? Link { get; init; }
 #else
@@ -133,6 +211,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Link))]
 #endif
         public bool IsLink => Link != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickLink(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.LinkItem? value)
+        {
+            value = Link;
+            return IsLink;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -322,13 +413,13 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.TextItem?, TResult>? text = null,
-            global::System.Func<global::G.HeadingItem?, TResult>? heading = null,
-            global::System.Func<global::G.ListItem?, TResult>? list = null,
-            global::System.Func<global::G.CodeItem?, TResult>? code = null,
-            global::System.Func<global::G.TableItem?, TResult>? table = null,
-            global::System.Func<global::G.ImageItem?, TResult>? image = null,
-            global::System.Func<global::G.LinkItem?, TResult>? link = null,
+            global::System.Func<global::G.TextItem, TResult>? text = null,
+            global::System.Func<global::G.HeadingItem, TResult>? heading = null,
+            global::System.Func<global::G.ListItem, TResult>? list = null,
+            global::System.Func<global::G.CodeItem, TResult>? code = null,
+            global::System.Func<global::G.TableItem, TResult>? table = null,
+            global::System.Func<global::G.ImageItem, TResult>? image = null,
+            global::System.Func<global::G.LinkItem, TResult>? link = null,
             bool validate = true)
         {
             if (validate)
@@ -372,13 +463,67 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.TextItem?>? text = null,
-            global::System.Action<global::G.HeadingItem?>? heading = null,
-            global::System.Action<global::G.ListItem?>? list = null,
-            global::System.Action<global::G.CodeItem?>? code = null,
-            global::System.Action<global::G.TableItem?>? table = null,
-            global::System.Action<global::G.ImageItem?>? image = null,
-            global::System.Action<global::G.LinkItem?>? link = null,
+            global::System.Action<global::G.TextItem>? text = null,
+
+            global::System.Action<global::G.HeadingItem>? heading = null,
+
+            global::System.Action<global::G.ListItem>? list = null,
+
+            global::System.Action<global::G.CodeItem>? code = null,
+
+            global::System.Action<global::G.TableItem>? table = null,
+
+            global::System.Action<global::G.ImageItem>? image = null,
+
+            global::System.Action<global::G.LinkItem>? link = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsText)
+            {
+                text?.Invoke(Text!);
+            }
+            else if (IsHeading)
+            {
+                heading?.Invoke(Heading!);
+            }
+            else if (IsList)
+            {
+                list?.Invoke(List!);
+            }
+            else if (IsCode)
+            {
+                code?.Invoke(Code!);
+            }
+            else if (IsTable)
+            {
+                table?.Invoke(Table!);
+            }
+            else if (IsImage)
+            {
+                image?.Invoke(Image!);
+            }
+            else if (IsLink)
+            {
+                link?.Invoke(Link!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.TextItem>? text = null,
+            global::System.Action<global::G.HeadingItem>? heading = null,
+            global::System.Action<global::G.ListItem>? list = null,
+            global::System.Action<global::G.CodeItem>? code = null,
+            global::System.Action<global::G.TableItem>? table = null,
+            global::System.Action<global::G.ImageItem>? image = null,
+            global::System.Action<global::G.LinkItem>? link = null,
             bool validate = true)
         {
             if (validate)

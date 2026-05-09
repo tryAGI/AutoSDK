@@ -28,6 +28,23 @@ namespace G
         /// </summary>
         /// <param name="backend"></param>
         /// <param name="id"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.BackupRestoreResponse>> BackupsRestoreAsResponseAsync(
+            string backend,
+            string id,
+
+            global::G.BackupRestoreRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Start a restoration process<br/>
+        /// Starts a process of restoring a backup for a set of collections. &lt;br/&gt;&lt;br/&gt;Any backup can be restored to any machine, as long as the number of nodes between source and target are identical.&lt;br/&gt;&lt;br/&gt;Requrements:&lt;br/&gt;&lt;br/&gt;- None of the collections to be restored already exist on the target restoration node(s).&lt;br/&gt;- The node names of the backed-up collections' must match those of the target restoration node(s).
+        /// </summary>
+        /// <param name="backend"></param>
+        /// <param name="id"></param>
         /// <param name="config">
         /// Backup custom configuration
         /// </param>

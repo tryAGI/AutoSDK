@@ -22,6 +22,19 @@ namespace G
         /// Create chat completion<br/>
         /// Query a chat model.
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.ChatCompletionResponse>> ChatCompletionsAsResponseAsync(
+
+            global::G.ChatCompletionRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create chat completion<br/>
+        /// Query a chat model.
+        /// </summary>
         /// <param name="messages">
         /// A list of messages comprising the conversation so far.<br/>
         /// Default Value: [{"role":"system","content":"You are a helpful assistant"}, {"role":"user","content":"What is 1 \u002B 1?"}]

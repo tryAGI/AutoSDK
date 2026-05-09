@@ -28,6 +28,25 @@ namespace G
         /// Initiate a web mapping from a base URL<br/>
         /// Tavily Map traverses websites like a graph and can explore hundreds of paths in parallel with intelligent discovery to generate comprehensive site maps.
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        /// <remarks>
+        /// from tavily import TavilyClient<br/>
+        /// tavily_client = TavilyClient(api_key="tvly-YOUR_API_KEY")<br/>
+        /// response = tavily_client.map("https://docs.tavily.com")<br/>
+        /// print(response)
+        /// </remarks>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.CreateMapResponse>> CreateMapAsResponseAsync(
+
+            global::G.CreateMapRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Initiate a web mapping from a base URL<br/>
+        /// Tavily Map traverses websites like a graph and can explore hundreds of paths in parallel with intelligent discovery to generate comprehensive site maps.
+        /// </summary>
         /// <param name="url">
         /// The root URL to begin the mapping.<br/>
         /// Example: docs.tavily.com

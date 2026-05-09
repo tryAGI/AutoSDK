@@ -32,6 +32,25 @@ namespace G
         /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
         /// </summary>
         /// <param name="org"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        [global::System.Obsolete("This method marked as deprecated.")]
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse> CodespacesSetCodespacesAccessUsersAsResponseAsync(
+            string org,
+
+            global::G.CodespacesSetCodespacesAccessUsersRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Add users to Codespaces access for an organization<br/>
+        /// Codespaces for the specified users will be billed to the organization.<br/>
+        /// To use this endpoint, the access settings for the organization must be set to `selected_members`.<br/>
+        /// For information on how to change this setting, see "[Manage access control for organization codespaces](https://docs.github.com/rest/codespaces/organizations#manage-access-control-for-organization-codespaces)."<br/>
+        /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
+        /// </summary>
+        /// <param name="org"></param>
         /// <param name="selectedUsernames">
         /// The usernames of the organization members whose codespaces be billed to the organization.
         /// </param>

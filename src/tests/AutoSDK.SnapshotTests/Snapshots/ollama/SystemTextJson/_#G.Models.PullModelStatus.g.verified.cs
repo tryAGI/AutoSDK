@@ -31,6 +31,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickPullModelStatusVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = PullModelStatusVariant1;
+            return IsPullModelStatusVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.PullModelStatusEnum? Enum { get; init; }
 #else
@@ -44,6 +57,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Enum))]
 #endif
         public bool IsEnum => Enum != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickEnum(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.PullModelStatusEnum? value)
+        {
+            value = Enum;
+            return IsEnum;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -120,7 +146,7 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<string?, TResult>? pullModelStatusVariant1 = null,
+            global::System.Func<string, TResult>? pullModelStatusVariant1 = null,
             global::System.Func<global::G.PullModelStatusEnum?, TResult>? @enum = null,
             bool validate = true)
         {
@@ -145,7 +171,31 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<string?>? pullModelStatusVariant1 = null,
+            global::System.Action<string>? pullModelStatusVariant1 = null,
+
+            global::System.Action<global::G.PullModelStatusEnum?>? @enum = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsPullModelStatusVariant1)
+            {
+                pullModelStatusVariant1?.Invoke(PullModelStatusVariant1!);
+            }
+            else if (IsEnum)
+            {
+                @enum?.Invoke(Enum!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<string>? pullModelStatusVariant1 = null,
             global::System.Action<global::G.PullModelStatusEnum?>? @enum = null,
             bool validate = true)
         {

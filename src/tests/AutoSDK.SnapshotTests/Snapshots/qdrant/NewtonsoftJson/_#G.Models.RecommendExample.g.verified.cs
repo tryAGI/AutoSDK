@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickExtendedPointId(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ExtendedPointId? value)
+        {
+            value = ExtendedPointId;
+            return IsExtendedPointId;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<float>? RecommendExampleVariant2 { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RecommendExampleVariant2))]
 #endif
         public bool IsRecommendExampleVariant2 => RecommendExampleVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickRecommendExampleVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::System.Collections.Generic.IList<float>? value)
+        {
+            value = RecommendExampleVariant2;
+            return IsRecommendExampleVariant2;
+        }
 
         /// <summary>
         /// Sparse vector structure
@@ -60,6 +86,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SparseVector))]
 #endif
         public bool IsSparseVector => SparseVector != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSparseVector(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.SparseVector? value)
+        {
+            value = SparseVector;
+            return IsSparseVector;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -141,8 +180,8 @@ namespace G
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::G.ExtendedPointId?, TResult>? extendedPointId = null,
-            global::System.Func<global::System.Collections.Generic.IList<float>?, TResult>? recommendExampleVariant2 = null,
-            global::System.Func<global::G.SparseVector?, TResult>? sparseVector = null,
+            global::System.Func<global::System.Collections.Generic.IList<float>, TResult>? recommendExampleVariant2 = null,
+            global::System.Func<global::G.SparseVector, TResult>? sparseVector = null,
             bool validate = true)
         {
             if (validate)
@@ -171,8 +210,38 @@ namespace G
         /// </summary>
         public void Match(
             global::System.Action<global::G.ExtendedPointId?>? extendedPointId = null,
-            global::System.Action<global::System.Collections.Generic.IList<float>?>? recommendExampleVariant2 = null,
-            global::System.Action<global::G.SparseVector?>? sparseVector = null,
+
+            global::System.Action<global::System.Collections.Generic.IList<float>>? recommendExampleVariant2 = null,
+
+            global::System.Action<global::G.SparseVector>? sparseVector = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsExtendedPointId)
+            {
+                extendedPointId?.Invoke(ExtendedPointId!);
+            }
+            else if (IsRecommendExampleVariant2)
+            {
+                recommendExampleVariant2?.Invoke(RecommendExampleVariant2!);
+            }
+            else if (IsSparseVector)
+            {
+                sparseVector?.Invoke(SparseVector!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.ExtendedPointId?>? extendedPointId = null,
+            global::System.Action<global::System.Collections.Generic.IList<float>>? recommendExampleVariant2 = null,
+            global::System.Action<global::G.SparseVector>? sparseVector = null,
             bool validate = true)
         {
             if (validate)

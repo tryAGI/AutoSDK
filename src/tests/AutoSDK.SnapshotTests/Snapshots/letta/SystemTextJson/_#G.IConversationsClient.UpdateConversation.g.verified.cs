@@ -29,6 +29,23 @@ namespace G
         /// <param name="conversationId">
         /// The ID of the conv in the format 'conv-&lt;uuid4&gt;'
         /// </param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.Conversation>> UpdateConversationAsResponseAsync(
+            string conversationId,
+
+            global::G.UpdateConversation request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Update Conversation<br/>
+        /// Update a conversation.
+        /// </summary>
+        /// <param name="conversationId">
+        /// The ID of the conv in the format 'conv-&lt;uuid4&gt;'
+        /// </param>
         /// <param name="summary">
         /// A summary of the conversation.
         /// </param>

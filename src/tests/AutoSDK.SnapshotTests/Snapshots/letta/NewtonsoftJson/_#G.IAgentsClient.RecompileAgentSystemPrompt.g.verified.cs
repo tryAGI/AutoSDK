@@ -30,5 +30,30 @@ namespace G
             bool? dryRun = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Recompile Agent System Prompt<br/>
+        /// Deprecated alias for POST /v1/agents/{agent_id}/recompile.
+        /// </summary>
+        /// <param name="agentId">
+        /// The ID of the agent in the format 'agent-&lt;uuid4&gt;'
+        /// </param>
+        /// <param name="updateTimestamp">
+        /// If True, update the in-context memory last edit timestamp embedded in the system prompt.<br/>
+        /// Default Value: false
+        /// </param>
+        /// <param name="dryRun">
+        /// If True, do not persist changes; still returns the compiled system prompt.<br/>
+        /// Default Value: false
+        /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        [global::System.Obsolete("This method marked as deprecated.")]
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<string>> RecompileAgentSystemPromptAsResponseAsync(
+            string agentId,
+            bool? updateTimestamp = default,
+            bool? dryRun = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickV2PhoneCallResponseVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.V2PhoneCallResponseVariant1? value)
+        {
+            value = V2PhoneCallResponseVariant1;
+            return IsV2PhoneCallResponseVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.V2CallBase? Base { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Base))]
 #endif
         public bool IsBase => Base != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickBase(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.V2CallBase? value)
+        {
+            value = Base;
+            return IsBase;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -119,8 +145,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.V2PhoneCallResponseVariant1?, TResult>? v2PhoneCallResponseVariant1 = null,
-            global::System.Func<global::G.V2CallBase?, TResult>? @base = null,
+            global::System.Func<global::G.V2PhoneCallResponseVariant1, TResult>? v2PhoneCallResponseVariant1 = null,
+            global::System.Func<global::G.V2CallBase, TResult>? @base = null,
             bool validate = true)
         {
             if (validate)
@@ -144,8 +170,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.V2PhoneCallResponseVariant1?>? v2PhoneCallResponseVariant1 = null,
-            global::System.Action<global::G.V2CallBase?>? @base = null,
+            global::System.Action<global::G.V2PhoneCallResponseVariant1>? v2PhoneCallResponseVariant1 = null,
+
+            global::System.Action<global::G.V2CallBase>? @base = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsV2PhoneCallResponseVariant1)
+            {
+                v2PhoneCallResponseVariant1?.Invoke(V2PhoneCallResponseVariant1!);
+            }
+            else if (IsBase)
+            {
+                @base?.Invoke(Base!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.V2PhoneCallResponseVariant1>? v2PhoneCallResponseVariant1 = null,
+            global::System.Action<global::G.V2CallBase>? @base = null,
             bool validate = true)
         {
             if (validate)

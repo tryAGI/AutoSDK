@@ -32,6 +32,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickAgentBase(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.AgentEventBase? value)
+        {
+            value = AgentBase;
+            return IsAgentBase;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.StepTransitionLimitExceededEventVariant2? StepTransitionLimitExceededEventVariant2 { get; init; }
 #else
@@ -45,6 +58,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(StepTransitionLimitExceededEventVariant2))]
 #endif
         public bool IsStepTransitionLimitExceededEventVariant2 => StepTransitionLimitExceededEventVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickStepTransitionLimitExceededEventVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.StepTransitionLimitExceededEventVariant2? value)
+        {
+            value = StepTransitionLimitExceededEventVariant2;
+            return IsStepTransitionLimitExceededEventVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -121,8 +147,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.AgentEventBase?, TResult>? agentBase = null,
-            global::System.Func<global::G.StepTransitionLimitExceededEventVariant2?, TResult>? stepTransitionLimitExceededEventVariant2 = null,
+            global::System.Func<global::G.AgentEventBase, TResult>? agentBase = null,
+            global::System.Func<global::G.StepTransitionLimitExceededEventVariant2, TResult>? stepTransitionLimitExceededEventVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -146,8 +172,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.AgentEventBase?>? agentBase = null,
-            global::System.Action<global::G.StepTransitionLimitExceededEventVariant2?>? stepTransitionLimitExceededEventVariant2 = null,
+            global::System.Action<global::G.AgentEventBase>? agentBase = null,
+
+            global::System.Action<global::G.StepTransitionLimitExceededEventVariant2>? stepTransitionLimitExceededEventVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsAgentBase)
+            {
+                agentBase?.Invoke(AgentBase!);
+            }
+            else if (IsStepTransitionLimitExceededEventVariant2)
+            {
+                stepTransitionLimitExceededEventVariant2?.Invoke(StepTransitionLimitExceededEventVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.AgentEventBase>? agentBase = null,
+            global::System.Action<global::G.StepTransitionLimitExceededEventVariant2>? stepTransitionLimitExceededEventVariant2 = null,
             bool validate = true)
         {
             if (validate)

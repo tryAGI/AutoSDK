@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickString(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.StringAnalysisData? value)
+        {
+            value = String;
+            return IsString;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.EnumAnalysisData? Enum { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Enum))]
 #endif
         public bool IsEnum => Enum != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickEnum(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.EnumAnalysisData? value)
+        {
+            value = Enum;
+            return IsEnum;
+        }
 
         /// <summary>
         /// 
@@ -64,6 +90,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickBoolean(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.BooleanAnalysisData? value)
+        {
+            value = Boolean;
+            return IsBoolean;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.NumberAnalysisData? Number { get; init; }
 #else
@@ -77,6 +116,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Number))]
 #endif
         public bool IsNumber => Number != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickNumber(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.NumberAnalysisData? value)
+        {
+            value = Number;
+            return IsNumber;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -197,10 +249,10 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.StringAnalysisData?, TResult>? @string = null,
-            global::System.Func<global::G.EnumAnalysisData?, TResult>? @enum = null,
-            global::System.Func<global::G.BooleanAnalysisData?, TResult>? boolean = null,
-            global::System.Func<global::G.NumberAnalysisData?, TResult>? number = null,
+            global::System.Func<global::G.StringAnalysisData, TResult>? @string = null,
+            global::System.Func<global::G.EnumAnalysisData, TResult>? @enum = null,
+            global::System.Func<global::G.BooleanAnalysisData, TResult>? boolean = null,
+            global::System.Func<global::G.NumberAnalysisData, TResult>? number = null,
             bool validate = true)
         {
             if (validate)
@@ -232,10 +284,46 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.StringAnalysisData?>? @string = null,
-            global::System.Action<global::G.EnumAnalysisData?>? @enum = null,
-            global::System.Action<global::G.BooleanAnalysisData?>? boolean = null,
-            global::System.Action<global::G.NumberAnalysisData?>? number = null,
+            global::System.Action<global::G.StringAnalysisData>? @string = null,
+
+            global::System.Action<global::G.EnumAnalysisData>? @enum = null,
+
+            global::System.Action<global::G.BooleanAnalysisData>? boolean = null,
+
+            global::System.Action<global::G.NumberAnalysisData>? number = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsString)
+            {
+                @string?.Invoke(String!);
+            }
+            else if (IsEnum)
+            {
+                @enum?.Invoke(Enum!);
+            }
+            else if (IsBoolean)
+            {
+                boolean?.Invoke(Boolean!);
+            }
+            else if (IsNumber)
+            {
+                number?.Invoke(Number!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.StringAnalysisData>? @string = null,
+            global::System.Action<global::G.EnumAnalysisData>? @enum = null,
+            global::System.Action<global::G.BooleanAnalysisData>? boolean = null,
+            global::System.Action<global::G.NumberAnalysisData>? number = null,
             bool validate = true)
         {
             if (validate)

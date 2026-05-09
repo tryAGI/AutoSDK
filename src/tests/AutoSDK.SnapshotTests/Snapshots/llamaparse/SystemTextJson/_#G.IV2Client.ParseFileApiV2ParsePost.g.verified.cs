@@ -51,6 +51,35 @@ namespace G
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>
         /// <param name="session"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.ParseJobResponse>> ParseFileApiV2ParsePostAsResponseAsync(
+
+            global::G.ParseRequestConfiguration request,
+            global::System.Guid? projectId = default,
+            global::System.Guid? organizationId = default,
+            string? session = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Parse File<br/>
+        /// Parse a file by file ID or URL.<br/>
+        /// Provide either `file_id` (a previously uploaded file) or<br/>
+        /// `source_url` (a publicly accessible URL). Configure parsing<br/>
+        /// with options like `tier`, `target_pages`, and `lang`.<br/>
+        /// ## Tiers<br/>
+        /// - `fast` — rule-based, cheapest, no AI<br/>
+        /// - `cost_effective` — balanced speed and quality<br/>
+        /// - `agentic` — full AI-powered parsing<br/>
+        /// - `agentic_plus` — premium AI with specialized features<br/>
+        /// The job runs asynchronously. Poll `GET /parse/{job_id}` with<br/>
+        /// `expand=text` or `expand=markdown` to retrieve results.
+        /// </summary>
+        /// <param name="projectId"></param>
+        /// <param name="organizationId"></param>
+        /// <param name="session"></param>
         /// <param name="tier">
         /// Parsing tier: 'fast' (rule-based, cheapest), 'cost_effective' (balanced), 'agentic' (AI-powered with custom prompts), or 'agentic_plus' (premium AI with highest accuracy)
         /// </param>

@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickCustomToolFormat0(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CustomToolFormat0? value)
+        {
+            value = CustomToolFormat0;
+            return IsCustomToolFormat0;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CustomToolFormat1? CustomToolFormat1 { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CustomToolFormat1))]
 #endif
         public bool IsCustomToolFormat1 => CustomToolFormat1 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickCustomToolFormat1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CustomToolFormat1? value)
+        {
+            value = CustomToolFormat1;
+            return IsCustomToolFormat1;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -119,8 +145,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.CustomToolFormat0?, TResult>? customToolFormat0 = null,
-            global::System.Func<global::G.CustomToolFormat1?, TResult>? customToolFormat1 = null,
+            global::System.Func<global::G.CustomToolFormat0, TResult>? customToolFormat0 = null,
+            global::System.Func<global::G.CustomToolFormat1, TResult>? customToolFormat1 = null,
             bool validate = true)
         {
             if (validate)
@@ -144,8 +170,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.CustomToolFormat0?>? customToolFormat0 = null,
-            global::System.Action<global::G.CustomToolFormat1?>? customToolFormat1 = null,
+            global::System.Action<global::G.CustomToolFormat0>? customToolFormat0 = null,
+
+            global::System.Action<global::G.CustomToolFormat1>? customToolFormat1 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsCustomToolFormat0)
+            {
+                customToolFormat0?.Invoke(CustomToolFormat0!);
+            }
+            else if (IsCustomToolFormat1)
+            {
+                customToolFormat1?.Invoke(CustomToolFormat1!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.CustomToolFormat0>? customToolFormat0 = null,
+            global::System.Action<global::G.CustomToolFormat1>? customToolFormat1 = null,
             bool validate = true)
         {
             if (validate)

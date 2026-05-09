@@ -44,6 +44,30 @@ namespace G
         /// <param name="agentId">
         /// The ID of the agent in the format 'agent-&lt;uuid4&gt;'
         /// </param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        [global::System.Obsolete("This method marked as deprecated.")]
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.LettaStreamingResponse>> CreateAgentMessageStreamAsResponseAsync(
+            string agentId,
+
+            global::G.LettaStreamingRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Send Message Streaming<br/>
+        /// Process a user message and return the agent's response.<br/>
+        /// Deprecated: Use the `POST /{agent_id}/messages` endpoint with `streaming=true` in the request body instead.<br/>
+        /// **Note:** Sending multiple concurrent requests to the same agent can lead to undefined behavior.<br/>
+        /// Each agent processes messages sequentially, and concurrent requests may interleave in unexpected ways.<br/>
+        /// Wait for each request to complete before sending the next one. Use separate agents or conversations for parallel processing.<br/>
+        /// This endpoint accepts a message from a user and processes it through the agent.<br/>
+        /// It will stream the steps of the response always, and stream the tokens if 'stream_tokens' is set to True.
+        /// </summary>
+        /// <param name="agentId">
+        /// The ID of the agent in the format 'agent-&lt;uuid4&gt;'
+        /// </param>
         /// <param name="messages">
         /// The messages to be sent to the agent.
         /// </param>

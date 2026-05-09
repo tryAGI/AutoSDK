@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickOpenAIConfiguration(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateSecretExternalLLMRequestDtoOpenAIConfiguration? value)
+        {
+            value = OpenAIConfiguration;
+            return IsOpenAIConfiguration;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CreateSecretExternalLLMRequestDtoVariant2? CreateSecretExternalLLMRequestDtoVariant2 { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CreateSecretExternalLLMRequestDtoVariant2))]
 #endif
         public bool IsCreateSecretExternalLLMRequestDtoVariant2 => CreateSecretExternalLLMRequestDtoVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickCreateSecretExternalLLMRequestDtoVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateSecretExternalLLMRequestDtoVariant2? value)
+        {
+            value = CreateSecretExternalLLMRequestDtoVariant2;
+            return IsCreateSecretExternalLLMRequestDtoVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -119,8 +145,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.CreateSecretExternalLLMRequestDtoOpenAIConfiguration?, TResult>? openAIConfiguration = null,
-            global::System.Func<global::G.CreateSecretExternalLLMRequestDtoVariant2?, TResult>? createSecretExternalLLMRequestDtoVariant2 = null,
+            global::System.Func<global::G.CreateSecretExternalLLMRequestDtoOpenAIConfiguration, TResult>? openAIConfiguration = null,
+            global::System.Func<global::G.CreateSecretExternalLLMRequestDtoVariant2, TResult>? createSecretExternalLLMRequestDtoVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -144,8 +170,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.CreateSecretExternalLLMRequestDtoOpenAIConfiguration?>? openAIConfiguration = null,
-            global::System.Action<global::G.CreateSecretExternalLLMRequestDtoVariant2?>? createSecretExternalLLMRequestDtoVariant2 = null,
+            global::System.Action<global::G.CreateSecretExternalLLMRequestDtoOpenAIConfiguration>? openAIConfiguration = null,
+
+            global::System.Action<global::G.CreateSecretExternalLLMRequestDtoVariant2>? createSecretExternalLLMRequestDtoVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsOpenAIConfiguration)
+            {
+                openAIConfiguration?.Invoke(OpenAIConfiguration!);
+            }
+            else if (IsCreateSecretExternalLLMRequestDtoVariant2)
+            {
+                createSecretExternalLLMRequestDtoVariant2?.Invoke(CreateSecretExternalLLMRequestDtoVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.CreateSecretExternalLLMRequestDtoOpenAIConfiguration>? openAIConfiguration = null,
+            global::System.Action<global::G.CreateSecretExternalLLMRequestDtoVariant2>? createSecretExternalLLMRequestDtoVariant2 = null,
             bool validate = true)
         {
             if (validate)

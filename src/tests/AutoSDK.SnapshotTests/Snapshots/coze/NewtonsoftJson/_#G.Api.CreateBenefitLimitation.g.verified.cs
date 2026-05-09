@@ -7,6 +7,19 @@ namespace G
     public partial class Api
     {
 
+        private static readonly global::G.AutoSDKServer[] s_CreateBenefitLimitationServers = new global::G.AutoSDKServer[]
+        {            new global::G.AutoSDKServer(
+                id: "https-api-coze-com",
+                name: "International",
+                url: "https://api.coze.com/",
+                description: "International"),
+            new global::G.AutoSDKServer(
+                id: "https-api-coze-cn",
+                name: "China",
+                url: "https://api.coze.cn/",
+                description: "China"),
+        };
+
 
         private static readonly global::G.EndPointSecurityRequirement s_CreateBenefitLimitationSecurityRequirement0 =
             new global::G.EndPointSecurityRequirement
@@ -56,6 +69,29 @@ namespace G
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var __response = await CreateBenefitLimitationAsResponseAsync(
+
+                request: request,
+                requestOptions: requestOptions,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// 创建设备权益额度<br/>
+        /// {"0":{"ops":[{"insert":"创建终端用户的权益额度。\n"},{"attributes":{"lmkr":"1"},"insert":"*"},{"attributes":{"zoneId":"7wTe1ltizu","zoneType":"Z","type":"tip","title":"说明","border":"#bacefd","background":"#f0f4ff","highlight-block-v2":"true"},"insert":" "},{"insert":"\n"},{"attributes":{"anchor":"21abf79b","heading":"h2","lmkr":"1"},"insert":"*"},{"insert":"接口描述\n"},{"attributes":{"lmkr":"1"},"insert":"*"},{"insert":"你可以调用本 API 创建终端用户的权益额度，用于设置终端用户可使用的资源点或语音时长配额，以便用户在初始阶段免费体验设备功能，同时避免资源的过度使用。\n"},{"attributes":{"ol-id":"StRlNLg7","list":"bullet1","lmkr":"1"},"insert":"*"},{"insert":"生效对象：权益额度的生效对象可以设置为企业中的所有设备、所有自定义维度的实体、某个设备或某个自定义维度的实体。\n"},{"attributes":{"list":"bullet1","lmkr":"1"},"insert":"*"},{"insert":"额度类型：支持按资源点维度或语音通话时长维度设置配额，你可以为每个设备设置累计可用额度以及时间周期内的额度（例如每日 1000 资源点）。当设备在当前周期内的资源点使用达到周期上限或累计额度上限时，将无法继续使用，直至下一个周期或额度重置。例如设置每个设备累计额度为 5000 资源点，每天可用 1000 资源点。当设备 A 今天的使用资源点达到 1000 上限后，设备 A 今天将无法继续使用，需等到次日才能恢复使用，当设备 A 的累计使用资源点达到 5000 上限后，设备 A 将无法继续使用。\n"},{"attributes":{"list":"bullet1","lmkr":"1"},"insert":"*"},{"insert":"配置的优先级：若同时为单个设备和企业下所有设备配置了额度，则优先使用单个设备的额度。\n"},{"attributes":{"list":"bullet1","lmkr":"1","start":"1"},"insert":"*"},{"insert":"生效时间：通过扣子编程的"},{"attributes":{"hyperlink":"{\"href\":\"https://docs.coze.cn/dev_how_to_guides/device_usage#75617e0a\",\"linkId\":\"3ohSWZ8eA5\",\"newTab\":true}"},"insert":"管理设备配额"},{"insert":"页面设置的针对企业下所有设备和自定义维度实体的额度，默认有效期为永不过期，即 "},{"attributes":{"inlineCode":"true"},"insert":"started_at = 1970-01-01"},{"insert":" 至 "},{"attributes":{"inlineCode":"true"},"insert":"ended_at = 9999-12-31"},{"insert":"。若权益生效时间已过期，则该条配额规则会失效。\n"},{"attributes":{"list":"bullet1","lmkr":"1","start":"1"},"insert":"*"},{"insert":"未配置额度的设备：未设置权益额度的设备，将默认无限制使用资源点。\n"},{"attributes":{"anchor":"c95cf40a","heading":"h2","lmkr":"1","ol-id":"StRlNLg7","start":"1"},"insert":"*"},{"insert":"接口限制\n"},{"attributes":{"ol-id":"StRlNLg7","list":"bullet1","lmkr":"1","start":"1"},"insert":"*"},{"insert":"当权益配额的生效范围为企业下所有设备或企业下所有自定义维度的实体时，仅能创建一条累计可用额度和一条时间周期内可用额度。\n"},{"attributes":{"lmkr":"1","ol-id":"StRlNLg7","list":"bullet1","start":"1"},"insert":"*"},{"insert":"增购 "},{"attributes":{"bold":"true"},"insert":"AI 智能通话许可（系统音色）"},{"insert":"的企业，权益额度类型支持配置为"},{"attributes":{"bold":"true"},"insert":"语音通话时长配额（系统音色）"},{"insert":"，否则不生效，购买语音通话时长的详细步骤请参见"},{"attributes":{"hyperlink":"{\"href\":\"https://docs.coze.cn/coze_pro/asr_tts_fee\",\"linkId\":\"7MYk0x7uCE\"}"},"insert":"音视频费用"},{"insert":"。\n"},{"attributes":{"lmkr":"1","list":"bullet1"},"insert":"*"},{"insert":"增购 "},{"attributes":{"bold":"true"},"insert":"AI 智能通话许可（复刻音色）"},{"insert":"的企业，权益额度类型支持配置为"},{"attributes":{"bold":"true"},"insert":"语音通话时长配额（复刻音色）"},{"insert":"，否则不生效。\n"},{"attributes":{"lmkr":"1","list":"bullet1"},"insert":"*"},{"insert":"未增购 AI 智能通话许可的企业，权益额度类型仅支持资源点配额。\n"}],"zoneId":"0","zoneType":"Z"},"7wTe1ltizu":{"ops":[{"attributes":{"lmkr":"1","list":"bullet1"},"insert":"*"},{"attributes":{"bold":"true"},"insert":"套餐限制"},{"insert":"：扣子企业旗舰版。\n"},{"attributes":{"lmkr":"1","list":"bullet1"},"insert":"*"},{"attributes":{"bold":"true"},"insert":"角色限制"},{"insert":"：企业超级管理员和管理员可以调用该 API。\n"},{"attributes":{"lmkr":"1","list":"bullet1"},"insert":"*"},{"insert":"调用此 API 创建设备权益额度之前，需要确保企业下的设备已成功上报了设备信息，否则会导致权益额度对该设备无法生效，设备信息的配置方法可参考"},{"attributes":{"hyperlink":"{\"href\":\"https://docs.coze.cn/dev_how_to_guides/deviceInfo\",\"linkId\":\"fUZq1jGycG\",\"newTab\":true}"},"insert":"设置设备信息"},{"insert":"。\n"}],"zoneId":"7wTe1ltizu","zoneType":"Z"}}
+        /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.CreateBenefitLimitationResponse>> CreateBenefitLimitationAsResponseAsync(
+
+            global::G.CreateBenefitLimitationRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 
             PrepareArguments(
@@ -86,9 +122,12 @@ namespace G
 
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
+
                             var __pathBuilder = new global::G.PathBuilder(
                                 path: "/v1/commerce/benefit/limitations",
-                                baseUri: HttpClient.BaseAddress);
+                                baseUri: ResolveBaseUri(
+                                servers: s_CreateBenefitLimitationServers,
+                                defaultBaseUrl: "https://api.coze.com/"));
                             var __path = __pathBuilder.ToString();
                 __path = global::G.AutoSDKRequestOptionsSupport.AppendQueryParameters(
                     path: __path,
@@ -165,6 +204,8 @@ namespace G
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                     try
                     {
@@ -175,6 +216,11 @@ namespace G
                     }
                     catch (global::System.Net.Http.HttpRequestException __exception)
                     {
+                        var __retryDelay = global::G.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: null,
+                            attempt: __attempt);
                         var __willRetry = __attempt < __maxAttempts && !__effectiveCancellationToken.IsCancellationRequested;
                         await global::G.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
@@ -192,6 +238,8 @@ namespace G
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: __willRetry,
+                                retryDelay: __willRetry ? __retryDelay : (global::System.TimeSpan?)null,
+                                retryReason: "exception",
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         if (!__willRetry)
                         {
@@ -201,8 +249,7 @@ namespace G
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::G.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -211,6 +258,11 @@ namespace G
                         __attempt < __maxAttempts &&
                         global::G.AutoSDKRequestOptionsSupport.ShouldRetryStatusCode(__response.StatusCode))
                     {
+                        var __retryDelay = global::G.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: __response,
+                            attempt: __attempt);
                         await global::G.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
@@ -227,14 +279,15 @@ namespace G
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: true,
+                                retryDelay: __retryDelay,
+                                retryReason: "status:" + ((int)__response.StatusCode).ToString(global::System.Globalization.CultureInfo.InvariantCulture),
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         __response.Dispose();
                         __response = null;
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::G.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -274,6 +327,8 @@ namespace G
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
                 else
@@ -294,6 +349,8 @@ namespace G
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
 
@@ -318,9 +375,13 @@ namespace G
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    return
-                                        global::G.CreateBenefitLimitationResponse.FromJson(__content, JsonSerializerOptions) ??
+                                    var __value = global::G.CreateBenefitLimitationResponse.FromJson(__content, JsonSerializerOptions) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                                    return new global::G.AutoSDKHttpResponse<global::G.CreateBenefitLimitationResponse>(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri,
+                                        body: __value);
                                 }
                                 catch (global::System.Exception __ex)
                                 {
@@ -348,9 +409,13 @@ namespace G
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    return
-                                        await global::G.CreateBenefitLimitationResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                                    var __value = await global::G.CreateBenefitLimitationResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
+                                    return new global::G.AutoSDKHttpResponse<global::G.CreateBenefitLimitationResponse>(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri,
+                                        body: __value);
                                 }
                                 catch (global::System.Exception __ex)
                                 {

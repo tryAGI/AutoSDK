@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickGetExpressiveAvatarDtoVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.AllOf<global::G.GetExpressiveAvatarDtoVariant1Variant1, object>? value)
+        {
+            value = GetExpressiveAvatarDtoVariant1;
+            return IsGetExpressiveAvatarDtoVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.GetExpressiveAvatarDtoVariant2? GetExpressiveAvatarDtoVariant2 { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(GetExpressiveAvatarDtoVariant2))]
 #endif
         public bool IsGetExpressiveAvatarDtoVariant2 => GetExpressiveAvatarDtoVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickGetExpressiveAvatarDtoVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.GetExpressiveAvatarDtoVariant2? value)
+        {
+            value = GetExpressiveAvatarDtoVariant2;
+            return IsGetExpressiveAvatarDtoVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -120,7 +146,7 @@ namespace G
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::G.AllOf<global::G.GetExpressiveAvatarDtoVariant1Variant1, object>?, TResult>? getExpressiveAvatarDtoVariant1 = null,
-            global::System.Func<global::G.GetExpressiveAvatarDtoVariant2?, TResult>? getExpressiveAvatarDtoVariant2 = null,
+            global::System.Func<global::G.GetExpressiveAvatarDtoVariant2, TResult>? getExpressiveAvatarDtoVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -145,7 +171,31 @@ namespace G
         /// </summary>
         public void Match(
             global::System.Action<global::G.AllOf<global::G.GetExpressiveAvatarDtoVariant1Variant1, object>?>? getExpressiveAvatarDtoVariant1 = null,
-            global::System.Action<global::G.GetExpressiveAvatarDtoVariant2?>? getExpressiveAvatarDtoVariant2 = null,
+
+            global::System.Action<global::G.GetExpressiveAvatarDtoVariant2>? getExpressiveAvatarDtoVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsGetExpressiveAvatarDtoVariant1)
+            {
+                getExpressiveAvatarDtoVariant1?.Invoke(GetExpressiveAvatarDtoVariant1!);
+            }
+            else if (IsGetExpressiveAvatarDtoVariant2)
+            {
+                getExpressiveAvatarDtoVariant2?.Invoke(GetExpressiveAvatarDtoVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.AllOf<global::G.GetExpressiveAvatarDtoVariant1Variant1, object>?>? getExpressiveAvatarDtoVariant1 = null,
+            global::System.Action<global::G.GetExpressiveAvatarDtoVariant2>? getExpressiveAvatarDtoVariant2 = null,
             bool validate = true)
         {
             if (validate)

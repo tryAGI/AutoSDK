@@ -7,6 +7,19 @@ namespace G
     public partial class RealtimeClient
     {
 
+        private static readonly global::G.AutoSDKServer[] s_ConnectRealtimeServers = new global::G.AutoSDKServer[]
+        {            new global::G.AutoSDKServer(
+                id: "https-api-portkey-ai-v1",
+                name: "Portkey API Public Endpoint",
+                url: "https://api.portkey.ai/v1",
+                description: "Portkey API Public Endpoint"),
+            new global::G.AutoSDKServer(
+                id: "self-hosted-gateway-url",
+                name: "Self-Hosted Gateway URL",
+                url: "SELF_HOSTED_GATEWAY_URL",
+                description: "Self-Hosted Gateway URL"),
+        };
+
 
         private static readonly global::G.EndPointSecurityRequirement s_ConnectRealtimeSecurityRequirement0 =
             new global::G.EndPointSecurityRequirement
@@ -182,6 +195,46 @@ namespace G
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            await ConnectRealtimeAsResponseAsync(
+                xPortkeyTraceId: xPortkeyTraceId,
+                xPortkeySpanId: xPortkeySpanId,
+                xPortkeyParentSpanId: xPortkeyParentSpanId,
+                xPortkeySpanName: xPortkeySpanName,
+                xPortkeyMetadata: xPortkeyMetadata,
+                xPortkeyCacheNamespace: xPortkeyCacheNamespace,
+                xPortkeyCacheForceRefresh: xPortkeyCacheForceRefresh,
+                model: model,
+                requestOptions: requestOptions,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+        }
+        /// <summary>
+        /// Realtime<br/>
+        /// Connect to the Realtime API endpoint.
+        /// </summary>
+        /// <param name="xPortkeyTraceId"></param>
+        /// <param name="xPortkeySpanId"></param>
+        /// <param name="xPortkeyParentSpanId"></param>
+        /// <param name="xPortkeySpanName"></param>
+        /// <param name="xPortkeyMetadata"></param>
+        /// <param name="xPortkeyCacheNamespace"></param>
+        /// <param name="xPortkeyCacheForceRefresh"></param>
+        /// <param name="model"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse> ConnectRealtimeAsResponseAsync(
+            string? xPortkeyTraceId = default,
+            string? xPortkeySpanId = default,
+            string? xPortkeyParentSpanId = default,
+            string? xPortkeySpanName = default,
+            object? xPortkeyMetadata = default,
+            string? xPortkeyCacheNamespace = default,
+            bool? xPortkeyCacheForceRefresh = default,
+            string? model = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             PrepareArguments(
                 client: HttpClient);
             PrepareConnectRealtimeArguments(
@@ -217,11 +270,14 @@ namespace G
 
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
+
                             var __pathBuilder = new global::G.PathBuilder(
                                 path: "/realtime",
-                                baseUri: HttpClient.BaseAddress); 
+                                baseUri: ResolveBaseUri(
+                                servers: s_ConnectRealtimeServers,
+                                defaultBaseUrl: "https://api.portkey.ai/v1"));
                             __pathBuilder
-                                .AddOptionalParameter("model", model) 
+                                .AddOptionalParameter("model", model)
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::G.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -253,34 +309,34 @@ namespace G
                 } 
             }
 
-                if (xPortkeyTraceId != default)
-                {
-                    __httpRequest.Headers.TryAddWithoutValidation("x-portkey-trace-id", xPortkeyTraceId.ToString());
-                }
-                if (xPortkeySpanId != default)
-                {
-                    __httpRequest.Headers.TryAddWithoutValidation("x-portkey-span-id", xPortkeySpanId.ToString());
-                }
-                if (xPortkeyParentSpanId != default)
-                {
-                    __httpRequest.Headers.TryAddWithoutValidation("x-portkey-parent-span-id", xPortkeyParentSpanId.ToString());
-                }
-                if (xPortkeySpanName != default)
-                {
-                    __httpRequest.Headers.TryAddWithoutValidation("x-portkey-span-name", xPortkeySpanName.ToString());
-                }
-                if (xPortkeyMetadata != default)
-                {
-                    __httpRequest.Headers.TryAddWithoutValidation("x-portkey-metadata", xPortkeyMetadata.ToString());
-                }
-                if (xPortkeyCacheNamespace != default)
-                {
-                    __httpRequest.Headers.TryAddWithoutValidation("x-portkey-cache-namespace", xPortkeyCacheNamespace.ToString());
-                }
-                if (xPortkeyCacheForceRefresh != default)
-                {
-                    __httpRequest.Headers.TryAddWithoutValidation("x-portkey-cache-force-refresh", xPortkeyCacheForceRefresh.ToString());
-                }
+            if (xPortkeyTraceId != default)
+            {
+                __httpRequest.Headers.TryAddWithoutValidation("x-portkey-trace-id", xPortkeyTraceId.ToString());
+            }
+            if (xPortkeySpanId != default)
+            {
+                __httpRequest.Headers.TryAddWithoutValidation("x-portkey-span-id", xPortkeySpanId.ToString());
+            }
+            if (xPortkeyParentSpanId != default)
+            {
+                __httpRequest.Headers.TryAddWithoutValidation("x-portkey-parent-span-id", xPortkeyParentSpanId.ToString());
+            }
+            if (xPortkeySpanName != default)
+            {
+                __httpRequest.Headers.TryAddWithoutValidation("x-portkey-span-name", xPortkeySpanName.ToString());
+            }
+            if (xPortkeyMetadata != default)
+            {
+                __httpRequest.Headers.TryAddWithoutValidation("x-portkey-metadata", xPortkeyMetadata.ToString());
+            }
+            if (xPortkeyCacheNamespace != default)
+            {
+                __httpRequest.Headers.TryAddWithoutValidation("x-portkey-cache-namespace", xPortkeyCacheNamespace.ToString());
+            }
+            if (xPortkeyCacheForceRefresh != default)
+            {
+                __httpRequest.Headers.TryAddWithoutValidation("x-portkey-cache-force-refresh", xPortkeyCacheForceRefresh.ToString());
+            }
 
                 global::G.AutoSDKRequestOptionsSupport.ApplyHeaders(
                     request: __httpRequest,
@@ -330,6 +386,8 @@ namespace G
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                     try
                     {
@@ -340,6 +398,11 @@ namespace G
                     }
                     catch (global::System.Net.Http.HttpRequestException __exception)
                     {
+                        var __retryDelay = global::G.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: null,
+                            attempt: __attempt);
                         var __willRetry = __attempt < __maxAttempts && !__effectiveCancellationToken.IsCancellationRequested;
                         await global::G.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
@@ -357,6 +420,8 @@ namespace G
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: __willRetry,
+                                retryDelay: __willRetry ? __retryDelay : (global::System.TimeSpan?)null,
+                                retryReason: "exception",
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         if (!__willRetry)
                         {
@@ -366,8 +431,7 @@ namespace G
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::G.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -376,6 +440,11 @@ namespace G
                         __attempt < __maxAttempts &&
                         global::G.AutoSDKRequestOptionsSupport.ShouldRetryStatusCode(__response.StatusCode))
                     {
+                        var __retryDelay = global::G.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: __response,
+                            attempt: __attempt);
                         await global::G.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
@@ -392,14 +461,15 @@ namespace G
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: true,
+                                retryDelay: __retryDelay,
+                                retryReason: "status:" + ((int)__response.StatusCode).ToString(global::System.Globalization.CultureInfo.InvariantCulture),
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         __response.Dispose();
                         __response = null;
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::G.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -439,6 +509,8 @@ namespace G
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
                 else
@@ -459,6 +531,8 @@ namespace G
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
                             // 
@@ -545,6 +619,10 @@ namespace G
                                 {
                                     __response.EnsureSuccessStatusCode();
 
+                return new global::G.AutoSDKHttpResponse(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri);
                                 }
                                 catch (global::System.Exception __ex)
                                 {
@@ -566,6 +644,10 @@ namespace G
                                 try
                                 {
                                     __response.EnsureSuccessStatusCode();
+                                    return new global::G.AutoSDKHttpResponse(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri);
                                 }
                                 catch (global::System.Exception __ex)
                                 {

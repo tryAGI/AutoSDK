@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickBase(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.NodeBase? value)
+        {
+            value = Base;
+            return IsBase;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.FunctionNodeVariant2? FunctionNodeVariant2 { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FunctionNodeVariant2))]
 #endif
         public bool IsFunctionNodeVariant2 => FunctionNodeVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFunctionNodeVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.FunctionNodeVariant2? value)
+        {
+            value = FunctionNodeVariant2;
+            return IsFunctionNodeVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -120,7 +146,7 @@ namespace G
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::G.NodeBase?, TResult>? @base = null,
-            global::System.Func<global::G.FunctionNodeVariant2?, TResult>? functionNodeVariant2 = null,
+            global::System.Func<global::G.FunctionNodeVariant2, TResult>? functionNodeVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -145,7 +171,31 @@ namespace G
         /// </summary>
         public void Match(
             global::System.Action<global::G.NodeBase?>? @base = null,
-            global::System.Action<global::G.FunctionNodeVariant2?>? functionNodeVariant2 = null,
+
+            global::System.Action<global::G.FunctionNodeVariant2>? functionNodeVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsBase)
+            {
+                @base?.Invoke(Base!);
+            }
+            else if (IsFunctionNodeVariant2)
+            {
+                functionNodeVariant2?.Invoke(FunctionNodeVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.NodeBase?>? @base = null,
+            global::System.Action<global::G.FunctionNodeVariant2>? functionNodeVariant2 = null,
             bool validate = true)
         {
             if (validate)

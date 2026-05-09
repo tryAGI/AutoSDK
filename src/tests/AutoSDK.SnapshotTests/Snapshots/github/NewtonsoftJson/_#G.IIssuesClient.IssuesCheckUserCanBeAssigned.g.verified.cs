@@ -23,5 +23,23 @@ namespace G
             string assignee,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Check if a user can be assigned<br/>
+        /// Checks if a user has permission to be assigned to an issue in this repository.<br/>
+        /// If the `assignee` can be assigned to issues in the repository, a `204` header with no content is returned.<br/>
+        /// Otherwise a `404` status code is returned.
+        /// </summary>
+        /// <param name="owner"></param>
+        /// <param name="repo"></param>
+        /// <param name="assignee"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse> IssuesCheckUserCanBeAssignedAsResponseAsync(
+            string owner,
+            string repo,
+            string assignee,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

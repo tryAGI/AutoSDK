@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsVariant1;
+            return IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public int? EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsVariant2 { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsVariant2))]
 #endif
         public bool IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsVariant2 => EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out int? value)
+        {
+            value = EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsVariant2;
+            return IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsVariant2;
+        }
 
         /// <summary>
         /// 
@@ -62,6 +88,19 @@ namespace G
         public bool IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsVariant3 => EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsVariant3 != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsVariant3(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::System.Collections.Generic.IList<int>? value)
+        {
+            value = EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsVariant3;
+            return IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsVariant3;
+        }
+
+        /// <summary>
         /// Use this option for multimodal input.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -77,6 +116,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf1Items3))]
 #endif
         public bool IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf1Items3 => EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf1Items3 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf1Items3(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf1Items3? value)
+        {
+            value = EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf1Items3;
+            return IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf1Items3;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -179,10 +231,10 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<string?, TResult>? embeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsVariant1 = null,
+            global::System.Func<string, TResult>? embeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsVariant1 = null,
             global::System.Func<int?, TResult>? embeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsVariant2 = null,
-            global::System.Func<global::System.Collections.Generic.IList<int>?, TResult>? embeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsVariant3 = null,
-            global::System.Func<global::G.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf1Items3?, TResult>? embeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf1Items3 = null,
+            global::System.Func<global::System.Collections.Generic.IList<int>, TResult>? embeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsVariant3 = null,
+            global::System.Func<global::G.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf1Items3, TResult>? embeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf1Items3 = null,
             bool validate = true)
         {
             if (validate)
@@ -214,10 +266,46 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<string?>? embeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsVariant1 = null,
+            global::System.Action<string>? embeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsVariant1 = null,
+
             global::System.Action<int?>? embeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsVariant2 = null,
-            global::System.Action<global::System.Collections.Generic.IList<int>?>? embeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsVariant3 = null,
-            global::System.Action<global::G.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf1Items3?>? embeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf1Items3 = null,
+
+            global::System.Action<global::System.Collections.Generic.IList<int>>? embeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsVariant3 = null,
+
+            global::System.Action<global::G.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf1Items3>? embeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf1Items3 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsVariant1)
+            {
+                embeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsVariant1?.Invoke(EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsVariant1!);
+            }
+            else if (IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsVariant2)
+            {
+                embeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsVariant2?.Invoke(EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsVariant2!);
+            }
+            else if (IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsVariant3)
+            {
+                embeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsVariant3?.Invoke(EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsVariant3!);
+            }
+            else if (IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf1Items3)
+            {
+                embeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf1Items3?.Invoke(EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf1Items3!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<string>? embeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsVariant1 = null,
+            global::System.Action<int?>? embeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsVariant2 = null,
+            global::System.Action<global::System.Collections.Generic.IList<int>>? embeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsVariant3 = null,
+            global::System.Action<global::G.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf1Items3>? embeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf1Items3 = null,
             bool validate = true)
         {
             if (validate)

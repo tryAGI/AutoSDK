@@ -35,6 +35,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickTextGeneration(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.GenerateStreamText? value)
+        {
+            value = TextGeneration;
+            return IsTextGeneration;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.GenerateStreamEnd? StreamEnd { get; init; }
 #else
@@ -52,6 +65,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickStreamEnd(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.GenerateStreamEnd? value)
+        {
+            value = StreamEnd;
+            return IsStreamEnd;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.GenerateStreamError? StreamError { get; init; }
 #else
@@ -65,6 +91,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(StreamError))]
 #endif
         public bool IsStreamError => StreamError != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickStreamError(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.GenerateStreamError? value)
+        {
+            value = StreamError;
+            return IsStreamError;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -196,6 +235,36 @@ namespace G
         /// 
         /// </summary>
         public void Match(
+            global::System.Action<global::G.GenerateStreamText?>? textGeneration = null,
+
+            global::System.Action<global::G.GenerateStreamEnd?>? streamEnd = null,
+
+            global::System.Action<global::G.GenerateStreamError?>? streamError = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsTextGeneration)
+            {
+                textGeneration?.Invoke(TextGeneration!);
+            }
+            else if (IsStreamEnd)
+            {
+                streamEnd?.Invoke(StreamEnd!);
+            }
+            else if (IsStreamError)
+            {
+                streamError?.Invoke(StreamError!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
             global::System.Action<global::G.GenerateStreamText?>? textGeneration = null,
             global::System.Action<global::G.GenerateStreamEnd?>? streamEnd = null,
             global::System.Action<global::G.GenerateStreamError?>? streamError = null,

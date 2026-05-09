@@ -74,6 +74,46 @@ namespace G
         /// </summary>
         /// <param name="requestTimeout"></param>
         /// <param name="requestTimeoutMillis"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.Agent>> CreateAsResponseAsync(
+
+            global::G.CreateAgentRequest request,
+            int? requestTimeout = default,
+            int? requestTimeoutMillis = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create agent<br/>
+        /// Create a new agent. An agent is compromised as 3 main things of functionality:<br/>
+        ///   1. The **instructions** an agent follows. Known as a system in prompt in other platforms.<br/>
+        ///   2. The **steps** an agent follows when receiving an input.<br/>
+        ///   3. The **tools** an agent can use to resolve those steps and instructions.<br/>
+        /// Instructions are tied to each step, and should be precisely crafted so that the agent can perform the desired actions when given an input. <br/>
+        /// :::tip Creating more precise instructions<br/>
+        /// Be specific to exactly what you want the agent to do. For emphasis, use CAPS if you want the agent to follow a specific format. Negative prompts also help with precision such as saying **DO NOT DO THIS**.<br/>
+        /// :::<br/>
+        /// To use an agent, create a new session (called thread or chat in other platforms), and send new inputs to the agent to get responses.<br/>
+        /// :::note<br/>
+        /// Only a single step is supported with no follow up steps. So the `first_step` will be only the only step. We will add multiple steps and step types to execute complex workflows, but many agents can work well with a single step.<br/>
+        /// :::<br/>
+        /// ## LLM configuration<br/>
+        /// Agents use LLMs for reasoning and response generation. You can configure the following:<br/>
+        /// - **Model**: Choose from available models like GPT-4o.<br/>
+        /// - **Parameters**: Adjust temperature, max tokens, and other model-specific settings.<br/>
+        /// - **Cost optimization**: Balance performance with token usage.<br/>
+        /// - **Retry configuration**: Configure automatic retry behavior for transient failures.<br/>
+        /// ## Using retries to improve user experience<br/>
+        /// When agents interact with LLMs, transient failures like network interruptions can disrupt communication between the agent and the LLM. You can configure your agent to resume disrupted communication to ensure a smooth user experience.<br/>
+        /// - `max_retries`: After an error, the agent will retry its request to the LLM this many times.<br/>
+        /// - `initial_backoff_ms`: This is how many milliseconds the agent will wait before retrying, to give the cause of the error time to resolve.<br/>
+        /// - `backoff_factor`: Every time the agent retries, it can multiply the last retry delay by this number, increasing the wait between retries. This is like giving a toddler a longer and longer timeout if it continues to misbehave.<br/>
+        /// - `max_backoff_ms`: The maximum time you want the agent to wait between retries, so the backoff_factor does not create an unreasonably long delay for your users.
+        /// </summary>
+        /// <param name="requestTimeout"></param>
+        /// <param name="requestTimeoutMillis"></param>
         /// <param name="key">
         /// A unique key that identifies an agent.<br/>
         /// Example: customer_support

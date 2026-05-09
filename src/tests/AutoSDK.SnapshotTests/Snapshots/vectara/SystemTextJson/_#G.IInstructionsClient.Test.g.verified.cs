@@ -44,6 +44,32 @@ namespace G
         /// <param name="version">
         /// Example: 1
         /// </param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.TestInstructionResponse>> TestAsResponseAsync(
+            string instructionId,
+
+            global::G.TestInstructionRequest request,
+            int? requestTimeout = default,
+            int? requestTimeoutMillis = default,
+            int? version = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Test instruction<br/>
+        /// Test an instruction template using supplied context and available tools. This endpoint evaluates Velocity expressions such as `$tools`, `${session.metadata.field}`, or `${agent.metadata.field}`, and returns the fully rendered template output. Use this operation to validate formatting, logic, or metadata-dependent behavior before deploying instructions to agents.
+        /// </summary>
+        /// <param name="requestTimeout"></param>
+        /// <param name="requestTimeoutMillis"></param>
+        /// <param name="instructionId">
+        /// The unique identifier for an instruction.<br/>
+        /// Example: ins_customer_support_init
+        /// </param>
+        /// <param name="version">
+        /// Example: 1
+        /// </param>
         /// <param name="context">
         /// Context data to use when rendering the instruction template. This will be merged into `$session.metadata` for template access.<br/>
         /// Example: If you provide `{"currentDate": "2024-01-15"}`, you can access it in the template as `$session.metadata.currentDate`.<br/>

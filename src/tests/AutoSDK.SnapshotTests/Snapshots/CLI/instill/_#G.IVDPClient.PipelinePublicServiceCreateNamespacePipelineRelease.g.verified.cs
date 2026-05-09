@@ -34,6 +34,26 @@ namespace G
         /// </summary>
         /// <param name="namespaceId"></param>
         /// <param name="pipelineId"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.CreateNamespacePipelineReleaseResponse>> PipelinePublicServiceCreateNamespacePipelineReleaseAsResponseAsync(
+            string namespaceId,
+            string pipelineId,
+
+            global::G.PipelineRelease request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create a pipeline release<br/>
+        /// Commits the version of a pipeline, identified by its resource name, which<br/>
+        /// is formed by the parent namespace and ID of the pipeline.<br/>
+        /// The authenticated namespace must be the parent of the pipeline in order to<br/>
+        /// perform this action.
+        /// </summary>
+        /// <param name="namespaceId"></param>
+        /// <param name="pipelineId"></param>
         /// <param name="id">
         /// Release resource ID (used in `name` as the last segment). It must be a<br/>
         /// sematic version vX.Y.Z.

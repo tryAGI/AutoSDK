@@ -39,6 +39,29 @@ namespace G
         /// A unique key that identifies an agent.<br/>
         /// Example: customer_support
         /// </param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.Agent>> UpdateAsResponseAsync(
+            string agentKey,
+
+            global::G.UpdateAgentRequest request,
+            int? requestTimeout = default,
+            int? requestTimeoutMillis = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Update agent<br/>
+        /// The Update Agent API enables you to modify an existing agent configuration, including tool assignments, behavioral instructions, model parameters, and operational metadata.<br/>
+        /// Use this API to evolve agent capabilities over time, adding new tools as they become available, refining behavioral instructions based on user feedback, adjusting model parameters for optimal performance, and updating metadata for better organization across your agent ecosystem.
+        /// </summary>
+        /// <param name="requestTimeout"></param>
+        /// <param name="requestTimeoutMillis"></param>
+        /// <param name="agentKey">
+        /// A unique key that identifies an agent.<br/>
+        /// Example: customer_support
+        /// </param>
         /// <param name="name">
         /// The human-readable name of an agent.<br/>
         /// Example: Customer Support Agent

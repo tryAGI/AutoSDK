@@ -22,6 +22,19 @@ namespace G
         /// Create a video from a template<br/>
         /// Create a video based on a template created in Synthesia.
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.VideoResponse>> CreateVideosFromTemplateAsResponseAsync(
+
+            global::G.VideoFromTemplateApi request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create a video from a template<br/>
+        /// Create a video based on a template created in Synthesia.
+        /// </summary>
         /// <param name="folderId">
         /// Optional folder ID. If provided, the new video will be created under this folder and inherit its permissions.<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464

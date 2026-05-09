@@ -25,6 +25,21 @@ namespace G
         /// Converts the authenticated user to an active member of the organization, if that user has a pending invitation from the organization.
         /// </summary>
         /// <param name="org"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.OrgMembership>> OrgsUpdateMembershipForAuthenticatedUserAsResponseAsync(
+            string org,
+
+            global::G.OrgsUpdateMembershipForAuthenticatedUserRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Update an organization membership for the authenticated user<br/>
+        /// Converts the authenticated user to an active member of the organization, if that user has a pending invitation from the organization.
+        /// </summary>
+        /// <param name="org"></param>
         /// <param name="state">
         /// The state that the membership should be in. Only `"active"` will be accepted.
         /// </param>

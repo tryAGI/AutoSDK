@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickMessagesRequestContextManagementEditsItemsOneOf1Keep0(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.MessagesRequestContextManagementEditsItemsOneOf1Keep0? value)
+        {
+            value = MessagesRequestContextManagementEditsItemsOneOf1Keep0;
+            return IsMessagesRequestContextManagementEditsItemsOneOf1Keep0;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.MessagesRequestContextManagementEditsItemsOneOf1Keep1? MessagesRequestContextManagementEditsItemsOneOf1Keep1 { get; init; }
 #else
@@ -47,6 +60,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickMessagesRequestContextManagementEditsItemsOneOf1Keep1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.MessagesRequestContextManagementEditsItemsOneOf1Keep1? value)
+        {
+            value = MessagesRequestContextManagementEditsItemsOneOf1Keep1;
+            return IsMessagesRequestContextManagementEditsItemsOneOf1Keep1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.MessagesRequestContextManagementEditsItemsOneOf1Keep2? MessagesRequestContextManagementEditsItemsOneOf1Keep2 { get; init; }
 #else
@@ -60,6 +86,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessagesRequestContextManagementEditsItemsOneOf1Keep2))]
 #endif
         public bool IsMessagesRequestContextManagementEditsItemsOneOf1Keep2 => MessagesRequestContextManagementEditsItemsOneOf1Keep2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMessagesRequestContextManagementEditsItemsOneOf1Keep2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.MessagesRequestContextManagementEditsItemsOneOf1Keep2? value)
+        {
+            value = MessagesRequestContextManagementEditsItemsOneOf1Keep2;
+            return IsMessagesRequestContextManagementEditsItemsOneOf1Keep2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -158,8 +197,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.MessagesRequestContextManagementEditsItemsOneOf1Keep0?, TResult>? messagesRequestContextManagementEditsItemsOneOf1Keep0 = null,
-            global::System.Func<global::G.MessagesRequestContextManagementEditsItemsOneOf1Keep1?, TResult>? messagesRequestContextManagementEditsItemsOneOf1Keep1 = null,
+            global::System.Func<global::G.MessagesRequestContextManagementEditsItemsOneOf1Keep0, TResult>? messagesRequestContextManagementEditsItemsOneOf1Keep0 = null,
+            global::System.Func<global::G.MessagesRequestContextManagementEditsItemsOneOf1Keep1, TResult>? messagesRequestContextManagementEditsItemsOneOf1Keep1 = null,
             global::System.Func<global::G.MessagesRequestContextManagementEditsItemsOneOf1Keep2?, TResult>? messagesRequestContextManagementEditsItemsOneOf1Keep2 = null,
             bool validate = true)
         {
@@ -188,8 +227,38 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.MessagesRequestContextManagementEditsItemsOneOf1Keep0?>? messagesRequestContextManagementEditsItemsOneOf1Keep0 = null,
-            global::System.Action<global::G.MessagesRequestContextManagementEditsItemsOneOf1Keep1?>? messagesRequestContextManagementEditsItemsOneOf1Keep1 = null,
+            global::System.Action<global::G.MessagesRequestContextManagementEditsItemsOneOf1Keep0>? messagesRequestContextManagementEditsItemsOneOf1Keep0 = null,
+
+            global::System.Action<global::G.MessagesRequestContextManagementEditsItemsOneOf1Keep1>? messagesRequestContextManagementEditsItemsOneOf1Keep1 = null,
+
+            global::System.Action<global::G.MessagesRequestContextManagementEditsItemsOneOf1Keep2?>? messagesRequestContextManagementEditsItemsOneOf1Keep2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsMessagesRequestContextManagementEditsItemsOneOf1Keep0)
+            {
+                messagesRequestContextManagementEditsItemsOneOf1Keep0?.Invoke(MessagesRequestContextManagementEditsItemsOneOf1Keep0!);
+            }
+            else if (IsMessagesRequestContextManagementEditsItemsOneOf1Keep1)
+            {
+                messagesRequestContextManagementEditsItemsOneOf1Keep1?.Invoke(MessagesRequestContextManagementEditsItemsOneOf1Keep1!);
+            }
+            else if (IsMessagesRequestContextManagementEditsItemsOneOf1Keep2)
+            {
+                messagesRequestContextManagementEditsItemsOneOf1Keep2?.Invoke(MessagesRequestContextManagementEditsItemsOneOf1Keep2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.MessagesRequestContextManagementEditsItemsOneOf1Keep0>? messagesRequestContextManagementEditsItemsOneOf1Keep0 = null,
+            global::System.Action<global::G.MessagesRequestContextManagementEditsItemsOneOf1Keep1>? messagesRequestContextManagementEditsItemsOneOf1Keep1 = null,
             global::System.Action<global::G.MessagesRequestContextManagementEditsItemsOneOf1Keep2?>? messagesRequestContextManagementEditsItemsOneOf1Keep2 = null,
             bool validate = true)
         {

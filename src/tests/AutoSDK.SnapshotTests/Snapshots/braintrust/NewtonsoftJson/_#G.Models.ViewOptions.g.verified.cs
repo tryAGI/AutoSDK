@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickMonitorViewOptions(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ViewOptionsMonitorViewOptions? value)
+        {
+            value = MonitorViewOptions;
+            return IsMonitorViewOptions;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ViewOptionsTableViewOptions? TableViewOptions { get; init; }
 #else
@@ -47,6 +60,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickTableViewOptions(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ViewOptionsTableViewOptions? value)
+        {
+            value = TableViewOptions;
+            return IsTableViewOptions;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public object? ViewOptionsVariant3 { get; init; }
 #else
@@ -60,6 +86,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ViewOptionsVariant3))]
 #endif
         public bool IsViewOptionsVariant3 => ViewOptionsVariant3 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickViewOptionsVariant3(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out object? value)
+        {
+            value = ViewOptionsVariant3;
+            return IsViewOptionsVariant3;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -140,9 +179,9 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.ViewOptionsMonitorViewOptions?, TResult>? monitorViewOptions = null,
-            global::System.Func<global::G.ViewOptionsTableViewOptions?, TResult>? tableViewOptions = null,
-            global::System.Func<object?, TResult>? viewOptionsVariant3 = null,
+            global::System.Func<global::G.ViewOptionsMonitorViewOptions, TResult>? monitorViewOptions = null,
+            global::System.Func<global::G.ViewOptionsTableViewOptions, TResult>? tableViewOptions = null,
+            global::System.Func<object, TResult>? viewOptionsVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -170,9 +209,39 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.ViewOptionsMonitorViewOptions?>? monitorViewOptions = null,
-            global::System.Action<global::G.ViewOptionsTableViewOptions?>? tableViewOptions = null,
-            global::System.Action<object?>? viewOptionsVariant3 = null,
+            global::System.Action<global::G.ViewOptionsMonitorViewOptions>? monitorViewOptions = null,
+
+            global::System.Action<global::G.ViewOptionsTableViewOptions>? tableViewOptions = null,
+
+            global::System.Action<object>? viewOptionsVariant3 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsMonitorViewOptions)
+            {
+                monitorViewOptions?.Invoke(MonitorViewOptions!);
+            }
+            else if (IsTableViewOptions)
+            {
+                tableViewOptions?.Invoke(TableViewOptions!);
+            }
+            else if (IsViewOptionsVariant3)
+            {
+                viewOptionsVariant3?.Invoke(ViewOptionsVariant3!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.ViewOptionsMonitorViewOptions>? monitorViewOptions = null,
+            global::System.Action<global::G.ViewOptionsTableViewOptions>? tableViewOptions = null,
+            global::System.Action<object>? viewOptionsVariant3 = null,
             bool validate = true)
         {
             if (validate)

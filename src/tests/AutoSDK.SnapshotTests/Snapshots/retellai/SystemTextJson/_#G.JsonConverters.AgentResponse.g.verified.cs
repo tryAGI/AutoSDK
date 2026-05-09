@@ -24,6 +24,14 @@ namespace G.JsonConverters
                 foreach (var __jsonProp in __jsonDocument.RootElement.EnumerateObject())
                 {
                     __jsonProps.Add(__jsonProp.Name);
+                    if (__jsonProp.Value.ValueKind == global::System.Text.Json.JsonValueKind.Object)
+                    {
+                        foreach (var __nestedJsonProp in __jsonProp.Value.EnumerateObject())
+                        {
+                            __jsonProps.Add(__jsonProp.Name + "." + __nestedJsonProp.Name);
+                        }
+                    }
+
                 }
             }
 
@@ -44,6 +52,8 @@ namespace G.JsonConverters
             if (__jsonProps.Contains("begin_message_delay_ms")) __score1++;
             if (__jsonProps.Contains("boosted_keywords")) __score1++;
             if (__jsonProps.Contains("custom_stt_config")) __score1++;
+            if (__jsonProps.Contains("custom_stt_config.endpointing_ms")) __score1++;
+            if (__jsonProps.Contains("custom_stt_config.provider")) __score1++;
             if (__jsonProps.Contains("data_storage_retention_days")) __score1++;
             if (__jsonProps.Contains("data_storage_setting")) __score1++;
             if (__jsonProps.Contains("denoising_mode")) __score1++;
@@ -53,14 +63,19 @@ namespace G.JsonConverters
             if (__jsonProps.Contains("end_call_after_silence_ms")) __score1++;
             if (__jsonProps.Contains("fallback_voice_ids")) __score1++;
             if (__jsonProps.Contains("guardrail_config")) __score1++;
+            if (__jsonProps.Contains("guardrail_config.input_topics")) __score1++;
+            if (__jsonProps.Contains("guardrail_config.output_topics")) __score1++;
             if (__jsonProps.Contains("interruption_sensitivity")) __score1++;
             if (__jsonProps.Contains("is_public")) __score1++;
             if (__jsonProps.Contains("ivr_option")) __score1++;
+            if (__jsonProps.Contains("ivr_option.action")) __score1++;
             if (__jsonProps.Contains("language")) __score1++;
             if (__jsonProps.Contains("max_call_duration_ms")) __score1++;
             if (__jsonProps.Contains("normalize_for_speech")) __score1++;
             if (__jsonProps.Contains("opt_in_signed_url")) __score1++;
             if (__jsonProps.Contains("pii_config")) __score1++;
+            if (__jsonProps.Contains("pii_config.categories")) __score1++;
+            if (__jsonProps.Contains("pii_config.mode")) __score1++;
             if (__jsonProps.Contains("post_call_analysis_data")) __score1++;
             if (__jsonProps.Contains("post_call_analysis_model")) __score1++;
             if (__jsonProps.Contains("pronunciation_dictionary")) __score1++;
@@ -72,6 +87,9 @@ namespace G.JsonConverters
             if (__jsonProps.Contains("signed_url_expiration_ms")) __score1++;
             if (__jsonProps.Contains("stt_mode")) __score1++;
             if (__jsonProps.Contains("user_dtmf_options")) __score1++;
+            if (__jsonProps.Contains("user_dtmf_options.digit_limit")) __score1++;
+            if (__jsonProps.Contains("user_dtmf_options.termination_key")) __score1++;
+            if (__jsonProps.Contains("user_dtmf_options.timeout_ms")) __score1++;
             if (__jsonProps.Contains("version_description")) __score1++;
             if (__jsonProps.Contains("vocab_specialization")) __score1++;
             if (__jsonProps.Contains("voice_emotion")) __score1++;
@@ -82,6 +100,7 @@ namespace G.JsonConverters
             if (__jsonProps.Contains("voicemail_detection_timeout_ms")) __score1++;
             if (__jsonProps.Contains("voicemail_message")) __score1++;
             if (__jsonProps.Contains("voicemail_option")) __score1++;
+            if (__jsonProps.Contains("voicemail_option.action")) __score1++;
             if (__jsonProps.Contains("volume")) __score1++;
             if (__jsonProps.Contains("webhook_events")) __score1++;
             if (__jsonProps.Contains("webhook_timeout_ms")) __score1++;

@@ -28,6 +28,19 @@ namespace G
         public bool IsCropVariant1 => CropVariant1 != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickCropVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CropVariant1? value)
+        {
+            value = CropVariant1;
+            return IsCropVariant1;
+        }
+
+        /// <summary>
         /// Custom crop
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CropVariant2))]
 #endif
         public bool IsCropVariant2 => CropVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickCropVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CropVariant2? value)
+        {
+            value = CropVariant2;
+            return IsCropVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -119,8 +145,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.CropVariant1?, TResult>? cropVariant1 = null,
-            global::System.Func<global::G.CropVariant2?, TResult>? cropVariant2 = null,
+            global::System.Func<global::G.CropVariant1, TResult>? cropVariant1 = null,
+            global::System.Func<global::G.CropVariant2, TResult>? cropVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -144,8 +170,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.CropVariant1?>? cropVariant1 = null,
-            global::System.Action<global::G.CropVariant2?>? cropVariant2 = null,
+            global::System.Action<global::G.CropVariant1>? cropVariant1 = null,
+
+            global::System.Action<global::G.CropVariant2>? cropVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsCropVariant1)
+            {
+                cropVariant1?.Invoke(CropVariant1!);
+            }
+            else if (IsCropVariant2)
+            {
+                cropVariant2?.Invoke(CropVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.CropVariant1>? cropVariant1 = null,
+            global::System.Action<global::G.CropVariant2>? cropVariant2 = null,
             bool validate = true)
         {
             if (validate)

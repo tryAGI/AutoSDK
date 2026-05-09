@@ -28,6 +28,19 @@ namespace G
         public bool IsEnum => Enum != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickEnum(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.OptimizersStatusEnum? value)
+        {
+            value = Enum;
+            return IsEnum;
+        }
+
+        /// <summary>
         /// Something wrong happened with optimizers
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Enum2))]
 #endif
         public bool IsEnum2 => Enum2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickEnum2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.OptimizersStatusEnum2? value)
+        {
+            value = Enum2;
+            return IsEnum2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -120,7 +146,7 @@ namespace G
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::G.OptimizersStatusEnum?, TResult>? @enum = null,
-            global::System.Func<global::G.OptimizersStatusEnum2?, TResult>? enum2 = null,
+            global::System.Func<global::G.OptimizersStatusEnum2, TResult>? enum2 = null,
             bool validate = true)
         {
             if (validate)
@@ -145,7 +171,31 @@ namespace G
         /// </summary>
         public void Match(
             global::System.Action<global::G.OptimizersStatusEnum?>? @enum = null,
-            global::System.Action<global::G.OptimizersStatusEnum2?>? enum2 = null,
+
+            global::System.Action<global::G.OptimizersStatusEnum2>? enum2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsEnum)
+            {
+                @enum?.Invoke(Enum!);
+            }
+            else if (IsEnum2)
+            {
+                enum2?.Invoke(Enum2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.OptimizersStatusEnum?>? @enum = null,
+            global::System.Action<global::G.OptimizersStatusEnum2>? enum2 = null,
             bool validate = true)
         {
             if (validate)

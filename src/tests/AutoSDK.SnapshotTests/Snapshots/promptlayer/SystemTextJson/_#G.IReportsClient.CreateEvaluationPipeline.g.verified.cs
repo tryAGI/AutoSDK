@@ -22,6 +22,19 @@ namespace G
         /// Create Evaluation Pipeline<br/>
         /// Creates a new evaluation pipeline (report) with optional evaluation columns and custom scoring.
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.CreateEvaluationPipelineResponse>> CreateEvaluationPipelineAsResponseAsync(
+
+            global::G.CreateEvaluationPipelineRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create Evaluation Pipeline<br/>
+        /// Creates a new evaluation pipeline (report) with optional evaluation columns and custom scoring.
+        /// </summary>
         /// <param name="datasetGroupId">
         /// The ID of the dataset group containing the dataset versions to evaluate. The dataset group must be within a workspace accessible to the authenticated user.
         /// </param>

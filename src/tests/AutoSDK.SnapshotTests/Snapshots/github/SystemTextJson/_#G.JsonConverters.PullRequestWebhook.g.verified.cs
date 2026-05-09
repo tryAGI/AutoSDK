@@ -24,18 +24,64 @@ namespace G.JsonConverters
                 foreach (var __jsonProp in __jsonDocument.RootElement.EnumerateObject())
                 {
                     __jsonProps.Add(__jsonProp.Name);
+                    if (__jsonProp.Value.ValueKind == global::System.Text.Json.JsonValueKind.Object)
+                    {
+                        foreach (var __nestedJsonProp in __jsonProp.Value.EnumerateObject())
+                        {
+                            __jsonProps.Add(__jsonProp.Name + "." + __nestedJsonProp.Name);
+                        }
+                    }
+
                 }
             }
 
             var __score0 = 0;
             if (__jsonProps.Contains("_links")) __score0++;
+            if (__jsonProps.Contains("_links.comments")) __score0++;
+            if (__jsonProps.Contains("_links.commits")) __score0++;
+            if (__jsonProps.Contains("_links.html")) __score0++;
+            if (__jsonProps.Contains("_links.issue")) __score0++;
+            if (__jsonProps.Contains("_links.review_comment")) __score0++;
+            if (__jsonProps.Contains("_links.review_comments")) __score0++;
+            if (__jsonProps.Contains("_links.self")) __score0++;
+            if (__jsonProps.Contains("_links.statuses")) __score0++;
             if (__jsonProps.Contains("active_lock_reason")) __score0++;
             if (__jsonProps.Contains("additions")) __score0++;
             if (__jsonProps.Contains("assignee")) __score0++;
+            if (__jsonProps.Contains("assignee.avatar_url")) __score0++;
+            if (__jsonProps.Contains("assignee.email")) __score0++;
+            if (__jsonProps.Contains("assignee.events_url")) __score0++;
+            if (__jsonProps.Contains("assignee.followers_url")) __score0++;
+            if (__jsonProps.Contains("assignee.following_url")) __score0++;
+            if (__jsonProps.Contains("assignee.gists_url")) __score0++;
+            if (__jsonProps.Contains("assignee.gravatar_id")) __score0++;
+            if (__jsonProps.Contains("assignee.html_url")) __score0++;
+            if (__jsonProps.Contains("assignee.id")) __score0++;
+            if (__jsonProps.Contains("assignee.login")) __score0++;
+            if (__jsonProps.Contains("assignee.name")) __score0++;
+            if (__jsonProps.Contains("assignee.node_id")) __score0++;
+            if (__jsonProps.Contains("assignee.organizations_url")) __score0++;
+            if (__jsonProps.Contains("assignee.received_events_url")) __score0++;
+            if (__jsonProps.Contains("assignee.repos_url")) __score0++;
+            if (__jsonProps.Contains("assignee.site_admin")) __score0++;
+            if (__jsonProps.Contains("assignee.starred_at")) __score0++;
+            if (__jsonProps.Contains("assignee.starred_url")) __score0++;
+            if (__jsonProps.Contains("assignee.subscriptions_url")) __score0++;
+            if (__jsonProps.Contains("assignee.type")) __score0++;
+            if (__jsonProps.Contains("assignee.url")) __score0++;
             if (__jsonProps.Contains("assignees")) __score0++;
             if (__jsonProps.Contains("author_association")) __score0++;
             if (__jsonProps.Contains("auto_merge")) __score0++;
+            if (__jsonProps.Contains("auto_merge.commit_message")) __score0++;
+            if (__jsonProps.Contains("auto_merge.commit_title")) __score0++;
+            if (__jsonProps.Contains("auto_merge.enabled_by")) __score0++;
+            if (__jsonProps.Contains("auto_merge.merge_method")) __score0++;
             if (__jsonProps.Contains("base")) __score0++;
+            if (__jsonProps.Contains("base.label")) __score0++;
+            if (__jsonProps.Contains("base.ref")) __score0++;
+            if (__jsonProps.Contains("base.repo")) __score0++;
+            if (__jsonProps.Contains("base.sha")) __score0++;
+            if (__jsonProps.Contains("base.user")) __score0++;
             if (__jsonProps.Contains("body")) __score0++;
             if (__jsonProps.Contains("changed_files")) __score0++;
             if (__jsonProps.Contains("closed_at")) __score0++;
@@ -48,6 +94,11 @@ namespace G.JsonConverters
             if (__jsonProps.Contains("diff_url")) __score0++;
             if (__jsonProps.Contains("draft")) __score0++;
             if (__jsonProps.Contains("head")) __score0++;
+            if (__jsonProps.Contains("head.label")) __score0++;
+            if (__jsonProps.Contains("head.ref")) __score0++;
+            if (__jsonProps.Contains("head.repo")) __score0++;
+            if (__jsonProps.Contains("head.sha")) __score0++;
+            if (__jsonProps.Contains("head.user")) __score0++;
             if (__jsonProps.Contains("html_url")) __score0++;
             if (__jsonProps.Contains("id")) __score0++;
             if (__jsonProps.Contains("issue_url")) __score0++;
@@ -60,7 +111,44 @@ namespace G.JsonConverters
             if (__jsonProps.Contains("merged")) __score0++;
             if (__jsonProps.Contains("merged_at")) __score0++;
             if (__jsonProps.Contains("merged_by")) __score0++;
+            if (__jsonProps.Contains("merged_by.avatar_url")) __score0++;
+            if (__jsonProps.Contains("merged_by.email")) __score0++;
+            if (__jsonProps.Contains("merged_by.events_url")) __score0++;
+            if (__jsonProps.Contains("merged_by.followers_url")) __score0++;
+            if (__jsonProps.Contains("merged_by.following_url")) __score0++;
+            if (__jsonProps.Contains("merged_by.gists_url")) __score0++;
+            if (__jsonProps.Contains("merged_by.gravatar_id")) __score0++;
+            if (__jsonProps.Contains("merged_by.html_url")) __score0++;
+            if (__jsonProps.Contains("merged_by.id")) __score0++;
+            if (__jsonProps.Contains("merged_by.login")) __score0++;
+            if (__jsonProps.Contains("merged_by.name")) __score0++;
+            if (__jsonProps.Contains("merged_by.node_id")) __score0++;
+            if (__jsonProps.Contains("merged_by.organizations_url")) __score0++;
+            if (__jsonProps.Contains("merged_by.received_events_url")) __score0++;
+            if (__jsonProps.Contains("merged_by.repos_url")) __score0++;
+            if (__jsonProps.Contains("merged_by.site_admin")) __score0++;
+            if (__jsonProps.Contains("merged_by.starred_at")) __score0++;
+            if (__jsonProps.Contains("merged_by.starred_url")) __score0++;
+            if (__jsonProps.Contains("merged_by.subscriptions_url")) __score0++;
+            if (__jsonProps.Contains("merged_by.type")) __score0++;
+            if (__jsonProps.Contains("merged_by.url")) __score0++;
             if (__jsonProps.Contains("milestone")) __score0++;
+            if (__jsonProps.Contains("milestone.closed_at")) __score0++;
+            if (__jsonProps.Contains("milestone.closed_issues")) __score0++;
+            if (__jsonProps.Contains("milestone.created_at")) __score0++;
+            if (__jsonProps.Contains("milestone.creator")) __score0++;
+            if (__jsonProps.Contains("milestone.description")) __score0++;
+            if (__jsonProps.Contains("milestone.due_on")) __score0++;
+            if (__jsonProps.Contains("milestone.html_url")) __score0++;
+            if (__jsonProps.Contains("milestone.id")) __score0++;
+            if (__jsonProps.Contains("milestone.labels_url")) __score0++;
+            if (__jsonProps.Contains("milestone.node_id")) __score0++;
+            if (__jsonProps.Contains("milestone.number")) __score0++;
+            if (__jsonProps.Contains("milestone.open_issues")) __score0++;
+            if (__jsonProps.Contains("milestone.state")) __score0++;
+            if (__jsonProps.Contains("milestone.title")) __score0++;
+            if (__jsonProps.Contains("milestone.updated_at")) __score0++;
+            if (__jsonProps.Contains("milestone.url")) __score0++;
             if (__jsonProps.Contains("node_id")) __score0++;
             if (__jsonProps.Contains("number")) __score0++;
             if (__jsonProps.Contains("patch_url")) __score0++;
@@ -76,6 +164,27 @@ namespace G.JsonConverters
             if (__jsonProps.Contains("updated_at")) __score0++;
             if (__jsonProps.Contains("url")) __score0++;
             if (__jsonProps.Contains("user")) __score0++;
+            if (__jsonProps.Contains("user.avatar_url")) __score0++;
+            if (__jsonProps.Contains("user.email")) __score0++;
+            if (__jsonProps.Contains("user.events_url")) __score0++;
+            if (__jsonProps.Contains("user.followers_url")) __score0++;
+            if (__jsonProps.Contains("user.following_url")) __score0++;
+            if (__jsonProps.Contains("user.gists_url")) __score0++;
+            if (__jsonProps.Contains("user.gravatar_id")) __score0++;
+            if (__jsonProps.Contains("user.html_url")) __score0++;
+            if (__jsonProps.Contains("user.id")) __score0++;
+            if (__jsonProps.Contains("user.login")) __score0++;
+            if (__jsonProps.Contains("user.name")) __score0++;
+            if (__jsonProps.Contains("user.node_id")) __score0++;
+            if (__jsonProps.Contains("user.organizations_url")) __score0++;
+            if (__jsonProps.Contains("user.received_events_url")) __score0++;
+            if (__jsonProps.Contains("user.repos_url")) __score0++;
+            if (__jsonProps.Contains("user.site_admin")) __score0++;
+            if (__jsonProps.Contains("user.starred_at")) __score0++;
+            if (__jsonProps.Contains("user.starred_url")) __score0++;
+            if (__jsonProps.Contains("user.subscriptions_url")) __score0++;
+            if (__jsonProps.Contains("user.type")) __score0++;
+            if (__jsonProps.Contains("user.url")) __score0++;
             var __score1 = 0;
             if (__jsonProps.Contains("allow_auto_merge")) __score1++;
             if (__jsonProps.Contains("allow_update_branch")) __score1++;

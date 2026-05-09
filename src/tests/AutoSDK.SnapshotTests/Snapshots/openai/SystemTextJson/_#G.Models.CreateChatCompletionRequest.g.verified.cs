@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickModelResponseProperties(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateModelResponseProperties? value)
+        {
+            value = ModelResponseProperties;
+            return IsModelResponseProperties;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CreateChatCompletionRequestVariant2? CreateChatCompletionRequestVariant2 { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CreateChatCompletionRequestVariant2))]
 #endif
         public bool IsCreateChatCompletionRequestVariant2 => CreateChatCompletionRequestVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickCreateChatCompletionRequestVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateChatCompletionRequestVariant2? value)
+        {
+            value = CreateChatCompletionRequestVariant2;
+            return IsCreateChatCompletionRequestVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -120,7 +146,7 @@ namespace G
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::G.CreateModelResponseProperties?, TResult>? modelResponseProperties = null,
-            global::System.Func<global::G.CreateChatCompletionRequestVariant2?, TResult>? createChatCompletionRequestVariant2 = null,
+            global::System.Func<global::G.CreateChatCompletionRequestVariant2, TResult>? createChatCompletionRequestVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -145,7 +171,31 @@ namespace G
         /// </summary>
         public void Match(
             global::System.Action<global::G.CreateModelResponseProperties?>? modelResponseProperties = null,
-            global::System.Action<global::G.CreateChatCompletionRequestVariant2?>? createChatCompletionRequestVariant2 = null,
+
+            global::System.Action<global::G.CreateChatCompletionRequestVariant2>? createChatCompletionRequestVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsModelResponseProperties)
+            {
+                modelResponseProperties?.Invoke(ModelResponseProperties!);
+            }
+            else if (IsCreateChatCompletionRequestVariant2)
+            {
+                createChatCompletionRequestVariant2?.Invoke(CreateChatCompletionRequestVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.CreateModelResponseProperties?>? modelResponseProperties = null,
+            global::System.Action<global::G.CreateChatCompletionRequestVariant2>? createChatCompletionRequestVariant2 = null,
             bool validate = true)
         {
             if (validate)

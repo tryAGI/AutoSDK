@@ -23,5 +23,23 @@ namespace G
             global::System.Collections.Generic.IList<string>? chunkUids = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// List catalog chunks<br/>
+        /// Returns a paginated list of catalog chunks.
+        /// </summary>
+        /// <param name="namespaceId"></param>
+        /// <param name="catalogId"></param>
+        /// <param name="fileUid"></param>
+        /// <param name="chunkUids"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.ListChunksResponse>> ListChunksAsResponseAsync(
+            string namespaceId,
+            string catalogId,
+            string? fileUid = default,
+            global::System.Collections.Generic.IList<string>? chunkUids = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

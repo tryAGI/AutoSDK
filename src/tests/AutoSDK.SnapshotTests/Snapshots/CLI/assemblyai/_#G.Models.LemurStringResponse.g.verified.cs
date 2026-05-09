@@ -29,6 +29,19 @@ namespace G
         public bool IsLemurStringResponseVariant1 => LemurStringResponseVariant1 != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickLemurStringResponseVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.LemurStringResponseVariant1? value)
+        {
+            value = LemurStringResponseVariant1;
+            return IsLemurStringResponseVariant1;
+        }
+
+        /// <summary>
         /// LeMUR base response<br/>
         /// Example: {"request_id":"5e1b27c2-691f-4414-8bc5-f14678442f9e","usage":{"input_tokens":27,"output_tokens":3}}
         /// </summary>
@@ -45,6 +58,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Base))]
 #endif
         public bool IsBase => Base != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickBase(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.LemurBaseResponse? value)
+        {
+            value = Base;
+            return IsBase;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -121,8 +147,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.LemurStringResponseVariant1?, TResult>? lemurStringResponseVariant1 = null,
-            global::System.Func<global::G.LemurBaseResponse?, TResult>? @base = null,
+            global::System.Func<global::G.LemurStringResponseVariant1, TResult>? lemurStringResponseVariant1 = null,
+            global::System.Func<global::G.LemurBaseResponse, TResult>? @base = null,
             bool validate = true)
         {
             if (validate)
@@ -146,8 +172,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.LemurStringResponseVariant1?>? lemurStringResponseVariant1 = null,
-            global::System.Action<global::G.LemurBaseResponse?>? @base = null,
+            global::System.Action<global::G.LemurStringResponseVariant1>? lemurStringResponseVariant1 = null,
+
+            global::System.Action<global::G.LemurBaseResponse>? @base = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsLemurStringResponseVariant1)
+            {
+                lemurStringResponseVariant1?.Invoke(LemurStringResponseVariant1!);
+            }
+            else if (IsBase)
+            {
+                @base?.Invoke(Base!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.LemurStringResponseVariant1>? lemurStringResponseVariant1 = null,
+            global::System.Action<global::G.LemurBaseResponse>? @base = null,
             bool validate = true)
         {
             if (validate)

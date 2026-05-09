@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickBase(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ToolBase? value)
+        {
+            value = Base;
+            return IsBase;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.StructuredIndexingToolVariant2? StructuredIndexingToolVariant2 { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(StructuredIndexingToolVariant2))]
 #endif
         public bool IsStructuredIndexingToolVariant2 => StructuredIndexingToolVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickStructuredIndexingToolVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.StructuredIndexingToolVariant2? value)
+        {
+            value = StructuredIndexingToolVariant2;
+            return IsStructuredIndexingToolVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -119,8 +145,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.ToolBase?, TResult>? @base = null,
-            global::System.Func<global::G.StructuredIndexingToolVariant2?, TResult>? structuredIndexingToolVariant2 = null,
+            global::System.Func<global::G.ToolBase, TResult>? @base = null,
+            global::System.Func<global::G.StructuredIndexingToolVariant2, TResult>? structuredIndexingToolVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -144,8 +170,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.ToolBase?>? @base = null,
-            global::System.Action<global::G.StructuredIndexingToolVariant2?>? structuredIndexingToolVariant2 = null,
+            global::System.Action<global::G.ToolBase>? @base = null,
+
+            global::System.Action<global::G.StructuredIndexingToolVariant2>? structuredIndexingToolVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsBase)
+            {
+                @base?.Invoke(Base!);
+            }
+            else if (IsStructuredIndexingToolVariant2)
+            {
+                structuredIndexingToolVariant2?.Invoke(StructuredIndexingToolVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.ToolBase>? @base = null,
+            global::System.Action<global::G.StructuredIndexingToolVariant2>? structuredIndexingToolVariant2 = null,
             bool validate = true)
         {
             if (validate)

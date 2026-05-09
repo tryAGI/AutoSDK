@@ -40,5 +40,40 @@ namespace G
             int? limit = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Index<br/>
+        /// List pipeline families.<br/>
+        /// Depending on parameters this can mean all public families, or a user/team's<br/>
+        /// specific families.<br/>
+        /// Can also be ordered and filtered based on family name.
+        /// </summary>
+        /// <param name="userId"></param>
+        /// <param name="teamId"></param>
+        /// <param name="orderBy">
+        /// Default Value: popular
+        /// </param>
+        /// <param name="search"></param>
+        /// <param name="includeAllRun">
+        /// Default Value: false
+        /// </param>
+        /// <param name="skip">
+        /// Default Value: 0
+        /// </param>
+        /// <param name="limit">
+        /// Default Value: 20
+        /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.PaginatedPipelineFamilyGet>> IndexAsResponseAsync(
+            string? userId = default,
+            string? teamId = default,
+            global::G.OrderBy? orderBy = default,
+            string? search = default,
+            bool? includeAllRun = default,
+            int? skip = default,
+            int? limit = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

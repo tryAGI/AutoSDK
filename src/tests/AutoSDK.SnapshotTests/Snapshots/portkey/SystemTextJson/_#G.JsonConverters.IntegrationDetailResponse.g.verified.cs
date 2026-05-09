@@ -24,6 +24,14 @@ namespace G.JsonConverters
                 foreach (var __jsonProp in __jsonDocument.RootElement.EnumerateObject())
                 {
                     __jsonProps.Add(__jsonProp.Name);
+                    if (__jsonProp.Value.ValueKind == global::System.Text.Json.JsonValueKind.Object)
+                    {
+                        foreach (var __nestedJsonProp in __jsonProp.Value.EnumerateObject())
+                        {
+                            __jsonProps.Add(__jsonProp.Name + "." + __nestedJsonProp.Name);
+                        }
+                    }
+
                 }
             }
 
@@ -42,6 +50,9 @@ namespace G.JsonConverters
             if (__jsonProps.Contains("allow_all_models")) __score1++;
             if (__jsonProps.Contains("configurations")) __score1++;
             if (__jsonProps.Contains("global_workspace_access_settings")) __score1++;
+            if (__jsonProps.Contains("global_workspace_access_settings.enabled")) __score1++;
+            if (__jsonProps.Contains("global_workspace_access_settings.rate_limits")) __score1++;
+            if (__jsonProps.Contains("global_workspace_access_settings.usage_limits")) __score1++;
             if (__jsonProps.Contains("masked_key")) __score1++;
             if (__jsonProps.Contains("secret_mappings")) __score1++;
             if (__jsonProps.Contains("workspace_count")) __score1++;

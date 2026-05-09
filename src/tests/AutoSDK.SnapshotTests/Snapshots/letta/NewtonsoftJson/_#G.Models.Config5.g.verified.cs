@@ -13,6 +13,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public string? Type { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.PipelinesCreatePipelineResponsePipelineConfigVariant1? SlackChannelReader { get; init; }
 #else
@@ -30,6 +35,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickSlackChannelReader(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.PipelinesCreatePipelineResponsePipelineConfigVariant1? value)
+        {
+            value = SlackChannelReader;
+            return IsSlackChannelReader;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.PipelinesCreatePipelineResponsePipelineConfigVariant2? CustomWebhook { get; init; }
 #else
@@ -43,6 +61,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CustomWebhook))]
 #endif
         public bool IsCustomWebhook => CustomWebhook != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickCustomWebhook(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.PipelinesCreatePipelineResponsePipelineConfigVariant2? value)
+        {
+            value = CustomWebhook;
+            return IsCustomWebhook;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -83,10 +114,13 @@ namespace G
         /// 
         /// </summary>
         public Config5(
+            string? type,
             global::G.PipelinesCreatePipelineResponsePipelineConfigVariant1? slackChannelReader,
             global::G.PipelinesCreatePipelineResponsePipelineConfigVariant2? customWebhook
             )
         {
+            Type = type;
+
             SlackChannelReader = slackChannelReader;
             CustomWebhook = customWebhook;
         }
@@ -119,8 +153,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.PipelinesCreatePipelineResponsePipelineConfigVariant1?, TResult>? slackChannelReader = null,
-            global::System.Func<global::G.PipelinesCreatePipelineResponsePipelineConfigVariant2?, TResult>? customWebhook = null,
+            global::System.Func<global::G.PipelinesCreatePipelineResponsePipelineConfigVariant1, TResult>? slackChannelReader = null,
+            global::System.Func<global::G.PipelinesCreatePipelineResponsePipelineConfigVariant2, TResult>? customWebhook = null,
             bool validate = true)
         {
             if (validate)
@@ -144,8 +178,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.PipelinesCreatePipelineResponsePipelineConfigVariant1?>? slackChannelReader = null,
-            global::System.Action<global::G.PipelinesCreatePipelineResponsePipelineConfigVariant2?>? customWebhook = null,
+            global::System.Action<global::G.PipelinesCreatePipelineResponsePipelineConfigVariant1>? slackChannelReader = null,
+
+            global::System.Action<global::G.PipelinesCreatePipelineResponsePipelineConfigVariant2>? customWebhook = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsSlackChannelReader)
+            {
+                slackChannelReader?.Invoke(SlackChannelReader!);
+            }
+            else if (IsCustomWebhook)
+            {
+                customWebhook?.Invoke(CustomWebhook!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.PipelinesCreatePipelineResponsePipelineConfigVariant1>? slackChannelReader = null,
+            global::System.Action<global::G.PipelinesCreatePipelineResponsePipelineConfigVariant2>? customWebhook = null,
             bool validate = true)
         {
             if (validate)

@@ -22,6 +22,19 @@ namespace G
         /// 语音合成<br/>
         /// {"0":{"ops":[{"insert":"将指定文本合成为音频文件。\n"},{"attributes":{"anchor":"677ab7d5","heading":"h2","lmkr":"1"},"insert":"*"},{"insert":"接口描述\n"},{"attributes":{"lmkr":"1"},"insert":"*"},{"insert":"此 API 用于将指定文本内容合成为自然流畅的音频，同步返回合成的音频文件，适用于有声书合成、智能客服语音、音视频配音等场景。合成音频文件之前，可以先调用"},{"attributes":{"hyperlink":"{\"href\":\"https://www.coze.cn/open/docs/developer_guides/list_voices\",\"linkId\":\"ZEUd6rdOvN\"}"},"insert":"查看音色列表"},{"insert":" API，查看所有可用音色。\n"},{"attributes":{"lmkr":"1"},"insert":"*"},{"attributes":{"zoneId":"KCecIryVWB","zoneType":"Z","type":"warning","title":"注意","border":"#fed4a4","background":"#fff5eb","highlight-block-v2":"true"},"insert":" "},{"insert":"\n"}],"zoneId":"0","zoneType":"Z"},"KCecIryVWB":{"ops":[{"insert":"调用语音合成 API 会产生"},{"attributes":{"bold":"true"},"insert":"语音合成费用"},{"insert":"，具体费用详情请参考"},{"attributes":{"hyperlink":"{\"href\":\"https://www.coze.cn/open/docs/coze_pro/asr_tts_fee#b7ced22d\",\"linkId\":\"CEZbHqqDri\",\"newTab\":true}"},"insert":"音视频费用"},{"insert":"。\n"}],"zoneId":"KCecIryVWB","zoneType":"Z"}}
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.PublicAudioSpeechResponse>> PublicAudioSpeechAsResponseAsync(
+
+            global::G.PublicAudioSpeechRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// 语音合成<br/>
+        /// {"0":{"ops":[{"insert":"将指定文本合成为音频文件。\n"},{"attributes":{"anchor":"677ab7d5","heading":"h2","lmkr":"1"},"insert":"*"},{"insert":"接口描述\n"},{"attributes":{"lmkr":"1"},"insert":"*"},{"insert":"此 API 用于将指定文本内容合成为自然流畅的音频，同步返回合成的音频文件，适用于有声书合成、智能客服语音、音视频配音等场景。合成音频文件之前，可以先调用"},{"attributes":{"hyperlink":"{\"href\":\"https://www.coze.cn/open/docs/developer_guides/list_voices\",\"linkId\":\"ZEUd6rdOvN\"}"},"insert":"查看音色列表"},{"insert":" API，查看所有可用音色。\n"},{"attributes":{"lmkr":"1"},"insert":"*"},{"attributes":{"zoneId":"KCecIryVWB","zoneType":"Z","type":"warning","title":"注意","border":"#fed4a4","background":"#fff5eb","highlight-block-v2":"true"},"insert":" "},{"insert":"\n"}],"zoneId":"0","zoneType":"Z"},"KCecIryVWB":{"ops":[{"insert":"调用语音合成 API 会产生"},{"attributes":{"bold":"true"},"insert":"语音合成费用"},{"insert":"，具体费用详情请参考"},{"attributes":{"hyperlink":"{\"href\":\"https://www.coze.cn/open/docs/coze_pro/asr_tts_fee#b7ced22d\",\"linkId\":\"CEZbHqqDri\",\"newTab\":true}"},"insert":"音视频费用"},{"insert":"。\n"}],"zoneId":"KCecIryVWB","zoneType":"Z"}}
+        /// </summary>
         /// <param name="contextTexts">
         /// 语音合成辅助信息
         /// </param>

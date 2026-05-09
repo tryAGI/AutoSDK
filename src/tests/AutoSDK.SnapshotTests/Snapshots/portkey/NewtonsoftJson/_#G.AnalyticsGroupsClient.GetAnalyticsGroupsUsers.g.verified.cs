@@ -7,6 +7,19 @@ namespace G
     public partial class AnalyticsGroupsClient
     {
 
+        private static readonly global::G.AutoSDKServer[] s_GetAnalyticsGroupsUsersServers = new global::G.AutoSDKServer[]
+        {            new global::G.AutoSDKServer(
+                id: "https-api-portkey-ai-v1",
+                name: "Portkey API Public Endpoint",
+                url: "https://api.portkey.ai/v1",
+                description: "Portkey API Public Endpoint"),
+            new global::G.AutoSDKServer(
+                id: "self-hosted-control-plane-url",
+                name: "Self-Hosted Control Plane URL",
+                url: "SELF_HOSTED_CONTROL_PLANE_URL",
+                description: "Self-Hosted Control Plane URL"),
+        };
+
 
         private static readonly global::G.EndPointSecurityRequirement s_GetAnalyticsGroupsUsersSecurityRequirement0 =
             new global::G.EndPointSecurityRequirement
@@ -294,9 +307,12 @@ namespace G
 
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
+
                             var __pathBuilder = new global::G.PathBuilder(
                                 path: "/analytics/groups/users",
-                                baseUri: HttpClient.BaseAddress); 
+                                baseUri: ResolveBaseUri(
+                                servers: s_GetAnalyticsGroupsUsersServers,
+                                defaultBaseUrl: "https://api.portkey.ai/v1"));
                             __pathBuilder
                                 .AddRequiredParameter("workspace_slug", workspaceSlug)
                                 .AddRequiredParameter("time_of_generation_min", timeOfGenerationMin.ToString("yyyy-MM-ddTHH:mm:ssZ"))
@@ -321,7 +337,7 @@ namespace G
                                 .AddOptionalParameter("ai_org_model", aiOrgModel)
                                 .AddOptionalParameter("trace_id", traceId)
                                 .AddOptionalParameter("span_id", spanId)
-                                .AddOptionalParameter("prompt_slug", promptSlug) 
+                                .AddOptionalParameter("prompt_slug", promptSlug)
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::G.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -363,9 +379,9 @@ namespace G
                 PrepareGetAnalyticsGroupsUsersRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    workspaceSlug: workspaceSlug,
-                    timeOfGenerationMin: timeOfGenerationMin,
-                    timeOfGenerationMax: timeOfGenerationMax,
+                    workspaceSlug: workspaceSlug!,
+                    timeOfGenerationMin: timeOfGenerationMin!,
+                    timeOfGenerationMax: timeOfGenerationMax!,
                     totalUnitsMin: totalUnitsMin,
                     totalUnitsMax: totalUnitsMax,
                     costMin: costMin,
@@ -416,6 +432,8 @@ namespace G
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                     try
                     {
@@ -426,6 +444,11 @@ namespace G
                     }
                     catch (global::System.Net.Http.HttpRequestException __exception)
                     {
+                        var __retryDelay = global::G.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: null,
+                            attempt: __attempt);
                         var __willRetry = __attempt < __maxAttempts && !__effectiveCancellationToken.IsCancellationRequested;
                         await global::G.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
@@ -443,6 +466,8 @@ namespace G
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: __willRetry,
+                                retryDelay: __willRetry ? __retryDelay : (global::System.TimeSpan?)null,
+                                retryReason: "exception",
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         if (!__willRetry)
                         {
@@ -452,8 +477,7 @@ namespace G
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::G.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -462,6 +486,11 @@ namespace G
                         __attempt < __maxAttempts &&
                         global::G.AutoSDKRequestOptionsSupport.ShouldRetryStatusCode(__response.StatusCode))
                     {
+                        var __retryDelay = global::G.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: __response,
+                            attempt: __attempt);
                         await global::G.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
@@ -478,14 +507,15 @@ namespace G
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: true,
+                                retryDelay: __retryDelay,
+                                retryReason: "status:" + ((int)__response.StatusCode).ToString(global::System.Globalization.CultureInfo.InvariantCulture),
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         __response.Dispose();
                         __response = null;
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::G.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -525,6 +555,8 @@ namespace G
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
                 else
@@ -545,6 +577,8 @@ namespace G
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
 
@@ -574,6 +608,7 @@ namespace G
                                     return new global::G.AutoSDKHttpResponse<global::G.GetAnalyticsGroupsUsersResponse>(
                                         statusCode: __response.StatusCode,
                                         headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri,
                                         body: __value);
                                 }
                                 catch (global::System.Exception __ex)
@@ -607,6 +642,7 @@ namespace G
                                     return new global::G.AutoSDKHttpResponse<global::G.GetAnalyticsGroupsUsersResponse>(
                                         statusCode: __response.StatusCode,
                                         headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri,
                                         body: __value);
                                 }
                                 catch (global::System.Exception __ex)

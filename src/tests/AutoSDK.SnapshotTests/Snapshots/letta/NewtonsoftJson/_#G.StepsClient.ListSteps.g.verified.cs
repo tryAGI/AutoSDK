@@ -7,6 +7,19 @@ namespace G
     public partial class StepsClient
     {
 
+        private static readonly global::G.AutoSDKServer[] s_ListStepsServers = new global::G.AutoSDKServer[]
+        {            new global::G.AutoSDKServer(
+                id: "https-app-letta-com",
+                name: "Letta Cloud",
+                url: "https://app.letta.com/",
+                description: "Letta Cloud"),
+            new global::G.AutoSDKServer(
+                id: "http-localhost",
+                name: "Self-hosted",
+                url: "http://localhost:8283/",
+                description: "Self-hosted"),
+        };
+
 
         private static readonly global::G.EndPointSecurityRequirement s_ListStepsSecurityRequirement0 =
             new global::G.EndPointSecurityRequirement
@@ -144,6 +157,102 @@ namespace G
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var __response = await ListStepsAsResponseAsync(
+                before: before,
+                after: after,
+                limit: limit,
+                order: order,
+                orderBy: orderBy,
+                startDate: startDate,
+                endDate: endDate,
+                model: model,
+                agentId: agentId,
+                traceIds: traceIds,
+                feedback: feedback,
+                hasFeedback: hasFeedback,
+                tags: tags,
+                projectId: projectId,
+                xProject: xProject,
+                requestOptions: requestOptions,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// List Steps<br/>
+        /// List steps with optional pagination and date filters.
+        /// </summary>
+        /// <param name="before">
+        /// Return steps before this step ID
+        /// </param>
+        /// <param name="after">
+        /// Return steps after this step ID
+        /// </param>
+        /// <param name="limit">
+        /// Maximum number of steps to return<br/>
+        /// Default Value: 50
+        /// </param>
+        /// <param name="order">
+        /// Sort order for steps by creation time. 'asc' for oldest first, 'desc' for newest first<br/>
+        /// Default Value: desc
+        /// </param>
+        /// <param name="orderBy">
+        /// Field to sort by<br/>
+        /// Default Value: created_at
+        /// </param>
+        /// <param name="startDate">
+        /// Return steps after this ISO datetime (e.g. "2025-01-29T15:01:19-08:00")
+        /// </param>
+        /// <param name="endDate">
+        /// Return steps before this ISO datetime (e.g. "2025-01-29T15:01:19-08:00")
+        /// </param>
+        /// <param name="model">
+        /// Filter by the name of the model used for the step
+        /// </param>
+        /// <param name="agentId">
+        /// Filter by the ID of the agent that performed the step
+        /// </param>
+        /// <param name="traceIds">
+        /// Filter by trace ids returned by the server
+        /// </param>
+        /// <param name="feedback">
+        /// Filter by feedback
+        /// </param>
+        /// <param name="hasFeedback">
+        /// Filter by whether steps have feedback (true) or not (false)
+        /// </param>
+        /// <param name="tags">
+        /// Filter by tags
+        /// </param>
+        /// <param name="projectId">
+        /// Filter by the project ID that is associated with the step (cloud only).
+        /// </param>
+        /// <param name="xProject">
+        /// Filter by project slug to associate with the group (cloud only).
+        /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::G.Step>>> ListStepsAsResponseAsync(
+            string? before = default,
+            string? after = default,
+            int? limit = default,
+            global::G.ListStepsOrder? order = default,
+            string? orderBy = default,
+            string? startDate = default,
+            string? endDate = default,
+            string? model = default,
+            string? agentId = default,
+            global::System.Collections.Generic.IList<string>? traceIds = default,
+            global::G.ListStepsFeedback2? feedback = default,
+            bool? hasFeedback = default,
+            global::System.Collections.Generic.IList<string>? tags = default,
+            string? projectId = default,
+            string? xProject = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             PrepareArguments(
                 client: HttpClient);
             PrepareListStepsArguments(
@@ -192,9 +301,12 @@ namespace G
 
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
+
                             var __pathBuilder = new global::G.PathBuilder(
                                 path: "/v1/steps/",
-                                baseUri: HttpClient.BaseAddress); 
+                                baseUri: ResolveBaseUri(
+                                servers: s_ListStepsServers,
+                                defaultBaseUrl: "https://app.letta.com/"));
                             __pathBuilder
                                 .AddOptionalParameter("before", before)
                                 .AddOptionalParameter("after", after)
@@ -209,7 +321,7 @@ namespace G
                                 .AddOptionalParameter("feedback", feedback?.ToString())
                                 .AddOptionalParameter("has_feedback", hasFeedback?.ToString().ToLowerInvariant())
                                 .AddOptionalParameter("tags", tags?.ToString())
-                                .AddOptionalParameter("project_id", projectId) 
+                                .AddOptionalParameter("project_id", projectId)
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::G.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -241,10 +353,10 @@ namespace G
                 } 
             }
 
-                if (xProject != default)
-                {
-                    __httpRequest.Headers.TryAddWithoutValidation("X-Project", xProject.ToString());
-                }
+            if (xProject != default)
+            {
+                __httpRequest.Headers.TryAddWithoutValidation("X-Project", xProject.ToString());
+            }
 
                 global::G.AutoSDKRequestOptionsSupport.ApplyHeaders(
                     request: __httpRequest,
@@ -301,6 +413,8 @@ namespace G
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                     try
                     {
@@ -311,6 +425,11 @@ namespace G
                     }
                     catch (global::System.Net.Http.HttpRequestException __exception)
                     {
+                        var __retryDelay = global::G.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: null,
+                            attempt: __attempt);
                         var __willRetry = __attempt < __maxAttempts && !__effectiveCancellationToken.IsCancellationRequested;
                         await global::G.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
@@ -328,6 +447,8 @@ namespace G
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: __willRetry,
+                                retryDelay: __willRetry ? __retryDelay : (global::System.TimeSpan?)null,
+                                retryReason: "exception",
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         if (!__willRetry)
                         {
@@ -337,8 +458,7 @@ namespace G
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::G.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -347,6 +467,11 @@ namespace G
                         __attempt < __maxAttempts &&
                         global::G.AutoSDKRequestOptionsSupport.ShouldRetryStatusCode(__response.StatusCode))
                     {
+                        var __retryDelay = global::G.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: __response,
+                            attempt: __attempt);
                         await global::G.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
@@ -363,14 +488,15 @@ namespace G
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: true,
+                                retryDelay: __retryDelay,
+                                retryReason: "status:" + ((int)__response.StatusCode).ToString(global::System.Globalization.CultureInfo.InvariantCulture),
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         __response.Dispose();
                         __response = null;
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::G.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -410,6 +536,8 @@ namespace G
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
                 else
@@ -430,6 +558,8 @@ namespace G
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
                             // Validation Error
@@ -492,9 +622,13 @@ namespace G
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    return
-                                        global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::System.Collections.Generic.IList<global::G.Step>?>(__content, JsonSerializerOptions) ??
+                                    var __value = global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::System.Collections.Generic.IList<global::G.Step>?>(__content, JsonSerializerOptions) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                                    return new global::G.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::G.Step>>(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri,
+                                        body: __value);
                                 }
                                 catch (global::System.Exception __ex)
                                 {
@@ -522,9 +656,13 @@ namespace G
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    return
-                                        global::Newtonsoft.Json.JsonSerializer.Create(JsonSerializerOptions).Deserialize<global::System.Collections.Generic.IList<global::G.Step>?>(new global::Newtonsoft.Json.JsonTextReader(new global::System.IO.StreamReader(__content))) ??
+                                    var __value = global::Newtonsoft.Json.JsonSerializer.Create(JsonSerializerOptions).Deserialize<global::System.Collections.Generic.IList<global::G.Step>?>(new global::Newtonsoft.Json.JsonTextReader(new global::System.IO.StreamReader(__content))) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
+                                    return new global::G.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::G.Step>>(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri,
+                                        body: __value);
                                 }
                                 catch (global::System.Exception __ex)
                                 {

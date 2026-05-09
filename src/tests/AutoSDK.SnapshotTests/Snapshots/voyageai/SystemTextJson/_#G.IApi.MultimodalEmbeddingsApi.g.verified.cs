@@ -22,6 +22,19 @@ namespace G
         /// Multimodal embedding models<br/>
         /// The Voyage multimodal embedding endpoint returns vector representations for a given list of multimodal inputs consisting of text, images, or an interleaving of both modalities.
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.MultimodalEmbeddingsApiResponse>> MultimodalEmbeddingsApiAsResponseAsync(
+
+            global::G.MultimodalEmbeddingsApiRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Multimodal embedding models<br/>
+        /// The Voyage multimodal embedding endpoint returns vector representations for a given list of multimodal inputs consisting of text, images, or an interleaving of both modalities.
+        /// </summary>
         /// <param name="inputs">
         /// A list of multimodal inputs to be vectorized.  A single input in the list is a dictionary containing a single key `"content"`, whose value represents a sequence of text and images. &lt;ul&gt;<br/>
         ///   &lt;li&gt; The value of &lt;code&gt;"content"&lt;/code&gt; is a list of dictionaries, each representing a single piece of text or image. The dictionaries have four possible keys:<br/>

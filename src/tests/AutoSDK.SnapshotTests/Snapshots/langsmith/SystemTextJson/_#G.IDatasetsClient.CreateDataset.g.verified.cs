@@ -22,6 +22,19 @@ namespace G
         /// Create Dataset<br/>
         /// Create a new dataset.
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.Dataset>> CreateDatasetAsResponseAsync(
+
+            global::G.DatasetCreate request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create Dataset<br/>
+        /// Create a new dataset.
+        /// </summary>
         /// <param name="name"></param>
         /// <param name="description"></param>
         /// <param name="createdAt"></param>

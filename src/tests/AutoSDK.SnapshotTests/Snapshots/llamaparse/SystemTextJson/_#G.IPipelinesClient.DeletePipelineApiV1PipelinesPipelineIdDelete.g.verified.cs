@@ -21,5 +21,21 @@ namespace G
             string? session = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Delete Pipeline<br/>
+        /// Delete a pipeline and all associated resources.<br/>
+        /// Removes pipeline files, data sources, and vector store data.<br/>
+        /// This operation is irreversible.
+        /// </summary>
+        /// <param name="pipelineId"></param>
+        /// <param name="session"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse> DeletePipelineApiV1PipelinesPipelineIdDeleteAsResponseAsync(
+            global::System.Guid pipelineId,
+            string? session = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

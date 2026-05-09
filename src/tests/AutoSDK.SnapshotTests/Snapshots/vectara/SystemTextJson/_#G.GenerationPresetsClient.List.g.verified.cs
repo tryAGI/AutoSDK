@@ -96,6 +96,48 @@ namespace G
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var __response = await ListAsResponseAsync(
+                requestTimeout: requestTimeout,
+                requestTimeoutMillis: requestTimeoutMillis,
+                llmName: llmName,
+                limit: limit,
+                pageKey: pageKey,
+                requestOptions: requestOptions,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// List generation presets<br/>
+        /// Organizations often struggle to fine-tune query responses and maintain consistency across different use cases. Vectara creates and maintains predefined generation presets for our users which provides a flexible and powerful way to utilize generation parameters. Each preset includes a complete Velocity template for the prompt along with other generation parameters. Presets are typically associated with a single LLM.<br/>
+        /// The List Generation Presets API lets you view the generation presets used for [query](/docs/rest-api/queries) requests. Generation presets group several properties that configure generation for a request. These presets provide more flexibility in how generation parameters are configured, enabling more fine-tuned control over query responses.<br/>
+        /// This includes the `prompt_template`, the Large Language Model (LLM), and other generation settings like `max_tokens` and `temperature`. Users specify a generation preset in their query or chat requests using the `generation_preset_name` field.<br/>
+        /// ## Generation presets object<br/>
+        /// The `generation_presets` object contains the `name`, `description`, `llm_name`, `prompt_template`, and other fields make up the preset.<br/>
+        /// If your account has access to a preset, then `enabled` is set to `true`. A preset can also be set as a `default`.\n\n### Example generation presets response\n\n```json\n{\n  \"generation_presets\": [\n    {\n      \"name\": \"vectara-summary-ext-24-05-med-omni\",\n      \"description\": \"Generate summary with controllable citations, Uses GPT-4o with 2,048 max tokens\",\n      \"llm_name\": \"gpt-4o\",\n      \"prompt_template\": \"[\\n    {\\\"role\\\": \\\"system\\\", \\\"content\\\": \\\"Follow these detailed step-by-step\",\n      \"max_used_search_results\": 25,\n      \"max_tokens\": 2048,\n      \"temperature\": 0,\n      \"frequency_penalty\": 0,\n      \"presence_penalty\": 0,\n      \"enabled\": true,\n      \"default\": false\n    },\n    // More presets appear here\n}\n```\n"
+        /// </summary>
+        /// <param name="requestTimeout"></param>
+        /// <param name="requestTimeoutMillis"></param>
+        /// <param name="llmName">
+        /// Example: mockingbird-2.0
+        /// </param>
+        /// <param name="limit">
+        /// Default Value: 10
+        /// </param>
+        /// <param name="pageKey"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.ListGenerationPresetsResponse>> ListAsResponseAsync(
+            int? requestTimeout = default,
+            int? requestTimeoutMillis = default,
+            string? llmName = default,
+            int? limit = default,
+            string? pageKey = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             PrepareArguments(
                 client: HttpClient);
             PrepareListArguments(
@@ -128,13 +170,14 @@ namespace G
 
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
+
                             var __pathBuilder = new global::G.PathBuilder(
                                 path: "/v2/generation_presets",
-                                baseUri: HttpClient.BaseAddress); 
+                                baseUri: HttpClient.BaseAddress);
                             __pathBuilder
                                 .AddOptionalParameter("llm_name", llmName)
                                 .AddOptionalParameter("limit", limit?.ToString())
-                                .AddOptionalParameter("page_key", pageKey) 
+                                .AddOptionalParameter("page_key", pageKey)
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::G.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -166,14 +209,14 @@ namespace G
                 } 
             }
 
-                if (requestTimeout != default)
-                {
-                    __httpRequest.Headers.TryAddWithoutValidation("Request-Timeout", requestTimeout.ToString());
-                }
-                if (requestTimeoutMillis != default)
-                {
-                    __httpRequest.Headers.TryAddWithoutValidation("Request-Timeout-Millis", requestTimeoutMillis.ToString());
-                }
+            if (requestTimeout != default)
+            {
+                __httpRequest.Headers.TryAddWithoutValidation("Request-Timeout", requestTimeout.ToString());
+            }
+            if (requestTimeoutMillis != default)
+            {
+                __httpRequest.Headers.TryAddWithoutValidation("Request-Timeout-Millis", requestTimeoutMillis.ToString());
+            }
 
                 global::G.AutoSDKRequestOptionsSupport.ApplyHeaders(
                     request: __httpRequest,
@@ -220,6 +263,8 @@ namespace G
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                     try
                     {
@@ -233,6 +278,11 @@ namespace G
                     }
                     catch (global::System.Net.Http.HttpRequestException __exception)
                     {
+                        var __retryDelay = global::G.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: null,
+                            attempt: __attempt);
                         var __willRetry = __attempt < __maxAttempts && !__effectiveCancellationToken.IsCancellationRequested;
                         await global::G.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
@@ -250,6 +300,8 @@ namespace G
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: __willRetry,
+                                retryDelay: __willRetry ? __retryDelay : (global::System.TimeSpan?)null,
+                                retryReason: "exception",
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         if (!__willRetry)
                         {
@@ -259,8 +311,7 @@ namespace G
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::G.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -269,6 +320,11 @@ namespace G
                         __attempt < __maxAttempts &&
                         global::G.AutoSDKRequestOptionsSupport.ShouldRetryStatusCode(__response.StatusCode))
                     {
+                        var __retryDelay = global::G.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: __response,
+                            attempt: __attempt);
                         await global::G.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
@@ -285,14 +341,15 @@ namespace G
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: true,
+                                retryDelay: __retryDelay,
+                                retryReason: "status:" + ((int)__response.StatusCode).ToString(global::System.Globalization.CultureInfo.InvariantCulture),
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         __response.Dispose();
                         __response = null;
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::G.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -332,6 +389,8 @@ namespace G
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
                 else
@@ -352,6 +411,8 @@ namespace G
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
                             // Permissions do not allow listing generation presets.
@@ -414,9 +475,13 @@ namespace G
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    return
-                                        global::G.ListGenerationPresetsResponse.FromJson(__content, JsonSerializerOptions) ??
+                                    var __value = global::G.ListGenerationPresetsResponse.FromJson(__content, JsonSerializerOptions) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                                    return new global::G.AutoSDKHttpResponse<global::G.ListGenerationPresetsResponse>(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri,
+                                        body: __value);
                                 }
                                 catch (global::System.Exception __ex)
                                 {
@@ -444,9 +509,13 @@ namespace G
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    return
-                                        await global::G.ListGenerationPresetsResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                                    var __value = await global::G.ListGenerationPresetsResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
+                                    return new global::G.AutoSDKHttpResponse<global::G.ListGenerationPresetsResponse>(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri,
+                                        body: __value);
                                 }
                                 catch (global::System.Exception __ex)
                                 {

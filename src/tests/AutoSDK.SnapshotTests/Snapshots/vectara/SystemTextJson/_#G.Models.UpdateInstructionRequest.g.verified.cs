@@ -31,6 +31,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Initial))]
 #endif
         public bool IsInitial => Initial != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickInitial(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.UpdateInitialInstructionRequest? value)
+        {
+            value = Initial;
+            return IsInitial;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -88,7 +101,7 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.UpdateInitialInstructionRequest?, TResult>? initial = null,
+            global::System.Func<global::G.UpdateInitialInstructionRequest, TResult>? initial = null,
             bool validate = true)
         {
             if (validate)
@@ -108,7 +121,25 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.UpdateInitialInstructionRequest?>? initial = null,
+            global::System.Action<global::G.UpdateInitialInstructionRequest>? initial = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsInitial)
+            {
+                initial?.Invoke(Initial!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.UpdateInitialInstructionRequest>? initial = null,
             bool validate = true)
         {
             if (validate)

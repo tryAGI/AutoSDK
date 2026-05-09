@@ -20,5 +20,20 @@ namespace G
             int ruleSuiteId,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Get an organization rule suite<br/>
+        /// Gets information about a suite of rule evaluations from within an organization.<br/>
+        /// For more information, see "[Managing rulesets for repositories in your organization](https://docs.github.com/organizations/managing-organization-settings/managing-rulesets-for-repositories-in-your-organization#viewing-insights-for-rulesets)."
+        /// </summary>
+        /// <param name="org"></param>
+        /// <param name="ruleSuiteId"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.RuleSuite2>> ReposGetOrgRuleSuiteAsResponseAsync(
+            string org,
+            int ruleSuiteId,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

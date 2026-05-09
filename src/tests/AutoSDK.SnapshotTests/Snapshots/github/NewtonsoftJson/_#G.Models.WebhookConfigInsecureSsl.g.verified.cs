@@ -31,6 +31,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickWebhookConfigInsecureSslVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = WebhookConfigInsecureSslVariant1;
+            return IsWebhookConfigInsecureSslVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public double? WebhookConfigInsecureSslVariant2 { get; init; }
 #else
@@ -44,6 +57,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(WebhookConfigInsecureSslVariant2))]
 #endif
         public bool IsWebhookConfigInsecureSslVariant2 => WebhookConfigInsecureSslVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickWebhookConfigInsecureSslVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out double? value)
+        {
+            value = WebhookConfigInsecureSslVariant2;
+            return IsWebhookConfigInsecureSslVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -120,7 +146,7 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<string?, TResult>? webhookConfigInsecureSslVariant1 = null,
+            global::System.Func<string, TResult>? webhookConfigInsecureSslVariant1 = null,
             global::System.Func<double?, TResult>? webhookConfigInsecureSslVariant2 = null,
             bool validate = true)
         {
@@ -145,7 +171,31 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<string?>? webhookConfigInsecureSslVariant1 = null,
+            global::System.Action<string>? webhookConfigInsecureSslVariant1 = null,
+
+            global::System.Action<double?>? webhookConfigInsecureSslVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsWebhookConfigInsecureSslVariant1)
+            {
+                webhookConfigInsecureSslVariant1?.Invoke(WebhookConfigInsecureSslVariant1!);
+            }
+            else if (IsWebhookConfigInsecureSslVariant2)
+            {
+                webhookConfigInsecureSslVariant2?.Invoke(WebhookConfigInsecureSslVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<string>? webhookConfigInsecureSslVariant1 = null,
             global::System.Action<double?>? webhookConfigInsecureSslVariant2 = null,
             bool validate = true)
         {

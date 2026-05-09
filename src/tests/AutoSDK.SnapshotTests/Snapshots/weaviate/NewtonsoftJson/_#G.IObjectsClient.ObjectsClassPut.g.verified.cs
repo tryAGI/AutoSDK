@@ -35,6 +35,27 @@ namespace G
         /// <param name="consistencyLevel">
         /// Default Value: QUORUM
         /// </param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.Object>> ObjectsClassPutAsResponseAsync(
+            string className,
+            global::System.Guid id,
+
+            global::G.Object request,
+            global::G.ObjectsClassPutConsistencyLevel? consistencyLevel = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Update an object.<br/>
+        /// Update an object based on its uuid and collection. This (`put`) method replaces the object with the provided object.
+        /// </summary>
+        /// <param name="className"></param>
+        /// <param name="id"></param>
+        /// <param name="consistencyLevel">
+        /// Default Value: QUORUM
+        /// </param>
         /// <param name="class">
         /// The object collection name.
         /// </param>

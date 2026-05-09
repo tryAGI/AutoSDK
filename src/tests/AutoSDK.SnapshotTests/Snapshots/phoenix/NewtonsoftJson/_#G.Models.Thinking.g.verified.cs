@@ -35,6 +35,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickDisabled(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.PromptAnthropicThinkingConfigDisabled? value)
+        {
+            value = Disabled;
+            return IsDisabled;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.PromptAnthropicThinkingConfigEnabled? Enabled { get; init; }
 #else
@@ -48,6 +61,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Enabled))]
 #endif
         public bool IsEnabled => Enabled != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickEnabled(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.PromptAnthropicThinkingConfigEnabled? value)
+        {
+            value = Enabled;
+            return IsEnabled;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -127,8 +153,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.PromptAnthropicThinkingConfigDisabled?, TResult>? disabled = null,
-            global::System.Func<global::G.PromptAnthropicThinkingConfigEnabled?, TResult>? enabled = null,
+            global::System.Func<global::G.PromptAnthropicThinkingConfigDisabled, TResult>? disabled = null,
+            global::System.Func<global::G.PromptAnthropicThinkingConfigEnabled, TResult>? enabled = null,
             bool validate = true)
         {
             if (validate)
@@ -152,8 +178,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.PromptAnthropicThinkingConfigDisabled?>? disabled = null,
-            global::System.Action<global::G.PromptAnthropicThinkingConfigEnabled?>? enabled = null,
+            global::System.Action<global::G.PromptAnthropicThinkingConfigDisabled>? disabled = null,
+
+            global::System.Action<global::G.PromptAnthropicThinkingConfigEnabled>? enabled = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsDisabled)
+            {
+                disabled?.Invoke(Disabled!);
+            }
+            else if (IsEnabled)
+            {
+                enabled?.Invoke(Enabled!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.PromptAnthropicThinkingConfigDisabled>? disabled = null,
+            global::System.Action<global::G.PromptAnthropicThinkingConfigEnabled>? enabled = null,
             bool validate = true)
         {
             if (validate)

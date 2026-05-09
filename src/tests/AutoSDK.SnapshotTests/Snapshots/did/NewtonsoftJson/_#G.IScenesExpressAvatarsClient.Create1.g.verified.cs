@@ -20,6 +20,18 @@ namespace G
         /// <summary>
         /// Create an Express Avatar
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.Create1Response>> Create1AsResponseAsync(
+
+            global::G.Create1Request request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create an Express Avatar
+        /// </summary>
         /// <param name="sourceUrl">
         /// The URL of the source video to create an avatar from<br/>
         /// Example: https://path.to.directory/movie.mp4

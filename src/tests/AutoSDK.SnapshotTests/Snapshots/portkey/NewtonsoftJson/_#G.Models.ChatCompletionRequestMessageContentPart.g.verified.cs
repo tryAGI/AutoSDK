@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickTextContentPart(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ChatCompletionRequestMessageContentPartText? value)
+        {
+            value = TextContentPart;
+            return IsTextContentPart;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ChatCompletionRequestMessageContentPartImage? ImageContentPart { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ImageContentPart))]
 #endif
         public bool IsImageContentPart => ImageContentPart != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickImageContentPart(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ChatCompletionRequestMessageContentPartImage? value)
+        {
+            value = ImageContentPart;
+            return IsImageContentPart;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -119,8 +145,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.ChatCompletionRequestMessageContentPartText?, TResult>? textContentPart = null,
-            global::System.Func<global::G.ChatCompletionRequestMessageContentPartImage?, TResult>? imageContentPart = null,
+            global::System.Func<global::G.ChatCompletionRequestMessageContentPartText, TResult>? textContentPart = null,
+            global::System.Func<global::G.ChatCompletionRequestMessageContentPartImage, TResult>? imageContentPart = null,
             bool validate = true)
         {
             if (validate)
@@ -144,8 +170,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.ChatCompletionRequestMessageContentPartText?>? textContentPart = null,
-            global::System.Action<global::G.ChatCompletionRequestMessageContentPartImage?>? imageContentPart = null,
+            global::System.Action<global::G.ChatCompletionRequestMessageContentPartText>? textContentPart = null,
+
+            global::System.Action<global::G.ChatCompletionRequestMessageContentPartImage>? imageContentPart = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsTextContentPart)
+            {
+                textContentPart?.Invoke(TextContentPart!);
+            }
+            else if (IsImageContentPart)
+            {
+                imageContentPart?.Invoke(ImageContentPart!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.ChatCompletionRequestMessageContentPartText>? textContentPart = null,
+            global::System.Action<global::G.ChatCompletionRequestMessageContentPartImage>? imageContentPart = null,
             bool validate = true)
         {
             if (validate)

@@ -35,6 +35,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickOpenai(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.PromptOpenAIInvocationParameters? value)
+        {
+            value = Openai;
+            return IsOpenai;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.PromptAzureOpenAIInvocationParameters? AzureOpenai { get; init; }
 #else
@@ -48,6 +61,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AzureOpenai))]
 #endif
         public bool IsAzureOpenai => AzureOpenai != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickAzureOpenai(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.PromptAzureOpenAIInvocationParameters? value)
+        {
+            value = AzureOpenai;
+            return IsAzureOpenai;
+        }
 
         /// <summary>
         /// 
@@ -69,6 +95,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickAnthropic(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.PromptAnthropicInvocationParameters? value)
+        {
+            value = Anthropic;
+            return IsAnthropic;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.PromptGoogleInvocationParameters? Google { get; init; }
 #else
@@ -82,6 +121,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Google))]
 #endif
         public bool IsGoogle => Google != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickGoogle(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.PromptGoogleInvocationParameters? value)
+        {
+            value = Google;
+            return IsGoogle;
+        }
 
         /// <summary>
         /// 
@@ -103,6 +155,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickDeepseek(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.PromptDeepSeekInvocationParameters? value)
+        {
+            value = Deepseek;
+            return IsDeepseek;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.PromptXAIInvocationParameters? Xai { get; init; }
 #else
@@ -116,6 +181,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Xai))]
 #endif
         public bool IsXai => Xai != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickXai(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.PromptXAIInvocationParameters? value)
+        {
+            value = Xai;
+            return IsXai;
+        }
 
         /// <summary>
         /// 
@@ -137,6 +215,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickOllama(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.PromptOllamaInvocationParameters? value)
+        {
+            value = Ollama;
+            return IsOllama;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.PromptAwsInvocationParameters? Aws { get; init; }
 #else
@@ -150,6 +241,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Aws))]
 #endif
         public bool IsAws => Aws != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickAws(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.PromptAwsInvocationParameters? value)
+        {
+            value = Aws;
+            return IsAws;
+        }
 
         /// <summary>
         /// 
@@ -171,6 +275,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickCerebras(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.PromptCerebrasInvocationParameters? value)
+        {
+            value = Cerebras;
+            return IsCerebras;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.PromptFireworksInvocationParameters? Fireworks { get; init; }
 #else
@@ -184,6 +301,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Fireworks))]
 #endif
         public bool IsFireworks => Fireworks != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFireworks(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.PromptFireworksInvocationParameters? value)
+        {
+            value = Fireworks;
+            return IsFireworks;
+        }
 
         /// <summary>
         /// 
@@ -205,6 +335,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickGroq(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.PromptGroqInvocationParameters? value)
+        {
+            value = Groq;
+            return IsGroq;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.PromptMoonshotInvocationParameters? Moonshot { get; init; }
 #else
@@ -218,6 +361,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Moonshot))]
 #endif
         public bool IsMoonshot => Moonshot != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMoonshot(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.PromptMoonshotInvocationParameters? value)
+        {
+            value = Moonshot;
+            return IsMoonshot;
+        }
 
         /// <summary>
         /// 
@@ -239,6 +395,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickPerplexity(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.PromptPerplexityInvocationParameters? value)
+        {
+            value = Perplexity;
+            return IsPerplexity;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.PromptTogetherInvocationParameters? Together { get; init; }
 #else
@@ -252,6 +421,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Together))]
 #endif
         public bool IsTogether => Together != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickTogether(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.PromptTogetherInvocationParameters? value)
+        {
+            value = Together;
+            return IsTogether;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -595,20 +777,20 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.PromptOpenAIInvocationParameters?, TResult>? openai = null,
-            global::System.Func<global::G.PromptAzureOpenAIInvocationParameters?, TResult>? azureOpenai = null,
-            global::System.Func<global::G.PromptAnthropicInvocationParameters?, TResult>? anthropic = null,
-            global::System.Func<global::G.PromptGoogleInvocationParameters?, TResult>? google = null,
-            global::System.Func<global::G.PromptDeepSeekInvocationParameters?, TResult>? deepseek = null,
-            global::System.Func<global::G.PromptXAIInvocationParameters?, TResult>? xai = null,
-            global::System.Func<global::G.PromptOllamaInvocationParameters?, TResult>? ollama = null,
-            global::System.Func<global::G.PromptAwsInvocationParameters?, TResult>? aws = null,
-            global::System.Func<global::G.PromptCerebrasInvocationParameters?, TResult>? cerebras = null,
-            global::System.Func<global::G.PromptFireworksInvocationParameters?, TResult>? fireworks = null,
-            global::System.Func<global::G.PromptGroqInvocationParameters?, TResult>? groq = null,
-            global::System.Func<global::G.PromptMoonshotInvocationParameters?, TResult>? moonshot = null,
-            global::System.Func<global::G.PromptPerplexityInvocationParameters?, TResult>? perplexity = null,
-            global::System.Func<global::G.PromptTogetherInvocationParameters?, TResult>? together = null,
+            global::System.Func<global::G.PromptOpenAIInvocationParameters, TResult>? openai = null,
+            global::System.Func<global::G.PromptAzureOpenAIInvocationParameters, TResult>? azureOpenai = null,
+            global::System.Func<global::G.PromptAnthropicInvocationParameters, TResult>? anthropic = null,
+            global::System.Func<global::G.PromptGoogleInvocationParameters, TResult>? google = null,
+            global::System.Func<global::G.PromptDeepSeekInvocationParameters, TResult>? deepseek = null,
+            global::System.Func<global::G.PromptXAIInvocationParameters, TResult>? xai = null,
+            global::System.Func<global::G.PromptOllamaInvocationParameters, TResult>? ollama = null,
+            global::System.Func<global::G.PromptAwsInvocationParameters, TResult>? aws = null,
+            global::System.Func<global::G.PromptCerebrasInvocationParameters, TResult>? cerebras = null,
+            global::System.Func<global::G.PromptFireworksInvocationParameters, TResult>? fireworks = null,
+            global::System.Func<global::G.PromptGroqInvocationParameters, TResult>? groq = null,
+            global::System.Func<global::G.PromptMoonshotInvocationParameters, TResult>? moonshot = null,
+            global::System.Func<global::G.PromptPerplexityInvocationParameters, TResult>? perplexity = null,
+            global::System.Func<global::G.PromptTogetherInvocationParameters, TResult>? together = null,
             bool validate = true)
         {
             if (validate)
@@ -680,20 +862,116 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.PromptOpenAIInvocationParameters?>? openai = null,
-            global::System.Action<global::G.PromptAzureOpenAIInvocationParameters?>? azureOpenai = null,
-            global::System.Action<global::G.PromptAnthropicInvocationParameters?>? anthropic = null,
-            global::System.Action<global::G.PromptGoogleInvocationParameters?>? google = null,
-            global::System.Action<global::G.PromptDeepSeekInvocationParameters?>? deepseek = null,
-            global::System.Action<global::G.PromptXAIInvocationParameters?>? xai = null,
-            global::System.Action<global::G.PromptOllamaInvocationParameters?>? ollama = null,
-            global::System.Action<global::G.PromptAwsInvocationParameters?>? aws = null,
-            global::System.Action<global::G.PromptCerebrasInvocationParameters?>? cerebras = null,
-            global::System.Action<global::G.PromptFireworksInvocationParameters?>? fireworks = null,
-            global::System.Action<global::G.PromptGroqInvocationParameters?>? groq = null,
-            global::System.Action<global::G.PromptMoonshotInvocationParameters?>? moonshot = null,
-            global::System.Action<global::G.PromptPerplexityInvocationParameters?>? perplexity = null,
-            global::System.Action<global::G.PromptTogetherInvocationParameters?>? together = null,
+            global::System.Action<global::G.PromptOpenAIInvocationParameters>? openai = null,
+
+            global::System.Action<global::G.PromptAzureOpenAIInvocationParameters>? azureOpenai = null,
+
+            global::System.Action<global::G.PromptAnthropicInvocationParameters>? anthropic = null,
+
+            global::System.Action<global::G.PromptGoogleInvocationParameters>? google = null,
+
+            global::System.Action<global::G.PromptDeepSeekInvocationParameters>? deepseek = null,
+
+            global::System.Action<global::G.PromptXAIInvocationParameters>? xai = null,
+
+            global::System.Action<global::G.PromptOllamaInvocationParameters>? ollama = null,
+
+            global::System.Action<global::G.PromptAwsInvocationParameters>? aws = null,
+
+            global::System.Action<global::G.PromptCerebrasInvocationParameters>? cerebras = null,
+
+            global::System.Action<global::G.PromptFireworksInvocationParameters>? fireworks = null,
+
+            global::System.Action<global::G.PromptGroqInvocationParameters>? groq = null,
+
+            global::System.Action<global::G.PromptMoonshotInvocationParameters>? moonshot = null,
+
+            global::System.Action<global::G.PromptPerplexityInvocationParameters>? perplexity = null,
+
+            global::System.Action<global::G.PromptTogetherInvocationParameters>? together = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsOpenai)
+            {
+                openai?.Invoke(Openai!);
+            }
+            else if (IsAzureOpenai)
+            {
+                azureOpenai?.Invoke(AzureOpenai!);
+            }
+            else if (IsAnthropic)
+            {
+                anthropic?.Invoke(Anthropic!);
+            }
+            else if (IsGoogle)
+            {
+                google?.Invoke(Google!);
+            }
+            else if (IsDeepseek)
+            {
+                deepseek?.Invoke(Deepseek!);
+            }
+            else if (IsXai)
+            {
+                xai?.Invoke(Xai!);
+            }
+            else if (IsOllama)
+            {
+                ollama?.Invoke(Ollama!);
+            }
+            else if (IsAws)
+            {
+                aws?.Invoke(Aws!);
+            }
+            else if (IsCerebras)
+            {
+                cerebras?.Invoke(Cerebras!);
+            }
+            else if (IsFireworks)
+            {
+                fireworks?.Invoke(Fireworks!);
+            }
+            else if (IsGroq)
+            {
+                groq?.Invoke(Groq!);
+            }
+            else if (IsMoonshot)
+            {
+                moonshot?.Invoke(Moonshot!);
+            }
+            else if (IsPerplexity)
+            {
+                perplexity?.Invoke(Perplexity!);
+            }
+            else if (IsTogether)
+            {
+                together?.Invoke(Together!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.PromptOpenAIInvocationParameters>? openai = null,
+            global::System.Action<global::G.PromptAzureOpenAIInvocationParameters>? azureOpenai = null,
+            global::System.Action<global::G.PromptAnthropicInvocationParameters>? anthropic = null,
+            global::System.Action<global::G.PromptGoogleInvocationParameters>? google = null,
+            global::System.Action<global::G.PromptDeepSeekInvocationParameters>? deepseek = null,
+            global::System.Action<global::G.PromptXAIInvocationParameters>? xai = null,
+            global::System.Action<global::G.PromptOllamaInvocationParameters>? ollama = null,
+            global::System.Action<global::G.PromptAwsInvocationParameters>? aws = null,
+            global::System.Action<global::G.PromptCerebrasInvocationParameters>? cerebras = null,
+            global::System.Action<global::G.PromptFireworksInvocationParameters>? fireworks = null,
+            global::System.Action<global::G.PromptGroqInvocationParameters>? groq = null,
+            global::System.Action<global::G.PromptMoonshotInvocationParameters>? moonshot = null,
+            global::System.Action<global::G.PromptPerplexityInvocationParameters>? perplexity = null,
+            global::System.Action<global::G.PromptTogetherInvocationParameters>? together = null,
             bool validate = true)
         {
             if (validate)

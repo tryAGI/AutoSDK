@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickMoveShardOperation(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.MoveShardOperation? value)
+        {
+            value = MoveShardOperation;
+            return IsMoveShardOperation;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ReplicateShardOperation? ReplicateShardOperation { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ReplicateShardOperation))]
 #endif
         public bool IsReplicateShardOperation => ReplicateShardOperation != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickReplicateShardOperation(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ReplicateShardOperation? value)
+        {
+            value = ReplicateShardOperation;
+            return IsReplicateShardOperation;
+        }
 
         /// <summary>
         /// 
@@ -64,6 +90,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickAbortTransferOperation(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.AbortTransferOperation? value)
+        {
+            value = AbortTransferOperation;
+            return IsAbortTransferOperation;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.DropReplicaOperation? DropReplicaOperation { get; init; }
 #else
@@ -77,6 +116,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(DropReplicaOperation))]
 #endif
         public bool IsDropReplicaOperation => DropReplicaOperation != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickDropReplicaOperation(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.DropReplicaOperation? value)
+        {
+            value = DropReplicaOperation;
+            return IsDropReplicaOperation;
+        }
 
         /// <summary>
         /// 
@@ -98,6 +150,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickCreateShardingKeyOperation(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateShardingKeyOperation? value)
+        {
+            value = CreateShardingKeyOperation;
+            return IsCreateShardingKeyOperation;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.DropShardingKeyOperation? DropShardingKeyOperation { get; init; }
 #else
@@ -111,6 +176,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(DropShardingKeyOperation))]
 #endif
         public bool IsDropShardingKeyOperation => DropShardingKeyOperation != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickDropShardingKeyOperation(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.DropShardingKeyOperation? value)
+        {
+            value = DropShardingKeyOperation;
+            return IsDropShardingKeyOperation;
+        }
 
         /// <summary>
         /// 
@@ -132,6 +210,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickRestartTransferOperation(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.RestartTransferOperation? value)
+        {
+            value = RestartTransferOperation;
+            return IsRestartTransferOperation;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.StartReshardingOperation? StartReshardingOperation { get; init; }
 #else
@@ -145,6 +236,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(StartReshardingOperation))]
 #endif
         public bool IsStartReshardingOperation => StartReshardingOperation != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickStartReshardingOperation(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.StartReshardingOperation? value)
+        {
+            value = StartReshardingOperation;
+            return IsStartReshardingOperation;
+        }
 
         /// <summary>
         /// 
@@ -166,6 +270,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickAbortReshardingOperation(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.AbortReshardingOperation? value)
+        {
+            value = AbortReshardingOperation;
+            return IsAbortReshardingOperation;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ReplicatePointsOperation? ReplicatePointsOperation { get; init; }
 #else
@@ -179,6 +296,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ReplicatePointsOperation))]
 #endif
         public bool IsReplicatePointsOperation => ReplicatePointsOperation != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickReplicatePointsOperation(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ReplicatePointsOperation? value)
+        {
+            value = ReplicatePointsOperation;
+            return IsReplicatePointsOperation;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -431,16 +561,16 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.MoveShardOperation?, TResult>? moveShardOperation = null,
-            global::System.Func<global::G.ReplicateShardOperation?, TResult>? replicateShardOperation = null,
-            global::System.Func<global::G.AbortTransferOperation?, TResult>? abortTransferOperation = null,
-            global::System.Func<global::G.DropReplicaOperation?, TResult>? dropReplicaOperation = null,
-            global::System.Func<global::G.CreateShardingKeyOperation?, TResult>? createShardingKeyOperation = null,
-            global::System.Func<global::G.DropShardingKeyOperation?, TResult>? dropShardingKeyOperation = null,
-            global::System.Func<global::G.RestartTransferOperation?, TResult>? restartTransferOperation = null,
-            global::System.Func<global::G.StartReshardingOperation?, TResult>? startReshardingOperation = null,
-            global::System.Func<global::G.AbortReshardingOperation?, TResult>? abortReshardingOperation = null,
-            global::System.Func<global::G.ReplicatePointsOperation?, TResult>? replicatePointsOperation = null,
+            global::System.Func<global::G.MoveShardOperation, TResult>? moveShardOperation = null,
+            global::System.Func<global::G.ReplicateShardOperation, TResult>? replicateShardOperation = null,
+            global::System.Func<global::G.AbortTransferOperation, TResult>? abortTransferOperation = null,
+            global::System.Func<global::G.DropReplicaOperation, TResult>? dropReplicaOperation = null,
+            global::System.Func<global::G.CreateShardingKeyOperation, TResult>? createShardingKeyOperation = null,
+            global::System.Func<global::G.DropShardingKeyOperation, TResult>? dropShardingKeyOperation = null,
+            global::System.Func<global::G.RestartTransferOperation, TResult>? restartTransferOperation = null,
+            global::System.Func<global::G.StartReshardingOperation, TResult>? startReshardingOperation = null,
+            global::System.Func<global::G.AbortReshardingOperation, TResult>? abortReshardingOperation = null,
+            global::System.Func<global::G.ReplicatePointsOperation, TResult>? replicatePointsOperation = null,
             bool validate = true)
         {
             if (validate)
@@ -496,16 +626,88 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.MoveShardOperation?>? moveShardOperation = null,
-            global::System.Action<global::G.ReplicateShardOperation?>? replicateShardOperation = null,
-            global::System.Action<global::G.AbortTransferOperation?>? abortTransferOperation = null,
-            global::System.Action<global::G.DropReplicaOperation?>? dropReplicaOperation = null,
-            global::System.Action<global::G.CreateShardingKeyOperation?>? createShardingKeyOperation = null,
-            global::System.Action<global::G.DropShardingKeyOperation?>? dropShardingKeyOperation = null,
-            global::System.Action<global::G.RestartTransferOperation?>? restartTransferOperation = null,
-            global::System.Action<global::G.StartReshardingOperation?>? startReshardingOperation = null,
-            global::System.Action<global::G.AbortReshardingOperation?>? abortReshardingOperation = null,
-            global::System.Action<global::G.ReplicatePointsOperation?>? replicatePointsOperation = null,
+            global::System.Action<global::G.MoveShardOperation>? moveShardOperation = null,
+
+            global::System.Action<global::G.ReplicateShardOperation>? replicateShardOperation = null,
+
+            global::System.Action<global::G.AbortTransferOperation>? abortTransferOperation = null,
+
+            global::System.Action<global::G.DropReplicaOperation>? dropReplicaOperation = null,
+
+            global::System.Action<global::G.CreateShardingKeyOperation>? createShardingKeyOperation = null,
+
+            global::System.Action<global::G.DropShardingKeyOperation>? dropShardingKeyOperation = null,
+
+            global::System.Action<global::G.RestartTransferOperation>? restartTransferOperation = null,
+
+            global::System.Action<global::G.StartReshardingOperation>? startReshardingOperation = null,
+
+            global::System.Action<global::G.AbortReshardingOperation>? abortReshardingOperation = null,
+
+            global::System.Action<global::G.ReplicatePointsOperation>? replicatePointsOperation = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsMoveShardOperation)
+            {
+                moveShardOperation?.Invoke(MoveShardOperation!);
+            }
+            else if (IsReplicateShardOperation)
+            {
+                replicateShardOperation?.Invoke(ReplicateShardOperation!);
+            }
+            else if (IsAbortTransferOperation)
+            {
+                abortTransferOperation?.Invoke(AbortTransferOperation!);
+            }
+            else if (IsDropReplicaOperation)
+            {
+                dropReplicaOperation?.Invoke(DropReplicaOperation!);
+            }
+            else if (IsCreateShardingKeyOperation)
+            {
+                createShardingKeyOperation?.Invoke(CreateShardingKeyOperation!);
+            }
+            else if (IsDropShardingKeyOperation)
+            {
+                dropShardingKeyOperation?.Invoke(DropShardingKeyOperation!);
+            }
+            else if (IsRestartTransferOperation)
+            {
+                restartTransferOperation?.Invoke(RestartTransferOperation!);
+            }
+            else if (IsStartReshardingOperation)
+            {
+                startReshardingOperation?.Invoke(StartReshardingOperation!);
+            }
+            else if (IsAbortReshardingOperation)
+            {
+                abortReshardingOperation?.Invoke(AbortReshardingOperation!);
+            }
+            else if (IsReplicatePointsOperation)
+            {
+                replicatePointsOperation?.Invoke(ReplicatePointsOperation!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.MoveShardOperation>? moveShardOperation = null,
+            global::System.Action<global::G.ReplicateShardOperation>? replicateShardOperation = null,
+            global::System.Action<global::G.AbortTransferOperation>? abortTransferOperation = null,
+            global::System.Action<global::G.DropReplicaOperation>? dropReplicaOperation = null,
+            global::System.Action<global::G.CreateShardingKeyOperation>? createShardingKeyOperation = null,
+            global::System.Action<global::G.DropShardingKeyOperation>? dropShardingKeyOperation = null,
+            global::System.Action<global::G.RestartTransferOperation>? restartTransferOperation = null,
+            global::System.Action<global::G.StartReshardingOperation>? startReshardingOperation = null,
+            global::System.Action<global::G.AbortReshardingOperation>? abortReshardingOperation = null,
+            global::System.Action<global::G.ReplicatePointsOperation>? replicatePointsOperation = null,
             bool validate = true)
         {
             if (validate)

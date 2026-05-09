@@ -34,6 +34,25 @@ namespace G
         /// - If archive_id is provided, searches passages within that specific archive<br/>
         /// - If both are provided, agent_id takes precedence
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::G.PassageSearchResult>>> SearchPassagesAsResponseAsync(
+
+            global::G.PassageSearchRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Search Passages<br/>
+        /// Search passages across the organization with optional agent and archive filtering.<br/>
+        /// Returns passages with relevance scores.<br/>
+        /// This endpoint supports semantic search through passages:<br/>
+        /// - If neither agent_id nor archive_id is provided, searches ALL passages in the organization<br/>
+        /// - If agent_id is provided, searches passages across all archives attached to that agent<br/>
+        /// - If archive_id is provided, searches passages within that specific archive<br/>
+        /// - If both are provided, agent_id takes precedence
+        /// </summary>
         /// <param name="query">
         /// Text query for semantic search
         /// </param>

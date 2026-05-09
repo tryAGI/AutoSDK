@@ -28,6 +28,19 @@ namespace G
         public bool IsChatCompletionsPostRequestBodyContentApplicationJsonSchemaMessagesVariant1 => ChatCompletionsPostRequestBodyContentApplicationJsonSchemaMessagesVariant1 != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickChatCompletionsPostRequestBodyContentApplicationJsonSchemaMessagesVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = ChatCompletionsPostRequestBodyContentApplicationJsonSchemaMessagesVariant1;
+            return IsChatCompletionsPostRequestBodyContentApplicationJsonSchemaMessagesVariant1;
+        }
+
+        /// <summary>
         /// An array of messages used for generating completions.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ChatCompletionsPostRequestBodyContentApplicationJsonSchemaMessages1))]
 #endif
         public bool IsChatCompletionsPostRequestBodyContentApplicationJsonSchemaMessages1 => ChatCompletionsPostRequestBodyContentApplicationJsonSchemaMessages1 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickChatCompletionsPostRequestBodyContentApplicationJsonSchemaMessages1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::System.Collections.Generic.IList<global::G.ChatCompletionsPostRequestBodyContentApplicationJsonSchemaMessagesOneOf1Items>? value)
+        {
+            value = ChatCompletionsPostRequestBodyContentApplicationJsonSchemaMessages1;
+            return IsChatCompletionsPostRequestBodyContentApplicationJsonSchemaMessages1;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -101,8 +127,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<string?, TResult>? chatCompletionsPostRequestBodyContentApplicationJsonSchemaMessagesVariant1 = null,
-            global::System.Func<global::System.Collections.Generic.IList<global::G.ChatCompletionsPostRequestBodyContentApplicationJsonSchemaMessagesOneOf1Items>?, TResult>? chatCompletionsPostRequestBodyContentApplicationJsonSchemaMessages1 = null,
+            global::System.Func<string, TResult>? chatCompletionsPostRequestBodyContentApplicationJsonSchemaMessagesVariant1 = null,
+            global::System.Func<global::System.Collections.Generic.IList<global::G.ChatCompletionsPostRequestBodyContentApplicationJsonSchemaMessagesOneOf1Items>, TResult>? chatCompletionsPostRequestBodyContentApplicationJsonSchemaMessages1 = null,
             bool validate = true)
         {
             if (validate)
@@ -126,8 +152,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<string?>? chatCompletionsPostRequestBodyContentApplicationJsonSchemaMessagesVariant1 = null,
-            global::System.Action<global::System.Collections.Generic.IList<global::G.ChatCompletionsPostRequestBodyContentApplicationJsonSchemaMessagesOneOf1Items>?>? chatCompletionsPostRequestBodyContentApplicationJsonSchemaMessages1 = null,
+            global::System.Action<string>? chatCompletionsPostRequestBodyContentApplicationJsonSchemaMessagesVariant1 = null,
+
+            global::System.Action<global::System.Collections.Generic.IList<global::G.ChatCompletionsPostRequestBodyContentApplicationJsonSchemaMessagesOneOf1Items>>? chatCompletionsPostRequestBodyContentApplicationJsonSchemaMessages1 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsChatCompletionsPostRequestBodyContentApplicationJsonSchemaMessagesVariant1)
+            {
+                chatCompletionsPostRequestBodyContentApplicationJsonSchemaMessagesVariant1?.Invoke(ChatCompletionsPostRequestBodyContentApplicationJsonSchemaMessagesVariant1!);
+            }
+            else if (IsChatCompletionsPostRequestBodyContentApplicationJsonSchemaMessages1)
+            {
+                chatCompletionsPostRequestBodyContentApplicationJsonSchemaMessages1?.Invoke(ChatCompletionsPostRequestBodyContentApplicationJsonSchemaMessages1!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<string>? chatCompletionsPostRequestBodyContentApplicationJsonSchemaMessagesVariant1 = null,
+            global::System.Action<global::System.Collections.Generic.IList<global::G.ChatCompletionsPostRequestBodyContentApplicationJsonSchemaMessagesOneOf1Items>>? chatCompletionsPostRequestBodyContentApplicationJsonSchemaMessages1 = null,
             bool validate = true)
         {
             if (validate)

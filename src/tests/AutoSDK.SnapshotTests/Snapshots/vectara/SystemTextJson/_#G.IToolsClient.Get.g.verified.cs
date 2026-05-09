@@ -23,5 +23,23 @@ namespace G
             int? requestTimeoutMillis = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Get tool<br/>
+        /// Retrieve the full details of a specific tool, including its description, input schema, metadata, and capabilities. Tools may represent structured search functions, document-processing workflows, or user-defined Lambda functions. Some tools work with artifacts stored in a session, while others operate on structured inputs defined by their JSON schema.
+        /// </summary>
+        /// <param name="requestTimeout"></param>
+        /// <param name="requestTimeoutMillis"></param>
+        /// <param name="toolId">
+        /// Example: tol_rag_search
+        /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.Tool>> GetAsResponseAsync(
+            string toolId,
+            int? requestTimeout = default,
+            int? requestTimeoutMillis = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

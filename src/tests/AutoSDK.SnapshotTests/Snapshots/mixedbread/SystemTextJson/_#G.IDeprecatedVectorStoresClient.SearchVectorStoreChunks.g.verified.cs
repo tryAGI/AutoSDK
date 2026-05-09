@@ -23,6 +23,20 @@ namespace G
         /// [DEPRECATED] Perform semantic search across vector store chunks<br/>
         /// DEPRECATED: Use POST /stores/search instead
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        [global::System.Obsolete("This method marked as deprecated.")]
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.VectorStoreSearchResponse>> SearchVectorStoreChunksAsResponseAsync(
+
+            global::G.VectorStoreChunkSearchParams request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// [DEPRECATED] Perform semantic search across vector store chunks<br/>
+        /// DEPRECATED: Use POST /stores/search instead
+        /// </summary>
         /// <param name="query">
         /// Search query text
         /// </param>

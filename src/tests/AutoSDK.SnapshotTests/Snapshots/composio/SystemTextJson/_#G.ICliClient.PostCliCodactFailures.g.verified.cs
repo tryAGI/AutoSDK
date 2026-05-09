@@ -31,6 +31,24 @@ namespace G
         /// User API key used to authenticate the CLI codact failure.<br/>
         /// Example: uak_abc123xyz456...
         /// </param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.PostCliCodactFailuresResponse>> PostCliCodactFailuresAsResponseAsync(
+            string xUserApiKey,
+
+            global::G.PostCliCodactFailuresRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Ingest CLI codact failures<br/>
+        /// Accepts CLI-reported codact failures authenticated by user API key and stores them in ClickHouse for later analysis.
+        /// </summary>
+        /// <param name="xUserApiKey">
+        /// User API key used to authenticate the CLI codact failure.<br/>
+        /// Example: uak_abc123xyz456...
+        /// </param>
         /// <param name="failureType">
         /// Type of codact failure being recorded.<br/>
         /// Example: wrong_tool_slug

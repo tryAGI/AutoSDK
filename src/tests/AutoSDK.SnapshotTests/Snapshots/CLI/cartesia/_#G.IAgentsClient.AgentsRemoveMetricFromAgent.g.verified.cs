@@ -23,5 +23,23 @@ namespace G
             string metricId,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Remove Metric from Agent<br/>
+        /// Remove a metric from an agent. Once the metric is removed, it will no longer be run on all calls made to the agent automatically from that point onwards. Existing metric results will remain.
+        /// </summary>
+        /// <param name="cartesiaVersion">
+        /// Example: 2025-04-16
+        /// </param>
+        /// <param name="agentId"></param>
+        /// <param name="metricId"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse> AgentsRemoveMetricFromAgentAsResponseAsync(
+            global::G.AgentsRemoveMetricFromAgentCartesiaVersion cartesiaVersion,
+            string agentId,
+            string metricId,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

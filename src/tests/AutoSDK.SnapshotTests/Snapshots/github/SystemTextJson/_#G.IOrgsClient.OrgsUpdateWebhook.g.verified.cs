@@ -42,6 +42,30 @@ namespace G
         /// </summary>
         /// <param name="org"></param>
         /// <param name="hookId"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.OrgHook>> OrgsUpdateWebhookAsResponseAsync(
+            string org,
+            int hookId,
+
+            global::G.OrgsUpdateWebhookRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Update an organization webhook<br/>
+        /// Updates a webhook configured in an organization. When you update a webhook,<br/>
+        /// the `secret` will be overwritten. If you previously had a `secret` set, you must<br/>
+        /// provide the same `secret` or set a new `secret` or the secret will be removed. If<br/>
+        /// you are only updating individual webhook `config` properties, use "[Update a webhook<br/>
+        /// configuration for an organization](/rest/orgs/webhooks#update-a-webhook-configuration-for-an-organization)".<br/>
+        /// You must be an organization owner to use this endpoint.<br/>
+        /// OAuth app tokens and personal access tokens (classic) need `admin:org_hook` scope. OAuth apps cannot list, view, or edit<br/>
+        /// webhooks that they did not create and users cannot list, view, or edit webhooks that were created by OAuth apps.
+        /// </summary>
+        /// <param name="org"></param>
+        /// <param name="hookId"></param>
         /// <param name="config">
         /// Key/value pairs to provide settings for this webhook.
         /// </param>

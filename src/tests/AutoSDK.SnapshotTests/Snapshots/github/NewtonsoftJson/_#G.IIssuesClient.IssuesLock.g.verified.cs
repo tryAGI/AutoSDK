@@ -33,6 +33,26 @@ namespace G
         /// <param name="owner"></param>
         /// <param name="repo"></param>
         /// <param name="issueNumber"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse> IssuesLockAsResponseAsync(
+            string owner,
+            string repo,
+            int issueNumber,
+
+            global::G.IssuesLockRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Lock an issue<br/>
+        /// Users with push access can lock an issue or pull request's conversation.<br/>
+        /// Note that, if you choose not to pass any parameters, you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see "[HTTP method](https://docs.github.com/rest/guides/getting-started-with-the-rest-api#http-method)."
+        /// </summary>
+        /// <param name="owner"></param>
+        /// <param name="repo"></param>
+        /// <param name="issueNumber"></param>
         /// <param name="lockReason">
         /// The reason for locking the issue or pull request conversation. Lock will fail if you don't use one of these reasons:  <br/>
         ///  * `off-topic`  <br/>

@@ -22,6 +22,19 @@ namespace G
         /// Generate or edit an image with FLUX.2 [FLEX]<br/>
         /// Submits an image generation or editing task with FLUX.2 [FLEX].
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.AnyOf<global::G.AsyncResponse, global::G.AsyncWebhookResponse>>> GenerateFlux2FlexV1Flux2FlexPostAsResponseAsync(
+
+            global::G.Flux2FlexInputs request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Generate or edit an image with FLUX.2 [FLEX]<br/>
+        /// Submits an image generation or editing task with FLUX.2 [FLEX].
+        /// </summary>
         /// <param name="prompt">
         /// Text prompt for image generation.<br/>
         /// Example: ein fantastisches bild

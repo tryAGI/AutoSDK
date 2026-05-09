@@ -31,5 +31,31 @@ namespace G
             global::G.FilePurpose? purpose = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// List Files<br/>
+        /// Returns a list of files that belong to the user's organization.
+        /// </summary>
+        /// <param name="page">
+        /// Default Value: 0
+        /// </param>
+        /// <param name="pageSize">
+        /// Default Value: 100
+        /// </param>
+        /// <param name="sampleType"></param>
+        /// <param name="source"></param>
+        /// <param name="search"></param>
+        /// <param name="purpose"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.ListFilesOut>> FilesApiRoutesListFilesAsResponseAsync(
+            int? page = default,
+            int? pageSize = default,
+            global::System.Collections.Generic.IList<global::G.SampleType>? sampleType = default,
+            global::System.Collections.Generic.IList<global::G.Source>? source = default,
+            string? search = default,
+            global::G.FilePurpose? purpose = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

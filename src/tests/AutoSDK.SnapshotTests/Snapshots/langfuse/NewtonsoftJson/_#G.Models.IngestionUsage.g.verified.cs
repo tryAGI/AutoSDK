@@ -28,6 +28,19 @@ namespace G
         public bool IsUsage => Usage != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickUsage(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.Usage? value)
+        {
+            value = Usage;
+            return IsUsage;
+        }
+
+        /// <summary>
         /// Usage interface of OpenAI for improved compatibility.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OpenAIUsage))]
 #endif
         public bool IsOpenAIUsage => OpenAIUsage != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickOpenAIUsage(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.OpenAIUsage? value)
+        {
+            value = OpenAIUsage;
+            return IsOpenAIUsage;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -119,8 +145,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.Usage?, TResult>? usage = null,
-            global::System.Func<global::G.OpenAIUsage?, TResult>? openAIUsage = null,
+            global::System.Func<global::G.Usage, TResult>? usage = null,
+            global::System.Func<global::G.OpenAIUsage, TResult>? openAIUsage = null,
             bool validate = true)
         {
             if (validate)
@@ -144,8 +170,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.Usage?>? usage = null,
-            global::System.Action<global::G.OpenAIUsage?>? openAIUsage = null,
+            global::System.Action<global::G.Usage>? usage = null,
+
+            global::System.Action<global::G.OpenAIUsage>? openAIUsage = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsUsage)
+            {
+                usage?.Invoke(Usage!);
+            }
+            else if (IsOpenAIUsage)
+            {
+                openAIUsage?.Invoke(OpenAIUsage!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.Usage>? usage = null,
+            global::System.Action<global::G.OpenAIUsage>? openAIUsage = null,
             bool validate = true)
         {
             if (validate)

@@ -58,7 +58,7 @@ namespace G
         /// <summary>
         /// Abuse Contact API.
         /// </summary>
-        public AbuseClient Abuse => new AbuseClient(HttpClient, authorizations: Authorizations, options: Options)
+        public AbuseClient Abuse => new AbuseClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -67,7 +67,7 @@ namespace G
         /// <summary>
         /// ASN API.
         /// </summary>
-        public AsnClient Asn => new AsnClient(HttpClient, authorizations: Authorizations, options: Options)
+        public AsnClient Asn => new AsnClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -76,7 +76,7 @@ namespace G
         /// <summary>
         /// Hosted Domains API.
         /// </summary>
-        public DomainsClient Domains => new DomainsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public DomainsClient Domains => new DomainsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -85,7 +85,7 @@ namespace G
         /// <summary>
         /// General API.
         /// </summary>
-        public GeneralClient General => new GeneralClient(HttpClient, authorizations: Authorizations, options: Options)
+        public GeneralClient General => new GeneralClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -94,7 +94,7 @@ namespace G
         /// <summary>
         /// Privacy Detection API.
         /// </summary>
-        public PrivacyDetectionClient PrivacyDetection => new PrivacyDetectionClient(HttpClient, authorizations: Authorizations, options: Options)
+        public PrivacyDetectionClient PrivacyDetection => new PrivacyDetectionClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -103,7 +103,7 @@ namespace G
         /// <summary>
         /// IP Ranges API.
         /// </summary>
-        public RangesClient Ranges => new RangesClient(HttpClient, authorizations: Authorizations, options: Options)
+        public RangesClient Ranges => new RangesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -112,7 +112,7 @@ namespace G
         /// <summary>
         /// Single info API.
         /// </summary>
-        public SingleClient Single => new SingleClient(HttpClient, authorizations: Authorizations, options: Options)
+        public SingleClient Single => new SingleClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -151,10 +151,10 @@ namespace G
         /// <param name="options">Client-wide request defaults such as headers, query parameters, retries, and timeout.</param>
         /// <param name="disposeHttpClient">Dispose the HttpClient when the instance is disposed. True by default.</param>
         public Api(
-            global::System.Net.Http.HttpClient? httpClient = null,
-            global::System.Uri? baseUri = null,
-            global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations = null,
-            global::G.AutoSDKClientOptions? options = null,
+            global::System.Net.Http.HttpClient? httpClient,
+            global::System.Uri? baseUri,
+            global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations,
+            global::G.AutoSDKClientOptions? options,
             bool disposeHttpClient = true)
         {
 

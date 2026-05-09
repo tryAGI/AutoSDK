@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickEmbeddingFunctionConfigurationVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.EmbeddingFunctionConfigurationVariant1? value)
+        {
+            value = EmbeddingFunctionConfigurationVariant1;
+            return IsEmbeddingFunctionConfigurationVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.AllOf<global::G.EmbeddingFunctionNewConfiguration, global::G.EmbeddingFunctionConfigurationVariant22>? EmbeddingFunctionConfigurationVariant2 { get; init; }
 #else
@@ -47,6 +60,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickEmbeddingFunctionConfigurationVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.AllOf<global::G.EmbeddingFunctionNewConfiguration, global::G.EmbeddingFunctionConfigurationVariant22>? value)
+        {
+            value = EmbeddingFunctionConfigurationVariant2;
+            return IsEmbeddingFunctionConfigurationVariant2;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.EmbeddingFunctionConfigurationVariant3? EmbeddingFunctionConfigurationVariant3 { get; init; }
 #else
@@ -60,6 +86,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(EmbeddingFunctionConfigurationVariant3))]
 #endif
         public bool IsEmbeddingFunctionConfigurationVariant3 => EmbeddingFunctionConfigurationVariant3 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickEmbeddingFunctionConfigurationVariant3(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.EmbeddingFunctionConfigurationVariant3? value)
+        {
+            value = EmbeddingFunctionConfigurationVariant3;
+            return IsEmbeddingFunctionConfigurationVariant3;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -158,9 +197,9 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.EmbeddingFunctionConfigurationVariant1?, TResult>? embeddingFunctionConfigurationVariant1 = null,
+            global::System.Func<global::G.EmbeddingFunctionConfigurationVariant1, TResult>? embeddingFunctionConfigurationVariant1 = null,
             global::System.Func<global::G.AllOf<global::G.EmbeddingFunctionNewConfiguration, global::G.EmbeddingFunctionConfigurationVariant22>?, TResult>? embeddingFunctionConfigurationVariant2 = null,
-            global::System.Func<global::G.EmbeddingFunctionConfigurationVariant3?, TResult>? embeddingFunctionConfigurationVariant3 = null,
+            global::System.Func<global::G.EmbeddingFunctionConfigurationVariant3, TResult>? embeddingFunctionConfigurationVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -188,9 +227,39 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.EmbeddingFunctionConfigurationVariant1?>? embeddingFunctionConfigurationVariant1 = null,
+            global::System.Action<global::G.EmbeddingFunctionConfigurationVariant1>? embeddingFunctionConfigurationVariant1 = null,
+
             global::System.Action<global::G.AllOf<global::G.EmbeddingFunctionNewConfiguration, global::G.EmbeddingFunctionConfigurationVariant22>?>? embeddingFunctionConfigurationVariant2 = null,
-            global::System.Action<global::G.EmbeddingFunctionConfigurationVariant3?>? embeddingFunctionConfigurationVariant3 = null,
+
+            global::System.Action<global::G.EmbeddingFunctionConfigurationVariant3>? embeddingFunctionConfigurationVariant3 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsEmbeddingFunctionConfigurationVariant1)
+            {
+                embeddingFunctionConfigurationVariant1?.Invoke(EmbeddingFunctionConfigurationVariant1!);
+            }
+            else if (IsEmbeddingFunctionConfigurationVariant2)
+            {
+                embeddingFunctionConfigurationVariant2?.Invoke(EmbeddingFunctionConfigurationVariant2!);
+            }
+            else if (IsEmbeddingFunctionConfigurationVariant3)
+            {
+                embeddingFunctionConfigurationVariant3?.Invoke(EmbeddingFunctionConfigurationVariant3!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.EmbeddingFunctionConfigurationVariant1>? embeddingFunctionConfigurationVariant1 = null,
+            global::System.Action<global::G.AllOf<global::G.EmbeddingFunctionNewConfiguration, global::G.EmbeddingFunctionConfigurationVariant22>?>? embeddingFunctionConfigurationVariant2 = null,
+            global::System.Action<global::G.EmbeddingFunctionConfigurationVariant3>? embeddingFunctionConfigurationVariant3 = null,
             bool validate = true)
         {
             if (validate)

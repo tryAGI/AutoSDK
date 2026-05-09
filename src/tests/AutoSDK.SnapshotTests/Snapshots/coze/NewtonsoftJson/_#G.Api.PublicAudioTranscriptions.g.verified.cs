@@ -7,6 +7,19 @@ namespace G
     public partial class Api
     {
 
+        private static readonly global::G.AutoSDKServer[] s_PublicAudioTranscriptionsServers = new global::G.AutoSDKServer[]
+        {            new global::G.AutoSDKServer(
+                id: "https-api-coze-com",
+                name: "International",
+                url: "https://api.coze.com/",
+                description: "International"),
+            new global::G.AutoSDKServer(
+                id: "https-api-coze-cn",
+                name: "China",
+                url: "https://api.coze.cn/",
+                description: "China"),
+        };
+
 
         private static readonly global::G.EndPointSecurityRequirement s_PublicAudioTranscriptionsSecurityRequirement0 =
             new global::G.EndPointSecurityRequirement
@@ -56,6 +69,29 @@ namespace G
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var __response = await PublicAudioTranscriptionsAsResponseAsync(
+
+                request: request,
+                requestOptions: requestOptions,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// 语音识别<br/>
+        /// {"0":{"ops":[{"insert":"将音频文件转录为文本。\n"},{"attributes":{"anchor":"be23719f","lmkr":"1","heading":"h2"},"insert":"*"},{"insert":"接口描述\n"},{"attributes":{"lmkr":"1"},"insert":"*"},{"insert":"此 API 用于将指定音频文件转录为文本。\n"},{"attributes":{"lmkr":"1"},"insert":"*"},{"attributes":{"zoneId":"x4xWyDX0dW","zoneType":"Z","type":"warning","title":"注意","border":"#fed4a4","background":"#fff5eb","highlight-block-v2":"true"},"insert":" "},{"insert":"\n"},{"attributes":{"lmkr":"1"},"insert":"*"},{"insert":"语音文件的具体限制如下：\n"},{"attributes":{"aceTable":"rsaz3aujktbark4q0n5mcl19it13pjr5nd cstwhi7s9g55zzhf3dkmsu3llge1jpfmdh"},"insert":"*"},{"insert":"\n"},{"attributes":{"zoneId":"xMnnYIBhOG","zoneType":"Z","type":"tip","title":"说明","border":"#bacefd","background":"#f0f4ff","highlight-block-v2":"true"},"insert":" "},{"insert":"\n"}],"zoneId":"0","zoneType":"Z"},"x4xWyDX0dW":{"ops":[{"insert":"调用语音识别 API 会产生"},{"attributes":{"bold":"true"},"insert":"语音识别费用"},{"insert":"，具体费用详情请参考"},{"attributes":{"hyperlink":"{\"href\":\"https://www.coze.cn/open/docs/coze_pro/asr_tts_fee#d4ab71d9\",\"linkId\":\"XgGO5Oid8O\",\"newTab\":true}"},"insert":"音视频费用"},{"insert":"。\n"}],"zoneId":"x4xWyDX0dW","zoneType":"Z"},"rsaz3aujktbark4q0n5mcl19it13pjr5nd":{"ops":[{"attributes":{"colWidth":"100"},"insert":{"id":"r1gv0diy056deo5u873mcy1ewpju9gkmvn"}},{"attributes":{"rowHeight":"41","colWidth":"100"},"insert":{"id":"r1ivmnay4ygvf86q92qsgzajlt0kp1ur85"}},{"attributes":{"colWidth":"100","rowHeight":"40"},"insert":{"id":"r1eaudhza0s7t3oe0tsopelm9n5mq66vcm"}}],"zoneId":"rsaz3aujktbark4q0n5mcl19it13pjr5nd","zoneType":"R"},"cstwhi7s9g55zzhf3dkmsu3llge1jpfmdh":{"ops":[{"attributes":{"colWidth":"151"},"insert":{"id":"c1m1wojhwkam09ehofvmdy4pg0lcbhnzob"}},{"attributes":{"colWidth":"752"},"insert":{"id":"c10lug6nb45li27qbvjdu2fq20u107pde0"}}],"zoneId":"cstwhi7s9g55zzhf3dkmsu3llge1jpfmdh","zoneType":"C"},"xr1gv0diy056deo5u873mcy1ewpju9gkmvnxc1m1wojhwkam09ehofvmdy4pg0lcbhnzob":{"ops":[{"attributes":{"bold":"true"},"insert":"限制"},{"insert":"\n"}],"zoneId":"xr1gv0diy056deo5u873mcy1ewpju9gkmvnxc1m1wojhwkam09ehofvmdy4pg0lcbhnzob","zoneType":"Z"},"xr1gv0diy056deo5u873mcy1ewpju9gkmvnxc10lug6nb45li27qbvjdu2fq20u107pde0":{"ops":[{"attributes":{"bold":"true"},"insert":"说明"},{"insert":"\n"}],"zoneId":"xr1gv0diy056deo5u873mcy1ewpju9gkmvnxc10lug6nb45li27qbvjdu2fq20u107pde0","zoneType":"Z"},"xr1ivmnay4ygvf86q92qsgzajlt0kp1ur85xc1m1wojhwkam09ehofvmdy4pg0lcbhnzob":{"ops":[{"insert":"文件格式\n"}],"zoneId":"xr1ivmnay4ygvf86q92qsgzajlt0kp1ur85xc1m1wojhwkam09ehofvmdy4pg0lcbhnzob","zoneType":"Z"},"xr1ivmnay4ygvf86q92qsgzajlt0kp1ur85xc10lug6nb45li27qbvjdu2fq20u107pde0":{"ops":[{"insert":"支持的文件格式包括 ogg、mp3 和 wav。\n"}],"zoneId":"xr1ivmnay4ygvf86q92qsgzajlt0kp1ur85xc10lug6nb45li27qbvjdu2fq20u107pde0","zoneType":"Z"},"xr1eaudhza0s7t3oe0tsopelm9n5mq66vcmxc1m1wojhwkam09ehofvmdy4pg0lcbhnzob":{"ops":[{"insert":"文件大小\n"}],"zoneId":"xr1eaudhza0s7t3oe0tsopelm9n5mq66vcmxc1m1wojhwkam09ehofvmdy4pg0lcbhnzob","zoneType":"Z"},"xr1eaudhza0s7t3oe0tsopelm9n5mq66vcmxc10lug6nb45li27qbvjdu2fq20u107pde0":{"ops":[{"insert":"每个音频文件最大为 10 MB，并且时长需小于 30 分钟。\n"}],"zoneId":"xr1eaudhza0s7t3oe0tsopelm9n5mq66vcmxc10lug6nb45li27qbvjdu2fq20u107pde0","zoneType":"Z"},"xMnnYIBhOG":{"ops":[{"insert":"*","attributes":{"list":"bullet1","lmkr":"1"}},{"insert":"上传的音频文件的采样率和码率等参数无限制。\n"},{"attributes":{"list":"bullet1","lmkr":"1"},"insert":"*"},{"insert":"如果语音文件过大，建议调用 WebSocket 的"},{"insert":"双向流式语音识别 API","attributes":{"hyperlink":"{\"href\":\"https://www.coze.cn/open/docs/developer_guides/asr_api\",\"linkId\":\"CRfi4OuzbE\"}"}},{"insert":" 分片上传文件。\n"}],"zoneId":"xMnnYIBhOG","zoneType":"Z"}}
+        /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.PublicAudioTranscriptionsResponse>> PublicAudioTranscriptionsAsResponseAsync(
+
+            global::G.PublicAudioTranscriptionsRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 
             PrepareArguments(
@@ -82,13 +118,16 @@ namespace G
             var __maxAttempts = global::G.AutoSDKRequestOptionsSupport.GetMaxAttempts(
                 clientOptions: Options,
                 requestOptions: requestOptions,
-                supportsRetry: true);
+                supportsRetry: false);
 
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
+
                             var __pathBuilder = new global::G.PathBuilder(
                                 path: "/v1/audio/transcriptions",
-                                baseUri: HttpClient.BaseAddress);
+                                baseUri: ResolveBaseUri(
+                                servers: s_PublicAudioTranscriptionsServers,
+                                defaultBaseUrl: "https://api.coze.com/"));
                             var __path = __pathBuilder.ToString();
                 __path = global::G.AutoSDKRequestOptionsSupport.AppendQueryParameters(
                     path: __path,
@@ -118,8 +157,37 @@ namespace G
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
                 } 
             }
+
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
                             var __contentFile = new global::System.Net.Http.ByteArrayContent(request.File ?? global::System.Array.Empty<byte>());
+                            __contentFile.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue(
+                                request.Filename is null
+                                    ? "application/octet-stream"
+                                    : (global::System.IO.Path.GetExtension(request.Filename) ?? string.Empty).ToLowerInvariant() switch
+                                    {
+                                        ".aac" => "audio/aac",
+                                        ".flac" => "audio/flac",
+                                        ".gif" => "image/gif",
+                                        ".jpeg" => "image/jpeg",
+                                        ".jpg" => "image/jpeg",
+                                        ".json" => "application/json",
+                                        ".m4a" => "audio/mp4",
+                                        ".mp3" => "audio/mpeg",
+                                        ".mp4" => "video/mp4",
+                                        ".mpeg" => "audio/mpeg",
+                                        ".mpga" => "audio/mpeg",
+                                        ".oga" => "audio/ogg",
+                                        ".ogg" => "audio/ogg",
+                                        ".opus" => "audio/ogg",
+                                        ".pdf" => "application/pdf",
+                                        ".png" => "image/png",
+                                        ".txt" => "text/plain",
+                                        ".wav" => "audio/wav",
+                                        ".weba" => "audio/webm",
+                                        ".webm" => "video/webm",
+                                        ".webp" => "image/webp",
+                                        _ => "application/octet-stream",
+                                    });
                             __httpRequestContent.Add(
                                 content: __contentFile,
                                 name: "\"file\"",
@@ -128,7 +196,9 @@ namespace G
                             {
                                 __contentFile.Headers.ContentDisposition.FileNameStar = null;
                             }
+
                             __httpRequest.Content = __httpRequestContent;
+
                 global::G.AutoSDKRequestOptionsSupport.ApplyHeaders(
                     request: __httpRequest,
                     clientHeaders: Options.Headers,
@@ -170,6 +240,8 @@ namespace G
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                     try
                     {
@@ -180,6 +252,11 @@ namespace G
                     }
                     catch (global::System.Net.Http.HttpRequestException __exception)
                     {
+                        var __retryDelay = global::G.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: null,
+                            attempt: __attempt);
                         var __willRetry = __attempt < __maxAttempts && !__effectiveCancellationToken.IsCancellationRequested;
                         await global::G.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
@@ -197,6 +274,8 @@ namespace G
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: __willRetry,
+                                retryDelay: __willRetry ? __retryDelay : (global::System.TimeSpan?)null,
+                                retryReason: "exception",
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         if (!__willRetry)
                         {
@@ -206,8 +285,7 @@ namespace G
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::G.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -216,6 +294,11 @@ namespace G
                         __attempt < __maxAttempts &&
                         global::G.AutoSDKRequestOptionsSupport.ShouldRetryStatusCode(__response.StatusCode))
                     {
+                        var __retryDelay = global::G.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: __response,
+                            attempt: __attempt);
                         await global::G.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
@@ -232,14 +315,15 @@ namespace G
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: true,
+                                retryDelay: __retryDelay,
+                                retryReason: "status:" + ((int)__response.StatusCode).ToString(global::System.Globalization.CultureInfo.InvariantCulture),
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         __response.Dispose();
                         __response = null;
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::G.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -279,6 +363,8 @@ namespace G
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
                 else
@@ -299,6 +385,460 @@ namespace G
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
+                                cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
+                }
+
+                            if (__effectiveReadResponseAsString)
+                            {
+                                var __content = await __response.Content.ReadAsStringAsync(
+                #if NET5_0_OR_GREATER
+                                    __effectiveCancellationToken
+                #endif
+                                ).ConfigureAwait(false);
+
+                                ProcessResponseContent(
+                                    client: HttpClient,
+                                    response: __response,
+                                    content: ref __content);
+                                ProcessPublicAudioTranscriptionsResponseContent(
+                                    httpClient: HttpClient,
+                                    httpResponseMessage: __response,
+                                    content: ref __content);
+
+                                try
+                                {
+                                    __response.EnsureSuccessStatusCode();
+
+                                    var __value = global::G.PublicAudioTranscriptionsResponse.FromJson(__content, JsonSerializerOptions) ??
+                                        throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                                    return new global::G.AutoSDKHttpResponse<global::G.PublicAudioTranscriptionsResponse>(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri,
+                                        body: __value);
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    throw new global::G.ApiException(
+                                        message: __content ?? __response.ReasonPhrase ?? string.Empty,
+                                        innerException: __ex,
+                                        statusCode: __response.StatusCode)
+                                    {
+                                        ResponseBody = __content,
+                                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                            __response.Headers,
+                                            h => h.Key,
+                                            h => h.Value),
+                                    };
+                                }
+                            }
+                            else
+                            {
+                                try
+                                {
+                                    __response.EnsureSuccessStatusCode();
+                                    using var __content = await __response.Content.ReadAsStreamAsync(
+                #if NET5_0_OR_GREATER
+                                        __effectiveCancellationToken
+                #endif
+                                    ).ConfigureAwait(false);
+
+                                    var __value = await global::G.PublicAudioTranscriptionsResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                                        throw new global::System.InvalidOperationException("Response deserialization failed.");
+                                    return new global::G.AutoSDKHttpResponse<global::G.PublicAudioTranscriptionsResponse>(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri,
+                                        body: __value);
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    string? __content = null;
+                                    try
+                                    {
+                                        __content = await __response.Content.ReadAsStringAsync(
+                #if NET5_0_OR_GREATER
+                                            __effectiveCancellationToken
+                #endif
+                                        ).ConfigureAwait(false);
+                                    }
+                                    catch (global::System.Exception)
+                                    {
+                                    }
+
+                                    throw new global::G.ApiException(
+                                        message: __content ?? __response.ReasonPhrase ?? string.Empty,
+                                        innerException: __ex,
+                                        statusCode: __response.StatusCode)
+                                    {
+                                        ResponseBody = __content,
+                                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                            __response.Headers,
+                                            h => h.Key,
+                                            h => h.Value),
+                                    };
+                                }
+                            }
+
+                }
+            }
+            finally
+            {
+                __httpRequest?.Dispose();
+            }
+        }
+        /// <summary>
+        /// 语音识别<br/>
+        /// {"0":{"ops":[{"insert":"将音频文件转录为文本。\n"},{"attributes":{"anchor":"be23719f","lmkr":"1","heading":"h2"},"insert":"*"},{"insert":"接口描述\n"},{"attributes":{"lmkr":"1"},"insert":"*"},{"insert":"此 API 用于将指定音频文件转录为文本。\n"},{"attributes":{"lmkr":"1"},"insert":"*"},{"attributes":{"zoneId":"x4xWyDX0dW","zoneType":"Z","type":"warning","title":"注意","border":"#fed4a4","background":"#fff5eb","highlight-block-v2":"true"},"insert":" "},{"insert":"\n"},{"attributes":{"lmkr":"1"},"insert":"*"},{"insert":"语音文件的具体限制如下：\n"},{"attributes":{"aceTable":"rsaz3aujktbark4q0n5mcl19it13pjr5nd cstwhi7s9g55zzhf3dkmsu3llge1jpfmdh"},"insert":"*"},{"insert":"\n"},{"attributes":{"zoneId":"xMnnYIBhOG","zoneType":"Z","type":"tip","title":"说明","border":"#bacefd","background":"#f0f4ff","highlight-block-v2":"true"},"insert":" "},{"insert":"\n"}],"zoneId":"0","zoneType":"Z"},"x4xWyDX0dW":{"ops":[{"insert":"调用语音识别 API 会产生"},{"attributes":{"bold":"true"},"insert":"语音识别费用"},{"insert":"，具体费用详情请参考"},{"attributes":{"hyperlink":"{\"href\":\"https://www.coze.cn/open/docs/coze_pro/asr_tts_fee#d4ab71d9\",\"linkId\":\"XgGO5Oid8O\",\"newTab\":true}"},"insert":"音视频费用"},{"insert":"。\n"}],"zoneId":"x4xWyDX0dW","zoneType":"Z"},"rsaz3aujktbark4q0n5mcl19it13pjr5nd":{"ops":[{"attributes":{"colWidth":"100"},"insert":{"id":"r1gv0diy056deo5u873mcy1ewpju9gkmvn"}},{"attributes":{"rowHeight":"41","colWidth":"100"},"insert":{"id":"r1ivmnay4ygvf86q92qsgzajlt0kp1ur85"}},{"attributes":{"colWidth":"100","rowHeight":"40"},"insert":{"id":"r1eaudhza0s7t3oe0tsopelm9n5mq66vcm"}}],"zoneId":"rsaz3aujktbark4q0n5mcl19it13pjr5nd","zoneType":"R"},"cstwhi7s9g55zzhf3dkmsu3llge1jpfmdh":{"ops":[{"attributes":{"colWidth":"151"},"insert":{"id":"c1m1wojhwkam09ehofvmdy4pg0lcbhnzob"}},{"attributes":{"colWidth":"752"},"insert":{"id":"c10lug6nb45li27qbvjdu2fq20u107pde0"}}],"zoneId":"cstwhi7s9g55zzhf3dkmsu3llge1jpfmdh","zoneType":"C"},"xr1gv0diy056deo5u873mcy1ewpju9gkmvnxc1m1wojhwkam09ehofvmdy4pg0lcbhnzob":{"ops":[{"attributes":{"bold":"true"},"insert":"限制"},{"insert":"\n"}],"zoneId":"xr1gv0diy056deo5u873mcy1ewpju9gkmvnxc1m1wojhwkam09ehofvmdy4pg0lcbhnzob","zoneType":"Z"},"xr1gv0diy056deo5u873mcy1ewpju9gkmvnxc10lug6nb45li27qbvjdu2fq20u107pde0":{"ops":[{"attributes":{"bold":"true"},"insert":"说明"},{"insert":"\n"}],"zoneId":"xr1gv0diy056deo5u873mcy1ewpju9gkmvnxc10lug6nb45li27qbvjdu2fq20u107pde0","zoneType":"Z"},"xr1ivmnay4ygvf86q92qsgzajlt0kp1ur85xc1m1wojhwkam09ehofvmdy4pg0lcbhnzob":{"ops":[{"insert":"文件格式\n"}],"zoneId":"xr1ivmnay4ygvf86q92qsgzajlt0kp1ur85xc1m1wojhwkam09ehofvmdy4pg0lcbhnzob","zoneType":"Z"},"xr1ivmnay4ygvf86q92qsgzajlt0kp1ur85xc10lug6nb45li27qbvjdu2fq20u107pde0":{"ops":[{"insert":"支持的文件格式包括 ogg、mp3 和 wav。\n"}],"zoneId":"xr1ivmnay4ygvf86q92qsgzajlt0kp1ur85xc10lug6nb45li27qbvjdu2fq20u107pde0","zoneType":"Z"},"xr1eaudhza0s7t3oe0tsopelm9n5mq66vcmxc1m1wojhwkam09ehofvmdy4pg0lcbhnzob":{"ops":[{"insert":"文件大小\n"}],"zoneId":"xr1eaudhza0s7t3oe0tsopelm9n5mq66vcmxc1m1wojhwkam09ehofvmdy4pg0lcbhnzob","zoneType":"Z"},"xr1eaudhza0s7t3oe0tsopelm9n5mq66vcmxc10lug6nb45li27qbvjdu2fq20u107pde0":{"ops":[{"insert":"每个音频文件最大为 10 MB，并且时长需小于 30 分钟。\n"}],"zoneId":"xr1eaudhza0s7t3oe0tsopelm9n5mq66vcmxc10lug6nb45li27qbvjdu2fq20u107pde0","zoneType":"Z"},"xMnnYIBhOG":{"ops":[{"insert":"*","attributes":{"list":"bullet1","lmkr":"1"}},{"insert":"上传的音频文件的采样率和码率等参数无限制。\n"},{"attributes":{"list":"bullet1","lmkr":"1"},"insert":"*"},{"insert":"如果语音文件过大，建议调用 WebSocket 的"},{"insert":"双向流式语音识别 API","attributes":{"hyperlink":"{\"href\":\"https://www.coze.cn/open/docs/developer_guides/asr_api\",\"linkId\":\"CRfi4OuzbE\"}"}},{"insert":" 分片上传文件。\n"}],"zoneId":"xMnnYIBhOG","zoneType":"Z"}}
+        /// </summary>
+        /// <param name="file">
+        /// 音频文件，应使用 multipart/form-data 方式上传文件。
+        /// </param>
+        /// <param name="filename">
+        /// 音频文件，应使用 multipart/form-data 方式上传文件。
+        /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::System.InvalidOperationException"></exception>
+        public async global::System.Threading.Tasks.Task<global::G.PublicAudioTranscriptionsResponse> PublicAudioTranscriptionsAsync(
+            byte[] file,
+            string filename,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
+            var __request = new global::G.PublicAudioTranscriptionsRequest
+            {
+                File = file,
+                Filename = filename,
+            };
+
+            return await PublicAudioTranscriptionsAsync(
+                request: __request,
+                requestOptions: requestOptions,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// 语音识别<br/>
+        /// {"0":{"ops":[{"insert":"将音频文件转录为文本。\n"},{"attributes":{"anchor":"be23719f","lmkr":"1","heading":"h2"},"insert":"*"},{"insert":"接口描述\n"},{"attributes":{"lmkr":"1"},"insert":"*"},{"insert":"此 API 用于将指定音频文件转录为文本。\n"},{"attributes":{"lmkr":"1"},"insert":"*"},{"attributes":{"zoneId":"x4xWyDX0dW","zoneType":"Z","type":"warning","title":"注意","border":"#fed4a4","background":"#fff5eb","highlight-block-v2":"true"},"insert":" "},{"insert":"\n"},{"attributes":{"lmkr":"1"},"insert":"*"},{"insert":"语音文件的具体限制如下：\n"},{"attributes":{"aceTable":"rsaz3aujktbark4q0n5mcl19it13pjr5nd cstwhi7s9g55zzhf3dkmsu3llge1jpfmdh"},"insert":"*"},{"insert":"\n"},{"attributes":{"zoneId":"xMnnYIBhOG","zoneType":"Z","type":"tip","title":"说明","border":"#bacefd","background":"#f0f4ff","highlight-block-v2":"true"},"insert":" "},{"insert":"\n"}],"zoneId":"0","zoneType":"Z"},"x4xWyDX0dW":{"ops":[{"insert":"调用语音识别 API 会产生"},{"attributes":{"bold":"true"},"insert":"语音识别费用"},{"insert":"，具体费用详情请参考"},{"attributes":{"hyperlink":"{\"href\":\"https://www.coze.cn/open/docs/coze_pro/asr_tts_fee#d4ab71d9\",\"linkId\":\"XgGO5Oid8O\",\"newTab\":true}"},"insert":"音视频费用"},{"insert":"。\n"}],"zoneId":"x4xWyDX0dW","zoneType":"Z"},"rsaz3aujktbark4q0n5mcl19it13pjr5nd":{"ops":[{"attributes":{"colWidth":"100"},"insert":{"id":"r1gv0diy056deo5u873mcy1ewpju9gkmvn"}},{"attributes":{"rowHeight":"41","colWidth":"100"},"insert":{"id":"r1ivmnay4ygvf86q92qsgzajlt0kp1ur85"}},{"attributes":{"colWidth":"100","rowHeight":"40"},"insert":{"id":"r1eaudhza0s7t3oe0tsopelm9n5mq66vcm"}}],"zoneId":"rsaz3aujktbark4q0n5mcl19it13pjr5nd","zoneType":"R"},"cstwhi7s9g55zzhf3dkmsu3llge1jpfmdh":{"ops":[{"attributes":{"colWidth":"151"},"insert":{"id":"c1m1wojhwkam09ehofvmdy4pg0lcbhnzob"}},{"attributes":{"colWidth":"752"},"insert":{"id":"c10lug6nb45li27qbvjdu2fq20u107pde0"}}],"zoneId":"cstwhi7s9g55zzhf3dkmsu3llge1jpfmdh","zoneType":"C"},"xr1gv0diy056deo5u873mcy1ewpju9gkmvnxc1m1wojhwkam09ehofvmdy4pg0lcbhnzob":{"ops":[{"attributes":{"bold":"true"},"insert":"限制"},{"insert":"\n"}],"zoneId":"xr1gv0diy056deo5u873mcy1ewpju9gkmvnxc1m1wojhwkam09ehofvmdy4pg0lcbhnzob","zoneType":"Z"},"xr1gv0diy056deo5u873mcy1ewpju9gkmvnxc10lug6nb45li27qbvjdu2fq20u107pde0":{"ops":[{"attributes":{"bold":"true"},"insert":"说明"},{"insert":"\n"}],"zoneId":"xr1gv0diy056deo5u873mcy1ewpju9gkmvnxc10lug6nb45li27qbvjdu2fq20u107pde0","zoneType":"Z"},"xr1ivmnay4ygvf86q92qsgzajlt0kp1ur85xc1m1wojhwkam09ehofvmdy4pg0lcbhnzob":{"ops":[{"insert":"文件格式\n"}],"zoneId":"xr1ivmnay4ygvf86q92qsgzajlt0kp1ur85xc1m1wojhwkam09ehofvmdy4pg0lcbhnzob","zoneType":"Z"},"xr1ivmnay4ygvf86q92qsgzajlt0kp1ur85xc10lug6nb45li27qbvjdu2fq20u107pde0":{"ops":[{"insert":"支持的文件格式包括 ogg、mp3 和 wav。\n"}],"zoneId":"xr1ivmnay4ygvf86q92qsgzajlt0kp1ur85xc10lug6nb45li27qbvjdu2fq20u107pde0","zoneType":"Z"},"xr1eaudhza0s7t3oe0tsopelm9n5mq66vcmxc1m1wojhwkam09ehofvmdy4pg0lcbhnzob":{"ops":[{"insert":"文件大小\n"}],"zoneId":"xr1eaudhza0s7t3oe0tsopelm9n5mq66vcmxc1m1wojhwkam09ehofvmdy4pg0lcbhnzob","zoneType":"Z"},"xr1eaudhza0s7t3oe0tsopelm9n5mq66vcmxc10lug6nb45li27qbvjdu2fq20u107pde0":{"ops":[{"insert":"每个音频文件最大为 10 MB，并且时长需小于 30 分钟。\n"}],"zoneId":"xr1eaudhza0s7t3oe0tsopelm9n5mq66vcmxc10lug6nb45li27qbvjdu2fq20u107pde0","zoneType":"Z"},"xMnnYIBhOG":{"ops":[{"insert":"*","attributes":{"list":"bullet1","lmkr":"1"}},{"insert":"上传的音频文件的采样率和码率等参数无限制。\n"},{"attributes":{"list":"bullet1","lmkr":"1"},"insert":"*"},{"insert":"如果语音文件过大，建议调用 WebSocket 的"},{"insert":"双向流式语音识别 API","attributes":{"hyperlink":"{\"href\":\"https://www.coze.cn/open/docs/developer_guides/asr_api\",\"linkId\":\"CRfi4OuzbE\"}"}},{"insert":" 分片上传文件。\n"}],"zoneId":"xMnnYIBhOG","zoneType":"Z"}}
+        /// </summary>
+        /// <param name="file">
+        /// 音频文件，应使用 multipart/form-data 方式上传文件。
+        /// </param>
+        /// <param name="filename">
+        /// 音频文件，应使用 multipart/form-data 方式上传文件。
+        /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::G.PublicAudioTranscriptionsResponse> PublicAudioTranscriptionsAsync(
+            global::System.IO.Stream file,
+            string filename,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
+
+            file = file ?? throw new global::System.ArgumentNullException(nameof(file));
+            var request = new global::G.PublicAudioTranscriptionsRequest
+            {
+                File = global::System.Array.Empty<byte>(),
+                Filename = filename,
+            };
+            PrepareArguments(
+                client: HttpClient);
+            PreparePublicAudioTranscriptionsArguments(
+                httpClient: HttpClient,
+                request: request);
+
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_PublicAudioTranscriptionsSecurityRequirements,
+                operationName: "PublicAudioTranscriptionsAsync");
+
+            using var __timeoutCancellationTokenSource = global::G.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
+                clientOptions: Options,
+                requestOptions: requestOptions,
+                cancellationToken: cancellationToken);
+            var __effectiveCancellationToken = __timeoutCancellationTokenSource?.Token ?? cancellationToken;
+            var __effectiveReadResponseAsString = global::G.AutoSDKRequestOptionsSupport.GetReadResponseAsString(
+                clientOptions: Options,
+                requestOptions: requestOptions,
+                fallbackValue: ReadResponseAsString);
+            var __maxAttempts = global::G.AutoSDKRequestOptionsSupport.GetMaxAttempts(
+                clientOptions: Options,
+                requestOptions: requestOptions,
+                supportsRetry: false);
+
+            global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
+            {
+
+                            var __pathBuilder = new global::G.PathBuilder(
+                                path: "/v1/audio/transcriptions",
+                                baseUri: ResolveBaseUri(
+                                servers: s_PublicAudioTranscriptionsServers,
+                                defaultBaseUrl: "https://api.coze.com/"));
+                            var __path = __pathBuilder.ToString();
+                __path = global::G.AutoSDKRequestOptionsSupport.AppendQueryParameters(
+                    path: __path,
+                    clientParameters: Options.QueryParameters,
+                    requestParameters: requestOptions?.QueryParameters);
+                var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
+                    method: global::System.Net.Http.HttpMethod.Post,
+                    requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
+#if NET6_0_OR_GREATER
+                __httpRequest.Version = global::System.Net.HttpVersion.Version11;
+                __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
+#endif
+
+            foreach (var __authorization in __authorizations)
+            {
+                if (__authorization.Type == "Http" ||
+                    __authorization.Type == "OAuth2" ||
+                    __authorization.Type == "OpenIdConnect")
+                {
+                    __httpRequest.Headers.Authorization = new global::System.Net.Http.Headers.AuthenticationHeaderValue(
+                        scheme: __authorization.Name,
+                        parameter: __authorization.Value);
+                }
+                else if (__authorization.Type == "ApiKey" &&
+                         __authorization.Location == "Header")
+                {
+                    __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
+                } 
+            }
+
+                            var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
+                            var __contentFile = new global::System.Net.Http.StreamContent(file);
+                            __contentFile.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue(
+                                request.Filename is null
+                                    ? "application/octet-stream"
+                                    : (global::System.IO.Path.GetExtension(request.Filename) ?? string.Empty).ToLowerInvariant() switch
+                                    {
+                                        ".aac" => "audio/aac",
+                                        ".flac" => "audio/flac",
+                                        ".gif" => "image/gif",
+                                        ".jpeg" => "image/jpeg",
+                                        ".jpg" => "image/jpeg",
+                                        ".json" => "application/json",
+                                        ".m4a" => "audio/mp4",
+                                        ".mp3" => "audio/mpeg",
+                                        ".mp4" => "video/mp4",
+                                        ".mpeg" => "audio/mpeg",
+                                        ".mpga" => "audio/mpeg",
+                                        ".oga" => "audio/ogg",
+                                        ".ogg" => "audio/ogg",
+                                        ".opus" => "audio/ogg",
+                                        ".pdf" => "application/pdf",
+                                        ".png" => "image/png",
+                                        ".txt" => "text/plain",
+                                        ".wav" => "audio/wav",
+                                        ".weba" => "audio/webm",
+                                        ".webm" => "video/webm",
+                                        ".webp" => "image/webp",
+                                        _ => "application/octet-stream",
+                                    });
+                            __httpRequestContent.Add(
+                                content: __contentFile,
+                                name: "\"file\"",
+                                fileName: request.Filename != null ? $"\"{request.Filename}\"" : string.Empty);
+                            if (__contentFile.Headers.ContentDisposition != null)
+                            {
+                                __contentFile.Headers.ContentDisposition.FileNameStar = null;
+                            }
+
+                            __httpRequest.Content = __httpRequestContent;
+
+                global::G.AutoSDKRequestOptionsSupport.ApplyHeaders(
+                    request: __httpRequest,
+                    clientHeaders: Options.Headers,
+                    requestHeaders: requestOptions?.Headers);
+
+                PrepareRequest(
+                    client: HttpClient,
+                    request: __httpRequest);
+                PreparePublicAudioTranscriptionsRequest(
+                    httpClient: HttpClient,
+                    httpRequestMessage: __httpRequest,
+                    request: request);
+
+                return __httpRequest;
+            }
+
+            global::System.Net.Http.HttpRequestMessage? __httpRequest = null;
+            global::System.Net.Http.HttpResponseMessage? __response = null;
+            var __attemptNumber = 0;
+            try
+            {
+                for (var __attempt = 1; __attempt <= __maxAttempts; __attempt++)
+                {
+                    __attemptNumber = __attempt;
+                    __httpRequest = __CreateHttpRequest();
+                    await global::G.AutoSDKRequestOptionsSupport.OnBeforeRequestAsync(
+                            clientOptions: Options,
+                            context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
+                                operationId: "PublicAudioTranscriptions",
+                                methodName: "PublicAudioTranscriptionsAsync",
+                                pathTemplate: "\"/v1/audio/transcriptions\"",
+                                httpMethod: "POST",
+                                baseUri: BaseUri,
+                                request: __httpRequest!,
+                                response: null,
+                                exception: null,
+                                clientOptions: Options,
+                                requestOptions: requestOptions,
+                                attempt: __attempt,
+                                maxAttempts: __maxAttempts,
+                                willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
+                                cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
+                    try
+                    {
+                        __response = await HttpClient.SendAsync(
+                request: __httpRequest,
+                completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
+                cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
+                    }
+                    catch (global::System.Net.Http.HttpRequestException __exception)
+                    {
+                        var __retryDelay = global::G.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: null,
+                            attempt: __attempt);
+                        var __willRetry = __attempt < __maxAttempts && !__effectiveCancellationToken.IsCancellationRequested;
+                        await global::G.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
+                            clientOptions: Options,
+                            context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
+                                operationId: "PublicAudioTranscriptions",
+                                methodName: "PublicAudioTranscriptionsAsync",
+                                pathTemplate: "\"/v1/audio/transcriptions\"",
+                                httpMethod: "POST",
+                                baseUri: BaseUri,
+                                request: __httpRequest!,
+                                response: null,
+                                exception: __exception,
+                                clientOptions: Options,
+                                requestOptions: requestOptions,
+                                attempt: __attempt,
+                                maxAttempts: __maxAttempts,
+                                willRetry: __willRetry,
+                                retryDelay: __willRetry ? __retryDelay : (global::System.TimeSpan?)null,
+                                retryReason: "exception",
+                                cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
+                        if (!__willRetry)
+                        {
+                            throw;
+                        }
+
+                        __httpRequest.Dispose();
+                        __httpRequest = null;
+                        await global::G.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
+                            retryDelay: __retryDelay,
+                            cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
+                        continue;
+                    }
+
+                    if (__response != null &&
+                        __attempt < __maxAttempts &&
+                        global::G.AutoSDKRequestOptionsSupport.ShouldRetryStatusCode(__response.StatusCode))
+                    {
+                        var __retryDelay = global::G.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: __response,
+                            attempt: __attempt);
+                        await global::G.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
+                            clientOptions: Options,
+                            context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
+                                operationId: "PublicAudioTranscriptions",
+                                methodName: "PublicAudioTranscriptionsAsync",
+                                pathTemplate: "\"/v1/audio/transcriptions\"",
+                                httpMethod: "POST",
+                                baseUri: BaseUri,
+                                request: __httpRequest!,
+                                response: __response,
+                                exception: null,
+                                clientOptions: Options,
+                                requestOptions: requestOptions,
+                                attempt: __attempt,
+                                maxAttempts: __maxAttempts,
+                                willRetry: true,
+                                retryDelay: __retryDelay,
+                                retryReason: "status:" + ((int)__response.StatusCode).ToString(global::System.Globalization.CultureInfo.InvariantCulture),
+                                cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
+                        __response.Dispose();
+                        __response = null;
+                        __httpRequest.Dispose();
+                        __httpRequest = null;
+                        await global::G.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
+                            retryDelay: __retryDelay,
+                            cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
+                        continue;
+                    }
+
+                    break;
+                }
+
+                if (__response == null)
+                {
+                    throw new global::System.InvalidOperationException("No response received.");
+                }
+
+                using (__response)
+                {
+
+                ProcessResponse(
+                    client: HttpClient,
+                    response: __response);
+                ProcessPublicAudioTranscriptionsResponse(
+                    httpClient: HttpClient,
+                    httpResponseMessage: __response);
+                if (__response.IsSuccessStatusCode)
+                {
+                    await global::G.AutoSDKRequestOptionsSupport.OnAfterSuccessAsync(
+                            clientOptions: Options,
+                            context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
+                                operationId: "PublicAudioTranscriptions",
+                                methodName: "PublicAudioTranscriptionsAsync",
+                                pathTemplate: "\"/v1/audio/transcriptions\"",
+                                httpMethod: "POST",
+                                baseUri: BaseUri,
+                                request: __httpRequest!,
+                                response: __response,
+                                exception: null,
+                                clientOptions: Options,
+                                requestOptions: requestOptions,
+                                attempt: __attemptNumber,
+                                maxAttempts: __maxAttempts,
+                                willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
+                                cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
+                }
+                else
+                {
+                    await global::G.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
+                            clientOptions: Options,
+                            context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
+                                operationId: "PublicAudioTranscriptions",
+                                methodName: "PublicAudioTranscriptionsAsync",
+                                pathTemplate: "\"/v1/audio/transcriptions\"",
+                                httpMethod: "POST",
+                                baseUri: BaseUri,
+                                request: __httpRequest!,
+                                response: __response,
+                                exception: null,
+                                clientOptions: Options,
+                                requestOptions: requestOptions,
+                                attempt: __attemptNumber,
+                                maxAttempts: __maxAttempts,
+                                willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
 
@@ -405,23 +945,414 @@ namespace G
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.PublicAudioTranscriptionsResponse> PublicAudioTranscriptionsAsync(
-            byte[] file,
+        /// <exception cref="global::G.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.PublicAudioTranscriptionsResponse>> PublicAudioTranscriptionsAsResponseAsync(
+            global::System.IO.Stream file,
             string filename,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::G.PublicAudioTranscriptionsRequest
+
+            file = file ?? throw new global::System.ArgumentNullException(nameof(file));
+            var request = new global::G.PublicAudioTranscriptionsRequest
             {
-                File = file,
+                File = global::System.Array.Empty<byte>(),
                 Filename = filename,
             };
+            PrepareArguments(
+                client: HttpClient);
+            PreparePublicAudioTranscriptionsArguments(
+                httpClient: HttpClient,
+                request: request);
 
-            return await PublicAudioTranscriptionsAsync(
-                request: __request,
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_PublicAudioTranscriptionsSecurityRequirements,
+                operationName: "PublicAudioTranscriptionsAsync");
+
+            using var __timeoutCancellationTokenSource = global::G.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
+                clientOptions: Options,
                 requestOptions: requestOptions,
-                cancellationToken: cancellationToken).ConfigureAwait(false);
+                cancellationToken: cancellationToken);
+            var __effectiveCancellationToken = __timeoutCancellationTokenSource?.Token ?? cancellationToken;
+            var __effectiveReadResponseAsString = global::G.AutoSDKRequestOptionsSupport.GetReadResponseAsString(
+                clientOptions: Options,
+                requestOptions: requestOptions,
+                fallbackValue: ReadResponseAsString);
+            var __maxAttempts = global::G.AutoSDKRequestOptionsSupport.GetMaxAttempts(
+                clientOptions: Options,
+                requestOptions: requestOptions,
+                supportsRetry: false);
+
+            global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
+            {
+
+                            var __pathBuilder = new global::G.PathBuilder(
+                                path: "/v1/audio/transcriptions",
+                                baseUri: ResolveBaseUri(
+                                servers: s_PublicAudioTranscriptionsServers,
+                                defaultBaseUrl: "https://api.coze.com/"));
+                            var __path = __pathBuilder.ToString();
+                __path = global::G.AutoSDKRequestOptionsSupport.AppendQueryParameters(
+                    path: __path,
+                    clientParameters: Options.QueryParameters,
+                    requestParameters: requestOptions?.QueryParameters);
+                var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
+                    method: global::System.Net.Http.HttpMethod.Post,
+                    requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
+#if NET6_0_OR_GREATER
+                __httpRequest.Version = global::System.Net.HttpVersion.Version11;
+                __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
+#endif
+
+            foreach (var __authorization in __authorizations)
+            {
+                if (__authorization.Type == "Http" ||
+                    __authorization.Type == "OAuth2" ||
+                    __authorization.Type == "OpenIdConnect")
+                {
+                    __httpRequest.Headers.Authorization = new global::System.Net.Http.Headers.AuthenticationHeaderValue(
+                        scheme: __authorization.Name,
+                        parameter: __authorization.Value);
+                }
+                else if (__authorization.Type == "ApiKey" &&
+                         __authorization.Location == "Header")
+                {
+                    __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
+                } 
+            }
+
+                            var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
+                            var __contentFile = new global::System.Net.Http.StreamContent(file);
+                            __contentFile.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue(
+                                request.Filename is null
+                                    ? "application/octet-stream"
+                                    : (global::System.IO.Path.GetExtension(request.Filename) ?? string.Empty).ToLowerInvariant() switch
+                                    {
+                                        ".aac" => "audio/aac",
+                                        ".flac" => "audio/flac",
+                                        ".gif" => "image/gif",
+                                        ".jpeg" => "image/jpeg",
+                                        ".jpg" => "image/jpeg",
+                                        ".json" => "application/json",
+                                        ".m4a" => "audio/mp4",
+                                        ".mp3" => "audio/mpeg",
+                                        ".mp4" => "video/mp4",
+                                        ".mpeg" => "audio/mpeg",
+                                        ".mpga" => "audio/mpeg",
+                                        ".oga" => "audio/ogg",
+                                        ".ogg" => "audio/ogg",
+                                        ".opus" => "audio/ogg",
+                                        ".pdf" => "application/pdf",
+                                        ".png" => "image/png",
+                                        ".txt" => "text/plain",
+                                        ".wav" => "audio/wav",
+                                        ".weba" => "audio/webm",
+                                        ".webm" => "video/webm",
+                                        ".webp" => "image/webp",
+                                        _ => "application/octet-stream",
+                                    });
+                            __httpRequestContent.Add(
+                                content: __contentFile,
+                                name: "\"file\"",
+                                fileName: request.Filename != null ? $"\"{request.Filename}\"" : string.Empty);
+                            if (__contentFile.Headers.ContentDisposition != null)
+                            {
+                                __contentFile.Headers.ContentDisposition.FileNameStar = null;
+                            }
+
+                            __httpRequest.Content = __httpRequestContent;
+
+                global::G.AutoSDKRequestOptionsSupport.ApplyHeaders(
+                    request: __httpRequest,
+                    clientHeaders: Options.Headers,
+                    requestHeaders: requestOptions?.Headers);
+
+                PrepareRequest(
+                    client: HttpClient,
+                    request: __httpRequest);
+                PreparePublicAudioTranscriptionsRequest(
+                    httpClient: HttpClient,
+                    httpRequestMessage: __httpRequest,
+                    request: request);
+
+                return __httpRequest;
+            }
+
+            global::System.Net.Http.HttpRequestMessage? __httpRequest = null;
+            global::System.Net.Http.HttpResponseMessage? __response = null;
+            var __attemptNumber = 0;
+            try
+            {
+                for (var __attempt = 1; __attempt <= __maxAttempts; __attempt++)
+                {
+                    __attemptNumber = __attempt;
+                    __httpRequest = __CreateHttpRequest();
+                    await global::G.AutoSDKRequestOptionsSupport.OnBeforeRequestAsync(
+                            clientOptions: Options,
+                            context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
+                                operationId: "PublicAudioTranscriptions",
+                                methodName: "PublicAudioTranscriptionsAsync",
+                                pathTemplate: "\"/v1/audio/transcriptions\"",
+                                httpMethod: "POST",
+                                baseUri: BaseUri,
+                                request: __httpRequest!,
+                                response: null,
+                                exception: null,
+                                clientOptions: Options,
+                                requestOptions: requestOptions,
+                                attempt: __attempt,
+                                maxAttempts: __maxAttempts,
+                                willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
+                                cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
+                    try
+                    {
+                        __response = await HttpClient.SendAsync(
+                request: __httpRequest,
+                completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
+                cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
+                    }
+                    catch (global::System.Net.Http.HttpRequestException __exception)
+                    {
+                        var __retryDelay = global::G.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: null,
+                            attempt: __attempt);
+                        var __willRetry = __attempt < __maxAttempts && !__effectiveCancellationToken.IsCancellationRequested;
+                        await global::G.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
+                            clientOptions: Options,
+                            context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
+                                operationId: "PublicAudioTranscriptions",
+                                methodName: "PublicAudioTranscriptionsAsync",
+                                pathTemplate: "\"/v1/audio/transcriptions\"",
+                                httpMethod: "POST",
+                                baseUri: BaseUri,
+                                request: __httpRequest!,
+                                response: null,
+                                exception: __exception,
+                                clientOptions: Options,
+                                requestOptions: requestOptions,
+                                attempt: __attempt,
+                                maxAttempts: __maxAttempts,
+                                willRetry: __willRetry,
+                                retryDelay: __willRetry ? __retryDelay : (global::System.TimeSpan?)null,
+                                retryReason: "exception",
+                                cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
+                        if (!__willRetry)
+                        {
+                            throw;
+                        }
+
+                        __httpRequest.Dispose();
+                        __httpRequest = null;
+                        await global::G.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
+                            retryDelay: __retryDelay,
+                            cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
+                        continue;
+                    }
+
+                    if (__response != null &&
+                        __attempt < __maxAttempts &&
+                        global::G.AutoSDKRequestOptionsSupport.ShouldRetryStatusCode(__response.StatusCode))
+                    {
+                        var __retryDelay = global::G.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: __response,
+                            attempt: __attempt);
+                        await global::G.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
+                            clientOptions: Options,
+                            context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
+                                operationId: "PublicAudioTranscriptions",
+                                methodName: "PublicAudioTranscriptionsAsync",
+                                pathTemplate: "\"/v1/audio/transcriptions\"",
+                                httpMethod: "POST",
+                                baseUri: BaseUri,
+                                request: __httpRequest!,
+                                response: __response,
+                                exception: null,
+                                clientOptions: Options,
+                                requestOptions: requestOptions,
+                                attempt: __attempt,
+                                maxAttempts: __maxAttempts,
+                                willRetry: true,
+                                retryDelay: __retryDelay,
+                                retryReason: "status:" + ((int)__response.StatusCode).ToString(global::System.Globalization.CultureInfo.InvariantCulture),
+                                cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
+                        __response.Dispose();
+                        __response = null;
+                        __httpRequest.Dispose();
+                        __httpRequest = null;
+                        await global::G.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
+                            retryDelay: __retryDelay,
+                            cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
+                        continue;
+                    }
+
+                    break;
+                }
+
+                if (__response == null)
+                {
+                    throw new global::System.InvalidOperationException("No response received.");
+                }
+
+                using (__response)
+                {
+
+                ProcessResponse(
+                    client: HttpClient,
+                    response: __response);
+                ProcessPublicAudioTranscriptionsResponse(
+                    httpClient: HttpClient,
+                    httpResponseMessage: __response);
+                if (__response.IsSuccessStatusCode)
+                {
+                    await global::G.AutoSDKRequestOptionsSupport.OnAfterSuccessAsync(
+                            clientOptions: Options,
+                            context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
+                                operationId: "PublicAudioTranscriptions",
+                                methodName: "PublicAudioTranscriptionsAsync",
+                                pathTemplate: "\"/v1/audio/transcriptions\"",
+                                httpMethod: "POST",
+                                baseUri: BaseUri,
+                                request: __httpRequest!,
+                                response: __response,
+                                exception: null,
+                                clientOptions: Options,
+                                requestOptions: requestOptions,
+                                attempt: __attemptNumber,
+                                maxAttempts: __maxAttempts,
+                                willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
+                                cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
+                }
+                else
+                {
+                    await global::G.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
+                            clientOptions: Options,
+                            context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
+                                operationId: "PublicAudioTranscriptions",
+                                methodName: "PublicAudioTranscriptionsAsync",
+                                pathTemplate: "\"/v1/audio/transcriptions\"",
+                                httpMethod: "POST",
+                                baseUri: BaseUri,
+                                request: __httpRequest!,
+                                response: __response,
+                                exception: null,
+                                clientOptions: Options,
+                                requestOptions: requestOptions,
+                                attempt: __attemptNumber,
+                                maxAttempts: __maxAttempts,
+                                willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
+                                cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
+                }
+
+                            if (__effectiveReadResponseAsString)
+                            {
+                                var __content = await __response.Content.ReadAsStringAsync(
+                #if NET5_0_OR_GREATER
+                                    __effectiveCancellationToken
+                #endif
+                                ).ConfigureAwait(false);
+
+                                ProcessResponseContent(
+                                    client: HttpClient,
+                                    response: __response,
+                                    content: ref __content);
+                                ProcessPublicAudioTranscriptionsResponseContent(
+                                    httpClient: HttpClient,
+                                    httpResponseMessage: __response,
+                                    content: ref __content);
+
+                                try
+                                {
+                                    __response.EnsureSuccessStatusCode();
+
+                                    var __value = global::G.PublicAudioTranscriptionsResponse.FromJson(__content, JsonSerializerOptions) ??
+                                        throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                                    return new global::G.AutoSDKHttpResponse<global::G.PublicAudioTranscriptionsResponse>(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri,
+                                        body: __value);
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    throw new global::G.ApiException(
+                                        message: __content ?? __response.ReasonPhrase ?? string.Empty,
+                                        innerException: __ex,
+                                        statusCode: __response.StatusCode)
+                                    {
+                                        ResponseBody = __content,
+                                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                            __response.Headers,
+                                            h => h.Key,
+                                            h => h.Value),
+                                    };
+                                }
+                            }
+                            else
+                            {
+                                try
+                                {
+                                    __response.EnsureSuccessStatusCode();
+                                    using var __content = await __response.Content.ReadAsStreamAsync(
+                #if NET5_0_OR_GREATER
+                                        __effectiveCancellationToken
+                #endif
+                                    ).ConfigureAwait(false);
+
+                                    var __value = await global::G.PublicAudioTranscriptionsResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                                        throw new global::System.InvalidOperationException("Response deserialization failed.");
+                                    return new global::G.AutoSDKHttpResponse<global::G.PublicAudioTranscriptionsResponse>(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri,
+                                        body: __value);
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    string? __content = null;
+                                    try
+                                    {
+                                        __content = await __response.Content.ReadAsStringAsync(
+                #if NET5_0_OR_GREATER
+                                            __effectiveCancellationToken
+                #endif
+                                        ).ConfigureAwait(false);
+                                    }
+                                    catch (global::System.Exception)
+                                    {
+                                    }
+
+                                    throw new global::G.ApiException(
+                                        message: __content ?? __response.ReasonPhrase ?? string.Empty,
+                                        innerException: __ex,
+                                        statusCode: __response.StatusCode)
+                                    {
+                                        ResponseBody = __content,
+                                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                            __response.Headers,
+                                            h => h.Key,
+                                            h => h.Value),
+                                    };
+                                }
+                            }
+
+                }
+            }
+            finally
+            {
+                __httpRequest?.Dispose();
+            }
         }
     }
 }

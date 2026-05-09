@@ -29,6 +29,23 @@ namespace G
         /// <param name="projectId">
         /// Project id
         /// </param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.FetchProjectLogsEventsResponse>> PostProjectLogsIdFetchAsResponseAsync(
+            global::System.Guid projectId,
+
+            global::G.FetchEventsRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Fetch project logs (POST form)<br/>
+        /// Fetch the events in a project logs. Equivalent to the GET form of the same path, but with the parameters in the request body rather than in the URL query. For more complex queries, use the `POST /btql` endpoint.
+        /// </summary>
+        /// <param name="projectId">
+        /// Project id
+        /// </param>
         /// <param name="limit">
         /// limit the number of traces fetched<br/>
         /// Fetch queries may be paginated if the total result size is expected to be large (e.g. project_logs which accumulate over a long time). Note that fetch queries only support pagination in descending time order (from latest to earliest `_xact_id`. Furthermore, later pages may return rows which showed up in earlier pages, except with an earlier `_xact_id`. This happens because pagination occurs over the whole version history of the event log. You will most likely want to exclude any such duplicate, outdated rows (by `id`) from your combined result set.<br/>

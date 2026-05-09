@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickInputContent(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.InputContent? value)
+        {
+            value = InputContent;
+            return IsInputContent;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.OutputContent? OutputContent { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OutputContent))]
 #endif
         public bool IsOutputContent => OutputContent != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickOutputContent(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.OutputContent? value)
+        {
+            value = OutputContent;
+            return IsOutputContent;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -144,6 +170,30 @@ namespace G
         /// 
         /// </summary>
         public void Match(
+            global::System.Action<global::G.InputContent?>? inputContent = null,
+
+            global::System.Action<global::G.OutputContent?>? outputContent = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsInputContent)
+            {
+                inputContent?.Invoke(InputContent!);
+            }
+            else if (IsOutputContent)
+            {
+                outputContent?.Invoke(OutputContent!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
             global::System.Action<global::G.InputContent?>? inputContent = null,
             global::System.Action<global::G.OutputContent?>? outputContent = null,
             bool validate = true)

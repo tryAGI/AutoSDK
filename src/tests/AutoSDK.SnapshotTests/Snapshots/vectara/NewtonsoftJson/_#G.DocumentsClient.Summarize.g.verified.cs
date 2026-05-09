@@ -133,6 +133,86 @@ namespace G
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var __response = await SummarizeAsResponseAsync(
+                corpusKey: corpusKey,
+                documentId: documentId,
+
+                request: request,
+                requestTimeout: requestTimeout,
+                requestTimeoutMillis: requestTimeoutMillis,
+                requestOptions: requestOptions,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// Summarize a document<br/>
+        /// Organizations often struggle with extracting relevant insights from extensive documentation, such as vendor quotes, financial statements, and technical reports. Manually reviewing these documents is both time-consuming and prone to errors. <br/>
+        /// The tech preview of the Documentation Summarization API enables users to generate concise summaries that capture essential insights from single documents without having to process entire documents manually. Efficiently process large documents, extract key insights, and interact with real-time data summaries.<br/>
+        /// * Enable streaming for large documents to receive summaries incrementally.<br/>
+        /// * Customize `prompt_template` to fine-tune summary output for specific domains.<br/>
+        /// * Use standard responses for small documents where streaming is unnecessary.<br/>
+        /// * Monitor streaming events to track the progress of real-time summarization.<br/>
+        /// :::note<br/>
+        /// The documentation length is limited by the context window of your selected LLM.<br/>
+        /// :::<br/>
+        /// ## Response formats<br/>
+        /// The API supports two response modes:<br/>
+        /// * **Standard**: Provides a complete summary in one response.<br/>
+        /// * **Streaming** Provides incremental responses using Server-Sent Events (SSE).<br/>
+        /// ### Non-streaming response<br/>
+        /// In standard mode, the API returns a structured response containing the complete summary of the document. The summary field contains the generated text, enabling users to extract essential information quickly.<br/>
+        /// ### Streaming response<br/>
+        /// For streaming responses, the API returns Server-Sent Events (SSE). The first event begins streaming partial results as soon as they are available, while the final event marks the end of the summarization process.<br/>
+        /// The streamed response consists of multiple events:<br/>
+        /// * `generation_info`: Contains the `rendered_prompt` which is the compiled prompt sent to the LLM for document summarization.<br/>
+        /// * `generation_chunk`: Returns partial chunk of the generated summary.<br/>
+        /// * `generation_end`: Marks the completion of the summary generation.<br/>
+        /// * `error`: Returns an error message if summarization fails.<br/>
+        /// * `end`: Indicates the end of the streaming session.<br/>
+        /// ## Prompt template example<br/>
+        /// When crafting a prompt, you can access your document with the `$vectaraDocument` field. This example shows a simple prompt:<br/>
+        /// ```json<br/>
+        /// {<br/>
+        ///   "role": "user",<br/>
+        ///   "content": "Summarize the document: \$vectaraDocument.json()"<br/>
+        /// }<br/>
+        /// ```<br/>
+        /// The document also has the following methods to support custom prompts. <br/>
+        /// * `$vectaraDocument.json()`: Provides a JSON representation of the whole document.<br/>
+        /// * `$vectaraDocument.id()`: Specifies the unique identifier of the document (`document_id`)<br/>
+        /// * `$vectaraDocument.metadata()`: Specifies metadata from the document.  <br/>
+        ///   For example, <br/>
+        ///   `$vectaraDocument.metadata().get("key")` retrieves a specific metadata value by key.<br/>
+        /// * `$vectaraDocument.parts()`: Returns an array of document parts which you can look through.  <br/>
+        ///   For example, `#foreach ($part in $vectaraDocument.parts())`.  <br/>
+        /// * `$part.text()`: Retrieves the text of the part.<br/>
+        /// * `$part.metadata()`: Retrieves metadata of a part.<br/>
+        /// * `$part.hasTable()`: Determines if the part contains a table.<br/>
+        /// * `$part.table()`: Provides access to the table within the part. For example, use `$part.table().json()` to retrieve the table in JSON format.
+        /// </summary>
+        /// <param name="requestTimeout"></param>
+        /// <param name="requestTimeoutMillis"></param>
+        /// <param name="corpusKey">
+        /// A user-provided key for a corpus.<br/>
+        /// Example: my-corpus
+        /// </param>
+        /// <param name="documentId"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.SummarizeDocumentResponse>> SummarizeAsResponseAsync(
+            string corpusKey,
+            string documentId,
+
+            global::G.SummarizeDocumentRequest request,
+            int? requestTimeout = default,
+            int? requestTimeoutMillis = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 
             PrepareArguments(
@@ -167,6 +247,7 @@ namespace G
 
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
+
                             var __pathBuilder = new global::G.PathBuilder(
                                 path: $"/v2/corpora/{corpusKey}/documents/{documentId}/summarize",
                                 baseUri: HttpClient.BaseAddress);
@@ -200,14 +281,14 @@ namespace G
                 } 
             }
 
-                if (requestTimeout != default)
-                {
-                    __httpRequest.Headers.TryAddWithoutValidation("Request-Timeout", requestTimeout.ToString());
-                }
-                if (requestTimeoutMillis != default)
-                {
-                    __httpRequest.Headers.TryAddWithoutValidation("Request-Timeout-Millis", requestTimeoutMillis.ToString());
-                }
+            if (requestTimeout != default)
+            {
+                __httpRequest.Headers.TryAddWithoutValidation("Request-Timeout", requestTimeout.ToString());
+            }
+            if (requestTimeoutMillis != default)
+            {
+                __httpRequest.Headers.TryAddWithoutValidation("Request-Timeout-Millis", requestTimeoutMillis.ToString());
+            }
 
                             var __httpRequestContentBody = request.ToJson(JsonSerializerOptions);
                             var __httpRequestContent = new global::System.Net.Http.StringContent(
@@ -228,8 +309,8 @@ namespace G
                     httpRequestMessage: __httpRequest,
                     requestTimeout: requestTimeout,
                     requestTimeoutMillis: requestTimeoutMillis,
-                    corpusKey: corpusKey,
-                    documentId: documentId,
+                    corpusKey: corpusKey!,
+                    documentId: documentId!,
                     request: request);
 
                 return __httpRequest;
@@ -260,6 +341,8 @@ namespace G
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                     try
                     {
@@ -273,6 +356,11 @@ namespace G
                     }
                     catch (global::System.Net.Http.HttpRequestException __exception)
                     {
+                        var __retryDelay = global::G.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: null,
+                            attempt: __attempt);
                         var __willRetry = __attempt < __maxAttempts && !__effectiveCancellationToken.IsCancellationRequested;
                         await global::G.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
@@ -290,6 +378,8 @@ namespace G
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: __willRetry,
+                                retryDelay: __willRetry ? __retryDelay : (global::System.TimeSpan?)null,
+                                retryReason: "exception",
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         if (!__willRetry)
                         {
@@ -299,8 +389,7 @@ namespace G
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::G.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -309,6 +398,11 @@ namespace G
                         __attempt < __maxAttempts &&
                         global::G.AutoSDKRequestOptionsSupport.ShouldRetryStatusCode(__response.StatusCode))
                     {
+                        var __retryDelay = global::G.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: __response,
+                            attempt: __attempt);
                         await global::G.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
@@ -325,14 +419,15 @@ namespace G
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: true,
+                                retryDelay: __retryDelay,
+                                retryReason: "status:" + ((int)__response.StatusCode).ToString(global::System.Globalization.CultureInfo.InvariantCulture),
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         __response.Dispose();
                         __response = null;
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::G.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -372,6 +467,8 @@ namespace G
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
                 else
@@ -392,6 +489,8 @@ namespace G
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
                             // Permissions do not allow summarizing a document in the corpus.
@@ -492,9 +591,13 @@ namespace G
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    return
-                                        global::G.SummarizeDocumentResponse.FromJson(__content, JsonSerializerOptions) ??
+                                    var __value = global::G.SummarizeDocumentResponse.FromJson(__content, JsonSerializerOptions) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                                    return new global::G.AutoSDKHttpResponse<global::G.SummarizeDocumentResponse>(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri,
+                                        body: __value);
                                 }
                                 catch (global::System.Exception __ex)
                                 {
@@ -522,9 +625,13 @@ namespace G
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    return
-                                        await global::G.SummarizeDocumentResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                                    var __value = await global::G.SummarizeDocumentResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
+                                    return new global::G.AutoSDKHttpResponse<global::G.SummarizeDocumentResponse>(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri,
+                                        body: __value);
                                 }
                                 catch (global::System.Exception __ex)
                                 {

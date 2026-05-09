@@ -29,6 +29,19 @@ namespace G
         public bool IsReady => Ready != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickReady(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.TranscriptReadyNotification? value)
+        {
+            value = Ready;
+            return IsReady;
+        }
+
+        /// <summary>
         /// The notification when the redacted audio is ready.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -44,6 +57,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RedactedAudio))]
 #endif
         public bool IsRedactedAudio => RedactedAudio != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickRedactedAudio(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.RedactedAudioNotification? value)
+        {
+            value = RedactedAudio;
+            return IsRedactedAudio;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -120,7 +146,7 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.TranscriptReadyNotification?, TResult>? ready = null,
+            global::System.Func<global::G.TranscriptReadyNotification, TResult>? ready = null,
             global::System.Func<global::G.RedactedAudioNotification?, TResult>? redactedAudio = null,
             bool validate = true)
         {
@@ -145,7 +171,31 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.TranscriptReadyNotification?>? ready = null,
+            global::System.Action<global::G.TranscriptReadyNotification>? ready = null,
+
+            global::System.Action<global::G.RedactedAudioNotification?>? redactedAudio = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsReady)
+            {
+                ready?.Invoke(Ready!);
+            }
+            else if (IsRedactedAudio)
+            {
+                redactedAudio?.Invoke(RedactedAudio!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.TranscriptReadyNotification>? ready = null,
             global::System.Action<global::G.RedactedAudioNotification?>? redactedAudio = null,
             bool validate = true)
         {

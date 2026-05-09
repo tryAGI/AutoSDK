@@ -35,6 +35,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickCompletion(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CompletionPrompt? value)
+        {
+            value = Completion;
+            return IsCompletion;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ChatPrompt? Chat { get; init; }
 #else
@@ -48,6 +61,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Chat))]
 #endif
         public bool IsChat => Chat != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickChat(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ChatPrompt? value)
+        {
+            value = Chat;
+            return IsChat;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -127,8 +153,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.CompletionPrompt?, TResult>? completion = null,
-            global::System.Func<global::G.ChatPrompt?, TResult>? chat = null,
+            global::System.Func<global::G.CompletionPrompt, TResult>? completion = null,
+            global::System.Func<global::G.ChatPrompt, TResult>? chat = null,
             bool validate = true)
         {
             if (validate)
@@ -152,8 +178,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.CompletionPrompt?>? completion = null,
-            global::System.Action<global::G.ChatPrompt?>? chat = null,
+            global::System.Action<global::G.CompletionPrompt>? completion = null,
+
+            global::System.Action<global::G.ChatPrompt>? chat = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsCompletion)
+            {
+                completion?.Invoke(Completion!);
+            }
+            else if (IsChat)
+            {
+                chat?.Invoke(Chat!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.CompletionPrompt>? completion = null,
+            global::System.Action<global::G.ChatPrompt>? chat = null,
             bool validate = true)
         {
             if (validate)

@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickOutputItemFunctionCallStatus0(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.OutputItemFunctionCallStatus0? value)
+        {
+            value = OutputItemFunctionCallStatus0;
+            return IsOutputItemFunctionCallStatus0;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.OutputItemFunctionCallStatus1? OutputItemFunctionCallStatus1 { get; init; }
 #else
@@ -47,6 +60,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickOutputItemFunctionCallStatus1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.OutputItemFunctionCallStatus1? value)
+        {
+            value = OutputItemFunctionCallStatus1;
+            return IsOutputItemFunctionCallStatus1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.OutputItemFunctionCallStatus2? OutputItemFunctionCallStatus2 { get; init; }
 #else
@@ -60,6 +86,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OutputItemFunctionCallStatus2))]
 #endif
         public bool IsOutputItemFunctionCallStatus2 => OutputItemFunctionCallStatus2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickOutputItemFunctionCallStatus2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.OutputItemFunctionCallStatus2? value)
+        {
+            value = OutputItemFunctionCallStatus2;
+            return IsOutputItemFunctionCallStatus2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -188,6 +227,36 @@ namespace G
         /// 
         /// </summary>
         public void Match(
+            global::System.Action<global::G.OutputItemFunctionCallStatus0?>? outputItemFunctionCallStatus0 = null,
+
+            global::System.Action<global::G.OutputItemFunctionCallStatus1?>? outputItemFunctionCallStatus1 = null,
+
+            global::System.Action<global::G.OutputItemFunctionCallStatus2?>? outputItemFunctionCallStatus2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsOutputItemFunctionCallStatus0)
+            {
+                outputItemFunctionCallStatus0?.Invoke(OutputItemFunctionCallStatus0!);
+            }
+            else if (IsOutputItemFunctionCallStatus1)
+            {
+                outputItemFunctionCallStatus1?.Invoke(OutputItemFunctionCallStatus1!);
+            }
+            else if (IsOutputItemFunctionCallStatus2)
+            {
+                outputItemFunctionCallStatus2?.Invoke(OutputItemFunctionCallStatus2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
             global::System.Action<global::G.OutputItemFunctionCallStatus0?>? outputItemFunctionCallStatus0 = null,
             global::System.Action<global::G.OutputItemFunctionCallStatus1?>? outputItemFunctionCallStatus1 = null,
             global::System.Action<global::G.OutputItemFunctionCallStatus2?>? outputItemFunctionCallStatus2 = null,

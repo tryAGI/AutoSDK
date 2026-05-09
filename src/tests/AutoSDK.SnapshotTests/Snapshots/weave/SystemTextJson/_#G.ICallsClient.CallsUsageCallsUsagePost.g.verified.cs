@@ -22,6 +22,19 @@ namespace G
         /// Calls Usage<br/>
         /// Compute aggregated usage for multiple root calls, with descendant rollup.
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.CallsUsageRes>> CallsUsageCallsUsagePostAsResponseAsync(
+
+            global::G.CallsUsageReq request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Calls Usage<br/>
+        /// Compute aggregated usage for multiple root calls, with descendant rollup.
+        /// </summary>
         /// <param name="projectId"></param>
         /// <param name="callIds">
         /// Root call IDs to aggregate. Each result key corresponds to one input call ID.

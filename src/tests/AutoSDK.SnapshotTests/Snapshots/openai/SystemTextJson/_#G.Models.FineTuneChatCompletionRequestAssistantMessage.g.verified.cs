@@ -28,6 +28,19 @@ namespace G
         public bool IsAssistantMessage1 => AssistantMessage1 != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickAssistantMessage1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.FineTuneChatCompletionRequestAssistantMessageAssistantMessage? value)
+        {
+            value = AssistantMessage1;
+            return IsAssistantMessage1;
+        }
+
+        /// <summary>
         /// Messages sent by the model in response to user messages.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AssistantMessage2))]
 #endif
         public bool IsAssistantMessage2 => AssistantMessage2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickAssistantMessage2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ChatCompletionRequestAssistantMessage? value)
+        {
+            value = AssistantMessage2;
+            return IsAssistantMessage2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -119,8 +145,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.FineTuneChatCompletionRequestAssistantMessageAssistantMessage?, TResult>? assistantMessage1 = null,
-            global::System.Func<global::G.ChatCompletionRequestAssistantMessage?, TResult>? assistantMessage2 = null,
+            global::System.Func<global::G.FineTuneChatCompletionRequestAssistantMessageAssistantMessage, TResult>? assistantMessage1 = null,
+            global::System.Func<global::G.ChatCompletionRequestAssistantMessage, TResult>? assistantMessage2 = null,
             bool validate = true)
         {
             if (validate)
@@ -144,8 +170,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.FineTuneChatCompletionRequestAssistantMessageAssistantMessage?>? assistantMessage1 = null,
-            global::System.Action<global::G.ChatCompletionRequestAssistantMessage?>? assistantMessage2 = null,
+            global::System.Action<global::G.FineTuneChatCompletionRequestAssistantMessageAssistantMessage>? assistantMessage1 = null,
+
+            global::System.Action<global::G.ChatCompletionRequestAssistantMessage>? assistantMessage2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsAssistantMessage1)
+            {
+                assistantMessage1?.Invoke(AssistantMessage1!);
+            }
+            else if (IsAssistantMessage2)
+            {
+                assistantMessage2?.Invoke(AssistantMessage2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.FineTuneChatCompletionRequestAssistantMessageAssistantMessage>? assistantMessage1 = null,
+            global::System.Action<global::G.ChatCompletionRequestAssistantMessage>? assistantMessage2 = null,
             bool validate = true)
         {
             if (validate)

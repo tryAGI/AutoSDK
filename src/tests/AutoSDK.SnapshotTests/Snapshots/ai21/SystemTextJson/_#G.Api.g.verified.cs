@@ -110,7 +110,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public ChatClient Chat => new ChatClient(HttpClient, authorizations: Authorizations, options: Options)
+        public ChatClient Chat => new ChatClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -119,7 +119,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public CompletionClient Completion => new CompletionClient(HttpClient, authorizations: Authorizations, options: Options)
+        public CompletionClient Completion => new CompletionClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -128,7 +128,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public CustomModelsClient CustomModels => new CustomModelsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public CustomModelsClient CustomModels => new CustomModelsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -137,7 +137,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public JambaCompleteClient JambaComplete => new JambaCompleteClient(HttpClient, authorizations: Authorizations, options: Options)
+        public JambaCompleteClient JambaComplete => new JambaCompleteClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -146,7 +146,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public LibraryManagementClient LibraryManagement => new LibraryManagementClient(HttpClient, authorizations: Authorizations, options: Options)
+        public LibraryManagementClient LibraryManagement => new LibraryManagementClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -155,7 +155,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public ParaphraseClient Paraphrase => new ParaphraseClient(HttpClient, authorizations: Authorizations, options: Options)
+        public ParaphraseClient Paraphrase => new ParaphraseClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -164,7 +164,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public RagEngineClient RagEngine => new RagEngineClient(HttpClient, authorizations: Authorizations, options: Options)
+        public RagEngineClient RagEngine => new RagEngineClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -173,7 +173,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public SegmentationClient Segmentation => new SegmentationClient(HttpClient, authorizations: Authorizations, options: Options)
+        public SegmentationClient Segmentation => new SegmentationClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -182,7 +182,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public SummarizeClient Summarize => new SummarizeClient(HttpClient, authorizations: Authorizations, options: Options)
+        public SummarizeClient Summarize => new SummarizeClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -221,10 +221,10 @@ namespace G
         /// <param name="options">Client-wide request defaults such as headers, query parameters, retries, and timeout.</param>
         /// <param name="disposeHttpClient">Dispose the HttpClient when the instance is disposed. True by default.</param>
         public Api(
-            global::System.Net.Http.HttpClient? httpClient = null,
-            global::System.Uri? baseUri = null,
-            global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations = null,
-            global::G.AutoSDKClientOptions? options = null,
+            global::System.Net.Http.HttpClient? httpClient,
+            global::System.Uri? baseUri,
+            global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations,
+            global::G.AutoSDKClientOptions? options,
             bool disposeHttpClient = true)
         {
 

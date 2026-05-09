@@ -25,6 +25,21 @@ namespace G
         /// Start creating a backup for a set of collections. &lt;br/&gt;&lt;br/&gt;Notes: &lt;br/&gt;- Weaviate uses gzip compression by default. &lt;br/&gt;- Weaviate stays usable while a backup process is ongoing.
         /// </summary>
         /// <param name="backend"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.BackupCreateResponse>> BackupsCreateAsResponseAsync(
+            string backend,
+
+            global::G.BackupCreateRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Start a backup process<br/>
+        /// Start creating a backup for a set of collections. &lt;br/&gt;&lt;br/&gt;Notes: &lt;br/&gt;- Weaviate uses gzip compression by default. &lt;br/&gt;- Weaviate stays usable while a backup process is ongoing.
+        /// </summary>
+        /// <param name="backend"></param>
         /// <param name="id">
         /// The ID of the backup. Must be URL-safe and work as a filesystem path, only lowercase, numbers, underscore, minus characters allowed.
         /// </param>

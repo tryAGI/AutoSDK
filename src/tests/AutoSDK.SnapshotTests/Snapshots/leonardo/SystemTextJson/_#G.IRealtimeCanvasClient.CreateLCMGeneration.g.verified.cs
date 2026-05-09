@@ -22,6 +22,19 @@ namespace G
         /// Create LCM Generation<br/>
         /// This endpoint will generate a LCM image generation.
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.CreateLCMGenerationResponse>> CreateLCMGenerationAsResponseAsync(
+
+            global::G.CreateLCMGenerationRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create LCM Generation<br/>
+        /// This endpoint will generate a LCM image generation.
+        /// </summary>
         /// <param name="imageDataUrl">
         /// Image data used to generate image. In base64 format. Prefix: `data:image/jpeg;base64,`
         /// </param>

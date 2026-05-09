@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickString(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.StringFilter? value)
+        {
+            value = String;
+            return IsString;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.NumberFilter? Number { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Number))]
 #endif
         public bool IsNumber => Number != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickNumber(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.NumberFilter? value)
+        {
+            value = Number;
+            return IsNumber;
+        }
 
         /// <summary>
         /// 
@@ -64,6 +90,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickBoolean(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.BooleanFilter? value)
+        {
+            value = Boolean;
+            return IsBoolean;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.RangeFilter? Range { get; init; }
 #else
@@ -77,6 +116,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Range))]
 #endif
         public bool IsRange => Range != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickRange(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.RangeFilter? value)
+        {
+            value = Range;
+            return IsRange;
+        }
 
         /// <summary>
         /// 
@@ -98,6 +150,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickEnum(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.EnumFilter? value)
+        {
+            value = Enum;
+            return IsEnum;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.PresentFilter? Present { get; init; }
 #else
@@ -111,6 +176,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Present))]
 #endif
         public bool IsPresent => Present != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickPresent(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.PresentFilter? value)
+        {
+            value = Present;
+            return IsPresent;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -275,12 +353,12 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.StringFilter?, TResult>? @string = null,
-            global::System.Func<global::G.NumberFilter?, TResult>? number = null,
-            global::System.Func<global::G.BooleanFilter?, TResult>? boolean = null,
-            global::System.Func<global::G.RangeFilter?, TResult>? range = null,
-            global::System.Func<global::G.EnumFilter?, TResult>? @enum = null,
-            global::System.Func<global::G.PresentFilter?, TResult>? present = null,
+            global::System.Func<global::G.StringFilter, TResult>? @string = null,
+            global::System.Func<global::G.NumberFilter, TResult>? number = null,
+            global::System.Func<global::G.BooleanFilter, TResult>? boolean = null,
+            global::System.Func<global::G.RangeFilter, TResult>? range = null,
+            global::System.Func<global::G.EnumFilter, TResult>? @enum = null,
+            global::System.Func<global::G.PresentFilter, TResult>? present = null,
             bool validate = true)
         {
             if (validate)
@@ -320,12 +398,60 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.StringFilter?>? @string = null,
-            global::System.Action<global::G.NumberFilter?>? number = null,
-            global::System.Action<global::G.BooleanFilter?>? boolean = null,
-            global::System.Action<global::G.RangeFilter?>? range = null,
-            global::System.Action<global::G.EnumFilter?>? @enum = null,
-            global::System.Action<global::G.PresentFilter?>? present = null,
+            global::System.Action<global::G.StringFilter>? @string = null,
+
+            global::System.Action<global::G.NumberFilter>? number = null,
+
+            global::System.Action<global::G.BooleanFilter>? boolean = null,
+
+            global::System.Action<global::G.RangeFilter>? range = null,
+
+            global::System.Action<global::G.EnumFilter>? @enum = null,
+
+            global::System.Action<global::G.PresentFilter>? present = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsString)
+            {
+                @string?.Invoke(String!);
+            }
+            else if (IsNumber)
+            {
+                number?.Invoke(Number!);
+            }
+            else if (IsBoolean)
+            {
+                boolean?.Invoke(Boolean!);
+            }
+            else if (IsRange)
+            {
+                range?.Invoke(Range!);
+            }
+            else if (IsEnum)
+            {
+                @enum?.Invoke(Enum!);
+            }
+            else if (IsPresent)
+            {
+                present?.Invoke(Present!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.StringFilter>? @string = null,
+            global::System.Action<global::G.NumberFilter>? number = null,
+            global::System.Action<global::G.BooleanFilter>? boolean = null,
+            global::System.Action<global::G.RangeFilter>? range = null,
+            global::System.Action<global::G.EnumFilter>? @enum = null,
+            global::System.Action<global::G.PresentFilter>? present = null,
             bool validate = true)
         {
             if (validate)

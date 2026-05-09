@@ -31,6 +31,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickFunctionToolCall(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.FunctionToolCall? value)
+        {
+            value = FunctionToolCall;
+            return IsFunctionToolCall;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.FunctionToolCallResourceVariant2? FunctionToolCallResourceVariant2 { get; init; }
 #else
@@ -44,6 +57,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FunctionToolCallResourceVariant2))]
 #endif
         public bool IsFunctionToolCallResourceVariant2 => FunctionToolCallResourceVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFunctionToolCallResourceVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.FunctionToolCallResourceVariant2? value)
+        {
+            value = FunctionToolCallResourceVariant2;
+            return IsFunctionToolCallResourceVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -120,8 +146,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.FunctionToolCall?, TResult>? functionToolCall = null,
-            global::System.Func<global::G.FunctionToolCallResourceVariant2?, TResult>? functionToolCallResourceVariant2 = null,
+            global::System.Func<global::G.FunctionToolCall, TResult>? functionToolCall = null,
+            global::System.Func<global::G.FunctionToolCallResourceVariant2, TResult>? functionToolCallResourceVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -145,8 +171,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.FunctionToolCall?>? functionToolCall = null,
-            global::System.Action<global::G.FunctionToolCallResourceVariant2?>? functionToolCallResourceVariant2 = null,
+            global::System.Action<global::G.FunctionToolCall>? functionToolCall = null,
+
+            global::System.Action<global::G.FunctionToolCallResourceVariant2>? functionToolCallResourceVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsFunctionToolCall)
+            {
+                functionToolCall?.Invoke(FunctionToolCall!);
+            }
+            else if (IsFunctionToolCallResourceVariant2)
+            {
+                functionToolCallResourceVariant2?.Invoke(FunctionToolCallResourceVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.FunctionToolCall>? functionToolCall = null,
+            global::System.Action<global::G.FunctionToolCallResourceVariant2>? functionToolCallResourceVariant2 = null,
             bool validate = true)
         {
             if (validate)

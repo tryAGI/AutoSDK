@@ -28,6 +28,19 @@ namespace G
         public bool IsOrderValueVariant1 => OrderValueVariant1 != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickOrderValueVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out long? value)
+        {
+            value = OrderValueVariant1;
+            return IsOrderValueVariant1;
+        }
+
+        /// <summary>
         /// Example: 42.5F
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OrderValueVariant2))]
 #endif
         public bool IsOrderValueVariant2 => OrderValueVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickOrderValueVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out double? value)
+        {
+            value = OrderValueVariant2;
+            return IsOrderValueVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -144,6 +170,30 @@ namespace G
         /// 
         /// </summary>
         public void Match(
+            global::System.Action<long?>? orderValueVariant1 = null,
+
+            global::System.Action<double?>? orderValueVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsOrderValueVariant1)
+            {
+                orderValueVariant1?.Invoke(OrderValueVariant1!);
+            }
+            else if (IsOrderValueVariant2)
+            {
+                orderValueVariant2?.Invoke(OrderValueVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
             global::System.Action<long?>? orderValueVariant1 = null,
             global::System.Action<double?>? orderValueVariant2 = null,
             bool validate = true)

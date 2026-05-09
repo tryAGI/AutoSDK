@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickList(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.IntegrationList? value)
+        {
+            value = List;
+            return IsList;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.IntegrationDetailResponseVariant2? IntegrationDetailResponseVariant2 { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(IntegrationDetailResponseVariant2))]
 #endif
         public bool IsIntegrationDetailResponseVariant2 => IntegrationDetailResponseVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickIntegrationDetailResponseVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.IntegrationDetailResponseVariant2? value)
+        {
+            value = IntegrationDetailResponseVariant2;
+            return IsIntegrationDetailResponseVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -119,8 +145,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.IntegrationList?, TResult>? list = null,
-            global::System.Func<global::G.IntegrationDetailResponseVariant2?, TResult>? integrationDetailResponseVariant2 = null,
+            global::System.Func<global::G.IntegrationList, TResult>? list = null,
+            global::System.Func<global::G.IntegrationDetailResponseVariant2, TResult>? integrationDetailResponseVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -144,8 +170,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.IntegrationList?>? list = null,
-            global::System.Action<global::G.IntegrationDetailResponseVariant2?>? integrationDetailResponseVariant2 = null,
+            global::System.Action<global::G.IntegrationList>? list = null,
+
+            global::System.Action<global::G.IntegrationDetailResponseVariant2>? integrationDetailResponseVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsList)
+            {
+                list?.Invoke(List!);
+            }
+            else if (IsIntegrationDetailResponseVariant2)
+            {
+                integrationDetailResponseVariant2?.Invoke(IntegrationDetailResponseVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.IntegrationList>? list = null,
+            global::System.Action<global::G.IntegrationDetailResponseVariant2>? integrationDetailResponseVariant2 = null,
             bool validate = true)
         {
             if (validate)

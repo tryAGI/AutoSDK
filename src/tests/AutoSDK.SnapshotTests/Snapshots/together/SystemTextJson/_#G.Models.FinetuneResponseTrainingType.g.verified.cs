@@ -13,6 +13,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public string? Type { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.FullTrainingType? Full { get; init; }
 #else
@@ -30,6 +35,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickFull(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.FullTrainingType? value)
+        {
+            value = Full;
+            return IsFull;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.LoRATrainingType? Lora { get; init; }
 #else
@@ -43,6 +61,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Lora))]
 #endif
         public bool IsLora => Lora != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickLora(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.LoRATrainingType? value)
+        {
+            value = Lora;
+            return IsLora;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -83,10 +114,13 @@ namespace G
         /// 
         /// </summary>
         public FinetuneResponseTrainingType(
+            string? type,
             global::G.FullTrainingType? full,
             global::G.LoRATrainingType? lora
             )
         {
+            Type = type;
+
             Full = full;
             Lora = lora;
         }
@@ -119,8 +153,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.FullTrainingType?, TResult>? full = null,
-            global::System.Func<global::G.LoRATrainingType?, TResult>? lora = null,
+            global::System.Func<global::G.FullTrainingType, TResult>? full = null,
+            global::System.Func<global::G.LoRATrainingType, TResult>? lora = null,
             bool validate = true)
         {
             if (validate)
@@ -144,8 +178,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.FullTrainingType?>? full = null,
-            global::System.Action<global::G.LoRATrainingType?>? lora = null,
+            global::System.Action<global::G.FullTrainingType>? full = null,
+
+            global::System.Action<global::G.LoRATrainingType>? lora = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsFull)
+            {
+                full?.Invoke(Full!);
+            }
+            else if (IsLora)
+            {
+                lora?.Invoke(Lora!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.FullTrainingType>? full = null,
+            global::System.Action<global::G.LoRATrainingType>? lora = null,
             bool validate = true)
         {
             if (validate)

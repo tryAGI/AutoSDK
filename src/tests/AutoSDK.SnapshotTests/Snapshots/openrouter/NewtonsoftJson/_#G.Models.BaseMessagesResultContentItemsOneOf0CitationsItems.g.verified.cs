@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickBaseMessagesResultContentItemsOneOf0CitationsItems0(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.BaseMessagesResultContentItemsOneOf0CitationsItems0? value)
+        {
+            value = BaseMessagesResultContentItemsOneOf0CitationsItems0;
+            return IsBaseMessagesResultContentItemsOneOf0CitationsItems0;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.BaseMessagesResultContentItemsOneOf0CitationsItems1? BaseMessagesResultContentItemsOneOf0CitationsItems1 { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BaseMessagesResultContentItemsOneOf0CitationsItems1))]
 #endif
         public bool IsBaseMessagesResultContentItemsOneOf0CitationsItems1 => BaseMessagesResultContentItemsOneOf0CitationsItems1 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickBaseMessagesResultContentItemsOneOf0CitationsItems1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.BaseMessagesResultContentItemsOneOf0CitationsItems1? value)
+        {
+            value = BaseMessagesResultContentItemsOneOf0CitationsItems1;
+            return IsBaseMessagesResultContentItemsOneOf0CitationsItems1;
+        }
 
         /// <summary>
         /// 
@@ -64,6 +90,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickBaseMessagesResultContentItemsOneOf0CitationsItems2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.BaseMessagesResultContentItemsOneOf0CitationsItems2? value)
+        {
+            value = BaseMessagesResultContentItemsOneOf0CitationsItems2;
+            return IsBaseMessagesResultContentItemsOneOf0CitationsItems2;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.BaseMessagesResultContentItemsOneOf0CitationsItems3? BaseMessagesResultContentItemsOneOf0CitationsItems3 { get; init; }
 #else
@@ -81,6 +120,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickBaseMessagesResultContentItemsOneOf0CitationsItems3(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.BaseMessagesResultContentItemsOneOf0CitationsItems3? value)
+        {
+            value = BaseMessagesResultContentItemsOneOf0CitationsItems3;
+            return IsBaseMessagesResultContentItemsOneOf0CitationsItems3;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.BaseMessagesResultContentItemsOneOf0CitationsItems4? BaseMessagesResultContentItemsOneOf0CitationsItems4 { get; init; }
 #else
@@ -94,6 +146,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BaseMessagesResultContentItemsOneOf0CitationsItems4))]
 #endif
         public bool IsBaseMessagesResultContentItemsOneOf0CitationsItems4 => BaseMessagesResultContentItemsOneOf0CitationsItems4 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickBaseMessagesResultContentItemsOneOf0CitationsItems4(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.BaseMessagesResultContentItemsOneOf0CitationsItems4? value)
+        {
+            value = BaseMessagesResultContentItemsOneOf0CitationsItems4;
+            return IsBaseMessagesResultContentItemsOneOf0CitationsItems4;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -236,11 +301,11 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.BaseMessagesResultContentItemsOneOf0CitationsItems0?, TResult>? baseMessagesResultContentItemsOneOf0CitationsItems0 = null,
-            global::System.Func<global::G.BaseMessagesResultContentItemsOneOf0CitationsItems1?, TResult>? baseMessagesResultContentItemsOneOf0CitationsItems1 = null,
-            global::System.Func<global::G.BaseMessagesResultContentItemsOneOf0CitationsItems2?, TResult>? baseMessagesResultContentItemsOneOf0CitationsItems2 = null,
-            global::System.Func<global::G.BaseMessagesResultContentItemsOneOf0CitationsItems3?, TResult>? baseMessagesResultContentItemsOneOf0CitationsItems3 = null,
-            global::System.Func<global::G.BaseMessagesResultContentItemsOneOf0CitationsItems4?, TResult>? baseMessagesResultContentItemsOneOf0CitationsItems4 = null,
+            global::System.Func<global::G.BaseMessagesResultContentItemsOneOf0CitationsItems0, TResult>? baseMessagesResultContentItemsOneOf0CitationsItems0 = null,
+            global::System.Func<global::G.BaseMessagesResultContentItemsOneOf0CitationsItems1, TResult>? baseMessagesResultContentItemsOneOf0CitationsItems1 = null,
+            global::System.Func<global::G.BaseMessagesResultContentItemsOneOf0CitationsItems2, TResult>? baseMessagesResultContentItemsOneOf0CitationsItems2 = null,
+            global::System.Func<global::G.BaseMessagesResultContentItemsOneOf0CitationsItems3, TResult>? baseMessagesResultContentItemsOneOf0CitationsItems3 = null,
+            global::System.Func<global::G.BaseMessagesResultContentItemsOneOf0CitationsItems4, TResult>? baseMessagesResultContentItemsOneOf0CitationsItems4 = null,
             bool validate = true)
         {
             if (validate)
@@ -276,11 +341,53 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.BaseMessagesResultContentItemsOneOf0CitationsItems0?>? baseMessagesResultContentItemsOneOf0CitationsItems0 = null,
-            global::System.Action<global::G.BaseMessagesResultContentItemsOneOf0CitationsItems1?>? baseMessagesResultContentItemsOneOf0CitationsItems1 = null,
-            global::System.Action<global::G.BaseMessagesResultContentItemsOneOf0CitationsItems2?>? baseMessagesResultContentItemsOneOf0CitationsItems2 = null,
-            global::System.Action<global::G.BaseMessagesResultContentItemsOneOf0CitationsItems3?>? baseMessagesResultContentItemsOneOf0CitationsItems3 = null,
-            global::System.Action<global::G.BaseMessagesResultContentItemsOneOf0CitationsItems4?>? baseMessagesResultContentItemsOneOf0CitationsItems4 = null,
+            global::System.Action<global::G.BaseMessagesResultContentItemsOneOf0CitationsItems0>? baseMessagesResultContentItemsOneOf0CitationsItems0 = null,
+
+            global::System.Action<global::G.BaseMessagesResultContentItemsOneOf0CitationsItems1>? baseMessagesResultContentItemsOneOf0CitationsItems1 = null,
+
+            global::System.Action<global::G.BaseMessagesResultContentItemsOneOf0CitationsItems2>? baseMessagesResultContentItemsOneOf0CitationsItems2 = null,
+
+            global::System.Action<global::G.BaseMessagesResultContentItemsOneOf0CitationsItems3>? baseMessagesResultContentItemsOneOf0CitationsItems3 = null,
+
+            global::System.Action<global::G.BaseMessagesResultContentItemsOneOf0CitationsItems4>? baseMessagesResultContentItemsOneOf0CitationsItems4 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsBaseMessagesResultContentItemsOneOf0CitationsItems0)
+            {
+                baseMessagesResultContentItemsOneOf0CitationsItems0?.Invoke(BaseMessagesResultContentItemsOneOf0CitationsItems0!);
+            }
+            else if (IsBaseMessagesResultContentItemsOneOf0CitationsItems1)
+            {
+                baseMessagesResultContentItemsOneOf0CitationsItems1?.Invoke(BaseMessagesResultContentItemsOneOf0CitationsItems1!);
+            }
+            else if (IsBaseMessagesResultContentItemsOneOf0CitationsItems2)
+            {
+                baseMessagesResultContentItemsOneOf0CitationsItems2?.Invoke(BaseMessagesResultContentItemsOneOf0CitationsItems2!);
+            }
+            else if (IsBaseMessagesResultContentItemsOneOf0CitationsItems3)
+            {
+                baseMessagesResultContentItemsOneOf0CitationsItems3?.Invoke(BaseMessagesResultContentItemsOneOf0CitationsItems3!);
+            }
+            else if (IsBaseMessagesResultContentItemsOneOf0CitationsItems4)
+            {
+                baseMessagesResultContentItemsOneOf0CitationsItems4?.Invoke(BaseMessagesResultContentItemsOneOf0CitationsItems4!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.BaseMessagesResultContentItemsOneOf0CitationsItems0>? baseMessagesResultContentItemsOneOf0CitationsItems0 = null,
+            global::System.Action<global::G.BaseMessagesResultContentItemsOneOf0CitationsItems1>? baseMessagesResultContentItemsOneOf0CitationsItems1 = null,
+            global::System.Action<global::G.BaseMessagesResultContentItemsOneOf0CitationsItems2>? baseMessagesResultContentItemsOneOf0CitationsItems2 = null,
+            global::System.Action<global::G.BaseMessagesResultContentItemsOneOf0CitationsItems3>? baseMessagesResultContentItemsOneOf0CitationsItems3 = null,
+            global::System.Action<global::G.BaseMessagesResultContentItemsOneOf0CitationsItems4>? baseMessagesResultContentItemsOneOf0CitationsItems4 = null,
             bool validate = true)
         {
             if (validate)

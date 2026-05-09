@@ -24,6 +24,14 @@ namespace G.JsonConverters
                 foreach (var __jsonProp in __jsonDocument.RootElement.EnumerateObject())
                 {
                     __jsonProps.Add(__jsonProp.Name);
+                    if (__jsonProp.Value.ValueKind == global::System.Text.Json.JsonValueKind.Object)
+                    {
+                        foreach (var __nestedJsonProp in __jsonProp.Value.EnumerateObject())
+                        {
+                            __jsonProps.Add(__jsonProp.Name + "." + __nestedJsonProp.Name);
+                        }
+                    }
+
                 }
             }
 
@@ -31,6 +39,10 @@ namespace G.JsonConverters
             if (__jsonProps.Contains("a2e_model")) __score0++;
             if (__jsonProps.Contains("entity__modified_at")) __score0++;
             if (__jsonProps.Contains("face_rect")) __score0++;
+            if (__jsonProps.Contains("face_rect.bottom")) __score0++;
+            if (__jsonProps.Contains("face_rect.left")) __score0++;
+            if (__jsonProps.Contains("face_rect.right")) __score0++;
+            if (__jsonProps.Contains("face_rect.top")) __score0++;
             if (__jsonProps.Contains("gender")) __score0++;
             if (__jsonProps.Contains("idle_video")) __score0++;
             if (__jsonProps.Contains("image_url")) __score0++;

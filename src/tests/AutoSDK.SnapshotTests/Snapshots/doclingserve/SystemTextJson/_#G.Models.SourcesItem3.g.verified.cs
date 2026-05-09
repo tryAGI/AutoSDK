@@ -35,6 +35,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickFile(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.FileSourceRequest? value)
+        {
+            value = File;
+            return IsFile;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.HttpSourceRequest? Http { get; init; }
 #else
@@ -52,6 +65,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickHttp(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.HttpSourceRequest? value)
+        {
+            value = Http;
+            return IsHttp;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.S3SourceRequest? S3 { get; init; }
 #else
@@ -65,6 +91,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(S3))]
 #endif
         public bool IsS3 => S3 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickS3(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.S3SourceRequest? value)
+        {
+            value = S3;
+            return IsS3;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -166,9 +205,9 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.FileSourceRequest?, TResult>? file = null,
-            global::System.Func<global::G.HttpSourceRequest?, TResult>? http = null,
-            global::System.Func<global::G.S3SourceRequest?, TResult>? s3 = null,
+            global::System.Func<global::G.FileSourceRequest, TResult>? file = null,
+            global::System.Func<global::G.HttpSourceRequest, TResult>? http = null,
+            global::System.Func<global::G.S3SourceRequest, TResult>? s3 = null,
             bool validate = true)
         {
             if (validate)
@@ -196,9 +235,39 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.FileSourceRequest?>? file = null,
-            global::System.Action<global::G.HttpSourceRequest?>? http = null,
-            global::System.Action<global::G.S3SourceRequest?>? s3 = null,
+            global::System.Action<global::G.FileSourceRequest>? file = null,
+
+            global::System.Action<global::G.HttpSourceRequest>? http = null,
+
+            global::System.Action<global::G.S3SourceRequest>? s3 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsFile)
+            {
+                file?.Invoke(File!);
+            }
+            else if (IsHttp)
+            {
+                http?.Invoke(Http!);
+            }
+            else if (IsS3)
+            {
+                s3?.Invoke(S3!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.FileSourceRequest>? file = null,
+            global::System.Action<global::G.HttpSourceRequest>? http = null,
+            global::System.Action<global::G.S3SourceRequest>? s3 = null,
             bool validate = true)
         {
             if (validate)

@@ -35,6 +35,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickRun(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.TenantShareRunToken? value)
+        {
+            value = Run;
+            return IsRun;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.TenantShareDatasetToken? Dataset { get; init; }
 #else
@@ -48,6 +61,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Dataset))]
 #endif
         public bool IsDataset => Dataset != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickDataset(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.TenantShareDatasetToken? value)
+        {
+            value = Dataset;
+            return IsDataset;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -127,8 +153,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.TenantShareRunToken?, TResult>? run = null,
-            global::System.Func<global::G.TenantShareDatasetToken?, TResult>? dataset = null,
+            global::System.Func<global::G.TenantShareRunToken, TResult>? run = null,
+            global::System.Func<global::G.TenantShareDatasetToken, TResult>? dataset = null,
             bool validate = true)
         {
             if (validate)
@@ -152,8 +178,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.TenantShareRunToken?>? run = null,
-            global::System.Action<global::G.TenantShareDatasetToken?>? dataset = null,
+            global::System.Action<global::G.TenantShareRunToken>? run = null,
+
+            global::System.Action<global::G.TenantShareDatasetToken>? dataset = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsRun)
+            {
+                run?.Invoke(Run!);
+            }
+            else if (IsDataset)
+            {
+                dataset?.Invoke(Dataset!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.TenantShareRunToken>? run = null,
+            global::System.Action<global::G.TenantShareDatasetToken>? dataset = null,
             bool validate = true)
         {
             if (validate)

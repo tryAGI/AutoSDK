@@ -24,12 +24,23 @@ namespace G.JsonConverters
                 foreach (var __jsonProp in __jsonDocument.RootElement.EnumerateObject())
                 {
                     __jsonProps.Add(__jsonProp.Name);
+                    if (__jsonProp.Value.ValueKind == global::System.Text.Json.JsonValueKind.Object)
+                    {
+                        foreach (var __nestedJsonProp in __jsonProp.Value.EnumerateObject())
+                        {
+                            __jsonProps.Add(__jsonProp.Name + "." + __nestedJsonProp.Name);
+                        }
+                    }
+
                 }
             }
 
             var __score0 = 0;
             var __score1 = 0;
             if (__jsonProps.Contains("_links")) __score1++;
+            if (__jsonProps.Contains("_links.git")) __score1++;
+            if (__jsonProps.Contains("_links.html")) __score1++;
+            if (__jsonProps.Contains("_links.self")) __score1++;
             if (__jsonProps.Contains("content")) __score1++;
             if (__jsonProps.Contains("download_url")) __score1++;
             if (__jsonProps.Contains("encoding")) __score1++;
@@ -45,6 +56,9 @@ namespace G.JsonConverters
             if (__jsonProps.Contains("url")) __score1++;
             var __score2 = 0;
             if (__jsonProps.Contains("_links")) __score2++;
+            if (__jsonProps.Contains("_links.git")) __score2++;
+            if (__jsonProps.Contains("_links.html")) __score2++;
+            if (__jsonProps.Contains("_links.self")) __score2++;
             if (__jsonProps.Contains("download_url")) __score2++;
             if (__jsonProps.Contains("git_url")) __score2++;
             if (__jsonProps.Contains("html_url")) __score2++;
@@ -57,6 +71,9 @@ namespace G.JsonConverters
             if (__jsonProps.Contains("url")) __score2++;
             var __score3 = 0;
             if (__jsonProps.Contains("_links")) __score3++;
+            if (__jsonProps.Contains("_links.git")) __score3++;
+            if (__jsonProps.Contains("_links.html")) __score3++;
+            if (__jsonProps.Contains("_links.self")) __score3++;
             if (__jsonProps.Contains("download_url")) __score3++;
             if (__jsonProps.Contains("git_url")) __score3++;
             if (__jsonProps.Contains("html_url")) __score3++;

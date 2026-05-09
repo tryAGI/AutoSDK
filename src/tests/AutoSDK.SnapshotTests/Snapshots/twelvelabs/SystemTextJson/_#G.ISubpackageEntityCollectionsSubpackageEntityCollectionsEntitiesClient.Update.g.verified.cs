@@ -31,6 +31,25 @@ namespace G
         /// <param name="entityCollectionId"></param>
         /// <param name="entityId"></param>
         /// <param name="xApiKey"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.Entity>> UpdateAsResponseAsync(
+            string entityCollectionId,
+            string entityId,
+            string xApiKey,
+
+            global::G.UpdateRequest5 request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Update an entity<br/>
+        /// This method updates the specified entity within an entity collection. This operation allows modification of the entity's name, description, or metadata. Note that this endpoint does not affect the assets associated with the entity.
+        /// </summary>
+        /// <param name="entityCollectionId"></param>
+        /// <param name="entityId"></param>
+        /// <param name="xApiKey"></param>
         /// <param name="name">
         /// The new name for the entity.
         /// </param>

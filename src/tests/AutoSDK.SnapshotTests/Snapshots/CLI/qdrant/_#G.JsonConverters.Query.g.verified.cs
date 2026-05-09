@@ -24,6 +24,14 @@ namespace G.JsonConverters
                 foreach (var __jsonProp in __jsonDocument.RootElement.EnumerateObject())
                 {
                     __jsonProps.Add(__jsonProp.Name);
+                    if (__jsonProp.Value.ValueKind == global::System.Text.Json.JsonValueKind.Object)
+                    {
+                        foreach (var __nestedJsonProp in __jsonProp.Value.EnumerateObject())
+                        {
+                            __jsonProps.Add(__jsonProp.Name + "." + __nestedJsonProp.Name);
+                        }
+                    }
+
                 }
             }
 
@@ -32,8 +40,13 @@ namespace G.JsonConverters
             if (__jsonProps.Contains("nearest")) __score0++;
             var __score1 = 0;
             if (__jsonProps.Contains("recommend")) __score1++;
+            if (__jsonProps.Contains("recommend.negative")) __score1++;
+            if (__jsonProps.Contains("recommend.positive")) __score1++;
+            if (__jsonProps.Contains("recommend.strategy")) __score1++;
             var __score2 = 0;
             if (__jsonProps.Contains("discover")) __score2++;
+            if (__jsonProps.Contains("discover.context")) __score2++;
+            if (__jsonProps.Contains("discover.target")) __score2++;
             var __score3 = 0;
             if (__jsonProps.Contains("context")) __score3++;
             var __score4 = 0;
@@ -42,6 +55,8 @@ namespace G.JsonConverters
             if (__jsonProps.Contains("fusion")) __score5++;
             var __score6 = 0;
             if (__jsonProps.Contains("rrf")) __score6++;
+            if (__jsonProps.Contains("rrf.k")) __score6++;
+            if (__jsonProps.Contains("rrf.weights")) __score6++;
             var __score7 = 0;
             if (__jsonProps.Contains("defaults")) __score7++;
             if (__jsonProps.Contains("formula")) __score7++;
@@ -49,6 +64,9 @@ namespace G.JsonConverters
             if (__jsonProps.Contains("sample")) __score8++;
             var __score9 = 0;
             if (__jsonProps.Contains("relevance_feedback")) __score9++;
+            if (__jsonProps.Contains("relevance_feedback.feedback")) __score9++;
+            if (__jsonProps.Contains("relevance_feedback.strategy")) __score9++;
+            if (__jsonProps.Contains("relevance_feedback.target")) __score9++;
             var __bestScore = 0;
             var __bestIndex = -1;
             if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }

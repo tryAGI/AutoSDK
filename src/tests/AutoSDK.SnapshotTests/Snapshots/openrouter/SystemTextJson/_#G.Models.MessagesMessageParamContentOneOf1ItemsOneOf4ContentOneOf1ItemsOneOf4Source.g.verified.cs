@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickMessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1ItemsOneOf4Source0(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1ItemsOneOf4Source0? value)
+        {
+            value = MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1ItemsOneOf4Source0;
+            return IsMessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1ItemsOneOf4Source0;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1ItemsOneOf4Source1? MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1ItemsOneOf4Source1 { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1ItemsOneOf4Source1))]
 #endif
         public bool IsMessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1ItemsOneOf4Source1 => MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1ItemsOneOf4Source1 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1ItemsOneOf4Source1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1ItemsOneOf4Source1? value)
+        {
+            value = MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1ItemsOneOf4Source1;
+            return IsMessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1ItemsOneOf4Source1;
+        }
 
         /// <summary>
         /// 
@@ -64,6 +90,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickMessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1ItemsOneOf4Source2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1ItemsOneOf4Source2? value)
+        {
+            value = MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1ItemsOneOf4Source2;
+            return IsMessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1ItemsOneOf4Source2;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1ItemsOneOf4Source3? MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1ItemsOneOf4Source3 { get; init; }
 #else
@@ -77,6 +116,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1ItemsOneOf4Source3))]
 #endif
         public bool IsMessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1ItemsOneOf4Source3 => MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1ItemsOneOf4Source3 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1ItemsOneOf4Source3(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1ItemsOneOf4Source3? value)
+        {
+            value = MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1ItemsOneOf4Source3;
+            return IsMessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1ItemsOneOf4Source3;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -197,10 +249,10 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1ItemsOneOf4Source0?, TResult>? messagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1ItemsOneOf4Source0 = null,
-            global::System.Func<global::G.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1ItemsOneOf4Source1?, TResult>? messagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1ItemsOneOf4Source1 = null,
-            global::System.Func<global::G.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1ItemsOneOf4Source2?, TResult>? messagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1ItemsOneOf4Source2 = null,
-            global::System.Func<global::G.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1ItemsOneOf4Source3?, TResult>? messagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1ItemsOneOf4Source3 = null,
+            global::System.Func<global::G.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1ItemsOneOf4Source0, TResult>? messagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1ItemsOneOf4Source0 = null,
+            global::System.Func<global::G.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1ItemsOneOf4Source1, TResult>? messagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1ItemsOneOf4Source1 = null,
+            global::System.Func<global::G.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1ItemsOneOf4Source2, TResult>? messagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1ItemsOneOf4Source2 = null,
+            global::System.Func<global::G.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1ItemsOneOf4Source3, TResult>? messagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1ItemsOneOf4Source3 = null,
             bool validate = true)
         {
             if (validate)
@@ -232,10 +284,46 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1ItemsOneOf4Source0?>? messagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1ItemsOneOf4Source0 = null,
-            global::System.Action<global::G.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1ItemsOneOf4Source1?>? messagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1ItemsOneOf4Source1 = null,
-            global::System.Action<global::G.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1ItemsOneOf4Source2?>? messagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1ItemsOneOf4Source2 = null,
-            global::System.Action<global::G.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1ItemsOneOf4Source3?>? messagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1ItemsOneOf4Source3 = null,
+            global::System.Action<global::G.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1ItemsOneOf4Source0>? messagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1ItemsOneOf4Source0 = null,
+
+            global::System.Action<global::G.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1ItemsOneOf4Source1>? messagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1ItemsOneOf4Source1 = null,
+
+            global::System.Action<global::G.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1ItemsOneOf4Source2>? messagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1ItemsOneOf4Source2 = null,
+
+            global::System.Action<global::G.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1ItemsOneOf4Source3>? messagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1ItemsOneOf4Source3 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsMessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1ItemsOneOf4Source0)
+            {
+                messagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1ItemsOneOf4Source0?.Invoke(MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1ItemsOneOf4Source0!);
+            }
+            else if (IsMessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1ItemsOneOf4Source1)
+            {
+                messagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1ItemsOneOf4Source1?.Invoke(MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1ItemsOneOf4Source1!);
+            }
+            else if (IsMessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1ItemsOneOf4Source2)
+            {
+                messagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1ItemsOneOf4Source2?.Invoke(MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1ItemsOneOf4Source2!);
+            }
+            else if (IsMessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1ItemsOneOf4Source3)
+            {
+                messagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1ItemsOneOf4Source3?.Invoke(MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1ItemsOneOf4Source3!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1ItemsOneOf4Source0>? messagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1ItemsOneOf4Source0 = null,
+            global::System.Action<global::G.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1ItemsOneOf4Source1>? messagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1ItemsOneOf4Source1 = null,
+            global::System.Action<global::G.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1ItemsOneOf4Source2>? messagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1ItemsOneOf4Source2 = null,
+            global::System.Action<global::G.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1ItemsOneOf4Source3>? messagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1ItemsOneOf4Source3 = null,
             bool validate = true)
         {
             if (validate)

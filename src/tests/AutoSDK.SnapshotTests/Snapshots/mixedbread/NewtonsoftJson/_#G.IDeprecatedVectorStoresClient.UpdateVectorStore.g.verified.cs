@@ -30,6 +30,24 @@ namespace G
         /// <param name="vectorStoreIdentifier">
         /// The ID or name of the vector store
         /// </param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        [global::System.Obsolete("This method marked as deprecated.")]
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.VectorStore>> UpdateVectorStoreAsResponseAsync(
+            global::G.AnyOf<string, global::System.Guid?> vectorStoreIdentifier,
+
+            global::G.VectorStoreUpdateParams request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// [DEPRECATED] Update a vector store<br/>
+        /// DEPRECATED: Use PUT /stores/{store_identifier} instead
+        /// </summary>
+        /// <param name="vectorStoreIdentifier">
+        /// The ID or name of the vector store
+        /// </param>
         /// <param name="name">
         /// New name for the store
         /// </param>

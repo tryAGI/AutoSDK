@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickSummary(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.GuardrailSummary? value)
+        {
+            value = Summary;
+            return IsSummary;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.GuardrailDetailsVariant2? GuardrailDetailsVariant2 { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(GuardrailDetailsVariant2))]
 #endif
         public bool IsGuardrailDetailsVariant2 => GuardrailDetailsVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickGuardrailDetailsVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.GuardrailDetailsVariant2? value)
+        {
+            value = GuardrailDetailsVariant2;
+            return IsGuardrailDetailsVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -119,8 +145,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.GuardrailSummary?, TResult>? summary = null,
-            global::System.Func<global::G.GuardrailDetailsVariant2?, TResult>? guardrailDetailsVariant2 = null,
+            global::System.Func<global::G.GuardrailSummary, TResult>? summary = null,
+            global::System.Func<global::G.GuardrailDetailsVariant2, TResult>? guardrailDetailsVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -144,8 +170,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.GuardrailSummary?>? summary = null,
-            global::System.Action<global::G.GuardrailDetailsVariant2?>? guardrailDetailsVariant2 = null,
+            global::System.Action<global::G.GuardrailSummary>? summary = null,
+
+            global::System.Action<global::G.GuardrailDetailsVariant2>? guardrailDetailsVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsSummary)
+            {
+                summary?.Invoke(Summary!);
+            }
+            else if (IsGuardrailDetailsVariant2)
+            {
+                guardrailDetailsVariant2?.Invoke(GuardrailDetailsVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.GuardrailSummary>? summary = null,
+            global::System.Action<global::G.GuardrailDetailsVariant2>? guardrailDetailsVariant2 = null,
             bool validate = true)
         {
             if (validate)

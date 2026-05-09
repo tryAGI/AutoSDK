@@ -17,5 +17,17 @@ namespace G
             string completionId,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Delete a stored chat completion. Only Chat Completions that have been<br/>
+        /// created with the `store` parameter set to `true` can be deleted.
+        /// </summary>
+        /// <param name="completionId"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.ChatCompletionDeleted>> DeleteChatCompletionAsResponseAsync(
+            string completionId,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

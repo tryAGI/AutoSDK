@@ -62,6 +62,33 @@ namespace G
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var __response = await GetDubbingByDubbingProjectIdAsResponseAsync(
+                dubbingProjectId: dubbingProjectId,
+                targetLanguages: targetLanguages,
+                requestOptions: requestOptions,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// Get dubbing project status and videos<br/>
+        /// Retrieve the status of a dubbing project and its dubbed videos.<br/>
+        /// **Status values:** - `uploading`: The source video is still being uploaded/processed (only for projects created via sourceVideoUrl) - `in_progress`: Dubbing is in progress - `complete`: All dubbing is complete - `error`: An error occurred during dubbing<br/>
+        /// **Response varies by status:** - UPLOADING: Returns only id and status - IN_PROGRESS/COMPLETE: Returns id, status, and dubbedAssets array - ERROR: Returns id, status, and errorCode<br/>
+        /// **Dubbed asset status:** - IN_PROGRESS: Returns minimal data (id, language, status) - COMPLETE: Returns full data including download URLs - ERROR: Returns minimal data plus errorCode
+        /// </summary>
+        /// <param name="dubbingProjectId"></param>
+        /// <param name="targetLanguages"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.OneOf<global::G.GetDubbingProjectVideosResponseUploading, global::G.GetDubbingProjectVideosResponseInProgress, global::G.GetDubbingProjectVideosResponseComplete, global::G.GetDubbingProjectVideosResponseError>>> GetDubbingByDubbingProjectIdAsResponseAsync(
+            global::System.Guid dubbingProjectId,
+            global::System.Collections.Generic.IList<string>? targetLanguages = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             PrepareArguments(
                 client: HttpClient);
             PrepareGetDubbingByDubbingProjectIdArguments(
@@ -91,11 +118,12 @@ namespace G
 
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
+
                             var __pathBuilder = new global::G.PathBuilder(
                                 path: $"/v2/dubbing/{dubbingProjectId}",
-                                baseUri: HttpClient.BaseAddress); 
+                                baseUri: HttpClient.BaseAddress);
                             __pathBuilder
-                                .AddOptionalParameter("targetLanguages", targetLanguages, delimiter: ",", explode: true) 
+                                .AddOptionalParameter("targetLanguages", targetLanguages, delimiter: ",", explode: true)
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::G.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -137,7 +165,7 @@ namespace G
                 PrepareGetDubbingByDubbingProjectIdRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    dubbingProjectId: dubbingProjectId,
+                    dubbingProjectId: dubbingProjectId!,
                     targetLanguages: targetLanguages);
 
                 return __httpRequest;
@@ -168,6 +196,8 @@ namespace G
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                     try
                     {
@@ -178,6 +208,11 @@ namespace G
                     }
                     catch (global::System.Net.Http.HttpRequestException __exception)
                     {
+                        var __retryDelay = global::G.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: null,
+                            attempt: __attempt);
                         var __willRetry = __attempt < __maxAttempts && !__effectiveCancellationToken.IsCancellationRequested;
                         await global::G.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
@@ -195,6 +230,8 @@ namespace G
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: __willRetry,
+                                retryDelay: __willRetry ? __retryDelay : (global::System.TimeSpan?)null,
+                                retryReason: "exception",
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         if (!__willRetry)
                         {
@@ -204,8 +241,7 @@ namespace G
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::G.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -214,6 +250,11 @@ namespace G
                         __attempt < __maxAttempts &&
                         global::G.AutoSDKRequestOptionsSupport.ShouldRetryStatusCode(__response.StatusCode))
                     {
+                        var __retryDelay = global::G.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: __response,
+                            attempt: __attempt);
                         await global::G.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
@@ -230,14 +271,15 @@ namespace G
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: true,
+                                retryDelay: __retryDelay,
+                                retryReason: "status:" + ((int)__response.StatusCode).ToString(global::System.Globalization.CultureInfo.InvariantCulture),
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         __response.Dispose();
                         __response = null;
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::G.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -277,6 +319,8 @@ namespace G
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
                 else
@@ -297,6 +341,8 @@ namespace G
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
                             // Bad Request - Invalid dubbing project.
@@ -473,9 +519,13 @@ namespace G
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    return
-                                        global::G.OneOf<global::G.GetDubbingProjectVideosResponseUploading, global::G.GetDubbingProjectVideosResponseInProgress, global::G.GetDubbingProjectVideosResponseComplete, global::G.GetDubbingProjectVideosResponseError>.FromJson(__content, JsonSerializerOptions) ??
+                                    var __value = global::G.OneOf<global::G.GetDubbingProjectVideosResponseUploading, global::G.GetDubbingProjectVideosResponseInProgress, global::G.GetDubbingProjectVideosResponseComplete, global::G.GetDubbingProjectVideosResponseError>.FromJson(__content, JsonSerializerOptions) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                                    return new global::G.AutoSDKHttpResponse<global::G.OneOf<global::G.GetDubbingProjectVideosResponseUploading, global::G.GetDubbingProjectVideosResponseInProgress, global::G.GetDubbingProjectVideosResponseComplete, global::G.GetDubbingProjectVideosResponseError>>(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri,
+                                        body: __value);
                                 }
                                 catch (global::System.Exception __ex)
                                 {
@@ -503,9 +553,13 @@ namespace G
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    return
-                                        await global::G.OneOf<global::G.GetDubbingProjectVideosResponseUploading, global::G.GetDubbingProjectVideosResponseInProgress, global::G.GetDubbingProjectVideosResponseComplete, global::G.GetDubbingProjectVideosResponseError>.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                                    var __value = await global::G.OneOf<global::G.GetDubbingProjectVideosResponseUploading, global::G.GetDubbingProjectVideosResponseInProgress, global::G.GetDubbingProjectVideosResponseComplete, global::G.GetDubbingProjectVideosResponseError>.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
+                                    return new global::G.AutoSDKHttpResponse<global::G.OneOf<global::G.GetDubbingProjectVideosResponseUploading, global::G.GetDubbingProjectVideosResponseInProgress, global::G.GetDubbingProjectVideosResponseComplete, global::G.GetDubbingProjectVideosResponseError>>(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri,
+                                        body: __value);
                                 }
                                 catch (global::System.Exception __ex)
                                 {

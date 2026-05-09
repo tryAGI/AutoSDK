@@ -37,6 +37,26 @@ namespace G
         /// The version of the Anthropic API you want to use.<br/>
         /// Read more about versioning and our version history [here](https://docs.anthropic.com/en/api/versioning).
         /// </param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.CountMessageTokensResponse>> MessagesCountTokensPostAsResponseAsync(
+
+            global::G.CountMessageTokensParams request,
+            string? anthropicVersion = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Count tokens in a Message<br/>
+        /// Count the number of tokens in a Message.<br/>
+        /// The Token Count API can be used to count the number of tokens in a Message, including tools, images, and documents, without creating it.<br/>
+        /// Learn more about token counting in our [user guide](/en/docs/build-with-claude/token-counting)
+        /// </summary>
+        /// <param name="anthropicVersion">
+        /// The version of the Anthropic API you want to use.<br/>
+        /// Read more about versioning and our version history [here](https://docs.anthropic.com/en/api/versioning).
+        /// </param>
         /// <param name="toolChoice">
         /// How the model should use the provided tools. The model can use a specific tool, any available tool, or decide by itself.
         /// </param>

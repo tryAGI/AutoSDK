@@ -28,6 +28,19 @@ namespace G
         public bool IsChatFunctionTool0 => ChatFunctionTool0 != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickChatFunctionTool0(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ChatFunctionTool0? value)
+        {
+            value = ChatFunctionTool0;
+            return IsChatFunctionTool0;
+        }
+
+        /// <summary>
         /// OpenRouter built-in server tool: returns the current date and time
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(DatetimeServerTool))]
 #endif
         public bool IsDatetimeServerTool => DatetimeServerTool != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickDatetimeServerTool(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.DatetimeServerTool? value)
+        {
+            value = DatetimeServerTool;
+            return IsDatetimeServerTool;
+        }
 
         /// <summary>
         /// OpenRouter built-in server tool: searches the web for current information
@@ -62,6 +88,19 @@ namespace G
         public bool IsChatWebSearchServerTool => ChatWebSearchServerTool != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickChatWebSearchServerTool(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ChatWebSearchServerTool? value)
+        {
+            value = ChatWebSearchServerTool;
+            return IsChatWebSearchServerTool;
+        }
+
+        /// <summary>
         /// Web search tool using OpenAI Responses API syntax. Automatically converted to openrouter:web_search.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -77,6 +116,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ChatWebSearchShorthand))]
 #endif
         public bool IsChatWebSearchShorthand => ChatWebSearchShorthand != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickChatWebSearchShorthand(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ChatWebSearchShorthand? value)
+        {
+            value = ChatWebSearchShorthand;
+            return IsChatWebSearchShorthand;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -197,10 +249,10 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.ChatFunctionTool0?, TResult>? chatFunctionTool0 = null,
-            global::System.Func<global::G.DatetimeServerTool?, TResult>? datetimeServerTool = null,
-            global::System.Func<global::G.ChatWebSearchServerTool?, TResult>? chatWebSearchServerTool = null,
-            global::System.Func<global::G.ChatWebSearchShorthand?, TResult>? chatWebSearchShorthand = null,
+            global::System.Func<global::G.ChatFunctionTool0, TResult>? chatFunctionTool0 = null,
+            global::System.Func<global::G.DatetimeServerTool, TResult>? datetimeServerTool = null,
+            global::System.Func<global::G.ChatWebSearchServerTool, TResult>? chatWebSearchServerTool = null,
+            global::System.Func<global::G.ChatWebSearchShorthand, TResult>? chatWebSearchShorthand = null,
             bool validate = true)
         {
             if (validate)
@@ -232,10 +284,46 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.ChatFunctionTool0?>? chatFunctionTool0 = null,
-            global::System.Action<global::G.DatetimeServerTool?>? datetimeServerTool = null,
-            global::System.Action<global::G.ChatWebSearchServerTool?>? chatWebSearchServerTool = null,
-            global::System.Action<global::G.ChatWebSearchShorthand?>? chatWebSearchShorthand = null,
+            global::System.Action<global::G.ChatFunctionTool0>? chatFunctionTool0 = null,
+
+            global::System.Action<global::G.DatetimeServerTool>? datetimeServerTool = null,
+
+            global::System.Action<global::G.ChatWebSearchServerTool>? chatWebSearchServerTool = null,
+
+            global::System.Action<global::G.ChatWebSearchShorthand>? chatWebSearchShorthand = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsChatFunctionTool0)
+            {
+                chatFunctionTool0?.Invoke(ChatFunctionTool0!);
+            }
+            else if (IsDatetimeServerTool)
+            {
+                datetimeServerTool?.Invoke(DatetimeServerTool!);
+            }
+            else if (IsChatWebSearchServerTool)
+            {
+                chatWebSearchServerTool?.Invoke(ChatWebSearchServerTool!);
+            }
+            else if (IsChatWebSearchShorthand)
+            {
+                chatWebSearchShorthand?.Invoke(ChatWebSearchShorthand!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.ChatFunctionTool0>? chatFunctionTool0 = null,
+            global::System.Action<global::G.DatetimeServerTool>? datetimeServerTool = null,
+            global::System.Action<global::G.ChatWebSearchServerTool>? chatWebSearchServerTool = null,
+            global::System.Action<global::G.ChatWebSearchShorthand>? chatWebSearchShorthand = null,
             bool validate = true)
         {
             if (validate)

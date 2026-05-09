@@ -22,5 +22,22 @@ namespace G
             string broadcasterId,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Gets the broadcaster’s streaming schedule as an iCalendar.<br/>
+        /// Gets the broadcaster’s streaming schedule as an [iCalendar](https://datatracker.ietf.org/doc/html/rfc5545).<br/>
+        /// __Authorization:__<br/>
+        /// The Client-Id and Authorization headers are not required.<br/>
+        /// __Response Body:__<br/>
+        /// The response body contains the iCalendar data (see [RFC5545](https://datatracker.ietf.org/doc/html/rfc5545)).<br/>
+        /// The Content-Type response header is set to `text/calendar`.
+        /// </summary>
+        /// <param name="broadcasterId"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse> GetChannelIcalendarAsResponseAsync(
+            string broadcasterId,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -28,6 +28,19 @@ namespace G
         public bool IsChatFinishReasonEnum => ChatFinishReasonEnum != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickChatFinishReasonEnum(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ChatFinishReasonEnum? value)
+        {
+            value = ChatFinishReasonEnum;
+            return IsChatFinishReasonEnum;
+        }
+
+        /// <summary>
         /// Any type
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -45,6 +58,19 @@ namespace G
         public bool IsChatChoiceFinishReasonVariant2 => ChatChoiceFinishReasonVariant2 != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickChatChoiceFinishReasonVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out object? value)
+        {
+            value = ChatChoiceFinishReasonVariant2;
+            return IsChatChoiceFinishReasonVariant2;
+        }
+
+        /// <summary>
         /// Any type
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -60,6 +86,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ChatChoiceFinishReasonVariant3))]
 #endif
         public bool IsChatChoiceFinishReasonVariant3 => ChatChoiceFinishReasonVariant3 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickChatChoiceFinishReasonVariant3(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out object? value)
+        {
+            value = ChatChoiceFinishReasonVariant3;
+            return IsChatChoiceFinishReasonVariant3;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -123,8 +162,8 @@ namespace G
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::G.ChatFinishReasonEnum?, TResult>? chatFinishReasonEnum = null,
-            global::System.Func<object?, TResult>? chatChoiceFinishReasonVariant2 = null,
-            global::System.Func<object?, TResult>? chatChoiceFinishReasonVariant3 = null,
+            global::System.Func<object, TResult>? chatChoiceFinishReasonVariant2 = null,
+            global::System.Func<object, TResult>? chatChoiceFinishReasonVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -153,8 +192,38 @@ namespace G
         /// </summary>
         public void Match(
             global::System.Action<global::G.ChatFinishReasonEnum?>? chatFinishReasonEnum = null,
-            global::System.Action<object?>? chatChoiceFinishReasonVariant2 = null,
-            global::System.Action<object?>? chatChoiceFinishReasonVariant3 = null,
+
+            global::System.Action<object>? chatChoiceFinishReasonVariant2 = null,
+
+            global::System.Action<object>? chatChoiceFinishReasonVariant3 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsChatFinishReasonEnum)
+            {
+                chatFinishReasonEnum?.Invoke(ChatFinishReasonEnum!);
+            }
+            else if (IsChatChoiceFinishReasonVariant2)
+            {
+                chatChoiceFinishReasonVariant2?.Invoke(ChatChoiceFinishReasonVariant2!);
+            }
+            else if (IsChatChoiceFinishReasonVariant3)
+            {
+                chatChoiceFinishReasonVariant3?.Invoke(ChatChoiceFinishReasonVariant3!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.ChatFinishReasonEnum?>? chatFinishReasonEnum = null,
+            global::System.Action<object>? chatChoiceFinishReasonVariant2 = null,
+            global::System.Action<object>? chatChoiceFinishReasonVariant3 = null,
             bool validate = true)
         {
             if (validate)

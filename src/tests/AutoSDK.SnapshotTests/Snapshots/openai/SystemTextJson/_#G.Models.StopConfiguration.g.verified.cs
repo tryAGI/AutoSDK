@@ -33,6 +33,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickStopConfigurationVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = StopConfigurationVariant1;
+            return IsStopConfigurationVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<string>? StopConfigurationVariant2 { get; init; }
 #else
@@ -46,6 +59,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(StopConfigurationVariant2))]
 #endif
         public bool IsStopConfigurationVariant2 => StopConfigurationVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickStopConfigurationVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::System.Collections.Generic.IList<string>? value)
+        {
+            value = StopConfigurationVariant2;
+            return IsStopConfigurationVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -104,8 +130,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<string?, TResult>? stopConfigurationVariant1 = null,
-            global::System.Func<global::System.Collections.Generic.IList<string>?, TResult>? stopConfigurationVariant2 = null,
+            global::System.Func<string, TResult>? stopConfigurationVariant1 = null,
+            global::System.Func<global::System.Collections.Generic.IList<string>, TResult>? stopConfigurationVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -129,8 +155,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<string?>? stopConfigurationVariant1 = null,
-            global::System.Action<global::System.Collections.Generic.IList<string>?>? stopConfigurationVariant2 = null,
+            global::System.Action<string>? stopConfigurationVariant1 = null,
+
+            global::System.Action<global::System.Collections.Generic.IList<string>>? stopConfigurationVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsStopConfigurationVariant1)
+            {
+                stopConfigurationVariant1?.Invoke(StopConfigurationVariant1!);
+            }
+            else if (IsStopConfigurationVariant2)
+            {
+                stopConfigurationVariant2?.Invoke(StopConfigurationVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<string>? stopConfigurationVariant1 = null,
+            global::System.Action<global::System.Collections.Generic.IList<string>>? stopConfigurationVariant2 = null,
             bool validate = true)
         {
             if (validate)

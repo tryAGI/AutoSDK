@@ -22,5 +22,22 @@ namespace G
             string? xClientName = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Retrieves metrics measured during the training of a fine-tuned model.
+        /// </summary>
+        /// <param name="finetunedModelId"></param>
+        /// <param name="pageSize"></param>
+        /// <param name="pageToken"></param>
+        /// <param name="xClientName"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.ListTrainingStepMetricsResponse>> ListTrainingStepMetricsAsResponseAsync(
+            string finetunedModelId,
+            int? pageSize = default,
+            string? pageToken = default,
+            string? xClientName = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

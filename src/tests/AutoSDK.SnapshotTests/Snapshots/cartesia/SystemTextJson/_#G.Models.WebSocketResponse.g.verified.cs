@@ -13,6 +13,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public string? Type { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.WebSocketResponseVariant1? Chunk { get; init; }
 #else
@@ -26,6 +31,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Chunk))]
 #endif
         public bool IsChunk => Chunk != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickChunk(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.WebSocketResponseVariant1? value)
+        {
+            value = Chunk;
+            return IsChunk;
+        }
 
         /// <summary>
         /// 
@@ -47,6 +65,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickFlushDone(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.WebSocketResponseVariant2? value)
+        {
+            value = FlushDone;
+            return IsFlushDone;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.WebSocketResponseVariant3? Done { get; init; }
 #else
@@ -60,6 +91,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Done))]
 #endif
         public bool IsDone => Done != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickDone(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.WebSocketResponseVariant3? value)
+        {
+            value = Done;
+            return IsDone;
+        }
 
         /// <summary>
         /// 
@@ -81,6 +125,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickTimestamps(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.WebSocketResponseVariant4? value)
+        {
+            value = Timestamps;
+            return IsTimestamps;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.WebSocketResponseVariant5? Error { get; init; }
 #else
@@ -98,6 +155,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickError(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.WebSocketResponseVariant5? value)
+        {
+            value = Error;
+            return IsError;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.WebSocketResponseVariant6? PhonemeTimestamps { get; init; }
 #else
@@ -111,6 +181,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(PhonemeTimestamps))]
 #endif
         public bool IsPhonemeTimestamps => PhonemeTimestamps != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickPhonemeTimestamps(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.WebSocketResponseVariant6? value)
+        {
+            value = PhonemeTimestamps;
+            return IsPhonemeTimestamps;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -223,6 +306,7 @@ namespace G
         /// 
         /// </summary>
         public WebSocketResponse(
+            string? type,
             global::G.WebSocketResponseVariant1? chunk,
             global::G.WebSocketResponseVariant2? flushDone,
             global::G.WebSocketResponseVariant3? done,
@@ -231,6 +315,8 @@ namespace G
             global::G.WebSocketResponseVariant6? phonemeTimestamps
             )
         {
+            Type = type;
+
             Chunk = chunk;
             FlushDone = flushDone;
             Done = done;
@@ -275,12 +361,12 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.WebSocketResponseVariant1?, TResult>? chunk = null,
-            global::System.Func<global::G.WebSocketResponseVariant2?, TResult>? flushDone = null,
-            global::System.Func<global::G.WebSocketResponseVariant3?, TResult>? done = null,
-            global::System.Func<global::G.WebSocketResponseVariant4?, TResult>? timestamps = null,
-            global::System.Func<global::G.WebSocketResponseVariant5?, TResult>? error = null,
-            global::System.Func<global::G.WebSocketResponseVariant6?, TResult>? phonemeTimestamps = null,
+            global::System.Func<global::G.WebSocketResponseVariant1, TResult>? chunk = null,
+            global::System.Func<global::G.WebSocketResponseVariant2, TResult>? flushDone = null,
+            global::System.Func<global::G.WebSocketResponseVariant3, TResult>? done = null,
+            global::System.Func<global::G.WebSocketResponseVariant4, TResult>? timestamps = null,
+            global::System.Func<global::G.WebSocketResponseVariant5, TResult>? error = null,
+            global::System.Func<global::G.WebSocketResponseVariant6, TResult>? phonemeTimestamps = null,
             bool validate = true)
         {
             if (validate)
@@ -320,12 +406,60 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.WebSocketResponseVariant1?>? chunk = null,
-            global::System.Action<global::G.WebSocketResponseVariant2?>? flushDone = null,
-            global::System.Action<global::G.WebSocketResponseVariant3?>? done = null,
-            global::System.Action<global::G.WebSocketResponseVariant4?>? timestamps = null,
-            global::System.Action<global::G.WebSocketResponseVariant5?>? error = null,
-            global::System.Action<global::G.WebSocketResponseVariant6?>? phonemeTimestamps = null,
+            global::System.Action<global::G.WebSocketResponseVariant1>? chunk = null,
+
+            global::System.Action<global::G.WebSocketResponseVariant2>? flushDone = null,
+
+            global::System.Action<global::G.WebSocketResponseVariant3>? done = null,
+
+            global::System.Action<global::G.WebSocketResponseVariant4>? timestamps = null,
+
+            global::System.Action<global::G.WebSocketResponseVariant5>? error = null,
+
+            global::System.Action<global::G.WebSocketResponseVariant6>? phonemeTimestamps = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsChunk)
+            {
+                chunk?.Invoke(Chunk!);
+            }
+            else if (IsFlushDone)
+            {
+                flushDone?.Invoke(FlushDone!);
+            }
+            else if (IsDone)
+            {
+                done?.Invoke(Done!);
+            }
+            else if (IsTimestamps)
+            {
+                timestamps?.Invoke(Timestamps!);
+            }
+            else if (IsError)
+            {
+                error?.Invoke(Error!);
+            }
+            else if (IsPhonemeTimestamps)
+            {
+                phonemeTimestamps?.Invoke(PhonemeTimestamps!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.WebSocketResponseVariant1>? chunk = null,
+            global::System.Action<global::G.WebSocketResponseVariant2>? flushDone = null,
+            global::System.Action<global::G.WebSocketResponseVariant3>? done = null,
+            global::System.Action<global::G.WebSocketResponseVariant4>? timestamps = null,
+            global::System.Action<global::G.WebSocketResponseVariant5>? error = null,
+            global::System.Action<global::G.WebSocketResponseVariant6>? phonemeTimestamps = null,
             bool validate = true)
         {
             if (validate)

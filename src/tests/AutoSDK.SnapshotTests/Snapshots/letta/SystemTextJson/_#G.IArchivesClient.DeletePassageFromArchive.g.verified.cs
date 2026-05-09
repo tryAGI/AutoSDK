@@ -24,5 +24,24 @@ namespace G
             string passageId,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Delete Passage From Archive<br/>
+        /// Delete a passage from an archive.<br/>
+        /// This permanently removes the passage from both the database and vector storage (if applicable).
+        /// </summary>
+        /// <param name="archiveId">
+        /// The ID of the archive in the format 'archive-&lt;uuid4&gt;'
+        /// </param>
+        /// <param name="passageId">
+        /// The ID of the passage in the format 'passage-&lt;uuid4&gt;'
+        /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse> DeletePassageFromArchiveAsResponseAsync(
+            string archiveId,
+            string passageId,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -28,6 +28,19 @@ namespace G
         public bool IsResponsesPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsContentVariant1 => ResponsesPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsContentVariant1 != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResponsesPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsContentVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = ResponsesPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsContentVariant1;
+            return IsResponsesPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsContentVariant1;
+        }
+
+        /// <summary>
         /// The content of the message, used for file inputs.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponsesPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsContent1))]
 #endif
         public bool IsResponsesPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsContent1 => ResponsesPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsContent1 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResponsesPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsContent1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::System.Collections.Generic.IList<global::G.ResponsesPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsContentOneOf1Items>? value)
+        {
+            value = ResponsesPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsContent1;
+            return IsResponsesPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsContent1;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -101,8 +127,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<string?, TResult>? responsesPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsContentVariant1 = null,
-            global::System.Func<global::System.Collections.Generic.IList<global::G.ResponsesPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsContentOneOf1Items>?, TResult>? responsesPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsContent1 = null,
+            global::System.Func<string, TResult>? responsesPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsContentVariant1 = null,
+            global::System.Func<global::System.Collections.Generic.IList<global::G.ResponsesPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsContentOneOf1Items>, TResult>? responsesPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsContent1 = null,
             bool validate = true)
         {
             if (validate)
@@ -126,8 +152,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<string?>? responsesPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsContentVariant1 = null,
-            global::System.Action<global::System.Collections.Generic.IList<global::G.ResponsesPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsContentOneOf1Items>?>? responsesPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsContent1 = null,
+            global::System.Action<string>? responsesPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsContentVariant1 = null,
+
+            global::System.Action<global::System.Collections.Generic.IList<global::G.ResponsesPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsContentOneOf1Items>>? responsesPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsContent1 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsResponsesPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsContentVariant1)
+            {
+                responsesPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsContentVariant1?.Invoke(ResponsesPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsContentVariant1!);
+            }
+            else if (IsResponsesPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsContent1)
+            {
+                responsesPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsContent1?.Invoke(ResponsesPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsContent1!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<string>? responsesPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsContentVariant1 = null,
+            global::System.Action<global::System.Collections.Generic.IList<global::G.ResponsesPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsContentOneOf1Items>>? responsesPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsContent1 = null,
             bool validate = true)
         {
             if (validate)

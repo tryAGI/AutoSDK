@@ -35,6 +35,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickCallSuccess(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.DashboardCallSuccessChartModel? value)
+        {
+            value = CallSuccess;
+            return IsCallSuccess;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.DashboardCriteriaChartModel? Criteria { get; init; }
 #else
@@ -52,6 +65,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickCriteria(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.DashboardCriteriaChartModel? value)
+        {
+            value = Criteria;
+            return IsCriteria;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.DashboardDataCollectionChartModel? DataCollection { get; init; }
 #else
@@ -65,6 +91,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(DataCollection))]
 #endif
         public bool IsDataCollection => DataCollection != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickDataCollection(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.DashboardDataCollectionChartModel? value)
+        {
+            value = DataCollection;
+            return IsDataCollection;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -166,9 +205,9 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.DashboardCallSuccessChartModel?, TResult>? callSuccess = null,
-            global::System.Func<global::G.DashboardCriteriaChartModel?, TResult>? criteria = null,
-            global::System.Func<global::G.DashboardDataCollectionChartModel?, TResult>? dataCollection = null,
+            global::System.Func<global::G.DashboardCallSuccessChartModel, TResult>? callSuccess = null,
+            global::System.Func<global::G.DashboardCriteriaChartModel, TResult>? criteria = null,
+            global::System.Func<global::G.DashboardDataCollectionChartModel, TResult>? dataCollection = null,
             bool validate = true)
         {
             if (validate)
@@ -196,9 +235,39 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.DashboardCallSuccessChartModel?>? callSuccess = null,
-            global::System.Action<global::G.DashboardCriteriaChartModel?>? criteria = null,
-            global::System.Action<global::G.DashboardDataCollectionChartModel?>? dataCollection = null,
+            global::System.Action<global::G.DashboardCallSuccessChartModel>? callSuccess = null,
+
+            global::System.Action<global::G.DashboardCriteriaChartModel>? criteria = null,
+
+            global::System.Action<global::G.DashboardDataCollectionChartModel>? dataCollection = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsCallSuccess)
+            {
+                callSuccess?.Invoke(CallSuccess!);
+            }
+            else if (IsCriteria)
+            {
+                criteria?.Invoke(Criteria!);
+            }
+            else if (IsDataCollection)
+            {
+                dataCollection?.Invoke(DataCollection!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.DashboardCallSuccessChartModel>? callSuccess = null,
+            global::System.Action<global::G.DashboardCriteriaChartModel>? criteria = null,
+            global::System.Action<global::G.DashboardDataCollectionChartModel>? dataCollection = null,
             bool validate = true)
         {
             if (validate)

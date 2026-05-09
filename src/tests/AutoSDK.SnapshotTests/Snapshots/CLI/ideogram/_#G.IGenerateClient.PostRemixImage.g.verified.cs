@@ -26,6 +26,21 @@ namespace G
         /// are cropped to the chosen aspect ratio before being remixed.<br/>
         /// Supported image formats include JPEG, PNG, and WEBP
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.GenerateImageResponse>> PostRemixImageAsResponseAsync(
+
+            global::G.RemixImageRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Remix provided images synchronously based on a given prompt and optional parameters<br/>
+        /// A request to remix a provided image with Ideogram. Input images<br/>
+        /// are cropped to the chosen aspect ratio before being remixed.<br/>
+        /// Supported image formats include JPEG, PNG, and WEBP
+        /// </summary>
         /// <param name="imageRequest">
         /// A request to generate a new image using a provided image and a prompt.<br/>
         /// Example: {"aspect_ratio":"ASPECT_10_16","magic_prompt_option":"ON","model":"V_2","prompt":"A serene tropical beach scene. Dominating the foreground are tall palm trees with lush green leaves, standing tall against a backdrop of a sandy beach. The beach leads to the azure waters of the sea, which gently kisses the shoreline. In the distance, there is an island or landmass with a silhouette of what appears to be a lighthouse or tower. The sky above is painted with fluffy white clouds, some of which are tinged with hues of pink and orange, suggesting either a sunrise or sunset.","image_weight":50}
@@ -42,6 +57,57 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.GenerateImageResponse> PostRemixImageAsync(
             global::G.InitialImageRequest imageRequest,
             byte[] imageFile,
+            string imageFilename,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Remix provided images synchronously based on a given prompt and optional parameters<br/>
+        /// A request to remix a provided image with Ideogram. Input images<br/>
+        /// are cropped to the chosen aspect ratio before being remixed.<br/>
+        /// Supported image formats include JPEG, PNG, and WEBP
+        /// </summary>
+        /// <param name="imageRequest">
+        /// A request to generate a new image using a provided image and a prompt.<br/>
+        /// Example: {"aspect_ratio":"ASPECT_10_16","magic_prompt_option":"ON","model":"V_2","prompt":"A serene tropical beach scene. Dominating the foreground are tall palm trees with lush green leaves, standing tall against a backdrop of a sandy beach. The beach leads to the azure waters of the sea, which gently kisses the shoreline. In the distance, there is an island or landmass with a silhouette of what appears to be a lighthouse or tower. The sky above is painted with fluffy white clouds, some of which are tinged with hues of pink and orange, suggesting either a sunrise or sunset.","image_weight":50}
+        /// </param>
+        /// <param name="imageFile">
+        /// An image binary; only JPEG, WEBPs and PNGs are supported at this time
+        /// </param>
+        /// <param name="imageFilename">
+        /// An image binary; only JPEG, WEBPs and PNGs are supported at this time
+        /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.GenerateImageResponse> PostRemixImageAsync(
+            global::G.InitialImageRequest imageRequest,
+            global::System.IO.Stream imageFile,
+            string imageFilename,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Remix provided images synchronously based on a given prompt and optional parameters<br/>
+        /// A request to remix a provided image with Ideogram. Input images<br/>
+        /// are cropped to the chosen aspect ratio before being remixed.<br/>
+        /// Supported image formats include JPEG, PNG, and WEBP
+        /// </summary>
+        /// <param name="imageRequest">
+        /// A request to generate a new image using a provided image and a prompt.<br/>
+        /// Example: {"aspect_ratio":"ASPECT_10_16","magic_prompt_option":"ON","model":"V_2","prompt":"A serene tropical beach scene. Dominating the foreground are tall palm trees with lush green leaves, standing tall against a backdrop of a sandy beach. The beach leads to the azure waters of the sea, which gently kisses the shoreline. In the distance, there is an island or landmass with a silhouette of what appears to be a lighthouse or tower. The sky above is painted with fluffy white clouds, some of which are tinged with hues of pink and orange, suggesting either a sunrise or sunset.","image_weight":50}
+        /// </param>
+        /// <param name="imageFile">
+        /// An image binary; only JPEG, WEBPs and PNGs are supported at this time
+        /// </param>
+        /// <param name="imageFilename">
+        /// An image binary; only JPEG, WEBPs and PNGs are supported at this time
+        /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.GenerateImageResponse>> PostRemixImageAsResponseAsync(
+            global::G.InitialImageRequest imageRequest,
+            global::System.IO.Stream imageFile,
             string imageFilename,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);

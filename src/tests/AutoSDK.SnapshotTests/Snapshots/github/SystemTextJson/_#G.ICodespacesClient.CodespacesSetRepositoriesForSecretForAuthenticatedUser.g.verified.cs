@@ -29,6 +29,23 @@ namespace G
         /// OAuth app tokens and personal access tokens (classic) need the `codespace` or `codespace:secrets` scope to use this endpoint.
         /// </summary>
         /// <param name="secretName"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse> CodespacesSetRepositoriesForSecretForAuthenticatedUserAsResponseAsync(
+            string secretName,
+
+            global::G.CodespacesSetRepositoriesForSecretForAuthenticatedUserRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Set selected repositories for a user secret<br/>
+        /// Select the repositories that will use a user's development environment secret.<br/>
+        /// The authenticated user must have Codespaces access to use this endpoint.<br/>
+        /// OAuth app tokens and personal access tokens (classic) need the `codespace` or `codespace:secrets` scope to use this endpoint.
+        /// </summary>
+        /// <param name="secretName"></param>
         /// <param name="selectedRepositoryIds">
         /// An array of repository ids for which a codespace can access the secret. You can manage the list of selected repositories using the [List selected repositories for a user secret](https://docs.github.com/rest/codespaces/secrets#list-selected-repositories-for-a-user-secret), [Add a selected repository to a user secret](https://docs.github.com/rest/codespaces/secrets#add-a-selected-repository-to-a-user-secret), and [Remove a selected repository from a user secret](https://docs.github.com/rest/codespaces/secrets#remove-a-selected-repository-from-a-user-secret) endpoints.
         /// </param>

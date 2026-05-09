@@ -28,6 +28,19 @@ namespace G
         public bool IsInterval => Interval != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickInterval(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.IntervalScheduleConfiguration? value)
+        {
+            value = Interval;
+            return IsInterval;
+        }
+
+        /// <summary>
         /// Configuration for cron-based schedule execution.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Cron))]
 #endif
         public bool IsCron => Cron != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickCron(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CronScheduleConfiguration? value)
+        {
+            value = Cron;
+            return IsCron;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -119,8 +145,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.IntervalScheduleConfiguration?, TResult>? interval = null,
-            global::System.Func<global::G.CronScheduleConfiguration?, TResult>? cron = null,
+            global::System.Func<global::G.IntervalScheduleConfiguration, TResult>? interval = null,
+            global::System.Func<global::G.CronScheduleConfiguration, TResult>? cron = null,
             bool validate = true)
         {
             if (validate)
@@ -144,8 +170,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.IntervalScheduleConfiguration?>? interval = null,
-            global::System.Action<global::G.CronScheduleConfiguration?>? cron = null,
+            global::System.Action<global::G.IntervalScheduleConfiguration>? interval = null,
+
+            global::System.Action<global::G.CronScheduleConfiguration>? cron = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsInterval)
+            {
+                interval?.Invoke(Interval!);
+            }
+            else if (IsCron)
+            {
+                cron?.Invoke(Cron!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.IntervalScheduleConfiguration>? interval = null,
+            global::System.Action<global::G.CronScheduleConfiguration>? cron = null,
             bool validate = true)
         {
             if (validate)

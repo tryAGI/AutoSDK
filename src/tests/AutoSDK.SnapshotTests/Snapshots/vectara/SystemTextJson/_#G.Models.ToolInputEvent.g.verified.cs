@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickAgentBase(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.AgentEventBase? value)
+        {
+            value = AgentBase;
+            return IsAgentBase;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ToolInputEventVariant2? ToolInputEventVariant2 { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ToolInputEventVariant2))]
 #endif
         public bool IsToolInputEventVariant2 => ToolInputEventVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickToolInputEventVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ToolInputEventVariant2? value)
+        {
+            value = ToolInputEventVariant2;
+            return IsToolInputEventVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -119,8 +145,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.AgentEventBase?, TResult>? agentBase = null,
-            global::System.Func<global::G.ToolInputEventVariant2?, TResult>? toolInputEventVariant2 = null,
+            global::System.Func<global::G.AgentEventBase, TResult>? agentBase = null,
+            global::System.Func<global::G.ToolInputEventVariant2, TResult>? toolInputEventVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -144,8 +170,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.AgentEventBase?>? agentBase = null,
-            global::System.Action<global::G.ToolInputEventVariant2?>? toolInputEventVariant2 = null,
+            global::System.Action<global::G.AgentEventBase>? agentBase = null,
+
+            global::System.Action<global::G.ToolInputEventVariant2>? toolInputEventVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsAgentBase)
+            {
+                agentBase?.Invoke(AgentBase!);
+            }
+            else if (IsToolInputEventVariant2)
+            {
+                toolInputEventVariant2?.Invoke(ToolInputEventVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.AgentEventBase>? agentBase = null,
+            global::System.Action<global::G.ToolInputEventVariant2>? toolInputEventVariant2 = null,
             bool validate = true)
         {
             if (validate)

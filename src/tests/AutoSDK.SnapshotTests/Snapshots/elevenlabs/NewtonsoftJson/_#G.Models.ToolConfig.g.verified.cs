@@ -34,6 +34,19 @@ namespace G
         public bool IsWebhook => Webhook != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickWebhook(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.WebhookToolConfigInput? value)
+        {
+            value = Webhook;
+            return IsWebhook;
+        }
+
+        /// <summary>
         /// A client tool is one that sends an event to the user's client to trigger something client side<br/>
         /// Example: {"expects_response":false,"type":"client"}
         /// </summary>
@@ -50,6 +63,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Client))]
 #endif
         public bool IsClient => Client != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickClient(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ClientToolConfigInput? value)
+        {
+            value = Client;
+            return IsClient;
+        }
 
         /// <summary>
         /// A system tool is a tool that is used to call a system method in the server
@@ -69,6 +95,19 @@ namespace G
         public bool IsSystem => System != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSystem(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.SystemToolConfigInput? value)
+        {
+            value = System;
+            return IsSystem;
+        }
+
+        /// <summary>
         /// An MCP tool configuration that can be used to call MCP servers
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -84,6 +123,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Mcp))]
 #endif
         public bool IsMcp => Mcp != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMcp(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.MCPToolConfigInput? value)
+        {
+            value = Mcp;
+            return IsMcp;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -207,10 +259,10 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.WebhookToolConfigInput?, TResult>? webhook = null,
-            global::System.Func<global::G.ClientToolConfigInput?, TResult>? client = null,
-            global::System.Func<global::G.SystemToolConfigInput?, TResult>? system = null,
-            global::System.Func<global::G.MCPToolConfigInput?, TResult>? mcp = null,
+            global::System.Func<global::G.WebhookToolConfigInput, TResult>? webhook = null,
+            global::System.Func<global::G.ClientToolConfigInput, TResult>? client = null,
+            global::System.Func<global::G.SystemToolConfigInput, TResult>? system = null,
+            global::System.Func<global::G.MCPToolConfigInput, TResult>? mcp = null,
             bool validate = true)
         {
             if (validate)
@@ -242,10 +294,46 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.WebhookToolConfigInput?>? webhook = null,
-            global::System.Action<global::G.ClientToolConfigInput?>? client = null,
-            global::System.Action<global::G.SystemToolConfigInput?>? system = null,
-            global::System.Action<global::G.MCPToolConfigInput?>? mcp = null,
+            global::System.Action<global::G.WebhookToolConfigInput>? webhook = null,
+
+            global::System.Action<global::G.ClientToolConfigInput>? client = null,
+
+            global::System.Action<global::G.SystemToolConfigInput>? system = null,
+
+            global::System.Action<global::G.MCPToolConfigInput>? mcp = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsWebhook)
+            {
+                webhook?.Invoke(Webhook!);
+            }
+            else if (IsClient)
+            {
+                client?.Invoke(Client!);
+            }
+            else if (IsSystem)
+            {
+                system?.Invoke(System!);
+            }
+            else if (IsMcp)
+            {
+                mcp?.Invoke(Mcp!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.WebhookToolConfigInput>? webhook = null,
+            global::System.Action<global::G.ClientToolConfigInput>? client = null,
+            global::System.Action<global::G.SystemToolConfigInput>? system = null,
+            global::System.Action<global::G.MCPToolConfigInput>? mcp = null,
             bool validate = true)
         {
             if (validate)

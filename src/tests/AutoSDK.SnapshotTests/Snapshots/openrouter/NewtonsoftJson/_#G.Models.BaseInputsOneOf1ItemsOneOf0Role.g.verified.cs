@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickBaseInputsOneOf1ItemsOneOf0Role0(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.BaseInputsOneOf1ItemsOneOf0Role0? value)
+        {
+            value = BaseInputsOneOf1ItemsOneOf0Role0;
+            return IsBaseInputsOneOf1ItemsOneOf0Role0;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.BaseInputsOneOf1ItemsOneOf0Role1? BaseInputsOneOf1ItemsOneOf0Role1 { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BaseInputsOneOf1ItemsOneOf0Role1))]
 #endif
         public bool IsBaseInputsOneOf1ItemsOneOf0Role1 => BaseInputsOneOf1ItemsOneOf0Role1 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickBaseInputsOneOf1ItemsOneOf0Role1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.BaseInputsOneOf1ItemsOneOf0Role1? value)
+        {
+            value = BaseInputsOneOf1ItemsOneOf0Role1;
+            return IsBaseInputsOneOf1ItemsOneOf0Role1;
+        }
 
         /// <summary>
         /// 
@@ -64,6 +90,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickBaseInputsOneOf1ItemsOneOf0Role2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.BaseInputsOneOf1ItemsOneOf0Role2? value)
+        {
+            value = BaseInputsOneOf1ItemsOneOf0Role2;
+            return IsBaseInputsOneOf1ItemsOneOf0Role2;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.BaseInputsOneOf1ItemsOneOf0Role3? BaseInputsOneOf1ItemsOneOf0Role3 { get; init; }
 #else
@@ -77,6 +116,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BaseInputsOneOf1ItemsOneOf0Role3))]
 #endif
         public bool IsBaseInputsOneOf1ItemsOneOf0Role3 => BaseInputsOneOf1ItemsOneOf0Role3 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickBaseInputsOneOf1ItemsOneOf0Role3(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.BaseInputsOneOf1ItemsOneOf0Role3? value)
+        {
+            value = BaseInputsOneOf1ItemsOneOf0Role3;
+            return IsBaseInputsOneOf1ItemsOneOf0Role3;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -232,6 +284,42 @@ namespace G
         /// 
         /// </summary>
         public void Match(
+            global::System.Action<global::G.BaseInputsOneOf1ItemsOneOf0Role0?>? baseInputsOneOf1ItemsOneOf0Role0 = null,
+
+            global::System.Action<global::G.BaseInputsOneOf1ItemsOneOf0Role1?>? baseInputsOneOf1ItemsOneOf0Role1 = null,
+
+            global::System.Action<global::G.BaseInputsOneOf1ItemsOneOf0Role2?>? baseInputsOneOf1ItemsOneOf0Role2 = null,
+
+            global::System.Action<global::G.BaseInputsOneOf1ItemsOneOf0Role3?>? baseInputsOneOf1ItemsOneOf0Role3 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsBaseInputsOneOf1ItemsOneOf0Role0)
+            {
+                baseInputsOneOf1ItemsOneOf0Role0?.Invoke(BaseInputsOneOf1ItemsOneOf0Role0!);
+            }
+            else if (IsBaseInputsOneOf1ItemsOneOf0Role1)
+            {
+                baseInputsOneOf1ItemsOneOf0Role1?.Invoke(BaseInputsOneOf1ItemsOneOf0Role1!);
+            }
+            else if (IsBaseInputsOneOf1ItemsOneOf0Role2)
+            {
+                baseInputsOneOf1ItemsOneOf0Role2?.Invoke(BaseInputsOneOf1ItemsOneOf0Role2!);
+            }
+            else if (IsBaseInputsOneOf1ItemsOneOf0Role3)
+            {
+                baseInputsOneOf1ItemsOneOf0Role3?.Invoke(BaseInputsOneOf1ItemsOneOf0Role3!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
             global::System.Action<global::G.BaseInputsOneOf1ItemsOneOf0Role0?>? baseInputsOneOf1ItemsOneOf0Role0 = null,
             global::System.Action<global::G.BaseInputsOneOf1ItemsOneOf0Role1?>? baseInputsOneOf1ItemsOneOf0Role1 = null,
             global::System.Action<global::G.BaseInputsOneOf1ItemsOneOf0Role2?>? baseInputsOneOf1ItemsOneOf0Role2 = null,

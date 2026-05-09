@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickPredefined(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.SmsContentPredefined? value)
+        {
+            value = Predefined;
+            return IsPredefined;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.SmsContentInferred? Inferred { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Inferred))]
 #endif
         public bool IsInferred => Inferred != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickInferred(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.SmsContentInferred? value)
+        {
+            value = Inferred;
+            return IsInferred;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -119,8 +145,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.SmsContentPredefined?, TResult>? predefined = null,
-            global::System.Func<global::G.SmsContentInferred?, TResult>? inferred = null,
+            global::System.Func<global::G.SmsContentPredefined, TResult>? predefined = null,
+            global::System.Func<global::G.SmsContentInferred, TResult>? inferred = null,
             bool validate = true)
         {
             if (validate)
@@ -144,8 +170,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.SmsContentPredefined?>? predefined = null,
-            global::System.Action<global::G.SmsContentInferred?>? inferred = null,
+            global::System.Action<global::G.SmsContentPredefined>? predefined = null,
+
+            global::System.Action<global::G.SmsContentInferred>? inferred = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsPredefined)
+            {
+                predefined?.Invoke(Predefined!);
+            }
+            else if (IsInferred)
+            {
+                inferred?.Invoke(Inferred!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.SmsContentPredefined>? predefined = null,
+            global::System.Action<global::G.SmsContentInferred>? inferred = null,
             bool validate = true)
         {
             if (validate)

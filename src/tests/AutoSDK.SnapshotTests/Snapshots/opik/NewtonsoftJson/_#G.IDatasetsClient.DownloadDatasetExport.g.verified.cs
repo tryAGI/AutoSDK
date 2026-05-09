@@ -17,5 +17,29 @@ namespace G
             global::System.Guid jobId,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Download dataset export file<br/>
+        /// Downloads the exported CSV file for a completed export job. This endpoint proxies the file download to avoid exposing internal storage URLs.
+        /// </summary>
+        /// <param name="jobId"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::System.IO.Stream> DownloadDatasetExportAsStreamAsync(
+            global::System.Guid jobId,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Download dataset export file<br/>
+        /// Downloads the exported CSV file for a completed export job. This endpoint proxies the file download to avoid exposing internal storage URLs.
+        /// </summary>
+        /// <param name="jobId"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<byte[]>> DownloadDatasetExportAsResponseAsync(
+            global::System.Guid jobId,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

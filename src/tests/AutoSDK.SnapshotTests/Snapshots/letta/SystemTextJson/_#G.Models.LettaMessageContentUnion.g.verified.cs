@@ -35,6 +35,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickText(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.TextContent? value)
+        {
+            value = Text;
+            return IsText;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ImageContent? Image { get; init; }
 #else
@@ -48,6 +61,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Image))]
 #endif
         public bool IsImage => Image != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickImage(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ImageContent? value)
+        {
+            value = Image;
+            return IsImage;
+        }
 
         /// <summary>
         /// 
@@ -69,6 +95,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickToolCall(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ToolCallContent? value)
+        {
+            value = ToolCall;
+            return IsToolCall;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ToolReturnContent? ToolReturn { get; init; }
 #else
@@ -82,6 +121,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ToolReturn))]
 #endif
         public bool IsToolReturn => ToolReturn != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickToolReturn(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ToolReturnContent? value)
+        {
+            value = ToolReturn;
+            return IsToolReturn;
+        }
 
         /// <summary>
         /// Sent via the Anthropic Messages API
@@ -101,6 +153,19 @@ namespace G
         public bool IsReasoning => Reasoning != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickReasoning(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ReasoningContent? value)
+        {
+            value = Reasoning;
+            return IsReasoning;
+        }
+
+        /// <summary>
         /// Sent via the Anthropic Messages API
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -118,6 +183,19 @@ namespace G
         public bool IsRedactedReasoning => RedactedReasoning != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickRedactedReasoning(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.RedactedReasoningContent? value)
+        {
+            value = RedactedReasoning;
+            return IsRedactedReasoning;
+        }
+
+        /// <summary>
         /// A placeholder for reasoning content we know is present, but isn't returned by the provider (e.g. OpenAI GPT-5 on ChatCompletions)
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -133,6 +211,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OmittedReasoning))]
 #endif
         public bool IsOmittedReasoning => OmittedReasoning != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickOmittedReasoning(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.OmittedReasoningContent? value)
+        {
+            value = OmittedReasoning;
+            return IsOmittedReasoning;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -322,13 +413,13 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.TextContent?, TResult>? text = null,
-            global::System.Func<global::G.ImageContent?, TResult>? image = null,
-            global::System.Func<global::G.ToolCallContent?, TResult>? toolCall = null,
-            global::System.Func<global::G.ToolReturnContent?, TResult>? toolReturn = null,
-            global::System.Func<global::G.ReasoningContent?, TResult>? reasoning = null,
-            global::System.Func<global::G.RedactedReasoningContent?, TResult>? redactedReasoning = null,
-            global::System.Func<global::G.OmittedReasoningContent?, TResult>? omittedReasoning = null,
+            global::System.Func<global::G.TextContent, TResult>? text = null,
+            global::System.Func<global::G.ImageContent, TResult>? image = null,
+            global::System.Func<global::G.ToolCallContent, TResult>? toolCall = null,
+            global::System.Func<global::G.ToolReturnContent, TResult>? toolReturn = null,
+            global::System.Func<global::G.ReasoningContent, TResult>? reasoning = null,
+            global::System.Func<global::G.RedactedReasoningContent, TResult>? redactedReasoning = null,
+            global::System.Func<global::G.OmittedReasoningContent, TResult>? omittedReasoning = null,
             bool validate = true)
         {
             if (validate)
@@ -372,13 +463,67 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.TextContent?>? text = null,
-            global::System.Action<global::G.ImageContent?>? image = null,
-            global::System.Action<global::G.ToolCallContent?>? toolCall = null,
-            global::System.Action<global::G.ToolReturnContent?>? toolReturn = null,
-            global::System.Action<global::G.ReasoningContent?>? reasoning = null,
-            global::System.Action<global::G.RedactedReasoningContent?>? redactedReasoning = null,
-            global::System.Action<global::G.OmittedReasoningContent?>? omittedReasoning = null,
+            global::System.Action<global::G.TextContent>? text = null,
+
+            global::System.Action<global::G.ImageContent>? image = null,
+
+            global::System.Action<global::G.ToolCallContent>? toolCall = null,
+
+            global::System.Action<global::G.ToolReturnContent>? toolReturn = null,
+
+            global::System.Action<global::G.ReasoningContent>? reasoning = null,
+
+            global::System.Action<global::G.RedactedReasoningContent>? redactedReasoning = null,
+
+            global::System.Action<global::G.OmittedReasoningContent>? omittedReasoning = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsText)
+            {
+                text?.Invoke(Text!);
+            }
+            else if (IsImage)
+            {
+                image?.Invoke(Image!);
+            }
+            else if (IsToolCall)
+            {
+                toolCall?.Invoke(ToolCall!);
+            }
+            else if (IsToolReturn)
+            {
+                toolReturn?.Invoke(ToolReturn!);
+            }
+            else if (IsReasoning)
+            {
+                reasoning?.Invoke(Reasoning!);
+            }
+            else if (IsRedactedReasoning)
+            {
+                redactedReasoning?.Invoke(RedactedReasoning!);
+            }
+            else if (IsOmittedReasoning)
+            {
+                omittedReasoning?.Invoke(OmittedReasoning!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.TextContent>? text = null,
+            global::System.Action<global::G.ImageContent>? image = null,
+            global::System.Action<global::G.ToolCallContent>? toolCall = null,
+            global::System.Action<global::G.ToolReturnContent>? toolReturn = null,
+            global::System.Action<global::G.ReasoningContent>? reasoning = null,
+            global::System.Action<global::G.RedactedReasoningContent>? redactedReasoning = null,
+            global::System.Action<global::G.OmittedReasoningContent>? omittedReasoning = null,
             bool validate = true)
         {
             if (validate)

@@ -26,6 +26,21 @@ namespace G
         /// __Authorization:__<br/>
         /// Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens).
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.CreateConduitsResponse>> CreateConduitsAsResponseAsync(
+
+            global::G.CreateConduitsBody request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// NEW Creates a new conduit.<br/>
+        /// NEW Creates a new [conduit](https://dev.twitch.tv/docs/eventsub/handling-conduit-events).<br/>
+        /// __Authorization:__<br/>
+        /// Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens).
+        /// </summary>
         /// <param name="shardCount">
         /// The number of shards to create for this conduit.
         /// </param>

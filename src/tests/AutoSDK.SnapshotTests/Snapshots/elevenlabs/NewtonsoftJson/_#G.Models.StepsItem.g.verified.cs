@@ -35,6 +35,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickEdge(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.WorkflowToolEdgeStepModel? value)
+        {
+            value = Edge;
+            return IsEdge;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.WorkflowToolNestedToolsStepModelInput? NestedTools { get; init; }
 #else
@@ -52,6 +65,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickNestedTools(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.WorkflowToolNestedToolsStepModelInput? value)
+        {
+            value = NestedTools;
+            return IsNestedTools;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.WorkflowToolMaxIterationsExceededStepModel? MaxIterationsExceeded { get; init; }
 #else
@@ -65,6 +91,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MaxIterationsExceeded))]
 #endif
         public bool IsMaxIterationsExceeded => MaxIterationsExceeded != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMaxIterationsExceeded(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.WorkflowToolMaxIterationsExceededStepModel? value)
+        {
+            value = MaxIterationsExceeded;
+            return IsMaxIterationsExceeded;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -166,9 +205,9 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.WorkflowToolEdgeStepModel?, TResult>? edge = null,
-            global::System.Func<global::G.WorkflowToolNestedToolsStepModelInput?, TResult>? nestedTools = null,
-            global::System.Func<global::G.WorkflowToolMaxIterationsExceededStepModel?, TResult>? maxIterationsExceeded = null,
+            global::System.Func<global::G.WorkflowToolEdgeStepModel, TResult>? edge = null,
+            global::System.Func<global::G.WorkflowToolNestedToolsStepModelInput, TResult>? nestedTools = null,
+            global::System.Func<global::G.WorkflowToolMaxIterationsExceededStepModel, TResult>? maxIterationsExceeded = null,
             bool validate = true)
         {
             if (validate)
@@ -196,9 +235,39 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.WorkflowToolEdgeStepModel?>? edge = null,
-            global::System.Action<global::G.WorkflowToolNestedToolsStepModelInput?>? nestedTools = null,
-            global::System.Action<global::G.WorkflowToolMaxIterationsExceededStepModel?>? maxIterationsExceeded = null,
+            global::System.Action<global::G.WorkflowToolEdgeStepModel>? edge = null,
+
+            global::System.Action<global::G.WorkflowToolNestedToolsStepModelInput>? nestedTools = null,
+
+            global::System.Action<global::G.WorkflowToolMaxIterationsExceededStepModel>? maxIterationsExceeded = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsEdge)
+            {
+                edge?.Invoke(Edge!);
+            }
+            else if (IsNestedTools)
+            {
+                nestedTools?.Invoke(NestedTools!);
+            }
+            else if (IsMaxIterationsExceeded)
+            {
+                maxIterationsExceeded?.Invoke(MaxIterationsExceeded!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.WorkflowToolEdgeStepModel>? edge = null,
+            global::System.Action<global::G.WorkflowToolNestedToolsStepModelInput>? nestedTools = null,
+            global::System.Action<global::G.WorkflowToolMaxIterationsExceededStepModel>? maxIterationsExceeded = null,
             bool validate = true)
         {
             if (validate)

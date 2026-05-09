@@ -43,6 +43,29 @@ namespace G
         /// <param name="conversationId">
         /// The conversation identifier. Can be a conversation ID ('conv-&lt;uuid4&gt;'), 'default' for agent-direct mode (with agent_id parameter), or an agent ID ('agent-&lt;uuid4&gt;') for backwards compatibility (deprecated).
         /// </param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.LettaResponse>> SendConversationMessageAsResponseAsync(
+            string conversationId,
+
+            global::G.ConversationMessageRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Send Conversation Message<br/>
+        /// Send a message to a conversation and get a response.<br/>
+        /// This endpoint sends a message to an existing conversation.<br/>
+        /// By default (streaming=true), returns a streaming response (Server-Sent Events).<br/>
+        /// Set streaming=false to get a complete JSON response.<br/>
+        /// **Agent-direct mode**: Pass conversation_id="default" with agent_id in request body<br/>
+        /// to send messages to the agent's default conversation with locking.<br/>
+        /// **Deprecated**: Passing an agent ID as conversation_id still works but will be removed.
+        /// </summary>
+        /// <param name="conversationId">
+        /// The conversation identifier. Can be a conversation ID ('conv-&lt;uuid4&gt;'), 'default' for agent-direct mode (with agent_id parameter), or an agent ID ('agent-&lt;uuid4&gt;') for backwards compatibility (deprecated).
+        /// </param>
         /// <param name="messages">
         /// The messages to be sent to the agent.
         /// </param>

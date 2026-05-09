@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickResearchEventDtoClassVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ResearchEventDtoClassVariant1? value)
+        {
+            value = ResearchEventDtoClassVariant1;
+            return IsResearchEventDtoClassVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ResearchEventDtoClassVariant2? ResearchEventDtoClassVariant2 { get; init; }
 #else
@@ -47,6 +60,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickResearchEventDtoClassVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ResearchEventDtoClassVariant2? value)
+        {
+            value = ResearchEventDtoClassVariant2;
+            return IsResearchEventDtoClassVariant2;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ResearchEventDtoClassVariant3? ResearchEventDtoClassVariant3 { get; init; }
 #else
@@ -60,6 +86,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResearchEventDtoClassVariant3))]
 #endif
         public bool IsResearchEventDtoClassVariant3 => ResearchEventDtoClassVariant3 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResearchEventDtoClassVariant3(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ResearchEventDtoClassVariant3? value)
+        {
+            value = ResearchEventDtoClassVariant3;
+            return IsResearchEventDtoClassVariant3;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -188,6 +227,36 @@ namespace G
         /// 
         /// </summary>
         public void Match(
+            global::System.Action<global::G.ResearchEventDtoClassVariant1?>? researchEventDtoClassVariant1 = null,
+
+            global::System.Action<global::G.ResearchEventDtoClassVariant2?>? researchEventDtoClassVariant2 = null,
+
+            global::System.Action<global::G.ResearchEventDtoClassVariant3?>? researchEventDtoClassVariant3 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsResearchEventDtoClassVariant1)
+            {
+                researchEventDtoClassVariant1?.Invoke(ResearchEventDtoClassVariant1!);
+            }
+            else if (IsResearchEventDtoClassVariant2)
+            {
+                researchEventDtoClassVariant2?.Invoke(ResearchEventDtoClassVariant2!);
+            }
+            else if (IsResearchEventDtoClassVariant3)
+            {
+                researchEventDtoClassVariant3?.Invoke(ResearchEventDtoClassVariant3!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
             global::System.Action<global::G.ResearchEventDtoClassVariant1?>? researchEventDtoClassVariant1 = null,
             global::System.Action<global::G.ResearchEventDtoClassVariant2?>? researchEventDtoClassVariant2 = null,
             global::System.Action<global::G.ResearchEventDtoClassVariant3?>? researchEventDtoClassVariant3 = null,

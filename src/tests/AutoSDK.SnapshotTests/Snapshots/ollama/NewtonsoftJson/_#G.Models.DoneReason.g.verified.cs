@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickDoneReasonVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = DoneReasonVariant1;
+            return IsDoneReasonVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.DoneReasonEnum? Enum { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Enum))]
 #endif
         public bool IsEnum => Enum != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickEnum(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.DoneReasonEnum? value)
+        {
+            value = Enum;
+            return IsEnum;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -119,7 +145,7 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<string?, TResult>? doneReasonVariant1 = null,
+            global::System.Func<string, TResult>? doneReasonVariant1 = null,
             global::System.Func<global::G.DoneReasonEnum?, TResult>? @enum = null,
             bool validate = true)
         {
@@ -144,7 +170,31 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<string?>? doneReasonVariant1 = null,
+            global::System.Action<string>? doneReasonVariant1 = null,
+
+            global::System.Action<global::G.DoneReasonEnum?>? @enum = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsDoneReasonVariant1)
+            {
+                doneReasonVariant1?.Invoke(DoneReasonVariant1!);
+            }
+            else if (IsEnum)
+            {
+                @enum?.Invoke(Enum!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<string>? doneReasonVariant1 = null,
             global::System.Action<global::G.DoneReasonEnum?>? @enum = null,
             bool validate = true)
         {

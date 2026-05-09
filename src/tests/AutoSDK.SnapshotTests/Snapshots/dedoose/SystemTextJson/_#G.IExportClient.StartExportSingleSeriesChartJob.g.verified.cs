@@ -22,6 +22,19 @@ namespace G
         /// StartExportSingleSeriesChartJob<br/>
         /// StartExportSingleSeriesChartJob
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<string>> StartExportSingleSeriesChartJobAsResponseAsync(
+
+            global::G.StartExportSingleSeriesChartJobRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// StartExportSingleSeriesChartJob<br/>
+        /// StartExportSingleSeriesChartJob
+        /// </summary>
         /// <param name="projectId"></param>
         /// <param name="exportInfo"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>

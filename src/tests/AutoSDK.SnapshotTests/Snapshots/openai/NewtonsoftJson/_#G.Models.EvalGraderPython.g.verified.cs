@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickPythonGrader(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.GraderPython? value)
+        {
+            value = PythonGrader;
+            return IsPythonGrader;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.EvalGraderPythonVariant2? EvalGraderPythonVariant2 { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(EvalGraderPythonVariant2))]
 #endif
         public bool IsEvalGraderPythonVariant2 => EvalGraderPythonVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickEvalGraderPythonVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.EvalGraderPythonVariant2? value)
+        {
+            value = EvalGraderPythonVariant2;
+            return IsEvalGraderPythonVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -119,8 +145,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.GraderPython?, TResult>? pythonGrader = null,
-            global::System.Func<global::G.EvalGraderPythonVariant2?, TResult>? evalGraderPythonVariant2 = null,
+            global::System.Func<global::G.GraderPython, TResult>? pythonGrader = null,
+            global::System.Func<global::G.EvalGraderPythonVariant2, TResult>? evalGraderPythonVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -144,8 +170,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.GraderPython?>? pythonGrader = null,
-            global::System.Action<global::G.EvalGraderPythonVariant2?>? evalGraderPythonVariant2 = null,
+            global::System.Action<global::G.GraderPython>? pythonGrader = null,
+
+            global::System.Action<global::G.EvalGraderPythonVariant2>? evalGraderPythonVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsPythonGrader)
+            {
+                pythonGrader?.Invoke(PythonGrader!);
+            }
+            else if (IsEvalGraderPythonVariant2)
+            {
+                evalGraderPythonVariant2?.Invoke(EvalGraderPythonVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.GraderPython>? pythonGrader = null,
+            global::System.Action<global::G.EvalGraderPythonVariant2>? evalGraderPythonVariant2 = null,
             bool validate = true)
         {
             if (validate)

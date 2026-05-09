@@ -30,6 +30,24 @@ namespace G
         /// </summary>
         /// <param name="owner"></param>
         /// <param name="repo"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.Codespace>> CodespacesCreateWithRepoForAuthenticatedUserAsResponseAsync(
+            string owner,
+            string repo,
+
+            global::G.CodespacesCreateWithRepoForAuthenticatedUserRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create a codespace in a repository<br/>
+        /// Creates a codespace owned by the authenticated user in the specified repository.<br/>
+        /// OAuth app tokens and personal access tokens (classic) need the `codespace` scope to use this endpoint.
+        /// </summary>
+        /// <param name="owner"></param>
+        /// <param name="repo"></param>
         /// <param name="ref">
         /// Git ref (typically a branch name) for this codespace
         /// </param>

@@ -31,6 +31,24 @@ namespace G
         /// The unique identifier of the tool router session. Required for public API endpoints, optional for internal endpoints where it is injected by middleware.<br/>
         /// Example: trs_LX9uJKBinWWr
         /// </param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.PostToolRouterSessionBySessionIdExecuteMetaResponse>> PostToolRouterSessionBySessionIdExecuteMetaAsResponseAsync(
+            string? sessionId,
+
+            global::G.PostToolRouterSessionBySessionIdExecuteMetaRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Execute a meta tool within a tool router session<br/>
+        /// Executes a Composio meta tool (COMPOSIO_*) within a tool router session.
+        /// </summary>
+        /// <param name="sessionId">
+        /// The unique identifier of the tool router session. Required for public API endpoints, optional for internal endpoints where it is injected by middleware.<br/>
+        /// Example: trs_LX9uJKBinWWr
+        /// </param>
         /// <param name="slug">
         /// The unique slug identifier of the meta tool to execute<br/>
         /// Example: COMPOSIO_MANAGE_CONNECTIONS

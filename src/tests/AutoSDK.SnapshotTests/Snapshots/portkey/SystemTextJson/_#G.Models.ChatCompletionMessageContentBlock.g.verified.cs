@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickTextContentPart(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ChatCompletionRequestMessageContentPartText? value)
+        {
+            value = TextContentPart;
+            return IsTextContentPart;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ChatCompletionMessageContentPartThinking? ThinkingContentPart { get; init; }
 #else
@@ -47,6 +60,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickThinkingContentPart(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ChatCompletionMessageContentPartThinking? value)
+        {
+            value = ThinkingContentPart;
+            return IsThinkingContentPart;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ChatCompletionMessageContentPartRedactedThinking? RedactedThinkingContentPart { get; init; }
 #else
@@ -60,6 +86,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RedactedThinkingContentPart))]
 #endif
         public bool IsRedactedThinkingContentPart => RedactedThinkingContentPart != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickRedactedThinkingContentPart(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ChatCompletionMessageContentPartRedactedThinking? value)
+        {
+            value = RedactedThinkingContentPart;
+            return IsRedactedThinkingContentPart;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -158,9 +197,9 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.ChatCompletionRequestMessageContentPartText?, TResult>? textContentPart = null,
-            global::System.Func<global::G.ChatCompletionMessageContentPartThinking?, TResult>? thinkingContentPart = null,
-            global::System.Func<global::G.ChatCompletionMessageContentPartRedactedThinking?, TResult>? redactedThinkingContentPart = null,
+            global::System.Func<global::G.ChatCompletionRequestMessageContentPartText, TResult>? textContentPart = null,
+            global::System.Func<global::G.ChatCompletionMessageContentPartThinking, TResult>? thinkingContentPart = null,
+            global::System.Func<global::G.ChatCompletionMessageContentPartRedactedThinking, TResult>? redactedThinkingContentPart = null,
             bool validate = true)
         {
             if (validate)
@@ -188,9 +227,39 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.ChatCompletionRequestMessageContentPartText?>? textContentPart = null,
-            global::System.Action<global::G.ChatCompletionMessageContentPartThinking?>? thinkingContentPart = null,
-            global::System.Action<global::G.ChatCompletionMessageContentPartRedactedThinking?>? redactedThinkingContentPart = null,
+            global::System.Action<global::G.ChatCompletionRequestMessageContentPartText>? textContentPart = null,
+
+            global::System.Action<global::G.ChatCompletionMessageContentPartThinking>? thinkingContentPart = null,
+
+            global::System.Action<global::G.ChatCompletionMessageContentPartRedactedThinking>? redactedThinkingContentPart = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsTextContentPart)
+            {
+                textContentPart?.Invoke(TextContentPart!);
+            }
+            else if (IsThinkingContentPart)
+            {
+                thinkingContentPart?.Invoke(ThinkingContentPart!);
+            }
+            else if (IsRedactedThinkingContentPart)
+            {
+                redactedThinkingContentPart?.Invoke(RedactedThinkingContentPart!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.ChatCompletionRequestMessageContentPartText>? textContentPart = null,
+            global::System.Action<global::G.ChatCompletionMessageContentPartThinking>? thinkingContentPart = null,
+            global::System.Action<global::G.ChatCompletionMessageContentPartRedactedThinking>? redactedThinkingContentPart = null,
             bool validate = true)
         {
             if (validate)

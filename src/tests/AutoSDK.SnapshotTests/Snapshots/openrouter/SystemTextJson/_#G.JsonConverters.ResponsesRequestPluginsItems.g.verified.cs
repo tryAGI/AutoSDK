@@ -24,6 +24,14 @@ namespace G.JsonConverters
                 foreach (var __jsonProp in __jsonDocument.RootElement.EnumerateObject())
                 {
                     __jsonProps.Add(__jsonProp.Name);
+                    if (__jsonProp.Value.ValueKind == global::System.Text.Json.JsonValueKind.Object)
+                    {
+                        foreach (var __nestedJsonProp in __jsonProp.Value.EnumerateObject())
+                        {
+                            __jsonProps.Add(__jsonProp.Name + "." + __nestedJsonProp.Name);
+                        }
+                    }
+
                 }
             }
 
@@ -45,6 +53,7 @@ namespace G.JsonConverters
             if (__jsonProps.Contains("enabled")) __score3++;
             if (__jsonProps.Contains("id")) __score3++;
             if (__jsonProps.Contains("pdf")) __score3++;
+            if (__jsonProps.Contains("pdf.engine")) __score3++;
             var __score4 = 0;
             if (__jsonProps.Contains("enabled")) __score4++;
             if (__jsonProps.Contains("id")) __score4++;

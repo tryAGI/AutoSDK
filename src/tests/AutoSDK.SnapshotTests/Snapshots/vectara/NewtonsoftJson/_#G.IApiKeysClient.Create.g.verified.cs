@@ -38,6 +38,27 @@ namespace G
         /// </summary>
         /// <param name="requestTimeout"></param>
         /// <param name="requestTimeoutMillis"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.ApiKey>> CreateAsResponseAsync(
+
+            global::G.CreateApiKeyRequest request,
+            int? requestTimeout = default,
+            int? requestTimeoutMillis = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create an API key<br/>
+        /// The Create API Key API lets you create new API keys, which you can bind to one or multiple corpora. You can also decide whether to designate each key for specific access like personal API keys, only querying (read-only) or both querying and indexing (read-write).<br/>
+        /// This capability is useful in scenarios where you have applications that require different levels of access to corpora data. For example, you might create a read-only API key for an application that only needs to query data.<br/>
+        /// :::note<br/>
+        /// For more information about the different types of API keys, see [API Key Management](/docs/deploy-and-scale/authentication/api-key-management).<br/>
+        /// :::
+        /// </summary>
+        /// <param name="requestTimeout"></param>
+        /// <param name="requestTimeoutMillis"></param>
         /// <param name="name">
         /// The human-readable name of the API key.
         /// </param>

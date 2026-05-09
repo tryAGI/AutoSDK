@@ -28,6 +28,19 @@ namespace G
         public bool IsProviderSort => ProviderSort != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickProviderSort(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ProviderSort? value)
+        {
+            value = ProviderSort;
+            return IsProviderSort;
+        }
+
+        /// <summary>
         /// The provider sorting strategy (price, throughput, latency)
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -45,6 +58,19 @@ namespace G
         public bool IsProviderSortConfig => ProviderSortConfig != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickProviderSortConfig(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ProviderSortConfig? value)
+        {
+            value = ProviderSortConfig;
+            return IsProviderSortConfig;
+        }
+
+        /// <summary>
         /// Any type
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -60,6 +86,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponsesRequestProviderSortVariant3))]
 #endif
         public bool IsResponsesRequestProviderSortVariant3 => ResponsesRequestProviderSortVariant3 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResponsesRequestProviderSortVariant3(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out object? value)
+        {
+            value = ResponsesRequestProviderSortVariant3;
+            return IsResponsesRequestProviderSortVariant3;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -141,8 +180,8 @@ namespace G
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::G.ProviderSort?, TResult>? providerSort = null,
-            global::System.Func<global::G.ProviderSortConfig?, TResult>? providerSortConfig = null,
-            global::System.Func<object?, TResult>? responsesRequestProviderSortVariant3 = null,
+            global::System.Func<global::G.ProviderSortConfig, TResult>? providerSortConfig = null,
+            global::System.Func<object, TResult>? responsesRequestProviderSortVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -171,8 +210,38 @@ namespace G
         /// </summary>
         public void Match(
             global::System.Action<global::G.ProviderSort?>? providerSort = null,
-            global::System.Action<global::G.ProviderSortConfig?>? providerSortConfig = null,
-            global::System.Action<object?>? responsesRequestProviderSortVariant3 = null,
+
+            global::System.Action<global::G.ProviderSortConfig>? providerSortConfig = null,
+
+            global::System.Action<object>? responsesRequestProviderSortVariant3 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsProviderSort)
+            {
+                providerSort?.Invoke(ProviderSort!);
+            }
+            else if (IsProviderSortConfig)
+            {
+                providerSortConfig?.Invoke(ProviderSortConfig!);
+            }
+            else if (IsResponsesRequestProviderSortVariant3)
+            {
+                responsesRequestProviderSortVariant3?.Invoke(ResponsesRequestProviderSortVariant3!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.ProviderSort?>? providerSort = null,
+            global::System.Action<global::G.ProviderSortConfig>? providerSortConfig = null,
+            global::System.Action<object>? responsesRequestProviderSortVariant3 = null,
             bool validate = true)
         {
             if (validate)

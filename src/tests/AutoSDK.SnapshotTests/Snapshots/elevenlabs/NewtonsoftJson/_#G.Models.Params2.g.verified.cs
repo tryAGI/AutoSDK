@@ -35,6 +35,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickEndCall(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.EndCallToolConfig? value)
+        {
+            value = EndCall;
+            return IsEndCall;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.LanguageDetectionToolConfig? LanguageDetection { get; init; }
 #else
@@ -48,6 +61,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(LanguageDetection))]
 #endif
         public bool IsLanguageDetection => LanguageDetection != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickLanguageDetection(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.LanguageDetectionToolConfig? value)
+        {
+            value = LanguageDetection;
+            return IsLanguageDetection;
+        }
 
         /// <summary>
         /// 
@@ -69,6 +95,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickTransferToAgent(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.TransferToAgentToolConfig? value)
+        {
+            value = TransferToAgent;
+            return IsTransferToAgent;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.TransferToNumberToolConfigInput? TransferToNumber { get; init; }
 #else
@@ -82,6 +121,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TransferToNumber))]
 #endif
         public bool IsTransferToNumber => TransferToNumber != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickTransferToNumber(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.TransferToNumberToolConfigInput? value)
+        {
+            value = TransferToNumber;
+            return IsTransferToNumber;
+        }
 
         /// <summary>
         /// Allows the agent to explicitly skip its turn.<br/>
@@ -108,6 +160,19 @@ namespace G
         public bool IsSkipTurn => SkipTurn != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSkipTurn(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.SkipTurnToolConfig? value)
+        {
+            value = SkipTurn;
+            return IsSkipTurn;
+        }
+
+        /// <summary>
         /// Allows the agent to play DTMF tones during a phone call.<br/>
         /// This tool can be used to interact with automated phone systems, such as<br/>
         /// navigating phone menus, entering extensions, or inputting numeric codes.
@@ -125,6 +190,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(PlayKeypadTouchTone))]
 #endif
         public bool IsPlayKeypadTouchTone => PlayKeypadTouchTone != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickPlayKeypadTouchTone(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.PlayDTMFToolConfig? value)
+        {
+            value = PlayKeypadTouchTone;
+            return IsPlayKeypadTouchTone;
+        }
 
         /// <summary>
         /// Allows the agent to detect when a voicemail system is encountered.<br/>
@@ -149,6 +227,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickVoicemailDetection(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.VoicemailDetectionToolConfig? value)
+        {
+            value = VoicemailDetection;
+            return IsVoicemailDetection;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.MemoryEntrySearchToolConfig? MemoryEntrySearch { get; init; }
 #else
@@ -162,6 +253,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MemoryEntrySearch))]
 #endif
         public bool IsMemoryEntrySearch => MemoryEntrySearch != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMemoryEntrySearch(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.MemoryEntrySearchToolConfig? value)
+        {
+            value = MemoryEntrySearch;
+            return IsMemoryEntrySearch;
+        }
 
         /// <summary>
         /// 
@@ -183,6 +287,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickMemoryEntryCreate(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.MemoryEntryCreateToolConfig? value)
+        {
+            value = MemoryEntryCreate;
+            return IsMemoryEntryCreate;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.MemoryEntryUpdateToolConfig? MemoryEntryUpdate { get; init; }
 #else
@@ -196,6 +313,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MemoryEntryUpdate))]
 #endif
         public bool IsMemoryEntryUpdate => MemoryEntryUpdate != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMemoryEntryUpdate(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.MemoryEntryUpdateToolConfig? value)
+        {
+            value = MemoryEntryUpdate;
+            return IsMemoryEntryUpdate;
+        }
 
         /// <summary>
         /// 
@@ -217,6 +347,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickMemoryEntryDelete(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.MemoryEntryDeleteToolConfig? value)
+        {
+            value = MemoryEntryDelete;
+            return IsMemoryEntryDelete;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.AgentPromptChangeToolConfig? AgentPromptChange { get; init; }
 #else
@@ -230,6 +373,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AgentPromptChange))]
 #endif
         public bool IsAgentPromptChange => AgentPromptChange != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickAgentPromptChange(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.AgentPromptChangeToolConfig? value)
+        {
+            value = AgentPromptChange;
+            return IsAgentPromptChange;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -529,18 +685,18 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.EndCallToolConfig?, TResult>? endCall = null,
-            global::System.Func<global::G.LanguageDetectionToolConfig?, TResult>? languageDetection = null,
-            global::System.Func<global::G.TransferToAgentToolConfig?, TResult>? transferToAgent = null,
-            global::System.Func<global::G.TransferToNumberToolConfigInput?, TResult>? transferToNumber = null,
-            global::System.Func<global::G.SkipTurnToolConfig?, TResult>? skipTurn = null,
-            global::System.Func<global::G.PlayDTMFToolConfig?, TResult>? playKeypadTouchTone = null,
-            global::System.Func<global::G.VoicemailDetectionToolConfig?, TResult>? voicemailDetection = null,
-            global::System.Func<global::G.MemoryEntrySearchToolConfig?, TResult>? memoryEntrySearch = null,
-            global::System.Func<global::G.MemoryEntryCreateToolConfig?, TResult>? memoryEntryCreate = null,
-            global::System.Func<global::G.MemoryEntryUpdateToolConfig?, TResult>? memoryEntryUpdate = null,
-            global::System.Func<global::G.MemoryEntryDeleteToolConfig?, TResult>? memoryEntryDelete = null,
-            global::System.Func<global::G.AgentPromptChangeToolConfig?, TResult>? agentPromptChange = null,
+            global::System.Func<global::G.EndCallToolConfig, TResult>? endCall = null,
+            global::System.Func<global::G.LanguageDetectionToolConfig, TResult>? languageDetection = null,
+            global::System.Func<global::G.TransferToAgentToolConfig, TResult>? transferToAgent = null,
+            global::System.Func<global::G.TransferToNumberToolConfigInput, TResult>? transferToNumber = null,
+            global::System.Func<global::G.SkipTurnToolConfig, TResult>? skipTurn = null,
+            global::System.Func<global::G.PlayDTMFToolConfig, TResult>? playKeypadTouchTone = null,
+            global::System.Func<global::G.VoicemailDetectionToolConfig, TResult>? voicemailDetection = null,
+            global::System.Func<global::G.MemoryEntrySearchToolConfig, TResult>? memoryEntrySearch = null,
+            global::System.Func<global::G.MemoryEntryCreateToolConfig, TResult>? memoryEntryCreate = null,
+            global::System.Func<global::G.MemoryEntryUpdateToolConfig, TResult>? memoryEntryUpdate = null,
+            global::System.Func<global::G.MemoryEntryDeleteToolConfig, TResult>? memoryEntryDelete = null,
+            global::System.Func<global::G.AgentPromptChangeToolConfig, TResult>? agentPromptChange = null,
             bool validate = true)
         {
             if (validate)
@@ -604,18 +760,102 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.EndCallToolConfig?>? endCall = null,
-            global::System.Action<global::G.LanguageDetectionToolConfig?>? languageDetection = null,
-            global::System.Action<global::G.TransferToAgentToolConfig?>? transferToAgent = null,
-            global::System.Action<global::G.TransferToNumberToolConfigInput?>? transferToNumber = null,
-            global::System.Action<global::G.SkipTurnToolConfig?>? skipTurn = null,
-            global::System.Action<global::G.PlayDTMFToolConfig?>? playKeypadTouchTone = null,
-            global::System.Action<global::G.VoicemailDetectionToolConfig?>? voicemailDetection = null,
-            global::System.Action<global::G.MemoryEntrySearchToolConfig?>? memoryEntrySearch = null,
-            global::System.Action<global::G.MemoryEntryCreateToolConfig?>? memoryEntryCreate = null,
-            global::System.Action<global::G.MemoryEntryUpdateToolConfig?>? memoryEntryUpdate = null,
-            global::System.Action<global::G.MemoryEntryDeleteToolConfig?>? memoryEntryDelete = null,
-            global::System.Action<global::G.AgentPromptChangeToolConfig?>? agentPromptChange = null,
+            global::System.Action<global::G.EndCallToolConfig>? endCall = null,
+
+            global::System.Action<global::G.LanguageDetectionToolConfig>? languageDetection = null,
+
+            global::System.Action<global::G.TransferToAgentToolConfig>? transferToAgent = null,
+
+            global::System.Action<global::G.TransferToNumberToolConfigInput>? transferToNumber = null,
+
+            global::System.Action<global::G.SkipTurnToolConfig>? skipTurn = null,
+
+            global::System.Action<global::G.PlayDTMFToolConfig>? playKeypadTouchTone = null,
+
+            global::System.Action<global::G.VoicemailDetectionToolConfig>? voicemailDetection = null,
+
+            global::System.Action<global::G.MemoryEntrySearchToolConfig>? memoryEntrySearch = null,
+
+            global::System.Action<global::G.MemoryEntryCreateToolConfig>? memoryEntryCreate = null,
+
+            global::System.Action<global::G.MemoryEntryUpdateToolConfig>? memoryEntryUpdate = null,
+
+            global::System.Action<global::G.MemoryEntryDeleteToolConfig>? memoryEntryDelete = null,
+
+            global::System.Action<global::G.AgentPromptChangeToolConfig>? agentPromptChange = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsEndCall)
+            {
+                endCall?.Invoke(EndCall!);
+            }
+            else if (IsLanguageDetection)
+            {
+                languageDetection?.Invoke(LanguageDetection!);
+            }
+            else if (IsTransferToAgent)
+            {
+                transferToAgent?.Invoke(TransferToAgent!);
+            }
+            else if (IsTransferToNumber)
+            {
+                transferToNumber?.Invoke(TransferToNumber!);
+            }
+            else if (IsSkipTurn)
+            {
+                skipTurn?.Invoke(SkipTurn!);
+            }
+            else if (IsPlayKeypadTouchTone)
+            {
+                playKeypadTouchTone?.Invoke(PlayKeypadTouchTone!);
+            }
+            else if (IsVoicemailDetection)
+            {
+                voicemailDetection?.Invoke(VoicemailDetection!);
+            }
+            else if (IsMemoryEntrySearch)
+            {
+                memoryEntrySearch?.Invoke(MemoryEntrySearch!);
+            }
+            else if (IsMemoryEntryCreate)
+            {
+                memoryEntryCreate?.Invoke(MemoryEntryCreate!);
+            }
+            else if (IsMemoryEntryUpdate)
+            {
+                memoryEntryUpdate?.Invoke(MemoryEntryUpdate!);
+            }
+            else if (IsMemoryEntryDelete)
+            {
+                memoryEntryDelete?.Invoke(MemoryEntryDelete!);
+            }
+            else if (IsAgentPromptChange)
+            {
+                agentPromptChange?.Invoke(AgentPromptChange!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.EndCallToolConfig>? endCall = null,
+            global::System.Action<global::G.LanguageDetectionToolConfig>? languageDetection = null,
+            global::System.Action<global::G.TransferToAgentToolConfig>? transferToAgent = null,
+            global::System.Action<global::G.TransferToNumberToolConfigInput>? transferToNumber = null,
+            global::System.Action<global::G.SkipTurnToolConfig>? skipTurn = null,
+            global::System.Action<global::G.PlayDTMFToolConfig>? playKeypadTouchTone = null,
+            global::System.Action<global::G.VoicemailDetectionToolConfig>? voicemailDetection = null,
+            global::System.Action<global::G.MemoryEntrySearchToolConfig>? memoryEntrySearch = null,
+            global::System.Action<global::G.MemoryEntryCreateToolConfig>? memoryEntryCreate = null,
+            global::System.Action<global::G.MemoryEntryUpdateToolConfig>? memoryEntryUpdate = null,
+            global::System.Action<global::G.MemoryEntryDeleteToolConfig>? memoryEntryDelete = null,
+            global::System.Action<global::G.AgentPromptChangeToolConfig>? agentPromptChange = null,
             bool validate = true)
         {
             if (validate)

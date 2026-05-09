@@ -23,6 +23,20 @@ namespace G
         /// Modifies an assistant.
         /// </summary>
         /// <param name="assistantId"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.AssistantObject>> ModifyAssistantAsResponseAsync(
+            string assistantId,
+
+            global::G.ModifyAssistantRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Modifies an assistant.
+        /// </summary>
+        /// <param name="assistantId"></param>
         /// <param name="model">
         /// ID of the model to use. You can use the [List models](/docs/api-reference/models/list) API to see all of your available models, or see our [Model overview](/docs/models) for descriptions of them.
         /// </param>

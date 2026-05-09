@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickScoreV1Variant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.AllOf<global::G.ScoreV1Variant12, global::G.NumericScoreV1>? value)
+        {
+            value = ScoreV1Variant1;
+            return IsScoreV1Variant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.AllOf<global::G.ScoreV1Variant22, global::G.CategoricalScoreV1>? ScoreV1Variant2 { get; init; }
 #else
@@ -47,6 +60,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickScoreV1Variant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.AllOf<global::G.ScoreV1Variant22, global::G.CategoricalScoreV1>? value)
+        {
+            value = ScoreV1Variant2;
+            return IsScoreV1Variant2;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.AllOf<global::G.ScoreV1Variant32, global::G.BooleanScoreV1>? ScoreV1Variant3 { get; init; }
 #else
@@ -60,6 +86,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ScoreV1Variant3))]
 #endif
         public bool IsScoreV1Variant3 => ScoreV1Variant3 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickScoreV1Variant3(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.AllOf<global::G.ScoreV1Variant32, global::G.BooleanScoreV1>? value)
+        {
+            value = ScoreV1Variant3;
+            return IsScoreV1Variant3;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -188,6 +227,36 @@ namespace G
         /// 
         /// </summary>
         public void Match(
+            global::System.Action<global::G.AllOf<global::G.ScoreV1Variant12, global::G.NumericScoreV1>?>? scoreV1Variant1 = null,
+
+            global::System.Action<global::G.AllOf<global::G.ScoreV1Variant22, global::G.CategoricalScoreV1>?>? scoreV1Variant2 = null,
+
+            global::System.Action<global::G.AllOf<global::G.ScoreV1Variant32, global::G.BooleanScoreV1>?>? scoreV1Variant3 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsScoreV1Variant1)
+            {
+                scoreV1Variant1?.Invoke(ScoreV1Variant1!);
+            }
+            else if (IsScoreV1Variant2)
+            {
+                scoreV1Variant2?.Invoke(ScoreV1Variant2!);
+            }
+            else if (IsScoreV1Variant3)
+            {
+                scoreV1Variant3?.Invoke(ScoreV1Variant3!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
             global::System.Action<global::G.AllOf<global::G.ScoreV1Variant12, global::G.NumericScoreV1>?>? scoreV1Variant1 = null,
             global::System.Action<global::G.AllOf<global::G.ScoreV1Variant22, global::G.CategoricalScoreV1>?>? scoreV1Variant2 = null,
             global::System.Action<global::G.AllOf<global::G.ScoreV1Variant32, global::G.BooleanScoreV1>?>? scoreV1Variant3 = null,

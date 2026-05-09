@@ -31,6 +31,25 @@ namespace G
         /// <param name="owner"></param>
         /// <param name="repo"></param>
         /// <param name="commentId"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.Reaction>> ReactionsCreateForIssueCommentAsResponseAsync(
+            string owner,
+            string repo,
+            long commentId,
+
+            global::G.ReactionsCreateForIssueCommentRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create reaction for an issue comment<br/>
+        /// Create a reaction to an [issue comment](https://docs.github.com/rest/issues/comments#get-an-issue-comment). A response with an HTTP `200` status means that you already added the reaction type to this issue comment.
+        /// </summary>
+        /// <param name="owner"></param>
+        /// <param name="repo"></param>
+        /// <param name="commentId"></param>
         /// <param name="content">
         /// The [reaction type](https://docs.github.com/rest/reactions/reactions#about-reactions) to add to the issue comment.
         /// </param>

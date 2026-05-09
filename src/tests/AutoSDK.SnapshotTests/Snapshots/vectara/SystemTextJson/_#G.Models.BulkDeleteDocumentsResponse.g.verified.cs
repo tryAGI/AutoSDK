@@ -48,6 +48,19 @@ namespace G
         public bool IsAsync => Async != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickAsync(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.BulkDeleteAsyncResponse? value)
+        {
+            value = Async;
+            return IsAsync;
+        }
+
+        /// <summary>
         /// Response when async=false and operation completes successfully (HTTP 200).
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -63,6 +76,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Success))]
 #endif
         public bool IsSuccess => Success != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSuccess(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.BulkDeleteSyncSuccessResponse? value)
+        {
+            value = Success;
+            return IsSuccess;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -142,8 +168,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.BulkDeleteAsyncResponse?, TResult>? async = null,
-            global::System.Func<global::G.BulkDeleteSyncSuccessResponse?, TResult>? success = null,
+            global::System.Func<global::G.BulkDeleteAsyncResponse, TResult>? async = null,
+            global::System.Func<global::G.BulkDeleteSyncSuccessResponse, TResult>? success = null,
             bool validate = true)
         {
             if (validate)
@@ -167,8 +193,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.BulkDeleteAsyncResponse?>? async = null,
-            global::System.Action<global::G.BulkDeleteSyncSuccessResponse?>? success = null,
+            global::System.Action<global::G.BulkDeleteAsyncResponse>? async = null,
+
+            global::System.Action<global::G.BulkDeleteSyncSuccessResponse>? success = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsAsync)
+            {
+                async?.Invoke(Async!);
+            }
+            else if (IsSuccess)
+            {
+                success?.Invoke(Success!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.BulkDeleteAsyncResponse>? async = null,
+            global::System.Action<global::G.BulkDeleteSyncSuccessResponse>? success = null,
             bool validate = true)
         {
             if (validate)

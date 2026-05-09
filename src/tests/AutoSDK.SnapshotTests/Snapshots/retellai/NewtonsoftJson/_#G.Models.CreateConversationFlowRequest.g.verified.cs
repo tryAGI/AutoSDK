@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickConversationFlow(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ConversationFlow? value)
+        {
+            value = ConversationFlow;
+            return IsConversationFlow;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public object? CreateConversationFlowRequestVariant2 { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CreateConversationFlowRequestVariant2))]
 #endif
         public bool IsCreateConversationFlowRequestVariant2 => CreateConversationFlowRequestVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickCreateConversationFlowRequestVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out object? value)
+        {
+            value = CreateConversationFlowRequestVariant2;
+            return IsCreateConversationFlowRequestVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -102,7 +128,7 @@ namespace G
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::G.ConversationFlow?, TResult>? conversationFlow = null,
-            global::System.Func<object?, TResult>? createConversationFlowRequestVariant2 = null,
+            global::System.Func<object, TResult>? createConversationFlowRequestVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -127,7 +153,31 @@ namespace G
         /// </summary>
         public void Match(
             global::System.Action<global::G.ConversationFlow?>? conversationFlow = null,
-            global::System.Action<object?>? createConversationFlowRequestVariant2 = null,
+
+            global::System.Action<object>? createConversationFlowRequestVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsConversationFlow)
+            {
+                conversationFlow?.Invoke(ConversationFlow!);
+            }
+            else if (IsCreateConversationFlowRequestVariant2)
+            {
+                createConversationFlowRequestVariant2?.Invoke(CreateConversationFlowRequestVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.ConversationFlow?>? conversationFlow = null,
+            global::System.Action<object>? createConversationFlowRequestVariant2 = null,
             bool validate = true)
         {
             if (validate)

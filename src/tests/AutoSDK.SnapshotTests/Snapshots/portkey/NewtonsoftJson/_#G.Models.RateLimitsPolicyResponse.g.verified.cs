@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickRateLimitsPolicy(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.RateLimitsPolicy? value)
+        {
+            value = RateLimitsPolicy;
+            return IsRateLimitsPolicy;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.RateLimitsPolicyResponseVariant2? RateLimitsPolicyResponseVariant2 { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RateLimitsPolicyResponseVariant2))]
 #endif
         public bool IsRateLimitsPolicyResponseVariant2 => RateLimitsPolicyResponseVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickRateLimitsPolicyResponseVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.RateLimitsPolicyResponseVariant2? value)
+        {
+            value = RateLimitsPolicyResponseVariant2;
+            return IsRateLimitsPolicyResponseVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -119,8 +145,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.RateLimitsPolicy?, TResult>? rateLimitsPolicy = null,
-            global::System.Func<global::G.RateLimitsPolicyResponseVariant2?, TResult>? rateLimitsPolicyResponseVariant2 = null,
+            global::System.Func<global::G.RateLimitsPolicy, TResult>? rateLimitsPolicy = null,
+            global::System.Func<global::G.RateLimitsPolicyResponseVariant2, TResult>? rateLimitsPolicyResponseVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -144,8 +170,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.RateLimitsPolicy?>? rateLimitsPolicy = null,
-            global::System.Action<global::G.RateLimitsPolicyResponseVariant2?>? rateLimitsPolicyResponseVariant2 = null,
+            global::System.Action<global::G.RateLimitsPolicy>? rateLimitsPolicy = null,
+
+            global::System.Action<global::G.RateLimitsPolicyResponseVariant2>? rateLimitsPolicyResponseVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsRateLimitsPolicy)
+            {
+                rateLimitsPolicy?.Invoke(RateLimitsPolicy!);
+            }
+            else if (IsRateLimitsPolicyResponseVariant2)
+            {
+                rateLimitsPolicyResponseVariant2?.Invoke(RateLimitsPolicyResponseVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.RateLimitsPolicy>? rateLimitsPolicy = null,
+            global::System.Action<global::G.RateLimitsPolicyResponseVariant2>? rateLimitsPolicyResponseVariant2 = null,
             bool validate = true)
         {
             if (validate)

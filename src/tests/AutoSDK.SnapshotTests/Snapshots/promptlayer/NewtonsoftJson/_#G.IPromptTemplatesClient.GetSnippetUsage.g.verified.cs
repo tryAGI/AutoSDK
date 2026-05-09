@@ -23,5 +23,23 @@ namespace G
             int? promptVersionNumber = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Get Snippet Usage<br/>
+        /// Get all prompts that use a given snippet (prompt template). Returns a list of prompts and their version numbers that reference this snippet.
+        /// </summary>
+        /// <param name="identifier">
+        /// The identifier can be either the prompt name or the prompt id.
+        /// </param>
+        /// <param name="promptVersionNumber">
+        /// Optional specific version number to check usage for
+        /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.GetSnippetUsageResponse>> GetSnippetUsageAsResponseAsync(
+            string identifier,
+            int? promptVersionNumber = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

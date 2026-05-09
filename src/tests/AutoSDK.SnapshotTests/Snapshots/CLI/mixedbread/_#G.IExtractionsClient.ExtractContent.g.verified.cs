@@ -30,6 +30,23 @@ namespace G
         /// Returns:<br/>
         ///     The extracted content.
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.ExtractionResult>> ExtractContentAsResponseAsync(
+
+            global::G.ExtractContentCreateParams request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Extract content from a string<br/>
+        /// Extract content from a string using the provided schema.<br/>
+        /// Args:<br/>
+        ///     params: The parameters for extracting content from a string.<br/>
+        /// Returns:<br/>
+        ///     The extracted content.
+        /// </summary>
         /// <param name="content">
         /// The content to extract from
         /// </param>

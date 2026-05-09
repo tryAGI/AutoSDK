@@ -24,6 +24,14 @@ namespace G.JsonConverters
                 foreach (var __jsonProp in __jsonDocument.RootElement.EnumerateObject())
                 {
                     __jsonProps.Add(__jsonProp.Name);
+                    if (__jsonProp.Value.ValueKind == global::System.Text.Json.JsonValueKind.Object)
+                    {
+                        foreach (var __nestedJsonProp in __jsonProp.Value.EnumerateObject())
+                        {
+                            __jsonProps.Add(__jsonProp.Name + "." + __nestedJsonProp.Name);
+                        }
+                    }
+
                 }
             }
 
@@ -33,16 +41,37 @@ namespace G.JsonConverters
             if (__jsonProps.Contains("delete")) __score1++;
             var __score2 = 0;
             if (__jsonProps.Contains("set_payload")) __score2++;
+            if (__jsonProps.Contains("set_payload.filter")) __score2++;
+            if (__jsonProps.Contains("set_payload.key")) __score2++;
+            if (__jsonProps.Contains("set_payload.payload")) __score2++;
+            if (__jsonProps.Contains("set_payload.points")) __score2++;
+            if (__jsonProps.Contains("set_payload.shard_key")) __score2++;
             var __score3 = 0;
             if (__jsonProps.Contains("overwrite_payload")) __score3++;
+            if (__jsonProps.Contains("overwrite_payload.filter")) __score3++;
+            if (__jsonProps.Contains("overwrite_payload.key")) __score3++;
+            if (__jsonProps.Contains("overwrite_payload.payload")) __score3++;
+            if (__jsonProps.Contains("overwrite_payload.points")) __score3++;
+            if (__jsonProps.Contains("overwrite_payload.shard_key")) __score3++;
             var __score4 = 0;
             if (__jsonProps.Contains("delete_payload")) __score4++;
+            if (__jsonProps.Contains("delete_payload.filter")) __score4++;
+            if (__jsonProps.Contains("delete_payload.keys")) __score4++;
+            if (__jsonProps.Contains("delete_payload.points")) __score4++;
+            if (__jsonProps.Contains("delete_payload.shard_key")) __score4++;
             var __score5 = 0;
             if (__jsonProps.Contains("clear_payload")) __score5++;
             var __score6 = 0;
             if (__jsonProps.Contains("update_vectors")) __score6++;
+            if (__jsonProps.Contains("update_vectors.points")) __score6++;
+            if (__jsonProps.Contains("update_vectors.shard_key")) __score6++;
+            if (__jsonProps.Contains("update_vectors.update_filter")) __score6++;
             var __score7 = 0;
             if (__jsonProps.Contains("delete_vectors")) __score7++;
+            if (__jsonProps.Contains("delete_vectors.filter")) __score7++;
+            if (__jsonProps.Contains("delete_vectors.points")) __score7++;
+            if (__jsonProps.Contains("delete_vectors.shard_key")) __score7++;
+            if (__jsonProps.Contains("delete_vectors.vector")) __score7++;
             var __bestScore = 0;
             var __bestIndex = -1;
             if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }

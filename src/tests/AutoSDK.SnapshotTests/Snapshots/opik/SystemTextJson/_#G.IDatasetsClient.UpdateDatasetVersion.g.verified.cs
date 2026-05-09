@@ -28,6 +28,23 @@ namespace G
         /// </summary>
         /// <param name="versionHash"></param>
         /// <param name="id"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.DatasetVersionPublic>> UpdateDatasetVersionAsResponseAsync(
+            string versionHash,
+            global::System.Guid id,
+
+            global::G.DatasetVersionUpdatePublic request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Update dataset version<br/>
+        /// Update a dataset version's change_description and/or add new tags
+        /// </summary>
+        /// <param name="versionHash"></param>
+        /// <param name="id"></param>
         /// <param name="changeDescription">
         /// Optional description of changes in this version<br/>
         /// Example: Updated baseline version

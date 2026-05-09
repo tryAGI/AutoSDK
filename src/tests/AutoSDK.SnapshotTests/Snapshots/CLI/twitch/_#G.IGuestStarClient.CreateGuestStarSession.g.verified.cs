@@ -23,5 +23,23 @@ namespace G
             string broadcasterId,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// BETA Programmatically creates a Guest Star session on behalf of the broadcaster.<br/>
+        /// BETA Programmatically creates a Guest Star session on behalf of the broadcaster. Requires the broadcaster to be present in the call interface, or the call will be ended automatically.<br/>
+        /// __Authorization:__<br/>
+        /// * Query parameter `broadcaster_id` must match the `user_id` in the [User-Access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)<br/>
+        /// * Requires OAuth Scope: `channel:manage:guest_star`
+        /// </summary>
+        /// <param name="broadcasterId"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+#if NET8_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.Experimental(diagnosticId: "G_BETA_001")]
+#endif
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.CreateGuestStarSessionResponse>> CreateGuestStarSessionAsResponseAsync(
+            string broadcasterId,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

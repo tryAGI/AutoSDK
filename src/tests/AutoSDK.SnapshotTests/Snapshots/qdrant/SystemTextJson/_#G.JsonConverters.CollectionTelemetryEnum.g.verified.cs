@@ -24,6 +24,14 @@ namespace G.JsonConverters
                 foreach (var __jsonProp in __jsonDocument.RootElement.EnumerateObject())
                 {
                     __jsonProps.Add(__jsonProp.Name);
+                    if (__jsonProp.Value.ValueKind == global::System.Text.Json.JsonValueKind.Object)
+                    {
+                        foreach (var __nestedJsonProp in __jsonProp.Value.EnumerateObject())
+                        {
+                            __jsonProps.Add(__jsonProp.Name + "." + __nestedJsonProp.Name);
+                        }
+                    }
+
                 }
             }
 
@@ -38,6 +46,15 @@ namespace G.JsonConverters
             var __score1 = 0;
             if (__jsonProps.Contains("optimizers_status")) __score1++;
             if (__jsonProps.Contains("params")) __score1++;
+            if (__jsonProps.Contains("params.on_disk_payload")) __score1++;
+            if (__jsonProps.Contains("params.read_fan_out_delay_ms")) __score1++;
+            if (__jsonProps.Contains("params.read_fan_out_factor")) __score1++;
+            if (__jsonProps.Contains("params.replication_factor")) __score1++;
+            if (__jsonProps.Contains("params.shard_number")) __score1++;
+            if (__jsonProps.Contains("params.sharding_method")) __score1++;
+            if (__jsonProps.Contains("params.sparse_vectors")) __score1++;
+            if (__jsonProps.Contains("params.vectors")) __score1++;
+            if (__jsonProps.Contains("params.write_consistency_factor")) __score1++;
             if (__jsonProps.Contains("vectors")) __score1++;
             var __bestScore = 0;
             var __bestIndex = -1;

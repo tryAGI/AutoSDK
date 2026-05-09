@@ -27,5 +27,27 @@ namespace G
             string? timezone = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Updates the broadcaster’s schedule settings, such as scheduling a vacation.<br/>
+        /// Updates the broadcaster’s schedule settings, such as scheduling a vacation.<br/>
+        /// __Authorization:__<br/>
+        /// Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the **channel:manage:schedule** scope.
+        /// </summary>
+        /// <param name="broadcasterId"></param>
+        /// <param name="isVacationEnabled"></param>
+        /// <param name="vacationStartTime"></param>
+        /// <param name="vacationEndTime"></param>
+        /// <param name="timezone"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse> UpdateChannelStreamScheduleAsResponseAsync(
+            string broadcasterId,
+            bool? isVacationEnabled = default,
+            global::System.DateTime? vacationStartTime = default,
+            global::System.DateTime? vacationEndTime = default,
+            string? timezone = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -25,6 +25,21 @@ namespace G
         /// Creates an app.
         /// </summary>
         /// <param name="namespaceId"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.CreateAppResponse>> AppPublicServiceCreateAppAsResponseAsync(
+            string namespaceId,
+
+            global::G.CreateAppBody request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create an app<br/>
+        /// Creates an app.
+        /// </summary>
+        /// <param name="namespaceId"></param>
         /// <param name="id">
         /// The app id.<br/>
         /// the app id should be lowercase without any space or special character besides the hyphen,<br/>

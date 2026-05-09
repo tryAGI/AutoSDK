@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickKeywordIndex(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.KeywordIndexParams? value)
+        {
+            value = KeywordIndex;
+            return IsKeywordIndex;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.IntegerIndexParams? IntegerIndex { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(IntegerIndex))]
 #endif
         public bool IsIntegerIndex => IntegerIndex != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickIntegerIndex(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.IntegerIndexParams? value)
+        {
+            value = IntegerIndex;
+            return IsIntegerIndex;
+        }
 
         /// <summary>
         /// 
@@ -64,6 +90,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickFloatIndex(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.FloatIndexParams? value)
+        {
+            value = FloatIndex;
+            return IsFloatIndex;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.GeoIndexParams? GeoIndex { get; init; }
 #else
@@ -77,6 +116,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(GeoIndex))]
 #endif
         public bool IsGeoIndex => GeoIndex != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickGeoIndex(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.GeoIndexParams? value)
+        {
+            value = GeoIndex;
+            return IsGeoIndex;
+        }
 
         /// <summary>
         /// 
@@ -98,6 +150,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickTextIndex(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.TextIndexParams? value)
+        {
+            value = TextIndex;
+            return IsTextIndex;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.BoolIndexParams? BoolIndex { get; init; }
 #else
@@ -111,6 +176,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BoolIndex))]
 #endif
         public bool IsBoolIndex => BoolIndex != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickBoolIndex(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.BoolIndexParams? value)
+        {
+            value = BoolIndex;
+            return IsBoolIndex;
+        }
 
         /// <summary>
         /// 
@@ -132,6 +210,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickDatetimeIndex(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.DatetimeIndexParams? value)
+        {
+            value = DatetimeIndex;
+            return IsDatetimeIndex;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.UuidIndexParams? UuidIndex { get; init; }
 #else
@@ -145,6 +236,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(UuidIndex))]
 #endif
         public bool IsUuidIndex => UuidIndex != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickUuidIndex(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.UuidIndexParams? value)
+        {
+            value = UuidIndex;
+            return IsUuidIndex;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -353,14 +457,14 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.KeywordIndexParams?, TResult>? keywordIndex = null,
-            global::System.Func<global::G.IntegerIndexParams?, TResult>? integerIndex = null,
-            global::System.Func<global::G.FloatIndexParams?, TResult>? floatIndex = null,
-            global::System.Func<global::G.GeoIndexParams?, TResult>? geoIndex = null,
-            global::System.Func<global::G.TextIndexParams?, TResult>? textIndex = null,
-            global::System.Func<global::G.BoolIndexParams?, TResult>? boolIndex = null,
-            global::System.Func<global::G.DatetimeIndexParams?, TResult>? datetimeIndex = null,
-            global::System.Func<global::G.UuidIndexParams?, TResult>? uuidIndex = null,
+            global::System.Func<global::G.KeywordIndexParams, TResult>? keywordIndex = null,
+            global::System.Func<global::G.IntegerIndexParams, TResult>? integerIndex = null,
+            global::System.Func<global::G.FloatIndexParams, TResult>? floatIndex = null,
+            global::System.Func<global::G.GeoIndexParams, TResult>? geoIndex = null,
+            global::System.Func<global::G.TextIndexParams, TResult>? textIndex = null,
+            global::System.Func<global::G.BoolIndexParams, TResult>? boolIndex = null,
+            global::System.Func<global::G.DatetimeIndexParams, TResult>? datetimeIndex = null,
+            global::System.Func<global::G.UuidIndexParams, TResult>? uuidIndex = null,
             bool validate = true)
         {
             if (validate)
@@ -408,14 +512,74 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.KeywordIndexParams?>? keywordIndex = null,
-            global::System.Action<global::G.IntegerIndexParams?>? integerIndex = null,
-            global::System.Action<global::G.FloatIndexParams?>? floatIndex = null,
-            global::System.Action<global::G.GeoIndexParams?>? geoIndex = null,
-            global::System.Action<global::G.TextIndexParams?>? textIndex = null,
-            global::System.Action<global::G.BoolIndexParams?>? boolIndex = null,
-            global::System.Action<global::G.DatetimeIndexParams?>? datetimeIndex = null,
-            global::System.Action<global::G.UuidIndexParams?>? uuidIndex = null,
+            global::System.Action<global::G.KeywordIndexParams>? keywordIndex = null,
+
+            global::System.Action<global::G.IntegerIndexParams>? integerIndex = null,
+
+            global::System.Action<global::G.FloatIndexParams>? floatIndex = null,
+
+            global::System.Action<global::G.GeoIndexParams>? geoIndex = null,
+
+            global::System.Action<global::G.TextIndexParams>? textIndex = null,
+
+            global::System.Action<global::G.BoolIndexParams>? boolIndex = null,
+
+            global::System.Action<global::G.DatetimeIndexParams>? datetimeIndex = null,
+
+            global::System.Action<global::G.UuidIndexParams>? uuidIndex = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsKeywordIndex)
+            {
+                keywordIndex?.Invoke(KeywordIndex!);
+            }
+            else if (IsIntegerIndex)
+            {
+                integerIndex?.Invoke(IntegerIndex!);
+            }
+            else if (IsFloatIndex)
+            {
+                floatIndex?.Invoke(FloatIndex!);
+            }
+            else if (IsGeoIndex)
+            {
+                geoIndex?.Invoke(GeoIndex!);
+            }
+            else if (IsTextIndex)
+            {
+                textIndex?.Invoke(TextIndex!);
+            }
+            else if (IsBoolIndex)
+            {
+                boolIndex?.Invoke(BoolIndex!);
+            }
+            else if (IsDatetimeIndex)
+            {
+                datetimeIndex?.Invoke(DatetimeIndex!);
+            }
+            else if (IsUuidIndex)
+            {
+                uuidIndex?.Invoke(UuidIndex!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.KeywordIndexParams>? keywordIndex = null,
+            global::System.Action<global::G.IntegerIndexParams>? integerIndex = null,
+            global::System.Action<global::G.FloatIndexParams>? floatIndex = null,
+            global::System.Action<global::G.GeoIndexParams>? geoIndex = null,
+            global::System.Action<global::G.TextIndexParams>? textIndex = null,
+            global::System.Action<global::G.BoolIndexParams>? boolIndex = null,
+            global::System.Action<global::G.DatetimeIndexParams>? datetimeIndex = null,
+            global::System.Action<global::G.UuidIndexParams>? uuidIndex = null,
             bool validate = true)
         {
             if (validate)

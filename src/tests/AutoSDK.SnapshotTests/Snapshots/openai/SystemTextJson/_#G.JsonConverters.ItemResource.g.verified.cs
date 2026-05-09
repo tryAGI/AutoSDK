@@ -24,6 +24,14 @@ namespace G.JsonConverters
                 foreach (var __jsonProp in __jsonDocument.RootElement.EnumerateObject())
                 {
                     __jsonProps.Add(__jsonProp.Name);
+                    if (__jsonProp.Value.ValueKind == global::System.Text.Json.JsonValueKind.Object)
+                    {
+                        foreach (var __nestedJsonProp in __jsonProp.Value.EnumerateObject())
+                        {
+                            __jsonProps.Add(__jsonProp.Name + "." + __nestedJsonProp.Name);
+                        }
+                    }
+
                 }
             }
 
@@ -68,6 +76,12 @@ namespace G.JsonConverters
             if (__jsonProps.Contains("type")) __score9++;
             var __score10 = 0;
             if (__jsonProps.Contains("action")) __score10++;
+            if (__jsonProps.Contains("action.command")) __score10++;
+            if (__jsonProps.Contains("action.env")) __score10++;
+            if (__jsonProps.Contains("action.timeout_ms")) __score10++;
+            if (__jsonProps.Contains("action.type")) __score10++;
+            if (__jsonProps.Contains("action.user")) __score10++;
+            if (__jsonProps.Contains("action.working_directory")) __score10++;
             if (__jsonProps.Contains("call_id")) __score10++;
             if (__jsonProps.Contains("id")) __score10++;
             if (__jsonProps.Contains("status")) __score10++;

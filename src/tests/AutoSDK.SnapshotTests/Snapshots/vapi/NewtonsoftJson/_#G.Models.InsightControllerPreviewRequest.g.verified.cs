@@ -35,6 +35,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickBar(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateBarInsightFromCallTableDTO? value)
+        {
+            value = Bar;
+            return IsBar;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CreatePieInsightFromCallTableDTO? Pie { get; init; }
 #else
@@ -48,6 +61,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Pie))]
 #endif
         public bool IsPie => Pie != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickPie(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreatePieInsightFromCallTableDTO? value)
+        {
+            value = Pie;
+            return IsPie;
+        }
 
         /// <summary>
         /// 
@@ -69,6 +95,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickLine(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateLineInsightFromCallTableDTO? value)
+        {
+            value = Line;
+            return IsLine;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CreateTextInsightFromCallTableDTO? Text { get; init; }
 #else
@@ -82,6 +121,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Text))]
 #endif
         public bool IsText => Text != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickText(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateTextInsightFromCallTableDTO? value)
+        {
+            value = Text;
+            return IsText;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -205,10 +257,10 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.CreateBarInsightFromCallTableDTO?, TResult>? bar = null,
-            global::System.Func<global::G.CreatePieInsightFromCallTableDTO?, TResult>? pie = null,
-            global::System.Func<global::G.CreateLineInsightFromCallTableDTO?, TResult>? line = null,
-            global::System.Func<global::G.CreateTextInsightFromCallTableDTO?, TResult>? text = null,
+            global::System.Func<global::G.CreateBarInsightFromCallTableDTO, TResult>? bar = null,
+            global::System.Func<global::G.CreatePieInsightFromCallTableDTO, TResult>? pie = null,
+            global::System.Func<global::G.CreateLineInsightFromCallTableDTO, TResult>? line = null,
+            global::System.Func<global::G.CreateTextInsightFromCallTableDTO, TResult>? text = null,
             bool validate = true)
         {
             if (validate)
@@ -240,10 +292,46 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.CreateBarInsightFromCallTableDTO?>? bar = null,
-            global::System.Action<global::G.CreatePieInsightFromCallTableDTO?>? pie = null,
-            global::System.Action<global::G.CreateLineInsightFromCallTableDTO?>? line = null,
-            global::System.Action<global::G.CreateTextInsightFromCallTableDTO?>? text = null,
+            global::System.Action<global::G.CreateBarInsightFromCallTableDTO>? bar = null,
+
+            global::System.Action<global::G.CreatePieInsightFromCallTableDTO>? pie = null,
+
+            global::System.Action<global::G.CreateLineInsightFromCallTableDTO>? line = null,
+
+            global::System.Action<global::G.CreateTextInsightFromCallTableDTO>? text = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsBar)
+            {
+                bar?.Invoke(Bar!);
+            }
+            else if (IsPie)
+            {
+                pie?.Invoke(Pie!);
+            }
+            else if (IsLine)
+            {
+                line?.Invoke(Line!);
+            }
+            else if (IsText)
+            {
+                text?.Invoke(Text!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.CreateBarInsightFromCallTableDTO>? bar = null,
+            global::System.Action<global::G.CreatePieInsightFromCallTableDTO>? pie = null,
+            global::System.Action<global::G.CreateLineInsightFromCallTableDTO>? line = null,
+            global::System.Action<global::G.CreateTextInsightFromCallTableDTO>? text = null,
             bool validate = true)
         {
             if (validate)

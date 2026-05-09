@@ -20,6 +20,18 @@ namespace G
         /// <summary>
         /// Identify potentially harmful content in text and images. **Only** works with [OpenAI's Moderations endpoint](https://platform.openai.com/docs/guides/moderation) currently.
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.CreateModerationResponse>> CreateModerationAsResponseAsync(
+
+            global::G.CreateModerationRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Identify potentially harmful content in text and images. **Only** works with [OpenAI's Moderations endpoint](https://platform.openai.com/docs/guides/moderation) currently.
+        /// </summary>
         /// <param name="input">
         /// The input text to classify
         /// </param>

@@ -29,6 +29,23 @@ namespace G
         /// </summary>
         /// <param name="id"></param>
         /// <param name="xApiKeyExternal"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        [global::System.Obsolete("This method marked as deprecated.")]
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.CreateClipStreamResponse>> CreateClipStreamAsResponseAsync(
+            string id,
+
+            global::G.CreateClipStreamRequest2 request,
+            string? xApiKeyExternal = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create a clip stream
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="xApiKeyExternal"></param>
         /// <param name="sessionId"></param>
         /// <param name="script"></param>
         /// <param name="config">

@@ -28,6 +28,19 @@ namespace G
         public bool IsBaseResponsesResultToolsItems0 => BaseResponsesResultToolsItems0 != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickBaseResponsesResultToolsItems0(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.BaseResponsesResultToolsItems0? value)
+        {
+            value = BaseResponsesResultToolsItems0;
+            return IsBaseResponsesResultToolsItems0;
+        }
+
+        /// <summary>
         /// Web search preview tool configuration
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(PreviewWebSearchServerTool))]
 #endif
         public bool IsPreviewWebSearchServerTool => PreviewWebSearchServerTool != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickPreviewWebSearchServerTool(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.PreviewWebSearchServerTool? value)
+        {
+            value = PreviewWebSearchServerTool;
+            return IsPreviewWebSearchServerTool;
+        }
 
         /// <summary>
         /// Web search preview tool configuration (2025-03-11 version)
@@ -62,6 +88,19 @@ namespace G
         public bool IsPreview20250311WebSearchServerTool => Preview20250311WebSearchServerTool != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickPreview20250311WebSearchServerTool(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.Preview20250311WebSearchServerTool? value)
+        {
+            value = Preview20250311WebSearchServerTool;
+            return IsPreview20250311WebSearchServerTool;
+        }
+
+        /// <summary>
         /// Web search tool configuration
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -77,6 +116,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(LegacyWebSearchServerTool))]
 #endif
         public bool IsLegacyWebSearchServerTool => LegacyWebSearchServerTool != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickLegacyWebSearchServerTool(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.LegacyWebSearchServerTool? value)
+        {
+            value = LegacyWebSearchServerTool;
+            return IsLegacyWebSearchServerTool;
+        }
 
         /// <summary>
         /// Web search tool configuration (2025-08-26 version)
@@ -96,6 +148,19 @@ namespace G
         public bool IsWebSearchServerTool => WebSearchServerTool != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickWebSearchServerTool(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.WebSearchServerTool? value)
+        {
+            value = WebSearchServerTool;
+            return IsWebSearchServerTool;
+        }
+
+        /// <summary>
         /// File search tool configuration
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -111,6 +176,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FileSearchServerTool))]
 #endif
         public bool IsFileSearchServerTool => FileSearchServerTool != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFileSearchServerTool(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.FileSearchServerTool? value)
+        {
+            value = FileSearchServerTool;
+            return IsFileSearchServerTool;
+        }
 
         /// <summary>
         /// Computer use preview tool configuration
@@ -130,6 +208,19 @@ namespace G
         public bool IsComputerUseServerTool => ComputerUseServerTool != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickComputerUseServerTool(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ComputerUseServerTool? value)
+        {
+            value = ComputerUseServerTool;
+            return IsComputerUseServerTool;
+        }
+
+        /// <summary>
         /// Code interpreter tool configuration
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -145,6 +236,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CodeInterpreterServerTool))]
 #endif
         public bool IsCodeInterpreterServerTool => CodeInterpreterServerTool != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickCodeInterpreterServerTool(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CodeInterpreterServerTool? value)
+        {
+            value = CodeInterpreterServerTool;
+            return IsCodeInterpreterServerTool;
+        }
 
         /// <summary>
         /// MCP (Model Context Protocol) tool configuration
@@ -164,6 +268,19 @@ namespace G
         public bool IsMcpServerTool => McpServerTool != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMcpServerTool(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.McpServerTool? value)
+        {
+            value = McpServerTool;
+            return IsMcpServerTool;
+        }
+
+        /// <summary>
         /// Image generation tool configuration
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -179,6 +296,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ImageGenerationServerTool))]
 #endif
         public bool IsImageGenerationServerTool => ImageGenerationServerTool != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickImageGenerationServerTool(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ImageGenerationServerTool? value)
+        {
+            value = ImageGenerationServerTool;
+            return IsImageGenerationServerTool;
+        }
 
         /// <summary>
         /// Local shell tool configuration
@@ -198,6 +328,19 @@ namespace G
         public bool IsCodexLocalShellTool => CodexLocalShellTool != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickCodexLocalShellTool(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CodexLocalShellTool? value)
+        {
+            value = CodexLocalShellTool;
+            return IsCodexLocalShellTool;
+        }
+
+        /// <summary>
         /// Shell tool configuration
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -213,6 +356,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ShellServerTool))]
 #endif
         public bool IsShellServerTool => ShellServerTool != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickShellServerTool(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ShellServerTool? value)
+        {
+            value = ShellServerTool;
+            return IsShellServerTool;
+        }
 
         /// <summary>
         /// Apply patch tool configuration
@@ -232,6 +388,19 @@ namespace G
         public bool IsApplyPatchServerTool => ApplyPatchServerTool != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickApplyPatchServerTool(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ApplyPatchServerTool? value)
+        {
+            value = ApplyPatchServerTool;
+            return IsApplyPatchServerTool;
+        }
+
+        /// <summary>
         /// Custom tool configuration
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -247,6 +416,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CustomTool))]
 #endif
         public bool IsCustomTool => CustomTool != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickCustomTool(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CustomTool? value)
+        {
+            value = CustomTool;
+            return IsCustomTool;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -587,20 +769,20 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.BaseResponsesResultToolsItems0?, TResult>? baseResponsesResultToolsItems0 = null,
-            global::System.Func<global::G.PreviewWebSearchServerTool?, TResult>? previewWebSearchServerTool = null,
-            global::System.Func<global::G.Preview20250311WebSearchServerTool?, TResult>? preview20250311WebSearchServerTool = null,
-            global::System.Func<global::G.LegacyWebSearchServerTool?, TResult>? legacyWebSearchServerTool = null,
-            global::System.Func<global::G.WebSearchServerTool?, TResult>? webSearchServerTool = null,
-            global::System.Func<global::G.FileSearchServerTool?, TResult>? fileSearchServerTool = null,
-            global::System.Func<global::G.ComputerUseServerTool?, TResult>? computerUseServerTool = null,
-            global::System.Func<global::G.CodeInterpreterServerTool?, TResult>? codeInterpreterServerTool = null,
-            global::System.Func<global::G.McpServerTool?, TResult>? mcpServerTool = null,
-            global::System.Func<global::G.ImageGenerationServerTool?, TResult>? imageGenerationServerTool = null,
-            global::System.Func<global::G.CodexLocalShellTool?, TResult>? codexLocalShellTool = null,
-            global::System.Func<global::G.ShellServerTool?, TResult>? shellServerTool = null,
-            global::System.Func<global::G.ApplyPatchServerTool?, TResult>? applyPatchServerTool = null,
-            global::System.Func<global::G.CustomTool?, TResult>? customTool = null,
+            global::System.Func<global::G.BaseResponsesResultToolsItems0, TResult>? baseResponsesResultToolsItems0 = null,
+            global::System.Func<global::G.PreviewWebSearchServerTool, TResult>? previewWebSearchServerTool = null,
+            global::System.Func<global::G.Preview20250311WebSearchServerTool, TResult>? preview20250311WebSearchServerTool = null,
+            global::System.Func<global::G.LegacyWebSearchServerTool, TResult>? legacyWebSearchServerTool = null,
+            global::System.Func<global::G.WebSearchServerTool, TResult>? webSearchServerTool = null,
+            global::System.Func<global::G.FileSearchServerTool, TResult>? fileSearchServerTool = null,
+            global::System.Func<global::G.ComputerUseServerTool, TResult>? computerUseServerTool = null,
+            global::System.Func<global::G.CodeInterpreterServerTool, TResult>? codeInterpreterServerTool = null,
+            global::System.Func<global::G.McpServerTool, TResult>? mcpServerTool = null,
+            global::System.Func<global::G.ImageGenerationServerTool, TResult>? imageGenerationServerTool = null,
+            global::System.Func<global::G.CodexLocalShellTool, TResult>? codexLocalShellTool = null,
+            global::System.Func<global::G.ShellServerTool, TResult>? shellServerTool = null,
+            global::System.Func<global::G.ApplyPatchServerTool, TResult>? applyPatchServerTool = null,
+            global::System.Func<global::G.CustomTool, TResult>? customTool = null,
             bool validate = true)
         {
             if (validate)
@@ -672,20 +854,116 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.BaseResponsesResultToolsItems0?>? baseResponsesResultToolsItems0 = null,
-            global::System.Action<global::G.PreviewWebSearchServerTool?>? previewWebSearchServerTool = null,
-            global::System.Action<global::G.Preview20250311WebSearchServerTool?>? preview20250311WebSearchServerTool = null,
-            global::System.Action<global::G.LegacyWebSearchServerTool?>? legacyWebSearchServerTool = null,
-            global::System.Action<global::G.WebSearchServerTool?>? webSearchServerTool = null,
-            global::System.Action<global::G.FileSearchServerTool?>? fileSearchServerTool = null,
-            global::System.Action<global::G.ComputerUseServerTool?>? computerUseServerTool = null,
-            global::System.Action<global::G.CodeInterpreterServerTool?>? codeInterpreterServerTool = null,
-            global::System.Action<global::G.McpServerTool?>? mcpServerTool = null,
-            global::System.Action<global::G.ImageGenerationServerTool?>? imageGenerationServerTool = null,
-            global::System.Action<global::G.CodexLocalShellTool?>? codexLocalShellTool = null,
-            global::System.Action<global::G.ShellServerTool?>? shellServerTool = null,
-            global::System.Action<global::G.ApplyPatchServerTool?>? applyPatchServerTool = null,
-            global::System.Action<global::G.CustomTool?>? customTool = null,
+            global::System.Action<global::G.BaseResponsesResultToolsItems0>? baseResponsesResultToolsItems0 = null,
+
+            global::System.Action<global::G.PreviewWebSearchServerTool>? previewWebSearchServerTool = null,
+
+            global::System.Action<global::G.Preview20250311WebSearchServerTool>? preview20250311WebSearchServerTool = null,
+
+            global::System.Action<global::G.LegacyWebSearchServerTool>? legacyWebSearchServerTool = null,
+
+            global::System.Action<global::G.WebSearchServerTool>? webSearchServerTool = null,
+
+            global::System.Action<global::G.FileSearchServerTool>? fileSearchServerTool = null,
+
+            global::System.Action<global::G.ComputerUseServerTool>? computerUseServerTool = null,
+
+            global::System.Action<global::G.CodeInterpreterServerTool>? codeInterpreterServerTool = null,
+
+            global::System.Action<global::G.McpServerTool>? mcpServerTool = null,
+
+            global::System.Action<global::G.ImageGenerationServerTool>? imageGenerationServerTool = null,
+
+            global::System.Action<global::G.CodexLocalShellTool>? codexLocalShellTool = null,
+
+            global::System.Action<global::G.ShellServerTool>? shellServerTool = null,
+
+            global::System.Action<global::G.ApplyPatchServerTool>? applyPatchServerTool = null,
+
+            global::System.Action<global::G.CustomTool>? customTool = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsBaseResponsesResultToolsItems0)
+            {
+                baseResponsesResultToolsItems0?.Invoke(BaseResponsesResultToolsItems0!);
+            }
+            else if (IsPreviewWebSearchServerTool)
+            {
+                previewWebSearchServerTool?.Invoke(PreviewWebSearchServerTool!);
+            }
+            else if (IsPreview20250311WebSearchServerTool)
+            {
+                preview20250311WebSearchServerTool?.Invoke(Preview20250311WebSearchServerTool!);
+            }
+            else if (IsLegacyWebSearchServerTool)
+            {
+                legacyWebSearchServerTool?.Invoke(LegacyWebSearchServerTool!);
+            }
+            else if (IsWebSearchServerTool)
+            {
+                webSearchServerTool?.Invoke(WebSearchServerTool!);
+            }
+            else if (IsFileSearchServerTool)
+            {
+                fileSearchServerTool?.Invoke(FileSearchServerTool!);
+            }
+            else if (IsComputerUseServerTool)
+            {
+                computerUseServerTool?.Invoke(ComputerUseServerTool!);
+            }
+            else if (IsCodeInterpreterServerTool)
+            {
+                codeInterpreterServerTool?.Invoke(CodeInterpreterServerTool!);
+            }
+            else if (IsMcpServerTool)
+            {
+                mcpServerTool?.Invoke(McpServerTool!);
+            }
+            else if (IsImageGenerationServerTool)
+            {
+                imageGenerationServerTool?.Invoke(ImageGenerationServerTool!);
+            }
+            else if (IsCodexLocalShellTool)
+            {
+                codexLocalShellTool?.Invoke(CodexLocalShellTool!);
+            }
+            else if (IsShellServerTool)
+            {
+                shellServerTool?.Invoke(ShellServerTool!);
+            }
+            else if (IsApplyPatchServerTool)
+            {
+                applyPatchServerTool?.Invoke(ApplyPatchServerTool!);
+            }
+            else if (IsCustomTool)
+            {
+                customTool?.Invoke(CustomTool!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.BaseResponsesResultToolsItems0>? baseResponsesResultToolsItems0 = null,
+            global::System.Action<global::G.PreviewWebSearchServerTool>? previewWebSearchServerTool = null,
+            global::System.Action<global::G.Preview20250311WebSearchServerTool>? preview20250311WebSearchServerTool = null,
+            global::System.Action<global::G.LegacyWebSearchServerTool>? legacyWebSearchServerTool = null,
+            global::System.Action<global::G.WebSearchServerTool>? webSearchServerTool = null,
+            global::System.Action<global::G.FileSearchServerTool>? fileSearchServerTool = null,
+            global::System.Action<global::G.ComputerUseServerTool>? computerUseServerTool = null,
+            global::System.Action<global::G.CodeInterpreterServerTool>? codeInterpreterServerTool = null,
+            global::System.Action<global::G.McpServerTool>? mcpServerTool = null,
+            global::System.Action<global::G.ImageGenerationServerTool>? imageGenerationServerTool = null,
+            global::System.Action<global::G.CodexLocalShellTool>? codexLocalShellTool = null,
+            global::System.Action<global::G.ShellServerTool>? shellServerTool = null,
+            global::System.Action<global::G.ApplyPatchServerTool>? applyPatchServerTool = null,
+            global::System.Action<global::G.CustomTool>? customTool = null,
             bool validate = true)
         {
             if (validate)

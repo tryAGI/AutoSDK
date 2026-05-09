@@ -5,12 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// IC Upload. Upload training images to an existing Image Classification (IC) model.<br/>
-    /// &lt;br /&gt;<br/>
-    /// ([Create a model](https://app.nanonets.com) on the NanoNets web app.)<br/>
-    /// &lt;br /&gt;<br/>
-    /// &lt;br /&gt;<br/>
-    /// **NOTE**: These end points are only for uploading **training files** for the model and the same files cannot be directly used for prediction. (They need to be uploaded again through the [prediction end points](#tag/icPredict) for prediction.).<br/>
+    /// IC Upload<br/>
     /// If no httpClient is provided, a new one will be created.<br/>
     /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
     /// </summary>
@@ -39,11 +34,11 @@ namespace G
         /// ensuring <see cref="ApiException.ResponseBody"/> is populated.
         /// </summary>
         public bool ReadResponseAsString { get; set; }
-
         /// <summary>
         /// Client-wide request defaults such as headers, query parameters, retries, and timeout.
         /// </summary>
         public global::G.AutoSDKClientOptions Options { get; }
+
 
         /// <summary>
         /// 

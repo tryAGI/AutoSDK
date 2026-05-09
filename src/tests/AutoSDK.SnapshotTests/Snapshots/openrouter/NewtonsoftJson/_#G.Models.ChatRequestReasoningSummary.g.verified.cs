@@ -28,6 +28,19 @@ namespace G
         public bool IsChatReasoningSummaryVerbosityEnum => ChatReasoningSummaryVerbosityEnum != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickChatReasoningSummaryVerbosityEnum(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ChatReasoningSummaryVerbosityEnum? value)
+        {
+            value = ChatReasoningSummaryVerbosityEnum;
+            return IsChatReasoningSummaryVerbosityEnum;
+        }
+
+        /// <summary>
         /// Any type
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -45,6 +58,19 @@ namespace G
         public bool IsChatRequestReasoningSummaryVariant2 => ChatRequestReasoningSummaryVariant2 != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickChatRequestReasoningSummaryVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out object? value)
+        {
+            value = ChatRequestReasoningSummaryVariant2;
+            return IsChatRequestReasoningSummaryVariant2;
+        }
+
+        /// <summary>
         /// Any type
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -60,6 +86,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ChatRequestReasoningSummaryVariant3))]
 #endif
         public bool IsChatRequestReasoningSummaryVariant3 => ChatRequestReasoningSummaryVariant3 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickChatRequestReasoningSummaryVariant3(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out object? value)
+        {
+            value = ChatRequestReasoningSummaryVariant3;
+            return IsChatRequestReasoningSummaryVariant3;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -123,8 +162,8 @@ namespace G
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::G.ChatReasoningSummaryVerbosityEnum?, TResult>? chatReasoningSummaryVerbosityEnum = null,
-            global::System.Func<object?, TResult>? chatRequestReasoningSummaryVariant2 = null,
-            global::System.Func<object?, TResult>? chatRequestReasoningSummaryVariant3 = null,
+            global::System.Func<object, TResult>? chatRequestReasoningSummaryVariant2 = null,
+            global::System.Func<object, TResult>? chatRequestReasoningSummaryVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -153,8 +192,38 @@ namespace G
         /// </summary>
         public void Match(
             global::System.Action<global::G.ChatReasoningSummaryVerbosityEnum?>? chatReasoningSummaryVerbosityEnum = null,
-            global::System.Action<object?>? chatRequestReasoningSummaryVariant2 = null,
-            global::System.Action<object?>? chatRequestReasoningSummaryVariant3 = null,
+
+            global::System.Action<object>? chatRequestReasoningSummaryVariant2 = null,
+
+            global::System.Action<object>? chatRequestReasoningSummaryVariant3 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsChatReasoningSummaryVerbosityEnum)
+            {
+                chatReasoningSummaryVerbosityEnum?.Invoke(ChatReasoningSummaryVerbosityEnum!);
+            }
+            else if (IsChatRequestReasoningSummaryVariant2)
+            {
+                chatRequestReasoningSummaryVariant2?.Invoke(ChatRequestReasoningSummaryVariant2!);
+            }
+            else if (IsChatRequestReasoningSummaryVariant3)
+            {
+                chatRequestReasoningSummaryVariant3?.Invoke(ChatRequestReasoningSummaryVariant3!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.ChatReasoningSummaryVerbosityEnum?>? chatReasoningSummaryVerbosityEnum = null,
+            global::System.Action<object>? chatRequestReasoningSummaryVariant2 = null,
+            global::System.Action<object>? chatRequestReasoningSummaryVariant3 = null,
             bool validate = true)
         {
             if (validate)

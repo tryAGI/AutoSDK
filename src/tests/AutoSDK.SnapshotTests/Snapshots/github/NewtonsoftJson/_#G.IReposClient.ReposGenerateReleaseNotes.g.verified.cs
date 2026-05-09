@@ -28,6 +28,23 @@ namespace G
         /// </summary>
         /// <param name="owner"></param>
         /// <param name="repo"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.ReleaseNotesContent>> ReposGenerateReleaseNotesAsResponseAsync(
+            string owner,
+            string repo,
+
+            global::G.ReposGenerateReleaseNotesRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Generate release notes content for a release<br/>
+        /// Generate a name and body describing a [release](https://docs.github.com/rest/releases/releases#get-a-release). The body content will be markdown formatted and contain information like the changes since last release and users who contributed. The generated release notes are not saved anywhere. They are intended to be generated and used when creating a new release.
+        /// </summary>
+        /// <param name="owner"></param>
+        /// <param name="repo"></param>
         /// <param name="tagName">
         /// The tag name for the release. This can be an existing tag or a new one.
         /// </param>

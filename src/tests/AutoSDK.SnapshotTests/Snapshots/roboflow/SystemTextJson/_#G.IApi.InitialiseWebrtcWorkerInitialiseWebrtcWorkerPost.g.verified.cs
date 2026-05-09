@@ -25,6 +25,22 @@ namespace G
         /// [EXPERIMENTAL] Establishes WebRTC peer connection and processes video stream in spawned process or modal function<br/>
         /// [EXPERIMENTAL] Establishes WebRTC peer connection and processes video stream in spawned process or modal function
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+#if NET8_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.Experimental(diagnosticId: "G_EXPERIMENTAL_001")]
+#endif
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.InitializeWebRTCResponse>> InitialiseWebrtcWorkerInitialiseWebrtcWorkerPostAsResponseAsync(
+
+            global::G.WebRTCWorkerRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// [EXPERIMENTAL] Establishes WebRTC peer connection and processes video stream in spawned process or modal function<br/>
+        /// [EXPERIMENTAL] Establishes WebRTC peer connection and processes video stream in spawned process or modal function
+        /// </summary>
         /// <param name="apiKey"></param>
         /// <param name="workflowConfiguration"></param>
         /// <param name="isPreview">

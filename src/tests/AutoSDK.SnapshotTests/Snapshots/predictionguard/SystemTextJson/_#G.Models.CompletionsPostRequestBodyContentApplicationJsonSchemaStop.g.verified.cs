@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickCompletionsPostRequestBodyContentApplicationJsonSchemaStopVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = CompletionsPostRequestBodyContentApplicationJsonSchemaStopVariant1;
+            return IsCompletionsPostRequestBodyContentApplicationJsonSchemaStopVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<string>? CompletionsPostRequestBodyContentApplicationJsonSchemaStopVariant2 { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CompletionsPostRequestBodyContentApplicationJsonSchemaStopVariant2))]
 #endif
         public bool IsCompletionsPostRequestBodyContentApplicationJsonSchemaStopVariant2 => CompletionsPostRequestBodyContentApplicationJsonSchemaStopVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickCompletionsPostRequestBodyContentApplicationJsonSchemaStopVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::System.Collections.Generic.IList<string>? value)
+        {
+            value = CompletionsPostRequestBodyContentApplicationJsonSchemaStopVariant2;
+            return IsCompletionsPostRequestBodyContentApplicationJsonSchemaStopVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -101,8 +127,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<string?, TResult>? completionsPostRequestBodyContentApplicationJsonSchemaStopVariant1 = null,
-            global::System.Func<global::System.Collections.Generic.IList<string>?, TResult>? completionsPostRequestBodyContentApplicationJsonSchemaStopVariant2 = null,
+            global::System.Func<string, TResult>? completionsPostRequestBodyContentApplicationJsonSchemaStopVariant1 = null,
+            global::System.Func<global::System.Collections.Generic.IList<string>, TResult>? completionsPostRequestBodyContentApplicationJsonSchemaStopVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -126,8 +152,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<string?>? completionsPostRequestBodyContentApplicationJsonSchemaStopVariant1 = null,
-            global::System.Action<global::System.Collections.Generic.IList<string>?>? completionsPostRequestBodyContentApplicationJsonSchemaStopVariant2 = null,
+            global::System.Action<string>? completionsPostRequestBodyContentApplicationJsonSchemaStopVariant1 = null,
+
+            global::System.Action<global::System.Collections.Generic.IList<string>>? completionsPostRequestBodyContentApplicationJsonSchemaStopVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsCompletionsPostRequestBodyContentApplicationJsonSchemaStopVariant1)
+            {
+                completionsPostRequestBodyContentApplicationJsonSchemaStopVariant1?.Invoke(CompletionsPostRequestBodyContentApplicationJsonSchemaStopVariant1!);
+            }
+            else if (IsCompletionsPostRequestBodyContentApplicationJsonSchemaStopVariant2)
+            {
+                completionsPostRequestBodyContentApplicationJsonSchemaStopVariant2?.Invoke(CompletionsPostRequestBodyContentApplicationJsonSchemaStopVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<string>? completionsPostRequestBodyContentApplicationJsonSchemaStopVariant1 = null,
+            global::System.Action<global::System.Collections.Generic.IList<string>>? completionsPostRequestBodyContentApplicationJsonSchemaStopVariant2 = null,
             bool validate = true)
         {
             if (validate)

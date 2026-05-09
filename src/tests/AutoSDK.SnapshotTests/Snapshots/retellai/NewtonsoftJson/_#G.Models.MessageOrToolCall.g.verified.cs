@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickMessage(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.Message? value)
+        {
+            value = Message;
+            return IsMessage;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ToolCallInvocationMessage? Invocation { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Invocation))]
 #endif
         public bool IsInvocation => Invocation != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickInvocation(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ToolCallInvocationMessage? value)
+        {
+            value = Invocation;
+            return IsInvocation;
+        }
 
         /// <summary>
         /// 
@@ -64,6 +90,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickResult(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ToolCallResultMessage? value)
+        {
+            value = Result;
+            return IsResult;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.NodeTransitionMessage? NodeTransition { get; init; }
 #else
@@ -81,6 +120,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickNodeTransition(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.NodeTransitionMessage? value)
+        {
+            value = NodeTransition;
+            return IsNodeTransition;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.StateTransitionMessage? StateTransition { get; init; }
 #else
@@ -94,6 +146,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(StateTransition))]
 #endif
         public bool IsStateTransition => StateTransition != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickStateTransition(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.StateTransitionMessage? value)
+        {
+            value = StateTransition;
+            return IsStateTransition;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -236,11 +301,11 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.Message?, TResult>? message = null,
-            global::System.Func<global::G.ToolCallInvocationMessage?, TResult>? invocation = null,
-            global::System.Func<global::G.ToolCallResultMessage?, TResult>? result = null,
-            global::System.Func<global::G.NodeTransitionMessage?, TResult>? nodeTransition = null,
-            global::System.Func<global::G.StateTransitionMessage?, TResult>? stateTransition = null,
+            global::System.Func<global::G.Message, TResult>? message = null,
+            global::System.Func<global::G.ToolCallInvocationMessage, TResult>? invocation = null,
+            global::System.Func<global::G.ToolCallResultMessage, TResult>? result = null,
+            global::System.Func<global::G.NodeTransitionMessage, TResult>? nodeTransition = null,
+            global::System.Func<global::G.StateTransitionMessage, TResult>? stateTransition = null,
             bool validate = true)
         {
             if (validate)
@@ -276,11 +341,53 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.Message?>? message = null,
-            global::System.Action<global::G.ToolCallInvocationMessage?>? invocation = null,
-            global::System.Action<global::G.ToolCallResultMessage?>? result = null,
-            global::System.Action<global::G.NodeTransitionMessage?>? nodeTransition = null,
-            global::System.Action<global::G.StateTransitionMessage?>? stateTransition = null,
+            global::System.Action<global::G.Message>? message = null,
+
+            global::System.Action<global::G.ToolCallInvocationMessage>? invocation = null,
+
+            global::System.Action<global::G.ToolCallResultMessage>? result = null,
+
+            global::System.Action<global::G.NodeTransitionMessage>? nodeTransition = null,
+
+            global::System.Action<global::G.StateTransitionMessage>? stateTransition = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsMessage)
+            {
+                message?.Invoke(Message!);
+            }
+            else if (IsInvocation)
+            {
+                invocation?.Invoke(Invocation!);
+            }
+            else if (IsResult)
+            {
+                result?.Invoke(Result!);
+            }
+            else if (IsNodeTransition)
+            {
+                nodeTransition?.Invoke(NodeTransition!);
+            }
+            else if (IsStateTransition)
+            {
+                stateTransition?.Invoke(StateTransition!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.Message>? message = null,
+            global::System.Action<global::G.ToolCallInvocationMessage>? invocation = null,
+            global::System.Action<global::G.ToolCallResultMessage>? result = null,
+            global::System.Action<global::G.NodeTransitionMessage>? nodeTransition = null,
+            global::System.Action<global::G.StateTransitionMessage>? stateTransition = null,
             bool validate = true)
         {
             if (validate)

@@ -22,6 +22,19 @@ namespace G
         /// SubmitCurrentAccountPayment<br/>
         /// SubmitCurrentAccountPayment
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.PaymentResponse>> SubmitCurrentAccountPaymentAsResponseAsync(
+
+            global::G.SubmitCurrentAccountPaymentRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// SubmitCurrentAccountPayment<br/>
+        /// SubmitCurrentAccountPayment
+        /// </summary>
         /// <param name="amount"></param>
         /// <param name="firstName"></param>
         /// <param name="lastName"></param>

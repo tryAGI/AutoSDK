@@ -21,5 +21,21 @@ namespace G
         global::System.Threading.Tasks.Task<string> IcModelAllAsync(
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Get All Model Details<br/>
+        /// Get information of all models in an account, irrespective of the type of model (OCR model or Image Classification model).
+        /// </summary>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        /// <remarks>
+        /// var client = new RestClient("https://app.nanonets.com/api/v2/ImageCategorization/Models/");<br/>
+        /// var request = new RestRequest(Method.GET);<br/>
+        /// request.AddHeader("authorization", "Basic " + Convert.ToBase64String(Encoding.Default.GetBytes("[[.ApiKey]]:")));<br/>
+        /// IRestResponse response = client.Execute(request);
+        /// </remarks>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<string>> IcModelAllAsResponseAsync(
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -13,6 +13,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public string? Model { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CreateTextToVideoRequestVeo31? Veo31 { get; init; }
 #else
@@ -26,6 +31,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Veo31))]
 #endif
         public bool IsVeo31 => Veo31 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickVeo31(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateTextToVideoRequestVeo31? value)
+        {
+            value = Veo31;
+            return IsVeo31;
+        }
 
         /// <summary>
         /// 
@@ -47,6 +65,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickVeo31Fast(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateTextToVideoRequestVeo31Fast? value)
+        {
+            value = Veo31Fast;
+            return IsVeo31Fast;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CreateTextToVideoRequestVeo3? Veo3 { get; init; }
 #else
@@ -60,6 +91,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Veo3))]
 #endif
         public bool IsVeo3 => Veo3 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickVeo3(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateTextToVideoRequestVeo3? value)
+        {
+            value = Veo3;
+            return IsVeo3;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -118,11 +162,14 @@ namespace G
         /// 
         /// </summary>
         public CreateTextToVideoRequest(
+            string? model,
             global::G.CreateTextToVideoRequestVeo31? veo31,
             global::G.CreateTextToVideoRequestVeo31Fast? veo31Fast,
             global::G.CreateTextToVideoRequestVeo3? veo3
             )
         {
+            Model = model;
+
             Veo31 = veo31;
             Veo31Fast = veo31Fast;
             Veo3 = veo3;
@@ -158,9 +205,9 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.CreateTextToVideoRequestVeo31?, TResult>? veo31 = null,
-            global::System.Func<global::G.CreateTextToVideoRequestVeo31Fast?, TResult>? veo31Fast = null,
-            global::System.Func<global::G.CreateTextToVideoRequestVeo3?, TResult>? veo3 = null,
+            global::System.Func<global::G.CreateTextToVideoRequestVeo31, TResult>? veo31 = null,
+            global::System.Func<global::G.CreateTextToVideoRequestVeo31Fast, TResult>? veo31Fast = null,
+            global::System.Func<global::G.CreateTextToVideoRequestVeo3, TResult>? veo3 = null,
             bool validate = true)
         {
             if (validate)
@@ -188,9 +235,39 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.CreateTextToVideoRequestVeo31?>? veo31 = null,
-            global::System.Action<global::G.CreateTextToVideoRequestVeo31Fast?>? veo31Fast = null,
-            global::System.Action<global::G.CreateTextToVideoRequestVeo3?>? veo3 = null,
+            global::System.Action<global::G.CreateTextToVideoRequestVeo31>? veo31 = null,
+
+            global::System.Action<global::G.CreateTextToVideoRequestVeo31Fast>? veo31Fast = null,
+
+            global::System.Action<global::G.CreateTextToVideoRequestVeo3>? veo3 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsVeo31)
+            {
+                veo31?.Invoke(Veo31!);
+            }
+            else if (IsVeo31Fast)
+            {
+                veo31Fast?.Invoke(Veo31Fast!);
+            }
+            else if (IsVeo3)
+            {
+                veo3?.Invoke(Veo3!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.CreateTextToVideoRequestVeo31>? veo31 = null,
+            global::System.Action<global::G.CreateTextToVideoRequestVeo31Fast>? veo31Fast = null,
+            global::System.Action<global::G.CreateTextToVideoRequestVeo3>? veo3 = null,
             bool validate = true)
         {
             if (validate)

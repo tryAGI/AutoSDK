@@ -24,23 +24,40 @@ namespace G.JsonConverters
                 foreach (var __jsonProp in __jsonDocument.RootElement.EnumerateObject())
                 {
                     __jsonProps.Add(__jsonProp.Name);
+                    if (__jsonProp.Value.ValueKind == global::System.Text.Json.JsonValueKind.Object)
+                    {
+                        foreach (var __nestedJsonProp in __jsonProp.Value.EnumerateObject())
+                        {
+                            __jsonProps.Add(__jsonProp.Name + "." + __nestedJsonProp.Name);
+                        }
+                    }
+
                 }
             }
 
             var __score0 = 0;
             if (__jsonProps.Contains("error")) __score0++;
+            if (__jsonProps.Contains("error.description")) __score0++;
+            if (__jsonProps.Contains("error.details")) __score0++;
+            if (__jsonProps.Contains("error.kind")) __score0++;
             if (__jsonProps.Contains("greetings")) __score0++;
             if (__jsonProps.Contains("id")) __score0++;
             if (__jsonProps.Contains("knowledge")) __score0++;
+            if (__jsonProps.Contains("knowledge.base_knowledge")) __score0++;
+            if (__jsonProps.Contains("knowledge.id")) __score0++;
+            if (__jsonProps.Contains("knowledge.provider")) __score0++;
+            if (__jsonProps.Contains("knowledge.starter_message")) __score0++;
             if (__jsonProps.Contains("llm")) __score0++;
             if (__jsonProps.Contains("presenter")) __score0++;
             if (__jsonProps.Contains("preview_description")) __score0++;
             if (__jsonProps.Contains("provider")) __score0++;
             if (__jsonProps.Contains("starter_message")) __score0++;
             if (__jsonProps.Contains("triggers")) __score0++;
+            if (__jsonProps.Contains("triggers.chat/end")) __score0++;
             var __score1 = 0;
             if (__jsonProps.Contains("embed")) __score1++;
             if (__jsonProps.Contains("metadata")) __score1++;
+            if (__jsonProps.Contains("metadata.plan")) __score1++;
             var __bestScore = 0;
             var __bestIndex = -1;
             if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }

@@ -31,6 +31,24 @@ namespace G
         /// The unique identifier of the tool router session. Required for public API endpoints, optional for internal endpoints where it is injected by middleware.<br/>
         /// Example: trs_LX9uJKBinWWr
         /// </param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.PostToolRouterSessionBySessionIdProxyExecuteResponse>> PostToolRouterSessionBySessionIdProxyExecuteAsResponseAsync(
+            string? sessionId,
+
+            global::G.PostToolRouterSessionBySessionIdProxyExecuteRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Execute proxy request within a tool router session<br/>
+        /// Execute any native API call on a toolkit with authentication automatically injected from Composio. This endpoint proxies HTTP requests to third-party APIs using connected account credentials resolved from the session context. Provide the toolkit slug, API endpoint, and HTTP method — Composio handles authentication injection, abstracting away credential management. Supports all HTTP methods, custom headers/query parameters, and binary request/response bodies.
+        /// </summary>
+        /// <param name="sessionId">
+        /// The unique identifier of the tool router session. Required for public API endpoints, optional for internal endpoints where it is injected by middleware.<br/>
+        /// Example: trs_LX9uJKBinWWr
+        /// </param>
         /// <param name="toolkitSlug">
         /// The slug of the toolkit to use for the request<br/>
         /// Example: gmail

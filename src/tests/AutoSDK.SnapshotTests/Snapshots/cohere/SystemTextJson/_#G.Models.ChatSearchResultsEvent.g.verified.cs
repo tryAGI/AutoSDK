@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickStream(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ChatStreamEvent? value)
+        {
+            value = Stream;
+            return IsStream;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ChatSearchResultsEvent44axt5? Event44axt5 { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Event44axt5))]
 #endif
         public bool IsEvent44axt5 => Event44axt5 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickEvent44axt5(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ChatSearchResultsEvent44axt5? value)
+        {
+            value = Event44axt5;
+            return IsEvent44axt5;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -119,8 +145,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.ChatStreamEvent?, TResult>? stream = null,
-            global::System.Func<global::G.ChatSearchResultsEvent44axt5?, TResult>? event44axt5 = null,
+            global::System.Func<global::G.ChatStreamEvent, TResult>? stream = null,
+            global::System.Func<global::G.ChatSearchResultsEvent44axt5, TResult>? event44axt5 = null,
             bool validate = true)
         {
             if (validate)
@@ -144,8 +170,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.ChatStreamEvent?>? stream = null,
-            global::System.Action<global::G.ChatSearchResultsEvent44axt5?>? event44axt5 = null,
+            global::System.Action<global::G.ChatStreamEvent>? stream = null,
+
+            global::System.Action<global::G.ChatSearchResultsEvent44axt5>? event44axt5 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsStream)
+            {
+                stream?.Invoke(Stream!);
+            }
+            else if (IsEvent44axt5)
+            {
+                event44axt5?.Invoke(Event44axt5!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.ChatStreamEvent>? stream = null,
+            global::System.Action<global::G.ChatSearchResultsEvent44axt5>? event44axt5 = null,
             bool validate = true)
         {
             if (validate)

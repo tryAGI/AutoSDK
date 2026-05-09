@@ -35,6 +35,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickLlm(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.LLMParameterEvaluationStrategy? value)
+        {
+            value = Llm;
+            return IsLlm;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.RegexParameterEvaluationStrategy? Regex { get; init; }
 #else
@@ -48,6 +61,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Regex))]
 #endif
         public bool IsRegex => Regex != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickRegex(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.RegexParameterEvaluationStrategy? value)
+        {
+            value = Regex;
+            return IsRegex;
+        }
 
         /// <summary>
         /// 
@@ -69,6 +95,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickExact(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ExactParameterEvaluationStrategy? value)
+        {
+            value = Exact;
+            return IsExact;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.MatchAnythingParameterEvaluationStrategy? Anything { get; init; }
 #else
@@ -82,6 +121,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Anything))]
 #endif
         public bool IsAnything => Anything != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickAnything(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.MatchAnythingParameterEvaluationStrategy? value)
+        {
+            value = Anything;
+            return IsAnything;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -205,10 +257,10 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.LLMParameterEvaluationStrategy?, TResult>? llm = null,
-            global::System.Func<global::G.RegexParameterEvaluationStrategy?, TResult>? regex = null,
-            global::System.Func<global::G.ExactParameterEvaluationStrategy?, TResult>? exact = null,
-            global::System.Func<global::G.MatchAnythingParameterEvaluationStrategy?, TResult>? anything = null,
+            global::System.Func<global::G.LLMParameterEvaluationStrategy, TResult>? llm = null,
+            global::System.Func<global::G.RegexParameterEvaluationStrategy, TResult>? regex = null,
+            global::System.Func<global::G.ExactParameterEvaluationStrategy, TResult>? exact = null,
+            global::System.Func<global::G.MatchAnythingParameterEvaluationStrategy, TResult>? anything = null,
             bool validate = true)
         {
             if (validate)
@@ -240,10 +292,46 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.LLMParameterEvaluationStrategy?>? llm = null,
-            global::System.Action<global::G.RegexParameterEvaluationStrategy?>? regex = null,
-            global::System.Action<global::G.ExactParameterEvaluationStrategy?>? exact = null,
-            global::System.Action<global::G.MatchAnythingParameterEvaluationStrategy?>? anything = null,
+            global::System.Action<global::G.LLMParameterEvaluationStrategy>? llm = null,
+
+            global::System.Action<global::G.RegexParameterEvaluationStrategy>? regex = null,
+
+            global::System.Action<global::G.ExactParameterEvaluationStrategy>? exact = null,
+
+            global::System.Action<global::G.MatchAnythingParameterEvaluationStrategy>? anything = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsLlm)
+            {
+                llm?.Invoke(Llm!);
+            }
+            else if (IsRegex)
+            {
+                regex?.Invoke(Regex!);
+            }
+            else if (IsExact)
+            {
+                exact?.Invoke(Exact!);
+            }
+            else if (IsAnything)
+            {
+                anything?.Invoke(Anything!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.LLMParameterEvaluationStrategy>? llm = null,
+            global::System.Action<global::G.RegexParameterEvaluationStrategy>? regex = null,
+            global::System.Action<global::G.ExactParameterEvaluationStrategy>? exact = null,
+            global::System.Action<global::G.MatchAnythingParameterEvaluationStrategy>? anything = null,
             bool validate = true)
         {
             if (validate)

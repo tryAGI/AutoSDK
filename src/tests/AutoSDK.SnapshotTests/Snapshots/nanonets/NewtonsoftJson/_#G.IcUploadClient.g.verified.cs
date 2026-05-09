@@ -5,12 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// IC Upload. Upload training images to an existing Image Classification (IC) model.<br/>
-    /// &lt;br /&gt;<br/>
-    /// ([Create a model](https://app.nanonets.com) on the NanoNets web app.)<br/>
-    /// &lt;br /&gt;<br/>
-    /// &lt;br /&gt;<br/>
-    /// **NOTE**: These end points are only for uploading **training files** for the model and the same files cannot be directly used for prediction. (They need to be uploaded again through the [prediction end points](#tag/icPredict) for prediction.).<br/>
+    /// IC Upload<br/>
     /// If no httpClient is provided, a new one will be created.<br/>
     /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
     /// </summary>
@@ -79,10 +74,10 @@ namespace G
         /// <param name="options">Client-wide request defaults such as headers, query parameters, retries, and timeout.</param>
         /// <param name="disposeHttpClient">Dispose the HttpClient when the instance is disposed. True by default.</param>
         public IcUploadClient(
-            global::System.Net.Http.HttpClient? httpClient = null,
-            global::System.Uri? baseUri = null,
-            global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations = null,
-            global::G.AutoSDKClientOptions? options = null,
+            global::System.Net.Http.HttpClient? httpClient,
+            global::System.Uri? baseUri,
+            global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations,
+            global::G.AutoSDKClientOptions? options,
             bool disposeHttpClient = true)
         {
 

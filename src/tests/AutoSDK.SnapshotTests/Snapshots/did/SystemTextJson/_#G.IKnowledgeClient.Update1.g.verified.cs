@@ -27,6 +27,21 @@ namespace G
         /// If you need to change some of knowledge field
         /// </summary>
         /// <param name="knowledgeId"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.Update1Response>> Update1AsResponseAsync(
+            string knowledgeId,
+
+            global::G.Update1Request request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Update a Knowledge<br/>
+        /// If you need to change some of knowledge field
+        /// </summary>
+        /// <param name="knowledgeId"></param>
         /// <param name="description">
         /// Description of knowledge
         /// </param>

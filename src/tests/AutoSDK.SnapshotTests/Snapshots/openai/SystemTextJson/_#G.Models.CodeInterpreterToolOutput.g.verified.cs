@@ -11,6 +11,11 @@ namespace G
     public readonly partial struct CodeInterpreterToolOutput : global::System.IEquatable<CodeInterpreterToolOutput>
     {
         /// <summary>
+        /// 
+        /// </summary>
+        public string? Type { get; }
+
+        /// <summary>
         /// The output of a code interpreter tool call that is text.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -28,6 +33,19 @@ namespace G
         public bool IsLogs => Logs != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickLogs(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CodeInterpreterTextOutput? value)
+        {
+            value = Logs;
+            return IsLogs;
+        }
+
+        /// <summary>
         /// The output of a code interpreter tool call that is a file.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -43,6 +61,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Files))]
 #endif
         public bool IsFiles => Files != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFiles(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CodeInterpreterFileOutput? value)
+        {
+            value = Files;
+            return IsFiles;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -83,10 +114,13 @@ namespace G
         /// 
         /// </summary>
         public CodeInterpreterToolOutput(
+            string? type,
             global::G.CodeInterpreterTextOutput? logs,
             global::G.CodeInterpreterFileOutput? files
             )
         {
+            Type = type;
+
             Logs = logs;
             Files = files;
         }
@@ -119,8 +153,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.CodeInterpreterTextOutput?, TResult>? logs = null,
-            global::System.Func<global::G.CodeInterpreterFileOutput?, TResult>? files = null,
+            global::System.Func<global::G.CodeInterpreterTextOutput, TResult>? logs = null,
+            global::System.Func<global::G.CodeInterpreterFileOutput, TResult>? files = null,
             bool validate = true)
         {
             if (validate)
@@ -144,8 +178,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.CodeInterpreterTextOutput?>? logs = null,
-            global::System.Action<global::G.CodeInterpreterFileOutput?>? files = null,
+            global::System.Action<global::G.CodeInterpreterTextOutput>? logs = null,
+
+            global::System.Action<global::G.CodeInterpreterFileOutput>? files = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsLogs)
+            {
+                logs?.Invoke(Logs!);
+            }
+            else if (IsFiles)
+            {
+                files?.Invoke(Files!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.CodeInterpreterTextOutput>? logs = null,
+            global::System.Action<global::G.CodeInterpreterFileOutput>? files = null,
             bool validate = true)
         {
             if (validate)

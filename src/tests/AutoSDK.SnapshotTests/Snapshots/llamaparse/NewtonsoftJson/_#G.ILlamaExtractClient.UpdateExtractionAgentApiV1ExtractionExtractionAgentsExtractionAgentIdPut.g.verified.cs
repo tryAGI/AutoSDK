@@ -26,6 +26,22 @@ namespace G
         /// </summary>
         /// <param name="extractionAgentId"></param>
         /// <param name="session"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.ExtractAgent>> UpdateExtractionAgentApiV1ExtractionExtractionAgentsExtractionAgentIdPutAsResponseAsync(
+            global::System.Guid extractionAgentId,
+
+            global::G.ExtractAgentUpdate request,
+            string? session = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Update Extraction Agent
+        /// </summary>
+        /// <param name="extractionAgentId"></param>
+        /// <param name="session"></param>
         /// <param name="dataSchema">
         /// The schema of the data
         /// </param>

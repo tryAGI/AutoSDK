@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickStreamType(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ChatStreamEventType? value)
+        {
+            value = StreamType;
+            return IsStreamType;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ChatContentDeltaEvent3m0vqs? Event3m0vqs { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Event3m0vqs))]
 #endif
         public bool IsEvent3m0vqs => Event3m0vqs != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickEvent3m0vqs(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ChatContentDeltaEvent3m0vqs? value)
+        {
+            value = Event3m0vqs;
+            return IsEvent3m0vqs;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -119,8 +145,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.ChatStreamEventType?, TResult>? streamType = null,
-            global::System.Func<global::G.ChatContentDeltaEvent3m0vqs?, TResult>? event3m0vqs = null,
+            global::System.Func<global::G.ChatStreamEventType, TResult>? streamType = null,
+            global::System.Func<global::G.ChatContentDeltaEvent3m0vqs, TResult>? event3m0vqs = null,
             bool validate = true)
         {
             if (validate)
@@ -144,8 +170,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.ChatStreamEventType?>? streamType = null,
-            global::System.Action<global::G.ChatContentDeltaEvent3m0vqs?>? event3m0vqs = null,
+            global::System.Action<global::G.ChatStreamEventType>? streamType = null,
+
+            global::System.Action<global::G.ChatContentDeltaEvent3m0vqs>? event3m0vqs = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsStreamType)
+            {
+                streamType?.Invoke(StreamType!);
+            }
+            else if (IsEvent3m0vqs)
+            {
+                event3m0vqs?.Invoke(Event3m0vqs!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.ChatStreamEventType>? streamType = null,
+            global::System.Action<global::G.ChatContentDeltaEvent3m0vqs>? event3m0vqs = null,
             bool validate = true)
         {
             if (validate)

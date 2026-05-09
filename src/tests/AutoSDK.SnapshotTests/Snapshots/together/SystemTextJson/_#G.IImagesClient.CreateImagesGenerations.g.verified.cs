@@ -22,6 +22,19 @@ namespace G
         /// Create image<br/>
         /// Use an image model to generate an image for a given prompt.
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.ImageResponse>> CreateImagesGenerationsAsResponseAsync(
+
+            global::G.CreateImagesGenerationsRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create image<br/>
+        /// Use an image model to generate an image for a given prompt.
+        /// </summary>
         /// <param name="prompt">
         /// A description of the desired images. Maximum length varies by model.<br/>
         /// Default Value: cat floating in space, cinematic<br/>

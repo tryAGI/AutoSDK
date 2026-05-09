@@ -25,6 +25,21 @@ namespace G
         /// Updates an existing guardrail's name, checks, or actions
         /// </summary>
         /// <param name="guardrailId"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.UpdateGuardrailResponse>> UpdateGuardrailAsResponseAsync(
+            string guardrailId,
+
+            global::G.UpdateGuardrailRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Update a guardrail<br/>
+        /// Updates an existing guardrail's name, checks, or actions
+        /// </summary>
+        /// <param name="guardrailId"></param>
         /// <param name="name">
         /// Updated name of the guardrail
         /// </param>

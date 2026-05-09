@@ -23,6 +23,20 @@ namespace G
         /// Uploads data to a FileSearchStore, preprocesses and chunks before storing it in a FileSearchStore Document.
         /// </summary>
         /// <param name="fileSearchStoresId"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.CustomLongRunningOperation>> MediaUploadToFileSearchStoreAsResponseAsync(
+            string fileSearchStoresId,
+
+            global::G.UploadToFileSearchStoreRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Uploads data to a FileSearchStore, preprocesses and chunks before storing it in a FileSearchStore Document.
+        /// </summary>
+        /// <param name="fileSearchStoresId"></param>
         /// <param name="displayName">
         /// Optional. Display name of the created document.
         /// </param>

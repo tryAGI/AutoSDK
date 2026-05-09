@@ -26,6 +26,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SnowballParams))]
 #endif
         public bool IsSnowballParams => SnowballParams != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSnowballParams(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.SnowballParams? value)
+        {
+            value = SnowballParams;
+            return IsSnowballParams;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -70,7 +83,7 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.SnowballParams?, TResult>? snowballParams = null,
+            global::System.Func<global::G.SnowballParams, TResult>? snowballParams = null,
             bool validate = true)
         {
             if (validate)
@@ -90,7 +103,25 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.SnowballParams?>? snowballParams = null,
+            global::System.Action<global::G.SnowballParams>? snowballParams = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsSnowballParams)
+            {
+                snowballParams?.Invoke(SnowballParams!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.SnowballParams>? snowballParams = null,
             bool validate = true)
         {
             if (validate)

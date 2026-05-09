@@ -20,6 +20,18 @@ namespace G
         /// <summary>
         /// Create Eval
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.Eval>> EvalControllerCreateAsResponseAsync(
+
+            global::G.CreateEvalDTO request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create Eval
+        /// </summary>
         /// <param name="messages">
         /// This is the mock conversation that will be used to evaluate the flow of the conversation.<br/>
         /// Mock Messages are used to simulate the flow of the conversation<br/>

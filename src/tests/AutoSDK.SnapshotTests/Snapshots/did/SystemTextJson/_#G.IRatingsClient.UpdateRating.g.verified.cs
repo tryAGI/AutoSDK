@@ -31,6 +31,25 @@ namespace G
         /// <param name="agentId"></param>
         /// <param name="chatId"></param>
         /// <param name="ratingId"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.UpdateRatingResponse>> UpdateRatingAsResponseAsync(
+            string agentId,
+            string chatId,
+            string ratingId,
+
+            global::G.UpdateRatingRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Update a rating<br/>
+        /// Update a specific rating of agent message
+        /// </summary>
+        /// <param name="agentId"></param>
+        /// <param name="chatId"></param>
+        /// <param name="ratingId"></param>
         /// <param name="score">
         /// The rating score: positive for favorable, negative for unfavorable<br/>
         /// Example: 1

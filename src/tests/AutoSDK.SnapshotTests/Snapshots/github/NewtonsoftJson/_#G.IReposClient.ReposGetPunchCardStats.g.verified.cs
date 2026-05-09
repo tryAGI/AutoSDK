@@ -23,5 +23,23 @@ namespace G
             string repo,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Get the hourly commit count for each day<br/>
+        /// Each array contains the day number, hour number, and number of commits:<br/>
+        /// *   `0-6`: Sunday - Saturday<br/>
+        /// *   `0-23`: Hour of day<br/>
+        /// *   Number of commits<br/>
+        /// For example, `[2, 14, 25]` indicates that there were 25 total commits, during the 2:00pm hour on Tuesdays. All times are based on the time zone of individual commits.
+        /// </summary>
+        /// <param name="owner"></param>
+        /// <param name="repo"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<int>>>> ReposGetPunchCardStatsAsResponseAsync(
+            string owner,
+            string repo,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

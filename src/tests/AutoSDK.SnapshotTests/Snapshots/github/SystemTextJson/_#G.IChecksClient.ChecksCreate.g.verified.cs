@@ -36,6 +36,27 @@ namespace G
         /// </summary>
         /// <param name="owner"></param>
         /// <param name="repo"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.CheckRun>> ChecksCreateAsResponseAsync(
+            string owner,
+            string repo,
+
+            global::G.ChecksCreateRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create a check run<br/>
+        /// Creates a new check run for a specific commit in a repository.<br/>
+        /// To create a check run, you must use a GitHub App. OAuth apps and authenticated users are not able to create a check suite.<br/>
+        /// In a check suite, GitHub limits the number of check runs with the same name to 1000. Once these check runs exceed 1000, GitHub will start to automatically delete older check runs.<br/>
+        /// &gt; [!NOTE]<br/>
+        /// &gt; The Checks API only looks for pushes in the repository where the check suite or check run were created. Pushes to a branch in a forked repository are not detected and return an empty `pull_requests` array.
+        /// </summary>
+        /// <param name="owner"></param>
+        /// <param name="repo"></param>
         /// <param name="name">
         /// The name of the check. For example, "code-coverage".
         /// </param>

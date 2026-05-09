@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickScalar(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ScalarQuantization? value)
+        {
+            value = Scalar;
+            return IsScalar;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ProductQuantization? Product { get; init; }
 #else
@@ -47,6 +60,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickProduct(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ProductQuantization? value)
+        {
+            value = Product;
+            return IsProduct;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.BinaryQuantization? Binary { get; init; }
 #else
@@ -60,6 +86,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Binary))]
 #endif
         public bool IsBinary => Binary != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickBinary(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.BinaryQuantization? value)
+        {
+            value = Binary;
+            return IsBinary;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -158,9 +197,9 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.ScalarQuantization?, TResult>? scalar = null,
-            global::System.Func<global::G.ProductQuantization?, TResult>? product = null,
-            global::System.Func<global::G.BinaryQuantization?, TResult>? binary = null,
+            global::System.Func<global::G.ScalarQuantization, TResult>? scalar = null,
+            global::System.Func<global::G.ProductQuantization, TResult>? product = null,
+            global::System.Func<global::G.BinaryQuantization, TResult>? binary = null,
             bool validate = true)
         {
             if (validate)
@@ -188,9 +227,39 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.ScalarQuantization?>? scalar = null,
-            global::System.Action<global::G.ProductQuantization?>? product = null,
-            global::System.Action<global::G.BinaryQuantization?>? binary = null,
+            global::System.Action<global::G.ScalarQuantization>? scalar = null,
+
+            global::System.Action<global::G.ProductQuantization>? product = null,
+
+            global::System.Action<global::G.BinaryQuantization>? binary = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsScalar)
+            {
+                scalar?.Invoke(Scalar!);
+            }
+            else if (IsProduct)
+            {
+                product?.Invoke(Product!);
+            }
+            else if (IsBinary)
+            {
+                binary?.Invoke(Binary!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.ScalarQuantization>? scalar = null,
+            global::System.Action<global::G.ProductQuantization>? product = null,
+            global::System.Action<global::G.BinaryQuantization>? binary = null,
             bool validate = true)
         {
             if (validate)

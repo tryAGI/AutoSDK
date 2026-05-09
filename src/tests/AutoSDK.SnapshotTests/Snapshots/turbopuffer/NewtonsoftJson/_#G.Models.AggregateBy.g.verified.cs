@@ -28,6 +28,19 @@ namespace G
         public bool IsAggregateByVariant1 => AggregateByVariant1 != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickAggregateByVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out byte[]? value)
+        {
+            value = AggregateByVariant1;
+            return IsAggregateByVariant1;
+        }
+
+        /// <summary>
         /// Sum the values of the given attribute.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -45,6 +58,19 @@ namespace G
         public bool IsAggregateByVariant2 => AggregateByVariant2 != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickAggregateByVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out byte[]? value)
+        {
+            value = AggregateByVariant2;
+            return IsAggregateByVariant2;
+        }
+
+        /// <summary>
         /// Count documents with a non-null value for the given attribute.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -60,6 +86,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AggregateByVariant3))]
 #endif
         public bool IsAggregateByVariant3 => AggregateByVariant3 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickAggregateByVariant3(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out byte[]? value)
+        {
+            value = AggregateByVariant3;
+            return IsAggregateByVariant3;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -122,9 +161,9 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<byte[]?, TResult>? aggregateByVariant1 = null,
-            global::System.Func<byte[]?, TResult>? aggregateByVariant2 = null,
-            global::System.Func<byte[]?, TResult>? aggregateByVariant3 = null,
+            global::System.Func<byte[], TResult>? aggregateByVariant1 = null,
+            global::System.Func<byte[], TResult>? aggregateByVariant2 = null,
+            global::System.Func<byte[], TResult>? aggregateByVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -152,9 +191,39 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<byte[]?>? aggregateByVariant1 = null,
-            global::System.Action<byte[]?>? aggregateByVariant2 = null,
-            global::System.Action<byte[]?>? aggregateByVariant3 = null,
+            global::System.Action<byte[]>? aggregateByVariant1 = null,
+
+            global::System.Action<byte[]>? aggregateByVariant2 = null,
+
+            global::System.Action<byte[]>? aggregateByVariant3 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsAggregateByVariant1)
+            {
+                aggregateByVariant1?.Invoke(AggregateByVariant1!);
+            }
+            else if (IsAggregateByVariant2)
+            {
+                aggregateByVariant2?.Invoke(AggregateByVariant2!);
+            }
+            else if (IsAggregateByVariant3)
+            {
+                aggregateByVariant3?.Invoke(AggregateByVariant3!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<byte[]>? aggregateByVariant1 = null,
+            global::System.Action<byte[]>? aggregateByVariant2 = null,
+            global::System.Action<byte[]>? aggregateByVariant3 = null,
             bool validate = true)
         {
             if (validate)

@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickBase(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ToolBase? value)
+        {
+            value = Base;
+            return IsBase;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.McpToolVariant2? McpToolVariant2 { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(McpToolVariant2))]
 #endif
         public bool IsMcpToolVariant2 => McpToolVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMcpToolVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.McpToolVariant2? value)
+        {
+            value = McpToolVariant2;
+            return IsMcpToolVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -119,8 +145,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.ToolBase?, TResult>? @base = null,
-            global::System.Func<global::G.McpToolVariant2?, TResult>? mcpToolVariant2 = null,
+            global::System.Func<global::G.ToolBase, TResult>? @base = null,
+            global::System.Func<global::G.McpToolVariant2, TResult>? mcpToolVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -144,8 +170,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.ToolBase?>? @base = null,
-            global::System.Action<global::G.McpToolVariant2?>? mcpToolVariant2 = null,
+            global::System.Action<global::G.ToolBase>? @base = null,
+
+            global::System.Action<global::G.McpToolVariant2>? mcpToolVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsBase)
+            {
+                @base?.Invoke(Base!);
+            }
+            else if (IsMcpToolVariant2)
+            {
+                mcpToolVariant2?.Invoke(McpToolVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.ToolBase>? @base = null,
+            global::System.Action<global::G.McpToolVariant2>? mcpToolVariant2 = null,
             bool validate = true)
         {
             if (validate)

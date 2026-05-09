@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickFunctionMessage1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out object? value)
+        {
+            value = FunctionMessage1;
+            return IsFunctionMessage1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ChatCompletionRequestFunctionMessage? FunctionMessage2 { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FunctionMessage2))]
 #endif
         public bool IsFunctionMessage2 => FunctionMessage2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFunctionMessage2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ChatCompletionRequestFunctionMessage? value)
+        {
+            value = FunctionMessage2;
+            return IsFunctionMessage2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -101,8 +127,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<object?, TResult>? functionMessage1 = null,
-            global::System.Func<global::G.ChatCompletionRequestFunctionMessage?, TResult>? functionMessage2 = null,
+            global::System.Func<object, TResult>? functionMessage1 = null,
+            global::System.Func<global::G.ChatCompletionRequestFunctionMessage, TResult>? functionMessage2 = null,
             bool validate = true)
         {
             if (validate)
@@ -126,8 +152,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<object?>? functionMessage1 = null,
-            global::System.Action<global::G.ChatCompletionRequestFunctionMessage?>? functionMessage2 = null,
+            global::System.Action<object>? functionMessage1 = null,
+
+            global::System.Action<global::G.ChatCompletionRequestFunctionMessage>? functionMessage2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsFunctionMessage1)
+            {
+                functionMessage1?.Invoke(FunctionMessage1!);
+            }
+            else if (IsFunctionMessage2)
+            {
+                functionMessage2?.Invoke(FunctionMessage2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<object>? functionMessage1 = null,
+            global::System.Action<global::G.ChatCompletionRequestFunctionMessage>? functionMessage2 = null,
             bool validate = true)
         {
             if (validate)

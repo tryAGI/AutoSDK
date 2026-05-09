@@ -35,6 +35,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickLlm(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.GetResponseUnitTestResponseModel? value)
+        {
+            value = Llm;
+            return IsLlm;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.GetToolCallUnitTestResponseModel? Tool { get; init; }
 #else
@@ -52,6 +65,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickTool(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.GetToolCallUnitTestResponseModel? value)
+        {
+            value = Tool;
+            return IsTool;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.GetSimulationTestResponseModel? Simulation { get; init; }
 #else
@@ -65,6 +91,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Simulation))]
 #endif
         public bool IsSimulation => Simulation != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSimulation(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.GetSimulationTestResponseModel? value)
+        {
+            value = Simulation;
+            return IsSimulation;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -166,9 +205,9 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.GetResponseUnitTestResponseModel?, TResult>? llm = null,
-            global::System.Func<global::G.GetToolCallUnitTestResponseModel?, TResult>? tool = null,
-            global::System.Func<global::G.GetSimulationTestResponseModel?, TResult>? simulation = null,
+            global::System.Func<global::G.GetResponseUnitTestResponseModel, TResult>? llm = null,
+            global::System.Func<global::G.GetToolCallUnitTestResponseModel, TResult>? tool = null,
+            global::System.Func<global::G.GetSimulationTestResponseModel, TResult>? simulation = null,
             bool validate = true)
         {
             if (validate)
@@ -196,9 +235,39 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.GetResponseUnitTestResponseModel?>? llm = null,
-            global::System.Action<global::G.GetToolCallUnitTestResponseModel?>? tool = null,
-            global::System.Action<global::G.GetSimulationTestResponseModel?>? simulation = null,
+            global::System.Action<global::G.GetResponseUnitTestResponseModel>? llm = null,
+
+            global::System.Action<global::G.GetToolCallUnitTestResponseModel>? tool = null,
+
+            global::System.Action<global::G.GetSimulationTestResponseModel>? simulation = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsLlm)
+            {
+                llm?.Invoke(Llm!);
+            }
+            else if (IsTool)
+            {
+                tool?.Invoke(Tool!);
+            }
+            else if (IsSimulation)
+            {
+                simulation?.Invoke(Simulation!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.GetResponseUnitTestResponseModel>? llm = null,
+            global::System.Action<global::G.GetToolCallUnitTestResponseModel>? tool = null,
+            global::System.Action<global::G.GetSimulationTestResponseModel>? simulation = null,
             bool validate = true)
         {
             if (validate)

@@ -22,5 +22,22 @@ namespace G
             string customPropertyName,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Remove a custom property for an organization<br/>
+        /// Removes a custom property that is defined for an organization.<br/>
+        /// To use this endpoint, the authenticated user must be one of:<br/>
+        ///   - An administrator for the organization.<br/>
+        ///   - A user, or a user on a team, with the fine-grained permission of `custom_properties_org_definitions_manager` in the organization.
+        /// </summary>
+        /// <param name="org"></param>
+        /// <param name="customPropertyName"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse> OrgsRemoveCustomPropertyAsResponseAsync(
+            string org,
+            string customPropertyName,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

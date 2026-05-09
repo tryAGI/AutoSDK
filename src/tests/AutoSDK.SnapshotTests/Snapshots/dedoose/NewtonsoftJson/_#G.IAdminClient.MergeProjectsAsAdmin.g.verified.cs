@@ -22,6 +22,19 @@ namespace G
         /// MergeProjects<br/>
         /// MergeProjects
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<string>> MergeProjectsAsAdminAsResponseAsync(
+
+            global::G.MergeProjectsRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// MergeProjects<br/>
+        /// MergeProjects
+        /// </summary>
         /// <param name="project1Id"></param>
         /// <param name="project2Id"></param>
         /// <param name="newTitle"></param>

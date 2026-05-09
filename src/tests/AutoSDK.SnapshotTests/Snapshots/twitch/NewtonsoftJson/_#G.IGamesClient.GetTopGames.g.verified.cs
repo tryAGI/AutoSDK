@@ -23,5 +23,23 @@ namespace G
             string? before = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Gets information about all broadcasts on Twitch.<br/>
+        /// Gets information about all broadcasts on Twitch.<br/>
+        /// __Authorization:__<br/>
+        /// Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens).
+        /// </summary>
+        /// <param name="first"></param>
+        /// <param name="after"></param>
+        /// <param name="before"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.GetTopGamesResponse>> GetTopGamesAsResponseAsync(
+            int? first = default,
+            string? after = default,
+            string? before = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

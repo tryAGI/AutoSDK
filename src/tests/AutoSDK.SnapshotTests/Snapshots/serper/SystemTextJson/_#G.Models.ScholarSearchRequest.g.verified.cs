@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickBase(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.BaseSearchRequest? value)
+        {
+            value = Base;
+            return IsBase;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ScholarSearchRequestVariant2? ScholarSearchRequestVariant2 { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ScholarSearchRequestVariant2))]
 #endif
         public bool IsScholarSearchRequestVariant2 => ScholarSearchRequestVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickScholarSearchRequestVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ScholarSearchRequestVariant2? value)
+        {
+            value = ScholarSearchRequestVariant2;
+            return IsScholarSearchRequestVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -119,8 +145,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.BaseSearchRequest?, TResult>? @base = null,
-            global::System.Func<global::G.ScholarSearchRequestVariant2?, TResult>? scholarSearchRequestVariant2 = null,
+            global::System.Func<global::G.BaseSearchRequest, TResult>? @base = null,
+            global::System.Func<global::G.ScholarSearchRequestVariant2, TResult>? scholarSearchRequestVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -144,8 +170,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.BaseSearchRequest?>? @base = null,
-            global::System.Action<global::G.ScholarSearchRequestVariant2?>? scholarSearchRequestVariant2 = null,
+            global::System.Action<global::G.BaseSearchRequest>? @base = null,
+
+            global::System.Action<global::G.ScholarSearchRequestVariant2>? scholarSearchRequestVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsBase)
+            {
+                @base?.Invoke(Base!);
+            }
+            else if (IsScholarSearchRequestVariant2)
+            {
+                scholarSearchRequestVariant2?.Invoke(ScholarSearchRequestVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.BaseSearchRequest>? @base = null,
+            global::System.Action<global::G.ScholarSearchRequestVariant2>? scholarSearchRequestVariant2 = null,
             bool validate = true)
         {
             if (validate)

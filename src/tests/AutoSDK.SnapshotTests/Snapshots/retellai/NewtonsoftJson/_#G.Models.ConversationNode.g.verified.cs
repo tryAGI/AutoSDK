@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickBase(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.NodeBase? value)
+        {
+            value = Base;
+            return IsBase;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.AgentOverrideConfig? AgentOverrideConfig { get; init; }
 #else
@@ -47,6 +60,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickAgentOverrideConfig(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.AgentOverrideConfig? value)
+        {
+            value = AgentOverrideConfig;
+            return IsAgentOverrideConfig;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ConversationNodeVariant3? ConversationNodeVariant3 { get; init; }
 #else
@@ -60,6 +86,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ConversationNodeVariant3))]
 #endif
         public bool IsConversationNodeVariant3 => ConversationNodeVariant3 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickConversationNodeVariant3(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ConversationNodeVariant3? value)
+        {
+            value = ConversationNodeVariant3;
+            return IsConversationNodeVariant3;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -159,8 +198,8 @@ namespace G
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::G.NodeBase?, TResult>? @base = null,
-            global::System.Func<global::G.AgentOverrideConfig?, TResult>? agentOverrideConfig = null,
-            global::System.Func<global::G.ConversationNodeVariant3?, TResult>? conversationNodeVariant3 = null,
+            global::System.Func<global::G.AgentOverrideConfig, TResult>? agentOverrideConfig = null,
+            global::System.Func<global::G.ConversationNodeVariant3, TResult>? conversationNodeVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -189,8 +228,38 @@ namespace G
         /// </summary>
         public void Match(
             global::System.Action<global::G.NodeBase?>? @base = null,
-            global::System.Action<global::G.AgentOverrideConfig?>? agentOverrideConfig = null,
-            global::System.Action<global::G.ConversationNodeVariant3?>? conversationNodeVariant3 = null,
+
+            global::System.Action<global::G.AgentOverrideConfig>? agentOverrideConfig = null,
+
+            global::System.Action<global::G.ConversationNodeVariant3>? conversationNodeVariant3 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsBase)
+            {
+                @base?.Invoke(Base!);
+            }
+            else if (IsAgentOverrideConfig)
+            {
+                agentOverrideConfig?.Invoke(AgentOverrideConfig!);
+            }
+            else if (IsConversationNodeVariant3)
+            {
+                conversationNodeVariant3?.Invoke(ConversationNodeVariant3!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.NodeBase?>? @base = null,
+            global::System.Action<global::G.AgentOverrideConfig>? agentOverrideConfig = null,
+            global::System.Action<global::G.ConversationNodeVariant3>? conversationNodeVariant3 = null,
             bool validate = true)
         {
             if (validate)

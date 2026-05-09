@@ -34,6 +34,19 @@ namespace G
         public bool IsReadConsistencyVariant1 => ReadConsistencyVariant1 != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickReadConsistencyVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out int? value)
+        {
+            value = ReadConsistencyVariant1;
+            return IsReadConsistencyVariant1;
+        }
+
+        /// <summary>
         /// * `majority` - send N/2+1 random request and return points, which present on all of them<br/>
         /// * `quorum` - send requests to all nodes and return points which present on majority of nodes<br/>
         /// * `all` - send requests to all nodes and return points which present on all nodes
@@ -51,6 +64,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Type))]
 #endif
         public bool IsType => Type != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickType(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ReadConsistencyType? value)
+        {
+            value = Type;
+            return IsType;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -152,6 +178,30 @@ namespace G
         /// 
         /// </summary>
         public void Match(
+            global::System.Action<int?>? readConsistencyVariant1 = null,
+
+            global::System.Action<global::G.ReadConsistencyType?>? type = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsReadConsistencyVariant1)
+            {
+                readConsistencyVariant1?.Invoke(ReadConsistencyVariant1!);
+            }
+            else if (IsType)
+            {
+                type?.Invoke(Type!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
             global::System.Action<int?>? readConsistencyVariant1 = null,
             global::System.Action<global::G.ReadConsistencyType?>? type = null,
             bool validate = true)

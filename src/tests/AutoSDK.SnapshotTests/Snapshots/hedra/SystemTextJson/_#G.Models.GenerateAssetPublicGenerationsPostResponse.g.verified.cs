@@ -35,6 +35,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickVideo(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.GenerateVideoResponse? value)
+        {
+            value = Video;
+            return IsVideo;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.GenerateTextToSpeechResponse? TextToSpeech { get; init; }
 #else
@@ -48,6 +61,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TextToSpeech))]
 #endif
         public bool IsTextToSpeech => TextToSpeech != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickTextToSpeech(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.GenerateTextToSpeechResponse? value)
+        {
+            value = TextToSpeech;
+            return IsTextToSpeech;
+        }
 
         /// <summary>
         /// 
@@ -69,6 +95,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickTextToSound(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.GenerateTextToSoundResponse? value)
+        {
+            value = TextToSound;
+            return IsTextToSound;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.GenerateImageResponse? Image { get; init; }
 #else
@@ -82,6 +121,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Image))]
 #endif
         public bool IsImage => Image != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickImage(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.GenerateImageResponse? value)
+        {
+            value = Image;
+            return IsImage;
+        }
 
         /// <summary>
         /// 
@@ -103,6 +155,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickImageUpscale(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.GenerateImageUpscaleResponse? value)
+        {
+            value = ImageUpscale;
+            return IsImageUpscale;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.GenerateVideoUpscaleResponse? VideoUpscale { get; init; }
 #else
@@ -116,6 +181,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(VideoUpscale))]
 #endif
         public bool IsVideoUpscale => VideoUpscale != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickVideoUpscale(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.GenerateVideoUpscaleResponse? value)
+        {
+            value = VideoUpscale;
+            return IsVideoUpscale;
+        }
 
         /// <summary>
         /// 
@@ -137,6 +215,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickAudioIsolation(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.GenerateIsolatedAudioResponse? value)
+        {
+            value = AudioIsolation;
+            return IsAudioIsolation;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.GenerateSpeechToSpeechResponse? SpeechToSpeech { get; init; }
 #else
@@ -150,6 +241,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SpeechToSpeech))]
 #endif
         public bool IsSpeechToSpeech => SpeechToSpeech != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSpeechToSpeech(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.GenerateSpeechToSpeechResponse? value)
+        {
+            value = SpeechToSpeech;
+            return IsSpeechToSpeech;
+        }
 
         /// <summary>
         /// 
@@ -171,6 +275,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickVoiceClone(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.GenerateVoiceCloneResponse? value)
+        {
+            value = VoiceClone;
+            return IsVoiceClone;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.GenerateAudioFromVideoResponse? AudioFromVideo { get; init; }
 #else
@@ -184,6 +301,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AudioFromVideo))]
 #endif
         public bool IsAudioFromVideo => AudioFromVideo != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickAudioFromVideo(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.GenerateAudioFromVideoResponse? value)
+        {
+            value = AudioFromVideo;
+            return IsAudioFromVideo;
+        }
 
         /// <summary>
         /// 
@@ -205,6 +335,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickVideoWithAudio(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.GenerateVideoWithAudioResponse? value)
+        {
+            value = VideoWithAudio;
+            return IsVideoWithAudio;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.GenerateVideoToVideoResponse? VideoToVideo { get; init; }
 #else
@@ -218,6 +361,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(VideoToVideo))]
 #endif
         public bool IsVideoToVideo => VideoToVideo != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickVideoToVideo(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.GenerateVideoToVideoResponse? value)
+        {
+            value = VideoToVideo;
+            return IsVideoToVideo;
+        }
 
         /// <summary>
         /// Response for Motion Control generations.
@@ -235,6 +391,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MotionControl))]
 #endif
         public bool IsMotionControl => MotionControl != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMotionControl(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.GenerateMotionControlResponse? value)
+        {
+            value = MotionControl;
+            return IsMotionControl;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -556,19 +725,19 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.GenerateVideoResponse?, TResult>? video = null,
-            global::System.Func<global::G.GenerateTextToSpeechResponse?, TResult>? textToSpeech = null,
-            global::System.Func<global::G.GenerateTextToSoundResponse?, TResult>? textToSound = null,
-            global::System.Func<global::G.GenerateImageResponse?, TResult>? image = null,
-            global::System.Func<global::G.GenerateImageUpscaleResponse?, TResult>? imageUpscale = null,
-            global::System.Func<global::G.GenerateVideoUpscaleResponse?, TResult>? videoUpscale = null,
-            global::System.Func<global::G.GenerateIsolatedAudioResponse?, TResult>? audioIsolation = null,
-            global::System.Func<global::G.GenerateSpeechToSpeechResponse?, TResult>? speechToSpeech = null,
-            global::System.Func<global::G.GenerateVoiceCloneResponse?, TResult>? voiceClone = null,
-            global::System.Func<global::G.GenerateAudioFromVideoResponse?, TResult>? audioFromVideo = null,
-            global::System.Func<global::G.GenerateVideoWithAudioResponse?, TResult>? videoWithAudio = null,
-            global::System.Func<global::G.GenerateVideoToVideoResponse?, TResult>? videoToVideo = null,
-            global::System.Func<global::G.GenerateMotionControlResponse?, TResult>? motionControl = null,
+            global::System.Func<global::G.GenerateVideoResponse, TResult>? video = null,
+            global::System.Func<global::G.GenerateTextToSpeechResponse, TResult>? textToSpeech = null,
+            global::System.Func<global::G.GenerateTextToSoundResponse, TResult>? textToSound = null,
+            global::System.Func<global::G.GenerateImageResponse, TResult>? image = null,
+            global::System.Func<global::G.GenerateImageUpscaleResponse, TResult>? imageUpscale = null,
+            global::System.Func<global::G.GenerateVideoUpscaleResponse, TResult>? videoUpscale = null,
+            global::System.Func<global::G.GenerateIsolatedAudioResponse, TResult>? audioIsolation = null,
+            global::System.Func<global::G.GenerateSpeechToSpeechResponse, TResult>? speechToSpeech = null,
+            global::System.Func<global::G.GenerateVoiceCloneResponse, TResult>? voiceClone = null,
+            global::System.Func<global::G.GenerateAudioFromVideoResponse, TResult>? audioFromVideo = null,
+            global::System.Func<global::G.GenerateVideoWithAudioResponse, TResult>? videoWithAudio = null,
+            global::System.Func<global::G.GenerateVideoToVideoResponse, TResult>? videoToVideo = null,
+            global::System.Func<global::G.GenerateMotionControlResponse, TResult>? motionControl = null,
             bool validate = true)
         {
             if (validate)
@@ -636,19 +805,109 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.GenerateVideoResponse?>? video = null,
-            global::System.Action<global::G.GenerateTextToSpeechResponse?>? textToSpeech = null,
-            global::System.Action<global::G.GenerateTextToSoundResponse?>? textToSound = null,
-            global::System.Action<global::G.GenerateImageResponse?>? image = null,
-            global::System.Action<global::G.GenerateImageUpscaleResponse?>? imageUpscale = null,
-            global::System.Action<global::G.GenerateVideoUpscaleResponse?>? videoUpscale = null,
-            global::System.Action<global::G.GenerateIsolatedAudioResponse?>? audioIsolation = null,
-            global::System.Action<global::G.GenerateSpeechToSpeechResponse?>? speechToSpeech = null,
-            global::System.Action<global::G.GenerateVoiceCloneResponse?>? voiceClone = null,
-            global::System.Action<global::G.GenerateAudioFromVideoResponse?>? audioFromVideo = null,
-            global::System.Action<global::G.GenerateVideoWithAudioResponse?>? videoWithAudio = null,
-            global::System.Action<global::G.GenerateVideoToVideoResponse?>? videoToVideo = null,
-            global::System.Action<global::G.GenerateMotionControlResponse?>? motionControl = null,
+            global::System.Action<global::G.GenerateVideoResponse>? video = null,
+
+            global::System.Action<global::G.GenerateTextToSpeechResponse>? textToSpeech = null,
+
+            global::System.Action<global::G.GenerateTextToSoundResponse>? textToSound = null,
+
+            global::System.Action<global::G.GenerateImageResponse>? image = null,
+
+            global::System.Action<global::G.GenerateImageUpscaleResponse>? imageUpscale = null,
+
+            global::System.Action<global::G.GenerateVideoUpscaleResponse>? videoUpscale = null,
+
+            global::System.Action<global::G.GenerateIsolatedAudioResponse>? audioIsolation = null,
+
+            global::System.Action<global::G.GenerateSpeechToSpeechResponse>? speechToSpeech = null,
+
+            global::System.Action<global::G.GenerateVoiceCloneResponse>? voiceClone = null,
+
+            global::System.Action<global::G.GenerateAudioFromVideoResponse>? audioFromVideo = null,
+
+            global::System.Action<global::G.GenerateVideoWithAudioResponse>? videoWithAudio = null,
+
+            global::System.Action<global::G.GenerateVideoToVideoResponse>? videoToVideo = null,
+
+            global::System.Action<global::G.GenerateMotionControlResponse>? motionControl = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsVideo)
+            {
+                video?.Invoke(Video!);
+            }
+            else if (IsTextToSpeech)
+            {
+                textToSpeech?.Invoke(TextToSpeech!);
+            }
+            else if (IsTextToSound)
+            {
+                textToSound?.Invoke(TextToSound!);
+            }
+            else if (IsImage)
+            {
+                image?.Invoke(Image!);
+            }
+            else if (IsImageUpscale)
+            {
+                imageUpscale?.Invoke(ImageUpscale!);
+            }
+            else if (IsVideoUpscale)
+            {
+                videoUpscale?.Invoke(VideoUpscale!);
+            }
+            else if (IsAudioIsolation)
+            {
+                audioIsolation?.Invoke(AudioIsolation!);
+            }
+            else if (IsSpeechToSpeech)
+            {
+                speechToSpeech?.Invoke(SpeechToSpeech!);
+            }
+            else if (IsVoiceClone)
+            {
+                voiceClone?.Invoke(VoiceClone!);
+            }
+            else if (IsAudioFromVideo)
+            {
+                audioFromVideo?.Invoke(AudioFromVideo!);
+            }
+            else if (IsVideoWithAudio)
+            {
+                videoWithAudio?.Invoke(VideoWithAudio!);
+            }
+            else if (IsVideoToVideo)
+            {
+                videoToVideo?.Invoke(VideoToVideo!);
+            }
+            else if (IsMotionControl)
+            {
+                motionControl?.Invoke(MotionControl!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.GenerateVideoResponse>? video = null,
+            global::System.Action<global::G.GenerateTextToSpeechResponse>? textToSpeech = null,
+            global::System.Action<global::G.GenerateTextToSoundResponse>? textToSound = null,
+            global::System.Action<global::G.GenerateImageResponse>? image = null,
+            global::System.Action<global::G.GenerateImageUpscaleResponse>? imageUpscale = null,
+            global::System.Action<global::G.GenerateVideoUpscaleResponse>? videoUpscale = null,
+            global::System.Action<global::G.GenerateIsolatedAudioResponse>? audioIsolation = null,
+            global::System.Action<global::G.GenerateSpeechToSpeechResponse>? speechToSpeech = null,
+            global::System.Action<global::G.GenerateVoiceCloneResponse>? voiceClone = null,
+            global::System.Action<global::G.GenerateAudioFromVideoResponse>? audioFromVideo = null,
+            global::System.Action<global::G.GenerateVideoWithAudioResponse>? videoWithAudio = null,
+            global::System.Action<global::G.GenerateVideoToVideoResponse>? videoToVideo = null,
+            global::System.Action<global::G.GenerateMotionControlResponse>? motionControl = null,
             bool validate = true)
         {
             if (validate)

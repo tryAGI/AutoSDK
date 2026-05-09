@@ -25,6 +25,21 @@ namespace G
         /// Updates the status of a connected account to either enabled (active) or disabled (inactive). Disabled accounts cannot be used for API calls but remain in the database.
         /// </summary>
         /// <param name="nanoId"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.PatchConnectedAccountsByNanoIdStatusResponse>> PatchConnectedAccountsByNanoIdStatusAsResponseAsync(
+            string nanoId,
+
+            global::G.PatchConnectedAccountsByNanoIdStatusRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Enable or disable a connected account<br/>
+        /// Updates the status of a connected account to either enabled (active) or disabled (inactive). Disabled accounts cannot be used for API calls but remain in the database.
+        /// </summary>
+        /// <param name="nanoId"></param>
         /// <param name="enabled">
         /// Set to true to enable the account or false to disable it
         /// </param>

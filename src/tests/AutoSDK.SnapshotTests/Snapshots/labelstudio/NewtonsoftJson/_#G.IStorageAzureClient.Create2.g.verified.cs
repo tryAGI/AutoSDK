@@ -22,6 +22,19 @@ namespace G
         /// Create export storage<br/>
         /// Create a new Azure export storage connection to store annotations.
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.AzureBlobExportStorage>> Create2AsResponseAsync(
+
+            global::G.ApiStoragesExportAzureCreateRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create export storage<br/>
+        /// Create a new Azure export storage connection to store annotations.
+        /// </summary>
         /// <param name="accountKey">
         /// Azure Blob account key
         /// </param>

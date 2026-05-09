@@ -65,7 +65,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public BucketsClient Buckets => new BucketsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public BucketsClient Buckets => new BucketsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -74,7 +74,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public CustomerClient Customer => new CustomerClient(HttpClient, authorizations: Authorizations, options: Options)
+        public CustomerClient Customer => new CustomerClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -83,7 +83,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public DocumentsClient Documents => new DocumentsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public DocumentsClient Documents => new DocumentsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -92,7 +92,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public GroupsClient Groups => new GroupsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public GroupsClient Groups => new GroupsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -101,7 +101,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public HealthClient Health => new HealthClient(HttpClient, authorizations: Authorizations, options: Options)
+        public HealthClient Health => new HealthClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -110,7 +110,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public SearchClient Search => new SearchClient(HttpClient, authorizations: Authorizations, options: Options)
+        public SearchClient Search => new SearchClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -149,10 +149,10 @@ namespace G
         /// <param name="options">Client-wide request defaults such as headers, query parameters, retries, and timeout.</param>
         /// <param name="disposeHttpClient">Dispose the HttpClient when the instance is disposed. True by default.</param>
         public Api(
-            global::System.Net.Http.HttpClient? httpClient = null,
-            global::System.Uri? baseUri = null,
-            global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations = null,
-            global::G.AutoSDKClientOptions? options = null,
+            global::System.Net.Http.HttpClient? httpClient,
+            global::System.Uri? baseUri,
+            global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations,
+            global::G.AutoSDKClientOptions? options,
             bool disposeHttpClient = true)
         {
 

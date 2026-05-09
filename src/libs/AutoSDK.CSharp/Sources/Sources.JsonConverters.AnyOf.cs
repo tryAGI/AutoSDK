@@ -20,7 +20,11 @@ public static partial class Sources
         var typeNameWithTypes = !anyOfData.IsNamed
             ? $"global::{anyOfData.Namespace}.{anyOfData.SubType}{types}"
             : $"global::{anyOfData.Namespace}.{anyOfData.Name}";
-        var hasDiscriminator = anyOfData.DiscriminatorType != null && anyOfData.Properties.All(x => !string.IsNullOrWhiteSpace(x.DiscriminatorValue));
+        var hasDiscriminator = anyOfData.DiscriminatorType != null &&
+                               !string.IsNullOrWhiteSpace(anyOfData.DiscriminatorPropertyName) &&
+                               (anyOfData.DiscriminatorPropertyIsEnum
+                                   ? anyOfData.Properties.All(x => !string.IsNullOrWhiteSpace(x.DiscriminatorValue))
+                                   : anyOfData.Properties.All(x => !string.IsNullOrWhiteSpace(x.DiscriminatorJsonValue)));
         var hasPropertyInfo = anyOfData.Properties.Any(x => !x.JsonPropertyNames.IsEmpty);
         var hasNestedPropertyInfo = anyOfData.Properties.Any(x => x.JsonPropertyNames.Any(propName => propName.Contains('.')));
 
@@ -40,7 +44,9 @@ public static partial class Sources
 
 {anyOfData.Properties.Select((x, i) => $@" 
             {x.Type.CSharpTypeWithNullability} {x.ParameterName} = default;
-            if (discriminator?.{anyOfData.DiscriminatorPropertyName} == {anyOfData.DiscriminatorType!.Value.CSharpTypeWithoutNullability}{anyOfData.DiscriminatorPropertyName}.{x.DiscriminatorValue})
+            if (discriminator?.{anyOfData.DiscriminatorPropertyName} == {(anyOfData.DiscriminatorPropertyIsEnum
+                ? $"{anyOfData.DiscriminatorType!.Value.CSharpTypeWithoutNullability}{anyOfData.DiscriminatorPropertyName}.{x.DiscriminatorValue}"
+                : $"\"{x.DiscriminatorJsonValue}\"")})
             {{
 {(anyOfData.IsTrimming ? $@" 
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof({x.Type.CSharpTypeWithoutNullability}), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<{x.Type.CSharpTypeWithoutNullability}> ??

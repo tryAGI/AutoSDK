@@ -24,12 +24,36 @@ namespace G.JsonConverters
                 foreach (var __jsonProp in __jsonDocument.RootElement.EnumerateObject())
                 {
                     __jsonProps.Add(__jsonProp.Name);
+                    if (__jsonProp.Value.ValueKind == global::System.Text.Json.JsonValueKind.Object)
+                    {
+                        foreach (var __nestedJsonProp in __jsonProp.Value.EnumerateObject())
+                        {
+                            __jsonProps.Add(__jsonProp.Name + "." + __nestedJsonProp.Name);
+                        }
+                    }
+
                 }
             }
 
             var __score0 = 0;
             if (__jsonProps.Contains("prompts_versions")) __score0++;
+            if (__jsonProps.Contains("prompts_versions.id")) __score0++;
+            if (__jsonProps.Contains("prompts_versions.major_version")) __score0++;
+            if (__jsonProps.Contains("prompts_versions.minor_version")) __score0++;
+            if (__jsonProps.Contains("prompts_versions.prompt_v2")) __score0++;
             if (__jsonProps.Contains("request")) __score0++;
+            if (__jsonProps.Contains("request.auth_hash")) __score0++;
+            if (__jsonProps.Contains("request.country_code")) __score0++;
+            if (__jsonProps.Contains("request.created_at")) __score0++;
+            if (__jsonProps.Contains("request.id")) __score0++;
+            if (__jsonProps.Contains("request.model")) __score0++;
+            if (__jsonProps.Contains("request.modelOverride")) __score0++;
+            if (__jsonProps.Contains("request.node_id")) __score0++;
+            if (__jsonProps.Contains("request.org_id")) __score0++;
+            if (__jsonProps.Contains("request.path")) __score0++;
+            if (__jsonProps.Contains("request.prompt")) __score0++;
+            if (__jsonProps.Contains("request.prompt_id")) __score0++;
+            if (__jsonProps.Contains("request.user_id")) __score0++;
             var __score1 = 0;
             if (__jsonProps.Contains("left")) __score1++;
             if (__jsonProps.Contains("operator")) __score1++;

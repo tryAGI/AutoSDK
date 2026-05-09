@@ -5,6 +5,7 @@ public record struct AnyOfData(
     int Count,
     TypeData? DiscriminatorType,
     string? DiscriminatorPropertyName,
+    bool DiscriminatorPropertyIsEnum,
     bool IsTrimming,
     string Namespace,
     string Name,

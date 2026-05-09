@@ -17,5 +17,17 @@ namespace G
             global::System.Guid bulkExportId,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Get Bulk Export Runs<br/>
+        /// Get a bulk export's runs
+        /// </summary>
+        /// <param name="bulkExportId"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::G.BulkExportRun>>> GetBulkExportRunsAsResponseAsync(
+            global::System.Guid bulkExportId,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

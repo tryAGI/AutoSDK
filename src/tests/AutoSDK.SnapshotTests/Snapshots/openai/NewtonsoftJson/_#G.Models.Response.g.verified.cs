@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickModelProperties(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ModelResponseProperties? value)
+        {
+            value = ModelProperties;
+            return IsModelProperties;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ResponseProperties? Properties { get; init; }
 #else
@@ -47,6 +60,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickProperties(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ResponseProperties? value)
+        {
+            value = Properties;
+            return IsProperties;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ResponseVariant3? ResponseVariant3 { get; init; }
 #else
@@ -60,6 +86,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseVariant3))]
 #endif
         public bool IsResponseVariant3 => ResponseVariant3 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResponseVariant3(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ResponseVariant3? value)
+        {
+            value = ResponseVariant3;
+            return IsResponseVariant3;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -158,9 +197,9 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.ModelResponseProperties?, TResult>? modelProperties = null,
-            global::System.Func<global::G.ResponseProperties?, TResult>? properties = null,
-            global::System.Func<global::G.ResponseVariant3?, TResult>? responseVariant3 = null,
+            global::System.Func<global::G.ModelResponseProperties, TResult>? modelProperties = null,
+            global::System.Func<global::G.ResponseProperties, TResult>? properties = null,
+            global::System.Func<global::G.ResponseVariant3, TResult>? responseVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -188,9 +227,39 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.ModelResponseProperties?>? modelProperties = null,
-            global::System.Action<global::G.ResponseProperties?>? properties = null,
-            global::System.Action<global::G.ResponseVariant3?>? responseVariant3 = null,
+            global::System.Action<global::G.ModelResponseProperties>? modelProperties = null,
+
+            global::System.Action<global::G.ResponseProperties>? properties = null,
+
+            global::System.Action<global::G.ResponseVariant3>? responseVariant3 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsModelProperties)
+            {
+                modelProperties?.Invoke(ModelProperties!);
+            }
+            else if (IsProperties)
+            {
+                properties?.Invoke(Properties!);
+            }
+            else if (IsResponseVariant3)
+            {
+                responseVariant3?.Invoke(ResponseVariant3!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.ModelResponseProperties>? modelProperties = null,
+            global::System.Action<global::G.ResponseProperties>? properties = null,
+            global::System.Action<global::G.ResponseVariant3>? responseVariant3 = null,
             bool validate = true)
         {
             if (validate)

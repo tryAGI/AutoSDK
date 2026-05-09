@@ -28,6 +28,19 @@ namespace G
         public bool IsCategorical => Categorical != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickCategorical(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::System.Collections.Generic.IList<global::G.ProjectScoreCategory>? value)
+        {
+            value = Categorical;
+            return IsCategorical;
+        }
+
+        /// <summary>
         /// For weighted-type project scores, the weights of each score
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Weighted))]
 #endif
         public bool IsWeighted => Weighted != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickWeighted(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::System.Collections.Generic.Dictionary<string, double>? value)
+        {
+            value = Weighted;
+            return IsWeighted;
+        }
 
         /// <summary>
         /// For minimum-type project scores, the list of included scores
@@ -64,6 +90,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickMinimum(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::System.Collections.Generic.IList<string>? value)
+        {
+            value = Minimum;
+            return IsMinimum;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public object? ProjectScoreCategoriesVariant4 { get; init; }
 #else
@@ -77,6 +116,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ProjectScoreCategoriesVariant4))]
 #endif
         public bool IsProjectScoreCategoriesVariant4 => ProjectScoreCategoriesVariant4 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickProjectScoreCategoriesVariant4(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out object? value)
+        {
+            value = ProjectScoreCategoriesVariant4;
+            return IsProjectScoreCategoriesVariant4;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -143,10 +195,10 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::System.Collections.Generic.IList<global::G.ProjectScoreCategory>?, TResult>? categorical = null,
-            global::System.Func<global::System.Collections.Generic.Dictionary<string, double>?, TResult>? weighted = null,
-            global::System.Func<global::System.Collections.Generic.IList<string>?, TResult>? minimum = null,
-            global::System.Func<object?, TResult>? projectScoreCategoriesVariant4 = null,
+            global::System.Func<global::System.Collections.Generic.IList<global::G.ProjectScoreCategory>, TResult>? categorical = null,
+            global::System.Func<global::System.Collections.Generic.Dictionary<string, double>, TResult>? weighted = null,
+            global::System.Func<global::System.Collections.Generic.IList<string>, TResult>? minimum = null,
+            global::System.Func<object, TResult>? projectScoreCategoriesVariant4 = null,
             bool validate = true)
         {
             if (validate)
@@ -178,10 +230,46 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::System.Collections.Generic.IList<global::G.ProjectScoreCategory>?>? categorical = null,
-            global::System.Action<global::System.Collections.Generic.Dictionary<string, double>?>? weighted = null,
-            global::System.Action<global::System.Collections.Generic.IList<string>?>? minimum = null,
-            global::System.Action<object?>? projectScoreCategoriesVariant4 = null,
+            global::System.Action<global::System.Collections.Generic.IList<global::G.ProjectScoreCategory>>? categorical = null,
+
+            global::System.Action<global::System.Collections.Generic.Dictionary<string, double>>? weighted = null,
+
+            global::System.Action<global::System.Collections.Generic.IList<string>>? minimum = null,
+
+            global::System.Action<object>? projectScoreCategoriesVariant4 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsCategorical)
+            {
+                categorical?.Invoke(Categorical!);
+            }
+            else if (IsWeighted)
+            {
+                weighted?.Invoke(Weighted!);
+            }
+            else if (IsMinimum)
+            {
+                minimum?.Invoke(Minimum!);
+            }
+            else if (IsProjectScoreCategoriesVariant4)
+            {
+                projectScoreCategoriesVariant4?.Invoke(ProjectScoreCategoriesVariant4!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::System.Collections.Generic.IList<global::G.ProjectScoreCategory>>? categorical = null,
+            global::System.Action<global::System.Collections.Generic.Dictionary<string, double>>? weighted = null,
+            global::System.Action<global::System.Collections.Generic.IList<string>>? minimum = null,
+            global::System.Action<object>? projectScoreCategoriesVariant4 = null,
             bool validate = true)
         {
             if (validate)

@@ -22,6 +22,19 @@ namespace G
         /// Submit Transcription Job<br/>
         /// Starts an asynchronous job to transcribe speech-to-text for a media file. Media files can be specified by URL or uploaded directly.
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.TranscriptionJob>> SubmitTranscriptionJobAsResponseAsync(
+
+            global::G.SubmitTranscriptionJobRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Submit Transcription Job<br/>
+        /// Starts an asynchronous job to transcribe speech-to-text for a media file. Media files can be specified by URL or uploaded directly.
+        /// </summary>
         /// <param name="mediaUrl">
         /// Direct download URL for the media file
         /// </param>

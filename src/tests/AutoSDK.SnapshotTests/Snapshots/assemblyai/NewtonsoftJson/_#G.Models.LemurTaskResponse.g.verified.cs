@@ -28,6 +28,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(String))]
 #endif
         public bool IsString => String != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickString(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.LemurStringResponse? value)
+        {
+            value = String;
+            return IsString;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -92,6 +105,24 @@ namespace G
         /// 
         /// </summary>
         public void Match(
+            global::System.Action<global::G.LemurStringResponse?>? @string = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsString)
+            {
+                @string?.Invoke(String!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
             global::System.Action<global::G.LemurStringResponse?>? @string = null,
             bool validate = true)
         {

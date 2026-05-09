@@ -34,11 +34,15 @@ namespace G
         /// ensuring <see cref="ApiException.ResponseBody"/> is populated.
         /// </summary>
         public bool ReadResponseAsString { get; set; }
-
         /// <summary>
         /// Client-wide request defaults such as headers, query parameters, retries, and timeout.
         /// </summary>
         public global::G.AutoSDKClientOptions Options { get; }
+
+        /// <summary>
+        /// Creates idempotency keys for generated idempotent requests when the caller does not provide one.
+        /// </summary>
+        public global::System.Func<string> CreateIdempotencyKey { get; set; }
 
         /// <summary>
         /// 

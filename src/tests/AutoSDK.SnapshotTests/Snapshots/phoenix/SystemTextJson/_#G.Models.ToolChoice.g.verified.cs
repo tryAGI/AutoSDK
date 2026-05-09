@@ -35,6 +35,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickNone(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.PromptToolChoiceNone? value)
+        {
+            value = None;
+            return IsNone;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.PromptToolChoiceZeroOrMore? ZeroOrMore { get; init; }
 #else
@@ -48,6 +61,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ZeroOrMore))]
 #endif
         public bool IsZeroOrMore => ZeroOrMore != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickZeroOrMore(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.PromptToolChoiceZeroOrMore? value)
+        {
+            value = ZeroOrMore;
+            return IsZeroOrMore;
+        }
 
         /// <summary>
         /// 
@@ -69,6 +95,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickOneOrMore(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.PromptToolChoiceOneOrMore? value)
+        {
+            value = OneOrMore;
+            return IsOneOrMore;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.PromptToolChoiceSpecificFunctionTool? SpecificFunction { get; init; }
 #else
@@ -82,6 +121,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SpecificFunction))]
 #endif
         public bool IsSpecificFunction => SpecificFunction != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSpecificFunction(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.PromptToolChoiceSpecificFunctionTool? value)
+        {
+            value = SpecificFunction;
+            return IsSpecificFunction;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -205,10 +257,10 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.PromptToolChoiceNone?, TResult>? none = null,
-            global::System.Func<global::G.PromptToolChoiceZeroOrMore?, TResult>? zeroOrMore = null,
-            global::System.Func<global::G.PromptToolChoiceOneOrMore?, TResult>? oneOrMore = null,
-            global::System.Func<global::G.PromptToolChoiceSpecificFunctionTool?, TResult>? specificFunction = null,
+            global::System.Func<global::G.PromptToolChoiceNone, TResult>? none = null,
+            global::System.Func<global::G.PromptToolChoiceZeroOrMore, TResult>? zeroOrMore = null,
+            global::System.Func<global::G.PromptToolChoiceOneOrMore, TResult>? oneOrMore = null,
+            global::System.Func<global::G.PromptToolChoiceSpecificFunctionTool, TResult>? specificFunction = null,
             bool validate = true)
         {
             if (validate)
@@ -240,10 +292,46 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.PromptToolChoiceNone?>? none = null,
-            global::System.Action<global::G.PromptToolChoiceZeroOrMore?>? zeroOrMore = null,
-            global::System.Action<global::G.PromptToolChoiceOneOrMore?>? oneOrMore = null,
-            global::System.Action<global::G.PromptToolChoiceSpecificFunctionTool?>? specificFunction = null,
+            global::System.Action<global::G.PromptToolChoiceNone>? none = null,
+
+            global::System.Action<global::G.PromptToolChoiceZeroOrMore>? zeroOrMore = null,
+
+            global::System.Action<global::G.PromptToolChoiceOneOrMore>? oneOrMore = null,
+
+            global::System.Action<global::G.PromptToolChoiceSpecificFunctionTool>? specificFunction = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsNone)
+            {
+                none?.Invoke(None!);
+            }
+            else if (IsZeroOrMore)
+            {
+                zeroOrMore?.Invoke(ZeroOrMore!);
+            }
+            else if (IsOneOrMore)
+            {
+                oneOrMore?.Invoke(OneOrMore!);
+            }
+            else if (IsSpecificFunction)
+            {
+                specificFunction?.Invoke(SpecificFunction!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.PromptToolChoiceNone>? none = null,
+            global::System.Action<global::G.PromptToolChoiceZeroOrMore>? zeroOrMore = null,
+            global::System.Action<global::G.PromptToolChoiceOneOrMore>? oneOrMore = null,
+            global::System.Action<global::G.PromptToolChoiceSpecificFunctionTool>? specificFunction = null,
             bool validate = true)
         {
             if (validate)

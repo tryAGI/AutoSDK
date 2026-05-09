@@ -33,6 +33,19 @@ namespace G
         public bool IsRephrase => Rephrase != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickRephrase(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.RephraseSpan? value)
+        {
+            value = Rephrase;
+            return IsRephrase;
+        }
+
+        /// <summary>
         /// The search portion of the query pipeline. This occurs before any reranking span.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -48,6 +61,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Search))]
 #endif
         public bool IsSearch => Search != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSearch(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.SearchSpan? value)
+        {
+            value = Search;
+            return IsSearch;
+        }
 
         /// <summary>
         /// The reranking of the search result.
@@ -67,6 +93,19 @@ namespace G
         public bool IsRerank => Rerank != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickRerank(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.RerankSpan? value)
+        {
+            value = Rerank;
+            return IsRerank;
+        }
+
+        /// <summary>
         /// The generation by an LLM.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -82,6 +121,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Generation))]
 #endif
         public bool IsGeneration => Generation != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickGeneration(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.GenerationSpan? value)
+        {
+            value = Generation;
+            return IsGeneration;
+        }
 
         /// <summary>
         /// The factual consistency of the generation.
@@ -101,6 +153,19 @@ namespace G
         public bool IsFcs => Fcs != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFcs(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.FactualConsistencyScoreSpan? value)
+        {
+            value = Fcs;
+            return IsFcs;
+        }
+
+        /// <summary>
         /// Provides detailed information about a rewritten query generated for a specific corpus when intelligent query rewriting is enabled.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -116,6 +181,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RewrittenQuery))]
 #endif
         public bool IsRewrittenQuery => RewrittenQuery != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickRewrittenQuery(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.RewrittenQuerySpan? value)
+        {
+            value = RewrittenQuery;
+            return IsRewrittenQuery;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -283,12 +361,12 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.RephraseSpan?, TResult>? rephrase = null,
-            global::System.Func<global::G.SearchSpan?, TResult>? search = null,
-            global::System.Func<global::G.RerankSpan?, TResult>? rerank = null,
-            global::System.Func<global::G.GenerationSpan?, TResult>? generation = null,
-            global::System.Func<global::G.FactualConsistencyScoreSpan?, TResult>? fcs = null,
-            global::System.Func<global::G.RewrittenQuerySpan?, TResult>? rewrittenQuery = null,
+            global::System.Func<global::G.RephraseSpan, TResult>? rephrase = null,
+            global::System.Func<global::G.SearchSpan, TResult>? search = null,
+            global::System.Func<global::G.RerankSpan, TResult>? rerank = null,
+            global::System.Func<global::G.GenerationSpan, TResult>? generation = null,
+            global::System.Func<global::G.FactualConsistencyScoreSpan, TResult>? fcs = null,
+            global::System.Func<global::G.RewrittenQuerySpan, TResult>? rewrittenQuery = null,
             bool validate = true)
         {
             if (validate)
@@ -328,12 +406,60 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.RephraseSpan?>? rephrase = null,
-            global::System.Action<global::G.SearchSpan?>? search = null,
-            global::System.Action<global::G.RerankSpan?>? rerank = null,
-            global::System.Action<global::G.GenerationSpan?>? generation = null,
-            global::System.Action<global::G.FactualConsistencyScoreSpan?>? fcs = null,
-            global::System.Action<global::G.RewrittenQuerySpan?>? rewrittenQuery = null,
+            global::System.Action<global::G.RephraseSpan>? rephrase = null,
+
+            global::System.Action<global::G.SearchSpan>? search = null,
+
+            global::System.Action<global::G.RerankSpan>? rerank = null,
+
+            global::System.Action<global::G.GenerationSpan>? generation = null,
+
+            global::System.Action<global::G.FactualConsistencyScoreSpan>? fcs = null,
+
+            global::System.Action<global::G.RewrittenQuerySpan>? rewrittenQuery = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsRephrase)
+            {
+                rephrase?.Invoke(Rephrase!);
+            }
+            else if (IsSearch)
+            {
+                search?.Invoke(Search!);
+            }
+            else if (IsRerank)
+            {
+                rerank?.Invoke(Rerank!);
+            }
+            else if (IsGeneration)
+            {
+                generation?.Invoke(Generation!);
+            }
+            else if (IsFcs)
+            {
+                fcs?.Invoke(Fcs!);
+            }
+            else if (IsRewrittenQuery)
+            {
+                rewrittenQuery?.Invoke(RewrittenQuery!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.RephraseSpan>? rephrase = null,
+            global::System.Action<global::G.SearchSpan>? search = null,
+            global::System.Action<global::G.RerankSpan>? rerank = null,
+            global::System.Action<global::G.GenerationSpan>? generation = null,
+            global::System.Action<global::G.FactualConsistencyScoreSpan>? fcs = null,
+            global::System.Action<global::G.RewrittenQuerySpan>? rewrittenQuery = null,
             bool validate = true)
         {
             if (validate)

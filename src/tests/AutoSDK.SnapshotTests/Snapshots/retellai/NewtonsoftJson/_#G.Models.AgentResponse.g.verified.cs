@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickAgentResponseVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.AgentResponseVariant1? value)
+        {
+            value = AgentResponseVariant1;
+            return IsAgentResponseVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.AgentRequest? Request { get; init; }
 #else
@@ -47,6 +60,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickRequest(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.AgentRequest? value)
+        {
+            value = Request;
+            return IsRequest;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.AgentResponseVariant3? AgentResponseVariant3 { get; init; }
 #else
@@ -60,6 +86,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AgentResponseVariant3))]
 #endif
         public bool IsAgentResponseVariant3 => AgentResponseVariant3 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickAgentResponseVariant3(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.AgentResponseVariant3? value)
+        {
+            value = AgentResponseVariant3;
+            return IsAgentResponseVariant3;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -158,9 +197,9 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.AgentResponseVariant1?, TResult>? agentResponseVariant1 = null,
-            global::System.Func<global::G.AgentRequest?, TResult>? request = null,
-            global::System.Func<global::G.AgentResponseVariant3?, TResult>? agentResponseVariant3 = null,
+            global::System.Func<global::G.AgentResponseVariant1, TResult>? agentResponseVariant1 = null,
+            global::System.Func<global::G.AgentRequest, TResult>? request = null,
+            global::System.Func<global::G.AgentResponseVariant3, TResult>? agentResponseVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -188,9 +227,39 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.AgentResponseVariant1?>? agentResponseVariant1 = null,
-            global::System.Action<global::G.AgentRequest?>? request = null,
-            global::System.Action<global::G.AgentResponseVariant3?>? agentResponseVariant3 = null,
+            global::System.Action<global::G.AgentResponseVariant1>? agentResponseVariant1 = null,
+
+            global::System.Action<global::G.AgentRequest>? request = null,
+
+            global::System.Action<global::G.AgentResponseVariant3>? agentResponseVariant3 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsAgentResponseVariant1)
+            {
+                agentResponseVariant1?.Invoke(AgentResponseVariant1!);
+            }
+            else if (IsRequest)
+            {
+                request?.Invoke(Request!);
+            }
+            else if (IsAgentResponseVariant3)
+            {
+                agentResponseVariant3?.Invoke(AgentResponseVariant3!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.AgentResponseVariant1>? agentResponseVariant1 = null,
+            global::System.Action<global::G.AgentRequest>? request = null,
+            global::System.Action<global::G.AgentResponseVariant3>? agentResponseVariant3 = null,
             bool validate = true)
         {
             if (validate)

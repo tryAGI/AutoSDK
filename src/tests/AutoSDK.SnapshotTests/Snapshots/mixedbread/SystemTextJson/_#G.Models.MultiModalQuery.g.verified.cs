@@ -28,6 +28,19 @@ namespace G
         public bool IsMultiModalQueryVariant1 => MultiModalQueryVariant1 != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMultiModalQueryVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = MultiModalQueryVariant1;
+            return IsMultiModalQueryVariant1;
+        }
+
+        /// <summary>
         /// The input to create embeddings for.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MultiModalQueryVariant2))]
 #endif
         public bool IsMultiModalQueryVariant2 => MultiModalQueryVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMultiModalQueryVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.MultiModalQueryVariant2? value)
+        {
+            value = MultiModalQueryVariant2;
+            return IsMultiModalQueryVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -119,7 +145,7 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<string?, TResult>? multiModalQueryVariant1 = null,
+            global::System.Func<string, TResult>? multiModalQueryVariant1 = null,
             global::System.Func<global::G.MultiModalQueryVariant2?, TResult>? multiModalQueryVariant2 = null,
             bool validate = true)
         {
@@ -144,7 +170,31 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<string?>? multiModalQueryVariant1 = null,
+            global::System.Action<string>? multiModalQueryVariant1 = null,
+
+            global::System.Action<global::G.MultiModalQueryVariant2?>? multiModalQueryVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsMultiModalQueryVariant1)
+            {
+                multiModalQueryVariant1?.Invoke(MultiModalQueryVariant1!);
+            }
+            else if (IsMultiModalQueryVariant2)
+            {
+                multiModalQueryVariant2?.Invoke(MultiModalQueryVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<string>? multiModalQueryVariant1 = null,
             global::System.Action<global::G.MultiModalQueryVariant2?>? multiModalQueryVariant2 = null,
             bool validate = true)
         {

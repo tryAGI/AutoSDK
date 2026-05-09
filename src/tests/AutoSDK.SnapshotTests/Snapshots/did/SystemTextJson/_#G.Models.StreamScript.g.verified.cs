@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickStreamScriptVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.StreamScriptVariant1? value)
+        {
+            value = StreamScriptVariant1;
+            return IsStreamScriptVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.StreamScriptVariant2? StreamScriptVariant2 { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(StreamScriptVariant2))]
 #endif
         public bool IsStreamScriptVariant2 => StreamScriptVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickStreamScriptVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.StreamScriptVariant2? value)
+        {
+            value = StreamScriptVariant2;
+            return IsStreamScriptVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -119,8 +145,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.StreamScriptVariant1?, TResult>? streamScriptVariant1 = null,
-            global::System.Func<global::G.StreamScriptVariant2?, TResult>? streamScriptVariant2 = null,
+            global::System.Func<global::G.StreamScriptVariant1, TResult>? streamScriptVariant1 = null,
+            global::System.Func<global::G.StreamScriptVariant2, TResult>? streamScriptVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -144,8 +170,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.StreamScriptVariant1?>? streamScriptVariant1 = null,
-            global::System.Action<global::G.StreamScriptVariant2?>? streamScriptVariant2 = null,
+            global::System.Action<global::G.StreamScriptVariant1>? streamScriptVariant1 = null,
+
+            global::System.Action<global::G.StreamScriptVariant2>? streamScriptVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsStreamScriptVariant1)
+            {
+                streamScriptVariant1?.Invoke(StreamScriptVariant1!);
+            }
+            else if (IsStreamScriptVariant2)
+            {
+                streamScriptVariant2?.Invoke(StreamScriptVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.StreamScriptVariant1>? streamScriptVariant1 = null,
+            global::System.Action<global::G.StreamScriptVariant2>? streamScriptVariant2 = null,
             bool validate = true)
         {
             if (validate)

@@ -28,6 +28,19 @@ namespace G
         public bool IsSpanParentStruct => SpanParentStruct != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSpanParentStruct(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.InvokeParentSpanParentStruct? value)
+        {
+            value = SpanParentStruct;
+            return IsSpanParentStruct;
+        }
+
+        /// <summary>
         /// The parent's span identifier, created by calling `.export()` on a span
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InvokeParentVariant2))]
 #endif
         public bool IsInvokeParentVariant2 => InvokeParentVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickInvokeParentVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = InvokeParentVariant2;
+            return IsInvokeParentVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -119,8 +145,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.InvokeParentSpanParentStruct?, TResult>? spanParentStruct = null,
-            global::System.Func<string?, TResult>? invokeParentVariant2 = null,
+            global::System.Func<global::G.InvokeParentSpanParentStruct, TResult>? spanParentStruct = null,
+            global::System.Func<string, TResult>? invokeParentVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -144,8 +170,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.InvokeParentSpanParentStruct?>? spanParentStruct = null,
-            global::System.Action<string?>? invokeParentVariant2 = null,
+            global::System.Action<global::G.InvokeParentSpanParentStruct>? spanParentStruct = null,
+
+            global::System.Action<string>? invokeParentVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsSpanParentStruct)
+            {
+                spanParentStruct?.Invoke(SpanParentStruct!);
+            }
+            else if (IsInvokeParentVariant2)
+            {
+                invokeParentVariant2?.Invoke(InvokeParentVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.InvokeParentSpanParentStruct>? spanParentStruct = null,
+            global::System.Action<string>? invokeParentVariant2 = null,
             bool validate = true)
         {
             if (validate)

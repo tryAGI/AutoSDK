@@ -23,5 +23,23 @@ namespace G
             int? charsPerCaption = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Get subtitles for transcript<br/>
+        /// Export your transcript in SRT or VTT format to use with a video player for subtitles and closed captions.
+        /// </summary>
+        /// <param name="transcriptId"></param>
+        /// <param name="subtitleFormat">
+        /// Format of the subtitles
+        /// </param>
+        /// <param name="charsPerCaption"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<string>> GetSubtitlesAsResponseAsync(
+            string transcriptId,
+            global::G.SubtitleFormat subtitleFormat,
+            int? charsPerCaption = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

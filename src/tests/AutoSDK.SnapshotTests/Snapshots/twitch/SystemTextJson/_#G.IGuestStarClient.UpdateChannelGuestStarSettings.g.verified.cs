@@ -34,6 +34,27 @@ namespace G
         /// * Requires OAuth Scope: `channel:manage:guest_star`
         /// </summary>
         /// <param name="broadcasterId"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+#if NET8_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.Experimental(diagnosticId: "G_BETA_001")]
+#endif
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse> UpdateChannelGuestStarSettingsAsResponseAsync(
+            string broadcasterId,
+
+            global::G.UpdateChannelGuestStarSettingsBody request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// BETA Mutates the channel settings for configuration of the Guest Star feature for a particular host.<br/>
+        /// BETA Mutates the channel settings for configuration of the Guest Star feature for a particular host.<br/>
+        /// __Authorization:__<br/>
+        /// * Query parameter `broadcaster_id` must match the `user_id` in the [User-Access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)<br/>
+        /// * Requires OAuth Scope: `channel:manage:guest_star`
+        /// </summary>
+        /// <param name="broadcasterId"></param>
         /// <param name="isModeratorSendLiveEnabled">
         /// Flag determining if Guest Star moderators have access to control whether a guest is live once assigned to a slot.
         /// </param>

@@ -28,6 +28,19 @@ namespace G
         public bool IsFullTextSearchVariant1 => FullTextSearchVariant1 != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFullTextSearchVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out bool? value)
+        {
+            value = FullTextSearchVariant1;
+            return IsFullTextSearchVariant1;
+        }
+
+        /// <summary>
         /// Configuration options for full-text search.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Config))]
 #endif
         public bool IsConfig => Config != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickConfig(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.FullTextSearchConfig? value)
+        {
+            value = Config;
+            return IsConfig;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -120,7 +146,7 @@ namespace G
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<bool?, TResult>? fullTextSearchVariant1 = null,
-            global::System.Func<global::G.FullTextSearchConfig?, TResult>? config = null,
+            global::System.Func<global::G.FullTextSearchConfig, TResult>? config = null,
             bool validate = true)
         {
             if (validate)
@@ -145,7 +171,31 @@ namespace G
         /// </summary>
         public void Match(
             global::System.Action<bool?>? fullTextSearchVariant1 = null,
-            global::System.Action<global::G.FullTextSearchConfig?>? config = null,
+
+            global::System.Action<global::G.FullTextSearchConfig>? config = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsFullTextSearchVariant1)
+            {
+                fullTextSearchVariant1?.Invoke(FullTextSearchVariant1!);
+            }
+            else if (IsConfig)
+            {
+                config?.Invoke(Config!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<bool?>? fullTextSearchVariant1 = null,
+            global::System.Action<global::G.FullTextSearchConfig>? config = null,
             bool validate = true)
         {
             if (validate)

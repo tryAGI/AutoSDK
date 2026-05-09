@@ -35,6 +35,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickFunction(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.FunctionTool? value)
+        {
+            value = Function;
+            return IsFunction;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.GraphTool? Graph { get; init; }
 #else
@@ -52,6 +65,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickGraph(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.GraphTool? value)
+        {
+            value = Graph;
+            return IsGraph;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.LlmTool? Llm { get; init; }
 #else
@@ -65,6 +91,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Llm))]
 #endif
         public bool IsLlm => Llm != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickLlm(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.LlmTool? value)
+        {
+            value = Llm;
+            return IsLlm;
+        }
 
         /// <summary>
         /// A tool that uses Palmyra Translate to translate text. Note that this tool does not stream results. The response is returned after the translation is complete.
@@ -86,6 +125,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickTranslation(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.TranslationTool? value)
+        {
+            value = Translation;
+            return IsTranslation;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.VisionTool? Vision { get; init; }
 #else
@@ -103,6 +155,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickVision(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.VisionTool? value)
+        {
+            value = Vision;
+            return IsVision;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.WebSearchTool? WebSearch { get; init; }
 #else
@@ -116,6 +181,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(WebSearch))]
 #endif
         public bool IsWebSearch => WebSearch != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickWebSearch(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.WebSearchTool? value)
+        {
+            value = WebSearch;
+            return IsWebSearch;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -283,12 +361,12 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.FunctionTool?, TResult>? function = null,
-            global::System.Func<global::G.GraphTool?, TResult>? graph = null,
-            global::System.Func<global::G.LlmTool?, TResult>? llm = null,
-            global::System.Func<global::G.TranslationTool?, TResult>? translation = null,
-            global::System.Func<global::G.VisionTool?, TResult>? vision = null,
-            global::System.Func<global::G.WebSearchTool?, TResult>? webSearch = null,
+            global::System.Func<global::G.FunctionTool, TResult>? function = null,
+            global::System.Func<global::G.GraphTool, TResult>? graph = null,
+            global::System.Func<global::G.LlmTool, TResult>? llm = null,
+            global::System.Func<global::G.TranslationTool, TResult>? translation = null,
+            global::System.Func<global::G.VisionTool, TResult>? vision = null,
+            global::System.Func<global::G.WebSearchTool, TResult>? webSearch = null,
             bool validate = true)
         {
             if (validate)
@@ -328,12 +406,60 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.FunctionTool?>? function = null,
-            global::System.Action<global::G.GraphTool?>? graph = null,
-            global::System.Action<global::G.LlmTool?>? llm = null,
-            global::System.Action<global::G.TranslationTool?>? translation = null,
-            global::System.Action<global::G.VisionTool?>? vision = null,
-            global::System.Action<global::G.WebSearchTool?>? webSearch = null,
+            global::System.Action<global::G.FunctionTool>? function = null,
+
+            global::System.Action<global::G.GraphTool>? graph = null,
+
+            global::System.Action<global::G.LlmTool>? llm = null,
+
+            global::System.Action<global::G.TranslationTool>? translation = null,
+
+            global::System.Action<global::G.VisionTool>? vision = null,
+
+            global::System.Action<global::G.WebSearchTool>? webSearch = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsFunction)
+            {
+                function?.Invoke(Function!);
+            }
+            else if (IsGraph)
+            {
+                graph?.Invoke(Graph!);
+            }
+            else if (IsLlm)
+            {
+                llm?.Invoke(Llm!);
+            }
+            else if (IsTranslation)
+            {
+                translation?.Invoke(Translation!);
+            }
+            else if (IsVision)
+            {
+                vision?.Invoke(Vision!);
+            }
+            else if (IsWebSearch)
+            {
+                webSearch?.Invoke(WebSearch!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.FunctionTool>? function = null,
+            global::System.Action<global::G.GraphTool>? graph = null,
+            global::System.Action<global::G.LlmTool>? llm = null,
+            global::System.Action<global::G.TranslationTool>? translation = null,
+            global::System.Action<global::G.VisionTool>? vision = null,
+            global::System.Action<global::G.WebSearchTool>? webSearch = null,
             bool validate = true)
         {
             if (validate)

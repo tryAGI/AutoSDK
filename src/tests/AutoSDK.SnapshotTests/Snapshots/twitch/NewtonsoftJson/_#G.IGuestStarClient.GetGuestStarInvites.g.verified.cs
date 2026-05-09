@@ -24,5 +24,24 @@ namespace G
             string sessionId,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// BETA Provides the caller with a list of pending invites to a Guest Star session.<br/>
+        /// BETA Provides the caller with a list of pending invites to a Guest Star session, including the invitee’s ready status while joining the waiting room.<br/>
+        /// __Authorization:__<br/>
+        /// * Query parameter `broadcaster_id` must match the `user_id` in the [User-Access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)<br/>
+        /// * Requires OAuth Scope: `channel:read:guest_star`, `channel:manage:guest_star`, `moderator:read:guest_star` or `moderator:manage:guest_star`
+        /// </summary>
+        /// <param name="broadcasterId"></param>
+        /// <param name="moderatorId"></param>
+        /// <param name="sessionId"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.GetGuestStarInvitesResponse>> GetGuestStarInvitesAsResponseAsync(
+            string broadcasterId,
+            string moderatorId,
+            string sessionId,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

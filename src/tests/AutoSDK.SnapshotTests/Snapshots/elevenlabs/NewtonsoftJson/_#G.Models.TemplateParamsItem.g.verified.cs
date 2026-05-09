@@ -35,6 +35,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickHeader(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.WhatsAppTemplateHeaderComponentParams? value)
+        {
+            value = Header;
+            return IsHeader;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.WhatsAppTemplateBodyComponentParams? Body { get; init; }
 #else
@@ -52,6 +65,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickBody(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.WhatsAppTemplateBodyComponentParams? value)
+        {
+            value = Body;
+            return IsBody;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.WhatsAppTemplateButtonComponentParams? Button { get; init; }
 #else
@@ -65,6 +91,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Button))]
 #endif
         public bool IsButton => Button != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickButton(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.WhatsAppTemplateButtonComponentParams? value)
+        {
+            value = Button;
+            return IsButton;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -166,9 +205,9 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.WhatsAppTemplateHeaderComponentParams?, TResult>? header = null,
-            global::System.Func<global::G.WhatsAppTemplateBodyComponentParams?, TResult>? body = null,
-            global::System.Func<global::G.WhatsAppTemplateButtonComponentParams?, TResult>? button = null,
+            global::System.Func<global::G.WhatsAppTemplateHeaderComponentParams, TResult>? header = null,
+            global::System.Func<global::G.WhatsAppTemplateBodyComponentParams, TResult>? body = null,
+            global::System.Func<global::G.WhatsAppTemplateButtonComponentParams, TResult>? button = null,
             bool validate = true)
         {
             if (validate)
@@ -196,9 +235,39 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.WhatsAppTemplateHeaderComponentParams?>? header = null,
-            global::System.Action<global::G.WhatsAppTemplateBodyComponentParams?>? body = null,
-            global::System.Action<global::G.WhatsAppTemplateButtonComponentParams?>? button = null,
+            global::System.Action<global::G.WhatsAppTemplateHeaderComponentParams>? header = null,
+
+            global::System.Action<global::G.WhatsAppTemplateBodyComponentParams>? body = null,
+
+            global::System.Action<global::G.WhatsAppTemplateButtonComponentParams>? button = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsHeader)
+            {
+                header?.Invoke(Header!);
+            }
+            else if (IsBody)
+            {
+                body?.Invoke(Body!);
+            }
+            else if (IsButton)
+            {
+                button?.Invoke(Button!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.WhatsAppTemplateHeaderComponentParams>? header = null,
+            global::System.Action<global::G.WhatsAppTemplateBodyComponentParams>? body = null,
+            global::System.Action<global::G.WhatsAppTemplateButtonComponentParams>? button = null,
             bool validate = true)
         {
             if (validate)

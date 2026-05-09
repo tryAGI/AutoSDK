@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickResult(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.Result? value)
+        {
+            value = Result;
+            return IsResult;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ResultWithContentVariant2? ResultWithContentVariant2 { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResultWithContentVariant2))]
 #endif
         public bool IsResultWithContentVariant2 => ResultWithContentVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResultWithContentVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ResultWithContentVariant2? value)
+        {
+            value = ResultWithContentVariant2;
+            return IsResultWithContentVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -119,8 +145,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.Result?, TResult>? result = null,
-            global::System.Func<global::G.ResultWithContentVariant2?, TResult>? resultWithContentVariant2 = null,
+            global::System.Func<global::G.Result, TResult>? result = null,
+            global::System.Func<global::G.ResultWithContentVariant2, TResult>? resultWithContentVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -144,8 +170,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.Result?>? result = null,
-            global::System.Action<global::G.ResultWithContentVariant2?>? resultWithContentVariant2 = null,
+            global::System.Action<global::G.Result>? result = null,
+
+            global::System.Action<global::G.ResultWithContentVariant2>? resultWithContentVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsResult)
+            {
+                result?.Invoke(Result!);
+            }
+            else if (IsResultWithContentVariant2)
+            {
+                resultWithContentVariant2?.Invoke(ResultWithContentVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.Result>? result = null,
+            global::System.Action<global::G.ResultWithContentVariant2>? resultWithContentVariant2 = null,
             bool validate = true)
         {
             if (validate)

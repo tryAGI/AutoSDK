@@ -37,6 +37,27 @@ namespace G
         /// - **`application/vnd.github.base64+json`**: Returns the base64-encoded contents. This can be useful if your gist contains any invalid UTF-8 sequences.
         /// </summary>
         /// <param name="gistId"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.GistSimple>> GistsUpdateAsResponseAsync(
+            string gistId,
+
+            global::G.GistsUpdateRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Update a gist<br/>
+        /// Allows you to update a gist's description and to update, delete, or rename gist files. Files<br/>
+        /// from the previous version of the gist that aren't explicitly changed during an edit<br/>
+        /// are unchanged.<br/>
+        /// At least one of `description` or `files` is required.<br/>
+        /// This endpoint supports the following custom media types. For more information, see "[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types)."<br/>
+        /// - **`application/vnd.github.raw+json`**: Returns the raw markdown. This is the default if you do not pass any specific media type.<br/>
+        /// - **`application/vnd.github.base64+json`**: Returns the base64-encoded contents. This can be useful if your gist contains any invalid UTF-8 sequences.
+        /// </summary>
+        /// <param name="gistId"></param>
         /// <param name="description">
         /// The description of the gist.<br/>
         /// Example: Example Ruby script

@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickExpressionVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out float? value)
+        {
+            value = ExpressionVariant1;
+            return IsExpressionVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public string? ExpressionVariant2 { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ExpressionVariant2))]
 #endif
         public bool IsExpressionVariant2 => ExpressionVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickExpressionVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = ExpressionVariant2;
+            return IsExpressionVariant2;
+        }
 
         /// <summary>
         /// 
@@ -64,6 +90,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickCondition(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.Condition? value)
+        {
+            value = Condition;
+            return IsCondition;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.GeoDistance? GeoDistance { get; init; }
 #else
@@ -77,6 +116,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(GeoDistance))]
 #endif
         public bool IsGeoDistance => GeoDistance != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickGeoDistance(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.GeoDistance? value)
+        {
+            value = GeoDistance;
+            return IsGeoDistance;
+        }
 
         /// <summary>
         /// 
@@ -98,6 +150,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickDatetime(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.DatetimeExpression? value)
+        {
+            value = Datetime;
+            return IsDatetime;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.DatetimeKeyExpression? DatetimeKey { get; init; }
 #else
@@ -111,6 +176,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(DatetimeKey))]
 #endif
         public bool IsDatetimeKey => DatetimeKey != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickDatetimeKey(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.DatetimeKeyExpression? value)
+        {
+            value = DatetimeKey;
+            return IsDatetimeKey;
+        }
 
         /// <summary>
         /// 
@@ -132,6 +210,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickMult(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.MultExpression? value)
+        {
+            value = Mult;
+            return IsMult;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.SumExpression? Sum { get; init; }
 #else
@@ -145,6 +236,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Sum))]
 #endif
         public bool IsSum => Sum != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSum(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.SumExpression? value)
+        {
+            value = Sum;
+            return IsSum;
+        }
 
         /// <summary>
         /// 
@@ -166,6 +270,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickNeg(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.NegExpression? value)
+        {
+            value = Neg;
+            return IsNeg;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.AbsExpression? Abs { get; init; }
 #else
@@ -179,6 +296,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Abs))]
 #endif
         public bool IsAbs => Abs != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickAbs(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.AbsExpression? value)
+        {
+            value = Abs;
+            return IsAbs;
+        }
 
         /// <summary>
         /// 
@@ -200,6 +330,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickDiv(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.DivExpression? value)
+        {
+            value = Div;
+            return IsDiv;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.SqrtExpression? Sqrt { get; init; }
 #else
@@ -213,6 +356,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Sqrt))]
 #endif
         public bool IsSqrt => Sqrt != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSqrt(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.SqrtExpression? value)
+        {
+            value = Sqrt;
+            return IsSqrt;
+        }
 
         /// <summary>
         /// 
@@ -234,6 +390,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickPow(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.PowExpression? value)
+        {
+            value = Pow;
+            return IsPow;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ExpExpression? Exp { get; init; }
 #else
@@ -247,6 +416,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Exp))]
 #endif
         public bool IsExp => Exp != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickExp(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ExpExpression? value)
+        {
+            value = Exp;
+            return IsExp;
+        }
 
         /// <summary>
         /// 
@@ -268,6 +450,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickLog10(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.Log10Expression? value)
+        {
+            value = Log10;
+            return IsLog10;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.LnExpression? Ln { get; init; }
 #else
@@ -281,6 +476,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Ln))]
 #endif
         public bool IsLn => Ln != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickLn(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.LnExpression? value)
+        {
+            value = Ln;
+            return IsLn;
+        }
 
         /// <summary>
         /// 
@@ -302,6 +510,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickLinDecay(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.LinDecayExpression? value)
+        {
+            value = LinDecay;
+            return IsLinDecay;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ExpDecayExpression? ExpDecay { get; init; }
 #else
@@ -319,6 +540,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickExpDecay(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ExpDecayExpression? value)
+        {
+            value = ExpDecay;
+            return IsExpDecay;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.GaussDecayExpression? GaussDecay { get; init; }
 #else
@@ -332,6 +566,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(GaussDecay))]
 #endif
         public bool IsGaussDecay => GaussDecay != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickGaussDecay(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.GaussDecayExpression? value)
+        {
+            value = GaussDecay;
+            return IsGaussDecay;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -783,24 +1030,24 @@ namespace G
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<float?, TResult>? expressionVariant1 = null,
-            global::System.Func<string?, TResult>? expressionVariant2 = null,
+            global::System.Func<string, TResult>? expressionVariant2 = null,
             global::System.Func<global::G.Condition?, TResult>? condition = null,
-            global::System.Func<global::G.GeoDistance?, TResult>? geoDistance = null,
-            global::System.Func<global::G.DatetimeExpression?, TResult>? datetime = null,
-            global::System.Func<global::G.DatetimeKeyExpression?, TResult>? datetimeKey = null,
-            global::System.Func<global::G.MultExpression?, TResult>? mult = null,
-            global::System.Func<global::G.SumExpression?, TResult>? sum = null,
-            global::System.Func<global::G.NegExpression?, TResult>? neg = null,
-            global::System.Func<global::G.AbsExpression?, TResult>? abs = null,
-            global::System.Func<global::G.DivExpression?, TResult>? div = null,
-            global::System.Func<global::G.SqrtExpression?, TResult>? sqrt = null,
-            global::System.Func<global::G.PowExpression?, TResult>? pow = null,
-            global::System.Func<global::G.ExpExpression?, TResult>? exp = null,
-            global::System.Func<global::G.Log10Expression?, TResult>? log10 = null,
-            global::System.Func<global::G.LnExpression?, TResult>? ln = null,
-            global::System.Func<global::G.LinDecayExpression?, TResult>? linDecay = null,
-            global::System.Func<global::G.ExpDecayExpression?, TResult>? expDecay = null,
-            global::System.Func<global::G.GaussDecayExpression?, TResult>? gaussDecay = null,
+            global::System.Func<global::G.GeoDistance, TResult>? geoDistance = null,
+            global::System.Func<global::G.DatetimeExpression, TResult>? datetime = null,
+            global::System.Func<global::G.DatetimeKeyExpression, TResult>? datetimeKey = null,
+            global::System.Func<global::G.MultExpression, TResult>? mult = null,
+            global::System.Func<global::G.SumExpression, TResult>? sum = null,
+            global::System.Func<global::G.NegExpression, TResult>? neg = null,
+            global::System.Func<global::G.AbsExpression, TResult>? abs = null,
+            global::System.Func<global::G.DivExpression, TResult>? div = null,
+            global::System.Func<global::G.SqrtExpression, TResult>? sqrt = null,
+            global::System.Func<global::G.PowExpression, TResult>? pow = null,
+            global::System.Func<global::G.ExpExpression, TResult>? exp = null,
+            global::System.Func<global::G.Log10Expression, TResult>? log10 = null,
+            global::System.Func<global::G.LnExpression, TResult>? ln = null,
+            global::System.Func<global::G.LinDecayExpression, TResult>? linDecay = null,
+            global::System.Func<global::G.ExpDecayExpression, TResult>? expDecay = null,
+            global::System.Func<global::G.GaussDecayExpression, TResult>? gaussDecay = null,
             bool validate = true)
         {
             if (validate)
@@ -893,24 +1140,150 @@ namespace G
         /// </summary>
         public void Match(
             global::System.Action<float?>? expressionVariant1 = null,
-            global::System.Action<string?>? expressionVariant2 = null,
+
+            global::System.Action<string>? expressionVariant2 = null,
+
             global::System.Action<global::G.Condition?>? condition = null,
-            global::System.Action<global::G.GeoDistance?>? geoDistance = null,
-            global::System.Action<global::G.DatetimeExpression?>? datetime = null,
-            global::System.Action<global::G.DatetimeKeyExpression?>? datetimeKey = null,
-            global::System.Action<global::G.MultExpression?>? mult = null,
-            global::System.Action<global::G.SumExpression?>? sum = null,
-            global::System.Action<global::G.NegExpression?>? neg = null,
-            global::System.Action<global::G.AbsExpression?>? abs = null,
-            global::System.Action<global::G.DivExpression?>? div = null,
-            global::System.Action<global::G.SqrtExpression?>? sqrt = null,
-            global::System.Action<global::G.PowExpression?>? pow = null,
-            global::System.Action<global::G.ExpExpression?>? exp = null,
-            global::System.Action<global::G.Log10Expression?>? log10 = null,
-            global::System.Action<global::G.LnExpression?>? ln = null,
-            global::System.Action<global::G.LinDecayExpression?>? linDecay = null,
-            global::System.Action<global::G.ExpDecayExpression?>? expDecay = null,
-            global::System.Action<global::G.GaussDecayExpression?>? gaussDecay = null,
+
+            global::System.Action<global::G.GeoDistance>? geoDistance = null,
+
+            global::System.Action<global::G.DatetimeExpression>? datetime = null,
+
+            global::System.Action<global::G.DatetimeKeyExpression>? datetimeKey = null,
+
+            global::System.Action<global::G.MultExpression>? mult = null,
+
+            global::System.Action<global::G.SumExpression>? sum = null,
+
+            global::System.Action<global::G.NegExpression>? neg = null,
+
+            global::System.Action<global::G.AbsExpression>? abs = null,
+
+            global::System.Action<global::G.DivExpression>? div = null,
+
+            global::System.Action<global::G.SqrtExpression>? sqrt = null,
+
+            global::System.Action<global::G.PowExpression>? pow = null,
+
+            global::System.Action<global::G.ExpExpression>? exp = null,
+
+            global::System.Action<global::G.Log10Expression>? log10 = null,
+
+            global::System.Action<global::G.LnExpression>? ln = null,
+
+            global::System.Action<global::G.LinDecayExpression>? linDecay = null,
+
+            global::System.Action<global::G.ExpDecayExpression>? expDecay = null,
+
+            global::System.Action<global::G.GaussDecayExpression>? gaussDecay = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsExpressionVariant1)
+            {
+                expressionVariant1?.Invoke(ExpressionVariant1!);
+            }
+            else if (IsExpressionVariant2)
+            {
+                expressionVariant2?.Invoke(ExpressionVariant2!);
+            }
+            else if (IsCondition)
+            {
+                condition?.Invoke(Condition!);
+            }
+            else if (IsGeoDistance)
+            {
+                geoDistance?.Invoke(GeoDistance!);
+            }
+            else if (IsDatetime)
+            {
+                datetime?.Invoke(Datetime!);
+            }
+            else if (IsDatetimeKey)
+            {
+                datetimeKey?.Invoke(DatetimeKey!);
+            }
+            else if (IsMult)
+            {
+                mult?.Invoke(Mult!);
+            }
+            else if (IsSum)
+            {
+                sum?.Invoke(Sum!);
+            }
+            else if (IsNeg)
+            {
+                neg?.Invoke(Neg!);
+            }
+            else if (IsAbs)
+            {
+                abs?.Invoke(Abs!);
+            }
+            else if (IsDiv)
+            {
+                div?.Invoke(Div!);
+            }
+            else if (IsSqrt)
+            {
+                sqrt?.Invoke(Sqrt!);
+            }
+            else if (IsPow)
+            {
+                pow?.Invoke(Pow!);
+            }
+            else if (IsExp)
+            {
+                exp?.Invoke(Exp!);
+            }
+            else if (IsLog10)
+            {
+                log10?.Invoke(Log10!);
+            }
+            else if (IsLn)
+            {
+                ln?.Invoke(Ln!);
+            }
+            else if (IsLinDecay)
+            {
+                linDecay?.Invoke(LinDecay!);
+            }
+            else if (IsExpDecay)
+            {
+                expDecay?.Invoke(ExpDecay!);
+            }
+            else if (IsGaussDecay)
+            {
+                gaussDecay?.Invoke(GaussDecay!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<float?>? expressionVariant1 = null,
+            global::System.Action<string>? expressionVariant2 = null,
+            global::System.Action<global::G.Condition?>? condition = null,
+            global::System.Action<global::G.GeoDistance>? geoDistance = null,
+            global::System.Action<global::G.DatetimeExpression>? datetime = null,
+            global::System.Action<global::G.DatetimeKeyExpression>? datetimeKey = null,
+            global::System.Action<global::G.MultExpression>? mult = null,
+            global::System.Action<global::G.SumExpression>? sum = null,
+            global::System.Action<global::G.NegExpression>? neg = null,
+            global::System.Action<global::G.AbsExpression>? abs = null,
+            global::System.Action<global::G.DivExpression>? div = null,
+            global::System.Action<global::G.SqrtExpression>? sqrt = null,
+            global::System.Action<global::G.PowExpression>? pow = null,
+            global::System.Action<global::G.ExpExpression>? exp = null,
+            global::System.Action<global::G.Log10Expression>? log10 = null,
+            global::System.Action<global::G.LnExpression>? ln = null,
+            global::System.Action<global::G.LinDecayExpression>? linDecay = null,
+            global::System.Action<global::G.ExpDecayExpression>? expDecay = null,
+            global::System.Action<global::G.GaussDecayExpression>? gaussDecay = null,
             bool validate = true)
         {
             if (validate)

@@ -24,12 +24,25 @@ namespace G.JsonConverters
                 foreach (var __jsonProp in __jsonDocument.RootElement.EnumerateObject())
                 {
                     __jsonProps.Add(__jsonProp.Name);
+                    if (__jsonProp.Value.ValueKind == global::System.Text.Json.JsonValueKind.Object)
+                    {
+                        foreach (var __nestedJsonProp in __jsonProp.Value.EnumerateObject())
+                        {
+                            __jsonProps.Add(__jsonProp.Name + "." + __nestedJsonProp.Name);
+                        }
+                    }
+
                 }
             }
 
             var __score0 = 0;
             if (__jsonProps.Contains("auth")) __score0++;
             if (__jsonProps.Contains("capabilities")) __score0++;
+            if (__jsonProps.Contains("capabilities.context_limit")) __score0++;
+            if (__jsonProps.Contains("capabilities.image_support")) __score0++;
+            if (__jsonProps.Contains("capabilities.requires_role_alternation")) __score0++;
+            if (__jsonProps.Contains("capabilities.structured_outputs")) __score0++;
+            if (__jsonProps.Contains("capabilities.tool_calling")) __score0++;
             if (__jsonProps.Contains("description")) __score0++;
             if (__jsonProps.Contains("enabled")) __score0++;
             if (__jsonProps.Contains("headers")) __score0++;

@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickBaseInputsOneOf1ItemsOneOf0Phase0(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.BaseInputsOneOf1ItemsOneOf0Phase0? value)
+        {
+            value = BaseInputsOneOf1ItemsOneOf0Phase0;
+            return IsBaseInputsOneOf1ItemsOneOf0Phase0;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.BaseInputsOneOf1ItemsOneOf0Phase1? BaseInputsOneOf1ItemsOneOf0Phase1 { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BaseInputsOneOf1ItemsOneOf0Phase1))]
 #endif
         public bool IsBaseInputsOneOf1ItemsOneOf0Phase1 => BaseInputsOneOf1ItemsOneOf0Phase1 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickBaseInputsOneOf1ItemsOneOf0Phase1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.BaseInputsOneOf1ItemsOneOf0Phase1? value)
+        {
+            value = BaseInputsOneOf1ItemsOneOf0Phase1;
+            return IsBaseInputsOneOf1ItemsOneOf0Phase1;
+        }
 
         /// <summary>
         /// Any type
@@ -60,6 +86,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BaseInputsOneOf1ItemsOneOf0PhaseVariant3))]
 #endif
         public bool IsBaseInputsOneOf1ItemsOneOf0PhaseVariant3 => BaseInputsOneOf1ItemsOneOf0PhaseVariant3 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickBaseInputsOneOf1ItemsOneOf0PhaseVariant3(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out object? value)
+        {
+            value = BaseInputsOneOf1ItemsOneOf0PhaseVariant3;
+            return IsBaseInputsOneOf1ItemsOneOf0PhaseVariant3;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -142,7 +181,7 @@ namespace G
         public TResult? Match<TResult>(
             global::System.Func<global::G.BaseInputsOneOf1ItemsOneOf0Phase0?, TResult>? baseInputsOneOf1ItemsOneOf0Phase0 = null,
             global::System.Func<global::G.BaseInputsOneOf1ItemsOneOf0Phase1?, TResult>? baseInputsOneOf1ItemsOneOf0Phase1 = null,
-            global::System.Func<object?, TResult>? baseInputsOneOf1ItemsOneOf0PhaseVariant3 = null,
+            global::System.Func<object, TResult>? baseInputsOneOf1ItemsOneOf0PhaseVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -171,8 +210,38 @@ namespace G
         /// </summary>
         public void Match(
             global::System.Action<global::G.BaseInputsOneOf1ItemsOneOf0Phase0?>? baseInputsOneOf1ItemsOneOf0Phase0 = null,
+
             global::System.Action<global::G.BaseInputsOneOf1ItemsOneOf0Phase1?>? baseInputsOneOf1ItemsOneOf0Phase1 = null,
-            global::System.Action<object?>? baseInputsOneOf1ItemsOneOf0PhaseVariant3 = null,
+
+            global::System.Action<object>? baseInputsOneOf1ItemsOneOf0PhaseVariant3 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsBaseInputsOneOf1ItemsOneOf0Phase0)
+            {
+                baseInputsOneOf1ItemsOneOf0Phase0?.Invoke(BaseInputsOneOf1ItemsOneOf0Phase0!);
+            }
+            else if (IsBaseInputsOneOf1ItemsOneOf0Phase1)
+            {
+                baseInputsOneOf1ItemsOneOf0Phase1?.Invoke(BaseInputsOneOf1ItemsOneOf0Phase1!);
+            }
+            else if (IsBaseInputsOneOf1ItemsOneOf0PhaseVariant3)
+            {
+                baseInputsOneOf1ItemsOneOf0PhaseVariant3?.Invoke(BaseInputsOneOf1ItemsOneOf0PhaseVariant3!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.BaseInputsOneOf1ItemsOneOf0Phase0?>? baseInputsOneOf1ItemsOneOf0Phase0 = null,
+            global::System.Action<global::G.BaseInputsOneOf1ItemsOneOf0Phase1?>? baseInputsOneOf1ItemsOneOf0Phase1 = null,
+            global::System.Action<object>? baseInputsOneOf1ItemsOneOf0PhaseVariant3 = null,
             bool validate = true)
         {
             if (validate)

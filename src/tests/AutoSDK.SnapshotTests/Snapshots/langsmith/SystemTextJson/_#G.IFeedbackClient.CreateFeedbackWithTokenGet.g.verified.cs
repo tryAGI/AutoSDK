@@ -25,5 +25,25 @@ namespace G
             string? correction = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create Feedback With Token Get<br/>
+        /// Create a new feedback with a token.
+        /// </summary>
+        /// <param name="token"></param>
+        /// <param name="score"></param>
+        /// <param name="value"></param>
+        /// <param name="comment"></param>
+        /// <param name="correction"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<string>> CreateFeedbackWithTokenGetAsResponseAsync(
+            global::System.Guid token,
+            global::G.AnyOf<double?, int?, bool?, object>? score = default,
+            global::G.AnyOf<double?, int?, bool?, string, object>? value = default,
+            string? comment = default,
+            string? correction = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

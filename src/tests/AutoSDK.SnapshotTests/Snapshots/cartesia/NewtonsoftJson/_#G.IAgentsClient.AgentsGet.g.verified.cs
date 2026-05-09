@@ -21,5 +21,21 @@ namespace G
             string agentId,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Get Agent<br/>
+        /// Returns the details of a specific agent. To create an agent, use the CLI or the Playground for the best experience and integration with Github.
+        /// </summary>
+        /// <param name="cartesiaVersion">
+        /// Example: 2025-04-16
+        /// </param>
+        /// <param name="agentId"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.AgentSummary>> AgentsGetAsResponseAsync(
+            global::G.AgentsGetCartesiaVersion cartesiaVersion,
+            string agentId,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

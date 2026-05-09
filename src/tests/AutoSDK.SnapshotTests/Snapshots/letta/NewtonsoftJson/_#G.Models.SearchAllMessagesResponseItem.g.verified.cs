@@ -34,6 +34,19 @@ namespace G
         public bool IsSystemMessage => SystemMessage != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSystemMessage(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.SystemMessageListResult? value)
+        {
+            value = SystemMessage;
+            return IsSystemMessage;
+        }
+
+        /// <summary>
         /// User message list result with agent context.<br/>
         /// Shape is identical to UpdateUserMessage but includes the owning agent_id and message id.
         /// </summary>
@@ -50,6 +63,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(UserMessage))]
 #endif
         public bool IsUserMessage => UserMessage != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickUserMessage(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.UserMessageListResult? value)
+        {
+            value = UserMessage;
+            return IsUserMessage;
+        }
 
         /// <summary>
         /// Reasoning message list result with agent context.<br/>
@@ -70,6 +96,19 @@ namespace G
         public bool IsReasoningMessage => ReasoningMessage != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickReasoningMessage(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ReasoningMessageListResult? value)
+        {
+            value = ReasoningMessage;
+            return IsReasoningMessage;
+        }
+
+        /// <summary>
         /// Assistant message list result with agent context.<br/>
         /// Shape is identical to UpdateAssistantMessage but includes the owning agent_id and message id.
         /// </summary>
@@ -86,6 +125,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AssistantMessage))]
 #endif
         public bool IsAssistantMessage => AssistantMessage != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickAssistantMessage(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.AssistantMessageListResult? value)
+        {
+            value = AssistantMessage;
+            return IsAssistantMessage;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -209,10 +261,10 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.SystemMessageListResult?, TResult>? systemMessage = null,
-            global::System.Func<global::G.UserMessageListResult?, TResult>? userMessage = null,
-            global::System.Func<global::G.ReasoningMessageListResult?, TResult>? reasoningMessage = null,
-            global::System.Func<global::G.AssistantMessageListResult?, TResult>? assistantMessage = null,
+            global::System.Func<global::G.SystemMessageListResult, TResult>? systemMessage = null,
+            global::System.Func<global::G.UserMessageListResult, TResult>? userMessage = null,
+            global::System.Func<global::G.ReasoningMessageListResult, TResult>? reasoningMessage = null,
+            global::System.Func<global::G.AssistantMessageListResult, TResult>? assistantMessage = null,
             bool validate = true)
         {
             if (validate)
@@ -244,10 +296,46 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.SystemMessageListResult?>? systemMessage = null,
-            global::System.Action<global::G.UserMessageListResult?>? userMessage = null,
-            global::System.Action<global::G.ReasoningMessageListResult?>? reasoningMessage = null,
-            global::System.Action<global::G.AssistantMessageListResult?>? assistantMessage = null,
+            global::System.Action<global::G.SystemMessageListResult>? systemMessage = null,
+
+            global::System.Action<global::G.UserMessageListResult>? userMessage = null,
+
+            global::System.Action<global::G.ReasoningMessageListResult>? reasoningMessage = null,
+
+            global::System.Action<global::G.AssistantMessageListResult>? assistantMessage = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsSystemMessage)
+            {
+                systemMessage?.Invoke(SystemMessage!);
+            }
+            else if (IsUserMessage)
+            {
+                userMessage?.Invoke(UserMessage!);
+            }
+            else if (IsReasoningMessage)
+            {
+                reasoningMessage?.Invoke(ReasoningMessage!);
+            }
+            else if (IsAssistantMessage)
+            {
+                assistantMessage?.Invoke(AssistantMessage!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.SystemMessageListResult>? systemMessage = null,
+            global::System.Action<global::G.UserMessageListResult>? userMessage = null,
+            global::System.Action<global::G.ReasoningMessageListResult>? reasoningMessage = null,
+            global::System.Action<global::G.AssistantMessageListResult>? assistantMessage = null,
             bool validate = true)
         {
             if (validate)

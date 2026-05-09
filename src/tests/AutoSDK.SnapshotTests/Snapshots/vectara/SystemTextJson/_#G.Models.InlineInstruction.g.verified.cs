@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickRequestBase(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.InstructionRequestBase? value)
+        {
+            value = RequestBase;
+            return IsRequestBase;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.InlineInstructionVariant2? InlineInstructionVariant2 { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InlineInstructionVariant2))]
 #endif
         public bool IsInlineInstructionVariant2 => InlineInstructionVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickInlineInstructionVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.InlineInstructionVariant2? value)
+        {
+            value = InlineInstructionVariant2;
+            return IsInlineInstructionVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -119,8 +145,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.InstructionRequestBase?, TResult>? requestBase = null,
-            global::System.Func<global::G.InlineInstructionVariant2?, TResult>? inlineInstructionVariant2 = null,
+            global::System.Func<global::G.InstructionRequestBase, TResult>? requestBase = null,
+            global::System.Func<global::G.InlineInstructionVariant2, TResult>? inlineInstructionVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -144,8 +170,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.InstructionRequestBase?>? requestBase = null,
-            global::System.Action<global::G.InlineInstructionVariant2?>? inlineInstructionVariant2 = null,
+            global::System.Action<global::G.InstructionRequestBase>? requestBase = null,
+
+            global::System.Action<global::G.InlineInstructionVariant2>? inlineInstructionVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsRequestBase)
+            {
+                requestBase?.Invoke(RequestBase!);
+            }
+            else if (IsInlineInstructionVariant2)
+            {
+                inlineInstructionVariant2?.Invoke(InlineInstructionVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.InstructionRequestBase>? requestBase = null,
+            global::System.Action<global::G.InlineInstructionVariant2>? inlineInstructionVariant2 = null,
             bool validate = true)
         {
             if (validate)

@@ -25,5 +25,25 @@ namespace G
             global::System.DateTime? stop = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// List model trigger time charts<br/>
+        /// Returns a timeline of model trigger counts for a given requester. The<br/>
+        /// response will contain one set of records (datapoints), representing the<br/>
+        /// amount of triggers in a time bucket.
+        /// </summary>
+        /// <param name="requesterId"></param>
+        /// <param name="aggregationWindow"></param>
+        /// <param name="start"></param>
+        /// <param name="stop"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.ListModelTriggerChartRecordsResponse>> ListModelTriggerChartRecordsAsResponseAsync(
+            string requesterId,
+            string? aggregationWindow = default,
+            global::System.DateTime? start = default,
+            global::System.DateTime? stop = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

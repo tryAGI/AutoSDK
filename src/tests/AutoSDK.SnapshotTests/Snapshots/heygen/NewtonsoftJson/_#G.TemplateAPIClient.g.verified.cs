@@ -12,7 +12,7 @@ namespace G
     /// - **Template Videos:** In contrast, template videos offer a wide canvas for creativity. They enable you to customize existing text, images, videos, audios, voices and avatars seamlessly. If you need a richer, more versatile content format for your workflow, templates are the perfect choice.<br/>
     ///     <br/>
     /// **Guide**: [https://docs.heygen.com/docs/generate-video-from-template-v2](https://docs.heygen.com/docs/generate-video-from-template-v2)  <br/>
-    /// **Reference**: [https://docs.heygen.com/reference/generate-from-template-v2](https://docs.heygen.com/reference/generate-from-template-v2)[](https://docs.heygen.com/reference/create-an-avatar-video-v2).<br/>
+    /// **Reference**: [https://docs.heygen.com/reference/generate-from-template-v2](https://docs.heygen.com/reference/generate-from-template-v2)[](https://docs.heygen.com/reference/create-an-avatar-video-v2)<br/>
     /// If no httpClient is provided, a new one will be created.<br/>
     /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
     /// </summary>
@@ -29,7 +29,7 @@ namespace G
         public global::System.Net.Http.HttpClient HttpClient { get; }
 
         /// <inheritdoc/>
-        public System.Uri? BaseUri => HttpClient.BaseAddress;
+        public System.Uri? BaseUri => ResolveDisplayedBaseUri();
 
         /// <inheritdoc/>
         public global::System.Collections.Generic.List<global::G.EndPointAuthorization> Authorizations { get; }
@@ -42,11 +42,42 @@ namespace G
 
         /// <inheritdoc/>
         public global::G.AutoSDKClientOptions Options { get; }
+
+
+        internal global::G.AutoSDKServerConfiguration AutoSDKServerConfiguration { get; set; } = new global::G.AutoSDKServerConfiguration();
         /// <summary>
         /// 
         /// </summary>
         public global::Newtonsoft.Json.JsonSerializerSettings JsonSerializerOptions { get; set; } = new global::Newtonsoft.Json.JsonSerializerSettings();
 
+
+
+        private static readonly global::G.AutoSDKServer[] s_availableServers = new global::G.AutoSDKServer[]
+        {            new global::G.AutoSDKServer(
+                id: "https-api-heygen-com",
+                name: "api.heygen.com",
+                url: "https://api.heygen.com/",
+                description: ""),
+            new global::G.AutoSDKServer(
+                id: "https-upload-heygen-com",
+                name: "upload.heygen.com",
+                url: "https://upload.heygen.com/",
+                description: ""),
+        };
+
+        /// <summary>
+        /// The server options available for this client.
+        /// </summary>
+        public global::System.Collections.Generic.IReadOnlyList<global::G.AutoSDKServer> AvailableServers => s_availableServers;
+
+        /// <summary>
+        /// The currently selected server for this client, if any.
+        /// </summary>
+        public global::G.AutoSDKServer? SelectedServer
+        {
+            get => ResolveSelectedServer();
+            set => SelectServer(value);
+        }
 
         /// <summary>
         /// Creates a new instance of the TemplateApiClient.
@@ -81,10 +112,10 @@ namespace G
         /// <param name="options">Client-wide request defaults such as headers, query parameters, retries, and timeout.</param>
         /// <param name="disposeHttpClient">Dispose the HttpClient when the instance is disposed. True by default.</param>
         public TemplateApiClient(
-            global::System.Net.Http.HttpClient? httpClient = null,
-            global::System.Uri? baseUri = null,
-            global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations = null,
-            global::G.AutoSDKClientOptions? options = null,
+            global::System.Net.Http.HttpClient? httpClient,
+            global::System.Uri? baseUri,
+            global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations,
+            global::G.AutoSDKClientOptions? options,
             bool disposeHttpClient = true)
         {
 
@@ -93,6 +124,8 @@ namespace G
             Authorizations = authorizations ?? new global::System.Collections.Generic.List<global::G.EndPointAuthorization>();
             Options = options ?? new global::G.AutoSDKClientOptions();
             _disposeHttpClient = disposeHttpClient;
+
+            AutoSDKServerConfiguration.ExplicitBaseUri = baseUri ?? httpClient?.BaseAddress;
 
             Initialized(HttpClient);
         }
@@ -120,5 +153,117 @@ namespace G
             global::System.Net.Http.HttpClient client,
             global::System.Net.Http.HttpResponseMessage response,
             ref string content);
+
+
+        /// <summary>
+        /// Selects one of the generated server options by id.
+        /// </summary>
+        public bool TrySelectServer(string serverId)
+        {
+            if (string.IsNullOrWhiteSpace(serverId))
+            {
+                return false;
+            }
+
+            foreach (var server in s_availableServers)
+            {
+                if (string.Equals(server.Id, serverId, global::System.StringComparison.OrdinalIgnoreCase))
+                {
+                    AutoSDKServerConfiguration.SelectedServer = server;
+                    AutoSDKServerConfiguration.ExplicitBaseUri = null;
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        /// <summary>
+        /// Clears the currently selected server.
+        /// </summary>
+        public void ClearSelectedServer()
+        {
+            AutoSDKServerConfiguration.SelectedServer = null;
+        }
+
+        private global::G.AutoSDKServer? ResolveSelectedServer()
+        {
+            var selectedServer = AutoSDKServerConfiguration.SelectedServer;
+            if (selectedServer is null)
+            {
+                return null;
+            }
+
+            foreach (var server in s_availableServers)
+            {
+                if (string.Equals(server.Id, selectedServer.Id, global::System.StringComparison.Ordinal))
+                {
+                    return server;
+                }
+            }
+
+            return null;
+        }
+
+        private void SelectServer(global::G.AutoSDKServer? server)
+        {
+            if (server is null)
+            {
+                AutoSDKServerConfiguration.SelectedServer = null;
+                return;
+            }
+
+            foreach (var candidate in s_availableServers)
+            {
+                if (string.Equals(candidate.Id, server.Id, global::System.StringComparison.Ordinal))
+                {
+                    AutoSDKServerConfiguration.SelectedServer = candidate;
+                    AutoSDKServerConfiguration.ExplicitBaseUri = null;
+                    return;
+                }
+            }
+
+            throw new global::System.ArgumentException("The provided server is not available for this client.", nameof(server));
+        }
+
+        private global::System.Uri? ResolveDisplayedBaseUri()
+        {
+            if (AutoSDKServerConfiguration.ExplicitBaseUri is global::System.Uri explicitBaseUri)
+            {
+                return explicitBaseUri;
+            }
+
+            return ResolveSelectedServer()?.Uri ?? HttpClient.BaseAddress;
+        }
+
+        private global::System.Uri? ResolveBaseUri(
+            global::G.AutoSDKServer[] servers,
+            string defaultBaseUrl)
+        {
+            if (AutoSDKServerConfiguration.ExplicitBaseUri is global::System.Uri explicitBaseUri)
+            {
+                return explicitBaseUri;
+            }
+
+            if (AutoSDKServerConfiguration.SelectedServer is global::G.AutoSDKServer selectedServer)
+            {
+                foreach (var server in servers)
+                {
+                    if (string.Equals(server.Id, selectedServer.Id, global::System.StringComparison.Ordinal))
+                    {
+                        return server.Uri;
+                    }
+                }
+            }
+
+            if (servers.Length > 0)
+            {
+                return servers[0].Uri;
+            }
+
+            return string.IsNullOrWhiteSpace(defaultBaseUrl)
+                ? HttpClient.BaseAddress
+                : new global::System.Uri(defaultBaseUrl, global::System.UriKind.RelativeOrAbsolute);
+        }
     }
 }

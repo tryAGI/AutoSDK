@@ -35,6 +35,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickCharLocation(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ResponseCharLocationCitation? value)
+        {
+            value = CharLocation;
+            return IsCharLocation;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ResponsePageLocationCitation? PageLocation { get; init; }
 #else
@@ -52,6 +65,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickPageLocation(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ResponsePageLocationCitation? value)
+        {
+            value = PageLocation;
+            return IsPageLocation;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ResponseContentBlockLocationCitation? ContentBlockLocation { get; init; }
 #else
@@ -65,6 +91,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ContentBlockLocation))]
 #endif
         public bool IsContentBlockLocation => ContentBlockLocation != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickContentBlockLocation(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ResponseContentBlockLocationCitation? value)
+        {
+            value = ContentBlockLocation;
+            return IsContentBlockLocation;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -166,9 +205,9 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.ResponseCharLocationCitation?, TResult>? charLocation = null,
-            global::System.Func<global::G.ResponsePageLocationCitation?, TResult>? pageLocation = null,
-            global::System.Func<global::G.ResponseContentBlockLocationCitation?, TResult>? contentBlockLocation = null,
+            global::System.Func<global::G.ResponseCharLocationCitation, TResult>? charLocation = null,
+            global::System.Func<global::G.ResponsePageLocationCitation, TResult>? pageLocation = null,
+            global::System.Func<global::G.ResponseContentBlockLocationCitation, TResult>? contentBlockLocation = null,
             bool validate = true)
         {
             if (validate)
@@ -196,9 +235,39 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.ResponseCharLocationCitation?>? charLocation = null,
-            global::System.Action<global::G.ResponsePageLocationCitation?>? pageLocation = null,
-            global::System.Action<global::G.ResponseContentBlockLocationCitation?>? contentBlockLocation = null,
+            global::System.Action<global::G.ResponseCharLocationCitation>? charLocation = null,
+
+            global::System.Action<global::G.ResponsePageLocationCitation>? pageLocation = null,
+
+            global::System.Action<global::G.ResponseContentBlockLocationCitation>? contentBlockLocation = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsCharLocation)
+            {
+                charLocation?.Invoke(CharLocation!);
+            }
+            else if (IsPageLocation)
+            {
+                pageLocation?.Invoke(PageLocation!);
+            }
+            else if (IsContentBlockLocation)
+            {
+                contentBlockLocation?.Invoke(ContentBlockLocation!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.ResponseCharLocationCitation>? charLocation = null,
+            global::System.Action<global::G.ResponsePageLocationCitation>? pageLocation = null,
+            global::System.Action<global::G.ResponseContentBlockLocationCitation>? contentBlockLocation = null,
             bool validate = true)
         {
             if (validate)

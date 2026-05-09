@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickStream(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ChatStreamEvent? value)
+        {
+            value = Stream;
+            return IsStream;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ChatCitationGenerationEventLg3v2o? Lg3v2o { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Lg3v2o))]
 #endif
         public bool IsLg3v2o => Lg3v2o != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickLg3v2o(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ChatCitationGenerationEventLg3v2o? value)
+        {
+            value = Lg3v2o;
+            return IsLg3v2o;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -119,8 +145,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.ChatStreamEvent?, TResult>? stream = null,
-            global::System.Func<global::G.ChatCitationGenerationEventLg3v2o?, TResult>? lg3v2o = null,
+            global::System.Func<global::G.ChatStreamEvent, TResult>? stream = null,
+            global::System.Func<global::G.ChatCitationGenerationEventLg3v2o, TResult>? lg3v2o = null,
             bool validate = true)
         {
             if (validate)
@@ -144,8 +170,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.ChatStreamEvent?>? stream = null,
-            global::System.Action<global::G.ChatCitationGenerationEventLg3v2o?>? lg3v2o = null,
+            global::System.Action<global::G.ChatStreamEvent>? stream = null,
+
+            global::System.Action<global::G.ChatCitationGenerationEventLg3v2o>? lg3v2o = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsStream)
+            {
+                stream?.Invoke(Stream!);
+            }
+            else if (IsLg3v2o)
+            {
+                lg3v2o?.Invoke(Lg3v2o!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.ChatStreamEvent>? stream = null,
+            global::System.Action<global::G.ChatCitationGenerationEventLg3v2o>? lg3v2o = null,
             bool validate = true)
         {
             if (validate)

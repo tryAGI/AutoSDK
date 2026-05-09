@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickChatStreamEvent(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ChatStreamEvent? value)
+        {
+            value = ChatStreamEvent;
+            return IsChatStreamEvent;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ChatStreamEndEventY8gq2x? Y8gq2x { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Y8gq2x))]
 #endif
         public bool IsY8gq2x => Y8gq2x != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickY8gq2x(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ChatStreamEndEventY8gq2x? value)
+        {
+            value = Y8gq2x;
+            return IsY8gq2x;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -119,8 +145,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.ChatStreamEvent?, TResult>? chatStreamEvent = null,
-            global::System.Func<global::G.ChatStreamEndEventY8gq2x?, TResult>? y8gq2x = null,
+            global::System.Func<global::G.ChatStreamEvent, TResult>? chatStreamEvent = null,
+            global::System.Func<global::G.ChatStreamEndEventY8gq2x, TResult>? y8gq2x = null,
             bool validate = true)
         {
             if (validate)
@@ -144,8 +170,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.ChatStreamEvent?>? chatStreamEvent = null,
-            global::System.Action<global::G.ChatStreamEndEventY8gq2x?>? y8gq2x = null,
+            global::System.Action<global::G.ChatStreamEvent>? chatStreamEvent = null,
+
+            global::System.Action<global::G.ChatStreamEndEventY8gq2x>? y8gq2x = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsChatStreamEvent)
+            {
+                chatStreamEvent?.Invoke(ChatStreamEvent!);
+            }
+            else if (IsY8gq2x)
+            {
+                y8gq2x?.Invoke(Y8gq2x!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.ChatStreamEvent>? chatStreamEvent = null,
+            global::System.Action<global::G.ChatStreamEndEventY8gq2x>? y8gq2x = null,
             bool validate = true)
         {
             if (validate)

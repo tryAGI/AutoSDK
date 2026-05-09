@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickMessagesRequestSystemVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = MessagesRequestSystemVariant1;
+            return IsMessagesRequestSystemVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<global::G.MessagesRequestSystemOneOf1Items>? MessagesRequestSystem1 { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessagesRequestSystem1))]
 #endif
         public bool IsMessagesRequestSystem1 => MessagesRequestSystem1 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMessagesRequestSystem1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::System.Collections.Generic.IList<global::G.MessagesRequestSystemOneOf1Items>? value)
+        {
+            value = MessagesRequestSystem1;
+            return IsMessagesRequestSystem1;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -101,8 +127,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<string?, TResult>? messagesRequestSystemVariant1 = null,
-            global::System.Func<global::System.Collections.Generic.IList<global::G.MessagesRequestSystemOneOf1Items>?, TResult>? messagesRequestSystem1 = null,
+            global::System.Func<string, TResult>? messagesRequestSystemVariant1 = null,
+            global::System.Func<global::System.Collections.Generic.IList<global::G.MessagesRequestSystemOneOf1Items>, TResult>? messagesRequestSystem1 = null,
             bool validate = true)
         {
             if (validate)
@@ -126,8 +152,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<string?>? messagesRequestSystemVariant1 = null,
-            global::System.Action<global::System.Collections.Generic.IList<global::G.MessagesRequestSystemOneOf1Items>?>? messagesRequestSystem1 = null,
+            global::System.Action<string>? messagesRequestSystemVariant1 = null,
+
+            global::System.Action<global::System.Collections.Generic.IList<global::G.MessagesRequestSystemOneOf1Items>>? messagesRequestSystem1 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsMessagesRequestSystemVariant1)
+            {
+                messagesRequestSystemVariant1?.Invoke(MessagesRequestSystemVariant1!);
+            }
+            else if (IsMessagesRequestSystem1)
+            {
+                messagesRequestSystem1?.Invoke(MessagesRequestSystem1!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<string>? messagesRequestSystemVariant1 = null,
+            global::System.Action<global::System.Collections.Generic.IList<global::G.MessagesRequestSystemOneOf1Items>>? messagesRequestSystem1 = null,
             bool validate = true)
         {
             if (validate)

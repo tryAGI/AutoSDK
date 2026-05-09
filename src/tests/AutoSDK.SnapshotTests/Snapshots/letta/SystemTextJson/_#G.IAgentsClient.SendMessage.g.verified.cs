@@ -53,6 +53,34 @@ namespace G
         /// <param name="agentId">
         /// The ID of the agent in the format 'agent-&lt;uuid4&gt;'
         /// </param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.LettaResponse>> SendMessageAsResponseAsync(
+            string agentId,
+
+            global::G.LettaStreamingRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Send Message<br/>
+        /// Process a user message and return the agent's response.<br/>
+        /// This endpoint accepts a message from a user and processes it through the agent.<br/>
+        /// **Note:** Sending multiple concurrent requests to the same agent can lead to undefined behavior.<br/>
+        /// Each agent processes messages sequentially, and concurrent requests may interleave in unexpected ways.<br/>
+        /// Wait for each request to complete before sending the next one. Use separate agents or conversations for parallel processing.<br/>
+        /// The response format is controlled by the `streaming` field in the request body:<br/>
+        /// - If `streaming=false` (default): Returns a complete LettaResponse with all messages<br/>
+        /// - If `streaming=true`: Returns a Server-Sent Events (SSE) stream<br/>
+        /// Additional streaming options (only used when streaming=true):<br/>
+        /// - `stream_tokens`: Stream individual tokens instead of complete steps<br/>
+        /// - `include_pings`: Include keepalive pings to prevent connection timeouts<br/>
+        /// - `background`: Process the request in the background
+        /// </summary>
+        /// <param name="agentId">
+        /// The ID of the agent in the format 'agent-&lt;uuid4&gt;'
+        /// </param>
         /// <param name="messages">
         /// The messages to be sent to the agent.
         /// </param>

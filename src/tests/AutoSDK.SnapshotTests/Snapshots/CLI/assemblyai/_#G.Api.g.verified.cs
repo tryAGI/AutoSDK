@@ -112,7 +112,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public FilesClient Files => new FilesClient(HttpClient, authorizations: Authorizations, options: Options)
+        public FilesClient Files => new FilesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -121,7 +121,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public LemurClient Lemur => new LemurClient(HttpClient, authorizations: Authorizations, options: Options)
+        public LemurClient Lemur => new LemurClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -130,7 +130,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public RealtimeClient Realtime => new RealtimeClient(HttpClient, authorizations: Authorizations, options: Options)
+        public RealtimeClient Realtime => new RealtimeClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -139,7 +139,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public TranscriptsClient Transcripts => new TranscriptsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public TranscriptsClient Transcripts => new TranscriptsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -178,10 +178,10 @@ namespace G
         /// <param name="options">Client-wide request defaults such as headers, query parameters, retries, and timeout.</param>
         /// <param name="disposeHttpClient">Dispose the HttpClient when the instance is disposed. True by default.</param>
         public Api(
-            global::System.Net.Http.HttpClient? httpClient = null,
-            global::System.Uri? baseUri = null,
-            global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations = null,
-            global::G.AutoSDKClientOptions? options = null,
+            global::System.Net.Http.HttpClient? httpClient,
+            global::System.Uri? baseUri,
+            global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations,
+            global::G.AutoSDKClientOptions? options,
             bool disposeHttpClient = true)
         {
 

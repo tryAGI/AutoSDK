@@ -26,6 +26,22 @@ namespace G
         /// </summary>
         /// <param name="threadId"></param>
         /// <param name="include"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.RunObject>> CreateRunAsResponseAsync(
+            string threadId,
+
+            global::G.CreateRunRequest request,
+            global::System.Collections.Generic.IList<global::G.CreateRunIncludeItem>? include = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create a run.
+        /// </summary>
+        /// <param name="threadId"></param>
+        /// <param name="include"></param>
         /// <param name="assistantId">
         /// The ID of the [assistant](/docs/api-reference/assistants) to use to execute this run.
         /// </param>

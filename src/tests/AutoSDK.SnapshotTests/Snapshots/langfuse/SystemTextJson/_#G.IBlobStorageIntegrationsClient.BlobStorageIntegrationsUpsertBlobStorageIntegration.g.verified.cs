@@ -20,6 +20,18 @@ namespace G
         /// <summary>
         /// Create or update a blob storage integration for a specific project (requires organization-scoped API key). The configuration is validated by performing a test upload to the bucket.
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.BlobStorageIntegrationResponse>> BlobStorageIntegrationsUpsertBlobStorageIntegrationAsResponseAsync(
+
+            global::G.CreateBlobStorageIntegrationRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create or update a blob storage integration for a specific project (requires organization-scoped API key). The configuration is validated by performing a test upload to the bucket.
+        /// </summary>
         /// <param name="projectId">
         /// ID of the project in which to configure the blob storage integration
         /// </param>

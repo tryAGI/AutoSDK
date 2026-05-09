@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickProviderName(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ProviderName? value)
+        {
+            value = ProviderName;
+            return IsProviderName;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public string? ResponsesRequestProviderOnlyItemsVariant2 { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponsesRequestProviderOnlyItemsVariant2))]
 #endif
         public bool IsResponsesRequestProviderOnlyItemsVariant2 => ResponsesRequestProviderOnlyItemsVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResponsesRequestProviderOnlyItemsVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = ResponsesRequestProviderOnlyItemsVariant2;
+            return IsResponsesRequestProviderOnlyItemsVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -120,7 +146,7 @@ namespace G
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::G.ProviderName?, TResult>? providerName = null,
-            global::System.Func<string?, TResult>? responsesRequestProviderOnlyItemsVariant2 = null,
+            global::System.Func<string, TResult>? responsesRequestProviderOnlyItemsVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -145,7 +171,31 @@ namespace G
         /// </summary>
         public void Match(
             global::System.Action<global::G.ProviderName?>? providerName = null,
-            global::System.Action<string?>? responsesRequestProviderOnlyItemsVariant2 = null,
+
+            global::System.Action<string>? responsesRequestProviderOnlyItemsVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsProviderName)
+            {
+                providerName?.Invoke(ProviderName!);
+            }
+            else if (IsResponsesRequestProviderOnlyItemsVariant2)
+            {
+                responsesRequestProviderOnlyItemsVariant2?.Invoke(ResponsesRequestProviderOnlyItemsVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.ProviderName?>? providerName = null,
+            global::System.Action<string>? responsesRequestProviderOnlyItemsVariant2 = null,
             bool validate = true)
         {
             if (validate)

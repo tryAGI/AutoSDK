@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickCreateVideoStreamResponseVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateVideoStreamResponseVariant1? value)
+        {
+            value = CreateVideoStreamResponseVariant1;
+            return IsCreateVideoStreamResponseVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CreateVideoStreamResponseVariant2? CreateVideoStreamResponseVariant2 { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CreateVideoStreamResponseVariant2))]
 #endif
         public bool IsCreateVideoStreamResponseVariant2 => CreateVideoStreamResponseVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickCreateVideoStreamResponseVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateVideoStreamResponseVariant2? value)
+        {
+            value = CreateVideoStreamResponseVariant2;
+            return IsCreateVideoStreamResponseVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -119,8 +145,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.CreateVideoStreamResponseVariant1?, TResult>? createVideoStreamResponseVariant1 = null,
-            global::System.Func<global::G.CreateVideoStreamResponseVariant2?, TResult>? createVideoStreamResponseVariant2 = null,
+            global::System.Func<global::G.CreateVideoStreamResponseVariant1, TResult>? createVideoStreamResponseVariant1 = null,
+            global::System.Func<global::G.CreateVideoStreamResponseVariant2, TResult>? createVideoStreamResponseVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -144,8 +170,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.CreateVideoStreamResponseVariant1?>? createVideoStreamResponseVariant1 = null,
-            global::System.Action<global::G.CreateVideoStreamResponseVariant2?>? createVideoStreamResponseVariant2 = null,
+            global::System.Action<global::G.CreateVideoStreamResponseVariant1>? createVideoStreamResponseVariant1 = null,
+
+            global::System.Action<global::G.CreateVideoStreamResponseVariant2>? createVideoStreamResponseVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsCreateVideoStreamResponseVariant1)
+            {
+                createVideoStreamResponseVariant1?.Invoke(CreateVideoStreamResponseVariant1!);
+            }
+            else if (IsCreateVideoStreamResponseVariant2)
+            {
+                createVideoStreamResponseVariant2?.Invoke(CreateVideoStreamResponseVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.CreateVideoStreamResponseVariant1>? createVideoStreamResponseVariant1 = null,
+            global::System.Action<global::G.CreateVideoStreamResponseVariant2>? createVideoStreamResponseVariant2 = null,
             bool validate = true)
         {
             if (validate)

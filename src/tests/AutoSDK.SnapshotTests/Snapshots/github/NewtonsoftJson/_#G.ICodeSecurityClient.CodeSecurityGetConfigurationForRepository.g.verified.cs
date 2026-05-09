@@ -21,5 +21,21 @@ namespace G
             string repo,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Get the code security configuration associated with a repository<br/>
+        /// Get the code security configuration that manages a repository's code security settings.<br/>
+        /// The authenticated user must be an administrator or security manager for the organization to use this endpoint.<br/>
+        /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+        /// </summary>
+        /// <param name="owner"></param>
+        /// <param name="repo"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.CodeSecurityConfigurationForRepository>> CodeSecurityGetConfigurationForRepositoryAsResponseAsync(
+            string owner,
+            string repo,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

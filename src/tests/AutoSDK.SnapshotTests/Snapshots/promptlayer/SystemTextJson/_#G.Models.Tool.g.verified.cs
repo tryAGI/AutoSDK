@@ -33,6 +33,19 @@ namespace G
         public bool IsFunction => Function != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFunction(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.FunctionTool? value)
+        {
+            value = Function;
+            return IsFunction;
+        }
+
+        /// <summary>
         /// A provider-native built-in tool (e.g. web search, code interpreter, bash).
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -48,6 +61,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(WebSearch))]
 #endif
         public bool IsWebSearch => WebSearch != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickWebSearch(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.BuiltInTool? value)
+        {
+            value = WebSearch;
+            return IsWebSearch;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -127,8 +153,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.FunctionTool?, TResult>? function = null,
-            global::System.Func<global::G.BuiltInTool?, TResult>? webSearch = null,
+            global::System.Func<global::G.FunctionTool, TResult>? function = null,
+            global::System.Func<global::G.BuiltInTool, TResult>? webSearch = null,
             bool validate = true)
         {
             if (validate)
@@ -152,8 +178,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.FunctionTool?>? function = null,
-            global::System.Action<global::G.BuiltInTool?>? webSearch = null,
+            global::System.Action<global::G.FunctionTool>? function = null,
+
+            global::System.Action<global::G.BuiltInTool>? webSearch = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsFunction)
+            {
+                function?.Invoke(Function!);
+            }
+            else if (IsWebSearch)
+            {
+                webSearch?.Invoke(WebSearch!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.FunctionTool>? function = null,
+            global::System.Action<global::G.BuiltInTool>? webSearch = null,
             bool validate = true)
         {
             if (validate)

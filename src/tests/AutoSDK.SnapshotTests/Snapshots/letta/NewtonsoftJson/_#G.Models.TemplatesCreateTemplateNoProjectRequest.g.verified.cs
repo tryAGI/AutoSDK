@@ -11,6 +11,11 @@ namespace G
     public readonly partial struct TemplatesCreateTemplateNoProjectRequest : global::System.IEquatable<TemplatesCreateTemplateNoProjectRequest>
     {
         /// <summary>
+        /// 
+        /// </summary>
+        public string? Type { get; }
+
+        /// <summary>
         /// Create a template from an existing agent
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -28,6 +33,19 @@ namespace G
         public bool IsAgent => Agent != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickAgent(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.TemplatesCreateTemplateNoProjectRequestVariant1? value)
+        {
+            value = Agent;
+            return IsAgent;
+        }
+
+        /// <summary>
         /// Create a template from an uploaded agent file
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -43,6 +61,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AgentFile))]
 #endif
         public bool IsAgentFile => AgentFile != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickAgentFile(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.TemplatesCreateTemplateNoProjectRequestVariant2? value)
+        {
+            value = AgentFile;
+            return IsAgentFile;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -83,10 +114,13 @@ namespace G
         /// 
         /// </summary>
         public TemplatesCreateTemplateNoProjectRequest(
+            string? type,
             global::G.TemplatesCreateTemplateNoProjectRequestVariant1? agent,
             global::G.TemplatesCreateTemplateNoProjectRequestVariant2? agentFile
             )
         {
+            Type = type;
+
             Agent = agent;
             AgentFile = agentFile;
         }
@@ -119,8 +153,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.TemplatesCreateTemplateNoProjectRequestVariant1?, TResult>? agent = null,
-            global::System.Func<global::G.TemplatesCreateTemplateNoProjectRequestVariant2?, TResult>? agentFile = null,
+            global::System.Func<global::G.TemplatesCreateTemplateNoProjectRequestVariant1, TResult>? agent = null,
+            global::System.Func<global::G.TemplatesCreateTemplateNoProjectRequestVariant2, TResult>? agentFile = null,
             bool validate = true)
         {
             if (validate)
@@ -144,8 +178,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.TemplatesCreateTemplateNoProjectRequestVariant1?>? agent = null,
-            global::System.Action<global::G.TemplatesCreateTemplateNoProjectRequestVariant2?>? agentFile = null,
+            global::System.Action<global::G.TemplatesCreateTemplateNoProjectRequestVariant1>? agent = null,
+
+            global::System.Action<global::G.TemplatesCreateTemplateNoProjectRequestVariant2>? agentFile = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsAgent)
+            {
+                agent?.Invoke(Agent!);
+            }
+            else if (IsAgentFile)
+            {
+                agentFile?.Invoke(AgentFile!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.TemplatesCreateTemplateNoProjectRequestVariant1>? agent = null,
+            global::System.Action<global::G.TemplatesCreateTemplateNoProjectRequestVariant2>? agentFile = null,
             bool validate = true)
         {
             if (validate)

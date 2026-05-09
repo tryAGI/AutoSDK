@@ -28,6 +28,19 @@ namespace G
         public bool IsPreferredMaxLatencyVariant1 => PreferredMaxLatencyVariant1 != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickPreferredMaxLatencyVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out double? value)
+        {
+            value = PreferredMaxLatencyVariant1;
+            return IsPreferredMaxLatencyVariant1;
+        }
+
+        /// <summary>
         /// Percentile-based latency cutoffs. All specified cutoffs must be met for an endpoint to be preferred.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -45,6 +58,19 @@ namespace G
         public bool IsPercentileLatencyCutoffs => PercentileLatencyCutoffs != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickPercentileLatencyCutoffs(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.PercentileLatencyCutoffs? value)
+        {
+            value = PercentileLatencyCutoffs;
+            return IsPercentileLatencyCutoffs;
+        }
+
+        /// <summary>
         /// Any type
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -60,6 +86,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(PreferredMaxLatencyVariant3))]
 #endif
         public bool IsPreferredMaxLatencyVariant3 => PreferredMaxLatencyVariant3 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickPreferredMaxLatencyVariant3(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out object? value)
+        {
+            value = PreferredMaxLatencyVariant3;
+            return IsPreferredMaxLatencyVariant3;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -141,8 +180,8 @@ namespace G
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<double?, TResult>? preferredMaxLatencyVariant1 = null,
-            global::System.Func<global::G.PercentileLatencyCutoffs?, TResult>? percentileLatencyCutoffs = null,
-            global::System.Func<object?, TResult>? preferredMaxLatencyVariant3 = null,
+            global::System.Func<global::G.PercentileLatencyCutoffs, TResult>? percentileLatencyCutoffs = null,
+            global::System.Func<object, TResult>? preferredMaxLatencyVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -171,8 +210,38 @@ namespace G
         /// </summary>
         public void Match(
             global::System.Action<double?>? preferredMaxLatencyVariant1 = null,
-            global::System.Action<global::G.PercentileLatencyCutoffs?>? percentileLatencyCutoffs = null,
-            global::System.Action<object?>? preferredMaxLatencyVariant3 = null,
+
+            global::System.Action<global::G.PercentileLatencyCutoffs>? percentileLatencyCutoffs = null,
+
+            global::System.Action<object>? preferredMaxLatencyVariant3 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsPreferredMaxLatencyVariant1)
+            {
+                preferredMaxLatencyVariant1?.Invoke(PreferredMaxLatencyVariant1!);
+            }
+            else if (IsPercentileLatencyCutoffs)
+            {
+                percentileLatencyCutoffs?.Invoke(PercentileLatencyCutoffs!);
+            }
+            else if (IsPreferredMaxLatencyVariant3)
+            {
+                preferredMaxLatencyVariant3?.Invoke(PreferredMaxLatencyVariant3!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<double?>? preferredMaxLatencyVariant1 = null,
+            global::System.Action<global::G.PercentileLatencyCutoffs>? percentileLatencyCutoffs = null,
+            global::System.Action<object>? preferredMaxLatencyVariant3 = null,
             bool validate = true)
         {
             if (validate)

@@ -22,6 +22,19 @@ namespace G
         /// Create a new assistant<br/>
         /// Create a new assistant with the provided details
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.Assistant>> CreateAssistantAsResponseAsync(
+
+            global::G.Assistant request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create a new assistant<br/>
+        /// Create a new assistant with the provided details
+        /// </summary>
         /// <param name="id">
         /// Example: d290f1ee-6c54-4b01-90e6-d701748f0851
         /// </param>

@@ -5,9 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// IC Train. Train an existing Image Classification (IC) model.<br/>
-    /// &lt;br /&gt;<br/>
-    /// ([Create a model](https://app.nanonets.com) on the NanoNets web app.).<br/>
+    /// IC Train<br/>
     /// If no httpClient is provided, a new one will be created.<br/>
     /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
     /// </summary>
@@ -36,11 +34,11 @@ namespace G
         /// ensuring <see cref="ApiException.ResponseBody"/> is populated.
         /// </summary>
         public bool ReadResponseAsString { get; set; }
-
         /// <summary>
         /// Client-wide request defaults such as headers, query parameters, retries, and timeout.
         /// </summary>
         public global::G.AutoSDKClientOptions Options { get; }
+
 
         /// <summary>
         /// 

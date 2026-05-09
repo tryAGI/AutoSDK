@@ -20,5 +20,20 @@ namespace G
             string exportId,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Get details about a codespace export<br/>
+        /// Gets information about an export of a codespace.<br/>
+        /// OAuth app tokens and personal access tokens (classic) need the `codespace` scope to use this endpoint.
+        /// </summary>
+        /// <param name="codespaceName"></param>
+        /// <param name="exportId"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.CodespaceExportDetails>> CodespacesGetExportDetailsForAuthenticatedUserAsResponseAsync(
+            string codespaceName,
+            string exportId,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

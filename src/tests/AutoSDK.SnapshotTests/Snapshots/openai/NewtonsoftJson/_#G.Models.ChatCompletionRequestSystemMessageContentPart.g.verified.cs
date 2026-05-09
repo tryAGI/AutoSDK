@@ -26,6 +26,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TextContentPart))]
 #endif
         public bool IsTextContentPart => TextContentPart != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickTextContentPart(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ChatCompletionRequestMessageContentPartText? value)
+        {
+            value = TextContentPart;
+            return IsTextContentPart;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -70,7 +83,7 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.ChatCompletionRequestMessageContentPartText?, TResult>? textContentPart = null,
+            global::System.Func<global::G.ChatCompletionRequestMessageContentPartText, TResult>? textContentPart = null,
             bool validate = true)
         {
             if (validate)
@@ -90,7 +103,25 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.ChatCompletionRequestMessageContentPartText?>? textContentPart = null,
+            global::System.Action<global::G.ChatCompletionRequestMessageContentPartText>? textContentPart = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsTextContentPart)
+            {
+                textContentPart?.Invoke(TextContentPart!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.ChatCompletionRequestMessageContentPartText>? textContentPart = null,
             bool validate = true)
         {
             if (validate)

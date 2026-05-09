@@ -28,6 +28,19 @@ namespace G
         public bool IsInputText => InputText != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickInputText(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.InputText? value)
+        {
+            value = InputText;
+            return IsInputText;
+        }
+
+        /// <summary>
         /// Image input content item
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -45,6 +58,19 @@ namespace G
         public bool IsFunctionCallOutputItemOutputOneOf1Items1 => FunctionCallOutputItemOutputOneOf1Items1 != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFunctionCallOutputItemOutputOneOf1Items1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.FunctionCallOutputItemOutputOneOf1Items1? value)
+        {
+            value = FunctionCallOutputItemOutputOneOf1Items1;
+            return IsFunctionCallOutputItemOutputOneOf1Items1;
+        }
+
+        /// <summary>
         /// File input content item
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -60,6 +86,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputFile))]
 #endif
         public bool IsInputFile => InputFile != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickInputFile(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.InputFile? value)
+        {
+            value = InputFile;
+            return IsInputFile;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -158,9 +197,9 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.InputText?, TResult>? inputText = null,
-            global::System.Func<global::G.FunctionCallOutputItemOutputOneOf1Items1?, TResult>? functionCallOutputItemOutputOneOf1Items1 = null,
-            global::System.Func<global::G.InputFile?, TResult>? inputFile = null,
+            global::System.Func<global::G.InputText, TResult>? inputText = null,
+            global::System.Func<global::G.FunctionCallOutputItemOutputOneOf1Items1, TResult>? functionCallOutputItemOutputOneOf1Items1 = null,
+            global::System.Func<global::G.InputFile, TResult>? inputFile = null,
             bool validate = true)
         {
             if (validate)
@@ -188,9 +227,39 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.InputText?>? inputText = null,
-            global::System.Action<global::G.FunctionCallOutputItemOutputOneOf1Items1?>? functionCallOutputItemOutputOneOf1Items1 = null,
-            global::System.Action<global::G.InputFile?>? inputFile = null,
+            global::System.Action<global::G.InputText>? inputText = null,
+
+            global::System.Action<global::G.FunctionCallOutputItemOutputOneOf1Items1>? functionCallOutputItemOutputOneOf1Items1 = null,
+
+            global::System.Action<global::G.InputFile>? inputFile = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsInputText)
+            {
+                inputText?.Invoke(InputText!);
+            }
+            else if (IsFunctionCallOutputItemOutputOneOf1Items1)
+            {
+                functionCallOutputItemOutputOneOf1Items1?.Invoke(FunctionCallOutputItemOutputOneOf1Items1!);
+            }
+            else if (IsInputFile)
+            {
+                inputFile?.Invoke(InputFile!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.InputText>? inputText = null,
+            global::System.Action<global::G.FunctionCallOutputItemOutputOneOf1Items1>? functionCallOutputItemOutputOneOf1Items1 = null,
+            global::System.Action<global::G.InputFile>? inputFile = null,
             bool validate = true)
         {
             if (validate)

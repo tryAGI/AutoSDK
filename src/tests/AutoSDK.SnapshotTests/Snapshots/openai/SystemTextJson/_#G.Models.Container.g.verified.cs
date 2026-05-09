@@ -29,6 +29,19 @@ namespace G
         public bool IsContainerVariant1 => ContainerVariant1 != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickContainerVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = ContainerVariant1;
+            return IsContainerVariant1;
+        }
+
+        /// <summary>
         /// Configuration for a code interpreter container. Optionally specify the IDs<br/>
         /// of the files to run the code on.
         /// </summary>
@@ -45,6 +58,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Auto))]
 #endif
         public bool IsAuto => Auto != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickAuto(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CodeInterpreterToolAuto? value)
+        {
+            value = Auto;
+            return IsAuto;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -121,8 +147,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<string?, TResult>? containerVariant1 = null,
-            global::System.Func<global::G.CodeInterpreterToolAuto?, TResult>? auto = null,
+            global::System.Func<string, TResult>? containerVariant1 = null,
+            global::System.Func<global::G.CodeInterpreterToolAuto, TResult>? auto = null,
             bool validate = true)
         {
             if (validate)
@@ -146,8 +172,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<string?>? containerVariant1 = null,
-            global::System.Action<global::G.CodeInterpreterToolAuto?>? auto = null,
+            global::System.Action<string>? containerVariant1 = null,
+
+            global::System.Action<global::G.CodeInterpreterToolAuto>? auto = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsContainerVariant1)
+            {
+                containerVariant1?.Invoke(ContainerVariant1!);
+            }
+            else if (IsAuto)
+            {
+                auto?.Invoke(Auto!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<string>? containerVariant1 = null,
+            global::System.Action<global::G.CodeInterpreterToolAuto>? auto = null,
             bool validate = true)
         {
             if (validate)

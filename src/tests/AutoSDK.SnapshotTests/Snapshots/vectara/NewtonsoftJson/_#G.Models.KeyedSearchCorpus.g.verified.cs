@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickSearchCorpus(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.SearchCorpus? value)
+        {
+            value = SearchCorpus;
+            return IsSearchCorpus;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.KeyedSearchCorpusVariant2? KeyedSearchCorpusVariant2 { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(KeyedSearchCorpusVariant2))]
 #endif
         public bool IsKeyedSearchCorpusVariant2 => KeyedSearchCorpusVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickKeyedSearchCorpusVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.KeyedSearchCorpusVariant2? value)
+        {
+            value = KeyedSearchCorpusVariant2;
+            return IsKeyedSearchCorpusVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -119,8 +145,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.SearchCorpus?, TResult>? searchCorpus = null,
-            global::System.Func<global::G.KeyedSearchCorpusVariant2?, TResult>? keyedSearchCorpusVariant2 = null,
+            global::System.Func<global::G.SearchCorpus, TResult>? searchCorpus = null,
+            global::System.Func<global::G.KeyedSearchCorpusVariant2, TResult>? keyedSearchCorpusVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -144,8 +170,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.SearchCorpus?>? searchCorpus = null,
-            global::System.Action<global::G.KeyedSearchCorpusVariant2?>? keyedSearchCorpusVariant2 = null,
+            global::System.Action<global::G.SearchCorpus>? searchCorpus = null,
+
+            global::System.Action<global::G.KeyedSearchCorpusVariant2>? keyedSearchCorpusVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsSearchCorpus)
+            {
+                searchCorpus?.Invoke(SearchCorpus!);
+            }
+            else if (IsKeyedSearchCorpusVariant2)
+            {
+                keyedSearchCorpusVariant2?.Invoke(KeyedSearchCorpusVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.SearchCorpus>? searchCorpus = null,
+            global::System.Action<global::G.KeyedSearchCorpusVariant2>? keyedSearchCorpusVariant2 = null,
             bool validate = true)
         {
             if (validate)

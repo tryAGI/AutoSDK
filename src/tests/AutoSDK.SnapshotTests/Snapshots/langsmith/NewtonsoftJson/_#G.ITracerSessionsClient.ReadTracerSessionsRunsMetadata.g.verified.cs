@@ -29,5 +29,29 @@ namespace G
             bool? rootRunsOnly = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Read Tracer Sessions Runs Metadata<br/>
+        /// Given a session, a number K, and (optionally) a list of metadata keys, return the top K values for each key.
+        /// </summary>
+        /// <param name="sessionId"></param>
+        /// <param name="metadataKeys"></param>
+        /// <param name="startTime"></param>
+        /// <param name="k">
+        /// Default Value: 10
+        /// </param>
+        /// <param name="rootRunsOnly">
+        /// Default Value: false
+        /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<string>>>> ReadTracerSessionsRunsMetadataAsResponseAsync(
+            global::System.Guid sessionId,
+            global::System.Collections.Generic.IList<string>? metadataKeys = default,
+            global::System.DateTime? startTime = default,
+            int? k = default,
+            bool? rootRunsOnly = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

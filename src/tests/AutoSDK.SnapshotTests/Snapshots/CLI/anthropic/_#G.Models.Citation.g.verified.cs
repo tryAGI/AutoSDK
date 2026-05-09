@@ -35,6 +35,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickCharLocation(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.BetaResponseCharLocationCitation? value)
+        {
+            value = CharLocation;
+            return IsCharLocation;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.BetaResponsePageLocationCitation? PageLocation { get; init; }
 #else
@@ -52,6 +65,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickPageLocation(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.BetaResponsePageLocationCitation? value)
+        {
+            value = PageLocation;
+            return IsPageLocation;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.BetaResponseContentBlockLocationCitation? ContentBlockLocation { get; init; }
 #else
@@ -65,6 +91,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ContentBlockLocation))]
 #endif
         public bool IsContentBlockLocation => ContentBlockLocation != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickContentBlockLocation(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.BetaResponseContentBlockLocationCitation? value)
+        {
+            value = ContentBlockLocation;
+            return IsContentBlockLocation;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -166,9 +205,9 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.BetaResponseCharLocationCitation?, TResult>? charLocation = null,
-            global::System.Func<global::G.BetaResponsePageLocationCitation?, TResult>? pageLocation = null,
-            global::System.Func<global::G.BetaResponseContentBlockLocationCitation?, TResult>? contentBlockLocation = null,
+            global::System.Func<global::G.BetaResponseCharLocationCitation, TResult>? charLocation = null,
+            global::System.Func<global::G.BetaResponsePageLocationCitation, TResult>? pageLocation = null,
+            global::System.Func<global::G.BetaResponseContentBlockLocationCitation, TResult>? contentBlockLocation = null,
             bool validate = true)
         {
             if (validate)
@@ -196,9 +235,39 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.BetaResponseCharLocationCitation?>? charLocation = null,
-            global::System.Action<global::G.BetaResponsePageLocationCitation?>? pageLocation = null,
-            global::System.Action<global::G.BetaResponseContentBlockLocationCitation?>? contentBlockLocation = null,
+            global::System.Action<global::G.BetaResponseCharLocationCitation>? charLocation = null,
+
+            global::System.Action<global::G.BetaResponsePageLocationCitation>? pageLocation = null,
+
+            global::System.Action<global::G.BetaResponseContentBlockLocationCitation>? contentBlockLocation = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsCharLocation)
+            {
+                charLocation?.Invoke(CharLocation!);
+            }
+            else if (IsPageLocation)
+            {
+                pageLocation?.Invoke(PageLocation!);
+            }
+            else if (IsContentBlockLocation)
+            {
+                contentBlockLocation?.Invoke(ContentBlockLocation!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.BetaResponseCharLocationCitation>? charLocation = null,
+            global::System.Action<global::G.BetaResponsePageLocationCitation>? pageLocation = null,
+            global::System.Action<global::G.BetaResponseContentBlockLocationCitation>? contentBlockLocation = null,
             bool validate = true)
         {
             if (validate)

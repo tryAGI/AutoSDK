@@ -24,6 +24,14 @@ namespace G.JsonConverters
                 foreach (var __jsonProp in __jsonDocument.RootElement.EnumerateObject())
                 {
                     __jsonProps.Add(__jsonProp.Name);
+                    if (__jsonProp.Value.ValueKind == global::System.Text.Json.JsonValueKind.Object)
+                    {
+                        foreach (var __nestedJsonProp in __jsonProp.Value.EnumerateObject())
+                        {
+                            __jsonProps.Add(__jsonProp.Name + "." + __nestedJsonProp.Name);
+                        }
+                    }
+
                 }
             }
 
@@ -38,21 +46,32 @@ namespace G.JsonConverters
             if (__jsonProps.Contains("model")) __score1++;
             if (__jsonProps.Contains("previous_response_id")) __score1++;
             if (__jsonProps.Contains("reasoning")) __score1++;
+            if (__jsonProps.Contains("reasoning.effort")) __score1++;
+            if (__jsonProps.Contains("reasoning.generate_summary")) __score1++;
             if (__jsonProps.Contains("text")) __score1++;
+            if (__jsonProps.Contains("text.format")) __score1++;
             if (__jsonProps.Contains("tool_choice")) __score1++;
             if (__jsonProps.Contains("tools")) __score1++;
             if (__jsonProps.Contains("truncation")) __score1++;
             var __score2 = 0;
             if (__jsonProps.Contains("created_at")) __score2++;
             if (__jsonProps.Contains("error")) __score2++;
+            if (__jsonProps.Contains("error.code")) __score2++;
+            if (__jsonProps.Contains("error.message")) __score2++;
             if (__jsonProps.Contains("id")) __score2++;
             if (__jsonProps.Contains("incomplete_details")) __score2++;
+            if (__jsonProps.Contains("incomplete_details.reason")) __score2++;
             if (__jsonProps.Contains("object")) __score2++;
             if (__jsonProps.Contains("output")) __score2++;
             if (__jsonProps.Contains("output_text")) __score2++;
             if (__jsonProps.Contains("parallel_tool_calls")) __score2++;
             if (__jsonProps.Contains("status")) __score2++;
             if (__jsonProps.Contains("usage")) __score2++;
+            if (__jsonProps.Contains("usage.input_tokens")) __score2++;
+            if (__jsonProps.Contains("usage.input_tokens_details")) __score2++;
+            if (__jsonProps.Contains("usage.output_tokens")) __score2++;
+            if (__jsonProps.Contains("usage.output_tokens_details")) __score2++;
+            if (__jsonProps.Contains("usage.total_tokens")) __score2++;
             var __bestScore = 0;
             var __bestIndex = -1;
             if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }

@@ -28,6 +28,19 @@ namespace G
         public bool IsExtendedPointIdVariant1 => ExtendedPointIdVariant1 != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickExtendedPointIdVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out int? value)
+        {
+            value = ExtendedPointIdVariant1;
+            return IsExtendedPointIdVariant1;
+        }
+
+        /// <summary>
         /// Example: 550e8400-e29b-41d4-a716-446655440000
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Guid))]
 #endif
         public bool IsGuid => Guid != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickGuid(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::System.Guid? value)
+        {
+            value = Guid;
+            return IsGuid;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -144,6 +170,30 @@ namespace G
         /// 
         /// </summary>
         public void Match(
+            global::System.Action<int?>? extendedPointIdVariant1 = null,
+
+            global::System.Action<global::System.Guid?>? guid = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsExtendedPointIdVariant1)
+            {
+                extendedPointIdVariant1?.Invoke(ExtendedPointIdVariant1!);
+            }
+            else if (IsGuid)
+            {
+                guid?.Invoke(Guid!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
             global::System.Action<int?>? extendedPointIdVariant1 = null,
             global::System.Action<global::System.Guid?>? guid = null,
             bool validate = true)

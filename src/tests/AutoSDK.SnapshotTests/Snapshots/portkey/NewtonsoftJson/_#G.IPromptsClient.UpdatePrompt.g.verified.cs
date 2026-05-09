@@ -29,6 +29,23 @@ namespace G
         /// **Metadata-only updates:** Fields like `name`, `collection_id`, `version_description`, and `virtual_key` can always be updated independently without affecting versioning.
         /// </summary>
         /// <param name="promptId"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.UpdatePromptResponse>> UpdatePromptAsResponseAsync(
+            string promptId,
+
+            global::G.UpdatePromptRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Update a prompt<br/>
+        /// Update a prompt's metadata and/or create a new version with updated template content.<br/>
+        /// **Partial version updates:** Set `patch: true` to perform a partial update of version fields (`string`, `parameters`, `model`, `virtual_key`, `version_description`, `functions`, `tools`, `tool_choice`, `is_raw_template`, `prompt_metadata`). When enabled, any version fields omitted from the request are backfilled from the current latest version, allowing you to update only the fields you need. When `patch` is omitted or `false`, all version fields must be provided together (original strict validation).<br/>
+        /// **Metadata-only updates:** Fields like `name`, `collection_id`, `version_description`, and `virtual_key` can always be updated independently without affecting versioning.
+        /// </summary>
+        /// <param name="promptId"></param>
         /// <param name="patch">
         /// When `true`, enables partial version updates. Missing version fields (`string`, `parameters`, `model`) are backfilled from the current latest version, so you only need to provide the fields you want to change. When `false` or omitted, the original strict validation is preserved for backward compatibility.
         /// </param>

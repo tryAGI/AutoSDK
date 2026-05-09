@@ -29,6 +29,19 @@ namespace G
         public bool IsTranscriptParamsVariant1 => TranscriptParamsVariant1 != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickTranscriptParamsVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.TranscriptParamsVariant1? value)
+        {
+            value = TranscriptParamsVariant1;
+            return IsTranscriptParamsVariant1;
+        }
+
+        /// <summary>
         /// The parameters for creating a transcript<br/>
         /// Example: {"speech_model":"","language_code":"en_us","language_detection":true,"language_confidence_threshold":0.7,"punctuate":true,"format_text":true,"dual_channel":true,"webhook_url":"https://your-webhook-url.tld/path","webhook_auth_header_name":"webhook-secret","webhook_auth_header_value":"webhook-secret-value","auto_highlights":true,"audio_start_from":10,"audio_end_at":280,"word_boost":["aws","azure","google cloud"],"boost_param":"high","filter_profanity":true,"redact_pii":true,"redact_pii_audio":true,"redact_pii_audio_quality":"mp3","redact_pii_policies":["us_social_security_number","credit_card_number"],"redact_pii_sub":"hash","speaker_labels":true,"speakers_expected":2,"content_safety":true,"iab_categories":true,"custom_spelling":[],"disfluencies":false,"sentiment_analysis":true,"auto_chapters":true,"entity_detection":true,"speech_threshold":0.5,"summarization":true,"summary_model":"informative","summary_type":"bullets","custom_topics":true,"topics":[]}
         /// </summary>
@@ -45,6 +58,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Optional))]
 #endif
         public bool IsOptional => Optional != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickOptional(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.TranscriptOptionalParams? value)
+        {
+            value = Optional;
+            return IsOptional;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -121,8 +147,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.TranscriptParamsVariant1?, TResult>? transcriptParamsVariant1 = null,
-            global::System.Func<global::G.TranscriptOptionalParams?, TResult>? optional = null,
+            global::System.Func<global::G.TranscriptParamsVariant1, TResult>? transcriptParamsVariant1 = null,
+            global::System.Func<global::G.TranscriptOptionalParams, TResult>? optional = null,
             bool validate = true)
         {
             if (validate)
@@ -146,8 +172,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.TranscriptParamsVariant1?>? transcriptParamsVariant1 = null,
-            global::System.Action<global::G.TranscriptOptionalParams?>? optional = null,
+            global::System.Action<global::G.TranscriptParamsVariant1>? transcriptParamsVariant1 = null,
+
+            global::System.Action<global::G.TranscriptOptionalParams>? optional = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsTranscriptParamsVariant1)
+            {
+                transcriptParamsVariant1?.Invoke(TranscriptParamsVariant1!);
+            }
+            else if (IsOptional)
+            {
+                optional?.Invoke(Optional!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.TranscriptParamsVariant1>? transcriptParamsVariant1 = null,
+            global::System.Action<global::G.TranscriptOptionalParams>? optional = null,
             bool validate = true)
         {
             if (validate)

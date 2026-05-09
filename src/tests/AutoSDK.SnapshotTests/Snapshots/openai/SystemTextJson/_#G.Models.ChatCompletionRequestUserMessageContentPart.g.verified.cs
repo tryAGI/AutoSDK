@@ -28,6 +28,19 @@ namespace G
         public bool IsTextContentPart => TextContentPart != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickTextContentPart(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ChatCompletionRequestMessageContentPartText? value)
+        {
+            value = TextContentPart;
+            return IsTextContentPart;
+        }
+
+        /// <summary>
         /// Learn about [image inputs](/docs/guides/vision).
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ImageContentPart))]
 #endif
         public bool IsImageContentPart => ImageContentPart != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickImageContentPart(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ChatCompletionRequestMessageContentPartImage? value)
+        {
+            value = ImageContentPart;
+            return IsImageContentPart;
+        }
 
         /// <summary>
         /// Learn about [audio inputs](/docs/guides/audio).
@@ -62,6 +88,19 @@ namespace G
         public bool IsAudioContentPart => AudioContentPart != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickAudioContentPart(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ChatCompletionRequestMessageContentPartAudio? value)
+        {
+            value = AudioContentPart;
+            return IsAudioContentPart;
+        }
+
+        /// <summary>
         /// Learn about [file inputs](/docs/guides/text) for text generation.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -77,6 +116,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FileContentPart))]
 #endif
         public bool IsFileContentPart => FileContentPart != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFileContentPart(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ChatCompletionRequestMessageContentPartFile? value)
+        {
+            value = FileContentPart;
+            return IsFileContentPart;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -197,10 +249,10 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.ChatCompletionRequestMessageContentPartText?, TResult>? textContentPart = null,
-            global::System.Func<global::G.ChatCompletionRequestMessageContentPartImage?, TResult>? imageContentPart = null,
-            global::System.Func<global::G.ChatCompletionRequestMessageContentPartAudio?, TResult>? audioContentPart = null,
-            global::System.Func<global::G.ChatCompletionRequestMessageContentPartFile?, TResult>? fileContentPart = null,
+            global::System.Func<global::G.ChatCompletionRequestMessageContentPartText, TResult>? textContentPart = null,
+            global::System.Func<global::G.ChatCompletionRequestMessageContentPartImage, TResult>? imageContentPart = null,
+            global::System.Func<global::G.ChatCompletionRequestMessageContentPartAudio, TResult>? audioContentPart = null,
+            global::System.Func<global::G.ChatCompletionRequestMessageContentPartFile, TResult>? fileContentPart = null,
             bool validate = true)
         {
             if (validate)
@@ -232,10 +284,46 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.ChatCompletionRequestMessageContentPartText?>? textContentPart = null,
-            global::System.Action<global::G.ChatCompletionRequestMessageContentPartImage?>? imageContentPart = null,
-            global::System.Action<global::G.ChatCompletionRequestMessageContentPartAudio?>? audioContentPart = null,
-            global::System.Action<global::G.ChatCompletionRequestMessageContentPartFile?>? fileContentPart = null,
+            global::System.Action<global::G.ChatCompletionRequestMessageContentPartText>? textContentPart = null,
+
+            global::System.Action<global::G.ChatCompletionRequestMessageContentPartImage>? imageContentPart = null,
+
+            global::System.Action<global::G.ChatCompletionRequestMessageContentPartAudio>? audioContentPart = null,
+
+            global::System.Action<global::G.ChatCompletionRequestMessageContentPartFile>? fileContentPart = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsTextContentPart)
+            {
+                textContentPart?.Invoke(TextContentPart!);
+            }
+            else if (IsImageContentPart)
+            {
+                imageContentPart?.Invoke(ImageContentPart!);
+            }
+            else if (IsAudioContentPart)
+            {
+                audioContentPart?.Invoke(AudioContentPart!);
+            }
+            else if (IsFileContentPart)
+            {
+                fileContentPart?.Invoke(FileContentPart!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.ChatCompletionRequestMessageContentPartText>? textContentPart = null,
+            global::System.Action<global::G.ChatCompletionRequestMessageContentPartImage>? imageContentPart = null,
+            global::System.Action<global::G.ChatCompletionRequestMessageContentPartAudio>? audioContentPart = null,
+            global::System.Action<global::G.ChatCompletionRequestMessageContentPartFile>? fileContentPart = null,
             bool validate = true)
         {
             if (validate)

@@ -24,6 +24,14 @@ namespace G.JsonConverters
                 foreach (var __jsonProp in __jsonDocument.RootElement.EnumerateObject())
                 {
                     __jsonProps.Add(__jsonProp.Name);
+                    if (__jsonProp.Value.ValueKind == global::System.Text.Json.JsonValueKind.Object)
+                    {
+                        foreach (var __nestedJsonProp in __jsonProp.Value.EnumerateObject())
+                        {
+                            __jsonProps.Add(__jsonProp.Name + "." + __nestedJsonProp.Name);
+                        }
+                    }
+
                 }
             }
 
@@ -34,8 +42,15 @@ namespace G.JsonConverters
             if (__jsonProps.Contains("model")) __score1++;
             if (__jsonProps.Contains("previous_response_id")) __score1++;
             if (__jsonProps.Contains("prompt")) __score1++;
+            if (__jsonProps.Contains("prompt.id")) __score1++;
+            if (__jsonProps.Contains("prompt.variables")) __score1++;
+            if (__jsonProps.Contains("prompt.version")) __score1++;
             if (__jsonProps.Contains("reasoning")) __score1++;
+            if (__jsonProps.Contains("reasoning.effort")) __score1++;
+            if (__jsonProps.Contains("reasoning.generate_summary")) __score1++;
+            if (__jsonProps.Contains("reasoning.summary")) __score1++;
             if (__jsonProps.Contains("text")) __score1++;
+            if (__jsonProps.Contains("text.format")) __score1++;
             if (__jsonProps.Contains("tool_choice")) __score1++;
             if (__jsonProps.Contains("tools")) __score1++;
             if (__jsonProps.Contains("truncation")) __score1++;

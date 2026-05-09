@@ -28,6 +28,19 @@ namespace G
         public bool IsVectorVariant1 => VectorVariant1 != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickVectorVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::System.Collections.Generic.IList<double>? value)
+        {
+            value = VectorVariant1;
+            return IsVectorVariant1;
+        }
+
+        /// <summary>
         /// A dense vector encoded as a base64 string.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(VectorVariant2))]
 #endif
         public bool IsVectorVariant2 => VectorVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickVectorVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = VectorVariant2;
+            return IsVectorVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -101,8 +127,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::System.Collections.Generic.IList<double>?, TResult>? vectorVariant1 = null,
-            global::System.Func<string?, TResult>? vectorVariant2 = null,
+            global::System.Func<global::System.Collections.Generic.IList<double>, TResult>? vectorVariant1 = null,
+            global::System.Func<string, TResult>? vectorVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -126,8 +152,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::System.Collections.Generic.IList<double>?>? vectorVariant1 = null,
-            global::System.Action<string?>? vectorVariant2 = null,
+            global::System.Action<global::System.Collections.Generic.IList<double>>? vectorVariant1 = null,
+
+            global::System.Action<string>? vectorVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsVectorVariant1)
+            {
+                vectorVariant1?.Invoke(VectorVariant1!);
+            }
+            else if (IsVectorVariant2)
+            {
+                vectorVariant2?.Invoke(VectorVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::System.Collections.Generic.IList<double>>? vectorVariant1 = null,
+            global::System.Action<string>? vectorVariant2 = null,
             bool validate = true)
         {
             if (validate)

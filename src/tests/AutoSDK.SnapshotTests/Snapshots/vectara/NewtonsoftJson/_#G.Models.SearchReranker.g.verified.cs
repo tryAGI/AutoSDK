@@ -33,6 +33,19 @@ namespace G
         public bool IsCustomerReranker => CustomerReranker != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickCustomerReranker(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CustomerSpecificReranker? value)
+        {
+            value = CustomerReranker;
+            return IsCustomerReranker;
+        }
+
+        /// <summary>
         /// A reranker that uses user-defined functions to reorder search results.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -48,6 +61,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Userfn))]
 #endif
         public bool IsUserfn => Userfn != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickUserfn(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.UserFunctionReranker? value)
+        {
+            value = Userfn;
+            return IsUserfn;
+        }
 
         /// <summary>
         /// A reranker that uses Maximal Marginal Relevance to balance relevance and diversity in search results.
@@ -67,6 +93,19 @@ namespace G
         public bool IsMmr => Mmr != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMmr(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.MMRReranker? value)
+        {
+            value = Mmr;
+            return IsMmr;
+        }
+
+        /// <summary>
         /// A reranker that applies multiple rerankers in sequence to produce the final search results.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -84,6 +123,19 @@ namespace G
         public bool IsChain => Chain != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickChain(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ChainReranker? value)
+        {
+            value = Chain;
+            return IsChain;
+        }
+
+        /// <summary>
         /// A placeholder reranker that does not modify the original search results ordering.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -99,6 +151,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(None))]
 #endif
         public bool IsNone => None != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickNone(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.NoneReranker? value)
+        {
+            value = None;
+            return IsNone;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -244,11 +309,11 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.CustomerSpecificReranker?, TResult>? customerReranker = null,
-            global::System.Func<global::G.UserFunctionReranker?, TResult>? userfn = null,
-            global::System.Func<global::G.MMRReranker?, TResult>? mmr = null,
-            global::System.Func<global::G.ChainReranker?, TResult>? chain = null,
-            global::System.Func<global::G.NoneReranker?, TResult>? none = null,
+            global::System.Func<global::G.CustomerSpecificReranker, TResult>? customerReranker = null,
+            global::System.Func<global::G.UserFunctionReranker, TResult>? userfn = null,
+            global::System.Func<global::G.MMRReranker, TResult>? mmr = null,
+            global::System.Func<global::G.ChainReranker, TResult>? chain = null,
+            global::System.Func<global::G.NoneReranker, TResult>? none = null,
             bool validate = true)
         {
             if (validate)
@@ -284,11 +349,53 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.CustomerSpecificReranker?>? customerReranker = null,
-            global::System.Action<global::G.UserFunctionReranker?>? userfn = null,
-            global::System.Action<global::G.MMRReranker?>? mmr = null,
-            global::System.Action<global::G.ChainReranker?>? chain = null,
-            global::System.Action<global::G.NoneReranker?>? none = null,
+            global::System.Action<global::G.CustomerSpecificReranker>? customerReranker = null,
+
+            global::System.Action<global::G.UserFunctionReranker>? userfn = null,
+
+            global::System.Action<global::G.MMRReranker>? mmr = null,
+
+            global::System.Action<global::G.ChainReranker>? chain = null,
+
+            global::System.Action<global::G.NoneReranker>? none = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsCustomerReranker)
+            {
+                customerReranker?.Invoke(CustomerReranker!);
+            }
+            else if (IsUserfn)
+            {
+                userfn?.Invoke(Userfn!);
+            }
+            else if (IsMmr)
+            {
+                mmr?.Invoke(Mmr!);
+            }
+            else if (IsChain)
+            {
+                chain?.Invoke(Chain!);
+            }
+            else if (IsNone)
+            {
+                none?.Invoke(None!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.CustomerSpecificReranker>? customerReranker = null,
+            global::System.Action<global::G.UserFunctionReranker>? userfn = null,
+            global::System.Action<global::G.MMRReranker>? mmr = null,
+            global::System.Action<global::G.ChainReranker>? chain = null,
+            global::System.Action<global::G.NoneReranker>? none = null,
             bool validate = true)
         {
             if (validate)

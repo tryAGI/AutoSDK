@@ -33,6 +33,19 @@ namespace G
         public bool IsAvailable => Available != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickAvailable(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.DependentAvailableAgentIdentifier? value)
+        {
+            value = Available;
+            return IsAvailable;
+        }
+
+        /// <summary>
         /// A model that represents an agent dependent on a knowledge base/tools<br/>
         /// to which the user has no direct access.
         /// </summary>
@@ -49,6 +62,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Unknown))]
 #endif
         public bool IsUnknown => Unknown != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickUnknown(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.DependentUnknownAgentIdentifier? value)
+        {
+            value = Unknown;
+            return IsUnknown;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -128,8 +154,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.DependentAvailableAgentIdentifier?, TResult>? available = null,
-            global::System.Func<global::G.DependentUnknownAgentIdentifier?, TResult>? unknown = null,
+            global::System.Func<global::G.DependentAvailableAgentIdentifier, TResult>? available = null,
+            global::System.Func<global::G.DependentUnknownAgentIdentifier, TResult>? unknown = null,
             bool validate = true)
         {
             if (validate)
@@ -153,8 +179,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.DependentAvailableAgentIdentifier?>? available = null,
-            global::System.Action<global::G.DependentUnknownAgentIdentifier?>? unknown = null,
+            global::System.Action<global::G.DependentAvailableAgentIdentifier>? available = null,
+
+            global::System.Action<global::G.DependentUnknownAgentIdentifier>? unknown = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsAvailable)
+            {
+                available?.Invoke(Available!);
+            }
+            else if (IsUnknown)
+            {
+                unknown?.Invoke(Unknown!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.DependentAvailableAgentIdentifier>? available = null,
+            global::System.Action<global::G.DependentUnknownAgentIdentifier>? unknown = null,
             bool validate = true)
         {
             if (validate)

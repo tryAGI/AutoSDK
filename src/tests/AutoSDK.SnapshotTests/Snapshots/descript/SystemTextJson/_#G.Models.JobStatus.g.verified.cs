@@ -34,6 +34,19 @@ namespace G
         public bool IsImportProjectMedia => ImportProjectMedia != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickImportProjectMedia(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ImportJobStatus? value)
+        {
+            value = ImportProjectMedia;
+            return IsImportProjectMedia;
+        }
+
+        /// <summary>
         /// Status of an Agent edit job
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -49,6 +62,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Agent))]
 #endif
         public bool IsAgent => Agent != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickAgent(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.AgentJobStatus? value)
+        {
+            value = Agent;
+            return IsAgent;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -128,8 +154,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.ImportJobStatus?, TResult>? importProjectMedia = null,
-            global::System.Func<global::G.AgentJobStatus?, TResult>? agent = null,
+            global::System.Func<global::G.ImportJobStatus, TResult>? importProjectMedia = null,
+            global::System.Func<global::G.AgentJobStatus, TResult>? agent = null,
             bool validate = true)
         {
             if (validate)
@@ -153,8 +179,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.ImportJobStatus?>? importProjectMedia = null,
-            global::System.Action<global::G.AgentJobStatus?>? agent = null,
+            global::System.Action<global::G.ImportJobStatus>? importProjectMedia = null,
+
+            global::System.Action<global::G.AgentJobStatus>? agent = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsImportProjectMedia)
+            {
+                importProjectMedia?.Invoke(ImportProjectMedia!);
+            }
+            else if (IsAgent)
+            {
+                agent?.Invoke(Agent!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.ImportJobStatus>? importProjectMedia = null,
+            global::System.Action<global::G.AgentJobStatus>? agent = null,
             bool validate = true)
         {
             if (validate)

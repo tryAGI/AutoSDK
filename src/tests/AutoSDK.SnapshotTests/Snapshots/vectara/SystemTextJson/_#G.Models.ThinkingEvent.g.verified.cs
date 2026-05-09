@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickAgentBase(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.AgentEventBase? value)
+        {
+            value = AgentBase;
+            return IsAgentBase;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ThinkingEventVariant2? ThinkingEventVariant2 { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ThinkingEventVariant2))]
 #endif
         public bool IsThinkingEventVariant2 => ThinkingEventVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickThinkingEventVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ThinkingEventVariant2? value)
+        {
+            value = ThinkingEventVariant2;
+            return IsThinkingEventVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -119,8 +145,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.AgentEventBase?, TResult>? agentBase = null,
-            global::System.Func<global::G.ThinkingEventVariant2?, TResult>? thinkingEventVariant2 = null,
+            global::System.Func<global::G.AgentEventBase, TResult>? agentBase = null,
+            global::System.Func<global::G.ThinkingEventVariant2, TResult>? thinkingEventVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -144,8 +170,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.AgentEventBase?>? agentBase = null,
-            global::System.Action<global::G.ThinkingEventVariant2?>? thinkingEventVariant2 = null,
+            global::System.Action<global::G.AgentEventBase>? agentBase = null,
+
+            global::System.Action<global::G.ThinkingEventVariant2>? thinkingEventVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsAgentBase)
+            {
+                agentBase?.Invoke(AgentBase!);
+            }
+            else if (IsThinkingEventVariant2)
+            {
+                thinkingEventVariant2?.Invoke(ThinkingEventVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.AgentEventBase>? agentBase = null,
+            global::System.Action<global::G.ThinkingEventVariant2>? thinkingEventVariant2 = null,
             bool validate = true)
         {
             if (validate)

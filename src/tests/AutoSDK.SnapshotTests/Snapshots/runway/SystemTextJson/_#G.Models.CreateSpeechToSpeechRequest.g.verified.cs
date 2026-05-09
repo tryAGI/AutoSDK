@@ -13,6 +13,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public string? Model { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CreateSpeechToSpeechRequestElevenMultilingualStsV2? ElevenMultilingualStsV2 { get; init; }
 #else
@@ -26,6 +31,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ElevenMultilingualStsV2))]
 #endif
         public bool IsElevenMultilingualStsV2 => ElevenMultilingualStsV2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickElevenMultilingualStsV2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateSpeechToSpeechRequestElevenMultilingualStsV2? value)
+        {
+            value = ElevenMultilingualStsV2;
+            return IsElevenMultilingualStsV2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -42,6 +60,19 @@ namespace G
         public CreateSpeechToSpeechRequest(global::G.CreateSpeechToSpeechRequestElevenMultilingualStsV2? value)
         {
             ElevenMultilingualStsV2 = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public CreateSpeechToSpeechRequest(
+            string? model,
+            global::G.CreateSpeechToSpeechRequestElevenMultilingualStsV2? elevenMultilingualStsV2
+            )
+        {
+            Model = model;
+
+            ElevenMultilingualStsV2 = elevenMultilingualStsV2;
         }
 
         /// <summary>
@@ -70,7 +101,7 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.CreateSpeechToSpeechRequestElevenMultilingualStsV2?, TResult>? elevenMultilingualStsV2 = null,
+            global::System.Func<global::G.CreateSpeechToSpeechRequestElevenMultilingualStsV2, TResult>? elevenMultilingualStsV2 = null,
             bool validate = true)
         {
             if (validate)
@@ -90,7 +121,25 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.CreateSpeechToSpeechRequestElevenMultilingualStsV2?>? elevenMultilingualStsV2 = null,
+            global::System.Action<global::G.CreateSpeechToSpeechRequestElevenMultilingualStsV2>? elevenMultilingualStsV2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsElevenMultilingualStsV2)
+            {
+                elevenMultilingualStsV2?.Invoke(ElevenMultilingualStsV2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.CreateSpeechToSpeechRequestElevenMultilingualStsV2>? elevenMultilingualStsV2 = null,
             bool validate = true)
         {
             if (validate)

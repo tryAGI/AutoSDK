@@ -27,6 +27,25 @@ namespace G
         /// <summary>
         /// Create a Session
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        /// <remarks>
+        /// curl --request POST \<br/>
+        ///   --url https://api.browserbase.com/v1/sessions \<br/>
+        ///   --header 'Content-Type: application/json' \<br/>
+        ///   --header 'X-BB-API-Key: &lt;api-key&gt;' \<br/>
+        ///   --data '{}'
+        /// </remarks>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.AllOf<global::G.Session, global::G.SessionsCreateResponse2>>> SessionsCreateAsResponseAsync(
+
+            global::G.SessionsCreateRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create a Session
+        /// </summary>
         /// <param name="projectId">
         /// The Project ID. Can be found in [Settings](https://www.browserbase.com/settings). Optional - if not provided, the project will be inferred from the API key.
         /// </param>

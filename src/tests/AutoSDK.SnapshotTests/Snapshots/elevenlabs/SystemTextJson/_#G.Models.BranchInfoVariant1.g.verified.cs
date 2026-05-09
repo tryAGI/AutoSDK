@@ -35,6 +35,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickTrafficSplit(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.TransferBranchInfoTrafficSplit? value)
+        {
+            value = TrafficSplit;
+            return IsTrafficSplit;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.TransferBranchInfoDefaultingToMain? DefaultingToMain { get; init; }
 #else
@@ -48,6 +61,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(DefaultingToMain))]
 #endif
         public bool IsDefaultingToMain => DefaultingToMain != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickDefaultingToMain(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.TransferBranchInfoDefaultingToMain? value)
+        {
+            value = DefaultingToMain;
+            return IsDefaultingToMain;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -127,8 +153,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.TransferBranchInfoTrafficSplit?, TResult>? trafficSplit = null,
-            global::System.Func<global::G.TransferBranchInfoDefaultingToMain?, TResult>? defaultingToMain = null,
+            global::System.Func<global::G.TransferBranchInfoTrafficSplit, TResult>? trafficSplit = null,
+            global::System.Func<global::G.TransferBranchInfoDefaultingToMain, TResult>? defaultingToMain = null,
             bool validate = true)
         {
             if (validate)
@@ -152,8 +178,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.TransferBranchInfoTrafficSplit?>? trafficSplit = null,
-            global::System.Action<global::G.TransferBranchInfoDefaultingToMain?>? defaultingToMain = null,
+            global::System.Action<global::G.TransferBranchInfoTrafficSplit>? trafficSplit = null,
+
+            global::System.Action<global::G.TransferBranchInfoDefaultingToMain>? defaultingToMain = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsTrafficSplit)
+            {
+                trafficSplit?.Invoke(TrafficSplit!);
+            }
+            else if (IsDefaultingToMain)
+            {
+                defaultingToMain?.Invoke(DefaultingToMain!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.TransferBranchInfoTrafficSplit>? trafficSplit = null,
+            global::System.Action<global::G.TransferBranchInfoDefaultingToMain>? defaultingToMain = null,
             bool validate = true)
         {
             if (validate)

@@ -21,5 +21,21 @@ namespace G
             string applicationId,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Application details<br/>
+        /// Retrieves detailed information for a specific no-code agent (formerly called no-code applications), including its configuration and current status.
+        /// </summary>
+        /// <param name="applicationId"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        /// <remarks>
+        /// curl --location --request GET https://api.writer.com/v1/applications/{application_id} \<br/>
+        ///  --header "Authorization: Bearer &lt;token&gt;"
+        /// </remarks>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.ApplicationWithInputs>> GetApplicationsByApplicationIdAsResponseAsync(
+            string applicationId,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

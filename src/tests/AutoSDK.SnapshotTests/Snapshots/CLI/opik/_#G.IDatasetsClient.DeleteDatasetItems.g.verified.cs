@@ -28,6 +28,22 @@ namespace G
         /// 2. **Delete by filters**: Provide 'dataset_id' with optional 'filters' to delete items matching criteria<br/>
         /// When using filters, an empty 'filters' array will delete all items in the specified dataset.
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse> DeleteDatasetItemsAsResponseAsync(
+
+            global::G.DatasetItemsDelete request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Delete dataset items<br/>
+        /// Delete dataset items using one of two modes:<br/>
+        /// 1. **Delete by IDs**: Provide 'item_ids' to delete specific items by their IDs<br/>
+        /// 2. **Delete by filters**: Provide 'dataset_id' with optional 'filters' to delete items matching criteria<br/>
+        /// When using filters, an empty 'filters' array will delete all items in the specified dataset.
+        /// </summary>
         /// <param name="itemIds">
         /// List of dataset item IDs to delete (max 1000). Use this to delete specific items by their IDs. Mutually exclusive with 'dataset_id' and 'filters'.
         /// </param>

@@ -24,15 +24,31 @@ namespace G.JsonConverters
                 foreach (var __jsonProp in __jsonDocument.RootElement.EnumerateObject())
                 {
                     __jsonProps.Add(__jsonProp.Name);
+                    if (__jsonProp.Value.ValueKind == global::System.Text.Json.JsonValueKind.Object)
+                    {
+                        foreach (var __nestedJsonProp in __jsonProp.Value.EnumerateObject())
+                        {
+                            __jsonProps.Add(__jsonProp.Name + "." + __nestedJsonProp.Name);
+                        }
+                    }
+
                 }
             }
 
             var __score0 = 0;
             if (__jsonProps.Contains("scalar")) __score0++;
+            if (__jsonProps.Contains("scalar.always_ram")) __score0++;
+            if (__jsonProps.Contains("scalar.quantile")) __score0++;
+            if (__jsonProps.Contains("scalar.type")) __score0++;
             var __score1 = 0;
             if (__jsonProps.Contains("product")) __score1++;
+            if (__jsonProps.Contains("product.always_ram")) __score1++;
+            if (__jsonProps.Contains("product.compression")) __score1++;
             var __score2 = 0;
             if (__jsonProps.Contains("binary")) __score2++;
+            if (__jsonProps.Contains("binary.always_ram")) __score2++;
+            if (__jsonProps.Contains("binary.encoding")) __score2++;
+            if (__jsonProps.Contains("binary.query_encoding")) __score2++;
             var __score3 = 0;
             var __bestScore = 0;
             var __bestIndex = -1;

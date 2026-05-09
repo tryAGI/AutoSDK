@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickOpenAIModelParams(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ModelParamsOpenAIModelParams? value)
+        {
+            value = OpenAIModelParams;
+            return IsOpenAIModelParams;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ModelParamsAnthropicModelParams? AnthropicModelParams { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AnthropicModelParams))]
 #endif
         public bool IsAnthropicModelParams => AnthropicModelParams != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickAnthropicModelParams(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ModelParamsAnthropicModelParams? value)
+        {
+            value = AnthropicModelParams;
+            return IsAnthropicModelParams;
+        }
 
         /// <summary>
         /// 
@@ -64,6 +90,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickGoogleModelParams(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ModelParamsGoogleModelParams? value)
+        {
+            value = GoogleModelParams;
+            return IsGoogleModelParams;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ModelParamsWindowAIModelParams? WindowAIModelParams { get; init; }
 #else
@@ -81,6 +120,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickWindowAIModelParams(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ModelParamsWindowAIModelParams? value)
+        {
+            value = WindowAIModelParams;
+            return IsWindowAIModelParams;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ModelParamsJsCompletionParams? JsCompletionParams { get; init; }
 #else
@@ -94,6 +146,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(JsCompletionParams))]
 #endif
         public bool IsJsCompletionParams => JsCompletionParams != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickJsCompletionParams(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ModelParamsJsCompletionParams? value)
+        {
+            value = JsCompletionParams;
+            return IsJsCompletionParams;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -236,11 +301,11 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.ModelParamsOpenAIModelParams?, TResult>? openAIModelParams = null,
-            global::System.Func<global::G.ModelParamsAnthropicModelParams?, TResult>? anthropicModelParams = null,
-            global::System.Func<global::G.ModelParamsGoogleModelParams?, TResult>? googleModelParams = null,
-            global::System.Func<global::G.ModelParamsWindowAIModelParams?, TResult>? windowAIModelParams = null,
-            global::System.Func<global::G.ModelParamsJsCompletionParams?, TResult>? jsCompletionParams = null,
+            global::System.Func<global::G.ModelParamsOpenAIModelParams, TResult>? openAIModelParams = null,
+            global::System.Func<global::G.ModelParamsAnthropicModelParams, TResult>? anthropicModelParams = null,
+            global::System.Func<global::G.ModelParamsGoogleModelParams, TResult>? googleModelParams = null,
+            global::System.Func<global::G.ModelParamsWindowAIModelParams, TResult>? windowAIModelParams = null,
+            global::System.Func<global::G.ModelParamsJsCompletionParams, TResult>? jsCompletionParams = null,
             bool validate = true)
         {
             if (validate)
@@ -276,11 +341,53 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.ModelParamsOpenAIModelParams?>? openAIModelParams = null,
-            global::System.Action<global::G.ModelParamsAnthropicModelParams?>? anthropicModelParams = null,
-            global::System.Action<global::G.ModelParamsGoogleModelParams?>? googleModelParams = null,
-            global::System.Action<global::G.ModelParamsWindowAIModelParams?>? windowAIModelParams = null,
-            global::System.Action<global::G.ModelParamsJsCompletionParams?>? jsCompletionParams = null,
+            global::System.Action<global::G.ModelParamsOpenAIModelParams>? openAIModelParams = null,
+
+            global::System.Action<global::G.ModelParamsAnthropicModelParams>? anthropicModelParams = null,
+
+            global::System.Action<global::G.ModelParamsGoogleModelParams>? googleModelParams = null,
+
+            global::System.Action<global::G.ModelParamsWindowAIModelParams>? windowAIModelParams = null,
+
+            global::System.Action<global::G.ModelParamsJsCompletionParams>? jsCompletionParams = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsOpenAIModelParams)
+            {
+                openAIModelParams?.Invoke(OpenAIModelParams!);
+            }
+            else if (IsAnthropicModelParams)
+            {
+                anthropicModelParams?.Invoke(AnthropicModelParams!);
+            }
+            else if (IsGoogleModelParams)
+            {
+                googleModelParams?.Invoke(GoogleModelParams!);
+            }
+            else if (IsWindowAIModelParams)
+            {
+                windowAIModelParams?.Invoke(WindowAIModelParams!);
+            }
+            else if (IsJsCompletionParams)
+            {
+                jsCompletionParams?.Invoke(JsCompletionParams!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.ModelParamsOpenAIModelParams>? openAIModelParams = null,
+            global::System.Action<global::G.ModelParamsAnthropicModelParams>? anthropicModelParams = null,
+            global::System.Action<global::G.ModelParamsGoogleModelParams>? googleModelParams = null,
+            global::System.Action<global::G.ModelParamsWindowAIModelParams>? windowAIModelParams = null,
+            global::System.Action<global::G.ModelParamsJsCompletionParams>? jsCompletionParams = null,
             bool validate = true)
         {
             if (validate)

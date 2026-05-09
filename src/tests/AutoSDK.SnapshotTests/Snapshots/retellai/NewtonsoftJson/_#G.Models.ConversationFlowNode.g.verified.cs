@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickConversationNode(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ConversationNode? value)
+        {
+            value = ConversationNode;
+            return IsConversationNode;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.EndNode? End { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(End))]
 #endif
         public bool IsEnd => End != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickEnd(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.EndNode? value)
+        {
+            value = End;
+            return IsEnd;
+        }
 
         /// <summary>
         /// 
@@ -64,6 +90,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickFunction(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.FunctionNode? value)
+        {
+            value = Function;
+            return IsFunction;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CodeNode? Code { get; init; }
 #else
@@ -77,6 +116,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Code))]
 #endif
         public bool IsCode => Code != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickCode(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CodeNode? value)
+        {
+            value = Code;
+            return IsCode;
+        }
 
         /// <summary>
         /// 
@@ -98,6 +150,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickTransferCall(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.TransferCallNode? value)
+        {
+            value = TransferCall;
+            return IsTransferCall;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.PressDigitNode? PressDigit { get; init; }
 #else
@@ -111,6 +176,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(PressDigit))]
 #endif
         public bool IsPressDigit => PressDigit != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickPressDigit(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.PressDigitNode? value)
+        {
+            value = PressDigit;
+            return IsPressDigit;
+        }
 
         /// <summary>
         /// 
@@ -132,6 +210,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickBranch(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.BranchNode? value)
+        {
+            value = Branch;
+            return IsBranch;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.SmsNode? Sms { get; init; }
 #else
@@ -145,6 +236,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Sms))]
 #endif
         public bool IsSms => Sms != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSms(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.SmsNode? value)
+        {
+            value = Sms;
+            return IsSms;
+        }
 
         /// <summary>
         /// 
@@ -166,6 +270,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickExtractDynamicVariables(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ExtractDynamicVariablesNode? value)
+        {
+            value = ExtractDynamicVariables;
+            return IsExtractDynamicVariables;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.AgentSwapNode? AgentSwap { get; init; }
 #else
@@ -179,6 +296,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AgentSwap))]
 #endif
         public bool IsAgentSwap => AgentSwap != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickAgentSwap(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.AgentSwapNode? value)
+        {
+            value = AgentSwap;
+            return IsAgentSwap;
+        }
 
         /// <summary>
         /// 
@@ -200,6 +330,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickMcp(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.MCPNode? value)
+        {
+            value = Mcp;
+            return IsMcp;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ComponentNode? Component { get; init; }
 #else
@@ -213,6 +356,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Component))]
 #endif
         public bool IsComponent => Component != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickComponent(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ComponentNode? value)
+        {
+            value = Component;
+            return IsComponent;
+        }
 
         /// <summary>
         /// 
@@ -234,6 +390,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickBridgeTransfer(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.BridgeTransferNode? value)
+        {
+            value = BridgeTransfer;
+            return IsBridgeTransfer;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CancelTransferNode? CancelTransfer { get; init; }
 #else
@@ -247,6 +416,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CancelTransfer))]
 #endif
         public bool IsCancelTransfer => CancelTransfer != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickCancelTransfer(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CancelTransferNode? value)
+        {
+            value = CancelTransfer;
+            return IsCancelTransfer;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -672,6 +854,102 @@ namespace G
         /// 
         /// </summary>
         public void Match(
+            global::System.Action<global::G.ConversationNode?>? conversationNode = null,
+
+            global::System.Action<global::G.EndNode?>? end = null,
+
+            global::System.Action<global::G.FunctionNode?>? function = null,
+
+            global::System.Action<global::G.CodeNode?>? code = null,
+
+            global::System.Action<global::G.TransferCallNode?>? transferCall = null,
+
+            global::System.Action<global::G.PressDigitNode?>? pressDigit = null,
+
+            global::System.Action<global::G.BranchNode?>? branch = null,
+
+            global::System.Action<global::G.SmsNode?>? sms = null,
+
+            global::System.Action<global::G.ExtractDynamicVariablesNode?>? extractDynamicVariables = null,
+
+            global::System.Action<global::G.AgentSwapNode?>? agentSwap = null,
+
+            global::System.Action<global::G.MCPNode?>? mcp = null,
+
+            global::System.Action<global::G.ComponentNode?>? component = null,
+
+            global::System.Action<global::G.BridgeTransferNode?>? bridgeTransfer = null,
+
+            global::System.Action<global::G.CancelTransferNode?>? cancelTransfer = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsConversationNode)
+            {
+                conversationNode?.Invoke(ConversationNode!);
+            }
+            else if (IsEnd)
+            {
+                end?.Invoke(End!);
+            }
+            else if (IsFunction)
+            {
+                function?.Invoke(Function!);
+            }
+            else if (IsCode)
+            {
+                code?.Invoke(Code!);
+            }
+            else if (IsTransferCall)
+            {
+                transferCall?.Invoke(TransferCall!);
+            }
+            else if (IsPressDigit)
+            {
+                pressDigit?.Invoke(PressDigit!);
+            }
+            else if (IsBranch)
+            {
+                branch?.Invoke(Branch!);
+            }
+            else if (IsSms)
+            {
+                sms?.Invoke(Sms!);
+            }
+            else if (IsExtractDynamicVariables)
+            {
+                extractDynamicVariables?.Invoke(ExtractDynamicVariables!);
+            }
+            else if (IsAgentSwap)
+            {
+                agentSwap?.Invoke(AgentSwap!);
+            }
+            else if (IsMcp)
+            {
+                mcp?.Invoke(Mcp!);
+            }
+            else if (IsComponent)
+            {
+                component?.Invoke(Component!);
+            }
+            else if (IsBridgeTransfer)
+            {
+                bridgeTransfer?.Invoke(BridgeTransfer!);
+            }
+            else if (IsCancelTransfer)
+            {
+                cancelTransfer?.Invoke(CancelTransfer!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
             global::System.Action<global::G.ConversationNode?>? conversationNode = null,
             global::System.Action<global::G.EndNode?>? end = null,
             global::System.Action<global::G.FunctionNode?>? function = null,

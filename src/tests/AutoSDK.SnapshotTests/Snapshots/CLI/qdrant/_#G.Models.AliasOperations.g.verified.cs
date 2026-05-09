@@ -28,6 +28,19 @@ namespace G
         public bool IsCreateOperation => CreateOperation != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickCreateOperation(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateAliasOperation? value)
+        {
+            value = CreateOperation;
+            return IsCreateOperation;
+        }
+
+        /// <summary>
         /// Delete alias if exists
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -45,6 +58,19 @@ namespace G
         public bool IsDeleteOperation => DeleteOperation != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickDeleteOperation(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.DeleteAliasOperation? value)
+        {
+            value = DeleteOperation;
+            return IsDeleteOperation;
+        }
+
+        /// <summary>
         /// Change alias to a new one
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -60,6 +86,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RenameOperation))]
 #endif
         public bool IsRenameOperation => RenameOperation != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickRenameOperation(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.RenameAliasOperation? value)
+        {
+            value = RenameOperation;
+            return IsRenameOperation;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -158,9 +197,9 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.CreateAliasOperation?, TResult>? createOperation = null,
-            global::System.Func<global::G.DeleteAliasOperation?, TResult>? deleteOperation = null,
-            global::System.Func<global::G.RenameAliasOperation?, TResult>? renameOperation = null,
+            global::System.Func<global::G.CreateAliasOperation, TResult>? createOperation = null,
+            global::System.Func<global::G.DeleteAliasOperation, TResult>? deleteOperation = null,
+            global::System.Func<global::G.RenameAliasOperation, TResult>? renameOperation = null,
             bool validate = true)
         {
             if (validate)
@@ -188,9 +227,39 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.CreateAliasOperation?>? createOperation = null,
-            global::System.Action<global::G.DeleteAliasOperation?>? deleteOperation = null,
-            global::System.Action<global::G.RenameAliasOperation?>? renameOperation = null,
+            global::System.Action<global::G.CreateAliasOperation>? createOperation = null,
+
+            global::System.Action<global::G.DeleteAliasOperation>? deleteOperation = null,
+
+            global::System.Action<global::G.RenameAliasOperation>? renameOperation = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsCreateOperation)
+            {
+                createOperation?.Invoke(CreateOperation!);
+            }
+            else if (IsDeleteOperation)
+            {
+                deleteOperation?.Invoke(DeleteOperation!);
+            }
+            else if (IsRenameOperation)
+            {
+                renameOperation?.Invoke(RenameOperation!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.CreateAliasOperation>? createOperation = null,
+            global::System.Action<global::G.DeleteAliasOperation>? deleteOperation = null,
+            global::System.Action<global::G.RenameAliasOperation>? renameOperation = null,
             bool validate = true)
         {
             if (validate)

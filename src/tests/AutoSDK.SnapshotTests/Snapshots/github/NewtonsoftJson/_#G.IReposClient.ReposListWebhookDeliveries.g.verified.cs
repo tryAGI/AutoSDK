@@ -29,5 +29,29 @@ namespace G
             bool? redelivery = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// List deliveries for a repository webhook<br/>
+        /// Returns a list of webhook deliveries for a webhook configured in a repository.
+        /// </summary>
+        /// <param name="owner"></param>
+        /// <param name="repo"></param>
+        /// <param name="hookId"></param>
+        /// <param name="perPage">
+        /// Default Value: 30
+        /// </param>
+        /// <param name="cursor"></param>
+        /// <param name="redelivery"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::G.HookDeliveryItem>>> ReposListWebhookDeliveriesAsResponseAsync(
+            string owner,
+            string repo,
+            int hookId,
+            int? perPage = default,
+            string? cursor = default,
+            bool? redelivery = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

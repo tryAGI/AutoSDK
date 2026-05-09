@@ -13,6 +13,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public string? Type { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ClientSideAccessTokensCreateClientSideAccessTokenRequestPolicyItemVariant1? Agent { get; init; }
 #else
@@ -26,6 +31,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Agent))]
 #endif
         public bool IsAgent => Agent != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickAgent(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ClientSideAccessTokensCreateClientSideAccessTokenRequestPolicyItemVariant1? value)
+        {
+            value = Agent;
+            return IsAgent;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -42,6 +60,19 @@ namespace G
         public PolicyItem(global::G.ClientSideAccessTokensCreateClientSideAccessTokenRequestPolicyItemVariant1? value)
         {
             Agent = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public PolicyItem(
+            string? type,
+            global::G.ClientSideAccessTokensCreateClientSideAccessTokenRequestPolicyItemVariant1? agent
+            )
+        {
+            Type = type;
+
+            Agent = agent;
         }
 
         /// <summary>
@@ -70,7 +101,7 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.ClientSideAccessTokensCreateClientSideAccessTokenRequestPolicyItemVariant1?, TResult>? agent = null,
+            global::System.Func<global::G.ClientSideAccessTokensCreateClientSideAccessTokenRequestPolicyItemVariant1, TResult>? agent = null,
             bool validate = true)
         {
             if (validate)
@@ -90,7 +121,25 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.ClientSideAccessTokensCreateClientSideAccessTokenRequestPolicyItemVariant1?>? agent = null,
+            global::System.Action<global::G.ClientSideAccessTokensCreateClientSideAccessTokenRequestPolicyItemVariant1>? agent = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsAgent)
+            {
+                agent?.Invoke(Agent!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.ClientSideAccessTokensCreateClientSideAccessTokenRequestPolicyItemVariant1>? agent = null,
             bool validate = true)
         {
             if (validate)

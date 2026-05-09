@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickUserGivenNameVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = UserGivenNameVariant1;
+            return IsUserGivenNameVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<string>? UserGivenNameVariant2 { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(UserGivenNameVariant2))]
 #endif
         public bool IsUserGivenNameVariant2 => UserGivenNameVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickUserGivenNameVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::System.Collections.Generic.IList<string>? value)
+        {
+            value = UserGivenNameVariant2;
+            return IsUserGivenNameVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -101,8 +127,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<string?, TResult>? userGivenNameVariant1 = null,
-            global::System.Func<global::System.Collections.Generic.IList<string>?, TResult>? userGivenNameVariant2 = null,
+            global::System.Func<string, TResult>? userGivenNameVariant1 = null,
+            global::System.Func<global::System.Collections.Generic.IList<string>, TResult>? userGivenNameVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -126,8 +152,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<string?>? userGivenNameVariant1 = null,
-            global::System.Action<global::System.Collections.Generic.IList<string>?>? userGivenNameVariant2 = null,
+            global::System.Action<string>? userGivenNameVariant1 = null,
+
+            global::System.Action<global::System.Collections.Generic.IList<string>>? userGivenNameVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsUserGivenNameVariant1)
+            {
+                userGivenNameVariant1?.Invoke(UserGivenNameVariant1!);
+            }
+            else if (IsUserGivenNameVariant2)
+            {
+                userGivenNameVariant2?.Invoke(UserGivenNameVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<string>? userGivenNameVariant1 = null,
+            global::System.Action<global::System.Collections.Generic.IList<string>>? userGivenNameVariant2 = null,
             bool validate = true)
         {
             if (validate)

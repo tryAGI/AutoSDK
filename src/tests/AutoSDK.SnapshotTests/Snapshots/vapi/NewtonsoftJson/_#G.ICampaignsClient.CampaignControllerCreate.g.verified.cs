@@ -20,6 +20,18 @@ namespace G
         /// <summary>
         /// Create Campaign
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.Campaign>> CampaignControllerCreateAsResponseAsync(
+
+            global::G.CreateCampaignDTO request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create Campaign
+        /// </summary>
         /// <param name="name">
         /// This is the name of the campaign. This is just for your own reference.<br/>
         /// Example: Q2 Sales Campaign

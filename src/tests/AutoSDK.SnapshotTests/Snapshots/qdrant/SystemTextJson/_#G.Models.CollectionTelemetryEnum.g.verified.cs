@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickCollectionTelemetry(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CollectionTelemetry? value)
+        {
+            value = CollectionTelemetry;
+            return IsCollectionTelemetry;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CollectionsAggregatedTelemetry? CollectionsAggregated { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CollectionsAggregated))]
 #endif
         public bool IsCollectionsAggregated => CollectionsAggregated != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickCollectionsAggregated(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CollectionsAggregatedTelemetry? value)
+        {
+            value = CollectionsAggregated;
+            return IsCollectionsAggregated;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -119,8 +145,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.CollectionTelemetry?, TResult>? collectionTelemetry = null,
-            global::System.Func<global::G.CollectionsAggregatedTelemetry?, TResult>? collectionsAggregated = null,
+            global::System.Func<global::G.CollectionTelemetry, TResult>? collectionTelemetry = null,
+            global::System.Func<global::G.CollectionsAggregatedTelemetry, TResult>? collectionsAggregated = null,
             bool validate = true)
         {
             if (validate)
@@ -144,8 +170,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.CollectionTelemetry?>? collectionTelemetry = null,
-            global::System.Action<global::G.CollectionsAggregatedTelemetry?>? collectionsAggregated = null,
+            global::System.Action<global::G.CollectionTelemetry>? collectionTelemetry = null,
+
+            global::System.Action<global::G.CollectionsAggregatedTelemetry>? collectionsAggregated = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsCollectionTelemetry)
+            {
+                collectionTelemetry?.Invoke(CollectionTelemetry!);
+            }
+            else if (IsCollectionsAggregated)
+            {
+                collectionsAggregated?.Invoke(CollectionsAggregated!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.CollectionTelemetry>? collectionTelemetry = null,
+            global::System.Action<global::G.CollectionsAggregatedTelemetry>? collectionsAggregated = null,
             bool validate = true)
         {
             if (validate)

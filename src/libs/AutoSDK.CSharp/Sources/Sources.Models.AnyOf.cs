@@ -19,6 +19,11 @@ public static partial class Sources
         var declarationName = !anyOfData.IsNamed
             ? $"{anyOfData.SubType}{types}"
             : anyOfData.Name;
+        var discriminatorPropertyType = anyOfData.DiscriminatorType != null && anyOfData.DiscriminatorPropertyName != null
+            ? (anyOfData.DiscriminatorPropertyIsEnum
+                ? $"{anyOfData.DiscriminatorType.Value.CSharpTypeWithoutNullability}{anyOfData.DiscriminatorPropertyName}"
+                : "string")
+            : "string";
         var validation = anyOfData.SubType switch
         {
             "AnyOf" => string.Join(" || ", anyOfData.Properties.Select(x => $"Is{x.Name}")),
@@ -41,7 +46,7 @@ public static partial class Sources
   anyOfData.DiscriminatorType == null ||
   anyOfData.DiscriminatorPropertyName == null ||
   anyOfData.Properties.Any(x => string.IsNullOrWhiteSpace(x.DiscriminatorValue)) ? TrimmedLine : $@" 
-            {anyOfData.DiscriminatorType.Value.CSharpTypeWithoutNullability}{anyOfData.DiscriminatorPropertyName}? {anyOfData.DiscriminatorPropertyName.ToParameterName()},
+            {discriminatorPropertyType}? {anyOfData.DiscriminatorPropertyName.ToParameterName()},
  ")}
 {anyOfData.Properties.Select(x => $@" 
             {x.Type.CSharpTypeWithNullability} {x.ParameterName},
@@ -96,7 +101,7 @@ namespace {anyOfData.Namespace}
   anyOfData.DiscriminatorPropertyName == null ||
   anyOfData.Properties.Any(x => string.IsNullOrWhiteSpace(x.DiscriminatorValue)) ? TrimmedLine : $@" 
         {string.Empty.ToXmlDocumentationSummary(level: 8)}
-        public {anyOfData.DiscriminatorType.Value.CSharpTypeWithoutNullability}{anyOfData.DiscriminatorPropertyName}? {anyOfData.DiscriminatorPropertyName} {{ get; }}
+        public {discriminatorPropertyType}? {anyOfData.DiscriminatorPropertyName} {{ get; }}
 ")}
 {anyOfData.Properties.Select(x => $@"
         {x.Summary.ToXmlDocumentationSummary(level: 8)}

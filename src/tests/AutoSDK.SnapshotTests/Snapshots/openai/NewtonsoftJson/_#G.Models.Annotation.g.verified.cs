@@ -11,6 +11,11 @@ namespace G
     public readonly partial struct Annotation : global::System.IEquatable<Annotation>
     {
         /// <summary>
+        /// 
+        /// </summary>
+        public string? Type { get; }
+
+        /// <summary>
         /// A citation to a file.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -26,6 +31,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FileCitation))]
 #endif
         public bool IsFileCitation => FileCitation != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFileCitation(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.FileCitationBody? value)
+        {
+            value = FileCitation;
+            return IsFileCitation;
+        }
 
         /// <summary>
         /// A citation for a web resource used to generate a model response.
@@ -45,6 +63,19 @@ namespace G
         public bool IsUrlCitation => UrlCitation != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickUrlCitation(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.UrlCitationBody? value)
+        {
+            value = UrlCitation;
+            return IsUrlCitation;
+        }
+
+        /// <summary>
         /// A citation for a container file used to generate a model response.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -62,6 +93,19 @@ namespace G
         public bool IsContainerFileCitation => ContainerFileCitation != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickContainerFileCitation(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ContainerFileCitationBody? value)
+        {
+            value = ContainerFileCitation;
+            return IsContainerFileCitation;
+        }
+
+        /// <summary>
         /// A path to a file.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -77,6 +121,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FilePath))]
 #endif
         public bool IsFilePath => FilePath != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFilePath(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.FilePath? value)
+        {
+            value = FilePath;
+            return IsFilePath;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -153,12 +210,15 @@ namespace G
         /// 
         /// </summary>
         public Annotation(
+            string? type,
             global::G.FileCitationBody? fileCitation,
             global::G.UrlCitationBody? urlCitation,
             global::G.ContainerFileCitationBody? containerFileCitation,
             global::G.FilePath? filePath
             )
         {
+            Type = type;
+
             FileCitation = fileCitation;
             UrlCitation = urlCitation;
             ContainerFileCitation = containerFileCitation;
@@ -197,10 +257,10 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.FileCitationBody?, TResult>? fileCitation = null,
-            global::System.Func<global::G.UrlCitationBody?, TResult>? urlCitation = null,
-            global::System.Func<global::G.ContainerFileCitationBody?, TResult>? containerFileCitation = null,
-            global::System.Func<global::G.FilePath?, TResult>? filePath = null,
+            global::System.Func<global::G.FileCitationBody, TResult>? fileCitation = null,
+            global::System.Func<global::G.UrlCitationBody, TResult>? urlCitation = null,
+            global::System.Func<global::G.ContainerFileCitationBody, TResult>? containerFileCitation = null,
+            global::System.Func<global::G.FilePath, TResult>? filePath = null,
             bool validate = true)
         {
             if (validate)
@@ -232,10 +292,46 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.FileCitationBody?>? fileCitation = null,
-            global::System.Action<global::G.UrlCitationBody?>? urlCitation = null,
-            global::System.Action<global::G.ContainerFileCitationBody?>? containerFileCitation = null,
-            global::System.Action<global::G.FilePath?>? filePath = null,
+            global::System.Action<global::G.FileCitationBody>? fileCitation = null,
+
+            global::System.Action<global::G.UrlCitationBody>? urlCitation = null,
+
+            global::System.Action<global::G.ContainerFileCitationBody>? containerFileCitation = null,
+
+            global::System.Action<global::G.FilePath>? filePath = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsFileCitation)
+            {
+                fileCitation?.Invoke(FileCitation!);
+            }
+            else if (IsUrlCitation)
+            {
+                urlCitation?.Invoke(UrlCitation!);
+            }
+            else if (IsContainerFileCitation)
+            {
+                containerFileCitation?.Invoke(ContainerFileCitation!);
+            }
+            else if (IsFilePath)
+            {
+                filePath?.Invoke(FilePath!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.FileCitationBody>? fileCitation = null,
+            global::System.Action<global::G.UrlCitationBody>? urlCitation = null,
+            global::System.Action<global::G.ContainerFileCitationBody>? containerFileCitation = null,
+            global::System.Action<global::G.FilePath>? filePath = null,
             bool validate = true)
         {
             if (validate)

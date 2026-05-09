@@ -22,6 +22,19 @@ namespace G
         /// Upload init image<br/>
         /// This endpoint returns presigned details to upload an init image to S3
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.UploadInitImageResponse>> UploadInitImageAsResponseAsync(
+
+            global::G.UploadInitImageRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Upload init image<br/>
+        /// This endpoint returns presigned details to upload an init image to S3
+        /// </summary>
         /// <param name="extension">
         /// Has to be png, jpg, jpeg, or webp.
         /// </param>

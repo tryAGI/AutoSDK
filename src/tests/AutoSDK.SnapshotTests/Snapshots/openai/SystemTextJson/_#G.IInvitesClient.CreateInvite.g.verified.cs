@@ -20,6 +20,18 @@ namespace G
         /// <summary>
         /// Create an invite for a user to the organization. The invite must be accepted by the user before they have access to the organization.
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.Invite>> CreateInviteAsResponseAsync(
+
+            global::G.InviteRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create an invite for a user to the organization. The invite must be accepted by the user before they have access to the organization.
+        /// </summary>
         /// <param name="email">
         /// Send an email to this address
         /// </param>

@@ -35,6 +35,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickUploadedImage(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.UploadedImage? value)
+        {
+            value = UploadedImage;
+            return IsUploadedImage;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.UploadedAudio? UploadedAudio { get; init; }
 #else
@@ -48,6 +61,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(UploadedAudio))]
 #endif
         public bool IsUploadedAudio => UploadedAudio != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickUploadedAudio(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.UploadedAudio? value)
+        {
+            value = UploadedAudio;
+            return IsUploadedAudio;
+        }
 
         /// <summary>
         /// 
@@ -69,6 +95,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickUploadedVideo(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.UploadedVideo? value)
+        {
+            value = UploadedVideo;
+            return IsUploadedVideo;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.GeneratedAudio? GeneratedAudio { get; init; }
 #else
@@ -82,6 +121,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(GeneratedAudio))]
 #endif
         public bool IsGeneratedAudio => GeneratedAudio != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickGeneratedAudio(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.GeneratedAudio? value)
+        {
+            value = GeneratedAudio;
+            return IsGeneratedAudio;
+        }
 
         /// <summary>
         /// 
@@ -103,6 +155,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickGeneratedImage(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.GeneratedImage? value)
+        {
+            value = GeneratedImage;
+            return IsGeneratedImage;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.GeneratedVideo? GeneratedVideo { get; init; }
 #else
@@ -120,6 +185,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickGeneratedVideo(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.GeneratedVideo? value)
+        {
+            value = GeneratedVideo;
+            return IsGeneratedVideo;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.Voice? Voice { get; init; }
 #else
@@ -133,6 +211,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Voice))]
 #endif
         public bool IsVoice => Voice != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickVoice(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.Voice? value)
+        {
+            value = Voice;
+            return IsVoice;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -322,13 +413,13 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.UploadedImage?, TResult>? uploadedImage = null,
-            global::System.Func<global::G.UploadedAudio?, TResult>? uploadedAudio = null,
-            global::System.Func<global::G.UploadedVideo?, TResult>? uploadedVideo = null,
-            global::System.Func<global::G.GeneratedAudio?, TResult>? generatedAudio = null,
-            global::System.Func<global::G.GeneratedImage?, TResult>? generatedImage = null,
-            global::System.Func<global::G.GeneratedVideo?, TResult>? generatedVideo = null,
-            global::System.Func<global::G.Voice?, TResult>? voice = null,
+            global::System.Func<global::G.UploadedImage, TResult>? uploadedImage = null,
+            global::System.Func<global::G.UploadedAudio, TResult>? uploadedAudio = null,
+            global::System.Func<global::G.UploadedVideo, TResult>? uploadedVideo = null,
+            global::System.Func<global::G.GeneratedAudio, TResult>? generatedAudio = null,
+            global::System.Func<global::G.GeneratedImage, TResult>? generatedImage = null,
+            global::System.Func<global::G.GeneratedVideo, TResult>? generatedVideo = null,
+            global::System.Func<global::G.Voice, TResult>? voice = null,
             bool validate = true)
         {
             if (validate)
@@ -372,13 +463,67 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.UploadedImage?>? uploadedImage = null,
-            global::System.Action<global::G.UploadedAudio?>? uploadedAudio = null,
-            global::System.Action<global::G.UploadedVideo?>? uploadedVideo = null,
-            global::System.Action<global::G.GeneratedAudio?>? generatedAudio = null,
-            global::System.Action<global::G.GeneratedImage?>? generatedImage = null,
-            global::System.Action<global::G.GeneratedVideo?>? generatedVideo = null,
-            global::System.Action<global::G.Voice?>? voice = null,
+            global::System.Action<global::G.UploadedImage>? uploadedImage = null,
+
+            global::System.Action<global::G.UploadedAudio>? uploadedAudio = null,
+
+            global::System.Action<global::G.UploadedVideo>? uploadedVideo = null,
+
+            global::System.Action<global::G.GeneratedAudio>? generatedAudio = null,
+
+            global::System.Action<global::G.GeneratedImage>? generatedImage = null,
+
+            global::System.Action<global::G.GeneratedVideo>? generatedVideo = null,
+
+            global::System.Action<global::G.Voice>? voice = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsUploadedImage)
+            {
+                uploadedImage?.Invoke(UploadedImage!);
+            }
+            else if (IsUploadedAudio)
+            {
+                uploadedAudio?.Invoke(UploadedAudio!);
+            }
+            else if (IsUploadedVideo)
+            {
+                uploadedVideo?.Invoke(UploadedVideo!);
+            }
+            else if (IsGeneratedAudio)
+            {
+                generatedAudio?.Invoke(GeneratedAudio!);
+            }
+            else if (IsGeneratedImage)
+            {
+                generatedImage?.Invoke(GeneratedImage!);
+            }
+            else if (IsGeneratedVideo)
+            {
+                generatedVideo?.Invoke(GeneratedVideo!);
+            }
+            else if (IsVoice)
+            {
+                voice?.Invoke(Voice!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.UploadedImage>? uploadedImage = null,
+            global::System.Action<global::G.UploadedAudio>? uploadedAudio = null,
+            global::System.Action<global::G.UploadedVideo>? uploadedVideo = null,
+            global::System.Action<global::G.GeneratedAudio>? generatedAudio = null,
+            global::System.Action<global::G.GeneratedImage>? generatedImage = null,
+            global::System.Action<global::G.GeneratedVideo>? generatedVideo = null,
+            global::System.Action<global::G.Voice>? voice = null,
             bool validate = true)
         {
             if (validate)

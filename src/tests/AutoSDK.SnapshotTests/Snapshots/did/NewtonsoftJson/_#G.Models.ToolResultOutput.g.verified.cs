@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickToolResultOutputVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ToolResultOutputVariant1? value)
+        {
+            value = ToolResultOutputVariant1;
+            return IsToolResultOutputVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ToolResultOutputVariant2? ToolResultOutputVariant2 { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ToolResultOutputVariant2))]
 #endif
         public bool IsToolResultOutputVariant2 => ToolResultOutputVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickToolResultOutputVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ToolResultOutputVariant2? value)
+        {
+            value = ToolResultOutputVariant2;
+            return IsToolResultOutputVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -119,8 +145,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.ToolResultOutputVariant1?, TResult>? toolResultOutputVariant1 = null,
-            global::System.Func<global::G.ToolResultOutputVariant2?, TResult>? toolResultOutputVariant2 = null,
+            global::System.Func<global::G.ToolResultOutputVariant1, TResult>? toolResultOutputVariant1 = null,
+            global::System.Func<global::G.ToolResultOutputVariant2, TResult>? toolResultOutputVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -144,8 +170,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.ToolResultOutputVariant1?>? toolResultOutputVariant1 = null,
-            global::System.Action<global::G.ToolResultOutputVariant2?>? toolResultOutputVariant2 = null,
+            global::System.Action<global::G.ToolResultOutputVariant1>? toolResultOutputVariant1 = null,
+
+            global::System.Action<global::G.ToolResultOutputVariant2>? toolResultOutputVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsToolResultOutputVariant1)
+            {
+                toolResultOutputVariant1?.Invoke(ToolResultOutputVariant1!);
+            }
+            else if (IsToolResultOutputVariant2)
+            {
+                toolResultOutputVariant2?.Invoke(ToolResultOutputVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.ToolResultOutputVariant1>? toolResultOutputVariant1 = null,
+            global::System.Action<global::G.ToolResultOutputVariant2>? toolResultOutputVariant2 = null,
             bool validate = true)
         {
             if (validate)

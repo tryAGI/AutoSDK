@@ -35,6 +35,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickByoPhoneNumber(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateByoPhoneNumberDTO? value)
+        {
+            value = ByoPhoneNumber;
+            return IsByoPhoneNumber;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CreateTwilioPhoneNumberDTO? Twilio { get; init; }
 #else
@@ -48,6 +61,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Twilio))]
 #endif
         public bool IsTwilio => Twilio != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickTwilio(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateTwilioPhoneNumberDTO? value)
+        {
+            value = Twilio;
+            return IsTwilio;
+        }
 
         /// <summary>
         /// 
@@ -69,6 +95,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickVonage(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateVonagePhoneNumberDTO? value)
+        {
+            value = Vonage;
+            return IsVonage;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CreateVapiPhoneNumberDTO? Vapi { get; init; }
 #else
@@ -86,6 +125,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickVapi(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateVapiPhoneNumberDTO? value)
+        {
+            value = Vapi;
+            return IsVapi;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CreateTelnyxPhoneNumberDTO? Telnyx { get; init; }
 #else
@@ -99,6 +151,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Telnyx))]
 #endif
         public bool IsTelnyx => Telnyx != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickTelnyx(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateTelnyxPhoneNumberDTO? value)
+        {
+            value = Telnyx;
+            return IsTelnyx;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -244,11 +309,11 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.CreateByoPhoneNumberDTO?, TResult>? byoPhoneNumber = null,
-            global::System.Func<global::G.CreateTwilioPhoneNumberDTO?, TResult>? twilio = null,
-            global::System.Func<global::G.CreateVonagePhoneNumberDTO?, TResult>? vonage = null,
-            global::System.Func<global::G.CreateVapiPhoneNumberDTO?, TResult>? vapi = null,
-            global::System.Func<global::G.CreateTelnyxPhoneNumberDTO?, TResult>? telnyx = null,
+            global::System.Func<global::G.CreateByoPhoneNumberDTO, TResult>? byoPhoneNumber = null,
+            global::System.Func<global::G.CreateTwilioPhoneNumberDTO, TResult>? twilio = null,
+            global::System.Func<global::G.CreateVonagePhoneNumberDTO, TResult>? vonage = null,
+            global::System.Func<global::G.CreateVapiPhoneNumberDTO, TResult>? vapi = null,
+            global::System.Func<global::G.CreateTelnyxPhoneNumberDTO, TResult>? telnyx = null,
             bool validate = true)
         {
             if (validate)
@@ -284,11 +349,53 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.CreateByoPhoneNumberDTO?>? byoPhoneNumber = null,
-            global::System.Action<global::G.CreateTwilioPhoneNumberDTO?>? twilio = null,
-            global::System.Action<global::G.CreateVonagePhoneNumberDTO?>? vonage = null,
-            global::System.Action<global::G.CreateVapiPhoneNumberDTO?>? vapi = null,
-            global::System.Action<global::G.CreateTelnyxPhoneNumberDTO?>? telnyx = null,
+            global::System.Action<global::G.CreateByoPhoneNumberDTO>? byoPhoneNumber = null,
+
+            global::System.Action<global::G.CreateTwilioPhoneNumberDTO>? twilio = null,
+
+            global::System.Action<global::G.CreateVonagePhoneNumberDTO>? vonage = null,
+
+            global::System.Action<global::G.CreateVapiPhoneNumberDTO>? vapi = null,
+
+            global::System.Action<global::G.CreateTelnyxPhoneNumberDTO>? telnyx = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsByoPhoneNumber)
+            {
+                byoPhoneNumber?.Invoke(ByoPhoneNumber!);
+            }
+            else if (IsTwilio)
+            {
+                twilio?.Invoke(Twilio!);
+            }
+            else if (IsVonage)
+            {
+                vonage?.Invoke(Vonage!);
+            }
+            else if (IsVapi)
+            {
+                vapi?.Invoke(Vapi!);
+            }
+            else if (IsTelnyx)
+            {
+                telnyx?.Invoke(Telnyx!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.CreateByoPhoneNumberDTO>? byoPhoneNumber = null,
+            global::System.Action<global::G.CreateTwilioPhoneNumberDTO>? twilio = null,
+            global::System.Action<global::G.CreateVonagePhoneNumberDTO>? vonage = null,
+            global::System.Action<global::G.CreateVapiPhoneNumberDTO>? vapi = null,
+            global::System.Action<global::G.CreateTelnyxPhoneNumberDTO>? telnyx = null,
             bool validate = true)
         {
             if (validate)

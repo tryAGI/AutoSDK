@@ -22,6 +22,19 @@ namespace G
         /// Purchase Phone Number<br/>
         /// Purchase a new phone number for inbound calls ($15/mo subscription).
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.StatusResponse>> PurchaseNumberAsResponseAsync(
+
+            global::G.PurchaseNumberRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Purchase Phone Number<br/>
+        /// Purchase a new phone number for inbound calls ($15/mo subscription).
+        /// </summary>
         /// <param name="areaCode">
         /// Three-digit area code for the phone number<br/>
         /// Default Value: 415

@@ -33,6 +33,19 @@ namespace G
         public bool IsConstrainChildTools => ConstrainChildTools != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickConstrainChildTools(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ChildToolRule? value)
+        {
+            value = ConstrainChildTools;
+            return IsConstrainChildTools;
+        }
+
+        /// <summary>
         /// Represents the initial tool rule configuration.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -48,6 +61,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RunFirst))]
 #endif
         public bool IsRunFirst => RunFirst != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickRunFirst(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.InitToolRule? value)
+        {
+            value = RunFirst;
+            return IsRunFirst;
+        }
 
         /// <summary>
         /// Represents a terminal tool rule configuration where if this tool gets called, it must end the agent loop.
@@ -67,6 +93,19 @@ namespace G
         public bool IsExitLoop => ExitLoop != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickExitLoop(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.TerminalToolRule? value)
+        {
+            value = ExitLoop;
+            return IsExitLoop;
+        }
+
+        /// <summary>
         /// A ToolRule that conditionally maps to different child tools based on the output.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -82,6 +121,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Conditional))]
 #endif
         public bool IsConditional => Conditional != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickConditional(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ConditionalToolRule? value)
+        {
+            value = Conditional;
+            return IsConditional;
+        }
 
         /// <summary>
         /// Represents a tool rule configuration where if this tool gets called, it must continue the agent loop.
@@ -101,6 +153,19 @@ namespace G
         public bool IsContinueLoop => ContinueLoop != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickContinueLoop(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ContinueToolRule? value)
+        {
+            value = ContinueLoop;
+            return IsContinueLoop;
+        }
+
+        /// <summary>
         /// Represents a tool rule configuration where this tool must be called before the agent loop can exit.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -116,6 +181,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RequiredBeforeExit))]
 #endif
         public bool IsRequiredBeforeExit => RequiredBeforeExit != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickRequiredBeforeExit(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.RequiredBeforeExitToolRule? value)
+        {
+            value = RequiredBeforeExit;
+            return IsRequiredBeforeExit;
+        }
 
         /// <summary>
         /// Represents a tool rule configuration which constrains the total number of times this tool can be invoked in a single step.
@@ -135,6 +213,19 @@ namespace G
         public bool IsMaxCountPerStep => MaxCountPerStep != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMaxCountPerStep(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.MaxCountPerStepToolRule? value)
+        {
+            value = MaxCountPerStep;
+            return IsMaxCountPerStep;
+        }
+
+        /// <summary>
         /// A ToolRule that only allows a child tool to be called if the parent has been called.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -152,6 +243,19 @@ namespace G
         public bool IsParentLastTool => ParentLastTool != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickParentLastTool(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ParentToolRule? value)
+        {
+            value = ParentLastTool;
+            return IsParentLastTool;
+        }
+
+        /// <summary>
         /// Represents a tool rule configuration which requires approval before the tool can be invoked.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -167,6 +271,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RequiresApproval))]
 #endif
         public bool IsRequiresApproval => RequiresApproval != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickRequiresApproval(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.RequiresApprovalToolRule? value)
+        {
+            value = RequiresApproval;
+            return IsRequiresApproval;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -400,15 +517,15 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.ChildToolRule?, TResult>? constrainChildTools = null,
-            global::System.Func<global::G.InitToolRule?, TResult>? runFirst = null,
-            global::System.Func<global::G.TerminalToolRule?, TResult>? exitLoop = null,
-            global::System.Func<global::G.ConditionalToolRule?, TResult>? conditional = null,
-            global::System.Func<global::G.ContinueToolRule?, TResult>? continueLoop = null,
-            global::System.Func<global::G.RequiredBeforeExitToolRule?, TResult>? requiredBeforeExit = null,
-            global::System.Func<global::G.MaxCountPerStepToolRule?, TResult>? maxCountPerStep = null,
-            global::System.Func<global::G.ParentToolRule?, TResult>? parentLastTool = null,
-            global::System.Func<global::G.RequiresApprovalToolRule?, TResult>? requiresApproval = null,
+            global::System.Func<global::G.ChildToolRule, TResult>? constrainChildTools = null,
+            global::System.Func<global::G.InitToolRule, TResult>? runFirst = null,
+            global::System.Func<global::G.TerminalToolRule, TResult>? exitLoop = null,
+            global::System.Func<global::G.ConditionalToolRule, TResult>? conditional = null,
+            global::System.Func<global::G.ContinueToolRule, TResult>? continueLoop = null,
+            global::System.Func<global::G.RequiredBeforeExitToolRule, TResult>? requiredBeforeExit = null,
+            global::System.Func<global::G.MaxCountPerStepToolRule, TResult>? maxCountPerStep = null,
+            global::System.Func<global::G.ParentToolRule, TResult>? parentLastTool = null,
+            global::System.Func<global::G.RequiresApprovalToolRule, TResult>? requiresApproval = null,
             bool validate = true)
         {
             if (validate)
@@ -460,15 +577,81 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.ChildToolRule?>? constrainChildTools = null,
-            global::System.Action<global::G.InitToolRule?>? runFirst = null,
-            global::System.Action<global::G.TerminalToolRule?>? exitLoop = null,
-            global::System.Action<global::G.ConditionalToolRule?>? conditional = null,
-            global::System.Action<global::G.ContinueToolRule?>? continueLoop = null,
-            global::System.Action<global::G.RequiredBeforeExitToolRule?>? requiredBeforeExit = null,
-            global::System.Action<global::G.MaxCountPerStepToolRule?>? maxCountPerStep = null,
-            global::System.Action<global::G.ParentToolRule?>? parentLastTool = null,
-            global::System.Action<global::G.RequiresApprovalToolRule?>? requiresApproval = null,
+            global::System.Action<global::G.ChildToolRule>? constrainChildTools = null,
+
+            global::System.Action<global::G.InitToolRule>? runFirst = null,
+
+            global::System.Action<global::G.TerminalToolRule>? exitLoop = null,
+
+            global::System.Action<global::G.ConditionalToolRule>? conditional = null,
+
+            global::System.Action<global::G.ContinueToolRule>? continueLoop = null,
+
+            global::System.Action<global::G.RequiredBeforeExitToolRule>? requiredBeforeExit = null,
+
+            global::System.Action<global::G.MaxCountPerStepToolRule>? maxCountPerStep = null,
+
+            global::System.Action<global::G.ParentToolRule>? parentLastTool = null,
+
+            global::System.Action<global::G.RequiresApprovalToolRule>? requiresApproval = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsConstrainChildTools)
+            {
+                constrainChildTools?.Invoke(ConstrainChildTools!);
+            }
+            else if (IsRunFirst)
+            {
+                runFirst?.Invoke(RunFirst!);
+            }
+            else if (IsExitLoop)
+            {
+                exitLoop?.Invoke(ExitLoop!);
+            }
+            else if (IsConditional)
+            {
+                conditional?.Invoke(Conditional!);
+            }
+            else if (IsContinueLoop)
+            {
+                continueLoop?.Invoke(ContinueLoop!);
+            }
+            else if (IsRequiredBeforeExit)
+            {
+                requiredBeforeExit?.Invoke(RequiredBeforeExit!);
+            }
+            else if (IsMaxCountPerStep)
+            {
+                maxCountPerStep?.Invoke(MaxCountPerStep!);
+            }
+            else if (IsParentLastTool)
+            {
+                parentLastTool?.Invoke(ParentLastTool!);
+            }
+            else if (IsRequiresApproval)
+            {
+                requiresApproval?.Invoke(RequiresApproval!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.ChildToolRule>? constrainChildTools = null,
+            global::System.Action<global::G.InitToolRule>? runFirst = null,
+            global::System.Action<global::G.TerminalToolRule>? exitLoop = null,
+            global::System.Action<global::G.ConditionalToolRule>? conditional = null,
+            global::System.Action<global::G.ContinueToolRule>? continueLoop = null,
+            global::System.Action<global::G.RequiredBeforeExitToolRule>? requiredBeforeExit = null,
+            global::System.Action<global::G.MaxCountPerStepToolRule>? maxCountPerStep = null,
+            global::System.Action<global::G.ParentToolRule>? parentLastTool = null,
+            global::System.Action<global::G.RequiresApprovalToolRule>? requiresApproval = null,
             bool validate = true)
         {
             if (validate)

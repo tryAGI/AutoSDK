@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickChatStreamType(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ChatStreamEventType? value)
+        {
+            value = ChatStreamType;
+            return IsChatStreamType;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CitationStartEventT3df62? T3df62 { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(T3df62))]
 #endif
         public bool IsT3df62 => T3df62 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickT3df62(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CitationStartEventT3df62? value)
+        {
+            value = T3df62;
+            return IsT3df62;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -119,8 +145,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.ChatStreamEventType?, TResult>? chatStreamType = null,
-            global::System.Func<global::G.CitationStartEventT3df62?, TResult>? t3df62 = null,
+            global::System.Func<global::G.ChatStreamEventType, TResult>? chatStreamType = null,
+            global::System.Func<global::G.CitationStartEventT3df62, TResult>? t3df62 = null,
             bool validate = true)
         {
             if (validate)
@@ -144,8 +170,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.ChatStreamEventType?>? chatStreamType = null,
-            global::System.Action<global::G.CitationStartEventT3df62?>? t3df62 = null,
+            global::System.Action<global::G.ChatStreamEventType>? chatStreamType = null,
+
+            global::System.Action<global::G.CitationStartEventT3df62>? t3df62 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsChatStreamType)
+            {
+                chatStreamType?.Invoke(ChatStreamType!);
+            }
+            else if (IsT3df62)
+            {
+                t3df62?.Invoke(T3df62!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.ChatStreamEventType>? chatStreamType = null,
+            global::System.Action<global::G.CitationStartEventT3df62>? t3df62 = null,
             bool validate = true)
         {
             if (validate)

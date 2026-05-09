@@ -25,6 +25,21 @@ namespace G
         /// This method creates an index.
         /// </summary>
         /// <param name="xApiKey"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.IndexesCreateResponse201>> CreateAsResponseAsync(
+            string xApiKey,
+
+            global::G.CreateRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create an index<br/>
+        /// This method creates an index.
+        /// </summary>
+        /// <param name="xApiKey"></param>
         /// <param name="indexName">
         /// The name of the index. Make sure you use a succinct and descriptive name.
         /// </param>

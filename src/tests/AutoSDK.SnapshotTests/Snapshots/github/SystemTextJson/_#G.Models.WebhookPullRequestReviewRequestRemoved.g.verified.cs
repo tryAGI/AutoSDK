@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickWebhookPullRequestReviewRequestRemovedVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.WebhookPullRequestReviewRequestRemovedVariant1? value)
+        {
+            value = WebhookPullRequestReviewRequestRemovedVariant1;
+            return IsWebhookPullRequestReviewRequestRemovedVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.WebhookPullRequestReviewRequestRemovedVariant2? WebhookPullRequestReviewRequestRemovedVariant2 { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(WebhookPullRequestReviewRequestRemovedVariant2))]
 #endif
         public bool IsWebhookPullRequestReviewRequestRemovedVariant2 => WebhookPullRequestReviewRequestRemovedVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickWebhookPullRequestReviewRequestRemovedVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.WebhookPullRequestReviewRequestRemovedVariant2? value)
+        {
+            value = WebhookPullRequestReviewRequestRemovedVariant2;
+            return IsWebhookPullRequestReviewRequestRemovedVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -119,8 +145,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.WebhookPullRequestReviewRequestRemovedVariant1?, TResult>? webhookPullRequestReviewRequestRemovedVariant1 = null,
-            global::System.Func<global::G.WebhookPullRequestReviewRequestRemovedVariant2?, TResult>? webhookPullRequestReviewRequestRemovedVariant2 = null,
+            global::System.Func<global::G.WebhookPullRequestReviewRequestRemovedVariant1, TResult>? webhookPullRequestReviewRequestRemovedVariant1 = null,
+            global::System.Func<global::G.WebhookPullRequestReviewRequestRemovedVariant2, TResult>? webhookPullRequestReviewRequestRemovedVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -144,8 +170,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.WebhookPullRequestReviewRequestRemovedVariant1?>? webhookPullRequestReviewRequestRemovedVariant1 = null,
-            global::System.Action<global::G.WebhookPullRequestReviewRequestRemovedVariant2?>? webhookPullRequestReviewRequestRemovedVariant2 = null,
+            global::System.Action<global::G.WebhookPullRequestReviewRequestRemovedVariant1>? webhookPullRequestReviewRequestRemovedVariant1 = null,
+
+            global::System.Action<global::G.WebhookPullRequestReviewRequestRemovedVariant2>? webhookPullRequestReviewRequestRemovedVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsWebhookPullRequestReviewRequestRemovedVariant1)
+            {
+                webhookPullRequestReviewRequestRemovedVariant1?.Invoke(WebhookPullRequestReviewRequestRemovedVariant1!);
+            }
+            else if (IsWebhookPullRequestReviewRequestRemovedVariant2)
+            {
+                webhookPullRequestReviewRequestRemovedVariant2?.Invoke(WebhookPullRequestReviewRequestRemovedVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.WebhookPullRequestReviewRequestRemovedVariant1>? webhookPullRequestReviewRequestRemovedVariant1 = null,
+            global::System.Action<global::G.WebhookPullRequestReviewRequestRemovedVariant2>? webhookPullRequestReviewRequestRemovedVariant2 = null,
             bool validate = true)
         {
             if (validate)

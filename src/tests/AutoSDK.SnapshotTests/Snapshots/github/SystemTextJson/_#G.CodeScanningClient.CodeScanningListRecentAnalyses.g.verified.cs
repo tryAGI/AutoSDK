@@ -104,6 +104,86 @@ namespace G
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var __response = await CodeScanningListRecentAnalysesAsResponseAsync(
+                owner: owner,
+                repo: repo,
+                toolName: toolName,
+                toolGuid: toolGuid,
+                page: page,
+                perPage: perPage,
+                pr: pr,
+                @ref: @ref,
+                sarifId: sarifId,
+                direction: direction,
+                sort: sort,
+                requestOptions: requestOptions,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// List code scanning analyses for a repository<br/>
+        /// Lists the details of all code scanning analyses for a repository,<br/>
+        /// starting with the most recent.<br/>
+        /// The response is paginated and you can use the `page` and `per_page` parameters<br/>
+        /// to list the analyses you're interested in.<br/>
+        /// By default 30 analyses are listed per page.<br/>
+        /// The `rules_count` field in the response give the number of rules<br/>
+        /// that were run in the analysis.<br/>
+        /// For very old analyses this data is not available,<br/>
+        /// and `0` is returned in this field.<br/>
+        /// &gt; [!WARNING]<br/>
+        /// &gt; **Deprecation notice:** The `tool_name` field is deprecated and will, in future, not be included in the response for this endpoint. The example response reflects this change. The tool name can now be found inside the `tool` field.<br/>
+        /// OAuth app tokens and personal access tokens (classic) need the `security_events` scope to use this endpoint with private or public repositories, or the `public_repo` scope to use this endpoint with only public repositories.
+        /// </summary>
+        /// <param name="owner"></param>
+        /// <param name="repo"></param>
+        /// <param name="toolName">
+        /// The name of the tool used to generate the code scanning analysis.
+        /// </param>
+        /// <param name="toolGuid">
+        /// The GUID of the tool used to generate the code scanning analysis, if provided in the uploaded SARIF data.
+        /// </param>
+        /// <param name="page">
+        /// Default Value: 1
+        /// </param>
+        /// <param name="perPage">
+        /// Default Value: 30
+        /// </param>
+        /// <param name="pr"></param>
+        /// <param name="ref">
+        /// The Git reference, formatted as `refs/pull/&lt;number&gt;/merge`, `refs/pull/&lt;number&gt;/head`,<br/>
+        /// `refs/heads/&lt;branch name&gt;` or simply `&lt;branch name&gt;`.
+        /// </param>
+        /// <param name="sarifId">
+        /// An identifier for the upload.<br/>
+        /// Example: 6c81cd8e-b078-4ac3-a3be-1dad7dbd0b53
+        /// </param>
+        /// <param name="direction">
+        /// Default Value: desc
+        /// </param>
+        /// <param name="sort">
+        /// Default Value: created
+        /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::G.CodeScanningAnalysis>>> CodeScanningListRecentAnalysesAsResponseAsync(
+            string owner,
+            string repo,
+            string? toolName = default,
+            string? toolGuid = default,
+            int? page = default,
+            int? perPage = default,
+            int? pr = default,
+            string? @ref = default,
+            string? sarifId = default,
+            global::G.CodeScanningListRecentAnalysesDirection? direction = default,
+            global::G.CodeScanningListRecentAnalysesSort? sort = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             PrepareArguments(
                 client: HttpClient);
             PrepareCodeScanningListRecentAnalysesArguments(
@@ -136,9 +216,10 @@ namespace G
 
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
+
                             var __pathBuilder = new global::G.PathBuilder(
                                 path: $"/repos/{owner}/{repo}/code-scanning/analyses",
-                                baseUri: HttpClient.BaseAddress); 
+                                baseUri: HttpClient.BaseAddress);
                             __pathBuilder
                                 .AddOptionalParameter("tool_name", toolName)
                                 .AddOptionalParameter("tool_guid", toolGuid)
@@ -148,7 +229,7 @@ namespace G
                                 .AddOptionalParameter("ref", @ref)
                                 .AddOptionalParameter("sarif_id", sarifId)
                                 .AddOptionalParameter("direction", direction?.ToValueString())
-                                .AddOptionalParameter("sort", sort?.ToValueString()) 
+                                .AddOptionalParameter("sort", sort?.ToValueString())
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::G.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -173,8 +254,8 @@ namespace G
                 PrepareCodeScanningListRecentAnalysesRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    owner: owner,
-                    repo: repo,
+                    owner: owner!,
+                    repo: repo!,
                     toolName: toolName,
                     toolGuid: toolGuid,
                     page: page,
@@ -213,6 +294,8 @@ namespace G
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                     try
                     {
@@ -223,6 +306,11 @@ namespace G
                     }
                     catch (global::System.Net.Http.HttpRequestException __exception)
                     {
+                        var __retryDelay = global::G.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: null,
+                            attempt: __attempt);
                         var __willRetry = __attempt < __maxAttempts && !__effectiveCancellationToken.IsCancellationRequested;
                         await global::G.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
@@ -240,6 +328,8 @@ namespace G
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: __willRetry,
+                                retryDelay: __willRetry ? __retryDelay : (global::System.TimeSpan?)null,
+                                retryReason: "exception",
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         if (!__willRetry)
                         {
@@ -249,8 +339,7 @@ namespace G
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::G.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -259,6 +348,11 @@ namespace G
                         __attempt < __maxAttempts &&
                         global::G.AutoSDKRequestOptionsSupport.ShouldRetryStatusCode(__response.StatusCode))
                     {
+                        var __retryDelay = global::G.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: __response,
+                            attempt: __attempt);
                         await global::G.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
@@ -275,14 +369,15 @@ namespace G
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: true,
+                                retryDelay: __retryDelay,
+                                retryReason: "status:" + ((int)__response.StatusCode).ToString(global::System.Globalization.CultureInfo.InvariantCulture),
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         __response.Dispose();
                         __response = null;
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::G.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -322,6 +417,8 @@ namespace G
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
                 else
@@ -342,6 +439,8 @@ namespace G
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
                             // Response if GitHub Advanced Security is not enabled for this repository
@@ -480,9 +579,13 @@ namespace G
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    return
-                                        global::System.Text.Json.JsonSerializer.Deserialize<global::System.Collections.Generic.IList<global::G.CodeScanningAnalysis>?>(__content, JsonSerializerOptions) ??
+                                    var __value = global::System.Text.Json.JsonSerializer.Deserialize<global::System.Collections.Generic.IList<global::G.CodeScanningAnalysis>?>(__content, JsonSerializerOptions) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                                    return new global::G.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::G.CodeScanningAnalysis>>(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri,
+                                        body: __value);
                                 }
                                 catch (global::System.Exception __ex)
                                 {
@@ -510,9 +613,13 @@ namespace G
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    return
-                                        await global::System.Text.Json.JsonSerializer.DeserializeAsync<global::System.Collections.Generic.IList<global::G.CodeScanningAnalysis>?>(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                                    var __value = await global::System.Text.Json.JsonSerializer.DeserializeAsync<global::System.Collections.Generic.IList<global::G.CodeScanningAnalysis>?>(__content, JsonSerializerOptions).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
+                                    return new global::G.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::G.CodeScanningAnalysis>>(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri,
+                                        body: __value);
                                 }
                                 catch (global::System.Exception __ex)
                                 {

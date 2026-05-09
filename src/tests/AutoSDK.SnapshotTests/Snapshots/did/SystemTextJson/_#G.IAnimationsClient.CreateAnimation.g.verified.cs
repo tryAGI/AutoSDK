@@ -21,6 +21,19 @@ namespace G
         /// <summary>
         /// Create an animation
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        [global::System.Obsolete("This method marked as deprecated.")]
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.CreateAnimationResponse>> CreateAnimationAsResponseAsync(
+
+            global::G.CreateAnimationRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create an animation
+        /// </summary>
         /// <param name="sourceUrl">
         /// The URL of the source image to be animated by the driver video. Image type of jpg|jpeg|tiff|png|bmp<br/>
         /// Default Value: https://d-id-public-bucket.s3.us-west-2.amazonaws.com/alice.jpg<br/>

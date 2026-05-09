@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickSetting(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.MaxOptimizationThreadsSetting? value)
+        {
+            value = Setting;
+            return IsSetting;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public int? MaxOptimizationThreadsVariant2 { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MaxOptimizationThreadsVariant2))]
 #endif
         public bool IsMaxOptimizationThreadsVariant2 => MaxOptimizationThreadsVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMaxOptimizationThreadsVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out int? value)
+        {
+            value = MaxOptimizationThreadsVariant2;
+            return IsMaxOptimizationThreadsVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -144,6 +170,30 @@ namespace G
         /// 
         /// </summary>
         public void Match(
+            global::System.Action<global::G.MaxOptimizationThreadsSetting?>? setting = null,
+
+            global::System.Action<int?>? maxOptimizationThreadsVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsSetting)
+            {
+                setting?.Invoke(Setting!);
+            }
+            else if (IsMaxOptimizationThreadsVariant2)
+            {
+                maxOptimizationThreadsVariant2?.Invoke(MaxOptimizationThreadsVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
             global::System.Action<global::G.MaxOptimizationThreadsSetting?>? setting = null,
             global::System.Action<int?>? maxOptimizationThreadsVariant2 = null,
             bool validate = true)

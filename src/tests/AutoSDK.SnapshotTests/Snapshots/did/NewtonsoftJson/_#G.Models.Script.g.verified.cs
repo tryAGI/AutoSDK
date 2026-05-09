@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickScriptVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ScriptVariant1? value)
+        {
+            value = ScriptVariant1;
+            return IsScriptVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ScriptVariant2? ScriptVariant2 { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ScriptVariant2))]
 #endif
         public bool IsScriptVariant2 => ScriptVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickScriptVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ScriptVariant2? value)
+        {
+            value = ScriptVariant2;
+            return IsScriptVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -119,8 +145,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.ScriptVariant1?, TResult>? scriptVariant1 = null,
-            global::System.Func<global::G.ScriptVariant2?, TResult>? scriptVariant2 = null,
+            global::System.Func<global::G.ScriptVariant1, TResult>? scriptVariant1 = null,
+            global::System.Func<global::G.ScriptVariant2, TResult>? scriptVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -144,8 +170,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.ScriptVariant1?>? scriptVariant1 = null,
-            global::System.Action<global::G.ScriptVariant2?>? scriptVariant2 = null,
+            global::System.Action<global::G.ScriptVariant1>? scriptVariant1 = null,
+
+            global::System.Action<global::G.ScriptVariant2>? scriptVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsScriptVariant1)
+            {
+                scriptVariant1?.Invoke(ScriptVariant1!);
+            }
+            else if (IsScriptVariant2)
+            {
+                scriptVariant2?.Invoke(ScriptVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.ScriptVariant1>? scriptVariant1 = null,
+            global::System.Action<global::G.ScriptVariant2>? scriptVariant2 = null,
             bool validate = true)
         {
             if (validate)

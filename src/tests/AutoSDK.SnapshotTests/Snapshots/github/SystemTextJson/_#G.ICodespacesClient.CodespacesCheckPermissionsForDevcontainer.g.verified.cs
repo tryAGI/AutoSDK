@@ -28,5 +28,28 @@ namespace G
             string devcontainerPath,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Check if permissions defined by a devcontainer have been accepted by the authenticated user<br/>
+        /// Checks whether the permissions defined by a given devcontainer configuration have been accepted by the authenticated user.<br/>
+        /// OAuth app tokens and personal access tokens (classic) need the `codespace` scope to use this endpoint.
+        /// </summary>
+        /// <param name="owner"></param>
+        /// <param name="repo"></param>
+        /// <param name="ref">
+        /// Example: master
+        /// </param>
+        /// <param name="devcontainerPath">
+        /// Example: .devcontainer/example/devcontainer.json
+        /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.CodespacesPermissionsCheckForDevcontainer>> CodespacesCheckPermissionsForDevcontainerAsResponseAsync(
+            string owner,
+            string repo,
+            string @ref,
+            string devcontainerPath,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

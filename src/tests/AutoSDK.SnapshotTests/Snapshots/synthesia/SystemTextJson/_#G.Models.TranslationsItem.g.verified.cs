@@ -35,6 +35,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickComplete(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.TranslationStatusApiItemSuccess? value)
+        {
+            value = Complete;
+            return IsComplete;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.TranslationStatusApiItemError? Error { get; init; }
 #else
@@ -48,6 +61,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Error))]
 #endif
         public bool IsError => Error != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickError(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.TranslationStatusApiItemError? value)
+        {
+            value = Error;
+            return IsError;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -127,8 +153,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.TranslationStatusApiItemSuccess?, TResult>? complete = null,
-            global::System.Func<global::G.TranslationStatusApiItemError?, TResult>? error = null,
+            global::System.Func<global::G.TranslationStatusApiItemSuccess, TResult>? complete = null,
+            global::System.Func<global::G.TranslationStatusApiItemError, TResult>? error = null,
             bool validate = true)
         {
             if (validate)
@@ -152,8 +178,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.TranslationStatusApiItemSuccess?>? complete = null,
-            global::System.Action<global::G.TranslationStatusApiItemError?>? error = null,
+            global::System.Action<global::G.TranslationStatusApiItemSuccess>? complete = null,
+
+            global::System.Action<global::G.TranslationStatusApiItemError>? error = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsComplete)
+            {
+                complete?.Invoke(Complete!);
+            }
+            else if (IsError)
+            {
+                error?.Invoke(Error!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.TranslationStatusApiItemSuccess>? complete = null,
+            global::System.Action<global::G.TranslationStatusApiItemError>? error = null,
             bool validate = true)
         {
             if (validate)

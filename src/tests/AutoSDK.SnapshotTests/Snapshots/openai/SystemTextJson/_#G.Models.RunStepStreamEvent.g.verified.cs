@@ -28,6 +28,19 @@ namespace G
         public bool IsRunStepStreamEventVariant1 => RunStepStreamEventVariant1 != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickRunStepStreamEventVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.RunStepStreamEventVariant1? value)
+        {
+            value = RunStepStreamEventVariant1;
+            return IsRunStepStreamEventVariant1;
+        }
+
+        /// <summary>
         /// Occurs when a [run step](/docs/api-reference/run-steps/step-object) moves to an `in_progress` state.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RunStepStreamEventVariant2))]
 #endif
         public bool IsRunStepStreamEventVariant2 => RunStepStreamEventVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickRunStepStreamEventVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.RunStepStreamEventVariant2? value)
+        {
+            value = RunStepStreamEventVariant2;
+            return IsRunStepStreamEventVariant2;
+        }
 
         /// <summary>
         /// Occurs when parts of a [run step](/docs/api-reference/run-steps/step-object) are being streamed.
@@ -62,6 +88,19 @@ namespace G
         public bool IsRunStepStreamEventVariant3 => RunStepStreamEventVariant3 != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickRunStepStreamEventVariant3(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.RunStepStreamEventVariant3? value)
+        {
+            value = RunStepStreamEventVariant3;
+            return IsRunStepStreamEventVariant3;
+        }
+
+        /// <summary>
         /// Occurs when a [run step](/docs/api-reference/run-steps/step-object) is completed.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -77,6 +116,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RunStepStreamEventVariant4))]
 #endif
         public bool IsRunStepStreamEventVariant4 => RunStepStreamEventVariant4 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickRunStepStreamEventVariant4(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.RunStepStreamEventVariant4? value)
+        {
+            value = RunStepStreamEventVariant4;
+            return IsRunStepStreamEventVariant4;
+        }
 
         /// <summary>
         /// Occurs when a [run step](/docs/api-reference/run-steps/step-object) fails.
@@ -96,6 +148,19 @@ namespace G
         public bool IsRunStepStreamEventVariant5 => RunStepStreamEventVariant5 != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickRunStepStreamEventVariant5(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.RunStepStreamEventVariant5? value)
+        {
+            value = RunStepStreamEventVariant5;
+            return IsRunStepStreamEventVariant5;
+        }
+
+        /// <summary>
         /// Occurs when a [run step](/docs/api-reference/run-steps/step-object) is cancelled.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -113,6 +178,19 @@ namespace G
         public bool IsRunStepStreamEventVariant6 => RunStepStreamEventVariant6 != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickRunStepStreamEventVariant6(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.RunStepStreamEventVariant6? value)
+        {
+            value = RunStepStreamEventVariant6;
+            return IsRunStepStreamEventVariant6;
+        }
+
+        /// <summary>
         /// Occurs when a [run step](/docs/api-reference/run-steps/step-object) expires.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -128,6 +206,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RunStepStreamEventVariant7))]
 #endif
         public bool IsRunStepStreamEventVariant7 => RunStepStreamEventVariant7 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickRunStepStreamEventVariant7(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.RunStepStreamEventVariant7? value)
+        {
+            value = RunStepStreamEventVariant7;
+            return IsRunStepStreamEventVariant7;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -314,13 +405,13 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.RunStepStreamEventVariant1?, TResult>? runStepStreamEventVariant1 = null,
-            global::System.Func<global::G.RunStepStreamEventVariant2?, TResult>? runStepStreamEventVariant2 = null,
-            global::System.Func<global::G.RunStepStreamEventVariant3?, TResult>? runStepStreamEventVariant3 = null,
-            global::System.Func<global::G.RunStepStreamEventVariant4?, TResult>? runStepStreamEventVariant4 = null,
-            global::System.Func<global::G.RunStepStreamEventVariant5?, TResult>? runStepStreamEventVariant5 = null,
-            global::System.Func<global::G.RunStepStreamEventVariant6?, TResult>? runStepStreamEventVariant6 = null,
-            global::System.Func<global::G.RunStepStreamEventVariant7?, TResult>? runStepStreamEventVariant7 = null,
+            global::System.Func<global::G.RunStepStreamEventVariant1, TResult>? runStepStreamEventVariant1 = null,
+            global::System.Func<global::G.RunStepStreamEventVariant2, TResult>? runStepStreamEventVariant2 = null,
+            global::System.Func<global::G.RunStepStreamEventVariant3, TResult>? runStepStreamEventVariant3 = null,
+            global::System.Func<global::G.RunStepStreamEventVariant4, TResult>? runStepStreamEventVariant4 = null,
+            global::System.Func<global::G.RunStepStreamEventVariant5, TResult>? runStepStreamEventVariant5 = null,
+            global::System.Func<global::G.RunStepStreamEventVariant6, TResult>? runStepStreamEventVariant6 = null,
+            global::System.Func<global::G.RunStepStreamEventVariant7, TResult>? runStepStreamEventVariant7 = null,
             bool validate = true)
         {
             if (validate)
@@ -364,13 +455,67 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.RunStepStreamEventVariant1?>? runStepStreamEventVariant1 = null,
-            global::System.Action<global::G.RunStepStreamEventVariant2?>? runStepStreamEventVariant2 = null,
-            global::System.Action<global::G.RunStepStreamEventVariant3?>? runStepStreamEventVariant3 = null,
-            global::System.Action<global::G.RunStepStreamEventVariant4?>? runStepStreamEventVariant4 = null,
-            global::System.Action<global::G.RunStepStreamEventVariant5?>? runStepStreamEventVariant5 = null,
-            global::System.Action<global::G.RunStepStreamEventVariant6?>? runStepStreamEventVariant6 = null,
-            global::System.Action<global::G.RunStepStreamEventVariant7?>? runStepStreamEventVariant7 = null,
+            global::System.Action<global::G.RunStepStreamEventVariant1>? runStepStreamEventVariant1 = null,
+
+            global::System.Action<global::G.RunStepStreamEventVariant2>? runStepStreamEventVariant2 = null,
+
+            global::System.Action<global::G.RunStepStreamEventVariant3>? runStepStreamEventVariant3 = null,
+
+            global::System.Action<global::G.RunStepStreamEventVariant4>? runStepStreamEventVariant4 = null,
+
+            global::System.Action<global::G.RunStepStreamEventVariant5>? runStepStreamEventVariant5 = null,
+
+            global::System.Action<global::G.RunStepStreamEventVariant6>? runStepStreamEventVariant6 = null,
+
+            global::System.Action<global::G.RunStepStreamEventVariant7>? runStepStreamEventVariant7 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsRunStepStreamEventVariant1)
+            {
+                runStepStreamEventVariant1?.Invoke(RunStepStreamEventVariant1!);
+            }
+            else if (IsRunStepStreamEventVariant2)
+            {
+                runStepStreamEventVariant2?.Invoke(RunStepStreamEventVariant2!);
+            }
+            else if (IsRunStepStreamEventVariant3)
+            {
+                runStepStreamEventVariant3?.Invoke(RunStepStreamEventVariant3!);
+            }
+            else if (IsRunStepStreamEventVariant4)
+            {
+                runStepStreamEventVariant4?.Invoke(RunStepStreamEventVariant4!);
+            }
+            else if (IsRunStepStreamEventVariant5)
+            {
+                runStepStreamEventVariant5?.Invoke(RunStepStreamEventVariant5!);
+            }
+            else if (IsRunStepStreamEventVariant6)
+            {
+                runStepStreamEventVariant6?.Invoke(RunStepStreamEventVariant6!);
+            }
+            else if (IsRunStepStreamEventVariant7)
+            {
+                runStepStreamEventVariant7?.Invoke(RunStepStreamEventVariant7!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.RunStepStreamEventVariant1>? runStepStreamEventVariant1 = null,
+            global::System.Action<global::G.RunStepStreamEventVariant2>? runStepStreamEventVariant2 = null,
+            global::System.Action<global::G.RunStepStreamEventVariant3>? runStepStreamEventVariant3 = null,
+            global::System.Action<global::G.RunStepStreamEventVariant4>? runStepStreamEventVariant4 = null,
+            global::System.Action<global::G.RunStepStreamEventVariant5>? runStepStreamEventVariant5 = null,
+            global::System.Action<global::G.RunStepStreamEventVariant6>? runStepStreamEventVariant6 = null,
+            global::System.Action<global::G.RunStepStreamEventVariant7>? runStepStreamEventVariant7 = null,
             bool validate = true)
         {
             if (validate)

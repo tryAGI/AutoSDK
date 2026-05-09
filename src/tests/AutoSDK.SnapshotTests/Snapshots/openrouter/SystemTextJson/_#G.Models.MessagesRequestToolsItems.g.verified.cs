@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickMessagesRequestToolsItems0(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.MessagesRequestToolsItems0? value)
+        {
+            value = MessagesRequestToolsItems0;
+            return IsMessagesRequestToolsItems0;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.MessagesRequestToolsItems1? MessagesRequestToolsItems1 { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessagesRequestToolsItems1))]
 #endif
         public bool IsMessagesRequestToolsItems1 => MessagesRequestToolsItems1 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMessagesRequestToolsItems1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.MessagesRequestToolsItems1? value)
+        {
+            value = MessagesRequestToolsItems1;
+            return IsMessagesRequestToolsItems1;
+        }
 
         /// <summary>
         /// 
@@ -64,6 +90,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickMessagesRequestToolsItems2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.MessagesRequestToolsItems2? value)
+        {
+            value = MessagesRequestToolsItems2;
+            return IsMessagesRequestToolsItems2;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.MessagesRequestToolsItems3? MessagesRequestToolsItems3 { get; init; }
 #else
@@ -77,6 +116,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessagesRequestToolsItems3))]
 #endif
         public bool IsMessagesRequestToolsItems3 => MessagesRequestToolsItems3 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMessagesRequestToolsItems3(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.MessagesRequestToolsItems3? value)
+        {
+            value = MessagesRequestToolsItems3;
+            return IsMessagesRequestToolsItems3;
+        }
 
         /// <summary>
         /// 
@@ -96,6 +148,19 @@ namespace G
         public bool IsMessagesRequestToolsItems4 => MessagesRequestToolsItems4 != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMessagesRequestToolsItems4(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.MessagesRequestToolsItems4? value)
+        {
+            value = MessagesRequestToolsItems4;
+            return IsMessagesRequestToolsItems4;
+        }
+
+        /// <summary>
         /// OpenRouter built-in server tool: returns the current date and time
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -113,6 +178,19 @@ namespace G
         public bool IsDatetimeServerTool => DatetimeServerTool != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickDatetimeServerTool(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.DatetimeServerTool? value)
+        {
+            value = DatetimeServerTool;
+            return IsDatetimeServerTool;
+        }
+
+        /// <summary>
         /// OpenRouter built-in server tool: searches the web for current information
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -128,6 +206,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessagesWebSearchServerTool))]
 #endif
         public bool IsMessagesWebSearchServerTool => MessagesWebSearchServerTool != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMessagesWebSearchServerTool(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.MessagesWebSearchServerTool? value)
+        {
+            value = MessagesWebSearchServerTool;
+            return IsMessagesWebSearchServerTool;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -314,13 +405,13 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.MessagesRequestToolsItems0?, TResult>? messagesRequestToolsItems0 = null,
-            global::System.Func<global::G.MessagesRequestToolsItems1?, TResult>? messagesRequestToolsItems1 = null,
-            global::System.Func<global::G.MessagesRequestToolsItems2?, TResult>? messagesRequestToolsItems2 = null,
-            global::System.Func<global::G.MessagesRequestToolsItems3?, TResult>? messagesRequestToolsItems3 = null,
-            global::System.Func<global::G.MessagesRequestToolsItems4?, TResult>? messagesRequestToolsItems4 = null,
-            global::System.Func<global::G.DatetimeServerTool?, TResult>? datetimeServerTool = null,
-            global::System.Func<global::G.MessagesWebSearchServerTool?, TResult>? messagesWebSearchServerTool = null,
+            global::System.Func<global::G.MessagesRequestToolsItems0, TResult>? messagesRequestToolsItems0 = null,
+            global::System.Func<global::G.MessagesRequestToolsItems1, TResult>? messagesRequestToolsItems1 = null,
+            global::System.Func<global::G.MessagesRequestToolsItems2, TResult>? messagesRequestToolsItems2 = null,
+            global::System.Func<global::G.MessagesRequestToolsItems3, TResult>? messagesRequestToolsItems3 = null,
+            global::System.Func<global::G.MessagesRequestToolsItems4, TResult>? messagesRequestToolsItems4 = null,
+            global::System.Func<global::G.DatetimeServerTool, TResult>? datetimeServerTool = null,
+            global::System.Func<global::G.MessagesWebSearchServerTool, TResult>? messagesWebSearchServerTool = null,
             bool validate = true)
         {
             if (validate)
@@ -364,13 +455,67 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.MessagesRequestToolsItems0?>? messagesRequestToolsItems0 = null,
-            global::System.Action<global::G.MessagesRequestToolsItems1?>? messagesRequestToolsItems1 = null,
-            global::System.Action<global::G.MessagesRequestToolsItems2?>? messagesRequestToolsItems2 = null,
-            global::System.Action<global::G.MessagesRequestToolsItems3?>? messagesRequestToolsItems3 = null,
-            global::System.Action<global::G.MessagesRequestToolsItems4?>? messagesRequestToolsItems4 = null,
-            global::System.Action<global::G.DatetimeServerTool?>? datetimeServerTool = null,
-            global::System.Action<global::G.MessagesWebSearchServerTool?>? messagesWebSearchServerTool = null,
+            global::System.Action<global::G.MessagesRequestToolsItems0>? messagesRequestToolsItems0 = null,
+
+            global::System.Action<global::G.MessagesRequestToolsItems1>? messagesRequestToolsItems1 = null,
+
+            global::System.Action<global::G.MessagesRequestToolsItems2>? messagesRequestToolsItems2 = null,
+
+            global::System.Action<global::G.MessagesRequestToolsItems3>? messagesRequestToolsItems3 = null,
+
+            global::System.Action<global::G.MessagesRequestToolsItems4>? messagesRequestToolsItems4 = null,
+
+            global::System.Action<global::G.DatetimeServerTool>? datetimeServerTool = null,
+
+            global::System.Action<global::G.MessagesWebSearchServerTool>? messagesWebSearchServerTool = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsMessagesRequestToolsItems0)
+            {
+                messagesRequestToolsItems0?.Invoke(MessagesRequestToolsItems0!);
+            }
+            else if (IsMessagesRequestToolsItems1)
+            {
+                messagesRequestToolsItems1?.Invoke(MessagesRequestToolsItems1!);
+            }
+            else if (IsMessagesRequestToolsItems2)
+            {
+                messagesRequestToolsItems2?.Invoke(MessagesRequestToolsItems2!);
+            }
+            else if (IsMessagesRequestToolsItems3)
+            {
+                messagesRequestToolsItems3?.Invoke(MessagesRequestToolsItems3!);
+            }
+            else if (IsMessagesRequestToolsItems4)
+            {
+                messagesRequestToolsItems4?.Invoke(MessagesRequestToolsItems4!);
+            }
+            else if (IsDatetimeServerTool)
+            {
+                datetimeServerTool?.Invoke(DatetimeServerTool!);
+            }
+            else if (IsMessagesWebSearchServerTool)
+            {
+                messagesWebSearchServerTool?.Invoke(MessagesWebSearchServerTool!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.MessagesRequestToolsItems0>? messagesRequestToolsItems0 = null,
+            global::System.Action<global::G.MessagesRequestToolsItems1>? messagesRequestToolsItems1 = null,
+            global::System.Action<global::G.MessagesRequestToolsItems2>? messagesRequestToolsItems2 = null,
+            global::System.Action<global::G.MessagesRequestToolsItems3>? messagesRequestToolsItems3 = null,
+            global::System.Action<global::G.MessagesRequestToolsItems4>? messagesRequestToolsItems4 = null,
+            global::System.Action<global::G.DatetimeServerTool>? datetimeServerTool = null,
+            global::System.Action<global::G.MessagesWebSearchServerTool>? messagesWebSearchServerTool = null,
             bool validate = true)
         {
             if (validate)

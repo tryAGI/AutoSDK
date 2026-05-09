@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickMessagesRequestContextManagementEditsItems0(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.MessagesRequestContextManagementEditsItems0? value)
+        {
+            value = MessagesRequestContextManagementEditsItems0;
+            return IsMessagesRequestContextManagementEditsItems0;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.MessagesRequestContextManagementEditsItems1? MessagesRequestContextManagementEditsItems1 { get; init; }
 #else
@@ -47,6 +60,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickMessagesRequestContextManagementEditsItems1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.MessagesRequestContextManagementEditsItems1? value)
+        {
+            value = MessagesRequestContextManagementEditsItems1;
+            return IsMessagesRequestContextManagementEditsItems1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.MessagesRequestContextManagementEditsItems2? MessagesRequestContextManagementEditsItems2 { get; init; }
 #else
@@ -60,6 +86,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessagesRequestContextManagementEditsItems2))]
 #endif
         public bool IsMessagesRequestContextManagementEditsItems2 => MessagesRequestContextManagementEditsItems2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMessagesRequestContextManagementEditsItems2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.MessagesRequestContextManagementEditsItems2? value)
+        {
+            value = MessagesRequestContextManagementEditsItems2;
+            return IsMessagesRequestContextManagementEditsItems2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -158,9 +197,9 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.MessagesRequestContextManagementEditsItems0?, TResult>? messagesRequestContextManagementEditsItems0 = null,
-            global::System.Func<global::G.MessagesRequestContextManagementEditsItems1?, TResult>? messagesRequestContextManagementEditsItems1 = null,
-            global::System.Func<global::G.MessagesRequestContextManagementEditsItems2?, TResult>? messagesRequestContextManagementEditsItems2 = null,
+            global::System.Func<global::G.MessagesRequestContextManagementEditsItems0, TResult>? messagesRequestContextManagementEditsItems0 = null,
+            global::System.Func<global::G.MessagesRequestContextManagementEditsItems1, TResult>? messagesRequestContextManagementEditsItems1 = null,
+            global::System.Func<global::G.MessagesRequestContextManagementEditsItems2, TResult>? messagesRequestContextManagementEditsItems2 = null,
             bool validate = true)
         {
             if (validate)
@@ -188,9 +227,39 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.MessagesRequestContextManagementEditsItems0?>? messagesRequestContextManagementEditsItems0 = null,
-            global::System.Action<global::G.MessagesRequestContextManagementEditsItems1?>? messagesRequestContextManagementEditsItems1 = null,
-            global::System.Action<global::G.MessagesRequestContextManagementEditsItems2?>? messagesRequestContextManagementEditsItems2 = null,
+            global::System.Action<global::G.MessagesRequestContextManagementEditsItems0>? messagesRequestContextManagementEditsItems0 = null,
+
+            global::System.Action<global::G.MessagesRequestContextManagementEditsItems1>? messagesRequestContextManagementEditsItems1 = null,
+
+            global::System.Action<global::G.MessagesRequestContextManagementEditsItems2>? messagesRequestContextManagementEditsItems2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsMessagesRequestContextManagementEditsItems0)
+            {
+                messagesRequestContextManagementEditsItems0?.Invoke(MessagesRequestContextManagementEditsItems0!);
+            }
+            else if (IsMessagesRequestContextManagementEditsItems1)
+            {
+                messagesRequestContextManagementEditsItems1?.Invoke(MessagesRequestContextManagementEditsItems1!);
+            }
+            else if (IsMessagesRequestContextManagementEditsItems2)
+            {
+                messagesRequestContextManagementEditsItems2?.Invoke(MessagesRequestContextManagementEditsItems2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.MessagesRequestContextManagementEditsItems0>? messagesRequestContextManagementEditsItems0 = null,
+            global::System.Action<global::G.MessagesRequestContextManagementEditsItems1>? messagesRequestContextManagementEditsItems1 = null,
+            global::System.Action<global::G.MessagesRequestContextManagementEditsItems2>? messagesRequestContextManagementEditsItems2 = null,
             bool validate = true)
         {
             if (validate)

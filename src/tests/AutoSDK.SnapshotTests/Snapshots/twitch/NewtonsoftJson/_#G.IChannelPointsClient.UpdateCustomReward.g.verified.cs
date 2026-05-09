@@ -36,6 +36,27 @@ namespace G
         /// </summary>
         /// <param name="broadcasterId"></param>
         /// <param name="id"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.UpdateCustomRewardResponse>> UpdateCustomRewardAsResponseAsync(
+            string broadcasterId,
+            string id,
+
+            global::G.UpdateCustomRewardBody request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Updates a custom reward.<br/>
+        /// Updates a custom reward. The app used to create the reward is the only app that may update the reward.<br/>
+        /// __Authorization:__<br/>
+        /// Requires a [user access token](https://dev.twitch.tv/docs/api/authentication#user-access-tokens) that includes the **channel:manage:redemptions** scope.<br/>
+        /// __Request Body:__<br/>
+        /// The body of the request should contain only the fields you’re updating.
+        /// </summary>
+        /// <param name="broadcasterId"></param>
+        /// <param name="id"></param>
         /// <param name="title">
         /// The reward’s title. The title may contain a maximum of 45 characters and it must be unique amongst all of the broadcaster’s custom rewards.
         /// </param>

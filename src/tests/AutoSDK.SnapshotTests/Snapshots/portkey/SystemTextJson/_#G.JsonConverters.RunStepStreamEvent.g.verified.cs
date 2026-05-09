@@ -24,29 +24,136 @@ namespace G.JsonConverters
                 foreach (var __jsonProp in __jsonDocument.RootElement.EnumerateObject())
                 {
                     __jsonProps.Add(__jsonProp.Name);
+                    if (__jsonProp.Value.ValueKind == global::System.Text.Json.JsonValueKind.Object)
+                    {
+                        foreach (var __nestedJsonProp in __jsonProp.Value.EnumerateObject())
+                        {
+                            __jsonProps.Add(__jsonProp.Name + "." + __nestedJsonProp.Name);
+                        }
+                    }
+
                 }
             }
 
             var __score0 = 0;
             if (__jsonProps.Contains("data")) __score0++;
+            if (__jsonProps.Contains("data.assistant_id")) __score0++;
+            if (__jsonProps.Contains("data.cancelled_at")) __score0++;
+            if (__jsonProps.Contains("data.completed_at")) __score0++;
+            if (__jsonProps.Contains("data.created_at")) __score0++;
+            if (__jsonProps.Contains("data.expired_at")) __score0++;
+            if (__jsonProps.Contains("data.failed_at")) __score0++;
+            if (__jsonProps.Contains("data.id")) __score0++;
+            if (__jsonProps.Contains("data.last_error")) __score0++;
+            if (__jsonProps.Contains("data.metadata")) __score0++;
+            if (__jsonProps.Contains("data.object")) __score0++;
+            if (__jsonProps.Contains("data.run_id")) __score0++;
+            if (__jsonProps.Contains("data.status")) __score0++;
+            if (__jsonProps.Contains("data.step_details")) __score0++;
+            if (__jsonProps.Contains("data.thread_id")) __score0++;
+            if (__jsonProps.Contains("data.type")) __score0++;
+            if (__jsonProps.Contains("data.usage")) __score0++;
             if (__jsonProps.Contains("event")) __score0++;
             var __score1 = 0;
             if (__jsonProps.Contains("data")) __score1++;
+            if (__jsonProps.Contains("data.assistant_id")) __score1++;
+            if (__jsonProps.Contains("data.cancelled_at")) __score1++;
+            if (__jsonProps.Contains("data.completed_at")) __score1++;
+            if (__jsonProps.Contains("data.created_at")) __score1++;
+            if (__jsonProps.Contains("data.expired_at")) __score1++;
+            if (__jsonProps.Contains("data.failed_at")) __score1++;
+            if (__jsonProps.Contains("data.id")) __score1++;
+            if (__jsonProps.Contains("data.last_error")) __score1++;
+            if (__jsonProps.Contains("data.metadata")) __score1++;
+            if (__jsonProps.Contains("data.object")) __score1++;
+            if (__jsonProps.Contains("data.run_id")) __score1++;
+            if (__jsonProps.Contains("data.status")) __score1++;
+            if (__jsonProps.Contains("data.step_details")) __score1++;
+            if (__jsonProps.Contains("data.thread_id")) __score1++;
+            if (__jsonProps.Contains("data.type")) __score1++;
+            if (__jsonProps.Contains("data.usage")) __score1++;
             if (__jsonProps.Contains("event")) __score1++;
             var __score2 = 0;
             if (__jsonProps.Contains("data")) __score2++;
+            if (__jsonProps.Contains("data.delta")) __score2++;
+            if (__jsonProps.Contains("data.id")) __score2++;
+            if (__jsonProps.Contains("data.object")) __score2++;
             if (__jsonProps.Contains("event")) __score2++;
             var __score3 = 0;
             if (__jsonProps.Contains("data")) __score3++;
+            if (__jsonProps.Contains("data.assistant_id")) __score3++;
+            if (__jsonProps.Contains("data.cancelled_at")) __score3++;
+            if (__jsonProps.Contains("data.completed_at")) __score3++;
+            if (__jsonProps.Contains("data.created_at")) __score3++;
+            if (__jsonProps.Contains("data.expired_at")) __score3++;
+            if (__jsonProps.Contains("data.failed_at")) __score3++;
+            if (__jsonProps.Contains("data.id")) __score3++;
+            if (__jsonProps.Contains("data.last_error")) __score3++;
+            if (__jsonProps.Contains("data.metadata")) __score3++;
+            if (__jsonProps.Contains("data.object")) __score3++;
+            if (__jsonProps.Contains("data.run_id")) __score3++;
+            if (__jsonProps.Contains("data.status")) __score3++;
+            if (__jsonProps.Contains("data.step_details")) __score3++;
+            if (__jsonProps.Contains("data.thread_id")) __score3++;
+            if (__jsonProps.Contains("data.type")) __score3++;
+            if (__jsonProps.Contains("data.usage")) __score3++;
             if (__jsonProps.Contains("event")) __score3++;
             var __score4 = 0;
             if (__jsonProps.Contains("data")) __score4++;
+            if (__jsonProps.Contains("data.assistant_id")) __score4++;
+            if (__jsonProps.Contains("data.cancelled_at")) __score4++;
+            if (__jsonProps.Contains("data.completed_at")) __score4++;
+            if (__jsonProps.Contains("data.created_at")) __score4++;
+            if (__jsonProps.Contains("data.expired_at")) __score4++;
+            if (__jsonProps.Contains("data.failed_at")) __score4++;
+            if (__jsonProps.Contains("data.id")) __score4++;
+            if (__jsonProps.Contains("data.last_error")) __score4++;
+            if (__jsonProps.Contains("data.metadata")) __score4++;
+            if (__jsonProps.Contains("data.object")) __score4++;
+            if (__jsonProps.Contains("data.run_id")) __score4++;
+            if (__jsonProps.Contains("data.status")) __score4++;
+            if (__jsonProps.Contains("data.step_details")) __score4++;
+            if (__jsonProps.Contains("data.thread_id")) __score4++;
+            if (__jsonProps.Contains("data.type")) __score4++;
+            if (__jsonProps.Contains("data.usage")) __score4++;
             if (__jsonProps.Contains("event")) __score4++;
             var __score5 = 0;
             if (__jsonProps.Contains("data")) __score5++;
+            if (__jsonProps.Contains("data.assistant_id")) __score5++;
+            if (__jsonProps.Contains("data.cancelled_at")) __score5++;
+            if (__jsonProps.Contains("data.completed_at")) __score5++;
+            if (__jsonProps.Contains("data.created_at")) __score5++;
+            if (__jsonProps.Contains("data.expired_at")) __score5++;
+            if (__jsonProps.Contains("data.failed_at")) __score5++;
+            if (__jsonProps.Contains("data.id")) __score5++;
+            if (__jsonProps.Contains("data.last_error")) __score5++;
+            if (__jsonProps.Contains("data.metadata")) __score5++;
+            if (__jsonProps.Contains("data.object")) __score5++;
+            if (__jsonProps.Contains("data.run_id")) __score5++;
+            if (__jsonProps.Contains("data.status")) __score5++;
+            if (__jsonProps.Contains("data.step_details")) __score5++;
+            if (__jsonProps.Contains("data.thread_id")) __score5++;
+            if (__jsonProps.Contains("data.type")) __score5++;
+            if (__jsonProps.Contains("data.usage")) __score5++;
             if (__jsonProps.Contains("event")) __score5++;
             var __score6 = 0;
             if (__jsonProps.Contains("data")) __score6++;
+            if (__jsonProps.Contains("data.assistant_id")) __score6++;
+            if (__jsonProps.Contains("data.cancelled_at")) __score6++;
+            if (__jsonProps.Contains("data.completed_at")) __score6++;
+            if (__jsonProps.Contains("data.created_at")) __score6++;
+            if (__jsonProps.Contains("data.expired_at")) __score6++;
+            if (__jsonProps.Contains("data.failed_at")) __score6++;
+            if (__jsonProps.Contains("data.id")) __score6++;
+            if (__jsonProps.Contains("data.last_error")) __score6++;
+            if (__jsonProps.Contains("data.metadata")) __score6++;
+            if (__jsonProps.Contains("data.object")) __score6++;
+            if (__jsonProps.Contains("data.run_id")) __score6++;
+            if (__jsonProps.Contains("data.status")) __score6++;
+            if (__jsonProps.Contains("data.step_details")) __score6++;
+            if (__jsonProps.Contains("data.thread_id")) __score6++;
+            if (__jsonProps.Contains("data.type")) __score6++;
+            if (__jsonProps.Contains("data.usage")) __score6++;
             if (__jsonProps.Contains("event")) __score6++;
             var __bestScore = 0;
             var __bestIndex = -1;

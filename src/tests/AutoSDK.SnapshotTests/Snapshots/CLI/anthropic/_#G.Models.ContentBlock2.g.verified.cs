@@ -35,6 +35,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickText(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ResponseTextBlock? value)
+        {
+            value = Text;
+            return IsText;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ResponseToolUseBlock? ToolUse { get; init; }
 #else
@@ -48,6 +61,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ToolUse))]
 #endif
         public bool IsToolUse => ToolUse != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickToolUse(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ResponseToolUseBlock? value)
+        {
+            value = ToolUse;
+            return IsToolUse;
+        }
 
         /// <summary>
         /// 
@@ -69,6 +95,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickThinking(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ResponseThinkingBlock? value)
+        {
+            value = Thinking;
+            return IsThinking;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ResponseRedactedThinkingBlock? RedactedThinking { get; init; }
 #else
@@ -82,6 +121,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RedactedThinking))]
 #endif
         public bool IsRedactedThinking => RedactedThinking != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickRedactedThinking(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ResponseRedactedThinkingBlock? value)
+        {
+            value = RedactedThinking;
+            return IsRedactedThinking;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -205,10 +257,10 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.ResponseTextBlock?, TResult>? text = null,
-            global::System.Func<global::G.ResponseToolUseBlock?, TResult>? toolUse = null,
-            global::System.Func<global::G.ResponseThinkingBlock?, TResult>? thinking = null,
-            global::System.Func<global::G.ResponseRedactedThinkingBlock?, TResult>? redactedThinking = null,
+            global::System.Func<global::G.ResponseTextBlock, TResult>? text = null,
+            global::System.Func<global::G.ResponseToolUseBlock, TResult>? toolUse = null,
+            global::System.Func<global::G.ResponseThinkingBlock, TResult>? thinking = null,
+            global::System.Func<global::G.ResponseRedactedThinkingBlock, TResult>? redactedThinking = null,
             bool validate = true)
         {
             if (validate)
@@ -240,10 +292,46 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.ResponseTextBlock?>? text = null,
-            global::System.Action<global::G.ResponseToolUseBlock?>? toolUse = null,
-            global::System.Action<global::G.ResponseThinkingBlock?>? thinking = null,
-            global::System.Action<global::G.ResponseRedactedThinkingBlock?>? redactedThinking = null,
+            global::System.Action<global::G.ResponseTextBlock>? text = null,
+
+            global::System.Action<global::G.ResponseToolUseBlock>? toolUse = null,
+
+            global::System.Action<global::G.ResponseThinkingBlock>? thinking = null,
+
+            global::System.Action<global::G.ResponseRedactedThinkingBlock>? redactedThinking = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsText)
+            {
+                text?.Invoke(Text!);
+            }
+            else if (IsToolUse)
+            {
+                toolUse?.Invoke(ToolUse!);
+            }
+            else if (IsThinking)
+            {
+                thinking?.Invoke(Thinking!);
+            }
+            else if (IsRedactedThinking)
+            {
+                redactedThinking?.Invoke(RedactedThinking!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.ResponseTextBlock>? text = null,
+            global::System.Action<global::G.ResponseToolUseBlock>? toolUse = null,
+            global::System.Action<global::G.ResponseThinkingBlock>? thinking = null,
+            global::System.Action<global::G.ResponseRedactedThinkingBlock>? redactedThinking = null,
             bool validate = true)
         {
             if (validate)

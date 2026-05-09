@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickRepositoryRuleDetailedVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.AllOf<global::G.RepositoryRuleCreation, global::G.RepositoryRuleRulesetInfo>? value)
+        {
+            value = RepositoryRuleDetailedVariant1;
+            return IsRepositoryRuleDetailedVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.AllOf<global::G.RepositoryRuleUpdate, global::G.RepositoryRuleRulesetInfo>? RepositoryRuleDetailedVariant2 { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RepositoryRuleDetailedVariant2))]
 #endif
         public bool IsRepositoryRuleDetailedVariant2 => RepositoryRuleDetailedVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickRepositoryRuleDetailedVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.AllOf<global::G.RepositoryRuleUpdate, global::G.RepositoryRuleRulesetInfo>? value)
+        {
+            value = RepositoryRuleDetailedVariant2;
+            return IsRepositoryRuleDetailedVariant2;
+        }
 
         /// <summary>
         /// 
@@ -64,6 +90,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickRepositoryRuleDetailedVariant3(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.AllOf<global::G.RepositoryRuleDeletion, global::G.RepositoryRuleRulesetInfo>? value)
+        {
+            value = RepositoryRuleDetailedVariant3;
+            return IsRepositoryRuleDetailedVariant3;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.AllOf<global::G.RepositoryRuleRequiredLinearHistory, global::G.RepositoryRuleRulesetInfo>? RepositoryRuleDetailedVariant4 { get; init; }
 #else
@@ -77,6 +116,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RepositoryRuleDetailedVariant4))]
 #endif
         public bool IsRepositoryRuleDetailedVariant4 => RepositoryRuleDetailedVariant4 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickRepositoryRuleDetailedVariant4(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.AllOf<global::G.RepositoryRuleRequiredLinearHistory, global::G.RepositoryRuleRulesetInfo>? value)
+        {
+            value = RepositoryRuleDetailedVariant4;
+            return IsRepositoryRuleDetailedVariant4;
+        }
 
         /// <summary>
         /// 
@@ -98,6 +150,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickRepositoryRuleDetailedVariant5(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.AllOf<global::G.RepositoryRuleMergeQueue, global::G.RepositoryRuleRulesetInfo>? value)
+        {
+            value = RepositoryRuleDetailedVariant5;
+            return IsRepositoryRuleDetailedVariant5;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.AllOf<global::G.RepositoryRuleRequiredDeployments, global::G.RepositoryRuleRulesetInfo>? RepositoryRuleDetailedVariant6 { get; init; }
 #else
@@ -111,6 +176,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RepositoryRuleDetailedVariant6))]
 #endif
         public bool IsRepositoryRuleDetailedVariant6 => RepositoryRuleDetailedVariant6 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickRepositoryRuleDetailedVariant6(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.AllOf<global::G.RepositoryRuleRequiredDeployments, global::G.RepositoryRuleRulesetInfo>? value)
+        {
+            value = RepositoryRuleDetailedVariant6;
+            return IsRepositoryRuleDetailedVariant6;
+        }
 
         /// <summary>
         /// 
@@ -132,6 +210,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickRepositoryRuleDetailedVariant7(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.AllOf<global::G.RepositoryRuleRequiredSignatures, global::G.RepositoryRuleRulesetInfo>? value)
+        {
+            value = RepositoryRuleDetailedVariant7;
+            return IsRepositoryRuleDetailedVariant7;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.AllOf<global::G.RepositoryRulePullRequest, global::G.RepositoryRuleRulesetInfo>? RepositoryRuleDetailedVariant8 { get; init; }
 #else
@@ -145,6 +236,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RepositoryRuleDetailedVariant8))]
 #endif
         public bool IsRepositoryRuleDetailedVariant8 => RepositoryRuleDetailedVariant8 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickRepositoryRuleDetailedVariant8(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.AllOf<global::G.RepositoryRulePullRequest, global::G.RepositoryRuleRulesetInfo>? value)
+        {
+            value = RepositoryRuleDetailedVariant8;
+            return IsRepositoryRuleDetailedVariant8;
+        }
 
         /// <summary>
         /// 
@@ -166,6 +270,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickRepositoryRuleDetailedVariant9(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.AllOf<global::G.RepositoryRuleRequiredStatusChecks, global::G.RepositoryRuleRulesetInfo>? value)
+        {
+            value = RepositoryRuleDetailedVariant9;
+            return IsRepositoryRuleDetailedVariant9;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.AllOf<global::G.RepositoryRuleNonFastForward, global::G.RepositoryRuleRulesetInfo>? RepositoryRuleDetailedVariant10 { get; init; }
 #else
@@ -179,6 +296,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RepositoryRuleDetailedVariant10))]
 #endif
         public bool IsRepositoryRuleDetailedVariant10 => RepositoryRuleDetailedVariant10 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickRepositoryRuleDetailedVariant10(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.AllOf<global::G.RepositoryRuleNonFastForward, global::G.RepositoryRuleRulesetInfo>? value)
+        {
+            value = RepositoryRuleDetailedVariant10;
+            return IsRepositoryRuleDetailedVariant10;
+        }
 
         /// <summary>
         /// 
@@ -200,6 +330,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickRepositoryRuleDetailedVariant11(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.AllOf<global::G.RepositoryRuleCommitMessagePattern, global::G.RepositoryRuleRulesetInfo>? value)
+        {
+            value = RepositoryRuleDetailedVariant11;
+            return IsRepositoryRuleDetailedVariant11;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.AllOf<global::G.RepositoryRuleCommitAuthorEmailPattern, global::G.RepositoryRuleRulesetInfo>? RepositoryRuleDetailedVariant12 { get; init; }
 #else
@@ -213,6 +356,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RepositoryRuleDetailedVariant12))]
 #endif
         public bool IsRepositoryRuleDetailedVariant12 => RepositoryRuleDetailedVariant12 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickRepositoryRuleDetailedVariant12(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.AllOf<global::G.RepositoryRuleCommitAuthorEmailPattern, global::G.RepositoryRuleRulesetInfo>? value)
+        {
+            value = RepositoryRuleDetailedVariant12;
+            return IsRepositoryRuleDetailedVariant12;
+        }
 
         /// <summary>
         /// 
@@ -234,6 +390,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickRepositoryRuleDetailedVariant13(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.AllOf<global::G.RepositoryRuleCommitterEmailPattern, global::G.RepositoryRuleRulesetInfo>? value)
+        {
+            value = RepositoryRuleDetailedVariant13;
+            return IsRepositoryRuleDetailedVariant13;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.AllOf<global::G.RepositoryRuleBranchNamePattern, global::G.RepositoryRuleRulesetInfo>? RepositoryRuleDetailedVariant14 { get; init; }
 #else
@@ -247,6 +416,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RepositoryRuleDetailedVariant14))]
 #endif
         public bool IsRepositoryRuleDetailedVariant14 => RepositoryRuleDetailedVariant14 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickRepositoryRuleDetailedVariant14(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.AllOf<global::G.RepositoryRuleBranchNamePattern, global::G.RepositoryRuleRulesetInfo>? value)
+        {
+            value = RepositoryRuleDetailedVariant14;
+            return IsRepositoryRuleDetailedVariant14;
+        }
 
         /// <summary>
         /// 
@@ -268,6 +450,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickRepositoryRuleDetailedVariant15(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.AllOf<global::G.RepositoryRuleTagNamePattern, global::G.RepositoryRuleRulesetInfo>? value)
+        {
+            value = RepositoryRuleDetailedVariant15;
+            return IsRepositoryRuleDetailedVariant15;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.AllOf<global::G.RepositoryRuleWorkflows, global::G.RepositoryRuleRulesetInfo>? RepositoryRuleDetailedVariant16 { get; init; }
 #else
@@ -285,6 +480,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickRepositoryRuleDetailedVariant16(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.AllOf<global::G.RepositoryRuleWorkflows, global::G.RepositoryRuleRulesetInfo>? value)
+        {
+            value = RepositoryRuleDetailedVariant16;
+            return IsRepositoryRuleDetailedVariant16;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.AllOf<global::G.RepositoryRuleCodeScanning, global::G.RepositoryRuleRulesetInfo>? RepositoryRuleDetailedVariant17 { get; init; }
 #else
@@ -298,6 +506,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RepositoryRuleDetailedVariant17))]
 #endif
         public bool IsRepositoryRuleDetailedVariant17 => RepositoryRuleDetailedVariant17 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickRepositoryRuleDetailedVariant17(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.AllOf<global::G.RepositoryRuleCodeScanning, global::G.RepositoryRuleRulesetInfo>? value)
+        {
+            value = RepositoryRuleDetailedVariant17;
+            return IsRepositoryRuleDetailedVariant17;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -804,6 +1025,120 @@ namespace G
         /// 
         /// </summary>
         public void Match(
+            global::System.Action<global::G.AllOf<global::G.RepositoryRuleCreation, global::G.RepositoryRuleRulesetInfo>?>? repositoryRuleDetailedVariant1 = null,
+
+            global::System.Action<global::G.AllOf<global::G.RepositoryRuleUpdate, global::G.RepositoryRuleRulesetInfo>?>? repositoryRuleDetailedVariant2 = null,
+
+            global::System.Action<global::G.AllOf<global::G.RepositoryRuleDeletion, global::G.RepositoryRuleRulesetInfo>?>? repositoryRuleDetailedVariant3 = null,
+
+            global::System.Action<global::G.AllOf<global::G.RepositoryRuleRequiredLinearHistory, global::G.RepositoryRuleRulesetInfo>?>? repositoryRuleDetailedVariant4 = null,
+
+            global::System.Action<global::G.AllOf<global::G.RepositoryRuleMergeQueue, global::G.RepositoryRuleRulesetInfo>?>? repositoryRuleDetailedVariant5 = null,
+
+            global::System.Action<global::G.AllOf<global::G.RepositoryRuleRequiredDeployments, global::G.RepositoryRuleRulesetInfo>?>? repositoryRuleDetailedVariant6 = null,
+
+            global::System.Action<global::G.AllOf<global::G.RepositoryRuleRequiredSignatures, global::G.RepositoryRuleRulesetInfo>?>? repositoryRuleDetailedVariant7 = null,
+
+            global::System.Action<global::G.AllOf<global::G.RepositoryRulePullRequest, global::G.RepositoryRuleRulesetInfo>?>? repositoryRuleDetailedVariant8 = null,
+
+            global::System.Action<global::G.AllOf<global::G.RepositoryRuleRequiredStatusChecks, global::G.RepositoryRuleRulesetInfo>?>? repositoryRuleDetailedVariant9 = null,
+
+            global::System.Action<global::G.AllOf<global::G.RepositoryRuleNonFastForward, global::G.RepositoryRuleRulesetInfo>?>? repositoryRuleDetailedVariant10 = null,
+
+            global::System.Action<global::G.AllOf<global::G.RepositoryRuleCommitMessagePattern, global::G.RepositoryRuleRulesetInfo>?>? repositoryRuleDetailedVariant11 = null,
+
+            global::System.Action<global::G.AllOf<global::G.RepositoryRuleCommitAuthorEmailPattern, global::G.RepositoryRuleRulesetInfo>?>? repositoryRuleDetailedVariant12 = null,
+
+            global::System.Action<global::G.AllOf<global::G.RepositoryRuleCommitterEmailPattern, global::G.RepositoryRuleRulesetInfo>?>? repositoryRuleDetailedVariant13 = null,
+
+            global::System.Action<global::G.AllOf<global::G.RepositoryRuleBranchNamePattern, global::G.RepositoryRuleRulesetInfo>?>? repositoryRuleDetailedVariant14 = null,
+
+            global::System.Action<global::G.AllOf<global::G.RepositoryRuleTagNamePattern, global::G.RepositoryRuleRulesetInfo>?>? repositoryRuleDetailedVariant15 = null,
+
+            global::System.Action<global::G.AllOf<global::G.RepositoryRuleWorkflows, global::G.RepositoryRuleRulesetInfo>?>? repositoryRuleDetailedVariant16 = null,
+
+            global::System.Action<global::G.AllOf<global::G.RepositoryRuleCodeScanning, global::G.RepositoryRuleRulesetInfo>?>? repositoryRuleDetailedVariant17 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsRepositoryRuleDetailedVariant1)
+            {
+                repositoryRuleDetailedVariant1?.Invoke(RepositoryRuleDetailedVariant1!);
+            }
+            else if (IsRepositoryRuleDetailedVariant2)
+            {
+                repositoryRuleDetailedVariant2?.Invoke(RepositoryRuleDetailedVariant2!);
+            }
+            else if (IsRepositoryRuleDetailedVariant3)
+            {
+                repositoryRuleDetailedVariant3?.Invoke(RepositoryRuleDetailedVariant3!);
+            }
+            else if (IsRepositoryRuleDetailedVariant4)
+            {
+                repositoryRuleDetailedVariant4?.Invoke(RepositoryRuleDetailedVariant4!);
+            }
+            else if (IsRepositoryRuleDetailedVariant5)
+            {
+                repositoryRuleDetailedVariant5?.Invoke(RepositoryRuleDetailedVariant5!);
+            }
+            else if (IsRepositoryRuleDetailedVariant6)
+            {
+                repositoryRuleDetailedVariant6?.Invoke(RepositoryRuleDetailedVariant6!);
+            }
+            else if (IsRepositoryRuleDetailedVariant7)
+            {
+                repositoryRuleDetailedVariant7?.Invoke(RepositoryRuleDetailedVariant7!);
+            }
+            else if (IsRepositoryRuleDetailedVariant8)
+            {
+                repositoryRuleDetailedVariant8?.Invoke(RepositoryRuleDetailedVariant8!);
+            }
+            else if (IsRepositoryRuleDetailedVariant9)
+            {
+                repositoryRuleDetailedVariant9?.Invoke(RepositoryRuleDetailedVariant9!);
+            }
+            else if (IsRepositoryRuleDetailedVariant10)
+            {
+                repositoryRuleDetailedVariant10?.Invoke(RepositoryRuleDetailedVariant10!);
+            }
+            else if (IsRepositoryRuleDetailedVariant11)
+            {
+                repositoryRuleDetailedVariant11?.Invoke(RepositoryRuleDetailedVariant11!);
+            }
+            else if (IsRepositoryRuleDetailedVariant12)
+            {
+                repositoryRuleDetailedVariant12?.Invoke(RepositoryRuleDetailedVariant12!);
+            }
+            else if (IsRepositoryRuleDetailedVariant13)
+            {
+                repositoryRuleDetailedVariant13?.Invoke(RepositoryRuleDetailedVariant13!);
+            }
+            else if (IsRepositoryRuleDetailedVariant14)
+            {
+                repositoryRuleDetailedVariant14?.Invoke(RepositoryRuleDetailedVariant14!);
+            }
+            else if (IsRepositoryRuleDetailedVariant15)
+            {
+                repositoryRuleDetailedVariant15?.Invoke(RepositoryRuleDetailedVariant15!);
+            }
+            else if (IsRepositoryRuleDetailedVariant16)
+            {
+                repositoryRuleDetailedVariant16?.Invoke(RepositoryRuleDetailedVariant16!);
+            }
+            else if (IsRepositoryRuleDetailedVariant17)
+            {
+                repositoryRuleDetailedVariant17?.Invoke(RepositoryRuleDetailedVariant17!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
             global::System.Action<global::G.AllOf<global::G.RepositoryRuleCreation, global::G.RepositoryRuleRulesetInfo>?>? repositoryRuleDetailedVariant1 = null,
             global::System.Action<global::G.AllOf<global::G.RepositoryRuleUpdate, global::G.RepositoryRuleRulesetInfo>?>? repositoryRuleDetailedVariant2 = null,
             global::System.Action<global::G.AllOf<global::G.RepositoryRuleDeletion, global::G.RepositoryRuleRulesetInfo>?>? repositoryRuleDetailedVariant3 = null,

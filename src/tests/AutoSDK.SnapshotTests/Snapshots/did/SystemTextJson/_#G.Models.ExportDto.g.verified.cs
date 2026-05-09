@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickExportDtoVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ExportDtoVariant1? value)
+        {
+            value = ExportDtoVariant1;
+            return IsExportDtoVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ExportDtoVariant2? ExportDtoVariant2 { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ExportDtoVariant2))]
 #endif
         public bool IsExportDtoVariant2 => ExportDtoVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickExportDtoVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ExportDtoVariant2? value)
+        {
+            value = ExportDtoVariant2;
+            return IsExportDtoVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -119,8 +145,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.ExportDtoVariant1?, TResult>? exportDtoVariant1 = null,
-            global::System.Func<global::G.ExportDtoVariant2?, TResult>? exportDtoVariant2 = null,
+            global::System.Func<global::G.ExportDtoVariant1, TResult>? exportDtoVariant1 = null,
+            global::System.Func<global::G.ExportDtoVariant2, TResult>? exportDtoVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -144,8 +170,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.ExportDtoVariant1?>? exportDtoVariant1 = null,
-            global::System.Action<global::G.ExportDtoVariant2?>? exportDtoVariant2 = null,
+            global::System.Action<global::G.ExportDtoVariant1>? exportDtoVariant1 = null,
+
+            global::System.Action<global::G.ExportDtoVariant2>? exportDtoVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsExportDtoVariant1)
+            {
+                exportDtoVariant1?.Invoke(ExportDtoVariant1!);
+            }
+            else if (IsExportDtoVariant2)
+            {
+                exportDtoVariant2?.Invoke(ExportDtoVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.ExportDtoVariant1>? exportDtoVariant1 = null,
+            global::System.Action<global::G.ExportDtoVariant2>? exportDtoVariant2 = null,
             bool validate = true)
         {
             if (validate)

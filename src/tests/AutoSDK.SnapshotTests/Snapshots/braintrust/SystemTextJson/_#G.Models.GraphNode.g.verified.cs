@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickGraphNodeVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.GraphNodeVariant1? value)
+        {
+            value = GraphNodeVariant1;
+            return IsGraphNodeVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.GraphNodeVariant2? GraphNodeVariant2 { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(GraphNodeVariant2))]
 #endif
         public bool IsGraphNodeVariant2 => GraphNodeVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickGraphNodeVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.GraphNodeVariant2? value)
+        {
+            value = GraphNodeVariant2;
+            return IsGraphNodeVariant2;
+        }
 
         /// <summary>
         /// 
@@ -64,6 +90,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickGraphNodeVariant3(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.GraphNodeVariant3? value)
+        {
+            value = GraphNodeVariant3;
+            return IsGraphNodeVariant3;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.GraphNodeVariant4? GraphNodeVariant4 { get; init; }
 #else
@@ -77,6 +116,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(GraphNodeVariant4))]
 #endif
         public bool IsGraphNodeVariant4 => GraphNodeVariant4 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickGraphNodeVariant4(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.GraphNodeVariant4? value)
+        {
+            value = GraphNodeVariant4;
+            return IsGraphNodeVariant4;
+        }
 
         /// <summary>
         /// 
@@ -98,6 +150,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickGraphNodeVariant5(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.GraphNodeVariant5? value)
+        {
+            value = GraphNodeVariant5;
+            return IsGraphNodeVariant5;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.GraphNodeVariant6? GraphNodeVariant6 { get; init; }
 #else
@@ -111,6 +176,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(GraphNodeVariant6))]
 #endif
         public bool IsGraphNodeVariant6 => GraphNodeVariant6 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickGraphNodeVariant6(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.GraphNodeVariant6? value)
+        {
+            value = GraphNodeVariant6;
+            return IsGraphNodeVariant6;
+        }
 
         /// <summary>
         /// 
@@ -132,6 +210,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickGraphNodeVariant7(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.GraphNodeVariant7? value)
+        {
+            value = GraphNodeVariant7;
+            return IsGraphNodeVariant7;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.GraphNodeVariant8? GraphNodeVariant8 { get; init; }
 #else
@@ -145,6 +236,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(GraphNodeVariant8))]
 #endif
         public bool IsGraphNodeVariant8 => GraphNodeVariant8 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickGraphNodeVariant8(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.GraphNodeVariant8? value)
+        {
+            value = GraphNodeVariant8;
+            return IsGraphNodeVariant8;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -353,14 +457,14 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.GraphNodeVariant1?, TResult>? graphNodeVariant1 = null,
-            global::System.Func<global::G.GraphNodeVariant2?, TResult>? graphNodeVariant2 = null,
-            global::System.Func<global::G.GraphNodeVariant3?, TResult>? graphNodeVariant3 = null,
-            global::System.Func<global::G.GraphNodeVariant4?, TResult>? graphNodeVariant4 = null,
-            global::System.Func<global::G.GraphNodeVariant5?, TResult>? graphNodeVariant5 = null,
-            global::System.Func<global::G.GraphNodeVariant6?, TResult>? graphNodeVariant6 = null,
-            global::System.Func<global::G.GraphNodeVariant7?, TResult>? graphNodeVariant7 = null,
-            global::System.Func<global::G.GraphNodeVariant8?, TResult>? graphNodeVariant8 = null,
+            global::System.Func<global::G.GraphNodeVariant1, TResult>? graphNodeVariant1 = null,
+            global::System.Func<global::G.GraphNodeVariant2, TResult>? graphNodeVariant2 = null,
+            global::System.Func<global::G.GraphNodeVariant3, TResult>? graphNodeVariant3 = null,
+            global::System.Func<global::G.GraphNodeVariant4, TResult>? graphNodeVariant4 = null,
+            global::System.Func<global::G.GraphNodeVariant5, TResult>? graphNodeVariant5 = null,
+            global::System.Func<global::G.GraphNodeVariant6, TResult>? graphNodeVariant6 = null,
+            global::System.Func<global::G.GraphNodeVariant7, TResult>? graphNodeVariant7 = null,
+            global::System.Func<global::G.GraphNodeVariant8, TResult>? graphNodeVariant8 = null,
             bool validate = true)
         {
             if (validate)
@@ -408,14 +512,74 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.GraphNodeVariant1?>? graphNodeVariant1 = null,
-            global::System.Action<global::G.GraphNodeVariant2?>? graphNodeVariant2 = null,
-            global::System.Action<global::G.GraphNodeVariant3?>? graphNodeVariant3 = null,
-            global::System.Action<global::G.GraphNodeVariant4?>? graphNodeVariant4 = null,
-            global::System.Action<global::G.GraphNodeVariant5?>? graphNodeVariant5 = null,
-            global::System.Action<global::G.GraphNodeVariant6?>? graphNodeVariant6 = null,
-            global::System.Action<global::G.GraphNodeVariant7?>? graphNodeVariant7 = null,
-            global::System.Action<global::G.GraphNodeVariant8?>? graphNodeVariant8 = null,
+            global::System.Action<global::G.GraphNodeVariant1>? graphNodeVariant1 = null,
+
+            global::System.Action<global::G.GraphNodeVariant2>? graphNodeVariant2 = null,
+
+            global::System.Action<global::G.GraphNodeVariant3>? graphNodeVariant3 = null,
+
+            global::System.Action<global::G.GraphNodeVariant4>? graphNodeVariant4 = null,
+
+            global::System.Action<global::G.GraphNodeVariant5>? graphNodeVariant5 = null,
+
+            global::System.Action<global::G.GraphNodeVariant6>? graphNodeVariant6 = null,
+
+            global::System.Action<global::G.GraphNodeVariant7>? graphNodeVariant7 = null,
+
+            global::System.Action<global::G.GraphNodeVariant8>? graphNodeVariant8 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsGraphNodeVariant1)
+            {
+                graphNodeVariant1?.Invoke(GraphNodeVariant1!);
+            }
+            else if (IsGraphNodeVariant2)
+            {
+                graphNodeVariant2?.Invoke(GraphNodeVariant2!);
+            }
+            else if (IsGraphNodeVariant3)
+            {
+                graphNodeVariant3?.Invoke(GraphNodeVariant3!);
+            }
+            else if (IsGraphNodeVariant4)
+            {
+                graphNodeVariant4?.Invoke(GraphNodeVariant4!);
+            }
+            else if (IsGraphNodeVariant5)
+            {
+                graphNodeVariant5?.Invoke(GraphNodeVariant5!);
+            }
+            else if (IsGraphNodeVariant6)
+            {
+                graphNodeVariant6?.Invoke(GraphNodeVariant6!);
+            }
+            else if (IsGraphNodeVariant7)
+            {
+                graphNodeVariant7?.Invoke(GraphNodeVariant7!);
+            }
+            else if (IsGraphNodeVariant8)
+            {
+                graphNodeVariant8?.Invoke(GraphNodeVariant8!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.GraphNodeVariant1>? graphNodeVariant1 = null,
+            global::System.Action<global::G.GraphNodeVariant2>? graphNodeVariant2 = null,
+            global::System.Action<global::G.GraphNodeVariant3>? graphNodeVariant3 = null,
+            global::System.Action<global::G.GraphNodeVariant4>? graphNodeVariant4 = null,
+            global::System.Action<global::G.GraphNodeVariant5>? graphNodeVariant5 = null,
+            global::System.Action<global::G.GraphNodeVariant6>? graphNodeVariant6 = null,
+            global::System.Action<global::G.GraphNodeVariant7>? graphNodeVariant7 = null,
+            global::System.Action<global::G.GraphNodeVariant8>? graphNodeVariant8 = null,
             bool validate = true)
         {
             if (validate)

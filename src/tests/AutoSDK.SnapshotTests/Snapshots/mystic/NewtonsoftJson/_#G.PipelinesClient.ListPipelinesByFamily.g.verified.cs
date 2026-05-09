@@ -118,6 +118,66 @@ namespace G
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var __response = await ListPipelinesByFamilyAsResponseAsync(
+                pipelineFamilyName: pipelineFamilyName,
+                skip: skip,
+                limit: limit,
+                orderBy: orderBy,
+                @public: @public,
+                hardware: hardware,
+                clusterId: clusterId,
+                nodePool: nodePool,
+                createdAt: createdAt,
+                requestOptions: requestOptions,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// List Pipelines By Family<br/>
+        /// Retrieve all pipelines for a given pipeline family.<br/>
+        /// Include private pipelines if the user owns the family.
+        /// </summary>
+        /// <param name="pipelineFamilyName"></param>
+        /// <param name="skip">
+        /// Default Value: 0
+        /// </param>
+        /// <param name="limit">
+        /// Default Value: 20
+        /// </param>
+        /// <param name="orderBy"></param>
+        /// <param name="public">
+        /// Filter by public status
+        /// </param>
+        /// <param name="hardware">
+        /// Filter by hardware/accelerator type
+        /// </param>
+        /// <param name="clusterId">
+        /// Filter by cluster ID
+        /// </param>
+        /// <param name="nodePool">
+        /// Filter by node pool
+        /// </param>
+        /// <param name="createdAt">
+        /// Filter by datetime in the format 'created_at=start:end'
+        /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.PaginatedGetMetaAndPointers>> ListPipelinesByFamilyAsResponseAsync(
+            string pipelineFamilyName,
+            int? skip = default,
+            int? limit = default,
+            string? orderBy = default,
+            bool? @public = default,
+            global::G.Accelerator? hardware = default,
+            string? clusterId = default,
+            string? nodePool = default,
+            string? createdAt = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             PrepareArguments(
                 client: HttpClient);
             PrepareListPipelinesByFamilyArguments(
@@ -154,9 +214,10 @@ namespace G
 
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
+
                             var __pathBuilder = new global::G.PathBuilder(
                                 path: $"/v4/pipelines/by-family/{pipelineFamilyName}",
-                                baseUri: HttpClient.BaseAddress); 
+                                baseUri: HttpClient.BaseAddress);
                             __pathBuilder
                                 .AddOptionalParameter("skip", skip?.ToString())
                                 .AddOptionalParameter("limit", limit?.ToString())
@@ -165,7 +226,7 @@ namespace G
                                 .AddOptionalParameter("hardware", hardware?.ToString())
                                 .AddOptionalParameter("cluster_id", clusterId)
                                 .AddOptionalParameter("node_pool", nodePool)
-                                .AddOptionalParameter("created_at", createdAt) 
+                                .AddOptionalParameter("created_at", createdAt)
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::G.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -219,7 +280,7 @@ namespace G
                 PrepareListPipelinesByFamilyRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    pipelineFamilyName: pipelineFamilyName,
+                    pipelineFamilyName: pipelineFamilyName!,
                     skip: skip,
                     limit: limit,
                     orderBy: orderBy,
@@ -257,6 +318,8 @@ namespace G
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                     try
                     {
@@ -267,6 +330,11 @@ namespace G
                     }
                     catch (global::System.Net.Http.HttpRequestException __exception)
                     {
+                        var __retryDelay = global::G.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: null,
+                            attempt: __attempt);
                         var __willRetry = __attempt < __maxAttempts && !__effectiveCancellationToken.IsCancellationRequested;
                         await global::G.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
@@ -284,6 +352,8 @@ namespace G
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: __willRetry,
+                                retryDelay: __willRetry ? __retryDelay : (global::System.TimeSpan?)null,
+                                retryReason: "exception",
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         if (!__willRetry)
                         {
@@ -293,8 +363,7 @@ namespace G
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::G.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -303,6 +372,11 @@ namespace G
                         __attempt < __maxAttempts &&
                         global::G.AutoSDKRequestOptionsSupport.ShouldRetryStatusCode(__response.StatusCode))
                     {
+                        var __retryDelay = global::G.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: __response,
+                            attempt: __attempt);
                         await global::G.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
@@ -319,14 +393,15 @@ namespace G
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: true,
+                                retryDelay: __retryDelay,
+                                retryReason: "status:" + ((int)__response.StatusCode).ToString(global::System.Globalization.CultureInfo.InvariantCulture),
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         __response.Dispose();
                         __response = null;
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::G.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -366,6 +441,8 @@ namespace G
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
                 else
@@ -386,6 +463,8 @@ namespace G
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
                             // Validation Error
@@ -448,9 +527,13 @@ namespace G
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    return
-                                        global::G.PaginatedGetMetaAndPointers.FromJson(__content, JsonSerializerOptions) ??
+                                    var __value = global::G.PaginatedGetMetaAndPointers.FromJson(__content, JsonSerializerOptions) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                                    return new global::G.AutoSDKHttpResponse<global::G.PaginatedGetMetaAndPointers>(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri,
+                                        body: __value);
                                 }
                                 catch (global::System.Exception __ex)
                                 {
@@ -478,9 +561,13 @@ namespace G
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    return
-                                        await global::G.PaginatedGetMetaAndPointers.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                                    var __value = await global::G.PaginatedGetMetaAndPointers.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
+                                    return new global::G.AutoSDKHttpResponse<global::G.PaginatedGetMetaAndPointers>(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri,
+                                        body: __value);
                                 }
                                 catch (global::System.Exception __ex)
                                 {

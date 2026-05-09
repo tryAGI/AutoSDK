@@ -36,6 +36,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickSucceeded(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.SucceededResult? value)
+        {
+            value = Succeeded;
+            return IsSucceeded;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ErroredResult? Errored { get; init; }
 #else
@@ -49,6 +62,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Errored))]
 #endif
         public bool IsErrored => Errored != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickErrored(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ErroredResult? value)
+        {
+            value = Errored;
+            return IsErrored;
+        }
 
         /// <summary>
         /// 
@@ -70,6 +96,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickCanceled(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CanceledResult? value)
+        {
+            value = Canceled;
+            return IsCanceled;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ExpiredResult? Expired { get; init; }
 #else
@@ -83,6 +122,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Expired))]
 #endif
         public bool IsExpired => Expired != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickExpired(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ExpiredResult? value)
+        {
+            value = Expired;
+            return IsExpired;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -206,10 +258,10 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.SucceededResult?, TResult>? succeeded = null,
-            global::System.Func<global::G.ErroredResult?, TResult>? errored = null,
-            global::System.Func<global::G.CanceledResult?, TResult>? canceled = null,
-            global::System.Func<global::G.ExpiredResult?, TResult>? expired = null,
+            global::System.Func<global::G.SucceededResult, TResult>? succeeded = null,
+            global::System.Func<global::G.ErroredResult, TResult>? errored = null,
+            global::System.Func<global::G.CanceledResult, TResult>? canceled = null,
+            global::System.Func<global::G.ExpiredResult, TResult>? expired = null,
             bool validate = true)
         {
             if (validate)
@@ -241,10 +293,46 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.SucceededResult?>? succeeded = null,
-            global::System.Action<global::G.ErroredResult?>? errored = null,
-            global::System.Action<global::G.CanceledResult?>? canceled = null,
-            global::System.Action<global::G.ExpiredResult?>? expired = null,
+            global::System.Action<global::G.SucceededResult>? succeeded = null,
+
+            global::System.Action<global::G.ErroredResult>? errored = null,
+
+            global::System.Action<global::G.CanceledResult>? canceled = null,
+
+            global::System.Action<global::G.ExpiredResult>? expired = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsSucceeded)
+            {
+                succeeded?.Invoke(Succeeded!);
+            }
+            else if (IsErrored)
+            {
+                errored?.Invoke(Errored!);
+            }
+            else if (IsCanceled)
+            {
+                canceled?.Invoke(Canceled!);
+            }
+            else if (IsExpired)
+            {
+                expired?.Invoke(Expired!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.SucceededResult>? succeeded = null,
+            global::System.Action<global::G.ErroredResult>? errored = null,
+            global::System.Action<global::G.CanceledResult>? canceled = null,
+            global::System.Action<global::G.ExpiredResult>? expired = null,
             bool validate = true)
         {
             if (validate)

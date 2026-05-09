@@ -35,6 +35,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickLocal(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.LocalUser? value)
+        {
+            value = Local;
+            return IsLocal;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.OAuth2User? Oauth2 { get; init; }
 #else
@@ -48,6 +61,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Oauth2))]
 #endif
         public bool IsOauth2 => Oauth2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickOauth2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.OAuth2User? value)
+        {
+            value = Oauth2;
+            return IsOauth2;
+        }
 
         /// <summary>
         /// 
@@ -69,6 +95,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickLdap(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.LDAPUser? value)
+        {
+            value = Ldap;
+            return IsLdap;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.AnonymousUser? Anonymous { get; init; }
 #else
@@ -82,6 +121,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Anonymous))]
 #endif
         public bool IsAnonymous => Anonymous != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickAnonymous(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.AnonymousUser? value)
+        {
+            value = Anonymous;
+            return IsAnonymous;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -205,10 +257,10 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.LocalUser?, TResult>? local = null,
-            global::System.Func<global::G.OAuth2User?, TResult>? oauth2 = null,
-            global::System.Func<global::G.LDAPUser?, TResult>? ldap = null,
-            global::System.Func<global::G.AnonymousUser?, TResult>? anonymous = null,
+            global::System.Func<global::G.LocalUser, TResult>? local = null,
+            global::System.Func<global::G.OAuth2User, TResult>? oauth2 = null,
+            global::System.Func<global::G.LDAPUser, TResult>? ldap = null,
+            global::System.Func<global::G.AnonymousUser, TResult>? anonymous = null,
             bool validate = true)
         {
             if (validate)
@@ -240,10 +292,46 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.LocalUser?>? local = null,
-            global::System.Action<global::G.OAuth2User?>? oauth2 = null,
-            global::System.Action<global::G.LDAPUser?>? ldap = null,
-            global::System.Action<global::G.AnonymousUser?>? anonymous = null,
+            global::System.Action<global::G.LocalUser>? local = null,
+
+            global::System.Action<global::G.OAuth2User>? oauth2 = null,
+
+            global::System.Action<global::G.LDAPUser>? ldap = null,
+
+            global::System.Action<global::G.AnonymousUser>? anonymous = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsLocal)
+            {
+                local?.Invoke(Local!);
+            }
+            else if (IsOauth2)
+            {
+                oauth2?.Invoke(Oauth2!);
+            }
+            else if (IsLdap)
+            {
+                ldap?.Invoke(Ldap!);
+            }
+            else if (IsAnonymous)
+            {
+                anonymous?.Invoke(Anonymous!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.LocalUser>? local = null,
+            global::System.Action<global::G.OAuth2User>? oauth2 = null,
+            global::System.Action<global::G.LDAPUser>? ldap = null,
+            global::System.Action<global::G.AnonymousUser>? anonymous = null,
             bool validate = true)
         {
             if (validate)

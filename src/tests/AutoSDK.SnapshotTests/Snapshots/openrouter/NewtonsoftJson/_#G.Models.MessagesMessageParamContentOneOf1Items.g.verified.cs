@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickMessagesMessageParamContentOneOf1Items0(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.MessagesMessageParamContentOneOf1Items0? value)
+        {
+            value = MessagesMessageParamContentOneOf1Items0;
+            return IsMessagesMessageParamContentOneOf1Items0;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.MessagesMessageParamContentOneOf1Items1? MessagesMessageParamContentOneOf1Items1 { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessagesMessageParamContentOneOf1Items1))]
 #endif
         public bool IsMessagesMessageParamContentOneOf1Items1 => MessagesMessageParamContentOneOf1Items1 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMessagesMessageParamContentOneOf1Items1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.MessagesMessageParamContentOneOf1Items1? value)
+        {
+            value = MessagesMessageParamContentOneOf1Items1;
+            return IsMessagesMessageParamContentOneOf1Items1;
+        }
 
         /// <summary>
         /// 
@@ -64,6 +90,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickMessagesMessageParamContentOneOf1Items2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.MessagesMessageParamContentOneOf1Items2? value)
+        {
+            value = MessagesMessageParamContentOneOf1Items2;
+            return IsMessagesMessageParamContentOneOf1Items2;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.MessagesMessageParamContentOneOf1Items3? MessagesMessageParamContentOneOf1Items3 { get; init; }
 #else
@@ -77,6 +116,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessagesMessageParamContentOneOf1Items3))]
 #endif
         public bool IsMessagesMessageParamContentOneOf1Items3 => MessagesMessageParamContentOneOf1Items3 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMessagesMessageParamContentOneOf1Items3(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.MessagesMessageParamContentOneOf1Items3? value)
+        {
+            value = MessagesMessageParamContentOneOf1Items3;
+            return IsMessagesMessageParamContentOneOf1Items3;
+        }
 
         /// <summary>
         /// 
@@ -98,6 +150,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickMessagesMessageParamContentOneOf1Items4(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.MessagesMessageParamContentOneOf1Items4? value)
+        {
+            value = MessagesMessageParamContentOneOf1Items4;
+            return IsMessagesMessageParamContentOneOf1Items4;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.MessagesMessageParamContentOneOf1Items5? MessagesMessageParamContentOneOf1Items5 { get; init; }
 #else
@@ -111,6 +176,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessagesMessageParamContentOneOf1Items5))]
 #endif
         public bool IsMessagesMessageParamContentOneOf1Items5 => MessagesMessageParamContentOneOf1Items5 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMessagesMessageParamContentOneOf1Items5(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.MessagesMessageParamContentOneOf1Items5? value)
+        {
+            value = MessagesMessageParamContentOneOf1Items5;
+            return IsMessagesMessageParamContentOneOf1Items5;
+        }
 
         /// <summary>
         /// 
@@ -132,6 +210,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickMessagesMessageParamContentOneOf1Items6(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.MessagesMessageParamContentOneOf1Items6? value)
+        {
+            value = MessagesMessageParamContentOneOf1Items6;
+            return IsMessagesMessageParamContentOneOf1Items6;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.MessagesMessageParamContentOneOf1Items7? MessagesMessageParamContentOneOf1Items7 { get; init; }
 #else
@@ -145,6 +236,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessagesMessageParamContentOneOf1Items7))]
 #endif
         public bool IsMessagesMessageParamContentOneOf1Items7 => MessagesMessageParamContentOneOf1Items7 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMessagesMessageParamContentOneOf1Items7(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.MessagesMessageParamContentOneOf1Items7? value)
+        {
+            value = MessagesMessageParamContentOneOf1Items7;
+            return IsMessagesMessageParamContentOneOf1Items7;
+        }
 
         /// <summary>
         /// 
@@ -166,6 +270,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickMessagesMessageParamContentOneOf1Items8(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.MessagesMessageParamContentOneOf1Items8? value)
+        {
+            value = MessagesMessageParamContentOneOf1Items8;
+            return IsMessagesMessageParamContentOneOf1Items8;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.MessagesMessageParamContentOneOf1Items9? MessagesMessageParamContentOneOf1Items9 { get; init; }
 #else
@@ -179,6 +296,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessagesMessageParamContentOneOf1Items9))]
 #endif
         public bool IsMessagesMessageParamContentOneOf1Items9 => MessagesMessageParamContentOneOf1Items9 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMessagesMessageParamContentOneOf1Items9(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.MessagesMessageParamContentOneOf1Items9? value)
+        {
+            value = MessagesMessageParamContentOneOf1Items9;
+            return IsMessagesMessageParamContentOneOf1Items9;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -431,16 +561,16 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.MessagesMessageParamContentOneOf1Items0?, TResult>? messagesMessageParamContentOneOf1Items0 = null,
-            global::System.Func<global::G.MessagesMessageParamContentOneOf1Items1?, TResult>? messagesMessageParamContentOneOf1Items1 = null,
-            global::System.Func<global::G.MessagesMessageParamContentOneOf1Items2?, TResult>? messagesMessageParamContentOneOf1Items2 = null,
-            global::System.Func<global::G.MessagesMessageParamContentOneOf1Items3?, TResult>? messagesMessageParamContentOneOf1Items3 = null,
-            global::System.Func<global::G.MessagesMessageParamContentOneOf1Items4?, TResult>? messagesMessageParamContentOneOf1Items4 = null,
-            global::System.Func<global::G.MessagesMessageParamContentOneOf1Items5?, TResult>? messagesMessageParamContentOneOf1Items5 = null,
-            global::System.Func<global::G.MessagesMessageParamContentOneOf1Items6?, TResult>? messagesMessageParamContentOneOf1Items6 = null,
-            global::System.Func<global::G.MessagesMessageParamContentOneOf1Items7?, TResult>? messagesMessageParamContentOneOf1Items7 = null,
-            global::System.Func<global::G.MessagesMessageParamContentOneOf1Items8?, TResult>? messagesMessageParamContentOneOf1Items8 = null,
-            global::System.Func<global::G.MessagesMessageParamContentOneOf1Items9?, TResult>? messagesMessageParamContentOneOf1Items9 = null,
+            global::System.Func<global::G.MessagesMessageParamContentOneOf1Items0, TResult>? messagesMessageParamContentOneOf1Items0 = null,
+            global::System.Func<global::G.MessagesMessageParamContentOneOf1Items1, TResult>? messagesMessageParamContentOneOf1Items1 = null,
+            global::System.Func<global::G.MessagesMessageParamContentOneOf1Items2, TResult>? messagesMessageParamContentOneOf1Items2 = null,
+            global::System.Func<global::G.MessagesMessageParamContentOneOf1Items3, TResult>? messagesMessageParamContentOneOf1Items3 = null,
+            global::System.Func<global::G.MessagesMessageParamContentOneOf1Items4, TResult>? messagesMessageParamContentOneOf1Items4 = null,
+            global::System.Func<global::G.MessagesMessageParamContentOneOf1Items5, TResult>? messagesMessageParamContentOneOf1Items5 = null,
+            global::System.Func<global::G.MessagesMessageParamContentOneOf1Items6, TResult>? messagesMessageParamContentOneOf1Items6 = null,
+            global::System.Func<global::G.MessagesMessageParamContentOneOf1Items7, TResult>? messagesMessageParamContentOneOf1Items7 = null,
+            global::System.Func<global::G.MessagesMessageParamContentOneOf1Items8, TResult>? messagesMessageParamContentOneOf1Items8 = null,
+            global::System.Func<global::G.MessagesMessageParamContentOneOf1Items9, TResult>? messagesMessageParamContentOneOf1Items9 = null,
             bool validate = true)
         {
             if (validate)
@@ -496,16 +626,88 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.MessagesMessageParamContentOneOf1Items0?>? messagesMessageParamContentOneOf1Items0 = null,
-            global::System.Action<global::G.MessagesMessageParamContentOneOf1Items1?>? messagesMessageParamContentOneOf1Items1 = null,
-            global::System.Action<global::G.MessagesMessageParamContentOneOf1Items2?>? messagesMessageParamContentOneOf1Items2 = null,
-            global::System.Action<global::G.MessagesMessageParamContentOneOf1Items3?>? messagesMessageParamContentOneOf1Items3 = null,
-            global::System.Action<global::G.MessagesMessageParamContentOneOf1Items4?>? messagesMessageParamContentOneOf1Items4 = null,
-            global::System.Action<global::G.MessagesMessageParamContentOneOf1Items5?>? messagesMessageParamContentOneOf1Items5 = null,
-            global::System.Action<global::G.MessagesMessageParamContentOneOf1Items6?>? messagesMessageParamContentOneOf1Items6 = null,
-            global::System.Action<global::G.MessagesMessageParamContentOneOf1Items7?>? messagesMessageParamContentOneOf1Items7 = null,
-            global::System.Action<global::G.MessagesMessageParamContentOneOf1Items8?>? messagesMessageParamContentOneOf1Items8 = null,
-            global::System.Action<global::G.MessagesMessageParamContentOneOf1Items9?>? messagesMessageParamContentOneOf1Items9 = null,
+            global::System.Action<global::G.MessagesMessageParamContentOneOf1Items0>? messagesMessageParamContentOneOf1Items0 = null,
+
+            global::System.Action<global::G.MessagesMessageParamContentOneOf1Items1>? messagesMessageParamContentOneOf1Items1 = null,
+
+            global::System.Action<global::G.MessagesMessageParamContentOneOf1Items2>? messagesMessageParamContentOneOf1Items2 = null,
+
+            global::System.Action<global::G.MessagesMessageParamContentOneOf1Items3>? messagesMessageParamContentOneOf1Items3 = null,
+
+            global::System.Action<global::G.MessagesMessageParamContentOneOf1Items4>? messagesMessageParamContentOneOf1Items4 = null,
+
+            global::System.Action<global::G.MessagesMessageParamContentOneOf1Items5>? messagesMessageParamContentOneOf1Items5 = null,
+
+            global::System.Action<global::G.MessagesMessageParamContentOneOf1Items6>? messagesMessageParamContentOneOf1Items6 = null,
+
+            global::System.Action<global::G.MessagesMessageParamContentOneOf1Items7>? messagesMessageParamContentOneOf1Items7 = null,
+
+            global::System.Action<global::G.MessagesMessageParamContentOneOf1Items8>? messagesMessageParamContentOneOf1Items8 = null,
+
+            global::System.Action<global::G.MessagesMessageParamContentOneOf1Items9>? messagesMessageParamContentOneOf1Items9 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsMessagesMessageParamContentOneOf1Items0)
+            {
+                messagesMessageParamContentOneOf1Items0?.Invoke(MessagesMessageParamContentOneOf1Items0!);
+            }
+            else if (IsMessagesMessageParamContentOneOf1Items1)
+            {
+                messagesMessageParamContentOneOf1Items1?.Invoke(MessagesMessageParamContentOneOf1Items1!);
+            }
+            else if (IsMessagesMessageParamContentOneOf1Items2)
+            {
+                messagesMessageParamContentOneOf1Items2?.Invoke(MessagesMessageParamContentOneOf1Items2!);
+            }
+            else if (IsMessagesMessageParamContentOneOf1Items3)
+            {
+                messagesMessageParamContentOneOf1Items3?.Invoke(MessagesMessageParamContentOneOf1Items3!);
+            }
+            else if (IsMessagesMessageParamContentOneOf1Items4)
+            {
+                messagesMessageParamContentOneOf1Items4?.Invoke(MessagesMessageParamContentOneOf1Items4!);
+            }
+            else if (IsMessagesMessageParamContentOneOf1Items5)
+            {
+                messagesMessageParamContentOneOf1Items5?.Invoke(MessagesMessageParamContentOneOf1Items5!);
+            }
+            else if (IsMessagesMessageParamContentOneOf1Items6)
+            {
+                messagesMessageParamContentOneOf1Items6?.Invoke(MessagesMessageParamContentOneOf1Items6!);
+            }
+            else if (IsMessagesMessageParamContentOneOf1Items7)
+            {
+                messagesMessageParamContentOneOf1Items7?.Invoke(MessagesMessageParamContentOneOf1Items7!);
+            }
+            else if (IsMessagesMessageParamContentOneOf1Items8)
+            {
+                messagesMessageParamContentOneOf1Items8?.Invoke(MessagesMessageParamContentOneOf1Items8!);
+            }
+            else if (IsMessagesMessageParamContentOneOf1Items9)
+            {
+                messagesMessageParamContentOneOf1Items9?.Invoke(MessagesMessageParamContentOneOf1Items9!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.MessagesMessageParamContentOneOf1Items0>? messagesMessageParamContentOneOf1Items0 = null,
+            global::System.Action<global::G.MessagesMessageParamContentOneOf1Items1>? messagesMessageParamContentOneOf1Items1 = null,
+            global::System.Action<global::G.MessagesMessageParamContentOneOf1Items2>? messagesMessageParamContentOneOf1Items2 = null,
+            global::System.Action<global::G.MessagesMessageParamContentOneOf1Items3>? messagesMessageParamContentOneOf1Items3 = null,
+            global::System.Action<global::G.MessagesMessageParamContentOneOf1Items4>? messagesMessageParamContentOneOf1Items4 = null,
+            global::System.Action<global::G.MessagesMessageParamContentOneOf1Items5>? messagesMessageParamContentOneOf1Items5 = null,
+            global::System.Action<global::G.MessagesMessageParamContentOneOf1Items6>? messagesMessageParamContentOneOf1Items6 = null,
+            global::System.Action<global::G.MessagesMessageParamContentOneOf1Items7>? messagesMessageParamContentOneOf1Items7 = null,
+            global::System.Action<global::G.MessagesMessageParamContentOneOf1Items8>? messagesMessageParamContentOneOf1Items8 = null,
+            global::System.Action<global::G.MessagesMessageParamContentOneOf1Items9>? messagesMessageParamContentOneOf1Items9 = null,
             bool validate = true)
         {
             if (validate)

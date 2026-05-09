@@ -34,5 +34,34 @@ namespace G
             bool? sortByDesc = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Read Shared Dataset<br/>
+        /// Get dataset by ids or the shared dataset if not specifed.
+        /// </summary>
+        /// <param name="shareToken"></param>
+        /// <param name="offset">
+        /// Default Value: 0
+        /// </param>
+        /// <param name="limit">
+        /// Default Value: 100
+        /// </param>
+        /// <param name="sortBy">
+        /// Enum for available dataset columns to sort by.<br/>
+        /// Default Value: last_session_start_time
+        /// </param>
+        /// <param name="sortByDesc">
+        /// Default Value: true
+        /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.DatasetPublicSchema>> ReadSharedDatasetAsResponseAsync(
+            global::System.Guid shareToken,
+            int? offset = default,
+            int? limit = default,
+            global::G.SortByDatasetColumn? sortBy = default,
+            bool? sortByDesc = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

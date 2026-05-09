@@ -22,5 +22,22 @@ namespace G
             string id,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Deletes a broadcast from the broadcaster’s streaming schedule.<br/>
+        /// Removes a broadcast segment from the broadcaster’s streaming schedule.<br/>
+        /// **NOTE**: For recurring segments, removing a segment removes all segments in the recurring schedule.<br/>
+        /// __Authorization:__<br/>
+        /// Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the **channel:manage:schedule** scope.
+        /// </summary>
+        /// <param name="broadcasterId"></param>
+        /// <param name="id"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse> DeleteChannelStreamScheduleSegmentAsResponseAsync(
+            string broadcasterId,
+            string id,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

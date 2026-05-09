@@ -7,6 +7,29 @@ namespace G
     public partial class AdminClient
     {
 
+        private static readonly global::G.AutoSDKServer[] s_ReingestAllStoresServers = new global::G.AutoSDKServer[]
+        {            new global::G.AutoSDKServer(
+                id: "https-api-mixedbread-com",
+                name: "mixedbread ai production server",
+                url: "https://api.mixedbread.com/",
+                description: "mixedbread ai production server"),
+            new global::G.AutoSDKServer(
+                id: "https-api-dev-mixedbread-com",
+                name: "mixedbread ai development server",
+                url: "https://api.dev.mixedbread.com/",
+                description: "mixedbread ai development server"),
+            new global::G.AutoSDKServer(
+                id: "http-127-0-0-1",
+                name: "mixedbread local server",
+                url: "http://127.0.0.1:8000/",
+                description: "mixedbread local server"),
+            new global::G.AutoSDKServer(
+                id: "http-localhost",
+                name: "mixedbread local server",
+                url: "http://localhost:8000/",
+                description: "mixedbread local server"),
+        };
+
 
         private static readonly global::G.EndPointSecurityRequirement s_ReingestAllStoresSecurityRequirement0 =
             new global::G.EndPointSecurityRequirement
@@ -75,6 +98,44 @@ namespace G
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var __response = await ReingestAllStoresAsResponseAsync(
+                organizationId: organizationId,
+                storeIdentifier: storeIdentifier,
+                statuses: statuses,
+                billable: billable,
+                requestOptions: requestOptions,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// Reingest all stores<br/>
+        /// Reingest all stores across all organizations (admin only).<br/>
+        /// This endpoint creates StoreFileReingestionJob for each store.<br/>
+        /// Returns:<br/>
+        ///     dict: Confirmation message with count of jobs created.
+        /// </summary>
+        /// <param name="organizationId"></param>
+        /// <param name="storeIdentifier"></param>
+        /// <param name="statuses">
+        /// Statuses of files to reingest
+        /// </param>
+        /// <param name="billable">
+        /// Whether the reingestion is billable to the user<br/>
+        /// Default Value: false
+        /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<string>> ReingestAllStoresAsResponseAsync(
+            global::System.Guid organizationId,
+            string storeIdentifier,
+            global::System.Collections.Generic.IList<global::G.VectorStoreFileStatus>? statuses = default,
+            bool? billable = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             PrepareArguments(
                 client: HttpClient);
             PrepareReingestAllStoresArguments(
@@ -106,12 +167,15 @@ namespace G
 
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
+
                             var __pathBuilder = new global::G.PathBuilder(
                                 path: $"/v1/admin/stores/{organizationId}/{storeIdentifier}/reingest",
-                                baseUri: HttpClient.BaseAddress); 
+                                baseUri: ResolveBaseUri(
+                                servers: s_ReingestAllStoresServers,
+                                defaultBaseUrl: "https://api.mixedbread.com/"));
                             __pathBuilder
                                 .AddOptionalParameter("statuses", statuses?.ToString())
-                                .AddOptionalParameter("billable", billable?.ToString().ToLowerInvariant()) 
+                                .AddOptionalParameter("billable", billable?.ToString().ToLowerInvariant())
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::G.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -153,8 +217,8 @@ namespace G
                 PrepareReingestAllStoresRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    organizationId: organizationId,
-                    storeIdentifier: storeIdentifier,
+                    organizationId: organizationId!,
+                    storeIdentifier: storeIdentifier!,
                     statuses: statuses,
                     billable: billable);
 
@@ -186,6 +250,8 @@ namespace G
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                     try
                     {
@@ -196,6 +262,11 @@ namespace G
                     }
                     catch (global::System.Net.Http.HttpRequestException __exception)
                     {
+                        var __retryDelay = global::G.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: null,
+                            attempt: __attempt);
                         var __willRetry = __attempt < __maxAttempts && !__effectiveCancellationToken.IsCancellationRequested;
                         await global::G.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
@@ -213,6 +284,8 @@ namespace G
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: __willRetry,
+                                retryDelay: __willRetry ? __retryDelay : (global::System.TimeSpan?)null,
+                                retryReason: "exception",
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         if (!__willRetry)
                         {
@@ -222,8 +295,7 @@ namespace G
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::G.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -232,6 +304,11 @@ namespace G
                         __attempt < __maxAttempts &&
                         global::G.AutoSDKRequestOptionsSupport.ShouldRetryStatusCode(__response.StatusCode))
                     {
+                        var __retryDelay = global::G.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: __response,
+                            attempt: __attempt);
                         await global::G.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
@@ -248,14 +325,15 @@ namespace G
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: true,
+                                retryDelay: __retryDelay,
+                                retryReason: "status:" + ((int)__response.StatusCode).ToString(global::System.Globalization.CultureInfo.InvariantCulture),
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         __response.Dispose();
                         __response = null;
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::G.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -295,6 +373,8 @@ namespace G
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
                 else
@@ -315,6 +395,8 @@ namespace G
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
                             // Validation Error
@@ -377,7 +459,11 @@ namespace G
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    return __content;
+                                    return new global::G.AutoSDKHttpResponse<string>(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri,
+                                        body: __content);
                                 }
                                 catch (global::System.Exception __ex)
                                 {
@@ -405,7 +491,11 @@ namespace G
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    return __content;
+                                    return new global::G.AutoSDKHttpResponse<string>(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri,
+                                        body: __content);
                                 }
                                 catch (global::System.Exception __ex)
                                 {

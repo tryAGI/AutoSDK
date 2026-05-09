@@ -27,6 +27,22 @@ namespace G
         /// <param name="modelId">
         /// Default Value: gemini-pro
         /// </param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.GenerateContentResponse>> GenerateContentAsResponseAsync(
+
+            global::G.GenerateContentRequest request,
+            string modelId = "gemini-pro",
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Generates a response from the model given an input `GenerateContentRequest`.
+        /// </summary>
+        /// <param name="modelId">
+        /// Default Value: gemini-pro
+        /// </param>
         /// <param name="generationConfig">
         /// Configuration options for model generation and outputs. Not all parameters may be configurable for every model.
         /// </param>

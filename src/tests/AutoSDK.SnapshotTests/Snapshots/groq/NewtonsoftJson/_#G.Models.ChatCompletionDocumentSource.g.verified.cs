@@ -33,6 +33,19 @@ namespace G
         public bool IsText => Text != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickText(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ChatCompletionDocumentSourceText? value)
+        {
+            value = Text;
+            return IsText;
+        }
+
+        /// <summary>
         /// A document whose contents are provided inline as JSON data.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -48,6 +61,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Json))]
 #endif
         public bool IsJson => Json != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickJson(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ChatCompletionDocumentSourceJSON? value)
+        {
+            value = Json;
+            return IsJson;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -127,8 +153,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.ChatCompletionDocumentSourceText?, TResult>? text = null,
-            global::System.Func<global::G.ChatCompletionDocumentSourceJSON?, TResult>? json = null,
+            global::System.Func<global::G.ChatCompletionDocumentSourceText, TResult>? text = null,
+            global::System.Func<global::G.ChatCompletionDocumentSourceJSON, TResult>? json = null,
             bool validate = true)
         {
             if (validate)
@@ -152,8 +178,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.ChatCompletionDocumentSourceText?>? text = null,
-            global::System.Action<global::G.ChatCompletionDocumentSourceJSON?>? json = null,
+            global::System.Action<global::G.ChatCompletionDocumentSourceText>? text = null,
+
+            global::System.Action<global::G.ChatCompletionDocumentSourceJSON>? json = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsText)
+            {
+                text?.Invoke(Text!);
+            }
+            else if (IsJson)
+            {
+                json?.Invoke(Json!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.ChatCompletionDocumentSourceText>? text = null,
+            global::System.Action<global::G.ChatCompletionDocumentSourceJSON>? json = null,
             bool validate = true)
         {
             if (validate)

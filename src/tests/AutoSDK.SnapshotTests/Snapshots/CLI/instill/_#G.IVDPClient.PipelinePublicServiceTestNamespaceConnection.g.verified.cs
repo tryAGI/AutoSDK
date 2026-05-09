@@ -24,5 +24,24 @@ namespace G
             string connectionId,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Test a connection<br/>
+        /// Makes a request to the 3rd party app that the connection is configured to<br/>
+        /// communicate with, and checks the result of the call. If the test fails,<br/>
+        /// the response status and error message will provide more information about<br/>
+        /// the failure.<br/>
+        /// Note that this action might affect the quota or billing of the integrated<br/>
+        /// account in the 3rd party app.
+        /// </summary>
+        /// <param name="namespaceId"></param>
+        /// <param name="connectionId"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.TestNamespaceConnectionResponse>> PipelinePublicServiceTestNamespaceConnectionAsResponseAsync(
+            string namespaceId,
+            string connectionId,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

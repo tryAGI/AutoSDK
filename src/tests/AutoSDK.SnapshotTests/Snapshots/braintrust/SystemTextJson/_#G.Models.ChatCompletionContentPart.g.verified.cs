@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickText(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ChatCompletionContentPartTextWithTitle? value)
+        {
+            value = Text;
+            return IsText;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ChatCompletionContentPartImageWithTitle? ImageUrl { get; init; }
 #else
@@ -47,6 +60,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickImageUrl(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ChatCompletionContentPartImageWithTitle? value)
+        {
+            value = ImageUrl;
+            return IsImageUrl;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ChatCompletionContentPartFileWithTitle? File { get; init; }
 #else
@@ -60,6 +86,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(File))]
 #endif
         public bool IsFile => File != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFile(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ChatCompletionContentPartFileWithTitle? value)
+        {
+            value = File;
+            return IsFile;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -158,9 +197,9 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.ChatCompletionContentPartTextWithTitle?, TResult>? text = null,
-            global::System.Func<global::G.ChatCompletionContentPartImageWithTitle?, TResult>? imageUrl = null,
-            global::System.Func<global::G.ChatCompletionContentPartFileWithTitle?, TResult>? file = null,
+            global::System.Func<global::G.ChatCompletionContentPartTextWithTitle, TResult>? text = null,
+            global::System.Func<global::G.ChatCompletionContentPartImageWithTitle, TResult>? imageUrl = null,
+            global::System.Func<global::G.ChatCompletionContentPartFileWithTitle, TResult>? file = null,
             bool validate = true)
         {
             if (validate)
@@ -188,9 +227,39 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.ChatCompletionContentPartTextWithTitle?>? text = null,
-            global::System.Action<global::G.ChatCompletionContentPartImageWithTitle?>? imageUrl = null,
-            global::System.Action<global::G.ChatCompletionContentPartFileWithTitle?>? file = null,
+            global::System.Action<global::G.ChatCompletionContentPartTextWithTitle>? text = null,
+
+            global::System.Action<global::G.ChatCompletionContentPartImageWithTitle>? imageUrl = null,
+
+            global::System.Action<global::G.ChatCompletionContentPartFileWithTitle>? file = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsText)
+            {
+                text?.Invoke(Text!);
+            }
+            else if (IsImageUrl)
+            {
+                imageUrl?.Invoke(ImageUrl!);
+            }
+            else if (IsFile)
+            {
+                file?.Invoke(File!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.ChatCompletionContentPartTextWithTitle>? text = null,
+            global::System.Action<global::G.ChatCompletionContentPartImageWithTitle>? imageUrl = null,
+            global::System.Action<global::G.ChatCompletionContentPartFileWithTitle>? file = null,
             bool validate = true)
         {
             if (validate)

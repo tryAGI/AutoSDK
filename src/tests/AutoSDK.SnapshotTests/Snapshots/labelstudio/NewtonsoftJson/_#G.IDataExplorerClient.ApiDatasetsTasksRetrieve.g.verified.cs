@@ -28,5 +28,28 @@ namespace G
             int? view = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Get Data Explorer tasks list<br/>
+        ///     Retrieve a list of Data Explorer tasks with pagination for a specific view or dataset, by using filters and ordering.<br/>
+        ///     
+        /// </summary>
+        /// <param name="dataset"></param>
+        /// <param name="maxThreshold"></param>
+        /// <param name="minThreshold"></param>
+        /// <param name="page"></param>
+        /// <param name="pageSize"></param>
+        /// <param name="view"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.DatasetView>> ApiDatasetsTasksRetrieveAsResponseAsync(
+            int? dataset = default,
+            double? maxThreshold = default,
+            double? minThreshold = default,
+            int? page = default,
+            int? pageSize = default,
+            int? view = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -28,6 +28,19 @@ namespace G
         public bool IsGuid => Guid != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickGuid(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::System.Guid? value)
+        {
+            value = Guid;
+            return IsGuid;
+        }
+
+        /// <summary>
         /// A string ID.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -45,6 +58,19 @@ namespace G
         public bool IsIdVariant2 => IdVariant2 != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickIdVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = IdVariant2;
+            return IsIdVariant2;
+        }
+
+        /// <summary>
         /// An integer ID.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -60,6 +86,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(IdVariant3))]
 #endif
         public bool IsIdVariant3 => IdVariant3 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickIdVariant3(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out int? value)
+        {
+            value = IdVariant3;
+            return IsIdVariant3;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -159,7 +198,7 @@ namespace G
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::System.Guid?, TResult>? guid = null,
-            global::System.Func<string?, TResult>? idVariant2 = null,
+            global::System.Func<string, TResult>? idVariant2 = null,
             global::System.Func<int?, TResult>? idVariant3 = null,
             bool validate = true)
         {
@@ -189,7 +228,37 @@ namespace G
         /// </summary>
         public void Match(
             global::System.Action<global::System.Guid?>? guid = null,
-            global::System.Action<string?>? idVariant2 = null,
+
+            global::System.Action<string>? idVariant2 = null,
+
+            global::System.Action<int?>? idVariant3 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsGuid)
+            {
+                guid?.Invoke(Guid!);
+            }
+            else if (IsIdVariant2)
+            {
+                idVariant2?.Invoke(IdVariant2!);
+            }
+            else if (IsIdVariant3)
+            {
+                idVariant3?.Invoke(IdVariant3!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::System.Guid?>? guid = null,
+            global::System.Action<string>? idVariant2 = null,
             global::System.Action<int?>? idVariant3 = null,
             bool validate = true)
         {

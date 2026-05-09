@@ -26,6 +26,22 @@ namespace G
         /// Initiates the creation of a new WebRTC connection to a browser peer. The endpoint returns the necessary information to set up and manage the connection.
         /// </summary>
         /// <param name="userAgent"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        [global::System.Obsolete("This method marked as deprecated.")]
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.CreateStreamResponse3>> CreateStreamAsResponseAsync(
+
+            global::G.CreateStreamRequest2 request,
+            string? userAgent = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create a new stream<br/>
+        /// Initiates the creation of a new WebRTC connection to a browser peer. The endpoint returns the necessary information to set up and manage the connection.
+        /// </summary>
+        /// <param name="userAgent"></param>
         /// <param name="sourceUrl">
         /// URL to a photo you wish to animate in the stream
         /// </param>

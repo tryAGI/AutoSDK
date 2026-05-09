@@ -33,6 +33,19 @@ namespace G
         public bool IsBase => Base != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickBase(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.BaseModelCard? value)
+        {
+            value = Base;
+            return IsBase;
+        }
+
+        /// <summary>
         /// Extra fields for fine-tuned models.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -48,6 +61,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FineTuned))]
 #endif
         public bool IsFineTuned => FineTuned != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFineTuned(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.FTModelCard? value)
+        {
+            value = FineTuned;
+            return IsFineTuned;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -127,8 +153,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.BaseModelCard?, TResult>? @base = null,
-            global::System.Func<global::G.FTModelCard?, TResult>? fineTuned = null,
+            global::System.Func<global::G.BaseModelCard, TResult>? @base = null,
+            global::System.Func<global::G.FTModelCard, TResult>? fineTuned = null,
             bool validate = true)
         {
             if (validate)
@@ -152,8 +178,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.BaseModelCard?>? @base = null,
-            global::System.Action<global::G.FTModelCard?>? fineTuned = null,
+            global::System.Action<global::G.BaseModelCard>? @base = null,
+
+            global::System.Action<global::G.FTModelCard>? fineTuned = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsBase)
+            {
+                @base?.Invoke(Base!);
+            }
+            else if (IsFineTuned)
+            {
+                fineTuned?.Invoke(FineTuned!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.BaseModelCard>? @base = null,
+            global::System.Action<global::G.FTModelCard>? fineTuned = null,
             bool validate = true)
         {
             if (validate)

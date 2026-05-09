@@ -57,7 +57,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public AliasOperationsV2Client AliasOperationsV2 => new AliasOperationsV2Client(HttpClient, authorizations: Authorizations, options: Options)
+        public AliasOperationsV2Client AliasOperationsV2 => new AliasOperationsV2Client(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -66,7 +66,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public CollectionOperationsV2Client CollectionOperationsV2 => new CollectionOperationsV2Client(HttpClient, authorizations: Authorizations, options: Options)
+        public CollectionOperationsV2Client CollectionOperationsV2 => new CollectionOperationsV2Client(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -75,7 +75,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public IndexOperationsV2Client IndexOperationsV2 => new IndexOperationsV2Client(HttpClient, authorizations: Authorizations, options: Options)
+        public IndexOperationsV2Client IndexOperationsV2 => new IndexOperationsV2Client(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -84,7 +84,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public PartitionOperationsV2Client PartitionOperationsV2 => new PartitionOperationsV2Client(HttpClient, authorizations: Authorizations, options: Options)
+        public PartitionOperationsV2Client PartitionOperationsV2 => new PartitionOperationsV2Client(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -93,7 +93,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public RoleOperationsV2Client RoleOperationsV2 => new RoleOperationsV2Client(HttpClient, authorizations: Authorizations, options: Options)
+        public RoleOperationsV2Client RoleOperationsV2 => new RoleOperationsV2Client(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -102,7 +102,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public UserOperationsV2Client UserOperationsV2 => new UserOperationsV2Client(HttpClient, authorizations: Authorizations, options: Options)
+        public UserOperationsV2Client UserOperationsV2 => new UserOperationsV2Client(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -111,7 +111,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public VectorOperationsV2Client VectorOperationsV2 => new VectorOperationsV2Client(HttpClient, authorizations: Authorizations, options: Options)
+        public VectorOperationsV2Client VectorOperationsV2 => new VectorOperationsV2Client(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -150,10 +150,10 @@ namespace G
         /// <param name="options">Client-wide request defaults such as headers, query parameters, retries, and timeout.</param>
         /// <param name="disposeHttpClient">Dispose the HttpClient when the instance is disposed. True by default.</param>
         public Api(
-            global::System.Net.Http.HttpClient? httpClient = null,
-            global::System.Uri? baseUri = null,
-            global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations = null,
-            global::G.AutoSDKClientOptions? options = null,
+            global::System.Net.Http.HttpClient? httpClient,
+            global::System.Uri? baseUri,
+            global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations,
+            global::G.AutoSDKClientOptions? options,
             bool disposeHttpClient = true)
         {
 

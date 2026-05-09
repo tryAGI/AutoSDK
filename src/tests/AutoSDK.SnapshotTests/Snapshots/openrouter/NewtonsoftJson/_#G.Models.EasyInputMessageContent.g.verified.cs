@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickEasyInputMessageContent0(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::System.Collections.Generic.IList<global::G.EasyInputMessageContentOneOf0Items>? value)
+        {
+            value = EasyInputMessageContent0;
+            return IsEasyInputMessageContent0;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public string? EasyInputMessageContentVariant2 { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(EasyInputMessageContentVariant2))]
 #endif
         public bool IsEasyInputMessageContentVariant2 => EasyInputMessageContentVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickEasyInputMessageContentVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = EasyInputMessageContentVariant2;
+            return IsEasyInputMessageContentVariant2;
+        }
 
         /// <summary>
         /// Any type
@@ -60,6 +86,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(EasyInputMessageContentVariant3))]
 #endif
         public bool IsEasyInputMessageContentVariant3 => EasyInputMessageContentVariant3 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickEasyInputMessageContentVariant3(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out object? value)
+        {
+            value = EasyInputMessageContentVariant3;
+            return IsEasyInputMessageContentVariant3;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -122,9 +161,9 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::System.Collections.Generic.IList<global::G.EasyInputMessageContentOneOf0Items>?, TResult>? easyInputMessageContent0 = null,
-            global::System.Func<string?, TResult>? easyInputMessageContentVariant2 = null,
-            global::System.Func<object?, TResult>? easyInputMessageContentVariant3 = null,
+            global::System.Func<global::System.Collections.Generic.IList<global::G.EasyInputMessageContentOneOf0Items>, TResult>? easyInputMessageContent0 = null,
+            global::System.Func<string, TResult>? easyInputMessageContentVariant2 = null,
+            global::System.Func<object, TResult>? easyInputMessageContentVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -152,9 +191,39 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::System.Collections.Generic.IList<global::G.EasyInputMessageContentOneOf0Items>?>? easyInputMessageContent0 = null,
-            global::System.Action<string?>? easyInputMessageContentVariant2 = null,
-            global::System.Action<object?>? easyInputMessageContentVariant3 = null,
+            global::System.Action<global::System.Collections.Generic.IList<global::G.EasyInputMessageContentOneOf0Items>>? easyInputMessageContent0 = null,
+
+            global::System.Action<string>? easyInputMessageContentVariant2 = null,
+
+            global::System.Action<object>? easyInputMessageContentVariant3 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsEasyInputMessageContent0)
+            {
+                easyInputMessageContent0?.Invoke(EasyInputMessageContent0!);
+            }
+            else if (IsEasyInputMessageContentVariant2)
+            {
+                easyInputMessageContentVariant2?.Invoke(EasyInputMessageContentVariant2!);
+            }
+            else if (IsEasyInputMessageContentVariant3)
+            {
+                easyInputMessageContentVariant3?.Invoke(EasyInputMessageContentVariant3!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::System.Collections.Generic.IList<global::G.EasyInputMessageContentOneOf0Items>>? easyInputMessageContent0 = null,
+            global::System.Action<string>? easyInputMessageContentVariant2 = null,
+            global::System.Action<object>? easyInputMessageContentVariant3 = null,
             bool validate = true)
         {
             if (validate)

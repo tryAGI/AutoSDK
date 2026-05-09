@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickTextSimilarityGrader(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.GraderTextSimilarity? value)
+        {
+            value = TextSimilarityGrader;
+            return IsTextSimilarityGrader;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.EvalGraderTextSimilarityVariant2? EvalGraderTextSimilarityVariant2 { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(EvalGraderTextSimilarityVariant2))]
 #endif
         public bool IsEvalGraderTextSimilarityVariant2 => EvalGraderTextSimilarityVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickEvalGraderTextSimilarityVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.EvalGraderTextSimilarityVariant2? value)
+        {
+            value = EvalGraderTextSimilarityVariant2;
+            return IsEvalGraderTextSimilarityVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -119,8 +145,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.GraderTextSimilarity?, TResult>? textSimilarityGrader = null,
-            global::System.Func<global::G.EvalGraderTextSimilarityVariant2?, TResult>? evalGraderTextSimilarityVariant2 = null,
+            global::System.Func<global::G.GraderTextSimilarity, TResult>? textSimilarityGrader = null,
+            global::System.Func<global::G.EvalGraderTextSimilarityVariant2, TResult>? evalGraderTextSimilarityVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -144,8 +170,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.GraderTextSimilarity?>? textSimilarityGrader = null,
-            global::System.Action<global::G.EvalGraderTextSimilarityVariant2?>? evalGraderTextSimilarityVariant2 = null,
+            global::System.Action<global::G.GraderTextSimilarity>? textSimilarityGrader = null,
+
+            global::System.Action<global::G.EvalGraderTextSimilarityVariant2>? evalGraderTextSimilarityVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsTextSimilarityGrader)
+            {
+                textSimilarityGrader?.Invoke(TextSimilarityGrader!);
+            }
+            else if (IsEvalGraderTextSimilarityVariant2)
+            {
+                evalGraderTextSimilarityVariant2?.Invoke(EvalGraderTextSimilarityVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.GraderTextSimilarity>? textSimilarityGrader = null,
+            global::System.Action<global::G.EvalGraderTextSimilarityVariant2>? evalGraderTextSimilarityVariant2 = null,
             bool validate = true)
         {
             if (validate)

@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickLm(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ResponseEngineRetellLm? value)
+        {
+            value = Lm;
+            return IsLm;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ResponseEngineConversationFlow? ConversationFlow { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ConversationFlow))]
 #endif
         public bool IsConversationFlow => ConversationFlow != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickConversationFlow(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ResponseEngineConversationFlow? value)
+        {
+            value = ConversationFlow;
+            return IsConversationFlow;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -119,8 +145,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.ResponseEngineRetellLm?, TResult>? lm = null,
-            global::System.Func<global::G.ResponseEngineConversationFlow?, TResult>? conversationFlow = null,
+            global::System.Func<global::G.ResponseEngineRetellLm, TResult>? lm = null,
+            global::System.Func<global::G.ResponseEngineConversationFlow, TResult>? conversationFlow = null,
             bool validate = true)
         {
             if (validate)
@@ -144,8 +170,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.ResponseEngineRetellLm?>? lm = null,
-            global::System.Action<global::G.ResponseEngineConversationFlow?>? conversationFlow = null,
+            global::System.Action<global::G.ResponseEngineRetellLm>? lm = null,
+
+            global::System.Action<global::G.ResponseEngineConversationFlow>? conversationFlow = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsLm)
+            {
+                lm?.Invoke(Lm!);
+            }
+            else if (IsConversationFlow)
+            {
+                conversationFlow?.Invoke(ConversationFlow!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.ResponseEngineRetellLm>? lm = null,
+            global::System.Action<global::G.ResponseEngineConversationFlow>? conversationFlow = null,
             bool validate = true)
         {
             if (validate)

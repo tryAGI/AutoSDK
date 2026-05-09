@@ -31,6 +31,23 @@ namespace G
         /// <param name="xProject">
         /// The project slug to associate with the agent (cloud only).
         /// </param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.AgentState>> CreateAgentAsResponseAsync(
+
+            global::G.CreateAgentRequest request,
+            string? xProject = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create Agent<br/>
+        /// Create an agent.
+        /// </summary>
+        /// <param name="xProject">
+        /// The project slug to associate with the agent (cloud only).
+        /// </param>
         /// <param name="name">
         /// The name of the agent.
         /// </param>

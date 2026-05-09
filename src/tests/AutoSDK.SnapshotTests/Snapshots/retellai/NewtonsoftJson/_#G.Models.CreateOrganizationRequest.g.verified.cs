@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickNew(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateOrganizationRequestNew? value)
+        {
+            value = New;
+            return IsNew;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CreateOrganizationRequestOld? Old { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Old))]
 #endif
         public bool IsOld => Old != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickOld(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateOrganizationRequestOld? value)
+        {
+            value = Old;
+            return IsOld;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -119,8 +145,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.CreateOrganizationRequestNew?, TResult>? @new = null,
-            global::System.Func<global::G.CreateOrganizationRequestOld?, TResult>? old = null,
+            global::System.Func<global::G.CreateOrganizationRequestNew, TResult>? @new = null,
+            global::System.Func<global::G.CreateOrganizationRequestOld, TResult>? old = null,
             bool validate = true)
         {
             if (validate)
@@ -144,8 +170,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.CreateOrganizationRequestNew?>? @new = null,
-            global::System.Action<global::G.CreateOrganizationRequestOld?>? old = null,
+            global::System.Action<global::G.CreateOrganizationRequestNew>? @new = null,
+
+            global::System.Action<global::G.CreateOrganizationRequestOld>? old = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsNew)
+            {
+                @new?.Invoke(New!);
+            }
+            else if (IsOld)
+            {
+                old?.Invoke(Old!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.CreateOrganizationRequestNew>? @new = null,
+            global::System.Action<global::G.CreateOrganizationRequestOld>? old = null,
             bool validate = true)
         {
             if (validate)

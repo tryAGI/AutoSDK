@@ -19,5 +19,19 @@ namespace G
             string? tenant = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Get the shard status<br/>
+        /// Get the status of every shard in the cluster.
+        /// </summary>
+        /// <param name="className"></param>
+        /// <param name="tenant"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::G.ShardStatusGetResponse>>> SchemaObjectsShardsGetAsResponseAsync(
+            string className,
+            string? tenant = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

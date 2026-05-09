@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickBase(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ChatCompletionResponseBase? value)
+        {
+            value = Base;
+            return IsBase;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ChatCompletionResponseChatCompletionResponse1? Response1 { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Response1))]
 #endif
         public bool IsResponse1 => Response1 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResponse1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ChatCompletionResponseChatCompletionResponse1? value)
+        {
+            value = Response1;
+            return IsResponse1;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -120,7 +146,7 @@ namespace G
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::G.ChatCompletionResponseBase?, TResult>? @base = null,
-            global::System.Func<global::G.ChatCompletionResponseChatCompletionResponse1?, TResult>? response1 = null,
+            global::System.Func<global::G.ChatCompletionResponseChatCompletionResponse1, TResult>? response1 = null,
             bool validate = true)
         {
             if (validate)
@@ -145,7 +171,31 @@ namespace G
         /// </summary>
         public void Match(
             global::System.Action<global::G.ChatCompletionResponseBase?>? @base = null,
-            global::System.Action<global::G.ChatCompletionResponseChatCompletionResponse1?>? response1 = null,
+
+            global::System.Action<global::G.ChatCompletionResponseChatCompletionResponse1>? response1 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsBase)
+            {
+                @base?.Invoke(Base!);
+            }
+            else if (IsResponse1)
+            {
+                response1?.Invoke(Response1!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.ChatCompletionResponseBase?>? @base = null,
+            global::System.Action<global::G.ChatCompletionResponseChatCompletionResponse1>? response1 = null,
             bool validate = true)
         {
             if (validate)

@@ -28,6 +28,19 @@ namespace G
         public bool IsResponsesPostRequestBodyContentApplicationJsonSchemaToolChoiceVariant1 => ResponsesPostRequestBodyContentApplicationJsonSchemaToolChoiceVariant1 != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResponsesPostRequestBodyContentApplicationJsonSchemaToolChoiceVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = ResponsesPostRequestBodyContentApplicationJsonSchemaToolChoiceVariant1;
+            return IsResponsesPostRequestBodyContentApplicationJsonSchemaToolChoiceVariant1;
+        }
+
+        /// <summary>
         /// An object representing the tool to be chosen
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponsesPostRequestBodyContentApplicationJsonSchemaToolChoice1))]
 #endif
         public bool IsResponsesPostRequestBodyContentApplicationJsonSchemaToolChoice1 => ResponsesPostRequestBodyContentApplicationJsonSchemaToolChoice1 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResponsesPostRequestBodyContentApplicationJsonSchemaToolChoice1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ResponsesPostRequestBodyContentApplicationJsonSchemaToolChoice1? value)
+        {
+            value = ResponsesPostRequestBodyContentApplicationJsonSchemaToolChoice1;
+            return IsResponsesPostRequestBodyContentApplicationJsonSchemaToolChoice1;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -119,8 +145,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<string?, TResult>? responsesPostRequestBodyContentApplicationJsonSchemaToolChoiceVariant1 = null,
-            global::System.Func<global::G.ResponsesPostRequestBodyContentApplicationJsonSchemaToolChoice1?, TResult>? responsesPostRequestBodyContentApplicationJsonSchemaToolChoice1 = null,
+            global::System.Func<string, TResult>? responsesPostRequestBodyContentApplicationJsonSchemaToolChoiceVariant1 = null,
+            global::System.Func<global::G.ResponsesPostRequestBodyContentApplicationJsonSchemaToolChoice1, TResult>? responsesPostRequestBodyContentApplicationJsonSchemaToolChoice1 = null,
             bool validate = true)
         {
             if (validate)
@@ -144,8 +170,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<string?>? responsesPostRequestBodyContentApplicationJsonSchemaToolChoiceVariant1 = null,
-            global::System.Action<global::G.ResponsesPostRequestBodyContentApplicationJsonSchemaToolChoice1?>? responsesPostRequestBodyContentApplicationJsonSchemaToolChoice1 = null,
+            global::System.Action<string>? responsesPostRequestBodyContentApplicationJsonSchemaToolChoiceVariant1 = null,
+
+            global::System.Action<global::G.ResponsesPostRequestBodyContentApplicationJsonSchemaToolChoice1>? responsesPostRequestBodyContentApplicationJsonSchemaToolChoice1 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsResponsesPostRequestBodyContentApplicationJsonSchemaToolChoiceVariant1)
+            {
+                responsesPostRequestBodyContentApplicationJsonSchemaToolChoiceVariant1?.Invoke(ResponsesPostRequestBodyContentApplicationJsonSchemaToolChoiceVariant1!);
+            }
+            else if (IsResponsesPostRequestBodyContentApplicationJsonSchemaToolChoice1)
+            {
+                responsesPostRequestBodyContentApplicationJsonSchemaToolChoice1?.Invoke(ResponsesPostRequestBodyContentApplicationJsonSchemaToolChoice1!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<string>? responsesPostRequestBodyContentApplicationJsonSchemaToolChoiceVariant1 = null,
+            global::System.Action<global::G.ResponsesPostRequestBodyContentApplicationJsonSchemaToolChoice1>? responsesPostRequestBodyContentApplicationJsonSchemaToolChoice1 = null,
             bool validate = true)
         {
             if (validate)

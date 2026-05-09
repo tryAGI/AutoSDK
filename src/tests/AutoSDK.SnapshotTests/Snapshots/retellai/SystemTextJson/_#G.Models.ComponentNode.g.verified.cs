@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickBaseCommon(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.NodeBaseCommon? value)
+        {
+            value = BaseCommon;
+            return IsBaseCommon;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ComponentNodeVariant2? ComponentNodeVariant2 { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ComponentNodeVariant2))]
 #endif
         public bool IsComponentNodeVariant2 => ComponentNodeVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickComponentNodeVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ComponentNodeVariant2? value)
+        {
+            value = ComponentNodeVariant2;
+            return IsComponentNodeVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -119,8 +145,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.NodeBaseCommon?, TResult>? baseCommon = null,
-            global::System.Func<global::G.ComponentNodeVariant2?, TResult>? componentNodeVariant2 = null,
+            global::System.Func<global::G.NodeBaseCommon, TResult>? baseCommon = null,
+            global::System.Func<global::G.ComponentNodeVariant2, TResult>? componentNodeVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -144,8 +170,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.NodeBaseCommon?>? baseCommon = null,
-            global::System.Action<global::G.ComponentNodeVariant2?>? componentNodeVariant2 = null,
+            global::System.Action<global::G.NodeBaseCommon>? baseCommon = null,
+
+            global::System.Action<global::G.ComponentNodeVariant2>? componentNodeVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsBaseCommon)
+            {
+                baseCommon?.Invoke(BaseCommon!);
+            }
+            else if (IsComponentNodeVariant2)
+            {
+                componentNodeVariant2?.Invoke(ComponentNodeVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.NodeBaseCommon>? baseCommon = null,
+            global::System.Action<global::G.ComponentNodeVariant2>? componentNodeVariant2 = null,
             bool validate = true)
         {
             if (validate)

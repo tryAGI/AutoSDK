@@ -11,6 +11,11 @@ namespace G
     public readonly partial struct GetTasksResponse : global::System.IEquatable<GetTasksResponse>
     {
         /// <summary>
+        /// 
+        /// </summary>
+        public string? Status { get; }
+
+        /// <summary>
         /// A pending task
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -26,6 +31,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Pending))]
 #endif
         public bool IsPending => Pending != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickPending(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.GetTasksResponseVariant1? value)
+        {
+            value = Pending;
+            return IsPending;
+        }
 
         /// <summary>
         /// A throttled task
@@ -45,6 +63,19 @@ namespace G
         public bool IsThrottled => Throttled != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickThrottled(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.GetTasksResponseVariant2? value)
+        {
+            value = Throttled;
+            return IsThrottled;
+        }
+
+        /// <summary>
         /// A cancelled or deleted task
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -60,6 +91,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Cancelled))]
 #endif
         public bool IsCancelled => Cancelled != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickCancelled(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.GetTasksResponseVariant3? value)
+        {
+            value = Cancelled;
+            return IsCancelled;
+        }
 
         /// <summary>
         /// A running task
@@ -79,6 +123,19 @@ namespace G
         public bool IsRunning => Running != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickRunning(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.GetTasksResponseVariant4? value)
+        {
+            value = Running;
+            return IsRunning;
+        }
+
+        /// <summary>
         /// A failed task
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -96,6 +153,19 @@ namespace G
         public bool IsFailed => Failed != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFailed(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.GetTasksResponseVariant5? value)
+        {
+            value = Failed;
+            return IsFailed;
+        }
+
+        /// <summary>
         /// A succeeded task
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -111,6 +181,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Succeeded))]
 #endif
         public bool IsSucceeded => Succeeded != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSucceeded(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.GetTasksResponseVariant6? value)
+        {
+            value = Succeeded;
+            return IsSucceeded;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -223,6 +306,7 @@ namespace G
         /// 
         /// </summary>
         public GetTasksResponse(
+            string? status,
             global::G.GetTasksResponseVariant1? pending,
             global::G.GetTasksResponseVariant2? throttled,
             global::G.GetTasksResponseVariant3? cancelled,
@@ -231,6 +315,8 @@ namespace G
             global::G.GetTasksResponseVariant6? succeeded
             )
         {
+            Status = status;
+
             Pending = pending;
             Throttled = throttled;
             Cancelled = cancelled;
@@ -275,12 +361,12 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.GetTasksResponseVariant1?, TResult>? pending = null,
-            global::System.Func<global::G.GetTasksResponseVariant2?, TResult>? throttled = null,
-            global::System.Func<global::G.GetTasksResponseVariant3?, TResult>? cancelled = null,
-            global::System.Func<global::G.GetTasksResponseVariant4?, TResult>? running = null,
-            global::System.Func<global::G.GetTasksResponseVariant5?, TResult>? failed = null,
-            global::System.Func<global::G.GetTasksResponseVariant6?, TResult>? succeeded = null,
+            global::System.Func<global::G.GetTasksResponseVariant1, TResult>? pending = null,
+            global::System.Func<global::G.GetTasksResponseVariant2, TResult>? throttled = null,
+            global::System.Func<global::G.GetTasksResponseVariant3, TResult>? cancelled = null,
+            global::System.Func<global::G.GetTasksResponseVariant4, TResult>? running = null,
+            global::System.Func<global::G.GetTasksResponseVariant5, TResult>? failed = null,
+            global::System.Func<global::G.GetTasksResponseVariant6, TResult>? succeeded = null,
             bool validate = true)
         {
             if (validate)
@@ -320,12 +406,60 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.GetTasksResponseVariant1?>? pending = null,
-            global::System.Action<global::G.GetTasksResponseVariant2?>? throttled = null,
-            global::System.Action<global::G.GetTasksResponseVariant3?>? cancelled = null,
-            global::System.Action<global::G.GetTasksResponseVariant4?>? running = null,
-            global::System.Action<global::G.GetTasksResponseVariant5?>? failed = null,
-            global::System.Action<global::G.GetTasksResponseVariant6?>? succeeded = null,
+            global::System.Action<global::G.GetTasksResponseVariant1>? pending = null,
+
+            global::System.Action<global::G.GetTasksResponseVariant2>? throttled = null,
+
+            global::System.Action<global::G.GetTasksResponseVariant3>? cancelled = null,
+
+            global::System.Action<global::G.GetTasksResponseVariant4>? running = null,
+
+            global::System.Action<global::G.GetTasksResponseVariant5>? failed = null,
+
+            global::System.Action<global::G.GetTasksResponseVariant6>? succeeded = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsPending)
+            {
+                pending?.Invoke(Pending!);
+            }
+            else if (IsThrottled)
+            {
+                throttled?.Invoke(Throttled!);
+            }
+            else if (IsCancelled)
+            {
+                cancelled?.Invoke(Cancelled!);
+            }
+            else if (IsRunning)
+            {
+                running?.Invoke(Running!);
+            }
+            else if (IsFailed)
+            {
+                failed?.Invoke(Failed!);
+            }
+            else if (IsSucceeded)
+            {
+                succeeded?.Invoke(Succeeded!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.GetTasksResponseVariant1>? pending = null,
+            global::System.Action<global::G.GetTasksResponseVariant2>? throttled = null,
+            global::System.Action<global::G.GetTasksResponseVariant3>? cancelled = null,
+            global::System.Action<global::G.GetTasksResponseVariant4>? running = null,
+            global::System.Action<global::G.GetTasksResponseVariant5>? failed = null,
+            global::System.Action<global::G.GetTasksResponseVariant6>? succeeded = null,
             bool validate = true)
         {
             if (validate)

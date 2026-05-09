@@ -24,11 +24,26 @@ namespace G.JsonConverters
                 foreach (var __jsonProp in __jsonDocument.RootElement.EnumerateObject())
                 {
                     __jsonProps.Add(__jsonProp.Name);
+                    if (__jsonProp.Value.ValueKind == global::System.Text.Json.JsonValueKind.Object)
+                    {
+                        foreach (var __nestedJsonProp in __jsonProp.Value.EnumerateObject())
+                        {
+                            __jsonProps.Add(__jsonProp.Name + "." + __nestedJsonProp.Name);
+                        }
+                    }
+
                 }
             }
 
             var __score0 = 0;
             if (__jsonProps.Contains("data")) __score0++;
+            if (__jsonProps.Contains("data.cuid")) __score0++;
+            if (__jsonProps.Contains("data.id")) __score0++;
+            if (__jsonProps.Contains("data.org_id")) __score0++;
+            if (__jsonProps.Contains("data.provider_key")) __score0++;
+            if (__jsonProps.Contains("data.provider_key_name")) __score0++;
+            if (__jsonProps.Contains("data.provider_name")) __score0++;
+            if (__jsonProps.Contains("data.provider_secret_key")) __score0++;
             if (__jsonProps.Contains("error")) __score0++;
             var __score1 = 0;
             if (__jsonProps.Contains("data")) __score1++;

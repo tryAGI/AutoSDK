@@ -56,6 +56,51 @@ namespace G
         /// <param name="model">
         /// Default Value: s2-pro
         /// </param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        /// <remarks>
+        /// curl --request POST \<br/>
+        ///   --url https://api.fish.audio/v1/tts \<br/>
+        ///   --header 'Authorization: Bearer &lt;token&gt;' \<br/>
+        ///   --header 'Content-Type: application/json' \<br/>
+        ///   --header 'model: s2-pro' \<br/>
+        ///   --data '{<br/>
+        ///     "text": "Hello! Welcome to Fish Audio.",<br/>
+        ///     "reference_id": "model-id",<br/>
+        ///     "temperature": 0.7,<br/>
+        ///     "top_p": 0.7,<br/>
+        ///     "prosody": {<br/>
+        ///       "speed": 1,<br/>
+        ///       "volume": 0,<br/>
+        ///       "normalize_loudness": true<br/>
+        ///     },<br/>
+        ///     "chunk_length": 300,<br/>
+        ///     "normalize": true,<br/>
+        ///     "format": "mp3",<br/>
+        ///     "sample_rate": 44100,<br/>
+        ///     "mp3_bitrate": 128,<br/>
+        ///     "latency": "normal",<br/>
+        ///     "max_new_tokens": 1024,<br/>
+        ///     "repetition_penalty": 1.2,<br/>
+        ///     "min_chunk_length": 50,<br/>
+        ///     "condition_on_previous_chunks": true,<br/>
+        ///     "early_stop_threshold": 1<br/>
+        ///   }'
+        /// </remarks>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse> CreateTtsAsResponseAsync(
+
+            global::G.TTSRequest request,
+            global::G.CreateTtsModel model = global::G.CreateTtsModel.S2Pro,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Text to Speech
+        /// </summary>
+        /// <param name="model">
+        /// Default Value: s2-pro
+        /// </param>
         /// <param name="text">
         /// Text to convert to speech.
         /// </param>

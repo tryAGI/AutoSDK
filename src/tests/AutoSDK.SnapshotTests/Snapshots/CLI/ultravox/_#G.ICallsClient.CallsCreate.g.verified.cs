@@ -30,6 +30,24 @@ namespace G
         /// Default Value: true
         /// </param>
         /// <param name="priorCallId"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.Call>> CallsCreateAsResponseAsync(
+
+            global::G.UltravoxV1StartCallRequest request,
+            bool? enableGreetingPrompt = default,
+            global::System.Guid? priorCallId = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="enableGreetingPrompt">
+        /// Default Value: true
+        /// </param>
+        /// <param name="priorCallId"></param>
         /// <param name="systemPrompt">
         /// The system prompt provided to the model during generations.
         /// </param>

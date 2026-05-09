@@ -22,6 +22,19 @@ namespace G
         /// Create automation rule evaluator<br/>
         /// Create automation rule evaluator
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse> CreateAutomationRuleEvaluatorAsResponseAsync(
+
+            global::G.AutomationRuleEvaluatorWrite request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create automation rule evaluator<br/>
+        /// Create automation rule evaluator
+        /// </summary>
         /// <param name="projectId">
         /// Primary project ID (legacy field for backwards compatibility)
         /// </param>

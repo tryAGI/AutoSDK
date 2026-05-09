@@ -27,5 +27,6 @@ namespace G
             ref string accessToken);
         partial void Authorized(
             global::System.Net.Http.HttpClient client);
+
     }
 }

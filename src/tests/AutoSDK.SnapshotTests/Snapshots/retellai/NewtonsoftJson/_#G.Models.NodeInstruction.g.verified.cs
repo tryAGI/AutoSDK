@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickPrompt(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.NodeInstructionPrompt? value)
+        {
+            value = Prompt;
+            return IsPrompt;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.NodeInstructionStaticText? StaticText { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(StaticText))]
 #endif
         public bool IsStaticText => StaticText != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickStaticText(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.NodeInstructionStaticText? value)
+        {
+            value = StaticText;
+            return IsStaticText;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -119,8 +145,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.NodeInstructionPrompt?, TResult>? prompt = null,
-            global::System.Func<global::G.NodeInstructionStaticText?, TResult>? staticText = null,
+            global::System.Func<global::G.NodeInstructionPrompt, TResult>? prompt = null,
+            global::System.Func<global::G.NodeInstructionStaticText, TResult>? staticText = null,
             bool validate = true)
         {
             if (validate)
@@ -144,8 +170,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.NodeInstructionPrompt?>? prompt = null,
-            global::System.Action<global::G.NodeInstructionStaticText?>? staticText = null,
+            global::System.Action<global::G.NodeInstructionPrompt>? prompt = null,
+
+            global::System.Action<global::G.NodeInstructionStaticText>? staticText = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsPrompt)
+            {
+                prompt?.Invoke(Prompt!);
+            }
+            else if (IsStaticText)
+            {
+                staticText?.Invoke(StaticText!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.NodeInstructionPrompt>? prompt = null,
+            global::System.Action<global::G.NodeInstructionStaticText>? staticText = null,
             bool validate = true)
         {
             if (validate)

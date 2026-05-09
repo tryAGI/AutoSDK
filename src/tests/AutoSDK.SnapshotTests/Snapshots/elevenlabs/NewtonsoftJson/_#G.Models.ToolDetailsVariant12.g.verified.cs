@@ -35,6 +35,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickWebhook(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ConversationHistoryTranscriptToolCallWebhookDetails? value)
+        {
+            value = Webhook;
+            return IsWebhook;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ConversationHistoryTranscriptToolCallClientDetails? Client { get; init; }
 #else
@@ -48,6 +61,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Client))]
 #endif
         public bool IsClient => Client != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickClient(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ConversationHistoryTranscriptToolCallClientDetails? value)
+        {
+            value = Client;
+            return IsClient;
+        }
 
         /// <summary>
         /// 
@@ -69,6 +95,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickMcp(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ConversationHistoryTranscriptToolCallMCPDetails? value)
+        {
+            value = Mcp;
+            return IsMcp;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ConversationHistoryTranscriptToolCallApiIntegrationWebhookDetails? ApiIntegrationWebhook { get; init; }
 #else
@@ -82,6 +121,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ApiIntegrationWebhook))]
 #endif
         public bool IsApiIntegrationWebhook => ApiIntegrationWebhook != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickApiIntegrationWebhook(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ConversationHistoryTranscriptToolCallApiIntegrationWebhookDetails? value)
+        {
+            value = ApiIntegrationWebhook;
+            return IsApiIntegrationWebhook;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -205,10 +257,10 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.ConversationHistoryTranscriptToolCallWebhookDetails?, TResult>? webhook = null,
-            global::System.Func<global::G.ConversationHistoryTranscriptToolCallClientDetails?, TResult>? client = null,
-            global::System.Func<global::G.ConversationHistoryTranscriptToolCallMCPDetails?, TResult>? mcp = null,
-            global::System.Func<global::G.ConversationHistoryTranscriptToolCallApiIntegrationWebhookDetails?, TResult>? apiIntegrationWebhook = null,
+            global::System.Func<global::G.ConversationHistoryTranscriptToolCallWebhookDetails, TResult>? webhook = null,
+            global::System.Func<global::G.ConversationHistoryTranscriptToolCallClientDetails, TResult>? client = null,
+            global::System.Func<global::G.ConversationHistoryTranscriptToolCallMCPDetails, TResult>? mcp = null,
+            global::System.Func<global::G.ConversationHistoryTranscriptToolCallApiIntegrationWebhookDetails, TResult>? apiIntegrationWebhook = null,
             bool validate = true)
         {
             if (validate)
@@ -240,10 +292,46 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.ConversationHistoryTranscriptToolCallWebhookDetails?>? webhook = null,
-            global::System.Action<global::G.ConversationHistoryTranscriptToolCallClientDetails?>? client = null,
-            global::System.Action<global::G.ConversationHistoryTranscriptToolCallMCPDetails?>? mcp = null,
-            global::System.Action<global::G.ConversationHistoryTranscriptToolCallApiIntegrationWebhookDetails?>? apiIntegrationWebhook = null,
+            global::System.Action<global::G.ConversationHistoryTranscriptToolCallWebhookDetails>? webhook = null,
+
+            global::System.Action<global::G.ConversationHistoryTranscriptToolCallClientDetails>? client = null,
+
+            global::System.Action<global::G.ConversationHistoryTranscriptToolCallMCPDetails>? mcp = null,
+
+            global::System.Action<global::G.ConversationHistoryTranscriptToolCallApiIntegrationWebhookDetails>? apiIntegrationWebhook = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsWebhook)
+            {
+                webhook?.Invoke(Webhook!);
+            }
+            else if (IsClient)
+            {
+                client?.Invoke(Client!);
+            }
+            else if (IsMcp)
+            {
+                mcp?.Invoke(Mcp!);
+            }
+            else if (IsApiIntegrationWebhook)
+            {
+                apiIntegrationWebhook?.Invoke(ApiIntegrationWebhook!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.ConversationHistoryTranscriptToolCallWebhookDetails>? webhook = null,
+            global::System.Action<global::G.ConversationHistoryTranscriptToolCallClientDetails>? client = null,
+            global::System.Action<global::G.ConversationHistoryTranscriptToolCallMCPDetails>? mcp = null,
+            global::System.Action<global::G.ConversationHistoryTranscriptToolCallApiIntegrationWebhookDetails>? apiIntegrationWebhook = null,
             bool validate = true)
         {
             if (validate)

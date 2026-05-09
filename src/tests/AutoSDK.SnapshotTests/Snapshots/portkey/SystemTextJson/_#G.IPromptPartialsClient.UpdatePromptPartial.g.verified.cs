@@ -23,6 +23,20 @@ namespace G
         /// Update a prompt partial
         /// </summary>
         /// <param name="promptPartialId"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.UpdatePromptPartialResponse>> UpdatePromptPartialAsResponseAsync(
+            string promptPartialId,
+
+            global::G.UpdatePromptPartialRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Update a prompt partial
+        /// </summary>
+        /// <param name="promptPartialId"></param>
         /// <param name="name"></param>
         /// <param name="string"></param>
         /// <param name="description"></param>

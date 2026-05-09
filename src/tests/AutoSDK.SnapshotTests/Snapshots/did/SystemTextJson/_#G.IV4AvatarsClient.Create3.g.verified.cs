@@ -23,6 +23,20 @@ namespace G
         /// Create a Video
         /// </summary>
         /// <param name="xApiKeyExternal"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.AllOf<global::G.Create3ResponseVariant1, global::G.Create3ResponseVariant2>>> Create3AsResponseAsync(
+
+            global::G.Create3Request request,
+            string? xApiKeyExternal = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create a Video
+        /// </summary>
+        /// <param name="xApiKeyExternal"></param>
         /// <param name="name">
         /// The name of the video<br/>
         /// Example: my_expressive_video

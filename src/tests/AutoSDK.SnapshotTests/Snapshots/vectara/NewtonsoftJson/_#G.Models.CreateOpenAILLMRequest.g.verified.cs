@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickBase(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.OpenAILLMRequestBase? value)
+        {
+            value = Base;
+            return IsBase;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CreateOpenAILLMRequestVariant2? CreateOpenAILLMRequestVariant2 { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CreateOpenAILLMRequestVariant2))]
 #endif
         public bool IsCreateOpenAILLMRequestVariant2 => CreateOpenAILLMRequestVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickCreateOpenAILLMRequestVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateOpenAILLMRequestVariant2? value)
+        {
+            value = CreateOpenAILLMRequestVariant2;
+            return IsCreateOpenAILLMRequestVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -119,8 +145,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.OpenAILLMRequestBase?, TResult>? @base = null,
-            global::System.Func<global::G.CreateOpenAILLMRequestVariant2?, TResult>? createOpenAILLMRequestVariant2 = null,
+            global::System.Func<global::G.OpenAILLMRequestBase, TResult>? @base = null,
+            global::System.Func<global::G.CreateOpenAILLMRequestVariant2, TResult>? createOpenAILLMRequestVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -144,8 +170,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.OpenAILLMRequestBase?>? @base = null,
-            global::System.Action<global::G.CreateOpenAILLMRequestVariant2?>? createOpenAILLMRequestVariant2 = null,
+            global::System.Action<global::G.OpenAILLMRequestBase>? @base = null,
+
+            global::System.Action<global::G.CreateOpenAILLMRequestVariant2>? createOpenAILLMRequestVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsBase)
+            {
+                @base?.Invoke(Base!);
+            }
+            else if (IsCreateOpenAILLMRequestVariant2)
+            {
+                createOpenAILLMRequestVariant2?.Invoke(CreateOpenAILLMRequestVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.OpenAILLMRequestBase>? @base = null,
+            global::System.Action<global::G.CreateOpenAILLMRequestVariant2>? createOpenAILLMRequestVariant2 = null,
             bool validate = true)
         {
             if (validate)

@@ -22,6 +22,19 @@ namespace G
         /// Train<br/>
         /// Rank pairs.
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.TrainingOutput>> TrainV1TrainPostAsResponseAsync(
+
+            global::G.TrainingAPIInput request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Train<br/>
+        /// Rank pairs.
+        /// </summary>
         /// <param name="model">
         /// The identifier of the model.<br/>
         /// Available models and corresponding param size and dimension:<br/>

@@ -33,6 +33,19 @@ namespace G
         public bool IsText => Text != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickText(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.TextChunk? value)
+        {
+            value = Text;
+            return IsText;
+        }
+
+        /// <summary>
         /// {"type":"image_url","image_url":{"url":"data:image/png;base64,iVBORw0
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -48,6 +61,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ImageUrl))]
 #endif
         public bool IsImageUrl => ImageUrl != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickImageUrl(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ImageURLChunk? value)
+        {
+            value = ImageUrl;
+            return IsImageUrl;
+        }
 
         /// <summary>
         /// 
@@ -69,6 +95,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickDocumentUrl(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.DocumentURLChunk? value)
+        {
+            value = DocumentUrl;
+            return IsDocumentUrl;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ReferenceChunk? Reference { get; init; }
 #else
@@ -82,6 +121,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Reference))]
 #endif
         public bool IsReference => Reference != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickReference(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ReferenceChunk? value)
+        {
+            value = Reference;
+            return IsReference;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -205,10 +257,10 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.TextChunk?, TResult>? text = null,
-            global::System.Func<global::G.ImageURLChunk?, TResult>? imageUrl = null,
-            global::System.Func<global::G.DocumentURLChunk?, TResult>? documentUrl = null,
-            global::System.Func<global::G.ReferenceChunk?, TResult>? reference = null,
+            global::System.Func<global::G.TextChunk, TResult>? text = null,
+            global::System.Func<global::G.ImageURLChunk, TResult>? imageUrl = null,
+            global::System.Func<global::G.DocumentURLChunk, TResult>? documentUrl = null,
+            global::System.Func<global::G.ReferenceChunk, TResult>? reference = null,
             bool validate = true)
         {
             if (validate)
@@ -240,10 +292,46 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.TextChunk?>? text = null,
-            global::System.Action<global::G.ImageURLChunk?>? imageUrl = null,
-            global::System.Action<global::G.DocumentURLChunk?>? documentUrl = null,
-            global::System.Action<global::G.ReferenceChunk?>? reference = null,
+            global::System.Action<global::G.TextChunk>? text = null,
+
+            global::System.Action<global::G.ImageURLChunk>? imageUrl = null,
+
+            global::System.Action<global::G.DocumentURLChunk>? documentUrl = null,
+
+            global::System.Action<global::G.ReferenceChunk>? reference = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsText)
+            {
+                text?.Invoke(Text!);
+            }
+            else if (IsImageUrl)
+            {
+                imageUrl?.Invoke(ImageUrl!);
+            }
+            else if (IsDocumentUrl)
+            {
+                documentUrl?.Invoke(DocumentUrl!);
+            }
+            else if (IsReference)
+            {
+                reference?.Invoke(Reference!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.TextChunk>? text = null,
+            global::System.Action<global::G.ImageURLChunk>? imageUrl = null,
+            global::System.Action<global::G.DocumentURLChunk>? documentUrl = null,
+            global::System.Action<global::G.ReferenceChunk>? reference = null,
             bool validate = true)
         {
             if (validate)

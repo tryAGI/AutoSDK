@@ -33,6 +33,19 @@ namespace G
         public bool IsStart => Start != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickStart(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.WorkflowStartNodeModelInput? value)
+        {
+            value = Start;
+            return IsStart;
+        }
+
+        /// <summary>
         /// Terminates the conversation upon reaching this node.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -48,6 +61,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(End))]
 #endif
         public bool IsEnd => End != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickEnd(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.WorkflowEndNodeModelInput? value)
+        {
+            value = End;
+            return IsEnd;
+        }
 
         /// <summary>
         /// Transfers the conversation to a phone number.
@@ -67,6 +93,19 @@ namespace G
         public bool IsPhoneNumber => PhoneNumber != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickPhoneNumber(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.WorkflowPhoneNumberNodeModelInput? value)
+        {
+            value = PhoneNumber;
+            return IsPhoneNumber;
+        }
+
+        /// <summary>
         /// A subagent conducting the conversation until one of the exit conditions is met. Each subagent can override the base settings, changing the prompt, knowledge base, and more.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -82,6 +121,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OverrideAgent))]
 #endif
         public bool IsOverrideAgent => OverrideAgent != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickOverrideAgent(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.WorkflowOverrideAgentNodeModelInput? value)
+        {
+            value = OverrideAgent;
+            return IsOverrideAgent;
+        }
 
         /// <summary>
         /// Transfer the conversation to a standalone agent.
@@ -101,6 +153,19 @@ namespace G
         public bool IsStandaloneAgent => StandaloneAgent != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickStandaloneAgent(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.WorkflowStandaloneAgentNodeModelInput? value)
+        {
+            value = StandaloneAgent;
+            return IsStandaloneAgent;
+        }
+
+        /// <summary>
         /// Executes one or more tools in parallel.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -116,6 +181,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Tool))]
 #endif
         public bool IsTool => Tool != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickTool(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.WorkflowToolNodeModelInput? value)
+        {
+            value = Tool;
+            return IsTool;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -283,12 +361,12 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.WorkflowStartNodeModelInput?, TResult>? start = null,
-            global::System.Func<global::G.WorkflowEndNodeModelInput?, TResult>? end = null,
-            global::System.Func<global::G.WorkflowPhoneNumberNodeModelInput?, TResult>? phoneNumber = null,
-            global::System.Func<global::G.WorkflowOverrideAgentNodeModelInput?, TResult>? overrideAgent = null,
-            global::System.Func<global::G.WorkflowStandaloneAgentNodeModelInput?, TResult>? standaloneAgent = null,
-            global::System.Func<global::G.WorkflowToolNodeModelInput?, TResult>? tool = null,
+            global::System.Func<global::G.WorkflowStartNodeModelInput, TResult>? start = null,
+            global::System.Func<global::G.WorkflowEndNodeModelInput, TResult>? end = null,
+            global::System.Func<global::G.WorkflowPhoneNumberNodeModelInput, TResult>? phoneNumber = null,
+            global::System.Func<global::G.WorkflowOverrideAgentNodeModelInput, TResult>? overrideAgent = null,
+            global::System.Func<global::G.WorkflowStandaloneAgentNodeModelInput, TResult>? standaloneAgent = null,
+            global::System.Func<global::G.WorkflowToolNodeModelInput, TResult>? tool = null,
             bool validate = true)
         {
             if (validate)
@@ -328,12 +406,60 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.WorkflowStartNodeModelInput?>? start = null,
-            global::System.Action<global::G.WorkflowEndNodeModelInput?>? end = null,
-            global::System.Action<global::G.WorkflowPhoneNumberNodeModelInput?>? phoneNumber = null,
-            global::System.Action<global::G.WorkflowOverrideAgentNodeModelInput?>? overrideAgent = null,
-            global::System.Action<global::G.WorkflowStandaloneAgentNodeModelInput?>? standaloneAgent = null,
-            global::System.Action<global::G.WorkflowToolNodeModelInput?>? tool = null,
+            global::System.Action<global::G.WorkflowStartNodeModelInput>? start = null,
+
+            global::System.Action<global::G.WorkflowEndNodeModelInput>? end = null,
+
+            global::System.Action<global::G.WorkflowPhoneNumberNodeModelInput>? phoneNumber = null,
+
+            global::System.Action<global::G.WorkflowOverrideAgentNodeModelInput>? overrideAgent = null,
+
+            global::System.Action<global::G.WorkflowStandaloneAgentNodeModelInput>? standaloneAgent = null,
+
+            global::System.Action<global::G.WorkflowToolNodeModelInput>? tool = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsStart)
+            {
+                start?.Invoke(Start!);
+            }
+            else if (IsEnd)
+            {
+                end?.Invoke(End!);
+            }
+            else if (IsPhoneNumber)
+            {
+                phoneNumber?.Invoke(PhoneNumber!);
+            }
+            else if (IsOverrideAgent)
+            {
+                overrideAgent?.Invoke(OverrideAgent!);
+            }
+            else if (IsStandaloneAgent)
+            {
+                standaloneAgent?.Invoke(StandaloneAgent!);
+            }
+            else if (IsTool)
+            {
+                tool?.Invoke(Tool!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.WorkflowStartNodeModelInput>? start = null,
+            global::System.Action<global::G.WorkflowEndNodeModelInput>? end = null,
+            global::System.Action<global::G.WorkflowPhoneNumberNodeModelInput>? phoneNumber = null,
+            global::System.Action<global::G.WorkflowOverrideAgentNodeModelInput>? overrideAgent = null,
+            global::System.Action<global::G.WorkflowStandaloneAgentNodeModelInput>? standaloneAgent = null,
+            global::System.Action<global::G.WorkflowToolNodeModelInput>? tool = null,
             bool validate = true)
         {
             if (validate)

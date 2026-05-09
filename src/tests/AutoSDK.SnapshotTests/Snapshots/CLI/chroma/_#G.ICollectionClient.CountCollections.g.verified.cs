@@ -22,5 +22,22 @@ namespace G
             string database,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Get number of collections<br/>
+        /// Returns the total number of collections in a database.
+        /// </summary>
+        /// <param name="tenant"></param>
+        /// <param name="database"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        /// <remarks>
+        /// const count: number = await client.countCollections();
+        /// </remarks>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<int>> CountCollectionsAsResponseAsync(
+            string tenant,
+            string database,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

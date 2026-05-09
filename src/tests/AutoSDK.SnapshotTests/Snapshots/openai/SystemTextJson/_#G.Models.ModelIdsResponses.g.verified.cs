@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickShared(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ModelIdsShared? value)
+        {
+            value = Shared;
+            return IsShared;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ModelIdsResponsesEnum? ResponsesOnlyModel { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponsesOnlyModel))]
 #endif
         public bool IsResponsesOnlyModel => ResponsesOnlyModel != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResponsesOnlyModel(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ModelIdsResponsesEnum? value)
+        {
+            value = ResponsesOnlyModel;
+            return IsResponsesOnlyModel;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -144,6 +170,30 @@ namespace G
         /// 
         /// </summary>
         public void Match(
+            global::System.Action<global::G.ModelIdsShared?>? shared = null,
+
+            global::System.Action<global::G.ModelIdsResponsesEnum?>? responsesOnlyModel = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsShared)
+            {
+                shared?.Invoke(Shared!);
+            }
+            else if (IsResponsesOnlyModel)
+            {
+                responsesOnlyModel?.Invoke(ResponsesOnlyModel!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
             global::System.Action<global::G.ModelIdsShared?>? shared = null,
             global::System.Action<global::G.ModelIdsResponsesEnum?>? responsesOnlyModel = null,
             bool validate = true)

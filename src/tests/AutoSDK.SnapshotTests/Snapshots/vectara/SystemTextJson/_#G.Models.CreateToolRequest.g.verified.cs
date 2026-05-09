@@ -32,6 +32,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Lambda))]
 #endif
         public bool IsLambda => Lambda != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickLambda(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateLambdaToolRequest? value)
+        {
+            value = Lambda;
+            return IsLambda;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -89,7 +102,7 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.CreateLambdaToolRequest?, TResult>? lambda = null,
+            global::System.Func<global::G.CreateLambdaToolRequest, TResult>? lambda = null,
             bool validate = true)
         {
             if (validate)
@@ -109,7 +122,25 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.CreateLambdaToolRequest?>? lambda = null,
+            global::System.Action<global::G.CreateLambdaToolRequest>? lambda = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsLambda)
+            {
+                lambda?.Invoke(Lambda!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.CreateLambdaToolRequest>? lambda = null,
             bool validate = true)
         {
             if (validate)

@@ -26,6 +26,22 @@ namespace G
         /// </summary>
         /// <param name="templateID"></param>
         /// <param name="buildID"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse> CreateTemplatesByTemplateIDBuildsByBuildID2AsResponseAsync(
+            string templateID,
+            string buildID,
+
+            global::G.TemplateBuildStartV2 request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Start the build
+        /// </summary>
+        /// <param name="templateID"></param>
+        /// <param name="buildID"></param>
         /// <param name="fromImage">
         /// Image to use as a base for the template build
         /// </param>

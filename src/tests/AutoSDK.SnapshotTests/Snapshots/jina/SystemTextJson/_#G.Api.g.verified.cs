@@ -99,7 +99,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public BulkEmbeddingsClient BulkEmbeddings => new BulkEmbeddingsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public BulkEmbeddingsClient BulkEmbeddings => new BulkEmbeddingsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -108,7 +108,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public ClassificationClient Classification => new ClassificationClient(HttpClient, authorizations: Authorizations, options: Options)
+        public ClassificationClient Classification => new ClassificationClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -117,7 +117,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public EmbeddingsClient Embeddings => new EmbeddingsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public EmbeddingsClient Embeddings => new EmbeddingsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -126,7 +126,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public MultiVectorClient MultiVector => new MultiVectorClient(HttpClient, authorizations: Authorizations, options: Options)
+        public MultiVectorClient MultiVector => new MultiVectorClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -135,7 +135,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public RerankClient Rerank => new RerankClient(HttpClient, authorizations: Authorizations, options: Options)
+        public RerankClient Rerank => new RerankClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -174,10 +174,10 @@ namespace G
         /// <param name="options">Client-wide request defaults such as headers, query parameters, retries, and timeout.</param>
         /// <param name="disposeHttpClient">Dispose the HttpClient when the instance is disposed. True by default.</param>
         public Api(
-            global::System.Net.Http.HttpClient? httpClient = null,
-            global::System.Uri? baseUri = null,
-            global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations = null,
-            global::G.AutoSDKClientOptions? options = null,
+            global::System.Net.Http.HttpClient? httpClient,
+            global::System.Uri? baseUri,
+            global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations,
+            global::G.AutoSDKClientOptions? options,
             bool disposeHttpClient = true)
         {
 

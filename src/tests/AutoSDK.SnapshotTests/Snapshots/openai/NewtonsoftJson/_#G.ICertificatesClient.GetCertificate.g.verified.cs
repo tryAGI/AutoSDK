@@ -19,5 +19,19 @@ namespace G
             global::System.Collections.Generic.IList<global::G.GetCertificateIncludeItem>? include = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Get a certificate that has been uploaded to the organization.<br/>
+        /// You can get a certificate regardless of whether it is active or not.
+        /// </summary>
+        /// <param name="certificateId"></param>
+        /// <param name="include"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.Certificate>> GetCertificateAsResponseAsync(
+            string certificateId,
+            global::System.Collections.Generic.IList<global::G.GetCertificateIncludeItem>? include = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

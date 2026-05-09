@@ -20,6 +20,18 @@ namespace G
         /// <summary>
         /// Creates a completion for the provided prompt and parameters.
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.CreateCompletionResponse>> CreateCompletionAsResponseAsync(
+
+            global::G.CreateCompletionRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Creates a completion for the provided prompt and parameters.
+        /// </summary>
         /// <param name="model">
         /// ID of the model to use. You can use the [List models](/docs/api-reference/models/list) API to see all of your available models, or see our [Model overview](/docs/models) for descriptions of them.
         /// </param>

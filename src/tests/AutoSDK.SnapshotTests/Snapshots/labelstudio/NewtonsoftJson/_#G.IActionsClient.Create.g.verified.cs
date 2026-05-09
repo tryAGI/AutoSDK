@@ -31,6 +31,25 @@ namespace G
         /// <param name="id"></param>
         /// <param name="project"></param>
         /// <param name="view"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse> CreateAsResponseAsync(
+            global::G.ApiDmActionsCreateId id,
+            int project,
+
+            global::G.ApiDmActionsCreateRequest request,
+            int? view = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Post actions<br/>
+        /// Perform a Data Manager action with the selected tasks and filters. Note: More complex actions require additional parameters in the request body. Call `GET api/actions?project=&lt;id&gt;` to explore them. Example: `GET api/actions?id=delete_tasks&amp;project=1`
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="project"></param>
+        /// <param name="view"></param>
         /// <param name="filters">
         /// Filters to apply on tasks. You can use [the helper class `Filters` from this page](https://labelstud.io/sdk/data_manager.html) to create Data Manager Filters.Example: `{"conjunction": "or", "items": [{"filter": "filter:tasks:completed_at", "operator": "greater", "type": "Datetime", "value": "2021-01-01T00:00:00.000Z"}]}`
         /// </param>

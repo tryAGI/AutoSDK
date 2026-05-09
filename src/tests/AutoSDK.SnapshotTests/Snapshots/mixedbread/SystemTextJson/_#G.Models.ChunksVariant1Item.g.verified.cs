@@ -35,6 +35,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickText(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredTextInputChunk? value)
+        {
+            value = Text;
+            return IsText;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredImageUrlInputChunk? ImageUrl { get; init; }
 #else
@@ -48,6 +61,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ImageUrl))]
 #endif
         public bool IsImageUrl => ImageUrl != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickImageUrl(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredImageUrlInputChunk? value)
+        {
+            value = ImageUrl;
+            return IsImageUrl;
+        }
 
         /// <summary>
         /// 
@@ -69,6 +95,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickAudioUrl(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredAudioUrlInputChunk? value)
+        {
+            value = AudioUrl;
+            return IsAudioUrl;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredVideoUrlInputChunk? VideoUrl { get; init; }
 #else
@@ -82,6 +121,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(VideoUrl))]
 #endif
         public bool IsVideoUrl => VideoUrl != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickVideoUrl(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredVideoUrlInputChunk? value)
+        {
+            value = VideoUrl;
+            return IsVideoUrl;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -205,10 +257,10 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredTextInputChunk?, TResult>? text = null,
-            global::System.Func<global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredImageUrlInputChunk?, TResult>? imageUrl = null,
-            global::System.Func<global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredAudioUrlInputChunk?, TResult>? audioUrl = null,
-            global::System.Func<global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredVideoUrlInputChunk?, TResult>? videoUrl = null,
+            global::System.Func<global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredTextInputChunk, TResult>? text = null,
+            global::System.Func<global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredImageUrlInputChunk, TResult>? imageUrl = null,
+            global::System.Func<global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredAudioUrlInputChunk, TResult>? audioUrl = null,
+            global::System.Func<global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredVideoUrlInputChunk, TResult>? videoUrl = null,
             bool validate = true)
         {
             if (validate)
@@ -240,10 +292,46 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredTextInputChunk?>? text = null,
-            global::System.Action<global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredImageUrlInputChunk?>? imageUrl = null,
-            global::System.Action<global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredAudioUrlInputChunk?>? audioUrl = null,
-            global::System.Action<global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredVideoUrlInputChunk?>? videoUrl = null,
+            global::System.Action<global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredTextInputChunk>? text = null,
+
+            global::System.Action<global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredImageUrlInputChunk>? imageUrl = null,
+
+            global::System.Action<global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredAudioUrlInputChunk>? audioUrl = null,
+
+            global::System.Action<global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredVideoUrlInputChunk>? videoUrl = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsText)
+            {
+                text?.Invoke(Text!);
+            }
+            else if (IsImageUrl)
+            {
+                imageUrl?.Invoke(ImageUrl!);
+            }
+            else if (IsAudioUrl)
+            {
+                audioUrl?.Invoke(AudioUrl!);
+            }
+            else if (IsVideoUrl)
+            {
+                videoUrl?.Invoke(VideoUrl!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredTextInputChunk>? text = null,
+            global::System.Action<global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredImageUrlInputChunk>? imageUrl = null,
+            global::System.Action<global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredAudioUrlInputChunk>? audioUrl = null,
+            global::System.Action<global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredVideoUrlInputChunk>? videoUrl = null,
             bool validate = true)
         {
             if (validate)

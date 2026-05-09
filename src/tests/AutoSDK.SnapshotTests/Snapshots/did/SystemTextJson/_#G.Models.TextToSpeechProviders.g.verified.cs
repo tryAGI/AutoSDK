@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickMicrosoft(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.TextToSpeechProvidersMicrosoft? value)
+        {
+            value = Microsoft;
+            return IsMicrosoft;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.TextToSpeechProvidersElevenLabs? ElevenLabs { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ElevenLabs))]
 #endif
         public bool IsElevenLabs => ElevenLabs != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickElevenLabs(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.TextToSpeechProvidersElevenLabs? value)
+        {
+            value = ElevenLabs;
+            return IsElevenLabs;
+        }
 
         /// <summary>
         /// 
@@ -64,6 +90,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickAmazon(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.TextToSpeechProvidersAmazon? value)
+        {
+            value = Amazon;
+            return IsAmazon;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.TextToSpeechProvidersGoogle? Google { get; init; }
 #else
@@ -81,6 +120,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickGoogle(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.TextToSpeechProvidersGoogle? value)
+        {
+            value = Google;
+            return IsGoogle;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.TextToSpeechProvidersOpenAI? OpenAI { get; init; }
 #else
@@ -94,6 +146,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OpenAI))]
 #endif
         public bool IsOpenAI => OpenAI != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickOpenAI(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.TextToSpeechProvidersOpenAI? value)
+        {
+            value = OpenAI;
+            return IsOpenAI;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -236,11 +301,11 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.TextToSpeechProvidersMicrosoft?, TResult>? microsoft = null,
-            global::System.Func<global::G.TextToSpeechProvidersElevenLabs?, TResult>? elevenLabs = null,
-            global::System.Func<global::G.TextToSpeechProvidersAmazon?, TResult>? amazon = null,
-            global::System.Func<global::G.TextToSpeechProvidersGoogle?, TResult>? google = null,
-            global::System.Func<global::G.TextToSpeechProvidersOpenAI?, TResult>? openAI = null,
+            global::System.Func<global::G.TextToSpeechProvidersMicrosoft, TResult>? microsoft = null,
+            global::System.Func<global::G.TextToSpeechProvidersElevenLabs, TResult>? elevenLabs = null,
+            global::System.Func<global::G.TextToSpeechProvidersAmazon, TResult>? amazon = null,
+            global::System.Func<global::G.TextToSpeechProvidersGoogle, TResult>? google = null,
+            global::System.Func<global::G.TextToSpeechProvidersOpenAI, TResult>? openAI = null,
             bool validate = true)
         {
             if (validate)
@@ -276,11 +341,53 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.TextToSpeechProvidersMicrosoft?>? microsoft = null,
-            global::System.Action<global::G.TextToSpeechProvidersElevenLabs?>? elevenLabs = null,
-            global::System.Action<global::G.TextToSpeechProvidersAmazon?>? amazon = null,
-            global::System.Action<global::G.TextToSpeechProvidersGoogle?>? google = null,
-            global::System.Action<global::G.TextToSpeechProvidersOpenAI?>? openAI = null,
+            global::System.Action<global::G.TextToSpeechProvidersMicrosoft>? microsoft = null,
+
+            global::System.Action<global::G.TextToSpeechProvidersElevenLabs>? elevenLabs = null,
+
+            global::System.Action<global::G.TextToSpeechProvidersAmazon>? amazon = null,
+
+            global::System.Action<global::G.TextToSpeechProvidersGoogle>? google = null,
+
+            global::System.Action<global::G.TextToSpeechProvidersOpenAI>? openAI = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsMicrosoft)
+            {
+                microsoft?.Invoke(Microsoft!);
+            }
+            else if (IsElevenLabs)
+            {
+                elevenLabs?.Invoke(ElevenLabs!);
+            }
+            else if (IsAmazon)
+            {
+                amazon?.Invoke(Amazon!);
+            }
+            else if (IsGoogle)
+            {
+                google?.Invoke(Google!);
+            }
+            else if (IsOpenAI)
+            {
+                openAI?.Invoke(OpenAI!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.TextToSpeechProvidersMicrosoft>? microsoft = null,
+            global::System.Action<global::G.TextToSpeechProvidersElevenLabs>? elevenLabs = null,
+            global::System.Action<global::G.TextToSpeechProvidersAmazon>? amazon = null,
+            global::System.Action<global::G.TextToSpeechProvidersGoogle>? google = null,
+            global::System.Action<global::G.TextToSpeechProvidersOpenAI>? openAI = null,
             bool validate = true)
         {
             if (validate)

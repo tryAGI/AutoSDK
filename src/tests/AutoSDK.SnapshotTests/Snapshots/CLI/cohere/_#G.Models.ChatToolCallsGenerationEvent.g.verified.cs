@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickStream(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ChatStreamEvent? value)
+        {
+            value = Stream;
+            return IsStream;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ChatToolCallsGenerationEventNykiww? Nykiww { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Nykiww))]
 #endif
         public bool IsNykiww => Nykiww != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickNykiww(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ChatToolCallsGenerationEventNykiww? value)
+        {
+            value = Nykiww;
+            return IsNykiww;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -119,8 +145,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.ChatStreamEvent?, TResult>? stream = null,
-            global::System.Func<global::G.ChatToolCallsGenerationEventNykiww?, TResult>? nykiww = null,
+            global::System.Func<global::G.ChatStreamEvent, TResult>? stream = null,
+            global::System.Func<global::G.ChatToolCallsGenerationEventNykiww, TResult>? nykiww = null,
             bool validate = true)
         {
             if (validate)
@@ -144,8 +170,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.ChatStreamEvent?>? stream = null,
-            global::System.Action<global::G.ChatToolCallsGenerationEventNykiww?>? nykiww = null,
+            global::System.Action<global::G.ChatStreamEvent>? stream = null,
+
+            global::System.Action<global::G.ChatToolCallsGenerationEventNykiww>? nykiww = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsStream)
+            {
+                stream?.Invoke(Stream!);
+            }
+            else if (IsNykiww)
+            {
+                nykiww?.Invoke(Nykiww!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.ChatStreamEvent>? stream = null,
+            global::System.Action<global::G.ChatToolCallsGenerationEventNykiww>? nykiww = null,
             bool validate = true)
         {
             if (validate)

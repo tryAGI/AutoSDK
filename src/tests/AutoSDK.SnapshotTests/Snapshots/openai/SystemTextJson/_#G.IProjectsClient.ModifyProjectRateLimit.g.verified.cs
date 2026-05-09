@@ -26,6 +26,22 @@ namespace G
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="rateLimitId"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.ProjectRateLimit>> ModifyProjectRateLimitAsResponseAsync(
+            string projectId,
+            string rateLimitId,
+
+            global::G.ProjectRateLimitUpdateRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Updates a project rate limit.
+        /// </summary>
+        /// <param name="projectId"></param>
+        /// <param name="rateLimitId"></param>
         /// <param name="maxRequestsPer1Minute">
         /// The maximum requests per minute.
         /// </param>

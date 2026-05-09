@@ -24,16 +24,28 @@ namespace G.JsonConverters
                 foreach (var __jsonProp in __jsonDocument.RootElement.EnumerateObject())
                 {
                     __jsonProps.Add(__jsonProp.Name);
+                    if (__jsonProp.Value.ValueKind == global::System.Text.Json.JsonValueKind.Object)
+                    {
+                        foreach (var __nestedJsonProp in __jsonProp.Value.EnumerateObject())
+                        {
+                            __jsonProps.Add(__jsonProp.Name + "." + __nestedJsonProp.Name);
+                        }
+                    }
+
                 }
             }
 
             var __score0 = 0;
             if (__jsonProps.Contains("cache_control")) __score0++;
+            if (__jsonProps.Contains("cache_control.ttl")) __score0++;
+            if (__jsonProps.Contains("cache_control.type")) __score0++;
             if (__jsonProps.Contains("citations")) __score0++;
             if (__jsonProps.Contains("text")) __score0++;
             if (__jsonProps.Contains("type")) __score0++;
             var __score1 = 0;
             if (__jsonProps.Contains("cache_control")) __score1++;
+            if (__jsonProps.Contains("cache_control.ttl")) __score1++;
+            if (__jsonProps.Contains("cache_control.type")) __score1++;
             if (__jsonProps.Contains("source")) __score1++;
             if (__jsonProps.Contains("type")) __score1++;
             var __score2 = 0;
@@ -41,13 +53,18 @@ namespace G.JsonConverters
             if (__jsonProps.Contains("type")) __score2++;
             var __score3 = 0;
             if (__jsonProps.Contains("cache_control")) __score3++;
+            if (__jsonProps.Contains("cache_control.ttl")) __score3++;
+            if (__jsonProps.Contains("cache_control.type")) __score3++;
             if (__jsonProps.Contains("citations")) __score3++;
+            if (__jsonProps.Contains("citations.enabled")) __score3++;
             if (__jsonProps.Contains("content")) __score3++;
             if (__jsonProps.Contains("source")) __score3++;
             if (__jsonProps.Contains("title")) __score3++;
             if (__jsonProps.Contains("type")) __score3++;
             var __score4 = 0;
             if (__jsonProps.Contains("cache_control")) __score4++;
+            if (__jsonProps.Contains("cache_control.ttl")) __score4++;
+            if (__jsonProps.Contains("cache_control.type")) __score4++;
             if (__jsonProps.Contains("citations")) __score4++;
             if (__jsonProps.Contains("context")) __score4++;
             if (__jsonProps.Contains("source")) __score4++;

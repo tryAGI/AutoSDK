@@ -28,6 +28,19 @@ namespace G
         public bool IsContentDirectory => ContentDirectory != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickContentDirectory(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::System.Collections.Generic.IList<global::G.ContentDirectoryItem>? value)
+        {
+            value = ContentDirectory;
+            return IsContentDirectory;
+        }
+
+        /// <summary>
         /// Content File
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(File))]
 #endif
         public bool IsFile => File != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFile(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ContentFile? value)
+        {
+            value = File;
+            return IsFile;
+        }
 
         /// <summary>
         /// An object describing a symlink
@@ -62,6 +88,19 @@ namespace G
         public bool IsSymlink => Symlink != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSymlink(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ContentSymlink? value)
+        {
+            value = Symlink;
+            return IsSymlink;
+        }
+
+        /// <summary>
         /// An object describing a submodule
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -77,6 +116,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Submodule))]
 #endif
         public bool IsSubmodule => Submodule != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSubmodule(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ContentSubmodule? value)
+        {
+            value = Submodule;
+            return IsSubmodule;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -179,10 +231,10 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::System.Collections.Generic.IList<global::G.ContentDirectoryItem>?, TResult>? contentDirectory = null,
-            global::System.Func<global::G.ContentFile?, TResult>? file = null,
-            global::System.Func<global::G.ContentSymlink?, TResult>? symlink = null,
-            global::System.Func<global::G.ContentSubmodule?, TResult>? submodule = null,
+            global::System.Func<global::System.Collections.Generic.IList<global::G.ContentDirectoryItem>, TResult>? contentDirectory = null,
+            global::System.Func<global::G.ContentFile, TResult>? file = null,
+            global::System.Func<global::G.ContentSymlink, TResult>? symlink = null,
+            global::System.Func<global::G.ContentSubmodule, TResult>? submodule = null,
             bool validate = true)
         {
             if (validate)
@@ -214,10 +266,46 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::System.Collections.Generic.IList<global::G.ContentDirectoryItem>?>? contentDirectory = null,
-            global::System.Action<global::G.ContentFile?>? file = null,
-            global::System.Action<global::G.ContentSymlink?>? symlink = null,
-            global::System.Action<global::G.ContentSubmodule?>? submodule = null,
+            global::System.Action<global::System.Collections.Generic.IList<global::G.ContentDirectoryItem>>? contentDirectory = null,
+
+            global::System.Action<global::G.ContentFile>? file = null,
+
+            global::System.Action<global::G.ContentSymlink>? symlink = null,
+
+            global::System.Action<global::G.ContentSubmodule>? submodule = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsContentDirectory)
+            {
+                contentDirectory?.Invoke(ContentDirectory!);
+            }
+            else if (IsFile)
+            {
+                file?.Invoke(File!);
+            }
+            else if (IsSymlink)
+            {
+                symlink?.Invoke(Symlink!);
+            }
+            else if (IsSubmodule)
+            {
+                submodule?.Invoke(Submodule!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::System.Collections.Generic.IList<global::G.ContentDirectoryItem>>? contentDirectory = null,
+            global::System.Action<global::G.ContentFile>? file = null,
+            global::System.Action<global::G.ContentSymlink>? symlink = null,
+            global::System.Action<global::G.ContentSubmodule>? submodule = null,
             bool validate = true)
         {
             if (validate)

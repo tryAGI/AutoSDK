@@ -35,6 +35,10 @@ namespace G
 
         /// <inheritdoc/>
         public global::G.AutoSDKClientOptions Options { get; }
+
+
+        /// <inheritdoc/>
+        public global::System.Func<string> CreateIdempotencyKey { get; set; } = () => global::System.Guid.NewGuid().ToString("D");
         /// <summary>
         /// 
         /// </summary>
@@ -444,63 +448,70 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public AccountClient Account => new AccountClient(HttpClient, authorizations: Authorizations, options: Options)
+        public AccountClient Account => new AccountClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
             JsonSerializerOptions = JsonSerializerOptions,
         };
 
         /// <summary>
         /// 
         /// </summary>
-        public ComputeClient Compute => new ComputeClient(HttpClient, authorizations: Authorizations, options: Options)
+        public ComputeClient Compute => new ComputeClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
             JsonSerializerOptions = JsonSerializerOptions,
         };
 
         /// <summary>
         /// 
         /// </summary>
-        public KeysClient Keys => new KeysClient(HttpClient, authorizations: Authorizations, options: Options)
+        public KeysClient Keys => new KeysClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
             JsonSerializerOptions = JsonSerializerOptions,
         };
 
         /// <summary>
         /// 
         /// </summary>
-        public MetaClient Meta => new MetaClient(HttpClient, authorizations: Authorizations, options: Options)
+        public MetaClient Meta => new MetaClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
             JsonSerializerOptions = JsonSerializerOptions,
         };
 
         /// <summary>
         /// 
         /// </summary>
-        public ModelsClient Models => new ModelsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public ModelsClient Models => new ModelsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
             JsonSerializerOptions = JsonSerializerOptions,
         };
 
         /// <summary>
         /// 
         /// </summary>
-        public ServerlessClient Serverless => new ServerlessClient(HttpClient, authorizations: Authorizations, options: Options)
+        public ServerlessClient Serverless => new ServerlessClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
             JsonSerializerOptions = JsonSerializerOptions,
         };
 
         /// <summary>
         /// 
         /// </summary>
-        public WorkflowsClient Workflows => new WorkflowsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public WorkflowsClient Workflows => new WorkflowsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
             JsonSerializerOptions = JsonSerializerOptions,
         };
 
@@ -537,10 +548,10 @@ namespace G
         /// <param name="options">Client-wide request defaults such as headers, query parameters, retries, and timeout.</param>
         /// <param name="disposeHttpClient">Dispose the HttpClient when the instance is disposed. True by default.</param>
         public Api(
-            global::System.Net.Http.HttpClient? httpClient = null,
-            global::System.Uri? baseUri = null,
-            global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations = null,
-            global::G.AutoSDKClientOptions? options = null,
+            global::System.Net.Http.HttpClient? httpClient,
+            global::System.Uri? baseUri,
+            global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations,
+            global::G.AutoSDKClientOptions? options,
             bool disposeHttpClient = true)
         {
 

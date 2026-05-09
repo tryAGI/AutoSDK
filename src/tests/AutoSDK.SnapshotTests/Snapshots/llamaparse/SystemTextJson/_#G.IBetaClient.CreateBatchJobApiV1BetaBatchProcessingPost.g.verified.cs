@@ -44,6 +44,32 @@ namespace G
         /// <param name="organizationId"></param>
         /// <param name="temporalNamespace"></param>
         /// <param name="session"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.BatchJobResponse>> CreateBatchJobApiV1BetaBatchProcessingPostAsResponseAsync(
+
+            global::G.BatchJobCreateRequest request,
+            global::System.Guid? projectId = default,
+            global::System.Guid? organizationId = default,
+            string? temporalNamespace = default,
+            string? session = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create Batch Job<br/>
+        /// Create a batch processing job.<br/>
+        /// Processes files from a directory or a specific list of item IDs.<br/>
+        /// Supports batch parsing and classification operations.<br/>
+        /// Provide either `directory_id` to process all files in a directory,<br/>
+        /// or `item_ids` for specific items. The job runs asynchronously —<br/>
+        /// poll `GET /batch/{job_id}` for progress.
+        /// </summary>
+        /// <param name="projectId"></param>
+        /// <param name="organizationId"></param>
+        /// <param name="temporalNamespace"></param>
+        /// <param name="session"></param>
         /// <param name="directoryId">
         /// ID of the directory containing files to process
         /// </param>

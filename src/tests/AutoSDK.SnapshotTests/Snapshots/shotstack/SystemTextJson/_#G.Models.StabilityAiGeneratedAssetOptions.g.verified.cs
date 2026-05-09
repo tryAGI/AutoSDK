@@ -34,6 +34,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TextToImage))]
 #endif
         public bool IsTextToImage => TextToImage != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickTextToImage(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.StabilityAiTextToImageOptions? value)
+        {
+            value = TextToImage;
+            return IsTextToImage;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -91,7 +104,7 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.StabilityAiTextToImageOptions?, TResult>? textToImage = null,
+            global::System.Func<global::G.StabilityAiTextToImageOptions, TResult>? textToImage = null,
             bool validate = true)
         {
             if (validate)
@@ -111,7 +124,25 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.StabilityAiTextToImageOptions?>? textToImage = null,
+            global::System.Action<global::G.StabilityAiTextToImageOptions>? textToImage = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsTextToImage)
+            {
+                textToImage?.Invoke(TextToImage!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.StabilityAiTextToImageOptions>? textToImage = null,
             bool validate = true)
         {
             if (validate)

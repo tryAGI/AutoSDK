@@ -92,7 +92,7 @@ namespace G
         /// <summary>
         /// Account information and billing.
         /// </summary>
-        public AccountClient Account => new AccountClient(HttpClient, authorizations: Authorizations, options: Options)
+        public AccountClient Account => new AccountClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -101,7 +101,7 @@ namespace G
         /// <summary>
         /// Create and manage batch call campaigns.
         /// </summary>
-        public BatchesClient Batches => new BatchesClient(HttpClient, authorizations: Authorizations, options: Options)
+        public BatchesClient Batches => new BatchesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -110,7 +110,7 @@ namespace G
         /// <summary>
         /// Send, manage, and analyze AI phone calls.
         /// </summary>
-        public CallsClient Calls => new CallsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public CallsClient Calls => new CallsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -119,7 +119,7 @@ namespace G
         /// <summary>
         /// Phone number management (inbound/outbound).
         /// </summary>
-        public NumbersClient Numbers => new NumbersClient(HttpClient, authorizations: Authorizations, options: Options)
+        public NumbersClient Numbers => new NumbersClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -128,7 +128,7 @@ namespace G
         /// <summary>
         /// Conversational pathway CRUD operations.
         /// </summary>
-        public PathwaysClient Pathways => new PathwaysClient(HttpClient, authorizations: Authorizations, options: Options)
+        public PathwaysClient Pathways => new PathwaysClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -137,7 +137,7 @@ namespace G
         /// <summary>
         /// Voice listing and management.
         /// </summary>
-        public VoicesClient Voices => new VoicesClient(HttpClient, authorizations: Authorizations, options: Options)
+        public VoicesClient Voices => new VoicesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -176,10 +176,10 @@ namespace G
         /// <param name="options">Client-wide request defaults such as headers, query parameters, retries, and timeout.</param>
         /// <param name="disposeHttpClient">Dispose the HttpClient when the instance is disposed. True by default.</param>
         public Api(
-            global::System.Net.Http.HttpClient? httpClient = null,
-            global::System.Uri? baseUri = null,
-            global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations = null,
-            global::G.AutoSDKClientOptions? options = null,
+            global::System.Net.Http.HttpClient? httpClient,
+            global::System.Uri? baseUri,
+            global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations,
+            global::G.AutoSDKClientOptions? options,
             bool disposeHttpClient = true)
         {
 

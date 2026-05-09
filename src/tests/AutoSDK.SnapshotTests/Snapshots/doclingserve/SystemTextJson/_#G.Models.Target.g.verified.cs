@@ -35,6 +35,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickInbody(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.InBodyTarget? value)
+        {
+            value = Inbody;
+            return IsInbody;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ZipTarget? Zip { get; init; }
 #else
@@ -48,6 +61,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Zip))]
 #endif
         public bool IsZip => Zip != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickZip(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ZipTarget? value)
+        {
+            value = Zip;
+            return IsZip;
+        }
 
         /// <summary>
         /// 
@@ -69,6 +95,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickS3(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.S3Target? value)
+        {
+            value = S3;
+            return IsS3;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.PutTarget? Put { get; init; }
 #else
@@ -82,6 +121,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Put))]
 #endif
         public bool IsPut => Put != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickPut(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.PutTarget? value)
+        {
+            value = Put;
+            return IsPut;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -205,10 +257,10 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.InBodyTarget?, TResult>? inbody = null,
-            global::System.Func<global::G.ZipTarget?, TResult>? zip = null,
-            global::System.Func<global::G.S3Target?, TResult>? s3 = null,
-            global::System.Func<global::G.PutTarget?, TResult>? put = null,
+            global::System.Func<global::G.InBodyTarget, TResult>? inbody = null,
+            global::System.Func<global::G.ZipTarget, TResult>? zip = null,
+            global::System.Func<global::G.S3Target, TResult>? s3 = null,
+            global::System.Func<global::G.PutTarget, TResult>? put = null,
             bool validate = true)
         {
             if (validate)
@@ -240,10 +292,46 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.InBodyTarget?>? inbody = null,
-            global::System.Action<global::G.ZipTarget?>? zip = null,
-            global::System.Action<global::G.S3Target?>? s3 = null,
-            global::System.Action<global::G.PutTarget?>? put = null,
+            global::System.Action<global::G.InBodyTarget>? inbody = null,
+
+            global::System.Action<global::G.ZipTarget>? zip = null,
+
+            global::System.Action<global::G.S3Target>? s3 = null,
+
+            global::System.Action<global::G.PutTarget>? put = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsInbody)
+            {
+                inbody?.Invoke(Inbody!);
+            }
+            else if (IsZip)
+            {
+                zip?.Invoke(Zip!);
+            }
+            else if (IsS3)
+            {
+                s3?.Invoke(S3!);
+            }
+            else if (IsPut)
+            {
+                put?.Invoke(Put!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.InBodyTarget>? inbody = null,
+            global::System.Action<global::G.ZipTarget>? zip = null,
+            global::System.Action<global::G.S3Target>? s3 = null,
+            global::System.Action<global::G.PutTarget>? put = null,
             bool validate = true)
         {
             if (validate)

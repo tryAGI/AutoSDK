@@ -9,6 +9,19 @@ namespace G
     public partial class RunsClient
     {
 
+        private static readonly global::G.AutoSDKServer[] s_ListRunsServers = new global::G.AutoSDKServer[]
+        {            new global::G.AutoSDKServer(
+                id: "https-app-letta-com",
+                name: "Letta Cloud",
+                url: "https://app.letta.com/",
+                description: "Letta Cloud"),
+            new global::G.AutoSDKServer(
+                id: "http-localhost",
+                name: "Self-hosted",
+                url: "http://localhost:8283/",
+                description: "Self-hosted"),
+        };
+
 
         private static readonly global::G.EndPointSecurityRequirement s_ListRunsSecurityRequirement0 =
             new global::G.EndPointSecurityRequirement
@@ -136,6 +149,94 @@ namespace G
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var __response = await ListRunsAsResponseAsync(
+                agentId: agentId,
+                agentIds: agentIds,
+                statuses: statuses,
+                background: background,
+                stopReason: stopReason,
+                conversationId: conversationId,
+                before: before,
+                after: after,
+                limit: limit,
+                order: order,
+                orderBy: orderBy,
+                active: active,
+                ascending: ascending,
+                requestOptions: requestOptions,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// List Runs<br/>
+        /// List all runs.
+        /// </summary>
+        /// <param name="agentId">
+        /// The unique identifier of the agent associated with the run.
+        /// </param>
+        /// <param name="agentIds">
+        /// The unique identifiers of the agents associated with the run. Deprecated in favor of agent_id field.
+        /// </param>
+        /// <param name="statuses">
+        /// Filter runs by status. Can specify multiple statuses.
+        /// </param>
+        /// <param name="background">
+        /// If True, filters for runs that were created in background mode.
+        /// </param>
+        /// <param name="stopReason">
+        /// Filter runs by stop reason.
+        /// </param>
+        /// <param name="conversationId">
+        /// Filter runs by conversation ID.
+        /// </param>
+        /// <param name="before">
+        /// Run ID cursor for pagination. Returns runs that come before this run ID in the specified sort order
+        /// </param>
+        /// <param name="after">
+        /// Run ID cursor for pagination. Returns runs that come after this run ID in the specified sort order
+        /// </param>
+        /// <param name="limit">
+        /// Maximum number of runs to return<br/>
+        /// Default Value: 100
+        /// </param>
+        /// <param name="order">
+        /// Sort order for runs by creation time. 'asc' for oldest first, 'desc' for newest first<br/>
+        /// Default Value: desc
+        /// </param>
+        /// <param name="orderBy">
+        /// Field to sort by<br/>
+        /// Default Value: created_at
+        /// </param>
+        /// <param name="active">
+        /// Filter for active runs.<br/>
+        /// Default Value: false
+        /// </param>
+        /// <param name="ascending">
+        /// Whether to sort agents oldest to newest (True) or newest to oldest (False, default). Deprecated in favor of order field.<br/>
+        /// Default Value: false
+        /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::G.Run>>> ListRunsAsResponseAsync(
+            string? agentId = default,
+            global::System.Collections.Generic.IList<string>? agentIds = default,
+            global::System.Collections.Generic.IList<string>? statuses = default,
+            bool? background = default,
+            global::G.StopReasonType? stopReason = default,
+            string? conversationId = default,
+            string? before = default,
+            string? after = default,
+            int? limit = default,
+            global::G.ListRunsOrder? order = default,
+            string? orderBy = default,
+            bool? active = default,
+            bool? ascending = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             PrepareArguments(
                 client: HttpClient);
             PrepareListRunsArguments(
@@ -182,9 +283,12 @@ namespace G
 
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
+
                             var __pathBuilder = new global::G.PathBuilder(
                                 path: "/v1/runs/",
-                                baseUri: HttpClient.BaseAddress); 
+                                baseUri: ResolveBaseUri(
+                                servers: s_ListRunsServers,
+                                defaultBaseUrl: "https://app.letta.com/"));
                             __pathBuilder
                                 .AddOptionalParameter("agent_id", agentId)
                                 .AddOptionalParameter("agent_ids", agentIds?.ToString())
@@ -198,7 +302,7 @@ namespace G
                                 .AddOptionalParameter("order", order?.ToValueString())
                                 .AddOptionalParameter("order_by", orderBy)
                                 .AddOptionalParameter("active", active?.ToString().ToLowerInvariant())
-                                .AddOptionalParameter("ascending", ascending?.ToString().ToLowerInvariant()) 
+                                .AddOptionalParameter("ascending", ascending?.ToString().ToLowerInvariant())
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::G.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -282,6 +386,8 @@ namespace G
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                     try
                     {
@@ -292,6 +398,11 @@ namespace G
                     }
                     catch (global::System.Net.Http.HttpRequestException __exception)
                     {
+                        var __retryDelay = global::G.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: null,
+                            attempt: __attempt);
                         var __willRetry = __attempt < __maxAttempts && !__effectiveCancellationToken.IsCancellationRequested;
                         await global::G.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
@@ -309,6 +420,8 @@ namespace G
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: __willRetry,
+                                retryDelay: __willRetry ? __retryDelay : (global::System.TimeSpan?)null,
+                                retryReason: "exception",
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         if (!__willRetry)
                         {
@@ -318,8 +431,7 @@ namespace G
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::G.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -328,6 +440,11 @@ namespace G
                         __attempt < __maxAttempts &&
                         global::G.AutoSDKRequestOptionsSupport.ShouldRetryStatusCode(__response.StatusCode))
                     {
+                        var __retryDelay = global::G.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: __response,
+                            attempt: __attempt);
                         await global::G.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
@@ -344,14 +461,15 @@ namespace G
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: true,
+                                retryDelay: __retryDelay,
+                                retryReason: "status:" + ((int)__response.StatusCode).ToString(global::System.Globalization.CultureInfo.InvariantCulture),
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         __response.Dispose();
                         __response = null;
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::G.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -391,6 +509,8 @@ namespace G
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
                 else
@@ -411,6 +531,8 @@ namespace G
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
                             // Validation Error
@@ -473,9 +595,13 @@ namespace G
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    return
-                                        global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::System.Collections.Generic.IList<global::G.Run>?>(__content, JsonSerializerOptions) ??
+                                    var __value = global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::System.Collections.Generic.IList<global::G.Run>?>(__content, JsonSerializerOptions) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                                    return new global::G.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::G.Run>>(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri,
+                                        body: __value);
                                 }
                                 catch (global::System.Exception __ex)
                                 {
@@ -503,9 +629,13 @@ namespace G
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    return
-                                        global::Newtonsoft.Json.JsonSerializer.Create(JsonSerializerOptions).Deserialize<global::System.Collections.Generic.IList<global::G.Run>?>(new global::Newtonsoft.Json.JsonTextReader(new global::System.IO.StreamReader(__content))) ??
+                                    var __value = global::Newtonsoft.Json.JsonSerializer.Create(JsonSerializerOptions).Deserialize<global::System.Collections.Generic.IList<global::G.Run>?>(new global::Newtonsoft.Json.JsonTextReader(new global::System.IO.StreamReader(__content))) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
+                                    return new global::G.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::G.Run>>(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri,
+                                        body: __value);
                                 }
                                 catch (global::System.Exception __ex)
                                 {

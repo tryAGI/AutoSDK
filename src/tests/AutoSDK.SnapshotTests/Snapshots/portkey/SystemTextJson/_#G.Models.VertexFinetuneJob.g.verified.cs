@@ -26,6 +26,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OpenAIParams))]
 #endif
         public bool IsOpenAIParams => OpenAIParams != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickOpenAIParams(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.OpenAIFinetuneJob? value)
+        {
+            value = OpenAIParams;
+            return IsOpenAIParams;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -70,7 +83,7 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.OpenAIFinetuneJob?, TResult>? openAIParams = null,
+            global::System.Func<global::G.OpenAIFinetuneJob, TResult>? openAIParams = null,
             bool validate = true)
         {
             if (validate)
@@ -90,7 +103,25 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.OpenAIFinetuneJob?>? openAIParams = null,
+            global::System.Action<global::G.OpenAIFinetuneJob>? openAIParams = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsOpenAIParams)
+            {
+                openAIParams?.Invoke(OpenAIParams!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.OpenAIFinetuneJob>? openAIParams = null,
             bool validate = true)
         {
             if (validate)

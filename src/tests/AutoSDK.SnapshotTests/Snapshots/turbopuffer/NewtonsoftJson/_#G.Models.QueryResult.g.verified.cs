@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickSingle(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.SingleQueryResult? value)
+        {
+            value = Single;
+            return IsSingle;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.QueryResultVariant2? QueryResultVariant2 { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(QueryResultVariant2))]
 #endif
         public bool IsQueryResultVariant2 => QueryResultVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickQueryResultVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.QueryResultVariant2? value)
+        {
+            value = QueryResultVariant2;
+            return IsQueryResultVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -119,8 +145,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.SingleQueryResult?, TResult>? single = null,
-            global::System.Func<global::G.QueryResultVariant2?, TResult>? queryResultVariant2 = null,
+            global::System.Func<global::G.SingleQueryResult, TResult>? single = null,
+            global::System.Func<global::G.QueryResultVariant2, TResult>? queryResultVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -144,8 +170,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.SingleQueryResult?>? single = null,
-            global::System.Action<global::G.QueryResultVariant2?>? queryResultVariant2 = null,
+            global::System.Action<global::G.SingleQueryResult>? single = null,
+
+            global::System.Action<global::G.QueryResultVariant2>? queryResultVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsSingle)
+            {
+                single?.Invoke(Single!);
+            }
+            else if (IsQueryResultVariant2)
+            {
+                queryResultVariant2?.Invoke(QueryResultVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.SingleQueryResult>? single = null,
+            global::System.Action<global::G.QueryResultVariant2>? queryResultVariant2 = null,
             bool validate = true)
         {
             if (validate)

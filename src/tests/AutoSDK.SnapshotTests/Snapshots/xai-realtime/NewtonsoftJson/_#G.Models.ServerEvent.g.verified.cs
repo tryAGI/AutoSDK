@@ -33,6 +33,19 @@ namespace G
         public bool IsSessionCreated => SessionCreated != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSessionCreated(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.SessionCreatedEvent? value)
+        {
+            value = SessionCreated;
+            return IsSessionCreated;
+        }
+
+        /// <summary>
         /// Session configuration has been updated.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -48,6 +61,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SessionUpdated))]
 #endif
         public bool IsSessionUpdated => SessionUpdated != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSessionUpdated(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.SessionUpdatedEvent? value)
+        {
+            value = SessionUpdated;
+            return IsSessionUpdated;
+        }
 
         /// <summary>
         /// A new conversation has been created.
@@ -67,6 +93,19 @@ namespace G
         public bool IsConversationCreated => ConversationCreated != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickConversationCreated(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ConversationCreatedEvent? value)
+        {
+            value = ConversationCreated;
+            return IsConversationCreated;
+        }
+
+        /// <summary>
         /// A conversation item has been added.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -82,6 +121,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ConversationItemAdded))]
 #endif
         public bool IsConversationItemAdded => ConversationItemAdded != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickConversationItemAdded(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ConversationItemAddedEvent? value)
+        {
+            value = ConversationItemAdded;
+            return IsConversationItemAdded;
+        }
 
         /// <summary>
         /// Speech detected in audio input (VAD).
@@ -101,6 +153,19 @@ namespace G
         public bool IsInputAudioBufferSpeechStarted => InputAudioBufferSpeechStarted != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickInputAudioBufferSpeechStarted(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.InputAudioBufferSpeechStartedEvent? value)
+        {
+            value = InputAudioBufferSpeechStarted;
+            return IsInputAudioBufferSpeechStarted;
+        }
+
+        /// <summary>
         /// Speech has stopped in audio input (VAD).
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -116,6 +181,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputAudioBufferSpeechStopped))]
 #endif
         public bool IsInputAudioBufferSpeechStopped => InputAudioBufferSpeechStopped != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickInputAudioBufferSpeechStopped(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.InputAudioBufferSpeechStoppedEvent? value)
+        {
+            value = InputAudioBufferSpeechStopped;
+            return IsInputAudioBufferSpeechStopped;
+        }
 
         /// <summary>
         /// Audio buffer has been committed.
@@ -135,6 +213,19 @@ namespace G
         public bool IsInputAudioBufferCommitted => InputAudioBufferCommitted != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickInputAudioBufferCommitted(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.InputAudioBufferCommittedEvent? value)
+        {
+            value = InputAudioBufferCommitted;
+            return IsInputAudioBufferCommitted;
+        }
+
+        /// <summary>
         /// Audio transcription has been completed.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -150,6 +241,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputAudioTranscriptionCompleted))]
 #endif
         public bool IsInputAudioTranscriptionCompleted => InputAudioTranscriptionCompleted != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickInputAudioTranscriptionCompleted(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.InputAudioTranscriptionCompletedEvent? value)
+        {
+            value = InputAudioTranscriptionCompleted;
+            return IsInputAudioTranscriptionCompleted;
+        }
 
         /// <summary>
         /// A response has been created.
@@ -169,6 +273,19 @@ namespace G
         public bool IsResponseCreated => ResponseCreated != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResponseCreated(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ResponseCreatedEvent? value)
+        {
+            value = ResponseCreated;
+            return IsResponseCreated;
+        }
+
+        /// <summary>
         /// A response has completed.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -184,6 +301,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseDone))]
 #endif
         public bool IsResponseDone => ResponseDone != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResponseDone(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ResponseDoneEvent? value)
+        {
+            value = ResponseDone;
+            return IsResponseDone;
+        }
 
         /// <summary>
         /// An output item has been added to the response.
@@ -203,6 +333,19 @@ namespace G
         public bool IsResponseOutputItemAdded => ResponseOutputItemAdded != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResponseOutputItemAdded(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ResponseOutputItemAddedEvent? value)
+        {
+            value = ResponseOutputItemAdded;
+            return IsResponseOutputItemAdded;
+        }
+
+        /// <summary>
         /// Incremental audio transcript text.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -218,6 +361,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseOutputAudioTranscriptDelta))]
 #endif
         public bool IsResponseOutputAudioTranscriptDelta => ResponseOutputAudioTranscriptDelta != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResponseOutputAudioTranscriptDelta(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ResponseOutputAudioTranscriptDeltaEvent? value)
+        {
+            value = ResponseOutputAudioTranscriptDelta;
+            return IsResponseOutputAudioTranscriptDelta;
+        }
 
         /// <summary>
         /// Audio transcript completed.
@@ -237,6 +393,19 @@ namespace G
         public bool IsResponseOutputAudioTranscriptDone => ResponseOutputAudioTranscriptDone != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResponseOutputAudioTranscriptDone(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ResponseOutputAudioTranscriptDoneEvent? value)
+        {
+            value = ResponseOutputAudioTranscriptDone;
+            return IsResponseOutputAudioTranscriptDone;
+        }
+
+        /// <summary>
         /// Incremental audio data (base64).
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -252,6 +421,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseOutputAudioDelta))]
 #endif
         public bool IsResponseOutputAudioDelta => ResponseOutputAudioDelta != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResponseOutputAudioDelta(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ResponseOutputAudioDeltaEvent? value)
+        {
+            value = ResponseOutputAudioDelta;
+            return IsResponseOutputAudioDelta;
+        }
 
         /// <summary>
         /// Audio output completed.
@@ -271,6 +453,19 @@ namespace G
         public bool IsResponseOutputAudioDone => ResponseOutputAudioDone != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResponseOutputAudioDone(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ResponseOutputAudioDoneEvent? value)
+        {
+            value = ResponseOutputAudioDone;
+            return IsResponseOutputAudioDone;
+        }
+
+        /// <summary>
         /// Function call arguments completed.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -286,6 +481,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseFunctionCallArgumentsDone))]
 #endif
         public bool IsResponseFunctionCallArgumentsDone => ResponseFunctionCallArgumentsDone != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResponseFunctionCallArgumentsDone(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ResponseFunctionCallArgumentsDoneEvent? value)
+        {
+            value = ResponseFunctionCallArgumentsDone;
+            return IsResponseFunctionCallArgumentsDone;
+        }
 
         /// <summary>
         /// MCP tool call arguments completed.
@@ -305,6 +513,19 @@ namespace G
         public bool IsResponseMcpCallArgumentsDone => ResponseMcpCallArgumentsDone != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResponseMcpCallArgumentsDone(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ResponseMcpCallArgumentsDoneEvent? value)
+        {
+            value = ResponseMcpCallArgumentsDone;
+            return IsResponseMcpCallArgumentsDone;
+        }
+
+        /// <summary>
         /// MCP tool call completed.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -320,6 +541,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseMcpCallCompleted))]
 #endif
         public bool IsResponseMcpCallCompleted => ResponseMcpCallCompleted != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResponseMcpCallCompleted(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ResponseMcpCallCompletedEvent? value)
+        {
+            value = ResponseMcpCallCompleted;
+            return IsResponseMcpCallCompleted;
+        }
 
         /// <summary>
         /// MCP tool call failed.
@@ -339,6 +573,19 @@ namespace G
         public bool IsResponseMcpCallFailed => ResponseMcpCallFailed != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResponseMcpCallFailed(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ResponseMcpCallFailedEvent? value)
+        {
+            value = ResponseMcpCallFailed;
+            return IsResponseMcpCallFailed;
+        }
+
+        /// <summary>
         /// MCP tool list retrieved.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -356,6 +603,19 @@ namespace G
         public bool IsMcpListToolsCompleted => McpListToolsCompleted != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMcpListToolsCompleted(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.McpListToolsCompletedEvent? value)
+        {
+            value = McpListToolsCompleted;
+            return IsMcpListToolsCompleted;
+        }
+
+        /// <summary>
         /// An error occurred.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -371,6 +631,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Error))]
 #endif
         public bool IsError => Error != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickError(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ErrorEvent? value)
+        {
+            value = Error;
+            return IsError;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -868,27 +1141,27 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.SessionCreatedEvent?, TResult>? sessionCreated = null,
-            global::System.Func<global::G.SessionUpdatedEvent?, TResult>? sessionUpdated = null,
-            global::System.Func<global::G.ConversationCreatedEvent?, TResult>? conversationCreated = null,
-            global::System.Func<global::G.ConversationItemAddedEvent?, TResult>? conversationItemAdded = null,
-            global::System.Func<global::G.InputAudioBufferSpeechStartedEvent?, TResult>? inputAudioBufferSpeechStarted = null,
-            global::System.Func<global::G.InputAudioBufferSpeechStoppedEvent?, TResult>? inputAudioBufferSpeechStopped = null,
-            global::System.Func<global::G.InputAudioBufferCommittedEvent?, TResult>? inputAudioBufferCommitted = null,
-            global::System.Func<global::G.InputAudioTranscriptionCompletedEvent?, TResult>? inputAudioTranscriptionCompleted = null,
-            global::System.Func<global::G.ResponseCreatedEvent?, TResult>? responseCreated = null,
-            global::System.Func<global::G.ResponseDoneEvent?, TResult>? responseDone = null,
-            global::System.Func<global::G.ResponseOutputItemAddedEvent?, TResult>? responseOutputItemAdded = null,
-            global::System.Func<global::G.ResponseOutputAudioTranscriptDeltaEvent?, TResult>? responseOutputAudioTranscriptDelta = null,
-            global::System.Func<global::G.ResponseOutputAudioTranscriptDoneEvent?, TResult>? responseOutputAudioTranscriptDone = null,
-            global::System.Func<global::G.ResponseOutputAudioDeltaEvent?, TResult>? responseOutputAudioDelta = null,
-            global::System.Func<global::G.ResponseOutputAudioDoneEvent?, TResult>? responseOutputAudioDone = null,
-            global::System.Func<global::G.ResponseFunctionCallArgumentsDoneEvent?, TResult>? responseFunctionCallArgumentsDone = null,
-            global::System.Func<global::G.ResponseMcpCallArgumentsDoneEvent?, TResult>? responseMcpCallArgumentsDone = null,
-            global::System.Func<global::G.ResponseMcpCallCompletedEvent?, TResult>? responseMcpCallCompleted = null,
-            global::System.Func<global::G.ResponseMcpCallFailedEvent?, TResult>? responseMcpCallFailed = null,
-            global::System.Func<global::G.McpListToolsCompletedEvent?, TResult>? mcpListToolsCompleted = null,
-            global::System.Func<global::G.ErrorEvent?, TResult>? error = null,
+            global::System.Func<global::G.SessionCreatedEvent, TResult>? sessionCreated = null,
+            global::System.Func<global::G.SessionUpdatedEvent, TResult>? sessionUpdated = null,
+            global::System.Func<global::G.ConversationCreatedEvent, TResult>? conversationCreated = null,
+            global::System.Func<global::G.ConversationItemAddedEvent, TResult>? conversationItemAdded = null,
+            global::System.Func<global::G.InputAudioBufferSpeechStartedEvent, TResult>? inputAudioBufferSpeechStarted = null,
+            global::System.Func<global::G.InputAudioBufferSpeechStoppedEvent, TResult>? inputAudioBufferSpeechStopped = null,
+            global::System.Func<global::G.InputAudioBufferCommittedEvent, TResult>? inputAudioBufferCommitted = null,
+            global::System.Func<global::G.InputAudioTranscriptionCompletedEvent, TResult>? inputAudioTranscriptionCompleted = null,
+            global::System.Func<global::G.ResponseCreatedEvent, TResult>? responseCreated = null,
+            global::System.Func<global::G.ResponseDoneEvent, TResult>? responseDone = null,
+            global::System.Func<global::G.ResponseOutputItemAddedEvent, TResult>? responseOutputItemAdded = null,
+            global::System.Func<global::G.ResponseOutputAudioTranscriptDeltaEvent, TResult>? responseOutputAudioTranscriptDelta = null,
+            global::System.Func<global::G.ResponseOutputAudioTranscriptDoneEvent, TResult>? responseOutputAudioTranscriptDone = null,
+            global::System.Func<global::G.ResponseOutputAudioDeltaEvent, TResult>? responseOutputAudioDelta = null,
+            global::System.Func<global::G.ResponseOutputAudioDoneEvent, TResult>? responseOutputAudioDone = null,
+            global::System.Func<global::G.ResponseFunctionCallArgumentsDoneEvent, TResult>? responseFunctionCallArgumentsDone = null,
+            global::System.Func<global::G.ResponseMcpCallArgumentsDoneEvent, TResult>? responseMcpCallArgumentsDone = null,
+            global::System.Func<global::G.ResponseMcpCallCompletedEvent, TResult>? responseMcpCallCompleted = null,
+            global::System.Func<global::G.ResponseMcpCallFailedEvent, TResult>? responseMcpCallFailed = null,
+            global::System.Func<global::G.McpListToolsCompletedEvent, TResult>? mcpListToolsCompleted = null,
+            global::System.Func<global::G.ErrorEvent, TResult>? error = null,
             bool validate = true)
         {
             if (validate)
@@ -988,27 +1261,165 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.SessionCreatedEvent?>? sessionCreated = null,
-            global::System.Action<global::G.SessionUpdatedEvent?>? sessionUpdated = null,
-            global::System.Action<global::G.ConversationCreatedEvent?>? conversationCreated = null,
-            global::System.Action<global::G.ConversationItemAddedEvent?>? conversationItemAdded = null,
-            global::System.Action<global::G.InputAudioBufferSpeechStartedEvent?>? inputAudioBufferSpeechStarted = null,
-            global::System.Action<global::G.InputAudioBufferSpeechStoppedEvent?>? inputAudioBufferSpeechStopped = null,
-            global::System.Action<global::G.InputAudioBufferCommittedEvent?>? inputAudioBufferCommitted = null,
-            global::System.Action<global::G.InputAudioTranscriptionCompletedEvent?>? inputAudioTranscriptionCompleted = null,
-            global::System.Action<global::G.ResponseCreatedEvent?>? responseCreated = null,
-            global::System.Action<global::G.ResponseDoneEvent?>? responseDone = null,
-            global::System.Action<global::G.ResponseOutputItemAddedEvent?>? responseOutputItemAdded = null,
-            global::System.Action<global::G.ResponseOutputAudioTranscriptDeltaEvent?>? responseOutputAudioTranscriptDelta = null,
-            global::System.Action<global::G.ResponseOutputAudioTranscriptDoneEvent?>? responseOutputAudioTranscriptDone = null,
-            global::System.Action<global::G.ResponseOutputAudioDeltaEvent?>? responseOutputAudioDelta = null,
-            global::System.Action<global::G.ResponseOutputAudioDoneEvent?>? responseOutputAudioDone = null,
-            global::System.Action<global::G.ResponseFunctionCallArgumentsDoneEvent?>? responseFunctionCallArgumentsDone = null,
-            global::System.Action<global::G.ResponseMcpCallArgumentsDoneEvent?>? responseMcpCallArgumentsDone = null,
-            global::System.Action<global::G.ResponseMcpCallCompletedEvent?>? responseMcpCallCompleted = null,
-            global::System.Action<global::G.ResponseMcpCallFailedEvent?>? responseMcpCallFailed = null,
-            global::System.Action<global::G.McpListToolsCompletedEvent?>? mcpListToolsCompleted = null,
-            global::System.Action<global::G.ErrorEvent?>? error = null,
+            global::System.Action<global::G.SessionCreatedEvent>? sessionCreated = null,
+
+            global::System.Action<global::G.SessionUpdatedEvent>? sessionUpdated = null,
+
+            global::System.Action<global::G.ConversationCreatedEvent>? conversationCreated = null,
+
+            global::System.Action<global::G.ConversationItemAddedEvent>? conversationItemAdded = null,
+
+            global::System.Action<global::G.InputAudioBufferSpeechStartedEvent>? inputAudioBufferSpeechStarted = null,
+
+            global::System.Action<global::G.InputAudioBufferSpeechStoppedEvent>? inputAudioBufferSpeechStopped = null,
+
+            global::System.Action<global::G.InputAudioBufferCommittedEvent>? inputAudioBufferCommitted = null,
+
+            global::System.Action<global::G.InputAudioTranscriptionCompletedEvent>? inputAudioTranscriptionCompleted = null,
+
+            global::System.Action<global::G.ResponseCreatedEvent>? responseCreated = null,
+
+            global::System.Action<global::G.ResponseDoneEvent>? responseDone = null,
+
+            global::System.Action<global::G.ResponseOutputItemAddedEvent>? responseOutputItemAdded = null,
+
+            global::System.Action<global::G.ResponseOutputAudioTranscriptDeltaEvent>? responseOutputAudioTranscriptDelta = null,
+
+            global::System.Action<global::G.ResponseOutputAudioTranscriptDoneEvent>? responseOutputAudioTranscriptDone = null,
+
+            global::System.Action<global::G.ResponseOutputAudioDeltaEvent>? responseOutputAudioDelta = null,
+
+            global::System.Action<global::G.ResponseOutputAudioDoneEvent>? responseOutputAudioDone = null,
+
+            global::System.Action<global::G.ResponseFunctionCallArgumentsDoneEvent>? responseFunctionCallArgumentsDone = null,
+
+            global::System.Action<global::G.ResponseMcpCallArgumentsDoneEvent>? responseMcpCallArgumentsDone = null,
+
+            global::System.Action<global::G.ResponseMcpCallCompletedEvent>? responseMcpCallCompleted = null,
+
+            global::System.Action<global::G.ResponseMcpCallFailedEvent>? responseMcpCallFailed = null,
+
+            global::System.Action<global::G.McpListToolsCompletedEvent>? mcpListToolsCompleted = null,
+
+            global::System.Action<global::G.ErrorEvent>? error = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsSessionCreated)
+            {
+                sessionCreated?.Invoke(SessionCreated!);
+            }
+            else if (IsSessionUpdated)
+            {
+                sessionUpdated?.Invoke(SessionUpdated!);
+            }
+            else if (IsConversationCreated)
+            {
+                conversationCreated?.Invoke(ConversationCreated!);
+            }
+            else if (IsConversationItemAdded)
+            {
+                conversationItemAdded?.Invoke(ConversationItemAdded!);
+            }
+            else if (IsInputAudioBufferSpeechStarted)
+            {
+                inputAudioBufferSpeechStarted?.Invoke(InputAudioBufferSpeechStarted!);
+            }
+            else if (IsInputAudioBufferSpeechStopped)
+            {
+                inputAudioBufferSpeechStopped?.Invoke(InputAudioBufferSpeechStopped!);
+            }
+            else if (IsInputAudioBufferCommitted)
+            {
+                inputAudioBufferCommitted?.Invoke(InputAudioBufferCommitted!);
+            }
+            else if (IsInputAudioTranscriptionCompleted)
+            {
+                inputAudioTranscriptionCompleted?.Invoke(InputAudioTranscriptionCompleted!);
+            }
+            else if (IsResponseCreated)
+            {
+                responseCreated?.Invoke(ResponseCreated!);
+            }
+            else if (IsResponseDone)
+            {
+                responseDone?.Invoke(ResponseDone!);
+            }
+            else if (IsResponseOutputItemAdded)
+            {
+                responseOutputItemAdded?.Invoke(ResponseOutputItemAdded!);
+            }
+            else if (IsResponseOutputAudioTranscriptDelta)
+            {
+                responseOutputAudioTranscriptDelta?.Invoke(ResponseOutputAudioTranscriptDelta!);
+            }
+            else if (IsResponseOutputAudioTranscriptDone)
+            {
+                responseOutputAudioTranscriptDone?.Invoke(ResponseOutputAudioTranscriptDone!);
+            }
+            else if (IsResponseOutputAudioDelta)
+            {
+                responseOutputAudioDelta?.Invoke(ResponseOutputAudioDelta!);
+            }
+            else if (IsResponseOutputAudioDone)
+            {
+                responseOutputAudioDone?.Invoke(ResponseOutputAudioDone!);
+            }
+            else if (IsResponseFunctionCallArgumentsDone)
+            {
+                responseFunctionCallArgumentsDone?.Invoke(ResponseFunctionCallArgumentsDone!);
+            }
+            else if (IsResponseMcpCallArgumentsDone)
+            {
+                responseMcpCallArgumentsDone?.Invoke(ResponseMcpCallArgumentsDone!);
+            }
+            else if (IsResponseMcpCallCompleted)
+            {
+                responseMcpCallCompleted?.Invoke(ResponseMcpCallCompleted!);
+            }
+            else if (IsResponseMcpCallFailed)
+            {
+                responseMcpCallFailed?.Invoke(ResponseMcpCallFailed!);
+            }
+            else if (IsMcpListToolsCompleted)
+            {
+                mcpListToolsCompleted?.Invoke(McpListToolsCompleted!);
+            }
+            else if (IsError)
+            {
+                error?.Invoke(Error!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.SessionCreatedEvent>? sessionCreated = null,
+            global::System.Action<global::G.SessionUpdatedEvent>? sessionUpdated = null,
+            global::System.Action<global::G.ConversationCreatedEvent>? conversationCreated = null,
+            global::System.Action<global::G.ConversationItemAddedEvent>? conversationItemAdded = null,
+            global::System.Action<global::G.InputAudioBufferSpeechStartedEvent>? inputAudioBufferSpeechStarted = null,
+            global::System.Action<global::G.InputAudioBufferSpeechStoppedEvent>? inputAudioBufferSpeechStopped = null,
+            global::System.Action<global::G.InputAudioBufferCommittedEvent>? inputAudioBufferCommitted = null,
+            global::System.Action<global::G.InputAudioTranscriptionCompletedEvent>? inputAudioTranscriptionCompleted = null,
+            global::System.Action<global::G.ResponseCreatedEvent>? responseCreated = null,
+            global::System.Action<global::G.ResponseDoneEvent>? responseDone = null,
+            global::System.Action<global::G.ResponseOutputItemAddedEvent>? responseOutputItemAdded = null,
+            global::System.Action<global::G.ResponseOutputAudioTranscriptDeltaEvent>? responseOutputAudioTranscriptDelta = null,
+            global::System.Action<global::G.ResponseOutputAudioTranscriptDoneEvent>? responseOutputAudioTranscriptDone = null,
+            global::System.Action<global::G.ResponseOutputAudioDeltaEvent>? responseOutputAudioDelta = null,
+            global::System.Action<global::G.ResponseOutputAudioDoneEvent>? responseOutputAudioDone = null,
+            global::System.Action<global::G.ResponseFunctionCallArgumentsDoneEvent>? responseFunctionCallArgumentsDone = null,
+            global::System.Action<global::G.ResponseMcpCallArgumentsDoneEvent>? responseMcpCallArgumentsDone = null,
+            global::System.Action<global::G.ResponseMcpCallCompletedEvent>? responseMcpCallCompleted = null,
+            global::System.Action<global::G.ResponseMcpCallFailedEvent>? responseMcpCallFailed = null,
+            global::System.Action<global::G.McpListToolsCompletedEvent>? mcpListToolsCompleted = null,
+            global::System.Action<global::G.ErrorEvent>? error = null,
             bool validate = true)
         {
             if (validate)

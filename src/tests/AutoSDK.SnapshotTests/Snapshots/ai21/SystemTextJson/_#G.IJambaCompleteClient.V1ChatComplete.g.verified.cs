@@ -40,6 +40,29 @@ namespace G
         /// Default Value: 1730898830008L
         /// </param>
         /// <param name="authorization"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.AnyOf<global::G.ChatCompletion, global::System.Collections.Generic.IList<global::G.ChatCompletionVllmStreamingMessage>>>> V1ChatCompleteAsResponseAsync(
+            string authorization,
+
+            global::G.LanguageStudioApiServerDataTypesChatChatRequest request,
+            int? requestStartTime = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Studio Chat Complete<br/>
+        /// This is the endpoint for the [Jamba Instruct model](https://docs.ai21.com/docs/jamba-models).<br/>
+        /// This is a foundation model that supports both single-turn (question answering,<br/>
+        /// text completion) and multi-turn (chat style) interactions.<br/>
+        /// You can optionally stream results if you want to get the response as each<br/>
+        /// token is generated, rather than waiting for the entire response.
+        /// </summary>
+        /// <param name="requestStartTime">
+        /// Default Value: 1730898830008L
+        /// </param>
+        /// <param name="authorization"></param>
         /// <param name="model">
         /// Name of this model
         /// </param>

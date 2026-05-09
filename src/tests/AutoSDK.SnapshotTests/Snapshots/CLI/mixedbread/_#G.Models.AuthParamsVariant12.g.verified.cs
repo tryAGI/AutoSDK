@@ -31,6 +31,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Oauth2))]
 #endif
         public bool IsOauth2 => Oauth2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickOauth2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.OAuth2CreateOrUpdateParams? value)
+        {
+            value = Oauth2;
+            return IsOauth2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -88,7 +101,7 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.OAuth2CreateOrUpdateParams?, TResult>? oauth2 = null,
+            global::System.Func<global::G.OAuth2CreateOrUpdateParams, TResult>? oauth2 = null,
             bool validate = true)
         {
             if (validate)
@@ -108,7 +121,25 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.OAuth2CreateOrUpdateParams?>? oauth2 = null,
+            global::System.Action<global::G.OAuth2CreateOrUpdateParams>? oauth2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsOauth2)
+            {
+                oauth2?.Invoke(Oauth2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.OAuth2CreateOrUpdateParams>? oauth2 = null,
             bool validate = true)
         {
             if (validate)

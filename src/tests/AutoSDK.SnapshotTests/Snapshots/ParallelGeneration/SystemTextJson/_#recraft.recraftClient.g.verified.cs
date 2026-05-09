@@ -63,7 +63,7 @@ namespace recraft
         /// <summary>
         /// 
         /// </summary>
-        public ImageClient Image => new ImageClient(HttpClient, authorizations: Authorizations, options: Options)
+        public ImageClient Image => new ImageClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -72,7 +72,7 @@ namespace recraft
         /// <summary>
         /// 
         /// </summary>
-        public StyleClient Style => new StyleClient(HttpClient, authorizations: Authorizations, options: Options)
+        public StyleClient Style => new StyleClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -81,7 +81,7 @@ namespace recraft
         /// <summary>
         /// 
         /// </summary>
-        public UserClient User => new UserClient(HttpClient, authorizations: Authorizations, options: Options)
+        public UserClient User => new UserClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -120,10 +120,10 @@ namespace recraft
         /// <param name="options">Client-wide request defaults such as headers, query parameters, retries, and timeout.</param>
         /// <param name="disposeHttpClient">Dispose the HttpClient when the instance is disposed. True by default.</param>
         public recraftClient(
-            global::System.Net.Http.HttpClient? httpClient = null,
-            global::System.Uri? baseUri = null,
-            global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations = null,
-            global::recraft.AutoSDKClientOptions? options = null,
+            global::System.Net.Http.HttpClient? httpClient,
+            global::System.Uri? baseUri,
+            global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations,
+            global::recraft.AutoSDKClientOptions? options,
             bool disposeHttpClient = true)
         {
 

@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickPointsBatch(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.PointsBatch? value)
+        {
+            value = PointsBatch;
+            return IsPointsBatch;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.PointsList? PointsList { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(PointsList))]
 #endif
         public bool IsPointsList => PointsList != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickPointsList(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.PointsList? value)
+        {
+            value = PointsList;
+            return IsPointsList;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -119,8 +145,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.PointsBatch?, TResult>? pointsBatch = null,
-            global::System.Func<global::G.PointsList?, TResult>? pointsList = null,
+            global::System.Func<global::G.PointsBatch, TResult>? pointsBatch = null,
+            global::System.Func<global::G.PointsList, TResult>? pointsList = null,
             bool validate = true)
         {
             if (validate)
@@ -144,8 +170,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.PointsBatch?>? pointsBatch = null,
-            global::System.Action<global::G.PointsList?>? pointsList = null,
+            global::System.Action<global::G.PointsBatch>? pointsBatch = null,
+
+            global::System.Action<global::G.PointsList>? pointsList = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsPointsBatch)
+            {
+                pointsBatch?.Invoke(PointsBatch!);
+            }
+            else if (IsPointsList)
+            {
+                pointsList?.Invoke(PointsList!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.PointsBatch>? pointsBatch = null,
+            global::System.Action<global::G.PointsList>? pointsList = null,
             bool validate = true)
         {
             if (validate)

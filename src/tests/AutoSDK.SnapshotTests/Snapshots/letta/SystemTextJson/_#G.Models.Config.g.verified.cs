@@ -33,6 +33,19 @@ namespace G
         public bool IsStdio => Stdio != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickStdio(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateStdioMCPServer? value)
+        {
+            value = Stdio;
+            return IsStdio;
+        }
+
+        /// <summary>
         /// Create a new SSE MCP server
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -50,6 +63,19 @@ namespace G
         public bool IsSse => Sse != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSse(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateSSEMCPServer? value)
+        {
+            value = Sse;
+            return IsSse;
+        }
+
+        /// <summary>
         /// Create a new Streamable HTTP MCP server
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -65,6 +91,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(StreamableHttp))]
 #endif
         public bool IsStreamableHttp => StreamableHttp != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickStreamableHttp(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateStreamableHTTPMCPServer? value)
+        {
+            value = StreamableHttp;
+            return IsStreamableHttp;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -166,9 +205,9 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.CreateStdioMCPServer?, TResult>? stdio = null,
-            global::System.Func<global::G.CreateSSEMCPServer?, TResult>? sse = null,
-            global::System.Func<global::G.CreateStreamableHTTPMCPServer?, TResult>? streamableHttp = null,
+            global::System.Func<global::G.CreateStdioMCPServer, TResult>? stdio = null,
+            global::System.Func<global::G.CreateSSEMCPServer, TResult>? sse = null,
+            global::System.Func<global::G.CreateStreamableHTTPMCPServer, TResult>? streamableHttp = null,
             bool validate = true)
         {
             if (validate)
@@ -196,9 +235,39 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.CreateStdioMCPServer?>? stdio = null,
-            global::System.Action<global::G.CreateSSEMCPServer?>? sse = null,
-            global::System.Action<global::G.CreateStreamableHTTPMCPServer?>? streamableHttp = null,
+            global::System.Action<global::G.CreateStdioMCPServer>? stdio = null,
+
+            global::System.Action<global::G.CreateSSEMCPServer>? sse = null,
+
+            global::System.Action<global::G.CreateStreamableHTTPMCPServer>? streamableHttp = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsStdio)
+            {
+                stdio?.Invoke(Stdio!);
+            }
+            else if (IsSse)
+            {
+                sse?.Invoke(Sse!);
+            }
+            else if (IsStreamableHttp)
+            {
+                streamableHttp?.Invoke(StreamableHttp!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.CreateStdioMCPServer>? stdio = null,
+            global::System.Action<global::G.CreateSSEMCPServer>? sse = null,
+            global::System.Action<global::G.CreateStreamableHTTPMCPServer>? streamableHttp = null,
             bool validate = true)
         {
             if (validate)

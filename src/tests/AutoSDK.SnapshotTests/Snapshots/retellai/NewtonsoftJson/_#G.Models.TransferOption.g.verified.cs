@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickColdTransfer(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.TransferOptionColdTransfer? value)
+        {
+            value = ColdTransfer;
+            return IsColdTransfer;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.TransferOptionWarmTransfer? WarmTransfer { get; init; }
 #else
@@ -47,6 +60,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickWarmTransfer(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.TransferOptionWarmTransfer? value)
+        {
+            value = WarmTransfer;
+            return IsWarmTransfer;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.TransferOptionAgenticWarmTransfer? AgenticWarmTransfer { get; init; }
 #else
@@ -60,6 +86,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AgenticWarmTransfer))]
 #endif
         public bool IsAgenticWarmTransfer => AgenticWarmTransfer != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickAgenticWarmTransfer(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.TransferOptionAgenticWarmTransfer? value)
+        {
+            value = AgenticWarmTransfer;
+            return IsAgenticWarmTransfer;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -158,9 +197,9 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.TransferOptionColdTransfer?, TResult>? coldTransfer = null,
-            global::System.Func<global::G.TransferOptionWarmTransfer?, TResult>? warmTransfer = null,
-            global::System.Func<global::G.TransferOptionAgenticWarmTransfer?, TResult>? agenticWarmTransfer = null,
+            global::System.Func<global::G.TransferOptionColdTransfer, TResult>? coldTransfer = null,
+            global::System.Func<global::G.TransferOptionWarmTransfer, TResult>? warmTransfer = null,
+            global::System.Func<global::G.TransferOptionAgenticWarmTransfer, TResult>? agenticWarmTransfer = null,
             bool validate = true)
         {
             if (validate)
@@ -188,9 +227,39 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.TransferOptionColdTransfer?>? coldTransfer = null,
-            global::System.Action<global::G.TransferOptionWarmTransfer?>? warmTransfer = null,
-            global::System.Action<global::G.TransferOptionAgenticWarmTransfer?>? agenticWarmTransfer = null,
+            global::System.Action<global::G.TransferOptionColdTransfer>? coldTransfer = null,
+
+            global::System.Action<global::G.TransferOptionWarmTransfer>? warmTransfer = null,
+
+            global::System.Action<global::G.TransferOptionAgenticWarmTransfer>? agenticWarmTransfer = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsColdTransfer)
+            {
+                coldTransfer?.Invoke(ColdTransfer!);
+            }
+            else if (IsWarmTransfer)
+            {
+                warmTransfer?.Invoke(WarmTransfer!);
+            }
+            else if (IsAgenticWarmTransfer)
+            {
+                agenticWarmTransfer?.Invoke(AgenticWarmTransfer!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.TransferOptionColdTransfer>? coldTransfer = null,
+            global::System.Action<global::G.TransferOptionWarmTransfer>? warmTransfer = null,
+            global::System.Action<global::G.TransferOptionAgenticWarmTransfer>? agenticWarmTransfer = null,
             bool validate = true)
         {
             if (validate)

@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickMapValueVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = MapValueVariant1;
+            return IsMapValueVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public int? MapValueVariant2 { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MapValueVariant2))]
 #endif
         public bool IsMapValueVariant2 => MapValueVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMapValueVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out int? value)
+        {
+            value = MapValueVariant2;
+            return IsMapValueVariant2;
+        }
 
         /// <summary>
         /// 
@@ -64,6 +90,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickMapValueVariant3(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out int? value)
+        {
+            value = MapValueVariant3;
+            return IsMapValueVariant3;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public bool? MapValueVariant4 { get; init; }
 #else
@@ -81,6 +120,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickMapValueVariant4(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out bool? value)
+        {
+            value = MapValueVariant4;
+            return IsMapValueVariant4;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<string>? MapValueVariant5 { get; init; }
 #else
@@ -94,6 +146,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MapValueVariant5))]
 #endif
         public bool IsMapValueVariant5 => MapValueVariant5 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMapValueVariant5(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::System.Collections.Generic.IList<string>? value)
+        {
+            value = MapValueVariant5;
+            return IsMapValueVariant5;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -200,11 +265,11 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<string?, TResult>? mapValueVariant1 = null,
+            global::System.Func<string, TResult>? mapValueVariant1 = null,
             global::System.Func<int?, TResult>? mapValueVariant2 = null,
             global::System.Func<int?, TResult>? mapValueVariant3 = null,
             global::System.Func<bool?, TResult>? mapValueVariant4 = null,
-            global::System.Func<global::System.Collections.Generic.IList<string>?, TResult>? mapValueVariant5 = null,
+            global::System.Func<global::System.Collections.Generic.IList<string>, TResult>? mapValueVariant5 = null,
             bool validate = true)
         {
             if (validate)
@@ -240,11 +305,53 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<string?>? mapValueVariant1 = null,
+            global::System.Action<string>? mapValueVariant1 = null,
+
+            global::System.Action<int?>? mapValueVariant2 = null,
+
+            global::System.Action<int?>? mapValueVariant3 = null,
+
+            global::System.Action<bool?>? mapValueVariant4 = null,
+
+            global::System.Action<global::System.Collections.Generic.IList<string>>? mapValueVariant5 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsMapValueVariant1)
+            {
+                mapValueVariant1?.Invoke(MapValueVariant1!);
+            }
+            else if (IsMapValueVariant2)
+            {
+                mapValueVariant2?.Invoke(MapValueVariant2!);
+            }
+            else if (IsMapValueVariant3)
+            {
+                mapValueVariant3?.Invoke(MapValueVariant3!);
+            }
+            else if (IsMapValueVariant4)
+            {
+                mapValueVariant4?.Invoke(MapValueVariant4!);
+            }
+            else if (IsMapValueVariant5)
+            {
+                mapValueVariant5?.Invoke(MapValueVariant5!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<string>? mapValueVariant1 = null,
             global::System.Action<int?>? mapValueVariant2 = null,
             global::System.Action<int?>? mapValueVariant3 = null,
             global::System.Action<bool?>? mapValueVariant4 = null,
-            global::System.Action<global::System.Collections.Generic.IList<string>?>? mapValueVariant5 = null,
+            global::System.Action<global::System.Collections.Generic.IList<string>>? mapValueVariant5 = null,
             bool validate = true)
         {
             if (validate)

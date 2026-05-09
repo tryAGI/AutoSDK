@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickLocalizeEnglishDialect(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.LocalizeEnglishDialect? value)
+        {
+            value = LocalizeEnglishDialect;
+            return IsLocalizeEnglishDialect;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.LocalizeSpanishDialect? LocalizeSpanishDialect { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(LocalizeSpanishDialect))]
 #endif
         public bool IsLocalizeSpanishDialect => LocalizeSpanishDialect != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickLocalizeSpanishDialect(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.LocalizeSpanishDialect? value)
+        {
+            value = LocalizeSpanishDialect;
+            return IsLocalizeSpanishDialect;
+        }
 
         /// <summary>
         /// 
@@ -64,6 +90,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickLocalizePortugueseDialect(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.LocalizePortugueseDialect? value)
+        {
+            value = LocalizePortugueseDialect;
+            return IsLocalizePortugueseDialect;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.LocalizeFrenchDialect? LocalizeFrenchDialect { get; init; }
 #else
@@ -77,6 +116,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(LocalizeFrenchDialect))]
 #endif
         public bool IsLocalizeFrenchDialect => LocalizeFrenchDialect != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickLocalizeFrenchDialect(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.LocalizeFrenchDialect? value)
+        {
+            value = LocalizeFrenchDialect;
+            return IsLocalizeFrenchDialect;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -232,6 +284,42 @@ namespace G
         /// 
         /// </summary>
         public void Match(
+            global::System.Action<global::G.LocalizeEnglishDialect?>? localizeEnglishDialect = null,
+
+            global::System.Action<global::G.LocalizeSpanishDialect?>? localizeSpanishDialect = null,
+
+            global::System.Action<global::G.LocalizePortugueseDialect?>? localizePortugueseDialect = null,
+
+            global::System.Action<global::G.LocalizeFrenchDialect?>? localizeFrenchDialect = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsLocalizeEnglishDialect)
+            {
+                localizeEnglishDialect?.Invoke(LocalizeEnglishDialect!);
+            }
+            else if (IsLocalizeSpanishDialect)
+            {
+                localizeSpanishDialect?.Invoke(LocalizeSpanishDialect!);
+            }
+            else if (IsLocalizePortugueseDialect)
+            {
+                localizePortugueseDialect?.Invoke(LocalizePortugueseDialect!);
+            }
+            else if (IsLocalizeFrenchDialect)
+            {
+                localizeFrenchDialect?.Invoke(LocalizeFrenchDialect!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
             global::System.Action<global::G.LocalizeEnglishDialect?>? localizeEnglishDialect = null,
             global::System.Action<global::G.LocalizeSpanishDialect?>? localizeSpanishDialect = null,
             global::System.Action<global::G.LocalizePortugueseDialect?>? localizePortugueseDialect = null,

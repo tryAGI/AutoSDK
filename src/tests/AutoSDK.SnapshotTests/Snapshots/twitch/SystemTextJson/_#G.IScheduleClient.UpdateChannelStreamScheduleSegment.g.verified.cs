@@ -34,6 +34,26 @@ namespace G
         /// </summary>
         /// <param name="broadcasterId"></param>
         /// <param name="id"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.UpdateChannelStreamScheduleSegmentResponse>> UpdateChannelStreamScheduleSegmentAsResponseAsync(
+            string broadcasterId,
+            string id,
+
+            global::G.UpdateChannelStreamScheduleSegmentBody request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Updates a scheduled broadcast segment.<br/>
+        /// Updates a scheduled broadcast segment.<br/>
+        /// For recurring segments, updating a segment’s title, category, duration, and timezone, changes all segments in the recurring schedule, not just the specified segment.<br/>
+        /// __Authorization:__<br/>
+        /// Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the **channel:manage:schedule** scope.
+        /// </summary>
+        /// <param name="broadcasterId"></param>
+        /// <param name="id"></param>
         /// <param name="startTime">
         /// The date and time that the broadcast segment starts. Specify the date and time in RFC3339 format (for example, 2022-08-02T06:00:00Z).  <br/>
         ///   <br/>

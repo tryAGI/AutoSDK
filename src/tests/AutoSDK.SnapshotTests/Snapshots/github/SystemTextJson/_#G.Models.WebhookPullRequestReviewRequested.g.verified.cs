@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickWebhookPullRequestReviewRequestedVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.WebhookPullRequestReviewRequestedVariant1? value)
+        {
+            value = WebhookPullRequestReviewRequestedVariant1;
+            return IsWebhookPullRequestReviewRequestedVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.WebhookPullRequestReviewRequestedVariant2? WebhookPullRequestReviewRequestedVariant2 { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(WebhookPullRequestReviewRequestedVariant2))]
 #endif
         public bool IsWebhookPullRequestReviewRequestedVariant2 => WebhookPullRequestReviewRequestedVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickWebhookPullRequestReviewRequestedVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.WebhookPullRequestReviewRequestedVariant2? value)
+        {
+            value = WebhookPullRequestReviewRequestedVariant2;
+            return IsWebhookPullRequestReviewRequestedVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -119,8 +145,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.WebhookPullRequestReviewRequestedVariant1?, TResult>? webhookPullRequestReviewRequestedVariant1 = null,
-            global::System.Func<global::G.WebhookPullRequestReviewRequestedVariant2?, TResult>? webhookPullRequestReviewRequestedVariant2 = null,
+            global::System.Func<global::G.WebhookPullRequestReviewRequestedVariant1, TResult>? webhookPullRequestReviewRequestedVariant1 = null,
+            global::System.Func<global::G.WebhookPullRequestReviewRequestedVariant2, TResult>? webhookPullRequestReviewRequestedVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -144,8 +170,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.WebhookPullRequestReviewRequestedVariant1?>? webhookPullRequestReviewRequestedVariant1 = null,
-            global::System.Action<global::G.WebhookPullRequestReviewRequestedVariant2?>? webhookPullRequestReviewRequestedVariant2 = null,
+            global::System.Action<global::G.WebhookPullRequestReviewRequestedVariant1>? webhookPullRequestReviewRequestedVariant1 = null,
+
+            global::System.Action<global::G.WebhookPullRequestReviewRequestedVariant2>? webhookPullRequestReviewRequestedVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsWebhookPullRequestReviewRequestedVariant1)
+            {
+                webhookPullRequestReviewRequestedVariant1?.Invoke(WebhookPullRequestReviewRequestedVariant1!);
+            }
+            else if (IsWebhookPullRequestReviewRequestedVariant2)
+            {
+                webhookPullRequestReviewRequestedVariant2?.Invoke(WebhookPullRequestReviewRequestedVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.WebhookPullRequestReviewRequestedVariant1>? webhookPullRequestReviewRequestedVariant1 = null,
+            global::System.Action<global::G.WebhookPullRequestReviewRequestedVariant2>? webhookPullRequestReviewRequestedVariant2 = null,
             bool validate = true)
         {
             if (validate)

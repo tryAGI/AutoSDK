@@ -24,6 +24,20 @@ namespace G
         /// Search messages across the entire organization with optional project and template filtering. Returns messages with FTS/vector ranks and total RRF score.<br/>
         /// This is a cloud-only feature.
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::G.MessageSearchResult>>> SearchMessagesAsResponseAsync(
+
+            global::G.MessageSearchRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Search Messages<br/>
+        /// Search messages across the entire organization with optional project and template filtering. Returns messages with FTS/vector ranks and total RRF score.<br/>
+        /// This is a cloud-only feature.
+        /// </summary>
         /// <param name="query">
         /// Text query for full-text search
         /// </param>

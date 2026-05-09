@@ -24,5 +24,24 @@ namespace G
             int repositoryId,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Add selected repository to an organization secret<br/>
+        /// Adds a repository to an organization secret when the `visibility` for<br/>
+        /// repository access is set to `selected`. The visibility is set when you [Create or<br/>
+        /// update an organization secret](https://docs.github.com/rest/dependabot/secrets#create-or-update-an-organization-secret).<br/>
+        /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
+        /// </summary>
+        /// <param name="org"></param>
+        /// <param name="secretName"></param>
+        /// <param name="repositoryId"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse> DependabotAddSelectedRepoToOrgSecretAsResponseAsync(
+            string org,
+            string secretName,
+            int repositoryId,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

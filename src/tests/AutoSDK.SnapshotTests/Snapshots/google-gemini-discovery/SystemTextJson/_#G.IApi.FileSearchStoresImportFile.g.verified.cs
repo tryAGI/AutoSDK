@@ -23,6 +23,20 @@ namespace G
         /// Imports a `File` from File Service to a `FileSearchStore`.
         /// </summary>
         /// <param name="fileSearchStoresId"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.Operation>> FileSearchStoresImportFileAsResponseAsync(
+            string fileSearchStoresId,
+
+            global::G.ImportFileRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Imports a `File` from File Service to a `FileSearchStore`.
+        /// </summary>
+        /// <param name="fileSearchStoresId"></param>
         /// <param name="fileName">
         /// Required. The name of the `File` to import. Example: `files/abc-123`
         /// </param>

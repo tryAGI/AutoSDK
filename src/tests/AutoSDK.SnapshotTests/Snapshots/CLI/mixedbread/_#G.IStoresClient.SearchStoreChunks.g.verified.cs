@@ -66,6 +66,41 @@ namespace G
         ///     HTTPException (400): If search parameters are invalid<br/>
         ///     HTTPException (404): If no vector stores are found to search
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.StoreSearchResponse>> SearchStoreChunksAsResponseAsync(
+
+            global::G.StoreChunkSearchParams request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Perform semantic search across store chunks<br/>
+        /// Perform semantic search across store chunks.<br/>
+        /// This endpoint searches through store chunks using semantic similarity matching.<br/>
+        /// It supports complex search queries with filters and returns relevance-scored results.<br/>
+        /// For the special 'mixedbread/web' store, this endpoint performs web search using<br/>
+        /// a mixture of different providers instead of semantic search. Web search results are always<br/>
+        /// reranked for consistent scoring.<br/>
+        /// Args:<br/>
+        ///     search_params: Search configuration including:<br/>
+        ///         - query text or embeddings<br/>
+        ///         - store_identifiers: List of store identifiers to search<br/>
+        ///         - file_ids: Optional list of file IDs to filter chunks by (or tuple of list and condition operator)<br/>
+        ///         - metadata filters<br/>
+        ///         - pagination parameters<br/>
+        ///         - sorting preferences<br/>
+        ///     _state: API state dependency<br/>
+        ///     _ctx: Service context dependency<br/>
+        /// Returns:<br/>
+        ///     StoreSearchResponse containing:<br/>
+        ///         - List of matched chunks with relevance scores<br/>
+        ///         - Pagination details including total result count<br/>
+        /// Raises:<br/>
+        ///     HTTPException (400): If search parameters are invalid<br/>
+        ///     HTTPException (404): If no vector stores are found to search
+        /// </summary>
         /// <param name="query">
         /// Search query text
         /// </param>

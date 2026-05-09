@@ -28,6 +28,22 @@ namespace G
         /// __Authorization:__<br/>
         /// Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the **channel:manage:polls** scope.
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.CreatePollResponse>> CreatePollAsResponseAsync(
+
+            global::G.CreatePollBody request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Creates a poll that viewers in the broadcaster’s channel can vote on.<br/>
+        /// Creates a poll that viewers in the broadcaster’s channel can vote on.<br/>
+        /// The poll begins as soon as it’s created. You may run only one poll at a time.<br/>
+        /// __Authorization:__<br/>
+        /// Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the **channel:manage:polls** scope.
+        /// </summary>
         /// <param name="broadcasterId">
         /// The ID of the broadcaster that’s running the poll. This ID must match the user ID in the user access token.
         /// </param>

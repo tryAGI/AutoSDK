@@ -33,6 +33,19 @@ namespace G
         public bool IsText => Text != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickText(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.TextContent? value)
+        {
+            value = Text;
+            return IsText;
+        }
+
+        /// <summary>
         /// Document content.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -48,6 +61,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Document))]
 #endif
         public bool IsDocument => Document != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickDocument(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.DocumentContent? value)
+        {
+            value = Document;
+            return IsDocument;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -127,8 +153,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.TextContent?, TResult>? text = null,
-            global::System.Func<global::G.DocumentContent?, TResult>? document = null,
+            global::System.Func<global::G.TextContent, TResult>? text = null,
+            global::System.Func<global::G.DocumentContent, TResult>? document = null,
             bool validate = true)
         {
             if (validate)
@@ -152,8 +178,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.TextContent?>? text = null,
-            global::System.Action<global::G.DocumentContent?>? document = null,
+            global::System.Action<global::G.TextContent>? text = null,
+
+            global::System.Action<global::G.DocumentContent>? document = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsText)
+            {
+                text?.Invoke(Text!);
+            }
+            else if (IsDocument)
+            {
+                document?.Invoke(Document!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.TextContent>? text = null,
+            global::System.Action<global::G.DocumentContent>? document = null,
             bool validate = true)
         {
             if (validate)

@@ -24,6 +24,14 @@ namespace G.JsonConverters
                 foreach (var __jsonProp in __jsonDocument.RootElement.EnumerateObject())
                 {
                     __jsonProps.Add(__jsonProp.Name);
+                    if (__jsonProp.Value.ValueKind == global::System.Text.Json.JsonValueKind.Object)
+                    {
+                        foreach (var __nestedJsonProp in __jsonProp.Value.EnumerateObject())
+                        {
+                            __jsonProps.Add(__jsonProp.Name + "." + __nestedJsonProp.Name);
+                        }
+                    }
+
                 }
             }
 
@@ -31,6 +39,8 @@ namespace G.JsonConverters
             if (__jsonProps.Contains("filters")) __score0++;
             if (__jsonProps.Contains("max_num_results")) __score0++;
             if (__jsonProps.Contains("ranking_options")) __score0++;
+            if (__jsonProps.Contains("ranking_options.ranker")) __score0++;
+            if (__jsonProps.Contains("ranking_options.score_threshold")) __score0++;
             if (__jsonProps.Contains("type")) __score0++;
             if (__jsonProps.Contains("vector_store_ids")) __score0++;
             var __score1 = 0;

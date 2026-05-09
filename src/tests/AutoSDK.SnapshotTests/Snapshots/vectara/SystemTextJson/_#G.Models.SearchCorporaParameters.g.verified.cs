@@ -28,6 +28,19 @@ namespace G
         public bool IsSearchCorporaParametersVariant1 => SearchCorporaParametersVariant1 != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSearchCorporaParametersVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.SearchCorporaParametersVariant1? value)
+        {
+            value = SearchCorporaParametersVariant1;
+            return IsSearchCorporaParametersVariant1;
+        }
+
+        /// <summary>
         /// Search parameters to retrieve knowledge for the query.<br/>
         /// Example: {"limit":50}
         /// </summary>
@@ -44,6 +57,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SearchParameters))]
 #endif
         public bool IsSearchParameters => SearchParameters != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSearchParameters(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.SearchParameters? value)
+        {
+            value = SearchParameters;
+            return IsSearchParameters;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -120,8 +146,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.SearchCorporaParametersVariant1?, TResult>? searchCorporaParametersVariant1 = null,
-            global::System.Func<global::G.SearchParameters?, TResult>? searchParameters = null,
+            global::System.Func<global::G.SearchCorporaParametersVariant1, TResult>? searchCorporaParametersVariant1 = null,
+            global::System.Func<global::G.SearchParameters, TResult>? searchParameters = null,
             bool validate = true)
         {
             if (validate)
@@ -145,8 +171,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.SearchCorporaParametersVariant1?>? searchCorporaParametersVariant1 = null,
-            global::System.Action<global::G.SearchParameters?>? searchParameters = null,
+            global::System.Action<global::G.SearchCorporaParametersVariant1>? searchCorporaParametersVariant1 = null,
+
+            global::System.Action<global::G.SearchParameters>? searchParameters = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsSearchCorporaParametersVariant1)
+            {
+                searchCorporaParametersVariant1?.Invoke(SearchCorporaParametersVariant1!);
+            }
+            else if (IsSearchParameters)
+            {
+                searchParameters?.Invoke(SearchParameters!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.SearchCorporaParametersVariant1>? searchCorporaParametersVariant1 = null,
+            global::System.Action<global::G.SearchParameters>? searchParameters = null,
             bool validate = true)
         {
             if (validate)

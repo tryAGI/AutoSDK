@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickChatAssistantMessageContentVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = ChatAssistantMessageContentVariant1;
+            return IsChatAssistantMessageContentVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<global::G.ChatContentItems>? ChatAssistantMessageContent1 { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ChatAssistantMessageContent1))]
 #endif
         public bool IsChatAssistantMessageContent1 => ChatAssistantMessageContent1 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickChatAssistantMessageContent1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::System.Collections.Generic.IList<global::G.ChatContentItems>? value)
+        {
+            value = ChatAssistantMessageContent1;
+            return IsChatAssistantMessageContent1;
+        }
 
         /// <summary>
         /// Any type
@@ -60,6 +86,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ChatAssistantMessageContentVariant3))]
 #endif
         public bool IsChatAssistantMessageContentVariant3 => ChatAssistantMessageContentVariant3 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickChatAssistantMessageContentVariant3(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out object? value)
+        {
+            value = ChatAssistantMessageContentVariant3;
+            return IsChatAssistantMessageContentVariant3;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -122,9 +161,9 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<string?, TResult>? chatAssistantMessageContentVariant1 = null,
-            global::System.Func<global::System.Collections.Generic.IList<global::G.ChatContentItems>?, TResult>? chatAssistantMessageContent1 = null,
-            global::System.Func<object?, TResult>? chatAssistantMessageContentVariant3 = null,
+            global::System.Func<string, TResult>? chatAssistantMessageContentVariant1 = null,
+            global::System.Func<global::System.Collections.Generic.IList<global::G.ChatContentItems>, TResult>? chatAssistantMessageContent1 = null,
+            global::System.Func<object, TResult>? chatAssistantMessageContentVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -152,9 +191,39 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<string?>? chatAssistantMessageContentVariant1 = null,
-            global::System.Action<global::System.Collections.Generic.IList<global::G.ChatContentItems>?>? chatAssistantMessageContent1 = null,
-            global::System.Action<object?>? chatAssistantMessageContentVariant3 = null,
+            global::System.Action<string>? chatAssistantMessageContentVariant1 = null,
+
+            global::System.Action<global::System.Collections.Generic.IList<global::G.ChatContentItems>>? chatAssistantMessageContent1 = null,
+
+            global::System.Action<object>? chatAssistantMessageContentVariant3 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsChatAssistantMessageContentVariant1)
+            {
+                chatAssistantMessageContentVariant1?.Invoke(ChatAssistantMessageContentVariant1!);
+            }
+            else if (IsChatAssistantMessageContent1)
+            {
+                chatAssistantMessageContent1?.Invoke(ChatAssistantMessageContent1!);
+            }
+            else if (IsChatAssistantMessageContentVariant3)
+            {
+                chatAssistantMessageContentVariant3?.Invoke(ChatAssistantMessageContentVariant3!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<string>? chatAssistantMessageContentVariant1 = null,
+            global::System.Action<global::System.Collections.Generic.IList<global::G.ChatContentItems>>? chatAssistantMessageContent1 = null,
+            global::System.Action<object>? chatAssistantMessageContentVariant3 = null,
             bool validate = true)
         {
             if (validate)

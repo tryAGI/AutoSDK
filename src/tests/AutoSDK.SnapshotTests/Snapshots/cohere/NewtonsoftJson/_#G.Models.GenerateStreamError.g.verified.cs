@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickEvent(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.GenerateStreamEvent? value)
+        {
+            value = Event;
+            return IsEvent;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.GenerateStreamError49d5xw? Error49d5xw { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Error49d5xw))]
 #endif
         public bool IsError49d5xw => Error49d5xw != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickError49d5xw(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.GenerateStreamError49d5xw? value)
+        {
+            value = Error49d5xw;
+            return IsError49d5xw;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -119,8 +145,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.GenerateStreamEvent?, TResult>? @event = null,
-            global::System.Func<global::G.GenerateStreamError49d5xw?, TResult>? error49d5xw = null,
+            global::System.Func<global::G.GenerateStreamEvent, TResult>? @event = null,
+            global::System.Func<global::G.GenerateStreamError49d5xw, TResult>? error49d5xw = null,
             bool validate = true)
         {
             if (validate)
@@ -144,8 +170,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.GenerateStreamEvent?>? @event = null,
-            global::System.Action<global::G.GenerateStreamError49d5xw?>? error49d5xw = null,
+            global::System.Action<global::G.GenerateStreamEvent>? @event = null,
+
+            global::System.Action<global::G.GenerateStreamError49d5xw>? error49d5xw = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsEvent)
+            {
+                @event?.Invoke(Event!);
+            }
+            else if (IsError49d5xw)
+            {
+                error49d5xw?.Invoke(Error49d5xw!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.GenerateStreamEvent>? @event = null,
+            global::System.Action<global::G.GenerateStreamError49d5xw>? error49d5xw = null,
             bool validate = true)
         {
             if (validate)

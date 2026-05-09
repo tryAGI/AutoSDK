@@ -24,6 +24,14 @@ namespace G.JsonConverters
                 foreach (var __jsonProp in __jsonDocument.RootElement.EnumerateObject())
                 {
                     __jsonProps.Add(__jsonProp.Name);
+                    if (__jsonProp.Value.ValueKind == global::System.Text.Json.JsonValueKind.Object)
+                    {
+                        foreach (var __nestedJsonProp in __jsonProp.Value.EnumerateObject())
+                        {
+                            __jsonProps.Add(__jsonProp.Name + "." + __nestedJsonProp.Name);
+                        }
+                    }
+
                 }
             }
 
@@ -32,27 +40,56 @@ namespace G.JsonConverters
             if (__jsonProps.Contains("provider")) __score0++;
             var __score1 = 0;
             if (__jsonProps.Contains("options")) __score1++;
+            if (__jsonProps.Contains("options.passthrough")) __score1++;
+            if (__jsonProps.Contains("options.playbackPolicy")) __score1++;
             if (__jsonProps.Contains("provider")) __score1++;
             var __score2 = 0;
             if (__jsonProps.Contains("options")) __score2++;
+            if (__jsonProps.Contains("options.acl")) __score2++;
+            if (__jsonProps.Contains("options.bucket")) __score2++;
+            if (__jsonProps.Contains("options.filename")) __score2++;
+            if (__jsonProps.Contains("options.prefix")) __score2++;
+            if (__jsonProps.Contains("options.region")) __score2++;
             if (__jsonProps.Contains("provider")) __score2++;
             var __score3 = 0;
             if (__jsonProps.Contains("options")) __score3++;
+            if (__jsonProps.Contains("options.bucket")) __score3++;
+            if (__jsonProps.Contains("options.filename")) __score3++;
+            if (__jsonProps.Contains("options.prefix")) __score3++;
             if (__jsonProps.Contains("provider")) __score3++;
             var __score4 = 0;
             if (__jsonProps.Contains("options")) __score4++;
+            if (__jsonProps.Contains("options.filename")) __score4++;
+            if (__jsonProps.Contains("options.folderId")) __score4++;
             if (__jsonProps.Contains("provider")) __score4++;
             var __score5 = 0;
             if (__jsonProps.Contains("options")) __score5++;
+            if (__jsonProps.Contains("options.description")) __score5++;
+            if (__jsonProps.Contains("options.folderUri")) __score5++;
+            if (__jsonProps.Contains("options.name")) __score5++;
+            if (__jsonProps.Contains("options.privacy")) __score5++;
             if (__jsonProps.Contains("provider")) __score5++;
             var __score6 = 0;
             if (__jsonProps.Contains("options")) __score6++;
+            if (__jsonProps.Contains("options.disableComment")) __score6++;
+            if (__jsonProps.Contains("options.disableDuet")) __score6++;
+            if (__jsonProps.Contains("options.disableStitch")) __score6++;
+            if (__jsonProps.Contains("options.privacyLevel")) __score6++;
+            if (__jsonProps.Contains("options.title")) __score6++;
             if (__jsonProps.Contains("provider")) __score6++;
             var __score7 = 0;
             if (__jsonProps.Contains("options")) __score7++;
+            if (__jsonProps.Contains("options.cpCode")) __score7++;
+            if (__jsonProps.Contains("options.filename")) __score7++;
+            if (__jsonProps.Contains("options.host")) __score7++;
+            if (__jsonProps.Contains("options.path")) __score7++;
             if (__jsonProps.Contains("provider")) __score7++;
             var __score8 = 0;
             if (__jsonProps.Contains("options")) __score8++;
+            if (__jsonProps.Contains("options.accountName")) __score8++;
+            if (__jsonProps.Contains("options.container")) __score8++;
+            if (__jsonProps.Contains("options.filename")) __score8++;
+            if (__jsonProps.Contains("options.prefix")) __score8++;
             if (__jsonProps.Contains("provider")) __score8++;
             var __bestScore = 0;
             var __bestIndex = -1;

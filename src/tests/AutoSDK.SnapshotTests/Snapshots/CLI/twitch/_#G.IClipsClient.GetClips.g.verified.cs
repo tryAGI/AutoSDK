@@ -37,5 +37,37 @@ namespace G
             bool? isFeatured = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Gets one or more video clips.<br/>
+        /// Gets one or more video clips that were captured from streams. For information about clips, see [How to use clips](https://help.twitch.tv/s/article/how-to-use-clips).<br/>
+        /// __Authorization:__<br/>
+        /// Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens) or [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens).<br/>
+        /// __Request Query Parameters:__<br/>
+        /// The _id_, _game\_id_, and _broadcaster\_id_ query parameters are mutually exclusive.
+        /// </summary>
+        /// <param name="broadcasterId"></param>
+        /// <param name="gameId"></param>
+        /// <param name="id"></param>
+        /// <param name="startedAt"></param>
+        /// <param name="endedAt"></param>
+        /// <param name="first"></param>
+        /// <param name="before"></param>
+        /// <param name="after"></param>
+        /// <param name="isFeatured"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.GetClipsResponse>> GetClipsAsResponseAsync(
+            string? broadcasterId = default,
+            string? gameId = default,
+            global::System.Collections.Generic.IList<string>? id = default,
+            global::System.DateTime? startedAt = default,
+            global::System.DateTime? endedAt = default,
+            int? first = default,
+            string? before = default,
+            string? after = default,
+            bool? isFeatured = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

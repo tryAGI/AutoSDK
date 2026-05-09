@@ -16,94 +16,29 @@ namespace G.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            using var __jsonDocument = global::System.Text.Json.JsonDocument.ParseValue(ref reader);
-            var __rawJson = __jsonDocument.RootElement.GetRawText();
-            var __jsonProps = new global::System.Collections.Generic.HashSet<string>();
-            if (__jsonDocument.RootElement.ValueKind == global::System.Text.Json.JsonValueKind.Object)
-            {
-                foreach (var __jsonProp in __jsonDocument.RootElement.EnumerateObject())
-                {
-                    __jsonProps.Add(__jsonProp.Name);
-                }
-            }
 
-            var __score0 = 0;
-            if (__jsonProps.Contains("logs")) __score0++;
-            if (__jsonProps.Contains("type")) __score0++;
-            var __score1 = 0;
-            if (__jsonProps.Contains("files")) __score1++;
-            if (__jsonProps.Contains("type")) __score1++;
-            var __bestScore = 0;
-            var __bestIndex = -1;
-            if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }
-            if (__score1 > __bestScore) { __bestScore = __score1; __bestIndex = 1; }
+            var readerCopy = reader;
+            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CodeInterpreterToolOutputDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CodeInterpreterToolOutputDiscriminator> ??
+                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.CodeInterpreterToolOutputDiscriminator)}");
+            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
             global::G.CodeInterpreterTextOutput? logs = default;
-            global::G.CodeInterpreterFileOutput? files = default;
-            if (__bestIndex >= 0)
+            if (discriminator?.Type == "logs")
             {
-                if (__bestIndex == 0)
-                {
-                    try
-                    {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CodeInterpreterTextOutput), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CodeInterpreterTextOutput> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CodeInterpreterTextOutput).Name}");
-                        logs = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
-                    }
-                    catch (global::System.Text.Json.JsonException)
-                    {
-                    }
-                    catch (global::System.InvalidOperationException)
-                    {
-                    }
-                }
-                else if (__bestIndex == 1)
-                {
-                    try
-                    {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CodeInterpreterFileOutput), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CodeInterpreterFileOutput> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CodeInterpreterFileOutput).Name}");
-                        files = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
-                    }
-                    catch (global::System.Text.Json.JsonException)
-                    {
-                    }
-                    catch (global::System.InvalidOperationException)
-                    {
-                    }
-                }
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CodeInterpreterTextOutput), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CodeInterpreterTextOutput> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.CodeInterpreterTextOutput)}");
+                logs = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-
-            if (logs == null && files == null)
+            global::G.CodeInterpreterFileOutput? files = default;
+            if (discriminator?.Type == "files")
             {
-                try
-                {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CodeInterpreterTextOutput), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CodeInterpreterTextOutput> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CodeInterpreterTextOutput).Name}");
-                    logs = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
-                }
-                catch (global::System.Text.Json.JsonException)
-                {
-                }
-                catch (global::System.InvalidOperationException)
-                {
-                }
-
-                try
-                {
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CodeInterpreterFileOutput), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CodeInterpreterFileOutput> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CodeInterpreterFileOutput).Name}");
-                    files = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
-                }
-                catch (global::System.Text.Json.JsonException)
-                {
-                }
-                catch (global::System.InvalidOperationException)
-                {
-                }
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CodeInterpreterFileOutput), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CodeInterpreterFileOutput> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.CodeInterpreterFileOutput)}");
+                files = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
             var __value = new global::G.CodeInterpreterToolOutput(
+                discriminator?.Type,
                 logs,
 
                 files

@@ -29,6 +29,19 @@ namespace G
         public bool IsTextEmbeddingInput => TextEmbeddingInput != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickTextEmbeddingInput(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.TextEmbeddingInput? value)
+        {
+            value = TextEmbeddingInput;
+            return IsTextEmbeddingInput;
+        }
+
+        /// <summary>
         /// The input to the API for text embedding. OpenAI compatible<br/>
         /// Example: {"model":"clip","input":["bytes or URL"]}
         /// </summary>
@@ -47,6 +60,19 @@ namespace G
         public bool IsImageEmbeddingInput => ImageEmbeddingInput != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickImageEmbeddingInput(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ImageEmbeddingInput? value)
+        {
+            value = ImageEmbeddingInput;
+            return IsImageEmbeddingInput;
+        }
+
+        /// <summary>
         /// The input to the API for text embedding. OpenAI compatible<br/>
         /// Example: {"model":"clip","input":["bytes or URL"]}
         /// </summary>
@@ -63,6 +89,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MixedEmbeddingInput))]
 #endif
         public bool IsMixedEmbeddingInput => MixedEmbeddingInput != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMixedEmbeddingInput(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.MixedEmbeddingInput? value)
+        {
+            value = MixedEmbeddingInput;
+            return IsMixedEmbeddingInput;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -161,9 +200,9 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.TextEmbeddingInput?, TResult>? textEmbeddingInput = null,
-            global::System.Func<global::G.ImageEmbeddingInput?, TResult>? imageEmbeddingInput = null,
-            global::System.Func<global::G.MixedEmbeddingInput?, TResult>? mixedEmbeddingInput = null,
+            global::System.Func<global::G.TextEmbeddingInput, TResult>? textEmbeddingInput = null,
+            global::System.Func<global::G.ImageEmbeddingInput, TResult>? imageEmbeddingInput = null,
+            global::System.Func<global::G.MixedEmbeddingInput, TResult>? mixedEmbeddingInput = null,
             bool validate = true)
         {
             if (validate)
@@ -191,9 +230,39 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.TextEmbeddingInput?>? textEmbeddingInput = null,
-            global::System.Action<global::G.ImageEmbeddingInput?>? imageEmbeddingInput = null,
-            global::System.Action<global::G.MixedEmbeddingInput?>? mixedEmbeddingInput = null,
+            global::System.Action<global::G.TextEmbeddingInput>? textEmbeddingInput = null,
+
+            global::System.Action<global::G.ImageEmbeddingInput>? imageEmbeddingInput = null,
+
+            global::System.Action<global::G.MixedEmbeddingInput>? mixedEmbeddingInput = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsTextEmbeddingInput)
+            {
+                textEmbeddingInput?.Invoke(TextEmbeddingInput!);
+            }
+            else if (IsImageEmbeddingInput)
+            {
+                imageEmbeddingInput?.Invoke(ImageEmbeddingInput!);
+            }
+            else if (IsMixedEmbeddingInput)
+            {
+                mixedEmbeddingInput?.Invoke(MixedEmbeddingInput!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.TextEmbeddingInput>? textEmbeddingInput = null,
+            global::System.Action<global::G.ImageEmbeddingInput>? imageEmbeddingInput = null,
+            global::System.Action<global::G.MixedEmbeddingInput>? mixedEmbeddingInput = null,
             bool validate = true)
         {
             if (validate)

@@ -28,6 +28,19 @@ namespace G
         public bool IsSystemMessage => SystemMessage != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSystemMessage(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ChatCompletionRequestSystemMessage? value)
+        {
+            value = SystemMessage;
+            return IsSystemMessage;
+        }
+
+        /// <summary>
         /// New role by OpenAI for select models. Must be explicitly used for models that support it. When used with incompatible models or providers, Portkey automatically converts it to a system role.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(DeveloperMessage))]
 #endif
         public bool IsDeveloperMessage => DeveloperMessage != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickDeveloperMessage(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ChatCompletionRequestDeveloperMessage? value)
+        {
+            value = DeveloperMessage;
+            return IsDeveloperMessage;
+        }
 
         /// <summary>
         /// 
@@ -64,6 +90,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickUserMessage(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ChatCompletionRequestUserMessage? value)
+        {
+            value = UserMessage;
+            return IsUserMessage;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ChatCompletionRequestAssistantMessage? AssistantMessage { get; init; }
 #else
@@ -77,6 +116,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AssistantMessage))]
 #endif
         public bool IsAssistantMessage => AssistantMessage != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickAssistantMessage(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ChatCompletionRequestAssistantMessage? value)
+        {
+            value = AssistantMessage;
+            return IsAssistantMessage;
+        }
 
         /// <summary>
         /// 
@@ -98,6 +150,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickToolMessage(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ChatCompletionRequestToolMessage? value)
+        {
+            value = ToolMessage;
+            return IsToolMessage;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ChatCompletionRequestFunctionMessage? FunctionMessage { get; init; }
 #else
@@ -111,6 +176,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FunctionMessage))]
 #endif
         public bool IsFunctionMessage => FunctionMessage != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFunctionMessage(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ChatCompletionRequestFunctionMessage? value)
+        {
+            value = FunctionMessage;
+            return IsFunctionMessage;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -275,12 +353,12 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.ChatCompletionRequestSystemMessage?, TResult>? systemMessage = null,
-            global::System.Func<global::G.ChatCompletionRequestDeveloperMessage?, TResult>? developerMessage = null,
-            global::System.Func<global::G.ChatCompletionRequestUserMessage?, TResult>? userMessage = null,
-            global::System.Func<global::G.ChatCompletionRequestAssistantMessage?, TResult>? assistantMessage = null,
-            global::System.Func<global::G.ChatCompletionRequestToolMessage?, TResult>? toolMessage = null,
-            global::System.Func<global::G.ChatCompletionRequestFunctionMessage?, TResult>? functionMessage = null,
+            global::System.Func<global::G.ChatCompletionRequestSystemMessage, TResult>? systemMessage = null,
+            global::System.Func<global::G.ChatCompletionRequestDeveloperMessage, TResult>? developerMessage = null,
+            global::System.Func<global::G.ChatCompletionRequestUserMessage, TResult>? userMessage = null,
+            global::System.Func<global::G.ChatCompletionRequestAssistantMessage, TResult>? assistantMessage = null,
+            global::System.Func<global::G.ChatCompletionRequestToolMessage, TResult>? toolMessage = null,
+            global::System.Func<global::G.ChatCompletionRequestFunctionMessage, TResult>? functionMessage = null,
             bool validate = true)
         {
             if (validate)
@@ -320,12 +398,60 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.ChatCompletionRequestSystemMessage?>? systemMessage = null,
-            global::System.Action<global::G.ChatCompletionRequestDeveloperMessage?>? developerMessage = null,
-            global::System.Action<global::G.ChatCompletionRequestUserMessage?>? userMessage = null,
-            global::System.Action<global::G.ChatCompletionRequestAssistantMessage?>? assistantMessage = null,
-            global::System.Action<global::G.ChatCompletionRequestToolMessage?>? toolMessage = null,
-            global::System.Action<global::G.ChatCompletionRequestFunctionMessage?>? functionMessage = null,
+            global::System.Action<global::G.ChatCompletionRequestSystemMessage>? systemMessage = null,
+
+            global::System.Action<global::G.ChatCompletionRequestDeveloperMessage>? developerMessage = null,
+
+            global::System.Action<global::G.ChatCompletionRequestUserMessage>? userMessage = null,
+
+            global::System.Action<global::G.ChatCompletionRequestAssistantMessage>? assistantMessage = null,
+
+            global::System.Action<global::G.ChatCompletionRequestToolMessage>? toolMessage = null,
+
+            global::System.Action<global::G.ChatCompletionRequestFunctionMessage>? functionMessage = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsSystemMessage)
+            {
+                systemMessage?.Invoke(SystemMessage!);
+            }
+            else if (IsDeveloperMessage)
+            {
+                developerMessage?.Invoke(DeveloperMessage!);
+            }
+            else if (IsUserMessage)
+            {
+                userMessage?.Invoke(UserMessage!);
+            }
+            else if (IsAssistantMessage)
+            {
+                assistantMessage?.Invoke(AssistantMessage!);
+            }
+            else if (IsToolMessage)
+            {
+                toolMessage?.Invoke(ToolMessage!);
+            }
+            else if (IsFunctionMessage)
+            {
+                functionMessage?.Invoke(FunctionMessage!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.ChatCompletionRequestSystemMessage>? systemMessage = null,
+            global::System.Action<global::G.ChatCompletionRequestDeveloperMessage>? developerMessage = null,
+            global::System.Action<global::G.ChatCompletionRequestUserMessage>? userMessage = null,
+            global::System.Action<global::G.ChatCompletionRequestAssistantMessage>? assistantMessage = null,
+            global::System.Action<global::G.ChatCompletionRequestToolMessage>? toolMessage = null,
+            global::System.Action<global::G.ChatCompletionRequestFunctionMessage>? functionMessage = null,
             bool validate = true)
         {
             if (validate)

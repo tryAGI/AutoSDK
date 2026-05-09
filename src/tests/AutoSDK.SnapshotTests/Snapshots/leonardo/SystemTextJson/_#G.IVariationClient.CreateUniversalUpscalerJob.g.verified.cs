@@ -22,6 +22,19 @@ namespace G
         /// Create using Universal Upscaler<br/>
         /// This endpoint will create a high resolution image using Universal Upscaler
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.CreateUniversalUpscalerJobResponse>> CreateUniversalUpscalerJobAsResponseAsync(
+
+            global::G.CreateUniversalUpscalerJobRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create using Universal Upscaler<br/>
+        /// This endpoint will create a high resolution image using Universal Upscaler
+        /// </summary>
         /// <param name="initImageId">
         /// The ID of the init image uploaded
         /// </param>

@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickPrompt(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.VoicemailActionPrompt? value)
+        {
+            value = Prompt;
+            return IsPrompt;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.VoicemailActionStaticText? StaticText { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(StaticText))]
 #endif
         public bool IsStaticText => StaticText != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickStaticText(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.VoicemailActionStaticText? value)
+        {
+            value = StaticText;
+            return IsStaticText;
+        }
 
         /// <summary>
         /// 
@@ -64,6 +90,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickHangup(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.VoicemailActionHangup? value)
+        {
+            value = Hangup;
+            return IsHangup;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.VoicemailActionBridgeTransfer? BridgeTransfer { get; init; }
 #else
@@ -77,6 +116,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BridgeTransfer))]
 #endif
         public bool IsBridgeTransfer => BridgeTransfer != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickBridgeTransfer(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.VoicemailActionBridgeTransfer? value)
+        {
+            value = BridgeTransfer;
+            return IsBridgeTransfer;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -197,10 +249,10 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.VoicemailActionPrompt?, TResult>? prompt = null,
-            global::System.Func<global::G.VoicemailActionStaticText?, TResult>? staticText = null,
-            global::System.Func<global::G.VoicemailActionHangup?, TResult>? hangup = null,
-            global::System.Func<global::G.VoicemailActionBridgeTransfer?, TResult>? bridgeTransfer = null,
+            global::System.Func<global::G.VoicemailActionPrompt, TResult>? prompt = null,
+            global::System.Func<global::G.VoicemailActionStaticText, TResult>? staticText = null,
+            global::System.Func<global::G.VoicemailActionHangup, TResult>? hangup = null,
+            global::System.Func<global::G.VoicemailActionBridgeTransfer, TResult>? bridgeTransfer = null,
             bool validate = true)
         {
             if (validate)
@@ -232,10 +284,46 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.VoicemailActionPrompt?>? prompt = null,
-            global::System.Action<global::G.VoicemailActionStaticText?>? staticText = null,
-            global::System.Action<global::G.VoicemailActionHangup?>? hangup = null,
-            global::System.Action<global::G.VoicemailActionBridgeTransfer?>? bridgeTransfer = null,
+            global::System.Action<global::G.VoicemailActionPrompt>? prompt = null,
+
+            global::System.Action<global::G.VoicemailActionStaticText>? staticText = null,
+
+            global::System.Action<global::G.VoicemailActionHangup>? hangup = null,
+
+            global::System.Action<global::G.VoicemailActionBridgeTransfer>? bridgeTransfer = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsPrompt)
+            {
+                prompt?.Invoke(Prompt!);
+            }
+            else if (IsStaticText)
+            {
+                staticText?.Invoke(StaticText!);
+            }
+            else if (IsHangup)
+            {
+                hangup?.Invoke(Hangup!);
+            }
+            else if (IsBridgeTransfer)
+            {
+                bridgeTransfer?.Invoke(BridgeTransfer!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.VoicemailActionPrompt>? prompt = null,
+            global::System.Action<global::G.VoicemailActionStaticText>? staticText = null,
+            global::System.Action<global::G.VoicemailActionHangup>? hangup = null,
+            global::System.Action<global::G.VoicemailActionBridgeTransfer>? bridgeTransfer = null,
             bool validate = true)
         {
             if (validate)

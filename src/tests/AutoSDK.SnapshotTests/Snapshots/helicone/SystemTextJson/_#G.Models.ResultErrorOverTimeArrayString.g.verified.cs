@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickSuccess(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ResultSuccessErrorOverTimeArray? value)
+        {
+            value = Success;
+            return IsSuccess;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ResultErrorString? ResultErrorString { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResultErrorString))]
 #endif
         public bool IsResultErrorString => ResultErrorString != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResultErrorString(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ResultErrorString? value)
+        {
+            value = ResultErrorString;
+            return IsResultErrorString;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -119,8 +145,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.ResultSuccessErrorOverTimeArray?, TResult>? success = null,
-            global::System.Func<global::G.ResultErrorString?, TResult>? resultErrorString = null,
+            global::System.Func<global::G.ResultSuccessErrorOverTimeArray, TResult>? success = null,
+            global::System.Func<global::G.ResultErrorString, TResult>? resultErrorString = null,
             bool validate = true)
         {
             if (validate)
@@ -144,8 +170,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.ResultSuccessErrorOverTimeArray?>? success = null,
-            global::System.Action<global::G.ResultErrorString?>? resultErrorString = null,
+            global::System.Action<global::G.ResultSuccessErrorOverTimeArray>? success = null,
+
+            global::System.Action<global::G.ResultErrorString>? resultErrorString = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsSuccess)
+            {
+                success?.Invoke(Success!);
+            }
+            else if (IsResultErrorString)
+            {
+                resultErrorString?.Invoke(ResultErrorString!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.ResultSuccessErrorOverTimeArray>? success = null,
+            global::System.Action<global::G.ResultErrorString>? resultErrorString = null,
             bool validate = true)
         {
             if (validate)

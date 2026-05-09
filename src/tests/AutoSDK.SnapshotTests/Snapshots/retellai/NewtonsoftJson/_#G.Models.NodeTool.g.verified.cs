@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickNodeToolVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.OneOf<global::G.CustomTool, global::G.CheckAvailabilityCalTool, global::G.BookAppointmentCalTool>? value)
+        {
+            value = NodeToolVariant1;
+            return IsNodeToolVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.NodeToolVariant2? NodeToolVariant2 { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(NodeToolVariant2))]
 #endif
         public bool IsNodeToolVariant2 => NodeToolVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickNodeToolVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.NodeToolVariant2? value)
+        {
+            value = NodeToolVariant2;
+            return IsNodeToolVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -120,7 +146,7 @@ namespace G
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::G.OneOf<global::G.CustomTool, global::G.CheckAvailabilityCalTool, global::G.BookAppointmentCalTool>?, TResult>? nodeToolVariant1 = null,
-            global::System.Func<global::G.NodeToolVariant2?, TResult>? nodeToolVariant2 = null,
+            global::System.Func<global::G.NodeToolVariant2, TResult>? nodeToolVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -145,7 +171,31 @@ namespace G
         /// </summary>
         public void Match(
             global::System.Action<global::G.OneOf<global::G.CustomTool, global::G.CheckAvailabilityCalTool, global::G.BookAppointmentCalTool>?>? nodeToolVariant1 = null,
-            global::System.Action<global::G.NodeToolVariant2?>? nodeToolVariant2 = null,
+
+            global::System.Action<global::G.NodeToolVariant2>? nodeToolVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsNodeToolVariant1)
+            {
+                nodeToolVariant1?.Invoke(NodeToolVariant1!);
+            }
+            else if (IsNodeToolVariant2)
+            {
+                nodeToolVariant2?.Invoke(NodeToolVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.OneOf<global::G.CustomTool, global::G.CheckAvailabilityCalTool, global::G.BookAppointmentCalTool>?>? nodeToolVariant1 = null,
+            global::System.Action<global::G.NodeToolVariant2>? nodeToolVariant2 = null,
             bool validate = true)
         {
             if (validate)

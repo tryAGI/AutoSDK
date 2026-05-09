@@ -105,7 +105,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public BillingClient Billing => new BillingClient(HttpClient, authorizations: Authorizations, options: Options)
+        public BillingClient Billing => new BillingClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -114,7 +114,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public CrawlingClient Crawling => new CrawlingClient(HttpClient, authorizations: Authorizations, options: Options)
+        public CrawlingClient Crawling => new CrawlingClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -123,7 +123,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public ExtractionClient Extraction => new ExtractionClient(HttpClient, authorizations: Authorizations, options: Options)
+        public ExtractionClient Extraction => new ExtractionClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -132,7 +132,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public LLMsTxtClient LLMsTxt => new LLMsTxtClient(HttpClient, authorizations: Authorizations, options: Options)
+        public LLMsTxtClient LLMsTxt => new LLMsTxtClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -141,7 +141,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public MappingClient Mapping => new MappingClient(HttpClient, authorizations: Authorizations, options: Options)
+        public MappingClient Mapping => new MappingClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -150,7 +150,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public ResearchClient Research => new ResearchClient(HttpClient, authorizations: Authorizations, options: Options)
+        public ResearchClient Research => new ResearchClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -159,7 +159,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public ScrapingClient Scraping => new ScrapingClient(HttpClient, authorizations: Authorizations, options: Options)
+        public ScrapingClient Scraping => new ScrapingClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -168,7 +168,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public SearchClient Search => new SearchClient(HttpClient, authorizations: Authorizations, options: Options)
+        public SearchClient Search => new SearchClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -207,10 +207,10 @@ namespace G
         /// <param name="options">Client-wide request defaults such as headers, query parameters, retries, and timeout.</param>
         /// <param name="disposeHttpClient">Dispose the HttpClient when the instance is disposed. True by default.</param>
         public Api(
-            global::System.Net.Http.HttpClient? httpClient = null,
-            global::System.Uri? baseUri = null,
-            global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations = null,
-            global::G.AutoSDKClientOptions? options = null,
+            global::System.Net.Http.HttpClient? httpClient,
+            global::System.Uri? baseUri,
+            global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations,
+            global::G.AutoSDKClientOptions? options,
             bool disposeHttpClient = true)
         {
 

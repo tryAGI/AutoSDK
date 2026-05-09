@@ -28,6 +28,23 @@ namespace G
         /// </summary>
         /// <param name="dataSinkId"></param>
         /// <param name="session"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.DataSink>> UpdateDataSinkApiV1DataSinksDataSinkIdPutAsResponseAsync(
+            global::System.Guid dataSinkId,
+
+            global::G.DataSinkUpdate request,
+            string? session = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Update Data Sink<br/>
+        /// Update a data sink by ID.
+        /// </summary>
+        /// <param name="dataSinkId"></param>
+        /// <param name="session"></param>
         /// <param name="name">
         /// The name of the data sink.
         /// </param>

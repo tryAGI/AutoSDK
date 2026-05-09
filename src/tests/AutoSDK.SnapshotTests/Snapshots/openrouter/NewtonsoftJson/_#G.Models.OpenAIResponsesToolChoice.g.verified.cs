@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickOpenAiResponsesToolChoice0(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.OpenAiResponsesToolChoice0? value)
+        {
+            value = OpenAiResponsesToolChoice0;
+            return IsOpenAiResponsesToolChoice0;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.OpenAiResponsesToolChoice1? OpenAiResponsesToolChoice1 { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OpenAiResponsesToolChoice1))]
 #endif
         public bool IsOpenAiResponsesToolChoice1 => OpenAiResponsesToolChoice1 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickOpenAiResponsesToolChoice1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.OpenAiResponsesToolChoice1? value)
+        {
+            value = OpenAiResponsesToolChoice1;
+            return IsOpenAiResponsesToolChoice1;
+        }
 
         /// <summary>
         /// 
@@ -64,6 +90,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickOpenAiResponsesToolChoice2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.OpenAiResponsesToolChoice2? value)
+        {
+            value = OpenAiResponsesToolChoice2;
+            return IsOpenAiResponsesToolChoice2;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.OpenAiResponsesToolChoice3? OpenAiResponsesToolChoice3 { get; init; }
 #else
@@ -81,6 +120,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickOpenAiResponsesToolChoice3(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.OpenAiResponsesToolChoice3? value)
+        {
+            value = OpenAiResponsesToolChoice3;
+            return IsOpenAiResponsesToolChoice3;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.OpenAiResponsesToolChoice4? OpenAiResponsesToolChoice4 { get; init; }
 #else
@@ -94,6 +146,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OpenAiResponsesToolChoice4))]
 #endif
         public bool IsOpenAiResponsesToolChoice4 => OpenAiResponsesToolChoice4 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickOpenAiResponsesToolChoice4(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.OpenAiResponsesToolChoice4? value)
+        {
+            value = OpenAiResponsesToolChoice4;
+            return IsOpenAiResponsesToolChoice4;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -239,8 +304,8 @@ namespace G
             global::System.Func<global::G.OpenAiResponsesToolChoice0?, TResult>? openAiResponsesToolChoice0 = null,
             global::System.Func<global::G.OpenAiResponsesToolChoice1?, TResult>? openAiResponsesToolChoice1 = null,
             global::System.Func<global::G.OpenAiResponsesToolChoice2?, TResult>? openAiResponsesToolChoice2 = null,
-            global::System.Func<global::G.OpenAiResponsesToolChoice3?, TResult>? openAiResponsesToolChoice3 = null,
-            global::System.Func<global::G.OpenAiResponsesToolChoice4?, TResult>? openAiResponsesToolChoice4 = null,
+            global::System.Func<global::G.OpenAiResponsesToolChoice3, TResult>? openAiResponsesToolChoice3 = null,
+            global::System.Func<global::G.OpenAiResponsesToolChoice4, TResult>? openAiResponsesToolChoice4 = null,
             bool validate = true)
         {
             if (validate)
@@ -277,10 +342,52 @@ namespace G
         /// </summary>
         public void Match(
             global::System.Action<global::G.OpenAiResponsesToolChoice0?>? openAiResponsesToolChoice0 = null,
+
+            global::System.Action<global::G.OpenAiResponsesToolChoice1?>? openAiResponsesToolChoice1 = null,
+
+            global::System.Action<global::G.OpenAiResponsesToolChoice2?>? openAiResponsesToolChoice2 = null,
+
+            global::System.Action<global::G.OpenAiResponsesToolChoice3>? openAiResponsesToolChoice3 = null,
+
+            global::System.Action<global::G.OpenAiResponsesToolChoice4>? openAiResponsesToolChoice4 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsOpenAiResponsesToolChoice0)
+            {
+                openAiResponsesToolChoice0?.Invoke(OpenAiResponsesToolChoice0!);
+            }
+            else if (IsOpenAiResponsesToolChoice1)
+            {
+                openAiResponsesToolChoice1?.Invoke(OpenAiResponsesToolChoice1!);
+            }
+            else if (IsOpenAiResponsesToolChoice2)
+            {
+                openAiResponsesToolChoice2?.Invoke(OpenAiResponsesToolChoice2!);
+            }
+            else if (IsOpenAiResponsesToolChoice3)
+            {
+                openAiResponsesToolChoice3?.Invoke(OpenAiResponsesToolChoice3!);
+            }
+            else if (IsOpenAiResponsesToolChoice4)
+            {
+                openAiResponsesToolChoice4?.Invoke(OpenAiResponsesToolChoice4!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.OpenAiResponsesToolChoice0?>? openAiResponsesToolChoice0 = null,
             global::System.Action<global::G.OpenAiResponsesToolChoice1?>? openAiResponsesToolChoice1 = null,
             global::System.Action<global::G.OpenAiResponsesToolChoice2?>? openAiResponsesToolChoice2 = null,
-            global::System.Action<global::G.OpenAiResponsesToolChoice3?>? openAiResponsesToolChoice3 = null,
-            global::System.Action<global::G.OpenAiResponsesToolChoice4?>? openAiResponsesToolChoice4 = null,
+            global::System.Action<global::G.OpenAiResponsesToolChoice3>? openAiResponsesToolChoice3 = null,
+            global::System.Action<global::G.OpenAiResponsesToolChoice4>? openAiResponsesToolChoice4 = null,
             bool validate = true)
         {
             if (validate)

@@ -24,6 +24,14 @@ namespace G.JsonConverters
                 foreach (var __jsonProp in __jsonDocument.RootElement.EnumerateObject())
                 {
                     __jsonProps.Add(__jsonProp.Name);
+                    if (__jsonProp.Value.ValueKind == global::System.Text.Json.JsonValueKind.Object)
+                    {
+                        foreach (var __nestedJsonProp in __jsonProp.Value.EnumerateObject())
+                        {
+                            __jsonProps.Add(__jsonProp.Name + "." + __nestedJsonProp.Name);
+                        }
+                    }
+
                 }
             }
 
@@ -91,6 +99,9 @@ namespace G.JsonConverters
             if (__jsonProps.Contains("method")) __score7++;
             if (__jsonProps.Contains("name")) __score7++;
             if (__jsonProps.Contains("parameters")) __score7++;
+            if (__jsonProps.Contains("parameters.properties")) __score7++;
+            if (__jsonProps.Contains("parameters.required")) __score7++;
+            if (__jsonProps.Contains("parameters.type")) __score7++;
             if (__jsonProps.Contains("query_params")) __score7++;
             if (__jsonProps.Contains("response_variables")) __score7++;
             if (__jsonProps.Contains("speak_after_execution")) __score7++;

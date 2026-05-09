@@ -31,6 +31,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OpenaiCompatible))]
 #endif
         public bool IsOpenaiCompatible => OpenaiCompatible != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickOpenaiCompatible(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateOpenAIEncoderRequest? value)
+        {
+            value = OpenaiCompatible;
+            return IsOpenaiCompatible;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -88,7 +101,7 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.CreateOpenAIEncoderRequest?, TResult>? openaiCompatible = null,
+            global::System.Func<global::G.CreateOpenAIEncoderRequest, TResult>? openaiCompatible = null,
             bool validate = true)
         {
             if (validate)
@@ -108,7 +121,25 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.CreateOpenAIEncoderRequest?>? openaiCompatible = null,
+            global::System.Action<global::G.CreateOpenAIEncoderRequest>? openaiCompatible = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsOpenaiCompatible)
+            {
+                openaiCompatible?.Invoke(OpenaiCompatible!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.CreateOpenAIEncoderRequest>? openaiCompatible = null,
             bool validate = true)
         {
             if (validate)

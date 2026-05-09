@@ -28,6 +28,19 @@ namespace G
         public bool IsInputText => InputText != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickInputText(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.InputText? value)
+        {
+            value = InputText;
+            return IsInputText;
+        }
+
+        /// <summary>
         /// Image input content item
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputMessageItemContentItems1))]
 #endif
         public bool IsInputMessageItemContentItems1 => InputMessageItemContentItems1 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickInputMessageItemContentItems1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.InputMessageItemContentItems1? value)
+        {
+            value = InputMessageItemContentItems1;
+            return IsInputMessageItemContentItems1;
+        }
 
         /// <summary>
         /// File input content item
@@ -62,6 +88,19 @@ namespace G
         public bool IsInputFile => InputFile != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickInputFile(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.InputFile? value)
+        {
+            value = InputFile;
+            return IsInputFile;
+        }
+
+        /// <summary>
         /// Audio input content item
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -79,6 +118,19 @@ namespace G
         public bool IsInputAudio => InputAudio != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickInputAudio(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.InputAudio? value)
+        {
+            value = InputAudio;
+            return IsInputAudio;
+        }
+
+        /// <summary>
         /// Video input content item
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -94,6 +146,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputVideo))]
 #endif
         public bool IsInputVideo => InputVideo != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickInputVideo(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.InputVideo? value)
+        {
+            value = InputVideo;
+            return IsInputVideo;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -236,11 +301,11 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.InputText?, TResult>? inputText = null,
-            global::System.Func<global::G.InputMessageItemContentItems1?, TResult>? inputMessageItemContentItems1 = null,
-            global::System.Func<global::G.InputFile?, TResult>? inputFile = null,
-            global::System.Func<global::G.InputAudio?, TResult>? inputAudio = null,
-            global::System.Func<global::G.InputVideo?, TResult>? inputVideo = null,
+            global::System.Func<global::G.InputText, TResult>? inputText = null,
+            global::System.Func<global::G.InputMessageItemContentItems1, TResult>? inputMessageItemContentItems1 = null,
+            global::System.Func<global::G.InputFile, TResult>? inputFile = null,
+            global::System.Func<global::G.InputAudio, TResult>? inputAudio = null,
+            global::System.Func<global::G.InputVideo, TResult>? inputVideo = null,
             bool validate = true)
         {
             if (validate)
@@ -276,11 +341,53 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.InputText?>? inputText = null,
-            global::System.Action<global::G.InputMessageItemContentItems1?>? inputMessageItemContentItems1 = null,
-            global::System.Action<global::G.InputFile?>? inputFile = null,
-            global::System.Action<global::G.InputAudio?>? inputAudio = null,
-            global::System.Action<global::G.InputVideo?>? inputVideo = null,
+            global::System.Action<global::G.InputText>? inputText = null,
+
+            global::System.Action<global::G.InputMessageItemContentItems1>? inputMessageItemContentItems1 = null,
+
+            global::System.Action<global::G.InputFile>? inputFile = null,
+
+            global::System.Action<global::G.InputAudio>? inputAudio = null,
+
+            global::System.Action<global::G.InputVideo>? inputVideo = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsInputText)
+            {
+                inputText?.Invoke(InputText!);
+            }
+            else if (IsInputMessageItemContentItems1)
+            {
+                inputMessageItemContentItems1?.Invoke(InputMessageItemContentItems1!);
+            }
+            else if (IsInputFile)
+            {
+                inputFile?.Invoke(InputFile!);
+            }
+            else if (IsInputAudio)
+            {
+                inputAudio?.Invoke(InputAudio!);
+            }
+            else if (IsInputVideo)
+            {
+                inputVideo?.Invoke(InputVideo!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.InputText>? inputText = null,
+            global::System.Action<global::G.InputMessageItemContentItems1>? inputMessageItemContentItems1 = null,
+            global::System.Action<global::G.InputFile>? inputFile = null,
+            global::System.Action<global::G.InputAudio>? inputAudio = null,
+            global::System.Action<global::G.InputVideo>? inputVideo = null,
             bool validate = true)
         {
             if (validate)

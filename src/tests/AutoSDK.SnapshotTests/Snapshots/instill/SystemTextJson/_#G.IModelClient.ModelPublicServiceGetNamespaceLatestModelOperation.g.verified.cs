@@ -22,5 +22,22 @@ namespace G
             global::G.ModelPublicServiceGetNamespaceLatestModelOperationView? view = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Get the details of the latest long-running operation from a namespace model<br/>
+        /// This method allows requesters to request the status and outcome of<br/>
+        /// long-running operations in a model, such as trigger.
+        /// </summary>
+        /// <param name="namespaceId"></param>
+        /// <param name="modelId"></param>
+        /// <param name="view"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.GetNamespaceLatestModelOperationResponse>> ModelPublicServiceGetNamespaceLatestModelOperationAsResponseAsync(
+            string namespaceId,
+            string modelId,
+            global::G.ModelPublicServiceGetNamespaceLatestModelOperationView? view = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

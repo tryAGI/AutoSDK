@@ -114,6 +114,67 @@ namespace G
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var __response = await CreateAsResponseAsync(
+                corpusKey: corpusKey,
+
+                request: request,
+                requestTimeout: requestTimeout,
+                requestTimeoutMillis: requestTimeoutMillis,
+                waitFor: waitFor,
+                requestOptions: requestOptions,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// Add a document to a corpus<br/>
+        /// Add a document to a corpus for indexing, making its content available for search, retrieval, and generation. This endpoint supports two ingestion modes: **structured** documents and **core** documents. These modes offer different levels of control over document structure and chunking.<br/>
+        /// Each document becomes part of a corpus. You can use this API directly or with [Vectara Ingest](https://github.com/vectara/vectara-ingest) or the [File Upload API](/docs/rest-api/upload-file).<br/>
+        /// ## Structured documents<br/>
+        /// Structured documents provide a natural hierarchy where Vectar handles chunking and metadata automatically. Structured documents are ideal when you want to index documents that have logical organization (titles, sections, paragraphs, and optionally tables or images) but prefer Vectara to manage how the content is split into search-optimized units.<br/>
+        /// Each structured document contains:<br/>
+        /// - A unique `id` and optional `title`, `description`, and `metadata`.<br/>
+        /// - An array of `sections`, each with its own title, text, and optional nested sections, tables, or images.<br/>
+        /// - Optional `custom_dimensions` that can influence ranking during search.<br/>
+        /// When indexed, Vectara partitions the text into document parts automatically using an intelligent sentence- or character-based chunking strategy. This lets you ingest data with minimal pre-processing while maintaining semantic integrity across context boundaries.<br/>
+        /// Structured documents are recommended for content with well-defined sections such as reports, articles, FAQs, or documentation.<br/>
+        /// ## Core documents<br/>
+        /// Core documents offer fine-grained, explicit control of every part of a document that becomes searchable. Instead of providing a hierarchical structure, you specify each **document part** directly as unit that maps 1:1 to a search result or embedding.<br/>
+        /// A core document includes:<br/>
+        /// - A unique `id` and optional `metadata`.<br/>
+        /// - A list of `document_parts`, where each part includes `text`, optional `context`, `metadata`, and `custom_dimensions`.<br/>
+        /// - Optional `tables` and `images`, allowing you to represent complex structured data like spreadsheets or charts.<br/>
+        /// Core documents are designed for advanced use cases such as precise chunk-level optimization or experimental corpus structures, and applications where metadata-driven retrieval or ranking must be explicitly controlled.<br/>
+        /// ## Chunking strategies    <br/>
+        /// By default, Vectara uses **sentence-based chunking**, which provides optimal retrieval accuracy for most datasets.<br/>
+        /// For larger documents or performance-tuned ingestion, you can explicitly set a `chunking_strategy`:<br/>
+        /// - `sentence_chunking_strategy` — creates one chunk per sentence (default).<br/>
+        /// - `max_chars_chunking_strategy` — creates larger chunks up to a specified character limit (`max_chars_per_chunk`), balancing retrieval speed with contextual coherence.
+        /// </summary>
+        /// <param name="requestTimeout"></param>
+        /// <param name="requestTimeoutMillis"></param>
+        /// <param name="corpusKey">
+        /// A user-provided key for a corpus.<br/>
+        /// Example: my-corpus
+        /// </param>
+        /// <param name="waitFor">
+        /// Default Value: searchable
+        /// </param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.Document>> CreateAsResponseAsync(
+            string corpusKey,
+
+            global::G.CreateDocumentRequest request,
+            int? requestTimeout = default,
+            int? requestTimeoutMillis = default,
+            global::G.CreateCorpusDocumentWaitFor? waitFor = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             PrepareArguments(
                 client: HttpClient);
             PrepareCreateArguments(
@@ -146,11 +207,12 @@ namespace G
 
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
+
                             var __pathBuilder = new global::G.PathBuilder(
                                 path: $"/v2/corpora/{corpusKey}/documents",
-                                baseUri: HttpClient.BaseAddress); 
+                                baseUri: HttpClient.BaseAddress);
                             __pathBuilder
-                                .AddOptionalParameter("wait_for", waitFor?.ToValueString()) 
+                                .AddOptionalParameter("wait_for", waitFor?.ToValueString())
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::G.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -182,14 +244,14 @@ namespace G
                 } 
             }
 
-                if (requestTimeout != default)
-                {
-                    __httpRequest.Headers.TryAddWithoutValidation("Request-Timeout", requestTimeout.ToString());
-                }
-                if (requestTimeoutMillis != default)
-                {
-                    __httpRequest.Headers.TryAddWithoutValidation("Request-Timeout-Millis", requestTimeoutMillis.ToString());
-                }
+            if (requestTimeout != default)
+            {
+                __httpRequest.Headers.TryAddWithoutValidation("Request-Timeout", requestTimeout.ToString());
+            }
+            if (requestTimeoutMillis != default)
+            {
+                __httpRequest.Headers.TryAddWithoutValidation("Request-Timeout-Millis", requestTimeoutMillis.ToString());
+            }
 
                             var __httpRequestContentBody = request.ToJson(JsonSerializerOptions);
                             var __httpRequestContent = new global::System.Net.Http.StringContent(
@@ -210,7 +272,7 @@ namespace G
                     httpRequestMessage: __httpRequest,
                     requestTimeout: requestTimeout,
                     requestTimeoutMillis: requestTimeoutMillis,
-                    corpusKey: corpusKey,
+                    corpusKey: corpusKey!,
                     waitFor: waitFor,
                     request: request);
 
@@ -242,6 +304,8 @@ namespace G
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                     try
                     {
@@ -255,6 +319,11 @@ namespace G
                     }
                     catch (global::System.Net.Http.HttpRequestException __exception)
                     {
+                        var __retryDelay = global::G.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: null,
+                            attempt: __attempt);
                         var __willRetry = __attempt < __maxAttempts && !__effectiveCancellationToken.IsCancellationRequested;
                         await global::G.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
@@ -272,6 +341,8 @@ namespace G
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: __willRetry,
+                                retryDelay: __willRetry ? __retryDelay : (global::System.TimeSpan?)null,
+                                retryReason: "exception",
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         if (!__willRetry)
                         {
@@ -281,8 +352,7 @@ namespace G
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::G.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -291,6 +361,11 @@ namespace G
                         __attempt < __maxAttempts &&
                         global::G.AutoSDKRequestOptionsSupport.ShouldRetryStatusCode(__response.StatusCode))
                     {
+                        var __retryDelay = global::G.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: __response,
+                            attempt: __attempt);
                         await global::G.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
@@ -307,14 +382,15 @@ namespace G
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: true,
+                                retryDelay: __retryDelay,
+                                retryReason: "status:" + ((int)__response.StatusCode).ToString(global::System.Globalization.CultureInfo.InvariantCulture),
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         __response.Dispose();
                         __response = null;
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::G.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -354,6 +430,8 @@ namespace G
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
                 else
@@ -374,6 +452,8 @@ namespace G
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
                             // Document creation request was malformed.
@@ -550,9 +630,13 @@ namespace G
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    return
-                                        global::G.Document.FromJson(__content, JsonSerializerOptions) ??
+                                    var __value = global::G.Document.FromJson(__content, JsonSerializerOptions) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                                    return new global::G.AutoSDKHttpResponse<global::G.Document>(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri,
+                                        body: __value);
                                 }
                                 catch (global::System.Exception __ex)
                                 {
@@ -580,9 +664,13 @@ namespace G
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    return
-                                        await global::G.Document.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                                    var __value = await global::G.Document.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
+                                    return new global::G.AutoSDKHttpResponse<global::G.Document>(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri,
+                                        body: __value);
                                 }
                                 catch (global::System.Exception __ex)
                                 {

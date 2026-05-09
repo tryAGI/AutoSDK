@@ -24,6 +24,14 @@ namespace G.JsonConverters
                 foreach (var __jsonProp in __jsonDocument.RootElement.EnumerateObject())
                 {
                     __jsonProps.Add(__jsonProp.Name);
+                    if (__jsonProp.Value.ValueKind == global::System.Text.Json.JsonValueKind.Object)
+                    {
+                        foreach (var __nestedJsonProp in __jsonProp.Value.EnumerateObject())
+                        {
+                            __jsonProps.Add(__jsonProp.Name + "." + __nestedJsonProp.Name);
+                        }
+                    }
+
                 }
             }
 
@@ -31,12 +39,21 @@ namespace G.JsonConverters
             if (__jsonProps.Contains("language")) __score0++;
             if (__jsonProps.Contains("type")) __score0++;
             if (__jsonProps.Contains("voice_config")) __score0++;
+            if (__jsonProps.Contains("voice_config.pitch")) __score0++;
+            if (__jsonProps.Contains("voice_config.rate")) __score0++;
+            if (__jsonProps.Contains("voice_config.style")) __score0++;
             if (__jsonProps.Contains("voice_id")) __score0++;
             var __score1 = 0;
             if (__jsonProps.Contains("language")) __score1++;
             if (__jsonProps.Contains("model_id")) __score1++;
             if (__jsonProps.Contains("type")) __score1++;
             if (__jsonProps.Contains("voice_config")) __score1++;
+            if (__jsonProps.Contains("voice_config.apply_language_text_normalization")) __score1++;
+            if (__jsonProps.Contains("voice_config.rate")) __score1++;
+            if (__jsonProps.Contains("voice_config.similarity_boost")) __score1++;
+            if (__jsonProps.Contains("voice_config.stability")) __score1++;
+            if (__jsonProps.Contains("voice_config.style")) __score1++;
+            if (__jsonProps.Contains("voice_config.use_speaker_boost")) __score1++;
             if (__jsonProps.Contains("voice_id")) __score1++;
             var __score2 = 0;
             if (__jsonProps.Contains("language")) __score2++;
@@ -49,6 +66,9 @@ namespace G.JsonConverters
             if (__jsonProps.Contains("language")) __score4++;
             if (__jsonProps.Contains("type")) __score4++;
             if (__jsonProps.Contains("voice_config")) __score4++;
+            if (__jsonProps.Contains("voice_config.pitch")) __score4++;
+            if (__jsonProps.Contains("voice_config.rate")) __score4++;
+            if (__jsonProps.Contains("voice_config.style")) __score4++;
             if (__jsonProps.Contains("voice_id")) __score4++;
             var __bestScore = 0;
             var __bestIndex = -1;

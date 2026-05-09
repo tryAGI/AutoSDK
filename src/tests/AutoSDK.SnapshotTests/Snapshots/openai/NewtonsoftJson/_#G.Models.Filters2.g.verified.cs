@@ -28,6 +28,19 @@ namespace G
         public bool IsComparisonFilter => ComparisonFilter != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickComparisonFilter(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ComparisonFilter? value)
+        {
+            value = ComparisonFilter;
+            return IsComparisonFilter;
+        }
+
+        /// <summary>
         /// Combine multiple filters using `and` or `or`.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CompoundFilter))]
 #endif
         public bool IsCompoundFilter => CompoundFilter != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickCompoundFilter(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CompoundFilter? value)
+        {
+            value = CompoundFilter;
+            return IsCompoundFilter;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -119,8 +145,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.ComparisonFilter?, TResult>? comparisonFilter = null,
-            global::System.Func<global::G.CompoundFilter?, TResult>? compoundFilter = null,
+            global::System.Func<global::G.ComparisonFilter, TResult>? comparisonFilter = null,
+            global::System.Func<global::G.CompoundFilter, TResult>? compoundFilter = null,
             bool validate = true)
         {
             if (validate)
@@ -144,8 +170,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.ComparisonFilter?>? comparisonFilter = null,
-            global::System.Action<global::G.CompoundFilter?>? compoundFilter = null,
+            global::System.Action<global::G.ComparisonFilter>? comparisonFilter = null,
+
+            global::System.Action<global::G.CompoundFilter>? compoundFilter = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsComparisonFilter)
+            {
+                comparisonFilter?.Invoke(ComparisonFilter!);
+            }
+            else if (IsCompoundFilter)
+            {
+                compoundFilter?.Invoke(CompoundFilter!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.ComparisonFilter>? comparisonFilter = null,
+            global::System.Action<global::G.CompoundFilter>? compoundFilter = null,
             bool validate = true)
         {
             if (validate)

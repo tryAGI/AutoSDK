@@ -11,6 +11,11 @@ namespace G
     public readonly partial struct Character : global::System.IEquatable<Character>
     {
         /// <summary>
+        /// 
+        /// </summary>
+        public string? Type { get; }
+
+        /// <summary>
         /// An image of your character. In the output, the character will use the reference video performance in its original static environment.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -28,6 +33,19 @@ namespace G
         public bool IsImage => Image != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickImage(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateCharacterPerformanceRequestActTwoCharacterCharacterImage? value)
+        {
+            value = Image;
+            return IsImage;
+        }
+
+        /// <summary>
         /// A video of your character. In the output, the character will use the reference video performance in its original animated environment and some of the character's own movements.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -43,6 +61,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Video))]
 #endif
         public bool IsVideo => Video != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickVideo(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateCharacterPerformanceRequestActTwoCharacterCharacterVideo? value)
+        {
+            value = Video;
+            return IsVideo;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -83,10 +114,13 @@ namespace G
         /// 
         /// </summary>
         public Character(
+            string? type,
             global::G.CreateCharacterPerformanceRequestActTwoCharacterCharacterImage? image,
             global::G.CreateCharacterPerformanceRequestActTwoCharacterCharacterVideo? video
             )
         {
+            Type = type;
+
             Image = image;
             Video = video;
         }
@@ -119,8 +153,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.CreateCharacterPerformanceRequestActTwoCharacterCharacterImage?, TResult>? image = null,
-            global::System.Func<global::G.CreateCharacterPerformanceRequestActTwoCharacterCharacterVideo?, TResult>? video = null,
+            global::System.Func<global::G.CreateCharacterPerformanceRequestActTwoCharacterCharacterImage, TResult>? image = null,
+            global::System.Func<global::G.CreateCharacterPerformanceRequestActTwoCharacterCharacterVideo, TResult>? video = null,
             bool validate = true)
         {
             if (validate)
@@ -144,8 +178,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.CreateCharacterPerformanceRequestActTwoCharacterCharacterImage?>? image = null,
-            global::System.Action<global::G.CreateCharacterPerformanceRequestActTwoCharacterCharacterVideo?>? video = null,
+            global::System.Action<global::G.CreateCharacterPerformanceRequestActTwoCharacterCharacterImage>? image = null,
+
+            global::System.Action<global::G.CreateCharacterPerformanceRequestActTwoCharacterCharacterVideo>? video = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsImage)
+            {
+                image?.Invoke(Image!);
+            }
+            else if (IsVideo)
+            {
+                video?.Invoke(Video!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.CreateCharacterPerformanceRequestActTwoCharacterCharacterImage>? image = null,
+            global::System.Action<global::G.CreateCharacterPerformanceRequestActTwoCharacterCharacterVideo>? video = null,
             bool validate = true)
         {
             if (validate)

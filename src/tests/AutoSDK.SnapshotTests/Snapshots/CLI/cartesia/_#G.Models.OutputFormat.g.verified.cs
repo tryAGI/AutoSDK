@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickRAWOutputFormat(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.AllOf<global::G.OutputFormatRAWOutputFormat2, global::G.RawOutputFormat>? value)
+        {
+            value = RAWOutputFormat;
+            return IsRAWOutputFormat;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.AllOf<global::G.OutputFormatWAVOutputFormat2, global::G.WAVOutputFormat?>? WAVOutputFormat { get; init; }
 #else
@@ -47,6 +60,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickWAVOutputFormat(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.AllOf<global::G.OutputFormatWAVOutputFormat2, global::G.WAVOutputFormat?>? value)
+        {
+            value = WAVOutputFormat;
+            return IsWAVOutputFormat;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.AllOf<global::G.OutputFormatMP3OutputFormat2, global::G.MP3OutputFormat>? MP3OutputFormat { get; init; }
 #else
@@ -60,6 +86,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MP3OutputFormat))]
 #endif
         public bool IsMP3OutputFormat => MP3OutputFormat != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMP3OutputFormat(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.AllOf<global::G.OutputFormatMP3OutputFormat2, global::G.MP3OutputFormat>? value)
+        {
+            value = MP3OutputFormat;
+            return IsMP3OutputFormat;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -188,6 +227,36 @@ namespace G
         /// 
         /// </summary>
         public void Match(
+            global::System.Action<global::G.AllOf<global::G.OutputFormatRAWOutputFormat2, global::G.RawOutputFormat>?>? rAWOutputFormat = null,
+
+            global::System.Action<global::G.AllOf<global::G.OutputFormatWAVOutputFormat2, global::G.WAVOutputFormat?>?>? wAVOutputFormat = null,
+
+            global::System.Action<global::G.AllOf<global::G.OutputFormatMP3OutputFormat2, global::G.MP3OutputFormat>?>? mP3OutputFormat = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsRAWOutputFormat)
+            {
+                rAWOutputFormat?.Invoke(RAWOutputFormat!);
+            }
+            else if (IsWAVOutputFormat)
+            {
+                wAVOutputFormat?.Invoke(WAVOutputFormat!);
+            }
+            else if (IsMP3OutputFormat)
+            {
+                mP3OutputFormat?.Invoke(MP3OutputFormat!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
             global::System.Action<global::G.AllOf<global::G.OutputFormatRAWOutputFormat2, global::G.RawOutputFormat>?>? rAWOutputFormat = null,
             global::System.Action<global::G.AllOf<global::G.OutputFormatWAVOutputFormat2, global::G.WAVOutputFormat?>?>? wAVOutputFormat = null,
             global::System.Action<global::G.AllOf<global::G.OutputFormatMP3OutputFormat2, global::G.MP3OutputFormat>?>? mP3OutputFormat = null,

@@ -28,6 +28,19 @@ namespace G
         public bool IsFilterVariant1 => FilterVariant1 != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFilterVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out byte[]? value)
+        {
+            value = FilterVariant1;
+            return IsFilterVariant1;
+        }
+
+        /// <summary>
         /// Inverse of `Eq`. If value is `null`, matches documents with the attribute.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FilterVariant2))]
 #endif
         public bool IsFilterVariant2 => FilterVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFilterVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out byte[]? value)
+        {
+            value = FilterVariant2;
+            return IsFilterVariant2;
+        }
 
         /// <summary>
         /// Matches any attribute value contained in the provided list.
@@ -62,6 +88,19 @@ namespace G
         public bool IsFilterVariant3 => FilterVariant3 != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFilterVariant3(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out byte[]? value)
+        {
+            value = FilterVariant3;
+            return IsFilterVariant3;
+        }
+
+        /// <summary>
         /// Inverse of `In`, matches any attributes values not contained in the provided list.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -77,6 +116,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FilterVariant4))]
 #endif
         public bool IsFilterVariant4 => FilterVariant4 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFilterVariant4(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out byte[]? value)
+        {
+            value = FilterVariant4;
+            return IsFilterVariant4;
+        }
 
         /// <summary>
         /// Checks whether the selected array attribute contains the provided value.
@@ -96,6 +148,19 @@ namespace G
         public bool IsFilterVariant5 => FilterVariant5 != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFilterVariant5(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out byte[]? value)
+        {
+            value = FilterVariant5;
+            return IsFilterVariant5;
+        }
+
+        /// <summary>
         /// Inverse of Contains
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -111,6 +176,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FilterVariant6))]
 #endif
         public bool IsFilterVariant6 => FilterVariant6 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFilterVariant6(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out byte[]? value)
+        {
+            value = FilterVariant6;
+            return IsFilterVariant6;
+        }
 
         /// <summary>
         /// Checks whether the selected array attribute contains any of the values provided (intersection filter).
@@ -130,6 +208,19 @@ namespace G
         public bool IsFilterVariant7 => FilterVariant7 != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFilterVariant7(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out byte[]? value)
+        {
+            value = FilterVariant7;
+            return IsFilterVariant7;
+        }
+
+        /// <summary>
         /// Inverse of ContainsAny.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -145,6 +236,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FilterVariant8))]
 #endif
         public bool IsFilterVariant8 => FilterVariant8 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFilterVariant8(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out byte[]? value)
+        {
+            value = FilterVariant8;
+            return IsFilterVariant8;
+        }
 
         /// <summary>
         /// For ints, this is a numeric less-than. For strings, lexicographic less-than. For datetimes, numeric less-than on millisecond representation.
@@ -164,6 +268,19 @@ namespace G
         public bool IsFilterVariant9 => FilterVariant9 != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFilterVariant9(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out byte[]? value)
+        {
+            value = FilterVariant9;
+            return IsFilterVariant9;
+        }
+
+        /// <summary>
         /// For ints, this is a numeric less-than-or-equal. For strings, lexicographic less-than-or-equal. For datetimes, numeric less-than-or-equal on millisecond representation.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -179,6 +296,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FilterVariant10))]
 #endif
         public bool IsFilterVariant10 => FilterVariant10 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFilterVariant10(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out byte[]? value)
+        {
+            value = FilterVariant10;
+            return IsFilterVariant10;
+        }
 
         /// <summary>
         /// For ints, this is a numeric greater-than. For strings, lexicographic greater-than. For datetimes, numeric greater-than on millisecond representation.
@@ -198,6 +328,19 @@ namespace G
         public bool IsFilterVariant11 => FilterVariant11 != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFilterVariant11(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out byte[]? value)
+        {
+            value = FilterVariant11;
+            return IsFilterVariant11;
+        }
+
+        /// <summary>
         /// For ints, this is a numeric greater-than-or-equal. For strings, lexicographic greater-than-or-equal. For datetimes, numeric greater-than-or-equal on millisecond representation.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -213,6 +356,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FilterVariant12))]
 #endif
         public bool IsFilterVariant12 => FilterVariant12 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFilterVariant12(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out byte[]? value)
+        {
+            value = FilterVariant12;
+            return IsFilterVariant12;
+        }
 
         /// <summary>
         /// Checks whether any element of an array attribute is less than the provided value, using the same rules as `Lt`.
@@ -232,6 +388,19 @@ namespace G
         public bool IsFilterVariant13 => FilterVariant13 != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFilterVariant13(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out byte[]? value)
+        {
+            value = FilterVariant13;
+            return IsFilterVariant13;
+        }
+
+        /// <summary>
         /// Checks whether any element of an array attribute is less than or equal to the provided value, using the same rules as `Lte`.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -247,6 +416,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FilterVariant14))]
 #endif
         public bool IsFilterVariant14 => FilterVariant14 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFilterVariant14(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out byte[]? value)
+        {
+            value = FilterVariant14;
+            return IsFilterVariant14;
+        }
 
         /// <summary>
         /// Checks whether any element of an array attribute is greater than the provided value, using the same rules as `Gt`.
@@ -266,6 +448,19 @@ namespace G
         public bool IsFilterVariant15 => FilterVariant15 != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFilterVariant15(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out byte[]? value)
+        {
+            value = FilterVariant15;
+            return IsFilterVariant15;
+        }
+
+        /// <summary>
         /// Checks whether any element of an array attribute is greater than or equal to the provided value, using the same rules as `Gte`.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -281,6 +476,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FilterVariant16))]
 #endif
         public bool IsFilterVariant16 => FilterVariant16 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFilterVariant16(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out byte[]? value)
+        {
+            value = FilterVariant16;
+            return IsFilterVariant16;
+        }
 
         /// <summary>
         /// Unix-style glob match against string values. The full syntax is described in the Rust `globset` crate documentation. Glob patterns with a concrete prefix like "foo*" internally compile to efficient range queries.
@@ -300,6 +508,19 @@ namespace G
         public bool IsFilterVariant17 => FilterVariant17 != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFilterVariant17(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out byte[]? value)
+        {
+            value = FilterVariant17;
+            return IsFilterVariant17;
+        }
+
+        /// <summary>
         /// Inverse of `Glob`, Unix-style glob filters against string attributes values. The full syntax is described in the Rust `globset` crate documentation.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -315,6 +536,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FilterVariant18))]
 #endif
         public bool IsFilterVariant18 => FilterVariant18 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFilterVariant18(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out byte[]? value)
+        {
+            value = FilterVariant18;
+            return IsFilterVariant18;
+        }
 
         /// <summary>
         /// Case insensitive version of `Glob`.
@@ -334,6 +568,19 @@ namespace G
         public bool IsFilterVariant19 => FilterVariant19 != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFilterVariant19(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out byte[]? value)
+        {
+            value = FilterVariant19;
+            return IsFilterVariant19;
+        }
+
+        /// <summary>
         /// Case insensitive version of `NotGlob`.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -349,6 +596,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FilterVariant20))]
 #endif
         public bool IsFilterVariant20 => FilterVariant20 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFilterVariant20(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out byte[]? value)
+        {
+            value = FilterVariant20;
+            return IsFilterVariant20;
+        }
 
         /// <summary>
         /// Regular expression match against string values. Requires the regex schema attribute to be enabled before use.
@@ -368,6 +628,19 @@ namespace G
         public bool IsFilterVariant21 => FilterVariant21 != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFilterVariant21(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out byte[]? value)
+        {
+            value = FilterVariant21;
+            return IsFilterVariant21;
+        }
+
+        /// <summary>
         /// Matches if all tokens in the input string are present in the attributes value. Requires that the attribute is configured for full-text search.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -383,6 +656,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FilterVariant22))]
 #endif
         public bool IsFilterVariant22 => FilterVariant22 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFilterVariant22(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out byte[]? value)
+        {
+            value = FilterVariant22;
+            return IsFilterVariant22;
+        }
 
         /// <summary>
         /// Matches if all tokens in the input string are present in the attributes value. Requires that the attribute is configured for full-text search.
@@ -402,6 +688,19 @@ namespace G
         public bool IsFilterVariant23 => FilterVariant23 != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFilterVariant23(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out byte[]? value)
+        {
+            value = FilterVariant23;
+            return IsFilterVariant23;
+        }
+
+        /// <summary>
         /// Matches if all tokens in the input string are present in the attributes value. Requires that the attribute is configured for full-text search.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -417,6 +716,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FilterVariant24))]
 #endif
         public bool IsFilterVariant24 => FilterVariant24 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFilterVariant24(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out byte[]? value)
+        {
+            value = FilterVariant24;
+            return IsFilterVariant24;
+        }
 
         /// <summary>
         /// Matches if all tokens in the input string are present in the attributes value. Requires that the attribute is configured for full-text search.
@@ -436,6 +748,19 @@ namespace G
         public bool IsFilterVariant25 => FilterVariant25 != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFilterVariant25(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out byte[]? value)
+        {
+            value = FilterVariant25;
+            return IsFilterVariant25;
+        }
+
+        /// <summary>
         /// Matches if any of the tokens in the input string are present in the attribute value. Requires that the attribute is configured for full-text search.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -451,6 +776,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FilterVariant26))]
 #endif
         public bool IsFilterVariant26 => FilterVariant26 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFilterVariant26(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out byte[]? value)
+        {
+            value = FilterVariant26;
+            return IsFilterVariant26;
+        }
 
         /// <summary>
         /// Matches if any of the tokens in the input string array are present in the attribute value. Requires that the attribute is configured for full-text search.
@@ -470,6 +808,19 @@ namespace G
         public bool IsFilterVariant27 => FilterVariant27 != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFilterVariant27(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out byte[]? value)
+        {
+            value = FilterVariant27;
+            return IsFilterVariant27;
+        }
+
+        /// <summary>
         /// Matches if any of the tokens in the input string are present in the attribute value. Requires that the attribute is configured for full-text search.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -485,6 +836,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FilterVariant28))]
 #endif
         public bool IsFilterVariant28 => FilterVariant28 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFilterVariant28(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out byte[]? value)
+        {
+            value = FilterVariant28;
+            return IsFilterVariant28;
+        }
 
         /// <summary>
         /// Matches if any of the tokens in the input string array are present in the attribute value. Requires that the attribute is configured for full-text search.
@@ -504,6 +868,19 @@ namespace G
         public bool IsFilterVariant29 => FilterVariant29 != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFilterVariant29(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out byte[]? value)
+        {
+            value = FilterVariant29;
+            return IsFilterVariant29;
+        }
+
+        /// <summary>
         /// Matches if all the tokens in the input string are present in the attribute value, in the correct order (i.e., as a phrase). Requires that the attribute is configured for full-text search.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -519,6 +896,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FilterVariant30))]
 #endif
         public bool IsFilterVariant30 => FilterVariant30 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFilterVariant30(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out byte[]? value)
+        {
+            value = FilterVariant30;
+            return IsFilterVariant30;
+        }
 
         /// <summary>
         /// Matches if all the tokens in the input string are present in the attribute value, in the correct order (i.e., as a phrase). Requires that the attribute is configured for full-text search.
@@ -540,6 +930,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickFilterVariant31(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out byte[]? value)
+        {
+            value = FilterVariant31;
+            return IsFilterVariant31;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public byte[]? FilterVariant32 { get; init; }
 #else
@@ -553,6 +956,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FilterVariant32))]
 #endif
         public bool IsFilterVariant32 => FilterVariant32 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFilterVariant32(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out byte[]? value)
+        {
+            value = FilterVariant32;
+            return IsFilterVariant32;
+        }
 
         /// <summary>
         /// 
@@ -574,6 +990,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickFilterVariant33(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out byte[]? value)
+        {
+            value = FilterVariant33;
+            return IsFilterVariant33;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public byte[]? FilterVariant34 { get; init; }
 #else
@@ -587,6 +1016,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FilterVariant34))]
 #endif
         public bool IsFilterVariant34 => FilterVariant34 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFilterVariant34(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out byte[]? value)
+        {
+            value = FilterVariant34;
+            return IsFilterVariant34;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -773,40 +1215,40 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<byte[]?, TResult>? filterVariant1 = null,
-            global::System.Func<byte[]?, TResult>? filterVariant2 = null,
-            global::System.Func<byte[]?, TResult>? filterVariant3 = null,
-            global::System.Func<byte[]?, TResult>? filterVariant4 = null,
-            global::System.Func<byte[]?, TResult>? filterVariant5 = null,
-            global::System.Func<byte[]?, TResult>? filterVariant6 = null,
-            global::System.Func<byte[]?, TResult>? filterVariant7 = null,
-            global::System.Func<byte[]?, TResult>? filterVariant8 = null,
-            global::System.Func<byte[]?, TResult>? filterVariant9 = null,
-            global::System.Func<byte[]?, TResult>? filterVariant10 = null,
-            global::System.Func<byte[]?, TResult>? filterVariant11 = null,
-            global::System.Func<byte[]?, TResult>? filterVariant12 = null,
-            global::System.Func<byte[]?, TResult>? filterVariant13 = null,
-            global::System.Func<byte[]?, TResult>? filterVariant14 = null,
-            global::System.Func<byte[]?, TResult>? filterVariant15 = null,
-            global::System.Func<byte[]?, TResult>? filterVariant16 = null,
-            global::System.Func<byte[]?, TResult>? filterVariant17 = null,
-            global::System.Func<byte[]?, TResult>? filterVariant18 = null,
-            global::System.Func<byte[]?, TResult>? filterVariant19 = null,
-            global::System.Func<byte[]?, TResult>? filterVariant20 = null,
-            global::System.Func<byte[]?, TResult>? filterVariant21 = null,
-            global::System.Func<byte[]?, TResult>? filterVariant22 = null,
-            global::System.Func<byte[]?, TResult>? filterVariant23 = null,
-            global::System.Func<byte[]?, TResult>? filterVariant24 = null,
-            global::System.Func<byte[]?, TResult>? filterVariant25 = null,
-            global::System.Func<byte[]?, TResult>? filterVariant26 = null,
-            global::System.Func<byte[]?, TResult>? filterVariant27 = null,
-            global::System.Func<byte[]?, TResult>? filterVariant28 = null,
-            global::System.Func<byte[]?, TResult>? filterVariant29 = null,
-            global::System.Func<byte[]?, TResult>? filterVariant30 = null,
-            global::System.Func<byte[]?, TResult>? filterVariant31 = null,
-            global::System.Func<byte[]?, TResult>? filterVariant32 = null,
-            global::System.Func<byte[]?, TResult>? filterVariant33 = null,
-            global::System.Func<byte[]?, TResult>? filterVariant34 = null,
+            global::System.Func<byte[], TResult>? filterVariant1 = null,
+            global::System.Func<byte[], TResult>? filterVariant2 = null,
+            global::System.Func<byte[], TResult>? filterVariant3 = null,
+            global::System.Func<byte[], TResult>? filterVariant4 = null,
+            global::System.Func<byte[], TResult>? filterVariant5 = null,
+            global::System.Func<byte[], TResult>? filterVariant6 = null,
+            global::System.Func<byte[], TResult>? filterVariant7 = null,
+            global::System.Func<byte[], TResult>? filterVariant8 = null,
+            global::System.Func<byte[], TResult>? filterVariant9 = null,
+            global::System.Func<byte[], TResult>? filterVariant10 = null,
+            global::System.Func<byte[], TResult>? filterVariant11 = null,
+            global::System.Func<byte[], TResult>? filterVariant12 = null,
+            global::System.Func<byte[], TResult>? filterVariant13 = null,
+            global::System.Func<byte[], TResult>? filterVariant14 = null,
+            global::System.Func<byte[], TResult>? filterVariant15 = null,
+            global::System.Func<byte[], TResult>? filterVariant16 = null,
+            global::System.Func<byte[], TResult>? filterVariant17 = null,
+            global::System.Func<byte[], TResult>? filterVariant18 = null,
+            global::System.Func<byte[], TResult>? filterVariant19 = null,
+            global::System.Func<byte[], TResult>? filterVariant20 = null,
+            global::System.Func<byte[], TResult>? filterVariant21 = null,
+            global::System.Func<byte[], TResult>? filterVariant22 = null,
+            global::System.Func<byte[], TResult>? filterVariant23 = null,
+            global::System.Func<byte[], TResult>? filterVariant24 = null,
+            global::System.Func<byte[], TResult>? filterVariant25 = null,
+            global::System.Func<byte[], TResult>? filterVariant26 = null,
+            global::System.Func<byte[], TResult>? filterVariant27 = null,
+            global::System.Func<byte[], TResult>? filterVariant28 = null,
+            global::System.Func<byte[], TResult>? filterVariant29 = null,
+            global::System.Func<byte[], TResult>? filterVariant30 = null,
+            global::System.Func<byte[], TResult>? filterVariant31 = null,
+            global::System.Func<byte[], TResult>? filterVariant32 = null,
+            global::System.Func<byte[], TResult>? filterVariant33 = null,
+            global::System.Func<byte[], TResult>? filterVariant34 = null,
             bool validate = true)
         {
             if (validate)
@@ -958,40 +1400,256 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<byte[]?>? filterVariant1 = null,
-            global::System.Action<byte[]?>? filterVariant2 = null,
-            global::System.Action<byte[]?>? filterVariant3 = null,
-            global::System.Action<byte[]?>? filterVariant4 = null,
-            global::System.Action<byte[]?>? filterVariant5 = null,
-            global::System.Action<byte[]?>? filterVariant6 = null,
-            global::System.Action<byte[]?>? filterVariant7 = null,
-            global::System.Action<byte[]?>? filterVariant8 = null,
-            global::System.Action<byte[]?>? filterVariant9 = null,
-            global::System.Action<byte[]?>? filterVariant10 = null,
-            global::System.Action<byte[]?>? filterVariant11 = null,
-            global::System.Action<byte[]?>? filterVariant12 = null,
-            global::System.Action<byte[]?>? filterVariant13 = null,
-            global::System.Action<byte[]?>? filterVariant14 = null,
-            global::System.Action<byte[]?>? filterVariant15 = null,
-            global::System.Action<byte[]?>? filterVariant16 = null,
-            global::System.Action<byte[]?>? filterVariant17 = null,
-            global::System.Action<byte[]?>? filterVariant18 = null,
-            global::System.Action<byte[]?>? filterVariant19 = null,
-            global::System.Action<byte[]?>? filterVariant20 = null,
-            global::System.Action<byte[]?>? filterVariant21 = null,
-            global::System.Action<byte[]?>? filterVariant22 = null,
-            global::System.Action<byte[]?>? filterVariant23 = null,
-            global::System.Action<byte[]?>? filterVariant24 = null,
-            global::System.Action<byte[]?>? filterVariant25 = null,
-            global::System.Action<byte[]?>? filterVariant26 = null,
-            global::System.Action<byte[]?>? filterVariant27 = null,
-            global::System.Action<byte[]?>? filterVariant28 = null,
-            global::System.Action<byte[]?>? filterVariant29 = null,
-            global::System.Action<byte[]?>? filterVariant30 = null,
-            global::System.Action<byte[]?>? filterVariant31 = null,
-            global::System.Action<byte[]?>? filterVariant32 = null,
-            global::System.Action<byte[]?>? filterVariant33 = null,
-            global::System.Action<byte[]?>? filterVariant34 = null,
+            global::System.Action<byte[]>? filterVariant1 = null,
+
+            global::System.Action<byte[]>? filterVariant2 = null,
+
+            global::System.Action<byte[]>? filterVariant3 = null,
+
+            global::System.Action<byte[]>? filterVariant4 = null,
+
+            global::System.Action<byte[]>? filterVariant5 = null,
+
+            global::System.Action<byte[]>? filterVariant6 = null,
+
+            global::System.Action<byte[]>? filterVariant7 = null,
+
+            global::System.Action<byte[]>? filterVariant8 = null,
+
+            global::System.Action<byte[]>? filterVariant9 = null,
+
+            global::System.Action<byte[]>? filterVariant10 = null,
+
+            global::System.Action<byte[]>? filterVariant11 = null,
+
+            global::System.Action<byte[]>? filterVariant12 = null,
+
+            global::System.Action<byte[]>? filterVariant13 = null,
+
+            global::System.Action<byte[]>? filterVariant14 = null,
+
+            global::System.Action<byte[]>? filterVariant15 = null,
+
+            global::System.Action<byte[]>? filterVariant16 = null,
+
+            global::System.Action<byte[]>? filterVariant17 = null,
+
+            global::System.Action<byte[]>? filterVariant18 = null,
+
+            global::System.Action<byte[]>? filterVariant19 = null,
+
+            global::System.Action<byte[]>? filterVariant20 = null,
+
+            global::System.Action<byte[]>? filterVariant21 = null,
+
+            global::System.Action<byte[]>? filterVariant22 = null,
+
+            global::System.Action<byte[]>? filterVariant23 = null,
+
+            global::System.Action<byte[]>? filterVariant24 = null,
+
+            global::System.Action<byte[]>? filterVariant25 = null,
+
+            global::System.Action<byte[]>? filterVariant26 = null,
+
+            global::System.Action<byte[]>? filterVariant27 = null,
+
+            global::System.Action<byte[]>? filterVariant28 = null,
+
+            global::System.Action<byte[]>? filterVariant29 = null,
+
+            global::System.Action<byte[]>? filterVariant30 = null,
+
+            global::System.Action<byte[]>? filterVariant31 = null,
+
+            global::System.Action<byte[]>? filterVariant32 = null,
+
+            global::System.Action<byte[]>? filterVariant33 = null,
+
+            global::System.Action<byte[]>? filterVariant34 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsFilterVariant1)
+            {
+                filterVariant1?.Invoke(FilterVariant1!);
+            }
+            else if (IsFilterVariant2)
+            {
+                filterVariant2?.Invoke(FilterVariant2!);
+            }
+            else if (IsFilterVariant3)
+            {
+                filterVariant3?.Invoke(FilterVariant3!);
+            }
+            else if (IsFilterVariant4)
+            {
+                filterVariant4?.Invoke(FilterVariant4!);
+            }
+            else if (IsFilterVariant5)
+            {
+                filterVariant5?.Invoke(FilterVariant5!);
+            }
+            else if (IsFilterVariant6)
+            {
+                filterVariant6?.Invoke(FilterVariant6!);
+            }
+            else if (IsFilterVariant7)
+            {
+                filterVariant7?.Invoke(FilterVariant7!);
+            }
+            else if (IsFilterVariant8)
+            {
+                filterVariant8?.Invoke(FilterVariant8!);
+            }
+            else if (IsFilterVariant9)
+            {
+                filterVariant9?.Invoke(FilterVariant9!);
+            }
+            else if (IsFilterVariant10)
+            {
+                filterVariant10?.Invoke(FilterVariant10!);
+            }
+            else if (IsFilterVariant11)
+            {
+                filterVariant11?.Invoke(FilterVariant11!);
+            }
+            else if (IsFilterVariant12)
+            {
+                filterVariant12?.Invoke(FilterVariant12!);
+            }
+            else if (IsFilterVariant13)
+            {
+                filterVariant13?.Invoke(FilterVariant13!);
+            }
+            else if (IsFilterVariant14)
+            {
+                filterVariant14?.Invoke(FilterVariant14!);
+            }
+            else if (IsFilterVariant15)
+            {
+                filterVariant15?.Invoke(FilterVariant15!);
+            }
+            else if (IsFilterVariant16)
+            {
+                filterVariant16?.Invoke(FilterVariant16!);
+            }
+            else if (IsFilterVariant17)
+            {
+                filterVariant17?.Invoke(FilterVariant17!);
+            }
+            else if (IsFilterVariant18)
+            {
+                filterVariant18?.Invoke(FilterVariant18!);
+            }
+            else if (IsFilterVariant19)
+            {
+                filterVariant19?.Invoke(FilterVariant19!);
+            }
+            else if (IsFilterVariant20)
+            {
+                filterVariant20?.Invoke(FilterVariant20!);
+            }
+            else if (IsFilterVariant21)
+            {
+                filterVariant21?.Invoke(FilterVariant21!);
+            }
+            else if (IsFilterVariant22)
+            {
+                filterVariant22?.Invoke(FilterVariant22!);
+            }
+            else if (IsFilterVariant23)
+            {
+                filterVariant23?.Invoke(FilterVariant23!);
+            }
+            else if (IsFilterVariant24)
+            {
+                filterVariant24?.Invoke(FilterVariant24!);
+            }
+            else if (IsFilterVariant25)
+            {
+                filterVariant25?.Invoke(FilterVariant25!);
+            }
+            else if (IsFilterVariant26)
+            {
+                filterVariant26?.Invoke(FilterVariant26!);
+            }
+            else if (IsFilterVariant27)
+            {
+                filterVariant27?.Invoke(FilterVariant27!);
+            }
+            else if (IsFilterVariant28)
+            {
+                filterVariant28?.Invoke(FilterVariant28!);
+            }
+            else if (IsFilterVariant29)
+            {
+                filterVariant29?.Invoke(FilterVariant29!);
+            }
+            else if (IsFilterVariant30)
+            {
+                filterVariant30?.Invoke(FilterVariant30!);
+            }
+            else if (IsFilterVariant31)
+            {
+                filterVariant31?.Invoke(FilterVariant31!);
+            }
+            else if (IsFilterVariant32)
+            {
+                filterVariant32?.Invoke(FilterVariant32!);
+            }
+            else if (IsFilterVariant33)
+            {
+                filterVariant33?.Invoke(FilterVariant33!);
+            }
+            else if (IsFilterVariant34)
+            {
+                filterVariant34?.Invoke(FilterVariant34!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<byte[]>? filterVariant1 = null,
+            global::System.Action<byte[]>? filterVariant2 = null,
+            global::System.Action<byte[]>? filterVariant3 = null,
+            global::System.Action<byte[]>? filterVariant4 = null,
+            global::System.Action<byte[]>? filterVariant5 = null,
+            global::System.Action<byte[]>? filterVariant6 = null,
+            global::System.Action<byte[]>? filterVariant7 = null,
+            global::System.Action<byte[]>? filterVariant8 = null,
+            global::System.Action<byte[]>? filterVariant9 = null,
+            global::System.Action<byte[]>? filterVariant10 = null,
+            global::System.Action<byte[]>? filterVariant11 = null,
+            global::System.Action<byte[]>? filterVariant12 = null,
+            global::System.Action<byte[]>? filterVariant13 = null,
+            global::System.Action<byte[]>? filterVariant14 = null,
+            global::System.Action<byte[]>? filterVariant15 = null,
+            global::System.Action<byte[]>? filterVariant16 = null,
+            global::System.Action<byte[]>? filterVariant17 = null,
+            global::System.Action<byte[]>? filterVariant18 = null,
+            global::System.Action<byte[]>? filterVariant19 = null,
+            global::System.Action<byte[]>? filterVariant20 = null,
+            global::System.Action<byte[]>? filterVariant21 = null,
+            global::System.Action<byte[]>? filterVariant22 = null,
+            global::System.Action<byte[]>? filterVariant23 = null,
+            global::System.Action<byte[]>? filterVariant24 = null,
+            global::System.Action<byte[]>? filterVariant25 = null,
+            global::System.Action<byte[]>? filterVariant26 = null,
+            global::System.Action<byte[]>? filterVariant27 = null,
+            global::System.Action<byte[]>? filterVariant28 = null,
+            global::System.Action<byte[]>? filterVariant29 = null,
+            global::System.Action<byte[]>? filterVariant30 = null,
+            global::System.Action<byte[]>? filterVariant31 = null,
+            global::System.Action<byte[]>? filterVariant32 = null,
+            global::System.Action<byte[]>? filterVariant33 = null,
+            global::System.Action<byte[]>? filterVariant34 = null,
             bool validate = true)
         {
             if (validate)

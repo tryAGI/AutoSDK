@@ -23,5 +23,23 @@ namespace G
             int? offset = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Get Shared Tokens<br/>
+        /// List all shared entities and their tokens by the workspace.
+        /// </summary>
+        /// <param name="limit">
+        /// Default Value: 50
+        /// </param>
+        /// <param name="offset">
+        /// Default Value: 0
+        /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.TenantShareTokensResponse>> GetSharedTokensAsResponseAsync(
+            int? limit = default,
+            int? offset = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

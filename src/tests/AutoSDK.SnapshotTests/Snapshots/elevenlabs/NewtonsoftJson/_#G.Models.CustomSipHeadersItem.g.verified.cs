@@ -33,6 +33,19 @@ namespace G
         public bool IsDynamic1 => Dynamic1 != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickDynamic1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CustomSIPHeader? value)
+        {
+            value = Dynamic1;
+            return IsDynamic1;
+        }
+
+        /// <summary>
         /// Custom SIP header for phone transfers with a dynamic variable reference.<br/>
         /// The value is a variable name that will be resolved at runtime.<br/>
         /// Value is not validated here since it will be substituted with actual value later.
@@ -50,6 +63,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Dynamic2))]
 #endif
         public bool IsDynamic2 => Dynamic2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickDynamic2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CustomSIPHeaderWithDynamicVariable? value)
+        {
+            value = Dynamic2;
+            return IsDynamic2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -129,8 +155,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.CustomSIPHeader?, TResult>? dynamic1 = null,
-            global::System.Func<global::G.CustomSIPHeaderWithDynamicVariable?, TResult>? dynamic2 = null,
+            global::System.Func<global::G.CustomSIPHeader, TResult>? dynamic1 = null,
+            global::System.Func<global::G.CustomSIPHeaderWithDynamicVariable, TResult>? dynamic2 = null,
             bool validate = true)
         {
             if (validate)
@@ -154,8 +180,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.CustomSIPHeader?>? dynamic1 = null,
-            global::System.Action<global::G.CustomSIPHeaderWithDynamicVariable?>? dynamic2 = null,
+            global::System.Action<global::G.CustomSIPHeader>? dynamic1 = null,
+
+            global::System.Action<global::G.CustomSIPHeaderWithDynamicVariable>? dynamic2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsDynamic1)
+            {
+                dynamic1?.Invoke(Dynamic1!);
+            }
+            else if (IsDynamic2)
+            {
+                dynamic2?.Invoke(Dynamic2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.CustomSIPHeader>? dynamic1 = null,
+            global::System.Action<global::G.CustomSIPHeaderWithDynamicVariable>? dynamic2 = null,
             bool validate = true)
         {
             if (validate)

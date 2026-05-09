@@ -18,5 +18,18 @@ namespace G
             string documentsId,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Gets information about a specific `Document`.
+        /// </summary>
+        /// <param name="fileSearchStoresId"></param>
+        /// <param name="documentsId"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.Document>> FileSearchStoresDocumentsGetAsResponseAsync(
+            string fileSearchStoresId,
+            string documentsId,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

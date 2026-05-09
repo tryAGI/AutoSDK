@@ -23,6 +23,20 @@ namespace G
         /// Create a clip
         /// </summary>
         /// <param name="xApiKeyExternal"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.CreateClipResponse2>> CreateClipAsResponseAsync(
+
+            global::G.CreateClipRequest2 request,
+            string? xApiKeyExternal = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create a clip
+        /// </summary>
+        /// <param name="xApiKeyExternal"></param>
         /// <param name="presenterId">
         /// a selection from the list or provided driver ids.<br/>
         /// Default Value: jack-Pt27VkP3hW<br/>

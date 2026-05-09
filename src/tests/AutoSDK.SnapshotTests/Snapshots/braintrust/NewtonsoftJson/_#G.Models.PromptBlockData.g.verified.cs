@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickChat(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.PromptBlockDataChat? value)
+        {
+            value = Chat;
+            return IsChat;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.PromptBlockDataCompletion? Completion { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Completion))]
 #endif
         public bool IsCompletion => Completion != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickCompletion(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.PromptBlockDataCompletion? value)
+        {
+            value = Completion;
+            return IsCompletion;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -119,8 +145,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.PromptBlockDataChat?, TResult>? chat = null,
-            global::System.Func<global::G.PromptBlockDataCompletion?, TResult>? completion = null,
+            global::System.Func<global::G.PromptBlockDataChat, TResult>? chat = null,
+            global::System.Func<global::G.PromptBlockDataCompletion, TResult>? completion = null,
             bool validate = true)
         {
             if (validate)
@@ -144,8 +170,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.PromptBlockDataChat?>? chat = null,
-            global::System.Action<global::G.PromptBlockDataCompletion?>? completion = null,
+            global::System.Action<global::G.PromptBlockDataChat>? chat = null,
+
+            global::System.Action<global::G.PromptBlockDataCompletion>? completion = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsChat)
+            {
+                chat?.Invoke(Chat!);
+            }
+            else if (IsCompletion)
+            {
+                completion?.Invoke(Completion!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.PromptBlockDataChat>? chat = null,
+            global::System.Action<global::G.PromptBlockDataCompletion>? completion = null,
             bool validate = true)
         {
             if (validate)

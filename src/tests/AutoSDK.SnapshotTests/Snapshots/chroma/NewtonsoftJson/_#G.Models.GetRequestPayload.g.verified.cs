@@ -31,6 +31,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickRawWhereFields(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.RawWhereFields? value)
+        {
+            value = RawWhereFields;
+            return IsRawWhereFields;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.GetRequestPayloadVariant2? GetRequestPayloadVariant2 { get; init; }
 #else
@@ -44,6 +57,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(GetRequestPayloadVariant2))]
 #endif
         public bool IsGetRequestPayloadVariant2 => GetRequestPayloadVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickGetRequestPayloadVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.GetRequestPayloadVariant2? value)
+        {
+            value = GetRequestPayloadVariant2;
+            return IsGetRequestPayloadVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -120,8 +146,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.RawWhereFields?, TResult>? rawWhereFields = null,
-            global::System.Func<global::G.GetRequestPayloadVariant2?, TResult>? getRequestPayloadVariant2 = null,
+            global::System.Func<global::G.RawWhereFields, TResult>? rawWhereFields = null,
+            global::System.Func<global::G.GetRequestPayloadVariant2, TResult>? getRequestPayloadVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -145,8 +171,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.RawWhereFields?>? rawWhereFields = null,
-            global::System.Action<global::G.GetRequestPayloadVariant2?>? getRequestPayloadVariant2 = null,
+            global::System.Action<global::G.RawWhereFields>? rawWhereFields = null,
+
+            global::System.Action<global::G.GetRequestPayloadVariant2>? getRequestPayloadVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsRawWhereFields)
+            {
+                rawWhereFields?.Invoke(RawWhereFields!);
+            }
+            else if (IsGetRequestPayloadVariant2)
+            {
+                getRequestPayloadVariant2?.Invoke(GetRequestPayloadVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.RawWhereFields>? rawWhereFields = null,
+            global::System.Action<global::G.GetRequestPayloadVariant2>? getRequestPayloadVariant2 = null,
             bool validate = true)
         {
             if (validate)

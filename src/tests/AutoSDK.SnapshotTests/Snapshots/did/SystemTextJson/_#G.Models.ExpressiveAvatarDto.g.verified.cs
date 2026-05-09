@@ -28,6 +28,19 @@ namespace G
         public bool IsExpressiveAvatarDtoVariant1 => ExpressiveAvatarDtoVariant1 != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickExpressiveAvatarDtoVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ExpressiveAvatarDtoVariant1? value)
+        {
+            value = ExpressiveAvatarDtoVariant1;
+            return IsExpressiveAvatarDtoVariant1;
+        }
+
+        /// <summary>
         /// Make all properties in T optional
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ExpressiveAvatarDtoVariant2))]
 #endif
         public bool IsExpressiveAvatarDtoVariant2 => ExpressiveAvatarDtoVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickExpressiveAvatarDtoVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out object? value)
+        {
+            value = ExpressiveAvatarDtoVariant2;
+            return IsExpressiveAvatarDtoVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -101,8 +127,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.ExpressiveAvatarDtoVariant1?, TResult>? expressiveAvatarDtoVariant1 = null,
-            global::System.Func<object?, TResult>? expressiveAvatarDtoVariant2 = null,
+            global::System.Func<global::G.ExpressiveAvatarDtoVariant1, TResult>? expressiveAvatarDtoVariant1 = null,
+            global::System.Func<object, TResult>? expressiveAvatarDtoVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -126,8 +152,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.ExpressiveAvatarDtoVariant1?>? expressiveAvatarDtoVariant1 = null,
-            global::System.Action<object?>? expressiveAvatarDtoVariant2 = null,
+            global::System.Action<global::G.ExpressiveAvatarDtoVariant1>? expressiveAvatarDtoVariant1 = null,
+
+            global::System.Action<object>? expressiveAvatarDtoVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsExpressiveAvatarDtoVariant1)
+            {
+                expressiveAvatarDtoVariant1?.Invoke(ExpressiveAvatarDtoVariant1!);
+            }
+            else if (IsExpressiveAvatarDtoVariant2)
+            {
+                expressiveAvatarDtoVariant2?.Invoke(ExpressiveAvatarDtoVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.ExpressiveAvatarDtoVariant1>? expressiveAvatarDtoVariant1 = null,
+            global::System.Action<object>? expressiveAvatarDtoVariant2 = null,
             bool validate = true)
         {
             if (validate)

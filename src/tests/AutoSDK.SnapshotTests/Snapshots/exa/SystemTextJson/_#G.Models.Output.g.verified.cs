@@ -13,6 +13,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public string? OutputType { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ResearchEventDtoClassVariant1Variant2OutputVariant1? Completed { get; init; }
 #else
@@ -30,6 +35,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickCompleted(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ResearchEventDtoClassVariant1Variant2OutputVariant1? value)
+        {
+            value = Completed;
+            return IsCompleted;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ResearchEventDtoClassVariant1Variant2OutputVariant2? Failed { get; init; }
 #else
@@ -43,6 +61,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Failed))]
 #endif
         public bool IsFailed => Failed != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFailed(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ResearchEventDtoClassVariant1Variant2OutputVariant2? value)
+        {
+            value = Failed;
+            return IsFailed;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -83,10 +114,13 @@ namespace G
         /// 
         /// </summary>
         public Output(
+            string? outputType,
             global::G.ResearchEventDtoClassVariant1Variant2OutputVariant1? completed,
             global::G.ResearchEventDtoClassVariant1Variant2OutputVariant2? failed
             )
         {
+            OutputType = outputType;
+
             Completed = completed;
             Failed = failed;
         }
@@ -119,8 +153,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.ResearchEventDtoClassVariant1Variant2OutputVariant1?, TResult>? completed = null,
-            global::System.Func<global::G.ResearchEventDtoClassVariant1Variant2OutputVariant2?, TResult>? failed = null,
+            global::System.Func<global::G.ResearchEventDtoClassVariant1Variant2OutputVariant1, TResult>? completed = null,
+            global::System.Func<global::G.ResearchEventDtoClassVariant1Variant2OutputVariant2, TResult>? failed = null,
             bool validate = true)
         {
             if (validate)
@@ -144,8 +178,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.ResearchEventDtoClassVariant1Variant2OutputVariant1?>? completed = null,
-            global::System.Action<global::G.ResearchEventDtoClassVariant1Variant2OutputVariant2?>? failed = null,
+            global::System.Action<global::G.ResearchEventDtoClassVariant1Variant2OutputVariant1>? completed = null,
+
+            global::System.Action<global::G.ResearchEventDtoClassVariant1Variant2OutputVariant2>? failed = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsCompleted)
+            {
+                completed?.Invoke(Completed!);
+            }
+            else if (IsFailed)
+            {
+                failed?.Invoke(Failed!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.ResearchEventDtoClassVariant1Variant2OutputVariant1>? completed = null,
+            global::System.Action<global::G.ResearchEventDtoClassVariant1Variant2OutputVariant2>? failed = null,
             bool validate = true)
         {
             if (validate)

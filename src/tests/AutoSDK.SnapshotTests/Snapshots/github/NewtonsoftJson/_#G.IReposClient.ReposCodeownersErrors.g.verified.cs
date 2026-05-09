@@ -24,5 +24,24 @@ namespace G
             string? @ref = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// List CODEOWNERS errors<br/>
+        /// List any syntax errors that are detected in the CODEOWNERS<br/>
+        /// file.<br/>
+        /// For more information about the correct CODEOWNERS syntax,<br/>
+        /// see "[About code owners](https://docs.github.com/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners)."
+        /// </summary>
+        /// <param name="owner"></param>
+        /// <param name="repo"></param>
+        /// <param name="ref"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.CodeownersErrors>> ReposCodeownersErrorsAsResponseAsync(
+            string owner,
+            string repo,
+            string? @ref = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

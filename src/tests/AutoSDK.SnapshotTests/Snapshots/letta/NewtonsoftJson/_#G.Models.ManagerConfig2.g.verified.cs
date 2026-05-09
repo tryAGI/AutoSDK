@@ -35,6 +35,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickRoundRobin(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.RoundRobinManager? value)
+        {
+            value = RoundRobin;
+            return IsRoundRobin;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.SupervisorManagerSchema? Supervisor { get; init; }
 #else
@@ -48,6 +61,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Supervisor))]
 #endif
         public bool IsSupervisor => Supervisor != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSupervisor(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.SupervisorManagerSchema? value)
+        {
+            value = Supervisor;
+            return IsSupervisor;
+        }
 
         /// <summary>
         /// 
@@ -69,6 +95,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickDynamic(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.DynamicManagerSchema? value)
+        {
+            value = Dynamic;
+            return IsDynamic;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.SleeptimeManagerSchema? Sleeptime { get; init; }
 #else
@@ -86,6 +125,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickSleeptime(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.SleeptimeManagerSchema? value)
+        {
+            value = Sleeptime;
+            return IsSleeptime;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.VoiceSleeptimeManagerSchema? VoiceSleeptime { get; init; }
 #else
@@ -99,6 +151,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(VoiceSleeptime))]
 #endif
         public bool IsVoiceSleeptime => VoiceSleeptime != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickVoiceSleeptime(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.VoiceSleeptimeManagerSchema? value)
+        {
+            value = VoiceSleeptime;
+            return IsVoiceSleeptime;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -244,11 +309,11 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.RoundRobinManager?, TResult>? roundRobin = null,
-            global::System.Func<global::G.SupervisorManagerSchema?, TResult>? supervisor = null,
-            global::System.Func<global::G.DynamicManagerSchema?, TResult>? dynamic = null,
-            global::System.Func<global::G.SleeptimeManagerSchema?, TResult>? sleeptime = null,
-            global::System.Func<global::G.VoiceSleeptimeManagerSchema?, TResult>? voiceSleeptime = null,
+            global::System.Func<global::G.RoundRobinManager, TResult>? roundRobin = null,
+            global::System.Func<global::G.SupervisorManagerSchema, TResult>? supervisor = null,
+            global::System.Func<global::G.DynamicManagerSchema, TResult>? dynamic = null,
+            global::System.Func<global::G.SleeptimeManagerSchema, TResult>? sleeptime = null,
+            global::System.Func<global::G.VoiceSleeptimeManagerSchema, TResult>? voiceSleeptime = null,
             bool validate = true)
         {
             if (validate)
@@ -284,11 +349,53 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.RoundRobinManager?>? roundRobin = null,
-            global::System.Action<global::G.SupervisorManagerSchema?>? supervisor = null,
-            global::System.Action<global::G.DynamicManagerSchema?>? dynamic = null,
-            global::System.Action<global::G.SleeptimeManagerSchema?>? sleeptime = null,
-            global::System.Action<global::G.VoiceSleeptimeManagerSchema?>? voiceSleeptime = null,
+            global::System.Action<global::G.RoundRobinManager>? roundRobin = null,
+
+            global::System.Action<global::G.SupervisorManagerSchema>? supervisor = null,
+
+            global::System.Action<global::G.DynamicManagerSchema>? dynamic = null,
+
+            global::System.Action<global::G.SleeptimeManagerSchema>? sleeptime = null,
+
+            global::System.Action<global::G.VoiceSleeptimeManagerSchema>? voiceSleeptime = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsRoundRobin)
+            {
+                roundRobin?.Invoke(RoundRobin!);
+            }
+            else if (IsSupervisor)
+            {
+                supervisor?.Invoke(Supervisor!);
+            }
+            else if (IsDynamic)
+            {
+                dynamic?.Invoke(Dynamic!);
+            }
+            else if (IsSleeptime)
+            {
+                sleeptime?.Invoke(Sleeptime!);
+            }
+            else if (IsVoiceSleeptime)
+            {
+                voiceSleeptime?.Invoke(VoiceSleeptime!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.RoundRobinManager>? roundRobin = null,
+            global::System.Action<global::G.SupervisorManagerSchema>? supervisor = null,
+            global::System.Action<global::G.DynamicManagerSchema>? dynamic = null,
+            global::System.Action<global::G.SleeptimeManagerSchema>? sleeptime = null,
+            global::System.Action<global::G.VoiceSleeptimeManagerSchema>? voiceSleeptime = null,
             bool validate = true)
         {
             if (validate)

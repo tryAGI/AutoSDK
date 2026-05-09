@@ -30,6 +30,23 @@ namespace G
         /// Returns:<br/>
         ///     EmbeddingCreateResponse: The response containing the embeddings.
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.EmbeddingCreateResponse>> CreateEmbeddingsAsResponseAsync(
+
+            global::G.EmbeddingCreateParams request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create embeddings for text and images<br/>
+        /// Create embeddings for text or images using the specified model, encoding format, and normalization.<br/>
+        /// Args:<br/>
+        ///     params: The parameters for creating embeddings.<br/>
+        /// Returns:<br/>
+        ///     EmbeddingCreateResponse: The response containing the embeddings.
+        /// </summary>
         /// <param name="model">
         /// The model to use for creating embeddings.
         /// </param>

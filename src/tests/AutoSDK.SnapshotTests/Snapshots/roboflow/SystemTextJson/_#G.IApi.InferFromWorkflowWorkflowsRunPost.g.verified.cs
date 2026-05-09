@@ -22,6 +22,19 @@ namespace G
         /// Endpoint to run workflow specification provided in payload<br/>
         /// Parses and executes workflow specification, injecting runtime parameters from request body.
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.WorkflowInferenceResponse>> InferFromWorkflowWorkflowsRunPostAsResponseAsync(
+
+            global::G.WorkflowSpecificationInferenceRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Endpoint to run workflow specification provided in payload<br/>
+        /// Parses and executes workflow specification, injecting runtime parameters from request body.
+        /// </summary>
         /// <param name="apiKey">
         /// Roboflow API Key that will be passed to the model during initialization for artifact retrieval
         /// </param>

@@ -11,6 +11,11 @@ namespace G
     public readonly partial struct RealtimeClientEvent : global::System.IEquatable<RealtimeClientEvent>
     {
         /// <summary>
+        /// 
+        /// </summary>
+        public string? Type { get; }
+
+        /// <summary>
         /// Add a new Item to the Conversation's context, including messages, function <br/>
         /// calls, and function call responses. This event can be used both to populate a <br/>
         /// "history" of the conversation and to add new items mid-stream, but has the <br/>
@@ -33,6 +38,19 @@ namespace G
         public bool IsConversationItemCreate => ConversationItemCreate != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickConversationItemCreate(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.RealtimeClientEventConversationItemCreate? value)
+        {
+            value = ConversationItemCreate;
+            return IsConversationItemCreate;
+        }
+
+        /// <summary>
         /// Send this event when you want to remove any item from the conversation <br/>
         /// history. The server will respond with a `conversation.item.deleted` event, <br/>
         /// unless the item does not exist in the conversation history, in which case the <br/>
@@ -53,6 +71,19 @@ namespace G
         public bool IsConversationItemDelete => ConversationItemDelete != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickConversationItemDelete(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.RealtimeClientEventConversationItemDelete? value)
+        {
+            value = ConversationItemDelete;
+            return IsConversationItemDelete;
+        }
+
+        /// <summary>
         /// Send this event when you want to retrieve the server's representation of a specific item in the conversation history. This is useful, for example, to inspect user audio after noise cancellation and VAD.<br/>
         /// The server will respond with a `conversation.item.retrieved` event, <br/>
         /// unless the item does not exist in the conversation history, in which case the <br/>
@@ -71,6 +102,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ConversationItemRetrieve))]
 #endif
         public bool IsConversationItemRetrieve => ConversationItemRetrieve != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickConversationItemRetrieve(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.RealtimeClientEventConversationItemRetrieve? value)
+        {
+            value = ConversationItemRetrieve;
+            return IsConversationItemRetrieve;
+        }
 
         /// <summary>
         /// Send this event to truncate a previous assistant message’s audio. The server <br/>
@@ -98,6 +142,19 @@ namespace G
         public bool IsConversationItemTruncate => ConversationItemTruncate != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickConversationItemTruncate(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.RealtimeClientEventConversationItemTruncate? value)
+        {
+            value = ConversationItemTruncate;
+            return IsConversationItemTruncate;
+        }
+
+        /// <summary>
         /// Send this event to append audio bytes to the input audio buffer. The audio <br/>
         /// buffer is temporary storage you can write to and later commit. In Server VAD <br/>
         /// mode, the audio buffer is used to detect speech and the server will decide <br/>
@@ -123,6 +180,19 @@ namespace G
         public bool IsInputAudioBufferAppend => InputAudioBufferAppend != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickInputAudioBufferAppend(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.RealtimeClientEventInputAudioBufferAppend? value)
+        {
+            value = InputAudioBufferAppend;
+            return IsInputAudioBufferAppend;
+        }
+
+        /// <summary>
         /// Send this event to clear the audio bytes in the buffer. The server will <br/>
         /// respond with an `input_audio_buffer.cleared` event.
         /// </summary>
@@ -139,6 +209,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputAudioBufferClear))]
 #endif
         public bool IsInputAudioBufferClear => InputAudioBufferClear != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickInputAudioBufferClear(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.RealtimeClientEventInputAudioBufferClear? value)
+        {
+            value = InputAudioBufferClear;
+            return IsInputAudioBufferClear;
+        }
 
         /// <summary>
         /// **WebRTC Only:** Emit to cut off the current audio response. This will trigger the server to<br/>
@@ -160,6 +243,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OutputAudioBufferClear))]
 #endif
         public bool IsOutputAudioBufferClear => OutputAudioBufferClear != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickOutputAudioBufferClear(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.RealtimeClientEventOutputAudioBufferClear? value)
+        {
+            value = OutputAudioBufferClear;
+            return IsOutputAudioBufferClear;
+        }
 
         /// <summary>
         /// Send this event to commit the user input audio buffer, which will create a <br/>
@@ -187,6 +283,19 @@ namespace G
         public bool IsInputAudioBufferCommit => InputAudioBufferCommit != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickInputAudioBufferCommit(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.RealtimeClientEventInputAudioBufferCommit? value)
+        {
+            value = InputAudioBufferCommit;
+            return IsInputAudioBufferCommit;
+        }
+
+        /// <summary>
         /// Send this event to cancel an in-progress response. The server will respond <br/>
         /// with a `response.cancelled` event or an error if there is no response to <br/>
         /// cancel.
@@ -204,6 +313,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseCancel))]
 #endif
         public bool IsResponseCancel => ResponseCancel != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResponseCancel(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.RealtimeClientEventResponseCancel? value)
+        {
+            value = ResponseCancel;
+            return IsResponseCancel;
+        }
 
         /// <summary>
         /// This event instructs the server to create a Response, which means triggering <br/>
@@ -234,6 +356,19 @@ namespace G
         public bool IsResponseCreate => ResponseCreate != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResponseCreate(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.RealtimeClientEventResponseCreate? value)
+        {
+            value = ResponseCreate;
+            return IsResponseCreate;
+        }
+
+        /// <summary>
         /// Send this event to update the session’s default configuration.<br/>
         /// The client may send this event at any time to update any field,<br/>
         /// except for `voice`. However, note that once a session has been<br/>
@@ -259,6 +394,19 @@ namespace G
         public bool IsSessionUpdate => SessionUpdate != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSessionUpdate(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.RealtimeClientEventSessionUpdate? value)
+        {
+            value = SessionUpdate;
+            return IsSessionUpdate;
+        }
+
+        /// <summary>
         /// Send this event to update a transcription session.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -274,6 +422,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TranscriptionSessionUpdate))]
 #endif
         public bool IsTranscriptionSessionUpdate => TranscriptionSessionUpdate != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickTranscriptionSessionUpdate(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.RealtimeClientEventTranscriptionSessionUpdate? value)
+        {
+            value = TranscriptionSessionUpdate;
+            return IsTranscriptionSessionUpdate;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -494,6 +655,7 @@ namespace G
         /// 
         /// </summary>
         public RealtimeClientEvent(
+            string? type,
             global::G.RealtimeClientEventConversationItemCreate? conversationItemCreate,
             global::G.RealtimeClientEventConversationItemDelete? conversationItemDelete,
             global::G.RealtimeClientEventConversationItemRetrieve? conversationItemRetrieve,
@@ -508,6 +670,8 @@ namespace G
             global::G.RealtimeClientEventTranscriptionSessionUpdate? transcriptionSessionUpdate
             )
         {
+            Type = type;
+
             ConversationItemCreate = conversationItemCreate;
             ConversationItemDelete = conversationItemDelete;
             ConversationItemRetrieve = conversationItemRetrieve;
@@ -570,18 +734,18 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.RealtimeClientEventConversationItemCreate?, TResult>? conversationItemCreate = null,
-            global::System.Func<global::G.RealtimeClientEventConversationItemDelete?, TResult>? conversationItemDelete = null,
-            global::System.Func<global::G.RealtimeClientEventConversationItemRetrieve?, TResult>? conversationItemRetrieve = null,
-            global::System.Func<global::G.RealtimeClientEventConversationItemTruncate?, TResult>? conversationItemTruncate = null,
-            global::System.Func<global::G.RealtimeClientEventInputAudioBufferAppend?, TResult>? inputAudioBufferAppend = null,
-            global::System.Func<global::G.RealtimeClientEventInputAudioBufferClear?, TResult>? inputAudioBufferClear = null,
-            global::System.Func<global::G.RealtimeClientEventOutputAudioBufferClear?, TResult>? outputAudioBufferClear = null,
-            global::System.Func<global::G.RealtimeClientEventInputAudioBufferCommit?, TResult>? inputAudioBufferCommit = null,
-            global::System.Func<global::G.RealtimeClientEventResponseCancel?, TResult>? responseCancel = null,
-            global::System.Func<global::G.RealtimeClientEventResponseCreate?, TResult>? responseCreate = null,
-            global::System.Func<global::G.RealtimeClientEventSessionUpdate?, TResult>? sessionUpdate = null,
-            global::System.Func<global::G.RealtimeClientEventTranscriptionSessionUpdate?, TResult>? transcriptionSessionUpdate = null,
+            global::System.Func<global::G.RealtimeClientEventConversationItemCreate, TResult>? conversationItemCreate = null,
+            global::System.Func<global::G.RealtimeClientEventConversationItemDelete, TResult>? conversationItemDelete = null,
+            global::System.Func<global::G.RealtimeClientEventConversationItemRetrieve, TResult>? conversationItemRetrieve = null,
+            global::System.Func<global::G.RealtimeClientEventConversationItemTruncate, TResult>? conversationItemTruncate = null,
+            global::System.Func<global::G.RealtimeClientEventInputAudioBufferAppend, TResult>? inputAudioBufferAppend = null,
+            global::System.Func<global::G.RealtimeClientEventInputAudioBufferClear, TResult>? inputAudioBufferClear = null,
+            global::System.Func<global::G.RealtimeClientEventOutputAudioBufferClear, TResult>? outputAudioBufferClear = null,
+            global::System.Func<global::G.RealtimeClientEventInputAudioBufferCommit, TResult>? inputAudioBufferCommit = null,
+            global::System.Func<global::G.RealtimeClientEventResponseCancel, TResult>? responseCancel = null,
+            global::System.Func<global::G.RealtimeClientEventResponseCreate, TResult>? responseCreate = null,
+            global::System.Func<global::G.RealtimeClientEventSessionUpdate, TResult>? sessionUpdate = null,
+            global::System.Func<global::G.RealtimeClientEventTranscriptionSessionUpdate, TResult>? transcriptionSessionUpdate = null,
             bool validate = true)
         {
             if (validate)
@@ -645,18 +809,102 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.RealtimeClientEventConversationItemCreate?>? conversationItemCreate = null,
-            global::System.Action<global::G.RealtimeClientEventConversationItemDelete?>? conversationItemDelete = null,
-            global::System.Action<global::G.RealtimeClientEventConversationItemRetrieve?>? conversationItemRetrieve = null,
-            global::System.Action<global::G.RealtimeClientEventConversationItemTruncate?>? conversationItemTruncate = null,
-            global::System.Action<global::G.RealtimeClientEventInputAudioBufferAppend?>? inputAudioBufferAppend = null,
-            global::System.Action<global::G.RealtimeClientEventInputAudioBufferClear?>? inputAudioBufferClear = null,
-            global::System.Action<global::G.RealtimeClientEventOutputAudioBufferClear?>? outputAudioBufferClear = null,
-            global::System.Action<global::G.RealtimeClientEventInputAudioBufferCommit?>? inputAudioBufferCommit = null,
-            global::System.Action<global::G.RealtimeClientEventResponseCancel?>? responseCancel = null,
-            global::System.Action<global::G.RealtimeClientEventResponseCreate?>? responseCreate = null,
-            global::System.Action<global::G.RealtimeClientEventSessionUpdate?>? sessionUpdate = null,
-            global::System.Action<global::G.RealtimeClientEventTranscriptionSessionUpdate?>? transcriptionSessionUpdate = null,
+            global::System.Action<global::G.RealtimeClientEventConversationItemCreate>? conversationItemCreate = null,
+
+            global::System.Action<global::G.RealtimeClientEventConversationItemDelete>? conversationItemDelete = null,
+
+            global::System.Action<global::G.RealtimeClientEventConversationItemRetrieve>? conversationItemRetrieve = null,
+
+            global::System.Action<global::G.RealtimeClientEventConversationItemTruncate>? conversationItemTruncate = null,
+
+            global::System.Action<global::G.RealtimeClientEventInputAudioBufferAppend>? inputAudioBufferAppend = null,
+
+            global::System.Action<global::G.RealtimeClientEventInputAudioBufferClear>? inputAudioBufferClear = null,
+
+            global::System.Action<global::G.RealtimeClientEventOutputAudioBufferClear>? outputAudioBufferClear = null,
+
+            global::System.Action<global::G.RealtimeClientEventInputAudioBufferCommit>? inputAudioBufferCommit = null,
+
+            global::System.Action<global::G.RealtimeClientEventResponseCancel>? responseCancel = null,
+
+            global::System.Action<global::G.RealtimeClientEventResponseCreate>? responseCreate = null,
+
+            global::System.Action<global::G.RealtimeClientEventSessionUpdate>? sessionUpdate = null,
+
+            global::System.Action<global::G.RealtimeClientEventTranscriptionSessionUpdate>? transcriptionSessionUpdate = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsConversationItemCreate)
+            {
+                conversationItemCreate?.Invoke(ConversationItemCreate!);
+            }
+            else if (IsConversationItemDelete)
+            {
+                conversationItemDelete?.Invoke(ConversationItemDelete!);
+            }
+            else if (IsConversationItemRetrieve)
+            {
+                conversationItemRetrieve?.Invoke(ConversationItemRetrieve!);
+            }
+            else if (IsConversationItemTruncate)
+            {
+                conversationItemTruncate?.Invoke(ConversationItemTruncate!);
+            }
+            else if (IsInputAudioBufferAppend)
+            {
+                inputAudioBufferAppend?.Invoke(InputAudioBufferAppend!);
+            }
+            else if (IsInputAudioBufferClear)
+            {
+                inputAudioBufferClear?.Invoke(InputAudioBufferClear!);
+            }
+            else if (IsOutputAudioBufferClear)
+            {
+                outputAudioBufferClear?.Invoke(OutputAudioBufferClear!);
+            }
+            else if (IsInputAudioBufferCommit)
+            {
+                inputAudioBufferCommit?.Invoke(InputAudioBufferCommit!);
+            }
+            else if (IsResponseCancel)
+            {
+                responseCancel?.Invoke(ResponseCancel!);
+            }
+            else if (IsResponseCreate)
+            {
+                responseCreate?.Invoke(ResponseCreate!);
+            }
+            else if (IsSessionUpdate)
+            {
+                sessionUpdate?.Invoke(SessionUpdate!);
+            }
+            else if (IsTranscriptionSessionUpdate)
+            {
+                transcriptionSessionUpdate?.Invoke(TranscriptionSessionUpdate!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.RealtimeClientEventConversationItemCreate>? conversationItemCreate = null,
+            global::System.Action<global::G.RealtimeClientEventConversationItemDelete>? conversationItemDelete = null,
+            global::System.Action<global::G.RealtimeClientEventConversationItemRetrieve>? conversationItemRetrieve = null,
+            global::System.Action<global::G.RealtimeClientEventConversationItemTruncate>? conversationItemTruncate = null,
+            global::System.Action<global::G.RealtimeClientEventInputAudioBufferAppend>? inputAudioBufferAppend = null,
+            global::System.Action<global::G.RealtimeClientEventInputAudioBufferClear>? inputAudioBufferClear = null,
+            global::System.Action<global::G.RealtimeClientEventOutputAudioBufferClear>? outputAudioBufferClear = null,
+            global::System.Action<global::G.RealtimeClientEventInputAudioBufferCommit>? inputAudioBufferCommit = null,
+            global::System.Action<global::G.RealtimeClientEventResponseCancel>? responseCancel = null,
+            global::System.Action<global::G.RealtimeClientEventResponseCreate>? responseCreate = null,
+            global::System.Action<global::G.RealtimeClientEventSessionUpdate>? sessionUpdate = null,
+            global::System.Action<global::G.RealtimeClientEventTranscriptionSessionUpdate>? transcriptionSessionUpdate = null,
             bool validate = true)
         {
             if (validate)

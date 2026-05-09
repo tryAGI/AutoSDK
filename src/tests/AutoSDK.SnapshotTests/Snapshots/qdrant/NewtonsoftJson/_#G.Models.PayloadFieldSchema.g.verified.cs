@@ -28,6 +28,19 @@ namespace G
         public bool IsType => Type != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickType(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.PayloadSchemaType? value)
+        {
+            value = Type;
+            return IsType;
+        }
+
+        /// <summary>
         /// Payload type with parameters
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Params))]
 #endif
         public bool IsParams => Params != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickParams(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.PayloadSchemaParams? value)
+        {
+            value = Params;
+            return IsParams;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -144,6 +170,30 @@ namespace G
         /// 
         /// </summary>
         public void Match(
+            global::System.Action<global::G.PayloadSchemaType?>? type = null,
+
+            global::System.Action<global::G.PayloadSchemaParams?>? @params = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsType)
+            {
+                type?.Invoke(Type!);
+            }
+            else if (IsParams)
+            {
+                @params?.Invoke(Params!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
             global::System.Action<global::G.PayloadSchemaType?>? type = null,
             global::System.Action<global::G.PayloadSchemaParams?>? @params = null,
             bool validate = true)

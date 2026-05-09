@@ -20,5 +20,20 @@ namespace G
             string org,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Delete an organization<br/>
+        /// Deletes an organization and all its repositories.<br/>
+        /// The organization login will be unavailable for 90 days after deletion.<br/>
+        /// Please review the Terms of Service regarding account deletion before using this endpoint:<br/>
+        /// https://docs.github.com/site-policy/github-terms/github-terms-of-service
+        /// </summary>
+        /// <param name="org"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<string>> OrgsDeleteAsResponseAsync(
+            string org,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

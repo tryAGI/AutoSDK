@@ -42,6 +42,30 @@ namespace G
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>
         /// <param name="session"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.RetrieveResults>> RunSearchApiV1PipelinesPipelineIdRetrievePostAsResponseAsync(
+            global::System.Guid pipelineId,
+
+            global::G.RetrievalParams request,
+            global::System.Guid? projectId = default,
+            global::System.Guid? organizationId = default,
+            string? session = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Run Search<br/>
+        /// Run a retrieval query against a managed pipeline.<br/>
+        /// Searches the pipeline's vector store using the provided query<br/>
+        /// and retrieval parameters. Supports dense, sparse, and hybrid<br/>
+        /// search modes with configurable top-k and reranking.
+        /// </summary>
+        /// <param name="pipelineId"></param>
+        /// <param name="projectId"></param>
+        /// <param name="organizationId"></param>
+        /// <param name="session"></param>
         /// <param name="denseSimilarityTopK">
         /// Number of nodes for dense retrieval.<br/>
         /// Default Value: 30

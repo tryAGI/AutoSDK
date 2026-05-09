@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickResponseBase(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ResponseBase? value)
+        {
+            value = ResponseBase;
+            return IsResponseBase;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.EmbeddingResponseVariant2? EmbeddingResponseVariant2 { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(EmbeddingResponseVariant2))]
 #endif
         public bool IsEmbeddingResponseVariant2 => EmbeddingResponseVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickEmbeddingResponseVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.EmbeddingResponseVariant2? value)
+        {
+            value = EmbeddingResponseVariant2;
+            return IsEmbeddingResponseVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -119,8 +145,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.ResponseBase?, TResult>? responseBase = null,
-            global::System.Func<global::G.EmbeddingResponseVariant2?, TResult>? embeddingResponseVariant2 = null,
+            global::System.Func<global::G.ResponseBase, TResult>? responseBase = null,
+            global::System.Func<global::G.EmbeddingResponseVariant2, TResult>? embeddingResponseVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -144,8 +170,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.ResponseBase?>? responseBase = null,
-            global::System.Action<global::G.EmbeddingResponseVariant2?>? embeddingResponseVariant2 = null,
+            global::System.Action<global::G.ResponseBase>? responseBase = null,
+
+            global::System.Action<global::G.EmbeddingResponseVariant2>? embeddingResponseVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsResponseBase)
+            {
+                responseBase?.Invoke(ResponseBase!);
+            }
+            else if (IsEmbeddingResponseVariant2)
+            {
+                embeddingResponseVariant2?.Invoke(EmbeddingResponseVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.ResponseBase>? responseBase = null,
+            global::System.Action<global::G.EmbeddingResponseVariant2>? embeddingResponseVariant2 = null,
             bool validate = true)
         {
             if (validate)

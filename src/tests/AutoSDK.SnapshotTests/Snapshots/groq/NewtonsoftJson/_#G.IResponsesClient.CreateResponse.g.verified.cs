@@ -20,6 +20,18 @@ namespace G
         /// <summary>
         /// Creates a model response for the given input.
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.CreateResponseResponse>> CreateResponseAsResponseAsync(
+
+            global::G.CreateResponseRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Creates a model response for the given input.
+        /// </summary>
         /// <param name="model">
         /// ID of the model to use. For details on which models are compatible with the Responses API, see available [models](https://console.groq.com/docs/models)<br/>
         /// Example: llama-3.3-70b-versatile

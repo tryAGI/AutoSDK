@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickScoreModelGrader(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.GraderScoreModel? value)
+        {
+            value = ScoreModelGrader;
+            return IsScoreModelGrader;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.EvalGraderScoreModelVariant2? EvalGraderScoreModelVariant2 { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(EvalGraderScoreModelVariant2))]
 #endif
         public bool IsEvalGraderScoreModelVariant2 => EvalGraderScoreModelVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickEvalGraderScoreModelVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.EvalGraderScoreModelVariant2? value)
+        {
+            value = EvalGraderScoreModelVariant2;
+            return IsEvalGraderScoreModelVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -119,8 +145,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.GraderScoreModel?, TResult>? scoreModelGrader = null,
-            global::System.Func<global::G.EvalGraderScoreModelVariant2?, TResult>? evalGraderScoreModelVariant2 = null,
+            global::System.Func<global::G.GraderScoreModel, TResult>? scoreModelGrader = null,
+            global::System.Func<global::G.EvalGraderScoreModelVariant2, TResult>? evalGraderScoreModelVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -144,8 +170,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.GraderScoreModel?>? scoreModelGrader = null,
-            global::System.Action<global::G.EvalGraderScoreModelVariant2?>? evalGraderScoreModelVariant2 = null,
+            global::System.Action<global::G.GraderScoreModel>? scoreModelGrader = null,
+
+            global::System.Action<global::G.EvalGraderScoreModelVariant2>? evalGraderScoreModelVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsScoreModelGrader)
+            {
+                scoreModelGrader?.Invoke(ScoreModelGrader!);
+            }
+            else if (IsEvalGraderScoreModelVariant2)
+            {
+                evalGraderScoreModelVariant2?.Invoke(EvalGraderScoreModelVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.GraderScoreModel>? scoreModelGrader = null,
+            global::System.Action<global::G.EvalGraderScoreModelVariant2>? evalGraderScoreModelVariant2 = null,
             bool validate = true)
         {
             if (validate)

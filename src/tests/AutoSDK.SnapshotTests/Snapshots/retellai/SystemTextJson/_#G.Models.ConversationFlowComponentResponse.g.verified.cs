@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickCreateRequest(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateConversationFlowComponentRequest? value)
+        {
+            value = CreateRequest;
+            return IsCreateRequest;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ConversationFlowComponentResponseVariant2? ConversationFlowComponentResponseVariant2 { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ConversationFlowComponentResponseVariant2))]
 #endif
         public bool IsConversationFlowComponentResponseVariant2 => ConversationFlowComponentResponseVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickConversationFlowComponentResponseVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ConversationFlowComponentResponseVariant2? value)
+        {
+            value = ConversationFlowComponentResponseVariant2;
+            return IsConversationFlowComponentResponseVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -120,7 +146,7 @@ namespace G
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::G.CreateConversationFlowComponentRequest?, TResult>? createRequest = null,
-            global::System.Func<global::G.ConversationFlowComponentResponseVariant2?, TResult>? conversationFlowComponentResponseVariant2 = null,
+            global::System.Func<global::G.ConversationFlowComponentResponseVariant2, TResult>? conversationFlowComponentResponseVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -145,7 +171,31 @@ namespace G
         /// </summary>
         public void Match(
             global::System.Action<global::G.CreateConversationFlowComponentRequest?>? createRequest = null,
-            global::System.Action<global::G.ConversationFlowComponentResponseVariant2?>? conversationFlowComponentResponseVariant2 = null,
+
+            global::System.Action<global::G.ConversationFlowComponentResponseVariant2>? conversationFlowComponentResponseVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsCreateRequest)
+            {
+                createRequest?.Invoke(CreateRequest!);
+            }
+            else if (IsConversationFlowComponentResponseVariant2)
+            {
+                conversationFlowComponentResponseVariant2?.Invoke(ConversationFlowComponentResponseVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.CreateConversationFlowComponentRequest?>? createRequest = null,
+            global::System.Action<global::G.ConversationFlowComponentResponseVariant2>? conversationFlowComponentResponseVariant2 = null,
             bool validate = true)
         {
             if (validate)

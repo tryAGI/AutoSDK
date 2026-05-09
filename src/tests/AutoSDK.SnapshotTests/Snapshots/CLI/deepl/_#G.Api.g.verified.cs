@@ -22,7 +22,7 @@ namespace G
         public global::System.Net.Http.HttpClient HttpClient { get; }
 
         /// <inheritdoc/>
-        public System.Uri? BaseUri => HttpClient.BaseAddress;
+        public System.Uri? BaseUri => ResolveDisplayedBaseUri();
 
         /// <inheritdoc/>
         public global::System.Collections.Generic.List<global::G.EndPointAuthorization> Authorizations { get; }
@@ -35,6 +35,9 @@ namespace G
 
         /// <inheritdoc/>
         public global::G.AutoSDKClientOptions Options { get; }
+
+
+        internal global::G.AutoSDKServerConfiguration AutoSDKServerConfiguration { get; set; } = new global::G.AutoSDKServerConfiguration();
         /// <summary>
         /// 
         /// </summary>
@@ -426,10 +429,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public AdminApiClient AdminApi => new AdminApiClient(HttpClient, authorizations: Authorizations, options: Options)
+        public AdminApiClient AdminApi => new AdminApiClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
+            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
 
         /// <summary>
@@ -455,10 +459,11 @@ namespace G
         /// - [delete](https://www.deepl.com/docs-api/glossaries/delete-glossary) the existing glossary,<br/>
         /// - [create a new glossary](https://www.deepl.com/docs-api/glossaries/create-glossary) with the same name.
         /// </summary>
-        public ManageGlossariesClient ManageGlossaries => new ManageGlossariesClient(HttpClient, authorizations: Authorizations, options: Options)
+        public ManageGlossariesClient ManageGlossaries => new ManageGlossariesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
+            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
 
         /// <summary>
@@ -479,29 +484,32 @@ namespace G
         /// Glossaries created via the DeepL API are now unified with glossaries created via the DeepL website and DeepL apps.<br/>
         /// Please only use the v3 glossary API in conjunction with multilingual or edited glossaries from the website.
         /// </summary>
-        public ManageMultilingualGlossariesClient ManageMultilingualGlossaries => new ManageMultilingualGlossariesClient(HttpClient, authorizations: Authorizations, options: Options)
+        public ManageMultilingualGlossariesClient ManageMultilingualGlossaries => new ManageMultilingualGlossariesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
+            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
 
         /// <summary>
         /// Information about API usage and value ranges.
         /// </summary>
-        public MetaInformationClient MetaInformation => new MetaInformationClient(HttpClient, authorizations: Authorizations, options: Options)
+        public MetaInformationClient MetaInformation => new MetaInformationClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
+            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
 
         /// <summary>
         /// The `rephrase` endpoint  is used to make corrections and adjustments to texts based on style or tone.<br/>
         /// For more details, visit [this documentation page](https://developers.deepl.com/docs/api-reference/improve-text).
         /// </summary>
-        public RephraseTextClient RephraseText => new RephraseTextClient(HttpClient, authorizations: Authorizations, options: Options)
+        public RephraseTextClient RephraseText => new RephraseTextClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
+            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
 
         /// <summary>
@@ -511,10 +519,11 @@ namespace G
         /// to the selected formatting and spelling conventions.<br/>
         /// If you encounter issues, please let us know at support@DeepL.com.
         /// </summary>
-        public StyleRulesClient StyleRules => new StyleRulesClient(HttpClient, authorizations: Authorizations, options: Options)
+        public StyleRulesClient StyleRules => new StyleRulesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
+            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
 
         /// <summary>
@@ -537,31 +546,62 @@ namespace G
         ///   - once the status call reports `done`, [download](https://www.deepl.com/docs-api/documents/download-document) the translated document.<br/>
         /// To learn more about context in DeepL API translations, we recommend [this article](https://www.deepl.com/docs-api/general/working-with-context).
         /// </summary>
-        public TranslateDocumentsClient TranslateDocuments => new TranslateDocumentsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public TranslateDocumentsClient TranslateDocuments => new TranslateDocumentsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
+            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
 
         /// <summary>
         /// The text-translation API currently consists of a single endpoint, `translate`, which is described below.<br/>
         /// To learn more about context in DeepL API translations, we recommend [this article](https://www.deepl.com/docs-api/general/working-with-context).
         /// </summary>
-        public TranslateTextClient TranslateText => new TranslateTextClient(HttpClient, authorizations: Authorizations, options: Options)
+        public TranslateTextClient TranslateText => new TranslateTextClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
+            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
 
         /// <summary>
         /// The Voice API provides real-time voice transcription and translation services.<br/>
         /// Use a two-step flow: first request a streaming URL via REST, then establish a WebSocket connection for streaming audio and receiving transcriptions.
         /// </summary>
-        public VoiceAPIClient VoiceAPI => new VoiceAPIClient(HttpClient, authorizations: Authorizations, options: Options)
+        public VoiceAPIClient VoiceAPI => new VoiceAPIClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
+            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
+
+
+        private static readonly global::G.AutoSDKServer[] s_availableServers = new global::G.AutoSDKServer[]
+        {            new global::G.AutoSDKServer(
+                id: "https-api-deepl-com",
+                name: "DeepL API Pro",
+                url: "https://api.deepl.com/",
+                description: "DeepL API Pro"),
+            new global::G.AutoSDKServer(
+                id: "https-api-free-deepl-com",
+                name: "DeepL API Free",
+                url: "https://api-free.deepl.com/",
+                description: "DeepL API Free"),
+        };
+
+        /// <summary>
+        /// The server options available for this client.
+        /// </summary>
+        public global::System.Collections.Generic.IReadOnlyList<global::G.AutoSDKServer> AvailableServers => s_availableServers;
+
+        /// <summary>
+        /// The currently selected server for this client, if any.
+        /// </summary>
+        public global::G.AutoSDKServer? SelectedServer
+        {
+            get => ResolveSelectedServer();
+            set => SelectServer(value);
+        }
 
         /// <summary>
         /// Creates a new instance of the Api.
@@ -596,10 +636,10 @@ namespace G
         /// <param name="options">Client-wide request defaults such as headers, query parameters, retries, and timeout.</param>
         /// <param name="disposeHttpClient">Dispose the HttpClient when the instance is disposed. True by default.</param>
         public Api(
-            global::System.Net.Http.HttpClient? httpClient = null,
-            global::System.Uri? baseUri = null,
-            global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations = null,
-            global::G.AutoSDKClientOptions? options = null,
+            global::System.Net.Http.HttpClient? httpClient,
+            global::System.Uri? baseUri,
+            global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations,
+            global::G.AutoSDKClientOptions? options,
             bool disposeHttpClient = true)
         {
 
@@ -608,6 +648,8 @@ namespace G
             Authorizations = authorizations ?? new global::System.Collections.Generic.List<global::G.EndPointAuthorization>();
             Options = options ?? new global::G.AutoSDKClientOptions();
             _disposeHttpClient = disposeHttpClient;
+
+            AutoSDKServerConfiguration.ExplicitBaseUri = baseUri ?? httpClient?.BaseAddress;
 
             Initialized(HttpClient);
         }
@@ -635,5 +677,117 @@ namespace G
             global::System.Net.Http.HttpClient client,
             global::System.Net.Http.HttpResponseMessage response,
             ref string content);
+
+
+        /// <summary>
+        /// Selects one of the generated server options by id.
+        /// </summary>
+        public bool TrySelectServer(string serverId)
+        {
+            if (string.IsNullOrWhiteSpace(serverId))
+            {
+                return false;
+            }
+
+            foreach (var server in s_availableServers)
+            {
+                if (string.Equals(server.Id, serverId, global::System.StringComparison.OrdinalIgnoreCase))
+                {
+                    AutoSDKServerConfiguration.SelectedServer = server;
+                    AutoSDKServerConfiguration.ExplicitBaseUri = null;
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        /// <summary>
+        /// Clears the currently selected server.
+        /// </summary>
+        public void ClearSelectedServer()
+        {
+            AutoSDKServerConfiguration.SelectedServer = null;
+        }
+
+        private global::G.AutoSDKServer? ResolveSelectedServer()
+        {
+            var selectedServer = AutoSDKServerConfiguration.SelectedServer;
+            if (selectedServer is null)
+            {
+                return null;
+            }
+
+            foreach (var server in s_availableServers)
+            {
+                if (string.Equals(server.Id, selectedServer.Id, global::System.StringComparison.Ordinal))
+                {
+                    return server;
+                }
+            }
+
+            return null;
+        }
+
+        private void SelectServer(global::G.AutoSDKServer? server)
+        {
+            if (server is null)
+            {
+                AutoSDKServerConfiguration.SelectedServer = null;
+                return;
+            }
+
+            foreach (var candidate in s_availableServers)
+            {
+                if (string.Equals(candidate.Id, server.Id, global::System.StringComparison.Ordinal))
+                {
+                    AutoSDKServerConfiguration.SelectedServer = candidate;
+                    AutoSDKServerConfiguration.ExplicitBaseUri = null;
+                    return;
+                }
+            }
+
+            throw new global::System.ArgumentException("The provided server is not available for this client.", nameof(server));
+        }
+
+        private global::System.Uri? ResolveDisplayedBaseUri()
+        {
+            if (AutoSDKServerConfiguration.ExplicitBaseUri is global::System.Uri explicitBaseUri)
+            {
+                return explicitBaseUri;
+            }
+
+            return ResolveSelectedServer()?.Uri ?? HttpClient.BaseAddress;
+        }
+
+        private global::System.Uri? ResolveBaseUri(
+            global::G.AutoSDKServer[] servers,
+            string defaultBaseUrl)
+        {
+            if (AutoSDKServerConfiguration.ExplicitBaseUri is global::System.Uri explicitBaseUri)
+            {
+                return explicitBaseUri;
+            }
+
+            if (AutoSDKServerConfiguration.SelectedServer is global::G.AutoSDKServer selectedServer)
+            {
+                foreach (var server in servers)
+                {
+                    if (string.Equals(server.Id, selectedServer.Id, global::System.StringComparison.Ordinal))
+                    {
+                        return server.Uri;
+                    }
+                }
+            }
+
+            if (servers.Length > 0)
+            {
+                return servers[0].Uri;
+            }
+
+            return string.IsNullOrWhiteSpace(defaultBaseUrl)
+                ? HttpClient.BaseAddress
+                : new global::System.Uri(defaultBaseUrl, global::System.UriKind.RelativeOrAbsolute);
+        }
     }
 }

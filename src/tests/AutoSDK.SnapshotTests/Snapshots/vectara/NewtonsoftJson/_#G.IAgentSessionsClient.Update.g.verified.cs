@@ -48,6 +48,34 @@ namespace G
         /// A unique key that identifies an agent session.<br/>
         /// Example: customer_support_chat
         /// </param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.AgentSession>> UpdateAsResponseAsync(
+            string agentKey,
+            string sessionKey,
+
+            global::G.UpdateAgentSessionRequest request,
+            int? requestTimeout = default,
+            int? requestTimeoutMillis = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Update agent session<br/>
+        /// Update the configuration of an existing agent session. This endpoint enables you to modify fields such as the name, description, or metadata.<br/>
+        /// Updated metadata immediately influences agent behavior and becomes available to instructions and tools for the remainder of the session. For more details about configuring the agent session, see [Create agent session](https://docs.vectara.com/docs/rest-api/create-agent-session).
+        /// </summary>
+        /// <param name="requestTimeout"></param>
+        /// <param name="requestTimeoutMillis"></param>
+        /// <param name="agentKey">
+        /// A unique key that identifies an agent.<br/>
+        /// Example: customer_support
+        /// </param>
+        /// <param name="sessionKey">
+        /// A unique key that identifies an agent session.<br/>
+        /// Example: customer_support_chat
+        /// </param>
         /// <param name="name">
         /// Human-readable name for the session.<br/>
         /// Example: Updated Session Name

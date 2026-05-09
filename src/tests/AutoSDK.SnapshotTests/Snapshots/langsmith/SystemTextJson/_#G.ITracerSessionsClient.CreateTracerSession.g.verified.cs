@@ -29,6 +29,23 @@ namespace G
         /// <param name="upsert">
         /// Default Value: false
         /// </param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.TracerSessionWithoutVirtualFields>> CreateTracerSessionAsResponseAsync(
+
+            global::G.TracerSessionCreate request,
+            bool? upsert = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create Tracer Session<br/>
+        /// Create a new session.
+        /// </summary>
+        /// <param name="upsert">
+        /// Default Value: false
+        /// </param>
         /// <param name="startTime"></param>
         /// <param name="endTime"></param>
         /// <param name="extra"></param>

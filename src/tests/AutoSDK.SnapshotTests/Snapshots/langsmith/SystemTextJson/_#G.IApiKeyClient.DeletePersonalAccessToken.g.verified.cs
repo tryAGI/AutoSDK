@@ -17,5 +17,17 @@ namespace G
             global::System.Guid patId,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Delete Personal Access Token<br/>
+        /// Delete a Personal Access Token for the user
+        /// </summary>
+        /// <param name="patId"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.APIKeyGetResponse>> DeletePersonalAccessTokenAsResponseAsync(
+            global::System.Guid patId,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

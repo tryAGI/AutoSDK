@@ -22,6 +22,19 @@ namespace G
         /// Create a chat completion<br/>
         /// Sends a request for a model response for the given chat conversation. Supports both streaming and non-streaming modes.
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.ChatResult>> SendChatCompletionRequestAsResponseAsync(
+
+            global::G.ChatRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create a chat completion<br/>
+        /// Sends a request for a model response for the given chat conversation. Supports both streaming and non-streaming modes.
+        /// </summary>
         /// <param name="provider">
         /// When multiple model providers are available, optionally indicate your routing preference.
         /// </param>

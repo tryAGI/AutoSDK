@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickJsonObject(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ResponseFormatNullishJsonObject? value)
+        {
+            value = JsonObject;
+            return IsJsonObject;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ResponseFormatNullishJsonSchema? JsonSchema { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(JsonSchema))]
 #endif
         public bool IsJsonSchema => JsonSchema != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickJsonSchema(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ResponseFormatNullishJsonSchema? value)
+        {
+            value = JsonSchema;
+            return IsJsonSchema;
+        }
 
         /// <summary>
         /// 
@@ -64,6 +90,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickText(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ResponseFormatNullishText? value)
+        {
+            value = Text;
+            return IsText;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public object? ResponseFormatNullishVariant4 { get; init; }
 #else
@@ -77,6 +116,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseFormatNullishVariant4))]
 #endif
         public bool IsResponseFormatNullishVariant4 => ResponseFormatNullishVariant4 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResponseFormatNullishVariant4(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out object? value)
+        {
+            value = ResponseFormatNullishVariant4;
+            return IsResponseFormatNullishVariant4;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -179,10 +231,10 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.ResponseFormatNullishJsonObject?, TResult>? jsonObject = null,
-            global::System.Func<global::G.ResponseFormatNullishJsonSchema?, TResult>? jsonSchema = null,
-            global::System.Func<global::G.ResponseFormatNullishText?, TResult>? text = null,
-            global::System.Func<object?, TResult>? responseFormatNullishVariant4 = null,
+            global::System.Func<global::G.ResponseFormatNullishJsonObject, TResult>? jsonObject = null,
+            global::System.Func<global::G.ResponseFormatNullishJsonSchema, TResult>? jsonSchema = null,
+            global::System.Func<global::G.ResponseFormatNullishText, TResult>? text = null,
+            global::System.Func<object, TResult>? responseFormatNullishVariant4 = null,
             bool validate = true)
         {
             if (validate)
@@ -214,10 +266,46 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.ResponseFormatNullishJsonObject?>? jsonObject = null,
-            global::System.Action<global::G.ResponseFormatNullishJsonSchema?>? jsonSchema = null,
-            global::System.Action<global::G.ResponseFormatNullishText?>? text = null,
-            global::System.Action<object?>? responseFormatNullishVariant4 = null,
+            global::System.Action<global::G.ResponseFormatNullishJsonObject>? jsonObject = null,
+
+            global::System.Action<global::G.ResponseFormatNullishJsonSchema>? jsonSchema = null,
+
+            global::System.Action<global::G.ResponseFormatNullishText>? text = null,
+
+            global::System.Action<object>? responseFormatNullishVariant4 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsJsonObject)
+            {
+                jsonObject?.Invoke(JsonObject!);
+            }
+            else if (IsJsonSchema)
+            {
+                jsonSchema?.Invoke(JsonSchema!);
+            }
+            else if (IsText)
+            {
+                text?.Invoke(Text!);
+            }
+            else if (IsResponseFormatNullishVariant4)
+            {
+                responseFormatNullishVariant4?.Invoke(ResponseFormatNullishVariant4!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.ResponseFormatNullishJsonObject>? jsonObject = null,
+            global::System.Action<global::G.ResponseFormatNullishJsonSchema>? jsonSchema = null,
+            global::System.Action<global::G.ResponseFormatNullishText>? text = null,
+            global::System.Action<object>? responseFormatNullishVariant4 = null,
             bool validate = true)
         {
             if (validate)

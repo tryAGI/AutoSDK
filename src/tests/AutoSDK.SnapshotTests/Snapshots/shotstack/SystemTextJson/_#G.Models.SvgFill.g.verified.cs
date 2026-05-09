@@ -34,6 +34,19 @@ namespace G
         public bool IsSolid => Solid != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSolid(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.SvgSolidFill? value)
+        {
+            value = Solid;
+            return IsSolid;
+        }
+
+        /// <summary>
         /// A linear gradient fill that transitions colors along a straight line.<br/>
         /// The gradient direction is controlled by the `angle` property.
         /// </summary>
@@ -52,6 +65,19 @@ namespace G
         public bool IsLinear => Linear != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickLinear(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.SvgLinearGradientFill? value)
+        {
+            value = Linear;
+            return IsLinear;
+        }
+
+        /// <summary>
         /// A radial gradient fill that transitions colors radiating outward from a center point.<br/>
         /// The gradient creates a circular or elliptical color transition.
         /// </summary>
@@ -68,6 +94,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Radial))]
 #endif
         public bool IsRadial => Radial != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickRadial(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.SvgRadialGradientFill? value)
+        {
+            value = Radial;
+            return IsRadial;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -169,9 +208,9 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.SvgSolidFill?, TResult>? solid = null,
-            global::System.Func<global::G.SvgLinearGradientFill?, TResult>? linear = null,
-            global::System.Func<global::G.SvgRadialGradientFill?, TResult>? radial = null,
+            global::System.Func<global::G.SvgSolidFill, TResult>? solid = null,
+            global::System.Func<global::G.SvgLinearGradientFill, TResult>? linear = null,
+            global::System.Func<global::G.SvgRadialGradientFill, TResult>? radial = null,
             bool validate = true)
         {
             if (validate)
@@ -199,9 +238,39 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.SvgSolidFill?>? solid = null,
-            global::System.Action<global::G.SvgLinearGradientFill?>? linear = null,
-            global::System.Action<global::G.SvgRadialGradientFill?>? radial = null,
+            global::System.Action<global::G.SvgSolidFill>? solid = null,
+
+            global::System.Action<global::G.SvgLinearGradientFill>? linear = null,
+
+            global::System.Action<global::G.SvgRadialGradientFill>? radial = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsSolid)
+            {
+                solid?.Invoke(Solid!);
+            }
+            else if (IsLinear)
+            {
+                linear?.Invoke(Linear!);
+            }
+            else if (IsRadial)
+            {
+                radial?.Invoke(Radial!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.SvgSolidFill>? solid = null,
+            global::System.Action<global::G.SvgLinearGradientFill>? linear = null,
+            global::System.Action<global::G.SvgRadialGradientFill>? radial = null,
             bool validate = true)
         {
             if (validate)

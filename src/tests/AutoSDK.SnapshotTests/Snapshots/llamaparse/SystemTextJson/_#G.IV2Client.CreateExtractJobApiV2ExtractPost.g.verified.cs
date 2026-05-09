@@ -53,6 +53,36 @@ namespace G
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>
         /// <param name="session"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.ExtractV2Job>> CreateExtractJobApiV2ExtractPostAsResponseAsync(
+
+            global::G.ExtractV2JobCreate request,
+            global::System.Guid? projectId = default,
+            global::System.Guid? organizationId = default,
+            string? session = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create Extract Job<br/>
+        /// Create an extraction job.<br/>
+        /// Extracts structured data from a document using either a saved<br/>
+        /// configuration or an inline JSON Schema.<br/>
+        /// ## Input<br/>
+        /// Provide exactly one of:<br/>
+        /// - `configuration_id` — reference a saved extraction config<br/>
+        /// - `configuration` — inline configuration with a `data_schema`<br/>
+        /// ## Document input<br/>
+        /// Set `document_input_value` to a file ID (`dfl-...`) or a<br/>
+        /// completed parse job ID (`pjb-...`).<br/>
+        /// The job runs asynchronously. Poll `GET /extract/{job_id}` or<br/>
+        /// register a webhook to monitor completion.
+        /// </summary>
+        /// <param name="projectId"></param>
+        /// <param name="organizationId"></param>
+        /// <param name="session"></param>
         /// <param name="webhookConfigurations">
         /// Outbound webhook endpoints to notify on job status changes
         /// </param>

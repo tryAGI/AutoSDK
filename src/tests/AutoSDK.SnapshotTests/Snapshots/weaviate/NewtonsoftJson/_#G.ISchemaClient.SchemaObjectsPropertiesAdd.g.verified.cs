@@ -25,6 +25,21 @@ namespace G
         /// Add a property to an existing collection. &lt;br/&gt;&lt;br/&gt;If possible, we encourage you to create all required properties at collection creation time. Adding a property after collection creation can lead to [some indexing limitations](https://weaviate.io/developers/weaviate/config-refs/schema).
         /// </summary>
         /// <param name="className"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.Property>> SchemaObjectsPropertiesAddAsResponseAsync(
+            string className,
+
+            global::G.Property request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Add a property.<br/>
+        /// Add a property to an existing collection. &lt;br/&gt;&lt;br/&gt;If possible, we encourage you to create all required properties at collection creation time. Adding a property after collection creation can lead to [some indexing limitations](https://weaviate.io/developers/weaviate/config-refs/schema).
+        /// </summary>
+        /// <param name="className"></param>
         /// <param name="dataType">
         /// Data type of the property. If it starts with a capital (for example Person), may be a reference to another type.
         /// </param>

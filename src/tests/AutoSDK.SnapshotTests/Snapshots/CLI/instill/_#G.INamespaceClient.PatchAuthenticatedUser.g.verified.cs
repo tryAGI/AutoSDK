@@ -26,6 +26,21 @@ namespace G
         /// In REST requests, only the supplied user fields will be taken into account<br/>
         /// when updating the resource.
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.PatchAuthenticatedUserResponse>> PatchAuthenticatedUserAsResponseAsync(
+
+            global::G.AuthenticatedUser request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Update the authenticated user<br/>
+        /// Updates the information of the authenticated user.<br/>
+        /// In REST requests, only the supplied user fields will be taken into account<br/>
+        /// when updating the resource.
+        /// </summary>
         /// <param name="uid">
         /// User UUID. This field is optionally set by users on creation (it will be<br/>
         /// server-generated if unspecified).

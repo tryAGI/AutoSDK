@@ -28,6 +28,19 @@ namespace G
         public bool IsToolOutput => ToolOutput != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickToolOutput(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ToolSource? value)
+        {
+            value = ToolOutput;
+            return IsToolOutput;
+        }
+
+        /// <summary>
         /// A document source object containing the unique identifier of the document and the document itself.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Document))]
 #endif
         public bool IsDocument => Document != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickDocument(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.DocumentSource? value)
+        {
+            value = Document;
+            return IsDocument;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -119,8 +145,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.ToolSource?, TResult>? toolOutput = null,
-            global::System.Func<global::G.DocumentSource?, TResult>? document = null,
+            global::System.Func<global::G.ToolSource, TResult>? toolOutput = null,
+            global::System.Func<global::G.DocumentSource, TResult>? document = null,
             bool validate = true)
         {
             if (validate)
@@ -144,8 +170,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.ToolSource?>? toolOutput = null,
-            global::System.Action<global::G.DocumentSource?>? document = null,
+            global::System.Action<global::G.ToolSource>? toolOutput = null,
+
+            global::System.Action<global::G.DocumentSource>? document = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsToolOutput)
+            {
+                toolOutput?.Invoke(ToolOutput!);
+            }
+            else if (IsDocument)
+            {
+                document?.Invoke(Document!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.ToolSource>? toolOutput = null,
+            global::System.Action<global::G.DocumentSource>? document = null,
             bool validate = true)
         {
             if (validate)

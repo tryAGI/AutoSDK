@@ -401,7 +401,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public AgentsClient Agents => new AgentsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public AgentsClient Agents => new AgentsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -410,7 +410,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public ApiStatusClient ApiStatus => new ApiStatusClient(HttpClient, authorizations: Authorizations, options: Options)
+        public ApiStatusClient ApiStatus => new ApiStatusClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -419,7 +419,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public AuthClient Auth => new AuthClient(HttpClient, authorizations: Authorizations, options: Options)
+        public AuthClient Auth => new AuthClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -428,7 +428,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public DatasetsClient Datasets => new DatasetsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public DatasetsClient Datasets => new DatasetsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -437,7 +437,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public FineTunesClient FineTunes => new FineTunesClient(HttpClient, authorizations: Authorizations, options: Options)
+        public FineTunesClient FineTunes => new FineTunesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -446,7 +446,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public InfillClient Infill => new InfillClient(HttpClient, authorizations: Authorizations, options: Options)
+        public InfillClient Infill => new InfillClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -455,7 +455,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public PronunciationDictsClient PronunciationDicts => new PronunciationDictsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public PronunciationDictsClient PronunciationDicts => new PronunciationDictsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -464,7 +464,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public SttClient Stt => new SttClient(HttpClient, authorizations: Authorizations, options: Options)
+        public SttClient Stt => new SttClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -473,7 +473,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public TtsClient Tts => new TtsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public TtsClient Tts => new TtsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -482,7 +482,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public VoiceChangerClient VoiceChanger => new VoiceChangerClient(HttpClient, authorizations: Authorizations, options: Options)
+        public VoiceChangerClient VoiceChanger => new VoiceChangerClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -491,7 +491,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public VoicesClient Voices => new VoicesClient(HttpClient, authorizations: Authorizations, options: Options)
+        public VoicesClient Voices => new VoicesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -530,10 +530,10 @@ namespace G
         /// <param name="options">Client-wide request defaults such as headers, query parameters, retries, and timeout.</param>
         /// <param name="disposeHttpClient">Dispose the HttpClient when the instance is disposed. True by default.</param>
         public Api(
-            global::System.Net.Http.HttpClient? httpClient = null,
-            global::System.Uri? baseUri = null,
-            global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations = null,
-            global::G.AutoSDKClientOptions? options = null,
+            global::System.Net.Http.HttpClient? httpClient,
+            global::System.Uri? baseUri,
+            global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations,
+            global::G.AutoSDKClientOptions? options,
             bool disposeHttpClient = true)
         {
 

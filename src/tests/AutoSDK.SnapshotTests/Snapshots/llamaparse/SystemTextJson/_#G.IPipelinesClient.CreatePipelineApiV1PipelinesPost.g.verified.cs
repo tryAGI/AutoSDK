@@ -37,6 +37,28 @@ namespace G
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>
         /// <param name="session"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.Pipeline>> CreatePipelineApiV1PipelinesPostAsResponseAsync(
+
+            global::G.PipelineCreate request,
+            global::System.Guid? projectId = default,
+            global::System.Guid? organizationId = default,
+            string? session = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create Pipeline<br/>
+        /// Create a new managed ingestion pipeline.<br/>
+        /// A pipeline connects data sources to a vector store for RAG.<br/>
+        /// After creation, call `POST /pipelines/{id}/sync` to start<br/>
+        /// ingesting documents.
+        /// </summary>
+        /// <param name="projectId"></param>
+        /// <param name="organizationId"></param>
+        /// <param name="session"></param>
         /// <param name="embeddingConfig"></param>
         /// <param name="transformConfig">
         /// Configuration for the transformation.

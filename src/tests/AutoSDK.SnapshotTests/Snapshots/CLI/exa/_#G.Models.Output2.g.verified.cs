@@ -13,6 +13,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public string? OutputType { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ResearchEventDtoClassVariant2Variant3OutputVariant1? Tasks { get; init; }
 #else
@@ -30,6 +35,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickTasks(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ResearchEventDtoClassVariant2Variant3OutputVariant1? value)
+        {
+            value = Tasks;
+            return IsTasks;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ResearchEventDtoClassVariant2Variant3OutputVariant2? Stop { get; init; }
 #else
@@ -43,6 +61,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Stop))]
 #endif
         public bool IsStop => Stop != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickStop(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ResearchEventDtoClassVariant2Variant3OutputVariant2? value)
+        {
+            value = Stop;
+            return IsStop;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -83,10 +114,13 @@ namespace G
         /// 
         /// </summary>
         public Output2(
+            string? outputType,
             global::G.ResearchEventDtoClassVariant2Variant3OutputVariant1? tasks,
             global::G.ResearchEventDtoClassVariant2Variant3OutputVariant2? stop
             )
         {
+            OutputType = outputType;
+
             Tasks = tasks;
             Stop = stop;
         }
@@ -119,8 +153,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.ResearchEventDtoClassVariant2Variant3OutputVariant1?, TResult>? tasks = null,
-            global::System.Func<global::G.ResearchEventDtoClassVariant2Variant3OutputVariant2?, TResult>? stop = null,
+            global::System.Func<global::G.ResearchEventDtoClassVariant2Variant3OutputVariant1, TResult>? tasks = null,
+            global::System.Func<global::G.ResearchEventDtoClassVariant2Variant3OutputVariant2, TResult>? stop = null,
             bool validate = true)
         {
             if (validate)
@@ -144,8 +178,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.ResearchEventDtoClassVariant2Variant3OutputVariant1?>? tasks = null,
-            global::System.Action<global::G.ResearchEventDtoClassVariant2Variant3OutputVariant2?>? stop = null,
+            global::System.Action<global::G.ResearchEventDtoClassVariant2Variant3OutputVariant1>? tasks = null,
+
+            global::System.Action<global::G.ResearchEventDtoClassVariant2Variant3OutputVariant2>? stop = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsTasks)
+            {
+                tasks?.Invoke(Tasks!);
+            }
+            else if (IsStop)
+            {
+                stop?.Invoke(Stop!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.ResearchEventDtoClassVariant2Variant3OutputVariant1>? tasks = null,
+            global::System.Action<global::G.ResearchEventDtoClassVariant2Variant3OutputVariant2>? stop = null,
             bool validate = true)
         {
             if (validate)

@@ -33,6 +33,26 @@ namespace G
         /// <param name="pipelineId"></param>
         /// <param name="pointer"></param>
         /// <param name="pipelineIdOrPointer"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.GetDetailedPatch>> PatchImageAsResponseAsync(
+            string pipelineId,
+
+            global::G.BodyPatchImageV4PipelinesPipelineIdImagePatch request,
+            string? pointer = default,
+            string? pipelineIdOrPointer = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Patch Image<br/>
+        /// Update the image avatar of a pipeline. The new image url<br/>
+        /// will be available in the response.
+        /// </summary>
+        /// <param name="pipelineId"></param>
+        /// <param name="pointer"></param>
+        /// <param name="pipelineIdOrPointer"></param>
         /// <param name="imageFile"></param>
         /// <param name="imageFilename"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -41,6 +61,53 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.GetDetailedPatch> PatchImageAsync(
             string pipelineId,
             byte[] imageFile,
+            string imageFilename,
+            string? pointer = default,
+            string? pipelineIdOrPointer = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Patch Image<br/>
+        /// Update the image avatar of a pipeline. The new image url<br/>
+        /// will be available in the response.
+        /// </summary>
+        /// <param name="pipelineId"></param>
+        /// <param name="pointer"></param>
+        /// <param name="pipelineIdOrPointer"></param>
+        /// <param name="imageFile">
+        /// The stream to send as the multipart 'image_file' file part.
+        /// </param>
+        /// <param name="imageFilename"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.GetDetailedPatch> PatchImageAsync(
+            string pipelineId,
+            global::System.IO.Stream imageFile,
+            string imageFilename,
+            string? pointer = default,
+            string? pipelineIdOrPointer = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Patch Image<br/>
+        /// Update the image avatar of a pipeline. The new image url<br/>
+        /// will be available in the response.
+        /// </summary>
+        /// <param name="pipelineId"></param>
+        /// <param name="pointer"></param>
+        /// <param name="pipelineIdOrPointer"></param>
+        /// <param name="imageFile">
+        /// The stream to send as the multipart 'image_file' file part.
+        /// </param>
+        /// <param name="imageFilename"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.GetDetailedPatch>> PatchImageAsResponseAsync(
+            string pipelineId,
+            global::System.IO.Stream imageFile,
             string imageFilename,
             string? pointer = default,
             string? pipelineIdOrPointer = default,

@@ -32,6 +32,25 @@ namespace G
         /// </summary>
         /// <param name="owner"></param>
         /// <param name="repo"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.RepositoryAdvisory>> SecurityAdvisoriesCreateRepositoryAdvisoryAsResponseAsync(
+            string owner,
+            string repo,
+
+            global::G.RepositoryAdvisoryCreate request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create a repository security advisory<br/>
+        /// Creates a new repository security advisory.<br/>
+        /// In order to create a draft repository security advisory, the authenticated user must be a security manager or administrator of that repository.<br/>
+        /// OAuth app tokens and personal access tokens (classic) need the `repo` or `repository_advisories:write` scope to use this endpoint.
+        /// </summary>
+        /// <param name="owner"></param>
+        /// <param name="repo"></param>
         /// <param name="summary">
         /// A short summary of the advisory.
         /// </param>

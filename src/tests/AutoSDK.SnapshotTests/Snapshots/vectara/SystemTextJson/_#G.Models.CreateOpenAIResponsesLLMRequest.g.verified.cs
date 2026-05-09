@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickBase(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.OpenAILLMRequestBase? value)
+        {
+            value = Base;
+            return IsBase;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CreateOpenAIResponsesLLMRequestVariant2? CreateOpenAIResponsesLLMRequestVariant2 { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CreateOpenAIResponsesLLMRequestVariant2))]
 #endif
         public bool IsCreateOpenAIResponsesLLMRequestVariant2 => CreateOpenAIResponsesLLMRequestVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickCreateOpenAIResponsesLLMRequestVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateOpenAIResponsesLLMRequestVariant2? value)
+        {
+            value = CreateOpenAIResponsesLLMRequestVariant2;
+            return IsCreateOpenAIResponsesLLMRequestVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -119,8 +145,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.OpenAILLMRequestBase?, TResult>? @base = null,
-            global::System.Func<global::G.CreateOpenAIResponsesLLMRequestVariant2?, TResult>? createOpenAIResponsesLLMRequestVariant2 = null,
+            global::System.Func<global::G.OpenAILLMRequestBase, TResult>? @base = null,
+            global::System.Func<global::G.CreateOpenAIResponsesLLMRequestVariant2, TResult>? createOpenAIResponsesLLMRequestVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -144,8 +170,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.OpenAILLMRequestBase?>? @base = null,
-            global::System.Action<global::G.CreateOpenAIResponsesLLMRequestVariant2?>? createOpenAIResponsesLLMRequestVariant2 = null,
+            global::System.Action<global::G.OpenAILLMRequestBase>? @base = null,
+
+            global::System.Action<global::G.CreateOpenAIResponsesLLMRequestVariant2>? createOpenAIResponsesLLMRequestVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsBase)
+            {
+                @base?.Invoke(Base!);
+            }
+            else if (IsCreateOpenAIResponsesLLMRequestVariant2)
+            {
+                createOpenAIResponsesLLMRequestVariant2?.Invoke(CreateOpenAIResponsesLLMRequestVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.OpenAILLMRequestBase>? @base = null,
+            global::System.Action<global::G.CreateOpenAIResponsesLLMRequestVariant2>? createOpenAIResponsesLLMRequestVariant2 = null,
             bool validate = true)
         {
             if (validate)

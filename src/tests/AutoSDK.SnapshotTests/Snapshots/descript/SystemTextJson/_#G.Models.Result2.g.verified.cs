@@ -33,6 +33,19 @@ namespace G
         public bool IsSuccess => Success != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSuccess(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.AgentSuccessResult? value)
+        {
+            value = Success;
+            return IsSuccess;
+        }
+
+        /// <summary>
         /// Result when Agent edit failed
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -48,6 +61,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Error))]
 #endif
         public bool IsError => Error != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickError(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.AgentErrorResult? value)
+        {
+            value = Error;
+            return IsError;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -127,8 +153,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.AgentSuccessResult?, TResult>? success = null,
-            global::System.Func<global::G.AgentErrorResult?, TResult>? error = null,
+            global::System.Func<global::G.AgentSuccessResult, TResult>? success = null,
+            global::System.Func<global::G.AgentErrorResult, TResult>? error = null,
             bool validate = true)
         {
             if (validate)
@@ -152,8 +178,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.AgentSuccessResult?>? success = null,
-            global::System.Action<global::G.AgentErrorResult?>? error = null,
+            global::System.Action<global::G.AgentSuccessResult>? success = null,
+
+            global::System.Action<global::G.AgentErrorResult>? error = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsSuccess)
+            {
+                success?.Invoke(Success!);
+            }
+            else if (IsError)
+            {
+                error?.Invoke(Error!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.AgentSuccessResult>? success = null,
+            global::System.Action<global::G.AgentErrorResult>? error = null,
             bool validate = true)
         {
             if (validate)

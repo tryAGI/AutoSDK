@@ -22,6 +22,19 @@ namespace G
         /// Proxy to OpenAI-Compatible Chat Completions<br/>
         /// Proxy requests to OpenAI-compatible chat completions APIs and return the full response payload. Supports multiple providers via model parameter format: "model_name" (defaults to OpenAI), "provider/model_name", or "provider:model_name". Works with providers that offer OpenAI-compatible endpoints.
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<string>> ApiLlmOpenaiChatCompletionsCreateAsResponseAsync(
+
+            global::G.ApiLlmOpenaiChatCompletionsCreateRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Proxy to OpenAI-Compatible Chat Completions<br/>
+        /// Proxy requests to OpenAI-compatible chat completions APIs and return the full response payload. Supports multiple providers via model parameter format: "model_name" (defaults to OpenAI), "provider/model_name", or "provider:model_name". Works with providers that offer OpenAI-compatible endpoints.
+        /// </summary>
         /// <param name="messages">
         /// Array of message objects for the chat completion
         /// </param>

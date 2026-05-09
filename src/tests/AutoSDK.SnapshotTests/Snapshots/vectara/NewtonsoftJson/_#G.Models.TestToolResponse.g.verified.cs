@@ -33,6 +33,19 @@ namespace G
         public bool IsSuccess => Success != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSuccess(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.TestToolSuccessResponse? value)
+        {
+            value = Success;
+            return IsSuccess;
+        }
+
+        /// <summary>
         /// Error response from testing a Lambda tool.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -48,6 +61,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Error))]
 #endif
         public bool IsError => Error != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickError(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.TestToolErrorResponse? value)
+        {
+            value = Error;
+            return IsError;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -127,8 +153,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.TestToolSuccessResponse?, TResult>? success = null,
-            global::System.Func<global::G.TestToolErrorResponse?, TResult>? error = null,
+            global::System.Func<global::G.TestToolSuccessResponse, TResult>? success = null,
+            global::System.Func<global::G.TestToolErrorResponse, TResult>? error = null,
             bool validate = true)
         {
             if (validate)
@@ -152,8 +178,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.TestToolSuccessResponse?>? success = null,
-            global::System.Action<global::G.TestToolErrorResponse?>? error = null,
+            global::System.Action<global::G.TestToolSuccessResponse>? success = null,
+
+            global::System.Action<global::G.TestToolErrorResponse>? error = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsSuccess)
+            {
+                success?.Invoke(Success!);
+            }
+            else if (IsError)
+            {
+                error?.Invoke(Error!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.TestToolSuccessResponse>? success = null,
+            global::System.Action<global::G.TestToolErrorResponse>? error = null,
             bool validate = true)
         {
             if (validate)

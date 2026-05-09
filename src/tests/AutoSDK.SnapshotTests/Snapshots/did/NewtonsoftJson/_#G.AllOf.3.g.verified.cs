@@ -7,7 +7,7 @@ namespace G
     /// <summary>
     /// 
     /// </summary>
-    public readonly partial struct AllOf<[global::System.Diagnostics.CodeAnalysis.DynamicallyAccessedMembers(global::System.Diagnostics.CodeAnalysis.DynamicallyAccessedMemberTypes.PublicProperties)] T1, [global::System.Diagnostics.CodeAnalysis.DynamicallyAccessedMembers(global::System.Diagnostics.CodeAnalysis.DynamicallyAccessedMemberTypes.PublicProperties)] T2, [global::System.Diagnostics.CodeAnalysis.DynamicallyAccessedMembers(global::System.Diagnostics.CodeAnalysis.DynamicallyAccessedMemberTypes.PublicProperties)] T3> : global::System.IEquatable<AllOf<T1, T2, T3>>
+    public readonly partial struct AllOf<T1, T2, T3> : global::System.IEquatable<AllOf<T1, T2, T3>>
     {
         /// <summary>
         /// 
@@ -29,6 +29,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickValue1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out T1? value)
+        {
+            value = Value1;
+            return IsValue1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public T2? Value2 { get; init; }
 #else
@@ -46,6 +59,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickValue2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out T2? value)
+        {
+            value = Value2;
+            return IsValue2;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public T3? Value3 { get; init; }
 #else
@@ -59,6 +85,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value3))]
 #endif
         public bool IsValue3 => Value3 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickValue3(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out T3? value)
+        {
+            value = Value3;
+            return IsValue3;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -145,42 +184,17 @@ namespace G
             Value3?.ToString() 
             ;
 
-        private static bool RequiresValue<[global::System.Diagnostics.CodeAnalysis.DynamicallyAccessedMembers(global::System.Diagnostics.CodeAnalysis.DynamicallyAccessedMemberTypes.PublicProperties)] TValue>() => RequirementCache<TValue>.Value;
-
-        private static bool DetermineRequiresValue([global::System.Diagnostics.CodeAnalysis.DynamicallyAccessedMembers(global::System.Diagnostics.CodeAnalysis.DynamicallyAccessedMemberTypes.PublicProperties)] global::System.Type type)
+        private static bool RequiresValue<TValue>()
         {
+            var type = typeof(TValue);
             if (global::System.Nullable.GetUnderlyingType(type) != null)
             {
                 return false;
             }
 
-            if (type.IsValueType ||
-                type == typeof(string) ||
-                type.IsArray)
-            {
-                return true;
-            }
-
-            foreach (var property in type.GetProperties(global::System.Reflection.BindingFlags.Instance | global::System.Reflection.BindingFlags.Public))
-            {
-                foreach (var attributeData in property.CustomAttributes)
-                {
-                    var attributeTypeName = attributeData.AttributeType.FullName;
-                    if (attributeTypeName == "System.Text.Json.Serialization.JsonRequiredAttribute" ||
-                        attributeTypeName == "Newtonsoft.Json.JsonRequiredAttribute" ||
-                        attributeTypeName == "System.Runtime.CompilerServices.RequiredMemberAttribute")
-                    {
-                        return true;
-                    }
-                }
-            }
-
-            return false;
-        }
-
-        private static class RequirementCache<[global::System.Diagnostics.CodeAnalysis.DynamicallyAccessedMembers(global::System.Diagnostics.CodeAnalysis.DynamicallyAccessedMemberTypes.PublicProperties)] TValue>
-        {
-            public static readonly bool Value = DetermineRequiresValue(typeof(TValue));
+            return type.IsValueType ||
+                   type == typeof(string) ||
+                   type.IsArray;
         }
 
 
@@ -226,6 +240,36 @@ namespace G
         /// 
         /// </summary>
         public void Match(
+            global::System.Action<T1>? value1 = null,
+
+            global::System.Action<T2>? value2 = null,
+
+            global::System.Action<T3>? value3 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsValue1)
+            {
+                value1?.Invoke(Value1!);
+            }
+            else if (IsValue2)
+            {
+                value2?.Invoke(Value2!);
+            }
+            else if (IsValue3)
+            {
+                value3?.Invoke(Value3!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
             global::System.Action<T1>? value1 = null,
             global::System.Action<T2>? value2 = null,
             global::System.Action<T3>? value3 = null,

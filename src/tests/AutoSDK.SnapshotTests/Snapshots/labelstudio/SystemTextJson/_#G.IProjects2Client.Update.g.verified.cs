@@ -34,6 +34,25 @@ namespace G
         /// <param name="membersLimit">
         /// Default Value: 10
         /// </param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.LseProjectUpdate>> UpdateAsResponseAsync(
+            int id,
+
+            global::G.PatchedLseProjectUpdateRequest request,
+            int? membersLimit = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Update project details<br/>
+        /// Update the details of a specific project.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="membersLimit">
+        /// Default Value: 10
+        /// </param>
         /// <param name="agreementMethodology">
         /// Methodology (Consensus / Pairwise Averaging)<br/>
         /// * `consensus` - Consensus<br/>

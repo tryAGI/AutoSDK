@@ -28,6 +28,23 @@ namespace G
         /// </summary>
         /// <param name="nanoid"></param>
         /// <param name="redirectUrl"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.PostConnectedAccountsByNanoidRefreshResponse>> PostConnectedAccountsByNanoidRefreshAsResponseAsync(
+            string nanoid,
+
+            global::G.PostConnectedAccountsByNanoidRefreshRequest request,
+            string? redirectUrl = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Refresh authentication for a connected account<br/>
+        /// Initiates a new authentication flow for a connected account when credentials have expired or become invalid. This may generate a new authentication URL for OAuth flows or refresh tokens for other auth schemes.
+        /// </summary>
+        /// <param name="nanoid"></param>
+        /// <param name="redirectUrl"></param>
         /// <param name="requestRedirectUrl"></param>
         /// <param name="validateCredentials">
         /// [EXPERIMENTAL] Whether to validate the provided credentials, validates only for API Key Auth scheme<br/>

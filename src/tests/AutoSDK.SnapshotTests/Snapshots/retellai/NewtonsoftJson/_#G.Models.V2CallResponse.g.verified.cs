@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickWeb(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.V2WebCallResponse? value)
+        {
+            value = Web;
+            return IsWeb;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.V2PhoneCallResponse? Phone { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Phone))]
 #endif
         public bool IsPhone => Phone != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickPhone(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.V2PhoneCallResponse? value)
+        {
+            value = Phone;
+            return IsPhone;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -144,6 +170,30 @@ namespace G
         /// 
         /// </summary>
         public void Match(
+            global::System.Action<global::G.V2WebCallResponse?>? web = null,
+
+            global::System.Action<global::G.V2PhoneCallResponse?>? phone = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsWeb)
+            {
+                web?.Invoke(Web!);
+            }
+            else if (IsPhone)
+            {
+                phone?.Invoke(Phone!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
             global::System.Action<global::G.V2WebCallResponse?>? web = null,
             global::System.Action<global::G.V2PhoneCallResponse?>? phone = null,
             bool validate = true)

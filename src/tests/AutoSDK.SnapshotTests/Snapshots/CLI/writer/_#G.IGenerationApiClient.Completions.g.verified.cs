@@ -28,6 +28,25 @@ namespace G
         /// Text generation<br/>
         /// Generate text completions using the specified model and prompt. This endpoint is useful for text generation tasks that don't require conversational context.
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        /// <remarks>
+        /// curl --location --request POST https://api.writer.com/v1/completions \<br/>
+        ///  --header "Authorization: Bearer &lt;token&gt;" \<br/>
+        ///  --header "Content-Type: application/json" \<br/>
+        /// --data-raw '{"model":"palmyra-x-003-instruct","prompt":"Write me a short SEO article about camping gear","max_tokens":150,"temperature":0.7,"top_p":0.9,"stop":["."],"best_of":1,"random_seed":42,"stream":false}'
+        /// </remarks>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.CompletionsResponse>> CompletionsAsResponseAsync(
+
+            global::G.CompletionsRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Text generation<br/>
+        /// Generate text completions using the specified model and prompt. This endpoint is useful for text generation tasks that don't require conversational context.
+        /// </summary>
         /// <param name="model">
         /// The [ID of the model](https://dev.writer.com/home/models) to use for generating text. Supports `palmyra-x5`, `palmyra-x4`, `palmyra-fin`, `palmyra-med`, `palmyra-creative`, and `palmyra-x-003-instruct`.
         /// </param>

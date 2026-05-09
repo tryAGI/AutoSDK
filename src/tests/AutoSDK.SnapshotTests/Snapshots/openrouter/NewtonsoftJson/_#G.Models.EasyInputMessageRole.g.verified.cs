@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickEasyInputMessageRole0(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.EasyInputMessageRole0? value)
+        {
+            value = EasyInputMessageRole0;
+            return IsEasyInputMessageRole0;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.EasyInputMessageRole1? EasyInputMessageRole1 { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(EasyInputMessageRole1))]
 #endif
         public bool IsEasyInputMessageRole1 => EasyInputMessageRole1 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickEasyInputMessageRole1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.EasyInputMessageRole1? value)
+        {
+            value = EasyInputMessageRole1;
+            return IsEasyInputMessageRole1;
+        }
 
         /// <summary>
         /// 
@@ -64,6 +90,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickEasyInputMessageRole2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.EasyInputMessageRole2? value)
+        {
+            value = EasyInputMessageRole2;
+            return IsEasyInputMessageRole2;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.EasyInputMessageRole3? EasyInputMessageRole3 { get; init; }
 #else
@@ -77,6 +116,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(EasyInputMessageRole3))]
 #endif
         public bool IsEasyInputMessageRole3 => EasyInputMessageRole3 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickEasyInputMessageRole3(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.EasyInputMessageRole3? value)
+        {
+            value = EasyInputMessageRole3;
+            return IsEasyInputMessageRole3;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -232,6 +284,42 @@ namespace G
         /// 
         /// </summary>
         public void Match(
+            global::System.Action<global::G.EasyInputMessageRole0?>? easyInputMessageRole0 = null,
+
+            global::System.Action<global::G.EasyInputMessageRole1?>? easyInputMessageRole1 = null,
+
+            global::System.Action<global::G.EasyInputMessageRole2?>? easyInputMessageRole2 = null,
+
+            global::System.Action<global::G.EasyInputMessageRole3?>? easyInputMessageRole3 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsEasyInputMessageRole0)
+            {
+                easyInputMessageRole0?.Invoke(EasyInputMessageRole0!);
+            }
+            else if (IsEasyInputMessageRole1)
+            {
+                easyInputMessageRole1?.Invoke(EasyInputMessageRole1!);
+            }
+            else if (IsEasyInputMessageRole2)
+            {
+                easyInputMessageRole2?.Invoke(EasyInputMessageRole2!);
+            }
+            else if (IsEasyInputMessageRole3)
+            {
+                easyInputMessageRole3?.Invoke(EasyInputMessageRole3!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
             global::System.Action<global::G.EasyInputMessageRole0?>? easyInputMessageRole0 = null,
             global::System.Action<global::G.EasyInputMessageRole1?>? easyInputMessageRole1 = null,
             global::System.Action<global::G.EasyInputMessageRole2?>? easyInputMessageRole2 = null,

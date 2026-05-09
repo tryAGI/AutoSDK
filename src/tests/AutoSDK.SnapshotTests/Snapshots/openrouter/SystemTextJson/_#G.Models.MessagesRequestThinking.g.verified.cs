@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickMessagesRequestThinking0(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.MessagesRequestThinking0? value)
+        {
+            value = MessagesRequestThinking0;
+            return IsMessagesRequestThinking0;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.MessagesRequestThinking1? MessagesRequestThinking1 { get; init; }
 #else
@@ -47,6 +60,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickMessagesRequestThinking1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.MessagesRequestThinking1? value)
+        {
+            value = MessagesRequestThinking1;
+            return IsMessagesRequestThinking1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.MessagesRequestThinking2? MessagesRequestThinking2 { get; init; }
 #else
@@ -60,6 +86,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessagesRequestThinking2))]
 #endif
         public bool IsMessagesRequestThinking2 => MessagesRequestThinking2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMessagesRequestThinking2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.MessagesRequestThinking2? value)
+        {
+            value = MessagesRequestThinking2;
+            return IsMessagesRequestThinking2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -158,9 +197,9 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.MessagesRequestThinking0?, TResult>? messagesRequestThinking0 = null,
-            global::System.Func<global::G.MessagesRequestThinking1?, TResult>? messagesRequestThinking1 = null,
-            global::System.Func<global::G.MessagesRequestThinking2?, TResult>? messagesRequestThinking2 = null,
+            global::System.Func<global::G.MessagesRequestThinking0, TResult>? messagesRequestThinking0 = null,
+            global::System.Func<global::G.MessagesRequestThinking1, TResult>? messagesRequestThinking1 = null,
+            global::System.Func<global::G.MessagesRequestThinking2, TResult>? messagesRequestThinking2 = null,
             bool validate = true)
         {
             if (validate)
@@ -188,9 +227,39 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.MessagesRequestThinking0?>? messagesRequestThinking0 = null,
-            global::System.Action<global::G.MessagesRequestThinking1?>? messagesRequestThinking1 = null,
-            global::System.Action<global::G.MessagesRequestThinking2?>? messagesRequestThinking2 = null,
+            global::System.Action<global::G.MessagesRequestThinking0>? messagesRequestThinking0 = null,
+
+            global::System.Action<global::G.MessagesRequestThinking1>? messagesRequestThinking1 = null,
+
+            global::System.Action<global::G.MessagesRequestThinking2>? messagesRequestThinking2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsMessagesRequestThinking0)
+            {
+                messagesRequestThinking0?.Invoke(MessagesRequestThinking0!);
+            }
+            else if (IsMessagesRequestThinking1)
+            {
+                messagesRequestThinking1?.Invoke(MessagesRequestThinking1!);
+            }
+            else if (IsMessagesRequestThinking2)
+            {
+                messagesRequestThinking2?.Invoke(MessagesRequestThinking2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.MessagesRequestThinking0>? messagesRequestThinking0 = null,
+            global::System.Action<global::G.MessagesRequestThinking1>? messagesRequestThinking1 = null,
+            global::System.Action<global::G.MessagesRequestThinking2>? messagesRequestThinking2 = null,
             bool validate = true)
         {
             if (validate)

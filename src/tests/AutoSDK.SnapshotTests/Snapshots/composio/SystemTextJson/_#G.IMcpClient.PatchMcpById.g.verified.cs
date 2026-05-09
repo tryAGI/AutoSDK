@@ -31,6 +31,24 @@ namespace G
         /// Unique identifier of the MCP server to retrieve, update, or delete<br/>
         /// Example: 550e8400-e29b-41d4-a716-446655440000
         /// </param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.PatchMcpByIdResponse>> PatchMcpByIdAsResponseAsync(
+            string id,
+
+            global::G.PatchMcpByIdRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Update MCP server configuration<br/>
+        /// Updates the configuration of an existing Model Control Protocol (MCP) server. You can modify the server name, associated applications, and enabled tools. Only the fields included in the request will be updated.
+        /// </summary>
+        /// <param name="id">
+        /// Unique identifier of the MCP server to retrieve, update, or delete<br/>
+        /// Example: 550e8400-e29b-41d4-a716-446655440000
+        /// </param>
         /// <param name="name">
         /// Human-readable name to identify this MCP server instance (4-30 characters, alphanumeric, spaces, and hyphens only)<br/>
         /// Example: Production GitHub Integration

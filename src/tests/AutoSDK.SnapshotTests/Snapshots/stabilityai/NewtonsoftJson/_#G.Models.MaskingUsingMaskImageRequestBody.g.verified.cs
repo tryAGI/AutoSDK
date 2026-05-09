@@ -28,6 +28,19 @@ namespace G
         public bool IsMaskingUsingMaskImageRequestBodyVariant1 => MaskingUsingMaskImageRequestBodyVariant1 != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMaskingUsingMaskImageRequestBodyVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.MaskingUsingMaskImageRequestBodyVariant1? value)
+        {
+            value = MaskingUsingMaskImageRequestBodyVariant1;
+            return IsMaskingUsingMaskImageRequestBodyVariant1;
+        }
+
+        /// <summary>
         /// Represents the optional parameters that can be passed to any generation request.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(GenerationOptionalParams))]
 #endif
         public bool IsGenerationOptionalParams => GenerationOptionalParams != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickGenerationOptionalParams(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.GenerationRequestOptionalParams? value)
+        {
+            value = GenerationOptionalParams;
+            return IsGenerationOptionalParams;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -119,8 +145,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.MaskingUsingMaskImageRequestBodyVariant1?, TResult>? maskingUsingMaskImageRequestBodyVariant1 = null,
-            global::System.Func<global::G.GenerationRequestOptionalParams?, TResult>? generationOptionalParams = null,
+            global::System.Func<global::G.MaskingUsingMaskImageRequestBodyVariant1, TResult>? maskingUsingMaskImageRequestBodyVariant1 = null,
+            global::System.Func<global::G.GenerationRequestOptionalParams, TResult>? generationOptionalParams = null,
             bool validate = true)
         {
             if (validate)
@@ -144,8 +170,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.MaskingUsingMaskImageRequestBodyVariant1?>? maskingUsingMaskImageRequestBodyVariant1 = null,
-            global::System.Action<global::G.GenerationRequestOptionalParams?>? generationOptionalParams = null,
+            global::System.Action<global::G.MaskingUsingMaskImageRequestBodyVariant1>? maskingUsingMaskImageRequestBodyVariant1 = null,
+
+            global::System.Action<global::G.GenerationRequestOptionalParams>? generationOptionalParams = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsMaskingUsingMaskImageRequestBodyVariant1)
+            {
+                maskingUsingMaskImageRequestBodyVariant1?.Invoke(MaskingUsingMaskImageRequestBodyVariant1!);
+            }
+            else if (IsGenerationOptionalParams)
+            {
+                generationOptionalParams?.Invoke(GenerationOptionalParams!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.MaskingUsingMaskImageRequestBodyVariant1>? maskingUsingMaskImageRequestBodyVariant1 = null,
+            global::System.Action<global::G.GenerationRequestOptionalParams>? generationOptionalParams = null,
             bool validate = true)
         {
             if (validate)

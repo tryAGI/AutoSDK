@@ -32,5 +32,32 @@ namespace G
             string? search = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Get sandbox logs
+        /// </summary>
+        /// <param name="sandboxID"></param>
+        /// <param name="cursor"></param>
+        /// <param name="limit">
+        /// Default Value: 1000
+        /// </param>
+        /// <param name="direction">
+        /// Direction of the logs that should be returned
+        /// </param>
+        /// <param name="level">
+        /// State of the sandbox
+        /// </param>
+        /// <param name="search"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.SandboxLogsV2Response>> GetSandboxesBySandboxIDLogs2AsResponseAsync(
+            string sandboxID,
+            long? cursor = default,
+            int? limit = default,
+            global::G.LogsDirection? direction = default,
+            global::G.LogLevel? level = default,
+            string? search = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

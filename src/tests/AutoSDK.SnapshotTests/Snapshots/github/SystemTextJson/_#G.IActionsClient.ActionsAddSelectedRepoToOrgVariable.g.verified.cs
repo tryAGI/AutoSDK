@@ -24,5 +24,24 @@ namespace G
             int repositoryId,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Add selected repository to an organization variable<br/>
+        /// Adds a repository to an organization variable that is available to selected repositories.<br/>
+        /// Organization variables that are available to selected repositories have their `visibility` field set to `selected`.<br/>
+        /// Authenticated users must have collaborator access to a repository to create, update, or read secrets.<br/>
+        /// OAuth tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+        /// </summary>
+        /// <param name="org"></param>
+        /// <param name="name"></param>
+        /// <param name="repositoryId"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse> ActionsAddSelectedRepoToOrgVariableAsResponseAsync(
+            string org,
+            string name,
+            int repositoryId,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

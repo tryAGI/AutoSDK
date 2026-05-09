@@ -22,6 +22,19 @@ namespace G
         /// Feedback Payload Schema<br/>
         /// Discover feedback payload schema (paths and types) from sample rows.
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.FeedbackPayloadSchemaRes>> FeedbackPayloadSchemaFeedbackPayloadSchemaPostAsResponseAsync(
+
+            global::G.FeedbackPayloadSchemaReq request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Feedback Payload Schema<br/>
+        /// Discover feedback payload schema (paths and types) from sample rows.
+        /// </summary>
         /// <param name="projectId"></param>
         /// <param name="start">
         /// Inclusive start time (UTC, ISO 8601).

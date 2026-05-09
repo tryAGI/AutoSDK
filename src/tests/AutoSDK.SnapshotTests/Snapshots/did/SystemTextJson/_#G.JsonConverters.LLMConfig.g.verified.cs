@@ -24,6 +24,14 @@ namespace G.JsonConverters
                 foreach (var __jsonProp in __jsonDocument.RootElement.EnumerateObject())
                 {
                     __jsonProps.Add(__jsonProp.Name);
+                    if (__jsonProp.Value.ValueKind == global::System.Text.Json.JsonValueKind.Object)
+                    {
+                        foreach (var __nestedJsonProp in __jsonProp.Value.EnumerateObject())
+                        {
+                            __jsonProps.Add(__jsonProp.Name + "." + __nestedJsonProp.Name);
+                        }
+                    }
+
                 }
             }
 
@@ -31,18 +39,36 @@ namespace G.JsonConverters
             if (__jsonProps.Contains("instructions")) __score0++;
             if (__jsonProps.Contains("model")) __score0++;
             if (__jsonProps.Contains("prompt_customization")) __score0++;
+            if (__jsonProps.Contains("prompt_customization.knowledge_source")) __score0++;
+            if (__jsonProps.Contains("prompt_customization.max_response_length")) __score0++;
+            if (__jsonProps.Contains("prompt_customization.personality")) __score0++;
+            if (__jsonProps.Contains("prompt_customization.prompt_knowledge")) __score0++;
+            if (__jsonProps.Contains("prompt_customization.role")) __score0++;
+            if (__jsonProps.Contains("prompt_customization.topics_to_avoid")) __score0++;
             if (__jsonProps.Contains("provider")) __score0++;
             if (__jsonProps.Contains("temperature")) __score0++;
             if (__jsonProps.Contains("template")) __score0++;
             var __score1 = 0;
             if (__jsonProps.Contains("instructions")) __score1++;
             if (__jsonProps.Contains("prompt_customization")) __score1++;
+            if (__jsonProps.Contains("prompt_customization.knowledge_source")) __score1++;
+            if (__jsonProps.Contains("prompt_customization.max_response_length")) __score1++;
+            if (__jsonProps.Contains("prompt_customization.personality")) __score1++;
+            if (__jsonProps.Contains("prompt_customization.prompt_knowledge")) __score1++;
+            if (__jsonProps.Contains("prompt_customization.role")) __score1++;
+            if (__jsonProps.Contains("prompt_customization.topics_to_avoid")) __score1++;
             if (__jsonProps.Contains("secretId")) __score1++;
             if (__jsonProps.Contains("temperature")) __score1++;
             if (__jsonProps.Contains("template")) __score1++;
             var __score2 = 0;
             if (__jsonProps.Contains("instructions")) __score2++;
             if (__jsonProps.Contains("prompt_customization")) __score2++;
+            if (__jsonProps.Contains("prompt_customization.knowledge_source")) __score2++;
+            if (__jsonProps.Contains("prompt_customization.max_response_length")) __score2++;
+            if (__jsonProps.Contains("prompt_customization.personality")) __score2++;
+            if (__jsonProps.Contains("prompt_customization.prompt_knowledge")) __score2++;
+            if (__jsonProps.Contains("prompt_customization.role")) __score2++;
+            if (__jsonProps.Contains("prompt_customization.topics_to_avoid")) __score2++;
             if (__jsonProps.Contains("secretId")) __score2++;
             if (__jsonProps.Contains("temperature")) __score2++;
             if (__jsonProps.Contains("template")) __score2++;
@@ -50,6 +76,12 @@ namespace G.JsonConverters
             if (__jsonProps.Contains("instructions")) __score3++;
             if (__jsonProps.Contains("model")) __score3++;
             if (__jsonProps.Contains("prompt_customization")) __score3++;
+            if (__jsonProps.Contains("prompt_customization.knowledge_source")) __score3++;
+            if (__jsonProps.Contains("prompt_customization.max_response_length")) __score3++;
+            if (__jsonProps.Contains("prompt_customization.personality")) __score3++;
+            if (__jsonProps.Contains("prompt_customization.prompt_knowledge")) __score3++;
+            if (__jsonProps.Contains("prompt_customization.role")) __score3++;
+            if (__jsonProps.Contains("prompt_customization.topics_to_avoid")) __score3++;
             if (__jsonProps.Contains("provider")) __score3++;
             if (__jsonProps.Contains("temperature")) __score3++;
             if (__jsonProps.Contains("template")) __score3++;
@@ -57,6 +89,12 @@ namespace G.JsonConverters
             if (__jsonProps.Contains("instructions")) __score4++;
             if (__jsonProps.Contains("model")) __score4++;
             if (__jsonProps.Contains("prompt_customization")) __score4++;
+            if (__jsonProps.Contains("prompt_customization.knowledge_source")) __score4++;
+            if (__jsonProps.Contains("prompt_customization.max_response_length")) __score4++;
+            if (__jsonProps.Contains("prompt_customization.personality")) __score4++;
+            if (__jsonProps.Contains("prompt_customization.prompt_knowledge")) __score4++;
+            if (__jsonProps.Contains("prompt_customization.role")) __score4++;
+            if (__jsonProps.Contains("prompt_customization.topics_to_avoid")) __score4++;
             if (__jsonProps.Contains("provider")) __score4++;
             if (__jsonProps.Contains("temperature")) __score4++;
             if (__jsonProps.Contains("template")) __score4++;

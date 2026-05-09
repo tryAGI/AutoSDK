@@ -24,6 +24,14 @@ namespace G.JsonConverters
                 foreach (var __jsonProp in __jsonDocument.RootElement.EnumerateObject())
                 {
                     __jsonProps.Add(__jsonProp.Name);
+                    if (__jsonProp.Value.ValueKind == global::System.Text.Json.JsonValueKind.Object)
+                    {
+                        foreach (var __nestedJsonProp in __jsonProp.Value.EnumerateObject())
+                        {
+                            __jsonProps.Add(__jsonProp.Name + "." + __nestedJsonProp.Name);
+                        }
+                    }
+
                 }
             }
 
@@ -33,7 +41,15 @@ namespace G.JsonConverters
             if (__jsonProps.Contains("rows")) __score0++;
             var __score1 = 0;
             if (__jsonProps.Contains("billing")) __score1++;
+            if (__jsonProps.Contains("billing.billable_logical_bytes_queried")) __score1++;
+            if (__jsonProps.Contains("billing.billable_logical_bytes_returned")) __score1++;
             if (__jsonProps.Contains("performance")) __score1++;
+            if (__jsonProps.Contains("performance.approx_namespace_size")) __score1++;
+            if (__jsonProps.Contains("performance.cache_hit_ratio")) __score1++;
+            if (__jsonProps.Contains("performance.cache_temperature")) __score1++;
+            if (__jsonProps.Contains("performance.exhaustive_search_count")) __score1++;
+            if (__jsonProps.Contains("performance.query_execution_ms")) __score1++;
+            if (__jsonProps.Contains("performance.server_total_ms")) __score1++;
             var __bestScore = 0;
             var __bestIndex = -1;
             if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }

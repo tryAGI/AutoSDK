@@ -21,5 +21,21 @@ namespace G
             string? session = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Get Pipeline Document Status<br/>
+        /// Return a single document for a pipeline.
+        /// </summary>
+        /// <param name="documentId"></param>
+        /// <param name="pipelineId"></param>
+        /// <param name="session"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.ManagedIngestionStatusResponse>> GetPipelineDocumentStatusApiV1PipelinesPipelineIdDocumentsDocumentIdStatusGetAsResponseAsync(
+            string documentId,
+            global::System.Guid pipelineId,
+            string? session = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

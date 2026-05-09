@@ -35,6 +35,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickText(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.WhatsAppTemplateTextParam? value)
+        {
+            value = Text;
+            return IsText;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.WhatsAppTemplateImageParam? Image { get; init; }
 #else
@@ -48,6 +61,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Image))]
 #endif
         public bool IsImage => Image != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickImage(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.WhatsAppTemplateImageParam? value)
+        {
+            value = Image;
+            return IsImage;
+        }
 
         /// <summary>
         /// 
@@ -69,6 +95,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickDocument(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.WhatsAppTemplateDocumentParam? value)
+        {
+            value = Document;
+            return IsDocument;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.WhatsAppTemplateLocationParam? Location { get; init; }
 #else
@@ -82,6 +121,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Location))]
 #endif
         public bool IsLocation => Location != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickLocation(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.WhatsAppTemplateLocationParam? value)
+        {
+            value = Location;
+            return IsLocation;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -205,10 +257,10 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.WhatsAppTemplateTextParam?, TResult>? text = null,
-            global::System.Func<global::G.WhatsAppTemplateImageParam?, TResult>? image = null,
-            global::System.Func<global::G.WhatsAppTemplateDocumentParam?, TResult>? document = null,
-            global::System.Func<global::G.WhatsAppTemplateLocationParam?, TResult>? location = null,
+            global::System.Func<global::G.WhatsAppTemplateTextParam, TResult>? text = null,
+            global::System.Func<global::G.WhatsAppTemplateImageParam, TResult>? image = null,
+            global::System.Func<global::G.WhatsAppTemplateDocumentParam, TResult>? document = null,
+            global::System.Func<global::G.WhatsAppTemplateLocationParam, TResult>? location = null,
             bool validate = true)
         {
             if (validate)
@@ -240,10 +292,46 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.WhatsAppTemplateTextParam?>? text = null,
-            global::System.Action<global::G.WhatsAppTemplateImageParam?>? image = null,
-            global::System.Action<global::G.WhatsAppTemplateDocumentParam?>? document = null,
-            global::System.Action<global::G.WhatsAppTemplateLocationParam?>? location = null,
+            global::System.Action<global::G.WhatsAppTemplateTextParam>? text = null,
+
+            global::System.Action<global::G.WhatsAppTemplateImageParam>? image = null,
+
+            global::System.Action<global::G.WhatsAppTemplateDocumentParam>? document = null,
+
+            global::System.Action<global::G.WhatsAppTemplateLocationParam>? location = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsText)
+            {
+                text?.Invoke(Text!);
+            }
+            else if (IsImage)
+            {
+                image?.Invoke(Image!);
+            }
+            else if (IsDocument)
+            {
+                document?.Invoke(Document!);
+            }
+            else if (IsLocation)
+            {
+                location?.Invoke(Location!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.WhatsAppTemplateTextParam>? text = null,
+            global::System.Action<global::G.WhatsAppTemplateImageParam>? image = null,
+            global::System.Action<global::G.WhatsAppTemplateDocumentParam>? document = null,
+            global::System.Action<global::G.WhatsAppTemplateLocationParam>? location = null,
             bool validate = true)
         {
             if (validate)

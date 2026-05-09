@@ -35,6 +35,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickCompletion(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CompletionJobOut? value)
+        {
+            value = Completion;
+            return IsCompletion;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ClassifierJobOut? Classifier { get; init; }
 #else
@@ -48,6 +61,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Classifier))]
 #endif
         public bool IsClassifier => Classifier != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickClassifier(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ClassifierJobOut? value)
+        {
+            value = Classifier;
+            return IsClassifier;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -127,8 +153,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.CompletionJobOut?, TResult>? completion = null,
-            global::System.Func<global::G.ClassifierJobOut?, TResult>? classifier = null,
+            global::System.Func<global::G.CompletionJobOut, TResult>? completion = null,
+            global::System.Func<global::G.ClassifierJobOut, TResult>? classifier = null,
             bool validate = true)
         {
             if (validate)
@@ -152,8 +178,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.CompletionJobOut?>? completion = null,
-            global::System.Action<global::G.ClassifierJobOut?>? classifier = null,
+            global::System.Action<global::G.CompletionJobOut>? completion = null,
+
+            global::System.Action<global::G.ClassifierJobOut>? classifier = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsCompletion)
+            {
+                completion?.Invoke(Completion!);
+            }
+            else if (IsClassifier)
+            {
+                classifier?.Invoke(Classifier!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.CompletionJobOut>? completion = null,
+            global::System.Action<global::G.ClassifierJobOut>? classifier = null,
             bool validate = true)
         {
             if (validate)

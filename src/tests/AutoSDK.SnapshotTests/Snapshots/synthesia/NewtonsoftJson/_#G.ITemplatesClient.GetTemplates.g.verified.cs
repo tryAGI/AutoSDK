@@ -27,5 +27,27 @@ namespace G
             global::System.Collections.Generic.IList<global::G.GetTemplatesSourceItem>? source = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// List templates<br/>
+        /// Use the List templates endpoint to get an overview of all templates in Synthesia STUDIO, as well as the variables that may be provided when using them.
+        /// </summary>
+        /// <param name="limit">
+        /// Default Value: 20
+        /// </param>
+        /// <param name="offset">
+        /// Default Value: 0
+        /// </param>
+        /// <param name="source">
+        /// Default Value: [synthesia, workspace]
+        /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.TemplateListResponse>> GetTemplatesAsResponseAsync(
+            int? limit = default,
+            int? offset = default,
+            global::System.Collections.Generic.IList<global::G.GetTemplatesSourceItem>? source = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

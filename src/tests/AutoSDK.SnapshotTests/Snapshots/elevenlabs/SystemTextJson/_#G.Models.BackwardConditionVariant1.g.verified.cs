@@ -33,6 +33,19 @@ namespace G
         public bool IsUnconditional => Unconditional != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickUnconditional(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.WorkflowUnconditionalModelInput? value)
+        {
+            value = Unconditional;
+            return IsUnconditional;
+        }
+
+        /// <summary>
         /// Condition described using human language and evaluated by an LLM.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -48,6 +61,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Llm))]
 #endif
         public bool IsLlm => Llm != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickLlm(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.WorkflowLLMConditionModelInput? value)
+        {
+            value = Llm;
+            return IsLlm;
+        }
 
         /// <summary>
         /// Condition based on the result of the last executed tool dispatch node.
@@ -67,6 +93,19 @@ namespace G
         public bool IsResult => Result != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResult(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.WorkflowResultConditionModelInput? value)
+        {
+            value = Result;
+            return IsResult;
+        }
+
+        /// <summary>
         /// Condition described using a deterministic expression.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -82,6 +121,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Expression))]
 #endif
         public bool IsExpression => Expression != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickExpression(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.WorkflowExpressionConditionModelInput? value)
+        {
+            value = Expression;
+            return IsExpression;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -205,10 +257,10 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.WorkflowUnconditionalModelInput?, TResult>? unconditional = null,
-            global::System.Func<global::G.WorkflowLLMConditionModelInput?, TResult>? llm = null,
-            global::System.Func<global::G.WorkflowResultConditionModelInput?, TResult>? result = null,
-            global::System.Func<global::G.WorkflowExpressionConditionModelInput?, TResult>? expression = null,
+            global::System.Func<global::G.WorkflowUnconditionalModelInput, TResult>? unconditional = null,
+            global::System.Func<global::G.WorkflowLLMConditionModelInput, TResult>? llm = null,
+            global::System.Func<global::G.WorkflowResultConditionModelInput, TResult>? result = null,
+            global::System.Func<global::G.WorkflowExpressionConditionModelInput, TResult>? expression = null,
             bool validate = true)
         {
             if (validate)
@@ -240,10 +292,46 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.WorkflowUnconditionalModelInput?>? unconditional = null,
-            global::System.Action<global::G.WorkflowLLMConditionModelInput?>? llm = null,
-            global::System.Action<global::G.WorkflowResultConditionModelInput?>? result = null,
-            global::System.Action<global::G.WorkflowExpressionConditionModelInput?>? expression = null,
+            global::System.Action<global::G.WorkflowUnconditionalModelInput>? unconditional = null,
+
+            global::System.Action<global::G.WorkflowLLMConditionModelInput>? llm = null,
+
+            global::System.Action<global::G.WorkflowResultConditionModelInput>? result = null,
+
+            global::System.Action<global::G.WorkflowExpressionConditionModelInput>? expression = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsUnconditional)
+            {
+                unconditional?.Invoke(Unconditional!);
+            }
+            else if (IsLlm)
+            {
+                llm?.Invoke(Llm!);
+            }
+            else if (IsResult)
+            {
+                result?.Invoke(Result!);
+            }
+            else if (IsExpression)
+            {
+                expression?.Invoke(Expression!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.WorkflowUnconditionalModelInput>? unconditional = null,
+            global::System.Action<global::G.WorkflowLLMConditionModelInput>? llm = null,
+            global::System.Action<global::G.WorkflowResultConditionModelInput>? result = null,
+            global::System.Action<global::G.WorkflowExpressionConditionModelInput>? expression = null,
             bool validate = true)
         {
             if (validate)

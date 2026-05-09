@@ -25,6 +25,21 @@ namespace G
         /// This endpoint takes in a query and a list of texts and produces an ordered array with each text assigned a relevance score.
         /// </summary>
         /// <param name="xClientName"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.V2RerankResponse>> Rerank2AsResponseAsync(
+
+            global::G.V2RerankRequest request,
+            string? xClientName = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Rerank V2 API<br/>
+        /// This endpoint takes in a query and a list of texts and produces an ordered array with each text assigned a relevance score.
+        /// </summary>
+        /// <param name="xClientName"></param>
         /// <param name="model">
         /// The identifier of the model to use, eg `rerank-v3.5`.
         /// </param>

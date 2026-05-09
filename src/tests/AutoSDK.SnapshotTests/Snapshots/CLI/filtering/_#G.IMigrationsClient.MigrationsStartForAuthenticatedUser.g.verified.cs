@@ -22,6 +22,19 @@ namespace G
         /// Start a user migration<br/>
         /// Initiates the generation of a user migration archive.
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.Migration>> MigrationsStartForAuthenticatedUserAsResponseAsync(
+
+            global::G.MigrationsStartForAuthenticatedUserRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Start a user migration<br/>
+        /// Initiates the generation of a user migration archive.
+        /// </summary>
         /// <param name="lockRepositories">
         /// Lock the repositories being migrated at the start of the migration<br/>
         /// Example: true

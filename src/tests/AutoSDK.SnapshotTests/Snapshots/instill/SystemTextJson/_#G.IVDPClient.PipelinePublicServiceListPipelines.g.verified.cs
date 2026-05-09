@@ -29,5 +29,29 @@ namespace G
             string? orderBy = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// List accessible pipelines<br/>
+        /// Returns a paginated list of pipelines that are visible to the requester.
+        /// </summary>
+        /// <param name="pageSize"></param>
+        /// <param name="pageToken"></param>
+        /// <param name="view"></param>
+        /// <param name="filter"></param>
+        /// <param name="showDeleted"></param>
+        /// <param name="visibility"></param>
+        /// <param name="orderBy"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.ListPipelinesResponse>> PipelinePublicServiceListPipelinesAsResponseAsync(
+            int? pageSize = default,
+            string? pageToken = default,
+            global::G.PipelinePublicServiceListPipelinesView? view = default,
+            string? filter = default,
+            bool? showDeleted = default,
+            global::G.PipelinePublicServiceListPipelinesVisibility? visibility = default,
+            string? orderBy = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

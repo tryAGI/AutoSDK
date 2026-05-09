@@ -33,6 +33,26 @@ namespace G
         /// <param name="indexId"></param>
         /// <param name="videoId"></param>
         /// <param name="xApiKey"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.IndexesVideosUpdateResponse204>> UpdateAsResponseAsync(
+            string indexId,
+            string videoId,
+            string xApiKey,
+
+            global::G.UpdateRequest3 request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Partial update video information<br/>
+        /// &lt;Info&gt;This method will be deprecated in a future version. New implementations should use the [Partial update indexed asset](/v1.3/api-reference/index-content/update) method.&lt;/Info&gt;<br/>
+        /// This method updates one or more fields of the metadata of a video. Also, can delete a field by setting it to `null`.
+        /// </summary>
+        /// <param name="indexId"></param>
+        /// <param name="videoId"></param>
+        /// <param name="xApiKey"></param>
         /// <param name="userMetadata">
         /// Metadata that helps you categorize your videos. You can specify a list of keys and values. Keys must be of type `string`, and values can be of the following types: `string`, `integer`, `float` or `boolean`.<br/>
         /// **Example**:<br/>

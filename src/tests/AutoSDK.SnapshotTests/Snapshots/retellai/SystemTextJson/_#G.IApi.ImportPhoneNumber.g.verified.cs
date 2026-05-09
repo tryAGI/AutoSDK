@@ -22,6 +22,18 @@ namespace G
         /// <summary>
         /// Import a phone number from custom telephony &amp; Bind agents
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.PhoneNumberResponse>> ImportPhoneNumberAsResponseAsync(
+
+            global::G.ImportPhoneNumberRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Import a phone number from custom telephony &amp; Bind agents
+        /// </summary>
         /// <param name="phoneNumber">
         /// The number you are trying to import in E.164 format of the number (+country code, then number with no space, no special characters), used as the unique identifier for phone number APIs.<br/>
         /// Example: +14157774444

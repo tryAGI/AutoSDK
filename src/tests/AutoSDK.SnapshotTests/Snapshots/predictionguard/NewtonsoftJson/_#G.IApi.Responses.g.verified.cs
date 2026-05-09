@@ -22,6 +22,19 @@ namespace G
         /// Responses<br/>
         /// Generate responses while also allowing for the utilization of various tools.
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.ResponsesResponse200>> ResponsesAsResponseAsync(
+
+            global::G.ResponsesRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Responses<br/>
+        /// Generate responses while also allowing for the utilization of various tools.
+        /// </summary>
         /// <param name="model">
         /// The AI model to use for generating responses.
         /// </param>

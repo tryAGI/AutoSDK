@@ -22,6 +22,19 @@ namespace G
         /// Rerank<br/>
         /// Rerank sorts text inputs by semantic relevance to a specified query.
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.RerankResponse200>> RerankAsResponseAsync(
+
+            global::G.RerankRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Rerank<br/>
+        /// Rerank sorts text inputs by semantic relevance to a specified query.
+        /// </summary>
         /// <param name="model">
         /// The model to use for reranking.
         /// </param>

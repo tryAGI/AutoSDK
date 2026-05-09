@@ -28,6 +28,19 @@ namespace G
         public bool IsLse => Lse != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickLse(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.LseTask? value)
+        {
+            value = Lse;
+            return IsLse;
+        }
+
+        /// <summary>
         /// Data Manager Task Serializer with FSM state support.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -45,6 +58,19 @@ namespace G
         public bool IsLseSerializerForReviewers => LseSerializerForReviewers != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickLseSerializerForReviewers(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.LseTaskSerializerForReviewers? value)
+        {
+            value = LseSerializerForReviewers;
+            return IsLseSerializerForReviewers;
+        }
+
+        /// <summary>
         /// Data Manager Task Serializer with FSM state support.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -60,6 +86,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(LseSerializerForAnnotators))]
 #endif
         public bool IsLseSerializerForAnnotators => LseSerializerForAnnotators != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickLseSerializerForAnnotators(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.LseTaskSerializerForAnnotators? value)
+        {
+            value = LseSerializerForAnnotators;
+            return IsLseSerializerForAnnotators;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -158,9 +197,9 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.LseTask?, TResult>? lse = null,
-            global::System.Func<global::G.LseTaskSerializerForReviewers?, TResult>? lseSerializerForReviewers = null,
-            global::System.Func<global::G.LseTaskSerializerForAnnotators?, TResult>? lseSerializerForAnnotators = null,
+            global::System.Func<global::G.LseTask, TResult>? lse = null,
+            global::System.Func<global::G.LseTaskSerializerForReviewers, TResult>? lseSerializerForReviewers = null,
+            global::System.Func<global::G.LseTaskSerializerForAnnotators, TResult>? lseSerializerForAnnotators = null,
             bool validate = true)
         {
             if (validate)
@@ -188,9 +227,39 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.LseTask?>? lse = null,
-            global::System.Action<global::G.LseTaskSerializerForReviewers?>? lseSerializerForReviewers = null,
-            global::System.Action<global::G.LseTaskSerializerForAnnotators?>? lseSerializerForAnnotators = null,
+            global::System.Action<global::G.LseTask>? lse = null,
+
+            global::System.Action<global::G.LseTaskSerializerForReviewers>? lseSerializerForReviewers = null,
+
+            global::System.Action<global::G.LseTaskSerializerForAnnotators>? lseSerializerForAnnotators = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsLse)
+            {
+                lse?.Invoke(Lse!);
+            }
+            else if (IsLseSerializerForReviewers)
+            {
+                lseSerializerForReviewers?.Invoke(LseSerializerForReviewers!);
+            }
+            else if (IsLseSerializerForAnnotators)
+            {
+                lseSerializerForAnnotators?.Invoke(LseSerializerForAnnotators!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.LseTask>? lse = null,
+            global::System.Action<global::G.LseTaskSerializerForReviewers>? lseSerializerForReviewers = null,
+            global::System.Action<global::G.LseTaskSerializerForAnnotators>? lseSerializerForAnnotators = null,
             bool validate = true)
         {
             if (validate)

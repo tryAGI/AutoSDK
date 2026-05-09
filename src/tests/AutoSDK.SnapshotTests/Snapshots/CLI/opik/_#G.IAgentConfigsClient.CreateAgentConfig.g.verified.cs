@@ -22,6 +22,19 @@ namespace G
         /// Create optimizer config with initial blueprint<br/>
         /// Creates a new optimizer config with initial blueprint. Fails if the project already has a config.
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse> CreateAgentConfigAsResponseAsync(
+
+            global::G.AgentConfigCreateWrite request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create optimizer config with initial blueprint<br/>
+        /// Creates a new optimizer config with initial blueprint. Fails if the project already has a config.
+        /// </summary>
         /// <param name="projectId">
         /// Project ID. Either project_id or project_name must be provided
         /// </param>

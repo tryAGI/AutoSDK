@@ -22,6 +22,19 @@ namespace G
         /// Starts a classification.<br/>
         /// Trigger a classification based on the specified params. Classifications will run in the background, use GET /classifications/&lt;id&gt; to retrieve the status of your classification.
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.Classification>> ClassificationsPostAsResponseAsync(
+
+            global::G.Classification request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Starts a classification.<br/>
+        /// Trigger a classification based on the specified params. Classifications will run in the background, use GET /classifications/&lt;id&gt; to retrieve the status of your classification.
+        /// </summary>
         /// <param name="id">
         /// ID to uniquely identify this classification run<br/>
         /// Example: ee722219-b8ec-4db1-8f8d-5150bb1a9e0c

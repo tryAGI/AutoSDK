@@ -34,6 +34,26 @@ namespace G
         /// </summary>
         /// <param name="org"></param>
         /// <param name="customPropertyName"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.CustomProperty>> OrgsCreateOrUpdateCustomPropertyAsResponseAsync(
+            string org,
+            string customPropertyName,
+
+            global::G.OrgsCreateOrUpdateCustomPropertyRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create or update a custom property for an organization<br/>
+        /// Creates a new or updates an existing custom property that is defined for an organization.<br/>
+        /// To use this endpoint, the authenticated user must be one of:<br/>
+        /// - An administrator for the organization.<br/>
+        /// - A user, or a user on a team, with the fine-grained permission of `custom_properties_org_definitions_manager` in the organization.
+        /// </summary>
+        /// <param name="org"></param>
+        /// <param name="customPropertyName"></param>
         /// <param name="valueType">
         /// The type of the value for the property<br/>
         /// Example: single_select

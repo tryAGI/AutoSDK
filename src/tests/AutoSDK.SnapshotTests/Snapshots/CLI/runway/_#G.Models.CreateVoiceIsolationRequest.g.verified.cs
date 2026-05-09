@@ -13,6 +13,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public string? Model { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CreateVoiceIsolationRequestElevenVoiceIsolation? ElevenVoiceIsolation { get; init; }
 #else
@@ -26,6 +31,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ElevenVoiceIsolation))]
 #endif
         public bool IsElevenVoiceIsolation => ElevenVoiceIsolation != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickElevenVoiceIsolation(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateVoiceIsolationRequestElevenVoiceIsolation? value)
+        {
+            value = ElevenVoiceIsolation;
+            return IsElevenVoiceIsolation;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -42,6 +60,19 @@ namespace G
         public CreateVoiceIsolationRequest(global::G.CreateVoiceIsolationRequestElevenVoiceIsolation? value)
         {
             ElevenVoiceIsolation = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public CreateVoiceIsolationRequest(
+            string? model,
+            global::G.CreateVoiceIsolationRequestElevenVoiceIsolation? elevenVoiceIsolation
+            )
+        {
+            Model = model;
+
+            ElevenVoiceIsolation = elevenVoiceIsolation;
         }
 
         /// <summary>
@@ -70,7 +101,7 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.CreateVoiceIsolationRequestElevenVoiceIsolation?, TResult>? elevenVoiceIsolation = null,
+            global::System.Func<global::G.CreateVoiceIsolationRequestElevenVoiceIsolation, TResult>? elevenVoiceIsolation = null,
             bool validate = true)
         {
             if (validate)
@@ -90,7 +121,25 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.CreateVoiceIsolationRequestElevenVoiceIsolation?>? elevenVoiceIsolation = null,
+            global::System.Action<global::G.CreateVoiceIsolationRequestElevenVoiceIsolation>? elevenVoiceIsolation = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsElevenVoiceIsolation)
+            {
+                elevenVoiceIsolation?.Invoke(ElevenVoiceIsolation!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.CreateVoiceIsolationRequestElevenVoiceIsolation>? elevenVoiceIsolation = null,
             bool validate = true)
         {
             if (validate)

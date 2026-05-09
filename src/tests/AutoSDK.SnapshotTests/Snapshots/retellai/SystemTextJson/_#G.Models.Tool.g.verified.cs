@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickEndCall(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.EndCallTool? value)
+        {
+            value = EndCall;
+            return IsEndCall;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.TransferCallTool? TransferCall { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TransferCall))]
 #endif
         public bool IsTransferCall => TransferCall != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickTransferCall(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.TransferCallTool? value)
+        {
+            value = TransferCall;
+            return IsTransferCall;
+        }
 
         /// <summary>
         /// 
@@ -64,6 +90,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickCheckAvailabilityCal(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CheckAvailabilityCalTool? value)
+        {
+            value = CheckAvailabilityCal;
+            return IsCheckAvailabilityCal;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.BookAppointmentCalTool? BookAppointmentCal { get; init; }
 #else
@@ -77,6 +116,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BookAppointmentCal))]
 #endif
         public bool IsBookAppointmentCal => BookAppointmentCal != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickBookAppointmentCal(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.BookAppointmentCalTool? value)
+        {
+            value = BookAppointmentCal;
+            return IsBookAppointmentCal;
+        }
 
         /// <summary>
         /// 
@@ -98,6 +150,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickAgentSwap(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.AgentSwapTool? value)
+        {
+            value = AgentSwap;
+            return IsAgentSwap;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.PressDigitTool? PressDigit { get; init; }
 #else
@@ -111,6 +176,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(PressDigit))]
 #endif
         public bool IsPressDigit => PressDigit != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickPressDigit(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.PressDigitTool? value)
+        {
+            value = PressDigit;
+            return IsPressDigit;
+        }
 
         /// <summary>
         /// 
@@ -132,6 +210,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickSendSM(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.SendSMSTool? value)
+        {
+            value = SendSM;
+            return IsSendSM;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CustomTool? Custom { get; init; }
 #else
@@ -145,6 +236,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Custom))]
 #endif
         public bool IsCustom => Custom != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickCustom(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CustomTool? value)
+        {
+            value = Custom;
+            return IsCustom;
+        }
 
         /// <summary>
         /// 
@@ -166,6 +270,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickCode(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CodeTool? value)
+        {
+            value = Code;
+            return IsCode;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ExtractDynamicVariableTool? ExtractDynamicVariable { get; init; }
 #else
@@ -179,6 +296,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ExtractDynamicVariable))]
 #endif
         public bool IsExtractDynamicVariable => ExtractDynamicVariable != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickExtractDynamicVariable(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ExtractDynamicVariableTool? value)
+        {
+            value = ExtractDynamicVariable;
+            return IsExtractDynamicVariable;
+        }
 
         /// <summary>
         /// 
@@ -200,6 +330,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickBridgeTransfer(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.BridgeTransferTool? value)
+        {
+            value = BridgeTransfer;
+            return IsBridgeTransfer;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CancelTransferTool? CancelTransfer { get; init; }
 #else
@@ -217,6 +360,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickCancelTransfer(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CancelTransferTool? value)
+        {
+            value = CancelTransfer;
+            return IsCancelTransfer;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.MCPTool? Mcp { get; init; }
 #else
@@ -230,6 +386,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Mcp))]
 #endif
         public bool IsMcp => Mcp != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMcp(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.MCPTool? value)
+        {
+            value = Mcp;
+            return IsMcp;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -548,19 +717,19 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.EndCallTool?, TResult>? endCall = null,
-            global::System.Func<global::G.TransferCallTool?, TResult>? transferCall = null,
-            global::System.Func<global::G.CheckAvailabilityCalTool?, TResult>? checkAvailabilityCal = null,
-            global::System.Func<global::G.BookAppointmentCalTool?, TResult>? bookAppointmentCal = null,
-            global::System.Func<global::G.AgentSwapTool?, TResult>? agentSwap = null,
-            global::System.Func<global::G.PressDigitTool?, TResult>? pressDigit = null,
-            global::System.Func<global::G.SendSMSTool?, TResult>? sendSM = null,
-            global::System.Func<global::G.CustomTool?, TResult>? custom = null,
-            global::System.Func<global::G.CodeTool?, TResult>? code = null,
-            global::System.Func<global::G.ExtractDynamicVariableTool?, TResult>? extractDynamicVariable = null,
-            global::System.Func<global::G.BridgeTransferTool?, TResult>? bridgeTransfer = null,
-            global::System.Func<global::G.CancelTransferTool?, TResult>? cancelTransfer = null,
-            global::System.Func<global::G.MCPTool?, TResult>? mcp = null,
+            global::System.Func<global::G.EndCallTool, TResult>? endCall = null,
+            global::System.Func<global::G.TransferCallTool, TResult>? transferCall = null,
+            global::System.Func<global::G.CheckAvailabilityCalTool, TResult>? checkAvailabilityCal = null,
+            global::System.Func<global::G.BookAppointmentCalTool, TResult>? bookAppointmentCal = null,
+            global::System.Func<global::G.AgentSwapTool, TResult>? agentSwap = null,
+            global::System.Func<global::G.PressDigitTool, TResult>? pressDigit = null,
+            global::System.Func<global::G.SendSMSTool, TResult>? sendSM = null,
+            global::System.Func<global::G.CustomTool, TResult>? custom = null,
+            global::System.Func<global::G.CodeTool, TResult>? code = null,
+            global::System.Func<global::G.ExtractDynamicVariableTool, TResult>? extractDynamicVariable = null,
+            global::System.Func<global::G.BridgeTransferTool, TResult>? bridgeTransfer = null,
+            global::System.Func<global::G.CancelTransferTool, TResult>? cancelTransfer = null,
+            global::System.Func<global::G.MCPTool, TResult>? mcp = null,
             bool validate = true)
         {
             if (validate)
@@ -628,19 +797,109 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.EndCallTool?>? endCall = null,
-            global::System.Action<global::G.TransferCallTool?>? transferCall = null,
-            global::System.Action<global::G.CheckAvailabilityCalTool?>? checkAvailabilityCal = null,
-            global::System.Action<global::G.BookAppointmentCalTool?>? bookAppointmentCal = null,
-            global::System.Action<global::G.AgentSwapTool?>? agentSwap = null,
-            global::System.Action<global::G.PressDigitTool?>? pressDigit = null,
-            global::System.Action<global::G.SendSMSTool?>? sendSM = null,
-            global::System.Action<global::G.CustomTool?>? custom = null,
-            global::System.Action<global::G.CodeTool?>? code = null,
-            global::System.Action<global::G.ExtractDynamicVariableTool?>? extractDynamicVariable = null,
-            global::System.Action<global::G.BridgeTransferTool?>? bridgeTransfer = null,
-            global::System.Action<global::G.CancelTransferTool?>? cancelTransfer = null,
-            global::System.Action<global::G.MCPTool?>? mcp = null,
+            global::System.Action<global::G.EndCallTool>? endCall = null,
+
+            global::System.Action<global::G.TransferCallTool>? transferCall = null,
+
+            global::System.Action<global::G.CheckAvailabilityCalTool>? checkAvailabilityCal = null,
+
+            global::System.Action<global::G.BookAppointmentCalTool>? bookAppointmentCal = null,
+
+            global::System.Action<global::G.AgentSwapTool>? agentSwap = null,
+
+            global::System.Action<global::G.PressDigitTool>? pressDigit = null,
+
+            global::System.Action<global::G.SendSMSTool>? sendSM = null,
+
+            global::System.Action<global::G.CustomTool>? custom = null,
+
+            global::System.Action<global::G.CodeTool>? code = null,
+
+            global::System.Action<global::G.ExtractDynamicVariableTool>? extractDynamicVariable = null,
+
+            global::System.Action<global::G.BridgeTransferTool>? bridgeTransfer = null,
+
+            global::System.Action<global::G.CancelTransferTool>? cancelTransfer = null,
+
+            global::System.Action<global::G.MCPTool>? mcp = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsEndCall)
+            {
+                endCall?.Invoke(EndCall!);
+            }
+            else if (IsTransferCall)
+            {
+                transferCall?.Invoke(TransferCall!);
+            }
+            else if (IsCheckAvailabilityCal)
+            {
+                checkAvailabilityCal?.Invoke(CheckAvailabilityCal!);
+            }
+            else if (IsBookAppointmentCal)
+            {
+                bookAppointmentCal?.Invoke(BookAppointmentCal!);
+            }
+            else if (IsAgentSwap)
+            {
+                agentSwap?.Invoke(AgentSwap!);
+            }
+            else if (IsPressDigit)
+            {
+                pressDigit?.Invoke(PressDigit!);
+            }
+            else if (IsSendSM)
+            {
+                sendSM?.Invoke(SendSM!);
+            }
+            else if (IsCustom)
+            {
+                custom?.Invoke(Custom!);
+            }
+            else if (IsCode)
+            {
+                code?.Invoke(Code!);
+            }
+            else if (IsExtractDynamicVariable)
+            {
+                extractDynamicVariable?.Invoke(ExtractDynamicVariable!);
+            }
+            else if (IsBridgeTransfer)
+            {
+                bridgeTransfer?.Invoke(BridgeTransfer!);
+            }
+            else if (IsCancelTransfer)
+            {
+                cancelTransfer?.Invoke(CancelTransfer!);
+            }
+            else if (IsMcp)
+            {
+                mcp?.Invoke(Mcp!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.EndCallTool>? endCall = null,
+            global::System.Action<global::G.TransferCallTool>? transferCall = null,
+            global::System.Action<global::G.CheckAvailabilityCalTool>? checkAvailabilityCal = null,
+            global::System.Action<global::G.BookAppointmentCalTool>? bookAppointmentCal = null,
+            global::System.Action<global::G.AgentSwapTool>? agentSwap = null,
+            global::System.Action<global::G.PressDigitTool>? pressDigit = null,
+            global::System.Action<global::G.SendSMSTool>? sendSM = null,
+            global::System.Action<global::G.CustomTool>? custom = null,
+            global::System.Action<global::G.CodeTool>? code = null,
+            global::System.Action<global::G.ExtractDynamicVariableTool>? extractDynamicVariable = null,
+            global::System.Action<global::G.BridgeTransferTool>? bridgeTransfer = null,
+            global::System.Action<global::G.CancelTransferTool>? cancelTransfer = null,
+            global::System.Action<global::G.MCPTool>? mcp = null,
             bool validate = true)
         {
             if (validate)

@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickEmbeddingsPayloadVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>? value)
+        {
+            value = EmbeddingsPayloadVariant1;
+            return IsEmbeddingsPayloadVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<string>? EmbeddingsPayloadVariant2 { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(EmbeddingsPayloadVariant2))]
 #endif
         public bool IsEmbeddingsPayloadVariant2 => EmbeddingsPayloadVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickEmbeddingsPayloadVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::System.Collections.Generic.IList<string>? value)
+        {
+            value = EmbeddingsPayloadVariant2;
+            return IsEmbeddingsPayloadVariant2;
+        }
 
         /// <summary>
         /// 
@@ -84,8 +110,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>?, TResult>? embeddingsPayloadVariant1 = null,
-            global::System.Func<global::System.Collections.Generic.IList<string>?, TResult>? embeddingsPayloadVariant2 = null,
+            global::System.Func<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>, TResult>? embeddingsPayloadVariant1 = null,
+            global::System.Func<global::System.Collections.Generic.IList<string>, TResult>? embeddingsPayloadVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -109,8 +135,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>?>? embeddingsPayloadVariant1 = null,
-            global::System.Action<global::System.Collections.Generic.IList<string>?>? embeddingsPayloadVariant2 = null,
+            global::System.Action<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>>? embeddingsPayloadVariant1 = null,
+
+            global::System.Action<global::System.Collections.Generic.IList<string>>? embeddingsPayloadVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsEmbeddingsPayloadVariant1)
+            {
+                embeddingsPayloadVariant1?.Invoke(EmbeddingsPayloadVariant1!);
+            }
+            else if (IsEmbeddingsPayloadVariant2)
+            {
+                embeddingsPayloadVariant2?.Invoke(EmbeddingsPayloadVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>>? embeddingsPayloadVariant1 = null,
+            global::System.Action<global::System.Collections.Generic.IList<string>>? embeddingsPayloadVariant2 = null,
             bool validate = true)
         {
             if (validate)

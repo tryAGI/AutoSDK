@@ -21,5 +21,21 @@ namespace G
             string pageNo,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Get chunks from a specific document loader<br/>
+        /// Get chunks from a specific document loader within a document store
+        /// </summary>
+        /// <param name="storeId"></param>
+        /// <param name="loaderId"></param>
+        /// <param name="pageNo"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.DocumentStoreFileChunkPagedResponse>> GetDocumentStoreFileChunksAsResponseAsync(
+            global::System.Guid storeId,
+            global::System.Guid loaderId,
+            string pageNo,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

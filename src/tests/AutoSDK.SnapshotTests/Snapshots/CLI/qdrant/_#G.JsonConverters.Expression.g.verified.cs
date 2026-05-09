@@ -24,6 +24,14 @@ namespace G.JsonConverters
                 foreach (var __jsonProp in __jsonDocument.RootElement.EnumerateObject())
                 {
                     __jsonProps.Add(__jsonProp.Name);
+                    if (__jsonProp.Value.ValueKind == global::System.Text.Json.JsonValueKind.Object)
+                    {
+                        foreach (var __nestedJsonProp in __jsonProp.Value.EnumerateObject())
+                        {
+                            __jsonProps.Add(__jsonProp.Name + "." + __nestedJsonProp.Name);
+                        }
+                    }
+
                 }
             }
 
@@ -32,6 +40,8 @@ namespace G.JsonConverters
             var __score2 = 0;
             var __score3 = 0;
             if (__jsonProps.Contains("geo_distance")) __score3++;
+            if (__jsonProps.Contains("geo_distance.origin")) __score3++;
+            if (__jsonProps.Contains("geo_distance.to")) __score3++;
             var __score4 = 0;
             if (__jsonProps.Contains("datetime")) __score4++;
             var __score5 = 0;
@@ -46,10 +56,15 @@ namespace G.JsonConverters
             if (__jsonProps.Contains("abs")) __score9++;
             var __score10 = 0;
             if (__jsonProps.Contains("div")) __score10++;
+            if (__jsonProps.Contains("div.by_zero_default")) __score10++;
+            if (__jsonProps.Contains("div.left")) __score10++;
+            if (__jsonProps.Contains("div.right")) __score10++;
             var __score11 = 0;
             if (__jsonProps.Contains("sqrt")) __score11++;
             var __score12 = 0;
             if (__jsonProps.Contains("pow")) __score12++;
+            if (__jsonProps.Contains("pow.base")) __score12++;
+            if (__jsonProps.Contains("pow.exponent")) __score12++;
             var __score13 = 0;
             if (__jsonProps.Contains("exp")) __score13++;
             var __score14 = 0;
@@ -58,10 +73,22 @@ namespace G.JsonConverters
             if (__jsonProps.Contains("ln")) __score15++;
             var __score16 = 0;
             if (__jsonProps.Contains("lin_decay")) __score16++;
+            if (__jsonProps.Contains("lin_decay.midpoint")) __score16++;
+            if (__jsonProps.Contains("lin_decay.scale")) __score16++;
+            if (__jsonProps.Contains("lin_decay.target")) __score16++;
+            if (__jsonProps.Contains("lin_decay.x")) __score16++;
             var __score17 = 0;
             if (__jsonProps.Contains("exp_decay")) __score17++;
+            if (__jsonProps.Contains("exp_decay.midpoint")) __score17++;
+            if (__jsonProps.Contains("exp_decay.scale")) __score17++;
+            if (__jsonProps.Contains("exp_decay.target")) __score17++;
+            if (__jsonProps.Contains("exp_decay.x")) __score17++;
             var __score18 = 0;
             if (__jsonProps.Contains("gauss_decay")) __score18++;
+            if (__jsonProps.Contains("gauss_decay.midpoint")) __score18++;
+            if (__jsonProps.Contains("gauss_decay.scale")) __score18++;
+            if (__jsonProps.Contains("gauss_decay.target")) __score18++;
+            if (__jsonProps.Contains("gauss_decay.x")) __score18++;
             var __bestScore = 0;
             var __bestIndex = -1;
             if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }

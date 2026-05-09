@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickOverride(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.RetellLlmOverride? value)
+        {
+            value = Override;
+            return IsOverride;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.RetellLlmRequestVariant2? RetellLlmRequestVariant2 { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RetellLlmRequestVariant2))]
 #endif
         public bool IsRetellLlmRequestVariant2 => RetellLlmRequestVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickRetellLlmRequestVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.RetellLlmRequestVariant2? value)
+        {
+            value = RetellLlmRequestVariant2;
+            return IsRetellLlmRequestVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -119,8 +145,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.RetellLlmOverride?, TResult>? @override = null,
-            global::System.Func<global::G.RetellLlmRequestVariant2?, TResult>? retellLlmRequestVariant2 = null,
+            global::System.Func<global::G.RetellLlmOverride, TResult>? @override = null,
+            global::System.Func<global::G.RetellLlmRequestVariant2, TResult>? retellLlmRequestVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -144,8 +170,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.RetellLlmOverride?>? @override = null,
-            global::System.Action<global::G.RetellLlmRequestVariant2?>? retellLlmRequestVariant2 = null,
+            global::System.Action<global::G.RetellLlmOverride>? @override = null,
+
+            global::System.Action<global::G.RetellLlmRequestVariant2>? retellLlmRequestVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsOverride)
+            {
+                @override?.Invoke(Override!);
+            }
+            else if (IsRetellLlmRequestVariant2)
+            {
+                retellLlmRequestVariant2?.Invoke(RetellLlmRequestVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.RetellLlmOverride>? @override = null,
+            global::System.Action<global::G.RetellLlmRequestVariant2>? retellLlmRequestVariant2 = null,
             bool validate = true)
         {
             if (validate)

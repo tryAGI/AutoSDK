@@ -35,6 +35,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickText(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.RequestTextBlock? value)
+        {
+            value = Text;
+            return IsText;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.RequestImageBlock? Image { get; init; }
 #else
@@ -48,6 +61,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Image))]
 #endif
         public bool IsImage => Image != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickImage(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.RequestImageBlock? value)
+        {
+            value = Image;
+            return IsImage;
+        }
 
         /// <summary>
         /// 
@@ -69,6 +95,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickToolUse(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.RequestToolUseBlock? value)
+        {
+            value = ToolUse;
+            return IsToolUse;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.RequestToolResultBlock? ToolResult { get; init; }
 #else
@@ -82,6 +121,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ToolResult))]
 #endif
         public bool IsToolResult => ToolResult != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickToolResult(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.RequestToolResultBlock? value)
+        {
+            value = ToolResult;
+            return IsToolResult;
+        }
 
         /// <summary>
         /// 
@@ -103,6 +155,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickDocument(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.RequestDocumentBlock? value)
+        {
+            value = Document;
+            return IsDocument;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.RequestThinkingBlock? Thinking { get; init; }
 #else
@@ -120,6 +185,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickThinking(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.RequestThinkingBlock? value)
+        {
+            value = Thinking;
+            return IsThinking;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.RequestRedactedThinkingBlock? RedactedThinking { get; init; }
 #else
@@ -133,6 +211,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RedactedThinking))]
 #endif
         public bool IsRedactedThinking => RedactedThinking != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickRedactedThinking(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.RequestRedactedThinkingBlock? value)
+        {
+            value = RedactedThinking;
+            return IsRedactedThinking;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -322,13 +413,13 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.RequestTextBlock?, TResult>? text = null,
-            global::System.Func<global::G.RequestImageBlock?, TResult>? image = null,
-            global::System.Func<global::G.RequestToolUseBlock?, TResult>? toolUse = null,
-            global::System.Func<global::G.RequestToolResultBlock?, TResult>? toolResult = null,
-            global::System.Func<global::G.RequestDocumentBlock?, TResult>? document = null,
-            global::System.Func<global::G.RequestThinkingBlock?, TResult>? thinking = null,
-            global::System.Func<global::G.RequestRedactedThinkingBlock?, TResult>? redactedThinking = null,
+            global::System.Func<global::G.RequestTextBlock, TResult>? text = null,
+            global::System.Func<global::G.RequestImageBlock, TResult>? image = null,
+            global::System.Func<global::G.RequestToolUseBlock, TResult>? toolUse = null,
+            global::System.Func<global::G.RequestToolResultBlock, TResult>? toolResult = null,
+            global::System.Func<global::G.RequestDocumentBlock, TResult>? document = null,
+            global::System.Func<global::G.RequestThinkingBlock, TResult>? thinking = null,
+            global::System.Func<global::G.RequestRedactedThinkingBlock, TResult>? redactedThinking = null,
             bool validate = true)
         {
             if (validate)
@@ -372,13 +463,67 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.RequestTextBlock?>? text = null,
-            global::System.Action<global::G.RequestImageBlock?>? image = null,
-            global::System.Action<global::G.RequestToolUseBlock?>? toolUse = null,
-            global::System.Action<global::G.RequestToolResultBlock?>? toolResult = null,
-            global::System.Action<global::G.RequestDocumentBlock?>? document = null,
-            global::System.Action<global::G.RequestThinkingBlock?>? thinking = null,
-            global::System.Action<global::G.RequestRedactedThinkingBlock?>? redactedThinking = null,
+            global::System.Action<global::G.RequestTextBlock>? text = null,
+
+            global::System.Action<global::G.RequestImageBlock>? image = null,
+
+            global::System.Action<global::G.RequestToolUseBlock>? toolUse = null,
+
+            global::System.Action<global::G.RequestToolResultBlock>? toolResult = null,
+
+            global::System.Action<global::G.RequestDocumentBlock>? document = null,
+
+            global::System.Action<global::G.RequestThinkingBlock>? thinking = null,
+
+            global::System.Action<global::G.RequestRedactedThinkingBlock>? redactedThinking = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsText)
+            {
+                text?.Invoke(Text!);
+            }
+            else if (IsImage)
+            {
+                image?.Invoke(Image!);
+            }
+            else if (IsToolUse)
+            {
+                toolUse?.Invoke(ToolUse!);
+            }
+            else if (IsToolResult)
+            {
+                toolResult?.Invoke(ToolResult!);
+            }
+            else if (IsDocument)
+            {
+                document?.Invoke(Document!);
+            }
+            else if (IsThinking)
+            {
+                thinking?.Invoke(Thinking!);
+            }
+            else if (IsRedactedThinking)
+            {
+                redactedThinking?.Invoke(RedactedThinking!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.RequestTextBlock>? text = null,
+            global::System.Action<global::G.RequestImageBlock>? image = null,
+            global::System.Action<global::G.RequestToolUseBlock>? toolUse = null,
+            global::System.Action<global::G.RequestToolResultBlock>? toolResult = null,
+            global::System.Action<global::G.RequestDocumentBlock>? document = null,
+            global::System.Action<global::G.RequestThinkingBlock>? thinking = null,
+            global::System.Action<global::G.RequestRedactedThinkingBlock>? redactedThinking = null,
             bool validate = true)
         {
             if (validate)

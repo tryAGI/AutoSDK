@@ -24,6 +24,20 @@ namespace G
         /// A request to upscale a provided image with Ideogram.<br/>
         /// Supported image formats include JPEG, PNG, and WEBP
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.GenerateImageResponse>> PostUpscaleImageAsResponseAsync(
+
+            global::G.UpscaleImageRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Upscale provided images synchronously with an optional prompt.<br/>
+        /// A request to upscale a provided image with Ideogram.<br/>
+        /// Supported image formats include JPEG, PNG, and WEBP
+        /// </summary>
         /// <param name="imageRequest">
         /// A request to upscale a provided image with the help of an optional prompt.
         /// </param>
@@ -39,6 +53,53 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.GenerateImageResponse> PostUpscaleImageAsync(
             global::G.UpscaleInitialImageRequest imageRequest,
             byte[] imageFile,
+            string imageFilename,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Upscale provided images synchronously with an optional prompt.<br/>
+        /// A request to upscale a provided image with Ideogram.<br/>
+        /// Supported image formats include JPEG, PNG, and WEBP
+        /// </summary>
+        /// <param name="imageRequest">
+        /// A request to upscale a provided image with the help of an optional prompt.
+        /// </param>
+        /// <param name="imageFile">
+        /// An image binary; only JPEG, WEBPs and PNGs are supported at this time
+        /// </param>
+        /// <param name="imageFilename">
+        /// An image binary; only JPEG, WEBPs and PNGs are supported at this time
+        /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.GenerateImageResponse> PostUpscaleImageAsync(
+            global::G.UpscaleInitialImageRequest imageRequest,
+            global::System.IO.Stream imageFile,
+            string imageFilename,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Upscale provided images synchronously with an optional prompt.<br/>
+        /// A request to upscale a provided image with Ideogram.<br/>
+        /// Supported image formats include JPEG, PNG, and WEBP
+        /// </summary>
+        /// <param name="imageRequest">
+        /// A request to upscale a provided image with the help of an optional prompt.
+        /// </param>
+        /// <param name="imageFile">
+        /// An image binary; only JPEG, WEBPs and PNGs are supported at this time
+        /// </param>
+        /// <param name="imageFilename">
+        /// An image binary; only JPEG, WEBPs and PNGs are supported at this time
+        /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.GenerateImageResponse>> PostUpscaleImageAsResponseAsync(
+            global::G.UpscaleInitialImageRequest imageRequest,
+            global::System.IO.Stream imageFile,
             string imageFilename,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);

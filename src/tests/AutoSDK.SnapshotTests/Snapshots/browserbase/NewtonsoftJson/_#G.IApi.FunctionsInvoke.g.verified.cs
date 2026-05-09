@@ -23,6 +23,20 @@ namespace G
         /// Invoke a Function
         /// </summary>
         /// <param name="id"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.Invocation>> FunctionsInvokeAsResponseAsync(
+            global::System.Guid id,
+
+            global::G.FunctionsInvokeRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Invoke a Function
+        /// </summary>
+        /// <param name="id"></param>
         /// <param name="params">
         /// JSON object that can be stored in a JSONB column
         /// </param>

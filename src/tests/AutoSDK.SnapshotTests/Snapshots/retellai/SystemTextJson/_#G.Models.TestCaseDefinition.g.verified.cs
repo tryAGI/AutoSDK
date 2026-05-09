@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickInput(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.TestCaseDefinitionInput? value)
+        {
+            value = Input;
+            return IsInput;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.TestCaseDefinitionVariant2? TestCaseDefinitionVariant2 { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TestCaseDefinitionVariant2))]
 #endif
         public bool IsTestCaseDefinitionVariant2 => TestCaseDefinitionVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickTestCaseDefinitionVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.TestCaseDefinitionVariant2? value)
+        {
+            value = TestCaseDefinitionVariant2;
+            return IsTestCaseDefinitionVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -119,8 +145,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.TestCaseDefinitionInput?, TResult>? input = null,
-            global::System.Func<global::G.TestCaseDefinitionVariant2?, TResult>? testCaseDefinitionVariant2 = null,
+            global::System.Func<global::G.TestCaseDefinitionInput, TResult>? input = null,
+            global::System.Func<global::G.TestCaseDefinitionVariant2, TResult>? testCaseDefinitionVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -144,8 +170,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.TestCaseDefinitionInput?>? input = null,
-            global::System.Action<global::G.TestCaseDefinitionVariant2?>? testCaseDefinitionVariant2 = null,
+            global::System.Action<global::G.TestCaseDefinitionInput>? input = null,
+
+            global::System.Action<global::G.TestCaseDefinitionVariant2>? testCaseDefinitionVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsInput)
+            {
+                input?.Invoke(Input!);
+            }
+            else if (IsTestCaseDefinitionVariant2)
+            {
+                testCaseDefinitionVariant2?.Invoke(TestCaseDefinitionVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.TestCaseDefinitionInput>? input = null,
+            global::System.Action<global::G.TestCaseDefinitionVariant2>? testCaseDefinitionVariant2 = null,
             bool validate = true)
         {
             if (validate)

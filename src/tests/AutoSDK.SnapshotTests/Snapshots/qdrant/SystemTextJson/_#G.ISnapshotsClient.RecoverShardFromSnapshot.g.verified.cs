@@ -31,6 +31,25 @@ namespace G
         /// <param name="collectionName"></param>
         /// <param name="shardId"></param>
         /// <param name="wait"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.RecoverShardFromSnapshotResponse>> RecoverShardFromSnapshotAsResponseAsync(
+            string collectionName,
+            int shardId,
+
+            global::G.ShardSnapshotRecover request,
+            bool? wait = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Recover from a snapshot<br/>
+        /// Recover shard of a local collection data from a snapshot. This will overwrite any data, stored in this shard, for the collection.
+        /// </summary>
+        /// <param name="collectionName"></param>
+        /// <param name="shardId"></param>
+        /// <param name="wait"></param>
         /// <param name="location"></param>
         /// <param name="priority">
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464

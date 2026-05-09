@@ -34,6 +34,19 @@ namespace G
         public bool IsChatbot => Chatbot != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickChatbot(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ChatMessage? value)
+        {
+            value = Chatbot;
+            return IsChatbot;
+        }
+
+        /// <summary>
         /// Represents tool result in the chat history.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -49,6 +62,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Tool))]
 #endif
         public bool IsTool => Tool != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickTool(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ToolMessage? value)
+        {
+            value = Tool;
+            return IsTool;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -128,8 +154,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.ChatMessage?, TResult>? chatbot = null,
-            global::System.Func<global::G.ToolMessage?, TResult>? tool = null,
+            global::System.Func<global::G.ChatMessage, TResult>? chatbot = null,
+            global::System.Func<global::G.ToolMessage, TResult>? tool = null,
             bool validate = true)
         {
             if (validate)
@@ -153,8 +179,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.ChatMessage?>? chatbot = null,
-            global::System.Action<global::G.ToolMessage?>? tool = null,
+            global::System.Action<global::G.ChatMessage>? chatbot = null,
+
+            global::System.Action<global::G.ToolMessage>? tool = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsChatbot)
+            {
+                chatbot?.Invoke(Chatbot!);
+            }
+            else if (IsTool)
+            {
+                tool?.Invoke(Tool!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.ChatMessage>? chatbot = null,
+            global::System.Action<global::G.ToolMessage>? tool = null,
             bool validate = true)
         {
             if (validate)

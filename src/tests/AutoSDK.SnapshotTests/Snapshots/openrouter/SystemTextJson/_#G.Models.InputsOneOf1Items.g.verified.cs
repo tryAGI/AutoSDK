@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickReasoningItem(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ReasoningItem? value)
+        {
+            value = ReasoningItem;
+            return IsReasoningItem;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.EasyInputMessage? EasyInputMessage { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(EasyInputMessage))]
 #endif
         public bool IsEasyInputMessage => EasyInputMessage != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickEasyInputMessage(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.EasyInputMessage? value)
+        {
+            value = EasyInputMessage;
+            return IsEasyInputMessage;
+        }
 
         /// <summary>
         /// 
@@ -62,6 +88,19 @@ namespace G
         public bool IsInputMessageItem => InputMessageItem != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickInputMessageItem(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.InputMessageItem? value)
+        {
+            value = InputMessageItem;
+            return IsInputMessageItem;
+        }
+
+        /// <summary>
         /// A function call initiated by the model
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -77,6 +116,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FunctionCallItem))]
 #endif
         public bool IsFunctionCallItem => FunctionCallItem != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFunctionCallItem(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.FunctionCallItem? value)
+        {
+            value = FunctionCallItem;
+            return IsFunctionCallItem;
+        }
 
         /// <summary>
         /// The output from a function call execution
@@ -96,6 +148,19 @@ namespace G
         public bool IsFunctionCallOutputItem => FunctionCallOutputItem != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFunctionCallOutputItem(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.FunctionCallOutputItem? value)
+        {
+            value = FunctionCallOutputItem;
+            return IsFunctionCallOutputItem;
+        }
+
+        /// <summary>
         /// An output message item
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -111,6 +176,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputsOneOf1Items5))]
 #endif
         public bool IsInputsOneOf1Items5 => InputsOneOf1Items5 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickInputsOneOf1Items5(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.InputsOneOf1Items5? value)
+        {
+            value = InputsOneOf1Items5;
+            return IsInputsOneOf1Items5;
+        }
 
         /// <summary>
         /// An output item containing reasoning
@@ -132,6 +210,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickInputsOneOf1Items6(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.InputsOneOf1Items6? value)
+        {
+            value = InputsOneOf1Items6;
+            return IsInputsOneOf1Items6;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.OutputFunctionCallItem? OutputFunctionCallItem { get; init; }
 #else
@@ -145,6 +236,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OutputFunctionCallItem))]
 #endif
         public bool IsOutputFunctionCallItem => OutputFunctionCallItem != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickOutputFunctionCallItem(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.OutputFunctionCallItem? value)
+        {
+            value = OutputFunctionCallItem;
+            return IsOutputFunctionCallItem;
+        }
 
         /// <summary>
         /// 
@@ -166,6 +270,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickOutputWebSearchCallItem(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.OutputWebSearchCallItem? value)
+        {
+            value = OutputWebSearchCallItem;
+            return IsOutputWebSearchCallItem;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.OutputFileSearchCallItem? OutputFileSearchCallItem { get; init; }
 #else
@@ -179,6 +296,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OutputFileSearchCallItem))]
 #endif
         public bool IsOutputFileSearchCallItem => OutputFileSearchCallItem != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickOutputFileSearchCallItem(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.OutputFileSearchCallItem? value)
+        {
+            value = OutputFileSearchCallItem;
+            return IsOutputFileSearchCallItem;
+        }
 
         /// <summary>
         /// 
@@ -198,6 +328,19 @@ namespace G
         public bool IsOutputImageGenerationCallItem => OutputImageGenerationCallItem != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickOutputImageGenerationCallItem(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.OutputImageGenerationCallItem? value)
+        {
+            value = OutputImageGenerationCallItem;
+            return IsOutputImageGenerationCallItem;
+        }
+
+        /// <summary>
         /// An openrouter:datetime server tool output item
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -215,6 +358,19 @@ namespace G
         public bool IsOutputDatetimeItem => OutputDatetimeItem != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickOutputDatetimeItem(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.OutputDatetimeItem? value)
+        {
+            value = OutputDatetimeItem;
+            return IsOutputDatetimeItem;
+        }
+
+        /// <summary>
         /// A generic OpenRouter server tool output item
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -230,6 +386,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OutputServerToolItem))]
 #endif
         public bool IsOutputServerToolItem => OutputServerToolItem != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickOutputServerToolItem(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.OutputServerToolItem? value)
+        {
+            value = OutputServerToolItem;
+            return IsOutputServerToolItem;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -548,19 +717,19 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.ReasoningItem?, TResult>? reasoningItem = null,
-            global::System.Func<global::G.EasyInputMessage?, TResult>? easyInputMessage = null,
-            global::System.Func<global::G.InputMessageItem?, TResult>? inputMessageItem = null,
-            global::System.Func<global::G.FunctionCallItem?, TResult>? functionCallItem = null,
-            global::System.Func<global::G.FunctionCallOutputItem?, TResult>? functionCallOutputItem = null,
-            global::System.Func<global::G.InputsOneOf1Items5?, TResult>? inputsOneOf1Items5 = null,
-            global::System.Func<global::G.InputsOneOf1Items6?, TResult>? inputsOneOf1Items6 = null,
-            global::System.Func<global::G.OutputFunctionCallItem?, TResult>? outputFunctionCallItem = null,
-            global::System.Func<global::G.OutputWebSearchCallItem?, TResult>? outputWebSearchCallItem = null,
-            global::System.Func<global::G.OutputFileSearchCallItem?, TResult>? outputFileSearchCallItem = null,
-            global::System.Func<global::G.OutputImageGenerationCallItem?, TResult>? outputImageGenerationCallItem = null,
-            global::System.Func<global::G.OutputDatetimeItem?, TResult>? outputDatetimeItem = null,
-            global::System.Func<global::G.OutputServerToolItem?, TResult>? outputServerToolItem = null,
+            global::System.Func<global::G.ReasoningItem, TResult>? reasoningItem = null,
+            global::System.Func<global::G.EasyInputMessage, TResult>? easyInputMessage = null,
+            global::System.Func<global::G.InputMessageItem, TResult>? inputMessageItem = null,
+            global::System.Func<global::G.FunctionCallItem, TResult>? functionCallItem = null,
+            global::System.Func<global::G.FunctionCallOutputItem, TResult>? functionCallOutputItem = null,
+            global::System.Func<global::G.InputsOneOf1Items5, TResult>? inputsOneOf1Items5 = null,
+            global::System.Func<global::G.InputsOneOf1Items6, TResult>? inputsOneOf1Items6 = null,
+            global::System.Func<global::G.OutputFunctionCallItem, TResult>? outputFunctionCallItem = null,
+            global::System.Func<global::G.OutputWebSearchCallItem, TResult>? outputWebSearchCallItem = null,
+            global::System.Func<global::G.OutputFileSearchCallItem, TResult>? outputFileSearchCallItem = null,
+            global::System.Func<global::G.OutputImageGenerationCallItem, TResult>? outputImageGenerationCallItem = null,
+            global::System.Func<global::G.OutputDatetimeItem, TResult>? outputDatetimeItem = null,
+            global::System.Func<global::G.OutputServerToolItem, TResult>? outputServerToolItem = null,
             bool validate = true)
         {
             if (validate)
@@ -628,19 +797,109 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.ReasoningItem?>? reasoningItem = null,
-            global::System.Action<global::G.EasyInputMessage?>? easyInputMessage = null,
-            global::System.Action<global::G.InputMessageItem?>? inputMessageItem = null,
-            global::System.Action<global::G.FunctionCallItem?>? functionCallItem = null,
-            global::System.Action<global::G.FunctionCallOutputItem?>? functionCallOutputItem = null,
-            global::System.Action<global::G.InputsOneOf1Items5?>? inputsOneOf1Items5 = null,
-            global::System.Action<global::G.InputsOneOf1Items6?>? inputsOneOf1Items6 = null,
-            global::System.Action<global::G.OutputFunctionCallItem?>? outputFunctionCallItem = null,
-            global::System.Action<global::G.OutputWebSearchCallItem?>? outputWebSearchCallItem = null,
-            global::System.Action<global::G.OutputFileSearchCallItem?>? outputFileSearchCallItem = null,
-            global::System.Action<global::G.OutputImageGenerationCallItem?>? outputImageGenerationCallItem = null,
-            global::System.Action<global::G.OutputDatetimeItem?>? outputDatetimeItem = null,
-            global::System.Action<global::G.OutputServerToolItem?>? outputServerToolItem = null,
+            global::System.Action<global::G.ReasoningItem>? reasoningItem = null,
+
+            global::System.Action<global::G.EasyInputMessage>? easyInputMessage = null,
+
+            global::System.Action<global::G.InputMessageItem>? inputMessageItem = null,
+
+            global::System.Action<global::G.FunctionCallItem>? functionCallItem = null,
+
+            global::System.Action<global::G.FunctionCallOutputItem>? functionCallOutputItem = null,
+
+            global::System.Action<global::G.InputsOneOf1Items5>? inputsOneOf1Items5 = null,
+
+            global::System.Action<global::G.InputsOneOf1Items6>? inputsOneOf1Items6 = null,
+
+            global::System.Action<global::G.OutputFunctionCallItem>? outputFunctionCallItem = null,
+
+            global::System.Action<global::G.OutputWebSearchCallItem>? outputWebSearchCallItem = null,
+
+            global::System.Action<global::G.OutputFileSearchCallItem>? outputFileSearchCallItem = null,
+
+            global::System.Action<global::G.OutputImageGenerationCallItem>? outputImageGenerationCallItem = null,
+
+            global::System.Action<global::G.OutputDatetimeItem>? outputDatetimeItem = null,
+
+            global::System.Action<global::G.OutputServerToolItem>? outputServerToolItem = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsReasoningItem)
+            {
+                reasoningItem?.Invoke(ReasoningItem!);
+            }
+            else if (IsEasyInputMessage)
+            {
+                easyInputMessage?.Invoke(EasyInputMessage!);
+            }
+            else if (IsInputMessageItem)
+            {
+                inputMessageItem?.Invoke(InputMessageItem!);
+            }
+            else if (IsFunctionCallItem)
+            {
+                functionCallItem?.Invoke(FunctionCallItem!);
+            }
+            else if (IsFunctionCallOutputItem)
+            {
+                functionCallOutputItem?.Invoke(FunctionCallOutputItem!);
+            }
+            else if (IsInputsOneOf1Items5)
+            {
+                inputsOneOf1Items5?.Invoke(InputsOneOf1Items5!);
+            }
+            else if (IsInputsOneOf1Items6)
+            {
+                inputsOneOf1Items6?.Invoke(InputsOneOf1Items6!);
+            }
+            else if (IsOutputFunctionCallItem)
+            {
+                outputFunctionCallItem?.Invoke(OutputFunctionCallItem!);
+            }
+            else if (IsOutputWebSearchCallItem)
+            {
+                outputWebSearchCallItem?.Invoke(OutputWebSearchCallItem!);
+            }
+            else if (IsOutputFileSearchCallItem)
+            {
+                outputFileSearchCallItem?.Invoke(OutputFileSearchCallItem!);
+            }
+            else if (IsOutputImageGenerationCallItem)
+            {
+                outputImageGenerationCallItem?.Invoke(OutputImageGenerationCallItem!);
+            }
+            else if (IsOutputDatetimeItem)
+            {
+                outputDatetimeItem?.Invoke(OutputDatetimeItem!);
+            }
+            else if (IsOutputServerToolItem)
+            {
+                outputServerToolItem?.Invoke(OutputServerToolItem!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.ReasoningItem>? reasoningItem = null,
+            global::System.Action<global::G.EasyInputMessage>? easyInputMessage = null,
+            global::System.Action<global::G.InputMessageItem>? inputMessageItem = null,
+            global::System.Action<global::G.FunctionCallItem>? functionCallItem = null,
+            global::System.Action<global::G.FunctionCallOutputItem>? functionCallOutputItem = null,
+            global::System.Action<global::G.InputsOneOf1Items5>? inputsOneOf1Items5 = null,
+            global::System.Action<global::G.InputsOneOf1Items6>? inputsOneOf1Items6 = null,
+            global::System.Action<global::G.OutputFunctionCallItem>? outputFunctionCallItem = null,
+            global::System.Action<global::G.OutputWebSearchCallItem>? outputWebSearchCallItem = null,
+            global::System.Action<global::G.OutputFileSearchCallItem>? outputFileSearchCallItem = null,
+            global::System.Action<global::G.OutputImageGenerationCallItem>? outputImageGenerationCallItem = null,
+            global::System.Action<global::G.OutputDatetimeItem>? outputDatetimeItem = null,
+            global::System.Action<global::G.OutputServerToolItem>? outputServerToolItem = null,
             bool validate = true)
         {
             if (validate)

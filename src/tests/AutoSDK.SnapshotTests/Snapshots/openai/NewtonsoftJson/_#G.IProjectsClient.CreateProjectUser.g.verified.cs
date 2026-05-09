@@ -23,6 +23,20 @@ namespace G
         /// Adds a user to the project. Users must already be members of the organization to be added to a project.
         /// </summary>
         /// <param name="projectId"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.ProjectUser>> CreateProjectUserAsResponseAsync(
+            string projectId,
+
+            global::G.ProjectUserCreateRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Adds a user to the project. Users must already be members of the organization to be added to a project.
+        /// </summary>
+        /// <param name="projectId"></param>
         /// <param name="userId">
         /// The ID of the user.
         /// </param>

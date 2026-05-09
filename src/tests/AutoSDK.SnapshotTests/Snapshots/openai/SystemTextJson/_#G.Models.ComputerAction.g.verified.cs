@@ -28,6 +28,19 @@ namespace G
         public bool IsClick => Click != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickClick(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.Click? value)
+        {
+            value = Click;
+            return IsClick;
+        }
+
+        /// <summary>
         /// A double click action.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(DoubleClick))]
 #endif
         public bool IsDoubleClick => DoubleClick != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickDoubleClick(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.DoubleClick? value)
+        {
+            value = DoubleClick;
+            return IsDoubleClick;
+        }
 
         /// <summary>
         /// A drag action.
@@ -62,6 +88,19 @@ namespace G
         public bool IsDrag => Drag != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickDrag(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.Drag? value)
+        {
+            value = Drag;
+            return IsDrag;
+        }
+
+        /// <summary>
         /// A collection of keypresses the model would like to perform.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -77,6 +116,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(KeyPress))]
 #endif
         public bool IsKeyPress => KeyPress != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickKeyPress(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.KeyPress? value)
+        {
+            value = KeyPress;
+            return IsKeyPress;
+        }
 
         /// <summary>
         /// A mouse move action.
@@ -96,6 +148,19 @@ namespace G
         public bool IsMove => Move != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMove(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.Move? value)
+        {
+            value = Move;
+            return IsMove;
+        }
+
+        /// <summary>
         /// A screenshot action.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -111,6 +176,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Screenshot))]
 #endif
         public bool IsScreenshot => Screenshot != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickScreenshot(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.Screenshot? value)
+        {
+            value = Screenshot;
+            return IsScreenshot;
+        }
 
         /// <summary>
         /// A scroll action.
@@ -130,6 +208,19 @@ namespace G
         public bool IsScroll => Scroll != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickScroll(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.Scroll? value)
+        {
+            value = Scroll;
+            return IsScroll;
+        }
+
+        /// <summary>
         /// An action to type in text.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -147,6 +238,19 @@ namespace G
         public bool IsType => Type != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickType(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.Type? value)
+        {
+            value = Type;
+            return IsType;
+        }
+
+        /// <summary>
         /// A wait action.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -162,6 +266,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Wait))]
 #endif
         public bool IsWait => Wait != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickWait(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.Wait? value)
+        {
+            value = Wait;
+            return IsWait;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -392,15 +509,15 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.Click?, TResult>? click = null,
-            global::System.Func<global::G.DoubleClick?, TResult>? doubleClick = null,
-            global::System.Func<global::G.Drag?, TResult>? drag = null,
-            global::System.Func<global::G.KeyPress?, TResult>? keyPress = null,
-            global::System.Func<global::G.Move?, TResult>? move = null,
-            global::System.Func<global::G.Screenshot?, TResult>? screenshot = null,
-            global::System.Func<global::G.Scroll?, TResult>? scroll = null,
-            global::System.Func<global::G.Type?, TResult>? type = null,
-            global::System.Func<global::G.Wait?, TResult>? wait = null,
+            global::System.Func<global::G.Click, TResult>? click = null,
+            global::System.Func<global::G.DoubleClick, TResult>? doubleClick = null,
+            global::System.Func<global::G.Drag, TResult>? drag = null,
+            global::System.Func<global::G.KeyPress, TResult>? keyPress = null,
+            global::System.Func<global::G.Move, TResult>? move = null,
+            global::System.Func<global::G.Screenshot, TResult>? screenshot = null,
+            global::System.Func<global::G.Scroll, TResult>? scroll = null,
+            global::System.Func<global::G.Type, TResult>? type = null,
+            global::System.Func<global::G.Wait, TResult>? wait = null,
             bool validate = true)
         {
             if (validate)
@@ -452,15 +569,81 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.Click?>? click = null,
-            global::System.Action<global::G.DoubleClick?>? doubleClick = null,
-            global::System.Action<global::G.Drag?>? drag = null,
-            global::System.Action<global::G.KeyPress?>? keyPress = null,
-            global::System.Action<global::G.Move?>? move = null,
-            global::System.Action<global::G.Screenshot?>? screenshot = null,
-            global::System.Action<global::G.Scroll?>? scroll = null,
-            global::System.Action<global::G.Type?>? type = null,
-            global::System.Action<global::G.Wait?>? wait = null,
+            global::System.Action<global::G.Click>? click = null,
+
+            global::System.Action<global::G.DoubleClick>? doubleClick = null,
+
+            global::System.Action<global::G.Drag>? drag = null,
+
+            global::System.Action<global::G.KeyPress>? keyPress = null,
+
+            global::System.Action<global::G.Move>? move = null,
+
+            global::System.Action<global::G.Screenshot>? screenshot = null,
+
+            global::System.Action<global::G.Scroll>? scroll = null,
+
+            global::System.Action<global::G.Type>? type = null,
+
+            global::System.Action<global::G.Wait>? wait = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsClick)
+            {
+                click?.Invoke(Click!);
+            }
+            else if (IsDoubleClick)
+            {
+                doubleClick?.Invoke(DoubleClick!);
+            }
+            else if (IsDrag)
+            {
+                drag?.Invoke(Drag!);
+            }
+            else if (IsKeyPress)
+            {
+                keyPress?.Invoke(KeyPress!);
+            }
+            else if (IsMove)
+            {
+                move?.Invoke(Move!);
+            }
+            else if (IsScreenshot)
+            {
+                screenshot?.Invoke(Screenshot!);
+            }
+            else if (IsScroll)
+            {
+                scroll?.Invoke(Scroll!);
+            }
+            else if (IsType)
+            {
+                type?.Invoke(Type!);
+            }
+            else if (IsWait)
+            {
+                wait?.Invoke(Wait!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.Click>? click = null,
+            global::System.Action<global::G.DoubleClick>? doubleClick = null,
+            global::System.Action<global::G.Drag>? drag = null,
+            global::System.Action<global::G.KeyPress>? keyPress = null,
+            global::System.Action<global::G.Move>? move = null,
+            global::System.Action<global::G.Screenshot>? screenshot = null,
+            global::System.Action<global::G.Scroll>? scroll = null,
+            global::System.Action<global::G.Type>? type = null,
+            global::System.Action<global::G.Wait>? wait = null,
             bool validate = true)
         {
             if (validate)

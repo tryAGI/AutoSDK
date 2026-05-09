@@ -27,6 +27,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(LabelModelGrader))]
 #endif
         public bool IsLabelModelGrader => LabelModelGrader != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickLabelModelGrader(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.GraderLabelModel? value)
+        {
+            value = LabelModelGrader;
+            return IsLabelModelGrader;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -71,7 +84,7 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.GraderLabelModel?, TResult>? labelModelGrader = null,
+            global::System.Func<global::G.GraderLabelModel, TResult>? labelModelGrader = null,
             bool validate = true)
         {
             if (validate)
@@ -91,7 +104,25 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.GraderLabelModel?>? labelModelGrader = null,
+            global::System.Action<global::G.GraderLabelModel>? labelModelGrader = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsLabelModelGrader)
+            {
+                labelModelGrader?.Invoke(LabelModelGrader!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.GraderLabelModel>? labelModelGrader = null,
             bool validate = true)
         {
             if (validate)

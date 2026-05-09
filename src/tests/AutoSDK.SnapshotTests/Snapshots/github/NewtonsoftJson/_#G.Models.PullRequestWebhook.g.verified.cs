@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickPullRequest(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.PullRequest? value)
+        {
+            value = PullRequest;
+            return IsPullRequest;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.PullRequestWebhookVariant2? PullRequestWebhookVariant2 { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(PullRequestWebhookVariant2))]
 #endif
         public bool IsPullRequestWebhookVariant2 => PullRequestWebhookVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickPullRequestWebhookVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.PullRequestWebhookVariant2? value)
+        {
+            value = PullRequestWebhookVariant2;
+            return IsPullRequestWebhookVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -119,8 +145,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.PullRequest?, TResult>? pullRequest = null,
-            global::System.Func<global::G.PullRequestWebhookVariant2?, TResult>? pullRequestWebhookVariant2 = null,
+            global::System.Func<global::G.PullRequest, TResult>? pullRequest = null,
+            global::System.Func<global::G.PullRequestWebhookVariant2, TResult>? pullRequestWebhookVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -144,8 +170,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.PullRequest?>? pullRequest = null,
-            global::System.Action<global::G.PullRequestWebhookVariant2?>? pullRequestWebhookVariant2 = null,
+            global::System.Action<global::G.PullRequest>? pullRequest = null,
+
+            global::System.Action<global::G.PullRequestWebhookVariant2>? pullRequestWebhookVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsPullRequest)
+            {
+                pullRequest?.Invoke(PullRequest!);
+            }
+            else if (IsPullRequestWebhookVariant2)
+            {
+                pullRequestWebhookVariant2?.Invoke(PullRequestWebhookVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.PullRequest>? pullRequest = null,
+            global::System.Action<global::G.PullRequestWebhookVariant2>? pullRequestWebhookVariant2 = null,
             bool validate = true)
         {
             if (validate)

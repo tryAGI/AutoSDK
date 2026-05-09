@@ -33,6 +33,19 @@ namespace G
         public bool IsStringLiteral => StringLiteral != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickStringLiteral(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ASTStringNodeInput? value)
+        {
+            value = StringLiteral;
+            return IsStringLiteral;
+        }
+
+        /// <summary>
         /// Number literal.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -48,6 +61,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(NumberLiteral))]
 #endif
         public bool IsNumberLiteral => NumberLiteral != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickNumberLiteral(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ASTNumberNodeInput? value)
+        {
+            value = NumberLiteral;
+            return IsNumberLiteral;
+        }
 
         /// <summary>
         /// Boolean literal.
@@ -67,6 +93,19 @@ namespace G
         public bool IsBooleanLiteral => BooleanLiteral != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickBooleanLiteral(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ASTBooleanNodeInput? value)
+        {
+            value = BooleanLiteral;
+            return IsBooleanLiteral;
+        }
+
+        /// <summary>
         /// Prompt evaluated by an LLM to a boolean value.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -82,6 +121,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Llm))]
 #endif
         public bool IsLlm => Llm != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickLlm(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ASTLLMNodeInput? value)
+        {
+            value = Llm;
+            return IsLlm;
+        }
 
         /// <summary>
         /// Reference to a dynamic variable.
@@ -101,6 +153,19 @@ namespace G
         public bool IsDynamicVariable => DynamicVariable != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickDynamicVariable(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ASTDynamicVariableNodeInput? value)
+        {
+            value = DynamicVariable;
+            return IsDynamicVariable;
+        }
+
+        /// <summary>
         /// Evaluates to true if any child is true.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -116,6 +181,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OrOperator))]
 #endif
         public bool IsOrOperator => OrOperator != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickOrOperator(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ASTOrOperatorNodeInput? value)
+        {
+            value = OrOperator;
+            return IsOrOperator;
+        }
 
         /// <summary>
         /// Evaluates to true if all children are true.
@@ -135,6 +213,19 @@ namespace G
         public bool IsAndOperator => AndOperator != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickAndOperator(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ASTAndOperatorNodeInput? value)
+        {
+            value = AndOperator;
+            return IsAndOperator;
+        }
+
+        /// <summary>
         /// Evaluates to true if the left value equals the right.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -150,6 +241,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(EqOperator))]
 #endif
         public bool IsEqOperator => EqOperator != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickEqOperator(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ASTEqualsOperatorNodeInput? value)
+        {
+            value = EqOperator;
+            return IsEqOperator;
+        }
 
         /// <summary>
         /// Evaluates to true if the left value does not equal the right.
@@ -169,6 +273,19 @@ namespace G
         public bool IsNeqOperator => NeqOperator != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickNeqOperator(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ASTNotEqualsOperatorNodeInput? value)
+        {
+            value = NeqOperator;
+            return IsNeqOperator;
+        }
+
+        /// <summary>
         /// Evaluates to true if the left value is greater than the right.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -184,6 +301,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(GtOperator))]
 #endif
         public bool IsGtOperator => GtOperator != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickGtOperator(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ASTGreaterThanOperatorNodeInput? value)
+        {
+            value = GtOperator;
+            return IsGtOperator;
+        }
 
         /// <summary>
         /// Evaluates to true if the left value is less than the right.
@@ -203,6 +333,19 @@ namespace G
         public bool IsLtOperator => LtOperator != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickLtOperator(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ASTLessThanOperatorNodeInput? value)
+        {
+            value = LtOperator;
+            return IsLtOperator;
+        }
+
+        /// <summary>
         /// Evaluates to true if the left value is greater than or equal to the right.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -220,6 +363,19 @@ namespace G
         public bool IsGteOperator => GteOperator != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickGteOperator(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ASTGreaterThanOrEqualsOperatorNodeInput? value)
+        {
+            value = GteOperator;
+            return IsGteOperator;
+        }
+
+        /// <summary>
         /// Evaluates to true if the left value is less than or equal to the right.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -235,6 +391,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(LteOperator))]
 #endif
         public bool IsLteOperator => LteOperator != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickLteOperator(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ASTLessThanOrEqualsOperatorNodeInput? value)
+        {
+            value = LteOperator;
+            return IsLteOperator;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -556,19 +725,19 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.ASTStringNodeInput?, TResult>? stringLiteral = null,
-            global::System.Func<global::G.ASTNumberNodeInput?, TResult>? numberLiteral = null,
-            global::System.Func<global::G.ASTBooleanNodeInput?, TResult>? booleanLiteral = null,
-            global::System.Func<global::G.ASTLLMNodeInput?, TResult>? llm = null,
-            global::System.Func<global::G.ASTDynamicVariableNodeInput?, TResult>? dynamicVariable = null,
-            global::System.Func<global::G.ASTOrOperatorNodeInput?, TResult>? orOperator = null,
-            global::System.Func<global::G.ASTAndOperatorNodeInput?, TResult>? andOperator = null,
-            global::System.Func<global::G.ASTEqualsOperatorNodeInput?, TResult>? eqOperator = null,
-            global::System.Func<global::G.ASTNotEqualsOperatorNodeInput?, TResult>? neqOperator = null,
-            global::System.Func<global::G.ASTGreaterThanOperatorNodeInput?, TResult>? gtOperator = null,
-            global::System.Func<global::G.ASTLessThanOperatorNodeInput?, TResult>? ltOperator = null,
-            global::System.Func<global::G.ASTGreaterThanOrEqualsOperatorNodeInput?, TResult>? gteOperator = null,
-            global::System.Func<global::G.ASTLessThanOrEqualsOperatorNodeInput?, TResult>? lteOperator = null,
+            global::System.Func<global::G.ASTStringNodeInput, TResult>? stringLiteral = null,
+            global::System.Func<global::G.ASTNumberNodeInput, TResult>? numberLiteral = null,
+            global::System.Func<global::G.ASTBooleanNodeInput, TResult>? booleanLiteral = null,
+            global::System.Func<global::G.ASTLLMNodeInput, TResult>? llm = null,
+            global::System.Func<global::G.ASTDynamicVariableNodeInput, TResult>? dynamicVariable = null,
+            global::System.Func<global::G.ASTOrOperatorNodeInput, TResult>? orOperator = null,
+            global::System.Func<global::G.ASTAndOperatorNodeInput, TResult>? andOperator = null,
+            global::System.Func<global::G.ASTEqualsOperatorNodeInput, TResult>? eqOperator = null,
+            global::System.Func<global::G.ASTNotEqualsOperatorNodeInput, TResult>? neqOperator = null,
+            global::System.Func<global::G.ASTGreaterThanOperatorNodeInput, TResult>? gtOperator = null,
+            global::System.Func<global::G.ASTLessThanOperatorNodeInput, TResult>? ltOperator = null,
+            global::System.Func<global::G.ASTGreaterThanOrEqualsOperatorNodeInput, TResult>? gteOperator = null,
+            global::System.Func<global::G.ASTLessThanOrEqualsOperatorNodeInput, TResult>? lteOperator = null,
             bool validate = true)
         {
             if (validate)
@@ -636,19 +805,109 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.ASTStringNodeInput?>? stringLiteral = null,
-            global::System.Action<global::G.ASTNumberNodeInput?>? numberLiteral = null,
-            global::System.Action<global::G.ASTBooleanNodeInput?>? booleanLiteral = null,
-            global::System.Action<global::G.ASTLLMNodeInput?>? llm = null,
-            global::System.Action<global::G.ASTDynamicVariableNodeInput?>? dynamicVariable = null,
-            global::System.Action<global::G.ASTOrOperatorNodeInput?>? orOperator = null,
-            global::System.Action<global::G.ASTAndOperatorNodeInput?>? andOperator = null,
-            global::System.Action<global::G.ASTEqualsOperatorNodeInput?>? eqOperator = null,
-            global::System.Action<global::G.ASTNotEqualsOperatorNodeInput?>? neqOperator = null,
-            global::System.Action<global::G.ASTGreaterThanOperatorNodeInput?>? gtOperator = null,
-            global::System.Action<global::G.ASTLessThanOperatorNodeInput?>? ltOperator = null,
-            global::System.Action<global::G.ASTGreaterThanOrEqualsOperatorNodeInput?>? gteOperator = null,
-            global::System.Action<global::G.ASTLessThanOrEqualsOperatorNodeInput?>? lteOperator = null,
+            global::System.Action<global::G.ASTStringNodeInput>? stringLiteral = null,
+
+            global::System.Action<global::G.ASTNumberNodeInput>? numberLiteral = null,
+
+            global::System.Action<global::G.ASTBooleanNodeInput>? booleanLiteral = null,
+
+            global::System.Action<global::G.ASTLLMNodeInput>? llm = null,
+
+            global::System.Action<global::G.ASTDynamicVariableNodeInput>? dynamicVariable = null,
+
+            global::System.Action<global::G.ASTOrOperatorNodeInput>? orOperator = null,
+
+            global::System.Action<global::G.ASTAndOperatorNodeInput>? andOperator = null,
+
+            global::System.Action<global::G.ASTEqualsOperatorNodeInput>? eqOperator = null,
+
+            global::System.Action<global::G.ASTNotEqualsOperatorNodeInput>? neqOperator = null,
+
+            global::System.Action<global::G.ASTGreaterThanOperatorNodeInput>? gtOperator = null,
+
+            global::System.Action<global::G.ASTLessThanOperatorNodeInput>? ltOperator = null,
+
+            global::System.Action<global::G.ASTGreaterThanOrEqualsOperatorNodeInput>? gteOperator = null,
+
+            global::System.Action<global::G.ASTLessThanOrEqualsOperatorNodeInput>? lteOperator = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsStringLiteral)
+            {
+                stringLiteral?.Invoke(StringLiteral!);
+            }
+            else if (IsNumberLiteral)
+            {
+                numberLiteral?.Invoke(NumberLiteral!);
+            }
+            else if (IsBooleanLiteral)
+            {
+                booleanLiteral?.Invoke(BooleanLiteral!);
+            }
+            else if (IsLlm)
+            {
+                llm?.Invoke(Llm!);
+            }
+            else if (IsDynamicVariable)
+            {
+                dynamicVariable?.Invoke(DynamicVariable!);
+            }
+            else if (IsOrOperator)
+            {
+                orOperator?.Invoke(OrOperator!);
+            }
+            else if (IsAndOperator)
+            {
+                andOperator?.Invoke(AndOperator!);
+            }
+            else if (IsEqOperator)
+            {
+                eqOperator?.Invoke(EqOperator!);
+            }
+            else if (IsNeqOperator)
+            {
+                neqOperator?.Invoke(NeqOperator!);
+            }
+            else if (IsGtOperator)
+            {
+                gtOperator?.Invoke(GtOperator!);
+            }
+            else if (IsLtOperator)
+            {
+                ltOperator?.Invoke(LtOperator!);
+            }
+            else if (IsGteOperator)
+            {
+                gteOperator?.Invoke(GteOperator!);
+            }
+            else if (IsLteOperator)
+            {
+                lteOperator?.Invoke(LteOperator!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.ASTStringNodeInput>? stringLiteral = null,
+            global::System.Action<global::G.ASTNumberNodeInput>? numberLiteral = null,
+            global::System.Action<global::G.ASTBooleanNodeInput>? booleanLiteral = null,
+            global::System.Action<global::G.ASTLLMNodeInput>? llm = null,
+            global::System.Action<global::G.ASTDynamicVariableNodeInput>? dynamicVariable = null,
+            global::System.Action<global::G.ASTOrOperatorNodeInput>? orOperator = null,
+            global::System.Action<global::G.ASTAndOperatorNodeInput>? andOperator = null,
+            global::System.Action<global::G.ASTEqualsOperatorNodeInput>? eqOperator = null,
+            global::System.Action<global::G.ASTNotEqualsOperatorNodeInput>? neqOperator = null,
+            global::System.Action<global::G.ASTGreaterThanOperatorNodeInput>? gtOperator = null,
+            global::System.Action<global::G.ASTLessThanOperatorNodeInput>? ltOperator = null,
+            global::System.Action<global::G.ASTGreaterThanOrEqualsOperatorNodeInput>? gteOperator = null,
+            global::System.Action<global::G.ASTLessThanOrEqualsOperatorNodeInput>? lteOperator = null,
             bool validate = true)
         {
             if (validate)

@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickMessagesRequestToolChoice0(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.MessagesRequestToolChoice0? value)
+        {
+            value = MessagesRequestToolChoice0;
+            return IsMessagesRequestToolChoice0;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.MessagesRequestToolChoice1? MessagesRequestToolChoice1 { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessagesRequestToolChoice1))]
 #endif
         public bool IsMessagesRequestToolChoice1 => MessagesRequestToolChoice1 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMessagesRequestToolChoice1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.MessagesRequestToolChoice1? value)
+        {
+            value = MessagesRequestToolChoice1;
+            return IsMessagesRequestToolChoice1;
+        }
 
         /// <summary>
         /// 
@@ -64,6 +90,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickMessagesRequestToolChoice2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.MessagesRequestToolChoice2? value)
+        {
+            value = MessagesRequestToolChoice2;
+            return IsMessagesRequestToolChoice2;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.MessagesRequestToolChoice3? MessagesRequestToolChoice3 { get; init; }
 #else
@@ -77,6 +116,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessagesRequestToolChoice3))]
 #endif
         public bool IsMessagesRequestToolChoice3 => MessagesRequestToolChoice3 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMessagesRequestToolChoice3(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.MessagesRequestToolChoice3? value)
+        {
+            value = MessagesRequestToolChoice3;
+            return IsMessagesRequestToolChoice3;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -197,10 +249,10 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.MessagesRequestToolChoice0?, TResult>? messagesRequestToolChoice0 = null,
-            global::System.Func<global::G.MessagesRequestToolChoice1?, TResult>? messagesRequestToolChoice1 = null,
-            global::System.Func<global::G.MessagesRequestToolChoice2?, TResult>? messagesRequestToolChoice2 = null,
-            global::System.Func<global::G.MessagesRequestToolChoice3?, TResult>? messagesRequestToolChoice3 = null,
+            global::System.Func<global::G.MessagesRequestToolChoice0, TResult>? messagesRequestToolChoice0 = null,
+            global::System.Func<global::G.MessagesRequestToolChoice1, TResult>? messagesRequestToolChoice1 = null,
+            global::System.Func<global::G.MessagesRequestToolChoice2, TResult>? messagesRequestToolChoice2 = null,
+            global::System.Func<global::G.MessagesRequestToolChoice3, TResult>? messagesRequestToolChoice3 = null,
             bool validate = true)
         {
             if (validate)
@@ -232,10 +284,46 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.MessagesRequestToolChoice0?>? messagesRequestToolChoice0 = null,
-            global::System.Action<global::G.MessagesRequestToolChoice1?>? messagesRequestToolChoice1 = null,
-            global::System.Action<global::G.MessagesRequestToolChoice2?>? messagesRequestToolChoice2 = null,
-            global::System.Action<global::G.MessagesRequestToolChoice3?>? messagesRequestToolChoice3 = null,
+            global::System.Action<global::G.MessagesRequestToolChoice0>? messagesRequestToolChoice0 = null,
+
+            global::System.Action<global::G.MessagesRequestToolChoice1>? messagesRequestToolChoice1 = null,
+
+            global::System.Action<global::G.MessagesRequestToolChoice2>? messagesRequestToolChoice2 = null,
+
+            global::System.Action<global::G.MessagesRequestToolChoice3>? messagesRequestToolChoice3 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsMessagesRequestToolChoice0)
+            {
+                messagesRequestToolChoice0?.Invoke(MessagesRequestToolChoice0!);
+            }
+            else if (IsMessagesRequestToolChoice1)
+            {
+                messagesRequestToolChoice1?.Invoke(MessagesRequestToolChoice1!);
+            }
+            else if (IsMessagesRequestToolChoice2)
+            {
+                messagesRequestToolChoice2?.Invoke(MessagesRequestToolChoice2!);
+            }
+            else if (IsMessagesRequestToolChoice3)
+            {
+                messagesRequestToolChoice3?.Invoke(MessagesRequestToolChoice3!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.MessagesRequestToolChoice0>? messagesRequestToolChoice0 = null,
+            global::System.Action<global::G.MessagesRequestToolChoice1>? messagesRequestToolChoice1 = null,
+            global::System.Action<global::G.MessagesRequestToolChoice2>? messagesRequestToolChoice2 = null,
+            global::System.Action<global::G.MessagesRequestToolChoice3>? messagesRequestToolChoice3 = null,
             bool validate = true)
         {
             if (validate)

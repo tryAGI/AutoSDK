@@ -30,6 +30,23 @@ namespace G
         /// Returns:<br/>
         ///     The enhanced schema.
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.EnhancedJsonSchema>> EnhanceSchemaAsResponseAsync(
+
+            global::G.JsonSchemaEnhanceParams request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Enhance a schema<br/>
+        /// Enhance a schema by enriching the descriptions to aid extraction.<br/>
+        /// Args:<br/>
+        ///     params: The parameters for enhancing a schema.<br/>
+        /// Returns:<br/>
+        ///     The enhanced schema.
+        /// </summary>
         /// <param name="jsonSchema">
         /// The JSON schema to enhance
         /// </param>

@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickStartFromVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out long? value)
+        {
+            value = StartFromVariant1;
+            return IsStartFromVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public double? StartFromVariant2 { get; init; }
 #else
@@ -47,6 +60,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickStartFromVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out double? value)
+        {
+            value = StartFromVariant2;
+            return IsStartFromVariant2;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.DateTime? DateTime { get; init; }
 #else
@@ -60,6 +86,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(DateTime))]
 #endif
         public bool IsDateTime => DateTime != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickDateTime(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::System.DateTime? value)
+        {
+            value = DateTime;
+            return IsDateTime;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -188,6 +227,36 @@ namespace G
         /// 
         /// </summary>
         public void Match(
+            global::System.Action<long?>? startFromVariant1 = null,
+
+            global::System.Action<double?>? startFromVariant2 = null,
+
+            global::System.Action<global::System.DateTime?>? dateTime = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsStartFromVariant1)
+            {
+                startFromVariant1?.Invoke(StartFromVariant1!);
+            }
+            else if (IsStartFromVariant2)
+            {
+                startFromVariant2?.Invoke(StartFromVariant2!);
+            }
+            else if (IsDateTime)
+            {
+                dateTime?.Invoke(DateTime!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
             global::System.Action<long?>? startFromVariant1 = null,
             global::System.Action<double?>? startFromVariant2 = null,
             global::System.Action<global::System.DateTime?>? dateTime = null,

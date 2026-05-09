@@ -28,6 +28,19 @@ namespace G
         public bool IsReasoningDetailSummary => ReasoningDetailSummary != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickReasoningDetailSummary(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ReasoningDetailSummary? value)
+        {
+            value = ReasoningDetailSummary;
+            return IsReasoningDetailSummary;
+        }
+
+        /// <summary>
         /// Reasoning detail encrypted schema
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -45,6 +58,19 @@ namespace G
         public bool IsReasoningDetailEncrypted => ReasoningDetailEncrypted != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickReasoningDetailEncrypted(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ReasoningDetailEncrypted? value)
+        {
+            value = ReasoningDetailEncrypted;
+            return IsReasoningDetailEncrypted;
+        }
+
+        /// <summary>
         /// Reasoning detail text schema
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -60,6 +86,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ReasoningDetailText))]
 #endif
         public bool IsReasoningDetailText => ReasoningDetailText != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickReasoningDetailText(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ReasoningDetailText? value)
+        {
+            value = ReasoningDetailText;
+            return IsReasoningDetailText;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -158,9 +197,9 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.ReasoningDetailSummary?, TResult>? reasoningDetailSummary = null,
-            global::System.Func<global::G.ReasoningDetailEncrypted?, TResult>? reasoningDetailEncrypted = null,
-            global::System.Func<global::G.ReasoningDetailText?, TResult>? reasoningDetailText = null,
+            global::System.Func<global::G.ReasoningDetailSummary, TResult>? reasoningDetailSummary = null,
+            global::System.Func<global::G.ReasoningDetailEncrypted, TResult>? reasoningDetailEncrypted = null,
+            global::System.Func<global::G.ReasoningDetailText, TResult>? reasoningDetailText = null,
             bool validate = true)
         {
             if (validate)
@@ -188,9 +227,39 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.ReasoningDetailSummary?>? reasoningDetailSummary = null,
-            global::System.Action<global::G.ReasoningDetailEncrypted?>? reasoningDetailEncrypted = null,
-            global::System.Action<global::G.ReasoningDetailText?>? reasoningDetailText = null,
+            global::System.Action<global::G.ReasoningDetailSummary>? reasoningDetailSummary = null,
+
+            global::System.Action<global::G.ReasoningDetailEncrypted>? reasoningDetailEncrypted = null,
+
+            global::System.Action<global::G.ReasoningDetailText>? reasoningDetailText = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsReasoningDetailSummary)
+            {
+                reasoningDetailSummary?.Invoke(ReasoningDetailSummary!);
+            }
+            else if (IsReasoningDetailEncrypted)
+            {
+                reasoningDetailEncrypted?.Invoke(ReasoningDetailEncrypted!);
+            }
+            else if (IsReasoningDetailText)
+            {
+                reasoningDetailText?.Invoke(ReasoningDetailText!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.ReasoningDetailSummary>? reasoningDetailSummary = null,
+            global::System.Action<global::G.ReasoningDetailEncrypted>? reasoningDetailEncrypted = null,
+            global::System.Action<global::G.ReasoningDetailText>? reasoningDetailText = null,
             bool validate = true)
         {
             if (validate)

@@ -28,6 +28,19 @@ namespace G
         public bool IsEmbeddingImageMetadata => EmbeddingImageMetadata != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickEmbeddingImageMetadata(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.EmbeddingImageMetadata? value)
+        {
+            value = EmbeddingImageMetadata;
+            return IsEmbeddingImageMetadata;
+        }
+
+        /// <summary>
         /// Metadata for text-image embeddings
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(EmbeddingTextImageMetadata))]
 #endif
         public bool IsEmbeddingTextImageMetadata => EmbeddingTextImageMetadata != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickEmbeddingTextImageMetadata(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.EmbeddingTextImageMetadata? value)
+        {
+            value = EmbeddingTextImageMetadata;
+            return IsEmbeddingTextImageMetadata;
+        }
 
         /// <summary>
         /// Metadata for audio embeddings
@@ -62,6 +88,19 @@ namespace G
         public bool IsEmbeddingAudioMetadata => EmbeddingAudioMetadata != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickEmbeddingAudioMetadata(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.EmbeddingAudioMetadata? value)
+        {
+            value = EmbeddingAudioMetadata;
+            return IsEmbeddingAudioMetadata;
+        }
+
+        /// <summary>
         /// Metadata for video embeddings
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -79,6 +118,19 @@ namespace G
         public bool IsEmbeddingVideoMetadata => EmbeddingVideoMetadata != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickEmbeddingVideoMetadata(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.EmbeddingVideoMetadata? value)
+        {
+            value = EmbeddingVideoMetadata;
+            return IsEmbeddingVideoMetadata;
+        }
+
+        /// <summary>
         /// Metadata for multi-input embeddings
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -94,6 +146,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(EmbeddingMultiInputMetadata))]
 #endif
         public bool IsEmbeddingMultiInputMetadata => EmbeddingMultiInputMetadata != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickEmbeddingMultiInputMetadata(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.EmbeddingMultiInputMetadata? value)
+        {
+            value = EmbeddingMultiInputMetadata;
+            return IsEmbeddingMultiInputMetadata;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -236,11 +301,11 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.EmbeddingImageMetadata?, TResult>? embeddingImageMetadata = null,
-            global::System.Func<global::G.EmbeddingTextImageMetadata?, TResult>? embeddingTextImageMetadata = null,
-            global::System.Func<global::G.EmbeddingAudioMetadata?, TResult>? embeddingAudioMetadata = null,
-            global::System.Func<global::G.EmbeddingVideoMetadata?, TResult>? embeddingVideoMetadata = null,
-            global::System.Func<global::G.EmbeddingMultiInputMetadata?, TResult>? embeddingMultiInputMetadata = null,
+            global::System.Func<global::G.EmbeddingImageMetadata, TResult>? embeddingImageMetadata = null,
+            global::System.Func<global::G.EmbeddingTextImageMetadata, TResult>? embeddingTextImageMetadata = null,
+            global::System.Func<global::G.EmbeddingAudioMetadata, TResult>? embeddingAudioMetadata = null,
+            global::System.Func<global::G.EmbeddingVideoMetadata, TResult>? embeddingVideoMetadata = null,
+            global::System.Func<global::G.EmbeddingMultiInputMetadata, TResult>? embeddingMultiInputMetadata = null,
             bool validate = true)
         {
             if (validate)
@@ -276,11 +341,53 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.EmbeddingImageMetadata?>? embeddingImageMetadata = null,
-            global::System.Action<global::G.EmbeddingTextImageMetadata?>? embeddingTextImageMetadata = null,
-            global::System.Action<global::G.EmbeddingAudioMetadata?>? embeddingAudioMetadata = null,
-            global::System.Action<global::G.EmbeddingVideoMetadata?>? embeddingVideoMetadata = null,
-            global::System.Action<global::G.EmbeddingMultiInputMetadata?>? embeddingMultiInputMetadata = null,
+            global::System.Action<global::G.EmbeddingImageMetadata>? embeddingImageMetadata = null,
+
+            global::System.Action<global::G.EmbeddingTextImageMetadata>? embeddingTextImageMetadata = null,
+
+            global::System.Action<global::G.EmbeddingAudioMetadata>? embeddingAudioMetadata = null,
+
+            global::System.Action<global::G.EmbeddingVideoMetadata>? embeddingVideoMetadata = null,
+
+            global::System.Action<global::G.EmbeddingMultiInputMetadata>? embeddingMultiInputMetadata = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsEmbeddingImageMetadata)
+            {
+                embeddingImageMetadata?.Invoke(EmbeddingImageMetadata!);
+            }
+            else if (IsEmbeddingTextImageMetadata)
+            {
+                embeddingTextImageMetadata?.Invoke(EmbeddingTextImageMetadata!);
+            }
+            else if (IsEmbeddingAudioMetadata)
+            {
+                embeddingAudioMetadata?.Invoke(EmbeddingAudioMetadata!);
+            }
+            else if (IsEmbeddingVideoMetadata)
+            {
+                embeddingVideoMetadata?.Invoke(EmbeddingVideoMetadata!);
+            }
+            else if (IsEmbeddingMultiInputMetadata)
+            {
+                embeddingMultiInputMetadata?.Invoke(EmbeddingMultiInputMetadata!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.EmbeddingImageMetadata>? embeddingImageMetadata = null,
+            global::System.Action<global::G.EmbeddingTextImageMetadata>? embeddingTextImageMetadata = null,
+            global::System.Action<global::G.EmbeddingAudioMetadata>? embeddingAudioMetadata = null,
+            global::System.Action<global::G.EmbeddingVideoMetadata>? embeddingVideoMetadata = null,
+            global::System.Action<global::G.EmbeddingMultiInputMetadata>? embeddingMultiInputMetadata = null,
             bool validate = true)
         {
             if (validate)

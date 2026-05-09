@@ -34,6 +34,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickString(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.StringToolChoice? value)
+        {
+            value = String;
+            return IsString;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.JsonObjectToolChoice? JsonObject { get; init; }
 #else
@@ -47,6 +60,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(JsonObject))]
 #endif
         public bool IsJsonObject => JsonObject != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickJsonObject(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.JsonObjectToolChoice? value)
+        {
+            value = JsonObject;
+            return IsJsonObject;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -123,8 +149,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.StringToolChoice?, TResult>? @string = null,
-            global::System.Func<global::G.JsonObjectToolChoice?, TResult>? jsonObject = null,
+            global::System.Func<global::G.StringToolChoice, TResult>? @string = null,
+            global::System.Func<global::G.JsonObjectToolChoice, TResult>? jsonObject = null,
             bool validate = true)
         {
             if (validate)
@@ -148,8 +174,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.StringToolChoice?>? @string = null,
-            global::System.Action<global::G.JsonObjectToolChoice?>? jsonObject = null,
+            global::System.Action<global::G.StringToolChoice>? @string = null,
+
+            global::System.Action<global::G.JsonObjectToolChoice>? jsonObject = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsString)
+            {
+                @string?.Invoke(String!);
+            }
+            else if (IsJsonObject)
+            {
+                jsonObject?.Invoke(JsonObject!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.StringToolChoice>? @string = null,
+            global::System.Action<global::G.JsonObjectToolChoice>? jsonObject = null,
             bool validate = true)
         {
             if (validate)

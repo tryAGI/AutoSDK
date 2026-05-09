@@ -33,6 +33,19 @@ namespace G
         public bool IsSearchClients => SearchClients != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSearchClients(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.SearchClientsParams? value)
+        {
+            value = SearchClients;
+            return IsSearchClients;
+        }
+
+        /// <summary>
         /// List clients ordered by most recently updated, with an optional limit.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -48,6 +61,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ListClients))]
 #endif
         public bool IsListClients => ListClients != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickListClients(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ListClientsParams? value)
+        {
+            value = ListClients;
+            return IsListClients;
+        }
 
         /// <summary>
         /// Look up a client by their exact phone number.
@@ -67,6 +93,19 @@ namespace G
         public bool IsGetClientByPhone => GetClientByPhone != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickGetClientByPhone(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.GetClientByPhoneParams? value)
+        {
+            value = GetClientByPhone;
+            return IsGetClientByPhone;
+        }
+
+        /// <summary>
         /// Create a new client in the system.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -84,6 +123,19 @@ namespace G
         public bool IsCreateClient => CreateClient != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickCreateClient(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateClientParams? value)
+        {
+            value = CreateClient;
+            return IsCreateClient;
+        }
+
+        /// <summary>
         /// Update an existing client's information.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -99,6 +151,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(UpdateClient))]
 #endif
         public bool IsUpdateClient => UpdateClient != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickUpdateClient(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.UpdateClientParams? value)
+        {
+            value = UpdateClient;
+            return IsUpdateClient;
+        }
 
         /// <summary>
         /// Delete an existing client from the system.
@@ -120,6 +185,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickDeleteClient(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.DeleteClientParams? value)
+        {
+            value = DeleteClient;
+            return IsDeleteClient;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ListStaffParams? ListStaff { get; init; }
 #else
@@ -133,6 +211,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ListStaff))]
 #endif
         public bool IsListStaff => ListStaff != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickListStaff(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ListStaffParams? value)
+        {
+            value = ListStaff;
+            return IsListStaff;
+        }
 
         /// <summary>
         /// Create a new staff member in the system.
@@ -152,6 +243,19 @@ namespace G
         public bool IsCreateStaff => CreateStaff != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickCreateStaff(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateStaffParams? value)
+        {
+            value = CreateStaff;
+            return IsCreateStaff;
+        }
+
+        /// <summary>
         /// Update an existing staff member's information.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -167,6 +271,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(UpdateStaff))]
 #endif
         public bool IsUpdateStaff => UpdateStaff != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickUpdateStaff(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.UpdateStaffParams? value)
+        {
+            value = UpdateStaff;
+            return IsUpdateStaff;
+        }
 
         /// <summary>
         /// Delete an existing staff member from the system.
@@ -188,6 +305,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickDeleteStaff(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.DeleteStaffParams? value)
+        {
+            value = DeleteStaff;
+            return IsDeleteStaff;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ListAssetsParams? ListAssets { get; init; }
 #else
@@ -201,6 +331,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ListAssets))]
 #endif
         public bool IsListAssets => ListAssets != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickListAssets(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ListAssetsParams? value)
+        {
+            value = ListAssets;
+            return IsListAssets;
+        }
 
         /// <summary>
         /// 
@@ -222,6 +365,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickCreateAsset(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateAssetParams? value)
+        {
+            value = CreateAsset;
+            return IsCreateAsset;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.UpdateAssetParams? UpdateAsset { get; init; }
 #else
@@ -235,6 +391,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(UpdateAsset))]
 #endif
         public bool IsUpdateAsset => UpdateAsset != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickUpdateAsset(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.UpdateAssetParams? value)
+        {
+            value = UpdateAsset;
+            return IsUpdateAsset;
+        }
 
         /// <summary>
         /// 
@@ -256,6 +425,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickDeleteAsset(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.DeleteAssetParams? value)
+        {
+            value = DeleteAsset;
+            return IsDeleteAsset;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ListServicesParams? ListServices { get; init; }
 #else
@@ -269,6 +451,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ListServices))]
 #endif
         public bool IsListServices => ListServices != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickListServices(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ListServicesParams? value)
+        {
+            value = ListServices;
+            return IsListServices;
+        }
 
         /// <summary>
         /// Create a new service in the system.
@@ -288,6 +483,19 @@ namespace G
         public bool IsCreateService => CreateService != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickCreateService(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateServiceParams? value)
+        {
+            value = CreateService;
+            return IsCreateService;
+        }
+
+        /// <summary>
         /// Update an existing service's information.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -303,6 +511,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(UpdateService))]
 #endif
         public bool IsUpdateService => UpdateService != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickUpdateService(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.UpdateServiceParams? value)
+        {
+            value = UpdateService;
+            return IsUpdateService;
+        }
 
         /// <summary>
         /// Delete an existing service from the system.
@@ -324,6 +545,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickDeleteService(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.DeleteServiceParams? value)
+        {
+            value = DeleteService;
+            return IsDeleteService;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ListProductsParams? ListProducts { get; init; }
 #else
@@ -337,6 +571,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ListProducts))]
 #endif
         public bool IsListProducts => ListProducts != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickListProducts(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ListProductsParams? value)
+        {
+            value = ListProducts;
+            return IsListProducts;
+        }
 
         /// <summary>
         /// 
@@ -358,6 +605,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickCreateProduct(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateProductParams? value)
+        {
+            value = CreateProduct;
+            return IsCreateProduct;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.UpdateProductParams? UpdateProduct { get; init; }
 #else
@@ -371,6 +631,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(UpdateProduct))]
 #endif
         public bool IsUpdateProduct => UpdateProduct != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickUpdateProduct(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.UpdateProductParams? value)
+        {
+            value = UpdateProduct;
+            return IsUpdateProduct;
+        }
 
         /// <summary>
         /// 
@@ -392,6 +665,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickDeleteProduct(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.DeleteProductParams? value)
+        {
+            value = DeleteProduct;
+            return IsDeleteProduct;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CheckServiceAvailabilityParams? CheckServiceAvailability { get; init; }
 #else
@@ -405,6 +691,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CheckServiceAvailability))]
 #endif
         public bool IsCheckServiceAvailability => CheckServiceAvailability != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickCheckServiceAvailability(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CheckServiceAvailabilityParams? value)
+        {
+            value = CheckServiceAvailability;
+            return IsCheckServiceAvailability;
+        }
 
         /// <summary>
         /// 
@@ -426,6 +725,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickCreateClientAppointment(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateClientAppointmentParams? value)
+        {
+            value = CreateClientAppointment;
+            return IsCreateClientAppointment;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.GetClientAppointmentsParams? GetClientAppointments { get; init; }
 #else
@@ -439,6 +751,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(GetClientAppointments))]
 #endif
         public bool IsGetClientAppointments => GetClientAppointments != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickGetClientAppointments(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.GetClientAppointmentsParams? value)
+        {
+            value = GetClientAppointments;
+            return IsGetClientAppointments;
+        }
 
         /// <summary>
         /// 
@@ -460,6 +785,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickListCalendarEvents(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ListCalendarEventsParams? value)
+        {
+            value = ListCalendarEvents;
+            return IsListCalendarEvents;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.UpdateCalendarEventParams? UpdateCalendarEvent { get; init; }
 #else
@@ -473,6 +811,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(UpdateCalendarEvent))]
 #endif
         public bool IsUpdateCalendarEvent => UpdateCalendarEvent != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickUpdateCalendarEvent(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.UpdateCalendarEventParams? value)
+        {
+            value = UpdateCalendarEvent;
+            return IsUpdateCalendarEvent;
+        }
 
         /// <summary>
         /// 
@@ -494,6 +845,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickDeleteCalendarEvent(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.DeleteCalendarEventParams? value)
+        {
+            value = DeleteCalendarEvent;
+            return IsDeleteCalendarEvent;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ListRentalServicesParams? ListRentalServices { get; init; }
 #else
@@ -507,6 +871,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ListRentalServices))]
 #endif
         public bool IsListRentalServices => ListRentalServices != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickListRentalServices(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ListRentalServicesParams? value)
+        {
+            value = ListRentalServices;
+            return IsListRentalServices;
+        }
 
         /// <summary>
         /// 
@@ -528,6 +905,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickCheckRentalAvailability(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CheckRentalAvailabilityParams? value)
+        {
+            value = CheckRentalAvailability;
+            return IsCheckRentalAvailability;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CreateRentalBookingParams? CreateRentalBooking { get; init; }
 #else
@@ -541,6 +931,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CreateRentalBooking))]
 #endif
         public bool IsCreateRentalBooking => CreateRentalBooking != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickCreateRentalBooking(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateRentalBookingParams? value)
+        {
+            value = CreateRentalBooking;
+            return IsCreateRentalBooking;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -1258,37 +1661,37 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.SearchClientsParams?, TResult>? searchClients = null,
-            global::System.Func<global::G.ListClientsParams?, TResult>? listClients = null,
-            global::System.Func<global::G.GetClientByPhoneParams?, TResult>? getClientByPhone = null,
-            global::System.Func<global::G.CreateClientParams?, TResult>? createClient = null,
-            global::System.Func<global::G.UpdateClientParams?, TResult>? updateClient = null,
-            global::System.Func<global::G.DeleteClientParams?, TResult>? deleteClient = null,
-            global::System.Func<global::G.ListStaffParams?, TResult>? listStaff = null,
-            global::System.Func<global::G.CreateStaffParams?, TResult>? createStaff = null,
-            global::System.Func<global::G.UpdateStaffParams?, TResult>? updateStaff = null,
-            global::System.Func<global::G.DeleteStaffParams?, TResult>? deleteStaff = null,
-            global::System.Func<global::G.ListAssetsParams?, TResult>? listAssets = null,
-            global::System.Func<global::G.CreateAssetParams?, TResult>? createAsset = null,
-            global::System.Func<global::G.UpdateAssetParams?, TResult>? updateAsset = null,
-            global::System.Func<global::G.DeleteAssetParams?, TResult>? deleteAsset = null,
-            global::System.Func<global::G.ListServicesParams?, TResult>? listServices = null,
-            global::System.Func<global::G.CreateServiceParams?, TResult>? createService = null,
-            global::System.Func<global::G.UpdateServiceParams?, TResult>? updateService = null,
-            global::System.Func<global::G.DeleteServiceParams?, TResult>? deleteService = null,
-            global::System.Func<global::G.ListProductsParams?, TResult>? listProducts = null,
-            global::System.Func<global::G.CreateProductParams?, TResult>? createProduct = null,
-            global::System.Func<global::G.UpdateProductParams?, TResult>? updateProduct = null,
-            global::System.Func<global::G.DeleteProductParams?, TResult>? deleteProduct = null,
-            global::System.Func<global::G.CheckServiceAvailabilityParams?, TResult>? checkServiceAvailability = null,
-            global::System.Func<global::G.CreateClientAppointmentParams?, TResult>? createClientAppointment = null,
-            global::System.Func<global::G.GetClientAppointmentsParams?, TResult>? getClientAppointments = null,
-            global::System.Func<global::G.ListCalendarEventsParams?, TResult>? listCalendarEvents = null,
-            global::System.Func<global::G.UpdateCalendarEventParams?, TResult>? updateCalendarEvent = null,
-            global::System.Func<global::G.DeleteCalendarEventParams?, TResult>? deleteCalendarEvent = null,
-            global::System.Func<global::G.ListRentalServicesParams?, TResult>? listRentalServices = null,
-            global::System.Func<global::G.CheckRentalAvailabilityParams?, TResult>? checkRentalAvailability = null,
-            global::System.Func<global::G.CreateRentalBookingParams?, TResult>? createRentalBooking = null,
+            global::System.Func<global::G.SearchClientsParams, TResult>? searchClients = null,
+            global::System.Func<global::G.ListClientsParams, TResult>? listClients = null,
+            global::System.Func<global::G.GetClientByPhoneParams, TResult>? getClientByPhone = null,
+            global::System.Func<global::G.CreateClientParams, TResult>? createClient = null,
+            global::System.Func<global::G.UpdateClientParams, TResult>? updateClient = null,
+            global::System.Func<global::G.DeleteClientParams, TResult>? deleteClient = null,
+            global::System.Func<global::G.ListStaffParams, TResult>? listStaff = null,
+            global::System.Func<global::G.CreateStaffParams, TResult>? createStaff = null,
+            global::System.Func<global::G.UpdateStaffParams, TResult>? updateStaff = null,
+            global::System.Func<global::G.DeleteStaffParams, TResult>? deleteStaff = null,
+            global::System.Func<global::G.ListAssetsParams, TResult>? listAssets = null,
+            global::System.Func<global::G.CreateAssetParams, TResult>? createAsset = null,
+            global::System.Func<global::G.UpdateAssetParams, TResult>? updateAsset = null,
+            global::System.Func<global::G.DeleteAssetParams, TResult>? deleteAsset = null,
+            global::System.Func<global::G.ListServicesParams, TResult>? listServices = null,
+            global::System.Func<global::G.CreateServiceParams, TResult>? createService = null,
+            global::System.Func<global::G.UpdateServiceParams, TResult>? updateService = null,
+            global::System.Func<global::G.DeleteServiceParams, TResult>? deleteService = null,
+            global::System.Func<global::G.ListProductsParams, TResult>? listProducts = null,
+            global::System.Func<global::G.CreateProductParams, TResult>? createProduct = null,
+            global::System.Func<global::G.UpdateProductParams, TResult>? updateProduct = null,
+            global::System.Func<global::G.DeleteProductParams, TResult>? deleteProduct = null,
+            global::System.Func<global::G.CheckServiceAvailabilityParams, TResult>? checkServiceAvailability = null,
+            global::System.Func<global::G.CreateClientAppointmentParams, TResult>? createClientAppointment = null,
+            global::System.Func<global::G.GetClientAppointmentsParams, TResult>? getClientAppointments = null,
+            global::System.Func<global::G.ListCalendarEventsParams, TResult>? listCalendarEvents = null,
+            global::System.Func<global::G.UpdateCalendarEventParams, TResult>? updateCalendarEvent = null,
+            global::System.Func<global::G.DeleteCalendarEventParams, TResult>? deleteCalendarEvent = null,
+            global::System.Func<global::G.ListRentalServicesParams, TResult>? listRentalServices = null,
+            global::System.Func<global::G.CheckRentalAvailabilityParams, TResult>? checkRentalAvailability = null,
+            global::System.Func<global::G.CreateRentalBookingParams, TResult>? createRentalBooking = null,
             bool validate = true)
         {
             if (validate)
@@ -1428,37 +1831,235 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.SearchClientsParams?>? searchClients = null,
-            global::System.Action<global::G.ListClientsParams?>? listClients = null,
-            global::System.Action<global::G.GetClientByPhoneParams?>? getClientByPhone = null,
-            global::System.Action<global::G.CreateClientParams?>? createClient = null,
-            global::System.Action<global::G.UpdateClientParams?>? updateClient = null,
-            global::System.Action<global::G.DeleteClientParams?>? deleteClient = null,
-            global::System.Action<global::G.ListStaffParams?>? listStaff = null,
-            global::System.Action<global::G.CreateStaffParams?>? createStaff = null,
-            global::System.Action<global::G.UpdateStaffParams?>? updateStaff = null,
-            global::System.Action<global::G.DeleteStaffParams?>? deleteStaff = null,
-            global::System.Action<global::G.ListAssetsParams?>? listAssets = null,
-            global::System.Action<global::G.CreateAssetParams?>? createAsset = null,
-            global::System.Action<global::G.UpdateAssetParams?>? updateAsset = null,
-            global::System.Action<global::G.DeleteAssetParams?>? deleteAsset = null,
-            global::System.Action<global::G.ListServicesParams?>? listServices = null,
-            global::System.Action<global::G.CreateServiceParams?>? createService = null,
-            global::System.Action<global::G.UpdateServiceParams?>? updateService = null,
-            global::System.Action<global::G.DeleteServiceParams?>? deleteService = null,
-            global::System.Action<global::G.ListProductsParams?>? listProducts = null,
-            global::System.Action<global::G.CreateProductParams?>? createProduct = null,
-            global::System.Action<global::G.UpdateProductParams?>? updateProduct = null,
-            global::System.Action<global::G.DeleteProductParams?>? deleteProduct = null,
-            global::System.Action<global::G.CheckServiceAvailabilityParams?>? checkServiceAvailability = null,
-            global::System.Action<global::G.CreateClientAppointmentParams?>? createClientAppointment = null,
-            global::System.Action<global::G.GetClientAppointmentsParams?>? getClientAppointments = null,
-            global::System.Action<global::G.ListCalendarEventsParams?>? listCalendarEvents = null,
-            global::System.Action<global::G.UpdateCalendarEventParams?>? updateCalendarEvent = null,
-            global::System.Action<global::G.DeleteCalendarEventParams?>? deleteCalendarEvent = null,
-            global::System.Action<global::G.ListRentalServicesParams?>? listRentalServices = null,
-            global::System.Action<global::G.CheckRentalAvailabilityParams?>? checkRentalAvailability = null,
-            global::System.Action<global::G.CreateRentalBookingParams?>? createRentalBooking = null,
+            global::System.Action<global::G.SearchClientsParams>? searchClients = null,
+
+            global::System.Action<global::G.ListClientsParams>? listClients = null,
+
+            global::System.Action<global::G.GetClientByPhoneParams>? getClientByPhone = null,
+
+            global::System.Action<global::G.CreateClientParams>? createClient = null,
+
+            global::System.Action<global::G.UpdateClientParams>? updateClient = null,
+
+            global::System.Action<global::G.DeleteClientParams>? deleteClient = null,
+
+            global::System.Action<global::G.ListStaffParams>? listStaff = null,
+
+            global::System.Action<global::G.CreateStaffParams>? createStaff = null,
+
+            global::System.Action<global::G.UpdateStaffParams>? updateStaff = null,
+
+            global::System.Action<global::G.DeleteStaffParams>? deleteStaff = null,
+
+            global::System.Action<global::G.ListAssetsParams>? listAssets = null,
+
+            global::System.Action<global::G.CreateAssetParams>? createAsset = null,
+
+            global::System.Action<global::G.UpdateAssetParams>? updateAsset = null,
+
+            global::System.Action<global::G.DeleteAssetParams>? deleteAsset = null,
+
+            global::System.Action<global::G.ListServicesParams>? listServices = null,
+
+            global::System.Action<global::G.CreateServiceParams>? createService = null,
+
+            global::System.Action<global::G.UpdateServiceParams>? updateService = null,
+
+            global::System.Action<global::G.DeleteServiceParams>? deleteService = null,
+
+            global::System.Action<global::G.ListProductsParams>? listProducts = null,
+
+            global::System.Action<global::G.CreateProductParams>? createProduct = null,
+
+            global::System.Action<global::G.UpdateProductParams>? updateProduct = null,
+
+            global::System.Action<global::G.DeleteProductParams>? deleteProduct = null,
+
+            global::System.Action<global::G.CheckServiceAvailabilityParams>? checkServiceAvailability = null,
+
+            global::System.Action<global::G.CreateClientAppointmentParams>? createClientAppointment = null,
+
+            global::System.Action<global::G.GetClientAppointmentsParams>? getClientAppointments = null,
+
+            global::System.Action<global::G.ListCalendarEventsParams>? listCalendarEvents = null,
+
+            global::System.Action<global::G.UpdateCalendarEventParams>? updateCalendarEvent = null,
+
+            global::System.Action<global::G.DeleteCalendarEventParams>? deleteCalendarEvent = null,
+
+            global::System.Action<global::G.ListRentalServicesParams>? listRentalServices = null,
+
+            global::System.Action<global::G.CheckRentalAvailabilityParams>? checkRentalAvailability = null,
+
+            global::System.Action<global::G.CreateRentalBookingParams>? createRentalBooking = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsSearchClients)
+            {
+                searchClients?.Invoke(SearchClients!);
+            }
+            else if (IsListClients)
+            {
+                listClients?.Invoke(ListClients!);
+            }
+            else if (IsGetClientByPhone)
+            {
+                getClientByPhone?.Invoke(GetClientByPhone!);
+            }
+            else if (IsCreateClient)
+            {
+                createClient?.Invoke(CreateClient!);
+            }
+            else if (IsUpdateClient)
+            {
+                updateClient?.Invoke(UpdateClient!);
+            }
+            else if (IsDeleteClient)
+            {
+                deleteClient?.Invoke(DeleteClient!);
+            }
+            else if (IsListStaff)
+            {
+                listStaff?.Invoke(ListStaff!);
+            }
+            else if (IsCreateStaff)
+            {
+                createStaff?.Invoke(CreateStaff!);
+            }
+            else if (IsUpdateStaff)
+            {
+                updateStaff?.Invoke(UpdateStaff!);
+            }
+            else if (IsDeleteStaff)
+            {
+                deleteStaff?.Invoke(DeleteStaff!);
+            }
+            else if (IsListAssets)
+            {
+                listAssets?.Invoke(ListAssets!);
+            }
+            else if (IsCreateAsset)
+            {
+                createAsset?.Invoke(CreateAsset!);
+            }
+            else if (IsUpdateAsset)
+            {
+                updateAsset?.Invoke(UpdateAsset!);
+            }
+            else if (IsDeleteAsset)
+            {
+                deleteAsset?.Invoke(DeleteAsset!);
+            }
+            else if (IsListServices)
+            {
+                listServices?.Invoke(ListServices!);
+            }
+            else if (IsCreateService)
+            {
+                createService?.Invoke(CreateService!);
+            }
+            else if (IsUpdateService)
+            {
+                updateService?.Invoke(UpdateService!);
+            }
+            else if (IsDeleteService)
+            {
+                deleteService?.Invoke(DeleteService!);
+            }
+            else if (IsListProducts)
+            {
+                listProducts?.Invoke(ListProducts!);
+            }
+            else if (IsCreateProduct)
+            {
+                createProduct?.Invoke(CreateProduct!);
+            }
+            else if (IsUpdateProduct)
+            {
+                updateProduct?.Invoke(UpdateProduct!);
+            }
+            else if (IsDeleteProduct)
+            {
+                deleteProduct?.Invoke(DeleteProduct!);
+            }
+            else if (IsCheckServiceAvailability)
+            {
+                checkServiceAvailability?.Invoke(CheckServiceAvailability!);
+            }
+            else if (IsCreateClientAppointment)
+            {
+                createClientAppointment?.Invoke(CreateClientAppointment!);
+            }
+            else if (IsGetClientAppointments)
+            {
+                getClientAppointments?.Invoke(GetClientAppointments!);
+            }
+            else if (IsListCalendarEvents)
+            {
+                listCalendarEvents?.Invoke(ListCalendarEvents!);
+            }
+            else if (IsUpdateCalendarEvent)
+            {
+                updateCalendarEvent?.Invoke(UpdateCalendarEvent!);
+            }
+            else if (IsDeleteCalendarEvent)
+            {
+                deleteCalendarEvent?.Invoke(DeleteCalendarEvent!);
+            }
+            else if (IsListRentalServices)
+            {
+                listRentalServices?.Invoke(ListRentalServices!);
+            }
+            else if (IsCheckRentalAvailability)
+            {
+                checkRentalAvailability?.Invoke(CheckRentalAvailability!);
+            }
+            else if (IsCreateRentalBooking)
+            {
+                createRentalBooking?.Invoke(CreateRentalBooking!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.SearchClientsParams>? searchClients = null,
+            global::System.Action<global::G.ListClientsParams>? listClients = null,
+            global::System.Action<global::G.GetClientByPhoneParams>? getClientByPhone = null,
+            global::System.Action<global::G.CreateClientParams>? createClient = null,
+            global::System.Action<global::G.UpdateClientParams>? updateClient = null,
+            global::System.Action<global::G.DeleteClientParams>? deleteClient = null,
+            global::System.Action<global::G.ListStaffParams>? listStaff = null,
+            global::System.Action<global::G.CreateStaffParams>? createStaff = null,
+            global::System.Action<global::G.UpdateStaffParams>? updateStaff = null,
+            global::System.Action<global::G.DeleteStaffParams>? deleteStaff = null,
+            global::System.Action<global::G.ListAssetsParams>? listAssets = null,
+            global::System.Action<global::G.CreateAssetParams>? createAsset = null,
+            global::System.Action<global::G.UpdateAssetParams>? updateAsset = null,
+            global::System.Action<global::G.DeleteAssetParams>? deleteAsset = null,
+            global::System.Action<global::G.ListServicesParams>? listServices = null,
+            global::System.Action<global::G.CreateServiceParams>? createService = null,
+            global::System.Action<global::G.UpdateServiceParams>? updateService = null,
+            global::System.Action<global::G.DeleteServiceParams>? deleteService = null,
+            global::System.Action<global::G.ListProductsParams>? listProducts = null,
+            global::System.Action<global::G.CreateProductParams>? createProduct = null,
+            global::System.Action<global::G.UpdateProductParams>? updateProduct = null,
+            global::System.Action<global::G.DeleteProductParams>? deleteProduct = null,
+            global::System.Action<global::G.CheckServiceAvailabilityParams>? checkServiceAvailability = null,
+            global::System.Action<global::G.CreateClientAppointmentParams>? createClientAppointment = null,
+            global::System.Action<global::G.GetClientAppointmentsParams>? getClientAppointments = null,
+            global::System.Action<global::G.ListCalendarEventsParams>? listCalendarEvents = null,
+            global::System.Action<global::G.UpdateCalendarEventParams>? updateCalendarEvent = null,
+            global::System.Action<global::G.DeleteCalendarEventParams>? deleteCalendarEvent = null,
+            global::System.Action<global::G.ListRentalServicesParams>? listRentalServices = null,
+            global::System.Action<global::G.CheckRentalAvailabilityParams>? checkRentalAvailability = null,
+            global::System.Action<global::G.CreateRentalBookingParams>? createRentalBooking = null,
             bool validate = true)
         {
             if (validate)

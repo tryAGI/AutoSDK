@@ -30,6 +30,24 @@ namespace G
         /// Default Value: false
         /// </param>
         /// <param name="session"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::G.ExtractJob>>> RunBatchJobsApiV1ExtractionJobsBatchPostAsResponseAsync(
+
+            global::G.ExtractJobCreateBatch request,
+            bool? fromUi = default,
+            string? session = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Run Batch Jobs
+        /// </summary>
+        /// <param name="fromUi">
+        /// Default Value: false
+        /// </param>
+        /// <param name="session"></param>
         /// <param name="webhookConfigurations">
         /// Outbound webhook endpoints to notify on job status changes
         /// </param>

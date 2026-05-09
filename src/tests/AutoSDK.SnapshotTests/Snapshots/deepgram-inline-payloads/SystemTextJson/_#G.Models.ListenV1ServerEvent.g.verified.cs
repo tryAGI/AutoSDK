@@ -33,6 +33,19 @@ namespace G
         public bool IsResults => Results != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResults(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ListenV1Results? value)
+        {
+            value = Results;
+            return IsResults;
+        }
+
+        /// <summary>
         /// Metadata about the transcription session.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -48,6 +61,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Metadata))]
 #endif
         public bool IsMetadata => Metadata != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMetadata(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ListenV1Metadata? value)
+        {
+            value = Metadata;
+            return IsMetadata;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -127,8 +153,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.ListenV1Results?, TResult>? results = null,
-            global::System.Func<global::G.ListenV1Metadata?, TResult>? metadata = null,
+            global::System.Func<global::G.ListenV1Results, TResult>? results = null,
+            global::System.Func<global::G.ListenV1Metadata, TResult>? metadata = null,
             bool validate = true)
         {
             if (validate)
@@ -152,8 +178,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.ListenV1Results?>? results = null,
-            global::System.Action<global::G.ListenV1Metadata?>? metadata = null,
+            global::System.Action<global::G.ListenV1Results>? results = null,
+
+            global::System.Action<global::G.ListenV1Metadata>? metadata = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsResults)
+            {
+                results?.Invoke(Results!);
+            }
+            else if (IsMetadata)
+            {
+                metadata?.Invoke(Metadata!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.ListenV1Results>? results = null,
+            global::System.Action<global::G.ListenV1Metadata>? metadata = null,
             bool validate = true)
         {
             if (validate)

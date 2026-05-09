@@ -28,6 +28,23 @@ namespace G
         /// </summary>
         /// <param name="pipelineId"></param>
         /// <param name="session"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::System.Collections.Generic.Dictionary<string, string>>> ImportPipelineMetadataApiV1PipelinesPipelineIdMetadataPutAsResponseAsync(
+            global::System.Guid pipelineId,
+
+            global::G.BodyImportPipelineMetadataApiV1PipelinesPipelineIdMetadataPut request,
+            string? session = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Import Pipeline Metadata<br/>
+        /// Import metadata for a pipeline.
+        /// </summary>
+        /// <param name="pipelineId"></param>
+        /// <param name="session"></param>
         /// <param name="uploadFile"></param>
         /// <param name="uploadFilename"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -36,6 +53,47 @@ namespace G
         global::System.Threading.Tasks.Task<global::System.Collections.Generic.Dictionary<string, string>> ImportPipelineMetadataApiV1PipelinesPipelineIdMetadataPutAsync(
             global::System.Guid pipelineId,
             byte[] uploadFile,
+            string uploadFilename,
+            string? session = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Import Pipeline Metadata<br/>
+        /// Import metadata for a pipeline.
+        /// </summary>
+        /// <param name="pipelineId"></param>
+        /// <param name="session"></param>
+        /// <param name="uploadFile">
+        /// The stream to send as the multipart 'upload_file' file part.
+        /// </param>
+        /// <param name="uploadFilename"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::System.Collections.Generic.Dictionary<string, string>> ImportPipelineMetadataApiV1PipelinesPipelineIdMetadataPutAsync(
+            global::System.Guid pipelineId,
+            global::System.IO.Stream uploadFile,
+            string uploadFilename,
+            string? session = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Import Pipeline Metadata<br/>
+        /// Import metadata for a pipeline.
+        /// </summary>
+        /// <param name="pipelineId"></param>
+        /// <param name="session"></param>
+        /// <param name="uploadFile">
+        /// The stream to send as the multipart 'upload_file' file part.
+        /// </param>
+        /// <param name="uploadFilename"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::System.Collections.Generic.Dictionary<string, string>>> ImportPipelineMetadataApiV1PipelinesPipelineIdMetadataPutAsResponseAsync(
+            global::System.Guid pipelineId,
+            global::System.IO.Stream uploadFile,
             string uploadFilename,
             string? session = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,

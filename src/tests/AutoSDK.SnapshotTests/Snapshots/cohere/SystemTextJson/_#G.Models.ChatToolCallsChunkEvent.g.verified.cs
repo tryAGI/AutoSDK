@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickStream(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ChatStreamEvent? value)
+        {
+            value = Stream;
+            return IsStream;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ChatToolCallsChunkEventT7lliu? T7lliu { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(T7lliu))]
 #endif
         public bool IsT7lliu => T7lliu != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickT7lliu(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ChatToolCallsChunkEventT7lliu? value)
+        {
+            value = T7lliu;
+            return IsT7lliu;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -119,8 +145,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.ChatStreamEvent?, TResult>? stream = null,
-            global::System.Func<global::G.ChatToolCallsChunkEventT7lliu?, TResult>? t7lliu = null,
+            global::System.Func<global::G.ChatStreamEvent, TResult>? stream = null,
+            global::System.Func<global::G.ChatToolCallsChunkEventT7lliu, TResult>? t7lliu = null,
             bool validate = true)
         {
             if (validate)
@@ -144,8 +170,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.ChatStreamEvent?>? stream = null,
-            global::System.Action<global::G.ChatToolCallsChunkEventT7lliu?>? t7lliu = null,
+            global::System.Action<global::G.ChatStreamEvent>? stream = null,
+
+            global::System.Action<global::G.ChatToolCallsChunkEventT7lliu>? t7lliu = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsStream)
+            {
+                stream?.Invoke(Stream!);
+            }
+            else if (IsT7lliu)
+            {
+                t7lliu?.Invoke(T7lliu!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.ChatStreamEvent>? stream = null,
+            global::System.Action<global::G.ChatToolCallsChunkEventT7lliu>? t7lliu = null,
             bool validate = true)
         {
             if (validate)

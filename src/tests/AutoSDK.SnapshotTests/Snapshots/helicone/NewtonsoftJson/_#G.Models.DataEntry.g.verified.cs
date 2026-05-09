@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickDataEntryVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.DataEntryVariant1? value)
+        {
+            value = DataEntryVariant1;
+            return IsDataEntryVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.DataEntryVariant2? DataEntryVariant2 { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(DataEntryVariant2))]
 #endif
         public bool IsDataEntryVariant2 => DataEntryVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickDataEntryVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.DataEntryVariant2? value)
+        {
+            value = DataEntryVariant2;
+            return IsDataEntryVariant2;
+        }
 
         /// <summary>
         /// 
@@ -64,6 +90,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickDataEntryVariant3(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.DataEntryVariant3? value)
+        {
+            value = DataEntryVariant3;
+            return IsDataEntryVariant3;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.DataEntryVariant4? DataEntryVariant4 { get; init; }
 #else
@@ -77,6 +116,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(DataEntryVariant4))]
 #endif
         public bool IsDataEntryVariant4 => DataEntryVariant4 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickDataEntryVariant4(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.DataEntryVariant4? value)
+        {
+            value = DataEntryVariant4;
+            return IsDataEntryVariant4;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -197,10 +249,10 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.DataEntryVariant1?, TResult>? dataEntryVariant1 = null,
-            global::System.Func<global::G.DataEntryVariant2?, TResult>? dataEntryVariant2 = null,
-            global::System.Func<global::G.DataEntryVariant3?, TResult>? dataEntryVariant3 = null,
-            global::System.Func<global::G.DataEntryVariant4?, TResult>? dataEntryVariant4 = null,
+            global::System.Func<global::G.DataEntryVariant1, TResult>? dataEntryVariant1 = null,
+            global::System.Func<global::G.DataEntryVariant2, TResult>? dataEntryVariant2 = null,
+            global::System.Func<global::G.DataEntryVariant3, TResult>? dataEntryVariant3 = null,
+            global::System.Func<global::G.DataEntryVariant4, TResult>? dataEntryVariant4 = null,
             bool validate = true)
         {
             if (validate)
@@ -232,10 +284,46 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.DataEntryVariant1?>? dataEntryVariant1 = null,
-            global::System.Action<global::G.DataEntryVariant2?>? dataEntryVariant2 = null,
-            global::System.Action<global::G.DataEntryVariant3?>? dataEntryVariant3 = null,
-            global::System.Action<global::G.DataEntryVariant4?>? dataEntryVariant4 = null,
+            global::System.Action<global::G.DataEntryVariant1>? dataEntryVariant1 = null,
+
+            global::System.Action<global::G.DataEntryVariant2>? dataEntryVariant2 = null,
+
+            global::System.Action<global::G.DataEntryVariant3>? dataEntryVariant3 = null,
+
+            global::System.Action<global::G.DataEntryVariant4>? dataEntryVariant4 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsDataEntryVariant1)
+            {
+                dataEntryVariant1?.Invoke(DataEntryVariant1!);
+            }
+            else if (IsDataEntryVariant2)
+            {
+                dataEntryVariant2?.Invoke(DataEntryVariant2!);
+            }
+            else if (IsDataEntryVariant3)
+            {
+                dataEntryVariant3?.Invoke(DataEntryVariant3!);
+            }
+            else if (IsDataEntryVariant4)
+            {
+                dataEntryVariant4?.Invoke(DataEntryVariant4!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.DataEntryVariant1>? dataEntryVariant1 = null,
+            global::System.Action<global::G.DataEntryVariant2>? dataEntryVariant2 = null,
+            global::System.Action<global::G.DataEntryVariant3>? dataEntryVariant3 = null,
+            global::System.Action<global::G.DataEntryVariant4>? dataEntryVariant4 = null,
             bool validate = true)
         {
             if (validate)

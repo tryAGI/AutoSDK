@@ -9,6 +9,19 @@ namespace G
     public partial class AgentsClient
     {
 
+        private static readonly global::G.AutoSDKServer[] s_ListAgentsServers = new global::G.AutoSDKServer[]
+        {            new global::G.AutoSDKServer(
+                id: "https-app-letta-com",
+                name: "Letta Cloud",
+                url: "https://app.letta.com/",
+                description: "Letta Cloud"),
+            new global::G.AutoSDKServer(
+                id: "http-localhost",
+                name: "Self-hosted",
+                url: "http://localhost:8283/",
+                description: "Self-hosted"),
+        };
+
 
         private static readonly global::G.EndPointSecurityRequirement s_ListAgentsSecurityRequirement0 =
             new global::G.EndPointSecurityRequirement
@@ -174,6 +187,126 @@ namespace G
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var __response = await ListAgentsAsResponseAsync(
+                name: name,
+                tags: tags,
+                matchAllTags: matchAllTags,
+                before: before,
+                after: after,
+                limit: limit,
+                queryText: queryText,
+                projectId: projectId,
+                templateId: templateId,
+                baseTemplateId: baseTemplateId,
+                identityId: identityId,
+                identifierKeys: identifierKeys,
+                includeRelationships: includeRelationships,
+                include: include,
+                order: order,
+                orderBy: orderBy,
+                ascending: ascending,
+                sortBy: sortBy,
+                lastStopReason: lastStopReason,
+                requestOptions: requestOptions,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// List Agents<br/>
+        /// Get a list of all agents.
+        /// </summary>
+        /// <param name="name">
+        /// Name of the agent
+        /// </param>
+        /// <param name="tags">
+        /// List of tags to filter agents by
+        /// </param>
+        /// <param name="matchAllTags">
+        /// If True, only returns agents that match ALL given tags. Otherwise, return agents that have ANY of the passed-in tags.<br/>
+        /// Default Value: false
+        /// </param>
+        /// <param name="before">
+        /// Cursor for pagination
+        /// </param>
+        /// <param name="after">
+        /// Cursor for pagination
+        /// </param>
+        /// <param name="limit">
+        /// Limit for pagination<br/>
+        /// Default Value: 50
+        /// </param>
+        /// <param name="queryText">
+        /// Search agents by name
+        /// </param>
+        /// <param name="projectId">
+        /// Search agents by project ID - this will default to your default project on cloud
+        /// </param>
+        /// <param name="templateId">
+        /// Search agents by template ID
+        /// </param>
+        /// <param name="baseTemplateId">
+        /// Search agents by base template ID
+        /// </param>
+        /// <param name="identityId">
+        /// Search agents by identity ID
+        /// </param>
+        /// <param name="identifierKeys">
+        /// Search agents by identifier keys
+        /// </param>
+        /// <param name="includeRelationships">
+        /// Specify which relational fields (e.g., 'tools', 'sources', 'memory') to include in the response. If not provided, all relationships are loaded by default. Using this can optimize performance by reducing unnecessary joins.This is a legacy parameter, and no longer supported after 1.0.0 SDK versions.
+        /// </param>
+        /// <param name="include">
+        /// Specify which relational fields to include in the response. No relationships are included by default.<br/>
+        /// Default Value: []
+        /// </param>
+        /// <param name="order">
+        /// Sort order for agents by creation time. 'asc' for oldest first, 'desc' for newest first<br/>
+        /// Default Value: desc
+        /// </param>
+        /// <param name="orderBy">
+        /// Field to sort by<br/>
+        /// Default Value: created_at
+        /// </param>
+        /// <param name="ascending">
+        /// Whether to sort agents oldest to newest (True) or newest to oldest (False, default)<br/>
+        /// Default Value: false
+        /// </param>
+        /// <param name="sortBy">
+        /// Field to sort by. Options: 'created_at' (default), 'last_run_completion'<br/>
+        /// Default Value: created_at
+        /// </param>
+        /// <param name="lastStopReason">
+        /// Filter agents by their last stop reason.
+        /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::G.AgentState>>> ListAgentsAsResponseAsync(
+            string? name = default,
+            global::System.Collections.Generic.IList<string>? tags = default,
+            bool? matchAllTags = default,
+            string? before = default,
+            string? after = default,
+            int? limit = default,
+            string? queryText = default,
+            string? projectId = default,
+            string? templateId = default,
+            string? baseTemplateId = default,
+            string? identityId = default,
+            global::System.Collections.Generic.IList<string>? identifierKeys = default,
+            global::System.Collections.Generic.IList<string>? includeRelationships = default,
+            global::System.Collections.Generic.IList<global::G.ListAgentsIncludeItem>? include = default,
+            global::G.ListAgentsOrder? order = default,
+            global::G.ListAgentsOrderBy? orderBy = default,
+            bool? ascending = default,
+            string? sortBy = default,
+            global::G.StopReasonType? lastStopReason = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             PrepareArguments(
                 client: HttpClient);
             PrepareListAgentsArguments(
@@ -220,9 +353,12 @@ namespace G
 
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
+
                             var __pathBuilder = new global::G.PathBuilder(
                                 path: "/v1/agents/",
-                                baseUri: HttpClient.BaseAddress); 
+                                baseUri: ResolveBaseUri(
+                                servers: s_ListAgentsServers,
+                                defaultBaseUrl: "https://app.letta.com/"));
                             __pathBuilder
                                 .AddOptionalParameter("name", name)
                                 .AddOptionalParameter("tags", tags?.ToString())
@@ -242,7 +378,7 @@ namespace G
                                 .AddOptionalParameter("order_by", orderBy?.ToValueString())
                                 .AddOptionalParameter("ascending", ascending?.ToString().ToLowerInvariant())
                                 .AddOptionalParameter("sort_by", sortBy)
-                                .AddOptionalParameter("last_stop_reason", lastStopReason?.ToString()) 
+                                .AddOptionalParameter("last_stop_reason", lastStopReason?.ToString())
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::G.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -332,6 +468,8 @@ namespace G
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                     try
                     {
@@ -342,6 +480,11 @@ namespace G
                     }
                     catch (global::System.Net.Http.HttpRequestException __exception)
                     {
+                        var __retryDelay = global::G.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: null,
+                            attempt: __attempt);
                         var __willRetry = __attempt < __maxAttempts && !__effectiveCancellationToken.IsCancellationRequested;
                         await global::G.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
@@ -359,6 +502,8 @@ namespace G
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: __willRetry,
+                                retryDelay: __willRetry ? __retryDelay : (global::System.TimeSpan?)null,
+                                retryReason: "exception",
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         if (!__willRetry)
                         {
@@ -368,8 +513,7 @@ namespace G
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::G.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -378,6 +522,11 @@ namespace G
                         __attempt < __maxAttempts &&
                         global::G.AutoSDKRequestOptionsSupport.ShouldRetryStatusCode(__response.StatusCode))
                     {
+                        var __retryDelay = global::G.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: __response,
+                            attempt: __attempt);
                         await global::G.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
@@ -394,14 +543,15 @@ namespace G
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: true,
+                                retryDelay: __retryDelay,
+                                retryReason: "status:" + ((int)__response.StatusCode).ToString(global::System.Globalization.CultureInfo.InvariantCulture),
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         __response.Dispose();
                         __response = null;
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::G.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -441,6 +591,8 @@ namespace G
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
                 else
@@ -461,6 +613,8 @@ namespace G
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
                             // Validation Error
@@ -523,9 +677,13 @@ namespace G
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    return
-                                        global::System.Text.Json.JsonSerializer.Deserialize<global::System.Collections.Generic.IList<global::G.AgentState>?>(__content, JsonSerializerOptions) ??
+                                    var __value = global::System.Text.Json.JsonSerializer.Deserialize<global::System.Collections.Generic.IList<global::G.AgentState>?>(__content, JsonSerializerOptions) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                                    return new global::G.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::G.AgentState>>(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri,
+                                        body: __value);
                                 }
                                 catch (global::System.Exception __ex)
                                 {
@@ -553,9 +711,13 @@ namespace G
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    return
-                                        await global::System.Text.Json.JsonSerializer.DeserializeAsync<global::System.Collections.Generic.IList<global::G.AgentState>?>(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                                    var __value = await global::System.Text.Json.JsonSerializer.DeserializeAsync<global::System.Collections.Generic.IList<global::G.AgentState>?>(__content, JsonSerializerOptions).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
+                                    return new global::G.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::G.AgentState>>(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri,
+                                        body: __value);
                                 }
                                 catch (global::System.Exception __ex)
                                 {

@@ -35,6 +35,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickChat(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.PromptChatTemplate? value)
+        {
+            value = Chat;
+            return IsChat;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.PromptStringTemplate? String { get; init; }
 #else
@@ -48,6 +61,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(String))]
 #endif
         public bool IsString => String != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickString(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.PromptStringTemplate? value)
+        {
+            value = String;
+            return IsString;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -127,8 +153,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.PromptChatTemplate?, TResult>? chat = null,
-            global::System.Func<global::G.PromptStringTemplate?, TResult>? @string = null,
+            global::System.Func<global::G.PromptChatTemplate, TResult>? chat = null,
+            global::System.Func<global::G.PromptStringTemplate, TResult>? @string = null,
             bool validate = true)
         {
             if (validate)
@@ -152,8 +178,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.PromptChatTemplate?>? chat = null,
-            global::System.Action<global::G.PromptStringTemplate?>? @string = null,
+            global::System.Action<global::G.PromptChatTemplate>? chat = null,
+
+            global::System.Action<global::G.PromptStringTemplate>? @string = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsChat)
+            {
+                chat?.Invoke(Chat!);
+            }
+            else if (IsString)
+            {
+                @string?.Invoke(String!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.PromptChatTemplate>? chat = null,
+            global::System.Action<global::G.PromptStringTemplate>? @string = null,
             bool validate = true)
         {
             if (validate)

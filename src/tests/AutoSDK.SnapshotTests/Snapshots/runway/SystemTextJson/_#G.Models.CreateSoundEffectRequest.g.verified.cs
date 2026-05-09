@@ -13,6 +13,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public string? Model { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CreateSoundEffectRequestElevenTextToSoundV2? ElevenTextToSoundV2 { get; init; }
 #else
@@ -26,6 +31,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ElevenTextToSoundV2))]
 #endif
         public bool IsElevenTextToSoundV2 => ElevenTextToSoundV2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickElevenTextToSoundV2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateSoundEffectRequestElevenTextToSoundV2? value)
+        {
+            value = ElevenTextToSoundV2;
+            return IsElevenTextToSoundV2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -42,6 +60,19 @@ namespace G
         public CreateSoundEffectRequest(global::G.CreateSoundEffectRequestElevenTextToSoundV2? value)
         {
             ElevenTextToSoundV2 = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public CreateSoundEffectRequest(
+            string? model,
+            global::G.CreateSoundEffectRequestElevenTextToSoundV2? elevenTextToSoundV2
+            )
+        {
+            Model = model;
+
+            ElevenTextToSoundV2 = elevenTextToSoundV2;
         }
 
         /// <summary>
@@ -70,7 +101,7 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.CreateSoundEffectRequestElevenTextToSoundV2?, TResult>? elevenTextToSoundV2 = null,
+            global::System.Func<global::G.CreateSoundEffectRequestElevenTextToSoundV2, TResult>? elevenTextToSoundV2 = null,
             bool validate = true)
         {
             if (validate)
@@ -90,7 +121,25 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.CreateSoundEffectRequestElevenTextToSoundV2?>? elevenTextToSoundV2 = null,
+            global::System.Action<global::G.CreateSoundEffectRequestElevenTextToSoundV2>? elevenTextToSoundV2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsElevenTextToSoundV2)
+            {
+                elevenTextToSoundV2?.Invoke(ElevenTextToSoundV2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.CreateSoundEffectRequestElevenTextToSoundV2>? elevenTextToSoundV2 = null,
             bool validate = true)
         {
             if (validate)

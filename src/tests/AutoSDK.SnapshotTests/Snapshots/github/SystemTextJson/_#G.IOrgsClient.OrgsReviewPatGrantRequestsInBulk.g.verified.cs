@@ -27,6 +27,22 @@ namespace G
         /// Only GitHub Apps can use this endpoint.
         /// </summary>
         /// <param name="org"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<string>> OrgsReviewPatGrantRequestsInBulkAsResponseAsync(
+            string org,
+
+            global::G.OrgsReviewPatGrantRequestsInBulkRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Review requests to access organization resources with fine-grained personal access tokens<br/>
+        /// Approves or denies multiple pending requests to access organization resources via a fine-grained personal access token.<br/>
+        /// Only GitHub Apps can use this endpoint.
+        /// </summary>
+        /// <param name="org"></param>
         /// <param name="patRequestIds">
         /// Unique identifiers of the requests for access via fine-grained personal access token. Must be formed of between 1 and 100 `pat_request_id` values.
         /// </param>

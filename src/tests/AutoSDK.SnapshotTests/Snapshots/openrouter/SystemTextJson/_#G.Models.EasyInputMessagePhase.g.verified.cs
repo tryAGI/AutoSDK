@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickEasyInputMessagePhase0(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.EasyInputMessagePhase0? value)
+        {
+            value = EasyInputMessagePhase0;
+            return IsEasyInputMessagePhase0;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.EasyInputMessagePhase1? EasyInputMessagePhase1 { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(EasyInputMessagePhase1))]
 #endif
         public bool IsEasyInputMessagePhase1 => EasyInputMessagePhase1 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickEasyInputMessagePhase1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.EasyInputMessagePhase1? value)
+        {
+            value = EasyInputMessagePhase1;
+            return IsEasyInputMessagePhase1;
+        }
 
         /// <summary>
         /// Any type
@@ -60,6 +86,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(EasyInputMessagePhaseVariant3))]
 #endif
         public bool IsEasyInputMessagePhaseVariant3 => EasyInputMessagePhaseVariant3 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickEasyInputMessagePhaseVariant3(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out object? value)
+        {
+            value = EasyInputMessagePhaseVariant3;
+            return IsEasyInputMessagePhaseVariant3;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -142,7 +181,7 @@ namespace G
         public TResult? Match<TResult>(
             global::System.Func<global::G.EasyInputMessagePhase0?, TResult>? easyInputMessagePhase0 = null,
             global::System.Func<global::G.EasyInputMessagePhase1?, TResult>? easyInputMessagePhase1 = null,
-            global::System.Func<object?, TResult>? easyInputMessagePhaseVariant3 = null,
+            global::System.Func<object, TResult>? easyInputMessagePhaseVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -171,8 +210,38 @@ namespace G
         /// </summary>
         public void Match(
             global::System.Action<global::G.EasyInputMessagePhase0?>? easyInputMessagePhase0 = null,
+
             global::System.Action<global::G.EasyInputMessagePhase1?>? easyInputMessagePhase1 = null,
-            global::System.Action<object?>? easyInputMessagePhaseVariant3 = null,
+
+            global::System.Action<object>? easyInputMessagePhaseVariant3 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsEasyInputMessagePhase0)
+            {
+                easyInputMessagePhase0?.Invoke(EasyInputMessagePhase0!);
+            }
+            else if (IsEasyInputMessagePhase1)
+            {
+                easyInputMessagePhase1?.Invoke(EasyInputMessagePhase1!);
+            }
+            else if (IsEasyInputMessagePhaseVariant3)
+            {
+                easyInputMessagePhaseVariant3?.Invoke(EasyInputMessagePhaseVariant3!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.EasyInputMessagePhase0?>? easyInputMessagePhase0 = null,
+            global::System.Action<global::G.EasyInputMessagePhase1?>? easyInputMessagePhase1 = null,
+            global::System.Action<object>? easyInputMessagePhaseVariant3 = null,
             bool validate = true)
         {
             if (validate)

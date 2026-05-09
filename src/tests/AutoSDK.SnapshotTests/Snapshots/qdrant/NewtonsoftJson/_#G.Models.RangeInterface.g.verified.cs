@@ -28,6 +28,19 @@ namespace G
         public bool IsRange => Range != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickRange(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.Range? value)
+        {
+            value = Range;
+            return IsRange;
+        }
+
+        /// <summary>
         /// Range filter request
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Datetime))]
 #endif
         public bool IsDatetime => Datetime != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickDatetime(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.DatetimeRange? value)
+        {
+            value = Datetime;
+            return IsDatetime;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -119,8 +145,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.Range?, TResult>? range = null,
-            global::System.Func<global::G.DatetimeRange?, TResult>? datetime = null,
+            global::System.Func<global::G.Range, TResult>? range = null,
+            global::System.Func<global::G.DatetimeRange, TResult>? datetime = null,
             bool validate = true)
         {
             if (validate)
@@ -144,8 +170,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.Range?>? range = null,
-            global::System.Action<global::G.DatetimeRange?>? datetime = null,
+            global::System.Action<global::G.Range>? range = null,
+
+            global::System.Action<global::G.DatetimeRange>? datetime = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsRange)
+            {
+                range?.Invoke(Range!);
+            }
+            else if (IsDatetime)
+            {
+                datetime?.Invoke(Datetime!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.Range>? range = null,
+            global::System.Action<global::G.DatetimeRange>? datetime = null,
             bool validate = true)
         {
             if (validate)

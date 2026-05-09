@@ -11,6 +11,11 @@ namespace G
     public readonly partial struct OutputItem : global::System.IEquatable<OutputItem>
     {
         /// <summary>
+        /// 
+        /// </summary>
+        public string? Type { get; }
+
+        /// <summary>
         /// An output message from the model.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -26,6 +31,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Message))]
 #endif
         public bool IsMessage => Message != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMessage(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.OutputMessage? value)
+        {
+            value = Message;
+            return IsMessage;
+        }
 
         /// <summary>
         /// The results of a file search tool call. See the <br/>
@@ -46,6 +64,19 @@ namespace G
         public bool IsFileSearchCall => FileSearchCall != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFileSearchCall(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.FileSearchToolCall? value)
+        {
+            value = FileSearchCall;
+            return IsFileSearchCall;
+        }
+
+        /// <summary>
         /// A tool call to run a function. See the <br/>
         /// [function calling guide](/docs/guides/function-calling) for more information.
         /// </summary>
@@ -62,6 +93,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FunctionCall))]
 #endif
         public bool IsFunctionCall => FunctionCall != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFunctionCall(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.FunctionToolCall? value)
+        {
+            value = FunctionCall;
+            return IsFunctionCall;
+        }
 
         /// <summary>
         /// The results of a web search tool call. See the <br/>
@@ -82,6 +126,19 @@ namespace G
         public bool IsWebSearchCall => WebSearchCall != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickWebSearchCall(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.WebSearchToolCall? value)
+        {
+            value = WebSearchCall;
+            return IsWebSearchCall;
+        }
+
+        /// <summary>
         /// A tool call to a computer use tool. See the <br/>
         /// [computer use guide](/docs/guides/tools-computer-use) for more information.
         /// </summary>
@@ -98,6 +155,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ComputerCall))]
 #endif
         public bool IsComputerCall => ComputerCall != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickComputerCall(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ComputerToolCall? value)
+        {
+            value = ComputerCall;
+            return IsComputerCall;
+        }
 
         /// <summary>
         /// A description of the chain of thought used by a reasoning model while generating<br/>
@@ -120,6 +190,19 @@ namespace G
         public bool IsReasoning => Reasoning != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickReasoning(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ReasoningItem? value)
+        {
+            value = Reasoning;
+            return IsReasoning;
+        }
+
+        /// <summary>
         /// An image generation request made by the model.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -135,6 +218,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ImageGenerationCall))]
 #endif
         public bool IsImageGenerationCall => ImageGenerationCall != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickImageGenerationCall(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ImageGenToolCall? value)
+        {
+            value = ImageGenerationCall;
+            return IsImageGenerationCall;
+        }
 
         /// <summary>
         /// A tool call to run code.
@@ -154,6 +250,19 @@ namespace G
         public bool IsCodeInterpreterCall => CodeInterpreterCall != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickCodeInterpreterCall(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CodeInterpreterToolCall? value)
+        {
+            value = CodeInterpreterCall;
+            return IsCodeInterpreterCall;
+        }
+
+        /// <summary>
         /// A tool call to run a command on the local shell.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -169,6 +278,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(LocalShellCall))]
 #endif
         public bool IsLocalShellCall => LocalShellCall != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickLocalShellCall(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.LocalShellToolCall? value)
+        {
+            value = LocalShellCall;
+            return IsLocalShellCall;
+        }
 
         /// <summary>
         /// An invocation of a tool on an MCP server.
@@ -188,6 +310,19 @@ namespace G
         public bool IsMcpCall => McpCall != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMcpCall(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.MCPToolCall? value)
+        {
+            value = McpCall;
+            return IsMcpCall;
+        }
+
+        /// <summary>
         /// A list of tools available on an MCP server.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -205,6 +340,19 @@ namespace G
         public bool IsMcpListTools => McpListTools != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMcpListTools(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.MCPListTools? value)
+        {
+            value = McpListTools;
+            return IsMcpListTools;
+        }
+
+        /// <summary>
         /// A request for human approval of a tool invocation.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -220,6 +368,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(McpApprovalRequest))]
 #endif
         public bool IsMcpApprovalRequest => McpApprovalRequest != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMcpApprovalRequest(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.MCPApprovalRequest? value)
+        {
+            value = McpApprovalRequest;
+            return IsMcpApprovalRequest;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -440,6 +601,7 @@ namespace G
         /// 
         /// </summary>
         public OutputItem(
+            string? type,
             global::G.OutputMessage? message,
             global::G.FileSearchToolCall? fileSearchCall,
             global::G.FunctionToolCall? functionCall,
@@ -454,6 +616,8 @@ namespace G
             global::G.MCPApprovalRequest? mcpApprovalRequest
             )
         {
+            Type = type;
+
             Message = message;
             FileSearchCall = fileSearchCall;
             FunctionCall = functionCall;
@@ -516,18 +680,18 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.OutputMessage?, TResult>? message = null,
-            global::System.Func<global::G.FileSearchToolCall?, TResult>? fileSearchCall = null,
-            global::System.Func<global::G.FunctionToolCall?, TResult>? functionCall = null,
-            global::System.Func<global::G.WebSearchToolCall?, TResult>? webSearchCall = null,
-            global::System.Func<global::G.ComputerToolCall?, TResult>? computerCall = null,
-            global::System.Func<global::G.ReasoningItem?, TResult>? reasoning = null,
-            global::System.Func<global::G.ImageGenToolCall?, TResult>? imageGenerationCall = null,
-            global::System.Func<global::G.CodeInterpreterToolCall?, TResult>? codeInterpreterCall = null,
-            global::System.Func<global::G.LocalShellToolCall?, TResult>? localShellCall = null,
-            global::System.Func<global::G.MCPToolCall?, TResult>? mcpCall = null,
-            global::System.Func<global::G.MCPListTools?, TResult>? mcpListTools = null,
-            global::System.Func<global::G.MCPApprovalRequest?, TResult>? mcpApprovalRequest = null,
+            global::System.Func<global::G.OutputMessage, TResult>? message = null,
+            global::System.Func<global::G.FileSearchToolCall, TResult>? fileSearchCall = null,
+            global::System.Func<global::G.FunctionToolCall, TResult>? functionCall = null,
+            global::System.Func<global::G.WebSearchToolCall, TResult>? webSearchCall = null,
+            global::System.Func<global::G.ComputerToolCall, TResult>? computerCall = null,
+            global::System.Func<global::G.ReasoningItem, TResult>? reasoning = null,
+            global::System.Func<global::G.ImageGenToolCall, TResult>? imageGenerationCall = null,
+            global::System.Func<global::G.CodeInterpreterToolCall, TResult>? codeInterpreterCall = null,
+            global::System.Func<global::G.LocalShellToolCall, TResult>? localShellCall = null,
+            global::System.Func<global::G.MCPToolCall, TResult>? mcpCall = null,
+            global::System.Func<global::G.MCPListTools, TResult>? mcpListTools = null,
+            global::System.Func<global::G.MCPApprovalRequest, TResult>? mcpApprovalRequest = null,
             bool validate = true)
         {
             if (validate)
@@ -591,18 +755,102 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.OutputMessage?>? message = null,
-            global::System.Action<global::G.FileSearchToolCall?>? fileSearchCall = null,
-            global::System.Action<global::G.FunctionToolCall?>? functionCall = null,
-            global::System.Action<global::G.WebSearchToolCall?>? webSearchCall = null,
-            global::System.Action<global::G.ComputerToolCall?>? computerCall = null,
-            global::System.Action<global::G.ReasoningItem?>? reasoning = null,
-            global::System.Action<global::G.ImageGenToolCall?>? imageGenerationCall = null,
-            global::System.Action<global::G.CodeInterpreterToolCall?>? codeInterpreterCall = null,
-            global::System.Action<global::G.LocalShellToolCall?>? localShellCall = null,
-            global::System.Action<global::G.MCPToolCall?>? mcpCall = null,
-            global::System.Action<global::G.MCPListTools?>? mcpListTools = null,
-            global::System.Action<global::G.MCPApprovalRequest?>? mcpApprovalRequest = null,
+            global::System.Action<global::G.OutputMessage>? message = null,
+
+            global::System.Action<global::G.FileSearchToolCall>? fileSearchCall = null,
+
+            global::System.Action<global::G.FunctionToolCall>? functionCall = null,
+
+            global::System.Action<global::G.WebSearchToolCall>? webSearchCall = null,
+
+            global::System.Action<global::G.ComputerToolCall>? computerCall = null,
+
+            global::System.Action<global::G.ReasoningItem>? reasoning = null,
+
+            global::System.Action<global::G.ImageGenToolCall>? imageGenerationCall = null,
+
+            global::System.Action<global::G.CodeInterpreterToolCall>? codeInterpreterCall = null,
+
+            global::System.Action<global::G.LocalShellToolCall>? localShellCall = null,
+
+            global::System.Action<global::G.MCPToolCall>? mcpCall = null,
+
+            global::System.Action<global::G.MCPListTools>? mcpListTools = null,
+
+            global::System.Action<global::G.MCPApprovalRequest>? mcpApprovalRequest = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsMessage)
+            {
+                message?.Invoke(Message!);
+            }
+            else if (IsFileSearchCall)
+            {
+                fileSearchCall?.Invoke(FileSearchCall!);
+            }
+            else if (IsFunctionCall)
+            {
+                functionCall?.Invoke(FunctionCall!);
+            }
+            else if (IsWebSearchCall)
+            {
+                webSearchCall?.Invoke(WebSearchCall!);
+            }
+            else if (IsComputerCall)
+            {
+                computerCall?.Invoke(ComputerCall!);
+            }
+            else if (IsReasoning)
+            {
+                reasoning?.Invoke(Reasoning!);
+            }
+            else if (IsImageGenerationCall)
+            {
+                imageGenerationCall?.Invoke(ImageGenerationCall!);
+            }
+            else if (IsCodeInterpreterCall)
+            {
+                codeInterpreterCall?.Invoke(CodeInterpreterCall!);
+            }
+            else if (IsLocalShellCall)
+            {
+                localShellCall?.Invoke(LocalShellCall!);
+            }
+            else if (IsMcpCall)
+            {
+                mcpCall?.Invoke(McpCall!);
+            }
+            else if (IsMcpListTools)
+            {
+                mcpListTools?.Invoke(McpListTools!);
+            }
+            else if (IsMcpApprovalRequest)
+            {
+                mcpApprovalRequest?.Invoke(McpApprovalRequest!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.OutputMessage>? message = null,
+            global::System.Action<global::G.FileSearchToolCall>? fileSearchCall = null,
+            global::System.Action<global::G.FunctionToolCall>? functionCall = null,
+            global::System.Action<global::G.WebSearchToolCall>? webSearchCall = null,
+            global::System.Action<global::G.ComputerToolCall>? computerCall = null,
+            global::System.Action<global::G.ReasoningItem>? reasoning = null,
+            global::System.Action<global::G.ImageGenToolCall>? imageGenerationCall = null,
+            global::System.Action<global::G.CodeInterpreterToolCall>? codeInterpreterCall = null,
+            global::System.Action<global::G.LocalShellToolCall>? localShellCall = null,
+            global::System.Action<global::G.MCPToolCall>? mcpCall = null,
+            global::System.Action<global::G.MCPListTools>? mcpListTools = null,
+            global::System.Action<global::G.MCPApprovalRequest>? mcpApprovalRequest = null,
             bool validate = true)
         {
             if (validate)

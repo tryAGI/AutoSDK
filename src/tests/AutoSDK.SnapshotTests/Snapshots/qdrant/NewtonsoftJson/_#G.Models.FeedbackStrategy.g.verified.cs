@@ -26,6 +26,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Naive))]
 #endif
         public bool IsNaive => Naive != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickNaive(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.NaiveFeedbackStrategy? value)
+        {
+            value = Naive;
+            return IsNaive;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -70,7 +83,7 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.NaiveFeedbackStrategy?, TResult>? naive = null,
+            global::System.Func<global::G.NaiveFeedbackStrategy, TResult>? naive = null,
             bool validate = true)
         {
             if (validate)
@@ -90,7 +103,25 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.NaiveFeedbackStrategy?>? naive = null,
+            global::System.Action<global::G.NaiveFeedbackStrategy>? naive = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsNaive)
+            {
+                naive?.Invoke(Naive!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.NaiveFeedbackStrategy>? naive = null,
             bool validate = true)
         {
             if (validate)

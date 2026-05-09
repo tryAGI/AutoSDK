@@ -54,6 +54,35 @@ namespace G
         /// If `callback_url` is provided, Descript will POST the job status to that URL when the job finishes (successfully or not).<br/>
         /// The payload will match the format returned by [GET /jobs/{job_id}](#operation/getJob).
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.ImportProjectMediaResponse>> ImportProjectMediaAsResponseAsync(
+
+            global::G.ImportProjectMediaRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Import media and sequences<br/>
+        /// Import media files into a new or existing project and create compositions.<br/>
+        /// This endpoint can:<br/>
+        /// - Create a new project if `project_id` is not provided<br/>
+        /// - Import media files from URLs<br/>
+        /// - Create multitrack sequences<br/>
+        /// - Create compositions (timelines) from existing or new media in the project<br/>
+        /// - Trigger transcription and other background processing tasks<br/>
+        /// ### Media URL requirements<br/>
+        /// - URLs must be accessible by Descript servers<br/>
+        /// - URLs must support HTTP Range requests<br/>
+        /// - Recommended to sign URLs for 12-48 hours to reduce chance of failure<br/>
+        /// - [Supported file types](https://help.descript.com/hc/en-us/articles/10164098416909-Supported-file-types)<br/>
+        /// ### Async Operations<br/>
+        /// Imports run in the background and return a `job_id`. Monitor progress via the [GET /jobs/{job_id}](#operation/getJob) endpoint.<br/>
+        /// ### Dynamic webhook<br/>
+        /// If `callback_url` is provided, Descript will POST the job status to that URL when the job finishes (successfully or not).<br/>
+        /// The payload will match the format returned by [GET /jobs/{job_id}](#operation/getJob).
+        /// </summary>
         /// <param name="projectId">
         /// **[Work in progress]** Importing into an existing project is not yet supported. Currently, a new project is always created.<br/>
         /// Existing project ID to import media into. If not provided, a new project will be created.<br/>

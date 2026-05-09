@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickMessagesRequestPluginsItems0(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.MessagesRequestPluginsItems0? value)
+        {
+            value = MessagesRequestPluginsItems0;
+            return IsMessagesRequestPluginsItems0;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.MessagesRequestPluginsItems1? MessagesRequestPluginsItems1 { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessagesRequestPluginsItems1))]
 #endif
         public bool IsMessagesRequestPluginsItems1 => MessagesRequestPluginsItems1 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMessagesRequestPluginsItems1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.MessagesRequestPluginsItems1? value)
+        {
+            value = MessagesRequestPluginsItems1;
+            return IsMessagesRequestPluginsItems1;
+        }
 
         /// <summary>
         /// 
@@ -64,6 +90,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickMessagesRequestPluginsItems2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.MessagesRequestPluginsItems2? value)
+        {
+            value = MessagesRequestPluginsItems2;
+            return IsMessagesRequestPluginsItems2;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.MessagesRequestPluginsItems3? MessagesRequestPluginsItems3 { get; init; }
 #else
@@ -77,6 +116,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessagesRequestPluginsItems3))]
 #endif
         public bool IsMessagesRequestPluginsItems3 => MessagesRequestPluginsItems3 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMessagesRequestPluginsItems3(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.MessagesRequestPluginsItems3? value)
+        {
+            value = MessagesRequestPluginsItems3;
+            return IsMessagesRequestPluginsItems3;
+        }
 
         /// <summary>
         /// 
@@ -98,6 +150,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickMessagesRequestPluginsItems4(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.MessagesRequestPluginsItems4? value)
+        {
+            value = MessagesRequestPluginsItems4;
+            return IsMessagesRequestPluginsItems4;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.MessagesRequestPluginsItems5? MessagesRequestPluginsItems5 { get; init; }
 #else
@@ -111,6 +176,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessagesRequestPluginsItems5))]
 #endif
         public bool IsMessagesRequestPluginsItems5 => MessagesRequestPluginsItems5 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMessagesRequestPluginsItems5(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.MessagesRequestPluginsItems5? value)
+        {
+            value = MessagesRequestPluginsItems5;
+            return IsMessagesRequestPluginsItems5;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -275,12 +353,12 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.MessagesRequestPluginsItems0?, TResult>? messagesRequestPluginsItems0 = null,
-            global::System.Func<global::G.MessagesRequestPluginsItems1?, TResult>? messagesRequestPluginsItems1 = null,
-            global::System.Func<global::G.MessagesRequestPluginsItems2?, TResult>? messagesRequestPluginsItems2 = null,
-            global::System.Func<global::G.MessagesRequestPluginsItems3?, TResult>? messagesRequestPluginsItems3 = null,
-            global::System.Func<global::G.MessagesRequestPluginsItems4?, TResult>? messagesRequestPluginsItems4 = null,
-            global::System.Func<global::G.MessagesRequestPluginsItems5?, TResult>? messagesRequestPluginsItems5 = null,
+            global::System.Func<global::G.MessagesRequestPluginsItems0, TResult>? messagesRequestPluginsItems0 = null,
+            global::System.Func<global::G.MessagesRequestPluginsItems1, TResult>? messagesRequestPluginsItems1 = null,
+            global::System.Func<global::G.MessagesRequestPluginsItems2, TResult>? messagesRequestPluginsItems2 = null,
+            global::System.Func<global::G.MessagesRequestPluginsItems3, TResult>? messagesRequestPluginsItems3 = null,
+            global::System.Func<global::G.MessagesRequestPluginsItems4, TResult>? messagesRequestPluginsItems4 = null,
+            global::System.Func<global::G.MessagesRequestPluginsItems5, TResult>? messagesRequestPluginsItems5 = null,
             bool validate = true)
         {
             if (validate)
@@ -320,12 +398,60 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.MessagesRequestPluginsItems0?>? messagesRequestPluginsItems0 = null,
-            global::System.Action<global::G.MessagesRequestPluginsItems1?>? messagesRequestPluginsItems1 = null,
-            global::System.Action<global::G.MessagesRequestPluginsItems2?>? messagesRequestPluginsItems2 = null,
-            global::System.Action<global::G.MessagesRequestPluginsItems3?>? messagesRequestPluginsItems3 = null,
-            global::System.Action<global::G.MessagesRequestPluginsItems4?>? messagesRequestPluginsItems4 = null,
-            global::System.Action<global::G.MessagesRequestPluginsItems5?>? messagesRequestPluginsItems5 = null,
+            global::System.Action<global::G.MessagesRequestPluginsItems0>? messagesRequestPluginsItems0 = null,
+
+            global::System.Action<global::G.MessagesRequestPluginsItems1>? messagesRequestPluginsItems1 = null,
+
+            global::System.Action<global::G.MessagesRequestPluginsItems2>? messagesRequestPluginsItems2 = null,
+
+            global::System.Action<global::G.MessagesRequestPluginsItems3>? messagesRequestPluginsItems3 = null,
+
+            global::System.Action<global::G.MessagesRequestPluginsItems4>? messagesRequestPluginsItems4 = null,
+
+            global::System.Action<global::G.MessagesRequestPluginsItems5>? messagesRequestPluginsItems5 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsMessagesRequestPluginsItems0)
+            {
+                messagesRequestPluginsItems0?.Invoke(MessagesRequestPluginsItems0!);
+            }
+            else if (IsMessagesRequestPluginsItems1)
+            {
+                messagesRequestPluginsItems1?.Invoke(MessagesRequestPluginsItems1!);
+            }
+            else if (IsMessagesRequestPluginsItems2)
+            {
+                messagesRequestPluginsItems2?.Invoke(MessagesRequestPluginsItems2!);
+            }
+            else if (IsMessagesRequestPluginsItems3)
+            {
+                messagesRequestPluginsItems3?.Invoke(MessagesRequestPluginsItems3!);
+            }
+            else if (IsMessagesRequestPluginsItems4)
+            {
+                messagesRequestPluginsItems4?.Invoke(MessagesRequestPluginsItems4!);
+            }
+            else if (IsMessagesRequestPluginsItems5)
+            {
+                messagesRequestPluginsItems5?.Invoke(MessagesRequestPluginsItems5!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.MessagesRequestPluginsItems0>? messagesRequestPluginsItems0 = null,
+            global::System.Action<global::G.MessagesRequestPluginsItems1>? messagesRequestPluginsItems1 = null,
+            global::System.Action<global::G.MessagesRequestPluginsItems2>? messagesRequestPluginsItems2 = null,
+            global::System.Action<global::G.MessagesRequestPluginsItems3>? messagesRequestPluginsItems3 = null,
+            global::System.Action<global::G.MessagesRequestPluginsItems4>? messagesRequestPluginsItems4 = null,
+            global::System.Action<global::G.MessagesRequestPluginsItems5>? messagesRequestPluginsItems5 = null,
             bool validate = true)
         {
             if (validate)

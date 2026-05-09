@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickShardSnapshotLocationVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = ShardSnapshotLocationVariant1;
+            return IsShardSnapshotLocationVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public string? ShardSnapshotLocationVariant2 { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ShardSnapshotLocationVariant2))]
 #endif
         public bool IsShardSnapshotLocationVariant2 => ShardSnapshotLocationVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickShardSnapshotLocationVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = ShardSnapshotLocationVariant2;
+            return IsShardSnapshotLocationVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -101,8 +127,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<string?, TResult>? shardSnapshotLocationVariant1 = null,
-            global::System.Func<string?, TResult>? shardSnapshotLocationVariant2 = null,
+            global::System.Func<string, TResult>? shardSnapshotLocationVariant1 = null,
+            global::System.Func<string, TResult>? shardSnapshotLocationVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -126,8 +152,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<string?>? shardSnapshotLocationVariant1 = null,
-            global::System.Action<string?>? shardSnapshotLocationVariant2 = null,
+            global::System.Action<string>? shardSnapshotLocationVariant1 = null,
+
+            global::System.Action<string>? shardSnapshotLocationVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsShardSnapshotLocationVariant1)
+            {
+                shardSnapshotLocationVariant1?.Invoke(ShardSnapshotLocationVariant1!);
+            }
+            else if (IsShardSnapshotLocationVariant2)
+            {
+                shardSnapshotLocationVariant2?.Invoke(ShardSnapshotLocationVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<string>? shardSnapshotLocationVariant1 = null,
+            global::System.Action<string>? shardSnapshotLocationVariant2 = null,
             bool validate = true)
         {
             if (validate)

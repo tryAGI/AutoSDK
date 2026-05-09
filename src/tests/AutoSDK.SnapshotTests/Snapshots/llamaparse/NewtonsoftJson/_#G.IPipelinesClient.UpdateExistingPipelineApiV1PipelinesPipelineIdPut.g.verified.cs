@@ -30,6 +30,23 @@ namespace G
         /// </summary>
         /// <param name="pipelineId"></param>
         /// <param name="session"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.Pipeline>> UpdateExistingPipelineApiV1PipelinesPipelineIdPutAsResponseAsync(
+            global::System.Guid pipelineId,
+
+            global::G.PipelineUpdate request,
+            string? session = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Update Existing Pipeline<br/>
+        /// Update an existing pipeline's configuration.
+        /// </summary>
+        /// <param name="pipelineId"></param>
+        /// <param name="session"></param>
         /// <param name="embeddingConfig"></param>
         /// <param name="transformConfig">
         /// Configuration for the transformation.

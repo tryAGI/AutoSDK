@@ -32,6 +32,24 @@ namespace G
         /// Returns:<br/>
         ///     StoreFileSearchResponse: List of matching files with relevance scores
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.StoreFileSearchResponse>> SearchStoreFilesAsResponseAsync(
+
+            global::G.StoreFileSearchParams request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Search store files<br/>
+        /// Search for files within a store based on semantic similarity.<br/>
+        /// Args:<br/>
+        ///     store_identifier: The ID or name of the store to search within<br/>
+        ///     search_params: Search configuration including query text, pagination, and filters<br/>
+        /// Returns:<br/>
+        ///     StoreFileSearchResponse: List of matching files with relevance scores
+        /// </summary>
         /// <param name="query">
         /// Search query text
         /// </param>

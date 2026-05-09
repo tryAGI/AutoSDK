@@ -23,6 +23,20 @@ namespace G
         /// Update Assistant
         /// </summary>
         /// <param name="id"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.Assistant>> AssistantControllerUpdateAsResponseAsync(
+            string id,
+
+            global::G.UpdateAssistantDTO request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Update Assistant
+        /// </summary>
+        /// <param name="id"></param>
         /// <param name="transcriber">
         /// These are the options for the assistant's transcriber.
         /// </param>

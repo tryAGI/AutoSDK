@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickNode(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.NodeEdge? value)
+        {
+            value = Node;
+            return IsNode;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.AlwaysEdgeVariant2? AlwaysEdgeVariant2 { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AlwaysEdgeVariant2))]
 #endif
         public bool IsAlwaysEdgeVariant2 => AlwaysEdgeVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickAlwaysEdgeVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.AlwaysEdgeVariant2? value)
+        {
+            value = AlwaysEdgeVariant2;
+            return IsAlwaysEdgeVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -119,8 +145,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.NodeEdge?, TResult>? node = null,
-            global::System.Func<global::G.AlwaysEdgeVariant2?, TResult>? alwaysEdgeVariant2 = null,
+            global::System.Func<global::G.NodeEdge, TResult>? node = null,
+            global::System.Func<global::G.AlwaysEdgeVariant2, TResult>? alwaysEdgeVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -144,8 +170,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.NodeEdge?>? node = null,
-            global::System.Action<global::G.AlwaysEdgeVariant2?>? alwaysEdgeVariant2 = null,
+            global::System.Action<global::G.NodeEdge>? node = null,
+
+            global::System.Action<global::G.AlwaysEdgeVariant2>? alwaysEdgeVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsNode)
+            {
+                node?.Invoke(Node!);
+            }
+            else if (IsAlwaysEdgeVariant2)
+            {
+                alwaysEdgeVariant2?.Invoke(AlwaysEdgeVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.NodeEdge>? node = null,
+            global::System.Action<global::G.AlwaysEdgeVariant2>? alwaysEdgeVariant2 = null,
             bool validate = true)
         {
             if (validate)

@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickLanguage(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.Language? value)
+        {
+            value = Language;
+            return IsLanguage;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.StopwordsSet? Set { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Set))]
 #endif
         public bool IsSet => Set != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSet(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.StopwordsSet? value)
+        {
+            value = Set;
+            return IsSet;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -120,7 +146,7 @@ namespace G
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::G.Language?, TResult>? language = null,
-            global::System.Func<global::G.StopwordsSet?, TResult>? set = null,
+            global::System.Func<global::G.StopwordsSet, TResult>? set = null,
             bool validate = true)
         {
             if (validate)
@@ -145,7 +171,31 @@ namespace G
         /// </summary>
         public void Match(
             global::System.Action<global::G.Language?>? language = null,
-            global::System.Action<global::G.StopwordsSet?>? set = null,
+
+            global::System.Action<global::G.StopwordsSet>? set = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsLanguage)
+            {
+                language?.Invoke(Language!);
+            }
+            else if (IsSet)
+            {
+                set?.Invoke(Set!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.Language?>? language = null,
+            global::System.Action<global::G.StopwordsSet>? set = null,
             bool validate = true)
         {
             if (validate)

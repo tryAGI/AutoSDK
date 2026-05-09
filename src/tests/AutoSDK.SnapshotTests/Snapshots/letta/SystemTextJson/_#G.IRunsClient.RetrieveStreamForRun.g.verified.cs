@@ -23,6 +23,20 @@ namespace G
         /// Retrieve Stream For Run
         /// </summary>
         /// <param name="runId"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<string>> RetrieveStreamForRunAsResponseAsync(
+            string runId,
+
+            global::G.RetrieveStreamRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Retrieve Stream For Run
+        /// </summary>
+        /// <param name="runId"></param>
         /// <param name="agentId">
         /// Agent ID for agent-direct mode with 'default' conversation. Use with conversation_id='default' in the URL path.
         /// </param>

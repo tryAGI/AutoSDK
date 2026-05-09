@@ -29,5 +29,29 @@ namespace G
             string guestId,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// BETA Sends an invite to a specified guest on behalf of the broadcaster for a Guest Star session in progress.<br/>
+        /// BETA Sends an invite to a specified guest on behalf of the broadcaster for a Guest Star session in progress.<br/>
+        /// __Authorization:__<br/>
+        /// * Query parameter `moderator_id` must match the `user_id` in the [User-Access token](https://dev.twitch.tv/docs/authentication#user-access-tokens)<br/>
+        /// * Requires OAuth Scope: `channel:manage:guest_star` or `moderator:manage:guest_star`
+        /// </summary>
+        /// <param name="broadcasterId"></param>
+        /// <param name="moderatorId"></param>
+        /// <param name="sessionId"></param>
+        /// <param name="guestId"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+#if NET8_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.Experimental(diagnosticId: "G_BETA_001")]
+#endif
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse> SendGuestStarInviteAsResponseAsync(
+            string broadcasterId,
+            string moderatorId,
+            string sessionId,
+            string guestId,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

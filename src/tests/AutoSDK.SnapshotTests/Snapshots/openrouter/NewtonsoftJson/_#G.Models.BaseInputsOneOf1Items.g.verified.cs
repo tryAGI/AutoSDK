@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickBaseInputsOneOf1Items0(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.BaseInputsOneOf1Items0? value)
+        {
+            value = BaseInputsOneOf1Items0;
+            return IsBaseInputsOneOf1Items0;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.BaseInputsOneOf1Items1? BaseInputsOneOf1Items1 { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BaseInputsOneOf1Items1))]
 #endif
         public bool IsBaseInputsOneOf1Items1 => BaseInputsOneOf1Items1 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickBaseInputsOneOf1Items1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.BaseInputsOneOf1Items1? value)
+        {
+            value = BaseInputsOneOf1Items1;
+            return IsBaseInputsOneOf1Items1;
+        }
 
         /// <summary>
         /// 
@@ -64,6 +90,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickBaseInputsOneOf1Items2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.BaseInputsOneOf1Items2? value)
+        {
+            value = BaseInputsOneOf1Items2;
+            return IsBaseInputsOneOf1Items2;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.BaseInputsOneOf1Items3? BaseInputsOneOf1Items3 { get; init; }
 #else
@@ -77,6 +116,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BaseInputsOneOf1Items3))]
 #endif
         public bool IsBaseInputsOneOf1Items3 => BaseInputsOneOf1Items3 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickBaseInputsOneOf1Items3(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.BaseInputsOneOf1Items3? value)
+        {
+            value = BaseInputsOneOf1Items3;
+            return IsBaseInputsOneOf1Items3;
+        }
 
         /// <summary>
         /// 
@@ -98,6 +150,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickOutputItemImageGenerationCall(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.OutputItemImageGenerationCall? value)
+        {
+            value = OutputItemImageGenerationCall;
+            return IsOutputItemImageGenerationCall;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.OutputMessage? OutputMessage { get; init; }
 #else
@@ -111,6 +176,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OutputMessage))]
 #endif
         public bool IsOutputMessage => OutputMessage != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickOutputMessage(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.OutputMessage? value)
+        {
+            value = OutputMessage;
+            return IsOutputMessage;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -275,12 +353,12 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.BaseInputsOneOf1Items0?, TResult>? baseInputsOneOf1Items0 = null,
-            global::System.Func<global::G.BaseInputsOneOf1Items1?, TResult>? baseInputsOneOf1Items1 = null,
-            global::System.Func<global::G.BaseInputsOneOf1Items2?, TResult>? baseInputsOneOf1Items2 = null,
-            global::System.Func<global::G.BaseInputsOneOf1Items3?, TResult>? baseInputsOneOf1Items3 = null,
-            global::System.Func<global::G.OutputItemImageGenerationCall?, TResult>? outputItemImageGenerationCall = null,
-            global::System.Func<global::G.OutputMessage?, TResult>? outputMessage = null,
+            global::System.Func<global::G.BaseInputsOneOf1Items0, TResult>? baseInputsOneOf1Items0 = null,
+            global::System.Func<global::G.BaseInputsOneOf1Items1, TResult>? baseInputsOneOf1Items1 = null,
+            global::System.Func<global::G.BaseInputsOneOf1Items2, TResult>? baseInputsOneOf1Items2 = null,
+            global::System.Func<global::G.BaseInputsOneOf1Items3, TResult>? baseInputsOneOf1Items3 = null,
+            global::System.Func<global::G.OutputItemImageGenerationCall, TResult>? outputItemImageGenerationCall = null,
+            global::System.Func<global::G.OutputMessage, TResult>? outputMessage = null,
             bool validate = true)
         {
             if (validate)
@@ -320,12 +398,60 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.BaseInputsOneOf1Items0?>? baseInputsOneOf1Items0 = null,
-            global::System.Action<global::G.BaseInputsOneOf1Items1?>? baseInputsOneOf1Items1 = null,
-            global::System.Action<global::G.BaseInputsOneOf1Items2?>? baseInputsOneOf1Items2 = null,
-            global::System.Action<global::G.BaseInputsOneOf1Items3?>? baseInputsOneOf1Items3 = null,
-            global::System.Action<global::G.OutputItemImageGenerationCall?>? outputItemImageGenerationCall = null,
-            global::System.Action<global::G.OutputMessage?>? outputMessage = null,
+            global::System.Action<global::G.BaseInputsOneOf1Items0>? baseInputsOneOf1Items0 = null,
+
+            global::System.Action<global::G.BaseInputsOneOf1Items1>? baseInputsOneOf1Items1 = null,
+
+            global::System.Action<global::G.BaseInputsOneOf1Items2>? baseInputsOneOf1Items2 = null,
+
+            global::System.Action<global::G.BaseInputsOneOf1Items3>? baseInputsOneOf1Items3 = null,
+
+            global::System.Action<global::G.OutputItemImageGenerationCall>? outputItemImageGenerationCall = null,
+
+            global::System.Action<global::G.OutputMessage>? outputMessage = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsBaseInputsOneOf1Items0)
+            {
+                baseInputsOneOf1Items0?.Invoke(BaseInputsOneOf1Items0!);
+            }
+            else if (IsBaseInputsOneOf1Items1)
+            {
+                baseInputsOneOf1Items1?.Invoke(BaseInputsOneOf1Items1!);
+            }
+            else if (IsBaseInputsOneOf1Items2)
+            {
+                baseInputsOneOf1Items2?.Invoke(BaseInputsOneOf1Items2!);
+            }
+            else if (IsBaseInputsOneOf1Items3)
+            {
+                baseInputsOneOf1Items3?.Invoke(BaseInputsOneOf1Items3!);
+            }
+            else if (IsOutputItemImageGenerationCall)
+            {
+                outputItemImageGenerationCall?.Invoke(OutputItemImageGenerationCall!);
+            }
+            else if (IsOutputMessage)
+            {
+                outputMessage?.Invoke(OutputMessage!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.BaseInputsOneOf1Items0>? baseInputsOneOf1Items0 = null,
+            global::System.Action<global::G.BaseInputsOneOf1Items1>? baseInputsOneOf1Items1 = null,
+            global::System.Action<global::G.BaseInputsOneOf1Items2>? baseInputsOneOf1Items2 = null,
+            global::System.Action<global::G.BaseInputsOneOf1Items3>? baseInputsOneOf1Items3 = null,
+            global::System.Action<global::G.OutputItemImageGenerationCall>? outputItemImageGenerationCall = null,
+            global::System.Action<global::G.OutputMessage>? outputMessage = null,
             bool validate = true)
         {
             if (validate)

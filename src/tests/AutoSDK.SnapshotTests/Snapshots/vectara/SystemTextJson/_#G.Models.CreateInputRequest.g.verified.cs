@@ -33,6 +33,19 @@ namespace G
         public bool IsInputMessage => InputMessage != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickInputMessage(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateInputMessageRequest? value)
+        {
+            value = InputMessage;
+            return IsInputMessage;
+        }
+
+        /// <summary>
         /// Cancels the current agent operation.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -48,6 +61,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Interrupt))]
 #endif
         public bool IsInterrupt => Interrupt != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickInterrupt(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateInterruptRequest? value)
+        {
+            value = Interrupt;
+            return IsInterrupt;
+        }
 
         /// <summary>
         /// Requests compaction of the session history. Can be sent while the session is processing<br/>
@@ -66,6 +92,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Compact))]
 #endif
         public bool IsCompact => Compact != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickCompact(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateCompactRequest? value)
+        {
+            value = Compact;
+            return IsCompact;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -197,6 +236,36 @@ namespace G
         /// 
         /// </summary>
         public void Match(
+            global::System.Action<global::G.CreateInputMessageRequest?>? inputMessage = null,
+
+            global::System.Action<global::G.CreateInterruptRequest?>? interrupt = null,
+
+            global::System.Action<global::G.CreateCompactRequest?>? compact = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsInputMessage)
+            {
+                inputMessage?.Invoke(InputMessage!);
+            }
+            else if (IsInterrupt)
+            {
+                interrupt?.Invoke(Interrupt!);
+            }
+            else if (IsCompact)
+            {
+                compact?.Invoke(Compact!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
             global::System.Action<global::G.CreateInputMessageRequest?>? inputMessage = null,
             global::System.Action<global::G.CreateInterruptRequest?>? interrupt = null,
             global::System.Action<global::G.CreateCompactRequest?>? compact = null,

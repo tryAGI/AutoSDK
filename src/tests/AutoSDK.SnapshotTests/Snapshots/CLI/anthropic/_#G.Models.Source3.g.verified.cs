@@ -35,6 +35,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickBase64(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.Base64PDFSource? value)
+        {
+            value = Base64;
+            return IsBase64;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.PlainTextSource? Text { get; init; }
 #else
@@ -48,6 +61,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Text))]
 #endif
         public bool IsText => Text != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickText(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.PlainTextSource? value)
+        {
+            value = Text;
+            return IsText;
+        }
 
         /// <summary>
         /// 
@@ -69,6 +95,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickContent(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ContentBlockSource? value)
+        {
+            value = Content;
+            return IsContent;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.URLPDFSource? Url { get; init; }
 #else
@@ -82,6 +121,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Url))]
 #endif
         public bool IsUrl => Url != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickUrl(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.URLPDFSource? value)
+        {
+            value = Url;
+            return IsUrl;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -205,10 +257,10 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.Base64PDFSource?, TResult>? base64 = null,
-            global::System.Func<global::G.PlainTextSource?, TResult>? text = null,
-            global::System.Func<global::G.ContentBlockSource?, TResult>? content = null,
-            global::System.Func<global::G.URLPDFSource?, TResult>? url = null,
+            global::System.Func<global::G.Base64PDFSource, TResult>? base64 = null,
+            global::System.Func<global::G.PlainTextSource, TResult>? text = null,
+            global::System.Func<global::G.ContentBlockSource, TResult>? content = null,
+            global::System.Func<global::G.URLPDFSource, TResult>? url = null,
             bool validate = true)
         {
             if (validate)
@@ -240,10 +292,46 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.Base64PDFSource?>? base64 = null,
-            global::System.Action<global::G.PlainTextSource?>? text = null,
-            global::System.Action<global::G.ContentBlockSource?>? content = null,
-            global::System.Action<global::G.URLPDFSource?>? url = null,
+            global::System.Action<global::G.Base64PDFSource>? base64 = null,
+
+            global::System.Action<global::G.PlainTextSource>? text = null,
+
+            global::System.Action<global::G.ContentBlockSource>? content = null,
+
+            global::System.Action<global::G.URLPDFSource>? url = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsBase64)
+            {
+                base64?.Invoke(Base64!);
+            }
+            else if (IsText)
+            {
+                text?.Invoke(Text!);
+            }
+            else if (IsContent)
+            {
+                content?.Invoke(Content!);
+            }
+            else if (IsUrl)
+            {
+                url?.Invoke(Url!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.Base64PDFSource>? base64 = null,
+            global::System.Action<global::G.PlainTextSource>? text = null,
+            global::System.Action<global::G.ContentBlockSource>? content = null,
+            global::System.Action<global::G.URLPDFSource>? url = null,
             bool validate = true)
         {
             if (validate)

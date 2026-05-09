@@ -28,6 +28,19 @@ namespace G
         public bool IsPhotoAvatar => PhotoAvatar != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickPhotoAvatar(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.PartialAgentPresenterPhotoAvatar? value)
+        {
+            value = PhotoAvatar;
+            return IsPhotoAvatar;
+        }
+
+        /// <summary>
         /// Make all properties in T optional
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(VideoAvatar))]
 #endif
         public bool IsVideoAvatar => VideoAvatar != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickVideoAvatar(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.PartialAgentPresenterVideoAvatar? value)
+        {
+            value = VideoAvatar;
+            return IsVideoAvatar;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -119,8 +145,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.PartialAgentPresenterPhotoAvatar?, TResult>? photoAvatar = null,
-            global::System.Func<global::G.PartialAgentPresenterVideoAvatar?, TResult>? videoAvatar = null,
+            global::System.Func<global::G.PartialAgentPresenterPhotoAvatar, TResult>? photoAvatar = null,
+            global::System.Func<global::G.PartialAgentPresenterVideoAvatar, TResult>? videoAvatar = null,
             bool validate = true)
         {
             if (validate)
@@ -144,8 +170,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.PartialAgentPresenterPhotoAvatar?>? photoAvatar = null,
-            global::System.Action<global::G.PartialAgentPresenterVideoAvatar?>? videoAvatar = null,
+            global::System.Action<global::G.PartialAgentPresenterPhotoAvatar>? photoAvatar = null,
+
+            global::System.Action<global::G.PartialAgentPresenterVideoAvatar>? videoAvatar = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsPhotoAvatar)
+            {
+                photoAvatar?.Invoke(PhotoAvatar!);
+            }
+            else if (IsVideoAvatar)
+            {
+                videoAvatar?.Invoke(VideoAvatar!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.PartialAgentPresenterPhotoAvatar>? photoAvatar = null,
+            global::System.Action<global::G.PartialAgentPresenterVideoAvatar>? videoAvatar = null,
             bool validate = true)
         {
             if (validate)

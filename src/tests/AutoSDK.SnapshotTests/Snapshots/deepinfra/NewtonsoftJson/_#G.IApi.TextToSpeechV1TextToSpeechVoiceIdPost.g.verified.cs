@@ -32,6 +32,26 @@ namespace G
         /// <param name="outputFormat"></param>
         /// <param name="xDeepinfraSource"></param>
         /// <param name="xiApiKey"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<string>> TextToSpeechV1TextToSpeechVoiceIdPostAsResponseAsync(
+            string voiceId,
+
+            global::G.ElevenLabsTextToSpeechIn request,
+            string? outputFormat = default,
+            string? xDeepinfraSource = default,
+            string? xiApiKey = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Text To Speech
+        /// </summary>
+        /// <param name="voiceId"></param>
+        /// <param name="outputFormat"></param>
+        /// <param name="xDeepinfraSource"></param>
+        /// <param name="xiApiKey"></param>
         /// <param name="text">
         /// Text to convert to speech
         /// </param>

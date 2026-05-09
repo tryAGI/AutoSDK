@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickOutputItemWebSearchCallAction0(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.OutputItemWebSearchCallAction0? value)
+        {
+            value = OutputItemWebSearchCallAction0;
+            return IsOutputItemWebSearchCallAction0;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.OutputItemWebSearchCallAction1? OutputItemWebSearchCallAction1 { get; init; }
 #else
@@ -47,6 +60,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickOutputItemWebSearchCallAction1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.OutputItemWebSearchCallAction1? value)
+        {
+            value = OutputItemWebSearchCallAction1;
+            return IsOutputItemWebSearchCallAction1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.OutputItemWebSearchCallAction2? OutputItemWebSearchCallAction2 { get; init; }
 #else
@@ -60,6 +86,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OutputItemWebSearchCallAction2))]
 #endif
         public bool IsOutputItemWebSearchCallAction2 => OutputItemWebSearchCallAction2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickOutputItemWebSearchCallAction2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.OutputItemWebSearchCallAction2? value)
+        {
+            value = OutputItemWebSearchCallAction2;
+            return IsOutputItemWebSearchCallAction2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -158,9 +197,9 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.OutputItemWebSearchCallAction0?, TResult>? outputItemWebSearchCallAction0 = null,
-            global::System.Func<global::G.OutputItemWebSearchCallAction1?, TResult>? outputItemWebSearchCallAction1 = null,
-            global::System.Func<global::G.OutputItemWebSearchCallAction2?, TResult>? outputItemWebSearchCallAction2 = null,
+            global::System.Func<global::G.OutputItemWebSearchCallAction0, TResult>? outputItemWebSearchCallAction0 = null,
+            global::System.Func<global::G.OutputItemWebSearchCallAction1, TResult>? outputItemWebSearchCallAction1 = null,
+            global::System.Func<global::G.OutputItemWebSearchCallAction2, TResult>? outputItemWebSearchCallAction2 = null,
             bool validate = true)
         {
             if (validate)
@@ -188,9 +227,39 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.OutputItemWebSearchCallAction0?>? outputItemWebSearchCallAction0 = null,
-            global::System.Action<global::G.OutputItemWebSearchCallAction1?>? outputItemWebSearchCallAction1 = null,
-            global::System.Action<global::G.OutputItemWebSearchCallAction2?>? outputItemWebSearchCallAction2 = null,
+            global::System.Action<global::G.OutputItemWebSearchCallAction0>? outputItemWebSearchCallAction0 = null,
+
+            global::System.Action<global::G.OutputItemWebSearchCallAction1>? outputItemWebSearchCallAction1 = null,
+
+            global::System.Action<global::G.OutputItemWebSearchCallAction2>? outputItemWebSearchCallAction2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsOutputItemWebSearchCallAction0)
+            {
+                outputItemWebSearchCallAction0?.Invoke(OutputItemWebSearchCallAction0!);
+            }
+            else if (IsOutputItemWebSearchCallAction1)
+            {
+                outputItemWebSearchCallAction1?.Invoke(OutputItemWebSearchCallAction1!);
+            }
+            else if (IsOutputItemWebSearchCallAction2)
+            {
+                outputItemWebSearchCallAction2?.Invoke(OutputItemWebSearchCallAction2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.OutputItemWebSearchCallAction0>? outputItemWebSearchCallAction0 = null,
+            global::System.Action<global::G.OutputItemWebSearchCallAction1>? outputItemWebSearchCallAction1 = null,
+            global::System.Action<global::G.OutputItemWebSearchCallAction2>? outputItemWebSearchCallAction2 = null,
             bool validate = true)
         {
             if (validate)

@@ -33,6 +33,26 @@ namespace G
         /// <param name="consistencyLevel">
         /// Default Value: QUORUM
         /// </param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        [global::System.Obsolete("This method marked as deprecated.")]
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.Object>> ObjectsUpdateAsResponseAsync(
+            global::System.Guid id,
+
+            global::G.Object request,
+            global::G.ObjectsUpdateConsistencyLevel? consistencyLevel = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Update an object.<br/>
+        /// Updates an object based on its UUID. Given meta-data and schema values are validated. LastUpdateTime is set to the time this function is called.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="consistencyLevel">
+        /// Default Value: QUORUM
+        /// </param>
         /// <param name="class">
         /// The object collection name.
         /// </param>

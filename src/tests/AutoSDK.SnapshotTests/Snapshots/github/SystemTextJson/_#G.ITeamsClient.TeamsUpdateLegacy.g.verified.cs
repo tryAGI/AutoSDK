@@ -34,6 +34,26 @@ namespace G
         /// &gt; With nested teams, the `privacy` for parent teams cannot be `secret`.
         /// </summary>
         /// <param name="teamId"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        [global::System.Obsolete("This method marked as deprecated.")]
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.TeamFull>> TeamsUpdateLegacyAsResponseAsync(
+            int teamId,
+
+            global::G.TeamsUpdateLegacyRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Update a team (Legacy)<br/>
+        /// &gt; [!WARNING]<br/>
+        /// &gt; **Deprecation notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [Update a team](https://docs.github.com/rest/teams/teams#update-a-team) endpoint.<br/>
+        /// To edit a team, the authenticated user must either be an organization owner or a team maintainer.<br/>
+        /// &gt; [!NOTE]<br/>
+        /// &gt; With nested teams, the `privacy` for parent teams cannot be `secret`.
+        /// </summary>
+        /// <param name="teamId"></param>
         /// <param name="name">
         /// The name of the team.
         /// </param>

@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickPartialTablesAndViews(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.PartialTablesAndViews? value)
+        {
+            value = PartialTablesAndViews;
+            return IsPartialTablesAndViews;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.FilterBranch? Branch { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Branch))]
 #endif
         public bool IsBranch => Branch != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickBranch(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.FilterBranch? value)
+        {
+            value = Branch;
+            return IsBranch;
+        }
 
         /// <summary>
         /// 
@@ -64,6 +90,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickEnum(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out object? value)
+        {
+            value = Enum;
+            return IsEnum;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.FilterNodeEnum2? Enum2 { get; init; }
 #else
@@ -77,6 +116,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Enum2))]
 #endif
         public bool IsEnum2 => Enum2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickEnum2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.FilterNodeEnum2? value)
+        {
+            value = Enum2;
+            return IsEnum2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -179,9 +231,9 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.PartialTablesAndViews?, TResult>? partialTablesAndViews = null,
-            global::System.Func<global::G.FilterBranch?, TResult>? branch = null,
-            global::System.Func<object?, TResult>? @enum = null,
+            global::System.Func<global::G.PartialTablesAndViews, TResult>? partialTablesAndViews = null,
+            global::System.Func<global::G.FilterBranch, TResult>? branch = null,
+            global::System.Func<object, TResult>? @enum = null,
             global::System.Func<global::G.FilterNodeEnum2?, TResult>? enum2 = null,
             bool validate = true)
         {
@@ -214,9 +266,45 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.PartialTablesAndViews?>? partialTablesAndViews = null,
-            global::System.Action<global::G.FilterBranch?>? branch = null,
-            global::System.Action<object?>? @enum = null,
+            global::System.Action<global::G.PartialTablesAndViews>? partialTablesAndViews = null,
+
+            global::System.Action<global::G.FilterBranch>? branch = null,
+
+            global::System.Action<object>? @enum = null,
+
+            global::System.Action<global::G.FilterNodeEnum2?>? enum2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsPartialTablesAndViews)
+            {
+                partialTablesAndViews?.Invoke(PartialTablesAndViews!);
+            }
+            else if (IsBranch)
+            {
+                branch?.Invoke(Branch!);
+            }
+            else if (IsEnum)
+            {
+                @enum?.Invoke(Enum!);
+            }
+            else if (IsEnum2)
+            {
+                enum2?.Invoke(Enum2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.PartialTablesAndViews>? partialTablesAndViews = null,
+            global::System.Action<global::G.FilterBranch>? branch = null,
+            global::System.Action<object>? @enum = null,
             global::System.Action<global::G.FilterNodeEnum2?>? enum2 = null,
             bool validate = true)
         {

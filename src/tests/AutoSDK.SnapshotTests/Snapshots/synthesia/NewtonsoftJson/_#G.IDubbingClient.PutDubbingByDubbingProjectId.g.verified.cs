@@ -25,6 +25,21 @@ namespace G
         /// Add the passed target locales to a dubbing project (original imported video). If a target locale is already added, it will be skipped.
         /// </summary>
         /// <param name="dubbingProjectId"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.AddLocalesToDubbingProjectResponse>> PutDubbingByDubbingProjectIdAsResponseAsync(
+            global::System.Guid dubbingProjectId,
+
+            global::G.AddLocalesToDubbingProjectRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Add locales to a a dubbing project (original imported video)<br/>
+        /// Add the passed target locales to a dubbing project (original imported video). If a target locale is already added, it will be skipped.
+        /// </summary>
+        /// <param name="dubbingProjectId"></param>
         /// <param name="targetLanguages">
         /// The languages to dub the source media asset to.<br/>
         /// Example: [es-ES, fr-FR]

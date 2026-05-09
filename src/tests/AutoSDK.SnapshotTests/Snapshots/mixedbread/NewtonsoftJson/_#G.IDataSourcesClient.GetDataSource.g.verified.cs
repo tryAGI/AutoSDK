@@ -23,5 +23,23 @@ namespace G
             global::System.Guid dataSourceId,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Get a data source by ID<br/>
+        /// Get a data source by ID.<br/>
+        /// Args:<br/>
+        ///     data_source_id: The ID of the data source to fetch.<br/>
+        /// Returns:<br/>
+        ///     The data source.
+        /// </summary>
+        /// <param name="dataSourceId">
+        /// The ID of the data source to fetch
+        /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.DataSource>> GetDataSourceAsResponseAsync(
+            global::System.Guid dataSourceId,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

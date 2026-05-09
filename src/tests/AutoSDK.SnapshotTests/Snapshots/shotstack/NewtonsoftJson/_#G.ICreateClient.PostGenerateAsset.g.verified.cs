@@ -28,6 +28,22 @@ namespace G
         /// downloaded.<br/>
         /// **Base URL:** &lt;a href="#"&gt;https://api.shotstack.io/create/{version}&lt;/a&gt;
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.GeneratedAssetResponse>> PostGenerateAssetAsResponseAsync(
+
+            global::G.GeneratedAsset request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Generate Asset<br/>
+        /// Generate an asset using a Shotstack or third party provider. Chose the provider, type of asset and provide prompts,<br/>
+        /// inputs and options to generate the asset. Once generated the asset can be used with the [Edit](#tocs_edit) API or<br/>
+        /// downloaded.<br/>
+        /// **Base URL:** &lt;a href="#"&gt;https://api.shotstack.io/create/{version}&lt;/a&gt;
+        /// </summary>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>

@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickGetScoresResponseDataVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.AllOf<global::G.GetScoresResponseDataVariant12, global::G.GetScoresResponseDataNumeric>? value)
+        {
+            value = GetScoresResponseDataVariant1;
+            return IsGetScoresResponseDataVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.AllOf<global::G.GetScoresResponseDataVariant22, global::G.GetScoresResponseDataCategorical>? GetScoresResponseDataVariant2 { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(GetScoresResponseDataVariant2))]
 #endif
         public bool IsGetScoresResponseDataVariant2 => GetScoresResponseDataVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickGetScoresResponseDataVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.AllOf<global::G.GetScoresResponseDataVariant22, global::G.GetScoresResponseDataCategorical>? value)
+        {
+            value = GetScoresResponseDataVariant2;
+            return IsGetScoresResponseDataVariant2;
+        }
 
         /// <summary>
         /// 
@@ -64,6 +90,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickGetScoresResponseDataVariant3(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.AllOf<global::G.GetScoresResponseDataVariant32, global::G.GetScoresResponseDataBoolean>? value)
+        {
+            value = GetScoresResponseDataVariant3;
+            return IsGetScoresResponseDataVariant3;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.AllOf<global::G.GetScoresResponseDataVariant42, global::G.GetScoresResponseDataCorrection>? GetScoresResponseDataVariant4 { get; init; }
 #else
@@ -77,6 +116,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(GetScoresResponseDataVariant4))]
 #endif
         public bool IsGetScoresResponseDataVariant4 => GetScoresResponseDataVariant4 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickGetScoresResponseDataVariant4(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.AllOf<global::G.GetScoresResponseDataVariant42, global::G.GetScoresResponseDataCorrection>? value)
+        {
+            value = GetScoresResponseDataVariant4;
+            return IsGetScoresResponseDataVariant4;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -232,6 +284,42 @@ namespace G
         /// 
         /// </summary>
         public void Match(
+            global::System.Action<global::G.AllOf<global::G.GetScoresResponseDataVariant12, global::G.GetScoresResponseDataNumeric>?>? getScoresResponseDataVariant1 = null,
+
+            global::System.Action<global::G.AllOf<global::G.GetScoresResponseDataVariant22, global::G.GetScoresResponseDataCategorical>?>? getScoresResponseDataVariant2 = null,
+
+            global::System.Action<global::G.AllOf<global::G.GetScoresResponseDataVariant32, global::G.GetScoresResponseDataBoolean>?>? getScoresResponseDataVariant3 = null,
+
+            global::System.Action<global::G.AllOf<global::G.GetScoresResponseDataVariant42, global::G.GetScoresResponseDataCorrection>?>? getScoresResponseDataVariant4 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsGetScoresResponseDataVariant1)
+            {
+                getScoresResponseDataVariant1?.Invoke(GetScoresResponseDataVariant1!);
+            }
+            else if (IsGetScoresResponseDataVariant2)
+            {
+                getScoresResponseDataVariant2?.Invoke(GetScoresResponseDataVariant2!);
+            }
+            else if (IsGetScoresResponseDataVariant3)
+            {
+                getScoresResponseDataVariant3?.Invoke(GetScoresResponseDataVariant3!);
+            }
+            else if (IsGetScoresResponseDataVariant4)
+            {
+                getScoresResponseDataVariant4?.Invoke(GetScoresResponseDataVariant4!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
             global::System.Action<global::G.AllOf<global::G.GetScoresResponseDataVariant12, global::G.GetScoresResponseDataNumeric>?>? getScoresResponseDataVariant1 = null,
             global::System.Action<global::G.AllOf<global::G.GetScoresResponseDataVariant22, global::G.GetScoresResponseDataCategorical>?>? getScoresResponseDataVariant2 = null,
             global::System.Action<global::G.AllOf<global::G.GetScoresResponseDataVariant32, global::G.GetScoresResponseDataBoolean>?>? getScoresResponseDataVariant3 = null,

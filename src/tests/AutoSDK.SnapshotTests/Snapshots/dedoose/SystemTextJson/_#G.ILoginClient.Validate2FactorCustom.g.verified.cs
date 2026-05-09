@@ -19,5 +19,19 @@ namespace G
             string authToken,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Validate Two-Factor Authentication<br/>
+        /// Validates two-factor authentication credentials and returns user data.
+        /// </summary>
+        /// <param name="username"></param>
+        /// <param name="authToken"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.User>> Validate2FactorCustomAsResponseAsync(
+            string username,
+            string authToken,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

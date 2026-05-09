@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickBaseMessagesResultContentItemsOneOf5Caller0(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.BaseMessagesResultContentItemsOneOf5Caller0? value)
+        {
+            value = BaseMessagesResultContentItemsOneOf5Caller0;
+            return IsBaseMessagesResultContentItemsOneOf5Caller0;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.BaseMessagesResultContentItemsOneOf5Caller1? BaseMessagesResultContentItemsOneOf5Caller1 { get; init; }
 #else
@@ -47,6 +60,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickBaseMessagesResultContentItemsOneOf5Caller1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.BaseMessagesResultContentItemsOneOf5Caller1? value)
+        {
+            value = BaseMessagesResultContentItemsOneOf5Caller1;
+            return IsBaseMessagesResultContentItemsOneOf5Caller1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.BaseMessagesResultContentItemsOneOf5Caller2? BaseMessagesResultContentItemsOneOf5Caller2 { get; init; }
 #else
@@ -60,6 +86,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BaseMessagesResultContentItemsOneOf5Caller2))]
 #endif
         public bool IsBaseMessagesResultContentItemsOneOf5Caller2 => BaseMessagesResultContentItemsOneOf5Caller2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickBaseMessagesResultContentItemsOneOf5Caller2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.BaseMessagesResultContentItemsOneOf5Caller2? value)
+        {
+            value = BaseMessagesResultContentItemsOneOf5Caller2;
+            return IsBaseMessagesResultContentItemsOneOf5Caller2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -158,9 +197,9 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.BaseMessagesResultContentItemsOneOf5Caller0?, TResult>? baseMessagesResultContentItemsOneOf5Caller0 = null,
-            global::System.Func<global::G.BaseMessagesResultContentItemsOneOf5Caller1?, TResult>? baseMessagesResultContentItemsOneOf5Caller1 = null,
-            global::System.Func<global::G.BaseMessagesResultContentItemsOneOf5Caller2?, TResult>? baseMessagesResultContentItemsOneOf5Caller2 = null,
+            global::System.Func<global::G.BaseMessagesResultContentItemsOneOf5Caller0, TResult>? baseMessagesResultContentItemsOneOf5Caller0 = null,
+            global::System.Func<global::G.BaseMessagesResultContentItemsOneOf5Caller1, TResult>? baseMessagesResultContentItemsOneOf5Caller1 = null,
+            global::System.Func<global::G.BaseMessagesResultContentItemsOneOf5Caller2, TResult>? baseMessagesResultContentItemsOneOf5Caller2 = null,
             bool validate = true)
         {
             if (validate)
@@ -188,9 +227,39 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.BaseMessagesResultContentItemsOneOf5Caller0?>? baseMessagesResultContentItemsOneOf5Caller0 = null,
-            global::System.Action<global::G.BaseMessagesResultContentItemsOneOf5Caller1?>? baseMessagesResultContentItemsOneOf5Caller1 = null,
-            global::System.Action<global::G.BaseMessagesResultContentItemsOneOf5Caller2?>? baseMessagesResultContentItemsOneOf5Caller2 = null,
+            global::System.Action<global::G.BaseMessagesResultContentItemsOneOf5Caller0>? baseMessagesResultContentItemsOneOf5Caller0 = null,
+
+            global::System.Action<global::G.BaseMessagesResultContentItemsOneOf5Caller1>? baseMessagesResultContentItemsOneOf5Caller1 = null,
+
+            global::System.Action<global::G.BaseMessagesResultContentItemsOneOf5Caller2>? baseMessagesResultContentItemsOneOf5Caller2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsBaseMessagesResultContentItemsOneOf5Caller0)
+            {
+                baseMessagesResultContentItemsOneOf5Caller0?.Invoke(BaseMessagesResultContentItemsOneOf5Caller0!);
+            }
+            else if (IsBaseMessagesResultContentItemsOneOf5Caller1)
+            {
+                baseMessagesResultContentItemsOneOf5Caller1?.Invoke(BaseMessagesResultContentItemsOneOf5Caller1!);
+            }
+            else if (IsBaseMessagesResultContentItemsOneOf5Caller2)
+            {
+                baseMessagesResultContentItemsOneOf5Caller2?.Invoke(BaseMessagesResultContentItemsOneOf5Caller2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.BaseMessagesResultContentItemsOneOf5Caller0>? baseMessagesResultContentItemsOneOf5Caller0 = null,
+            global::System.Action<global::G.BaseMessagesResultContentItemsOneOf5Caller1>? baseMessagesResultContentItemsOneOf5Caller1 = null,
+            global::System.Action<global::G.BaseMessagesResultContentItemsOneOf5Caller2>? baseMessagesResultContentItemsOneOf5Caller2 = null,
             bool validate = true)
         {
             if (validate)

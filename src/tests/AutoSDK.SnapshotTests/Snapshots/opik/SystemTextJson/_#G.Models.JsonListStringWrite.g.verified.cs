@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickJsonListStringWriteVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out object? value)
+        {
+            value = JsonListStringWriteVariant1;
+            return IsJsonListStringWriteVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<object>? JsonListStringWriteVariant2 { get; init; }
 #else
@@ -47,6 +60,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickJsonListStringWriteVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::System.Collections.Generic.IList<object>? value)
+        {
+            value = JsonListStringWriteVariant2;
+            return IsJsonListStringWriteVariant2;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public string? JsonListStringWriteVariant3 { get; init; }
 #else
@@ -60,6 +86,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(JsonListStringWriteVariant3))]
 #endif
         public bool IsJsonListStringWriteVariant3 => JsonListStringWriteVariant3 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickJsonListStringWriteVariant3(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = JsonListStringWriteVariant3;
+            return IsJsonListStringWriteVariant3;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -122,9 +161,9 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<object?, TResult>? jsonListStringWriteVariant1 = null,
-            global::System.Func<global::System.Collections.Generic.IList<object>?, TResult>? jsonListStringWriteVariant2 = null,
-            global::System.Func<string?, TResult>? jsonListStringWriteVariant3 = null,
+            global::System.Func<object, TResult>? jsonListStringWriteVariant1 = null,
+            global::System.Func<global::System.Collections.Generic.IList<object>, TResult>? jsonListStringWriteVariant2 = null,
+            global::System.Func<string, TResult>? jsonListStringWriteVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -152,9 +191,39 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<object?>? jsonListStringWriteVariant1 = null,
-            global::System.Action<global::System.Collections.Generic.IList<object>?>? jsonListStringWriteVariant2 = null,
-            global::System.Action<string?>? jsonListStringWriteVariant3 = null,
+            global::System.Action<object>? jsonListStringWriteVariant1 = null,
+
+            global::System.Action<global::System.Collections.Generic.IList<object>>? jsonListStringWriteVariant2 = null,
+
+            global::System.Action<string>? jsonListStringWriteVariant3 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsJsonListStringWriteVariant1)
+            {
+                jsonListStringWriteVariant1?.Invoke(JsonListStringWriteVariant1!);
+            }
+            else if (IsJsonListStringWriteVariant2)
+            {
+                jsonListStringWriteVariant2?.Invoke(JsonListStringWriteVariant2!);
+            }
+            else if (IsJsonListStringWriteVariant3)
+            {
+                jsonListStringWriteVariant3?.Invoke(JsonListStringWriteVariant3!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<object>? jsonListStringWriteVariant1 = null,
+            global::System.Action<global::System.Collections.Generic.IList<object>>? jsonListStringWriteVariant2 = null,
+            global::System.Action<string>? jsonListStringWriteVariant3 = null,
             bool validate = true)
         {
             if (validate)

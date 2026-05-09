@@ -35,6 +35,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickConstant(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ConstantSchemaOverride? value)
+        {
+            value = Constant;
+            return IsConstant;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.DynamicVariableSchemaOverride? DynamicVariable { get; init; }
 #else
@@ -52,6 +65,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickDynamicVariable(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.DynamicVariableSchemaOverride? value)
+        {
+            value = DynamicVariable;
+            return IsDynamicVariable;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.LLMSchemaOverride? Llm { get; init; }
 #else
@@ -65,6 +91,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Llm))]
 #endif
         public bool IsLlm => Llm != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickLlm(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.LLMSchemaOverride? value)
+        {
+            value = Llm;
+            return IsLlm;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -166,9 +205,9 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.ConstantSchemaOverride?, TResult>? constant = null,
-            global::System.Func<global::G.DynamicVariableSchemaOverride?, TResult>? dynamicVariable = null,
-            global::System.Func<global::G.LLMSchemaOverride?, TResult>? llm = null,
+            global::System.Func<global::G.ConstantSchemaOverride, TResult>? constant = null,
+            global::System.Func<global::G.DynamicVariableSchemaOverride, TResult>? dynamicVariable = null,
+            global::System.Func<global::G.LLMSchemaOverride, TResult>? llm = null,
             bool validate = true)
         {
             if (validate)
@@ -196,9 +235,39 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.ConstantSchemaOverride?>? constant = null,
-            global::System.Action<global::G.DynamicVariableSchemaOverride?>? dynamicVariable = null,
-            global::System.Action<global::G.LLMSchemaOverride?>? llm = null,
+            global::System.Action<global::G.ConstantSchemaOverride>? constant = null,
+
+            global::System.Action<global::G.DynamicVariableSchemaOverride>? dynamicVariable = null,
+
+            global::System.Action<global::G.LLMSchemaOverride>? llm = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsConstant)
+            {
+                constant?.Invoke(Constant!);
+            }
+            else if (IsDynamicVariable)
+            {
+                dynamicVariable?.Invoke(DynamicVariable!);
+            }
+            else if (IsLlm)
+            {
+                llm?.Invoke(Llm!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.ConstantSchemaOverride>? constant = null,
+            global::System.Action<global::G.DynamicVariableSchemaOverride>? dynamicVariable = null,
+            global::System.Action<global::G.LLMSchemaOverride>? llm = null,
             bool validate = true)
         {
             if (validate)

@@ -139,6 +139,71 @@ namespace G
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var __response = await GetConnectedAccountsAsResponseAsync(
+                toolkitSlugs: toolkitSlugs,
+                statuses: statuses,
+                cursor: cursor,
+                limit: limit,
+                userIds: userIds,
+                authConfigIds: authConfigIds,
+                connectedAccountIds: connectedAccountIds,
+                orderBy: orderBy,
+                orderDirection: orderDirection,
+                requestOptions: requestOptions,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// List connected accounts with optional filters<br/>
+        /// Retrieves all connected accounts for your project. Connected accounts represent authenticated user connections to external services (e.g., a user's Gmail account, Slack workspace). Filter by toolkit, status, user ID, or auth config to find specific connections.
+        /// </summary>
+        /// <param name="toolkitSlugs">
+        /// The toolkit slugs of the connected accounts
+        /// </param>
+        /// <param name="statuses">
+        /// The status of the connected account
+        /// </param>
+        /// <param name="cursor">
+        /// The cursor to paginate through the connected accounts
+        /// </param>
+        /// <param name="limit">
+        /// The limit of the connected accounts to return
+        /// </param>
+        /// <param name="userIds">
+        /// The user ids of the connected accounts
+        /// </param>
+        /// <param name="authConfigIds">
+        /// The auth config ids of the connected accounts
+        /// </param>
+        /// <param name="connectedAccountIds">
+        /// The connected account ids to filter by
+        /// </param>
+        /// <param name="orderBy">
+        /// The order by of the connected accounts<br/>
+        /// Default Value: created_at
+        /// </param>
+        /// <param name="orderDirection">
+        /// The order direction of the connected accounts<br/>
+        /// Default Value: desc
+        /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.GetConnectedAccountsResponse>> GetConnectedAccountsAsResponseAsync(
+            global::System.Collections.Generic.IList<string>? toolkitSlugs = default,
+            global::System.Collections.Generic.IList<global::G.GetConnectedAccountsStatuse>? statuses = default,
+            string? cursor = default,
+            double? limit = default,
+            global::System.Collections.Generic.IList<string>? userIds = default,
+            global::System.Collections.Generic.IList<string>? authConfigIds = default,
+            global::System.Collections.Generic.IList<string>? connectedAccountIds = default,
+            global::G.GetConnectedAccountsOrderBy? orderBy = default,
+            global::G.GetConnectedAccountsOrderDirection? orderDirection = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             PrepareArguments(
                 client: HttpClient);
             PrepareGetConnectedAccountsArguments(
@@ -175,9 +240,10 @@ namespace G
 
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
+
                             var __pathBuilder = new global::G.PathBuilder(
                                 path: "/api/v3/connected_accounts",
-                                baseUri: HttpClient.BaseAddress); 
+                                baseUri: HttpClient.BaseAddress);
                             __pathBuilder
                                 .AddOptionalParameter("toolkit_slugs", toolkitSlugs, delimiter: ",", explode: true)
                                 .AddOptionalParameter("statuses", statuses, selector: static x => x.ToValueString(), delimiter: ",", explode: true)
@@ -187,7 +253,7 @@ namespace G
                                 .AddOptionalParameter("auth_config_ids", authConfigIds, delimiter: ",", explode: true)
                                 .AddOptionalParameter("connected_account_ids", connectedAccountIds, delimiter: ",", explode: true)
                                 .AddOptionalParameter("order_by", orderBy?.ToValueString())
-                                .AddOptionalParameter("order_direction", orderDirection?.ToValueString()) 
+                                .AddOptionalParameter("order_direction", orderDirection?.ToValueString())
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::G.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -279,6 +345,8 @@ namespace G
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                     try
                     {
@@ -289,6 +357,11 @@ namespace G
                     }
                     catch (global::System.Net.Http.HttpRequestException __exception)
                     {
+                        var __retryDelay = global::G.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: null,
+                            attempt: __attempt);
                         var __willRetry = __attempt < __maxAttempts && !__effectiveCancellationToken.IsCancellationRequested;
                         await global::G.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
@@ -306,6 +379,8 @@ namespace G
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: __willRetry,
+                                retryDelay: __willRetry ? __retryDelay : (global::System.TimeSpan?)null,
+                                retryReason: "exception",
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         if (!__willRetry)
                         {
@@ -315,8 +390,7 @@ namespace G
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::G.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -325,6 +399,11 @@ namespace G
                         __attempt < __maxAttempts &&
                         global::G.AutoSDKRequestOptionsSupport.ShouldRetryStatusCode(__response.StatusCode))
                     {
+                        var __retryDelay = global::G.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: __response,
+                            attempt: __attempt);
                         await global::G.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
@@ -341,14 +420,15 @@ namespace G
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: true,
+                                retryDelay: __retryDelay,
+                                retryReason: "status:" + ((int)__response.StatusCode).ToString(global::System.Globalization.CultureInfo.InvariantCulture),
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         __response.Dispose();
                         __response = null;
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::G.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -388,6 +468,8 @@ namespace G
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
                 else
@@ -408,6 +490,8 @@ namespace G
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
                             // Bad request
@@ -622,9 +706,13 @@ namespace G
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    return
-                                        global::G.GetConnectedAccountsResponse.FromJson(__content, JsonSerializerOptions) ??
+                                    var __value = global::G.GetConnectedAccountsResponse.FromJson(__content, JsonSerializerOptions) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                                    return new global::G.AutoSDKHttpResponse<global::G.GetConnectedAccountsResponse>(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri,
+                                        body: __value);
                                 }
                                 catch (global::System.Exception __ex)
                                 {
@@ -652,9 +740,13 @@ namespace G
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    return
-                                        await global::G.GetConnectedAccountsResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                                    var __value = await global::G.GetConnectedAccountsResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
+                                    return new global::G.AutoSDKHttpResponse<global::G.GetConnectedAccountsResponse>(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri,
+                                        body: __value);
                                 }
                                 catch (global::System.Exception __ex)
                                 {

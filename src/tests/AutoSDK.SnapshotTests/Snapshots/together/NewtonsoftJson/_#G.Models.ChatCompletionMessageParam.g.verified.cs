@@ -13,6 +13,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public string? Role { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ChatCompletionSystemMessageParam? System { get; init; }
 #else
@@ -26,6 +31,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(System))]
 #endif
         public bool IsSystem => System != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSystem(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ChatCompletionSystemMessageParam? value)
+        {
+            value = System;
+            return IsSystem;
+        }
 
         /// <summary>
         /// 
@@ -47,6 +65,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickUser(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ChatCompletionUserMessageParam? value)
+        {
+            value = User;
+            return IsUser;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ChatCompletionAssistantMessageParam? Assistant { get; init; }
 #else
@@ -60,6 +91,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Assistant))]
 #endif
         public bool IsAssistant => Assistant != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickAssistant(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ChatCompletionAssistantMessageParam? value)
+        {
+            value = Assistant;
+            return IsAssistant;
+        }
 
         /// <summary>
         /// 
@@ -81,6 +125,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickTool(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ChatCompletionToolMessageParam? value)
+        {
+            value = Tool;
+            return IsTool;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ChatCompletionFunctionMessageParam? Function { get; init; }
 #else
@@ -94,6 +151,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Function))]
 #endif
         public bool IsFunction => Function != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFunction(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ChatCompletionFunctionMessageParam? value)
+        {
+            value = Function;
+            return IsFunction;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -188,6 +258,7 @@ namespace G
         /// 
         /// </summary>
         public ChatCompletionMessageParam(
+            string? role,
             global::G.ChatCompletionSystemMessageParam? system,
             global::G.ChatCompletionUserMessageParam? user,
             global::G.ChatCompletionAssistantMessageParam? assistant,
@@ -195,6 +266,8 @@ namespace G
             global::G.ChatCompletionFunctionMessageParam? function
             )
         {
+            Role = role;
+
             System = system;
             User = user;
             Assistant = assistant;
@@ -236,11 +309,11 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.ChatCompletionSystemMessageParam?, TResult>? system = null,
-            global::System.Func<global::G.ChatCompletionUserMessageParam?, TResult>? user = null,
-            global::System.Func<global::G.ChatCompletionAssistantMessageParam?, TResult>? assistant = null,
-            global::System.Func<global::G.ChatCompletionToolMessageParam?, TResult>? tool = null,
-            global::System.Func<global::G.ChatCompletionFunctionMessageParam?, TResult>? function = null,
+            global::System.Func<global::G.ChatCompletionSystemMessageParam, TResult>? system = null,
+            global::System.Func<global::G.ChatCompletionUserMessageParam, TResult>? user = null,
+            global::System.Func<global::G.ChatCompletionAssistantMessageParam, TResult>? assistant = null,
+            global::System.Func<global::G.ChatCompletionToolMessageParam, TResult>? tool = null,
+            global::System.Func<global::G.ChatCompletionFunctionMessageParam, TResult>? function = null,
             bool validate = true)
         {
             if (validate)
@@ -276,11 +349,53 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.ChatCompletionSystemMessageParam?>? system = null,
-            global::System.Action<global::G.ChatCompletionUserMessageParam?>? user = null,
-            global::System.Action<global::G.ChatCompletionAssistantMessageParam?>? assistant = null,
-            global::System.Action<global::G.ChatCompletionToolMessageParam?>? tool = null,
-            global::System.Action<global::G.ChatCompletionFunctionMessageParam?>? function = null,
+            global::System.Action<global::G.ChatCompletionSystemMessageParam>? system = null,
+
+            global::System.Action<global::G.ChatCompletionUserMessageParam>? user = null,
+
+            global::System.Action<global::G.ChatCompletionAssistantMessageParam>? assistant = null,
+
+            global::System.Action<global::G.ChatCompletionToolMessageParam>? tool = null,
+
+            global::System.Action<global::G.ChatCompletionFunctionMessageParam>? function = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsSystem)
+            {
+                system?.Invoke(System!);
+            }
+            else if (IsUser)
+            {
+                user?.Invoke(User!);
+            }
+            else if (IsAssistant)
+            {
+                assistant?.Invoke(Assistant!);
+            }
+            else if (IsTool)
+            {
+                tool?.Invoke(Tool!);
+            }
+            else if (IsFunction)
+            {
+                function?.Invoke(Function!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.ChatCompletionSystemMessageParam>? system = null,
+            global::System.Action<global::G.ChatCompletionUserMessageParam>? user = null,
+            global::System.Action<global::G.ChatCompletionAssistantMessageParam>? assistant = null,
+            global::System.Action<global::G.ChatCompletionToolMessageParam>? tool = null,
+            global::System.Action<global::G.ChatCompletionFunctionMessageParam>? function = null,
             bool validate = true)
         {
             if (validate)

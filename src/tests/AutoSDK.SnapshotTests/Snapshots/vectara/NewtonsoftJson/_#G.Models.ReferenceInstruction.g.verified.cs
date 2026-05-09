@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickInstructionReference(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.InstructionReference? value)
+        {
+            value = InstructionReference;
+            return IsInstructionReference;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ReferenceInstructionVariant2? ReferenceInstructionVariant2 { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ReferenceInstructionVariant2))]
 #endif
         public bool IsReferenceInstructionVariant2 => ReferenceInstructionVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickReferenceInstructionVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ReferenceInstructionVariant2? value)
+        {
+            value = ReferenceInstructionVariant2;
+            return IsReferenceInstructionVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -119,8 +145,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.InstructionReference?, TResult>? instructionReference = null,
-            global::System.Func<global::G.ReferenceInstructionVariant2?, TResult>? referenceInstructionVariant2 = null,
+            global::System.Func<global::G.InstructionReference, TResult>? instructionReference = null,
+            global::System.Func<global::G.ReferenceInstructionVariant2, TResult>? referenceInstructionVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -144,8 +170,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.InstructionReference?>? instructionReference = null,
-            global::System.Action<global::G.ReferenceInstructionVariant2?>? referenceInstructionVariant2 = null,
+            global::System.Action<global::G.InstructionReference>? instructionReference = null,
+
+            global::System.Action<global::G.ReferenceInstructionVariant2>? referenceInstructionVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsInstructionReference)
+            {
+                instructionReference?.Invoke(InstructionReference!);
+            }
+            else if (IsReferenceInstructionVariant2)
+            {
+                referenceInstructionVariant2?.Invoke(ReferenceInstructionVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.InstructionReference>? instructionReference = null,
+            global::System.Action<global::G.ReferenceInstructionVariant2>? referenceInstructionVariant2 = null,
             bool validate = true)
         {
             if (validate)

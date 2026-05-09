@@ -22,6 +22,19 @@ namespace G
         /// Create Conversation<br/>
         /// Start a real-time video conversation with your AI replica and persona. The response includes a conversation_url to join the call or embed it.
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.CreateConversationResponse>> CreateConversationAsResponseAsync(
+
+            global::G.CreateConversationRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create Conversation<br/>
+        /// Start a real-time video conversation with your AI replica and persona. The response includes a conversation_url to join the call or embed it.
+        /// </summary>
         /// <param name="personaId">
         /// The identifier of the persona to use.
         /// </param>

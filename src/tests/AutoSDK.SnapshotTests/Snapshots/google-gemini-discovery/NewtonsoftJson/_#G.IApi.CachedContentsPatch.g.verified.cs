@@ -26,6 +26,22 @@ namespace G
         /// </summary>
         /// <param name="cachedContentsId"></param>
         /// <param name="updateMask"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.CachedContent>> CachedContentsPatchAsResponseAsync(
+            string cachedContentsId,
+
+            global::G.CachedContent request,
+            string? updateMask = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Updates CachedContent resource (only expiration is updatable).
+        /// </summary>
+        /// <param name="cachedContentsId"></param>
+        /// <param name="updateMask"></param>
         /// <param name="expireTime">
         /// Timestamp in UTC of when this resource is considered expired. This is *always* provided on output, regardless of what was sent on input.
         /// </param>

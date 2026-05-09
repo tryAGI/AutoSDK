@@ -23,6 +23,20 @@ namespace G
         /// [DEPRECATED] Question answering<br/>
         /// DEPRECATED: Use POST /stores/question-answering instead
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        [global::System.Obsolete("This method marked as deprecated.")]
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.VectorStoreQAResults>> DeprecatedCreateQuestionAnsweringAsResponseAsync(
+
+            global::G.VectorStoreQAParams request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// [DEPRECATED] Question answering<br/>
+        /// DEPRECATED: Use POST /stores/question-answering instead
+        /// </summary>
         /// <param name="query">
         /// Question to answer. If not provided, the question will be extracted from the passed messages.
         /// </param>

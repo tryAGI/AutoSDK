@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickFunction(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.NullableSavedFunctionIdFunction? value)
+        {
+            value = Function;
+            return IsFunction;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.NullableSavedFunctionIdGlobal? Global { get; init; }
 #else
@@ -47,6 +60,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickGlobal(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.NullableSavedFunctionIdGlobal? value)
+        {
+            value = Global;
+            return IsGlobal;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public object? NullableSavedFunctionIdVariant3 { get; init; }
 #else
@@ -60,6 +86,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(NullableSavedFunctionIdVariant3))]
 #endif
         public bool IsNullableSavedFunctionIdVariant3 => NullableSavedFunctionIdVariant3 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickNullableSavedFunctionIdVariant3(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out object? value)
+        {
+            value = NullableSavedFunctionIdVariant3;
+            return IsNullableSavedFunctionIdVariant3;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -140,9 +179,9 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.NullableSavedFunctionIdFunction?, TResult>? function = null,
-            global::System.Func<global::G.NullableSavedFunctionIdGlobal?, TResult>? global = null,
-            global::System.Func<object?, TResult>? nullableSavedFunctionIdVariant3 = null,
+            global::System.Func<global::G.NullableSavedFunctionIdFunction, TResult>? function = null,
+            global::System.Func<global::G.NullableSavedFunctionIdGlobal, TResult>? global = null,
+            global::System.Func<object, TResult>? nullableSavedFunctionIdVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -170,9 +209,39 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.NullableSavedFunctionIdFunction?>? function = null,
-            global::System.Action<global::G.NullableSavedFunctionIdGlobal?>? global = null,
-            global::System.Action<object?>? nullableSavedFunctionIdVariant3 = null,
+            global::System.Action<global::G.NullableSavedFunctionIdFunction>? function = null,
+
+            global::System.Action<global::G.NullableSavedFunctionIdGlobal>? global = null,
+
+            global::System.Action<object>? nullableSavedFunctionIdVariant3 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsFunction)
+            {
+                function?.Invoke(Function!);
+            }
+            else if (IsGlobal)
+            {
+                global?.Invoke(Global!);
+            }
+            else if (IsNullableSavedFunctionIdVariant3)
+            {
+                nullableSavedFunctionIdVariant3?.Invoke(NullableSavedFunctionIdVariant3!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.NullableSavedFunctionIdFunction>? function = null,
+            global::System.Action<global::G.NullableSavedFunctionIdGlobal>? global = null,
+            global::System.Action<object>? nullableSavedFunctionIdVariant3 = null,
             bool validate = true)
         {
             if (validate)

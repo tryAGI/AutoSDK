@@ -34,6 +34,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickEnum(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.TranscriptionChunkingStrategyEnum? value)
+        {
+            value = Enum;
+            return IsEnum;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.VadConfig? VadConfig { get; init; }
 #else
@@ -47,6 +60,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(VadConfig))]
 #endif
         public bool IsVadConfig => VadConfig != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickVadConfig(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.VadConfig? value)
+        {
+            value = VadConfig;
+            return IsVadConfig;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -124,7 +150,7 @@ namespace G
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::G.TranscriptionChunkingStrategyEnum?, TResult>? @enum = null,
-            global::System.Func<global::G.VadConfig?, TResult>? vadConfig = null,
+            global::System.Func<global::G.VadConfig, TResult>? vadConfig = null,
             bool validate = true)
         {
             if (validate)
@@ -149,7 +175,31 @@ namespace G
         /// </summary>
         public void Match(
             global::System.Action<global::G.TranscriptionChunkingStrategyEnum?>? @enum = null,
-            global::System.Action<global::G.VadConfig?>? vadConfig = null,
+
+            global::System.Action<global::G.VadConfig>? vadConfig = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsEnum)
+            {
+                @enum?.Invoke(Enum!);
+            }
+            else if (IsVadConfig)
+            {
+                vadConfig?.Invoke(VadConfig!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.TranscriptionChunkingStrategyEnum?>? @enum = null,
+            global::System.Action<global::G.VadConfig>? vadConfig = null,
             bool validate = true)
         {
             if (validate)

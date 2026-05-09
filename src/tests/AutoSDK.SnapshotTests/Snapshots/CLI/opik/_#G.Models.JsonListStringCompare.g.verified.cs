@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickJsonListStringCompareVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out object? value)
+        {
+            value = JsonListStringCompareVariant1;
+            return IsJsonListStringCompareVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<object>? JsonListStringCompareVariant2 { get; init; }
 #else
@@ -47,6 +60,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickJsonListStringCompareVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::System.Collections.Generic.IList<object>? value)
+        {
+            value = JsonListStringCompareVariant2;
+            return IsJsonListStringCompareVariant2;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public string? JsonListStringCompareVariant3 { get; init; }
 #else
@@ -60,6 +86,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(JsonListStringCompareVariant3))]
 #endif
         public bool IsJsonListStringCompareVariant3 => JsonListStringCompareVariant3 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickJsonListStringCompareVariant3(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = JsonListStringCompareVariant3;
+            return IsJsonListStringCompareVariant3;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -122,9 +161,9 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<object?, TResult>? jsonListStringCompareVariant1 = null,
-            global::System.Func<global::System.Collections.Generic.IList<object>?, TResult>? jsonListStringCompareVariant2 = null,
-            global::System.Func<string?, TResult>? jsonListStringCompareVariant3 = null,
+            global::System.Func<object, TResult>? jsonListStringCompareVariant1 = null,
+            global::System.Func<global::System.Collections.Generic.IList<object>, TResult>? jsonListStringCompareVariant2 = null,
+            global::System.Func<string, TResult>? jsonListStringCompareVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -152,9 +191,39 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<object?>? jsonListStringCompareVariant1 = null,
-            global::System.Action<global::System.Collections.Generic.IList<object>?>? jsonListStringCompareVariant2 = null,
-            global::System.Action<string?>? jsonListStringCompareVariant3 = null,
+            global::System.Action<object>? jsonListStringCompareVariant1 = null,
+
+            global::System.Action<global::System.Collections.Generic.IList<object>>? jsonListStringCompareVariant2 = null,
+
+            global::System.Action<string>? jsonListStringCompareVariant3 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsJsonListStringCompareVariant1)
+            {
+                jsonListStringCompareVariant1?.Invoke(JsonListStringCompareVariant1!);
+            }
+            else if (IsJsonListStringCompareVariant2)
+            {
+                jsonListStringCompareVariant2?.Invoke(JsonListStringCompareVariant2!);
+            }
+            else if (IsJsonListStringCompareVariant3)
+            {
+                jsonListStringCompareVariant3?.Invoke(JsonListStringCompareVariant3!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<object>? jsonListStringCompareVariant1 = null,
+            global::System.Action<global::System.Collections.Generic.IList<object>>? jsonListStringCompareVariant2 = null,
+            global::System.Action<string>? jsonListStringCompareVariant3 = null,
             bool validate = true)
         {
             if (validate)

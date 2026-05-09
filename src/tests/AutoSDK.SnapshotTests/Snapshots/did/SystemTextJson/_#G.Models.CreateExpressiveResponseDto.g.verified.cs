@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickCreateExpressiveResponseDtoVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateExpressiveResponseDtoVariant1? value)
+        {
+            value = CreateExpressiveResponseDtoVariant1;
+            return IsCreateExpressiveResponseDtoVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CreateExpressiveResponseDtoVariant2? CreateExpressiveResponseDtoVariant2 { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CreateExpressiveResponseDtoVariant2))]
 #endif
         public bool IsCreateExpressiveResponseDtoVariant2 => CreateExpressiveResponseDtoVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickCreateExpressiveResponseDtoVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateExpressiveResponseDtoVariant2? value)
+        {
+            value = CreateExpressiveResponseDtoVariant2;
+            return IsCreateExpressiveResponseDtoVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -119,8 +145,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.CreateExpressiveResponseDtoVariant1?, TResult>? createExpressiveResponseDtoVariant1 = null,
-            global::System.Func<global::G.CreateExpressiveResponseDtoVariant2?, TResult>? createExpressiveResponseDtoVariant2 = null,
+            global::System.Func<global::G.CreateExpressiveResponseDtoVariant1, TResult>? createExpressiveResponseDtoVariant1 = null,
+            global::System.Func<global::G.CreateExpressiveResponseDtoVariant2, TResult>? createExpressiveResponseDtoVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -144,8 +170,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.CreateExpressiveResponseDtoVariant1?>? createExpressiveResponseDtoVariant1 = null,
-            global::System.Action<global::G.CreateExpressiveResponseDtoVariant2?>? createExpressiveResponseDtoVariant2 = null,
+            global::System.Action<global::G.CreateExpressiveResponseDtoVariant1>? createExpressiveResponseDtoVariant1 = null,
+
+            global::System.Action<global::G.CreateExpressiveResponseDtoVariant2>? createExpressiveResponseDtoVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsCreateExpressiveResponseDtoVariant1)
+            {
+                createExpressiveResponseDtoVariant1?.Invoke(CreateExpressiveResponseDtoVariant1!);
+            }
+            else if (IsCreateExpressiveResponseDtoVariant2)
+            {
+                createExpressiveResponseDtoVariant2?.Invoke(CreateExpressiveResponseDtoVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.CreateExpressiveResponseDtoVariant1>? createExpressiveResponseDtoVariant1 = null,
+            global::System.Action<global::G.CreateExpressiveResponseDtoVariant2>? createExpressiveResponseDtoVariant2 = null,
             bool validate = true)
         {
             if (validate)

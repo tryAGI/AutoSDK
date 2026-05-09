@@ -37,6 +37,19 @@ namespace G
         public bool IsStreamStartResponse => StreamStartResponse != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickStreamStartResponse(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.StreamStartResponse? value)
+        {
+            value = StreamStartResponse;
+            return IsStreamStartResponse;
+        }
+
+        /// <summary>
         /// Contains a fragment of generated text. Note that text fragments may be split at arbitrary points, not necessarily at word or sentence boundaries.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -54,6 +67,19 @@ namespace G
         public bool IsStreamTextResponse => StreamTextResponse != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickStreamTextResponse(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.StreamTextResponse? value)
+        {
+            value = StreamTextResponse;
+            return IsStreamTextResponse;
+        }
+
+        /// <summary>
         /// Indicates the end of the stream.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -69,6 +95,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(StreamEndResponse))]
 #endif
         public bool IsStreamEndResponse => StreamEndResponse != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickStreamEndResponse(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.StreamEndResponse? value)
+        {
+            value = StreamEndResponse;
+            return IsStreamEndResponse;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -167,9 +206,9 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.StreamStartResponse?, TResult>? streamStartResponse = null,
-            global::System.Func<global::G.StreamTextResponse?, TResult>? streamTextResponse = null,
-            global::System.Func<global::G.StreamEndResponse?, TResult>? streamEndResponse = null,
+            global::System.Func<global::G.StreamStartResponse, TResult>? streamStartResponse = null,
+            global::System.Func<global::G.StreamTextResponse, TResult>? streamTextResponse = null,
+            global::System.Func<global::G.StreamEndResponse, TResult>? streamEndResponse = null,
             bool validate = true)
         {
             if (validate)
@@ -197,9 +236,39 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.StreamStartResponse?>? streamStartResponse = null,
-            global::System.Action<global::G.StreamTextResponse?>? streamTextResponse = null,
-            global::System.Action<global::G.StreamEndResponse?>? streamEndResponse = null,
+            global::System.Action<global::G.StreamStartResponse>? streamStartResponse = null,
+
+            global::System.Action<global::G.StreamTextResponse>? streamTextResponse = null,
+
+            global::System.Action<global::G.StreamEndResponse>? streamEndResponse = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsStreamStartResponse)
+            {
+                streamStartResponse?.Invoke(StreamStartResponse!);
+            }
+            else if (IsStreamTextResponse)
+            {
+                streamTextResponse?.Invoke(StreamTextResponse!);
+            }
+            else if (IsStreamEndResponse)
+            {
+                streamEndResponse?.Invoke(StreamEndResponse!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.StreamStartResponse>? streamStartResponse = null,
+            global::System.Action<global::G.StreamTextResponse>? streamTextResponse = null,
+            global::System.Action<global::G.StreamEndResponse>? streamEndResponse = null,
             bool validate = true)
         {
             if (validate)

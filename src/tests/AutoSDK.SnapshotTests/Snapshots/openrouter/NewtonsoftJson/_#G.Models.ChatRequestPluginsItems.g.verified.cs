@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickChatRequestPluginsItems0(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ChatRequestPluginsItems0? value)
+        {
+            value = ChatRequestPluginsItems0;
+            return IsChatRequestPluginsItems0;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ChatRequestPluginsItems1? ChatRequestPluginsItems1 { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ChatRequestPluginsItems1))]
 #endif
         public bool IsChatRequestPluginsItems1 => ChatRequestPluginsItems1 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickChatRequestPluginsItems1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ChatRequestPluginsItems1? value)
+        {
+            value = ChatRequestPluginsItems1;
+            return IsChatRequestPluginsItems1;
+        }
 
         /// <summary>
         /// 
@@ -64,6 +90,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickChatRequestPluginsItems2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ChatRequestPluginsItems2? value)
+        {
+            value = ChatRequestPluginsItems2;
+            return IsChatRequestPluginsItems2;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ChatRequestPluginsItems3? ChatRequestPluginsItems3 { get; init; }
 #else
@@ -77,6 +116,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ChatRequestPluginsItems3))]
 #endif
         public bool IsChatRequestPluginsItems3 => ChatRequestPluginsItems3 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickChatRequestPluginsItems3(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ChatRequestPluginsItems3? value)
+        {
+            value = ChatRequestPluginsItems3;
+            return IsChatRequestPluginsItems3;
+        }
 
         /// <summary>
         /// 
@@ -98,6 +150,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickChatRequestPluginsItems4(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ChatRequestPluginsItems4? value)
+        {
+            value = ChatRequestPluginsItems4;
+            return IsChatRequestPluginsItems4;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ChatRequestPluginsItems5? ChatRequestPluginsItems5 { get; init; }
 #else
@@ -111,6 +176,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ChatRequestPluginsItems5))]
 #endif
         public bool IsChatRequestPluginsItems5 => ChatRequestPluginsItems5 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickChatRequestPluginsItems5(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ChatRequestPluginsItems5? value)
+        {
+            value = ChatRequestPluginsItems5;
+            return IsChatRequestPluginsItems5;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -275,12 +353,12 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.ChatRequestPluginsItems0?, TResult>? chatRequestPluginsItems0 = null,
-            global::System.Func<global::G.ChatRequestPluginsItems1?, TResult>? chatRequestPluginsItems1 = null,
-            global::System.Func<global::G.ChatRequestPluginsItems2?, TResult>? chatRequestPluginsItems2 = null,
-            global::System.Func<global::G.ChatRequestPluginsItems3?, TResult>? chatRequestPluginsItems3 = null,
-            global::System.Func<global::G.ChatRequestPluginsItems4?, TResult>? chatRequestPluginsItems4 = null,
-            global::System.Func<global::G.ChatRequestPluginsItems5?, TResult>? chatRequestPluginsItems5 = null,
+            global::System.Func<global::G.ChatRequestPluginsItems0, TResult>? chatRequestPluginsItems0 = null,
+            global::System.Func<global::G.ChatRequestPluginsItems1, TResult>? chatRequestPluginsItems1 = null,
+            global::System.Func<global::G.ChatRequestPluginsItems2, TResult>? chatRequestPluginsItems2 = null,
+            global::System.Func<global::G.ChatRequestPluginsItems3, TResult>? chatRequestPluginsItems3 = null,
+            global::System.Func<global::G.ChatRequestPluginsItems4, TResult>? chatRequestPluginsItems4 = null,
+            global::System.Func<global::G.ChatRequestPluginsItems5, TResult>? chatRequestPluginsItems5 = null,
             bool validate = true)
         {
             if (validate)
@@ -320,12 +398,60 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.ChatRequestPluginsItems0?>? chatRequestPluginsItems0 = null,
-            global::System.Action<global::G.ChatRequestPluginsItems1?>? chatRequestPluginsItems1 = null,
-            global::System.Action<global::G.ChatRequestPluginsItems2?>? chatRequestPluginsItems2 = null,
-            global::System.Action<global::G.ChatRequestPluginsItems3?>? chatRequestPluginsItems3 = null,
-            global::System.Action<global::G.ChatRequestPluginsItems4?>? chatRequestPluginsItems4 = null,
-            global::System.Action<global::G.ChatRequestPluginsItems5?>? chatRequestPluginsItems5 = null,
+            global::System.Action<global::G.ChatRequestPluginsItems0>? chatRequestPluginsItems0 = null,
+
+            global::System.Action<global::G.ChatRequestPluginsItems1>? chatRequestPluginsItems1 = null,
+
+            global::System.Action<global::G.ChatRequestPluginsItems2>? chatRequestPluginsItems2 = null,
+
+            global::System.Action<global::G.ChatRequestPluginsItems3>? chatRequestPluginsItems3 = null,
+
+            global::System.Action<global::G.ChatRequestPluginsItems4>? chatRequestPluginsItems4 = null,
+
+            global::System.Action<global::G.ChatRequestPluginsItems5>? chatRequestPluginsItems5 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsChatRequestPluginsItems0)
+            {
+                chatRequestPluginsItems0?.Invoke(ChatRequestPluginsItems0!);
+            }
+            else if (IsChatRequestPluginsItems1)
+            {
+                chatRequestPluginsItems1?.Invoke(ChatRequestPluginsItems1!);
+            }
+            else if (IsChatRequestPluginsItems2)
+            {
+                chatRequestPluginsItems2?.Invoke(ChatRequestPluginsItems2!);
+            }
+            else if (IsChatRequestPluginsItems3)
+            {
+                chatRequestPluginsItems3?.Invoke(ChatRequestPluginsItems3!);
+            }
+            else if (IsChatRequestPluginsItems4)
+            {
+                chatRequestPluginsItems4?.Invoke(ChatRequestPluginsItems4!);
+            }
+            else if (IsChatRequestPluginsItems5)
+            {
+                chatRequestPluginsItems5?.Invoke(ChatRequestPluginsItems5!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.ChatRequestPluginsItems0>? chatRequestPluginsItems0 = null,
+            global::System.Action<global::G.ChatRequestPluginsItems1>? chatRequestPluginsItems1 = null,
+            global::System.Action<global::G.ChatRequestPluginsItems2>? chatRequestPluginsItems2 = null,
+            global::System.Action<global::G.ChatRequestPluginsItems3>? chatRequestPluginsItems3 = null,
+            global::System.Action<global::G.ChatRequestPluginsItems4>? chatRequestPluginsItems4 = null,
+            global::System.Action<global::G.ChatRequestPluginsItems5>? chatRequestPluginsItems5 = null,
             bool validate = true)
         {
             if (validate)

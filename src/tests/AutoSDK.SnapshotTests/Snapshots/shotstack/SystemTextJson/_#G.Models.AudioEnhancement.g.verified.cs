@@ -29,6 +29,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Dolby))]
 #endif
         public bool IsDolby => Dolby != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickDolby(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.DolbyEnhancement? value)
+        {
+            value = Dolby;
+            return IsDolby;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -73,7 +86,7 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.DolbyEnhancement?, TResult>? dolby = null,
+            global::System.Func<global::G.DolbyEnhancement, TResult>? dolby = null,
             bool validate = true)
         {
             if (validate)
@@ -93,7 +106,25 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.DolbyEnhancement?>? dolby = null,
+            global::System.Action<global::G.DolbyEnhancement>? dolby = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsDolby)
+            {
+                dolby?.Invoke(Dolby!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.DolbyEnhancement>? dolby = null,
             bool validate = true)
         {
             if (validate)

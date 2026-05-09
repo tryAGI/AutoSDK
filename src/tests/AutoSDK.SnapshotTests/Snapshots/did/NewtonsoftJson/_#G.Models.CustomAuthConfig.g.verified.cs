@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickBasic(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CustomAuthConfigBasic? value)
+        {
+            value = Basic;
+            return IsBasic;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CustomAuthConfigOAuth2? OAuth2 { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OAuth2))]
 #endif
         public bool IsOAuth2 => OAuth2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickOAuth2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CustomAuthConfigOAuth2? value)
+        {
+            value = OAuth2;
+            return IsOAuth2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -119,8 +145,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.CustomAuthConfigBasic?, TResult>? basic = null,
-            global::System.Func<global::G.CustomAuthConfigOAuth2?, TResult>? oAuth2 = null,
+            global::System.Func<global::G.CustomAuthConfigBasic, TResult>? basic = null,
+            global::System.Func<global::G.CustomAuthConfigOAuth2, TResult>? oAuth2 = null,
             bool validate = true)
         {
             if (validate)
@@ -144,8 +170,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.CustomAuthConfigBasic?>? basic = null,
-            global::System.Action<global::G.CustomAuthConfigOAuth2?>? oAuth2 = null,
+            global::System.Action<global::G.CustomAuthConfigBasic>? basic = null,
+
+            global::System.Action<global::G.CustomAuthConfigOAuth2>? oAuth2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsBasic)
+            {
+                basic?.Invoke(Basic!);
+            }
+            else if (IsOAuth2)
+            {
+                oAuth2?.Invoke(OAuth2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.CustomAuthConfigBasic>? basic = null,
+            global::System.Action<global::G.CustomAuthConfigOAuth2>? oAuth2 = null,
             bool validate = true)
         {
             if (validate)

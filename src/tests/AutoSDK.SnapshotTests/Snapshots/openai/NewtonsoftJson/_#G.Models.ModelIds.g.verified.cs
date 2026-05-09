@@ -28,6 +28,19 @@ namespace G
         public bool IsShared => Shared != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickShared(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ModelIdsShared? value)
+        {
+            value = Shared;
+            return IsShared;
+        }
+
+        /// <summary>
         /// Example: gpt-4o
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Responses))]
 #endif
         public bool IsResponses => Responses != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResponses(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ModelIdsResponses? value)
+        {
+            value = Responses;
+            return IsResponses;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -144,6 +170,30 @@ namespace G
         /// 
         /// </summary>
         public void Match(
+            global::System.Action<global::G.ModelIdsShared?>? shared = null,
+
+            global::System.Action<global::G.ModelIdsResponses?>? responses = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsShared)
+            {
+                shared?.Invoke(Shared!);
+            }
+            else if (IsResponses)
+            {
+                responses?.Invoke(Responses!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
             global::System.Action<global::G.ModelIdsShared?>? shared = null,
             global::System.Action<global::G.ModelIdsResponses?>? responses = null,
             bool validate = true)

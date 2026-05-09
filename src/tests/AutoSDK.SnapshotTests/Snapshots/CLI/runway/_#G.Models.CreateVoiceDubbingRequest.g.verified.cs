@@ -13,6 +13,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public string? Model { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CreateVoiceDubbingRequestElevenVoiceDubbing? ElevenVoiceDubbing { get; init; }
 #else
@@ -26,6 +31,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ElevenVoiceDubbing))]
 #endif
         public bool IsElevenVoiceDubbing => ElevenVoiceDubbing != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickElevenVoiceDubbing(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateVoiceDubbingRequestElevenVoiceDubbing? value)
+        {
+            value = ElevenVoiceDubbing;
+            return IsElevenVoiceDubbing;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -42,6 +60,19 @@ namespace G
         public CreateVoiceDubbingRequest(global::G.CreateVoiceDubbingRequestElevenVoiceDubbing? value)
         {
             ElevenVoiceDubbing = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public CreateVoiceDubbingRequest(
+            string? model,
+            global::G.CreateVoiceDubbingRequestElevenVoiceDubbing? elevenVoiceDubbing
+            )
+        {
+            Model = model;
+
+            ElevenVoiceDubbing = elevenVoiceDubbing;
         }
 
         /// <summary>
@@ -70,7 +101,7 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.CreateVoiceDubbingRequestElevenVoiceDubbing?, TResult>? elevenVoiceDubbing = null,
+            global::System.Func<global::G.CreateVoiceDubbingRequestElevenVoiceDubbing, TResult>? elevenVoiceDubbing = null,
             bool validate = true)
         {
             if (validate)
@@ -90,7 +121,25 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.CreateVoiceDubbingRequestElevenVoiceDubbing?>? elevenVoiceDubbing = null,
+            global::System.Action<global::G.CreateVoiceDubbingRequestElevenVoiceDubbing>? elevenVoiceDubbing = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsElevenVoiceDubbing)
+            {
+                elevenVoiceDubbing?.Invoke(ElevenVoiceDubbing!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.CreateVoiceDubbingRequestElevenVoiceDubbing>? elevenVoiceDubbing = null,
             bool validate = true)
         {
             if (validate)

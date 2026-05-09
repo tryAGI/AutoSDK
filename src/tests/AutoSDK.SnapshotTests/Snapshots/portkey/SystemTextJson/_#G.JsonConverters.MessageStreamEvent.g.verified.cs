@@ -24,23 +24,90 @@ namespace G.JsonConverters
                 foreach (var __jsonProp in __jsonDocument.RootElement.EnumerateObject())
                 {
                     __jsonProps.Add(__jsonProp.Name);
+                    if (__jsonProp.Value.ValueKind == global::System.Text.Json.JsonValueKind.Object)
+                    {
+                        foreach (var __nestedJsonProp in __jsonProp.Value.EnumerateObject())
+                        {
+                            __jsonProps.Add(__jsonProp.Name + "." + __nestedJsonProp.Name);
+                        }
+                    }
+
                 }
             }
 
             var __score0 = 0;
             if (__jsonProps.Contains("data")) __score0++;
+            if (__jsonProps.Contains("data.assistant_id")) __score0++;
+            if (__jsonProps.Contains("data.attachments")) __score0++;
+            if (__jsonProps.Contains("data.completed_at")) __score0++;
+            if (__jsonProps.Contains("data.content")) __score0++;
+            if (__jsonProps.Contains("data.created_at")) __score0++;
+            if (__jsonProps.Contains("data.id")) __score0++;
+            if (__jsonProps.Contains("data.incomplete_at")) __score0++;
+            if (__jsonProps.Contains("data.incomplete_details")) __score0++;
+            if (__jsonProps.Contains("data.metadata")) __score0++;
+            if (__jsonProps.Contains("data.object")) __score0++;
+            if (__jsonProps.Contains("data.role")) __score0++;
+            if (__jsonProps.Contains("data.run_id")) __score0++;
+            if (__jsonProps.Contains("data.status")) __score0++;
+            if (__jsonProps.Contains("data.thread_id")) __score0++;
             if (__jsonProps.Contains("event")) __score0++;
             var __score1 = 0;
             if (__jsonProps.Contains("data")) __score1++;
+            if (__jsonProps.Contains("data.assistant_id")) __score1++;
+            if (__jsonProps.Contains("data.attachments")) __score1++;
+            if (__jsonProps.Contains("data.completed_at")) __score1++;
+            if (__jsonProps.Contains("data.content")) __score1++;
+            if (__jsonProps.Contains("data.created_at")) __score1++;
+            if (__jsonProps.Contains("data.id")) __score1++;
+            if (__jsonProps.Contains("data.incomplete_at")) __score1++;
+            if (__jsonProps.Contains("data.incomplete_details")) __score1++;
+            if (__jsonProps.Contains("data.metadata")) __score1++;
+            if (__jsonProps.Contains("data.object")) __score1++;
+            if (__jsonProps.Contains("data.role")) __score1++;
+            if (__jsonProps.Contains("data.run_id")) __score1++;
+            if (__jsonProps.Contains("data.status")) __score1++;
+            if (__jsonProps.Contains("data.thread_id")) __score1++;
             if (__jsonProps.Contains("event")) __score1++;
             var __score2 = 0;
             if (__jsonProps.Contains("data")) __score2++;
+            if (__jsonProps.Contains("data.delta")) __score2++;
+            if (__jsonProps.Contains("data.id")) __score2++;
+            if (__jsonProps.Contains("data.object")) __score2++;
             if (__jsonProps.Contains("event")) __score2++;
             var __score3 = 0;
             if (__jsonProps.Contains("data")) __score3++;
+            if (__jsonProps.Contains("data.assistant_id")) __score3++;
+            if (__jsonProps.Contains("data.attachments")) __score3++;
+            if (__jsonProps.Contains("data.completed_at")) __score3++;
+            if (__jsonProps.Contains("data.content")) __score3++;
+            if (__jsonProps.Contains("data.created_at")) __score3++;
+            if (__jsonProps.Contains("data.id")) __score3++;
+            if (__jsonProps.Contains("data.incomplete_at")) __score3++;
+            if (__jsonProps.Contains("data.incomplete_details")) __score3++;
+            if (__jsonProps.Contains("data.metadata")) __score3++;
+            if (__jsonProps.Contains("data.object")) __score3++;
+            if (__jsonProps.Contains("data.role")) __score3++;
+            if (__jsonProps.Contains("data.run_id")) __score3++;
+            if (__jsonProps.Contains("data.status")) __score3++;
+            if (__jsonProps.Contains("data.thread_id")) __score3++;
             if (__jsonProps.Contains("event")) __score3++;
             var __score4 = 0;
             if (__jsonProps.Contains("data")) __score4++;
+            if (__jsonProps.Contains("data.assistant_id")) __score4++;
+            if (__jsonProps.Contains("data.attachments")) __score4++;
+            if (__jsonProps.Contains("data.completed_at")) __score4++;
+            if (__jsonProps.Contains("data.content")) __score4++;
+            if (__jsonProps.Contains("data.created_at")) __score4++;
+            if (__jsonProps.Contains("data.id")) __score4++;
+            if (__jsonProps.Contains("data.incomplete_at")) __score4++;
+            if (__jsonProps.Contains("data.incomplete_details")) __score4++;
+            if (__jsonProps.Contains("data.metadata")) __score4++;
+            if (__jsonProps.Contains("data.object")) __score4++;
+            if (__jsonProps.Contains("data.role")) __score4++;
+            if (__jsonProps.Contains("data.run_id")) __score4++;
+            if (__jsonProps.Contains("data.status")) __score4++;
+            if (__jsonProps.Contains("data.thread_id")) __score4++;
             if (__jsonProps.Contains("event")) __score4++;
             var __bestScore = 0;
             var __bestIndex = -1;

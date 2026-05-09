@@ -33,6 +33,19 @@ namespace G
         public bool IsCompany => Company != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickCompany(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CompanyEntity? value)
+        {
+            value = Company;
+            return IsCompany;
+        }
+
+        /// <summary>
         /// Structured entity data for a person.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -48,6 +61,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Person))]
 #endif
         public bool IsPerson => Person != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickPerson(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.PersonEntity? value)
+        {
+            value = Person;
+            return IsPerson;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -127,8 +153,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.CompanyEntity?, TResult>? company = null,
-            global::System.Func<global::G.PersonEntity?, TResult>? person = null,
+            global::System.Func<global::G.CompanyEntity, TResult>? company = null,
+            global::System.Func<global::G.PersonEntity, TResult>? person = null,
             bool validate = true)
         {
             if (validate)
@@ -152,8 +178,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.CompanyEntity?>? company = null,
-            global::System.Action<global::G.PersonEntity?>? person = null,
+            global::System.Action<global::G.CompanyEntity>? company = null,
+
+            global::System.Action<global::G.PersonEntity>? person = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsCompany)
+            {
+                company?.Invoke(Company!);
+            }
+            else if (IsPerson)
+            {
+                person?.Invoke(Person!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.CompanyEntity>? company = null,
+            global::System.Action<global::G.PersonEntity>? person = null,
             bool validate = true)
         {
             if (validate)

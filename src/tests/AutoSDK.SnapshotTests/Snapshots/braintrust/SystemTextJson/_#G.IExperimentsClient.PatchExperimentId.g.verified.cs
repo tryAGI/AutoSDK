@@ -29,6 +29,23 @@ namespace G
         /// <param name="experimentId">
         /// Experiment id
         /// </param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.Experiment>> PatchExperimentIdAsResponseAsync(
+            global::System.Guid experimentId,
+
+            global::G.PatchExperiment request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Partially update experiment<br/>
+        /// Partially update an experiment object. Specify the fields to update in the payload. Any object-type fields will be deep-merged with existing content. Currently we do not support removing fields or setting them to null.
+        /// </summary>
+        /// <param name="experimentId">
+        /// Experiment id
+        /// </param>
         /// <param name="name">
         /// Name of the experiment. Within a project, experiment names are unique
         /// </param>

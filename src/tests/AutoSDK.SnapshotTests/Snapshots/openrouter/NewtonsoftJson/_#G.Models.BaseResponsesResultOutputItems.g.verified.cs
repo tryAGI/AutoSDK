@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickOutputMessage(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.OutputMessage? value)
+        {
+            value = OutputMessage;
+            return IsOutputMessage;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.OutputItemReasoning? OutputItemReasoning { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OutputItemReasoning))]
 #endif
         public bool IsOutputItemReasoning => OutputItemReasoning != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickOutputItemReasoning(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.OutputItemReasoning? value)
+        {
+            value = OutputItemReasoning;
+            return IsOutputItemReasoning;
+        }
 
         /// <summary>
         /// 
@@ -64,6 +90,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickOutputItemFunctionCall(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.OutputItemFunctionCall? value)
+        {
+            value = OutputItemFunctionCall;
+            return IsOutputItemFunctionCall;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.OutputItemWebSearchCall? OutputItemWebSearchCall { get; init; }
 #else
@@ -77,6 +116,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OutputItemWebSearchCall))]
 #endif
         public bool IsOutputItemWebSearchCall => OutputItemWebSearchCall != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickOutputItemWebSearchCall(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.OutputItemWebSearchCall? value)
+        {
+            value = OutputItemWebSearchCall;
+            return IsOutputItemWebSearchCall;
+        }
 
         /// <summary>
         /// 
@@ -98,6 +150,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickOutputItemFileSearchCall(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.OutputItemFileSearchCall? value)
+        {
+            value = OutputItemFileSearchCall;
+            return IsOutputItemFileSearchCall;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.OutputItemImageGenerationCall? OutputItemImageGenerationCall { get; init; }
 #else
@@ -111,6 +176,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OutputItemImageGenerationCall))]
 #endif
         public bool IsOutputItemImageGenerationCall => OutputItemImageGenerationCall != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickOutputItemImageGenerationCall(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.OutputItemImageGenerationCall? value)
+        {
+            value = OutputItemImageGenerationCall;
+            return IsOutputItemImageGenerationCall;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -275,12 +353,12 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.OutputMessage?, TResult>? outputMessage = null,
-            global::System.Func<global::G.OutputItemReasoning?, TResult>? outputItemReasoning = null,
-            global::System.Func<global::G.OutputItemFunctionCall?, TResult>? outputItemFunctionCall = null,
-            global::System.Func<global::G.OutputItemWebSearchCall?, TResult>? outputItemWebSearchCall = null,
-            global::System.Func<global::G.OutputItemFileSearchCall?, TResult>? outputItemFileSearchCall = null,
-            global::System.Func<global::G.OutputItemImageGenerationCall?, TResult>? outputItemImageGenerationCall = null,
+            global::System.Func<global::G.OutputMessage, TResult>? outputMessage = null,
+            global::System.Func<global::G.OutputItemReasoning, TResult>? outputItemReasoning = null,
+            global::System.Func<global::G.OutputItemFunctionCall, TResult>? outputItemFunctionCall = null,
+            global::System.Func<global::G.OutputItemWebSearchCall, TResult>? outputItemWebSearchCall = null,
+            global::System.Func<global::G.OutputItemFileSearchCall, TResult>? outputItemFileSearchCall = null,
+            global::System.Func<global::G.OutputItemImageGenerationCall, TResult>? outputItemImageGenerationCall = null,
             bool validate = true)
         {
             if (validate)
@@ -320,12 +398,60 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.OutputMessage?>? outputMessage = null,
-            global::System.Action<global::G.OutputItemReasoning?>? outputItemReasoning = null,
-            global::System.Action<global::G.OutputItemFunctionCall?>? outputItemFunctionCall = null,
-            global::System.Action<global::G.OutputItemWebSearchCall?>? outputItemWebSearchCall = null,
-            global::System.Action<global::G.OutputItemFileSearchCall?>? outputItemFileSearchCall = null,
-            global::System.Action<global::G.OutputItemImageGenerationCall?>? outputItemImageGenerationCall = null,
+            global::System.Action<global::G.OutputMessage>? outputMessage = null,
+
+            global::System.Action<global::G.OutputItemReasoning>? outputItemReasoning = null,
+
+            global::System.Action<global::G.OutputItemFunctionCall>? outputItemFunctionCall = null,
+
+            global::System.Action<global::G.OutputItemWebSearchCall>? outputItemWebSearchCall = null,
+
+            global::System.Action<global::G.OutputItemFileSearchCall>? outputItemFileSearchCall = null,
+
+            global::System.Action<global::G.OutputItemImageGenerationCall>? outputItemImageGenerationCall = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsOutputMessage)
+            {
+                outputMessage?.Invoke(OutputMessage!);
+            }
+            else if (IsOutputItemReasoning)
+            {
+                outputItemReasoning?.Invoke(OutputItemReasoning!);
+            }
+            else if (IsOutputItemFunctionCall)
+            {
+                outputItemFunctionCall?.Invoke(OutputItemFunctionCall!);
+            }
+            else if (IsOutputItemWebSearchCall)
+            {
+                outputItemWebSearchCall?.Invoke(OutputItemWebSearchCall!);
+            }
+            else if (IsOutputItemFileSearchCall)
+            {
+                outputItemFileSearchCall?.Invoke(OutputItemFileSearchCall!);
+            }
+            else if (IsOutputItemImageGenerationCall)
+            {
+                outputItemImageGenerationCall?.Invoke(OutputItemImageGenerationCall!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.OutputMessage>? outputMessage = null,
+            global::System.Action<global::G.OutputItemReasoning>? outputItemReasoning = null,
+            global::System.Action<global::G.OutputItemFunctionCall>? outputItemFunctionCall = null,
+            global::System.Action<global::G.OutputItemWebSearchCall>? outputItemWebSearchCall = null,
+            global::System.Action<global::G.OutputItemFileSearchCall>? outputItemFileSearchCall = null,
+            global::System.Action<global::G.OutputItemImageGenerationCall>? outputItemImageGenerationCall = null,
             bool validate = true)
         {
             if (validate)

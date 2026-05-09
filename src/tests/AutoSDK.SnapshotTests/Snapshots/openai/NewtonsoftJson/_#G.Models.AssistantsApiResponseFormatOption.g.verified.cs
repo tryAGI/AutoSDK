@@ -31,6 +31,19 @@ namespace G
         public bool IsEnum => Enum != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickEnum(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.AssistantsApiResponseFormatOptionEnum? value)
+        {
+            value = Enum;
+            return IsEnum;
+        }
+
+        /// <summary>
         /// Default response format. Used to generate text responses.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -46,6 +59,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Text))]
 #endif
         public bool IsText => Text != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickText(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ResponseFormatText? value)
+        {
+            value = Text;
+            return IsText;
+        }
 
         /// <summary>
         /// JSON object response format. An older method of generating JSON responses.<br/>
@@ -68,6 +94,19 @@ namespace G
         public bool IsJsonObject => JsonObject != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickJsonObject(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ResponseFormatJsonObject? value)
+        {
+            value = JsonObject;
+            return IsJsonObject;
+        }
+
+        /// <summary>
         /// JSON Schema response format. Used to generate structured JSON responses.<br/>
         /// Learn more about [Structured Outputs](/docs/guides/structured-outputs).
         /// </summary>
@@ -84,6 +123,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(JsonSchema))]
 #endif
         public bool IsJsonSchema => JsonSchema != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickJsonSchema(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ResponseFormatJsonSchema? value)
+        {
+            value = JsonSchema;
+            return IsJsonSchema;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -205,9 +257,9 @@ namespace G
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::G.AssistantsApiResponseFormatOptionEnum?, TResult>? @enum = null,
-            global::System.Func<global::G.ResponseFormatText?, TResult>? text = null,
-            global::System.Func<global::G.ResponseFormatJsonObject?, TResult>? jsonObject = null,
-            global::System.Func<global::G.ResponseFormatJsonSchema?, TResult>? jsonSchema = null,
+            global::System.Func<global::G.ResponseFormatText, TResult>? text = null,
+            global::System.Func<global::G.ResponseFormatJsonObject, TResult>? jsonObject = null,
+            global::System.Func<global::G.ResponseFormatJsonSchema, TResult>? jsonSchema = null,
             bool validate = true)
         {
             if (validate)
@@ -240,9 +292,45 @@ namespace G
         /// </summary>
         public void Match(
             global::System.Action<global::G.AssistantsApiResponseFormatOptionEnum?>? @enum = null,
-            global::System.Action<global::G.ResponseFormatText?>? text = null,
-            global::System.Action<global::G.ResponseFormatJsonObject?>? jsonObject = null,
-            global::System.Action<global::G.ResponseFormatJsonSchema?>? jsonSchema = null,
+
+            global::System.Action<global::G.ResponseFormatText>? text = null,
+
+            global::System.Action<global::G.ResponseFormatJsonObject>? jsonObject = null,
+
+            global::System.Action<global::G.ResponseFormatJsonSchema>? jsonSchema = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsEnum)
+            {
+                @enum?.Invoke(Enum!);
+            }
+            else if (IsText)
+            {
+                text?.Invoke(Text!);
+            }
+            else if (IsJsonObject)
+            {
+                jsonObject?.Invoke(JsonObject!);
+            }
+            else if (IsJsonSchema)
+            {
+                jsonSchema?.Invoke(JsonSchema!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.AssistantsApiResponseFormatOptionEnum?>? @enum = null,
+            global::System.Action<global::G.ResponseFormatText>? text = null,
+            global::System.Action<global::G.ResponseFormatJsonObject>? jsonObject = null,
+            global::System.Action<global::G.ResponseFormatJsonSchema>? jsonSchema = null,
             bool validate = true)
         {
             if (validate)

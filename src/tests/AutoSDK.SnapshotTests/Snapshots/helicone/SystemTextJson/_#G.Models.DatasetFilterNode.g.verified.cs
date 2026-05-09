@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickPickLeafRequestOrPromptsVersions(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.PickFilterLeafRequestOrPromptsVersions? value)
+        {
+            value = PickLeafRequestOrPromptsVersions;
+            return IsPickLeafRequestOrPromptsVersions;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.DatasetFilterBranch? Branch { get; init; }
 #else
@@ -47,6 +60,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickBranch(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.DatasetFilterBranch? value)
+        {
+            value = Branch;
+            return IsBranch;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.DatasetFilterNodeEnum? Enum { get; init; }
 #else
@@ -60,6 +86,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Enum))]
 #endif
         public bool IsEnum => Enum != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickEnum(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.DatasetFilterNodeEnum? value)
+        {
+            value = Enum;
+            return IsEnum;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -158,8 +197,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.PickFilterLeafRequestOrPromptsVersions?, TResult>? pickLeafRequestOrPromptsVersions = null,
-            global::System.Func<global::G.DatasetFilterBranch?, TResult>? branch = null,
+            global::System.Func<global::G.PickFilterLeafRequestOrPromptsVersions, TResult>? pickLeafRequestOrPromptsVersions = null,
+            global::System.Func<global::G.DatasetFilterBranch, TResult>? branch = null,
             global::System.Func<global::G.DatasetFilterNodeEnum?, TResult>? @enum = null,
             bool validate = true)
         {
@@ -188,8 +227,38 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.PickFilterLeafRequestOrPromptsVersions?>? pickLeafRequestOrPromptsVersions = null,
-            global::System.Action<global::G.DatasetFilterBranch?>? branch = null,
+            global::System.Action<global::G.PickFilterLeafRequestOrPromptsVersions>? pickLeafRequestOrPromptsVersions = null,
+
+            global::System.Action<global::G.DatasetFilterBranch>? branch = null,
+
+            global::System.Action<global::G.DatasetFilterNodeEnum?>? @enum = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsPickLeafRequestOrPromptsVersions)
+            {
+                pickLeafRequestOrPromptsVersions?.Invoke(PickLeafRequestOrPromptsVersions!);
+            }
+            else if (IsBranch)
+            {
+                branch?.Invoke(Branch!);
+            }
+            else if (IsEnum)
+            {
+                @enum?.Invoke(Enum!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.PickFilterLeafRequestOrPromptsVersions>? pickLeafRequestOrPromptsVersions = null,
+            global::System.Action<global::G.DatasetFilterBranch>? branch = null,
             global::System.Action<global::G.DatasetFilterNodeEnum?>? @enum = null,
             bool validate = true)
         {

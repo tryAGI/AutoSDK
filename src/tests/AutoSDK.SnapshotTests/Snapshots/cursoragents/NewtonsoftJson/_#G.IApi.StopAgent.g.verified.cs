@@ -19,5 +19,19 @@ namespace G
             string id,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Stop an agent<br/>
+        /// Stop a running cloud agent. This pauses the agent's execution without deleting it. Stopped agents cannot be resumed.
+        /// </summary>
+        /// <param name="id">
+        /// Example: bc_abc123
+        /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.StopAgentResponse>> StopAgentAsResponseAsync(
+            string id,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -11,6 +11,11 @@ namespace G
     public readonly partial struct Request : global::System.IEquatable<Request>
     {
         /// <summary>
+        /// 
+        /// </summary>
+        public string? GenerationType { get; }
+
+        /// <summary>
         /// The generation request object
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -28,6 +33,19 @@ namespace G
         public bool IsVideo => Video != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickVideo(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.GenerationRequest? value)
+        {
+            value = Video;
+            return IsVideo;
+        }
+
+        /// <summary>
         /// The image generation request object
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -43,6 +61,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Image))]
 #endif
         public bool IsImage => Image != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickImage(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ImageGenerationRequest? value)
+        {
+            value = Image;
+            return IsImage;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -83,10 +114,13 @@ namespace G
         /// 
         /// </summary>
         public Request(
+            string? generationType,
             global::G.GenerationRequest? video,
             global::G.ImageGenerationRequest? image
             )
         {
+            GenerationType = generationType;
+
             Video = video;
             Image = image;
         }
@@ -119,8 +153,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.GenerationRequest?, TResult>? video = null,
-            global::System.Func<global::G.ImageGenerationRequest?, TResult>? image = null,
+            global::System.Func<global::G.GenerationRequest, TResult>? video = null,
+            global::System.Func<global::G.ImageGenerationRequest, TResult>? image = null,
             bool validate = true)
         {
             if (validate)
@@ -144,8 +178,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.GenerationRequest?>? video = null,
-            global::System.Action<global::G.ImageGenerationRequest?>? image = null,
+            global::System.Action<global::G.GenerationRequest>? video = null,
+
+            global::System.Action<global::G.ImageGenerationRequest>? image = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsVideo)
+            {
+                video?.Invoke(Video!);
+            }
+            else if (IsImage)
+            {
+                image?.Invoke(Image!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.GenerationRequest>? video = null,
+            global::System.Action<global::G.ImageGenerationRequest>? image = null,
             bool validate = true)
         {
             if (validate)

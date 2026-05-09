@@ -25,6 +25,21 @@ namespace G
         /// Generate synthetic dataset samples using LLM based on existing data patterns
         /// </summary>
         /// <param name="id"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.DatasetExpansionResponse>> ExpandDatasetAsResponseAsync(
+            global::System.Guid id,
+
+            global::G.DatasetExpansionWrite request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Expand dataset with synthetic samples<br/>
+        /// Generate synthetic dataset samples using LLM based on existing data patterns
+        /// </summary>
+        /// <param name="id"></param>
         /// <param name="model">
         /// The model to use for synthetic data generation<br/>
         /// Example: gpt-4

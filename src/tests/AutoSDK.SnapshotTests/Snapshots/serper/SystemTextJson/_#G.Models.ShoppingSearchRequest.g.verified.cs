@@ -26,6 +26,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Base))]
 #endif
         public bool IsBase => Base != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickBase(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.BaseSearchRequest? value)
+        {
+            value = Base;
+            return IsBase;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -70,7 +83,7 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.BaseSearchRequest?, TResult>? @base = null,
+            global::System.Func<global::G.BaseSearchRequest, TResult>? @base = null,
             bool validate = true)
         {
             if (validate)
@@ -90,7 +103,25 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.BaseSearchRequest?>? @base = null,
+            global::System.Action<global::G.BaseSearchRequest>? @base = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsBase)
+            {
+                @base?.Invoke(Base!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.BaseSearchRequest>? @base = null,
             bool validate = true)
         {
             if (validate)

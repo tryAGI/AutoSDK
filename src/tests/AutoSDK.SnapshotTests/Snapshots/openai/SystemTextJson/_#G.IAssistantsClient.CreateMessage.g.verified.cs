@@ -23,6 +23,20 @@ namespace G
         /// Create a message.
         /// </summary>
         /// <param name="threadId"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.MessageObject>> CreateMessageAsResponseAsync(
+            string threadId,
+
+            global::G.CreateMessageRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create a message.
+        /// </summary>
+        /// <param name="threadId"></param>
         /// <param name="role">
         /// The role of the entity that is creating the message. Allowed values include:<br/>
         /// - `user`: Indicates the message is sent by an actual user and should be used in most cases to represent user-generated messages.<br/>

@@ -20,6 +20,18 @@ namespace G
         /// <summary>
         /// Agents Completion
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.ChatCompletionResponse>> AgentsCompletionV1AgentsCompletionsPostAsResponseAsync(
+
+            global::G.AgentsCompletionRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Agents Completion
+        /// </summary>
         /// <param name="maxTokens">
         /// The maximum number of tokens to generate in the completion. The token count of your prompt plus `max_tokens` cannot exceed the model's context length.
         /// </param>

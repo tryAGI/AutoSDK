@@ -24,6 +24,14 @@ namespace G.JsonConverters
                 foreach (var __jsonProp in __jsonDocument.RootElement.EnumerateObject())
                 {
                     __jsonProps.Add(__jsonProp.Name);
+                    if (__jsonProp.Value.ValueKind == global::System.Text.Json.JsonValueKind.Object)
+                    {
+                        foreach (var __nestedJsonProp in __jsonProp.Value.EnumerateObject())
+                        {
+                            __jsonProps.Add(__jsonProp.Name + "." + __nestedJsonProp.Name);
+                        }
+                    }
+
                 }
             }
 
@@ -32,13 +40,23 @@ namespace G.JsonConverters
             if (__jsonProps.Contains("direction")) __score0++;
             if (__jsonProps.Contains("from_number")) __score0++;
             if (__jsonProps.Contains("telephony_identifier")) __score0++;
+            if (__jsonProps.Contains("telephony_identifier.twilio_call_sid")) __score0++;
             if (__jsonProps.Contains("to_number")) __score0++;
             var __score1 = 0;
             if (__jsonProps.Contains("agent_id")) __score1++;
             if (__jsonProps.Contains("agent_name")) __score1++;
             if (__jsonProps.Contains("agent_version")) __score1++;
             if (__jsonProps.Contains("call_analysis")) __score1++;
+            if (__jsonProps.Contains("call_analysis.call_successful")) __score1++;
+            if (__jsonProps.Contains("call_analysis.call_summary")) __score1++;
+            if (__jsonProps.Contains("call_analysis.custom_analysis_data")) __score1++;
+            if (__jsonProps.Contains("call_analysis.in_voicemail")) __score1++;
+            if (__jsonProps.Contains("call_analysis.user_sentiment")) __score1++;
             if (__jsonProps.Contains("call_cost")) __score1++;
+            if (__jsonProps.Contains("call_cost.combined_cost")) __score1++;
+            if (__jsonProps.Contains("call_cost.product_costs")) __score1++;
+            if (__jsonProps.Contains("call_cost.total_duration_seconds")) __score1++;
+            if (__jsonProps.Contains("call_cost.total_duration_unit_price")) __score1++;
             if (__jsonProps.Contains("call_id")) __score1++;
             if (__jsonProps.Contains("call_status")) __score1++;
             if (__jsonProps.Contains("collected_dynamic_variables")) __score1++;
@@ -49,7 +67,17 @@ namespace G.JsonConverters
             if (__jsonProps.Contains("end_timestamp")) __score1++;
             if (__jsonProps.Contains("knowledge_base_retrieved_contents_url")) __score1++;
             if (__jsonProps.Contains("latency")) __score1++;
+            if (__jsonProps.Contains("latency.asr")) __score1++;
+            if (__jsonProps.Contains("latency.e2e")) __score1++;
+            if (__jsonProps.Contains("latency.knowledge_base")) __score1++;
+            if (__jsonProps.Contains("latency.llm")) __score1++;
+            if (__jsonProps.Contains("latency.llm_websocket_network_rtt")) __score1++;
+            if (__jsonProps.Contains("latency.s2s")) __score1++;
+            if (__jsonProps.Contains("latency.tts")) __score1++;
             if (__jsonProps.Contains("llm_token_usage")) __score1++;
+            if (__jsonProps.Contains("llm_token_usage.average")) __score1++;
+            if (__jsonProps.Contains("llm_token_usage.num_requests")) __score1++;
+            if (__jsonProps.Contains("llm_token_usage.values")) __score1++;
             if (__jsonProps.Contains("metadata")) __score1++;
             if (__jsonProps.Contains("opt_in_signed_url")) __score1++;
             if (__jsonProps.Contains("public_log_url")) __score1++;

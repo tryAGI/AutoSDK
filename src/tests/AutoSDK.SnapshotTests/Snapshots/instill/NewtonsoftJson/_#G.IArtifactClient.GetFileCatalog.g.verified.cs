@@ -23,5 +23,23 @@ namespace G
             string? fileUid = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Get file catalog<br/>
+        /// Get the catalog file.
+        /// </summary>
+        /// <param name="namespaceId"></param>
+        /// <param name="catalogId"></param>
+        /// <param name="fileId"></param>
+        /// <param name="fileUid"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.GetFileCatalogResponse>> GetFileCatalogAsResponseAsync(
+            string namespaceId,
+            string catalogId,
+            string? fileId = default,
+            string? fileUid = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

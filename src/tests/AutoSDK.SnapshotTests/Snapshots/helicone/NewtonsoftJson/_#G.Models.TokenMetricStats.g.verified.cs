@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickMetricStats(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.MetricStats? value)
+        {
+            value = MetricStats;
+            return IsMetricStats;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.TokenMetricStatsVariant2? TokenMetricStatsVariant2 { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TokenMetricStatsVariant2))]
 #endif
         public bool IsTokenMetricStatsVariant2 => TokenMetricStatsVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickTokenMetricStatsVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.TokenMetricStatsVariant2? value)
+        {
+            value = TokenMetricStatsVariant2;
+            return IsTokenMetricStatsVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -119,8 +145,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.MetricStats?, TResult>? metricStats = null,
-            global::System.Func<global::G.TokenMetricStatsVariant2?, TResult>? tokenMetricStatsVariant2 = null,
+            global::System.Func<global::G.MetricStats, TResult>? metricStats = null,
+            global::System.Func<global::G.TokenMetricStatsVariant2, TResult>? tokenMetricStatsVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -144,8 +170,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.MetricStats?>? metricStats = null,
-            global::System.Action<global::G.TokenMetricStatsVariant2?>? tokenMetricStatsVariant2 = null,
+            global::System.Action<global::G.MetricStats>? metricStats = null,
+
+            global::System.Action<global::G.TokenMetricStatsVariant2>? tokenMetricStatsVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsMetricStats)
+            {
+                metricStats?.Invoke(MetricStats!);
+            }
+            else if (IsTokenMetricStatsVariant2)
+            {
+                tokenMetricStatsVariant2?.Invoke(TokenMetricStatsVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.MetricStats>? metricStats = null,
+            global::System.Action<global::G.TokenMetricStatsVariant2>? tokenMetricStatsVariant2 = null,
             bool validate = true)
         {
             if (validate)

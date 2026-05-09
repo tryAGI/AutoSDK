@@ -35,6 +35,27 @@ namespace G
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>
         /// <param name="session"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.Pipeline>> UpsertPipelineApiV1PipelinesPutAsResponseAsync(
+
+            global::G.PipelineCreate request,
+            global::System.Guid? projectId = default,
+            global::System.Guid? organizationId = default,
+            string? session = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Upsert Pipeline<br/>
+        /// Upsert a pipeline.<br/>
+        /// Updates the pipeline if one with the same name and project<br/>
+        /// already exists, otherwise creates a new one.
+        /// </summary>
+        /// <param name="projectId"></param>
+        /// <param name="organizationId"></param>
+        /// <param name="session"></param>
         /// <param name="embeddingConfig"></param>
         /// <param name="transformConfig">
         /// Configuration for the transformation.

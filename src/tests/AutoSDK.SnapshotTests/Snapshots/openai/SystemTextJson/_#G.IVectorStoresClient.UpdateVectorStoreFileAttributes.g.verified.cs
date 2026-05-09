@@ -34,6 +34,26 @@ namespace G
         /// <param name="fileId">
         /// Example: file-abc123
         /// </param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.VectorStoreFileObject>> UpdateVectorStoreFileAttributesAsResponseAsync(
+            string vectorStoreId,
+            string fileId,
+
+            global::G.UpdateVectorStoreFileAttributesRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Update attributes on a vector store file.
+        /// </summary>
+        /// <param name="vectorStoreId">
+        /// Example: vs_abc123
+        /// </param>
+        /// <param name="fileId">
+        /// Example: file-abc123
+        /// </param>
         /// <param name="attributes">
         /// Set of 16 key-value pairs that can be attached to an object. This can be <br/>
         /// useful for storing additional information about the object in a structured <br/>

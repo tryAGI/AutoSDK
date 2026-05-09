@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickAgentBase(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.AgentEventBase? value)
+        {
+            value = AgentBase;
+            return IsAgentBase;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.StepTransitionEventVariant2? StepTransitionEventVariant2 { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(StepTransitionEventVariant2))]
 #endif
         public bool IsStepTransitionEventVariant2 => StepTransitionEventVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickStepTransitionEventVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.StepTransitionEventVariant2? value)
+        {
+            value = StepTransitionEventVariant2;
+            return IsStepTransitionEventVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -119,8 +145,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.AgentEventBase?, TResult>? agentBase = null,
-            global::System.Func<global::G.StepTransitionEventVariant2?, TResult>? stepTransitionEventVariant2 = null,
+            global::System.Func<global::G.AgentEventBase, TResult>? agentBase = null,
+            global::System.Func<global::G.StepTransitionEventVariant2, TResult>? stepTransitionEventVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -144,8 +170,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.AgentEventBase?>? agentBase = null,
-            global::System.Action<global::G.StepTransitionEventVariant2?>? stepTransitionEventVariant2 = null,
+            global::System.Action<global::G.AgentEventBase>? agentBase = null,
+
+            global::System.Action<global::G.StepTransitionEventVariant2>? stepTransitionEventVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsAgentBase)
+            {
+                agentBase?.Invoke(AgentBase!);
+            }
+            else if (IsStepTransitionEventVariant2)
+            {
+                stepTransitionEventVariant2?.Invoke(StepTransitionEventVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.AgentEventBase>? agentBase = null,
+            global::System.Action<global::G.StepTransitionEventVariant2>? stepTransitionEventVariant2 = null,
             bool validate = true)
         {
             if (validate)

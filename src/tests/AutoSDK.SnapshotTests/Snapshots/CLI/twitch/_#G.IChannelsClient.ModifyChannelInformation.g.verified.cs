@@ -33,6 +33,25 @@ namespace G
         /// All fields are optional, but you must specify at least one field.
         /// </summary>
         /// <param name="broadcasterId"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse> ModifyChannelInformationAsResponseAsync(
+            string broadcasterId,
+
+            global::G.ModifyChannelInformationBody request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Updates a channel’s properties.<br/>
+        /// Updates a channel’s properties.<br/>
+        /// __Authorization:__<br/>
+        /// Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the **channel:manage:broadcast** scope.<br/>
+        /// __Request Body:__<br/>
+        /// All fields are optional, but you must specify at least one field.
+        /// </summary>
+        /// <param name="broadcasterId"></param>
         /// <param name="gameId">
         /// The ID of the game that the user plays. The game is not updated if the ID isn’t a game ID that Twitch recognizes. To unset this field, use “0” or “” (an empty string).
         /// </param>

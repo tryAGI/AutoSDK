@@ -35,6 +35,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickMusicExploreSong1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.SongSourceContext? value)
+        {
+            value = MusicExploreSong1;
+            return IsMusicExploreSong1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.MusicExploreSongSourceContext? MusicExploreSong2 { get; init; }
 #else
@@ -48,6 +61,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MusicExploreSong2))]
 #endif
         public bool IsMusicExploreSong2 => MusicExploreSong2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMusicExploreSong2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.MusicExploreSongSourceContext? value)
+        {
+            value = MusicExploreSong2;
+            return IsMusicExploreSong2;
+        }
 
         /// <summary>
         /// Context for sound effect clips.
@@ -65,6 +91,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Sfx))]
 #endif
         public bool IsSfx => Sfx != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSfx(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.SfxSourceContext? value)
+        {
+            value = Sfx;
+            return IsSfx;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -166,9 +205,9 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.SongSourceContext?, TResult>? musicExploreSong1 = null,
-            global::System.Func<global::G.MusicExploreSongSourceContext?, TResult>? musicExploreSong2 = null,
-            global::System.Func<global::G.SfxSourceContext?, TResult>? sfx = null,
+            global::System.Func<global::G.SongSourceContext, TResult>? musicExploreSong1 = null,
+            global::System.Func<global::G.MusicExploreSongSourceContext, TResult>? musicExploreSong2 = null,
+            global::System.Func<global::G.SfxSourceContext, TResult>? sfx = null,
             bool validate = true)
         {
             if (validate)
@@ -196,9 +235,39 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.SongSourceContext?>? musicExploreSong1 = null,
-            global::System.Action<global::G.MusicExploreSongSourceContext?>? musicExploreSong2 = null,
-            global::System.Action<global::G.SfxSourceContext?>? sfx = null,
+            global::System.Action<global::G.SongSourceContext>? musicExploreSong1 = null,
+
+            global::System.Action<global::G.MusicExploreSongSourceContext>? musicExploreSong2 = null,
+
+            global::System.Action<global::G.SfxSourceContext>? sfx = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsMusicExploreSong1)
+            {
+                musicExploreSong1?.Invoke(MusicExploreSong1!);
+            }
+            else if (IsMusicExploreSong2)
+            {
+                musicExploreSong2?.Invoke(MusicExploreSong2!);
+            }
+            else if (IsSfx)
+            {
+                sfx?.Invoke(Sfx!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.SongSourceContext>? musicExploreSong1 = null,
+            global::System.Action<global::G.MusicExploreSongSourceContext>? musicExploreSong2 = null,
+            global::System.Action<global::G.SfxSourceContext>? sfx = null,
             bool validate = true)
         {
             if (validate)

@@ -33,6 +33,19 @@ namespace G
         public bool IsTwilio => Twilio != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickTwilio(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.GetPhoneNumberTwilioResponseModel? value)
+        {
+            value = Twilio;
+            return IsTwilio;
+        }
+
+        /// <summary>
         /// Example: {"label":"Sales Team","livekit_stack":"standard","phone_number":"\u002B1987654321","phone_number_id":"phone_456","provider":"sip_trunk"}
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -48,6 +61,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SipTrunk))]
 #endif
         public bool IsSipTrunk => SipTrunk != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSipTrunk(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.GetPhoneNumberSIPTrunkResponseModel? value)
+        {
+            value = SipTrunk;
+            return IsSipTrunk;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -127,8 +153,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.GetPhoneNumberTwilioResponseModel?, TResult>? twilio = null,
-            global::System.Func<global::G.GetPhoneNumberSIPTrunkResponseModel?, TResult>? sipTrunk = null,
+            global::System.Func<global::G.GetPhoneNumberTwilioResponseModel, TResult>? twilio = null,
+            global::System.Func<global::G.GetPhoneNumberSIPTrunkResponseModel, TResult>? sipTrunk = null,
             bool validate = true)
         {
             if (validate)
@@ -152,8 +178,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.GetPhoneNumberTwilioResponseModel?>? twilio = null,
-            global::System.Action<global::G.GetPhoneNumberSIPTrunkResponseModel?>? sipTrunk = null,
+            global::System.Action<global::G.GetPhoneNumberTwilioResponseModel>? twilio = null,
+
+            global::System.Action<global::G.GetPhoneNumberSIPTrunkResponseModel>? sipTrunk = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsTwilio)
+            {
+                twilio?.Invoke(Twilio!);
+            }
+            else if (IsSipTrunk)
+            {
+                sipTrunk?.Invoke(SipTrunk!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.GetPhoneNumberTwilioResponseModel>? twilio = null,
+            global::System.Action<global::G.GetPhoneNumberSIPTrunkResponseModel>? sipTrunk = null,
             bool validate = true)
         {
             if (validate)

@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickBase(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.AgentEventBase? value)
+        {
+            value = Base;
+            return IsBase;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.AgentOutputEventVariant2? AgentOutputEventVariant2 { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AgentOutputEventVariant2))]
 #endif
         public bool IsAgentOutputEventVariant2 => AgentOutputEventVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickAgentOutputEventVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.AgentOutputEventVariant2? value)
+        {
+            value = AgentOutputEventVariant2;
+            return IsAgentOutputEventVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -119,8 +145,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.AgentEventBase?, TResult>? @base = null,
-            global::System.Func<global::G.AgentOutputEventVariant2?, TResult>? agentOutputEventVariant2 = null,
+            global::System.Func<global::G.AgentEventBase, TResult>? @base = null,
+            global::System.Func<global::G.AgentOutputEventVariant2, TResult>? agentOutputEventVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -144,8 +170,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.AgentEventBase?>? @base = null,
-            global::System.Action<global::G.AgentOutputEventVariant2?>? agentOutputEventVariant2 = null,
+            global::System.Action<global::G.AgentEventBase>? @base = null,
+
+            global::System.Action<global::G.AgentOutputEventVariant2>? agentOutputEventVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsBase)
+            {
+                @base?.Invoke(Base!);
+            }
+            else if (IsAgentOutputEventVariant2)
+            {
+                agentOutputEventVariant2?.Invoke(AgentOutputEventVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.AgentEventBase>? @base = null,
+            global::System.Action<global::G.AgentOutputEventVariant2>? agentOutputEventVariant2 = null,
             bool validate = true)
         {
             if (validate)

@@ -67,7 +67,7 @@ namespace G
         /// <summary>
         /// All things related to generating content.
         /// </summary>
-        public GenerateClient Generate => new GenerateClient(HttpClient, authorizations: Authorizations, options: Options)
+        public GenerateClient Generate => new GenerateClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -76,7 +76,7 @@ namespace G
         /// <summary>
         /// Content related to managing API account and API access.
         /// </summary>
-        public ManageClient Manage => new ManageClient(HttpClient, authorizations: Authorizations, options: Options)
+        public ManageClient Manage => new ManageClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -85,7 +85,7 @@ namespace G
         /// <summary>
         /// Operations related to understanding visual content.
         /// </summary>
-        public VisionClient Vision => new VisionClient(HttpClient, authorizations: Authorizations, options: Options)
+        public VisionClient Vision => new VisionClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -124,10 +124,10 @@ namespace G
         /// <param name="options">Client-wide request defaults such as headers, query parameters, retries, and timeout.</param>
         /// <param name="disposeHttpClient">Dispose the HttpClient when the instance is disposed. True by default.</param>
         public Api(
-            global::System.Net.Http.HttpClient? httpClient = null,
-            global::System.Uri? baseUri = null,
-            global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations = null,
-            global::G.AutoSDKClientOptions? options = null,
+            global::System.Net.Http.HttpClient? httpClient,
+            global::System.Uri? baseUri,
+            global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations,
+            global::G.AutoSDKClientOptions? options,
             bool disposeHttpClient = true)
         {
 

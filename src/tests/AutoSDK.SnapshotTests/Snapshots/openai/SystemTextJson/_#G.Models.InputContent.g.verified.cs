@@ -28,6 +28,19 @@ namespace G
         public bool IsInputText => InputText != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickInputText(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.InputTextContent? value)
+        {
+            value = InputText;
+            return IsInputText;
+        }
+
+        /// <summary>
         /// An image input to the model. Learn about [image inputs](/docs/guides/vision).
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -45,6 +58,19 @@ namespace G
         public bool IsInputImage => InputImage != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickInputImage(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.InputImageContent? value)
+        {
+            value = InputImage;
+            return IsInputImage;
+        }
+
+        /// <summary>
         /// A file input to the model.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -60,6 +86,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputFile))]
 #endif
         public bool IsInputFile => InputFile != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickInputFile(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.InputFileContent? value)
+        {
+            value = InputFile;
+            return IsInputFile;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -158,9 +197,9 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.InputTextContent?, TResult>? inputText = null,
-            global::System.Func<global::G.InputImageContent?, TResult>? inputImage = null,
-            global::System.Func<global::G.InputFileContent?, TResult>? inputFile = null,
+            global::System.Func<global::G.InputTextContent, TResult>? inputText = null,
+            global::System.Func<global::G.InputImageContent, TResult>? inputImage = null,
+            global::System.Func<global::G.InputFileContent, TResult>? inputFile = null,
             bool validate = true)
         {
             if (validate)
@@ -188,9 +227,39 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.InputTextContent?>? inputText = null,
-            global::System.Action<global::G.InputImageContent?>? inputImage = null,
-            global::System.Action<global::G.InputFileContent?>? inputFile = null,
+            global::System.Action<global::G.InputTextContent>? inputText = null,
+
+            global::System.Action<global::G.InputImageContent>? inputImage = null,
+
+            global::System.Action<global::G.InputFileContent>? inputFile = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsInputText)
+            {
+                inputText?.Invoke(InputText!);
+            }
+            else if (IsInputImage)
+            {
+                inputImage?.Invoke(InputImage!);
+            }
+            else if (IsInputFile)
+            {
+                inputFile?.Invoke(InputFile!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.InputTextContent>? inputText = null,
+            global::System.Action<global::G.InputImageContent>? inputImage = null,
+            global::System.Action<global::G.InputFileContent>? inputFile = null,
             bool validate = true)
         {
             if (validate)

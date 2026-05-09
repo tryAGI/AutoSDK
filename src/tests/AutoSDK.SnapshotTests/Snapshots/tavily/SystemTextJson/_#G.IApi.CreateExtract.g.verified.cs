@@ -28,6 +28,25 @@ namespace G
         /// Retrieve raw web content from specified URLs<br/>
         /// Extract web page content from one or more specified URLs using Tavily Extract.
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        /// <remarks>
+        /// from tavily import TavilyClient<br/>
+        /// tavily_client = TavilyClient(api_key="tvly-YOUR_API_KEY")<br/>
+        /// response = tavily_client.extract("https://en.wikipedia.org/wiki/Artificial_intelligence")<br/>
+        /// print(response)
+        /// </remarks>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.CreateExtractResponse>> CreateExtractAsResponseAsync(
+
+            global::G.CreateExtractRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Retrieve raw web content from specified URLs<br/>
+        /// Extract web page content from one or more specified URLs using Tavily Extract.
+        /// </summary>
         /// <param name="urls"></param>
         /// <param name="query">
         /// User intent for reranking extracted content chunks. When provided, chunks are reranked based on relevance to this query.

@@ -41,6 +41,28 @@ namespace G
         /// <param name="storeIdentifier">
         /// The ID or name of the store
         /// </param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.StoreFile>> CreateStoreFileAsResponseAsync(
+            global::G.AnyOf<string, global::System.Guid?> storeIdentifier,
+
+            global::G.DeprecatedStoreFileUpsertParams request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Upload file to store<br/>
+        /// Upload a file to a store.<br/>
+        /// Args:<br/>
+        ///     store_identifier: The ID or name of the store.<br/>
+        ///     file_add_params: The file to add to the store.<br/>
+        /// Returns:<br/>
+        ///     VectorStoreFile: The uploaded file details.
+        /// </summary>
+        /// <param name="storeIdentifier">
+        /// The ID or name of the store
+        /// </param>
         /// <param name="metadata">
         /// Optional metadata for the file
         /// </param>

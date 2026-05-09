@@ -392,7 +392,7 @@ namespace G
         /// <summary>
         /// Additional names for existing collections.
         /// </summary>
-        public AliasesClient Aliases => new AliasesClient(HttpClient, authorizations: Authorizations, options: Options)
+        public AliasesClient Aliases => new AliasesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -401,7 +401,7 @@ namespace G
         /// <summary>
         /// Beta features, do not depend on these yet.
         /// </summary>
-        public BetaClient Beta => new BetaClient(HttpClient, authorizations: Authorizations, options: Options)
+        public BetaClient Beta => new BetaClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -410,7 +410,7 @@ namespace G
         /// <summary>
         /// Searchable collections of points.
         /// </summary>
-        public CollectionsClient Collections => new CollectionsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public CollectionsClient Collections => new CollectionsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -419,7 +419,7 @@ namespace G
         /// <summary>
         /// Service distributed setup.
         /// </summary>
-        public DistributedClient Distributed => new DistributedClient(HttpClient, authorizations: Authorizations, options: Options)
+        public DistributedClient Distributed => new DistributedClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -428,7 +428,7 @@ namespace G
         /// <summary>
         /// Indexes for payloads associated with points.
         /// </summary>
-        public IndexesClient Indexes => new IndexesClient(HttpClient, authorizations: Authorizations, options: Options)
+        public IndexesClient Indexes => new IndexesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -437,7 +437,7 @@ namespace G
         /// <summary>
         /// Float-point vectors with payload.
         /// </summary>
-        public PointsClient Points => new PointsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public PointsClient Points => new PointsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -446,7 +446,7 @@ namespace G
         /// <summary>
         /// Find points in a collection.
         /// </summary>
-        public SearchClient Search => new SearchClient(HttpClient, authorizations: Authorizations, options: Options)
+        public SearchClient Search => new SearchClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -455,7 +455,7 @@ namespace G
         /// <summary>
         /// Qdrant service utilities.
         /// </summary>
-        public ServiceClient Service => new ServiceClient(HttpClient, authorizations: Authorizations, options: Options)
+        public ServiceClient Service => new ServiceClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -464,7 +464,7 @@ namespace G
         /// <summary>
         /// Storage and collections snapshots.
         /// </summary>
-        public SnapshotsClient Snapshots => new SnapshotsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public SnapshotsClient Snapshots => new SnapshotsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -503,10 +503,10 @@ namespace G
         /// <param name="options">Client-wide request defaults such as headers, query parameters, retries, and timeout.</param>
         /// <param name="disposeHttpClient">Dispose the HttpClient when the instance is disposed. True by default.</param>
         public Api(
-            global::System.Net.Http.HttpClient? httpClient = null,
-            global::System.Uri? baseUri = null,
-            global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations = null,
-            global::G.AutoSDKClientOptions? options = null,
+            global::System.Net.Http.HttpClient? httpClient,
+            global::System.Uri? baseUri,
+            global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations,
+            global::G.AutoSDKClientOptions? options,
             bool disposeHttpClient = true)
         {
 

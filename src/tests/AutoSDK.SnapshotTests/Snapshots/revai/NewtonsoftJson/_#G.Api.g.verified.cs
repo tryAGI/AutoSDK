@@ -99,7 +99,7 @@ namespace G
         /// <summary>
         /// Account information.
         /// </summary>
-        public AccountClient Account => new AccountClient(HttpClient, authorizations: Authorizations, options: Options)
+        public AccountClient Account => new AccountClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -108,7 +108,7 @@ namespace G
         /// <summary>
         /// Retrieve caption output (SRT/VTT).
         /// </summary>
-        public CaptionsClient Captions => new CaptionsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public CaptionsClient Captions => new CaptionsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -117,7 +117,7 @@ namespace G
         /// <summary>
         /// Language identification from audio.
         /// </summary>
-        public LanguageIdentificationJobsClient LanguageIdentificationJobs => new LanguageIdentificationJobsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public LanguageIdentificationJobsClient LanguageIdentificationJobs => new LanguageIdentificationJobsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -126,7 +126,7 @@ namespace G
         /// <summary>
         /// Retrieve language identification results.
         /// </summary>
-        public LanguageIdentificationResultsClient LanguageIdentificationResults => new LanguageIdentificationResultsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public LanguageIdentificationResultsClient LanguageIdentificationResults => new LanguageIdentificationResultsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -135,7 +135,7 @@ namespace G
         /// <summary>
         /// Sentiment analysis on text or transcripts.
         /// </summary>
-        public SentimentAnalysisJobsClient SentimentAnalysisJobs => new SentimentAnalysisJobsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public SentimentAnalysisJobsClient SentimentAnalysisJobs => new SentimentAnalysisJobsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -144,7 +144,7 @@ namespace G
         /// <summary>
         /// Retrieve sentiment analysis results.
         /// </summary>
-        public SentimentAnalysisResultsClient SentimentAnalysisResults => new SentimentAnalysisResultsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public SentimentAnalysisResultsClient SentimentAnalysisResults => new SentimentAnalysisResultsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -153,7 +153,7 @@ namespace G
         /// <summary>
         /// Topic extraction from text or transcripts.
         /// </summary>
-        public TopicExtractionJobsClient TopicExtractionJobs => new TopicExtractionJobsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public TopicExtractionJobsClient TopicExtractionJobs => new TopicExtractionJobsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -162,7 +162,7 @@ namespace G
         /// <summary>
         /// Retrieve topic extraction results.
         /// </summary>
-        public TopicExtractionResultsClient TopicExtractionResults => new TopicExtractionResultsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public TopicExtractionResultsClient TopicExtractionResults => new TopicExtractionResultsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -171,7 +171,7 @@ namespace G
         /// <summary>
         /// Retrieve transcription results.
         /// </summary>
-        public TranscriptClient Transcript => new TranscriptClient(HttpClient, authorizations: Authorizations, options: Options)
+        public TranscriptClient Transcript => new TranscriptClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -180,7 +180,7 @@ namespace G
         /// <summary>
         /// Async speech-to-text transcription.
         /// </summary>
-        public TranscriptionJobsClient TranscriptionJobs => new TranscriptionJobsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public TranscriptionJobsClient TranscriptionJobs => new TranscriptionJobsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -219,10 +219,10 @@ namespace G
         /// <param name="options">Client-wide request defaults such as headers, query parameters, retries, and timeout.</param>
         /// <param name="disposeHttpClient">Dispose the HttpClient when the instance is disposed. True by default.</param>
         public Api(
-            global::System.Net.Http.HttpClient? httpClient = null,
-            global::System.Uri? baseUri = null,
-            global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations = null,
-            global::G.AutoSDKClientOptions? options = null,
+            global::System.Net.Http.HttpClient? httpClient,
+            global::System.Uri? baseUri,
+            global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations,
+            global::G.AutoSDKClientOptions? options,
             bool disposeHttpClient = true)
         {
 

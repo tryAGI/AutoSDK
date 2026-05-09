@@ -35,6 +35,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickMarkdown(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.MarkdownChunkGeneratedMetadata? value)
+        {
+            value = Markdown;
+            return IsMarkdown;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.TextChunkGeneratedMetadata? Text { get; init; }
 #else
@@ -48,6 +61,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Text))]
 #endif
         public bool IsText => Text != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickText(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.TextChunkGeneratedMetadata? value)
+        {
+            value = Text;
+            return IsText;
+        }
 
         /// <summary>
         /// 
@@ -69,6 +95,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickPdf(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.PDFChunkGeneratedMetadata? value)
+        {
+            value = Pdf;
+            return IsPdf;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CodeChunkGeneratedMetadata? Code { get; init; }
 #else
@@ -82,6 +121,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Code))]
 #endif
         public bool IsCode => Code != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickCode(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CodeChunkGeneratedMetadata? value)
+        {
+            value = Code;
+            return IsCode;
+        }
 
         /// <summary>
         /// 
@@ -103,6 +155,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickAudio(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.AudioChunkGeneratedMetadata? value)
+        {
+            value = Audio;
+            return IsAudio;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.VideoChunkGeneratedMetadata? Video { get; init; }
 #else
@@ -120,6 +185,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickVideo(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.VideoChunkGeneratedMetadata? value)
+        {
+            value = Video;
+            return IsVideo;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ImageChunkGeneratedMetadata? Image { get; init; }
 #else
@@ -133,6 +211,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Image))]
 #endif
         public bool IsImage => Image != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickImage(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ImageChunkGeneratedMetadata? value)
+        {
+            value = Image;
+            return IsImage;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -322,13 +413,13 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.MarkdownChunkGeneratedMetadata?, TResult>? markdown = null,
-            global::System.Func<global::G.TextChunkGeneratedMetadata?, TResult>? text = null,
-            global::System.Func<global::G.PDFChunkGeneratedMetadata?, TResult>? pdf = null,
-            global::System.Func<global::G.CodeChunkGeneratedMetadata?, TResult>? code = null,
-            global::System.Func<global::G.AudioChunkGeneratedMetadata?, TResult>? audio = null,
-            global::System.Func<global::G.VideoChunkGeneratedMetadata?, TResult>? video = null,
-            global::System.Func<global::G.ImageChunkGeneratedMetadata?, TResult>? image = null,
+            global::System.Func<global::G.MarkdownChunkGeneratedMetadata, TResult>? markdown = null,
+            global::System.Func<global::G.TextChunkGeneratedMetadata, TResult>? text = null,
+            global::System.Func<global::G.PDFChunkGeneratedMetadata, TResult>? pdf = null,
+            global::System.Func<global::G.CodeChunkGeneratedMetadata, TResult>? code = null,
+            global::System.Func<global::G.AudioChunkGeneratedMetadata, TResult>? audio = null,
+            global::System.Func<global::G.VideoChunkGeneratedMetadata, TResult>? video = null,
+            global::System.Func<global::G.ImageChunkGeneratedMetadata, TResult>? image = null,
             bool validate = true)
         {
             if (validate)
@@ -372,13 +463,67 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.MarkdownChunkGeneratedMetadata?>? markdown = null,
-            global::System.Action<global::G.TextChunkGeneratedMetadata?>? text = null,
-            global::System.Action<global::G.PDFChunkGeneratedMetadata?>? pdf = null,
-            global::System.Action<global::G.CodeChunkGeneratedMetadata?>? code = null,
-            global::System.Action<global::G.AudioChunkGeneratedMetadata?>? audio = null,
-            global::System.Action<global::G.VideoChunkGeneratedMetadata?>? video = null,
-            global::System.Action<global::G.ImageChunkGeneratedMetadata?>? image = null,
+            global::System.Action<global::G.MarkdownChunkGeneratedMetadata>? markdown = null,
+
+            global::System.Action<global::G.TextChunkGeneratedMetadata>? text = null,
+
+            global::System.Action<global::G.PDFChunkGeneratedMetadata>? pdf = null,
+
+            global::System.Action<global::G.CodeChunkGeneratedMetadata>? code = null,
+
+            global::System.Action<global::G.AudioChunkGeneratedMetadata>? audio = null,
+
+            global::System.Action<global::G.VideoChunkGeneratedMetadata>? video = null,
+
+            global::System.Action<global::G.ImageChunkGeneratedMetadata>? image = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsMarkdown)
+            {
+                markdown?.Invoke(Markdown!);
+            }
+            else if (IsText)
+            {
+                text?.Invoke(Text!);
+            }
+            else if (IsPdf)
+            {
+                pdf?.Invoke(Pdf!);
+            }
+            else if (IsCode)
+            {
+                code?.Invoke(Code!);
+            }
+            else if (IsAudio)
+            {
+                audio?.Invoke(Audio!);
+            }
+            else if (IsVideo)
+            {
+                video?.Invoke(Video!);
+            }
+            else if (IsImage)
+            {
+                image?.Invoke(Image!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.MarkdownChunkGeneratedMetadata>? markdown = null,
+            global::System.Action<global::G.TextChunkGeneratedMetadata>? text = null,
+            global::System.Action<global::G.PDFChunkGeneratedMetadata>? pdf = null,
+            global::System.Action<global::G.CodeChunkGeneratedMetadata>? code = null,
+            global::System.Action<global::G.AudioChunkGeneratedMetadata>? audio = null,
+            global::System.Action<global::G.VideoChunkGeneratedMetadata>? video = null,
+            global::System.Action<global::G.ImageChunkGeneratedMetadata>? image = null,
             bool validate = true)
         {
             if (validate)

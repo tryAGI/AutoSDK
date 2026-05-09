@@ -32,6 +32,19 @@ namespace G
         public bool IsMessage => Message != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMessage(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.EasyInputMessage? value)
+        {
+            value = Message;
+            return IsMessage;
+        }
+
+        /// <summary>
         /// Content item used to generate a response.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -49,6 +62,19 @@ namespace G
         public bool IsItem => Item != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickItem(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.Item? value)
+        {
+            value = Item;
+            return IsItem;
+        }
+
+        /// <summary>
         /// An internal identifier for an item to reference.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -64,6 +90,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ItemReference))]
 #endif
         public bool IsItemReference => ItemReference != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickItemReference(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ItemReference? value)
+        {
+            value = ItemReference;
+            return IsItemReference;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -162,9 +201,9 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.EasyInputMessage?, TResult>? message = null,
+            global::System.Func<global::G.EasyInputMessage, TResult>? message = null,
             global::System.Func<global::G.Item?, TResult>? item = null,
-            global::System.Func<global::G.ItemReference?, TResult>? itemReference = null,
+            global::System.Func<global::G.ItemReference, TResult>? itemReference = null,
             bool validate = true)
         {
             if (validate)
@@ -192,9 +231,39 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.EasyInputMessage?>? message = null,
+            global::System.Action<global::G.EasyInputMessage>? message = null,
+
             global::System.Action<global::G.Item?>? item = null,
-            global::System.Action<global::G.ItemReference?>? itemReference = null,
+
+            global::System.Action<global::G.ItemReference>? itemReference = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsMessage)
+            {
+                message?.Invoke(Message!);
+            }
+            else if (IsItem)
+            {
+                item?.Invoke(Item!);
+            }
+            else if (IsItemReference)
+            {
+                itemReference?.Invoke(ItemReference!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.EasyInputMessage>? message = null,
+            global::System.Action<global::G.Item?>? item = null,
+            global::System.Action<global::G.ItemReference>? itemReference = null,
             bool validate = true)
         {
             if (validate)

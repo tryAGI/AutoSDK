@@ -22,6 +22,19 @@ namespace G
         /// Create a new variable<br/>
         /// Create a new variable
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.Variable>> CreateVariableAsResponseAsync(
+
+            global::G.Variable request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create a new variable<br/>
+        /// Create a new variable
+        /// </summary>
         /// <param name="id">
         /// Unique identifier for the variable<br/>
         /// Example: cfd531e0-82fc-11e9-bc42-526af7764f64

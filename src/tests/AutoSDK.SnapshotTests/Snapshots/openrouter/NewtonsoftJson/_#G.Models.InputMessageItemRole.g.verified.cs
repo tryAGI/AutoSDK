@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickInputMessageItemRole0(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.InputMessageItemRole0? value)
+        {
+            value = InputMessageItemRole0;
+            return IsInputMessageItemRole0;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.InputMessageItemRole1? InputMessageItemRole1 { get; init; }
 #else
@@ -47,6 +60,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickInputMessageItemRole1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.InputMessageItemRole1? value)
+        {
+            value = InputMessageItemRole1;
+            return IsInputMessageItemRole1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.InputMessageItemRole2? InputMessageItemRole2 { get; init; }
 #else
@@ -60,6 +86,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputMessageItemRole2))]
 #endif
         public bool IsInputMessageItemRole2 => InputMessageItemRole2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickInputMessageItemRole2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.InputMessageItemRole2? value)
+        {
+            value = InputMessageItemRole2;
+            return IsInputMessageItemRole2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -188,6 +227,36 @@ namespace G
         /// 
         /// </summary>
         public void Match(
+            global::System.Action<global::G.InputMessageItemRole0?>? inputMessageItemRole0 = null,
+
+            global::System.Action<global::G.InputMessageItemRole1?>? inputMessageItemRole1 = null,
+
+            global::System.Action<global::G.InputMessageItemRole2?>? inputMessageItemRole2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsInputMessageItemRole0)
+            {
+                inputMessageItemRole0?.Invoke(InputMessageItemRole0!);
+            }
+            else if (IsInputMessageItemRole1)
+            {
+                inputMessageItemRole1?.Invoke(InputMessageItemRole1!);
+            }
+            else if (IsInputMessageItemRole2)
+            {
+                inputMessageItemRole2?.Invoke(InputMessageItemRole2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
             global::System.Action<global::G.InputMessageItemRole0?>? inputMessageItemRole0 = null,
             global::System.Action<global::G.InputMessageItemRole1?>? inputMessageItemRole1 = null,
             global::System.Action<global::G.InputMessageItemRole2?>? inputMessageItemRole2 = null,

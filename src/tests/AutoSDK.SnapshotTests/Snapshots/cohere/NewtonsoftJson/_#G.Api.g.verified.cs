@@ -348,7 +348,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public ConnectorsClient Connectors => new ConnectorsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public ConnectorsClient Connectors => new ConnectorsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -357,7 +357,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public DatasetsClient Datasets => new DatasetsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public DatasetsClient Datasets => new DatasetsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -366,7 +366,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public EmbedJobsClient EmbedJobs => new EmbedJobsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public EmbedJobsClient EmbedJobs => new EmbedJobsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -375,7 +375,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public FinetuningClient Finetuning => new FinetuningClient(HttpClient, authorizations: Authorizations, options: Options)
+        public FinetuningClient Finetuning => new FinetuningClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -384,7 +384,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public ModelsClient Models => new ModelsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public ModelsClient Models => new ModelsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -393,7 +393,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public V2Client V2 => new V2Client(HttpClient, authorizations: Authorizations, options: Options)
+        public V2Client V2 => new V2Client(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -432,10 +432,10 @@ namespace G
         /// <param name="options">Client-wide request defaults such as headers, query parameters, retries, and timeout.</param>
         /// <param name="disposeHttpClient">Dispose the HttpClient when the instance is disposed. True by default.</param>
         public Api(
-            global::System.Net.Http.HttpClient? httpClient = null,
-            global::System.Uri? baseUri = null,
-            global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations = null,
-            global::G.AutoSDKClientOptions? options = null,
+            global::System.Net.Http.HttpClient? httpClient,
+            global::System.Uri? baseUri,
+            global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations,
+            global::G.AutoSDKClientOptions? options,
             bool disposeHttpClient = true)
         {
 

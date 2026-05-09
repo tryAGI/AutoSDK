@@ -26,6 +26,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ThreadStreamEventVariant1))]
 #endif
         public bool IsThreadStreamEventVariant1 => ThreadStreamEventVariant1 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickThreadStreamEventVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ThreadStreamEventVariant1? value)
+        {
+            value = ThreadStreamEventVariant1;
+            return IsThreadStreamEventVariant1;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -70,7 +83,7 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.ThreadStreamEventVariant1?, TResult>? threadStreamEventVariant1 = null,
+            global::System.Func<global::G.ThreadStreamEventVariant1, TResult>? threadStreamEventVariant1 = null,
             bool validate = true)
         {
             if (validate)
@@ -90,7 +103,25 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.ThreadStreamEventVariant1?>? threadStreamEventVariant1 = null,
+            global::System.Action<global::G.ThreadStreamEventVariant1>? threadStreamEventVariant1 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsThreadStreamEventVariant1)
+            {
+                threadStreamEventVariant1?.Invoke(ThreadStreamEventVariant1!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.ThreadStreamEventVariant1>? threadStreamEventVariant1 = null,
             bool validate = true)
         {
             if (validate)

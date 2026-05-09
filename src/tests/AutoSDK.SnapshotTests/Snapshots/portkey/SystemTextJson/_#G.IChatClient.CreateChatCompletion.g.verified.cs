@@ -43,6 +43,32 @@ namespace G
         /// <param name="xPortkeyMetadata"></param>
         /// <param name="xPortkeyCacheNamespace"></param>
         /// <param name="xPortkeyCacheForceRefresh"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.CreateChatCompletionResponse>> CreateChatCompletionAsResponseAsync(
+
+            global::G.CreateChatCompletionRequest request,
+            string? xPortkeyTraceId = default,
+            string? xPortkeySpanId = default,
+            string? xPortkeyParentSpanId = default,
+            string? xPortkeySpanName = default,
+            object? xPortkeyMetadata = default,
+            string? xPortkeyCacheNamespace = default,
+            bool? xPortkeyCacheForceRefresh = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Chat
+        /// </summary>
+        /// <param name="xPortkeyTraceId"></param>
+        /// <param name="xPortkeySpanId"></param>
+        /// <param name="xPortkeyParentSpanId"></param>
+        /// <param name="xPortkeySpanName"></param>
+        /// <param name="xPortkeyMetadata"></param>
+        /// <param name="xPortkeyCacheNamespace"></param>
+        /// <param name="xPortkeyCacheForceRefresh"></param>
         /// <param name="messages">
         /// A list of messages comprising the conversation so far. [Example Python code](https://cookbook.openai.com/examples/how_to_format_inputs_to_chatgpt_models).
         /// </param>

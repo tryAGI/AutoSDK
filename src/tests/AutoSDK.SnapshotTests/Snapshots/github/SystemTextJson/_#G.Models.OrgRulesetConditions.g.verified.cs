@@ -30,6 +30,19 @@ namespace G
         public bool IsRepositoryNameAndRefName => RepositoryNameAndRefName != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickRepositoryNameAndRefName(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.AllOf<global::G.RepositoryRulesetConditions, global::G.RepositoryRulesetConditionsRepositoryNameTarget>? value)
+        {
+            value = RepositoryNameAndRefName;
+            return IsRepositoryNameAndRefName;
+        }
+
+        /// <summary>
         /// Conditions to target repositories by id and refs by name
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -47,6 +60,19 @@ namespace G
         public bool IsRepositoryIdAndRefName => RepositoryIdAndRefName != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickRepositoryIdAndRefName(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.AllOf<global::G.RepositoryRulesetConditions, global::G.RepositoryRulesetConditionsRepositoryIdTarget>? value)
+        {
+            value = RepositoryIdAndRefName;
+            return IsRepositoryIdAndRefName;
+        }
+
+        /// <summary>
         /// Conditions to target repositories by property and refs by name
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -62,6 +88,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RepositoryPropertyAndRefName))]
 #endif
         public bool IsRepositoryPropertyAndRefName => RepositoryPropertyAndRefName != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickRepositoryPropertyAndRefName(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.AllOf<global::G.RepositoryRulesetConditions, global::G.RepositoryRulesetConditionsRepositoryPropertyTarget>? value)
+        {
+            value = RepositoryPropertyAndRefName;
+            return IsRepositoryPropertyAndRefName;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -190,6 +229,36 @@ namespace G
         /// 
         /// </summary>
         public void Match(
+            global::System.Action<global::G.AllOf<global::G.RepositoryRulesetConditions, global::G.RepositoryRulesetConditionsRepositoryNameTarget>?>? repositoryNameAndRefName = null,
+
+            global::System.Action<global::G.AllOf<global::G.RepositoryRulesetConditions, global::G.RepositoryRulesetConditionsRepositoryIdTarget>?>? repositoryIdAndRefName = null,
+
+            global::System.Action<global::G.AllOf<global::G.RepositoryRulesetConditions, global::G.RepositoryRulesetConditionsRepositoryPropertyTarget>?>? repositoryPropertyAndRefName = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsRepositoryNameAndRefName)
+            {
+                repositoryNameAndRefName?.Invoke(RepositoryNameAndRefName!);
+            }
+            else if (IsRepositoryIdAndRefName)
+            {
+                repositoryIdAndRefName?.Invoke(RepositoryIdAndRefName!);
+            }
+            else if (IsRepositoryPropertyAndRefName)
+            {
+                repositoryPropertyAndRefName?.Invoke(RepositoryPropertyAndRefName!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
             global::System.Action<global::G.AllOf<global::G.RepositoryRulesetConditions, global::G.RepositoryRulesetConditionsRepositoryNameTarget>?>? repositoryNameAndRefName = null,
             global::System.Action<global::G.AllOf<global::G.RepositoryRulesetConditions, global::G.RepositoryRulesetConditionsRepositoryIdTarget>?>? repositoryIdAndRefName = null,
             global::System.Action<global::G.AllOf<global::G.RepositoryRulesetConditions, global::G.RepositoryRulesetConditionsRepositoryPropertyTarget>?>? repositoryPropertyAndRefName = null,

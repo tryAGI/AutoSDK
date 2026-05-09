@@ -28,6 +28,19 @@ namespace G
         public bool IsResponsesPostRequestBodyContentApplicationJsonSchemaInputVariant1 => ResponsesPostRequestBodyContentApplicationJsonSchemaInputVariant1 != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResponsesPostRequestBodyContentApplicationJsonSchemaInputVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = ResponsesPostRequestBodyContentApplicationJsonSchemaInputVariant1;
+            return IsResponsesPostRequestBodyContentApplicationJsonSchemaInputVariant1;
+        }
+
+        /// <summary>
         /// An array of input items used for generating completions.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponsesPostRequestBodyContentApplicationJsonSchemaInput1))]
 #endif
         public bool IsResponsesPostRequestBodyContentApplicationJsonSchemaInput1 => ResponsesPostRequestBodyContentApplicationJsonSchemaInput1 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResponsesPostRequestBodyContentApplicationJsonSchemaInput1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::System.Collections.Generic.IList<global::G.ResponsesPostRequestBodyContentApplicationJsonSchemaInputOneOf1Items>? value)
+        {
+            value = ResponsesPostRequestBodyContentApplicationJsonSchemaInput1;
+            return IsResponsesPostRequestBodyContentApplicationJsonSchemaInput1;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -101,8 +127,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<string?, TResult>? responsesPostRequestBodyContentApplicationJsonSchemaInputVariant1 = null,
-            global::System.Func<global::System.Collections.Generic.IList<global::G.ResponsesPostRequestBodyContentApplicationJsonSchemaInputOneOf1Items>?, TResult>? responsesPostRequestBodyContentApplicationJsonSchemaInput1 = null,
+            global::System.Func<string, TResult>? responsesPostRequestBodyContentApplicationJsonSchemaInputVariant1 = null,
+            global::System.Func<global::System.Collections.Generic.IList<global::G.ResponsesPostRequestBodyContentApplicationJsonSchemaInputOneOf1Items>, TResult>? responsesPostRequestBodyContentApplicationJsonSchemaInput1 = null,
             bool validate = true)
         {
             if (validate)
@@ -126,8 +152,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<string?>? responsesPostRequestBodyContentApplicationJsonSchemaInputVariant1 = null,
-            global::System.Action<global::System.Collections.Generic.IList<global::G.ResponsesPostRequestBodyContentApplicationJsonSchemaInputOneOf1Items>?>? responsesPostRequestBodyContentApplicationJsonSchemaInput1 = null,
+            global::System.Action<string>? responsesPostRequestBodyContentApplicationJsonSchemaInputVariant1 = null,
+
+            global::System.Action<global::System.Collections.Generic.IList<global::G.ResponsesPostRequestBodyContentApplicationJsonSchemaInputOneOf1Items>>? responsesPostRequestBodyContentApplicationJsonSchemaInput1 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsResponsesPostRequestBodyContentApplicationJsonSchemaInputVariant1)
+            {
+                responsesPostRequestBodyContentApplicationJsonSchemaInputVariant1?.Invoke(ResponsesPostRequestBodyContentApplicationJsonSchemaInputVariant1!);
+            }
+            else if (IsResponsesPostRequestBodyContentApplicationJsonSchemaInput1)
+            {
+                responsesPostRequestBodyContentApplicationJsonSchemaInput1?.Invoke(ResponsesPostRequestBodyContentApplicationJsonSchemaInput1!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<string>? responsesPostRequestBodyContentApplicationJsonSchemaInputVariant1 = null,
+            global::System.Action<global::System.Collections.Generic.IList<global::G.ResponsesPostRequestBodyContentApplicationJsonSchemaInputOneOf1Items>>? responsesPostRequestBodyContentApplicationJsonSchemaInput1 = null,
             bool validate = true)
         {
             if (validate)

@@ -31,6 +31,25 @@ namespace G
         /// <param name="userId"></param>
         /// <param name="organizationId"></param>
         /// <param name="updateMask"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.UpdateUserMembershipResponse>> UpdateUserMembershipAsResponseAsync(
+            string userId,
+            string organizationId,
+            string updateMask,
+
+            global::G.UserMembership request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Update a user membership<br/>
+        /// Accesses and updates a user membership by parent and membership IDs.
+        /// </summary>
+        /// <param name="userId"></param>
+        /// <param name="organizationId"></param>
+        /// <param name="updateMask"></param>
         /// <param name="state">
         /// State of the membership.
         /// </param>

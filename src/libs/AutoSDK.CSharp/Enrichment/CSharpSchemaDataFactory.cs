@@ -83,6 +83,7 @@ public static class CSharpSchemaDataFactory
             Description: context.Schema.Description ?? string.Empty,
             ConverterType: type.ConverterType,
             DiscriminatorValue: string.Empty,
+            DiscriminatorJsonValue: string.Empty,
             JsonPropertyNames: ImmutableArray<string>.Empty.AsEquatableArray())
             .WithCSharpParameterName();
     }
@@ -194,9 +195,10 @@ public static class CSharpSchemaDataFactory
         var className = context.Id.ToClassName();
         TypeData? discriminatorType = null;
         string? discriminatorPropertyName = null;
+        var discriminatorPropertyIsEnum = false;
 
         if (context.Schema.Discriminator != null &&
-            (context.Schema.Discriminator.Mapping?.Count ?? 0) != 0)
+            !string.IsNullOrEmpty(context.Schema.Discriminator.PropertyName))
         {
             for (var i = 0; i < context.Children.Count; i++)
             {
@@ -209,6 +211,7 @@ public static class CSharpSchemaDataFactory
 
             discriminatorPropertyName = (context.Schema.Discriminator.PropertyName ?? string.Empty).ToPropertyName()
                 .ToCSharpName(context.Settings, context.Parent);
+            discriminatorPropertyIsEnum = (context.Schema.Discriminator.Mapping?.Count ?? 0) != 0;
         }
 
         var count = context.IsAnyOf
@@ -225,6 +228,7 @@ public static class CSharpSchemaDataFactory
             {
                 var child = children[i];
                 var discriminatorValue = ComputeDiscriminatorValue(context, child, discriminatorPropName);
+                var discriminatorJsonValue = ComputeDiscriminatorRawValue(context, child, discriminatorPropName);
 
                 var titleName = !string.IsNullOrWhiteSpace(child.Schema.Title)
                     ? child.Schema.Title!.ToClassName()
@@ -246,6 +250,7 @@ public static class CSharpSchemaDataFactory
                     Name = name,
                     Summary = child.Schema.GetSummary(),
                     DiscriminatorValue = discriminatorValue,
+                    DiscriminatorJsonValue = discriminatorJsonValue,
                     JsonPropertyNames = jsonPropertyNames.AsEquatableArray(),
                 }).WithCSharpParameterName());
             }
@@ -285,6 +290,7 @@ public static class CSharpSchemaDataFactory
             Count: count,
             DiscriminatorType: discriminatorType,
             DiscriminatorPropertyName: discriminatorPropertyName,
+            DiscriminatorPropertyIsEnum: discriminatorPropertyIsEnum,
             IsTrimming: context.Settings.UsesSystemTextJsonContext(),
             Namespace: context.GetGeneratedNamespace(),
             Name: context.IsNamedAnyOfLike
@@ -298,6 +304,17 @@ public static class CSharpSchemaDataFactory
     }
 
     private static string ComputeDiscriminatorValue(
+        SchemaContext context,
+        SchemaContext child,
+        string discriminatorPropName)
+    {
+        var raw = ComputeDiscriminatorRawValue(context, child, discriminatorPropName);
+        return string.IsNullOrEmpty(raw)
+            ? string.Empty
+            : raw.ToEnumValue(string.Empty, context.Settings.ToEnumNamingSettings()).Name;
+    }
+
+    private static string ComputeDiscriminatorRawValue(
         SchemaContext context,
         SchemaContext child,
         string discriminatorPropName)
@@ -324,7 +341,7 @@ public static class CSharpSchemaDataFactory
                 if (kvp.Value.Reference?.Id?.Contains(child.Id) == true ||
                     childEnumStr != null && childEnumStr == kvp.Key)
                 {
-                    return kvp.Key.ToEnumValue(string.Empty, context.Settings.ToEnumNamingSettings()).Name;
+                    return kvp.Key;
                 }
             }
         }
@@ -333,7 +350,7 @@ public static class CSharpSchemaDataFactory
         {
             if (!string.IsNullOrEmpty(childDiscProp.Const))
             {
-                return childDiscProp.Const!.ToEnumValue(string.Empty, context.Settings.ToEnumNamingSettings()).Name;
+                return childDiscProp.Const!;
             }
 
             if ((childDiscProp.Enum?.Count ?? 0) == 1)
@@ -341,7 +358,7 @@ public static class CSharpSchemaDataFactory
                 var enumValue = childDiscProp.Enum![0]?.GetString();
                 if (!string.IsNullOrEmpty(enumValue))
                 {
-                    return enumValue!.ToEnumValue(string.Empty, context.Settings.ToEnumNamingSettings()).Name;
+                    return enumValue!;
                 }
             }
         }

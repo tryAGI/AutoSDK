@@ -31,6 +31,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputText))]
 #endif
         public bool IsInputText => InputText != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickInputText(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ResponseInputTextContent? value)
+        {
+            value = InputText;
+            return IsInputText;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -88,7 +101,7 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.ResponseInputTextContent?, TResult>? inputText = null,
+            global::System.Func<global::G.ResponseInputTextContent, TResult>? inputText = null,
             bool validate = true)
         {
             if (validate)
@@ -108,7 +121,25 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.ResponseInputTextContent?>? inputText = null,
+            global::System.Action<global::G.ResponseInputTextContent>? inputText = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsInputText)
+            {
+                inputText?.Invoke(InputText!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.ResponseInputTextContent>? inputText = null,
             bool validate = true)
         {
             if (validate)

@@ -22,6 +22,19 @@ namespace G
         /// Create a new tool router session<br/>
         /// Creates a new session for the tool router feature. This endpoint initializes a new session with specified toolkits and their authentication configurations. The session provides an isolated environment for testing and managing tool routing logic with scoped MCP server access.
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.PostToolRouterSessionResponse>> PostToolRouterSessionAsResponseAsync(
+
+            global::G.PostToolRouterSessionRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create a new tool router session<br/>
+        /// Creates a new session for the tool router feature. This endpoint initializes a new session with specified toolkits and their authentication configurations. The session provides an isolated environment for testing and managing tool routing logic with scoped MCP server access.
+        /// </summary>
         /// <param name="userId">
         /// The identifier of the user who is initiating the session, ideally a unique identifier from your database like a user ID or email address<br/>
         /// Example: user_123456789

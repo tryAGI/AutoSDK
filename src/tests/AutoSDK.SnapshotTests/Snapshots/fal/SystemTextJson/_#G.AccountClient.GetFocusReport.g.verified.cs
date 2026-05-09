@@ -117,6 +117,82 @@ namespace G
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var __response = await GetFocusReportAsResponseAsync(
+                source: source,
+                billingMonth: billingMonth,
+                chargeMonth: chargeMonth,
+                start: start,
+                end: end,
+                timezone: timezone,
+                timeframe: timeframe,
+                boundToTimeframe: boundToTimeframe,
+                requestOptions: requestOptions,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// FOCUS Report<br/>
+        /// Returns a FOCUS compliant billing report as a CSV download.<br/>
+        /// &gt; **Availability:** This endpoint is available to enterprise customers with FOCUS reports enabled. Contact your account team or support@fal.ai to request access.<br/>
+        /// Supports two data sources:<br/>
+        /// - **invoice**: Finalized invoice data for a billing month. Includes usage charges, credits, and taxes.<br/>
+        /// - **estimate**: Real-time usage estimates for a date range. Pre-invoice data that may change once invoiced.<br/>
+        /// The report follows the [FinOps FOCUS specification](https://focus.finops.org/) for cloud billing data interoperability.<br/>
+        /// **Invoice reports** default to the most recently available billing month.<br/>
+        /// **Usage estimates** default to the last 24 hours, with a maximum 90-day lookback.<br/>
+        ///     
+        /// </summary>
+        /// <param name="source">
+        /// Report source. 'invoice' returns finalized invoice data for a billing month. 'estimate' returns real-time usage estimates for a date range.<br/>
+        /// Example: invoice
+        /// </param>
+        /// <param name="billingMonth">
+        /// Invoice billing month (YYYY-MM). The month the invoice was issued (e.g. '2025-02' for January charges). Used with source=invoice. Defaults to most recent available billing month.<br/>
+        /// Example: 2025-02
+        /// </param>
+        /// <param name="chargeMonth">
+        /// Charge month (YYYY-MM). The month charges were incurred. Converted to billing_month by adding 1 month (billing in arrears). Alternative to billing_month. Used with source=invoice.<br/>
+        /// Example: 2025-01
+        /// </param>
+        /// <param name="start">
+        /// Start date in ISO8601 format (e.g., '2025-01-01T00:00:00Z' or '2025-01-01'). Defaults to 24 hours ago.<br/>
+        /// Example: 2025-01-01T00:00:00Z
+        /// </param>
+        /// <param name="end">
+        /// End date in ISO8601 format, exclusive (e.g., '2025-02-01T00:00:00Z' or '2025-02-01'). Data up to but not including this timestamp is returned. Defaults to current time.<br/>
+        /// Example: 2025-02-01T00:00:00Z
+        /// </param>
+        /// <param name="timezone">
+        /// Timezone for date aggregation and boundaries. All timestamps in responses are in UTC, but this controls how dates are bucketed.<br/>
+        /// Default Value: UTC<br/>
+        /// Example: UTC
+        /// </param>
+        /// <param name="timeframe">
+        /// Aggregation timeframe for timeseries data (auto-detected from date range if not specified). Auto-detection uses: minute (&lt;2h), hour (&lt;2d), day (&lt;64d), week (&lt;183d), month (&gt;=183d).<br/>
+        /// Example: day
+        /// </param>
+        /// <param name="boundToTimeframe">
+        /// Whether to adjust start/end dates to align with timeframe boundaries and use exclusive end. Defaults to true. When true, dates are aligned to the start of the timeframe period (e.g., start of day) and end is made exclusive (e.g., start of next day). When false, uses exact dates provided.<br/>
+        /// Default Value: true<br/>
+        /// Example: true
+        /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<string>> GetFocusReportAsResponseAsync(
+            global::G.GetFocusReportSource source,
+            string? billingMonth = default,
+            string? chargeMonth = default,
+            global::G.AnyOf<global::System.DateTime?, string>? start = default,
+            global::G.AnyOf<global::System.DateTime?, string>? end = default,
+            string? timezone = default,
+            global::G.GetFocusReportTimeframe? timeframe = default,
+            global::G.GetFocusReportBoundToTimeframe? boundToTimeframe = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             PrepareArguments(
                 client: HttpClient);
             PrepareGetFocusReportArguments(
@@ -152,9 +228,10 @@ namespace G
 
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
+
                             var __pathBuilder = new global::G.PathBuilder(
                                 path: "/account/focus",
-                                baseUri: HttpClient.BaseAddress); 
+                                baseUri: HttpClient.BaseAddress);
                             __pathBuilder
                                 .AddRequiredParameter("source", source.ToValueString())
                                 .AddOptionalParameter("billing_month", billingMonth)
@@ -163,7 +240,7 @@ namespace G
                                 .AddOptionalParameter("end", end?.ToString())
                                 .AddOptionalParameter("timezone", timezone)
                                 .AddOptionalParameter("timeframe", timeframe?.ToValueString())
-                                .AddOptionalParameter("bound_to_timeframe", boundToTimeframe?.ToValueString()) 
+                                .AddOptionalParameter("bound_to_timeframe", boundToTimeframe?.ToValueString())
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::G.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -205,7 +282,7 @@ namespace G
                 PrepareGetFocusReportRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    source: source,
+                    source: source!,
                     billingMonth: billingMonth,
                     chargeMonth: chargeMonth,
                     start: start,
@@ -242,6 +319,8 @@ namespace G
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                     try
                     {
@@ -252,6 +331,11 @@ namespace G
                     }
                     catch (global::System.Net.Http.HttpRequestException __exception)
                     {
+                        var __retryDelay = global::G.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: null,
+                            attempt: __attempt);
                         var __willRetry = __attempt < __maxAttempts && !__effectiveCancellationToken.IsCancellationRequested;
                         await global::G.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
@@ -269,6 +353,8 @@ namespace G
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: __willRetry,
+                                retryDelay: __willRetry ? __retryDelay : (global::System.TimeSpan?)null,
+                                retryReason: "exception",
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         if (!__willRetry)
                         {
@@ -278,8 +364,7 @@ namespace G
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::G.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -288,6 +373,11 @@ namespace G
                         __attempt < __maxAttempts &&
                         global::G.AutoSDKRequestOptionsSupport.ShouldRetryStatusCode(__response.StatusCode))
                     {
+                        var __retryDelay = global::G.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: __response,
+                            attempt: __attempt);
                         await global::G.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
@@ -304,14 +394,15 @@ namespace G
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: true,
+                                retryDelay: __retryDelay,
+                                retryReason: "status:" + ((int)__response.StatusCode).ToString(global::System.Globalization.CultureInfo.InvariantCulture),
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         __response.Dispose();
                         __response = null;
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::G.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -351,6 +442,8 @@ namespace G
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
                 else
@@ -371,6 +464,8 @@ namespace G
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
                             // Invalid request parameters
@@ -585,7 +680,11 @@ namespace G
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    return __content;
+                                    return new global::G.AutoSDKHttpResponse<string>(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri,
+                                        body: __content);
                                 }
                                 catch (global::System.Exception __ex)
                                 {
@@ -613,7 +712,11 @@ namespace G
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    return __content;
+                                    return new global::G.AutoSDKHttpResponse<string>(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri,
+                                        body: __content);
                                 }
                                 catch (global::System.Exception __ex)
                                 {

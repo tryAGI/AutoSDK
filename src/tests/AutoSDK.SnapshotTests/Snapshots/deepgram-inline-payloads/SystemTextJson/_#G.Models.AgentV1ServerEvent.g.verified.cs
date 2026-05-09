@@ -33,6 +33,19 @@ namespace G
         public bool IsAgentStarted => AgentStarted != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickAgentStarted(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.AgentStarted? value)
+        {
+            value = AgentStarted;
+            return IsAgentStarted;
+        }
+
+        /// <summary>
         /// Indicates the agent is processing.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -48,6 +61,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AgentThinking))]
 #endif
         public bool IsAgentThinking => AgentThinking != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickAgentThinking(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.AgentThinking? value)
+        {
+            value = AgentThinking;
+            return IsAgentThinking;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -127,8 +153,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.AgentStarted?, TResult>? agentStarted = null,
-            global::System.Func<global::G.AgentThinking?, TResult>? agentThinking = null,
+            global::System.Func<global::G.AgentStarted, TResult>? agentStarted = null,
+            global::System.Func<global::G.AgentThinking, TResult>? agentThinking = null,
             bool validate = true)
         {
             if (validate)
@@ -152,8 +178,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.AgentStarted?>? agentStarted = null,
-            global::System.Action<global::G.AgentThinking?>? agentThinking = null,
+            global::System.Action<global::G.AgentStarted>? agentStarted = null,
+
+            global::System.Action<global::G.AgentThinking>? agentThinking = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsAgentStarted)
+            {
+                agentStarted?.Invoke(AgentStarted!);
+            }
+            else if (IsAgentThinking)
+            {
+                agentThinking?.Invoke(AgentThinking!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.AgentStarted>? agentStarted = null,
+            global::System.Action<global::G.AgentThinking>? agentThinking = null,
             bool validate = true)
         {
             if (validate)

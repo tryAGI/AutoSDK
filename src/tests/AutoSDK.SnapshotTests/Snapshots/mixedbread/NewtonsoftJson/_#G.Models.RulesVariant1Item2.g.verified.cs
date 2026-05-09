@@ -33,6 +33,19 @@ namespace G
         public bool IsQueryString => QueryString != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickQueryString(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.QueryStringSubstitutionRule? value)
+        {
+            value = QueryString;
+            return IsQueryString;
+        }
+
+        /// <summary>
         /// Represents a regex query substitution rule for a vector store search.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -48,6 +61,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(QueryRegex))]
 #endif
         public bool IsQueryRegex => QueryRegex != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickQueryRegex(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.QueryRegexSubstitutionRule? value)
+        {
+            value = QueryRegex;
+            return IsQueryRegex;
+        }
 
         /// <summary>
         /// Represents a chunk search result rule for a vector store search.
@@ -67,6 +93,19 @@ namespace G
         public bool IsChunkSearchResult => ChunkSearchResult != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickChunkSearchResult(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ChunkSearchResultRule? value)
+        {
+            value = ChunkSearchResult;
+            return IsChunkSearchResult;
+        }
+
+        /// <summary>
         /// Represents a file search result rule for a vector store search.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -82,6 +121,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FileSearchResult))]
 #endif
         public bool IsFileSearchResult => FileSearchResult != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFileSearchResult(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.FileSearchResultRule? value)
+        {
+            value = FileSearchResult;
+            return IsFileSearchResult;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -205,10 +257,10 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.QueryStringSubstitutionRule?, TResult>? queryString = null,
-            global::System.Func<global::G.QueryRegexSubstitutionRule?, TResult>? queryRegex = null,
-            global::System.Func<global::G.ChunkSearchResultRule?, TResult>? chunkSearchResult = null,
-            global::System.Func<global::G.FileSearchResultRule?, TResult>? fileSearchResult = null,
+            global::System.Func<global::G.QueryStringSubstitutionRule, TResult>? queryString = null,
+            global::System.Func<global::G.QueryRegexSubstitutionRule, TResult>? queryRegex = null,
+            global::System.Func<global::G.ChunkSearchResultRule, TResult>? chunkSearchResult = null,
+            global::System.Func<global::G.FileSearchResultRule, TResult>? fileSearchResult = null,
             bool validate = true)
         {
             if (validate)
@@ -240,10 +292,46 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.QueryStringSubstitutionRule?>? queryString = null,
-            global::System.Action<global::G.QueryRegexSubstitutionRule?>? queryRegex = null,
-            global::System.Action<global::G.ChunkSearchResultRule?>? chunkSearchResult = null,
-            global::System.Action<global::G.FileSearchResultRule?>? fileSearchResult = null,
+            global::System.Action<global::G.QueryStringSubstitutionRule>? queryString = null,
+
+            global::System.Action<global::G.QueryRegexSubstitutionRule>? queryRegex = null,
+
+            global::System.Action<global::G.ChunkSearchResultRule>? chunkSearchResult = null,
+
+            global::System.Action<global::G.FileSearchResultRule>? fileSearchResult = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsQueryString)
+            {
+                queryString?.Invoke(QueryString!);
+            }
+            else if (IsQueryRegex)
+            {
+                queryRegex?.Invoke(QueryRegex!);
+            }
+            else if (IsChunkSearchResult)
+            {
+                chunkSearchResult?.Invoke(ChunkSearchResult!);
+            }
+            else if (IsFileSearchResult)
+            {
+                fileSearchResult?.Invoke(FileSearchResult!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.QueryStringSubstitutionRule>? queryString = null,
+            global::System.Action<global::G.QueryRegexSubstitutionRule>? queryRegex = null,
+            global::System.Action<global::G.ChunkSearchResultRule>? chunkSearchResult = null,
+            global::System.Action<global::G.FileSearchResultRule>? fileSearchResult = null,
             bool validate = true)
         {
             if (validate)

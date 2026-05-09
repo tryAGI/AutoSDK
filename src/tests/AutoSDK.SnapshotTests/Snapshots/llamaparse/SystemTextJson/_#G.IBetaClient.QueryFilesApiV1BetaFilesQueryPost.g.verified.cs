@@ -46,6 +46,33 @@ namespace G
         /// <param name="projectId"></param>
         /// <param name="organizationId"></param>
         /// <param name="session"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        [global::System.Obsolete("This method marked as deprecated.")]
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.FileQueryResponseV2>> QueryFilesApiV1BetaFilesQueryPostAsResponseAsync(
+
+            global::G.FileQueryRequest request,
+            global::System.Guid? projectId = default,
+            global::System.Guid? organizationId = default,
+            string? session = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Query Files<br/>
+        /// Query files with flexible filtering and pagination.<br/>
+        /// **Deprecated**: Use GET /files instead for listing files with query parameters.<br/>
+        /// Args:<br/>
+        ///     request: The query request with filters and pagination<br/>
+        ///     project: Validated project from dependency<br/>
+        ///     db: Database session<br/>
+        /// Returns:<br/>
+        ///     Paginated response with files
+        /// </summary>
+        /// <param name="projectId"></param>
+        /// <param name="organizationId"></param>
+        /// <param name="session"></param>
         /// <param name="pageSize">
         /// The maximum number of items to return. The service may return fewer than this value. If unspecified, a default page size will be used. The maximum value is typically 1000; values above this will be coerced to the maximum.
         /// </param>

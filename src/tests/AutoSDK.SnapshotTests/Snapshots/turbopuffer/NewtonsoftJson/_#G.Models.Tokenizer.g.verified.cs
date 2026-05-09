@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickTokenizerVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = TokenizerVariant1;
+            return IsTokenizerVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public string? TokenizerVariant2 { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TokenizerVariant2))]
 #endif
         public bool IsTokenizerVariant2 => TokenizerVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickTokenizerVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = TokenizerVariant2;
+            return IsTokenizerVariant2;
+        }
 
         /// <summary>
         /// 
@@ -64,6 +90,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickTokenizerVariant3(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = TokenizerVariant3;
+            return IsTokenizerVariant3;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public string? TokenizerVariant4 { get; init; }
 #else
@@ -81,6 +120,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickTokenizerVariant4(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = TokenizerVariant4;
+            return IsTokenizerVariant4;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public string? TokenizerVariant5 { get; init; }
 #else
@@ -94,6 +146,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TokenizerVariant5))]
 #endif
         public bool IsTokenizerVariant5 => TokenizerVariant5 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickTokenizerVariant5(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = TokenizerVariant5;
+            return IsTokenizerVariant5;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -164,11 +229,11 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<string?, TResult>? tokenizerVariant1 = null,
-            global::System.Func<string?, TResult>? tokenizerVariant2 = null,
-            global::System.Func<string?, TResult>? tokenizerVariant3 = null,
-            global::System.Func<string?, TResult>? tokenizerVariant4 = null,
-            global::System.Func<string?, TResult>? tokenizerVariant5 = null,
+            global::System.Func<string, TResult>? tokenizerVariant1 = null,
+            global::System.Func<string, TResult>? tokenizerVariant2 = null,
+            global::System.Func<string, TResult>? tokenizerVariant3 = null,
+            global::System.Func<string, TResult>? tokenizerVariant4 = null,
+            global::System.Func<string, TResult>? tokenizerVariant5 = null,
             bool validate = true)
         {
             if (validate)
@@ -204,11 +269,53 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<string?>? tokenizerVariant1 = null,
-            global::System.Action<string?>? tokenizerVariant2 = null,
-            global::System.Action<string?>? tokenizerVariant3 = null,
-            global::System.Action<string?>? tokenizerVariant4 = null,
-            global::System.Action<string?>? tokenizerVariant5 = null,
+            global::System.Action<string>? tokenizerVariant1 = null,
+
+            global::System.Action<string>? tokenizerVariant2 = null,
+
+            global::System.Action<string>? tokenizerVariant3 = null,
+
+            global::System.Action<string>? tokenizerVariant4 = null,
+
+            global::System.Action<string>? tokenizerVariant5 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsTokenizerVariant1)
+            {
+                tokenizerVariant1?.Invoke(TokenizerVariant1!);
+            }
+            else if (IsTokenizerVariant2)
+            {
+                tokenizerVariant2?.Invoke(TokenizerVariant2!);
+            }
+            else if (IsTokenizerVariant3)
+            {
+                tokenizerVariant3?.Invoke(TokenizerVariant3!);
+            }
+            else if (IsTokenizerVariant4)
+            {
+                tokenizerVariant4?.Invoke(TokenizerVariant4!);
+            }
+            else if (IsTokenizerVariant5)
+            {
+                tokenizerVariant5?.Invoke(TokenizerVariant5!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<string>? tokenizerVariant1 = null,
+            global::System.Action<string>? tokenizerVariant2 = null,
+            global::System.Action<string>? tokenizerVariant3 = null,
+            global::System.Action<string>? tokenizerVariant4 = null,
+            global::System.Action<string>? tokenizerVariant5 = null,
             bool validate = true)
         {
             if (validate)

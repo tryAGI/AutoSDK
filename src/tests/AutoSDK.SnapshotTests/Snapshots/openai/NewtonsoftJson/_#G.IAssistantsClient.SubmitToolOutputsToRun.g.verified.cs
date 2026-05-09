@@ -26,6 +26,22 @@ namespace G
         /// </summary>
         /// <param name="threadId"></param>
         /// <param name="runId"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.RunObject>> SubmitToolOutputsToRunAsResponseAsync(
+            string threadId,
+            string runId,
+
+            global::G.SubmitToolOutputsRunRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// When a run has the `status: "requires_action"` and `required_action.type` is `submit_tool_outputs`, this endpoint can be used to submit the outputs from the tool calls once they're all completed. All outputs must be submitted in a single request.
+        /// </summary>
+        /// <param name="threadId"></param>
+        /// <param name="runId"></param>
         /// <param name="toolOutputs">
         /// A list of tools for which the outputs are being submitted.
         /// </param>

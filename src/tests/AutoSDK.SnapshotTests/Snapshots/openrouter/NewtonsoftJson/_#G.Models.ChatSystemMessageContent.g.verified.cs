@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickChatSystemMessageContentVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = ChatSystemMessageContentVariant1;
+            return IsChatSystemMessageContentVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<global::G.ChatContentText>? ChatSystemMessageContent1 { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ChatSystemMessageContent1))]
 #endif
         public bool IsChatSystemMessageContent1 => ChatSystemMessageContent1 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickChatSystemMessageContent1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::System.Collections.Generic.IList<global::G.ChatContentText>? value)
+        {
+            value = ChatSystemMessageContent1;
+            return IsChatSystemMessageContent1;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -101,8 +127,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<string?, TResult>? chatSystemMessageContentVariant1 = null,
-            global::System.Func<global::System.Collections.Generic.IList<global::G.ChatContentText>?, TResult>? chatSystemMessageContent1 = null,
+            global::System.Func<string, TResult>? chatSystemMessageContentVariant1 = null,
+            global::System.Func<global::System.Collections.Generic.IList<global::G.ChatContentText>, TResult>? chatSystemMessageContent1 = null,
             bool validate = true)
         {
             if (validate)
@@ -126,8 +152,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<string?>? chatSystemMessageContentVariant1 = null,
-            global::System.Action<global::System.Collections.Generic.IList<global::G.ChatContentText>?>? chatSystemMessageContent1 = null,
+            global::System.Action<string>? chatSystemMessageContentVariant1 = null,
+
+            global::System.Action<global::System.Collections.Generic.IList<global::G.ChatContentText>>? chatSystemMessageContent1 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsChatSystemMessageContentVariant1)
+            {
+                chatSystemMessageContentVariant1?.Invoke(ChatSystemMessageContentVariant1!);
+            }
+            else if (IsChatSystemMessageContent1)
+            {
+                chatSystemMessageContent1?.Invoke(ChatSystemMessageContent1!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<string>? chatSystemMessageContentVariant1 = null,
+            global::System.Action<global::System.Collections.Generic.IList<global::G.ChatContentText>>? chatSystemMessageContent1 = null,
             bool validate = true)
         {
             if (validate)

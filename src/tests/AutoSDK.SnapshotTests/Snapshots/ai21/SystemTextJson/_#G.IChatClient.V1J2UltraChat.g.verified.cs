@@ -34,6 +34,26 @@ namespace G
         /// <param name="requestStartTime">
         /// Default Value: 1730898830008L
         /// </param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.ChatResponse>> V1J2UltraChatAsResponseAsync(
+
+            global::G.LanguageStudioApiServerDataTypesJ2ChatChatRequest request,
+            string? model = default,
+            int? requestStartTime = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// j2-ultra chat
+        /// </summary>
+        /// <param name="model">
+        /// Default Value: j2-ultra
+        /// </param>
+        /// <param name="requestStartTime">
+        /// Default Value: 1730898830008L
+        /// </param>
         /// <param name="messages">
         /// messages
         /// </param>

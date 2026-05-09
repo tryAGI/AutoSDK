@@ -33,6 +33,19 @@ namespace G
         public bool IsSessionStarted => SessionStarted != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSessionStarted(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.SessionStartedPayload? value)
+        {
+            value = SessionStarted;
+            return IsSessionStarted;
+        }
+
+        /// <summary>
         /// Event sent when a partial transcript is available.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -48,6 +61,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(PartialTranscript))]
 #endif
         public bool IsPartialTranscript => PartialTranscript != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickPartialTranscript(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.PartialTranscriptPayload? value)
+        {
+            value = PartialTranscript;
+            return IsPartialTranscript;
+        }
 
         /// <summary>
         /// Event sent when a transcript is committed.
@@ -67,6 +93,19 @@ namespace G
         public bool IsCommittedTranscript => CommittedTranscript != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickCommittedTranscript(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CommittedTranscriptPayload? value)
+        {
+            value = CommittedTranscript;
+            return IsCommittedTranscript;
+        }
+
+        /// <summary>
         /// Error event.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -82,6 +121,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Error))]
 #endif
         public bool IsError => Error != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickError(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ErrorPayload? value)
+        {
+            value = Error;
+            return IsError;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -205,10 +257,10 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.SessionStartedPayload?, TResult>? sessionStarted = null,
-            global::System.Func<global::G.PartialTranscriptPayload?, TResult>? partialTranscript = null,
-            global::System.Func<global::G.CommittedTranscriptPayload?, TResult>? committedTranscript = null,
-            global::System.Func<global::G.ErrorPayload?, TResult>? error = null,
+            global::System.Func<global::G.SessionStartedPayload, TResult>? sessionStarted = null,
+            global::System.Func<global::G.PartialTranscriptPayload, TResult>? partialTranscript = null,
+            global::System.Func<global::G.CommittedTranscriptPayload, TResult>? committedTranscript = null,
+            global::System.Func<global::G.ErrorPayload, TResult>? error = null,
             bool validate = true)
         {
             if (validate)
@@ -240,10 +292,46 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.SessionStartedPayload?>? sessionStarted = null,
-            global::System.Action<global::G.PartialTranscriptPayload?>? partialTranscript = null,
-            global::System.Action<global::G.CommittedTranscriptPayload?>? committedTranscript = null,
-            global::System.Action<global::G.ErrorPayload?>? error = null,
+            global::System.Action<global::G.SessionStartedPayload>? sessionStarted = null,
+
+            global::System.Action<global::G.PartialTranscriptPayload>? partialTranscript = null,
+
+            global::System.Action<global::G.CommittedTranscriptPayload>? committedTranscript = null,
+
+            global::System.Action<global::G.ErrorPayload>? error = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsSessionStarted)
+            {
+                sessionStarted?.Invoke(SessionStarted!);
+            }
+            else if (IsPartialTranscript)
+            {
+                partialTranscript?.Invoke(PartialTranscript!);
+            }
+            else if (IsCommittedTranscript)
+            {
+                committedTranscript?.Invoke(CommittedTranscript!);
+            }
+            else if (IsError)
+            {
+                error?.Invoke(Error!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.SessionStartedPayload>? sessionStarted = null,
+            global::System.Action<global::G.PartialTranscriptPayload>? partialTranscript = null,
+            global::System.Action<global::G.CommittedTranscriptPayload>? committedTranscript = null,
+            global::System.Action<global::G.ErrorPayload>? error = null,
             bool validate = true)
         {
             if (validate)

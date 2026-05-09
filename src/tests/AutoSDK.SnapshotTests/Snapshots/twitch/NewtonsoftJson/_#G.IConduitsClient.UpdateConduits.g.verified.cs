@@ -26,6 +26,21 @@ namespace G
         /// __Authorization:__<br/>
         /// Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens).
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.UpdateConduitsResponse>> UpdateConduitsAsResponseAsync(
+
+            global::G.UpdateConduitsBody request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// NEW Updates a conduit’s shard count.<br/>
+        /// NEW Updates a [conduit’s](https://dev.twitch.tv/docs/eventsub/handling-conduit-events) shard count. To delete shards, update the count to a lower number, and the shards above the count will be deleted. For example, if the existing shard count is 100, by resetting shard count to 50, shards 50-99 are disabled.<br/>
+        /// __Authorization:__<br/>
+        /// Requires an [app access token](https://dev.twitch.tv/docs/authentication#app-access-tokens).
+        /// </summary>
         /// <param name="id">
         /// Conduit ID.
         /// </param>

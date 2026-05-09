@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickIngestionEventVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.AllOf<global::G.IngestionEventVariant12, global::G.TraceEvent>? value)
+        {
+            value = IngestionEventVariant1;
+            return IsIngestionEventVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.AllOf<global::G.IngestionEventVariant22, global::G.ScoreEvent>? IngestionEventVariant2 { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(IngestionEventVariant2))]
 #endif
         public bool IsIngestionEventVariant2 => IngestionEventVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickIngestionEventVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.AllOf<global::G.IngestionEventVariant22, global::G.ScoreEvent>? value)
+        {
+            value = IngestionEventVariant2;
+            return IsIngestionEventVariant2;
+        }
 
         /// <summary>
         /// 
@@ -64,6 +90,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickIngestionEventVariant3(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.AllOf<global::G.IngestionEventVariant32, global::G.CreateSpanEvent>? value)
+        {
+            value = IngestionEventVariant3;
+            return IsIngestionEventVariant3;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.AllOf<global::G.IngestionEventVariant42, global::G.UpdateSpanEvent>? IngestionEventVariant4 { get; init; }
 #else
@@ -77,6 +116,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(IngestionEventVariant4))]
 #endif
         public bool IsIngestionEventVariant4 => IngestionEventVariant4 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickIngestionEventVariant4(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.AllOf<global::G.IngestionEventVariant42, global::G.UpdateSpanEvent>? value)
+        {
+            value = IngestionEventVariant4;
+            return IsIngestionEventVariant4;
+        }
 
         /// <summary>
         /// 
@@ -98,6 +150,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickIngestionEventVariant5(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.AllOf<global::G.IngestionEventVariant52, global::G.CreateGenerationEvent>? value)
+        {
+            value = IngestionEventVariant5;
+            return IsIngestionEventVariant5;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.AllOf<global::G.IngestionEventVariant62, global::G.UpdateGenerationEvent>? IngestionEventVariant6 { get; init; }
 #else
@@ -111,6 +176,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(IngestionEventVariant6))]
 #endif
         public bool IsIngestionEventVariant6 => IngestionEventVariant6 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickIngestionEventVariant6(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.AllOf<global::G.IngestionEventVariant62, global::G.UpdateGenerationEvent>? value)
+        {
+            value = IngestionEventVariant6;
+            return IsIngestionEventVariant6;
+        }
 
         /// <summary>
         /// 
@@ -132,6 +210,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickIngestionEventVariant7(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.AllOf<global::G.IngestionEventVariant72, global::G.CreateEventEvent>? value)
+        {
+            value = IngestionEventVariant7;
+            return IsIngestionEventVariant7;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.AllOf<global::G.IngestionEventVariant82, global::G.SDKLogEvent>? IngestionEventVariant8 { get; init; }
 #else
@@ -145,6 +236,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(IngestionEventVariant8))]
 #endif
         public bool IsIngestionEventVariant8 => IngestionEventVariant8 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickIngestionEventVariant8(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.AllOf<global::G.IngestionEventVariant82, global::G.SDKLogEvent>? value)
+        {
+            value = IngestionEventVariant8;
+            return IsIngestionEventVariant8;
+        }
 
         /// <summary>
         /// 
@@ -166,6 +270,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickIngestionEventVariant9(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.AllOf<global::G.IngestionEventVariant92, global::G.CreateObservationEvent>? value)
+        {
+            value = IngestionEventVariant9;
+            return IsIngestionEventVariant9;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.AllOf<global::G.IngestionEventVariant102, global::G.UpdateObservationEvent>? IngestionEventVariant10 { get; init; }
 #else
@@ -179,6 +296,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(IngestionEventVariant10))]
 #endif
         public bool IsIngestionEventVariant10 => IngestionEventVariant10 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickIngestionEventVariant10(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.AllOf<global::G.IngestionEventVariant102, global::G.UpdateObservationEvent>? value)
+        {
+            value = IngestionEventVariant10;
+            return IsIngestionEventVariant10;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -496,6 +626,78 @@ namespace G
         /// 
         /// </summary>
         public void Match(
+            global::System.Action<global::G.AllOf<global::G.IngestionEventVariant12, global::G.TraceEvent>?>? ingestionEventVariant1 = null,
+
+            global::System.Action<global::G.AllOf<global::G.IngestionEventVariant22, global::G.ScoreEvent>?>? ingestionEventVariant2 = null,
+
+            global::System.Action<global::G.AllOf<global::G.IngestionEventVariant32, global::G.CreateSpanEvent>?>? ingestionEventVariant3 = null,
+
+            global::System.Action<global::G.AllOf<global::G.IngestionEventVariant42, global::G.UpdateSpanEvent>?>? ingestionEventVariant4 = null,
+
+            global::System.Action<global::G.AllOf<global::G.IngestionEventVariant52, global::G.CreateGenerationEvent>?>? ingestionEventVariant5 = null,
+
+            global::System.Action<global::G.AllOf<global::G.IngestionEventVariant62, global::G.UpdateGenerationEvent>?>? ingestionEventVariant6 = null,
+
+            global::System.Action<global::G.AllOf<global::G.IngestionEventVariant72, global::G.CreateEventEvent>?>? ingestionEventVariant7 = null,
+
+            global::System.Action<global::G.AllOf<global::G.IngestionEventVariant82, global::G.SDKLogEvent>?>? ingestionEventVariant8 = null,
+
+            global::System.Action<global::G.AllOf<global::G.IngestionEventVariant92, global::G.CreateObservationEvent>?>? ingestionEventVariant9 = null,
+
+            global::System.Action<global::G.AllOf<global::G.IngestionEventVariant102, global::G.UpdateObservationEvent>?>? ingestionEventVariant10 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsIngestionEventVariant1)
+            {
+                ingestionEventVariant1?.Invoke(IngestionEventVariant1!);
+            }
+            else if (IsIngestionEventVariant2)
+            {
+                ingestionEventVariant2?.Invoke(IngestionEventVariant2!);
+            }
+            else if (IsIngestionEventVariant3)
+            {
+                ingestionEventVariant3?.Invoke(IngestionEventVariant3!);
+            }
+            else if (IsIngestionEventVariant4)
+            {
+                ingestionEventVariant4?.Invoke(IngestionEventVariant4!);
+            }
+            else if (IsIngestionEventVariant5)
+            {
+                ingestionEventVariant5?.Invoke(IngestionEventVariant5!);
+            }
+            else if (IsIngestionEventVariant6)
+            {
+                ingestionEventVariant6?.Invoke(IngestionEventVariant6!);
+            }
+            else if (IsIngestionEventVariant7)
+            {
+                ingestionEventVariant7?.Invoke(IngestionEventVariant7!);
+            }
+            else if (IsIngestionEventVariant8)
+            {
+                ingestionEventVariant8?.Invoke(IngestionEventVariant8!);
+            }
+            else if (IsIngestionEventVariant9)
+            {
+                ingestionEventVariant9?.Invoke(IngestionEventVariant9!);
+            }
+            else if (IsIngestionEventVariant10)
+            {
+                ingestionEventVariant10?.Invoke(IngestionEventVariant10!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
             global::System.Action<global::G.AllOf<global::G.IngestionEventVariant12, global::G.TraceEvent>?>? ingestionEventVariant1 = null,
             global::System.Action<global::G.AllOf<global::G.IngestionEventVariant22, global::G.ScoreEvent>?>? ingestionEventVariant2 = null,
             global::System.Action<global::G.AllOf<global::G.IngestionEventVariant32, global::G.CreateSpanEvent>?>? ingestionEventVariant3 = null,

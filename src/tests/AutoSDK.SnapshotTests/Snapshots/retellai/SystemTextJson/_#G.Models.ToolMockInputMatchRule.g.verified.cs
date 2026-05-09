@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickToolMockInputMatchRuleVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ToolMockInputMatchRuleVariant1? value)
+        {
+            value = ToolMockInputMatchRuleVariant1;
+            return IsToolMockInputMatchRuleVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ToolMockInputMatchRuleVariant2? ToolMockInputMatchRuleVariant2 { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ToolMockInputMatchRuleVariant2))]
 #endif
         public bool IsToolMockInputMatchRuleVariant2 => ToolMockInputMatchRuleVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickToolMockInputMatchRuleVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ToolMockInputMatchRuleVariant2? value)
+        {
+            value = ToolMockInputMatchRuleVariant2;
+            return IsToolMockInputMatchRuleVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -119,8 +145,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.ToolMockInputMatchRuleVariant1?, TResult>? toolMockInputMatchRuleVariant1 = null,
-            global::System.Func<global::G.ToolMockInputMatchRuleVariant2?, TResult>? toolMockInputMatchRuleVariant2 = null,
+            global::System.Func<global::G.ToolMockInputMatchRuleVariant1, TResult>? toolMockInputMatchRuleVariant1 = null,
+            global::System.Func<global::G.ToolMockInputMatchRuleVariant2, TResult>? toolMockInputMatchRuleVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -144,8 +170,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.ToolMockInputMatchRuleVariant1?>? toolMockInputMatchRuleVariant1 = null,
-            global::System.Action<global::G.ToolMockInputMatchRuleVariant2?>? toolMockInputMatchRuleVariant2 = null,
+            global::System.Action<global::G.ToolMockInputMatchRuleVariant1>? toolMockInputMatchRuleVariant1 = null,
+
+            global::System.Action<global::G.ToolMockInputMatchRuleVariant2>? toolMockInputMatchRuleVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsToolMockInputMatchRuleVariant1)
+            {
+                toolMockInputMatchRuleVariant1?.Invoke(ToolMockInputMatchRuleVariant1!);
+            }
+            else if (IsToolMockInputMatchRuleVariant2)
+            {
+                toolMockInputMatchRuleVariant2?.Invoke(ToolMockInputMatchRuleVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.ToolMockInputMatchRuleVariant1>? toolMockInputMatchRuleVariant1 = null,
+            global::System.Action<global::G.ToolMockInputMatchRuleVariant2>? toolMockInputMatchRuleVariant2 = null,
             bool validate = true)
         {
             if (validate)

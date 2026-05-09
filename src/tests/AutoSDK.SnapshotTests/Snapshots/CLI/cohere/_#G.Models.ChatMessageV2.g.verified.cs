@@ -33,6 +33,19 @@ namespace G
         public bool IsUser => User != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickUser(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.UserMessage? value)
+        {
+            value = User;
+            return IsUser;
+        }
+
+        /// <summary>
         /// A message from the assistant role can contain text and tool call information.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -48,6 +61,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Assistant))]
 #endif
         public bool IsAssistant => Assistant != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickAssistant(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.AssistantMessage? value)
+        {
+            value = Assistant;
+            return IsAssistant;
+        }
 
         /// <summary>
         /// A message from the system.
@@ -67,6 +93,19 @@ namespace G
         public bool IsSystem => System != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSystem(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.SystemMessage? value)
+        {
+            value = System;
+            return IsSystem;
+        }
+
+        /// <summary>
         /// A message with Tool outputs.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -82,6 +121,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Tool))]
 #endif
         public bool IsTool => Tool != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickTool(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ToolMessageV2? value)
+        {
+            value = Tool;
+            return IsTool;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -205,10 +257,10 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.UserMessage?, TResult>? user = null,
-            global::System.Func<global::G.AssistantMessage?, TResult>? assistant = null,
-            global::System.Func<global::G.SystemMessage?, TResult>? system = null,
-            global::System.Func<global::G.ToolMessageV2?, TResult>? tool = null,
+            global::System.Func<global::G.UserMessage, TResult>? user = null,
+            global::System.Func<global::G.AssistantMessage, TResult>? assistant = null,
+            global::System.Func<global::G.SystemMessage, TResult>? system = null,
+            global::System.Func<global::G.ToolMessageV2, TResult>? tool = null,
             bool validate = true)
         {
             if (validate)
@@ -240,10 +292,46 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.UserMessage?>? user = null,
-            global::System.Action<global::G.AssistantMessage?>? assistant = null,
-            global::System.Action<global::G.SystemMessage?>? system = null,
-            global::System.Action<global::G.ToolMessageV2?>? tool = null,
+            global::System.Action<global::G.UserMessage>? user = null,
+
+            global::System.Action<global::G.AssistantMessage>? assistant = null,
+
+            global::System.Action<global::G.SystemMessage>? system = null,
+
+            global::System.Action<global::G.ToolMessageV2>? tool = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsUser)
+            {
+                user?.Invoke(User!);
+            }
+            else if (IsAssistant)
+            {
+                assistant?.Invoke(Assistant!);
+            }
+            else if (IsSystem)
+            {
+                system?.Invoke(System!);
+            }
+            else if (IsTool)
+            {
+                tool?.Invoke(Tool!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.UserMessage>? user = null,
+            global::System.Action<global::G.AssistantMessage>? assistant = null,
+            global::System.Action<global::G.SystemMessage>? system = null,
+            global::System.Action<global::G.ToolMessageV2>? tool = null,
             bool validate = true)
         {
             if (validate)

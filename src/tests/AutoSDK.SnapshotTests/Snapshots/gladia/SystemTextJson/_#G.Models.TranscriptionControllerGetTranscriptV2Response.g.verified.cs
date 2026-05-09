@@ -35,6 +35,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickPreRecorded(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.PreRecordedResponse? value)
+        {
+            value = PreRecorded;
+            return IsPreRecorded;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.StreamingResponse? Live { get; init; }
 #else
@@ -48,6 +61,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Live))]
 #endif
         public bool IsLive => Live != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickLive(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.StreamingResponse? value)
+        {
+            value = Live;
+            return IsLive;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -127,8 +153,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.PreRecordedResponse?, TResult>? preRecorded = null,
-            global::System.Func<global::G.StreamingResponse?, TResult>? live = null,
+            global::System.Func<global::G.PreRecordedResponse, TResult>? preRecorded = null,
+            global::System.Func<global::G.StreamingResponse, TResult>? live = null,
             bool validate = true)
         {
             if (validate)
@@ -152,8 +178,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.PreRecordedResponse?>? preRecorded = null,
-            global::System.Action<global::G.StreamingResponse?>? live = null,
+            global::System.Action<global::G.PreRecordedResponse>? preRecorded = null,
+
+            global::System.Action<global::G.StreamingResponse>? live = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsPreRecorded)
+            {
+                preRecorded?.Invoke(PreRecorded!);
+            }
+            else if (IsLive)
+            {
+                live?.Invoke(Live!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.PreRecordedResponse>? preRecorded = null,
+            global::System.Action<global::G.StreamingResponse>? live = null,
             bool validate = true)
         {
             if (validate)

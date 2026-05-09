@@ -29,6 +29,23 @@ namespace G
         /// <param name="agentId">
         /// The agent ID to create a conversation for
         /// </param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.Conversation>> CreateConversationAsResponseAsync(
+            string agentId,
+
+            global::G.CreateConversation request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create Conversation<br/>
+        /// Create a new conversation for an agent.
+        /// </summary>
+        /// <param name="agentId">
+        /// The agent ID to create a conversation for
+        /// </param>
         /// <param name="summary">
         /// A summary of the conversation.
         /// </param>

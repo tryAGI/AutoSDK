@@ -34,6 +34,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TextToAvatar))]
 #endif
         public bool IsTextToAvatar => TextToAvatar != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickTextToAvatar(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.DIDTextToAvatarOptions? value)
+        {
+            value = TextToAvatar;
+            return IsTextToAvatar;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -91,7 +104,7 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.DIDTextToAvatarOptions?, TResult>? textToAvatar = null,
+            global::System.Func<global::G.DIDTextToAvatarOptions, TResult>? textToAvatar = null,
             bool validate = true)
         {
             if (validate)
@@ -111,7 +124,25 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.DIDTextToAvatarOptions?>? textToAvatar = null,
+            global::System.Action<global::G.DIDTextToAvatarOptions>? textToAvatar = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsTextToAvatar)
+            {
+                textToAvatar?.Invoke(TextToAvatar!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.DIDTextToAvatarOptions>? textToAvatar = null,
             bool validate = true)
         {
             if (validate)

@@ -27,6 +27,22 @@ namespace G
         /// <param name="modelId">
         /// Default Value: embedding-001
         /// </param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.EmbedContentResponse>> EmbedContentAsResponseAsync(
+
+            global::G.EmbedContentRequest request,
+            string modelId = "embedding-001",
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Generates an embedding from the model given an input `Content`.
+        /// </summary>
+        /// <param name="modelId">
+        /// Default Value: embedding-001
+        /// </param>
         /// <param name="title">
         /// Optional. An optional title for the text. Only applicable when TaskType is `RETRIEVAL_DOCUMENT`. Note: Specifying a `title` for `RETRIEVAL_DOCUMENT` provides better quality embeddings for retrieval.
         /// </param>

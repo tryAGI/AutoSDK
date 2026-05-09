@@ -39,6 +39,29 @@ namespace G
         /// The security alert number.<br/>
         /// Included only in responses
         /// </param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.CodeScanningAlert>> CodeScanningUpdateAlertAsResponseAsync(
+            string owner,
+            string repo,
+            int alertNumber,
+
+            global::G.CodeScanningUpdateAlertRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Update a code scanning alert<br/>
+        /// Updates the status of a single code scanning alert.<br/>
+        /// OAuth app tokens and personal access tokens (classic) need the `security_events` scope to use this endpoint with private or public repositories, or the `public_repo` scope to use this endpoint with only public repositories.
+        /// </summary>
+        /// <param name="owner"></param>
+        /// <param name="repo"></param>
+        /// <param name="alertNumber">
+        /// The security alert number.<br/>
+        /// Included only in responses
+        /// </param>
         /// <param name="state">
         /// Sets the state of the code scanning alert. You must provide `dismissed_reason` when you set the state to `dismissed`.
         /// </param>

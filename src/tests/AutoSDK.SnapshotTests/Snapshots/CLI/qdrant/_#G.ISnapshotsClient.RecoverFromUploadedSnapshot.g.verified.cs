@@ -40,6 +40,30 @@ namespace G
         /// `NoSync` means - restore snapshot without *any* additional synchronization. `Snapshot` means - prefer snapshot data over the current state. `Replica` means - prefer existing data over the snapshot.
         /// </param>
         /// <param name="checksum"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.RecoverFromUploadedSnapshotResponse>> RecoverFromUploadedSnapshotAsResponseAsync(
+            string collectionName,
+
+            global::G.RecoverFromUploadedSnapshotRequest request,
+            bool? wait = default,
+            global::G.SnapshotPriority? priority = default,
+            string? checksum = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Recover from an uploaded snapshot<br/>
+        /// Recover local collection data from an uploaded snapshot. This will overwrite any data, stored on this node, for the collection. If collection does not exist - it will be created.
+        /// </summary>
+        /// <param name="collectionName"></param>
+        /// <param name="wait"></param>
+        /// <param name="priority">
+        /// Defines source of truth for snapshot recovery:<br/>
+        /// `NoSync` means - restore snapshot without *any* additional synchronization. `Snapshot` means - prefer snapshot data over the current state. `Replica` means - prefer existing data over the snapshot.
+        /// </param>
+        /// <param name="checksum"></param>
         /// <param name="snapshot"></param>
         /// <param name="snapshotname"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -51,6 +75,61 @@ namespace G
             global::G.SnapshotPriority? priority = default,
             string? checksum = default,
             byte[]? snapshot = default,
+            string? snapshotname = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Recover from an uploaded snapshot<br/>
+        /// Recover local collection data from an uploaded snapshot. This will overwrite any data, stored on this node, for the collection. If collection does not exist - it will be created.
+        /// </summary>
+        /// <param name="collectionName"></param>
+        /// <param name="wait"></param>
+        /// <param name="priority">
+        /// Defines source of truth for snapshot recovery:<br/>
+        /// `NoSync` means - restore snapshot without *any* additional synchronization. `Snapshot` means - prefer snapshot data over the current state. `Replica` means - prefer existing data over the snapshot.
+        /// </param>
+        /// <param name="checksum"></param>
+        /// <param name="snapshot">
+        /// The stream to send as the multipart 'snapshot' file part.
+        /// </param>
+        /// <param name="snapshotname"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.RecoverFromUploadedSnapshotResponse> RecoverFromUploadedSnapshotAsync(
+            string collectionName,
+            bool? wait = default,
+            global::G.SnapshotPriority? priority = default,
+            string? checksum = default,
+            global::System.IO.Stream? snapshot = default,
+            string? snapshotname = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Recover from an uploaded snapshot<br/>
+        /// Recover local collection data from an uploaded snapshot. This will overwrite any data, stored on this node, for the collection. If collection does not exist - it will be created.
+        /// </summary>
+        /// <param name="collectionName"></param>
+        /// <param name="wait"></param>
+        /// <param name="priority">
+        /// Defines source of truth for snapshot recovery:<br/>
+        /// `NoSync` means - restore snapshot without *any* additional synchronization. `Snapshot` means - prefer snapshot data over the current state. `Replica` means - prefer existing data over the snapshot.
+        /// </param>
+        /// <param name="checksum"></param>
+        /// <param name="snapshot">
+        /// The stream to send as the multipart 'snapshot' file part.
+        /// </param>
+        /// <param name="snapshotname"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.RecoverFromUploadedSnapshotResponse>> RecoverFromUploadedSnapshotAsResponseAsync(
+            string collectionName,
+            bool? wait = default,
+            global::G.SnapshotPriority? priority = default,
+            string? checksum = default,
+            global::System.IO.Stream? snapshot = default,
             string? snapshotname = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);

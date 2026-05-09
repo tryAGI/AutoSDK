@@ -13,6 +13,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public string? Model { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CreateImageToVideoRequestGen4Turbo? Gen4Turbo { get; init; }
 #else
@@ -26,6 +31,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Gen4Turbo))]
 #endif
         public bool IsGen4Turbo => Gen4Turbo != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickGen4Turbo(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateImageToVideoRequestGen4Turbo? value)
+        {
+            value = Gen4Turbo;
+            return IsGen4Turbo;
+        }
 
         /// <summary>
         /// 
@@ -47,6 +65,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickVeo31(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateImageToVideoRequestVeo31? value)
+        {
+            value = Veo31;
+            return IsVeo31;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CreateImageToVideoRequestGen3aTurbo? Gen3aTurbo { get; init; }
 #else
@@ -60,6 +91,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Gen3aTurbo))]
 #endif
         public bool IsGen3aTurbo => Gen3aTurbo != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickGen3aTurbo(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateImageToVideoRequestGen3aTurbo? value)
+        {
+            value = Gen3aTurbo;
+            return IsGen3aTurbo;
+        }
 
         /// <summary>
         /// 
@@ -81,6 +125,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickVeo31Fast(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateImageToVideoRequestVeo31Fast? value)
+        {
+            value = Veo31Fast;
+            return IsVeo31Fast;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CreateImageToVideoRequestVeo3? Veo3 { get; init; }
 #else
@@ -94,6 +151,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Veo3))]
 #endif
         public bool IsVeo3 => Veo3 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickVeo3(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateImageToVideoRequestVeo3? value)
+        {
+            value = Veo3;
+            return IsVeo3;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -188,6 +258,7 @@ namespace G
         /// 
         /// </summary>
         public CreateImageToVideoRequest(
+            string? model,
             global::G.CreateImageToVideoRequestGen4Turbo? gen4Turbo,
             global::G.CreateImageToVideoRequestVeo31? veo31,
             global::G.CreateImageToVideoRequestGen3aTurbo? gen3aTurbo,
@@ -195,6 +266,8 @@ namespace G
             global::G.CreateImageToVideoRequestVeo3? veo3
             )
         {
+            Model = model;
+
             Gen4Turbo = gen4Turbo;
             Veo31 = veo31;
             Gen3aTurbo = gen3aTurbo;
@@ -236,11 +309,11 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.CreateImageToVideoRequestGen4Turbo?, TResult>? gen4Turbo = null,
-            global::System.Func<global::G.CreateImageToVideoRequestVeo31?, TResult>? veo31 = null,
-            global::System.Func<global::G.CreateImageToVideoRequestGen3aTurbo?, TResult>? gen3aTurbo = null,
-            global::System.Func<global::G.CreateImageToVideoRequestVeo31Fast?, TResult>? veo31Fast = null,
-            global::System.Func<global::G.CreateImageToVideoRequestVeo3?, TResult>? veo3 = null,
+            global::System.Func<global::G.CreateImageToVideoRequestGen4Turbo, TResult>? gen4Turbo = null,
+            global::System.Func<global::G.CreateImageToVideoRequestVeo31, TResult>? veo31 = null,
+            global::System.Func<global::G.CreateImageToVideoRequestGen3aTurbo, TResult>? gen3aTurbo = null,
+            global::System.Func<global::G.CreateImageToVideoRequestVeo31Fast, TResult>? veo31Fast = null,
+            global::System.Func<global::G.CreateImageToVideoRequestVeo3, TResult>? veo3 = null,
             bool validate = true)
         {
             if (validate)
@@ -276,11 +349,53 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.CreateImageToVideoRequestGen4Turbo?>? gen4Turbo = null,
-            global::System.Action<global::G.CreateImageToVideoRequestVeo31?>? veo31 = null,
-            global::System.Action<global::G.CreateImageToVideoRequestGen3aTurbo?>? gen3aTurbo = null,
-            global::System.Action<global::G.CreateImageToVideoRequestVeo31Fast?>? veo31Fast = null,
-            global::System.Action<global::G.CreateImageToVideoRequestVeo3?>? veo3 = null,
+            global::System.Action<global::G.CreateImageToVideoRequestGen4Turbo>? gen4Turbo = null,
+
+            global::System.Action<global::G.CreateImageToVideoRequestVeo31>? veo31 = null,
+
+            global::System.Action<global::G.CreateImageToVideoRequestGen3aTurbo>? gen3aTurbo = null,
+
+            global::System.Action<global::G.CreateImageToVideoRequestVeo31Fast>? veo31Fast = null,
+
+            global::System.Action<global::G.CreateImageToVideoRequestVeo3>? veo3 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsGen4Turbo)
+            {
+                gen4Turbo?.Invoke(Gen4Turbo!);
+            }
+            else if (IsVeo31)
+            {
+                veo31?.Invoke(Veo31!);
+            }
+            else if (IsGen3aTurbo)
+            {
+                gen3aTurbo?.Invoke(Gen3aTurbo!);
+            }
+            else if (IsVeo31Fast)
+            {
+                veo31Fast?.Invoke(Veo31Fast!);
+            }
+            else if (IsVeo3)
+            {
+                veo3?.Invoke(Veo3!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.CreateImageToVideoRequestGen4Turbo>? gen4Turbo = null,
+            global::System.Action<global::G.CreateImageToVideoRequestVeo31>? veo31 = null,
+            global::System.Action<global::G.CreateImageToVideoRequestGen3aTurbo>? gen3aTurbo = null,
+            global::System.Action<global::G.CreateImageToVideoRequestVeo31Fast>? veo31Fast = null,
+            global::System.Action<global::G.CreateImageToVideoRequestVeo3>? veo3 = null,
             bool validate = true)
         {
             if (validate)

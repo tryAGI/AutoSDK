@@ -13,6 +13,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public string? EventType { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ResearchEventDtoClassVariant3Variant1? TaskDefinition { get; init; }
 #else
@@ -26,6 +31,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TaskDefinition))]
 #endif
         public bool IsTaskDefinition => TaskDefinition != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickTaskDefinition(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ResearchEventDtoClassVariant3Variant1? value)
+        {
+            value = TaskDefinition;
+            return IsTaskDefinition;
+        }
 
         /// <summary>
         /// 
@@ -47,6 +65,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickTaskOperation(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ResearchEventDtoClassVariant3Variant2? value)
+        {
+            value = TaskOperation;
+            return IsTaskOperation;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ResearchEventDtoClassVariant3Variant3? TaskOutput { get; init; }
 #else
@@ -60,6 +91,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TaskOutput))]
 #endif
         public bool IsTaskOutput => TaskOutput != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickTaskOutput(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ResearchEventDtoClassVariant3Variant3? value)
+        {
+            value = TaskOutput;
+            return IsTaskOutput;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -118,11 +162,14 @@ namespace G
         /// 
         /// </summary>
         public ResearchEventDtoClassVariant3(
+            string? eventType,
             global::G.ResearchEventDtoClassVariant3Variant1? taskDefinition,
             global::G.ResearchEventDtoClassVariant3Variant2? taskOperation,
             global::G.ResearchEventDtoClassVariant3Variant3? taskOutput
             )
         {
+            EventType = eventType;
+
             TaskDefinition = taskDefinition;
             TaskOperation = taskOperation;
             TaskOutput = taskOutput;
@@ -158,9 +205,9 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.ResearchEventDtoClassVariant3Variant1?, TResult>? taskDefinition = null,
-            global::System.Func<global::G.ResearchEventDtoClassVariant3Variant2?, TResult>? taskOperation = null,
-            global::System.Func<global::G.ResearchEventDtoClassVariant3Variant3?, TResult>? taskOutput = null,
+            global::System.Func<global::G.ResearchEventDtoClassVariant3Variant1, TResult>? taskDefinition = null,
+            global::System.Func<global::G.ResearchEventDtoClassVariant3Variant2, TResult>? taskOperation = null,
+            global::System.Func<global::G.ResearchEventDtoClassVariant3Variant3, TResult>? taskOutput = null,
             bool validate = true)
         {
             if (validate)
@@ -188,9 +235,39 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.ResearchEventDtoClassVariant3Variant1?>? taskDefinition = null,
-            global::System.Action<global::G.ResearchEventDtoClassVariant3Variant2?>? taskOperation = null,
-            global::System.Action<global::G.ResearchEventDtoClassVariant3Variant3?>? taskOutput = null,
+            global::System.Action<global::G.ResearchEventDtoClassVariant3Variant1>? taskDefinition = null,
+
+            global::System.Action<global::G.ResearchEventDtoClassVariant3Variant2>? taskOperation = null,
+
+            global::System.Action<global::G.ResearchEventDtoClassVariant3Variant3>? taskOutput = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsTaskDefinition)
+            {
+                taskDefinition?.Invoke(TaskDefinition!);
+            }
+            else if (IsTaskOperation)
+            {
+                taskOperation?.Invoke(TaskOperation!);
+            }
+            else if (IsTaskOutput)
+            {
+                taskOutput?.Invoke(TaskOutput!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.ResearchEventDtoClassVariant3Variant1>? taskDefinition = null,
+            global::System.Action<global::G.ResearchEventDtoClassVariant3Variant2>? taskOperation = null,
+            global::System.Action<global::G.ResearchEventDtoClassVariant3Variant3>? taskOutput = null,
             bool validate = true)
         {
             if (validate)

@@ -33,6 +33,19 @@ namespace G
         public bool IsComment => Comment != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickComment(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.Comment? value)
+        {
+            value = Comment;
+            return IsComment;
+        }
+
+        /// <summary>
         /// Comment Serializer with FSM state support.<br/>
         /// Note: The 'state' field will be populated from the queryset annotation<br/>
         /// if present, preventing N+1 queries. Use .with_state() on your queryset.<br/>
@@ -53,6 +66,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SerializerWithUser))]
 #endif
         public bool IsSerializerWithUser => SerializerWithUser != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSerializerWithUser(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CommentSerializerWithExpandedUser? value)
+        {
+            value = SerializerWithUser;
+            return IsSerializerWithUser;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -129,8 +155,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.Comment?, TResult>? comment = null,
-            global::System.Func<global::G.CommentSerializerWithExpandedUser?, TResult>? serializerWithUser = null,
+            global::System.Func<global::G.Comment, TResult>? comment = null,
+            global::System.Func<global::G.CommentSerializerWithExpandedUser, TResult>? serializerWithUser = null,
             bool validate = true)
         {
             if (validate)
@@ -154,8 +180,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.Comment?>? comment = null,
-            global::System.Action<global::G.CommentSerializerWithExpandedUser?>? serializerWithUser = null,
+            global::System.Action<global::G.Comment>? comment = null,
+
+            global::System.Action<global::G.CommentSerializerWithExpandedUser>? serializerWithUser = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsComment)
+            {
+                comment?.Invoke(Comment!);
+            }
+            else if (IsSerializerWithUser)
+            {
+                serializerWithUser?.Invoke(SerializerWithUser!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.Comment>? comment = null,
+            global::System.Action<global::G.CommentSerializerWithExpandedUser>? serializerWithUser = null,
             bool validate = true)
         {
             if (validate)

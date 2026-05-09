@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickMessagesRequestContextManagementEditsItemsOneOf0Trigger0(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.MessagesRequestContextManagementEditsItemsOneOf0Trigger0? value)
+        {
+            value = MessagesRequestContextManagementEditsItemsOneOf0Trigger0;
+            return IsMessagesRequestContextManagementEditsItemsOneOf0Trigger0;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.MessagesRequestContextManagementEditsItemsOneOf0Trigger1? MessagesRequestContextManagementEditsItemsOneOf0Trigger1 { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessagesRequestContextManagementEditsItemsOneOf0Trigger1))]
 #endif
         public bool IsMessagesRequestContextManagementEditsItemsOneOf0Trigger1 => MessagesRequestContextManagementEditsItemsOneOf0Trigger1 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMessagesRequestContextManagementEditsItemsOneOf0Trigger1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.MessagesRequestContextManagementEditsItemsOneOf0Trigger1? value)
+        {
+            value = MessagesRequestContextManagementEditsItemsOneOf0Trigger1;
+            return IsMessagesRequestContextManagementEditsItemsOneOf0Trigger1;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -119,8 +145,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.MessagesRequestContextManagementEditsItemsOneOf0Trigger0?, TResult>? messagesRequestContextManagementEditsItemsOneOf0Trigger0 = null,
-            global::System.Func<global::G.MessagesRequestContextManagementEditsItemsOneOf0Trigger1?, TResult>? messagesRequestContextManagementEditsItemsOneOf0Trigger1 = null,
+            global::System.Func<global::G.MessagesRequestContextManagementEditsItemsOneOf0Trigger0, TResult>? messagesRequestContextManagementEditsItemsOneOf0Trigger0 = null,
+            global::System.Func<global::G.MessagesRequestContextManagementEditsItemsOneOf0Trigger1, TResult>? messagesRequestContextManagementEditsItemsOneOf0Trigger1 = null,
             bool validate = true)
         {
             if (validate)
@@ -144,8 +170,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.MessagesRequestContextManagementEditsItemsOneOf0Trigger0?>? messagesRequestContextManagementEditsItemsOneOf0Trigger0 = null,
-            global::System.Action<global::G.MessagesRequestContextManagementEditsItemsOneOf0Trigger1?>? messagesRequestContextManagementEditsItemsOneOf0Trigger1 = null,
+            global::System.Action<global::G.MessagesRequestContextManagementEditsItemsOneOf0Trigger0>? messagesRequestContextManagementEditsItemsOneOf0Trigger0 = null,
+
+            global::System.Action<global::G.MessagesRequestContextManagementEditsItemsOneOf0Trigger1>? messagesRequestContextManagementEditsItemsOneOf0Trigger1 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsMessagesRequestContextManagementEditsItemsOneOf0Trigger0)
+            {
+                messagesRequestContextManagementEditsItemsOneOf0Trigger0?.Invoke(MessagesRequestContextManagementEditsItemsOneOf0Trigger0!);
+            }
+            else if (IsMessagesRequestContextManagementEditsItemsOneOf0Trigger1)
+            {
+                messagesRequestContextManagementEditsItemsOneOf0Trigger1?.Invoke(MessagesRequestContextManagementEditsItemsOneOf0Trigger1!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.MessagesRequestContextManagementEditsItemsOneOf0Trigger0>? messagesRequestContextManagementEditsItemsOneOf0Trigger0 = null,
+            global::System.Action<global::G.MessagesRequestContextManagementEditsItemsOneOf0Trigger1>? messagesRequestContextManagementEditsItemsOneOf0Trigger1 = null,
             bool validate = true)
         {
             if (validate)

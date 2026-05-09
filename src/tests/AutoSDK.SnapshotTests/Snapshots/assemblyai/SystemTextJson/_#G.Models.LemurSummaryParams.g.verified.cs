@@ -32,6 +32,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickBase(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.LemurBaseParams? value)
+        {
+            value = Base;
+            return IsBase;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.LemurSummaryParamsVariant2? LemurSummaryParamsVariant2 { get; init; }
 #else
@@ -45,6 +58,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(LemurSummaryParamsVariant2))]
 #endif
         public bool IsLemurSummaryParamsVariant2 => LemurSummaryParamsVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickLemurSummaryParamsVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.LemurSummaryParamsVariant2? value)
+        {
+            value = LemurSummaryParamsVariant2;
+            return IsLemurSummaryParamsVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -121,8 +147,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.LemurBaseParams?, TResult>? @base = null,
-            global::System.Func<global::G.LemurSummaryParamsVariant2?, TResult>? lemurSummaryParamsVariant2 = null,
+            global::System.Func<global::G.LemurBaseParams, TResult>? @base = null,
+            global::System.Func<global::G.LemurSummaryParamsVariant2, TResult>? lemurSummaryParamsVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -146,8 +172,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.LemurBaseParams?>? @base = null,
-            global::System.Action<global::G.LemurSummaryParamsVariant2?>? lemurSummaryParamsVariant2 = null,
+            global::System.Action<global::G.LemurBaseParams>? @base = null,
+
+            global::System.Action<global::G.LemurSummaryParamsVariant2>? lemurSummaryParamsVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsBase)
+            {
+                @base?.Invoke(Base!);
+            }
+            else if (IsLemurSummaryParamsVariant2)
+            {
+                lemurSummaryParamsVariant2?.Invoke(LemurSummaryParamsVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.LemurBaseParams>? @base = null,
+            global::System.Action<global::G.LemurSummaryParamsVariant2>? lemurSummaryParamsVariant2 = null,
             bool validate = true)
         {
             if (validate)

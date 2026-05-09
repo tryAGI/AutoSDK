@@ -24,6 +24,14 @@ namespace G.JsonConverters
                 foreach (var __jsonProp in __jsonDocument.RootElement.EnumerateObject())
                 {
                     __jsonProps.Add(__jsonProp.Name);
+                    if (__jsonProp.Value.ValueKind == global::System.Text.Json.JsonValueKind.Object)
+                    {
+                        foreach (var __nestedJsonProp in __jsonProp.Value.EnumerateObject())
+                        {
+                            __jsonProps.Add(__jsonProp.Name + "." + __nestedJsonProp.Name);
+                        }
+                    }
+
                 }
             }
 
@@ -34,15 +42,23 @@ namespace G.JsonConverters
             if (__jsonProps.Contains("continue")) __score0++;
             if (__jsonProps.Contains("flush")) __score0++;
             if (__jsonProps.Contains("generation_config")) __score0++;
+            if (__jsonProps.Contains("generation_config.emotion")) __score0++;
+            if (__jsonProps.Contains("generation_config.speed")) __score0++;
+            if (__jsonProps.Contains("generation_config.volume")) __score0++;
             if (__jsonProps.Contains("language")) __score0++;
             if (__jsonProps.Contains("max_buffer_delay_ms")) __score0++;
             if (__jsonProps.Contains("model_id")) __score0++;
             if (__jsonProps.Contains("output_format")) __score0++;
+            if (__jsonProps.Contains("output_format.container")) __score0++;
+            if (__jsonProps.Contains("output_format.encoding")) __score0++;
+            if (__jsonProps.Contains("output_format.sample_rate")) __score0++;
             if (__jsonProps.Contains("pronunciation_dict_id")) __score0++;
             if (__jsonProps.Contains("speed")) __score0++;
             if (__jsonProps.Contains("transcript")) __score0++;
             if (__jsonProps.Contains("use_normalized_timestamps")) __score0++;
             if (__jsonProps.Contains("voice")) __score0++;
+            if (__jsonProps.Contains("voice.id")) __score0++;
+            if (__jsonProps.Contains("voice.mode")) __score0++;
             var __score1 = 0;
             if (__jsonProps.Contains("cancel")) __score1++;
             if (__jsonProps.Contains("context_id")) __score1++;

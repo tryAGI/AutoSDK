@@ -31,6 +31,24 @@ namespace G
         /// Invalid tokens will return `404 NOT FOUND`.
         /// </summary>
         /// <param name="clientId"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.Authorization>> AppsScopeTokenAsResponseAsync(
+            string clientId,
+
+            global::G.AppsScopeTokenRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create a scoped access token<br/>
+        /// Use a non-scoped user access token to create a repository-scoped and/or permission-scoped user access token. You can specify<br/>
+        /// which repositories the token can access and which permissions are granted to the<br/>
+        /// token.<br/>
+        /// Invalid tokens will return `404 NOT FOUND`.
+        /// </summary>
+        /// <param name="clientId"></param>
         /// <param name="accessToken">
         /// The access token used to authenticate to the GitHub API.<br/>
         /// Example: e72e16c7e42f292c6912e7710c838347ae178b4a

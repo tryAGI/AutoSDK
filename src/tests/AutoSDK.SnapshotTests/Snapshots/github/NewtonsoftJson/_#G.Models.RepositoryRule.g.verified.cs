@@ -11,6 +11,11 @@ namespace G
     public readonly partial struct RepositoryRule : global::System.IEquatable<RepositoryRule>
     {
         /// <summary>
+        /// 
+        /// </summary>
+        public string? Type { get; }
+
+        /// <summary>
         /// Only allow users with bypass permission to create matching refs.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -26,6 +31,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Creation))]
 #endif
         public bool IsCreation => Creation != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickCreation(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.RepositoryRuleCreation? value)
+        {
+            value = Creation;
+            return IsCreation;
+        }
 
         /// <summary>
         /// Only allow users with bypass permission to update matching refs.
@@ -45,6 +63,19 @@ namespace G
         public bool IsUpdate => Update != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickUpdate(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.RepositoryRuleUpdate? value)
+        {
+            value = Update;
+            return IsUpdate;
+        }
+
+        /// <summary>
         /// Only allow users with bypass permissions to delete matching refs.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -60,6 +91,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Deletion))]
 #endif
         public bool IsDeletion => Deletion != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickDeletion(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.RepositoryRuleDeletion? value)
+        {
+            value = Deletion;
+            return IsDeletion;
+        }
 
         /// <summary>
         /// Prevent merge commits from being pushed to matching refs.
@@ -79,6 +123,19 @@ namespace G
         public bool IsRequiredLinearHistory => RequiredLinearHistory != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickRequiredLinearHistory(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.RepositoryRuleRequiredLinearHistory? value)
+        {
+            value = RequiredLinearHistory;
+            return IsRequiredLinearHistory;
+        }
+
+        /// <summary>
         /// Merges must be performed via a merge queue.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -94,6 +151,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MergeQueue))]
 #endif
         public bool IsMergeQueue => MergeQueue != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMergeQueue(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.RepositoryRuleMergeQueue? value)
+        {
+            value = MergeQueue;
+            return IsMergeQueue;
+        }
 
         /// <summary>
         /// Choose which environments must be successfully deployed to before refs can be pushed into a ref that matches this rule.
@@ -113,6 +183,19 @@ namespace G
         public bool IsRequiredDeployments => RequiredDeployments != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickRequiredDeployments(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.RepositoryRuleRequiredDeployments? value)
+        {
+            value = RequiredDeployments;
+            return IsRequiredDeployments;
+        }
+
+        /// <summary>
         /// Commits pushed to matching refs must have verified signatures.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -128,6 +211,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RequiredSignatures))]
 #endif
         public bool IsRequiredSignatures => RequiredSignatures != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickRequiredSignatures(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.RepositoryRuleRequiredSignatures? value)
+        {
+            value = RequiredSignatures;
+            return IsRequiredSignatures;
+        }
 
         /// <summary>
         /// Require all commits be made to a non-target branch and submitted via a pull request before they can be merged.
@@ -147,6 +243,19 @@ namespace G
         public bool IsPullRequest => PullRequest != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickPullRequest(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.RepositoryRulePullRequest? value)
+        {
+            value = PullRequest;
+            return IsPullRequest;
+        }
+
+        /// <summary>
         /// Choose which status checks must pass before the ref is updated. When enabled, commits must first be pushed to another ref where the checks pass.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -162,6 +271,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RequiredStatusChecks))]
 #endif
         public bool IsRequiredStatusChecks => RequiredStatusChecks != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickRequiredStatusChecks(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.RepositoryRuleRequiredStatusChecks? value)
+        {
+            value = RequiredStatusChecks;
+            return IsRequiredStatusChecks;
+        }
 
         /// <summary>
         /// Prevent users with push access from force pushing to refs.
@@ -181,6 +303,19 @@ namespace G
         public bool IsNonFastForward => NonFastForward != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickNonFastForward(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.RepositoryRuleNonFastForward? value)
+        {
+            value = NonFastForward;
+            return IsNonFastForward;
+        }
+
+        /// <summary>
         /// Parameters to be used for the commit_message_pattern rule
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -196,6 +331,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CommitMessagePattern))]
 #endif
         public bool IsCommitMessagePattern => CommitMessagePattern != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickCommitMessagePattern(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.RepositoryRuleCommitMessagePattern? value)
+        {
+            value = CommitMessagePattern;
+            return IsCommitMessagePattern;
+        }
 
         /// <summary>
         /// Parameters to be used for the commit_author_email_pattern rule
@@ -215,6 +363,19 @@ namespace G
         public bool IsCommitAuthorEmailPattern => CommitAuthorEmailPattern != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickCommitAuthorEmailPattern(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.RepositoryRuleCommitAuthorEmailPattern? value)
+        {
+            value = CommitAuthorEmailPattern;
+            return IsCommitAuthorEmailPattern;
+        }
+
+        /// <summary>
         /// Parameters to be used for the committer_email_pattern rule
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -230,6 +391,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CommitterEmailPattern))]
 #endif
         public bool IsCommitterEmailPattern => CommitterEmailPattern != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickCommitterEmailPattern(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.RepositoryRuleCommitterEmailPattern? value)
+        {
+            value = CommitterEmailPattern;
+            return IsCommitterEmailPattern;
+        }
 
         /// <summary>
         /// Parameters to be used for the branch_name_pattern rule
@@ -249,6 +423,19 @@ namespace G
         public bool IsBranchNamePattern => BranchNamePattern != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickBranchNamePattern(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.RepositoryRuleBranchNamePattern? value)
+        {
+            value = BranchNamePattern;
+            return IsBranchNamePattern;
+        }
+
+        /// <summary>
         /// Parameters to be used for the tag_name_pattern rule
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -264,6 +451,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TagNamePattern))]
 #endif
         public bool IsTagNamePattern => TagNamePattern != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickTagNamePattern(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.RepositoryRuleTagNamePattern? value)
+        {
+            value = TagNamePattern;
+            return IsTagNamePattern;
+        }
 
         /// <summary>
         /// Prevent commits that include changes in specified file paths from being pushed to the commit graph.
@@ -283,6 +483,19 @@ namespace G
         public bool IsFilePathRestriction => FilePathRestriction != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFilePathRestriction(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.RepositoryRuleFilePathRestriction? value)
+        {
+            value = FilePathRestriction;
+            return IsFilePathRestriction;
+        }
+
+        /// <summary>
         /// Prevent commits that include file paths that exceed a specified character limit from being pushed to the commit graph.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -298,6 +511,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MaxFilePathLength))]
 #endif
         public bool IsMaxFilePathLength => MaxFilePathLength != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMaxFilePathLength(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.RepositoryRuleMaxFilePathLength? value)
+        {
+            value = MaxFilePathLength;
+            return IsMaxFilePathLength;
+        }
 
         /// <summary>
         /// Prevent commits that include files with specified file extensions from being pushed to the commit graph.
@@ -317,6 +543,19 @@ namespace G
         public bool IsFileExtensionRestriction => FileExtensionRestriction != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFileExtensionRestriction(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.RepositoryRuleFileExtensionRestriction? value)
+        {
+            value = FileExtensionRestriction;
+            return IsFileExtensionRestriction;
+        }
+
+        /// <summary>
         /// Prevent commits that exceed a specified file size limit from being pushed to the commit.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -332,6 +571,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MaxFileSize))]
 #endif
         public bool IsMaxFileSize => MaxFileSize != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMaxFileSize(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.RepositoryRuleMaxFileSize? value)
+        {
+            value = MaxFileSize;
+            return IsMaxFileSize;
+        }
 
         /// <summary>
         /// Require all changes made to a targeted branch to pass the specified workflows before they can be merged.
@@ -351,6 +603,19 @@ namespace G
         public bool IsWorkflows => Workflows != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickWorkflows(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.RepositoryRuleWorkflows? value)
+        {
+            value = Workflows;
+            return IsWorkflows;
+        }
+
+        /// <summary>
         /// Choose which tools must provide code scanning results before the reference is updated. When configured, code scanning must be enabled and have results for both the commit and the reference being updated.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -366,6 +631,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CodeScanning))]
 #endif
         public bool IsCodeScanning => CodeScanning != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickCodeScanning(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.RepositoryRuleCodeScanning? value)
+        {
+            value = CodeScanning;
+            return IsCodeScanning;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -748,6 +1026,7 @@ namespace G
         /// 
         /// </summary>
         public RepositoryRule(
+            string? type,
             global::G.RepositoryRuleCreation? creation,
             global::G.RepositoryRuleUpdate? update,
             global::G.RepositoryRuleDeletion? deletion,
@@ -771,6 +1050,8 @@ namespace G
             global::G.RepositoryRuleCodeScanning? codeScanning
             )
         {
+            Type = type;
+
             Creation = creation;
             Update = update;
             Deletion = deletion;
@@ -860,27 +1141,27 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.RepositoryRuleCreation?, TResult>? creation = null,
-            global::System.Func<global::G.RepositoryRuleUpdate?, TResult>? update = null,
-            global::System.Func<global::G.RepositoryRuleDeletion?, TResult>? deletion = null,
-            global::System.Func<global::G.RepositoryRuleRequiredLinearHistory?, TResult>? requiredLinearHistory = null,
-            global::System.Func<global::G.RepositoryRuleMergeQueue?, TResult>? mergeQueue = null,
-            global::System.Func<global::G.RepositoryRuleRequiredDeployments?, TResult>? requiredDeployments = null,
-            global::System.Func<global::G.RepositoryRuleRequiredSignatures?, TResult>? requiredSignatures = null,
-            global::System.Func<global::G.RepositoryRulePullRequest?, TResult>? pullRequest = null,
-            global::System.Func<global::G.RepositoryRuleRequiredStatusChecks?, TResult>? requiredStatusChecks = null,
-            global::System.Func<global::G.RepositoryRuleNonFastForward?, TResult>? nonFastForward = null,
-            global::System.Func<global::G.RepositoryRuleCommitMessagePattern?, TResult>? commitMessagePattern = null,
-            global::System.Func<global::G.RepositoryRuleCommitAuthorEmailPattern?, TResult>? commitAuthorEmailPattern = null,
-            global::System.Func<global::G.RepositoryRuleCommitterEmailPattern?, TResult>? committerEmailPattern = null,
-            global::System.Func<global::G.RepositoryRuleBranchNamePattern?, TResult>? branchNamePattern = null,
-            global::System.Func<global::G.RepositoryRuleTagNamePattern?, TResult>? tagNamePattern = null,
-            global::System.Func<global::G.RepositoryRuleFilePathRestriction?, TResult>? filePathRestriction = null,
-            global::System.Func<global::G.RepositoryRuleMaxFilePathLength?, TResult>? maxFilePathLength = null,
-            global::System.Func<global::G.RepositoryRuleFileExtensionRestriction?, TResult>? fileExtensionRestriction = null,
-            global::System.Func<global::G.RepositoryRuleMaxFileSize?, TResult>? maxFileSize = null,
-            global::System.Func<global::G.RepositoryRuleWorkflows?, TResult>? workflows = null,
-            global::System.Func<global::G.RepositoryRuleCodeScanning?, TResult>? codeScanning = null,
+            global::System.Func<global::G.RepositoryRuleCreation, TResult>? creation = null,
+            global::System.Func<global::G.RepositoryRuleUpdate, TResult>? update = null,
+            global::System.Func<global::G.RepositoryRuleDeletion, TResult>? deletion = null,
+            global::System.Func<global::G.RepositoryRuleRequiredLinearHistory, TResult>? requiredLinearHistory = null,
+            global::System.Func<global::G.RepositoryRuleMergeQueue, TResult>? mergeQueue = null,
+            global::System.Func<global::G.RepositoryRuleRequiredDeployments, TResult>? requiredDeployments = null,
+            global::System.Func<global::G.RepositoryRuleRequiredSignatures, TResult>? requiredSignatures = null,
+            global::System.Func<global::G.RepositoryRulePullRequest, TResult>? pullRequest = null,
+            global::System.Func<global::G.RepositoryRuleRequiredStatusChecks, TResult>? requiredStatusChecks = null,
+            global::System.Func<global::G.RepositoryRuleNonFastForward, TResult>? nonFastForward = null,
+            global::System.Func<global::G.RepositoryRuleCommitMessagePattern, TResult>? commitMessagePattern = null,
+            global::System.Func<global::G.RepositoryRuleCommitAuthorEmailPattern, TResult>? commitAuthorEmailPattern = null,
+            global::System.Func<global::G.RepositoryRuleCommitterEmailPattern, TResult>? committerEmailPattern = null,
+            global::System.Func<global::G.RepositoryRuleBranchNamePattern, TResult>? branchNamePattern = null,
+            global::System.Func<global::G.RepositoryRuleTagNamePattern, TResult>? tagNamePattern = null,
+            global::System.Func<global::G.RepositoryRuleFilePathRestriction, TResult>? filePathRestriction = null,
+            global::System.Func<global::G.RepositoryRuleMaxFilePathLength, TResult>? maxFilePathLength = null,
+            global::System.Func<global::G.RepositoryRuleFileExtensionRestriction, TResult>? fileExtensionRestriction = null,
+            global::System.Func<global::G.RepositoryRuleMaxFileSize, TResult>? maxFileSize = null,
+            global::System.Func<global::G.RepositoryRuleWorkflows, TResult>? workflows = null,
+            global::System.Func<global::G.RepositoryRuleCodeScanning, TResult>? codeScanning = null,
             bool validate = true)
         {
             if (validate)
@@ -980,27 +1261,165 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.RepositoryRuleCreation?>? creation = null,
-            global::System.Action<global::G.RepositoryRuleUpdate?>? update = null,
-            global::System.Action<global::G.RepositoryRuleDeletion?>? deletion = null,
-            global::System.Action<global::G.RepositoryRuleRequiredLinearHistory?>? requiredLinearHistory = null,
-            global::System.Action<global::G.RepositoryRuleMergeQueue?>? mergeQueue = null,
-            global::System.Action<global::G.RepositoryRuleRequiredDeployments?>? requiredDeployments = null,
-            global::System.Action<global::G.RepositoryRuleRequiredSignatures?>? requiredSignatures = null,
-            global::System.Action<global::G.RepositoryRulePullRequest?>? pullRequest = null,
-            global::System.Action<global::G.RepositoryRuleRequiredStatusChecks?>? requiredStatusChecks = null,
-            global::System.Action<global::G.RepositoryRuleNonFastForward?>? nonFastForward = null,
-            global::System.Action<global::G.RepositoryRuleCommitMessagePattern?>? commitMessagePattern = null,
-            global::System.Action<global::G.RepositoryRuleCommitAuthorEmailPattern?>? commitAuthorEmailPattern = null,
-            global::System.Action<global::G.RepositoryRuleCommitterEmailPattern?>? committerEmailPattern = null,
-            global::System.Action<global::G.RepositoryRuleBranchNamePattern?>? branchNamePattern = null,
-            global::System.Action<global::G.RepositoryRuleTagNamePattern?>? tagNamePattern = null,
-            global::System.Action<global::G.RepositoryRuleFilePathRestriction?>? filePathRestriction = null,
-            global::System.Action<global::G.RepositoryRuleMaxFilePathLength?>? maxFilePathLength = null,
-            global::System.Action<global::G.RepositoryRuleFileExtensionRestriction?>? fileExtensionRestriction = null,
-            global::System.Action<global::G.RepositoryRuleMaxFileSize?>? maxFileSize = null,
-            global::System.Action<global::G.RepositoryRuleWorkflows?>? workflows = null,
-            global::System.Action<global::G.RepositoryRuleCodeScanning?>? codeScanning = null,
+            global::System.Action<global::G.RepositoryRuleCreation>? creation = null,
+
+            global::System.Action<global::G.RepositoryRuleUpdate>? update = null,
+
+            global::System.Action<global::G.RepositoryRuleDeletion>? deletion = null,
+
+            global::System.Action<global::G.RepositoryRuleRequiredLinearHistory>? requiredLinearHistory = null,
+
+            global::System.Action<global::G.RepositoryRuleMergeQueue>? mergeQueue = null,
+
+            global::System.Action<global::G.RepositoryRuleRequiredDeployments>? requiredDeployments = null,
+
+            global::System.Action<global::G.RepositoryRuleRequiredSignatures>? requiredSignatures = null,
+
+            global::System.Action<global::G.RepositoryRulePullRequest>? pullRequest = null,
+
+            global::System.Action<global::G.RepositoryRuleRequiredStatusChecks>? requiredStatusChecks = null,
+
+            global::System.Action<global::G.RepositoryRuleNonFastForward>? nonFastForward = null,
+
+            global::System.Action<global::G.RepositoryRuleCommitMessagePattern>? commitMessagePattern = null,
+
+            global::System.Action<global::G.RepositoryRuleCommitAuthorEmailPattern>? commitAuthorEmailPattern = null,
+
+            global::System.Action<global::G.RepositoryRuleCommitterEmailPattern>? committerEmailPattern = null,
+
+            global::System.Action<global::G.RepositoryRuleBranchNamePattern>? branchNamePattern = null,
+
+            global::System.Action<global::G.RepositoryRuleTagNamePattern>? tagNamePattern = null,
+
+            global::System.Action<global::G.RepositoryRuleFilePathRestriction>? filePathRestriction = null,
+
+            global::System.Action<global::G.RepositoryRuleMaxFilePathLength>? maxFilePathLength = null,
+
+            global::System.Action<global::G.RepositoryRuleFileExtensionRestriction>? fileExtensionRestriction = null,
+
+            global::System.Action<global::G.RepositoryRuleMaxFileSize>? maxFileSize = null,
+
+            global::System.Action<global::G.RepositoryRuleWorkflows>? workflows = null,
+
+            global::System.Action<global::G.RepositoryRuleCodeScanning>? codeScanning = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsCreation)
+            {
+                creation?.Invoke(Creation!);
+            }
+            else if (IsUpdate)
+            {
+                update?.Invoke(Update!);
+            }
+            else if (IsDeletion)
+            {
+                deletion?.Invoke(Deletion!);
+            }
+            else if (IsRequiredLinearHistory)
+            {
+                requiredLinearHistory?.Invoke(RequiredLinearHistory!);
+            }
+            else if (IsMergeQueue)
+            {
+                mergeQueue?.Invoke(MergeQueue!);
+            }
+            else if (IsRequiredDeployments)
+            {
+                requiredDeployments?.Invoke(RequiredDeployments!);
+            }
+            else if (IsRequiredSignatures)
+            {
+                requiredSignatures?.Invoke(RequiredSignatures!);
+            }
+            else if (IsPullRequest)
+            {
+                pullRequest?.Invoke(PullRequest!);
+            }
+            else if (IsRequiredStatusChecks)
+            {
+                requiredStatusChecks?.Invoke(RequiredStatusChecks!);
+            }
+            else if (IsNonFastForward)
+            {
+                nonFastForward?.Invoke(NonFastForward!);
+            }
+            else if (IsCommitMessagePattern)
+            {
+                commitMessagePattern?.Invoke(CommitMessagePattern!);
+            }
+            else if (IsCommitAuthorEmailPattern)
+            {
+                commitAuthorEmailPattern?.Invoke(CommitAuthorEmailPattern!);
+            }
+            else if (IsCommitterEmailPattern)
+            {
+                committerEmailPattern?.Invoke(CommitterEmailPattern!);
+            }
+            else if (IsBranchNamePattern)
+            {
+                branchNamePattern?.Invoke(BranchNamePattern!);
+            }
+            else if (IsTagNamePattern)
+            {
+                tagNamePattern?.Invoke(TagNamePattern!);
+            }
+            else if (IsFilePathRestriction)
+            {
+                filePathRestriction?.Invoke(FilePathRestriction!);
+            }
+            else if (IsMaxFilePathLength)
+            {
+                maxFilePathLength?.Invoke(MaxFilePathLength!);
+            }
+            else if (IsFileExtensionRestriction)
+            {
+                fileExtensionRestriction?.Invoke(FileExtensionRestriction!);
+            }
+            else if (IsMaxFileSize)
+            {
+                maxFileSize?.Invoke(MaxFileSize!);
+            }
+            else if (IsWorkflows)
+            {
+                workflows?.Invoke(Workflows!);
+            }
+            else if (IsCodeScanning)
+            {
+                codeScanning?.Invoke(CodeScanning!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.RepositoryRuleCreation>? creation = null,
+            global::System.Action<global::G.RepositoryRuleUpdate>? update = null,
+            global::System.Action<global::G.RepositoryRuleDeletion>? deletion = null,
+            global::System.Action<global::G.RepositoryRuleRequiredLinearHistory>? requiredLinearHistory = null,
+            global::System.Action<global::G.RepositoryRuleMergeQueue>? mergeQueue = null,
+            global::System.Action<global::G.RepositoryRuleRequiredDeployments>? requiredDeployments = null,
+            global::System.Action<global::G.RepositoryRuleRequiredSignatures>? requiredSignatures = null,
+            global::System.Action<global::G.RepositoryRulePullRequest>? pullRequest = null,
+            global::System.Action<global::G.RepositoryRuleRequiredStatusChecks>? requiredStatusChecks = null,
+            global::System.Action<global::G.RepositoryRuleNonFastForward>? nonFastForward = null,
+            global::System.Action<global::G.RepositoryRuleCommitMessagePattern>? commitMessagePattern = null,
+            global::System.Action<global::G.RepositoryRuleCommitAuthorEmailPattern>? commitAuthorEmailPattern = null,
+            global::System.Action<global::G.RepositoryRuleCommitterEmailPattern>? committerEmailPattern = null,
+            global::System.Action<global::G.RepositoryRuleBranchNamePattern>? branchNamePattern = null,
+            global::System.Action<global::G.RepositoryRuleTagNamePattern>? tagNamePattern = null,
+            global::System.Action<global::G.RepositoryRuleFilePathRestriction>? filePathRestriction = null,
+            global::System.Action<global::G.RepositoryRuleMaxFilePathLength>? maxFilePathLength = null,
+            global::System.Action<global::G.RepositoryRuleFileExtensionRestriction>? fileExtensionRestriction = null,
+            global::System.Action<global::G.RepositoryRuleMaxFileSize>? maxFileSize = null,
+            global::System.Action<global::G.RepositoryRuleWorkflows>? workflows = null,
+            global::System.Action<global::G.RepositoryRuleCodeScanning>? codeScanning = null,
             bool validate = true)
         {
             if (validate)

@@ -19,5 +19,19 @@ namespace G
             int id,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Comment by id<br/>
+        /// This endpoint allows the client to retrieve a comment as well as his descendants comments.<br/>
+        ///   It will return the required comment (the root) with its nested descendants as a thread.<br/>
+        ///   See the format specification for further details.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse> GetCommentByIdAsResponseAsync(
+            int id,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -35,6 +35,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickMessageStart(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.MessageStartEvent? value)
+        {
+            value = MessageStart;
+            return IsMessageStart;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.MessageDeltaEvent? MessageDelta { get; init; }
 #else
@@ -48,6 +61,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessageDelta))]
 #endif
         public bool IsMessageDelta => MessageDelta != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMessageDelta(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.MessageDeltaEvent? value)
+        {
+            value = MessageDelta;
+            return IsMessageDelta;
+        }
 
         /// <summary>
         /// 
@@ -69,6 +95,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickMessageStop(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.MessageStopEvent? value)
+        {
+            value = MessageStop;
+            return IsMessageStop;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ContentBlockStartEvent? ContentBlockStart { get; init; }
 #else
@@ -82,6 +121,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ContentBlockStart))]
 #endif
         public bool IsContentBlockStart => ContentBlockStart != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickContentBlockStart(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ContentBlockStartEvent? value)
+        {
+            value = ContentBlockStart;
+            return IsContentBlockStart;
+        }
 
         /// <summary>
         /// 
@@ -103,6 +155,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickContentBlockDelta(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ContentBlockDeltaEvent? value)
+        {
+            value = ContentBlockDelta;
+            return IsContentBlockDelta;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ContentBlockStopEvent? ContentBlockStop { get; init; }
 #else
@@ -116,6 +181,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ContentBlockStop))]
 #endif
         public bool IsContentBlockStop => ContentBlockStop != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickContentBlockStop(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ContentBlockStopEvent? value)
+        {
+            value = ContentBlockStop;
+            return IsContentBlockStop;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -283,12 +361,12 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.MessageStartEvent?, TResult>? messageStart = null,
-            global::System.Func<global::G.MessageDeltaEvent?, TResult>? messageDelta = null,
-            global::System.Func<global::G.MessageStopEvent?, TResult>? messageStop = null,
-            global::System.Func<global::G.ContentBlockStartEvent?, TResult>? contentBlockStart = null,
-            global::System.Func<global::G.ContentBlockDeltaEvent?, TResult>? contentBlockDelta = null,
-            global::System.Func<global::G.ContentBlockStopEvent?, TResult>? contentBlockStop = null,
+            global::System.Func<global::G.MessageStartEvent, TResult>? messageStart = null,
+            global::System.Func<global::G.MessageDeltaEvent, TResult>? messageDelta = null,
+            global::System.Func<global::G.MessageStopEvent, TResult>? messageStop = null,
+            global::System.Func<global::G.ContentBlockStartEvent, TResult>? contentBlockStart = null,
+            global::System.Func<global::G.ContentBlockDeltaEvent, TResult>? contentBlockDelta = null,
+            global::System.Func<global::G.ContentBlockStopEvent, TResult>? contentBlockStop = null,
             bool validate = true)
         {
             if (validate)
@@ -328,12 +406,60 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.MessageStartEvent?>? messageStart = null,
-            global::System.Action<global::G.MessageDeltaEvent?>? messageDelta = null,
-            global::System.Action<global::G.MessageStopEvent?>? messageStop = null,
-            global::System.Action<global::G.ContentBlockStartEvent?>? contentBlockStart = null,
-            global::System.Action<global::G.ContentBlockDeltaEvent?>? contentBlockDelta = null,
-            global::System.Action<global::G.ContentBlockStopEvent?>? contentBlockStop = null,
+            global::System.Action<global::G.MessageStartEvent>? messageStart = null,
+
+            global::System.Action<global::G.MessageDeltaEvent>? messageDelta = null,
+
+            global::System.Action<global::G.MessageStopEvent>? messageStop = null,
+
+            global::System.Action<global::G.ContentBlockStartEvent>? contentBlockStart = null,
+
+            global::System.Action<global::G.ContentBlockDeltaEvent>? contentBlockDelta = null,
+
+            global::System.Action<global::G.ContentBlockStopEvent>? contentBlockStop = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsMessageStart)
+            {
+                messageStart?.Invoke(MessageStart!);
+            }
+            else if (IsMessageDelta)
+            {
+                messageDelta?.Invoke(MessageDelta!);
+            }
+            else if (IsMessageStop)
+            {
+                messageStop?.Invoke(MessageStop!);
+            }
+            else if (IsContentBlockStart)
+            {
+                contentBlockStart?.Invoke(ContentBlockStart!);
+            }
+            else if (IsContentBlockDelta)
+            {
+                contentBlockDelta?.Invoke(ContentBlockDelta!);
+            }
+            else if (IsContentBlockStop)
+            {
+                contentBlockStop?.Invoke(ContentBlockStop!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.MessageStartEvent>? messageStart = null,
+            global::System.Action<global::G.MessageDeltaEvent>? messageDelta = null,
+            global::System.Action<global::G.MessageStopEvent>? messageStop = null,
+            global::System.Action<global::G.ContentBlockStartEvent>? contentBlockStart = null,
+            global::System.Action<global::G.ContentBlockDeltaEvent>? contentBlockDelta = null,
+            global::System.Action<global::G.ContentBlockStopEvent>? contentBlockStop = null,
             bool validate = true)
         {
             if (validate)

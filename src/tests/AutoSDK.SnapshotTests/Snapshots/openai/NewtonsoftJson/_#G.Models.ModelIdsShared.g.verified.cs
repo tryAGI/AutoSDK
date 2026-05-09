@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickModelIdsSharedVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = ModelIdsSharedVariant1;
+            return IsModelIdsSharedVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ModelIdsSharedEnum? Enum { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Enum))]
 #endif
         public bool IsEnum => Enum != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickEnum(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ModelIdsSharedEnum? value)
+        {
+            value = Enum;
+            return IsEnum;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -119,7 +145,7 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<string?, TResult>? modelIdsSharedVariant1 = null,
+            global::System.Func<string, TResult>? modelIdsSharedVariant1 = null,
             global::System.Func<global::G.ModelIdsSharedEnum?, TResult>? @enum = null,
             bool validate = true)
         {
@@ -144,7 +170,31 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<string?>? modelIdsSharedVariant1 = null,
+            global::System.Action<string>? modelIdsSharedVariant1 = null,
+
+            global::System.Action<global::G.ModelIdsSharedEnum?>? @enum = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsModelIdsSharedVariant1)
+            {
+                modelIdsSharedVariant1?.Invoke(ModelIdsSharedVariant1!);
+            }
+            else if (IsEnum)
+            {
+                @enum?.Invoke(Enum!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<string>? modelIdsSharedVariant1 = null,
             global::System.Action<global::G.ModelIdsSharedEnum?>? @enum = null,
             bool validate = true)
         {

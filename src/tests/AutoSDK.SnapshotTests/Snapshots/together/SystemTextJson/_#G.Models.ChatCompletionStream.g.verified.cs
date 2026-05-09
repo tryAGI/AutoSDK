@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickEvent(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ChatCompletionEvent? value)
+        {
+            value = Event;
+            return IsEvent;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.StreamSentinel? Sentinel { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Sentinel))]
 #endif
         public bool IsSentinel => Sentinel != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSentinel(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.StreamSentinel? value)
+        {
+            value = Sentinel;
+            return IsSentinel;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -119,8 +145,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.ChatCompletionEvent?, TResult>? @event = null,
-            global::System.Func<global::G.StreamSentinel?, TResult>? sentinel = null,
+            global::System.Func<global::G.ChatCompletionEvent, TResult>? @event = null,
+            global::System.Func<global::G.StreamSentinel, TResult>? sentinel = null,
             bool validate = true)
         {
             if (validate)
@@ -144,8 +170,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.ChatCompletionEvent?>? @event = null,
-            global::System.Action<global::G.StreamSentinel?>? sentinel = null,
+            global::System.Action<global::G.ChatCompletionEvent>? @event = null,
+
+            global::System.Action<global::G.StreamSentinel>? sentinel = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsEvent)
+            {
+                @event?.Invoke(Event!);
+            }
+            else if (IsSentinel)
+            {
+                sentinel?.Invoke(Sentinel!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.ChatCompletionEvent>? @event = null,
+            global::System.Action<global::G.StreamSentinel>? sentinel = null,
             bool validate = true)
         {
             if (validate)

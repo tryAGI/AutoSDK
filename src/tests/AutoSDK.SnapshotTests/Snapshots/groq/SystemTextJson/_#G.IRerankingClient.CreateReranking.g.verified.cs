@@ -24,6 +24,20 @@ namespace G
         /// Given a query and a list of documents, returns the documents ranked by their relevance to the query.<br/>
         /// The documents are scored and sorted in descending order of relevance.
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.RerankingResponse>> CreateRerankingAsResponseAsync(
+
+            global::G.RerankingRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Reranks documents based on their relevance to a query.<br/>
+        /// Given a query and a list of documents, returns the documents ranked by their relevance to the query.<br/>
+        /// The documents are scored and sorted in descending order of relevance.
+        /// </summary>
         /// <param name="model">
         /// ID of the reranking model to use.<br/>
         /// Example: qwen3-reranker-4b

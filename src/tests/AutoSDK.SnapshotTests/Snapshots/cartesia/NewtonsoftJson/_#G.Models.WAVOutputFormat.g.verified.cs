@@ -26,6 +26,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RawOutputFormat))]
 #endif
         public bool IsRawOutputFormat => RawOutputFormat != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickRawOutputFormat(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.RawOutputFormat? value)
+        {
+            value = RawOutputFormat;
+            return IsRawOutputFormat;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -70,7 +83,7 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.RawOutputFormat?, TResult>? rawOutputFormat = null,
+            global::System.Func<global::G.RawOutputFormat, TResult>? rawOutputFormat = null,
             bool validate = true)
         {
             if (validate)
@@ -90,7 +103,25 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.RawOutputFormat?>? rawOutputFormat = null,
+            global::System.Action<global::G.RawOutputFormat>? rawOutputFormat = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsRawOutputFormat)
+            {
+                rawOutputFormat?.Invoke(RawOutputFormat!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.RawOutputFormat>? rawOutputFormat = null,
             bool validate = true)
         {
             if (validate)

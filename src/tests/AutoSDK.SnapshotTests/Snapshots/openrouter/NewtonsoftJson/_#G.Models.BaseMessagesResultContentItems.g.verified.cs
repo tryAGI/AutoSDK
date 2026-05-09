@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickBaseMessagesResultContentItems0(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.BaseMessagesResultContentItems0? value)
+        {
+            value = BaseMessagesResultContentItems0;
+            return IsBaseMessagesResultContentItems0;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.BaseMessagesResultContentItems1? BaseMessagesResultContentItems1 { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BaseMessagesResultContentItems1))]
 #endif
         public bool IsBaseMessagesResultContentItems1 => BaseMessagesResultContentItems1 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickBaseMessagesResultContentItems1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.BaseMessagesResultContentItems1? value)
+        {
+            value = BaseMessagesResultContentItems1;
+            return IsBaseMessagesResultContentItems1;
+        }
 
         /// <summary>
         /// 
@@ -64,6 +90,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickBaseMessagesResultContentItems2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.BaseMessagesResultContentItems2? value)
+        {
+            value = BaseMessagesResultContentItems2;
+            return IsBaseMessagesResultContentItems2;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.BaseMessagesResultContentItems3? BaseMessagesResultContentItems3 { get; init; }
 #else
@@ -77,6 +116,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BaseMessagesResultContentItems3))]
 #endif
         public bool IsBaseMessagesResultContentItems3 => BaseMessagesResultContentItems3 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickBaseMessagesResultContentItems3(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.BaseMessagesResultContentItems3? value)
+        {
+            value = BaseMessagesResultContentItems3;
+            return IsBaseMessagesResultContentItems3;
+        }
 
         /// <summary>
         /// 
@@ -98,6 +150,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickBaseMessagesResultContentItems4(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.BaseMessagesResultContentItems4? value)
+        {
+            value = BaseMessagesResultContentItems4;
+            return IsBaseMessagesResultContentItems4;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.BaseMessagesResultContentItems5? BaseMessagesResultContentItems5 { get; init; }
 #else
@@ -111,6 +176,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BaseMessagesResultContentItems5))]
 #endif
         public bool IsBaseMessagesResultContentItems5 => BaseMessagesResultContentItems5 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickBaseMessagesResultContentItems5(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.BaseMessagesResultContentItems5? value)
+        {
+            value = BaseMessagesResultContentItems5;
+            return IsBaseMessagesResultContentItems5;
+        }
 
         /// <summary>
         /// 
@@ -132,6 +210,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickBaseMessagesResultContentItems6(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.BaseMessagesResultContentItems6? value)
+        {
+            value = BaseMessagesResultContentItems6;
+            return IsBaseMessagesResultContentItems6;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.BaseMessagesResultContentItems7? BaseMessagesResultContentItems7 { get; init; }
 #else
@@ -145,6 +236,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BaseMessagesResultContentItems7))]
 #endif
         public bool IsBaseMessagesResultContentItems7 => BaseMessagesResultContentItems7 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickBaseMessagesResultContentItems7(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.BaseMessagesResultContentItems7? value)
+        {
+            value = BaseMessagesResultContentItems7;
+            return IsBaseMessagesResultContentItems7;
+        }
 
         /// <summary>
         /// 
@@ -166,6 +270,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickBaseMessagesResultContentItems8(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.BaseMessagesResultContentItems8? value)
+        {
+            value = BaseMessagesResultContentItems8;
+            return IsBaseMessagesResultContentItems8;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.BaseMessagesResultContentItems9? BaseMessagesResultContentItems9 { get; init; }
 #else
@@ -179,6 +296,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BaseMessagesResultContentItems9))]
 #endif
         public bool IsBaseMessagesResultContentItems9 => BaseMessagesResultContentItems9 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickBaseMessagesResultContentItems9(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.BaseMessagesResultContentItems9? value)
+        {
+            value = BaseMessagesResultContentItems9;
+            return IsBaseMessagesResultContentItems9;
+        }
 
         /// <summary>
         /// 
@@ -200,6 +330,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickBaseMessagesResultContentItems10(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.BaseMessagesResultContentItems10? value)
+        {
+            value = BaseMessagesResultContentItems10;
+            return IsBaseMessagesResultContentItems10;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.BaseMessagesResultContentItems11? BaseMessagesResultContentItems11 { get; init; }
 #else
@@ -213,6 +356,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BaseMessagesResultContentItems11))]
 #endif
         public bool IsBaseMessagesResultContentItems11 => BaseMessagesResultContentItems11 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickBaseMessagesResultContentItems11(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.BaseMessagesResultContentItems11? value)
+        {
+            value = BaseMessagesResultContentItems11;
+            return IsBaseMessagesResultContentItems11;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -509,18 +665,18 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.BaseMessagesResultContentItems0?, TResult>? baseMessagesResultContentItems0 = null,
-            global::System.Func<global::G.BaseMessagesResultContentItems1?, TResult>? baseMessagesResultContentItems1 = null,
-            global::System.Func<global::G.BaseMessagesResultContentItems2?, TResult>? baseMessagesResultContentItems2 = null,
-            global::System.Func<global::G.BaseMessagesResultContentItems3?, TResult>? baseMessagesResultContentItems3 = null,
-            global::System.Func<global::G.BaseMessagesResultContentItems4?, TResult>? baseMessagesResultContentItems4 = null,
-            global::System.Func<global::G.BaseMessagesResultContentItems5?, TResult>? baseMessagesResultContentItems5 = null,
-            global::System.Func<global::G.BaseMessagesResultContentItems6?, TResult>? baseMessagesResultContentItems6 = null,
-            global::System.Func<global::G.BaseMessagesResultContentItems7?, TResult>? baseMessagesResultContentItems7 = null,
-            global::System.Func<global::G.BaseMessagesResultContentItems8?, TResult>? baseMessagesResultContentItems8 = null,
-            global::System.Func<global::G.BaseMessagesResultContentItems9?, TResult>? baseMessagesResultContentItems9 = null,
-            global::System.Func<global::G.BaseMessagesResultContentItems10?, TResult>? baseMessagesResultContentItems10 = null,
-            global::System.Func<global::G.BaseMessagesResultContentItems11?, TResult>? baseMessagesResultContentItems11 = null,
+            global::System.Func<global::G.BaseMessagesResultContentItems0, TResult>? baseMessagesResultContentItems0 = null,
+            global::System.Func<global::G.BaseMessagesResultContentItems1, TResult>? baseMessagesResultContentItems1 = null,
+            global::System.Func<global::G.BaseMessagesResultContentItems2, TResult>? baseMessagesResultContentItems2 = null,
+            global::System.Func<global::G.BaseMessagesResultContentItems3, TResult>? baseMessagesResultContentItems3 = null,
+            global::System.Func<global::G.BaseMessagesResultContentItems4, TResult>? baseMessagesResultContentItems4 = null,
+            global::System.Func<global::G.BaseMessagesResultContentItems5, TResult>? baseMessagesResultContentItems5 = null,
+            global::System.Func<global::G.BaseMessagesResultContentItems6, TResult>? baseMessagesResultContentItems6 = null,
+            global::System.Func<global::G.BaseMessagesResultContentItems7, TResult>? baseMessagesResultContentItems7 = null,
+            global::System.Func<global::G.BaseMessagesResultContentItems8, TResult>? baseMessagesResultContentItems8 = null,
+            global::System.Func<global::G.BaseMessagesResultContentItems9, TResult>? baseMessagesResultContentItems9 = null,
+            global::System.Func<global::G.BaseMessagesResultContentItems10, TResult>? baseMessagesResultContentItems10 = null,
+            global::System.Func<global::G.BaseMessagesResultContentItems11, TResult>? baseMessagesResultContentItems11 = null,
             bool validate = true)
         {
             if (validate)
@@ -584,18 +740,102 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.BaseMessagesResultContentItems0?>? baseMessagesResultContentItems0 = null,
-            global::System.Action<global::G.BaseMessagesResultContentItems1?>? baseMessagesResultContentItems1 = null,
-            global::System.Action<global::G.BaseMessagesResultContentItems2?>? baseMessagesResultContentItems2 = null,
-            global::System.Action<global::G.BaseMessagesResultContentItems3?>? baseMessagesResultContentItems3 = null,
-            global::System.Action<global::G.BaseMessagesResultContentItems4?>? baseMessagesResultContentItems4 = null,
-            global::System.Action<global::G.BaseMessagesResultContentItems5?>? baseMessagesResultContentItems5 = null,
-            global::System.Action<global::G.BaseMessagesResultContentItems6?>? baseMessagesResultContentItems6 = null,
-            global::System.Action<global::G.BaseMessagesResultContentItems7?>? baseMessagesResultContentItems7 = null,
-            global::System.Action<global::G.BaseMessagesResultContentItems8?>? baseMessagesResultContentItems8 = null,
-            global::System.Action<global::G.BaseMessagesResultContentItems9?>? baseMessagesResultContentItems9 = null,
-            global::System.Action<global::G.BaseMessagesResultContentItems10?>? baseMessagesResultContentItems10 = null,
-            global::System.Action<global::G.BaseMessagesResultContentItems11?>? baseMessagesResultContentItems11 = null,
+            global::System.Action<global::G.BaseMessagesResultContentItems0>? baseMessagesResultContentItems0 = null,
+
+            global::System.Action<global::G.BaseMessagesResultContentItems1>? baseMessagesResultContentItems1 = null,
+
+            global::System.Action<global::G.BaseMessagesResultContentItems2>? baseMessagesResultContentItems2 = null,
+
+            global::System.Action<global::G.BaseMessagesResultContentItems3>? baseMessagesResultContentItems3 = null,
+
+            global::System.Action<global::G.BaseMessagesResultContentItems4>? baseMessagesResultContentItems4 = null,
+
+            global::System.Action<global::G.BaseMessagesResultContentItems5>? baseMessagesResultContentItems5 = null,
+
+            global::System.Action<global::G.BaseMessagesResultContentItems6>? baseMessagesResultContentItems6 = null,
+
+            global::System.Action<global::G.BaseMessagesResultContentItems7>? baseMessagesResultContentItems7 = null,
+
+            global::System.Action<global::G.BaseMessagesResultContentItems8>? baseMessagesResultContentItems8 = null,
+
+            global::System.Action<global::G.BaseMessagesResultContentItems9>? baseMessagesResultContentItems9 = null,
+
+            global::System.Action<global::G.BaseMessagesResultContentItems10>? baseMessagesResultContentItems10 = null,
+
+            global::System.Action<global::G.BaseMessagesResultContentItems11>? baseMessagesResultContentItems11 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsBaseMessagesResultContentItems0)
+            {
+                baseMessagesResultContentItems0?.Invoke(BaseMessagesResultContentItems0!);
+            }
+            else if (IsBaseMessagesResultContentItems1)
+            {
+                baseMessagesResultContentItems1?.Invoke(BaseMessagesResultContentItems1!);
+            }
+            else if (IsBaseMessagesResultContentItems2)
+            {
+                baseMessagesResultContentItems2?.Invoke(BaseMessagesResultContentItems2!);
+            }
+            else if (IsBaseMessagesResultContentItems3)
+            {
+                baseMessagesResultContentItems3?.Invoke(BaseMessagesResultContentItems3!);
+            }
+            else if (IsBaseMessagesResultContentItems4)
+            {
+                baseMessagesResultContentItems4?.Invoke(BaseMessagesResultContentItems4!);
+            }
+            else if (IsBaseMessagesResultContentItems5)
+            {
+                baseMessagesResultContentItems5?.Invoke(BaseMessagesResultContentItems5!);
+            }
+            else if (IsBaseMessagesResultContentItems6)
+            {
+                baseMessagesResultContentItems6?.Invoke(BaseMessagesResultContentItems6!);
+            }
+            else if (IsBaseMessagesResultContentItems7)
+            {
+                baseMessagesResultContentItems7?.Invoke(BaseMessagesResultContentItems7!);
+            }
+            else if (IsBaseMessagesResultContentItems8)
+            {
+                baseMessagesResultContentItems8?.Invoke(BaseMessagesResultContentItems8!);
+            }
+            else if (IsBaseMessagesResultContentItems9)
+            {
+                baseMessagesResultContentItems9?.Invoke(BaseMessagesResultContentItems9!);
+            }
+            else if (IsBaseMessagesResultContentItems10)
+            {
+                baseMessagesResultContentItems10?.Invoke(BaseMessagesResultContentItems10!);
+            }
+            else if (IsBaseMessagesResultContentItems11)
+            {
+                baseMessagesResultContentItems11?.Invoke(BaseMessagesResultContentItems11!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.BaseMessagesResultContentItems0>? baseMessagesResultContentItems0 = null,
+            global::System.Action<global::G.BaseMessagesResultContentItems1>? baseMessagesResultContentItems1 = null,
+            global::System.Action<global::G.BaseMessagesResultContentItems2>? baseMessagesResultContentItems2 = null,
+            global::System.Action<global::G.BaseMessagesResultContentItems3>? baseMessagesResultContentItems3 = null,
+            global::System.Action<global::G.BaseMessagesResultContentItems4>? baseMessagesResultContentItems4 = null,
+            global::System.Action<global::G.BaseMessagesResultContentItems5>? baseMessagesResultContentItems5 = null,
+            global::System.Action<global::G.BaseMessagesResultContentItems6>? baseMessagesResultContentItems6 = null,
+            global::System.Action<global::G.BaseMessagesResultContentItems7>? baseMessagesResultContentItems7 = null,
+            global::System.Action<global::G.BaseMessagesResultContentItems8>? baseMessagesResultContentItems8 = null,
+            global::System.Action<global::G.BaseMessagesResultContentItems9>? baseMessagesResultContentItems9 = null,
+            global::System.Action<global::G.BaseMessagesResultContentItems10>? baseMessagesResultContentItems10 = null,
+            global::System.Action<global::G.BaseMessagesResultContentItems11>? baseMessagesResultContentItems11 = null,
             bool validate = true)
         {
             if (validate)

@@ -353,7 +353,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public AudioToTextClient AudioToText => new AudioToTextClient(HttpClient, authorizations: Authorizations, options: Options)
+        public AudioToTextClient AudioToText => new AudioToTextClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -362,7 +362,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public FileManagementClient FileManagement => new FileManagementClient(HttpClient, authorizations: Authorizations, options: Options)
+        public FileManagementClient FileManagement => new FileManagementClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -371,7 +371,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public JobHistoryClient JobHistory => new JobHistoryClient(HttpClient, authorizations: Authorizations, options: Options)
+        public JobHistoryClient JobHistory => new JobHistoryClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -380,7 +380,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public LiveV2Client LiveV2 => new LiveV2Client(HttpClient, authorizations: Authorizations, options: Options)
+        public LiveV2Client LiveV2 => new LiveV2Client(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -389,7 +389,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public PreRecordedV2Client PreRecordedV2 => new PreRecordedV2Client(HttpClient, authorizations: Authorizations, options: Options)
+        public PreRecordedV2Client PreRecordedV2 => new PreRecordedV2Client(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -398,7 +398,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public TranscriptionV1Client TranscriptionV1 => new TranscriptionV1Client(HttpClient, authorizations: Authorizations, options: Options)
+        public TranscriptionV1Client TranscriptionV1 => new TranscriptionV1Client(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -407,7 +407,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public TranscriptionV2Client TranscriptionV2 => new TranscriptionV2Client(HttpClient, authorizations: Authorizations, options: Options)
+        public TranscriptionV2Client TranscriptionV2 => new TranscriptionV2Client(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -446,10 +446,10 @@ namespace G
         /// <param name="options">Client-wide request defaults such as headers, query parameters, retries, and timeout.</param>
         /// <param name="disposeHttpClient">Dispose the HttpClient when the instance is disposed. True by default.</param>
         public Api(
-            global::System.Net.Http.HttpClient? httpClient = null,
-            global::System.Uri? baseUri = null,
-            global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations = null,
-            global::G.AutoSDKClientOptions? options = null,
+            global::System.Net.Http.HttpClient? httpClient,
+            global::System.Uri? baseUri,
+            global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations,
+            global::G.AutoSDKClientOptions? options,
             bool disposeHttpClient = true)
         {
 

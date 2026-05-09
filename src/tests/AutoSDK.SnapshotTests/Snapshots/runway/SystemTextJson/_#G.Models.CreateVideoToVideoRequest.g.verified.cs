@@ -13,6 +13,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public string? Model { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CreateVideoToVideoRequestGen4Aleph? Gen4Aleph { get; init; }
 #else
@@ -26,6 +31,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Gen4Aleph))]
 #endif
         public bool IsGen4Aleph => Gen4Aleph != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickGen4Aleph(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateVideoToVideoRequestGen4Aleph? value)
+        {
+            value = Gen4Aleph;
+            return IsGen4Aleph;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -42,6 +60,19 @@ namespace G
         public CreateVideoToVideoRequest(global::G.CreateVideoToVideoRequestGen4Aleph? value)
         {
             Gen4Aleph = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public CreateVideoToVideoRequest(
+            string? model,
+            global::G.CreateVideoToVideoRequestGen4Aleph? gen4Aleph
+            )
+        {
+            Model = model;
+
+            Gen4Aleph = gen4Aleph;
         }
 
         /// <summary>
@@ -70,7 +101,7 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.CreateVideoToVideoRequestGen4Aleph?, TResult>? gen4Aleph = null,
+            global::System.Func<global::G.CreateVideoToVideoRequestGen4Aleph, TResult>? gen4Aleph = null,
             bool validate = true)
         {
             if (validate)
@@ -90,7 +121,25 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.CreateVideoToVideoRequestGen4Aleph?>? gen4Aleph = null,
+            global::System.Action<global::G.CreateVideoToVideoRequestGen4Aleph>? gen4Aleph = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsGen4Aleph)
+            {
+                gen4Aleph?.Invoke(Gen4Aleph!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.CreateVideoToVideoRequestGen4Aleph>? gen4Aleph = null,
             bool validate = true)
         {
             if (validate)

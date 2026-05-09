@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickUpsert(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.UpsertOperation? value)
+        {
+            value = Upsert;
+            return IsUpsert;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.DeleteOperation? Delete { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Delete))]
 #endif
         public bool IsDelete => Delete != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickDelete(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.DeleteOperation? value)
+        {
+            value = Delete;
+            return IsDelete;
+        }
 
         /// <summary>
         /// 
@@ -64,6 +90,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickSetPayload(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.SetPayloadOperation? value)
+        {
+            value = SetPayload;
+            return IsSetPayload;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.OverwritePayloadOperation? OverwritePayload { get; init; }
 #else
@@ -77,6 +116,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OverwritePayload))]
 #endif
         public bool IsOverwritePayload => OverwritePayload != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickOverwritePayload(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.OverwritePayloadOperation? value)
+        {
+            value = OverwritePayload;
+            return IsOverwritePayload;
+        }
 
         /// <summary>
         /// 
@@ -98,6 +150,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickDeletePayload(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.DeletePayloadOperation? value)
+        {
+            value = DeletePayload;
+            return IsDeletePayload;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ClearPayloadOperation? ClearPayload { get; init; }
 #else
@@ -111,6 +176,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ClearPayload))]
 #endif
         public bool IsClearPayload => ClearPayload != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickClearPayload(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ClearPayloadOperation? value)
+        {
+            value = ClearPayload;
+            return IsClearPayload;
+        }
 
         /// <summary>
         /// 
@@ -132,6 +210,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickVectors(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.UpdateVectorsOperation? value)
+        {
+            value = Vectors;
+            return IsVectors;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.DeleteVectorsOperation? DeleteVectors { get; init; }
 #else
@@ -145,6 +236,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(DeleteVectors))]
 #endif
         public bool IsDeleteVectors => DeleteVectors != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickDeleteVectors(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.DeleteVectorsOperation? value)
+        {
+            value = DeleteVectors;
+            return IsDeleteVectors;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -353,14 +457,14 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.UpsertOperation?, TResult>? upsert = null,
-            global::System.Func<global::G.DeleteOperation?, TResult>? delete = null,
-            global::System.Func<global::G.SetPayloadOperation?, TResult>? setPayload = null,
-            global::System.Func<global::G.OverwritePayloadOperation?, TResult>? overwritePayload = null,
-            global::System.Func<global::G.DeletePayloadOperation?, TResult>? deletePayload = null,
-            global::System.Func<global::G.ClearPayloadOperation?, TResult>? clearPayload = null,
-            global::System.Func<global::G.UpdateVectorsOperation?, TResult>? vectors = null,
-            global::System.Func<global::G.DeleteVectorsOperation?, TResult>? deleteVectors = null,
+            global::System.Func<global::G.UpsertOperation, TResult>? upsert = null,
+            global::System.Func<global::G.DeleteOperation, TResult>? delete = null,
+            global::System.Func<global::G.SetPayloadOperation, TResult>? setPayload = null,
+            global::System.Func<global::G.OverwritePayloadOperation, TResult>? overwritePayload = null,
+            global::System.Func<global::G.DeletePayloadOperation, TResult>? deletePayload = null,
+            global::System.Func<global::G.ClearPayloadOperation, TResult>? clearPayload = null,
+            global::System.Func<global::G.UpdateVectorsOperation, TResult>? vectors = null,
+            global::System.Func<global::G.DeleteVectorsOperation, TResult>? deleteVectors = null,
             bool validate = true)
         {
             if (validate)
@@ -408,14 +512,74 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.UpsertOperation?>? upsert = null,
-            global::System.Action<global::G.DeleteOperation?>? delete = null,
-            global::System.Action<global::G.SetPayloadOperation?>? setPayload = null,
-            global::System.Action<global::G.OverwritePayloadOperation?>? overwritePayload = null,
-            global::System.Action<global::G.DeletePayloadOperation?>? deletePayload = null,
-            global::System.Action<global::G.ClearPayloadOperation?>? clearPayload = null,
-            global::System.Action<global::G.UpdateVectorsOperation?>? vectors = null,
-            global::System.Action<global::G.DeleteVectorsOperation?>? deleteVectors = null,
+            global::System.Action<global::G.UpsertOperation>? upsert = null,
+
+            global::System.Action<global::G.DeleteOperation>? delete = null,
+
+            global::System.Action<global::G.SetPayloadOperation>? setPayload = null,
+
+            global::System.Action<global::G.OverwritePayloadOperation>? overwritePayload = null,
+
+            global::System.Action<global::G.DeletePayloadOperation>? deletePayload = null,
+
+            global::System.Action<global::G.ClearPayloadOperation>? clearPayload = null,
+
+            global::System.Action<global::G.UpdateVectorsOperation>? vectors = null,
+
+            global::System.Action<global::G.DeleteVectorsOperation>? deleteVectors = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsUpsert)
+            {
+                upsert?.Invoke(Upsert!);
+            }
+            else if (IsDelete)
+            {
+                delete?.Invoke(Delete!);
+            }
+            else if (IsSetPayload)
+            {
+                setPayload?.Invoke(SetPayload!);
+            }
+            else if (IsOverwritePayload)
+            {
+                overwritePayload?.Invoke(OverwritePayload!);
+            }
+            else if (IsDeletePayload)
+            {
+                deletePayload?.Invoke(DeletePayload!);
+            }
+            else if (IsClearPayload)
+            {
+                clearPayload?.Invoke(ClearPayload!);
+            }
+            else if (IsVectors)
+            {
+                vectors?.Invoke(Vectors!);
+            }
+            else if (IsDeleteVectors)
+            {
+                deleteVectors?.Invoke(DeleteVectors!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.UpsertOperation>? upsert = null,
+            global::System.Action<global::G.DeleteOperation>? delete = null,
+            global::System.Action<global::G.SetPayloadOperation>? setPayload = null,
+            global::System.Action<global::G.OverwritePayloadOperation>? overwritePayload = null,
+            global::System.Action<global::G.DeletePayloadOperation>? deletePayload = null,
+            global::System.Action<global::G.ClearPayloadOperation>? clearPayload = null,
+            global::System.Action<global::G.UpdateVectorsOperation>? vectors = null,
+            global::System.Action<global::G.DeleteVectorsOperation>? deleteVectors = null,
             bool validate = true)
         {
             if (validate)

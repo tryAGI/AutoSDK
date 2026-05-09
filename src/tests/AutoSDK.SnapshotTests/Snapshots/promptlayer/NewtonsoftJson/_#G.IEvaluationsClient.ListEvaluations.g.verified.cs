@@ -34,5 +34,34 @@ namespace G
             int? perPage = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// List Evaluations
+        /// </summary>
+        /// <param name="workspaceId"></param>
+        /// <param name="name"></param>
+        /// <param name="status">
+        /// Default Value: active
+        /// </param>
+        /// <param name="includeRuns">
+        /// Default Value: false
+        /// </param>
+        /// <param name="page">
+        /// Default Value: 1
+        /// </param>
+        /// <param name="perPage">
+        /// Default Value: 10
+        /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.ListEvaluationsResponse>> ListEvaluationsAsResponseAsync(
+            int? workspaceId = default,
+            string? name = default,
+            global::G.ListEvaluationsStatus? status = default,
+            bool? includeRuns = default,
+            int? page = default,
+            int? perPage = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

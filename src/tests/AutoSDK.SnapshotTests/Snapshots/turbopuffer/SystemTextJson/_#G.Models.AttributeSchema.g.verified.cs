@@ -28,6 +28,19 @@ namespace G
         public bool IsAttributeTypeName => AttributeTypeName != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickAttributeTypeName(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = AttributeTypeName;
+            return IsAttributeTypeName;
+        }
+
+        /// <summary>
         /// Detailed configuration for an attribute attached to a document.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Config))]
 #endif
         public bool IsConfig => Config != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickConfig(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.AttributeSchemaConfig? value)
+        {
+            value = Config;
+            return IsConfig;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -119,8 +145,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<string?, TResult>? attributeTypeName = null,
-            global::System.Func<global::G.AttributeSchemaConfig?, TResult>? config = null,
+            global::System.Func<string, TResult>? attributeTypeName = null,
+            global::System.Func<global::G.AttributeSchemaConfig, TResult>? config = null,
             bool validate = true)
         {
             if (validate)
@@ -144,8 +170,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<string?>? attributeTypeName = null,
-            global::System.Action<global::G.AttributeSchemaConfig?>? config = null,
+            global::System.Action<string>? attributeTypeName = null,
+
+            global::System.Action<global::G.AttributeSchemaConfig>? config = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsAttributeTypeName)
+            {
+                attributeTypeName?.Invoke(AttributeTypeName!);
+            }
+            else if (IsConfig)
+            {
+                config?.Invoke(Config!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<string>? attributeTypeName = null,
+            global::System.Action<global::G.AttributeSchemaConfig>? config = null,
             bool validate = true)
         {
             if (validate)

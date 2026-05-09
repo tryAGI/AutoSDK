@@ -28,6 +28,19 @@ namespace G
         public bool IsChatSystemMessage => ChatSystemMessage != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickChatSystemMessage(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ChatSystemMessage? value)
+        {
+            value = ChatSystemMessage;
+            return IsChatSystemMessage;
+        }
+
+        /// <summary>
         /// User message
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ChatUserMessage))]
 #endif
         public bool IsChatUserMessage => ChatUserMessage != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickChatUserMessage(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ChatUserMessage? value)
+        {
+            value = ChatUserMessage;
+            return IsChatUserMessage;
+        }
 
         /// <summary>
         /// Developer message
@@ -62,6 +88,19 @@ namespace G
         public bool IsChatDeveloperMessage => ChatDeveloperMessage != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickChatDeveloperMessage(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ChatDeveloperMessage? value)
+        {
+            value = ChatDeveloperMessage;
+            return IsChatDeveloperMessage;
+        }
+
+        /// <summary>
         /// Assistant message for requests and responses
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -79,6 +118,19 @@ namespace G
         public bool IsChatAssistantMessage => ChatAssistantMessage != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickChatAssistantMessage(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ChatAssistantMessage? value)
+        {
+            value = ChatAssistantMessage;
+            return IsChatAssistantMessage;
+        }
+
+        /// <summary>
         /// Tool response message
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -94,6 +146,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ChatToolMessage))]
 #endif
         public bool IsChatToolMessage => ChatToolMessage != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickChatToolMessage(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ChatToolMessage? value)
+        {
+            value = ChatToolMessage;
+            return IsChatToolMessage;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -236,11 +301,11 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.ChatSystemMessage?, TResult>? chatSystemMessage = null,
-            global::System.Func<global::G.ChatUserMessage?, TResult>? chatUserMessage = null,
-            global::System.Func<global::G.ChatDeveloperMessage?, TResult>? chatDeveloperMessage = null,
-            global::System.Func<global::G.ChatAssistantMessage?, TResult>? chatAssistantMessage = null,
-            global::System.Func<global::G.ChatToolMessage?, TResult>? chatToolMessage = null,
+            global::System.Func<global::G.ChatSystemMessage, TResult>? chatSystemMessage = null,
+            global::System.Func<global::G.ChatUserMessage, TResult>? chatUserMessage = null,
+            global::System.Func<global::G.ChatDeveloperMessage, TResult>? chatDeveloperMessage = null,
+            global::System.Func<global::G.ChatAssistantMessage, TResult>? chatAssistantMessage = null,
+            global::System.Func<global::G.ChatToolMessage, TResult>? chatToolMessage = null,
             bool validate = true)
         {
             if (validate)
@@ -276,11 +341,53 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.ChatSystemMessage?>? chatSystemMessage = null,
-            global::System.Action<global::G.ChatUserMessage?>? chatUserMessage = null,
-            global::System.Action<global::G.ChatDeveloperMessage?>? chatDeveloperMessage = null,
-            global::System.Action<global::G.ChatAssistantMessage?>? chatAssistantMessage = null,
-            global::System.Action<global::G.ChatToolMessage?>? chatToolMessage = null,
+            global::System.Action<global::G.ChatSystemMessage>? chatSystemMessage = null,
+
+            global::System.Action<global::G.ChatUserMessage>? chatUserMessage = null,
+
+            global::System.Action<global::G.ChatDeveloperMessage>? chatDeveloperMessage = null,
+
+            global::System.Action<global::G.ChatAssistantMessage>? chatAssistantMessage = null,
+
+            global::System.Action<global::G.ChatToolMessage>? chatToolMessage = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsChatSystemMessage)
+            {
+                chatSystemMessage?.Invoke(ChatSystemMessage!);
+            }
+            else if (IsChatUserMessage)
+            {
+                chatUserMessage?.Invoke(ChatUserMessage!);
+            }
+            else if (IsChatDeveloperMessage)
+            {
+                chatDeveloperMessage?.Invoke(ChatDeveloperMessage!);
+            }
+            else if (IsChatAssistantMessage)
+            {
+                chatAssistantMessage?.Invoke(ChatAssistantMessage!);
+            }
+            else if (IsChatToolMessage)
+            {
+                chatToolMessage?.Invoke(ChatToolMessage!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.ChatSystemMessage>? chatSystemMessage = null,
+            global::System.Action<global::G.ChatUserMessage>? chatUserMessage = null,
+            global::System.Action<global::G.ChatDeveloperMessage>? chatDeveloperMessage = null,
+            global::System.Action<global::G.ChatAssistantMessage>? chatAssistantMessage = null,
+            global::System.Action<global::G.ChatToolMessage>? chatToolMessage = null,
             bool validate = true)
         {
             if (validate)

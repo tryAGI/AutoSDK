@@ -24,5 +24,24 @@ namespace G
             bool? includeUserMetadata = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Retrieve a specific page of search results<br/>
+        /// Use this endpoint to retrieve a specific page of search results.<br/>
+        /// &lt;Note title="Note"&gt;<br/>
+        /// When you use pagination, you will not be charged for retrieving subsequent pages of results.<br/>
+        /// &lt;/Note&gt;
+        /// </summary>
+        /// <param name="pageToken"></param>
+        /// <param name="includeUserMetadata"></param>
+        /// <param name="xApiKey"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.SearchRetrieveResponse200>> RetrieveAsResponseAsync(
+            string pageToken,
+            string xApiKey,
+            bool? includeUserMetadata = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

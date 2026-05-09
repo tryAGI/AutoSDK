@@ -19,5 +19,19 @@ namespace G
             string pipelineFamilyName,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Retrieve<br/>
+        /// Retrieve a pipeline family by name with its latest pipeline.<br/>
+        /// If the user/selected team owns the family, the latest pipeline may be a<br/>
+        /// private pipeline, otherwise it will only be public.
+        /// </summary>
+        /// <param name="pipelineFamilyName"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.PipelineFamilyGet>> RetrieveAsResponseAsync(
+            string pipelineFamilyName,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -33,6 +33,19 @@ namespace G
         public bool IsVideo => Video != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickVideo(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.VideoAsset? value)
+        {
+            value = Video;
+            return IsVideo;
+        }
+
+        /// <summary>
         /// The ImageAsset is used to create video from images to compose an image. The src must be a publicly accessible URL to an image resource such as a jpg or png file.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -48,6 +61,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Image))]
 #endif
         public bool IsImage => Image != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickImage(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ImageAsset? value)
+        {
+            value = Image;
+            return IsImage;
+        }
 
         /// <summary>
         /// The TextAsset is used to add text and titles to a video. The text can be styled with built in and custom<br/>
@@ -68,6 +94,19 @@ namespace G
         public bool IsText => Text != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickText(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.TextAsset? value)
+        {
+            value = Text;
+            return IsText;
+        }
+
+        /// <summary>
         /// The RichTextAsset provides advanced text rendering with support for custom fonts, gradients, shadows, strokes,<br/>
         /// animations, and styling options. It offers more flexibility and visual effects than the basic TextAsset.
         /// </summary>
@@ -84,6 +123,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RichText))]
 #endif
         public bool IsRichText => RichText != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickRichText(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.RichTextAsset? value)
+        {
+            value = RichText;
+            return IsRichText;
+        }
 
         /// <summary>
         /// The AudioAsset is used to add sound effects and audio at specific intervals on the timeline. The src must be a publicly accessible URL to an audio resource such  as an mp3 file.
@@ -103,6 +155,19 @@ namespace G
         public bool IsAudio => Audio != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickAudio(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.AudioAsset? value)
+        {
+            value = Audio;
+            return IsAudio;
+        }
+
+        /// <summary>
         /// The LumaAsset is used to create luma matte masks, transitions and effects between other assets. A luma matte is a grey scale image or animated video where the black areas are transparent and the white areas solid. The luma matte animation should be provided as an mp4 video file. The src must be a publicly accessible URL to the file.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -118,6 +183,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Luma))]
 #endif
         public bool IsLuma => Luma != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickLuma(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.LumaAsset? value)
+        {
+            value = Luma;
+            return IsLuma;
+        }
 
         /// <summary>
         /// The CaptionAsset is used to add captions (subtitles) to a video. It uses a supplied SRT or VTT file which will<br/>
@@ -143,6 +221,19 @@ namespace G
         public bool IsCaption => Caption != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickCaption(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CaptionAsset? value)
+        {
+            value = Caption;
+            return IsCaption;
+        }
+
+        /// <summary>
         /// The RichCaptionAsset provides word-level caption animations with rich-text styling. It supports<br/>
         /// karaoke-style highlighting, word-by-word animations, and advanced typography. Use with SRT/VTT<br/>
         /// files or auto-transcription via aliases.
@@ -160,6 +251,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RichCaption))]
 #endif
         public bool IsRichCaption => RichCaption != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickRichCaption(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.RichCaptionAsset? value)
+        {
+            value = RichCaption;
+            return IsRichCaption;
+        }
 
         /// <summary>
         /// **Notice: The HtmlAsset is deprecated, use the [TextAsset](#tocs_textasset) instead.**<br/>
@@ -182,6 +286,19 @@ namespace G
         public bool IsHtml => Html != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickHtml(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.HtmlAsset? value)
+        {
+            value = Html;
+            return IsHtml;
+        }
+
+        /// <summary>
         /// **Notice: The TitleAsset is deprecated, use the [TextAsset](#tocs_textasset) instead.**<br/>
         /// The TitleAsset clip type lets you create video titles from a text string and apply styling and positioning.
         /// </summary>
@@ -200,6 +317,19 @@ namespace G
         public bool IsTitle => Title != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickTitle(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.TitleAsset? value)
+        {
+            value = Title;
+            return IsTitle;
+        }
+
+        /// <summary>
         /// The ShapeAsset is used to add shapes to a video. The shape can be styled with a fill and a stroke.<br/>
         /// You can manipulate properties such as rotation to create dynamic effects like a diamond shape or stripes.
         /// </summary>
@@ -216,6 +346,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Shape))]
 #endif
         public bool IsShape => Shape != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickShape(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ShapeAsset? value)
+        {
+            value = Shape;
+            return IsShape;
+        }
 
         /// <summary>
         /// The SvgAsset is used to add scalable vector graphics (SVG) shapes to a video.<br/>
@@ -271,6 +414,19 @@ namespace G
         public bool IsSvg => Svg != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSvg(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.SvgAsset? value)
+        {
+            value = Svg;
+            return IsSvg;
+        }
+
+        /// <summary>
         /// The TextToImageAsset lets you create a dynamic image from a text prompt.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -286,6 +442,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TextToImage))]
 #endif
         public bool IsTextToImage => TextToImage != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickTextToImage(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.TextToImageAsset? value)
+        {
+            value = TextToImage;
+            return IsTextToImage;
+        }
 
         /// <summary>
         /// The ImageToVideoAsset lets you create a video from an image and a text prompt.
@@ -305,6 +474,19 @@ namespace G
         public bool IsImageToVideo => ImageToVideo != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickImageToVideo(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ImageToVideoAsset? value)
+        {
+            value = ImageToVideo;
+            return IsImageToVideo;
+        }
+
+        /// <summary>
         /// The TextToSpeechAsset lets you generate a voice over from text using a text-to-speech service. The generated audio can be trimmed, faded and have its volume and speed adjusted using the same properties available on the AudioAsset.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -320,6 +502,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TextToSpeech))]
 #endif
         public bool IsTextToSpeech => TextToSpeech != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickTextToSpeech(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.TextToSpeechAsset? value)
+        {
+            value = TextToSpeech;
+            return IsTextToSpeech;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -685,21 +880,21 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.VideoAsset?, TResult>? video = null,
-            global::System.Func<global::G.ImageAsset?, TResult>? image = null,
-            global::System.Func<global::G.TextAsset?, TResult>? text = null,
-            global::System.Func<global::G.RichTextAsset?, TResult>? richText = null,
-            global::System.Func<global::G.AudioAsset?, TResult>? audio = null,
-            global::System.Func<global::G.LumaAsset?, TResult>? luma = null,
-            global::System.Func<global::G.CaptionAsset?, TResult>? caption = null,
-            global::System.Func<global::G.RichCaptionAsset?, TResult>? richCaption = null,
-            global::System.Func<global::G.HtmlAsset?, TResult>? html = null,
-            global::System.Func<global::G.TitleAsset?, TResult>? title = null,
-            global::System.Func<global::G.ShapeAsset?, TResult>? shape = null,
-            global::System.Func<global::G.SvgAsset?, TResult>? svg = null,
-            global::System.Func<global::G.TextToImageAsset?, TResult>? textToImage = null,
-            global::System.Func<global::G.ImageToVideoAsset?, TResult>? imageToVideo = null,
-            global::System.Func<global::G.TextToSpeechAsset?, TResult>? textToSpeech = null,
+            global::System.Func<global::G.VideoAsset, TResult>? video = null,
+            global::System.Func<global::G.ImageAsset, TResult>? image = null,
+            global::System.Func<global::G.TextAsset, TResult>? text = null,
+            global::System.Func<global::G.RichTextAsset, TResult>? richText = null,
+            global::System.Func<global::G.AudioAsset, TResult>? audio = null,
+            global::System.Func<global::G.LumaAsset, TResult>? luma = null,
+            global::System.Func<global::G.CaptionAsset, TResult>? caption = null,
+            global::System.Func<global::G.RichCaptionAsset, TResult>? richCaption = null,
+            global::System.Func<global::G.HtmlAsset, TResult>? html = null,
+            global::System.Func<global::G.TitleAsset, TResult>? title = null,
+            global::System.Func<global::G.ShapeAsset, TResult>? shape = null,
+            global::System.Func<global::G.SvgAsset, TResult>? svg = null,
+            global::System.Func<global::G.TextToImageAsset, TResult>? textToImage = null,
+            global::System.Func<global::G.ImageToVideoAsset, TResult>? imageToVideo = null,
+            global::System.Func<global::G.TextToSpeechAsset, TResult>? textToSpeech = null,
             bool validate = true)
         {
             if (validate)
@@ -775,21 +970,123 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.VideoAsset?>? video = null,
-            global::System.Action<global::G.ImageAsset?>? image = null,
-            global::System.Action<global::G.TextAsset?>? text = null,
-            global::System.Action<global::G.RichTextAsset?>? richText = null,
-            global::System.Action<global::G.AudioAsset?>? audio = null,
-            global::System.Action<global::G.LumaAsset?>? luma = null,
-            global::System.Action<global::G.CaptionAsset?>? caption = null,
-            global::System.Action<global::G.RichCaptionAsset?>? richCaption = null,
-            global::System.Action<global::G.HtmlAsset?>? html = null,
-            global::System.Action<global::G.TitleAsset?>? title = null,
-            global::System.Action<global::G.ShapeAsset?>? shape = null,
-            global::System.Action<global::G.SvgAsset?>? svg = null,
-            global::System.Action<global::G.TextToImageAsset?>? textToImage = null,
-            global::System.Action<global::G.ImageToVideoAsset?>? imageToVideo = null,
-            global::System.Action<global::G.TextToSpeechAsset?>? textToSpeech = null,
+            global::System.Action<global::G.VideoAsset>? video = null,
+
+            global::System.Action<global::G.ImageAsset>? image = null,
+
+            global::System.Action<global::G.TextAsset>? text = null,
+
+            global::System.Action<global::G.RichTextAsset>? richText = null,
+
+            global::System.Action<global::G.AudioAsset>? audio = null,
+
+            global::System.Action<global::G.LumaAsset>? luma = null,
+
+            global::System.Action<global::G.CaptionAsset>? caption = null,
+
+            global::System.Action<global::G.RichCaptionAsset>? richCaption = null,
+
+            global::System.Action<global::G.HtmlAsset>? html = null,
+
+            global::System.Action<global::G.TitleAsset>? title = null,
+
+            global::System.Action<global::G.ShapeAsset>? shape = null,
+
+            global::System.Action<global::G.SvgAsset>? svg = null,
+
+            global::System.Action<global::G.TextToImageAsset>? textToImage = null,
+
+            global::System.Action<global::G.ImageToVideoAsset>? imageToVideo = null,
+
+            global::System.Action<global::G.TextToSpeechAsset>? textToSpeech = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsVideo)
+            {
+                video?.Invoke(Video!);
+            }
+            else if (IsImage)
+            {
+                image?.Invoke(Image!);
+            }
+            else if (IsText)
+            {
+                text?.Invoke(Text!);
+            }
+            else if (IsRichText)
+            {
+                richText?.Invoke(RichText!);
+            }
+            else if (IsAudio)
+            {
+                audio?.Invoke(Audio!);
+            }
+            else if (IsLuma)
+            {
+                luma?.Invoke(Luma!);
+            }
+            else if (IsCaption)
+            {
+                caption?.Invoke(Caption!);
+            }
+            else if (IsRichCaption)
+            {
+                richCaption?.Invoke(RichCaption!);
+            }
+            else if (IsHtml)
+            {
+                html?.Invoke(Html!);
+            }
+            else if (IsTitle)
+            {
+                title?.Invoke(Title!);
+            }
+            else if (IsShape)
+            {
+                shape?.Invoke(Shape!);
+            }
+            else if (IsSvg)
+            {
+                svg?.Invoke(Svg!);
+            }
+            else if (IsTextToImage)
+            {
+                textToImage?.Invoke(TextToImage!);
+            }
+            else if (IsImageToVideo)
+            {
+                imageToVideo?.Invoke(ImageToVideo!);
+            }
+            else if (IsTextToSpeech)
+            {
+                textToSpeech?.Invoke(TextToSpeech!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.VideoAsset>? video = null,
+            global::System.Action<global::G.ImageAsset>? image = null,
+            global::System.Action<global::G.TextAsset>? text = null,
+            global::System.Action<global::G.RichTextAsset>? richText = null,
+            global::System.Action<global::G.AudioAsset>? audio = null,
+            global::System.Action<global::G.LumaAsset>? luma = null,
+            global::System.Action<global::G.CaptionAsset>? caption = null,
+            global::System.Action<global::G.RichCaptionAsset>? richCaption = null,
+            global::System.Action<global::G.HtmlAsset>? html = null,
+            global::System.Action<global::G.TitleAsset>? title = null,
+            global::System.Action<global::G.ShapeAsset>? shape = null,
+            global::System.Action<global::G.SvgAsset>? svg = null,
+            global::System.Action<global::G.TextToImageAsset>? textToImage = null,
+            global::System.Action<global::G.ImageToVideoAsset>? imageToVideo = null,
+            global::System.Action<global::G.TextToSpeechAsset>? textToSpeech = null,
             bool validate = true)
         {
             if (validate)

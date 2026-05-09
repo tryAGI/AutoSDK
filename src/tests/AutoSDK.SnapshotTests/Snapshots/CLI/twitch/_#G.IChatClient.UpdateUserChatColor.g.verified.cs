@@ -21,5 +21,21 @@ namespace G
             global::G.UpdateUserChatColorColor color,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Updates the color used for the user’s name in chat.<br/>
+        /// Updates the color used for the user’s name in chat.<br/>
+        /// __Authorization:__<br/>
+        /// Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the **user:manage:chat\_color** scope.
+        /// </summary>
+        /// <param name="userId"></param>
+        /// <param name="color"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse> UpdateUserChatColorAsResponseAsync(
+            string userId,
+            global::G.UpdateUserChatColorColor color,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

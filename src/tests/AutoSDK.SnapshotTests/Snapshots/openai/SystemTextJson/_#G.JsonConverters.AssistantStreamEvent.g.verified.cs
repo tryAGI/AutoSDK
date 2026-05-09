@@ -24,6 +24,14 @@ namespace G.JsonConverters
                 foreach (var __jsonProp in __jsonDocument.RootElement.EnumerateObject())
                 {
                     __jsonProps.Add(__jsonProp.Name);
+                    if (__jsonProp.Value.ValueKind == global::System.Text.Json.JsonValueKind.Object)
+                    {
+                        foreach (var __nestedJsonProp in __jsonProp.Value.EnumerateObject())
+                        {
+                            __jsonProps.Add(__jsonProp.Name + "." + __nestedJsonProp.Name);
+                        }
+                    }
+
                 }
             }
 
@@ -33,6 +41,10 @@ namespace G.JsonConverters
             var __score3 = 0;
             var __score4 = 0;
             if (__jsonProps.Contains("data")) __score4++;
+            if (__jsonProps.Contains("data.code")) __score4++;
+            if (__jsonProps.Contains("data.message")) __score4++;
+            if (__jsonProps.Contains("data.param")) __score4++;
+            if (__jsonProps.Contains("data.type")) __score4++;
             if (__jsonProps.Contains("event")) __score4++;
             var __score5 = 0;
             if (__jsonProps.Contains("data")) __score5++;

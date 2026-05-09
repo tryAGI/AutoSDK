@@ -35,6 +35,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickCategorical(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CategoricalAnnotationConfig? value)
+        {
+            value = Categorical;
+            return IsCategorical;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ContinuousAnnotationConfig? Continuous { get; init; }
 #else
@@ -52,6 +65,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickContinuous(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ContinuousAnnotationConfig? value)
+        {
+            value = Continuous;
+            return IsContinuous;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.FreeformAnnotationConfig? Freeform { get; init; }
 #else
@@ -65,6 +91,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Freeform))]
 #endif
         public bool IsFreeform => Freeform != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFreeform(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.FreeformAnnotationConfig? value)
+        {
+            value = Freeform;
+            return IsFreeform;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -166,9 +205,9 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.CategoricalAnnotationConfig?, TResult>? categorical = null,
-            global::System.Func<global::G.ContinuousAnnotationConfig?, TResult>? continuous = null,
-            global::System.Func<global::G.FreeformAnnotationConfig?, TResult>? freeform = null,
+            global::System.Func<global::G.CategoricalAnnotationConfig, TResult>? categorical = null,
+            global::System.Func<global::G.ContinuousAnnotationConfig, TResult>? continuous = null,
+            global::System.Func<global::G.FreeformAnnotationConfig, TResult>? freeform = null,
             bool validate = true)
         {
             if (validate)
@@ -196,9 +235,39 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.CategoricalAnnotationConfig?>? categorical = null,
-            global::System.Action<global::G.ContinuousAnnotationConfig?>? continuous = null,
-            global::System.Action<global::G.FreeformAnnotationConfig?>? freeform = null,
+            global::System.Action<global::G.CategoricalAnnotationConfig>? categorical = null,
+
+            global::System.Action<global::G.ContinuousAnnotationConfig>? continuous = null,
+
+            global::System.Action<global::G.FreeformAnnotationConfig>? freeform = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsCategorical)
+            {
+                categorical?.Invoke(Categorical!);
+            }
+            else if (IsContinuous)
+            {
+                continuous?.Invoke(Continuous!);
+            }
+            else if (IsFreeform)
+            {
+                freeform?.Invoke(Freeform!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.CategoricalAnnotationConfig>? categorical = null,
+            global::System.Action<global::G.ContinuousAnnotationConfig>? continuous = null,
+            global::System.Action<global::G.FreeformAnnotationConfig>? freeform = null,
             bool validate = true)
         {
             if (validate)

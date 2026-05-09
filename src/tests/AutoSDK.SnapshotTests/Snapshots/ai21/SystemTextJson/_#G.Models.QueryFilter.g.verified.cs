@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickComparisonOperator(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ComparisonOperator? value)
+        {
+            value = ComparisonOperator;
+            return IsComparisonOperator;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<object>>? LogicalOperator { get; init; }
 #else
@@ -47,6 +60,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickLogicalOperator(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<object>>? value)
+        {
+            value = LogicalOperator;
+            return IsLogicalOperator;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.Dictionary<string, global::G.ComparisonOperator>? QueryFilterVariant3 { get; init; }
 #else
@@ -60,6 +86,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(QueryFilterVariant3))]
 #endif
         public bool IsQueryFilterVariant3 => QueryFilterVariant3 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickQueryFilterVariant3(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::System.Collections.Generic.Dictionary<string, global::G.ComparisonOperator>? value)
+        {
+            value = QueryFilterVariant3;
+            return IsQueryFilterVariant3;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -158,9 +197,9 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.ComparisonOperator?, TResult>? comparisonOperator = null,
-            global::System.Func<global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<object>>?, TResult>? logicalOperator = null,
-            global::System.Func<global::System.Collections.Generic.Dictionary<string, global::G.ComparisonOperator>?, TResult>? queryFilterVariant3 = null,
+            global::System.Func<global::G.ComparisonOperator, TResult>? comparisonOperator = null,
+            global::System.Func<global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<object>>, TResult>? logicalOperator = null,
+            global::System.Func<global::System.Collections.Generic.Dictionary<string, global::G.ComparisonOperator>, TResult>? queryFilterVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -188,9 +227,39 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.ComparisonOperator?>? comparisonOperator = null,
-            global::System.Action<global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<object>>?>? logicalOperator = null,
-            global::System.Action<global::System.Collections.Generic.Dictionary<string, global::G.ComparisonOperator>?>? queryFilterVariant3 = null,
+            global::System.Action<global::G.ComparisonOperator>? comparisonOperator = null,
+
+            global::System.Action<global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<object>>>? logicalOperator = null,
+
+            global::System.Action<global::System.Collections.Generic.Dictionary<string, global::G.ComparisonOperator>>? queryFilterVariant3 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsComparisonOperator)
+            {
+                comparisonOperator?.Invoke(ComparisonOperator!);
+            }
+            else if (IsLogicalOperator)
+            {
+                logicalOperator?.Invoke(LogicalOperator!);
+            }
+            else if (IsQueryFilterVariant3)
+            {
+                queryFilterVariant3?.Invoke(QueryFilterVariant3!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.ComparisonOperator>? comparisonOperator = null,
+            global::System.Action<global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<object>>>? logicalOperator = null,
+            global::System.Action<global::System.Collections.Generic.Dictionary<string, global::G.ComparisonOperator>>? queryFilterVariant3 = null,
             bool validate = true)
         {
             if (validate)

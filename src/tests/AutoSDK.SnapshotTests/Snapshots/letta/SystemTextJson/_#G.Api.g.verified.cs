@@ -21,7 +21,7 @@ namespace G
         public global::System.Net.Http.HttpClient HttpClient { get; }
 
         /// <inheritdoc/>
-        public System.Uri? BaseUri => HttpClient.BaseAddress;
+        public System.Uri? BaseUri => ResolveDisplayedBaseUri();
 
         /// <inheritdoc/>
         public global::System.Collections.Generic.List<global::G.EndPointAuthorization> Authorizations { get; }
@@ -34,6 +34,9 @@ namespace G
 
         /// <inheritdoc/>
         public global::G.AutoSDKClientOptions Options { get; }
+
+
+        internal global::G.AutoSDKServerConfiguration AutoSDKServerConfiguration { get; set; } = new global::G.AutoSDKServerConfiguration();
         /// <summary>
         /// 
         /// </summary>
@@ -829,326 +832,390 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public AgentsClient Agents => new AgentsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public AgentsClient Agents => new AgentsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
+            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
 
         /// <summary>
         /// 
         /// </summary>
-        public ArchivesClient Archives => new ArchivesClient(HttpClient, authorizations: Authorizations, options: Options)
+        public ArchivesClient Archives => new ArchivesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
+            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
 
         /// <summary>
         /// 
         /// </summary>
-        public BlocksClient Blocks => new BlocksClient(HttpClient, authorizations: Authorizations, options: Options)
+        public BlocksClient Blocks => new BlocksClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
+            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
 
         /// <summary>
         /// 
         /// </summary>
-        public ChatClient Chat => new ChatClient(HttpClient, authorizations: Authorizations, options: Options)
+        public ChatClient Chat => new ChatClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
+            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
 
         /// <summary>
         /// 
         /// </summary>
-        public ClientSideAccessTokensClient ClientSideAccessTokens => new ClientSideAccessTokensClient(HttpClient, authorizations: Authorizations, options: Options)
+        public ClientSideAccessTokensClient ClientSideAccessTokens => new ClientSideAccessTokensClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
+            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
 
         /// <summary>
         /// 
         /// </summary>
-        public ConversationsClient Conversations => new ConversationsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public ConversationsClient Conversations => new ConversationsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
+            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
 
         /// <summary>
         /// 
         /// </summary>
-        public EmbeddingsClient Embeddings => new EmbeddingsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public EmbeddingsClient Embeddings => new EmbeddingsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
+            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
 
         /// <summary>
         /// 
         /// </summary>
-        public EnvironmentsClient Environments => new EnvironmentsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public EnvironmentsClient Environments => new EnvironmentsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
+            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
 
         /// <summary>
         /// 
         /// </summary>
-        public FeedsClient Feeds => new FeedsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public FeedsClient Feeds => new FeedsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
+            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
 
         /// <summary>
         /// 
         /// </summary>
-        public FoldersClient Folders => new FoldersClient(HttpClient, authorizations: Authorizations, options: Options)
+        public FoldersClient Folders => new FoldersClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
+            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
 
         /// <summary>
         /// 
         /// </summary>
-        public GroupsClient Groups => new GroupsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public GroupsClient Groups => new GroupsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
+            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
 
         /// <summary>
         /// 
         /// </summary>
-        public HealthClient Health => new HealthClient(HttpClient, authorizations: Authorizations, options: Options)
+        public HealthClient Health => new HealthClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
+            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
 
         /// <summary>
         /// 
         /// </summary>
-        public IdentitiesClient Identities => new IdentitiesClient(HttpClient, authorizations: Authorizations, options: Options)
+        public IdentitiesClient Identities => new IdentitiesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
+            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
 
         /// <summary>
         /// 
         /// </summary>
-        public InternalAgentsClient InternalAgents => new InternalAgentsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public InternalAgentsClient InternalAgents => new InternalAgentsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
+            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
 
         /// <summary>
         /// 
         /// </summary>
-        public InternalBlocksClient InternalBlocks => new InternalBlocksClient(HttpClient, authorizations: Authorizations, options: Options)
+        public InternalBlocksClient InternalBlocks => new InternalBlocksClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
+            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
 
         /// <summary>
         /// 
         /// </summary>
-        public InternalRunsClient InternalRuns => new InternalRunsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public InternalRunsClient InternalRuns => new InternalRunsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
+            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
 
         /// <summary>
         /// 
         /// </summary>
-        public InternalTemplatesClient InternalTemplates => new InternalTemplatesClient(HttpClient, authorizations: Authorizations, options: Options)
+        public InternalTemplatesClient InternalTemplates => new InternalTemplatesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
+            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
 
         /// <summary>
         /// 
         /// </summary>
-        public JobsClient Jobs => new JobsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public JobsClient Jobs => new JobsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
+            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
 
         /// <summary>
         /// 
         /// </summary>
-        public McpServersClient McpServers => new McpServersClient(HttpClient, authorizations: Authorizations, options: Options)
+        public McpServersClient McpServers => new McpServersClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
+            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
 
         /// <summary>
         /// 
         /// </summary>
-        public MemoryFilesClient MemoryFiles => new MemoryFilesClient(HttpClient, authorizations: Authorizations, options: Options)
+        public MemoryFilesClient MemoryFiles => new MemoryFilesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
+            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
 
         /// <summary>
         /// 
         /// </summary>
-        public MessagesClient Messages => new MessagesClient(HttpClient, authorizations: Authorizations, options: Options)
+        public MessagesClient Messages => new MessagesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
+            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
 
         /// <summary>
         /// 
         /// </summary>
-        public MetadataClient Metadata => new MetadataClient(HttpClient, authorizations: Authorizations, options: Options)
+        public MetadataClient Metadata => new MetadataClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
+            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
 
         /// <summary>
         /// 
         /// </summary>
-        public ModelsClient Models => new ModelsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public ModelsClient Models => new ModelsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
+            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
 
         /// <summary>
         /// 
         /// </summary>
-        public PassagesClient Passages => new PassagesClient(HttpClient, authorizations: Authorizations, options: Options)
+        public PassagesClient Passages => new PassagesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
+            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
 
         /// <summary>
         /// 
         /// </summary>
-        public PipelinesClient Pipelines => new PipelinesClient(HttpClient, authorizations: Authorizations, options: Options)
+        public PipelinesClient Pipelines => new PipelinesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
+            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
 
         /// <summary>
         /// 
         /// </summary>
-        public ProjectsClient Projects => new ProjectsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public ProjectsClient Projects => new ProjectsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
+            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
 
         /// <summary>
         /// 
         /// </summary>
-        public ProvidersClient Providers => new ProvidersClient(HttpClient, authorizations: Authorizations, options: Options)
+        public ProvidersClient Providers => new ProvidersClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
+            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
 
         /// <summary>
         /// 
         /// </summary>
-        public RunsClient Runs => new RunsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public RunsClient Runs => new RunsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
+            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
 
         /// <summary>
         /// 
         /// </summary>
-        public ScheduledMessagesClient ScheduledMessages => new ScheduledMessagesClient(HttpClient, authorizations: Authorizations, options: Options)
+        public ScheduledMessagesClient ScheduledMessages => new ScheduledMessagesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
+            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
 
         /// <summary>
         /// 
         /// </summary>
-        public SourcesClient Sources => new SourcesClient(HttpClient, authorizations: Authorizations, options: Options)
+        public SourcesClient Sources => new SourcesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
+            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
 
         /// <summary>
         /// 
         /// </summary>
-        public StepsClient Steps => new StepsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public StepsClient Steps => new StepsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
+            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
 
         /// <summary>
         /// 
         /// </summary>
-        public TagClient Tag => new TagClient(HttpClient, authorizations: Authorizations, options: Options)
+        public TagClient Tag => new TagClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
+            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
 
         /// <summary>
         /// 
         /// </summary>
-        public TelemetryClient Telemetry => new TelemetryClient(HttpClient, authorizations: Authorizations, options: Options)
+        public TelemetryClient Telemetry => new TelemetryClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
+            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
 
         /// <summary>
         /// 
         /// </summary>
-        public TemplatesClient Templates => new TemplatesClient(HttpClient, authorizations: Authorizations, options: Options)
+        public TemplatesClient Templates => new TemplatesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
+            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
 
         /// <summary>
         /// 
         /// </summary>
-        public ToolsClient Tools => new ToolsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public ToolsClient Tools => new ToolsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
+            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
 
         /// <summary>
         /// 
         /// </summary>
-        public VoiceClient Voice => new VoiceClient(HttpClient, authorizations: Authorizations, options: Options)
+        public VoiceClient Voice => new VoiceClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
+            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
+
+
+        private static readonly global::G.AutoSDKServer[] s_availableServers = new global::G.AutoSDKServer[]
+        {            new global::G.AutoSDKServer(
+                id: "https-app-letta-com",
+                name: "Letta Cloud",
+                url: "https://app.letta.com/",
+                description: "Letta Cloud"),
+            new global::G.AutoSDKServer(
+                id: "http-localhost",
+                name: "Self-hosted",
+                url: "http://localhost:8283/",
+                description: "Self-hosted"),
+        };
+
+        /// <summary>
+        /// The server options available for this client.
+        /// </summary>
+        public global::System.Collections.Generic.IReadOnlyList<global::G.AutoSDKServer> AvailableServers => s_availableServers;
+
+        /// <summary>
+        /// The currently selected server for this client, if any.
+        /// </summary>
+        public global::G.AutoSDKServer? SelectedServer
+        {
+            get => ResolveSelectedServer();
+            set => SelectServer(value);
+        }
 
         /// <summary>
         /// Creates a new instance of the Api.
@@ -1183,10 +1250,10 @@ namespace G
         /// <param name="options">Client-wide request defaults such as headers, query parameters, retries, and timeout.</param>
         /// <param name="disposeHttpClient">Dispose the HttpClient when the instance is disposed. True by default.</param>
         public Api(
-            global::System.Net.Http.HttpClient? httpClient = null,
-            global::System.Uri? baseUri = null,
-            global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations = null,
-            global::G.AutoSDKClientOptions? options = null,
+            global::System.Net.Http.HttpClient? httpClient,
+            global::System.Uri? baseUri,
+            global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations,
+            global::G.AutoSDKClientOptions? options,
             bool disposeHttpClient = true)
         {
 
@@ -1195,6 +1262,8 @@ namespace G
             Authorizations = authorizations ?? new global::System.Collections.Generic.List<global::G.EndPointAuthorization>();
             Options = options ?? new global::G.AutoSDKClientOptions();
             _disposeHttpClient = disposeHttpClient;
+
+            AutoSDKServerConfiguration.ExplicitBaseUri = baseUri ?? httpClient?.BaseAddress;
 
             Initialized(HttpClient);
         }
@@ -1222,5 +1291,117 @@ namespace G
             global::System.Net.Http.HttpClient client,
             global::System.Net.Http.HttpResponseMessage response,
             ref string content);
+
+
+        /// <summary>
+        /// Selects one of the generated server options by id.
+        /// </summary>
+        public bool TrySelectServer(string serverId)
+        {
+            if (string.IsNullOrWhiteSpace(serverId))
+            {
+                return false;
+            }
+
+            foreach (var server in s_availableServers)
+            {
+                if (string.Equals(server.Id, serverId, global::System.StringComparison.OrdinalIgnoreCase))
+                {
+                    AutoSDKServerConfiguration.SelectedServer = server;
+                    AutoSDKServerConfiguration.ExplicitBaseUri = null;
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        /// <summary>
+        /// Clears the currently selected server.
+        /// </summary>
+        public void ClearSelectedServer()
+        {
+            AutoSDKServerConfiguration.SelectedServer = null;
+        }
+
+        private global::G.AutoSDKServer? ResolveSelectedServer()
+        {
+            var selectedServer = AutoSDKServerConfiguration.SelectedServer;
+            if (selectedServer is null)
+            {
+                return null;
+            }
+
+            foreach (var server in s_availableServers)
+            {
+                if (string.Equals(server.Id, selectedServer.Id, global::System.StringComparison.Ordinal))
+                {
+                    return server;
+                }
+            }
+
+            return null;
+        }
+
+        private void SelectServer(global::G.AutoSDKServer? server)
+        {
+            if (server is null)
+            {
+                AutoSDKServerConfiguration.SelectedServer = null;
+                return;
+            }
+
+            foreach (var candidate in s_availableServers)
+            {
+                if (string.Equals(candidate.Id, server.Id, global::System.StringComparison.Ordinal))
+                {
+                    AutoSDKServerConfiguration.SelectedServer = candidate;
+                    AutoSDKServerConfiguration.ExplicitBaseUri = null;
+                    return;
+                }
+            }
+
+            throw new global::System.ArgumentException("The provided server is not available for this client.", nameof(server));
+        }
+
+        private global::System.Uri? ResolveDisplayedBaseUri()
+        {
+            if (AutoSDKServerConfiguration.ExplicitBaseUri is global::System.Uri explicitBaseUri)
+            {
+                return explicitBaseUri;
+            }
+
+            return ResolveSelectedServer()?.Uri ?? HttpClient.BaseAddress;
+        }
+
+        private global::System.Uri? ResolveBaseUri(
+            global::G.AutoSDKServer[] servers,
+            string defaultBaseUrl)
+        {
+            if (AutoSDKServerConfiguration.ExplicitBaseUri is global::System.Uri explicitBaseUri)
+            {
+                return explicitBaseUri;
+            }
+
+            if (AutoSDKServerConfiguration.SelectedServer is global::G.AutoSDKServer selectedServer)
+            {
+                foreach (var server in servers)
+                {
+                    if (string.Equals(server.Id, selectedServer.Id, global::System.StringComparison.Ordinal))
+                    {
+                        return server.Uri;
+                    }
+                }
+            }
+
+            if (servers.Length > 0)
+            {
+                return servers[0].Uri;
+            }
+
+            return string.IsNullOrWhiteSpace(defaultBaseUrl)
+                ? HttpClient.BaseAddress
+                : new global::System.Uri(defaultBaseUrl, global::System.UriKind.RelativeOrAbsolute);
+        }
     }
 }

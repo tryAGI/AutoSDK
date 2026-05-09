@@ -33,6 +33,25 @@ namespace G
         /// &lt;/Note&gt;
         /// </summary>
         /// <param name="xApiKey"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.AnalyzeResponse200>> AnalyzeAsResponseAsync(
+            string xApiKey,
+
+            global::G.AnalyzeRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Open-ended analysis<br/>
+        /// This endpoint analyzes your videos and creates fully customizable text based on your prompts, including but not limited to tables of content, action items, memos, and detailed analyses.<br/>
+        /// &lt;Note title="Notes"&gt;<br/>
+        /// - This endpoint is rate-limited. For details, see the [Rate limits](/v1.3/docs/get-started/rate-limits) page.<br/>
+        /// - This endpoint supports streaming responses.<br/>
+        /// &lt;/Note&gt;
+        /// </summary>
+        /// <param name="xApiKey"></param>
         /// <param name="videoId">
         /// The unique identifier of the video for which you wish to generate a text.
         /// </param>

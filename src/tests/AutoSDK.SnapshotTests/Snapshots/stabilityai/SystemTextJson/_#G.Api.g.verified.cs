@@ -93,7 +93,7 @@ namespace G
         /// <summary>
         /// Enumerate available engines.
         /// </summary>
-        public V1EnginesClient V1Engines => new V1EnginesClient(HttpClient, authorizations: Authorizations, options: Options)
+        public V1EnginesClient V1Engines => new V1EnginesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -102,7 +102,7 @@ namespace G
         /// <summary>
         /// Generate images from text, existing images, or both.
         /// </summary>
-        public V1GenerationClient V1Generation => new V1GenerationClient(HttpClient, authorizations: Authorizations, options: Options)
+        public V1GenerationClient V1Generation => new V1GenerationClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -111,7 +111,7 @@ namespace G
         /// <summary>
         /// Manage your Stability.ai account, and view account/organization balances.
         /// </summary>
-        public V1UserClient V1User => new V1UserClient(HttpClient, authorizations: Authorizations, options: Options)
+        public V1UserClient V1User => new V1UserClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -150,10 +150,10 @@ namespace G
         /// <param name="options">Client-wide request defaults such as headers, query parameters, retries, and timeout.</param>
         /// <param name="disposeHttpClient">Dispose the HttpClient when the instance is disposed. True by default.</param>
         public Api(
-            global::System.Net.Http.HttpClient? httpClient = null,
-            global::System.Uri? baseUri = null,
-            global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations = null,
-            global::G.AutoSDKClientOptions? options = null,
+            global::System.Net.Http.HttpClient? httpClient,
+            global::System.Uri? baseUri,
+            global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations,
+            global::G.AutoSDKClientOptions? options,
             bool disposeHttpClient = true)
         {
 

@@ -24,6 +24,14 @@ namespace G.JsonConverters
                 foreach (var __jsonProp in __jsonDocument.RootElement.EnumerateObject())
                 {
                     __jsonProps.Add(__jsonProp.Name);
+                    if (__jsonProp.Value.ValueKind == global::System.Text.Json.JsonValueKind.Object)
+                    {
+                        foreach (var __nestedJsonProp in __jsonProp.Value.EnumerateObject())
+                        {
+                            __jsonProps.Add(__jsonProp.Name + "." + __nestedJsonProp.Name);
+                        }
+                    }
+
                 }
             }
 
@@ -31,6 +39,8 @@ namespace G.JsonConverters
             if (__jsonProps.Contains("begin_after_user_silence_ms")) __score0++;
             if (__jsonProps.Contains("begin_message")) __score0++;
             if (__jsonProps.Contains("kb_config")) __score0++;
+            if (__jsonProps.Contains("kb_config.filter_score")) __score0++;
+            if (__jsonProps.Contains("kb_config.top_k")) __score0++;
             if (__jsonProps.Contains("knowledge_base_ids")) __score0++;
             if (__jsonProps.Contains("model")) __score0++;
             if (__jsonProps.Contains("model_high_priority")) __score0++;

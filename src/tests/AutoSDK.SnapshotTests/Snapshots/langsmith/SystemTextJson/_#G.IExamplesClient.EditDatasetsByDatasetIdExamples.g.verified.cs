@@ -24,6 +24,20 @@ namespace G
         /// This endpoint allows clients to update existing examples in a specified dataset by sending a multipart/form-data PATCH request.<br/>
         /// Each form part contains either JSON-encoded data or binary attachment files to update an example.
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse> EditDatasetsByDatasetIdExamplesAsResponseAsync(
+
+            global::G.PatchDatasetsExamplesRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Update Examples<br/>
+        /// This endpoint allows clients to update existing examples in a specified dataset by sending a multipart/form-data PATCH request.<br/>
+        /// Each form part contains either JSON-encoded data or binary attachment files to update an example.
+        /// </summary>
         /// <param name="x_exampleId_">
         /// The Example update info as JSON. Can have fields 'metadata', 'split'
         /// </param>
@@ -67,6 +81,109 @@ namespace G
             byte[]? x_exampleId_AttachmentsOperations = default,
             string? x_exampleId_AttachmentsOperationsname = default,
             byte[]? x_exampleId_Attachment_name_ = default,
+            string? x_exampleId_Attachment_name_name = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Update Examples<br/>
+        /// This endpoint allows clients to update existing examples in a specified dataset by sending a multipart/form-data PATCH request.<br/>
+        /// Each form part contains either JSON-encoded data or binary attachment files to update an example.
+        /// </summary>
+        /// <param name="x_exampleId_">
+        /// The Example update info as JSON. Can have fields 'metadata', 'split'
+        /// </param>
+        /// <param name="x_exampleId_name">
+        /// The Example update info as JSON. Can have fields 'metadata', 'split'
+        /// </param>
+        /// <param name="x_exampleId_Inputs">
+        /// The updated Example inputs as JSON
+        /// </param>
+        /// <param name="x_exampleId_Inputsname">
+        /// The updated Example inputs as JSON
+        /// </param>
+        /// <param name="x_exampleId_Outputs">
+        /// The updated Example outputs as JSON
+        /// </param>
+        /// <param name="x_exampleId_Outputsname">
+        /// The updated Example outputs as JSON
+        /// </param>
+        /// <param name="x_exampleId_AttachmentsOperations">
+        /// JSON describing attachment operations (retain, rename)
+        /// </param>
+        /// <param name="x_exampleId_AttachmentsOperationsname">
+        /// JSON describing attachment operations (retain, rename)
+        /// </param>
+        /// <param name="x_exampleId_Attachment_name_">
+        /// New file attachment named {name}
+        /// </param>
+        /// <param name="x_exampleId_Attachment_name_name">
+        /// New file attachment named {name}
+        /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task EditDatasetsByDatasetIdExamplesAsync(
+            global::System.IO.Stream x_exampleId_,
+            string x_exampleId_name,
+            global::System.IO.Stream? x_exampleId_Inputs = default,
+            string? x_exampleId_Inputsname = default,
+            global::System.IO.Stream? x_exampleId_Outputs = default,
+            string? x_exampleId_Outputsname = default,
+            global::System.IO.Stream? x_exampleId_AttachmentsOperations = default,
+            string? x_exampleId_AttachmentsOperationsname = default,
+            global::System.IO.Stream? x_exampleId_Attachment_name_ = default,
+            string? x_exampleId_Attachment_name_name = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Update Examples<br/>
+        /// This endpoint allows clients to update existing examples in a specified dataset by sending a multipart/form-data PATCH request.<br/>
+        /// Each form part contains either JSON-encoded data or binary attachment files to update an example.
+        /// </summary>
+        /// <param name="x_exampleId_">
+        /// The Example update info as JSON. Can have fields 'metadata', 'split'
+        /// </param>
+        /// <param name="x_exampleId_name">
+        /// The Example update info as JSON. Can have fields 'metadata', 'split'
+        /// </param>
+        /// <param name="x_exampleId_Inputs">
+        /// The updated Example inputs as JSON
+        /// </param>
+        /// <param name="x_exampleId_Inputsname">
+        /// The updated Example inputs as JSON
+        /// </param>
+        /// <param name="x_exampleId_Outputs">
+        /// The updated Example outputs as JSON
+        /// </param>
+        /// <param name="x_exampleId_Outputsname">
+        /// The updated Example outputs as JSON
+        /// </param>
+        /// <param name="x_exampleId_AttachmentsOperations">
+        /// JSON describing attachment operations (retain, rename)
+        /// </param>
+        /// <param name="x_exampleId_AttachmentsOperationsname">
+        /// JSON describing attachment operations (retain, rename)
+        /// </param>
+        /// <param name="x_exampleId_Attachment_name_">
+        /// New file attachment named {name}
+        /// </param>
+        /// <param name="x_exampleId_Attachment_name_name">
+        /// New file attachment named {name}
+        /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse> EditDatasetsByDatasetIdExamplesAsResponseAsync(
+            global::System.IO.Stream x_exampleId_,
+            string x_exampleId_name,
+            global::System.IO.Stream? x_exampleId_Inputs = default,
+            string? x_exampleId_Inputsname = default,
+            global::System.IO.Stream? x_exampleId_Outputs = default,
+            string? x_exampleId_Outputsname = default,
+            global::System.IO.Stream? x_exampleId_AttachmentsOperations = default,
+            string? x_exampleId_AttachmentsOperationsname = default,
+            global::System.IO.Stream? x_exampleId_Attachment_name_ = default,
             string? x_exampleId_Attachment_name_name = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);

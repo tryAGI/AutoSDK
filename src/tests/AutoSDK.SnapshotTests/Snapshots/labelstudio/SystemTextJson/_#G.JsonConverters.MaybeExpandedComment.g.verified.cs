@@ -24,6 +24,14 @@ namespace G.JsonConverters
                 foreach (var __jsonProp in __jsonDocument.RootElement.EnumerateObject())
                 {
                     __jsonProps.Add(__jsonProp.Name);
+                    if (__jsonProp.Value.ValueKind == global::System.Text.Json.JsonValueKind.Object)
+                    {
+                        foreach (var __nestedJsonProp in __jsonProp.Value.EnumerateObject())
+                        {
+                            __jsonProps.Add(__jsonProp.Name + "." + __nestedJsonProp.Name);
+                        }
+                    }
+
                 }
             }
 
@@ -47,6 +55,24 @@ namespace G.JsonConverters
             if (__jsonProps.Contains("classifications")) __score1++;
             if (__jsonProps.Contains("created_at")) __score1++;
             if (__jsonProps.Contains("created_by")) __score1++;
+            if (__jsonProps.Contains("created_by.active_organization")) __score1++;
+            if (__jsonProps.Contains("created_by.active_organization_meta")) __score1++;
+            if (__jsonProps.Contains("created_by.allow_newsletters")) __score1++;
+            if (__jsonProps.Contains("created_by.avatar")) __score1++;
+            if (__jsonProps.Contains("created_by.custom_hotkeys")) __score1++;
+            if (__jsonProps.Contains("created_by.date_joined")) __score1++;
+            if (__jsonProps.Contains("created_by.email")) __score1++;
+            if (__jsonProps.Contains("created_by.first_name")) __score1++;
+            if (__jsonProps.Contains("created_by.id")) __score1++;
+            if (__jsonProps.Contains("created_by.initials")) __score1++;
+            if (__jsonProps.Contains("created_by.last_activity")) __score1++;
+            if (__jsonProps.Contains("created_by.last_name")) __score1++;
+            if (__jsonProps.Contains("created_by.lse_fields")) __score1++;
+            if (__jsonProps.Contains("created_by.org_membership")) __score1++;
+            if (__jsonProps.Contains("created_by.organization_membership")) __score1++;
+            if (__jsonProps.Contains("created_by.pause")) __score1++;
+            if (__jsonProps.Contains("created_by.phone")) __score1++;
+            if (__jsonProps.Contains("created_by.username")) __score1++;
             if (__jsonProps.Contains("draft")) __score1++;
             if (__jsonProps.Contains("id")) __score1++;
             if (__jsonProps.Contains("is_resolved")) __score1++;

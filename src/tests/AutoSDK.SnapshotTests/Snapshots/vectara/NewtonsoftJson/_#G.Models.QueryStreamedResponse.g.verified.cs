@@ -33,6 +33,19 @@ namespace G
         public bool IsSearchResults => SearchResults != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSearchResults(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.StreamSearchResponse? value)
+        {
+            value = SearchResults;
+            return IsSearchResults;
+        }
+
+        /// <summary>
         /// The chunk response from the generation, which may be a partial generation.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -48,6 +61,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(GenerationChunk))]
 #endif
         public bool IsGenerationChunk => GenerationChunk != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickGenerationChunk(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.StreamGenerationChunk? value)
+        {
+            value = GenerationChunk;
+            return IsGenerationChunk;
+        }
 
         /// <summary>
         /// The end of generation. There may still be more information such as the factual consistency score, but generation has stopped.
@@ -67,6 +93,19 @@ namespace G
         public bool IsGenerationEnd => GenerationEnd != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickGenerationEnd(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.StreamGenerationEnd? value)
+        {
+            value = GenerationEnd;
+            return IsGenerationEnd;
+        }
+
+        /// <summary>
         /// The end of a query response stream.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -82,6 +121,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(End))]
 #endif
         public bool IsEnd => End != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickEnd(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.StreamResponseEnd? value)
+        {
+            value = End;
+            return IsEnd;
+        }
 
         /// <summary>
         /// Event containing the factual consistency score.
@@ -101,6 +153,19 @@ namespace G
         public bool IsFactualConsistencyScore => FactualConsistencyScore != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFactualConsistencyScore(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.FactualConsistencyScore? value)
+        {
+            value = FactualConsistencyScore;
+            return IsFactualConsistencyScore;
+        }
+
+        /// <summary>
         /// Event containing information on how the generation was accomplished.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -118,6 +183,19 @@ namespace G
         public bool IsGenerationInfo => GenerationInfo != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickGenerationInfo(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.GenerationInfo? value)
+        {
+            value = GenerationInfo;
+            return IsGenerationInfo;
+        }
+
+        /// <summary>
         /// Event signaling there was an error with the request.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -133,6 +211,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Error))]
 #endif
         public bool IsError => Error != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickError(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.StreamError? value)
+        {
+            value = Error;
+            return IsError;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -322,13 +413,13 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.StreamSearchResponse?, TResult>? searchResults = null,
-            global::System.Func<global::G.StreamGenerationChunk?, TResult>? generationChunk = null,
-            global::System.Func<global::G.StreamGenerationEnd?, TResult>? generationEnd = null,
-            global::System.Func<global::G.StreamResponseEnd?, TResult>? end = null,
-            global::System.Func<global::G.FactualConsistencyScore?, TResult>? factualConsistencyScore = null,
-            global::System.Func<global::G.GenerationInfo?, TResult>? generationInfo = null,
-            global::System.Func<global::G.StreamError?, TResult>? error = null,
+            global::System.Func<global::G.StreamSearchResponse, TResult>? searchResults = null,
+            global::System.Func<global::G.StreamGenerationChunk, TResult>? generationChunk = null,
+            global::System.Func<global::G.StreamGenerationEnd, TResult>? generationEnd = null,
+            global::System.Func<global::G.StreamResponseEnd, TResult>? end = null,
+            global::System.Func<global::G.FactualConsistencyScore, TResult>? factualConsistencyScore = null,
+            global::System.Func<global::G.GenerationInfo, TResult>? generationInfo = null,
+            global::System.Func<global::G.StreamError, TResult>? error = null,
             bool validate = true)
         {
             if (validate)
@@ -372,13 +463,67 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.StreamSearchResponse?>? searchResults = null,
-            global::System.Action<global::G.StreamGenerationChunk?>? generationChunk = null,
-            global::System.Action<global::G.StreamGenerationEnd?>? generationEnd = null,
-            global::System.Action<global::G.StreamResponseEnd?>? end = null,
-            global::System.Action<global::G.FactualConsistencyScore?>? factualConsistencyScore = null,
-            global::System.Action<global::G.GenerationInfo?>? generationInfo = null,
-            global::System.Action<global::G.StreamError?>? error = null,
+            global::System.Action<global::G.StreamSearchResponse>? searchResults = null,
+
+            global::System.Action<global::G.StreamGenerationChunk>? generationChunk = null,
+
+            global::System.Action<global::G.StreamGenerationEnd>? generationEnd = null,
+
+            global::System.Action<global::G.StreamResponseEnd>? end = null,
+
+            global::System.Action<global::G.FactualConsistencyScore>? factualConsistencyScore = null,
+
+            global::System.Action<global::G.GenerationInfo>? generationInfo = null,
+
+            global::System.Action<global::G.StreamError>? error = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsSearchResults)
+            {
+                searchResults?.Invoke(SearchResults!);
+            }
+            else if (IsGenerationChunk)
+            {
+                generationChunk?.Invoke(GenerationChunk!);
+            }
+            else if (IsGenerationEnd)
+            {
+                generationEnd?.Invoke(GenerationEnd!);
+            }
+            else if (IsEnd)
+            {
+                end?.Invoke(End!);
+            }
+            else if (IsFactualConsistencyScore)
+            {
+                factualConsistencyScore?.Invoke(FactualConsistencyScore!);
+            }
+            else if (IsGenerationInfo)
+            {
+                generationInfo?.Invoke(GenerationInfo!);
+            }
+            else if (IsError)
+            {
+                error?.Invoke(Error!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.StreamSearchResponse>? searchResults = null,
+            global::System.Action<global::G.StreamGenerationChunk>? generationChunk = null,
+            global::System.Action<global::G.StreamGenerationEnd>? generationEnd = null,
+            global::System.Action<global::G.StreamResponseEnd>? end = null,
+            global::System.Action<global::G.FactualConsistencyScore>? factualConsistencyScore = null,
+            global::System.Action<global::G.GenerationInfo>? generationInfo = null,
+            global::System.Action<global::G.StreamError>? error = null,
             bool validate = true)
         {
             if (validate)

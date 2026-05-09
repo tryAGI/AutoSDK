@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickCollection(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.Collection? value)
+        {
+            value = Collection;
+            return IsCollection;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CollectionWithDetailsVariant2? CollectionWithDetailsVariant2 { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CollectionWithDetailsVariant2))]
 #endif
         public bool IsCollectionWithDetailsVariant2 => CollectionWithDetailsVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickCollectionWithDetailsVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CollectionWithDetailsVariant2? value)
+        {
+            value = CollectionWithDetailsVariant2;
+            return IsCollectionWithDetailsVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -119,8 +145,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.Collection?, TResult>? collection = null,
-            global::System.Func<global::G.CollectionWithDetailsVariant2?, TResult>? collectionWithDetailsVariant2 = null,
+            global::System.Func<global::G.Collection, TResult>? collection = null,
+            global::System.Func<global::G.CollectionWithDetailsVariant2, TResult>? collectionWithDetailsVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -144,8 +170,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.Collection?>? collection = null,
-            global::System.Action<global::G.CollectionWithDetailsVariant2?>? collectionWithDetailsVariant2 = null,
+            global::System.Action<global::G.Collection>? collection = null,
+
+            global::System.Action<global::G.CollectionWithDetailsVariant2>? collectionWithDetailsVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsCollection)
+            {
+                collection?.Invoke(Collection!);
+            }
+            else if (IsCollectionWithDetailsVariant2)
+            {
+                collectionWithDetailsVariant2?.Invoke(CollectionWithDetailsVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.Collection>? collection = null,
+            global::System.Action<global::G.CollectionWithDetailsVariant2>? collectionWithDetailsVariant2 = null,
             bool validate = true)
         {
             if (validate)

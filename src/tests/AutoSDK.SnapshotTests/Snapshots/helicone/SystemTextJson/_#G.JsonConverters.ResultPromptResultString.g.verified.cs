@@ -24,11 +24,30 @@ namespace G.JsonConverters
                 foreach (var __jsonProp in __jsonDocument.RootElement.EnumerateObject())
                 {
                     __jsonProps.Add(__jsonProp.Name);
+                    if (__jsonProp.Value.ValueKind == global::System.Text.Json.JsonValueKind.Object)
+                    {
+                        foreach (var __nestedJsonProp in __jsonProp.Value.EnumerateObject())
+                        {
+                            __jsonProps.Add(__jsonProp.Name + "." + __nestedJsonProp.Name);
+                        }
+                    }
+
                 }
             }
 
             var __score0 = 0;
             if (__jsonProps.Contains("data")) __score0++;
+            if (__jsonProps.Contains("data.created_at")) __score0++;
+            if (__jsonProps.Contains("data.description")) __score0++;
+            if (__jsonProps.Contains("data.id")) __score0++;
+            if (__jsonProps.Contains("data.last_used")) __score0++;
+            if (__jsonProps.Contains("data.latest_model_used")) __score0++;
+            if (__jsonProps.Contains("data.latest_version_id")) __score0++;
+            if (__jsonProps.Contains("data.major_version")) __score0++;
+            if (__jsonProps.Contains("data.metadata")) __score0++;
+            if (__jsonProps.Contains("data.pretty_name")) __score0++;
+            if (__jsonProps.Contains("data.user_defined_id")) __score0++;
+            if (__jsonProps.Contains("data.versions")) __score0++;
             if (__jsonProps.Contains("error")) __score0++;
             var __score1 = 0;
             if (__jsonProps.Contains("data")) __score1++;

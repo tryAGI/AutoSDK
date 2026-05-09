@@ -11,6 +11,11 @@ namespace G
     public readonly partial struct GeneratedAsset : global::System.IEquatable<GeneratedAsset>
     {
         /// <summary>
+        /// 
+        /// </summary>
+        public string? Provider { get; }
+
+        /// <summary>
         /// Generate assets using the native Shotstack provider. Shotstack provides a text-to-speech and a text-to-image service. The Shotstack provider works natively with your existing API key, no additional credentials are required.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -26,6 +31,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Shotstack))]
 #endif
         public bool IsShotstack => Shotstack != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickShotstack(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ShotstackGeneratedAsset? value)
+        {
+            value = Shotstack;
+            return IsShotstack;
+        }
 
         /// <summary>
         /// Generate assets using D-ID. D-ID provide a text-to-avatar service. The D-ID provider works on a bring-your-own-key basis, credentials are required and must be added via the  [dashboard](https://dashboard.shotstack.io/integrations/d-id), not in the request.
@@ -45,6 +63,19 @@ namespace G
         public bool IsDId => DId != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickDId(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.DIDGeneratedAsset? value)
+        {
+            value = DId;
+            return IsDId;
+        }
+
+        /// <summary>
         /// Generate assets using ElevenLabs. ElevenLabs provide a text-to-speech service. The ElevenLabs provider works on a bring-your-own-key basis, credentials are required and must be added via the  [dashboard](https://dashboard.shotstack.io/integrations/elevenlabs), not in the request.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -60,6 +91,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Elevenlabs))]
 #endif
         public bool IsElevenlabs => Elevenlabs != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickElevenlabs(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ElevenLabsGeneratedAsset? value)
+        {
+            value = Elevenlabs;
+            return IsElevenlabs;
+        }
 
         /// <summary>
         /// Generate assets using HeyGen. HeyGen provide a text-to-avatar service.  The HeyGen provider works on a bring-your-own-key basis, credentials are required and must be added via the  [dashboard](https://dashboard.shotstack.io/integrations/heygen), not in the request.
@@ -79,6 +123,19 @@ namespace G
         public bool IsHeygen => Heygen != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickHeygen(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.HeyGenGeneratedAsset? value)
+        {
+            value = Heygen;
+            return IsHeygen;
+        }
+
+        /// <summary>
         /// Generate assets using OpenAI. OpenAI provide a text generation service using ChatGPT 3.5 and 4. The OpenAI provider works on a bring-your-own-key basis, credentials are required and must be added via the [dashboard](https://dashboard.shotstack.io/integrations/openai), not in the request.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -96,6 +153,19 @@ namespace G
         public bool IsOpenai => Openai != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickOpenai(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.OpenAiGeneratedAsset? value)
+        {
+            value = Openai;
+            return IsOpenai;
+        }
+
+        /// <summary>
         /// Generate assets using Stability AI. Stability AI provide a text-to-image service using Stable Diffusion. The Stability AI provider works on a bring-your-own-key basis, credentials are required and must be added via the  [dashboard](https://dashboard.shotstack.io/integrations/stability-ai), not in the request.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -111,6 +181,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(StabilityAi))]
 #endif
         public bool IsStabilityAi => StabilityAi != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickStabilityAi(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.StabilityAiGeneratedAsset? value)
+        {
+            value = StabilityAi;
+            return IsStabilityAi;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -223,6 +306,7 @@ namespace G
         /// 
         /// </summary>
         public GeneratedAsset(
+            string? provider,
             global::G.ShotstackGeneratedAsset? shotstack,
             global::G.DIDGeneratedAsset? dId,
             global::G.ElevenLabsGeneratedAsset? elevenlabs,
@@ -231,6 +315,8 @@ namespace G
             global::G.StabilityAiGeneratedAsset? stabilityAi
             )
         {
+            Provider = provider;
+
             Shotstack = shotstack;
             DId = dId;
             Elevenlabs = elevenlabs;
@@ -275,12 +361,12 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.ShotstackGeneratedAsset?, TResult>? shotstack = null,
-            global::System.Func<global::G.DIDGeneratedAsset?, TResult>? dId = null,
-            global::System.Func<global::G.ElevenLabsGeneratedAsset?, TResult>? elevenlabs = null,
-            global::System.Func<global::G.HeyGenGeneratedAsset?, TResult>? heygen = null,
-            global::System.Func<global::G.OpenAiGeneratedAsset?, TResult>? openai = null,
-            global::System.Func<global::G.StabilityAiGeneratedAsset?, TResult>? stabilityAi = null,
+            global::System.Func<global::G.ShotstackGeneratedAsset, TResult>? shotstack = null,
+            global::System.Func<global::G.DIDGeneratedAsset, TResult>? dId = null,
+            global::System.Func<global::G.ElevenLabsGeneratedAsset, TResult>? elevenlabs = null,
+            global::System.Func<global::G.HeyGenGeneratedAsset, TResult>? heygen = null,
+            global::System.Func<global::G.OpenAiGeneratedAsset, TResult>? openai = null,
+            global::System.Func<global::G.StabilityAiGeneratedAsset, TResult>? stabilityAi = null,
             bool validate = true)
         {
             if (validate)
@@ -320,12 +406,60 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.ShotstackGeneratedAsset?>? shotstack = null,
-            global::System.Action<global::G.DIDGeneratedAsset?>? dId = null,
-            global::System.Action<global::G.ElevenLabsGeneratedAsset?>? elevenlabs = null,
-            global::System.Action<global::G.HeyGenGeneratedAsset?>? heygen = null,
-            global::System.Action<global::G.OpenAiGeneratedAsset?>? openai = null,
-            global::System.Action<global::G.StabilityAiGeneratedAsset?>? stabilityAi = null,
+            global::System.Action<global::G.ShotstackGeneratedAsset>? shotstack = null,
+
+            global::System.Action<global::G.DIDGeneratedAsset>? dId = null,
+
+            global::System.Action<global::G.ElevenLabsGeneratedAsset>? elevenlabs = null,
+
+            global::System.Action<global::G.HeyGenGeneratedAsset>? heygen = null,
+
+            global::System.Action<global::G.OpenAiGeneratedAsset>? openai = null,
+
+            global::System.Action<global::G.StabilityAiGeneratedAsset>? stabilityAi = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsShotstack)
+            {
+                shotstack?.Invoke(Shotstack!);
+            }
+            else if (IsDId)
+            {
+                dId?.Invoke(DId!);
+            }
+            else if (IsElevenlabs)
+            {
+                elevenlabs?.Invoke(Elevenlabs!);
+            }
+            else if (IsHeygen)
+            {
+                heygen?.Invoke(Heygen!);
+            }
+            else if (IsOpenai)
+            {
+                openai?.Invoke(Openai!);
+            }
+            else if (IsStabilityAi)
+            {
+                stabilityAi?.Invoke(StabilityAi!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.ShotstackGeneratedAsset>? shotstack = null,
+            global::System.Action<global::G.DIDGeneratedAsset>? dId = null,
+            global::System.Action<global::G.ElevenLabsGeneratedAsset>? elevenlabs = null,
+            global::System.Action<global::G.HeyGenGeneratedAsset>? heygen = null,
+            global::System.Action<global::G.OpenAiGeneratedAsset>? openai = null,
+            global::System.Action<global::G.StabilityAiGeneratedAsset>? stabilityAi = null,
             bool validate = true)
         {
             if (validate)

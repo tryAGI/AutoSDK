@@ -49,6 +49,33 @@ namespace G
         /// <param name="prefer">
         /// Example: wait=5
         /// </param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse> CreatePredictionsAsResponseAsync(
+
+            global::G.VersionPredictionRequest request,
+            string? prefer = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create a prediction<br/>
+        /// Create a prediction for the model version and inputs you provide.<br/>
+        /// Example cURL request:<br/>
+        /// ```console<br/>
+        /// curl -s -X POST -H 'Prefer: wait' \<br/>
+        ///   -d '{"version": "5c7d5dc6dd8bf75c1acaa8565735e7986bc5b66206b55cca93cb72c9bf15ccaa", "input": {"text": "Alice"}}' \<br/>
+        ///   -H "Authorization: Bearer $REPLICATE_API_TOKEN" \<br/>
+        ///   -H 'Content-Type: application/json' \<br/>
+        ///   https://api.replicate.com/v1/predictions<br/>
+        /// ```<br/>
+        /// The request will wait up to 60 seconds for the model to run. If this time is exceeded the prediction will be returned in a `"starting"` state and need to be retrieved using the `predictions.get` endpiont.<br/>
+        /// For a complete overview of the `predictions.create` API check out our documentation on [creating a prediction](https://replicate.com/docs/topics/predictions/create-a-prediction) which covers a variety of use cases.
+        /// </summary>
+        /// <param name="prefer">
+        /// Example: wait=5
+        /// </param>
         /// <param name="input">
         /// The model's input as a JSON object. The input schema depends on what model you are running. To see the available inputs, click the "API" tab on the model you are running or [get the model version](#models.versions.get) and look at its `openapi_schema` property. For example, [stability-ai/sdxl](https://replicate.com/stability-ai/sdxl) takes `prompt` as an input.<br/>
         /// Files should be passed as HTTP URLs or data URLs.<br/>

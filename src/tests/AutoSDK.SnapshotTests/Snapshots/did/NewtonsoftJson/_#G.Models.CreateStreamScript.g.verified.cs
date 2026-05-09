@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickText(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateStreamScriptText? value)
+        {
+            value = Text;
+            return IsText;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CreateStreamScriptAudio? Audio { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Audio))]
 #endif
         public bool IsAudio => Audio != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickAudio(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateStreamScriptAudio? value)
+        {
+            value = Audio;
+            return IsAudio;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -119,8 +145,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.CreateStreamScriptText?, TResult>? text = null,
-            global::System.Func<global::G.CreateStreamScriptAudio?, TResult>? audio = null,
+            global::System.Func<global::G.CreateStreamScriptText, TResult>? text = null,
+            global::System.Func<global::G.CreateStreamScriptAudio, TResult>? audio = null,
             bool validate = true)
         {
             if (validate)
@@ -144,8 +170,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.CreateStreamScriptText?>? text = null,
-            global::System.Action<global::G.CreateStreamScriptAudio?>? audio = null,
+            global::System.Action<global::G.CreateStreamScriptText>? text = null,
+
+            global::System.Action<global::G.CreateStreamScriptAudio>? audio = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsText)
+            {
+                text?.Invoke(Text!);
+            }
+            else if (IsAudio)
+            {
+                audio?.Invoke(Audio!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.CreateStreamScriptText>? text = null,
+            global::System.Action<global::G.CreateStreamScriptAudio>? audio = null,
             bool validate = true)
         {
             if (validate)

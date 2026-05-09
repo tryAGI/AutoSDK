@@ -26,6 +26,21 @@ namespace G
         /// Supports transliteration between Indic scripts and Roman script.<br/>
         /// Max 1000 characters per request.
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.TransliterateResponse>> TransliterateTextAsResponseAsync(
+
+            global::G.TransliterateRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Transliterate text between scripts<br/>
+        /// Converts text from one script to another while maintaining the same language.<br/>
+        /// Supports transliteration between Indic scripts and Roman script.<br/>
+        /// Max 1000 characters per request.
+        /// </summary>
         /// <param name="input">
         /// Text to transliterate (max 1000 characters)
         /// </param>

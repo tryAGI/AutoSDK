@@ -24,18 +24,40 @@ namespace G.JsonConverters
                 foreach (var __jsonProp in __jsonDocument.RootElement.EnumerateObject())
                 {
                     __jsonProps.Add(__jsonProp.Name);
+                    if (__jsonProp.Value.ValueKind == global::System.Text.Json.JsonValueKind.Object)
+                    {
+                        foreach (var __nestedJsonProp in __jsonProp.Value.EnumerateObject())
+                        {
+                            __jsonProps.Add(__jsonProp.Name + "." + __nestedJsonProp.Name);
+                        }
+                    }
+
                 }
             }
 
             var __score0 = 0;
             if (__jsonProps.Contains("cache_control")) __score0++;
+            if (__jsonProps.Contains("cache_control.ttl")) __score0++;
+            if (__jsonProps.Contains("cache_control.type")) __score0++;
             if (__jsonProps.Contains("function")) __score0++;
+            if (__jsonProps.Contains("function.description")) __score0++;
+            if (__jsonProps.Contains("function.name")) __score0++;
+            if (__jsonProps.Contains("function.parameters")) __score0++;
+            if (__jsonProps.Contains("function.strict")) __score0++;
             if (__jsonProps.Contains("type")) __score0++;
             var __score1 = 0;
             if (__jsonProps.Contains("parameters")) __score1++;
+            if (__jsonProps.Contains("parameters.timezone")) __score1++;
             if (__jsonProps.Contains("type")) __score1++;
             var __score2 = 0;
             if (__jsonProps.Contains("parameters")) __score2++;
+            if (__jsonProps.Contains("parameters.allowed_domains")) __score2++;
+            if (__jsonProps.Contains("parameters.engine")) __score2++;
+            if (__jsonProps.Contains("parameters.excluded_domains")) __score2++;
+            if (__jsonProps.Contains("parameters.max_results")) __score2++;
+            if (__jsonProps.Contains("parameters.max_total_results")) __score2++;
+            if (__jsonProps.Contains("parameters.search_context_size")) __score2++;
+            if (__jsonProps.Contains("parameters.user_location")) __score2++;
             if (__jsonProps.Contains("type")) __score2++;
             var __score3 = 0;
             if (__jsonProps.Contains("allowed_domains")) __score3++;
@@ -44,9 +66,21 @@ namespace G.JsonConverters
             if (__jsonProps.Contains("max_results")) __score3++;
             if (__jsonProps.Contains("max_total_results")) __score3++;
             if (__jsonProps.Contains("parameters")) __score3++;
+            if (__jsonProps.Contains("parameters.allowed_domains")) __score3++;
+            if (__jsonProps.Contains("parameters.engine")) __score3++;
+            if (__jsonProps.Contains("parameters.excluded_domains")) __score3++;
+            if (__jsonProps.Contains("parameters.max_results")) __score3++;
+            if (__jsonProps.Contains("parameters.max_total_results")) __score3++;
+            if (__jsonProps.Contains("parameters.search_context_size")) __score3++;
+            if (__jsonProps.Contains("parameters.user_location")) __score3++;
             if (__jsonProps.Contains("search_context_size")) __score3++;
             if (__jsonProps.Contains("type")) __score3++;
             if (__jsonProps.Contains("user_location")) __score3++;
+            if (__jsonProps.Contains("user_location.city")) __score3++;
+            if (__jsonProps.Contains("user_location.country")) __score3++;
+            if (__jsonProps.Contains("user_location.region")) __score3++;
+            if (__jsonProps.Contains("user_location.timezone")) __score3++;
+            if (__jsonProps.Contains("user_location.type")) __score3++;
             var __bestScore = 0;
             var __bestIndex = -1;
             if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }

@@ -28,6 +28,25 @@ namespace G
         /// Chat completion<br/>
         /// Generate a chat completion based on the provided messages. The response shown below is for non-streaming. To learn about streaming responses, see the [chat completion guide](https://dev.writer.com/home/chat-completion).
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        /// <remarks>
+        /// curl --location --request POST https://api.writer.com/v1/chat \<br/>
+        ///  --header "Authorization: Bearer &lt;token&gt;" \<br/>
+        ///  --header "Content-Type: application/json" \<br/>
+        /// --data-raw '{"model":"palmyra-x5","messages":[{"content":"Write a memo summarizing this earnings report.","role":"user"}]}'
+        /// </remarks>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.ChatResponse>> ChatAsResponseAsync(
+
+            global::G.ChatRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Chat completion<br/>
+        /// Generate a chat completion based on the provided messages. The response shown below is for non-streaming. To learn about streaming responses, see the [chat completion guide](https://dev.writer.com/home/chat-completion).
+        /// </summary>
         /// <param name="model">
         /// The [ID of the model](https://dev.writer.com/home/models) to use for creating the chat completion. Supports `palmyra-x5`, `palmyra-x4`, `palmyra-fin`, `palmyra-med`, `palmyra-creative`, and `palmyra-x-003-instruct`.
         /// </param>

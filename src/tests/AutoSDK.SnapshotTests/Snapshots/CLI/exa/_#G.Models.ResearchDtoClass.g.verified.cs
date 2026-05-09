@@ -13,6 +13,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public string? Status { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ResearchDtoClassVariant1? Pending { get; init; }
 #else
@@ -26,6 +31,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Pending))]
 #endif
         public bool IsPending => Pending != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickPending(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ResearchDtoClassVariant1? value)
+        {
+            value = Pending;
+            return IsPending;
+        }
 
         /// <summary>
         /// 
@@ -47,6 +65,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickRunning(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ResearchDtoClassVariant2? value)
+        {
+            value = Running;
+            return IsRunning;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ResearchDtoClassVariant3? Completed { get; init; }
 #else
@@ -60,6 +91,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Completed))]
 #endif
         public bool IsCompleted => Completed != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickCompleted(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ResearchDtoClassVariant3? value)
+        {
+            value = Completed;
+            return IsCompleted;
+        }
 
         /// <summary>
         /// 
@@ -81,6 +125,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickCanceled(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ResearchDtoClassVariant4? value)
+        {
+            value = Canceled;
+            return IsCanceled;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ResearchDtoClassVariant5? Failed { get; init; }
 #else
@@ -94,6 +151,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Failed))]
 #endif
         public bool IsFailed => Failed != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFailed(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ResearchDtoClassVariant5? value)
+        {
+            value = Failed;
+            return IsFailed;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -188,6 +258,7 @@ namespace G
         /// 
         /// </summary>
         public ResearchDtoClass(
+            string? status,
             global::G.ResearchDtoClassVariant1? pending,
             global::G.ResearchDtoClassVariant2? running,
             global::G.ResearchDtoClassVariant3? completed,
@@ -195,6 +266,8 @@ namespace G
             global::G.ResearchDtoClassVariant5? failed
             )
         {
+            Status = status;
+
             Pending = pending;
             Running = running;
             Completed = completed;
@@ -236,11 +309,11 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.ResearchDtoClassVariant1?, TResult>? pending = null,
-            global::System.Func<global::G.ResearchDtoClassVariant2?, TResult>? running = null,
-            global::System.Func<global::G.ResearchDtoClassVariant3?, TResult>? completed = null,
-            global::System.Func<global::G.ResearchDtoClassVariant4?, TResult>? canceled = null,
-            global::System.Func<global::G.ResearchDtoClassVariant5?, TResult>? failed = null,
+            global::System.Func<global::G.ResearchDtoClassVariant1, TResult>? pending = null,
+            global::System.Func<global::G.ResearchDtoClassVariant2, TResult>? running = null,
+            global::System.Func<global::G.ResearchDtoClassVariant3, TResult>? completed = null,
+            global::System.Func<global::G.ResearchDtoClassVariant4, TResult>? canceled = null,
+            global::System.Func<global::G.ResearchDtoClassVariant5, TResult>? failed = null,
             bool validate = true)
         {
             if (validate)
@@ -276,11 +349,53 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.ResearchDtoClassVariant1?>? pending = null,
-            global::System.Action<global::G.ResearchDtoClassVariant2?>? running = null,
-            global::System.Action<global::G.ResearchDtoClassVariant3?>? completed = null,
-            global::System.Action<global::G.ResearchDtoClassVariant4?>? canceled = null,
-            global::System.Action<global::G.ResearchDtoClassVariant5?>? failed = null,
+            global::System.Action<global::G.ResearchDtoClassVariant1>? pending = null,
+
+            global::System.Action<global::G.ResearchDtoClassVariant2>? running = null,
+
+            global::System.Action<global::G.ResearchDtoClassVariant3>? completed = null,
+
+            global::System.Action<global::G.ResearchDtoClassVariant4>? canceled = null,
+
+            global::System.Action<global::G.ResearchDtoClassVariant5>? failed = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsPending)
+            {
+                pending?.Invoke(Pending!);
+            }
+            else if (IsRunning)
+            {
+                running?.Invoke(Running!);
+            }
+            else if (IsCompleted)
+            {
+                completed?.Invoke(Completed!);
+            }
+            else if (IsCanceled)
+            {
+                canceled?.Invoke(Canceled!);
+            }
+            else if (IsFailed)
+            {
+                failed?.Invoke(Failed!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.ResearchDtoClassVariant1>? pending = null,
+            global::System.Action<global::G.ResearchDtoClassVariant2>? running = null,
+            global::System.Action<global::G.ResearchDtoClassVariant3>? completed = null,
+            global::System.Action<global::G.ResearchDtoClassVariant4>? canceled = null,
+            global::System.Action<global::G.ResearchDtoClassVariant5>? failed = null,
             bool validate = true)
         {
             if (validate)

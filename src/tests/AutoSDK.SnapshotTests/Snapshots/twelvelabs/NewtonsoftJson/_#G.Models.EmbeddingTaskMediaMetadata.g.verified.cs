@@ -28,6 +28,19 @@ namespace G
         public bool IsEmbeddingAudioMetadata => EmbeddingAudioMetadata != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickEmbeddingAudioMetadata(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.EmbeddingAudioMetadata? value)
+        {
+            value = EmbeddingAudioMetadata;
+            return IsEmbeddingAudioMetadata;
+        }
+
+        /// <summary>
         /// Metadata for video embeddings
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(EmbeddingVideoMetadata))]
 #endif
         public bool IsEmbeddingVideoMetadata => EmbeddingVideoMetadata != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickEmbeddingVideoMetadata(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.EmbeddingVideoMetadata? value)
+        {
+            value = EmbeddingVideoMetadata;
+            return IsEmbeddingVideoMetadata;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -119,8 +145,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.EmbeddingAudioMetadata?, TResult>? embeddingAudioMetadata = null,
-            global::System.Func<global::G.EmbeddingVideoMetadata?, TResult>? embeddingVideoMetadata = null,
+            global::System.Func<global::G.EmbeddingAudioMetadata, TResult>? embeddingAudioMetadata = null,
+            global::System.Func<global::G.EmbeddingVideoMetadata, TResult>? embeddingVideoMetadata = null,
             bool validate = true)
         {
             if (validate)
@@ -144,8 +170,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.EmbeddingAudioMetadata?>? embeddingAudioMetadata = null,
-            global::System.Action<global::G.EmbeddingVideoMetadata?>? embeddingVideoMetadata = null,
+            global::System.Action<global::G.EmbeddingAudioMetadata>? embeddingAudioMetadata = null,
+
+            global::System.Action<global::G.EmbeddingVideoMetadata>? embeddingVideoMetadata = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsEmbeddingAudioMetadata)
+            {
+                embeddingAudioMetadata?.Invoke(EmbeddingAudioMetadata!);
+            }
+            else if (IsEmbeddingVideoMetadata)
+            {
+                embeddingVideoMetadata?.Invoke(EmbeddingVideoMetadata!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.EmbeddingAudioMetadata>? embeddingAudioMetadata = null,
+            global::System.Action<global::G.EmbeddingVideoMetadata>? embeddingVideoMetadata = null,
             bool validate = true)
         {
             if (validate)

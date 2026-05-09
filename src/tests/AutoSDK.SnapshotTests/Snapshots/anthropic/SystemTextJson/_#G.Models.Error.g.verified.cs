@@ -35,6 +35,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickInvalidRequestError(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.BetaInvalidRequestError? value)
+        {
+            value = InvalidRequestError;
+            return IsInvalidRequestError;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.BetaAuthenticationError? AuthenticationError { get; init; }
 #else
@@ -48,6 +61,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AuthenticationError))]
 #endif
         public bool IsAuthenticationError => AuthenticationError != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickAuthenticationError(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.BetaAuthenticationError? value)
+        {
+            value = AuthenticationError;
+            return IsAuthenticationError;
+        }
 
         /// <summary>
         /// 
@@ -69,6 +95,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickBillingError(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.BetaBillingError? value)
+        {
+            value = BillingError;
+            return IsBillingError;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.BetaPermissionError? PermissionError { get; init; }
 #else
@@ -82,6 +121,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(PermissionError))]
 #endif
         public bool IsPermissionError => PermissionError != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickPermissionError(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.BetaPermissionError? value)
+        {
+            value = PermissionError;
+            return IsPermissionError;
+        }
 
         /// <summary>
         /// 
@@ -103,6 +155,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickNotFoundError(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.BetaNotFoundError? value)
+        {
+            value = NotFoundError;
+            return IsNotFoundError;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.BetaRateLimitError? RateLimitError { get; init; }
 #else
@@ -116,6 +181,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RateLimitError))]
 #endif
         public bool IsRateLimitError => RateLimitError != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickRateLimitError(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.BetaRateLimitError? value)
+        {
+            value = RateLimitError;
+            return IsRateLimitError;
+        }
 
         /// <summary>
         /// 
@@ -137,6 +215,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickTimeoutError(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.BetaGatewayTimeoutError? value)
+        {
+            value = TimeoutError;
+            return IsTimeoutError;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.BetaAPIError? ApiError { get; init; }
 #else
@@ -154,6 +245,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickApiError(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.BetaAPIError? value)
+        {
+            value = ApiError;
+            return IsApiError;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.BetaOverloadedError? OverloadedError { get; init; }
 #else
@@ -167,6 +271,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OverloadedError))]
 #endif
         public bool IsOverloadedError => OverloadedError != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickOverloadedError(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.BetaOverloadedError? value)
+        {
+            value = OverloadedError;
+            return IsOverloadedError;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -400,15 +517,15 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.BetaInvalidRequestError?, TResult>? invalidRequestError = null,
-            global::System.Func<global::G.BetaAuthenticationError?, TResult>? authenticationError = null,
-            global::System.Func<global::G.BetaBillingError?, TResult>? billingError = null,
-            global::System.Func<global::G.BetaPermissionError?, TResult>? permissionError = null,
-            global::System.Func<global::G.BetaNotFoundError?, TResult>? notFoundError = null,
-            global::System.Func<global::G.BetaRateLimitError?, TResult>? rateLimitError = null,
-            global::System.Func<global::G.BetaGatewayTimeoutError?, TResult>? timeoutError = null,
-            global::System.Func<global::G.BetaAPIError?, TResult>? apiError = null,
-            global::System.Func<global::G.BetaOverloadedError?, TResult>? overloadedError = null,
+            global::System.Func<global::G.BetaInvalidRequestError, TResult>? invalidRequestError = null,
+            global::System.Func<global::G.BetaAuthenticationError, TResult>? authenticationError = null,
+            global::System.Func<global::G.BetaBillingError, TResult>? billingError = null,
+            global::System.Func<global::G.BetaPermissionError, TResult>? permissionError = null,
+            global::System.Func<global::G.BetaNotFoundError, TResult>? notFoundError = null,
+            global::System.Func<global::G.BetaRateLimitError, TResult>? rateLimitError = null,
+            global::System.Func<global::G.BetaGatewayTimeoutError, TResult>? timeoutError = null,
+            global::System.Func<global::G.BetaAPIError, TResult>? apiError = null,
+            global::System.Func<global::G.BetaOverloadedError, TResult>? overloadedError = null,
             bool validate = true)
         {
             if (validate)
@@ -460,15 +577,81 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.BetaInvalidRequestError?>? invalidRequestError = null,
-            global::System.Action<global::G.BetaAuthenticationError?>? authenticationError = null,
-            global::System.Action<global::G.BetaBillingError?>? billingError = null,
-            global::System.Action<global::G.BetaPermissionError?>? permissionError = null,
-            global::System.Action<global::G.BetaNotFoundError?>? notFoundError = null,
-            global::System.Action<global::G.BetaRateLimitError?>? rateLimitError = null,
-            global::System.Action<global::G.BetaGatewayTimeoutError?>? timeoutError = null,
-            global::System.Action<global::G.BetaAPIError?>? apiError = null,
-            global::System.Action<global::G.BetaOverloadedError?>? overloadedError = null,
+            global::System.Action<global::G.BetaInvalidRequestError>? invalidRequestError = null,
+
+            global::System.Action<global::G.BetaAuthenticationError>? authenticationError = null,
+
+            global::System.Action<global::G.BetaBillingError>? billingError = null,
+
+            global::System.Action<global::G.BetaPermissionError>? permissionError = null,
+
+            global::System.Action<global::G.BetaNotFoundError>? notFoundError = null,
+
+            global::System.Action<global::G.BetaRateLimitError>? rateLimitError = null,
+
+            global::System.Action<global::G.BetaGatewayTimeoutError>? timeoutError = null,
+
+            global::System.Action<global::G.BetaAPIError>? apiError = null,
+
+            global::System.Action<global::G.BetaOverloadedError>? overloadedError = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsInvalidRequestError)
+            {
+                invalidRequestError?.Invoke(InvalidRequestError!);
+            }
+            else if (IsAuthenticationError)
+            {
+                authenticationError?.Invoke(AuthenticationError!);
+            }
+            else if (IsBillingError)
+            {
+                billingError?.Invoke(BillingError!);
+            }
+            else if (IsPermissionError)
+            {
+                permissionError?.Invoke(PermissionError!);
+            }
+            else if (IsNotFoundError)
+            {
+                notFoundError?.Invoke(NotFoundError!);
+            }
+            else if (IsRateLimitError)
+            {
+                rateLimitError?.Invoke(RateLimitError!);
+            }
+            else if (IsTimeoutError)
+            {
+                timeoutError?.Invoke(TimeoutError!);
+            }
+            else if (IsApiError)
+            {
+                apiError?.Invoke(ApiError!);
+            }
+            else if (IsOverloadedError)
+            {
+                overloadedError?.Invoke(OverloadedError!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.BetaInvalidRequestError>? invalidRequestError = null,
+            global::System.Action<global::G.BetaAuthenticationError>? authenticationError = null,
+            global::System.Action<global::G.BetaBillingError>? billingError = null,
+            global::System.Action<global::G.BetaPermissionError>? permissionError = null,
+            global::System.Action<global::G.BetaNotFoundError>? notFoundError = null,
+            global::System.Action<global::G.BetaRateLimitError>? rateLimitError = null,
+            global::System.Action<global::G.BetaGatewayTimeoutError>? timeoutError = null,
+            global::System.Action<global::G.BetaAPIError>? apiError = null,
+            global::System.Action<global::G.BetaOverloadedError>? overloadedError = null,
             bool validate = true)
         {
             if (validate)

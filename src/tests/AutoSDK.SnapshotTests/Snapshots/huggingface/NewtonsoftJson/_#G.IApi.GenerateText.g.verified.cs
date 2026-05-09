@@ -23,6 +23,20 @@ namespace G
         /// Creates a completion for the provided prompt and parameters.
         /// </summary>
         /// <param name="modelId"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::G.GenerateTextResponseValue>>> GenerateTextAsResponseAsync(
+            string modelId,
+
+            global::G.GenerateTextRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Creates a completion for the provided prompt and parameters.
+        /// </summary>
+        /// <param name="modelId"></param>
         /// <param name="inputs">
         /// The prompt that you want to complete.<br/>
         /// Example: This is a test.

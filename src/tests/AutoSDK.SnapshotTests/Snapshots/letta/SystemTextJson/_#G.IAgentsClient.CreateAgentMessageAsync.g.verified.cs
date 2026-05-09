@@ -41,6 +41,28 @@ namespace G
         /// <param name="agentId">
         /// The ID of the agent in the format 'agent-&lt;uuid4&gt;'
         /// </param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.Run>> CreateAgentMessageAsyncAsResponseAsync(
+            string agentId,
+
+            global::G.LettaAsyncRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Send Message Async<br/>
+        /// Asynchronously process a user message and return a run object.<br/>
+        /// The actual processing happens in the background, and the status can be checked using the run ID.<br/>
+        /// This is "asynchronous" in the sense that it's a background run and explicitly must be fetched by the run ID.<br/>
+        /// **Note:** Sending multiple concurrent requests to the same agent can lead to undefined behavior.<br/>
+        /// Each agent processes messages sequentially, and concurrent requests may interleave in unexpected ways.<br/>
+        /// Wait for each request to complete before sending the next one. Use separate agents or conversations for parallel processing.
+        /// </summary>
+        /// <param name="agentId">
+        /// The ID of the agent in the format 'agent-&lt;uuid4&gt;'
+        /// </param>
         /// <param name="messages">
         /// The messages to be sent to the agent.
         /// </param>

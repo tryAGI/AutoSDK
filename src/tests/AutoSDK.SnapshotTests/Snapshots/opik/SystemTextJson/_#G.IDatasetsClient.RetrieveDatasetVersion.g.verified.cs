@@ -25,6 +25,21 @@ namespace G
         /// Get a specific version by its version name (e.g., 'v1', 'v373'). This is more efficient than paginating through all versions for large datasets.
         /// </summary>
         /// <param name="id"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.DatasetVersionPublic>> RetrieveDatasetVersionAsResponseAsync(
+            global::System.Guid id,
+
+            global::G.DatasetVersionRetrieveRequestPublic request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Retrieve dataset version by name<br/>
+        /// Get a specific version by its version name (e.g., 'v1', 'v373'). This is more efficient than paginating through all versions for large datasets.
+        /// </summary>
+        /// <param name="id"></param>
         /// <param name="versionName">
         /// Version name in format 'vN' (e.g., 'v1', 'v373')<br/>
         /// Example: v1

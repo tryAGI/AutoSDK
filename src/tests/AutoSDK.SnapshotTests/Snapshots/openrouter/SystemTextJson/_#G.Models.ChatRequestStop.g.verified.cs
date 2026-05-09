@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickChatRequestStopVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = ChatRequestStopVariant1;
+            return IsChatRequestStopVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<string>? ChatRequestStopVariant2 { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ChatRequestStopVariant2))]
 #endif
         public bool IsChatRequestStopVariant2 => ChatRequestStopVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickChatRequestStopVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::System.Collections.Generic.IList<string>? value)
+        {
+            value = ChatRequestStopVariant2;
+            return IsChatRequestStopVariant2;
+        }
 
         /// <summary>
         /// Any type
@@ -60,6 +86,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ChatRequestStopVariant3))]
 #endif
         public bool IsChatRequestStopVariant3 => ChatRequestStopVariant3 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickChatRequestStopVariant3(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out object? value)
+        {
+            value = ChatRequestStopVariant3;
+            return IsChatRequestStopVariant3;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -122,9 +161,9 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<string?, TResult>? chatRequestStopVariant1 = null,
-            global::System.Func<global::System.Collections.Generic.IList<string>?, TResult>? chatRequestStopVariant2 = null,
-            global::System.Func<object?, TResult>? chatRequestStopVariant3 = null,
+            global::System.Func<string, TResult>? chatRequestStopVariant1 = null,
+            global::System.Func<global::System.Collections.Generic.IList<string>, TResult>? chatRequestStopVariant2 = null,
+            global::System.Func<object, TResult>? chatRequestStopVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -152,9 +191,39 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<string?>? chatRequestStopVariant1 = null,
-            global::System.Action<global::System.Collections.Generic.IList<string>?>? chatRequestStopVariant2 = null,
-            global::System.Action<object?>? chatRequestStopVariant3 = null,
+            global::System.Action<string>? chatRequestStopVariant1 = null,
+
+            global::System.Action<global::System.Collections.Generic.IList<string>>? chatRequestStopVariant2 = null,
+
+            global::System.Action<object>? chatRequestStopVariant3 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsChatRequestStopVariant1)
+            {
+                chatRequestStopVariant1?.Invoke(ChatRequestStopVariant1!);
+            }
+            else if (IsChatRequestStopVariant2)
+            {
+                chatRequestStopVariant2?.Invoke(ChatRequestStopVariant2!);
+            }
+            else if (IsChatRequestStopVariant3)
+            {
+                chatRequestStopVariant3?.Invoke(ChatRequestStopVariant3!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<string>? chatRequestStopVariant1 = null,
+            global::System.Action<global::System.Collections.Generic.IList<string>>? chatRequestStopVariant2 = null,
+            global::System.Action<object>? chatRequestStopVariant3 = null,
             bool validate = true)
         {
             if (validate)

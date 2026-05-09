@@ -27,6 +27,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Response))]
 #endif
         public bool IsResponse => Response != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResponse(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.RedactedAudioResponse? value)
+        {
+            value = Response;
+            return IsResponse;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -71,7 +84,7 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.RedactedAudioResponse?, TResult>? response = null,
+            global::System.Func<global::G.RedactedAudioResponse, TResult>? response = null,
             bool validate = true)
         {
             if (validate)
@@ -91,7 +104,25 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.RedactedAudioResponse?>? response = null,
+            global::System.Action<global::G.RedactedAudioResponse>? response = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsResponse)
+            {
+                response?.Invoke(Response!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.RedactedAudioResponse>? response = null,
             bool validate = true)
         {
             if (validate)

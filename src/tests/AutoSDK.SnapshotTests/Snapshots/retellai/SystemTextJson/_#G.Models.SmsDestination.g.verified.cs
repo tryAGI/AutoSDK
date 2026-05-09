@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickSmsDestinationVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.SmsDestinationVariant1? value)
+        {
+            value = SmsDestinationVariant1;
+            return IsSmsDestinationVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.SmsDestinationVariant2? SmsDestinationVariant2 { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SmsDestinationVariant2))]
 #endif
         public bool IsSmsDestinationVariant2 => SmsDestinationVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSmsDestinationVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.SmsDestinationVariant2? value)
+        {
+            value = SmsDestinationVariant2;
+            return IsSmsDestinationVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -119,8 +145,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.SmsDestinationVariant1?, TResult>? smsDestinationVariant1 = null,
-            global::System.Func<global::G.SmsDestinationVariant2?, TResult>? smsDestinationVariant2 = null,
+            global::System.Func<global::G.SmsDestinationVariant1, TResult>? smsDestinationVariant1 = null,
+            global::System.Func<global::G.SmsDestinationVariant2, TResult>? smsDestinationVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -144,8 +170,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.SmsDestinationVariant1?>? smsDestinationVariant1 = null,
-            global::System.Action<global::G.SmsDestinationVariant2?>? smsDestinationVariant2 = null,
+            global::System.Action<global::G.SmsDestinationVariant1>? smsDestinationVariant1 = null,
+
+            global::System.Action<global::G.SmsDestinationVariant2>? smsDestinationVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsSmsDestinationVariant1)
+            {
+                smsDestinationVariant1?.Invoke(SmsDestinationVariant1!);
+            }
+            else if (IsSmsDestinationVariant2)
+            {
+                smsDestinationVariant2?.Invoke(SmsDestinationVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.SmsDestinationVariant1>? smsDestinationVariant1 = null,
+            global::System.Action<global::G.SmsDestinationVariant2>? smsDestinationVariant2 = null,
             bool validate = true)
         {
             if (validate)

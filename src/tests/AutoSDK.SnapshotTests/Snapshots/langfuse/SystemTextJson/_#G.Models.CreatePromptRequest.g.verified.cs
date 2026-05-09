@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickCreateChatPromptRequest(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateChatPromptRequest? value)
+        {
+            value = CreateChatPromptRequest;
+            return IsCreateChatPromptRequest;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CreateTextPromptRequest? CreateTextPromptRequest { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CreateTextPromptRequest))]
 #endif
         public bool IsCreateTextPromptRequest => CreateTextPromptRequest != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickCreateTextPromptRequest(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CreateTextPromptRequest? value)
+        {
+            value = CreateTextPromptRequest;
+            return IsCreateTextPromptRequest;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -119,8 +145,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.CreateChatPromptRequest?, TResult>? createChatPromptRequest = null,
-            global::System.Func<global::G.CreateTextPromptRequest?, TResult>? createTextPromptRequest = null,
+            global::System.Func<global::G.CreateChatPromptRequest, TResult>? createChatPromptRequest = null,
+            global::System.Func<global::G.CreateTextPromptRequest, TResult>? createTextPromptRequest = null,
             bool validate = true)
         {
             if (validate)
@@ -144,8 +170,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.CreateChatPromptRequest?>? createChatPromptRequest = null,
-            global::System.Action<global::G.CreateTextPromptRequest?>? createTextPromptRequest = null,
+            global::System.Action<global::G.CreateChatPromptRequest>? createChatPromptRequest = null,
+
+            global::System.Action<global::G.CreateTextPromptRequest>? createTextPromptRequest = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsCreateChatPromptRequest)
+            {
+                createChatPromptRequest?.Invoke(CreateChatPromptRequest!);
+            }
+            else if (IsCreateTextPromptRequest)
+            {
+                createTextPromptRequest?.Invoke(CreateTextPromptRequest!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.CreateChatPromptRequest>? createChatPromptRequest = null,
+            global::System.Action<global::G.CreateTextPromptRequest>? createTextPromptRequest = null,
             bool validate = true)
         {
             if (validate)

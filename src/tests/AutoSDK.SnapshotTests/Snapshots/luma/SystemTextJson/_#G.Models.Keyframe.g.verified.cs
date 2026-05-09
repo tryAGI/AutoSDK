@@ -34,6 +34,19 @@ namespace G
         public bool IsGeneration => Generation != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickGeneration(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.GenerationReference? value)
+        {
+            value = Generation;
+            return IsGeneration;
+        }
+
+        /// <summary>
         /// The image object<br/>
         /// Example: {"type":"image","url":"https://example.com/image.jpg"}
         /// </summary>
@@ -50,6 +63,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Image))]
 #endif
         public bool IsImage => Image != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickImage(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ImageReference? value)
+        {
+            value = Image;
+            return IsImage;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -129,8 +155,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.GenerationReference?, TResult>? generation = null,
-            global::System.Func<global::G.ImageReference?, TResult>? image = null,
+            global::System.Func<global::G.GenerationReference, TResult>? generation = null,
+            global::System.Func<global::G.ImageReference, TResult>? image = null,
             bool validate = true)
         {
             if (validate)
@@ -154,8 +180,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.GenerationReference?>? generation = null,
-            global::System.Action<global::G.ImageReference?>? image = null,
+            global::System.Action<global::G.GenerationReference>? generation = null,
+
+            global::System.Action<global::G.ImageReference>? image = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsGeneration)
+            {
+                generation?.Invoke(Generation!);
+            }
+            else if (IsImage)
+            {
+                image?.Invoke(Image!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.GenerationReference>? generation = null,
+            global::System.Action<global::G.ImageReference>? image = null,
             bool validate = true)
         {
             if (validate)

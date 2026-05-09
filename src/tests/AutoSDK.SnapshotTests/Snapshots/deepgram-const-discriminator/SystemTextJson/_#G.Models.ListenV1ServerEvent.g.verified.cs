@@ -33,6 +33,19 @@ namespace G
         public bool IsTranscriptResult => TranscriptResult != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickTranscriptResult(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.TranscriptResultPayload? value)
+        {
+            value = TranscriptResult;
+            return IsTranscriptResult;
+        }
+
+        /// <summary>
         /// Metadata for the listen session.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -48,6 +61,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ListenMetadata))]
 #endif
         public bool IsListenMetadata => ListenMetadata != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickListenMetadata(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ListenMetadataPayload? value)
+        {
+            value = ListenMetadata;
+            return IsListenMetadata;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -127,8 +153,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.TranscriptResultPayload?, TResult>? transcriptResult = null,
-            global::System.Func<global::G.ListenMetadataPayload?, TResult>? listenMetadata = null,
+            global::System.Func<global::G.TranscriptResultPayload, TResult>? transcriptResult = null,
+            global::System.Func<global::G.ListenMetadataPayload, TResult>? listenMetadata = null,
             bool validate = true)
         {
             if (validate)
@@ -152,8 +178,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.TranscriptResultPayload?>? transcriptResult = null,
-            global::System.Action<global::G.ListenMetadataPayload?>? listenMetadata = null,
+            global::System.Action<global::G.TranscriptResultPayload>? transcriptResult = null,
+
+            global::System.Action<global::G.ListenMetadataPayload>? listenMetadata = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsTranscriptResult)
+            {
+                transcriptResult?.Invoke(TranscriptResult!);
+            }
+            else if (IsListenMetadata)
+            {
+                listenMetadata?.Invoke(ListenMetadata!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.TranscriptResultPayload>? transcriptResult = null,
+            global::System.Action<global::G.ListenMetadataPayload>? listenMetadata = null,
             bool validate = true)
         {
             if (validate)

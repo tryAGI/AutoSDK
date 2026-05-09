@@ -37,6 +37,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickEnabled(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.BetaThinkingConfigEnabled? value)
+        {
+            value = Enabled;
+            return IsEnabled;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.BetaThinkingConfigDisabled? Disabled { get; init; }
 #else
@@ -50,6 +63,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Disabled))]
 #endif
         public bool IsDisabled => Disabled != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickDisabled(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.BetaThinkingConfigDisabled? value)
+        {
+            value = Disabled;
+            return IsDisabled;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -129,8 +155,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.BetaThinkingConfigEnabled?, TResult>? enabled = null,
-            global::System.Func<global::G.BetaThinkingConfigDisabled?, TResult>? disabled = null,
+            global::System.Func<global::G.BetaThinkingConfigEnabled, TResult>? enabled = null,
+            global::System.Func<global::G.BetaThinkingConfigDisabled, TResult>? disabled = null,
             bool validate = true)
         {
             if (validate)
@@ -154,8 +180,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.BetaThinkingConfigEnabled?>? enabled = null,
-            global::System.Action<global::G.BetaThinkingConfigDisabled?>? disabled = null,
+            global::System.Action<global::G.BetaThinkingConfigEnabled>? enabled = null,
+
+            global::System.Action<global::G.BetaThinkingConfigDisabled>? disabled = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsEnabled)
+            {
+                enabled?.Invoke(Enabled!);
+            }
+            else if (IsDisabled)
+            {
+                disabled?.Invoke(Disabled!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.BetaThinkingConfigEnabled>? enabled = null,
+            global::System.Action<global::G.BetaThinkingConfigDisabled>? disabled = null,
             bool validate = true)
         {
             if (validate)

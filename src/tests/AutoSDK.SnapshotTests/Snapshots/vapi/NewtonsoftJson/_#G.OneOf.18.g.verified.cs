@@ -29,6 +29,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickValue1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out T1? value)
+        {
+            value = Value1;
+            return IsValue1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public T2? Value2 { get; init; }
 #else
@@ -42,6 +55,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
 #endif
         public bool IsValue2 => Value2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickValue2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out T2? value)
+        {
+            value = Value2;
+            return IsValue2;
+        }
 
         /// <summary>
         /// 
@@ -63,6 +89,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickValue3(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out T3? value)
+        {
+            value = Value3;
+            return IsValue3;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public T4? Value4 { get; init; }
 #else
@@ -76,6 +115,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value4))]
 #endif
         public bool IsValue4 => Value4 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickValue4(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out T4? value)
+        {
+            value = Value4;
+            return IsValue4;
+        }
 
         /// <summary>
         /// 
@@ -97,6 +149,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickValue5(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out T5? value)
+        {
+            value = Value5;
+            return IsValue5;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public T6? Value6 { get; init; }
 #else
@@ -110,6 +175,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value6))]
 #endif
         public bool IsValue6 => Value6 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickValue6(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out T6? value)
+        {
+            value = Value6;
+            return IsValue6;
+        }
 
         /// <summary>
         /// 
@@ -131,6 +209,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickValue7(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out T7? value)
+        {
+            value = Value7;
+            return IsValue7;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public T8? Value8 { get; init; }
 #else
@@ -144,6 +235,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value8))]
 #endif
         public bool IsValue8 => Value8 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickValue8(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out T8? value)
+        {
+            value = Value8;
+            return IsValue8;
+        }
 
         /// <summary>
         /// 
@@ -165,6 +269,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickValue9(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out T9? value)
+        {
+            value = Value9;
+            return IsValue9;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public T10? Value10 { get; init; }
 #else
@@ -178,6 +295,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value10))]
 #endif
         public bool IsValue10 => Value10 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickValue10(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out T10? value)
+        {
+            value = Value10;
+            return IsValue10;
+        }
 
         /// <summary>
         /// 
@@ -199,6 +329,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickValue11(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out T11? value)
+        {
+            value = Value11;
+            return IsValue11;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public T12? Value12 { get; init; }
 #else
@@ -212,6 +355,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value12))]
 #endif
         public bool IsValue12 => Value12 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickValue12(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out T12? value)
+        {
+            value = Value12;
+            return IsValue12;
+        }
 
         /// <summary>
         /// 
@@ -233,6 +389,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickValue13(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out T13? value)
+        {
+            value = Value13;
+            return IsValue13;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public T14? Value14 { get; init; }
 #else
@@ -246,6 +415,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value14))]
 #endif
         public bool IsValue14 => Value14 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickValue14(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out T14? value)
+        {
+            value = Value14;
+            return IsValue14;
+        }
 
         /// <summary>
         /// 
@@ -267,6 +449,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickValue15(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out T15? value)
+        {
+            value = Value15;
+            return IsValue15;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public T16? Value16 { get; init; }
 #else
@@ -280,6 +475,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value16))]
 #endif
         public bool IsValue16 => Value16 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickValue16(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out T16? value)
+        {
+            value = Value16;
+            return IsValue16;
+        }
 
         /// <summary>
         /// 
@@ -301,6 +509,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickValue17(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out T17? value)
+        {
+            value = Value17;
+            return IsValue17;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public T18? Value18 { get; init; }
 #else
@@ -314,6 +535,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value18))]
 #endif
         public bool IsValue18 => Value18 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickValue18(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out T18? value)
+        {
+            value = Value18;
+            return IsValue18;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -847,6 +1081,126 @@ namespace G
         /// 
         /// </summary>
         public void Match(
+            global::System.Action<T1>? value1 = null,
+
+            global::System.Action<T2>? value2 = null,
+
+            global::System.Action<T3>? value3 = null,
+
+            global::System.Action<T4>? value4 = null,
+
+            global::System.Action<T5>? value5 = null,
+
+            global::System.Action<T6>? value6 = null,
+
+            global::System.Action<T7>? value7 = null,
+
+            global::System.Action<T8>? value8 = null,
+
+            global::System.Action<T9>? value9 = null,
+
+            global::System.Action<T10>? value10 = null,
+
+            global::System.Action<T11>? value11 = null,
+
+            global::System.Action<T12>? value12 = null,
+
+            global::System.Action<T13>? value13 = null,
+
+            global::System.Action<T14>? value14 = null,
+
+            global::System.Action<T15>? value15 = null,
+
+            global::System.Action<T16>? value16 = null,
+
+            global::System.Action<T17>? value17 = null,
+
+            global::System.Action<T18>? value18 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsValue1)
+            {
+                value1?.Invoke(Value1!);
+            }
+            else if (IsValue2)
+            {
+                value2?.Invoke(Value2!);
+            }
+            else if (IsValue3)
+            {
+                value3?.Invoke(Value3!);
+            }
+            else if (IsValue4)
+            {
+                value4?.Invoke(Value4!);
+            }
+            else if (IsValue5)
+            {
+                value5?.Invoke(Value5!);
+            }
+            else if (IsValue6)
+            {
+                value6?.Invoke(Value6!);
+            }
+            else if (IsValue7)
+            {
+                value7?.Invoke(Value7!);
+            }
+            else if (IsValue8)
+            {
+                value8?.Invoke(Value8!);
+            }
+            else if (IsValue9)
+            {
+                value9?.Invoke(Value9!);
+            }
+            else if (IsValue10)
+            {
+                value10?.Invoke(Value10!);
+            }
+            else if (IsValue11)
+            {
+                value11?.Invoke(Value11!);
+            }
+            else if (IsValue12)
+            {
+                value12?.Invoke(Value12!);
+            }
+            else if (IsValue13)
+            {
+                value13?.Invoke(Value13!);
+            }
+            else if (IsValue14)
+            {
+                value14?.Invoke(Value14!);
+            }
+            else if (IsValue15)
+            {
+                value15?.Invoke(Value15!);
+            }
+            else if (IsValue16)
+            {
+                value16?.Invoke(Value16!);
+            }
+            else if (IsValue17)
+            {
+                value17?.Invoke(Value17!);
+            }
+            else if (IsValue18)
+            {
+                value18?.Invoke(Value18!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
             global::System.Action<T1>? value1 = null,
             global::System.Action<T2>? value2 = null,
             global::System.Action<T3>? value3 = null,

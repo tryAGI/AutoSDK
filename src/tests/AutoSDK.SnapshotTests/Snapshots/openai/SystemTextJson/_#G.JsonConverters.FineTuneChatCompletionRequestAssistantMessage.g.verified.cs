@@ -24,6 +24,14 @@ namespace G.JsonConverters
                 foreach (var __jsonProp in __jsonDocument.RootElement.EnumerateObject())
                 {
                     __jsonProps.Add(__jsonProp.Name);
+                    if (__jsonProp.Value.ValueKind == global::System.Text.Json.JsonValueKind.Object)
+                    {
+                        foreach (var __nestedJsonProp in __jsonProp.Value.EnumerateObject())
+                        {
+                            __jsonProps.Add(__jsonProp.Name + "." + __nestedJsonProp.Name);
+                        }
+                    }
+
                 }
             }
 
@@ -31,8 +39,11 @@ namespace G.JsonConverters
             if (__jsonProps.Contains("weight")) __score0++;
             var __score1 = 0;
             if (__jsonProps.Contains("audio")) __score1++;
+            if (__jsonProps.Contains("audio.id")) __score1++;
             if (__jsonProps.Contains("content")) __score1++;
             if (__jsonProps.Contains("function_call")) __score1++;
+            if (__jsonProps.Contains("function_call.arguments")) __score1++;
+            if (__jsonProps.Contains("function_call.name")) __score1++;
             if (__jsonProps.Contains("name")) __score1++;
             if (__jsonProps.Contains("refusal")) __score1++;
             if (__jsonProps.Contains("role")) __score1++;

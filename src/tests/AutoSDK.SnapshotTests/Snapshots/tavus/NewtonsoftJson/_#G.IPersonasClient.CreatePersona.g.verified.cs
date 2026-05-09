@@ -22,6 +22,19 @@ namespace G
         /// Create Persona<br/>
         /// Create and customize a persona's behavior and capabilities for CVI.
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.Persona>> CreatePersonaAsResponseAsync(
+
+            global::G.CreatePersonaRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create Persona<br/>
+        /// Create and customize a persona's behavior and capabilities for CVI.
+        /// </summary>
         /// <param name="personaName"></param>
         /// <param name="systemPrompt">
         /// System prompt defining persona behavior. Required for full pipeline mode.

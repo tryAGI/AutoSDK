@@ -35,6 +35,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickTwilio(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ConversationHistoryTwilioPhoneCallModel? value)
+        {
+            value = Twilio;
+            return IsTwilio;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ConversationHistorySIPTrunkingPhoneCallModel? SipTrunking { get; init; }
 #else
@@ -48,6 +61,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SipTrunking))]
 #endif
         public bool IsSipTrunking => SipTrunking != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSipTrunking(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ConversationHistorySIPTrunkingPhoneCallModel? value)
+        {
+            value = SipTrunking;
+            return IsSipTrunking;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -127,8 +153,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.ConversationHistoryTwilioPhoneCallModel?, TResult>? twilio = null,
-            global::System.Func<global::G.ConversationHistorySIPTrunkingPhoneCallModel?, TResult>? sipTrunking = null,
+            global::System.Func<global::G.ConversationHistoryTwilioPhoneCallModel, TResult>? twilio = null,
+            global::System.Func<global::G.ConversationHistorySIPTrunkingPhoneCallModel, TResult>? sipTrunking = null,
             bool validate = true)
         {
             if (validate)
@@ -152,8 +178,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.ConversationHistoryTwilioPhoneCallModel?>? twilio = null,
-            global::System.Action<global::G.ConversationHistorySIPTrunkingPhoneCallModel?>? sipTrunking = null,
+            global::System.Action<global::G.ConversationHistoryTwilioPhoneCallModel>? twilio = null,
+
+            global::System.Action<global::G.ConversationHistorySIPTrunkingPhoneCallModel>? sipTrunking = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsTwilio)
+            {
+                twilio?.Invoke(Twilio!);
+            }
+            else if (IsSipTrunking)
+            {
+                sipTrunking?.Invoke(SipTrunking!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.ConversationHistoryTwilioPhoneCallModel>? twilio = null,
+            global::System.Action<global::G.ConversationHistorySIPTrunkingPhoneCallModel>? sipTrunking = null,
             bool validate = true)
         {
             if (validate)

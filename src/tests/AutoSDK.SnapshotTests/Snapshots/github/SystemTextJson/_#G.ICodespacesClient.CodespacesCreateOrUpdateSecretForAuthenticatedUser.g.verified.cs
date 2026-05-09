@@ -31,6 +31,24 @@ namespace G
         /// OAuth app tokens and personal access tokens (classic) need the `codespace` or `codespace:secrets` scope to use this endpoint.
         /// </summary>
         /// <param name="secretName"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.EmptyObject>> CodespacesCreateOrUpdateSecretForAuthenticatedUserAsResponseAsync(
+            string secretName,
+
+            global::G.CodespacesCreateOrUpdateSecretForAuthenticatedUserRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create or update a secret for the authenticated user<br/>
+        /// Creates or updates a development environment secret for a user's codespace with an encrypted value. Encrypt your secret using<br/>
+        /// [LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages). For more information, see "[Encrypting secrets for the REST API](https://docs.github.com/rest/guides/encrypting-secrets-for-the-rest-api)."<br/>
+        /// The authenticated user must have Codespaces access to use this endpoint.<br/>
+        /// OAuth app tokens and personal access tokens (classic) need the `codespace` or `codespace:secrets` scope to use this endpoint.
+        /// </summary>
+        /// <param name="secretName"></param>
         /// <param name="encryptedValue">
         /// Value for your secret, encrypted with [LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages) using the public key retrieved from the [Get the public key for the authenticated user](https://docs.github.com/rest/codespaces/secrets#get-public-key-for-the-authenticated-user) endpoint.
         /// </param>

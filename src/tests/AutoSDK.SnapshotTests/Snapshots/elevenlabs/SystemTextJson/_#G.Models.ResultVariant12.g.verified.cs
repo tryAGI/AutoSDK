@@ -35,6 +35,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickEndCallSuccess(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.EndCallToolResultModel? value)
+        {
+            value = EndCallSuccess;
+            return IsEndCallSuccess;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.LanguageDetectionToolResultModel? LanguageDetectionSuccess { get; init; }
 #else
@@ -48,6 +61,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(LanguageDetectionSuccess))]
 #endif
         public bool IsLanguageDetectionSuccess => LanguageDetectionSuccess != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickLanguageDetectionSuccess(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.LanguageDetectionToolResultModel? value)
+        {
+            value = LanguageDetectionSuccess;
+            return IsLanguageDetectionSuccess;
+        }
 
         /// <summary>
         /// 
@@ -69,6 +95,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickTransferToAgentSuccess(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.TransferToAgentToolResultSuccessModel? value)
+        {
+            value = TransferToAgentSuccess;
+            return IsTransferToAgentSuccess;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.TransferToAgentToolResultErrorModel? TransferToAgentError { get; init; }
 #else
@@ -82,6 +121,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TransferToAgentError))]
 #endif
         public bool IsTransferToAgentError => TransferToAgentError != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickTransferToAgentError(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.TransferToAgentToolResultErrorModel? value)
+        {
+            value = TransferToAgentError;
+            return IsTransferToAgentError;
+        }
 
         /// <summary>
         /// 
@@ -103,6 +155,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickTransferToNumberTwilioSuccess(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.TransferToNumberResultTwilioSuccessModel? value)
+        {
+            value = TransferToNumberTwilioSuccess;
+            return IsTransferToNumberTwilioSuccess;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.TransferToNumberResultSipSuccessModel? TransferToNumberSipSuccess { get; init; }
 #else
@@ -116,6 +181,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TransferToNumberSipSuccess))]
 #endif
         public bool IsTransferToNumberSipSuccess => TransferToNumberSipSuccess != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickTransferToNumberSipSuccess(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.TransferToNumberResultSipSuccessModel? value)
+        {
+            value = TransferToNumberSipSuccess;
+            return IsTransferToNumberSipSuccess;
+        }
 
         /// <summary>
         /// 
@@ -137,6 +215,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickTransferToNumberError(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.TransferToNumberResultErrorModel? value)
+        {
+            value = TransferToNumberError;
+            return IsTransferToNumberError;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.SkipTurnToolResponseModel? SkipTurnSuccess { get; init; }
 #else
@@ -150,6 +241,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SkipTurnSuccess))]
 #endif
         public bool IsSkipTurnSuccess => SkipTurnSuccess != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSkipTurnSuccess(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.SkipTurnToolResponseModel? value)
+        {
+            value = SkipTurnSuccess;
+            return IsSkipTurnSuccess;
+        }
 
         /// <summary>
         /// 
@@ -171,6 +275,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickPlayDtmfSuccess(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.PlayDTMFResultSuccessModel? value)
+        {
+            value = PlayDtmfSuccess;
+            return IsPlayDtmfSuccess;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.PlayDTMFResultErrorModel? PlayDtmfError { get; init; }
 #else
@@ -184,6 +301,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(PlayDtmfError))]
 #endif
         public bool IsPlayDtmfError => PlayDtmfError != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickPlayDtmfError(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.PlayDTMFResultErrorModel? value)
+        {
+            value = PlayDtmfError;
+            return IsPlayDtmfError;
+        }
 
         /// <summary>
         /// 
@@ -205,6 +335,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickVoicemailDetectionSuccess(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.VoiceMailDetectionResultSuccessModel? value)
+        {
+            value = VoicemailDetectionSuccess;
+            return IsVoicemailDetectionSuccess;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.TestToolResultModel? TestingToolResult { get; init; }
 #else
@@ -218,6 +361,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TestingToolResult))]
 #endif
         public bool IsTestingToolResult => TestingToolResult != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickTestingToolResult(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.TestToolResultModel? value)
+        {
+            value = TestingToolResult;
+            return IsTestingToolResult;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -517,18 +673,18 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.EndCallToolResultModel?, TResult>? endCallSuccess = null,
-            global::System.Func<global::G.LanguageDetectionToolResultModel?, TResult>? languageDetectionSuccess = null,
-            global::System.Func<global::G.TransferToAgentToolResultSuccessModel?, TResult>? transferToAgentSuccess = null,
-            global::System.Func<global::G.TransferToAgentToolResultErrorModel?, TResult>? transferToAgentError = null,
-            global::System.Func<global::G.TransferToNumberResultTwilioSuccessModel?, TResult>? transferToNumberTwilioSuccess = null,
-            global::System.Func<global::G.TransferToNumberResultSipSuccessModel?, TResult>? transferToNumberSipSuccess = null,
-            global::System.Func<global::G.TransferToNumberResultErrorModel?, TResult>? transferToNumberError = null,
-            global::System.Func<global::G.SkipTurnToolResponseModel?, TResult>? skipTurnSuccess = null,
-            global::System.Func<global::G.PlayDTMFResultSuccessModel?, TResult>? playDtmfSuccess = null,
-            global::System.Func<global::G.PlayDTMFResultErrorModel?, TResult>? playDtmfError = null,
-            global::System.Func<global::G.VoiceMailDetectionResultSuccessModel?, TResult>? voicemailDetectionSuccess = null,
-            global::System.Func<global::G.TestToolResultModel?, TResult>? testingToolResult = null,
+            global::System.Func<global::G.EndCallToolResultModel, TResult>? endCallSuccess = null,
+            global::System.Func<global::G.LanguageDetectionToolResultModel, TResult>? languageDetectionSuccess = null,
+            global::System.Func<global::G.TransferToAgentToolResultSuccessModel, TResult>? transferToAgentSuccess = null,
+            global::System.Func<global::G.TransferToAgentToolResultErrorModel, TResult>? transferToAgentError = null,
+            global::System.Func<global::G.TransferToNumberResultTwilioSuccessModel, TResult>? transferToNumberTwilioSuccess = null,
+            global::System.Func<global::G.TransferToNumberResultSipSuccessModel, TResult>? transferToNumberSipSuccess = null,
+            global::System.Func<global::G.TransferToNumberResultErrorModel, TResult>? transferToNumberError = null,
+            global::System.Func<global::G.SkipTurnToolResponseModel, TResult>? skipTurnSuccess = null,
+            global::System.Func<global::G.PlayDTMFResultSuccessModel, TResult>? playDtmfSuccess = null,
+            global::System.Func<global::G.PlayDTMFResultErrorModel, TResult>? playDtmfError = null,
+            global::System.Func<global::G.VoiceMailDetectionResultSuccessModel, TResult>? voicemailDetectionSuccess = null,
+            global::System.Func<global::G.TestToolResultModel, TResult>? testingToolResult = null,
             bool validate = true)
         {
             if (validate)
@@ -592,18 +748,102 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.EndCallToolResultModel?>? endCallSuccess = null,
-            global::System.Action<global::G.LanguageDetectionToolResultModel?>? languageDetectionSuccess = null,
-            global::System.Action<global::G.TransferToAgentToolResultSuccessModel?>? transferToAgentSuccess = null,
-            global::System.Action<global::G.TransferToAgentToolResultErrorModel?>? transferToAgentError = null,
-            global::System.Action<global::G.TransferToNumberResultTwilioSuccessModel?>? transferToNumberTwilioSuccess = null,
-            global::System.Action<global::G.TransferToNumberResultSipSuccessModel?>? transferToNumberSipSuccess = null,
-            global::System.Action<global::G.TransferToNumberResultErrorModel?>? transferToNumberError = null,
-            global::System.Action<global::G.SkipTurnToolResponseModel?>? skipTurnSuccess = null,
-            global::System.Action<global::G.PlayDTMFResultSuccessModel?>? playDtmfSuccess = null,
-            global::System.Action<global::G.PlayDTMFResultErrorModel?>? playDtmfError = null,
-            global::System.Action<global::G.VoiceMailDetectionResultSuccessModel?>? voicemailDetectionSuccess = null,
-            global::System.Action<global::G.TestToolResultModel?>? testingToolResult = null,
+            global::System.Action<global::G.EndCallToolResultModel>? endCallSuccess = null,
+
+            global::System.Action<global::G.LanguageDetectionToolResultModel>? languageDetectionSuccess = null,
+
+            global::System.Action<global::G.TransferToAgentToolResultSuccessModel>? transferToAgentSuccess = null,
+
+            global::System.Action<global::G.TransferToAgentToolResultErrorModel>? transferToAgentError = null,
+
+            global::System.Action<global::G.TransferToNumberResultTwilioSuccessModel>? transferToNumberTwilioSuccess = null,
+
+            global::System.Action<global::G.TransferToNumberResultSipSuccessModel>? transferToNumberSipSuccess = null,
+
+            global::System.Action<global::G.TransferToNumberResultErrorModel>? transferToNumberError = null,
+
+            global::System.Action<global::G.SkipTurnToolResponseModel>? skipTurnSuccess = null,
+
+            global::System.Action<global::G.PlayDTMFResultSuccessModel>? playDtmfSuccess = null,
+
+            global::System.Action<global::G.PlayDTMFResultErrorModel>? playDtmfError = null,
+
+            global::System.Action<global::G.VoiceMailDetectionResultSuccessModel>? voicemailDetectionSuccess = null,
+
+            global::System.Action<global::G.TestToolResultModel>? testingToolResult = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsEndCallSuccess)
+            {
+                endCallSuccess?.Invoke(EndCallSuccess!);
+            }
+            else if (IsLanguageDetectionSuccess)
+            {
+                languageDetectionSuccess?.Invoke(LanguageDetectionSuccess!);
+            }
+            else if (IsTransferToAgentSuccess)
+            {
+                transferToAgentSuccess?.Invoke(TransferToAgentSuccess!);
+            }
+            else if (IsTransferToAgentError)
+            {
+                transferToAgentError?.Invoke(TransferToAgentError!);
+            }
+            else if (IsTransferToNumberTwilioSuccess)
+            {
+                transferToNumberTwilioSuccess?.Invoke(TransferToNumberTwilioSuccess!);
+            }
+            else if (IsTransferToNumberSipSuccess)
+            {
+                transferToNumberSipSuccess?.Invoke(TransferToNumberSipSuccess!);
+            }
+            else if (IsTransferToNumberError)
+            {
+                transferToNumberError?.Invoke(TransferToNumberError!);
+            }
+            else if (IsSkipTurnSuccess)
+            {
+                skipTurnSuccess?.Invoke(SkipTurnSuccess!);
+            }
+            else if (IsPlayDtmfSuccess)
+            {
+                playDtmfSuccess?.Invoke(PlayDtmfSuccess!);
+            }
+            else if (IsPlayDtmfError)
+            {
+                playDtmfError?.Invoke(PlayDtmfError!);
+            }
+            else if (IsVoicemailDetectionSuccess)
+            {
+                voicemailDetectionSuccess?.Invoke(VoicemailDetectionSuccess!);
+            }
+            else if (IsTestingToolResult)
+            {
+                testingToolResult?.Invoke(TestingToolResult!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.EndCallToolResultModel>? endCallSuccess = null,
+            global::System.Action<global::G.LanguageDetectionToolResultModel>? languageDetectionSuccess = null,
+            global::System.Action<global::G.TransferToAgentToolResultSuccessModel>? transferToAgentSuccess = null,
+            global::System.Action<global::G.TransferToAgentToolResultErrorModel>? transferToAgentError = null,
+            global::System.Action<global::G.TransferToNumberResultTwilioSuccessModel>? transferToNumberTwilioSuccess = null,
+            global::System.Action<global::G.TransferToNumberResultSipSuccessModel>? transferToNumberSipSuccess = null,
+            global::System.Action<global::G.TransferToNumberResultErrorModel>? transferToNumberError = null,
+            global::System.Action<global::G.SkipTurnToolResponseModel>? skipTurnSuccess = null,
+            global::System.Action<global::G.PlayDTMFResultSuccessModel>? playDtmfSuccess = null,
+            global::System.Action<global::G.PlayDTMFResultErrorModel>? playDtmfError = null,
+            global::System.Action<global::G.VoiceMailDetectionResultSuccessModel>? voicemailDetectionSuccess = null,
+            global::System.Action<global::G.TestToolResultModel>? testingToolResult = null,
             bool validate = true)
         {
             if (validate)

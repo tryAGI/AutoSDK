@@ -30,6 +30,23 @@ namespace G
         /// Returns:<br/>
         ///     RerankResponse: The reranked documents for the input query.
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.RerankResponse>> RerankAsResponseAsync(
+
+            global::G.RerankParams request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Rerank different kind of documents for a given query<br/>
+        /// Rerank different kind of documents for a given query.<br/>
+        /// Args:<br/>
+        ///     params: RerankParams: The parameters for reranking.<br/>
+        /// Returns:<br/>
+        ///     RerankResponse: The reranked documents for the input query.
+        /// </summary>
         /// <param name="model">
         /// The model to use for reranking documents.<br/>
         /// Default Value: mixedbread-ai/mxbai-rerank-large-v2

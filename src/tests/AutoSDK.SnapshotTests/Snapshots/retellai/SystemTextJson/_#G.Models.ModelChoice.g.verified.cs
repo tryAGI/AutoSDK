@@ -26,6 +26,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Cascading))]
 #endif
         public bool IsCascading => Cascading != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickCascading(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ModelChoiceCascading? value)
+        {
+            value = Cascading;
+            return IsCascading;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -70,7 +83,7 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.ModelChoiceCascading?, TResult>? cascading = null,
+            global::System.Func<global::G.ModelChoiceCascading, TResult>? cascading = null,
             bool validate = true)
         {
             if (validate)
@@ -90,7 +103,25 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.ModelChoiceCascading?>? cascading = null,
+            global::System.Action<global::G.ModelChoiceCascading>? cascading = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsCascading)
+            {
+                cascading?.Invoke(Cascading!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.ModelChoiceCascading>? cascading = null,
             bool validate = true)
         {
             if (validate)

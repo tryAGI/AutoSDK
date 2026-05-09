@@ -27,6 +27,22 @@ namespace G
         /// <param name="cartesiaVersion">
         /// Example: 2025-04-16
         /// </param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse> VoiceChangerSseAsResponseAsync(
+            global::G.VoiceChangerSseCartesiaVersion cartesiaVersion,
+
+            global::G.VoiceChangerSseRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Voice Changer (SSE)
+        /// </summary>
+        /// <param name="cartesiaVersion">
+        /// Example: 2025-04-16
+        /// </param>
         /// <param name="clip"></param>
         /// <param name="clipname"></param>
         /// <param name="voiceId"></param>
@@ -42,6 +58,69 @@ namespace G
         global::System.Threading.Tasks.Task VoiceChangerSseAsync(
             global::G.VoiceChangerSseCartesiaVersion cartesiaVersion,
             byte[]? clip = default,
+            string? clipname = default,
+            string? voiceId = default,
+            global::G.OutputFormatContainer? outputFormatContainer = default,
+            int? outputFormatSampleRate = default,
+            global::G.RawEncoding? outputFormatEncoding = default,
+            int? outputFormatBitRate = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Voice Changer (SSE)
+        /// </summary>
+        /// <param name="cartesiaVersion">
+        /// Example: 2025-04-16
+        /// </param>
+        /// <param name="clip">
+        /// The stream to send as the multipart 'clip' file part.
+        /// </param>
+        /// <param name="clipname"></param>
+        /// <param name="voiceId"></param>
+        /// <param name="outputFormatContainer"></param>
+        /// <param name="outputFormatSampleRate"></param>
+        /// <param name="outputFormatEncoding"></param>
+        /// <param name="outputFormatBitRate">
+        /// Required for `mp3` containers.
+        /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task VoiceChangerSseAsync(
+            global::G.VoiceChangerSseCartesiaVersion cartesiaVersion,
+            global::System.IO.Stream? clip = default,
+            string? clipname = default,
+            string? voiceId = default,
+            global::G.OutputFormatContainer? outputFormatContainer = default,
+            int? outputFormatSampleRate = default,
+            global::G.RawEncoding? outputFormatEncoding = default,
+            int? outputFormatBitRate = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Voice Changer (SSE)
+        /// </summary>
+        /// <param name="cartesiaVersion">
+        /// Example: 2025-04-16
+        /// </param>
+        /// <param name="clip">
+        /// The stream to send as the multipart 'clip' file part.
+        /// </param>
+        /// <param name="clipname"></param>
+        /// <param name="voiceId"></param>
+        /// <param name="outputFormatContainer"></param>
+        /// <param name="outputFormatSampleRate"></param>
+        /// <param name="outputFormatEncoding"></param>
+        /// <param name="outputFormatBitRate">
+        /// Required for `mp3` containers.
+        /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse> VoiceChangerSseAsResponseAsync(
+            global::G.VoiceChangerSseCartesiaVersion cartesiaVersion,
+            global::System.IO.Stream? clip = default,
             string? clipname = default,
             string? voiceId = default,
             global::G.OutputFormatContainer? outputFormatContainer = default,

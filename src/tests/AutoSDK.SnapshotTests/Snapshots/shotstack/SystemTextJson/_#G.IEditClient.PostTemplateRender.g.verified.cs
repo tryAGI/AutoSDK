@@ -26,6 +26,21 @@ namespace G
         /// variables within the [Edit](#tocs_edit).<br/>
         /// **Base URL:** &lt;a href="#"&gt;https://api.shotstack.io/edit/{version}&lt;/a&gt;
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.QueuedResponse>> PostTemplateRenderAsResponseAsync(
+
+            global::G.TemplateRender request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Render Template<br/>
+        /// Render an asset from a template id and optional merge fields. Merge fields can be used to replace placeholder<br/>
+        /// variables within the [Edit](#tocs_edit).<br/>
+        /// **Base URL:** &lt;a href="#"&gt;https://api.shotstack.io/edit/{version}&lt;/a&gt;
+        /// </summary>
         /// <param name="id">
         /// The id of the template to render in UUID format.<br/>
         /// Example: f5493c17-d01f-445c-bb49-535fae65f219

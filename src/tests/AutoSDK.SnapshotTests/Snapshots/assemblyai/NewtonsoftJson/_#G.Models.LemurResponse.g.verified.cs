@@ -29,6 +29,19 @@ namespace G
         public bool IsString => String != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickString(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.LemurStringResponse? value)
+        {
+            value = String;
+            return IsString;
+        }
+
+        /// <summary>
         /// LeMUR question &amp; answer response<br/>
         /// Example: {"request_id":"5e1b27c2-691f-4414-8bc5-f14678442f9e","response":[{"answer":"CA, US","question":"Where are there wildfires?"},{"answer":"yes","question":"Is global warming affecting wildfires?"}],"usage":{"input_tokens":27,"output_tokens":3}}
         /// </summary>
@@ -45,6 +58,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(QuestionAnswer))]
 #endif
         public bool IsQuestionAnswer => QuestionAnswer != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickQuestionAnswer(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.LemurQuestionAnswerResponse? value)
+        {
+            value = QuestionAnswer;
+            return IsQuestionAnswer;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -146,6 +172,30 @@ namespace G
         /// 
         /// </summary>
         public void Match(
+            global::System.Action<global::G.LemurStringResponse?>? @string = null,
+
+            global::System.Action<global::G.LemurQuestionAnswerResponse?>? questionAnswer = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsString)
+            {
+                @string?.Invoke(String!);
+            }
+            else if (IsQuestionAnswer)
+            {
+                questionAnswer?.Invoke(QuestionAnswer!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
             global::System.Action<global::G.LemurStringResponse?>? @string = null,
             global::System.Action<global::G.LemurQuestionAnswerResponse?>? questionAnswer = null,
             bool validate = true)

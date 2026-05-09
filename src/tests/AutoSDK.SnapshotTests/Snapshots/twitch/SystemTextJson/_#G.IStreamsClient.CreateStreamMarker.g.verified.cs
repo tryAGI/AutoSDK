@@ -36,6 +36,26 @@ namespace G
         /// __Authorization:__<br/>
         /// Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the **channel:manage:broadcast** scope.
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.CreateStreamMarkerResponse>> CreateStreamMarkerAsResponseAsync(
+
+            global::G.CreateStreamMarkerBody request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Adds a marker to a live stream.<br/>
+        /// Adds a marker to a live stream. A marker is an arbitrary point in a live stream that the broadcaster or editor wants to mark, so they can return to that spot later to create video highlights (see Video Producer, Highlights in the Twitch UX).<br/>
+        /// You may not add markers:<br/>
+        /// * If the stream is not live<br/>
+        /// * If the stream has not enabled video on demand (VOD)<br/>
+        /// * If the stream is a premiere (a live, first-viewing event that combines uploaded videos with live chat)<br/>
+        /// * If the stream is a rerun of a past broadcast, including past premieres.<br/>
+        /// __Authorization:__<br/>
+        /// Requires a [user access token](https://dev.twitch.tv/docs/authentication#user-access-tokens) that includes the **channel:manage:broadcast** scope.
+        /// </summary>
         /// <param name="userId">
         /// The ID of the broadcaster that’s streaming content. This ID must match the user ID in the access token or the user in the access token must be one of the broadcaster’s editors.
         /// </param>

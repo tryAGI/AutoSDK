@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickStreamType(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ChatStreamEventType? value)
+        {
+            value = StreamType;
+            return IsStreamType;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ChatToolPlanDeltaEvent2obfex? Event2obfex { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Event2obfex))]
 #endif
         public bool IsEvent2obfex => Event2obfex != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickEvent2obfex(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ChatToolPlanDeltaEvent2obfex? value)
+        {
+            value = Event2obfex;
+            return IsEvent2obfex;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -119,8 +145,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.ChatStreamEventType?, TResult>? streamType = null,
-            global::System.Func<global::G.ChatToolPlanDeltaEvent2obfex?, TResult>? event2obfex = null,
+            global::System.Func<global::G.ChatStreamEventType, TResult>? streamType = null,
+            global::System.Func<global::G.ChatToolPlanDeltaEvent2obfex, TResult>? event2obfex = null,
             bool validate = true)
         {
             if (validate)
@@ -144,8 +170,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.ChatStreamEventType?>? streamType = null,
-            global::System.Action<global::G.ChatToolPlanDeltaEvent2obfex?>? event2obfex = null,
+            global::System.Action<global::G.ChatStreamEventType>? streamType = null,
+
+            global::System.Action<global::G.ChatToolPlanDeltaEvent2obfex>? event2obfex = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsStreamType)
+            {
+                streamType?.Invoke(StreamType!);
+            }
+            else if (IsEvent2obfex)
+            {
+                event2obfex?.Invoke(Event2obfex!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.ChatStreamEventType>? streamType = null,
+            global::System.Action<global::G.ChatToolPlanDeltaEvent2obfex>? event2obfex = null,
             bool validate = true)
         {
             if (validate)

@@ -22,6 +22,19 @@ namespace G
         /// Launch an agent<br/>
         /// Start a new cloud agent to work on your repository
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.CreateAgentResponse>> CreateAgentAsResponseAsync(
+
+            global::G.CreateAgentRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Launch an agent<br/>
+        /// Start a new cloud agent to work on your repository
+        /// </summary>
         /// <param name="prompt"></param>
         /// <param name="model">
         /// Set to an explicit model ID for launch requests, or use "default" to use the configured default model. When omitted, Cursor resolves your user default model, then your team default model, then a system default.<br/>

@@ -129,6 +129,82 @@ namespace G
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var __response = await GetAclAsResponseAsync(
+                objectType: objectType,
+                objectId: objectId,
+                limit: limit,
+                startingAfter: startingAfter,
+                endingBefore: endingBefore,
+                ids: ids,
+                userId: userId,
+                groupId: groupId,
+                permission: permission,
+                restrictObjectType: restrictObjectType,
+                roleId: roleId,
+                requestOptions: requestOptions,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// List acls<br/>
+        /// List out all acls. The acls are sorted by creation date, with the most recently-created acls coming first
+        /// </summary>
+        /// <param name="limit">
+        /// Limit the number of objects to return
+        /// </param>
+        /// <param name="startingAfter">
+        /// Pagination cursor id.<br/>
+        /// For example, if the final item in the last page you fetched had an id of `foo`, pass `starting_after=foo` to fetch the next page. Note: you may only pass one of `starting_after` and `ending_before`
+        /// </param>
+        /// <param name="endingBefore">
+        /// Pagination cursor id.<br/>
+        /// For example, if the initial item in the last page you fetched had an id of `foo`, pass `ending_before=foo` to fetch the previous page. Note: you may only pass one of `starting_after` and `ending_before`
+        /// </param>
+        /// <param name="ids">
+        /// Filter search results to a particular set of object IDs. To specify a list of IDs, include the query param multiple times
+        /// </param>
+        /// <param name="objectType">
+        /// The object type that the ACL applies to
+        /// </param>
+        /// <param name="objectId">
+        /// The id of the object the ACL applies to
+        /// </param>
+        /// <param name="userId">
+        /// Id of the user the ACL applies to. Exactly one of `user_id` and `group_id` will be provided
+        /// </param>
+        /// <param name="groupId">
+        /// Id of the group the ACL applies to. Exactly one of `user_id` and `group_id` will be provided
+        /// </param>
+        /// <param name="permission">
+        /// Each permission permits a certain type of operation on an object in the system<br/>
+        /// Permissions can be assigned to to objects on an individual basis, or grouped into roles
+        /// </param>
+        /// <param name="restrictObjectType">
+        /// The object type that the ACL applies to
+        /// </param>
+        /// <param name="roleId">
+        /// Id of the role the ACL grants. Exactly one of `permission` and `role_id` will be provided
+        /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.GetAclResponse>> GetAclAsResponseAsync(
+            global::G.AclObjectType objectType,
+            global::System.Guid objectId,
+            int? limit = default,
+            global::System.Guid? startingAfter = default,
+            global::System.Guid? endingBefore = default,
+            global::G.Ids? ids = default,
+            global::System.Guid? userId = default,
+            global::System.Guid? groupId = default,
+            global::G.AclListPermission? permission = default,
+            global::G.AclListRestrictObjectType? restrictObjectType = default,
+            global::System.Guid? roleId = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             PrepareArguments(
                 client: HttpClient);
             PrepareGetAclArguments(
@@ -167,9 +243,10 @@ namespace G
 
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
+
                             var __pathBuilder = new global::G.PathBuilder(
                                 path: "/v1/acl",
-                                baseUri: HttpClient.BaseAddress); 
+                                baseUri: HttpClient.BaseAddress);
                             __pathBuilder
                                 .AddOptionalParameter("limit", limit?.ToString())
                                 .AddOptionalParameter("starting_after", startingAfter?.ToString())
@@ -181,7 +258,7 @@ namespace G
                                 .AddOptionalParameter("group_id", groupId?.ToString())
                                 .AddOptionalParameter("permission", permission?.ToValueString())
                                 .AddOptionalParameter("restrict_object_type", restrictObjectType?.ToValueString())
-                                .AddOptionalParameter("role_id", roleId?.ToString()) 
+                                .AddOptionalParameter("role_id", roleId?.ToString())
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::G.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -227,8 +304,8 @@ namespace G
                     startingAfter: startingAfter,
                     endingBefore: endingBefore,
                     ids: ids,
-                    objectType: objectType,
-                    objectId: objectId,
+                    objectType: objectType!,
+                    objectId: objectId!,
                     userId: userId,
                     groupId: groupId,
                     permission: permission,
@@ -263,6 +340,8 @@ namespace G
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                     try
                     {
@@ -273,6 +352,11 @@ namespace G
                     }
                     catch (global::System.Net.Http.HttpRequestException __exception)
                     {
+                        var __retryDelay = global::G.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: null,
+                            attempt: __attempt);
                         var __willRetry = __attempt < __maxAttempts && !__effectiveCancellationToken.IsCancellationRequested;
                         await global::G.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
@@ -290,6 +374,8 @@ namespace G
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: __willRetry,
+                                retryDelay: __willRetry ? __retryDelay : (global::System.TimeSpan?)null,
+                                retryReason: "exception",
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         if (!__willRetry)
                         {
@@ -299,8 +385,7 @@ namespace G
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::G.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -309,6 +394,11 @@ namespace G
                         __attempt < __maxAttempts &&
                         global::G.AutoSDKRequestOptionsSupport.ShouldRetryStatusCode(__response.StatusCode))
                     {
+                        var __retryDelay = global::G.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: __response,
+                            attempt: __attempt);
                         await global::G.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
@@ -325,14 +415,15 @@ namespace G
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: true,
+                                retryDelay: __retryDelay,
+                                retryReason: "status:" + ((int)__response.StatusCode).ToString(global::System.Globalization.CultureInfo.InvariantCulture),
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         __response.Dispose();
                         __response = null;
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::G.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -372,6 +463,8 @@ namespace G
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
                 else
@@ -392,6 +485,8 @@ namespace G
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
                             // The request was unacceptable, often due to missing a required parameter
@@ -606,9 +701,13 @@ namespace G
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    return
-                                        global::G.GetAclResponse.FromJson(__content, JsonSerializerOptions) ??
+                                    var __value = global::G.GetAclResponse.FromJson(__content, JsonSerializerOptions) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                                    return new global::G.AutoSDKHttpResponse<global::G.GetAclResponse>(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri,
+                                        body: __value);
                                 }
                                 catch (global::System.Exception __ex)
                                 {
@@ -636,9 +735,13 @@ namespace G
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    return
-                                        await global::G.GetAclResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                                    var __value = await global::G.GetAclResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
+                                    return new global::G.AutoSDKHttpResponse<global::G.GetAclResponse>(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri,
+                                        body: __value);
                                 }
                                 catch (global::System.Exception __ex)
                                 {

@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickProviderName(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ProviderName? value)
+        {
+            value = ProviderName;
+            return IsProviderName;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public string? ResponsesRequestProviderOrderItemsVariant2 { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponsesRequestProviderOrderItemsVariant2))]
 #endif
         public bool IsResponsesRequestProviderOrderItemsVariant2 => ResponsesRequestProviderOrderItemsVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResponsesRequestProviderOrderItemsVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = ResponsesRequestProviderOrderItemsVariant2;
+            return IsResponsesRequestProviderOrderItemsVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -120,7 +146,7 @@ namespace G
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::G.ProviderName?, TResult>? providerName = null,
-            global::System.Func<string?, TResult>? responsesRequestProviderOrderItemsVariant2 = null,
+            global::System.Func<string, TResult>? responsesRequestProviderOrderItemsVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -145,7 +171,31 @@ namespace G
         /// </summary>
         public void Match(
             global::System.Action<global::G.ProviderName?>? providerName = null,
-            global::System.Action<string?>? responsesRequestProviderOrderItemsVariant2 = null,
+
+            global::System.Action<string>? responsesRequestProviderOrderItemsVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsProviderName)
+            {
+                providerName?.Invoke(ProviderName!);
+            }
+            else if (IsResponsesRequestProviderOrderItemsVariant2)
+            {
+                responsesRequestProviderOrderItemsVariant2?.Invoke(ResponsesRequestProviderOrderItemsVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.ProviderName?>? providerName = null,
+            global::System.Action<string>? responsesRequestProviderOrderItemsVariant2 = null,
             bool validate = true)
         {
             if (validate)

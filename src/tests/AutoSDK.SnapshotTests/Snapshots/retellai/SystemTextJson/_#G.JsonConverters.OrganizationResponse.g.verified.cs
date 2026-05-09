@@ -24,6 +24,14 @@ namespace G.JsonConverters
                 foreach (var __jsonProp in __jsonDocument.RootElement.EnumerateObject())
                 {
                     __jsonProps.Add(__jsonProp.Name);
+                    if (__jsonProp.Value.ValueKind == global::System.Text.Json.JsonValueKind.Object)
+                    {
+                        foreach (var __nestedJsonProp in __jsonProp.Value.EnumerateObject())
+                        {
+                            __jsonProps.Add(__jsonProp.Name + "." + __nestedJsonProp.Name);
+                        }
+                    }
+
                 }
             }
 
@@ -31,6 +39,9 @@ namespace G.JsonConverters
             if (__jsonProps.Contains("concurrency")) __score0++;
             if (__jsonProps.Contains("concurrency_burst_enabled")) __score0++;
             if (__jsonProps.Contains("cps_config")) __score0++;
+            if (__jsonProps.Contains("cps_config.custom")) __score0++;
+            if (__jsonProps.Contains("cps_config.telnyx")) __score0++;
+            if (__jsonProps.Contains("cps_config.twilio")) __score0++;
             if (__jsonProps.Contains("created_timestamp")) __score0++;
             if (__jsonProps.Contains("custom_voice_ids")) __score0++;
             if (__jsonProps.Contains("enterprise_id")) __score0++;

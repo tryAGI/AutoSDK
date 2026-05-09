@@ -27,6 +27,22 @@ namespace G
         /// **Authentication**: API key may be required depending on flow settings.
         /// </summary>
         /// <param name="id"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.CreatePredictionResponse>> CreatePredictionAsResponseAsync(
+            string id,
+
+            global::G.Prediction request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Send message to flow and get AI response<br/>
+        /// Send a message to your flow and receive an AI-generated response. This is the primary endpoint for interacting with your flows and assistants.<br/>
+        /// **Authentication**: API key may be required depending on flow settings.
+        /// </summary>
+        /// <param name="id"></param>
         /// <param name="question">
         /// The question/message to send to the flow<br/>
         /// Example: What is artificial intelligence?

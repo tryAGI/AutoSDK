@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickResponsesRequestImageConfigVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = ResponsesRequestImageConfigVariant1;
+            return IsResponsesRequestImageConfigVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public double? ResponsesRequestImageConfigVariant2 { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponsesRequestImageConfigVariant2))]
 #endif
         public bool IsResponsesRequestImageConfigVariant2 => ResponsesRequestImageConfigVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickResponsesRequestImageConfigVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out double? value)
+        {
+            value = ResponsesRequestImageConfigVariant2;
+            return IsResponsesRequestImageConfigVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -119,7 +145,7 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<string?, TResult>? responsesRequestImageConfigVariant1 = null,
+            global::System.Func<string, TResult>? responsesRequestImageConfigVariant1 = null,
             global::System.Func<double?, TResult>? responsesRequestImageConfigVariant2 = null,
             bool validate = true)
         {
@@ -144,7 +170,31 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<string?>? responsesRequestImageConfigVariant1 = null,
+            global::System.Action<string>? responsesRequestImageConfigVariant1 = null,
+
+            global::System.Action<double?>? responsesRequestImageConfigVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsResponsesRequestImageConfigVariant1)
+            {
+                responsesRequestImageConfigVariant1?.Invoke(ResponsesRequestImageConfigVariant1!);
+            }
+            else if (IsResponsesRequestImageConfigVariant2)
+            {
+                responsesRequestImageConfigVariant2?.Invoke(ResponsesRequestImageConfigVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<string>? responsesRequestImageConfigVariant1 = null,
             global::System.Action<double?>? responsesRequestImageConfigVariant2 = null,
             bool validate = true)
         {

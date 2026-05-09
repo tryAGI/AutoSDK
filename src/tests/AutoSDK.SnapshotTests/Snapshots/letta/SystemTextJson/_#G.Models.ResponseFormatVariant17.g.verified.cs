@@ -33,6 +33,19 @@ namespace G
         public bool IsText => Text != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickText(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.TextResponseFormat? value)
+        {
+            value = Text;
+            return IsText;
+        }
+
+        /// <summary>
         /// Response format for JSON schema-based responses.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -50,6 +63,19 @@ namespace G
         public bool IsJsonSchema => JsonSchema != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickJsonSchema(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.JsonSchemaResponseFormat? value)
+        {
+            value = JsonSchema;
+            return IsJsonSchema;
+        }
+
+        /// <summary>
         /// Response format for JSON object responses.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -65,6 +91,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(JsonObject))]
 #endif
         public bool IsJsonObject => JsonObject != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickJsonObject(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.JsonObjectResponseFormat? value)
+        {
+            value = JsonObject;
+            return IsJsonObject;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -166,9 +205,9 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.TextResponseFormat?, TResult>? text = null,
-            global::System.Func<global::G.JsonSchemaResponseFormat?, TResult>? jsonSchema = null,
-            global::System.Func<global::G.JsonObjectResponseFormat?, TResult>? jsonObject = null,
+            global::System.Func<global::G.TextResponseFormat, TResult>? text = null,
+            global::System.Func<global::G.JsonSchemaResponseFormat, TResult>? jsonSchema = null,
+            global::System.Func<global::G.JsonObjectResponseFormat, TResult>? jsonObject = null,
             bool validate = true)
         {
             if (validate)
@@ -196,9 +235,39 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.TextResponseFormat?>? text = null,
-            global::System.Action<global::G.JsonSchemaResponseFormat?>? jsonSchema = null,
-            global::System.Action<global::G.JsonObjectResponseFormat?>? jsonObject = null,
+            global::System.Action<global::G.TextResponseFormat>? text = null,
+
+            global::System.Action<global::G.JsonSchemaResponseFormat>? jsonSchema = null,
+
+            global::System.Action<global::G.JsonObjectResponseFormat>? jsonObject = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsText)
+            {
+                text?.Invoke(Text!);
+            }
+            else if (IsJsonSchema)
+            {
+                jsonSchema?.Invoke(JsonSchema!);
+            }
+            else if (IsJsonObject)
+            {
+                jsonObject?.Invoke(JsonObject!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.TextResponseFormat>? text = null,
+            global::System.Action<global::G.JsonSchemaResponseFormat>? jsonSchema = null,
+            global::System.Action<global::G.JsonObjectResponseFormat>? jsonObject = null,
             bool validate = true)
         {
             if (validate)

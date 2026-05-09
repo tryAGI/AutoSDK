@@ -20,6 +20,18 @@ namespace G
         /// <summary>
         /// Map multiple URLs based on options
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.MapResponse>> MapUrlsAsResponseAsync(
+
+            global::G.MapUrlsRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Map multiple URLs based on options
+        /// </summary>
         /// <param name="url">
         /// The base URL to start crawling from
         /// </param>

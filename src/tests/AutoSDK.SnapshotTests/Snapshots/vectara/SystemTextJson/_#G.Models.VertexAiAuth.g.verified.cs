@@ -33,6 +33,19 @@ namespace G
         public bool IsApiKey => ApiKey != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickApiKey(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.VertexAiApiKeyAuth? value)
+        {
+            value = ApiKey;
+            return IsApiKey;
+        }
+
+        /// <summary>
         /// Service account authentication for Vertex AI
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -48,6 +61,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ServiceAccount))]
 #endif
         public bool IsServiceAccount => ServiceAccount != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickServiceAccount(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.VertexAiServiceAccountAuth? value)
+        {
+            value = ServiceAccount;
+            return IsServiceAccount;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -127,8 +153,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.VertexAiApiKeyAuth?, TResult>? apiKey = null,
-            global::System.Func<global::G.VertexAiServiceAccountAuth?, TResult>? serviceAccount = null,
+            global::System.Func<global::G.VertexAiApiKeyAuth, TResult>? apiKey = null,
+            global::System.Func<global::G.VertexAiServiceAccountAuth, TResult>? serviceAccount = null,
             bool validate = true)
         {
             if (validate)
@@ -152,8 +178,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.VertexAiApiKeyAuth?>? apiKey = null,
-            global::System.Action<global::G.VertexAiServiceAccountAuth?>? serviceAccount = null,
+            global::System.Action<global::G.VertexAiApiKeyAuth>? apiKey = null,
+
+            global::System.Action<global::G.VertexAiServiceAccountAuth>? serviceAccount = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsApiKey)
+            {
+                apiKey?.Invoke(ApiKey!);
+            }
+            else if (IsServiceAccount)
+            {
+                serviceAccount?.Invoke(ServiceAccount!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.VertexAiApiKeyAuth>? apiKey = null,
+            global::System.Action<global::G.VertexAiServiceAccountAuth>? serviceAccount = null,
             bool validate = true)
         {
             if (validate)

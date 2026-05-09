@@ -35,6 +35,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickAws(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.AWSRegistry? value)
+        {
+            value = Aws;
+            return IsAws;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.GCPRegistry? Gcp { get; init; }
 #else
@@ -52,6 +65,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickGcp(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.GCPRegistry? value)
+        {
+            value = Gcp;
+            return IsGcp;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.GeneralRegistry? Registry { get; init; }
 #else
@@ -65,6 +91,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Registry))]
 #endif
         public bool IsRegistry => Registry != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickRegistry(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.GeneralRegistry? value)
+        {
+            value = Registry;
+            return IsRegistry;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -166,9 +205,9 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.AWSRegistry?, TResult>? aws = null,
-            global::System.Func<global::G.GCPRegistry?, TResult>? gcp = null,
-            global::System.Func<global::G.GeneralRegistry?, TResult>? registry = null,
+            global::System.Func<global::G.AWSRegistry, TResult>? aws = null,
+            global::System.Func<global::G.GCPRegistry, TResult>? gcp = null,
+            global::System.Func<global::G.GeneralRegistry, TResult>? registry = null,
             bool validate = true)
         {
             if (validate)
@@ -196,9 +235,39 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.AWSRegistry?>? aws = null,
-            global::System.Action<global::G.GCPRegistry?>? gcp = null,
-            global::System.Action<global::G.GeneralRegistry?>? registry = null,
+            global::System.Action<global::G.AWSRegistry>? aws = null,
+
+            global::System.Action<global::G.GCPRegistry>? gcp = null,
+
+            global::System.Action<global::G.GeneralRegistry>? registry = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsAws)
+            {
+                aws?.Invoke(Aws!);
+            }
+            else if (IsGcp)
+            {
+                gcp?.Invoke(Gcp!);
+            }
+            else if (IsRegistry)
+            {
+                registry?.Invoke(Registry!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.AWSRegistry>? aws = null,
+            global::System.Action<global::G.GCPRegistry>? gcp = null,
+            global::System.Action<global::G.GeneralRegistry>? registry = null,
             bool validate = true)
         {
             if (validate)

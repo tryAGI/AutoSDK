@@ -26,6 +26,22 @@ namespace G
         /// </summary>
         /// <param name="xDeepinfraSource"></param>
         /// <param name="xiApiKey"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<string>> OpenaiAudioTranscriptionsV1OpenaiAudioTranscriptionsPostAsResponseAsync(
+
+            global::G.BodyOpenaiAudioTranscriptionsV1OpenaiAudioTranscriptionsPost request,
+            string? xDeepinfraSource = default,
+            string? xiApiKey = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Openai Audio Transcriptions
+        /// </summary>
+        /// <param name="xDeepinfraSource"></param>
+        /// <param name="xiApiKey"></param>
         /// <param name="file"></param>
         /// <param name="filename"></param>
         /// <param name="model"></param>
@@ -43,6 +59,77 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<string> OpenaiAudioTranscriptionsV1OpenaiAudioTranscriptionsPostAsync(
             byte[] file,
+            string filename,
+            string model,
+            string? xDeepinfraSource = default,
+            string? xiApiKey = default,
+            string? language = default,
+            string? prompt = default,
+            global::G.BodyOpenaiAudioTranscriptionsV1OpenaiAudioTranscriptionsPostResponseFormat2? responseFormat = default,
+            double? temperature = default,
+            global::System.Collections.Generic.IList<global::G.BodyOpenaiAudioTranscriptionsV1OpenaiAudioTranscriptionsPostTimestampGranularitiesVariant1Item>? timestampGranularities = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Openai Audio Transcriptions
+        /// </summary>
+        /// <param name="xDeepinfraSource"></param>
+        /// <param name="xiApiKey"></param>
+        /// <param name="file">
+        /// The stream to send as the multipart 'file' file part.
+        /// </param>
+        /// <param name="filename"></param>
+        /// <param name="model"></param>
+        /// <param name="language"></param>
+        /// <param name="prompt"></param>
+        /// <param name="responseFormat">
+        /// Default Value: json
+        /// </param>
+        /// <param name="temperature">
+        /// Default Value: 0
+        /// </param>
+        /// <param name="timestampGranularities"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<string> OpenaiAudioTranscriptionsV1OpenaiAudioTranscriptionsPostAsync(
+            global::System.IO.Stream file,
+            string filename,
+            string model,
+            string? xDeepinfraSource = default,
+            string? xiApiKey = default,
+            string? language = default,
+            string? prompt = default,
+            global::G.BodyOpenaiAudioTranscriptionsV1OpenaiAudioTranscriptionsPostResponseFormat2? responseFormat = default,
+            double? temperature = default,
+            global::System.Collections.Generic.IList<global::G.BodyOpenaiAudioTranscriptionsV1OpenaiAudioTranscriptionsPostTimestampGranularitiesVariant1Item>? timestampGranularities = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Openai Audio Transcriptions
+        /// </summary>
+        /// <param name="xDeepinfraSource"></param>
+        /// <param name="xiApiKey"></param>
+        /// <param name="file">
+        /// The stream to send as the multipart 'file' file part.
+        /// </param>
+        /// <param name="filename"></param>
+        /// <param name="model"></param>
+        /// <param name="language"></param>
+        /// <param name="prompt"></param>
+        /// <param name="responseFormat">
+        /// Default Value: json
+        /// </param>
+        /// <param name="temperature">
+        /// Default Value: 0
+        /// </param>
+        /// <param name="timestampGranularities"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<string>> OpenaiAudioTranscriptionsV1OpenaiAudioTranscriptionsPostAsResponseAsync(
+            global::System.IO.Stream file,
             string filename,
             string model,
             string? xDeepinfraSource = default,

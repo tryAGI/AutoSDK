@@ -26,6 +26,21 @@ namespace G
         /// Supports 10 Indian languages plus English with 30+ speaker voices.<br/>
         /// Max 2500 characters per request (v3).
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.TextToSpeechResponse>> ConvertTextToSpeechAsResponseAsync(
+
+            global::G.TextToSpeechRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Convert text to speech<br/>
+        /// Converts text to natural speech using the Bulbul model.<br/>
+        /// Supports 10 Indian languages plus English with 30+ speaker voices.<br/>
+        /// Max 2500 characters per request (v3).
+        /// </summary>
         /// <param name="text">
         /// Text to convert to speech (max 2500 chars for v3, 1500 for v2). Supports code-mixed text.
         /// </param>

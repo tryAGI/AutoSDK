@@ -129,7 +129,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public OrganizationClient Organization => new OrganizationClient(HttpClient, authorizations: Authorizations, options: Options)
+        public OrganizationClient Organization => new OrganizationClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -138,7 +138,7 @@ namespace G
         /// <summary>
         /// These endpoints all kick off tasks to create generations.
         /// </summary>
-        public StartGeneratingClient StartGenerating => new StartGeneratingClient(HttpClient, authorizations: Authorizations, options: Options)
+        public StartGeneratingClient StartGenerating => new StartGeneratingClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -147,7 +147,7 @@ namespace G
         /// <summary>
         /// Endpoints for managing tasks that have been submitted.
         /// </summary>
-        public TaskManagementClient TaskManagement => new TaskManagementClient(HttpClient, authorizations: Authorizations, options: Options)
+        public TaskManagementClient TaskManagement => new TaskManagementClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -156,7 +156,7 @@ namespace G
         /// <summary>
         /// Endpoints for uploading media files.
         /// </summary>
-        public UploadsClient Uploads => new UploadsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public UploadsClient Uploads => new UploadsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -195,10 +195,10 @@ namespace G
         /// <param name="options">Client-wide request defaults such as headers, query parameters, retries, and timeout.</param>
         /// <param name="disposeHttpClient">Dispose the HttpClient when the instance is disposed. True by default.</param>
         public Api(
-            global::System.Net.Http.HttpClient? httpClient = null,
-            global::System.Uri? baseUri = null,
-            global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations = null,
-            global::G.AutoSDKClientOptions? options = null,
+            global::System.Net.Http.HttpClient? httpClient,
+            global::System.Uri? baseUri,
+            global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations,
+            global::G.AutoSDKClientOptions? options,
             bool disposeHttpClient = true)
         {
 

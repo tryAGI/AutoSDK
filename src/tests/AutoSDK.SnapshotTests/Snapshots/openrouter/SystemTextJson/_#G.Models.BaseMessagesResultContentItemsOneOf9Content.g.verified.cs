@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickBaseMessagesResultContentItemsOneOf9Content0(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.BaseMessagesResultContentItemsOneOf9Content0? value)
+        {
+            value = BaseMessagesResultContentItemsOneOf9Content0;
+            return IsBaseMessagesResultContentItemsOneOf9Content0;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.BaseMessagesResultContentItemsOneOf9Content1? BaseMessagesResultContentItemsOneOf9Content1 { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BaseMessagesResultContentItemsOneOf9Content1))]
 #endif
         public bool IsBaseMessagesResultContentItemsOneOf9Content1 => BaseMessagesResultContentItemsOneOf9Content1 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickBaseMessagesResultContentItemsOneOf9Content1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.BaseMessagesResultContentItemsOneOf9Content1? value)
+        {
+            value = BaseMessagesResultContentItemsOneOf9Content1;
+            return IsBaseMessagesResultContentItemsOneOf9Content1;
+        }
 
         /// <summary>
         /// 
@@ -64,6 +90,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickBaseMessagesResultContentItemsOneOf9Content2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.BaseMessagesResultContentItemsOneOf9Content2? value)
+        {
+            value = BaseMessagesResultContentItemsOneOf9Content2;
+            return IsBaseMessagesResultContentItemsOneOf9Content2;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.BaseMessagesResultContentItemsOneOf9Content3? BaseMessagesResultContentItemsOneOf9Content3 { get; init; }
 #else
@@ -77,6 +116,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BaseMessagesResultContentItemsOneOf9Content3))]
 #endif
         public bool IsBaseMessagesResultContentItemsOneOf9Content3 => BaseMessagesResultContentItemsOneOf9Content3 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickBaseMessagesResultContentItemsOneOf9Content3(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.BaseMessagesResultContentItemsOneOf9Content3? value)
+        {
+            value = BaseMessagesResultContentItemsOneOf9Content3;
+            return IsBaseMessagesResultContentItemsOneOf9Content3;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -197,10 +249,10 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.BaseMessagesResultContentItemsOneOf9Content0?, TResult>? baseMessagesResultContentItemsOneOf9Content0 = null,
-            global::System.Func<global::G.BaseMessagesResultContentItemsOneOf9Content1?, TResult>? baseMessagesResultContentItemsOneOf9Content1 = null,
-            global::System.Func<global::G.BaseMessagesResultContentItemsOneOf9Content2?, TResult>? baseMessagesResultContentItemsOneOf9Content2 = null,
-            global::System.Func<global::G.BaseMessagesResultContentItemsOneOf9Content3?, TResult>? baseMessagesResultContentItemsOneOf9Content3 = null,
+            global::System.Func<global::G.BaseMessagesResultContentItemsOneOf9Content0, TResult>? baseMessagesResultContentItemsOneOf9Content0 = null,
+            global::System.Func<global::G.BaseMessagesResultContentItemsOneOf9Content1, TResult>? baseMessagesResultContentItemsOneOf9Content1 = null,
+            global::System.Func<global::G.BaseMessagesResultContentItemsOneOf9Content2, TResult>? baseMessagesResultContentItemsOneOf9Content2 = null,
+            global::System.Func<global::G.BaseMessagesResultContentItemsOneOf9Content3, TResult>? baseMessagesResultContentItemsOneOf9Content3 = null,
             bool validate = true)
         {
             if (validate)
@@ -232,10 +284,46 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.BaseMessagesResultContentItemsOneOf9Content0?>? baseMessagesResultContentItemsOneOf9Content0 = null,
-            global::System.Action<global::G.BaseMessagesResultContentItemsOneOf9Content1?>? baseMessagesResultContentItemsOneOf9Content1 = null,
-            global::System.Action<global::G.BaseMessagesResultContentItemsOneOf9Content2?>? baseMessagesResultContentItemsOneOf9Content2 = null,
-            global::System.Action<global::G.BaseMessagesResultContentItemsOneOf9Content3?>? baseMessagesResultContentItemsOneOf9Content3 = null,
+            global::System.Action<global::G.BaseMessagesResultContentItemsOneOf9Content0>? baseMessagesResultContentItemsOneOf9Content0 = null,
+
+            global::System.Action<global::G.BaseMessagesResultContentItemsOneOf9Content1>? baseMessagesResultContentItemsOneOf9Content1 = null,
+
+            global::System.Action<global::G.BaseMessagesResultContentItemsOneOf9Content2>? baseMessagesResultContentItemsOneOf9Content2 = null,
+
+            global::System.Action<global::G.BaseMessagesResultContentItemsOneOf9Content3>? baseMessagesResultContentItemsOneOf9Content3 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsBaseMessagesResultContentItemsOneOf9Content0)
+            {
+                baseMessagesResultContentItemsOneOf9Content0?.Invoke(BaseMessagesResultContentItemsOneOf9Content0!);
+            }
+            else if (IsBaseMessagesResultContentItemsOneOf9Content1)
+            {
+                baseMessagesResultContentItemsOneOf9Content1?.Invoke(BaseMessagesResultContentItemsOneOf9Content1!);
+            }
+            else if (IsBaseMessagesResultContentItemsOneOf9Content2)
+            {
+                baseMessagesResultContentItemsOneOf9Content2?.Invoke(BaseMessagesResultContentItemsOneOf9Content2!);
+            }
+            else if (IsBaseMessagesResultContentItemsOneOf9Content3)
+            {
+                baseMessagesResultContentItemsOneOf9Content3?.Invoke(BaseMessagesResultContentItemsOneOf9Content3!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.BaseMessagesResultContentItemsOneOf9Content0>? baseMessagesResultContentItemsOneOf9Content0 = null,
+            global::System.Action<global::G.BaseMessagesResultContentItemsOneOf9Content1>? baseMessagesResultContentItemsOneOf9Content1 = null,
+            global::System.Action<global::G.BaseMessagesResultContentItemsOneOf9Content2>? baseMessagesResultContentItemsOneOf9Content2 = null,
+            global::System.Action<global::G.BaseMessagesResultContentItemsOneOf9Content3>? baseMessagesResultContentItemsOneOf9Content3 = null,
             bool validate = true)
         {
             if (validate)

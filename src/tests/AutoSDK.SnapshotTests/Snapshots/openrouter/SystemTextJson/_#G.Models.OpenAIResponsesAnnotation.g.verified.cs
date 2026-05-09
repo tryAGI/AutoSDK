@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickFileCitation(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.FileCitation? value)
+        {
+            value = FileCitation;
+            return IsFileCitation;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.URLCitation? URLCitation { get; init; }
 #else
@@ -47,6 +60,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickURLCitation(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.URLCitation? value)
+        {
+            value = URLCitation;
+            return IsURLCitation;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.FilePath? FilePath { get; init; }
 #else
@@ -60,6 +86,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FilePath))]
 #endif
         public bool IsFilePath => FilePath != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFilePath(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.FilePath? value)
+        {
+            value = FilePath;
+            return IsFilePath;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -158,9 +197,9 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.FileCitation?, TResult>? fileCitation = null,
-            global::System.Func<global::G.URLCitation?, TResult>? uRLCitation = null,
-            global::System.Func<global::G.FilePath?, TResult>? filePath = null,
+            global::System.Func<global::G.FileCitation, TResult>? fileCitation = null,
+            global::System.Func<global::G.URLCitation, TResult>? uRLCitation = null,
+            global::System.Func<global::G.FilePath, TResult>? filePath = null,
             bool validate = true)
         {
             if (validate)
@@ -188,9 +227,39 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.FileCitation?>? fileCitation = null,
-            global::System.Action<global::G.URLCitation?>? uRLCitation = null,
-            global::System.Action<global::G.FilePath?>? filePath = null,
+            global::System.Action<global::G.FileCitation>? fileCitation = null,
+
+            global::System.Action<global::G.URLCitation>? uRLCitation = null,
+
+            global::System.Action<global::G.FilePath>? filePath = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsFileCitation)
+            {
+                fileCitation?.Invoke(FileCitation!);
+            }
+            else if (IsURLCitation)
+            {
+                uRLCitation?.Invoke(URLCitation!);
+            }
+            else if (IsFilePath)
+            {
+                filePath?.Invoke(FilePath!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.FileCitation>? fileCitation = null,
+            global::System.Action<global::G.URLCitation>? uRLCitation = null,
+            global::System.Action<global::G.FilePath>? filePath = null,
             bool validate = true)
         {
             if (validate)

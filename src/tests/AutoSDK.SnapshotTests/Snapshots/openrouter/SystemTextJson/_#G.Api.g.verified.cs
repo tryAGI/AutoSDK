@@ -1201,7 +1201,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageAnalyticsClient SubpackageAnalytics => new SubpackageAnalyticsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public SubpackageAnalyticsClient SubpackageAnalytics => new SubpackageAnalyticsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -1210,7 +1210,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageAnthropicMessagesClient SubpackageAnthropicMessages => new SubpackageAnthropicMessagesClient(HttpClient, authorizations: Authorizations, options: Options)
+        public SubpackageAnthropicMessagesClient SubpackageAnthropicMessages => new SubpackageAnthropicMessagesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -1219,7 +1219,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageApiKeysClient SubpackageApiKeys => new SubpackageApiKeysClient(HttpClient, authorizations: Authorizations, options: Options)
+        public SubpackageApiKeysClient SubpackageApiKeys => new SubpackageApiKeysClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -1228,7 +1228,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageBetaResponsesClient SubpackageBetaResponses => new SubpackageBetaResponsesClient(HttpClient, authorizations: Authorizations, options: Options)
+        public SubpackageBetaResponsesClient SubpackageBetaResponses => new SubpackageBetaResponsesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -1237,7 +1237,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageChatClient SubpackageChat => new SubpackageChatClient(HttpClient, authorizations: Authorizations, options: Options)
+        public SubpackageChatClient SubpackageChat => new SubpackageChatClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -1246,7 +1246,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageCreditsClient SubpackageCredits => new SubpackageCreditsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public SubpackageCreditsClient SubpackageCredits => new SubpackageCreditsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -1255,7 +1255,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageEmbeddingsClient SubpackageEmbeddings => new SubpackageEmbeddingsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public SubpackageEmbeddingsClient SubpackageEmbeddings => new SubpackageEmbeddingsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -1264,7 +1264,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageEndpointsClient SubpackageEndpoints => new SubpackageEndpointsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public SubpackageEndpointsClient SubpackageEndpoints => new SubpackageEndpointsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -1273,7 +1273,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageGenerationsClient SubpackageGenerations => new SubpackageGenerationsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public SubpackageGenerationsClient SubpackageGenerations => new SubpackageGenerationsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -1282,7 +1282,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageGuardrailsClient SubpackageGuardrails => new SubpackageGuardrailsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public SubpackageGuardrailsClient SubpackageGuardrails => new SubpackageGuardrailsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -1291,7 +1291,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageModelsClient SubpackageModels => new SubpackageModelsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public SubpackageModelsClient SubpackageModels => new SubpackageModelsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -1300,7 +1300,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageOAuthClient SubpackageOAuth => new SubpackageOAuthClient(HttpClient, authorizations: Authorizations, options: Options)
+        public SubpackageOAuthClient SubpackageOAuth => new SubpackageOAuthClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -1309,7 +1309,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public SubpackageProvidersClient SubpackageProviders => new SubpackageProvidersClient(HttpClient, authorizations: Authorizations, options: Options)
+        public SubpackageProvidersClient SubpackageProviders => new SubpackageProvidersClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -1348,10 +1348,10 @@ namespace G
         /// <param name="options">Client-wide request defaults such as headers, query parameters, retries, and timeout.</param>
         /// <param name="disposeHttpClient">Dispose the HttpClient when the instance is disposed. True by default.</param>
         public Api(
-            global::System.Net.Http.HttpClient? httpClient = null,
-            global::System.Uri? baseUri = null,
-            global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations = null,
-            global::G.AutoSDKClientOptions? options = null,
+            global::System.Net.Http.HttpClient? httpClient,
+            global::System.Uri? baseUri,
+            global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations,
+            global::G.AutoSDKClientOptions? options,
             bool disposeHttpClient = true)
         {
 

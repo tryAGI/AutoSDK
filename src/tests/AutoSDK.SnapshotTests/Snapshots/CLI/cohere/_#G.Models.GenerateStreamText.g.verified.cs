@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickEvent(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.GenerateStreamEvent? value)
+        {
+            value = Event;
+            return IsEvent;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.GenerateStreamTextYai5v6? Yai5v6 { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Yai5v6))]
 #endif
         public bool IsYai5v6 => Yai5v6 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickYai5v6(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.GenerateStreamTextYai5v6? value)
+        {
+            value = Yai5v6;
+            return IsYai5v6;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -119,8 +145,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.GenerateStreamEvent?, TResult>? @event = null,
-            global::System.Func<global::G.GenerateStreamTextYai5v6?, TResult>? yai5v6 = null,
+            global::System.Func<global::G.GenerateStreamEvent, TResult>? @event = null,
+            global::System.Func<global::G.GenerateStreamTextYai5v6, TResult>? yai5v6 = null,
             bool validate = true)
         {
             if (validate)
@@ -144,8 +170,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.GenerateStreamEvent?>? @event = null,
-            global::System.Action<global::G.GenerateStreamTextYai5v6?>? yai5v6 = null,
+            global::System.Action<global::G.GenerateStreamEvent>? @event = null,
+
+            global::System.Action<global::G.GenerateStreamTextYai5v6>? yai5v6 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsEvent)
+            {
+                @event?.Invoke(Event!);
+            }
+            else if (IsYai5v6)
+            {
+                yai5v6?.Invoke(Yai5v6!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.GenerateStreamEvent>? @event = null,
+            global::System.Action<global::G.GenerateStreamTextYai5v6>? yai5v6 = null,
             bool validate = true)
         {
             if (validate)

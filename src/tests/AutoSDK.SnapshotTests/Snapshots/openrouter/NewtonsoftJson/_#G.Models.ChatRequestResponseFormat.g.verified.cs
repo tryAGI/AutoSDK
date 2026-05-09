@@ -28,6 +28,19 @@ namespace G
         public bool IsChatFormatTextConfig => ChatFormatTextConfig != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickChatFormatTextConfig(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ChatFormatTextConfig? value)
+        {
+            value = ChatFormatTextConfig;
+            return IsChatFormatTextConfig;
+        }
+
+        /// <summary>
         /// JSON object response format
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FormatJsonObjectConfig))]
 #endif
         public bool IsFormatJsonObjectConfig => FormatJsonObjectConfig != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFormatJsonObjectConfig(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.FormatJsonObjectConfig? value)
+        {
+            value = FormatJsonObjectConfig;
+            return IsFormatJsonObjectConfig;
+        }
 
         /// <summary>
         /// JSON Schema response format for structured outputs
@@ -62,6 +88,19 @@ namespace G
         public bool IsChatFormatJsonSchemaConfig => ChatFormatJsonSchemaConfig != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickChatFormatJsonSchemaConfig(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ChatFormatJsonSchemaConfig? value)
+        {
+            value = ChatFormatJsonSchemaConfig;
+            return IsChatFormatJsonSchemaConfig;
+        }
+
+        /// <summary>
         /// Custom grammar response format
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -79,6 +118,19 @@ namespace G
         public bool IsChatFormatGrammarConfig => ChatFormatGrammarConfig != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickChatFormatGrammarConfig(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ChatFormatGrammarConfig? value)
+        {
+            value = ChatFormatGrammarConfig;
+            return IsChatFormatGrammarConfig;
+        }
+
+        /// <summary>
         /// Python code response format
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -94,6 +146,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ChatFormatPythonConfig))]
 #endif
         public bool IsChatFormatPythonConfig => ChatFormatPythonConfig != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickChatFormatPythonConfig(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ChatFormatPythonConfig? value)
+        {
+            value = ChatFormatPythonConfig;
+            return IsChatFormatPythonConfig;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -236,11 +301,11 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.ChatFormatTextConfig?, TResult>? chatFormatTextConfig = null,
-            global::System.Func<global::G.FormatJsonObjectConfig?, TResult>? formatJsonObjectConfig = null,
-            global::System.Func<global::G.ChatFormatJsonSchemaConfig?, TResult>? chatFormatJsonSchemaConfig = null,
-            global::System.Func<global::G.ChatFormatGrammarConfig?, TResult>? chatFormatGrammarConfig = null,
-            global::System.Func<global::G.ChatFormatPythonConfig?, TResult>? chatFormatPythonConfig = null,
+            global::System.Func<global::G.ChatFormatTextConfig, TResult>? chatFormatTextConfig = null,
+            global::System.Func<global::G.FormatJsonObjectConfig, TResult>? formatJsonObjectConfig = null,
+            global::System.Func<global::G.ChatFormatJsonSchemaConfig, TResult>? chatFormatJsonSchemaConfig = null,
+            global::System.Func<global::G.ChatFormatGrammarConfig, TResult>? chatFormatGrammarConfig = null,
+            global::System.Func<global::G.ChatFormatPythonConfig, TResult>? chatFormatPythonConfig = null,
             bool validate = true)
         {
             if (validate)
@@ -276,11 +341,53 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.ChatFormatTextConfig?>? chatFormatTextConfig = null,
-            global::System.Action<global::G.FormatJsonObjectConfig?>? formatJsonObjectConfig = null,
-            global::System.Action<global::G.ChatFormatJsonSchemaConfig?>? chatFormatJsonSchemaConfig = null,
-            global::System.Action<global::G.ChatFormatGrammarConfig?>? chatFormatGrammarConfig = null,
-            global::System.Action<global::G.ChatFormatPythonConfig?>? chatFormatPythonConfig = null,
+            global::System.Action<global::G.ChatFormatTextConfig>? chatFormatTextConfig = null,
+
+            global::System.Action<global::G.FormatJsonObjectConfig>? formatJsonObjectConfig = null,
+
+            global::System.Action<global::G.ChatFormatJsonSchemaConfig>? chatFormatJsonSchemaConfig = null,
+
+            global::System.Action<global::G.ChatFormatGrammarConfig>? chatFormatGrammarConfig = null,
+
+            global::System.Action<global::G.ChatFormatPythonConfig>? chatFormatPythonConfig = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsChatFormatTextConfig)
+            {
+                chatFormatTextConfig?.Invoke(ChatFormatTextConfig!);
+            }
+            else if (IsFormatJsonObjectConfig)
+            {
+                formatJsonObjectConfig?.Invoke(FormatJsonObjectConfig!);
+            }
+            else if (IsChatFormatJsonSchemaConfig)
+            {
+                chatFormatJsonSchemaConfig?.Invoke(ChatFormatJsonSchemaConfig!);
+            }
+            else if (IsChatFormatGrammarConfig)
+            {
+                chatFormatGrammarConfig?.Invoke(ChatFormatGrammarConfig!);
+            }
+            else if (IsChatFormatPythonConfig)
+            {
+                chatFormatPythonConfig?.Invoke(ChatFormatPythonConfig!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.ChatFormatTextConfig>? chatFormatTextConfig = null,
+            global::System.Action<global::G.FormatJsonObjectConfig>? formatJsonObjectConfig = null,
+            global::System.Action<global::G.ChatFormatJsonSchemaConfig>? chatFormatJsonSchemaConfig = null,
+            global::System.Action<global::G.ChatFormatGrammarConfig>? chatFormatGrammarConfig = null,
+            global::System.Action<global::G.ChatFormatPythonConfig>? chatFormatPythonConfig = null,
             bool validate = true)
         {
             if (validate)

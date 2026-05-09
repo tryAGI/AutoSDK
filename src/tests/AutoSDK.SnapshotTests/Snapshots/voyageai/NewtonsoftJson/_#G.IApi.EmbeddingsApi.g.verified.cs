@@ -22,6 +22,19 @@ namespace G
         /// Text embedding models<br/>
         /// Voyage text embedding endpoint receives as input a string (or a list of strings) and other arguments such as the preferred model name, and returns a response containing a list of embeddings.
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.EmbeddingsApiResponse>> EmbeddingsApiAsResponseAsync(
+
+            global::G.EmbeddingsApiRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Text embedding models<br/>
+        /// Voyage text embedding endpoint receives as input a string (or a list of strings) and other arguments such as the preferred model name, and returns a response containing a list of embeddings.
+        /// </summary>
         /// <param name="input">
         /// A single text string, or a list of texts as a list of strings, such as `["I like cats", "I also like dogs"]`. Currently, we have two constraints on the list: &lt;ul&gt;  &lt;li&gt; The maximum length of the list is 128. &lt;/li&gt;  &lt;li&gt; The total number of tokens in the list is at most 1M for `voyage-3-lite`; 320K for `voyage-3` and `voyage-2`; and 120K for `voyage-3-large`, `voyage-code-3`, `voyage-large-2-instruct`, `voyage-finance-2`, `voyage-multilingual-2`, `voyage-law-2`, and `voyage-large-2`. &lt;/li&gt; &lt;ul&gt;
         /// </param>

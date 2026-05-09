@@ -24,12 +24,29 @@ namespace G.JsonConverters
                 foreach (var __jsonProp in __jsonDocument.RootElement.EnumerateObject())
                 {
                     __jsonProps.Add(__jsonProp.Name);
+                    if (__jsonProp.Value.ValueKind == global::System.Text.Json.JsonValueKind.Object)
+                    {
+                        foreach (var __nestedJsonProp in __jsonProp.Value.EnumerateObject())
+                        {
+                            __jsonProps.Add(__jsonProp.Name + "." + __nestedJsonProp.Name);
+                        }
+                    }
+
                 }
             }
 
             var __score0 = 0;
             if (__jsonProps.Contains("freezeColumns")) __score0++;
             if (__jsonProps.Contains("options")) __score0++;
+            if (__jsonProps.Contains("options.chartVisibility")) __score0++;
+            if (__jsonProps.Contains("options.frameEnd")) __score0++;
+            if (__jsonProps.Contains("options.frameStart")) __score0++;
+            if (__jsonProps.Contains("options.groupBy")) __score0++;
+            if (__jsonProps.Contains("options.projectId")) __score0++;
+            if (__jsonProps.Contains("options.rangeValue")) __score0++;
+            if (__jsonProps.Contains("options.spanType")) __score0++;
+            if (__jsonProps.Contains("options.type")) __score0++;
+            if (__jsonProps.Contains("options.tzUTC")) __score0++;
             if (__jsonProps.Contains("viewType")) __score0++;
             var __score1 = 0;
             if (__jsonProps.Contains("chartAnnotations")) __score1++;
@@ -44,11 +61,17 @@ namespace G.JsonConverters
             if (__jsonProps.Contains("queryShape")) __score1++;
             if (__jsonProps.Contains("rowHeight")) __score1++;
             if (__jsonProps.Contains("symbolGrouping")) __score1++;
+            if (__jsonProps.Contains("symbolGrouping.type")) __score1++;
+            if (__jsonProps.Contains("symbolGrouping.value")) __score1++;
             if (__jsonProps.Contains("tallGroupRows")) __score1++;
             if (__jsonProps.Contains("timeRangeFilter")) __score1++;
             if (__jsonProps.Contains("xAxis")) __score1++;
+            if (__jsonProps.Contains("xAxis.type")) __score1++;
+            if (__jsonProps.Contains("xAxis.value")) __score1++;
             if (__jsonProps.Contains("xAxisAggregation")) __score1++;
             if (__jsonProps.Contains("yMetric")) __score1++;
+            if (__jsonProps.Contains("yMetric.type")) __score1++;
+            if (__jsonProps.Contains("yMetric.value")) __score1++;
             var __score2 = 0;
             var __bestScore = 0;
             var __bestIndex = -1;

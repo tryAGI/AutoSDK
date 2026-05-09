@@ -37,6 +37,19 @@ namespace G
         public bool IsStreamAnalyzeResponse => StreamAnalyzeResponse != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickStreamAnalyzeResponse(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.StreamAnalyzeResponse? value)
+        {
+            value = StreamAnalyzeResponse;
+            return IsStreamAnalyzeResponse;
+        }
+
+        /// <summary>
         /// When the value of the `stream` parameter is set to `false`, the response is as follows:
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -52,6 +65,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(NonStreamAnalyzeResponse))]
 #endif
         public bool IsNonStreamAnalyzeResponse => NonStreamAnalyzeResponse != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickNonStreamAnalyzeResponse(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.NonStreamAnalyzeResponse? value)
+        {
+            value = NonStreamAnalyzeResponse;
+            return IsNonStreamAnalyzeResponse;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -129,7 +155,7 @@ namespace G
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::G.StreamAnalyzeResponse?, TResult>? streamAnalyzeResponse = null,
-            global::System.Func<global::G.NonStreamAnalyzeResponse?, TResult>? nonStreamAnalyzeResponse = null,
+            global::System.Func<global::G.NonStreamAnalyzeResponse, TResult>? nonStreamAnalyzeResponse = null,
             bool validate = true)
         {
             if (validate)
@@ -154,7 +180,31 @@ namespace G
         /// </summary>
         public void Match(
             global::System.Action<global::G.StreamAnalyzeResponse?>? streamAnalyzeResponse = null,
-            global::System.Action<global::G.NonStreamAnalyzeResponse?>? nonStreamAnalyzeResponse = null,
+
+            global::System.Action<global::G.NonStreamAnalyzeResponse>? nonStreamAnalyzeResponse = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsStreamAnalyzeResponse)
+            {
+                streamAnalyzeResponse?.Invoke(StreamAnalyzeResponse!);
+            }
+            else if (IsNonStreamAnalyzeResponse)
+            {
+                nonStreamAnalyzeResponse?.Invoke(NonStreamAnalyzeResponse!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.StreamAnalyzeResponse?>? streamAnalyzeResponse = null,
+            global::System.Action<global::G.NonStreamAnalyzeResponse>? nonStreamAnalyzeResponse = null,
             bool validate = true)
         {
             if (validate)

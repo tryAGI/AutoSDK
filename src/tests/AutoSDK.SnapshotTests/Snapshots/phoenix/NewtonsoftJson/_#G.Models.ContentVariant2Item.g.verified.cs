@@ -35,6 +35,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickText(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.TextContentPart? value)
+        {
+            value = Text;
+            return IsText;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ToolCallContentPart? ToolCall { get; init; }
 #else
@@ -52,6 +65,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickToolCall(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ToolCallContentPart? value)
+        {
+            value = ToolCall;
+            return IsToolCall;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ToolResultContentPart? ToolResult { get; init; }
 #else
@@ -65,6 +91,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ToolResult))]
 #endif
         public bool IsToolResult => ToolResult != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickToolResult(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ToolResultContentPart? value)
+        {
+            value = ToolResult;
+            return IsToolResult;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -166,9 +205,9 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.TextContentPart?, TResult>? text = null,
-            global::System.Func<global::G.ToolCallContentPart?, TResult>? toolCall = null,
-            global::System.Func<global::G.ToolResultContentPart?, TResult>? toolResult = null,
+            global::System.Func<global::G.TextContentPart, TResult>? text = null,
+            global::System.Func<global::G.ToolCallContentPart, TResult>? toolCall = null,
+            global::System.Func<global::G.ToolResultContentPart, TResult>? toolResult = null,
             bool validate = true)
         {
             if (validate)
@@ -196,9 +235,39 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.TextContentPart?>? text = null,
-            global::System.Action<global::G.ToolCallContentPart?>? toolCall = null,
-            global::System.Action<global::G.ToolResultContentPart?>? toolResult = null,
+            global::System.Action<global::G.TextContentPart>? text = null,
+
+            global::System.Action<global::G.ToolCallContentPart>? toolCall = null,
+
+            global::System.Action<global::G.ToolResultContentPart>? toolResult = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsText)
+            {
+                text?.Invoke(Text!);
+            }
+            else if (IsToolCall)
+            {
+                toolCall?.Invoke(ToolCall!);
+            }
+            else if (IsToolResult)
+            {
+                toolResult?.Invoke(ToolResult!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.TextContentPart>? text = null,
+            global::System.Action<global::G.ToolCallContentPart>? toolCall = null,
+            global::System.Action<global::G.ToolResultContentPart>? toolResult = null,
             bool validate = true)
         {
             if (validate)

@@ -21,5 +21,21 @@ namespace G
             bool? excludeS3StoredAttributes = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Get Shared Run<br/>
+        /// Get the shared run.
+        /// </summary>
+        /// <param name="shareToken"></param>
+        /// <param name="excludeS3StoredAttributes">
+        /// Default Value: false
+        /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.RunPublicSchema>> GetSharedRunAsResponseAsync(
+            global::System.Guid shareToken,
+            bool? excludeS3StoredAttributes = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

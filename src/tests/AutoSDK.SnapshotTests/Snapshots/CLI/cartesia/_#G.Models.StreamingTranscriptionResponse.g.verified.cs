@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickStreamingTranscriptionResponseVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.AllOf<global::G.StreamingTranscriptionResponseVariant12, global::G.TranscriptMessage>? value)
+        {
+            value = StreamingTranscriptionResponseVariant1;
+            return IsStreamingTranscriptionResponseVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.AllOf<global::G.StreamingTranscriptionResponseVariant22, global::G.FlushDoneMessage>? StreamingTranscriptionResponseVariant2 { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(StreamingTranscriptionResponseVariant2))]
 #endif
         public bool IsStreamingTranscriptionResponseVariant2 => StreamingTranscriptionResponseVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickStreamingTranscriptionResponseVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.AllOf<global::G.StreamingTranscriptionResponseVariant22, global::G.FlushDoneMessage>? value)
+        {
+            value = StreamingTranscriptionResponseVariant2;
+            return IsStreamingTranscriptionResponseVariant2;
+        }
 
         /// <summary>
         /// 
@@ -64,6 +90,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickStreamingTranscriptionResponseVariant3(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.AllOf<global::G.StreamingTranscriptionResponseVariant32, global::G.DoneMessage>? value)
+        {
+            value = StreamingTranscriptionResponseVariant3;
+            return IsStreamingTranscriptionResponseVariant3;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.AllOf<global::G.StreamingTranscriptionResponseVariant42, global::G.ErrorMessage>? StreamingTranscriptionResponseVariant4 { get; init; }
 #else
@@ -77,6 +116,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(StreamingTranscriptionResponseVariant4))]
 #endif
         public bool IsStreamingTranscriptionResponseVariant4 => StreamingTranscriptionResponseVariant4 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickStreamingTranscriptionResponseVariant4(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.AllOf<global::G.StreamingTranscriptionResponseVariant42, global::G.ErrorMessage>? value)
+        {
+            value = StreamingTranscriptionResponseVariant4;
+            return IsStreamingTranscriptionResponseVariant4;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -232,6 +284,42 @@ namespace G
         /// 
         /// </summary>
         public void Match(
+            global::System.Action<global::G.AllOf<global::G.StreamingTranscriptionResponseVariant12, global::G.TranscriptMessage>?>? streamingTranscriptionResponseVariant1 = null,
+
+            global::System.Action<global::G.AllOf<global::G.StreamingTranscriptionResponseVariant22, global::G.FlushDoneMessage>?>? streamingTranscriptionResponseVariant2 = null,
+
+            global::System.Action<global::G.AllOf<global::G.StreamingTranscriptionResponseVariant32, global::G.DoneMessage>?>? streamingTranscriptionResponseVariant3 = null,
+
+            global::System.Action<global::G.AllOf<global::G.StreamingTranscriptionResponseVariant42, global::G.ErrorMessage>?>? streamingTranscriptionResponseVariant4 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsStreamingTranscriptionResponseVariant1)
+            {
+                streamingTranscriptionResponseVariant1?.Invoke(StreamingTranscriptionResponseVariant1!);
+            }
+            else if (IsStreamingTranscriptionResponseVariant2)
+            {
+                streamingTranscriptionResponseVariant2?.Invoke(StreamingTranscriptionResponseVariant2!);
+            }
+            else if (IsStreamingTranscriptionResponseVariant3)
+            {
+                streamingTranscriptionResponseVariant3?.Invoke(StreamingTranscriptionResponseVariant3!);
+            }
+            else if (IsStreamingTranscriptionResponseVariant4)
+            {
+                streamingTranscriptionResponseVariant4?.Invoke(StreamingTranscriptionResponseVariant4!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
             global::System.Action<global::G.AllOf<global::G.StreamingTranscriptionResponseVariant12, global::G.TranscriptMessage>?>? streamingTranscriptionResponseVariant1 = null,
             global::System.Action<global::G.AllOf<global::G.StreamingTranscriptionResponseVariant22, global::G.FlushDoneMessage>?>? streamingTranscriptionResponseVariant2 = null,
             global::System.Action<global::G.AllOf<global::G.StreamingTranscriptionResponseVariant32, global::G.DoneMessage>?>? streamingTranscriptionResponseVariant3 = null,

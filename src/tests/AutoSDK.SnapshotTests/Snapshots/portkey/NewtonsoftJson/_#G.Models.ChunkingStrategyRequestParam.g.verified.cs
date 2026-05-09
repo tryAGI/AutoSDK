@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickAutoChunkingStrategy(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.AutoChunkingStrategyRequestParam? value)
+        {
+            value = AutoChunkingStrategy;
+            return IsAutoChunkingStrategy;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.StaticChunkingStrategyRequestParam? StaticChunkingStrategy { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(StaticChunkingStrategy))]
 #endif
         public bool IsStaticChunkingStrategy => StaticChunkingStrategy != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickStaticChunkingStrategy(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.StaticChunkingStrategyRequestParam? value)
+        {
+            value = StaticChunkingStrategy;
+            return IsStaticChunkingStrategy;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -119,8 +145,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.AutoChunkingStrategyRequestParam?, TResult>? autoChunkingStrategy = null,
-            global::System.Func<global::G.StaticChunkingStrategyRequestParam?, TResult>? staticChunkingStrategy = null,
+            global::System.Func<global::G.AutoChunkingStrategyRequestParam, TResult>? autoChunkingStrategy = null,
+            global::System.Func<global::G.StaticChunkingStrategyRequestParam, TResult>? staticChunkingStrategy = null,
             bool validate = true)
         {
             if (validate)
@@ -144,8 +170,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.AutoChunkingStrategyRequestParam?>? autoChunkingStrategy = null,
-            global::System.Action<global::G.StaticChunkingStrategyRequestParam?>? staticChunkingStrategy = null,
+            global::System.Action<global::G.AutoChunkingStrategyRequestParam>? autoChunkingStrategy = null,
+
+            global::System.Action<global::G.StaticChunkingStrategyRequestParam>? staticChunkingStrategy = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsAutoChunkingStrategy)
+            {
+                autoChunkingStrategy?.Invoke(AutoChunkingStrategy!);
+            }
+            else if (IsStaticChunkingStrategy)
+            {
+                staticChunkingStrategy?.Invoke(StaticChunkingStrategy!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.AutoChunkingStrategyRequestParam>? autoChunkingStrategy = null,
+            global::System.Action<global::G.StaticChunkingStrategyRequestParam>? staticChunkingStrategy = null,
             bool validate = true)
         {
             if (validate)

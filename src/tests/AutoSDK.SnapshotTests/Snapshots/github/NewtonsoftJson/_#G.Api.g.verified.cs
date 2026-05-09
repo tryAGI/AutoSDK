@@ -22,7 +22,7 @@ namespace G
         public global::System.Net.Http.HttpClient HttpClient { get; }
 
         /// <inheritdoc/>
-        public System.Uri? BaseUri => HttpClient.BaseAddress;
+        public System.Uri? BaseUri => ResolveDisplayedBaseUri();
 
         /// <inheritdoc/>
         public global::System.Collections.Generic.List<global::G.EndPointAuthorization> Authorizations { get; }
@@ -35,6 +35,9 @@ namespace G
 
         /// <inheritdoc/>
         public global::G.AutoSDKClientOptions Options { get; }
+
+
+        internal global::G.AutoSDKServerConfiguration AutoSDKServerConfiguration { get; set; } = new global::G.AutoSDKServerConfiguration();
         /// <summary>
         /// 
         /// </summary>
@@ -11170,326 +11173,390 @@ namespace G
         /// <summary>
         /// Endpoints to manage GitHub Actions using the REST API.
         /// </summary>
-        public ActionsClient Actions => new ActionsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public ActionsClient Actions => new ActionsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
+            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
 
         /// <summary>
         /// Activity APIs provide access to notifications, subscriptions, and timelines.
         /// </summary>
-        public ActivityClient Activity => new ActivityClient(HttpClient, authorizations: Authorizations, options: Options)
+        public ActivityClient Activity => new ActivityClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
+            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
 
         /// <summary>
         /// Information for integrations and installations.
         /// </summary>
-        public AppsClient Apps => new AppsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public AppsClient Apps => new AppsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
+            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
 
         /// <summary>
         /// Monitor charges and usage from Actions and Packages.
         /// </summary>
-        public BillingClient Billing => new BillingClient(HttpClient, authorizations: Authorizations, options: Options)
+        public BillingClient Billing => new BillingClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
+            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
 
         /// <summary>
         /// Rich interactions with checks run by your integrations.
         /// </summary>
-        public ChecksClient Checks => new ChecksClient(HttpClient, authorizations: Authorizations, options: Options)
+        public ChecksClient Checks => new ChecksClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
+            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
 
         /// <summary>
         /// Interact with GitHub Classroom.
         /// </summary>
-        public ClassroomClient Classroom => new ClassroomClient(HttpClient, authorizations: Authorizations, options: Options)
+        public ClassroomClient Classroom => new ClassroomClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
+            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
 
         /// <summary>
         /// Retrieve code scanning alerts from a repository.
         /// </summary>
-        public CodeScanningClient CodeScanning => new CodeScanningClient(HttpClient, authorizations: Authorizations, options: Options)
+        public CodeScanningClient CodeScanning => new CodeScanningClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
+            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
 
         /// <summary>
         /// Endpoints to manage Code security using the REST API.
         /// </summary>
-        public CodeSecurityClient CodeSecurity => new CodeSecurityClient(HttpClient, authorizations: Authorizations, options: Options)
+        public CodeSecurityClient CodeSecurity => new CodeSecurityClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
+            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
 
         /// <summary>
         /// Insight into codes of conduct for your communities.
         /// </summary>
-        public CodesOfConductClient CodesOfConduct => new CodesOfConductClient(HttpClient, authorizations: Authorizations, options: Options)
+        public CodesOfConductClient CodesOfConduct => new CodesOfConductClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
+            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
 
         /// <summary>
         /// Endpoints to manage Codespaces using the REST API.
         /// </summary>
-        public CodespacesClient Codespaces => new CodespacesClient(HttpClient, authorizations: Authorizations, options: Options)
+        public CodespacesClient Codespaces => new CodespacesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
+            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
 
         /// <summary>
         /// Endpoints to manage Copilot using the REST API.
         /// </summary>
-        public CopilotClient Copilot => new CopilotClient(HttpClient, authorizations: Authorizations, options: Options)
+        public CopilotClient Copilot => new CopilotClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
+            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
 
         /// <summary>
         /// Endpoints to manage Dependabot.
         /// </summary>
-        public DependabotClient Dependabot => new DependabotClient(HttpClient, authorizations: Authorizations, options: Options)
+        public DependabotClient Dependabot => new DependabotClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
+            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
 
         /// <summary>
         /// Endpoints to access Dependency Graph features.
         /// </summary>
-        public DependencyGraphClient DependencyGraph => new DependencyGraphClient(HttpClient, authorizations: Authorizations, options: Options)
+        public DependencyGraphClient DependencyGraph => new DependencyGraphClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
+            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
 
         /// <summary>
         /// List emojis available to use on GitHub.
         /// </summary>
-        public EmojisClient Emojis => new EmojisClient(HttpClient, authorizations: Authorizations, options: Options)
+        public EmojisClient Emojis => new EmojisClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
+            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
 
         /// <summary>
         /// View, modify your gists.
         /// </summary>
-        public GistsClient Gists => new GistsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public GistsClient Gists => new GistsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
+            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
 
         /// <summary>
         /// Raw Git functionality.
         /// </summary>
-        public GitClient Git => new GitClient(HttpClient, authorizations: Authorizations, options: Options)
+        public GitClient Git => new GitClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
+            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
 
         /// <summary>
         /// View gitignore templates.
         /// </summary>
-        public GitignoreClient Gitignore => new GitignoreClient(HttpClient, authorizations: Authorizations, options: Options)
+        public GitignoreClient Gitignore => new GitignoreClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
+            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
 
         /// <summary>
         /// Owner or admin management of users interactions.
         /// </summary>
-        public InteractionsClient Interactions => new InteractionsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public InteractionsClient Interactions => new InteractionsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
+            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
 
         /// <summary>
         /// Interact with GitHub Issues.
         /// </summary>
-        public IssuesClient Issues => new IssuesClient(HttpClient, authorizations: Authorizations, options: Options)
+        public IssuesClient Issues => new IssuesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
+            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
 
         /// <summary>
         /// View various OSS licenses.
         /// </summary>
-        public LicensesClient Licenses => new LicensesClient(HttpClient, authorizations: Authorizations, options: Options)
+        public LicensesClient Licenses => new LicensesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
+            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
 
         /// <summary>
         /// Render GitHub flavored markdown.
         /// </summary>
-        public MarkdownClient Markdown => new MarkdownClient(HttpClient, authorizations: Authorizations, options: Options)
+        public MarkdownClient Markdown => new MarkdownClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
+            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
 
         /// <summary>
         /// Endpoints that give information about the API.
         /// </summary>
-        public MetaClient Meta => new MetaClient(HttpClient, authorizations: Authorizations, options: Options)
+        public MetaClient Meta => new MetaClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
+            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
 
         /// <summary>
         /// Move projects to or from GitHub.
         /// </summary>
-        public MigrationsClient Migrations => new MigrationsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public MigrationsClient Migrations => new MigrationsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
+            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
 
         /// <summary>
         /// Endpoints to manage GitHub OIDC configuration using the REST API.
         /// </summary>
-        public OidcClient Oidc => new OidcClient(HttpClient, authorizations: Authorizations, options: Options)
+        public OidcClient Oidc => new OidcClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
+            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
 
         /// <summary>
         /// Interact with GitHub Orgs.
         /// </summary>
-        public OrgsClient Orgs => new OrgsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public OrgsClient Orgs => new OrgsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
+            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
 
         /// <summary>
         /// Manage packages for authenticated users and organizations.
         /// </summary>
-        public PackagesClient Packages => new PackagesClient(HttpClient, authorizations: Authorizations, options: Options)
+        public PackagesClient Packages => new PackagesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
+            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
 
         /// <summary>
         /// Interact with GitHub Projects.
         /// </summary>
-        public ProjectsClient Projects => new ProjectsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public ProjectsClient Projects => new ProjectsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
+            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
 
         /// <summary>
         /// Interact with GitHub Pull Requests.
         /// </summary>
-        public PullsClient Pulls => new PullsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public PullsClient Pulls => new PullsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
+            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
 
         /// <summary>
         /// Check your current rate limit status.
         /// </summary>
-        public RateLimitClient RateLimit => new RateLimitClient(HttpClient, authorizations: Authorizations, options: Options)
+        public RateLimitClient RateLimit => new RateLimitClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
+            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
 
         /// <summary>
         /// Interact with reactions to various GitHub entities.
         /// </summary>
-        public ReactionsClient Reactions => new ReactionsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public ReactionsClient Reactions => new ReactionsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
+            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
 
         /// <summary>
         /// Interact with GitHub Repos.
         /// </summary>
-        public ReposClient Repos => new ReposClient(HttpClient, authorizations: Authorizations, options: Options)
+        public ReposClient Repos => new ReposClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
+            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
 
         /// <summary>
         /// Look for stuff on GitHub.
         /// </summary>
-        public SearchClient Search => new SearchClient(HttpClient, authorizations: Authorizations, options: Options)
+        public SearchClient Search => new SearchClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
+            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
 
         /// <summary>
         /// Retrieve secret scanning alerts from a repository.
         /// </summary>
-        public SecretScanningClient SecretScanning => new SecretScanningClient(HttpClient, authorizations: Authorizations, options: Options)
+        public SecretScanningClient SecretScanning => new SecretScanningClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
+            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
 
         /// <summary>
         /// Manage security advisories.
         /// </summary>
-        public SecurityAdvisoriesClient SecurityAdvisories => new SecurityAdvisoriesClient(HttpClient, authorizations: Authorizations, options: Options)
+        public SecurityAdvisoriesClient SecurityAdvisories => new SecurityAdvisoriesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
+            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
 
         /// <summary>
         /// Interact with GitHub Teams.
         /// </summary>
-        public TeamsClient Teams => new TeamsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public TeamsClient Teams => new TeamsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
+            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
 
         /// <summary>
         /// Interact with and view information about users and also current user.
         /// </summary>
-        public UsersClient Users => new UsersClient(HttpClient, authorizations: Authorizations, options: Options)
+        public UsersClient Users => new UsersClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
+            AutoSDKServerConfiguration = AutoSDKServerConfiguration,
         };
+
+
+        private static readonly global::G.AutoSDKServer[] s_availableServers = new global::G.AutoSDKServer[]
+        {            new global::G.AutoSDKServer(
+                id: "https-api-github-com",
+                name: "api.github.com",
+                url: "https://api.github.com/",
+                description: ""),
+            new global::G.AutoSDKServer(
+                id: "https-uploads-github-com",
+                name: "The URL origin (protocol + host name + port) is included in `upload_url` returned in the response of the \"Create a release\" endpoint",
+                url: "https://uploads.github.com/",
+                description: "The URL origin (protocol + host name + port) is included in `upload_url` returned in the response of the \"Create a release\" endpoint"),
+        };
+
+        /// <summary>
+        /// The server options available for this client.
+        /// </summary>
+        public global::System.Collections.Generic.IReadOnlyList<global::G.AutoSDKServer> AvailableServers => s_availableServers;
+
+        /// <summary>
+        /// The currently selected server for this client, if any.
+        /// </summary>
+        public global::G.AutoSDKServer? SelectedServer
+        {
+            get => ResolveSelectedServer();
+            set => SelectServer(value);
+        }
 
         /// <summary>
         /// Creates a new instance of the Api.
@@ -11524,10 +11591,10 @@ namespace G
         /// <param name="options">Client-wide request defaults such as headers, query parameters, retries, and timeout.</param>
         /// <param name="disposeHttpClient">Dispose the HttpClient when the instance is disposed. True by default.</param>
         public Api(
-            global::System.Net.Http.HttpClient? httpClient = null,
-            global::System.Uri? baseUri = null,
-            global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations = null,
-            global::G.AutoSDKClientOptions? options = null,
+            global::System.Net.Http.HttpClient? httpClient,
+            global::System.Uri? baseUri,
+            global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations,
+            global::G.AutoSDKClientOptions? options,
             bool disposeHttpClient = true)
         {
 
@@ -11536,6 +11603,8 @@ namespace G
             Authorizations = authorizations ?? new global::System.Collections.Generic.List<global::G.EndPointAuthorization>();
             Options = options ?? new global::G.AutoSDKClientOptions();
             _disposeHttpClient = disposeHttpClient;
+
+            AutoSDKServerConfiguration.ExplicitBaseUri = baseUri ?? httpClient?.BaseAddress;
 
             Initialized(HttpClient);
         }
@@ -11563,5 +11632,117 @@ namespace G
             global::System.Net.Http.HttpClient client,
             global::System.Net.Http.HttpResponseMessage response,
             ref string content);
+
+
+        /// <summary>
+        /// Selects one of the generated server options by id.
+        /// </summary>
+        public bool TrySelectServer(string serverId)
+        {
+            if (string.IsNullOrWhiteSpace(serverId))
+            {
+                return false;
+            }
+
+            foreach (var server in s_availableServers)
+            {
+                if (string.Equals(server.Id, serverId, global::System.StringComparison.OrdinalIgnoreCase))
+                {
+                    AutoSDKServerConfiguration.SelectedServer = server;
+                    AutoSDKServerConfiguration.ExplicitBaseUri = null;
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        /// <summary>
+        /// Clears the currently selected server.
+        /// </summary>
+        public void ClearSelectedServer()
+        {
+            AutoSDKServerConfiguration.SelectedServer = null;
+        }
+
+        private global::G.AutoSDKServer? ResolveSelectedServer()
+        {
+            var selectedServer = AutoSDKServerConfiguration.SelectedServer;
+            if (selectedServer is null)
+            {
+                return null;
+            }
+
+            foreach (var server in s_availableServers)
+            {
+                if (string.Equals(server.Id, selectedServer.Id, global::System.StringComparison.Ordinal))
+                {
+                    return server;
+                }
+            }
+
+            return null;
+        }
+
+        private void SelectServer(global::G.AutoSDKServer? server)
+        {
+            if (server is null)
+            {
+                AutoSDKServerConfiguration.SelectedServer = null;
+                return;
+            }
+
+            foreach (var candidate in s_availableServers)
+            {
+                if (string.Equals(candidate.Id, server.Id, global::System.StringComparison.Ordinal))
+                {
+                    AutoSDKServerConfiguration.SelectedServer = candidate;
+                    AutoSDKServerConfiguration.ExplicitBaseUri = null;
+                    return;
+                }
+            }
+
+            throw new global::System.ArgumentException("The provided server is not available for this client.", nameof(server));
+        }
+
+        private global::System.Uri? ResolveDisplayedBaseUri()
+        {
+            if (AutoSDKServerConfiguration.ExplicitBaseUri is global::System.Uri explicitBaseUri)
+            {
+                return explicitBaseUri;
+            }
+
+            return ResolveSelectedServer()?.Uri ?? HttpClient.BaseAddress;
+        }
+
+        private global::System.Uri? ResolveBaseUri(
+            global::G.AutoSDKServer[] servers,
+            string defaultBaseUrl)
+        {
+            if (AutoSDKServerConfiguration.ExplicitBaseUri is global::System.Uri explicitBaseUri)
+            {
+                return explicitBaseUri;
+            }
+
+            if (AutoSDKServerConfiguration.SelectedServer is global::G.AutoSDKServer selectedServer)
+            {
+                foreach (var server in servers)
+                {
+                    if (string.Equals(server.Id, selectedServer.Id, global::System.StringComparison.Ordinal))
+                    {
+                        return server.Uri;
+                    }
+                }
+            }
+
+            if (servers.Length > 0)
+            {
+                return servers[0].Uri;
+            }
+
+            return string.IsNullOrWhiteSpace(defaultBaseUrl)
+                ? HttpClient.BaseAddress
+                : new global::System.Uri(defaultBaseUrl, global::System.UriKind.RelativeOrAbsolute);
+        }
     }
 }

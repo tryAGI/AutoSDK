@@ -36,6 +36,19 @@ namespace G
         public bool IsText => Text != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickText(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ResponseFormatText? value)
+        {
+            value = Text;
+            return IsText;
+        }
+
+        /// <summary>
         /// JSON Schema response format. Used to generate structured JSON responses.<br/>
         /// Learn more about [Structured Outputs](/docs/guides/structured-outputs).
         /// </summary>
@@ -52,6 +65,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(JsonSchema))]
 #endif
         public bool IsJsonSchema => JsonSchema != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickJsonSchema(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.TextResponseFormatJsonSchema? value)
+        {
+            value = JsonSchema;
+            return IsJsonSchema;
+        }
 
         /// <summary>
         /// JSON object response format. An older method of generating JSON responses.<br/>
@@ -72,6 +98,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(JsonObject))]
 #endif
         public bool IsJsonObject => JsonObject != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickJsonObject(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ResponseFormatJsonObject? value)
+        {
+            value = JsonObject;
+            return IsJsonObject;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -170,9 +209,9 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.ResponseFormatText?, TResult>? text = null,
-            global::System.Func<global::G.TextResponseFormatJsonSchema?, TResult>? jsonSchema = null,
-            global::System.Func<global::G.ResponseFormatJsonObject?, TResult>? jsonObject = null,
+            global::System.Func<global::G.ResponseFormatText, TResult>? text = null,
+            global::System.Func<global::G.TextResponseFormatJsonSchema, TResult>? jsonSchema = null,
+            global::System.Func<global::G.ResponseFormatJsonObject, TResult>? jsonObject = null,
             bool validate = true)
         {
             if (validate)
@@ -200,9 +239,39 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.ResponseFormatText?>? text = null,
-            global::System.Action<global::G.TextResponseFormatJsonSchema?>? jsonSchema = null,
-            global::System.Action<global::G.ResponseFormatJsonObject?>? jsonObject = null,
+            global::System.Action<global::G.ResponseFormatText>? text = null,
+
+            global::System.Action<global::G.TextResponseFormatJsonSchema>? jsonSchema = null,
+
+            global::System.Action<global::G.ResponseFormatJsonObject>? jsonObject = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsText)
+            {
+                text?.Invoke(Text!);
+            }
+            else if (IsJsonSchema)
+            {
+                jsonSchema?.Invoke(JsonSchema!);
+            }
+            else if (IsJsonObject)
+            {
+                jsonObject?.Invoke(JsonObject!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.ResponseFormatText>? text = null,
+            global::System.Action<global::G.TextResponseFormatJsonSchema>? jsonSchema = null,
+            global::System.Action<global::G.ResponseFormatJsonObject>? jsonObject = null,
             bool validate = true)
         {
             if (validate)

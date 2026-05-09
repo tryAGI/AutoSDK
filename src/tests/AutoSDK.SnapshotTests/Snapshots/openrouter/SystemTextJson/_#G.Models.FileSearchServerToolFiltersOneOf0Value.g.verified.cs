@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickFileSearchServerToolFiltersOneOf0ValueVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = FileSearchServerToolFiltersOneOf0ValueVariant1;
+            return IsFileSearchServerToolFiltersOneOf0ValueVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public double? FileSearchServerToolFiltersOneOf0ValueVariant2 { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FileSearchServerToolFiltersOneOf0ValueVariant2))]
 #endif
         public bool IsFileSearchServerToolFiltersOneOf0ValueVariant2 => FileSearchServerToolFiltersOneOf0ValueVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFileSearchServerToolFiltersOneOf0ValueVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out double? value)
+        {
+            value = FileSearchServerToolFiltersOneOf0ValueVariant2;
+            return IsFileSearchServerToolFiltersOneOf0ValueVariant2;
+        }
 
         /// <summary>
         /// 
@@ -64,6 +90,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickFileSearchServerToolFiltersOneOf0ValueVariant3(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out bool? value)
+        {
+            value = FileSearchServerToolFiltersOneOf0ValueVariant3;
+            return IsFileSearchServerToolFiltersOneOf0ValueVariant3;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<global::G.FileSearchServerToolFiltersOneOf0ValueOneOf3Items>? FileSearchServerToolFiltersOneOf0Value3 { get; init; }
 #else
@@ -77,6 +116,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FileSearchServerToolFiltersOneOf0Value3))]
 #endif
         public bool IsFileSearchServerToolFiltersOneOf0Value3 => FileSearchServerToolFiltersOneOf0Value3 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFileSearchServerToolFiltersOneOf0Value3(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::System.Collections.Generic.IList<global::G.FileSearchServerToolFiltersOneOf0ValueOneOf3Items>? value)
+        {
+            value = FileSearchServerToolFiltersOneOf0Value3;
+            return IsFileSearchServerToolFiltersOneOf0Value3;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -179,10 +231,10 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<string?, TResult>? fileSearchServerToolFiltersOneOf0ValueVariant1 = null,
+            global::System.Func<string, TResult>? fileSearchServerToolFiltersOneOf0ValueVariant1 = null,
             global::System.Func<double?, TResult>? fileSearchServerToolFiltersOneOf0ValueVariant2 = null,
             global::System.Func<bool?, TResult>? fileSearchServerToolFiltersOneOf0ValueVariant3 = null,
-            global::System.Func<global::System.Collections.Generic.IList<global::G.FileSearchServerToolFiltersOneOf0ValueOneOf3Items>?, TResult>? fileSearchServerToolFiltersOneOf0Value3 = null,
+            global::System.Func<global::System.Collections.Generic.IList<global::G.FileSearchServerToolFiltersOneOf0ValueOneOf3Items>, TResult>? fileSearchServerToolFiltersOneOf0Value3 = null,
             bool validate = true)
         {
             if (validate)
@@ -214,10 +266,46 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<string?>? fileSearchServerToolFiltersOneOf0ValueVariant1 = null,
+            global::System.Action<string>? fileSearchServerToolFiltersOneOf0ValueVariant1 = null,
+
+            global::System.Action<double?>? fileSearchServerToolFiltersOneOf0ValueVariant2 = null,
+
+            global::System.Action<bool?>? fileSearchServerToolFiltersOneOf0ValueVariant3 = null,
+
+            global::System.Action<global::System.Collections.Generic.IList<global::G.FileSearchServerToolFiltersOneOf0ValueOneOf3Items>>? fileSearchServerToolFiltersOneOf0Value3 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsFileSearchServerToolFiltersOneOf0ValueVariant1)
+            {
+                fileSearchServerToolFiltersOneOf0ValueVariant1?.Invoke(FileSearchServerToolFiltersOneOf0ValueVariant1!);
+            }
+            else if (IsFileSearchServerToolFiltersOneOf0ValueVariant2)
+            {
+                fileSearchServerToolFiltersOneOf0ValueVariant2?.Invoke(FileSearchServerToolFiltersOneOf0ValueVariant2!);
+            }
+            else if (IsFileSearchServerToolFiltersOneOf0ValueVariant3)
+            {
+                fileSearchServerToolFiltersOneOf0ValueVariant3?.Invoke(FileSearchServerToolFiltersOneOf0ValueVariant3!);
+            }
+            else if (IsFileSearchServerToolFiltersOneOf0Value3)
+            {
+                fileSearchServerToolFiltersOneOf0Value3?.Invoke(FileSearchServerToolFiltersOneOf0Value3!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<string>? fileSearchServerToolFiltersOneOf0ValueVariant1 = null,
             global::System.Action<double?>? fileSearchServerToolFiltersOneOf0ValueVariant2 = null,
             global::System.Action<bool?>? fileSearchServerToolFiltersOneOf0ValueVariant3 = null,
-            global::System.Action<global::System.Collections.Generic.IList<global::G.FileSearchServerToolFiltersOneOf0ValueOneOf3Items>?>? fileSearchServerToolFiltersOneOf0Value3 = null,
+            global::System.Action<global::System.Collections.Generic.IList<global::G.FileSearchServerToolFiltersOneOf0ValueOneOf3Items>>? fileSearchServerToolFiltersOneOf0Value3 = null,
             bool validate = true)
         {
             if (validate)

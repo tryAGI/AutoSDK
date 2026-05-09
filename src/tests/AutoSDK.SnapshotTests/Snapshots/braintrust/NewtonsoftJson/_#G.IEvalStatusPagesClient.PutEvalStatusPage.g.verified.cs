@@ -22,6 +22,19 @@ namespace G
         /// Create or replace eval_status_page<br/>
         /// Create or replace eval_status_page. If there is an existing eval_status_page with the same name as the one specified in the request, will replace the existing eval_status_page with the provided fields
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.EvalStatusPage>> PutEvalStatusPageAsResponseAsync(
+
+            global::G.CreateEvalStatusPage request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create or replace eval_status_page<br/>
+        /// Create or replace eval_status_page. If there is an existing eval_status_page with the same name as the one specified in the request, will replace the existing eval_status_page with the provided fields
+        /// </summary>
         /// <param name="projectId">
         /// Unique identifier for the project that the eval status page belongs under
         /// </param>

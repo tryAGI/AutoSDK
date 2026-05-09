@@ -33,6 +33,26 @@ namespace G
         /// <param name="namespaceId"></param>
         /// <param name="pipelineId"></param>
         /// <param name="releaseId"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.CloneNamespacePipelineReleaseResponse>> PipelinePublicServiceCloneNamespacePipelineReleaseAsResponseAsync(
+            string namespaceId,
+            string pipelineId,
+            string releaseId,
+
+            global::G.CloneNamespacePipelineReleaseBody request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Clone a pipeline release<br/>
+        /// Clones a pipeline release owned by a namespace. The new pipeline may have a different<br/>
+        /// parent, and this can be either a namespace or an organization.
+        /// </summary>
+        /// <param name="namespaceId"></param>
+        /// <param name="pipelineId"></param>
+        /// <param name="releaseId"></param>
         /// <param name="description">
         /// Pipeline description.
         /// </param>

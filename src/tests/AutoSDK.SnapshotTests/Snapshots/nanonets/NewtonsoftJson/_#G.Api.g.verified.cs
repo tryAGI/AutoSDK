@@ -75,7 +75,7 @@ namespace G
         /// &lt;br /&gt;<br/>
         /// ([Create a model](https://app.nanonets.com) on the NanoNets web app.).
         /// </summary>
-        public IcModelDetailsClient IcModelDetails => new IcModelDetailsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public IcModelDetailsClient IcModelDetails => new IcModelDetailsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -86,7 +86,7 @@ namespace G
         /// &lt;br /&gt;<br/>
         /// ([Create a model](https://app.nanonets.com) on the NanoNets web app.).
         /// </summary>
-        public IcPredictClient IcPredict => new IcPredictClient(HttpClient, authorizations: Authorizations, options: Options)
+        public IcPredictClient IcPredict => new IcPredictClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -97,7 +97,7 @@ namespace G
         /// &lt;br /&gt;<br/>
         /// ([Create a model](https://app.nanonets.com) on the NanoNets web app.).
         /// </summary>
-        public IcTrainClient IcTrain => new IcTrainClient(HttpClient, authorizations: Authorizations, options: Options)
+        public IcTrainClient IcTrain => new IcTrainClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -111,7 +111,7 @@ namespace G
         /// &lt;br /&gt;<br/>
         /// **NOTE**: These end points are only for uploading **training files** for the model and the same files cannot be directly used for prediction. (They need to be uploaded again through the [prediction end points](#tag/icPredict) for prediction.).
         /// </summary>
-        public IcUploadClient IcUpload => new IcUploadClient(HttpClient, authorizations: Authorizations, options: Options)
+        public IcUploadClient IcUpload => new IcUploadClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -122,7 +122,7 @@ namespace G
         /// &lt;br /&gt;<br/>
         /// ([Create a model](https://app.nanonets.com) on the NanoNets web app.).
         /// </summary>
-        public OcrModelDetailsClient OcrModelDetails => new OcrModelDetailsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public OcrModelDetailsClient OcrModelDetails => new OcrModelDetailsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -133,7 +133,7 @@ namespace G
         /// &lt;br /&gt;<br/>
         /// ([Create a model](https://app.nanonets.com) on the NanoNets web app.).
         /// </summary>
-        public OcrPredictClient OcrPredict => new OcrPredictClient(HttpClient, authorizations: Authorizations, options: Options)
+        public OcrPredictClient OcrPredict => new OcrPredictClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -144,7 +144,7 @@ namespace G
         /// &lt;br /&gt;<br/>
         /// ([Create a model](https://app.nanonets.com) on the NanoNets web app.).
         /// </summary>
-        public OcrTrainClient OcrTrain => new OcrTrainClient(HttpClient, authorizations: Authorizations, options: Options)
+        public OcrTrainClient OcrTrain => new OcrTrainClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -158,7 +158,7 @@ namespace G
         /// &lt;br /&gt;<br/>
         /// **NOTE**: These end points are only for uploading **training files** for the model and the same files cannot be directly used for prediction. (They need to be uploaded again through the [prediction end points](#tag/ocrPredict) for prediction.).
         /// </summary>
-        public OcrUploadClient OcrUpload => new OcrUploadClient(HttpClient, authorizations: Authorizations, options: Options)
+        public OcrUploadClient OcrUpload => new OcrUploadClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -197,10 +197,10 @@ namespace G
         /// <param name="options">Client-wide request defaults such as headers, query parameters, retries, and timeout.</param>
         /// <param name="disposeHttpClient">Dispose the HttpClient when the instance is disposed. True by default.</param>
         public Api(
-            global::System.Net.Http.HttpClient? httpClient = null,
-            global::System.Uri? baseUri = null,
-            global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations = null,
-            global::G.AutoSDKClientOptions? options = null,
+            global::System.Net.Http.HttpClient? httpClient,
+            global::System.Uri? baseUri,
+            global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations,
+            global::G.AutoSDKClientOptions? options,
             bool disposeHttpClient = true)
         {
 

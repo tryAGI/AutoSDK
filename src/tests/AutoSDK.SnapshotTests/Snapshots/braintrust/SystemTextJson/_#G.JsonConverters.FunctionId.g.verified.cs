@@ -24,6 +24,14 @@ namespace G.JsonConverters
                 foreach (var __jsonProp in __jsonDocument.RootElement.EnumerateObject())
                 {
                     __jsonProps.Add(__jsonProp.Name);
+                    if (__jsonProp.Value.ValueKind == global::System.Text.Json.JsonValueKind.Object)
+                    {
+                        foreach (var __nestedJsonProp in __jsonProp.Value.EnumerateObject())
+                        {
+                            __jsonProps.Add(__jsonProp.Name + "." + __nestedJsonProp.Name);
+                        }
+                    }
+
                 }
             }
 
@@ -44,15 +52,31 @@ namespace G.JsonConverters
             var __score4 = 0;
             if (__jsonProps.Contains("code")) __score4++;
             if (__jsonProps.Contains("inline_context")) __score4++;
+            if (__jsonProps.Contains("inline_context.runtime")) __score4++;
+            if (__jsonProps.Contains("inline_context.version")) __score4++;
             if (__jsonProps.Contains("name")) __score4++;
             var __score5 = 0;
             if (__jsonProps.Contains("function_type")) __score5++;
             if (__jsonProps.Contains("inline_function")) __score5++;
             if (__jsonProps.Contains("inline_prompt")) __score5++;
+            if (__jsonProps.Contains("inline_prompt.mcp")) __score5++;
+            if (__jsonProps.Contains("inline_prompt.options")) __score5++;
+            if (__jsonProps.Contains("inline_prompt.origin")) __score5++;
+            if (__jsonProps.Contains("inline_prompt.parser")) __score5++;
+            if (__jsonProps.Contains("inline_prompt.prompt")) __score5++;
+            if (__jsonProps.Contains("inline_prompt.template_format")) __score5++;
+            if (__jsonProps.Contains("inline_prompt.tool_functions")) __score5++;
             if (__jsonProps.Contains("name")) __score5++;
             var __score6 = 0;
             if (__jsonProps.Contains("function_type")) __score6++;
             if (__jsonProps.Contains("inline_prompt")) __score6++;
+            if (__jsonProps.Contains("inline_prompt.mcp")) __score6++;
+            if (__jsonProps.Contains("inline_prompt.options")) __score6++;
+            if (__jsonProps.Contains("inline_prompt.origin")) __score6++;
+            if (__jsonProps.Contains("inline_prompt.parser")) __score6++;
+            if (__jsonProps.Contains("inline_prompt.prompt")) __score6++;
+            if (__jsonProps.Contains("inline_prompt.template_format")) __score6++;
+            if (__jsonProps.Contains("inline_prompt.tool_functions")) __score6++;
             if (__jsonProps.Contains("name")) __score6++;
             var __bestScore = 0;
             var __bestIndex = -1;

@@ -26,6 +26,21 @@ namespace G
         /// it becomes available, rather than waiting for all the data to be<br/>
         /// generated.
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<string>> StreamRunAsResponseAsync(
+
+            global::G.RunCreate request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Stream Run<br/>
+        /// Submit a new streaming run request, where the run output is streamed as<br/>
+        /// it becomes available, rather than waiting for all the data to be<br/>
+        /// generated.
+        /// </summary>
         /// <param name="pipeline"></param>
         /// <param name="inputs"></param>
         /// <param name="asyncRun">

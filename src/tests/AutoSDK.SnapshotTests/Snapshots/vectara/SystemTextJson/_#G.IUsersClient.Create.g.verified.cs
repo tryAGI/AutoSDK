@@ -28,6 +28,23 @@ namespace G
         /// </summary>
         /// <param name="requestTimeout"></param>
         /// <param name="requestTimeoutMillis"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.AllOf<global::G.User, global::G.CreateUserResponse2>>> CreateAsResponseAsync(
+
+            global::G.CreateUserRequest request,
+            int? requestTimeout = default,
+            int? requestTimeoutMillis = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create a user in the current customer account<br/>
+        /// Create a user for the current customer account. For example, a company wants to onboard new team members efficiently and this endpoint lets you streamline the process by adding new users programmatically, assigning appropriate roles, and setting up access permissions.
+        /// </summary>
+        /// <param name="requestTimeout"></param>
+        /// <param name="requestTimeoutMillis"></param>
         /// <param name="email">
         /// The email address for the user.
         /// </param>

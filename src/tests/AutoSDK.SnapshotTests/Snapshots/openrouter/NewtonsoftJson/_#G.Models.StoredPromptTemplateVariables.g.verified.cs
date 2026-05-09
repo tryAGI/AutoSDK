@@ -28,6 +28,19 @@ namespace G
         public bool IsStoredPromptTemplateVariablesVariant1 => StoredPromptTemplateVariablesVariant1 != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickStoredPromptTemplateVariablesVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = StoredPromptTemplateVariablesVariant1;
+            return IsStoredPromptTemplateVariablesVariant1;
+        }
+
+        /// <summary>
         /// Text input content item
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputText))]
 #endif
         public bool IsInputText => InputText != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickInputText(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.InputText? value)
+        {
+            value = InputText;
+            return IsInputText;
+        }
 
         /// <summary>
         /// Image input content item
@@ -62,6 +88,19 @@ namespace G
         public bool IsInputImage => InputImage != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickInputImage(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.InputImage? value)
+        {
+            value = InputImage;
+            return IsInputImage;
+        }
+
+        /// <summary>
         /// File input content item
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -77,6 +116,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputFile))]
 #endif
         public bool IsInputFile => InputFile != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickInputFile(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.InputFile? value)
+        {
+            value = InputFile;
+            return IsInputFile;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -197,10 +249,10 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<string?, TResult>? storedPromptTemplateVariablesVariant1 = null,
-            global::System.Func<global::G.InputText?, TResult>? inputText = null,
-            global::System.Func<global::G.InputImage?, TResult>? inputImage = null,
-            global::System.Func<global::G.InputFile?, TResult>? inputFile = null,
+            global::System.Func<string, TResult>? storedPromptTemplateVariablesVariant1 = null,
+            global::System.Func<global::G.InputText, TResult>? inputText = null,
+            global::System.Func<global::G.InputImage, TResult>? inputImage = null,
+            global::System.Func<global::G.InputFile, TResult>? inputFile = null,
             bool validate = true)
         {
             if (validate)
@@ -232,10 +284,46 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<string?>? storedPromptTemplateVariablesVariant1 = null,
-            global::System.Action<global::G.InputText?>? inputText = null,
-            global::System.Action<global::G.InputImage?>? inputImage = null,
-            global::System.Action<global::G.InputFile?>? inputFile = null,
+            global::System.Action<string>? storedPromptTemplateVariablesVariant1 = null,
+
+            global::System.Action<global::G.InputText>? inputText = null,
+
+            global::System.Action<global::G.InputImage>? inputImage = null,
+
+            global::System.Action<global::G.InputFile>? inputFile = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsStoredPromptTemplateVariablesVariant1)
+            {
+                storedPromptTemplateVariablesVariant1?.Invoke(StoredPromptTemplateVariablesVariant1!);
+            }
+            else if (IsInputText)
+            {
+                inputText?.Invoke(InputText!);
+            }
+            else if (IsInputImage)
+            {
+                inputImage?.Invoke(InputImage!);
+            }
+            else if (IsInputFile)
+            {
+                inputFile?.Invoke(InputFile!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<string>? storedPromptTemplateVariablesVariant1 = null,
+            global::System.Action<global::G.InputText>? inputText = null,
+            global::System.Action<global::G.InputImage>? inputImage = null,
+            global::System.Action<global::G.InputFile>? inputFile = null,
             bool validate = true)
         {
             if (validate)

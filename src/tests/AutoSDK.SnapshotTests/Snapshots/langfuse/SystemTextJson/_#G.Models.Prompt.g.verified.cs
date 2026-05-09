@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickPromptVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.AllOf<global::G.PromptVariant12, global::G.ChatPrompt>? value)
+        {
+            value = PromptVariant1;
+            return IsPromptVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.AllOf<global::G.PromptVariant22, global::G.TextPrompt>? PromptVariant2 { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(PromptVariant2))]
 #endif
         public bool IsPromptVariant2 => PromptVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickPromptVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.AllOf<global::G.PromptVariant22, global::G.TextPrompt>? value)
+        {
+            value = PromptVariant2;
+            return IsPromptVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -144,6 +170,30 @@ namespace G
         /// 
         /// </summary>
         public void Match(
+            global::System.Action<global::G.AllOf<global::G.PromptVariant12, global::G.ChatPrompt>?>? promptVariant1 = null,
+
+            global::System.Action<global::G.AllOf<global::G.PromptVariant22, global::G.TextPrompt>?>? promptVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsPromptVariant1)
+            {
+                promptVariant1?.Invoke(PromptVariant1!);
+            }
+            else if (IsPromptVariant2)
+            {
+                promptVariant2?.Invoke(PromptVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
             global::System.Action<global::G.AllOf<global::G.PromptVariant12, global::G.ChatPrompt>?>? promptVariant1 = null,
             global::System.Action<global::G.AllOf<global::G.PromptVariant22, global::G.TextPrompt>?>? promptVariant2 = null,
             bool validate = true)

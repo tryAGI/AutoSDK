@@ -21,5 +21,21 @@ namespace G
             string? pipelineIdOrPointer = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Retrieve Avg Cost<br/>
+        /// Retrieve a pipeline's average cost per run over the past 1000 runs.
+        /// </summary>
+        /// <param name="pipelineId"></param>
+        /// <param name="pointer"></param>
+        /// <param name="pipelineIdOrPointer"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<string>> RetrieveAvgCostAsResponseAsync(
+            string pipelineId,
+            string? pointer = default,
+            string? pipelineIdOrPointer = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

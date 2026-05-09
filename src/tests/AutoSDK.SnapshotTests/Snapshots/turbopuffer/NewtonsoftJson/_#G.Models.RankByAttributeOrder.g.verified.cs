@@ -28,6 +28,19 @@ namespace G
         public bool IsRankByAttributeOrderVariant1 => RankByAttributeOrderVariant1 != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickRankByAttributeOrderVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = RankByAttributeOrderVariant1;
+            return IsRankByAttributeOrderVariant1;
+        }
+
+        /// <summary>
         /// Descending order.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RankByAttributeOrderVariant2))]
 #endif
         public bool IsRankByAttributeOrderVariant2 => RankByAttributeOrderVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickRankByAttributeOrderVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = RankByAttributeOrderVariant2;
+            return IsRankByAttributeOrderVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -101,8 +127,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<string?, TResult>? rankByAttributeOrderVariant1 = null,
-            global::System.Func<string?, TResult>? rankByAttributeOrderVariant2 = null,
+            global::System.Func<string, TResult>? rankByAttributeOrderVariant1 = null,
+            global::System.Func<string, TResult>? rankByAttributeOrderVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -126,8 +152,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<string?>? rankByAttributeOrderVariant1 = null,
-            global::System.Action<string?>? rankByAttributeOrderVariant2 = null,
+            global::System.Action<string>? rankByAttributeOrderVariant1 = null,
+
+            global::System.Action<string>? rankByAttributeOrderVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsRankByAttributeOrderVariant1)
+            {
+                rankByAttributeOrderVariant1?.Invoke(RankByAttributeOrderVariant1!);
+            }
+            else if (IsRankByAttributeOrderVariant2)
+            {
+                rankByAttributeOrderVariant2?.Invoke(RankByAttributeOrderVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<string>? rankByAttributeOrderVariant1 = null,
+            global::System.Action<string>? rankByAttributeOrderVariant2 = null,
             bool validate = true)
         {
             if (validate)

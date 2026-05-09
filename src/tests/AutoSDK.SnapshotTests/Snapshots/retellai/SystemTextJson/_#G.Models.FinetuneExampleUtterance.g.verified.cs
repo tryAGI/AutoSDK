@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickFinetuneExampleUtteranceVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.FinetuneExampleUtteranceVariant1? value)
+        {
+            value = FinetuneExampleUtteranceVariant1;
+            return IsFinetuneExampleUtteranceVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.FinetuneExampleUtteranceVariant2? FinetuneExampleUtteranceVariant2 { get; init; }
 #else
@@ -47,6 +60,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickFinetuneExampleUtteranceVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.FinetuneExampleUtteranceVariant2? value)
+        {
+            value = FinetuneExampleUtteranceVariant2;
+            return IsFinetuneExampleUtteranceVariant2;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.FinetuneExampleUtteranceVariant3? FinetuneExampleUtteranceVariant3 { get; init; }
 #else
@@ -60,6 +86,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FinetuneExampleUtteranceVariant3))]
 #endif
         public bool IsFinetuneExampleUtteranceVariant3 => FinetuneExampleUtteranceVariant3 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFinetuneExampleUtteranceVariant3(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.FinetuneExampleUtteranceVariant3? value)
+        {
+            value = FinetuneExampleUtteranceVariant3;
+            return IsFinetuneExampleUtteranceVariant3;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -158,9 +197,9 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.FinetuneExampleUtteranceVariant1?, TResult>? finetuneExampleUtteranceVariant1 = null,
-            global::System.Func<global::G.FinetuneExampleUtteranceVariant2?, TResult>? finetuneExampleUtteranceVariant2 = null,
-            global::System.Func<global::G.FinetuneExampleUtteranceVariant3?, TResult>? finetuneExampleUtteranceVariant3 = null,
+            global::System.Func<global::G.FinetuneExampleUtteranceVariant1, TResult>? finetuneExampleUtteranceVariant1 = null,
+            global::System.Func<global::G.FinetuneExampleUtteranceVariant2, TResult>? finetuneExampleUtteranceVariant2 = null,
+            global::System.Func<global::G.FinetuneExampleUtteranceVariant3, TResult>? finetuneExampleUtteranceVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -188,9 +227,39 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.FinetuneExampleUtteranceVariant1?>? finetuneExampleUtteranceVariant1 = null,
-            global::System.Action<global::G.FinetuneExampleUtteranceVariant2?>? finetuneExampleUtteranceVariant2 = null,
-            global::System.Action<global::G.FinetuneExampleUtteranceVariant3?>? finetuneExampleUtteranceVariant3 = null,
+            global::System.Action<global::G.FinetuneExampleUtteranceVariant1>? finetuneExampleUtteranceVariant1 = null,
+
+            global::System.Action<global::G.FinetuneExampleUtteranceVariant2>? finetuneExampleUtteranceVariant2 = null,
+
+            global::System.Action<global::G.FinetuneExampleUtteranceVariant3>? finetuneExampleUtteranceVariant3 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsFinetuneExampleUtteranceVariant1)
+            {
+                finetuneExampleUtteranceVariant1?.Invoke(FinetuneExampleUtteranceVariant1!);
+            }
+            else if (IsFinetuneExampleUtteranceVariant2)
+            {
+                finetuneExampleUtteranceVariant2?.Invoke(FinetuneExampleUtteranceVariant2!);
+            }
+            else if (IsFinetuneExampleUtteranceVariant3)
+            {
+                finetuneExampleUtteranceVariant3?.Invoke(FinetuneExampleUtteranceVariant3!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.FinetuneExampleUtteranceVariant1>? finetuneExampleUtteranceVariant1 = null,
+            global::System.Action<global::G.FinetuneExampleUtteranceVariant2>? finetuneExampleUtteranceVariant2 = null,
+            global::System.Action<global::G.FinetuneExampleUtteranceVariant3>? finetuneExampleUtteranceVariant3 = null,
             bool validate = true)
         {
             if (validate)

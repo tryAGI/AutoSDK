@@ -24,6 +24,14 @@ namespace G.JsonConverters
                 foreach (var __jsonProp in __jsonDocument.RootElement.EnumerateObject())
                 {
                     __jsonProps.Add(__jsonProp.Name);
+                    if (__jsonProp.Value.ValueKind == global::System.Text.Json.JsonValueKind.Object)
+                    {
+                        foreach (var __nestedJsonProp in __jsonProp.Value.EnumerateObject())
+                        {
+                            __jsonProps.Add(__jsonProp.Name + "." + __nestedJsonProp.Name);
+                        }
+                    }
+
                 }
             }
 
@@ -39,14 +47,18 @@ namespace G.JsonConverters
             if (__jsonProps.Contains("values_count")) __score0++;
             var __score1 = 0;
             if (__jsonProps.Contains("is_empty")) __score1++;
+            if (__jsonProps.Contains("is_empty.key")) __score1++;
             var __score2 = 0;
             if (__jsonProps.Contains("is_null")) __score2++;
+            if (__jsonProps.Contains("is_null.key")) __score2++;
             var __score3 = 0;
             if (__jsonProps.Contains("has_id")) __score3++;
             var __score4 = 0;
             if (__jsonProps.Contains("has_vector")) __score4++;
             var __score5 = 0;
             if (__jsonProps.Contains("nested")) __score5++;
+            if (__jsonProps.Contains("nested.filter")) __score5++;
+            if (__jsonProps.Contains("nested.key")) __score5++;
             var __score6 = 0;
             if (__jsonProps.Contains("min_should")) __score6++;
             if (__jsonProps.Contains("must")) __score6++;

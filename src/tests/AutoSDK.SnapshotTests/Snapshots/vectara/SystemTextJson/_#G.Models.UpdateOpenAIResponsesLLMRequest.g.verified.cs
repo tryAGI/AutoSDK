@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickBase(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.OpenAILLMUpdateBase? value)
+        {
+            value = Base;
+            return IsBase;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.UpdateOpenAIResponsesLLMRequestVariant2? UpdateOpenAIResponsesLLMRequestVariant2 { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(UpdateOpenAIResponsesLLMRequestVariant2))]
 #endif
         public bool IsUpdateOpenAIResponsesLLMRequestVariant2 => UpdateOpenAIResponsesLLMRequestVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickUpdateOpenAIResponsesLLMRequestVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.UpdateOpenAIResponsesLLMRequestVariant2? value)
+        {
+            value = UpdateOpenAIResponsesLLMRequestVariant2;
+            return IsUpdateOpenAIResponsesLLMRequestVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -119,8 +145,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.OpenAILLMUpdateBase?, TResult>? @base = null,
-            global::System.Func<global::G.UpdateOpenAIResponsesLLMRequestVariant2?, TResult>? updateOpenAIResponsesLLMRequestVariant2 = null,
+            global::System.Func<global::G.OpenAILLMUpdateBase, TResult>? @base = null,
+            global::System.Func<global::G.UpdateOpenAIResponsesLLMRequestVariant2, TResult>? updateOpenAIResponsesLLMRequestVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -144,8 +170,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.OpenAILLMUpdateBase?>? @base = null,
-            global::System.Action<global::G.UpdateOpenAIResponsesLLMRequestVariant2?>? updateOpenAIResponsesLLMRequestVariant2 = null,
+            global::System.Action<global::G.OpenAILLMUpdateBase>? @base = null,
+
+            global::System.Action<global::G.UpdateOpenAIResponsesLLMRequestVariant2>? updateOpenAIResponsesLLMRequestVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsBase)
+            {
+                @base?.Invoke(Base!);
+            }
+            else if (IsUpdateOpenAIResponsesLLMRequestVariant2)
+            {
+                updateOpenAIResponsesLLMRequestVariant2?.Invoke(UpdateOpenAIResponsesLLMRequestVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.OpenAILLMUpdateBase>? @base = null,
+            global::System.Action<global::G.UpdateOpenAIResponsesLLMRequestVariant2>? updateOpenAIResponsesLLMRequestVariant2 = null,
             bool validate = true)
         {
             if (validate)

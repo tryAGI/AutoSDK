@@ -37,6 +37,28 @@ namespace G
         /// A user-provided key for a corpus.<br/>
         /// Example: my-corpus
         /// </param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.MetadataQueryResponse>> QueryMetadataAsResponseAsync(
+            string corpusKey,
+
+            global::G.MetadataQueryRequest request,
+            int? requestTimeout = default,
+            int? requestTimeoutMillis = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Query across metadata fields in a corpus<br/>
+        /// Query for documents in a specific corpus using fuzzy matching across specified metadata fields. The search first applies any exact metadata filters to narrow the results, then performs fuzzy matching on the remaining documents using the specified field queries.
+        /// </summary>
+        /// <param name="requestTimeout"></param>
+        /// <param name="requestTimeoutMillis"></param>
+        /// <param name="corpusKey">
+        /// A user-provided key for a corpus.<br/>
+        /// Example: my-corpus
+        /// </param>
         /// <param name="level">
         /// Whether to search document-level or part-level metadata. Document-level returns unique documents, part-level can return multiple parts from the same document.<br/>
         /// Default Value: document

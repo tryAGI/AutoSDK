@@ -33,6 +33,19 @@ namespace G
         public bool IsMaxCharsChunkingStrategy => MaxCharsChunkingStrategy != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMaxCharsChunkingStrategy(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.MaxCharsChunkingStrategy? value)
+        {
+            value = MaxCharsChunkingStrategy;
+            return IsMaxCharsChunkingStrategy;
+        }
+
+        /// <summary>
         /// Sets a chunking strategy that creates one chunk per sentence. This is the default strategy used when no chunking strategy is specified.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -48,6 +61,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SentenceChunkingStrategy))]
 #endif
         public bool IsSentenceChunkingStrategy => SentenceChunkingStrategy != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSentenceChunkingStrategy(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.SentenceChunkingStrategy? value)
+        {
+            value = SentenceChunkingStrategy;
+            return IsSentenceChunkingStrategy;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -127,8 +153,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.MaxCharsChunkingStrategy?, TResult>? maxCharsChunkingStrategy = null,
-            global::System.Func<global::G.SentenceChunkingStrategy?, TResult>? sentenceChunkingStrategy = null,
+            global::System.Func<global::G.MaxCharsChunkingStrategy, TResult>? maxCharsChunkingStrategy = null,
+            global::System.Func<global::G.SentenceChunkingStrategy, TResult>? sentenceChunkingStrategy = null,
             bool validate = true)
         {
             if (validate)
@@ -152,8 +178,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.MaxCharsChunkingStrategy?>? maxCharsChunkingStrategy = null,
-            global::System.Action<global::G.SentenceChunkingStrategy?>? sentenceChunkingStrategy = null,
+            global::System.Action<global::G.MaxCharsChunkingStrategy>? maxCharsChunkingStrategy = null,
+
+            global::System.Action<global::G.SentenceChunkingStrategy>? sentenceChunkingStrategy = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsMaxCharsChunkingStrategy)
+            {
+                maxCharsChunkingStrategy?.Invoke(MaxCharsChunkingStrategy!);
+            }
+            else if (IsSentenceChunkingStrategy)
+            {
+                sentenceChunkingStrategy?.Invoke(SentenceChunkingStrategy!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.MaxCharsChunkingStrategy>? maxCharsChunkingStrategy = null,
+            global::System.Action<global::G.SentenceChunkingStrategy>? sentenceChunkingStrategy = null,
             bool validate = true)
         {
             if (validate)

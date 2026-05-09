@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickNode(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.NodeEdge? value)
+        {
+            value = Node;
+            return IsNode;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.SkipResponseEdgeVariant2? SkipResponseEdgeVariant2 { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SkipResponseEdgeVariant2))]
 #endif
         public bool IsSkipResponseEdgeVariant2 => SkipResponseEdgeVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSkipResponseEdgeVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.SkipResponseEdgeVariant2? value)
+        {
+            value = SkipResponseEdgeVariant2;
+            return IsSkipResponseEdgeVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -119,8 +145,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.NodeEdge?, TResult>? node = null,
-            global::System.Func<global::G.SkipResponseEdgeVariant2?, TResult>? skipResponseEdgeVariant2 = null,
+            global::System.Func<global::G.NodeEdge, TResult>? node = null,
+            global::System.Func<global::G.SkipResponseEdgeVariant2, TResult>? skipResponseEdgeVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -144,8 +170,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.NodeEdge?>? node = null,
-            global::System.Action<global::G.SkipResponseEdgeVariant2?>? skipResponseEdgeVariant2 = null,
+            global::System.Action<global::G.NodeEdge>? node = null,
+
+            global::System.Action<global::G.SkipResponseEdgeVariant2>? skipResponseEdgeVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsNode)
+            {
+                node?.Invoke(Node!);
+            }
+            else if (IsSkipResponseEdgeVariant2)
+            {
+                skipResponseEdgeVariant2?.Invoke(SkipResponseEdgeVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.NodeEdge>? node = null,
+            global::System.Action<global::G.SkipResponseEdgeVariant2>? skipResponseEdgeVariant2 = null,
             bool validate = true)
         {
             if (validate)

@@ -30,6 +30,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickSmsSenderVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.SmsSenderVariant1? value)
+        {
+            value = SmsSenderVariant1;
+            return IsSmsSenderVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.SmsSenderVariant2? SmsSenderVariant2 { get; init; }
 #else
@@ -43,6 +56,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SmsSenderVariant2))]
 #endif
         public bool IsSmsSenderVariant2 => SmsSenderVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSmsSenderVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.SmsSenderVariant2? value)
+        {
+            value = SmsSenderVariant2;
+            return IsSmsSenderVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -119,8 +145,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.SmsSenderVariant1?, TResult>? smsSenderVariant1 = null,
-            global::System.Func<global::G.SmsSenderVariant2?, TResult>? smsSenderVariant2 = null,
+            global::System.Func<global::G.SmsSenderVariant1, TResult>? smsSenderVariant1 = null,
+            global::System.Func<global::G.SmsSenderVariant2, TResult>? smsSenderVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -144,8 +170,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.SmsSenderVariant1?>? smsSenderVariant1 = null,
-            global::System.Action<global::G.SmsSenderVariant2?>? smsSenderVariant2 = null,
+            global::System.Action<global::G.SmsSenderVariant1>? smsSenderVariant1 = null,
+
+            global::System.Action<global::G.SmsSenderVariant2>? smsSenderVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsSmsSenderVariant1)
+            {
+                smsSenderVariant1?.Invoke(SmsSenderVariant1!);
+            }
+            else if (IsSmsSenderVariant2)
+            {
+                smsSenderVariant2?.Invoke(SmsSenderVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.SmsSenderVariant1>? smsSenderVariant1 = null,
+            global::System.Action<global::G.SmsSenderVariant2>? smsSenderVariant2 = null,
             bool validate = true)
         {
             if (validate)

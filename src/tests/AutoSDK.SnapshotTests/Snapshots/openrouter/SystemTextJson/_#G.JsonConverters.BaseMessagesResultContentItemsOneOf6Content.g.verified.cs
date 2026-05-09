@@ -24,6 +24,14 @@ namespace G.JsonConverters
                 foreach (var __jsonProp in __jsonDocument.RootElement.EnumerateObject())
                 {
                     __jsonProps.Add(__jsonProp.Name);
+                    if (__jsonProp.Value.ValueKind == global::System.Text.Json.JsonValueKind.Object)
+                    {
+                        foreach (var __nestedJsonProp in __jsonProp.Value.EnumerateObject())
+                        {
+                            __jsonProps.Add(__jsonProp.Name + "." + __nestedJsonProp.Name);
+                        }
+                    }
+
                 }
             }
 
@@ -32,6 +40,10 @@ namespace G.JsonConverters
             if (__jsonProps.Contains("type")) __score0++;
             var __score1 = 0;
             if (__jsonProps.Contains("content")) __score1++;
+            if (__jsonProps.Contains("content.citations")) __score1++;
+            if (__jsonProps.Contains("content.source")) __score1++;
+            if (__jsonProps.Contains("content.title")) __score1++;
+            if (__jsonProps.Contains("content.type")) __score1++;
             if (__jsonProps.Contains("retrieved_at")) __score1++;
             if (__jsonProps.Contains("type")) __score1++;
             if (__jsonProps.Contains("url")) __score1++;

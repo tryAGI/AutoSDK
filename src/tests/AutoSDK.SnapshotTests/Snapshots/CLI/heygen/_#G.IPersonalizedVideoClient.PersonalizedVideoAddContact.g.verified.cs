@@ -22,6 +22,19 @@ namespace G
         /// personalized_video/add_contact<br/>
         /// personalized_video/add_contact
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse> PersonalizedVideoAddContactAsResponseAsync(
+
+            global::G.PersonalizedVideoAddContactRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// personalized_video/add_contact<br/>
+        /// personalized_video/add_contact
+        /// </summary>
         /// <param name="projectId">
         /// Example: &lt;project_id&gt;
         /// </param>

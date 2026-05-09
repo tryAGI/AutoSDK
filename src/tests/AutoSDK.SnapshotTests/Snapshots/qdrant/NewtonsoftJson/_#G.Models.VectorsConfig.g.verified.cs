@@ -33,6 +33,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickVectorParams(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.VectorParams? value)
+        {
+            value = VectorParams;
+            return IsVectorParams;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.Dictionary<string, global::G.VectorParams>? VectorsConfigVariant2 { get; init; }
 #else
@@ -46,6 +59,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(VectorsConfigVariant2))]
 #endif
         public bool IsVectorsConfigVariant2 => VectorsConfigVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickVectorsConfigVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::System.Collections.Generic.Dictionary<string, global::G.VectorParams>? value)
+        {
+            value = VectorsConfigVariant2;
+            return IsVectorsConfigVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -122,8 +148,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.VectorParams?, TResult>? vectorParams = null,
-            global::System.Func<global::System.Collections.Generic.Dictionary<string, global::G.VectorParams>?, TResult>? vectorsConfigVariant2 = null,
+            global::System.Func<global::G.VectorParams, TResult>? vectorParams = null,
+            global::System.Func<global::System.Collections.Generic.Dictionary<string, global::G.VectorParams>, TResult>? vectorsConfigVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -147,8 +173,32 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.VectorParams?>? vectorParams = null,
-            global::System.Action<global::System.Collections.Generic.Dictionary<string, global::G.VectorParams>?>? vectorsConfigVariant2 = null,
+            global::System.Action<global::G.VectorParams>? vectorParams = null,
+
+            global::System.Action<global::System.Collections.Generic.Dictionary<string, global::G.VectorParams>>? vectorsConfigVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsVectorParams)
+            {
+                vectorParams?.Invoke(VectorParams!);
+            }
+            else if (IsVectorsConfigVariant2)
+            {
+                vectorsConfigVariant2?.Invoke(VectorsConfigVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.VectorParams>? vectorParams = null,
+            global::System.Action<global::System.Collections.Generic.Dictionary<string, global::G.VectorParams>>? vectorsConfigVariant2 = null,
             bool validate = true)
         {
             if (validate)

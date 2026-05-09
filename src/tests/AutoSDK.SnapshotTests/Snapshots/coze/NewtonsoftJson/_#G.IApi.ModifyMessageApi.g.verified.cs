@@ -28,6 +28,23 @@ namespace G
         /// </summary>
         /// <param name="conversationId"></param>
         /// <param name="messageId"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.ModifyMessageApiResponse>> ModifyMessageApiAsResponseAsync(
+            string conversationId,
+            string messageId,
+
+            global::G.ModifyMessageApiRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// 修改消息<br/>
+        /// 修改一条消息，支持修改消息内容、附加内容和消息类型。
+        /// </summary>
+        /// <param name="conversationId"></param>
+        /// <param name="messageId"></param>
         /// <param name="content">
         /// 内容
         /// </param>

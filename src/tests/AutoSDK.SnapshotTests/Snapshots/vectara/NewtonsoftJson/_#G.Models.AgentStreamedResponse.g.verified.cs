@@ -33,6 +33,19 @@ namespace G
         public bool IsInputMessage => InputMessage != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickInputMessage(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.InputMessageEvent? value)
+        {
+            value = InputMessage;
+            return IsInputMessage;
+        }
+
+        /// <summary>
         /// A streaming chunk of agent output (SSE only, not stored).
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -48,6 +61,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(StreamingAgentOutput))]
 #endif
         public bool IsStreamingAgentOutput => StreamingAgentOutput != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickStreamingAgentOutput(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.StreamingAgentOutput? value)
+        {
+            value = StreamingAgentOutput;
+            return IsStreamingAgentOutput;
+        }
 
         /// <summary>
         /// Signals the end of streaming agent output (SSE only, not stored).
@@ -67,6 +93,19 @@ namespace G
         public bool IsStreamingAgentOutputEnd => StreamingAgentOutputEnd != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickStreamingAgentOutputEnd(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.StreamingAgentOutputEnd? value)
+        {
+            value = StreamingAgentOutputEnd;
+            return IsStreamingAgentOutputEnd;
+        }
+
+        /// <summary>
         /// A streaming chunk of agent thinking (SSE only, not stored).
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -82,6 +121,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(StreamingThinking))]
 #endif
         public bool IsStreamingThinking => StreamingThinking != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickStreamingThinking(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.StreamingThinking? value)
+        {
+            value = StreamingThinking;
+            return IsStreamingThinking;
+        }
 
         /// <summary>
         /// Signals the end of streaming thinking (SSE only, not stored).
@@ -101,6 +153,19 @@ namespace G
         public bool IsStreamingThinkingEnd => StreamingThinkingEnd != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickStreamingThinkingEnd(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.StreamingThinkingEnd? value)
+        {
+            value = StreamingThinkingEnd;
+            return IsStreamingThinkingEnd;
+        }
+
+        /// <summary>
         /// An event representing input to a tool call.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -118,6 +183,19 @@ namespace G
         public bool IsToolInput => ToolInput != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickToolInput(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ToolInputEvent? value)
+        {
+            value = ToolInput;
+            return IsToolInput;
+        }
+
+        /// <summary>
         /// An event representing output from a tool call.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -133,6 +211,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ToolOutput))]
 #endif
         public bool IsToolOutput => ToolOutput != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickToolOutput(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ToolOutputEvent? value)
+        {
+            value = ToolOutput;
+            return IsToolOutput;
+        }
 
         /// <summary>
         /// An event representing a complete agent response with structured JSON content conforming to a schema.<br/>
@@ -158,6 +249,19 @@ namespace G
         public bool IsStructuredOutput => StructuredOutput != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickStructuredOutput(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.StructuredOutputEvent? value)
+        {
+            value = StructuredOutput;
+            return IsStructuredOutput;
+        }
+
+        /// <summary>
         /// A transient event indicating the current request exceeded the LLM's context limit.<br/>
         /// This event is not persisted to the session history.
         /// </summary>
@@ -174,6 +278,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ContextLimitExceeded))]
 #endif
         public bool IsContextLimitExceeded => ContextLimitExceeded != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickContextLimitExceeded(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ContextLimitExceededEvent? value)
+        {
+            value = ContextLimitExceeded;
+            return IsContextLimitExceeded;
+        }
 
         /// <summary>
         /// A transient event indicating the agent exceeded the maximum number of step transitions,<br/>
@@ -195,6 +312,19 @@ namespace G
         public bool IsStepTransitionLimitExceeded => StepTransitionLimitExceeded != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickStepTransitionLimitExceeded(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.StepTransitionLimitExceededEvent? value)
+        {
+            value = StepTransitionLimitExceeded;
+            return IsStepTransitionLimitExceeded;
+        }
+
+        /// <summary>
         /// A transient event indicating the agent session was interrupted by a user request.<br/>
         /// This event is not persisted to the session history.
         /// </summary>
@@ -211,6 +341,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SessionInterrupted))]
 #endif
         public bool IsSessionInterrupted => SessionInterrupted != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSessionInterrupted(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.SessionInterruptedEvent? value)
+        {
+            value = SessionInterrupted;
+            return IsSessionInterrupted;
+        }
 
         /// <summary>
         /// An event representing an image being loaded into the conversation context for viewing and analysis.
@@ -230,6 +373,19 @@ namespace G
         public bool IsImageRead => ImageRead != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickImageRead(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ImageReadEvent? value)
+        {
+            value = ImageRead;
+            return IsImageRead;
+        }
+
+        /// <summary>
         /// An event representing a transition between agent steps.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -245,6 +401,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(StepTransition))]
 #endif
         public bool IsStepTransition => StepTransition != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickStepTransition(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.StepTransitionEvent? value)
+        {
+            value = StepTransition;
+            return IsStepTransition;
+        }
 
         /// <summary>
         /// Token usage event reporting context window consumption.
@@ -264,6 +433,19 @@ namespace G
         public bool IsContextConsumed => ContextConsumed != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickContextConsumed(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ContextConsumedEvent? value)
+        {
+            value = ContextConsumed;
+            return IsContextConsumed;
+        }
+
+        /// <summary>
         /// An event indicating that context compaction has started.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -279,6 +461,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CompactionStarted))]
 #endif
         public bool IsCompactionStarted => CompactionStarted != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickCompactionStarted(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CompactionStartedEvent? value)
+        {
+            value = CompactionStarted;
+            return IsCompactionStarted;
+        }
 
         /// <summary>
         /// An event indicating that context compaction has completed.
@@ -298,6 +493,19 @@ namespace G
         public bool IsCompaction => Compaction != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickCompaction(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.CompactionEvent? value)
+        {
+            value = Compaction;
+            return IsCompaction;
+        }
+
+        /// <summary>
         /// Event signaling there was an error with the request.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -315,6 +523,19 @@ namespace G
         public bool IsError => Error != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickError(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.StreamError? value)
+        {
+            value = Error;
+            return IsError;
+        }
+
+        /// <summary>
         /// The end of a query response stream.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -330,6 +551,19 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(End))]
 #endif
         public bool IsEnd => End != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickEnd(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.StreamResponseEnd? value)
+        {
+            value = End;
+            return IsEnd;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -762,10 +996,10 @@ namespace G
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::G.InputMessageEvent?, TResult>? inputMessage = null,
-            global::System.Func<global::G.StreamingAgentOutput?, TResult>? streamingAgentOutput = null,
-            global::System.Func<global::G.StreamingAgentOutputEnd?, TResult>? streamingAgentOutputEnd = null,
-            global::System.Func<global::G.StreamingThinking?, TResult>? streamingThinking = null,
-            global::System.Func<global::G.StreamingThinkingEnd?, TResult>? streamingThinkingEnd = null,
+            global::System.Func<global::G.StreamingAgentOutput, TResult>? streamingAgentOutput = null,
+            global::System.Func<global::G.StreamingAgentOutputEnd, TResult>? streamingAgentOutputEnd = null,
+            global::System.Func<global::G.StreamingThinking, TResult>? streamingThinking = null,
+            global::System.Func<global::G.StreamingThinkingEnd, TResult>? streamingThinkingEnd = null,
             global::System.Func<global::G.ToolInputEvent?, TResult>? toolInput = null,
             global::System.Func<global::G.ToolOutputEvent?, TResult>? toolOutput = null,
             global::System.Func<global::G.StructuredOutputEvent?, TResult>? structuredOutput = null,
@@ -774,11 +1008,11 @@ namespace G
             global::System.Func<global::G.SessionInterruptedEvent?, TResult>? sessionInterrupted = null,
             global::System.Func<global::G.ImageReadEvent?, TResult>? imageRead = null,
             global::System.Func<global::G.StepTransitionEvent?, TResult>? stepTransition = null,
-            global::System.Func<global::G.ContextConsumedEvent?, TResult>? contextConsumed = null,
+            global::System.Func<global::G.ContextConsumedEvent, TResult>? contextConsumed = null,
             global::System.Func<global::G.CompactionStartedEvent?, TResult>? compactionStarted = null,
             global::System.Func<global::G.CompactionEvent?, TResult>? compaction = null,
-            global::System.Func<global::G.StreamError?, TResult>? error = null,
-            global::System.Func<global::G.StreamResponseEnd?, TResult>? end = null,
+            global::System.Func<global::G.StreamError, TResult>? error = null,
+            global::System.Func<global::G.StreamResponseEnd, TResult>? end = null,
             bool validate = true)
         {
             if (validate)
@@ -867,10 +1101,130 @@ namespace G
         /// </summary>
         public void Match(
             global::System.Action<global::G.InputMessageEvent?>? inputMessage = null,
-            global::System.Action<global::G.StreamingAgentOutput?>? streamingAgentOutput = null,
-            global::System.Action<global::G.StreamingAgentOutputEnd?>? streamingAgentOutputEnd = null,
-            global::System.Action<global::G.StreamingThinking?>? streamingThinking = null,
-            global::System.Action<global::G.StreamingThinkingEnd?>? streamingThinkingEnd = null,
+
+            global::System.Action<global::G.StreamingAgentOutput>? streamingAgentOutput = null,
+
+            global::System.Action<global::G.StreamingAgentOutputEnd>? streamingAgentOutputEnd = null,
+
+            global::System.Action<global::G.StreamingThinking>? streamingThinking = null,
+
+            global::System.Action<global::G.StreamingThinkingEnd>? streamingThinkingEnd = null,
+
+            global::System.Action<global::G.ToolInputEvent?>? toolInput = null,
+
+            global::System.Action<global::G.ToolOutputEvent?>? toolOutput = null,
+
+            global::System.Action<global::G.StructuredOutputEvent?>? structuredOutput = null,
+
+            global::System.Action<global::G.ContextLimitExceededEvent?>? contextLimitExceeded = null,
+
+            global::System.Action<global::G.StepTransitionLimitExceededEvent?>? stepTransitionLimitExceeded = null,
+
+            global::System.Action<global::G.SessionInterruptedEvent?>? sessionInterrupted = null,
+
+            global::System.Action<global::G.ImageReadEvent?>? imageRead = null,
+
+            global::System.Action<global::G.StepTransitionEvent?>? stepTransition = null,
+
+            global::System.Action<global::G.ContextConsumedEvent>? contextConsumed = null,
+
+            global::System.Action<global::G.CompactionStartedEvent?>? compactionStarted = null,
+
+            global::System.Action<global::G.CompactionEvent?>? compaction = null,
+
+            global::System.Action<global::G.StreamError>? error = null,
+
+            global::System.Action<global::G.StreamResponseEnd>? end = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsInputMessage)
+            {
+                inputMessage?.Invoke(InputMessage!);
+            }
+            else if (IsStreamingAgentOutput)
+            {
+                streamingAgentOutput?.Invoke(StreamingAgentOutput!);
+            }
+            else if (IsStreamingAgentOutputEnd)
+            {
+                streamingAgentOutputEnd?.Invoke(StreamingAgentOutputEnd!);
+            }
+            else if (IsStreamingThinking)
+            {
+                streamingThinking?.Invoke(StreamingThinking!);
+            }
+            else if (IsStreamingThinkingEnd)
+            {
+                streamingThinkingEnd?.Invoke(StreamingThinkingEnd!);
+            }
+            else if (IsToolInput)
+            {
+                toolInput?.Invoke(ToolInput!);
+            }
+            else if (IsToolOutput)
+            {
+                toolOutput?.Invoke(ToolOutput!);
+            }
+            else if (IsStructuredOutput)
+            {
+                structuredOutput?.Invoke(StructuredOutput!);
+            }
+            else if (IsContextLimitExceeded)
+            {
+                contextLimitExceeded?.Invoke(ContextLimitExceeded!);
+            }
+            else if (IsStepTransitionLimitExceeded)
+            {
+                stepTransitionLimitExceeded?.Invoke(StepTransitionLimitExceeded!);
+            }
+            else if (IsSessionInterrupted)
+            {
+                sessionInterrupted?.Invoke(SessionInterrupted!);
+            }
+            else if (IsImageRead)
+            {
+                imageRead?.Invoke(ImageRead!);
+            }
+            else if (IsStepTransition)
+            {
+                stepTransition?.Invoke(StepTransition!);
+            }
+            else if (IsContextConsumed)
+            {
+                contextConsumed?.Invoke(ContextConsumed!);
+            }
+            else if (IsCompactionStarted)
+            {
+                compactionStarted?.Invoke(CompactionStarted!);
+            }
+            else if (IsCompaction)
+            {
+                compaction?.Invoke(Compaction!);
+            }
+            else if (IsError)
+            {
+                error?.Invoke(Error!);
+            }
+            else if (IsEnd)
+            {
+                end?.Invoke(End!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.InputMessageEvent?>? inputMessage = null,
+            global::System.Action<global::G.StreamingAgentOutput>? streamingAgentOutput = null,
+            global::System.Action<global::G.StreamingAgentOutputEnd>? streamingAgentOutputEnd = null,
+            global::System.Action<global::G.StreamingThinking>? streamingThinking = null,
+            global::System.Action<global::G.StreamingThinkingEnd>? streamingThinkingEnd = null,
             global::System.Action<global::G.ToolInputEvent?>? toolInput = null,
             global::System.Action<global::G.ToolOutputEvent?>? toolOutput = null,
             global::System.Action<global::G.StructuredOutputEvent?>? structuredOutput = null,
@@ -879,11 +1233,11 @@ namespace G
             global::System.Action<global::G.SessionInterruptedEvent?>? sessionInterrupted = null,
             global::System.Action<global::G.ImageReadEvent?>? imageRead = null,
             global::System.Action<global::G.StepTransitionEvent?>? stepTransition = null,
-            global::System.Action<global::G.ContextConsumedEvent?>? contextConsumed = null,
+            global::System.Action<global::G.ContextConsumedEvent>? contextConsumed = null,
             global::System.Action<global::G.CompactionStartedEvent?>? compactionStarted = null,
             global::System.Action<global::G.CompactionEvent?>? compaction = null,
-            global::System.Action<global::G.StreamError?>? error = null,
-            global::System.Action<global::G.StreamResponseEnd?>? end = null,
+            global::System.Action<global::G.StreamError>? error = null,
+            global::System.Action<global::G.StreamResponseEnd>? end = null,
             bool validate = true)
         {
             if (validate)
