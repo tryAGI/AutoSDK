@@ -138,6 +138,103 @@ public class RequestOptionsGenerationTests
     }
 
     [TestMethod]
+    public void GeneratePageableHelpers_EmitsOffsetAndCursorPagerWhenOptInFlagIsSet()
+    {
+        var settings = DefaultSettings with { GeneratePageableHelpers = true };
+        var file = Sources.PageableHelpers(settings);
+
+        file.Name.Should().Be("G.AutoSDKPager.g.cs");
+        file.Text.Should().Contain("public static class AutoSDKPager");
+        file.Text.Should().Contain("OffsetAsync<TPage, TItem>(");
+        file.Text.Should().Contain("CursorAsync<TPage, TItem>(");
+        file.Text.Should().Contain("[global::System.Runtime.CompilerServices.EnumeratorCancellation]");
+        file.Text.Should().Contain("global::System.Collections.Generic.IAsyncEnumerable<TItem>");
+        file.Text.Should().Contain("string.Equals(next, cursor, global::System.StringComparison.Ordinal)");
+    }
+
+    [TestMethod]
+    public void GeneratePageableHelpers_SuppressedWhenOptInFlagIsOff()
+    {
+        var settings = DefaultSettings with { GeneratePageableHelpers = false };
+        var file = Sources.PageableHelpers(settings);
+
+        file.Text.Should().BeEmpty();
+    }
+
+    [TestMethod]
+    public void AutoPaging_OffsetShape_EmitsAutoPagingCompanionWrappingTheRawMethod()
+    {
+        // Hume-style shape: `page_number` query parameter plus a response with a single
+        // array property. With #291's fix the generator emits a companion that turns
+        // the raw page method into an IAsyncEnumerable<TItem> via AutoSDKPager.OffsetAsync.
+        const string yaml = """
+                            openapi: 3.0.3
+                            info:
+                              title: PageableOffset
+                              version: 1.0.0
+                            paths:
+                              /chat-groups:
+                                get:
+                                  operationId: listChatGroups
+                                  parameters:
+                                    - in: query
+                                      name: page_number
+                                      schema:
+                                        type: integer
+                                    - in: query
+                                      name: page_size
+                                      schema:
+                                        type: integer
+                                  responses:
+                                    '200':
+                                      description: OK
+                                      content:
+                                        application/json:
+                                          schema:
+                                            $ref: '#/components/schemas/ReturnPagedChatGroups'
+                            components:
+                              schemas:
+                                ReturnPagedChatGroups:
+                                  type: object
+                                  required: [chat_groups_page]
+                                  properties:
+                                    chat_groups_page:
+                                      type: array
+                                      items:
+                                        $ref: '#/components/schemas/ReturnChatGroup'
+                                    page_number:
+                                      type: integer
+                                ReturnChatGroup:
+                                  type: object
+                                  properties:
+                                    id:
+                                      type: string
+                            """;
+
+        var settings = DefaultSettings with { GeneratePageableHelpers = true };
+        var data = AutoSDK.Generation.Data.Prepare(((yaml, (CSharpSettings)settings), (CSharpSettings)settings));
+        var endpoint = data.Methods.Single(m => m.NotAsyncMethodName == "ListChatGroups");
+
+        endpoint.Settings.GeneratePageableHelpers.Should().BeTrue("setting must propagate through to the endpoint");
+        endpoint.Parameters.Should().Contain(p => string.Equals(p.Id, "page_number", System.StringComparison.OrdinalIgnoreCase));
+        var pageParam = endpoint.Parameters.First(p => string.Equals(p.Id, "page_number", System.StringComparison.OrdinalIgnoreCase));
+        pageParam.Location.Should().Be(Microsoft.OpenApi.ParameterLocation.Query, "page_number must be a query parameter");
+        endpoint.SuccessResponse.Type.CSharpType.Should().NotBeNullOrWhiteSpace("response must have a typed body");
+        endpoint.SuccessResponse.Type.CSharpTypeWithoutNullability.Should().Contain("ReturnPagedChatGroups");
+        endpoint.HasPageableHelper.Should().BeTrue();
+        endpoint.PageableMetadata.Style.Should().Be(PageableStyle.Offset);
+        endpoint.PageableMetadata.PageParameterName.Should().Be("pageNumber");
+        endpoint.PageableMetadata.ItemsPropertyName.Should().Be("ChatGroupsPage");
+
+        var source = Sources.Method(endpoint).Text;
+        source.Should().Contain("ListChatGroupsAutoPagingAsync(");
+        source.Should().Contain("AutoSDKPager.OffsetAsync<");
+        source.Should().Contain("extractItems: static __response => __response is null");
+        source.Should().Contain("(global::System.Collections.Generic.IEnumerable<global::G.ReturnChatGroup>?)__response.ChatGroupsPage");
+        source.Should().Contain("initialPage: pageNumber ?? 1");
+    }
+
+    [TestMethod]
     public void GeneratePromptTemplateHelpers_NamesDtosWithAutoSDKPrefixToAvoidProviderCollisions()
     {
         var settings = (CSharpSettings)DefaultSettings;

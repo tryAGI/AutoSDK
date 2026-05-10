@@ -600,4 +600,20 @@ public static partial class Sources
             Name: $"{settings.Namespace}.AutoSDKAwsEventStream.g.cs",
             Text: GenerateAwsEventStreamSupport(settings, cancellationToken));
     }
+
+    public static FileWithName PageableHelpers(
+        CSharpSettings settings,
+        CancellationToken cancellationToken = default)
+    {
+        if (!settings.GeneratePageableHelpers)
+        {
+            return new FileWithName(
+                Name: $"{settings.Namespace}.AutoSDKPager.g.cs",
+                Text: string.Empty);
+        }
+
+        return new FileWithName(
+            Name: $"{settings.Namespace}.AutoSDKPager.g.cs",
+            Text: GeneratePageableHelpers(settings, cancellationToken));
+    }
 }

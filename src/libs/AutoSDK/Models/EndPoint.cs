@@ -43,7 +43,8 @@ public record struct EndPoint(
     bool HasServerOverride = false,
     bool ClientUsesServerSelectionSupport = false,
     bool HasLocationHeaderOnSuccess = false,
-    LocationWaitCompanion LocationWaitCompanion = default
+    LocationWaitCompanion LocationWaitCompanion = default,
+    PageableMetadata PageableMetadata = default
 )
 {
     public bool Stream => StreamFormat != StreamFormat.None;
@@ -51,6 +52,26 @@ public record struct EndPoint(
     public bool EnumerableStream => Stream && !RawStream;
     public bool IsMultipartFormData => RequestMediaType == "multipart/form-data";
     public bool HasLocationWaitCompanion => !string.IsNullOrEmpty(LocationWaitCompanion.SiblingMethodName);
+    public bool HasPageableHelper => PageableMetadata.Style != PageableStyle.None;
+}
+
+public enum PageableStyle
+{
+    None,
+    Offset,
+}
+
+public record struct PageableMetadata(
+    PageableStyle Style,
+    string PageParameterName,
+    string ItemsPropertyName,
+    TypeData ItemType)
+{
+    public static PageableMetadata Empty => new(
+        Style: PageableStyle.None,
+        PageParameterName: string.Empty,
+        ItemsPropertyName: string.Empty,
+        ItemType: TypeData.Default);
 }
 
 public record struct LocationWaitCompanion(

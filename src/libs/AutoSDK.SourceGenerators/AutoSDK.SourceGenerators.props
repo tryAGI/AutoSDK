@@ -96,6 +96,9 @@
          with at least one terminal-success state (succeeded/completed/done/finished) get a synthesized polling helper
          (`<Method>WaitAsync`) without needing an `x-speakeasy-polling` annotation in the spec. -->
     <CompilerVisibleProperty Include="AutoSDK_AutoDetectStatusPolling"/>
+    <!-- true/false. Default: false. Emits an `AutoSDKPager` runtime helper class with trim/AOT-safe `OffsetAsync` and
+         `CursorAsync` overloads that wrap raw page methods into `IAsyncEnumerable<TItem>` streams. -->
+    <CompilerVisibleProperty Include="AutoSDK_GeneratePageableHelpers"/>
     <!-- List of ids separated by ;. Default: Empty(all models) -->
     <CompilerVisibleProperty Include="AutoSDK_IncludeOperationIds"/>
     <!-- List of ids separated by ;. Default: Empty -->

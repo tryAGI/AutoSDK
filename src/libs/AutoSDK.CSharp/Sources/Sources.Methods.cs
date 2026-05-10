@@ -100,6 +100,7 @@ namespace {endPoint.Settings.Namespace}
 {(ShouldGenerateResponseWrapperMethod(endPoint) ? GenerateMethod(endPoint, returnResponseWrapper: true) : TrimmedLine)}
 {GeneratePollingMethods(endPoint)}
 {GenerateLocationWaitCompanion(endPoint)}
+{GenerateAutoPagingCompanion(endPoint)}
 {GenerateExtensionMethod(endPoint)}
 {GenerateMultipartStreamMethods(endPoint)}
     }}
@@ -128,6 +129,7 @@ namespace {endPoint.Settings.Namespace}
 {(ShouldGenerateResponseWrapperMethod(endPoint) ? GenerateMethod(endPoint, isInterface: true, returnResponseWrapper: true) : TrimmedLine)}
 {GeneratePollingMethods(endPoint, isInterface: true)}
 {GenerateLocationWaitCompanion(endPoint, isInterface: true)}
+{GenerateAutoPagingCompanion(endPoint, isInterface: true)}
 {GenerateExtensionMethod(endPoint, isInterface: true)}
 {GenerateMultipartStreamMethods(endPoint, isInterface: true)}
     }}
@@ -505,6 +507,101 @@ namespace {endPoint.Settings.Namespace}
     private static string GetLocationWaitCompanionMethodName(EndPoint endPoint)
     {
         return $"{endPoint.NotAsyncMethodName}WaitAsync";
+    }
+
+    private static string GetAutoPagingCompanionMethodName(EndPoint endPoint)
+    {
+        return $"{endPoint.NotAsyncMethodName}AutoPagingAsync";
+    }
+
+    private static string GenerateAutoPagingCompanion(
+        EndPoint endPoint,
+        bool isInterface = false)
+    {
+        if (!endPoint.HasPageableHelper)
+        {
+            return TrimmedLine;
+        }
+
+        var metadata = endPoint.PageableMetadata;
+        var methodName = GetAutoPagingCompanionMethodName(endPoint);
+        var itemType = metadata.ItemType.CSharpTypeWithoutNullability;
+        var responseType = endPoint.SuccessResponse.Type.CSharpTypeWithoutNullability;
+        var namespacePrefix = $"global::{endPoint.Settings.Namespace}";
+
+        // Auto-paging only supports the offset shape today. Cursor-style endpoints
+        // can still use AutoSDKPager.CursorAsync directly from consumer code.
+        if (metadata.Style != PageableStyle.Offset)
+        {
+            return TrimmedLine;
+        }
+
+        var fixedParameters = endPoint.Parameters
+            .Where(x => x.Location != null &&
+                        !string.Equals(x.ParameterName, metadata.PageParameterName, StringComparison.Ordinal))
+            .ToArray();
+        var fixedRequiredParameters = fixedParameters
+            .Where(static x => x.IsRequired && !x.HasSchemaDefault)
+            .ToArray();
+        var fixedOptionalParameters = fixedParameters
+            .Where(static x => !x.IsRequired || x.HasSchemaDefault)
+            .ToArray();
+        var pageParameter = endPoint.Parameters
+            .First(x => x.Location != null &&
+                        string.Equals(x.ParameterName, metadata.PageParameterName, StringComparison.Ordinal));
+        var hasRequestBody = !string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType);
+
+        var fixedRequiredDecls = fixedRequiredParameters.Select(x => $@"
+            {x.Type.CSharpType} {x.ParameterName},").Inject();
+        var fixedOptionalDecls = fixedOptionalParameters.Select(x => $@"
+            {x.Type.CSharpType} {x.ParameterName} = {x.ParameterDefaultValue},").Inject();
+        var requestBodyDecl = hasRequestBody
+            ? $@"
+            {endPoint.RequestType.CSharpTypeWithoutNullability} request,"
+            : TrimmedLine;
+
+        var underlyingArgs = new List<string>();
+        foreach (var p in endPoint.Parameters.Where(static x => x.Location != null))
+        {
+            underlyingArgs.Add(string.Equals(p.ParameterName, metadata.PageParameterName, StringComparison.Ordinal)
+                ? $"{p.ParameterName}: __page"
+                : $"{p.ParameterName}: {p.ParameterName}");
+        }
+
+        if (hasRequestBody)
+        {
+            underlyingArgs.Add("request: request");
+        }
+
+        underlyingArgs.Add("cancellationToken: __ct");
+        var underlyingArgList = string.Join(",\n                    ", underlyingArgs);
+
+        var body = isInterface
+            ? ";"
+            : $@"
+        {{
+            return {namespacePrefix}.AutoSDKPager.OffsetAsync<{responseType}, {itemType}>(
+                fetchPage: (__page, __ct) => {endPoint.MethodName}(
+                    {underlyingArgList}),
+                extractItems: static __response => __response is null
+                    ? null
+                    : (global::System.Collections.Generic.IEnumerable<{itemType}>?)__response.{metadata.ItemsPropertyName},
+                initialPage: {pageParameter.ParameterName} ?? 1,
+                cancellationToken: cancellationToken);
+        }}";
+
+        return $@"
+        {$"Wraps {endPoint.MethodName} as an IAsyncEnumerable<{itemType}> that auto-pages over the response.".ToXmlDocumentationSummary(level: 8)}
+{fixedParameters.Select(x => $@"
+        {x.Summary.ToXmlDocumentationForParam(x.ParameterName, level: 8)}").Inject()}{(hasRequestBody ? @"
+        /// <param name=""request""></param>" : TrimmedLine)}
+        /// <param name=""{pageParameter.ParameterName}"">Initial page number to start enumerating from. Defaults to 1.</param>
+        /// <param name=""cancellationToken""></param>
+        {(isInterface ? "" : "public ")}global::System.Collections.Generic.IAsyncEnumerable<{itemType}> {methodName}(
+{fixedRequiredDecls}{requestBodyDecl}{fixedOptionalDecls}
+            int? {pageParameter.ParameterName} = null,
+            global::System.Threading.CancellationToken cancellationToken = default){body}
+".RemoveBlankLinesWhereOnlyWhitespaces();
     }
 
     private static string GenerateLocationWaitCompanion(

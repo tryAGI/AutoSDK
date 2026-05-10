@@ -614,6 +614,7 @@ public static class Data
         var usesServerSelectionSupport = clientServersByClass.Values.Any(static servers => servers.Length > 1);
         methods = ApplyClientServerSelectionSupport(methods, clientServersByClass);
         methods = ApplyLocationWaitCompanions(methods);
+        methods = ApplyPageableMetadata(methods, classes, csharpSettings);
         var rootClientServers = GetClientServers(rootClassName, clientServersByClass, documentServers);
 
         Client[] clients = settings.GenerateSdk || settings.GenerateConstructors ? [new Client(
@@ -997,6 +998,7 @@ public static class Data
         var usesServerSelectionSupport = clientServersByClass.Values.Any(static servers => servers.Length > 1);
         methods = ApplyClientServerSelectionSupport(methods, clientServersByClass);
         methods = ApplyLocationWaitCompanions(methods);
+        methods = ApplyPageableMetadata(methods, classes, settings);
         var rootClientServers = GetClientServers(rootClassName, clientServersByClass, documentServers);
 
         Client[] clients = settings.GenerateSdk || settings.GenerateConstructors
@@ -1207,6 +1209,103 @@ public static class Data
                     servers.Length > 1,
             })
             .ToImmutableArray();
+    }
+
+    /// <summary>
+    /// Auto-detects offset/page-number pagination for endpoints that have a
+    /// `page`/`page_number`/`pageIndex` query parameter and a 2XX response whose schema
+    /// has exactly one array property. The result is stored on the endpoint's
+    /// <see cref="EndPoint.PageableMetadata"/> so <see cref="Sources.Methods"/> can emit
+    /// a <c>&lt;Method&gt;AutoPagingAsync</c> companion backed by
+    /// <c>AutoSDKPager.OffsetAsync</c>.
+    /// </summary>
+    private static ImmutableArray<EndPoint> ApplyPageableMetadata(
+        IReadOnlyList<EndPoint> methods,
+        ImmutableArray<ModelData> classes,
+        CSharpSettings settings)
+    {
+        if (!settings.GeneratePageableHelpers || methods.Count == 0)
+        {
+            return methods.ToImmutableArray();
+        }
+
+        var classByName = classes
+            .Where(static c => !string.IsNullOrEmpty(c.GlobalClassName))
+            .ToDictionary(static c => c.GlobalClassName, static c => c, StringComparer.Ordinal);
+
+        return methods
+            .Select(method =>
+            {
+                if (method.HttpMethod != System.Net.Http.HttpMethod.Get ||
+                    method.HasPageableHelper ||
+                    string.IsNullOrWhiteSpace(method.SuccessResponse.Type.CSharpType))
+                {
+                    return method;
+                }
+
+                var pageParam = method.Parameters
+                    .FirstOrDefault(static p =>
+                        p.Location == Microsoft.OpenApi.ParameterLocation.Query &&
+                        IsOffsetPageParameter(p.Id));
+                if (string.IsNullOrEmpty(pageParam.ParameterName))
+                {
+                    return method;
+                }
+
+                var responseClassName = method.SuccessResponse.Type.CSharpTypeWithoutNullability;
+                if (!classByName.TryGetValue(responseClassName, out var responseClass))
+                {
+                    return method;
+                }
+
+                PropertyData? itemsProperty = null;
+                foreach (var property in responseClass.Properties)
+                {
+                    if (!property.Type.IsArray ||
+                        property.Type.SubTypes.Length == 0 ||
+                        string.IsNullOrWhiteSpace(property.Type.SubTypes[0].Unbox<TypeData>().CSharpType))
+                    {
+                        continue;
+                    }
+
+                    if (itemsProperty != null)
+                    {
+                        // Multiple array properties → ambiguous, skip detection.
+                        return method;
+                    }
+
+                    itemsProperty = property;
+                }
+
+                if (itemsProperty is null)
+                {
+                    return method;
+                }
+
+                return method with
+                {
+                    PageableMetadata = new PageableMetadata(
+                        Style: PageableStyle.Offset,
+                        PageParameterName: pageParam.ParameterName,
+                        ItemsPropertyName: itemsProperty.Value.Name,
+                        ItemType: itemsProperty.Value.Type.SubTypes[0].Unbox<TypeData>()),
+                };
+            })
+            .ToImmutableArray();
+    }
+
+    private static bool IsOffsetPageParameter(string parameterId)
+    {
+        if (string.IsNullOrEmpty(parameterId))
+        {
+            return false;
+        }
+
+        return string.Equals(parameterId, "page", StringComparison.OrdinalIgnoreCase) ||
+               string.Equals(parameterId, "page_number", StringComparison.OrdinalIgnoreCase) ||
+               string.Equals(parameterId, "pageNumber", StringComparison.OrdinalIgnoreCase) ||
+               string.Equals(parameterId, "pageIndex", StringComparison.OrdinalIgnoreCase) ||
+               string.Equals(parameterId, "page_index", StringComparison.OrdinalIgnoreCase);
     }
 
     /// <summary>

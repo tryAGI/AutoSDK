@@ -299,6 +299,13 @@ internal sealed class GenerateCommand : Command
         Description = "Auto-emit a polling helper for GET endpoints whose response shape exposes a status enum/const property with a terminal-success state (succeeded/completed/done/finished).",
     };
 
+    private Option<bool> GeneratePageableHelpers { get; } = new(
+        name: "--generate-pageable-helpers")
+    {
+        DefaultValueFactory = _ => Settings.Default.GeneratePageableHelpers,
+        Description = "Emit an AutoSDKPager runtime helper with OffsetAsync and CursorAsync overloads that turn raw page methods into IAsyncEnumerable<TItem> streams.",
+    };
+
     private Option<string[]> SecuritySchemes { get; } = new(
         name: "--security-scheme")
     {
@@ -449,6 +456,7 @@ internal sealed class GenerateCommand : Command
         Options.Add(GenerateCloudSigningHelpers);
         Options.Add(CloudSigningHelperClassName);
         Options.Add(AutoDetectStatusPolling);
+        Options.Add(GeneratePageableHelpers);
         Options.Add(SecuritySchemes);
         Options.Add(AuthorizationEnvironmentVariables);
         Options.Add(BaseUrl);
@@ -562,6 +570,7 @@ internal sealed class GenerateCommand : Command
             GenerateCloudSigningHelpers = parseResult.GetRequiredValue(GenerateCloudSigningHelpers),
             CloudSigningHelperClassName = parseResult.GetRequiredValue(CloudSigningHelperClassName),
             AutoDetectStatusPolling = parseResult.GetRequiredValue(AutoDetectStatusPolling),
+            GeneratePageableHelpers = parseResult.GetRequiredValue(GeneratePageableHelpers),
             FromCli = true,
             GenerateCli = parseResult.GetRequiredValue(GenerateCli),
             SecuritySchemes = parseResult.GetRequiredValue(SecuritySchemes).ToImmutableArray(),

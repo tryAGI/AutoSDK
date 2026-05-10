@@ -204,6 +204,9 @@ public static class CSharpPipeline
                     .Concat(data.Methods.Any(static x => x.StreamFormat == AutoSDK.Models.StreamFormat.AwsEventStream)
                         ? [Sources.AwsEventStreamSupport(settings, cancellationToken)]
                         : [])
+                    .Concat(settings.GeneratePageableHelpers
+                        ? [Sources.PageableHelpers(settings, cancellationToken)]
+                        : [])
                     .Concat([Sources.UnixTimestampJsonConverter(settings, cancellationToken)])
                     .Concat(data.WebSocketClients
                         .SelectMany(x => new[]
