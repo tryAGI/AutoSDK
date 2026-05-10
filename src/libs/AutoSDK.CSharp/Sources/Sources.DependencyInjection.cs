@@ -116,6 +116,64 @@ namespace {client.Settings.Namespace}
             return services;
         }}" : TrimmedLine)}
 
+        /// <summary>
+        /// Registers a singleton <see cref=""global::{client.Settings.Namespace}.IAutoSDKAuthorizationProvider""/>
+        /// that the generated SDK client consults before each outgoing request. Pair with
+        /// <see cref=""{addMethodName}""/> to resolve credentials per call from an <see cref=""global::System.IServiceProvider""/>
+        /// without mutating the client's shared <c>Authorizations</c> list.
+        /// </summary>
+        /// <typeparam name=""TProvider""></typeparam>
+        /// <param name=""services""></param>
+        /// <param name=""lifetime""></param>
+        public static IServiceCollection Add{client.ClassName}AuthorizationProvider<TProvider>(
+            this IServiceCollection services,
+            ServiceLifetime lifetime = ServiceLifetime.Singleton)
+            where TProvider : class, global::{client.Settings.Namespace}.IAutoSDKAuthorizationProvider
+        {{
+            if (services is null)
+            {{
+                throw new global::System.ArgumentNullException(nameof(services));
+            }}
+
+            services.Add(new ServiceDescriptor(
+                serviceType: typeof(global::{client.Settings.Namespace}.IAutoSDKAuthorizationProvider),
+                implementationType: typeof(TProvider),
+                lifetime: lifetime));
+
+            return services;
+        }}
+
+        /// <summary>
+        /// Registers an inline <see cref=""global::{client.Settings.Namespace}.IAutoSDKAuthorizationProvider""/>
+        /// resolver that runs once per outgoing request with access to the active
+        /// <see cref=""global::System.IServiceProvider""/> and operation context.
+        /// </summary>
+        /// <param name=""services""></param>
+        /// <param name=""resolver""></param>
+        /// <param name=""lifetime""></param>
+        public static IServiceCollection Add{client.ClassName}AuthorizationProvider(
+            this IServiceCollection services,
+            global::System.Func<global::System.IServiceProvider, global::{client.Settings.Namespace}.AutoSDKHookContext, global::System.Threading.Tasks.ValueTask<global::System.Collections.Generic.IReadOnlyList<global::{client.Settings.Namespace}.AutoSDKAuthorizationValue>?>> resolver,
+            ServiceLifetime lifetime = ServiceLifetime.Singleton)
+        {{
+            if (services is null)
+            {{
+                throw new global::System.ArgumentNullException(nameof(services));
+            }}
+
+            if (resolver is null)
+            {{
+                throw new global::System.ArgumentNullException(nameof(resolver));
+            }}
+
+            services.Add(new ServiceDescriptor(
+                serviceType: typeof(global::{client.Settings.Namespace}.IAutoSDKAuthorizationProvider),
+                factory: serviceProvider => new {client.ClassName}DelegateAuthorizationProvider(serviceProvider, resolver),
+                lifetime: lifetime));
+
+            return services;
+        }}
+
         private static IHttpClientBuilder Register{client.ClassName}(
             IServiceCollection services,
             global::System.Func<global::System.IServiceProvider, global::System.Uri> resolveBaseUri,
@@ -127,6 +185,14 @@ namespace {client.Settings.Namespace}
                     (httpClient, serviceProvider) =>
                     {{
                         var clientOptions = new global::{client.Settings.Namespace}.AutoSDKClientOptions();
+
+                        var authorizationProvider = (global::{client.Settings.Namespace}.IAutoSDKAuthorizationProvider?)
+                            serviceProvider.GetService(typeof(global::{client.Settings.Namespace}.IAutoSDKAuthorizationProvider));
+                        if (authorizationProvider is not null)
+                        {{
+                            clientOptions.UseAuthorizationProvider(authorizationProvider);
+                        }}
+
                         configureClientOptions?.Invoke(serviceProvider, clientOptions);
 
                         return new global::{client.Settings.Namespace}.{client.ClassName}(
@@ -139,6 +205,26 @@ namespace {client.Settings.Namespace}
 
             configureHttpClientBuilder?.Invoke(httpClientBuilder);
             return httpClientBuilder;
+        }}
+    }}
+
+    internal sealed class {client.ClassName}DelegateAuthorizationProvider : global::{client.Settings.Namespace}.IAutoSDKAuthorizationProvider
+    {{
+        private readonly global::System.IServiceProvider _serviceProvider;
+        private readonly global::System.Func<global::System.IServiceProvider, global::{client.Settings.Namespace}.AutoSDKHookContext, global::System.Threading.Tasks.ValueTask<global::System.Collections.Generic.IReadOnlyList<global::{client.Settings.Namespace}.AutoSDKAuthorizationValue>?>> _resolver;
+
+        public {client.ClassName}DelegateAuthorizationProvider(
+            global::System.IServiceProvider serviceProvider,
+            global::System.Func<global::System.IServiceProvider, global::{client.Settings.Namespace}.AutoSDKHookContext, global::System.Threading.Tasks.ValueTask<global::System.Collections.Generic.IReadOnlyList<global::{client.Settings.Namespace}.AutoSDKAuthorizationValue>?>> resolver)
+        {{
+            _serviceProvider = serviceProvider ?? throw new global::System.ArgumentNullException(nameof(serviceProvider));
+            _resolver = resolver ?? throw new global::System.ArgumentNullException(nameof(resolver));
+        }}
+
+        public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IReadOnlyList<global::{client.Settings.Namespace}.AutoSDKAuthorizationValue>?> ResolveAsync(
+            global::{client.Settings.Namespace}.AutoSDKHookContext context)
+        {{
+            return await _resolver(_serviceProvider, context).ConfigureAwait(false);
         }}
     }}
 }}

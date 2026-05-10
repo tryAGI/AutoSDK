@@ -280,6 +280,57 @@ public class RequestOptionsGenerationTests
     }
 
     [TestMethod]
+    public void GenerateDependencyInjection_EmitsAuthorizationProviderRegistrationHelpers()
+    {
+        const string yaml = """
+                            openapi: 3.0.3
+                            info:
+                              title: DependencyInjection
+                              version: 1.0.0
+                            servers:
+                              - url: https://api.example.com
+                            paths:
+                              /charges:
+                                get:
+                                  operationId: listCharges
+                                  responses:
+                                    '200':
+                                      description: OK
+                                      content:
+                                        application/json:
+                                          schema:
+                                            type: array
+                                            items:
+                                              type: object
+                            """;
+        var settings = DefaultSettings with
+        {
+            Namespace = "IXSocial",
+            ClassName = "IXSocialClient",
+            GenerateDependencyInjection = true,
+        };
+
+        var data = AutoSDK.Generation.Data.Prepare(((yaml, settings), settings));
+        var mainClient = data.Clients.Single(x => x.Id == "MainConstructor");
+        var source = Sources.DependencyInjection(mainClient).Text;
+
+        // Typed registration helper.
+        source.Should().Contain("public static IServiceCollection AddIXSocialClientAuthorizationProvider<TProvider>(");
+        source.Should().Contain("where TProvider : class, global::IXSocial.IAutoSDKAuthorizationProvider");
+
+        // Delegate-style registration helper.
+        source.Should().Contain("public static IServiceCollection AddIXSocialClientAuthorizationProvider(");
+        source.Should().Contain("global::System.Func<global::System.IServiceProvider, global::IXSocial.AutoSDKHookContext,");
+
+        // Backing delegate provider type.
+        source.Should().Contain("internal sealed class IXSocialClientDelegateAuthorizationProvider");
+
+        // The Register method auto-resolves any registered provider via DI.
+        source.Should().Contain("var authorizationProvider = (global::IXSocial.IAutoSDKAuthorizationProvider?)");
+        source.Should().Contain("clientOptions.UseAuthorizationProvider(authorizationProvider)");
+    }
+
+    [TestMethod]
     public void GenerateDependencyInjection_WithConfigurationBinding_EmitsOptionsAndValidation()
     {
         const string yaml = """

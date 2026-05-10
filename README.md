@@ -90,6 +90,8 @@ The provider returns `IReadOnlyList<AutoSDKAuthorizationValue>` (use `AutoSDKAut
 
 For one-off "act-as" / multi-tenant routing scenarios, `AutoSDKRequestOptions.Authorizations` accepts a per-call list of `AutoSDKAuthorizationValue`. When non-empty, the hook applies those values directly and skips the client-level provider. The precedence order is **per-request `Authorizations` → client `AuthorizationProvider` → constructor-time `Authorizations` list** — the first non-empty source wins for a given outgoing request.
 
+When `GenerateDependencyInjection` is enabled, the generated `DependencyInjectionExtensions` class also emits `Add<Client>AuthorizationProvider<TProvider>()` (typed) and `Add<Client>AuthorizationProvider(resolver)` (delegate) extension methods. Both register an `IAutoSDKAuthorizationProvider` in the DI container; the typed `AddRunwayClient(...)` / `AddRunwayClient(configuration, ...)` helpers automatically resolve and wire it via `Options.UseAuthorizationProvider(provider)` so consumers don't have to chain configuration.
+
 ## Cloud Request Signing Helpers
 Cloud-hosted APIs often describe only bearer or API-key auth in OpenAPI even when official clients require request signing. Enable `--generate-cloud-signing-helpers` in the CLI, or set `<AutoSDK_GenerateCloudSigningHelpers>true</AutoSDK_GenerateCloudSigningHelpers>` for the source generator, to emit a `CloudRequestSigner` helper factory.
 
