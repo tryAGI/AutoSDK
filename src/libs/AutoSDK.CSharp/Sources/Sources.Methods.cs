@@ -174,9 +174,19 @@ namespace {endPoint.Settings.Namespace}
 
     private static bool ShouldGenerateMultipartStreamMethods(EndPoint endPoint)
     {
-        return endPoint.IsMultipartFormData &&
-               !string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType) &&
-               endPoint.Parameters.Any(IsMultipartBinaryParameter);
+        if (!endPoint.IsMultipartFormData ||
+            string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType) ||
+            !endPoint.Parameters.Any(IsMultipartBinaryParameter))
+        {
+            return false;
+        }
+
+        // Suppress the Stream-overload pair when *every* multipart binary parameter
+        // is optional. Otherwise callers that omit the file parameter (and rely on
+        // an alternative input like sourceUrl) hit CS0121 because the byte[] and
+        // Stream overloads become equally applicable. See #312.
+        return endPoint.Parameters.Any(static p =>
+            IsMultipartBinaryParameter(p) && p.IsRequired && !p.HasSchemaDefault);
     }
 
     private static TypeData CreateMultipartStreamParameterType(

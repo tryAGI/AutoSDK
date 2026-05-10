@@ -188,4 +188,53 @@ paths:
         methodCode.Should().NotContain("Stream = stream,");
         methodCode.Should().NotContain("bool? stream = default");
     }
+
+    [TestMethod]
+    public void MultipartFormData_OptionalFile_SkipsStreamOverloadToAvoidAmbiguity()
+    {
+        // ElevenLabs-style shape: file is optional, with an alternative `sourceUrl` field.
+        // Without #312's fix, two convenience overloads differ only by the optional
+        // file parameter type (byte[]? vs Stream?), and callers passing only sourceUrl
+        // hit CS0121.
+        const string yaml = """
+                            openapi: 3.0.3
+                            info:
+                              title: OptionalFile
+                              version: 1.0.0
+                            paths:
+                              /v1/speech-to-text:
+                                post:
+                                  operationId: convert
+                                  requestBody:
+                                    required: true
+                                    content:
+                                      multipart/form-data:
+                                        schema:
+                                          type: object
+                                          required: [model_id]
+                                          properties:
+                                            model_id:
+                                              type: string
+                                            file:
+                                              type: string
+                                              format: binary
+                                            source_url:
+                                              type: string
+                                  responses:
+                                    '200':
+                                      description: ok
+                            """;
+
+        var data = AutoSDK.Generation.Data.Prepare(((yaml, DefaultSettings), GlobalSettings: DefaultSettings));
+        var method = data.Methods.Single(m => m.NotAsyncMethodName == "Convert");
+        var methodCode = Sources.GenerateEndPoint(method);
+
+        // byte[] convenience overload still emitted.
+        methodCode.Should().Contain("byte[]? file = default");
+
+        // Stream overload suppressed — callers passing only sourceUrl resolve unambiguously
+        // to the byte[] overload.
+        methodCode.Should().NotContain("global::System.IO.Stream? file = default");
+        methodCode.Should().NotContain("global::System.IO.Stream file =");
+    }
 }
