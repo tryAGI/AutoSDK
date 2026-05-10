@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static TextToImageRequestBody FromTextToImageRequestBodyVariant1(global::G.TextToImageRequestBodyVariant1? value) => new TextToImageRequestBody(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator TextToImageRequestBody(global::G.GenerationRequestOptionalParams value) => new TextToImageRequestBody((global::G.GenerationRequestOptionalParams?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             GenerationOptionalParams = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static TextToImageRequestBody FromGenerationOptionalParams(global::G.GenerationRequestOptionalParams? value) => new TextToImageRequestBody(value);
 
         /// <summary>
         /// 

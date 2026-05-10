@@ -91,6 +91,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ContextLimitExceededEvent FromAgentBase(global::G.AgentEventBase? value) => new ContextLimitExceededEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ContextLimitExceededEvent(global::G.ContextLimitExceededEventVariant2 value) => new ContextLimitExceededEvent((global::G.ContextLimitExceededEventVariant2?)value);
 
         /// <summary>
@@ -105,6 +110,11 @@ namespace G
         {
             ContextLimitExceededEventVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ContextLimitExceededEvent FromContextLimitExceededEventVariant2(global::G.ContextLimitExceededEventVariant2? value) => new ContextLimitExceededEvent(value);
 
         /// <summary>
         /// 

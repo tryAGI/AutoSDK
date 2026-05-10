@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static SkillLoadEvent FromAgentBase(global::G.AgentEventBase? value) => new SkillLoadEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator SkillLoadEvent(global::G.SkillLoadEventVariant2 value) => new SkillLoadEvent((global::G.SkillLoadEventVariant2?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             SkillLoadEventVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static SkillLoadEvent FromSkillLoadEventVariant2(global::G.SkillLoadEventVariant2? value) => new SkillLoadEvent(value);
 
         /// <summary>
         /// 

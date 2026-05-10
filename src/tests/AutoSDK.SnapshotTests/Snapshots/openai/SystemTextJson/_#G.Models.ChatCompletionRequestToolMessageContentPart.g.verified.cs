@@ -60,6 +60,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ChatCompletionRequestToolMessageContentPart FromTextContentPart(global::G.ChatCompletionRequestMessageContentPartText? value) => new ChatCompletionRequestToolMessageContentPart(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public object? Object =>
             TextContentPart as object 
             ;

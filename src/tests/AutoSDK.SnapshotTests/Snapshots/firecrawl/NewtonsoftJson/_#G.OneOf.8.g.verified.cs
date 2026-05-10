@@ -269,6 +269,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static OneOf<T1, T2, T3, T4, T5, T6, T7, T8> FromValue1(T1? value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8>(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator OneOf<T1, T2, T3, T4, T5, T6, T7, T8>(T2 value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8>((T2?)value);
 
         /// <summary>
@@ -283,6 +288,11 @@ namespace G
         {
             Value2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static OneOf<T1, T2, T3, T4, T5, T6, T7, T8> FromValue2(T2? value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8>(value);
 
         /// <summary>
         /// 
@@ -305,6 +315,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static OneOf<T1, T2, T3, T4, T5, T6, T7, T8> FromValue3(T3? value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8>(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator OneOf<T1, T2, T3, T4, T5, T6, T7, T8>(T4 value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8>((T4?)value);
 
         /// <summary>
@@ -319,6 +334,11 @@ namespace G
         {
             Value4 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static OneOf<T1, T2, T3, T4, T5, T6, T7, T8> FromValue4(T4? value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8>(value);
 
         /// <summary>
         /// 
@@ -341,6 +361,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static OneOf<T1, T2, T3, T4, T5, T6, T7, T8> FromValue5(T5? value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8>(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator OneOf<T1, T2, T3, T4, T5, T6, T7, T8>(T6 value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8>((T6?)value);
 
         /// <summary>
@@ -355,6 +380,11 @@ namespace G
         {
             Value6 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static OneOf<T1, T2, T3, T4, T5, T6, T7, T8> FromValue6(T6? value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8>(value);
 
         /// <summary>
         /// 
@@ -377,6 +407,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static OneOf<T1, T2, T3, T4, T5, T6, T7, T8> FromValue7(T7? value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8>(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator OneOf<T1, T2, T3, T4, T5, T6, T7, T8>(T8 value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8>((T8?)value);
 
         /// <summary>
@@ -391,6 +426,11 @@ namespace G
         {
             Value8 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static OneOf<T1, T2, T3, T4, T5, T6, T7, T8> FromValue8(T8? value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8>(value);
 
         /// <summary>
         /// 

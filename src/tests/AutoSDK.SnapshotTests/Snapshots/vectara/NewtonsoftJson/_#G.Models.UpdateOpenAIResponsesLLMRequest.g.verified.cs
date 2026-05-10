@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static UpdateOpenAIResponsesLLMRequest FromBase(global::G.OpenAILLMUpdateBase? value) => new UpdateOpenAIResponsesLLMRequest(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator UpdateOpenAIResponsesLLMRequest(global::G.UpdateOpenAIResponsesLLMRequestVariant2 value) => new UpdateOpenAIResponsesLLMRequest((global::G.UpdateOpenAIResponsesLLMRequestVariant2?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             UpdateOpenAIResponsesLLMRequestVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static UpdateOpenAIResponsesLLMRequest FromUpdateOpenAIResponsesLLMRequestVariant2(global::G.UpdateOpenAIResponsesLLMRequestVariant2? value) => new UpdateOpenAIResponsesLLMRequest(value);
 
         /// <summary>
         /// 

@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ChatClassificationRequestInputs FromInstructRequest(global::G.InstructRequest? value) => new ChatClassificationRequestInputs(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public ChatClassificationRequestInputs(
             global::G.InstructRequest? instructRequest,
             global::System.Collections.Generic.IList<global::G.InstructRequest>? chatClassificationRequestInputsVariant2

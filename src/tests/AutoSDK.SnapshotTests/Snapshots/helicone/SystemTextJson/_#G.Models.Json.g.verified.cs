@@ -180,6 +180,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Json FromJsonVariant1(string? value) => new Json(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Json(double value) => new Json((double?)value);
 
         /// <summary>
@@ -194,6 +199,11 @@ namespace G
         {
             JsonVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Json FromJsonVariant2(double? value) => new Json(value);
 
         /// <summary>
         /// 
@@ -216,6 +226,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Json FromJsonVariant3(bool? value) => new Json(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Json(global::System.Collections.Generic.Dictionary<string, global::G.Json?> value) => new Json((global::System.Collections.Generic.Dictionary<string, global::G.Json?>?)value);
 
         /// <summary>
@@ -230,6 +245,11 @@ namespace G
         {
             JsonVariant4 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Json FromJsonVariant4(global::System.Collections.Generic.Dictionary<string, global::G.Json?>? value) => new Json(value);
 
         /// <summary>
         /// 

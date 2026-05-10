@@ -185,6 +185,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ResearchDtoClass FromPending(global::G.ResearchDtoClassVariant1? value) => new ResearchDtoClass(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ResearchDtoClass(global::G.ResearchDtoClassVariant2 value) => new ResearchDtoClass((global::G.ResearchDtoClassVariant2?)value);
 
         /// <summary>
@@ -199,6 +204,11 @@ namespace G
         {
             Running = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ResearchDtoClass FromRunning(global::G.ResearchDtoClassVariant2? value) => new ResearchDtoClass(value);
 
         /// <summary>
         /// 
@@ -221,6 +231,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ResearchDtoClass FromCompleted(global::G.ResearchDtoClassVariant3? value) => new ResearchDtoClass(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ResearchDtoClass(global::G.ResearchDtoClassVariant4 value) => new ResearchDtoClass((global::G.ResearchDtoClassVariant4?)value);
 
         /// <summary>
@@ -239,6 +254,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ResearchDtoClass FromCanceled(global::G.ResearchDtoClassVariant4? value) => new ResearchDtoClass(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ResearchDtoClass(global::G.ResearchDtoClassVariant5 value) => new ResearchDtoClass((global::G.ResearchDtoClassVariant5?)value);
 
         /// <summary>
@@ -253,6 +273,11 @@ namespace G
         {
             Failed = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ResearchDtoClass FromFailed(global::G.ResearchDtoClassVariant5? value) => new ResearchDtoClass(value);
 
         /// <summary>
         /// 

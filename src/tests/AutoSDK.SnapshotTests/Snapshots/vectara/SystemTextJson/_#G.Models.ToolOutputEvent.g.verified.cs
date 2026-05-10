@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ToolOutputEvent FromAgentBase(global::G.AgentEventBase? value) => new ToolOutputEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ToolOutputEvent(global::G.ToolOutputEventVariant2 value) => new ToolOutputEvent((global::G.ToolOutputEventVariant2?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             ToolOutputEventVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ToolOutputEvent FromToolOutputEventVariant2(global::G.ToolOutputEventVariant2? value) => new ToolOutputEvent(value);
 
         /// <summary>
         /// 

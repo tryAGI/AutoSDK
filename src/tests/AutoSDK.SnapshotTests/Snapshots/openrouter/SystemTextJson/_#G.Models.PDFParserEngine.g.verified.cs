@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static PDFParserEngine FromPdfParserEngine0(global::G.PdfParserEngine0? value) => new PDFParserEngine(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator PDFParserEngine(global::G.PdfParserEngine1 value) => new PDFParserEngine((global::G.PdfParserEngine1?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             PdfParserEngine1 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static PDFParserEngine FromPdfParserEngine1(global::G.PdfParserEngine1? value) => new PDFParserEngine(value);
 
         /// <summary>
         /// 

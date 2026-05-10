@@ -65,6 +65,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static CreateSoundEffectRequest FromElevenTextToSoundV2(global::G.CreateSoundEffectRequestElevenTextToSoundV2? value) => new CreateSoundEffectRequest(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public CreateSoundEffectRequest(
             global::G.CreateSoundEffectRequestDiscriminatorModel? model,
             global::G.CreateSoundEffectRequestElevenTextToSoundV2? elevenTextToSoundV2

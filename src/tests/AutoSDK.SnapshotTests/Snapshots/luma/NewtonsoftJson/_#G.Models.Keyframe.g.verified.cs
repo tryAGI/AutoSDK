@@ -97,6 +97,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Keyframe FromGeneration(global::G.GenerationReference? value) => new Keyframe(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Keyframe(global::G.ImageReference value) => new Keyframe((global::G.ImageReference?)value);
 
         /// <summary>
@@ -111,6 +116,11 @@ namespace G
         {
             Image = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Keyframe FromImage(global::G.ImageReference? value) => new Keyframe(value);
 
         /// <summary>
         /// 

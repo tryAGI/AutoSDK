@@ -150,6 +150,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static FileSearchServerToolFiltersOneOf0Value FromFileSearchServerToolFiltersOneOf0ValueVariant1(string? value) => new FileSearchServerToolFiltersOneOf0Value(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator FileSearchServerToolFiltersOneOf0Value(double value) => new FileSearchServerToolFiltersOneOf0Value((double?)value);
 
         /// <summary>
@@ -168,6 +173,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static FileSearchServerToolFiltersOneOf0Value FromFileSearchServerToolFiltersOneOf0ValueVariant2(double? value) => new FileSearchServerToolFiltersOneOf0Value(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator FileSearchServerToolFiltersOneOf0Value(bool value) => new FileSearchServerToolFiltersOneOf0Value((bool?)value);
 
         /// <summary>
@@ -182,6 +192,11 @@ namespace G
         {
             FileSearchServerToolFiltersOneOf0ValueVariant3 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static FileSearchServerToolFiltersOneOf0Value FromFileSearchServerToolFiltersOneOf0ValueVariant3(bool? value) => new FileSearchServerToolFiltersOneOf0Value(value);
 
         /// <summary>
         /// 

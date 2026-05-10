@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ResultSuccessBooleanPosition63NumberAlreadyOnList63BooleanSharedPlatforms63StringArrayString FromResultSuccessSuccessBooleanPosition63NumberAlreadyOnList63BooleanSharedPlatforms63StringArray(global::G.ResultSuccessSuccessBooleanPosition63NumberAlreadyOnList63BooleanSharedPlatforms63StringArray? value) => new ResultSuccessBooleanPosition63NumberAlreadyOnList63BooleanSharedPlatforms63StringArrayString(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ResultSuccessBooleanPosition63NumberAlreadyOnList63BooleanSharedPlatforms63StringArrayString(global::G.ResultErrorString value) => new ResultSuccessBooleanPosition63NumberAlreadyOnList63BooleanSharedPlatforms63StringArrayString((global::G.ResultErrorString?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             Error = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ResultSuccessBooleanPosition63NumberAlreadyOnList63BooleanSharedPlatforms63StringArrayString FromError(global::G.ResultErrorString? value) => new ResultSuccessBooleanPosition63NumberAlreadyOnList63BooleanSharedPlatforms63StringArrayString(value);
 
         /// <summary>
         /// 

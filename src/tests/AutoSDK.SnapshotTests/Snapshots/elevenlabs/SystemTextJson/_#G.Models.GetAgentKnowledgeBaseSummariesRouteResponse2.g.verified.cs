@@ -95,6 +95,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static GetAgentKnowledgeBaseSummariesRouteResponse2 FromSuccess(global::G.KnowledgeBaseSummaryBatchSuccessfulResponseModel? value) => new GetAgentKnowledgeBaseSummariesRouteResponse2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator GetAgentKnowledgeBaseSummariesRouteResponse2(global::G.BatchFailureResponseModel value) => new GetAgentKnowledgeBaseSummariesRouteResponse2((global::G.BatchFailureResponseModel?)value);
 
         /// <summary>
@@ -109,6 +114,11 @@ namespace G
         {
             Failure = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static GetAgentKnowledgeBaseSummariesRouteResponse2 FromFailure(global::G.BatchFailureResponseModel? value) => new GetAgentKnowledgeBaseSummariesRouteResponse2(value);
 
         /// <summary>
         /// 

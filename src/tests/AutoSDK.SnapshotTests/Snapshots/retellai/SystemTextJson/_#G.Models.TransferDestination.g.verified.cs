@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static TransferDestination FromPredefined(global::G.TransferDestinationPredefined? value) => new TransferDestination(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator TransferDestination(global::G.TransferDestinationInferred value) => new TransferDestination((global::G.TransferDestinationInferred?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             Inferred = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static TransferDestination FromInferred(global::G.TransferDestinationInferred? value) => new TransferDestination(value);
 
         /// <summary>
         /// 

@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ResultCountNumberPromptTokensNumberCompletionTokensNumberUserIdStringCostNumberArrayString FromSuccess(global::G.ResultSuccessCountNumberPromptTokensNumberCompletionTokensNumberUserIdStringCostNumberArray? value) => new ResultCountNumberPromptTokensNumberCompletionTokensNumberUserIdStringCostNumberArrayString(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ResultCountNumberPromptTokensNumberCompletionTokensNumberUserIdStringCostNumberArrayString(global::G.ResultErrorString value) => new ResultCountNumberPromptTokensNumberCompletionTokensNumberUserIdStringCostNumberArrayString((global::G.ResultErrorString?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             Error = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ResultCountNumberPromptTokensNumberCompletionTokensNumberUserIdStringCostNumberArrayString FromError(global::G.ResultErrorString? value) => new ResultCountNumberPromptTokensNumberCompletionTokensNumberUserIdStringCostNumberArrayString(value);
 
         /// <summary>
         /// 

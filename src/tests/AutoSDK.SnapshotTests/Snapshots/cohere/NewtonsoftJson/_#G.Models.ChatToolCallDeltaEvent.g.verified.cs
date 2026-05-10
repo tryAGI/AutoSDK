@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ChatToolCallDeltaEvent FromStreamType(global::G.ChatStreamEventType? value) => new ChatToolCallDeltaEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChatToolCallDeltaEvent(global::G.ChatToolCallDeltaEvent2bxzoc value) => new ChatToolCallDeltaEvent((global::G.ChatToolCallDeltaEvent2bxzoc?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             Event2bxzoc = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChatToolCallDeltaEvent FromEvent2bxzoc(global::G.ChatToolCallDeltaEvent2bxzoc? value) => new ChatToolCallDeltaEvent(value);
 
         /// <summary>
         /// 

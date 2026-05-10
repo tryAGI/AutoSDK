@@ -155,6 +155,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static DataItem3 FromText(global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsScoredTextInputChunk? value) => new DataItem3(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator DataItem3(global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsScoredImageUrlInputChunk value) => new DataItem3((global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsScoredImageUrlInputChunk?)value);
 
         /// <summary>
@@ -169,6 +174,11 @@ namespace G
         {
             ImageUrl = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static DataItem3 FromImageUrl(global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsScoredImageUrlInputChunk? value) => new DataItem3(value);
 
         /// <summary>
         /// 
@@ -191,6 +201,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static DataItem3 FromAudioUrl(global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsScoredAudioUrlInputChunk? value) => new DataItem3(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator DataItem3(global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsScoredVideoUrlInputChunk value) => new DataItem3((global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsScoredVideoUrlInputChunk?)value);
 
         /// <summary>
@@ -205,6 +220,11 @@ namespace G
         {
             VideoUrl = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static DataItem3 FromVideoUrl(global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsScoredVideoUrlInputChunk? value) => new DataItem3(value);
 
         /// <summary>
         /// 

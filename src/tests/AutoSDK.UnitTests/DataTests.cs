@@ -1174,6 +1174,9 @@ public partial class DataTests
         generatedAnyOf.Should().Contain("public void Match(");
         generatedAnyOf.Should().Contain("public void Switch(");
         generatedAnyOf.Should().Contain("global::System.Action<global::G.ErrorEvent>? error = null");
+        generatedAnyOf.Should().Contain("public static StreamEvent FromMessage(global::G.MessageEvent? value) => new StreamEvent(value);");
+        generatedAnyOf.Should().Contain("public static StreamEvent FromToolCall(global::G.ToolCallEvent? value) => new StreamEvent(value);");
+        generatedAnyOf.Should().Contain("public static StreamEvent FromError(global::G.ErrorEvent? value) => new StreamEvent(value);");
     }
 
     [TestMethod]

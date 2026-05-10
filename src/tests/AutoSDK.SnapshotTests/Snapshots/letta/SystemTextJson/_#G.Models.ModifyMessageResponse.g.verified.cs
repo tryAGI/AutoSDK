@@ -423,6 +423,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ModifyMessageResponse FromSystemMessage(global::G.SystemMessage? value) => new ModifyMessageResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ModifyMessageResponse(global::G.UserMessage value) => new ModifyMessageResponse((global::G.UserMessage?)value);
 
         /// <summary>
@@ -437,6 +442,11 @@ namespace G
         {
             UserMessage = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ModifyMessageResponse FromUserMessage(global::G.UserMessage? value) => new ModifyMessageResponse(value);
 
         /// <summary>
         /// 
@@ -459,6 +469,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ModifyMessageResponse FromReasoningMessage(global::G.ReasoningMessage? value) => new ModifyMessageResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ModifyMessageResponse(global::G.HiddenReasoningMessage value) => new ModifyMessageResponse((global::G.HiddenReasoningMessage?)value);
 
         /// <summary>
@@ -473,6 +488,11 @@ namespace G
         {
             HiddenReasoningMessage = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ModifyMessageResponse FromHiddenReasoningMessage(global::G.HiddenReasoningMessage? value) => new ModifyMessageResponse(value);
 
         /// <summary>
         /// 
@@ -495,6 +515,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ModifyMessageResponse FromToolCallMessage(global::G.ToolCallMessage? value) => new ModifyMessageResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ModifyMessageResponse(global::G.ToolReturnMessage value) => new ModifyMessageResponse((global::G.ToolReturnMessage?)value);
 
         /// <summary>
@@ -509,6 +534,11 @@ namespace G
         {
             ToolReturnMessage = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ModifyMessageResponse FromToolReturnMessage(global::G.ToolReturnMessage? value) => new ModifyMessageResponse(value);
 
         /// <summary>
         /// 
@@ -531,6 +561,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ModifyMessageResponse FromAssistantMessage(global::G.AssistantMessage? value) => new ModifyMessageResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ModifyMessageResponse(global::G.ApprovalRequestMessage value) => new ModifyMessageResponse((global::G.ApprovalRequestMessage?)value);
 
         /// <summary>
@@ -545,6 +580,11 @@ namespace G
         {
             ApprovalRequestMessage = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ModifyMessageResponse FromApprovalRequestMessage(global::G.ApprovalRequestMessage? value) => new ModifyMessageResponse(value);
 
         /// <summary>
         /// 
@@ -567,6 +607,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ModifyMessageResponse FromApprovalResponseMessage(global::G.ApprovalResponseMessage? value) => new ModifyMessageResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ModifyMessageResponse(global::G.SummaryMessage value) => new ModifyMessageResponse((global::G.SummaryMessage?)value);
 
         /// <summary>
@@ -585,6 +630,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ModifyMessageResponse FromSummaryMessage(global::G.SummaryMessage? value) => new ModifyMessageResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ModifyMessageResponse(global::G.EventMessage value) => new ModifyMessageResponse((global::G.EventMessage?)value);
 
         /// <summary>
@@ -599,6 +649,11 @@ namespace G
         {
             EventMessage = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ModifyMessageResponse FromEventMessage(global::G.EventMessage? value) => new ModifyMessageResponse(value);
 
         /// <summary>
         /// 

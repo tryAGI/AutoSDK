@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ThinkingEvent FromAgentBase(global::G.AgentEventBase? value) => new ThinkingEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ThinkingEvent(global::G.ThinkingEventVariant2 value) => new ThinkingEvent((global::G.ThinkingEventVariant2?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             ThinkingEventVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ThinkingEvent FromThinkingEventVariant2(global::G.ThinkingEventVariant2? value) => new ThinkingEvent(value);
 
         /// <summary>
         /// 

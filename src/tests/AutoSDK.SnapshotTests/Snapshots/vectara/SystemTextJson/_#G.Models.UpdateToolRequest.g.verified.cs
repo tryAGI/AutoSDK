@@ -96,6 +96,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static UpdateToolRequest FromMcp(global::G.UpdateMcpToolRequest? value) => new UpdateToolRequest(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator UpdateToolRequest(global::G.UpdateLambdaToolRequest value) => new UpdateToolRequest((global::G.UpdateLambdaToolRequest?)value);
 
         /// <summary>
@@ -110,6 +115,11 @@ namespace G
         {
             Lambda = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static UpdateToolRequest FromLambda(global::G.UpdateLambdaToolRequest? value) => new UpdateToolRequest(value);
 
         /// <summary>
         /// 

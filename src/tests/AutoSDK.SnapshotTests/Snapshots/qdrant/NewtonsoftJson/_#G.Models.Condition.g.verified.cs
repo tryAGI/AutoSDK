@@ -240,6 +240,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Condition FromField(global::G.FieldCondition? value) => new Condition(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Condition(global::G.IsEmptyCondition value) => new Condition((global::G.IsEmptyCondition?)value);
 
         /// <summary>
@@ -254,6 +259,11 @@ namespace G
         {
             IsEmpty = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Condition FromIsEmpty(global::G.IsEmptyCondition? value) => new Condition(value);
 
         /// <summary>
         /// 
@@ -276,6 +286,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Condition FromIsNull(global::G.IsNullCondition? value) => new Condition(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Condition(global::G.HasIdCondition value) => new Condition((global::G.HasIdCondition?)value);
 
         /// <summary>
@@ -290,6 +305,11 @@ namespace G
         {
             HasId = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Condition FromHasId(global::G.HasIdCondition? value) => new Condition(value);
 
         /// <summary>
         /// 
@@ -312,6 +332,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Condition FromHasVector(global::G.HasVectorCondition? value) => new Condition(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Condition(global::G.NestedCondition value) => new Condition((global::G.NestedCondition?)value);
 
         /// <summary>
@@ -330,6 +355,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Condition FromNested(global::G.NestedCondition? value) => new Condition(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Condition(global::G.Filter value) => new Condition((global::G.Filter?)value);
 
         /// <summary>
@@ -344,6 +374,11 @@ namespace G
         {
             Filter = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Condition FromFilter(global::G.Filter? value) => new Condition(value);
 
         /// <summary>
         /// 

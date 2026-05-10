@@ -92,6 +92,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static LemurTaskParams FromLemurTaskParamsVariant1(global::G.LemurTaskParamsVariant1? value) => new LemurTaskParams(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator LemurTaskParams(global::G.LemurBaseParams value) => new LemurTaskParams((global::G.LemurBaseParams?)value);
 
         /// <summary>
@@ -106,6 +111,11 @@ namespace G
         {
             Base = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static LemurTaskParams FromBase(global::G.LemurBaseParams? value) => new LemurTaskParams(value);
 
         /// <summary>
         /// 

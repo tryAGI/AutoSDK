@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ResultExecuteSqlResponseString FromSuccess(global::G.ResultSuccessExecuteSqlResponse? value) => new ResultExecuteSqlResponseString(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ResultExecuteSqlResponseString(global::G.ResultErrorString value) => new ResultExecuteSqlResponseString((global::G.ResultErrorString?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             Error = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ResultExecuteSqlResponseString FromError(global::G.ResultErrorString? value) => new ResultExecuteSqlResponseString(value);
 
         /// <summary>
         /// 

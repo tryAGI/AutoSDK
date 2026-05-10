@@ -91,6 +91,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static WebhookConfigInsecureSsl FromWebhookConfigInsecureSslVariant1(string? value) => new WebhookConfigInsecureSsl(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator WebhookConfigInsecureSsl(double value) => new WebhookConfigInsecureSsl((double?)value);
 
         /// <summary>
@@ -105,6 +110,11 @@ namespace G
         {
             WebhookConfigInsecureSslVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static WebhookConfigInsecureSsl FromWebhookConfigInsecureSslVariant2(double? value) => new WebhookConfigInsecureSsl(value);
 
         /// <summary>
         /// 

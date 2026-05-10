@@ -99,6 +99,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static AnalyzeResponse200 FromStreamAnalyzeResponse(global::G.StreamAnalyzeResponse? value) => new AnalyzeResponse200(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator AnalyzeResponse200(global::G.NonStreamAnalyzeResponse value) => new AnalyzeResponse200((global::G.NonStreamAnalyzeResponse?)value);
 
         /// <summary>
@@ -113,6 +118,11 @@ namespace G
         {
             NonStreamAnalyzeResponse = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static AnalyzeResponse200 FromNonStreamAnalyzeResponse(global::G.NonStreamAnalyzeResponse? value) => new AnalyzeResponse200(value);
 
         /// <summary>
         /// 

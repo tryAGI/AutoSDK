@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static MaskingUsingInitImageAlphaRequestBody FromMaskingUsingInitImageAlphaRequestBodyVariant1(global::G.MaskingUsingInitImageAlphaRequestBodyVariant1? value) => new MaskingUsingInitImageAlphaRequestBody(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator MaskingUsingInitImageAlphaRequestBody(global::G.GenerationRequestOptionalParams value) => new MaskingUsingInitImageAlphaRequestBody((global::G.GenerationRequestOptionalParams?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             GenerationOptionalParams = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static MaskingUsingInitImageAlphaRequestBody FromGenerationOptionalParams(global::G.GenerationRequestOptionalParams? value) => new MaskingUsingInitImageAlphaRequestBody(value);
 
         /// <summary>
         /// 

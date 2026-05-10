@@ -1715,6 +1715,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static CredentialsItem5 FromAnthropic(global::G.CreateAnthropicCredentialDTO? value) => new CredentialsItem5(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator CredentialsItem5(global::G.CreateAnthropicBedrockCredentialDTO value) => new CredentialsItem5((global::G.CreateAnthropicBedrockCredentialDTO?)value);
 
         /// <summary>
@@ -1729,6 +1734,11 @@ namespace G
         {
             AnthropicBedrock = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static CredentialsItem5 FromAnthropicBedrock(global::G.CreateAnthropicBedrockCredentialDTO? value) => new CredentialsItem5(value);
 
         /// <summary>
         /// 
@@ -1751,6 +1761,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static CredentialsItem5 FromAnyscale(global::G.CreateAnyscaleCredentialDTO? value) => new CredentialsItem5(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator CredentialsItem5(global::G.CreateAssemblyAICredentialDTO value) => new CredentialsItem5((global::G.CreateAssemblyAICredentialDTO?)value);
 
         /// <summary>
@@ -1765,6 +1780,11 @@ namespace G
         {
             AssemblyAi = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static CredentialsItem5 FromAssemblyAi(global::G.CreateAssemblyAICredentialDTO? value) => new CredentialsItem5(value);
 
         /// <summary>
         /// 
@@ -1787,6 +1807,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static CredentialsItem5 FromAzure(global::G.CreateAzureCredentialDTO? value) => new CredentialsItem5(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator CredentialsItem5(global::G.CreateAzureOpenAICredentialDTO value) => new CredentialsItem5((global::G.CreateAzureOpenAICredentialDTO?)value);
 
         /// <summary>
@@ -1801,6 +1826,11 @@ namespace G
         {
             AzureOpenai = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static CredentialsItem5 FromAzureOpenai(global::G.CreateAzureOpenAICredentialDTO? value) => new CredentialsItem5(value);
 
         /// <summary>
         /// 
@@ -1823,6 +1853,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static CredentialsItem5 FromByoSipTrunk(global::G.CreateByoSipTrunkCredentialDTO? value) => new CredentialsItem5(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator CredentialsItem5(global::G.CreateCartesiaCredentialDTO value) => new CredentialsItem5((global::G.CreateCartesiaCredentialDTO?)value);
 
         /// <summary>
@@ -1837,6 +1872,11 @@ namespace G
         {
             Cartesia = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static CredentialsItem5 FromCartesia(global::G.CreateCartesiaCredentialDTO? value) => new CredentialsItem5(value);
 
         /// <summary>
         /// 
@@ -1859,6 +1899,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static CredentialsItem5 FromCerebras(global::G.CreateCerebrasCredentialDTO? value) => new CredentialsItem5(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator CredentialsItem5(global::G.CreateCloudflareCredentialDTO value) => new CredentialsItem5((global::G.CreateCloudflareCredentialDTO?)value);
 
         /// <summary>
@@ -1873,6 +1918,11 @@ namespace G
         {
             Cloudflare = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static CredentialsItem5 FromCloudflare(global::G.CreateCloudflareCredentialDTO? value) => new CredentialsItem5(value);
 
         /// <summary>
         /// 
@@ -1895,6 +1945,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static CredentialsItem5 FromCustomLlm(global::G.CreateCustomLLMCredentialDTO? value) => new CredentialsItem5(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator CredentialsItem5(global::G.CreateDeepgramCredentialDTO value) => new CredentialsItem5((global::G.CreateDeepgramCredentialDTO?)value);
 
         /// <summary>
@@ -1909,6 +1964,11 @@ namespace G
         {
             Deepgram = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static CredentialsItem5 FromDeepgram(global::G.CreateDeepgramCredentialDTO? value) => new CredentialsItem5(value);
 
         /// <summary>
         /// 
@@ -1931,6 +1991,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static CredentialsItem5 FromDeepinfra(global::G.CreateDeepInfraCredentialDTO? value) => new CredentialsItem5(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator CredentialsItem5(global::G.CreateDeepSeekCredentialDTO value) => new CredentialsItem5((global::G.CreateDeepSeekCredentialDTO?)value);
 
         /// <summary>
@@ -1945,6 +2010,11 @@ namespace G
         {
             DeepSeek = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static CredentialsItem5 FromDeepSeek(global::G.CreateDeepSeekCredentialDTO? value) => new CredentialsItem5(value);
 
         /// <summary>
         /// 
@@ -1967,6 +2037,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static CredentialsItem5 FromElevenlabs(global::G.CreateElevenLabsCredentialDTO? value) => new CredentialsItem5(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator CredentialsItem5(global::G.CreateGcpCredentialDTO value) => new CredentialsItem5((global::G.CreateGcpCredentialDTO?)value);
 
         /// <summary>
@@ -1981,6 +2056,11 @@ namespace G
         {
             Gcp = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static CredentialsItem5 FromGcp(global::G.CreateGcpCredentialDTO? value) => new CredentialsItem5(value);
 
         /// <summary>
         /// 
@@ -2003,6 +2083,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static CredentialsItem5 FromGladia(global::G.CreateGladiaCredentialDTO? value) => new CredentialsItem5(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator CredentialsItem5(global::G.CreateGoHighLevelCredentialDTO value) => new CredentialsItem5((global::G.CreateGoHighLevelCredentialDTO?)value);
 
         /// <summary>
@@ -2017,6 +2102,11 @@ namespace G
         {
             Gohighlevel = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static CredentialsItem5 FromGohighlevel(global::G.CreateGoHighLevelCredentialDTO? value) => new CredentialsItem5(value);
 
         /// <summary>
         /// 
@@ -2039,6 +2129,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static CredentialsItem5 FromGoogle(global::G.CreateGoogleCredentialDTO? value) => new CredentialsItem5(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator CredentialsItem5(global::G.CreateGroqCredentialDTO value) => new CredentialsItem5((global::G.CreateGroqCredentialDTO?)value);
 
         /// <summary>
@@ -2053,6 +2148,11 @@ namespace G
         {
             Groq = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static CredentialsItem5 FromGroq(global::G.CreateGroqCredentialDTO? value) => new CredentialsItem5(value);
 
         /// <summary>
         /// 
@@ -2075,6 +2175,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static CredentialsItem5 FromHume(global::G.CreateHumeCredentialDTO? value) => new CredentialsItem5(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator CredentialsItem5(global::G.CreateInflectionAICredentialDTO value) => new CredentialsItem5((global::G.CreateInflectionAICredentialDTO?)value);
 
         /// <summary>
@@ -2089,6 +2194,11 @@ namespace G
         {
             InflectionAi = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static CredentialsItem5 FromInflectionAi(global::G.CreateInflectionAICredentialDTO? value) => new CredentialsItem5(value);
 
         /// <summary>
         /// 
@@ -2111,6 +2221,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static CredentialsItem5 FromLangfuse(global::G.CreateLangfuseCredentialDTO? value) => new CredentialsItem5(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator CredentialsItem5(global::G.CreateLmntCredentialDTO value) => new CredentialsItem5((global::G.CreateLmntCredentialDTO?)value);
 
         /// <summary>
@@ -2125,6 +2240,11 @@ namespace G
         {
             Lmnt = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static CredentialsItem5 FromLmnt(global::G.CreateLmntCredentialDTO? value) => new CredentialsItem5(value);
 
         /// <summary>
         /// 
@@ -2147,6 +2267,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static CredentialsItem5 FromMake(global::G.CreateMakeCredentialDTO? value) => new CredentialsItem5(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator CredentialsItem5(global::G.CreateMistralCredentialDTO value) => new CredentialsItem5((global::G.CreateMistralCredentialDTO?)value);
 
         /// <summary>
@@ -2161,6 +2286,11 @@ namespace G
         {
             Mistral = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static CredentialsItem5 FromMistral(global::G.CreateMistralCredentialDTO? value) => new CredentialsItem5(value);
 
         /// <summary>
         /// 
@@ -2183,6 +2313,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static CredentialsItem5 FromNeuphonic(global::G.CreateNeuphonicCredentialDTO? value) => new CredentialsItem5(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator CredentialsItem5(global::G.CreateOpenAICredentialDTO value) => new CredentialsItem5((global::G.CreateOpenAICredentialDTO?)value);
 
         /// <summary>
@@ -2197,6 +2332,11 @@ namespace G
         {
             Openai = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static CredentialsItem5 FromOpenai(global::G.CreateOpenAICredentialDTO? value) => new CredentialsItem5(value);
 
         /// <summary>
         /// 
@@ -2219,6 +2359,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static CredentialsItem5 FromOpenrouter(global::G.CreateOpenRouterCredentialDTO? value) => new CredentialsItem5(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator CredentialsItem5(global::G.CreatePerplexityAICredentialDTO value) => new CredentialsItem5((global::G.CreatePerplexityAICredentialDTO?)value);
 
         /// <summary>
@@ -2233,6 +2378,11 @@ namespace G
         {
             PerplexityAi = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static CredentialsItem5 FromPerplexityAi(global::G.CreatePerplexityAICredentialDTO? value) => new CredentialsItem5(value);
 
         /// <summary>
         /// 
@@ -2255,6 +2405,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static CredentialsItem5 FromPlayht(global::G.CreatePlayHTCredentialDTO? value) => new CredentialsItem5(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator CredentialsItem5(global::G.CreateRimeAICredentialDTO value) => new CredentialsItem5((global::G.CreateRimeAICredentialDTO?)value);
 
         /// <summary>
@@ -2269,6 +2424,11 @@ namespace G
         {
             RimeAi = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static CredentialsItem5 FromRimeAi(global::G.CreateRimeAICredentialDTO? value) => new CredentialsItem5(value);
 
         /// <summary>
         /// 
@@ -2291,6 +2451,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static CredentialsItem5 FromRunpod(global::G.CreateRunpodCredentialDTO? value) => new CredentialsItem5(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator CredentialsItem5(global::G.CreateS3CredentialDTO value) => new CredentialsItem5((global::G.CreateS3CredentialDTO?)value);
 
         /// <summary>
@@ -2305,6 +2470,11 @@ namespace G
         {
             S3 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static CredentialsItem5 FromS3(global::G.CreateS3CredentialDTO? value) => new CredentialsItem5(value);
 
         /// <summary>
         /// 
@@ -2327,6 +2497,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static CredentialsItem5 FromSmallestAi(global::G.CreateSmallestAICredentialDTO? value) => new CredentialsItem5(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator CredentialsItem5(global::G.CreateSpeechmaticsCredentialDTO value) => new CredentialsItem5((global::G.CreateSpeechmaticsCredentialDTO?)value);
 
         /// <summary>
@@ -2341,6 +2516,11 @@ namespace G
         {
             Speechmatics = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static CredentialsItem5 FromSpeechmatics(global::G.CreateSpeechmaticsCredentialDTO? value) => new CredentialsItem5(value);
 
         /// <summary>
         /// 
@@ -2363,6 +2543,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static CredentialsItem5 FromSoniox(global::G.CreateSonioxCredentialDTO? value) => new CredentialsItem5(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator CredentialsItem5(global::G.CreateSupabaseCredentialDTO value) => new CredentialsItem5((global::G.CreateSupabaseCredentialDTO?)value);
 
         /// <summary>
@@ -2377,6 +2562,11 @@ namespace G
         {
             Supabase = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static CredentialsItem5 FromSupabase(global::G.CreateSupabaseCredentialDTO? value) => new CredentialsItem5(value);
 
         /// <summary>
         /// 
@@ -2399,6 +2589,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static CredentialsItem5 FromTavus(global::G.CreateTavusCredentialDTO? value) => new CredentialsItem5(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator CredentialsItem5(global::G.CreateTogetherAICredentialDTO value) => new CredentialsItem5((global::G.CreateTogetherAICredentialDTO?)value);
 
         /// <summary>
@@ -2413,6 +2608,11 @@ namespace G
         {
             TogetherAi = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static CredentialsItem5 FromTogetherAi(global::G.CreateTogetherAICredentialDTO? value) => new CredentialsItem5(value);
 
         /// <summary>
         /// 
@@ -2435,6 +2635,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static CredentialsItem5 FromTrieve(global::G.CreateTrieveCredentialDTO? value) => new CredentialsItem5(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator CredentialsItem5(global::G.CreateTwilioCredentialDTO value) => new CredentialsItem5((global::G.CreateTwilioCredentialDTO?)value);
 
         /// <summary>
@@ -2449,6 +2654,11 @@ namespace G
         {
             Twilio = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static CredentialsItem5 FromTwilio(global::G.CreateTwilioCredentialDTO? value) => new CredentialsItem5(value);
 
         /// <summary>
         /// 
@@ -2471,6 +2681,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static CredentialsItem5 FromVonage(global::G.CreateVonageCredentialDTO? value) => new CredentialsItem5(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator CredentialsItem5(global::G.CreateWebhookCredentialDTO value) => new CredentialsItem5((global::G.CreateWebhookCredentialDTO?)value);
 
         /// <summary>
@@ -2485,6 +2700,11 @@ namespace G
         {
             Webhook = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static CredentialsItem5 FromWebhook(global::G.CreateWebhookCredentialDTO? value) => new CredentialsItem5(value);
 
         /// <summary>
         /// 
@@ -2507,6 +2727,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static CredentialsItem5 FromCustomCredential(global::G.CreateCustomCredentialDTO? value) => new CredentialsItem5(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator CredentialsItem5(global::G.CreateXAiCredentialDTO value) => new CredentialsItem5((global::G.CreateXAiCredentialDTO?)value);
 
         /// <summary>
@@ -2521,6 +2746,11 @@ namespace G
         {
             Xai = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static CredentialsItem5 FromXai(global::G.CreateXAiCredentialDTO? value) => new CredentialsItem5(value);
 
         /// <summary>
         /// 
@@ -2543,6 +2773,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static CredentialsItem5 FromGoogleCalendarOauth2Client(global::G.CreateGoogleCalendarOAuth2ClientCredentialDTO? value) => new CredentialsItem5(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator CredentialsItem5(global::G.CreateGoogleCalendarOAuth2AuthorizationCredentialDTO value) => new CredentialsItem5((global::G.CreateGoogleCalendarOAuth2AuthorizationCredentialDTO?)value);
 
         /// <summary>
@@ -2557,6 +2792,11 @@ namespace G
         {
             GoogleCalendarOauth2Authorization = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static CredentialsItem5 FromGoogleCalendarOauth2Authorization(global::G.CreateGoogleCalendarOAuth2AuthorizationCredentialDTO? value) => new CredentialsItem5(value);
 
         /// <summary>
         /// 
@@ -2579,6 +2819,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static CredentialsItem5 FromGoogleSheetsOauth2Authorization(global::G.CreateGoogleSheetsOAuth2AuthorizationCredentialDTO? value) => new CredentialsItem5(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator CredentialsItem5(global::G.CreateSlackOAuth2AuthorizationCredentialDTO value) => new CredentialsItem5((global::G.CreateSlackOAuth2AuthorizationCredentialDTO?)value);
 
         /// <summary>
@@ -2593,6 +2838,11 @@ namespace G
         {
             SlackOauth2Authorization = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static CredentialsItem5 FromSlackOauth2Authorization(global::G.CreateSlackOAuth2AuthorizationCredentialDTO? value) => new CredentialsItem5(value);
 
         /// <summary>
         /// 
@@ -2615,6 +2865,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static CredentialsItem5 FromGhlOauth2Authorization(global::G.CreateGoHighLevelMCPCredentialDTO? value) => new CredentialsItem5(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator CredentialsItem5(global::G.CreateInworldCredentialDTO value) => new CredentialsItem5((global::G.CreateInworldCredentialDTO?)value);
 
         /// <summary>
@@ -2629,6 +2884,11 @@ namespace G
         {
             Inworld = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static CredentialsItem5 FromInworld(global::G.CreateInworldCredentialDTO? value) => new CredentialsItem5(value);
 
         /// <summary>
         /// 
@@ -2651,6 +2911,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static CredentialsItem5 FromMinimax(global::G.CreateMinimaxCredentialDTO? value) => new CredentialsItem5(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator CredentialsItem5(global::G.CreateWellSaidCredentialDTO value) => new CredentialsItem5((global::G.CreateWellSaidCredentialDTO?)value);
 
         /// <summary>
@@ -2665,6 +2930,11 @@ namespace G
         {
             Wellsaid = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static CredentialsItem5 FromWellsaid(global::G.CreateWellSaidCredentialDTO? value) => new CredentialsItem5(value);
 
         /// <summary>
         /// 
@@ -2687,6 +2957,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static CredentialsItem5 FromEmail(global::G.CreateEmailCredentialDTO? value) => new CredentialsItem5(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator CredentialsItem5(global::G.CreateSlackWebhookCredentialDTO value) => new CredentialsItem5((global::G.CreateSlackWebhookCredentialDTO?)value);
 
         /// <summary>
@@ -2701,6 +2976,11 @@ namespace G
         {
             SlackWebhook = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static CredentialsItem5 FromSlackWebhook(global::G.CreateSlackWebhookCredentialDTO? value) => new CredentialsItem5(value);
 
         /// <summary>
         /// 

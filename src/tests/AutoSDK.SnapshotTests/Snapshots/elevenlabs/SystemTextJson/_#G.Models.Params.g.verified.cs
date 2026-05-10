@@ -965,6 +965,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Params FromSearchClients(global::G.SearchClientsParams? value) => new Params(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Params(global::G.ListClientsParams value) => new Params((global::G.ListClientsParams?)value);
 
         /// <summary>
@@ -979,6 +984,11 @@ namespace G
         {
             ListClients = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Params FromListClients(global::G.ListClientsParams? value) => new Params(value);
 
         /// <summary>
         /// 
@@ -1001,6 +1011,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Params FromGetClientByPhone(global::G.GetClientByPhoneParams? value) => new Params(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Params(global::G.CreateClientParams value) => new Params((global::G.CreateClientParams?)value);
 
         /// <summary>
@@ -1015,6 +1030,11 @@ namespace G
         {
             CreateClient = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Params FromCreateClient(global::G.CreateClientParams? value) => new Params(value);
 
         /// <summary>
         /// 
@@ -1037,6 +1057,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Params FromUpdateClient(global::G.UpdateClientParams? value) => new Params(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Params(global::G.DeleteClientParams value) => new Params((global::G.DeleteClientParams?)value);
 
         /// <summary>
@@ -1051,6 +1076,11 @@ namespace G
         {
             DeleteClient = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Params FromDeleteClient(global::G.DeleteClientParams? value) => new Params(value);
 
         /// <summary>
         /// 
@@ -1073,6 +1103,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Params FromListStaff(global::G.ListStaffParams? value) => new Params(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Params(global::G.CreateStaffParams value) => new Params((global::G.CreateStaffParams?)value);
 
         /// <summary>
@@ -1087,6 +1122,11 @@ namespace G
         {
             CreateStaff = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Params FromCreateStaff(global::G.CreateStaffParams? value) => new Params(value);
 
         /// <summary>
         /// 
@@ -1109,6 +1149,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Params FromUpdateStaff(global::G.UpdateStaffParams? value) => new Params(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Params(global::G.DeleteStaffParams value) => new Params((global::G.DeleteStaffParams?)value);
 
         /// <summary>
@@ -1123,6 +1168,11 @@ namespace G
         {
             DeleteStaff = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Params FromDeleteStaff(global::G.DeleteStaffParams? value) => new Params(value);
 
         /// <summary>
         /// 
@@ -1145,6 +1195,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Params FromListAssets(global::G.ListAssetsParams? value) => new Params(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Params(global::G.CreateAssetParams value) => new Params((global::G.CreateAssetParams?)value);
 
         /// <summary>
@@ -1159,6 +1214,11 @@ namespace G
         {
             CreateAsset = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Params FromCreateAsset(global::G.CreateAssetParams? value) => new Params(value);
 
         /// <summary>
         /// 
@@ -1181,6 +1241,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Params FromUpdateAsset(global::G.UpdateAssetParams? value) => new Params(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Params(global::G.DeleteAssetParams value) => new Params((global::G.DeleteAssetParams?)value);
 
         /// <summary>
@@ -1195,6 +1260,11 @@ namespace G
         {
             DeleteAsset = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Params FromDeleteAsset(global::G.DeleteAssetParams? value) => new Params(value);
 
         /// <summary>
         /// 
@@ -1217,6 +1287,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Params FromListServices(global::G.ListServicesParams? value) => new Params(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Params(global::G.CreateServiceParams value) => new Params((global::G.CreateServiceParams?)value);
 
         /// <summary>
@@ -1231,6 +1306,11 @@ namespace G
         {
             CreateService = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Params FromCreateService(global::G.CreateServiceParams? value) => new Params(value);
 
         /// <summary>
         /// 
@@ -1253,6 +1333,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Params FromUpdateService(global::G.UpdateServiceParams? value) => new Params(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Params(global::G.DeleteServiceParams value) => new Params((global::G.DeleteServiceParams?)value);
 
         /// <summary>
@@ -1267,6 +1352,11 @@ namespace G
         {
             DeleteService = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Params FromDeleteService(global::G.DeleteServiceParams? value) => new Params(value);
 
         /// <summary>
         /// 
@@ -1289,6 +1379,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Params FromListProducts(global::G.ListProductsParams? value) => new Params(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Params(global::G.CreateProductParams value) => new Params((global::G.CreateProductParams?)value);
 
         /// <summary>
@@ -1303,6 +1398,11 @@ namespace G
         {
             CreateProduct = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Params FromCreateProduct(global::G.CreateProductParams? value) => new Params(value);
 
         /// <summary>
         /// 
@@ -1325,6 +1425,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Params FromUpdateProduct(global::G.UpdateProductParams? value) => new Params(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Params(global::G.DeleteProductParams value) => new Params((global::G.DeleteProductParams?)value);
 
         /// <summary>
@@ -1339,6 +1444,11 @@ namespace G
         {
             DeleteProduct = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Params FromDeleteProduct(global::G.DeleteProductParams? value) => new Params(value);
 
         /// <summary>
         /// 
@@ -1361,6 +1471,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Params FromCheckServiceAvailability(global::G.CheckServiceAvailabilityParams? value) => new Params(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Params(global::G.CreateClientAppointmentParams value) => new Params((global::G.CreateClientAppointmentParams?)value);
 
         /// <summary>
@@ -1375,6 +1490,11 @@ namespace G
         {
             CreateClientAppointment = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Params FromCreateClientAppointment(global::G.CreateClientAppointmentParams? value) => new Params(value);
 
         /// <summary>
         /// 
@@ -1397,6 +1517,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Params FromGetClientAppointments(global::G.GetClientAppointmentsParams? value) => new Params(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Params(global::G.ListCalendarEventsParams value) => new Params((global::G.ListCalendarEventsParams?)value);
 
         /// <summary>
@@ -1411,6 +1536,11 @@ namespace G
         {
             ListCalendarEvents = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Params FromListCalendarEvents(global::G.ListCalendarEventsParams? value) => new Params(value);
 
         /// <summary>
         /// 
@@ -1433,6 +1563,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Params FromUpdateCalendarEvent(global::G.UpdateCalendarEventParams? value) => new Params(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Params(global::G.DeleteCalendarEventParams value) => new Params((global::G.DeleteCalendarEventParams?)value);
 
         /// <summary>
@@ -1447,6 +1582,11 @@ namespace G
         {
             DeleteCalendarEvent = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Params FromDeleteCalendarEvent(global::G.DeleteCalendarEventParams? value) => new Params(value);
 
         /// <summary>
         /// 
@@ -1469,6 +1609,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Params FromListRentalServices(global::G.ListRentalServicesParams? value) => new Params(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Params(global::G.CheckRentalAvailabilityParams value) => new Params((global::G.CheckRentalAvailabilityParams?)value);
 
         /// <summary>
@@ -1487,6 +1632,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Params FromCheckRentalAvailability(global::G.CheckRentalAvailabilityParams? value) => new Params(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Params(global::G.CreateRentalBookingParams value) => new Params((global::G.CreateRentalBookingParams?)value);
 
         /// <summary>
@@ -1501,6 +1651,11 @@ namespace G
         {
             CreateRentalBooking = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Params FromCreateRentalBooking(global::G.CreateRentalBookingParams? value) => new Params(value);
 
         /// <summary>
         /// 

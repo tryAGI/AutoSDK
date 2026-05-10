@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static OptimizersStatus FromEnum(global::G.OptimizersStatusEnum? value) => new OptimizersStatus(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator OptimizersStatus(global::G.OptimizersStatusEnum2 value) => new OptimizersStatus((global::G.OptimizersStatusEnum2?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             Enum2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static OptimizersStatus FromEnum2(global::G.OptimizersStatusEnum2? value) => new OptimizersStatus(value);
 
         /// <summary>
         /// 

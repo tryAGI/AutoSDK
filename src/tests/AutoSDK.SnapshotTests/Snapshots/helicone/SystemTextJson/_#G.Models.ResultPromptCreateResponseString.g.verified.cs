@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ResultPromptCreateResponseString FromSuccess(global::G.ResultSuccessPromptCreateResponse? value) => new ResultPromptCreateResponseString(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ResultPromptCreateResponseString(global::G.ResultErrorString value) => new ResultPromptCreateResponseString((global::G.ResultErrorString?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             Error = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ResultPromptCreateResponseString FromError(global::G.ResultErrorString? value) => new ResultPromptCreateResponseString(value);
 
         /// <summary>
         /// 

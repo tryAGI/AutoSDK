@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ChatCitationGenerationEvent FromStream(global::G.ChatStreamEvent? value) => new ChatCitationGenerationEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChatCitationGenerationEvent(global::G.ChatCitationGenerationEventLg3v2o value) => new ChatCitationGenerationEvent((global::G.ChatCitationGenerationEventLg3v2o?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             Lg3v2o = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChatCitationGenerationEvent FromLg3v2o(global::G.ChatCitationGenerationEventLg3v2o? value) => new ChatCitationGenerationEvent(value);
 
         /// <summary>
         /// 

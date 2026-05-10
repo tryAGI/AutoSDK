@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static LastMileConfigForm FromBase(global::G.BaseLastMileConfigForm? value) => new LastMileConfigForm(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator LastMileConfigForm(global::G.AnyOf<global::G.LastMileConfigFormVariant2Variant1, global::G.LastMileConfigFormVariant2Variant2> value) => new LastMileConfigForm((global::G.AnyOf<global::G.LastMileConfigFormVariant2Variant1, global::G.LastMileConfigFormVariant2Variant2>?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             LastMileConfigFormVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static LastMileConfigForm FromLastMileConfigFormVariant2(global::G.AnyOf<global::G.LastMileConfigFormVariant2Variant1, global::G.LastMileConfigFormVariant2Variant2>? value) => new LastMileConfigForm(value);
 
         /// <summary>
         /// 

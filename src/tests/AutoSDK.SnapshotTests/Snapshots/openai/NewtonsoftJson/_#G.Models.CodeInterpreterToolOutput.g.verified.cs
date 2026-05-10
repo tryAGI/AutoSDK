@@ -95,6 +95,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static CodeInterpreterToolOutput FromLogs(global::G.CodeInterpreterTextOutput? value) => new CodeInterpreterToolOutput(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator CodeInterpreterToolOutput(global::G.CodeInterpreterFileOutput value) => new CodeInterpreterToolOutput((global::G.CodeInterpreterFileOutput?)value);
 
         /// <summary>
@@ -109,6 +114,11 @@ namespace G
         {
             Files = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static CodeInterpreterToolOutput FromFiles(global::G.CodeInterpreterFileOutput? value) => new CodeInterpreterToolOutput(value);
 
         /// <summary>
         /// 

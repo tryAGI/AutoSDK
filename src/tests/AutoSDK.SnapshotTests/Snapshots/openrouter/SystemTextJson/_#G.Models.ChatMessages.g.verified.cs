@@ -180,6 +180,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ChatMessages FromChatSystemMessage(global::G.ChatSystemMessage? value) => new ChatMessages(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChatMessages(global::G.ChatUserMessage value) => new ChatMessages((global::G.ChatUserMessage?)value);
 
         /// <summary>
@@ -194,6 +199,11 @@ namespace G
         {
             ChatUserMessage = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChatMessages FromChatUserMessage(global::G.ChatUserMessage? value) => new ChatMessages(value);
 
         /// <summary>
         /// 
@@ -216,6 +226,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ChatMessages FromChatDeveloperMessage(global::G.ChatDeveloperMessage? value) => new ChatMessages(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChatMessages(global::G.ChatAssistantMessage value) => new ChatMessages((global::G.ChatAssistantMessage?)value);
 
         /// <summary>
@@ -234,6 +249,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ChatMessages FromChatAssistantMessage(global::G.ChatAssistantMessage? value) => new ChatMessages(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChatMessages(global::G.ChatToolMessage value) => new ChatMessages((global::G.ChatToolMessage?)value);
 
         /// <summary>
@@ -248,6 +268,11 @@ namespace G
         {
             ChatToolMessage = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChatMessages FromChatToolMessage(global::G.ChatToolMessage? value) => new ChatMessages(value);
 
         /// <summary>
         /// 

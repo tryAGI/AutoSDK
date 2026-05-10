@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static AttributeSchema FromAttributeTypeName(string? value) => new AttributeSchema(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator AttributeSchema(global::G.AttributeSchemaConfig value) => new AttributeSchema((global::G.AttributeSchemaConfig?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             Config = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static AttributeSchema FromConfig(global::G.AttributeSchemaConfig? value) => new AttributeSchema(value);
 
         /// <summary>
         /// 

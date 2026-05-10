@@ -120,6 +120,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ScoreV1 FromScoreV1Variant1(global::G.AllOf<global::G.ScoreV1Variant12, global::G.NumericScoreV1>? value) => new ScoreV1(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ScoreV1(global::G.AllOf<global::G.ScoreV1Variant22, global::G.CategoricalScoreV1> value) => new ScoreV1((global::G.AllOf<global::G.ScoreV1Variant22, global::G.CategoricalScoreV1>?)value);
 
         /// <summary>
@@ -138,6 +143,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ScoreV1 FromScoreV1Variant2(global::G.AllOf<global::G.ScoreV1Variant22, global::G.CategoricalScoreV1>? value) => new ScoreV1(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ScoreV1(global::G.AllOf<global::G.ScoreV1Variant32, global::G.BooleanScoreV1> value) => new ScoreV1((global::G.AllOf<global::G.ScoreV1Variant32, global::G.BooleanScoreV1>?)value);
 
         /// <summary>
@@ -152,6 +162,11 @@ namespace G
         {
             ScoreV1Variant3 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ScoreV1 FromScoreV1Variant3(global::G.AllOf<global::G.ScoreV1Variant32, global::G.BooleanScoreV1>? value) => new ScoreV1(value);
 
         /// <summary>
         /// 

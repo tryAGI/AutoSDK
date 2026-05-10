@@ -60,6 +60,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Expr FromRefNew(global::G.ExprRefNew? value) => new Expr(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public object? Object =>
             RefNew as object 
             ;

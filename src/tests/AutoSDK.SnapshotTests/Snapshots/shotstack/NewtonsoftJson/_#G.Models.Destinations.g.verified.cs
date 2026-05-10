@@ -301,6 +301,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Destinations FromShotstackDestination(global::G.ShotstackDestination? value) => new Destinations(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Destinations(global::G.MuxDestination value) => new Destinations((global::G.MuxDestination?)value);
 
         /// <summary>
@@ -315,6 +320,11 @@ namespace G
         {
             MuxDestination = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Destinations FromMuxDestination(global::G.MuxDestination? value) => new Destinations(value);
 
         /// <summary>
         /// 
@@ -337,6 +347,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Destinations FromS3Destination(global::G.S3Destination? value) => new Destinations(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Destinations(global::G.GoogleCloudStorageDestination value) => new Destinations((global::G.GoogleCloudStorageDestination?)value);
 
         /// <summary>
@@ -351,6 +366,11 @@ namespace G
         {
             GoogleCloudStorageDestination = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Destinations FromGoogleCloudStorageDestination(global::G.GoogleCloudStorageDestination? value) => new Destinations(value);
 
         /// <summary>
         /// 
@@ -373,6 +393,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Destinations FromGoogleDriveDestination(global::G.GoogleDriveDestination? value) => new Destinations(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Destinations(global::G.VimeoDestination value) => new Destinations((global::G.VimeoDestination?)value);
 
         /// <summary>
@@ -387,6 +412,11 @@ namespace G
         {
             VimeoDestination = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Destinations FromVimeoDestination(global::G.VimeoDestination? value) => new Destinations(value);
 
         /// <summary>
         /// 
@@ -409,6 +439,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Destinations FromTiktokDestination(global::G.TiktokDestination? value) => new Destinations(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Destinations(global::G.AkamaiNetStorageDestination value) => new Destinations((global::G.AkamaiNetStorageDestination?)value);
 
         /// <summary>
@@ -427,6 +462,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Destinations FromAkamaiNetStorageDestination(global::G.AkamaiNetStorageDestination? value) => new Destinations(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Destinations(global::G.AzureBlobStorageDestination value) => new Destinations((global::G.AzureBlobStorageDestination?)value);
 
         /// <summary>
@@ -441,6 +481,11 @@ namespace G
         {
             AzureBlobStorageDestination = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Destinations FromAzureBlobStorageDestination(global::G.AzureBlobStorageDestination? value) => new Destinations(value);
 
         /// <summary>
         /// 

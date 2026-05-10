@@ -156,6 +156,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Result FromSucceeded(global::G.BetaSucceededResult? value) => new Result(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Result(global::G.BetaErroredResult value) => new Result((global::G.BetaErroredResult?)value);
 
         /// <summary>
@@ -170,6 +175,11 @@ namespace G
         {
             Errored = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Result FromErrored(global::G.BetaErroredResult? value) => new Result(value);
 
         /// <summary>
         /// 
@@ -192,6 +202,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Result FromCanceled(global::G.BetaCanceledResult? value) => new Result(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Result(global::G.BetaExpiredResult value) => new Result((global::G.BetaExpiredResult?)value);
 
         /// <summary>
@@ -206,6 +221,11 @@ namespace G
         {
             Expired = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Result FromExpired(global::G.BetaExpiredResult? value) => new Result(value);
 
         /// <summary>
         /// 

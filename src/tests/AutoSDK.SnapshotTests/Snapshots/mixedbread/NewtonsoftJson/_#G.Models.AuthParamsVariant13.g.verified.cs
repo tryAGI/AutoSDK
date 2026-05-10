@@ -95,6 +95,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static AuthParamsVariant13 FromOauth2(global::G.OAuth2CreateOrUpdateParams? value) => new AuthParamsVariant13(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator AuthParamsVariant13(global::G.ApiKeyCreateOrUpdateParams value) => new AuthParamsVariant13((global::G.ApiKeyCreateOrUpdateParams?)value);
 
         /// <summary>
@@ -109,6 +114,11 @@ namespace G
         {
             ApiKey = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static AuthParamsVariant13 FromApiKey(global::G.ApiKeyCreateOrUpdateParams? value) => new AuthParamsVariant13(value);
 
         /// <summary>
         /// 

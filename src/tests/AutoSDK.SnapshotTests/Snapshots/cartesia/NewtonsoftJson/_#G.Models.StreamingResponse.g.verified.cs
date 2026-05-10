@@ -120,6 +120,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static StreamingResponse FromStreamingResponseVariant1(global::G.StreamingResponseVariant1? value) => new StreamingResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator StreamingResponse(global::G.StreamingResponseVariant2 value) => new StreamingResponse((global::G.StreamingResponseVariant2?)value);
 
         /// <summary>
@@ -138,6 +143,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static StreamingResponse FromStreamingResponseVariant2(global::G.StreamingResponseVariant2? value) => new StreamingResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator StreamingResponse(global::G.StreamingResponseVariant3 value) => new StreamingResponse((global::G.StreamingResponseVariant3?)value);
 
         /// <summary>
@@ -152,6 +162,11 @@ namespace G
         {
             StreamingResponseVariant3 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static StreamingResponse FromStreamingResponseVariant3(global::G.StreamingResponseVariant3? value) => new StreamingResponse(value);
 
         /// <summary>
         /// 

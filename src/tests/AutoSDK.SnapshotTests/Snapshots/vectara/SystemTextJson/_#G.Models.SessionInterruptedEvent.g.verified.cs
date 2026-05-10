@@ -91,6 +91,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static SessionInterruptedEvent FromAgentBase(global::G.AgentEventBase? value) => new SessionInterruptedEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator SessionInterruptedEvent(global::G.SessionInterruptedEventVariant2 value) => new SessionInterruptedEvent((global::G.SessionInterruptedEventVariant2?)value);
 
         /// <summary>
@@ -105,6 +110,11 @@ namespace G
         {
             SessionInterruptedEventVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static SessionInterruptedEvent FromSessionInterruptedEventVariant2(global::G.SessionInterruptedEventVariant2? value) => new SessionInterruptedEvent(value);
 
         /// <summary>
         /// 

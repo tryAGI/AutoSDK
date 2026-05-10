@@ -180,6 +180,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static UtteranceOrToolCall FromUtterance(global::G.Utterance? value) => new UtteranceOrToolCall(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator UtteranceOrToolCall(global::G.ToolCallInvocationUtterance value) => new UtteranceOrToolCall((global::G.ToolCallInvocationUtterance?)value);
 
         /// <summary>
@@ -194,6 +199,11 @@ namespace G
         {
             Invocation = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static UtteranceOrToolCall FromInvocation(global::G.ToolCallInvocationUtterance? value) => new UtteranceOrToolCall(value);
 
         /// <summary>
         /// 
@@ -216,6 +226,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static UtteranceOrToolCall FromResult(global::G.ToolCallResultUtterance? value) => new UtteranceOrToolCall(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator UtteranceOrToolCall(global::G.NodeTransitionUtterance value) => new UtteranceOrToolCall((global::G.NodeTransitionUtterance?)value);
 
         /// <summary>
@@ -234,6 +249,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static UtteranceOrToolCall FromNodeTransition(global::G.NodeTransitionUtterance? value) => new UtteranceOrToolCall(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator UtteranceOrToolCall(global::G.DTMFUtterance value) => new UtteranceOrToolCall((global::G.DTMFUtterance?)value);
 
         /// <summary>
@@ -248,6 +268,11 @@ namespace G
         {
             Dtmf = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static UtteranceOrToolCall FromDtmf(global::G.DTMFUtterance? value) => new UtteranceOrToolCall(value);
 
         /// <summary>
         /// 

@@ -185,6 +185,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static SearchReranker FromCustomerReranker(global::G.CustomerSpecificReranker? value) => new SearchReranker(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator SearchReranker(global::G.UserFunctionReranker value) => new SearchReranker((global::G.UserFunctionReranker?)value);
 
         /// <summary>
@@ -199,6 +204,11 @@ namespace G
         {
             Userfn = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static SearchReranker FromUserfn(global::G.UserFunctionReranker? value) => new SearchReranker(value);
 
         /// <summary>
         /// 
@@ -221,6 +231,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static SearchReranker FromMmr(global::G.MMRReranker? value) => new SearchReranker(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator SearchReranker(global::G.ChainReranker value) => new SearchReranker((global::G.ChainReranker?)value);
 
         /// <summary>
@@ -239,6 +254,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static SearchReranker FromChain(global::G.ChainReranker? value) => new SearchReranker(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator SearchReranker(global::G.NoneReranker value) => new SearchReranker((global::G.NoneReranker?)value);
 
         /// <summary>
@@ -253,6 +273,11 @@ namespace G
         {
             None = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static SearchReranker FromNone(global::G.NoneReranker? value) => new SearchReranker(value);
 
         /// <summary>
         /// 

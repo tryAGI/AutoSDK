@@ -95,6 +95,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static TemplatesCreateTemplateNoProjectRequest FromAgent(global::G.TemplatesCreateTemplateNoProjectRequestVariant1? value) => new TemplatesCreateTemplateNoProjectRequest(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator TemplatesCreateTemplateNoProjectRequest(global::G.TemplatesCreateTemplateNoProjectRequestVariant2 value) => new TemplatesCreateTemplateNoProjectRequest((global::G.TemplatesCreateTemplateNoProjectRequestVariant2?)value);
 
         /// <summary>
@@ -109,6 +114,11 @@ namespace G
         {
             AgentFile = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static TemplatesCreateTemplateNoProjectRequest FromAgentFile(global::G.TemplatesCreateTemplateNoProjectRequestVariant2? value) => new TemplatesCreateTemplateNoProjectRequest(value);
 
         /// <summary>
         /// 

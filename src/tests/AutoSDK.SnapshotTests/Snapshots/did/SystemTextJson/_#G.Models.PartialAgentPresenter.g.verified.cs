@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static PartialAgentPresenter FromPhotoAvatar(global::G.PartialAgentPresenterPhotoAvatar? value) => new PartialAgentPresenter(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator PartialAgentPresenter(global::G.PartialAgentPresenterVideoAvatar value) => new PartialAgentPresenter((global::G.PartialAgentPresenterVideoAvatar?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             VideoAvatar = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static PartialAgentPresenter FromVideoAvatar(global::G.PartialAgentPresenterVideoAvatar? value) => new PartialAgentPresenter(value);
 
         /// <summary>
         /// 

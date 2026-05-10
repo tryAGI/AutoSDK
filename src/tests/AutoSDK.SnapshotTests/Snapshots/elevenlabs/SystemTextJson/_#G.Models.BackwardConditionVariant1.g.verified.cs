@@ -155,6 +155,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static BackwardConditionVariant1 FromUnconditional(global::G.WorkflowUnconditionalModelInput? value) => new BackwardConditionVariant1(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BackwardConditionVariant1(global::G.WorkflowLLMConditionModelInput value) => new BackwardConditionVariant1((global::G.WorkflowLLMConditionModelInput?)value);
 
         /// <summary>
@@ -169,6 +174,11 @@ namespace G
         {
             Llm = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BackwardConditionVariant1 FromLlm(global::G.WorkflowLLMConditionModelInput? value) => new BackwardConditionVariant1(value);
 
         /// <summary>
         /// 
@@ -191,6 +201,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static BackwardConditionVariant1 FromResult(global::G.WorkflowResultConditionModelInput? value) => new BackwardConditionVariant1(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BackwardConditionVariant1(global::G.WorkflowExpressionConditionModelInput value) => new BackwardConditionVariant1((global::G.WorkflowExpressionConditionModelInput?)value);
 
         /// <summary>
@@ -205,6 +220,11 @@ namespace G
         {
             Expression = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BackwardConditionVariant1 FromExpression(global::G.WorkflowExpressionConditionModelInput? value) => new BackwardConditionVariant1(value);
 
         /// <summary>
         /// 

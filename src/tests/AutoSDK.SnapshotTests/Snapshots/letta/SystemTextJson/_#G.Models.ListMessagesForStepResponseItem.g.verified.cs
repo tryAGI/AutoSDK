@@ -423,6 +423,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ListMessagesForStepResponseItem FromSystemMessage(global::G.SystemMessage? value) => new ListMessagesForStepResponseItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ListMessagesForStepResponseItem(global::G.UserMessage value) => new ListMessagesForStepResponseItem((global::G.UserMessage?)value);
 
         /// <summary>
@@ -437,6 +442,11 @@ namespace G
         {
             UserMessage = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ListMessagesForStepResponseItem FromUserMessage(global::G.UserMessage? value) => new ListMessagesForStepResponseItem(value);
 
         /// <summary>
         /// 
@@ -459,6 +469,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ListMessagesForStepResponseItem FromReasoningMessage(global::G.ReasoningMessage? value) => new ListMessagesForStepResponseItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ListMessagesForStepResponseItem(global::G.HiddenReasoningMessage value) => new ListMessagesForStepResponseItem((global::G.HiddenReasoningMessage?)value);
 
         /// <summary>
@@ -473,6 +488,11 @@ namespace G
         {
             HiddenReasoningMessage = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ListMessagesForStepResponseItem FromHiddenReasoningMessage(global::G.HiddenReasoningMessage? value) => new ListMessagesForStepResponseItem(value);
 
         /// <summary>
         /// 
@@ -495,6 +515,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ListMessagesForStepResponseItem FromToolCallMessage(global::G.ToolCallMessage? value) => new ListMessagesForStepResponseItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ListMessagesForStepResponseItem(global::G.ToolReturnMessage value) => new ListMessagesForStepResponseItem((global::G.ToolReturnMessage?)value);
 
         /// <summary>
@@ -509,6 +534,11 @@ namespace G
         {
             ToolReturnMessage = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ListMessagesForStepResponseItem FromToolReturnMessage(global::G.ToolReturnMessage? value) => new ListMessagesForStepResponseItem(value);
 
         /// <summary>
         /// 
@@ -531,6 +561,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ListMessagesForStepResponseItem FromAssistantMessage(global::G.AssistantMessage? value) => new ListMessagesForStepResponseItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ListMessagesForStepResponseItem(global::G.ApprovalRequestMessage value) => new ListMessagesForStepResponseItem((global::G.ApprovalRequestMessage?)value);
 
         /// <summary>
@@ -545,6 +580,11 @@ namespace G
         {
             ApprovalRequestMessage = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ListMessagesForStepResponseItem FromApprovalRequestMessage(global::G.ApprovalRequestMessage? value) => new ListMessagesForStepResponseItem(value);
 
         /// <summary>
         /// 
@@ -567,6 +607,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ListMessagesForStepResponseItem FromApprovalResponseMessage(global::G.ApprovalResponseMessage? value) => new ListMessagesForStepResponseItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ListMessagesForStepResponseItem(global::G.SummaryMessage value) => new ListMessagesForStepResponseItem((global::G.SummaryMessage?)value);
 
         /// <summary>
@@ -585,6 +630,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ListMessagesForStepResponseItem FromSummaryMessage(global::G.SummaryMessage? value) => new ListMessagesForStepResponseItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ListMessagesForStepResponseItem(global::G.EventMessage value) => new ListMessagesForStepResponseItem((global::G.EventMessage?)value);
 
         /// <summary>
@@ -599,6 +649,11 @@ namespace G
         {
             EventMessage = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ListMessagesForStepResponseItem FromEventMessage(global::G.EventMessage? value) => new ListMessagesForStepResponseItem(value);
 
         /// <summary>
         /// 

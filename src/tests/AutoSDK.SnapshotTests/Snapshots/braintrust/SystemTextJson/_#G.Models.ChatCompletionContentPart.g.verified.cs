@@ -120,6 +120,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ChatCompletionContentPart FromText(global::G.ChatCompletionContentPartTextWithTitle? value) => new ChatCompletionContentPart(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChatCompletionContentPart(global::G.ChatCompletionContentPartImageWithTitle value) => new ChatCompletionContentPart((global::G.ChatCompletionContentPartImageWithTitle?)value);
 
         /// <summary>
@@ -138,6 +143,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ChatCompletionContentPart FromImageUrl(global::G.ChatCompletionContentPartImageWithTitle? value) => new ChatCompletionContentPart(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChatCompletionContentPart(global::G.ChatCompletionContentPartFileWithTitle value) => new ChatCompletionContentPart((global::G.ChatCompletionContentPartFileWithTitle?)value);
 
         /// <summary>
@@ -152,6 +162,11 @@ namespace G
         {
             File = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChatCompletionContentPart FromFile(global::G.ChatCompletionContentPartFileWithTitle? value) => new ChatCompletionContentPart(value);
 
         /// <summary>
         /// 

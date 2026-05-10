@@ -150,6 +150,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static McpServerToolAllowedTools FromMcpServerToolAllowedTools1(global::G.McpServerToolAllowedTools1? value) => new McpServerToolAllowedTools(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public McpServerToolAllowedTools(
             global::System.Collections.Generic.IList<string>? mcpServerToolAllowedToolsVariant1,
             global::G.McpServerToolAllowedTools1? mcpServerToolAllowedTools1,

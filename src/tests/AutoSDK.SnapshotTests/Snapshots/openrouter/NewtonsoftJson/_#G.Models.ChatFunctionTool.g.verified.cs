@@ -150,6 +150,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ChatFunctionTool FromChatFunctionTool0(global::G.ChatFunctionTool0? value) => new ChatFunctionTool(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChatFunctionTool(global::G.DatetimeServerTool value) => new ChatFunctionTool((global::G.DatetimeServerTool?)value);
 
         /// <summary>
@@ -164,6 +169,11 @@ namespace G
         {
             DatetimeServerTool = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChatFunctionTool FromDatetimeServerTool(global::G.DatetimeServerTool? value) => new ChatFunctionTool(value);
 
         /// <summary>
         /// 
@@ -186,6 +196,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ChatFunctionTool FromChatWebSearchServerTool(global::G.ChatWebSearchServerTool? value) => new ChatFunctionTool(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChatFunctionTool(global::G.ChatWebSearchShorthand value) => new ChatFunctionTool((global::G.ChatWebSearchShorthand?)value);
 
         /// <summary>
@@ -200,6 +215,11 @@ namespace G
         {
             ChatWebSearchShorthand = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChatFunctionTool FromChatWebSearchShorthand(global::G.ChatWebSearchShorthand? value) => new ChatFunctionTool(value);
 
         /// <summary>
         /// 

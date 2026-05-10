@@ -150,6 +150,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ReposGetContentResponse FromFile(global::G.ContentFile? value) => new ReposGetContentResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ReposGetContentResponse(global::G.ContentSymlink value) => new ReposGetContentResponse((global::G.ContentSymlink?)value);
 
         /// <summary>
@@ -168,6 +173,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ReposGetContentResponse FromSymlink(global::G.ContentSymlink? value) => new ReposGetContentResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ReposGetContentResponse(global::G.ContentSubmodule value) => new ReposGetContentResponse((global::G.ContentSubmodule?)value);
 
         /// <summary>
@@ -182,6 +192,11 @@ namespace G
         {
             Submodule = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ReposGetContentResponse FromSubmodule(global::G.ContentSubmodule? value) => new ReposGetContentResponse(value);
 
         /// <summary>
         /// 

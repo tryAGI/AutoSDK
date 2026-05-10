@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static RankByAttributeOrder FromRankByAttributeOrderVariant1(string? value) => new RankByAttributeOrder(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public RankByAttributeOrder(
             string? rankByAttributeOrderVariant1,
             string? rankByAttributeOrderVariant2

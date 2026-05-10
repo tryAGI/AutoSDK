@@ -125,6 +125,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ContentVariant2Item FromText(global::G.TextContentPart? value) => new ContentVariant2Item(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ContentVariant2Item(global::G.ToolCallContentPart value) => new ContentVariant2Item((global::G.ToolCallContentPart?)value);
 
         /// <summary>
@@ -143,6 +148,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ContentVariant2Item FromToolCall(global::G.ToolCallContentPart? value) => new ContentVariant2Item(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ContentVariant2Item(global::G.ToolResultContentPart value) => new ContentVariant2Item((global::G.ToolResultContentPart?)value);
 
         /// <summary>
@@ -157,6 +167,11 @@ namespace G
         {
             ToolResult = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ContentVariant2Item FromToolResult(global::G.ToolResultContentPart? value) => new ContentVariant2Item(value);
 
         /// <summary>
         /// 

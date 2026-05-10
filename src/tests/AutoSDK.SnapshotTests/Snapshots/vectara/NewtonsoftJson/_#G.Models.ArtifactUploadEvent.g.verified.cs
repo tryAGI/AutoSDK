@@ -93,6 +93,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ArtifactUploadEvent FromAgentBase(global::G.AgentEventBase? value) => new ArtifactUploadEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ArtifactUploadEvent(global::G.ArtifactUploadEventVariant2 value) => new ArtifactUploadEvent((global::G.ArtifactUploadEventVariant2?)value);
 
         /// <summary>
@@ -107,6 +112,11 @@ namespace G
         {
             ArtifactUploadEventVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ArtifactUploadEvent FromArtifactUploadEventVariant2(global::G.ArtifactUploadEventVariant2? value) => new ArtifactUploadEvent(value);
 
         /// <summary>
         /// 

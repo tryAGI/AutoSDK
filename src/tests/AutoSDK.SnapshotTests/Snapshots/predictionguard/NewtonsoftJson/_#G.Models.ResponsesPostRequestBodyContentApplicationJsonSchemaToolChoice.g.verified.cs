@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ResponsesPostRequestBodyContentApplicationJsonSchemaToolChoice FromResponsesPostRequestBodyContentApplicationJsonSchemaToolChoiceVariant1(string? value) => new ResponsesPostRequestBodyContentApplicationJsonSchemaToolChoice(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ResponsesPostRequestBodyContentApplicationJsonSchemaToolChoice(global::G.ResponsesPostRequestBodyContentApplicationJsonSchemaToolChoice1 value) => new ResponsesPostRequestBodyContentApplicationJsonSchemaToolChoice((global::G.ResponsesPostRequestBodyContentApplicationJsonSchemaToolChoice1?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             ResponsesPostRequestBodyContentApplicationJsonSchemaToolChoice1 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ResponsesPostRequestBodyContentApplicationJsonSchemaToolChoice FromResponsesPostRequestBodyContentApplicationJsonSchemaToolChoice1(global::G.ResponsesPostRequestBodyContentApplicationJsonSchemaToolChoice1? value) => new ResponsesPostRequestBodyContentApplicationJsonSchemaToolChoice(value);
 
         /// <summary>
         /// 

@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static TestCaseDefinition FromInput(global::G.TestCaseDefinitionInput? value) => new TestCaseDefinition(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator TestCaseDefinition(global::G.TestCaseDefinitionVariant2 value) => new TestCaseDefinition((global::G.TestCaseDefinitionVariant2?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             TestCaseDefinitionVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static TestCaseDefinition FromTestCaseDefinitionVariant2(global::G.TestCaseDefinitionVariant2? value) => new TestCaseDefinition(value);
 
         /// <summary>
         /// 

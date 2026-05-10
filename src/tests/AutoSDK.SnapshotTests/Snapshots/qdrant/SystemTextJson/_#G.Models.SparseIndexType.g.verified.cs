@@ -120,6 +120,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static SparseIndexType FromSparseIndexTypeVariant1(global::G.SparseIndexTypeVariant1? value) => new SparseIndexType(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator SparseIndexType(global::G.SparseIndexTypeVariant2 value) => new SparseIndexType((global::G.SparseIndexTypeVariant2?)value);
 
         /// <summary>
@@ -138,6 +143,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static SparseIndexType FromSparseIndexTypeVariant2(global::G.SparseIndexTypeVariant2? value) => new SparseIndexType(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator SparseIndexType(global::G.SparseIndexTypeVariant3 value) => new SparseIndexType((global::G.SparseIndexTypeVariant3?)value);
 
         /// <summary>
@@ -152,6 +162,11 @@ namespace G
         {
             SparseIndexTypeVariant3 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static SparseIndexType FromSparseIndexTypeVariant3(global::G.SparseIndexTypeVariant3? value) => new SparseIndexType(value);
 
         /// <summary>
         /// 

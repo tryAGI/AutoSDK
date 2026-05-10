@@ -95,6 +95,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static PostDialDigitsVariant13 FromStatic(global::G.PostDialDigitsStatic? value) => new PostDialDigitsVariant13(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator PostDialDigitsVariant13(global::G.PostDialDigitsDynamicVariable value) => new PostDialDigitsVariant13((global::G.PostDialDigitsDynamicVariable?)value);
 
         /// <summary>
@@ -109,6 +114,11 @@ namespace G
         {
             Dynamic = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static PostDialDigitsVariant13 FromDynamic(global::G.PostDialDigitsDynamicVariable? value) => new PostDialDigitsVariant13(value);
 
         /// <summary>
         /// 

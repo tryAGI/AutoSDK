@@ -220,6 +220,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static OutputItem FromMessage(global::G.OutputMessage? value) => new OutputItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator OutputItem(global::G.FileSearchToolCall value) => new OutputItem((global::G.FileSearchToolCall?)value);
 
         /// <summary>
@@ -234,6 +239,11 @@ namespace G
         {
             FileSearchCall = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static OutputItem FromFileSearchCall(global::G.FileSearchToolCall? value) => new OutputItem(value);
 
         /// <summary>
         /// 
@@ -256,6 +266,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static OutputItem FromFunctionCall(global::G.FunctionToolCall? value) => new OutputItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator OutputItem(global::G.WebSearchToolCall value) => new OutputItem((global::G.WebSearchToolCall?)value);
 
         /// <summary>
@@ -270,6 +285,11 @@ namespace G
         {
             WebSearchCall = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static OutputItem FromWebSearchCall(global::G.WebSearchToolCall? value) => new OutputItem(value);
 
         /// <summary>
         /// 
@@ -292,6 +312,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static OutputItem FromComputerCall(global::G.ComputerToolCall? value) => new OutputItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator OutputItem(global::G.ReasoningItem value) => new OutputItem((global::G.ReasoningItem?)value);
 
         /// <summary>
@@ -306,6 +331,11 @@ namespace G
         {
             Reasoning = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static OutputItem FromReasoning(global::G.ReasoningItem? value) => new OutputItem(value);
 
         /// <summary>
         /// 

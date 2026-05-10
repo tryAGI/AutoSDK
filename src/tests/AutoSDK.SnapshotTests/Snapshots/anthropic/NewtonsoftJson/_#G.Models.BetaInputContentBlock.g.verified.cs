@@ -245,6 +245,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static BetaInputContentBlock FromText(global::G.BetaRequestTextBlock? value) => new BetaInputContentBlock(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BetaInputContentBlock(global::G.BetaRequestImageBlock value) => new BetaInputContentBlock((global::G.BetaRequestImageBlock?)value);
 
         /// <summary>
@@ -259,6 +264,11 @@ namespace G
         {
             Image = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaInputContentBlock FromImage(global::G.BetaRequestImageBlock? value) => new BetaInputContentBlock(value);
 
         /// <summary>
         /// 
@@ -281,6 +291,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static BetaInputContentBlock FromToolUse(global::G.BetaRequestToolUseBlock? value) => new BetaInputContentBlock(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BetaInputContentBlock(global::G.BetaRequestToolResultBlock value) => new BetaInputContentBlock((global::G.BetaRequestToolResultBlock?)value);
 
         /// <summary>
@@ -295,6 +310,11 @@ namespace G
         {
             ToolResult = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaInputContentBlock FromToolResult(global::G.BetaRequestToolResultBlock? value) => new BetaInputContentBlock(value);
 
         /// <summary>
         /// 
@@ -317,6 +337,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static BetaInputContentBlock FromDocument(global::G.BetaRequestDocumentBlock? value) => new BetaInputContentBlock(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BetaInputContentBlock(global::G.BetaRequestThinkingBlock value) => new BetaInputContentBlock((global::G.BetaRequestThinkingBlock?)value);
 
         /// <summary>
@@ -335,6 +360,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static BetaInputContentBlock FromThinking(global::G.BetaRequestThinkingBlock? value) => new BetaInputContentBlock(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BetaInputContentBlock(global::G.BetaRequestRedactedThinkingBlock value) => new BetaInputContentBlock((global::G.BetaRequestRedactedThinkingBlock?)value);
 
         /// <summary>
@@ -349,6 +379,11 @@ namespace G
         {
             RedactedThinking = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaInputContentBlock FromRedactedThinking(global::G.BetaRequestRedactedThinkingBlock? value) => new BetaInputContentBlock(value);
 
         /// <summary>
         /// 

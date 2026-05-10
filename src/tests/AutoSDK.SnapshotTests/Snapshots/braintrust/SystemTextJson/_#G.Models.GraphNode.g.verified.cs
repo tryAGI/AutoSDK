@@ -270,6 +270,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static GraphNode FromGraphNodeVariant1(global::G.GraphNodeVariant1? value) => new GraphNode(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator GraphNode(global::G.GraphNodeVariant2 value) => new GraphNode((global::G.GraphNodeVariant2?)value);
 
         /// <summary>
@@ -284,6 +289,11 @@ namespace G
         {
             GraphNodeVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static GraphNode FromGraphNodeVariant2(global::G.GraphNodeVariant2? value) => new GraphNode(value);
 
         /// <summary>
         /// 
@@ -306,6 +316,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static GraphNode FromGraphNodeVariant3(global::G.GraphNodeVariant3? value) => new GraphNode(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator GraphNode(global::G.GraphNodeVariant4 value) => new GraphNode((global::G.GraphNodeVariant4?)value);
 
         /// <summary>
@@ -320,6 +335,11 @@ namespace G
         {
             GraphNodeVariant4 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static GraphNode FromGraphNodeVariant4(global::G.GraphNodeVariant4? value) => new GraphNode(value);
 
         /// <summary>
         /// 
@@ -342,6 +362,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static GraphNode FromGraphNodeVariant5(global::G.GraphNodeVariant5? value) => new GraphNode(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator GraphNode(global::G.GraphNodeVariant6 value) => new GraphNode((global::G.GraphNodeVariant6?)value);
 
         /// <summary>
@@ -356,6 +381,11 @@ namespace G
         {
             GraphNodeVariant6 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static GraphNode FromGraphNodeVariant6(global::G.GraphNodeVariant6? value) => new GraphNode(value);
 
         /// <summary>
         /// 
@@ -378,6 +408,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static GraphNode FromGraphNodeVariant7(global::G.GraphNodeVariant7? value) => new GraphNode(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator GraphNode(global::G.GraphNodeVariant8 value) => new GraphNode((global::G.GraphNodeVariant8?)value);
 
         /// <summary>
@@ -392,6 +427,11 @@ namespace G
         {
             GraphNodeVariant8 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static GraphNode FromGraphNodeVariant8(global::G.GraphNodeVariant8? value) => new GraphNode(value);
 
         /// <summary>
         /// 

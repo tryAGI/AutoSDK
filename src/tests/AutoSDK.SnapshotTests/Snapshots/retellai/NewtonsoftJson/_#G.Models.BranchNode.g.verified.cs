@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static BranchNode FromBase(global::G.NodeBase? value) => new BranchNode(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BranchNode(global::G.BranchNodeVariant2 value) => new BranchNode((global::G.BranchNodeVariant2?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             BranchNodeVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BranchNode FromBranchNodeVariant2(global::G.BranchNodeVariant2? value) => new BranchNode(value);
 
         /// <summary>
         /// 

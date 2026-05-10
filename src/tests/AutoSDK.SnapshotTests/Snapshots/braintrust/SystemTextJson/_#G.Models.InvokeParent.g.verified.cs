@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static InvokeParent FromSpanParentStruct(global::G.InvokeParentSpanParentStruct? value) => new InvokeParent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator InvokeParent(string value) => new InvokeParent((string?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             InvokeParentVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static InvokeParent FromInvokeParentVariant2(string? value) => new InvokeParent(value);
 
         /// <summary>
         /// 

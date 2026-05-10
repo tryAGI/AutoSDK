@@ -407,6 +407,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Params2 FromEndCall(global::G.EndCallToolConfig? value) => new Params2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Params2(global::G.LanguageDetectionToolConfig value) => new Params2((global::G.LanguageDetectionToolConfig?)value);
 
         /// <summary>
@@ -421,6 +426,11 @@ namespace G
         {
             LanguageDetection = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Params2 FromLanguageDetection(global::G.LanguageDetectionToolConfig? value) => new Params2(value);
 
         /// <summary>
         /// 
@@ -443,6 +453,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Params2 FromTransferToAgent(global::G.TransferToAgentToolConfig? value) => new Params2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Params2(global::G.TransferToNumberToolConfigInput value) => new Params2((global::G.TransferToNumberToolConfigInput?)value);
 
         /// <summary>
@@ -457,6 +472,11 @@ namespace G
         {
             TransferToNumber = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Params2 FromTransferToNumber(global::G.TransferToNumberToolConfigInput? value) => new Params2(value);
 
         /// <summary>
         /// 
@@ -479,6 +499,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Params2 FromSkipTurn(global::G.SkipTurnToolConfig? value) => new Params2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Params2(global::G.PlayDTMFToolConfig value) => new Params2((global::G.PlayDTMFToolConfig?)value);
 
         /// <summary>
@@ -493,6 +518,11 @@ namespace G
         {
             PlayKeypadTouchTone = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Params2 FromPlayKeypadTouchTone(global::G.PlayDTMFToolConfig? value) => new Params2(value);
 
         /// <summary>
         /// 
@@ -515,6 +545,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Params2 FromVoicemailDetection(global::G.VoicemailDetectionToolConfig? value) => new Params2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Params2(global::G.MemoryEntrySearchToolConfig value) => new Params2((global::G.MemoryEntrySearchToolConfig?)value);
 
         /// <summary>
@@ -529,6 +564,11 @@ namespace G
         {
             MemoryEntrySearch = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Params2 FromMemoryEntrySearch(global::G.MemoryEntrySearchToolConfig? value) => new Params2(value);
 
         /// <summary>
         /// 
@@ -551,6 +591,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Params2 FromMemoryEntryCreate(global::G.MemoryEntryCreateToolConfig? value) => new Params2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Params2(global::G.MemoryEntryUpdateToolConfig value) => new Params2((global::G.MemoryEntryUpdateToolConfig?)value);
 
         /// <summary>
@@ -565,6 +610,11 @@ namespace G
         {
             MemoryEntryUpdate = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Params2 FromMemoryEntryUpdate(global::G.MemoryEntryUpdateToolConfig? value) => new Params2(value);
 
         /// <summary>
         /// 
@@ -587,6 +637,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Params2 FromMemoryEntryDelete(global::G.MemoryEntryDeleteToolConfig? value) => new Params2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Params2(global::G.AgentPromptChangeToolConfig value) => new Params2((global::G.AgentPromptChangeToolConfig?)value);
 
         /// <summary>
@@ -601,6 +656,11 @@ namespace G
         {
             AgentPromptChange = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Params2 FromAgentPromptChange(global::G.AgentPromptChangeToolConfig? value) => new Params2(value);
 
         /// <summary>
         /// 

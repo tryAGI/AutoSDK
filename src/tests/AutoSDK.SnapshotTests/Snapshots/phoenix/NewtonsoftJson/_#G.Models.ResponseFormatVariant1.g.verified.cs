@@ -65,6 +65,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ResponseFormatVariant1 FromJsonSchema(global::G.PromptResponseFormatJSONSchema? value) => new ResponseFormatVariant1(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public ResponseFormatVariant1(
             global::G.PromptVersionResponseFormatVariant1DiscriminatorType? type,
             global::G.PromptResponseFormatJSONSchema? jsonSchema

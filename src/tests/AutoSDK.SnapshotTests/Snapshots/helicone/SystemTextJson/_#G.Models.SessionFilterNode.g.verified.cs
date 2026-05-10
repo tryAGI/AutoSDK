@@ -120,6 +120,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static SessionFilterNode FromPickLeafRequestResponseRmtOrSessions(global::G.PickFilterLeafRequestResponseRmtOrSessionsRequestResponseRmt? value) => new SessionFilterNode(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator SessionFilterNode(global::G.SessionFilterBranch value) => new SessionFilterNode((global::G.SessionFilterBranch?)value);
 
         /// <summary>
@@ -138,6 +143,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static SessionFilterNode FromBranch(global::G.SessionFilterBranch? value) => new SessionFilterNode(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator SessionFilterNode(global::G.SessionFilterNodeEnum value) => new SessionFilterNode((global::G.SessionFilterNodeEnum?)value);
 
         /// <summary>
@@ -152,6 +162,11 @@ namespace G
         {
             Enum = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static SessionFilterNode FromEnum(global::G.SessionFilterNodeEnum? value) => new SessionFilterNode(value);
 
         /// <summary>
         /// 

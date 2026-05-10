@@ -150,6 +150,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ProjectScoreCategories FromWeighted(global::System.Collections.Generic.Dictionary<string, double>? value) => new ProjectScoreCategories(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public ProjectScoreCategories(
             global::System.Collections.Generic.IList<global::G.ProjectScoreCategory>? categorical,
             global::System.Collections.Generic.Dictionary<string, double>? weighted,

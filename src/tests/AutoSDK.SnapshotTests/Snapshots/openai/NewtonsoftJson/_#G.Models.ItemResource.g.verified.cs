@@ -513,6 +513,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ItemResource FromInputMessage(global::G.InputMessageResource? value) => new ItemResource(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ItemResource(global::G.OutputMessage value) => new ItemResource((global::G.OutputMessage?)value);
 
         /// <summary>
@@ -527,6 +532,11 @@ namespace G
         {
             Message = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ItemResource FromMessage(global::G.OutputMessage? value) => new ItemResource(value);
 
         /// <summary>
         /// 
@@ -549,6 +559,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ItemResource FromFileSearchCall(global::G.FileSearchToolCall? value) => new ItemResource(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ItemResource(global::G.ComputerToolCall value) => new ItemResource((global::G.ComputerToolCall?)value);
 
         /// <summary>
@@ -563,6 +578,11 @@ namespace G
         {
             ComputerCall = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ItemResource FromComputerCall(global::G.ComputerToolCall? value) => new ItemResource(value);
 
         /// <summary>
         /// 
@@ -585,6 +605,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ItemResource FromComputerToolCallOutput(global::G.ComputerToolCallOutputResource? value) => new ItemResource(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ItemResource(global::G.WebSearchToolCall value) => new ItemResource((global::G.WebSearchToolCall?)value);
 
         /// <summary>
@@ -599,6 +624,11 @@ namespace G
         {
             WebSearchCall = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ItemResource FromWebSearchCall(global::G.WebSearchToolCall? value) => new ItemResource(value);
 
         /// <summary>
         /// 
@@ -621,6 +651,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ItemResource FromFunctionToolCall(global::G.FunctionToolCallResource? value) => new ItemResource(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ItemResource(global::G.FunctionToolCallOutputResource value) => new ItemResource((global::G.FunctionToolCallOutputResource?)value);
 
         /// <summary>
@@ -635,6 +670,11 @@ namespace G
         {
             FunctionToolCallOutput = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ItemResource FromFunctionToolCallOutput(global::G.FunctionToolCallOutputResource? value) => new ItemResource(value);
 
         /// <summary>
         /// 
@@ -657,6 +697,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ItemResource FromImageGenerationCall(global::G.ImageGenToolCall? value) => new ItemResource(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ItemResource(global::G.CodeInterpreterToolCall value) => new ItemResource((global::G.CodeInterpreterToolCall?)value);
 
         /// <summary>
@@ -671,6 +716,11 @@ namespace G
         {
             CodeInterpreterCall = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ItemResource FromCodeInterpreterCall(global::G.CodeInterpreterToolCall? value) => new ItemResource(value);
 
         /// <summary>
         /// 
@@ -693,6 +743,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ItemResource FromLocalShellCall(global::G.LocalShellToolCall? value) => new ItemResource(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ItemResource(global::G.LocalShellToolCallOutput value) => new ItemResource((global::G.LocalShellToolCallOutput?)value);
 
         /// <summary>
@@ -707,6 +762,11 @@ namespace G
         {
             LocalShellCallOutput = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ItemResource FromLocalShellCallOutput(global::G.LocalShellToolCallOutput? value) => new ItemResource(value);
 
         /// <summary>
         /// 
@@ -729,6 +789,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ItemResource FromMcpListTools(global::G.MCPListTools? value) => new ItemResource(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ItemResource(global::G.MCPApprovalRequest value) => new ItemResource((global::G.MCPApprovalRequest?)value);
 
         /// <summary>
@@ -743,6 +808,11 @@ namespace G
         {
             McpApprovalRequest = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ItemResource FromMcpApprovalRequest(global::G.MCPApprovalRequest? value) => new ItemResource(value);
 
         /// <summary>
         /// 
@@ -765,6 +835,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ItemResource FromMcpApprovalResponse(global::G.MCPApprovalResponseResource? value) => new ItemResource(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ItemResource(global::G.MCPToolCall value) => new ItemResource((global::G.MCPToolCall?)value);
 
         /// <summary>
@@ -779,6 +854,11 @@ namespace G
         {
             McpCall = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ItemResource FromMcpCall(global::G.MCPToolCall? value) => new ItemResource(value);
 
         /// <summary>
         /// 

@@ -65,6 +65,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static CreateSpeechToSpeechRequest FromElevenMultilingualStsV2(global::G.CreateSpeechToSpeechRequestElevenMultilingualStsV2? value) => new CreateSpeechToSpeechRequest(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public CreateSpeechToSpeechRequest(
             global::G.CreateSpeechToSpeechRequestDiscriminatorModel? model,
             global::G.CreateSpeechToSpeechRequestElevenMultilingualStsV2? elevenMultilingualStsV2

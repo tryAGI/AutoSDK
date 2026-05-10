@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ChatToolCallStartEvent FromStreamType(global::G.ChatStreamEventType? value) => new ChatToolCallStartEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChatToolCallStartEvent(global::G.ChatToolCallStartEventLv559x value) => new ChatToolCallStartEvent((global::G.ChatToolCallStartEventLv559x?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             Lv559x = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChatToolCallStartEvent FromLv559x(global::G.ChatToolCallStartEventLv559x? value) => new ChatToolCallStartEvent(value);
 
         /// <summary>
         /// 

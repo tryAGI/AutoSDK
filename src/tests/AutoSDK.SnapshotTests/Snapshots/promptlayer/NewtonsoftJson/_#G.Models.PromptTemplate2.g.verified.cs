@@ -95,6 +95,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static PromptTemplate2 FromCompletion(global::G.CompletionPrompt? value) => new PromptTemplate2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator PromptTemplate2(global::G.ChatPrompt value) => new PromptTemplate2((global::G.ChatPrompt?)value);
 
         /// <summary>
@@ -109,6 +114,11 @@ namespace G
         {
             Chat = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static PromptTemplate2 FromChat(global::G.ChatPrompt? value) => new PromptTemplate2(value);
 
         /// <summary>
         /// 

@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static AgentSwapNode FromBase(global::G.NodeBase? value) => new AgentSwapNode(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator AgentSwapNode(global::G.AgentSwapNodeVariant2 value) => new AgentSwapNode((global::G.AgentSwapNodeVariant2?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             AgentSwapNodeVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static AgentSwapNode FromAgentSwapNodeVariant2(global::G.AgentSwapNodeVariant2? value) => new AgentSwapNode(value);
 
         /// <summary>
         /// 

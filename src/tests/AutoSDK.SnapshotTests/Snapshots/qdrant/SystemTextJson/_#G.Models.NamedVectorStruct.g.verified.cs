@@ -123,6 +123,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static NamedVectorStruct FromNamedVector(global::G.NamedVector? value) => new NamedVectorStruct(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator NamedVectorStruct(global::G.NamedSparseVector value) => new NamedVectorStruct((global::G.NamedSparseVector?)value);
 
         /// <summary>
@@ -137,6 +142,11 @@ namespace G
         {
             Sparse = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static NamedVectorStruct FromSparse(global::G.NamedSparseVector? value) => new NamedVectorStruct(value);
 
         /// <summary>
         /// 

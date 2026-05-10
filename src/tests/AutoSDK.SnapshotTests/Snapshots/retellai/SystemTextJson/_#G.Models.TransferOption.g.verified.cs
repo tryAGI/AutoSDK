@@ -120,6 +120,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static TransferOption FromColdTransfer(global::G.TransferOptionColdTransfer? value) => new TransferOption(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator TransferOption(global::G.TransferOptionWarmTransfer value) => new TransferOption((global::G.TransferOptionWarmTransfer?)value);
 
         /// <summary>
@@ -138,6 +143,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static TransferOption FromWarmTransfer(global::G.TransferOptionWarmTransfer? value) => new TransferOption(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator TransferOption(global::G.TransferOptionAgenticWarmTransfer value) => new TransferOption((global::G.TransferOptionAgenticWarmTransfer?)value);
 
         /// <summary>
@@ -152,6 +162,11 @@ namespace G
         {
             AgenticWarmTransfer = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static TransferOption FromAgenticWarmTransfer(global::G.TransferOptionAgenticWarmTransfer? value) => new TransferOption(value);
 
         /// <summary>
         /// 

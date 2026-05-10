@@ -125,6 +125,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static StepsItem2 FromEdge(global::G.WorkflowToolEdgeStepModel? value) => new StepsItem2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator StepsItem2(global::G.WorkflowToolNestedToolsStepModelOutput value) => new StepsItem2((global::G.WorkflowToolNestedToolsStepModelOutput?)value);
 
         /// <summary>
@@ -143,6 +148,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static StepsItem2 FromNestedTools(global::G.WorkflowToolNestedToolsStepModelOutput? value) => new StepsItem2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator StepsItem2(global::G.WorkflowToolMaxIterationsExceededStepModel value) => new StepsItem2((global::G.WorkflowToolMaxIterationsExceededStepModel?)value);
 
         /// <summary>
@@ -157,6 +167,11 @@ namespace G
         {
             MaxIterationsExceeded = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static StepsItem2 FromMaxIterationsExceeded(global::G.WorkflowToolMaxIterationsExceededStepModel? value) => new StepsItem2(value);
 
         /// <summary>
         /// 

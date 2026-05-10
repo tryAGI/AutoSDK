@@ -240,6 +240,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ChatCompletionMessageParam FromSystem(global::G.ChatCompletionMessageParamSystem? value) => new ChatCompletionMessageParam(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChatCompletionMessageParam(global::G.ChatCompletionMessageParamUser value) => new ChatCompletionMessageParam((global::G.ChatCompletionMessageParamUser?)value);
 
         /// <summary>
@@ -254,6 +259,11 @@ namespace G
         {
             User = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChatCompletionMessageParam FromUser(global::G.ChatCompletionMessageParamUser? value) => new ChatCompletionMessageParam(value);
 
         /// <summary>
         /// 
@@ -276,6 +286,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ChatCompletionMessageParam FromAssistant(global::G.ChatCompletionMessageParamAssistant? value) => new ChatCompletionMessageParam(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChatCompletionMessageParam(global::G.ChatCompletionMessageParamTool value) => new ChatCompletionMessageParam((global::G.ChatCompletionMessageParamTool?)value);
 
         /// <summary>
@@ -290,6 +305,11 @@ namespace G
         {
             Tool = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChatCompletionMessageParam FromTool(global::G.ChatCompletionMessageParamTool? value) => new ChatCompletionMessageParam(value);
 
         /// <summary>
         /// 
@@ -312,6 +332,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ChatCompletionMessageParam FromFunction(global::G.ChatCompletionMessageParamFunction? value) => new ChatCompletionMessageParam(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChatCompletionMessageParam(global::G.ChatCompletionMessageParamDeveloper value) => new ChatCompletionMessageParam((global::G.ChatCompletionMessageParamDeveloper?)value);
 
         /// <summary>
@@ -330,6 +355,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ChatCompletionMessageParam FromDeveloper(global::G.ChatCompletionMessageParamDeveloper? value) => new ChatCompletionMessageParam(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChatCompletionMessageParam(global::G.ChatCompletionMessageParamFallback value) => new ChatCompletionMessageParam((global::G.ChatCompletionMessageParamFallback?)value);
 
         /// <summary>
@@ -344,6 +374,11 @@ namespace G
         {
             Fallback = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChatCompletionMessageParam FromFallback(global::G.ChatCompletionMessageParamFallback? value) => new ChatCompletionMessageParam(value);
 
         /// <summary>
         /// 

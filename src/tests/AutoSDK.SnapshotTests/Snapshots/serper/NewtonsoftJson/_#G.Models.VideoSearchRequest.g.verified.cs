@@ -60,6 +60,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static VideoSearchRequest FromBase(global::G.BaseSearchRequest? value) => new VideoSearchRequest(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public object? Object =>
             Base as object 
             ;

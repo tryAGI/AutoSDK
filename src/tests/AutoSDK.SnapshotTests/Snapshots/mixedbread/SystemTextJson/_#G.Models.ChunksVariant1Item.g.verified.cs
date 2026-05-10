@@ -155,6 +155,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ChunksVariant1Item FromText(global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredTextInputChunk? value) => new ChunksVariant1Item(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChunksVariant1Item(global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredImageUrlInputChunk value) => new ChunksVariant1Item((global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredImageUrlInputChunk?)value);
 
         /// <summary>
@@ -169,6 +174,11 @@ namespace G
         {
             ImageUrl = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChunksVariant1Item FromImageUrl(global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredImageUrlInputChunk? value) => new ChunksVariant1Item(value);
 
         /// <summary>
         /// 
@@ -191,6 +201,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ChunksVariant1Item FromAudioUrl(global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredAudioUrlInputChunk? value) => new ChunksVariant1Item(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChunksVariant1Item(global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredVideoUrlInputChunk value) => new ChunksVariant1Item((global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredVideoUrlInputChunk?)value);
 
         /// <summary>
@@ -205,6 +220,11 @@ namespace G
         {
             VideoUrl = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChunksVariant1Item FromVideoUrl(global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredVideoUrlInputChunk? value) => new ChunksVariant1Item(value);
 
         /// <summary>
         /// 

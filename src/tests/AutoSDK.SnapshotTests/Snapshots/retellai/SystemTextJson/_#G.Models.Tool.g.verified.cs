@@ -420,6 +420,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Tool FromEndCall(global::G.EndCallTool? value) => new Tool(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Tool(global::G.TransferCallTool value) => new Tool((global::G.TransferCallTool?)value);
 
         /// <summary>
@@ -434,6 +439,11 @@ namespace G
         {
             TransferCall = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Tool FromTransferCall(global::G.TransferCallTool? value) => new Tool(value);
 
         /// <summary>
         /// 
@@ -456,6 +466,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Tool FromCheckAvailabilityCal(global::G.CheckAvailabilityCalTool? value) => new Tool(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Tool(global::G.BookAppointmentCalTool value) => new Tool((global::G.BookAppointmentCalTool?)value);
 
         /// <summary>
@@ -470,6 +485,11 @@ namespace G
         {
             BookAppointmentCal = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Tool FromBookAppointmentCal(global::G.BookAppointmentCalTool? value) => new Tool(value);
 
         /// <summary>
         /// 
@@ -492,6 +512,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Tool FromAgentSwap(global::G.AgentSwapTool? value) => new Tool(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Tool(global::G.PressDigitTool value) => new Tool((global::G.PressDigitTool?)value);
 
         /// <summary>
@@ -506,6 +531,11 @@ namespace G
         {
             PressDigit = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Tool FromPressDigit(global::G.PressDigitTool? value) => new Tool(value);
 
         /// <summary>
         /// 
@@ -528,6 +558,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Tool FromSendSM(global::G.SendSMSTool? value) => new Tool(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Tool(global::G.CustomTool value) => new Tool((global::G.CustomTool?)value);
 
         /// <summary>
@@ -542,6 +577,11 @@ namespace G
         {
             Custom = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Tool FromCustom(global::G.CustomTool? value) => new Tool(value);
 
         /// <summary>
         /// 
@@ -564,6 +604,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Tool FromCode(global::G.CodeTool? value) => new Tool(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Tool(global::G.ExtractDynamicVariableTool value) => new Tool((global::G.ExtractDynamicVariableTool?)value);
 
         /// <summary>
@@ -578,6 +623,11 @@ namespace G
         {
             ExtractDynamicVariable = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Tool FromExtractDynamicVariable(global::G.ExtractDynamicVariableTool? value) => new Tool(value);
 
         /// <summary>
         /// 
@@ -600,6 +650,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Tool FromBridgeTransfer(global::G.BridgeTransferTool? value) => new Tool(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Tool(global::G.CancelTransferTool value) => new Tool((global::G.CancelTransferTool?)value);
 
         /// <summary>
@@ -618,6 +673,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Tool FromCancelTransfer(global::G.CancelTransferTool? value) => new Tool(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Tool(global::G.MCPTool value) => new Tool((global::G.MCPTool?)value);
 
         /// <summary>
@@ -632,6 +692,11 @@ namespace G
         {
             Mcp = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Tool FromMcp(global::G.MCPTool? value) => new Tool(value);
 
         /// <summary>
         /// 

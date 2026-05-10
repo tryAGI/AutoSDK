@@ -215,6 +215,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Nodes2 FromStart(global::G.WorkflowStartNodeModelOutput? value) => new Nodes2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Nodes2(global::G.WorkflowEndNodeModelOutput value) => new Nodes2((global::G.WorkflowEndNodeModelOutput?)value);
 
         /// <summary>
@@ -229,6 +234,11 @@ namespace G
         {
             End = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Nodes2 FromEnd(global::G.WorkflowEndNodeModelOutput? value) => new Nodes2(value);
 
         /// <summary>
         /// 
@@ -251,6 +261,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Nodes2 FromPhoneNumber(global::G.WorkflowPhoneNumberNodeModelOutput? value) => new Nodes2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Nodes2(global::G.WorkflowOverrideAgentNodeModelOutput value) => new Nodes2((global::G.WorkflowOverrideAgentNodeModelOutput?)value);
 
         /// <summary>
@@ -265,6 +280,11 @@ namespace G
         {
             OverrideAgent = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Nodes2 FromOverrideAgent(global::G.WorkflowOverrideAgentNodeModelOutput? value) => new Nodes2(value);
 
         /// <summary>
         /// 
@@ -287,6 +307,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Nodes2 FromStandaloneAgent(global::G.WorkflowStandaloneAgentNodeModelOutput? value) => new Nodes2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Nodes2(global::G.WorkflowToolNodeModelOutput value) => new Nodes2((global::G.WorkflowToolNodeModelOutput?)value);
 
         /// <summary>
@@ -301,6 +326,11 @@ namespace G
         {
             Tool = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Nodes2 FromTool(global::G.WorkflowToolNodeModelOutput? value) => new Nodes2(value);
 
         /// <summary>
         /// 

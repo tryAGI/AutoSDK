@@ -125,6 +125,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Source FromUrl(global::G.UrlImage? value) => new Source(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Source(global::G.Base64Image value) => new Source((global::G.Base64Image?)value);
 
         /// <summary>
@@ -143,6 +148,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Source FromBase64(global::G.Base64Image? value) => new Source(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Source(global::G.LettaImage value) => new Source((global::G.LettaImage?)value);
 
         /// <summary>
@@ -157,6 +167,11 @@ namespace G
         {
             Letta = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Source FromLetta(global::G.LettaImage? value) => new Source(value);
 
         /// <summary>
         /// 

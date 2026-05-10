@@ -62,6 +62,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static LemurActionItemsResponse FromString(global::G.LemurStringResponse? value) => new LemurActionItemsResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public object? Object =>
             String as object 
             ;

@@ -155,6 +155,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static InsightControllerFindOneResponse FromBar(global::G.BarInsight? value) => new InsightControllerFindOneResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator InsightControllerFindOneResponse(global::G.PieInsight value) => new InsightControllerFindOneResponse((global::G.PieInsight?)value);
 
         /// <summary>
@@ -169,6 +174,11 @@ namespace G
         {
             Pie = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static InsightControllerFindOneResponse FromPie(global::G.PieInsight? value) => new InsightControllerFindOneResponse(value);
 
         /// <summary>
         /// 
@@ -191,6 +201,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static InsightControllerFindOneResponse FromLine(global::G.LineInsight? value) => new InsightControllerFindOneResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator InsightControllerFindOneResponse(global::G.TextInsight value) => new InsightControllerFindOneResponse((global::G.TextInsight?)value);
 
         /// <summary>
@@ -205,6 +220,11 @@ namespace G
         {
             Text = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static InsightControllerFindOneResponse FromText(global::G.TextInsight? value) => new InsightControllerFindOneResponse(value);
 
         /// <summary>
         /// 

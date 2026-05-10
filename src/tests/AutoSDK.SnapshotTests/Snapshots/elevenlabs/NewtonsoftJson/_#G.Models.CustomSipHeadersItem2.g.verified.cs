@@ -97,6 +97,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static CustomSipHeadersItem2 FromDynamic1(global::G.CustomSIPHeader? value) => new CustomSipHeadersItem2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator CustomSipHeadersItem2(global::G.CustomSIPHeaderWithDynamicVariable value) => new CustomSipHeadersItem2((global::G.CustomSIPHeaderWithDynamicVariable?)value);
 
         /// <summary>
@@ -111,6 +116,11 @@ namespace G
         {
             Dynamic2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static CustomSipHeadersItem2 FromDynamic2(global::G.CustomSIPHeaderWithDynamicVariable? value) => new CustomSipHeadersItem2(value);
 
         /// <summary>
         /// 

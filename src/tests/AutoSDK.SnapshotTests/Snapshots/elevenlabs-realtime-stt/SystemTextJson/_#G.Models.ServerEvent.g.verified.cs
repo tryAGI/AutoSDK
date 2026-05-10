@@ -155,6 +155,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ServerEvent FromSessionStarted(global::G.SessionStartedPayload? value) => new ServerEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ServerEvent(global::G.PartialTranscriptPayload value) => new ServerEvent((global::G.PartialTranscriptPayload?)value);
 
         /// <summary>
@@ -169,6 +174,11 @@ namespace G
         {
             PartialTranscript = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ServerEvent FromPartialTranscript(global::G.PartialTranscriptPayload? value) => new ServerEvent(value);
 
         /// <summary>
         /// 
@@ -191,6 +201,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ServerEvent FromCommittedTranscript(global::G.CommittedTranscriptPayload? value) => new ServerEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ServerEvent(global::G.ErrorPayload value) => new ServerEvent((global::G.ErrorPayload?)value);
 
         /// <summary>
@@ -205,6 +220,11 @@ namespace G
         {
             Error = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ServerEvent FromError(global::G.ErrorPayload? value) => new ServerEvent(value);
 
         /// <summary>
         /// 

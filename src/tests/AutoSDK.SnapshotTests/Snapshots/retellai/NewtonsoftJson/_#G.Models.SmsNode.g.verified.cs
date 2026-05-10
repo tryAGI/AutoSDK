@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static SmsNode FromBase(global::G.NodeBase? value) => new SmsNode(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator SmsNode(global::G.SmsNodeVariant2 value) => new SmsNode((global::G.SmsNodeVariant2?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             SmsNodeVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static SmsNode FromSmsNodeVariant2(global::G.SmsNodeVariant2? value) => new SmsNode(value);
 
         /// <summary>
         /// 

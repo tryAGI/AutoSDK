@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static MCPNode FromBase(global::G.NodeBase? value) => new MCPNode(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator MCPNode(global::G.MCPNodeVariant2 value) => new MCPNode((global::G.MCPNodeVariant2?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             MCPNodeVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static MCPNode FromMCPNodeVariant2(global::G.MCPNodeVariant2? value) => new MCPNode(value);
 
         /// <summary>
         /// 

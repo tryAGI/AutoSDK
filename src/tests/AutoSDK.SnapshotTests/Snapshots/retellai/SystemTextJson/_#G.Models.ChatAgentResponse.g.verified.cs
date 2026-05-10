@@ -120,6 +120,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ChatAgentResponse FromChatAgentResponseVariant1(global::G.ChatAgentResponseVariant1? value) => new ChatAgentResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChatAgentResponse(global::G.ChatAgentRequest value) => new ChatAgentResponse((global::G.ChatAgentRequest?)value);
 
         /// <summary>
@@ -138,6 +143,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ChatAgentResponse FromRequest(global::G.ChatAgentRequest? value) => new ChatAgentResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChatAgentResponse(global::G.ChatAgentResponseVariant3 value) => new ChatAgentResponse((global::G.ChatAgentResponseVariant3?)value);
 
         /// <summary>
@@ -152,6 +162,11 @@ namespace G
         {
             ChatAgentResponseVariant3 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChatAgentResponse FromChatAgentResponseVariant3(global::G.ChatAgentResponseVariant3? value) => new ChatAgentResponse(value);
 
         /// <summary>
         /// 

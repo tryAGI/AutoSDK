@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static FileSearchServerToolFiltersOneOf0ValueOneOf3Items FromFileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant1(string? value) => new FileSearchServerToolFiltersOneOf0ValueOneOf3Items(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator FileSearchServerToolFiltersOneOf0ValueOneOf3Items(double value) => new FileSearchServerToolFiltersOneOf0ValueOneOf3Items((double?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             FileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static FileSearchServerToolFiltersOneOf0ValueOneOf3Items FromFileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant2(double? value) => new FileSearchServerToolFiltersOneOf0ValueOneOf3Items(value);
 
         /// <summary>
         /// 

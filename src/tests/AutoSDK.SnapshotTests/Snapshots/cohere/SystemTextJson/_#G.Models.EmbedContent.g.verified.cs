@@ -95,6 +95,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static EmbedContent FromImageUrl(global::G.EmbedImage? value) => new EmbedContent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator EmbedContent(global::G.EmbedText value) => new EmbedContent((global::G.EmbedText?)value);
 
         /// <summary>
@@ -109,6 +114,11 @@ namespace G
         {
             Text = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static EmbedContent FromText(global::G.EmbedText? value) => new EmbedContent(value);
 
         /// <summary>
         /// 

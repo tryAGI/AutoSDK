@@ -65,6 +65,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static CreateCharacterPerformanceRequest FromActTwo(global::G.CreateCharacterPerformanceRequestActTwo? value) => new CreateCharacterPerformanceRequest(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public CreateCharacterPerformanceRequest(
             global::G.CreateCharacterPerformanceRequestDiscriminatorModel? model,
             global::G.CreateCharacterPerformanceRequestActTwo? actTwo

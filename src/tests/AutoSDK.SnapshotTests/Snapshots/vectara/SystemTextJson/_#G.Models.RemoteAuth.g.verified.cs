@@ -95,6 +95,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static RemoteAuth FromBearer(global::G.BearerAuth? value) => new RemoteAuth(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator RemoteAuth(global::G.HeaderAuth value) => new RemoteAuth((global::G.HeaderAuth?)value);
 
         /// <summary>
@@ -109,6 +114,11 @@ namespace G
         {
             Header = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static RemoteAuth FromHeader(global::G.HeaderAuth? value) => new RemoteAuth(value);
 
         /// <summary>
         /// 

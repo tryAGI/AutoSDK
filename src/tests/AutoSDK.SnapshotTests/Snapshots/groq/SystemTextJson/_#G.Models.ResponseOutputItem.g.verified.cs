@@ -125,6 +125,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ResponseOutputItem FromMessage(global::G.ResponseOutputMessage? value) => new ResponseOutputItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ResponseOutputItem(global::G.ResponseOutputFunctionCall value) => new ResponseOutputItem((global::G.ResponseOutputFunctionCall?)value);
 
         /// <summary>
@@ -143,6 +148,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ResponseOutputItem FromFunctionCall(global::G.ResponseOutputFunctionCall? value) => new ResponseOutputItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ResponseOutputItem(global::G.ResponseOutputReasoning value) => new ResponseOutputItem((global::G.ResponseOutputReasoning?)value);
 
         /// <summary>
@@ -157,6 +167,11 @@ namespace G
         {
             Reasoning = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ResponseOutputItem FromReasoning(global::G.ResponseOutputReasoning? value) => new ResponseOutputItem(value);
 
         /// <summary>
         /// 

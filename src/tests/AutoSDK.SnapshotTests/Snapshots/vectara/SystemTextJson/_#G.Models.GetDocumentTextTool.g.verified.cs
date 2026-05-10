@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static GetDocumentTextTool FromBase(global::G.ToolBase? value) => new GetDocumentTextTool(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator GetDocumentTextTool(global::G.GetDocumentTextToolVariant2 value) => new GetDocumentTextTool((global::G.GetDocumentTextToolVariant2?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             GetDocumentTextToolVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static GetDocumentTextTool FromGetDocumentTextToolVariant2(global::G.GetDocumentTextToolVariant2? value) => new GetDocumentTextTool(value);
 
         /// <summary>
         /// 

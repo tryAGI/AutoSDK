@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static SageMakerConfiguration FromBedrock(global::G.BedrockConfiguration? value) => new SageMakerConfiguration(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator SageMakerConfiguration(global::G.SageMakerConfigurationVariant2 value) => new SageMakerConfiguration((global::G.SageMakerConfigurationVariant2?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             SageMakerConfigurationVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static SageMakerConfiguration FromSageMakerConfigurationVariant2(global::G.SageMakerConfigurationVariant2? value) => new SageMakerConfiguration(value);
 
         /// <summary>
         /// 

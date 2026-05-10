@@ -120,6 +120,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static CreateSecretRequestDto FromBasicAuthentication(global::G.CreateSecretRequestDtoBasicAuthentication? value) => new CreateSecretRequestDto(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator CreateSecretRequestDto(global::G.CreateSecretRequestDtoBearerToken value) => new CreateSecretRequestDto((global::G.CreateSecretRequestDtoBearerToken?)value);
 
         /// <summary>
@@ -138,6 +143,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static CreateSecretRequestDto FromBearerToken(global::G.CreateSecretRequestDtoBearerToken? value) => new CreateSecretRequestDto(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator CreateSecretRequestDto(global::G.CreateSecretRequestDtoApiKey value) => new CreateSecretRequestDto((global::G.CreateSecretRequestDtoApiKey?)value);
 
         /// <summary>
@@ -152,6 +162,11 @@ namespace G
         {
             ApiKey = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static CreateSecretRequestDto FromApiKey(global::G.CreateSecretRequestDtoApiKey? value) => new CreateSecretRequestDto(value);
 
         /// <summary>
         /// 

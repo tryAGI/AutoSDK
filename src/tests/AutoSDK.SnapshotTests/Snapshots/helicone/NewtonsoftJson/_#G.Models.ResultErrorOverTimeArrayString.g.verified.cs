@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ResultErrorOverTimeArrayString FromSuccess(global::G.ResultSuccessErrorOverTimeArray? value) => new ResultErrorOverTimeArrayString(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ResultErrorOverTimeArrayString(global::G.ResultErrorString value) => new ResultErrorOverTimeArrayString((global::G.ResultErrorString?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             ResultErrorString = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ResultErrorOverTimeArrayString FromResultErrorString(global::G.ResultErrorString? value) => new ResultErrorOverTimeArrayString(value);
 
         /// <summary>
         /// 

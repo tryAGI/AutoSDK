@@ -95,6 +95,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static AgentV1ServerEvent FromAgentStarted(global::G.AgentStarted? value) => new AgentV1ServerEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator AgentV1ServerEvent(global::G.AgentThinking value) => new AgentV1ServerEvent((global::G.AgentThinking?)value);
 
         /// <summary>
@@ -109,6 +114,11 @@ namespace G
         {
             AgentThinking = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static AgentV1ServerEvent FromAgentThinking(global::G.AgentThinking? value) => new AgentV1ServerEvent(value);
 
         /// <summary>
         /// 

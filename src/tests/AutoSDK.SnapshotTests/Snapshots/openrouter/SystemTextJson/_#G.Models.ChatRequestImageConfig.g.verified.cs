@@ -120,6 +120,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ChatRequestImageConfig FromChatRequestImageConfigVariant1(string? value) => new ChatRequestImageConfig(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChatRequestImageConfig(double value) => new ChatRequestImageConfig((double?)value);
 
         /// <summary>
@@ -134,6 +139,11 @@ namespace G
         {
             ChatRequestImageConfigVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChatRequestImageConfig FromChatRequestImageConfigVariant2(double? value) => new ChatRequestImageConfig(value);
 
         /// <summary>
         /// 

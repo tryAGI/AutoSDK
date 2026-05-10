@@ -120,6 +120,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static TrackerStatus FromEnum(global::G.TrackerStatusEnum? value) => new TrackerStatus(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator TrackerStatus(global::G.TrackerStatusEnum2 value) => new TrackerStatus((global::G.TrackerStatusEnum2?)value);
 
         /// <summary>
@@ -138,6 +143,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static TrackerStatus FromEnum2(global::G.TrackerStatusEnum2? value) => new TrackerStatus(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator TrackerStatus(global::G.TrackerStatusEnum3 value) => new TrackerStatus((global::G.TrackerStatusEnum3?)value);
 
         /// <summary>
@@ -152,6 +162,11 @@ namespace G
         {
             Enum3 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static TrackerStatus FromEnum3(global::G.TrackerStatusEnum3? value) => new TrackerStatus(value);
 
         /// <summary>
         /// 

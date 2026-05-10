@@ -60,6 +60,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ImageSearchRequest FromBase(global::G.BaseSearchRequest? value) => new ImageSearchRequest(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public object? Object =>
             Base as object 
             ;

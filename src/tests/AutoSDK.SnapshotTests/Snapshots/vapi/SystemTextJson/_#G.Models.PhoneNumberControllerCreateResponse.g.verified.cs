@@ -185,6 +185,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static PhoneNumberControllerCreateResponse FromByoPhoneNumber(global::G.ByoPhoneNumber? value) => new PhoneNumberControllerCreateResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator PhoneNumberControllerCreateResponse(global::G.TwilioPhoneNumber value) => new PhoneNumberControllerCreateResponse((global::G.TwilioPhoneNumber?)value);
 
         /// <summary>
@@ -199,6 +204,11 @@ namespace G
         {
             Twilio = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static PhoneNumberControllerCreateResponse FromTwilio(global::G.TwilioPhoneNumber? value) => new PhoneNumberControllerCreateResponse(value);
 
         /// <summary>
         /// 
@@ -221,6 +231,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static PhoneNumberControllerCreateResponse FromVonage(global::G.VonagePhoneNumber? value) => new PhoneNumberControllerCreateResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator PhoneNumberControllerCreateResponse(global::G.VapiPhoneNumber value) => new PhoneNumberControllerCreateResponse((global::G.VapiPhoneNumber?)value);
 
         /// <summary>
@@ -239,6 +254,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static PhoneNumberControllerCreateResponse FromVapi(global::G.VapiPhoneNumber? value) => new PhoneNumberControllerCreateResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator PhoneNumberControllerCreateResponse(global::G.TelnyxPhoneNumber value) => new PhoneNumberControllerCreateResponse((global::G.TelnyxPhoneNumber?)value);
 
         /// <summary>
@@ -253,6 +273,11 @@ namespace G
         {
             Telnyx = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static PhoneNumberControllerCreateResponse FromTelnyx(global::G.TelnyxPhoneNumber? value) => new PhoneNumberControllerCreateResponse(value);
 
         /// <summary>
         /// 

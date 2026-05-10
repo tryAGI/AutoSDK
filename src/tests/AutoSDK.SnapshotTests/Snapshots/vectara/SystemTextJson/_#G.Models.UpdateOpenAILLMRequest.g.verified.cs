@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static UpdateOpenAILLMRequest FromBase(global::G.OpenAILLMUpdateBase? value) => new UpdateOpenAILLMRequest(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator UpdateOpenAILLMRequest(global::G.UpdateOpenAILLMRequestVariant2 value) => new UpdateOpenAILLMRequest((global::G.UpdateOpenAILLMRequestVariant2?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             UpdateOpenAILLMRequestVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static UpdateOpenAILLMRequest FromUpdateOpenAILLMRequestVariant2(global::G.UpdateOpenAILLMRequestVariant2? value) => new UpdateOpenAILLMRequest(value);
 
         /// <summary>
         /// 

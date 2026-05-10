@@ -155,6 +155,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ContentBlock2 FromText(global::G.ResponseTextBlock? value) => new ContentBlock2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ContentBlock2(global::G.ResponseToolUseBlock value) => new ContentBlock2((global::G.ResponseToolUseBlock?)value);
 
         /// <summary>
@@ -169,6 +174,11 @@ namespace G
         {
             ToolUse = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ContentBlock2 FromToolUse(global::G.ResponseToolUseBlock? value) => new ContentBlock2(value);
 
         /// <summary>
         /// 
@@ -191,6 +201,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ContentBlock2 FromThinking(global::G.ResponseThinkingBlock? value) => new ContentBlock2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ContentBlock2(global::G.ResponseRedactedThinkingBlock value) => new ContentBlock2((global::G.ResponseRedactedThinkingBlock?)value);
 
         /// <summary>
@@ -205,6 +220,11 @@ namespace G
         {
             RedactedThinking = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ContentBlock2 FromRedactedThinking(global::G.ResponseRedactedThinkingBlock? value) => new ContentBlock2(value);
 
         /// <summary>
         /// 

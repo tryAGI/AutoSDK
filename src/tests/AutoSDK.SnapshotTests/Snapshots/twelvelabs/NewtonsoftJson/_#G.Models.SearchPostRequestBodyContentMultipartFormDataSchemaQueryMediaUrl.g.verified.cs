@@ -95,6 +95,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static SearchPostRequestBodyContentMultipartFormDataSchemaQueryMediaUrl FromSearchPostRequestBodyContentMultipartFormDataSchemaQueryMediaUrlVariant1(string? value) => new SearchPostRequestBodyContentMultipartFormDataSchemaQueryMediaUrl(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public SearchPostRequestBodyContentMultipartFormDataSchemaQueryMediaUrl(
             string? searchPostRequestBodyContentMultipartFormDataSchemaQueryMediaUrlVariant1,
             global::System.Collections.Generic.IList<string>? searchPostRequestBodyContentMultipartFormDataSchemaQueryMediaUrlVariant2

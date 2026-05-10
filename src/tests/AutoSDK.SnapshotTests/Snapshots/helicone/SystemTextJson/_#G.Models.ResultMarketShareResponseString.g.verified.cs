@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ResultMarketShareResponseString FromSuccess(global::G.ResultSuccessMarketShareResponse? value) => new ResultMarketShareResponseString(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ResultMarketShareResponseString(global::G.ResultErrorString value) => new ResultMarketShareResponseString((global::G.ResultErrorString?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             Error = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ResultMarketShareResponseString FromError(global::G.ResultErrorString? value) => new ResultMarketShareResponseString(value);
 
         /// <summary>
         /// 

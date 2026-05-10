@@ -425,6 +425,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Left3 FromStringLiteral(global::G.ASTStringNodeInput? value) => new Left3(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Left3(global::G.ASTNumberNodeInput value) => new Left3((global::G.ASTNumberNodeInput?)value);
 
         /// <summary>
@@ -439,6 +444,11 @@ namespace G
         {
             NumberLiteral = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Left3 FromNumberLiteral(global::G.ASTNumberNodeInput? value) => new Left3(value);
 
         /// <summary>
         /// 
@@ -461,6 +471,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Left3 FromBooleanLiteral(global::G.ASTBooleanNodeInput? value) => new Left3(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Left3(global::G.ASTLLMNodeInput value) => new Left3((global::G.ASTLLMNodeInput?)value);
 
         /// <summary>
@@ -475,6 +490,11 @@ namespace G
         {
             Llm = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Left3 FromLlm(global::G.ASTLLMNodeInput? value) => new Left3(value);
 
         /// <summary>
         /// 
@@ -497,6 +517,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Left3 FromDynamicVariable(global::G.ASTDynamicVariableNodeInput? value) => new Left3(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Left3(global::G.ASTOrOperatorNodeInput value) => new Left3((global::G.ASTOrOperatorNodeInput?)value);
 
         /// <summary>
@@ -511,6 +536,11 @@ namespace G
         {
             OrOperator = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Left3 FromOrOperator(global::G.ASTOrOperatorNodeInput? value) => new Left3(value);
 
         /// <summary>
         /// 
@@ -533,6 +563,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Left3 FromAndOperator(global::G.ASTAndOperatorNodeInput? value) => new Left3(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Left3(global::G.ASTEqualsOperatorNodeInput value) => new Left3((global::G.ASTEqualsOperatorNodeInput?)value);
 
         /// <summary>
@@ -547,6 +582,11 @@ namespace G
         {
             EqOperator = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Left3 FromEqOperator(global::G.ASTEqualsOperatorNodeInput? value) => new Left3(value);
 
         /// <summary>
         /// 
@@ -569,6 +609,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Left3 FromNeqOperator(global::G.ASTNotEqualsOperatorNodeInput? value) => new Left3(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Left3(global::G.ASTGreaterThanOperatorNodeInput value) => new Left3((global::G.ASTGreaterThanOperatorNodeInput?)value);
 
         /// <summary>
@@ -583,6 +628,11 @@ namespace G
         {
             GtOperator = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Left3 FromGtOperator(global::G.ASTGreaterThanOperatorNodeInput? value) => new Left3(value);
 
         /// <summary>
         /// 
@@ -605,6 +655,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Left3 FromLtOperator(global::G.ASTLessThanOperatorNodeInput? value) => new Left3(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Left3(global::G.ASTGreaterThanOrEqualsOperatorNodeInput value) => new Left3((global::G.ASTGreaterThanOrEqualsOperatorNodeInput?)value);
 
         /// <summary>
@@ -623,6 +678,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Left3 FromGteOperator(global::G.ASTGreaterThanOrEqualsOperatorNodeInput? value) => new Left3(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Left3(global::G.ASTLessThanOrEqualsOperatorNodeInput value) => new Left3((global::G.ASTLessThanOrEqualsOperatorNodeInput?)value);
 
         /// <summary>
@@ -637,6 +697,11 @@ namespace G
         {
             LteOperator = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Left3 FromLteOperator(global::G.ASTLessThanOrEqualsOperatorNodeInput? value) => new Left3(value);
 
         /// <summary>
         /// 

@@ -185,6 +185,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static PhoneNumberControllerRemoveResponse FromByoPhoneNumber(global::G.ByoPhoneNumber? value) => new PhoneNumberControllerRemoveResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator PhoneNumberControllerRemoveResponse(global::G.TwilioPhoneNumber value) => new PhoneNumberControllerRemoveResponse((global::G.TwilioPhoneNumber?)value);
 
         /// <summary>
@@ -199,6 +204,11 @@ namespace G
         {
             Twilio = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static PhoneNumberControllerRemoveResponse FromTwilio(global::G.TwilioPhoneNumber? value) => new PhoneNumberControllerRemoveResponse(value);
 
         /// <summary>
         /// 
@@ -221,6 +231,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static PhoneNumberControllerRemoveResponse FromVonage(global::G.VonagePhoneNumber? value) => new PhoneNumberControllerRemoveResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator PhoneNumberControllerRemoveResponse(global::G.VapiPhoneNumber value) => new PhoneNumberControllerRemoveResponse((global::G.VapiPhoneNumber?)value);
 
         /// <summary>
@@ -239,6 +254,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static PhoneNumberControllerRemoveResponse FromVapi(global::G.VapiPhoneNumber? value) => new PhoneNumberControllerRemoveResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator PhoneNumberControllerRemoveResponse(global::G.TelnyxPhoneNumber value) => new PhoneNumberControllerRemoveResponse((global::G.TelnyxPhoneNumber?)value);
 
         /// <summary>
@@ -253,6 +273,11 @@ namespace G
         {
             Telnyx = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static PhoneNumberControllerRemoveResponse FromTelnyx(global::G.TelnyxPhoneNumber? value) => new PhoneNumberControllerRemoveResponse(value);
 
         /// <summary>
         /// 

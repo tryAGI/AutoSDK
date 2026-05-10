@@ -60,6 +60,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ThreadStreamEvent FromThreadStreamEventVariant1(global::G.ThreadStreamEventVariant1? value) => new ThreadStreamEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public object? Object =>
             ThreadStreamEventVariant1 as object 
             ;

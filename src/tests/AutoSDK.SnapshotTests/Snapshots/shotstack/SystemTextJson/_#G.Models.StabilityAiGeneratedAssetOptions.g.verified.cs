@@ -68,6 +68,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static StabilityAiGeneratedAssetOptions FromTextToImage(global::G.StabilityAiTextToImageOptions? value) => new StabilityAiGeneratedAssetOptions(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public StabilityAiGeneratedAssetOptions(
             global::G.StabilityAiGeneratedAssetOptionsDiscriminatorType? type,
             global::G.StabilityAiTextToImageOptions? textToImage

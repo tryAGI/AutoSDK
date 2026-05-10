@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ResultStringOrNullString FromSuccess(global::G.ResultSuccessStringOrNull? value) => new ResultStringOrNullString(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ResultStringOrNullString(global::G.ResultErrorString value) => new ResultStringOrNullString((global::G.ResultErrorString?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             Error = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ResultStringOrNullString FromError(global::G.ResultErrorString? value) => new ResultStringOrNullString(value);
 
         /// <summary>
         /// 

@@ -100,6 +100,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ResponseFormatV2 FromText(global::G.TextResponseFormatV2? value) => new ResponseFormatV2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ResponseFormatV2(global::G.JsonResponseFormatV2 value) => new ResponseFormatV2((global::G.JsonResponseFormatV2?)value);
 
         /// <summary>
@@ -114,6 +119,11 @@ namespace G
         {
             JsonObject = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ResponseFormatV2 FromJsonObject(global::G.JsonResponseFormatV2? value) => new ResponseFormatV2(value);
 
         /// <summary>
         /// 

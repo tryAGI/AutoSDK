@@ -125,6 +125,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static GenerateStreamedResponse FromTextGeneration(global::G.GenerateStreamText? value) => new GenerateStreamedResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator GenerateStreamedResponse(global::G.GenerateStreamEnd value) => new GenerateStreamedResponse((global::G.GenerateStreamEnd?)value);
 
         /// <summary>
@@ -143,6 +148,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static GenerateStreamedResponse FromStreamEnd(global::G.GenerateStreamEnd? value) => new GenerateStreamedResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator GenerateStreamedResponse(global::G.GenerateStreamError value) => new GenerateStreamedResponse((global::G.GenerateStreamError?)value);
 
         /// <summary>
@@ -157,6 +167,11 @@ namespace G
         {
             StreamError = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static GenerateStreamedResponse FromStreamError(global::G.GenerateStreamError? value) => new GenerateStreamedResponse(value);
 
         /// <summary>
         /// 

@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static CreatePromptRequest FromCreateChatPromptRequest(global::G.CreateChatPromptRequest? value) => new CreatePromptRequest(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator CreatePromptRequest(global::G.CreateTextPromptRequest value) => new CreatePromptRequest((global::G.CreateTextPromptRequest?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             CreateTextPromptRequest = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static CreatePromptRequest FromCreateTextPromptRequest(global::G.CreateTextPromptRequest? value) => new CreatePromptRequest(value);
 
         /// <summary>
         /// 

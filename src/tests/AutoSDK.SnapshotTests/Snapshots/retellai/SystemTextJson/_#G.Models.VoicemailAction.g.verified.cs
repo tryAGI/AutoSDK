@@ -150,6 +150,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static VoicemailAction FromPrompt(global::G.VoicemailActionPrompt? value) => new VoicemailAction(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator VoicemailAction(global::G.VoicemailActionStaticText value) => new VoicemailAction((global::G.VoicemailActionStaticText?)value);
 
         /// <summary>
@@ -164,6 +169,11 @@ namespace G
         {
             StaticText = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static VoicemailAction FromStaticText(global::G.VoicemailActionStaticText? value) => new VoicemailAction(value);
 
         /// <summary>
         /// 
@@ -186,6 +196,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static VoicemailAction FromHangup(global::G.VoicemailActionHangup? value) => new VoicemailAction(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator VoicemailAction(global::G.VoicemailActionBridgeTransfer value) => new VoicemailAction((global::G.VoicemailActionBridgeTransfer?)value);
 
         /// <summary>
@@ -200,6 +215,11 @@ namespace G
         {
             BridgeTransfer = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static VoicemailAction FromBridgeTransfer(global::G.VoicemailActionBridgeTransfer? value) => new VoicemailAction(value);
 
         /// <summary>
         /// 

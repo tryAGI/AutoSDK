@@ -120,6 +120,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static AgentPresenter FromPhotoAvatar(global::G.AgentPresenterPhotoAvatar? value) => new AgentPresenter(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator AgentPresenter(global::G.AgentPresenterVideoAvatar value) => new AgentPresenter((global::G.AgentPresenterVideoAvatar?)value);
 
         /// <summary>
@@ -138,6 +143,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static AgentPresenter FromVideoAvatar(global::G.AgentPresenterVideoAvatar? value) => new AgentPresenter(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator AgentPresenter(global::G.AgentPresenterExpressiveAvatar value) => new AgentPresenter((global::G.AgentPresenterExpressiveAvatar?)value);
 
         /// <summary>
@@ -152,6 +162,11 @@ namespace G
         {
             ExpressiveAvatar = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static AgentPresenter FromExpressiveAvatar(global::G.AgentPresenterExpressiveAvatar? value) => new AgentPresenter(value);
 
         /// <summary>
         /// 

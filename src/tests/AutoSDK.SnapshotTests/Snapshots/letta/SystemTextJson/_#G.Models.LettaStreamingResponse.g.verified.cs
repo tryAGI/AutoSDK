@@ -495,6 +495,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static LettaStreamingResponse FromSystemMessage(global::G.SystemMessage? value) => new LettaStreamingResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator LettaStreamingResponse(global::G.UserMessage value) => new LettaStreamingResponse((global::G.UserMessage?)value);
 
         /// <summary>
@@ -509,6 +514,11 @@ namespace G
         {
             UserMessage = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static LettaStreamingResponse FromUserMessage(global::G.UserMessage? value) => new LettaStreamingResponse(value);
 
         /// <summary>
         /// 
@@ -531,6 +541,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static LettaStreamingResponse FromHiddenReasoningMessage1(global::G.ReasoningMessage? value) => new LettaStreamingResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator LettaStreamingResponse(global::G.HiddenReasoningMessage value) => new LettaStreamingResponse((global::G.HiddenReasoningMessage?)value);
 
         /// <summary>
@@ -545,6 +560,11 @@ namespace G
         {
             HiddenReasoningMessage2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static LettaStreamingResponse FromHiddenReasoningMessage2(global::G.HiddenReasoningMessage? value) => new LettaStreamingResponse(value);
 
         /// <summary>
         /// 
@@ -567,6 +587,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static LettaStreamingResponse FromToolCallMessage(global::G.ToolCallMessage? value) => new LettaStreamingResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator LettaStreamingResponse(global::G.ToolReturnMessage value) => new LettaStreamingResponse((global::G.ToolReturnMessage?)value);
 
         /// <summary>
@@ -581,6 +606,11 @@ namespace G
         {
             ToolReturnMessage = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static LettaStreamingResponse FromToolReturnMessage(global::G.ToolReturnMessage? value) => new LettaStreamingResponse(value);
 
         /// <summary>
         /// 
@@ -603,6 +633,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static LettaStreamingResponse FromAssistantMessage(global::G.AssistantMessage? value) => new LettaStreamingResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator LettaStreamingResponse(global::G.ApprovalRequestMessage value) => new LettaStreamingResponse((global::G.ApprovalRequestMessage?)value);
 
         /// <summary>
@@ -617,6 +652,11 @@ namespace G
         {
             ApprovalRequestMessage = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static LettaStreamingResponse FromApprovalRequestMessage(global::G.ApprovalRequestMessage? value) => new LettaStreamingResponse(value);
 
         /// <summary>
         /// 
@@ -639,6 +679,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static LettaStreamingResponse FromApprovalResponseMessage(global::G.ApprovalResponseMessage? value) => new LettaStreamingResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator LettaStreamingResponse(global::G.LettaPing value) => new LettaStreamingResponse((global::G.LettaPing?)value);
 
         /// <summary>
@@ -653,6 +698,11 @@ namespace G
         {
             Ping = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static LettaStreamingResponse FromPing(global::G.LettaPing? value) => new LettaStreamingResponse(value);
 
         /// <summary>
         /// 
@@ -675,6 +725,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static LettaStreamingResponse FromErrorMessage(global::G.LettaErrorMessage? value) => new LettaStreamingResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator LettaStreamingResponse(global::G.LettaStopReason value) => new LettaStreamingResponse((global::G.LettaStopReason?)value);
 
         /// <summary>
@@ -693,6 +748,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static LettaStreamingResponse FromStopReason(global::G.LettaStopReason? value) => new LettaStreamingResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator LettaStreamingResponse(global::G.LettaUsageStatistics value) => new LettaStreamingResponse((global::G.LettaUsageStatistics?)value);
 
         /// <summary>
@@ -707,6 +767,11 @@ namespace G
         {
             UsageStatistics = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static LettaStreamingResponse FromUsageStatistics(global::G.LettaUsageStatistics? value) => new LettaStreamingResponse(value);
 
         /// <summary>
         /// 

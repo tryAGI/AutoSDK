@@ -120,6 +120,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static BaseInputsOneOf1ItemsOneOf0Phase FromBaseInputsOneOf1ItemsOneOf0Phase0(global::G.BaseInputsOneOf1ItemsOneOf0Phase0? value) => new BaseInputsOneOf1ItemsOneOf0Phase(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BaseInputsOneOf1ItemsOneOf0Phase(global::G.BaseInputsOneOf1ItemsOneOf0Phase1 value) => new BaseInputsOneOf1ItemsOneOf0Phase((global::G.BaseInputsOneOf1ItemsOneOf0Phase1?)value);
 
         /// <summary>
@@ -134,6 +139,11 @@ namespace G
         {
             BaseInputsOneOf1ItemsOneOf0Phase1 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BaseInputsOneOf1ItemsOneOf0Phase FromBaseInputsOneOf1ItemsOneOf0Phase1(global::G.BaseInputsOneOf1ItemsOneOf0Phase1? value) => new BaseInputsOneOf1ItemsOneOf0Phase(value);
 
         /// <summary>
         /// 

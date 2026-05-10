@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static SmsSuccessEdge FromNode(global::G.NodeEdge? value) => new SmsSuccessEdge(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator SmsSuccessEdge(global::G.SmsSuccessEdgeVariant2 value) => new SmsSuccessEdge((global::G.SmsSuccessEdgeVariant2?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             SmsSuccessEdgeVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static SmsSuccessEdge FromSmsSuccessEdgeVariant2(global::G.SmsSuccessEdgeVariant2? value) => new SmsSuccessEdge(value);
 
         /// <summary>
         /// 

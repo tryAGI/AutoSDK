@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static FunctionCallOutputItemOutput FromFunctionCallOutputItemOutputVariant1(string? value) => new FunctionCallOutputItemOutput(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public FunctionCallOutputItemOutput(
             string? functionCallOutputItemOutputVariant1,
             global::System.Collections.Generic.IList<global::G.FunctionCallOutputItemOutputOneOf1Items>? functionCallOutputItemOutput1

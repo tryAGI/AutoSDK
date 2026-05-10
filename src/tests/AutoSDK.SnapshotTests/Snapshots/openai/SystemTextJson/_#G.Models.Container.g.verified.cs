@@ -92,6 +92,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Container FromContainerVariant1(string? value) => new Container(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Container(global::G.CodeInterpreterToolAuto value) => new Container((global::G.CodeInterpreterToolAuto?)value);
 
         /// <summary>
@@ -106,6 +111,11 @@ namespace G
         {
             Auto = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Container FromAuto(global::G.CodeInterpreterToolAuto? value) => new Container(value);
 
         /// <summary>
         /// 

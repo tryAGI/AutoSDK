@@ -155,6 +155,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Data5 FromLocal(global::G.LocalUser? value) => new Data5(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Data5(global::G.OAuth2User value) => new Data5((global::G.OAuth2User?)value);
 
         /// <summary>
@@ -169,6 +174,11 @@ namespace G
         {
             Oauth2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Data5 FromOauth2(global::G.OAuth2User? value) => new Data5(value);
 
         /// <summary>
         /// 
@@ -191,6 +201,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Data5 FromLdap(global::G.LDAPUser? value) => new Data5(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Data5(global::G.AnonymousUser value) => new Data5((global::G.AnonymousUser?)value);
 
         /// <summary>
@@ -205,6 +220,11 @@ namespace G
         {
             Anonymous = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Data5 FromAnonymous(global::G.AnonymousUser? value) => new Data5(value);
 
         /// <summary>
         /// 

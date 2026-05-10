@@ -95,6 +95,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static AuthParamsVariant1 FromOauth2(global::G.DataSourceOAuth2Params? value) => new AuthParamsVariant1(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator AuthParamsVariant1(global::G.DataSourceApiKeyParams value) => new AuthParamsVariant1((global::G.DataSourceApiKeyParams?)value);
 
         /// <summary>
@@ -109,6 +114,11 @@ namespace G
         {
             ApiKey = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static AuthParamsVariant1 FromApiKey(global::G.DataSourceApiKeyParams? value) => new AuthParamsVariant1(value);
 
         /// <summary>
         /// 

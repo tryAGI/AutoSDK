@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static StopwordsInterface FromLanguage(global::G.Language? value) => new StopwordsInterface(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator StopwordsInterface(global::G.StopwordsSet value) => new StopwordsInterface((global::G.StopwordsSet?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             Set = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static StopwordsInterface FromSet(global::G.StopwordsSet? value) => new StopwordsInterface(value);
 
         /// <summary>
         /// 

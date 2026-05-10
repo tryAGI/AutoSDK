@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ClusterStatus FromClusterStatusVariant1(global::G.ClusterStatusVariant1? value) => new ClusterStatus(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ClusterStatus(global::G.ClusterStatusVariant2 value) => new ClusterStatus((global::G.ClusterStatusVariant2?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             ClusterStatusVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ClusterStatus FromClusterStatusVariant2(global::G.ClusterStatusVariant2? value) => new ClusterStatus(value);
 
         /// <summary>
         /// 

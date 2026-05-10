@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static FullTextSearch FromFullTextSearchVariant1(bool? value) => new FullTextSearch(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator FullTextSearch(global::G.FullTextSearchConfig value) => new FullTextSearch((global::G.FullTextSearchConfig?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             Config = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static FullTextSearch FromConfig(global::G.FullTextSearchConfig? value) => new FullTextSearch(value);
 
         /// <summary>
         /// 

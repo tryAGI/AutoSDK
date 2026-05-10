@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ChatSearchQueriesGenerationEvent FromStream(global::G.ChatStreamEvent? value) => new ChatSearchQueriesGenerationEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChatSearchQueriesGenerationEvent(global::G.ChatSearchQueriesGenerationEvent6evypd value) => new ChatSearchQueriesGenerationEvent((global::G.ChatSearchQueriesGenerationEvent6evypd?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             Event6evypd = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChatSearchQueriesGenerationEvent FromEvent6evypd(global::G.ChatSearchQueriesGenerationEvent6evypd? value) => new ChatSearchQueriesGenerationEvent(value);
 
         /// <summary>
         /// 

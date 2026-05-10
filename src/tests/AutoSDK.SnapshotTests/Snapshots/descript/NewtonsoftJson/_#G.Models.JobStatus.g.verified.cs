@@ -96,6 +96,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static JobStatus FromImportProjectMedia(global::G.ImportJobStatus? value) => new JobStatus(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator JobStatus(global::G.AgentJobStatus value) => new JobStatus((global::G.AgentJobStatus?)value);
 
         /// <summary>
@@ -110,6 +115,11 @@ namespace G
         {
             Agent = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static JobStatus FromAgent(global::G.AgentJobStatus? value) => new JobStatus(value);
 
         /// <summary>
         /// 

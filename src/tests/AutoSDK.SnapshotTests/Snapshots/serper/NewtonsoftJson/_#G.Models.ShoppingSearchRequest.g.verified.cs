@@ -60,6 +60,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ShoppingSearchRequest FromBase(global::G.BaseSearchRequest? value) => new ShoppingSearchRequest(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public object? Object =>
             Base as object 
             ;

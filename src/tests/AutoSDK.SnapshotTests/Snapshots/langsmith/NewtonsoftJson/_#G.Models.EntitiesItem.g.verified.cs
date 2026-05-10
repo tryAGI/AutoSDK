@@ -95,6 +95,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static EntitiesItem FromRun(global::G.TenantShareRunToken? value) => new EntitiesItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator EntitiesItem(global::G.TenantShareDatasetToken value) => new EntitiesItem((global::G.TenantShareDatasetToken?)value);
 
         /// <summary>
@@ -109,6 +114,11 @@ namespace G
         {
             Dataset = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static EntitiesItem FromDataset(global::G.TenantShareDatasetToken? value) => new EntitiesItem(value);
 
         /// <summary>
         /// 

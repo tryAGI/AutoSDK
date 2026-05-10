@@ -150,6 +150,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static StoredPromptTemplateVariables FromStoredPromptTemplateVariablesVariant1(string? value) => new StoredPromptTemplateVariables(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator StoredPromptTemplateVariables(global::G.InputText value) => new StoredPromptTemplateVariables((global::G.InputText?)value);
 
         /// <summary>
@@ -164,6 +169,11 @@ namespace G
         {
             InputText = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static StoredPromptTemplateVariables FromInputText(global::G.InputText? value) => new StoredPromptTemplateVariables(value);
 
         /// <summary>
         /// 
@@ -186,6 +196,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static StoredPromptTemplateVariables FromInputImage(global::G.InputImage? value) => new StoredPromptTemplateVariables(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator StoredPromptTemplateVariables(global::G.InputFile value) => new StoredPromptTemplateVariables((global::G.InputFile?)value);
 
         /// <summary>
@@ -200,6 +215,11 @@ namespace G
         {
             InputFile = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static StoredPromptTemplateVariables FromInputFile(global::G.InputFile? value) => new StoredPromptTemplateVariables(value);
 
         /// <summary>
         /// 

@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ExpressiveAvatarDto FromExpressiveAvatarDtoVariant1(global::G.ExpressiveAvatarDtoVariant1? value) => new ExpressiveAvatarDto(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public ExpressiveAvatarDto(
             global::G.ExpressiveAvatarDtoVariant1? expressiveAvatarDtoVariant1,
             object? expressiveAvatarDtoVariant2

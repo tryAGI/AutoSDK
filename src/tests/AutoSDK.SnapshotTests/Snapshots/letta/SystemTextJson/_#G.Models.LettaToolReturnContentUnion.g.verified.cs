@@ -95,6 +95,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static LettaToolReturnContentUnion FromText(global::G.TextContent? value) => new LettaToolReturnContentUnion(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator LettaToolReturnContentUnion(global::G.ImageContent value) => new LettaToolReturnContentUnion((global::G.ImageContent?)value);
 
         /// <summary>
@@ -109,6 +114,11 @@ namespace G
         {
             Image = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static LettaToolReturnContentUnion FromImage(global::G.ImageContent? value) => new LettaToolReturnContentUnion(value);
 
         /// <summary>
         /// 

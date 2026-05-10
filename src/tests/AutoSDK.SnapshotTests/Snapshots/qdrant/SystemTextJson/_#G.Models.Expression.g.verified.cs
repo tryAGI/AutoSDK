@@ -600,6 +600,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Expression FromExpressionVariant1(float? value) => new Expression(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Expression(string value) => new Expression((string?)value);
 
         /// <summary>
@@ -614,6 +619,11 @@ namespace G
         {
             ExpressionVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Expression FromExpressionVariant2(string? value) => new Expression(value);
 
         /// <summary>
         /// 
@@ -636,6 +646,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Expression FromCondition(global::G.Condition? value) => new Expression(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Expression(global::G.GeoDistance value) => new Expression((global::G.GeoDistance?)value);
 
         /// <summary>
@@ -650,6 +665,11 @@ namespace G
         {
             GeoDistance = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Expression FromGeoDistance(global::G.GeoDistance? value) => new Expression(value);
 
         /// <summary>
         /// 
@@ -672,6 +692,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Expression FromDatetime(global::G.DatetimeExpression? value) => new Expression(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Expression(global::G.DatetimeKeyExpression value) => new Expression((global::G.DatetimeKeyExpression?)value);
 
         /// <summary>
@@ -686,6 +711,11 @@ namespace G
         {
             DatetimeKey = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Expression FromDatetimeKey(global::G.DatetimeKeyExpression? value) => new Expression(value);
 
         /// <summary>
         /// 
@@ -708,6 +738,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Expression FromMult(global::G.MultExpression? value) => new Expression(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Expression(global::G.SumExpression value) => new Expression((global::G.SumExpression?)value);
 
         /// <summary>
@@ -722,6 +757,11 @@ namespace G
         {
             Sum = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Expression FromSum(global::G.SumExpression? value) => new Expression(value);
 
         /// <summary>
         /// 
@@ -744,6 +784,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Expression FromNeg(global::G.NegExpression? value) => new Expression(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Expression(global::G.AbsExpression value) => new Expression((global::G.AbsExpression?)value);
 
         /// <summary>
@@ -758,6 +803,11 @@ namespace G
         {
             Abs = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Expression FromAbs(global::G.AbsExpression? value) => new Expression(value);
 
         /// <summary>
         /// 
@@ -780,6 +830,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Expression FromDiv(global::G.DivExpression? value) => new Expression(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Expression(global::G.SqrtExpression value) => new Expression((global::G.SqrtExpression?)value);
 
         /// <summary>
@@ -794,6 +849,11 @@ namespace G
         {
             Sqrt = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Expression FromSqrt(global::G.SqrtExpression? value) => new Expression(value);
 
         /// <summary>
         /// 
@@ -816,6 +876,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Expression FromPow(global::G.PowExpression? value) => new Expression(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Expression(global::G.ExpExpression value) => new Expression((global::G.ExpExpression?)value);
 
         /// <summary>
@@ -830,6 +895,11 @@ namespace G
         {
             Exp = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Expression FromExp(global::G.ExpExpression? value) => new Expression(value);
 
         /// <summary>
         /// 
@@ -852,6 +922,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Expression FromLog10(global::G.Log10Expression? value) => new Expression(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Expression(global::G.LnExpression value) => new Expression((global::G.LnExpression?)value);
 
         /// <summary>
@@ -866,6 +941,11 @@ namespace G
         {
             Ln = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Expression FromLn(global::G.LnExpression? value) => new Expression(value);
 
         /// <summary>
         /// 
@@ -888,6 +968,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Expression FromLinDecay(global::G.LinDecayExpression? value) => new Expression(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Expression(global::G.ExpDecayExpression value) => new Expression((global::G.ExpDecayExpression?)value);
 
         /// <summary>
@@ -906,6 +991,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Expression FromExpDecay(global::G.ExpDecayExpression? value) => new Expression(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Expression(global::G.GaussDecayExpression value) => new Expression((global::G.GaussDecayExpression?)value);
 
         /// <summary>
@@ -920,6 +1010,11 @@ namespace G
         {
             GaussDecay = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Expression FromGaussDecay(global::G.GaussDecayExpression? value) => new Expression(value);
 
         /// <summary>
         /// 

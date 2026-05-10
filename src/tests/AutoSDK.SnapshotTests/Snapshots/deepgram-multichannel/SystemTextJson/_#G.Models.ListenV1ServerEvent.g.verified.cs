@@ -95,6 +95,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ListenV1ServerEvent FromTranscriptResult(global::G.TranscriptResultPayload? value) => new ListenV1ServerEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ListenV1ServerEvent(global::G.ListenMetadataPayload value) => new ListenV1ServerEvent((global::G.ListenMetadataPayload?)value);
 
         /// <summary>
@@ -109,6 +114,11 @@ namespace G
         {
             ListenMetadata = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ListenV1ServerEvent FromListenMetadata(global::G.ListenMetadataPayload? value) => new ListenV1ServerEvent(value);
 
         /// <summary>
         /// 

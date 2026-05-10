@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static AssetDto FromAssetDtoVariant1(global::G.AssetDtoVariant1? value) => new AssetDto(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator AssetDto(global::G.AssetDtoVariant2 value) => new AssetDto((global::G.AssetDtoVariant2?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             AssetDtoVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static AssetDto FromAssetDtoVariant2(global::G.AssetDtoVariant2? value) => new AssetDto(value);
 
         /// <summary>
         /// 

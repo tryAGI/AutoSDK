@@ -155,6 +155,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ToolChoice FromNone(global::G.PromptToolChoiceNone? value) => new ToolChoice(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ToolChoice(global::G.PromptToolChoiceZeroOrMore value) => new ToolChoice((global::G.PromptToolChoiceZeroOrMore?)value);
 
         /// <summary>
@@ -169,6 +174,11 @@ namespace G
         {
             ZeroOrMore = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ToolChoice FromZeroOrMore(global::G.PromptToolChoiceZeroOrMore? value) => new ToolChoice(value);
 
         /// <summary>
         /// 
@@ -191,6 +201,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ToolChoice FromOneOrMore(global::G.PromptToolChoiceOneOrMore? value) => new ToolChoice(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ToolChoice(global::G.PromptToolChoiceSpecificFunctionTool value) => new ToolChoice((global::G.PromptToolChoiceSpecificFunctionTool?)value);
 
         /// <summary>
@@ -205,6 +220,11 @@ namespace G
         {
             SpecificFunction = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ToolChoice FromSpecificFunction(global::G.PromptToolChoiceSpecificFunctionTool? value) => new ToolChoice(value);
 
         /// <summary>
         /// 

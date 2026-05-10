@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static MessagesMessageParamContent FromMessagesMessageParamContentVariant1(string? value) => new MessagesMessageParamContent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public MessagesMessageParamContent(
             string? messagesMessageParamContentVariant1,
             global::System.Collections.Generic.IList<global::G.MessagesMessageParamContentOneOf1Items>? messagesMessageParamContent1

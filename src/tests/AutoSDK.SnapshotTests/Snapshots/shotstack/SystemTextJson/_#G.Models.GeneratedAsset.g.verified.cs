@@ -215,6 +215,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static GeneratedAsset FromShotstack(global::G.ShotstackGeneratedAsset? value) => new GeneratedAsset(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator GeneratedAsset(global::G.DIDGeneratedAsset value) => new GeneratedAsset((global::G.DIDGeneratedAsset?)value);
 
         /// <summary>
@@ -229,6 +234,11 @@ namespace G
         {
             DId = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static GeneratedAsset FromDId(global::G.DIDGeneratedAsset? value) => new GeneratedAsset(value);
 
         /// <summary>
         /// 
@@ -251,6 +261,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static GeneratedAsset FromElevenlabs(global::G.ElevenLabsGeneratedAsset? value) => new GeneratedAsset(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator GeneratedAsset(global::G.HeyGenGeneratedAsset value) => new GeneratedAsset((global::G.HeyGenGeneratedAsset?)value);
 
         /// <summary>
@@ -265,6 +280,11 @@ namespace G
         {
             Heygen = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static GeneratedAsset FromHeygen(global::G.HeyGenGeneratedAsset? value) => new GeneratedAsset(value);
 
         /// <summary>
         /// 
@@ -287,6 +307,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static GeneratedAsset FromOpenai(global::G.OpenAiGeneratedAsset? value) => new GeneratedAsset(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator GeneratedAsset(global::G.StabilityAiGeneratedAsset value) => new GeneratedAsset((global::G.StabilityAiGeneratedAsset?)value);
 
         /// <summary>
@@ -301,6 +326,11 @@ namespace G
         {
             StabilityAi = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static GeneratedAsset FromStabilityAi(global::G.StabilityAiGeneratedAsset? value) => new GeneratedAsset(value);
 
         /// <summary>
         /// 

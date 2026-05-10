@@ -426,6 +426,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static AgentToolConfiguration FromDynamicVectara(global::G.InlineDynamicVectaraToolConfiguration? value) => new AgentToolConfiguration(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator AgentToolConfiguration(global::G.InlineMcpToolConfiguration value) => new AgentToolConfiguration((global::G.InlineMcpToolConfiguration?)value);
 
         /// <summary>
@@ -440,6 +445,11 @@ namespace G
         {
             Mcp = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static AgentToolConfiguration FromMcp(global::G.InlineMcpToolConfiguration? value) => new AgentToolConfiguration(value);
 
         /// <summary>
         /// 
@@ -462,6 +472,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static AgentToolConfiguration FromCorporaSearch(global::G.InlineCorporaSearchToolConfiguration? value) => new AgentToolConfiguration(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator AgentToolConfiguration(global::G.InlineWebSearchToolConfiguration value) => new AgentToolConfiguration((global::G.InlineWebSearchToolConfiguration?)value);
 
         /// <summary>
@@ -476,6 +491,11 @@ namespace G
         {
             WebSearch = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static AgentToolConfiguration FromWebSearch(global::G.InlineWebSearchToolConfiguration? value) => new AgentToolConfiguration(value);
 
         /// <summary>
         /// 
@@ -498,6 +518,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static AgentToolConfiguration FromWebGet(global::G.InlineWebGetToolConfiguration? value) => new AgentToolConfiguration(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator AgentToolConfiguration(global::G.InlineLambdaToolConfiguration value) => new AgentToolConfiguration((global::G.InlineLambdaToolConfiguration?)value);
 
         /// <summary>
@@ -512,6 +537,11 @@ namespace G
         {
             Lambda = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static AgentToolConfiguration FromLambda(global::G.InlineLambdaToolConfiguration? value) => new AgentToolConfiguration(value);
 
         /// <summary>
         /// 
@@ -534,6 +564,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static AgentToolConfiguration FromStructuredIndexing(global::G.InlineStructuredIndexingToolConfiguration? value) => new AgentToolConfiguration(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator AgentToolConfiguration(global::G.InlineSubAgentToolConfiguration value) => new AgentToolConfiguration((global::G.InlineSubAgentToolConfiguration?)value);
 
         /// <summary>
@@ -548,6 +583,11 @@ namespace G
         {
             SubAgent = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static AgentToolConfiguration FromSubAgent(global::G.InlineSubAgentToolConfiguration? value) => new AgentToolConfiguration(value);
 
         /// <summary>
         /// 
@@ -570,6 +610,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static AgentToolConfiguration FromArtifactRead(global::G.InlineArtifactReadToolConfiguration? value) => new AgentToolConfiguration(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator AgentToolConfiguration(global::G.InlineArtifactGrepToolConfiguration value) => new AgentToolConfiguration((global::G.InlineArtifactGrepToolConfiguration?)value);
 
         /// <summary>
@@ -584,6 +629,11 @@ namespace G
         {
             ArtifactGrep = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static AgentToolConfiguration FromArtifactGrep(global::G.InlineArtifactGrepToolConfiguration? value) => new AgentToolConfiguration(value);
 
         /// <summary>
         /// 
@@ -606,6 +656,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static AgentToolConfiguration FromImageRead(global::G.InlineImageReadToolConfiguration? value) => new AgentToolConfiguration(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator AgentToolConfiguration(global::G.InlineDocumentConversionToolConfiguration value) => new AgentToolConfiguration((global::G.InlineDocumentConversionToolConfiguration?)value);
 
         /// <summary>
@@ -624,6 +679,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static AgentToolConfiguration FromDocumentConversion(global::G.InlineDocumentConversionToolConfiguration? value) => new AgentToolConfiguration(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator AgentToolConfiguration(global::G.InlineGetDocumentTextToolConfiguration value) => new AgentToolConfiguration((global::G.InlineGetDocumentTextToolConfiguration?)value);
 
         /// <summary>
@@ -638,6 +698,11 @@ namespace G
         {
             GetDocumentText = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static AgentToolConfiguration FromGetDocumentText(global::G.InlineGetDocumentTextToolConfiguration? value) => new AgentToolConfiguration(value);
 
         /// <summary>
         /// 

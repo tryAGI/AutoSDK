@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ResultIntegrationString FromSuccess(global::G.ResultSuccessIntegration? value) => new ResultIntegrationString(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ResultIntegrationString(global::G.ResultErrorString value) => new ResultIntegrationString((global::G.ResultErrorString?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             Error = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ResultIntegrationString FromError(global::G.ResultErrorString? value) => new ResultIntegrationString(value);
 
         /// <summary>
         /// 

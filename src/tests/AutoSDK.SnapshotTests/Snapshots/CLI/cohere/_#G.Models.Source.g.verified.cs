@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Source FromToolOutput(global::G.ToolSource? value) => new Source(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Source(global::G.DocumentSource value) => new Source((global::G.DocumentSource?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             Document = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Source FromDocument(global::G.DocumentSource? value) => new Source(value);
 
         /// <summary>
         /// 

@@ -125,6 +125,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ResearchEventDtoClassVariant3 FromTaskDefinition(global::G.ResearchEventDtoClassVariant3Variant1? value) => new ResearchEventDtoClassVariant3(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ResearchEventDtoClassVariant3(global::G.ResearchEventDtoClassVariant3Variant2 value) => new ResearchEventDtoClassVariant3((global::G.ResearchEventDtoClassVariant3Variant2?)value);
 
         /// <summary>
@@ -143,6 +148,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ResearchEventDtoClassVariant3 FromTaskOperation(global::G.ResearchEventDtoClassVariant3Variant2? value) => new ResearchEventDtoClassVariant3(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ResearchEventDtoClassVariant3(global::G.ResearchEventDtoClassVariant3Variant3 value) => new ResearchEventDtoClassVariant3((global::G.ResearchEventDtoClassVariant3Variant3?)value);
 
         /// <summary>
@@ -157,6 +167,11 @@ namespace G
         {
             TaskOutput = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ResearchEventDtoClassVariant3 FromTaskOutput(global::G.ResearchEventDtoClassVariant3Variant3? value) => new ResearchEventDtoClassVariant3(value);
 
         /// <summary>
         /// 

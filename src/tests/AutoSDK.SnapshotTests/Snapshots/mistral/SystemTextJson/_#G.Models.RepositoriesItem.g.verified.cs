@@ -65,6 +65,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static RepositoriesItem FromGithub(global::G.GithubRepositoryOut? value) => new RepositoriesItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public RepositoriesItem(
             global::G.CompletionJobOutRepositorieDiscriminatorType? type,
             global::G.GithubRepositoryOut? github

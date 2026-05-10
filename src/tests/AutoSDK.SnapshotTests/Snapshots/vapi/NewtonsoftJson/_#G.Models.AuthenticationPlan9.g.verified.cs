@@ -125,6 +125,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static AuthenticationPlan9 FromOauth2(global::G.OAuth2AuthenticationPlan? value) => new AuthenticationPlan9(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator AuthenticationPlan9(global::G.HMACAuthenticationPlan value) => new AuthenticationPlan9((global::G.HMACAuthenticationPlan?)value);
 
         /// <summary>
@@ -143,6 +148,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static AuthenticationPlan9 FromHmac(global::G.HMACAuthenticationPlan? value) => new AuthenticationPlan9(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator AuthenticationPlan9(global::G.BearerAuthenticationPlan value) => new AuthenticationPlan9((global::G.BearerAuthenticationPlan?)value);
 
         /// <summary>
@@ -157,6 +167,11 @@ namespace G
         {
             Bearer = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static AuthenticationPlan9 FromBearer(global::G.BearerAuthenticationPlan? value) => new AuthenticationPlan9(value);
 
         /// <summary>
         /// 

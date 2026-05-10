@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static StepTransitionEvent FromAgentBase(global::G.AgentEventBase? value) => new StepTransitionEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator StepTransitionEvent(global::G.StepTransitionEventVariant2 value) => new StepTransitionEvent((global::G.StepTransitionEventVariant2?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             StepTransitionEventVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static StepTransitionEvent FromStepTransitionEventVariant2(global::G.StepTransitionEventVariant2? value) => new StepTransitionEvent(value);
 
         /// <summary>
         /// 

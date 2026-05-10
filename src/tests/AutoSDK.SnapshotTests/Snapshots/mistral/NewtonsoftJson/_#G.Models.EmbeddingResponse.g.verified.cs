@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static EmbeddingResponse FromResponseBase(global::G.ResponseBase? value) => new EmbeddingResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator EmbeddingResponse(global::G.EmbeddingResponseVariant2 value) => new EmbeddingResponse((global::G.EmbeddingResponseVariant2?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             EmbeddingResponseVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static EmbeddingResponse FromEmbeddingResponseVariant2(global::G.EmbeddingResponseVariant2? value) => new EmbeddingResponse(value);
 
         /// <summary>
         /// 

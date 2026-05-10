@@ -120,6 +120,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static MessagesRequestContextManagementEditsItems FromMessagesRequestContextManagementEditsItems0(global::G.MessagesRequestContextManagementEditsItems0? value) => new MessagesRequestContextManagementEditsItems(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator MessagesRequestContextManagementEditsItems(global::G.MessagesRequestContextManagementEditsItems1 value) => new MessagesRequestContextManagementEditsItems((global::G.MessagesRequestContextManagementEditsItems1?)value);
 
         /// <summary>
@@ -138,6 +143,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static MessagesRequestContextManagementEditsItems FromMessagesRequestContextManagementEditsItems1(global::G.MessagesRequestContextManagementEditsItems1? value) => new MessagesRequestContextManagementEditsItems(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator MessagesRequestContextManagementEditsItems(global::G.MessagesRequestContextManagementEditsItems2 value) => new MessagesRequestContextManagementEditsItems((global::G.MessagesRequestContextManagementEditsItems2?)value);
 
         /// <summary>
@@ -152,6 +162,11 @@ namespace G
         {
             MessagesRequestContextManagementEditsItems2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static MessagesRequestContextManagementEditsItems FromMessagesRequestContextManagementEditsItems2(global::G.MessagesRequestContextManagementEditsItems2? value) => new MessagesRequestContextManagementEditsItems(value);
 
         /// <summary>
         /// 

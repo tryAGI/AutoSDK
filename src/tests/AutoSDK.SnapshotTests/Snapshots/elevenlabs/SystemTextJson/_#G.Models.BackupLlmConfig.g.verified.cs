@@ -125,6 +125,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static BackupLlmConfig FromDefault(global::G.BackupLLMDefault? value) => new BackupLlmConfig(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BackupLlmConfig(global::G.BackupLLMDisabled value) => new BackupLlmConfig((global::G.BackupLLMDisabled?)value);
 
         /// <summary>
@@ -143,6 +148,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static BackupLlmConfig FromDisabled(global::G.BackupLLMDisabled? value) => new BackupLlmConfig(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BackupLlmConfig(global::G.BackupLLMOverride value) => new BackupLlmConfig((global::G.BackupLLMOverride?)value);
 
         /// <summary>
@@ -157,6 +167,11 @@ namespace G
         {
             Override = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BackupLlmConfig FromOverride(global::G.BackupLLMOverride? value) => new BackupLlmConfig(value);
 
         /// <summary>
         /// 

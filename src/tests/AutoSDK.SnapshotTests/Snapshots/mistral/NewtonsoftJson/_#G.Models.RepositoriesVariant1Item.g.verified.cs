@@ -65,6 +65,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static RepositoriesVariant1Item FromGithub(global::G.GithubRepositoryIn? value) => new RepositoriesVariant1Item(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public RepositoriesVariant1Item(
             global::G.JobInRepositoriesVariant1ItemDiscriminatorType? type,
             global::G.GithubRepositoryIn? github

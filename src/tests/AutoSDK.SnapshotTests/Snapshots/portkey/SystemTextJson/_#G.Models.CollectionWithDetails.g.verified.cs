@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static CollectionWithDetails FromCollection(global::G.Collection? value) => new CollectionWithDetails(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator CollectionWithDetails(global::G.CollectionWithDetailsVariant2 value) => new CollectionWithDetails((global::G.CollectionWithDetailsVariant2?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             CollectionWithDetailsVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static CollectionWithDetails FromCollectionWithDetailsVariant2(global::G.CollectionWithDetailsVariant2? value) => new CollectionWithDetails(value);
 
         /// <summary>
         /// 

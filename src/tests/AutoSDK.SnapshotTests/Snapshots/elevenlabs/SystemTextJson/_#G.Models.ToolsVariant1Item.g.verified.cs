@@ -217,6 +217,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ToolsVariant1Item FromWebhook(global::G.WebhookToolConfigInput? value) => new ToolsVariant1Item(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ToolsVariant1Item(global::G.ClientToolConfigInput value) => new ToolsVariant1Item((global::G.ClientToolConfigInput?)value);
 
         /// <summary>
@@ -231,6 +236,11 @@ namespace G
         {
             Client = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ToolsVariant1Item FromClient(global::G.ClientToolConfigInput? value) => new ToolsVariant1Item(value);
 
         /// <summary>
         /// 
@@ -253,6 +263,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ToolsVariant1Item FromSystem(global::G.SystemToolConfigInput? value) => new ToolsVariant1Item(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ToolsVariant1Item(global::G.MCPToolConfigInput value) => new ToolsVariant1Item((global::G.MCPToolConfigInput?)value);
 
         /// <summary>
@@ -267,6 +282,11 @@ namespace G
         {
             Mcp = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ToolsVariant1Item FromMcp(global::G.MCPToolConfigInput? value) => new ToolsVariant1Item(value);
 
         /// <summary>
         /// 
@@ -289,6 +309,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ToolsVariant1Item FromApiIntegrationWebhook(global::G.ApiIntegrationWebhookToolConfigInput? value) => new ToolsVariant1Item(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ToolsVariant1Item(global::G.SMBToolConfig value) => new ToolsVariant1Item((global::G.SMBToolConfig?)value);
 
         /// <summary>
@@ -303,6 +328,11 @@ namespace G
         {
             Smb = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ToolsVariant1Item FromSmb(global::G.SMBToolConfig? value) => new ToolsVariant1Item(value);
 
         /// <summary>
         /// 

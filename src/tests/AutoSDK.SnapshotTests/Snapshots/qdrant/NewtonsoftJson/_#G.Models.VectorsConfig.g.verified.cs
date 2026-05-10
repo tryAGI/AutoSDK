@@ -93,6 +93,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static VectorsConfig FromVectorParams(global::G.VectorParams? value) => new VectorsConfig(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator VectorsConfig(global::System.Collections.Generic.Dictionary<string, global::G.VectorParams> value) => new VectorsConfig((global::System.Collections.Generic.Dictionary<string, global::G.VectorParams>?)value);
 
         /// <summary>
@@ -107,6 +112,11 @@ namespace G
         {
             VectorsConfigVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static VectorsConfig FromVectorsConfigVariant2(global::System.Collections.Generic.Dictionary<string, global::G.VectorParams>? value) => new VectorsConfig(value);
 
         /// <summary>
         /// 

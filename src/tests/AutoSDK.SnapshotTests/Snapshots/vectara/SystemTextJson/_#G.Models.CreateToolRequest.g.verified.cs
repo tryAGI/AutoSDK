@@ -66,6 +66,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static CreateToolRequest FromLambda(global::G.CreateLambdaToolRequest? value) => new CreateToolRequest(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public CreateToolRequest(
             global::G.CreateToolRequestDiscriminatorType? type,
             global::G.CreateLambdaToolRequest? lambda

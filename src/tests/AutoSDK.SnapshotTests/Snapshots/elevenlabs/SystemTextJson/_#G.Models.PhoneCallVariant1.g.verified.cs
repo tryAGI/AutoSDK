@@ -95,6 +95,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static PhoneCallVariant1 FromTwilio(global::G.ConversationHistoryTwilioPhoneCallModel? value) => new PhoneCallVariant1(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator PhoneCallVariant1(global::G.ConversationHistorySIPTrunkingPhoneCallModel value) => new PhoneCallVariant1((global::G.ConversationHistorySIPTrunkingPhoneCallModel?)value);
 
         /// <summary>
@@ -109,6 +114,11 @@ namespace G
         {
             SipTrunking = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static PhoneCallVariant1 FromSipTrunking(global::G.ConversationHistorySIPTrunkingPhoneCallModel? value) => new PhoneCallVariant1(value);
 
         /// <summary>
         /// 

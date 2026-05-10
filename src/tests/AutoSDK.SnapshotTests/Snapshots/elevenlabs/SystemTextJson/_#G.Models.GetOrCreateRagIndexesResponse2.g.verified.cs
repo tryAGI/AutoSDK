@@ -95,6 +95,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static GetOrCreateRagIndexesResponse2 FromSuccess(global::G.RAGIndexBatchSuccessfulResponseModel? value) => new GetOrCreateRagIndexesResponse2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator GetOrCreateRagIndexesResponse2(global::G.BatchFailureResponseModel value) => new GetOrCreateRagIndexesResponse2((global::G.BatchFailureResponseModel?)value);
 
         /// <summary>
@@ -109,6 +114,11 @@ namespace G
         {
             Failure = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static GetOrCreateRagIndexesResponse2 FromFailure(global::G.BatchFailureResponseModel? value) => new GetOrCreateRagIndexesResponse2(value);
 
         /// <summary>
         /// 

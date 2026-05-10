@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static MultiModalQuery FromMultiModalQueryVariant1(string? value) => new MultiModalQuery(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator MultiModalQuery(global::G.MultiModalQueryVariant2 value) => new MultiModalQuery((global::G.MultiModalQueryVariant2?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             MultiModalQueryVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static MultiModalQuery FromMultiModalQueryVariant2(global::G.MultiModalQueryVariant2? value) => new MultiModalQuery(value);
 
         /// <summary>
         /// 

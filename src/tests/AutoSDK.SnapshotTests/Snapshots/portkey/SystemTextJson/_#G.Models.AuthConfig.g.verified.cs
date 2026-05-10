@@ -300,6 +300,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static AuthConfig FromAccessKey(global::G.AwsAccessKeyAuthConfig? value) => new AuthConfig(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator AuthConfig(global::G.AwsAssumedRoleAuthConfig value) => new AuthConfig((global::G.AwsAssumedRoleAuthConfig?)value);
 
         /// <summary>
@@ -314,6 +319,11 @@ namespace G
         {
             AssumedRole = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static AuthConfig FromAssumedRole(global::G.AwsAssumedRoleAuthConfig? value) => new AuthConfig(value);
 
         /// <summary>
         /// 
@@ -336,6 +346,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static AuthConfig FromServiceRole(global::G.AwsServiceRoleAuthConfig? value) => new AuthConfig(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator AuthConfig(global::G.AzureEntraAuthConfig value) => new AuthConfig((global::G.AzureEntraAuthConfig?)value);
 
         /// <summary>
@@ -350,6 +365,11 @@ namespace G
         {
             AzureEntra = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static AuthConfig FromAzureEntra(global::G.AzureEntraAuthConfig? value) => new AuthConfig(value);
 
         /// <summary>
         /// 
@@ -372,6 +392,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static AuthConfig FromAzureManaged(global::G.AzureManagedAuthConfig? value) => new AuthConfig(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator AuthConfig(global::G.AzureDefaultAuthConfig value) => new AuthConfig((global::G.AzureDefaultAuthConfig?)value);
 
         /// <summary>
@@ -386,6 +411,11 @@ namespace G
         {
             AzureDefault = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static AuthConfig FromAzureDefault(global::G.AzureDefaultAuthConfig? value) => new AuthConfig(value);
 
         /// <summary>
         /// 
@@ -408,6 +438,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static AuthConfig FromHashicorpToken(global::G.HashicorpTokenAuthConfig? value) => new AuthConfig(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator AuthConfig(global::G.HashicorpAppRoleAuthConfig value) => new AuthConfig((global::G.HashicorpAppRoleAuthConfig?)value);
 
         /// <summary>
@@ -426,6 +461,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static AuthConfig FromHashicorpAppRole(global::G.HashicorpAppRoleAuthConfig? value) => new AuthConfig(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator AuthConfig(global::G.HashicorpKubernetesAuthConfig value) => new AuthConfig((global::G.HashicorpKubernetesAuthConfig?)value);
 
         /// <summary>
@@ -440,6 +480,11 @@ namespace G
         {
             HashicorpKubernetes = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static AuthConfig FromHashicorpKubernetes(global::G.HashicorpKubernetesAuthConfig? value) => new AuthConfig(value);
 
         /// <summary>
         /// 

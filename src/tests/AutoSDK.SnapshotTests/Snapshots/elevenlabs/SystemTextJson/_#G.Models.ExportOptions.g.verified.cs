@@ -215,6 +215,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ExportOptions FromSegmentedJson(global::G.SegmentedJsonExportOptions? value) => new ExportOptions(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ExportOptions(global::G.DocxExportOptions value) => new ExportOptions((global::G.DocxExportOptions?)value);
 
         /// <summary>
@@ -229,6 +234,11 @@ namespace G
         {
             Docx = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ExportOptions FromDocx(global::G.DocxExportOptions? value) => new ExportOptions(value);
 
         /// <summary>
         /// 
@@ -251,6 +261,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ExportOptions FromPdf(global::G.PdfExportOptions? value) => new ExportOptions(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ExportOptions(global::G.TxtExportOptions value) => new ExportOptions((global::G.TxtExportOptions?)value);
 
         /// <summary>
@@ -265,6 +280,11 @@ namespace G
         {
             Txt = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ExportOptions FromTxt(global::G.TxtExportOptions? value) => new ExportOptions(value);
 
         /// <summary>
         /// 
@@ -287,6 +307,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ExportOptions FromHtml(global::G.HtmlExportOptions? value) => new ExportOptions(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ExportOptions(global::G.SrtExportOptions value) => new ExportOptions((global::G.SrtExportOptions?)value);
 
         /// <summary>
@@ -301,6 +326,11 @@ namespace G
         {
             Srt = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ExportOptions FromSrt(global::G.SrtExportOptions? value) => new ExportOptions(value);
 
         /// <summary>
         /// 

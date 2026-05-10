@@ -180,6 +180,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static BaseMessagesResultContentItemsOneOf0CitationsItems FromBaseMessagesResultContentItemsOneOf0CitationsItems0(global::G.BaseMessagesResultContentItemsOneOf0CitationsItems0? value) => new BaseMessagesResultContentItemsOneOf0CitationsItems(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BaseMessagesResultContentItemsOneOf0CitationsItems(global::G.BaseMessagesResultContentItemsOneOf0CitationsItems1 value) => new BaseMessagesResultContentItemsOneOf0CitationsItems((global::G.BaseMessagesResultContentItemsOneOf0CitationsItems1?)value);
 
         /// <summary>
@@ -194,6 +199,11 @@ namespace G
         {
             BaseMessagesResultContentItemsOneOf0CitationsItems1 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BaseMessagesResultContentItemsOneOf0CitationsItems FromBaseMessagesResultContentItemsOneOf0CitationsItems1(global::G.BaseMessagesResultContentItemsOneOf0CitationsItems1? value) => new BaseMessagesResultContentItemsOneOf0CitationsItems(value);
 
         /// <summary>
         /// 
@@ -216,6 +226,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static BaseMessagesResultContentItemsOneOf0CitationsItems FromBaseMessagesResultContentItemsOneOf0CitationsItems2(global::G.BaseMessagesResultContentItemsOneOf0CitationsItems2? value) => new BaseMessagesResultContentItemsOneOf0CitationsItems(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BaseMessagesResultContentItemsOneOf0CitationsItems(global::G.BaseMessagesResultContentItemsOneOf0CitationsItems3 value) => new BaseMessagesResultContentItemsOneOf0CitationsItems((global::G.BaseMessagesResultContentItemsOneOf0CitationsItems3?)value);
 
         /// <summary>
@@ -234,6 +249,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static BaseMessagesResultContentItemsOneOf0CitationsItems FromBaseMessagesResultContentItemsOneOf0CitationsItems3(global::G.BaseMessagesResultContentItemsOneOf0CitationsItems3? value) => new BaseMessagesResultContentItemsOneOf0CitationsItems(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BaseMessagesResultContentItemsOneOf0CitationsItems(global::G.BaseMessagesResultContentItemsOneOf0CitationsItems4 value) => new BaseMessagesResultContentItemsOneOf0CitationsItems((global::G.BaseMessagesResultContentItemsOneOf0CitationsItems4?)value);
 
         /// <summary>
@@ -248,6 +268,11 @@ namespace G
         {
             BaseMessagesResultContentItemsOneOf0CitationsItems4 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BaseMessagesResultContentItemsOneOf0CitationsItems FromBaseMessagesResultContentItemsOneOf0CitationsItems4(global::G.BaseMessagesResultContentItemsOneOf0CitationsItems4? value) => new BaseMessagesResultContentItemsOneOf0CitationsItems(value);
 
         /// <summary>
         /// 

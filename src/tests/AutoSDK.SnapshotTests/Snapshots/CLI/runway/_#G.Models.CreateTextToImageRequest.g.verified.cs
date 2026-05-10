@@ -125,6 +125,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static CreateTextToImageRequest FromGen4ImageTurbo(global::G.CreateTextToImageRequestGen4ImageTurbo? value) => new CreateTextToImageRequest(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator CreateTextToImageRequest(global::G.CreateTextToImageRequestGen4Image value) => new CreateTextToImageRequest((global::G.CreateTextToImageRequestGen4Image?)value);
 
         /// <summary>
@@ -143,6 +148,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static CreateTextToImageRequest FromGen4Image(global::G.CreateTextToImageRequestGen4Image? value) => new CreateTextToImageRequest(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator CreateTextToImageRequest(global::G.CreateTextToImageRequestGemini25Flash value) => new CreateTextToImageRequest((global::G.CreateTextToImageRequestGemini25Flash?)value);
 
         /// <summary>
@@ -157,6 +167,11 @@ namespace G
         {
             Gemini25Flash = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static CreateTextToImageRequest FromGemini25Flash(global::G.CreateTextToImageRequestGemini25Flash? value) => new CreateTextToImageRequest(value);
 
         /// <summary>
         /// 

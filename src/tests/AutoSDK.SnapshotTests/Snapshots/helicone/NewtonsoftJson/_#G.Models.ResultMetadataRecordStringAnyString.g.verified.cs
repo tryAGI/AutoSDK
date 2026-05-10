@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ResultMetadataRecordStringAnyString FromSuccess(global::G.ResultSuccessMetadataRecordStringAny? value) => new ResultMetadataRecordStringAnyString(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ResultMetadataRecordStringAnyString(global::G.ResultErrorString value) => new ResultMetadataRecordStringAnyString((global::G.ResultErrorString?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             Error = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ResultMetadataRecordStringAnyString FromError(global::G.ResultErrorString? value) => new ResultMetadataRecordStringAnyString(value);
 
         /// <summary>
         /// 

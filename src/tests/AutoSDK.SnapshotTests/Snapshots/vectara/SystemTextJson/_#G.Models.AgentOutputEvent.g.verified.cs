@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static AgentOutputEvent FromBase(global::G.AgentEventBase? value) => new AgentOutputEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator AgentOutputEvent(global::G.AgentOutputEventVariant2 value) => new AgentOutputEvent((global::G.AgentOutputEventVariant2?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             AgentOutputEventVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static AgentOutputEvent FromAgentOutputEventVariant2(global::G.AgentOutputEventVariant2? value) => new AgentOutputEvent(value);
 
         /// <summary>
         /// 

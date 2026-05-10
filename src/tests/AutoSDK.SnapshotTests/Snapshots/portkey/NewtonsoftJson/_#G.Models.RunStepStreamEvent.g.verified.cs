@@ -240,6 +240,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static RunStepStreamEvent FromRunStepStreamEventVariant1(global::G.RunStepStreamEventVariant1? value) => new RunStepStreamEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator RunStepStreamEvent(global::G.RunStepStreamEventVariant2 value) => new RunStepStreamEvent((global::G.RunStepStreamEventVariant2?)value);
 
         /// <summary>
@@ -254,6 +259,11 @@ namespace G
         {
             RunStepStreamEventVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static RunStepStreamEvent FromRunStepStreamEventVariant2(global::G.RunStepStreamEventVariant2? value) => new RunStepStreamEvent(value);
 
         /// <summary>
         /// 
@@ -276,6 +286,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static RunStepStreamEvent FromRunStepStreamEventVariant3(global::G.RunStepStreamEventVariant3? value) => new RunStepStreamEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator RunStepStreamEvent(global::G.RunStepStreamEventVariant4 value) => new RunStepStreamEvent((global::G.RunStepStreamEventVariant4?)value);
 
         /// <summary>
@@ -290,6 +305,11 @@ namespace G
         {
             RunStepStreamEventVariant4 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static RunStepStreamEvent FromRunStepStreamEventVariant4(global::G.RunStepStreamEventVariant4? value) => new RunStepStreamEvent(value);
 
         /// <summary>
         /// 
@@ -312,6 +332,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static RunStepStreamEvent FromRunStepStreamEventVariant5(global::G.RunStepStreamEventVariant5? value) => new RunStepStreamEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator RunStepStreamEvent(global::G.RunStepStreamEventVariant6 value) => new RunStepStreamEvent((global::G.RunStepStreamEventVariant6?)value);
 
         /// <summary>
@@ -330,6 +355,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static RunStepStreamEvent FromRunStepStreamEventVariant6(global::G.RunStepStreamEventVariant6? value) => new RunStepStreamEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator RunStepStreamEvent(global::G.RunStepStreamEventVariant7 value) => new RunStepStreamEvent((global::G.RunStepStreamEventVariant7?)value);
 
         /// <summary>
@@ -344,6 +374,11 @@ namespace G
         {
             RunStepStreamEventVariant7 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static RunStepStreamEvent FromRunStepStreamEventVariant7(global::G.RunStepStreamEventVariant7? value) => new RunStepStreamEvent(value);
 
         /// <summary>
         /// 

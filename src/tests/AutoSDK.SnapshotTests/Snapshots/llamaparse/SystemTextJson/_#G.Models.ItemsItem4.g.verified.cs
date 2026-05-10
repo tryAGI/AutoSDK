@@ -305,6 +305,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ItemsItem4 FromText(global::G.TextItem? value) => new ItemsItem4(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ItemsItem4(global::G.HeadingItem value) => new ItemsItem4((global::G.HeadingItem?)value);
 
         /// <summary>
@@ -319,6 +324,11 @@ namespace G
         {
             Heading = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ItemsItem4 FromHeading(global::G.HeadingItem? value) => new ItemsItem4(value);
 
         /// <summary>
         /// 
@@ -341,6 +351,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ItemsItem4 FromList(global::G.ListItem? value) => new ItemsItem4(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ItemsItem4(global::G.CodeItem value) => new ItemsItem4((global::G.CodeItem?)value);
 
         /// <summary>
@@ -355,6 +370,11 @@ namespace G
         {
             Code = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ItemsItem4 FromCode(global::G.CodeItem? value) => new ItemsItem4(value);
 
         /// <summary>
         /// 
@@ -377,6 +397,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ItemsItem4 FromTable(global::G.TableItem? value) => new ItemsItem4(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ItemsItem4(global::G.ImageItem value) => new ItemsItem4((global::G.ImageItem?)value);
 
         /// <summary>
@@ -391,6 +416,11 @@ namespace G
         {
             Image = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ItemsItem4 FromImage(global::G.ImageItem? value) => new ItemsItem4(value);
 
         /// <summary>
         /// 
@@ -413,6 +443,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ItemsItem4 FromLink(global::G.LinkItem? value) => new ItemsItem4(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ItemsItem4(global::G.HeaderItem value) => new ItemsItem4((global::G.HeaderItem?)value);
 
         /// <summary>
@@ -431,6 +466,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ItemsItem4 FromHeader(global::G.HeaderItem? value) => new ItemsItem4(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ItemsItem4(global::G.FooterItem value) => new ItemsItem4((global::G.FooterItem?)value);
 
         /// <summary>
@@ -445,6 +485,11 @@ namespace G
         {
             Footer = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ItemsItem4 FromFooter(global::G.FooterItem? value) => new ItemsItem4(value);
 
         /// <summary>
         /// 

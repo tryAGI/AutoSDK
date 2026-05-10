@@ -180,6 +180,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static MessageOrToolCall FromMessage(global::G.Message? value) => new MessageOrToolCall(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator MessageOrToolCall(global::G.ToolCallInvocationMessage value) => new MessageOrToolCall((global::G.ToolCallInvocationMessage?)value);
 
         /// <summary>
@@ -194,6 +199,11 @@ namespace G
         {
             Invocation = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static MessageOrToolCall FromInvocation(global::G.ToolCallInvocationMessage? value) => new MessageOrToolCall(value);
 
         /// <summary>
         /// 
@@ -216,6 +226,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static MessageOrToolCall FromResult(global::G.ToolCallResultMessage? value) => new MessageOrToolCall(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator MessageOrToolCall(global::G.NodeTransitionMessage value) => new MessageOrToolCall((global::G.NodeTransitionMessage?)value);
 
         /// <summary>
@@ -234,6 +249,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static MessageOrToolCall FromNodeTransition(global::G.NodeTransitionMessage? value) => new MessageOrToolCall(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator MessageOrToolCall(global::G.StateTransitionMessage value) => new MessageOrToolCall((global::G.StateTransitionMessage?)value);
 
         /// <summary>
@@ -248,6 +268,11 @@ namespace G
         {
             StateTransition = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static MessageOrToolCall FromStateTransition(global::G.StateTransitionMessage? value) => new MessageOrToolCall(value);
 
         /// <summary>
         /// 

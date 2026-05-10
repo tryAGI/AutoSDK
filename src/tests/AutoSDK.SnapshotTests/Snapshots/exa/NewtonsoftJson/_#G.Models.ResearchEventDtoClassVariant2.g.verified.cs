@@ -125,6 +125,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ResearchEventDtoClassVariant2 FromPlanDefinition(global::G.ResearchEventDtoClassVariant2Variant1? value) => new ResearchEventDtoClassVariant2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ResearchEventDtoClassVariant2(global::G.ResearchEventDtoClassVariant2Variant2 value) => new ResearchEventDtoClassVariant2((global::G.ResearchEventDtoClassVariant2Variant2?)value);
 
         /// <summary>
@@ -143,6 +148,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ResearchEventDtoClassVariant2 FromPlanOperation(global::G.ResearchEventDtoClassVariant2Variant2? value) => new ResearchEventDtoClassVariant2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ResearchEventDtoClassVariant2(global::G.ResearchEventDtoClassVariant2Variant3 value) => new ResearchEventDtoClassVariant2((global::G.ResearchEventDtoClassVariant2Variant3?)value);
 
         /// <summary>
@@ -157,6 +167,11 @@ namespace G
         {
             PlanOutput = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ResearchEventDtoClassVariant2 FromPlanOutput(global::G.ResearchEventDtoClassVariant2Variant3? value) => new ResearchEventDtoClassVariant2(value);
 
         /// <summary>
         /// 

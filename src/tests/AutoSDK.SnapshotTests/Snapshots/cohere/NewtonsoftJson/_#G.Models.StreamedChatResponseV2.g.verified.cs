@@ -335,6 +335,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static StreamedChatResponseV2 FromMessageStart(global::G.ChatMessageStartEvent? value) => new StreamedChatResponseV2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator StreamedChatResponseV2(global::G.ChatContentStartEvent value) => new StreamedChatResponseV2((global::G.ChatContentStartEvent?)value);
 
         /// <summary>
@@ -349,6 +354,11 @@ namespace G
         {
             ContentStart = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static StreamedChatResponseV2 FromContentStart(global::G.ChatContentStartEvent? value) => new StreamedChatResponseV2(value);
 
         /// <summary>
         /// 
@@ -371,6 +381,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static StreamedChatResponseV2 FromContentDelta(global::G.ChatContentDeltaEvent? value) => new StreamedChatResponseV2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator StreamedChatResponseV2(global::G.ChatContentEndEvent value) => new StreamedChatResponseV2((global::G.ChatContentEndEvent?)value);
 
         /// <summary>
@@ -385,6 +400,11 @@ namespace G
         {
             ContentEnd = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static StreamedChatResponseV2 FromContentEnd(global::G.ChatContentEndEvent? value) => new StreamedChatResponseV2(value);
 
         /// <summary>
         /// 
@@ -407,6 +427,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static StreamedChatResponseV2 FromToolPlanDelta(global::G.ChatToolPlanDeltaEvent? value) => new StreamedChatResponseV2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator StreamedChatResponseV2(global::G.ChatToolCallStartEvent value) => new StreamedChatResponseV2((global::G.ChatToolCallStartEvent?)value);
 
         /// <summary>
@@ -421,6 +446,11 @@ namespace G
         {
             ToolCallStart = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static StreamedChatResponseV2 FromToolCallStart(global::G.ChatToolCallStartEvent? value) => new StreamedChatResponseV2(value);
 
         /// <summary>
         /// 
@@ -443,6 +473,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static StreamedChatResponseV2 FromToolCallDelta(global::G.ChatToolCallDeltaEvent? value) => new StreamedChatResponseV2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator StreamedChatResponseV2(global::G.ChatToolCallEndEvent value) => new StreamedChatResponseV2((global::G.ChatToolCallEndEvent?)value);
 
         /// <summary>
@@ -457,6 +492,11 @@ namespace G
         {
             ToolCallEnd = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static StreamedChatResponseV2 FromToolCallEnd(global::G.ChatToolCallEndEvent? value) => new StreamedChatResponseV2(value);
 
         /// <summary>
         /// 
@@ -479,6 +519,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static StreamedChatResponseV2 FromMessageEnd(global::G.ChatMessageEndEvent? value) => new StreamedChatResponseV2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator StreamedChatResponseV2(global::G.ChatDebugEvent value) => new StreamedChatResponseV2((global::G.ChatDebugEvent?)value);
 
         /// <summary>
@@ -493,6 +538,11 @@ namespace G
         {
             Debug = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static StreamedChatResponseV2 FromDebug(global::G.ChatDebugEvent? value) => new StreamedChatResponseV2(value);
 
         /// <summary>
         /// 

@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static AgentResponseDto FromAgentResponseDtoVariant1(global::G.AgentResponseDtoVariant1? value) => new AgentResponseDto(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator AgentResponseDto(global::G.AgentResponseDtoVariant2 value) => new AgentResponseDto((global::G.AgentResponseDtoVariant2?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             AgentResponseDtoVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static AgentResponseDto FromAgentResponseDtoVariant2(global::G.AgentResponseDtoVariant2? value) => new AgentResponseDto(value);
 
         /// <summary>
         /// 

@@ -155,6 +155,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Target FromInbody(global::G.InBodyTarget? value) => new Target(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Target(global::G.ZipTarget value) => new Target((global::G.ZipTarget?)value);
 
         /// <summary>
@@ -169,6 +174,11 @@ namespace G
         {
             Zip = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Target FromZip(global::G.ZipTarget? value) => new Target(value);
 
         /// <summary>
         /// 
@@ -191,6 +201,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Target FromS3(global::G.S3Target? value) => new Target(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Target(global::G.PutTarget value) => new Target((global::G.PutTarget?)value);
 
         /// <summary>
@@ -205,6 +220,11 @@ namespace G
         {
             Put = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Target FromPut(global::G.PutTarget? value) => new Target(value);
 
         /// <summary>
         /// 

@@ -300,6 +300,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ComputerAction FromClick(global::G.Click? value) => new ComputerAction(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ComputerAction(global::G.DoubleClick value) => new ComputerAction((global::G.DoubleClick?)value);
 
         /// <summary>
@@ -314,6 +319,11 @@ namespace G
         {
             DoubleClick = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ComputerAction FromDoubleClick(global::G.DoubleClick? value) => new ComputerAction(value);
 
         /// <summary>
         /// 
@@ -336,6 +346,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ComputerAction FromDrag(global::G.Drag? value) => new ComputerAction(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ComputerAction(global::G.KeyPress value) => new ComputerAction((global::G.KeyPress?)value);
 
         /// <summary>
@@ -350,6 +365,11 @@ namespace G
         {
             KeyPress = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ComputerAction FromKeyPress(global::G.KeyPress? value) => new ComputerAction(value);
 
         /// <summary>
         /// 
@@ -372,6 +392,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ComputerAction FromMove(global::G.Move? value) => new ComputerAction(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ComputerAction(global::G.Screenshot value) => new ComputerAction((global::G.Screenshot?)value);
 
         /// <summary>
@@ -386,6 +411,11 @@ namespace G
         {
             Screenshot = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ComputerAction FromScreenshot(global::G.Screenshot? value) => new ComputerAction(value);
 
         /// <summary>
         /// 
@@ -408,6 +438,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ComputerAction FromScroll(global::G.Scroll? value) => new ComputerAction(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ComputerAction(global::G.Type value) => new ComputerAction((global::G.Type?)value);
 
         /// <summary>
@@ -426,6 +461,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ComputerAction FromType(global::G.Type? value) => new ComputerAction(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ComputerAction(global::G.Wait value) => new ComputerAction((global::G.Wait?)value);
 
         /// <summary>
@@ -440,6 +480,11 @@ namespace G
         {
             Wait = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ComputerAction FromWait(global::G.Wait? value) => new ComputerAction(value);
 
         /// <summary>
         /// 

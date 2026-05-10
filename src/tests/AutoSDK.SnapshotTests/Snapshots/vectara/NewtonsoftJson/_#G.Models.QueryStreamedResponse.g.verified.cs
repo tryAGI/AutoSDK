@@ -245,6 +245,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static QueryStreamedResponse FromSearchResults(global::G.StreamSearchResponse? value) => new QueryStreamedResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator QueryStreamedResponse(global::G.StreamGenerationChunk value) => new QueryStreamedResponse((global::G.StreamGenerationChunk?)value);
 
         /// <summary>
@@ -259,6 +264,11 @@ namespace G
         {
             GenerationChunk = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static QueryStreamedResponse FromGenerationChunk(global::G.StreamGenerationChunk? value) => new QueryStreamedResponse(value);
 
         /// <summary>
         /// 
@@ -281,6 +291,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static QueryStreamedResponse FromGenerationEnd(global::G.StreamGenerationEnd? value) => new QueryStreamedResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator QueryStreamedResponse(global::G.StreamResponseEnd value) => new QueryStreamedResponse((global::G.StreamResponseEnd?)value);
 
         /// <summary>
@@ -295,6 +310,11 @@ namespace G
         {
             End = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static QueryStreamedResponse FromEnd(global::G.StreamResponseEnd? value) => new QueryStreamedResponse(value);
 
         /// <summary>
         /// 
@@ -317,6 +337,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static QueryStreamedResponse FromFactualConsistencyScore(global::G.FactualConsistencyScore? value) => new QueryStreamedResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator QueryStreamedResponse(global::G.GenerationInfo value) => new QueryStreamedResponse((global::G.GenerationInfo?)value);
 
         /// <summary>
@@ -335,6 +360,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static QueryStreamedResponse FromGenerationInfo(global::G.GenerationInfo? value) => new QueryStreamedResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator QueryStreamedResponse(global::G.StreamError value) => new QueryStreamedResponse((global::G.StreamError?)value);
 
         /// <summary>
@@ -349,6 +379,11 @@ namespace G
         {
             Error = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static QueryStreamedResponse FromError(global::G.StreamError? value) => new QueryStreamedResponse(value);
 
         /// <summary>
         /// 

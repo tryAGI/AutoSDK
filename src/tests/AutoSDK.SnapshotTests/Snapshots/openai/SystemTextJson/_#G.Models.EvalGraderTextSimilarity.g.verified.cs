@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static EvalGraderTextSimilarity FromTextSimilarityGrader(global::G.GraderTextSimilarity? value) => new EvalGraderTextSimilarity(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator EvalGraderTextSimilarity(global::G.EvalGraderTextSimilarityVariant2 value) => new EvalGraderTextSimilarity((global::G.EvalGraderTextSimilarityVariant2?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             EvalGraderTextSimilarityVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static EvalGraderTextSimilarity FromEvalGraderTextSimilarityVariant2(global::G.EvalGraderTextSimilarityVariant2? value) => new EvalGraderTextSimilarity(value);
 
         /// <summary>
         /// 

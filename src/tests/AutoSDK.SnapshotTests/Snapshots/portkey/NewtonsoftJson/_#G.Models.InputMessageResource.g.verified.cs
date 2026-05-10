@@ -92,6 +92,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static InputMessageResource FromInputMessage(global::G.InputMessage? value) => new InputMessageResource(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator InputMessageResource(global::G.InputMessageResourceVariant2 value) => new InputMessageResource((global::G.InputMessageResourceVariant2?)value);
 
         /// <summary>
@@ -106,6 +111,11 @@ namespace G
         {
             InputMessageResourceVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static InputMessageResource FromInputMessageResourceVariant2(global::G.InputMessageResourceVariant2? value) => new InputMessageResource(value);
 
         /// <summary>
         /// 

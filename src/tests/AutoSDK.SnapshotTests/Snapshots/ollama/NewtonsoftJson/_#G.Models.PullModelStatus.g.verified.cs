@@ -91,6 +91,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static PullModelStatus FromPullModelStatusVariant1(string? value) => new PullModelStatus(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator PullModelStatus(global::G.PullModelStatusEnum value) => new PullModelStatus((global::G.PullModelStatusEnum?)value);
 
         /// <summary>
@@ -105,6 +110,11 @@ namespace G
         {
             Enum = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static PullModelStatus FromEnum(global::G.PullModelStatusEnum? value) => new PullModelStatus(value);
 
         /// <summary>
         /// 

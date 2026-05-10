@@ -92,6 +92,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static LemurActionItemsParams FromBase(global::G.LemurBaseParams? value) => new LemurActionItemsParams(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator LemurActionItemsParams(global::G.LemurActionItemsParamsVariant2 value) => new LemurActionItemsParams((global::G.LemurActionItemsParamsVariant2?)value);
 
         /// <summary>
@@ -106,6 +111,11 @@ namespace G
         {
             LemurActionItemsParamsVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static LemurActionItemsParams FromLemurActionItemsParamsVariant2(global::G.LemurActionItemsParamsVariant2? value) => new LemurActionItemsParams(value);
 
         /// <summary>
         /// 

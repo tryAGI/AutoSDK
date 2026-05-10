@@ -94,6 +94,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static CreateEvalItem FromSimpleInputMessage(global::G.CreateEvalItemSimpleInputMessage? value) => new CreateEvalItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator CreateEvalItem(global::G.EvalItem value) => new CreateEvalItem((global::G.EvalItem?)value);
 
         /// <summary>
@@ -108,6 +113,11 @@ namespace G
         {
             EvalMessageObject = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static CreateEvalItem FromEvalMessageObject(global::G.EvalItem? value) => new CreateEvalItem(value);
 
         /// <summary>
         /// 

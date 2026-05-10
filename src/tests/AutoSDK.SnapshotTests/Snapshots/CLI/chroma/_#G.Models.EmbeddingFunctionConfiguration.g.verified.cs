@@ -120,6 +120,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static EmbeddingFunctionConfiguration FromEmbeddingFunctionConfigurationVariant1(global::G.EmbeddingFunctionConfigurationVariant1? value) => new EmbeddingFunctionConfiguration(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator EmbeddingFunctionConfiguration(global::G.AllOf<global::G.EmbeddingFunctionNewConfiguration, global::G.EmbeddingFunctionConfigurationVariant22> value) => new EmbeddingFunctionConfiguration((global::G.AllOf<global::G.EmbeddingFunctionNewConfiguration, global::G.EmbeddingFunctionConfigurationVariant22>?)value);
 
         /// <summary>
@@ -138,6 +143,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static EmbeddingFunctionConfiguration FromEmbeddingFunctionConfigurationVariant2(global::G.AllOf<global::G.EmbeddingFunctionNewConfiguration, global::G.EmbeddingFunctionConfigurationVariant22>? value) => new EmbeddingFunctionConfiguration(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator EmbeddingFunctionConfiguration(global::G.EmbeddingFunctionConfigurationVariant3 value) => new EmbeddingFunctionConfiguration((global::G.EmbeddingFunctionConfigurationVariant3?)value);
 
         /// <summary>
@@ -152,6 +162,11 @@ namespace G
         {
             EmbeddingFunctionConfigurationVariant3 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static EmbeddingFunctionConfiguration FromEmbeddingFunctionConfigurationVariant3(global::G.EmbeddingFunctionConfigurationVariant3? value) => new EmbeddingFunctionConfiguration(value);
 
         /// <summary>
         /// 

@@ -95,6 +95,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ResponseToolChoiceOption FromEnum(global::G.ResponseToolChoiceOptionEnum? value) => new ResponseToolChoiceOption(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ResponseToolChoiceOption(global::G.ResponseNamedToolChoice value) => new ResponseToolChoiceOption((global::G.ResponseNamedToolChoice?)value);
 
         /// <summary>
@@ -109,6 +114,11 @@ namespace G
         {
             Named = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ResponseToolChoiceOption FromNamed(global::G.ResponseNamedToolChoice? value) => new ResponseToolChoiceOption(value);
 
         /// <summary>
         /// 

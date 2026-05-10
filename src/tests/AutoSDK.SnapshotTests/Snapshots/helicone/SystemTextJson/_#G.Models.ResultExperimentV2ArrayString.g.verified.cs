@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ResultExperimentV2ArrayString FromSuccess(global::G.ResultSuccessExperimentV2Array? value) => new ResultExperimentV2ArrayString(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ResultExperimentV2ArrayString(global::G.ResultErrorString value) => new ResultExperimentV2ArrayString((global::G.ResultErrorString?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             Error = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ResultExperimentV2ArrayString FromError(global::G.ResultErrorString? value) => new ResultExperimentV2ArrayString(value);
 
         /// <summary>
         /// 

@@ -185,6 +185,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ManagerConfig3 FromRoundRobin(global::G.RoundRobinManager? value) => new ManagerConfig3(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ManagerConfig3(global::G.SupervisorManager value) => new ManagerConfig3((global::G.SupervisorManager?)value);
 
         /// <summary>
@@ -199,6 +204,11 @@ namespace G
         {
             Supervisor = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ManagerConfig3 FromSupervisor(global::G.SupervisorManager? value) => new ManagerConfig3(value);
 
         /// <summary>
         /// 
@@ -221,6 +231,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ManagerConfig3 FromDynamic(global::G.DynamicManager? value) => new ManagerConfig3(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ManagerConfig3(global::G.SleeptimeManager value) => new ManagerConfig3((global::G.SleeptimeManager?)value);
 
         /// <summary>
@@ -239,6 +254,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ManagerConfig3 FromSleeptime(global::G.SleeptimeManager? value) => new ManagerConfig3(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ManagerConfig3(global::G.VoiceSleeptimeManager value) => new ManagerConfig3((global::G.VoiceSleeptimeManager?)value);
 
         /// <summary>
@@ -253,6 +273,11 @@ namespace G
         {
             VoiceSleeptime = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ManagerConfig3 FromVoiceSleeptime(global::G.VoiceSleeptimeManager? value) => new ManagerConfig3(value);
 
         /// <summary>
         /// 

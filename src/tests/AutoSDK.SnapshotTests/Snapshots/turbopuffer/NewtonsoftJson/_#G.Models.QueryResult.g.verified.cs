@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static QueryResult FromSingle(global::G.SingleQueryResult? value) => new QueryResult(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator QueryResult(global::G.QueryResultVariant2 value) => new QueryResult((global::G.QueryResultVariant2?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             QueryResultVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static QueryResult FromQueryResultVariant2(global::G.QueryResultVariant2? value) => new QueryResult(value);
 
         /// <summary>
         /// 

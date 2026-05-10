@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems FromEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems0(global::G.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems0? value) => new EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems(global::G.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems1 value) => new EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems((global::G.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems1?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems1 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems FromEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems1(global::G.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems1? value) => new EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems(value);
 
         /// <summary>
         /// 

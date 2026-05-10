@@ -210,6 +210,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static AnimationError FromAnimationErrorVariant1(global::G.AnimationErrorVariant1? value) => new AnimationError(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator AnimationError(global::G.AnimationErrorVariant2 value) => new AnimationError((global::G.AnimationErrorVariant2?)value);
 
         /// <summary>
@@ -224,6 +229,11 @@ namespace G
         {
             AnimationErrorVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static AnimationError FromAnimationErrorVariant2(global::G.AnimationErrorVariant2? value) => new AnimationError(value);
 
         /// <summary>
         /// 
@@ -246,6 +256,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static AnimationError FromAnimationErrorVariant3(global::G.AnimationErrorVariant3? value) => new AnimationError(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator AnimationError(global::G.AnimationErrorVariant4 value) => new AnimationError((global::G.AnimationErrorVariant4?)value);
 
         /// <summary>
@@ -260,6 +275,11 @@ namespace G
         {
             AnimationErrorVariant4 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static AnimationError FromAnimationErrorVariant4(global::G.AnimationErrorVariant4? value) => new AnimationError(value);
 
         /// <summary>
         /// 
@@ -282,6 +302,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static AnimationError FromAnimationErrorVariant5(global::G.AnimationErrorVariant5? value) => new AnimationError(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator AnimationError(global::G.AnimationErrorVariant6 value) => new AnimationError((global::G.AnimationErrorVariant6?)value);
 
         /// <summary>
@@ -296,6 +321,11 @@ namespace G
         {
             AnimationErrorVariant6 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static AnimationError FromAnimationErrorVariant6(global::G.AnimationErrorVariant6? value) => new AnimationError(value);
 
         /// <summary>
         /// 

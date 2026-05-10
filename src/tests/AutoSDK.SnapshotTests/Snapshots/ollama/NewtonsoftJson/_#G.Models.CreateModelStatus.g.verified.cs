@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static CreateModelStatus FromCreateModelStatusVariant1(string? value) => new CreateModelStatus(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator CreateModelStatus(global::G.CreateModelStatusEnum value) => new CreateModelStatus((global::G.CreateModelStatusEnum?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             Enum = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static CreateModelStatus FromEnum(global::G.CreateModelStatusEnum? value) => new CreateModelStatus(value);
 
         /// <summary>
         /// 

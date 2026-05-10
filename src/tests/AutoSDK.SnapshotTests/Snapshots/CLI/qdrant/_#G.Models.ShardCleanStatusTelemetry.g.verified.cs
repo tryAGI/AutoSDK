@@ -120,6 +120,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ShardCleanStatusTelemetry FromEnum(global::G.ShardCleanStatusTelemetryEnum? value) => new ShardCleanStatusTelemetry(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ShardCleanStatusTelemetry(global::G.ShardCleanStatusTelemetryEnum2 value) => new ShardCleanStatusTelemetry((global::G.ShardCleanStatusTelemetryEnum2?)value);
 
         /// <summary>
@@ -138,6 +143,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ShardCleanStatusTelemetry FromEnum2(global::G.ShardCleanStatusTelemetryEnum2? value) => new ShardCleanStatusTelemetry(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ShardCleanStatusTelemetry(global::G.ShardCleanStatusTelemetryEnum3 value) => new ShardCleanStatusTelemetry((global::G.ShardCleanStatusTelemetryEnum3?)value);
 
         /// <summary>
@@ -152,6 +162,11 @@ namespace G
         {
             Enum3 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ShardCleanStatusTelemetry FromEnum3(global::G.ShardCleanStatusTelemetryEnum3? value) => new ShardCleanStatusTelemetry(value);
 
         /// <summary>
         /// 

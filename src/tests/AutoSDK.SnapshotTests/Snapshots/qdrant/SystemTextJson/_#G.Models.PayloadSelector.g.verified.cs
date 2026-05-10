@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static PayloadSelector FromInclude(global::G.PayloadSelectorInclude? value) => new PayloadSelector(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator PayloadSelector(global::G.PayloadSelectorExclude value) => new PayloadSelector((global::G.PayloadSelectorExclude?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             Exclude = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static PayloadSelector FromExclude(global::G.PayloadSelectorExclude? value) => new PayloadSelector(value);
 
         /// <summary>
         /// 

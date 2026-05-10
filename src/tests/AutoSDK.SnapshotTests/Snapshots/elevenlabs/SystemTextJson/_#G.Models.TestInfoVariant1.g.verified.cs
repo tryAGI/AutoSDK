@@ -125,6 +125,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static TestInfoVariant1 FromLlm(global::G.ResponseUnitTestModel? value) => new TestInfoVariant1(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator TestInfoVariant1(global::G.ToolCallUnitTestModel value) => new TestInfoVariant1((global::G.ToolCallUnitTestModel?)value);
 
         /// <summary>
@@ -143,6 +148,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static TestInfoVariant1 FromTool(global::G.ToolCallUnitTestModel? value) => new TestInfoVariant1(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator TestInfoVariant1(global::G.SimulationTestModel value) => new TestInfoVariant1((global::G.SimulationTestModel?)value);
 
         /// <summary>
@@ -157,6 +167,11 @@ namespace G
         {
             Simulation = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static TestInfoVariant1 FromSimulation(global::G.SimulationTestModel? value) => new TestInfoVariant1(value);
 
         /// <summary>
         /// 

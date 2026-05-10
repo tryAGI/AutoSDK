@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static IngestionUsage FromUsage(global::G.Usage? value) => new IngestionUsage(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator IngestionUsage(global::G.OpenAIUsage value) => new IngestionUsage((global::G.OpenAIUsage?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             OpenAIUsage = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static IngestionUsage FromOpenAIUsage(global::G.OpenAIUsage? value) => new IngestionUsage(value);
 
         /// <summary>
         /// 

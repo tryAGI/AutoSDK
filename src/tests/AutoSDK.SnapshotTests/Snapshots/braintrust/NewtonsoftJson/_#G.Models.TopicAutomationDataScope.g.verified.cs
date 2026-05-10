@@ -150,6 +150,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static TopicAutomationDataScope FromTopicAutomationDataScopeVariant1(global::G.TopicAutomationDataScopeVariant1? value) => new TopicAutomationDataScope(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator TopicAutomationDataScope(global::G.TopicAutomationDataScopeVariant2 value) => new TopicAutomationDataScope((global::G.TopicAutomationDataScopeVariant2?)value);
 
         /// <summary>
@@ -168,6 +173,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static TopicAutomationDataScope FromTopicAutomationDataScopeVariant2(global::G.TopicAutomationDataScopeVariant2? value) => new TopicAutomationDataScope(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator TopicAutomationDataScope(global::G.TopicAutomationDataScopeVariant3 value) => new TopicAutomationDataScope((global::G.TopicAutomationDataScopeVariant3?)value);
 
         /// <summary>
@@ -182,6 +192,11 @@ namespace G
         {
             TopicAutomationDataScopeVariant3 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static TopicAutomationDataScope FromTopicAutomationDataScopeVariant3(global::G.TopicAutomationDataScopeVariant3? value) => new TopicAutomationDataScope(value);
 
         /// <summary>
         /// 

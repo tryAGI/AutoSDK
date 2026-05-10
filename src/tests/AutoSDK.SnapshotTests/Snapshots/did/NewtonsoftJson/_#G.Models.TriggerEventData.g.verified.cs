@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static TriggerEventData FromChatEnd(global::G.ChatEndEventData? value) => new TriggerEventData(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator TriggerEventData(global::G.TriggerEventDataVariant2 value) => new TriggerEventData((global::G.TriggerEventDataVariant2?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             TriggerEventDataVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static TriggerEventData FromTriggerEventDataVariant2(global::G.TriggerEventDataVariant2? value) => new TriggerEventData(value);
 
         /// <summary>
         /// 

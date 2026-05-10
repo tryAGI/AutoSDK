@@ -180,6 +180,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ModelParams FromOpenAIModelParams(global::G.ModelParamsOpenAIModelParams? value) => new ModelParams(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ModelParams(global::G.ModelParamsAnthropicModelParams value) => new ModelParams((global::G.ModelParamsAnthropicModelParams?)value);
 
         /// <summary>
@@ -194,6 +199,11 @@ namespace G
         {
             AnthropicModelParams = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ModelParams FromAnthropicModelParams(global::G.ModelParamsAnthropicModelParams? value) => new ModelParams(value);
 
         /// <summary>
         /// 
@@ -216,6 +226,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ModelParams FromGoogleModelParams(global::G.ModelParamsGoogleModelParams? value) => new ModelParams(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ModelParams(global::G.ModelParamsWindowAIModelParams value) => new ModelParams((global::G.ModelParamsWindowAIModelParams?)value);
 
         /// <summary>
@@ -234,6 +249,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ModelParams FromWindowAIModelParams(global::G.ModelParamsWindowAIModelParams? value) => new ModelParams(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ModelParams(global::G.ModelParamsJsCompletionParams value) => new ModelParams((global::G.ModelParamsJsCompletionParams?)value);
 
         /// <summary>
@@ -248,6 +268,11 @@ namespace G
         {
             JsCompletionParams = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ModelParams FromJsCompletionParams(global::G.ModelParamsJsCompletionParams? value) => new ModelParams(value);
 
         /// <summary>
         /// 

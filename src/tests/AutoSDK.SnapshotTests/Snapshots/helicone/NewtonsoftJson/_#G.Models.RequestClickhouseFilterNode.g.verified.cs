@@ -120,6 +120,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static RequestClickhouseFilterNode FromPickLeafResponseRmt(global::G.PickFilterLeafRequestResponseRmt? value) => new RequestClickhouseFilterNode(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator RequestClickhouseFilterNode(global::G.RequestClickhouseFilterBranch value) => new RequestClickhouseFilterNode((global::G.RequestClickhouseFilterBranch?)value);
 
         /// <summary>
@@ -138,6 +143,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static RequestClickhouseFilterNode FromBranch(global::G.RequestClickhouseFilterBranch? value) => new RequestClickhouseFilterNode(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator RequestClickhouseFilterNode(global::G.RequestClickhouseFilterNodeEnum value) => new RequestClickhouseFilterNode((global::G.RequestClickhouseFilterNodeEnum?)value);
 
         /// <summary>
@@ -152,6 +162,11 @@ namespace G
         {
             Enum = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static RequestClickhouseFilterNode FromEnum(global::G.RequestClickhouseFilterNodeEnum? value) => new RequestClickhouseFilterNode(value);
 
         /// <summary>
         /// 

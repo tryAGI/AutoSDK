@@ -275,6 +275,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ContentVariant1Item FromText(global::G.TextContent? value) => new ContentVariant1Item(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ContentVariant1Item(global::G.ImageContent value) => new ContentVariant1Item((global::G.ImageContent?)value);
 
         /// <summary>
@@ -289,6 +294,11 @@ namespace G
         {
             Image = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ContentVariant1Item FromImage(global::G.ImageContent? value) => new ContentVariant1Item(value);
 
         /// <summary>
         /// 
@@ -311,6 +321,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ContentVariant1Item FromToolCall(global::G.ToolCallContent? value) => new ContentVariant1Item(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ContentVariant1Item(global::G.ToolReturnContent value) => new ContentVariant1Item((global::G.ToolReturnContent?)value);
 
         /// <summary>
@@ -325,6 +340,11 @@ namespace G
         {
             ToolReturn = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ContentVariant1Item FromToolReturn(global::G.ToolReturnContent? value) => new ContentVariant1Item(value);
 
         /// <summary>
         /// 
@@ -347,6 +367,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ContentVariant1Item FromOmittedReasoning1(global::G.ReasoningContent? value) => new ContentVariant1Item(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ContentVariant1Item(global::G.RedactedReasoningContent value) => new ContentVariant1Item((global::G.RedactedReasoningContent?)value);
 
         /// <summary>
@@ -361,6 +386,11 @@ namespace G
         {
             RedactedReasoning = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ContentVariant1Item FromRedactedReasoning(global::G.RedactedReasoningContent? value) => new ContentVariant1Item(value);
 
         /// <summary>
         /// 
@@ -383,6 +413,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ContentVariant1Item FromOmittedReasoning2(global::G.OmittedReasoningContent? value) => new ContentVariant1Item(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ContentVariant1Item(global::G.SummarizedReasoningContent value) => new ContentVariant1Item((global::G.SummarizedReasoningContent?)value);
 
         /// <summary>
@@ -397,6 +432,11 @@ namespace G
         {
             SummarizedReasoning = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ContentVariant1Item FromSummarizedReasoning(global::G.SummarizedReasoningContent? value) => new ContentVariant1Item(value);
 
         /// <summary>
         /// 

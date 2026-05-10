@@ -95,6 +95,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static CreateTextTo3DTaskRequest FromPreview(global::G.TextTo3DPreviewRequest? value) => new CreateTextTo3DTaskRequest(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator CreateTextTo3DTaskRequest(global::G.TextTo3DRefineRequest value) => new CreateTextTo3DTaskRequest((global::G.TextTo3DRefineRequest?)value);
 
         /// <summary>
@@ -109,6 +114,11 @@ namespace G
         {
             Refine = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static CreateTextTo3DTaskRequest FromRefine(global::G.TextTo3DRefineRequest? value) => new CreateTextTo3DTaskRequest(value);
 
         /// <summary>
         /// 

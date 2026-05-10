@@ -155,6 +155,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static RulesItem FromQueryString(global::G.QueryStringSubstitutionRule? value) => new RulesItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator RulesItem(global::G.QueryRegexSubstitutionRule value) => new RulesItem((global::G.QueryRegexSubstitutionRule?)value);
 
         /// <summary>
@@ -169,6 +174,11 @@ namespace G
         {
             QueryRegex = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static RulesItem FromQueryRegex(global::G.QueryRegexSubstitutionRule? value) => new RulesItem(value);
 
         /// <summary>
         /// 
@@ -191,6 +201,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static RulesItem FromChunkSearchResult(global::G.ChunkSearchResultRule? value) => new RulesItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator RulesItem(global::G.FileSearchResultRule value) => new RulesItem((global::G.FileSearchResultRule?)value);
 
         /// <summary>
@@ -205,6 +220,11 @@ namespace G
         {
             FileSearchResult = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static RulesItem FromFileSearchResult(global::G.FileSearchResultRule? value) => new RulesItem(value);
 
         /// <summary>
         /// 

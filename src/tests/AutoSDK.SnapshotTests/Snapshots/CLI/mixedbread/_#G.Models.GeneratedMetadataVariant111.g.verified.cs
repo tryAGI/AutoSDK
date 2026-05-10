@@ -245,6 +245,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static GeneratedMetadataVariant111 FromMarkdown(global::G.MarkdownChunkGeneratedMetadata? value) => new GeneratedMetadataVariant111(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator GeneratedMetadataVariant111(global::G.TextChunkGeneratedMetadata value) => new GeneratedMetadataVariant111((global::G.TextChunkGeneratedMetadata?)value);
 
         /// <summary>
@@ -259,6 +264,11 @@ namespace G
         {
             Text = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static GeneratedMetadataVariant111 FromText(global::G.TextChunkGeneratedMetadata? value) => new GeneratedMetadataVariant111(value);
 
         /// <summary>
         /// 
@@ -281,6 +291,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static GeneratedMetadataVariant111 FromPdf(global::G.PDFChunkGeneratedMetadata? value) => new GeneratedMetadataVariant111(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator GeneratedMetadataVariant111(global::G.CodeChunkGeneratedMetadata value) => new GeneratedMetadataVariant111((global::G.CodeChunkGeneratedMetadata?)value);
 
         /// <summary>
@@ -295,6 +310,11 @@ namespace G
         {
             Code = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static GeneratedMetadataVariant111 FromCode(global::G.CodeChunkGeneratedMetadata? value) => new GeneratedMetadataVariant111(value);
 
         /// <summary>
         /// 
@@ -317,6 +337,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static GeneratedMetadataVariant111 FromAudio(global::G.AudioChunkGeneratedMetadata? value) => new GeneratedMetadataVariant111(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator GeneratedMetadataVariant111(global::G.VideoChunkGeneratedMetadata value) => new GeneratedMetadataVariant111((global::G.VideoChunkGeneratedMetadata?)value);
 
         /// <summary>
@@ -335,6 +360,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static GeneratedMetadataVariant111 FromVideo(global::G.VideoChunkGeneratedMetadata? value) => new GeneratedMetadataVariant111(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator GeneratedMetadataVariant111(global::G.ImageChunkGeneratedMetadata value) => new GeneratedMetadataVariant111((global::G.ImageChunkGeneratedMetadata?)value);
 
         /// <summary>
@@ -349,6 +379,11 @@ namespace G
         {
             Image = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static GeneratedMetadataVariant111 FromImage(global::G.ImageChunkGeneratedMetadata? value) => new GeneratedMetadataVariant111(value);
 
         /// <summary>
         /// 

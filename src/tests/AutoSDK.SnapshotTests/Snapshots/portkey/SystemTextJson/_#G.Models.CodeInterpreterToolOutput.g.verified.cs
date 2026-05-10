@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static CodeInterpreterToolOutput FromCodeInterpreterTextOutput(global::G.CodeInterpreterTextOutput? value) => new CodeInterpreterToolOutput(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator CodeInterpreterToolOutput(global::G.CodeInterpreterFileOutput value) => new CodeInterpreterToolOutput((global::G.CodeInterpreterFileOutput?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             CodeInterpreterFileOutput = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static CodeInterpreterToolOutput FromCodeInterpreterFileOutput(global::G.CodeInterpreterFileOutput? value) => new CodeInterpreterToolOutput(value);
 
         /// <summary>
         /// 

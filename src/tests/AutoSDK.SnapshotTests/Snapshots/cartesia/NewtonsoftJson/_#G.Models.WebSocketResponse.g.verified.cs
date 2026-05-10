@@ -215,6 +215,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static WebSocketResponse FromChunk(global::G.WebSocketResponseVariant1? value) => new WebSocketResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator WebSocketResponse(global::G.WebSocketResponseVariant2 value) => new WebSocketResponse((global::G.WebSocketResponseVariant2?)value);
 
         /// <summary>
@@ -229,6 +234,11 @@ namespace G
         {
             FlushDone = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static WebSocketResponse FromFlushDone(global::G.WebSocketResponseVariant2? value) => new WebSocketResponse(value);
 
         /// <summary>
         /// 
@@ -251,6 +261,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static WebSocketResponse FromDone(global::G.WebSocketResponseVariant3? value) => new WebSocketResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator WebSocketResponse(global::G.WebSocketResponseVariant4 value) => new WebSocketResponse((global::G.WebSocketResponseVariant4?)value);
 
         /// <summary>
@@ -265,6 +280,11 @@ namespace G
         {
             Timestamps = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static WebSocketResponse FromTimestamps(global::G.WebSocketResponseVariant4? value) => new WebSocketResponse(value);
 
         /// <summary>
         /// 
@@ -287,6 +307,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static WebSocketResponse FromError(global::G.WebSocketResponseVariant5? value) => new WebSocketResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator WebSocketResponse(global::G.WebSocketResponseVariant6 value) => new WebSocketResponse((global::G.WebSocketResponseVariant6?)value);
 
         /// <summary>
@@ -301,6 +326,11 @@ namespace G
         {
             PhonemeTimestamps = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static WebSocketResponse FromPhonemeTimestamps(global::G.WebSocketResponseVariant6? value) => new WebSocketResponse(value);
 
         /// <summary>
         /// 

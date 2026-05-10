@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ToolResultOutput FromToolResultOutputVariant1(global::G.ToolResultOutputVariant1? value) => new ToolResultOutput(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ToolResultOutput(global::G.ToolResultOutputVariant2 value) => new ToolResultOutput((global::G.ToolResultOutputVariant2?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             ToolResultOutputVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ToolResultOutput FromToolResultOutputVariant2(global::G.ToolResultOutputVariant2? value) => new ToolResultOutput(value);
 
         /// <summary>
         /// 

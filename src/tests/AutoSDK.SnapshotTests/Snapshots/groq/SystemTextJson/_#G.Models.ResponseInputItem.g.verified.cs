@@ -180,6 +180,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ResponseInputItem FromEasyInputMessage(global::G.ResponseEasyInputMessage? value) => new ResponseInputItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ResponseInputItem(global::G.ResponseInputMessage value) => new ResponseInputItem((global::G.ResponseInputMessage?)value);
 
         /// <summary>
@@ -194,6 +199,11 @@ namespace G
         {
             Message = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ResponseInputItem FromMessage(global::G.ResponseInputMessage? value) => new ResponseInputItem(value);
 
         /// <summary>
         /// 
@@ -216,6 +226,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ResponseInputItem FromItemReference(global::G.ResponseItemReference? value) => new ResponseInputItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ResponseInputItem(global::G.ResponseFunctionCall value) => new ResponseInputItem((global::G.ResponseFunctionCall?)value);
 
         /// <summary>
@@ -234,6 +249,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ResponseInputItem FromFunctionCall(global::G.ResponseFunctionCall? value) => new ResponseInputItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ResponseInputItem(global::G.ResponseFunctionCallOutput value) => new ResponseInputItem((global::G.ResponseFunctionCallOutput?)value);
 
         /// <summary>
@@ -248,6 +268,11 @@ namespace G
         {
             FunctionCallOutput = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ResponseInputItem FromFunctionCallOutput(global::G.ResponseFunctionCallOutput? value) => new ResponseInputItem(value);
 
         /// <summary>
         /// 

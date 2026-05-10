@@ -245,6 +245,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static EmbeddingConfigVariant1 FromAzureEmbedding1(global::G.AzureOpenAIEmbeddingConfig? value) => new EmbeddingConfigVariant1(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator EmbeddingConfigVariant1(global::G.CohereEmbeddingConfig value) => new EmbeddingConfigVariant1((global::G.CohereEmbeddingConfig?)value);
 
         /// <summary>
@@ -259,6 +264,11 @@ namespace G
         {
             CohereEmbedding = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static EmbeddingConfigVariant1 FromCohereEmbedding(global::G.CohereEmbeddingConfig? value) => new EmbeddingConfigVariant1(value);
 
         /// <summary>
         /// 
@@ -281,6 +291,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static EmbeddingConfigVariant1 FromGeminiEmbedding(global::G.GeminiEmbeddingConfig? value) => new EmbeddingConfigVariant1(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator EmbeddingConfigVariant1(global::G.HuggingFaceInferenceAPIEmbeddingConfig value) => new EmbeddingConfigVariant1((global::G.HuggingFaceInferenceAPIEmbeddingConfig?)value);
 
         /// <summary>
@@ -295,6 +310,11 @@ namespace G
         {
             HuggingfaceApiEmbedding = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static EmbeddingConfigVariant1 FromHuggingfaceApiEmbedding(global::G.HuggingFaceInferenceAPIEmbeddingConfig? value) => new EmbeddingConfigVariant1(value);
 
         /// <summary>
         /// 
@@ -317,6 +337,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static EmbeddingConfigVariant1 FromAzureEmbedding2(global::G.OpenAIEmbeddingConfig? value) => new EmbeddingConfigVariant1(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator EmbeddingConfigVariant1(global::G.VertexAIEmbeddingConfig value) => new EmbeddingConfigVariant1((global::G.VertexAIEmbeddingConfig?)value);
 
         /// <summary>
@@ -335,6 +360,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static EmbeddingConfigVariant1 FromVertexaiEmbedding(global::G.VertexAIEmbeddingConfig? value) => new EmbeddingConfigVariant1(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator EmbeddingConfigVariant1(global::G.BedrockEmbeddingConfig value) => new EmbeddingConfigVariant1((global::G.BedrockEmbeddingConfig?)value);
 
         /// <summary>
@@ -349,6 +379,11 @@ namespace G
         {
             BedrockEmbedding = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static EmbeddingConfigVariant1 FromBedrockEmbedding(global::G.BedrockEmbeddingConfig? value) => new EmbeddingConfigVariant1(value);
 
         /// <summary>
         /// 

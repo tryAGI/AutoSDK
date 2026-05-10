@@ -65,6 +65,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ContentVariant2Item FromText(global::G.TextContent? value) => new ContentVariant2Item(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public ContentVariant2Item(
             global::G.AssistantMessageContentVariant2ItemDiscriminatorType? type,
             global::G.TextContent? text

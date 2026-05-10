@@ -95,6 +95,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static AgentInput FromText(global::G.AgentTextInput? value) => new AgentInput(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator AgentInput(global::G.AgentSkillInput value) => new AgentInput((global::G.AgentSkillInput?)value);
 
         /// <summary>
@@ -109,6 +114,11 @@ namespace G
         {
             Skill = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static AgentInput FromSkill(global::G.AgentSkillInput? value) => new AgentInput(value);
 
         /// <summary>
         /// 

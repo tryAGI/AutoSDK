@@ -125,6 +125,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Config4 FromStdio(global::G.LettaSchemasMcpServerUpdateStdioMCPServer? value) => new Config4(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Config4(global::G.LettaSchemasMcpServerUpdateSSEMCPServer value) => new Config4((global::G.LettaSchemasMcpServerUpdateSSEMCPServer?)value);
 
         /// <summary>
@@ -143,6 +148,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Config4 FromSse(global::G.LettaSchemasMcpServerUpdateSSEMCPServer? value) => new Config4(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Config4(global::G.LettaSchemasMcpServerUpdateStreamableHTTPMCPServer value) => new Config4((global::G.LettaSchemasMcpServerUpdateStreamableHTTPMCPServer?)value);
 
         /// <summary>
@@ -157,6 +167,11 @@ namespace G
         {
             StreamableHttp = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Config4 FromStreamableHttp(global::G.LettaSchemasMcpServerUpdateStreamableHTTPMCPServer? value) => new Config4(value);
 
         /// <summary>
         /// 

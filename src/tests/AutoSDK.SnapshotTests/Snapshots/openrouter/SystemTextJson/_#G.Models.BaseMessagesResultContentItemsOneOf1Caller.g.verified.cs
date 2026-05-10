@@ -120,6 +120,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static BaseMessagesResultContentItemsOneOf1Caller FromBaseMessagesResultContentItemsOneOf1Caller0(global::G.BaseMessagesResultContentItemsOneOf1Caller0? value) => new BaseMessagesResultContentItemsOneOf1Caller(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BaseMessagesResultContentItemsOneOf1Caller(global::G.BaseMessagesResultContentItemsOneOf1Caller1 value) => new BaseMessagesResultContentItemsOneOf1Caller((global::G.BaseMessagesResultContentItemsOneOf1Caller1?)value);
 
         /// <summary>
@@ -138,6 +143,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static BaseMessagesResultContentItemsOneOf1Caller FromBaseMessagesResultContentItemsOneOf1Caller1(global::G.BaseMessagesResultContentItemsOneOf1Caller1? value) => new BaseMessagesResultContentItemsOneOf1Caller(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BaseMessagesResultContentItemsOneOf1Caller(global::G.BaseMessagesResultContentItemsOneOf1Caller2 value) => new BaseMessagesResultContentItemsOneOf1Caller((global::G.BaseMessagesResultContentItemsOneOf1Caller2?)value);
 
         /// <summary>
@@ -152,6 +162,11 @@ namespace G
         {
             BaseMessagesResultContentItemsOneOf1Caller2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BaseMessagesResultContentItemsOneOf1Caller FromBaseMessagesResultContentItemsOneOf1Caller2(global::G.BaseMessagesResultContentItemsOneOf1Caller2? value) => new BaseMessagesResultContentItemsOneOf1Caller(value);
 
         /// <summary>
         /// 

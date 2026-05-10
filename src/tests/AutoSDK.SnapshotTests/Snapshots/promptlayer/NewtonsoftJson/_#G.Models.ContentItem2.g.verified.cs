@@ -635,6 +635,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ContentItem2 FromText(global::G.TextContent? value) => new ContentItem2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ContentItem2(global::G.ThinkingContent value) => new ContentItem2((global::G.ThinkingContent?)value);
 
         /// <summary>
@@ -649,6 +654,11 @@ namespace G
         {
             Thinking = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ContentItem2 FromThinking(global::G.ThinkingContent? value) => new ContentItem2(value);
 
         /// <summary>
         /// 
@@ -671,6 +681,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ContentItem2 FromCode(global::G.CodeContent? value) => new ContentItem2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ContentItem2(global::G.ImageContent value) => new ContentItem2((global::G.ImageContent?)value);
 
         /// <summary>
@@ -685,6 +700,11 @@ namespace G
         {
             ImageUrl = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ContentItem2 FromImageUrl(global::G.ImageContent? value) => new ContentItem2(value);
 
         /// <summary>
         /// 
@@ -707,6 +727,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ContentItem2 FromMedia(global::G.MediaContent? value) => new ContentItem2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ContentItem2(global::G.MediaVariable value) => new ContentItem2((global::G.MediaVariable?)value);
 
         /// <summary>
@@ -721,6 +746,11 @@ namespace G
         {
             MediaVariable = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ContentItem2 FromMediaVariable(global::G.MediaVariable? value) => new ContentItem2(value);
 
         /// <summary>
         /// 
@@ -743,6 +773,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ContentItem2 FromOutputMedia(global::G.OutputMediaContent? value) => new ContentItem2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ContentItem2(global::G.ServerToolUseContent value) => new ContentItem2((global::G.ServerToolUseContent?)value);
 
         /// <summary>
@@ -757,6 +792,11 @@ namespace G
         {
             ServerToolUse = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ContentItem2 FromServerToolUse(global::G.ServerToolUseContent? value) => new ContentItem2(value);
 
         /// <summary>
         /// 
@@ -779,6 +819,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ContentItem2 FromWebSearchToolResult(global::G.WebSearchToolResultContent? value) => new ContentItem2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ContentItem2(global::G.CodeExecutionResultContent value) => new ContentItem2((global::G.CodeExecutionResultContent?)value);
 
         /// <summary>
@@ -793,6 +838,11 @@ namespace G
         {
             CodeExecutionResult = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ContentItem2 FromCodeExecutionResult(global::G.CodeExecutionResultContent? value) => new ContentItem2(value);
 
         /// <summary>
         /// 
@@ -815,6 +865,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ContentItem2 FromMcpListTools(global::G.McpListToolsContent? value) => new ContentItem2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ContentItem2(global::G.McpCallContent value) => new ContentItem2((global::G.McpCallContent?)value);
 
         /// <summary>
@@ -829,6 +884,11 @@ namespace G
         {
             McpCall = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ContentItem2 FromMcpCall(global::G.McpCallContent? value) => new ContentItem2(value);
 
         /// <summary>
         /// 
@@ -851,6 +911,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ContentItem2 FromMcpApprovalRequest(global::G.McpApprovalRequestContent? value) => new ContentItem2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ContentItem2(global::G.McpApprovalResponseContent value) => new ContentItem2((global::G.McpApprovalResponseContent?)value);
 
         /// <summary>
@@ -865,6 +930,11 @@ namespace G
         {
             McpApprovalResponse = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ContentItem2 FromMcpApprovalResponse(global::G.McpApprovalResponseContent? value) => new ContentItem2(value);
 
         /// <summary>
         /// 
@@ -887,6 +957,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ContentItem2 FromBashCodeExecutionToolResult(global::G.BashCodeExecutionToolResultContent? value) => new ContentItem2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ContentItem2(global::G.TextEditorCodeExecutionToolResultContent value) => new ContentItem2((global::G.TextEditorCodeExecutionToolResultContent?)value);
 
         /// <summary>
@@ -901,6 +976,11 @@ namespace G
         {
             TextEditorCodeExecutionToolResult = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ContentItem2 FromTextEditorCodeExecutionToolResult(global::G.TextEditorCodeExecutionToolResultContent? value) => new ContentItem2(value);
 
         /// <summary>
         /// 
@@ -923,6 +1003,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ContentItem2 FromShellCall(global::G.ShellCallContent? value) => new ContentItem2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ContentItem2(global::G.ShellCallOutputContent value) => new ContentItem2((global::G.ShellCallOutputContent?)value);
 
         /// <summary>
@@ -937,6 +1022,11 @@ namespace G
         {
             ShellCallOutput = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ContentItem2 FromShellCallOutput(global::G.ShellCallOutputContent? value) => new ContentItem2(value);
 
         /// <summary>
         /// 
@@ -959,6 +1049,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ContentItem2 FromApplyPatchCall(global::G.ApplyPatchCallContent? value) => new ContentItem2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ContentItem2(global::G.ApplyPatchCallOutputContent value) => new ContentItem2((global::G.ApplyPatchCallOutputContent?)value);
 
         /// <summary>
@@ -973,6 +1068,11 @@ namespace G
         {
             ApplyPatchCallOutput = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ContentItem2 FromApplyPatchCallOutput(global::G.ApplyPatchCallOutputContent? value) => new ContentItem2(value);
 
         /// <summary>
         /// 

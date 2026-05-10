@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Filters2 FromComparisonFilter(global::G.ComparisonFilter? value) => new Filters2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Filters2(global::G.CompoundFilter value) => new Filters2((global::G.CompoundFilter?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             CompoundFilter = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Filters2 FromCompoundFilter(global::G.CompoundFilter? value) => new Filters2(value);
 
         /// <summary>
         /// 

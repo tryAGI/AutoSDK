@@ -95,6 +95,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ContentVariant2Item2 FromText(global::G.RequestTextBlock? value) => new ContentVariant2Item2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ContentVariant2Item2(global::G.RequestImageBlock value) => new ContentVariant2Item2((global::G.RequestImageBlock?)value);
 
         /// <summary>
@@ -109,6 +114,11 @@ namespace G
         {
             Image = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ContentVariant2Item2 FromImage(global::G.RequestImageBlock? value) => new ContentVariant2Item2(value);
 
         /// <summary>
         /// 

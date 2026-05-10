@@ -110,6 +110,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static BulkDeleteDocumentsResponse FromAsync(global::G.BulkDeleteAsyncResponse? value) => new BulkDeleteDocumentsResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BulkDeleteDocumentsResponse(global::G.BulkDeleteSyncSuccessResponse value) => new BulkDeleteDocumentsResponse((global::G.BulkDeleteSyncSuccessResponse?)value);
 
         /// <summary>
@@ -124,6 +129,11 @@ namespace G
         {
             Success = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BulkDeleteDocumentsResponse FromSuccess(global::G.BulkDeleteSyncSuccessResponse? value) => new BulkDeleteDocumentsResponse(value);
 
         /// <summary>
         /// 

@@ -395,6 +395,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ResultVariant12 FromEndCallSuccess(global::G.EndCallToolResultModel? value) => new ResultVariant12(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ResultVariant12(global::G.LanguageDetectionToolResultModel value) => new ResultVariant12((global::G.LanguageDetectionToolResultModel?)value);
 
         /// <summary>
@@ -409,6 +414,11 @@ namespace G
         {
             LanguageDetectionSuccess = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ResultVariant12 FromLanguageDetectionSuccess(global::G.LanguageDetectionToolResultModel? value) => new ResultVariant12(value);
 
         /// <summary>
         /// 
@@ -431,6 +441,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ResultVariant12 FromTransferToAgentSuccess(global::G.TransferToAgentToolResultSuccessModel? value) => new ResultVariant12(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ResultVariant12(global::G.TransferToAgentToolResultErrorModel value) => new ResultVariant12((global::G.TransferToAgentToolResultErrorModel?)value);
 
         /// <summary>
@@ -445,6 +460,11 @@ namespace G
         {
             TransferToAgentError = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ResultVariant12 FromTransferToAgentError(global::G.TransferToAgentToolResultErrorModel? value) => new ResultVariant12(value);
 
         /// <summary>
         /// 
@@ -467,6 +487,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ResultVariant12 FromTransferToNumberTwilioSuccess(global::G.TransferToNumberResultTwilioSuccessModel? value) => new ResultVariant12(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ResultVariant12(global::G.TransferToNumberResultSipSuccessModel value) => new ResultVariant12((global::G.TransferToNumberResultSipSuccessModel?)value);
 
         /// <summary>
@@ -481,6 +506,11 @@ namespace G
         {
             TransferToNumberSipSuccess = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ResultVariant12 FromTransferToNumberSipSuccess(global::G.TransferToNumberResultSipSuccessModel? value) => new ResultVariant12(value);
 
         /// <summary>
         /// 
@@ -503,6 +533,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ResultVariant12 FromTransferToNumberError(global::G.TransferToNumberResultErrorModel? value) => new ResultVariant12(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ResultVariant12(global::G.SkipTurnToolResponseModel value) => new ResultVariant12((global::G.SkipTurnToolResponseModel?)value);
 
         /// <summary>
@@ -517,6 +552,11 @@ namespace G
         {
             SkipTurnSuccess = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ResultVariant12 FromSkipTurnSuccess(global::G.SkipTurnToolResponseModel? value) => new ResultVariant12(value);
 
         /// <summary>
         /// 
@@ -539,6 +579,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ResultVariant12 FromPlayDtmfSuccess(global::G.PlayDTMFResultSuccessModel? value) => new ResultVariant12(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ResultVariant12(global::G.PlayDTMFResultErrorModel value) => new ResultVariant12((global::G.PlayDTMFResultErrorModel?)value);
 
         /// <summary>
@@ -553,6 +598,11 @@ namespace G
         {
             PlayDtmfError = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ResultVariant12 FromPlayDtmfError(global::G.PlayDTMFResultErrorModel? value) => new ResultVariant12(value);
 
         /// <summary>
         /// 
@@ -575,6 +625,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ResultVariant12 FromVoicemailDetectionSuccess(global::G.VoiceMailDetectionResultSuccessModel? value) => new ResultVariant12(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ResultVariant12(global::G.TestToolResultModel value) => new ResultVariant12((global::G.TestToolResultModel?)value);
 
         /// <summary>
@@ -589,6 +644,11 @@ namespace G
         {
             TestingToolResult = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ResultVariant12 FromTestingToolResult(global::G.TestToolResultModel? value) => new ResultVariant12(value);
 
         /// <summary>
         /// 

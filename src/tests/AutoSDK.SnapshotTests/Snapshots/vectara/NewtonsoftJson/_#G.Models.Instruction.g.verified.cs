@@ -65,6 +65,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Instruction FromInitial(global::G.InitialInstruction? value) => new Instruction(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public Instruction(
             global::G.InstructionDiscriminatorType? type,
             global::G.InitialInstruction? initial

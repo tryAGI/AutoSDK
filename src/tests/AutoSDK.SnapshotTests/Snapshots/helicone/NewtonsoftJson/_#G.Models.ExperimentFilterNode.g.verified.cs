@@ -120,6 +120,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ExperimentFilterNode FromPickLeaf(global::G.PickFilterLeafExperiment? value) => new ExperimentFilterNode(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ExperimentFilterNode(global::G.ExperimentFilterBranch value) => new ExperimentFilterNode((global::G.ExperimentFilterBranch?)value);
 
         /// <summary>
@@ -138,6 +143,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ExperimentFilterNode FromBranch(global::G.ExperimentFilterBranch? value) => new ExperimentFilterNode(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ExperimentFilterNode(global::G.ExperimentFilterNodeEnum value) => new ExperimentFilterNode((global::G.ExperimentFilterNodeEnum?)value);
 
         /// <summary>
@@ -152,6 +162,11 @@ namespace G
         {
             Enum = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ExperimentFilterNode FromEnum(global::G.ExperimentFilterNodeEnum? value) => new ExperimentFilterNode(value);
 
         /// <summary>
         /// 

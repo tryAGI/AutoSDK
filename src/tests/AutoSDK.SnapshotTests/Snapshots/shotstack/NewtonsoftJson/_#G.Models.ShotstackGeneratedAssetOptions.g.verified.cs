@@ -155,6 +155,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ShotstackGeneratedAssetOptions FromTextToSpeech(global::G.ShotstackTextToSpeechOptions? value) => new ShotstackGeneratedAssetOptions(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ShotstackGeneratedAssetOptions(global::G.ShotstackTextToImageOptions value) => new ShotstackGeneratedAssetOptions((global::G.ShotstackTextToImageOptions?)value);
 
         /// <summary>
@@ -169,6 +174,11 @@ namespace G
         {
             TextToImage = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ShotstackGeneratedAssetOptions FromTextToImage(global::G.ShotstackTextToImageOptions? value) => new ShotstackGeneratedAssetOptions(value);
 
         /// <summary>
         /// 
@@ -191,6 +201,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ShotstackGeneratedAssetOptions FromTextGenerator(global::G.ShotstackTextGeneratorOptions? value) => new ShotstackGeneratedAssetOptions(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ShotstackGeneratedAssetOptions(global::G.ShotstackImageToVideoOptions value) => new ShotstackGeneratedAssetOptions((global::G.ShotstackImageToVideoOptions?)value);
 
         /// <summary>
@@ -205,6 +220,11 @@ namespace G
         {
             ImageToVideo = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ShotstackGeneratedAssetOptions FromImageToVideo(global::G.ShotstackImageToVideoOptions? value) => new ShotstackGeneratedAssetOptions(value);
 
         /// <summary>
         /// 

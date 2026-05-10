@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static CreateInitialInstructionRequest FromBase(global::G.InstructionRequestBase? value) => new CreateInitialInstructionRequest(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator CreateInitialInstructionRequest(global::G.CreateInitialInstructionRequestVariant2 value) => new CreateInitialInstructionRequest((global::G.CreateInitialInstructionRequestVariant2?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             CreateInitialInstructionRequestVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static CreateInitialInstructionRequest FromCreateInitialInstructionRequestVariant2(global::G.CreateInitialInstructionRequestVariant2? value) => new CreateInitialInstructionRequest(value);
 
         /// <summary>
         /// 

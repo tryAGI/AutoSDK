@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static CreateExpressiveResponseDto FromCreateExpressiveResponseDtoVariant1(global::G.CreateExpressiveResponseDtoVariant1? value) => new CreateExpressiveResponseDto(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator CreateExpressiveResponseDto(global::G.CreateExpressiveResponseDtoVariant2 value) => new CreateExpressiveResponseDto((global::G.CreateExpressiveResponseDtoVariant2?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             CreateExpressiveResponseDtoVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static CreateExpressiveResponseDto FromCreateExpressiveResponseDtoVariant2(global::G.CreateExpressiveResponseDtoVariant2? value) => new CreateExpressiveResponseDto(value);
 
         /// <summary>
         /// 

@@ -185,6 +185,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Delta FromTextDelta(global::G.BetaTextContentBlockDelta? value) => new Delta(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Delta(global::G.BetaInputJsonContentBlockDelta value) => new Delta((global::G.BetaInputJsonContentBlockDelta?)value);
 
         /// <summary>
@@ -199,6 +204,11 @@ namespace G
         {
             InputJsonDelta = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Delta FromInputJsonDelta(global::G.BetaInputJsonContentBlockDelta? value) => new Delta(value);
 
         /// <summary>
         /// 
@@ -221,6 +231,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Delta FromCitationsDelta(global::G.BetaCitationsDelta? value) => new Delta(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Delta(global::G.BetaThinkingContentBlockDelta value) => new Delta((global::G.BetaThinkingContentBlockDelta?)value);
 
         /// <summary>
@@ -239,6 +254,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Delta FromThinkingDelta(global::G.BetaThinkingContentBlockDelta? value) => new Delta(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Delta(global::G.BetaSignatureContentBlockDelta value) => new Delta((global::G.BetaSignatureContentBlockDelta?)value);
 
         /// <summary>
@@ -253,6 +273,11 @@ namespace G
         {
             SignatureDelta = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Delta FromSignatureDelta(global::G.BetaSignatureContentBlockDelta? value) => new Delta(value);
 
         /// <summary>
         /// 

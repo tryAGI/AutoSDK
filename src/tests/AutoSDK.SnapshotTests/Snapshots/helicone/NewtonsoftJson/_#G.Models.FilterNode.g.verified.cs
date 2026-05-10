@@ -150,6 +150,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static FilterNode FromPartialTablesAndViews(global::G.PartialTablesAndViews? value) => new FilterNode(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator FilterNode(global::G.FilterBranch value) => new FilterNode((global::G.FilterBranch?)value);
 
         /// <summary>
@@ -168,6 +173,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static FilterNode FromBranch(global::G.FilterBranch? value) => new FilterNode(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator FilterNode(global::G.FilterNodeEnum2 value) => new FilterNode((global::G.FilterNodeEnum2?)value);
 
         /// <summary>
@@ -182,6 +192,11 @@ namespace G
         {
             Enum2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static FilterNode FromEnum2(global::G.FilterNodeEnum2? value) => new FilterNode(value);
 
         /// <summary>
         /// 

@@ -120,6 +120,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ViewOptions FromMonitorViewOptions(global::G.ViewOptionsMonitorViewOptions? value) => new ViewOptions(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ViewOptions(global::G.ViewOptionsTableViewOptions value) => new ViewOptions((global::G.ViewOptionsTableViewOptions?)value);
 
         /// <summary>
@@ -134,6 +139,11 @@ namespace G
         {
             TableViewOptions = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ViewOptions FromTableViewOptions(global::G.ViewOptionsTableViewOptions? value) => new ViewOptions(value);
 
         /// <summary>
         /// 

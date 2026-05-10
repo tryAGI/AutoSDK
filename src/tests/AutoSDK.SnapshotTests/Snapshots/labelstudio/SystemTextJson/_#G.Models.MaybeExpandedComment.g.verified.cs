@@ -100,6 +100,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static MaybeExpandedComment FromComment(global::G.Comment? value) => new MaybeExpandedComment(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator MaybeExpandedComment(global::G.CommentSerializerWithExpandedUser value) => new MaybeExpandedComment((global::G.CommentSerializerWithExpandedUser?)value);
 
         /// <summary>
@@ -114,6 +119,11 @@ namespace G
         {
             SerializerWithUser = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static MaybeExpandedComment FromSerializerWithUser(global::G.CommentSerializerWithExpandedUser? value) => new MaybeExpandedComment(value);
 
         /// <summary>
         /// 

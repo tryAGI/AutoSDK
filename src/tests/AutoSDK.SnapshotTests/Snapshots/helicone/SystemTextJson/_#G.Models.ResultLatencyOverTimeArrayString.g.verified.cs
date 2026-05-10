@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ResultLatencyOverTimeArrayString FromSuccess(global::G.ResultSuccessLatencyOverTimeArray? value) => new ResultLatencyOverTimeArrayString(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ResultLatencyOverTimeArrayString(global::G.ResultErrorString value) => new ResultLatencyOverTimeArrayString((global::G.ResultErrorString?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             Error = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ResultLatencyOverTimeArrayString FromError(global::G.ResultErrorString? value) => new ResultLatencyOverTimeArrayString(value);
 
         /// <summary>
         /// 

@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static OutputContent FromOutputText(global::G.OutputTextContent? value) => new OutputContent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator OutputContent(global::G.RefusalContent value) => new OutputContent((global::G.RefusalContent?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             Refusal = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static OutputContent FromRefusal(global::G.RefusalContent? value) => new OutputContent(value);
 
         /// <summary>
         /// 

@@ -210,6 +210,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ChatRequestPluginsItems FromChatRequestPluginsItems0(global::G.ChatRequestPluginsItems0? value) => new ChatRequestPluginsItems(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChatRequestPluginsItems(global::G.ChatRequestPluginsItems1 value) => new ChatRequestPluginsItems((global::G.ChatRequestPluginsItems1?)value);
 
         /// <summary>
@@ -224,6 +229,11 @@ namespace G
         {
             ChatRequestPluginsItems1 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChatRequestPluginsItems FromChatRequestPluginsItems1(global::G.ChatRequestPluginsItems1? value) => new ChatRequestPluginsItems(value);
 
         /// <summary>
         /// 
@@ -246,6 +256,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ChatRequestPluginsItems FromChatRequestPluginsItems2(global::G.ChatRequestPluginsItems2? value) => new ChatRequestPluginsItems(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChatRequestPluginsItems(global::G.ChatRequestPluginsItems3 value) => new ChatRequestPluginsItems((global::G.ChatRequestPluginsItems3?)value);
 
         /// <summary>
@@ -260,6 +275,11 @@ namespace G
         {
             ChatRequestPluginsItems3 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChatRequestPluginsItems FromChatRequestPluginsItems3(global::G.ChatRequestPluginsItems3? value) => new ChatRequestPluginsItems(value);
 
         /// <summary>
         /// 
@@ -282,6 +302,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ChatRequestPluginsItems FromChatRequestPluginsItems4(global::G.ChatRequestPluginsItems4? value) => new ChatRequestPluginsItems(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChatRequestPluginsItems(global::G.ChatRequestPluginsItems5 value) => new ChatRequestPluginsItems((global::G.ChatRequestPluginsItems5?)value);
 
         /// <summary>
@@ -296,6 +321,11 @@ namespace G
         {
             ChatRequestPluginsItems5 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChatRequestPluginsItems FromChatRequestPluginsItems5(global::G.ChatRequestPluginsItems5? value) => new ChatRequestPluginsItems(value);
 
         /// <summary>
         /// 

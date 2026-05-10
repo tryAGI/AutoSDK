@@ -120,6 +120,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static RecommendExample FromExtendedPointId(global::G.ExtendedPointId? value) => new RecommendExample(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator RecommendExample(global::G.SparseVector value) => new RecommendExample((global::G.SparseVector?)value);
 
         /// <summary>
@@ -134,6 +139,11 @@ namespace G
         {
             SparseVector = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static RecommendExample FromSparseVector(global::G.SparseVector? value) => new RecommendExample(value);
 
         /// <summary>
         /// 

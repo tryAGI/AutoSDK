@@ -150,6 +150,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ApplicationInputOptions FromDropdown(global::G.ApplicationInputDropdownOptions? value) => new ApplicationInputOptions(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ApplicationInputOptions(global::G.ApplicationInputFileOptions value) => new ApplicationInputOptions((global::G.ApplicationInputFileOptions?)value);
 
         /// <summary>
@@ -164,6 +169,11 @@ namespace G
         {
             File = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ApplicationInputOptions FromFile(global::G.ApplicationInputFileOptions? value) => new ApplicationInputOptions(value);
 
         /// <summary>
         /// 
@@ -186,6 +196,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ApplicationInputOptions FromMedia(global::G.ApplicationInputMediaOptions? value) => new ApplicationInputOptions(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ApplicationInputOptions(global::G.ApplicationInputTextOptions value) => new ApplicationInputOptions((global::G.ApplicationInputTextOptions?)value);
 
         /// <summary>
@@ -200,6 +215,11 @@ namespace G
         {
             Text = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ApplicationInputOptions FromText(global::G.ApplicationInputTextOptions? value) => new ApplicationInputOptions(value);
 
         /// <summary>
         /// 

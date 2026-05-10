@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static CompletionStream FromEvent(global::G.CompletionEvent? value) => new CompletionStream(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator CompletionStream(global::G.StreamSentinel value) => new CompletionStream((global::G.StreamSentinel?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             Sentinel = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static CompletionStream FromSentinel(global::G.StreamSentinel? value) => new CompletionStream(value);
 
         /// <summary>
         /// 

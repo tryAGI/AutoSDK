@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ChunkingStrategyRequestParam FromAutoChunkingStrategy(global::G.AutoChunkingStrategyRequestParam? value) => new ChunkingStrategyRequestParam(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChunkingStrategyRequestParam(global::G.StaticChunkingStrategyRequestParam value) => new ChunkingStrategyRequestParam((global::G.StaticChunkingStrategyRequestParam?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             StaticChunkingStrategy = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChunkingStrategyRequestParam FromStaticChunkingStrategy(global::G.StaticChunkingStrategyRequestParam? value) => new ChunkingStrategyRequestParam(value);
 
         /// <summary>
         /// 

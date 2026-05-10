@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ChatDeveloperMessageContent FromChatDeveloperMessageContentVariant1(string? value) => new ChatDeveloperMessageContent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public ChatDeveloperMessageContent(
             string? chatDeveloperMessageContentVariant1,
             global::System.Collections.Generic.IList<global::G.ChatContentText>? chatDeveloperMessageContent1

@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ChatMessageWithPlaceholders FromChatMessage(global::G.ChatMessage? value) => new ChatMessageWithPlaceholders(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChatMessageWithPlaceholders(global::G.PlaceholderMessage value) => new ChatMessageWithPlaceholders((global::G.PlaceholderMessage?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             PlaceholderMessage = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChatMessageWithPlaceholders FromPlaceholderMessage(global::G.PlaceholderMessage? value) => new ChatMessageWithPlaceholders(value);
 
         /// <summary>
         /// 

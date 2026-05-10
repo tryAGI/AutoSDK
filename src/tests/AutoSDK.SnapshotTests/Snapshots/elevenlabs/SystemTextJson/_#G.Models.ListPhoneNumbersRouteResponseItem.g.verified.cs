@@ -95,6 +95,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ListPhoneNumbersRouteResponseItem FromTwilio(global::G.GetPhoneNumberTwilioResponseModel? value) => new ListPhoneNumbersRouteResponseItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ListPhoneNumbersRouteResponseItem(global::G.GetPhoneNumberSIPTrunkResponseModel value) => new ListPhoneNumbersRouteResponseItem((global::G.GetPhoneNumberSIPTrunkResponseModel?)value);
 
         /// <summary>
@@ -109,6 +114,11 @@ namespace G
         {
             SipTrunk = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ListPhoneNumbersRouteResponseItem FromSipTrunk(global::G.GetPhoneNumberSIPTrunkResponseModel? value) => new ListPhoneNumbersRouteResponseItem(value);
 
         /// <summary>
         /// 

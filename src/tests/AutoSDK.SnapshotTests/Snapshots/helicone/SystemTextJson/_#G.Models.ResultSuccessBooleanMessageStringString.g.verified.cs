@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ResultSuccessBooleanMessageStringString FromResultSuccessSuccessBooleanMessageString(global::G.ResultSuccessSuccessBooleanMessageString? value) => new ResultSuccessBooleanMessageStringString(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ResultSuccessBooleanMessageStringString(global::G.ResultErrorString value) => new ResultSuccessBooleanMessageStringString((global::G.ResultErrorString?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             Error = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ResultSuccessBooleanMessageStringString FromError(global::G.ResultErrorString? value) => new ResultSuccessBooleanMessageStringString(value);
 
         /// <summary>
         /// 

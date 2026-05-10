@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static GenerateStreamError FromEvent(global::G.GenerateStreamEvent? value) => new GenerateStreamError(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator GenerateStreamError(global::G.GenerateStreamError49d5xw value) => new GenerateStreamError((global::G.GenerateStreamError49d5xw?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             Error49d5xw = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static GenerateStreamError FromError49d5xw(global::G.GenerateStreamError49d5xw? value) => new GenerateStreamError(value);
 
         /// <summary>
         /// 

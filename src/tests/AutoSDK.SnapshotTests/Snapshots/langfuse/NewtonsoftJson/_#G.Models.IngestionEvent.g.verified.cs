@@ -330,6 +330,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static IngestionEvent FromIngestionEventVariant1(global::G.AllOf<global::G.IngestionEventVariant12, global::G.TraceEvent>? value) => new IngestionEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator IngestionEvent(global::G.AllOf<global::G.IngestionEventVariant22, global::G.ScoreEvent> value) => new IngestionEvent((global::G.AllOf<global::G.IngestionEventVariant22, global::G.ScoreEvent>?)value);
 
         /// <summary>
@@ -344,6 +349,11 @@ namespace G
         {
             IngestionEventVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static IngestionEvent FromIngestionEventVariant2(global::G.AllOf<global::G.IngestionEventVariant22, global::G.ScoreEvent>? value) => new IngestionEvent(value);
 
         /// <summary>
         /// 
@@ -366,6 +376,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static IngestionEvent FromIngestionEventVariant3(global::G.AllOf<global::G.IngestionEventVariant32, global::G.CreateSpanEvent>? value) => new IngestionEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator IngestionEvent(global::G.AllOf<global::G.IngestionEventVariant42, global::G.UpdateSpanEvent> value) => new IngestionEvent((global::G.AllOf<global::G.IngestionEventVariant42, global::G.UpdateSpanEvent>?)value);
 
         /// <summary>
@@ -380,6 +395,11 @@ namespace G
         {
             IngestionEventVariant4 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static IngestionEvent FromIngestionEventVariant4(global::G.AllOf<global::G.IngestionEventVariant42, global::G.UpdateSpanEvent>? value) => new IngestionEvent(value);
 
         /// <summary>
         /// 
@@ -402,6 +422,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static IngestionEvent FromIngestionEventVariant5(global::G.AllOf<global::G.IngestionEventVariant52, global::G.CreateGenerationEvent>? value) => new IngestionEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator IngestionEvent(global::G.AllOf<global::G.IngestionEventVariant62, global::G.UpdateGenerationEvent> value) => new IngestionEvent((global::G.AllOf<global::G.IngestionEventVariant62, global::G.UpdateGenerationEvent>?)value);
 
         /// <summary>
@@ -416,6 +441,11 @@ namespace G
         {
             IngestionEventVariant6 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static IngestionEvent FromIngestionEventVariant6(global::G.AllOf<global::G.IngestionEventVariant62, global::G.UpdateGenerationEvent>? value) => new IngestionEvent(value);
 
         /// <summary>
         /// 
@@ -438,6 +468,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static IngestionEvent FromIngestionEventVariant7(global::G.AllOf<global::G.IngestionEventVariant72, global::G.CreateEventEvent>? value) => new IngestionEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator IngestionEvent(global::G.AllOf<global::G.IngestionEventVariant82, global::G.SDKLogEvent> value) => new IngestionEvent((global::G.AllOf<global::G.IngestionEventVariant82, global::G.SDKLogEvent>?)value);
 
         /// <summary>
@@ -452,6 +487,11 @@ namespace G
         {
             IngestionEventVariant8 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static IngestionEvent FromIngestionEventVariant8(global::G.AllOf<global::G.IngestionEventVariant82, global::G.SDKLogEvent>? value) => new IngestionEvent(value);
 
         /// <summary>
         /// 
@@ -474,6 +514,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static IngestionEvent FromIngestionEventVariant9(global::G.AllOf<global::G.IngestionEventVariant92, global::G.CreateObservationEvent>? value) => new IngestionEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator IngestionEvent(global::G.AllOf<global::G.IngestionEventVariant102, global::G.UpdateObservationEvent> value) => new IngestionEvent((global::G.AllOf<global::G.IngestionEventVariant102, global::G.UpdateObservationEvent>?)value);
 
         /// <summary>
@@ -488,6 +533,11 @@ namespace G
         {
             IngestionEventVariant10 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static IngestionEvent FromIngestionEventVariant10(global::G.AllOf<global::G.IngestionEventVariant102, global::G.UpdateObservationEvent>? value) => new IngestionEvent(value);
 
         /// <summary>
         /// 

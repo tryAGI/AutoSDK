@@ -120,6 +120,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static EasyInputMessagePhase FromEasyInputMessagePhase0(global::G.EasyInputMessagePhase0? value) => new EasyInputMessagePhase(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator EasyInputMessagePhase(global::G.EasyInputMessagePhase1 value) => new EasyInputMessagePhase((global::G.EasyInputMessagePhase1?)value);
 
         /// <summary>
@@ -134,6 +139,11 @@ namespace G
         {
             EasyInputMessagePhase1 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static EasyInputMessagePhase FromEasyInputMessagePhase1(global::G.EasyInputMessagePhase1? value) => new EasyInputMessagePhase(value);
 
         /// <summary>
         /// 

@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static CodeInterpreterServerToolContainer FromCodeInterpreterServerToolContainerVariant1(string? value) => new CodeInterpreterServerToolContainer(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator CodeInterpreterServerToolContainer(global::G.CodeInterpreterServerToolContainer1 value) => new CodeInterpreterServerToolContainer((global::G.CodeInterpreterServerToolContainer1?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             CodeInterpreterServerToolContainer1 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static CodeInterpreterServerToolContainer FromCodeInterpreterServerToolContainer1(global::G.CodeInterpreterServerToolContainer1? value) => new CodeInterpreterServerToolContainer(value);
 
         /// <summary>
         /// 

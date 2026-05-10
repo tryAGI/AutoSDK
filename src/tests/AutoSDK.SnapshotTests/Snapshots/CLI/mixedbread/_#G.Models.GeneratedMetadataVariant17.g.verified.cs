@@ -245,6 +245,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static GeneratedMetadataVariant17 FromMarkdown(global::G.MarkdownChunkGeneratedMetadata? value) => new GeneratedMetadataVariant17(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator GeneratedMetadataVariant17(global::G.TextChunkGeneratedMetadata value) => new GeneratedMetadataVariant17((global::G.TextChunkGeneratedMetadata?)value);
 
         /// <summary>
@@ -259,6 +264,11 @@ namespace G
         {
             Text = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static GeneratedMetadataVariant17 FromText(global::G.TextChunkGeneratedMetadata? value) => new GeneratedMetadataVariant17(value);
 
         /// <summary>
         /// 
@@ -281,6 +291,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static GeneratedMetadataVariant17 FromPdf(global::G.PDFChunkGeneratedMetadata? value) => new GeneratedMetadataVariant17(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator GeneratedMetadataVariant17(global::G.CodeChunkGeneratedMetadata value) => new GeneratedMetadataVariant17((global::G.CodeChunkGeneratedMetadata?)value);
 
         /// <summary>
@@ -295,6 +310,11 @@ namespace G
         {
             Code = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static GeneratedMetadataVariant17 FromCode(global::G.CodeChunkGeneratedMetadata? value) => new GeneratedMetadataVariant17(value);
 
         /// <summary>
         /// 
@@ -317,6 +337,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static GeneratedMetadataVariant17 FromAudio(global::G.AudioChunkGeneratedMetadata? value) => new GeneratedMetadataVariant17(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator GeneratedMetadataVariant17(global::G.VideoChunkGeneratedMetadata value) => new GeneratedMetadataVariant17((global::G.VideoChunkGeneratedMetadata?)value);
 
         /// <summary>
@@ -335,6 +360,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static GeneratedMetadataVariant17 FromVideo(global::G.VideoChunkGeneratedMetadata? value) => new GeneratedMetadataVariant17(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator GeneratedMetadataVariant17(global::G.ImageChunkGeneratedMetadata value) => new GeneratedMetadataVariant17((global::G.ImageChunkGeneratedMetadata?)value);
 
         /// <summary>
@@ -349,6 +379,11 @@ namespace G
         {
             Image = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static GeneratedMetadataVariant17 FromImage(global::G.ImageChunkGeneratedMetadata? value) => new GeneratedMetadataVariant17(value);
 
         /// <summary>
         /// 

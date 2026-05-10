@@ -120,6 +120,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ConversationNode FromBase(global::G.NodeBase? value) => new ConversationNode(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ConversationNode(global::G.AgentOverrideConfig value) => new ConversationNode((global::G.AgentOverrideConfig?)value);
 
         /// <summary>
@@ -138,6 +143,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ConversationNode FromAgentOverrideConfig(global::G.AgentOverrideConfig? value) => new ConversationNode(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ConversationNode(global::G.ConversationNodeVariant3 value) => new ConversationNode((global::G.ConversationNodeVariant3?)value);
 
         /// <summary>
@@ -152,6 +162,11 @@ namespace G
         {
             ConversationNodeVariant3 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ConversationNode FromConversationNodeVariant3(global::G.ConversationNodeVariant3? value) => new ConversationNode(value);
 
         /// <summary>
         /// 

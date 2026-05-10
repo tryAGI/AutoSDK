@@ -65,6 +65,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static CreateVoiceIsolationRequest FromElevenVoiceIsolation(global::G.CreateVoiceIsolationRequestElevenVoiceIsolation? value) => new CreateVoiceIsolationRequest(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public CreateVoiceIsolationRequest(
             global::G.CreateVoiceIsolationRequestDiscriminatorModel? model,
             global::G.CreateVoiceIsolationRequestElevenVoiceIsolation? elevenVoiceIsolation

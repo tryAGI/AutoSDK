@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static CitationStartEvent FromChatStreamType(global::G.ChatStreamEventType? value) => new CitationStartEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator CitationStartEvent(global::G.CitationStartEventT3df62 value) => new CitationStartEvent((global::G.CitationStartEventT3df62?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             T3df62 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static CitationStartEvent FromT3df62(global::G.CitationStartEventT3df62? value) => new CitationStartEvent(value);
 
         /// <summary>
         /// 

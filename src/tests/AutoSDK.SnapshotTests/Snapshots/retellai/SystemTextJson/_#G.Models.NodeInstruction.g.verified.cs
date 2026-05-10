@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static NodeInstruction FromPrompt(global::G.NodeInstructionPrompt? value) => new NodeInstruction(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator NodeInstruction(global::G.NodeInstructionStaticText value) => new NodeInstruction((global::G.NodeInstructionStaticText?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             StaticText = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static NodeInstruction FromStaticText(global::G.NodeInstructionStaticText? value) => new NodeInstruction(value);
 
         /// <summary>
         /// 

@@ -65,6 +65,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static CacheControlVariant13 FromEphemeral(global::G.BetaCacheControlEphemeral? value) => new CacheControlVariant13(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public CacheControlVariant13(
             global::G.BetaBashTool20250124CacheControlVariant1DiscriminatorType? type,
             global::G.BetaCacheControlEphemeral? ephemeral

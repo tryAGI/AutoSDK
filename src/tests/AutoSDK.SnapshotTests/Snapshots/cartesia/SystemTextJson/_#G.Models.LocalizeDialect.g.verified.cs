@@ -150,6 +150,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static LocalizeDialect FromLocalizeEnglishDialect(global::G.LocalizeEnglishDialect? value) => new LocalizeDialect(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator LocalizeDialect(global::G.LocalizeSpanishDialect value) => new LocalizeDialect((global::G.LocalizeSpanishDialect?)value);
 
         /// <summary>
@@ -164,6 +169,11 @@ namespace G
         {
             LocalizeSpanishDialect = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static LocalizeDialect FromLocalizeSpanishDialect(global::G.LocalizeSpanishDialect? value) => new LocalizeDialect(value);
 
         /// <summary>
         /// 
@@ -186,6 +196,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static LocalizeDialect FromLocalizePortugueseDialect(global::G.LocalizePortugueseDialect? value) => new LocalizeDialect(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator LocalizeDialect(global::G.LocalizeFrenchDialect value) => new LocalizeDialect((global::G.LocalizeFrenchDialect?)value);
 
         /// <summary>
@@ -200,6 +215,11 @@ namespace G
         {
             LocalizeFrenchDialect = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static LocalizeDialect FromLocalizeFrenchDialect(global::G.LocalizeFrenchDialect? value) => new LocalizeDialect(value);
 
         /// <summary>
         /// 

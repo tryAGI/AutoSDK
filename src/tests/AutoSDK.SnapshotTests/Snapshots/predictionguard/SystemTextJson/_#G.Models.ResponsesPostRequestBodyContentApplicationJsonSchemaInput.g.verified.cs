@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ResponsesPostRequestBodyContentApplicationJsonSchemaInput FromResponsesPostRequestBodyContentApplicationJsonSchemaInputVariant1(string? value) => new ResponsesPostRequestBodyContentApplicationJsonSchemaInput(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public ResponsesPostRequestBodyContentApplicationJsonSchemaInput(
             string? responsesPostRequestBodyContentApplicationJsonSchemaInputVariant1,
             global::System.Collections.Generic.IList<global::G.ResponsesPostRequestBodyContentApplicationJsonSchemaInputOneOf1Items>? responsesPostRequestBodyContentApplicationJsonSchemaInput1

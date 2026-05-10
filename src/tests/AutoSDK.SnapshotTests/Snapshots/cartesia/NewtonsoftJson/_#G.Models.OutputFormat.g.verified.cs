@@ -120,6 +120,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static OutputFormat FromRAWOutputFormat(global::G.AllOf<global::G.OutputFormatRAWOutputFormat2, global::G.RawOutputFormat>? value) => new OutputFormat(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator OutputFormat(global::G.AllOf<global::G.OutputFormatWAVOutputFormat2, global::G.WAVOutputFormat?> value) => new OutputFormat((global::G.AllOf<global::G.OutputFormatWAVOutputFormat2, global::G.WAVOutputFormat?>?)value);
 
         /// <summary>
@@ -138,6 +143,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static OutputFormat FromWAVOutputFormat(global::G.AllOf<global::G.OutputFormatWAVOutputFormat2, global::G.WAVOutputFormat?>? value) => new OutputFormat(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator OutputFormat(global::G.AllOf<global::G.OutputFormatMP3OutputFormat2, global::G.MP3OutputFormat> value) => new OutputFormat((global::G.AllOf<global::G.OutputFormatMP3OutputFormat2, global::G.MP3OutputFormat>?)value);
 
         /// <summary>
@@ -152,6 +162,11 @@ namespace G
         {
             MP3OutputFormat = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static OutputFormat FromMP3OutputFormat(global::G.AllOf<global::G.OutputFormatMP3OutputFormat2, global::G.MP3OutputFormat>? value) => new OutputFormat(value);
 
         /// <summary>
         /// 

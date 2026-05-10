@@ -120,6 +120,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ShardKeySelector FromShardKey(global::G.ShardKey? value) => new ShardKeySelector(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ShardKeySelector(global::G.ShardKeyWithFallback value) => new ShardKeySelector((global::G.ShardKeyWithFallback?)value);
 
         /// <summary>
@@ -134,6 +139,11 @@ namespace G
         {
             WithFallback = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ShardKeySelector FromWithFallback(global::G.ShardKeyWithFallback? value) => new ShardKeySelector(value);
 
         /// <summary>
         /// 

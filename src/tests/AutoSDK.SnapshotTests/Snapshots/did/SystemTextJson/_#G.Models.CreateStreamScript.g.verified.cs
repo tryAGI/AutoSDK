@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static CreateStreamScript FromText(global::G.CreateStreamScriptText? value) => new CreateStreamScript(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator CreateStreamScript(global::G.CreateStreamScriptAudio value) => new CreateStreamScript((global::G.CreateStreamScriptAudio?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             Audio = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static CreateStreamScript FromAudio(global::G.CreateStreamScriptAudio? value) => new CreateStreamScript(value);
 
         /// <summary>
         /// 

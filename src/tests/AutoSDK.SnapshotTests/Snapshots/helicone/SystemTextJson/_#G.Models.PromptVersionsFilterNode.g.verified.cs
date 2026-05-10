@@ -120,6 +120,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static PromptVersionsFilterNode FromPickLeafPrompts(global::G.PickFilterLeafPromptsVersions? value) => new PromptVersionsFilterNode(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator PromptVersionsFilterNode(global::G.PromptVersionsFilterBranch value) => new PromptVersionsFilterNode((global::G.PromptVersionsFilterBranch?)value);
 
         /// <summary>
@@ -138,6 +143,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static PromptVersionsFilterNode FromBranch(global::G.PromptVersionsFilterBranch? value) => new PromptVersionsFilterNode(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator PromptVersionsFilterNode(global::G.PromptVersionsFilterNodeEnum value) => new PromptVersionsFilterNode((global::G.PromptVersionsFilterNodeEnum?)value);
 
         /// <summary>
@@ -152,6 +162,11 @@ namespace G
         {
             Enum = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static PromptVersionsFilterNode FromEnum(global::G.PromptVersionsFilterNodeEnum? value) => new PromptVersionsFilterNode(value);
 
         /// <summary>
         /// 

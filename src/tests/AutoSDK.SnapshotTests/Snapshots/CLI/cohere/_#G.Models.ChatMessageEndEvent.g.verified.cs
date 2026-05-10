@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ChatMessageEndEvent FromStreamType(global::G.ChatStreamEventType? value) => new ChatMessageEndEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChatMessageEndEvent(global::G.ChatMessageEndEventU3fzny value) => new ChatMessageEndEvent((global::G.ChatMessageEndEventU3fzny?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             U3fzny = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChatMessageEndEvent FromU3fzny(global::G.ChatMessageEndEventU3fzny? value) => new ChatMessageEndEvent(value);
 
         /// <summary>
         /// 

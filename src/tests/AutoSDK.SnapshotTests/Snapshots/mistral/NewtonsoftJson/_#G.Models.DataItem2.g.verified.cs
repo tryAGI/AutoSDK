@@ -95,6 +95,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static DataItem2 FromCompletion(global::G.CompletionJobOut? value) => new DataItem2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator DataItem2(global::G.ClassifierJobOut value) => new DataItem2((global::G.ClassifierJobOut?)value);
 
         /// <summary>
@@ -109,6 +114,11 @@ namespace G
         {
             Classifier = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static DataItem2 FromClassifier(global::G.ClassifierJobOut? value) => new DataItem2(value);
 
         /// <summary>
         /// 

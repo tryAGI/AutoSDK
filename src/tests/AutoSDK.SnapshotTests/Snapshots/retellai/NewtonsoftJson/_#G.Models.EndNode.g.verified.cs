@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static EndNode FromBase(global::G.NodeBase? value) => new EndNode(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator EndNode(global::G.EndNodeVariant2 value) => new EndNode((global::G.EndNodeVariant2?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             EndNodeVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static EndNode FromEndNodeVariant2(global::G.EndNodeVariant2? value) => new EndNode(value);
 
         /// <summary>
         /// 

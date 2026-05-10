@@ -305,6 +305,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Error2 FromInvalidRequestError(global::G.InvalidRequestError? value) => new Error2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Error2(global::G.AuthenticationError value) => new Error2((global::G.AuthenticationError?)value);
 
         /// <summary>
@@ -319,6 +324,11 @@ namespace G
         {
             AuthenticationError = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Error2 FromAuthenticationError(global::G.AuthenticationError? value) => new Error2(value);
 
         /// <summary>
         /// 
@@ -341,6 +351,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Error2 FromBillingError(global::G.BillingError? value) => new Error2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Error2(global::G.PermissionError value) => new Error2((global::G.PermissionError?)value);
 
         /// <summary>
@@ -355,6 +370,11 @@ namespace G
         {
             PermissionError = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Error2 FromPermissionError(global::G.PermissionError? value) => new Error2(value);
 
         /// <summary>
         /// 
@@ -377,6 +397,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Error2 FromNotFoundError(global::G.NotFoundError? value) => new Error2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Error2(global::G.RateLimitError value) => new Error2((global::G.RateLimitError?)value);
 
         /// <summary>
@@ -391,6 +416,11 @@ namespace G
         {
             RateLimitError = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Error2 FromRateLimitError(global::G.RateLimitError? value) => new Error2(value);
 
         /// <summary>
         /// 
@@ -413,6 +443,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Error2 FromTimeoutError(global::G.GatewayTimeoutError? value) => new Error2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Error2(global::G.APIError value) => new Error2((global::G.APIError?)value);
 
         /// <summary>
@@ -431,6 +466,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Error2 FromApiError(global::G.APIError? value) => new Error2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Error2(global::G.OverloadedError value) => new Error2((global::G.OverloadedError?)value);
 
         /// <summary>
@@ -445,6 +485,11 @@ namespace G
         {
             OverloadedError = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Error2 FromOverloadedError(global::G.OverloadedError? value) => new Error2(value);
 
         /// <summary>
         /// 

@@ -95,6 +95,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Template2 FromChat(global::G.PromptChatTemplate? value) => new Template2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Template2(global::G.PromptStringTemplate value) => new Template2((global::G.PromptStringTemplate?)value);
 
         /// <summary>
@@ -109,6 +114,11 @@ namespace G
         {
             String = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Template2 FromString(global::G.PromptStringTemplate? value) => new Template2(value);
 
         /// <summary>
         /// 

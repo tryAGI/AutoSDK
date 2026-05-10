@@ -95,6 +95,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static DataItem FromIngestion(global::G.StoreIngestionEvent? value) => new DataItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator DataItem(global::G.StoreSearchEvent value) => new DataItem((global::G.StoreSearchEvent?)value);
 
         /// <summary>
@@ -109,6 +114,11 @@ namespace G
         {
             Search = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static DataItem FromSearch(global::G.StoreSearchEvent? value) => new DataItem(value);
 
         /// <summary>
         /// 

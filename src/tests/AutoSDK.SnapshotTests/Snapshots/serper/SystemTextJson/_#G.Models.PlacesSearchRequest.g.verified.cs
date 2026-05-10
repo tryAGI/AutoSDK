@@ -60,6 +60,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static PlacesSearchRequest FromBase(global::G.BaseSearchRequest? value) => new PlacesSearchRequest(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public object? Object =>
             Base as object 
             ;

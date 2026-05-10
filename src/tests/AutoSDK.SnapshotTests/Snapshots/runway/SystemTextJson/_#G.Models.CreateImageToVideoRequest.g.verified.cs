@@ -185,6 +185,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static CreateImageToVideoRequest FromGen4Turbo(global::G.CreateImageToVideoRequestGen4Turbo? value) => new CreateImageToVideoRequest(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator CreateImageToVideoRequest(global::G.CreateImageToVideoRequestVeo31 value) => new CreateImageToVideoRequest((global::G.CreateImageToVideoRequestVeo31?)value);
 
         /// <summary>
@@ -199,6 +204,11 @@ namespace G
         {
             Veo31 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static CreateImageToVideoRequest FromVeo31(global::G.CreateImageToVideoRequestVeo31? value) => new CreateImageToVideoRequest(value);
 
         /// <summary>
         /// 
@@ -221,6 +231,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static CreateImageToVideoRequest FromGen3aTurbo(global::G.CreateImageToVideoRequestGen3aTurbo? value) => new CreateImageToVideoRequest(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator CreateImageToVideoRequest(global::G.CreateImageToVideoRequestVeo31Fast value) => new CreateImageToVideoRequest((global::G.CreateImageToVideoRequestVeo31Fast?)value);
 
         /// <summary>
@@ -239,6 +254,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static CreateImageToVideoRequest FromVeo31Fast(global::G.CreateImageToVideoRequestVeo31Fast? value) => new CreateImageToVideoRequest(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator CreateImageToVideoRequest(global::G.CreateImageToVideoRequestVeo3 value) => new CreateImageToVideoRequest((global::G.CreateImageToVideoRequestVeo3?)value);
 
         /// <summary>
@@ -253,6 +273,11 @@ namespace G
         {
             Veo3 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static CreateImageToVideoRequest FromVeo3(global::G.CreateImageToVideoRequestVeo3? value) => new CreateImageToVideoRequest(value);
 
         /// <summary>
         /// 

@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ScholarSearchRequest FromBase(global::G.BaseSearchRequest? value) => new ScholarSearchRequest(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ScholarSearchRequest(global::G.ScholarSearchRequestVariant2 value) => new ScholarSearchRequest((global::G.ScholarSearchRequestVariant2?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             ScholarSearchRequestVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ScholarSearchRequest FromScholarSearchRequestVariant2(global::G.ScholarSearchRequestVariant2? value) => new ScholarSearchRequest(value);
 
         /// <summary>
         /// 

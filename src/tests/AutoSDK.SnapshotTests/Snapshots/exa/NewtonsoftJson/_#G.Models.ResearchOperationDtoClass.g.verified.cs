@@ -125,6 +125,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ResearchOperationDtoClass FromThink(global::G.ResearchOperationDtoClassVariant1? value) => new ResearchOperationDtoClass(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ResearchOperationDtoClass(global::G.ResearchOperationDtoClassVariant2 value) => new ResearchOperationDtoClass((global::G.ResearchOperationDtoClassVariant2?)value);
 
         /// <summary>
@@ -143,6 +148,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ResearchOperationDtoClass FromSearch(global::G.ResearchOperationDtoClassVariant2? value) => new ResearchOperationDtoClass(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ResearchOperationDtoClass(global::G.ResearchOperationDtoClassVariant3 value) => new ResearchOperationDtoClass((global::G.ResearchOperationDtoClassVariant3?)value);
 
         /// <summary>
@@ -157,6 +167,11 @@ namespace G
         {
             Crawl = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ResearchOperationDtoClass FromCrawl(global::G.ResearchOperationDtoClassVariant3? value) => new ResearchOperationDtoClass(value);
 
         /// <summary>
         /// 

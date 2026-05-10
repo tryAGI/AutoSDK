@@ -150,6 +150,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ResponseFormatNullish FromJsonObject(global::G.ResponseFormatNullishJsonObject? value) => new ResponseFormatNullish(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ResponseFormatNullish(global::G.ResponseFormatNullishJsonSchema value) => new ResponseFormatNullish((global::G.ResponseFormatNullishJsonSchema?)value);
 
         /// <summary>
@@ -168,6 +173,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ResponseFormatNullish FromJsonSchema(global::G.ResponseFormatNullishJsonSchema? value) => new ResponseFormatNullish(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ResponseFormatNullish(global::G.ResponseFormatNullishText value) => new ResponseFormatNullish((global::G.ResponseFormatNullishText?)value);
 
         /// <summary>
@@ -182,6 +192,11 @@ namespace G
         {
             Text = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ResponseFormatNullish FromText(global::G.ResponseFormatNullishText? value) => new ResponseFormatNullish(value);
 
         /// <summary>
         /// 

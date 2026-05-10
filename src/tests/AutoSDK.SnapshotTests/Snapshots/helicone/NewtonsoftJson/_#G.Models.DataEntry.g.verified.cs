@@ -150,6 +150,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static DataEntry FromDataEntryVariant1(global::G.DataEntryVariant1? value) => new DataEntry(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator DataEntry(global::G.DataEntryVariant2 value) => new DataEntry((global::G.DataEntryVariant2?)value);
 
         /// <summary>
@@ -164,6 +169,11 @@ namespace G
         {
             DataEntryVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static DataEntry FromDataEntryVariant2(global::G.DataEntryVariant2? value) => new DataEntry(value);
 
         /// <summary>
         /// 
@@ -186,6 +196,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static DataEntry FromDataEntryVariant3(global::G.DataEntryVariant3? value) => new DataEntry(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator DataEntry(global::G.DataEntryVariant4 value) => new DataEntry((global::G.DataEntryVariant4?)value);
 
         /// <summary>
@@ -200,6 +215,11 @@ namespace G
         {
             DataEntryVariant4 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static DataEntry FromDataEntryVariant4(global::G.DataEntryVariant4? value) => new DataEntry(value);
 
         /// <summary>
         /// 

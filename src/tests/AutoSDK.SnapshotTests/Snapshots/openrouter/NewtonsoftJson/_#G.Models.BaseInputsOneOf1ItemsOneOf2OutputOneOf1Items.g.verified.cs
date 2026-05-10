@@ -120,6 +120,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static BaseInputsOneOf1ItemsOneOf2OutputOneOf1Items FromInputText(global::G.InputText? value) => new BaseInputsOneOf1ItemsOneOf2OutputOneOf1Items(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BaseInputsOneOf1ItemsOneOf2OutputOneOf1Items(global::G.InputImage value) => new BaseInputsOneOf1ItemsOneOf2OutputOneOf1Items((global::G.InputImage?)value);
 
         /// <summary>
@@ -138,6 +143,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static BaseInputsOneOf1ItemsOneOf2OutputOneOf1Items FromInputImage(global::G.InputImage? value) => new BaseInputsOneOf1ItemsOneOf2OutputOneOf1Items(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BaseInputsOneOf1ItemsOneOf2OutputOneOf1Items(global::G.InputFile value) => new BaseInputsOneOf1ItemsOneOf2OutputOneOf1Items((global::G.InputFile?)value);
 
         /// <summary>
@@ -152,6 +162,11 @@ namespace G
         {
             InputFile = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BaseInputsOneOf1ItemsOneOf2OutputOneOf1Items FromInputFile(global::G.InputFile? value) => new BaseInputsOneOf1ItemsOneOf2OutputOneOf1Items(value);
 
         /// <summary>
         /// 

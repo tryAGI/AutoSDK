@@ -92,6 +92,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static AssistantsApiResponseFormatOption FromEnum(global::G.AssistantsApiResponseFormatOptionEnum? value) => new AssistantsApiResponseFormatOption(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator AssistantsApiResponseFormatOption(global::G.AssistantsApiResponseFormat value) => new AssistantsApiResponseFormatOption((global::G.AssistantsApiResponseFormat?)value);
 
         /// <summary>
@@ -106,6 +111,11 @@ namespace G
         {
             AssistantsApiResponseFormat = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static AssistantsApiResponseFormatOption FromAssistantsApiResponseFormat(global::G.AssistantsApiResponseFormat? value) => new AssistantsApiResponseFormatOption(value);
 
         /// <summary>
         /// 

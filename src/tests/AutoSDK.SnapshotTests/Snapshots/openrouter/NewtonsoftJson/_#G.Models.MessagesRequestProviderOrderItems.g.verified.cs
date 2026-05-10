@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static MessagesRequestProviderOrderItems FromProviderName(global::G.ProviderName? value) => new MessagesRequestProviderOrderItems(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator MessagesRequestProviderOrderItems(string value) => new MessagesRequestProviderOrderItems((string?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             MessagesRequestProviderOrderItemsVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static MessagesRequestProviderOrderItems FromMessagesRequestProviderOrderItemsVariant2(string? value) => new MessagesRequestProviderOrderItems(value);
 
         /// <summary>
         /// 

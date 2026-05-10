@@ -180,6 +180,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static McpServerToolRequireApproval FromMcpServerToolRequireApproval0(global::G.McpServerToolRequireApproval0? value) => new McpServerToolRequireApproval(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator McpServerToolRequireApproval(global::G.McpServerToolRequireApproval1 value) => new McpServerToolRequireApproval((global::G.McpServerToolRequireApproval1?)value);
 
         /// <summary>
@@ -198,6 +203,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static McpServerToolRequireApproval FromMcpServerToolRequireApproval1(global::G.McpServerToolRequireApproval1? value) => new McpServerToolRequireApproval(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator McpServerToolRequireApproval(global::G.McpServerToolRequireApproval2 value) => new McpServerToolRequireApproval((global::G.McpServerToolRequireApproval2?)value);
 
         /// <summary>
@@ -212,6 +222,11 @@ namespace G
         {
             McpServerToolRequireApproval2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static McpServerToolRequireApproval FromMcpServerToolRequireApproval2(global::G.McpServerToolRequireApproval2? value) => new McpServerToolRequireApproval(value);
 
         /// <summary>
         /// 

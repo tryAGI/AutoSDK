@@ -120,6 +120,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static WithPayloadInterface FromWithPayloadInterfaceVariant1(bool? value) => new WithPayloadInterface(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator WithPayloadInterface(global::G.PayloadSelector value) => new WithPayloadInterface((global::G.PayloadSelector?)value);
 
         /// <summary>
@@ -134,6 +139,11 @@ namespace G
         {
             Selector = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static WithPayloadInterface FromSelector(global::G.PayloadSelector? value) => new WithPayloadInterface(value);
 
         /// <summary>
         /// 

@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static V2CallResponse FromWeb(global::G.V2WebCallResponse? value) => new V2CallResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator V2CallResponse(global::G.V2PhoneCallResponse value) => new V2CallResponse((global::G.V2PhoneCallResponse?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             Phone = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static V2CallResponse FromPhone(global::G.V2PhoneCallResponse? value) => new V2CallResponse(value);
 
         /// <summary>
         /// 

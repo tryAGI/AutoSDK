@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static TokenMetricStats FromMetricStats(global::G.MetricStats? value) => new TokenMetricStats(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator TokenMetricStats(global::G.TokenMetricStatsVariant2 value) => new TokenMetricStats((global::G.TokenMetricStatsVariant2?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             TokenMetricStatsVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static TokenMetricStats FromTokenMetricStatsVariant2(global::G.TokenMetricStatsVariant2? value) => new TokenMetricStats(value);
 
         /// <summary>
         /// 

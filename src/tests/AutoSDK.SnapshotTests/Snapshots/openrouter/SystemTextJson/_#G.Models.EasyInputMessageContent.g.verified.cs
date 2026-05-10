@@ -120,6 +120,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static EasyInputMessageContent FromEasyInputMessageContentVariant2(string? value) => new EasyInputMessageContent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public EasyInputMessageContent(
             global::System.Collections.Generic.IList<global::G.EasyInputMessageContentOneOf0Items>? easyInputMessageContent0,
             string? easyInputMessageContentVariant2,

@@ -180,6 +180,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static RankBy FromVector(byte[]? value) => new RankBy(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator RankBy(global::G.RankByText value) => new RankBy((global::G.RankByText?)value);
 
         /// <summary>
@@ -194,6 +199,11 @@ namespace G
         {
             Text = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static RankBy FromText(global::G.RankByText? value) => new RankBy(value);
 
         /// <summary>
         /// 

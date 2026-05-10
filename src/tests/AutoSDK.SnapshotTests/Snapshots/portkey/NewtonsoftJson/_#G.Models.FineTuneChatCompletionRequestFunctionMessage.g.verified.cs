@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static FineTuneChatCompletionRequestFunctionMessage FromFunctionMessage2(global::G.ChatCompletionRequestFunctionMessage? value) => new FineTuneChatCompletionRequestFunctionMessage(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public FineTuneChatCompletionRequestFunctionMessage(
             object? functionMessage1,
             global::G.ChatCompletionRequestFunctionMessage? functionMessage2

@@ -95,6 +95,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Tool FromFunction(global::G.FunctionTool? value) => new Tool(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Tool(global::G.BuiltInTool value) => new Tool((global::G.BuiltInTool?)value);
 
         /// <summary>
@@ -109,6 +114,11 @@ namespace G
         {
             WebSearch = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Tool FromWebSearch(global::G.BuiltInTool? value) => new Tool(value);
 
         /// <summary>
         /// 

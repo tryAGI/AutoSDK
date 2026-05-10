@@ -120,6 +120,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static VectorOutput FromSparse(global::G.SparseVector? value) => new VectorOutput(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public VectorOutput(
             global::System.Collections.Generic.IList<float>? vectorOutputVariant1,
             global::G.SparseVector? sparse,

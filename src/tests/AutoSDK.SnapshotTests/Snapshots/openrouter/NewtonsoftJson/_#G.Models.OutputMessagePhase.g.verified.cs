@@ -120,6 +120,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static OutputMessagePhase FromOutputMessagePhase0(global::G.OutputMessagePhase0? value) => new OutputMessagePhase(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator OutputMessagePhase(global::G.OutputMessagePhase1 value) => new OutputMessagePhase((global::G.OutputMessagePhase1?)value);
 
         /// <summary>
@@ -134,6 +139,11 @@ namespace G
         {
             OutputMessagePhase1 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static OutputMessagePhase FromOutputMessagePhase1(global::G.OutputMessagePhase1? value) => new OutputMessagePhase(value);
 
         /// <summary>
         /// 

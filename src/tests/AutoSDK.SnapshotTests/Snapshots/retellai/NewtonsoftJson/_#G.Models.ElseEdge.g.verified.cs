@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ElseEdge FromNode(global::G.NodeEdge? value) => new ElseEdge(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ElseEdge(global::G.ElseEdgeVariant2 value) => new ElseEdge((global::G.ElseEdgeVariant2?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             ElseEdgeVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ElseEdge FromElseEdgeVariant2(global::G.ElseEdgeVariant2? value) => new ElseEdge(value);
 
         /// <summary>
         /// 

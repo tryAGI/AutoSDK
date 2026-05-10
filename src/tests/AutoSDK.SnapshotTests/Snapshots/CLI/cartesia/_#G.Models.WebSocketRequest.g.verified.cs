@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static WebSocketRequest FromGenerationRequest(global::G.GenerationRequest? value) => new WebSocketRequest(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator WebSocketRequest(global::G.CancelContextRequest value) => new WebSocketRequest((global::G.CancelContextRequest?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             CancelContextRequest = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static WebSocketRequest FromCancelContextRequest(global::G.CancelContextRequest? value) => new WebSocketRequest(value);
 
         /// <summary>
         /// 

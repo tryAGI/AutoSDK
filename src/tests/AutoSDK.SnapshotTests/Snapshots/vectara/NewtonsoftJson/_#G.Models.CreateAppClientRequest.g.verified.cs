@@ -65,6 +65,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static CreateAppClientRequest FromClientCredentials(global::G.CreateClientCredentialsRequest? value) => new CreateAppClientRequest(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public CreateAppClientRequest(
             global::G.CreateAppClientRequestDiscriminatorType? type,
             global::G.CreateClientCredentialsRequest? clientCredentials

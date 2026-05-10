@@ -95,6 +95,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ContentBetaContentBlockSourceContentItem FromText(global::G.BetaRequestTextBlock? value) => new ContentBetaContentBlockSourceContentItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ContentBetaContentBlockSourceContentItem(global::G.BetaRequestImageBlock value) => new ContentBetaContentBlockSourceContentItem((global::G.BetaRequestImageBlock?)value);
 
         /// <summary>
@@ -109,6 +114,11 @@ namespace G
         {
             Image = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ContentBetaContentBlockSourceContentItem FromImage(global::G.BetaRequestImageBlock? value) => new ContentBetaContentBlockSourceContentItem(value);
 
         /// <summary>
         /// 

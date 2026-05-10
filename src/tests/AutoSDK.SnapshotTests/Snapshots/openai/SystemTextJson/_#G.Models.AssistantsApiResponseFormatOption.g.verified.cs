@@ -157,6 +157,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static AssistantsApiResponseFormatOption FromEnum(global::G.AssistantsApiResponseFormatOptionEnum? value) => new AssistantsApiResponseFormatOption(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator AssistantsApiResponseFormatOption(global::G.ResponseFormatText value) => new AssistantsApiResponseFormatOption((global::G.ResponseFormatText?)value);
 
         /// <summary>
@@ -171,6 +176,11 @@ namespace G
         {
             Text = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static AssistantsApiResponseFormatOption FromText(global::G.ResponseFormatText? value) => new AssistantsApiResponseFormatOption(value);
 
         /// <summary>
         /// 
@@ -193,6 +203,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static AssistantsApiResponseFormatOption FromJsonObject(global::G.ResponseFormatJsonObject? value) => new AssistantsApiResponseFormatOption(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator AssistantsApiResponseFormatOption(global::G.ResponseFormatJsonSchema value) => new AssistantsApiResponseFormatOption((global::G.ResponseFormatJsonSchema?)value);
 
         /// <summary>
@@ -207,6 +222,11 @@ namespace G
         {
             JsonSchema = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static AssistantsApiResponseFormatOption FromJsonSchema(global::G.ResponseFormatJsonSchema? value) => new AssistantsApiResponseFormatOption(value);
 
         /// <summary>
         /// 

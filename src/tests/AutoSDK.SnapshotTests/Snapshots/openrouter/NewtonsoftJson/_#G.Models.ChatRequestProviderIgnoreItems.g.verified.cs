@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ChatRequestProviderIgnoreItems FromProviderName(global::G.ProviderName? value) => new ChatRequestProviderIgnoreItems(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChatRequestProviderIgnoreItems(string value) => new ChatRequestProviderIgnoreItems((string?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             ChatRequestProviderIgnoreItemsVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChatRequestProviderIgnoreItems FromChatRequestProviderIgnoreItemsVariant2(string? value) => new ChatRequestProviderIgnoreItems(value);
 
         /// <summary>
         /// 

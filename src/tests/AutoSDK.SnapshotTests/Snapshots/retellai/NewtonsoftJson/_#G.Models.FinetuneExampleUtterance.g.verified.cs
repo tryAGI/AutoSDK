@@ -120,6 +120,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static FinetuneExampleUtterance FromFinetuneExampleUtteranceVariant1(global::G.FinetuneExampleUtteranceVariant1? value) => new FinetuneExampleUtterance(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator FinetuneExampleUtterance(global::G.FinetuneExampleUtteranceVariant2 value) => new FinetuneExampleUtterance((global::G.FinetuneExampleUtteranceVariant2?)value);
 
         /// <summary>
@@ -138,6 +143,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static FinetuneExampleUtterance FromFinetuneExampleUtteranceVariant2(global::G.FinetuneExampleUtteranceVariant2? value) => new FinetuneExampleUtterance(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator FinetuneExampleUtterance(global::G.FinetuneExampleUtteranceVariant3 value) => new FinetuneExampleUtterance((global::G.FinetuneExampleUtteranceVariant3?)value);
 
         /// <summary>
@@ -152,6 +162,11 @@ namespace G
         {
             FinetuneExampleUtteranceVariant3 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static FinetuneExampleUtterance FromFinetuneExampleUtteranceVariant3(global::G.FinetuneExampleUtteranceVariant3? value) => new FinetuneExampleUtterance(value);
 
         /// <summary>
         /// 

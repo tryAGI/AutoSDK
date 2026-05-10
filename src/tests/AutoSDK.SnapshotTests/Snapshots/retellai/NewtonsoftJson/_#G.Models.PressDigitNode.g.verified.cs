@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static PressDigitNode FromBase(global::G.NodeBase? value) => new PressDigitNode(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator PressDigitNode(global::G.PressDigitNodeVariant2 value) => new PressDigitNode((global::G.PressDigitNodeVariant2?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             PressDigitNodeVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static PressDigitNode FromPressDigitNodeVariant2(global::G.PressDigitNodeVariant2? value) => new PressDigitNode(value);
 
         /// <summary>
         /// 

@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static KeyedSearchCorpus FromSearchCorpus(global::G.SearchCorpus? value) => new KeyedSearchCorpus(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator KeyedSearchCorpus(global::G.KeyedSearchCorpusVariant2 value) => new KeyedSearchCorpus((global::G.KeyedSearchCorpusVariant2?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             KeyedSearchCorpusVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static KeyedSearchCorpus FromKeyedSearchCorpusVariant2(global::G.KeyedSearchCorpusVariant2? value) => new KeyedSearchCorpus(value);
 
         /// <summary>
         /// 

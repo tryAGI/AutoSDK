@@ -120,6 +120,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static MessagesRequestThinking FromMessagesRequestThinking0(global::G.MessagesRequestThinking0? value) => new MessagesRequestThinking(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator MessagesRequestThinking(global::G.MessagesRequestThinking1 value) => new MessagesRequestThinking((global::G.MessagesRequestThinking1?)value);
 
         /// <summary>
@@ -138,6 +143,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static MessagesRequestThinking FromMessagesRequestThinking1(global::G.MessagesRequestThinking1? value) => new MessagesRequestThinking(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator MessagesRequestThinking(global::G.MessagesRequestThinking2 value) => new MessagesRequestThinking((global::G.MessagesRequestThinking2?)value);
 
         /// <summary>
@@ -152,6 +162,11 @@ namespace G
         {
             MessagesRequestThinking2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static MessagesRequestThinking FromMessagesRequestThinking2(global::G.MessagesRequestThinking2? value) => new MessagesRequestThinking(value);
 
         /// <summary>
         /// 

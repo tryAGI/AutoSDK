@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ChatContentItems3 FromLegacyChatContentVideo(global::G.LegacyChatContentVideo? value) => new ChatContentItems3(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChatContentItems3(global::G.ChatContentVideo value) => new ChatContentItems3((global::G.ChatContentVideo?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             ChatContentVideo = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChatContentItems3 FromChatContentVideo(global::G.ChatContentVideo? value) => new ChatContentItems3(value);
 
         /// <summary>
         /// 

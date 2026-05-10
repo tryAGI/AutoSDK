@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static AlwaysEdge FromNode(global::G.NodeEdge? value) => new AlwaysEdge(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator AlwaysEdge(global::G.AlwaysEdgeVariant2 value) => new AlwaysEdge((global::G.AlwaysEdgeVariant2?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             AlwaysEdgeVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static AlwaysEdge FromAlwaysEdgeVariant2(global::G.AlwaysEdgeVariant2? value) => new AlwaysEdge(value);
 
         /// <summary>
         /// 

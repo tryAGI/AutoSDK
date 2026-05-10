@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ConversationFlowResponse FromConversationFlow(global::G.ConversationFlow? value) => new ConversationFlowResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ConversationFlowResponse(global::G.ConversationFlowResponseVariant2 value) => new ConversationFlowResponse((global::G.ConversationFlowResponseVariant2?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             ConversationFlowResponseVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ConversationFlowResponse FromConversationFlowResponseVariant2(global::G.ConversationFlowResponseVariant2? value) => new ConversationFlowResponse(value);
 
         /// <summary>
         /// 

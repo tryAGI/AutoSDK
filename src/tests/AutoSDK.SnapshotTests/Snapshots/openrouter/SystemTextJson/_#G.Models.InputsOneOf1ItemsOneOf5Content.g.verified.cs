@@ -120,6 +120,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static InputsOneOf1ItemsOneOf5Content FromInputsOneOf1ItemsOneOf5ContentVariant2(string? value) => new InputsOneOf1ItemsOneOf5Content(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public InputsOneOf1ItemsOneOf5Content(
             global::System.Collections.Generic.IList<global::G.InputsOneOf1ItemsOneOf5ContentOneOf0Items>? inputsOneOf1ItemsOneOf5Content0,
             string? inputsOneOf1ItemsOneOf5ContentVariant2,

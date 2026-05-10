@@ -95,6 +95,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Request FromVideo(global::G.GenerationRequest? value) => new Request(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Request(global::G.ImageGenerationRequest value) => new Request((global::G.ImageGenerationRequest?)value);
 
         /// <summary>
@@ -109,6 +114,11 @@ namespace G
         {
             Image = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Request FromImage(global::G.ImageGenerationRequest? value) => new Request(value);
 
         /// <summary>
         /// 

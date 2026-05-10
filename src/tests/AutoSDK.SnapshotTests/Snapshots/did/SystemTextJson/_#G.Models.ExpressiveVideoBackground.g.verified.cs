@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ExpressiveVideoBackground FromExpressiveVideoBackgroundVariant1(global::G.ExpressiveVideoBackgroundVariant1? value) => new ExpressiveVideoBackground(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ExpressiveVideoBackground(global::G.ExpressiveVideoBackgroundVariant2 value) => new ExpressiveVideoBackground((global::G.ExpressiveVideoBackgroundVariant2?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             ExpressiveVideoBackgroundVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ExpressiveVideoBackground FromExpressiveVideoBackgroundVariant2(global::G.ExpressiveVideoBackgroundVariant2? value) => new ExpressiveVideoBackground(value);
 
         /// <summary>
         /// 

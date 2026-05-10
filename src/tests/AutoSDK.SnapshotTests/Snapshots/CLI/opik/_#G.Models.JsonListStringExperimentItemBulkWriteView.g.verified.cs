@@ -120,6 +120,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static JsonListStringExperimentItemBulkWriteView FromJsonListStringExperimentItemBulkWriteViewVariant3(string? value) => new JsonListStringExperimentItemBulkWriteView(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public JsonListStringExperimentItemBulkWriteView(
             object? jsonListStringExperimentItemBulkWriteViewVariant1,
             global::System.Collections.Generic.IList<object>? jsonListStringExperimentItemBulkWriteViewVariant2,

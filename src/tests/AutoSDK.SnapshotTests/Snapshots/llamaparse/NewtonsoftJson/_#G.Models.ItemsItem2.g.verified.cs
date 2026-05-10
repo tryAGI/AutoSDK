@@ -245,6 +245,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ItemsItem2 FromText(global::G.TextItem? value) => new ItemsItem2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ItemsItem2(global::G.HeadingItem value) => new ItemsItem2((global::G.HeadingItem?)value);
 
         /// <summary>
@@ -259,6 +264,11 @@ namespace G
         {
             Heading = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ItemsItem2 FromHeading(global::G.HeadingItem? value) => new ItemsItem2(value);
 
         /// <summary>
         /// 
@@ -281,6 +291,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ItemsItem2 FromList(global::G.ListItem? value) => new ItemsItem2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ItemsItem2(global::G.CodeItem value) => new ItemsItem2((global::G.CodeItem?)value);
 
         /// <summary>
@@ -295,6 +310,11 @@ namespace G
         {
             Code = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ItemsItem2 FromCode(global::G.CodeItem? value) => new ItemsItem2(value);
 
         /// <summary>
         /// 
@@ -317,6 +337,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ItemsItem2 FromTable(global::G.TableItem? value) => new ItemsItem2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ItemsItem2(global::G.ImageItem value) => new ItemsItem2((global::G.ImageItem?)value);
 
         /// <summary>
@@ -335,6 +360,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ItemsItem2 FromImage(global::G.ImageItem? value) => new ItemsItem2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ItemsItem2(global::G.LinkItem value) => new ItemsItem2((global::G.LinkItem?)value);
 
         /// <summary>
@@ -349,6 +379,11 @@ namespace G
         {
             Link = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ItemsItem2 FromLink(global::G.LinkItem? value) => new ItemsItem2(value);
 
         /// <summary>
         /// 

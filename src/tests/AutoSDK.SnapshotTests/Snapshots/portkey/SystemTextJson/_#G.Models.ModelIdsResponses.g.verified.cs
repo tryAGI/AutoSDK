@@ -60,6 +60,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ModelIdsResponses FromEnum(global::G.ModelIdsResponsesEnum? value) => new ModelIdsResponses(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public object? Object =>
             Enum as object 
             ;

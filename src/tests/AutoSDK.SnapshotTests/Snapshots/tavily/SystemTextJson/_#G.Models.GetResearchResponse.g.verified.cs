@@ -95,6 +95,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static GetResearchResponse FromCompleted(global::G.ResearchTaskCompleted? value) => new GetResearchResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator GetResearchResponse(global::G.ResearchTaskFailed value) => new GetResearchResponse((global::G.ResearchTaskFailed?)value);
 
         /// <summary>
@@ -109,6 +114,11 @@ namespace G
         {
             Failed = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static GetResearchResponse FromFailed(global::G.ResearchTaskFailed? value) => new GetResearchResponse(value);
 
         /// <summary>
         /// 

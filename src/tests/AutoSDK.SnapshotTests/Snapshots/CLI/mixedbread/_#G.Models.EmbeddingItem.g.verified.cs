@@ -120,6 +120,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static EmbeddingItem FromEmbeddingItemVariant3(string? value) => new EmbeddingItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public EmbeddingItem(
             global::System.Collections.Generic.IList<double>? embeddingItemVariant1,
             global::System.Collections.Generic.IList<int>? embeddingItemVariant2,

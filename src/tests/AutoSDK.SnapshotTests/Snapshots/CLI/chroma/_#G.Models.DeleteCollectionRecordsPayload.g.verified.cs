@@ -92,6 +92,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static DeleteCollectionRecordsPayload FromRawWhereFields(global::G.RawWhereFields? value) => new DeleteCollectionRecordsPayload(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator DeleteCollectionRecordsPayload(global::G.DeleteCollectionRecordsPayloadVariant2 value) => new DeleteCollectionRecordsPayload((global::G.DeleteCollectionRecordsPayloadVariant2?)value);
 
         /// <summary>
@@ -106,6 +111,11 @@ namespace G
         {
             DeleteCollectionRecordsPayloadVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static DeleteCollectionRecordsPayload FromDeleteCollectionRecordsPayloadVariant2(global::G.DeleteCollectionRecordsPayloadVariant2? value) => new DeleteCollectionRecordsPayload(value);
 
         /// <summary>
         /// 

@@ -120,6 +120,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ContextInput FromPair(global::G.ContextPair? value) => new ContextInput(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public ContextInput(
             global::G.ContextPair? pair,
             global::System.Collections.Generic.IList<global::G.ContextPair>? contextInputVariant2,

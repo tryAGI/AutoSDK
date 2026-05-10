@@ -458,6 +458,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Tool FromDynamicVectara(global::G.DynamicVectaraTool? value) => new Tool(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Tool(global::G.McpTool value) => new Tool((global::G.McpTool?)value);
 
         /// <summary>
@@ -472,6 +477,11 @@ namespace G
         {
             Mcp = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Tool FromMcp(global::G.McpTool? value) => new Tool(value);
 
         /// <summary>
         /// 
@@ -494,6 +504,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Tool FromCorporaSearch(global::G.CorporaSearchTool? value) => new Tool(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Tool(global::G.WebSearchTool value) => new Tool((global::G.WebSearchTool?)value);
 
         /// <summary>
@@ -508,6 +523,11 @@ namespace G
         {
             WebSearch = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Tool FromWebSearch(global::G.WebSearchTool? value) => new Tool(value);
 
         /// <summary>
         /// 
@@ -530,6 +550,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Tool FromWebGet(global::G.WebGetTool? value) => new Tool(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Tool(global::G.LambdaTool value) => new Tool((global::G.LambdaTool?)value);
 
         /// <summary>
@@ -544,6 +569,11 @@ namespace G
         {
             Lambda = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Tool FromLambda(global::G.LambdaTool? value) => new Tool(value);
 
         /// <summary>
         /// 
@@ -566,6 +596,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Tool FromStructuredIndexing(global::G.StructuredIndexingTool? value) => new Tool(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Tool(global::G.SubAgentTool value) => new Tool((global::G.SubAgentTool?)value);
 
         /// <summary>
@@ -580,6 +615,11 @@ namespace G
         {
             SubAgent = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Tool FromSubAgent(global::G.SubAgentTool? value) => new Tool(value);
 
         /// <summary>
         /// 
@@ -602,6 +642,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Tool FromArtifactCreate(global::G.ArtifactCreateTool? value) => new Tool(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Tool(global::G.ArtifactReadTool value) => new Tool((global::G.ArtifactReadTool?)value);
 
         /// <summary>
@@ -616,6 +661,11 @@ namespace G
         {
             ArtifactRead = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Tool FromArtifactRead(global::G.ArtifactReadTool? value) => new Tool(value);
 
         /// <summary>
         /// 
@@ -638,6 +688,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Tool FromArtifactGrep(global::G.ArtifactGrepTool? value) => new Tool(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Tool(global::G.ImageReadTool value) => new Tool((global::G.ImageReadTool?)value);
 
         /// <summary>
@@ -652,6 +707,11 @@ namespace G
         {
             ImageRead = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Tool FromImageRead(global::G.ImageReadTool? value) => new Tool(value);
 
         /// <summary>
         /// 
@@ -674,6 +734,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Tool FromDocumentConversion(global::G.DocumentConversionTool? value) => new Tool(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Tool(global::G.GetDocumentTextTool value) => new Tool((global::G.GetDocumentTextTool?)value);
 
         /// <summary>
@@ -688,6 +753,11 @@ namespace G
         {
             GetDocumentText = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Tool FromGetDocumentText(global::G.GetDocumentTextTool? value) => new Tool(value);
 
         /// <summary>
         /// 

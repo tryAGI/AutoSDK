@@ -120,6 +120,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static MessagesRequestContextManagementEditsItemsOneOf1Keep FromMessagesRequestContextManagementEditsItemsOneOf1Keep0(global::G.MessagesRequestContextManagementEditsItemsOneOf1Keep0? value) => new MessagesRequestContextManagementEditsItemsOneOf1Keep(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator MessagesRequestContextManagementEditsItemsOneOf1Keep(global::G.MessagesRequestContextManagementEditsItemsOneOf1Keep1 value) => new MessagesRequestContextManagementEditsItemsOneOf1Keep((global::G.MessagesRequestContextManagementEditsItemsOneOf1Keep1?)value);
 
         /// <summary>
@@ -138,6 +143,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static MessagesRequestContextManagementEditsItemsOneOf1Keep FromMessagesRequestContextManagementEditsItemsOneOf1Keep1(global::G.MessagesRequestContextManagementEditsItemsOneOf1Keep1? value) => new MessagesRequestContextManagementEditsItemsOneOf1Keep(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator MessagesRequestContextManagementEditsItemsOneOf1Keep(global::G.MessagesRequestContextManagementEditsItemsOneOf1Keep2 value) => new MessagesRequestContextManagementEditsItemsOneOf1Keep((global::G.MessagesRequestContextManagementEditsItemsOneOf1Keep2?)value);
 
         /// <summary>
@@ -152,6 +162,11 @@ namespace G
         {
             MessagesRequestContextManagementEditsItemsOneOf1Keep2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static MessagesRequestContextManagementEditsItemsOneOf1Keep FromMessagesRequestContextManagementEditsItemsOneOf1Keep2(global::G.MessagesRequestContextManagementEditsItemsOneOf1Keep2? value) => new MessagesRequestContextManagementEditsItemsOneOf1Keep(value);
 
         /// <summary>
         /// 

@@ -120,6 +120,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static UserFilterNode FromPickLeafUsersViewOrRequestResponseRmt(global::G.PickFilterLeafUsersViewOrRequestResponseRmt? value) => new UserFilterNode(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator UserFilterNode(global::G.UserFilterBranch value) => new UserFilterNode((global::G.UserFilterBranch?)value);
 
         /// <summary>
@@ -138,6 +143,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static UserFilterNode FromBranch(global::G.UserFilterBranch? value) => new UserFilterNode(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator UserFilterNode(global::G.UserFilterNodeEnum value) => new UserFilterNode((global::G.UserFilterNodeEnum?)value);
 
         /// <summary>
@@ -152,6 +162,11 @@ namespace G
         {
             Enum = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static UserFilterNode FromEnum(global::G.UserFilterNodeEnum? value) => new UserFilterNode(value);
 
         /// <summary>
         /// 

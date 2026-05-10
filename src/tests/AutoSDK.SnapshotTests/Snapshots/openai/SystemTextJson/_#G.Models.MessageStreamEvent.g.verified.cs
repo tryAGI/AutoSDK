@@ -180,6 +180,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static MessageStreamEvent FromMessageStreamEventVariant1(global::G.MessageStreamEventVariant1? value) => new MessageStreamEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator MessageStreamEvent(global::G.MessageStreamEventVariant2 value) => new MessageStreamEvent((global::G.MessageStreamEventVariant2?)value);
 
         /// <summary>
@@ -194,6 +199,11 @@ namespace G
         {
             MessageStreamEventVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static MessageStreamEvent FromMessageStreamEventVariant2(global::G.MessageStreamEventVariant2? value) => new MessageStreamEvent(value);
 
         /// <summary>
         /// 
@@ -216,6 +226,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static MessageStreamEvent FromMessageStreamEventVariant3(global::G.MessageStreamEventVariant3? value) => new MessageStreamEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator MessageStreamEvent(global::G.MessageStreamEventVariant4 value) => new MessageStreamEvent((global::G.MessageStreamEventVariant4?)value);
 
         /// <summary>
@@ -234,6 +249,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static MessageStreamEvent FromMessageStreamEventVariant4(global::G.MessageStreamEventVariant4? value) => new MessageStreamEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator MessageStreamEvent(global::G.MessageStreamEventVariant5 value) => new MessageStreamEvent((global::G.MessageStreamEventVariant5?)value);
 
         /// <summary>
@@ -248,6 +268,11 @@ namespace G
         {
             MessageStreamEventVariant5 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static MessageStreamEvent FromMessageStreamEventVariant5(global::G.MessageStreamEventVariant5? value) => new MessageStreamEvent(value);
 
         /// <summary>
         /// 

@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ResultClickHouseTableSchemaArrayString FromSuccess(global::G.ResultSuccessClickHouseTableSchemaArray? value) => new ResultClickHouseTableSchemaArrayString(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ResultClickHouseTableSchemaArrayString(global::G.ResultErrorString value) => new ResultClickHouseTableSchemaArrayString((global::G.ResultErrorString?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             Error = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ResultClickHouseTableSchemaArrayString FromError(global::G.ResultErrorString? value) => new ResultClickHouseTableSchemaArrayString(value);
 
         /// <summary>
         /// 

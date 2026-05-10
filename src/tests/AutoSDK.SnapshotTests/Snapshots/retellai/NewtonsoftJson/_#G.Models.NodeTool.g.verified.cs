@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static NodeTool FromNodeToolVariant1(global::G.OneOf<global::G.CustomTool, global::G.CheckAvailabilityCalTool, global::G.BookAppointmentCalTool>? value) => new NodeTool(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator NodeTool(global::G.NodeToolVariant2 value) => new NodeTool((global::G.NodeToolVariant2?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             NodeToolVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static NodeTool FromNodeToolVariant2(global::G.NodeToolVariant2? value) => new NodeTool(value);
 
         /// <summary>
         /// 

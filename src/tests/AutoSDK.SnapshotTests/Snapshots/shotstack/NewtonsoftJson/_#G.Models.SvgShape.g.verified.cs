@@ -390,6 +390,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static SvgShape FromRectangle(global::G.SvgRectangleShape? value) => new SvgShape(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator SvgShape(global::G.SvgCircleShape value) => new SvgShape((global::G.SvgCircleShape?)value);
 
         /// <summary>
@@ -404,6 +409,11 @@ namespace G
         {
             Circle = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static SvgShape FromCircle(global::G.SvgCircleShape? value) => new SvgShape(value);
 
         /// <summary>
         /// 
@@ -426,6 +436,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static SvgShape FromEllipse(global::G.SvgEllipseShape? value) => new SvgShape(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator SvgShape(global::G.SvgLineShape value) => new SvgShape((global::G.SvgLineShape?)value);
 
         /// <summary>
@@ -440,6 +455,11 @@ namespace G
         {
             Line = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static SvgShape FromLine(global::G.SvgLineShape? value) => new SvgShape(value);
 
         /// <summary>
         /// 
@@ -462,6 +482,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static SvgShape FromPolygon(global::G.SvgPolygonShape? value) => new SvgShape(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator SvgShape(global::G.SvgStarShape value) => new SvgShape((global::G.SvgStarShape?)value);
 
         /// <summary>
@@ -476,6 +501,11 @@ namespace G
         {
             Star = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static SvgShape FromStar(global::G.SvgStarShape? value) => new SvgShape(value);
 
         /// <summary>
         /// 
@@ -498,6 +528,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static SvgShape FromArrow(global::G.SvgArrowShape? value) => new SvgShape(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator SvgShape(global::G.SvgHeartShape value) => new SvgShape((global::G.SvgHeartShape?)value);
 
         /// <summary>
@@ -512,6 +547,11 @@ namespace G
         {
             Heart = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static SvgShape FromHeart(global::G.SvgHeartShape? value) => new SvgShape(value);
 
         /// <summary>
         /// 
@@ -534,6 +574,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static SvgShape FromCross(global::G.SvgCrossShape? value) => new SvgShape(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator SvgShape(global::G.SvgRingShape value) => new SvgShape((global::G.SvgRingShape?)value);
 
         /// <summary>
@@ -552,6 +597,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static SvgShape FromRing(global::G.SvgRingShape? value) => new SvgShape(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator SvgShape(global::G.SvgPathShape value) => new SvgShape((global::G.SvgPathShape?)value);
 
         /// <summary>
@@ -566,6 +616,11 @@ namespace G
         {
             Path = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static SvgShape FromPath(global::G.SvgPathShape? value) => new SvgShape(value);
 
         /// <summary>
         /// 

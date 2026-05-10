@@ -155,6 +155,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Eval FromLlm(global::G.LLMParameterEvaluationStrategy? value) => new Eval(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Eval(global::G.RegexParameterEvaluationStrategy value) => new Eval((global::G.RegexParameterEvaluationStrategy?)value);
 
         /// <summary>
@@ -169,6 +174,11 @@ namespace G
         {
             Regex = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Eval FromRegex(global::G.RegexParameterEvaluationStrategy? value) => new Eval(value);
 
         /// <summary>
         /// 
@@ -191,6 +201,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Eval FromExact(global::G.ExactParameterEvaluationStrategy? value) => new Eval(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Eval(global::G.MatchAnythingParameterEvaluationStrategy value) => new Eval((global::G.MatchAnythingParameterEvaluationStrategy?)value);
 
         /// <summary>
@@ -205,6 +220,11 @@ namespace G
         {
             Anything = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Eval FromAnything(global::G.MatchAnythingParameterEvaluationStrategy? value) => new Eval(value);
 
         /// <summary>
         /// 

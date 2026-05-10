@@ -154,6 +154,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Tool FromFileSearch(global::G.FileSearchTool? value) => new Tool(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Tool(global::G.FunctionTool value) => new Tool((global::G.FunctionTool?)value);
 
         /// <summary>
@@ -168,6 +173,11 @@ namespace G
         {
             Function = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Tool FromFunction(global::G.FunctionTool? value) => new Tool(value);
 
         /// <summary>
         /// 
@@ -190,6 +200,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Tool FromComputerUse(global::G.ComputerTool? value) => new Tool(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Tool(global::G.WebSearchTool value) => new Tool((global::G.WebSearchTool?)value);
 
         /// <summary>
@@ -204,6 +219,11 @@ namespace G
         {
             WebSearch = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Tool FromWebSearch(global::G.WebSearchTool? value) => new Tool(value);
 
         /// <summary>
         /// 

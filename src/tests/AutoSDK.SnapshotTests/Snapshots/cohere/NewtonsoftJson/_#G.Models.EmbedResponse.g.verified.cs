@@ -95,6 +95,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static EmbedResponse FromEmbeddingsFloats(global::G.EmbedFloatsResponse? value) => new EmbedResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator EmbedResponse(global::G.EmbedByTypeResponse value) => new EmbedResponse((global::G.EmbedByTypeResponse?)value);
 
         /// <summary>
@@ -109,6 +114,11 @@ namespace G
         {
             EmbeddingsByType = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static EmbedResponse FromEmbeddingsByType(global::G.EmbedByTypeResponse? value) => new EmbedResponse(value);
 
         /// <summary>
         /// 

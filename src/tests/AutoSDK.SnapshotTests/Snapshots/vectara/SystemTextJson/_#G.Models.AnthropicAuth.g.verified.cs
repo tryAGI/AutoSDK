@@ -215,6 +215,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static AnthropicAuth FromBearer(global::G.BearerAuth? value) => new AnthropicAuth(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator AnthropicAuth(global::G.HeaderAuth value) => new AnthropicAuth((global::G.HeaderAuth?)value);
 
         /// <summary>
@@ -229,6 +234,11 @@ namespace G
         {
             Header = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static AnthropicAuth FromHeader(global::G.HeaderAuth? value) => new AnthropicAuth(value);
 
         /// <summary>
         /// 
@@ -251,6 +261,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static AnthropicAuth FromBedrockStaticIam(global::G.BedrockStaticIAMAuth? value) => new AnthropicAuth(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator AnthropicAuth(global::G.BedrockApiKeyAuth value) => new AnthropicAuth((global::G.BedrockApiKeyAuth?)value);
 
         /// <summary>
@@ -265,6 +280,11 @@ namespace G
         {
             BedrockApiKey = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static AnthropicAuth FromBedrockApiKey(global::G.BedrockApiKeyAuth? value) => new AnthropicAuth(value);
 
         /// <summary>
         /// 
@@ -287,6 +307,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static AnthropicAuth FromVertexServiceAccount(global::G.VertexServiceAccountAuth? value) => new AnthropicAuth(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator AnthropicAuth(global::G.VertexAccessTokenAuth value) => new AnthropicAuth((global::G.VertexAccessTokenAuth?)value);
 
         /// <summary>
@@ -301,6 +326,11 @@ namespace G
         {
             VertexAccessToken = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static AnthropicAuth FromVertexAccessToken(global::G.VertexAccessTokenAuth? value) => new AnthropicAuth(value);
 
         /// <summary>
         /// 

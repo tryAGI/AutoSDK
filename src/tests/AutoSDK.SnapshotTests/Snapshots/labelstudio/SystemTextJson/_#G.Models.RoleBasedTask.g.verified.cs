@@ -120,6 +120,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static RoleBasedTask FromLse(global::G.LseTask? value) => new RoleBasedTask(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator RoleBasedTask(global::G.LseTaskSerializerForReviewers value) => new RoleBasedTask((global::G.LseTaskSerializerForReviewers?)value);
 
         /// <summary>
@@ -138,6 +143,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static RoleBasedTask FromLseSerializerForReviewers(global::G.LseTaskSerializerForReviewers? value) => new RoleBasedTask(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator RoleBasedTask(global::G.LseTaskSerializerForAnnotators value) => new RoleBasedTask((global::G.LseTaskSerializerForAnnotators?)value);
 
         /// <summary>
@@ -152,6 +162,11 @@ namespace G
         {
             LseSerializerForAnnotators = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static RoleBasedTask FromLseSerializerForAnnotators(global::G.LseTaskSerializerForAnnotators? value) => new RoleBasedTask(value);
 
         /// <summary>
         /// 

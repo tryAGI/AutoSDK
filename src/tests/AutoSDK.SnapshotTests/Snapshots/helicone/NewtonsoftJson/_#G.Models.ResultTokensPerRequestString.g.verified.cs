@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ResultTokensPerRequestString FromSuccess(global::G.ResultSuccessTokensPerRequest? value) => new ResultTokensPerRequestString(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ResultTokensPerRequestString(global::G.ResultErrorString value) => new ResultTokensPerRequestString((global::G.ResultErrorString?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             Error = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ResultTokensPerRequestString FromError(global::G.ResultErrorString? value) => new ResultTokensPerRequestString(value);
 
         /// <summary>
         /// 

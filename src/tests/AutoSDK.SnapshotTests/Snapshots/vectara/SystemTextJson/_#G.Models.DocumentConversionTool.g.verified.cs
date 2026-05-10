@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static DocumentConversionTool FromBase(global::G.ToolBase? value) => new DocumentConversionTool(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator DocumentConversionTool(global::G.DocumentConversionToolVariant2 value) => new DocumentConversionTool((global::G.DocumentConversionToolVariant2?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             DocumentConversionToolVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static DocumentConversionTool FromDocumentConversionToolVariant2(global::G.DocumentConversionToolVariant2? value) => new DocumentConversionTool(value);
 
         /// <summary>
         /// 

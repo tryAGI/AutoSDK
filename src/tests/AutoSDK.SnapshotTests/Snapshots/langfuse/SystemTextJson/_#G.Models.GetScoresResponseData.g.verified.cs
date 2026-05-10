@@ -150,6 +150,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static GetScoresResponseData FromGetScoresResponseDataVariant1(global::G.AllOf<global::G.GetScoresResponseDataVariant12, global::G.GetScoresResponseDataNumeric>? value) => new GetScoresResponseData(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator GetScoresResponseData(global::G.AllOf<global::G.GetScoresResponseDataVariant22, global::G.GetScoresResponseDataCategorical> value) => new GetScoresResponseData((global::G.AllOf<global::G.GetScoresResponseDataVariant22, global::G.GetScoresResponseDataCategorical>?)value);
 
         /// <summary>
@@ -164,6 +169,11 @@ namespace G
         {
             GetScoresResponseDataVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static GetScoresResponseData FromGetScoresResponseDataVariant2(global::G.AllOf<global::G.GetScoresResponseDataVariant22, global::G.GetScoresResponseDataCategorical>? value) => new GetScoresResponseData(value);
 
         /// <summary>
         /// 
@@ -186,6 +196,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static GetScoresResponseData FromGetScoresResponseDataVariant3(global::G.AllOf<global::G.GetScoresResponseDataVariant32, global::G.GetScoresResponseDataBoolean>? value) => new GetScoresResponseData(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator GetScoresResponseData(global::G.AllOf<global::G.GetScoresResponseDataVariant42, global::G.GetScoresResponseDataCorrection> value) => new GetScoresResponseData((global::G.AllOf<global::G.GetScoresResponseDataVariant42, global::G.GetScoresResponseDataCorrection>?)value);
 
         /// <summary>
@@ -200,6 +215,11 @@ namespace G
         {
             GetScoresResponseDataVariant4 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static GetScoresResponseData FromGetScoresResponseDataVariant4(global::G.AllOf<global::G.GetScoresResponseDataVariant42, global::G.GetScoresResponseDataCorrection>? value) => new GetScoresResponseData(value);
 
         /// <summary>
         /// 

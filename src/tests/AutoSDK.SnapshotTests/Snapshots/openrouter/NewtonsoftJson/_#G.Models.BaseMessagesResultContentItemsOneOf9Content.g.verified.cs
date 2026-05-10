@@ -150,6 +150,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static BaseMessagesResultContentItemsOneOf9Content FromBaseMessagesResultContentItemsOneOf9Content0(global::G.BaseMessagesResultContentItemsOneOf9Content0? value) => new BaseMessagesResultContentItemsOneOf9Content(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BaseMessagesResultContentItemsOneOf9Content(global::G.BaseMessagesResultContentItemsOneOf9Content1 value) => new BaseMessagesResultContentItemsOneOf9Content((global::G.BaseMessagesResultContentItemsOneOf9Content1?)value);
 
         /// <summary>
@@ -164,6 +169,11 @@ namespace G
         {
             BaseMessagesResultContentItemsOneOf9Content1 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BaseMessagesResultContentItemsOneOf9Content FromBaseMessagesResultContentItemsOneOf9Content1(global::G.BaseMessagesResultContentItemsOneOf9Content1? value) => new BaseMessagesResultContentItemsOneOf9Content(value);
 
         /// <summary>
         /// 
@@ -186,6 +196,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static BaseMessagesResultContentItemsOneOf9Content FromBaseMessagesResultContentItemsOneOf9Content2(global::G.BaseMessagesResultContentItemsOneOf9Content2? value) => new BaseMessagesResultContentItemsOneOf9Content(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BaseMessagesResultContentItemsOneOf9Content(global::G.BaseMessagesResultContentItemsOneOf9Content3 value) => new BaseMessagesResultContentItemsOneOf9Content((global::G.BaseMessagesResultContentItemsOneOf9Content3?)value);
 
         /// <summary>
@@ -200,6 +215,11 @@ namespace G
         {
             BaseMessagesResultContentItemsOneOf9Content3 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BaseMessagesResultContentItemsOneOf9Content FromBaseMessagesResultContentItemsOneOf9Content3(global::G.BaseMessagesResultContentItemsOneOf9Content3? value) => new BaseMessagesResultContentItemsOneOf9Content(value);
 
         /// <summary>
         /// 

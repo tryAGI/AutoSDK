@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static MessagesRequestSystem FromMessagesRequestSystemVariant1(string? value) => new MessagesRequestSystem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public MessagesRequestSystem(
             string? messagesRequestSystemVariant1,
             global::System.Collections.Generic.IList<global::G.MessagesRequestSystemOneOf1Items>? messagesRequestSystem1

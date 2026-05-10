@@ -180,6 +180,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static EasyInputMessageContentOneOf0Items FromInputText(global::G.InputText? value) => new EasyInputMessageContentOneOf0Items(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator EasyInputMessageContentOneOf0Items(global::G.EasyInputMessageContentOneOf0Items1 value) => new EasyInputMessageContentOneOf0Items((global::G.EasyInputMessageContentOneOf0Items1?)value);
 
         /// <summary>
@@ -194,6 +199,11 @@ namespace G
         {
             EasyInputMessageContentOneOf0Items1 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static EasyInputMessageContentOneOf0Items FromEasyInputMessageContentOneOf0Items1(global::G.EasyInputMessageContentOneOf0Items1? value) => new EasyInputMessageContentOneOf0Items(value);
 
         /// <summary>
         /// 
@@ -216,6 +226,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static EasyInputMessageContentOneOf0Items FromInputFile(global::G.InputFile? value) => new EasyInputMessageContentOneOf0Items(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator EasyInputMessageContentOneOf0Items(global::G.InputAudio value) => new EasyInputMessageContentOneOf0Items((global::G.InputAudio?)value);
 
         /// <summary>
@@ -234,6 +249,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static EasyInputMessageContentOneOf0Items FromInputAudio(global::G.InputAudio? value) => new EasyInputMessageContentOneOf0Items(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator EasyInputMessageContentOneOf0Items(global::G.InputVideo value) => new EasyInputMessageContentOneOf0Items((global::G.InputVideo?)value);
 
         /// <summary>
@@ -248,6 +268,11 @@ namespace G
         {
             InputVideo = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static EasyInputMessageContentOneOf0Items FromInputVideo(global::G.InputVideo? value) => new EasyInputMessageContentOneOf0Items(value);
 
         /// <summary>
         /// 

@@ -120,6 +120,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ObjectsGetResponse FromObjectValue(global::G.Object? value) => new ObjectsGetResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ObjectsGetResponse(global::G.ObjectsGetResponseVariant2 value) => new ObjectsGetResponse((global::G.ObjectsGetResponseVariant2?)value);
 
         /// <summary>
@@ -138,6 +143,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ObjectsGetResponse FromObjectsGetResponseVariant2(global::G.ObjectsGetResponseVariant2? value) => new ObjectsGetResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ObjectsGetResponse(global::G.ObjectsGetResponseVariant3 value) => new ObjectsGetResponse((global::G.ObjectsGetResponseVariant3?)value);
 
         /// <summary>
@@ -152,6 +162,11 @@ namespace G
         {
             ObjectsGetResponseVariant3 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ObjectsGetResponse FromObjectsGetResponseVariant3(global::G.ObjectsGetResponseVariant3? value) => new ObjectsGetResponse(value);
 
         /// <summary>
         /// 

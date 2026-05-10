@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ChatCompletionMessageToolCall FromFunction(global::G.ChatCompletionMessageFunctionToolCall? value) => new ChatCompletionMessageToolCall(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChatCompletionMessageToolCall(global::G.ChatCompletionMessageCustomToolCall value) => new ChatCompletionMessageToolCall((global::G.ChatCompletionMessageCustomToolCall?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             Custom = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChatCompletionMessageToolCall FromCustom(global::G.ChatCompletionMessageCustomToolCall? value) => new ChatCompletionMessageToolCall(value);
 
         /// <summary>
         /// 

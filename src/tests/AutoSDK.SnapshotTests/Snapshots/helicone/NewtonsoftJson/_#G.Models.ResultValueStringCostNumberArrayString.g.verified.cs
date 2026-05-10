@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ResultValueStringCostNumberArrayString FromSuccess(global::G.ResultSuccessValueStringCostNumberArray? value) => new ResultValueStringCostNumberArrayString(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ResultValueStringCostNumberArrayString(global::G.ResultErrorString value) => new ResultValueStringCostNumberArrayString((global::G.ResultErrorString?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             Error = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ResultValueStringCostNumberArrayString FromError(global::G.ResultErrorString? value) => new ResultValueStringCostNumberArrayString(value);
 
         /// <summary>
         /// 

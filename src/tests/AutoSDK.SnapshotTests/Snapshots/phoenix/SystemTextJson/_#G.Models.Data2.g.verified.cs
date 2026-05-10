@@ -125,6 +125,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Data2 FromLocal(global::G.LocalUser? value) => new Data2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Data2(global::G.OAuth2User value) => new Data2((global::G.OAuth2User?)value);
 
         /// <summary>
@@ -143,6 +148,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Data2 FromOauth2(global::G.OAuth2User? value) => new Data2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Data2(global::G.LDAPUser value) => new Data2((global::G.LDAPUser?)value);
 
         /// <summary>
@@ -157,6 +167,11 @@ namespace G
         {
             Ldap = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Data2 FromLdap(global::G.LDAPUser? value) => new Data2(value);
 
         /// <summary>
         /// 

@@ -155,6 +155,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ToolDetailsVariant12 FromWebhook(global::G.ConversationHistoryTranscriptToolCallWebhookDetails? value) => new ToolDetailsVariant12(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ToolDetailsVariant12(global::G.ConversationHistoryTranscriptToolCallClientDetails value) => new ToolDetailsVariant12((global::G.ConversationHistoryTranscriptToolCallClientDetails?)value);
 
         /// <summary>
@@ -169,6 +174,11 @@ namespace G
         {
             Client = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ToolDetailsVariant12 FromClient(global::G.ConversationHistoryTranscriptToolCallClientDetails? value) => new ToolDetailsVariant12(value);
 
         /// <summary>
         /// 
@@ -191,6 +201,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ToolDetailsVariant12 FromMcp(global::G.ConversationHistoryTranscriptToolCallMCPDetails? value) => new ToolDetailsVariant12(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ToolDetailsVariant12(global::G.ConversationHistoryTranscriptToolCallApiIntegrationWebhookDetails value) => new ToolDetailsVariant12((global::G.ConversationHistoryTranscriptToolCallApiIntegrationWebhookDetails?)value);
 
         /// <summary>
@@ -205,6 +220,11 @@ namespace G
         {
             ApiIntegrationWebhook = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ToolDetailsVariant12 FromApiIntegrationWebhook(global::G.ConversationHistoryTranscriptToolCallApiIntegrationWebhookDetails? value) => new ToolDetailsVariant12(value);
 
         /// <summary>
         /// 

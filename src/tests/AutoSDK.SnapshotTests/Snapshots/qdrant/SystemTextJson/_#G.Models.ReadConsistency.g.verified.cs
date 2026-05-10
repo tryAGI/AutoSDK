@@ -98,6 +98,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ReadConsistency FromReadConsistencyVariant1(int? value) => new ReadConsistency(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ReadConsistency(global::G.ReadConsistencyType value) => new ReadConsistency((global::G.ReadConsistencyType?)value);
 
         /// <summary>
@@ -112,6 +117,11 @@ namespace G
         {
             Type = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ReadConsistency FromType(global::G.ReadConsistencyType? value) => new ReadConsistency(value);
 
         /// <summary>
         /// 

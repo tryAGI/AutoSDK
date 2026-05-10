@@ -65,6 +65,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static CreateInstructionRequest FromInitial(global::G.CreateInitialInstructionRequest? value) => new CreateInstructionRequest(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public CreateInstructionRequest(
             global::G.CreateInstructionRequestDiscriminatorType? type,
             global::G.CreateInitialInstructionRequest? initial

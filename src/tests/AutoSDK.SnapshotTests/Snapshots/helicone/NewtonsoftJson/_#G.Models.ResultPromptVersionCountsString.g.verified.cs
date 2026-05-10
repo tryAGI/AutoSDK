@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ResultPromptVersionCountsString FromSuccess(global::G.ResultSuccessPromptVersionCounts? value) => new ResultPromptVersionCountsString(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ResultPromptVersionCountsString(global::G.ResultErrorString value) => new ResultPromptVersionCountsString((global::G.ResultErrorString?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             Error = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ResultPromptVersionCountsString FromError(global::G.ResultErrorString? value) => new ResultPromptVersionCountsString(value);
 
         /// <summary>
         /// 

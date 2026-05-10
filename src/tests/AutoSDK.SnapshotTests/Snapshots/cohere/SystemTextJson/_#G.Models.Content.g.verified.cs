@@ -95,6 +95,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Content FromText(global::G.TextContent? value) => new Content(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Content(global::G.ImageContent value) => new Content((global::G.ImageContent?)value);
 
         /// <summary>
@@ -109,6 +114,11 @@ namespace G
         {
             ImageUrl = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Content FromImageUrl(global::G.ImageContent? value) => new Content(value);
 
         /// <summary>
         /// 

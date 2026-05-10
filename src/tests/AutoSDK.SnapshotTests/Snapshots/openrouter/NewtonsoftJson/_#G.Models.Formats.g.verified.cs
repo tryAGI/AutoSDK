@@ -120,6 +120,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Formats FromFormatTextConfig(global::G.FormatTextConfig? value) => new Formats(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Formats(global::G.FormatJsonObjectConfig value) => new Formats((global::G.FormatJsonObjectConfig?)value);
 
         /// <summary>
@@ -138,6 +143,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Formats FromFormatJsonObjectConfig(global::G.FormatJsonObjectConfig? value) => new Formats(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Formats(global::G.FormatJsonSchemaConfig value) => new Formats((global::G.FormatJsonSchemaConfig?)value);
 
         /// <summary>
@@ -152,6 +162,11 @@ namespace G
         {
             FormatJsonSchemaConfig = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Formats FromFormatJsonSchemaConfig(global::G.FormatJsonSchemaConfig? value) => new Formats(value);
 
         /// <summary>
         /// 

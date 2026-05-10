@@ -270,6 +270,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static UpdateOperation FromUpsert(global::G.UpsertOperation? value) => new UpdateOperation(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator UpdateOperation(global::G.DeleteOperation value) => new UpdateOperation((global::G.DeleteOperation?)value);
 
         /// <summary>
@@ -284,6 +289,11 @@ namespace G
         {
             Delete = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static UpdateOperation FromDelete(global::G.DeleteOperation? value) => new UpdateOperation(value);
 
         /// <summary>
         /// 
@@ -306,6 +316,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static UpdateOperation FromSetPayload(global::G.SetPayloadOperation? value) => new UpdateOperation(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator UpdateOperation(global::G.OverwritePayloadOperation value) => new UpdateOperation((global::G.OverwritePayloadOperation?)value);
 
         /// <summary>
@@ -320,6 +335,11 @@ namespace G
         {
             OverwritePayload = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static UpdateOperation FromOverwritePayload(global::G.OverwritePayloadOperation? value) => new UpdateOperation(value);
 
         /// <summary>
         /// 
@@ -342,6 +362,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static UpdateOperation FromDeletePayload(global::G.DeletePayloadOperation? value) => new UpdateOperation(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator UpdateOperation(global::G.ClearPayloadOperation value) => new UpdateOperation((global::G.ClearPayloadOperation?)value);
 
         /// <summary>
@@ -356,6 +381,11 @@ namespace G
         {
             ClearPayload = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static UpdateOperation FromClearPayload(global::G.ClearPayloadOperation? value) => new UpdateOperation(value);
 
         /// <summary>
         /// 
@@ -378,6 +408,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static UpdateOperation FromVectors(global::G.UpdateVectorsOperation? value) => new UpdateOperation(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator UpdateOperation(global::G.DeleteVectorsOperation value) => new UpdateOperation((global::G.DeleteVectorsOperation?)value);
 
         /// <summary>
@@ -392,6 +427,11 @@ namespace G
         {
             DeleteVectors = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static UpdateOperation FromDeleteVectors(global::G.DeleteVectorsOperation? value) => new UpdateOperation(value);
 
         /// <summary>
         /// 

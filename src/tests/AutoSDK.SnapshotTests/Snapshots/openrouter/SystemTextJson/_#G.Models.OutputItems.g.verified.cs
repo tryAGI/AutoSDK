@@ -240,6 +240,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static OutputItems FromOutputMessageItem(global::G.OutputMessageItem? value) => new OutputItems(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator OutputItems(global::G.OutputReasoningItem value) => new OutputItems((global::G.OutputReasoningItem?)value);
 
         /// <summary>
@@ -254,6 +259,11 @@ namespace G
         {
             OutputReasoningItem = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static OutputItems FromOutputReasoningItem(global::G.OutputReasoningItem? value) => new OutputItems(value);
 
         /// <summary>
         /// 
@@ -276,6 +286,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static OutputItems FromOutputFunctionCallItem(global::G.OutputFunctionCallItem? value) => new OutputItems(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator OutputItems(global::G.OutputWebSearchCallItem value) => new OutputItems((global::G.OutputWebSearchCallItem?)value);
 
         /// <summary>
@@ -290,6 +305,11 @@ namespace G
         {
             OutputWebSearchCallItem = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static OutputItems FromOutputWebSearchCallItem(global::G.OutputWebSearchCallItem? value) => new OutputItems(value);
 
         /// <summary>
         /// 
@@ -312,6 +332,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static OutputItems FromOutputFileSearchCallItem(global::G.OutputFileSearchCallItem? value) => new OutputItems(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator OutputItems(global::G.OutputImageGenerationCallItem value) => new OutputItems((global::G.OutputImageGenerationCallItem?)value);
 
         /// <summary>
@@ -330,6 +355,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static OutputItems FromOutputImageGenerationCallItem(global::G.OutputImageGenerationCallItem? value) => new OutputItems(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator OutputItems(global::G.OutputServerToolItem value) => new OutputItems((global::G.OutputServerToolItem?)value);
 
         /// <summary>
@@ -344,6 +374,11 @@ namespace G
         {
             OutputServerToolItem = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static OutputItems FromOutputServerToolItem(global::G.OutputServerToolItem? value) => new OutputItems(value);
 
         /// <summary>
         /// 

@@ -180,6 +180,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static OpenAIResponsesToolChoice FromOpenAiResponsesToolChoice0(global::G.OpenAiResponsesToolChoice0? value) => new OpenAIResponsesToolChoice(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator OpenAIResponsesToolChoice(global::G.OpenAiResponsesToolChoice1 value) => new OpenAIResponsesToolChoice((global::G.OpenAiResponsesToolChoice1?)value);
 
         /// <summary>
@@ -194,6 +199,11 @@ namespace G
         {
             OpenAiResponsesToolChoice1 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static OpenAIResponsesToolChoice FromOpenAiResponsesToolChoice1(global::G.OpenAiResponsesToolChoice1? value) => new OpenAIResponsesToolChoice(value);
 
         /// <summary>
         /// 
@@ -216,6 +226,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static OpenAIResponsesToolChoice FromOpenAiResponsesToolChoice2(global::G.OpenAiResponsesToolChoice2? value) => new OpenAIResponsesToolChoice(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator OpenAIResponsesToolChoice(global::G.OpenAiResponsesToolChoice3 value) => new OpenAIResponsesToolChoice((global::G.OpenAiResponsesToolChoice3?)value);
 
         /// <summary>
@@ -234,6 +249,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static OpenAIResponsesToolChoice FromOpenAiResponsesToolChoice3(global::G.OpenAiResponsesToolChoice3? value) => new OpenAIResponsesToolChoice(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator OpenAIResponsesToolChoice(global::G.OpenAiResponsesToolChoice4 value) => new OpenAIResponsesToolChoice((global::G.OpenAiResponsesToolChoice4?)value);
 
         /// <summary>
@@ -248,6 +268,11 @@ namespace G
         {
             OpenAiResponsesToolChoice4 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static OpenAIResponsesToolChoice FromOpenAiResponsesToolChoice4(global::G.OpenAiResponsesToolChoice4? value) => new OpenAIResponsesToolChoice(value);
 
         /// <summary>
         /// 

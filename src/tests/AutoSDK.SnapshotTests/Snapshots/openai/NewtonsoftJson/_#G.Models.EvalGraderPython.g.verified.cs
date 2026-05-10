@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static EvalGraderPython FromPythonGrader(global::G.GraderPython? value) => new EvalGraderPython(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator EvalGraderPython(global::G.EvalGraderPythonVariant2 value) => new EvalGraderPython((global::G.EvalGraderPythonVariant2?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             EvalGraderPythonVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static EvalGraderPython FromEvalGraderPythonVariant2(global::G.EvalGraderPythonVariant2? value) => new EvalGraderPython(value);
 
         /// <summary>
         /// 

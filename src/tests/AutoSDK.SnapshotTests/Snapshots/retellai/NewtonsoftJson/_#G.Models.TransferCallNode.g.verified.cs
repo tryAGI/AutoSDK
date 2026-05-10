@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static TransferCallNode FromBase(global::G.NodeBase? value) => new TransferCallNode(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator TransferCallNode(global::G.TransferCallNodeVariant2 value) => new TransferCallNode((global::G.TransferCallNodeVariant2?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             TransferCallNodeVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static TransferCallNode FromTransferCallNodeVariant2(global::G.TransferCallNodeVariant2? value) => new TransferCallNode(value);
 
         /// <summary>
         /// 

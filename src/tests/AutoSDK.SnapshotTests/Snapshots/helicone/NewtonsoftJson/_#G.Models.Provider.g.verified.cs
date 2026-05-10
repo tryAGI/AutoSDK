@@ -120,6 +120,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Provider FromName(global::G.ProviderName? value) => new Provider(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Provider(global::G.ModelProviderName value) => new Provider((global::G.ModelProviderName?)value);
 
         /// <summary>
@@ -138,6 +143,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Provider FromModelName(global::G.ModelProviderName? value) => new Provider(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Provider(global::G.ProviderEnum value) => new Provider((global::G.ProviderEnum?)value);
 
         /// <summary>
@@ -152,6 +162,11 @@ namespace G
         {
             Enum = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Provider FromEnum(global::G.ProviderEnum? value) => new Provider(value);
 
         /// <summary>
         /// 

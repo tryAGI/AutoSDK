@@ -65,6 +65,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static IntegrationsVariant1Item4 FromWandb(global::G.WandbIntegrationOut? value) => new IntegrationsVariant1Item4(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public IntegrationsVariant1Item4(
             global::G.ClassifierDetailedJobOutIntegrationsVariant1ItemDiscriminatorType? type,
             global::G.WandbIntegrationOut? wandb

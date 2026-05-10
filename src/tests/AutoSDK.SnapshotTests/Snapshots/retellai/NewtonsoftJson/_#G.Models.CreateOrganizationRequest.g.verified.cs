@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static CreateOrganizationRequest FromNew(global::G.CreateOrganizationRequestNew? value) => new CreateOrganizationRequest(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator CreateOrganizationRequest(global::G.CreateOrganizationRequestOld value) => new CreateOrganizationRequest((global::G.CreateOrganizationRequestOld?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             Old = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static CreateOrganizationRequest FromOld(global::G.CreateOrganizationRequestOld? value) => new CreateOrganizationRequest(value);
 
         /// <summary>
         /// 

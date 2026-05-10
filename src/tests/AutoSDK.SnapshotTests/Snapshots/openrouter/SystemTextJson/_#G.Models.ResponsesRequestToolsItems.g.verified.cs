@@ -510,6 +510,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ResponsesRequestToolsItems FromResponsesRequestToolsItems0(global::G.ResponsesRequestToolsItems0? value) => new ResponsesRequestToolsItems(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ResponsesRequestToolsItems(global::G.PreviewWebSearchServerTool value) => new ResponsesRequestToolsItems((global::G.PreviewWebSearchServerTool?)value);
 
         /// <summary>
@@ -524,6 +529,11 @@ namespace G
         {
             PreviewWebSearchServerTool = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ResponsesRequestToolsItems FromPreviewWebSearchServerTool(global::G.PreviewWebSearchServerTool? value) => new ResponsesRequestToolsItems(value);
 
         /// <summary>
         /// 
@@ -546,6 +556,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ResponsesRequestToolsItems FromPreview20250311WebSearchServerTool(global::G.Preview20250311WebSearchServerTool? value) => new ResponsesRequestToolsItems(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ResponsesRequestToolsItems(global::G.LegacyWebSearchServerTool value) => new ResponsesRequestToolsItems((global::G.LegacyWebSearchServerTool?)value);
 
         /// <summary>
@@ -560,6 +575,11 @@ namespace G
         {
             LegacyWebSearchServerTool = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ResponsesRequestToolsItems FromLegacyWebSearchServerTool(global::G.LegacyWebSearchServerTool? value) => new ResponsesRequestToolsItems(value);
 
         /// <summary>
         /// 
@@ -582,6 +602,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ResponsesRequestToolsItems FromWebSearchServerTool(global::G.WebSearchServerTool? value) => new ResponsesRequestToolsItems(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ResponsesRequestToolsItems(global::G.FileSearchServerTool value) => new ResponsesRequestToolsItems((global::G.FileSearchServerTool?)value);
 
         /// <summary>
@@ -596,6 +621,11 @@ namespace G
         {
             FileSearchServerTool = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ResponsesRequestToolsItems FromFileSearchServerTool(global::G.FileSearchServerTool? value) => new ResponsesRequestToolsItems(value);
 
         /// <summary>
         /// 
@@ -618,6 +648,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ResponsesRequestToolsItems FromComputerUseServerTool(global::G.ComputerUseServerTool? value) => new ResponsesRequestToolsItems(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ResponsesRequestToolsItems(global::G.CodeInterpreterServerTool value) => new ResponsesRequestToolsItems((global::G.CodeInterpreterServerTool?)value);
 
         /// <summary>
@@ -632,6 +667,11 @@ namespace G
         {
             CodeInterpreterServerTool = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ResponsesRequestToolsItems FromCodeInterpreterServerTool(global::G.CodeInterpreterServerTool? value) => new ResponsesRequestToolsItems(value);
 
         /// <summary>
         /// 
@@ -654,6 +694,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ResponsesRequestToolsItems FromMcpServerTool(global::G.McpServerTool? value) => new ResponsesRequestToolsItems(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ResponsesRequestToolsItems(global::G.ImageGenerationServerTool value) => new ResponsesRequestToolsItems((global::G.ImageGenerationServerTool?)value);
 
         /// <summary>
@@ -668,6 +713,11 @@ namespace G
         {
             ImageGenerationServerTool = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ResponsesRequestToolsItems FromImageGenerationServerTool(global::G.ImageGenerationServerTool? value) => new ResponsesRequestToolsItems(value);
 
         /// <summary>
         /// 
@@ -690,6 +740,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ResponsesRequestToolsItems FromCodexLocalShellTool(global::G.CodexLocalShellTool? value) => new ResponsesRequestToolsItems(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ResponsesRequestToolsItems(global::G.ShellServerTool value) => new ResponsesRequestToolsItems((global::G.ShellServerTool?)value);
 
         /// <summary>
@@ -704,6 +759,11 @@ namespace G
         {
             ShellServerTool = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ResponsesRequestToolsItems FromShellServerTool(global::G.ShellServerTool? value) => new ResponsesRequestToolsItems(value);
 
         /// <summary>
         /// 
@@ -726,6 +786,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ResponsesRequestToolsItems FromApplyPatchServerTool(global::G.ApplyPatchServerTool? value) => new ResponsesRequestToolsItems(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ResponsesRequestToolsItems(global::G.CustomTool value) => new ResponsesRequestToolsItems((global::G.CustomTool?)value);
 
         /// <summary>
@@ -740,6 +805,11 @@ namespace G
         {
             CustomTool = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ResponsesRequestToolsItems FromCustomTool(global::G.CustomTool? value) => new ResponsesRequestToolsItems(value);
 
         /// <summary>
         /// 
@@ -762,6 +832,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ResponsesRequestToolsItems FromDatetimeServerTool(global::G.DatetimeServerTool? value) => new ResponsesRequestToolsItems(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ResponsesRequestToolsItems(global::G.WebSearchServerToolOpenRouter value) => new ResponsesRequestToolsItems((global::G.WebSearchServerToolOpenRouter?)value);
 
         /// <summary>
@@ -776,6 +851,11 @@ namespace G
         {
             WebSearchServerToolOpenRouter = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ResponsesRequestToolsItems FromWebSearchServerToolOpenRouter(global::G.WebSearchServerToolOpenRouter? value) => new ResponsesRequestToolsItems(value);
 
         /// <summary>
         /// 

@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ModelIds FromShared(global::G.ModelIdsShared? value) => new ModelIds(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ModelIds(global::G.ModelIdsResponses value) => new ModelIds((global::G.ModelIdsResponses?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             Responses = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ModelIds FromResponses(global::G.ModelIdsResponses? value) => new ModelIds(value);
 
         /// <summary>
         /// 

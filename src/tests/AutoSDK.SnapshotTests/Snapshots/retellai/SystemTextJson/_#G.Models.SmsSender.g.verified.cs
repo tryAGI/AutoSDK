@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static SmsSender FromSmsSenderVariant1(global::G.SmsSenderVariant1? value) => new SmsSender(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator SmsSender(global::G.SmsSenderVariant2 value) => new SmsSender((global::G.SmsSenderVariant2?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             SmsSenderVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static SmsSender FromSmsSenderVariant2(global::G.SmsSenderVariant2? value) => new SmsSender(value);
 
         /// <summary>
         /// 

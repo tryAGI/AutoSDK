@@ -155,6 +155,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static UpdateDocumentRouteResponse FromUrl(global::G.GetKnowledgeBaseURLResponseModel? value) => new UpdateDocumentRouteResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator UpdateDocumentRouteResponse(global::G.GetKnowledgeBaseFileResponseModel value) => new UpdateDocumentRouteResponse((global::G.GetKnowledgeBaseFileResponseModel?)value);
 
         /// <summary>
@@ -169,6 +174,11 @@ namespace G
         {
             File = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static UpdateDocumentRouteResponse FromFile(global::G.GetKnowledgeBaseFileResponseModel? value) => new UpdateDocumentRouteResponse(value);
 
         /// <summary>
         /// 
@@ -191,6 +201,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static UpdateDocumentRouteResponse FromText(global::G.GetKnowledgeBaseTextResponseModel? value) => new UpdateDocumentRouteResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator UpdateDocumentRouteResponse(global::G.GetKnowledgeBaseFolderResponseModel value) => new UpdateDocumentRouteResponse((global::G.GetKnowledgeBaseFolderResponseModel?)value);
 
         /// <summary>
@@ -205,6 +220,11 @@ namespace G
         {
             Folder = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static UpdateDocumentRouteResponse FromFolder(global::G.GetKnowledgeBaseFolderResponseModel? value) => new UpdateDocumentRouteResponse(value);
 
         /// <summary>
         /// 

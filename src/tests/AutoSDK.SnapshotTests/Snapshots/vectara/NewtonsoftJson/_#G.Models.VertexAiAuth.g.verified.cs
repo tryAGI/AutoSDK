@@ -95,6 +95,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static VertexAiAuth FromApiKey(global::G.VertexAiApiKeyAuth? value) => new VertexAiAuth(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator VertexAiAuth(global::G.VertexAiServiceAccountAuth value) => new VertexAiAuth((global::G.VertexAiServiceAccountAuth?)value);
 
         /// <summary>
@@ -109,6 +114,11 @@ namespace G
         {
             ServiceAccount = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static VertexAiAuth FromServiceAccount(global::G.VertexAiServiceAccountAuth? value) => new VertexAiAuth(value);
 
         /// <summary>
         /// 

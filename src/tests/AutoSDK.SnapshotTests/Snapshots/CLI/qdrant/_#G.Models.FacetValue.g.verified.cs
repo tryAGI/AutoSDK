@@ -120,6 +120,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static FacetValue FromFacetValueVariant1(string? value) => new FacetValue(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator FacetValue(long value) => new FacetValue((long?)value);
 
         /// <summary>
@@ -138,6 +143,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static FacetValue FromFacetValueVariant2(long? value) => new FacetValue(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator FacetValue(bool value) => new FacetValue((bool?)value);
 
         /// <summary>
@@ -152,6 +162,11 @@ namespace G
         {
             FacetValueVariant3 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static FacetValue FromFacetValueVariant3(bool? value) => new FacetValue(value);
 
         /// <summary>
         /// 

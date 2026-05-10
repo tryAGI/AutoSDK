@@ -125,6 +125,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Config FromStdio(global::G.CreateStdioMCPServer? value) => new Config(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Config(global::G.CreateSSEMCPServer value) => new Config((global::G.CreateSSEMCPServer?)value);
 
         /// <summary>
@@ -143,6 +148,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Config FromSse(global::G.CreateSSEMCPServer? value) => new Config(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Config(global::G.CreateStreamableHTTPMCPServer value) => new Config((global::G.CreateStreamableHTTPMCPServer?)value);
 
         /// <summary>
@@ -157,6 +167,11 @@ namespace G
         {
             StreamableHttp = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Config FromStreamableHttp(global::G.CreateStreamableHTTPMCPServer? value) => new Config(value);
 
         /// <summary>
         /// 

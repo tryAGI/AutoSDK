@@ -210,6 +210,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static BaseInputsOneOf1Items FromBaseInputsOneOf1Items0(global::G.BaseInputsOneOf1Items0? value) => new BaseInputsOneOf1Items(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BaseInputsOneOf1Items(global::G.BaseInputsOneOf1Items1 value) => new BaseInputsOneOf1Items((global::G.BaseInputsOneOf1Items1?)value);
 
         /// <summary>
@@ -224,6 +229,11 @@ namespace G
         {
             BaseInputsOneOf1Items1 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BaseInputsOneOf1Items FromBaseInputsOneOf1Items1(global::G.BaseInputsOneOf1Items1? value) => new BaseInputsOneOf1Items(value);
 
         /// <summary>
         /// 
@@ -246,6 +256,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static BaseInputsOneOf1Items FromBaseInputsOneOf1Items2(global::G.BaseInputsOneOf1Items2? value) => new BaseInputsOneOf1Items(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BaseInputsOneOf1Items(global::G.BaseInputsOneOf1Items3 value) => new BaseInputsOneOf1Items((global::G.BaseInputsOneOf1Items3?)value);
 
         /// <summary>
@@ -260,6 +275,11 @@ namespace G
         {
             BaseInputsOneOf1Items3 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BaseInputsOneOf1Items FromBaseInputsOneOf1Items3(global::G.BaseInputsOneOf1Items3? value) => new BaseInputsOneOf1Items(value);
 
         /// <summary>
         /// 
@@ -282,6 +302,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static BaseInputsOneOf1Items FromOutputItemImageGenerationCall(global::G.OutputItemImageGenerationCall? value) => new BaseInputsOneOf1Items(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BaseInputsOneOf1Items(global::G.OutputMessage value) => new BaseInputsOneOf1Items((global::G.OutputMessage?)value);
 
         /// <summary>
@@ -296,6 +321,11 @@ namespace G
         {
             OutputMessage = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BaseInputsOneOf1Items FromOutputMessage(global::G.OutputMessage? value) => new BaseInputsOneOf1Items(value);
 
         /// <summary>
         /// 

@@ -95,6 +95,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static BranchInfoVariant1 FromTrafficSplit(global::G.TransferBranchInfoTrafficSplit? value) => new BranchInfoVariant1(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BranchInfoVariant1(global::G.TransferBranchInfoDefaultingToMain value) => new BranchInfoVariant1((global::G.TransferBranchInfoDefaultingToMain?)value);
 
         /// <summary>
@@ -109,6 +114,11 @@ namespace G
         {
             DefaultingToMain = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BranchInfoVariant1 FromDefaultingToMain(global::G.TransferBranchInfoDefaultingToMain? value) => new BranchInfoVariant1(value);
 
         /// <summary>
         /// 

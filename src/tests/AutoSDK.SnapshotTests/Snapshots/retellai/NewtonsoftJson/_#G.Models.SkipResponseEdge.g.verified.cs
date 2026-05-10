@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static SkipResponseEdge FromNode(global::G.NodeEdge? value) => new SkipResponseEdge(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator SkipResponseEdge(global::G.SkipResponseEdgeVariant2 value) => new SkipResponseEdge((global::G.SkipResponseEdgeVariant2?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             SkipResponseEdgeVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static SkipResponseEdge FromSkipResponseEdgeVariant2(global::G.SkipResponseEdgeVariant2? value) => new SkipResponseEdge(value);
 
         /// <summary>
         /// 

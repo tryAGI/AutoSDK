@@ -96,6 +96,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static AgentStepInstruction FromReference(global::G.ReferenceInstruction? value) => new AgentStepInstruction(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator AgentStepInstruction(global::G.InlineInstruction value) => new AgentStepInstruction((global::G.InlineInstruction?)value);
 
         /// <summary>
@@ -110,6 +115,11 @@ namespace G
         {
             Inline = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static AgentStepInstruction FromInline(global::G.InlineInstruction? value) => new AgentStepInstruction(value);
 
         /// <summary>
         /// 

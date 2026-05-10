@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static InlineInstruction FromRequestBase(global::G.InstructionRequestBase? value) => new InlineInstruction(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator InlineInstruction(global::G.InlineInstructionVariant2 value) => new InlineInstruction((global::G.InlineInstructionVariant2?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             InlineInstructionVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static InlineInstruction FromInlineInstructionVariant2(global::G.InlineInstructionVariant2? value) => new InlineInstruction(value);
 
         /// <summary>
         /// 

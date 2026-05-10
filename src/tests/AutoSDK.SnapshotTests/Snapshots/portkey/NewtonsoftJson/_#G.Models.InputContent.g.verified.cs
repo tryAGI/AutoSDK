@@ -120,6 +120,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static InputContent FromTextInput(global::G.InputText? value) => new InputContent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator InputContent(global::G.InputImage value) => new InputContent((global::G.InputImage?)value);
 
         /// <summary>
@@ -138,6 +143,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static InputContent FromImageInput(global::G.InputImage? value) => new InputContent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator InputContent(global::G.InputFile value) => new InputContent((global::G.InputFile?)value);
 
         /// <summary>
@@ -152,6 +162,11 @@ namespace G
         {
             FileInput = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static InputContent FromFileInput(global::G.InputFile? value) => new InputContent(value);
 
         /// <summary>
         /// 

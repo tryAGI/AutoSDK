@@ -185,6 +185,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static PhoneNumberControllerUpdateRequest FromByoPhoneNumber(global::G.UpdateByoPhoneNumberDTO? value) => new PhoneNumberControllerUpdateRequest(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator PhoneNumberControllerUpdateRequest(global::G.UpdateTwilioPhoneNumberDTO value) => new PhoneNumberControllerUpdateRequest((global::G.UpdateTwilioPhoneNumberDTO?)value);
 
         /// <summary>
@@ -199,6 +204,11 @@ namespace G
         {
             Twilio = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static PhoneNumberControllerUpdateRequest FromTwilio(global::G.UpdateTwilioPhoneNumberDTO? value) => new PhoneNumberControllerUpdateRequest(value);
 
         /// <summary>
         /// 
@@ -221,6 +231,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static PhoneNumberControllerUpdateRequest FromVonage(global::G.UpdateVonagePhoneNumberDTO? value) => new PhoneNumberControllerUpdateRequest(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator PhoneNumberControllerUpdateRequest(global::G.UpdateVapiPhoneNumberDTO value) => new PhoneNumberControllerUpdateRequest((global::G.UpdateVapiPhoneNumberDTO?)value);
 
         /// <summary>
@@ -239,6 +254,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static PhoneNumberControllerUpdateRequest FromVapi(global::G.UpdateVapiPhoneNumberDTO? value) => new PhoneNumberControllerUpdateRequest(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator PhoneNumberControllerUpdateRequest(global::G.UpdateTelnyxPhoneNumberDTO value) => new PhoneNumberControllerUpdateRequest((global::G.UpdateTelnyxPhoneNumberDTO?)value);
 
         /// <summary>
@@ -253,6 +273,11 @@ namespace G
         {
             Telnyx = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static PhoneNumberControllerUpdateRequest FromTelnyx(global::G.UpdateTelnyxPhoneNumberDTO? value) => new PhoneNumberControllerUpdateRequest(value);
 
         /// <summary>
         /// 

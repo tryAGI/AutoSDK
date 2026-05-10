@@ -120,6 +120,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static SavedFunctionId FromFunction(global::G.SavedFunctionIdFunction? value) => new SavedFunctionId(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator SavedFunctionId(global::G.SavedFunctionIdGlobal value) => new SavedFunctionId((global::G.SavedFunctionIdGlobal?)value);
 
         /// <summary>
@@ -134,6 +139,11 @@ namespace G
         {
             Global = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static SavedFunctionId FromGlobal(global::G.SavedFunctionIdGlobal? value) => new SavedFunctionId(value);
 
         /// <summary>
         /// 

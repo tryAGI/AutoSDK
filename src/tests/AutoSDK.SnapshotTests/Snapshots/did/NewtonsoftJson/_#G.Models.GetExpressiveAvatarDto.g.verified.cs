@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static GetExpressiveAvatarDto FromGetExpressiveAvatarDtoVariant1(global::G.AllOf<global::G.GetExpressiveAvatarDtoVariant1Variant1, object>? value) => new GetExpressiveAvatarDto(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator GetExpressiveAvatarDto(global::G.GetExpressiveAvatarDtoVariant2 value) => new GetExpressiveAvatarDto((global::G.GetExpressiveAvatarDtoVariant2?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             GetExpressiveAvatarDtoVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static GetExpressiveAvatarDto FromGetExpressiveAvatarDtoVariant2(global::G.GetExpressiveAvatarDtoVariant2? value) => new GetExpressiveAvatarDto(value);
 
         /// <summary>
         /// 

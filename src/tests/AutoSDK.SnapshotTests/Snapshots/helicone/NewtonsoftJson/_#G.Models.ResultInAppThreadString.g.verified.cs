@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ResultInAppThreadString FromSuccess(global::G.ResultSuccessInAppThread? value) => new ResultInAppThreadString(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ResultInAppThreadString(global::G.ResultErrorString value) => new ResultInAppThreadString((global::G.ResultErrorString?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             Error = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ResultInAppThreadString FromError(global::G.ResultErrorString? value) => new ResultInAppThreadString(value);
 
         /// <summary>
         /// 

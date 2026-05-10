@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ResultIdStringCreatedAtStringDestinationStringVersionStringConfigStringHmacKeyStringArrayString FromSuccess(global::G.ResultSuccessIdStringCreatedAtStringDestinationStringVersionStringConfigStringHmacKeyStringArray? value) => new ResultIdStringCreatedAtStringDestinationStringVersionStringConfigStringHmacKeyStringArrayString(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ResultIdStringCreatedAtStringDestinationStringVersionStringConfigStringHmacKeyStringArrayString(global::G.ResultErrorString value) => new ResultIdStringCreatedAtStringDestinationStringVersionStringConfigStringHmacKeyStringArrayString((global::G.ResultErrorString?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             Error = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ResultIdStringCreatedAtStringDestinationStringVersionStringConfigStringHmacKeyStringArrayString FromError(global::G.ResultErrorString? value) => new ResultIdStringCreatedAtStringDestinationStringVersionStringConfigStringHmacKeyStringArrayString(value);
 
         /// <summary>
         /// 

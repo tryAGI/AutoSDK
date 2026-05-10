@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static EvalGraderScoreModel FromScoreModelGrader(global::G.GraderScoreModel? value) => new EvalGraderScoreModel(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator EvalGraderScoreModel(global::G.EvalGraderScoreModelVariant2 value) => new EvalGraderScoreModel((global::G.EvalGraderScoreModelVariant2?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             EvalGraderScoreModelVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static EvalGraderScoreModel FromEvalGraderScoreModelVariant2(global::G.EvalGraderScoreModelVariant2? value) => new EvalGraderScoreModel(value);
 
         /// <summary>
         /// 

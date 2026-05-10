@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ComputerToolCallOutputResource FromComputerToolCallOutput(global::G.ComputerToolCallOutput? value) => new ComputerToolCallOutputResource(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ComputerToolCallOutputResource(global::G.ComputerToolCallOutputResourceVariant2 value) => new ComputerToolCallOutputResource((global::G.ComputerToolCallOutputResourceVariant2?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             ComputerToolCallOutputResourceVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ComputerToolCallOutputResource FromComputerToolCallOutputResourceVariant2(global::G.ComputerToolCallOutputResourceVariant2? value) => new ComputerToolCallOutputResource(value);
 
         /// <summary>
         /// 

@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ImageToImageUsingImageStrengthRequestBody FromImageToImageUsingImageStrengthRequestBodyVariant1(global::G.ImageToImageUsingImageStrengthRequestBodyVariant1? value) => new ImageToImageUsingImageStrengthRequestBody(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ImageToImageUsingImageStrengthRequestBody(global::G.GenerationRequestOptionalParams value) => new ImageToImageUsingImageStrengthRequestBody((global::G.GenerationRequestOptionalParams?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             GenerationOptionalParams = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ImageToImageUsingImageStrengthRequestBody FromGenerationOptionalParams(global::G.GenerationRequestOptionalParams? value) => new ImageToImageUsingImageStrengthRequestBody(value);
 
         /// <summary>
         /// 

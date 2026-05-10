@@ -180,6 +180,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ChatRequestResponseFormat FromChatFormatTextConfig(global::G.ChatFormatTextConfig? value) => new ChatRequestResponseFormat(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChatRequestResponseFormat(global::G.FormatJsonObjectConfig value) => new ChatRequestResponseFormat((global::G.FormatJsonObjectConfig?)value);
 
         /// <summary>
@@ -194,6 +199,11 @@ namespace G
         {
             FormatJsonObjectConfig = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChatRequestResponseFormat FromFormatJsonObjectConfig(global::G.FormatJsonObjectConfig? value) => new ChatRequestResponseFormat(value);
 
         /// <summary>
         /// 
@@ -216,6 +226,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ChatRequestResponseFormat FromChatFormatJsonSchemaConfig(global::G.ChatFormatJsonSchemaConfig? value) => new ChatRequestResponseFormat(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChatRequestResponseFormat(global::G.ChatFormatGrammarConfig value) => new ChatRequestResponseFormat((global::G.ChatFormatGrammarConfig?)value);
 
         /// <summary>
@@ -234,6 +249,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ChatRequestResponseFormat FromChatFormatGrammarConfig(global::G.ChatFormatGrammarConfig? value) => new ChatRequestResponseFormat(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChatRequestResponseFormat(global::G.ChatFormatPythonConfig value) => new ChatRequestResponseFormat((global::G.ChatFormatPythonConfig?)value);
 
         /// <summary>
@@ -248,6 +268,11 @@ namespace G
         {
             ChatFormatPythonConfig = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChatRequestResponseFormat FromChatFormatPythonConfig(global::G.ChatFormatPythonConfig? value) => new ChatRequestResponseFormat(value);
 
         /// <summary>
         /// 

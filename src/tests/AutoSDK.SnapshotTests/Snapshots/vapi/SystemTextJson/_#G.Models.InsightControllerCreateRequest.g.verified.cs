@@ -155,6 +155,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static InsightControllerCreateRequest FromBar(global::G.CreateBarInsightFromCallTableDTO? value) => new InsightControllerCreateRequest(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator InsightControllerCreateRequest(global::G.CreatePieInsightFromCallTableDTO value) => new InsightControllerCreateRequest((global::G.CreatePieInsightFromCallTableDTO?)value);
 
         /// <summary>
@@ -169,6 +174,11 @@ namespace G
         {
             Pie = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static InsightControllerCreateRequest FromPie(global::G.CreatePieInsightFromCallTableDTO? value) => new InsightControllerCreateRequest(value);
 
         /// <summary>
         /// 
@@ -191,6 +201,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static InsightControllerCreateRequest FromLine(global::G.CreateLineInsightFromCallTableDTO? value) => new InsightControllerCreateRequest(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator InsightControllerCreateRequest(global::G.CreateTextInsightFromCallTableDTO value) => new InsightControllerCreateRequest((global::G.CreateTextInsightFromCallTableDTO?)value);
 
         /// <summary>
@@ -205,6 +220,11 @@ namespace G
         {
             Text = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static InsightControllerCreateRequest FromText(global::G.CreateTextInsightFromCallTableDTO? value) => new InsightControllerCreateRequest(value);
 
         /// <summary>
         /// 

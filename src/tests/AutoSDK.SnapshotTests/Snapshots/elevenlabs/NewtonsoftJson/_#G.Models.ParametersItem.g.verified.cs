@@ -155,6 +155,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ParametersItem FromText(global::G.WhatsAppTemplateTextParam? value) => new ParametersItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ParametersItem(global::G.WhatsAppTemplateImageParam value) => new ParametersItem((global::G.WhatsAppTemplateImageParam?)value);
 
         /// <summary>
@@ -169,6 +174,11 @@ namespace G
         {
             Image = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ParametersItem FromImage(global::G.WhatsAppTemplateImageParam? value) => new ParametersItem(value);
 
         /// <summary>
         /// 
@@ -191,6 +201,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ParametersItem FromDocument(global::G.WhatsAppTemplateDocumentParam? value) => new ParametersItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ParametersItem(global::G.WhatsAppTemplateLocationParam value) => new ParametersItem((global::G.WhatsAppTemplateLocationParam?)value);
 
         /// <summary>
@@ -205,6 +220,11 @@ namespace G
         {
             Location = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ParametersItem FromLocation(global::G.WhatsAppTemplateLocationParam? value) => new ParametersItem(value);
 
         /// <summary>
         /// 

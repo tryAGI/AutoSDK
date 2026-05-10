@@ -120,6 +120,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static RequestFilterNode FromPickLeafFeedbackOrResponsePropertiesValuesRmtSessions(global::G.PickFilterLeafFeedbackOrRequestOrResponseOrPropertiesOrValuesOrRequestResponseRmtOrSessionsRequestResponseRmt? value) => new RequestFilterNode(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator RequestFilterNode(global::G.RequestFilterBranch value) => new RequestFilterNode((global::G.RequestFilterBranch?)value);
 
         /// <summary>
@@ -138,6 +143,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static RequestFilterNode FromBranch(global::G.RequestFilterBranch? value) => new RequestFilterNode(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator RequestFilterNode(global::G.RequestFilterNodeEnum value) => new RequestFilterNode((global::G.RequestFilterNodeEnum?)value);
 
         /// <summary>
@@ -152,6 +162,11 @@ namespace G
         {
             Enum = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static RequestFilterNode FromEnum(global::G.RequestFilterNodeEnum? value) => new RequestFilterNode(value);
 
         /// <summary>
         /// 

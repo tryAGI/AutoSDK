@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ProviderPreferencesIgnoreItems FromProviderName(global::G.ProviderName? value) => new ProviderPreferencesIgnoreItems(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ProviderPreferencesIgnoreItems(string value) => new ProviderPreferencesIgnoreItems((string?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             ProviderPreferencesIgnoreItemsVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ProviderPreferencesIgnoreItems FromProviderPreferencesIgnoreItemsVariant2(string? value) => new ProviderPreferencesIgnoreItems(value);
 
         /// <summary>
         /// 

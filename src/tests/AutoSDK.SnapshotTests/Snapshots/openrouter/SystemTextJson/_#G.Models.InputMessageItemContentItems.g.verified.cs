@@ -180,6 +180,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static InputMessageItemContentItems FromInputText(global::G.InputText? value) => new InputMessageItemContentItems(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator InputMessageItemContentItems(global::G.InputMessageItemContentItems1 value) => new InputMessageItemContentItems((global::G.InputMessageItemContentItems1?)value);
 
         /// <summary>
@@ -194,6 +199,11 @@ namespace G
         {
             InputMessageItemContentItems1 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static InputMessageItemContentItems FromInputMessageItemContentItems1(global::G.InputMessageItemContentItems1? value) => new InputMessageItemContentItems(value);
 
         /// <summary>
         /// 
@@ -216,6 +226,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static InputMessageItemContentItems FromInputFile(global::G.InputFile? value) => new InputMessageItemContentItems(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator InputMessageItemContentItems(global::G.InputAudio value) => new InputMessageItemContentItems((global::G.InputAudio?)value);
 
         /// <summary>
@@ -234,6 +249,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static InputMessageItemContentItems FromInputAudio(global::G.InputAudio? value) => new InputMessageItemContentItems(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator InputMessageItemContentItems(global::G.InputVideo value) => new InputMessageItemContentItems((global::G.InputVideo?)value);
 
         /// <summary>
@@ -248,6 +268,11 @@ namespace G
         {
             InputVideo = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static InputMessageItemContentItems FromInputVideo(global::G.InputVideo? value) => new InputMessageItemContentItems(value);
 
         /// <summary>
         /// 

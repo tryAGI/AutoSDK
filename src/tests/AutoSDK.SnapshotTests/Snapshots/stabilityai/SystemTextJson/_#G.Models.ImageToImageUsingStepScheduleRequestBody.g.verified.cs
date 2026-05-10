@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ImageToImageUsingStepScheduleRequestBody FromImageToImageUsingStepScheduleRequestBodyVariant1(global::G.ImageToImageUsingStepScheduleRequestBodyVariant1? value) => new ImageToImageUsingStepScheduleRequestBody(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ImageToImageUsingStepScheduleRequestBody(global::G.GenerationRequestOptionalParams value) => new ImageToImageUsingStepScheduleRequestBody((global::G.GenerationRequestOptionalParams?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             GenerationOptionalParams = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ImageToImageUsingStepScheduleRequestBody FromGenerationOptionalParams(global::G.GenerationRequestOptionalParams? value) => new ImageToImageUsingStepScheduleRequestBody(value);
 
         /// <summary>
         /// 

@@ -150,6 +150,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ChatCompletionRequestUserMessageContentPart FromTextContentPart(global::G.ChatCompletionRequestMessageContentPartText? value) => new ChatCompletionRequestUserMessageContentPart(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChatCompletionRequestUserMessageContentPart(global::G.ChatCompletionRequestMessageContentPartImage value) => new ChatCompletionRequestUserMessageContentPart((global::G.ChatCompletionRequestMessageContentPartImage?)value);
 
         /// <summary>
@@ -164,6 +169,11 @@ namespace G
         {
             ImageContentPart = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChatCompletionRequestUserMessageContentPart FromImageContentPart(global::G.ChatCompletionRequestMessageContentPartImage? value) => new ChatCompletionRequestUserMessageContentPart(value);
 
         /// <summary>
         /// 
@@ -186,6 +196,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ChatCompletionRequestUserMessageContentPart FromAudioContentPart(global::G.ChatCompletionRequestMessageContentPartAudio? value) => new ChatCompletionRequestUserMessageContentPart(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChatCompletionRequestUserMessageContentPart(global::G.ChatCompletionRequestMessageContentPartFile value) => new ChatCompletionRequestUserMessageContentPart((global::G.ChatCompletionRequestMessageContentPartFile?)value);
 
         /// <summary>
@@ -200,6 +215,11 @@ namespace G
         {
             FileContentPart = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChatCompletionRequestUserMessageContentPart FromFileContentPart(global::G.ChatCompletionRequestMessageContentPartFile? value) => new ChatCompletionRequestUserMessageContentPart(value);
 
         /// <summary>
         /// 

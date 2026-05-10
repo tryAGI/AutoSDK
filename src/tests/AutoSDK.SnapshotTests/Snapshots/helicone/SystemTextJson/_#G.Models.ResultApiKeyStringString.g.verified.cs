@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ResultApiKeyStringString FromSuccess(global::G.ResultSuccessApiKeyString? value) => new ResultApiKeyStringString(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ResultApiKeyStringString(global::G.ResultErrorString value) => new ResultApiKeyStringString((global::G.ResultErrorString?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             Error = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ResultApiKeyStringString FromError(global::G.ResultErrorString? value) => new ResultApiKeyStringString(value);
 
         /// <summary>
         /// 

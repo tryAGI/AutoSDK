@@ -155,6 +155,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static InputVariant2ItemItem FromSystem(global::G.SystemMessage? value) => new InputVariant2ItemItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator InputVariant2ItemItem(global::G.UserMessage value) => new InputVariant2ItemItem((global::G.UserMessage?)value);
 
         /// <summary>
@@ -169,6 +174,11 @@ namespace G
         {
             User = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static InputVariant2ItemItem FromUser(global::G.UserMessage? value) => new InputVariant2ItemItem(value);
 
         /// <summary>
         /// 
@@ -191,6 +201,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static InputVariant2ItemItem FromAssistant(global::G.AssistantMessage? value) => new InputVariant2ItemItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator InputVariant2ItemItem(global::G.ToolMessage value) => new InputVariant2ItemItem((global::G.ToolMessage?)value);
 
         /// <summary>
@@ -205,6 +220,11 @@ namespace G
         {
             Tool = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static InputVariant2ItemItem FromTool(global::G.ToolMessage? value) => new InputVariant2ItemItem(value);
 
         /// <summary>
         /// 

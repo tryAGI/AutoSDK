@@ -97,6 +97,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ThinkingConfigParam FromEnabled(global::G.ThinkingConfigEnabled? value) => new ThinkingConfigParam(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ThinkingConfigParam(global::G.ThinkingConfigDisabled value) => new ThinkingConfigParam((global::G.ThinkingConfigDisabled?)value);
 
         /// <summary>
@@ -111,6 +116,11 @@ namespace G
         {
             Disabled = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ThinkingConfigParam FromDisabled(global::G.ThinkingConfigDisabled? value) => new ThinkingConfigParam(value);
 
         /// <summary>
         /// 

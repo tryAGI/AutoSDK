@@ -120,6 +120,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static AgentsTextToSpeechProviders FromMicrosoft(global::G.AgentsTextToSpeechProvidersMicrosoft? value) => new AgentsTextToSpeechProviders(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator AgentsTextToSpeechProviders(global::G.AgentsTextToSpeechProvidersElevenLabs value) => new AgentsTextToSpeechProviders((global::G.AgentsTextToSpeechProvidersElevenLabs?)value);
 
         /// <summary>
@@ -138,6 +143,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static AgentsTextToSpeechProviders FromElevenLabs(global::G.AgentsTextToSpeechProvidersElevenLabs? value) => new AgentsTextToSpeechProviders(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator AgentsTextToSpeechProviders(global::G.AgentsTextToSpeechProvidersOpenAI value) => new AgentsTextToSpeechProviders((global::G.AgentsTextToSpeechProvidersOpenAI?)value);
 
         /// <summary>
@@ -152,6 +162,11 @@ namespace G
         {
             OpenAI = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static AgentsTextToSpeechProviders FromOpenAI(global::G.AgentsTextToSpeechProvidersOpenAI? value) => new AgentsTextToSpeechProviders(value);
 
         /// <summary>
         /// 

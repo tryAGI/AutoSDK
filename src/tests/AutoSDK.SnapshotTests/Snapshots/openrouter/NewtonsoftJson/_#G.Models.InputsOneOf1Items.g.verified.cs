@@ -420,6 +420,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static InputsOneOf1Items FromReasoningItem(global::G.ReasoningItem? value) => new InputsOneOf1Items(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator InputsOneOf1Items(global::G.EasyInputMessage value) => new InputsOneOf1Items((global::G.EasyInputMessage?)value);
 
         /// <summary>
@@ -434,6 +439,11 @@ namespace G
         {
             EasyInputMessage = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static InputsOneOf1Items FromEasyInputMessage(global::G.EasyInputMessage? value) => new InputsOneOf1Items(value);
 
         /// <summary>
         /// 
@@ -456,6 +466,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static InputsOneOf1Items FromInputMessageItem(global::G.InputMessageItem? value) => new InputsOneOf1Items(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator InputsOneOf1Items(global::G.FunctionCallItem value) => new InputsOneOf1Items((global::G.FunctionCallItem?)value);
 
         /// <summary>
@@ -470,6 +485,11 @@ namespace G
         {
             FunctionCallItem = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static InputsOneOf1Items FromFunctionCallItem(global::G.FunctionCallItem? value) => new InputsOneOf1Items(value);
 
         /// <summary>
         /// 
@@ -492,6 +512,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static InputsOneOf1Items FromFunctionCallOutputItem(global::G.FunctionCallOutputItem? value) => new InputsOneOf1Items(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator InputsOneOf1Items(global::G.InputsOneOf1Items5 value) => new InputsOneOf1Items((global::G.InputsOneOf1Items5?)value);
 
         /// <summary>
@@ -506,6 +531,11 @@ namespace G
         {
             InputsOneOf1Items5 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static InputsOneOf1Items FromInputsOneOf1Items5(global::G.InputsOneOf1Items5? value) => new InputsOneOf1Items(value);
 
         /// <summary>
         /// 
@@ -528,6 +558,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static InputsOneOf1Items FromInputsOneOf1Items6(global::G.InputsOneOf1Items6? value) => new InputsOneOf1Items(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator InputsOneOf1Items(global::G.OutputFunctionCallItem value) => new InputsOneOf1Items((global::G.OutputFunctionCallItem?)value);
 
         /// <summary>
@@ -542,6 +577,11 @@ namespace G
         {
             OutputFunctionCallItem = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static InputsOneOf1Items FromOutputFunctionCallItem(global::G.OutputFunctionCallItem? value) => new InputsOneOf1Items(value);
 
         /// <summary>
         /// 
@@ -564,6 +604,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static InputsOneOf1Items FromOutputWebSearchCallItem(global::G.OutputWebSearchCallItem? value) => new InputsOneOf1Items(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator InputsOneOf1Items(global::G.OutputFileSearchCallItem value) => new InputsOneOf1Items((global::G.OutputFileSearchCallItem?)value);
 
         /// <summary>
@@ -578,6 +623,11 @@ namespace G
         {
             OutputFileSearchCallItem = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static InputsOneOf1Items FromOutputFileSearchCallItem(global::G.OutputFileSearchCallItem? value) => new InputsOneOf1Items(value);
 
         /// <summary>
         /// 
@@ -600,6 +650,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static InputsOneOf1Items FromOutputImageGenerationCallItem(global::G.OutputImageGenerationCallItem? value) => new InputsOneOf1Items(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator InputsOneOf1Items(global::G.OutputDatetimeItem value) => new InputsOneOf1Items((global::G.OutputDatetimeItem?)value);
 
         /// <summary>
@@ -618,6 +673,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static InputsOneOf1Items FromOutputDatetimeItem(global::G.OutputDatetimeItem? value) => new InputsOneOf1Items(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator InputsOneOf1Items(global::G.OutputServerToolItem value) => new InputsOneOf1Items((global::G.OutputServerToolItem?)value);
 
         /// <summary>
@@ -632,6 +692,11 @@ namespace G
         {
             OutputServerToolItem = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static InputsOneOf1Items FromOutputServerToolItem(global::G.OutputServerToolItem? value) => new InputsOneOf1Items(value);
 
         /// <summary>
         /// 

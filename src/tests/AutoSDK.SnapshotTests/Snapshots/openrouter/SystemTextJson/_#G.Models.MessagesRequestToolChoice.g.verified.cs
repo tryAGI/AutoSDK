@@ -150,6 +150,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static MessagesRequestToolChoice FromMessagesRequestToolChoice0(global::G.MessagesRequestToolChoice0? value) => new MessagesRequestToolChoice(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator MessagesRequestToolChoice(global::G.MessagesRequestToolChoice1 value) => new MessagesRequestToolChoice((global::G.MessagesRequestToolChoice1?)value);
 
         /// <summary>
@@ -164,6 +169,11 @@ namespace G
         {
             MessagesRequestToolChoice1 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static MessagesRequestToolChoice FromMessagesRequestToolChoice1(global::G.MessagesRequestToolChoice1? value) => new MessagesRequestToolChoice(value);
 
         /// <summary>
         /// 
@@ -186,6 +196,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static MessagesRequestToolChoice FromMessagesRequestToolChoice2(global::G.MessagesRequestToolChoice2? value) => new MessagesRequestToolChoice(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator MessagesRequestToolChoice(global::G.MessagesRequestToolChoice3 value) => new MessagesRequestToolChoice((global::G.MessagesRequestToolChoice3?)value);
 
         /// <summary>
@@ -200,6 +215,11 @@ namespace G
         {
             MessagesRequestToolChoice3 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static MessagesRequestToolChoice FromMessagesRequestToolChoice3(global::G.MessagesRequestToolChoice3? value) => new MessagesRequestToolChoice(value);
 
         /// <summary>
         /// 

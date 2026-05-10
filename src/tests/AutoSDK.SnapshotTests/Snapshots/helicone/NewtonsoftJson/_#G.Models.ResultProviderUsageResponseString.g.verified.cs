@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ResultProviderUsageResponseString FromSuccess(global::G.ResultSuccessProviderUsageResponse? value) => new ResultProviderUsageResponseString(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ResultProviderUsageResponseString(global::G.ResultErrorString value) => new ResultProviderUsageResponseString((global::G.ResultErrorString?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             Error = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ResultProviderUsageResponseString FromError(global::G.ResultErrorString? value) => new ResultProviderUsageResponseString(value);
 
         /// <summary>
         /// 

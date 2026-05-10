@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ResultPTBInvoiceArrayString FromSuccess(global::G.ResultSuccessPTBInvoiceArray? value) => new ResultPTBInvoiceArrayString(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ResultPTBInvoiceArrayString(global::G.ResultErrorString value) => new ResultPTBInvoiceArrayString((global::G.ResultErrorString?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             Error = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ResultPTBInvoiceArrayString FromError(global::G.ResultErrorString? value) => new ResultPTBInvoiceArrayString(value);
 
         /// <summary>
         /// 

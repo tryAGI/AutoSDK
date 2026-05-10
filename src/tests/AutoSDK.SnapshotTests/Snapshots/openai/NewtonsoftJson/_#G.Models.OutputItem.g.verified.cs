@@ -402,6 +402,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static OutputItem FromMessage(global::G.OutputMessage? value) => new OutputItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator OutputItem(global::G.FileSearchToolCall value) => new OutputItem((global::G.FileSearchToolCall?)value);
 
         /// <summary>
@@ -416,6 +421,11 @@ namespace G
         {
             FileSearchCall = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static OutputItem FromFileSearchCall(global::G.FileSearchToolCall? value) => new OutputItem(value);
 
         /// <summary>
         /// 
@@ -438,6 +448,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static OutputItem FromFunctionCall(global::G.FunctionToolCall? value) => new OutputItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator OutputItem(global::G.WebSearchToolCall value) => new OutputItem((global::G.WebSearchToolCall?)value);
 
         /// <summary>
@@ -452,6 +467,11 @@ namespace G
         {
             WebSearchCall = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static OutputItem FromWebSearchCall(global::G.WebSearchToolCall? value) => new OutputItem(value);
 
         /// <summary>
         /// 
@@ -474,6 +494,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static OutputItem FromComputerCall(global::G.ComputerToolCall? value) => new OutputItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator OutputItem(global::G.ReasoningItem value) => new OutputItem((global::G.ReasoningItem?)value);
 
         /// <summary>
@@ -488,6 +513,11 @@ namespace G
         {
             Reasoning = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static OutputItem FromReasoning(global::G.ReasoningItem? value) => new OutputItem(value);
 
         /// <summary>
         /// 
@@ -510,6 +540,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static OutputItem FromImageGenerationCall(global::G.ImageGenToolCall? value) => new OutputItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator OutputItem(global::G.CodeInterpreterToolCall value) => new OutputItem((global::G.CodeInterpreterToolCall?)value);
 
         /// <summary>
@@ -524,6 +559,11 @@ namespace G
         {
             CodeInterpreterCall = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static OutputItem FromCodeInterpreterCall(global::G.CodeInterpreterToolCall? value) => new OutputItem(value);
 
         /// <summary>
         /// 
@@ -546,6 +586,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static OutputItem FromLocalShellCall(global::G.LocalShellToolCall? value) => new OutputItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator OutputItem(global::G.MCPToolCall value) => new OutputItem((global::G.MCPToolCall?)value);
 
         /// <summary>
@@ -560,6 +605,11 @@ namespace G
         {
             McpCall = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static OutputItem FromMcpCall(global::G.MCPToolCall? value) => new OutputItem(value);
 
         /// <summary>
         /// 
@@ -582,6 +632,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static OutputItem FromMcpListTools(global::G.MCPListTools? value) => new OutputItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator OutputItem(global::G.MCPApprovalRequest value) => new OutputItem((global::G.MCPApprovalRequest?)value);
 
         /// <summary>
@@ -596,6 +651,11 @@ namespace G
         {
             McpApprovalRequest = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static OutputItem FromMcpApprovalRequest(global::G.MCPApprovalRequest? value) => new OutputItem(value);
 
         /// <summary>
         /// 

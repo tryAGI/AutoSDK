@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ExtractDynamicVariablesNode FromBase(global::G.NodeBase? value) => new ExtractDynamicVariablesNode(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ExtractDynamicVariablesNode(global::G.ExtractDynamicVariablesNodeVariant2 value) => new ExtractDynamicVariablesNode((global::G.ExtractDynamicVariablesNodeVariant2?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             ExtractDynamicVariablesNodeVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ExtractDynamicVariablesNode FromExtractDynamicVariablesNodeVariant2(global::G.ExtractDynamicVariablesNodeVariant2? value) => new ExtractDynamicVariablesNode(value);
 
         /// <summary>
         /// 

@@ -92,6 +92,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static StepTransitionLimitExceededEvent FromAgentBase(global::G.AgentEventBase? value) => new StepTransitionLimitExceededEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator StepTransitionLimitExceededEvent(global::G.StepTransitionLimitExceededEventVariant2 value) => new StepTransitionLimitExceededEvent((global::G.StepTransitionLimitExceededEventVariant2?)value);
 
         /// <summary>
@@ -106,6 +111,11 @@ namespace G
         {
             StepTransitionLimitExceededEventVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static StepTransitionLimitExceededEvent FromStepTransitionLimitExceededEventVariant2(global::G.StepTransitionLimitExceededEventVariant2? value) => new StepTransitionLimitExceededEvent(value);
 
         /// <summary>
         /// 

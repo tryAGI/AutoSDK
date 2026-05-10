@@ -215,6 +215,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ChatCompletionRequestMessage FromDeveloperMessage(global::G.ChatCompletionRequestDeveloperMessage? value) => new ChatCompletionRequestMessage(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChatCompletionRequestMessage(global::G.ChatCompletionRequestSystemMessage value) => new ChatCompletionRequestMessage((global::G.ChatCompletionRequestSystemMessage?)value);
 
         /// <summary>
@@ -229,6 +234,11 @@ namespace G
         {
             SystemMessage = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChatCompletionRequestMessage FromSystemMessage(global::G.ChatCompletionRequestSystemMessage? value) => new ChatCompletionRequestMessage(value);
 
         /// <summary>
         /// 
@@ -251,6 +261,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ChatCompletionRequestMessage FromUserMessage(global::G.ChatCompletionRequestUserMessage? value) => new ChatCompletionRequestMessage(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChatCompletionRequestMessage(global::G.ChatCompletionRequestAssistantMessage value) => new ChatCompletionRequestMessage((global::G.ChatCompletionRequestAssistantMessage?)value);
 
         /// <summary>
@@ -265,6 +280,11 @@ namespace G
         {
             AssistantMessage = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChatCompletionRequestMessage FromAssistantMessage(global::G.ChatCompletionRequestAssistantMessage? value) => new ChatCompletionRequestMessage(value);
 
         /// <summary>
         /// 
@@ -287,6 +307,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ChatCompletionRequestMessage FromToolMessage(global::G.ChatCompletionRequestToolMessage? value) => new ChatCompletionRequestMessage(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChatCompletionRequestMessage(global::G.ChatCompletionRequestFunctionMessage value) => new ChatCompletionRequestMessage((global::G.ChatCompletionRequestFunctionMessage?)value);
 
         /// <summary>
@@ -301,6 +326,11 @@ namespace G
         {
             FunctionMessage = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChatCompletionRequestMessage FromFunctionMessage(global::G.ChatCompletionRequestFunctionMessage? value) => new ChatCompletionRequestMessage(value);
 
         /// <summary>
         /// 

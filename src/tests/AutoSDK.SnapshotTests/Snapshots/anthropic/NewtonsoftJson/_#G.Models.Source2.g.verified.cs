@@ -95,6 +95,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Source2 FromBase64(global::G.BetaBase64ImageSource? value) => new Source2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Source2(global::G.BetaURLImageSource value) => new Source2((global::G.BetaURLImageSource?)value);
 
         /// <summary>
@@ -109,6 +114,11 @@ namespace G
         {
             Url = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Source2 FromUrl(global::G.BetaURLImageSource? value) => new Source2(value);
 
         /// <summary>
         /// 

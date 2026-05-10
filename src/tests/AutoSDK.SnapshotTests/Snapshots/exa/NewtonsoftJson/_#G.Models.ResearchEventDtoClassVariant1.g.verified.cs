@@ -95,6 +95,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ResearchEventDtoClassVariant1 FromResearchDefinition(global::G.ResearchEventDtoClassVariant1Variant1? value) => new ResearchEventDtoClassVariant1(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ResearchEventDtoClassVariant1(global::G.ResearchEventDtoClassVariant1Variant2 value) => new ResearchEventDtoClassVariant1((global::G.ResearchEventDtoClassVariant1Variant2?)value);
 
         /// <summary>
@@ -109,6 +114,11 @@ namespace G
         {
             ResearchOutput = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ResearchEventDtoClassVariant1 FromResearchOutput(global::G.ResearchEventDtoClassVariant1Variant2? value) => new ResearchEventDtoClassVariant1(value);
 
         /// <summary>
         /// 

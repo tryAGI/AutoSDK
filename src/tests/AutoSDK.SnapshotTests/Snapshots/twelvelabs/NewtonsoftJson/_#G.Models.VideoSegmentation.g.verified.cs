@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static VideoSegmentation FromVideoSegmentation0(global::G.VideoSegmentation0? value) => new VideoSegmentation(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator VideoSegmentation(global::G.VideoSegmentation1 value) => new VideoSegmentation((global::G.VideoSegmentation1?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             VideoSegmentation1 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static VideoSegmentation FromVideoSegmentation1(global::G.VideoSegmentation1? value) => new VideoSegmentation(value);
 
         /// <summary>
         /// 

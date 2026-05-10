@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static MessagesRequestProviderIgnoreItems FromProviderName(global::G.ProviderName? value) => new MessagesRequestProviderIgnoreItems(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator MessagesRequestProviderIgnoreItems(string value) => new MessagesRequestProviderIgnoreItems((string?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             MessagesRequestProviderIgnoreItemsVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static MessagesRequestProviderIgnoreItems FromMessagesRequestProviderIgnoreItemsVariant2(string? value) => new MessagesRequestProviderIgnoreItems(value);
 
         /// <summary>
         /// 

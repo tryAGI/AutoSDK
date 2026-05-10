@@ -120,6 +120,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ReasoningDetailUnion FromReasoningDetailSummary(global::G.ReasoningDetailSummary? value) => new ReasoningDetailUnion(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ReasoningDetailUnion(global::G.ReasoningDetailEncrypted value) => new ReasoningDetailUnion((global::G.ReasoningDetailEncrypted?)value);
 
         /// <summary>
@@ -138,6 +143,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ReasoningDetailUnion FromReasoningDetailEncrypted(global::G.ReasoningDetailEncrypted? value) => new ReasoningDetailUnion(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ReasoningDetailUnion(global::G.ReasoningDetailText value) => new ReasoningDetailUnion((global::G.ReasoningDetailText?)value);
 
         /// <summary>
@@ -152,6 +162,11 @@ namespace G
         {
             ReasoningDetailText = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ReasoningDetailUnion FromReasoningDetailText(global::G.ReasoningDetailText? value) => new ReasoningDetailUnion(value);
 
         /// <summary>
         /// 

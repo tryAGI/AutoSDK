@@ -68,6 +68,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static DIDGeneratedAssetOptions FromTextToAvatar(global::G.DIDTextToAvatarOptions? value) => new DIDGeneratedAssetOptions(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public DIDGeneratedAssetOptions(
             global::G.DIDGeneratedAssetOptionsDiscriminatorType? type,
             global::G.DIDTextToAvatarOptions? textToAvatar

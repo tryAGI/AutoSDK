@@ -95,6 +95,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static RecordingConsentPlan FromStayOnLine(global::G.RecordingConsentPlanStayOnLine? value) => new RecordingConsentPlan(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator RecordingConsentPlan(global::G.RecordingConsentPlanVerbal value) => new RecordingConsentPlan((global::G.RecordingConsentPlanVerbal?)value);
 
         /// <summary>
@@ -109,6 +114,11 @@ namespace G
         {
             Verbal = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static RecordingConsentPlan FromVerbal(global::G.RecordingConsentPlanVerbal? value) => new RecordingConsentPlan(value);
 
         /// <summary>
         /// 

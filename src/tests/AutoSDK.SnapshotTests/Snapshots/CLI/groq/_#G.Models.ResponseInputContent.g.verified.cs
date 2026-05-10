@@ -65,6 +65,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ResponseInputContent FromInputText(global::G.ResponseInputTextContent? value) => new ResponseInputContent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public ResponseInputContent(
             global::G.ResponseInputContentDiscriminatorType? type,
             global::G.ResponseInputTextContent? inputText

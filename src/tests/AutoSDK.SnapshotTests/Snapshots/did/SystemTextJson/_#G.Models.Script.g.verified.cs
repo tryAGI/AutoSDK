@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Script FromScriptVariant1(global::G.ScriptVariant1? value) => new Script(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Script(global::G.ScriptVariant2 value) => new Script((global::G.ScriptVariant2?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             ScriptVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Script FromScriptVariant2(global::G.ScriptVariant2? value) => new Script(value);
 
         /// <summary>
         /// 

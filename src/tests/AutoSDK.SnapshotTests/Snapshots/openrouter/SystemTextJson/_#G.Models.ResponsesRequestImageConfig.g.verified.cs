@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ResponsesRequestImageConfig FromResponsesRequestImageConfigVariant1(string? value) => new ResponsesRequestImageConfig(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ResponsesRequestImageConfig(double value) => new ResponsesRequestImageConfig((double?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             ResponsesRequestImageConfigVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ResponsesRequestImageConfig FromResponsesRequestImageConfigVariant2(double? value) => new ResponsesRequestImageConfig(value);
 
         /// <summary>
         /// 

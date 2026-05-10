@@ -63,6 +63,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static AudioEnhancement FromDolby(global::G.DolbyEnhancement? value) => new AudioEnhancement(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public object? Object =>
             Dolby as object 
             ;

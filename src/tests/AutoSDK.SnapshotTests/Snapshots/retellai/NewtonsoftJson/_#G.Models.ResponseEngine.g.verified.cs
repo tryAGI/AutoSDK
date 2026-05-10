@@ -120,6 +120,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ResponseEngine FromRetellLm(global::G.ResponseEngineRetellLm? value) => new ResponseEngine(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ResponseEngine(global::G.ResponseEngineCustomLm value) => new ResponseEngine((global::G.ResponseEngineCustomLm?)value);
 
         /// <summary>
@@ -138,6 +143,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ResponseEngine FromCustomLm(global::G.ResponseEngineCustomLm? value) => new ResponseEngine(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ResponseEngine(global::G.ResponseEngineConversationFlow value) => new ResponseEngine((global::G.ResponseEngineConversationFlow?)value);
 
         /// <summary>
@@ -152,6 +162,11 @@ namespace G
         {
             ConversationFlow = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ResponseEngine FromConversationFlow(global::G.ResponseEngineConversationFlow? value) => new ResponseEngine(value);
 
         /// <summary>
         /// 

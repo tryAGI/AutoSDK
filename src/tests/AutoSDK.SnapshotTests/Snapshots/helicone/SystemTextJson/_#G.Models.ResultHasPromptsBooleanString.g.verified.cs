@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ResultHasPromptsBooleanString FromSuccess(global::G.ResultSuccessHasPromptsBoolean? value) => new ResultHasPromptsBooleanString(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ResultHasPromptsBooleanString(global::G.ResultErrorString value) => new ResultHasPromptsBooleanString((global::G.ResultErrorString?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             Error = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ResultHasPromptsBooleanString FromError(global::G.ResultErrorString? value) => new ResultHasPromptsBooleanString(value);
 
         /// <summary>
         /// 

@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static BaseMessagesResultContentItemsOneOf6Content FromBaseMessagesResultContentItemsOneOf6Content0(global::G.BaseMessagesResultContentItemsOneOf6Content0? value) => new BaseMessagesResultContentItemsOneOf6Content(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BaseMessagesResultContentItemsOneOf6Content(global::G.BaseMessagesResultContentItemsOneOf6Content1 value) => new BaseMessagesResultContentItemsOneOf6Content((global::G.BaseMessagesResultContentItemsOneOf6Content1?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             BaseMessagesResultContentItemsOneOf6Content1 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BaseMessagesResultContentItemsOneOf6Content FromBaseMessagesResultContentItemsOneOf6Content1(global::G.BaseMessagesResultContentItemsOneOf6Content1? value) => new BaseMessagesResultContentItemsOneOf6Content(value);
 
         /// <summary>
         /// 

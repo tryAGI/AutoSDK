@@ -120,6 +120,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static BaseInputs FromBaseInputsVariant1(string? value) => new BaseInputs(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public BaseInputs(
             string? baseInputsVariant1,
             global::System.Collections.Generic.IList<global::G.BaseInputsOneOf1Items>? baseInputs1,

@@ -120,6 +120,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static AggregateBy FromAggregateByVariant1(byte[]? value) => new AggregateBy(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public AggregateBy(
             byte[]? aggregateByVariant1,
             byte[]? aggregateByVariant2,

@@ -132,6 +132,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static TextResponseFormatConfiguration FromText(global::G.ResponseFormatText? value) => new TextResponseFormatConfiguration(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator TextResponseFormatConfiguration(global::G.TextResponseFormatJsonSchema value) => new TextResponseFormatConfiguration((global::G.TextResponseFormatJsonSchema?)value);
 
         /// <summary>
@@ -150,6 +155,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static TextResponseFormatConfiguration FromJsonSchema(global::G.TextResponseFormatJsonSchema? value) => new TextResponseFormatConfiguration(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator TextResponseFormatConfiguration(global::G.ResponseFormatJsonObject value) => new TextResponseFormatConfiguration((global::G.ResponseFormatJsonObject?)value);
 
         /// <summary>
@@ -164,6 +174,11 @@ namespace G
         {
             JsonObject = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static TextResponseFormatConfiguration FromJsonObject(global::G.ResponseFormatJsonObject? value) => new TextResponseFormatConfiguration(value);
 
         /// <summary>
         /// 

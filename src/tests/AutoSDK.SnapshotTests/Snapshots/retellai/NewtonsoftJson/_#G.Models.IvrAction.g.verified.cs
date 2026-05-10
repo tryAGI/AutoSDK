@@ -60,6 +60,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static IvrAction FromHangup(global::G.IvrActionHangup? value) => new IvrAction(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public object? Object =>
             Hangup as object 
             ;

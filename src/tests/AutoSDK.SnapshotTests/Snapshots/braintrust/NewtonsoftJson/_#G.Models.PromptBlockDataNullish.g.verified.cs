@@ -120,6 +120,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static PromptBlockDataNullish FromChat(global::G.PromptBlockDataNullishChat? value) => new PromptBlockDataNullish(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator PromptBlockDataNullish(global::G.PromptBlockDataNullishCompletion value) => new PromptBlockDataNullish((global::G.PromptBlockDataNullishCompletion?)value);
 
         /// <summary>
@@ -134,6 +139,11 @@ namespace G
         {
             Completion = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static PromptBlockDataNullish FromCompletion(global::G.PromptBlockDataNullishCompletion? value) => new PromptBlockDataNullish(value);
 
         /// <summary>
         /// 

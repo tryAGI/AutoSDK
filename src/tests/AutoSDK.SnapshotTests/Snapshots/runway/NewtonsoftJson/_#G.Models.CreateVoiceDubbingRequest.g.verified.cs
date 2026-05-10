@@ -65,6 +65,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static CreateVoiceDubbingRequest FromElevenVoiceDubbing(global::G.CreateVoiceDubbingRequestElevenVoiceDubbing? value) => new CreateVoiceDubbingRequest(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public CreateVoiceDubbingRequest(
             global::G.CreateVoiceDubbingRequestDiscriminatorModel? model,
             global::G.CreateVoiceDubbingRequestElevenVoiceDubbing? elevenVoiceDubbing

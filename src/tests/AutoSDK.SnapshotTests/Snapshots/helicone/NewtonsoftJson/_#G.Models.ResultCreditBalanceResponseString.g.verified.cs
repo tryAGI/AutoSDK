@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ResultCreditBalanceResponseString FromSuccess(global::G.ResultSuccessCreditBalanceResponse? value) => new ResultCreditBalanceResponseString(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ResultCreditBalanceResponseString(global::G.ResultErrorString value) => new ResultCreditBalanceResponseString((global::G.ResultErrorString?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             Error = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ResultCreditBalanceResponseString FromError(global::G.ResultErrorString? value) => new ResultCreditBalanceResponseString(value);
 
         /// <summary>
         /// 

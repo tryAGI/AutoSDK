@@ -95,6 +95,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Output FromCompletion(global::G.CompletionPrompt? value) => new Output(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Output(global::G.ChatPrompt value) => new Output((global::G.ChatPrompt?)value);
 
         /// <summary>
@@ -109,6 +114,11 @@ namespace G
         {
             Chat = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Output FromChat(global::G.ChatPrompt? value) => new Output(value);
 
         /// <summary>
         /// 

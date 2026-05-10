@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static IntegrationDetailResponse FromList(global::G.IntegrationList? value) => new IntegrationDetailResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator IntegrationDetailResponse(global::G.IntegrationDetailResponseVariant2 value) => new IntegrationDetailResponse((global::G.IntegrationDetailResponseVariant2?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             IntegrationDetailResponseVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static IntegrationDetailResponse FromIntegrationDetailResponseVariant2(global::G.IntegrationDetailResponseVariant2? value) => new IntegrationDetailResponse(value);
 
         /// <summary>
         /// 

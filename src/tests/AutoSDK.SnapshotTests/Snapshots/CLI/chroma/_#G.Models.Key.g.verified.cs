@@ -225,6 +225,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Key FromKeyVariant1(global::G.KeyVariant1? value) => new Key(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Key(global::G.KeyVariant2 value) => new Key((global::G.KeyVariant2?)value);
 
         /// <summary>
@@ -239,6 +244,11 @@ namespace G
         {
             KeyVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Key FromKeyVariant2(global::G.KeyVariant2? value) => new Key(value);
 
         /// <summary>
         /// 
@@ -261,6 +271,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Key FromKeyVariant3(global::G.KeyVariant3? value) => new Key(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Key(global::G.KeyVariant4 value) => new Key((global::G.KeyVariant4?)value);
 
         /// <summary>
@@ -279,6 +294,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Key FromKeyVariant4(global::G.KeyVariant4? value) => new Key(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Key(global::G.KeyVariant5 value) => new Key((global::G.KeyVariant5?)value);
 
         /// <summary>
@@ -293,6 +313,11 @@ namespace G
         {
             KeyVariant5 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Key FromKeyVariant5(global::G.KeyVariant5? value) => new Key(value);
 
         /// <summary>
         /// 

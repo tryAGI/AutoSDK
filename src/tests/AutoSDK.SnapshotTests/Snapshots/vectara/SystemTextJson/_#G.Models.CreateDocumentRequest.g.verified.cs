@@ -97,6 +97,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static CreateDocumentRequest FromCore(global::G.CoreDocument? value) => new CreateDocumentRequest(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator CreateDocumentRequest(global::G.StructuredDocument value) => new CreateDocumentRequest((global::G.StructuredDocument?)value);
 
         /// <summary>
@@ -111,6 +116,11 @@ namespace G
         {
             Structured = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static CreateDocumentRequest FromStructured(global::G.StructuredDocument? value) => new CreateDocumentRequest(value);
 
         /// <summary>
         /// 

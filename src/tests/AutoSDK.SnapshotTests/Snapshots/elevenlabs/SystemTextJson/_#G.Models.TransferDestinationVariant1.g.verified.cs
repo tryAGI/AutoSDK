@@ -155,6 +155,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static TransferDestinationVariant1 FromPhone(global::G.PhoneNumberTransferDestination? value) => new TransferDestinationVariant1(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator TransferDestinationVariant1(global::G.SIPUriTransferDestination value) => new TransferDestinationVariant1((global::G.SIPUriTransferDestination?)value);
 
         /// <summary>
@@ -169,6 +174,11 @@ namespace G
         {
             SipUri = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static TransferDestinationVariant1 FromSipUri(global::G.SIPUriTransferDestination? value) => new TransferDestinationVariant1(value);
 
         /// <summary>
         /// 
@@ -191,6 +201,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static TransferDestinationVariant1 FromPhoneDynamicVariable(global::G.PhoneNumberDynamicVariableTransferDestination? value) => new TransferDestinationVariant1(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator TransferDestinationVariant1(global::G.SIPUriDynamicVariableTransferDestination value) => new TransferDestinationVariant1((global::G.SIPUriDynamicVariableTransferDestination?)value);
 
         /// <summary>
@@ -205,6 +220,11 @@ namespace G
         {
             SipUriDynamicVariable = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static TransferDestinationVariant1 FromSipUriDynamicVariable(global::G.SIPUriDynamicVariableTransferDestination? value) => new TransferDestinationVariant1(value);
 
         /// <summary>
         /// 

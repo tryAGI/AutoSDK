@@ -65,6 +65,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static CreateVideoToVideoRequest FromGen4Aleph(global::G.CreateVideoToVideoRequestGen4Aleph? value) => new CreateVideoToVideoRequest(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public CreateVideoToVideoRequest(
             global::G.CreateVideoToVideoRequestDiscriminatorModel? model,
             global::G.CreateVideoToVideoRequestGen4Aleph? gen4Aleph

@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ChatCompletionsPostRequestBodyContentApplicationJsonSchemaMessagesOneOf1ItemsContent FromChatCompletionsPostRequestBodyContentApplicationJsonSchemaMessagesOneOf1ItemsContentVariant1(string? value) => new ChatCompletionsPostRequestBodyContentApplicationJsonSchemaMessagesOneOf1ItemsContent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public ChatCompletionsPostRequestBodyContentApplicationJsonSchemaMessagesOneOf1ItemsContent(
             string? chatCompletionsPostRequestBodyContentApplicationJsonSchemaMessagesOneOf1ItemsContentVariant1,
             global::System.Collections.Generic.IList<global::G.ChatCompletionsPostRequestBodyContentApplicationJsonSchemaMessagesOneOf1ItemsContentOneOf1Items>? chatCompletionsPostRequestBodyContentApplicationJsonSchemaMessagesOneOf1ItemsContent1

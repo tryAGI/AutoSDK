@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static PullRequestWebhook FromPullRequest(global::G.PullRequest? value) => new PullRequestWebhook(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator PullRequestWebhook(global::G.PullRequestWebhookVariant2 value) => new PullRequestWebhook((global::G.PullRequestWebhookVariant2?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             PullRequestWebhookVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static PullRequestWebhook FromPullRequestWebhookVariant2(global::G.PullRequestWebhookVariant2? value) => new PullRequestWebhook(value);
 
         /// <summary>
         /// 

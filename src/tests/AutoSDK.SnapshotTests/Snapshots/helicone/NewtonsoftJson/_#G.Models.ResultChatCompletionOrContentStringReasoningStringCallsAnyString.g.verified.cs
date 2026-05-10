@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ResultChatCompletionOrContentStringReasoningStringCallsAnyString FromSuccess(global::G.ResultSuccessChatCompletionOrContentStringReasoningStringCallsAny? value) => new ResultChatCompletionOrContentStringReasoningStringCallsAnyString(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ResultChatCompletionOrContentStringReasoningStringCallsAnyString(global::G.ResultErrorString value) => new ResultChatCompletionOrContentStringReasoningStringCallsAnyString((global::G.ResultErrorString?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             Error = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ResultChatCompletionOrContentStringReasoningStringCallsAnyString FromError(global::G.ResultErrorString? value) => new ResultChatCompletionOrContentStringReasoningStringCallsAnyString(value);
 
         /// <summary>
         /// 

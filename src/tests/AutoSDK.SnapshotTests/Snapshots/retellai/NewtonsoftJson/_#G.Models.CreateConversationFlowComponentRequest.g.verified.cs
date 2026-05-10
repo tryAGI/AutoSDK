@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static CreateConversationFlowComponentRequest FromConversationFlowComponent(global::G.ConversationFlowComponent? value) => new CreateConversationFlowComponentRequest(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public CreateConversationFlowComponentRequest(
             global::G.ConversationFlowComponent? conversationFlowComponent,
             object? createConversationFlowComponentRequestVariant2

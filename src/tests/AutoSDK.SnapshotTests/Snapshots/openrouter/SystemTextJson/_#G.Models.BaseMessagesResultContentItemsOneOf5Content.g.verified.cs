@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static BaseMessagesResultContentItemsOneOf5Content FromBaseMessagesResultContentItemsOneOf5Content1(global::G.BaseMessagesResultContentItemsOneOf5Content1? value) => new BaseMessagesResultContentItemsOneOf5Content(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public BaseMessagesResultContentItemsOneOf5Content(
             global::System.Collections.Generic.IList<global::G.BaseMessagesResultContentItemsOneOf5ContentOneOf0Items>? baseMessagesResultContentItemsOneOf5Content0,
             global::G.BaseMessagesResultContentItemsOneOf5Content1? baseMessagesResultContentItemsOneOf5Content1

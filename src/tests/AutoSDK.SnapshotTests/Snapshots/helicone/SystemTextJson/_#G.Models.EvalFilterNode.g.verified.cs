@@ -120,6 +120,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static EvalFilterNode FromPickLeafRequestResponseRmt(global::G.PickFilterLeafRequestResponseRmt? value) => new EvalFilterNode(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator EvalFilterNode(global::G.EvalFilterBranch value) => new EvalFilterNode((global::G.EvalFilterBranch?)value);
 
         /// <summary>
@@ -138,6 +143,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static EvalFilterNode FromBranch(global::G.EvalFilterBranch? value) => new EvalFilterNode(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator EvalFilterNode(global::G.EvalFilterNodeEnum value) => new EvalFilterNode((global::G.EvalFilterNodeEnum?)value);
 
         /// <summary>
@@ -152,6 +162,11 @@ namespace G
         {
             Enum = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static EvalFilterNode FromEnum(global::G.EvalFilterNodeEnum? value) => new EvalFilterNode(value);
 
         /// <summary>
         /// 

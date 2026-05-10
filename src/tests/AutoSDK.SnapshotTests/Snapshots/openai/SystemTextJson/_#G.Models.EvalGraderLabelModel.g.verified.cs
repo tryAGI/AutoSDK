@@ -61,6 +61,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static EvalGraderLabelModel FromLabelModelGrader(global::G.GraderLabelModel? value) => new EvalGraderLabelModel(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public object? Object =>
             LabelModelGrader as object 
             ;

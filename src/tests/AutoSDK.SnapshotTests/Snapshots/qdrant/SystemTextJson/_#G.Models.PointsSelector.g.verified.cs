@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static PointsSelector FromPointIdsList(global::G.PointIdsList? value) => new PointsSelector(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator PointsSelector(global::G.FilterSelector value) => new PointsSelector((global::G.FilterSelector?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             Filter = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static PointsSelector FromFilter(global::G.FilterSelector? value) => new PointsSelector(value);
 
         /// <summary>
         /// 

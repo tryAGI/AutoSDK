@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ChatToolCallsChunkEvent FromStream(global::G.ChatStreamEvent? value) => new ChatToolCallsChunkEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChatToolCallsChunkEvent(global::G.ChatToolCallsChunkEventT7lliu value) => new ChatToolCallsChunkEvent((global::G.ChatToolCallsChunkEventT7lliu?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             T7lliu = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChatToolCallsChunkEvent FromT7lliu(global::G.ChatToolCallsChunkEventT7lliu? value) => new ChatToolCallsChunkEvent(value);
 
         /// <summary>
         /// 

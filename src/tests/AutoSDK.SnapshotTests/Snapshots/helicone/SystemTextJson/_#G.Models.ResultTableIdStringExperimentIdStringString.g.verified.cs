@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ResultTableIdStringExperimentIdStringString FromSuccess(global::G.ResultSuccessTableIdStringExperimentIdString? value) => new ResultTableIdStringExperimentIdStringString(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ResultTableIdStringExperimentIdStringString(global::G.ResultErrorString value) => new ResultTableIdStringExperimentIdStringString((global::G.ResultErrorString?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             Error = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ResultTableIdStringExperimentIdStringString FromError(global::G.ResultErrorString? value) => new ResultTableIdStringExperimentIdStringString(value);
 
         /// <summary>
         /// 

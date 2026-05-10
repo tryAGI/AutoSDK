@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ProviderPreferencesOnlyItems FromProviderName(global::G.ProviderName? value) => new ProviderPreferencesOnlyItems(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ProviderPreferencesOnlyItems(string value) => new ProviderPreferencesOnlyItems((string?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             ProviderPreferencesOnlyItemsVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ProviderPreferencesOnlyItems FromProviderPreferencesOnlyItemsVariant2(string? value) => new ProviderPreferencesOnlyItems(value);
 
         /// <summary>
         /// 

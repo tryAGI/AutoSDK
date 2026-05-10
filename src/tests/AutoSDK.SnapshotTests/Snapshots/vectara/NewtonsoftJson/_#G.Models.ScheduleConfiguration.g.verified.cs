@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ScheduleConfiguration FromInterval(global::G.IntervalScheduleConfiguration? value) => new ScheduleConfiguration(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ScheduleConfiguration(global::G.CronScheduleConfiguration value) => new ScheduleConfiguration((global::G.CronScheduleConfiguration?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             Cron = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ScheduleConfiguration FromCron(global::G.CronScheduleConfiguration? value) => new ScheduleConfiguration(value);
 
         /// <summary>
         /// 

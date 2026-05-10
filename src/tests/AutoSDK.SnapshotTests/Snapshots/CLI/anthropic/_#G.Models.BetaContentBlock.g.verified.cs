@@ -155,6 +155,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static BetaContentBlock FromText(global::G.BetaResponseTextBlock? value) => new BetaContentBlock(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BetaContentBlock(global::G.BetaResponseToolUseBlock value) => new BetaContentBlock((global::G.BetaResponseToolUseBlock?)value);
 
         /// <summary>
@@ -169,6 +174,11 @@ namespace G
         {
             ToolUse = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaContentBlock FromToolUse(global::G.BetaResponseToolUseBlock? value) => new BetaContentBlock(value);
 
         /// <summary>
         /// 
@@ -191,6 +201,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static BetaContentBlock FromThinking(global::G.BetaResponseThinkingBlock? value) => new BetaContentBlock(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BetaContentBlock(global::G.BetaResponseRedactedThinkingBlock value) => new BetaContentBlock((global::G.BetaResponseRedactedThinkingBlock?)value);
 
         /// <summary>
@@ -205,6 +220,11 @@ namespace G
         {
             RedactedThinking = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaContentBlock FromRedactedThinking(global::G.BetaResponseRedactedThinkingBlock? value) => new BetaContentBlock(value);
 
         /// <summary>
         /// 

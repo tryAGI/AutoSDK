@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static EmbeddingsPostResponsesContentApplicationJsonSchemaDataItemsEmbedding FromEmbeddingsPostResponsesContentApplicationJsonSchemaDataItemsEmbeddingVariant2(string? value) => new EmbeddingsPostResponsesContentApplicationJsonSchemaDataItemsEmbedding(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public EmbeddingsPostResponsesContentApplicationJsonSchemaDataItemsEmbedding(
             global::System.Collections.Generic.IList<double>? embeddingsPostResponsesContentApplicationJsonSchemaDataItemsEmbeddingVariant1,
             string? embeddingsPostResponsesContentApplicationJsonSchemaDataItemsEmbeddingVariant2

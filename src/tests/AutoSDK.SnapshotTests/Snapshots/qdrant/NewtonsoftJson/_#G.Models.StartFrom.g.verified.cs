@@ -120,6 +120,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static StartFrom FromStartFromVariant1(long? value) => new StartFrom(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator StartFrom(double value) => new StartFrom((double?)value);
 
         /// <summary>
@@ -138,6 +143,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static StartFrom FromStartFromVariant2(double? value) => new StartFrom(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator StartFrom(global::System.DateTime value) => new StartFrom((global::System.DateTime?)value);
 
         /// <summary>
@@ -152,6 +162,11 @@ namespace G
         {
             DateTime = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static StartFrom FromDateTime(global::System.DateTime? value) => new StartFrom(value);
 
         /// <summary>
         /// 

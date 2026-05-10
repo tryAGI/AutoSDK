@@ -275,6 +275,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static InputVariant2Item3 FromText(global::G.TextContent? value) => new InputVariant2Item3(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator InputVariant2Item3(global::G.ImageContent value) => new InputVariant2Item3((global::G.ImageContent?)value);
 
         /// <summary>
@@ -289,6 +294,11 @@ namespace G
         {
             Image = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static InputVariant2Item3 FromImage(global::G.ImageContent? value) => new InputVariant2Item3(value);
 
         /// <summary>
         /// 
@@ -311,6 +321,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static InputVariant2Item3 FromToolCall(global::G.ToolCallContent? value) => new InputVariant2Item3(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator InputVariant2Item3(global::G.ToolReturnContent value) => new InputVariant2Item3((global::G.ToolReturnContent?)value);
 
         /// <summary>
@@ -325,6 +340,11 @@ namespace G
         {
             ToolReturn = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static InputVariant2Item3 FromToolReturn(global::G.ToolReturnContent? value) => new InputVariant2Item3(value);
 
         /// <summary>
         /// 
@@ -347,6 +367,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static InputVariant2Item3 FromOmittedReasoning1(global::G.ReasoningContent? value) => new InputVariant2Item3(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator InputVariant2Item3(global::G.RedactedReasoningContent value) => new InputVariant2Item3((global::G.RedactedReasoningContent?)value);
 
         /// <summary>
@@ -361,6 +386,11 @@ namespace G
         {
             RedactedReasoning = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static InputVariant2Item3 FromRedactedReasoning(global::G.RedactedReasoningContent? value) => new InputVariant2Item3(value);
 
         /// <summary>
         /// 
@@ -383,6 +413,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static InputVariant2Item3 FromOmittedReasoning2(global::G.OmittedReasoningContent? value) => new InputVariant2Item3(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator InputVariant2Item3(global::G.SummarizedReasoningContent value) => new InputVariant2Item3((global::G.SummarizedReasoningContent?)value);
 
         /// <summary>
@@ -397,6 +432,11 @@ namespace G
         {
             SummarizedReasoning = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static InputVariant2Item3 FromSummarizedReasoning(global::G.SummarizedReasoningContent? value) => new InputVariant2Item3(value);
 
         /// <summary>
         /// 

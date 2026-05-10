@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ChatSearchResultsEvent FromStream(global::G.ChatStreamEvent? value) => new ChatSearchResultsEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChatSearchResultsEvent(global::G.ChatSearchResultsEvent44axt5 value) => new ChatSearchResultsEvent((global::G.ChatSearchResultsEvent44axt5?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             Event44axt5 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChatSearchResultsEvent FromEvent44axt5(global::G.ChatSearchResultsEvent44axt5? value) => new ChatSearchResultsEvent(value);
 
         /// <summary>
         /// 

@@ -95,6 +95,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Result FromSuccess(global::G.ImportSuccessResult? value) => new Result(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Result(global::G.ImportErrorResult value) => new Result((global::G.ImportErrorResult?)value);
 
         /// <summary>
@@ -109,6 +114,11 @@ namespace G
         {
             Error = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Result FromError(global::G.ImportErrorResult? value) => new Result(value);
 
         /// <summary>
         /// 

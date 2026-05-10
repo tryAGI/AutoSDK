@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static CreateInterruptRequest FromInputBase(global::G.CreateInputRequestBase? value) => new CreateInterruptRequest(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator CreateInterruptRequest(global::G.CreateInterruptRequestVariant2 value) => new CreateInterruptRequest((global::G.CreateInterruptRequestVariant2?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             CreateInterruptRequestVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static CreateInterruptRequest FromCreateInterruptRequestVariant2(global::G.CreateInterruptRequestVariant2? value) => new CreateInterruptRequest(value);
 
         /// <summary>
         /// 

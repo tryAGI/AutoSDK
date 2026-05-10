@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static DoneReason FromDoneReasonVariant1(string? value) => new DoneReason(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator DoneReason(global::G.DoneReasonEnum value) => new DoneReason((global::G.DoneReasonEnum?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             Enum = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static DoneReason FromEnum(global::G.DoneReasonEnum? value) => new DoneReason(value);
 
         /// <summary>
         /// 

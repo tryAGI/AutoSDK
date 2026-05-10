@@ -425,6 +425,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Expression2 FromStringLiteral(global::G.ASTStringNodeOutput? value) => new Expression2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Expression2(global::G.ASTNumberNodeOutput value) => new Expression2((global::G.ASTNumberNodeOutput?)value);
 
         /// <summary>
@@ -439,6 +444,11 @@ namespace G
         {
             NumberLiteral = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Expression2 FromNumberLiteral(global::G.ASTNumberNodeOutput? value) => new Expression2(value);
 
         /// <summary>
         /// 
@@ -461,6 +471,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Expression2 FromBooleanLiteral(global::G.ASTBooleanNodeOutput? value) => new Expression2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Expression2(global::G.ASTLLMNodeOutput value) => new Expression2((global::G.ASTLLMNodeOutput?)value);
 
         /// <summary>
@@ -475,6 +490,11 @@ namespace G
         {
             Llm = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Expression2 FromLlm(global::G.ASTLLMNodeOutput? value) => new Expression2(value);
 
         /// <summary>
         /// 
@@ -497,6 +517,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Expression2 FromDynamicVariable(global::G.ASTDynamicVariableNodeOutput? value) => new Expression2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Expression2(global::G.ASTOrOperatorNodeOutput value) => new Expression2((global::G.ASTOrOperatorNodeOutput?)value);
 
         /// <summary>
@@ -511,6 +536,11 @@ namespace G
         {
             OrOperator = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Expression2 FromOrOperator(global::G.ASTOrOperatorNodeOutput? value) => new Expression2(value);
 
         /// <summary>
         /// 
@@ -533,6 +563,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Expression2 FromAndOperator(global::G.ASTAndOperatorNodeOutput? value) => new Expression2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Expression2(global::G.ASTEqualsOperatorNodeOutput value) => new Expression2((global::G.ASTEqualsOperatorNodeOutput?)value);
 
         /// <summary>
@@ -547,6 +582,11 @@ namespace G
         {
             EqOperator = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Expression2 FromEqOperator(global::G.ASTEqualsOperatorNodeOutput? value) => new Expression2(value);
 
         /// <summary>
         /// 
@@ -569,6 +609,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Expression2 FromNeqOperator(global::G.ASTNotEqualsOperatorNodeOutput? value) => new Expression2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Expression2(global::G.ASTGreaterThanOperatorNodeOutput value) => new Expression2((global::G.ASTGreaterThanOperatorNodeOutput?)value);
 
         /// <summary>
@@ -583,6 +628,11 @@ namespace G
         {
             GtOperator = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Expression2 FromGtOperator(global::G.ASTGreaterThanOperatorNodeOutput? value) => new Expression2(value);
 
         /// <summary>
         /// 
@@ -605,6 +655,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Expression2 FromLtOperator(global::G.ASTLessThanOperatorNodeOutput? value) => new Expression2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Expression2(global::G.ASTGreaterThanOrEqualsOperatorNodeOutput value) => new Expression2((global::G.ASTGreaterThanOrEqualsOperatorNodeOutput?)value);
 
         /// <summary>
@@ -623,6 +678,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Expression2 FromGteOperator(global::G.ASTGreaterThanOrEqualsOperatorNodeOutput? value) => new Expression2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Expression2(global::G.ASTLessThanOrEqualsOperatorNodeOutput value) => new Expression2((global::G.ASTLessThanOrEqualsOperatorNodeOutput?)value);
 
         /// <summary>
@@ -637,6 +697,11 @@ namespace G
         {
             LteOperator = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Expression2 FromLteOperator(global::G.ASTLessThanOrEqualsOperatorNodeOutput? value) => new Expression2(value);
 
         /// <summary>
         /// 

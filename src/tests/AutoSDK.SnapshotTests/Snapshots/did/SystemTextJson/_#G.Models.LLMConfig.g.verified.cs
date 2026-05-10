@@ -180,6 +180,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static LLMConfig FromOpenAI(global::G.LLMConfigOpenAI? value) => new LLMConfig(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator LLMConfig(global::G.LLMConfigVariant2 value) => new LLMConfig((global::G.LLMConfigVariant2?)value);
 
         /// <summary>
@@ -194,6 +199,11 @@ namespace G
         {
             LLMConfigVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static LLMConfig FromLLMConfigVariant2(global::G.LLMConfigVariant2? value) => new LLMConfig(value);
 
         /// <summary>
         /// 
@@ -216,6 +226,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static LLMConfig FromLLMConfigVariant3(global::G.LLMConfigVariant3? value) => new LLMConfig(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator LLMConfig(global::G.LLMConfigDId value) => new LLMConfig((global::G.LLMConfigDId?)value);
 
         /// <summary>
@@ -234,6 +249,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static LLMConfig FromDId(global::G.LLMConfigDId? value) => new LLMConfig(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator LLMConfig(global::G.LLMConfigGoogle value) => new LLMConfig((global::G.LLMConfigGoogle?)value);
 
         /// <summary>
@@ -248,6 +268,11 @@ namespace G
         {
             Google = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static LLMConfig FromGoogle(global::G.LLMConfigGoogle? value) => new LLMConfig(value);
 
         /// <summary>
         /// 

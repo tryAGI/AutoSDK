@@ -95,6 +95,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ChunkingStrategy FromMaxCharsChunkingStrategy(global::G.MaxCharsChunkingStrategy? value) => new ChunkingStrategy(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChunkingStrategy(global::G.SentenceChunkingStrategy value) => new ChunkingStrategy((global::G.SentenceChunkingStrategy?)value);
 
         /// <summary>
@@ -109,6 +114,11 @@ namespace G
         {
             SentenceChunkingStrategy = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChunkingStrategy FromSentenceChunkingStrategy(global::G.SentenceChunkingStrategy? value) => new ChunkingStrategy(value);
 
         /// <summary>
         /// 

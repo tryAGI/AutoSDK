@@ -95,6 +95,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Output2 FromTasks(global::G.ResearchEventDtoClassVariant2Variant3OutputVariant1? value) => new Output2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Output2(global::G.ResearchEventDtoClassVariant2Variant3OutputVariant2 value) => new Output2((global::G.ResearchEventDtoClassVariant2Variant3OutputVariant2?)value);
 
         /// <summary>
@@ -109,6 +114,11 @@ namespace G
         {
             Stop = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Output2 FromStop(global::G.ResearchEventDtoClassVariant2Variant3OutputVariant2? value) => new Output2(value);
 
         /// <summary>
         /// 

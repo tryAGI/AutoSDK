@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static CreateDocumentDto FromCreateDocumentDtoVariant1(global::G.CreateDocumentDtoVariant1? value) => new CreateDocumentDto(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator CreateDocumentDto(global::G.CreateDocumentDtoVariant2 value) => new CreateDocumentDto((global::G.CreateDocumentDtoVariant2?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             CreateDocumentDtoVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static CreateDocumentDto FromCreateDocumentDtoVariant2(global::G.CreateDocumentDtoVariant2? value) => new CreateDocumentDto(value);
 
         /// <summary>
         /// 

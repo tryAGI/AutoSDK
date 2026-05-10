@@ -213,6 +213,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Vector FromSparse(global::G.SparseVector? value) => new Vector(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Vector(global::G.Document value) => new Vector((global::G.Document?)value);
 
         /// <summary>
@@ -227,6 +232,11 @@ namespace G
         {
             Document = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Vector FromDocument(global::G.Document? value) => new Vector(value);
 
         /// <summary>
         /// 
@@ -249,6 +259,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Vector FromImage(global::G.Image? value) => new Vector(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Vector(global::G.InferenceObject value) => new Vector((global::G.InferenceObject?)value);
 
         /// <summary>
@@ -263,6 +278,11 @@ namespace G
         {
             InferenceObject = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Vector FromInferenceObject(global::G.InferenceObject? value) => new Vector(value);
 
         /// <summary>
         /// 

@@ -60,6 +60,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static FeedbackStrategy FromNaive(global::G.NaiveFeedbackStrategy? value) => new FeedbackStrategy(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public object? Object =>
             Naive as object 
             ;

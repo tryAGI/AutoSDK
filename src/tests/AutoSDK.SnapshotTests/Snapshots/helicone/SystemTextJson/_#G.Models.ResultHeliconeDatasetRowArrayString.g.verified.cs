@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ResultHeliconeDatasetRowArrayString FromSuccess(global::G.ResultSuccessHeliconeDatasetRowArray? value) => new ResultHeliconeDatasetRowArrayString(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ResultHeliconeDatasetRowArrayString(global::G.ResultErrorString value) => new ResultHeliconeDatasetRowArrayString((global::G.ResultErrorString?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             Error = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ResultHeliconeDatasetRowArrayString FromError(global::G.ResultErrorString? value) => new ResultHeliconeDatasetRowArrayString(value);
 
         /// <summary>
         /// 

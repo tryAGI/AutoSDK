@@ -60,6 +60,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ResponsesPostRequestBodyContentApplicationJsonSchemaSafeguardsEntityListItems FromResponsesPostRequestBodyContentApplicationJsonSchemaSafeguardsEntityListItemsVariant1(string? value) => new ResponsesPostRequestBodyContentApplicationJsonSchemaSafeguardsEntityListItems(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public object? Object =>
             ResponsesPostRequestBodyContentApplicationJsonSchemaSafeguardsEntityListItemsVariant1 as object 
             ;

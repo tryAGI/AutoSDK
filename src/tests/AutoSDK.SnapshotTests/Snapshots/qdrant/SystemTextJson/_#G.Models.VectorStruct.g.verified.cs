@@ -213,6 +213,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static VectorStruct FromDocument(global::G.Document? value) => new VectorStruct(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator VectorStruct(global::G.Image value) => new VectorStruct((global::G.Image?)value);
 
         /// <summary>
@@ -231,6 +236,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static VectorStruct FromImage(global::G.Image? value) => new VectorStruct(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator VectorStruct(global::G.InferenceObject value) => new VectorStruct((global::G.InferenceObject?)value);
 
         /// <summary>
@@ -245,6 +255,11 @@ namespace G
         {
             InferenceObject = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static VectorStruct FromInferenceObject(global::G.InferenceObject? value) => new VectorStruct(value);
 
         /// <summary>
         /// 

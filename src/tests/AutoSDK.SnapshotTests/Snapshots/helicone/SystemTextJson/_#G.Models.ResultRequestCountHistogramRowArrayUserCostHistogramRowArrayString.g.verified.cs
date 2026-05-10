@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ResultRequestCountHistogramRowArrayUserCostHistogramRowArrayString FromSuccess(global::G.ResultSuccessRequestCountHistogramRowArrayUserCostHistogramRowArray? value) => new ResultRequestCountHistogramRowArrayUserCostHistogramRowArrayString(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ResultRequestCountHistogramRowArrayUserCostHistogramRowArrayString(global::G.ResultErrorString value) => new ResultRequestCountHistogramRowArrayUserCostHistogramRowArrayString((global::G.ResultErrorString?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             Error = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ResultRequestCountHistogramRowArrayUserCostHistogramRowArrayString FromError(global::G.ResultErrorString? value) => new ResultRequestCountHistogramRowArrayUserCostHistogramRowArrayString(value);
 
         /// <summary>
         /// 

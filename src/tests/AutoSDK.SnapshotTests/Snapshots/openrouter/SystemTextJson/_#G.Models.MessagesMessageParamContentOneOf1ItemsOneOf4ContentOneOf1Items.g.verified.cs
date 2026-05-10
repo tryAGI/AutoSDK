@@ -180,6 +180,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items FromMessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items0(global::G.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items0? value) => new MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items(global::G.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items1 value) => new MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items((global::G.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items1?)value);
 
         /// <summary>
@@ -194,6 +199,11 @@ namespace G
         {
             MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items1 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items FromMessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items1(global::G.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items1? value) => new MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items(value);
 
         /// <summary>
         /// 
@@ -216,6 +226,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items FromMessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items2(global::G.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items2? value) => new MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items(global::G.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items3 value) => new MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items((global::G.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items3?)value);
 
         /// <summary>
@@ -234,6 +249,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items FromMessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items3(global::G.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items3? value) => new MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items(global::G.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items4 value) => new MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items((global::G.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items4?)value);
 
         /// <summary>
@@ -248,6 +268,11 @@ namespace G
         {
             MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items4 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items FromMessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items4(global::G.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items4? value) => new MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items(value);
 
         /// <summary>
         /// 

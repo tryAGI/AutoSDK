@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static QueryRequestPayload FromRawWhereFields(global::G.RawWhereFields? value) => new QueryRequestPayload(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator QueryRequestPayload(global::G.QueryRequestPayloadVariant2 value) => new QueryRequestPayload((global::G.QueryRequestPayloadVariant2?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             QueryRequestPayloadVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static QueryRequestPayload FromQueryRequestPayloadVariant2(global::G.QueryRequestPayloadVariant2? value) => new QueryRequestPayload(value);
 
         /// <summary>
         /// 

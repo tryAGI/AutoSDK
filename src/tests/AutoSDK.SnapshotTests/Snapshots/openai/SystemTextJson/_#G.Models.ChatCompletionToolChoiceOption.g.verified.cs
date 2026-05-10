@@ -95,6 +95,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ChatCompletionToolChoiceOption FromEnum(global::G.ChatCompletionToolChoiceOptionEnum? value) => new ChatCompletionToolChoiceOption(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChatCompletionToolChoiceOption(global::G.ChatCompletionNamedToolChoice value) => new ChatCompletionToolChoiceOption((global::G.ChatCompletionNamedToolChoice?)value);
 
         /// <summary>
@@ -109,6 +114,11 @@ namespace G
         {
             Named = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChatCompletionToolChoiceOption FromNamed(global::G.ChatCompletionNamedToolChoice? value) => new ChatCompletionToolChoiceOption(value);
 
         /// <summary>
         /// 

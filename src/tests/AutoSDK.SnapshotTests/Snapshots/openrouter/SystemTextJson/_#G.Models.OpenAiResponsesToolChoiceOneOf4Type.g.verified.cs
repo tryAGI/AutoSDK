@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static OpenAiResponsesToolChoiceOneOf4Type FromOpenAiResponsesToolChoiceOneOf4Type0(global::G.OpenAiResponsesToolChoiceOneOf4Type0? value) => new OpenAiResponsesToolChoiceOneOf4Type(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator OpenAiResponsesToolChoiceOneOf4Type(global::G.OpenAiResponsesToolChoiceOneOf4Type1 value) => new OpenAiResponsesToolChoiceOneOf4Type((global::G.OpenAiResponsesToolChoiceOneOf4Type1?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             OpenAiResponsesToolChoiceOneOf4Type1 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static OpenAiResponsesToolChoiceOneOf4Type FromOpenAiResponsesToolChoiceOneOf4Type1(global::G.OpenAiResponsesToolChoiceOneOf4Type1? value) => new OpenAiResponsesToolChoiceOneOf4Type(value);
 
         /// <summary>
         /// 

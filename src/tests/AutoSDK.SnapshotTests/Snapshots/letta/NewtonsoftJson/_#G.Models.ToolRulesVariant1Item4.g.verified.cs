@@ -305,6 +305,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ToolRulesVariant1Item4 FromConstrainChildTools(global::G.ChildToolRule? value) => new ToolRulesVariant1Item4(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ToolRulesVariant1Item4(global::G.InitToolRule value) => new ToolRulesVariant1Item4((global::G.InitToolRule?)value);
 
         /// <summary>
@@ -319,6 +324,11 @@ namespace G
         {
             RunFirst = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ToolRulesVariant1Item4 FromRunFirst(global::G.InitToolRule? value) => new ToolRulesVariant1Item4(value);
 
         /// <summary>
         /// 
@@ -341,6 +351,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ToolRulesVariant1Item4 FromExitLoop(global::G.TerminalToolRule? value) => new ToolRulesVariant1Item4(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ToolRulesVariant1Item4(global::G.ConditionalToolRule value) => new ToolRulesVariant1Item4((global::G.ConditionalToolRule?)value);
 
         /// <summary>
@@ -355,6 +370,11 @@ namespace G
         {
             Conditional = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ToolRulesVariant1Item4 FromConditional(global::G.ConditionalToolRule? value) => new ToolRulesVariant1Item4(value);
 
         /// <summary>
         /// 
@@ -377,6 +397,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ToolRulesVariant1Item4 FromContinueLoop(global::G.ContinueToolRule? value) => new ToolRulesVariant1Item4(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ToolRulesVariant1Item4(global::G.RequiredBeforeExitToolRule value) => new ToolRulesVariant1Item4((global::G.RequiredBeforeExitToolRule?)value);
 
         /// <summary>
@@ -391,6 +416,11 @@ namespace G
         {
             RequiredBeforeExit = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ToolRulesVariant1Item4 FromRequiredBeforeExit(global::G.RequiredBeforeExitToolRule? value) => new ToolRulesVariant1Item4(value);
 
         /// <summary>
         /// 
@@ -413,6 +443,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ToolRulesVariant1Item4 FromMaxCountPerStep(global::G.MaxCountPerStepToolRule? value) => new ToolRulesVariant1Item4(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ToolRulesVariant1Item4(global::G.ParentToolRule value) => new ToolRulesVariant1Item4((global::G.ParentToolRule?)value);
 
         /// <summary>
@@ -431,6 +466,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ToolRulesVariant1Item4 FromParentLastTool(global::G.ParentToolRule? value) => new ToolRulesVariant1Item4(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ToolRulesVariant1Item4(global::G.RequiresApprovalToolRule value) => new ToolRulesVariant1Item4((global::G.RequiresApprovalToolRule?)value);
 
         /// <summary>
@@ -445,6 +485,11 @@ namespace G
         {
             RequiresApproval = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ToolRulesVariant1Item4 FromRequiresApproval(global::G.RequiresApprovalToolRule? value) => new ToolRulesVariant1Item4(value);
 
         /// <summary>
         /// 

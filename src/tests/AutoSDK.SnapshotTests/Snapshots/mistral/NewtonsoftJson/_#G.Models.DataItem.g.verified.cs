@@ -95,6 +95,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static DataItem FromBase(global::G.BaseModelCard? value) => new DataItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator DataItem(global::G.FTModelCard value) => new DataItem((global::G.FTModelCard?)value);
 
         /// <summary>
@@ -109,6 +114,11 @@ namespace G
         {
             FineTuned = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static DataItem FromFineTuned(global::G.FTModelCard? value) => new DataItem(value);
 
         /// <summary>
         /// 

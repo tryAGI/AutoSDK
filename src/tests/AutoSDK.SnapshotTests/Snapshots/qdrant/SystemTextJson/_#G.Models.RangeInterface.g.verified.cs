@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static RangeInterface FromRange(global::G.Range? value) => new RangeInterface(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator RangeInterface(global::G.DatetimeRange value) => new RangeInterface((global::G.DatetimeRange?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             Datetime = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static RangeInterface FromDatetime(global::G.DatetimeRange? value) => new RangeInterface(value);
 
         /// <summary>
         /// 

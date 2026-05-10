@@ -210,6 +210,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ValueFilter FromString(global::G.StringFilter? value) => new ValueFilter(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ValueFilter(global::G.NumberFilter value) => new ValueFilter((global::G.NumberFilter?)value);
 
         /// <summary>
@@ -224,6 +229,11 @@ namespace G
         {
             Number = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ValueFilter FromNumber(global::G.NumberFilter? value) => new ValueFilter(value);
 
         /// <summary>
         /// 
@@ -246,6 +256,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ValueFilter FromBoolean(global::G.BooleanFilter? value) => new ValueFilter(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ValueFilter(global::G.RangeFilter value) => new ValueFilter((global::G.RangeFilter?)value);
 
         /// <summary>
@@ -260,6 +275,11 @@ namespace G
         {
             Range = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ValueFilter FromRange(global::G.RangeFilter? value) => new ValueFilter(value);
 
         /// <summary>
         /// 
@@ -282,6 +302,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ValueFilter FromEnum(global::G.EnumFilter? value) => new ValueFilter(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ValueFilter(global::G.PresentFilter value) => new ValueFilter((global::G.PresentFilter?)value);
 
         /// <summary>
@@ -296,6 +321,11 @@ namespace G
         {
             Present = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ValueFilter FromPresent(global::G.PresentFilter? value) => new ValueFilter(value);
 
         /// <summary>
         /// 

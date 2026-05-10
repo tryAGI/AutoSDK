@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ImageReadEvent FromAgentBase(global::G.AgentEventBase? value) => new ImageReadEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ImageReadEvent(global::G.ImageReadEventVariant2 value) => new ImageReadEvent((global::G.ImageReadEventVariant2?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             ImageReadEventVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ImageReadEvent FromImageReadEventVariant2(global::G.ImageReadEventVariant2? value) => new ImageReadEvent(value);
 
         /// <summary>
         /// 

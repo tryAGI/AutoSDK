@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ResultPaginatedPurchasedCreditsString FromSuccess(global::G.ResultSuccessPaginatedPurchasedCredits? value) => new ResultPaginatedPurchasedCreditsString(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ResultPaginatedPurchasedCreditsString(global::G.ResultErrorString value) => new ResultPaginatedPurchasedCreditsString((global::G.ResultErrorString?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             Error = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ResultPaginatedPurchasedCreditsString FromError(global::G.ResultErrorString? value) => new ResultPaginatedPurchasedCreditsString(value);
 
         /// <summary>
         /// 

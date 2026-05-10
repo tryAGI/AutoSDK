@@ -95,6 +95,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Thinking FromDisabled(global::G.PromptAnthropicThinkingConfigDisabled? value) => new Thinking(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Thinking(global::G.PromptAnthropicThinkingConfigEnabled value) => new Thinking((global::G.PromptAnthropicThinkingConfigEnabled?)value);
 
         /// <summary>
@@ -109,6 +114,11 @@ namespace G
         {
             Enabled = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Thinking FromEnabled(global::G.PromptAnthropicThinkingConfigEnabled? value) => new Thinking(value);
 
         /// <summary>
         /// 

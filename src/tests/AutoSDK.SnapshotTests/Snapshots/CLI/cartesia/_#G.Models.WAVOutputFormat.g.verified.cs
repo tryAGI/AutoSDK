@@ -60,6 +60,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static WAVOutputFormat FromRawOutputFormat(global::G.RawOutputFormat? value) => new WAVOutputFormat(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public object? Object =>
             RawOutputFormat as object 
             ;

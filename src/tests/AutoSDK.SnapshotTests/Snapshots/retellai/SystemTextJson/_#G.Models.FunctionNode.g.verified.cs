@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static FunctionNode FromBase(global::G.NodeBase? value) => new FunctionNode(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator FunctionNode(global::G.FunctionNodeVariant2 value) => new FunctionNode((global::G.FunctionNodeVariant2?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             FunctionNodeVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static FunctionNode FromFunctionNodeVariant2(global::G.FunctionNodeVariant2? value) => new FunctionNode(value);
 
         /// <summary>
         /// 

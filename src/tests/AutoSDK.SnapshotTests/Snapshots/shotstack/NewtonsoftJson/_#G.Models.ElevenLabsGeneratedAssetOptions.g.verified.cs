@@ -68,6 +68,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ElevenLabsGeneratedAssetOptions FromTextToSpeech(global::G.ElevenLabsTextToSpeechOptions? value) => new ElevenLabsGeneratedAssetOptions(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public ElevenLabsGeneratedAssetOptions(
             global::G.ElevenLabsGeneratedAssetOptionsDiscriminatorType? type,
             global::G.ElevenLabsTextToSpeechOptions? textToSpeech

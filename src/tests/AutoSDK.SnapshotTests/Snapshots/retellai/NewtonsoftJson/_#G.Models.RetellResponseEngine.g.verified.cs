@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static RetellResponseEngine FromLm(global::G.ResponseEngineRetellLm? value) => new RetellResponseEngine(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator RetellResponseEngine(global::G.ResponseEngineConversationFlow value) => new RetellResponseEngine((global::G.ResponseEngineConversationFlow?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             ConversationFlow = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static RetellResponseEngine FromConversationFlow(global::G.ResponseEngineConversationFlow? value) => new RetellResponseEngine(value);
 
         /// <summary>
         /// 

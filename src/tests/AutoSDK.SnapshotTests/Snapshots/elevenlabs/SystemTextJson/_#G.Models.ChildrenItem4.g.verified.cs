@@ -425,6 +425,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ChildrenItem4 FromStringLiteral(global::G.ASTStringNodeOutput? value) => new ChildrenItem4(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChildrenItem4(global::G.ASTNumberNodeOutput value) => new ChildrenItem4((global::G.ASTNumberNodeOutput?)value);
 
         /// <summary>
@@ -439,6 +444,11 @@ namespace G
         {
             NumberLiteral = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChildrenItem4 FromNumberLiteral(global::G.ASTNumberNodeOutput? value) => new ChildrenItem4(value);
 
         /// <summary>
         /// 
@@ -461,6 +471,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ChildrenItem4 FromBooleanLiteral(global::G.ASTBooleanNodeOutput? value) => new ChildrenItem4(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChildrenItem4(global::G.ASTLLMNodeOutput value) => new ChildrenItem4((global::G.ASTLLMNodeOutput?)value);
 
         /// <summary>
@@ -475,6 +490,11 @@ namespace G
         {
             Llm = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChildrenItem4 FromLlm(global::G.ASTLLMNodeOutput? value) => new ChildrenItem4(value);
 
         /// <summary>
         /// 
@@ -497,6 +517,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ChildrenItem4 FromDynamicVariable(global::G.ASTDynamicVariableNodeOutput? value) => new ChildrenItem4(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChildrenItem4(global::G.ASTOrOperatorNodeOutput value) => new ChildrenItem4((global::G.ASTOrOperatorNodeOutput?)value);
 
         /// <summary>
@@ -511,6 +536,11 @@ namespace G
         {
             OrOperator = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChildrenItem4 FromOrOperator(global::G.ASTOrOperatorNodeOutput? value) => new ChildrenItem4(value);
 
         /// <summary>
         /// 
@@ -533,6 +563,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ChildrenItem4 FromAndOperator(global::G.ASTAndOperatorNodeOutput? value) => new ChildrenItem4(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChildrenItem4(global::G.ASTEqualsOperatorNodeOutput value) => new ChildrenItem4((global::G.ASTEqualsOperatorNodeOutput?)value);
 
         /// <summary>
@@ -547,6 +582,11 @@ namespace G
         {
             EqOperator = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChildrenItem4 FromEqOperator(global::G.ASTEqualsOperatorNodeOutput? value) => new ChildrenItem4(value);
 
         /// <summary>
         /// 
@@ -569,6 +609,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ChildrenItem4 FromNeqOperator(global::G.ASTNotEqualsOperatorNodeOutput? value) => new ChildrenItem4(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChildrenItem4(global::G.ASTGreaterThanOperatorNodeOutput value) => new ChildrenItem4((global::G.ASTGreaterThanOperatorNodeOutput?)value);
 
         /// <summary>
@@ -583,6 +628,11 @@ namespace G
         {
             GtOperator = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChildrenItem4 FromGtOperator(global::G.ASTGreaterThanOperatorNodeOutput? value) => new ChildrenItem4(value);
 
         /// <summary>
         /// 
@@ -605,6 +655,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ChildrenItem4 FromLtOperator(global::G.ASTLessThanOperatorNodeOutput? value) => new ChildrenItem4(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChildrenItem4(global::G.ASTGreaterThanOrEqualsOperatorNodeOutput value) => new ChildrenItem4((global::G.ASTGreaterThanOrEqualsOperatorNodeOutput?)value);
 
         /// <summary>
@@ -623,6 +678,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ChildrenItem4 FromGteOperator(global::G.ASTGreaterThanOrEqualsOperatorNodeOutput? value) => new ChildrenItem4(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChildrenItem4(global::G.ASTLessThanOrEqualsOperatorNodeOutput value) => new ChildrenItem4((global::G.ASTLessThanOrEqualsOperatorNodeOutput?)value);
 
         /// <summary>
@@ -637,6 +697,11 @@ namespace G
         {
             LteOperator = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChildrenItem4 FromLteOperator(global::G.ASTLessThanOrEqualsOperatorNodeOutput? value) => new ChildrenItem4(value);
 
         /// <summary>
         /// 

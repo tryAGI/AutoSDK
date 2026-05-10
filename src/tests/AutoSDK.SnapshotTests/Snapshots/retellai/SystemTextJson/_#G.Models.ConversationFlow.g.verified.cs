@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ConversationFlow FromOverride(global::G.ConversationFlowOverride? value) => new ConversationFlow(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ConversationFlow(global::G.ConversationFlowVariant2 value) => new ConversationFlow((global::G.ConversationFlowVariant2?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             ConversationFlowVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ConversationFlow FromConversationFlowVariant2(global::G.ConversationFlowVariant2? value) => new ConversationFlow(value);
 
         /// <summary>
         /// 

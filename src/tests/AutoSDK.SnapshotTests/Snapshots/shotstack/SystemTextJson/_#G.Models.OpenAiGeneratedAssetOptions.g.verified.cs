@@ -68,6 +68,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static OpenAiGeneratedAssetOptions FromTextGenerator(global::G.OpenAiTextGeneratorOptions? value) => new OpenAiGeneratedAssetOptions(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public OpenAiGeneratedAssetOptions(
             global::G.OpenAiGeneratedAssetOptionsDiscriminatorType? type,
             global::G.OpenAiTextGeneratorOptions? textGenerator

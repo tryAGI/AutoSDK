@@ -120,6 +120,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static DatasetFilterNode FromPickLeafRequestOrPromptsVersions(global::G.PickFilterLeafRequestOrPromptsVersions? value) => new DatasetFilterNode(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator DatasetFilterNode(global::G.DatasetFilterBranch value) => new DatasetFilterNode((global::G.DatasetFilterBranch?)value);
 
         /// <summary>
@@ -138,6 +143,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static DatasetFilterNode FromBranch(global::G.DatasetFilterBranch? value) => new DatasetFilterNode(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator DatasetFilterNode(global::G.DatasetFilterNodeEnum value) => new DatasetFilterNode((global::G.DatasetFilterNodeEnum?)value);
 
         /// <summary>
@@ -152,6 +162,11 @@ namespace G
         {
             Enum = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static DatasetFilterNode FromEnum(global::G.DatasetFilterNodeEnum? value) => new DatasetFilterNode(value);
 
         /// <summary>
         /// 

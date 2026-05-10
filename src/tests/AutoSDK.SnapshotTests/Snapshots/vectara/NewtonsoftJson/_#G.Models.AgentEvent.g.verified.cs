@@ -468,6 +468,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static AgentEvent FromInputMessage(global::G.InputMessageEvent? value) => new AgentEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator AgentEvent(global::G.SkillLoadEvent value) => new AgentEvent((global::G.SkillLoadEvent?)value);
 
         /// <summary>
@@ -482,6 +487,11 @@ namespace G
         {
             SkillLoad = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static AgentEvent FromSkillLoad(global::G.SkillLoadEvent? value) => new AgentEvent(value);
 
         /// <summary>
         /// 
@@ -504,6 +514,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static AgentEvent FromArtifactUpload(global::G.ArtifactUploadEvent? value) => new AgentEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator AgentEvent(global::G.ToolInputEvent value) => new AgentEvent((global::G.ToolInputEvent?)value);
 
         /// <summary>
@@ -518,6 +533,11 @@ namespace G
         {
             ToolInput = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static AgentEvent FromToolInput(global::G.ToolInputEvent? value) => new AgentEvent(value);
 
         /// <summary>
         /// 
@@ -540,6 +560,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static AgentEvent FromToolOutput(global::G.ToolOutputEvent? value) => new AgentEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator AgentEvent(global::G.ThinkingEvent value) => new AgentEvent((global::G.ThinkingEvent?)value);
 
         /// <summary>
@@ -554,6 +579,11 @@ namespace G
         {
             Thinking = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static AgentEvent FromThinking(global::G.ThinkingEvent? value) => new AgentEvent(value);
 
         /// <summary>
         /// 
@@ -576,6 +606,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static AgentEvent FromAgentOutput(global::G.AgentOutputEvent? value) => new AgentEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator AgentEvent(global::G.StructuredOutputEvent value) => new AgentEvent((global::G.StructuredOutputEvent?)value);
 
         /// <summary>
@@ -590,6 +625,11 @@ namespace G
         {
             StructuredOutput = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static AgentEvent FromStructuredOutput(global::G.StructuredOutputEvent? value) => new AgentEvent(value);
 
         /// <summary>
         /// 
@@ -612,6 +652,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static AgentEvent FromContextLimitExceeded(global::G.ContextLimitExceededEvent? value) => new AgentEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator AgentEvent(global::G.StepTransitionLimitExceededEvent value) => new AgentEvent((global::G.StepTransitionLimitExceededEvent?)value);
 
         /// <summary>
@@ -626,6 +671,11 @@ namespace G
         {
             StepTransitionLimitExceeded = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static AgentEvent FromStepTransitionLimitExceeded(global::G.StepTransitionLimitExceededEvent? value) => new AgentEvent(value);
 
         /// <summary>
         /// 
@@ -648,6 +698,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static AgentEvent FromSessionInterrupted(global::G.SessionInterruptedEvent? value) => new AgentEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator AgentEvent(global::G.ImageReadEvent value) => new AgentEvent((global::G.ImageReadEvent?)value);
 
         /// <summary>
@@ -662,6 +717,11 @@ namespace G
         {
             ImageRead = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static AgentEvent FromImageRead(global::G.ImageReadEvent? value) => new AgentEvent(value);
 
         /// <summary>
         /// 
@@ -684,6 +744,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static AgentEvent FromStepTransition(global::G.StepTransitionEvent? value) => new AgentEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator AgentEvent(global::G.CompactionEvent value) => new AgentEvent((global::G.CompactionEvent?)value);
 
         /// <summary>
@@ -698,6 +763,11 @@ namespace G
         {
             Compaction = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static AgentEvent FromCompaction(global::G.CompactionEvent? value) => new AgentEvent(value);
 
         /// <summary>
         /// 

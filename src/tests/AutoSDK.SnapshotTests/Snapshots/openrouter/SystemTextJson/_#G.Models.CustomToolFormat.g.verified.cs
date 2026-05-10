@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static CustomToolFormat FromCustomToolFormat0(global::G.CustomToolFormat0? value) => new CustomToolFormat(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator CustomToolFormat(global::G.CustomToolFormat1 value) => new CustomToolFormat((global::G.CustomToolFormat1?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             CustomToolFormat1 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static CustomToolFormat FromCustomToolFormat1(global::G.CustomToolFormat1? value) => new CustomToolFormat(value);
 
         /// <summary>
         /// 

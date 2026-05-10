@@ -120,6 +120,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static OutputMessageStatus FromOutputMessageStatus0(global::G.OutputMessageStatus0? value) => new OutputMessageStatus(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator OutputMessageStatus(global::G.OutputMessageStatus1 value) => new OutputMessageStatus((global::G.OutputMessageStatus1?)value);
 
         /// <summary>
@@ -138,6 +143,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static OutputMessageStatus FromOutputMessageStatus1(global::G.OutputMessageStatus1? value) => new OutputMessageStatus(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator OutputMessageStatus(global::G.OutputMessageStatus2 value) => new OutputMessageStatus((global::G.OutputMessageStatus2?)value);
 
         /// <summary>
@@ -152,6 +162,11 @@ namespace G
         {
             OutputMessageStatus2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static OutputMessageStatus FromOutputMessageStatus2(global::G.OutputMessageStatus2? value) => new OutputMessageStatus(value);
 
         /// <summary>
         /// 

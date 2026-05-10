@@ -91,6 +91,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static TranscriptWebhookNotification FromReady(global::G.TranscriptReadyNotification? value) => new TranscriptWebhookNotification(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator TranscriptWebhookNotification(global::G.RedactedAudioNotification value) => new TranscriptWebhookNotification((global::G.RedactedAudioNotification?)value);
 
         /// <summary>
@@ -105,6 +110,11 @@ namespace G
         {
             RedactedAudio = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static TranscriptWebhookNotification FromRedactedAudio(global::G.RedactedAudioNotification? value) => new TranscriptWebhookNotification(value);
 
         /// <summary>
         /// 

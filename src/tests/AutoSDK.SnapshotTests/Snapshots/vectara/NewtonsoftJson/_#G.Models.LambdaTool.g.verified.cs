@@ -92,6 +92,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static LambdaTool FromBase(global::G.ToolBase? value) => new LambdaTool(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator LambdaTool(global::G.LambdaToolVariant2 value) => new LambdaTool((global::G.LambdaToolVariant2?)value);
 
         /// <summary>
@@ -106,6 +111,11 @@ namespace G
         {
             LambdaToolVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static LambdaTool FromLambdaToolVariant2(global::G.LambdaToolVariant2? value) => new LambdaTool(value);
 
         /// <summary>
         /// 

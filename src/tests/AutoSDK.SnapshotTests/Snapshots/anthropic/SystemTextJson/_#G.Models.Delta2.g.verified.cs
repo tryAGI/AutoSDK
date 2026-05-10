@@ -185,6 +185,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Delta2 FromTextDelta(global::G.TextContentBlockDelta? value) => new Delta2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Delta2(global::G.InputJsonContentBlockDelta value) => new Delta2((global::G.InputJsonContentBlockDelta?)value);
 
         /// <summary>
@@ -199,6 +204,11 @@ namespace G
         {
             InputJsonDelta = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Delta2 FromInputJsonDelta(global::G.InputJsonContentBlockDelta? value) => new Delta2(value);
 
         /// <summary>
         /// 
@@ -221,6 +231,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Delta2 FromCitationsDelta(global::G.CitationsDelta? value) => new Delta2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Delta2(global::G.ThinkingContentBlockDelta value) => new Delta2((global::G.ThinkingContentBlockDelta?)value);
 
         /// <summary>
@@ -239,6 +254,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Delta2 FromThinkingDelta(global::G.ThinkingContentBlockDelta? value) => new Delta2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Delta2(global::G.SignatureContentBlockDelta value) => new Delta2((global::G.SignatureContentBlockDelta?)value);
 
         /// <summary>
@@ -253,6 +273,11 @@ namespace G
         {
             SignatureDelta = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Delta2 FromSignatureDelta(global::G.SignatureContentBlockDelta? value) => new Delta2(value);
 
         /// <summary>
         /// 

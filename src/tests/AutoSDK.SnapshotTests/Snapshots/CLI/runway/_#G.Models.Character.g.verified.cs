@@ -95,6 +95,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Character FromImage(global::G.CreateCharacterPerformanceRequestActTwoCharacterCharacterImage? value) => new Character(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Character(global::G.CreateCharacterPerformanceRequestActTwoCharacterCharacterVideo value) => new Character((global::G.CreateCharacterPerformanceRequestActTwoCharacterCharacterVideo?)value);
 
         /// <summary>
@@ -109,6 +114,11 @@ namespace G
         {
             Video = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Character FromVideo(global::G.CreateCharacterPerformanceRequestActTwoCharacterCharacterVideo? value) => new Character(value);
 
         /// <summary>
         /// 

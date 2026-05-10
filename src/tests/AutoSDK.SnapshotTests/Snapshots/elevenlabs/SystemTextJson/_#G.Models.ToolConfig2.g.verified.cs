@@ -157,6 +157,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ToolConfig2 FromWebhook(global::G.WebhookToolConfigOutput? value) => new ToolConfig2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ToolConfig2(global::G.ClientToolConfigOutput value) => new ToolConfig2((global::G.ClientToolConfigOutput?)value);
 
         /// <summary>
@@ -171,6 +176,11 @@ namespace G
         {
             Client = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ToolConfig2 FromClient(global::G.ClientToolConfigOutput? value) => new ToolConfig2(value);
 
         /// <summary>
         /// 
@@ -193,6 +203,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ToolConfig2 FromSystem(global::G.SystemToolConfigOutput? value) => new ToolConfig2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ToolConfig2(global::G.MCPToolConfigOutput value) => new ToolConfig2((global::G.MCPToolConfigOutput?)value);
 
         /// <summary>
@@ -207,6 +222,11 @@ namespace G
         {
             Mcp = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ToolConfig2 FromMcp(global::G.MCPToolConfigOutput? value) => new ToolConfig2(value);
 
         /// <summary>
         /// 

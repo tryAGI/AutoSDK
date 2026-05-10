@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static UsageLimitsPolicyResponse FromUsageLimitsPolicy(global::G.UsageLimitsPolicy? value) => new UsageLimitsPolicyResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator UsageLimitsPolicyResponse(global::G.UsageLimitsPolicyResponseVariant2 value) => new UsageLimitsPolicyResponse((global::G.UsageLimitsPolicyResponseVariant2?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             UsageLimitsPolicyResponseVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static UsageLimitsPolicyResponse FromUsageLimitsPolicyResponseVariant2(global::G.UsageLimitsPolicyResponseVariant2? value) => new UsageLimitsPolicyResponse(value);
 
         /// <summary>
         /// 

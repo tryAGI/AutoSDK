@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ModelIdsResponses FromShared(global::G.ModelIdsShared? value) => new ModelIdsResponses(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ModelIdsResponses(global::G.ModelIdsResponsesEnum value) => new ModelIdsResponses((global::G.ModelIdsResponsesEnum?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             ResponsesOnlyModel = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ModelIdsResponses FromResponsesOnlyModel(global::G.ModelIdsResponsesEnum? value) => new ModelIdsResponses(value);
 
         /// <summary>
         /// 

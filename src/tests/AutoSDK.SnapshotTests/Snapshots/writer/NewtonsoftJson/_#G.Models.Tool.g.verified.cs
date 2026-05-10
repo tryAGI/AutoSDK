@@ -215,6 +215,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Tool FromFunction(global::G.FunctionTool? value) => new Tool(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Tool(global::G.GraphTool value) => new Tool((global::G.GraphTool?)value);
 
         /// <summary>
@@ -229,6 +234,11 @@ namespace G
         {
             Graph = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Tool FromGraph(global::G.GraphTool? value) => new Tool(value);
 
         /// <summary>
         /// 
@@ -251,6 +261,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Tool FromLlm(global::G.LlmTool? value) => new Tool(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Tool(global::G.TranslationTool value) => new Tool((global::G.TranslationTool?)value);
 
         /// <summary>
@@ -265,6 +280,11 @@ namespace G
         {
             Translation = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Tool FromTranslation(global::G.TranslationTool? value) => new Tool(value);
 
         /// <summary>
         /// 
@@ -287,6 +307,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Tool FromVision(global::G.VisionTool? value) => new Tool(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Tool(global::G.WebSearchTool value) => new Tool((global::G.WebSearchTool?)value);
 
         /// <summary>
@@ -301,6 +326,11 @@ namespace G
         {
             WebSearch = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Tool FromWebSearch(global::G.WebSearchTool? value) => new Tool(value);
 
         /// <summary>
         /// 

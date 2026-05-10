@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static CustomFieldFilter FromValue(global::G.ValueFilter? value) => new CustomFieldFilter(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator CustomFieldFilter(global::G.CustomFieldFilterVariant2 value) => new CustomFieldFilter((global::G.CustomFieldFilterVariant2?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             CustomFieldFilterVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static CustomFieldFilter FromCustomFieldFilterVariant2(global::G.CustomFieldFilterVariant2? value) => new CustomFieldFilter(value);
 
         /// <summary>
         /// 

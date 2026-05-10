@@ -120,6 +120,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static FileSearchServerToolFilters FromFileSearchServerToolFilters0(global::G.FileSearchServerToolFilters0? value) => new FileSearchServerToolFilters(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator FileSearchServerToolFilters(global::G.CompoundFilter value) => new FileSearchServerToolFilters((global::G.CompoundFilter?)value);
 
         /// <summary>
@@ -134,6 +139,11 @@ namespace G
         {
             CompoundFilter = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static FileSearchServerToolFilters FromCompoundFilter(global::G.CompoundFilter? value) => new FileSearchServerToolFilters(value);
 
         /// <summary>
         /// 

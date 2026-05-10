@@ -94,6 +94,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static AssistantsApiToolChoiceOption FromEnum(global::G.AssistantsApiToolChoiceOptionEnum? value) => new AssistantsApiToolChoiceOption(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator AssistantsApiToolChoiceOption(global::G.AssistantsNamedToolChoice value) => new AssistantsApiToolChoiceOption((global::G.AssistantsNamedToolChoice?)value);
 
         /// <summary>
@@ -108,6 +113,11 @@ namespace G
         {
             Named = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static AssistantsApiToolChoiceOption FromNamed(global::G.AssistantsNamedToolChoice? value) => new AssistantsApiToolChoiceOption(value);
 
         /// <summary>
         /// 

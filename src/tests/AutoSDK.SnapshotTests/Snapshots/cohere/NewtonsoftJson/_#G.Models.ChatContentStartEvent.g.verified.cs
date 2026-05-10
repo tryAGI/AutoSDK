@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ChatContentStartEvent FromStreamType(global::G.ChatStreamEventType? value) => new ChatContentStartEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChatContentStartEvent(global::G.ChatContentStartEvent6xvlq1 value) => new ChatContentStartEvent((global::G.ChatContentStartEvent6xvlq1?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             Event6xvlq1 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChatContentStartEvent FromEvent6xvlq1(global::G.ChatContentStartEvent6xvlq1? value) => new ChatContentStartEvent(value);
 
         /// <summary>
         /// 

@@ -450,6 +450,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Model FromModelVariant1(string? value) => new Model(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public Model(
             string? modelVariant1,
             string? modelVariant2,

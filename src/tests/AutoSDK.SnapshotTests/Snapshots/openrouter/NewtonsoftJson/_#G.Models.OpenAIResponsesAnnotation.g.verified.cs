@@ -120,6 +120,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static OpenAIResponsesAnnotation FromFileCitation(global::G.FileCitation? value) => new OpenAIResponsesAnnotation(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator OpenAIResponsesAnnotation(global::G.URLCitation value) => new OpenAIResponsesAnnotation((global::G.URLCitation?)value);
 
         /// <summary>
@@ -138,6 +143,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static OpenAIResponsesAnnotation FromURLCitation(global::G.URLCitation? value) => new OpenAIResponsesAnnotation(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator OpenAIResponsesAnnotation(global::G.FilePath value) => new OpenAIResponsesAnnotation((global::G.FilePath?)value);
 
         /// <summary>
@@ -152,6 +162,11 @@ namespace G
         {
             FilePath = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static OpenAIResponsesAnnotation FromFilePath(global::G.FilePath? value) => new OpenAIResponsesAnnotation(value);
 
         /// <summary>
         /// 

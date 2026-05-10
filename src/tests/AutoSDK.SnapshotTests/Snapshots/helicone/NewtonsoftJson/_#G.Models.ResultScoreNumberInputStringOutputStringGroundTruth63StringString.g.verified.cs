@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ResultScoreNumberInputStringOutputStringGroundTruth63StringString FromSuccess(global::G.ResultSuccessScoreNumberInputStringOutputStringGroundTruth63String? value) => new ResultScoreNumberInputStringOutputStringGroundTruth63StringString(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ResultScoreNumberInputStringOutputStringGroundTruth63StringString(global::G.ResultErrorString value) => new ResultScoreNumberInputStringOutputStringGroundTruth63StringString((global::G.ResultErrorString?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             Error = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ResultScoreNumberInputStringOutputStringGroundTruth63StringString FromError(global::G.ResultErrorString? value) => new ResultScoreNumberInputStringOutputStringGroundTruth63StringString(value);
 
         /// <summary>
         /// 

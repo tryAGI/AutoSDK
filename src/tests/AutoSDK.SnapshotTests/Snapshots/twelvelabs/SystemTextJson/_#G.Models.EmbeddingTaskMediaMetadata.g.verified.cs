@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static EmbeddingTaskMediaMetadata FromEmbeddingAudioMetadata(global::G.EmbeddingAudioMetadata? value) => new EmbeddingTaskMediaMetadata(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator EmbeddingTaskMediaMetadata(global::G.EmbeddingVideoMetadata value) => new EmbeddingTaskMediaMetadata((global::G.EmbeddingVideoMetadata?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             EmbeddingVideoMetadata = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static EmbeddingTaskMediaMetadata FromEmbeddingVideoMetadata(global::G.EmbeddingVideoMetadata? value) => new EmbeddingTaskMediaMetadata(value);
 
         /// <summary>
         /// 

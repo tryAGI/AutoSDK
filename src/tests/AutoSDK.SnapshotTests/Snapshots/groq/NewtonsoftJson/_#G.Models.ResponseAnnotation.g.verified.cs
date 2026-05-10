@@ -95,6 +95,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ResponseAnnotation FromFileCitation(global::G.ResponseFileCitation? value) => new ResponseAnnotation(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ResponseAnnotation(global::G.ResponseUrlCitation value) => new ResponseAnnotation((global::G.ResponseUrlCitation?)value);
 
         /// <summary>
@@ -109,6 +114,11 @@ namespace G
         {
             UrlCitation = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ResponseAnnotation FromUrlCitation(global::G.ResponseUrlCitation? value) => new ResponseAnnotation(value);
 
         /// <summary>
         /// 

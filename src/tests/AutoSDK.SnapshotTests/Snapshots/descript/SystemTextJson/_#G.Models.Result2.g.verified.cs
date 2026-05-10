@@ -95,6 +95,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Result2 FromSuccess(global::G.AgentSuccessResult? value) => new Result2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Result2(global::G.AgentErrorResult value) => new Result2((global::G.AgentErrorResult?)value);
 
         /// <summary>
@@ -109,6 +114,11 @@ namespace G
         {
             Error = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Result2 FromError(global::G.AgentErrorResult? value) => new Result2(value);
 
         /// <summary>
         /// 

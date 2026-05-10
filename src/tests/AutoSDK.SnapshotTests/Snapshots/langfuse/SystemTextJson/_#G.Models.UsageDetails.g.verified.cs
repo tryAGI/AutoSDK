@@ -120,6 +120,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static UsageDetails FromUsageDetailsVariant1(global::System.Collections.Generic.Dictionary<string, int>? value) => new UsageDetails(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator UsageDetails(global::G.OpenAICompletionUsageSchema value) => new UsageDetails((global::G.OpenAICompletionUsageSchema?)value);
 
         /// <summary>
@@ -138,6 +143,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static UsageDetails FromOpenAICompletionUsageSchema(global::G.OpenAICompletionUsageSchema? value) => new UsageDetails(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator UsageDetails(global::G.OpenAIResponseUsageSchema value) => new UsageDetails((global::G.OpenAIResponseUsageSchema?)value);
 
         /// <summary>
@@ -152,6 +162,11 @@ namespace G
         {
             OpenAIResponseUsageSchema = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static UsageDetails FromOpenAIResponseUsageSchema(global::G.OpenAIResponseUsageSchema? value) => new UsageDetails(value);
 
         /// <summary>
         /// 

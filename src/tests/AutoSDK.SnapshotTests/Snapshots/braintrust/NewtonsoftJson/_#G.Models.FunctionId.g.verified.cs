@@ -240,6 +240,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static FunctionId FromId1(global::G.FunctionIdFunctionId1? value) => new FunctionId(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator FunctionId(global::G.FunctionIdProjectSlug value) => new FunctionId((global::G.FunctionIdProjectSlug?)value);
 
         /// <summary>
@@ -254,6 +259,11 @@ namespace G
         {
             ProjectSlug = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static FunctionId FromProjectSlug(global::G.FunctionIdProjectSlug? value) => new FunctionId(value);
 
         /// <summary>
         /// 
@@ -276,6 +286,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static FunctionId FromGlobalFunction(global::G.FunctionIdGlobalFunction? value) => new FunctionId(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator FunctionId(global::G.FunctionIdPromptSessionId value) => new FunctionId((global::G.FunctionIdPromptSessionId?)value);
 
         /// <summary>
@@ -290,6 +305,11 @@ namespace G
         {
             PromptSessionId = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static FunctionId FromPromptSessionId(global::G.FunctionIdPromptSessionId? value) => new FunctionId(value);
 
         /// <summary>
         /// 
@@ -312,6 +332,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static FunctionId FromInlineCode(global::G.FunctionIdInlineCode? value) => new FunctionId(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator FunctionId(global::G.FunctionIdInlineFunction value) => new FunctionId((global::G.FunctionIdInlineFunction?)value);
 
         /// <summary>
@@ -330,6 +355,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static FunctionId FromInlineFunction(global::G.FunctionIdInlineFunction? value) => new FunctionId(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator FunctionId(global::G.FunctionIdInlinePrompt value) => new FunctionId((global::G.FunctionIdInlinePrompt?)value);
 
         /// <summary>
@@ -344,6 +374,11 @@ namespace G
         {
             InlinePrompt = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static FunctionId FromInlinePrompt(global::G.FunctionIdInlinePrompt? value) => new FunctionId(value);
 
         /// <summary>
         /// 

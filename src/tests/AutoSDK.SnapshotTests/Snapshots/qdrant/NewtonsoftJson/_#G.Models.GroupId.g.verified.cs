@@ -120,6 +120,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static GroupId FromGroupIdVariant1(string? value) => new GroupId(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator GroupId(int value) => new GroupId((int?)value);
 
         /// <summary>
@@ -138,6 +143,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static GroupId FromGroupIdVariant2(int? value) => new GroupId(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator GroupId(long value) => new GroupId((long?)value);
 
         /// <summary>
@@ -152,6 +162,11 @@ namespace G
         {
             GroupIdVariant3 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static GroupId FromGroupIdVariant3(long? value) => new GroupId(value);
 
         /// <summary>
         /// 

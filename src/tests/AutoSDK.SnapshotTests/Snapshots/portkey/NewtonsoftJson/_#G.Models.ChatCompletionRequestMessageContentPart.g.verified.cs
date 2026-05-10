@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ChatCompletionRequestMessageContentPart FromTextContentPart(global::G.ChatCompletionRequestMessageContentPartText? value) => new ChatCompletionRequestMessageContentPart(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChatCompletionRequestMessageContentPart(global::G.ChatCompletionRequestMessageContentPartImage value) => new ChatCompletionRequestMessageContentPart((global::G.ChatCompletionRequestMessageContentPartImage?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             ImageContentPart = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChatCompletionRequestMessageContentPart FromImageContentPart(global::G.ChatCompletionRequestMessageContentPartImage? value) => new ChatCompletionRequestMessageContentPart(value);
 
         /// <summary>
         /// 

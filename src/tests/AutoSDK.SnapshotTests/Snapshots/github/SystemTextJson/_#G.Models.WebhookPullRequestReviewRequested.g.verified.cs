@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static WebhookPullRequestReviewRequested FromWebhookPullRequestReviewRequestedVariant1(global::G.WebhookPullRequestReviewRequestedVariant1? value) => new WebhookPullRequestReviewRequested(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator WebhookPullRequestReviewRequested(global::G.WebhookPullRequestReviewRequestedVariant2 value) => new WebhookPullRequestReviewRequested((global::G.WebhookPullRequestReviewRequestedVariant2?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             WebhookPullRequestReviewRequestedVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static WebhookPullRequestReviewRequested FromWebhookPullRequestReviewRequestedVariant2(global::G.WebhookPullRequestReviewRequestedVariant2? value) => new WebhookPullRequestReviewRequested(value);
 
         /// <summary>
         /// 

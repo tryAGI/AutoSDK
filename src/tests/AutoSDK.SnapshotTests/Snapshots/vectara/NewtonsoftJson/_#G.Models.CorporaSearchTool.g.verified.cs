@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static CorporaSearchTool FromBase(global::G.ToolBase? value) => new CorporaSearchTool(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator CorporaSearchTool(global::G.CorporaSearchToolVariant2 value) => new CorporaSearchTool((global::G.CorporaSearchToolVariant2?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             CorporaSearchToolVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static CorporaSearchTool FromCorporaSearchToolVariant2(global::G.CorporaSearchToolVariant2? value) => new CorporaSearchTool(value);
 
         /// <summary>
         /// 

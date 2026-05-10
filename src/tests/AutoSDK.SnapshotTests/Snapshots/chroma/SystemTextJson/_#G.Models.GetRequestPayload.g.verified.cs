@@ -91,6 +91,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static GetRequestPayload FromRawWhereFields(global::G.RawWhereFields? value) => new GetRequestPayload(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator GetRequestPayload(global::G.GetRequestPayloadVariant2 value) => new GetRequestPayload((global::G.GetRequestPayloadVariant2?)value);
 
         /// <summary>
@@ -105,6 +110,11 @@ namespace G
         {
             GetRequestPayloadVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static GetRequestPayload FromGetRequestPayloadVariant2(global::G.GetRequestPayloadVariant2? value) => new GetRequestPayload(value);
 
         /// <summary>
         /// 

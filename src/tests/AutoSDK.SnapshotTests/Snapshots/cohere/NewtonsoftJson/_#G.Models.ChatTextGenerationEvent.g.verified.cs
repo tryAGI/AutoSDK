@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ChatTextGenerationEvent FromStream(global::G.ChatStreamEvent? value) => new ChatTextGenerationEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChatTextGenerationEvent(global::G.ChatTextGenerationEvent8yyj22 value) => new ChatTextGenerationEvent((global::G.ChatTextGenerationEvent8yyj22?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             Event8yyj22 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChatTextGenerationEvent FromEvent8yyj22(global::G.ChatTextGenerationEvent8yyj22? value) => new ChatTextGenerationEvent(value);
 
         /// <summary>
         /// 

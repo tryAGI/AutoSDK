@@ -120,6 +120,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static IndexesIndexIdIndexedAssetsGetParametersUserMetadataSchema FromIndexesIndexIdIndexedAssetsGetParametersUserMetadataSchemaVariant1(string? value) => new IndexesIndexIdIndexedAssetsGetParametersUserMetadataSchema(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator IndexesIndexIdIndexedAssetsGetParametersUserMetadataSchema(double value) => new IndexesIndexIdIndexedAssetsGetParametersUserMetadataSchema((double?)value);
 
         /// <summary>
@@ -138,6 +143,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static IndexesIndexIdIndexedAssetsGetParametersUserMetadataSchema FromIndexesIndexIdIndexedAssetsGetParametersUserMetadataSchemaVariant2(double? value) => new IndexesIndexIdIndexedAssetsGetParametersUserMetadataSchema(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator IndexesIndexIdIndexedAssetsGetParametersUserMetadataSchema(bool value) => new IndexesIndexIdIndexedAssetsGetParametersUserMetadataSchema((bool?)value);
 
         /// <summary>
@@ -152,6 +162,11 @@ namespace G
         {
             IndexesIndexIdIndexedAssetsGetParametersUserMetadataSchemaVariant3 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static IndexesIndexIdIndexedAssetsGetParametersUserMetadataSchema FromIndexesIndexIdIndexedAssetsGetParametersUserMetadataSchemaVariant3(bool? value) => new IndexesIndexIdIndexedAssetsGetParametersUserMetadataSchema(value);
 
         /// <summary>
         /// 

@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ResultHqlSavedQueryArrayString FromSuccess(global::G.ResultSuccessHqlSavedQueryArray? value) => new ResultHqlSavedQueryArrayString(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ResultHqlSavedQueryArrayString(global::G.ResultErrorString value) => new ResultHqlSavedQueryArrayString((global::G.ResultErrorString?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             Error = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ResultHqlSavedQueryArrayString FromError(global::G.ResultErrorString? value) => new ResultHqlSavedQueryArrayString(value);
 
         /// <summary>
         /// 

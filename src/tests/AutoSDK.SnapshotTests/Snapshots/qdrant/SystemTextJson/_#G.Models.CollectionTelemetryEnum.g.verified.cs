@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static CollectionTelemetryEnum FromCollectionTelemetry(global::G.CollectionTelemetry? value) => new CollectionTelemetryEnum(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator CollectionTelemetryEnum(global::G.CollectionsAggregatedTelemetry value) => new CollectionTelemetryEnum((global::G.CollectionsAggregatedTelemetry?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             CollectionsAggregated = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static CollectionTelemetryEnum FromCollectionsAggregated(global::G.CollectionsAggregatedTelemetry? value) => new CollectionTelemetryEnum(value);
 
         /// <summary>
         /// 

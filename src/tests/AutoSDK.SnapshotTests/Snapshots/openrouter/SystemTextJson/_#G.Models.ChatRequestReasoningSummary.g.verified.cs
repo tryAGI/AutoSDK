@@ -120,6 +120,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ChatRequestReasoningSummary FromChatReasoningSummaryVerbosityEnum(global::G.ChatReasoningSummaryVerbosityEnum? value) => new ChatRequestReasoningSummary(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public ChatRequestReasoningSummary(
             global::G.ChatReasoningSummaryVerbosityEnum? chatReasoningSummaryVerbosityEnum,
             object? chatRequestReasoningSummaryVariant2,

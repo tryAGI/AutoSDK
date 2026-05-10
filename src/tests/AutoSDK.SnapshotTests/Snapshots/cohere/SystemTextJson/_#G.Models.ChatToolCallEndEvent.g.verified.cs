@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ChatToolCallEndEvent FromStreamType(global::G.ChatStreamEventType? value) => new ChatToolCallEndEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChatToolCallEndEvent(global::G.ChatToolCallEndEventT6ph9s value) => new ChatToolCallEndEvent((global::G.ChatToolCallEndEventT6ph9s?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             T6ph9s = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChatToolCallEndEvent FromT6ph9s(global::G.ChatToolCallEndEventT6ph9s? value) => new ChatToolCallEndEvent(value);
 
         /// <summary>
         /// 

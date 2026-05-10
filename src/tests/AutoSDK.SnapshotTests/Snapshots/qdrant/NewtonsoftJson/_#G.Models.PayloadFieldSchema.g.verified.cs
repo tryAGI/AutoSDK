@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static PayloadFieldSchema FromType(global::G.PayloadSchemaType? value) => new PayloadFieldSchema(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator PayloadFieldSchema(global::G.PayloadSchemaParams value) => new PayloadFieldSchema((global::G.PayloadSchemaParams?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             Params = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static PayloadFieldSchema FromParams(global::G.PayloadSchemaParams? value) => new PayloadFieldSchema(value);
 
         /// <summary>
         /// 

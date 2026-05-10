@@ -120,6 +120,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static AliasOperations FromCreateOperation(global::G.CreateAliasOperation? value) => new AliasOperations(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator AliasOperations(global::G.DeleteAliasOperation value) => new AliasOperations((global::G.DeleteAliasOperation?)value);
 
         /// <summary>
@@ -138,6 +143,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static AliasOperations FromDeleteOperation(global::G.DeleteAliasOperation? value) => new AliasOperations(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator AliasOperations(global::G.RenameAliasOperation value) => new AliasOperations((global::G.RenameAliasOperation?)value);
 
         /// <summary>
@@ -152,6 +162,11 @@ namespace G
         {
             RenameOperation = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static AliasOperations FromRenameOperation(global::G.RenameAliasOperation? value) => new AliasOperations(value);
 
         /// <summary>
         /// 

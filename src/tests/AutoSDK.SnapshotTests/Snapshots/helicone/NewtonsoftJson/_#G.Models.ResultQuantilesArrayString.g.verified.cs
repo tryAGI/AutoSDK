@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ResultQuantilesArrayString FromSuccess(global::G.ResultSuccessQuantilesArray? value) => new ResultQuantilesArrayString(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ResultQuantilesArrayString(global::G.ResultErrorString value) => new ResultQuantilesArrayString((global::G.ResultErrorString?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             Error = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ResultQuantilesArrayString FromError(global::G.ResultErrorString? value) => new ResultQuantilesArrayString(value);
 
         /// <summary>
         /// 

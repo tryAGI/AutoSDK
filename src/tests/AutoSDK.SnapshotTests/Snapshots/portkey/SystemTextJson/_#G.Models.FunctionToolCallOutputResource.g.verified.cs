@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static FunctionToolCallOutputResource FromFunctionToolCallOutput(global::G.FunctionToolCallOutput? value) => new FunctionToolCallOutputResource(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator FunctionToolCallOutputResource(global::G.FunctionToolCallOutputResourceVariant2 value) => new FunctionToolCallOutputResource((global::G.FunctionToolCallOutputResourceVariant2?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             FunctionToolCallOutputResourceVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static FunctionToolCallOutputResource FromFunctionToolCallOutputResourceVariant2(global::G.FunctionToolCallOutputResourceVariant2? value) => new FunctionToolCallOutputResource(value);
 
         /// <summary>
         /// 

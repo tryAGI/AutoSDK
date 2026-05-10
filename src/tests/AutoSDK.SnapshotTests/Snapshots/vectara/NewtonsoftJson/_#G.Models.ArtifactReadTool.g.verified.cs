@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ArtifactReadTool FromBase(global::G.ToolBase? value) => new ArtifactReadTool(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ArtifactReadTool(global::G.ArtifactReadToolVariant2 value) => new ArtifactReadTool((global::G.ArtifactReadToolVariant2?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             ArtifactReadToolVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ArtifactReadTool FromArtifactReadToolVariant2(global::G.ArtifactReadToolVariant2? value) => new ArtifactReadTool(value);
 
         /// <summary>
         /// 

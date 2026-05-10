@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static CompactionEvent FromAgentBase(global::G.AgentEventBase? value) => new CompactionEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator CompactionEvent(global::G.CompactionEventVariant2 value) => new CompactionEvent((global::G.CompactionEventVariant2?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             CompactionEventVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static CompactionEvent FromCompactionEventVariant2(global::G.CompactionEventVariant2? value) => new CompactionEvent(value);
 
         /// <summary>
         /// 

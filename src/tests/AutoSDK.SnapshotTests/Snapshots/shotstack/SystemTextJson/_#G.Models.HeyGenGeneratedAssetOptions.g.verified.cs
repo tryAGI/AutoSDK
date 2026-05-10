@@ -68,6 +68,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static HeyGenGeneratedAssetOptions FromTextToAvatar(global::G.HeyGenTextToAvatarOptions? value) => new HeyGenGeneratedAssetOptions(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public HeyGenGeneratedAssetOptions(
             global::G.HeyGenGeneratedAssetOptionsDiscriminatorType? type,
             global::G.HeyGenTextToAvatarOptions? textToAvatar

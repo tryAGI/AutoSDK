@@ -91,6 +91,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static CreateCompactRequest FromInputBase(global::G.CreateInputRequestBase? value) => new CreateCompactRequest(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator CreateCompactRequest(global::G.CreateCompactRequestVariant2 value) => new CreateCompactRequest((global::G.CreateCompactRequestVariant2?)value);
 
         /// <summary>
@@ -105,6 +110,11 @@ namespace G
         {
             CreateCompactRequestVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static CreateCompactRequest FromCreateCompactRequestVariant2(global::G.CreateCompactRequestVariant2? value) => new CreateCompactRequest(value);
 
         /// <summary>
         /// 

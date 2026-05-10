@@ -60,6 +60,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static VertexFinetuneJob FromOpenAIParams(global::G.OpenAIFinetuneJob? value) => new VertexFinetuneJob(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public object? Object =>
             OpenAIParams as object 
             ;

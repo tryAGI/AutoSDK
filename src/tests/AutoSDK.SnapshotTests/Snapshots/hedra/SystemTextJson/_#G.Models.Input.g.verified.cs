@@ -427,6 +427,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Input FromVideo(global::G.GenerateVideoRequestOutput? value) => new Input(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Input(global::G.GenerateTextToSpeechRequest value) => new Input((global::G.GenerateTextToSpeechRequest?)value);
 
         /// <summary>
@@ -441,6 +446,11 @@ namespace G
         {
             TextToSpeech = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Input FromTextToSpeech(global::G.GenerateTextToSpeechRequest? value) => new Input(value);
 
         /// <summary>
         /// 
@@ -463,6 +473,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Input FromTextToSound(global::G.GenerateTextToSoundRequest? value) => new Input(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Input(global::G.GenerateImageRequest value) => new Input((global::G.GenerateImageRequest?)value);
 
         /// <summary>
@@ -477,6 +492,11 @@ namespace G
         {
             Image = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Input FromImage(global::G.GenerateImageRequest? value) => new Input(value);
 
         /// <summary>
         /// 
@@ -499,6 +519,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Input FromImageUpscale(global::G.GenerateImageUpscaleRequest? value) => new Input(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Input(global::G.GenerateVideoUpscaleRequest value) => new Input((global::G.GenerateVideoUpscaleRequest?)value);
 
         /// <summary>
@@ -513,6 +538,11 @@ namespace G
         {
             VideoUpscale = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Input FromVideoUpscale(global::G.GenerateVideoUpscaleRequest? value) => new Input(value);
 
         /// <summary>
         /// 
@@ -535,6 +565,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Input FromAudioIsolation(global::G.GenerateIsolatedAudioRequest? value) => new Input(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Input(global::G.GenerateSpeechToSpeechRequest value) => new Input((global::G.GenerateSpeechToSpeechRequest?)value);
 
         /// <summary>
@@ -549,6 +584,11 @@ namespace G
         {
             SpeechToSpeech = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Input FromSpeechToSpeech(global::G.GenerateSpeechToSpeechRequest? value) => new Input(value);
 
         /// <summary>
         /// 
@@ -571,6 +611,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Input FromVoiceClone(global::G.GenerateVoiceCloneRequest? value) => new Input(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Input(global::G.GenerateAudioFromVideoRequest value) => new Input((global::G.GenerateAudioFromVideoRequest?)value);
 
         /// <summary>
@@ -585,6 +630,11 @@ namespace G
         {
             AudioFromVideo = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Input FromAudioFromVideo(global::G.GenerateAudioFromVideoRequest? value) => new Input(value);
 
         /// <summary>
         /// 
@@ -607,6 +657,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Input FromVideoWithAudio(global::G.GenerateVideoWithAudioRequest? value) => new Input(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Input(global::G.GenerateVideoToVideoRequest value) => new Input((global::G.GenerateVideoToVideoRequest?)value);
 
         /// <summary>
@@ -625,6 +680,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Input FromVideoToVideo(global::G.GenerateVideoToVideoRequest? value) => new Input(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Input(global::G.GenerateMotionControlRequestOutput value) => new Input((global::G.GenerateMotionControlRequestOutput?)value);
 
         /// <summary>
@@ -639,6 +699,11 @@ namespace G
         {
             MotionControl = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Input FromMotionControl(global::G.GenerateMotionControlRequestOutput? value) => new Input(value);
 
         /// <summary>
         /// 

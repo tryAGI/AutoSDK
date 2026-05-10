@@ -155,6 +155,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static UpdateLLMRequest FromOpenaiCompatible(global::G.UpdateOpenAILLMRequest? value) => new UpdateLLMRequest(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator UpdateLLMRequest(global::G.UpdateOpenAIResponsesLLMRequest value) => new UpdateLLMRequest((global::G.UpdateOpenAIResponsesLLMRequest?)value);
 
         /// <summary>
@@ -169,6 +174,11 @@ namespace G
         {
             OpenaiResponses = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static UpdateLLMRequest FromOpenaiResponses(global::G.UpdateOpenAIResponsesLLMRequest? value) => new UpdateLLMRequest(value);
 
         /// <summary>
         /// 
@@ -191,6 +201,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static UpdateLLMRequest FromVertexAi(global::G.UpdateVertexAILLMRequest? value) => new UpdateLLMRequest(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator UpdateLLMRequest(global::G.UpdateAnthropicLLMRequest value) => new UpdateLLMRequest((global::G.UpdateAnthropicLLMRequest?)value);
 
         /// <summary>
@@ -205,6 +220,11 @@ namespace G
         {
             Anthropic = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static UpdateLLMRequest FromAnthropic(global::G.UpdateAnthropicLLMRequest? value) => new UpdateLLMRequest(value);
 
         /// <summary>
         /// 

@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static StreamScript FromStreamScriptVariant1(global::G.StreamScriptVariant1? value) => new StreamScript(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator StreamScript(global::G.StreamScriptVariant2 value) => new StreamScript((global::G.StreamScriptVariant2?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             StreamScriptVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static StreamScript FromStreamScriptVariant2(global::G.StreamScriptVariant2? value) => new StreamScript(value);
 
         /// <summary>
         /// 

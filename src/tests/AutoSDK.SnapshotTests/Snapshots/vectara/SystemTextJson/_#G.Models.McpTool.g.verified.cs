@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static McpTool FromBase(global::G.ToolBase? value) => new McpTool(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator McpTool(global::G.McpToolVariant2 value) => new McpTool((global::G.McpToolVariant2?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             McpToolVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static McpTool FromMcpToolVariant2(global::G.McpToolVariant2? value) => new McpTool(value);
 
         /// <summary>
         /// 

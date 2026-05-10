@@ -120,6 +120,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Annotation FromFileCitation(global::G.FileCitation? value) => new Annotation(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Annotation(global::G.UrlCitation value) => new Annotation((global::G.UrlCitation?)value);
 
         /// <summary>
@@ -138,6 +143,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Annotation FromUrlCitation(global::G.UrlCitation? value) => new Annotation(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Annotation(global::G.FilePath value) => new Annotation((global::G.FilePath?)value);
 
         /// <summary>
@@ -152,6 +162,11 @@ namespace G
         {
             FilePath = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Annotation FromFilePath(global::G.FilePath? value) => new Annotation(value);
 
         /// <summary>
         /// 

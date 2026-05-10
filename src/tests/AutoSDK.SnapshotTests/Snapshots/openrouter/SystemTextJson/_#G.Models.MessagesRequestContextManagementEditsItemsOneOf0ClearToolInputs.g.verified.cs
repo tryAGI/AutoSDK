@@ -120,6 +120,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputs FromMessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant1(bool? value) => new MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputs(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputs(
             bool? messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant1,
             global::System.Collections.Generic.IList<string>? messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2,

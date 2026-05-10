@@ -95,6 +95,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ApprovalsVariant1Item2 FromApproval(global::G.ApprovalReturn? value) => new ApprovalsVariant1Item2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ApprovalsVariant1Item2(global::G.LettaSchemasLettaMessageToolReturn value) => new ApprovalsVariant1Item2((global::G.LettaSchemasLettaMessageToolReturn?)value);
 
         /// <summary>
@@ -109,6 +114,11 @@ namespace G
         {
             Tool = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ApprovalsVariant1Item2 FromTool(global::G.LettaSchemasLettaMessageToolReturn? value) => new ApprovalsVariant1Item2(value);
 
         /// <summary>
         /// 

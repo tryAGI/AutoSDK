@@ -240,6 +240,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static MessagesRequestToolsItems FromMessagesRequestToolsItems0(global::G.MessagesRequestToolsItems0? value) => new MessagesRequestToolsItems(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator MessagesRequestToolsItems(global::G.MessagesRequestToolsItems1 value) => new MessagesRequestToolsItems((global::G.MessagesRequestToolsItems1?)value);
 
         /// <summary>
@@ -254,6 +259,11 @@ namespace G
         {
             MessagesRequestToolsItems1 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static MessagesRequestToolsItems FromMessagesRequestToolsItems1(global::G.MessagesRequestToolsItems1? value) => new MessagesRequestToolsItems(value);
 
         /// <summary>
         /// 
@@ -276,6 +286,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static MessagesRequestToolsItems FromMessagesRequestToolsItems2(global::G.MessagesRequestToolsItems2? value) => new MessagesRequestToolsItems(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator MessagesRequestToolsItems(global::G.MessagesRequestToolsItems3 value) => new MessagesRequestToolsItems((global::G.MessagesRequestToolsItems3?)value);
 
         /// <summary>
@@ -290,6 +305,11 @@ namespace G
         {
             MessagesRequestToolsItems3 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static MessagesRequestToolsItems FromMessagesRequestToolsItems3(global::G.MessagesRequestToolsItems3? value) => new MessagesRequestToolsItems(value);
 
         /// <summary>
         /// 
@@ -312,6 +332,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static MessagesRequestToolsItems FromMessagesRequestToolsItems4(global::G.MessagesRequestToolsItems4? value) => new MessagesRequestToolsItems(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator MessagesRequestToolsItems(global::G.DatetimeServerTool value) => new MessagesRequestToolsItems((global::G.DatetimeServerTool?)value);
 
         /// <summary>
@@ -330,6 +355,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static MessagesRequestToolsItems FromDatetimeServerTool(global::G.DatetimeServerTool? value) => new MessagesRequestToolsItems(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator MessagesRequestToolsItems(global::G.MessagesWebSearchServerTool value) => new MessagesRequestToolsItems((global::G.MessagesWebSearchServerTool?)value);
 
         /// <summary>
@@ -344,6 +374,11 @@ namespace G
         {
             MessagesWebSearchServerTool = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static MessagesRequestToolsItems FromMessagesWebSearchServerTool(global::G.MessagesWebSearchServerTool? value) => new MessagesRequestToolsItems(value);
 
         /// <summary>
         /// 

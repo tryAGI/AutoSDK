@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ResultDecryptedProviderKeyString FromSuccess(global::G.ResultSuccessDecryptedProviderKey? value) => new ResultDecryptedProviderKeyString(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ResultDecryptedProviderKeyString(global::G.ResultErrorString value) => new ResultDecryptedProviderKeyString((global::G.ResultErrorString?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             Error = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ResultDecryptedProviderKeyString FromError(global::G.ResultErrorString? value) => new ResultDecryptedProviderKeyString(value);
 
         /// <summary>
         /// 

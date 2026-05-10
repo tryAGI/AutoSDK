@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static InputsOneOf1ItemsOneOf5ContentOneOf0Items FromResponseOutputText(global::G.ResponseOutputText? value) => new InputsOneOf1ItemsOneOf5ContentOneOf0Items(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator InputsOneOf1ItemsOneOf5ContentOneOf0Items(global::G.OpenAIResponsesRefusalContent value) => new InputsOneOf1ItemsOneOf5ContentOneOf0Items((global::G.OpenAIResponsesRefusalContent?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             OpenAIResponsesRefusalContent = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static InputsOneOf1ItemsOneOf5ContentOneOf0Items FromOpenAIResponsesRefusalContent(global::G.OpenAIResponsesRefusalContent? value) => new InputsOneOf1ItemsOneOf5ContentOneOf0Items(value);
 
         /// <summary>
         /// 

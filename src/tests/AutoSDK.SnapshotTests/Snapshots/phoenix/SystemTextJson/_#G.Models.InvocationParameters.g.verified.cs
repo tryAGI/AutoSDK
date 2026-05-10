@@ -455,6 +455,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static InvocationParameters FromOpenai(global::G.PromptOpenAIInvocationParameters? value) => new InvocationParameters(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator InvocationParameters(global::G.PromptAzureOpenAIInvocationParameters value) => new InvocationParameters((global::G.PromptAzureOpenAIInvocationParameters?)value);
 
         /// <summary>
@@ -469,6 +474,11 @@ namespace G
         {
             AzureOpenai = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static InvocationParameters FromAzureOpenai(global::G.PromptAzureOpenAIInvocationParameters? value) => new InvocationParameters(value);
 
         /// <summary>
         /// 
@@ -491,6 +501,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static InvocationParameters FromAnthropic(global::G.PromptAnthropicInvocationParameters? value) => new InvocationParameters(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator InvocationParameters(global::G.PromptGoogleInvocationParameters value) => new InvocationParameters((global::G.PromptGoogleInvocationParameters?)value);
 
         /// <summary>
@@ -505,6 +520,11 @@ namespace G
         {
             Google = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static InvocationParameters FromGoogle(global::G.PromptGoogleInvocationParameters? value) => new InvocationParameters(value);
 
         /// <summary>
         /// 
@@ -527,6 +547,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static InvocationParameters FromDeepseek(global::G.PromptDeepSeekInvocationParameters? value) => new InvocationParameters(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator InvocationParameters(global::G.PromptXAIInvocationParameters value) => new InvocationParameters((global::G.PromptXAIInvocationParameters?)value);
 
         /// <summary>
@@ -541,6 +566,11 @@ namespace G
         {
             Xai = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static InvocationParameters FromXai(global::G.PromptXAIInvocationParameters? value) => new InvocationParameters(value);
 
         /// <summary>
         /// 
@@ -563,6 +593,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static InvocationParameters FromOllama(global::G.PromptOllamaInvocationParameters? value) => new InvocationParameters(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator InvocationParameters(global::G.PromptAwsInvocationParameters value) => new InvocationParameters((global::G.PromptAwsInvocationParameters?)value);
 
         /// <summary>
@@ -577,6 +612,11 @@ namespace G
         {
             Aws = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static InvocationParameters FromAws(global::G.PromptAwsInvocationParameters? value) => new InvocationParameters(value);
 
         /// <summary>
         /// 
@@ -599,6 +639,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static InvocationParameters FromCerebras(global::G.PromptCerebrasInvocationParameters? value) => new InvocationParameters(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator InvocationParameters(global::G.PromptFireworksInvocationParameters value) => new InvocationParameters((global::G.PromptFireworksInvocationParameters?)value);
 
         /// <summary>
@@ -613,6 +658,11 @@ namespace G
         {
             Fireworks = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static InvocationParameters FromFireworks(global::G.PromptFireworksInvocationParameters? value) => new InvocationParameters(value);
 
         /// <summary>
         /// 
@@ -635,6 +685,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static InvocationParameters FromGroq(global::G.PromptGroqInvocationParameters? value) => new InvocationParameters(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator InvocationParameters(global::G.PromptMoonshotInvocationParameters value) => new InvocationParameters((global::G.PromptMoonshotInvocationParameters?)value);
 
         /// <summary>
@@ -649,6 +704,11 @@ namespace G
         {
             Moonshot = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static InvocationParameters FromMoonshot(global::G.PromptMoonshotInvocationParameters? value) => new InvocationParameters(value);
 
         /// <summary>
         /// 
@@ -671,6 +731,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static InvocationParameters FromPerplexity(global::G.PromptPerplexityInvocationParameters? value) => new InvocationParameters(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator InvocationParameters(global::G.PromptTogetherInvocationParameters value) => new InvocationParameters((global::G.PromptTogetherInvocationParameters?)value);
 
         /// <summary>
@@ -685,6 +750,11 @@ namespace G
         {
             Together = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static InvocationParameters FromTogether(global::G.PromptTogetherInvocationParameters? value) => new InvocationParameters(value);
 
         /// <summary>
         /// 

@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ResultIsOnWaitlistBooleanString FromSuccess(global::G.ResultSuccessIsOnWaitlistBoolean? value) => new ResultIsOnWaitlistBooleanString(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ResultIsOnWaitlistBooleanString(global::G.ResultErrorString value) => new ResultIsOnWaitlistBooleanString((global::G.ResultErrorString?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             Error = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ResultIsOnWaitlistBooleanString FromError(global::G.ResultErrorString? value) => new ResultIsOnWaitlistBooleanString(value);
 
         /// <summary>
         /// 

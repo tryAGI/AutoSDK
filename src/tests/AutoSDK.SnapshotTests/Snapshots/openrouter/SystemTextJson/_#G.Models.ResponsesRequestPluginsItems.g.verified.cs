@@ -210,6 +210,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ResponsesRequestPluginsItems FromResponsesRequestPluginsItems0(global::G.ResponsesRequestPluginsItems0? value) => new ResponsesRequestPluginsItems(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ResponsesRequestPluginsItems(global::G.ResponsesRequestPluginsItems1 value) => new ResponsesRequestPluginsItems((global::G.ResponsesRequestPluginsItems1?)value);
 
         /// <summary>
@@ -224,6 +229,11 @@ namespace G
         {
             ResponsesRequestPluginsItems1 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ResponsesRequestPluginsItems FromResponsesRequestPluginsItems1(global::G.ResponsesRequestPluginsItems1? value) => new ResponsesRequestPluginsItems(value);
 
         /// <summary>
         /// 
@@ -246,6 +256,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ResponsesRequestPluginsItems FromResponsesRequestPluginsItems2(global::G.ResponsesRequestPluginsItems2? value) => new ResponsesRequestPluginsItems(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ResponsesRequestPluginsItems(global::G.ResponsesRequestPluginsItems3 value) => new ResponsesRequestPluginsItems((global::G.ResponsesRequestPluginsItems3?)value);
 
         /// <summary>
@@ -260,6 +275,11 @@ namespace G
         {
             ResponsesRequestPluginsItems3 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ResponsesRequestPluginsItems FromResponsesRequestPluginsItems3(global::G.ResponsesRequestPluginsItems3? value) => new ResponsesRequestPluginsItems(value);
 
         /// <summary>
         /// 
@@ -282,6 +302,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ResponsesRequestPluginsItems FromResponsesRequestPluginsItems4(global::G.ResponsesRequestPluginsItems4? value) => new ResponsesRequestPluginsItems(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ResponsesRequestPluginsItems(global::G.ResponsesRequestPluginsItems5 value) => new ResponsesRequestPluginsItems((global::G.ResponsesRequestPluginsItems5?)value);
 
         /// <summary>
@@ -296,6 +321,11 @@ namespace G
         {
             ResponsesRequestPluginsItems5 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ResponsesRequestPluginsItems FromResponsesRequestPluginsItems5(global::G.ResponsesRequestPluginsItems5? value) => new ResponsesRequestPluginsItems(value);
 
         /// <summary>
         /// 

@@ -92,6 +92,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static LemurQuestionAnswerParams FromBase(global::G.LemurBaseParams? value) => new LemurQuestionAnswerParams(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator LemurQuestionAnswerParams(global::G.LemurQuestionAnswerParamsVariant2 value) => new LemurQuestionAnswerParams((global::G.LemurQuestionAnswerParamsVariant2?)value);
 
         /// <summary>
@@ -106,6 +111,11 @@ namespace G
         {
             LemurQuestionAnswerParamsVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static LemurQuestionAnswerParams FromLemurQuestionAnswerParamsVariant2(global::G.LemurQuestionAnswerParamsVariant2? value) => new LemurQuestionAnswerParams(value);
 
         /// <summary>
         /// 

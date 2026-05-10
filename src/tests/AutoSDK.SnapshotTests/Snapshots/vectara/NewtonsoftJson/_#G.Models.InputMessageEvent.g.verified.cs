@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static InputMessageEvent FromAgentBase(global::G.AgentEventBase? value) => new InputMessageEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator InputMessageEvent(global::G.InputMessageEventVariant2 value) => new InputMessageEvent((global::G.InputMessageEventVariant2?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             InputMessageEventVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static InputMessageEvent FromInputMessageEventVariant2(global::G.InputMessageEventVariant2? value) => new InputMessageEvent(value);
 
         /// <summary>
         /// 

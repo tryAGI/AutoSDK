@@ -95,6 +95,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static TranslationsItem FromComplete(global::G.TranslationStatusApiItemSuccess? value) => new TranslationsItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator TranslationsItem(global::G.TranslationStatusApiItemError value) => new TranslationsItem((global::G.TranslationStatusApiItemError?)value);
 
         /// <summary>
@@ -109,6 +114,11 @@ namespace G
         {
             Error = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static TranslationsItem FromError(global::G.TranslationStatusApiItemError? value) => new TranslationsItem(value);
 
         /// <summary>
         /// 

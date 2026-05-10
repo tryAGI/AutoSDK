@@ -300,6 +300,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static FunctionData FromPrompt(global::G.FunctionDataPrompt? value) => new FunctionData(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator FunctionData(global::G.FunctionDataCode value) => new FunctionData((global::G.FunctionDataCode?)value);
 
         /// <summary>
@@ -314,6 +319,11 @@ namespace G
         {
             Code = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static FunctionData FromCode(global::G.FunctionDataCode? value) => new FunctionData(value);
 
         /// <summary>
         /// 
@@ -336,6 +346,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static FunctionData FromGraph(global::G.GraphData? value) => new FunctionData(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator FunctionData(global::G.FunctionDataRemoteEval value) => new FunctionData((global::G.FunctionDataRemoteEval?)value);
 
         /// <summary>
@@ -350,6 +365,11 @@ namespace G
         {
             RemoteEval = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static FunctionData FromRemoteEval(global::G.FunctionDataRemoteEval? value) => new FunctionData(value);
 
         /// <summary>
         /// 
@@ -372,6 +392,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static FunctionData FromGlobal(global::G.FunctionDataGlobal? value) => new FunctionData(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator FunctionData(global::G.FacetData value) => new FunctionData((global::G.FacetData?)value);
 
         /// <summary>
@@ -386,6 +411,11 @@ namespace G
         {
             Facet = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static FunctionData FromFacet(global::G.FacetData? value) => new FunctionData(value);
 
         /// <summary>
         /// 
@@ -408,6 +438,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static FunctionData FromBatchedFacet(global::G.BatchedFacetData? value) => new FunctionData(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator FunctionData(global::G.FunctionDataParameters value) => new FunctionData((global::G.FunctionDataParameters?)value);
 
         /// <summary>
@@ -426,6 +461,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static FunctionData FromParameters(global::G.FunctionDataParameters? value) => new FunctionData(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator FunctionData(global::G.AllOf<global::G.TopicMapData, object> value) => new FunctionData((global::G.AllOf<global::G.TopicMapData, object>?)value);
 
         /// <summary>
@@ -440,6 +480,11 @@ namespace G
         {
             FunctionDataVariant9 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static FunctionData FromFunctionDataVariant9(global::G.AllOf<global::G.TopicMapData, object>? value) => new FunctionData(value);
 
         /// <summary>
         /// 

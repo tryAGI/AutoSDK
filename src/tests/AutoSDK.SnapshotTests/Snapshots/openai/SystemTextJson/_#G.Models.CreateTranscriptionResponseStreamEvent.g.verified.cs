@@ -95,6 +95,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static CreateTranscriptionResponseStreamEvent FromTranscriptTextDelta(global::G.TranscriptTextDeltaEvent? value) => new CreateTranscriptionResponseStreamEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator CreateTranscriptionResponseStreamEvent(global::G.TranscriptTextDoneEvent value) => new CreateTranscriptionResponseStreamEvent((global::G.TranscriptTextDoneEvent?)value);
 
         /// <summary>
@@ -109,6 +114,11 @@ namespace G
         {
             TranscriptTextDone = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static CreateTranscriptionResponseStreamEvent FromTranscriptTextDone(global::G.TranscriptTextDoneEvent? value) => new CreateTranscriptionResponseStreamEvent(value);
 
         /// <summary>
         /// 

@@ -155,6 +155,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ForwardConditionVariant12 FromUnconditional(global::G.WorkflowUnconditionalModelOutput? value) => new ForwardConditionVariant12(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ForwardConditionVariant12(global::G.WorkflowLLMConditionModelOutput value) => new ForwardConditionVariant12((global::G.WorkflowLLMConditionModelOutput?)value);
 
         /// <summary>
@@ -169,6 +174,11 @@ namespace G
         {
             Llm = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ForwardConditionVariant12 FromLlm(global::G.WorkflowLLMConditionModelOutput? value) => new ForwardConditionVariant12(value);
 
         /// <summary>
         /// 
@@ -191,6 +201,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ForwardConditionVariant12 FromResult(global::G.WorkflowResultConditionModelOutput? value) => new ForwardConditionVariant12(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ForwardConditionVariant12(global::G.WorkflowExpressionConditionModelOutput value) => new ForwardConditionVariant12((global::G.WorkflowExpressionConditionModelOutput?)value);
 
         /// <summary>
@@ -205,6 +220,11 @@ namespace G
         {
             Expression = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ForwardConditionVariant12 FromExpression(global::G.WorkflowExpressionConditionModelOutput? value) => new ForwardConditionVariant12(value);
 
         /// <summary>
         /// 

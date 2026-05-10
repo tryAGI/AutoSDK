@@ -95,6 +95,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static SpeakV1ServerEvent FromAudioResponse(global::G.AudioResponsePayload? value) => new SpeakV1ServerEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator SpeakV1ServerEvent(global::G.SpeakMetadataPayload value) => new SpeakV1ServerEvent((global::G.SpeakMetadataPayload?)value);
 
         /// <summary>
@@ -109,6 +114,11 @@ namespace G
         {
             SpeakMetadata = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static SpeakV1ServerEvent FromSpeakMetadata(global::G.SpeakMetadataPayload? value) => new SpeakV1ServerEvent(value);
 
         /// <summary>
         /// 

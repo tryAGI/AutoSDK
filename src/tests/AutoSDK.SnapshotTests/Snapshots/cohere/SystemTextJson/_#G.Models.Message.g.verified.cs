@@ -96,6 +96,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Message FromChatbot(global::G.ChatMessage? value) => new Message(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Message(global::G.ToolMessage value) => new Message((global::G.ToolMessage?)value);
 
         /// <summary>
@@ -110,6 +115,11 @@ namespace G
         {
             Tool = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Message FromTool(global::G.ToolMessage? value) => new Message(value);
 
         /// <summary>
         /// 

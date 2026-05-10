@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ExportDto FromExportDtoVariant1(global::G.ExportDtoVariant1? value) => new ExportDto(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ExportDto(global::G.ExportDtoVariant2 value) => new ExportDto((global::G.ExportDtoVariant2?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             ExportDtoVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ExportDto FromExportDtoVariant2(global::G.ExportDtoVariant2? value) => new ExportDto(value);
 
         /// <summary>
         /// 

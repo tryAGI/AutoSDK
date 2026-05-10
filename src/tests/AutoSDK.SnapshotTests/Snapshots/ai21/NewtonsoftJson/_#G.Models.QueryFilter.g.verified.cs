@@ -120,6 +120,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static QueryFilter FromComparisonOperator(global::G.ComparisonOperator? value) => new QueryFilter(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator QueryFilter(global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<object>> value) => new QueryFilter((global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<object>>?)value);
 
         /// <summary>
@@ -138,6 +143,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static QueryFilter FromLogicalOperator(global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<object>>? value) => new QueryFilter(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator QueryFilter(global::System.Collections.Generic.Dictionary<string, global::G.ComparisonOperator> value) => new QueryFilter((global::System.Collections.Generic.Dictionary<string, global::G.ComparisonOperator>?)value);
 
         /// <summary>
@@ -152,6 +162,11 @@ namespace G
         {
             QueryFilterVariant3 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static QueryFilter FromQueryFilterVariant3(global::System.Collections.Generic.Dictionary<string, global::G.ComparisonOperator>? value) => new QueryFilter(value);
 
         /// <summary>
         /// 

@@ -305,6 +305,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Error FromInvalidRequestError(global::G.BetaInvalidRequestError? value) => new Error(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Error(global::G.BetaAuthenticationError value) => new Error((global::G.BetaAuthenticationError?)value);
 
         /// <summary>
@@ -319,6 +324,11 @@ namespace G
         {
             AuthenticationError = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Error FromAuthenticationError(global::G.BetaAuthenticationError? value) => new Error(value);
 
         /// <summary>
         /// 
@@ -341,6 +351,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Error FromBillingError(global::G.BetaBillingError? value) => new Error(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Error(global::G.BetaPermissionError value) => new Error((global::G.BetaPermissionError?)value);
 
         /// <summary>
@@ -355,6 +370,11 @@ namespace G
         {
             PermissionError = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Error FromPermissionError(global::G.BetaPermissionError? value) => new Error(value);
 
         /// <summary>
         /// 
@@ -377,6 +397,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Error FromNotFoundError(global::G.BetaNotFoundError? value) => new Error(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Error(global::G.BetaRateLimitError value) => new Error((global::G.BetaRateLimitError?)value);
 
         /// <summary>
@@ -391,6 +416,11 @@ namespace G
         {
             RateLimitError = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Error FromRateLimitError(global::G.BetaRateLimitError? value) => new Error(value);
 
         /// <summary>
         /// 
@@ -413,6 +443,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Error FromTimeoutError(global::G.BetaGatewayTimeoutError? value) => new Error(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Error(global::G.BetaAPIError value) => new Error((global::G.BetaAPIError?)value);
 
         /// <summary>
@@ -431,6 +466,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Error FromApiError(global::G.BetaAPIError? value) => new Error(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Error(global::G.BetaOverloadedError value) => new Error((global::G.BetaOverloadedError?)value);
 
         /// <summary>
@@ -445,6 +485,11 @@ namespace G
         {
             OverloadedError = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Error FromOverloadedError(global::G.BetaOverloadedError? value) => new Error(value);
 
         /// <summary>
         /// 

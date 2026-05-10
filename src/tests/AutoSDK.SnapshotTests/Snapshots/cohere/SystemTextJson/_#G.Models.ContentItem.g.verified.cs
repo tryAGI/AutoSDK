@@ -65,6 +65,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ContentItem FromText(global::G.TextContent? value) => new ContentItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public ContentItem(
             global::G.AssistantMessageResponseContentItemDiscriminatorType? type,
             global::G.TextContent? text

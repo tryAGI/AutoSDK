@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ResultPrompt2025VersionArrayString FromSuccess(global::G.ResultSuccessPrompt2025VersionArray? value) => new ResultPrompt2025VersionArrayString(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ResultPrompt2025VersionArrayString(global::G.ResultErrorString value) => new ResultPrompt2025VersionArrayString((global::G.ResultErrorString?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             Error = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ResultPrompt2025VersionArrayString FromError(global::G.ResultErrorString? value) => new ResultPrompt2025VersionArrayString(value);
 
         /// <summary>
         /// 

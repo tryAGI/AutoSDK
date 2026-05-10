@@ -124,6 +124,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static InputItem FromMessage(global::G.EasyInputMessage? value) => new InputItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator InputItem(global::G.Item value) => new InputItem((global::G.Item?)value);
 
         /// <summary>
@@ -142,6 +147,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static InputItem FromItem(global::G.Item? value) => new InputItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator InputItem(global::G.ItemReferenceParam value) => new InputItem((global::G.ItemReferenceParam?)value);
 
         /// <summary>
@@ -156,6 +166,11 @@ namespace G
         {
             ItemReference = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static InputItem FromItemReference(global::G.ItemReferenceParam? value) => new InputItem(value);
 
         /// <summary>
         /// 

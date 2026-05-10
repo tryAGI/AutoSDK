@@ -690,6 +690,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static TimelineIssueEvents FromLabeledIssueEvent(global::G.LabeledIssueEvent? value) => new TimelineIssueEvents(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator TimelineIssueEvents(global::G.UnlabeledIssueEvent value) => new TimelineIssueEvents((global::G.UnlabeledIssueEvent?)value);
 
         /// <summary>
@@ -704,6 +709,11 @@ namespace G
         {
             UnlabeledIssueEvent = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static TimelineIssueEvents FromUnlabeledIssueEvent(global::G.UnlabeledIssueEvent? value) => new TimelineIssueEvents(value);
 
         /// <summary>
         /// 
@@ -726,6 +736,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static TimelineIssueEvents FromMilestonedIssueEvent(global::G.MilestonedIssueEvent? value) => new TimelineIssueEvents(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator TimelineIssueEvents(global::G.DemilestonedIssueEvent value) => new TimelineIssueEvents((global::G.DemilestonedIssueEvent?)value);
 
         /// <summary>
@@ -740,6 +755,11 @@ namespace G
         {
             DemilestonedIssueEvent = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static TimelineIssueEvents FromDemilestonedIssueEvent(global::G.DemilestonedIssueEvent? value) => new TimelineIssueEvents(value);
 
         /// <summary>
         /// 
@@ -762,6 +782,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static TimelineIssueEvents FromRenamedIssueEvent(global::G.RenamedIssueEvent? value) => new TimelineIssueEvents(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator TimelineIssueEvents(global::G.ReviewRequestedIssueEvent value) => new TimelineIssueEvents((global::G.ReviewRequestedIssueEvent?)value);
 
         /// <summary>
@@ -776,6 +801,11 @@ namespace G
         {
             ReviewRequestedIssueEvent = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static TimelineIssueEvents FromReviewRequestedIssueEvent(global::G.ReviewRequestedIssueEvent? value) => new TimelineIssueEvents(value);
 
         /// <summary>
         /// 
@@ -798,6 +828,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static TimelineIssueEvents FromReviewRequestRemovedIssueEvent(global::G.ReviewRequestRemovedIssueEvent? value) => new TimelineIssueEvents(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator TimelineIssueEvents(global::G.ReviewDismissedIssueEvent value) => new TimelineIssueEvents((global::G.ReviewDismissedIssueEvent?)value);
 
         /// <summary>
@@ -812,6 +847,11 @@ namespace G
         {
             ReviewDismissedIssueEvent = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static TimelineIssueEvents FromReviewDismissedIssueEvent(global::G.ReviewDismissedIssueEvent? value) => new TimelineIssueEvents(value);
 
         /// <summary>
         /// 
@@ -834,6 +874,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static TimelineIssueEvents FromLockedIssueEvent(global::G.LockedIssueEvent? value) => new TimelineIssueEvents(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator TimelineIssueEvents(global::G.AddedToProjectIssueEvent value) => new TimelineIssueEvents((global::G.AddedToProjectIssueEvent?)value);
 
         /// <summary>
@@ -848,6 +893,11 @@ namespace G
         {
             AddedToProjectIssueEvent = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static TimelineIssueEvents FromAddedToProjectIssueEvent(global::G.AddedToProjectIssueEvent? value) => new TimelineIssueEvents(value);
 
         /// <summary>
         /// 
@@ -870,6 +920,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static TimelineIssueEvents FromMovedColumnInProjectIssueEvent(global::G.MovedColumnInProjectIssueEvent? value) => new TimelineIssueEvents(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator TimelineIssueEvents(global::G.RemovedFromProjectIssueEvent value) => new TimelineIssueEvents((global::G.RemovedFromProjectIssueEvent?)value);
 
         /// <summary>
@@ -884,6 +939,11 @@ namespace G
         {
             RemovedFromProjectIssueEvent = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static TimelineIssueEvents FromRemovedFromProjectIssueEvent(global::G.RemovedFromProjectIssueEvent? value) => new TimelineIssueEvents(value);
 
         /// <summary>
         /// 
@@ -906,6 +966,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static TimelineIssueEvents FromConvertedNoteToIssueIssueEvent(global::G.ConvertedNoteToIssueIssueEvent? value) => new TimelineIssueEvents(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator TimelineIssueEvents(global::G.TimelineCommentEvent value) => new TimelineIssueEvents((global::G.TimelineCommentEvent?)value);
 
         /// <summary>
@@ -920,6 +985,11 @@ namespace G
         {
             TimelineCommentEvent = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static TimelineIssueEvents FromTimelineCommentEvent(global::G.TimelineCommentEvent? value) => new TimelineIssueEvents(value);
 
         /// <summary>
         /// 
@@ -942,6 +1012,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static TimelineIssueEvents FromTimelineCrossReferencedEvent(global::G.TimelineCrossReferencedEvent? value) => new TimelineIssueEvents(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator TimelineIssueEvents(global::G.TimelineCommittedEvent value) => new TimelineIssueEvents((global::G.TimelineCommittedEvent?)value);
 
         /// <summary>
@@ -956,6 +1031,11 @@ namespace G
         {
             TimelineCommittedEvent = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static TimelineIssueEvents FromTimelineCommittedEvent(global::G.TimelineCommittedEvent? value) => new TimelineIssueEvents(value);
 
         /// <summary>
         /// 
@@ -978,6 +1058,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static TimelineIssueEvents FromTimelineReviewedEvent(global::G.TimelineReviewedEvent? value) => new TimelineIssueEvents(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator TimelineIssueEvents(global::G.TimelineLineCommentedEvent value) => new TimelineIssueEvents((global::G.TimelineLineCommentedEvent?)value);
 
         /// <summary>
@@ -992,6 +1077,11 @@ namespace G
         {
             TimelineLineCommentedEvent = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static TimelineIssueEvents FromTimelineLineCommentedEvent(global::G.TimelineLineCommentedEvent? value) => new TimelineIssueEvents(value);
 
         /// <summary>
         /// 
@@ -1014,6 +1104,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static TimelineIssueEvents FromTimelineCommitCommentedEvent(global::G.TimelineCommitCommentedEvent? value) => new TimelineIssueEvents(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator TimelineIssueEvents(global::G.TimelineAssignedIssueEvent value) => new TimelineIssueEvents((global::G.TimelineAssignedIssueEvent?)value);
 
         /// <summary>
@@ -1028,6 +1123,11 @@ namespace G
         {
             TimelineAssignedIssueEvent = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static TimelineIssueEvents FromTimelineAssignedIssueEvent(global::G.TimelineAssignedIssueEvent? value) => new TimelineIssueEvents(value);
 
         /// <summary>
         /// 
@@ -1050,6 +1150,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static TimelineIssueEvents FromTimelineUnassignedIssueEvent(global::G.TimelineUnassignedIssueEvent? value) => new TimelineIssueEvents(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator TimelineIssueEvents(global::G.StateChangeIssueEvent value) => new TimelineIssueEvents((global::G.StateChangeIssueEvent?)value);
 
         /// <summary>
@@ -1064,6 +1169,11 @@ namespace G
         {
             StateChangeIssueEvent = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static TimelineIssueEvents FromStateChangeIssueEvent(global::G.StateChangeIssueEvent? value) => new TimelineIssueEvents(value);
 
         /// <summary>
         /// 

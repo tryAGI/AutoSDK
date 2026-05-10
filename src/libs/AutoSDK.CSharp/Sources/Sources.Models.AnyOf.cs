@@ -147,6 +147,9 @@ namespace {anyOfData.Namespace}
         {{
             {x.Name} = value;
         }}
+
+        {string.Empty.ToXmlDocumentationSummary(level: 8)}
+        public static {className} From{x.Name}({x.Type.CSharpTypeWithNullability} value) => new {className}(value);
 ").Inject()}
 {constructorWithAllValues}
 

@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ResultSessionResultArrayString FromSuccess(global::G.ResultSuccessSessionResultArray? value) => new ResultSessionResultArrayString(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ResultSessionResultArrayString(global::G.ResultErrorString value) => new ResultSessionResultArrayString((global::G.ResultErrorString?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             Error = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ResultSessionResultArrayString FromError(global::G.ResultErrorString? value) => new ResultSessionResultArrayString(value);
 
         /// <summary>
         /// 

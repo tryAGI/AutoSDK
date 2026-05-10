@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Crop FromCropVariant1(global::G.CropVariant1? value) => new Crop(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Crop(global::G.CropVariant2 value) => new Crop((global::G.CropVariant2?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             CropVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Crop FromCropVariant2(global::G.CropVariant2? value) => new Crop(value);
 
         /// <summary>
         /// 

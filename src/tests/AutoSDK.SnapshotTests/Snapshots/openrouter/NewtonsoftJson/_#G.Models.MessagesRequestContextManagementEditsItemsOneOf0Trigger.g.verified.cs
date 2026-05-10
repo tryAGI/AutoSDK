@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static MessagesRequestContextManagementEditsItemsOneOf0Trigger FromMessagesRequestContextManagementEditsItemsOneOf0Trigger0(global::G.MessagesRequestContextManagementEditsItemsOneOf0Trigger0? value) => new MessagesRequestContextManagementEditsItemsOneOf0Trigger(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator MessagesRequestContextManagementEditsItemsOneOf0Trigger(global::G.MessagesRequestContextManagementEditsItemsOneOf0Trigger1 value) => new MessagesRequestContextManagementEditsItemsOneOf0Trigger((global::G.MessagesRequestContextManagementEditsItemsOneOf0Trigger1?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             MessagesRequestContextManagementEditsItemsOneOf0Trigger1 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static MessagesRequestContextManagementEditsItemsOneOf0Trigger FromMessagesRequestContextManagementEditsItemsOneOf0Trigger1(global::G.MessagesRequestContextManagementEditsItemsOneOf0Trigger1? value) => new MessagesRequestContextManagementEditsItemsOneOf0Trigger(value);
 
         /// <summary>
         /// 

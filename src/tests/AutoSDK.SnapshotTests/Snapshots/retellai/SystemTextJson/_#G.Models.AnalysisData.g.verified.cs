@@ -150,6 +150,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static AnalysisData FromString(global::G.StringAnalysisData? value) => new AnalysisData(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator AnalysisData(global::G.EnumAnalysisData value) => new AnalysisData((global::G.EnumAnalysisData?)value);
 
         /// <summary>
@@ -164,6 +169,11 @@ namespace G
         {
             Enum = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static AnalysisData FromEnum(global::G.EnumAnalysisData? value) => new AnalysisData(value);
 
         /// <summary>
         /// 
@@ -186,6 +196,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static AnalysisData FromBoolean(global::G.BooleanAnalysisData? value) => new AnalysisData(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator AnalysisData(global::G.NumberAnalysisData value) => new AnalysisData((global::G.NumberAnalysisData?)value);
 
         /// <summary>
@@ -200,6 +215,11 @@ namespace G
         {
             Number = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static AnalysisData FromNumber(global::G.NumberAnalysisData? value) => new AnalysisData(value);
 
         /// <summary>
         /// 

@@ -120,6 +120,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static FunctionCallOutputItemOutputOneOf1Items FromInputText(global::G.InputText? value) => new FunctionCallOutputItemOutputOneOf1Items(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator FunctionCallOutputItemOutputOneOf1Items(global::G.FunctionCallOutputItemOutputOneOf1Items1 value) => new FunctionCallOutputItemOutputOneOf1Items((global::G.FunctionCallOutputItemOutputOneOf1Items1?)value);
 
         /// <summary>
@@ -138,6 +143,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static FunctionCallOutputItemOutputOneOf1Items FromFunctionCallOutputItemOutputOneOf1Items1(global::G.FunctionCallOutputItemOutputOneOf1Items1? value) => new FunctionCallOutputItemOutputOneOf1Items(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator FunctionCallOutputItemOutputOneOf1Items(global::G.InputFile value) => new FunctionCallOutputItemOutputOneOf1Items((global::G.InputFile?)value);
 
         /// <summary>
@@ -152,6 +162,11 @@ namespace G
         {
             InputFile = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static FunctionCallOutputItemOutputOneOf1Items FromInputFile(global::G.InputFile? value) => new FunctionCallOutputItemOutputOneOf1Items(value);
 
         /// <summary>
         /// 

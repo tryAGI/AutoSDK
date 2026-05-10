@@ -185,6 +185,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static SummarizeDocumentStreamedResponse FromGenerationChunk(global::G.StreamGenerationChunk? value) => new SummarizeDocumentStreamedResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator SummarizeDocumentStreamedResponse(global::G.GenerationInfo value) => new SummarizeDocumentStreamedResponse((global::G.GenerationInfo?)value);
 
         /// <summary>
@@ -199,6 +204,11 @@ namespace G
         {
             GenerationInfo = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static SummarizeDocumentStreamedResponse FromGenerationInfo(global::G.GenerationInfo? value) => new SummarizeDocumentStreamedResponse(value);
 
         /// <summary>
         /// 
@@ -221,6 +231,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static SummarizeDocumentStreamedResponse FromGenerationEnd(global::G.StreamGenerationEnd? value) => new SummarizeDocumentStreamedResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator SummarizeDocumentStreamedResponse(global::G.StreamResponseEnd value) => new SummarizeDocumentStreamedResponse((global::G.StreamResponseEnd?)value);
 
         /// <summary>
@@ -239,6 +254,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static SummarizeDocumentStreamedResponse FromEnd(global::G.StreamResponseEnd? value) => new SummarizeDocumentStreamedResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator SummarizeDocumentStreamedResponse(global::G.StreamError value) => new SummarizeDocumentStreamedResponse((global::G.StreamError?)value);
 
         /// <summary>
@@ -253,6 +273,11 @@ namespace G
         {
             Error = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static SummarizeDocumentStreamedResponse FromError(global::G.StreamError? value) => new SummarizeDocumentStreamedResponse(value);
 
         /// <summary>
         /// 

@@ -215,6 +215,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static QueryHistorySpan FromRephrase(global::G.RephraseSpan? value) => new QueryHistorySpan(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator QueryHistorySpan(global::G.SearchSpan value) => new QueryHistorySpan((global::G.SearchSpan?)value);
 
         /// <summary>
@@ -229,6 +234,11 @@ namespace G
         {
             Search = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static QueryHistorySpan FromSearch(global::G.SearchSpan? value) => new QueryHistorySpan(value);
 
         /// <summary>
         /// 
@@ -251,6 +261,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static QueryHistorySpan FromRerank(global::G.RerankSpan? value) => new QueryHistorySpan(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator QueryHistorySpan(global::G.GenerationSpan value) => new QueryHistorySpan((global::G.GenerationSpan?)value);
 
         /// <summary>
@@ -265,6 +280,11 @@ namespace G
         {
             Generation = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static QueryHistorySpan FromGeneration(global::G.GenerationSpan? value) => new QueryHistorySpan(value);
 
         /// <summary>
         /// 
@@ -287,6 +307,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static QueryHistorySpan FromFcs(global::G.FactualConsistencyScoreSpan? value) => new QueryHistorySpan(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator QueryHistorySpan(global::G.RewrittenQuerySpan value) => new QueryHistorySpan((global::G.RewrittenQuerySpan?)value);
 
         /// <summary>
@@ -301,6 +326,11 @@ namespace G
         {
             RewrittenQuery = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static QueryHistorySpan FromRewrittenQuery(global::G.RewrittenQuerySpan? value) => new QueryHistorySpan(value);
 
         /// <summary>
         /// 

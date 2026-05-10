@@ -536,6 +536,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Asset FromVideo(global::G.VideoAsset? value) => new Asset(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Asset(global::G.ImageAsset value) => new Asset((global::G.ImageAsset?)value);
 
         /// <summary>
@@ -550,6 +555,11 @@ namespace G
         {
             Image = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Asset FromImage(global::G.ImageAsset? value) => new Asset(value);
 
         /// <summary>
         /// 
@@ -572,6 +582,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Asset FromText(global::G.TextAsset? value) => new Asset(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Asset(global::G.RichTextAsset value) => new Asset((global::G.RichTextAsset?)value);
 
         /// <summary>
@@ -586,6 +601,11 @@ namespace G
         {
             RichText = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Asset FromRichText(global::G.RichTextAsset? value) => new Asset(value);
 
         /// <summary>
         /// 
@@ -608,6 +628,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Asset FromAudio(global::G.AudioAsset? value) => new Asset(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Asset(global::G.LumaAsset value) => new Asset((global::G.LumaAsset?)value);
 
         /// <summary>
@@ -622,6 +647,11 @@ namespace G
         {
             Luma = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Asset FromLuma(global::G.LumaAsset? value) => new Asset(value);
 
         /// <summary>
         /// 
@@ -644,6 +674,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Asset FromCaption(global::G.CaptionAsset? value) => new Asset(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Asset(global::G.RichCaptionAsset value) => new Asset((global::G.RichCaptionAsset?)value);
 
         /// <summary>
@@ -658,6 +693,11 @@ namespace G
         {
             RichCaption = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Asset FromRichCaption(global::G.RichCaptionAsset? value) => new Asset(value);
 
         /// <summary>
         /// 
@@ -680,6 +720,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Asset FromHtml(global::G.HtmlAsset? value) => new Asset(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Asset(global::G.TitleAsset value) => new Asset((global::G.TitleAsset?)value);
 
         /// <summary>
@@ -694,6 +739,11 @@ namespace G
         {
             Title = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Asset FromTitle(global::G.TitleAsset? value) => new Asset(value);
 
         /// <summary>
         /// 
@@ -716,6 +766,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Asset FromShape(global::G.ShapeAsset? value) => new Asset(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Asset(global::G.SvgAsset value) => new Asset((global::G.SvgAsset?)value);
 
         /// <summary>
@@ -730,6 +785,11 @@ namespace G
         {
             Svg = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Asset FromSvg(global::G.SvgAsset? value) => new Asset(value);
 
         /// <summary>
         /// 
@@ -752,6 +812,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Asset FromTextToImage(global::G.TextToImageAsset? value) => new Asset(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Asset(global::G.ImageToVideoAsset value) => new Asset((global::G.ImageToVideoAsset?)value);
 
         /// <summary>
@@ -770,6 +835,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Asset FromImageToVideo(global::G.ImageToVideoAsset? value) => new Asset(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Asset(global::G.TextToSpeechAsset value) => new Asset((global::G.TextToSpeechAsset?)value);
 
         /// <summary>
@@ -784,6 +854,11 @@ namespace G
         {
             TextToSpeech = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Asset FromTextToSpeech(global::G.TextToSpeechAsset? value) => new Asset(value);
 
         /// <summary>
         /// 

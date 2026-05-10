@@ -180,6 +180,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static EmbeddingsPostRequestBodyContentApplicationJsonSchemaInput FromEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant1(string? value) => new EmbeddingsPostRequestBodyContentApplicationJsonSchemaInput(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public EmbeddingsPostRequestBodyContentApplicationJsonSchemaInput(
             string? embeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant1,
             global::System.Collections.Generic.IList<string>? embeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant2,

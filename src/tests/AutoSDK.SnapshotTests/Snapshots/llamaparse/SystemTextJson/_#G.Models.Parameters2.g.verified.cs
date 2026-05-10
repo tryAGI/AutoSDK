@@ -189,6 +189,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Parameters2 FromSplitV1(global::G.SplitV1Parameters? value) => new Parameters2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Parameters2(global::G.ExtractV2Parameters value) => new Parameters2((global::G.ExtractV2Parameters?)value);
 
         /// <summary>
@@ -203,6 +208,11 @@ namespace G
         {
             ExtractV2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Parameters2 FromExtractV2(global::G.ExtractV2Parameters? value) => new Parameters2(value);
 
         /// <summary>
         /// 
@@ -225,6 +235,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Parameters2 FromClassifyV2(global::G.ClassifyV2Parameters? value) => new Parameters2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Parameters2(global::G.ParseV2Parameters value) => new Parameters2((global::G.ParseV2Parameters?)value);
 
         /// <summary>
@@ -243,6 +258,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Parameters2 FromParseV2(global::G.ParseV2Parameters? value) => new Parameters2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Parameters2(global::G.UntypedParameters value) => new Parameters2((global::G.UntypedParameters?)value);
 
         /// <summary>
@@ -257,6 +277,11 @@ namespace G
         {
             Unknown = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Parameters2 FromUnknown(global::G.UntypedParameters? value) => new Parameters2(value);
 
         /// <summary>
         /// 

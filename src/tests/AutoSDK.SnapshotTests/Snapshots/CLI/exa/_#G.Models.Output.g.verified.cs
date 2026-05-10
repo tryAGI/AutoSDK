@@ -95,6 +95,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Output FromCompleted(global::G.ResearchEventDtoClassVariant1Variant2OutputVariant1? value) => new Output(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Output(global::G.ResearchEventDtoClassVariant1Variant2OutputVariant2 value) => new Output((global::G.ResearchEventDtoClassVariant1Variant2OutputVariant2?)value);
 
         /// <summary>
@@ -109,6 +114,11 @@ namespace G
         {
             Failed = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Output FromFailed(global::G.ResearchEventDtoClassVariant1Variant2OutputVariant2? value) => new Output(value);
 
         /// <summary>
         /// 

@@ -120,6 +120,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static JsonListStringPublic FromJsonListStringPublicVariant3(string? value) => new JsonListStringPublic(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public JsonListStringPublic(
             object? jsonListStringPublicVariant1,
             global::System.Collections.Generic.IList<object>? jsonListStringPublicVariant2,

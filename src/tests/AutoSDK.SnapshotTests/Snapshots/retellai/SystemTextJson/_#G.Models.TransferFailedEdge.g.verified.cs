@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static TransferFailedEdge FromNode(global::G.NodeEdge? value) => new TransferFailedEdge(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator TransferFailedEdge(global::G.TransferFailedEdgeVariant2 value) => new TransferFailedEdge((global::G.TransferFailedEdgeVariant2?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             TransferFailedEdgeVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static TransferFailedEdge FromTransferFailedEdgeVariant2(global::G.TransferFailedEdgeVariant2? value) => new TransferFailedEdge(value);
 
         /// <summary>
         /// 

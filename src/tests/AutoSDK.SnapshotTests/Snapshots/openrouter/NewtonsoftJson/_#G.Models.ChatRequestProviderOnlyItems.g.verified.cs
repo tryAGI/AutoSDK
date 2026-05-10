@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ChatRequestProviderOnlyItems FromProviderName(global::G.ProviderName? value) => new ChatRequestProviderOnlyItems(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChatRequestProviderOnlyItems(string value) => new ChatRequestProviderOnlyItems((string?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             ChatRequestProviderOnlyItemsVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChatRequestProviderOnlyItems FromChatRequestProviderOnlyItemsVariant2(string? value) => new ChatRequestProviderOnlyItems(value);
 
         /// <summary>
         /// 

@@ -150,6 +150,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ChatToolChoice FromChatToolChoice0(global::G.ChatToolChoice0? value) => new ChatToolChoice(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChatToolChoice(global::G.ChatToolChoice1 value) => new ChatToolChoice((global::G.ChatToolChoice1?)value);
 
         /// <summary>
@@ -164,6 +169,11 @@ namespace G
         {
             ChatToolChoice1 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChatToolChoice FromChatToolChoice1(global::G.ChatToolChoice1? value) => new ChatToolChoice(value);
 
         /// <summary>
         /// 
@@ -186,6 +196,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ChatToolChoice FromChatToolChoice2(global::G.ChatToolChoice2? value) => new ChatToolChoice(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChatToolChoice(global::G.ChatNamedToolChoice value) => new ChatToolChoice((global::G.ChatNamedToolChoice?)value);
 
         /// <summary>
@@ -200,6 +215,11 @@ namespace G
         {
             ChatNamedToolChoice = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChatToolChoice FromChatNamedToolChoice(global::G.ChatNamedToolChoice? value) => new ChatToolChoice(value);
 
         /// <summary>
         /// 

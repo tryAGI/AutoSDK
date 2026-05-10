@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static SmsContent FromPredefined(global::G.SmsContentPredefined? value) => new SmsContent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator SmsContent(global::G.SmsContentInferred value) => new SmsContent((global::G.SmsContentInferred?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             Inferred = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static SmsContent FromInferred(global::G.SmsContentInferred? value) => new SmsContent(value);
 
         /// <summary>
         /// 

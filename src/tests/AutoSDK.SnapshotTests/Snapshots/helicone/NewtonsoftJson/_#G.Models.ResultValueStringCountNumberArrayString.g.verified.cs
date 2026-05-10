@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ResultValueStringCountNumberArrayString FromSuccess(global::G.ResultSuccessValueStringCountNumberArray? value) => new ResultValueStringCountNumberArrayString(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ResultValueStringCountNumberArrayString(global::G.ResultErrorString value) => new ResultValueStringCountNumberArrayString((global::G.ResultErrorString?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             Error = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ResultValueStringCountNumberArrayString FromError(global::G.ResultErrorString? value) => new ResultValueStringCountNumberArrayString(value);
 
         /// <summary>
         /// 

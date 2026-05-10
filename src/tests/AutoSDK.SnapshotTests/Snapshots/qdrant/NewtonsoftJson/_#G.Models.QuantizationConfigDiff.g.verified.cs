@@ -150,6 +150,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static QuantizationConfigDiff FromScalar(global::G.ScalarQuantization? value) => new QuantizationConfigDiff(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator QuantizationConfigDiff(global::G.ProductQuantization value) => new QuantizationConfigDiff((global::G.ProductQuantization?)value);
 
         /// <summary>
@@ -164,6 +169,11 @@ namespace G
         {
             Product = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static QuantizationConfigDiff FromProduct(global::G.ProductQuantization? value) => new QuantizationConfigDiff(value);
 
         /// <summary>
         /// 
@@ -186,6 +196,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static QuantizationConfigDiff FromBinary(global::G.BinaryQuantization? value) => new QuantizationConfigDiff(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator QuantizationConfigDiff(global::G.DisabledType value) => new QuantizationConfigDiff((global::G.DisabledType?)value);
 
         /// <summary>
@@ -200,6 +215,11 @@ namespace G
         {
             DisabledType = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static QuantizationConfigDiff FromDisabledType(global::G.DisabledType? value) => new QuantizationConfigDiff(value);
 
         /// <summary>
         /// 

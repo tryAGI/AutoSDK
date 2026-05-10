@@ -270,6 +270,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static PayloadSchemaParams FromKeywordIndex(global::G.KeywordIndexParams? value) => new PayloadSchemaParams(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator PayloadSchemaParams(global::G.IntegerIndexParams value) => new PayloadSchemaParams((global::G.IntegerIndexParams?)value);
 
         /// <summary>
@@ -284,6 +289,11 @@ namespace G
         {
             IntegerIndex = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static PayloadSchemaParams FromIntegerIndex(global::G.IntegerIndexParams? value) => new PayloadSchemaParams(value);
 
         /// <summary>
         /// 
@@ -306,6 +316,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static PayloadSchemaParams FromFloatIndex(global::G.FloatIndexParams? value) => new PayloadSchemaParams(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator PayloadSchemaParams(global::G.GeoIndexParams value) => new PayloadSchemaParams((global::G.GeoIndexParams?)value);
 
         /// <summary>
@@ -320,6 +335,11 @@ namespace G
         {
             GeoIndex = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static PayloadSchemaParams FromGeoIndex(global::G.GeoIndexParams? value) => new PayloadSchemaParams(value);
 
         /// <summary>
         /// 
@@ -342,6 +362,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static PayloadSchemaParams FromTextIndex(global::G.TextIndexParams? value) => new PayloadSchemaParams(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator PayloadSchemaParams(global::G.BoolIndexParams value) => new PayloadSchemaParams((global::G.BoolIndexParams?)value);
 
         /// <summary>
@@ -356,6 +381,11 @@ namespace G
         {
             BoolIndex = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static PayloadSchemaParams FromBoolIndex(global::G.BoolIndexParams? value) => new PayloadSchemaParams(value);
 
         /// <summary>
         /// 
@@ -378,6 +408,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static PayloadSchemaParams FromDatetimeIndex(global::G.DatetimeIndexParams? value) => new PayloadSchemaParams(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator PayloadSchemaParams(global::G.UuidIndexParams value) => new PayloadSchemaParams((global::G.UuidIndexParams?)value);
 
         /// <summary>
@@ -392,6 +427,11 @@ namespace G
         {
             UuidIndex = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static PayloadSchemaParams FromUuidIndex(global::G.UuidIndexParams? value) => new PayloadSchemaParams(value);
 
         /// <summary>
         /// 

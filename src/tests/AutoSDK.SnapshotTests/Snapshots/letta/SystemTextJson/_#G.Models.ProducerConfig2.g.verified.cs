@@ -95,6 +95,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ProducerConfig2 FromSlackChannelReader(global::G.PipelinesUpdatePipelineProducerConfigRequestProducerConfigVariant1? value) => new ProducerConfig2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ProducerConfig2(global::G.PipelinesUpdatePipelineProducerConfigRequestProducerConfigVariant2 value) => new ProducerConfig2((global::G.PipelinesUpdatePipelineProducerConfigRequestProducerConfigVariant2?)value);
 
         /// <summary>
@@ -109,6 +114,11 @@ namespace G
         {
             CustomWebhook = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ProducerConfig2 FromCustomWebhook(global::G.PipelinesUpdatePipelineProducerConfigRequestProducerConfigVariant2? value) => new ProducerConfig2(value);
 
         /// <summary>
         /// 

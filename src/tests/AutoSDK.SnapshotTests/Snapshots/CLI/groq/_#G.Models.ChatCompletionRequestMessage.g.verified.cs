@@ -185,6 +185,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ChatCompletionRequestMessage FromSystem(global::G.ChatCompletionRequestSystemMessage? value) => new ChatCompletionRequestMessage(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChatCompletionRequestMessage(global::G.ChatCompletionRequestUserMessage value) => new ChatCompletionRequestMessage((global::G.ChatCompletionRequestUserMessage?)value);
 
         /// <summary>
@@ -199,6 +204,11 @@ namespace G
         {
             User = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChatCompletionRequestMessage FromUser(global::G.ChatCompletionRequestUserMessage? value) => new ChatCompletionRequestMessage(value);
 
         /// <summary>
         /// 
@@ -221,6 +231,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ChatCompletionRequestMessage FromAssistant(global::G.ChatCompletionRequestAssistantMessage? value) => new ChatCompletionRequestMessage(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChatCompletionRequestMessage(global::G.ChatCompletionRequestToolMessage value) => new ChatCompletionRequestMessage((global::G.ChatCompletionRequestToolMessage?)value);
 
         /// <summary>
@@ -239,6 +254,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ChatCompletionRequestMessage FromTool(global::G.ChatCompletionRequestToolMessage? value) => new ChatCompletionRequestMessage(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChatCompletionRequestMessage(global::G.ChatCompletionRequestFunctionMessage value) => new ChatCompletionRequestMessage((global::G.ChatCompletionRequestFunctionMessage?)value);
 
         /// <summary>
@@ -253,6 +273,11 @@ namespace G
         {
             Function = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChatCompletionRequestMessage FromFunction(global::G.ChatCompletionRequestFunctionMessage? value) => new ChatCompletionRequestMessage(value);
 
         /// <summary>
         /// 

@@ -65,6 +65,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static AuthParamsVariant12 FromOauth2(global::G.OAuth2CreateOrUpdateParams? value) => new AuthParamsVariant12(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public AuthParamsVariant12(
             global::G.LinearDataSourceCreateOrUpdateParamsAuthParamsVariant1DiscriminatorType? type,
             global::G.OAuth2CreateOrUpdateParams? oauth2

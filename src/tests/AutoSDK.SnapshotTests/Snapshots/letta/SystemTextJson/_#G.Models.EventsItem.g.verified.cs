@@ -185,6 +185,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static EventsItem FromSessionStart(global::G.MetadataSendTelemetryRequestEventVariant1? value) => new EventsItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator EventsItem(global::G.MetadataSendTelemetryRequestEventVariant2 value) => new EventsItem((global::G.MetadataSendTelemetryRequestEventVariant2?)value);
 
         /// <summary>
@@ -199,6 +204,11 @@ namespace G
         {
             SessionEnd = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static EventsItem FromSessionEnd(global::G.MetadataSendTelemetryRequestEventVariant2? value) => new EventsItem(value);
 
         /// <summary>
         /// 
@@ -221,6 +231,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static EventsItem FromToolUsage(global::G.MetadataSendTelemetryRequestEventVariant3? value) => new EventsItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator EventsItem(global::G.MetadataSendTelemetryRequestEventVariant4 value) => new EventsItem((global::G.MetadataSendTelemetryRequestEventVariant4?)value);
 
         /// <summary>
@@ -239,6 +254,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static EventsItem FromError(global::G.MetadataSendTelemetryRequestEventVariant4? value) => new EventsItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator EventsItem(global::G.MetadataSendTelemetryRequestEventVariant5 value) => new EventsItem((global::G.MetadataSendTelemetryRequestEventVariant5?)value);
 
         /// <summary>
@@ -253,6 +273,11 @@ namespace G
         {
             UserInput = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static EventsItem FromUserInput(global::G.MetadataSendTelemetryRequestEventVariant5? value) => new EventsItem(value);
 
         /// <summary>
         /// 

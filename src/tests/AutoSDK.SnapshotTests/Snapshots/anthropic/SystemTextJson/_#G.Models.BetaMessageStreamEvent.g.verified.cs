@@ -215,6 +215,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static BetaMessageStreamEvent FromMessageStart(global::G.BetaMessageStartEvent? value) => new BetaMessageStreamEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BetaMessageStreamEvent(global::G.BetaMessageDeltaEvent value) => new BetaMessageStreamEvent((global::G.BetaMessageDeltaEvent?)value);
 
         /// <summary>
@@ -229,6 +234,11 @@ namespace G
         {
             MessageDelta = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaMessageStreamEvent FromMessageDelta(global::G.BetaMessageDeltaEvent? value) => new BetaMessageStreamEvent(value);
 
         /// <summary>
         /// 
@@ -251,6 +261,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static BetaMessageStreamEvent FromMessageStop(global::G.BetaMessageStopEvent? value) => new BetaMessageStreamEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BetaMessageStreamEvent(global::G.BetaContentBlockStartEvent value) => new BetaMessageStreamEvent((global::G.BetaContentBlockStartEvent?)value);
 
         /// <summary>
@@ -265,6 +280,11 @@ namespace G
         {
             ContentBlockStart = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaMessageStreamEvent FromContentBlockStart(global::G.BetaContentBlockStartEvent? value) => new BetaMessageStreamEvent(value);
 
         /// <summary>
         /// 
@@ -287,6 +307,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static BetaMessageStreamEvent FromContentBlockDelta(global::G.BetaContentBlockDeltaEvent? value) => new BetaMessageStreamEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BetaMessageStreamEvent(global::G.BetaContentBlockStopEvent value) => new BetaMessageStreamEvent((global::G.BetaContentBlockStopEvent?)value);
 
         /// <summary>
@@ -301,6 +326,11 @@ namespace G
         {
             ContentBlockStop = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaMessageStreamEvent FromContentBlockStop(global::G.BetaContentBlockStopEvent? value) => new BetaMessageStreamEvent(value);
 
         /// <summary>
         /// 

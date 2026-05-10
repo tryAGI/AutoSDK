@@ -60,6 +60,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static UsingVector FromUsingVectorVariant1(string? value) => new UsingVector(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public object? Object =>
             UsingVectorVariant1 as object 
             ;

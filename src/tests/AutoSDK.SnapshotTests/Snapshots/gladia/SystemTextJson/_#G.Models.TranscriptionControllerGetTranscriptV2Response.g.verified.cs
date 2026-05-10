@@ -95,6 +95,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static TranscriptionControllerGetTranscriptV2Response FromPreRecorded(global::G.PreRecordedResponse? value) => new TranscriptionControllerGetTranscriptV2Response(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator TranscriptionControllerGetTranscriptV2Response(global::G.StreamingResponse value) => new TranscriptionControllerGetTranscriptV2Response((global::G.StreamingResponse?)value);
 
         /// <summary>
@@ -109,6 +114,11 @@ namespace G
         {
             Live = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static TranscriptionControllerGetTranscriptV2Response FromLive(global::G.StreamingResponse? value) => new TranscriptionControllerGetTranscriptV2Response(value);
 
         /// <summary>
         /// 

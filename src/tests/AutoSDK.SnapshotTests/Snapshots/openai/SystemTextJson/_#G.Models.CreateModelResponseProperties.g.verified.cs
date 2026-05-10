@@ -60,6 +60,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static CreateModelResponseProperties FromModelResponseProperties(global::G.ModelResponseProperties? value) => new CreateModelResponseProperties(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public object? Object =>
             ModelResponseProperties as object 
             ;

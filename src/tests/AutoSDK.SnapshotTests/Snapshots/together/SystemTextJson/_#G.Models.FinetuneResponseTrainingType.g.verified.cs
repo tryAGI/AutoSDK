@@ -95,6 +95,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static FinetuneResponseTrainingType FromFull(global::G.FullTrainingType? value) => new FinetuneResponseTrainingType(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator FinetuneResponseTrainingType(global::G.LoRATrainingType value) => new FinetuneResponseTrainingType((global::G.LoRATrainingType?)value);
 
         /// <summary>
@@ -109,6 +114,11 @@ namespace G
         {
             Lora = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static FinetuneResponseTrainingType FromLora(global::G.LoRATrainingType? value) => new FinetuneResponseTrainingType(value);
 
         /// <summary>
         /// 

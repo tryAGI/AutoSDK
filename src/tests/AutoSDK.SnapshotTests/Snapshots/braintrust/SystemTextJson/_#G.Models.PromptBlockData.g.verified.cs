@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static PromptBlockData FromChat(global::G.PromptBlockDataChat? value) => new PromptBlockData(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator PromptBlockData(global::G.PromptBlockDataCompletion value) => new PromptBlockData((global::G.PromptBlockDataCompletion?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             Completion = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static PromptBlockData FromCompletion(global::G.PromptBlockDataCompletion? value) => new PromptBlockData(value);
 
         /// <summary>
         /// 

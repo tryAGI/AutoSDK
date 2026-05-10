@@ -180,6 +180,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static TextToSpeechProviders FromMicrosoft(global::G.TextToSpeechProvidersMicrosoft? value) => new TextToSpeechProviders(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator TextToSpeechProviders(global::G.TextToSpeechProvidersElevenLabs value) => new TextToSpeechProviders((global::G.TextToSpeechProvidersElevenLabs?)value);
 
         /// <summary>
@@ -194,6 +199,11 @@ namespace G
         {
             ElevenLabs = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static TextToSpeechProviders FromElevenLabs(global::G.TextToSpeechProvidersElevenLabs? value) => new TextToSpeechProviders(value);
 
         /// <summary>
         /// 
@@ -216,6 +226,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static TextToSpeechProviders FromAmazon(global::G.TextToSpeechProvidersAmazon? value) => new TextToSpeechProviders(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator TextToSpeechProviders(global::G.TextToSpeechProvidersGoogle value) => new TextToSpeechProviders((global::G.TextToSpeechProvidersGoogle?)value);
 
         /// <summary>
@@ -234,6 +249,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static TextToSpeechProviders FromGoogle(global::G.TextToSpeechProvidersGoogle? value) => new TextToSpeechProviders(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator TextToSpeechProviders(global::G.TextToSpeechProvidersOpenAI value) => new TextToSpeechProviders((global::G.TextToSpeechProvidersOpenAI?)value);
 
         /// <summary>
@@ -248,6 +268,11 @@ namespace G
         {
             OpenAI = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static TextToSpeechProviders FromOpenAI(global::G.TextToSpeechProvidersOpenAI? value) => new TextToSpeechProviders(value);
 
         /// <summary>
         /// 

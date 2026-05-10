@@ -95,6 +95,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static FuncResponseVariant2Item FromText(global::G.TextContent? value) => new FuncResponseVariant2Item(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator FuncResponseVariant2Item(global::G.ImageContent value) => new FuncResponseVariant2Item((global::G.ImageContent?)value);
 
         /// <summary>
@@ -109,6 +114,11 @@ namespace G
         {
             Image = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static FuncResponseVariant2Item FromImage(global::G.ImageContent? value) => new FuncResponseVariant2Item(value);
 
         /// <summary>
         /// 

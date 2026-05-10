@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ChatToolCallsGenerationEvent FromStream(global::G.ChatStreamEvent? value) => new ChatToolCallsGenerationEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChatToolCallsGenerationEvent(global::G.ChatToolCallsGenerationEventNykiww value) => new ChatToolCallsGenerationEvent((global::G.ChatToolCallsGenerationEventNykiww?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             Nykiww = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChatToolCallsGenerationEvent FromNykiww(global::G.ChatToolCallsGenerationEventNykiww? value) => new ChatToolCallsGenerationEvent(value);
 
         /// <summary>
         /// 

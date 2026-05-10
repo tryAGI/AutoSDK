@@ -125,6 +125,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static TemplateParamsItem FromHeader(global::G.WhatsAppTemplateHeaderComponentParams? value) => new TemplateParamsItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator TemplateParamsItem(global::G.WhatsAppTemplateBodyComponentParams value) => new TemplateParamsItem((global::G.WhatsAppTemplateBodyComponentParams?)value);
 
         /// <summary>
@@ -143,6 +148,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static TemplateParamsItem FromBody(global::G.WhatsAppTemplateBodyComponentParams? value) => new TemplateParamsItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator TemplateParamsItem(global::G.WhatsAppTemplateButtonComponentParams value) => new TemplateParamsItem((global::G.WhatsAppTemplateButtonComponentParams?)value);
 
         /// <summary>
@@ -157,6 +167,11 @@ namespace G
         {
             Button = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static TemplateParamsItem FromButton(global::G.WhatsAppTemplateButtonComponentParams? value) => new TemplateParamsItem(value);
 
         /// <summary>
         /// 

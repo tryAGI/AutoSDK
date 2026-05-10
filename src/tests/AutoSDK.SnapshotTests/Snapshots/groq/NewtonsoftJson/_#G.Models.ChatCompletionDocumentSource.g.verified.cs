@@ -95,6 +95,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ChatCompletionDocumentSource FromText(global::G.ChatCompletionDocumentSourceText? value) => new ChatCompletionDocumentSource(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChatCompletionDocumentSource(global::G.ChatCompletionDocumentSourceJSON value) => new ChatCompletionDocumentSource((global::G.ChatCompletionDocumentSourceJSON?)value);
 
         /// <summary>
@@ -109,6 +114,11 @@ namespace G
         {
             Json = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChatCompletionDocumentSource FromJson(global::G.ChatCompletionDocumentSourceJSON? value) => new ChatCompletionDocumentSource(value);
 
         /// <summary>
         /// 

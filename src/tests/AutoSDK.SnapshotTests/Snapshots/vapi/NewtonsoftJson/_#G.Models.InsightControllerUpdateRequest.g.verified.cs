@@ -155,6 +155,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static InsightControllerUpdateRequest FromBar(global::G.UpdateBarInsightFromCallTableDTO? value) => new InsightControllerUpdateRequest(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator InsightControllerUpdateRequest(global::G.UpdatePieInsightFromCallTableDTO value) => new InsightControllerUpdateRequest((global::G.UpdatePieInsightFromCallTableDTO?)value);
 
         /// <summary>
@@ -169,6 +174,11 @@ namespace G
         {
             Pie = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static InsightControllerUpdateRequest FromPie(global::G.UpdatePieInsightFromCallTableDTO? value) => new InsightControllerUpdateRequest(value);
 
         /// <summary>
         /// 
@@ -191,6 +201,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static InsightControllerUpdateRequest FromLine(global::G.UpdateLineInsightFromCallTableDTO? value) => new InsightControllerUpdateRequest(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator InsightControllerUpdateRequest(global::G.UpdateTextInsightFromCallTableDTO value) => new InsightControllerUpdateRequest((global::G.UpdateTextInsightFromCallTableDTO?)value);
 
         /// <summary>
@@ -205,6 +220,11 @@ namespace G
         {
             Text = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static InsightControllerUpdateRequest FromText(global::G.UpdateTextInsightFromCallTableDTO? value) => new InsightControllerUpdateRequest(value);
 
         /// <summary>
         /// 

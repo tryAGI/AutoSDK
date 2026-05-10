@@ -120,6 +120,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static OutputItemWebSearchCallAction FromOutputItemWebSearchCallAction0(global::G.OutputItemWebSearchCallAction0? value) => new OutputItemWebSearchCallAction(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator OutputItemWebSearchCallAction(global::G.OutputItemWebSearchCallAction1 value) => new OutputItemWebSearchCallAction((global::G.OutputItemWebSearchCallAction1?)value);
 
         /// <summary>
@@ -138,6 +143,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static OutputItemWebSearchCallAction FromOutputItemWebSearchCallAction1(global::G.OutputItemWebSearchCallAction1? value) => new OutputItemWebSearchCallAction(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator OutputItemWebSearchCallAction(global::G.OutputItemWebSearchCallAction2 value) => new OutputItemWebSearchCallAction((global::G.OutputItemWebSearchCallAction2?)value);
 
         /// <summary>
@@ -152,6 +162,11 @@ namespace G
         {
             OutputItemWebSearchCallAction2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static OutputItemWebSearchCallAction FromOutputItemWebSearchCallAction2(global::G.OutputItemWebSearchCallAction2? value) => new OutputItemWebSearchCallAction(value);
 
         /// <summary>
         /// 

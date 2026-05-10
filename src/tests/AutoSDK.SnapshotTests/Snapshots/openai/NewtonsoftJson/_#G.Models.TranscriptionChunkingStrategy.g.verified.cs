@@ -94,6 +94,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static TranscriptionChunkingStrategy FromEnum(global::G.TranscriptionChunkingStrategyEnum? value) => new TranscriptionChunkingStrategy(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator TranscriptionChunkingStrategy(global::G.VadConfig value) => new TranscriptionChunkingStrategy((global::G.VadConfig?)value);
 
         /// <summary>
@@ -108,6 +113,11 @@ namespace G
         {
             VadConfig = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static TranscriptionChunkingStrategy FromVadConfig(global::G.VadConfig? value) => new TranscriptionChunkingStrategy(value);
 
         /// <summary>
         /// 

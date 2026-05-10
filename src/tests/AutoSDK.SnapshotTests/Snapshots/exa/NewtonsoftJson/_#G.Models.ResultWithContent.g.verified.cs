@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ResultWithContent FromResult(global::G.Result? value) => new ResultWithContent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ResultWithContent(global::G.ResultWithContentVariant2 value) => new ResultWithContent((global::G.ResultWithContentVariant2?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             ResultWithContentVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ResultWithContent FromResultWithContentVariant2(global::G.ResultWithContentVariant2? value) => new ResultWithContent(value);
 
         /// <summary>
         /// 

@@ -585,6 +585,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static AgentStreamedResponse FromInputMessage(global::G.InputMessageEvent? value) => new AgentStreamedResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator AgentStreamedResponse(global::G.StreamingAgentOutput value) => new AgentStreamedResponse((global::G.StreamingAgentOutput?)value);
 
         /// <summary>
@@ -599,6 +604,11 @@ namespace G
         {
             StreamingAgentOutput = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static AgentStreamedResponse FromStreamingAgentOutput(global::G.StreamingAgentOutput? value) => new AgentStreamedResponse(value);
 
         /// <summary>
         /// 
@@ -621,6 +631,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static AgentStreamedResponse FromStreamingAgentOutputEnd(global::G.StreamingAgentOutputEnd? value) => new AgentStreamedResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator AgentStreamedResponse(global::G.StreamingThinking value) => new AgentStreamedResponse((global::G.StreamingThinking?)value);
 
         /// <summary>
@@ -635,6 +650,11 @@ namespace G
         {
             StreamingThinking = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static AgentStreamedResponse FromStreamingThinking(global::G.StreamingThinking? value) => new AgentStreamedResponse(value);
 
         /// <summary>
         /// 
@@ -657,6 +677,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static AgentStreamedResponse FromStreamingThinkingEnd(global::G.StreamingThinkingEnd? value) => new AgentStreamedResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator AgentStreamedResponse(global::G.ToolInputEvent value) => new AgentStreamedResponse((global::G.ToolInputEvent?)value);
 
         /// <summary>
@@ -671,6 +696,11 @@ namespace G
         {
             ToolInput = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static AgentStreamedResponse FromToolInput(global::G.ToolInputEvent? value) => new AgentStreamedResponse(value);
 
         /// <summary>
         /// 
@@ -693,6 +723,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static AgentStreamedResponse FromToolOutput(global::G.ToolOutputEvent? value) => new AgentStreamedResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator AgentStreamedResponse(global::G.StructuredOutputEvent value) => new AgentStreamedResponse((global::G.StructuredOutputEvent?)value);
 
         /// <summary>
@@ -707,6 +742,11 @@ namespace G
         {
             StructuredOutput = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static AgentStreamedResponse FromStructuredOutput(global::G.StructuredOutputEvent? value) => new AgentStreamedResponse(value);
 
         /// <summary>
         /// 
@@ -729,6 +769,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static AgentStreamedResponse FromContextLimitExceeded(global::G.ContextLimitExceededEvent? value) => new AgentStreamedResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator AgentStreamedResponse(global::G.StepTransitionLimitExceededEvent value) => new AgentStreamedResponse((global::G.StepTransitionLimitExceededEvent?)value);
 
         /// <summary>
@@ -743,6 +788,11 @@ namespace G
         {
             StepTransitionLimitExceeded = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static AgentStreamedResponse FromStepTransitionLimitExceeded(global::G.StepTransitionLimitExceededEvent? value) => new AgentStreamedResponse(value);
 
         /// <summary>
         /// 
@@ -765,6 +815,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static AgentStreamedResponse FromSessionInterrupted(global::G.SessionInterruptedEvent? value) => new AgentStreamedResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator AgentStreamedResponse(global::G.ImageReadEvent value) => new AgentStreamedResponse((global::G.ImageReadEvent?)value);
 
         /// <summary>
@@ -779,6 +834,11 @@ namespace G
         {
             ImageRead = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static AgentStreamedResponse FromImageRead(global::G.ImageReadEvent? value) => new AgentStreamedResponse(value);
 
         /// <summary>
         /// 
@@ -801,6 +861,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static AgentStreamedResponse FromStepTransition(global::G.StepTransitionEvent? value) => new AgentStreamedResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator AgentStreamedResponse(global::G.ContextConsumedEvent value) => new AgentStreamedResponse((global::G.ContextConsumedEvent?)value);
 
         /// <summary>
@@ -815,6 +880,11 @@ namespace G
         {
             ContextConsumed = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static AgentStreamedResponse FromContextConsumed(global::G.ContextConsumedEvent? value) => new AgentStreamedResponse(value);
 
         /// <summary>
         /// 
@@ -837,6 +907,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static AgentStreamedResponse FromCompactionStarted(global::G.CompactionStartedEvent? value) => new AgentStreamedResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator AgentStreamedResponse(global::G.CompactionEvent value) => new AgentStreamedResponse((global::G.CompactionEvent?)value);
 
         /// <summary>
@@ -851,6 +926,11 @@ namespace G
         {
             Compaction = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static AgentStreamedResponse FromCompaction(global::G.CompactionEvent? value) => new AgentStreamedResponse(value);
 
         /// <summary>
         /// 
@@ -873,6 +953,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static AgentStreamedResponse FromError(global::G.StreamError? value) => new AgentStreamedResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator AgentStreamedResponse(global::G.StreamResponseEnd value) => new AgentStreamedResponse((global::G.StreamResponseEnd?)value);
 
         /// <summary>
@@ -887,6 +972,11 @@ namespace G
         {
             End = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static AgentStreamedResponse FromEnd(global::G.StreamResponseEnd? value) => new AgentStreamedResponse(value);
 
         /// <summary>
         /// 

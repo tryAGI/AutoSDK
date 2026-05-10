@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static CompositeContent FromText(global::G.TextFragment? value) => new CompositeContent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator CompositeContent(global::G.ImageFragment value) => new CompositeContent((global::G.ImageFragment?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             Image = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static CompositeContent FromImage(global::G.ImageFragment? value) => new CompositeContent(value);
 
         /// <summary>
         /// 

@@ -273,6 +273,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ItemResource FromInputMessage(global::G.InputMessageResource? value) => new ItemResource(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ItemResource(global::G.OutputMessage value) => new ItemResource((global::G.OutputMessage?)value);
 
         /// <summary>
@@ -287,6 +292,11 @@ namespace G
         {
             Message = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ItemResource FromMessage(global::G.OutputMessage? value) => new ItemResource(value);
 
         /// <summary>
         /// 
@@ -309,6 +319,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ItemResource FromFileSearchCall(global::G.FileSearchToolCall? value) => new ItemResource(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ItemResource(global::G.ComputerToolCall value) => new ItemResource((global::G.ComputerToolCall?)value);
 
         /// <summary>
@@ -323,6 +338,11 @@ namespace G
         {
             ComputerCall = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ItemResource FromComputerCall(global::G.ComputerToolCall? value) => new ItemResource(value);
 
         /// <summary>
         /// 
@@ -345,6 +365,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ItemResource FromComputerToolCallOutput(global::G.ComputerToolCallOutputResource? value) => new ItemResource(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ItemResource(global::G.WebSearchToolCall value) => new ItemResource((global::G.WebSearchToolCall?)value);
 
         /// <summary>
@@ -359,6 +384,11 @@ namespace G
         {
             WebSearchCall = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ItemResource FromWebSearchCall(global::G.WebSearchToolCall? value) => new ItemResource(value);
 
         /// <summary>
         /// 
@@ -381,6 +411,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ItemResource FromFunctionToolCall(global::G.FunctionToolCallResource? value) => new ItemResource(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ItemResource(global::G.FunctionToolCallOutputResource value) => new ItemResource((global::G.FunctionToolCallOutputResource?)value);
 
         /// <summary>
@@ -395,6 +430,11 @@ namespace G
         {
             FunctionToolCallOutput = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ItemResource FromFunctionToolCallOutput(global::G.FunctionToolCallOutputResource? value) => new ItemResource(value);
 
         /// <summary>
         /// 

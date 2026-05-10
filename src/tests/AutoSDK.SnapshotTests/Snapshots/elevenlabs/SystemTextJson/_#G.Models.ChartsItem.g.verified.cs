@@ -125,6 +125,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ChartsItem FromCallSuccess(global::G.DashboardCallSuccessChartModel? value) => new ChartsItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChartsItem(global::G.DashboardCriteriaChartModel value) => new ChartsItem((global::G.DashboardCriteriaChartModel?)value);
 
         /// <summary>
@@ -143,6 +148,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ChartsItem FromCriteria(global::G.DashboardCriteriaChartModel? value) => new ChartsItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChartsItem(global::G.DashboardDataCollectionChartModel value) => new ChartsItem((global::G.DashboardDataCollectionChartModel?)value);
 
         /// <summary>
@@ -157,6 +167,11 @@ namespace G
         {
             DataCollection = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChartsItem FromDataCollection(global::G.DashboardDataCollectionChartModel? value) => new ChartsItem(value);
 
         /// <summary>
         /// 

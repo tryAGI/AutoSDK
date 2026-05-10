@@ -92,6 +92,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static LemurStringResponse FromLemurStringResponseVariant1(global::G.LemurStringResponseVariant1? value) => new LemurStringResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator LemurStringResponse(global::G.LemurBaseResponse value) => new LemurStringResponse((global::G.LemurBaseResponse?)value);
 
         /// <summary>
@@ -106,6 +111,11 @@ namespace G
         {
             Base = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static LemurStringResponse FromBase(global::G.LemurBaseResponse? value) => new LemurStringResponse(value);
 
         /// <summary>
         /// 

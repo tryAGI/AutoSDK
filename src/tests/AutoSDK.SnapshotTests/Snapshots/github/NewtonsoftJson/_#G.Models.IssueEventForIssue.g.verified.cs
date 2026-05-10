@@ -480,6 +480,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static IssueEventForIssue FromLabeledIssueEvent(global::G.LabeledIssueEvent? value) => new IssueEventForIssue(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator IssueEventForIssue(global::G.UnlabeledIssueEvent value) => new IssueEventForIssue((global::G.UnlabeledIssueEvent?)value);
 
         /// <summary>
@@ -494,6 +499,11 @@ namespace G
         {
             UnlabeledIssueEvent = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static IssueEventForIssue FromUnlabeledIssueEvent(global::G.UnlabeledIssueEvent? value) => new IssueEventForIssue(value);
 
         /// <summary>
         /// 
@@ -516,6 +526,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static IssueEventForIssue FromAssignedIssueEvent(global::G.AssignedIssueEvent? value) => new IssueEventForIssue(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator IssueEventForIssue(global::G.UnassignedIssueEvent value) => new IssueEventForIssue((global::G.UnassignedIssueEvent?)value);
 
         /// <summary>
@@ -530,6 +545,11 @@ namespace G
         {
             UnassignedIssueEvent = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static IssueEventForIssue FromUnassignedIssueEvent(global::G.UnassignedIssueEvent? value) => new IssueEventForIssue(value);
 
         /// <summary>
         /// 
@@ -552,6 +572,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static IssueEventForIssue FromMilestonedIssueEvent(global::G.MilestonedIssueEvent? value) => new IssueEventForIssue(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator IssueEventForIssue(global::G.DemilestonedIssueEvent value) => new IssueEventForIssue((global::G.DemilestonedIssueEvent?)value);
 
         /// <summary>
@@ -566,6 +591,11 @@ namespace G
         {
             DemilestonedIssueEvent = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static IssueEventForIssue FromDemilestonedIssueEvent(global::G.DemilestonedIssueEvent? value) => new IssueEventForIssue(value);
 
         /// <summary>
         /// 
@@ -588,6 +618,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static IssueEventForIssue FromRenamedIssueEvent(global::G.RenamedIssueEvent? value) => new IssueEventForIssue(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator IssueEventForIssue(global::G.ReviewRequestedIssueEvent value) => new IssueEventForIssue((global::G.ReviewRequestedIssueEvent?)value);
 
         /// <summary>
@@ -602,6 +637,11 @@ namespace G
         {
             ReviewRequestedIssueEvent = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static IssueEventForIssue FromReviewRequestedIssueEvent(global::G.ReviewRequestedIssueEvent? value) => new IssueEventForIssue(value);
 
         /// <summary>
         /// 
@@ -624,6 +664,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static IssueEventForIssue FromReviewRequestRemovedIssueEvent(global::G.ReviewRequestRemovedIssueEvent? value) => new IssueEventForIssue(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator IssueEventForIssue(global::G.ReviewDismissedIssueEvent value) => new IssueEventForIssue((global::G.ReviewDismissedIssueEvent?)value);
 
         /// <summary>
@@ -638,6 +683,11 @@ namespace G
         {
             ReviewDismissedIssueEvent = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static IssueEventForIssue FromReviewDismissedIssueEvent(global::G.ReviewDismissedIssueEvent? value) => new IssueEventForIssue(value);
 
         /// <summary>
         /// 
@@ -660,6 +710,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static IssueEventForIssue FromLockedIssueEvent(global::G.LockedIssueEvent? value) => new IssueEventForIssue(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator IssueEventForIssue(global::G.AddedToProjectIssueEvent value) => new IssueEventForIssue((global::G.AddedToProjectIssueEvent?)value);
 
         /// <summary>
@@ -674,6 +729,11 @@ namespace G
         {
             AddedToProjectIssueEvent = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static IssueEventForIssue FromAddedToProjectIssueEvent(global::G.AddedToProjectIssueEvent? value) => new IssueEventForIssue(value);
 
         /// <summary>
         /// 
@@ -696,6 +756,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static IssueEventForIssue FromMovedColumnInProjectIssueEvent(global::G.MovedColumnInProjectIssueEvent? value) => new IssueEventForIssue(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator IssueEventForIssue(global::G.RemovedFromProjectIssueEvent value) => new IssueEventForIssue((global::G.RemovedFromProjectIssueEvent?)value);
 
         /// <summary>
@@ -714,6 +779,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static IssueEventForIssue FromRemovedFromProjectIssueEvent(global::G.RemovedFromProjectIssueEvent? value) => new IssueEventForIssue(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator IssueEventForIssue(global::G.ConvertedNoteToIssueIssueEvent value) => new IssueEventForIssue((global::G.ConvertedNoteToIssueIssueEvent?)value);
 
         /// <summary>
@@ -728,6 +798,11 @@ namespace G
         {
             ConvertedNoteToIssueIssueEvent = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static IssueEventForIssue FromConvertedNoteToIssueIssueEvent(global::G.ConvertedNoteToIssueIssueEvent? value) => new IssueEventForIssue(value);
 
         /// <summary>
         /// 

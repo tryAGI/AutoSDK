@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ChatDebugEvent FromStream(global::G.ChatStreamEvent? value) => new ChatDebugEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChatDebugEvent(global::G.ChatDebugEvent352j0t value) => new ChatDebugEvent((global::G.ChatDebugEvent352j0t?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             Event352j0t = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChatDebugEvent FromEvent352j0t(global::G.ChatDebugEvent352j0t? value) => new ChatDebugEvent(value);
 
         /// <summary>
         /// 

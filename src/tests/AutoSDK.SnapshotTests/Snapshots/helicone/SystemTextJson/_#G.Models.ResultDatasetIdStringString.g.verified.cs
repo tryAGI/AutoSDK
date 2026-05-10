@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ResultDatasetIdStringString FromSuccess(global::G.ResultSuccessDatasetIdString? value) => new ResultDatasetIdStringString(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ResultDatasetIdStringString(global::G.ResultErrorString value) => new ResultDatasetIdStringString((global::G.ResultErrorString?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             Error = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ResultDatasetIdStringString FromError(global::G.ResultErrorString? value) => new ResultDatasetIdStringString(value);
 
         /// <summary>
         /// 

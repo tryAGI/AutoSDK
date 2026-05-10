@@ -65,6 +65,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ResponseOutputContent FromOutputText(global::G.ResponseOutputTextContent? value) => new ResponseOutputContent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public ResponseOutputContent(
             global::G.ResponseOutputContentDiscriminatorType? type,
             global::G.ResponseOutputTextContent? outputText

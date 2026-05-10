@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Indexes FromIndexesVariant1(global::G.IndexesVariant1? value) => new Indexes(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Indexes(global::G.IndexesVariant2 value) => new Indexes((global::G.IndexesVariant2?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             IndexesVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Indexes FromIndexesVariant2(global::G.IndexesVariant2? value) => new Indexes(value);
 
         /// <summary>
         /// 

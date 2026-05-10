@@ -65,6 +65,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static AgentStepReminder FromTemplated(global::G.TemplatedReminder? value) => new AgentStepReminder(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public AgentStepReminder(
             global::G.AgentStepReminderDiscriminatorType? type,
             global::G.TemplatedReminder? templated

@@ -215,6 +215,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static MessageStreamEvent FromMessageStart(global::G.MessageStartEvent? value) => new MessageStreamEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator MessageStreamEvent(global::G.MessageDeltaEvent value) => new MessageStreamEvent((global::G.MessageDeltaEvent?)value);
 
         /// <summary>
@@ -229,6 +234,11 @@ namespace G
         {
             MessageDelta = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static MessageStreamEvent FromMessageDelta(global::G.MessageDeltaEvent? value) => new MessageStreamEvent(value);
 
         /// <summary>
         /// 
@@ -251,6 +261,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static MessageStreamEvent FromMessageStop(global::G.MessageStopEvent? value) => new MessageStreamEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator MessageStreamEvent(global::G.ContentBlockStartEvent value) => new MessageStreamEvent((global::G.ContentBlockStartEvent?)value);
 
         /// <summary>
@@ -265,6 +280,11 @@ namespace G
         {
             ContentBlockStart = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static MessageStreamEvent FromContentBlockStart(global::G.ContentBlockStartEvent? value) => new MessageStreamEvent(value);
 
         /// <summary>
         /// 
@@ -287,6 +307,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static MessageStreamEvent FromContentBlockDelta(global::G.ContentBlockDeltaEvent? value) => new MessageStreamEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator MessageStreamEvent(global::G.ContentBlockStopEvent value) => new MessageStreamEvent((global::G.ContentBlockStopEvent?)value);
 
         /// <summary>
@@ -301,6 +326,11 @@ namespace G
         {
             ContentBlockStop = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static MessageStreamEvent FromContentBlockStop(global::G.ContentBlockStopEvent? value) => new MessageStreamEvent(value);
 
         /// <summary>
         /// 

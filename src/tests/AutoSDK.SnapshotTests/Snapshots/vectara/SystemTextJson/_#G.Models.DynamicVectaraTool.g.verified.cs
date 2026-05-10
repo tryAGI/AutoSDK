@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static DynamicVectaraTool FromBase(global::G.ToolBase? value) => new DynamicVectaraTool(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator DynamicVectaraTool(global::G.DynamicVectaraToolVariant2 value) => new DynamicVectaraTool((global::G.DynamicVectaraToolVariant2?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             DynamicVectaraToolVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static DynamicVectaraTool FromDynamicVectaraToolVariant2(global::G.DynamicVectaraToolVariant2? value) => new DynamicVectaraTool(value);
 
         /// <summary>
         /// 

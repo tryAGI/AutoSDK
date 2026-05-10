@@ -224,6 +224,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static AssistantStreamEvent FromThread(global::G.ThreadStreamEvent? value) => new AssistantStreamEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator AssistantStreamEvent(global::G.RunStreamEvent value) => new AssistantStreamEvent((global::G.RunStreamEvent?)value);
 
         /// <summary>
@@ -238,6 +243,11 @@ namespace G
         {
             Run = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static AssistantStreamEvent FromRun(global::G.RunStreamEvent? value) => new AssistantStreamEvent(value);
 
         /// <summary>
         /// 
@@ -260,6 +270,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static AssistantStreamEvent FromRunStep(global::G.RunStepStreamEvent? value) => new AssistantStreamEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator AssistantStreamEvent(global::G.MessageStreamEvent value) => new AssistantStreamEvent((global::G.MessageStreamEvent?)value);
 
         /// <summary>
@@ -274,6 +289,11 @@ namespace G
         {
             Message = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static AssistantStreamEvent FromMessage(global::G.MessageStreamEvent? value) => new AssistantStreamEvent(value);
 
         /// <summary>
         /// 
@@ -296,6 +316,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static AssistantStreamEvent FromError(global::G.ErrorEvent? value) => new AssistantStreamEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator AssistantStreamEvent(global::G.DoneEvent value) => new AssistantStreamEvent((global::G.DoneEvent?)value);
 
         /// <summary>
@@ -310,6 +335,11 @@ namespace G
         {
             Done = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static AssistantStreamEvent FromDone(global::G.DoneEvent? value) => new AssistantStreamEvent(value);
 
         /// <summary>
         /// 

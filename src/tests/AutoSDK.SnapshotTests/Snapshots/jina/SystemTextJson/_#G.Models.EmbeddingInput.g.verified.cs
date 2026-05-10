@@ -123,6 +123,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static EmbeddingInput FromTextEmbeddingInput(global::G.TextEmbeddingInput? value) => new EmbeddingInput(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator EmbeddingInput(global::G.ImageEmbeddingInput value) => new EmbeddingInput((global::G.ImageEmbeddingInput?)value);
 
         /// <summary>
@@ -141,6 +146,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static EmbeddingInput FromImageEmbeddingInput(global::G.ImageEmbeddingInput? value) => new EmbeddingInput(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator EmbeddingInput(global::G.MixedEmbeddingInput value) => new EmbeddingInput((global::G.MixedEmbeddingInput?)value);
 
         /// <summary>
@@ -155,6 +165,11 @@ namespace G
         {
             MixedEmbeddingInput = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static EmbeddingInput FromMixedEmbeddingInput(global::G.MixedEmbeddingInput? value) => new EmbeddingInput(value);
 
         /// <summary>
         /// 

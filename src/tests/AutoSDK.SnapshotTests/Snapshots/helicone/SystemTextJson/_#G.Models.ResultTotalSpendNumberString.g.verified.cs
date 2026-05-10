@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ResultTotalSpendNumberString FromSuccess(global::G.ResultSuccessTotalSpendNumber? value) => new ResultTotalSpendNumberString(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ResultTotalSpendNumberString(global::G.ResultErrorString value) => new ResultTotalSpendNumberString((global::G.ResultErrorString?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             Error = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ResultTotalSpendNumberString FromError(global::G.ResultErrorString? value) => new ResultTotalSpendNumberString(value);
 
         /// <summary>
         /// 

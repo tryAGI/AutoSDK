@@ -95,6 +95,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ToolContent FromText(global::G.TextContent? value) => new ToolContent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ToolContent(global::G.DocumentContent value) => new ToolContent((global::G.DocumentContent?)value);
 
         /// <summary>
@@ -109,6 +114,11 @@ namespace G
         {
             Document = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ToolContent FromDocument(global::G.DocumentContent? value) => new ToolContent(value);
 
         /// <summary>
         /// 

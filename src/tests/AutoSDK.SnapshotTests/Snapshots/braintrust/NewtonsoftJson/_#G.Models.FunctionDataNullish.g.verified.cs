@@ -330,6 +330,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static FunctionDataNullish FromPrompt(global::G.FunctionDataNullishPrompt? value) => new FunctionDataNullish(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator FunctionDataNullish(global::G.FunctionDataNullishCode value) => new FunctionDataNullish((global::G.FunctionDataNullishCode?)value);
 
         /// <summary>
@@ -344,6 +349,11 @@ namespace G
         {
             Code = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static FunctionDataNullish FromCode(global::G.FunctionDataNullishCode? value) => new FunctionDataNullish(value);
 
         /// <summary>
         /// 
@@ -366,6 +376,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static FunctionDataNullish FromGraph(global::G.GraphData? value) => new FunctionDataNullish(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator FunctionDataNullish(global::G.FunctionDataNullishRemoteEval value) => new FunctionDataNullish((global::G.FunctionDataNullishRemoteEval?)value);
 
         /// <summary>
@@ -380,6 +395,11 @@ namespace G
         {
             RemoteEval = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static FunctionDataNullish FromRemoteEval(global::G.FunctionDataNullishRemoteEval? value) => new FunctionDataNullish(value);
 
         /// <summary>
         /// 
@@ -402,6 +422,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static FunctionDataNullish FromGlobal(global::G.FunctionDataNullishGlobal? value) => new FunctionDataNullish(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator FunctionDataNullish(global::G.FacetData value) => new FunctionDataNullish((global::G.FacetData?)value);
 
         /// <summary>
@@ -416,6 +441,11 @@ namespace G
         {
             Facet = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static FunctionDataNullish FromFacet(global::G.FacetData? value) => new FunctionDataNullish(value);
 
         /// <summary>
         /// 
@@ -438,6 +468,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static FunctionDataNullish FromBatchedFacet(global::G.BatchedFacetData? value) => new FunctionDataNullish(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator FunctionDataNullish(global::G.FunctionDataNullishParameters value) => new FunctionDataNullish((global::G.FunctionDataNullishParameters?)value);
 
         /// <summary>
@@ -456,6 +491,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static FunctionDataNullish FromParameters(global::G.FunctionDataNullishParameters? value) => new FunctionDataNullish(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator FunctionDataNullish(global::G.AllOf<global::G.TopicMapData, object> value) => new FunctionDataNullish((global::G.AllOf<global::G.TopicMapData, object>?)value);
 
         /// <summary>
@@ -470,6 +510,11 @@ namespace G
         {
             FunctionDataNullishVariant9 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static FunctionDataNullish FromFunctionDataNullishVariant9(global::G.AllOf<global::G.TopicMapData, object>? value) => new FunctionDataNullish(value);
 
         /// <summary>
         /// 

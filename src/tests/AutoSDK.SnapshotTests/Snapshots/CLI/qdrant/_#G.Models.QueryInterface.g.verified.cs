@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static QueryInterface FromVectorInput(global::G.VectorInput? value) => new QueryInterface(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator QueryInterface(global::G.Query value) => new QueryInterface((global::G.Query?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             Query = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static QueryInterface FromQuery(global::G.Query? value) => new QueryInterface(value);
 
         /// <summary>
         /// 

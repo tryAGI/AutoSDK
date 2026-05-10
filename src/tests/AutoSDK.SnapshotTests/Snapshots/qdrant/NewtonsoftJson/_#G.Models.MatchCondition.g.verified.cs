@@ -210,6 +210,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static MatchCondition FromValue(global::G.MatchValue? value) => new MatchCondition(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator MatchCondition(global::G.MatchText value) => new MatchCondition((global::G.MatchText?)value);
 
         /// <summary>
@@ -224,6 +229,11 @@ namespace G
         {
             Text = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static MatchCondition FromText(global::G.MatchText? value) => new MatchCondition(value);
 
         /// <summary>
         /// 
@@ -246,6 +256,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static MatchCondition FromTextAny(global::G.MatchTextAny? value) => new MatchCondition(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator MatchCondition(global::G.MatchPhrase value) => new MatchCondition((global::G.MatchPhrase?)value);
 
         /// <summary>
@@ -260,6 +275,11 @@ namespace G
         {
             Phrase = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static MatchCondition FromPhrase(global::G.MatchPhrase? value) => new MatchCondition(value);
 
         /// <summary>
         /// 
@@ -282,6 +302,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static MatchCondition FromAny(global::G.MatchAny? value) => new MatchCondition(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator MatchCondition(global::G.MatchExcept value) => new MatchCondition((global::G.MatchExcept?)value);
 
         /// <summary>
@@ -296,6 +321,11 @@ namespace G
         {
             Except = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static MatchCondition FromExcept(global::G.MatchExcept? value) => new MatchCondition(value);
 
         /// <summary>
         /// 

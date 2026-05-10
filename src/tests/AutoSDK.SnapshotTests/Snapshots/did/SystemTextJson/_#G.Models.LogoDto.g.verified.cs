@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static LogoDto FromLogoDtoVariant1(global::G.LogoDtoVariant1? value) => new LogoDto(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator LogoDto(bool value) => new LogoDto((bool?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             LogoDtoVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static LogoDto FromLogoDtoVariant2(bool? value) => new LogoDto(value);
 
         /// <summary>
         /// 

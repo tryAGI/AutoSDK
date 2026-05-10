@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ResultUsersUserMetricsResultArrayCountNumberHasUsersBooleanString FromSuccess(global::G.ResultSuccessUsersUserMetricsResultArrayCountNumberHasUsersBoolean? value) => new ResultUsersUserMetricsResultArrayCountNumberHasUsersBooleanString(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ResultUsersUserMetricsResultArrayCountNumberHasUsersBooleanString(global::G.ResultErrorString value) => new ResultUsersUserMetricsResultArrayCountNumberHasUsersBooleanString((global::G.ResultErrorString?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             Error = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ResultUsersUserMetricsResultArrayCountNumberHasUsersBooleanString FromError(global::G.ResultErrorString? value) => new ResultUsersUserMetricsResultArrayCountNumberHasUsersBooleanString(value);
 
         /// <summary>
         /// 

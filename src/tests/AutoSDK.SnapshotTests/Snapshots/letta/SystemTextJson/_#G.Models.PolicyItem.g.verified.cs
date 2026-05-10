@@ -65,6 +65,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static PolicyItem FromAgent(global::G.ClientSideAccessTokensCreateClientSideAccessTokenRequestPolicyItemVariant1? value) => new PolicyItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public PolicyItem(
             global::G.ClientSideAccessTokensCreateClientSideAccessTokenRequestPolicyItemDiscriminatorType? type,
             global::G.ClientSideAccessTokensCreateClientSideAccessTokenRequestPolicyItemVariant1? agent

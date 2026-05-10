@@ -120,6 +120,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static UpdatePresenterAttributes FromUpdatePresenterAttributesVariant1(global::G.UpdatePresenterAttributesVariant1? value) => new UpdatePresenterAttributes(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator UpdatePresenterAttributes(global::G.UpdatePresenterAttributesVariant2 value) => new UpdatePresenterAttributes((global::G.UpdatePresenterAttributesVariant2?)value);
 
         /// <summary>
@@ -138,6 +143,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static UpdatePresenterAttributes FromUpdatePresenterAttributesVariant2(global::G.UpdatePresenterAttributesVariant2? value) => new UpdatePresenterAttributes(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator UpdatePresenterAttributes(global::G.UpdatePresenterAttributesVariant3 value) => new UpdatePresenterAttributes((global::G.UpdatePresenterAttributesVariant3?)value);
 
         /// <summary>
@@ -152,6 +162,11 @@ namespace G
         {
             UpdatePresenterAttributesVariant3 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static UpdatePresenterAttributes FromUpdatePresenterAttributesVariant3(global::G.UpdatePresenterAttributesVariant3? value) => new UpdatePresenterAttributes(value);
 
         /// <summary>
         /// 

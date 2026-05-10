@@ -120,6 +120,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static IndexesIndexIdVideosGetParametersUserMetadataSchema FromIndexesIndexIdVideosGetParametersUserMetadataSchemaVariant1(string? value) => new IndexesIndexIdVideosGetParametersUserMetadataSchema(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator IndexesIndexIdVideosGetParametersUserMetadataSchema(double value) => new IndexesIndexIdVideosGetParametersUserMetadataSchema((double?)value);
 
         /// <summary>
@@ -138,6 +143,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static IndexesIndexIdVideosGetParametersUserMetadataSchema FromIndexesIndexIdVideosGetParametersUserMetadataSchemaVariant2(double? value) => new IndexesIndexIdVideosGetParametersUserMetadataSchema(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator IndexesIndexIdVideosGetParametersUserMetadataSchema(bool value) => new IndexesIndexIdVideosGetParametersUserMetadataSchema((bool?)value);
 
         /// <summary>
@@ -152,6 +162,11 @@ namespace G
         {
             IndexesIndexIdVideosGetParametersUserMetadataSchemaVariant3 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static IndexesIndexIdVideosGetParametersUserMetadataSchema FromIndexesIndexIdVideosGetParametersUserMetadataSchemaVariant3(bool? value) => new IndexesIndexIdVideosGetParametersUserMetadataSchema(value);
 
         /// <summary>
         /// 

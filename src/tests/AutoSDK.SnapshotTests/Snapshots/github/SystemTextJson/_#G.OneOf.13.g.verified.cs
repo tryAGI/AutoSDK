@@ -419,6 +419,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> FromValue1(T1? value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(T2 value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>((T2?)value);
 
         /// <summary>
@@ -433,6 +438,11 @@ namespace G
         {
             Value2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> FromValue2(T2? value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(value);
 
         /// <summary>
         /// 
@@ -455,6 +465,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> FromValue3(T3? value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(T4 value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>((T4?)value);
 
         /// <summary>
@@ -469,6 +484,11 @@ namespace G
         {
             Value4 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> FromValue4(T4? value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(value);
 
         /// <summary>
         /// 
@@ -491,6 +511,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> FromValue5(T5? value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(T6 value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>((T6?)value);
 
         /// <summary>
@@ -505,6 +530,11 @@ namespace G
         {
             Value6 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> FromValue6(T6? value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(value);
 
         /// <summary>
         /// 
@@ -527,6 +557,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> FromValue7(T7? value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(T8 value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>((T8?)value);
 
         /// <summary>
@@ -541,6 +576,11 @@ namespace G
         {
             Value8 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> FromValue8(T8? value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(value);
 
         /// <summary>
         /// 
@@ -563,6 +603,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> FromValue9(T9? value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(T10 value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>((T10?)value);
 
         /// <summary>
@@ -577,6 +622,11 @@ namespace G
         {
             Value10 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> FromValue10(T10? value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(value);
 
         /// <summary>
         /// 
@@ -599,6 +649,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> FromValue11(T11? value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(T12 value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>((T12?)value);
 
         /// <summary>
@@ -617,6 +672,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> FromValue12(T12? value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(T13 value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>((T13?)value);
 
         /// <summary>
@@ -631,6 +691,11 @@ namespace G
         {
             Value13 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> FromValue13(T13? value) => new OneOf<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(value);
 
         /// <summary>
         /// 

@@ -125,6 +125,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static FromImageRegistry FromAws(global::G.AWSRegistry? value) => new FromImageRegistry(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator FromImageRegistry(global::G.GCPRegistry value) => new FromImageRegistry((global::G.GCPRegistry?)value);
 
         /// <summary>
@@ -143,6 +148,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static FromImageRegistry FromGcp(global::G.GCPRegistry? value) => new FromImageRegistry(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator FromImageRegistry(global::G.GeneralRegistry value) => new FromImageRegistry((global::G.GeneralRegistry?)value);
 
         /// <summary>
@@ -157,6 +167,11 @@ namespace G
         {
             Registry = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static FromImageRegistry FromRegistry(global::G.GeneralRegistry? value) => new FromImageRegistry(value);
 
         /// <summary>
         /// 

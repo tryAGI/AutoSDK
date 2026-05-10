@@ -271,6 +271,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Tool FromFunction(global::G.FunctionTool? value) => new Tool(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Tool(global::G.FileSearchTool value) => new Tool((global::G.FileSearchTool?)value);
 
         /// <summary>
@@ -285,6 +290,11 @@ namespace G
         {
             FileSearch = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Tool FromFileSearch(global::G.FileSearchTool? value) => new Tool(value);
 
         /// <summary>
         /// 
@@ -307,6 +317,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Tool FromWebSearchPreview(global::G.WebSearchPreviewTool? value) => new Tool(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Tool(global::G.ComputerUsePreviewTool value) => new Tool((global::G.ComputerUsePreviewTool?)value);
 
         /// <summary>
@@ -321,6 +336,11 @@ namespace G
         {
             ComputerUsePreview = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Tool FromComputerUsePreview(global::G.ComputerUsePreviewTool? value) => new Tool(value);
 
         /// <summary>
         /// 
@@ -343,6 +363,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Tool FromMcp(global::G.MCPTool? value) => new Tool(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Tool(global::G.CodeInterpreterTool value) => new Tool((global::G.CodeInterpreterTool?)value);
 
         /// <summary>
@@ -357,6 +382,11 @@ namespace G
         {
             CodeInterpreter = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Tool FromCodeInterpreter(global::G.CodeInterpreterTool? value) => new Tool(value);
 
         /// <summary>
         /// 
@@ -379,6 +409,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Tool FromImageGeneration(global::G.ImageGenTool? value) => new Tool(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Tool(global::G.LocalShellTool value) => new Tool((global::G.LocalShellTool?)value);
 
         /// <summary>
@@ -393,6 +428,11 @@ namespace G
         {
             LocalShell = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Tool FromLocalShell(global::G.LocalShellTool? value) => new Tool(value);
 
         /// <summary>
         /// 

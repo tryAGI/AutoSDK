@@ -755,6 +755,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ToolControllerCreateResponse FromApiRequest(global::G.ApiRequestTool? value) => new ToolControllerCreateResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ToolControllerCreateResponse(global::G.CodeTool value) => new ToolControllerCreateResponse((global::G.CodeTool?)value);
 
         /// <summary>
@@ -769,6 +774,11 @@ namespace G
         {
             Code = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ToolControllerCreateResponse FromCode(global::G.CodeTool? value) => new ToolControllerCreateResponse(value);
 
         /// <summary>
         /// 
@@ -791,6 +801,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ToolControllerCreateResponse FromDtmf(global::G.DtmfTool? value) => new ToolControllerCreateResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ToolControllerCreateResponse(global::G.EndCallTool value) => new ToolControllerCreateResponse((global::G.EndCallTool?)value);
 
         /// <summary>
@@ -805,6 +820,11 @@ namespace G
         {
             EndCall = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ToolControllerCreateResponse FromEndCall(global::G.EndCallTool? value) => new ToolControllerCreateResponse(value);
 
         /// <summary>
         /// 
@@ -827,6 +847,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ToolControllerCreateResponse FromFunction(global::G.FunctionTool? value) => new ToolControllerCreateResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ToolControllerCreateResponse(global::G.GhlTool value) => new ToolControllerCreateResponse((global::G.GhlTool?)value);
 
         /// <summary>
@@ -841,6 +866,11 @@ namespace G
         {
             Ghl = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ToolControllerCreateResponse FromGhl(global::G.GhlTool? value) => new ToolControllerCreateResponse(value);
 
         /// <summary>
         /// 
@@ -863,6 +893,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ToolControllerCreateResponse FromTransferCall(global::G.TransferCallTool? value) => new ToolControllerCreateResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ToolControllerCreateResponse(global::G.HandoffTool value) => new ToolControllerCreateResponse((global::G.HandoffTool?)value);
 
         /// <summary>
@@ -877,6 +912,11 @@ namespace G
         {
             Handoff = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ToolControllerCreateResponse FromHandoff(global::G.HandoffTool? value) => new ToolControllerCreateResponse(value);
 
         /// <summary>
         /// 
@@ -899,6 +939,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ToolControllerCreateResponse FromBash(global::G.BashTool? value) => new ToolControllerCreateResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ToolControllerCreateResponse(global::G.ComputerTool value) => new ToolControllerCreateResponse((global::G.ComputerTool?)value);
 
         /// <summary>
@@ -913,6 +958,11 @@ namespace G
         {
             Computer = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ToolControllerCreateResponse FromComputer(global::G.ComputerTool? value) => new ToolControllerCreateResponse(value);
 
         /// <summary>
         /// 
@@ -935,6 +985,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ToolControllerCreateResponse FromTextEditor(global::G.TextEditorTool? value) => new ToolControllerCreateResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ToolControllerCreateResponse(global::G.QueryTool value) => new ToolControllerCreateResponse((global::G.QueryTool?)value);
 
         /// <summary>
@@ -949,6 +1004,11 @@ namespace G
         {
             Query = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ToolControllerCreateResponse FromQuery(global::G.QueryTool? value) => new ToolControllerCreateResponse(value);
 
         /// <summary>
         /// 
@@ -971,6 +1031,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ToolControllerCreateResponse FromGoogleCalendarEventCreate(global::G.GoogleCalendarCreateEventTool? value) => new ToolControllerCreateResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ToolControllerCreateResponse(global::G.GoogleSheetsRowAppendTool value) => new ToolControllerCreateResponse((global::G.GoogleSheetsRowAppendTool?)value);
 
         /// <summary>
@@ -985,6 +1050,11 @@ namespace G
         {
             GoogleSheetsRowAppend = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ToolControllerCreateResponse FromGoogleSheetsRowAppend(global::G.GoogleSheetsRowAppendTool? value) => new ToolControllerCreateResponse(value);
 
         /// <summary>
         /// 
@@ -1007,6 +1077,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ToolControllerCreateResponse FromGoogleCalendarAvailabilityCheck(global::G.GoogleCalendarCheckAvailabilityTool? value) => new ToolControllerCreateResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ToolControllerCreateResponse(global::G.SlackSendMessageTool value) => new ToolControllerCreateResponse((global::G.SlackSendMessageTool?)value);
 
         /// <summary>
@@ -1021,6 +1096,11 @@ namespace G
         {
             SlackMessageSend = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ToolControllerCreateResponse FromSlackMessageSend(global::G.SlackSendMessageTool? value) => new ToolControllerCreateResponse(value);
 
         /// <summary>
         /// 
@@ -1043,6 +1123,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ToolControllerCreateResponse FromSms(global::G.SmsTool? value) => new ToolControllerCreateResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ToolControllerCreateResponse(global::G.McpTool value) => new ToolControllerCreateResponse((global::G.McpTool?)value);
 
         /// <summary>
@@ -1057,6 +1142,11 @@ namespace G
         {
             Mcp = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ToolControllerCreateResponse FromMcp(global::G.McpTool? value) => new ToolControllerCreateResponse(value);
 
         /// <summary>
         /// 
@@ -1079,6 +1169,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ToolControllerCreateResponse FromGohighlevelCalendarAvailabilityCheck(global::G.GoHighLevelCalendarAvailabilityTool? value) => new ToolControllerCreateResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ToolControllerCreateResponse(global::G.GoHighLevelCalendarEventCreateTool value) => new ToolControllerCreateResponse((global::G.GoHighLevelCalendarEventCreateTool?)value);
 
         /// <summary>
@@ -1093,6 +1188,11 @@ namespace G
         {
             GohighlevelCalendarEventCreate = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ToolControllerCreateResponse FromGohighlevelCalendarEventCreate(global::G.GoHighLevelCalendarEventCreateTool? value) => new ToolControllerCreateResponse(value);
 
         /// <summary>
         /// 
@@ -1115,6 +1215,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ToolControllerCreateResponse FromGohighlevelContactCreate(global::G.GoHighLevelContactCreateTool? value) => new ToolControllerCreateResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ToolControllerCreateResponse(global::G.GoHighLevelContactGetTool value) => new ToolControllerCreateResponse((global::G.GoHighLevelContactGetTool?)value);
 
         /// <summary>
@@ -1129,6 +1234,11 @@ namespace G
         {
             GohighlevelContactGet = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ToolControllerCreateResponse FromGohighlevelContactGet(global::G.GoHighLevelContactGetTool? value) => new ToolControllerCreateResponse(value);
 
         /// <summary>
         /// 
@@ -1151,6 +1261,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ToolControllerCreateResponse FromSipRequest(global::G.SipRequestTool? value) => new ToolControllerCreateResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ToolControllerCreateResponse(global::G.VoicemailTool value) => new ToolControllerCreateResponse((global::G.VoicemailTool?)value);
 
         /// <summary>
@@ -1165,6 +1280,11 @@ namespace G
         {
             Voicemail = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ToolControllerCreateResponse FromVoicemail(global::G.VoicemailTool? value) => new ToolControllerCreateResponse(value);
 
         /// <summary>
         /// 

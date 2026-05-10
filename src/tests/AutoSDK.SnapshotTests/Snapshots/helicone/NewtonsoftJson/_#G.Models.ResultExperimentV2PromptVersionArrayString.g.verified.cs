@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ResultExperimentV2PromptVersionArrayString FromSuccess(global::G.ResultSuccessExperimentV2PromptVersionArray? value) => new ResultExperimentV2PromptVersionArrayString(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ResultExperimentV2PromptVersionArrayString(global::G.ResultErrorString value) => new ResultExperimentV2PromptVersionArrayString((global::G.ResultErrorString?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             Error = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ResultExperimentV2PromptVersionArrayString FromError(global::G.ResultErrorString? value) => new ResultExperimentV2PromptVersionArrayString(value);
 
         /// <summary>
         /// 

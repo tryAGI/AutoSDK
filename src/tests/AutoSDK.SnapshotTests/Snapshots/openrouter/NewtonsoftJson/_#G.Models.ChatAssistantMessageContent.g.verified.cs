@@ -120,6 +120,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ChatAssistantMessageContent FromChatAssistantMessageContentVariant1(string? value) => new ChatAssistantMessageContent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public ChatAssistantMessageContent(
             string? chatAssistantMessageContentVariant1,
             global::System.Collections.Generic.IList<global::G.ChatContentItems>? chatAssistantMessageContent1,

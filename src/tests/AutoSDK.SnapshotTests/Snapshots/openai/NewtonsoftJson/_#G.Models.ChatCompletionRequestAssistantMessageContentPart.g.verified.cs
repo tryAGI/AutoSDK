@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ChatCompletionRequestAssistantMessageContentPart FromTextContentPart(global::G.ChatCompletionRequestMessageContentPartText? value) => new ChatCompletionRequestAssistantMessageContentPart(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChatCompletionRequestAssistantMessageContentPart(global::G.ChatCompletionRequestMessageContentPartRefusal value) => new ChatCompletionRequestAssistantMessageContentPart((global::G.ChatCompletionRequestMessageContentPartRefusal?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             RefusalContentPart = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChatCompletionRequestAssistantMessageContentPart FromRefusalContentPart(global::G.ChatCompletionRequestMessageContentPartRefusal? value) => new ChatCompletionRequestAssistantMessageContentPart(value);
 
         /// <summary>
         /// 

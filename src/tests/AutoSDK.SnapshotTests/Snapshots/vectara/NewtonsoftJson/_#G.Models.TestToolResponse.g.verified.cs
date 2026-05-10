@@ -95,6 +95,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static TestToolResponse FromSuccess(global::G.TestToolSuccessResponse? value) => new TestToolResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator TestToolResponse(global::G.TestToolErrorResponse value) => new TestToolResponse((global::G.TestToolErrorResponse?)value);
 
         /// <summary>
@@ -109,6 +114,11 @@ namespace G
         {
             Error = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static TestToolResponse FromError(global::G.TestToolErrorResponse? value) => new TestToolResponse(value);
 
         /// <summary>
         /// 

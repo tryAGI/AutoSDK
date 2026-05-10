@@ -65,6 +65,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ReferencesItem FromImage(global::G.CreateVideoToVideoRequestGen4AlephReferenceImageReference? value) => new ReferencesItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public ReferencesItem(
             global::G.CreateVideoToVideoRequestGen4AlephReferenceDiscriminatorType? type,
             global::G.CreateVideoToVideoRequestGen4AlephReferenceImageReference? image

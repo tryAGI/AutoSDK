@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static GuardrailDetails FromSummary(global::G.GuardrailSummary? value) => new GuardrailDetails(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator GuardrailDetails(global::G.GuardrailDetailsVariant2 value) => new GuardrailDetails((global::G.GuardrailDetailsVariant2?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             GuardrailDetailsVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static GuardrailDetails FromGuardrailDetailsVariant2(global::G.GuardrailDetailsVariant2? value) => new GuardrailDetails(value);
 
         /// <summary>
         /// 

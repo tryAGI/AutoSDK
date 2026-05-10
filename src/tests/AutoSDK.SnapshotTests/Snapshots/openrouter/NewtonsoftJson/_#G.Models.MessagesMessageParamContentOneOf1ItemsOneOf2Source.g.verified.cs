@@ -150,6 +150,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static MessagesMessageParamContentOneOf1ItemsOneOf2Source FromMessagesMessageParamContentOneOf1ItemsOneOf2Source0(global::G.MessagesMessageParamContentOneOf1ItemsOneOf2Source0? value) => new MessagesMessageParamContentOneOf1ItemsOneOf2Source(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator MessagesMessageParamContentOneOf1ItemsOneOf2Source(global::G.MessagesMessageParamContentOneOf1ItemsOneOf2Source1 value) => new MessagesMessageParamContentOneOf1ItemsOneOf2Source((global::G.MessagesMessageParamContentOneOf1ItemsOneOf2Source1?)value);
 
         /// <summary>
@@ -164,6 +169,11 @@ namespace G
         {
             MessagesMessageParamContentOneOf1ItemsOneOf2Source1 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static MessagesMessageParamContentOneOf1ItemsOneOf2Source FromMessagesMessageParamContentOneOf1ItemsOneOf2Source1(global::G.MessagesMessageParamContentOneOf1ItemsOneOf2Source1? value) => new MessagesMessageParamContentOneOf1ItemsOneOf2Source(value);
 
         /// <summary>
         /// 
@@ -186,6 +196,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static MessagesMessageParamContentOneOf1ItemsOneOf2Source FromMessagesMessageParamContentOneOf1ItemsOneOf2Source2(global::G.MessagesMessageParamContentOneOf1ItemsOneOf2Source2? value) => new MessagesMessageParamContentOneOf1ItemsOneOf2Source(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator MessagesMessageParamContentOneOf1ItemsOneOf2Source(global::G.MessagesMessageParamContentOneOf1ItemsOneOf2Source3 value) => new MessagesMessageParamContentOneOf1ItemsOneOf2Source((global::G.MessagesMessageParamContentOneOf1ItemsOneOf2Source3?)value);
 
         /// <summary>
@@ -200,6 +215,11 @@ namespace G
         {
             MessagesMessageParamContentOneOf1ItemsOneOf2Source3 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static MessagesMessageParamContentOneOf1ItemsOneOf2Source FromMessagesMessageParamContentOneOf1ItemsOneOf2Source3(global::G.MessagesMessageParamContentOneOf1ItemsOneOf2Source3? value) => new MessagesMessageParamContentOneOf1ItemsOneOf2Source(value);
 
         /// <summary>
         /// 

@@ -184,6 +184,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static VectorStorageType FromVectorStorageTypeVariant1(global::G.VectorStorageTypeVariant1? value) => new VectorStorageType(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator VectorStorageType(global::G.VectorStorageTypeVariant2 value) => new VectorStorageType((global::G.VectorStorageTypeVariant2?)value);
 
         /// <summary>
@@ -198,6 +203,11 @@ namespace G
         {
             VectorStorageTypeVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static VectorStorageType FromVectorStorageTypeVariant2(global::G.VectorStorageTypeVariant2? value) => new VectorStorageType(value);
 
         /// <summary>
         /// 
@@ -220,6 +230,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static VectorStorageType FromVectorStorageTypeVariant3(global::G.VectorStorageTypeVariant3? value) => new VectorStorageType(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator VectorStorageType(global::G.VectorStorageTypeVariant4 value) => new VectorStorageType((global::G.VectorStorageTypeVariant4?)value);
 
         /// <summary>
@@ -238,6 +253,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static VectorStorageType FromVectorStorageTypeVariant4(global::G.VectorStorageTypeVariant4? value) => new VectorStorageType(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator VectorStorageType(global::G.VectorStorageTypeVariant5 value) => new VectorStorageType((global::G.VectorStorageTypeVariant5?)value);
 
         /// <summary>
@@ -252,6 +272,11 @@ namespace G
         {
             VectorStorageTypeVariant5 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static VectorStorageType FromVectorStorageTypeVariant5(global::G.VectorStorageTypeVariant5? value) => new VectorStorageType(value);
 
         /// <summary>
         /// 

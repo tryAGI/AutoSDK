@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static CodeNode FromBase(global::G.NodeBase? value) => new CodeNode(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator CodeNode(global::G.CodeNodeVariant2 value) => new CodeNode((global::G.CodeNodeVariant2?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             CodeNodeVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static CodeNode FromCodeNodeVariant2(global::G.CodeNodeVariant2? value) => new CodeNode(value);
 
         /// <summary>
         /// 

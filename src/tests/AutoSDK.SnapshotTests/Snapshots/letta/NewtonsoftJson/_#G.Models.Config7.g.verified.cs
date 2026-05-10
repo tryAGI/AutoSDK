@@ -95,6 +95,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Config7 FromSlackChannelReader(global::G.PipelinesGetPipelineResponsePipelineConfigVariant1? value) => new Config7(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Config7(global::G.PipelinesGetPipelineResponsePipelineConfigVariant2 value) => new Config7((global::G.PipelinesGetPipelineResponsePipelineConfigVariant2?)value);
 
         /// <summary>
@@ -109,6 +114,11 @@ namespace G
         {
             CustomWebhook = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Config7 FromCustomWebhook(global::G.PipelinesGetPipelineResponsePipelineConfigVariant2? value) => new Config7(value);
 
         /// <summary>
         /// 

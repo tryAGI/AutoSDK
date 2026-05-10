@@ -185,6 +185,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static PhoneNumberControllerFindAllResponseItem FromByoPhoneNumber(global::G.ByoPhoneNumber? value) => new PhoneNumberControllerFindAllResponseItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator PhoneNumberControllerFindAllResponseItem(global::G.TwilioPhoneNumber value) => new PhoneNumberControllerFindAllResponseItem((global::G.TwilioPhoneNumber?)value);
 
         /// <summary>
@@ -199,6 +204,11 @@ namespace G
         {
             Twilio = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static PhoneNumberControllerFindAllResponseItem FromTwilio(global::G.TwilioPhoneNumber? value) => new PhoneNumberControllerFindAllResponseItem(value);
 
         /// <summary>
         /// 
@@ -221,6 +231,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static PhoneNumberControllerFindAllResponseItem FromVonage(global::G.VonagePhoneNumber? value) => new PhoneNumberControllerFindAllResponseItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator PhoneNumberControllerFindAllResponseItem(global::G.VapiPhoneNumber value) => new PhoneNumberControllerFindAllResponseItem((global::G.VapiPhoneNumber?)value);
 
         /// <summary>
@@ -239,6 +254,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static PhoneNumberControllerFindAllResponseItem FromVapi(global::G.VapiPhoneNumber? value) => new PhoneNumberControllerFindAllResponseItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator PhoneNumberControllerFindAllResponseItem(global::G.TelnyxPhoneNumber value) => new PhoneNumberControllerFindAllResponseItem((global::G.TelnyxPhoneNumber?)value);
 
         /// <summary>
@@ -253,6 +273,11 @@ namespace G
         {
             Telnyx = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static PhoneNumberControllerFindAllResponseItem FromTelnyx(global::G.TelnyxPhoneNumber? value) => new PhoneNumberControllerFindAllResponseItem(value);
 
         /// <summary>
         /// 

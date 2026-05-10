@@ -450,6 +450,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ConversationFlowNode FromConversationNode(global::G.ConversationNode? value) => new ConversationFlowNode(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ConversationFlowNode(global::G.EndNode value) => new ConversationFlowNode((global::G.EndNode?)value);
 
         /// <summary>
@@ -464,6 +469,11 @@ namespace G
         {
             End = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ConversationFlowNode FromEnd(global::G.EndNode? value) => new ConversationFlowNode(value);
 
         /// <summary>
         /// 
@@ -486,6 +496,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ConversationFlowNode FromFunction(global::G.FunctionNode? value) => new ConversationFlowNode(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ConversationFlowNode(global::G.CodeNode value) => new ConversationFlowNode((global::G.CodeNode?)value);
 
         /// <summary>
@@ -500,6 +515,11 @@ namespace G
         {
             Code = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ConversationFlowNode FromCode(global::G.CodeNode? value) => new ConversationFlowNode(value);
 
         /// <summary>
         /// 
@@ -522,6 +542,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ConversationFlowNode FromTransferCall(global::G.TransferCallNode? value) => new ConversationFlowNode(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ConversationFlowNode(global::G.PressDigitNode value) => new ConversationFlowNode((global::G.PressDigitNode?)value);
 
         /// <summary>
@@ -536,6 +561,11 @@ namespace G
         {
             PressDigit = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ConversationFlowNode FromPressDigit(global::G.PressDigitNode? value) => new ConversationFlowNode(value);
 
         /// <summary>
         /// 
@@ -558,6 +588,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ConversationFlowNode FromBranch(global::G.BranchNode? value) => new ConversationFlowNode(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ConversationFlowNode(global::G.SmsNode value) => new ConversationFlowNode((global::G.SmsNode?)value);
 
         /// <summary>
@@ -572,6 +607,11 @@ namespace G
         {
             Sms = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ConversationFlowNode FromSms(global::G.SmsNode? value) => new ConversationFlowNode(value);
 
         /// <summary>
         /// 
@@ -594,6 +634,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ConversationFlowNode FromExtractDynamicVariables(global::G.ExtractDynamicVariablesNode? value) => new ConversationFlowNode(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ConversationFlowNode(global::G.AgentSwapNode value) => new ConversationFlowNode((global::G.AgentSwapNode?)value);
 
         /// <summary>
@@ -608,6 +653,11 @@ namespace G
         {
             AgentSwap = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ConversationFlowNode FromAgentSwap(global::G.AgentSwapNode? value) => new ConversationFlowNode(value);
 
         /// <summary>
         /// 
@@ -630,6 +680,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ConversationFlowNode FromMcp(global::G.MCPNode? value) => new ConversationFlowNode(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ConversationFlowNode(global::G.ComponentNode value) => new ConversationFlowNode((global::G.ComponentNode?)value);
 
         /// <summary>
@@ -644,6 +699,11 @@ namespace G
         {
             Component = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ConversationFlowNode FromComponent(global::G.ComponentNode? value) => new ConversationFlowNode(value);
 
         /// <summary>
         /// 
@@ -666,6 +726,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ConversationFlowNode FromBridgeTransfer(global::G.BridgeTransferNode? value) => new ConversationFlowNode(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ConversationFlowNode(global::G.CancelTransferNode value) => new ConversationFlowNode((global::G.CancelTransferNode?)value);
 
         /// <summary>
@@ -680,6 +745,11 @@ namespace G
         {
             CancelTransfer = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ConversationFlowNode FromCancelTransfer(global::G.CancelTransferNode? value) => new ConversationFlowNode(value);
 
         /// <summary>
         /// 

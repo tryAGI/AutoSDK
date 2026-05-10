@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static SmsDestination FromSmsDestinationVariant1(global::G.SmsDestinationVariant1? value) => new SmsDestination(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator SmsDestination(global::G.SmsDestinationVariant2 value) => new SmsDestination((global::G.SmsDestinationVariant2?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             SmsDestinationVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static SmsDestination FromSmsDestinationVariant2(global::G.SmsDestinationVariant2? value) => new SmsDestination(value);
 
         /// <summary>
         /// 

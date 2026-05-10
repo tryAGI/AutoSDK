@@ -155,6 +155,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ChunksVariant1Item4 FromText(global::G.TextInputChunk? value) => new ChunksVariant1Item4(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChunksVariant1Item4(global::G.ImageUrlInputChunk value) => new ChunksVariant1Item4((global::G.ImageUrlInputChunk?)value);
 
         /// <summary>
@@ -169,6 +174,11 @@ namespace G
         {
             ImageUrl = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChunksVariant1Item4 FromImageUrl(global::G.ImageUrlInputChunk? value) => new ChunksVariant1Item4(value);
 
         /// <summary>
         /// 
@@ -191,6 +201,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ChunksVariant1Item4 FromAudioUrl(global::G.AudioUrlInputChunk? value) => new ChunksVariant1Item4(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChunksVariant1Item4(global::G.VideoUrlInputChunk value) => new ChunksVariant1Item4((global::G.VideoUrlInputChunk?)value);
 
         /// <summary>
@@ -205,6 +220,11 @@ namespace G
         {
             VideoUrl = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChunksVariant1Item4 FromVideoUrl(global::G.VideoUrlInputChunk? value) => new ChunksVariant1Item4(value);
 
         /// <summary>
         /// 

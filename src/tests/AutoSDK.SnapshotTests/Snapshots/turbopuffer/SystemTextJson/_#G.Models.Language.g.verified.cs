@@ -570,6 +570,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Language FromLanguageVariant1(string? value) => new Language(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public Language(
             string? languageVariant1,
             string? languageVariant2,

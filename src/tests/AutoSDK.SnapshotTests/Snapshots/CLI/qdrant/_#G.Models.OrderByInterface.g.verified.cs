@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static OrderByInterface FromOrderByInterfaceVariant1(string? value) => new OrderByInterface(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator OrderByInterface(global::G.OrderBy value) => new OrderByInterface((global::G.OrderBy?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             OrderBy = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static OrderByInterface FromOrderBy(global::G.OrderBy? value) => new OrderByInterface(value);
 
         /// <summary>
         /// 

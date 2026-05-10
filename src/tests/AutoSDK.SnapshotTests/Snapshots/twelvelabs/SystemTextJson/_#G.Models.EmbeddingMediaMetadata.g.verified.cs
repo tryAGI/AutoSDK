@@ -180,6 +180,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static EmbeddingMediaMetadata FromEmbeddingImageMetadata(global::G.EmbeddingImageMetadata? value) => new EmbeddingMediaMetadata(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator EmbeddingMediaMetadata(global::G.EmbeddingTextImageMetadata value) => new EmbeddingMediaMetadata((global::G.EmbeddingTextImageMetadata?)value);
 
         /// <summary>
@@ -194,6 +199,11 @@ namespace G
         {
             EmbeddingTextImageMetadata = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static EmbeddingMediaMetadata FromEmbeddingTextImageMetadata(global::G.EmbeddingTextImageMetadata? value) => new EmbeddingMediaMetadata(value);
 
         /// <summary>
         /// 
@@ -216,6 +226,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static EmbeddingMediaMetadata FromEmbeddingAudioMetadata(global::G.EmbeddingAudioMetadata? value) => new EmbeddingMediaMetadata(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator EmbeddingMediaMetadata(global::G.EmbeddingVideoMetadata value) => new EmbeddingMediaMetadata((global::G.EmbeddingVideoMetadata?)value);
 
         /// <summary>
@@ -234,6 +249,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static EmbeddingMediaMetadata FromEmbeddingVideoMetadata(global::G.EmbeddingVideoMetadata? value) => new EmbeddingMediaMetadata(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator EmbeddingMediaMetadata(global::G.EmbeddingMultiInputMetadata value) => new EmbeddingMediaMetadata((global::G.EmbeddingMultiInputMetadata?)value);
 
         /// <summary>
@@ -248,6 +268,11 @@ namespace G
         {
             EmbeddingMultiInputMetadata = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static EmbeddingMediaMetadata FromEmbeddingMultiInputMetadata(global::G.EmbeddingMultiInputMetadata? value) => new EmbeddingMediaMetadata(value);
 
         /// <summary>
         /// 

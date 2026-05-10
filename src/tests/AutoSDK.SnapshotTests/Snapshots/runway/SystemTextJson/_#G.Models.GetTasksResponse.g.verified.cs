@@ -215,6 +215,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static GetTasksResponse FromPending(global::G.GetTasksResponseVariant1? value) => new GetTasksResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator GetTasksResponse(global::G.GetTasksResponseVariant2 value) => new GetTasksResponse((global::G.GetTasksResponseVariant2?)value);
 
         /// <summary>
@@ -229,6 +234,11 @@ namespace G
         {
             Throttled = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static GetTasksResponse FromThrottled(global::G.GetTasksResponseVariant2? value) => new GetTasksResponse(value);
 
         /// <summary>
         /// 
@@ -251,6 +261,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static GetTasksResponse FromCancelled(global::G.GetTasksResponseVariant3? value) => new GetTasksResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator GetTasksResponse(global::G.GetTasksResponseVariant4 value) => new GetTasksResponse((global::G.GetTasksResponseVariant4?)value);
 
         /// <summary>
@@ -265,6 +280,11 @@ namespace G
         {
             Running = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static GetTasksResponse FromRunning(global::G.GetTasksResponseVariant4? value) => new GetTasksResponse(value);
 
         /// <summary>
         /// 
@@ -287,6 +307,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static GetTasksResponse FromFailed(global::G.GetTasksResponseVariant5? value) => new GetTasksResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator GetTasksResponse(global::G.GetTasksResponseVariant6 value) => new GetTasksResponse((global::G.GetTasksResponseVariant6?)value);
 
         /// <summary>
@@ -301,6 +326,11 @@ namespace G
         {
             Succeeded = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static GetTasksResponse FromSucceeded(global::G.GetTasksResponseVariant6? value) => new GetTasksResponse(value);
 
         /// <summary>
         /// 

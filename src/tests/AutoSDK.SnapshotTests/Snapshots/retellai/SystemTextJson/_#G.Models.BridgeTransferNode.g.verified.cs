@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static BridgeTransferNode FromBase(global::G.NodeBase? value) => new BridgeTransferNode(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BridgeTransferNode(global::G.BridgeTransferNodeVariant2 value) => new BridgeTransferNode((global::G.BridgeTransferNodeVariant2?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             BridgeTransferNodeVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BridgeTransferNode FromBridgeTransferNodeVariant2(global::G.BridgeTransferNodeVariant2? value) => new BridgeTransferNode(value);
 
         /// <summary>
         /// 

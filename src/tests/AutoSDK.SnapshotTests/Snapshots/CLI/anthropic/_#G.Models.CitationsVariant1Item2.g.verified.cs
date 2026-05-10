@@ -125,6 +125,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static CitationsVariant1Item2 FromCharLocation(global::G.BetaResponseCharLocationCitation? value) => new CitationsVariant1Item2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator CitationsVariant1Item2(global::G.BetaResponsePageLocationCitation value) => new CitationsVariant1Item2((global::G.BetaResponsePageLocationCitation?)value);
 
         /// <summary>
@@ -143,6 +148,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static CitationsVariant1Item2 FromPageLocation(global::G.BetaResponsePageLocationCitation? value) => new CitationsVariant1Item2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator CitationsVariant1Item2(global::G.BetaResponseContentBlockLocationCitation value) => new CitationsVariant1Item2((global::G.BetaResponseContentBlockLocationCitation?)value);
 
         /// <summary>
@@ -157,6 +167,11 @@ namespace G
         {
             ContentBlockLocation = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static CitationsVariant1Item2 FromContentBlockLocation(global::G.BetaResponseContentBlockLocationCitation? value) => new CitationsVariant1Item2(value);
 
         /// <summary>
         /// 

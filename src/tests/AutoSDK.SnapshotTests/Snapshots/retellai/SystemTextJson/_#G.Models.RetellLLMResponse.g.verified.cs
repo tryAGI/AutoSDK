@@ -120,6 +120,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static RetellLLMResponse FromRetellLLMResponseVariant1(global::G.RetellLLMResponseVariant1? value) => new RetellLLMResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator RetellLLMResponse(global::G.RetellLlmRequest value) => new RetellLLMResponse((global::G.RetellLlmRequest?)value);
 
         /// <summary>
@@ -138,6 +143,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static RetellLLMResponse FromLlmRequest(global::G.RetellLlmRequest? value) => new RetellLLMResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator RetellLLMResponse(global::G.RetellLLMResponseVariant3 value) => new RetellLLMResponse((global::G.RetellLLMResponseVariant3?)value);
 
         /// <summary>
@@ -152,6 +162,11 @@ namespace G
         {
             RetellLLMResponseVariant3 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static RetellLLMResponse FromRetellLLMResponseVariant3(global::G.RetellLLMResponseVariant3? value) => new RetellLLMResponse(value);
 
         /// <summary>
         /// 

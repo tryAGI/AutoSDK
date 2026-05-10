@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static WebSearchTool FromBase(global::G.ToolBase? value) => new WebSearchTool(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator WebSearchTool(global::G.WebSearchToolVariant2 value) => new WebSearchTool((global::G.WebSearchToolVariant2?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             WebSearchToolVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static WebSearchTool FromWebSearchToolVariant2(global::G.WebSearchToolVariant2? value) => new WebSearchTool(value);
 
         /// <summary>
         /// 

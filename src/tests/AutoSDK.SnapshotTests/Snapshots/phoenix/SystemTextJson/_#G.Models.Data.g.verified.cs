@@ -125,6 +125,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Data FromCategorical(global::G.CategoricalAnnotationConfig? value) => new Data(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Data(global::G.ContinuousAnnotationConfig value) => new Data((global::G.ContinuousAnnotationConfig?)value);
 
         /// <summary>
@@ -143,6 +148,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Data FromContinuous(global::G.ContinuousAnnotationConfig? value) => new Data(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Data(global::G.FreeformAnnotationConfig value) => new Data((global::G.FreeformAnnotationConfig?)value);
 
         /// <summary>
@@ -157,6 +167,11 @@ namespace G
         {
             Freeform = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Data FromFreeform(global::G.FreeformAnnotationConfig? value) => new Data(value);
 
         /// <summary>
         /// 

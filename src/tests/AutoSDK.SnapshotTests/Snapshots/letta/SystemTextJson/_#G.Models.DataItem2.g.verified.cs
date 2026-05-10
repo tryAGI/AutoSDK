@@ -65,6 +65,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static DataItem2 FromAgent(global::G.ClientSideAccessTokensListClientSideAccessTokensResponseTokenPolicyDataItemVariant1? value) => new DataItem2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public DataItem2(
             global::G.ClientSideAccessTokensListClientSideAccessTokensResponseTokenPolicyDataItemDiscriminatorType? type,
             global::G.ClientSideAccessTokensListClientSideAccessTokensResponseTokenPolicyDataItemVariant1? agent

@@ -128,6 +128,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static SvgFill FromSolid(global::G.SvgSolidFill? value) => new SvgFill(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator SvgFill(global::G.SvgLinearGradientFill value) => new SvgFill((global::G.SvgLinearGradientFill?)value);
 
         /// <summary>
@@ -146,6 +151,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static SvgFill FromLinear(global::G.SvgLinearGradientFill? value) => new SvgFill(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator SvgFill(global::G.SvgRadialGradientFill value) => new SvgFill((global::G.SvgRadialGradientFill?)value);
 
         /// <summary>
@@ -160,6 +170,11 @@ namespace G
         {
             Radial = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static SvgFill FromRadial(global::G.SvgRadialGradientFill? value) => new SvgFill(value);
 
         /// <summary>
         /// 

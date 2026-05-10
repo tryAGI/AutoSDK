@@ -106,6 +106,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static AgentOutputParser FromDefault(global::G.DefaultOutputParser? value) => new AgentOutputParser(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator AgentOutputParser(global::G.StructuredOutputParser value) => new AgentOutputParser((global::G.StructuredOutputParser?)value);
 
         /// <summary>
@@ -120,6 +125,11 @@ namespace G
         {
             Structured = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static AgentOutputParser FromStructured(global::G.StructuredOutputParser? value) => new AgentOutputParser(value);
 
         /// <summary>
         /// 

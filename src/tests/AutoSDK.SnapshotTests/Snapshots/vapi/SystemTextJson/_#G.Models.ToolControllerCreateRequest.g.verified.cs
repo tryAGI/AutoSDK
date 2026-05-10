@@ -725,6 +725,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ToolControllerCreateRequest FromApiRequest(global::G.CreateApiRequestToolDTO? value) => new ToolControllerCreateRequest(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ToolControllerCreateRequest(global::G.CreateCodeToolDTO value) => new ToolControllerCreateRequest((global::G.CreateCodeToolDTO?)value);
 
         /// <summary>
@@ -739,6 +744,11 @@ namespace G
         {
             Code = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ToolControllerCreateRequest FromCode(global::G.CreateCodeToolDTO? value) => new ToolControllerCreateRequest(value);
 
         /// <summary>
         /// 
@@ -761,6 +771,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ToolControllerCreateRequest FromDtmf(global::G.CreateDtmfToolDTO? value) => new ToolControllerCreateRequest(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ToolControllerCreateRequest(global::G.CreateEndCallToolDTO value) => new ToolControllerCreateRequest((global::G.CreateEndCallToolDTO?)value);
 
         /// <summary>
@@ -775,6 +790,11 @@ namespace G
         {
             EndCall = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ToolControllerCreateRequest FromEndCall(global::G.CreateEndCallToolDTO? value) => new ToolControllerCreateRequest(value);
 
         /// <summary>
         /// 
@@ -797,6 +817,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ToolControllerCreateRequest FromFunction(global::G.CreateFunctionToolDTO? value) => new ToolControllerCreateRequest(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ToolControllerCreateRequest(global::G.CreateTransferCallToolDTO value) => new ToolControllerCreateRequest((global::G.CreateTransferCallToolDTO?)value);
 
         /// <summary>
@@ -811,6 +836,11 @@ namespace G
         {
             TransferCall = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ToolControllerCreateRequest FromTransferCall(global::G.CreateTransferCallToolDTO? value) => new ToolControllerCreateRequest(value);
 
         /// <summary>
         /// 
@@ -833,6 +863,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ToolControllerCreateRequest FromHandoff(global::G.CreateHandoffToolDTO? value) => new ToolControllerCreateRequest(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ToolControllerCreateRequest(global::G.CreateBashToolDTO value) => new ToolControllerCreateRequest((global::G.CreateBashToolDTO?)value);
 
         /// <summary>
@@ -847,6 +882,11 @@ namespace G
         {
             Bash = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ToolControllerCreateRequest FromBash(global::G.CreateBashToolDTO? value) => new ToolControllerCreateRequest(value);
 
         /// <summary>
         /// 
@@ -869,6 +909,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ToolControllerCreateRequest FromComputer(global::G.CreateComputerToolDTO? value) => new ToolControllerCreateRequest(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ToolControllerCreateRequest(global::G.CreateTextEditorToolDTO value) => new ToolControllerCreateRequest((global::G.CreateTextEditorToolDTO?)value);
 
         /// <summary>
@@ -883,6 +928,11 @@ namespace G
         {
             TextEditor = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ToolControllerCreateRequest FromTextEditor(global::G.CreateTextEditorToolDTO? value) => new ToolControllerCreateRequest(value);
 
         /// <summary>
         /// 
@@ -905,6 +955,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ToolControllerCreateRequest FromQuery(global::G.CreateQueryToolDTO? value) => new ToolControllerCreateRequest(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ToolControllerCreateRequest(global::G.CreateGoogleCalendarCreateEventToolDTO value) => new ToolControllerCreateRequest((global::G.CreateGoogleCalendarCreateEventToolDTO?)value);
 
         /// <summary>
@@ -919,6 +974,11 @@ namespace G
         {
             GoogleCalendarEventCreate = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ToolControllerCreateRequest FromGoogleCalendarEventCreate(global::G.CreateGoogleCalendarCreateEventToolDTO? value) => new ToolControllerCreateRequest(value);
 
         /// <summary>
         /// 
@@ -941,6 +1001,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ToolControllerCreateRequest FromGoogleSheetsRowAppend(global::G.CreateGoogleSheetsRowAppendToolDTO? value) => new ToolControllerCreateRequest(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ToolControllerCreateRequest(global::G.CreateGoogleCalendarCheckAvailabilityToolDTO value) => new ToolControllerCreateRequest((global::G.CreateGoogleCalendarCheckAvailabilityToolDTO?)value);
 
         /// <summary>
@@ -955,6 +1020,11 @@ namespace G
         {
             GoogleCalendarAvailabilityCheck = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ToolControllerCreateRequest FromGoogleCalendarAvailabilityCheck(global::G.CreateGoogleCalendarCheckAvailabilityToolDTO? value) => new ToolControllerCreateRequest(value);
 
         /// <summary>
         /// 
@@ -977,6 +1047,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ToolControllerCreateRequest FromSlackMessageSend(global::G.CreateSlackSendMessageToolDTO? value) => new ToolControllerCreateRequest(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ToolControllerCreateRequest(global::G.CreateSmsToolDTO value) => new ToolControllerCreateRequest((global::G.CreateSmsToolDTO?)value);
 
         /// <summary>
@@ -991,6 +1066,11 @@ namespace G
         {
             Sms = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ToolControllerCreateRequest FromSms(global::G.CreateSmsToolDTO? value) => new ToolControllerCreateRequest(value);
 
         /// <summary>
         /// 
@@ -1013,6 +1093,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ToolControllerCreateRequest FromMcp(global::G.CreateMcpToolDTO? value) => new ToolControllerCreateRequest(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ToolControllerCreateRequest(global::G.CreateGoHighLevelCalendarAvailabilityToolDTO value) => new ToolControllerCreateRequest((global::G.CreateGoHighLevelCalendarAvailabilityToolDTO?)value);
 
         /// <summary>
@@ -1027,6 +1112,11 @@ namespace G
         {
             GohighlevelCalendarAvailabilityCheck = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ToolControllerCreateRequest FromGohighlevelCalendarAvailabilityCheck(global::G.CreateGoHighLevelCalendarAvailabilityToolDTO? value) => new ToolControllerCreateRequest(value);
 
         /// <summary>
         /// 
@@ -1049,6 +1139,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ToolControllerCreateRequest FromGohighlevelCalendarEventCreate(global::G.CreateGoHighLevelCalendarEventCreateToolDTO? value) => new ToolControllerCreateRequest(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ToolControllerCreateRequest(global::G.CreateGoHighLevelContactCreateToolDTO value) => new ToolControllerCreateRequest((global::G.CreateGoHighLevelContactCreateToolDTO?)value);
 
         /// <summary>
@@ -1063,6 +1158,11 @@ namespace G
         {
             GohighlevelContactCreate = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ToolControllerCreateRequest FromGohighlevelContactCreate(global::G.CreateGoHighLevelContactCreateToolDTO? value) => new ToolControllerCreateRequest(value);
 
         /// <summary>
         /// 
@@ -1085,6 +1185,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ToolControllerCreateRequest FromGohighlevelContactGet(global::G.CreateGoHighLevelContactGetToolDTO? value) => new ToolControllerCreateRequest(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ToolControllerCreateRequest(global::G.CreateSipRequestToolDTO value) => new ToolControllerCreateRequest((global::G.CreateSipRequestToolDTO?)value);
 
         /// <summary>
@@ -1103,6 +1208,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ToolControllerCreateRequest FromSipRequest(global::G.CreateSipRequestToolDTO? value) => new ToolControllerCreateRequest(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ToolControllerCreateRequest(global::G.CreateVoicemailToolDTO value) => new ToolControllerCreateRequest((global::G.CreateVoicemailToolDTO?)value);
 
         /// <summary>
@@ -1117,6 +1227,11 @@ namespace G
         {
             Voicemail = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ToolControllerCreateRequest FromVoicemail(global::G.CreateVoicemailToolDTO? value) => new ToolControllerCreateRequest(value);
 
         /// <summary>
         /// 

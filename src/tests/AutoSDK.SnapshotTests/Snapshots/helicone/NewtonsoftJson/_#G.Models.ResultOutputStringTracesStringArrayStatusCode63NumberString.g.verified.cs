@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ResultOutputStringTracesStringArrayStatusCode63NumberString FromSuccess(global::G.ResultSuccessOutputStringTracesStringArrayStatusCode63Number? value) => new ResultOutputStringTracesStringArrayStatusCode63NumberString(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ResultOutputStringTracesStringArrayStatusCode63NumberString(global::G.ResultErrorString value) => new ResultOutputStringTracesStringArrayStatusCode63NumberString((global::G.ResultErrorString?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             Error = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ResultOutputStringTracesStringArrayStatusCode63NumberString FromError(global::G.ResultErrorString? value) => new ResultOutputStringTracesStringArrayStatusCode63NumberString(value);
 
         /// <summary>
         /// 

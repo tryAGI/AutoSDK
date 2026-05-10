@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Ann FromAnnVariant1(bool? value) => new Ann(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Ann(global::G.AnnConfig value) => new Ann((global::G.AnnConfig?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             Config = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Ann FromConfig(global::G.AnnConfig? value) => new Ann(value);
 
         /// <summary>
         /// 

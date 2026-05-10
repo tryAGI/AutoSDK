@@ -96,6 +96,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static StructuredOutputEvent FromAgentBase(global::G.AgentEventBase? value) => new StructuredOutputEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator StructuredOutputEvent(global::G.StructuredOutputEventVariant2 value) => new StructuredOutputEvent((global::G.StructuredOutputEventVariant2?)value);
 
         /// <summary>
@@ -110,6 +115,11 @@ namespace G
         {
             StructuredOutputEventVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static StructuredOutputEvent FromStructuredOutputEventVariant2(global::G.StructuredOutputEventVariant2? value) => new StructuredOutputEvent(value);
 
         /// <summary>
         /// 

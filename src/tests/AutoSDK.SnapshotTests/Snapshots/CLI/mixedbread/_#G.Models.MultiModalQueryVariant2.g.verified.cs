@@ -98,6 +98,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static MultiModalQueryVariant2 FromImageUrl(global::G.ImageUrlInput2? value) => new MultiModalQueryVariant2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator MultiModalQueryVariant2(global::G.TextInput value) => new MultiModalQueryVariant2((global::G.TextInput?)value);
 
         /// <summary>
@@ -112,6 +117,11 @@ namespace G
         {
             Text = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static MultiModalQueryVariant2 FromText(global::G.TextInput? value) => new MultiModalQueryVariant2(value);
 
         /// <summary>
         /// 

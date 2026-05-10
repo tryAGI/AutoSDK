@@ -65,6 +65,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static CreateEncoderRequest FromOpenaiCompatible(global::G.CreateOpenAIEncoderRequest? value) => new CreateEncoderRequest(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public CreateEncoderRequest(
             global::G.CreateEncoderRequestDiscriminatorType? type,
             global::G.CreateOpenAIEncoderRequest? openaiCompatible

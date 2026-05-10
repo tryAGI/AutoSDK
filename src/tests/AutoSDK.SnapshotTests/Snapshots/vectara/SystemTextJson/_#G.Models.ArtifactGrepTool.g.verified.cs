@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ArtifactGrepTool FromBase(global::G.ToolBase? value) => new ArtifactGrepTool(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ArtifactGrepTool(global::G.ArtifactGrepToolVariant2 value) => new ArtifactGrepTool((global::G.ArtifactGrepToolVariant2?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             ArtifactGrepToolVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ArtifactGrepTool FromArtifactGrepToolVariant2(global::G.ArtifactGrepToolVariant2? value) => new ArtifactGrepTool(value);
 
         /// <summary>
         /// 

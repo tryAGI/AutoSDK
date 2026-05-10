@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static GenerateStreamEnd FromEvent(global::G.GenerateStreamEvent? value) => new GenerateStreamEnd(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator GenerateStreamEnd(global::G.GenerateStreamEndUbzr0t value) => new GenerateStreamEnd((global::G.GenerateStreamEndUbzr0t?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             Ubzr0t = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static GenerateStreamEnd FromUbzr0t(global::G.GenerateStreamEndUbzr0t? value) => new GenerateStreamEnd(value);
 
         /// <summary>
         /// 

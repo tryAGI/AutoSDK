@@ -150,6 +150,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static BaseInputsOneOf1ItemsOneOf1ContentItems FromInputText(global::G.InputText? value) => new BaseInputsOneOf1ItemsOneOf1ContentItems(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BaseInputsOneOf1ItemsOneOf1ContentItems(global::G.InputImage value) => new BaseInputsOneOf1ItemsOneOf1ContentItems((global::G.InputImage?)value);
 
         /// <summary>
@@ -164,6 +169,11 @@ namespace G
         {
             InputImage = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BaseInputsOneOf1ItemsOneOf1ContentItems FromInputImage(global::G.InputImage? value) => new BaseInputsOneOf1ItemsOneOf1ContentItems(value);
 
         /// <summary>
         /// 
@@ -186,6 +196,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static BaseInputsOneOf1ItemsOneOf1ContentItems FromInputFile(global::G.InputFile? value) => new BaseInputsOneOf1ItemsOneOf1ContentItems(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BaseInputsOneOf1ItemsOneOf1ContentItems(global::G.InputAudio value) => new BaseInputsOneOf1ItemsOneOf1ContentItems((global::G.InputAudio?)value);
 
         /// <summary>
@@ -200,6 +215,11 @@ namespace G
         {
             InputAudio = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BaseInputsOneOf1ItemsOneOf1ContentItems FromInputAudio(global::G.InputAudio? value) => new BaseInputsOneOf1ItemsOneOf1ContentItems(value);
 
         /// <summary>
         /// 

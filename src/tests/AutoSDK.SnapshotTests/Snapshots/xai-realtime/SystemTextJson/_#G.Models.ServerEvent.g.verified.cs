@@ -665,6 +665,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ServerEvent FromSessionCreated(global::G.SessionCreatedEvent? value) => new ServerEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ServerEvent(global::G.SessionUpdatedEvent value) => new ServerEvent((global::G.SessionUpdatedEvent?)value);
 
         /// <summary>
@@ -679,6 +684,11 @@ namespace G
         {
             SessionUpdated = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ServerEvent FromSessionUpdated(global::G.SessionUpdatedEvent? value) => new ServerEvent(value);
 
         /// <summary>
         /// 
@@ -701,6 +711,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ServerEvent FromConversationCreated(global::G.ConversationCreatedEvent? value) => new ServerEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ServerEvent(global::G.ConversationItemAddedEvent value) => new ServerEvent((global::G.ConversationItemAddedEvent?)value);
 
         /// <summary>
@@ -715,6 +730,11 @@ namespace G
         {
             ConversationItemAdded = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ServerEvent FromConversationItemAdded(global::G.ConversationItemAddedEvent? value) => new ServerEvent(value);
 
         /// <summary>
         /// 
@@ -737,6 +757,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ServerEvent FromInputAudioBufferSpeechStarted(global::G.InputAudioBufferSpeechStartedEvent? value) => new ServerEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ServerEvent(global::G.InputAudioBufferSpeechStoppedEvent value) => new ServerEvent((global::G.InputAudioBufferSpeechStoppedEvent?)value);
 
         /// <summary>
@@ -751,6 +776,11 @@ namespace G
         {
             InputAudioBufferSpeechStopped = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ServerEvent FromInputAudioBufferSpeechStopped(global::G.InputAudioBufferSpeechStoppedEvent? value) => new ServerEvent(value);
 
         /// <summary>
         /// 
@@ -773,6 +803,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ServerEvent FromInputAudioBufferCommitted(global::G.InputAudioBufferCommittedEvent? value) => new ServerEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ServerEvent(global::G.InputAudioTranscriptionCompletedEvent value) => new ServerEvent((global::G.InputAudioTranscriptionCompletedEvent?)value);
 
         /// <summary>
@@ -787,6 +822,11 @@ namespace G
         {
             InputAudioTranscriptionCompleted = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ServerEvent FromInputAudioTranscriptionCompleted(global::G.InputAudioTranscriptionCompletedEvent? value) => new ServerEvent(value);
 
         /// <summary>
         /// 
@@ -809,6 +849,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ServerEvent FromResponseCreated(global::G.ResponseCreatedEvent? value) => new ServerEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ServerEvent(global::G.ResponseDoneEvent value) => new ServerEvent((global::G.ResponseDoneEvent?)value);
 
         /// <summary>
@@ -823,6 +868,11 @@ namespace G
         {
             ResponseDone = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ServerEvent FromResponseDone(global::G.ResponseDoneEvent? value) => new ServerEvent(value);
 
         /// <summary>
         /// 
@@ -845,6 +895,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ServerEvent FromResponseOutputItemAdded(global::G.ResponseOutputItemAddedEvent? value) => new ServerEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ServerEvent(global::G.ResponseOutputAudioTranscriptDeltaEvent value) => new ServerEvent((global::G.ResponseOutputAudioTranscriptDeltaEvent?)value);
 
         /// <summary>
@@ -859,6 +914,11 @@ namespace G
         {
             ResponseOutputAudioTranscriptDelta = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ServerEvent FromResponseOutputAudioTranscriptDelta(global::G.ResponseOutputAudioTranscriptDeltaEvent? value) => new ServerEvent(value);
 
         /// <summary>
         /// 
@@ -881,6 +941,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ServerEvent FromResponseOutputAudioTranscriptDone(global::G.ResponseOutputAudioTranscriptDoneEvent? value) => new ServerEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ServerEvent(global::G.ResponseOutputAudioDeltaEvent value) => new ServerEvent((global::G.ResponseOutputAudioDeltaEvent?)value);
 
         /// <summary>
@@ -895,6 +960,11 @@ namespace G
         {
             ResponseOutputAudioDelta = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ServerEvent FromResponseOutputAudioDelta(global::G.ResponseOutputAudioDeltaEvent? value) => new ServerEvent(value);
 
         /// <summary>
         /// 
@@ -917,6 +987,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ServerEvent FromResponseOutputAudioDone(global::G.ResponseOutputAudioDoneEvent? value) => new ServerEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ServerEvent(global::G.ResponseFunctionCallArgumentsDoneEvent value) => new ServerEvent((global::G.ResponseFunctionCallArgumentsDoneEvent?)value);
 
         /// <summary>
@@ -931,6 +1006,11 @@ namespace G
         {
             ResponseFunctionCallArgumentsDone = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ServerEvent FromResponseFunctionCallArgumentsDone(global::G.ResponseFunctionCallArgumentsDoneEvent? value) => new ServerEvent(value);
 
         /// <summary>
         /// 
@@ -953,6 +1033,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ServerEvent FromResponseMcpCallArgumentsDone(global::G.ResponseMcpCallArgumentsDoneEvent? value) => new ServerEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ServerEvent(global::G.ResponseMcpCallCompletedEvent value) => new ServerEvent((global::G.ResponseMcpCallCompletedEvent?)value);
 
         /// <summary>
@@ -967,6 +1052,11 @@ namespace G
         {
             ResponseMcpCallCompleted = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ServerEvent FromResponseMcpCallCompleted(global::G.ResponseMcpCallCompletedEvent? value) => new ServerEvent(value);
 
         /// <summary>
         /// 
@@ -989,6 +1079,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ServerEvent FromResponseMcpCallFailed(global::G.ResponseMcpCallFailedEvent? value) => new ServerEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ServerEvent(global::G.McpListToolsCompletedEvent value) => new ServerEvent((global::G.McpListToolsCompletedEvent?)value);
 
         /// <summary>
@@ -1007,6 +1102,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ServerEvent FromMcpListToolsCompleted(global::G.McpListToolsCompletedEvent? value) => new ServerEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ServerEvent(global::G.ErrorEvent value) => new ServerEvent((global::G.ErrorEvent?)value);
 
         /// <summary>
@@ -1021,6 +1121,11 @@ namespace G
         {
             Error = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ServerEvent FromError(global::G.ErrorEvent? value) => new ServerEvent(value);
 
         /// <summary>
         /// 

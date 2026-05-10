@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static BatchReferenceResponse FromBatchReference(global::G.BatchReference? value) => new BatchReferenceResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BatchReferenceResponse(global::G.BatchReferenceResponseVariant2 value) => new BatchReferenceResponse((global::G.BatchReferenceResponseVariant2?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             BatchReferenceResponseVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BatchReferenceResponse FromBatchReferenceResponseVariant2(global::G.BatchReferenceResponseVariant2? value) => new BatchReferenceResponse(value);
 
         /// <summary>
         /// 

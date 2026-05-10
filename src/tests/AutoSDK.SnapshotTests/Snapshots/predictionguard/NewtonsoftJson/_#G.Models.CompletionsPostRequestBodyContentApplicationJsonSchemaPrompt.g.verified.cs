@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static CompletionsPostRequestBodyContentApplicationJsonSchemaPrompt FromCompletionsPostRequestBodyContentApplicationJsonSchemaPromptVariant1(string? value) => new CompletionsPostRequestBodyContentApplicationJsonSchemaPrompt(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public CompletionsPostRequestBodyContentApplicationJsonSchemaPrompt(
             string? completionsPostRequestBodyContentApplicationJsonSchemaPromptVariant1,
             global::System.Collections.Generic.IList<string>? completionsPostRequestBodyContentApplicationJsonSchemaPromptVariant2

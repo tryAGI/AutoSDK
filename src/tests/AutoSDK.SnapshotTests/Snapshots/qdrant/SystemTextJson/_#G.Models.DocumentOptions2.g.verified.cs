@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static DocumentOptions2 FromBm25Config(global::G.Bm25Config? value) => new DocumentOptions2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public DocumentOptions2(
             object? optionsVariant1,
             global::G.Bm25Config? bm25Config

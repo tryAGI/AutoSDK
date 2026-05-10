@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static CancelTransferNode FromBase(global::G.NodeBase? value) => new CancelTransferNode(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator CancelTransferNode(global::G.CancelTransferNodeVariant2 value) => new CancelTransferNode((global::G.CancelTransferNodeVariant2?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             CancelTransferNodeVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static CancelTransferNode FromCancelTransferNodeVariant2(global::G.CancelTransferNodeVariant2? value) => new CancelTransferNode(value);
 
         /// <summary>
         /// 

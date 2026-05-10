@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Inputs FromInputsVariant1(string? value) => new Inputs(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public Inputs(
             string? inputsVariant1,
             global::System.Collections.Generic.IList<global::G.InputsOneOf1Items>? inputs1

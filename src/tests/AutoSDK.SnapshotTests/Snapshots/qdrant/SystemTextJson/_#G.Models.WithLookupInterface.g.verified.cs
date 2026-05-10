@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static WithLookupInterface FromWithLookupInterfaceVariant1(string? value) => new WithLookupInterface(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator WithLookupInterface(global::G.WithLookup value) => new WithLookupInterface((global::G.WithLookup?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             WithLookup = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static WithLookupInterface FromWithLookup(global::G.WithLookup? value) => new WithLookupInterface(value);
 
         /// <summary>
         /// 

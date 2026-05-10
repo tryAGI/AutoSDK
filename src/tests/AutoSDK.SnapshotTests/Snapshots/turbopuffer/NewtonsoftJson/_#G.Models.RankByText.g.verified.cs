@@ -420,6 +420,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static RankByText FromRankByTextVariant1(byte[]? value) => new RankByText(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator RankByText(global::G.Filter value) => new RankByText((global::G.Filter?)value);
 
         /// <summary>
@@ -434,6 +439,11 @@ namespace G
         {
             Filter = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static RankByText FromFilter(global::G.Filter? value) => new RankByText(value);
 
         /// <summary>
         /// 

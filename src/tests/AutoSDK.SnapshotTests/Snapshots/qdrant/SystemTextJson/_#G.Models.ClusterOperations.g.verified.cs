@@ -330,6 +330,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ClusterOperations FromMoveShardOperation(global::G.MoveShardOperation? value) => new ClusterOperations(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ClusterOperations(global::G.ReplicateShardOperation value) => new ClusterOperations((global::G.ReplicateShardOperation?)value);
 
         /// <summary>
@@ -344,6 +349,11 @@ namespace G
         {
             ReplicateShardOperation = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ClusterOperations FromReplicateShardOperation(global::G.ReplicateShardOperation? value) => new ClusterOperations(value);
 
         /// <summary>
         /// 
@@ -366,6 +376,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ClusterOperations FromAbortTransferOperation(global::G.AbortTransferOperation? value) => new ClusterOperations(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ClusterOperations(global::G.DropReplicaOperation value) => new ClusterOperations((global::G.DropReplicaOperation?)value);
 
         /// <summary>
@@ -380,6 +395,11 @@ namespace G
         {
             DropReplicaOperation = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ClusterOperations FromDropReplicaOperation(global::G.DropReplicaOperation? value) => new ClusterOperations(value);
 
         /// <summary>
         /// 
@@ -402,6 +422,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ClusterOperations FromCreateShardingKeyOperation(global::G.CreateShardingKeyOperation? value) => new ClusterOperations(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ClusterOperations(global::G.DropShardingKeyOperation value) => new ClusterOperations((global::G.DropShardingKeyOperation?)value);
 
         /// <summary>
@@ -416,6 +441,11 @@ namespace G
         {
             DropShardingKeyOperation = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ClusterOperations FromDropShardingKeyOperation(global::G.DropShardingKeyOperation? value) => new ClusterOperations(value);
 
         /// <summary>
         /// 
@@ -438,6 +468,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ClusterOperations FromRestartTransferOperation(global::G.RestartTransferOperation? value) => new ClusterOperations(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ClusterOperations(global::G.StartReshardingOperation value) => new ClusterOperations((global::G.StartReshardingOperation?)value);
 
         /// <summary>
@@ -452,6 +487,11 @@ namespace G
         {
             StartReshardingOperation = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ClusterOperations FromStartReshardingOperation(global::G.StartReshardingOperation? value) => new ClusterOperations(value);
 
         /// <summary>
         /// 
@@ -474,6 +514,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ClusterOperations FromAbortReshardingOperation(global::G.AbortReshardingOperation? value) => new ClusterOperations(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ClusterOperations(global::G.ReplicatePointsOperation value) => new ClusterOperations((global::G.ReplicatePointsOperation?)value);
 
         /// <summary>
@@ -488,6 +533,11 @@ namespace G
         {
             ReplicatePointsOperation = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ClusterOperations FromReplicatePointsOperation(global::G.ReplicatePointsOperation? value) => new ClusterOperations(value);
 
         /// <summary>
         /// 

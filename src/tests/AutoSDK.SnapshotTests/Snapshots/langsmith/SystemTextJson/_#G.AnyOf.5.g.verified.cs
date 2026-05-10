@@ -179,6 +179,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static AnyOf<T1, T2, T3, T4, T5> FromValue1(T1? value) => new AnyOf<T1, T2, T3, T4, T5>(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator AnyOf<T1, T2, T3, T4, T5>(T2 value) => new AnyOf<T1, T2, T3, T4, T5>((T2?)value);
 
         /// <summary>
@@ -193,6 +198,11 @@ namespace G
         {
             Value2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static AnyOf<T1, T2, T3, T4, T5> FromValue2(T2? value) => new AnyOf<T1, T2, T3, T4, T5>(value);
 
         /// <summary>
         /// 
@@ -215,6 +225,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static AnyOf<T1, T2, T3, T4, T5> FromValue3(T3? value) => new AnyOf<T1, T2, T3, T4, T5>(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator AnyOf<T1, T2, T3, T4, T5>(T4 value) => new AnyOf<T1, T2, T3, T4, T5>((T4?)value);
 
         /// <summary>
@@ -233,6 +248,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static AnyOf<T1, T2, T3, T4, T5> FromValue4(T4? value) => new AnyOf<T1, T2, T3, T4, T5>(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator AnyOf<T1, T2, T3, T4, T5>(T5 value) => new AnyOf<T1, T2, T3, T4, T5>((T5?)value);
 
         /// <summary>
@@ -247,6 +267,11 @@ namespace G
         {
             Value5 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static AnyOf<T1, T2, T3, T4, T5> FromValue5(T5? value) => new AnyOf<T1, T2, T3, T4, T5>(value);
 
         /// <summary>
         /// 

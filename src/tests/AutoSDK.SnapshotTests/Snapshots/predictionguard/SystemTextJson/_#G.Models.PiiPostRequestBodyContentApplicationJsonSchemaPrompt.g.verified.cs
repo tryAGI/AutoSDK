@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static PiiPostRequestBodyContentApplicationJsonSchemaPrompt FromPiiPostRequestBodyContentApplicationJsonSchemaPromptVariant1(string? value) => new PiiPostRequestBodyContentApplicationJsonSchemaPrompt(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public PiiPostRequestBodyContentApplicationJsonSchemaPrompt(
             string? piiPostRequestBodyContentApplicationJsonSchemaPromptVariant1,
             global::System.Collections.Generic.IList<string>? piiPostRequestBodyContentApplicationJsonSchemaPromptVariant2

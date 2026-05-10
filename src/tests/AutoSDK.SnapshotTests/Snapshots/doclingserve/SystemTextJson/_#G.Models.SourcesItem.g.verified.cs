@@ -125,6 +125,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static SourcesItem FromFile(global::G.FileSourceRequest? value) => new SourcesItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator SourcesItem(global::G.HttpSourceRequest value) => new SourcesItem((global::G.HttpSourceRequest?)value);
 
         /// <summary>
@@ -143,6 +148,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static SourcesItem FromHttp(global::G.HttpSourceRequest? value) => new SourcesItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator SourcesItem(global::G.S3SourceRequest value) => new SourcesItem((global::G.S3SourceRequest?)value);
 
         /// <summary>
@@ -157,6 +167,11 @@ namespace G
         {
             S3 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static SourcesItem FromS3(global::G.S3SourceRequest? value) => new SourcesItem(value);
 
         /// <summary>
         /// 

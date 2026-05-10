@@ -210,6 +210,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static MessagesRequestPluginsItems FromMessagesRequestPluginsItems0(global::G.MessagesRequestPluginsItems0? value) => new MessagesRequestPluginsItems(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator MessagesRequestPluginsItems(global::G.MessagesRequestPluginsItems1 value) => new MessagesRequestPluginsItems((global::G.MessagesRequestPluginsItems1?)value);
 
         /// <summary>
@@ -224,6 +229,11 @@ namespace G
         {
             MessagesRequestPluginsItems1 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static MessagesRequestPluginsItems FromMessagesRequestPluginsItems1(global::G.MessagesRequestPluginsItems1? value) => new MessagesRequestPluginsItems(value);
 
         /// <summary>
         /// 
@@ -246,6 +256,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static MessagesRequestPluginsItems FromMessagesRequestPluginsItems2(global::G.MessagesRequestPluginsItems2? value) => new MessagesRequestPluginsItems(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator MessagesRequestPluginsItems(global::G.MessagesRequestPluginsItems3 value) => new MessagesRequestPluginsItems((global::G.MessagesRequestPluginsItems3?)value);
 
         /// <summary>
@@ -260,6 +275,11 @@ namespace G
         {
             MessagesRequestPluginsItems3 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static MessagesRequestPluginsItems FromMessagesRequestPluginsItems3(global::G.MessagesRequestPluginsItems3? value) => new MessagesRequestPluginsItems(value);
 
         /// <summary>
         /// 
@@ -282,6 +302,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static MessagesRequestPluginsItems FromMessagesRequestPluginsItems4(global::G.MessagesRequestPluginsItems4? value) => new MessagesRequestPluginsItems(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator MessagesRequestPluginsItems(global::G.MessagesRequestPluginsItems5 value) => new MessagesRequestPluginsItems((global::G.MessagesRequestPluginsItems5?)value);
 
         /// <summary>
@@ -296,6 +321,11 @@ namespace G
         {
             MessagesRequestPluginsItems5 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static MessagesRequestPluginsItems FromMessagesRequestPluginsItems5(global::G.MessagesRequestPluginsItems5? value) => new MessagesRequestPluginsItems(value);
 
         /// <summary>
         /// 

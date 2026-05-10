@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ProviderPreferencesOrderItems FromProviderName(global::G.ProviderName? value) => new ProviderPreferencesOrderItems(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ProviderPreferencesOrderItems(string value) => new ProviderPreferencesOrderItems((string?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             ProviderPreferencesOrderItemsVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ProviderPreferencesOrderItems FromProviderPreferencesOrderItemsVariant2(string? value) => new ProviderPreferencesOrderItems(value);
 
         /// <summary>
         /// 

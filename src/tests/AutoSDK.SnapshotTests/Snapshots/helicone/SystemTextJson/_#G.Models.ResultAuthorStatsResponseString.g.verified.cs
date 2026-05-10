@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ResultAuthorStatsResponseString FromSuccess(global::G.ResultSuccessAuthorStatsResponse? value) => new ResultAuthorStatsResponseString(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ResultAuthorStatsResponseString(global::G.ResultErrorString value) => new ResultAuthorStatsResponseString((global::G.ResultErrorString?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             Error = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ResultAuthorStatsResponseString FromError(global::G.ResultErrorString? value) => new ResultAuthorStatsResponseString(value);
 
         /// <summary>
         /// 

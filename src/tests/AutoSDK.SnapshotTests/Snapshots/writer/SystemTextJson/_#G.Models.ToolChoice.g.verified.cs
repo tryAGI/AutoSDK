@@ -94,6 +94,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ToolChoice FromString(global::G.StringToolChoice? value) => new ToolChoice(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ToolChoice(global::G.JsonObjectToolChoice value) => new ToolChoice((global::G.JsonObjectToolChoice?)value);
 
         /// <summary>
@@ -108,6 +113,11 @@ namespace G
         {
             JsonObject = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ToolChoice FromJsonObject(global::G.JsonObjectToolChoice? value) => new ToolChoice(value);
 
         /// <summary>
         /// 

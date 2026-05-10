@@ -330,6 +330,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Query FromNearest(global::G.NearestQuery? value) => new Query(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Query(global::G.RecommendQuery value) => new Query((global::G.RecommendQuery?)value);
 
         /// <summary>
@@ -344,6 +349,11 @@ namespace G
         {
             Recommend = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Query FromRecommend(global::G.RecommendQuery? value) => new Query(value);
 
         /// <summary>
         /// 
@@ -366,6 +376,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Query FromDiscover(global::G.DiscoverQuery? value) => new Query(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Query(global::G.ContextQuery value) => new Query((global::G.ContextQuery?)value);
 
         /// <summary>
@@ -380,6 +395,11 @@ namespace G
         {
             Context = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Query FromContext(global::G.ContextQuery? value) => new Query(value);
 
         /// <summary>
         /// 
@@ -402,6 +422,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Query FromOrderBy(global::G.OrderByQuery? value) => new Query(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Query(global::G.FusionQuery value) => new Query((global::G.FusionQuery?)value);
 
         /// <summary>
@@ -416,6 +441,11 @@ namespace G
         {
             Fusion = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Query FromFusion(global::G.FusionQuery? value) => new Query(value);
 
         /// <summary>
         /// 
@@ -438,6 +468,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Query FromRrf(global::G.RrfQuery? value) => new Query(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Query(global::G.FormulaQuery value) => new Query((global::G.FormulaQuery?)value);
 
         /// <summary>
@@ -452,6 +487,11 @@ namespace G
         {
             Formula = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Query FromFormula(global::G.FormulaQuery? value) => new Query(value);
 
         /// <summary>
         /// 
@@ -474,6 +514,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Query FromSample(global::G.SampleQuery? value) => new Query(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Query(global::G.RelevanceFeedbackQuery value) => new Query((global::G.RelevanceFeedbackQuery?)value);
 
         /// <summary>
@@ -488,6 +533,11 @@ namespace G
         {
             RelevanceFeedback = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Query FromRelevanceFeedback(global::G.RelevanceFeedbackQuery? value) => new Query(value);
 
         /// <summary>
         /// 

@@ -120,6 +120,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static UpdateAuthSecretRequestDto FromBasicAuthentication(global::G.UpdateAuthSecretRequestDtoBasicAuthentication? value) => new UpdateAuthSecretRequestDto(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator UpdateAuthSecretRequestDto(global::G.UpdateAuthSecretRequestDtoBearerToken value) => new UpdateAuthSecretRequestDto((global::G.UpdateAuthSecretRequestDtoBearerToken?)value);
 
         /// <summary>
@@ -138,6 +143,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static UpdateAuthSecretRequestDto FromBearerToken(global::G.UpdateAuthSecretRequestDtoBearerToken? value) => new UpdateAuthSecretRequestDto(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator UpdateAuthSecretRequestDto(global::G.UpdateAuthSecretRequestDtoApiKey value) => new UpdateAuthSecretRequestDto((global::G.UpdateAuthSecretRequestDtoApiKey?)value);
 
         /// <summary>
@@ -152,6 +162,11 @@ namespace G
         {
             ApiKey = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static UpdateAuthSecretRequestDto FromApiKey(global::G.UpdateAuthSecretRequestDtoApiKey? value) => new UpdateAuthSecretRequestDto(value);
 
         /// <summary>
         /// 

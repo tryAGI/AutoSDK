@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Prompt FromPromptVariant1(global::G.AllOf<global::G.PromptVariant12, global::G.ChatPrompt>? value) => new Prompt(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Prompt(global::G.AllOf<global::G.PromptVariant22, global::G.TextPrompt> value) => new Prompt((global::G.AllOf<global::G.PromptVariant22, global::G.TextPrompt>?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             PromptVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Prompt FromPromptVariant2(global::G.AllOf<global::G.PromptVariant22, global::G.TextPrompt>? value) => new Prompt(value);
 
         /// <summary>
         /// 

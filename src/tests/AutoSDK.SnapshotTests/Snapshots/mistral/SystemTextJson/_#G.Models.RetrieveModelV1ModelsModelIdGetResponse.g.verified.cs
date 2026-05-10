@@ -95,6 +95,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static RetrieveModelV1ModelsModelIdGetResponse FromBase(global::G.BaseModelCard? value) => new RetrieveModelV1ModelsModelIdGetResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator RetrieveModelV1ModelsModelIdGetResponse(global::G.FTModelCard value) => new RetrieveModelV1ModelsModelIdGetResponse((global::G.FTModelCard?)value);
 
         /// <summary>
@@ -109,6 +114,11 @@ namespace G
         {
             FineTuned = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static RetrieveModelV1ModelsModelIdGetResponse FromFineTuned(global::G.FTModelCard? value) => new RetrieveModelV1ModelsModelIdGetResponse(value);
 
         /// <summary>
         /// 

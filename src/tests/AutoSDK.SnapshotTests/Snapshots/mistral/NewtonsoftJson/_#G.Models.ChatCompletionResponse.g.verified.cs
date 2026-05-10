@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ChatCompletionResponse FromBase(global::G.ChatCompletionResponseBase? value) => new ChatCompletionResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChatCompletionResponse(global::G.ChatCompletionResponseChatCompletionResponse1 value) => new ChatCompletionResponse((global::G.ChatCompletionResponseChatCompletionResponse1?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             Response1 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChatCompletionResponse FromResponse1(global::G.ChatCompletionResponseChatCompletionResponse1? value) => new ChatCompletionResponse(value);
 
         /// <summary>
         /// 

@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static CreateIceCandidateStreamRequest FromCreateIceCandidateStreamRequestVariant1(global::G.AnyOf<global::G.CreateIceCandidateStreamRequestVariant1Variant1, object>? value) => new CreateIceCandidateStreamRequest(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator CreateIceCandidateStreamRequest(global::G.CreateIceCandidateStreamRequestVariant2 value) => new CreateIceCandidateStreamRequest((global::G.CreateIceCandidateStreamRequestVariant2?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             CreateIceCandidateStreamRequestVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static CreateIceCandidateStreamRequest FromCreateIceCandidateStreamRequestVariant2(global::G.CreateIceCandidateStreamRequestVariant2? value) => new CreateIceCandidateStreamRequest(value);
 
         /// <summary>
         /// 

@@ -120,6 +120,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static QuantizationConfig FromScalar(global::G.ScalarQuantization? value) => new QuantizationConfig(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator QuantizationConfig(global::G.ProductQuantization value) => new QuantizationConfig((global::G.ProductQuantization?)value);
 
         /// <summary>
@@ -138,6 +143,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static QuantizationConfig FromProduct(global::G.ProductQuantization? value) => new QuantizationConfig(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator QuantizationConfig(global::G.BinaryQuantization value) => new QuantizationConfig((global::G.BinaryQuantization?)value);
 
         /// <summary>
@@ -152,6 +162,11 @@ namespace G
         {
             Binary = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static QuantizationConfig FromBinary(global::G.BinaryQuantization? value) => new QuantizationConfig(value);
 
         /// <summary>
         /// 

@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ResultPropertyStringTotalCostNumberRequestCountNumberCreatedAtTruncStringArrayString FromSuccess(global::G.ResultSuccessPropertyStringTotalCostNumberRequestCountNumberCreatedAtTruncStringArray? value) => new ResultPropertyStringTotalCostNumberRequestCountNumberCreatedAtTruncStringArrayString(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ResultPropertyStringTotalCostNumberRequestCountNumberCreatedAtTruncStringArrayString(global::G.ResultErrorString value) => new ResultPropertyStringTotalCostNumberRequestCountNumberCreatedAtTruncStringArrayString((global::G.ResultErrorString?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             Error = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ResultPropertyStringTotalCostNumberRequestCountNumberCreatedAtTruncStringArrayString FromError(global::G.ResultErrorString? value) => new ResultPropertyStringTotalCostNumberRequestCountNumberCreatedAtTruncStringArrayString(value);
 
         /// <summary>
         /// 

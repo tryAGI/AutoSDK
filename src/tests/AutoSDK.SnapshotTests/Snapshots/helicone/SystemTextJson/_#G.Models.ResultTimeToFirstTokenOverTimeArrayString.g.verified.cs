@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ResultTimeToFirstTokenOverTimeArrayString FromSuccess(global::G.ResultSuccessTimeToFirstTokenOverTimeArray? value) => new ResultTimeToFirstTokenOverTimeArrayString(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ResultTimeToFirstTokenOverTimeArrayString(global::G.ResultErrorString value) => new ResultTimeToFirstTokenOverTimeArrayString((global::G.ResultErrorString?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             Error = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ResultTimeToFirstTokenOverTimeArrayString FromError(global::G.ResultErrorString? value) => new ResultTimeToFirstTokenOverTimeArrayString(value);
 
         /// <summary>
         /// 

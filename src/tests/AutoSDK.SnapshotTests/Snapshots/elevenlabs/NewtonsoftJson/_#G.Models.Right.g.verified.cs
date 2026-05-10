@@ -425,6 +425,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Right FromStringLiteral(global::G.ASTStringNodeInput? value) => new Right(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Right(global::G.ASTNumberNodeInput value) => new Right((global::G.ASTNumberNodeInput?)value);
 
         /// <summary>
@@ -439,6 +444,11 @@ namespace G
         {
             NumberLiteral = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Right FromNumberLiteral(global::G.ASTNumberNodeInput? value) => new Right(value);
 
         /// <summary>
         /// 
@@ -461,6 +471,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Right FromBooleanLiteral(global::G.ASTBooleanNodeInput? value) => new Right(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Right(global::G.ASTLLMNodeInput value) => new Right((global::G.ASTLLMNodeInput?)value);
 
         /// <summary>
@@ -475,6 +490,11 @@ namespace G
         {
             Llm = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Right FromLlm(global::G.ASTLLMNodeInput? value) => new Right(value);
 
         /// <summary>
         /// 
@@ -497,6 +517,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Right FromDynamicVariable(global::G.ASTDynamicVariableNodeInput? value) => new Right(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Right(global::G.ASTOrOperatorNodeInput value) => new Right((global::G.ASTOrOperatorNodeInput?)value);
 
         /// <summary>
@@ -511,6 +536,11 @@ namespace G
         {
             OrOperator = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Right FromOrOperator(global::G.ASTOrOperatorNodeInput? value) => new Right(value);
 
         /// <summary>
         /// 
@@ -533,6 +563,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Right FromAndOperator(global::G.ASTAndOperatorNodeInput? value) => new Right(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Right(global::G.ASTEqualsOperatorNodeInput value) => new Right((global::G.ASTEqualsOperatorNodeInput?)value);
 
         /// <summary>
@@ -547,6 +582,11 @@ namespace G
         {
             EqOperator = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Right FromEqOperator(global::G.ASTEqualsOperatorNodeInput? value) => new Right(value);
 
         /// <summary>
         /// 
@@ -569,6 +609,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Right FromNeqOperator(global::G.ASTNotEqualsOperatorNodeInput? value) => new Right(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Right(global::G.ASTGreaterThanOperatorNodeInput value) => new Right((global::G.ASTGreaterThanOperatorNodeInput?)value);
 
         /// <summary>
@@ -583,6 +628,11 @@ namespace G
         {
             GtOperator = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Right FromGtOperator(global::G.ASTGreaterThanOperatorNodeInput? value) => new Right(value);
 
         /// <summary>
         /// 
@@ -605,6 +655,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Right FromLtOperator(global::G.ASTLessThanOperatorNodeInput? value) => new Right(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Right(global::G.ASTGreaterThanOrEqualsOperatorNodeInput value) => new Right((global::G.ASTGreaterThanOrEqualsOperatorNodeInput?)value);
 
         /// <summary>
@@ -623,6 +678,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Right FromGteOperator(global::G.ASTGreaterThanOrEqualsOperatorNodeInput? value) => new Right(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Right(global::G.ASTLessThanOrEqualsOperatorNodeInput value) => new Right((global::G.ASTLessThanOrEqualsOperatorNodeInput?)value);
 
         /// <summary>
@@ -637,6 +697,11 @@ namespace G
         {
             LteOperator = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Right FromLteOperator(global::G.ASTLessThanOrEqualsOperatorNodeInput? value) => new Right(value);
 
         /// <summary>
         /// 

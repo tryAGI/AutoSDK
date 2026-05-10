@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static FIMCompletionResponse FromChat(global::G.ChatCompletionResponse? value) => new FIMCompletionResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator FIMCompletionResponse(global::G.FIMCompletionResponseVariant2 value) => new FIMCompletionResponse((global::G.FIMCompletionResponseVariant2?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             FIMCompletionResponseVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static FIMCompletionResponse FromFIMCompletionResponseVariant2(global::G.FIMCompletionResponseVariant2? value) => new FIMCompletionResponse(value);
 
         /// <summary>
         /// 

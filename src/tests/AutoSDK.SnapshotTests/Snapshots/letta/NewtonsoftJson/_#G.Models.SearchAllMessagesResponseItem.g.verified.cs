@@ -159,6 +159,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static SearchAllMessagesResponseItem FromSystemMessage(global::G.SystemMessageListResult? value) => new SearchAllMessagesResponseItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator SearchAllMessagesResponseItem(global::G.UserMessageListResult value) => new SearchAllMessagesResponseItem((global::G.UserMessageListResult?)value);
 
         /// <summary>
@@ -173,6 +178,11 @@ namespace G
         {
             UserMessage = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static SearchAllMessagesResponseItem FromUserMessage(global::G.UserMessageListResult? value) => new SearchAllMessagesResponseItem(value);
 
         /// <summary>
         /// 
@@ -195,6 +205,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static SearchAllMessagesResponseItem FromReasoningMessage(global::G.ReasoningMessageListResult? value) => new SearchAllMessagesResponseItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator SearchAllMessagesResponseItem(global::G.AssistantMessageListResult value) => new SearchAllMessagesResponseItem((global::G.AssistantMessageListResult?)value);
 
         /// <summary>
@@ -209,6 +224,11 @@ namespace G
         {
             AssistantMessage = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static SearchAllMessagesResponseItem FromAssistantMessage(global::G.AssistantMessageListResult? value) => new SearchAllMessagesResponseItem(value);
 
         /// <summary>
         /// 

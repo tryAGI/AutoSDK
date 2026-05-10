@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static InjectionPostRequestBodyContentApplicationJsonSchemaPrompt FromInjectionPostRequestBodyContentApplicationJsonSchemaPromptVariant1(string? value) => new InjectionPostRequestBodyContentApplicationJsonSchemaPrompt(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public InjectionPostRequestBodyContentApplicationJsonSchemaPrompt(
             string? injectionPostRequestBodyContentApplicationJsonSchemaPromptVariant1,
             global::System.Collections.Generic.IList<string>? injectionPostRequestBodyContentApplicationJsonSchemaPromptVariant2

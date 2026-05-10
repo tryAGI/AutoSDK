@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Content3 FromInputContent(global::G.InputContent? value) => new Content3(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Content3(global::G.OutputContent value) => new Content3((global::G.OutputContent?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             OutputContent = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Content3 FromOutputContent(global::G.OutputContent? value) => new Content3(value);
 
         /// <summary>
         /// 

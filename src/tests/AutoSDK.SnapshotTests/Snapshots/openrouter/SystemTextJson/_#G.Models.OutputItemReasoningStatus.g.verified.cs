@@ -120,6 +120,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static OutputItemReasoningStatus FromOutputItemReasoningStatus0(global::G.OutputItemReasoningStatus0? value) => new OutputItemReasoningStatus(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator OutputItemReasoningStatus(global::G.OutputItemReasoningStatus1 value) => new OutputItemReasoningStatus((global::G.OutputItemReasoningStatus1?)value);
 
         /// <summary>
@@ -138,6 +143,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static OutputItemReasoningStatus FromOutputItemReasoningStatus1(global::G.OutputItemReasoningStatus1? value) => new OutputItemReasoningStatus(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator OutputItemReasoningStatus(global::G.OutputItemReasoningStatus2 value) => new OutputItemReasoningStatus((global::G.OutputItemReasoningStatus2?)value);
 
         /// <summary>
@@ -152,6 +162,11 @@ namespace G
         {
             OutputItemReasoningStatus2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static OutputItemReasoningStatus FromOutputItemReasoningStatus2(global::G.OutputItemReasoningStatus2? value) => new OutputItemReasoningStatus(value);
 
         /// <summary>
         /// 

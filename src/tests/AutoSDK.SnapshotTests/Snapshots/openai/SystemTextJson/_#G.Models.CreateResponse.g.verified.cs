@@ -120,6 +120,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static CreateResponse FromModelProperties(global::G.CreateModelResponseProperties? value) => new CreateResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator CreateResponse(global::G.ResponseProperties value) => new CreateResponse((global::G.ResponseProperties?)value);
 
         /// <summary>
@@ -138,6 +143,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static CreateResponse FromProperties(global::G.ResponseProperties? value) => new CreateResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator CreateResponse(global::G.CreateResponseVariant3 value) => new CreateResponse((global::G.CreateResponseVariant3?)value);
 
         /// <summary>
@@ -152,6 +162,11 @@ namespace G
         {
             CreateResponseVariant3 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static CreateResponse FromCreateResponseVariant3(global::G.CreateResponseVariant3? value) => new CreateResponse(value);
 
         /// <summary>
         /// 

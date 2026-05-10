@@ -65,6 +65,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ToolsItem FromFunction(global::G.PromptToolFunction? value) => new ToolsItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public ToolsItem(
             global::G.PromptToolsToolDiscriminatorType? type,
             global::G.PromptToolFunction? function

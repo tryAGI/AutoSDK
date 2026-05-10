@@ -120,6 +120,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ChatCompletionMessageContentBlock FromTextContentPart(global::G.ChatCompletionRequestMessageContentPartText? value) => new ChatCompletionMessageContentBlock(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChatCompletionMessageContentBlock(global::G.ChatCompletionMessageContentPartThinking value) => new ChatCompletionMessageContentBlock((global::G.ChatCompletionMessageContentPartThinking?)value);
 
         /// <summary>
@@ -138,6 +143,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ChatCompletionMessageContentBlock FromThinkingContentPart(global::G.ChatCompletionMessageContentPartThinking? value) => new ChatCompletionMessageContentBlock(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChatCompletionMessageContentBlock(global::G.ChatCompletionMessageContentPartRedactedThinking value) => new ChatCompletionMessageContentBlock((global::G.ChatCompletionMessageContentPartRedactedThinking?)value);
 
         /// <summary>
@@ -152,6 +162,11 @@ namespace G
         {
             RedactedThinkingContentPart = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChatCompletionMessageContentBlock FromRedactedThinkingContentPart(global::G.ChatCompletionMessageContentPartRedactedThinking? value) => new ChatCompletionMessageContentBlock(value);
 
         /// <summary>
         /// 

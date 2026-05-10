@@ -554,6 +554,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Item FromMessage1(global::G.InputMessage? value) => new Item(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Item(global::G.OutputMessage value) => new Item((global::G.OutputMessage?)value);
 
         /// <summary>
@@ -568,6 +573,11 @@ namespace G
         {
             Message2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Item FromMessage2(global::G.OutputMessage? value) => new Item(value);
 
         /// <summary>
         /// 
@@ -590,6 +600,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Item FromFileSearchCall(global::G.FileSearchToolCall? value) => new Item(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Item(global::G.ComputerToolCall value) => new Item((global::G.ComputerToolCall?)value);
 
         /// <summary>
@@ -604,6 +619,11 @@ namespace G
         {
             ComputerCall = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Item FromComputerCall(global::G.ComputerToolCall? value) => new Item(value);
 
         /// <summary>
         /// 
@@ -626,6 +646,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Item FromComputerCallOutput(global::G.ComputerCallOutputItemParam? value) => new Item(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Item(global::G.WebSearchToolCall value) => new Item((global::G.WebSearchToolCall?)value);
 
         /// <summary>
@@ -640,6 +665,11 @@ namespace G
         {
             WebSearchCall = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Item FromWebSearchCall(global::G.WebSearchToolCall? value) => new Item(value);
 
         /// <summary>
         /// 
@@ -662,6 +692,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Item FromFunctionCall(global::G.FunctionToolCall? value) => new Item(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Item(global::G.FunctionCallOutputItemParam value) => new Item((global::G.FunctionCallOutputItemParam?)value);
 
         /// <summary>
@@ -676,6 +711,11 @@ namespace G
         {
             FunctionCallOutput = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Item FromFunctionCallOutput(global::G.FunctionCallOutputItemParam? value) => new Item(value);
 
         /// <summary>
         /// 
@@ -698,6 +738,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Item FromReasoning(global::G.ReasoningItem? value) => new Item(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Item(global::G.ImageGenToolCall value) => new Item((global::G.ImageGenToolCall?)value);
 
         /// <summary>
@@ -712,6 +757,11 @@ namespace G
         {
             ImageGenerationCall = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Item FromImageGenerationCall(global::G.ImageGenToolCall? value) => new Item(value);
 
         /// <summary>
         /// 
@@ -734,6 +784,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Item FromCodeInterpreterCall(global::G.CodeInterpreterToolCall? value) => new Item(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Item(global::G.LocalShellToolCall value) => new Item((global::G.LocalShellToolCall?)value);
 
         /// <summary>
@@ -748,6 +803,11 @@ namespace G
         {
             LocalShellCall = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Item FromLocalShellCall(global::G.LocalShellToolCall? value) => new Item(value);
 
         /// <summary>
         /// 
@@ -770,6 +830,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Item FromLocalShellCallOutput(global::G.LocalShellToolCallOutput? value) => new Item(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Item(global::G.MCPListTools value) => new Item((global::G.MCPListTools?)value);
 
         /// <summary>
@@ -784,6 +849,11 @@ namespace G
         {
             McpListTools = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Item FromMcpListTools(global::G.MCPListTools? value) => new Item(value);
 
         /// <summary>
         /// 
@@ -806,6 +876,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Item FromMcpApprovalRequest(global::G.MCPApprovalRequest? value) => new Item(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Item(global::G.MCPApprovalResponse value) => new Item((global::G.MCPApprovalResponse?)value);
 
         /// <summary>
@@ -824,6 +899,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Item FromMcpApprovalResponse(global::G.MCPApprovalResponse? value) => new Item(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Item(global::G.MCPToolCall value) => new Item((global::G.MCPToolCall?)value);
 
         /// <summary>
@@ -838,6 +918,11 @@ namespace G
         {
             McpCall = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Item FromMcpCall(global::G.MCPToolCall? value) => new Item(value);
 
         /// <summary>
         /// 

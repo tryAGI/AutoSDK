@@ -91,6 +91,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static SubAgentTool FromBase(global::G.ToolBase? value) => new SubAgentTool(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator SubAgentTool(global::G.SubAgentToolVariant2 value) => new SubAgentTool((global::G.SubAgentToolVariant2?)value);
 
         /// <summary>
@@ -105,6 +110,11 @@ namespace G
         {
             SubAgentToolVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static SubAgentTool FromSubAgentToolVariant2(global::G.SubAgentToolVariant2? value) => new SubAgentTool(value);
 
         /// <summary>
         /// 

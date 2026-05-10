@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ComponentNode FromBaseCommon(global::G.NodeBaseCommon? value) => new ComponentNode(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ComponentNode(global::G.ComponentNodeVariant2 value) => new ComponentNode((global::G.ComponentNodeVariant2?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             ComponentNodeVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ComponentNode FromComponentNodeVariant2(global::G.ComponentNodeVariant2? value) => new ComponentNode(value);
 
         /// <summary>
         /// 

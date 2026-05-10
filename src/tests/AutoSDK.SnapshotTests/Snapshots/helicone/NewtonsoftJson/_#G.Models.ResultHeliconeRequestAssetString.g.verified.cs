@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ResultHeliconeRequestAssetString FromSuccess(global::G.ResultSuccessHeliconeRequestAsset? value) => new ResultHeliconeRequestAssetString(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ResultHeliconeRequestAssetString(global::G.ResultErrorString value) => new ResultHeliconeRequestAssetString((global::G.ResultErrorString?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             Error = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ResultHeliconeRequestAssetString FromError(global::G.ResultErrorString? value) => new ResultHeliconeRequestAssetString(value);
 
         /// <summary>
         /// 

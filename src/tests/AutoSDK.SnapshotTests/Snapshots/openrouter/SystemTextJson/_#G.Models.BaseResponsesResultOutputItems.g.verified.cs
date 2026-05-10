@@ -210,6 +210,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static BaseResponsesResultOutputItems FromOutputMessage(global::G.OutputMessage? value) => new BaseResponsesResultOutputItems(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BaseResponsesResultOutputItems(global::G.OutputItemReasoning value) => new BaseResponsesResultOutputItems((global::G.OutputItemReasoning?)value);
 
         /// <summary>
@@ -224,6 +229,11 @@ namespace G
         {
             OutputItemReasoning = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BaseResponsesResultOutputItems FromOutputItemReasoning(global::G.OutputItemReasoning? value) => new BaseResponsesResultOutputItems(value);
 
         /// <summary>
         /// 
@@ -246,6 +256,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static BaseResponsesResultOutputItems FromOutputItemFunctionCall(global::G.OutputItemFunctionCall? value) => new BaseResponsesResultOutputItems(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BaseResponsesResultOutputItems(global::G.OutputItemWebSearchCall value) => new BaseResponsesResultOutputItems((global::G.OutputItemWebSearchCall?)value);
 
         /// <summary>
@@ -260,6 +275,11 @@ namespace G
         {
             OutputItemWebSearchCall = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BaseResponsesResultOutputItems FromOutputItemWebSearchCall(global::G.OutputItemWebSearchCall? value) => new BaseResponsesResultOutputItems(value);
 
         /// <summary>
         /// 
@@ -282,6 +302,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static BaseResponsesResultOutputItems FromOutputItemFileSearchCall(global::G.OutputItemFileSearchCall? value) => new BaseResponsesResultOutputItems(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BaseResponsesResultOutputItems(global::G.OutputItemImageGenerationCall value) => new BaseResponsesResultOutputItems((global::G.OutputItemImageGenerationCall?)value);
 
         /// <summary>
@@ -296,6 +321,11 @@ namespace G
         {
             OutputItemImageGenerationCall = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BaseResponsesResultOutputItems FromOutputItemImageGenerationCall(global::G.OutputItemImageGenerationCall? value) => new BaseResponsesResultOutputItems(value);
 
         /// <summary>
         /// 

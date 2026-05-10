@@ -60,6 +60,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ChatCompletionsPostRequestBodyContentApplicationJsonSchemaInputEntityListItems FromChatCompletionsPostRequestBodyContentApplicationJsonSchemaInputEntityListItemsVariant1(string? value) => new ChatCompletionsPostRequestBodyContentApplicationJsonSchemaInputEntityListItems(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public object? Object =>
             ChatCompletionsPostRequestBodyContentApplicationJsonSchemaInputEntityListItemsVariant1 as object 
             ;

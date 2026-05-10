@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static PointInsertOperations FromPointsBatch(global::G.PointsBatch? value) => new PointInsertOperations(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator PointInsertOperations(global::G.PointsList value) => new PointInsertOperations((global::G.PointsList?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             PointsList = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static PointInsertOperations FromPointsList(global::G.PointsList? value) => new PointInsertOperations(value);
 
         /// <summary>
         /// 

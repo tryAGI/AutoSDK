@@ -122,6 +122,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static OrgRulesetConditions FromRepositoryNameAndRefName(global::G.AllOf<global::G.RepositoryRulesetConditions, global::G.RepositoryRulesetConditionsRepositoryNameTarget>? value) => new OrgRulesetConditions(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator OrgRulesetConditions(global::G.AllOf<global::G.RepositoryRulesetConditions, global::G.RepositoryRulesetConditionsRepositoryIdTarget> value) => new OrgRulesetConditions((global::G.AllOf<global::G.RepositoryRulesetConditions, global::G.RepositoryRulesetConditionsRepositoryIdTarget>?)value);
 
         /// <summary>
@@ -140,6 +145,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static OrgRulesetConditions FromRepositoryIdAndRefName(global::G.AllOf<global::G.RepositoryRulesetConditions, global::G.RepositoryRulesetConditionsRepositoryIdTarget>? value) => new OrgRulesetConditions(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator OrgRulesetConditions(global::G.AllOf<global::G.RepositoryRulesetConditions, global::G.RepositoryRulesetConditionsRepositoryPropertyTarget> value) => new OrgRulesetConditions((global::G.AllOf<global::G.RepositoryRulesetConditions, global::G.RepositoryRulesetConditionsRepositoryPropertyTarget>?)value);
 
         /// <summary>
@@ -154,6 +164,11 @@ namespace G
         {
             RepositoryPropertyAndRefName = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static OrgRulesetConditions FromRepositoryPropertyAndRefName(global::G.AllOf<global::G.RepositoryRulesetConditions, global::G.RepositoryRulesetConditionsRepositoryPropertyTarget>? value) => new OrgRulesetConditions(value);
 
         /// <summary>
         /// 

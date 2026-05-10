@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ModelIdsShared FromModelIdsSharedVariant1(string? value) => new ModelIdsShared(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ModelIdsShared(global::G.ModelIdsSharedEnum value) => new ModelIdsShared((global::G.ModelIdsSharedEnum?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             Enum = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ModelIdsShared FromEnum(global::G.ModelIdsSharedEnum? value) => new ModelIdsShared(value);
 
         /// <summary>
         /// 

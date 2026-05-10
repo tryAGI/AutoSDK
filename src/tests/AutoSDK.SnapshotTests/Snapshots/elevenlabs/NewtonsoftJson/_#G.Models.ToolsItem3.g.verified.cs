@@ -217,6 +217,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ToolsItem3 FromWebhook(global::G.WebhookToolConfigOutput? value) => new ToolsItem3(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ToolsItem3(global::G.ClientToolConfigOutput value) => new ToolsItem3((global::G.ClientToolConfigOutput?)value);
 
         /// <summary>
@@ -231,6 +236,11 @@ namespace G
         {
             Client = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ToolsItem3 FromClient(global::G.ClientToolConfigOutput? value) => new ToolsItem3(value);
 
         /// <summary>
         /// 
@@ -253,6 +263,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ToolsItem3 FromSystem(global::G.SystemToolConfigOutput? value) => new ToolsItem3(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ToolsItem3(global::G.MCPToolConfigOutput value) => new ToolsItem3((global::G.MCPToolConfigOutput?)value);
 
         /// <summary>
@@ -267,6 +282,11 @@ namespace G
         {
             Mcp = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ToolsItem3 FromMcp(global::G.MCPToolConfigOutput? value) => new ToolsItem3(value);
 
         /// <summary>
         /// 
@@ -289,6 +309,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ToolsItem3 FromApiIntegrationWebhook(global::G.ApiIntegrationWebhookToolConfigOutput? value) => new ToolsItem3(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ToolsItem3(global::G.SMBToolConfig value) => new ToolsItem3((global::G.SMBToolConfig?)value);
 
         /// <summary>
@@ -303,6 +328,11 @@ namespace G
         {
             Smb = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ToolsItem3 FromSmb(global::G.SMBToolConfig? value) => new ToolsItem3(value);
 
         /// <summary>
         /// 

@@ -155,6 +155,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static GetDocumentationFromKnowledgeBaseResponse FromUrl(global::G.GetKnowledgeBaseURLResponseModel? value) => new GetDocumentationFromKnowledgeBaseResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator GetDocumentationFromKnowledgeBaseResponse(global::G.GetKnowledgeBaseFileResponseModel value) => new GetDocumentationFromKnowledgeBaseResponse((global::G.GetKnowledgeBaseFileResponseModel?)value);
 
         /// <summary>
@@ -169,6 +174,11 @@ namespace G
         {
             File = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static GetDocumentationFromKnowledgeBaseResponse FromFile(global::G.GetKnowledgeBaseFileResponseModel? value) => new GetDocumentationFromKnowledgeBaseResponse(value);
 
         /// <summary>
         /// 
@@ -191,6 +201,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static GetDocumentationFromKnowledgeBaseResponse FromText(global::G.GetKnowledgeBaseTextResponseModel? value) => new GetDocumentationFromKnowledgeBaseResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator GetDocumentationFromKnowledgeBaseResponse(global::G.GetKnowledgeBaseFolderResponseModel value) => new GetDocumentationFromKnowledgeBaseResponse((global::G.GetKnowledgeBaseFolderResponseModel?)value);
 
         /// <summary>
@@ -205,6 +220,11 @@ namespace G
         {
             Folder = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static GetDocumentationFromKnowledgeBaseResponse FromFolder(global::G.GetKnowledgeBaseFolderResponseModel? value) => new GetDocumentationFromKnowledgeBaseResponse(value);
 
         /// <summary>
         /// 

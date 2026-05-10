@@ -65,6 +65,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static CacheControlVariant114 FromEphemeral(global::G.CacheControlEphemeral? value) => new CacheControlVariant114(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public CacheControlVariant114(
             global::G.RequestDocumentBlockCacheControlVariant1DiscriminatorType? type,
             global::G.CacheControlEphemeral? ephemeral

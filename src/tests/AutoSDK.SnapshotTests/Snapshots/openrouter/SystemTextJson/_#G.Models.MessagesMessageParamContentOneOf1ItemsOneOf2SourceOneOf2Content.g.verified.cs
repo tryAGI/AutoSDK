@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static MessagesMessageParamContentOneOf1ItemsOneOf2SourceOneOf2Content FromMessagesMessageParamContentOneOf1ItemsOneOf2SourceOneOf2ContentVariant1(string? value) => new MessagesMessageParamContentOneOf1ItemsOneOf2SourceOneOf2Content(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public MessagesMessageParamContentOneOf1ItemsOneOf2SourceOneOf2Content(
             string? messagesMessageParamContentOneOf1ItemsOneOf2SourceOneOf2ContentVariant1,
             global::System.Collections.Generic.IList<global::G.MessagesMessageParamContentOneOf1ItemsOneOf2SourceOneOf2ContentOneOf1Items>? messagesMessageParamContentOneOf1ItemsOneOf2SourceOneOf2Content1

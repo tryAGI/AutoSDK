@@ -150,6 +150,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static EasyInputMessageRole FromEasyInputMessageRole0(global::G.EasyInputMessageRole0? value) => new EasyInputMessageRole(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator EasyInputMessageRole(global::G.EasyInputMessageRole1 value) => new EasyInputMessageRole((global::G.EasyInputMessageRole1?)value);
 
         /// <summary>
@@ -164,6 +169,11 @@ namespace G
         {
             EasyInputMessageRole1 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static EasyInputMessageRole FromEasyInputMessageRole1(global::G.EasyInputMessageRole1? value) => new EasyInputMessageRole(value);
 
         /// <summary>
         /// 
@@ -186,6 +196,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static EasyInputMessageRole FromEasyInputMessageRole2(global::G.EasyInputMessageRole2? value) => new EasyInputMessageRole(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator EasyInputMessageRole(global::G.EasyInputMessageRole3 value) => new EasyInputMessageRole((global::G.EasyInputMessageRole3?)value);
 
         /// <summary>
@@ -200,6 +215,11 @@ namespace G
         {
             EasyInputMessageRole3 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static EasyInputMessageRole FromEasyInputMessageRole3(global::G.EasyInputMessageRole3? value) => new EasyInputMessageRole(value);
 
         /// <summary>
         /// 

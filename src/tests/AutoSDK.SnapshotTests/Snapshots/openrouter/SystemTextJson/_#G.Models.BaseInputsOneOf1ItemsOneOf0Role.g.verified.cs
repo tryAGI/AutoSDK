@@ -150,6 +150,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static BaseInputsOneOf1ItemsOneOf0Role FromBaseInputsOneOf1ItemsOneOf0Role0(global::G.BaseInputsOneOf1ItemsOneOf0Role0? value) => new BaseInputsOneOf1ItemsOneOf0Role(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BaseInputsOneOf1ItemsOneOf0Role(global::G.BaseInputsOneOf1ItemsOneOf0Role1 value) => new BaseInputsOneOf1ItemsOneOf0Role((global::G.BaseInputsOneOf1ItemsOneOf0Role1?)value);
 
         /// <summary>
@@ -164,6 +169,11 @@ namespace G
         {
             BaseInputsOneOf1ItemsOneOf0Role1 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BaseInputsOneOf1ItemsOneOf0Role FromBaseInputsOneOf1ItemsOneOf0Role1(global::G.BaseInputsOneOf1ItemsOneOf0Role1? value) => new BaseInputsOneOf1ItemsOneOf0Role(value);
 
         /// <summary>
         /// 
@@ -186,6 +196,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static BaseInputsOneOf1ItemsOneOf0Role FromBaseInputsOneOf1ItemsOneOf0Role2(global::G.BaseInputsOneOf1ItemsOneOf0Role2? value) => new BaseInputsOneOf1ItemsOneOf0Role(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BaseInputsOneOf1ItemsOneOf0Role(global::G.BaseInputsOneOf1ItemsOneOf0Role3 value) => new BaseInputsOneOf1ItemsOneOf0Role((global::G.BaseInputsOneOf1ItemsOneOf0Role3?)value);
 
         /// <summary>
@@ -200,6 +215,11 @@ namespace G
         {
             BaseInputsOneOf1ItemsOneOf0Role3 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BaseInputsOneOf1ItemsOneOf0Role FromBaseInputsOneOf1ItemsOneOf0Role3(global::G.BaseInputsOneOf1ItemsOneOf0Role3? value) => new BaseInputsOneOf1ItemsOneOf0Role(value);
 
         /// <summary>
         /// 

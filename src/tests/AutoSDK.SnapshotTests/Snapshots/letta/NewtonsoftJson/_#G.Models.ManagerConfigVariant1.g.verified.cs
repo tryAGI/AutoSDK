@@ -185,6 +185,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ManagerConfigVariant1 FromRoundRobin(global::G.RoundRobinManagerUpdate? value) => new ManagerConfigVariant1(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ManagerConfigVariant1(global::G.SupervisorManagerUpdate value) => new ManagerConfigVariant1((global::G.SupervisorManagerUpdate?)value);
 
         /// <summary>
@@ -199,6 +204,11 @@ namespace G
         {
             Supervisor = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ManagerConfigVariant1 FromSupervisor(global::G.SupervisorManagerUpdate? value) => new ManagerConfigVariant1(value);
 
         /// <summary>
         /// 
@@ -221,6 +231,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ManagerConfigVariant1 FromDynamic(global::G.DynamicManagerUpdate? value) => new ManagerConfigVariant1(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ManagerConfigVariant1(global::G.SleeptimeManagerUpdate value) => new ManagerConfigVariant1((global::G.SleeptimeManagerUpdate?)value);
 
         /// <summary>
@@ -239,6 +254,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ManagerConfigVariant1 FromSleeptime(global::G.SleeptimeManagerUpdate? value) => new ManagerConfigVariant1(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ManagerConfigVariant1(global::G.VoiceSleeptimeManagerUpdate value) => new ManagerConfigVariant1((global::G.VoiceSleeptimeManagerUpdate?)value);
 
         /// <summary>
@@ -253,6 +273,11 @@ namespace G
         {
             VoiceSleeptime = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ManagerConfigVariant1 FromVoiceSleeptime(global::G.VoiceSleeptimeManagerUpdate? value) => new ManagerConfigVariant1(value);
 
         /// <summary>
         /// 

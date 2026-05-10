@@ -312,6 +312,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Item FromMessage1(global::G.InputMessage? value) => new Item(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Item(global::G.OutputMessage value) => new Item((global::G.OutputMessage?)value);
 
         /// <summary>
@@ -326,6 +331,11 @@ namespace G
         {
             Message2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Item FromMessage2(global::G.OutputMessage? value) => new Item(value);
 
         /// <summary>
         /// 
@@ -348,6 +358,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Item FromFileSearchCall(global::G.FileSearchToolCall? value) => new Item(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Item(global::G.ComputerToolCall value) => new Item((global::G.ComputerToolCall?)value);
 
         /// <summary>
@@ -362,6 +377,11 @@ namespace G
         {
             ComputerCall = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Item FromComputerCall(global::G.ComputerToolCall? value) => new Item(value);
 
         /// <summary>
         /// 
@@ -384,6 +404,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Item FromComputerCallOutput(global::G.ComputerToolCallOutput? value) => new Item(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Item(global::G.WebSearchToolCall value) => new Item((global::G.WebSearchToolCall?)value);
 
         /// <summary>
@@ -398,6 +423,11 @@ namespace G
         {
             WebSearchCall = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Item FromWebSearchCall(global::G.WebSearchToolCall? value) => new Item(value);
 
         /// <summary>
         /// 
@@ -420,6 +450,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Item FromFunctionCall(global::G.FunctionToolCall? value) => new Item(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Item(global::G.FunctionToolCallOutput value) => new Item((global::G.FunctionToolCallOutput?)value);
 
         /// <summary>
@@ -438,6 +473,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Item FromFunctionCallOutput(global::G.FunctionToolCallOutput? value) => new Item(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Item(global::G.ReasoningItem value) => new Item((global::G.ReasoningItem?)value);
 
         /// <summary>
@@ -452,6 +492,11 @@ namespace G
         {
             Reasoning = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Item FromReasoning(global::G.ReasoningItem? value) => new Item(value);
 
         /// <summary>
         /// 

@@ -120,6 +120,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ChatChoiceFinishReason FromChatFinishReasonEnum(global::G.ChatFinishReasonEnum? value) => new ChatChoiceFinishReason(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public ChatChoiceFinishReason(
             global::G.ChatFinishReasonEnum? chatFinishReasonEnum,
             object? chatChoiceFinishReasonVariant2,

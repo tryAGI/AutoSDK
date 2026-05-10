@@ -125,6 +125,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static SourceContextVariant1 FromMusicExploreSong1(global::G.SongSourceContext? value) => new SourceContextVariant1(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator SourceContextVariant1(global::G.MusicExploreSongSourceContext value) => new SourceContextVariant1((global::G.MusicExploreSongSourceContext?)value);
 
         /// <summary>
@@ -143,6 +148,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static SourceContextVariant1 FromMusicExploreSong2(global::G.MusicExploreSongSourceContext? value) => new SourceContextVariant1(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator SourceContextVariant1(global::G.SfxSourceContext value) => new SourceContextVariant1((global::G.SfxSourceContext?)value);
 
         /// <summary>
@@ -157,6 +167,11 @@ namespace G
         {
             Sfx = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static SourceContextVariant1 FromSfx(global::G.SfxSourceContext? value) => new SourceContextVariant1(value);
 
         /// <summary>
         /// 

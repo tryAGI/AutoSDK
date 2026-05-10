@@ -120,6 +120,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ConsensusThreadStatus FromConsensusThreadStatusVariant1(global::G.ConsensusThreadStatusVariant1? value) => new ConsensusThreadStatus(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ConsensusThreadStatus(global::G.ConsensusThreadStatusVariant2 value) => new ConsensusThreadStatus((global::G.ConsensusThreadStatusVariant2?)value);
 
         /// <summary>
@@ -138,6 +143,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ConsensusThreadStatus FromConsensusThreadStatusVariant2(global::G.ConsensusThreadStatusVariant2? value) => new ConsensusThreadStatus(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ConsensusThreadStatus(global::G.ConsensusThreadStatusVariant3 value) => new ConsensusThreadStatus((global::G.ConsensusThreadStatusVariant3?)value);
 
         /// <summary>
@@ -152,6 +162,11 @@ namespace G
         {
             ConsensusThreadStatusVariant3 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ConsensusThreadStatus FromConsensusThreadStatusVariant3(global::G.ConsensusThreadStatusVariant3? value) => new ConsensusThreadStatus(value);
 
         /// <summary>
         /// 

@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ToolMockInputMatchRule FromToolMockInputMatchRuleVariant1(global::G.ToolMockInputMatchRuleVariant1? value) => new ToolMockInputMatchRule(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ToolMockInputMatchRule(global::G.ToolMockInputMatchRuleVariant2 value) => new ToolMockInputMatchRule((global::G.ToolMockInputMatchRuleVariant2?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             ToolMockInputMatchRuleVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ToolMockInputMatchRule FromToolMockInputMatchRuleVariant2(global::G.ToolMockInputMatchRuleVariant2? value) => new ToolMockInputMatchRule(value);
 
         /// <summary>
         /// 

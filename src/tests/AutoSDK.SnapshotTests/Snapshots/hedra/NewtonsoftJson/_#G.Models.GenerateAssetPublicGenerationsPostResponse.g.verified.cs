@@ -425,6 +425,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static GenerateAssetPublicGenerationsPostResponse FromVideo(global::G.GenerateVideoResponse? value) => new GenerateAssetPublicGenerationsPostResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator GenerateAssetPublicGenerationsPostResponse(global::G.GenerateTextToSpeechResponse value) => new GenerateAssetPublicGenerationsPostResponse((global::G.GenerateTextToSpeechResponse?)value);
 
         /// <summary>
@@ -439,6 +444,11 @@ namespace G
         {
             TextToSpeech = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static GenerateAssetPublicGenerationsPostResponse FromTextToSpeech(global::G.GenerateTextToSpeechResponse? value) => new GenerateAssetPublicGenerationsPostResponse(value);
 
         /// <summary>
         /// 
@@ -461,6 +471,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static GenerateAssetPublicGenerationsPostResponse FromTextToSound(global::G.GenerateTextToSoundResponse? value) => new GenerateAssetPublicGenerationsPostResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator GenerateAssetPublicGenerationsPostResponse(global::G.GenerateImageResponse value) => new GenerateAssetPublicGenerationsPostResponse((global::G.GenerateImageResponse?)value);
 
         /// <summary>
@@ -475,6 +490,11 @@ namespace G
         {
             Image = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static GenerateAssetPublicGenerationsPostResponse FromImage(global::G.GenerateImageResponse? value) => new GenerateAssetPublicGenerationsPostResponse(value);
 
         /// <summary>
         /// 
@@ -497,6 +517,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static GenerateAssetPublicGenerationsPostResponse FromImageUpscale(global::G.GenerateImageUpscaleResponse? value) => new GenerateAssetPublicGenerationsPostResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator GenerateAssetPublicGenerationsPostResponse(global::G.GenerateVideoUpscaleResponse value) => new GenerateAssetPublicGenerationsPostResponse((global::G.GenerateVideoUpscaleResponse?)value);
 
         /// <summary>
@@ -511,6 +536,11 @@ namespace G
         {
             VideoUpscale = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static GenerateAssetPublicGenerationsPostResponse FromVideoUpscale(global::G.GenerateVideoUpscaleResponse? value) => new GenerateAssetPublicGenerationsPostResponse(value);
 
         /// <summary>
         /// 
@@ -533,6 +563,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static GenerateAssetPublicGenerationsPostResponse FromAudioIsolation(global::G.GenerateIsolatedAudioResponse? value) => new GenerateAssetPublicGenerationsPostResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator GenerateAssetPublicGenerationsPostResponse(global::G.GenerateSpeechToSpeechResponse value) => new GenerateAssetPublicGenerationsPostResponse((global::G.GenerateSpeechToSpeechResponse?)value);
 
         /// <summary>
@@ -547,6 +582,11 @@ namespace G
         {
             SpeechToSpeech = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static GenerateAssetPublicGenerationsPostResponse FromSpeechToSpeech(global::G.GenerateSpeechToSpeechResponse? value) => new GenerateAssetPublicGenerationsPostResponse(value);
 
         /// <summary>
         /// 
@@ -569,6 +609,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static GenerateAssetPublicGenerationsPostResponse FromVoiceClone(global::G.GenerateVoiceCloneResponse? value) => new GenerateAssetPublicGenerationsPostResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator GenerateAssetPublicGenerationsPostResponse(global::G.GenerateAudioFromVideoResponse value) => new GenerateAssetPublicGenerationsPostResponse((global::G.GenerateAudioFromVideoResponse?)value);
 
         /// <summary>
@@ -583,6 +628,11 @@ namespace G
         {
             AudioFromVideo = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static GenerateAssetPublicGenerationsPostResponse FromAudioFromVideo(global::G.GenerateAudioFromVideoResponse? value) => new GenerateAssetPublicGenerationsPostResponse(value);
 
         /// <summary>
         /// 
@@ -605,6 +655,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static GenerateAssetPublicGenerationsPostResponse FromVideoWithAudio(global::G.GenerateVideoWithAudioResponse? value) => new GenerateAssetPublicGenerationsPostResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator GenerateAssetPublicGenerationsPostResponse(global::G.GenerateVideoToVideoResponse value) => new GenerateAssetPublicGenerationsPostResponse((global::G.GenerateVideoToVideoResponse?)value);
 
         /// <summary>
@@ -623,6 +678,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static GenerateAssetPublicGenerationsPostResponse FromVideoToVideo(global::G.GenerateVideoToVideoResponse? value) => new GenerateAssetPublicGenerationsPostResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator GenerateAssetPublicGenerationsPostResponse(global::G.GenerateMotionControlResponse value) => new GenerateAssetPublicGenerationsPostResponse((global::G.GenerateMotionControlResponse?)value);
 
         /// <summary>
@@ -637,6 +697,11 @@ namespace G
         {
             MotionControl = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static GenerateAssetPublicGenerationsPostResponse FromMotionControl(global::G.GenerateMotionControlResponse? value) => new GenerateAssetPublicGenerationsPostResponse(value);
 
         /// <summary>
         /// 

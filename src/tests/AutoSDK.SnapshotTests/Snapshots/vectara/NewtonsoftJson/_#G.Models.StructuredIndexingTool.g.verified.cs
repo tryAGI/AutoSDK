@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static StructuredIndexingTool FromBase(global::G.ToolBase? value) => new StructuredIndexingTool(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator StructuredIndexingTool(global::G.StructuredIndexingToolVariant2 value) => new StructuredIndexingTool((global::G.StructuredIndexingToolVariant2?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             StructuredIndexingToolVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static StructuredIndexingTool FromStructuredIndexingToolVariant2(global::G.StructuredIndexingToolVariant2? value) => new StructuredIndexingTool(value);
 
         /// <summary>
         /// 

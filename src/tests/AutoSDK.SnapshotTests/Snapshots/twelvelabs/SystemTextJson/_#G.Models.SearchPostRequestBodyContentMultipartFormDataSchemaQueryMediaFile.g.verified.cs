@@ -95,6 +95,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static SearchPostRequestBodyContentMultipartFormDataSchemaQueryMediaFile FromSearchPostRequestBodyContentMultipartFormDataSchemaQueryMediaFileVariant1(byte[]? value) => new SearchPostRequestBodyContentMultipartFormDataSchemaQueryMediaFile(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public SearchPostRequestBodyContentMultipartFormDataSchemaQueryMediaFile(
             byte[]? searchPostRequestBodyContentMultipartFormDataSchemaQueryMediaFileVariant1,
             global::System.Collections.Generic.IList<byte[]>? searchPostRequestBodyContentMultipartFormDataSchemaQueryMediaFileVariant2

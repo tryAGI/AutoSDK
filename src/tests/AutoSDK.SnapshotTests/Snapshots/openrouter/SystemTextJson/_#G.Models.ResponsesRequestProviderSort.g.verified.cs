@@ -120,6 +120,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ResponsesRequestProviderSort FromProviderSort(global::G.ProviderSort? value) => new ResponsesRequestProviderSort(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ResponsesRequestProviderSort(global::G.ProviderSortConfig value) => new ResponsesRequestProviderSort((global::G.ProviderSortConfig?)value);
 
         /// <summary>
@@ -134,6 +139,11 @@ namespace G
         {
             ProviderSortConfig = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ResponsesRequestProviderSort FromProviderSortConfig(global::G.ProviderSortConfig? value) => new ResponsesRequestProviderSort(value);
 
         /// <summary>
         /// 

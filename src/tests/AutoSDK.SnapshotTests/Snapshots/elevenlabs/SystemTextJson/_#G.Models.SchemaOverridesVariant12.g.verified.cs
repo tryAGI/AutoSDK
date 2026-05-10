@@ -125,6 +125,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static SchemaOverridesVariant12 FromConstant(global::G.ConstantSchemaOverride? value) => new SchemaOverridesVariant12(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator SchemaOverridesVariant12(global::G.DynamicVariableSchemaOverride value) => new SchemaOverridesVariant12((global::G.DynamicVariableSchemaOverride?)value);
 
         /// <summary>
@@ -143,6 +148,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static SchemaOverridesVariant12 FromDynamicVariable(global::G.DynamicVariableSchemaOverride? value) => new SchemaOverridesVariant12(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator SchemaOverridesVariant12(global::G.LLMSchemaOverride value) => new SchemaOverridesVariant12((global::G.LLMSchemaOverride?)value);
 
         /// <summary>
@@ -157,6 +167,11 @@ namespace G
         {
             Llm = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static SchemaOverridesVariant12 FromLlm(global::G.LLMSchemaOverride? value) => new SchemaOverridesVariant12(value);
 
         /// <summary>
         /// 

@@ -120,6 +120,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static InputMessageItemRole FromInputMessageItemRole0(global::G.InputMessageItemRole0? value) => new InputMessageItemRole(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator InputMessageItemRole(global::G.InputMessageItemRole1 value) => new InputMessageItemRole((global::G.InputMessageItemRole1?)value);
 
         /// <summary>
@@ -138,6 +143,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static InputMessageItemRole FromInputMessageItemRole1(global::G.InputMessageItemRole1? value) => new InputMessageItemRole(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator InputMessageItemRole(global::G.InputMessageItemRole2 value) => new InputMessageItemRole((global::G.InputMessageItemRole2?)value);
 
         /// <summary>
@@ -152,6 +162,11 @@ namespace G
         {
             InputMessageItemRole2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static InputMessageItemRole FromInputMessageItemRole2(global::G.InputMessageItemRole2? value) => new InputMessageItemRole(value);
 
         /// <summary>
         /// 

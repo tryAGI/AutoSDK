@@ -95,6 +95,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Entity FromCompany(global::G.CompanyEntity? value) => new Entity(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Entity(global::G.PersonEntity value) => new Entity((global::G.PersonEntity?)value);
 
         /// <summary>
@@ -109,6 +114,11 @@ namespace G
         {
             Person = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Entity FromPerson(global::G.PersonEntity? value) => new Entity(value);
 
         /// <summary>
         /// 

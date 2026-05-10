@@ -126,6 +126,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static CreateInputRequest FromInputMessage(global::G.CreateInputMessageRequest? value) => new CreateInputRequest(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator CreateInputRequest(global::G.CreateInterruptRequest value) => new CreateInputRequest((global::G.CreateInterruptRequest?)value);
 
         /// <summary>
@@ -144,6 +149,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static CreateInputRequest FromInterrupt(global::G.CreateInterruptRequest? value) => new CreateInputRequest(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator CreateInputRequest(global::G.CreateCompactRequest value) => new CreateInputRequest((global::G.CreateCompactRequest?)value);
 
         /// <summary>
@@ -158,6 +168,11 @@ namespace G
         {
             Compact = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static CreateInputRequest FromCompact(global::G.CreateCompactRequest? value) => new CreateInputRequest(value);
 
         /// <summary>
         /// 

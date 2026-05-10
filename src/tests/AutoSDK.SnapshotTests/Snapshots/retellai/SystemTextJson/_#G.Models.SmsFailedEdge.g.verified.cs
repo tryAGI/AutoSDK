@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static SmsFailedEdge FromNode(global::G.NodeEdge? value) => new SmsFailedEdge(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator SmsFailedEdge(global::G.SmsFailedEdgeVariant2 value) => new SmsFailedEdge((global::G.SmsFailedEdgeVariant2?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             SmsFailedEdgeVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static SmsFailedEdge FromSmsFailedEdgeVariant2(global::G.SmsFailedEdgeVariant2? value) => new SmsFailedEdge(value);
 
         /// <summary>
         /// 

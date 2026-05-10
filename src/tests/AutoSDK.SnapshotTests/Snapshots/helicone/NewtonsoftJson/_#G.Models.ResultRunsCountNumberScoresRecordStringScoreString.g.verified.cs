@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ResultRunsCountNumberScoresRecordStringScoreString FromSuccess(global::G.ResultSuccessRunsCountNumberScoresRecordStringScore? value) => new ResultRunsCountNumberScoresRecordStringScoreString(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ResultRunsCountNumberScoresRecordStringScoreString(global::G.ResultErrorString value) => new ResultRunsCountNumberScoresRecordStringScoreString((global::G.ResultErrorString?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             Error = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ResultRunsCountNumberScoresRecordStringScoreString FromError(global::G.ResultErrorString? value) => new ResultRunsCountNumberScoresRecordStringScoreString(value);
 
         /// <summary>
         /// 

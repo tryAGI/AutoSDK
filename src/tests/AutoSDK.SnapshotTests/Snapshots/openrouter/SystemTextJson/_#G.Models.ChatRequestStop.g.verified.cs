@@ -120,6 +120,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ChatRequestStop FromChatRequestStopVariant1(string? value) => new ChatRequestStop(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public ChatRequestStop(
             string? chatRequestStopVariant1,
             global::System.Collections.Generic.IList<string>? chatRequestStopVariant2,

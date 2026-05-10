@@ -60,6 +60,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static StemmingAlgorithm FromSnowballParams(global::G.SnowballParams? value) => new StemmingAlgorithm(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public object? Object =>
             SnowballParams as object 
             ;

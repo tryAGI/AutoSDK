@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static CollectionWithChildCollections FromCollection(global::G.Collection? value) => new CollectionWithChildCollections(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator CollectionWithChildCollections(global::G.CollectionWithChildCollectionsVariant2 value) => new CollectionWithChildCollections((global::G.CollectionWithChildCollectionsVariant2?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             CollectionWithChildCollectionsVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static CollectionWithChildCollections FromCollectionWithChildCollectionsVariant2(global::G.CollectionWithChildCollectionsVariant2? value) => new CollectionWithChildCollections(value);
 
         /// <summary>
         /// 

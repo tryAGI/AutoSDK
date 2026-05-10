@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static WebGetTool FromBase(global::G.ToolBase? value) => new WebGetTool(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator WebGetTool(global::G.WebGetToolVariant2 value) => new WebGetTool((global::G.WebGetToolVariant2?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             WebGetToolVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static WebGetTool FromWebGetToolVariant2(global::G.WebGetToolVariant2? value) => new WebGetTool(value);
 
         /// <summary>
         /// 

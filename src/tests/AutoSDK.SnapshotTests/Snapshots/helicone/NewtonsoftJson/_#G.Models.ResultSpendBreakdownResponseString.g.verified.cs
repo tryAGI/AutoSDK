@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ResultSpendBreakdownResponseString FromSuccess(global::G.ResultSuccessSpendBreakdownResponse? value) => new ResultSpendBreakdownResponseString(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ResultSpendBreakdownResponseString(global::G.ResultErrorString value) => new ResultSpendBreakdownResponseString((global::G.ResultErrorString?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             Error = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ResultSpendBreakdownResponseString FromError(global::G.ResultErrorString? value) => new ResultSpendBreakdownResponseString(value);
 
         /// <summary>
         /// 

@@ -120,6 +120,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static AgentResponse FromAgentResponseVariant1(global::G.AgentResponseVariant1? value) => new AgentResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator AgentResponse(global::G.AgentRequest value) => new AgentResponse((global::G.AgentRequest?)value);
 
         /// <summary>
@@ -138,6 +143,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static AgentResponse FromRequest(global::G.AgentRequest? value) => new AgentResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator AgentResponse(global::G.AgentResponseVariant3 value) => new AgentResponse((global::G.AgentResponseVariant3?)value);
 
         /// <summary>
@@ -152,6 +162,11 @@ namespace G
         {
             AgentResponseVariant3 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static AgentResponse FromAgentResponseVariant3(global::G.AgentResponseVariant3? value) => new AgentResponse(value);
 
         /// <summary>
         /// 

@@ -243,6 +243,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static VectorInput FromSparse(global::G.SparseVector? value) => new VectorInput(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator VectorInput(global::G.ExtendedPointId value) => new VectorInput((global::G.ExtendedPointId?)value);
 
         /// <summary>
@@ -257,6 +262,11 @@ namespace G
         {
             ExtendedPointId = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static VectorInput FromExtendedPointId(global::G.ExtendedPointId? value) => new VectorInput(value);
 
         /// <summary>
         /// 
@@ -279,6 +289,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static VectorInput FromDocument(global::G.Document? value) => new VectorInput(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator VectorInput(global::G.Image value) => new VectorInput((global::G.Image?)value);
 
         /// <summary>
@@ -297,6 +312,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static VectorInput FromImage(global::G.Image? value) => new VectorInput(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator VectorInput(global::G.InferenceObject value) => new VectorInput((global::G.InferenceObject?)value);
 
         /// <summary>
@@ -311,6 +331,11 @@ namespace G
         {
             InferenceObject = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static VectorInput FromInferenceObject(global::G.InferenceObject? value) => new VectorInput(value);
 
         /// <summary>
         /// 

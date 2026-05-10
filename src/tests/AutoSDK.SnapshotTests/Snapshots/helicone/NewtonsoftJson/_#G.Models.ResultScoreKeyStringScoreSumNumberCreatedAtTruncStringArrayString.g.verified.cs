@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ResultScoreKeyStringScoreSumNumberCreatedAtTruncStringArrayString FromSuccess(global::G.ResultSuccessScoreKeyStringScoreSumNumberCreatedAtTruncStringArray? value) => new ResultScoreKeyStringScoreSumNumberCreatedAtTruncStringArrayString(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ResultScoreKeyStringScoreSumNumberCreatedAtTruncStringArrayString(global::G.ResultErrorString value) => new ResultScoreKeyStringScoreSumNumberCreatedAtTruncStringArrayString((global::G.ResultErrorString?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             Error = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ResultScoreKeyStringScoreSumNumberCreatedAtTruncStringArrayString FromError(global::G.ResultErrorString? value) => new ResultScoreKeyStringScoreSumNumberCreatedAtTruncStringArrayString(value);
 
         /// <summary>
         /// 

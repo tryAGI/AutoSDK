@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static CreateInputMessageRequest FromBase(global::G.CreateInputRequestBase? value) => new CreateInputMessageRequest(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator CreateInputMessageRequest(global::G.CreateInputMessageRequestVariant2 value) => new CreateInputMessageRequest((global::G.CreateInputMessageRequestVariant2?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             CreateInputMessageRequestVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static CreateInputMessageRequest FromCreateInputMessageRequestVariant2(global::G.CreateInputMessageRequestVariant2? value) => new CreateInputMessageRequest(value);
 
         /// <summary>
         /// 

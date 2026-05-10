@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static SparseVectorStorageType FromSparseVectorStorageTypeVariant1(global::G.SparseVectorStorageTypeVariant1? value) => new SparseVectorStorageType(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator SparseVectorStorageType(global::G.SparseVectorStorageTypeVariant2 value) => new SparseVectorStorageType((global::G.SparseVectorStorageTypeVariant2?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             SparseVectorStorageTypeVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static SparseVectorStorageType FromSparseVectorStorageTypeVariant2(global::G.SparseVectorStorageTypeVariant2? value) => new SparseVectorStorageType(value);
 
         /// <summary>
         /// 

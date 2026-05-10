@@ -125,6 +125,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static CreateTextToVideoRequest FromVeo31(global::G.CreateTextToVideoRequestVeo31? value) => new CreateTextToVideoRequest(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator CreateTextToVideoRequest(global::G.CreateTextToVideoRequestVeo31Fast value) => new CreateTextToVideoRequest((global::G.CreateTextToVideoRequestVeo31Fast?)value);
 
         /// <summary>
@@ -143,6 +148,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static CreateTextToVideoRequest FromVeo31Fast(global::G.CreateTextToVideoRequestVeo31Fast? value) => new CreateTextToVideoRequest(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator CreateTextToVideoRequest(global::G.CreateTextToVideoRequestVeo3 value) => new CreateTextToVideoRequest((global::G.CreateTextToVideoRequestVeo3?)value);
 
         /// <summary>
@@ -157,6 +167,11 @@ namespace G
         {
             Veo3 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static CreateTextToVideoRequest FromVeo3(global::G.CreateTextToVideoRequestVeo3? value) => new CreateTextToVideoRequest(value);
 
         /// <summary>
         /// 

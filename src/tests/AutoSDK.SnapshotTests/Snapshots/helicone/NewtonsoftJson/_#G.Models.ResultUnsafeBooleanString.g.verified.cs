@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ResultUnsafeBooleanString FromSuccess(global::G.ResultSuccessUnsafeBoolean? value) => new ResultUnsafeBooleanString(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ResultUnsafeBooleanString(global::G.ResultErrorString value) => new ResultUnsafeBooleanString((global::G.ResultErrorString?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             Error = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ResultUnsafeBooleanString FromError(global::G.ResultErrorString? value) => new ResultUnsafeBooleanString(value);
 
         /// <summary>
         /// 

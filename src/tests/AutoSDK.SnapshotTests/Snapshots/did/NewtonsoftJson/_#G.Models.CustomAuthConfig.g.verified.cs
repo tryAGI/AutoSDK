@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static CustomAuthConfig FromBasic(global::G.CustomAuthConfigBasic? value) => new CustomAuthConfig(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator CustomAuthConfig(global::G.CustomAuthConfigOAuth2 value) => new CustomAuthConfig((global::G.CustomAuthConfigOAuth2?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             OAuth2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static CustomAuthConfig FromOAuth2(global::G.CustomAuthConfigOAuth2? value) => new CustomAuthConfig(value);
 
         /// <summary>
         /// 

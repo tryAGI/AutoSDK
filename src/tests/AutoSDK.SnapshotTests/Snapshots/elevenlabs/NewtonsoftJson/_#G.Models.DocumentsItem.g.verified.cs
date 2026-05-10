@@ -155,6 +155,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static DocumentsItem FromUrl(global::G.GetKnowledgeBaseSummaryURLResponseModel? value) => new DocumentsItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator DocumentsItem(global::G.GetKnowledgeBaseSummaryFileResponseModel value) => new DocumentsItem((global::G.GetKnowledgeBaseSummaryFileResponseModel?)value);
 
         /// <summary>
@@ -169,6 +174,11 @@ namespace G
         {
             File = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static DocumentsItem FromFile(global::G.GetKnowledgeBaseSummaryFileResponseModel? value) => new DocumentsItem(value);
 
         /// <summary>
         /// 
@@ -191,6 +201,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static DocumentsItem FromText(global::G.GetKnowledgeBaseSummaryTextResponseModel? value) => new DocumentsItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator DocumentsItem(global::G.GetKnowledgeBaseSummaryFolderResponseModel value) => new DocumentsItem((global::G.GetKnowledgeBaseSummaryFolderResponseModel?)value);
 
         /// <summary>
@@ -205,6 +220,11 @@ namespace G
         {
             Folder = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static DocumentsItem FromFolder(global::G.GetKnowledgeBaseSummaryFolderResponseModel? value) => new DocumentsItem(value);
 
         /// <summary>
         /// 

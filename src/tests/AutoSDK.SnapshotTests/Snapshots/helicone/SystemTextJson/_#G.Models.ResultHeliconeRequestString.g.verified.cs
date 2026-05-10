@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ResultHeliconeRequestString FromSuccess(global::G.ResultSuccessHeliconeRequest? value) => new ResultHeliconeRequestString(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ResultHeliconeRequestString(global::G.ResultErrorString value) => new ResultHeliconeRequestString((global::G.ResultErrorString?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             Error = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ResultHeliconeRequestString FromError(global::G.ResultErrorString? value) => new ResultHeliconeRequestString(value);
 
         /// <summary>
         /// 

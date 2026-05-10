@@ -92,6 +92,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static TranscriptParams FromTranscriptParamsVariant1(global::G.TranscriptParamsVariant1? value) => new TranscriptParams(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator TranscriptParams(global::G.TranscriptOptionalParams value) => new TranscriptParams((global::G.TranscriptOptionalParams?)value);
 
         /// <summary>
@@ -106,6 +111,11 @@ namespace G
         {
             Optional = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static TranscriptParams FromOptional(global::G.TranscriptOptionalParams? value) => new TranscriptParams(value);
 
         /// <summary>
         /// 

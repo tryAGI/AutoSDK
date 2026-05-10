@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static RetellLlmRequest FromOverride(global::G.RetellLlmOverride? value) => new RetellLlmRequest(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator RetellLlmRequest(global::G.RetellLlmRequestVariant2 value) => new RetellLlmRequest((global::G.RetellLlmRequestVariant2?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             RetellLlmRequestVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static RetellLlmRequest FromRetellLlmRequestVariant2(global::G.RetellLlmRequestVariant2? value) => new RetellLlmRequest(value);
 
         /// <summary>
         /// 

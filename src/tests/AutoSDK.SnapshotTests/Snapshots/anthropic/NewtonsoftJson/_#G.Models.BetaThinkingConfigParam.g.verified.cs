@@ -97,6 +97,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static BetaThinkingConfigParam FromEnabled(global::G.BetaThinkingConfigEnabled? value) => new BetaThinkingConfigParam(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator BetaThinkingConfigParam(global::G.BetaThinkingConfigDisabled value) => new BetaThinkingConfigParam((global::G.BetaThinkingConfigDisabled?)value);
 
         /// <summary>
@@ -111,6 +116,11 @@ namespace G
         {
             Disabled = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaThinkingConfigParam FromDisabled(global::G.BetaThinkingConfigDisabled? value) => new BetaThinkingConfigParam(value);
 
         /// <summary>
         /// 

@@ -180,6 +180,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ChatContentItems FromChatContentText(global::G.ChatContentText? value) => new ChatContentItems(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChatContentItems(global::G.ChatContentImage value) => new ChatContentItems((global::G.ChatContentImage?)value);
 
         /// <summary>
@@ -194,6 +199,11 @@ namespace G
         {
             ChatContentImage = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChatContentItems FromChatContentImage(global::G.ChatContentImage? value) => new ChatContentItems(value);
 
         /// <summary>
         /// 
@@ -216,6 +226,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ChatContentItems FromChatContentAudio(global::G.ChatContentAudio? value) => new ChatContentItems(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChatContentItems(global::G.ChatContentItems3 value) => new ChatContentItems((global::G.ChatContentItems3?)value);
 
         /// <summary>
@@ -234,6 +249,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ChatContentItems FromChatContentItems3(global::G.ChatContentItems3? value) => new ChatContentItems(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ChatContentItems(global::G.ChatContentFile value) => new ChatContentItems((global::G.ChatContentFile?)value);
 
         /// <summary>
@@ -248,6 +268,11 @@ namespace G
         {
             ChatContentFile = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ChatContentItems FromChatContentFile(global::G.ChatContentFile? value) => new ChatContentItems(value);
 
         /// <summary>
         /// 

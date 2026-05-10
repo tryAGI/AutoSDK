@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ResponsesRequestProviderOnlyItems FromProviderName(global::G.ProviderName? value) => new ResponsesRequestProviderOnlyItems(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ResponsesRequestProviderOnlyItems(string value) => new ResponsesRequestProviderOnlyItems((string?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             ResponsesRequestProviderOnlyItemsVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ResponsesRequestProviderOnlyItems FromResponsesRequestProviderOnlyItemsVariant2(string? value) => new ResponsesRequestProviderOnlyItems(value);
 
         /// <summary>
         /// 

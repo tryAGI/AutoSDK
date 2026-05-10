@@ -150,6 +150,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static PayloadStorageType FromPayloadStorageTypeVariant1(global::G.PayloadStorageTypeVariant1? value) => new PayloadStorageType(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator PayloadStorageType(global::G.PayloadStorageTypeVariant2 value) => new PayloadStorageType((global::G.PayloadStorageTypeVariant2?)value);
 
         /// <summary>
@@ -164,6 +169,11 @@ namespace G
         {
             PayloadStorageTypeVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static PayloadStorageType FromPayloadStorageTypeVariant2(global::G.PayloadStorageTypeVariant2? value) => new PayloadStorageType(value);
 
         /// <summary>
         /// 
@@ -186,6 +196,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static PayloadStorageType FromPayloadStorageTypeVariant3(global::G.PayloadStorageTypeVariant3? value) => new PayloadStorageType(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator PayloadStorageType(global::G.PayloadStorageTypeVariant4 value) => new PayloadStorageType((global::G.PayloadStorageTypeVariant4?)value);
 
         /// <summary>
@@ -200,6 +215,11 @@ namespace G
         {
             PayloadStorageTypeVariant4 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static PayloadStorageType FromPayloadStorageTypeVariant4(global::G.PayloadStorageTypeVariant4? value) => new PayloadStorageType(value);
 
         /// <summary>
         /// 

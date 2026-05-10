@@ -129,6 +129,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static StreamAnalyzeResponse FromStreamStartResponse(global::G.StreamStartResponse? value) => new StreamAnalyzeResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator StreamAnalyzeResponse(global::G.StreamTextResponse value) => new StreamAnalyzeResponse((global::G.StreamTextResponse?)value);
 
         /// <summary>
@@ -147,6 +152,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static StreamAnalyzeResponse FromStreamTextResponse(global::G.StreamTextResponse? value) => new StreamAnalyzeResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator StreamAnalyzeResponse(global::G.StreamEndResponse value) => new StreamAnalyzeResponse((global::G.StreamEndResponse?)value);
 
         /// <summary>
@@ -161,6 +171,11 @@ namespace G
         {
             StreamEndResponse = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static StreamAnalyzeResponse FromStreamEndResponse(global::G.StreamEndResponse? value) => new StreamAnalyzeResponse(value);
 
         /// <summary>
         /// 

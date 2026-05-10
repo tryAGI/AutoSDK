@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ReferenceInstruction FromInstructionReference(global::G.InstructionReference? value) => new ReferenceInstruction(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ReferenceInstruction(global::G.ReferenceInstructionVariant2 value) => new ReferenceInstruction((global::G.ReferenceInstructionVariant2?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             ReferenceInstructionVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ReferenceInstruction FromReferenceInstructionVariant2(global::G.ReferenceInstructionVariant2? value) => new ReferenceInstruction(value);
 
         /// <summary>
         /// 

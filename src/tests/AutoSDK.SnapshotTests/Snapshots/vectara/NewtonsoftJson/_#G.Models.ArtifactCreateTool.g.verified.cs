@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ArtifactCreateTool FromBase(global::G.ToolBase? value) => new ArtifactCreateTool(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ArtifactCreateTool(global::G.ArtifactCreateToolVariant2 value) => new ArtifactCreateTool((global::G.ArtifactCreateToolVariant2?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             ArtifactCreateToolVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ArtifactCreateTool FromArtifactCreateToolVariant2(global::G.ArtifactCreateToolVariant2? value) => new ArtifactCreateTool(value);
 
         /// <summary>
         /// 

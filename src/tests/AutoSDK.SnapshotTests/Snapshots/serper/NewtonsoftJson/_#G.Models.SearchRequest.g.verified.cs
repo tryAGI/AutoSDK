@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static SearchRequest FromBase(global::G.BaseSearchRequest? value) => new SearchRequest(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator SearchRequest(global::G.SearchRequestVariant2 value) => new SearchRequest((global::G.SearchRequestVariant2?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             SearchRequestVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static SearchRequest FromSearchRequestVariant2(global::G.SearchRequestVariant2? value) => new SearchRequest(value);
 
         /// <summary>
         /// 

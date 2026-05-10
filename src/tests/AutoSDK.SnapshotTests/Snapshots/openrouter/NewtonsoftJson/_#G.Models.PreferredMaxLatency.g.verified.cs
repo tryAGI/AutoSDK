@@ -120,6 +120,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static PreferredMaxLatency FromPreferredMaxLatencyVariant1(double? value) => new PreferredMaxLatency(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator PreferredMaxLatency(global::G.PercentileLatencyCutoffs value) => new PreferredMaxLatency((global::G.PercentileLatencyCutoffs?)value);
 
         /// <summary>
@@ -134,6 +139,11 @@ namespace G
         {
             PercentileLatencyCutoffs = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static PreferredMaxLatency FromPercentileLatencyCutoffs(global::G.PercentileLatencyCutoffs? value) => new PreferredMaxLatency(value);
 
         /// <summary>
         /// 

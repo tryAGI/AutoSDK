@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static FineTuneChatCompletionRequestAssistantMessage FromAssistantMessage1(global::G.FineTuneChatCompletionRequestAssistantMessageAssistantMessage? value) => new FineTuneChatCompletionRequestAssistantMessage(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator FineTuneChatCompletionRequestAssistantMessage(global::G.ChatCompletionRequestAssistantMessage value) => new FineTuneChatCompletionRequestAssistantMessage((global::G.ChatCompletionRequestAssistantMessage?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             AssistantMessage2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static FineTuneChatCompletionRequestAssistantMessage FromAssistantMessage2(global::G.ChatCompletionRequestAssistantMessage? value) => new FineTuneChatCompletionRequestAssistantMessage(value);
 
         /// <summary>
         /// 

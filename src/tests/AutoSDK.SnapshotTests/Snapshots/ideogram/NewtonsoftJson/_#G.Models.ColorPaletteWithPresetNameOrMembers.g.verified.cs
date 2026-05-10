@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ColorPaletteWithPresetNameOrMembers FromColorPaletteWithPresetName(global::G.ColorPaletteWithPresetName? value) => new ColorPaletteWithPresetNameOrMembers(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ColorPaletteWithPresetNameOrMembers(global::G.ColorPaletteWithMembers value) => new ColorPaletteWithPresetNameOrMembers((global::G.ColorPaletteWithMembers?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             ColorPaletteWithMembers = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ColorPaletteWithPresetNameOrMembers FromColorPaletteWithMembers(global::G.ColorPaletteWithMembers? value) => new ColorPaletteWithPresetNameOrMembers(value);
 
         /// <summary>
         /// 

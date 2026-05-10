@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static NodeBase FromCommon(global::G.NodeBaseCommon? value) => new NodeBase(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator NodeBase(global::G.NodeBaseVariant2 value) => new NodeBase((global::G.NodeBaseVariant2?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             NodeBaseVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static NodeBase FromNodeBaseVariant2(global::G.NodeBaseVariant2? value) => new NodeBase(value);
 
         /// <summary>
         /// 

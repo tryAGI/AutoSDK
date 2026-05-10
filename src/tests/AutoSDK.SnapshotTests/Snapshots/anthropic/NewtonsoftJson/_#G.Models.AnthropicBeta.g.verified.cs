@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static AnthropicBeta FromAnthropicBetaVariant1(string? value) => new AnthropicBeta(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator AnthropicBeta(global::G.AnthropicBetaEnum value) => new AnthropicBeta((global::G.AnthropicBetaEnum?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             Enum = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static AnthropicBeta FromEnum(global::G.AnthropicBetaEnum? value) => new AnthropicBeta(value);
 
         /// <summary>
         /// 

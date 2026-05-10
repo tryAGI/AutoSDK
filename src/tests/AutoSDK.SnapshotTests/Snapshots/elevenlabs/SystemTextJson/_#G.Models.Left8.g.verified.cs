@@ -425,6 +425,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Left8 FromStringLiteral(global::G.ASTStringNodeOutput? value) => new Left8(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Left8(global::G.ASTNumberNodeOutput value) => new Left8((global::G.ASTNumberNodeOutput?)value);
 
         /// <summary>
@@ -439,6 +444,11 @@ namespace G
         {
             NumberLiteral = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Left8 FromNumberLiteral(global::G.ASTNumberNodeOutput? value) => new Left8(value);
 
         /// <summary>
         /// 
@@ -461,6 +471,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Left8 FromBooleanLiteral(global::G.ASTBooleanNodeOutput? value) => new Left8(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Left8(global::G.ASTLLMNodeOutput value) => new Left8((global::G.ASTLLMNodeOutput?)value);
 
         /// <summary>
@@ -475,6 +490,11 @@ namespace G
         {
             Llm = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Left8 FromLlm(global::G.ASTLLMNodeOutput? value) => new Left8(value);
 
         /// <summary>
         /// 
@@ -497,6 +517,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Left8 FromDynamicVariable(global::G.ASTDynamicVariableNodeOutput? value) => new Left8(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Left8(global::G.ASTOrOperatorNodeOutput value) => new Left8((global::G.ASTOrOperatorNodeOutput?)value);
 
         /// <summary>
@@ -511,6 +536,11 @@ namespace G
         {
             OrOperator = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Left8 FromOrOperator(global::G.ASTOrOperatorNodeOutput? value) => new Left8(value);
 
         /// <summary>
         /// 
@@ -533,6 +563,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Left8 FromAndOperator(global::G.ASTAndOperatorNodeOutput? value) => new Left8(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Left8(global::G.ASTEqualsOperatorNodeOutput value) => new Left8((global::G.ASTEqualsOperatorNodeOutput?)value);
 
         /// <summary>
@@ -547,6 +582,11 @@ namespace G
         {
             EqOperator = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Left8 FromEqOperator(global::G.ASTEqualsOperatorNodeOutput? value) => new Left8(value);
 
         /// <summary>
         /// 
@@ -569,6 +609,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Left8 FromNeqOperator(global::G.ASTNotEqualsOperatorNodeOutput? value) => new Left8(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Left8(global::G.ASTGreaterThanOperatorNodeOutput value) => new Left8((global::G.ASTGreaterThanOperatorNodeOutput?)value);
 
         /// <summary>
@@ -583,6 +628,11 @@ namespace G
         {
             GtOperator = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Left8 FromGtOperator(global::G.ASTGreaterThanOperatorNodeOutput? value) => new Left8(value);
 
         /// <summary>
         /// 
@@ -605,6 +655,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Left8 FromLtOperator(global::G.ASTLessThanOperatorNodeOutput? value) => new Left8(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Left8(global::G.ASTGreaterThanOrEqualsOperatorNodeOutput value) => new Left8((global::G.ASTGreaterThanOrEqualsOperatorNodeOutput?)value);
 
         /// <summary>
@@ -623,6 +678,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Left8 FromGteOperator(global::G.ASTGreaterThanOrEqualsOperatorNodeOutput? value) => new Left8(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Left8(global::G.ASTLessThanOrEqualsOperatorNodeOutput value) => new Left8((global::G.ASTLessThanOrEqualsOperatorNodeOutput?)value);
 
         /// <summary>
@@ -637,6 +697,11 @@ namespace G
         {
             LteOperator = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Left8 FromLteOperator(global::G.ASTLessThanOrEqualsOperatorNodeOutput? value) => new Left8(value);
 
         /// <summary>
         /// 

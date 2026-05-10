@@ -120,6 +120,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static PreferredMinThroughput FromPreferredMinThroughputVariant1(double? value) => new PreferredMinThroughput(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator PreferredMinThroughput(global::G.PercentileThroughputCutoffs value) => new PreferredMinThroughput((global::G.PercentileThroughputCutoffs?)value);
 
         /// <summary>
@@ -134,6 +139,11 @@ namespace G
         {
             PercentileThroughputCutoffs = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static PreferredMinThroughput FromPercentileThroughputCutoffs(global::G.PercentileThroughputCutoffs? value) => new PreferredMinThroughput(value);
 
         /// <summary>
         /// 

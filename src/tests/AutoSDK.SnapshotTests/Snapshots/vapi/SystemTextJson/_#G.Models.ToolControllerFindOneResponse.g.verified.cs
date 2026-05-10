@@ -755,6 +755,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ToolControllerFindOneResponse FromApiRequest(global::G.ApiRequestTool? value) => new ToolControllerFindOneResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ToolControllerFindOneResponse(global::G.CodeTool value) => new ToolControllerFindOneResponse((global::G.CodeTool?)value);
 
         /// <summary>
@@ -769,6 +774,11 @@ namespace G
         {
             Code = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ToolControllerFindOneResponse FromCode(global::G.CodeTool? value) => new ToolControllerFindOneResponse(value);
 
         /// <summary>
         /// 
@@ -791,6 +801,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ToolControllerFindOneResponse FromDtmf(global::G.DtmfTool? value) => new ToolControllerFindOneResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ToolControllerFindOneResponse(global::G.EndCallTool value) => new ToolControllerFindOneResponse((global::G.EndCallTool?)value);
 
         /// <summary>
@@ -805,6 +820,11 @@ namespace G
         {
             EndCall = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ToolControllerFindOneResponse FromEndCall(global::G.EndCallTool? value) => new ToolControllerFindOneResponse(value);
 
         /// <summary>
         /// 
@@ -827,6 +847,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ToolControllerFindOneResponse FromFunction(global::G.FunctionTool? value) => new ToolControllerFindOneResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ToolControllerFindOneResponse(global::G.GhlTool value) => new ToolControllerFindOneResponse((global::G.GhlTool?)value);
 
         /// <summary>
@@ -841,6 +866,11 @@ namespace G
         {
             Ghl = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ToolControllerFindOneResponse FromGhl(global::G.GhlTool? value) => new ToolControllerFindOneResponse(value);
 
         /// <summary>
         /// 
@@ -863,6 +893,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ToolControllerFindOneResponse FromTransferCall(global::G.TransferCallTool? value) => new ToolControllerFindOneResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ToolControllerFindOneResponse(global::G.HandoffTool value) => new ToolControllerFindOneResponse((global::G.HandoffTool?)value);
 
         /// <summary>
@@ -877,6 +912,11 @@ namespace G
         {
             Handoff = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ToolControllerFindOneResponse FromHandoff(global::G.HandoffTool? value) => new ToolControllerFindOneResponse(value);
 
         /// <summary>
         /// 
@@ -899,6 +939,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ToolControllerFindOneResponse FromBash(global::G.BashTool? value) => new ToolControllerFindOneResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ToolControllerFindOneResponse(global::G.ComputerTool value) => new ToolControllerFindOneResponse((global::G.ComputerTool?)value);
 
         /// <summary>
@@ -913,6 +958,11 @@ namespace G
         {
             Computer = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ToolControllerFindOneResponse FromComputer(global::G.ComputerTool? value) => new ToolControllerFindOneResponse(value);
 
         /// <summary>
         /// 
@@ -935,6 +985,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ToolControllerFindOneResponse FromTextEditor(global::G.TextEditorTool? value) => new ToolControllerFindOneResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ToolControllerFindOneResponse(global::G.QueryTool value) => new ToolControllerFindOneResponse((global::G.QueryTool?)value);
 
         /// <summary>
@@ -949,6 +1004,11 @@ namespace G
         {
             Query = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ToolControllerFindOneResponse FromQuery(global::G.QueryTool? value) => new ToolControllerFindOneResponse(value);
 
         /// <summary>
         /// 
@@ -971,6 +1031,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ToolControllerFindOneResponse FromGoogleCalendarEventCreate(global::G.GoogleCalendarCreateEventTool? value) => new ToolControllerFindOneResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ToolControllerFindOneResponse(global::G.GoogleSheetsRowAppendTool value) => new ToolControllerFindOneResponse((global::G.GoogleSheetsRowAppendTool?)value);
 
         /// <summary>
@@ -985,6 +1050,11 @@ namespace G
         {
             GoogleSheetsRowAppend = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ToolControllerFindOneResponse FromGoogleSheetsRowAppend(global::G.GoogleSheetsRowAppendTool? value) => new ToolControllerFindOneResponse(value);
 
         /// <summary>
         /// 
@@ -1007,6 +1077,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ToolControllerFindOneResponse FromGoogleCalendarAvailabilityCheck(global::G.GoogleCalendarCheckAvailabilityTool? value) => new ToolControllerFindOneResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ToolControllerFindOneResponse(global::G.SlackSendMessageTool value) => new ToolControllerFindOneResponse((global::G.SlackSendMessageTool?)value);
 
         /// <summary>
@@ -1021,6 +1096,11 @@ namespace G
         {
             SlackMessageSend = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ToolControllerFindOneResponse FromSlackMessageSend(global::G.SlackSendMessageTool? value) => new ToolControllerFindOneResponse(value);
 
         /// <summary>
         /// 
@@ -1043,6 +1123,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ToolControllerFindOneResponse FromSms(global::G.SmsTool? value) => new ToolControllerFindOneResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ToolControllerFindOneResponse(global::G.McpTool value) => new ToolControllerFindOneResponse((global::G.McpTool?)value);
 
         /// <summary>
@@ -1057,6 +1142,11 @@ namespace G
         {
             Mcp = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ToolControllerFindOneResponse FromMcp(global::G.McpTool? value) => new ToolControllerFindOneResponse(value);
 
         /// <summary>
         /// 
@@ -1079,6 +1169,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ToolControllerFindOneResponse FromGohighlevelCalendarAvailabilityCheck(global::G.GoHighLevelCalendarAvailabilityTool? value) => new ToolControllerFindOneResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ToolControllerFindOneResponse(global::G.GoHighLevelCalendarEventCreateTool value) => new ToolControllerFindOneResponse((global::G.GoHighLevelCalendarEventCreateTool?)value);
 
         /// <summary>
@@ -1093,6 +1188,11 @@ namespace G
         {
             GohighlevelCalendarEventCreate = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ToolControllerFindOneResponse FromGohighlevelCalendarEventCreate(global::G.GoHighLevelCalendarEventCreateTool? value) => new ToolControllerFindOneResponse(value);
 
         /// <summary>
         /// 
@@ -1115,6 +1215,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ToolControllerFindOneResponse FromGohighlevelContactCreate(global::G.GoHighLevelContactCreateTool? value) => new ToolControllerFindOneResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ToolControllerFindOneResponse(global::G.GoHighLevelContactGetTool value) => new ToolControllerFindOneResponse((global::G.GoHighLevelContactGetTool?)value);
 
         /// <summary>
@@ -1129,6 +1234,11 @@ namespace G
         {
             GohighlevelContactGet = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ToolControllerFindOneResponse FromGohighlevelContactGet(global::G.GoHighLevelContactGetTool? value) => new ToolControllerFindOneResponse(value);
 
         /// <summary>
         /// 
@@ -1151,6 +1261,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ToolControllerFindOneResponse FromSipRequest(global::G.SipRequestTool? value) => new ToolControllerFindOneResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ToolControllerFindOneResponse(global::G.VoicemailTool value) => new ToolControllerFindOneResponse((global::G.VoicemailTool?)value);
 
         /// <summary>
@@ -1165,6 +1280,11 @@ namespace G
         {
             Voicemail = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ToolControllerFindOneResponse FromVoicemail(global::G.VoicemailTool? value) => new ToolControllerFindOneResponse(value);
 
         /// <summary>
         /// 

@@ -95,6 +95,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Media FromAudio(global::G.CreateSpeechToSpeechRequestElevenMultilingualStsV2MediaSpeechToSpeechAudio? value) => new Media(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Media(global::G.CreateSpeechToSpeechRequestElevenMultilingualStsV2MediaSpeechToSpeechVideo value) => new Media((global::G.CreateSpeechToSpeechRequestElevenMultilingualStsV2MediaSpeechToSpeechVideo?)value);
 
         /// <summary>
@@ -109,6 +114,11 @@ namespace G
         {
             Video = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Media FromVideo(global::G.CreateSpeechToSpeechRequestElevenMultilingualStsV2MediaSpeechToSpeechVideo? value) => new Media(value);
 
         /// <summary>
         /// 

@@ -245,6 +245,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Asset1 FromUploadedImage(global::G.UploadedImage? value) => new Asset1(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Asset1(global::G.UploadedAudio value) => new Asset1((global::G.UploadedAudio?)value);
 
         /// <summary>
@@ -259,6 +264,11 @@ namespace G
         {
             UploadedAudio = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Asset1 FromUploadedAudio(global::G.UploadedAudio? value) => new Asset1(value);
 
         /// <summary>
         /// 
@@ -281,6 +291,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Asset1 FromUploadedVideo(global::G.UploadedVideo? value) => new Asset1(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Asset1(global::G.GeneratedAudio value) => new Asset1((global::G.GeneratedAudio?)value);
 
         /// <summary>
@@ -295,6 +310,11 @@ namespace G
         {
             GeneratedAudio = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Asset1 FromGeneratedAudio(global::G.GeneratedAudio? value) => new Asset1(value);
 
         /// <summary>
         /// 
@@ -317,6 +337,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Asset1 FromGeneratedImage(global::G.GeneratedImage? value) => new Asset1(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Asset1(global::G.GeneratedVideo value) => new Asset1((global::G.GeneratedVideo?)value);
 
         /// <summary>
@@ -335,6 +360,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static Asset1 FromGeneratedVideo(global::G.GeneratedVideo? value) => new Asset1(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Asset1(global::G.Voice value) => new Asset1((global::G.Voice?)value);
 
         /// <summary>
@@ -349,6 +379,11 @@ namespace G
         {
             Voice = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Asset1 FromVoice(global::G.Voice? value) => new Asset1(value);
 
         /// <summary>
         /// 

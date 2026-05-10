@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static UserFamilyName FromUserFamilyNameVariant1(string? value) => new UserFamilyName(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public UserFamilyName(
             string? userFamilyNameVariant1,
             global::System.Collections.Generic.IList<string>? userFamilyNameVariant2

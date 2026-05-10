@@ -95,6 +95,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ListenV1ServerEvent FromResults(global::G.ListenV1Results? value) => new ListenV1ServerEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ListenV1ServerEvent(global::G.ListenV1Metadata value) => new ListenV1ServerEvent((global::G.ListenV1Metadata?)value);
 
         /// <summary>
@@ -109,6 +114,11 @@ namespace G
         {
             Metadata = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ListenV1ServerEvent FromMetadata(global::G.ListenV1Metadata? value) => new ListenV1ServerEvent(value);
 
         /// <summary>
         /// 

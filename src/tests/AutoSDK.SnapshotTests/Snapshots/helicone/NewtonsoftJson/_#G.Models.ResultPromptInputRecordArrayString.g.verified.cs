@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ResultPromptInputRecordArrayString FromSuccess(global::G.ResultSuccessPromptInputRecordArray? value) => new ResultPromptInputRecordArrayString(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ResultPromptInputRecordArrayString(global::G.ResultErrorString value) => new ResultPromptInputRecordArrayString((global::G.ResultErrorString?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             Error = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ResultPromptInputRecordArrayString FromError(global::G.ResultErrorString? value) => new ResultPromptInputRecordArrayString(value);
 
         /// <summary>
         /// 

@@ -150,6 +150,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static StreamingTranscriptionResponse FromStreamingTranscriptionResponseVariant1(global::G.AllOf<global::G.StreamingTranscriptionResponseVariant12, global::G.TranscriptMessage>? value) => new StreamingTranscriptionResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator StreamingTranscriptionResponse(global::G.AllOf<global::G.StreamingTranscriptionResponseVariant22, global::G.FlushDoneMessage> value) => new StreamingTranscriptionResponse((global::G.AllOf<global::G.StreamingTranscriptionResponseVariant22, global::G.FlushDoneMessage>?)value);
 
         /// <summary>
@@ -164,6 +169,11 @@ namespace G
         {
             StreamingTranscriptionResponseVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static StreamingTranscriptionResponse FromStreamingTranscriptionResponseVariant2(global::G.AllOf<global::G.StreamingTranscriptionResponseVariant22, global::G.FlushDoneMessage>? value) => new StreamingTranscriptionResponse(value);
 
         /// <summary>
         /// 
@@ -186,6 +196,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static StreamingTranscriptionResponse FromStreamingTranscriptionResponseVariant3(global::G.AllOf<global::G.StreamingTranscriptionResponseVariant32, global::G.DoneMessage>? value) => new StreamingTranscriptionResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator StreamingTranscriptionResponse(global::G.AllOf<global::G.StreamingTranscriptionResponseVariant42, global::G.ErrorMessage> value) => new StreamingTranscriptionResponse((global::G.AllOf<global::G.StreamingTranscriptionResponseVariant42, global::G.ErrorMessage>?)value);
 
         /// <summary>
@@ -200,6 +215,11 @@ namespace G
         {
             StreamingTranscriptionResponseVariant4 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static StreamingTranscriptionResponse FromStreamingTranscriptionResponseVariant4(global::G.AllOf<global::G.StreamingTranscriptionResponseVariant42, global::G.ErrorMessage>? value) => new StreamingTranscriptionResponse(value);
 
         /// <summary>
         /// 

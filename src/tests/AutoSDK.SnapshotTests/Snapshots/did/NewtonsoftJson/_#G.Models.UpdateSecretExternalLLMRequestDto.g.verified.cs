@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static UpdateSecretExternalLLMRequestDto FromOpenAIConfiguration(global::G.UpdateSecretExternalLLMRequestDtoOpenAIConfiguration? value) => new UpdateSecretExternalLLMRequestDto(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator UpdateSecretExternalLLMRequestDto(global::G.UpdateSecretExternalLLMRequestDtoVariant2 value) => new UpdateSecretExternalLLMRequestDto((global::G.UpdateSecretExternalLLMRequestDtoVariant2?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             UpdateSecretExternalLLMRequestDtoVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static UpdateSecretExternalLLMRequestDto FromUpdateSecretExternalLLMRequestDtoVariant2(global::G.UpdateSecretExternalLLMRequestDtoVariant2? value) => new UpdateSecretExternalLLMRequestDto(value);
 
         /// <summary>
         /// 

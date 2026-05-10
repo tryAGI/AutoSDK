@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static MaxOptimizationThreads FromSetting(global::G.MaxOptimizationThreadsSetting? value) => new MaxOptimizationThreads(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator MaxOptimizationThreads(int value) => new MaxOptimizationThreads((int?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             MaxOptimizationThreadsVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static MaxOptimizationThreads FromMaxOptimizationThreadsVariant2(int? value) => new MaxOptimizationThreads(value);
 
         /// <summary>
         /// 

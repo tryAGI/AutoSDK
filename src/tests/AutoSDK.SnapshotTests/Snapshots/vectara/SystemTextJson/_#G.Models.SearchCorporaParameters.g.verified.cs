@@ -91,6 +91,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static SearchCorporaParameters FromSearchCorporaParametersVariant1(global::G.SearchCorporaParametersVariant1? value) => new SearchCorporaParameters(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator SearchCorporaParameters(global::G.SearchParameters value) => new SearchCorporaParameters((global::G.SearchParameters?)value);
 
         /// <summary>
@@ -105,6 +110,11 @@ namespace G
         {
             SearchParameters = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static SearchCorporaParameters FromSearchParameters(global::G.SearchParameters? value) => new SearchCorporaParameters(value);
 
         /// <summary>
         /// 

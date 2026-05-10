@@ -120,6 +120,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static OutputItemFunctionCallStatus FromOutputItemFunctionCallStatus0(global::G.OutputItemFunctionCallStatus0? value) => new OutputItemFunctionCallStatus(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator OutputItemFunctionCallStatus(global::G.OutputItemFunctionCallStatus1 value) => new OutputItemFunctionCallStatus((global::G.OutputItemFunctionCallStatus1?)value);
 
         /// <summary>
@@ -138,6 +143,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static OutputItemFunctionCallStatus FromOutputItemFunctionCallStatus1(global::G.OutputItemFunctionCallStatus1? value) => new OutputItemFunctionCallStatus(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator OutputItemFunctionCallStatus(global::G.OutputItemFunctionCallStatus2 value) => new OutputItemFunctionCallStatus((global::G.OutputItemFunctionCallStatus2?)value);
 
         /// <summary>
@@ -152,6 +162,11 @@ namespace G
         {
             OutputItemFunctionCallStatus2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static OutputItemFunctionCallStatus FromOutputItemFunctionCallStatus2(global::G.OutputItemFunctionCallStatus2? value) => new OutputItemFunctionCallStatus(value);
 
         /// <summary>
         /// 

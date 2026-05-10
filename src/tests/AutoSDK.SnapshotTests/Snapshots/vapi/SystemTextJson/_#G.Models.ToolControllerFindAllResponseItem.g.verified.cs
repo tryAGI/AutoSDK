@@ -755,6 +755,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ToolControllerFindAllResponseItem FromApiRequest(global::G.ApiRequestTool? value) => new ToolControllerFindAllResponseItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ToolControllerFindAllResponseItem(global::G.CodeTool value) => new ToolControllerFindAllResponseItem((global::G.CodeTool?)value);
 
         /// <summary>
@@ -769,6 +774,11 @@ namespace G
         {
             Code = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ToolControllerFindAllResponseItem FromCode(global::G.CodeTool? value) => new ToolControllerFindAllResponseItem(value);
 
         /// <summary>
         /// 
@@ -791,6 +801,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ToolControllerFindAllResponseItem FromDtmf(global::G.DtmfTool? value) => new ToolControllerFindAllResponseItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ToolControllerFindAllResponseItem(global::G.EndCallTool value) => new ToolControllerFindAllResponseItem((global::G.EndCallTool?)value);
 
         /// <summary>
@@ -805,6 +820,11 @@ namespace G
         {
             EndCall = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ToolControllerFindAllResponseItem FromEndCall(global::G.EndCallTool? value) => new ToolControllerFindAllResponseItem(value);
 
         /// <summary>
         /// 
@@ -827,6 +847,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ToolControllerFindAllResponseItem FromFunction(global::G.FunctionTool? value) => new ToolControllerFindAllResponseItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ToolControllerFindAllResponseItem(global::G.GhlTool value) => new ToolControllerFindAllResponseItem((global::G.GhlTool?)value);
 
         /// <summary>
@@ -841,6 +866,11 @@ namespace G
         {
             Ghl = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ToolControllerFindAllResponseItem FromGhl(global::G.GhlTool? value) => new ToolControllerFindAllResponseItem(value);
 
         /// <summary>
         /// 
@@ -863,6 +893,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ToolControllerFindAllResponseItem FromTransferCall(global::G.TransferCallTool? value) => new ToolControllerFindAllResponseItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ToolControllerFindAllResponseItem(global::G.HandoffTool value) => new ToolControllerFindAllResponseItem((global::G.HandoffTool?)value);
 
         /// <summary>
@@ -877,6 +912,11 @@ namespace G
         {
             Handoff = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ToolControllerFindAllResponseItem FromHandoff(global::G.HandoffTool? value) => new ToolControllerFindAllResponseItem(value);
 
         /// <summary>
         /// 
@@ -899,6 +939,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ToolControllerFindAllResponseItem FromBash(global::G.BashTool? value) => new ToolControllerFindAllResponseItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ToolControllerFindAllResponseItem(global::G.ComputerTool value) => new ToolControllerFindAllResponseItem((global::G.ComputerTool?)value);
 
         /// <summary>
@@ -913,6 +958,11 @@ namespace G
         {
             Computer = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ToolControllerFindAllResponseItem FromComputer(global::G.ComputerTool? value) => new ToolControllerFindAllResponseItem(value);
 
         /// <summary>
         /// 
@@ -935,6 +985,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ToolControllerFindAllResponseItem FromTextEditor(global::G.TextEditorTool? value) => new ToolControllerFindAllResponseItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ToolControllerFindAllResponseItem(global::G.QueryTool value) => new ToolControllerFindAllResponseItem((global::G.QueryTool?)value);
 
         /// <summary>
@@ -949,6 +1004,11 @@ namespace G
         {
             Query = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ToolControllerFindAllResponseItem FromQuery(global::G.QueryTool? value) => new ToolControllerFindAllResponseItem(value);
 
         /// <summary>
         /// 
@@ -971,6 +1031,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ToolControllerFindAllResponseItem FromGoogleCalendarEventCreate(global::G.GoogleCalendarCreateEventTool? value) => new ToolControllerFindAllResponseItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ToolControllerFindAllResponseItem(global::G.GoogleSheetsRowAppendTool value) => new ToolControllerFindAllResponseItem((global::G.GoogleSheetsRowAppendTool?)value);
 
         /// <summary>
@@ -985,6 +1050,11 @@ namespace G
         {
             GoogleSheetsRowAppend = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ToolControllerFindAllResponseItem FromGoogleSheetsRowAppend(global::G.GoogleSheetsRowAppendTool? value) => new ToolControllerFindAllResponseItem(value);
 
         /// <summary>
         /// 
@@ -1007,6 +1077,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ToolControllerFindAllResponseItem FromGoogleCalendarAvailabilityCheck(global::G.GoogleCalendarCheckAvailabilityTool? value) => new ToolControllerFindAllResponseItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ToolControllerFindAllResponseItem(global::G.SlackSendMessageTool value) => new ToolControllerFindAllResponseItem((global::G.SlackSendMessageTool?)value);
 
         /// <summary>
@@ -1021,6 +1096,11 @@ namespace G
         {
             SlackMessageSend = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ToolControllerFindAllResponseItem FromSlackMessageSend(global::G.SlackSendMessageTool? value) => new ToolControllerFindAllResponseItem(value);
 
         /// <summary>
         /// 
@@ -1043,6 +1123,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ToolControllerFindAllResponseItem FromSms(global::G.SmsTool? value) => new ToolControllerFindAllResponseItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ToolControllerFindAllResponseItem(global::G.McpTool value) => new ToolControllerFindAllResponseItem((global::G.McpTool?)value);
 
         /// <summary>
@@ -1057,6 +1142,11 @@ namespace G
         {
             Mcp = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ToolControllerFindAllResponseItem FromMcp(global::G.McpTool? value) => new ToolControllerFindAllResponseItem(value);
 
         /// <summary>
         /// 
@@ -1079,6 +1169,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ToolControllerFindAllResponseItem FromGohighlevelCalendarAvailabilityCheck(global::G.GoHighLevelCalendarAvailabilityTool? value) => new ToolControllerFindAllResponseItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ToolControllerFindAllResponseItem(global::G.GoHighLevelCalendarEventCreateTool value) => new ToolControllerFindAllResponseItem((global::G.GoHighLevelCalendarEventCreateTool?)value);
 
         /// <summary>
@@ -1093,6 +1188,11 @@ namespace G
         {
             GohighlevelCalendarEventCreate = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ToolControllerFindAllResponseItem FromGohighlevelCalendarEventCreate(global::G.GoHighLevelCalendarEventCreateTool? value) => new ToolControllerFindAllResponseItem(value);
 
         /// <summary>
         /// 
@@ -1115,6 +1215,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ToolControllerFindAllResponseItem FromGohighlevelContactCreate(global::G.GoHighLevelContactCreateTool? value) => new ToolControllerFindAllResponseItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ToolControllerFindAllResponseItem(global::G.GoHighLevelContactGetTool value) => new ToolControllerFindAllResponseItem((global::G.GoHighLevelContactGetTool?)value);
 
         /// <summary>
@@ -1129,6 +1234,11 @@ namespace G
         {
             GohighlevelContactGet = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ToolControllerFindAllResponseItem FromGohighlevelContactGet(global::G.GoHighLevelContactGetTool? value) => new ToolControllerFindAllResponseItem(value);
 
         /// <summary>
         /// 
@@ -1151,6 +1261,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ToolControllerFindAllResponseItem FromSipRequest(global::G.SipRequestTool? value) => new ToolControllerFindAllResponseItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ToolControllerFindAllResponseItem(global::G.VoicemailTool value) => new ToolControllerFindAllResponseItem((global::G.VoicemailTool?)value);
 
         /// <summary>
@@ -1165,6 +1280,11 @@ namespace G
         {
             Voicemail = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ToolControllerFindAllResponseItem FromVoicemail(global::G.VoicemailTool? value) => new ToolControllerFindAllResponseItem(value);
 
         /// <summary>
         /// 

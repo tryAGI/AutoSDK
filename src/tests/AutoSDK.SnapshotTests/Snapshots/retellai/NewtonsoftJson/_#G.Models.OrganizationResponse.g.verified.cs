@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static OrganizationResponse FromOrganization(global::G.Organization? value) => new OrganizationResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator OrganizationResponse(global::G.OrganizationResponseVariant2 value) => new OrganizationResponse((global::G.OrganizationResponseVariant2?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             OrganizationResponseVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static OrganizationResponse FromOrganizationResponseVariant2(global::G.OrganizationResponseVariant2? value) => new OrganizationResponse(value);
 
         /// <summary>
         /// 

@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static RateLimitsPolicyResponse FromRateLimitsPolicy(global::G.RateLimitsPolicy? value) => new RateLimitsPolicyResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator RateLimitsPolicyResponse(global::G.RateLimitsPolicyResponseVariant2 value) => new RateLimitsPolicyResponse((global::G.RateLimitsPolicyResponseVariant2?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             RateLimitsPolicyResponseVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static RateLimitsPolicyResponse FromRateLimitsPolicyResponseVariant2(global::G.RateLimitsPolicyResponseVariant2? value) => new RateLimitsPolicyResponse(value);
 
         /// <summary>
         /// 

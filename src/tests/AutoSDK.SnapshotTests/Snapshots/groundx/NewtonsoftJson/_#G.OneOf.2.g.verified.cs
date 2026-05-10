@@ -89,6 +89,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static OneOf<T1, T2> FromValue1(T1? value) => new OneOf<T1, T2>(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator OneOf<T1, T2>(T2 value) => new OneOf<T1, T2>((T2?)value);
 
         /// <summary>
@@ -103,6 +108,11 @@ namespace G
         {
             Value2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static OneOf<T1, T2> FromValue2(T2? value) => new OneOf<T1, T2>(value);
 
         /// <summary>
         /// 

@@ -425,6 +425,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ModelSettingsVariant17 FromOpenai(global::G.OpenAIModelSettings? value) => new ModelSettingsVariant17(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ModelSettingsVariant17(global::G.AnthropicModelSettings value) => new ModelSettingsVariant17((global::G.AnthropicModelSettings?)value);
 
         /// <summary>
@@ -439,6 +444,11 @@ namespace G
         {
             Anthropic = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ModelSettingsVariant17 FromAnthropic(global::G.AnthropicModelSettings? value) => new ModelSettingsVariant17(value);
 
         /// <summary>
         /// 
@@ -461,6 +471,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ModelSettingsVariant17 FromGoogleAi(global::G.GoogleAIModelSettings? value) => new ModelSettingsVariant17(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ModelSettingsVariant17(global::G.GoogleVertexModelSettings value) => new ModelSettingsVariant17((global::G.GoogleVertexModelSettings?)value);
 
         /// <summary>
@@ -475,6 +490,11 @@ namespace G
         {
             GoogleVertex = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ModelSettingsVariant17 FromGoogleVertex(global::G.GoogleVertexModelSettings? value) => new ModelSettingsVariant17(value);
 
         /// <summary>
         /// 
@@ -497,6 +517,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ModelSettingsVariant17 FromAzure(global::G.AzureModelSettings? value) => new ModelSettingsVariant17(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ModelSettingsVariant17(global::G.XAIModelSettings value) => new ModelSettingsVariant17((global::G.XAIModelSettings?)value);
 
         /// <summary>
@@ -511,6 +536,11 @@ namespace G
         {
             Xai = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ModelSettingsVariant17 FromXai(global::G.XAIModelSettings? value) => new ModelSettingsVariant17(value);
 
         /// <summary>
         /// 
@@ -533,6 +563,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ModelSettingsVariant17 FromZai(global::G.ZAIModelSettings? value) => new ModelSettingsVariant17(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ModelSettingsVariant17(global::G.GroqModelSettings value) => new ModelSettingsVariant17((global::G.GroqModelSettings?)value);
 
         /// <summary>
@@ -547,6 +582,11 @@ namespace G
         {
             Groq = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ModelSettingsVariant17 FromGroq(global::G.GroqModelSettings? value) => new ModelSettingsVariant17(value);
 
         /// <summary>
         /// 
@@ -569,6 +609,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ModelSettingsVariant17 FromDeepseek(global::G.DeepseekModelSettings? value) => new ModelSettingsVariant17(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ModelSettingsVariant17(global::G.TogetherModelSettings value) => new ModelSettingsVariant17((global::G.TogetherModelSettings?)value);
 
         /// <summary>
@@ -583,6 +628,11 @@ namespace G
         {
             Together = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ModelSettingsVariant17 FromTogether(global::G.TogetherModelSettings? value) => new ModelSettingsVariant17(value);
 
         /// <summary>
         /// 
@@ -605,6 +655,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ModelSettingsVariant17 FromBedrock(global::G.BedrockModelSettings? value) => new ModelSettingsVariant17(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ModelSettingsVariant17(global::G.OpenRouterModelSettings value) => new ModelSettingsVariant17((global::G.OpenRouterModelSettings?)value);
 
         /// <summary>
@@ -623,6 +678,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ModelSettingsVariant17 FromOpenrouter(global::G.OpenRouterModelSettings? value) => new ModelSettingsVariant17(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ModelSettingsVariant17(global::G.ChatGPTOAuthModelSettings value) => new ModelSettingsVariant17((global::G.ChatGPTOAuthModelSettings?)value);
 
         /// <summary>
@@ -637,6 +697,11 @@ namespace G
         {
             ChatgptOauth = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ModelSettingsVariant17 FromChatgptOauth(global::G.ChatGPTOAuthModelSettings? value) => new ModelSettingsVariant17(value);
 
         /// <summary>
         /// 

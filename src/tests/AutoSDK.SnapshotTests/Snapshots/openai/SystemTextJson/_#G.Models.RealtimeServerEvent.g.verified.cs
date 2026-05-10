@@ -1123,6 +1123,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static RealtimeServerEvent FromConversationCreated(global::G.RealtimeServerEventConversationCreated? value) => new RealtimeServerEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator RealtimeServerEvent(global::G.RealtimeServerEventConversationItemCreated value) => new RealtimeServerEvent((global::G.RealtimeServerEventConversationItemCreated?)value);
 
         /// <summary>
@@ -1137,6 +1142,11 @@ namespace G
         {
             ConversationItemCreated = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static RealtimeServerEvent FromConversationItemCreated(global::G.RealtimeServerEventConversationItemCreated? value) => new RealtimeServerEvent(value);
 
         /// <summary>
         /// 
@@ -1159,6 +1169,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static RealtimeServerEvent FromConversationItemDeleted(global::G.RealtimeServerEventConversationItemDeleted? value) => new RealtimeServerEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator RealtimeServerEvent(global::G.RealtimeServerEventConversationItemInputAudioTranscriptionCompleted value) => new RealtimeServerEvent((global::G.RealtimeServerEventConversationItemInputAudioTranscriptionCompleted?)value);
 
         /// <summary>
@@ -1173,6 +1188,11 @@ namespace G
         {
             ConversationItemInputAudioTranscriptionCompleted = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static RealtimeServerEvent FromConversationItemInputAudioTranscriptionCompleted(global::G.RealtimeServerEventConversationItemInputAudioTranscriptionCompleted? value) => new RealtimeServerEvent(value);
 
         /// <summary>
         /// 
@@ -1195,6 +1215,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static RealtimeServerEvent FromConversationItemInputAudioTranscriptionDelta(global::G.RealtimeServerEventConversationItemInputAudioTranscriptionDelta? value) => new RealtimeServerEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator RealtimeServerEvent(global::G.RealtimeServerEventConversationItemInputAudioTranscriptionFailed value) => new RealtimeServerEvent((global::G.RealtimeServerEventConversationItemInputAudioTranscriptionFailed?)value);
 
         /// <summary>
@@ -1209,6 +1234,11 @@ namespace G
         {
             ConversationItemInputAudioTranscriptionFailed = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static RealtimeServerEvent FromConversationItemInputAudioTranscriptionFailed(global::G.RealtimeServerEventConversationItemInputAudioTranscriptionFailed? value) => new RealtimeServerEvent(value);
 
         /// <summary>
         /// 
@@ -1231,6 +1261,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static RealtimeServerEvent FromConversationItemRetrieved(global::G.RealtimeServerEventConversationItemRetrieved? value) => new RealtimeServerEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator RealtimeServerEvent(global::G.RealtimeServerEventConversationItemTruncated value) => new RealtimeServerEvent((global::G.RealtimeServerEventConversationItemTruncated?)value);
 
         /// <summary>
@@ -1245,6 +1280,11 @@ namespace G
         {
             ConversationItemTruncated = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static RealtimeServerEvent FromConversationItemTruncated(global::G.RealtimeServerEventConversationItemTruncated? value) => new RealtimeServerEvent(value);
 
         /// <summary>
         /// 
@@ -1267,6 +1307,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static RealtimeServerEvent FromError(global::G.RealtimeServerEventError? value) => new RealtimeServerEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator RealtimeServerEvent(global::G.RealtimeServerEventInputAudioBufferCleared value) => new RealtimeServerEvent((global::G.RealtimeServerEventInputAudioBufferCleared?)value);
 
         /// <summary>
@@ -1281,6 +1326,11 @@ namespace G
         {
             InputAudioBufferCleared = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static RealtimeServerEvent FromInputAudioBufferCleared(global::G.RealtimeServerEventInputAudioBufferCleared? value) => new RealtimeServerEvent(value);
 
         /// <summary>
         /// 
@@ -1303,6 +1353,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static RealtimeServerEvent FromInputAudioBufferCommitted(global::G.RealtimeServerEventInputAudioBufferCommitted? value) => new RealtimeServerEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator RealtimeServerEvent(global::G.RealtimeServerEventInputAudioBufferSpeechStarted value) => new RealtimeServerEvent((global::G.RealtimeServerEventInputAudioBufferSpeechStarted?)value);
 
         /// <summary>
@@ -1317,6 +1372,11 @@ namespace G
         {
             InputAudioBufferSpeechStarted = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static RealtimeServerEvent FromInputAudioBufferSpeechStarted(global::G.RealtimeServerEventInputAudioBufferSpeechStarted? value) => new RealtimeServerEvent(value);
 
         /// <summary>
         /// 
@@ -1339,6 +1399,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static RealtimeServerEvent FromInputAudioBufferSpeechStopped(global::G.RealtimeServerEventInputAudioBufferSpeechStopped? value) => new RealtimeServerEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator RealtimeServerEvent(global::G.RealtimeServerEventRateLimitsUpdated value) => new RealtimeServerEvent((global::G.RealtimeServerEventRateLimitsUpdated?)value);
 
         /// <summary>
@@ -1353,6 +1418,11 @@ namespace G
         {
             RateLimitsUpdated = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static RealtimeServerEvent FromRateLimitsUpdated(global::G.RealtimeServerEventRateLimitsUpdated? value) => new RealtimeServerEvent(value);
 
         /// <summary>
         /// 
@@ -1375,6 +1445,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static RealtimeServerEvent FromResponseAudioDelta(global::G.RealtimeServerEventResponseAudioDelta? value) => new RealtimeServerEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator RealtimeServerEvent(global::G.RealtimeServerEventResponseAudioDone value) => new RealtimeServerEvent((global::G.RealtimeServerEventResponseAudioDone?)value);
 
         /// <summary>
@@ -1389,6 +1464,11 @@ namespace G
         {
             ResponseAudioDone = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static RealtimeServerEvent FromResponseAudioDone(global::G.RealtimeServerEventResponseAudioDone? value) => new RealtimeServerEvent(value);
 
         /// <summary>
         /// 
@@ -1411,6 +1491,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static RealtimeServerEvent FromResponseAudioTranscriptDelta(global::G.RealtimeServerEventResponseAudioTranscriptDelta? value) => new RealtimeServerEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator RealtimeServerEvent(global::G.RealtimeServerEventResponseAudioTranscriptDone value) => new RealtimeServerEvent((global::G.RealtimeServerEventResponseAudioTranscriptDone?)value);
 
         /// <summary>
@@ -1425,6 +1510,11 @@ namespace G
         {
             ResponseAudioTranscriptDone = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static RealtimeServerEvent FromResponseAudioTranscriptDone(global::G.RealtimeServerEventResponseAudioTranscriptDone? value) => new RealtimeServerEvent(value);
 
         /// <summary>
         /// 
@@ -1447,6 +1537,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static RealtimeServerEvent FromResponseContentPartAdded(global::G.RealtimeServerEventResponseContentPartAdded? value) => new RealtimeServerEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator RealtimeServerEvent(global::G.RealtimeServerEventResponseContentPartDone value) => new RealtimeServerEvent((global::G.RealtimeServerEventResponseContentPartDone?)value);
 
         /// <summary>
@@ -1461,6 +1556,11 @@ namespace G
         {
             ResponseContentPartDone = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static RealtimeServerEvent FromResponseContentPartDone(global::G.RealtimeServerEventResponseContentPartDone? value) => new RealtimeServerEvent(value);
 
         /// <summary>
         /// 
@@ -1483,6 +1583,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static RealtimeServerEvent FromResponseCreated(global::G.RealtimeServerEventResponseCreated? value) => new RealtimeServerEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator RealtimeServerEvent(global::G.RealtimeServerEventResponseDone value) => new RealtimeServerEvent((global::G.RealtimeServerEventResponseDone?)value);
 
         /// <summary>
@@ -1497,6 +1602,11 @@ namespace G
         {
             ResponseDone = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static RealtimeServerEvent FromResponseDone(global::G.RealtimeServerEventResponseDone? value) => new RealtimeServerEvent(value);
 
         /// <summary>
         /// 
@@ -1519,6 +1629,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static RealtimeServerEvent FromResponseFunctionCallArgumentsDelta(global::G.RealtimeServerEventResponseFunctionCallArgumentsDelta? value) => new RealtimeServerEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator RealtimeServerEvent(global::G.RealtimeServerEventResponseFunctionCallArgumentsDone value) => new RealtimeServerEvent((global::G.RealtimeServerEventResponseFunctionCallArgumentsDone?)value);
 
         /// <summary>
@@ -1533,6 +1648,11 @@ namespace G
         {
             ResponseFunctionCallArgumentsDone = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static RealtimeServerEvent FromResponseFunctionCallArgumentsDone(global::G.RealtimeServerEventResponseFunctionCallArgumentsDone? value) => new RealtimeServerEvent(value);
 
         /// <summary>
         /// 
@@ -1555,6 +1675,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static RealtimeServerEvent FromResponseOutputItemAdded(global::G.RealtimeServerEventResponseOutputItemAdded? value) => new RealtimeServerEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator RealtimeServerEvent(global::G.RealtimeServerEventResponseOutputItemDone value) => new RealtimeServerEvent((global::G.RealtimeServerEventResponseOutputItemDone?)value);
 
         /// <summary>
@@ -1569,6 +1694,11 @@ namespace G
         {
             ResponseOutputItemDone = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static RealtimeServerEvent FromResponseOutputItemDone(global::G.RealtimeServerEventResponseOutputItemDone? value) => new RealtimeServerEvent(value);
 
         /// <summary>
         /// 
@@ -1591,6 +1721,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static RealtimeServerEvent FromResponseTextDelta(global::G.RealtimeServerEventResponseTextDelta? value) => new RealtimeServerEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator RealtimeServerEvent(global::G.RealtimeServerEventResponseTextDone value) => new RealtimeServerEvent((global::G.RealtimeServerEventResponseTextDone?)value);
 
         /// <summary>
@@ -1605,6 +1740,11 @@ namespace G
         {
             ResponseTextDone = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static RealtimeServerEvent FromResponseTextDone(global::G.RealtimeServerEventResponseTextDone? value) => new RealtimeServerEvent(value);
 
         /// <summary>
         /// 
@@ -1627,6 +1767,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static RealtimeServerEvent FromSessionCreated(global::G.RealtimeServerEventSessionCreated? value) => new RealtimeServerEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator RealtimeServerEvent(global::G.RealtimeServerEventSessionUpdated value) => new RealtimeServerEvent((global::G.RealtimeServerEventSessionUpdated?)value);
 
         /// <summary>
@@ -1641,6 +1786,11 @@ namespace G
         {
             SessionUpdated = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static RealtimeServerEvent FromSessionUpdated(global::G.RealtimeServerEventSessionUpdated? value) => new RealtimeServerEvent(value);
 
         /// <summary>
         /// 
@@ -1663,6 +1813,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static RealtimeServerEvent FromTranscriptionSessionUpdated(global::G.RealtimeServerEventTranscriptionSessionUpdated? value) => new RealtimeServerEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator RealtimeServerEvent(global::G.RealtimeServerEventOutputAudioBufferStarted value) => new RealtimeServerEvent((global::G.RealtimeServerEventOutputAudioBufferStarted?)value);
 
         /// <summary>
@@ -1677,6 +1832,11 @@ namespace G
         {
             OutputAudioBufferStarted = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static RealtimeServerEvent FromOutputAudioBufferStarted(global::G.RealtimeServerEventOutputAudioBufferStarted? value) => new RealtimeServerEvent(value);
 
         /// <summary>
         /// 
@@ -1699,6 +1859,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static RealtimeServerEvent FromOutputAudioBufferStopped(global::G.RealtimeServerEventOutputAudioBufferStopped? value) => new RealtimeServerEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator RealtimeServerEvent(global::G.RealtimeServerEventOutputAudioBufferCleared value) => new RealtimeServerEvent((global::G.RealtimeServerEventOutputAudioBufferCleared?)value);
 
         /// <summary>
@@ -1713,6 +1878,11 @@ namespace G
         {
             OutputAudioBufferCleared = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static RealtimeServerEvent FromOutputAudioBufferCleared(global::G.RealtimeServerEventOutputAudioBufferCleared? value) => new RealtimeServerEvent(value);
 
         /// <summary>
         /// 

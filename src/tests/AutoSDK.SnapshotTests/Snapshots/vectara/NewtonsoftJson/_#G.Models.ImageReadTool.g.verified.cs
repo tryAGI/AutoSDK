@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static ImageReadTool FromBase(global::G.ToolBase? value) => new ImageReadTool(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ImageReadTool(global::G.ImageReadToolVariant2 value) => new ImageReadTool((global::G.ImageReadToolVariant2?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             ImageReadToolVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ImageReadTool FromImageReadToolVariant2(global::G.ImageReadToolVariant2? value) => new ImageReadTool(value);
 
         /// <summary>
         /// 

@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static GenerateStreamText FromEvent(global::G.GenerateStreamEvent? value) => new GenerateStreamText(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator GenerateStreamText(global::G.GenerateStreamTextYai5v6 value) => new GenerateStreamText((global::G.GenerateStreamTextYai5v6?)value);
 
         /// <summary>
@@ -104,6 +109,11 @@ namespace G
         {
             Yai5v6 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static GenerateStreamText FromYai5v6(global::G.GenerateStreamTextYai5v6? value) => new GenerateStreamText(value);
 
         /// <summary>
         /// 

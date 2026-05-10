@@ -61,6 +61,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static RedactedAudioNotification FromResponse(global::G.RedactedAudioResponse? value) => new RedactedAudioNotification(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public object? Object =>
             Response as object 
             ;

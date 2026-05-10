@@ -125,6 +125,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static GetAgentResponseTestRouteResponse FromLlm(global::G.GetResponseUnitTestResponseModel? value) => new GetAgentResponseTestRouteResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator GetAgentResponseTestRouteResponse(global::G.GetToolCallUnitTestResponseModel value) => new GetAgentResponseTestRouteResponse((global::G.GetToolCallUnitTestResponseModel?)value);
 
         /// <summary>
@@ -143,6 +148,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static GetAgentResponseTestRouteResponse FromTool(global::G.GetToolCallUnitTestResponseModel? value) => new GetAgentResponseTestRouteResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator GetAgentResponseTestRouteResponse(global::G.GetSimulationTestResponseModel value) => new GetAgentResponseTestRouteResponse((global::G.GetSimulationTestResponseModel?)value);
 
         /// <summary>
@@ -157,6 +167,11 @@ namespace G
         {
             Simulation = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static GetAgentResponseTestRouteResponse FromSimulation(global::G.GetSimulationTestResponseModel? value) => new GetAgentResponseTestRouteResponse(value);
 
         /// <summary>
         /// 

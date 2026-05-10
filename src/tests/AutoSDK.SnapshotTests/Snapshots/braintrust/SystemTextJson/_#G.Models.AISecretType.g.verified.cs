@@ -90,6 +90,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static AISecretType FromAISecretTypeVariant1(string? value) => new AISecretType(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public AISecretType(
             string? aISecretTypeVariant1,
             global::System.Collections.Generic.IList<string>? aISecretTypeVariant2
