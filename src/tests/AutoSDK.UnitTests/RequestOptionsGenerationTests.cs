@@ -138,6 +138,28 @@ public class RequestOptionsGenerationTests
     }
 
     [TestMethod]
+    public void GeneratePromptTemplateHelpers_NamesDtosWithAutoSDKPrefixToAvoidProviderCollisions()
+    {
+        var settings = (CSharpSettings)DefaultSettings;
+        var source = Sources.GeneratePromptTemplateHelpers(settings, "PromptTemplateManager");
+
+        // DTOs prefixed with AutoSDK so they cannot collide with provider-defined
+        // PromptTemplate / PromptTemplateRequest / etc. models. See #310.
+        source.Should().Contain("public sealed class AutoSDKPromptTemplate");
+        source.Should().Contain("public sealed class AutoSDKPromptTemplateRequest");
+        source.Should().Contain("public sealed class AutoSDKPromptTemplateMessage");
+        source.Should().Contain("public sealed class AutoSDKPromptTemplateRenderException");
+
+        // The configurable helper class name itself stays unprefixed.
+        source.Should().Contain("public sealed class PromptTemplateManager");
+
+        // No bare PromptTemplate / PromptTemplateRequest types are emitted anywhere.
+        source.Should().NotContain("public sealed class PromptTemplate ");
+        source.Should().NotContain("public sealed class PromptTemplateRequest");
+        source.Should().NotContain("public sealed class PromptTemplateMessage");
+    }
+
+    [TestMethod]
     public void GenerateHelperFiles_SuppressXmlDocCS1591()
     {
         var settings = (CSharpSettings)DefaultSettings;

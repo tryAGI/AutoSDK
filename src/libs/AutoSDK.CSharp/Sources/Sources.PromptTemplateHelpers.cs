@@ -34,9 +34,9 @@ namespace {settings.Namespace}
     /// <summary>
     /// Identifies a prompt version lookup.
     /// </summary>
-    public sealed class PromptTemplateRequest
+    public sealed class AutoSDKPromptTemplateRequest
     {{
-        public PromptTemplateRequest(
+        public AutoSDKPromptTemplateRequest(
             string id,
             string? version = null,
             string? environment = null)
@@ -63,9 +63,9 @@ namespace {settings.Namespace}
     /// <summary>
     /// A chat prompt message with renderable content.
     /// </summary>
-    public sealed class PromptTemplateMessage
+    public sealed class AutoSDKPromptTemplateMessage
     {{
-        public PromptTemplateMessage(
+        public AutoSDKPromptTemplateMessage(
             string role,
             string content)
         {{
@@ -86,24 +86,24 @@ namespace {settings.Namespace}
 
         public string Content {{ get; }}
 
-        public PromptTemplateMessage WithContent(
+        public AutoSDKPromptTemplateMessage WithContent(
             string content)
         {{
-            return new PromptTemplateMessage(Role, content);
+            return new AutoSDKPromptTemplateMessage(Role, content);
         }}
     }}
 
     /// <summary>
     /// A resolved prompt template with optional string body, chat messages, variables, metadata, and model config.
     /// </summary>
-    public sealed class PromptTemplate
+    public sealed class AutoSDKPromptTemplate
     {{
-        public PromptTemplate(
+        public AutoSDKPromptTemplate(
             string id,
             string? version = null,
             string? environment = null,
             string? body = null,
-            global::System.Collections.Generic.IEnumerable<PromptTemplateMessage>? messages = null,
+            global::System.Collections.Generic.IEnumerable<AutoSDKPromptTemplateMessage>? messages = null,
             global::System.Collections.Generic.IReadOnlyDictionary<string, string>? variables = null,
             global::System.Collections.Generic.IReadOnlyDictionary<string, string>? metadata = null,
             global::System.Collections.Generic.IReadOnlyDictionary<string, string>? modelConfig = null)
@@ -131,7 +131,7 @@ namespace {settings.Namespace}
 
         public string? Body {{ get; }}
 
-        public global::System.Collections.Generic.IReadOnlyList<PromptTemplateMessage> Messages {{ get; }}
+        public global::System.Collections.Generic.IReadOnlyList<AutoSDKPromptTemplateMessage> Messages {{ get; }}
 
         public global::System.Collections.Generic.IReadOnlyDictionary<string, string> Variables {{ get; }}
 
@@ -139,15 +139,15 @@ namespace {settings.Namespace}
 
         public global::System.Collections.Generic.IReadOnlyDictionary<string, string> ModelConfig {{ get; }}
 
-        private static global::System.Collections.Generic.IReadOnlyList<PromptTemplateMessage> CopyMessages(
-            global::System.Collections.Generic.IEnumerable<PromptTemplateMessage>? messages)
+        private static global::System.Collections.Generic.IReadOnlyList<AutoSDKPromptTemplateMessage> CopyMessages(
+            global::System.Collections.Generic.IEnumerable<AutoSDKPromptTemplateMessage>? messages)
         {{
             if (messages is null)
             {{
-                return global::System.Array.Empty<PromptTemplateMessage>();
+                return global::System.Array.Empty<AutoSDKPromptTemplateMessage>();
             }}
 
-            var result = new global::System.Collections.Generic.List<PromptTemplateMessage>();
+            var result = new global::System.Collections.Generic.List<AutoSDKPromptTemplateMessage>();
             foreach (var message in messages)
             {{
                 if (message is null)
@@ -179,9 +179,9 @@ namespace {settings.Namespace}
     /// <summary>
     /// Exception thrown when prompt template rendering cannot resolve all variables or partials.
     /// </summary>
-    public sealed class PromptTemplateRenderException : global::System.Exception
+    public sealed class AutoSDKPromptTemplateRenderException : global::System.Exception
     {{
-        public PromptTemplateRenderException(
+        public AutoSDKPromptTemplateRenderException(
             global::System.Collections.Generic.IEnumerable<string> missingVariables)
             : base(""Prompt template is missing values for: "" + string.Join("", "", missingVariables))
         {{
@@ -197,14 +197,14 @@ namespace {settings.Namespace}
     public sealed class {className}
     {{
         private const int MaxPartialDepth = 16;
-        private readonly global::System.Func<PromptTemplateRequest, global::System.Threading.CancellationToken, global::System.Threading.Tasks.Task<PromptTemplate>> _resolver;
+        private readonly global::System.Func<AutoSDKPromptTemplateRequest, global::System.Threading.CancellationToken, global::System.Threading.Tasks.Task<AutoSDKPromptTemplate>> _resolver;
         private readonly global::System.Collections.Generic.Dictionary<string, CacheEntry> _cache =
             new global::System.Collections.Generic.Dictionary<string, CacheEntry>(global::System.StringComparer.Ordinal);
         private readonly object _cacheGate = new object();
         private global::System.Func<global::System.DateTimeOffset> _clock = static () => global::System.DateTimeOffset.UtcNow;
 
         public {className}(
-            global::System.Func<PromptTemplateRequest, global::System.Threading.CancellationToken, global::System.Threading.Tasks.Task<PromptTemplate>> resolver,
+            global::System.Func<AutoSDKPromptTemplateRequest, global::System.Threading.CancellationToken, global::System.Threading.Tasks.Task<AutoSDKPromptTemplate>> resolver,
             global::System.TimeSpan? cacheTtl = null)
         {{
             _resolver = resolver ?? throw new global::System.ArgumentNullException(nameof(resolver));
@@ -223,7 +223,7 @@ namespace {settings.Namespace}
             set => _clock = value ?? throw new global::System.ArgumentNullException(nameof(value));
         }}
 
-        public global::System.Threading.Tasks.Task<PromptTemplate> GetPromptVersionAsync(
+        public global::System.Threading.Tasks.Task<AutoSDKPromptTemplate> GetPromptVersionAsync(
             string id,
             string version,
             string? environment = null,
@@ -238,7 +238,7 @@ namespace {settings.Namespace}
             return GetPromptAsync(id, version, environment, refresh, cancellationToken);
         }}
 
-        public global::System.Threading.Tasks.Task<PromptTemplate> GetPromptAsync(
+        public global::System.Threading.Tasks.Task<AutoSDKPromptTemplate> GetPromptAsync(
             string id,
             string? version = null,
             string? environment = null,
@@ -246,13 +246,13 @@ namespace {settings.Namespace}
             global::System.Threading.CancellationToken cancellationToken = default)
         {{
             return GetPromptAsync(
-                new PromptTemplateRequest(id, version, environment),
+                new AutoSDKPromptTemplateRequest(id, version, environment),
                 refresh,
                 cancellationToken);
         }}
 
-        public async global::System.Threading.Tasks.Task<PromptTemplate> GetPromptAsync(
-            PromptTemplateRequest request,
+        public async global::System.Threading.Tasks.Task<AutoSDKPromptTemplate> GetPromptAsync(
+            AutoSDKPromptTemplateRequest request,
             bool refresh = false,
             global::System.Threading.CancellationToken cancellationToken = default)
         {{
@@ -294,7 +294,7 @@ namespace {settings.Namespace}
             return Render(prompt.Body, variables, partials);
         }}
 
-        public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IReadOnlyList<PromptTemplateMessage>> RenderMessagesAsync(
+        public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IReadOnlyList<AutoSDKPromptTemplateMessage>> RenderMessagesAsync(
             string id,
             global::System.Collections.Generic.IReadOnlyDictionary<string, string> variables,
             string? version = null,
@@ -325,7 +325,7 @@ namespace {settings.Namespace}
             string? version = null,
             string? environment = null)
         {{
-            var request = new PromptTemplateRequest(id, version, environment);
+            var request = new AutoSDKPromptTemplateRequest(id, version, environment);
             lock (_cacheGate)
             {{
                 return _cache.Remove(request.CacheKey);
@@ -357,14 +357,14 @@ namespace {settings.Namespace}
 
             if (missingVariables.Count > 0)
             {{
-                throw new PromptTemplateRenderException(missingVariables);
+                throw new AutoSDKPromptTemplateRenderException(missingVariables);
             }}
 
             return rendered;
         }}
 
-        public static global::System.Collections.Generic.IReadOnlyList<PromptTemplateMessage> RenderMessages(
-            global::System.Collections.Generic.IEnumerable<PromptTemplateMessage> messages,
+        public static global::System.Collections.Generic.IReadOnlyList<AutoSDKPromptTemplateMessage> RenderMessages(
+            global::System.Collections.Generic.IEnumerable<AutoSDKPromptTemplateMessage> messages,
             global::System.Collections.Generic.IReadOnlyDictionary<string, string> variables,
             global::System.Collections.Generic.IReadOnlyDictionary<string, string>? partials = null)
         {{
@@ -373,7 +373,7 @@ namespace {settings.Namespace}
                 throw new global::System.ArgumentNullException(nameof(messages));
             }}
 
-            var renderedMessages = new global::System.Collections.Generic.List<PromptTemplateMessage>();
+            var renderedMessages = new global::System.Collections.Generic.List<AutoSDKPromptTemplateMessage>();
             foreach (var message in messages)
             {{
                 if (message is null)
@@ -389,7 +389,7 @@ namespace {settings.Namespace}
 
         private bool TryGetCached(
             string cacheKey,
-            out PromptTemplate prompt)
+            out AutoSDKPromptTemplate prompt)
         {{
             lock (_cacheGate)
             {{
@@ -409,7 +409,7 @@ namespace {settings.Namespace}
 
         private void StoreCached(
             string cacheKey,
-            PromptTemplate prompt)
+            AutoSDKPromptTemplate prompt)
         {{
             lock (_cacheGate)
             {{
@@ -492,14 +492,14 @@ namespace {settings.Namespace}
         private sealed class CacheEntry
         {{
             public CacheEntry(
-                PromptTemplate prompt,
+                AutoSDKPromptTemplate prompt,
                 global::System.DateTimeOffset expiresAt)
             {{
                 Prompt = prompt;
                 ExpiresAt = expiresAt;
             }}
 
-            public PromptTemplate Prompt {{ get; }}
+            public AutoSDKPromptTemplate Prompt {{ get; }}
 
             public global::System.DateTimeOffset ExpiresAt {{ get; }}
         }}
