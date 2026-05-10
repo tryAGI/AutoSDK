@@ -1,4 +1,5 @@
 ﻿//HintName: G.CloudRequestSigner.g.cs
+#pragma warning disable CS1591
 #nullable enable
 
 namespace G

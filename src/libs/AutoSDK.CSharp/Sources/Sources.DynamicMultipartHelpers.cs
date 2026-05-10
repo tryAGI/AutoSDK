@@ -28,7 +28,8 @@ public static partial class Sources
 
         var attachmentClassName = className + "Attachment";
 
-        return $@"#nullable enable
+        return $@"#pragma warning disable CS1591
+#nullable enable
 
 namespace {settings.Namespace}
 {{

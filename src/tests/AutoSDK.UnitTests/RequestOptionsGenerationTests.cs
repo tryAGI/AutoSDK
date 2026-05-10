@@ -138,6 +138,27 @@ public class RequestOptionsGenerationTests
     }
 
     [TestMethod]
+    public void GenerateHelperFiles_SuppressXmlDocCS1591()
+    {
+        var settings = (CSharpSettings)DefaultSettings;
+        var sources = new[]
+        {
+            Sources.GenerateCloudSigningHelpers(settings, "CloudRequestSigner"),
+            Sources.GenerateDynamicMultipartHelpers(settings, "DynamicMultipart"),
+            Sources.GenerateEvaluationWorkflowHelpers(settings, "DatasetEvaluationRunner"),
+            Sources.GenerateObservabilityLifecycleHelpers(settings, "ObservabilityLifecycle"),
+            Sources.GeneratePredictionWorkflowHelpers(settings, "PredictionWorkflowRunner"),
+            Sources.GeneratePromptTemplateHelpers(settings, "PromptTemplateManager"),
+            Sources.GenerateWebhookVerifier(settings, "WebhookVerifier"),
+        };
+
+        foreach (var source in sources)
+        {
+            source.Should().Contain("#pragma warning disable CS1591");
+        }
+    }
+
+    [TestMethod]
     public void GenerateOptionsSupport_AuthorizationProviderHook_PrefersPerRequestAuthorizations()
     {
         var supportSource = Sources.OptionsSupport(DefaultSettings).Text;

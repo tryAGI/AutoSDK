@@ -40,7 +40,8 @@ public static partial class Sources
             ? settings.WebhookTimestampToleranceSeconds
             : Settings.Default.WebhookTimestampToleranceSeconds;
 
-        return $@"#nullable enable
+        return $@"#pragma warning disable CS1591
+#nullable enable
 
 namespace {settings.Namespace}
 {{

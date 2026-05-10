@@ -26,7 +26,8 @@ public static partial class Sources
     {
         cancellationToken.ThrowIfCancellationRequested();
 
-        return $@"#nullable enable
+        return $@"#pragma warning disable CS1591
+#nullable enable
 
 namespace {settings.Namespace}
 {{
