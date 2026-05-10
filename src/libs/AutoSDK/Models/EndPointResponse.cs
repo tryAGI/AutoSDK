@@ -6,7 +6,8 @@ public record struct EndPointResponse(
     string MimeType,
     ContentType ContentType,
     TypeData Type,
-    bool HasHeaders
+    bool HasHeaders,
+    bool HasLocationHeader = false
 )
 {
     public bool Is1XX => StatusCode.StartsWith("1", StringComparison.OrdinalIgnoreCase);
@@ -18,7 +19,7 @@ public record struct EndPointResponse(
     public bool IsPattern => StatusCode.Contains("XX");
     public int Min => int.TryParse(StatusCode.Replace("XX", "00"), out var code) ? code : 0;
     public int Max => int.TryParse(StatusCode.Replace("XX", "99"), out var code) ? code : 0;
-    
+
     public static EndPointResponse Default => new(
         StatusCode: "200",
         Description: string.Empty,

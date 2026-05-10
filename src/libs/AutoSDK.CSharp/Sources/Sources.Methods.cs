@@ -99,6 +99,7 @@ namespace {endPoint.Settings.Namespace}
 {(ShouldGenerateStreamResponseMethod(endPoint) ? GenerateMethod(endPoint, returnStreamResponse: true) : TrimmedLine)}
 {(ShouldGenerateResponseWrapperMethod(endPoint) ? GenerateMethod(endPoint, returnResponseWrapper: true) : TrimmedLine)}
 {GeneratePollingMethods(endPoint)}
+{GenerateLocationWaitCompanion(endPoint)}
 {GenerateExtensionMethod(endPoint)}
 {GenerateMultipartStreamMethods(endPoint)}
     }}
@@ -126,6 +127,7 @@ namespace {endPoint.Settings.Namespace}
 {(ShouldGenerateStreamResponseMethod(endPoint) ? GenerateMethod(endPoint, isInterface: true, returnStreamResponse: true) : TrimmedLine)}
 {(ShouldGenerateResponseWrapperMethod(endPoint) ? GenerateMethod(endPoint, isInterface: true, returnResponseWrapper: true) : TrimmedLine)}
 {GeneratePollingMethods(endPoint, isInterface: true)}
+{GenerateLocationWaitCompanion(endPoint, isInterface: true)}
 {GenerateExtensionMethod(endPoint, isInterface: true)}
 {GenerateMultipartStreamMethods(endPoint, isInterface: true)}
     }}
@@ -488,6 +490,95 @@ namespace {endPoint.Settings.Namespace}
         PollingOperation pollingOperation)
     {
         return $"{endPoint.NotAsyncMethodName}{pollingOperation.Name.ToPropertyName()}Async";
+    }
+
+    private static string GetLocationWaitCompanionMethodName(EndPoint endPoint)
+    {
+        return $"{endPoint.NotAsyncMethodName}WaitAsync";
+    }
+
+    private static string GenerateLocationWaitCompanion(
+        EndPoint endPoint,
+        bool isInterface = false)
+    {
+        if (!endPoint.HasLocationWaitCompanion)
+        {
+            return TrimmedLine;
+        }
+
+        var companion = endPoint.LocationWaitCompanion;
+        var methodName = GetLocationWaitCompanionMethodName(endPoint);
+        var hasReturnBody = !string.IsNullOrWhiteSpace(companion.SiblingReturnType.CSharpType);
+        var returnTaskType = hasReturnBody
+            ? $"global::System.Threading.Tasks.Task<{companion.SiblingReturnType.CSharpTypeWithoutNullability}>"
+            : "global::System.Threading.Tasks.Task";
+        var namespacePrefix = $"global::{endPoint.Settings.Namespace}";
+        var responseWrapperMethod = GetResponseWrapperMethodName(endPoint);
+
+        var parameterDocumentation = endPoint.Parameters
+            .Where(static x => x.Location != null)
+            .Select(x => $@"
+        {x.Summary.ToXmlDocumentationForParam(x.ParameterName, level: 8)}")
+            .Inject();
+
+        var requiredParameters = endPoint.Parameters
+            .Where(static x => x is { Location: not null, IsRequired: true } && !x.HasSchemaDefault)
+            .Select(x => $@"
+            {x.Type.CSharpType} {x.ParameterName},")
+            .Inject();
+
+        var optionalParameters = endPoint.Parameters
+            .Where(static x => x is { Location: not null } && (!x.IsRequired || x.HasSchemaDefault))
+            .Select(x => $@"
+            {x.Type.CSharpType} {x.ParameterName} = {x.ParameterDefaultValue},")
+            .Inject();
+
+        var hasRequestBody = !string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType);
+        var requestBodyParameter = hasRequestBody
+            ? $@"
+            {endPoint.RequestType.CSharpTypeWithoutNullability} request,"
+            : TrimmedLine;
+
+        var body = isInterface
+            ? ";"
+            : $@"
+        {{
+            var __createdResponse = await {responseWrapperMethod}(
+{GenerateMethodInvocationArguments(endPoint)}
+            ).ConfigureAwait(false);
+
+            global::System.Collections.Generic.IEnumerable<string>? __locationValues = null;
+            _ = __createdResponse.Headers != null &&
+                __createdResponse.Headers.TryGetValue(""Location"", out __locationValues);
+            var __resourceId = {namespacePrefix}.AutoSDKPollingSupport.ExtractIdFromLocationHeader(__locationValues);
+            if (string.IsNullOrEmpty(__resourceId))
+            {{
+                throw new {namespacePrefix}.AutoSDKPollingException(
+                    message: $""Expected a Location header on the response from '{endPoint.MethodName}', but none was found."",
+                    response: __createdResponse);
+            }}
+
+            return await {companion.SiblingPollingMethodName}(
+                {companion.SiblingIdParameterName}: __resourceId!,
+                pollingOptions: pollingOptions,
+                requestOptions: requestOptions,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
+        }}";
+
+        return $@"
+        {$"Calls {endPoint.MethodName}, extracts the resource id from the response Location header, and polls the sibling {companion.SiblingMethodName} until it reaches a terminal status.".ToXmlDocumentationSummary(level: 8)}
+{parameterDocumentation}{(hasRequestBody ? @"
+        /// <param name=""request""></param>" : TrimmedLine)}
+        /// <param name=""pollingOptions"">Overrides the generated polling delay, interval, and attempt limit for the sibling helper.</param>
+        /// <param name=""requestOptions"">Per-request overrides applied to both the create call and each poll attempt.</param>
+        /// <param name=""cancellationToken"">The token to cancel the workflow with.</param>
+        /// <exception cref=""global::{endPoint.Settings.Namespace}.AutoSDKPollingException""></exception>
+        {(isInterface ? "" : "public async ")}{returnTaskType} {methodName}(
+{requiredParameters}{requestBodyParameter}{optionalParameters}
+            global::{endPoint.Settings.Namespace}.AutoSDKPollingOptions? pollingOptions = default,
+            global::{endPoint.Settings.Namespace}.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default){body}
+".RemoveBlankLinesWhereOnlyWhitespaces();
     }
 
     private static bool SupportsPollingOperation(

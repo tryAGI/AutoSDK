@@ -986,6 +986,54 @@ namespace {settings.Namespace}
             return ((int)statusCode).ToString(global::System.Globalization.CultureInfo.InvariantCulture);
         }}
 
+        /// <summary>
+        /// Extracts the final non-empty path segment from a response <c>Location</c> header (or
+        /// any URI-shaped string) so generated WaitAsync companions can chain into a sibling
+        /// GET-by-id polling helper. Returns null when <paramref name=""locationHeaderValues""/>
+        /// is empty or the value cannot be parsed as a URI/path with at least one segment.
+        /// </summary>
+        internal static string? ExtractIdFromLocationHeader(
+            global::System.Collections.Generic.IEnumerable<string>? locationHeaderValues)
+        {{
+            if (locationHeaderValues == null)
+            {{
+                return null;
+            }}
+
+            foreach (var raw in locationHeaderValues)
+            {{
+                if (string.IsNullOrWhiteSpace(raw))
+                {{
+                    continue;
+                }}
+
+                var trimmed = raw.Trim();
+                var queryIndex = trimmed.IndexOfAny(new[] {{ '?', '#' }});
+                if (queryIndex >= 0)
+                {{
+                    trimmed = trimmed.Substring(0, queryIndex);
+                }}
+
+                trimmed = trimmed.TrimEnd('/');
+                if (trimmed.Length == 0)
+                {{
+                    continue;
+                }}
+
+                var lastSlash = trimmed.LastIndexOf('/');
+                var segment = lastSlash >= 0 && lastSlash < trimmed.Length - 1
+                    ? trimmed.Substring(lastSlash + 1)
+                    : trimmed;
+
+                if (!string.IsNullOrWhiteSpace(segment))
+                {{
+                    return segment;
+                }}
+            }}
+
+            return null;
+        }}
+
         internal static bool MatchesStatusCode(
             global::System.Net.HttpStatusCode statusCode,
             string @operator,

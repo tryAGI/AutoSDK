@@ -613,6 +613,7 @@ public static class Data
         var clientServersByClass = BuildClientServerMap(methods, rootClassName, documentServers);
         var usesServerSelectionSupport = clientServersByClass.Values.Any(static servers => servers.Length > 1);
         methods = ApplyClientServerSelectionSupport(methods, clientServersByClass);
+        methods = ApplyLocationWaitCompanions(methods);
         var rootClientServers = GetClientServers(rootClassName, clientServersByClass, documentServers);
 
         Client[] clients = settings.GenerateSdk || settings.GenerateConstructors ? [new Client(
@@ -995,6 +996,7 @@ public static class Data
         var clientServersByClass = BuildClientServerMap(methods, rootClassName, documentServers);
         var usesServerSelectionSupport = clientServersByClass.Values.Any(static servers => servers.Length > 1);
         methods = ApplyClientServerSelectionSupport(methods, clientServersByClass);
+        methods = ApplyLocationWaitCompanions(methods);
         var rootClientServers = GetClientServers(rootClassName, clientServersByClass, documentServers);
 
         Client[] clients = settings.GenerateSdk || settings.GenerateConstructors
@@ -1205,6 +1207,155 @@ public static class Data
                     servers.Length > 1,
             })
             .ToImmutableArray();
+    }
+
+    /// <summary>
+    /// Pairs non-GET endpoints whose success response declares a <c>Location</c> header with a
+    /// sibling GET endpoint exposing a synthesized polling helper (typically emitted by
+    /// <c>--auto-detect-status-polling</c>). When a pair is found, the create endpoint records
+    /// the sibling's polling method, path template, ID parameter, and return type so
+    /// <see cref="Sources.Methods"/> can emit a <c>&lt;CreateMethod&gt;WaitAsync</c> companion
+    /// that calls the create operation, extracts the resource id from the response
+    /// <c>Location</c> header, and dispatches to the sibling's polling helper.
+    /// </summary>
+    private static ImmutableArray<EndPoint> ApplyLocationWaitCompanions(
+        IReadOnlyList<EndPoint> methods)
+    {
+        if (!methods.Any(static m =>
+                m.HasLocationHeaderOnSuccess &&
+                m.HttpMethod != System.Net.Http.HttpMethod.Get))
+        {
+            return methods.ToImmutableArray();
+        }
+
+        var pollingHelpersByPath = methods
+            .Where(static m =>
+                m.HttpMethod == System.Net.Http.HttpMethod.Get &&
+                !m.PollingOperations.IsEmpty &&
+                !string.IsNullOrEmpty(m.Path))
+            .ToDictionary(static m => UnwrapPreparedPath(m.Path), static m => m, StringComparer.Ordinal);
+        if (pollingHelpersByPath.Count == 0)
+        {
+            return methods.ToImmutableArray();
+        }
+
+        return methods
+            .Select(method =>
+            {
+                if (!method.HasLocationHeaderOnSuccess ||
+                    method.HttpMethod == System.Net.Http.HttpMethod.Get ||
+                    string.IsNullOrEmpty(method.Path))
+                {
+                    return method;
+                }
+
+                var sibling = FindLocationSiblingGet(method, pollingHelpersByPath);
+                if (sibling == null)
+                {
+                    return method;
+                }
+
+                var siblingValue = sibling.Value;
+                var pollingOperation = siblingValue.PollingOperations.FirstOrDefault();
+                if (pollingOperation.Name is null or { Length: 0 })
+                {
+                    return method;
+                }
+
+                var idParameter = siblingValue.Parameters
+                    .FirstOrDefault(static p =>
+                        p.Location == Microsoft.OpenApi.ParameterLocation.Path);
+                if (string.IsNullOrEmpty(idParameter.ParameterName))
+                {
+                    return method;
+                }
+
+                return method with
+                {
+                    LocationWaitCompanion = new LocationWaitCompanion(
+                        SiblingMethodName: siblingValue.NotAsyncMethodName,
+                        SiblingPollingMethodName:
+                            $"{siblingValue.NotAsyncMethodName}{pollingOperation.Name.ToPropertyName()}Async",
+                        SiblingPath: siblingValue.Path,
+                        SiblingIdParameterName: idParameter.ParameterName,
+                        SiblingReturnType: siblingValue.SuccessResponse.Type),
+                };
+            })
+            .ToImmutableArray();
+    }
+
+    // The path stored on EndPoint is a C# string-interpolation literal — e.g. `"/v1/tasks"`
+    // for parameter-free paths or `$"/v1/tasks/{id}"` for paths with path-parameter
+    // substitutions (see <c>OpenApiPathExtensions.PreparePath</c>). Cross-operation
+    // pairing for #318 needs the raw template, so we strip the literal wrapping back
+    // off when bucketing methods by path.
+    private static string UnwrapPreparedPath(string path)
+    {
+        if (string.IsNullOrEmpty(path))
+        {
+            return path;
+        }
+
+        var trimmed = path;
+        if (trimmed.StartsWith("$", StringComparison.Ordinal))
+        {
+            trimmed = trimmed.Substring(1);
+        }
+
+        if (trimmed.Length >= 2 &&
+            trimmed.StartsWith("\"", StringComparison.Ordinal) &&
+            trimmed.EndsWith("\"", StringComparison.Ordinal))
+        {
+            trimmed = trimmed.Substring(1, trimmed.Length - 2);
+        }
+
+        return trimmed;
+    }
+
+    private static EndPoint? FindLocationSiblingGet(
+        EndPoint createMethod,
+        Dictionary<string, EndPoint> pollingHelpersByPath)
+    {
+        var prefix = UnwrapPreparedPath(createMethod.Path) + "/{";
+        foreach (var pair in pollingHelpersByPath)
+        {
+            var candidate = pair.Key;
+            if (candidate.Length <= prefix.Length ||
+                !candidate.StartsWith(prefix, StringComparison.Ordinal))
+            {
+                continue;
+            }
+
+            var suffix = candidate.Substring(prefix.Length);
+            // Suffix must be the rest of a single path parameter "<name>}" without further slashes.
+            if (suffix.Contains('/'))
+            {
+                continue;
+            }
+
+            if (!suffix.EndsWith("}", StringComparison.Ordinal))
+            {
+                continue;
+            }
+
+            // One path parameter only — confirm it is a simple identifier (no nested templating).
+            var parameterName = suffix.Substring(0, suffix.Length - 1);
+            if (string.IsNullOrEmpty(parameterName) || parameterName.Contains('{'))
+            {
+                continue;
+            }
+
+            // Skip when the sibling is in a different client/tag from the create operation —
+            // pairing across unrelated resource groups produces confusing call sites.
+            if (!string.Equals(pair.Value.ClassName, createMethod.ClassName, StringComparison.Ordinal))
+            {
+                continue;
+            }
+
+            return pair.Value;
+        }
+
+        return null;
     }
 
     private static EquatableArray<ServerOption> GetClientServers(

@@ -243,7 +243,8 @@ public static class CSharpEndPointFactory
             GenerateResponseWrapper: generateResponseWrapper,
             PollingOperations: pollingOperations,
             Servers: servers,
-            HasServerOverride: operation.HasServerOverride);
+            HasServerOverride: operation.HasServerOverride,
+            HasLocationHeaderOnSuccess: responses.Any(static r => r.Is2XX && r.HasLocationHeader));
     }
 
     private static void DeduplicateMethodParameterNames(List<MethodParameter> parameters)

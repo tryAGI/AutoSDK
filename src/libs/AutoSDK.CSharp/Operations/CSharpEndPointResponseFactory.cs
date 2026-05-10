@@ -15,6 +15,10 @@ public static class CSharpEndPointResponseFactory
     {
         operation = operation ?? throw new ArgumentNullException(nameof(operation));
 
+        var hasLocationHeader = responseWithStatusCode.Value?.Headers != null &&
+            responseWithStatusCode.Value.Headers.Keys.Any(static k =>
+                string.Equals(k, "Location", StringComparison.OrdinalIgnoreCase));
+
         var responses = responseWithStatusCode.Value?.Content?
             .Select(x => (
                 StatusCode: responseWithStatusCode.Key,
@@ -27,6 +31,8 @@ public static class CSharpEndPointResponseFactory
             return EndPointResponse.Default with
             {
                 StatusCode = responseWithStatusCode.Key,
+                HasHeaders = responseWithStatusCode.Value?.Headers?.Count > 0,
+                HasLocationHeader = hasLocationHeader,
             };
         }
 
@@ -91,6 +97,7 @@ public static class CSharpEndPointResponseFactory
             MimeType: response.MimeType,
             ContentType: contentType,
             Type: responseType ?? TypeData.Default,
-            HasHeaders: response.Response.Headers?.Count > 0);
+            HasHeaders: response.Response.Headers?.Count > 0,
+            HasLocationHeader: hasLocationHeader);
     }
 }

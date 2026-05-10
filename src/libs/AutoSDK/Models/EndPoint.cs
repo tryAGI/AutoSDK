@@ -41,11 +41,29 @@ public record struct EndPoint(
     EquatableArray<PollingOperation> PollingOperations,
     EquatableArray<ServerOption> Servers = default,
     bool HasServerOverride = false,
-    bool ClientUsesServerSelectionSupport = false
+    bool ClientUsesServerSelectionSupport = false,
+    bool HasLocationHeaderOnSuccess = false,
+    LocationWaitCompanion LocationWaitCompanion = default
 )
 {
     public bool Stream => StreamFormat != StreamFormat.None;
     public bool RawStream => StreamFormat == StreamFormat.Binary;
     public bool EnumerableStream => Stream && !RawStream;
     public bool IsMultipartFormData => RequestMediaType == "multipart/form-data";
+    public bool HasLocationWaitCompanion => !string.IsNullOrEmpty(LocationWaitCompanion.SiblingMethodName);
+}
+
+public record struct LocationWaitCompanion(
+    string SiblingMethodName,
+    string SiblingPollingMethodName,
+    string SiblingPath,
+    string SiblingIdParameterName,
+    TypeData SiblingReturnType)
+{
+    public static LocationWaitCompanion Empty => new(
+        SiblingMethodName: string.Empty,
+        SiblingPollingMethodName: string.Empty,
+        SiblingPath: string.Empty,
+        SiblingIdParameterName: string.Empty,
+        SiblingReturnType: TypeData.Default);
 }

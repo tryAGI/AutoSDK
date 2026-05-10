@@ -150,6 +150,82 @@ public class PollingGenerationTests
     }
 
     [TestMethod]
+    public void AutoDetectStatusPolling_WithLocationHeader_EmitsCreateWaitCompanion()
+    {
+        const string yaml = """
+                            openapi: 3.0.3
+                            info:
+                              title: AutoLocationWait
+                              version: 1.0.0
+                            paths:
+                              /v1/tasks:
+                                post:
+                                  operationId: createTask
+                                  responses:
+                                    '202':
+                                      description: Accepted
+                                      headers:
+                                        Location:
+                                          schema:
+                                            type: string
+                              /v1/tasks/{id}:
+                                get:
+                                  operationId: getTask
+                                  parameters:
+                                    - in: path
+                                      name: id
+                                      required: true
+                                      schema:
+                                        type: string
+                                  responses:
+                                    '200':
+                                      description: OK
+                                      content:
+                                        application/json:
+                                          schema:
+                                            oneOf:
+                                              - type: object
+                                                required: [status]
+                                                properties:
+                                                  status:
+                                                    type: string
+                                                    enum: [PENDING]
+                                              - type: object
+                                                required: [status]
+                                                properties:
+                                                  status:
+                                                    type: string
+                                                    enum: [SUCCEEDED]
+                                            discriminator:
+                                              propertyName: status
+                            """;
+
+        var settings = DefaultSettings with { AutoDetectStatusPolling = true };
+        var data = AutoSDK.Generation.Data.Prepare(((yaml, (CSharpSettings)settings), (CSharpSettings)settings));
+
+        var createMethod = data.Methods.Single(m => m.NotAsyncMethodName == "CreateTask");
+        var getMethod = data.Methods.Single(m => m.NotAsyncMethodName == "GetTask");
+
+        createMethod.HasLocationHeaderOnSuccess.Should().BeTrue();
+        getMethod.PollingOperations.Should().NotBeEmpty();
+        getMethod.ClassName.Should().Be(createMethod.ClassName);
+
+        createMethod.HasLocationWaitCompanion.Should().BeTrue();
+        createMethod.LocationWaitCompanion.SiblingMethodName.Should().Be("GetTask");
+        createMethod.LocationWaitCompanion.SiblingPollingMethodName.Should().Be("GetTaskWaitAsync");
+
+        var createSource = Sources.Method(createMethod).Text;
+        createSource.Should().Contain("public async global::System.Threading.Tasks.Task<");
+        createSource.Should().Contain("CreateTaskWaitAsync(");
+        createSource.Should().Contain("AutoSDKPollingSupport.ExtractIdFromLocationHeader(");
+        createSource.Should().Contain("return await GetTaskWaitAsync(");
+        createSource.Should().Contain("id: __resourceId!");
+
+        var supportSource = Sources.OptionsSupport(settings, includePollingSupport: true).Text;
+        supportSource.Should().Contain("internal static string? ExtractIdFromLocationHeader(");
+    }
+
+    [TestMethod]
     public void AutoDetectStatusPolling_WithoutTerminalSuccessState_GeneratesNoWaitHelper()
     {
         const string yaml = """

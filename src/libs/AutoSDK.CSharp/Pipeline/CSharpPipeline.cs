@@ -170,7 +170,8 @@ public static class CSharpPipeline
                         : [])
                     .Concat([Sources.OptionsSupport(
                         settings,
-                        includePollingSupport: data.Methods.Any(static x => !x.PollingOperations.IsEmpty),
+                        includePollingSupport: data.Methods.Any(static x =>
+                            !x.PollingOperations.IsEmpty || x.HasLocationWaitCompanion),
                         cancellationToken: cancellationToken)])
                     .Concat(settings.GenerateDependencyInjection
                         ? data.Clients
