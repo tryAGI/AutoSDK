@@ -232,6 +232,17 @@ public partial class Tests
                        _ = new IXSocialClient(httpClient, baseUri);
                        _ = new IXSocialClient(httpClient, baseUri, authorizations);
                        _ = new IXSocialClient(httpClient, baseUri, authorizations, new AutoSDKClientOptions());
+
+                       // #311 — DI consumers passing options via named args without overriding baseUri.
+                       _ = new IXSocialClient(
+                           httpClient: httpClient,
+                           authorizations: authorizations,
+                           options: null,
+                           disposeHttpClient: false);
+                       _ = new IXSocialClient(
+                           httpClient: httpClient,
+                           authorizations: authorizations,
+                           options: new AutoSDKClientOptions());
                    }
                }
                """;
