@@ -150,7 +150,11 @@ public static class CSharpEndPointFactory
             ? StreamFormat.ServerSentEvents
             : preferredMimeType.IsSequentialJsonMimeType()
                 ? StreamFormat.Ndjson
-                : responses.Any(x => x.MimeType.IsSequentialJsonMimeType())
+                : preferredMimeType.IsAwsEventStreamMimeType()
+                ? StreamFormat.AwsEventStream
+                : responses.Any(x => x.MimeType.IsAwsEventStreamMimeType())
+                    ? StreamFormat.AwsEventStream
+                    : responses.Any(x => x.MimeType.IsSequentialJsonMimeType())
                     ? StreamFormat.Ndjson
                     : responses.Any(x => x.MimeType.IsServerSentEventsMimeType())
                     ? StreamFormat.ServerSentEvents

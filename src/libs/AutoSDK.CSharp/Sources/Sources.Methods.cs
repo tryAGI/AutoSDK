@@ -2250,7 +2250,89 @@ namespace {endPoint.Settings.Namespace}
  ";
         }
 
-        // If a response range is defined using an explicit code, the explicit code definition takes precedence over the range definition for that code  
+        if (endPoint.StreamFormat == StreamFormat.AwsEventStream)
+        {
+            var hasBody = !string.IsNullOrWhiteSpace(endPoint.SuccessResponse.Type.CSharpType);
+            var deserializeBlock = hasBody
+                ? $@"                var __content = __frame.PayloadAsString;
+                if (global::System.String.IsNullOrWhiteSpace(__content))
+                {{
+                    continue;
+                }}
+
+                var __streamedResponse = {jsonSerializer.GenerateDeserializeCall("__content", endPoint.SuccessResponse.Type, endPoint.Settings.JsonSerializerContext)} ??
+                                       throw new global::{endPoint.GlobalSettings.Namespace}.ApiException(
+                                           message: $""Response deserialization failed for \""{{__content}}\"" "",
+                                           statusCode: __response.StatusCode)
+                                       {{
+                                           ResponseBody = __content,
+                                           ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                               __response.Headers,
+                                               h => h.Key,
+                                               h => h.Value),
+                                       }};
+
+                yield return __streamedResponse;"
+                : @"                continue;";
+
+            return $@"
+            try
+            {{
+                __response.EnsureSuccessStatusCode();
+            }}
+            catch (global::System.Net.Http.HttpRequestException __ex)
+            {{
+                string? __content = null;
+                try
+                {{
+                    __content = await __response.Content.ReadAsStringAsync(
+#if NET5_0_OR_GREATER
+                        {cancellationTokenVariableName}
+#endif
+                    ).ConfigureAwait(false);
+                }}
+                catch (global::System.Exception)
+                {{
+                }}
+
+                throw new global::{endPoint.GlobalSettings.Namespace}.ApiException(
+                    message: __content ?? __response.ReasonPhrase ?? string.Empty,
+                    innerException: __ex,
+                    statusCode: __response.StatusCode)
+                {{
+                    ResponseBody = __content,
+                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                        __response.Headers,
+                        h => h.Key,
+                        h => h.Value),
+                }};
+            }}
+
+            using var __stream = await __response.Content.ReadAsStreamAsync(
+#if NET5_0_OR_GREATER
+                {cancellationTokenVariableName}
+#endif
+            ).ConfigureAwait(false);
+
+            await foreach (var __frame in global::{endPoint.GlobalSettings.Namespace}.AutoSDKAwsEventStreamReader
+                .ReadAsync(__stream, {cancellationTokenVariableName}).ConfigureAwait(false))
+            {{
+                if (__frame.IsException || __frame.IsError)
+                {{
+                    throw new global::{endPoint.GlobalSettings.Namespace}.AutoSDKAwsEventStreamException(
+                        message: __frame.ErrorMessage
+                            ?? __frame.ErrorCode
+                            ?? __frame.ExceptionType
+                            ?? ""AWS EventStream returned an exception/error frame."",
+                        frame: __frame);
+                }}
+
+{deserializeBlock}
+            }}
+ ";
+        }
+
+        // If a response range is defined using an explicit code, the explicit code definition takes precedence over the range definition for that code
         var orderedErrorResponses = endPoint.ErrorResponses
             .Where(x => x is { IsPattern: false, IsDefault: false })
             .Concat(endPoint.ErrorResponses.Where(x => x is { IsPattern: true, IsDefault: false }))

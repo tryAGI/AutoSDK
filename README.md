@@ -99,6 +99,11 @@ Cloud-hosted APIs often describe only bearer or API-key auth in OpenAPI even whe
 
 The generated helper includes provider metadata, environment-backed cloud credentials, AWS SigV4 signing with region/service/session-token support, Azure API-key and bearer-token signers that can be backed by `TokenCredential`, Tencent TC3-HMAC-SHA256 signing, and an `AutoSDKHook` adapter for signing after request serialization and before send. These helpers mutate `HttpRequestMessage` without replacing existing generated bearer/API-key constructors for providers that do not opt in. The helper class name can be configured with `--cloud-signing-helper-class-name` or `<AutoSDK_CloudSigningHelperClassName>`.
 
+## AWS EventStream Streaming Responses
+Bedrock-style APIs return chunked binary frames with `application/vnd.amazon.eventstream` content type — distinct from SSE or NDJSON. AutoSDK now detects this mime type alongside the existing SSE/NDJSON paths and generates an `IAsyncEnumerable<TEvent>` method backed by a generated `AutoSDKAwsEventStreamReader` frame parser. The reader exposes prelude/header/payload decoding for the AWS EventStream binary protocol (string, byte-array, bool, byte, short, int, long, timestamp, UUID header value types) without referencing the AWS SDK packages, so the path stays trim/AOT-friendly.
+
+Each decoded `AutoSDKAwsEventStreamFrame` exposes the standard `:message-type`, `:event-type`, `:content-type` headers plus `:exception-type` / `:error-code` / `:error-message` headers. Exception or error frames raise `AutoSDKAwsEventStreamException` (with the offending frame attached) before the consumer enumerates further, matching how the AWS SDKs surface modeled exceptions inline. The existing `<Method>AsStreamAsync` raw-stream method is preserved for callers who want to layer the AWS SDK's own EventStream decoder for CRC validation or unknown frame inspection.
+
 ## Vendor Extension Compatibility
 When `AutoSDK_UseExtensionNaming` or `--use-extension-naming` is enabled, AutoSDK consumes a curated set of third-party SDK metadata instead of treating every vendor extension as noise.
 

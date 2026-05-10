@@ -508,6 +508,59 @@ paths:
     }
 
     [TestMethod]
+    public void AwsEventStreamResponse_DetectsStreamFormatAndGeneratesFrameReader()
+    {
+        var settings = DefaultSettings;
+        var data = AutoSDK.Generation.Data.Prepare(((@"openapi: 3.0.1
+info:
+  title: BedrockLike
+  version: 1.0.0
+paths:
+  /v1/invoke-stream:
+    post:
+      operationId: invokeStream
+      responses:
+        '200':
+          description: OK
+          content:
+            application/vnd.amazon.eventstream:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: string
+", settings), GlobalSettings: settings));
+        var endPoint = data.Methods.Single();
+
+        endPoint.StreamFormat.Should().Be(StreamFormat.AwsEventStream);
+
+        var generatedCode = Sources.GenerateEndPoint(endPoint);
+
+        // Method body iterates frames via the generated reader and dispatches on
+        // exception/error frames before yielding deserialized payloads.
+        generatedCode.Should().Contain("AutoSDKAwsEventStreamReader");
+        generatedCode.Should().Contain(".ReadAsync(__stream");
+        generatedCode.Should().Contain("if (__frame.IsException || __frame.IsError)");
+        generatedCode.Should().Contain("throw new global::G.AutoSDKAwsEventStreamException");
+        generatedCode.Should().Contain("__frame.PayloadAsString");
+    }
+
+    [TestMethod]
+    public void AwsEventStreamSupport_GeneratesFrameReaderHelpers()
+    {
+        var supportSource = Sources.AwsEventStreamSupport(DefaultSettings).Text;
+
+        supportSource.Should().Contain("public sealed class AutoSDKAwsEventStreamFrame");
+        supportSource.Should().Contain("public static class AutoSDKAwsEventStreamReader");
+        supportSource.Should().Contain("public sealed class AutoSDKAwsEventStreamException");
+        supportSource.Should().Contain("ReadAsync(");
+        supportSource.Should().Contain("ParseHeaders(");
+        // Header type identifiers for the AWS EventStream binary protocol.
+        supportSource.Should().Contain("TypeString = 7");
+        supportSource.Should().Contain("TypeUuid = 9");
+    }
+
+    [TestMethod]
     public void NdjsonStream_Catch_PopulatesResponseBody()
     {
         var settings = DefaultSettings;

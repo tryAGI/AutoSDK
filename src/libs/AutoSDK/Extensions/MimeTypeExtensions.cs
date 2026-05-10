@@ -34,6 +34,11 @@ public static class MimeTypeExtensions
         return mimeType.IsMimeType("text/event-stream");
     }
 
+    public static bool IsAwsEventStreamMimeType(this string? mimeType)
+    {
+        return mimeType.IsMimeType("application/vnd.amazon.eventstream");
+    }
+
     public static bool IsBinaryResponseMimeType(this string? mimeType)
     {
         var normalizedMimeType = mimeType.NormalizeMimeType();

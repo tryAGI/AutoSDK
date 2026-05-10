@@ -6,4 +6,5 @@ public enum StreamFormat
     Binary,
     Ndjson,
     ServerSentEvents,
+    AwsEventStream,
 }
