@@ -122,6 +122,22 @@ public class RequestOptionsGenerationTests
     }
 
     [TestMethod]
+    public void GenerateOptionsSupport_EmitsAuthorizationProviderHookSurface()
+    {
+        var supportSource = Sources.OptionsSupport(DefaultSettings).Text;
+
+        supportSource.Should().Contain("public interface IAutoSDKAuthorizationProvider");
+        supportSource.Should().Contain("ResolveAsync(");
+        supportSource.Should().Contain("public sealed class AutoSDKAuthorizationProviderHook");
+        supportSource.Should().Contain("UseAuthorizationProvider(");
+        supportSource.Should().Contain("AuthorizationProvider { get; set; }");
+        supportSource.Should().Contain("public readonly struct AutoSDKAuthorizationValue");
+        supportSource.Should().Contain("AutoSDKAuthorizationValue Bearer(string token)");
+        supportSource.Should().Contain("AutoSDKAuthorizationValue ApiKeyHeader(string name, string value)");
+        supportSource.Should().Contain("private static void ApplyAuthorization(");
+    }
+
+    [TestMethod]
     public void GenerateRetrySupport_EmitsRetryAfterBackoffJitterAndRateLimitResetHandling()
     {
         var supportSource = Sources.OptionsSupport(DefaultSettings).Text;

@@ -55,6 +55,156 @@ namespace IXSocial
             Hooks.Add(hook ?? throw new global::System.ArgumentNullException(nameof(hook)));
             return this;
         }
+
+        /// <summary>
+        /// Optional per-request authorization provider invoked before each request is sent.
+        /// Set this when the client is registered as a singleton in DI but each call needs
+        /// a fresh credential resolved from a provider, secret-store, or session — instead
+        /// of mutating the shared <c>Authorizations</c> list at construction time.
+        /// </summary>
+        public global::IXSocial.IAutoSDKAuthorizationProvider? AuthorizationProvider { get; set; }
+
+        /// <summary>
+        /// Convenience helper that registers <see cref="AutoSDKAuthorizationProviderHook"/>
+        /// using <paramref name="provider"/> so request-level auth is resolved without
+        /// touching shared client state.
+        /// </summary>
+        /// <param name="provider"></param>
+        public global::IXSocial.AutoSDKClientOptions UseAuthorizationProvider(
+            global::IXSocial.IAutoSDKAuthorizationProvider provider)
+        {
+            AuthorizationProvider = provider ?? throw new global::System.ArgumentNullException(nameof(provider));
+            if (Hooks.Find(static x => x is global::IXSocial.AutoSDKAuthorizationProviderHook) == null)
+            {
+                Hooks.Add(new global::IXSocial.AutoSDKAuthorizationProviderHook());
+            }
+
+            return this;
+        }
+    }
+
+    /// <summary>
+    /// A request-level authorization value supplied by <see cref="IAutoSDKAuthorizationProvider"/>.
+    /// Mirrors the runtime fields the SDK applies for HTTP / OAuth2 / API-key auth without
+    /// requiring the consumer to construct the generated <c>EndPointAuthorization</c> type.
+    /// </summary>
+    public readonly struct AutoSDKAuthorizationValue
+    {
+        /// <summary>
+        /// Initializes a new <see cref="AutoSDKAuthorizationValue"/>.
+        /// </summary>
+        /// <param name="value"></param>
+        /// <param name="scheme"></param>
+        /// <param name="headerName"></param>
+        /// <param name="location"></param>
+        /// <param name="type"></param>
+        public AutoSDKAuthorizationValue(
+            string value,
+            string scheme = "Bearer",
+            string? headerName = null,
+            string location = "Header",
+            string type = "Http")
+        {
+            Value = value ?? string.Empty;
+            Scheme = string.IsNullOrWhiteSpace(scheme) ? "Bearer" : scheme;
+            HeaderName = headerName ?? string.Empty;
+            Location = string.IsNullOrWhiteSpace(location) ? "Header" : location;
+            Type = string.IsNullOrWhiteSpace(type) ? "Http" : type;
+        }
+
+        /// <summary>The credential value (token, API key, etc.).</summary>
+        public string Value { get; }
+
+        /// <summary>The HTTP authorization scheme — typically <c>Bearer</c>, <c>Basic</c>, or <c>Token</c>.</summary>
+        public string Scheme { get; }
+
+        /// <summary>The custom header name when <see cref="Type"/> is <c>ApiKey</c>; ignored for HTTP/OAuth2 auth.</summary>
+        public string HeaderName { get; }
+
+        /// <summary>The credential location — <c>Header</c>, <c>Query</c>, or <c>Cookie</c>.</summary>
+        public string Location { get; }
+
+        /// <summary>The auth type — <c>Http</c>, <c>OAuth2</c>, <c>OpenIdConnect</c>, or <c>ApiKey</c>.</summary>
+        public string Type { get; }
+
+        /// <summary>Convenience factory for a Bearer token.</summary>
+        public static global::IXSocial.AutoSDKAuthorizationValue Bearer(string token) => new(value: token, scheme: "Bearer");
+
+        /// <summary>Convenience factory for an API-key header.</summary>
+        public static global::IXSocial.AutoSDKAuthorizationValue ApiKeyHeader(string name, string value) =>
+            new(value: value, headerName: name, location: "Header", type: "ApiKey");
+    }
+
+    /// <summary>
+    /// Resolves request-level authorization values without mutating the shared client
+    /// authorization list. Implementations should be safe to invoke concurrently —
+    /// the hook calls them once per outgoing request.
+    /// </summary>
+    public interface IAutoSDKAuthorizationProvider
+    {
+        /// <summary>
+        /// Returns one or more <see cref="AutoSDKAuthorizationValue"/> values to apply to
+        /// the current request, or an empty list / <c>null</c> to leave the request as-is.
+        /// </summary>
+        /// <param name="context"></param>
+        global::System.Threading.Tasks.Task<global::System.Collections.Generic.IReadOnlyList<global::IXSocial.AutoSDKAuthorizationValue>?> ResolveAsync(
+            global::IXSocial.AutoSDKHookContext context);
+    }
+
+    /// <summary>
+    /// Built-in <see cref="IAutoSDKHook"/> that consults
+    /// <see cref="AutoSDKClientOptions.AuthorizationProvider"/> before every outgoing
+    /// request and stamps the resolved values onto the <see cref="global::System.Net.Http.HttpRequestMessage"/>.
+    /// </summary>
+    public sealed class AutoSDKAuthorizationProviderHook : global::IXSocial.AutoSDKHook
+    {
+        /// <inheritdoc />
+        public override async global::System.Threading.Tasks.Task OnBeforeRequestAsync(
+            global::IXSocial.AutoSDKHookContext context)
+        {
+            context = context ?? throw new global::System.ArgumentNullException(nameof(context));
+
+            var provider = context.ClientOptions?.AuthorizationProvider;
+            if (provider == null || context.Request == null)
+            {
+                return;
+            }
+
+            var resolved = await provider.ResolveAsync(context).ConfigureAwait(false);
+            if (resolved == null || resolved.Count == 0)
+            {
+                return;
+            }
+
+            for (var index = 0; index < resolved.Count; index++)
+            {
+                ApplyAuthorization(context.Request, resolved[index]);
+            }
+        }
+
+        private static void ApplyAuthorization(
+            global::System.Net.Http.HttpRequestMessage request,
+            global::IXSocial.AutoSDKAuthorizationValue authorization)
+        {
+            switch (authorization.Type)
+            {
+                case "Http":
+                case "OAuth2":
+                case "OpenIdConnect":
+                    request.Headers.Authorization = new global::System.Net.Http.Headers.AuthenticationHeaderValue(
+                        scheme: authorization.Scheme,
+                        parameter: authorization.Value);
+                    break;
+                case "ApiKey":
+                    if (string.Equals(authorization.Location, "Header", global::System.StringComparison.OrdinalIgnoreCase) &&
+                        !string.IsNullOrEmpty(authorization.HeaderName))
+                    {
+                        request.Headers.Remove(authorization.HeaderName);
+                        request.Headers.TryAddWithoutValidation(authorization.HeaderName, authorization.Value ?? string.Empty);
+                    }
+                    break;
+            }
+        }
     }
 
     /// <summary>

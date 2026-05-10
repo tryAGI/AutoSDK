@@ -83,6 +83,11 @@ Dataset-backed evaluation APIs usually need an experiment loop around raw datase
 
 The generated runner accepts dataset items, an async task delegate, scorer delegates, optional experiment creation, and optional batch publishing for experiment items, scores, or feedback. It supports bounded concurrency, cancellation, trace/span/run id preservation, item-level failure capture, aggregate score/exception summaries, and batch-size controls while keeping raw endpoint methods intact. The helper class name can be configured with `--evaluation-workflow-helper-class-name` or `<AutoSDK_EvaluationWorkflowHelperClassName>`.
 
+## Per-Request Authorization Provider
+Singleton SDK clients that resolve credentials per call (for key rotation, multi-tenant routing, or session-scoped tokens) used to either bypass the generated auth pipeline with a `DelegatingHandler` or race on the shared `Authorizations` list. The generated `AutoSDKClientOptions` now exposes `IAutoSDKAuthorizationProvider` plus a built-in `AutoSDKAuthorizationProviderHook`. Implement the provider once, register it with `client.Options.UseAuthorizationProvider(provider)`, and the hook resolves a fresh value per request — without mutating shared client state.
+
+The provider returns `IReadOnlyList<AutoSDKAuthorizationValue>` (use `AutoSDKAuthorizationValue.Bearer(token)` or `AutoSDKAuthorizationValue.ApiKeyHeader(name, value)` factories) and can read from any per-call source: `IServiceProvider`, secret stores, async token caches, etc. Existing constructor-based `Authorizations` continue to work for callers that don't need per-request resolution.
+
 ## Cloud Request Signing Helpers
 Cloud-hosted APIs often describe only bearer or API-key auth in OpenAPI even when official clients require request signing. Enable `--generate-cloud-signing-helpers` in the CLI, or set `<AutoSDK_GenerateCloudSigningHelpers>true</AutoSDK_GenerateCloudSigningHelpers>` for the source generator, to emit a `CloudRequestSigner` helper factory.
 
