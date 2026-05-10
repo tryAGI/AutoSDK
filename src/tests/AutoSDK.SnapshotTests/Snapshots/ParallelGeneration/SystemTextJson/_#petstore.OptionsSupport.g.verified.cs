@@ -164,8 +164,24 @@ namespace petstore
         {
             context = context ?? throw new global::System.ArgumentNullException(nameof(context));
 
+            if (context.Request == null)
+            {
+                return;
+            }
+
+            var perRequest = context.RequestOptions?.Authorizations;
+            if (perRequest != null && perRequest.Count > 0)
+            {
+                for (var index = 0; index < perRequest.Count; index++)
+                {
+                    ApplyAuthorization(context.Request, perRequest[index]);
+                }
+
+                return;
+            }
+
             var provider = context.ClientOptions?.AuthorizationProvider;
-            if (provider == null || context.Request == null)
+            if (provider == null)
             {
                 return;
             }
@@ -238,6 +254,15 @@ namespace petstore
         /// Overrides response buffering for this request when set.
         /// </summary>
         public bool? ReadResponseAsString { get; set; }
+
+        /// <summary>
+        /// Optional per-request authorization values. When non-empty, the built-in
+        /// <see cref="AutoSDKAuthorizationProviderHook"/> applies these instead of consulting
+        /// <see cref="AutoSDKClientOptions.AuthorizationProvider"/> for this request only.
+        /// Useful for multi-tenant routing or "act-as" admin tooling that needs a different
+        /// credential per call without mutating shared client state.
+        /// </summary>
+        public global::System.Collections.Generic.IReadOnlyList<global::petstore.AutoSDKAuthorizationValue>? Authorizations { get; set; }
     }
 
     /// <summary>

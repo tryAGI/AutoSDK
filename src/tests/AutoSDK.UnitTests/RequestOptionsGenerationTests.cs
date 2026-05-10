@@ -138,6 +138,20 @@ public class RequestOptionsGenerationTests
     }
 
     [TestMethod]
+    public void GenerateOptionsSupport_AuthorizationProviderHook_PrefersPerRequestAuthorizations()
+    {
+        var supportSource = Sources.OptionsSupport(DefaultSettings).Text;
+
+        // Per-request slot exists on AutoSDKRequestOptions.
+        supportSource.Should().Contain("Authorizations { get; set; }");
+        supportSource.Should().Contain("global::System.Collections.Generic.IReadOnlyList<global::G.AutoSDKAuthorizationValue>? Authorizations");
+
+        // Hook reads per-request override before falling back to the client-level provider.
+        supportSource.Should().Contain("var perRequest = context.RequestOptions?.Authorizations;");
+        supportSource.Should().Contain("if (perRequest != null && perRequest.Count > 0)");
+    }
+
+    [TestMethod]
     public void GenerateRetrySupport_EmitsRetryAfterBackoffJitterAndRateLimitResetHandling()
     {
         var supportSource = Sources.OptionsSupport(DefaultSettings).Text;

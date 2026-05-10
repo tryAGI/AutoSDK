@@ -88,6 +88,8 @@ Singleton SDK clients that resolve credentials per call (for key rotation, multi
 
 The provider returns `IReadOnlyList<AutoSDKAuthorizationValue>` (use `AutoSDKAuthorizationValue.Bearer(token)` or `AutoSDKAuthorizationValue.ApiKeyHeader(name, value)` factories) and can read from any per-call source: `IServiceProvider`, secret stores, async token caches, etc. Existing constructor-based `Authorizations` continue to work for callers that don't need per-request resolution.
 
+For one-off "act-as" / multi-tenant routing scenarios, `AutoSDKRequestOptions.Authorizations` accepts a per-call list of `AutoSDKAuthorizationValue`. When non-empty, the hook applies those values directly and skips the client-level provider. The precedence order is **per-request `Authorizations` → client `AuthorizationProvider` → constructor-time `Authorizations` list** — the first non-empty source wins for a given outgoing request.
+
 ## Cloud Request Signing Helpers
 Cloud-hosted APIs often describe only bearer or API-key auth in OpenAPI even when official clients require request signing. Enable `--generate-cloud-signing-helpers` in the CLI, or set `<AutoSDK_GenerateCloudSigningHelpers>true</AutoSDK_GenerateCloudSigningHelpers>` for the source generator, to emit a `CloudRequestSigner` helper factory.
 
