@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public string PickUserFamilyNameVariant1() => IsUserFamilyNameVariant1
+            ? UserFamilyNameVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'UserFamilyNameVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<string>? UserFamilyNameVariant2 { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = UserFamilyNameVariant2;
             return IsUserFamilyNameVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<string> PickUserFamilyNameVariant2() => IsUserFamilyNameVariant2
+            ? UserFamilyNameVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'UserFamilyNameVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

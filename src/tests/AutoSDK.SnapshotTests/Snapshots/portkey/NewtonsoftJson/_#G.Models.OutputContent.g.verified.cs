@@ -41,6 +41,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.OutputText PickOutputText() => IsOutputText
+            ? OutputText!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OutputText' but the value was {ToString()}.");
+
+        /// <summary>
         /// A refusal from the model.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -69,6 +76,13 @@ namespace G
             value = Refusal;
             return IsRefusal;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.Refusal PickRefusal() => IsRefusal
+            ? Refusal!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Refusal' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

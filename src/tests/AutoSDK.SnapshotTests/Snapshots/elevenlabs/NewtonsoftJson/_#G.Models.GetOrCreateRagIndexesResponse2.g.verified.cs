@@ -48,6 +48,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.RAGIndexBatchSuccessfulResponseModel PickSuccess() => IsSuccess
+            ? Success!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Success' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.BatchFailureResponseModel? Failure { get; init; }
 #else
@@ -74,6 +81,13 @@ namespace G
             value = Failure;
             return IsFailure;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.BatchFailureResponseModel PickFailure() => IsFailure
+            ? Failure!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Failure' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

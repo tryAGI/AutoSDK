@@ -46,6 +46,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.SearchClientsParams PickSearchClients() => IsSearchClients
+            ? SearchClients!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SearchClients' but the value was {ToString()}.");
+
+        /// <summary>
         /// List clients ordered by most recently updated, with an optional limit.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -74,6 +81,13 @@ namespace G
             value = ListClients;
             return IsListClients;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ListClientsParams PickListClients() => IsListClients
+            ? ListClients!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ListClients' but the value was {ToString()}.");
 
         /// <summary>
         /// Look up a client by their exact phone number.
@@ -106,6 +120,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.GetClientByPhoneParams PickGetClientByPhone() => IsGetClientByPhone
+            ? GetClientByPhone!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'GetClientByPhone' but the value was {ToString()}.");
+
+        /// <summary>
         /// Create a new client in the system.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -136,6 +157,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.CreateClientParams PickCreateClient() => IsCreateClient
+            ? CreateClient!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CreateClient' but the value was {ToString()}.");
+
+        /// <summary>
         /// Update an existing client's information.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -164,6 +192,13 @@ namespace G
             value = UpdateClient;
             return IsUpdateClient;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.UpdateClientParams PickUpdateClient() => IsUpdateClient
+            ? UpdateClient!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'UpdateClient' but the value was {ToString()}.");
 
         /// <summary>
         /// Delete an existing client from the system.
@@ -198,6 +233,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.DeleteClientParams PickDeleteClient() => IsDeleteClient
+            ? DeleteClient!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'DeleteClient' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ListStaffParams? ListStaff { get; init; }
 #else
@@ -224,6 +266,13 @@ namespace G
             value = ListStaff;
             return IsListStaff;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ListStaffParams PickListStaff() => IsListStaff
+            ? ListStaff!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ListStaff' but the value was {ToString()}.");
 
         /// <summary>
         /// Create a new staff member in the system.
@@ -256,6 +305,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.CreateStaffParams PickCreateStaff() => IsCreateStaff
+            ? CreateStaff!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CreateStaff' but the value was {ToString()}.");
+
+        /// <summary>
         /// Update an existing staff member's information.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -284,6 +340,13 @@ namespace G
             value = UpdateStaff;
             return IsUpdateStaff;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.UpdateStaffParams PickUpdateStaff() => IsUpdateStaff
+            ? UpdateStaff!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'UpdateStaff' but the value was {ToString()}.");
 
         /// <summary>
         /// Delete an existing staff member from the system.
@@ -318,6 +381,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.DeleteStaffParams PickDeleteStaff() => IsDeleteStaff
+            ? DeleteStaff!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'DeleteStaff' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ListAssetsParams? ListAssets { get; init; }
 #else
@@ -344,6 +414,13 @@ namespace G
             value = ListAssets;
             return IsListAssets;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ListAssetsParams PickListAssets() => IsListAssets
+            ? ListAssets!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ListAssets' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -378,6 +455,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.CreateAssetParams PickCreateAsset() => IsCreateAsset
+            ? CreateAsset!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CreateAsset' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.UpdateAssetParams? UpdateAsset { get; init; }
 #else
@@ -404,6 +488,13 @@ namespace G
             value = UpdateAsset;
             return IsUpdateAsset;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.UpdateAssetParams PickUpdateAsset() => IsUpdateAsset
+            ? UpdateAsset!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'UpdateAsset' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -438,6 +529,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.DeleteAssetParams PickDeleteAsset() => IsDeleteAsset
+            ? DeleteAsset!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'DeleteAsset' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ListServicesParams? ListServices { get; init; }
 #else
@@ -464,6 +562,13 @@ namespace G
             value = ListServices;
             return IsListServices;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ListServicesParams PickListServices() => IsListServices
+            ? ListServices!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ListServices' but the value was {ToString()}.");
 
         /// <summary>
         /// Create a new service in the system.
@@ -496,6 +601,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.CreateServiceParams PickCreateService() => IsCreateService
+            ? CreateService!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CreateService' but the value was {ToString()}.");
+
+        /// <summary>
         /// Update an existing service's information.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -524,6 +636,13 @@ namespace G
             value = UpdateService;
             return IsUpdateService;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.UpdateServiceParams PickUpdateService() => IsUpdateService
+            ? UpdateService!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'UpdateService' but the value was {ToString()}.");
 
         /// <summary>
         /// Delete an existing service from the system.
@@ -558,6 +677,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.DeleteServiceParams PickDeleteService() => IsDeleteService
+            ? DeleteService!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'DeleteService' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ListProductsParams? ListProducts { get; init; }
 #else
@@ -584,6 +710,13 @@ namespace G
             value = ListProducts;
             return IsListProducts;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ListProductsParams PickListProducts() => IsListProducts
+            ? ListProducts!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ListProducts' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -618,6 +751,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.CreateProductParams PickCreateProduct() => IsCreateProduct
+            ? CreateProduct!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CreateProduct' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.UpdateProductParams? UpdateProduct { get; init; }
 #else
@@ -644,6 +784,13 @@ namespace G
             value = UpdateProduct;
             return IsUpdateProduct;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.UpdateProductParams PickUpdateProduct() => IsUpdateProduct
+            ? UpdateProduct!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'UpdateProduct' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -678,6 +825,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.DeleteProductParams PickDeleteProduct() => IsDeleteProduct
+            ? DeleteProduct!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'DeleteProduct' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CheckServiceAvailabilityParams? CheckServiceAvailability { get; init; }
 #else
@@ -704,6 +858,13 @@ namespace G
             value = CheckServiceAvailability;
             return IsCheckServiceAvailability;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.CheckServiceAvailabilityParams PickCheckServiceAvailability() => IsCheckServiceAvailability
+            ? CheckServiceAvailability!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CheckServiceAvailability' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -738,6 +899,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.CreateClientAppointmentParams PickCreateClientAppointment() => IsCreateClientAppointment
+            ? CreateClientAppointment!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CreateClientAppointment' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.GetClientAppointmentsParams? GetClientAppointments { get; init; }
 #else
@@ -764,6 +932,13 @@ namespace G
             value = GetClientAppointments;
             return IsGetClientAppointments;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.GetClientAppointmentsParams PickGetClientAppointments() => IsGetClientAppointments
+            ? GetClientAppointments!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'GetClientAppointments' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -798,6 +973,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.ListCalendarEventsParams PickListCalendarEvents() => IsListCalendarEvents
+            ? ListCalendarEvents!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ListCalendarEvents' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.UpdateCalendarEventParams? UpdateCalendarEvent { get; init; }
 #else
@@ -824,6 +1006,13 @@ namespace G
             value = UpdateCalendarEvent;
             return IsUpdateCalendarEvent;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.UpdateCalendarEventParams PickUpdateCalendarEvent() => IsUpdateCalendarEvent
+            ? UpdateCalendarEvent!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'UpdateCalendarEvent' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -858,6 +1047,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.DeleteCalendarEventParams PickDeleteCalendarEvent() => IsDeleteCalendarEvent
+            ? DeleteCalendarEvent!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'DeleteCalendarEvent' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ListRentalServicesParams? ListRentalServices { get; init; }
 #else
@@ -884,6 +1080,13 @@ namespace G
             value = ListRentalServices;
             return IsListRentalServices;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ListRentalServicesParams PickListRentalServices() => IsListRentalServices
+            ? ListRentalServices!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ListRentalServices' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -918,6 +1121,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.CheckRentalAvailabilityParams PickCheckRentalAvailability() => IsCheckRentalAvailability
+            ? CheckRentalAvailability!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CheckRentalAvailability' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CreateRentalBookingParams? CreateRentalBooking { get; init; }
 #else
@@ -944,6 +1154,13 @@ namespace G
             value = CreateRentalBooking;
             return IsCreateRentalBooking;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.CreateRentalBookingParams PickCreateRentalBooking() => IsCreateRentalBooking
+            ? CreateRentalBooking!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CreateRentalBooking' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

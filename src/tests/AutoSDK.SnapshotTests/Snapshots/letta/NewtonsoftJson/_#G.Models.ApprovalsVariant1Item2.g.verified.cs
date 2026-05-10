@@ -48,6 +48,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.ApprovalReturn PickApproval() => IsApproval
+            ? Approval!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Approval' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.LettaSchemasLettaMessageToolReturn? Tool { get; init; }
 #else
@@ -74,6 +81,13 @@ namespace G
             value = Tool;
             return IsTool;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.LettaSchemasLettaMessageToolReturn PickTool() => IsTool
+            ? Tool!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Tool' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.RetellLLMResponseVariant1 PickRetellLLMResponseVariant1() => IsRetellLLMResponseVariant1
+            ? RetellLLMResponseVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'RetellLLMResponseVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.RetellLlmRequest? LlmRequest { get; init; }
 #else
@@ -73,6 +80,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.RetellLlmRequest PickLlmRequest() => IsLlmRequest
+            ? LlmRequest!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'LlmRequest' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.RetellLLMResponseVariant3? RetellLLMResponseVariant3 { get; init; }
 #else
@@ -99,6 +113,13 @@ namespace G
             value = RetellLLMResponseVariant3;
             return IsRetellLLMResponseVariant3;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.RetellLLMResponseVariant3 PickRetellLLMResponseVariant3() => IsRetellLLMResponseVariant3
+            ? RetellLLMResponseVariant3!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'RetellLLMResponseVariant3' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

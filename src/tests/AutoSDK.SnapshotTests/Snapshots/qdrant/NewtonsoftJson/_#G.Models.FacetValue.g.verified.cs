@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public string PickFacetValueVariant1() => IsFacetValueVariant1
+            ? FacetValueVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FacetValueVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public long? FacetValueVariant2 { get; init; }
 #else
@@ -73,6 +80,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public long PickFacetValueVariant2() => IsFacetValueVariant2
+            ? FacetValueVariant2!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FacetValueVariant2' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public bool? FacetValueVariant3 { get; init; }
 #else
@@ -99,6 +113,13 @@ namespace G
             value = FacetValueVariant3;
             return IsFacetValueVariant3;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool PickFacetValueVariant3() => IsFacetValueVariant3
+            ? FacetValueVariant3!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FacetValueVariant3' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

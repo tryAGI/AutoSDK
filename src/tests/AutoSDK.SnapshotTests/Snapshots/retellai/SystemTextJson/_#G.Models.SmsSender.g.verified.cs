@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.SmsSenderVariant1 PickSmsSenderVariant1() => IsSmsSenderVariant1
+            ? SmsSenderVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SmsSenderVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.SmsSenderVariant2? SmsSenderVariant2 { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = SmsSenderVariant2;
             return IsSmsSenderVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.SmsSenderVariant2 PickSmsSenderVariant2() => IsSmsSenderVariant2
+            ? SmsSenderVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SmsSenderVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

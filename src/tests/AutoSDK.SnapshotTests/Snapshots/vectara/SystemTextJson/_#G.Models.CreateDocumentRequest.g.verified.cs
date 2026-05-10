@@ -48,6 +48,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.CoreDocument PickCore() => IsCore
+            ? Core!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Core' but the value was {ToString()}.");
+
+        /// <summary>
         /// A document with layout features.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -76,6 +83,13 @@ namespace G
             value = Structured;
             return IsStructured;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.StructuredDocument PickStructured() => IsStructured
+            ? Structured!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Structured' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.MessagesRequestContextManagementEditsItemsOneOf1Keep0 PickMessagesRequestContextManagementEditsItemsOneOf1Keep0() => IsMessagesRequestContextManagementEditsItemsOneOf1Keep0
+            ? MessagesRequestContextManagementEditsItemsOneOf1Keep0!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesRequestContextManagementEditsItemsOneOf1Keep0' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.MessagesRequestContextManagementEditsItemsOneOf1Keep1? MessagesRequestContextManagementEditsItemsOneOf1Keep1 { get; init; }
 #else
@@ -73,6 +80,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.MessagesRequestContextManagementEditsItemsOneOf1Keep1 PickMessagesRequestContextManagementEditsItemsOneOf1Keep1() => IsMessagesRequestContextManagementEditsItemsOneOf1Keep1
+            ? MessagesRequestContextManagementEditsItemsOneOf1Keep1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesRequestContextManagementEditsItemsOneOf1Keep1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.MessagesRequestContextManagementEditsItemsOneOf1Keep2? MessagesRequestContextManagementEditsItemsOneOf1Keep2 { get; init; }
 #else
@@ -99,6 +113,13 @@ namespace G
             value = MessagesRequestContextManagementEditsItemsOneOf1Keep2;
             return IsMessagesRequestContextManagementEditsItemsOneOf1Keep2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.MessagesRequestContextManagementEditsItemsOneOf1Keep2 PickMessagesRequestContextManagementEditsItemsOneOf1Keep2() => IsMessagesRequestContextManagementEditsItemsOneOf1Keep2
+            ? MessagesRequestContextManagementEditsItemsOneOf1Keep2!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesRequestContextManagementEditsItemsOneOf1Keep2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

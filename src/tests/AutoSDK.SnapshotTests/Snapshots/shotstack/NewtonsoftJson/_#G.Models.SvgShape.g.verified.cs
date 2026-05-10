@@ -48,6 +48,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.SvgRectangleShape PickRectangle() => IsRectangle
+            ? Rectangle!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Rectangle' but the value was {ToString()}.");
+
+        /// <summary>
         /// A perfect circle shape defined by its radius.<br/>
         /// The circle is centered at the shape's position.
         /// </summary>
@@ -77,6 +84,13 @@ namespace G
             value = Circle;
             return IsCircle;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.SvgCircleShape PickCircle() => IsCircle
+            ? Circle!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Circle' but the value was {ToString()}.");
 
         /// <summary>
         /// An ellipse (oval) shape with separate horizontal and vertical radii.<br/>
@@ -110,6 +124,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.SvgEllipseShape PickEllipse() => IsEllipse
+            ? Ellipse!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Ellipse' but the value was {ToString()}.");
+
+        /// <summary>
         /// A straight line shape with a specified length and thickness.<br/>
         /// The line is drawn horizontally by default and can be rotated using transform.
         /// </summary>
@@ -139,6 +160,13 @@ namespace G
             value = Line;
             return IsLine;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.SvgLineShape PickLine() => IsLine
+            ? Line!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Line' but the value was {ToString()}.");
 
         /// <summary>
         /// A regular polygon shape with a specified number of sides.<br/>
@@ -173,6 +201,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.SvgPolygonShape PickPolygon() => IsPolygon
+            ? Polygon!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Polygon' but the value was {ToString()}.");
+
+        /// <summary>
         /// A star shape with a specified number of points.<br/>
         /// The star is defined by outer and inner radii, creating the characteristic<br/>
         /// pointed appearance.
@@ -203,6 +238,13 @@ namespace G
             value = Star;
             return IsStar;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.SvgStarShape PickStar() => IsStar
+            ? Star!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Star' but the value was {ToString()}.");
 
         /// <summary>
         /// An arrow shape pointing to the right by default.<br/>
@@ -236,6 +278,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.SvgArrowShape PickArrow() => IsArrow
+            ? Arrow!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Arrow' but the value was {ToString()}.");
+
+        /// <summary>
         /// A heart shape commonly used for love/like icons.<br/>
         /// The heart is defined by a single size parameter.
         /// </summary>
@@ -265,6 +314,13 @@ namespace G
             value = Heart;
             return IsHeart;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.SvgHeartShape PickHeart() => IsHeart
+            ? Heart!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Heart' but the value was {ToString()}.");
 
         /// <summary>
         /// A cross or plus shape with equal or different arm lengths.<br/>
@@ -298,6 +354,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.SvgCrossShape PickCross() => IsCross
+            ? Cross!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Cross' but the value was {ToString()}.");
+
+        /// <summary>
         /// A ring (donut/annulus) shape - a circle with a circular hole in the center.<br/>
         /// The ring is defined by outer and inner radii.
         /// </summary>
@@ -327,6 +390,13 @@ namespace G
             value = Ring;
             return IsRing;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.SvgRingShape PickRing() => IsRing
+            ? Ring!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Ring' but the value was {ToString()}.");
 
         /// <summary>
         /// A custom shape defined by SVG path data.<br/>
@@ -369,6 +439,13 @@ namespace G
             value = Path;
             return IsPath;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.SvgPathShape PickPath() => IsPath
+            ? Path!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Path' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

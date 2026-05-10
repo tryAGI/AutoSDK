@@ -48,6 +48,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.EndCallToolResultModel PickEndCallSuccess() => IsEndCallSuccess
+            ? EndCallSuccess!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'EndCallSuccess' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.LanguageDetectionToolResultModel? LanguageDetectionSuccess { get; init; }
 #else
@@ -74,6 +81,13 @@ namespace G
             value = LanguageDetectionSuccess;
             return IsLanguageDetectionSuccess;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.LanguageDetectionToolResultModel PickLanguageDetectionSuccess() => IsLanguageDetectionSuccess
+            ? LanguageDetectionSuccess!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'LanguageDetectionSuccess' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -108,6 +122,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.TransferToAgentToolResultSuccessModel PickTransferToAgentSuccess() => IsTransferToAgentSuccess
+            ? TransferToAgentSuccess!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'TransferToAgentSuccess' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.TransferToAgentToolResultErrorModel? TransferToAgentError { get; init; }
 #else
@@ -134,6 +155,13 @@ namespace G
             value = TransferToAgentError;
             return IsTransferToAgentError;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.TransferToAgentToolResultErrorModel PickTransferToAgentError() => IsTransferToAgentError
+            ? TransferToAgentError!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'TransferToAgentError' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -168,6 +196,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.TransferToNumberResultTwilioSuccessModel PickTransferToNumberTwilioSuccess() => IsTransferToNumberTwilioSuccess
+            ? TransferToNumberTwilioSuccess!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'TransferToNumberTwilioSuccess' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.TransferToNumberResultSipSuccessModel? TransferToNumberSipSuccess { get; init; }
 #else
@@ -194,6 +229,13 @@ namespace G
             value = TransferToNumberSipSuccess;
             return IsTransferToNumberSipSuccess;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.TransferToNumberResultSipSuccessModel PickTransferToNumberSipSuccess() => IsTransferToNumberSipSuccess
+            ? TransferToNumberSipSuccess!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'TransferToNumberSipSuccess' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -228,6 +270,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.TransferToNumberResultErrorModel PickTransferToNumberError() => IsTransferToNumberError
+            ? TransferToNumberError!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'TransferToNumberError' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.SkipTurnToolResponseModel? SkipTurnSuccess { get; init; }
 #else
@@ -254,6 +303,13 @@ namespace G
             value = SkipTurnSuccess;
             return IsSkipTurnSuccess;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.SkipTurnToolResponseModel PickSkipTurnSuccess() => IsSkipTurnSuccess
+            ? SkipTurnSuccess!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SkipTurnSuccess' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -288,6 +344,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.PlayDTMFResultSuccessModel PickPlayDtmfSuccess() => IsPlayDtmfSuccess
+            ? PlayDtmfSuccess!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'PlayDtmfSuccess' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.PlayDTMFResultErrorModel? PlayDtmfError { get; init; }
 #else
@@ -314,6 +377,13 @@ namespace G
             value = PlayDtmfError;
             return IsPlayDtmfError;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.PlayDTMFResultErrorModel PickPlayDtmfError() => IsPlayDtmfError
+            ? PlayDtmfError!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'PlayDtmfError' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -348,6 +418,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.VoiceMailDetectionResultSuccessModel PickVoicemailDetectionSuccess() => IsVoicemailDetectionSuccess
+            ? VoicemailDetectionSuccess!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'VoicemailDetectionSuccess' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.TestToolResultModel? TestingToolResult { get; init; }
 #else
@@ -374,6 +451,13 @@ namespace G
             value = TestingToolResult;
             return IsTestingToolResult;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.TestToolResultModel PickTestingToolResult() => IsTestingToolResult
+            ? TestingToolResult!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'TestingToolResult' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

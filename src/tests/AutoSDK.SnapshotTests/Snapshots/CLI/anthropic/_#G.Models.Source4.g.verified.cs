@@ -48,6 +48,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.Base64ImageSource PickBase64() => IsBase64
+            ? Base64!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Base64' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.URLImageSource? Url { get; init; }
 #else
@@ -74,6 +81,13 @@ namespace G
             value = Url;
             return IsUrl;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.URLImageSource PickUrl() => IsUrl
+            ? Url!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Url' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

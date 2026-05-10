@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.BaseInputsOneOf1ItemsOneOf1Role0 PickBaseInputsOneOf1ItemsOneOf1Role0() => IsBaseInputsOneOf1ItemsOneOf1Role0
+            ? BaseInputsOneOf1ItemsOneOf1Role0!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BaseInputsOneOf1ItemsOneOf1Role0' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.BaseInputsOneOf1ItemsOneOf1Role1? BaseInputsOneOf1ItemsOneOf1Role1 { get; init; }
 #else
@@ -73,6 +80,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.BaseInputsOneOf1ItemsOneOf1Role1 PickBaseInputsOneOf1ItemsOneOf1Role1() => IsBaseInputsOneOf1ItemsOneOf1Role1
+            ? BaseInputsOneOf1ItemsOneOf1Role1!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BaseInputsOneOf1ItemsOneOf1Role1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.BaseInputsOneOf1ItemsOneOf1Role2? BaseInputsOneOf1ItemsOneOf1Role2 { get; init; }
 #else
@@ -99,6 +113,13 @@ namespace G
             value = BaseInputsOneOf1ItemsOneOf1Role2;
             return IsBaseInputsOneOf1ItemsOneOf1Role2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.BaseInputsOneOf1ItemsOneOf1Role2 PickBaseInputsOneOf1ItemsOneOf1Role2() => IsBaseInputsOneOf1ItemsOneOf1Role2
+            ? BaseInputsOneOf1ItemsOneOf1Role2!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BaseInputsOneOf1ItemsOneOf1Role2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

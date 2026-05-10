@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.GraderPython PickPythonGrader() => IsPythonGrader
+            ? PythonGrader!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'PythonGrader' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.EvalGraderPythonVariant2? EvalGraderPythonVariant2 { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = EvalGraderPythonVariant2;
             return IsEvalGraderPythonVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.EvalGraderPythonVariant2 PickEvalGraderPythonVariant2() => IsEvalGraderPythonVariant2
+            ? EvalGraderPythonVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'EvalGraderPythonVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

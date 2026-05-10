@@ -48,6 +48,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.BetaMessageStartEvent PickMessageStart() => IsMessageStart
+            ? MessageStart!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MessageStart' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.BetaMessageDeltaEvent? MessageDelta { get; init; }
 #else
@@ -74,6 +81,13 @@ namespace G
             value = MessageDelta;
             return IsMessageDelta;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.BetaMessageDeltaEvent PickMessageDelta() => IsMessageDelta
+            ? MessageDelta!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MessageDelta' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -108,6 +122,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.BetaMessageStopEvent PickMessageStop() => IsMessageStop
+            ? MessageStop!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MessageStop' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.BetaContentBlockStartEvent? ContentBlockStart { get; init; }
 #else
@@ -134,6 +155,13 @@ namespace G
             value = ContentBlockStart;
             return IsContentBlockStart;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.BetaContentBlockStartEvent PickContentBlockStart() => IsContentBlockStart
+            ? ContentBlockStart!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ContentBlockStart' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -168,6 +196,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.BetaContentBlockDeltaEvent PickContentBlockDelta() => IsContentBlockDelta
+            ? ContentBlockDelta!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ContentBlockDelta' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.BetaContentBlockStopEvent? ContentBlockStop { get; init; }
 #else
@@ -194,6 +229,13 @@ namespace G
             value = ContentBlockStop;
             return IsContentBlockStop;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.BetaContentBlockStopEvent PickContentBlockStop() => IsContentBlockStop
+            ? ContentBlockStop!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ContentBlockStop' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

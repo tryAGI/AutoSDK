@@ -48,6 +48,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.ResearchOperationDtoClassVariant1 PickThink() => IsThink
+            ? Think!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Think' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ResearchOperationDtoClassVariant2? Search { get; init; }
 #else
@@ -78,6 +85,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.ResearchOperationDtoClassVariant2 PickSearch() => IsSearch
+            ? Search!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Search' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ResearchOperationDtoClassVariant3? Crawl { get; init; }
 #else
@@ -104,6 +118,13 @@ namespace G
             value = Crawl;
             return IsCrawl;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ResearchOperationDtoClassVariant3 PickCrawl() => IsCrawl
+            ? Crawl!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Crawl' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

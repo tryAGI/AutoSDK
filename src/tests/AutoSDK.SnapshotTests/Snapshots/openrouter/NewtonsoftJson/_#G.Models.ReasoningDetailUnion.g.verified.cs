@@ -41,6 +41,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ReasoningDetailSummary PickReasoningDetailSummary() => IsReasoningDetailSummary
+            ? ReasoningDetailSummary!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ReasoningDetailSummary' but the value was {ToString()}.");
+
+        /// <summary>
         /// Reasoning detail encrypted schema
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -71,6 +78,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ReasoningDetailEncrypted PickReasoningDetailEncrypted() => IsReasoningDetailEncrypted
+            ? ReasoningDetailEncrypted!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ReasoningDetailEncrypted' but the value was {ToString()}.");
+
+        /// <summary>
         /// Reasoning detail text schema
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -99,6 +113,13 @@ namespace G
             value = ReasoningDetailText;
             return IsReasoningDetailText;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ReasoningDetailText PickReasoningDetailText() => IsReasoningDetailText
+            ? ReasoningDetailText!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ReasoningDetailText' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

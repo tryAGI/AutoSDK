@@ -43,6 +43,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.AssistantsApiResponseFormatOptionEnum PickEnum() => IsEnum
+            ? Enum!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Enum' but the value was {ToString()}.");
+
+        /// <summary>
         /// An object describing the expected output of the model. If `json_object` only `function` type `tools` are allowed to be passed to the Run. If `text` the model can return text or any value needed.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -71,6 +78,13 @@ namespace G
             value = AssistantsApiResponseFormat;
             return IsAssistantsApiResponseFormat;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.AssistantsApiResponseFormat PickAssistantsApiResponseFormat() => IsAssistantsApiResponseFormat
+            ? AssistantsApiResponseFormat!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AssistantsApiResponseFormat' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

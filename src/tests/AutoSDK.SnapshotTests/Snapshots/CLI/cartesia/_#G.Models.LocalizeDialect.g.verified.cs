@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.LocalizeEnglishDialect PickLocalizeEnglishDialect() => IsLocalizeEnglishDialect
+            ? LocalizeEnglishDialect!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'LocalizeEnglishDialect' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.LocalizeSpanishDialect? LocalizeSpanishDialect { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = LocalizeSpanishDialect;
             return IsLocalizeSpanishDialect;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.LocalizeSpanishDialect PickLocalizeSpanishDialect() => IsLocalizeSpanishDialect
+            ? LocalizeSpanishDialect!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'LocalizeSpanishDialect' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -103,6 +117,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.LocalizePortugueseDialect PickLocalizePortugueseDialect() => IsLocalizePortugueseDialect
+            ? LocalizePortugueseDialect!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'LocalizePortugueseDialect' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.LocalizeFrenchDialect? LocalizeFrenchDialect { get; init; }
 #else
@@ -129,6 +150,13 @@ namespace G
             value = LocalizeFrenchDialect;
             return IsLocalizeFrenchDialect;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.LocalizeFrenchDialect PickLocalizeFrenchDialect() => IsLocalizeFrenchDialect
+            ? LocalizeFrenchDialect!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'LocalizeFrenchDialect' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

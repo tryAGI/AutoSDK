@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public long PickStartFromVariant1() => IsStartFromVariant1
+            ? StartFromVariant1!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'StartFromVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public double? StartFromVariant2 { get; init; }
 #else
@@ -73,6 +80,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public double PickStartFromVariant2() => IsStartFromVariant2
+            ? StartFromVariant2!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'StartFromVariant2' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.DateTime? DateTime { get; init; }
 #else
@@ -99,6 +113,13 @@ namespace G
             value = DateTime;
             return IsDateTime;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.DateTime PickDateTime() => IsDateTime
+            ? DateTime!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'DateTime' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

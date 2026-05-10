@@ -41,6 +41,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.CodeInterpreterTextOutput PickCodeInterpreterTextOutput() => IsCodeInterpreterTextOutput
+            ? CodeInterpreterTextOutput!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CodeInterpreterTextOutput' but the value was {ToString()}.");
+
+        /// <summary>
         /// The output of a code interpreter tool call that is a file.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -69,6 +76,13 @@ namespace G
             value = CodeInterpreterFileOutput;
             return IsCodeInterpreterFileOutput;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.CodeInterpreterFileOutput PickCodeInterpreterFileOutput() => IsCodeInterpreterFileOutput
+            ? CodeInterpreterFileOutput!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CodeInterpreterFileOutput' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

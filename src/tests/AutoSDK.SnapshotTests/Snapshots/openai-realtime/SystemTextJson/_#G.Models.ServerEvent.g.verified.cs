@@ -46,6 +46,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ErrorPayload PickError() => IsError
+            ? Error!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Error' but the value was {ToString()}.");
+
+        /// <summary>
         /// Returned when a session is created.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -74,6 +81,13 @@ namespace G
             value = SessionCreated;
             return IsSessionCreated;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.SessionCreatedPayload PickSessionCreated() => IsSessionCreated
+            ? SessionCreated!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SessionCreated' but the value was {ToString()}.");
 
         /// <summary>
         /// Returned when a session is updated.
@@ -106,6 +120,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.SessionUpdatedPayload PickSessionUpdated() => IsSessionUpdated
+            ? SessionUpdated!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SessionUpdated' but the value was {ToString()}.");
+
+        /// <summary>
         /// Returned when a conversation is created.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -134,6 +155,13 @@ namespace G
             value = ConversationCreated;
             return IsConversationCreated;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ConversationCreatedPayload PickConversationCreated() => IsConversationCreated
+            ? ConversationCreated!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ConversationCreated' but the value was {ToString()}.");
 
         /// <summary>
         /// Returned when a conversation item is created.
@@ -166,6 +194,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ConversationItemCreatedPayload PickConversationItemCreated() => IsConversationItemCreated
+            ? ConversationItemCreated!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ConversationItemCreated' but the value was {ToString()}.");
+
+        /// <summary>
         /// Returned when input audio transcription succeeds.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -194,6 +229,13 @@ namespace G
             value = ConversationItemInputAudioTranscriptionCompleted;
             return IsConversationItemInputAudioTranscriptionCompleted;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ConversationItemInputAudioTranscriptionCompletedPayload PickConversationItemInputAudioTranscriptionCompleted() => IsConversationItemInputAudioTranscriptionCompleted
+            ? ConversationItemInputAudioTranscriptionCompleted!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ConversationItemInputAudioTranscriptionCompleted' but the value was {ToString()}.");
 
         /// <summary>
         /// Returned when input audio transcription fails.
@@ -226,6 +268,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ConversationItemInputAudioTranscriptionFailedPayload PickConversationItemInputAudioTranscriptionFailed() => IsConversationItemInputAudioTranscriptionFailed
+            ? ConversationItemInputAudioTranscriptionFailed!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ConversationItemInputAudioTranscriptionFailed' but the value was {ToString()}.");
+
+        /// <summary>
         /// Returned when an assistant audio message item is truncated.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -254,6 +303,13 @@ namespace G
             value = ConversationItemTruncated;
             return IsConversationItemTruncated;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ConversationItemTruncatedPayload PickConversationItemTruncated() => IsConversationItemTruncated
+            ? ConversationItemTruncated!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ConversationItemTruncated' but the value was {ToString()}.");
 
         /// <summary>
         /// Returned when an item in the conversation is deleted.
@@ -286,6 +342,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ConversationItemDeletedPayload PickConversationItemDeleted() => IsConversationItemDeleted
+            ? ConversationItemDeleted!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ConversationItemDeleted' but the value was {ToString()}.");
+
+        /// <summary>
         /// Returned when an input audio buffer is committed.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -314,6 +377,13 @@ namespace G
             value = InputAudioBufferCommitted;
             return IsInputAudioBufferCommitted;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.InputAudioBufferCommittedPayload PickInputAudioBufferCommitted() => IsInputAudioBufferCommitted
+            ? InputAudioBufferCommitted!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'InputAudioBufferCommitted' but the value was {ToString()}.");
 
         /// <summary>
         /// Returned when the input audio buffer is cleared.
@@ -346,6 +416,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.InputAudioBufferClearedPayload PickInputAudioBufferCleared() => IsInputAudioBufferCleared
+            ? InputAudioBufferCleared!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'InputAudioBufferCleared' but the value was {ToString()}.");
+
+        /// <summary>
         /// Returned when speech is detected in server VAD mode.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -374,6 +451,13 @@ namespace G
             value = InputAudioBufferSpeechStarted;
             return IsInputAudioBufferSpeechStarted;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.InputAudioBufferSpeechStartedPayload PickInputAudioBufferSpeechStarted() => IsInputAudioBufferSpeechStarted
+            ? InputAudioBufferSpeechStarted!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'InputAudioBufferSpeechStarted' but the value was {ToString()}.");
 
         /// <summary>
         /// Returned when speech stops in server VAD mode.
@@ -406,6 +490,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.InputAudioBufferSpeechStoppedPayload PickInputAudioBufferSpeechStopped() => IsInputAudioBufferSpeechStopped
+            ? InputAudioBufferSpeechStopped!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'InputAudioBufferSpeechStopped' but the value was {ToString()}.");
+
+        /// <summary>
         /// Returned when a new Response is created.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -434,6 +525,13 @@ namespace G
             value = ResponseCreated;
             return IsResponseCreated;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ResponseCreatedPayload PickResponseCreated() => IsResponseCreated
+            ? ResponseCreated!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseCreated' but the value was {ToString()}.");
 
         /// <summary>
         /// Returned when a Response is done streaming.
@@ -466,6 +564,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ResponseDonePayload PickResponseDone() => IsResponseDone
+            ? ResponseDone!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseDone' but the value was {ToString()}.");
+
+        /// <summary>
         /// Returned when a new Item is created during response generation.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -494,6 +599,13 @@ namespace G
             value = ResponseOutputItemAdded;
             return IsResponseOutputItemAdded;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ResponseOutputItemAddedPayload PickResponseOutputItemAdded() => IsResponseOutputItemAdded
+            ? ResponseOutputItemAdded!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseOutputItemAdded' but the value was {ToString()}.");
 
         /// <summary>
         /// Returned when an Item is done streaming.
@@ -526,6 +638,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ResponseOutputItemDonePayload PickResponseOutputItemDone() => IsResponseOutputItemDone
+            ? ResponseOutputItemDone!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseOutputItemDone' but the value was {ToString()}.");
+
+        /// <summary>
         /// Returned when a new content part is added to an assistant message item.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -554,6 +673,13 @@ namespace G
             value = ResponseContentPartAdded;
             return IsResponseContentPartAdded;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ResponseContentPartAddedPayload PickResponseContentPartAdded() => IsResponseContentPartAdded
+            ? ResponseContentPartAdded!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseContentPartAdded' but the value was {ToString()}.");
 
         /// <summary>
         /// Returned when a content part is done streaming.
@@ -586,6 +712,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ResponseContentPartDonePayload PickResponseContentPartDone() => IsResponseContentPartDone
+            ? ResponseContentPartDone!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseContentPartDone' but the value was {ToString()}.");
+
+        /// <summary>
         /// Returned when the text value of a content part is updated.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -614,6 +747,13 @@ namespace G
             value = ResponseTextDelta;
             return IsResponseTextDelta;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ResponseTextDeltaPayload PickResponseTextDelta() => IsResponseTextDelta
+            ? ResponseTextDelta!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseTextDelta' but the value was {ToString()}.");
 
         /// <summary>
         /// Returned when the text value of a content part is done streaming.
@@ -646,6 +786,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ResponseTextDonePayload PickResponseTextDone() => IsResponseTextDone
+            ? ResponseTextDone!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseTextDone' but the value was {ToString()}.");
+
+        /// <summary>
         /// Returned when the model-generated transcription of audio output is updated.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -674,6 +821,13 @@ namespace G
             value = ResponseAudioTranscriptDelta;
             return IsResponseAudioTranscriptDelta;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ResponseAudioTranscriptDeltaPayload PickResponseAudioTranscriptDelta() => IsResponseAudioTranscriptDelta
+            ? ResponseAudioTranscriptDelta!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseAudioTranscriptDelta' but the value was {ToString()}.");
 
         /// <summary>
         /// Returned when the model-generated transcription of audio output is done.
@@ -706,6 +860,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ResponseAudioTranscriptDonePayload PickResponseAudioTranscriptDone() => IsResponseAudioTranscriptDone
+            ? ResponseAudioTranscriptDone!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseAudioTranscriptDone' but the value was {ToString()}.");
+
+        /// <summary>
         /// Returned when the model-generated audio is updated.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -734,6 +895,13 @@ namespace G
             value = ResponseAudioDelta;
             return IsResponseAudioDelta;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ResponseAudioDeltaPayload PickResponseAudioDelta() => IsResponseAudioDelta
+            ? ResponseAudioDelta!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseAudioDelta' but the value was {ToString()}.");
 
         /// <summary>
         /// Returned when the model-generated audio is done.
@@ -766,6 +934,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ResponseAudioDonePayload PickResponseAudioDone() => IsResponseAudioDone
+            ? ResponseAudioDone!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseAudioDone' but the value was {ToString()}.");
+
+        /// <summary>
         /// Returned when the model-generated function call arguments are updated.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -794,6 +969,13 @@ namespace G
             value = ResponseFunctionCallArgumentsDelta;
             return IsResponseFunctionCallArgumentsDelta;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ResponseFunctionCallArgumentsDeltaPayload PickResponseFunctionCallArgumentsDelta() => IsResponseFunctionCallArgumentsDelta
+            ? ResponseFunctionCallArgumentsDelta!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseFunctionCallArgumentsDelta' but the value was {ToString()}.");
 
         /// <summary>
         /// Returned when the model-generated function call arguments are done streaming.
@@ -826,6 +1008,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ResponseFunctionCallArgumentsDonePayload PickResponseFunctionCallArgumentsDone() => IsResponseFunctionCallArgumentsDone
+            ? ResponseFunctionCallArgumentsDone!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseFunctionCallArgumentsDone' but the value was {ToString()}.");
+
+        /// <summary>
         /// Emitted after every response.done event to indicate updated rate limits.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -854,6 +1043,13 @@ namespace G
             value = RateLimitsUpdated;
             return IsRateLimitsUpdated;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.RateLimitsUpdatedPayload PickRateLimitsUpdated() => IsRateLimitsUpdated
+            ? RateLimitsUpdated!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'RateLimitsUpdated' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

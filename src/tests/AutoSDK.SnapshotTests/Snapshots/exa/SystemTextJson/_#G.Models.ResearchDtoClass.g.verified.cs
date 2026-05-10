@@ -48,6 +48,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.ResearchDtoClassVariant1 PickPending() => IsPending
+            ? Pending!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Pending' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ResearchDtoClassVariant2? Running { get; init; }
 #else
@@ -74,6 +81,13 @@ namespace G
             value = Running;
             return IsRunning;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ResearchDtoClassVariant2 PickRunning() => IsRunning
+            ? Running!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Running' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -108,6 +122,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.ResearchDtoClassVariant3 PickCompleted() => IsCompleted
+            ? Completed!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Completed' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ResearchDtoClassVariant4? Canceled { get; init; }
 #else
@@ -138,6 +159,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.ResearchDtoClassVariant4 PickCanceled() => IsCanceled
+            ? Canceled!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Canceled' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ResearchDtoClassVariant5? Failed { get; init; }
 #else
@@ -164,6 +192,13 @@ namespace G
             value = Failed;
             return IsFailed;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ResearchDtoClassVariant5 PickFailed() => IsFailed
+            ? Failed!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Failed' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

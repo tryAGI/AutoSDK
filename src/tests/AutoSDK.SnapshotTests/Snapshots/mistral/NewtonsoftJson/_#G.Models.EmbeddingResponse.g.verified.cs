@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.ResponseBase PickResponseBase() => IsResponseBase
+            ? ResponseBase!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseBase' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.EmbeddingResponseVariant2? EmbeddingResponseVariant2 { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = EmbeddingResponseVariant2;
             return IsEmbeddingResponseVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.EmbeddingResponseVariant2 PickEmbeddingResponseVariant2() => IsEmbeddingResponseVariant2
+            ? EmbeddingResponseVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'EmbeddingResponseVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

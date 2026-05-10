@@ -127,6 +127,11 @@ namespace {anyOfData.Namespace}
             value = {x.Name};
             return Is{x.Name};
         }}
+
+        {string.Empty.ToXmlDocumentationSummary(level: 8)}
+        public {x.Type.CSharpTypeWithoutNullability} Pick{x.Name}() => Is{x.Name}
+            ? {x.Name}{(x.Type.IsValueType ? "!.Value" : "!")}
+            : throw new global::System.InvalidOperationException($""Expected union variant '{x.Name}' but the value was {{ToString()}}."");
 ").Inject()}
 {anyOfData.Properties
     .GroupBy(x => x.Type.CSharpTypeWithoutNullability) // Deduplicate by type

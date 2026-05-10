@@ -45,6 +45,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.RawWhereFields PickRawWhereFields() => IsRawWhereFields
+            ? RawWhereFields!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'RawWhereFields' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.DeleteCollectionRecordsPayloadVariant2? DeleteCollectionRecordsPayloadVariant2 { get; init; }
 #else
@@ -71,6 +78,13 @@ namespace G
             value = DeleteCollectionRecordsPayloadVariant2;
             return IsDeleteCollectionRecordsPayloadVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.DeleteCollectionRecordsPayloadVariant2 PickDeleteCollectionRecordsPayloadVariant2() => IsDeleteCollectionRecordsPayloadVariant2
+            ? DeleteCollectionRecordsPayloadVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'DeleteCollectionRecordsPayloadVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

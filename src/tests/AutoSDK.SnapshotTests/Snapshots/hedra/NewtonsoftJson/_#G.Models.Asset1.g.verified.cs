@@ -48,6 +48,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.UploadedImage PickUploadedImage() => IsUploadedImage
+            ? UploadedImage!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'UploadedImage' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.UploadedAudio? UploadedAudio { get; init; }
 #else
@@ -74,6 +81,13 @@ namespace G
             value = UploadedAudio;
             return IsUploadedAudio;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.UploadedAudio PickUploadedAudio() => IsUploadedAudio
+            ? UploadedAudio!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'UploadedAudio' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -108,6 +122,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.UploadedVideo PickUploadedVideo() => IsUploadedVideo
+            ? UploadedVideo!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'UploadedVideo' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.GeneratedAudio? GeneratedAudio { get; init; }
 #else
@@ -134,6 +155,13 @@ namespace G
             value = GeneratedAudio;
             return IsGeneratedAudio;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.GeneratedAudio PickGeneratedAudio() => IsGeneratedAudio
+            ? GeneratedAudio!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'GeneratedAudio' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -168,6 +196,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.GeneratedImage PickGeneratedImage() => IsGeneratedImage
+            ? GeneratedImage!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'GeneratedImage' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.GeneratedVideo? GeneratedVideo { get; init; }
 #else
@@ -198,6 +233,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.GeneratedVideo PickGeneratedVideo() => IsGeneratedVideo
+            ? GeneratedVideo!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'GeneratedVideo' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.Voice? Voice { get; init; }
 #else
@@ -224,6 +266,13 @@ namespace G
             value = Voice;
             return IsVoice;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.Voice PickVoice() => IsVoice
+            ? Voice!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Voice' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.OutputItemWebSearchCallAction0 PickOutputItemWebSearchCallAction0() => IsOutputItemWebSearchCallAction0
+            ? OutputItemWebSearchCallAction0!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OutputItemWebSearchCallAction0' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.OutputItemWebSearchCallAction1? OutputItemWebSearchCallAction1 { get; init; }
 #else
@@ -73,6 +80,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.OutputItemWebSearchCallAction1 PickOutputItemWebSearchCallAction1() => IsOutputItemWebSearchCallAction1
+            ? OutputItemWebSearchCallAction1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OutputItemWebSearchCallAction1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.OutputItemWebSearchCallAction2? OutputItemWebSearchCallAction2 { get; init; }
 #else
@@ -99,6 +113,13 @@ namespace G
             value = OutputItemWebSearchCallAction2;
             return IsOutputItemWebSearchCallAction2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.OutputItemWebSearchCallAction2 PickOutputItemWebSearchCallAction2() => IsOutputItemWebSearchCallAction2
+            ? OutputItemWebSearchCallAction2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OutputItemWebSearchCallAction2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

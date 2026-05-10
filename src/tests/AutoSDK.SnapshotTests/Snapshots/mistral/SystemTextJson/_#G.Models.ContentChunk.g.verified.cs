@@ -46,6 +46,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.TextChunk PickText() => IsText
+            ? Text!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
+
+        /// <summary>
         /// {"type":"image_url","image_url":{"url":"data:image/png;base64,iVBORw0
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -74,6 +81,13 @@ namespace G
             value = ImageUrl;
             return IsImageUrl;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ImageURLChunk PickImageUrl() => IsImageUrl
+            ? ImageUrl!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ImageUrl' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -108,6 +122,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.DocumentURLChunk PickDocumentUrl() => IsDocumentUrl
+            ? DocumentUrl!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'DocumentUrl' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ReferenceChunk? Reference { get; init; }
 #else
@@ -134,6 +155,13 @@ namespace G
             value = Reference;
             return IsReference;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ReferenceChunk PickReference() => IsReference
+            ? Reference!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Reference' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

@@ -46,6 +46,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.TranscriptResultPayload PickTranscriptResult() => IsTranscriptResult
+            ? TranscriptResult!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'TranscriptResult' but the value was {ToString()}.");
+
+        /// <summary>
         /// Metadata for the listen session.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -74,6 +81,13 @@ namespace G
             value = ListenMetadata;
             return IsListenMetadata;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ListenMetadataPayload PickListenMetadata() => IsListenMetadata
+            ? ListenMetadata!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ListenMetadata' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

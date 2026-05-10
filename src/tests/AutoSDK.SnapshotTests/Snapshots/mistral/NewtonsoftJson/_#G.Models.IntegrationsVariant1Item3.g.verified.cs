@@ -44,6 +44,13 @@ namespace G
             value = Wandb;
             return IsWandb;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.WandbIntegration PickWandb() => IsWandb
+            ? Wandb!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Wandb' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

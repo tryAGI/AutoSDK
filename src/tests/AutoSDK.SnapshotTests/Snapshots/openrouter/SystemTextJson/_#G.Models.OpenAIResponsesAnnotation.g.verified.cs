@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.FileCitation PickFileCitation() => IsFileCitation
+            ? FileCitation!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FileCitation' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.URLCitation? URLCitation { get; init; }
 #else
@@ -73,6 +80,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.URLCitation PickURLCitation() => IsURLCitation
+            ? URLCitation!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'URLCitation' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.FilePath? FilePath { get; init; }
 #else
@@ -99,6 +113,13 @@ namespace G
             value = FilePath;
             return IsFilePath;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.FilePath PickFilePath() => IsFilePath
+            ? FilePath!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FilePath' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

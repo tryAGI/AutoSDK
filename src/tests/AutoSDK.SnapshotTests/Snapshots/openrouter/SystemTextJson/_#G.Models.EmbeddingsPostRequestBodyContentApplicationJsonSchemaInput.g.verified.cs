@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public string PickEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant1() => IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant1
+            ? EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<string>? EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant2 { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant2;
             return IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<string> PickEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant2() => IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant2
+            ? EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant2' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -103,6 +117,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::System.Collections.Generic.IList<double> PickEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant3() => IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant3
+            ? EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant3!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant3' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>>? EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant4 { get; init; }
 #else
@@ -133,6 +154,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>> PickEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant4() => IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant4
+            ? EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant4!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant4' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<global::G.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4Items>? EmbeddingsPostRequestBodyContentApplicationJsonSchemaInput4 { get; init; }
 #else
@@ -159,6 +187,13 @@ namespace G
             value = EmbeddingsPostRequestBodyContentApplicationJsonSchemaInput4;
             return IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInput4;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<global::G.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4Items> PickEmbeddingsPostRequestBodyContentApplicationJsonSchemaInput4() => IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInput4
+            ? EmbeddingsPostRequestBodyContentApplicationJsonSchemaInput4!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'EmbeddingsPostRequestBodyContentApplicationJsonSchemaInput4' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

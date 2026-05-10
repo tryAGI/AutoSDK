@@ -46,6 +46,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.AgentStarted PickAgentStarted() => IsAgentStarted
+            ? AgentStarted!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AgentStarted' but the value was {ToString()}.");
+
+        /// <summary>
         /// Indicates the agent is processing.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -74,6 +81,13 @@ namespace G
             value = AgentThinking;
             return IsAgentThinking;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.AgentThinking PickAgentThinking() => IsAgentThinking
+            ? AgentThinking!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AgentThinking' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

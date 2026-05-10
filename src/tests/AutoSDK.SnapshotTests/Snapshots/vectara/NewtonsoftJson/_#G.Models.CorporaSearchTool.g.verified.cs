@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.ToolBase PickBase() => IsBase
+            ? Base!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Base' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CorporaSearchToolVariant2? CorporaSearchToolVariant2 { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = CorporaSearchToolVariant2;
             return IsCorporaSearchToolVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.CorporaSearchToolVariant2 PickCorporaSearchToolVariant2() => IsCorporaSearchToolVariant2
+            ? CorporaSearchToolVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CorporaSearchToolVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

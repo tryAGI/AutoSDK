@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.StringAnalysisData PickString() => IsString
+            ? String!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'String' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.EnumAnalysisData? Enum { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = Enum;
             return IsEnum;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.EnumAnalysisData PickEnum() => IsEnum
+            ? Enum!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Enum' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -103,6 +117,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.BooleanAnalysisData PickBoolean() => IsBoolean
+            ? Boolean!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Boolean' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.NumberAnalysisData? Number { get; init; }
 #else
@@ -129,6 +150,13 @@ namespace G
             value = Number;
             return IsNumber;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.NumberAnalysisData PickNumber() => IsNumber
+            ? Number!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Number' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

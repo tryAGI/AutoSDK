@@ -46,6 +46,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.TextContent PickText() => IsText
+            ? Text!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
+
+        /// <summary>
         /// Image content of the message.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -74,6 +81,13 @@ namespace G
             value = ImageUrl;
             return IsImageUrl;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ImageContent PickImageUrl() => IsImageUrl
+            ? ImageUrl!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ImageUrl' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

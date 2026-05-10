@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.AllOf<global::G.OutputFormatRAWOutputFormat2, global::G.RawOutputFormat> PickRAWOutputFormat() => IsRAWOutputFormat
+            ? RAWOutputFormat!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'RAWOutputFormat' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.AllOf<global::G.OutputFormatWAVOutputFormat2, global::G.WAVOutputFormat?>? WAVOutputFormat { get; init; }
 #else
@@ -73,6 +80,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.AllOf<global::G.OutputFormatWAVOutputFormat2, global::G.WAVOutputFormat?> PickWAVOutputFormat() => IsWAVOutputFormat
+            ? WAVOutputFormat!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'WAVOutputFormat' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.AllOf<global::G.OutputFormatMP3OutputFormat2, global::G.MP3OutputFormat>? MP3OutputFormat { get; init; }
 #else
@@ -99,6 +113,13 @@ namespace G
             value = MP3OutputFormat;
             return IsMP3OutputFormat;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.AllOf<global::G.OutputFormatMP3OutputFormat2, global::G.MP3OutputFormat> PickMP3OutputFormat() => IsMP3OutputFormat
+            ? MP3OutputFormat!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MP3OutputFormat' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

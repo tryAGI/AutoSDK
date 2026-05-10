@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.ProviderName PickName() => IsName
+            ? Name!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Name' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ModelProviderName? ModelName { get; init; }
 #else
@@ -73,6 +80,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.ModelProviderName PickModelName() => IsModelName
+            ? ModelName!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ModelName' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ProviderEnum? Enum { get; init; }
 #else
@@ -99,6 +113,13 @@ namespace G
             value = Enum;
             return IsEnum;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ProviderEnum PickEnum() => IsEnum
+            ? Enum!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Enum' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.ScalarQuantization PickScalar() => IsScalar
+            ? Scalar!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Scalar' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ProductQuantization? Product { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = Product;
             return IsProduct;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ProductQuantization PickProduct() => IsProduct
+            ? Product!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Product' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -103,6 +117,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.BinaryQuantization PickBinary() => IsBinary
+            ? Binary!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Binary' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.DisabledType? DisabledType { get; init; }
 #else
@@ -129,6 +150,13 @@ namespace G
             value = DisabledType;
             return IsDisabledType;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.DisabledType PickDisabledType() => IsDisabledType
+            ? DisabledType!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'DisabledType' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

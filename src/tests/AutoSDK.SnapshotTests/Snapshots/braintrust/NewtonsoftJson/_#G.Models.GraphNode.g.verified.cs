@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.GraphNodeVariant1 PickGraphNodeVariant1() => IsGraphNodeVariant1
+            ? GraphNodeVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'GraphNodeVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.GraphNodeVariant2? GraphNodeVariant2 { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = GraphNodeVariant2;
             return IsGraphNodeVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.GraphNodeVariant2 PickGraphNodeVariant2() => IsGraphNodeVariant2
+            ? GraphNodeVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'GraphNodeVariant2' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -103,6 +117,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.GraphNodeVariant3 PickGraphNodeVariant3() => IsGraphNodeVariant3
+            ? GraphNodeVariant3!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'GraphNodeVariant3' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.GraphNodeVariant4? GraphNodeVariant4 { get; init; }
 #else
@@ -129,6 +150,13 @@ namespace G
             value = GraphNodeVariant4;
             return IsGraphNodeVariant4;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.GraphNodeVariant4 PickGraphNodeVariant4() => IsGraphNodeVariant4
+            ? GraphNodeVariant4!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'GraphNodeVariant4' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -163,6 +191,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.GraphNodeVariant5 PickGraphNodeVariant5() => IsGraphNodeVariant5
+            ? GraphNodeVariant5!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'GraphNodeVariant5' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.GraphNodeVariant6? GraphNodeVariant6 { get; init; }
 #else
@@ -189,6 +224,13 @@ namespace G
             value = GraphNodeVariant6;
             return IsGraphNodeVariant6;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.GraphNodeVariant6 PickGraphNodeVariant6() => IsGraphNodeVariant6
+            ? GraphNodeVariant6!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'GraphNodeVariant6' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -223,6 +265,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.GraphNodeVariant7 PickGraphNodeVariant7() => IsGraphNodeVariant7
+            ? GraphNodeVariant7!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'GraphNodeVariant7' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.GraphNodeVariant8? GraphNodeVariant8 { get; init; }
 #else
@@ -249,6 +298,13 @@ namespace G
             value = GraphNodeVariant8;
             return IsGraphNodeVariant8;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.GraphNodeVariant8 PickGraphNodeVariant8() => IsGraphNodeVariant8
+            ? GraphNodeVariant8!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'GraphNodeVariant8' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

@@ -41,6 +41,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.EmbeddingAudioMetadata PickEmbeddingAudioMetadata() => IsEmbeddingAudioMetadata
+            ? EmbeddingAudioMetadata!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'EmbeddingAudioMetadata' but the value was {ToString()}.");
+
+        /// <summary>
         /// Metadata for video embeddings
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -69,6 +76,13 @@ namespace G
             value = EmbeddingVideoMetadata;
             return IsEmbeddingVideoMetadata;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.EmbeddingVideoMetadata PickEmbeddingVideoMetadata() => IsEmbeddingVideoMetadata
+            ? EmbeddingVideoMetadata!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'EmbeddingVideoMetadata' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

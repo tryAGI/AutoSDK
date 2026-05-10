@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.EndCallTool PickEndCall() => IsEndCall
+            ? EndCall!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'EndCall' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.TransferCallTool? TransferCall { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = TransferCall;
             return IsTransferCall;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.TransferCallTool PickTransferCall() => IsTransferCall
+            ? TransferCall!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'TransferCall' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -103,6 +117,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.CheckAvailabilityCalTool PickCheckAvailabilityCal() => IsCheckAvailabilityCal
+            ? CheckAvailabilityCal!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CheckAvailabilityCal' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.BookAppointmentCalTool? BookAppointmentCal { get; init; }
 #else
@@ -129,6 +150,13 @@ namespace G
             value = BookAppointmentCal;
             return IsBookAppointmentCal;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.BookAppointmentCalTool PickBookAppointmentCal() => IsBookAppointmentCal
+            ? BookAppointmentCal!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BookAppointmentCal' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -163,6 +191,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.AgentSwapTool PickAgentSwap() => IsAgentSwap
+            ? AgentSwap!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AgentSwap' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.PressDigitTool? PressDigit { get; init; }
 #else
@@ -189,6 +224,13 @@ namespace G
             value = PressDigit;
             return IsPressDigit;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.PressDigitTool PickPressDigit() => IsPressDigit
+            ? PressDigit!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'PressDigit' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -223,6 +265,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.SendSMSTool PickSendSM() => IsSendSM
+            ? SendSM!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SendSM' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CustomTool? Custom { get; init; }
 #else
@@ -249,6 +298,13 @@ namespace G
             value = Custom;
             return IsCustom;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.CustomTool PickCustom() => IsCustom
+            ? Custom!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Custom' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -283,6 +339,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.CodeTool PickCode() => IsCode
+            ? Code!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Code' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ExtractDynamicVariableTool? ExtractDynamicVariable { get; init; }
 #else
@@ -309,6 +372,13 @@ namespace G
             value = ExtractDynamicVariable;
             return IsExtractDynamicVariable;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ExtractDynamicVariableTool PickExtractDynamicVariable() => IsExtractDynamicVariable
+            ? ExtractDynamicVariable!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ExtractDynamicVariable' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -343,6 +413,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.BridgeTransferTool PickBridgeTransfer() => IsBridgeTransfer
+            ? BridgeTransfer!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BridgeTransfer' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CancelTransferTool? CancelTransfer { get; init; }
 #else
@@ -373,6 +450,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.CancelTransferTool PickCancelTransfer() => IsCancelTransfer
+            ? CancelTransfer!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CancelTransfer' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.MCPTool? Mcp { get; init; }
 #else
@@ -399,6 +483,13 @@ namespace G
             value = Mcp;
             return IsMcp;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.MCPTool PickMcp() => IsMcp
+            ? Mcp!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Mcp' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.UpdateAuthSecretRequestDtoBasicAuthentication PickBasicAuthentication() => IsBasicAuthentication
+            ? BasicAuthentication!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BasicAuthentication' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.UpdateAuthSecretRequestDtoBearerToken? BearerToken { get; init; }
 #else
@@ -73,6 +80,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.UpdateAuthSecretRequestDtoBearerToken PickBearerToken() => IsBearerToken
+            ? BearerToken!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BearerToken' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.UpdateAuthSecretRequestDtoApiKey? ApiKey { get; init; }
 #else
@@ -99,6 +113,13 @@ namespace G
             value = ApiKey;
             return IsApiKey;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.UpdateAuthSecretRequestDtoApiKey PickApiKey() => IsApiKey
+            ? ApiKey!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ApiKey' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

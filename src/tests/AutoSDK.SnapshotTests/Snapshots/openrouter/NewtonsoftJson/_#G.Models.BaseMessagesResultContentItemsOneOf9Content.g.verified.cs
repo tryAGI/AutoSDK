@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.BaseMessagesResultContentItemsOneOf9Content0 PickBaseMessagesResultContentItemsOneOf9Content0() => IsBaseMessagesResultContentItemsOneOf9Content0
+            ? BaseMessagesResultContentItemsOneOf9Content0!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BaseMessagesResultContentItemsOneOf9Content0' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.BaseMessagesResultContentItemsOneOf9Content1? BaseMessagesResultContentItemsOneOf9Content1 { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = BaseMessagesResultContentItemsOneOf9Content1;
             return IsBaseMessagesResultContentItemsOneOf9Content1;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.BaseMessagesResultContentItemsOneOf9Content1 PickBaseMessagesResultContentItemsOneOf9Content1() => IsBaseMessagesResultContentItemsOneOf9Content1
+            ? BaseMessagesResultContentItemsOneOf9Content1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BaseMessagesResultContentItemsOneOf9Content1' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -103,6 +117,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.BaseMessagesResultContentItemsOneOf9Content2 PickBaseMessagesResultContentItemsOneOf9Content2() => IsBaseMessagesResultContentItemsOneOf9Content2
+            ? BaseMessagesResultContentItemsOneOf9Content2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BaseMessagesResultContentItemsOneOf9Content2' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.BaseMessagesResultContentItemsOneOf9Content3? BaseMessagesResultContentItemsOneOf9Content3 { get; init; }
 #else
@@ -129,6 +150,13 @@ namespace G
             value = BaseMessagesResultContentItemsOneOf9Content3;
             return IsBaseMessagesResultContentItemsOneOf9Content3;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.BaseMessagesResultContentItemsOneOf9Content3 PickBaseMessagesResultContentItemsOneOf9Content3() => IsBaseMessagesResultContentItemsOneOf9Content3
+            ? BaseMessagesResultContentItemsOneOf9Content3!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BaseMessagesResultContentItemsOneOf9Content3' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

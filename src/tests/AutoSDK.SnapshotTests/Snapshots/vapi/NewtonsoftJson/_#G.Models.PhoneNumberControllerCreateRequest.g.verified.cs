@@ -48,6 +48,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.CreateByoPhoneNumberDTO PickByoPhoneNumber() => IsByoPhoneNumber
+            ? ByoPhoneNumber!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ByoPhoneNumber' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CreateTwilioPhoneNumberDTO? Twilio { get; init; }
 #else
@@ -74,6 +81,13 @@ namespace G
             value = Twilio;
             return IsTwilio;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.CreateTwilioPhoneNumberDTO PickTwilio() => IsTwilio
+            ? Twilio!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Twilio' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -108,6 +122,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.CreateVonagePhoneNumberDTO PickVonage() => IsVonage
+            ? Vonage!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Vonage' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CreateVapiPhoneNumberDTO? Vapi { get; init; }
 #else
@@ -138,6 +159,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.CreateVapiPhoneNumberDTO PickVapi() => IsVapi
+            ? Vapi!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Vapi' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CreateTelnyxPhoneNumberDTO? Telnyx { get; init; }
 #else
@@ -164,6 +192,13 @@ namespace G
             value = Telnyx;
             return IsTelnyx;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.CreateTelnyxPhoneNumberDTO PickTelnyx() => IsTelnyx
+            ? Telnyx!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Telnyx' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

@@ -47,6 +47,13 @@ namespace G
             value = TextToImage;
             return IsTextToImage;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.StabilityAiTextToImageOptions PickTextToImage() => IsTextToImage
+            ? TextToImage!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'TextToImage' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

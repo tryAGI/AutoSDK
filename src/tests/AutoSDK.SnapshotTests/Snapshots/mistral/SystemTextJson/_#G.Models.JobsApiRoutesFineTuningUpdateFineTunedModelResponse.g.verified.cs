@@ -48,6 +48,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.CompletionFTModelOut PickCompletion() => IsCompletion
+            ? Completion!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Completion' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ClassifierFTModelOut? Classifier { get; init; }
 #else
@@ -74,6 +81,13 @@ namespace G
             value = Classifier;
             return IsClassifier;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ClassifierFTModelOut PickClassifier() => IsClassifier
+            ? Classifier!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Classifier' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

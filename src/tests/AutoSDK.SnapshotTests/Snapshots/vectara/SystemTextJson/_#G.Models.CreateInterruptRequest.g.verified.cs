@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.CreateInputRequestBase PickInputBase() => IsInputBase
+            ? InputBase!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'InputBase' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CreateInterruptRequestVariant2? CreateInterruptRequestVariant2 { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = CreateInterruptRequestVariant2;
             return IsCreateInterruptRequestVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.CreateInterruptRequestVariant2 PickCreateInterruptRequestVariant2() => IsCreateInterruptRequestVariant2
+            ? CreateInterruptRequestVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CreateInterruptRequestVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

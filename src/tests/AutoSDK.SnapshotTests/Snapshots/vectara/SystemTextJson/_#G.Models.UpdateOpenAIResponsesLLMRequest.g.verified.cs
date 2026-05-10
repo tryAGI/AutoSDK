@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.OpenAILLMUpdateBase PickBase() => IsBase
+            ? Base!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Base' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.UpdateOpenAIResponsesLLMRequestVariant2? UpdateOpenAIResponsesLLMRequestVariant2 { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = UpdateOpenAIResponsesLLMRequestVariant2;
             return IsUpdateOpenAIResponsesLLMRequestVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.UpdateOpenAIResponsesLLMRequestVariant2 PickUpdateOpenAIResponsesLLMRequestVariant2() => IsUpdateOpenAIResponsesLLMRequestVariant2
+            ? UpdateOpenAIResponsesLLMRequestVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'UpdateOpenAIResponsesLLMRequestVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

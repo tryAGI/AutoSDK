@@ -41,6 +41,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.FieldCondition PickField() => IsField
+            ? Field!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Field' but the value was {ToString()}.");
+
+        /// <summary>
         /// Select points with empty payload for a specified field
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -69,6 +76,13 @@ namespace G
             value = IsEmpty;
             return IsIsEmpty;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.IsEmptyCondition PickIsEmpty() => IsIsEmpty
+            ? IsEmpty!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'IsEmpty' but the value was {ToString()}.");
 
         /// <summary>
         /// Select points with null payload for a specified field
@@ -101,6 +115,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.IsNullCondition PickIsNull() => IsIsNull
+            ? IsNull!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'IsNull' but the value was {ToString()}.");
+
+        /// <summary>
         /// ID-based filtering condition
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -129,6 +150,13 @@ namespace G
             value = HasId;
             return IsHasId;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.HasIdCondition PickHasId() => IsHasId
+            ? HasId!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'HasId' but the value was {ToString()}.");
 
         /// <summary>
         /// Filter points which have specific vector assigned
@@ -163,6 +191,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.HasVectorCondition PickHasVector() => IsHasVector
+            ? HasVector!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'HasVector' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.NestedCondition? Nested { get; init; }
 #else
@@ -193,6 +228,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.NestedCondition PickNested() => IsNested
+            ? Nested!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Nested' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.Filter? Filter { get; init; }
 #else
@@ -219,6 +261,13 @@ namespace G
             value = Filter;
             return IsFilter;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.Filter PickFilter() => IsFilter
+            ? Filter!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Filter' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

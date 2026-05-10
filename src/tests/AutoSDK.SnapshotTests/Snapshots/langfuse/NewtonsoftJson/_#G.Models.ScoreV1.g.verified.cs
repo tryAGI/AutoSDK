@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.AllOf<global::G.ScoreV1Variant12, global::G.NumericScoreV1> PickScoreV1Variant1() => IsScoreV1Variant1
+            ? ScoreV1Variant1!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ScoreV1Variant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.AllOf<global::G.ScoreV1Variant22, global::G.CategoricalScoreV1>? ScoreV1Variant2 { get; init; }
 #else
@@ -73,6 +80,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.AllOf<global::G.ScoreV1Variant22, global::G.CategoricalScoreV1> PickScoreV1Variant2() => IsScoreV1Variant2
+            ? ScoreV1Variant2!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ScoreV1Variant2' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.AllOf<global::G.ScoreV1Variant32, global::G.BooleanScoreV1>? ScoreV1Variant3 { get; init; }
 #else
@@ -99,6 +113,13 @@ namespace G
             value = ScoreV1Variant3;
             return IsScoreV1Variant3;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.AllOf<global::G.ScoreV1Variant32, global::G.BooleanScoreV1> PickScoreV1Variant3() => IsScoreV1Variant3
+            ? ScoreV1Variant3!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ScoreV1Variant3' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

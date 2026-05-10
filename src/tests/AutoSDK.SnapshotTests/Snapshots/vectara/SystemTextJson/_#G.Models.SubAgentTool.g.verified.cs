@@ -44,6 +44,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.ToolBase PickBase() => IsBase
+            ? Base!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Base' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.SubAgentToolVariant2? SubAgentToolVariant2 { get; init; }
 #else
@@ -70,6 +77,13 @@ namespace G
             value = SubAgentToolVariant2;
             return IsSubAgentToolVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.SubAgentToolVariant2 PickSubAgentToolVariant2() => IsSubAgentToolVariant2
+            ? SubAgentToolVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SubAgentToolVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

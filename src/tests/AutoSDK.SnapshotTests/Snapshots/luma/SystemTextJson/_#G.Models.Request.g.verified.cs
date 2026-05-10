@@ -46,6 +46,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.GenerationRequest PickVideo() => IsVideo
+            ? Video!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Video' but the value was {ToString()}.");
+
+        /// <summary>
         /// The image generation request object
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -74,6 +81,13 @@ namespace G
             value = Image;
             return IsImage;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ImageGenerationRequest PickImage() => IsImage
+            ? Image!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Image' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

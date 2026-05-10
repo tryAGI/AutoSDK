@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.BaseMessagesResultContentItemsOneOf7Content0 PickBaseMessagesResultContentItemsOneOf7Content0() => IsBaseMessagesResultContentItemsOneOf7Content0
+            ? BaseMessagesResultContentItemsOneOf7Content0!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BaseMessagesResultContentItemsOneOf7Content0' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.BaseMessagesResultContentItemsOneOf7Content1? BaseMessagesResultContentItemsOneOf7Content1 { get; init; }
 #else
@@ -73,6 +80,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.BaseMessagesResultContentItemsOneOf7Content1 PickBaseMessagesResultContentItemsOneOf7Content1() => IsBaseMessagesResultContentItemsOneOf7Content1
+            ? BaseMessagesResultContentItemsOneOf7Content1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BaseMessagesResultContentItemsOneOf7Content1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.BaseMessagesResultContentItemsOneOf7Content2? BaseMessagesResultContentItemsOneOf7Content2 { get; init; }
 #else
@@ -99,6 +113,13 @@ namespace G
             value = BaseMessagesResultContentItemsOneOf7Content2;
             return IsBaseMessagesResultContentItemsOneOf7Content2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.BaseMessagesResultContentItemsOneOf7Content2 PickBaseMessagesResultContentItemsOneOf7Content2() => IsBaseMessagesResultContentItemsOneOf7Content2
+            ? BaseMessagesResultContentItemsOneOf7Content2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BaseMessagesResultContentItemsOneOf7Content2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

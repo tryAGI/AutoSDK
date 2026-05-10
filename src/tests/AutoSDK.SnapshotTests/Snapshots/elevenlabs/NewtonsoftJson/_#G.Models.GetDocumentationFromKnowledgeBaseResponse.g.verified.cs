@@ -48,6 +48,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.GetKnowledgeBaseURLResponseModel PickUrl() => IsUrl
+            ? Url!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Url' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.GetKnowledgeBaseFileResponseModel? File { get; init; }
 #else
@@ -74,6 +81,13 @@ namespace G
             value = File;
             return IsFile;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.GetKnowledgeBaseFileResponseModel PickFile() => IsFile
+            ? File!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'File' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -108,6 +122,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.GetKnowledgeBaseTextResponseModel PickText() => IsText
+            ? Text!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.GetKnowledgeBaseFolderResponseModel? Folder { get; init; }
 #else
@@ -134,6 +155,13 @@ namespace G
             value = Folder;
             return IsFolder;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.GetKnowledgeBaseFolderResponseModel PickFolder() => IsFolder
+            ? Folder!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Folder' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

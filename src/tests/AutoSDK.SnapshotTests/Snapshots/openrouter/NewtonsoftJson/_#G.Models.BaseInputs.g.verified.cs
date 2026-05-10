@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public string PickBaseInputsVariant1() => IsBaseInputsVariant1
+            ? BaseInputsVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BaseInputsVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<global::G.BaseInputsOneOf1Items>? BaseInputs1 { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = BaseInputs1;
             return IsBaseInputs1;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<global::G.BaseInputsOneOf1Items> PickBaseInputs1() => IsBaseInputs1
+            ? BaseInputs1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BaseInputs1' but the value was {ToString()}.");
 
         /// <summary>
         /// Any type
@@ -99,6 +113,13 @@ namespace G
             value = BaseInputsVariant3;
             return IsBaseInputsVariant3;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public object PickBaseInputsVariant3() => IsBaseInputsVariant3
+            ? BaseInputsVariant3!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BaseInputsVariant3' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.LogoDtoVariant1 PickLogoDtoVariant1() => IsLogoDtoVariant1
+            ? LogoDtoVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'LogoDtoVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public bool? LogoDtoVariant2 { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = LogoDtoVariant2;
             return IsLogoDtoVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool PickLogoDtoVariant2() => IsLogoDtoVariant2
+            ? LogoDtoVariant2!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'LogoDtoVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.PdfParserEngine0 PickPdfParserEngine0() => IsPdfParserEngine0
+            ? PdfParserEngine0!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'PdfParserEngine0' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.PdfParserEngine1? PdfParserEngine1 { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = PdfParserEngine1;
             return IsPdfParserEngine1;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.PdfParserEngine1 PickPdfParserEngine1() => IsPdfParserEngine1
+            ? PdfParserEngine1!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'PdfParserEngine1' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

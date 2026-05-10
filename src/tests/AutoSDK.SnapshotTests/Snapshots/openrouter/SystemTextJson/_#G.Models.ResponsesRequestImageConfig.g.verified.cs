@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public string PickResponsesRequestImageConfigVariant1() => IsResponsesRequestImageConfigVariant1
+            ? ResponsesRequestImageConfigVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResponsesRequestImageConfigVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public double? ResponsesRequestImageConfigVariant2 { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = ResponsesRequestImageConfigVariant2;
             return IsResponsesRequestImageConfigVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public double PickResponsesRequestImageConfigVariant2() => IsResponsesRequestImageConfigVariant2
+            ? ResponsesRequestImageConfigVariant2!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResponsesRequestImageConfigVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

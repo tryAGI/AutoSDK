@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.ComparisonOperator PickComparisonOperator() => IsComparisonOperator
+            ? ComparisonOperator!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ComparisonOperator' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<object>>? LogicalOperator { get; init; }
 #else
@@ -73,6 +80,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<object>> PickLogicalOperator() => IsLogicalOperator
+            ? LogicalOperator!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'LogicalOperator' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.Dictionary<string, global::G.ComparisonOperator>? QueryFilterVariant3 { get; init; }
 #else
@@ -99,6 +113,13 @@ namespace G
             value = QueryFilterVariant3;
             return IsQueryFilterVariant3;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.Dictionary<string, global::G.ComparisonOperator> PickQueryFilterVariant3() => IsQueryFilterVariant3
+            ? QueryFilterVariant3!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'QueryFilterVariant3' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

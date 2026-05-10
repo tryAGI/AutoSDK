@@ -46,6 +46,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ChatCompletionDocumentSourceText PickText() => IsText
+            ? Text!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
+
+        /// <summary>
         /// A document whose contents are provided inline as JSON data.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -74,6 +81,13 @@ namespace G
             value = Json;
             return IsJson;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ChatCompletionDocumentSourceJSON PickJson() => IsJson
+            ? Json!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Json' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

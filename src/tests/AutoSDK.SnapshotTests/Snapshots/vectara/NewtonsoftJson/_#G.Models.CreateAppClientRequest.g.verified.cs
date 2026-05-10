@@ -44,6 +44,13 @@ namespace G
             value = ClientCredentials;
             return IsClientCredentials;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.CreateClientCredentialsRequest PickClientCredentials() => IsClientCredentials
+            ? ClientCredentials!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ClientCredentials' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

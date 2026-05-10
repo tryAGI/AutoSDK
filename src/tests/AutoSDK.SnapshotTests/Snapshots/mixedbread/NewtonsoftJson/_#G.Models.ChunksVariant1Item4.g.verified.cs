@@ -48,6 +48,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.TextInputChunk PickText() => IsText
+            ? Text!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ImageUrlInputChunk? ImageUrl { get; init; }
 #else
@@ -74,6 +81,13 @@ namespace G
             value = ImageUrl;
             return IsImageUrl;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ImageUrlInputChunk PickImageUrl() => IsImageUrl
+            ? ImageUrl!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ImageUrl' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -108,6 +122,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.AudioUrlInputChunk PickAudioUrl() => IsAudioUrl
+            ? AudioUrl!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AudioUrl' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.VideoUrlInputChunk? VideoUrl { get; init; }
 #else
@@ -134,6 +155,13 @@ namespace G
             value = VideoUrl;
             return IsVideoUrl;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.VideoUrlInputChunk PickVideoUrl() => IsVideoUrl
+            ? VideoUrl!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'VideoUrl' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

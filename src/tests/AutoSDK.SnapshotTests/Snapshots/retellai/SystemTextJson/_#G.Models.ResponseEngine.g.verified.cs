@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.ResponseEngineRetellLm PickRetellLm() => IsRetellLm
+            ? RetellLm!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'RetellLm' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ResponseEngineCustomLm? CustomLm { get; init; }
 #else
@@ -73,6 +80,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.ResponseEngineCustomLm PickCustomLm() => IsCustomLm
+            ? CustomLm!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CustomLm' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ResponseEngineConversationFlow? ConversationFlow { get; init; }
 #else
@@ -99,6 +113,13 @@ namespace G
             value = ConversationFlow;
             return IsConversationFlow;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ResponseEngineConversationFlow PickConversationFlow() => IsConversationFlow
+            ? ConversationFlow!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ConversationFlow' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

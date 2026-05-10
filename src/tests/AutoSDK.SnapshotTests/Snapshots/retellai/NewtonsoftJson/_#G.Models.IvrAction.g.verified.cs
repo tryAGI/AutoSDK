@@ -39,6 +39,13 @@ namespace G
             value = Hangup;
             return IsHangup;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.IvrActionHangup PickHangup() => IsHangup
+            ? Hangup!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Hangup' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

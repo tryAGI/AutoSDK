@@ -42,6 +42,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.VectorStorageTypeVariant1 PickVectorStorageTypeVariant1() => IsVectorStorageTypeVariant1
+            ? VectorStorageTypeVariant1!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'VectorStorageTypeVariant1' but the value was {ToString()}.");
+
+        /// <summary>
         /// Storage in mmap file, not appendable<br/>
         /// Search performance is defined by disk speed and the fraction of vectors that fit in memory.
         /// </summary>
@@ -71,6 +78,13 @@ namespace G
             value = VectorStorageTypeVariant2;
             return IsVectorStorageTypeVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.VectorStorageTypeVariant2 PickVectorStorageTypeVariant2() => IsVectorStorageTypeVariant2
+            ? VectorStorageTypeVariant2!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'VectorStorageTypeVariant2' but the value was {ToString()}.");
 
         /// <summary>
         /// Storage in chunked mmap files, appendable<br/>
@@ -104,6 +118,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.VectorStorageTypeVariant3 PickVectorStorageTypeVariant3() => IsVectorStorageTypeVariant3
+            ? VectorStorageTypeVariant3!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'VectorStorageTypeVariant3' but the value was {ToString()}.");
+
+        /// <summary>
         /// Same as `ChunkedMmap`, but vectors are forced to be locked in RAM In this way we avoid cold requests to disk, but risk to run out of memory<br/>
         /// Designed as a replacement for `Memory`, which doesn't depend on RocksDB
         /// </summary>
@@ -135,6 +156,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.VectorStorageTypeVariant4 PickVectorStorageTypeVariant4() => IsVectorStorageTypeVariant4
+            ? VectorStorageTypeVariant4!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'VectorStorageTypeVariant4' but the value was {ToString()}.");
+
+        /// <summary>
         /// Storage in a single mmap file, not appendable Pre-fetched into RAM on load
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -163,6 +191,13 @@ namespace G
             value = VectorStorageTypeVariant5;
             return IsVectorStorageTypeVariant5;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.VectorStorageTypeVariant5 PickVectorStorageTypeVariant5() => IsVectorStorageTypeVariant5
+            ? VectorStorageTypeVariant5!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'VectorStorageTypeVariant5' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

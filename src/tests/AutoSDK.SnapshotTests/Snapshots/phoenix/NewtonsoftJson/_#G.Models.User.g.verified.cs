@@ -48,6 +48,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.LocalUserData PickLocal() => IsLocal
+            ? Local!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Local' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.OAuth2UserData? Oauth2 { get; init; }
 #else
@@ -78,6 +85,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.OAuth2UserData PickOauth2() => IsOauth2
+            ? Oauth2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Oauth2' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.LDAPUserData? Ldap { get; init; }
 #else
@@ -104,6 +118,13 @@ namespace G
             value = Ldap;
             return IsLdap;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.LDAPUserData PickLdap() => IsLdap
+            ? Ldap!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Ldap' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

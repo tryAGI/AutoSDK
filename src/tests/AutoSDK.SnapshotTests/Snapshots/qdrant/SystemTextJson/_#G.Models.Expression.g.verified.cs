@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public float PickExpressionVariant1() => IsExpressionVariant1
+            ? ExpressionVariant1!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ExpressionVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public string? ExpressionVariant2 { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = ExpressionVariant2;
             return IsExpressionVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string PickExpressionVariant2() => IsExpressionVariant2
+            ? ExpressionVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ExpressionVariant2' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -103,6 +117,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.Condition PickCondition() => IsCondition
+            ? Condition!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Condition' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.GeoDistance? GeoDistance { get; init; }
 #else
@@ -129,6 +150,13 @@ namespace G
             value = GeoDistance;
             return IsGeoDistance;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.GeoDistance PickGeoDistance() => IsGeoDistance
+            ? GeoDistance!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'GeoDistance' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -163,6 +191,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.DatetimeExpression PickDatetime() => IsDatetime
+            ? Datetime!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Datetime' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.DatetimeKeyExpression? DatetimeKey { get; init; }
 #else
@@ -189,6 +224,13 @@ namespace G
             value = DatetimeKey;
             return IsDatetimeKey;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.DatetimeKeyExpression PickDatetimeKey() => IsDatetimeKey
+            ? DatetimeKey!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'DatetimeKey' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -223,6 +265,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.MultExpression PickMult() => IsMult
+            ? Mult!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Mult' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.SumExpression? Sum { get; init; }
 #else
@@ -249,6 +298,13 @@ namespace G
             value = Sum;
             return IsSum;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.SumExpression PickSum() => IsSum
+            ? Sum!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Sum' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -283,6 +339,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.NegExpression PickNeg() => IsNeg
+            ? Neg!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Neg' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.AbsExpression? Abs { get; init; }
 #else
@@ -309,6 +372,13 @@ namespace G
             value = Abs;
             return IsAbs;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.AbsExpression PickAbs() => IsAbs
+            ? Abs!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Abs' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -343,6 +413,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.DivExpression PickDiv() => IsDiv
+            ? Div!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Div' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.SqrtExpression? Sqrt { get; init; }
 #else
@@ -369,6 +446,13 @@ namespace G
             value = Sqrt;
             return IsSqrt;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.SqrtExpression PickSqrt() => IsSqrt
+            ? Sqrt!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Sqrt' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -403,6 +487,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.PowExpression PickPow() => IsPow
+            ? Pow!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Pow' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ExpExpression? Exp { get; init; }
 #else
@@ -429,6 +520,13 @@ namespace G
             value = Exp;
             return IsExp;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ExpExpression PickExp() => IsExp
+            ? Exp!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Exp' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -463,6 +561,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.Log10Expression PickLog10() => IsLog10
+            ? Log10!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Log10' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.LnExpression? Ln { get; init; }
 #else
@@ -489,6 +594,13 @@ namespace G
             value = Ln;
             return IsLn;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.LnExpression PickLn() => IsLn
+            ? Ln!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Ln' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -523,6 +635,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.LinDecayExpression PickLinDecay() => IsLinDecay
+            ? LinDecay!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'LinDecay' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ExpDecayExpression? ExpDecay { get; init; }
 #else
@@ -553,6 +672,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.ExpDecayExpression PickExpDecay() => IsExpDecay
+            ? ExpDecay!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ExpDecay' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.GaussDecayExpression? GaussDecay { get; init; }
 #else
@@ -579,6 +705,13 @@ namespace G
             value = GaussDecay;
             return IsGaussDecay;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.GaussDecayExpression PickGaussDecay() => IsGaussDecay
+            ? GaussDecay!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'GaussDecay' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

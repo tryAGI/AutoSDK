@@ -44,6 +44,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.FunctionToolCall PickFunctionToolCall() => IsFunctionToolCall
+            ? FunctionToolCall!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FunctionToolCall' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.FunctionToolCallResourceVariant2? FunctionToolCallResourceVariant2 { get; init; }
 #else
@@ -70,6 +77,13 @@ namespace G
             value = FunctionToolCallResourceVariant2;
             return IsFunctionToolCallResourceVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.FunctionToolCallResourceVariant2 PickFunctionToolCallResourceVariant2() => IsFunctionToolCallResourceVariant2
+            ? FunctionToolCallResourceVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FunctionToolCallResourceVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

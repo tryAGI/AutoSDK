@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items0 PickMessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items0() => IsMessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items0
+            ? MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items0!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items0' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items1? MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items1 { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items1;
             return IsMessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items1;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items1 PickMessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items1() => IsMessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items1
+            ? MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items1' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -103,6 +117,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items2 PickMessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items2() => IsMessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items2
+            ? MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items2' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items3? MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items3 { get; init; }
 #else
@@ -133,6 +154,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items3 PickMessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items3() => IsMessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items3
+            ? MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items3!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items3' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items4? MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items4 { get; init; }
 #else
@@ -159,6 +187,13 @@ namespace G
             value = MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items4;
             return IsMessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items4;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items4 PickMessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items4() => IsMessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items4
+            ? MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items4!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items4' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

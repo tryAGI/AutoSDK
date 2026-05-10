@@ -41,6 +41,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.InputText PickTextInput() => IsTextInput
+            ? TextInput!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'TextInput' but the value was {ToString()}.");
+
+        /// <summary>
         /// An image input to the model. Learn about [image inputs](/docs/guides/vision).
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -71,6 +78,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.InputImage PickImageInput() => IsImageInput
+            ? ImageInput!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ImageInput' but the value was {ToString()}.");
+
+        /// <summary>
         /// A file input to the model.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -99,6 +113,13 @@ namespace G
             value = FileInput;
             return IsFileInput;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.InputFile PickFileInput() => IsFileInput
+            ? FileInput!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FileInput' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

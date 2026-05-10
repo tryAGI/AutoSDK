@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::System.Collections.Generic.IList<global::G.InputsOneOf1ItemsOneOf5ContentOneOf0Items> PickInputsOneOf1ItemsOneOf5Content0() => IsInputsOneOf1ItemsOneOf5Content0
+            ? InputsOneOf1ItemsOneOf5Content0!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'InputsOneOf1ItemsOneOf5Content0' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public string? InputsOneOf1ItemsOneOf5ContentVariant2 { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = InputsOneOf1ItemsOneOf5ContentVariant2;
             return IsInputsOneOf1ItemsOneOf5ContentVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string PickInputsOneOf1ItemsOneOf5ContentVariant2() => IsInputsOneOf1ItemsOneOf5ContentVariant2
+            ? InputsOneOf1ItemsOneOf5ContentVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'InputsOneOf1ItemsOneOf5ContentVariant2' but the value was {ToString()}.");
 
         /// <summary>
         /// Any type
@@ -99,6 +113,13 @@ namespace G
             value = InputsOneOf1ItemsOneOf5ContentVariant3;
             return IsInputsOneOf1ItemsOneOf5ContentVariant3;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public object PickInputsOneOf1ItemsOneOf5ContentVariant3() => IsInputsOneOf1ItemsOneOf5ContentVariant3
+            ? InputsOneOf1ItemsOneOf5ContentVariant3!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'InputsOneOf1ItemsOneOf5ContentVariant3' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

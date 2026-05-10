@@ -41,6 +41,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public string PickChatCompletionsPostRequestBodyContentApplicationJsonSchemaMessagesOneOf1ItemsContentVariant1() => IsChatCompletionsPostRequestBodyContentApplicationJsonSchemaMessagesOneOf1ItemsContentVariant1
+            ? ChatCompletionsPostRequestBodyContentApplicationJsonSchemaMessagesOneOf1ItemsContentVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ChatCompletionsPostRequestBodyContentApplicationJsonSchemaMessagesOneOf1ItemsContentVariant1' but the value was {ToString()}.");
+
+        /// <summary>
         /// The content of the message, used for file inputs.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -69,6 +76,13 @@ namespace G
             value = ChatCompletionsPostRequestBodyContentApplicationJsonSchemaMessagesOneOf1ItemsContent1;
             return IsChatCompletionsPostRequestBodyContentApplicationJsonSchemaMessagesOneOf1ItemsContent1;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<global::G.ChatCompletionsPostRequestBodyContentApplicationJsonSchemaMessagesOneOf1ItemsContentOneOf1Items> PickChatCompletionsPostRequestBodyContentApplicationJsonSchemaMessagesOneOf1ItemsContent1() => IsChatCompletionsPostRequestBodyContentApplicationJsonSchemaMessagesOneOf1ItemsContent1
+            ? ChatCompletionsPostRequestBodyContentApplicationJsonSchemaMessagesOneOf1ItemsContent1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ChatCompletionsPostRequestBodyContentApplicationJsonSchemaMessagesOneOf1ItemsContent1' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

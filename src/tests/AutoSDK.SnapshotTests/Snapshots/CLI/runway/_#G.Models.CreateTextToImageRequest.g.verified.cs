@@ -48,6 +48,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.CreateTextToImageRequestGen4ImageTurbo PickGen4ImageTurbo() => IsGen4ImageTurbo
+            ? Gen4ImageTurbo!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Gen4ImageTurbo' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CreateTextToImageRequestGen4Image? Gen4Image { get; init; }
 #else
@@ -78,6 +85,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.CreateTextToImageRequestGen4Image PickGen4Image() => IsGen4Image
+            ? Gen4Image!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Gen4Image' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CreateTextToImageRequestGemini25Flash? Gemini25Flash { get; init; }
 #else
@@ -104,6 +118,13 @@ namespace G
             value = Gemini25Flash;
             return IsGemini25Flash;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.CreateTextToImageRequestGemini25Flash PickGemini25Flash() => IsGemini25Flash
+            ? Gemini25Flash!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Gemini25Flash' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

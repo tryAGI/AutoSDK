@@ -46,6 +46,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.StreamSearchResponse PickSearchResults() => IsSearchResults
+            ? SearchResults!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SearchResults' but the value was {ToString()}.");
+
+        /// <summary>
         /// The chunk response from the generation, which may be a partial generation.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -74,6 +81,13 @@ namespace G
             value = GenerationChunk;
             return IsGenerationChunk;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.StreamGenerationChunk PickGenerationChunk() => IsGenerationChunk
+            ? GenerationChunk!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'GenerationChunk' but the value was {ToString()}.");
 
         /// <summary>
         /// The end of generation. There may still be more information such as the factual consistency score, but generation has stopped.
@@ -106,6 +120,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.StreamGenerationEnd PickGenerationEnd() => IsGenerationEnd
+            ? GenerationEnd!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'GenerationEnd' but the value was {ToString()}.");
+
+        /// <summary>
         /// The end of a query response stream.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -134,6 +155,13 @@ namespace G
             value = End;
             return IsEnd;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.StreamResponseEnd PickEnd() => IsEnd
+            ? End!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'End' but the value was {ToString()}.");
 
         /// <summary>
         /// Event containing the factual consistency score.
@@ -166,6 +194,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.FactualConsistencyScore PickFactualConsistencyScore() => IsFactualConsistencyScore
+            ? FactualConsistencyScore!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FactualConsistencyScore' but the value was {ToString()}.");
+
+        /// <summary>
         /// Event containing information on how the generation was accomplished.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -196,6 +231,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.GenerationInfo PickGenerationInfo() => IsGenerationInfo
+            ? GenerationInfo!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'GenerationInfo' but the value was {ToString()}.");
+
+        /// <summary>
         /// Event signaling there was an error with the request.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -224,6 +266,13 @@ namespace G
             value = Error;
             return IsError;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.StreamError PickError() => IsError
+            ? Error!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Error' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

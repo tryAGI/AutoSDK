@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.GraderTextSimilarity PickTextSimilarityGrader() => IsTextSimilarityGrader
+            ? TextSimilarityGrader!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'TextSimilarityGrader' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.EvalGraderTextSimilarityVariant2? EvalGraderTextSimilarityVariant2 { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = EvalGraderTextSimilarityVariant2;
             return IsEvalGraderTextSimilarityVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.EvalGraderTextSimilarityVariant2 PickEvalGraderTextSimilarityVariant2() => IsEvalGraderTextSimilarityVariant2
+            ? EvalGraderTextSimilarityVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'EvalGraderTextSimilarityVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

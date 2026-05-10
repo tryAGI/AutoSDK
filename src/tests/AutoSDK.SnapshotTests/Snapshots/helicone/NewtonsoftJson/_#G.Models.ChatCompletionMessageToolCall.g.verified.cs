@@ -41,6 +41,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ChatCompletionMessageFunctionToolCall PickFunction() => IsFunction
+            ? Function!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Function' but the value was {ToString()}.");
+
+        /// <summary>
         /// A call to a custom tool created by the model.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -69,6 +76,13 @@ namespace G
             value = Custom;
             return IsCustom;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ChatCompletionMessageCustomToolCall PickCustom() => IsCustom
+            ? Custom!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Custom' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

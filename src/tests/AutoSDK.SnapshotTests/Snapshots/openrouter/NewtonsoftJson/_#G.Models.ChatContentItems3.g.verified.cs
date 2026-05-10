@@ -41,6 +41,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.LegacyChatContentVideo PickLegacyChatContentVideo() => IsLegacyChatContentVideo
+            ? LegacyChatContentVideo!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'LegacyChatContentVideo' but the value was {ToString()}.");
+
+        /// <summary>
         /// Video input content part
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -69,6 +76,13 @@ namespace G
             value = ChatContentVideo;
             return IsChatContentVideo;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ChatContentVideo PickChatContentVideo() => IsChatContentVideo
+            ? ChatContentVideo!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ChatContentVideo' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

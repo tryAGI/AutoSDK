@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.UpsertOperation PickUpsert() => IsUpsert
+            ? Upsert!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Upsert' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.DeleteOperation? Delete { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = Delete;
             return IsDelete;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.DeleteOperation PickDelete() => IsDelete
+            ? Delete!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Delete' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -103,6 +117,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.SetPayloadOperation PickSetPayload() => IsSetPayload
+            ? SetPayload!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SetPayload' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.OverwritePayloadOperation? OverwritePayload { get; init; }
 #else
@@ -129,6 +150,13 @@ namespace G
             value = OverwritePayload;
             return IsOverwritePayload;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.OverwritePayloadOperation PickOverwritePayload() => IsOverwritePayload
+            ? OverwritePayload!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OverwritePayload' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -163,6 +191,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.DeletePayloadOperation PickDeletePayload() => IsDeletePayload
+            ? DeletePayload!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'DeletePayload' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ClearPayloadOperation? ClearPayload { get; init; }
 #else
@@ -189,6 +224,13 @@ namespace G
             value = ClearPayload;
             return IsClearPayload;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ClearPayloadOperation PickClearPayload() => IsClearPayload
+            ? ClearPayload!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ClearPayload' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -223,6 +265,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.UpdateVectorsOperation PickVectors() => IsVectors
+            ? Vectors!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Vectors' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.DeleteVectorsOperation? DeleteVectors { get; init; }
 #else
@@ -249,6 +298,13 @@ namespace G
             value = DeleteVectors;
             return IsDeleteVectors;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.DeleteVectorsOperation PickDeleteVectors() => IsDeleteVectors
+            ? DeleteVectors!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'DeleteVectors' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

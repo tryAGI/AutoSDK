@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.ExportDtoVariant1 PickExportDtoVariant1() => IsExportDtoVariant1
+            ? ExportDtoVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ExportDtoVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ExportDtoVariant2? ExportDtoVariant2 { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = ExportDtoVariant2;
             return IsExportDtoVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ExportDtoVariant2 PickExportDtoVariant2() => IsExportDtoVariant2
+            ? ExportDtoVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ExportDtoVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

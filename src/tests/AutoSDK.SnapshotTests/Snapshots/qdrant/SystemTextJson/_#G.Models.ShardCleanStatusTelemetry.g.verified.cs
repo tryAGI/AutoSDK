@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.ShardCleanStatusTelemetryEnum PickEnum() => IsEnum
+            ? Enum!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Enum' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ShardCleanStatusTelemetryEnum2? Enum2 { get; init; }
 #else
@@ -73,6 +80,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.ShardCleanStatusTelemetryEnum2 PickEnum2() => IsEnum2
+            ? Enum2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Enum2' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ShardCleanStatusTelemetryEnum3? Enum3 { get; init; }
 #else
@@ -99,6 +113,13 @@ namespace G
             value = Enum3;
             return IsEnum3;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ShardCleanStatusTelemetryEnum3 PickEnum3() => IsEnum3
+            ? Enum3!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Enum3' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

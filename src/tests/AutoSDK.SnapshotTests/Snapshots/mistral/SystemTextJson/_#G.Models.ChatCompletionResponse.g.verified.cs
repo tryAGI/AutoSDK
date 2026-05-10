@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.ChatCompletionResponseBase PickBase() => IsBase
+            ? Base!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Base' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ChatCompletionResponseChatCompletionResponse1? Response1 { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = Response1;
             return IsResponse1;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ChatCompletionResponseChatCompletionResponse1 PickResponse1() => IsResponse1
+            ? Response1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Response1' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.ResultSuccessSuccessBoolean PickResultSuccessSuccessBoolean() => IsResultSuccessSuccessBoolean
+            ? ResultSuccessSuccessBoolean!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResultSuccessSuccessBoolean' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ResultErrorString? Error { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = Error;
             return IsError;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ResultErrorString PickError() => IsError
+            ? Error!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Error' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

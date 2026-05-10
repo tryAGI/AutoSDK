@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.CreateInputRequestBase PickBase() => IsBase
+            ? Base!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Base' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CreateInputMessageRequestVariant2? CreateInputMessageRequestVariant2 { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = CreateInputMessageRequestVariant2;
             return IsCreateInputMessageRequestVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.CreateInputMessageRequestVariant2 PickCreateInputMessageRequestVariant2() => IsCreateInputMessageRequestVariant2
+            ? CreateInputMessageRequestVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CreateInputMessageRequestVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

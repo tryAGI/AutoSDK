@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.PayloadStorageTypeVariant1 PickPayloadStorageTypeVariant1() => IsPayloadStorageTypeVariant1
+            ? PayloadStorageTypeVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'PayloadStorageTypeVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.PayloadStorageTypeVariant2? PayloadStorageTypeVariant2 { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = PayloadStorageTypeVariant2;
             return IsPayloadStorageTypeVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.PayloadStorageTypeVariant2 PickPayloadStorageTypeVariant2() => IsPayloadStorageTypeVariant2
+            ? PayloadStorageTypeVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'PayloadStorageTypeVariant2' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -103,6 +117,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.PayloadStorageTypeVariant3 PickPayloadStorageTypeVariant3() => IsPayloadStorageTypeVariant3
+            ? PayloadStorageTypeVariant3!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'PayloadStorageTypeVariant3' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.PayloadStorageTypeVariant4? PayloadStorageTypeVariant4 { get; init; }
 #else
@@ -129,6 +150,13 @@ namespace G
             value = PayloadStorageTypeVariant4;
             return IsPayloadStorageTypeVariant4;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.PayloadStorageTypeVariant4 PickPayloadStorageTypeVariant4() => IsPayloadStorageTypeVariant4
+            ? PayloadStorageTypeVariant4!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'PayloadStorageTypeVariant4' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

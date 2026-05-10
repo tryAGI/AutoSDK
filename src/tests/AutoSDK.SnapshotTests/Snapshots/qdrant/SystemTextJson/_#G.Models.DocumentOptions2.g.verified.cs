@@ -41,6 +41,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public object PickOptionsVariant1() => IsOptionsVariant1
+            ? OptionsVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OptionsVariant1' but the value was {ToString()}.");
+
+        /// <summary>
         /// Configuration of the local bm25 models.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -69,6 +76,13 @@ namespace G
             value = Bm25Config;
             return IsBm25Config;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.Bm25Config PickBm25Config() => IsBm25Config
+            ? Bm25Config!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Bm25Config' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

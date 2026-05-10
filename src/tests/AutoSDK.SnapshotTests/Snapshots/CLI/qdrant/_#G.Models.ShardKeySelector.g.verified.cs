@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.ShardKey PickShardKey() => IsShardKey
+            ? ShardKey!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ShardKey' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<global::G.ShardKey>? ShardKeySelectorVariant2 { get; init; }
 #else
@@ -73,6 +80,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::System.Collections.Generic.IList<global::G.ShardKey> PickShardKeySelectorVariant2() => IsShardKeySelectorVariant2
+            ? ShardKeySelectorVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ShardKeySelectorVariant2' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ShardKeyWithFallback? WithFallback { get; init; }
 #else
@@ -99,6 +113,13 @@ namespace G
             value = WithFallback;
             return IsWithFallback;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ShardKeyWithFallback PickWithFallback() => IsWithFallback
+            ? WithFallback!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'WithFallback' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

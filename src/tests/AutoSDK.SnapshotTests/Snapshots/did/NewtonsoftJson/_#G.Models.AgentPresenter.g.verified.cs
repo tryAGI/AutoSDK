@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.AgentPresenterPhotoAvatar PickPhotoAvatar() => IsPhotoAvatar
+            ? PhotoAvatar!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'PhotoAvatar' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.AgentPresenterVideoAvatar? VideoAvatar { get; init; }
 #else
@@ -73,6 +80,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.AgentPresenterVideoAvatar PickVideoAvatar() => IsVideoAvatar
+            ? VideoAvatar!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'VideoAvatar' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.AgentPresenterExpressiveAvatar? ExpressiveAvatar { get; init; }
 #else
@@ -99,6 +113,13 @@ namespace G
             value = ExpressiveAvatar;
             return IsExpressiveAvatar;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.AgentPresenterExpressiveAvatar PickExpressiveAvatar() => IsExpressiveAvatar
+            ? ExpressiveAvatar!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ExpressiveAvatar' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

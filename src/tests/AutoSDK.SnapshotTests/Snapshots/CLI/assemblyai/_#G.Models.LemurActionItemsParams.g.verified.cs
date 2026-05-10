@@ -45,6 +45,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.LemurBaseParams PickBase() => IsBase
+            ? Base!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Base' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.LemurActionItemsParamsVariant2? LemurActionItemsParamsVariant2 { get; init; }
 #else
@@ -71,6 +78,13 @@ namespace G
             value = LemurActionItemsParamsVariant2;
             return IsLemurActionItemsParamsVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.LemurActionItemsParamsVariant2 PickLemurActionItemsParamsVariant2() => IsLemurActionItemsParamsVariant2
+            ? LemurActionItemsParamsVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'LemurActionItemsParamsVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

@@ -46,6 +46,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.AgentEventBase PickAgentBase() => IsAgentBase
+            ? AgentBase!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AgentBase' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ArtifactUploadEventVariant2? ArtifactUploadEventVariant2 { get; init; }
 #else
@@ -72,6 +79,13 @@ namespace G
             value = ArtifactUploadEventVariant2;
             return IsArtifactUploadEventVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ArtifactUploadEventVariant2 PickArtifactUploadEventVariant2() => IsArtifactUploadEventVariant2
+            ? ArtifactUploadEventVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ArtifactUploadEventVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

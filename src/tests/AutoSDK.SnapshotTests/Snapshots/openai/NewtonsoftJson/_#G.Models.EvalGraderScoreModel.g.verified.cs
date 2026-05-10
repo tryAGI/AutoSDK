@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.GraderScoreModel PickScoreModelGrader() => IsScoreModelGrader
+            ? ScoreModelGrader!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ScoreModelGrader' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.EvalGraderScoreModelVariant2? EvalGraderScoreModelVariant2 { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = EvalGraderScoreModelVariant2;
             return IsEvalGraderScoreModelVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.EvalGraderScoreModelVariant2 PickEvalGraderScoreModelVariant2() => IsEvalGraderScoreModelVariant2
+            ? EvalGraderScoreModelVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'EvalGraderScoreModelVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

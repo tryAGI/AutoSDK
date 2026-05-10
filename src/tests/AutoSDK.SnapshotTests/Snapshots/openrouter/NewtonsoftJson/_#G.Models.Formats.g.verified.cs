@@ -41,6 +41,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.FormatTextConfig PickFormatTextConfig() => IsFormatTextConfig
+            ? FormatTextConfig!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FormatTextConfig' but the value was {ToString()}.");
+
+        /// <summary>
         /// JSON object response format
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -71,6 +78,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.FormatJsonObjectConfig PickFormatJsonObjectConfig() => IsFormatJsonObjectConfig
+            ? FormatJsonObjectConfig!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FormatJsonObjectConfig' but the value was {ToString()}.");
+
+        /// <summary>
         /// JSON schema constrained response format
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -99,6 +113,13 @@ namespace G
             value = FormatJsonSchemaConfig;
             return IsFormatJsonSchemaConfig;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.FormatJsonSchemaConfig PickFormatJsonSchemaConfig() => IsFormatJsonSchemaConfig
+            ? FormatJsonSchemaConfig!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FormatJsonSchemaConfig' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

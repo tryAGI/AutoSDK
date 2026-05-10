@@ -44,6 +44,13 @@ namespace G
             value = Templated;
             return IsTemplated;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.TemplatedReminder PickTemplated() => IsTemplated
+            ? Templated!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Templated' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

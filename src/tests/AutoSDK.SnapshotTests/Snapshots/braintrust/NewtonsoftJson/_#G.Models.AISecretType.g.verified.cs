@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public string PickAISecretTypeVariant1() => IsAISecretTypeVariant1
+            ? AISecretTypeVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AISecretTypeVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<string>? AISecretTypeVariant2 { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = AISecretTypeVariant2;
             return IsAISecretTypeVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<string> PickAISecretTypeVariant2() => IsAISecretTypeVariant2
+            ? AISecretTypeVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AISecretTypeVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

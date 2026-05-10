@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public string PickCodeInterpreterServerToolContainerVariant1() => IsCodeInterpreterServerToolContainerVariant1
+            ? CodeInterpreterServerToolContainerVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CodeInterpreterServerToolContainerVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CodeInterpreterServerToolContainer1? CodeInterpreterServerToolContainer1 { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = CodeInterpreterServerToolContainer1;
             return IsCodeInterpreterServerToolContainer1;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.CodeInterpreterServerToolContainer1 PickCodeInterpreterServerToolContainer1() => IsCodeInterpreterServerToolContainer1
+            ? CodeInterpreterServerToolContainer1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CodeInterpreterServerToolContainer1' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

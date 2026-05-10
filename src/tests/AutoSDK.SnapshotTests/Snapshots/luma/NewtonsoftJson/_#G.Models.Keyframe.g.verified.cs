@@ -47,6 +47,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.GenerationReference PickGeneration() => IsGeneration
+            ? Generation!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Generation' but the value was {ToString()}.");
+
+        /// <summary>
         /// The image object<br/>
         /// Example: {"type":"image","url":"https://example.com/image.jpg"}
         /// </summary>
@@ -76,6 +83,13 @@ namespace G
             value = Image;
             return IsImage;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ImageReference PickImage() => IsImage
+            ? Image!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Image' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

@@ -44,6 +44,13 @@ namespace G
             value = Oauth2;
             return IsOauth2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.OAuth2CreateOrUpdateParams PickOauth2() => IsOauth2
+            ? Oauth2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Oauth2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

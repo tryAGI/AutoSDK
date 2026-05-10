@@ -42,6 +42,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public string PickContainerVariant1() => IsContainerVariant1
+            ? ContainerVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ContainerVariant1' but the value was {ToString()}.");
+
+        /// <summary>
         /// Configuration for a code interpreter container. Optionally specify the IDs<br/>
         /// of the files to run the code on.
         /// </summary>
@@ -71,6 +78,13 @@ namespace G
             value = Auto;
             return IsAuto;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.CodeInterpreterToolAuto PickAuto() => IsAuto
+            ? Auto!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Auto' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

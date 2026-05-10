@@ -44,6 +44,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public string PickPullModelStatusVariant1() => IsPullModelStatusVariant1
+            ? PullModelStatusVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'PullModelStatusVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.PullModelStatusEnum? Enum { get; init; }
 #else
@@ -70,6 +77,13 @@ namespace G
             value = Enum;
             return IsEnum;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.PullModelStatusEnum PickEnum() => IsEnum
+            ? Enum!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Enum' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

@@ -41,6 +41,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ChatFinishReasonEnum PickChatFinishReasonEnum() => IsChatFinishReasonEnum
+            ? ChatFinishReasonEnum!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ChatFinishReasonEnum' but the value was {ToString()}.");
+
+        /// <summary>
         /// Any type
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -71,6 +78,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public object PickChatChoiceFinishReasonVariant2() => IsChatChoiceFinishReasonVariant2
+            ? ChatChoiceFinishReasonVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ChatChoiceFinishReasonVariant2' but the value was {ToString()}.");
+
+        /// <summary>
         /// Any type
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -99,6 +113,13 @@ namespace G
             value = ChatChoiceFinishReasonVariant3;
             return IsChatChoiceFinishReasonVariant3;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public object PickChatChoiceFinishReasonVariant3() => IsChatChoiceFinishReasonVariant3
+            ? ChatChoiceFinishReasonVariant3!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ChatChoiceFinishReasonVariant3' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

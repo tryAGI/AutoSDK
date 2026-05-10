@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.InputContent PickInputContent() => IsInputContent
+            ? InputContent!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'InputContent' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.OutputContent? OutputContent { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = OutputContent;
             return IsOutputContent;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.OutputContent PickOutputContent() => IsOutputContent
+            ? OutputContent!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OutputContent' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

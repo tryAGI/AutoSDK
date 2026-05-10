@@ -46,6 +46,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.FunctionTool PickFunction() => IsFunction
+            ? Function!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Function' but the value was {ToString()}.");
+
+        /// <summary>
         /// A provider-native built-in tool (e.g. web search, code interpreter, bash).
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -74,6 +81,13 @@ namespace G
             value = WebSearch;
             return IsWebSearch;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.BuiltInTool PickWebSearch() => IsWebSearch
+            ? WebSearch!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'WebSearch' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

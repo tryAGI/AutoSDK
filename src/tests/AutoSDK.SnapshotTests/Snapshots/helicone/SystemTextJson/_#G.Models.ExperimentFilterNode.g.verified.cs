@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.PickFilterLeafExperiment PickPickLeaf() => IsPickLeaf
+            ? PickLeaf!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'PickLeaf' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ExperimentFilterBranch? Branch { get; init; }
 #else
@@ -73,6 +80,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.ExperimentFilterBranch PickBranch() => IsBranch
+            ? Branch!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Branch' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ExperimentFilterNodeEnum? Enum { get; init; }
 #else
@@ -99,6 +113,13 @@ namespace G
             value = Enum;
             return IsEnum;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ExperimentFilterNodeEnum PickEnum() => IsEnum
+            ? Enum!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Enum' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

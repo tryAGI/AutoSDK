@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.OutputMessageStatus0 PickOutputMessageStatus0() => IsOutputMessageStatus0
+            ? OutputMessageStatus0!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OutputMessageStatus0' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.OutputMessageStatus1? OutputMessageStatus1 { get; init; }
 #else
@@ -73,6 +80,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.OutputMessageStatus1 PickOutputMessageStatus1() => IsOutputMessageStatus1
+            ? OutputMessageStatus1!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OutputMessageStatus1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.OutputMessageStatus2? OutputMessageStatus2 { get; init; }
 #else
@@ -99,6 +113,13 @@ namespace G
             value = OutputMessageStatus2;
             return IsOutputMessageStatus2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.OutputMessageStatus2 PickOutputMessageStatus2() => IsOutputMessageStatus2
+            ? OutputMessageStatus2!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OutputMessageStatus2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

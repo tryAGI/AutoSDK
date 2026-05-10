@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.ExtendedPointId PickExtendedPointId() => IsExtendedPointId
+            ? ExtendedPointId!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ExtendedPointId' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<float>? RecommendExampleVariant2 { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = RecommendExampleVariant2;
             return IsRecommendExampleVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<float> PickRecommendExampleVariant2() => IsRecommendExampleVariant2
+            ? RecommendExampleVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'RecommendExampleVariant2' but the value was {ToString()}.");
 
         /// <summary>
         /// Sparse vector structure
@@ -99,6 +113,13 @@ namespace G
             value = SparseVector;
             return IsSparseVector;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.SparseVector PickSparseVector() => IsSparseVector
+            ? SparseVector!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SparseVector' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

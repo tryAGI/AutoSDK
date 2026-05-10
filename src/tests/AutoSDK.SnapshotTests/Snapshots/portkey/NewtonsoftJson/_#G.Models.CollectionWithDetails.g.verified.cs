@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.Collection PickCollection() => IsCollection
+            ? Collection!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Collection' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CollectionWithDetailsVariant2? CollectionWithDetailsVariant2 { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = CollectionWithDetailsVariant2;
             return IsCollectionWithDetailsVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.CollectionWithDetailsVariant2 PickCollectionWithDetailsVariant2() => IsCollectionWithDetailsVariant2
+            ? CollectionWithDetailsVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CollectionWithDetailsVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

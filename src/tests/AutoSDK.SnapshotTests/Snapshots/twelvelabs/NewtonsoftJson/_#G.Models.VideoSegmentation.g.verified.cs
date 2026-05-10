@@ -41,6 +41,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.VideoSegmentation0 PickVideoSegmentation0() => IsVideoSegmentation0
+            ? VideoSegmentation0!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'VideoSegmentation0' but the value was {ToString()}.");
+
+        /// <summary>
         /// Configuration for fixed segmentation. This field is required when `strategy` is `fixed`.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -69,6 +76,13 @@ namespace G
             value = VideoSegmentation1;
             return IsVideoSegmentation1;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.VideoSegmentation1 PickVideoSegmentation1() => IsVideoSegmentation1
+            ? VideoSegmentation1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'VideoSegmentation1' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

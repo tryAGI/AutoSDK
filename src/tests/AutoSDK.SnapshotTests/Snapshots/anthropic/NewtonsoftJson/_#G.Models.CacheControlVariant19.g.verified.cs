@@ -44,6 +44,13 @@ namespace G
             value = Ephemeral;
             return IsEphemeral;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.BetaCacheControlEphemeral PickEphemeral() => IsEphemeral
+            ? Ephemeral!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Ephemeral' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

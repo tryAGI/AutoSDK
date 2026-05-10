@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.PickFilterLeafFeedbackOrRequestOrResponseOrPropertiesOrValuesOrRequestResponseRmtOrSessionsRequestResponseRmt PickPickLeafFeedbackOrResponsePropertiesValuesRmtSessions() => IsPickLeafFeedbackOrResponsePropertiesValuesRmtSessions
+            ? PickLeafFeedbackOrResponsePropertiesValuesRmtSessions!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'PickLeafFeedbackOrResponsePropertiesValuesRmtSessions' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.RequestFilterBranch? Branch { get; init; }
 #else
@@ -73,6 +80,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.RequestFilterBranch PickBranch() => IsBranch
+            ? Branch!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Branch' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.RequestFilterNodeEnum? Enum { get; init; }
 #else
@@ -99,6 +113,13 @@ namespace G
             value = Enum;
             return IsEnum;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.RequestFilterNodeEnum PickEnum() => IsEnum
+            ? Enum!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Enum' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

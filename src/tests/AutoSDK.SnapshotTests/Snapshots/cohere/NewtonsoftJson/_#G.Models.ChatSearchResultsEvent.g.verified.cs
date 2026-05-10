@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.ChatStreamEvent PickStream() => IsStream
+            ? Stream!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Stream' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ChatSearchResultsEvent44axt5? Event44axt5 { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = Event44axt5;
             return IsEvent44axt5;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ChatSearchResultsEvent44axt5 PickEvent44axt5() => IsEvent44axt5
+            ? Event44axt5!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Event44axt5' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

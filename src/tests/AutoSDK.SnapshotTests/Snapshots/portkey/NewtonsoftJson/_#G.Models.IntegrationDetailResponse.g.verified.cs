@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.IntegrationList PickList() => IsList
+            ? List!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'List' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.IntegrationDetailResponseVariant2? IntegrationDetailResponseVariant2 { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = IntegrationDetailResponseVariant2;
             return IsIntegrationDetailResponseVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.IntegrationDetailResponseVariant2 PickIntegrationDetailResponseVariant2() => IsIntegrationDetailResponseVariant2
+            ? IntegrationDetailResponseVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'IntegrationDetailResponseVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

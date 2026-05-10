@@ -41,6 +41,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool PickIncludeAttributesVariant1() => IsIncludeAttributesVariant1
+            ? IncludeAttributesVariant1!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'IncludeAttributesVariant1' but the value was {ToString()}.");
+
+        /// <summary>
         /// Include exactly the specified attributes in the response.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -69,6 +76,13 @@ namespace G
             value = IncludeAttributesVariant2;
             return IsIncludeAttributesVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<string> PickIncludeAttributesVariant2() => IsIncludeAttributesVariant2
+            ? IncludeAttributesVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'IncludeAttributesVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

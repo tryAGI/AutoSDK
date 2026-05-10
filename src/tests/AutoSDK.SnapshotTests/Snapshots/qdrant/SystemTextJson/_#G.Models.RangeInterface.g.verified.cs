@@ -41,6 +41,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.Range PickRange() => IsRange
+            ? Range!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Range' but the value was {ToString()}.");
+
+        /// <summary>
         /// Range filter request
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -69,6 +76,13 @@ namespace G
             value = Datetime;
             return IsDatetime;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.DatetimeRange PickDatetime() => IsDatetime
+            ? Datetime!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Datetime' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

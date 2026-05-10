@@ -48,6 +48,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public byte[] PickSearchPostRequestBodyContentMultipartFormDataSchemaQueryMediaFileVariant1() => IsSearchPostRequestBodyContentMultipartFormDataSchemaQueryMediaFileVariant1
+            ? SearchPostRequestBodyContentMultipartFormDataSchemaQueryMediaFileVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SearchPostRequestBodyContentMultipartFormDataSchemaQueryMediaFileVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<byte[]>? SearchPostRequestBodyContentMultipartFormDataSchemaQueryMediaFileVariant2 { get; init; }
 #else
@@ -74,6 +81,13 @@ namespace G
             value = SearchPostRequestBodyContentMultipartFormDataSchemaQueryMediaFileVariant2;
             return IsSearchPostRequestBodyContentMultipartFormDataSchemaQueryMediaFileVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<byte[]> PickSearchPostRequestBodyContentMultipartFormDataSchemaQueryMediaFileVariant2() => IsSearchPostRequestBodyContentMultipartFormDataSchemaQueryMediaFileVariant2
+            ? SearchPostRequestBodyContentMultipartFormDataSchemaQueryMediaFileVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SearchPostRequestBodyContentMultipartFormDataSchemaQueryMediaFileVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

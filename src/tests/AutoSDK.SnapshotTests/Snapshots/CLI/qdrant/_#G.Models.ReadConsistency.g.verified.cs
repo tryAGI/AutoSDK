@@ -47,6 +47,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public int PickReadConsistencyVariant1() => IsReadConsistencyVariant1
+            ? ReadConsistencyVariant1!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ReadConsistencyVariant1' but the value was {ToString()}.");
+
+        /// <summary>
         /// * `majority` - send N/2+1 random request and return points, which present on all of them<br/>
         /// * `quorum` - send requests to all nodes and return points which present on majority of nodes<br/>
         /// * `all` - send requests to all nodes and return points which present on all nodes
@@ -77,6 +84,13 @@ namespace G
             value = Type;
             return IsType;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ReadConsistencyType PickType() => IsType
+            ? Type!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Type' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

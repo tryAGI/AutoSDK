@@ -48,6 +48,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.FullTrainingType PickFull() => IsFull
+            ? Full!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Full' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.LoRATrainingType? Lora { get; init; }
 #else
@@ -74,6 +81,13 @@ namespace G
             value = Lora;
             return IsLora;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.LoRATrainingType PickLora() => IsLora
+            ? Lora!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Lora' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

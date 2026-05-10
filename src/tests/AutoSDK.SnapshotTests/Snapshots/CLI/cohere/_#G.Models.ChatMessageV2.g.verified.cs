@@ -46,6 +46,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.UserMessage PickUser() => IsUser
+            ? User!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'User' but the value was {ToString()}.");
+
+        /// <summary>
         /// A message from the assistant role can contain text and tool call information.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -74,6 +81,13 @@ namespace G
             value = Assistant;
             return IsAssistant;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.AssistantMessage PickAssistant() => IsAssistant
+            ? Assistant!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Assistant' but the value was {ToString()}.");
 
         /// <summary>
         /// A message from the system.
@@ -106,6 +120,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.SystemMessage PickSystem() => IsSystem
+            ? System!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'System' but the value was {ToString()}.");
+
+        /// <summary>
         /// A message with Tool outputs.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -134,6 +155,13 @@ namespace G
             value = Tool;
             return IsTool;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ToolMessageV2 PickTool() => IsTool
+            ? Tool!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Tool' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

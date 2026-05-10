@@ -48,6 +48,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.OAuth2AuthenticationPlan PickOauth2() => IsOauth2
+            ? Oauth2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Oauth2' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.HMACAuthenticationPlan? Hmac { get; init; }
 #else
@@ -78,6 +85,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.HMACAuthenticationPlan PickHmac() => IsHmac
+            ? Hmac!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Hmac' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.BearerAuthenticationPlan? Bearer { get; init; }
 #else
@@ -104,6 +118,13 @@ namespace G
             value = Bearer;
             return IsBearer;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.BearerAuthenticationPlan PickBearer() => IsBearer
+            ? Bearer!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Bearer' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

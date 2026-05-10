@@ -46,6 +46,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ChildToolRule PickConstrainChildTools() => IsConstrainChildTools
+            ? ConstrainChildTools!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ConstrainChildTools' but the value was {ToString()}.");
+
+        /// <summary>
         /// Represents the initial tool rule configuration.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -74,6 +81,13 @@ namespace G
             value = RunFirst;
             return IsRunFirst;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.InitToolRule PickRunFirst() => IsRunFirst
+            ? RunFirst!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'RunFirst' but the value was {ToString()}.");
 
         /// <summary>
         /// Represents a terminal tool rule configuration where if this tool gets called, it must end the agent loop.
@@ -106,6 +120,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.TerminalToolRule PickExitLoop() => IsExitLoop
+            ? ExitLoop!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ExitLoop' but the value was {ToString()}.");
+
+        /// <summary>
         /// A ToolRule that conditionally maps to different child tools based on the output.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -134,6 +155,13 @@ namespace G
             value = Conditional;
             return IsConditional;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ConditionalToolRule PickConditional() => IsConditional
+            ? Conditional!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Conditional' but the value was {ToString()}.");
 
         /// <summary>
         /// Represents a tool rule configuration where if this tool gets called, it must continue the agent loop.
@@ -166,6 +194,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ContinueToolRule PickContinueLoop() => IsContinueLoop
+            ? ContinueLoop!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ContinueLoop' but the value was {ToString()}.");
+
+        /// <summary>
         /// Represents a tool rule configuration where this tool must be called before the agent loop can exit.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -194,6 +229,13 @@ namespace G
             value = RequiredBeforeExit;
             return IsRequiredBeforeExit;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.RequiredBeforeExitToolRule PickRequiredBeforeExit() => IsRequiredBeforeExit
+            ? RequiredBeforeExit!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'RequiredBeforeExit' but the value was {ToString()}.");
 
         /// <summary>
         /// Represents a tool rule configuration which constrains the total number of times this tool can be invoked in a single step.
@@ -226,6 +268,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.MaxCountPerStepToolRule PickMaxCountPerStep() => IsMaxCountPerStep
+            ? MaxCountPerStep!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MaxCountPerStep' but the value was {ToString()}.");
+
+        /// <summary>
         /// A ToolRule that only allows a child tool to be called if the parent has been called.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -256,6 +305,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ParentToolRule PickParentLastTool() => IsParentLastTool
+            ? ParentLastTool!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ParentLastTool' but the value was {ToString()}.");
+
+        /// <summary>
         /// Represents a tool rule configuration which requires approval before the tool can be invoked.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -284,6 +340,13 @@ namespace G
             value = RequiresApproval;
             return IsRequiresApproval;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.RequiresApprovalToolRule PickRequiresApproval() => IsRequiresApproval
+            ? RequiresApproval!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'RequiresApproval' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

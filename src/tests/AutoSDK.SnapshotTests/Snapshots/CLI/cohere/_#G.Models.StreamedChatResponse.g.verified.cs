@@ -48,6 +48,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.ChatStreamStartEvent PickStreamStart() => IsStreamStart
+            ? StreamStart!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'StreamStart' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ChatSearchQueriesGenerationEvent? SearchQueriesGeneration { get; init; }
 #else
@@ -74,6 +81,13 @@ namespace G
             value = SearchQueriesGeneration;
             return IsSearchQueriesGeneration;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ChatSearchQueriesGenerationEvent PickSearchQueriesGeneration() => IsSearchQueriesGeneration
+            ? SearchQueriesGeneration!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SearchQueriesGeneration' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -108,6 +122,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.ChatSearchResultsEvent PickSearchResults() => IsSearchResults
+            ? SearchResults!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SearchResults' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ChatTextGenerationEvent? TextGeneration { get; init; }
 #else
@@ -134,6 +155,13 @@ namespace G
             value = TextGeneration;
             return IsTextGeneration;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ChatTextGenerationEvent PickTextGeneration() => IsTextGeneration
+            ? TextGeneration!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'TextGeneration' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -168,6 +196,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.ChatCitationGenerationEvent PickCitationGeneration() => IsCitationGeneration
+            ? CitationGeneration!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CitationGeneration' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ChatToolCallsGenerationEvent? ToolCallsGeneration { get; init; }
 #else
@@ -194,6 +229,13 @@ namespace G
             value = ToolCallsGeneration;
             return IsToolCallsGeneration;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ChatToolCallsGenerationEvent PickToolCallsGeneration() => IsToolCallsGeneration
+            ? ToolCallsGeneration!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ToolCallsGeneration' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -228,6 +270,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.ChatStreamEndEvent PickStreamEnd() => IsStreamEnd
+            ? StreamEnd!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'StreamEnd' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ChatToolCallsChunkEvent? ToolCallsChunk { get; init; }
 #else
@@ -258,6 +307,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.ChatToolCallsChunkEvent PickToolCallsChunk() => IsToolCallsChunk
+            ? ToolCallsChunk!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ToolCallsChunk' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ChatDebugEvent? Debug { get; init; }
 #else
@@ -284,6 +340,13 @@ namespace G
             value = Debug;
             return IsDebug;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ChatDebugEvent PickDebug() => IsDebug
+            ? Debug!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Debug' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

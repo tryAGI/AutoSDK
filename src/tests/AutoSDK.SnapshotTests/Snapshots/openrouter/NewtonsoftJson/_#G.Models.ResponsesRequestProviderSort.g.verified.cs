@@ -41,6 +41,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ProviderSort PickProviderSort() => IsProviderSort
+            ? ProviderSort!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ProviderSort' but the value was {ToString()}.");
+
+        /// <summary>
         /// The provider sorting strategy (price, throughput, latency)
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -71,6 +78,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ProviderSortConfig PickProviderSortConfig() => IsProviderSortConfig
+            ? ProviderSortConfig!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ProviderSortConfig' but the value was {ToString()}.");
+
+        /// <summary>
         /// Any type
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -99,6 +113,13 @@ namespace G
             value = ResponsesRequestProviderSortVariant3;
             return IsResponsesRequestProviderSortVariant3;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public object PickResponsesRequestProviderSortVariant3() => IsResponsesRequestProviderSortVariant3
+            ? ResponsesRequestProviderSortVariant3!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResponsesRequestProviderSortVariant3' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

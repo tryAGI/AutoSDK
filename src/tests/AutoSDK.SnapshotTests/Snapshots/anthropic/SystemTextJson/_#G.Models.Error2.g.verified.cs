@@ -48,6 +48,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.InvalidRequestError PickInvalidRequestError() => IsInvalidRequestError
+            ? InvalidRequestError!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'InvalidRequestError' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.AuthenticationError? AuthenticationError { get; init; }
 #else
@@ -74,6 +81,13 @@ namespace G
             value = AuthenticationError;
             return IsAuthenticationError;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.AuthenticationError PickAuthenticationError() => IsAuthenticationError
+            ? AuthenticationError!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AuthenticationError' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -108,6 +122,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.BillingError PickBillingError() => IsBillingError
+            ? BillingError!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BillingError' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.PermissionError? PermissionError { get; init; }
 #else
@@ -134,6 +155,13 @@ namespace G
             value = PermissionError;
             return IsPermissionError;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.PermissionError PickPermissionError() => IsPermissionError
+            ? PermissionError!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'PermissionError' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -168,6 +196,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.NotFoundError PickNotFoundError() => IsNotFoundError
+            ? NotFoundError!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'NotFoundError' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.RateLimitError? RateLimitError { get; init; }
 #else
@@ -194,6 +229,13 @@ namespace G
             value = RateLimitError;
             return IsRateLimitError;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.RateLimitError PickRateLimitError() => IsRateLimitError
+            ? RateLimitError!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'RateLimitError' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -228,6 +270,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.GatewayTimeoutError PickTimeoutError() => IsTimeoutError
+            ? TimeoutError!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'TimeoutError' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.APIError? ApiError { get; init; }
 #else
@@ -258,6 +307,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.APIError PickApiError() => IsApiError
+            ? ApiError!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ApiError' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.OverloadedError? OverloadedError { get; init; }
 #else
@@ -284,6 +340,13 @@ namespace G
             value = OverloadedError;
             return IsOverloadedError;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.OverloadedError PickOverloadedError() => IsOverloadedError
+            ? OverloadedError!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OverloadedError' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

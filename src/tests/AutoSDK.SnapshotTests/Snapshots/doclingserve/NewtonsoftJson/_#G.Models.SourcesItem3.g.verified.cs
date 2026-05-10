@@ -48,6 +48,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.FileSourceRequest PickFile() => IsFile
+            ? File!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'File' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.HttpSourceRequest? Http { get; init; }
 #else
@@ -78,6 +85,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.HttpSourceRequest PickHttp() => IsHttp
+            ? Http!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Http' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.S3SourceRequest? S3 { get; init; }
 #else
@@ -104,6 +118,13 @@ namespace G
             value = S3;
             return IsS3;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.S3SourceRequest PickS3() => IsS3
+            ? S3!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'S3' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

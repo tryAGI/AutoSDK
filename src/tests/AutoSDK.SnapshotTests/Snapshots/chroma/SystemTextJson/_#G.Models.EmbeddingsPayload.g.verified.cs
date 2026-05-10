@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>> PickEmbeddingsPayloadVariant1() => IsEmbeddingsPayloadVariant1
+            ? EmbeddingsPayloadVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'EmbeddingsPayloadVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<string>? EmbeddingsPayloadVariant2 { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = EmbeddingsPayloadVariant2;
             return IsEmbeddingsPayloadVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<string> PickEmbeddingsPayloadVariant2() => IsEmbeddingsPayloadVariant2
+            ? EmbeddingsPayloadVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'EmbeddingsPayloadVariant2' but the value was {ToString()}.");
 
         /// <summary>
         /// 

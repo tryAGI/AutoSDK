@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.NodeBase PickBase() => IsBase
+            ? Base!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Base' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.AgentOverrideConfig? AgentOverrideConfig { get; init; }
 #else
@@ -73,6 +80,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.AgentOverrideConfig PickAgentOverrideConfig() => IsAgentOverrideConfig
+            ? AgentOverrideConfig!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AgentOverrideConfig' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ConversationNodeVariant3? ConversationNodeVariant3 { get; init; }
 #else
@@ -99,6 +113,13 @@ namespace G
             value = ConversationNodeVariant3;
             return IsConversationNodeVariant3;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ConversationNodeVariant3 PickConversationNodeVariant3() => IsConversationNodeVariant3
+            ? ConversationNodeVariant3!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ConversationNodeVariant3' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

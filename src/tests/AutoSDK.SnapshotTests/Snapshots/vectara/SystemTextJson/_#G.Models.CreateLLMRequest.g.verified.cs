@@ -46,6 +46,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.CreateOpenAILLMRequest PickOpenaiCompatible() => IsOpenaiCompatible
+            ? OpenaiCompatible!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OpenaiCompatible' but the value was {ToString()}.");
+
+        /// <summary>
         /// Request to create an OpenAI Responses API Large Language Model connection for reasoning models like o1, o3.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -74,6 +81,13 @@ namespace G
             value = OpenaiResponses;
             return IsOpenaiResponses;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.CreateOpenAIResponsesLLMRequest PickOpenaiResponses() => IsOpenaiResponses
+            ? OpenaiResponses!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OpenaiResponses' but the value was {ToString()}.");
 
         /// <summary>
         /// Request to create a Vertex AI Large Language Model connection for Gemini models.
@@ -106,6 +120,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.CreateVertexAILLMRequest PickVertexAi() => IsVertexAi
+            ? VertexAi!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'VertexAi' but the value was {ToString()}.");
+
+        /// <summary>
         /// Request to create an Anthropic Large Language Model connection for Claude models (direct API, Bedrock, or Vertex).
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -134,6 +155,13 @@ namespace G
             value = Anthropic;
             return IsAnthropic;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.CreateAnthropicLLMRequest PickAnthropic() => IsAnthropic
+            ? Anthropic!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Anthropic' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

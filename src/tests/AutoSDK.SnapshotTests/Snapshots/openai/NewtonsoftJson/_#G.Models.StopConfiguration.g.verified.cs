@@ -46,6 +46,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public string PickStopConfigurationVariant1() => IsStopConfigurationVariant1
+            ? StopConfigurationVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'StopConfigurationVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<string>? StopConfigurationVariant2 { get; init; }
 #else
@@ -72,6 +79,13 @@ namespace G
             value = StopConfigurationVariant2;
             return IsStopConfigurationVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<string> PickStopConfigurationVariant2() => IsStopConfigurationVariant2
+            ? StopConfigurationVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'StopConfigurationVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

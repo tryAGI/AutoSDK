@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.ConversationNode PickConversationNode() => IsConversationNode
+            ? ConversationNode!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ConversationNode' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.EndNode? End { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = End;
             return IsEnd;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.EndNode PickEnd() => IsEnd
+            ? End!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'End' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -103,6 +117,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.FunctionNode PickFunction() => IsFunction
+            ? Function!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Function' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CodeNode? Code { get; init; }
 #else
@@ -129,6 +150,13 @@ namespace G
             value = Code;
             return IsCode;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.CodeNode PickCode() => IsCode
+            ? Code!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Code' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -163,6 +191,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.TransferCallNode PickTransferCall() => IsTransferCall
+            ? TransferCall!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'TransferCall' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.PressDigitNode? PressDigit { get; init; }
 #else
@@ -189,6 +224,13 @@ namespace G
             value = PressDigit;
             return IsPressDigit;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.PressDigitNode PickPressDigit() => IsPressDigit
+            ? PressDigit!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'PressDigit' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -223,6 +265,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.BranchNode PickBranch() => IsBranch
+            ? Branch!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Branch' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.SmsNode? Sms { get; init; }
 #else
@@ -249,6 +298,13 @@ namespace G
             value = Sms;
             return IsSms;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.SmsNode PickSms() => IsSms
+            ? Sms!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Sms' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -283,6 +339,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.ExtractDynamicVariablesNode PickExtractDynamicVariables() => IsExtractDynamicVariables
+            ? ExtractDynamicVariables!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ExtractDynamicVariables' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.AgentSwapNode? AgentSwap { get; init; }
 #else
@@ -309,6 +372,13 @@ namespace G
             value = AgentSwap;
             return IsAgentSwap;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.AgentSwapNode PickAgentSwap() => IsAgentSwap
+            ? AgentSwap!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AgentSwap' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -343,6 +413,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.MCPNode PickMcp() => IsMcp
+            ? Mcp!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Mcp' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ComponentNode? Component { get; init; }
 #else
@@ -369,6 +446,13 @@ namespace G
             value = Component;
             return IsComponent;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ComponentNode PickComponent() => IsComponent
+            ? Component!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Component' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -403,6 +487,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.BridgeTransferNode PickBridgeTransfer() => IsBridgeTransfer
+            ? BridgeTransfer!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BridgeTransfer' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CancelTransferNode? CancelTransfer { get; init; }
 #else
@@ -429,6 +520,13 @@ namespace G
             value = CancelTransfer;
             return IsCancelTransfer;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.CancelTransferNode PickCancelTransfer() => IsCancelTransfer
+            ? CancelTransfer!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CancelTransfer' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

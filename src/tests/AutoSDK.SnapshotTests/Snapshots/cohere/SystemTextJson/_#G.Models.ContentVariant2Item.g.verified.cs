@@ -44,6 +44,13 @@ namespace G
             value = Text;
             return IsText;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.TextContent PickText() => IsText
+            ? Text!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

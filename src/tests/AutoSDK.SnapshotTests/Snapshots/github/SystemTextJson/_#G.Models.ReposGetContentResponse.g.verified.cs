@@ -41,6 +41,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<global::G.ContentDirectoryItem> PickContentDirectory() => IsContentDirectory
+            ? ContentDirectory!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ContentDirectory' but the value was {ToString()}.");
+
+        /// <summary>
         /// Content File
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -69,6 +76,13 @@ namespace G
             value = File;
             return IsFile;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ContentFile PickFile() => IsFile
+            ? File!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'File' but the value was {ToString()}.");
 
         /// <summary>
         /// An object describing a symlink
@@ -101,6 +115,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ContentSymlink PickSymlink() => IsSymlink
+            ? Symlink!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Symlink' but the value was {ToString()}.");
+
+        /// <summary>
         /// An object describing a submodule
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -129,6 +150,13 @@ namespace G
             value = Submodule;
             return IsSubmodule;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ContentSubmodule PickSubmodule() => IsSubmodule
+            ? Submodule!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Submodule' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

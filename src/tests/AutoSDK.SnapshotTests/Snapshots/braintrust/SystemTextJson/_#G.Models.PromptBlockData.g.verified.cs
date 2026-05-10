@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.PromptBlockDataChat PickChat() => IsChat
+            ? Chat!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Chat' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.PromptBlockDataCompletion? Completion { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = Completion;
             return IsCompletion;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.PromptBlockDataCompletion PickCompletion() => IsCompletion
+            ? Completion!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Completion' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

@@ -46,6 +46,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.CompanyEntity PickCompany() => IsCompany
+            ? Company!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Company' but the value was {ToString()}.");
+
+        /// <summary>
         /// Structured entity data for a person.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -74,6 +81,13 @@ namespace G
             value = Person;
             return IsPerson;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.PersonEntity PickPerson() => IsPerson
+            ? Person!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Person' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

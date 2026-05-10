@@ -41,6 +41,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.CropVariant1 PickCropVariant1() => IsCropVariant1
+            ? CropVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CropVariant1' but the value was {ToString()}.");
+
+        /// <summary>
         /// Custom crop
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -69,6 +76,13 @@ namespace G
             value = CropVariant2;
             return IsCropVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.CropVariant2 PickCropVariant2() => IsCropVariant2
+            ? CropVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CropVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

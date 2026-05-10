@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public string PickAudioTranscriptionsPostRequestBodyContentMultipartFormDataSchemaTimestampsGranularitiesVariant1() => IsAudioTranscriptionsPostRequestBodyContentMultipartFormDataSchemaTimestampsGranularitiesVariant1
+            ? AudioTranscriptionsPostRequestBodyContentMultipartFormDataSchemaTimestampsGranularitiesVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AudioTranscriptionsPostRequestBodyContentMultipartFormDataSchemaTimestampsGranularitiesVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<object>? AudioTranscriptionsPostRequestBodyContentMultipartFormDataSchemaTimestampsGranularitiesVariant2 { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = AudioTranscriptionsPostRequestBodyContentMultipartFormDataSchemaTimestampsGranularitiesVariant2;
             return IsAudioTranscriptionsPostRequestBodyContentMultipartFormDataSchemaTimestampsGranularitiesVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<object> PickAudioTranscriptionsPostRequestBodyContentMultipartFormDataSchemaTimestampsGranularitiesVariant2() => IsAudioTranscriptionsPostRequestBodyContentMultipartFormDataSchemaTimestampsGranularitiesVariant2
+            ? AudioTranscriptionsPostRequestBodyContentMultipartFormDataSchemaTimestampsGranularitiesVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AudioTranscriptionsPostRequestBodyContentMultipartFormDataSchemaTimestampsGranularitiesVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

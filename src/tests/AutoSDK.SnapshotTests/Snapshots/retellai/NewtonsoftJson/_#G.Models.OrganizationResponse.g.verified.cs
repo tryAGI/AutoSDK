@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.Organization PickOrganization() => IsOrganization
+            ? Organization!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Organization' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.OrganizationResponseVariant2? OrganizationResponseVariant2 { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = OrganizationResponseVariant2;
             return IsOrganizationResponseVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.OrganizationResponseVariant2 PickOrganizationResponseVariant2() => IsOrganizationResponseVariant2
+            ? OrganizationResponseVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OrganizationResponseVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

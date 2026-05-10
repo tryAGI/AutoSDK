@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.NodeInstructionPrompt PickPrompt() => IsPrompt
+            ? Prompt!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Prompt' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.NodeInstructionStaticText? StaticText { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = StaticText;
             return IsStaticText;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.NodeInstructionStaticText PickStaticText() => IsStaticText
+            ? StaticText!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'StaticText' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

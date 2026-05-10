@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.MetricStats PickMetricStats() => IsMetricStats
+            ? MetricStats!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MetricStats' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.TokenMetricStatsVariant2? TokenMetricStatsVariant2 { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = TokenMetricStatsVariant2;
             return IsTokenMetricStatsVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.TokenMetricStatsVariant2 PickTokenMetricStatsVariant2() => IsTokenMetricStatsVariant2
+            ? TokenMetricStatsVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'TokenMetricStatsVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

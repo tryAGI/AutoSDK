@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.OpenAILLMRequestBase PickBase() => IsBase
+            ? Base!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Base' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CreateOpenAILLMRequestVariant2? CreateOpenAILLMRequestVariant2 { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = CreateOpenAILLMRequestVariant2;
             return IsCreateOpenAILLMRequestVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.CreateOpenAILLMRequestVariant2 PickCreateOpenAILLMRequestVariant2() => IsCreateOpenAILLMRequestVariant2
+            ? CreateOpenAILLMRequestVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CreateOpenAILLMRequestVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

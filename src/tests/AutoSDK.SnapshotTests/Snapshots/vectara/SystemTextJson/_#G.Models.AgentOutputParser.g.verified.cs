@@ -47,6 +47,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.DefaultOutputParser PickDefault() => IsDefault
+            ? Default!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Default' but the value was {ToString()}.");
+
+        /// <summary>
         /// Parses agent output as structured JSON conforming to a specified schema.<br/>
         /// Uses the model's native structured outputs capability to guarantee valid JSON<br/>
         /// that adheres to the provided schema. This is useful when you need the agent's<br/>
@@ -85,6 +92,13 @@ namespace G
             value = Structured;
             return IsStructured;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.StructuredOutputParser PickStructured() => IsStructured
+            ? Structured!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Structured' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

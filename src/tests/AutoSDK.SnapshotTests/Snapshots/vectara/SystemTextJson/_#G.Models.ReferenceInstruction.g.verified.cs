@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.InstructionReference PickInstructionReference() => IsInstructionReference
+            ? InstructionReference!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'InstructionReference' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ReferenceInstructionVariant2? ReferenceInstructionVariant2 { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = ReferenceInstructionVariant2;
             return IsReferenceInstructionVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ReferenceInstructionVariant2 PickReferenceInstructionVariant2() => IsReferenceInstructionVariant2
+            ? ReferenceInstructionVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ReferenceInstructionVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

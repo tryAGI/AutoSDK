@@ -43,6 +43,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.AllOf<global::G.RepositoryRulesetConditions, global::G.RepositoryRulesetConditionsRepositoryNameTarget> PickRepositoryNameAndRefName() => IsRepositoryNameAndRefName
+            ? RepositoryNameAndRefName!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'RepositoryNameAndRefName' but the value was {ToString()}.");
+
+        /// <summary>
         /// Conditions to target repositories by id and refs by name
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -73,6 +80,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.AllOf<global::G.RepositoryRulesetConditions, global::G.RepositoryRulesetConditionsRepositoryIdTarget> PickRepositoryIdAndRefName() => IsRepositoryIdAndRefName
+            ? RepositoryIdAndRefName!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'RepositoryIdAndRefName' but the value was {ToString()}.");
+
+        /// <summary>
         /// Conditions to target repositories by property and refs by name
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -101,6 +115,13 @@ namespace G
             value = RepositoryPropertyAndRefName;
             return IsRepositoryPropertyAndRefName;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.AllOf<global::G.RepositoryRulesetConditions, global::G.RepositoryRulesetConditionsRepositoryPropertyTarget> PickRepositoryPropertyAndRefName() => IsRepositoryPropertyAndRefName
+            ? RepositoryPropertyAndRefName!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'RepositoryPropertyAndRefName' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

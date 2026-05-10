@@ -48,6 +48,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.MarkdownChunkGeneratedMetadata PickMarkdown() => IsMarkdown
+            ? Markdown!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Markdown' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.TextChunkGeneratedMetadata? Text { get; init; }
 #else
@@ -74,6 +81,13 @@ namespace G
             value = Text;
             return IsText;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.TextChunkGeneratedMetadata PickText() => IsText
+            ? Text!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -108,6 +122,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.PDFChunkGeneratedMetadata PickPdf() => IsPdf
+            ? Pdf!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Pdf' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CodeChunkGeneratedMetadata? Code { get; init; }
 #else
@@ -134,6 +155,13 @@ namespace G
             value = Code;
             return IsCode;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.CodeChunkGeneratedMetadata PickCode() => IsCode
+            ? Code!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Code' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -168,6 +196,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.AudioChunkGeneratedMetadata PickAudio() => IsAudio
+            ? Audio!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Audio' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.VideoChunkGeneratedMetadata? Video { get; init; }
 #else
@@ -198,6 +233,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.VideoChunkGeneratedMetadata PickVideo() => IsVideo
+            ? Video!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Video' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ImageChunkGeneratedMetadata? Image { get; init; }
 #else
@@ -224,6 +266,13 @@ namespace G
             value = Image;
             return IsImage;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ImageChunkGeneratedMetadata PickImage() => IsImage
+            ? Image!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Image' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

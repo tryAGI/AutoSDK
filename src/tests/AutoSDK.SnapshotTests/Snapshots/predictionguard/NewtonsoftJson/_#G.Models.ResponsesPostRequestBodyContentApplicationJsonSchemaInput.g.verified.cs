@@ -41,6 +41,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public string PickResponsesPostRequestBodyContentApplicationJsonSchemaInputVariant1() => IsResponsesPostRequestBodyContentApplicationJsonSchemaInputVariant1
+            ? ResponsesPostRequestBodyContentApplicationJsonSchemaInputVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResponsesPostRequestBodyContentApplicationJsonSchemaInputVariant1' but the value was {ToString()}.");
+
+        /// <summary>
         /// An array of input items used for generating completions.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -69,6 +76,13 @@ namespace G
             value = ResponsesPostRequestBodyContentApplicationJsonSchemaInput1;
             return IsResponsesPostRequestBodyContentApplicationJsonSchemaInput1;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<global::G.ResponsesPostRequestBodyContentApplicationJsonSchemaInputOneOf1Items> PickResponsesPostRequestBodyContentApplicationJsonSchemaInput1() => IsResponsesPostRequestBodyContentApplicationJsonSchemaInput1
+            ? ResponsesPostRequestBodyContentApplicationJsonSchemaInput1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResponsesPostRequestBodyContentApplicationJsonSchemaInput1' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.BaseInputsOneOf1ItemsOneOf0Role0 PickBaseInputsOneOf1ItemsOneOf0Role0() => IsBaseInputsOneOf1ItemsOneOf0Role0
+            ? BaseInputsOneOf1ItemsOneOf0Role0!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BaseInputsOneOf1ItemsOneOf0Role0' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.BaseInputsOneOf1ItemsOneOf0Role1? BaseInputsOneOf1ItemsOneOf0Role1 { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = BaseInputsOneOf1ItemsOneOf0Role1;
             return IsBaseInputsOneOf1ItemsOneOf0Role1;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.BaseInputsOneOf1ItemsOneOf0Role1 PickBaseInputsOneOf1ItemsOneOf0Role1() => IsBaseInputsOneOf1ItemsOneOf0Role1
+            ? BaseInputsOneOf1ItemsOneOf0Role1!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BaseInputsOneOf1ItemsOneOf0Role1' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -103,6 +117,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.BaseInputsOneOf1ItemsOneOf0Role2 PickBaseInputsOneOf1ItemsOneOf0Role2() => IsBaseInputsOneOf1ItemsOneOf0Role2
+            ? BaseInputsOneOf1ItemsOneOf0Role2!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BaseInputsOneOf1ItemsOneOf0Role2' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.BaseInputsOneOf1ItemsOneOf0Role3? BaseInputsOneOf1ItemsOneOf0Role3 { get; init; }
 #else
@@ -129,6 +150,13 @@ namespace G
             value = BaseInputsOneOf1ItemsOneOf0Role3;
             return IsBaseInputsOneOf1ItemsOneOf0Role3;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.BaseInputsOneOf1ItemsOneOf0Role3 PickBaseInputsOneOf1ItemsOneOf0Role3() => IsBaseInputsOneOf1ItemsOneOf0Role3
+            ? BaseInputsOneOf1ItemsOneOf0Role3!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BaseInputsOneOf1ItemsOneOf0Role3' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

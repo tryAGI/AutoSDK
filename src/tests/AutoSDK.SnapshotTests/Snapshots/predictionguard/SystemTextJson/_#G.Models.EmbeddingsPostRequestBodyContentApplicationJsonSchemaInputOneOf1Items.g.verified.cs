@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public string PickEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsVariant1() => IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsVariant1
+            ? EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public int? EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsVariant2 { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsVariant2;
             return IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public int PickEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsVariant2() => IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsVariant2
+            ? EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsVariant2!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsVariant2' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -101,6 +115,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<int> PickEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsVariant3() => IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsVariant3
+            ? EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsVariant3!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsVariant3' but the value was {ToString()}.");
+
+        /// <summary>
         /// Use this option for multimodal input.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -129,6 +150,13 @@ namespace G
             value = EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf1Items3;
             return IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf1Items3;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf1Items3 PickEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf1Items3() => IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf1Items3
+            ? EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf1Items3!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf1Items3' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.ProviderName PickProviderName() => IsProviderName
+            ? ProviderName!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ProviderName' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public string? ChatRequestProviderIgnoreItemsVariant2 { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = ChatRequestProviderIgnoreItemsVariant2;
             return IsChatRequestProviderIgnoreItemsVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string PickChatRequestProviderIgnoreItemsVariant2() => IsChatRequestProviderIgnoreItemsVariant2
+            ? ChatRequestProviderIgnoreItemsVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ChatRequestProviderIgnoreItemsVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

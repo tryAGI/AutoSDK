@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.ChatAgentResponseVariant1 PickChatAgentResponseVariant1() => IsChatAgentResponseVariant1
+            ? ChatAgentResponseVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ChatAgentResponseVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ChatAgentRequest? Request { get; init; }
 #else
@@ -73,6 +80,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.ChatAgentRequest PickRequest() => IsRequest
+            ? Request!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Request' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ChatAgentResponseVariant3? ChatAgentResponseVariant3 { get; init; }
 #else
@@ -99,6 +113,13 @@ namespace G
             value = ChatAgentResponseVariant3;
             return IsChatAgentResponseVariant3;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ChatAgentResponseVariant3 PickChatAgentResponseVariant3() => IsChatAgentResponseVariant3
+            ? ChatAgentResponseVariant3!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ChatAgentResponseVariant3' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

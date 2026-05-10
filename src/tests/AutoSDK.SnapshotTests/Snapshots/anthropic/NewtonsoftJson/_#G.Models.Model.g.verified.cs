@@ -41,6 +41,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public string PickModelVariant1() => IsModelVariant1
+            ? ModelVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ModelVariant1' but the value was {ToString()}.");
+
+        /// <summary>
         /// Our most intelligent model
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -69,6 +76,13 @@ namespace G
             value = ModelVariant2;
             return IsModelVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string PickModelVariant2() => IsModelVariant2
+            ? ModelVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ModelVariant2' but the value was {ToString()}.");
 
         /// <summary>
         /// Our most intelligent model
@@ -101,6 +115,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public string PickModelVariant3() => IsModelVariant3
+            ? ModelVariant3!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ModelVariant3' but the value was {ToString()}.");
+
+        /// <summary>
         /// Fastest and most compact model for near-instant responsiveness
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -129,6 +150,13 @@ namespace G
             value = ModelVariant4;
             return IsModelVariant4;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string PickModelVariant4() => IsModelVariant4
+            ? ModelVariant4!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ModelVariant4' but the value was {ToString()}.");
 
         /// <summary>
         /// Our fastest model
@@ -161,6 +189,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public string PickModelVariant5() => IsModelVariant5
+            ? ModelVariant5!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ModelVariant5' but the value was {ToString()}.");
+
+        /// <summary>
         /// Our previous most intelligent model
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -189,6 +224,13 @@ namespace G
             value = ModelVariant6;
             return IsModelVariant6;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string PickModelVariant6() => IsModelVariant6
+            ? ModelVariant6!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ModelVariant6' but the value was {ToString()}.");
 
         /// <summary>
         /// Our previous most intelligent model
@@ -223,6 +265,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public string PickModelVariant7() => IsModelVariant7
+            ? ModelVariant7!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ModelVariant7' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public string? ModelVariant8 { get; init; }
 #else
@@ -249,6 +298,13 @@ namespace G
             value = ModelVariant8;
             return IsModelVariant8;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string PickModelVariant8() => IsModelVariant8
+            ? ModelVariant8!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ModelVariant8' but the value was {ToString()}.");
 
         /// <summary>
         /// Excels at writing and complex tasks
@@ -281,6 +337,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public string PickModelVariant9() => IsModelVariant9
+            ? ModelVariant9!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ModelVariant9' but the value was {ToString()}.");
+
+        /// <summary>
         /// Excels at writing and complex tasks
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -311,6 +374,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public string PickModelVariant10() => IsModelVariant10
+            ? ModelVariant10!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ModelVariant10' but the value was {ToString()}.");
+
+        /// <summary>
         /// Balance of speed and intelligence
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -339,6 +409,13 @@ namespace G
             value = ModelVariant11;
             return IsModelVariant11;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string PickModelVariant11() => IsModelVariant11
+            ? ModelVariant11!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ModelVariant11' but the value was {ToString()}.");
 
         /// <summary>
         /// Our previous most fast and cost-effective
@@ -373,6 +450,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public string PickModelVariant12() => IsModelVariant12
+            ? ModelVariant12!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ModelVariant12' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public string? ModelVariant13 { get; init; }
 #else
@@ -403,6 +487,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public string PickModelVariant13() => IsModelVariant13
+            ? ModelVariant13!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ModelVariant13' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public string? ModelVariant14 { get; init; }
 #else
@@ -429,6 +520,13 @@ namespace G
             value = ModelVariant14;
             return IsModelVariant14;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string PickModelVariant14() => IsModelVariant14
+            ? ModelVariant14!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ModelVariant14' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

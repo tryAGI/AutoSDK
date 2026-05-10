@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.AgentEventBase PickAgentBase() => IsAgentBase
+            ? AgentBase!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AgentBase' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CompactionEventVariant2? CompactionEventVariant2 { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = CompactionEventVariant2;
             return IsCompactionEventVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.CompactionEventVariant2 PickCompactionEventVariant2() => IsCompactionEventVariant2
+            ? CompactionEventVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CompactionEventVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

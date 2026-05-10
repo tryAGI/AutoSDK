@@ -48,6 +48,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.PromptAnthropicThinkingConfigDisabled PickDisabled() => IsDisabled
+            ? Disabled!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Disabled' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.PromptAnthropicThinkingConfigEnabled? Enabled { get; init; }
 #else
@@ -74,6 +81,13 @@ namespace G
             value = Enabled;
             return IsEnabled;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.PromptAnthropicThinkingConfigEnabled PickEnabled() => IsEnabled
+            ? Enabled!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Enabled' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

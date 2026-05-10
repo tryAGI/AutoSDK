@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public byte[] PickVector() => IsVector
+            ? Vector!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Vector' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public byte[]? Knn { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = Knn;
             return IsKnn;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public byte[] PickKnn() => IsKnn
+            ? Knn!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Knn' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -103,6 +117,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.RankByText PickText() => IsText
+            ? Text!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public byte[]? Attribute { get; init; }
 #else
@@ -129,6 +150,13 @@ namespace G
             value = Attribute;
             return IsAttribute;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public byte[] PickAttribute() => IsAttribute
+            ? Attribute!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Attribute' but the value was {ToString()}.");
 
         /// <summary>
         /// Order by multiple attributes. Results are sorted by the first attribute, then by the second attribute for ties, and so on.
@@ -159,6 +187,13 @@ namespace G
             value = Attributes;
             return IsAttributes;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<byte[]> PickAttributes() => IsAttributes
+            ? Attributes!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Attributes' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

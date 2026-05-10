@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::System.Collections.Generic.IList<string> PickAnyVariantsVariant1() => IsAnyVariantsVariant1
+            ? AnyVariantsVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AnyVariantsVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<long>? AnyVariantsVariant2 { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = AnyVariantsVariant2;
             return IsAnyVariantsVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<long> PickAnyVariantsVariant2() => IsAnyVariantsVariant2
+            ? AnyVariantsVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AnyVariantsVariant2' but the value was {ToString()}.");
 
         /// <summary>
         /// 

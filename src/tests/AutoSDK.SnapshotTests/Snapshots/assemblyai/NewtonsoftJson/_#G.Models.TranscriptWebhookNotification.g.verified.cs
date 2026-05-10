@@ -42,6 +42,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.TranscriptReadyNotification PickReady() => IsReady
+            ? Ready!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Ready' but the value was {ToString()}.");
+
+        /// <summary>
         /// The notification when the redacted audio is ready.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -70,6 +77,13 @@ namespace G
             value = RedactedAudio;
             return IsRedactedAudio;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.RedactedAudioNotification PickRedactedAudio() => IsRedactedAudio
+            ? RedactedAudio!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'RedactedAudio' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

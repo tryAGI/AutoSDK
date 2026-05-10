@@ -48,6 +48,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.WhatsAppTemplateTextParam PickText() => IsText
+            ? Text!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.WhatsAppTemplateImageParam? Image { get; init; }
 #else
@@ -74,6 +81,13 @@ namespace G
             value = Image;
             return IsImage;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.WhatsAppTemplateImageParam PickImage() => IsImage
+            ? Image!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Image' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -108,6 +122,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.WhatsAppTemplateDocumentParam PickDocument() => IsDocument
+            ? Document!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Document' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.WhatsAppTemplateLocationParam? Location { get; init; }
 #else
@@ -134,6 +155,13 @@ namespace G
             value = Location;
             return IsLocation;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.WhatsAppTemplateLocationParam PickLocation() => IsLocation
+            ? Location!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Location' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

@@ -41,6 +41,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ImageToImageUsingImageStrengthRequestBodyVariant1 PickImageToImageUsingImageStrengthRequestBodyVariant1() => IsImageToImageUsingImageStrengthRequestBodyVariant1
+            ? ImageToImageUsingImageStrengthRequestBodyVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ImageToImageUsingImageStrengthRequestBodyVariant1' but the value was {ToString()}.");
+
+        /// <summary>
         /// Represents the optional parameters that can be passed to any generation request.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -69,6 +76,13 @@ namespace G
             value = GenerationOptionalParams;
             return IsGenerationOptionalParams;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.GenerationRequestOptionalParams PickGenerationOptionalParams() => IsGenerationOptionalParams
+            ? GenerationOptionalParams!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'GenerationOptionalParams' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

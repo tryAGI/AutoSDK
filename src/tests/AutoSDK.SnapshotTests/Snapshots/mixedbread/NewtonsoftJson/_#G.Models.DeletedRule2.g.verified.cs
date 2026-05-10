@@ -46,6 +46,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.QueryStringSubstitutionRule PickQueryString() => IsQueryString
+            ? QueryString!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'QueryString' but the value was {ToString()}.");
+
+        /// <summary>
         /// Represents a regex query substitution rule for a vector store search.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -74,6 +81,13 @@ namespace G
             value = QueryRegex;
             return IsQueryRegex;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.QueryRegexSubstitutionRule PickQueryRegex() => IsQueryRegex
+            ? QueryRegex!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'QueryRegex' but the value was {ToString()}.");
 
         /// <summary>
         /// Represents a chunk search result rule for a vector store search.
@@ -106,6 +120,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ChunkSearchResultRule PickChunkSearchResult() => IsChunkSearchResult
+            ? ChunkSearchResult!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ChunkSearchResult' but the value was {ToString()}.");
+
+        /// <summary>
         /// Represents a file search result rule for a vector store search.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -134,6 +155,13 @@ namespace G
             value = FileSearchResult;
             return IsFileSearchResult;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.FileSearchResultRule PickFileSearchResult() => IsFileSearchResult
+            ? FileSearchResult!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FileSearchResult' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

@@ -39,6 +39,13 @@ namespace G
             value = UsingVectorVariant1;
             return IsUsingVectorVariant1;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string PickUsingVectorVariant1() => IsUsingVectorVariant1
+            ? UsingVectorVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'UsingVectorVariant1' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

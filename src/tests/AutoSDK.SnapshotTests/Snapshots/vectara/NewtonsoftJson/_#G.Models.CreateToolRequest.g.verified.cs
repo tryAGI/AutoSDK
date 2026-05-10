@@ -45,6 +45,13 @@ namespace G
             value = Lambda;
             return IsLambda;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.CreateLambdaToolRequest PickLambda() => IsLambda
+            ? Lambda!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Lambda' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

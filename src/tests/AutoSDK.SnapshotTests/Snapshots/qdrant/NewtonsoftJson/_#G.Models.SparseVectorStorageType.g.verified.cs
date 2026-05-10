@@ -41,6 +41,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.SparseVectorStorageTypeVariant1 PickSparseVectorStorageTypeVariant1() => IsSparseVectorStorageTypeVariant1
+            ? SparseVectorStorageTypeVariant1!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SparseVectorStorageTypeVariant1' but the value was {ToString()}.");
+
+        /// <summary>
         /// Storage in memory maps (gridstore storage)
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -69,6 +76,13 @@ namespace G
             value = SparseVectorStorageTypeVariant2;
             return IsSparseVectorStorageTypeVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.SparseVectorStorageTypeVariant2 PickSparseVectorStorageTypeVariant2() => IsSparseVectorStorageTypeVariant2
+            ? SparseVectorStorageTypeVariant2!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SparseVectorStorageTypeVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

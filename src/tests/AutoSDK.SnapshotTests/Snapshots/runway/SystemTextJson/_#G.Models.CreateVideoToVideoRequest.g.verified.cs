@@ -44,6 +44,13 @@ namespace G
             value = Gen4Aleph;
             return IsGen4Aleph;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.CreateVideoToVideoRequestGen4Aleph PickGen4Aleph() => IsGen4Aleph
+            ? Gen4Aleph!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Gen4Aleph' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

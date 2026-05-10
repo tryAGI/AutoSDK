@@ -41,6 +41,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ApplicationInputDropdownOptions PickDropdown() => IsDropdown
+            ? Dropdown!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Dropdown' but the value was {ToString()}.");
+
+        /// <summary>
         /// Configuration options specific to file upload input fields.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -69,6 +76,13 @@ namespace G
             value = File;
             return IsFile;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ApplicationInputFileOptions PickFile() => IsFile
+            ? File!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'File' but the value was {ToString()}.");
 
         /// <summary>
         /// Configuration options specific to media upload input fields.
@@ -101,6 +115,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ApplicationInputMediaOptions PickMedia() => IsMedia
+            ? Media!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Media' but the value was {ToString()}.");
+
+        /// <summary>
         /// Configuration options specific to text input fields.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -129,6 +150,13 @@ namespace G
             value = Text;
             return IsText;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ApplicationInputTextOptions PickText() => IsText
+            ? Text!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

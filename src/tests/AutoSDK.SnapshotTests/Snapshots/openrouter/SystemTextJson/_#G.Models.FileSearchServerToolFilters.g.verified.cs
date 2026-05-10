@@ -41,6 +41,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.FileSearchServerToolFilters0 PickFileSearchServerToolFilters0() => IsFileSearchServerToolFilters0
+            ? FileSearchServerToolFilters0!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FileSearchServerToolFilters0' but the value was {ToString()}.");
+
+        /// <summary>
         /// A compound filter that combines multiple comparison or compound filters
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -71,6 +78,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.CompoundFilter PickCompoundFilter() => IsCompoundFilter
+            ? CompoundFilter!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CompoundFilter' but the value was {ToString()}.");
+
+        /// <summary>
         /// Any type
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -99,6 +113,13 @@ namespace G
             value = FileSearchServerToolFiltersVariant3;
             return IsFileSearchServerToolFiltersVariant3;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public object PickFileSearchServerToolFiltersVariant3() => IsFileSearchServerToolFiltersVariant3
+            ? FileSearchServerToolFiltersVariant3!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FileSearchServerToolFiltersVariant3' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.MessagesRequestContextManagementEditsItemsOneOf0Trigger0 PickMessagesRequestContextManagementEditsItemsOneOf0Trigger0() => IsMessagesRequestContextManagementEditsItemsOneOf0Trigger0
+            ? MessagesRequestContextManagementEditsItemsOneOf0Trigger0!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesRequestContextManagementEditsItemsOneOf0Trigger0' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.MessagesRequestContextManagementEditsItemsOneOf0Trigger1? MessagesRequestContextManagementEditsItemsOneOf0Trigger1 { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = MessagesRequestContextManagementEditsItemsOneOf0Trigger1;
             return IsMessagesRequestContextManagementEditsItemsOneOf0Trigger1;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.MessagesRequestContextManagementEditsItemsOneOf0Trigger1 PickMessagesRequestContextManagementEditsItemsOneOf0Trigger1() => IsMessagesRequestContextManagementEditsItemsOneOf0Trigger1
+            ? MessagesRequestContextManagementEditsItemsOneOf0Trigger1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesRequestContextManagementEditsItemsOneOf0Trigger1' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

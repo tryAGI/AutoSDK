@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.CollectionTelemetry PickCollectionTelemetry() => IsCollectionTelemetry
+            ? CollectionTelemetry!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CollectionTelemetry' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CollectionsAggregatedTelemetry? CollectionsAggregated { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = CollectionsAggregated;
             return IsCollectionsAggregated;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.CollectionsAggregatedTelemetry PickCollectionsAggregated() => IsCollectionsAggregated
+            ? CollectionsAggregated!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CollectionsAggregated' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

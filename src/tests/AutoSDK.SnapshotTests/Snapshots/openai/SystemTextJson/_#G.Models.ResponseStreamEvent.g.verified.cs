@@ -46,6 +46,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ResponseAudioDeltaEvent PickResponseAudioDelta() => IsResponseAudioDelta
+            ? ResponseAudioDelta!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseAudioDelta' but the value was {ToString()}.");
+
+        /// <summary>
         /// Emitted when the audio response is complete.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -74,6 +81,13 @@ namespace G
             value = ResponseAudioDone;
             return IsResponseAudioDone;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ResponseAudioDoneEvent PickResponseAudioDone() => IsResponseAudioDone
+            ? ResponseAudioDone!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseAudioDone' but the value was {ToString()}.");
 
         /// <summary>
         /// Emitted when there is a partial transcript of audio.
@@ -106,6 +120,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ResponseAudioTranscriptDeltaEvent PickResponseAudioTranscriptDelta() => IsResponseAudioTranscriptDelta
+            ? ResponseAudioTranscriptDelta!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseAudioTranscriptDelta' but the value was {ToString()}.");
+
+        /// <summary>
         /// Emitted when the full audio transcript is completed.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -134,6 +155,13 @@ namespace G
             value = ResponseAudioTranscriptDone;
             return IsResponseAudioTranscriptDone;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ResponseAudioTranscriptDoneEvent PickResponseAudioTranscriptDone() => IsResponseAudioTranscriptDone
+            ? ResponseAudioTranscriptDone!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseAudioTranscriptDone' but the value was {ToString()}.");
 
         /// <summary>
         /// Emitted when a partial code snippet is added by the code interpreter.
@@ -166,6 +194,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ResponseCodeInterpreterCallCodeDeltaEvent PickResponseCodeInterpreterCallCodeDelta() => IsResponseCodeInterpreterCallCodeDelta
+            ? ResponseCodeInterpreterCallCodeDelta!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseCodeInterpreterCallCodeDelta' but the value was {ToString()}.");
+
+        /// <summary>
         /// Emitted when code snippet output is finalized by the code interpreter.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -194,6 +229,13 @@ namespace G
             value = ResponseCodeInterpreterCallCodeDone;
             return IsResponseCodeInterpreterCallCodeDone;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ResponseCodeInterpreterCallCodeDoneEvent PickResponseCodeInterpreterCallCodeDone() => IsResponseCodeInterpreterCallCodeDone
+            ? ResponseCodeInterpreterCallCodeDone!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseCodeInterpreterCallCodeDone' but the value was {ToString()}.");
 
         /// <summary>
         /// Emitted when the code interpreter call is completed.
@@ -226,6 +268,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ResponseCodeInterpreterCallCompletedEvent PickResponseCodeInterpreterCallCompleted() => IsResponseCodeInterpreterCallCompleted
+            ? ResponseCodeInterpreterCallCompleted!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseCodeInterpreterCallCompleted' but the value was {ToString()}.");
+
+        /// <summary>
         /// Emitted when a code interpreter call is in progress.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -254,6 +303,13 @@ namespace G
             value = ResponseCodeInterpreterCallInProgress;
             return IsResponseCodeInterpreterCallInProgress;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ResponseCodeInterpreterCallInProgressEvent PickResponseCodeInterpreterCallInProgress() => IsResponseCodeInterpreterCallInProgress
+            ? ResponseCodeInterpreterCallInProgress!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseCodeInterpreterCallInProgress' but the value was {ToString()}.");
 
         /// <summary>
         /// Emitted when the code interpreter is actively interpreting the code snippet.
@@ -286,6 +342,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ResponseCodeInterpreterCallInterpretingEvent PickResponseCodeInterpreterCallInterpreting() => IsResponseCodeInterpreterCallInterpreting
+            ? ResponseCodeInterpreterCallInterpreting!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseCodeInterpreterCallInterpreting' but the value was {ToString()}.");
+
+        /// <summary>
         /// Emitted when the model response is complete.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -314,6 +377,13 @@ namespace G
             value = ResponseCompleted;
             return IsResponseCompleted;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ResponseCompletedEvent PickResponseCompleted() => IsResponseCompleted
+            ? ResponseCompleted!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseCompleted' but the value was {ToString()}.");
 
         /// <summary>
         /// Emitted when a new content part is added.
@@ -346,6 +416,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ResponseContentPartAddedEvent PickResponseContentPartAdded() => IsResponseContentPartAdded
+            ? ResponseContentPartAdded!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseContentPartAdded' but the value was {ToString()}.");
+
+        /// <summary>
         /// Emitted when a content part is done.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -374,6 +451,13 @@ namespace G
             value = ResponseContentPartDone;
             return IsResponseContentPartDone;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ResponseContentPartDoneEvent PickResponseContentPartDone() => IsResponseContentPartDone
+            ? ResponseContentPartDone!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseContentPartDone' but the value was {ToString()}.");
 
         /// <summary>
         /// An event that is emitted when a response is created.
@@ -406,6 +490,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ResponseCreatedEvent PickResponseCreated() => IsResponseCreated
+            ? ResponseCreated!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseCreated' but the value was {ToString()}.");
+
+        /// <summary>
         /// Emitted when an error occurs.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -434,6 +525,13 @@ namespace G
             value = Error;
             return IsError;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ResponseErrorEvent PickError() => IsError
+            ? Error!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Error' but the value was {ToString()}.");
 
         /// <summary>
         /// Emitted when a file search call is completed (results found).
@@ -466,6 +564,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ResponseFileSearchCallCompletedEvent PickResponseFileSearchCallCompleted() => IsResponseFileSearchCallCompleted
+            ? ResponseFileSearchCallCompleted!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseFileSearchCallCompleted' but the value was {ToString()}.");
+
+        /// <summary>
         /// Emitted when a file search call is initiated.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -494,6 +599,13 @@ namespace G
             value = ResponseFileSearchCallInProgress;
             return IsResponseFileSearchCallInProgress;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ResponseFileSearchCallInProgressEvent PickResponseFileSearchCallInProgress() => IsResponseFileSearchCallInProgress
+            ? ResponseFileSearchCallInProgress!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseFileSearchCallInProgress' but the value was {ToString()}.");
 
         /// <summary>
         /// Emitted when a file search is currently searching.
@@ -526,6 +638,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ResponseFileSearchCallSearchingEvent PickResponseFileSearchCallSearching() => IsResponseFileSearchCallSearching
+            ? ResponseFileSearchCallSearching!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseFileSearchCallSearching' but the value was {ToString()}.");
+
+        /// <summary>
         /// Emitted when there is a partial function-call arguments delta.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -554,6 +673,13 @@ namespace G
             value = ResponseFunctionCallArgumentsDelta;
             return IsResponseFunctionCallArgumentsDelta;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ResponseFunctionCallArgumentsDeltaEvent PickResponseFunctionCallArgumentsDelta() => IsResponseFunctionCallArgumentsDelta
+            ? ResponseFunctionCallArgumentsDelta!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseFunctionCallArgumentsDelta' but the value was {ToString()}.");
 
         /// <summary>
         /// Emitted when function-call arguments are finalized.
@@ -586,6 +712,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ResponseFunctionCallArgumentsDoneEvent PickResponseFunctionCallArgumentsDone() => IsResponseFunctionCallArgumentsDone
+            ? ResponseFunctionCallArgumentsDone!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseFunctionCallArgumentsDone' but the value was {ToString()}.");
+
+        /// <summary>
         /// Emitted when the response is in progress.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -614,6 +747,13 @@ namespace G
             value = ResponseInProgress;
             return IsResponseInProgress;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ResponseInProgressEvent PickResponseInProgress() => IsResponseInProgress
+            ? ResponseInProgress!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseInProgress' but the value was {ToString()}.");
 
         /// <summary>
         /// An event that is emitted when a response fails.
@@ -646,6 +786,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ResponseFailedEvent PickResponseFailed() => IsResponseFailed
+            ? ResponseFailed!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseFailed' but the value was {ToString()}.");
+
+        /// <summary>
         /// An event that is emitted when a response finishes as incomplete.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -674,6 +821,13 @@ namespace G
             value = ResponseIncomplete;
             return IsResponseIncomplete;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ResponseIncompleteEvent PickResponseIncomplete() => IsResponseIncomplete
+            ? ResponseIncomplete!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseIncomplete' but the value was {ToString()}.");
 
         /// <summary>
         /// Emitted when a new output item is added.
@@ -706,6 +860,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ResponseOutputItemAddedEvent PickResponseOutputItemAdded() => IsResponseOutputItemAdded
+            ? ResponseOutputItemAdded!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseOutputItemAdded' but the value was {ToString()}.");
+
+        /// <summary>
         /// Emitted when an output item is marked done.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -734,6 +895,13 @@ namespace G
             value = ResponseOutputItemDone;
             return IsResponseOutputItemDone;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ResponseOutputItemDoneEvent PickResponseOutputItemDone() => IsResponseOutputItemDone
+            ? ResponseOutputItemDone!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseOutputItemDone' but the value was {ToString()}.");
 
         /// <summary>
         /// Emitted when a new reasoning summary part is added.
@@ -766,6 +934,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ResponseReasoningSummaryPartAddedEvent PickResponseReasoningSummaryPartAdded() => IsResponseReasoningSummaryPartAdded
+            ? ResponseReasoningSummaryPartAdded!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseReasoningSummaryPartAdded' but the value was {ToString()}.");
+
+        /// <summary>
         /// Emitted when a reasoning summary part is completed.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -794,6 +969,13 @@ namespace G
             value = ResponseReasoningSummaryPartDone;
             return IsResponseReasoningSummaryPartDone;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ResponseReasoningSummaryPartDoneEvent PickResponseReasoningSummaryPartDone() => IsResponseReasoningSummaryPartDone
+            ? ResponseReasoningSummaryPartDone!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseReasoningSummaryPartDone' but the value was {ToString()}.");
 
         /// <summary>
         /// Emitted when a delta is added to a reasoning summary text.
@@ -826,6 +1008,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ResponseReasoningSummaryTextDeltaEvent PickResponseReasoningSummaryTextDelta() => IsResponseReasoningSummaryTextDelta
+            ? ResponseReasoningSummaryTextDelta!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseReasoningSummaryTextDelta' but the value was {ToString()}.");
+
+        /// <summary>
         /// Emitted when a reasoning summary text is completed.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -854,6 +1043,13 @@ namespace G
             value = ResponseReasoningSummaryTextDone;
             return IsResponseReasoningSummaryTextDone;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ResponseReasoningSummaryTextDoneEvent PickResponseReasoningSummaryTextDone() => IsResponseReasoningSummaryTextDone
+            ? ResponseReasoningSummaryTextDone!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseReasoningSummaryTextDone' but the value was {ToString()}.");
 
         /// <summary>
         /// Emitted when there is a partial refusal text.
@@ -886,6 +1082,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ResponseRefusalDeltaEvent PickResponseRefusalDelta() => IsResponseRefusalDelta
+            ? ResponseRefusalDelta!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseRefusalDelta' but the value was {ToString()}.");
+
+        /// <summary>
         /// Emitted when refusal text is finalized.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -914,6 +1117,13 @@ namespace G
             value = ResponseRefusalDone;
             return IsResponseRefusalDone;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ResponseRefusalDoneEvent PickResponseRefusalDone() => IsResponseRefusalDone
+            ? ResponseRefusalDone!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseRefusalDone' but the value was {ToString()}.");
 
         /// <summary>
         /// Emitted when there is an additional text delta.
@@ -946,6 +1156,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ResponseTextDeltaEvent PickResponseOutputTextDelta() => IsResponseOutputTextDelta
+            ? ResponseOutputTextDelta!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseOutputTextDelta' but the value was {ToString()}.");
+
+        /// <summary>
         /// Emitted when text content is finalized.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -974,6 +1191,13 @@ namespace G
             value = ResponseOutputTextDone;
             return IsResponseOutputTextDone;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ResponseTextDoneEvent PickResponseOutputTextDone() => IsResponseOutputTextDone
+            ? ResponseOutputTextDone!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseOutputTextDone' but the value was {ToString()}.");
 
         /// <summary>
         /// Emitted when a web search call is completed.
@@ -1006,6 +1230,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ResponseWebSearchCallCompletedEvent PickResponseWebSearchCallCompleted() => IsResponseWebSearchCallCompleted
+            ? ResponseWebSearchCallCompleted!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseWebSearchCallCompleted' but the value was {ToString()}.");
+
+        /// <summary>
         /// Emitted when a web search call is initiated.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -1034,6 +1265,13 @@ namespace G
             value = ResponseWebSearchCallInProgress;
             return IsResponseWebSearchCallInProgress;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ResponseWebSearchCallInProgressEvent PickResponseWebSearchCallInProgress() => IsResponseWebSearchCallInProgress
+            ? ResponseWebSearchCallInProgress!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseWebSearchCallInProgress' but the value was {ToString()}.");
 
         /// <summary>
         /// Emitted when a web search call is executing.
@@ -1066,6 +1304,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ResponseWebSearchCallSearchingEvent PickResponseWebSearchCallSearching() => IsResponseWebSearchCallSearching
+            ? ResponseWebSearchCallSearching!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseWebSearchCallSearching' but the value was {ToString()}.");
+
+        /// <summary>
         /// Emitted when an image generation tool call has completed and the final image is available.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -1094,6 +1339,13 @@ namespace G
             value = ResponseImageGenerationCallCompleted;
             return IsResponseImageGenerationCallCompleted;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ResponseImageGenCallCompletedEvent PickResponseImageGenerationCallCompleted() => IsResponseImageGenerationCallCompleted
+            ? ResponseImageGenerationCallCompleted!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseImageGenerationCallCompleted' but the value was {ToString()}.");
 
         /// <summary>
         /// Emitted when an image generation tool call is actively generating an image (intermediate state).
@@ -1126,6 +1378,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ResponseImageGenCallGeneratingEvent PickResponseImageGenerationCallGenerating() => IsResponseImageGenerationCallGenerating
+            ? ResponseImageGenerationCallGenerating!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseImageGenerationCallGenerating' but the value was {ToString()}.");
+
+        /// <summary>
         /// Emitted when an image generation tool call is in progress.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -1154,6 +1413,13 @@ namespace G
             value = ResponseImageGenerationCallInProgress;
             return IsResponseImageGenerationCallInProgress;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ResponseImageGenCallInProgressEvent PickResponseImageGenerationCallInProgress() => IsResponseImageGenerationCallInProgress
+            ? ResponseImageGenerationCallInProgress!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseImageGenerationCallInProgress' but the value was {ToString()}.");
 
         /// <summary>
         /// Emitted when a partial image is available during image generation streaming.
@@ -1186,6 +1452,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ResponseImageGenCallPartialImageEvent PickResponseImageGenerationCallPartialImage() => IsResponseImageGenerationCallPartialImage
+            ? ResponseImageGenerationCallPartialImage!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseImageGenerationCallPartialImage' but the value was {ToString()}.");
+
+        /// <summary>
         /// Emitted when there is a delta (partial update) to the arguments of an MCP tool call.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -1214,6 +1487,13 @@ namespace G
             value = ResponseMcpCallArgumentsDelta;
             return IsResponseMcpCallArgumentsDelta;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ResponseMCPCallArgumentsDeltaEvent PickResponseMcpCallArgumentsDelta() => IsResponseMcpCallArgumentsDelta
+            ? ResponseMcpCallArgumentsDelta!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseMcpCallArgumentsDelta' but the value was {ToString()}.");
 
         /// <summary>
         /// Emitted when the arguments for an MCP tool call are finalized.
@@ -1246,6 +1526,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ResponseMCPCallArgumentsDoneEvent PickResponseMcpCallArgumentsDone() => IsResponseMcpCallArgumentsDone
+            ? ResponseMcpCallArgumentsDone!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseMcpCallArgumentsDone' but the value was {ToString()}.");
+
+        /// <summary>
         /// Emitted when an MCP  tool call has completed successfully.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -1274,6 +1561,13 @@ namespace G
             value = ResponseMcpCallCompleted;
             return IsResponseMcpCallCompleted;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ResponseMCPCallCompletedEvent PickResponseMcpCallCompleted() => IsResponseMcpCallCompleted
+            ? ResponseMcpCallCompleted!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseMcpCallCompleted' but the value was {ToString()}.");
 
         /// <summary>
         /// Emitted when an MCP  tool call has failed.
@@ -1306,6 +1600,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ResponseMCPCallFailedEvent PickResponseMcpCallFailed() => IsResponseMcpCallFailed
+            ? ResponseMcpCallFailed!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseMcpCallFailed' but the value was {ToString()}.");
+
+        /// <summary>
         /// Emitted when an MCP  tool call is in progress.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -1334,6 +1635,13 @@ namespace G
             value = ResponseMcpCallInProgress;
             return IsResponseMcpCallInProgress;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ResponseMCPCallInProgressEvent PickResponseMcpCallInProgress() => IsResponseMcpCallInProgress
+            ? ResponseMcpCallInProgress!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseMcpCallInProgress' but the value was {ToString()}.");
 
         /// <summary>
         /// Emitted when the list of available MCP tools has been successfully retrieved.
@@ -1366,6 +1674,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ResponseMCPListToolsCompletedEvent PickResponseMcpListToolsCompleted() => IsResponseMcpListToolsCompleted
+            ? ResponseMcpListToolsCompleted!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseMcpListToolsCompleted' but the value was {ToString()}.");
+
+        /// <summary>
         /// Emitted when the attempt to list available MCP tools has failed.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -1394,6 +1709,13 @@ namespace G
             value = ResponseMcpListToolsFailed;
             return IsResponseMcpListToolsFailed;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ResponseMCPListToolsFailedEvent PickResponseMcpListToolsFailed() => IsResponseMcpListToolsFailed
+            ? ResponseMcpListToolsFailed!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseMcpListToolsFailed' but the value was {ToString()}.");
 
         /// <summary>
         /// Emitted when the system is in the process of retrieving the list of available MCP tools.
@@ -1426,6 +1748,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ResponseMCPListToolsInProgressEvent PickResponseMcpListToolsInProgress() => IsResponseMcpListToolsInProgress
+            ? ResponseMcpListToolsInProgress!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseMcpListToolsInProgress' but the value was {ToString()}.");
+
+        /// <summary>
         /// Emitted when an annotation is added to output text content.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -1454,6 +1783,13 @@ namespace G
             value = ResponseOutputTextAnnotationAdded;
             return IsResponseOutputTextAnnotationAdded;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ResponseOutputTextAnnotationAddedEvent PickResponseOutputTextAnnotationAdded() => IsResponseOutputTextAnnotationAdded
+            ? ResponseOutputTextAnnotationAdded!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseOutputTextAnnotationAdded' but the value was {ToString()}.");
 
         /// <summary>
         /// Emitted when a response is queued and waiting to be processed.
@@ -1486,6 +1822,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ResponseQueuedEvent PickResponseQueued() => IsResponseQueued
+            ? ResponseQueued!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseQueued' but the value was {ToString()}.");
+
+        /// <summary>
         /// Emitted when there is a delta (partial update) to the reasoning content.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -1514,6 +1857,13 @@ namespace G
             value = ResponseReasoningDelta;
             return IsResponseReasoningDelta;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ResponseReasoningDeltaEvent PickResponseReasoningDelta() => IsResponseReasoningDelta
+            ? ResponseReasoningDelta!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseReasoningDelta' but the value was {ToString()}.");
 
         /// <summary>
         /// Emitted when the reasoning content is finalized for an item.
@@ -1546,6 +1896,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ResponseReasoningDoneEvent PickResponseReasoningDone() => IsResponseReasoningDone
+            ? ResponseReasoningDone!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseReasoningDone' but the value was {ToString()}.");
+
+        /// <summary>
         /// Emitted when there is a delta (partial update) to the reasoning summary content.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -1576,6 +1933,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ResponseReasoningSummaryDeltaEvent PickResponseReasoningSummaryDelta() => IsResponseReasoningSummaryDelta
+            ? ResponseReasoningSummaryDelta!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseReasoningSummaryDelta' but the value was {ToString()}.");
+
+        /// <summary>
         /// Emitted when the reasoning summary content is finalized for an item.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -1604,6 +1968,13 @@ namespace G
             value = ResponseReasoningSummaryDone;
             return IsResponseReasoningSummaryDone;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ResponseReasoningSummaryDoneEvent PickResponseReasoningSummaryDone() => IsResponseReasoningSummaryDone
+            ? ResponseReasoningSummaryDone!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseReasoningSummaryDone' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

@@ -47,6 +47,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ReferenceInstruction PickReference() => IsReference
+            ? Reference!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Reference' but the value was {ToString()}.");
+
+        /// <summary>
         /// An instruction defined inline in the request.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -75,6 +82,13 @@ namespace G
             value = Inline;
             return IsInline;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.InlineInstruction PickInline() => IsInline
+            ? Inline!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Inline' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

@@ -41,6 +41,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ModelIdsShared PickShared() => IsShared
+            ? Shared!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Shared' but the value was {ToString()}.");
+
+        /// <summary>
         /// Example: gpt-4o
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -69,6 +76,13 @@ namespace G
             value = Responses;
             return IsResponses;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ModelIdsResponses PickResponses() => IsResponses
+            ? Responses!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Responses' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

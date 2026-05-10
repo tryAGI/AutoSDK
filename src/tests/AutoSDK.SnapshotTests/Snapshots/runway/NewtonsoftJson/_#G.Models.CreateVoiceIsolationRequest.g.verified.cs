@@ -44,6 +44,13 @@ namespace G
             value = ElevenVoiceIsolation;
             return IsElevenVoiceIsolation;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.CreateVoiceIsolationRequestElevenVoiceIsolation PickElevenVoiceIsolation() => IsElevenVoiceIsolation
+            ? ElevenVoiceIsolation!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ElevenVoiceIsolation' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

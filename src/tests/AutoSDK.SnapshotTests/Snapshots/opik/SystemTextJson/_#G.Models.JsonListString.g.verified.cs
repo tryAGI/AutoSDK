@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public object PickJsonListStringVariant1() => IsJsonListStringVariant1
+            ? JsonListStringVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'JsonListStringVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<object>? JsonListStringVariant2 { get; init; }
 #else
@@ -73,6 +80,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::System.Collections.Generic.IList<object> PickJsonListStringVariant2() => IsJsonListStringVariant2
+            ? JsonListStringVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'JsonListStringVariant2' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public string? JsonListStringVariant3 { get; init; }
 #else
@@ -99,6 +113,13 @@ namespace G
             value = JsonListStringVariant3;
             return IsJsonListStringVariant3;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string PickJsonListStringVariant3() => IsJsonListStringVariant3
+            ? JsonListStringVariant3!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'JsonListStringVariant3' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

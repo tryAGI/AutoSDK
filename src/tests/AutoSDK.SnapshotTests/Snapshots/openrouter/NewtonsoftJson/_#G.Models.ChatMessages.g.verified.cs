@@ -41,6 +41,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ChatSystemMessage PickChatSystemMessage() => IsChatSystemMessage
+            ? ChatSystemMessage!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ChatSystemMessage' but the value was {ToString()}.");
+
+        /// <summary>
         /// User message
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -69,6 +76,13 @@ namespace G
             value = ChatUserMessage;
             return IsChatUserMessage;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ChatUserMessage PickChatUserMessage() => IsChatUserMessage
+            ? ChatUserMessage!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ChatUserMessage' but the value was {ToString()}.");
 
         /// <summary>
         /// Developer message
@@ -101,6 +115,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ChatDeveloperMessage PickChatDeveloperMessage() => IsChatDeveloperMessage
+            ? ChatDeveloperMessage!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ChatDeveloperMessage' but the value was {ToString()}.");
+
+        /// <summary>
         /// Assistant message for requests and responses
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -131,6 +152,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ChatAssistantMessage PickChatAssistantMessage() => IsChatAssistantMessage
+            ? ChatAssistantMessage!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ChatAssistantMessage' but the value was {ToString()}.");
+
+        /// <summary>
         /// Tool response message
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -159,6 +187,13 @@ namespace G
             value = ChatToolMessage;
             return IsChatToolMessage;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ChatToolMessage PickChatToolMessage() => IsChatToolMessage
+            ? ChatToolMessage!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ChatToolMessage' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

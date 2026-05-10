@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.ChatStreamEventType PickChatStreamType() => IsChatStreamType
+            ? ChatStreamType!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ChatStreamType' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CitationStartEventT3df62? T3df62 { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = T3df62;
             return IsT3df62;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.CitationStartEventT3df62 PickT3df62() => IsT3df62
+            ? T3df62!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'T3df62' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

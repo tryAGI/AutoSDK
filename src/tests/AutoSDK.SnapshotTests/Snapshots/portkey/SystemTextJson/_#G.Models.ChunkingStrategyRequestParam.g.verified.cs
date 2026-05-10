@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.AutoChunkingStrategyRequestParam PickAutoChunkingStrategy() => IsAutoChunkingStrategy
+            ? AutoChunkingStrategy!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AutoChunkingStrategy' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.StaticChunkingStrategyRequestParam? StaticChunkingStrategy { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = StaticChunkingStrategy;
             return IsStaticChunkingStrategy;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.StaticChunkingStrategyRequestParam PickStaticChunkingStrategy() => IsStaticChunkingStrategy
+            ? StaticChunkingStrategy!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'StaticChunkingStrategy' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

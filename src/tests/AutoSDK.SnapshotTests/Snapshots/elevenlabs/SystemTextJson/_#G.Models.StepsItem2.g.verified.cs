@@ -48,6 +48,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.WorkflowToolEdgeStepModel PickEdge() => IsEdge
+            ? Edge!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Edge' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.WorkflowToolNestedToolsStepModelOutput? NestedTools { get; init; }
 #else
@@ -78,6 +85,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.WorkflowToolNestedToolsStepModelOutput PickNestedTools() => IsNestedTools
+            ? NestedTools!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'NestedTools' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.WorkflowToolMaxIterationsExceededStepModel? MaxIterationsExceeded { get; init; }
 #else
@@ -104,6 +118,13 @@ namespace G
             value = MaxIterationsExceeded;
             return IsMaxIterationsExceeded;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.WorkflowToolMaxIterationsExceededStepModel PickMaxIterationsExceeded() => IsMaxIterationsExceeded
+            ? MaxIterationsExceeded!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MaxIterationsExceeded' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

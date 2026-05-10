@@ -39,6 +39,13 @@ namespace G
             value = ResponsesPostRequestBodyContentApplicationJsonSchemaSafeguardsEntityListItemsVariant1;
             return IsResponsesPostRequestBodyContentApplicationJsonSchemaSafeguardsEntityListItemsVariant1;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string PickResponsesPostRequestBodyContentApplicationJsonSchemaSafeguardsEntityListItemsVariant1() => IsResponsesPostRequestBodyContentApplicationJsonSchemaSafeguardsEntityListItemsVariant1
+            ? ResponsesPostRequestBodyContentApplicationJsonSchemaSafeguardsEntityListItemsVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResponsesPostRequestBodyContentApplicationJsonSchemaSafeguardsEntityListItemsVariant1' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

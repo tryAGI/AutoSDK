@@ -47,6 +47,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.SvgSolidFill PickSolid() => IsSolid
+            ? Solid!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Solid' but the value was {ToString()}.");
+
+        /// <summary>
         /// A linear gradient fill that transitions colors along a straight line.<br/>
         /// The gradient direction is controlled by the `angle` property.
         /// </summary>
@@ -78,6 +85,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.SvgLinearGradientFill PickLinear() => IsLinear
+            ? Linear!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Linear' but the value was {ToString()}.");
+
+        /// <summary>
         /// A radial gradient fill that transitions colors radiating outward from a center point.<br/>
         /// The gradient creates a circular or elliptical color transition.
         /// </summary>
@@ -107,6 +121,13 @@ namespace G
             value = Radial;
             return IsRadial;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.SvgRadialGradientFill PickRadial() => IsRadial
+            ? Radial!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Radial' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.AgentEventBase PickBase() => IsBase
+            ? Base!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Base' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.AgentOutputEventVariant2? AgentOutputEventVariant2 { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = AgentOutputEventVariant2;
             return IsAgentOutputEventVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.AgentOutputEventVariant2 PickAgentOutputEventVariant2() => IsAgentOutputEventVariant2
+            ? AgentOutputEventVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AgentOutputEventVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

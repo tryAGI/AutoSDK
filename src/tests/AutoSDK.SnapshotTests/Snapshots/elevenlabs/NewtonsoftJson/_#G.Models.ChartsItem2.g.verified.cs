@@ -48,6 +48,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.DashboardCallSuccessChartModel PickCallSuccess() => IsCallSuccess
+            ? CallSuccess!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CallSuccess' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.DashboardCriteriaChartModel? Criteria { get; init; }
 #else
@@ -78,6 +85,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.DashboardCriteriaChartModel PickCriteria() => IsCriteria
+            ? Criteria!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Criteria' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.DashboardDataCollectionChartModel? DataCollection { get; init; }
 #else
@@ -104,6 +118,13 @@ namespace G
             value = DataCollection;
             return IsDataCollection;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.DashboardDataCollectionChartModel PickDataCollection() => IsDataCollection
+            ? DataCollection!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'DataCollection' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

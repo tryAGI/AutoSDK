@@ -48,6 +48,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.PipelinesCreatePipelineRequestProducerConfigVariant1 PickSlackChannelReader() => IsSlackChannelReader
+            ? SlackChannelReader!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SlackChannelReader' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.PipelinesCreatePipelineRequestProducerConfigVariant2? CustomWebhook { get; init; }
 #else
@@ -74,6 +81,13 @@ namespace G
             value = CustomWebhook;
             return IsCustomWebhook;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.PipelinesCreatePipelineRequestProducerConfigVariant2 PickCustomWebhook() => IsCustomWebhook
+            ? CustomWebhook!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CustomWebhook' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

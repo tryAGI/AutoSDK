@@ -46,6 +46,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.RepositoryRuleCreation PickCreation() => IsCreation
+            ? Creation!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Creation' but the value was {ToString()}.");
+
+        /// <summary>
         /// Only allow users with bypass permission to update matching refs.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -74,6 +81,13 @@ namespace G
             value = Update;
             return IsUpdate;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.RepositoryRuleUpdate PickUpdate() => IsUpdate
+            ? Update!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Update' but the value was {ToString()}.");
 
         /// <summary>
         /// Only allow users with bypass permissions to delete matching refs.
@@ -106,6 +120,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.RepositoryRuleDeletion PickDeletion() => IsDeletion
+            ? Deletion!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Deletion' but the value was {ToString()}.");
+
+        /// <summary>
         /// Prevent merge commits from being pushed to matching refs.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -134,6 +155,13 @@ namespace G
             value = RequiredLinearHistory;
             return IsRequiredLinearHistory;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.RepositoryRuleRequiredLinearHistory PickRequiredLinearHistory() => IsRequiredLinearHistory
+            ? RequiredLinearHistory!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'RequiredLinearHistory' but the value was {ToString()}.");
 
         /// <summary>
         /// Merges must be performed via a merge queue.
@@ -166,6 +194,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.RepositoryRuleMergeQueue PickMergeQueue() => IsMergeQueue
+            ? MergeQueue!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MergeQueue' but the value was {ToString()}.");
+
+        /// <summary>
         /// Choose which environments must be successfully deployed to before refs can be pushed into a ref that matches this rule.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -194,6 +229,13 @@ namespace G
             value = RequiredDeployments;
             return IsRequiredDeployments;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.RepositoryRuleRequiredDeployments PickRequiredDeployments() => IsRequiredDeployments
+            ? RequiredDeployments!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'RequiredDeployments' but the value was {ToString()}.");
 
         /// <summary>
         /// Commits pushed to matching refs must have verified signatures.
@@ -226,6 +268,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.RepositoryRuleRequiredSignatures PickRequiredSignatures() => IsRequiredSignatures
+            ? RequiredSignatures!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'RequiredSignatures' but the value was {ToString()}.");
+
+        /// <summary>
         /// Require all commits be made to a non-target branch and submitted via a pull request before they can be merged.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -254,6 +303,13 @@ namespace G
             value = PullRequest;
             return IsPullRequest;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.RepositoryRulePullRequest PickPullRequest() => IsPullRequest
+            ? PullRequest!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'PullRequest' but the value was {ToString()}.");
 
         /// <summary>
         /// Choose which status checks must pass before the ref is updated. When enabled, commits must first be pushed to another ref where the checks pass.
@@ -286,6 +342,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.RepositoryRuleRequiredStatusChecks PickRequiredStatusChecks() => IsRequiredStatusChecks
+            ? RequiredStatusChecks!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'RequiredStatusChecks' but the value was {ToString()}.");
+
+        /// <summary>
         /// Prevent users with push access from force pushing to refs.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -314,6 +377,13 @@ namespace G
             value = NonFastForward;
             return IsNonFastForward;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.RepositoryRuleNonFastForward PickNonFastForward() => IsNonFastForward
+            ? NonFastForward!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'NonFastForward' but the value was {ToString()}.");
 
         /// <summary>
         /// Parameters to be used for the commit_message_pattern rule
@@ -346,6 +416,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.RepositoryRuleCommitMessagePattern PickCommitMessagePattern() => IsCommitMessagePattern
+            ? CommitMessagePattern!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CommitMessagePattern' but the value was {ToString()}.");
+
+        /// <summary>
         /// Parameters to be used for the commit_author_email_pattern rule
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -374,6 +451,13 @@ namespace G
             value = CommitAuthorEmailPattern;
             return IsCommitAuthorEmailPattern;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.RepositoryRuleCommitAuthorEmailPattern PickCommitAuthorEmailPattern() => IsCommitAuthorEmailPattern
+            ? CommitAuthorEmailPattern!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CommitAuthorEmailPattern' but the value was {ToString()}.");
 
         /// <summary>
         /// Parameters to be used for the committer_email_pattern rule
@@ -406,6 +490,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.RepositoryRuleCommitterEmailPattern PickCommitterEmailPattern() => IsCommitterEmailPattern
+            ? CommitterEmailPattern!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CommitterEmailPattern' but the value was {ToString()}.");
+
+        /// <summary>
         /// Parameters to be used for the branch_name_pattern rule
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -434,6 +525,13 @@ namespace G
             value = BranchNamePattern;
             return IsBranchNamePattern;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.RepositoryRuleBranchNamePattern PickBranchNamePattern() => IsBranchNamePattern
+            ? BranchNamePattern!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BranchNamePattern' but the value was {ToString()}.");
 
         /// <summary>
         /// Parameters to be used for the tag_name_pattern rule
@@ -466,6 +564,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.RepositoryRuleTagNamePattern PickTagNamePattern() => IsTagNamePattern
+            ? TagNamePattern!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'TagNamePattern' but the value was {ToString()}.");
+
+        /// <summary>
         /// Prevent commits that include changes in specified file paths from being pushed to the commit graph.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -494,6 +599,13 @@ namespace G
             value = FilePathRestriction;
             return IsFilePathRestriction;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.RepositoryRuleFilePathRestriction PickFilePathRestriction() => IsFilePathRestriction
+            ? FilePathRestriction!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FilePathRestriction' but the value was {ToString()}.");
 
         /// <summary>
         /// Prevent commits that include file paths that exceed a specified character limit from being pushed to the commit graph.
@@ -526,6 +638,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.RepositoryRuleMaxFilePathLength PickMaxFilePathLength() => IsMaxFilePathLength
+            ? MaxFilePathLength!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MaxFilePathLength' but the value was {ToString()}.");
+
+        /// <summary>
         /// Prevent commits that include files with specified file extensions from being pushed to the commit graph.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -554,6 +673,13 @@ namespace G
             value = FileExtensionRestriction;
             return IsFileExtensionRestriction;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.RepositoryRuleFileExtensionRestriction PickFileExtensionRestriction() => IsFileExtensionRestriction
+            ? FileExtensionRestriction!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FileExtensionRestriction' but the value was {ToString()}.");
 
         /// <summary>
         /// Prevent commits that exceed a specified file size limit from being pushed to the commit.
@@ -586,6 +712,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.RepositoryRuleMaxFileSize PickMaxFileSize() => IsMaxFileSize
+            ? MaxFileSize!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MaxFileSize' but the value was {ToString()}.");
+
+        /// <summary>
         /// Require all changes made to a targeted branch to pass the specified workflows before they can be merged.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -616,6 +749,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.RepositoryRuleWorkflows PickWorkflows() => IsWorkflows
+            ? Workflows!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Workflows' but the value was {ToString()}.");
+
+        /// <summary>
         /// Choose which tools must provide code scanning results before the reference is updated. When configured, code scanning must be enabled and have results for both the commit and the reference being updated.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -644,6 +784,13 @@ namespace G
             value = CodeScanning;
             return IsCodeScanning;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.RepositoryRuleCodeScanning PickCodeScanning() => IsCodeScanning
+            ? CodeScanning!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CodeScanning' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

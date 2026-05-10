@@ -39,6 +39,13 @@ namespace G
             value = CompletionsPostRequestBodyContentApplicationJsonSchemaInputEntityListItemsVariant1;
             return IsCompletionsPostRequestBodyContentApplicationJsonSchemaInputEntityListItemsVariant1;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string PickCompletionsPostRequestBodyContentApplicationJsonSchemaInputEntityListItemsVariant1() => IsCompletionsPostRequestBodyContentApplicationJsonSchemaInputEntityListItemsVariant1
+            ? CompletionsPostRequestBodyContentApplicationJsonSchemaInputEntityListItemsVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CompletionsPostRequestBodyContentApplicationJsonSchemaInputEntityListItemsVariant1' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

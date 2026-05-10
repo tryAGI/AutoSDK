@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public string PickFileSearchServerToolFiltersOneOf0ValueVariant1() => IsFileSearchServerToolFiltersOneOf0ValueVariant1
+            ? FileSearchServerToolFiltersOneOf0ValueVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FileSearchServerToolFiltersOneOf0ValueVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public double? FileSearchServerToolFiltersOneOf0ValueVariant2 { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = FileSearchServerToolFiltersOneOf0ValueVariant2;
             return IsFileSearchServerToolFiltersOneOf0ValueVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public double PickFileSearchServerToolFiltersOneOf0ValueVariant2() => IsFileSearchServerToolFiltersOneOf0ValueVariant2
+            ? FileSearchServerToolFiltersOneOf0ValueVariant2!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FileSearchServerToolFiltersOneOf0ValueVariant2' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -103,6 +117,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool PickFileSearchServerToolFiltersOneOf0ValueVariant3() => IsFileSearchServerToolFiltersOneOf0ValueVariant3
+            ? FileSearchServerToolFiltersOneOf0ValueVariant3!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FileSearchServerToolFiltersOneOf0ValueVariant3' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<global::G.FileSearchServerToolFiltersOneOf0ValueOneOf3Items>? FileSearchServerToolFiltersOneOf0Value3 { get; init; }
 #else
@@ -129,6 +150,13 @@ namespace G
             value = FileSearchServerToolFiltersOneOf0Value3;
             return IsFileSearchServerToolFiltersOneOf0Value3;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<global::G.FileSearchServerToolFiltersOneOf0ValueOneOf3Items> PickFileSearchServerToolFiltersOneOf0Value3() => IsFileSearchServerToolFiltersOneOf0Value3
+            ? FileSearchServerToolFiltersOneOf0Value3!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FileSearchServerToolFiltersOneOf0Value3' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

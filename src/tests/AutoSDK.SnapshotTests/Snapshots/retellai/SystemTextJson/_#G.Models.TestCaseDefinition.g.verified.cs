@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.TestCaseDefinitionInput PickInput() => IsInput
+            ? Input!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Input' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.TestCaseDefinitionVariant2? TestCaseDefinitionVariant2 { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = TestCaseDefinitionVariant2;
             return IsTestCaseDefinitionVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.TestCaseDefinitionVariant2 PickTestCaseDefinitionVariant2() => IsTestCaseDefinitionVariant2
+            ? TestCaseDefinitionVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'TestCaseDefinitionVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

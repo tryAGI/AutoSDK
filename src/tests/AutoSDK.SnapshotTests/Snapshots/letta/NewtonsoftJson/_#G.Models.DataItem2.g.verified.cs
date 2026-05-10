@@ -44,6 +44,13 @@ namespace G
             value = Agent;
             return IsAgent;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ClientSideAccessTokensListClientSideAccessTokensResponseTokenPolicyDataItemVariant1 PickAgent() => IsAgent
+            ? Agent!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Agent' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

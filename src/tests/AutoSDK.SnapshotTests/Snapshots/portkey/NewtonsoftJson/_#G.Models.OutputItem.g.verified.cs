@@ -46,6 +46,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.OutputMessage PickMessage() => IsMessage
+            ? Message!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Message' but the value was {ToString()}.");
+
+        /// <summary>
         /// The results of a file search tool call. See the <br/>
         /// [file search guide](/docs/guides/tools-file-search) for more information.
         /// </summary>
@@ -75,6 +82,13 @@ namespace G
             value = FileSearchCall;
             return IsFileSearchCall;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.FileSearchToolCall PickFileSearchCall() => IsFileSearchCall
+            ? FileSearchCall!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FileSearchCall' but the value was {ToString()}.");
 
         /// <summary>
         /// A tool call to run a function. See the <br/>
@@ -108,6 +122,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.FunctionToolCall PickFunctionCall() => IsFunctionCall
+            ? FunctionCall!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FunctionCall' but the value was {ToString()}.");
+
+        /// <summary>
         /// The results of a web search tool call. See the <br/>
         /// [web search guide](/docs/guides/tools-web-search) for more information.
         /// </summary>
@@ -137,6 +158,13 @@ namespace G
             value = WebSearchCall;
             return IsWebSearchCall;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.WebSearchToolCall PickWebSearchCall() => IsWebSearchCall
+            ? WebSearchCall!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'WebSearchCall' but the value was {ToString()}.");
 
         /// <summary>
         /// A tool call to a computer use tool. See the <br/>
@@ -170,6 +198,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ComputerToolCall PickComputerCall() => IsComputerCall
+            ? ComputerCall!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ComputerCall' but the value was {ToString()}.");
+
+        /// <summary>
         /// A description of the chain of thought used by a reasoning model while generating<br/>
         /// a response.
         /// </summary>
@@ -199,6 +234,13 @@ namespace G
             value = Reasoning;
             return IsReasoning;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ReasoningItem PickReasoning() => IsReasoning
+            ? Reasoning!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Reasoning' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

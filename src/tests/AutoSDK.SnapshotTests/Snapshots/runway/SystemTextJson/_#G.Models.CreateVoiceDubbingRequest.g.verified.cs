@@ -44,6 +44,13 @@ namespace G
             value = ElevenVoiceDubbing;
             return IsElevenVoiceDubbing;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.CreateVoiceDubbingRequestElevenVoiceDubbing PickElevenVoiceDubbing() => IsElevenVoiceDubbing
+            ? ElevenVoiceDubbing!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ElevenVoiceDubbing' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

@@ -39,6 +39,13 @@ namespace G
             value = ThreadStreamEventVariant1;
             return IsThreadStreamEventVariant1;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ThreadStreamEventVariant1 PickThreadStreamEventVariant1() => IsThreadStreamEventVariant1
+            ? ThreadStreamEventVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ThreadStreamEventVariant1' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

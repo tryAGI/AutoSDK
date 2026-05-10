@@ -48,6 +48,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredTextInputChunk PickText() => IsText
+            ? Text!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredImageUrlInputChunk? ImageUrl { get; init; }
 #else
@@ -74,6 +81,13 @@ namespace G
             value = ImageUrl;
             return IsImageUrl;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredImageUrlInputChunk PickImageUrl() => IsImageUrl
+            ? ImageUrl!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ImageUrl' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -108,6 +122,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredAudioUrlInputChunk PickAudioUrl() => IsAudioUrl
+            ? AudioUrl!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AudioUrl' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredVideoUrlInputChunk? VideoUrl { get; init; }
 #else
@@ -134,6 +155,13 @@ namespace G
             value = VideoUrl;
             return IsVideoUrl;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredVideoUrlInputChunk PickVideoUrl() => IsVideoUrl
+            ? VideoUrl!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'VideoUrl' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

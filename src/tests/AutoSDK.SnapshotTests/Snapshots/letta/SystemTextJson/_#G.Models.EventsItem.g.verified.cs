@@ -48,6 +48,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.MetadataSendTelemetryRequestEventVariant1 PickSessionStart() => IsSessionStart
+            ? SessionStart!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SessionStart' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.MetadataSendTelemetryRequestEventVariant2? SessionEnd { get; init; }
 #else
@@ -74,6 +81,13 @@ namespace G
             value = SessionEnd;
             return IsSessionEnd;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.MetadataSendTelemetryRequestEventVariant2 PickSessionEnd() => IsSessionEnd
+            ? SessionEnd!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SessionEnd' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -108,6 +122,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.MetadataSendTelemetryRequestEventVariant3 PickToolUsage() => IsToolUsage
+            ? ToolUsage!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ToolUsage' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.MetadataSendTelemetryRequestEventVariant4? Error { get; init; }
 #else
@@ -138,6 +159,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.MetadataSendTelemetryRequestEventVariant4 PickError() => IsError
+            ? Error!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Error' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.MetadataSendTelemetryRequestEventVariant5? UserInput { get; init; }
 #else
@@ -164,6 +192,13 @@ namespace G
             value = UserInput;
             return IsUserInput;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.MetadataSendTelemetryRequestEventVariant5 PickUserInput() => IsUserInput
+            ? UserInput!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'UserInput' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

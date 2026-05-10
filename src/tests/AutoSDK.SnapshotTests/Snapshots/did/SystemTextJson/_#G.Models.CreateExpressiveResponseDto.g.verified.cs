@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.CreateExpressiveResponseDtoVariant1 PickCreateExpressiveResponseDtoVariant1() => IsCreateExpressiveResponseDtoVariant1
+            ? CreateExpressiveResponseDtoVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CreateExpressiveResponseDtoVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CreateExpressiveResponseDtoVariant2? CreateExpressiveResponseDtoVariant2 { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = CreateExpressiveResponseDtoVariant2;
             return IsCreateExpressiveResponseDtoVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.CreateExpressiveResponseDtoVariant2 PickCreateExpressiveResponseDtoVariant2() => IsCreateExpressiveResponseDtoVariant2
+            ? CreateExpressiveResponseDtoVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CreateExpressiveResponseDtoVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

@@ -41,6 +41,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public byte[] PickAggregateByVariant1() => IsAggregateByVariant1
+            ? AggregateByVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AggregateByVariant1' but the value was {ToString()}.");
+
+        /// <summary>
         /// Sum the values of the given attribute.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -71,6 +78,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public byte[] PickAggregateByVariant2() => IsAggregateByVariant2
+            ? AggregateByVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AggregateByVariant2' but the value was {ToString()}.");
+
+        /// <summary>
         /// Count documents with a non-null value for the given attribute.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -99,6 +113,13 @@ namespace G
             value = AggregateByVariant3;
             return IsAggregateByVariant3;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public byte[] PickAggregateByVariant3() => IsAggregateByVariant3
+            ? AggregateByVariant3!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AggregateByVariant3' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

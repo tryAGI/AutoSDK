@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.ToolBase PickBase() => IsBase
+            ? Base!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Base' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.DynamicVectaraToolVariant2? DynamicVectaraToolVariant2 { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = DynamicVectaraToolVariant2;
             return IsDynamicVectaraToolVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.DynamicVectaraToolVariant2 PickDynamicVectaraToolVariant2() => IsDynamicVectaraToolVariant2
+            ? DynamicVectaraToolVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'DynamicVectaraToolVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

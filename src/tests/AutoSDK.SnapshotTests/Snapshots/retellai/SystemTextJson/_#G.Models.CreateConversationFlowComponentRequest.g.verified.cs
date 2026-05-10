@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.ConversationFlowComponent PickConversationFlowComponent() => IsConversationFlowComponent
+            ? ConversationFlowComponent!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ConversationFlowComponent' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public object? CreateConversationFlowComponentRequestVariant2 { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = CreateConversationFlowComponentRequestVariant2;
             return IsCreateConversationFlowComponentRequestVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public object PickCreateConversationFlowComponentRequestVariant2() => IsCreateConversationFlowComponentRequestVariant2
+            ? CreateConversationFlowComponentRequestVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CreateConversationFlowComponentRequestVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

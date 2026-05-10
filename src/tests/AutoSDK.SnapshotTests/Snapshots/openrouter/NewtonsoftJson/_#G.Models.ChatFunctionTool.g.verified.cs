@@ -41,6 +41,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ChatFunctionTool0 PickChatFunctionTool0() => IsChatFunctionTool0
+            ? ChatFunctionTool0!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ChatFunctionTool0' but the value was {ToString()}.");
+
+        /// <summary>
         /// OpenRouter built-in server tool: returns the current date and time
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -69,6 +76,13 @@ namespace G
             value = DatetimeServerTool;
             return IsDatetimeServerTool;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.DatetimeServerTool PickDatetimeServerTool() => IsDatetimeServerTool
+            ? DatetimeServerTool!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'DatetimeServerTool' but the value was {ToString()}.");
 
         /// <summary>
         /// OpenRouter built-in server tool: searches the web for current information
@@ -101,6 +115,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ChatWebSearchServerTool PickChatWebSearchServerTool() => IsChatWebSearchServerTool
+            ? ChatWebSearchServerTool!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ChatWebSearchServerTool' but the value was {ToString()}.");
+
+        /// <summary>
         /// Web search tool using OpenAI Responses API syntax. Automatically converted to openrouter:web_search.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -129,6 +150,13 @@ namespace G
             value = ChatWebSearchShorthand;
             return IsChatWebSearchShorthand;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ChatWebSearchShorthand PickChatWebSearchShorthand() => IsChatWebSearchShorthand
+            ? ChatWebSearchShorthand!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ChatWebSearchShorthand' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

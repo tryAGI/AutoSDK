@@ -41,6 +41,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ChatCompletionRequestMessageContentPartText PickTextContentPart() => IsTextContentPart
+            ? TextContentPart!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'TextContentPart' but the value was {ToString()}.");
+
+        /// <summary>
         /// Learn about [image inputs](/docs/guides/vision).
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -69,6 +76,13 @@ namespace G
             value = ImageContentPart;
             return IsImageContentPart;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ChatCompletionRequestMessageContentPartImage PickImageContentPart() => IsImageContentPart
+            ? ImageContentPart!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ImageContentPart' but the value was {ToString()}.");
 
         /// <summary>
         /// Learn about [audio inputs](/docs/guides/audio).
@@ -101,6 +115,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ChatCompletionRequestMessageContentPartAudio PickAudioContentPart() => IsAudioContentPart
+            ? AudioContentPart!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AudioContentPart' but the value was {ToString()}.");
+
+        /// <summary>
         /// Learn about [file inputs](/docs/guides/text) for text generation.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -129,6 +150,13 @@ namespace G
             value = FileContentPart;
             return IsFileContentPart;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ChatCompletionRequestMessageContentPartFile PickFileContentPart() => IsFileContentPart
+            ? FileContentPart!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FileContentPart' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

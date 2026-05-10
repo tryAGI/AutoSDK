@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.ToolBase PickBase() => IsBase
+            ? Base!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Base' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.DocumentConversionToolVariant2? DocumentConversionToolVariant2 { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = DocumentConversionToolVariant2;
             return IsDocumentConversionToolVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.DocumentConversionToolVariant2 PickDocumentConversionToolVariant2() => IsDocumentConversionToolVariant2
+            ? DocumentConversionToolVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'DocumentConversionToolVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

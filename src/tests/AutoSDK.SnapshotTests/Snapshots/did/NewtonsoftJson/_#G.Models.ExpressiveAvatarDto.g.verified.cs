@@ -41,6 +41,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ExpressiveAvatarDtoVariant1 PickExpressiveAvatarDtoVariant1() => IsExpressiveAvatarDtoVariant1
+            ? ExpressiveAvatarDtoVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ExpressiveAvatarDtoVariant1' but the value was {ToString()}.");
+
+        /// <summary>
         /// Make all properties in T optional
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -69,6 +76,13 @@ namespace G
             value = ExpressiveAvatarDtoVariant2;
             return IsExpressiveAvatarDtoVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public object PickExpressiveAvatarDtoVariant2() => IsExpressiveAvatarDtoVariant2
+            ? ExpressiveAvatarDtoVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ExpressiveAvatarDtoVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

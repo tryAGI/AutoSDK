@@ -46,6 +46,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.CodeInterpreterTextOutput PickLogs() => IsLogs
+            ? Logs!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Logs' but the value was {ToString()}.");
+
+        /// <summary>
         /// The output of a code interpreter tool call that is a file.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -74,6 +81,13 @@ namespace G
             value = Files;
             return IsFiles;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.CodeInterpreterFileOutput PickFiles() => IsFiles
+            ? Files!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Files' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

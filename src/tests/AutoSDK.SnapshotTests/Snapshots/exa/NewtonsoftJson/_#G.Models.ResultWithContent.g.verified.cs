@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.Result PickResult() => IsResult
+            ? Result!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Result' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ResultWithContentVariant2? ResultWithContentVariant2 { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = ResultWithContentVariant2;
             return IsResultWithContentVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ResultWithContentVariant2 PickResultWithContentVariant2() => IsResultWithContentVariant2
+            ? ResultWithContentVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResultWithContentVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

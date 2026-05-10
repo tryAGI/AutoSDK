@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.PayloadSelectorInclude PickInclude() => IsInclude
+            ? Include!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Include' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.PayloadSelectorExclude? Exclude { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = Exclude;
             return IsExclude;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.PayloadSelectorExclude PickExclude() => IsExclude
+            ? Exclude!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Exclude' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

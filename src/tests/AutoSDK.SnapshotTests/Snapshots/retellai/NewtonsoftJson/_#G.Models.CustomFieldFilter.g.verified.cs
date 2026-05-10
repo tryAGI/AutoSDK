@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.ValueFilter PickValue() => IsValue
+            ? Value!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Value' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CustomFieldFilterVariant2? CustomFieldFilterVariant2 { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = CustomFieldFilterVariant2;
             return IsCustomFieldFilterVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.CustomFieldFilterVariant2 PickCustomFieldFilterVariant2() => IsCustomFieldFilterVariant2
+            ? CustomFieldFilterVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CustomFieldFilterVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.ResearchEventDtoClassVariant1 PickResearchEventDtoClassVariant1() => IsResearchEventDtoClassVariant1
+            ? ResearchEventDtoClassVariant1!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResearchEventDtoClassVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ResearchEventDtoClassVariant2? ResearchEventDtoClassVariant2 { get; init; }
 #else
@@ -73,6 +80,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.ResearchEventDtoClassVariant2 PickResearchEventDtoClassVariant2() => IsResearchEventDtoClassVariant2
+            ? ResearchEventDtoClassVariant2!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResearchEventDtoClassVariant2' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ResearchEventDtoClassVariant3? ResearchEventDtoClassVariant3 { get; init; }
 #else
@@ -99,6 +113,13 @@ namespace G
             value = ResearchEventDtoClassVariant3;
             return IsResearchEventDtoClassVariant3;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ResearchEventDtoClassVariant3 PickResearchEventDtoClassVariant3() => IsResearchEventDtoClassVariant3
+            ? ResearchEventDtoClassVariant3!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResearchEventDtoClassVariant3' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

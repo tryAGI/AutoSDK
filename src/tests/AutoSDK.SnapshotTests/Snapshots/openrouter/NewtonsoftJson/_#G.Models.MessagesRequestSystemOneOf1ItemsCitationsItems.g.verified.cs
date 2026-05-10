@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.MessagesRequestSystemOneOf1ItemsCitationsItems0 PickMessagesRequestSystemOneOf1ItemsCitationsItems0() => IsMessagesRequestSystemOneOf1ItemsCitationsItems0
+            ? MessagesRequestSystemOneOf1ItemsCitationsItems0!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesRequestSystemOneOf1ItemsCitationsItems0' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.MessagesRequestSystemOneOf1ItemsCitationsItems1? MessagesRequestSystemOneOf1ItemsCitationsItems1 { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = MessagesRequestSystemOneOf1ItemsCitationsItems1;
             return IsMessagesRequestSystemOneOf1ItemsCitationsItems1;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.MessagesRequestSystemOneOf1ItemsCitationsItems1 PickMessagesRequestSystemOneOf1ItemsCitationsItems1() => IsMessagesRequestSystemOneOf1ItemsCitationsItems1
+            ? MessagesRequestSystemOneOf1ItemsCitationsItems1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesRequestSystemOneOf1ItemsCitationsItems1' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -103,6 +117,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.MessagesRequestSystemOneOf1ItemsCitationsItems2 PickMessagesRequestSystemOneOf1ItemsCitationsItems2() => IsMessagesRequestSystemOneOf1ItemsCitationsItems2
+            ? MessagesRequestSystemOneOf1ItemsCitationsItems2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesRequestSystemOneOf1ItemsCitationsItems2' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.MessagesRequestSystemOneOf1ItemsCitationsItems3? MessagesRequestSystemOneOf1ItemsCitationsItems3 { get; init; }
 #else
@@ -133,6 +154,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.MessagesRequestSystemOneOf1ItemsCitationsItems3 PickMessagesRequestSystemOneOf1ItemsCitationsItems3() => IsMessagesRequestSystemOneOf1ItemsCitationsItems3
+            ? MessagesRequestSystemOneOf1ItemsCitationsItems3!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesRequestSystemOneOf1ItemsCitationsItems3' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.MessagesRequestSystemOneOf1ItemsCitationsItems4? MessagesRequestSystemOneOf1ItemsCitationsItems4 { get; init; }
 #else
@@ -159,6 +187,13 @@ namespace G
             value = MessagesRequestSystemOneOf1ItemsCitationsItems4;
             return IsMessagesRequestSystemOneOf1ItemsCitationsItems4;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.MessagesRequestSystemOneOf1ItemsCitationsItems4 PickMessagesRequestSystemOneOf1ItemsCitationsItems4() => IsMessagesRequestSystemOneOf1ItemsCitationsItems4
+            ? MessagesRequestSystemOneOf1ItemsCitationsItems4!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesRequestSystemOneOf1ItemsCitationsItems4' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

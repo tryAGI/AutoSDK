@@ -41,6 +41,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.Usage PickUsage() => IsUsage
+            ? Usage!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Usage' but the value was {ToString()}.");
+
+        /// <summary>
         /// Usage interface of OpenAI for improved compatibility.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -69,6 +76,13 @@ namespace G
             value = OpenAIUsage;
             return IsOpenAIUsage;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.OpenAIUsage PickOpenAIUsage() => IsOpenAIUsage
+            ? OpenAIUsage!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OpenAIUsage' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

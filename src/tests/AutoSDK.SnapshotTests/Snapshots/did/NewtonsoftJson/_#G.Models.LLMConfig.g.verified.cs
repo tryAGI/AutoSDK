@@ -41,6 +41,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.LLMConfigOpenAI PickOpenAI() => IsOpenAI
+            ? OpenAI!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OpenAI' but the value was {ToString()}.");
+
+        /// <summary>
         /// OpenAI External LLM
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -69,6 +76,13 @@ namespace G
             value = LLMConfigVariant2;
             return IsLLMConfigVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.LLMConfigVariant2 PickLLMConfigVariant2() => IsLLMConfigVariant2
+            ? LLMConfigVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'LLMConfigVariant2' but the value was {ToString()}.");
 
         /// <summary>
         /// Azure OpenAI External LLM
@@ -103,6 +117,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.LLMConfigVariant3 PickLLMConfigVariant3() => IsLLMConfigVariant3
+            ? LLMConfigVariant3!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'LLMConfigVariant3' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.LLMConfigDId? DId { get; init; }
 #else
@@ -133,6 +154,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.LLMConfigDId PickDId() => IsDId
+            ? DId!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'DId' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.LLMConfigGoogle? Google { get; init; }
 #else
@@ -159,6 +187,13 @@ namespace G
             value = Google;
             return IsGoogle;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.LLMConfigGoogle PickGoogle() => IsGoogle
+            ? Google!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Google' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

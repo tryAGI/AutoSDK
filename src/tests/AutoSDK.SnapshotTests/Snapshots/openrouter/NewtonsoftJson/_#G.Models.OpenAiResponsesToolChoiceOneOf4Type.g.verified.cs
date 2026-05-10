@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.OpenAiResponsesToolChoiceOneOf4Type0 PickOpenAiResponsesToolChoiceOneOf4Type0() => IsOpenAiResponsesToolChoiceOneOf4Type0
+            ? OpenAiResponsesToolChoiceOneOf4Type0!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OpenAiResponsesToolChoiceOneOf4Type0' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.OpenAiResponsesToolChoiceOneOf4Type1? OpenAiResponsesToolChoiceOneOf4Type1 { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = OpenAiResponsesToolChoiceOneOf4Type1;
             return IsOpenAiResponsesToolChoiceOneOf4Type1;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.OpenAiResponsesToolChoiceOneOf4Type1 PickOpenAiResponsesToolChoiceOneOf4Type1() => IsOpenAiResponsesToolChoiceOneOf4Type1
+            ? OpenAiResponsesToolChoiceOneOf4Type1!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OpenAiResponsesToolChoiceOneOf4Type1' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

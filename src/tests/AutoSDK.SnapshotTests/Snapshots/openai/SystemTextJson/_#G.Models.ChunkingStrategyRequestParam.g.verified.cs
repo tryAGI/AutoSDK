@@ -41,6 +41,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.AutoChunkingStrategyRequestParam PickAutoChunkingStrategy() => IsAutoChunkingStrategy
+            ? AutoChunkingStrategy!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AutoChunkingStrategy' but the value was {ToString()}.");
+
+        /// <summary>
         /// Customize your own chunking strategy by setting chunk size and chunk overlap.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -69,6 +76,13 @@ namespace G
             value = StaticChunkingStrategy;
             return IsStaticChunkingStrategy;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.StaticChunkingStrategyRequestParam PickStaticChunkingStrategy() => IsStaticChunkingStrategy
+            ? StaticChunkingStrategy!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'StaticChunkingStrategy' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

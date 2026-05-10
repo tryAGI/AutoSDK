@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.Message PickMessage() => IsMessage
+            ? Message!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Message' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ToolCallInvocationMessage? Invocation { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = Invocation;
             return IsInvocation;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ToolCallInvocationMessage PickInvocation() => IsInvocation
+            ? Invocation!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Invocation' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -103,6 +117,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.ToolCallResultMessage PickResult() => IsResult
+            ? Result!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Result' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.NodeTransitionMessage? NodeTransition { get; init; }
 #else
@@ -133,6 +154,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.NodeTransitionMessage PickNodeTransition() => IsNodeTransition
+            ? NodeTransition!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'NodeTransition' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.StateTransitionMessage? StateTransition { get; init; }
 #else
@@ -159,6 +187,13 @@ namespace G
             value = StateTransition;
             return IsStateTransition;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.StateTransitionMessage PickStateTransition() => IsStateTransition
+            ? StateTransition!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'StateTransition' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

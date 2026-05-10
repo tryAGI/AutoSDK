@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public string PickVectorEncodingVariant1() => IsVectorEncodingVariant1
+            ? VectorEncodingVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'VectorEncodingVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public string? VectorEncodingVariant2 { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = VectorEncodingVariant2;
             return IsVectorEncodingVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string PickVectorEncodingVariant2() => IsVectorEncodingVariant2
+            ? VectorEncodingVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'VectorEncodingVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

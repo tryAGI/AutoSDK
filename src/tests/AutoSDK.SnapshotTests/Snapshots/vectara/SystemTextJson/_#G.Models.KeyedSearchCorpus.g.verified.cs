@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.SearchCorpus PickSearchCorpus() => IsSearchCorpus
+            ? SearchCorpus!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SearchCorpus' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.KeyedSearchCorpusVariant2? KeyedSearchCorpusVariant2 { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = KeyedSearchCorpusVariant2;
             return IsKeyedSearchCorpusVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.KeyedSearchCorpusVariant2 PickKeyedSearchCorpusVariant2() => IsKeyedSearchCorpusVariant2
+            ? KeyedSearchCorpusVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'KeyedSearchCorpusVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

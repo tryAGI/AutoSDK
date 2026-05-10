@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.McpServerToolRequireApproval0 PickMcpServerToolRequireApproval0() => IsMcpServerToolRequireApproval0
+            ? McpServerToolRequireApproval0!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'McpServerToolRequireApproval0' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.McpServerToolRequireApproval1? McpServerToolRequireApproval1 { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = McpServerToolRequireApproval1;
             return IsMcpServerToolRequireApproval1;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.McpServerToolRequireApproval1 PickMcpServerToolRequireApproval1() => IsMcpServerToolRequireApproval1
+            ? McpServerToolRequireApproval1!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'McpServerToolRequireApproval1' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -101,6 +115,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.McpServerToolRequireApproval2 PickMcpServerToolRequireApproval2() => IsMcpServerToolRequireApproval2
+            ? McpServerToolRequireApproval2!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'McpServerToolRequireApproval2' but the value was {ToString()}.");
+
+        /// <summary>
         /// Any type
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -131,6 +152,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public object PickMcpServerToolRequireApprovalVariant4() => IsMcpServerToolRequireApprovalVariant4
+            ? McpServerToolRequireApprovalVariant4!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'McpServerToolRequireApprovalVariant4' but the value was {ToString()}.");
+
+        /// <summary>
         /// Any type
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -159,6 +187,13 @@ namespace G
             value = McpServerToolRequireApprovalVariant5;
             return IsMcpServerToolRequireApprovalVariant5;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public object PickMcpServerToolRequireApprovalVariant5() => IsMcpServerToolRequireApprovalVariant5
+            ? McpServerToolRequireApprovalVariant5!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'McpServerToolRequireApprovalVariant5' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

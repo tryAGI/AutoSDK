@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public object PickFunctionMessage1() => IsFunctionMessage1
+            ? FunctionMessage1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FunctionMessage1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ChatCompletionRequestFunctionMessage? FunctionMessage2 { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = FunctionMessage2;
             return IsFunctionMessage2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ChatCompletionRequestFunctionMessage PickFunctionMessage2() => IsFunctionMessage2
+            ? FunctionMessage2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FunctionMessage2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

@@ -48,6 +48,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.LLMParameterEvaluationStrategy PickLlm() => IsLlm
+            ? Llm!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Llm' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.RegexParameterEvaluationStrategy? Regex { get; init; }
 #else
@@ -74,6 +81,13 @@ namespace G
             value = Regex;
             return IsRegex;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.RegexParameterEvaluationStrategy PickRegex() => IsRegex
+            ? Regex!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Regex' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -108,6 +122,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.ExactParameterEvaluationStrategy PickExact() => IsExact
+            ? Exact!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Exact' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.MatchAnythingParameterEvaluationStrategy? Anything { get; init; }
 #else
@@ -134,6 +155,13 @@ namespace G
             value = Anything;
             return IsAnything;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.MatchAnythingParameterEvaluationStrategy PickAnything() => IsAnything
+            ? Anything!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Anything' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

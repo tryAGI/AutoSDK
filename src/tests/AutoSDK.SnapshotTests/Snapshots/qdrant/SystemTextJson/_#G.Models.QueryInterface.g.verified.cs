@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.VectorInput PickVectorInput() => IsVectorInput
+            ? VectorInput!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'VectorInput' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.Query? Query { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = Query;
             return IsQuery;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.Query PickQuery() => IsQuery
+            ? Query!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Query' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

@@ -47,6 +47,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ChatMessage PickChatbot() => IsChatbot
+            ? Chatbot!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Chatbot' but the value was {ToString()}.");
+
+        /// <summary>
         /// Represents tool result in the chat history.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -75,6 +82,13 @@ namespace G
             value = Tool;
             return IsTool;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ToolMessage PickTool() => IsTool
+            ? Tool!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Tool' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

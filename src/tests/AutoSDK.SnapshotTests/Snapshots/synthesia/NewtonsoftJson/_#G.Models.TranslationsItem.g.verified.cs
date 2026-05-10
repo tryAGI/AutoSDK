@@ -48,6 +48,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.TranslationStatusApiItemSuccess PickComplete() => IsComplete
+            ? Complete!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Complete' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.TranslationStatusApiItemError? Error { get; init; }
 #else
@@ -74,6 +81,13 @@ namespace G
             value = Error;
             return IsError;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.TranslationStatusApiItemError PickError() => IsError
+            ? Error!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Error' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

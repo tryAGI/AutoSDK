@@ -39,6 +39,13 @@ namespace G
             value = Naive;
             return IsNaive;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.NaiveFeedbackStrategy PickNaive() => IsNaive
+            ? Naive!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Naive' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

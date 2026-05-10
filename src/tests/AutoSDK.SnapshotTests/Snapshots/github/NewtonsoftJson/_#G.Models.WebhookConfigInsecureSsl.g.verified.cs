@@ -44,6 +44,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public string PickWebhookConfigInsecureSslVariant1() => IsWebhookConfigInsecureSslVariant1
+            ? WebhookConfigInsecureSslVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'WebhookConfigInsecureSslVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public double? WebhookConfigInsecureSslVariant2 { get; init; }
 #else
@@ -70,6 +77,13 @@ namespace G
             value = WebhookConfigInsecureSslVariant2;
             return IsWebhookConfigInsecureSslVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public double PickWebhookConfigInsecureSslVariant2() => IsWebhookConfigInsecureSslVariant2
+            ? WebhookConfigInsecureSslVariant2!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'WebhookConfigInsecureSslVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

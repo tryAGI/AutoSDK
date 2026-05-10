@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.MaxOptimizationThreadsSetting PickSetting() => IsSetting
+            ? Setting!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Setting' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public int? MaxOptimizationThreadsVariant2 { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = MaxOptimizationThreadsVariant2;
             return IsMaxOptimizationThreadsVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public int PickMaxOptimizationThreadsVariant2() => IsMaxOptimizationThreadsVariant2
+            ? MaxOptimizationThreadsVariant2!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MaxOptimizationThreadsVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

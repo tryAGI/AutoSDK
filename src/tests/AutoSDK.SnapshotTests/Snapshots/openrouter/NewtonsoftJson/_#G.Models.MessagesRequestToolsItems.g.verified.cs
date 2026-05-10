@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.MessagesRequestToolsItems0 PickMessagesRequestToolsItems0() => IsMessagesRequestToolsItems0
+            ? MessagesRequestToolsItems0!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesRequestToolsItems0' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.MessagesRequestToolsItems1? MessagesRequestToolsItems1 { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = MessagesRequestToolsItems1;
             return IsMessagesRequestToolsItems1;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.MessagesRequestToolsItems1 PickMessagesRequestToolsItems1() => IsMessagesRequestToolsItems1
+            ? MessagesRequestToolsItems1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesRequestToolsItems1' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -103,6 +117,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.MessagesRequestToolsItems2 PickMessagesRequestToolsItems2() => IsMessagesRequestToolsItems2
+            ? MessagesRequestToolsItems2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesRequestToolsItems2' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.MessagesRequestToolsItems3? MessagesRequestToolsItems3 { get; init; }
 #else
@@ -129,6 +150,13 @@ namespace G
             value = MessagesRequestToolsItems3;
             return IsMessagesRequestToolsItems3;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.MessagesRequestToolsItems3 PickMessagesRequestToolsItems3() => IsMessagesRequestToolsItems3
+            ? MessagesRequestToolsItems3!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesRequestToolsItems3' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -161,6 +189,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.MessagesRequestToolsItems4 PickMessagesRequestToolsItems4() => IsMessagesRequestToolsItems4
+            ? MessagesRequestToolsItems4!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesRequestToolsItems4' but the value was {ToString()}.");
+
+        /// <summary>
         /// OpenRouter built-in server tool: returns the current date and time
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -191,6 +226,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.DatetimeServerTool PickDatetimeServerTool() => IsDatetimeServerTool
+            ? DatetimeServerTool!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'DatetimeServerTool' but the value was {ToString()}.");
+
+        /// <summary>
         /// OpenRouter built-in server tool: searches the web for current information
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -219,6 +261,13 @@ namespace G
             value = MessagesWebSearchServerTool;
             return IsMessagesWebSearchServerTool;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.MessagesWebSearchServerTool PickMessagesWebSearchServerTool() => IsMessagesWebSearchServerTool
+            ? MessagesWebSearchServerTool!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesWebSearchServerTool' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

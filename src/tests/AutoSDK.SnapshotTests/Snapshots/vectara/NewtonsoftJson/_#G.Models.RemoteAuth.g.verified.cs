@@ -46,6 +46,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.BearerAuth PickBearer() => IsBearer
+            ? Bearer!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Bearer' but the value was {ToString()}.");
+
+        /// <summary>
         /// Custom header-based authentication
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -74,6 +81,13 @@ namespace G
             value = Header;
             return IsHeader;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.HeaderAuth PickHeader() => IsHeader
+            ? Header!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Header' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

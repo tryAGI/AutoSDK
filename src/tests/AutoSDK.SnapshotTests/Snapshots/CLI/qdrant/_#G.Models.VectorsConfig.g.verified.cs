@@ -46,6 +46,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.VectorParams PickVectorParams() => IsVectorParams
+            ? VectorParams!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'VectorParams' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.Dictionary<string, global::G.VectorParams>? VectorsConfigVariant2 { get; init; }
 #else
@@ -72,6 +79,13 @@ namespace G
             value = VectorsConfigVariant2;
             return IsVectorsConfigVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.Dictionary<string, global::G.VectorParams> PickVectorsConfigVariant2() => IsVectorsConfigVariant2
+            ? VectorsConfigVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'VectorsConfigVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

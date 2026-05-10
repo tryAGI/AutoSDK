@@ -41,6 +41,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public string PickStoredPromptTemplateVariablesVariant1() => IsStoredPromptTemplateVariablesVariant1
+            ? StoredPromptTemplateVariablesVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'StoredPromptTemplateVariablesVariant1' but the value was {ToString()}.");
+
+        /// <summary>
         /// Text input content item
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -69,6 +76,13 @@ namespace G
             value = InputText;
             return IsInputText;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.InputText PickInputText() => IsInputText
+            ? InputText!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'InputText' but the value was {ToString()}.");
 
         /// <summary>
         /// Image input content item
@@ -101,6 +115,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.InputImage PickInputImage() => IsInputImage
+            ? InputImage!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'InputImage' but the value was {ToString()}.");
+
+        /// <summary>
         /// File input content item
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -129,6 +150,13 @@ namespace G
             value = InputFile;
             return IsInputFile;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.InputFile PickInputFile() => IsInputFile
+            ? InputFile!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'InputFile' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

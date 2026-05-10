@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.AllOf<global::G.GetScoresResponseDataVariant12, global::G.GetScoresResponseDataNumeric> PickGetScoresResponseDataVariant1() => IsGetScoresResponseDataVariant1
+            ? GetScoresResponseDataVariant1!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'GetScoresResponseDataVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.AllOf<global::G.GetScoresResponseDataVariant22, global::G.GetScoresResponseDataCategorical>? GetScoresResponseDataVariant2 { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = GetScoresResponseDataVariant2;
             return IsGetScoresResponseDataVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.AllOf<global::G.GetScoresResponseDataVariant22, global::G.GetScoresResponseDataCategorical> PickGetScoresResponseDataVariant2() => IsGetScoresResponseDataVariant2
+            ? GetScoresResponseDataVariant2!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'GetScoresResponseDataVariant2' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -103,6 +117,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.AllOf<global::G.GetScoresResponseDataVariant32, global::G.GetScoresResponseDataBoolean> PickGetScoresResponseDataVariant3() => IsGetScoresResponseDataVariant3
+            ? GetScoresResponseDataVariant3!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'GetScoresResponseDataVariant3' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.AllOf<global::G.GetScoresResponseDataVariant42, global::G.GetScoresResponseDataCorrection>? GetScoresResponseDataVariant4 { get; init; }
 #else
@@ -129,6 +150,13 @@ namespace G
             value = GetScoresResponseDataVariant4;
             return IsGetScoresResponseDataVariant4;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.AllOf<global::G.GetScoresResponseDataVariant42, global::G.GetScoresResponseDataCorrection> PickGetScoresResponseDataVariant4() => IsGetScoresResponseDataVariant4
+            ? GetScoresResponseDataVariant4!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'GetScoresResponseDataVariant4' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::System.Collections.Generic.IList<double> PickEmbeddingItemVariant1() => IsEmbeddingItemVariant1
+            ? EmbeddingItemVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'EmbeddingItemVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<int>? EmbeddingItemVariant2 { get; init; }
 #else
@@ -73,6 +80,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::System.Collections.Generic.IList<int> PickEmbeddingItemVariant2() => IsEmbeddingItemVariant2
+            ? EmbeddingItemVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'EmbeddingItemVariant2' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public string? EmbeddingItemVariant3 { get; init; }
 #else
@@ -99,6 +113,13 @@ namespace G
             value = EmbeddingItemVariant3;
             return IsEmbeddingItemVariant3;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string PickEmbeddingItemVariant3() => IsEmbeddingItemVariant3
+            ? EmbeddingItemVariant3!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'EmbeddingItemVariant3' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

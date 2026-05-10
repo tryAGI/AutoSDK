@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.AllOf<global::G.RepositoryRuleCreation, global::G.RepositoryRuleRulesetInfo> PickRepositoryRuleDetailedVariant1() => IsRepositoryRuleDetailedVariant1
+            ? RepositoryRuleDetailedVariant1!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'RepositoryRuleDetailedVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.AllOf<global::G.RepositoryRuleUpdate, global::G.RepositoryRuleRulesetInfo>? RepositoryRuleDetailedVariant2 { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = RepositoryRuleDetailedVariant2;
             return IsRepositoryRuleDetailedVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.AllOf<global::G.RepositoryRuleUpdate, global::G.RepositoryRuleRulesetInfo> PickRepositoryRuleDetailedVariant2() => IsRepositoryRuleDetailedVariant2
+            ? RepositoryRuleDetailedVariant2!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'RepositoryRuleDetailedVariant2' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -103,6 +117,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.AllOf<global::G.RepositoryRuleDeletion, global::G.RepositoryRuleRulesetInfo> PickRepositoryRuleDetailedVariant3() => IsRepositoryRuleDetailedVariant3
+            ? RepositoryRuleDetailedVariant3!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'RepositoryRuleDetailedVariant3' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.AllOf<global::G.RepositoryRuleRequiredLinearHistory, global::G.RepositoryRuleRulesetInfo>? RepositoryRuleDetailedVariant4 { get; init; }
 #else
@@ -129,6 +150,13 @@ namespace G
             value = RepositoryRuleDetailedVariant4;
             return IsRepositoryRuleDetailedVariant4;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.AllOf<global::G.RepositoryRuleRequiredLinearHistory, global::G.RepositoryRuleRulesetInfo> PickRepositoryRuleDetailedVariant4() => IsRepositoryRuleDetailedVariant4
+            ? RepositoryRuleDetailedVariant4!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'RepositoryRuleDetailedVariant4' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -163,6 +191,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.AllOf<global::G.RepositoryRuleMergeQueue, global::G.RepositoryRuleRulesetInfo> PickRepositoryRuleDetailedVariant5() => IsRepositoryRuleDetailedVariant5
+            ? RepositoryRuleDetailedVariant5!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'RepositoryRuleDetailedVariant5' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.AllOf<global::G.RepositoryRuleRequiredDeployments, global::G.RepositoryRuleRulesetInfo>? RepositoryRuleDetailedVariant6 { get; init; }
 #else
@@ -189,6 +224,13 @@ namespace G
             value = RepositoryRuleDetailedVariant6;
             return IsRepositoryRuleDetailedVariant6;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.AllOf<global::G.RepositoryRuleRequiredDeployments, global::G.RepositoryRuleRulesetInfo> PickRepositoryRuleDetailedVariant6() => IsRepositoryRuleDetailedVariant6
+            ? RepositoryRuleDetailedVariant6!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'RepositoryRuleDetailedVariant6' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -223,6 +265,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.AllOf<global::G.RepositoryRuleRequiredSignatures, global::G.RepositoryRuleRulesetInfo> PickRepositoryRuleDetailedVariant7() => IsRepositoryRuleDetailedVariant7
+            ? RepositoryRuleDetailedVariant7!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'RepositoryRuleDetailedVariant7' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.AllOf<global::G.RepositoryRulePullRequest, global::G.RepositoryRuleRulesetInfo>? RepositoryRuleDetailedVariant8 { get; init; }
 #else
@@ -249,6 +298,13 @@ namespace G
             value = RepositoryRuleDetailedVariant8;
             return IsRepositoryRuleDetailedVariant8;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.AllOf<global::G.RepositoryRulePullRequest, global::G.RepositoryRuleRulesetInfo> PickRepositoryRuleDetailedVariant8() => IsRepositoryRuleDetailedVariant8
+            ? RepositoryRuleDetailedVariant8!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'RepositoryRuleDetailedVariant8' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -283,6 +339,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.AllOf<global::G.RepositoryRuleRequiredStatusChecks, global::G.RepositoryRuleRulesetInfo> PickRepositoryRuleDetailedVariant9() => IsRepositoryRuleDetailedVariant9
+            ? RepositoryRuleDetailedVariant9!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'RepositoryRuleDetailedVariant9' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.AllOf<global::G.RepositoryRuleNonFastForward, global::G.RepositoryRuleRulesetInfo>? RepositoryRuleDetailedVariant10 { get; init; }
 #else
@@ -309,6 +372,13 @@ namespace G
             value = RepositoryRuleDetailedVariant10;
             return IsRepositoryRuleDetailedVariant10;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.AllOf<global::G.RepositoryRuleNonFastForward, global::G.RepositoryRuleRulesetInfo> PickRepositoryRuleDetailedVariant10() => IsRepositoryRuleDetailedVariant10
+            ? RepositoryRuleDetailedVariant10!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'RepositoryRuleDetailedVariant10' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -343,6 +413,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.AllOf<global::G.RepositoryRuleCommitMessagePattern, global::G.RepositoryRuleRulesetInfo> PickRepositoryRuleDetailedVariant11() => IsRepositoryRuleDetailedVariant11
+            ? RepositoryRuleDetailedVariant11!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'RepositoryRuleDetailedVariant11' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.AllOf<global::G.RepositoryRuleCommitAuthorEmailPattern, global::G.RepositoryRuleRulesetInfo>? RepositoryRuleDetailedVariant12 { get; init; }
 #else
@@ -369,6 +446,13 @@ namespace G
             value = RepositoryRuleDetailedVariant12;
             return IsRepositoryRuleDetailedVariant12;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.AllOf<global::G.RepositoryRuleCommitAuthorEmailPattern, global::G.RepositoryRuleRulesetInfo> PickRepositoryRuleDetailedVariant12() => IsRepositoryRuleDetailedVariant12
+            ? RepositoryRuleDetailedVariant12!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'RepositoryRuleDetailedVariant12' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -403,6 +487,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.AllOf<global::G.RepositoryRuleCommitterEmailPattern, global::G.RepositoryRuleRulesetInfo> PickRepositoryRuleDetailedVariant13() => IsRepositoryRuleDetailedVariant13
+            ? RepositoryRuleDetailedVariant13!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'RepositoryRuleDetailedVariant13' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.AllOf<global::G.RepositoryRuleBranchNamePattern, global::G.RepositoryRuleRulesetInfo>? RepositoryRuleDetailedVariant14 { get; init; }
 #else
@@ -429,6 +520,13 @@ namespace G
             value = RepositoryRuleDetailedVariant14;
             return IsRepositoryRuleDetailedVariant14;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.AllOf<global::G.RepositoryRuleBranchNamePattern, global::G.RepositoryRuleRulesetInfo> PickRepositoryRuleDetailedVariant14() => IsRepositoryRuleDetailedVariant14
+            ? RepositoryRuleDetailedVariant14!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'RepositoryRuleDetailedVariant14' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -463,6 +561,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.AllOf<global::G.RepositoryRuleTagNamePattern, global::G.RepositoryRuleRulesetInfo> PickRepositoryRuleDetailedVariant15() => IsRepositoryRuleDetailedVariant15
+            ? RepositoryRuleDetailedVariant15!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'RepositoryRuleDetailedVariant15' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.AllOf<global::G.RepositoryRuleWorkflows, global::G.RepositoryRuleRulesetInfo>? RepositoryRuleDetailedVariant16 { get; init; }
 #else
@@ -493,6 +598,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.AllOf<global::G.RepositoryRuleWorkflows, global::G.RepositoryRuleRulesetInfo> PickRepositoryRuleDetailedVariant16() => IsRepositoryRuleDetailedVariant16
+            ? RepositoryRuleDetailedVariant16!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'RepositoryRuleDetailedVariant16' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.AllOf<global::G.RepositoryRuleCodeScanning, global::G.RepositoryRuleRulesetInfo>? RepositoryRuleDetailedVariant17 { get; init; }
 #else
@@ -519,6 +631,13 @@ namespace G
             value = RepositoryRuleDetailedVariant17;
             return IsRepositoryRuleDetailedVariant17;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.AllOf<global::G.RepositoryRuleCodeScanning, global::G.RepositoryRuleRulesetInfo> PickRepositoryRuleDetailedVariant17() => IsRepositoryRuleDetailedVariant17
+            ? RepositoryRuleDetailedVariant17!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'RepositoryRuleDetailedVariant17' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

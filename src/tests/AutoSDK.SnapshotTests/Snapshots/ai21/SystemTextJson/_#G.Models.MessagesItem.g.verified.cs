@@ -48,6 +48,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.UserMessage PickUser() => IsUser
+            ? User!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'User' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.AssistantMessage? Assistant { get; init; }
 #else
@@ -74,6 +81,13 @@ namespace G
             value = Assistant;
             return IsAssistant;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.AssistantMessage PickAssistant() => IsAssistant
+            ? Assistant!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Assistant' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -108,6 +122,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.ToolMessage PickTool() => IsTool
+            ? Tool!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Tool' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.SystemMessage? System { get; init; }
 #else
@@ -134,6 +155,13 @@ namespace G
             value = System;
             return IsSystem;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.SystemMessage PickSystem() => IsSystem
+            ? System!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'System' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

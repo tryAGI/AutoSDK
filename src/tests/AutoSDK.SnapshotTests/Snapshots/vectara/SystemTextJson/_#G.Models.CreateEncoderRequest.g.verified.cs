@@ -44,6 +44,13 @@ namespace G
             value = OpenaiCompatible;
             return IsOpenaiCompatible;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.CreateOpenAIEncoderRequest PickOpenaiCompatible() => IsOpenaiCompatible
+            ? OpenaiCompatible!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OpenaiCompatible' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.ToolBase PickBase() => IsBase
+            ? Base!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Base' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ImageReadToolVariant2? ImageReadToolVariant2 { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = ImageReadToolVariant2;
             return IsImageReadToolVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ImageReadToolVariant2 PickImageReadToolVariant2() => IsImageReadToolVariant2
+            ? ImageReadToolVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ImageReadToolVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

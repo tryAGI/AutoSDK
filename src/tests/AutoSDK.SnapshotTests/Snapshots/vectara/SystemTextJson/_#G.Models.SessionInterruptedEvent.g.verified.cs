@@ -44,6 +44,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.AgentEventBase PickAgentBase() => IsAgentBase
+            ? AgentBase!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AgentBase' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.SessionInterruptedEventVariant2? SessionInterruptedEventVariant2 { get; init; }
 #else
@@ -70,6 +77,13 @@ namespace G
             value = SessionInterruptedEventVariant2;
             return IsSessionInterruptedEventVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.SessionInterruptedEventVariant2 PickSessionInterruptedEventVariant2() => IsSessionInterruptedEventVariant2
+            ? SessionInterruptedEventVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SessionInterruptedEventVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

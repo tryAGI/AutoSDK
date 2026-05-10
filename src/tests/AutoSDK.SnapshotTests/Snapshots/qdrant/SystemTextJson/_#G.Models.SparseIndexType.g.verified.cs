@@ -41,6 +41,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.SparseIndexTypeVariant1 PickSparseIndexTypeVariant1() => IsSparseIndexTypeVariant1
+            ? SparseIndexTypeVariant1!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SparseIndexTypeVariant1' but the value was {ToString()}.");
+
+        /// <summary>
         /// Immutable RAM sparse index
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -71,6 +78,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.SparseIndexTypeVariant2 PickSparseIndexTypeVariant2() => IsSparseIndexTypeVariant2
+            ? SparseIndexTypeVariant2!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SparseIndexTypeVariant2' but the value was {ToString()}.");
+
+        /// <summary>
         /// Mmap sparse index
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -99,6 +113,13 @@ namespace G
             value = SparseIndexTypeVariant3;
             return IsSparseIndexTypeVariant3;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.SparseIndexTypeVariant3 PickSparseIndexTypeVariant3() => IsSparseIndexTypeVariant3
+            ? SparseIndexTypeVariant3!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SparseIndexTypeVariant3' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

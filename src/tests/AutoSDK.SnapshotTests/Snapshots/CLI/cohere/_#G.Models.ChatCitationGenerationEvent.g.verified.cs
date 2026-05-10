@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.ChatStreamEvent PickStream() => IsStream
+            ? Stream!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Stream' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ChatCitationGenerationEventLg3v2o? Lg3v2o { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = Lg3v2o;
             return IsLg3v2o;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ChatCitationGenerationEventLg3v2o PickLg3v2o() => IsLg3v2o
+            ? Lg3v2o!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Lg3v2o' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.ReasoningItem PickReasoningItem() => IsReasoningItem
+            ? ReasoningItem!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ReasoningItem' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.EasyInputMessage? EasyInputMessage { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = EasyInputMessage;
             return IsEasyInputMessage;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.EasyInputMessage PickEasyInputMessage() => IsEasyInputMessage
+            ? EasyInputMessage!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'EasyInputMessage' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -101,6 +115,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.InputMessageItem PickInputMessageItem() => IsInputMessageItem
+            ? InputMessageItem!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'InputMessageItem' but the value was {ToString()}.");
+
+        /// <summary>
         /// A function call initiated by the model
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -129,6 +150,13 @@ namespace G
             value = FunctionCallItem;
             return IsFunctionCallItem;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.FunctionCallItem PickFunctionCallItem() => IsFunctionCallItem
+            ? FunctionCallItem!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FunctionCallItem' but the value was {ToString()}.");
 
         /// <summary>
         /// The output from a function call execution
@@ -161,6 +189,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.FunctionCallOutputItem PickFunctionCallOutputItem() => IsFunctionCallOutputItem
+            ? FunctionCallOutputItem!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FunctionCallOutputItem' but the value was {ToString()}.");
+
+        /// <summary>
         /// An output message item
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -189,6 +224,13 @@ namespace G
             value = InputsOneOf1Items5;
             return IsInputsOneOf1Items5;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.InputsOneOf1Items5 PickInputsOneOf1Items5() => IsInputsOneOf1Items5
+            ? InputsOneOf1Items5!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'InputsOneOf1Items5' but the value was {ToString()}.");
 
         /// <summary>
         /// An output item containing reasoning
@@ -223,6 +265,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.InputsOneOf1Items6 PickInputsOneOf1Items6() => IsInputsOneOf1Items6
+            ? InputsOneOf1Items6!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'InputsOneOf1Items6' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.OutputFunctionCallItem? OutputFunctionCallItem { get; init; }
 #else
@@ -249,6 +298,13 @@ namespace G
             value = OutputFunctionCallItem;
             return IsOutputFunctionCallItem;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.OutputFunctionCallItem PickOutputFunctionCallItem() => IsOutputFunctionCallItem
+            ? OutputFunctionCallItem!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OutputFunctionCallItem' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -283,6 +339,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.OutputWebSearchCallItem PickOutputWebSearchCallItem() => IsOutputWebSearchCallItem
+            ? OutputWebSearchCallItem!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OutputWebSearchCallItem' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.OutputFileSearchCallItem? OutputFileSearchCallItem { get; init; }
 #else
@@ -309,6 +372,13 @@ namespace G
             value = OutputFileSearchCallItem;
             return IsOutputFileSearchCallItem;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.OutputFileSearchCallItem PickOutputFileSearchCallItem() => IsOutputFileSearchCallItem
+            ? OutputFileSearchCallItem!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OutputFileSearchCallItem' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -341,6 +411,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.OutputImageGenerationCallItem PickOutputImageGenerationCallItem() => IsOutputImageGenerationCallItem
+            ? OutputImageGenerationCallItem!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OutputImageGenerationCallItem' but the value was {ToString()}.");
+
+        /// <summary>
         /// An openrouter:datetime server tool output item
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -371,6 +448,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.OutputDatetimeItem PickOutputDatetimeItem() => IsOutputDatetimeItem
+            ? OutputDatetimeItem!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OutputDatetimeItem' but the value was {ToString()}.");
+
+        /// <summary>
         /// A generic OpenRouter server tool output item
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -399,6 +483,13 @@ namespace G
             value = OutputServerToolItem;
             return IsOutputServerToolItem;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.OutputServerToolItem PickOutputServerToolItem() => IsOutputServerToolItem
+            ? OutputServerToolItem!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OutputServerToolItem' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

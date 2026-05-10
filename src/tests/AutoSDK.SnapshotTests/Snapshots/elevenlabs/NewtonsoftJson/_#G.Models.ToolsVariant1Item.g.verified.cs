@@ -47,6 +47,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.WebhookToolConfigInput PickWebhook() => IsWebhook
+            ? Webhook!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Webhook' but the value was {ToString()}.");
+
+        /// <summary>
         /// A client tool is one that sends an event to the user's client to trigger something client side<br/>
         /// Example: {"expects_response":false,"type":"client"}
         /// </summary>
@@ -78,6 +85,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ClientToolConfigInput PickClient() => IsClient
+            ? Client!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Client' but the value was {ToString()}.");
+
+        /// <summary>
         /// A system tool is a tool that is used to call a system method in the server
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -106,6 +120,13 @@ namespace G
             value = System;
             return IsSystem;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.SystemToolConfigInput PickSystem() => IsSystem
+            ? System!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'System' but the value was {ToString()}.");
 
         /// <summary>
         /// An MCP tool configuration that can be used to call MCP servers
@@ -140,6 +161,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.MCPToolConfigInput PickMcp() => IsMcp
+            ? Mcp!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Mcp' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ApiIntegrationWebhookToolConfigInput? ApiIntegrationWebhook { get; init; }
 #else
@@ -166,6 +194,13 @@ namespace G
             value = ApiIntegrationWebhook;
             return IsApiIntegrationWebhook;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ApiIntegrationWebhookToolConfigInput PickApiIntegrationWebhook() => IsApiIntegrationWebhook
+            ? ApiIntegrationWebhook!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ApiIntegrationWebhook' but the value was {ToString()}.");
 
         /// <summary>
         /// SMB tool configuration that wraps SMB tool parameters.
@@ -196,6 +231,13 @@ namespace G
             value = Smb;
             return IsSmb;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.SMBToolConfig PickSmb() => IsSmb
+            ? Smb!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Smb' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

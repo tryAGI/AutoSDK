@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.TopicAutomationDataScopeVariant1 PickTopicAutomationDataScopeVariant1() => IsTopicAutomationDataScopeVariant1
+            ? TopicAutomationDataScopeVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'TopicAutomationDataScopeVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.TopicAutomationDataScopeVariant2? TopicAutomationDataScopeVariant2 { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = TopicAutomationDataScopeVariant2;
             return IsTopicAutomationDataScopeVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.TopicAutomationDataScopeVariant2 PickTopicAutomationDataScopeVariant2() => IsTopicAutomationDataScopeVariant2
+            ? TopicAutomationDataScopeVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'TopicAutomationDataScopeVariant2' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -103,6 +117,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.TopicAutomationDataScopeVariant3 PickTopicAutomationDataScopeVariant3() => IsTopicAutomationDataScopeVariant3
+            ? TopicAutomationDataScopeVariant3!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'TopicAutomationDataScopeVariant3' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public object? TopicAutomationDataScopeVariant4 { get; init; }
 #else
@@ -129,6 +150,13 @@ namespace G
             value = TopicAutomationDataScopeVariant4;
             return IsTopicAutomationDataScopeVariant4;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public object PickTopicAutomationDataScopeVariant4() => IsTopicAutomationDataScopeVariant4
+            ? TopicAutomationDataScopeVariant4!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'TopicAutomationDataScopeVariant4' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

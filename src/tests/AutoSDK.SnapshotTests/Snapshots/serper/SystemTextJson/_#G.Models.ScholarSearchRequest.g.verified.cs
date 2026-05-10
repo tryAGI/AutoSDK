@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.BaseSearchRequest PickBase() => IsBase
+            ? Base!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Base' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ScholarSearchRequestVariant2? ScholarSearchRequestVariant2 { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = ScholarSearchRequestVariant2;
             return IsScholarSearchRequestVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ScholarSearchRequestVariant2 PickScholarSearchRequestVariant2() => IsScholarSearchRequestVariant2
+            ? ScholarSearchRequestVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ScholarSearchRequestVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

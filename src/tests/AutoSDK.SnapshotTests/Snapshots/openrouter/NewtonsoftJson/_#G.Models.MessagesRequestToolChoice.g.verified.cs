@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.MessagesRequestToolChoice0 PickMessagesRequestToolChoice0() => IsMessagesRequestToolChoice0
+            ? MessagesRequestToolChoice0!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesRequestToolChoice0' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.MessagesRequestToolChoice1? MessagesRequestToolChoice1 { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = MessagesRequestToolChoice1;
             return IsMessagesRequestToolChoice1;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.MessagesRequestToolChoice1 PickMessagesRequestToolChoice1() => IsMessagesRequestToolChoice1
+            ? MessagesRequestToolChoice1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesRequestToolChoice1' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -103,6 +117,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.MessagesRequestToolChoice2 PickMessagesRequestToolChoice2() => IsMessagesRequestToolChoice2
+            ? MessagesRequestToolChoice2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesRequestToolChoice2' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.MessagesRequestToolChoice3? MessagesRequestToolChoice3 { get; init; }
 #else
@@ -129,6 +150,13 @@ namespace G
             value = MessagesRequestToolChoice3;
             return IsMessagesRequestToolChoice3;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.MessagesRequestToolChoice3 PickMessagesRequestToolChoice3() => IsMessagesRequestToolChoice3
+            ? MessagesRequestToolChoice3!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesRequestToolChoice3' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

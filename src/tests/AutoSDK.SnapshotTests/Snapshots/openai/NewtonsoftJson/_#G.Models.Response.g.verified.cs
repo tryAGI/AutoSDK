@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.ModelResponseProperties PickModelProperties() => IsModelProperties
+            ? ModelProperties!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ModelProperties' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ResponseProperties? Properties { get; init; }
 #else
@@ -73,6 +80,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.ResponseProperties PickProperties() => IsProperties
+            ? Properties!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Properties' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ResponseVariant3? ResponseVariant3 { get; init; }
 #else
@@ -99,6 +113,13 @@ namespace G
             value = ResponseVariant3;
             return IsResponseVariant3;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ResponseVariant3 PickResponseVariant3() => IsResponseVariant3
+            ? ResponseVariant3!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseVariant3' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

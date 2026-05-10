@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>> PickBatchVectorStructVariant1() => IsBatchVectorStructVariant1
+            ? BatchVectorStructVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BatchVectorStructVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>>? BatchVectorStructVariant2 { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = BatchVectorStructVariant2;
             return IsBatchVectorStructVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>> PickBatchVectorStructVariant2() => IsBatchVectorStructVariant2
+            ? BatchVectorStructVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BatchVectorStructVariant2' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -103,6 +117,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<global::G.Vector>> PickBatchVectorStructVariant3() => IsBatchVectorStructVariant3
+            ? BatchVectorStructVariant3!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BatchVectorStructVariant3' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<global::G.Document>? BatchVectorStructVariant4 { get; init; }
 #else
@@ -129,6 +150,13 @@ namespace G
             value = BatchVectorStructVariant4;
             return IsBatchVectorStructVariant4;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<global::G.Document> PickBatchVectorStructVariant4() => IsBatchVectorStructVariant4
+            ? BatchVectorStructVariant4!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BatchVectorStructVariant4' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -163,6 +191,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::System.Collections.Generic.IList<global::G.Image> PickBatchVectorStructVariant5() => IsBatchVectorStructVariant5
+            ? BatchVectorStructVariant5!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BatchVectorStructVariant5' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<global::G.InferenceObject>? BatchVectorStructVariant6 { get; init; }
 #else
@@ -189,6 +224,13 @@ namespace G
             value = BatchVectorStructVariant6;
             return IsBatchVectorStructVariant6;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<global::G.InferenceObject> PickBatchVectorStructVariant6() => IsBatchVectorStructVariant6
+            ? BatchVectorStructVariant6!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BatchVectorStructVariant6' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

@@ -48,6 +48,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.TextTo3DPreviewRequest PickPreview() => IsPreview
+            ? Preview!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Preview' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.TextTo3DRefineRequest? Refine { get; init; }
 #else
@@ -74,6 +81,13 @@ namespace G
             value = Refine;
             return IsRefine;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.TextTo3DRefineRequest PickRefine() => IsRefine
+            ? Refine!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Refine' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

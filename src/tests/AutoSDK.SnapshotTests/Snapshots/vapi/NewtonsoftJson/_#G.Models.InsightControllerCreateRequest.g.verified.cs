@@ -48,6 +48,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.CreateBarInsightFromCallTableDTO PickBar() => IsBar
+            ? Bar!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Bar' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CreatePieInsightFromCallTableDTO? Pie { get; init; }
 #else
@@ -74,6 +81,13 @@ namespace G
             value = Pie;
             return IsPie;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.CreatePieInsightFromCallTableDTO PickPie() => IsPie
+            ? Pie!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Pie' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -108,6 +122,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.CreateLineInsightFromCallTableDTO PickLine() => IsLine
+            ? Line!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Line' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CreateTextInsightFromCallTableDTO? Text { get; init; }
 #else
@@ -134,6 +155,13 @@ namespace G
             value = Text;
             return IsText;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.CreateTextInsightFromCallTableDTO PickText() => IsText
+            ? Text!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

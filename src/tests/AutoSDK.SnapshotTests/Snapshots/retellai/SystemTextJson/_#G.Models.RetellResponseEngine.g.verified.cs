@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.ResponseEngineRetellLm PickLm() => IsLm
+            ? Lm!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Lm' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ResponseEngineConversationFlow? ConversationFlow { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = ConversationFlow;
             return IsConversationFlow;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ResponseEngineConversationFlow PickConversationFlow() => IsConversationFlow
+            ? ConversationFlow!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ConversationFlow' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

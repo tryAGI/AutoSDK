@@ -44,6 +44,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<float> PickNamedVectorStructVariant1() => IsNamedVectorStructVariant1
+            ? NamedVectorStructVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'NamedVectorStructVariant1' but the value was {ToString()}.");
+
+        /// <summary>
         /// Dense vector data with name
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -74,6 +81,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.NamedVector PickNamedVector() => IsNamedVector
+            ? NamedVector!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'NamedVector' but the value was {ToString()}.");
+
+        /// <summary>
         /// Sparse vector data with name
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -102,6 +116,13 @@ namespace G
             value = Sparse;
             return IsSparse;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.NamedSparseVector PickSparse() => IsSparse
+            ? Sparse!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Sparse' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

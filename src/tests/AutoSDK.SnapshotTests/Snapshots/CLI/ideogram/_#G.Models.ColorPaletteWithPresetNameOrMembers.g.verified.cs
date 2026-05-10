@@ -41,6 +41,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ColorPaletteWithPresetName PickColorPaletteWithPresetName() => IsColorPaletteWithPresetName
+            ? ColorPaletteWithPresetName!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ColorPaletteWithPresetName' but the value was {ToString()}.");
+
+        /// <summary>
         /// A color palette represented only via its members
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -69,6 +76,13 @@ namespace G
             value = ColorPaletteWithMembers;
             return IsColorPaletteWithMembers;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ColorPaletteWithMembers PickColorPaletteWithMembers() => IsColorPaletteWithMembers
+            ? ColorPaletteWithMembers!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ColorPaletteWithMembers' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

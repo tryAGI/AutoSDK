@@ -46,6 +46,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.RephraseSpan PickRephrase() => IsRephrase
+            ? Rephrase!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Rephrase' but the value was {ToString()}.");
+
+        /// <summary>
         /// The search portion of the query pipeline. This occurs before any reranking span.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -74,6 +81,13 @@ namespace G
             value = Search;
             return IsSearch;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.SearchSpan PickSearch() => IsSearch
+            ? Search!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Search' but the value was {ToString()}.");
 
         /// <summary>
         /// The reranking of the search result.
@@ -106,6 +120,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.RerankSpan PickRerank() => IsRerank
+            ? Rerank!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Rerank' but the value was {ToString()}.");
+
+        /// <summary>
         /// The generation by an LLM.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -134,6 +155,13 @@ namespace G
             value = Generation;
             return IsGeneration;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.GenerationSpan PickGeneration() => IsGeneration
+            ? Generation!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Generation' but the value was {ToString()}.");
 
         /// <summary>
         /// The factual consistency of the generation.
@@ -166,6 +194,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.FactualConsistencyScoreSpan PickFcs() => IsFcs
+            ? Fcs!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Fcs' but the value was {ToString()}.");
+
+        /// <summary>
         /// Provides detailed information about a rewritten query generated for a specific corpus when intelligent query rewriting is enabled.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -194,6 +229,13 @@ namespace G
             value = RewrittenQuery;
             return IsRewrittenQuery;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.RewrittenQuerySpan PickRewrittenQuery() => IsRewrittenQuery
+            ? RewrittenQuery!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'RewrittenQuery' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

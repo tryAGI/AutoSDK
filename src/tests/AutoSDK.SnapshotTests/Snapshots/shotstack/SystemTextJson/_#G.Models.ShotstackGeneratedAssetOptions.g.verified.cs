@@ -46,6 +46,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ShotstackTextToSpeechOptions PickTextToSpeech() => IsTextToSpeech
+            ? TextToSpeech!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'TextToSpeech' but the value was {ToString()}.");
+
+        /// <summary>
         /// Options for the Shotstack text-to-image service. Set a text prompt to generate an image from. The output will be  generated as a PNG file available at the URL returned in the response.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -74,6 +81,13 @@ namespace G
             value = TextToImage;
             return IsTextToImage;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ShotstackTextToImageOptions PickTextToImage() => IsTextToImage
+            ? TextToImage!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'TextToImage' but the value was {ToString()}.");
 
         /// <summary>
         /// Options for the Shotstack text-generator service. Set a text prompt that will be used to generate a new body of text. The output will be generated as a text (txt) file available at the URL returned in the response.
@@ -106,6 +120,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ShotstackTextGeneratorOptions PickTextGenerator() => IsTextGenerator
+            ? TextGenerator!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'TextGenerator' but the value was {ToString()}.");
+
+        /// <summary>
         /// Options for the Shotstack image-to-video service. Set the URL of an image to convert in to a video. The output will be generated as an MP4 file available at the URL returned in the response.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -134,6 +155,13 @@ namespace G
             value = ImageToVideo;
             return IsImageToVideo;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ShotstackImageToVideoOptions PickImageToVideo() => IsImageToVideo
+            ? ImageToVideo!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ImageToVideo' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

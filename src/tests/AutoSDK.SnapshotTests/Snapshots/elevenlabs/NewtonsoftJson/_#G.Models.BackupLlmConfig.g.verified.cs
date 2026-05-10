@@ -48,6 +48,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.BackupLLMDefault PickDefault() => IsDefault
+            ? Default!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Default' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.BackupLLMDisabled? Disabled { get; init; }
 #else
@@ -78,6 +85,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.BackupLLMDisabled PickDisabled() => IsDisabled
+            ? Disabled!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Disabled' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.BackupLLMOverride? Override { get; init; }
 #else
@@ -104,6 +118,13 @@ namespace G
             value = Override;
             return IsOverride;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.BackupLLMOverride PickOverride() => IsOverride
+            ? Override!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Override' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

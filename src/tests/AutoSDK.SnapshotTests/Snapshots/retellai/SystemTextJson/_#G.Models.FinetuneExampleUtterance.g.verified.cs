@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.FinetuneExampleUtteranceVariant1 PickFinetuneExampleUtteranceVariant1() => IsFinetuneExampleUtteranceVariant1
+            ? FinetuneExampleUtteranceVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FinetuneExampleUtteranceVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.FinetuneExampleUtteranceVariant2? FinetuneExampleUtteranceVariant2 { get; init; }
 #else
@@ -73,6 +80,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.FinetuneExampleUtteranceVariant2 PickFinetuneExampleUtteranceVariant2() => IsFinetuneExampleUtteranceVariant2
+            ? FinetuneExampleUtteranceVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FinetuneExampleUtteranceVariant2' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.FinetuneExampleUtteranceVariant3? FinetuneExampleUtteranceVariant3 { get; init; }
 #else
@@ -99,6 +113,13 @@ namespace G
             value = FinetuneExampleUtteranceVariant3;
             return IsFinetuneExampleUtteranceVariant3;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.FinetuneExampleUtteranceVariant3 PickFinetuneExampleUtteranceVariant3() => IsFinetuneExampleUtteranceVariant3
+            ? FinetuneExampleUtteranceVariant3!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FinetuneExampleUtteranceVariant3' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

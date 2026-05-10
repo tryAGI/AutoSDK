@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public string PickGroupIdVariant1() => IsGroupIdVariant1
+            ? GroupIdVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'GroupIdVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public int? GroupIdVariant2 { get; init; }
 #else
@@ -73,6 +80,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public int PickGroupIdVariant2() => IsGroupIdVariant2
+            ? GroupIdVariant2!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'GroupIdVariant2' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public long? GroupIdVariant3 { get; init; }
 #else
@@ -99,6 +113,13 @@ namespace G
             value = GroupIdVariant3;
             return IsGroupIdVariant3;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public long PickGroupIdVariant3() => IsGroupIdVariant3
+            ? GroupIdVariant3!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'GroupIdVariant3' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

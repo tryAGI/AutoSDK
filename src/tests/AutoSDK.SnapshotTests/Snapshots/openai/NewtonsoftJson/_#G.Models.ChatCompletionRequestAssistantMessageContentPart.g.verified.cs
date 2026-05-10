@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.ChatCompletionRequestMessageContentPartText PickTextContentPart() => IsTextContentPart
+            ? TextContentPart!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'TextContentPart' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ChatCompletionRequestMessageContentPartRefusal? RefusalContentPart { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = RefusalContentPart;
             return IsRefusalContentPart;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ChatCompletionRequestMessageContentPartRefusal PickRefusalContentPart() => IsRefusalContentPart
+            ? RefusalContentPart!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'RefusalContentPart' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

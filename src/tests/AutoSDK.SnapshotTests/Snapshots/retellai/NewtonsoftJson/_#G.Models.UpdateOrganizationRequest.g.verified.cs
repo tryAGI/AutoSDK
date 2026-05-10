@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.CreateOrganizationRequest PickCreate() => IsCreate
+            ? Create!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Create' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.UpdateOrganizationRequestVariant2? UpdateOrganizationRequestVariant2 { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = UpdateOrganizationRequestVariant2;
             return IsUpdateOrganizationRequestVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.UpdateOrganizationRequestVariant2 PickUpdateOrganizationRequestVariant2() => IsUpdateOrganizationRequestVariant2
+            ? UpdateOrganizationRequestVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'UpdateOrganizationRequestVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

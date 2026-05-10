@@ -48,6 +48,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.ConversationHistoryTwilioPhoneCallModel PickTwilio() => IsTwilio
+            ? Twilio!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Twilio' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ConversationHistorySIPTrunkingPhoneCallModel? SipTrunking { get; init; }
 #else
@@ -74,6 +81,13 @@ namespace G
             value = SipTrunking;
             return IsSipTrunking;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ConversationHistorySIPTrunkingPhoneCallModel PickSipTrunking() => IsSipTrunking
+            ? SipTrunking!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SipTrunking' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.EmbeddingFunctionConfigurationVariant1 PickEmbeddingFunctionConfigurationVariant1() => IsEmbeddingFunctionConfigurationVariant1
+            ? EmbeddingFunctionConfigurationVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'EmbeddingFunctionConfigurationVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.AllOf<global::G.EmbeddingFunctionNewConfiguration, global::G.EmbeddingFunctionConfigurationVariant22>? EmbeddingFunctionConfigurationVariant2 { get; init; }
 #else
@@ -73,6 +80,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.AllOf<global::G.EmbeddingFunctionNewConfiguration, global::G.EmbeddingFunctionConfigurationVariant22> PickEmbeddingFunctionConfigurationVariant2() => IsEmbeddingFunctionConfigurationVariant2
+            ? EmbeddingFunctionConfigurationVariant2!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'EmbeddingFunctionConfigurationVariant2' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.EmbeddingFunctionConfigurationVariant3? EmbeddingFunctionConfigurationVariant3 { get; init; }
 #else
@@ -99,6 +113,13 @@ namespace G
             value = EmbeddingFunctionConfigurationVariant3;
             return IsEmbeddingFunctionConfigurationVariant3;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.EmbeddingFunctionConfigurationVariant3 PickEmbeddingFunctionConfigurationVariant3() => IsEmbeddingFunctionConfigurationVariant3
+            ? EmbeddingFunctionConfigurationVariant3!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'EmbeddingFunctionConfigurationVariant3' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

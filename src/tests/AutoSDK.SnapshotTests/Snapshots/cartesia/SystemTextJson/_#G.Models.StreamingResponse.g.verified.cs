@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.StreamingResponseVariant1 PickStreamingResponseVariant1() => IsStreamingResponseVariant1
+            ? StreamingResponseVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'StreamingResponseVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.StreamingResponseVariant2? StreamingResponseVariant2 { get; init; }
 #else
@@ -73,6 +80,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.StreamingResponseVariant2 PickStreamingResponseVariant2() => IsStreamingResponseVariant2
+            ? StreamingResponseVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'StreamingResponseVariant2' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.StreamingResponseVariant3? StreamingResponseVariant3 { get; init; }
 #else
@@ -99,6 +113,13 @@ namespace G
             value = StreamingResponseVariant3;
             return IsStreamingResponseVariant3;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.StreamingResponseVariant3 PickStreamingResponseVariant3() => IsStreamingResponseVariant3
+            ? StreamingResponseVariant3!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'StreamingResponseVariant3' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

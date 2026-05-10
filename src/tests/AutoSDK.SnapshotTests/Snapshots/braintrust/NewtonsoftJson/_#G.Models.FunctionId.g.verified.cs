@@ -41,6 +41,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.FunctionIdFunctionId1 PickId1() => IsId1
+            ? Id1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Id1' but the value was {ToString()}.");
+
+        /// <summary>
         /// Project name and slug
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -69,6 +76,13 @@ namespace G
             value = ProjectSlug;
             return IsProjectSlug;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.FunctionIdProjectSlug PickProjectSlug() => IsProjectSlug
+            ? ProjectSlug!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ProjectSlug' but the value was {ToString()}.");
 
         /// <summary>
         /// Global function name
@@ -101,6 +115,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.FunctionIdGlobalFunction PickGlobalFunction() => IsGlobalFunction
+            ? GlobalFunction!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'GlobalFunction' but the value was {ToString()}.");
+
+        /// <summary>
         /// Prompt session id
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -129,6 +150,13 @@ namespace G
             value = PromptSessionId;
             return IsPromptSessionId;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.FunctionIdPromptSessionId PickPromptSessionId() => IsPromptSessionId
+            ? PromptSessionId!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'PromptSessionId' but the value was {ToString()}.");
 
         /// <summary>
         /// Inline code function
@@ -161,6 +189,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.FunctionIdInlineCode PickInlineCode() => IsInlineCode
+            ? InlineCode!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'InlineCode' but the value was {ToString()}.");
+
+        /// <summary>
         /// Inline function definition
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -191,6 +226,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.FunctionIdInlineFunction PickInlineFunction() => IsInlineFunction
+            ? InlineFunction!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'InlineFunction' but the value was {ToString()}.");
+
+        /// <summary>
         /// Inline prompt definition
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -219,6 +261,13 @@ namespace G
             value = InlinePrompt;
             return IsInlinePrompt;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.FunctionIdInlinePrompt PickInlinePrompt() => IsInlinePrompt
+            ? InlinePrompt!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'InlinePrompt' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

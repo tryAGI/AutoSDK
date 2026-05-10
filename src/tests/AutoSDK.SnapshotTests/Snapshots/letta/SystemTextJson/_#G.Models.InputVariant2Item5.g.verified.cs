@@ -48,6 +48,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.TextContent PickText() => IsText
+            ? Text!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ImageContent? Image { get; init; }
 #else
@@ -74,6 +81,13 @@ namespace G
             value = Image;
             return IsImage;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ImageContent PickImage() => IsImage
+            ? Image!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Image' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -108,6 +122,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.ToolCallContent PickToolCall() => IsToolCall
+            ? ToolCall!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ToolCall' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ToolReturnContent? ToolReturn { get; init; }
 #else
@@ -134,6 +155,13 @@ namespace G
             value = ToolReturn;
             return IsToolReturn;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ToolReturnContent PickToolReturn() => IsToolReturn
+            ? ToolReturn!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ToolReturn' but the value was {ToString()}.");
 
         /// <summary>
         /// Sent via the Anthropic Messages API
@@ -166,6 +194,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ReasoningContent PickOmittedReasoning1() => IsOmittedReasoning1
+            ? OmittedReasoning1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OmittedReasoning1' but the value was {ToString()}.");
+
+        /// <summary>
         /// Sent via the Anthropic Messages API
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -194,6 +229,13 @@ namespace G
             value = RedactedReasoning;
             return IsRedactedReasoning;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.RedactedReasoningContent PickRedactedReasoning() => IsRedactedReasoning
+            ? RedactedReasoning!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'RedactedReasoning' but the value was {ToString()}.");
 
         /// <summary>
         /// A placeholder for reasoning content we know is present, but isn't returned by the provider (e.g. OpenAI GPT-5 on ChatCompletions)
@@ -226,6 +268,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.OmittedReasoningContent PickOmittedReasoning2() => IsOmittedReasoning2
+            ? OmittedReasoning2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OmittedReasoning2' but the value was {ToString()}.");
+
+        /// <summary>
         /// The style of reasoning content returned by the OpenAI Responses API
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -254,6 +303,13 @@ namespace G
             value = SummarizedReasoning;
             return IsSummarizedReasoning;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.SummarizedReasoningContent PickSummarizedReasoning() => IsSummarizedReasoning
+            ? SummarizedReasoning!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SummarizedReasoning' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

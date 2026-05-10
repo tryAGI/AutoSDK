@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.AgentEventBase PickAgentBase() => IsAgentBase
+            ? AgentBase!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AgentBase' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ImageReadEventVariant2? ImageReadEventVariant2 { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = ImageReadEventVariant2;
             return IsImageReadEventVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ImageReadEventVariant2 PickImageReadEventVariant2() => IsImageReadEventVariant2
+            ? ImageReadEventVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ImageReadEventVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

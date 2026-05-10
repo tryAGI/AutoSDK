@@ -40,6 +40,13 @@ namespace G
             value = Response;
             return IsResponse;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.RedactedAudioResponse PickResponse() => IsResponse
+            ? Response!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Response' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

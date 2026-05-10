@@ -48,6 +48,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.ManagedOpenAIEmbeddingConfig PickManagedOpenaiEmbedding() => IsManagedOpenaiEmbedding
+            ? ManagedOpenaiEmbedding!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ManagedOpenaiEmbedding' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.AzureOpenAIEmbeddingConfig? AzureEmbedding1 { get; init; }
 #else
@@ -74,6 +81,13 @@ namespace G
             value = AzureEmbedding1;
             return IsAzureEmbedding1;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.AzureOpenAIEmbeddingConfig PickAzureEmbedding1() => IsAzureEmbedding1
+            ? AzureEmbedding1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AzureEmbedding1' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -108,6 +122,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.CohereEmbeddingConfig PickCohereEmbedding() => IsCohereEmbedding
+            ? CohereEmbedding!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CohereEmbedding' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.GeminiEmbeddingConfig? GeminiEmbedding { get; init; }
 #else
@@ -134,6 +155,13 @@ namespace G
             value = GeminiEmbedding;
             return IsGeminiEmbedding;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.GeminiEmbeddingConfig PickGeminiEmbedding() => IsGeminiEmbedding
+            ? GeminiEmbedding!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'GeminiEmbedding' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -168,6 +196,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.HuggingFaceInferenceAPIEmbeddingConfig PickHuggingfaceApiEmbedding() => IsHuggingfaceApiEmbedding
+            ? HuggingfaceApiEmbedding!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'HuggingfaceApiEmbedding' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.OpenAIEmbeddingConfig? AzureEmbedding2 { get; init; }
 #else
@@ -194,6 +229,13 @@ namespace G
             value = AzureEmbedding2;
             return IsAzureEmbedding2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.OpenAIEmbeddingConfig PickAzureEmbedding2() => IsAzureEmbedding2
+            ? AzureEmbedding2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AzureEmbedding2' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -228,6 +270,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.VertexAIEmbeddingConfig PickVertexaiEmbedding() => IsVertexaiEmbedding
+            ? VertexaiEmbedding!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'VertexaiEmbedding' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.BedrockEmbeddingConfig? BedrockEmbedding { get; init; }
 #else
@@ -254,6 +303,13 @@ namespace G
             value = BedrockEmbedding;
             return IsBedrockEmbedding;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.BedrockEmbeddingConfig PickBedrockEmbedding() => IsBedrockEmbedding
+            ? BedrockEmbedding!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BedrockEmbedding' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

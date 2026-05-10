@@ -46,6 +46,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ShotstackGeneratedAsset PickShotstack() => IsShotstack
+            ? Shotstack!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Shotstack' but the value was {ToString()}.");
+
+        /// <summary>
         /// Generate assets using D-ID. D-ID provide a text-to-avatar service. The D-ID provider works on a bring-your-own-key basis, credentials are required and must be added via the  [dashboard](https://dashboard.shotstack.io/integrations/d-id), not in the request.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -74,6 +81,13 @@ namespace G
             value = DId;
             return IsDId;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.DIDGeneratedAsset PickDId() => IsDId
+            ? DId!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'DId' but the value was {ToString()}.");
 
         /// <summary>
         /// Generate assets using ElevenLabs. ElevenLabs provide a text-to-speech service. The ElevenLabs provider works on a bring-your-own-key basis, credentials are required and must be added via the  [dashboard](https://dashboard.shotstack.io/integrations/elevenlabs), not in the request.
@@ -106,6 +120,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ElevenLabsGeneratedAsset PickElevenlabs() => IsElevenlabs
+            ? Elevenlabs!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Elevenlabs' but the value was {ToString()}.");
+
+        /// <summary>
         /// Generate assets using HeyGen. HeyGen provide a text-to-avatar service.  The HeyGen provider works on a bring-your-own-key basis, credentials are required and must be added via the  [dashboard](https://dashboard.shotstack.io/integrations/heygen), not in the request.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -134,6 +155,13 @@ namespace G
             value = Heygen;
             return IsHeygen;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.HeyGenGeneratedAsset PickHeygen() => IsHeygen
+            ? Heygen!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Heygen' but the value was {ToString()}.");
 
         /// <summary>
         /// Generate assets using OpenAI. OpenAI provide a text generation service using ChatGPT 3.5 and 4. The OpenAI provider works on a bring-your-own-key basis, credentials are required and must be added via the [dashboard](https://dashboard.shotstack.io/integrations/openai), not in the request.
@@ -166,6 +194,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.OpenAiGeneratedAsset PickOpenai() => IsOpenai
+            ? Openai!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Openai' but the value was {ToString()}.");
+
+        /// <summary>
         /// Generate assets using Stability AI. Stability AI provide a text-to-image service using Stable Diffusion. The Stability AI provider works on a bring-your-own-key basis, credentials are required and must be added via the  [dashboard](https://dashboard.shotstack.io/integrations/stability-ai), not in the request.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -194,6 +229,13 @@ namespace G
             value = StabilityAi;
             return IsStabilityAi;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.StabilityAiGeneratedAsset PickStabilityAi() => IsStabilityAi
+            ? StabilityAi!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'StabilityAi' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

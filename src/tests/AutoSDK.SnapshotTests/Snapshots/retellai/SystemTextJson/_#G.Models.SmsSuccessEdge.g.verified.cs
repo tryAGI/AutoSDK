@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.NodeEdge PickNode() => IsNode
+            ? Node!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Node' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.SmsSuccessEdgeVariant2? SmsSuccessEdgeVariant2 { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = SmsSuccessEdgeVariant2;
             return IsSmsSuccessEdgeVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.SmsSuccessEdgeVariant2 PickSmsSuccessEdgeVariant2() => IsSmsSuccessEdgeVariant2
+            ? SmsSuccessEdgeVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SmsSuccessEdgeVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

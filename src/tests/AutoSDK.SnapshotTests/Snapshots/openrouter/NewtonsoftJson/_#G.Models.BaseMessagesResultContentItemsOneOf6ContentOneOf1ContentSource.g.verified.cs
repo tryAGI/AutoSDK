@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.BaseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource0 PickBaseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource0() => IsBaseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource0
+            ? BaseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource0!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BaseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource0' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.BaseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource1? BaseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource1 { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = BaseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource1;
             return IsBaseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource1;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.BaseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource1 PickBaseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource1() => IsBaseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource1
+            ? BaseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BaseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource1' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

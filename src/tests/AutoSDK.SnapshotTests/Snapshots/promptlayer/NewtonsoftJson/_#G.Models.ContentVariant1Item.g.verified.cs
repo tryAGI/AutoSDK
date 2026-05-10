@@ -48,6 +48,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.TextContent PickText() => IsText
+            ? Text!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ThinkingContent? Thinking { get; init; }
 #else
@@ -74,6 +81,13 @@ namespace G
             value = Thinking;
             return IsThinking;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ThinkingContent PickThinking() => IsThinking
+            ? Thinking!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Thinking' but the value was {ToString()}.");
 
         /// <summary>
         /// Code content block (e.g. from code execution tools).
@@ -108,6 +122,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.CodeContent PickCode() => IsCode
+            ? Code!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Code' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ImageContent? ImageUrl { get; init; }
 #else
@@ -134,6 +155,13 @@ namespace G
             value = ImageUrl;
             return IsImageUrl;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ImageContent PickImageUrl() => IsImageUrl
+            ? ImageUrl!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ImageUrl' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -168,6 +196,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.MediaContent PickMedia() => IsMedia
+            ? Media!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Media' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.MediaVariable? MediaVariable { get; init; }
 #else
@@ -194,6 +229,13 @@ namespace G
             value = MediaVariable;
             return IsMediaVariable;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.MediaVariable PickMediaVariable() => IsMediaVariable
+            ? MediaVariable!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MediaVariable' but the value was {ToString()}.");
 
         /// <summary>
         /// LLM-generated media output (e.g. from image generation tools).
@@ -226,6 +268,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.OutputMediaContent PickOutputMedia() => IsOutputMedia
+            ? OutputMedia!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OutputMedia' but the value was {ToString()}.");
+
+        /// <summary>
         /// Server-side tool use block (e.g. web search, code execution).
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -254,6 +303,13 @@ namespace G
             value = ServerToolUse;
             return IsServerToolUse;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ServerToolUseContent PickServerToolUse() => IsServerToolUse
+            ? ServerToolUse!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ServerToolUse' but the value was {ToString()}.");
 
         /// <summary>
         /// Results from a web search tool invocation.
@@ -286,6 +342,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.WebSearchToolResultContent PickWebSearchToolResult() => IsWebSearchToolResult
+            ? WebSearchToolResult!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'WebSearchToolResult' but the value was {ToString()}.");
+
+        /// <summary>
         /// Result from a code execution tool.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -314,6 +377,13 @@ namespace G
             value = CodeExecutionResult;
             return IsCodeExecutionResult;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.CodeExecutionResultContent PickCodeExecutionResult() => IsCodeExecutionResult
+            ? CodeExecutionResult!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CodeExecutionResult' but the value was {ToString()}.");
 
         /// <summary>
         /// MCP list tools response block.
@@ -346,6 +416,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.McpListToolsContent PickMcpListTools() => IsMcpListTools
+            ? McpListTools!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'McpListTools' but the value was {ToString()}.");
+
+        /// <summary>
         /// MCP tool call block.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -374,6 +451,13 @@ namespace G
             value = McpCall;
             return IsMcpCall;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.McpCallContent PickMcpCall() => IsMcpCall
+            ? McpCall!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'McpCall' but the value was {ToString()}.");
 
         /// <summary>
         /// MCP tool approval request block.
@@ -406,6 +490,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.McpApprovalRequestContent PickMcpApprovalRequest() => IsMcpApprovalRequest
+            ? McpApprovalRequest!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'McpApprovalRequest' but the value was {ToString()}.");
+
+        /// <summary>
         /// MCP tool approval response block.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -434,6 +525,13 @@ namespace G
             value = McpApprovalResponse;
             return IsMcpApprovalResponse;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.McpApprovalResponseContent PickMcpApprovalResponse() => IsMcpApprovalResponse
+            ? McpApprovalResponse!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'McpApprovalResponse' but the value was {ToString()}.");
 
         /// <summary>
         /// Result from bash code execution tool.
@@ -466,6 +564,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.BashCodeExecutionToolResultContent PickBashCodeExecutionToolResult() => IsBashCodeExecutionToolResult
+            ? BashCodeExecutionToolResult!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BashCodeExecutionToolResult' but the value was {ToString()}.");
+
+        /// <summary>
         /// Result from text editor code execution tool.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -494,6 +599,13 @@ namespace G
             value = TextEditorCodeExecutionToolResult;
             return IsTextEditorCodeExecutionToolResult;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.TextEditorCodeExecutionToolResultContent PickTextEditorCodeExecutionToolResult() => IsTextEditorCodeExecutionToolResult
+            ? TextEditorCodeExecutionToolResult!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'TextEditorCodeExecutionToolResult' but the value was {ToString()}.");
 
         /// <summary>
         /// Shell tool call block.
@@ -526,6 +638,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ShellCallContent PickShellCall() => IsShellCall
+            ? ShellCall!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ShellCall' but the value was {ToString()}.");
+
+        /// <summary>
         /// Shell tool output block.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -554,6 +673,13 @@ namespace G
             value = ShellCallOutput;
             return IsShellCallOutput;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ShellCallOutputContent PickShellCallOutput() => IsShellCallOutput
+            ? ShellCallOutput!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ShellCallOutput' but the value was {ToString()}.");
 
         /// <summary>
         /// Apply patch tool call block.
@@ -586,6 +712,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ApplyPatchCallContent PickApplyPatchCall() => IsApplyPatchCall
+            ? ApplyPatchCall!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ApplyPatchCall' but the value was {ToString()}.");
+
+        /// <summary>
         /// Apply patch tool output block.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -614,6 +747,13 @@ namespace G
             value = ApplyPatchCallOutput;
             return IsApplyPatchCallOutput;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ApplyPatchCallOutputContent PickApplyPatchCallOutput() => IsApplyPatchCallOutput
+            ? ApplyPatchCallOutput!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ApplyPatchCallOutput' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

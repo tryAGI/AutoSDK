@@ -41,6 +41,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.SearchCorporaParametersVariant1 PickSearchCorporaParametersVariant1() => IsSearchCorporaParametersVariant1
+            ? SearchCorporaParametersVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SearchCorporaParametersVariant1' but the value was {ToString()}.");
+
+        /// <summary>
         /// Search parameters to retrieve knowledge for the query.<br/>
         /// Example: {"limit":50}
         /// </summary>
@@ -70,6 +77,13 @@ namespace G
             value = SearchParameters;
             return IsSearchParameters;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.SearchParameters PickSearchParameters() => IsSearchParameters
+            ? SearchParameters!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SearchParameters' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

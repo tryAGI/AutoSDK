@@ -46,6 +46,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.DynamicVectaraTool PickDynamicVectara() => IsDynamicVectara
+            ? DynamicVectara!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'DynamicVectara' but the value was {ToString()}.");
+
+        /// <summary>
         /// An MCP (Model Context Protocol) tool that connects to external MCP servers for extended functionality.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -74,6 +81,13 @@ namespace G
             value = Mcp;
             return IsMcp;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.McpTool PickMcp() => IsMcp
+            ? Mcp!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Mcp' but the value was {ToString()}.");
 
         /// <summary>
         /// A corpora search tool that searches through Vectara corpora to find relevant information.
@@ -106,6 +120,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.CorporaSearchTool PickCorporaSearch() => IsCorporaSearch
+            ? CorporaSearch!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CorporaSearch' but the value was {ToString()}.");
+
+        /// <summary>
         /// A web search tool that searches the internet for relevant information.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -136,6 +157,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.WebSearchTool PickWebSearch() => IsWebSearch
+            ? WebSearch!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'WebSearch' but the value was {ToString()}.");
+
+        /// <summary>
         /// A web get tool that fetches content from URLs using HTTP requests.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -164,6 +192,13 @@ namespace G
             value = WebGet;
             return IsWebGet;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.WebGetTool PickWebGet() => IsWebGet
+            ? WebGet!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'WebGet' but the value was {ToString()}.");
 
         /// <summary>
         /// A user-defined function that can be executed as a tool by agents.<br/>
@@ -198,6 +233,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.LambdaTool PickLambda() => IsLambda
+            ? Lambda!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Lambda' but the value was {ToString()}.");
+
+        /// <summary>
         /// A tool that indexes structured documents into the Vectara platform with full control over document structure, sections, metadata, tables, and images.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -226,6 +268,13 @@ namespace G
             value = StructuredIndexing;
             return IsStructuredIndexing;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.StructuredIndexingTool PickStructuredIndexing() => IsStructuredIndexing
+            ? StructuredIndexing!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'StructuredIndexing' but the value was {ToString()}.");
 
         /// <summary>
         /// A tool that spawns a specialized sub-agent to handle complex, multi-step tasks autonomously.<br/>
@@ -259,6 +308,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.SubAgentTool PickSubAgent() => IsSubAgent
+            ? SubAgent!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SubAgent' but the value was {ToString()}.");
+
+        /// <summary>
         /// A tool that creates artifacts from text or structured data content that can be stored and referenced later.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -287,6 +343,13 @@ namespace G
             value = ArtifactCreate;
             return IsArtifactCreate;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ArtifactCreateTool PickArtifactCreate() => IsArtifactCreate
+            ? ArtifactCreate!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ArtifactCreate' but the value was {ToString()}.");
 
         /// <summary>
         /// A tool that reads artifact content from the agent session workspace with flexible size and range options.
@@ -319,6 +382,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ArtifactReadTool PickArtifactRead() => IsArtifactRead
+            ? ArtifactRead!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ArtifactRead' but the value was {ToString()}.");
+
+        /// <summary>
         /// A tool that searches through an artifact's content using grep with support for all standard grep options.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -347,6 +417,13 @@ namespace G
             value = ArtifactGrep;
             return IsArtifactGrep;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ArtifactGrepTool PickArtifactGrep() => IsArtifactGrep
+            ? ArtifactGrep!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ArtifactGrep' but the value was {ToString()}.");
 
         /// <summary>
         /// A tool that loads image artifacts into the conversation context for viewing and analysis.
@@ -379,6 +456,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ImageReadTool PickImageRead() => IsImageRead
+            ? ImageRead!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ImageRead' but the value was {ToString()}.");
+
+        /// <summary>
         /// A tool that converts document artifacts (PDF, Word, PowerPoint, etc.) to various formats.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -409,6 +493,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.DocumentConversionTool PickDocumentConversion() => IsDocumentConversion
+            ? DocumentConversion!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'DocumentConversion' but the value was {ToString()}.");
+
+        /// <summary>
         /// A tool that fetches the full text content of a document from a corpus and stores it as an artifact.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -437,6 +528,13 @@ namespace G
             value = GetDocumentText;
             return IsGetDocumentText;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.GetDocumentTextTool PickGetDocumentText() => IsGetDocumentText
+            ? GetDocumentText!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'GetDocumentText' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

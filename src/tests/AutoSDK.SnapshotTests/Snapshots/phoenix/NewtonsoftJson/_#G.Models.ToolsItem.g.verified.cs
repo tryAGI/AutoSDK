@@ -44,6 +44,13 @@ namespace G
             value = Function;
             return IsFunction;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.PromptToolFunction PickFunction() => IsFunction
+            ? Function!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Function' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

@@ -46,6 +46,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.TestToolSuccessResponse PickSuccess() => IsSuccess
+            ? Success!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Success' but the value was {ToString()}.");
+
+        /// <summary>
         /// Error response from testing a Lambda tool.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -74,6 +81,13 @@ namespace G
             value = Error;
             return IsError;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.TestToolErrorResponse PickError() => IsError
+            ? Error!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Error' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

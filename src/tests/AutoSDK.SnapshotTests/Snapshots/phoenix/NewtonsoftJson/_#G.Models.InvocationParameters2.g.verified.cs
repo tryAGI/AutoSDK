@@ -48,6 +48,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.PromptOpenAIInvocationParameters PickOpenai() => IsOpenai
+            ? Openai!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Openai' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.PromptAzureOpenAIInvocationParameters? AzureOpenai { get; init; }
 #else
@@ -74,6 +81,13 @@ namespace G
             value = AzureOpenai;
             return IsAzureOpenai;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.PromptAzureOpenAIInvocationParameters PickAzureOpenai() => IsAzureOpenai
+            ? AzureOpenai!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AzureOpenai' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -108,6 +122,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.PromptAnthropicInvocationParameters PickAnthropic() => IsAnthropic
+            ? Anthropic!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Anthropic' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.PromptGoogleInvocationParameters? Google { get; init; }
 #else
@@ -134,6 +155,13 @@ namespace G
             value = Google;
             return IsGoogle;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.PromptGoogleInvocationParameters PickGoogle() => IsGoogle
+            ? Google!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Google' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -168,6 +196,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.PromptDeepSeekInvocationParameters PickDeepseek() => IsDeepseek
+            ? Deepseek!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Deepseek' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.PromptXAIInvocationParameters? Xai { get; init; }
 #else
@@ -194,6 +229,13 @@ namespace G
             value = Xai;
             return IsXai;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.PromptXAIInvocationParameters PickXai() => IsXai
+            ? Xai!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Xai' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -228,6 +270,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.PromptOllamaInvocationParameters PickOllama() => IsOllama
+            ? Ollama!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Ollama' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.PromptAwsInvocationParameters? Aws { get; init; }
 #else
@@ -254,6 +303,13 @@ namespace G
             value = Aws;
             return IsAws;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.PromptAwsInvocationParameters PickAws() => IsAws
+            ? Aws!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Aws' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -288,6 +344,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.PromptCerebrasInvocationParameters PickCerebras() => IsCerebras
+            ? Cerebras!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Cerebras' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.PromptFireworksInvocationParameters? Fireworks { get; init; }
 #else
@@ -314,6 +377,13 @@ namespace G
             value = Fireworks;
             return IsFireworks;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.PromptFireworksInvocationParameters PickFireworks() => IsFireworks
+            ? Fireworks!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Fireworks' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -348,6 +418,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.PromptGroqInvocationParameters PickGroq() => IsGroq
+            ? Groq!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Groq' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.PromptMoonshotInvocationParameters? Moonshot { get; init; }
 #else
@@ -374,6 +451,13 @@ namespace G
             value = Moonshot;
             return IsMoonshot;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.PromptMoonshotInvocationParameters PickMoonshot() => IsMoonshot
+            ? Moonshot!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Moonshot' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -408,6 +492,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.PromptPerplexityInvocationParameters PickPerplexity() => IsPerplexity
+            ? Perplexity!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Perplexity' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.PromptTogetherInvocationParameters? Together { get; init; }
 #else
@@ -434,6 +525,13 @@ namespace G
             value = Together;
             return IsTogether;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.PromptTogetherInvocationParameters PickTogether() => IsTogether
+            ? Together!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Together' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

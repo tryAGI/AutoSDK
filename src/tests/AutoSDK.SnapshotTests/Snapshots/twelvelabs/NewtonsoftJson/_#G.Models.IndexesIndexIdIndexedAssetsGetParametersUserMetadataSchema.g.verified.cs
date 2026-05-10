@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public string PickIndexesIndexIdIndexedAssetsGetParametersUserMetadataSchemaVariant1() => IsIndexesIndexIdIndexedAssetsGetParametersUserMetadataSchemaVariant1
+            ? IndexesIndexIdIndexedAssetsGetParametersUserMetadataSchemaVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'IndexesIndexIdIndexedAssetsGetParametersUserMetadataSchemaVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public double? IndexesIndexIdIndexedAssetsGetParametersUserMetadataSchemaVariant2 { get; init; }
 #else
@@ -73,6 +80,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public double PickIndexesIndexIdIndexedAssetsGetParametersUserMetadataSchemaVariant2() => IsIndexesIndexIdIndexedAssetsGetParametersUserMetadataSchemaVariant2
+            ? IndexesIndexIdIndexedAssetsGetParametersUserMetadataSchemaVariant2!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'IndexesIndexIdIndexedAssetsGetParametersUserMetadataSchemaVariant2' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public bool? IndexesIndexIdIndexedAssetsGetParametersUserMetadataSchemaVariant3 { get; init; }
 #else
@@ -99,6 +113,13 @@ namespace G
             value = IndexesIndexIdIndexedAssetsGetParametersUserMetadataSchemaVariant3;
             return IsIndexesIndexIdIndexedAssetsGetParametersUserMetadataSchemaVariant3;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool PickIndexesIndexIdIndexedAssetsGetParametersUserMetadataSchemaVariant3() => IsIndexesIndexIdIndexedAssetsGetParametersUserMetadataSchemaVariant3
+            ? IndexesIndexIdIndexedAssetsGetParametersUserMetadataSchemaVariant3!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'IndexesIndexIdIndexedAssetsGetParametersUserMetadataSchemaVariant3' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

@@ -45,6 +45,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.EasyInputMessage PickMessage() => IsMessage
+            ? Message!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Message' but the value was {ToString()}.");
+
+        /// <summary>
         /// Content item used to generate a response.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -75,6 +82,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.Item PickItem() => IsItem
+            ? Item!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Item' but the value was {ToString()}.");
+
+        /// <summary>
         /// An internal identifier for an item to reference.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -103,6 +117,13 @@ namespace G
             value = ItemReference;
             return IsItemReference;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ItemReference PickItemReference() => IsItemReference
+            ? ItemReference!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ItemReference' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

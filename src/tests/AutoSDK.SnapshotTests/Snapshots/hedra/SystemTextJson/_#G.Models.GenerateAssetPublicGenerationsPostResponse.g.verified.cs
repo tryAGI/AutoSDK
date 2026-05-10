@@ -48,6 +48,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.GenerateVideoResponse PickVideo() => IsVideo
+            ? Video!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Video' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.GenerateTextToSpeechResponse? TextToSpeech { get; init; }
 #else
@@ -74,6 +81,13 @@ namespace G
             value = TextToSpeech;
             return IsTextToSpeech;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.GenerateTextToSpeechResponse PickTextToSpeech() => IsTextToSpeech
+            ? TextToSpeech!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'TextToSpeech' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -108,6 +122,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.GenerateTextToSoundResponse PickTextToSound() => IsTextToSound
+            ? TextToSound!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'TextToSound' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.GenerateImageResponse? Image { get; init; }
 #else
@@ -134,6 +155,13 @@ namespace G
             value = Image;
             return IsImage;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.GenerateImageResponse PickImage() => IsImage
+            ? Image!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Image' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -168,6 +196,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.GenerateImageUpscaleResponse PickImageUpscale() => IsImageUpscale
+            ? ImageUpscale!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ImageUpscale' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.GenerateVideoUpscaleResponse? VideoUpscale { get; init; }
 #else
@@ -194,6 +229,13 @@ namespace G
             value = VideoUpscale;
             return IsVideoUpscale;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.GenerateVideoUpscaleResponse PickVideoUpscale() => IsVideoUpscale
+            ? VideoUpscale!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'VideoUpscale' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -228,6 +270,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.GenerateIsolatedAudioResponse PickAudioIsolation() => IsAudioIsolation
+            ? AudioIsolation!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AudioIsolation' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.GenerateSpeechToSpeechResponse? SpeechToSpeech { get; init; }
 #else
@@ -254,6 +303,13 @@ namespace G
             value = SpeechToSpeech;
             return IsSpeechToSpeech;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.GenerateSpeechToSpeechResponse PickSpeechToSpeech() => IsSpeechToSpeech
+            ? SpeechToSpeech!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SpeechToSpeech' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -288,6 +344,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.GenerateVoiceCloneResponse PickVoiceClone() => IsVoiceClone
+            ? VoiceClone!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'VoiceClone' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.GenerateAudioFromVideoResponse? AudioFromVideo { get; init; }
 #else
@@ -314,6 +377,13 @@ namespace G
             value = AudioFromVideo;
             return IsAudioFromVideo;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.GenerateAudioFromVideoResponse PickAudioFromVideo() => IsAudioFromVideo
+            ? AudioFromVideo!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AudioFromVideo' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -348,6 +418,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.GenerateVideoWithAudioResponse PickVideoWithAudio() => IsVideoWithAudio
+            ? VideoWithAudio!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'VideoWithAudio' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.GenerateVideoToVideoResponse? VideoToVideo { get; init; }
 #else
@@ -374,6 +451,13 @@ namespace G
             value = VideoToVideo;
             return IsVideoToVideo;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.GenerateVideoToVideoResponse PickVideoToVideo() => IsVideoToVideo
+            ? VideoToVideo!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'VideoToVideo' but the value was {ToString()}.");
 
         /// <summary>
         /// Response for Motion Control generations.
@@ -404,6 +488,13 @@ namespace G
             value = MotionControl;
             return IsMotionControl;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.GenerateMotionControlResponse PickMotionControl() => IsMotionControl
+            ? MotionControl!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MotionControl' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

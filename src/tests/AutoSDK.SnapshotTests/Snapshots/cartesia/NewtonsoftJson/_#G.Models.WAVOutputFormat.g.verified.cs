@@ -39,6 +39,13 @@ namespace G
             value = RawOutputFormat;
             return IsRawOutputFormat;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.RawOutputFormat PickRawOutputFormat() => IsRawOutputFormat
+            ? RawOutputFormat!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'RawOutputFormat' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

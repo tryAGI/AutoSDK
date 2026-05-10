@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.ChatCompletionContentPartTextWithTitle PickText() => IsText
+            ? Text!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ChatCompletionContentPartImageWithTitle? ImageUrl { get; init; }
 #else
@@ -73,6 +80,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.ChatCompletionContentPartImageWithTitle PickImageUrl() => IsImageUrl
+            ? ImageUrl!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ImageUrl' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ChatCompletionContentPartFileWithTitle? File { get; init; }
 #else
@@ -99,6 +113,13 @@ namespace G
             value = File;
             return IsFile;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ChatCompletionContentPartFileWithTitle PickFile() => IsFile
+            ? File!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'File' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

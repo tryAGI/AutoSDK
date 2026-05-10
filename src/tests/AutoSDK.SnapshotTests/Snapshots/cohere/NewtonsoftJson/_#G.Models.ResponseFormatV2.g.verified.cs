@@ -53,6 +53,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.TextResponseFormatV2 PickText() => IsText
+            ? Text!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.JsonResponseFormatV2? JsonObject { get; init; }
 #else
@@ -79,6 +86,13 @@ namespace G
             value = JsonObject;
             return IsJsonObject;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.JsonResponseFormatV2 PickJsonObject() => IsJsonObject
+            ? JsonObject!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'JsonObject' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

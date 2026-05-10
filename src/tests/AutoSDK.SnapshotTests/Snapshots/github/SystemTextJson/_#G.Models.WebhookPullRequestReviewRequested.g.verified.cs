@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.WebhookPullRequestReviewRequestedVariant1 PickWebhookPullRequestReviewRequestedVariant1() => IsWebhookPullRequestReviewRequestedVariant1
+            ? WebhookPullRequestReviewRequestedVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'WebhookPullRequestReviewRequestedVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.WebhookPullRequestReviewRequestedVariant2? WebhookPullRequestReviewRequestedVariant2 { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = WebhookPullRequestReviewRequestedVariant2;
             return IsWebhookPullRequestReviewRequestedVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.WebhookPullRequestReviewRequestedVariant2 PickWebhookPullRequestReviewRequestedVariant2() => IsWebhookPullRequestReviewRequestedVariant2
+            ? WebhookPullRequestReviewRequestedVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'WebhookPullRequestReviewRequestedVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

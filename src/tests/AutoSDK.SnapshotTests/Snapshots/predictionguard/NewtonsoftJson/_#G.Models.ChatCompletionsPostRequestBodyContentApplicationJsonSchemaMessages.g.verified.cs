@@ -41,6 +41,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public string PickChatCompletionsPostRequestBodyContentApplicationJsonSchemaMessagesVariant1() => IsChatCompletionsPostRequestBodyContentApplicationJsonSchemaMessagesVariant1
+            ? ChatCompletionsPostRequestBodyContentApplicationJsonSchemaMessagesVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ChatCompletionsPostRequestBodyContentApplicationJsonSchemaMessagesVariant1' but the value was {ToString()}.");
+
+        /// <summary>
         /// An array of messages used for generating completions.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -69,6 +76,13 @@ namespace G
             value = ChatCompletionsPostRequestBodyContentApplicationJsonSchemaMessages1;
             return IsChatCompletionsPostRequestBodyContentApplicationJsonSchemaMessages1;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<global::G.ChatCompletionsPostRequestBodyContentApplicationJsonSchemaMessagesOneOf1Items> PickChatCompletionsPostRequestBodyContentApplicationJsonSchemaMessages1() => IsChatCompletionsPostRequestBodyContentApplicationJsonSchemaMessages1
+            ? ChatCompletionsPostRequestBodyContentApplicationJsonSchemaMessages1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ChatCompletionsPostRequestBodyContentApplicationJsonSchemaMessages1' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

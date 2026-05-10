@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.ResultSuccessErrorOverTimeArray PickSuccess() => IsSuccess
+            ? Success!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Success' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ResultErrorString? ResultErrorString { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = ResultErrorString;
             return IsResultErrorString;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ResultErrorString PickResultErrorString() => IsResultErrorString
+            ? ResultErrorString!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResultErrorString' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

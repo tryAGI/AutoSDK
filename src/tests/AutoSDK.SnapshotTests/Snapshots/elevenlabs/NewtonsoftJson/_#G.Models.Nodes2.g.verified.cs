@@ -46,6 +46,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.WorkflowStartNodeModelOutput PickStart() => IsStart
+            ? Start!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Start' but the value was {ToString()}.");
+
+        /// <summary>
         /// Terminates the conversation upon reaching this node.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -74,6 +81,13 @@ namespace G
             value = End;
             return IsEnd;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.WorkflowEndNodeModelOutput PickEnd() => IsEnd
+            ? End!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'End' but the value was {ToString()}.");
 
         /// <summary>
         /// Transfers the conversation to a phone number.
@@ -106,6 +120,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.WorkflowPhoneNumberNodeModelOutput PickPhoneNumber() => IsPhoneNumber
+            ? PhoneNumber!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'PhoneNumber' but the value was {ToString()}.");
+
+        /// <summary>
         /// A subagent conducting the conversation until one of the exit conditions is met. Each subagent can override the base settings, changing the prompt, knowledge base, and more.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -134,6 +155,13 @@ namespace G
             value = OverrideAgent;
             return IsOverrideAgent;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.WorkflowOverrideAgentNodeModelOutput PickOverrideAgent() => IsOverrideAgent
+            ? OverrideAgent!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OverrideAgent' but the value was {ToString()}.");
 
         /// <summary>
         /// Transfer the conversation to a standalone agent.
@@ -166,6 +194,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.WorkflowStandaloneAgentNodeModelOutput PickStandaloneAgent() => IsStandaloneAgent
+            ? StandaloneAgent!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'StandaloneAgent' but the value was {ToString()}.");
+
+        /// <summary>
         /// Executes one or more tools in parallel.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -194,6 +229,13 @@ namespace G
             value = Tool;
             return IsTool;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.WorkflowToolNodeModelOutput PickTool() => IsTool
+            ? Tool!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Tool' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

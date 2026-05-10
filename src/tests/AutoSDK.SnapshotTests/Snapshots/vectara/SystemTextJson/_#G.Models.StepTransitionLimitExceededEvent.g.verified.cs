@@ -45,6 +45,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.AgentEventBase PickAgentBase() => IsAgentBase
+            ? AgentBase!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AgentBase' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.StepTransitionLimitExceededEventVariant2? StepTransitionLimitExceededEventVariant2 { get; init; }
 #else
@@ -71,6 +78,13 @@ namespace G
             value = StepTransitionLimitExceededEventVariant2;
             return IsStepTransitionLimitExceededEventVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.StepTransitionLimitExceededEventVariant2 PickStepTransitionLimitExceededEventVariant2() => IsStepTransitionLimitExceededEventVariant2
+            ? StepTransitionLimitExceededEventVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'StepTransitionLimitExceededEventVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

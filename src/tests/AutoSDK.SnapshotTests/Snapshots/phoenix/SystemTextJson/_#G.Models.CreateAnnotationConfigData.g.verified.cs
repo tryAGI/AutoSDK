@@ -48,6 +48,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.CategoricalAnnotationConfigData PickCategorical() => IsCategorical
+            ? Categorical!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Categorical' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ContinuousAnnotationConfigData? Continuous { get; init; }
 #else
@@ -78,6 +85,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.ContinuousAnnotationConfigData PickContinuous() => IsContinuous
+            ? Continuous!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Continuous' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.FreeformAnnotationConfigData? Freeform { get; init; }
 #else
@@ -104,6 +118,13 @@ namespace G
             value = Freeform;
             return IsFreeform;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.FreeformAnnotationConfigData PickFreeform() => IsFreeform
+            ? Freeform!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Freeform' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

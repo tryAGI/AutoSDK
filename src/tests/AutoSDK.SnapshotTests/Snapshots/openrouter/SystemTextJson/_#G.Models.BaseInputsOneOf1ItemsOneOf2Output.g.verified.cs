@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public string PickBaseInputsOneOf1ItemsOneOf2OutputVariant1() => IsBaseInputsOneOf1ItemsOneOf2OutputVariant1
+            ? BaseInputsOneOf1ItemsOneOf2OutputVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BaseInputsOneOf1ItemsOneOf2OutputVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<global::G.BaseInputsOneOf1ItemsOneOf2OutputOneOf1Items>? BaseInputsOneOf1ItemsOneOf2Output1 { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = BaseInputsOneOf1ItemsOneOf2Output1;
             return IsBaseInputsOneOf1ItemsOneOf2Output1;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<global::G.BaseInputsOneOf1ItemsOneOf2OutputOneOf1Items> PickBaseInputsOneOf1ItemsOneOf2Output1() => IsBaseInputsOneOf1ItemsOneOf2Output1
+            ? BaseInputsOneOf1ItemsOneOf2Output1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BaseInputsOneOf1ItemsOneOf2Output1' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

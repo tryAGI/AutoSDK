@@ -44,6 +44,13 @@ namespace G
             value = JsonSchema;
             return IsJsonSchema;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.PromptResponseFormatJSONSchema PickJsonSchema() => IsJsonSchema
+            ? JsonSchema!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'JsonSchema' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

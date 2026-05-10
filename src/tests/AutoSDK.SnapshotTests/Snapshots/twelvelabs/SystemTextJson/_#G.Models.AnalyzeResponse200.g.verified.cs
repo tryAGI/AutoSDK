@@ -50,6 +50,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.StreamAnalyzeResponse PickStreamAnalyzeResponse() => IsStreamAnalyzeResponse
+            ? StreamAnalyzeResponse!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'StreamAnalyzeResponse' but the value was {ToString()}.");
+
+        /// <summary>
         /// When the value of the `stream` parameter is set to `false`, the response is as follows:
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -78,6 +85,13 @@ namespace G
             value = NonStreamAnalyzeResponse;
             return IsNonStreamAnalyzeResponse;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.NonStreamAnalyzeResponse PickNonStreamAnalyzeResponse() => IsNonStreamAnalyzeResponse
+            ? NonStreamAnalyzeResponse!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'NonStreamAnalyzeResponse' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

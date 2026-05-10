@@ -48,6 +48,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.PostDialDigitsStatic PickStatic() => IsStatic
+            ? Static!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Static' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.PostDialDigitsDynamicVariable? Dynamic { get; init; }
 #else
@@ -74,6 +81,13 @@ namespace G
             value = Dynamic;
             return IsDynamic;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.PostDialDigitsDynamicVariable PickDynamic() => IsDynamic
+            ? Dynamic!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Dynamic' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

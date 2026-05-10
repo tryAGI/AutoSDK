@@ -41,6 +41,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.IntervalScheduleConfiguration PickInterval() => IsInterval
+            ? Interval!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Interval' but the value was {ToString()}.");
+
+        /// <summary>
         /// Configuration for cron-based schedule execution.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -69,6 +76,13 @@ namespace G
             value = Cron;
             return IsCron;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.CronScheduleConfiguration PickCron() => IsCron
+            ? Cron!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Cron' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

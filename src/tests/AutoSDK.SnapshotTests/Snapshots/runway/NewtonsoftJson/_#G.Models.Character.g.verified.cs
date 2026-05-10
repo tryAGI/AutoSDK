@@ -46,6 +46,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.CreateCharacterPerformanceRequestActTwoCharacterCharacterImage PickImage() => IsImage
+            ? Image!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Image' but the value was {ToString()}.");
+
+        /// <summary>
         /// A video of your character. In the output, the character will use the reference video performance in its original animated environment and some of the character's own movements.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -74,6 +81,13 @@ namespace G
             value = Video;
             return IsVideo;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.CreateCharacterPerformanceRequestActTwoCharacterCharacterVideo PickVideo() => IsVideo
+            ? Video!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Video' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

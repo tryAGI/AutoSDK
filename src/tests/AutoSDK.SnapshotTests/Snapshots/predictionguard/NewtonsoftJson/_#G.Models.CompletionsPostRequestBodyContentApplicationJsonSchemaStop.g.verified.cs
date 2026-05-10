@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public string PickCompletionsPostRequestBodyContentApplicationJsonSchemaStopVariant1() => IsCompletionsPostRequestBodyContentApplicationJsonSchemaStopVariant1
+            ? CompletionsPostRequestBodyContentApplicationJsonSchemaStopVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CompletionsPostRequestBodyContentApplicationJsonSchemaStopVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<string>? CompletionsPostRequestBodyContentApplicationJsonSchemaStopVariant2 { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = CompletionsPostRequestBodyContentApplicationJsonSchemaStopVariant2;
             return IsCompletionsPostRequestBodyContentApplicationJsonSchemaStopVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<string> PickCompletionsPostRequestBodyContentApplicationJsonSchemaStopVariant2() => IsCompletionsPostRequestBodyContentApplicationJsonSchemaStopVariant2
+            ? CompletionsPostRequestBodyContentApplicationJsonSchemaStopVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CompletionsPostRequestBodyContentApplicationJsonSchemaStopVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

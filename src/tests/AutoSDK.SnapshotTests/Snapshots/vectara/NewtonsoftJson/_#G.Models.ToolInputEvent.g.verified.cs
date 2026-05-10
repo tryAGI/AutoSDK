@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.AgentEventBase PickAgentBase() => IsAgentBase
+            ? AgentBase!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AgentBase' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ToolInputEventVariant2? ToolInputEventVariant2 { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = ToolInputEventVariant2;
             return IsToolInputEventVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ToolInputEventVariant2 PickToolInputEventVariant2() => IsToolInputEventVariant2
+            ? ToolInputEventVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ToolInputEventVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

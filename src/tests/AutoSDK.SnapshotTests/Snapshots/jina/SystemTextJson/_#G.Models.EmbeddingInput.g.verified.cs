@@ -42,6 +42,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.TextEmbeddingInput PickTextEmbeddingInput() => IsTextEmbeddingInput
+            ? TextEmbeddingInput!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'TextEmbeddingInput' but the value was {ToString()}.");
+
+        /// <summary>
         /// The input to the API for text embedding. OpenAI compatible<br/>
         /// Example: {"model":"clip","input":["bytes or URL"]}
         /// </summary>
@@ -73,6 +80,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ImageEmbeddingInput PickImageEmbeddingInput() => IsImageEmbeddingInput
+            ? ImageEmbeddingInput!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ImageEmbeddingInput' but the value was {ToString()}.");
+
+        /// <summary>
         /// The input to the API for text embedding. OpenAI compatible<br/>
         /// Example: {"model":"clip","input":["bytes or URL"]}
         /// </summary>
@@ -102,6 +116,13 @@ namespace G
             value = MixedEmbeddingInput;
             return IsMixedEmbeddingInput;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.MixedEmbeddingInput PickMixedEmbeddingInput() => IsMixedEmbeddingInput
+            ? MixedEmbeddingInput!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MixedEmbeddingInput' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

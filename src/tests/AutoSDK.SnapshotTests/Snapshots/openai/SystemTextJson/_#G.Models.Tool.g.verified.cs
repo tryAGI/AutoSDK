@@ -41,6 +41,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.FunctionTool PickFunction() => IsFunction
+            ? Function!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Function' but the value was {ToString()}.");
+
+        /// <summary>
         /// A tool that searches for relevant content from uploaded files. Learn more about the [file search tool](https://platform.openai.com/docs/guides/tools-file-search).
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -69,6 +76,13 @@ namespace G
             value = FileSearch;
             return IsFileSearch;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.FileSearchTool PickFileSearch() => IsFileSearch
+            ? FileSearch!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FileSearch' but the value was {ToString()}.");
 
         /// <summary>
         /// This tool searches the web for relevant results to use in a response. Learn more about the [web search tool](https://platform.openai.com/docs/guides/tools-web-search).
@@ -101,6 +115,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.WebSearchPreviewTool PickWebSearchPreview() => IsWebSearchPreview
+            ? WebSearchPreview!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'WebSearchPreview' but the value was {ToString()}.");
+
+        /// <summary>
         /// A tool that controls a virtual computer. Learn more about the [computer tool](https://platform.openai.com/docs/guides/tools-computer-use).
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -129,6 +150,13 @@ namespace G
             value = ComputerUsePreview;
             return IsComputerUsePreview;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ComputerUsePreviewTool PickComputerUsePreview() => IsComputerUsePreview
+            ? ComputerUsePreview!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ComputerUsePreview' but the value was {ToString()}.");
 
         /// <summary>
         /// Give the model access to additional tools via remote Model Context Protocol <br/>
@@ -162,6 +190,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.MCPTool PickMcp() => IsMcp
+            ? Mcp!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Mcp' but the value was {ToString()}.");
+
+        /// <summary>
         /// A tool that runs Python code to help generate a response to a prompt.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -190,6 +225,13 @@ namespace G
             value = CodeInterpreter;
             return IsCodeInterpreter;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.CodeInterpreterTool PickCodeInterpreter() => IsCodeInterpreter
+            ? CodeInterpreter!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CodeInterpreter' but the value was {ToString()}.");
 
         /// <summary>
         /// A tool that generates images using a model like `gpt-image-1`.
@@ -222,6 +264,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ImageGenTool PickImageGeneration() => IsImageGeneration
+            ? ImageGeneration!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ImageGeneration' but the value was {ToString()}.");
+
+        /// <summary>
         /// A tool that allows the model to execute shell commands in a local environment.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -250,6 +299,13 @@ namespace G
             value = LocalShell;
             return IsLocalShell;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.LocalShellTool PickLocalShell() => IsLocalShell
+            ? LocalShell!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'LocalShell' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.InputMessageItemRole0 PickInputMessageItemRole0() => IsInputMessageItemRole0
+            ? InputMessageItemRole0!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'InputMessageItemRole0' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.InputMessageItemRole1? InputMessageItemRole1 { get; init; }
 #else
@@ -73,6 +80,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.InputMessageItemRole1 PickInputMessageItemRole1() => IsInputMessageItemRole1
+            ? InputMessageItemRole1!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'InputMessageItemRole1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.InputMessageItemRole2? InputMessageItemRole2 { get; init; }
 #else
@@ -99,6 +113,13 @@ namespace G
             value = InputMessageItemRole2;
             return IsInputMessageItemRole2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.InputMessageItemRole2 PickInputMessageItemRole2() => IsInputMessageItemRole2
+            ? InputMessageItemRole2!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'InputMessageItemRole2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

@@ -48,6 +48,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.PreRecordedResponse PickPreRecorded() => IsPreRecorded
+            ? PreRecorded!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'PreRecorded' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.StreamingResponse? Live { get; init; }
 #else
@@ -74,6 +81,13 @@ namespace G
             value = Live;
             return IsLive;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.StreamingResponse PickLive() => IsLive
+            ? Live!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Live' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

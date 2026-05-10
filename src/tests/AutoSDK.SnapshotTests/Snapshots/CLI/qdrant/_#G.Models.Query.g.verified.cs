@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.NearestQuery PickNearest() => IsNearest
+            ? Nearest!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Nearest' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.RecommendQuery? Recommend { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = Recommend;
             return IsRecommend;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.RecommendQuery PickRecommend() => IsRecommend
+            ? Recommend!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Recommend' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -103,6 +117,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.DiscoverQuery PickDiscover() => IsDiscover
+            ? Discover!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Discover' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ContextQuery? Context { get; init; }
 #else
@@ -129,6 +150,13 @@ namespace G
             value = Context;
             return IsContext;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ContextQuery PickContext() => IsContext
+            ? Context!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Context' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -163,6 +191,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.OrderByQuery PickOrderBy() => IsOrderBy
+            ? OrderBy!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OrderBy' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.FusionQuery? Fusion { get; init; }
 #else
@@ -189,6 +224,13 @@ namespace G
             value = Fusion;
             return IsFusion;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.FusionQuery PickFusion() => IsFusion
+            ? Fusion!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Fusion' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -223,6 +265,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.RrfQuery PickRrf() => IsRrf
+            ? Rrf!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Rrf' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.FormulaQuery? Formula { get; init; }
 #else
@@ -249,6 +298,13 @@ namespace G
             value = Formula;
             return IsFormula;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.FormulaQuery PickFormula() => IsFormula
+            ? Formula!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Formula' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -283,6 +339,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.SampleQuery PickSample() => IsSample
+            ? Sample!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Sample' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.RelevanceFeedbackQuery? RelevanceFeedback { get; init; }
 #else
@@ -309,6 +372,13 @@ namespace G
             value = RelevanceFeedback;
             return IsRelevanceFeedback;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.RelevanceFeedbackQuery PickRelevanceFeedback() => IsRelevanceFeedback
+            ? RelevanceFeedback!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'RelevanceFeedback' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

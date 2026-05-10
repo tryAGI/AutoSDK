@@ -41,6 +41,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.InvokeParentSpanParentStruct PickSpanParentStruct() => IsSpanParentStruct
+            ? SpanParentStruct!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SpanParentStruct' but the value was {ToString()}.");
+
+        /// <summary>
         /// The parent's span identifier, created by calling `.export()` on a span
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -69,6 +76,13 @@ namespace G
             value = InvokeParentVariant2;
             return IsInvokeParentVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string PickInvokeParentVariant2() => IsInvokeParentVariant2
+            ? InvokeParentVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'InvokeParentVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

@@ -48,6 +48,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.ResearchEventDtoClassVariant3Variant1 PickTaskDefinition() => IsTaskDefinition
+            ? TaskDefinition!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'TaskDefinition' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ResearchEventDtoClassVariant3Variant2? TaskOperation { get; init; }
 #else
@@ -78,6 +85,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.ResearchEventDtoClassVariant3Variant2 PickTaskOperation() => IsTaskOperation
+            ? TaskOperation!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'TaskOperation' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ResearchEventDtoClassVariant3Variant3? TaskOutput { get; init; }
 #else
@@ -104,6 +118,13 @@ namespace G
             value = TaskOutput;
             return IsTaskOutput;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ResearchEventDtoClassVariant3Variant3 PickTaskOutput() => IsTaskOutput
+            ? TaskOutput!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'TaskOutput' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

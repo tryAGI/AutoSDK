@@ -39,6 +39,13 @@ namespace G
             value = Base;
             return IsBase;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.BaseSearchRequest PickBase() => IsBase
+            ? Base!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Base' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

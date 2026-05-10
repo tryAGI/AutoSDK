@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.AwsAccessKeyAuthConfig PickAccessKey() => IsAccessKey
+            ? AccessKey!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AccessKey' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.AwsAssumedRoleAuthConfig? AssumedRole { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = AssumedRole;
             return IsAssumedRole;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.AwsAssumedRoleAuthConfig PickAssumedRole() => IsAssumedRole
+            ? AssumedRole!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AssumedRole' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -103,6 +117,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.AwsServiceRoleAuthConfig PickServiceRole() => IsServiceRole
+            ? ServiceRole!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ServiceRole' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.AzureEntraAuthConfig? AzureEntra { get; init; }
 #else
@@ -129,6 +150,13 @@ namespace G
             value = AzureEntra;
             return IsAzureEntra;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.AzureEntraAuthConfig PickAzureEntra() => IsAzureEntra
+            ? AzureEntra!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AzureEntra' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -163,6 +191,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.AzureManagedAuthConfig PickAzureManaged() => IsAzureManaged
+            ? AzureManaged!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AzureManaged' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.AzureDefaultAuthConfig? AzureDefault { get; init; }
 #else
@@ -189,6 +224,13 @@ namespace G
             value = AzureDefault;
             return IsAzureDefault;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.AzureDefaultAuthConfig PickAzureDefault() => IsAzureDefault
+            ? AzureDefault!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AzureDefault' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -223,6 +265,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.HashicorpTokenAuthConfig PickHashicorpToken() => IsHashicorpToken
+            ? HashicorpToken!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'HashicorpToken' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.HashicorpAppRoleAuthConfig? HashicorpAppRole { get; init; }
 #else
@@ -253,6 +302,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.HashicorpAppRoleAuthConfig PickHashicorpAppRole() => IsHashicorpAppRole
+            ? HashicorpAppRole!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'HashicorpAppRole' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.HashicorpKubernetesAuthConfig? HashicorpKubernetes { get; init; }
 #else
@@ -279,6 +335,13 @@ namespace G
             value = HashicorpKubernetes;
             return IsHashicorpKubernetes;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.HashicorpKubernetesAuthConfig PickHashicorpKubernetes() => IsHashicorpKubernetes
+            ? HashicorpKubernetes!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'HashicorpKubernetes' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

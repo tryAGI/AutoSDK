@@ -46,6 +46,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.SplitV1Parameters PickSplitV1() => IsSplitV1
+            ? SplitV1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SplitV1' but the value was {ToString()}.");
+
+        /// <summary>
         /// Typed parameters for an *extract v2* product configuration.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -76,6 +83,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ExtractV2Parameters PickExtractV2() => IsExtractV2
+            ? ExtractV2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ExtractV2' but the value was {ToString()}.");
+
+        /// <summary>
         /// Typed parameters for a *classify v2* product configuration.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -104,6 +118,13 @@ namespace G
             value = ClassifyV2;
             return IsClassifyV2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ClassifyV2Parameters PickClassifyV2() => IsClassifyV2
+            ? ClassifyV2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ClassifyV2' but the value was {ToString()}.");
 
         /// <summary>
         /// Configuration for LlamaParse v2 document parsing.<br/>
@@ -139,6 +160,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ParseV2Parameters PickParseV2() => IsParseV2
+            ? ParseV2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ParseV2' but the value was {ToString()}.");
+
+        /// <summary>
         /// Catch-all for configurations without a dedicated typed schema.<br/>
         /// Accepts arbitrary JSON fields alongside ``product_type``.
         /// </summary>
@@ -168,6 +196,13 @@ namespace G
             value = Unknown;
             return IsUnknown;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.UntypedParameters PickUnknown() => IsUnknown
+            ? Unknown!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Unknown' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

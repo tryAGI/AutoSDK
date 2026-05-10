@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.ConversationFlowOverride PickOverride() => IsOverride
+            ? Override!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Override' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ConversationFlowVariant2? ConversationFlowVariant2 { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = ConversationFlowVariant2;
             return IsConversationFlowVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ConversationFlowVariant2 PickConversationFlowVariant2() => IsConversationFlowVariant2
+            ? ConversationFlowVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ConversationFlowVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

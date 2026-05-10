@@ -44,6 +44,13 @@ namespace G
             value = Github;
             return IsGithub;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.GithubRepositoryOut PickGithub() => IsGithub
+            ? Github!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Github' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

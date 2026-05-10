@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.ToolMockInputMatchRuleVariant1 PickToolMockInputMatchRuleVariant1() => IsToolMockInputMatchRuleVariant1
+            ? ToolMockInputMatchRuleVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ToolMockInputMatchRuleVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ToolMockInputMatchRuleVariant2? ToolMockInputMatchRuleVariant2 { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = ToolMockInputMatchRuleVariant2;
             return IsToolMockInputMatchRuleVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ToolMockInputMatchRuleVariant2 PickToolMockInputMatchRuleVariant2() => IsToolMockInputMatchRuleVariant2
+            ? ToolMockInputMatchRuleVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ToolMockInputMatchRuleVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

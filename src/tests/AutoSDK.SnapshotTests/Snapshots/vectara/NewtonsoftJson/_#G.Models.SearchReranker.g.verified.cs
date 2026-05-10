@@ -46,6 +46,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.CustomerSpecificReranker PickCustomerReranker() => IsCustomerReranker
+            ? CustomerReranker!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CustomerReranker' but the value was {ToString()}.");
+
+        /// <summary>
         /// A reranker that uses user-defined functions to reorder search results.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -74,6 +81,13 @@ namespace G
             value = Userfn;
             return IsUserfn;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.UserFunctionReranker PickUserfn() => IsUserfn
+            ? Userfn!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Userfn' but the value was {ToString()}.");
 
         /// <summary>
         /// A reranker that uses Maximal Marginal Relevance to balance relevance and diversity in search results.
@@ -106,6 +120,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.MMRReranker PickMmr() => IsMmr
+            ? Mmr!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Mmr' but the value was {ToString()}.");
+
+        /// <summary>
         /// A reranker that applies multiple rerankers in sequence to produce the final search results.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -136,6 +157,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ChainReranker PickChain() => IsChain
+            ? Chain!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Chain' but the value was {ToString()}.");
+
+        /// <summary>
         /// A placeholder reranker that does not modify the original search results ordering.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -164,6 +192,13 @@ namespace G
             value = None;
             return IsNone;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.NoneReranker PickNone() => IsNone
+            ? None!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'None' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

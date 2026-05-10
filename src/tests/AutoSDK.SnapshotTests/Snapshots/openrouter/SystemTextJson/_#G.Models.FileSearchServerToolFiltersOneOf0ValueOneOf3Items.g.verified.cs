@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public string PickFileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant1() => IsFileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant1
+            ? FileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public double? FileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant2 { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = FileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant2;
             return IsFileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public double PickFileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant2() => IsFileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant2
+            ? FileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant2!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

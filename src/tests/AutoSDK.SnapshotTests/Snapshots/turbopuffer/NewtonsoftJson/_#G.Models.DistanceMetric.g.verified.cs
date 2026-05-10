@@ -41,6 +41,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public string PickDistanceMetricVariant1() => IsDistanceMetricVariant1
+            ? DistanceMetricVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'DistanceMetricVariant1' but the value was {ToString()}.");
+
+        /// <summary>
         /// Defined as `sum((x - y)^2)`. Lower is better.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -69,6 +76,13 @@ namespace G
             value = DistanceMetricVariant2;
             return IsDistanceMetricVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string PickDistanceMetricVariant2() => IsDistanceMetricVariant2
+            ? DistanceMetricVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'DistanceMetricVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

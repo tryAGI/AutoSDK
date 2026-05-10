@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.Language PickLanguage() => IsLanguage
+            ? Language!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Language' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.StopwordsSet? Set { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = Set;
             return IsSet;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.StopwordsSet PickSet() => IsSet
+            ? Set!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Set' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

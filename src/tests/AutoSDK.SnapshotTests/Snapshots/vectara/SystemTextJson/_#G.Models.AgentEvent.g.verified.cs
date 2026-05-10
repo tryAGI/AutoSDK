@@ -46,6 +46,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.InputMessageEvent PickInputMessage() => IsInputMessage
+            ? InputMessage!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'InputMessage' but the value was {ToString()}.");
+
+        /// <summary>
         /// An event representing the loading of a skill's content into the conversation.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -74,6 +81,13 @@ namespace G
             value = SkillLoad;
             return IsSkillLoad;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.SkillLoadEvent PickSkillLoad() => IsSkillLoad
+            ? SkillLoad!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SkillLoad' but the value was {ToString()}.");
 
         /// <summary>
         /// Event representing files uploaded to the agent workspace as artifacts.<br/>
@@ -109,6 +123,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ArtifactUploadEvent PickArtifactUpload() => IsArtifactUpload
+            ? ArtifactUpload!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ArtifactUpload' but the value was {ToString()}.");
+
+        /// <summary>
         /// An event representing input to a tool call.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -137,6 +158,13 @@ namespace G
             value = ToolInput;
             return IsToolInput;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ToolInputEvent PickToolInput() => IsToolInput
+            ? ToolInput!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ToolInput' but the value was {ToString()}.");
 
         /// <summary>
         /// An event representing output from a tool call.
@@ -169,6 +197,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ToolOutputEvent PickToolOutput() => IsToolOutput
+            ? ToolOutput!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ToolOutput' but the value was {ToString()}.");
+
+        /// <summary>
         /// An event representing chain-of-thought thinking by the agent.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -199,6 +234,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ThinkingEvent PickThinking() => IsThinking
+            ? Thinking!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Thinking' but the value was {ToString()}.");
+
+        /// <summary>
         /// An event representing a complete agent response.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -227,6 +269,13 @@ namespace G
             value = AgentOutput;
             return IsAgentOutput;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.AgentOutputEvent PickAgentOutput() => IsAgentOutput
+            ? AgentOutput!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AgentOutput' but the value was {ToString()}.");
 
         /// <summary>
         /// An event representing a complete agent response with structured JSON content conforming to a schema.<br/>
@@ -265,6 +314,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.StructuredOutputEvent PickStructuredOutput() => IsStructuredOutput
+            ? StructuredOutput!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'StructuredOutput' but the value was {ToString()}.");
+
+        /// <summary>
         /// A transient event indicating the current request exceeded the LLM's context limit.<br/>
         /// This event is not persisted to the session history.
         /// </summary>
@@ -294,6 +350,13 @@ namespace G
             value = ContextLimitExceeded;
             return IsContextLimitExceeded;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ContextLimitExceededEvent PickContextLimitExceeded() => IsContextLimitExceeded
+            ? ContextLimitExceeded!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ContextLimitExceeded' but the value was {ToString()}.");
 
         /// <summary>
         /// A transient event indicating the agent exceeded the maximum number of step transitions,<br/>
@@ -328,6 +391,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.StepTransitionLimitExceededEvent PickStepTransitionLimitExceeded() => IsStepTransitionLimitExceeded
+            ? StepTransitionLimitExceeded!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'StepTransitionLimitExceeded' but the value was {ToString()}.");
+
+        /// <summary>
         /// A transient event indicating the agent session was interrupted by a user request.<br/>
         /// This event is not persisted to the session history.
         /// </summary>
@@ -357,6 +427,13 @@ namespace G
             value = SessionInterrupted;
             return IsSessionInterrupted;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.SessionInterruptedEvent PickSessionInterrupted() => IsSessionInterrupted
+            ? SessionInterrupted!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SessionInterrupted' but the value was {ToString()}.");
 
         /// <summary>
         /// An event representing an image being loaded into the conversation context for viewing and analysis.
@@ -389,6 +466,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ImageReadEvent PickImageRead() => IsImageRead
+            ? ImageRead!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ImageRead' but the value was {ToString()}.");
+
+        /// <summary>
         /// An event representing a transition between agent steps.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -419,6 +503,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.StepTransitionEvent PickStepTransition() => IsStepTransition
+            ? StepTransition!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'StepTransition' but the value was {ToString()}.");
+
+        /// <summary>
         /// An event indicating that context compaction has completed.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -447,6 +538,13 @@ namespace G
             value = Compaction;
             return IsCompaction;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.CompactionEvent PickCompaction() => IsCompaction
+            ? Compaction!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Compaction' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

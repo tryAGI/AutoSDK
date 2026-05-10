@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.ModelParamsOpenAIModelParams PickOpenAIModelParams() => IsOpenAIModelParams
+            ? OpenAIModelParams!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OpenAIModelParams' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ModelParamsAnthropicModelParams? AnthropicModelParams { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = AnthropicModelParams;
             return IsAnthropicModelParams;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ModelParamsAnthropicModelParams PickAnthropicModelParams() => IsAnthropicModelParams
+            ? AnthropicModelParams!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AnthropicModelParams' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -103,6 +117,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.ModelParamsGoogleModelParams PickGoogleModelParams() => IsGoogleModelParams
+            ? GoogleModelParams!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'GoogleModelParams' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ModelParamsWindowAIModelParams? WindowAIModelParams { get; init; }
 #else
@@ -133,6 +154,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.ModelParamsWindowAIModelParams PickWindowAIModelParams() => IsWindowAIModelParams
+            ? WindowAIModelParams!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'WindowAIModelParams' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ModelParamsJsCompletionParams? JsCompletionParams { get; init; }
 #else
@@ -159,6 +187,13 @@ namespace G
             value = JsCompletionParams;
             return IsJsCompletionParams;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ModelParamsJsCompletionParams PickJsCompletionParams() => IsJsCompletionParams
+            ? JsCompletionParams!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'JsCompletionParams' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

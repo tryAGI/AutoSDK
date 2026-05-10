@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public string PickFunctionCallOutputItemOutputVariant1() => IsFunctionCallOutputItemOutputVariant1
+            ? FunctionCallOutputItemOutputVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FunctionCallOutputItemOutputVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<global::G.FunctionCallOutputItemOutputOneOf1Items>? FunctionCallOutputItemOutput1 { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = FunctionCallOutputItemOutput1;
             return IsFunctionCallOutputItemOutput1;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<global::G.FunctionCallOutputItemOutputOneOf1Items> PickFunctionCallOutputItemOutput1() => IsFunctionCallOutputItemOutput1
+            ? FunctionCallOutputItemOutput1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FunctionCallOutputItemOutput1' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

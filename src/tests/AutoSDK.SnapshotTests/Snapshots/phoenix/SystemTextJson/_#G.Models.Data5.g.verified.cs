@@ -48,6 +48,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.LocalUser PickLocal() => IsLocal
+            ? Local!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Local' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.OAuth2User? Oauth2 { get; init; }
 #else
@@ -74,6 +81,13 @@ namespace G
             value = Oauth2;
             return IsOauth2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.OAuth2User PickOauth2() => IsOauth2
+            ? Oauth2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Oauth2' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -108,6 +122,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.LDAPUser PickLdap() => IsLdap
+            ? Ldap!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Ldap' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.AnonymousUser? Anonymous { get; init; }
 #else
@@ -134,6 +155,13 @@ namespace G
             value = Anonymous;
             return IsAnonymous;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.AnonymousUser PickAnonymous() => IsAnonymous
+            ? Anonymous!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Anonymous' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.V2WebCallResponse PickWeb() => IsWeb
+            ? Web!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Web' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.V2PhoneCallResponse? Phone { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = Phone;
             return IsPhone;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.V2PhoneCallResponse PickPhone() => IsPhone
+            ? Phone!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Phone' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

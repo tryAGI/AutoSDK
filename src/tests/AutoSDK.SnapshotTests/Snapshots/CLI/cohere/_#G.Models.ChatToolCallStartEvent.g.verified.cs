@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.ChatStreamEventType PickStreamType() => IsStreamType
+            ? StreamType!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'StreamType' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ChatToolCallStartEventLv559x? Lv559x { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = Lv559x;
             return IsLv559x;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ChatToolCallStartEventLv559x PickLv559x() => IsLv559x
+            ? Lv559x!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Lv559x' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

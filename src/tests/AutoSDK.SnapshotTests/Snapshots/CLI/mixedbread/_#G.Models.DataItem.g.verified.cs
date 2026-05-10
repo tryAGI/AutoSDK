@@ -46,6 +46,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.StoreIngestionEvent PickIngestion() => IsIngestion
+            ? Ingestion!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Ingestion' but the value was {ToString()}.");
+
+        /// <summary>
         /// Represents a search event in a vector store.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -74,6 +81,13 @@ namespace G
             value = Search;
             return IsSearch;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.StoreSearchEvent PickSearch() => IsSearch
+            ? Search!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Search' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

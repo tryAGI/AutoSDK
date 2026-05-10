@@ -48,6 +48,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.GetResponseUnitTestResponseModel PickLlm() => IsLlm
+            ? Llm!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Llm' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.GetToolCallUnitTestResponseModel? Tool { get; init; }
 #else
@@ -78,6 +85,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.GetToolCallUnitTestResponseModel PickTool() => IsTool
+            ? Tool!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Tool' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.GetSimulationTestResponseModel? Simulation { get; init; }
 #else
@@ -104,6 +118,13 @@ namespace G
             value = Simulation;
             return IsSimulation;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.GetSimulationTestResponseModel PickSimulation() => IsSimulation
+            ? Simulation!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Simulation' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

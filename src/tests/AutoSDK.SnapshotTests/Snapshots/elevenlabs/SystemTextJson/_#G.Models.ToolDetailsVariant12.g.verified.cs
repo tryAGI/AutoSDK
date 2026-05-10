@@ -48,6 +48,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.ConversationHistoryTranscriptToolCallWebhookDetails PickWebhook() => IsWebhook
+            ? Webhook!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Webhook' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ConversationHistoryTranscriptToolCallClientDetails? Client { get; init; }
 #else
@@ -74,6 +81,13 @@ namespace G
             value = Client;
             return IsClient;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ConversationHistoryTranscriptToolCallClientDetails PickClient() => IsClient
+            ? Client!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Client' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -108,6 +122,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.ConversationHistoryTranscriptToolCallMCPDetails PickMcp() => IsMcp
+            ? Mcp!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Mcp' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ConversationHistoryTranscriptToolCallApiIntegrationWebhookDetails? ApiIntegrationWebhook { get; init; }
 #else
@@ -134,6 +155,13 @@ namespace G
             value = ApiIntegrationWebhook;
             return IsApiIntegrationWebhook;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ConversationHistoryTranscriptToolCallApiIntegrationWebhookDetails PickApiIntegrationWebhook() => IsApiIntegrationWebhook
+            ? ApiIntegrationWebhook!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ApiIntegrationWebhook' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

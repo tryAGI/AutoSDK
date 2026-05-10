@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.AnyOf<global::G.CreateIceCandidateStreamRequestVariant1Variant1, object> PickCreateIceCandidateStreamRequestVariant1() => IsCreateIceCandidateStreamRequestVariant1
+            ? CreateIceCandidateStreamRequestVariant1!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CreateIceCandidateStreamRequestVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CreateIceCandidateStreamRequestVariant2? CreateIceCandidateStreamRequestVariant2 { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = CreateIceCandidateStreamRequestVariant2;
             return IsCreateIceCandidateStreamRequestVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.CreateIceCandidateStreamRequestVariant2 PickCreateIceCandidateStreamRequestVariant2() => IsCreateIceCandidateStreamRequestVariant2
+            ? CreateIceCandidateStreamRequestVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CreateIceCandidateStreamRequestVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

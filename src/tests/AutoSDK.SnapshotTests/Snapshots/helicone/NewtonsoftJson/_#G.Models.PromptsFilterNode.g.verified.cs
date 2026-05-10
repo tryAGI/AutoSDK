@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.PickFilterLeafPromptV2 PickPickLeafPromptV2() => IsPickLeafPromptV2
+            ? PickLeafPromptV2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'PickLeafPromptV2' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.PromptsFilterBranch? Branch { get; init; }
 #else
@@ -73,6 +80,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.PromptsFilterBranch PickBranch() => IsBranch
+            ? Branch!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Branch' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.PromptsFilterNodeEnum? Enum { get; init; }
 #else
@@ -99,6 +113,13 @@ namespace G
             value = Enum;
             return IsEnum;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.PromptsFilterNodeEnum PickEnum() => IsEnum
+            ? Enum!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Enum' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

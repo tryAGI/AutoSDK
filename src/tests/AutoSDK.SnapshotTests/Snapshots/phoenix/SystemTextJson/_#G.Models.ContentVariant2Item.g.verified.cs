@@ -48,6 +48,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.TextContentPart PickText() => IsText
+            ? Text!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ToolCallContentPart? ToolCall { get; init; }
 #else
@@ -78,6 +85,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.ToolCallContentPart PickToolCall() => IsToolCall
+            ? ToolCall!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ToolCall' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ToolResultContentPart? ToolResult { get; init; }
 #else
@@ -104,6 +118,13 @@ namespace G
             value = ToolResult;
             return IsToolResult;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ToolResultContentPart PickToolResult() => IsToolResult
+            ? ToolResult!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ToolResult' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

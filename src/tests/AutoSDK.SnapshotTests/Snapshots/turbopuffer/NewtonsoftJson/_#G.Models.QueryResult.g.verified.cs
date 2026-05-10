@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.SingleQueryResult PickSingle() => IsSingle
+            ? Single!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Single' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.QueryResultVariant2? QueryResultVariant2 { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = QueryResultVariant2;
             return IsQueryResultVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.QueryResultVariant2 PickQueryResultVariant2() => IsQueryResultVariant2
+            ? QueryResultVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'QueryResultVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

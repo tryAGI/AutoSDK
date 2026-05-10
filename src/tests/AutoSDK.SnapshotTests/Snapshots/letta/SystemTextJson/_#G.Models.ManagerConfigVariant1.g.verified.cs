@@ -48,6 +48,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.RoundRobinManagerUpdate PickRoundRobin() => IsRoundRobin
+            ? RoundRobin!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'RoundRobin' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.SupervisorManagerUpdate? Supervisor { get; init; }
 #else
@@ -74,6 +81,13 @@ namespace G
             value = Supervisor;
             return IsSupervisor;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.SupervisorManagerUpdate PickSupervisor() => IsSupervisor
+            ? Supervisor!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Supervisor' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -108,6 +122,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.DynamicManagerUpdate PickDynamic() => IsDynamic
+            ? Dynamic!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Dynamic' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.SleeptimeManagerUpdate? Sleeptime { get; init; }
 #else
@@ -138,6 +159,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.SleeptimeManagerUpdate PickSleeptime() => IsSleeptime
+            ? Sleeptime!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Sleeptime' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.VoiceSleeptimeManagerUpdate? VoiceSleeptime { get; init; }
 #else
@@ -164,6 +192,13 @@ namespace G
             value = VoiceSleeptime;
             return IsVoiceSleeptime;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.VoiceSleeptimeManagerUpdate PickVoiceSleeptime() => IsVoiceSleeptime
+            ? VoiceSleeptime!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'VoiceSleeptime' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

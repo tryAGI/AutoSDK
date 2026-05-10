@@ -46,6 +46,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.UpdateMcpToolRequest PickMcp() => IsMcp
+            ? Mcp!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Mcp' but the value was {ToString()}.");
+
+        /// <summary>
         /// Request to update a lambda tool, allowing modifications to code, configuration, and metadata.<br/>
         /// When code is updated, input and output schemas are automatically re-discovered from function parameter type annotations.
         /// </summary>
@@ -75,6 +82,13 @@ namespace G
             value = Lambda;
             return IsLambda;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.UpdateLambdaToolRequest PickLambda() => IsLambda
+            ? Lambda!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Lambda' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

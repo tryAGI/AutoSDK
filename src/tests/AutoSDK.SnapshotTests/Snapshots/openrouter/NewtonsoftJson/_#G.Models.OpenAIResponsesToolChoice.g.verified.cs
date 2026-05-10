@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.OpenAiResponsesToolChoice0 PickOpenAiResponsesToolChoice0() => IsOpenAiResponsesToolChoice0
+            ? OpenAiResponsesToolChoice0!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OpenAiResponsesToolChoice0' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.OpenAiResponsesToolChoice1? OpenAiResponsesToolChoice1 { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = OpenAiResponsesToolChoice1;
             return IsOpenAiResponsesToolChoice1;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.OpenAiResponsesToolChoice1 PickOpenAiResponsesToolChoice1() => IsOpenAiResponsesToolChoice1
+            ? OpenAiResponsesToolChoice1!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OpenAiResponsesToolChoice1' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -103,6 +117,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.OpenAiResponsesToolChoice2 PickOpenAiResponsesToolChoice2() => IsOpenAiResponsesToolChoice2
+            ? OpenAiResponsesToolChoice2!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OpenAiResponsesToolChoice2' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.OpenAiResponsesToolChoice3? OpenAiResponsesToolChoice3 { get; init; }
 #else
@@ -133,6 +154,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.OpenAiResponsesToolChoice3 PickOpenAiResponsesToolChoice3() => IsOpenAiResponsesToolChoice3
+            ? OpenAiResponsesToolChoice3!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OpenAiResponsesToolChoice3' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.OpenAiResponsesToolChoice4? OpenAiResponsesToolChoice4 { get; init; }
 #else
@@ -159,6 +187,13 @@ namespace G
             value = OpenAiResponsesToolChoice4;
             return IsOpenAiResponsesToolChoice4;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.OpenAiResponsesToolChoice4 PickOpenAiResponsesToolChoice4() => IsOpenAiResponsesToolChoice4
+            ? OpenAiResponsesToolChoice4!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OpenAiResponsesToolChoice4' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

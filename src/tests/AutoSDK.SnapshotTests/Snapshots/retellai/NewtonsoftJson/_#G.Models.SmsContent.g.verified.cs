@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.SmsContentPredefined PickPredefined() => IsPredefined
+            ? Predefined!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Predefined' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.SmsContentInferred? Inferred { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = Inferred;
             return IsInferred;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.SmsContentInferred PickInferred() => IsInferred
+            ? Inferred!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Inferred' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public string PickMapValueVariant1() => IsMapValueVariant1
+            ? MapValueVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MapValueVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public int? MapValueVariant2 { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = MapValueVariant2;
             return IsMapValueVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public int PickMapValueVariant2() => IsMapValueVariant2
+            ? MapValueVariant2!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MapValueVariant2' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -103,6 +117,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public int PickMapValueVariant3() => IsMapValueVariant3
+            ? MapValueVariant3!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MapValueVariant3' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public bool? MapValueVariant4 { get; init; }
 #else
@@ -133,6 +154,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool PickMapValueVariant4() => IsMapValueVariant4
+            ? MapValueVariant4!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MapValueVariant4' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<string>? MapValueVariant5 { get; init; }
 #else
@@ -159,6 +187,13 @@ namespace G
             value = MapValueVariant5;
             return IsMapValueVariant5;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<string> PickMapValueVariant5() => IsMapValueVariant5
+            ? MapValueVariant5!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MapValueVariant5' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

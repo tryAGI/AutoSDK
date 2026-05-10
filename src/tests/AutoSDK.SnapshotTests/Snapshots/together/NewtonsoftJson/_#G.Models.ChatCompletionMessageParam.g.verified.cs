@@ -48,6 +48,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.ChatCompletionSystemMessageParam PickSystem() => IsSystem
+            ? System!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'System' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ChatCompletionUserMessageParam? User { get; init; }
 #else
@@ -74,6 +81,13 @@ namespace G
             value = User;
             return IsUser;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ChatCompletionUserMessageParam PickUser() => IsUser
+            ? User!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'User' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -108,6 +122,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.ChatCompletionAssistantMessageParam PickAssistant() => IsAssistant
+            ? Assistant!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Assistant' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ChatCompletionToolMessageParam? Tool { get; init; }
 #else
@@ -138,6 +159,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.ChatCompletionToolMessageParam PickTool() => IsTool
+            ? Tool!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Tool' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ChatCompletionFunctionMessageParam? Function { get; init; }
 #else
@@ -164,6 +192,13 @@ namespace G
             value = Function;
             return IsFunction;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ChatCompletionFunctionMessageParam PickFunction() => IsFunction
+            ? Function!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Function' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

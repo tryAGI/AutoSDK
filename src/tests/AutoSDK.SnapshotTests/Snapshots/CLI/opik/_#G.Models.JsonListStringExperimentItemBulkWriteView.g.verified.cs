@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public object PickJsonListStringExperimentItemBulkWriteViewVariant1() => IsJsonListStringExperimentItemBulkWriteViewVariant1
+            ? JsonListStringExperimentItemBulkWriteViewVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'JsonListStringExperimentItemBulkWriteViewVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<object>? JsonListStringExperimentItemBulkWriteViewVariant2 { get; init; }
 #else
@@ -73,6 +80,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::System.Collections.Generic.IList<object> PickJsonListStringExperimentItemBulkWriteViewVariant2() => IsJsonListStringExperimentItemBulkWriteViewVariant2
+            ? JsonListStringExperimentItemBulkWriteViewVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'JsonListStringExperimentItemBulkWriteViewVariant2' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public string? JsonListStringExperimentItemBulkWriteViewVariant3 { get; init; }
 #else
@@ -99,6 +113,13 @@ namespace G
             value = JsonListStringExperimentItemBulkWriteViewVariant3;
             return IsJsonListStringExperimentItemBulkWriteViewVariant3;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string PickJsonListStringExperimentItemBulkWriteViewVariant3() => IsJsonListStringExperimentItemBulkWriteViewVariant3
+            ? JsonListStringExperimentItemBulkWriteViewVariant3!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'JsonListStringExperimentItemBulkWriteViewVariant3' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

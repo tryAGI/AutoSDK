@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.ChatCompletionEvent PickEvent() => IsEvent
+            ? Event!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Event' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.StreamSentinel? Sentinel { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = Sentinel;
             return IsSentinel;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.StreamSentinel PickSentinel() => IsSentinel
+            ? Sentinel!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Sentinel' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

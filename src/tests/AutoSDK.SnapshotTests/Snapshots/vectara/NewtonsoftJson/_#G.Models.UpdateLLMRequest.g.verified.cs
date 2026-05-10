@@ -46,6 +46,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.UpdateOpenAILLMRequest PickOpenaiCompatible() => IsOpenaiCompatible
+            ? OpenaiCompatible!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OpenaiCompatible' but the value was {ToString()}.");
+
+        /// <summary>
         /// Request to update an OpenAI Responses API Large Language Model connection. All fields are optional.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -74,6 +81,13 @@ namespace G
             value = OpenaiResponses;
             return IsOpenaiResponses;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.UpdateOpenAIResponsesLLMRequest PickOpenaiResponses() => IsOpenaiResponses
+            ? OpenaiResponses!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OpenaiResponses' but the value was {ToString()}.");
 
         /// <summary>
         /// Request to update a Vertex AI Large Language Model connection. All fields are optional.
@@ -106,6 +120,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.UpdateVertexAILLMRequest PickVertexAi() => IsVertexAi
+            ? VertexAi!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'VertexAi' but the value was {ToString()}.");
+
+        /// <summary>
         /// Request to update an Anthropic Large Language Model connection. All fields are optional.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -134,6 +155,13 @@ namespace G
             value = Anthropic;
             return IsAnthropic;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.UpdateAnthropicLLMRequest PickAnthropic() => IsAnthropic
+            ? Anthropic!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Anthropic' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

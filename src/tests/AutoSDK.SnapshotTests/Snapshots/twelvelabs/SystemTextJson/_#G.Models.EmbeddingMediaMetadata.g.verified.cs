@@ -41,6 +41,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.EmbeddingImageMetadata PickEmbeddingImageMetadata() => IsEmbeddingImageMetadata
+            ? EmbeddingImageMetadata!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'EmbeddingImageMetadata' but the value was {ToString()}.");
+
+        /// <summary>
         /// Metadata for text-image embeddings
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -69,6 +76,13 @@ namespace G
             value = EmbeddingTextImageMetadata;
             return IsEmbeddingTextImageMetadata;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.EmbeddingTextImageMetadata PickEmbeddingTextImageMetadata() => IsEmbeddingTextImageMetadata
+            ? EmbeddingTextImageMetadata!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'EmbeddingTextImageMetadata' but the value was {ToString()}.");
 
         /// <summary>
         /// Metadata for audio embeddings
@@ -101,6 +115,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.EmbeddingAudioMetadata PickEmbeddingAudioMetadata() => IsEmbeddingAudioMetadata
+            ? EmbeddingAudioMetadata!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'EmbeddingAudioMetadata' but the value was {ToString()}.");
+
+        /// <summary>
         /// Metadata for video embeddings
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -131,6 +152,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.EmbeddingVideoMetadata PickEmbeddingVideoMetadata() => IsEmbeddingVideoMetadata
+            ? EmbeddingVideoMetadata!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'EmbeddingVideoMetadata' but the value was {ToString()}.");
+
+        /// <summary>
         /// Metadata for multi-input embeddings
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -159,6 +187,13 @@ namespace G
             value = EmbeddingMultiInputMetadata;
             return IsEmbeddingMultiInputMetadata;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.EmbeddingMultiInputMetadata PickEmbeddingMultiInputMetadata() => IsEmbeddingMultiInputMetadata
+            ? EmbeddingMultiInputMetadata!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'EmbeddingMultiInputMetadata' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

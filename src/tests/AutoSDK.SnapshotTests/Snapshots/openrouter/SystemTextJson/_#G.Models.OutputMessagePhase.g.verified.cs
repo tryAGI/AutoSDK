@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.OutputMessagePhase0 PickOutputMessagePhase0() => IsOutputMessagePhase0
+            ? OutputMessagePhase0!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OutputMessagePhase0' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.OutputMessagePhase1? OutputMessagePhase1 { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = OutputMessagePhase1;
             return IsOutputMessagePhase1;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.OutputMessagePhase1 PickOutputMessagePhase1() => IsOutputMessagePhase1
+            ? OutputMessagePhase1!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OutputMessagePhase1' but the value was {ToString()}.");
 
         /// <summary>
         /// Any type
@@ -99,6 +113,13 @@ namespace G
             value = OutputMessagePhaseVariant3;
             return IsOutputMessagePhaseVariant3;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public object PickOutputMessagePhaseVariant3() => IsOutputMessagePhaseVariant3
+            ? OutputMessagePhaseVariant3!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OutputMessagePhaseVariant3' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

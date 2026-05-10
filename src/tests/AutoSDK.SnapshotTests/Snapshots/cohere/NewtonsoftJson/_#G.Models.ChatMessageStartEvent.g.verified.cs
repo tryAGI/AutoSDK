@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.ChatStreamEventType PickStreamType() => IsStreamType
+            ? StreamType!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'StreamType' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ChatMessageStartEventLsegeq? Lsegeq { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = Lsegeq;
             return IsLsegeq;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ChatMessageStartEventLsegeq PickLsegeq() => IsLsegeq
+            ? Lsegeq!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Lsegeq' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

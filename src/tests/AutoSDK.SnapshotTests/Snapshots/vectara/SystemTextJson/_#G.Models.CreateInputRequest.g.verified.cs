@@ -46,6 +46,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.CreateInputMessageRequest PickInputMessage() => IsInputMessage
+            ? InputMessage!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'InputMessage' but the value was {ToString()}.");
+
+        /// <summary>
         /// Cancels the current agent operation.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -74,6 +81,13 @@ namespace G
             value = Interrupt;
             return IsInterrupt;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.CreateInterruptRequest PickInterrupt() => IsInterrupt
+            ? Interrupt!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Interrupt' but the value was {ToString()}.");
 
         /// <summary>
         /// Requests compaction of the session history. Can be sent while the session is processing<br/>
@@ -105,6 +119,13 @@ namespace G
             value = Compact;
             return IsCompact;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.CreateCompactRequest PickCompact() => IsCompact
+            ? Compact!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Compact' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

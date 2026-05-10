@@ -46,6 +46,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ASTStringNodeInput PickStringLiteral() => IsStringLiteral
+            ? StringLiteral!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'StringLiteral' but the value was {ToString()}.");
+
+        /// <summary>
         /// Number literal.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -74,6 +81,13 @@ namespace G
             value = NumberLiteral;
             return IsNumberLiteral;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ASTNumberNodeInput PickNumberLiteral() => IsNumberLiteral
+            ? NumberLiteral!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'NumberLiteral' but the value was {ToString()}.");
 
         /// <summary>
         /// Boolean literal.
@@ -106,6 +120,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ASTBooleanNodeInput PickBooleanLiteral() => IsBooleanLiteral
+            ? BooleanLiteral!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BooleanLiteral' but the value was {ToString()}.");
+
+        /// <summary>
         /// Prompt evaluated by an LLM to a boolean value.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -134,6 +155,13 @@ namespace G
             value = Llm;
             return IsLlm;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ASTLLMNodeInput PickLlm() => IsLlm
+            ? Llm!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Llm' but the value was {ToString()}.");
 
         /// <summary>
         /// Reference to a dynamic variable.
@@ -166,6 +194,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ASTDynamicVariableNodeInput PickDynamicVariable() => IsDynamicVariable
+            ? DynamicVariable!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'DynamicVariable' but the value was {ToString()}.");
+
+        /// <summary>
         /// Evaluates to true if any child is true.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -194,6 +229,13 @@ namespace G
             value = OrOperator;
             return IsOrOperator;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ASTOrOperatorNodeInput PickOrOperator() => IsOrOperator
+            ? OrOperator!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OrOperator' but the value was {ToString()}.");
 
         /// <summary>
         /// Evaluates to true if all children are true.
@@ -226,6 +268,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ASTAndOperatorNodeInput PickAndOperator() => IsAndOperator
+            ? AndOperator!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AndOperator' but the value was {ToString()}.");
+
+        /// <summary>
         /// Evaluates to true if the left value equals the right.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -254,6 +303,13 @@ namespace G
             value = EqOperator;
             return IsEqOperator;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ASTEqualsOperatorNodeInput PickEqOperator() => IsEqOperator
+            ? EqOperator!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'EqOperator' but the value was {ToString()}.");
 
         /// <summary>
         /// Evaluates to true if the left value does not equal the right.
@@ -286,6 +342,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ASTNotEqualsOperatorNodeInput PickNeqOperator() => IsNeqOperator
+            ? NeqOperator!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'NeqOperator' but the value was {ToString()}.");
+
+        /// <summary>
         /// Evaluates to true if the left value is greater than the right.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -314,6 +377,13 @@ namespace G
             value = GtOperator;
             return IsGtOperator;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ASTGreaterThanOperatorNodeInput PickGtOperator() => IsGtOperator
+            ? GtOperator!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'GtOperator' but the value was {ToString()}.");
 
         /// <summary>
         /// Evaluates to true if the left value is less than the right.
@@ -346,6 +416,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ASTLessThanOperatorNodeInput PickLtOperator() => IsLtOperator
+            ? LtOperator!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'LtOperator' but the value was {ToString()}.");
+
+        /// <summary>
         /// Evaluates to true if the left value is greater than or equal to the right.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -376,6 +453,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ASTGreaterThanOrEqualsOperatorNodeInput PickGteOperator() => IsGteOperator
+            ? GteOperator!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'GteOperator' but the value was {ToString()}.");
+
+        /// <summary>
         /// Evaluates to true if the left value is less than or equal to the right.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -404,6 +488,13 @@ namespace G
             value = LteOperator;
             return IsLteOperator;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ASTLessThanOrEqualsOperatorNodeInput PickLteOperator() => IsLteOperator
+            ? LteOperator!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'LteOperator' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

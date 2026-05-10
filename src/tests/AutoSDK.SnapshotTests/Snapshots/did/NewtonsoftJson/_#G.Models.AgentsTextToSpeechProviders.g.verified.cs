@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.AgentsTextToSpeechProvidersMicrosoft PickMicrosoft() => IsMicrosoft
+            ? Microsoft!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Microsoft' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.AgentsTextToSpeechProvidersElevenLabs? ElevenLabs { get; init; }
 #else
@@ -73,6 +80,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.AgentsTextToSpeechProvidersElevenLabs PickElevenLabs() => IsElevenLabs
+            ? ElevenLabs!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ElevenLabs' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.AgentsTextToSpeechProvidersOpenAI? OpenAI { get; init; }
 #else
@@ -99,6 +113,13 @@ namespace G
             value = OpenAI;
             return IsOpenAI;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.AgentsTextToSpeechProvidersOpenAI PickOpenAI() => IsOpenAI
+            ? OpenAI!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OpenAI' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

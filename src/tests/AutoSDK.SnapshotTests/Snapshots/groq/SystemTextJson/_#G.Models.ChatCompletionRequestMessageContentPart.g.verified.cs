@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.ChatCompletionRequestMessageContentPartText PickTextContentPart() => IsTextContentPart
+            ? TextContentPart!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'TextContentPart' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ChatCompletionRequestMessageContentPartImage? ImageContentPart { get; init; }
 #else
@@ -73,6 +80,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.ChatCompletionRequestMessageContentPartImage PickImageContentPart() => IsImageContentPart
+            ? ImageContentPart!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ImageContentPart' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ChatCompletionRequestMessageContentPartDocument? DocumentContentPart { get; init; }
 #else
@@ -99,6 +113,13 @@ namespace G
             value = DocumentContentPart;
             return IsDocumentContentPart;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ChatCompletionRequestMessageContentPartDocument PickDocumentContentPart() => IsDocumentContentPart
+            ? DocumentContentPart!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'DocumentContentPart' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

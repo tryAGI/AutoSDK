@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.ResponsesRequestPluginsItems0 PickResponsesRequestPluginsItems0() => IsResponsesRequestPluginsItems0
+            ? ResponsesRequestPluginsItems0!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResponsesRequestPluginsItems0' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ResponsesRequestPluginsItems1? ResponsesRequestPluginsItems1 { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = ResponsesRequestPluginsItems1;
             return IsResponsesRequestPluginsItems1;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ResponsesRequestPluginsItems1 PickResponsesRequestPluginsItems1() => IsResponsesRequestPluginsItems1
+            ? ResponsesRequestPluginsItems1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResponsesRequestPluginsItems1' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -103,6 +117,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.ResponsesRequestPluginsItems2 PickResponsesRequestPluginsItems2() => IsResponsesRequestPluginsItems2
+            ? ResponsesRequestPluginsItems2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResponsesRequestPluginsItems2' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ResponsesRequestPluginsItems3? ResponsesRequestPluginsItems3 { get; init; }
 #else
@@ -129,6 +150,13 @@ namespace G
             value = ResponsesRequestPluginsItems3;
             return IsResponsesRequestPluginsItems3;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ResponsesRequestPluginsItems3 PickResponsesRequestPluginsItems3() => IsResponsesRequestPluginsItems3
+            ? ResponsesRequestPluginsItems3!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResponsesRequestPluginsItems3' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -163,6 +191,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.ResponsesRequestPluginsItems4 PickResponsesRequestPluginsItems4() => IsResponsesRequestPluginsItems4
+            ? ResponsesRequestPluginsItems4!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResponsesRequestPluginsItems4' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ResponsesRequestPluginsItems5? ResponsesRequestPluginsItems5 { get; init; }
 #else
@@ -189,6 +224,13 @@ namespace G
             value = ResponsesRequestPluginsItems5;
             return IsResponsesRequestPluginsItems5;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ResponsesRequestPluginsItems5 PickResponsesRequestPluginsItems5() => IsResponsesRequestPluginsItems5
+            ? ResponsesRequestPluginsItems5!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResponsesRequestPluginsItems5' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

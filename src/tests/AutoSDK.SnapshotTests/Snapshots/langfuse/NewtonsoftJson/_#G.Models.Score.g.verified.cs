@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.AllOf<global::G.ScoreVariant12, global::G.NumericScore> PickScoreVariant1() => IsScoreVariant1
+            ? ScoreVariant1!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ScoreVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.AllOf<global::G.ScoreVariant22, global::G.CategoricalScore>? ScoreVariant2 { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = ScoreVariant2;
             return IsScoreVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.AllOf<global::G.ScoreVariant22, global::G.CategoricalScore> PickScoreVariant2() => IsScoreVariant2
+            ? ScoreVariant2!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ScoreVariant2' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -103,6 +117,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.AllOf<global::G.ScoreVariant32, global::G.BooleanScore> PickScoreVariant3() => IsScoreVariant3
+            ? ScoreVariant3!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ScoreVariant3' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.AllOf<global::G.ScoreVariant42, global::G.CorrectionScore>? ScoreVariant4 { get; init; }
 #else
@@ -129,6 +150,13 @@ namespace G
             value = ScoreVariant4;
             return IsScoreVariant4;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.AllOf<global::G.ScoreVariant42, global::G.CorrectionScore> PickScoreVariant4() => IsScoreVariant4
+            ? ScoreVariant4!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ScoreVariant4' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

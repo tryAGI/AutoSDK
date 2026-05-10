@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.ToolBase PickBase() => IsBase
+            ? Base!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Base' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.StructuredIndexingToolVariant2? StructuredIndexingToolVariant2 { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = StructuredIndexingToolVariant2;
             return IsStructuredIndexingToolVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.StructuredIndexingToolVariant2 PickStructuredIndexingToolVariant2() => IsStructuredIndexingToolVariant2
+            ? StructuredIndexingToolVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'StructuredIndexingToolVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

@@ -48,6 +48,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.ResearchEventDtoClassVariant1Variant1 PickResearchDefinition() => IsResearchDefinition
+            ? ResearchDefinition!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResearchDefinition' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ResearchEventDtoClassVariant1Variant2? ResearchOutput { get; init; }
 #else
@@ -74,6 +81,13 @@ namespace G
             value = ResearchOutput;
             return IsResearchOutput;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ResearchEventDtoClassVariant1Variant2 PickResearchOutput() => IsResearchOutput
+            ? ResearchOutput!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResearchOutput' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

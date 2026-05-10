@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.VoicemailActionPrompt PickPrompt() => IsPrompt
+            ? Prompt!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Prompt' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.VoicemailActionStaticText? StaticText { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = StaticText;
             return IsStaticText;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.VoicemailActionStaticText PickStaticText() => IsStaticText
+            ? StaticText!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'StaticText' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -103,6 +117,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.VoicemailActionHangup PickHangup() => IsHangup
+            ? Hangup!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Hangup' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.VoicemailActionBridgeTransfer? BridgeTransfer { get; init; }
 #else
@@ -129,6 +150,13 @@ namespace G
             value = BridgeTransfer;
             return IsBridgeTransfer;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.VoicemailActionBridgeTransfer PickBridgeTransfer() => IsBridgeTransfer
+            ? BridgeTransfer!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BridgeTransfer' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

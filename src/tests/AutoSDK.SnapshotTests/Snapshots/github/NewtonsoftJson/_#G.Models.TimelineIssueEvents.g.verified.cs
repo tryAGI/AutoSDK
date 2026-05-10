@@ -41,6 +41,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.LabeledIssueEvent PickLabeledIssueEvent() => IsLabeledIssueEvent
+            ? LabeledIssueEvent!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'LabeledIssueEvent' but the value was {ToString()}.");
+
+        /// <summary>
         /// Unlabeled Issue Event
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -69,6 +76,13 @@ namespace G
             value = UnlabeledIssueEvent;
             return IsUnlabeledIssueEvent;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.UnlabeledIssueEvent PickUnlabeledIssueEvent() => IsUnlabeledIssueEvent
+            ? UnlabeledIssueEvent!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'UnlabeledIssueEvent' but the value was {ToString()}.");
 
         /// <summary>
         /// Milestoned Issue Event
@@ -101,6 +115,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.MilestonedIssueEvent PickMilestonedIssueEvent() => IsMilestonedIssueEvent
+            ? MilestonedIssueEvent!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MilestonedIssueEvent' but the value was {ToString()}.");
+
+        /// <summary>
         /// Demilestoned Issue Event
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -129,6 +150,13 @@ namespace G
             value = DemilestonedIssueEvent;
             return IsDemilestonedIssueEvent;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.DemilestonedIssueEvent PickDemilestonedIssueEvent() => IsDemilestonedIssueEvent
+            ? DemilestonedIssueEvent!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'DemilestonedIssueEvent' but the value was {ToString()}.");
 
         /// <summary>
         /// Renamed Issue Event
@@ -161,6 +189,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.RenamedIssueEvent PickRenamedIssueEvent() => IsRenamedIssueEvent
+            ? RenamedIssueEvent!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'RenamedIssueEvent' but the value was {ToString()}.");
+
+        /// <summary>
         /// Review Requested Issue Event
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -189,6 +224,13 @@ namespace G
             value = ReviewRequestedIssueEvent;
             return IsReviewRequestedIssueEvent;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ReviewRequestedIssueEvent PickReviewRequestedIssueEvent() => IsReviewRequestedIssueEvent
+            ? ReviewRequestedIssueEvent!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ReviewRequestedIssueEvent' but the value was {ToString()}.");
 
         /// <summary>
         /// Review Request Removed Issue Event
@@ -221,6 +263,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ReviewRequestRemovedIssueEvent PickReviewRequestRemovedIssueEvent() => IsReviewRequestRemovedIssueEvent
+            ? ReviewRequestRemovedIssueEvent!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ReviewRequestRemovedIssueEvent' but the value was {ToString()}.");
+
+        /// <summary>
         /// Review Dismissed Issue Event
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -249,6 +298,13 @@ namespace G
             value = ReviewDismissedIssueEvent;
             return IsReviewDismissedIssueEvent;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ReviewDismissedIssueEvent PickReviewDismissedIssueEvent() => IsReviewDismissedIssueEvent
+            ? ReviewDismissedIssueEvent!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ReviewDismissedIssueEvent' but the value was {ToString()}.");
 
         /// <summary>
         /// Locked Issue Event
@@ -281,6 +337,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.LockedIssueEvent PickLockedIssueEvent() => IsLockedIssueEvent
+            ? LockedIssueEvent!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'LockedIssueEvent' but the value was {ToString()}.");
+
+        /// <summary>
         /// Added to Project Issue Event
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -309,6 +372,13 @@ namespace G
             value = AddedToProjectIssueEvent;
             return IsAddedToProjectIssueEvent;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.AddedToProjectIssueEvent PickAddedToProjectIssueEvent() => IsAddedToProjectIssueEvent
+            ? AddedToProjectIssueEvent!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AddedToProjectIssueEvent' but the value was {ToString()}.");
 
         /// <summary>
         /// Moved Column in Project Issue Event
@@ -341,6 +411,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.MovedColumnInProjectIssueEvent PickMovedColumnInProjectIssueEvent() => IsMovedColumnInProjectIssueEvent
+            ? MovedColumnInProjectIssueEvent!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MovedColumnInProjectIssueEvent' but the value was {ToString()}.");
+
+        /// <summary>
         /// Removed from Project Issue Event
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -369,6 +446,13 @@ namespace G
             value = RemovedFromProjectIssueEvent;
             return IsRemovedFromProjectIssueEvent;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.RemovedFromProjectIssueEvent PickRemovedFromProjectIssueEvent() => IsRemovedFromProjectIssueEvent
+            ? RemovedFromProjectIssueEvent!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'RemovedFromProjectIssueEvent' but the value was {ToString()}.");
 
         /// <summary>
         /// Converted Note to Issue Issue Event
@@ -401,6 +485,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ConvertedNoteToIssueIssueEvent PickConvertedNoteToIssueIssueEvent() => IsConvertedNoteToIssueIssueEvent
+            ? ConvertedNoteToIssueIssueEvent!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ConvertedNoteToIssueIssueEvent' but the value was {ToString()}.");
+
+        /// <summary>
         /// Timeline Comment Event
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -429,6 +520,13 @@ namespace G
             value = TimelineCommentEvent;
             return IsTimelineCommentEvent;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.TimelineCommentEvent PickTimelineCommentEvent() => IsTimelineCommentEvent
+            ? TimelineCommentEvent!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'TimelineCommentEvent' but the value was {ToString()}.");
 
         /// <summary>
         /// Timeline Cross Referenced Event
@@ -461,6 +559,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.TimelineCrossReferencedEvent PickTimelineCrossReferencedEvent() => IsTimelineCrossReferencedEvent
+            ? TimelineCrossReferencedEvent!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'TimelineCrossReferencedEvent' but the value was {ToString()}.");
+
+        /// <summary>
         /// Timeline Committed Event
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -489,6 +594,13 @@ namespace G
             value = TimelineCommittedEvent;
             return IsTimelineCommittedEvent;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.TimelineCommittedEvent PickTimelineCommittedEvent() => IsTimelineCommittedEvent
+            ? TimelineCommittedEvent!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'TimelineCommittedEvent' but the value was {ToString()}.");
 
         /// <summary>
         /// Timeline Reviewed Event
@@ -521,6 +633,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.TimelineReviewedEvent PickTimelineReviewedEvent() => IsTimelineReviewedEvent
+            ? TimelineReviewedEvent!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'TimelineReviewedEvent' but the value was {ToString()}.");
+
+        /// <summary>
         /// Timeline Line Commented Event
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -549,6 +668,13 @@ namespace G
             value = TimelineLineCommentedEvent;
             return IsTimelineLineCommentedEvent;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.TimelineLineCommentedEvent PickTimelineLineCommentedEvent() => IsTimelineLineCommentedEvent
+            ? TimelineLineCommentedEvent!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'TimelineLineCommentedEvent' but the value was {ToString()}.");
 
         /// <summary>
         /// Timeline Commit Commented Event
@@ -581,6 +707,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.TimelineCommitCommentedEvent PickTimelineCommitCommentedEvent() => IsTimelineCommitCommentedEvent
+            ? TimelineCommitCommentedEvent!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'TimelineCommitCommentedEvent' but the value was {ToString()}.");
+
+        /// <summary>
         /// Timeline Assigned Issue Event
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -609,6 +742,13 @@ namespace G
             value = TimelineAssignedIssueEvent;
             return IsTimelineAssignedIssueEvent;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.TimelineAssignedIssueEvent PickTimelineAssignedIssueEvent() => IsTimelineAssignedIssueEvent
+            ? TimelineAssignedIssueEvent!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'TimelineAssignedIssueEvent' but the value was {ToString()}.");
 
         /// <summary>
         /// Timeline Unassigned Issue Event
@@ -641,6 +781,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.TimelineUnassignedIssueEvent PickTimelineUnassignedIssueEvent() => IsTimelineUnassignedIssueEvent
+            ? TimelineUnassignedIssueEvent!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'TimelineUnassignedIssueEvent' but the value was {ToString()}.");
+
+        /// <summary>
         /// State Change Issue Event
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -669,6 +816,13 @@ namespace G
             value = StateChangeIssueEvent;
             return IsStateChangeIssueEvent;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.StateChangeIssueEvent PickStateChangeIssueEvent() => IsStateChangeIssueEvent
+            ? StateChangeIssueEvent!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'StateChangeIssueEvent' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

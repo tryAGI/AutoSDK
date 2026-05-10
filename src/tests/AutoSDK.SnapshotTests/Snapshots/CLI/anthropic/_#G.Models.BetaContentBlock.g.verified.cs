@@ -48,6 +48,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.BetaResponseTextBlock PickText() => IsText
+            ? Text!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.BetaResponseToolUseBlock? ToolUse { get; init; }
 #else
@@ -74,6 +81,13 @@ namespace G
             value = ToolUse;
             return IsToolUse;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.BetaResponseToolUseBlock PickToolUse() => IsToolUse
+            ? ToolUse!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ToolUse' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -108,6 +122,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.BetaResponseThinkingBlock PickThinking() => IsThinking
+            ? Thinking!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Thinking' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.BetaResponseRedactedThinkingBlock? RedactedThinking { get; init; }
 #else
@@ -134,6 +155,13 @@ namespace G
             value = RedactedThinking;
             return IsRedactedThinking;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.BetaResponseRedactedThinkingBlock PickRedactedThinking() => IsRedactedThinking
+            ? RedactedThinking!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'RedactedThinking' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

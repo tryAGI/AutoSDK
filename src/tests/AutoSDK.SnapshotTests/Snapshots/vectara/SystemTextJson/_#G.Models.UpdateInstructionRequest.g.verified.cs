@@ -44,6 +44,13 @@ namespace G
             value = Initial;
             return IsInitial;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.UpdateInitialInstructionRequest PickInitial() => IsInitial
+            ? Initial!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Initial' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.BaseLastMileConfigForm PickBase() => IsBase
+            ? Base!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Base' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.AnyOf<global::G.LastMileConfigFormVariant2Variant1, global::G.LastMileConfigFormVariant2Variant2>? LastMileConfigFormVariant2 { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = LastMileConfigFormVariant2;
             return IsLastMileConfigFormVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.AnyOf<global::G.LastMileConfigFormVariant2Variant1, global::G.LastMileConfigFormVariant2Variant2> PickLastMileConfigFormVariant2() => IsLastMileConfigFormVariant2
+            ? LastMileConfigFormVariant2!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'LastMileConfigFormVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

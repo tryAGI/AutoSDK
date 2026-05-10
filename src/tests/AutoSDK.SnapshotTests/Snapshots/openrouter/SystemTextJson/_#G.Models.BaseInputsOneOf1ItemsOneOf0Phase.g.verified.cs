@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.BaseInputsOneOf1ItemsOneOf0Phase0 PickBaseInputsOneOf1ItemsOneOf0Phase0() => IsBaseInputsOneOf1ItemsOneOf0Phase0
+            ? BaseInputsOneOf1ItemsOneOf0Phase0!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BaseInputsOneOf1ItemsOneOf0Phase0' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.BaseInputsOneOf1ItemsOneOf0Phase1? BaseInputsOneOf1ItemsOneOf0Phase1 { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = BaseInputsOneOf1ItemsOneOf0Phase1;
             return IsBaseInputsOneOf1ItemsOneOf0Phase1;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.BaseInputsOneOf1ItemsOneOf0Phase1 PickBaseInputsOneOf1ItemsOneOf0Phase1() => IsBaseInputsOneOf1ItemsOneOf0Phase1
+            ? BaseInputsOneOf1ItemsOneOf0Phase1!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BaseInputsOneOf1ItemsOneOf0Phase1' but the value was {ToString()}.");
 
         /// <summary>
         /// Any type
@@ -99,6 +113,13 @@ namespace G
             value = BaseInputsOneOf1ItemsOneOf0PhaseVariant3;
             return IsBaseInputsOneOf1ItemsOneOf0PhaseVariant3;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public object PickBaseInputsOneOf1ItemsOneOf0PhaseVariant3() => IsBaseInputsOneOf1ItemsOneOf0PhaseVariant3
+            ? BaseInputsOneOf1ItemsOneOf0PhaseVariant3!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BaseInputsOneOf1ItemsOneOf0PhaseVariant3' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

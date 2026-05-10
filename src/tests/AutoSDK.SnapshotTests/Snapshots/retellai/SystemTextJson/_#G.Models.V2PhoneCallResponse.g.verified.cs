@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.V2PhoneCallResponseVariant1 PickV2PhoneCallResponseVariant1() => IsV2PhoneCallResponseVariant1
+            ? V2PhoneCallResponseVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'V2PhoneCallResponseVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.V2CallBase? Base { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = Base;
             return IsBase;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.V2CallBase PickBase() => IsBase
+            ? Base!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Base' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

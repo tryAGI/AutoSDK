@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.PromptBlockDataNullishChat PickChat() => IsChat
+            ? Chat!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Chat' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.PromptBlockDataNullishCompletion? Completion { get; init; }
 #else
@@ -73,6 +80,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.PromptBlockDataNullishCompletion PickCompletion() => IsCompletion
+            ? Completion!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Completion' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public object? PromptBlockDataNullishVariant3 { get; init; }
 #else
@@ -99,6 +113,13 @@ namespace G
             value = PromptBlockDataNullishVariant3;
             return IsPromptBlockDataNullishVariant3;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public object PickPromptBlockDataNullishVariant3() => IsPromptBlockDataNullishVariant3
+            ? PromptBlockDataNullishVariant3!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'PromptBlockDataNullishVariant3' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

@@ -44,6 +44,13 @@ namespace G
             value = ActTwo;
             return IsActTwo;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.CreateCharacterPerformanceRequestActTwo PickActTwo() => IsActTwo
+            ? ActTwo!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ActTwo' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

@@ -46,6 +46,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ToolChoiceAuto PickAuto() => IsAuto
+            ? Auto!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Auto' but the value was {ToString()}.");
+
+        /// <summary>
         /// The model will use any available tools.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -76,6 +83,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ToolChoiceAny PickAny() => IsAny
+            ? Any!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Any' but the value was {ToString()}.");
+
+        /// <summary>
         /// The model will use the specified tool with `tool_choice.name`.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -104,6 +118,13 @@ namespace G
             value = Tool;
             return IsTool;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ToolChoiceTool PickTool() => IsTool
+            ? Tool!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Tool' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

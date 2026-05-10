@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.GenerationRequest PickGenerationRequest() => IsGenerationRequest
+            ? GenerationRequest!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'GenerationRequest' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CancelContextRequest? CancelContextRequest { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = CancelContextRequest;
             return IsCancelContextRequest;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.CancelContextRequest PickCancelContextRequest() => IsCancelContextRequest
+            ? CancelContextRequest!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CancelContextRequest' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

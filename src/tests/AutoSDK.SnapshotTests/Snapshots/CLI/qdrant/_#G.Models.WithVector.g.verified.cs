@@ -41,6 +41,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool PickWithVectorVariant1() => IsWithVectorVariant1
+            ? WithVectorVariant1!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'WithVectorVariant1' but the value was {ToString()}.");
+
+        /// <summary>
         /// Specify which vector to return
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -69,6 +76,13 @@ namespace G
             value = WithVectorVariant2;
             return IsWithVectorVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<string> PickWithVectorVariant2() => IsWithVectorVariant2
+            ? WithVectorVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'WithVectorVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

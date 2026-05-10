@@ -48,6 +48,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.CreateAnthropicCredentialDTO PickAnthropic() => IsAnthropic
+            ? Anthropic!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Anthropic' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CreateAnthropicBedrockCredentialDTO? AnthropicBedrock { get; init; }
 #else
@@ -74,6 +81,13 @@ namespace G
             value = AnthropicBedrock;
             return IsAnthropicBedrock;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.CreateAnthropicBedrockCredentialDTO PickAnthropicBedrock() => IsAnthropicBedrock
+            ? AnthropicBedrock!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AnthropicBedrock' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -108,6 +122,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.CreateAnyscaleCredentialDTO PickAnyscale() => IsAnyscale
+            ? Anyscale!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Anyscale' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CreateAssemblyAICredentialDTO? AssemblyAi { get; init; }
 #else
@@ -134,6 +155,13 @@ namespace G
             value = AssemblyAi;
             return IsAssemblyAi;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.CreateAssemblyAICredentialDTO PickAssemblyAi() => IsAssemblyAi
+            ? AssemblyAi!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AssemblyAi' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -168,6 +196,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.CreateAzureCredentialDTO PickAzure() => IsAzure
+            ? Azure!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Azure' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CreateAzureOpenAICredentialDTO? AzureOpenai { get; init; }
 #else
@@ -194,6 +229,13 @@ namespace G
             value = AzureOpenai;
             return IsAzureOpenai;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.CreateAzureOpenAICredentialDTO PickAzureOpenai() => IsAzureOpenai
+            ? AzureOpenai!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AzureOpenai' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -228,6 +270,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.CreateByoSipTrunkCredentialDTO PickByoSipTrunk() => IsByoSipTrunk
+            ? ByoSipTrunk!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ByoSipTrunk' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CreateCartesiaCredentialDTO? Cartesia { get; init; }
 #else
@@ -254,6 +303,13 @@ namespace G
             value = Cartesia;
             return IsCartesia;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.CreateCartesiaCredentialDTO PickCartesia() => IsCartesia
+            ? Cartesia!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Cartesia' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -288,6 +344,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.CreateCerebrasCredentialDTO PickCerebras() => IsCerebras
+            ? Cerebras!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Cerebras' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CreateCloudflareCredentialDTO? Cloudflare { get; init; }
 #else
@@ -314,6 +377,13 @@ namespace G
             value = Cloudflare;
             return IsCloudflare;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.CreateCloudflareCredentialDTO PickCloudflare() => IsCloudflare
+            ? Cloudflare!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Cloudflare' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -348,6 +418,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.CreateCustomLLMCredentialDTO PickCustomLlm() => IsCustomLlm
+            ? CustomLlm!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CustomLlm' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CreateDeepgramCredentialDTO? Deepgram { get; init; }
 #else
@@ -374,6 +451,13 @@ namespace G
             value = Deepgram;
             return IsDeepgram;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.CreateDeepgramCredentialDTO PickDeepgram() => IsDeepgram
+            ? Deepgram!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Deepgram' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -408,6 +492,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.CreateDeepInfraCredentialDTO PickDeepinfra() => IsDeepinfra
+            ? Deepinfra!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Deepinfra' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CreateDeepSeekCredentialDTO? DeepSeek { get; init; }
 #else
@@ -434,6 +525,13 @@ namespace G
             value = DeepSeek;
             return IsDeepSeek;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.CreateDeepSeekCredentialDTO PickDeepSeek() => IsDeepSeek
+            ? DeepSeek!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'DeepSeek' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -468,6 +566,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.CreateElevenLabsCredentialDTO PickElevenlabs() => IsElevenlabs
+            ? Elevenlabs!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Elevenlabs' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CreateGcpCredentialDTO? Gcp { get; init; }
 #else
@@ -494,6 +599,13 @@ namespace G
             value = Gcp;
             return IsGcp;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.CreateGcpCredentialDTO PickGcp() => IsGcp
+            ? Gcp!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Gcp' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -528,6 +640,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.CreateGladiaCredentialDTO PickGladia() => IsGladia
+            ? Gladia!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Gladia' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CreateGoHighLevelCredentialDTO? Gohighlevel { get; init; }
 #else
@@ -554,6 +673,13 @@ namespace G
             value = Gohighlevel;
             return IsGohighlevel;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.CreateGoHighLevelCredentialDTO PickGohighlevel() => IsGohighlevel
+            ? Gohighlevel!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Gohighlevel' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -588,6 +714,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.CreateGoogleCredentialDTO PickGoogle() => IsGoogle
+            ? Google!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Google' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CreateGroqCredentialDTO? Groq { get; init; }
 #else
@@ -614,6 +747,13 @@ namespace G
             value = Groq;
             return IsGroq;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.CreateGroqCredentialDTO PickGroq() => IsGroq
+            ? Groq!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Groq' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -648,6 +788,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.CreateHumeCredentialDTO PickHume() => IsHume
+            ? Hume!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Hume' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CreateInflectionAICredentialDTO? InflectionAi { get; init; }
 #else
@@ -674,6 +821,13 @@ namespace G
             value = InflectionAi;
             return IsInflectionAi;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.CreateInflectionAICredentialDTO PickInflectionAi() => IsInflectionAi
+            ? InflectionAi!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'InflectionAi' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -708,6 +862,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.CreateLangfuseCredentialDTO PickLangfuse() => IsLangfuse
+            ? Langfuse!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Langfuse' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CreateLmntCredentialDTO? Lmnt { get; init; }
 #else
@@ -734,6 +895,13 @@ namespace G
             value = Lmnt;
             return IsLmnt;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.CreateLmntCredentialDTO PickLmnt() => IsLmnt
+            ? Lmnt!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Lmnt' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -768,6 +936,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.CreateMakeCredentialDTO PickMake() => IsMake
+            ? Make!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Make' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CreateMistralCredentialDTO? Mistral { get; init; }
 #else
@@ -794,6 +969,13 @@ namespace G
             value = Mistral;
             return IsMistral;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.CreateMistralCredentialDTO PickMistral() => IsMistral
+            ? Mistral!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Mistral' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -828,6 +1010,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.CreateNeuphonicCredentialDTO PickNeuphonic() => IsNeuphonic
+            ? Neuphonic!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Neuphonic' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CreateOpenAICredentialDTO? Openai { get; init; }
 #else
@@ -854,6 +1043,13 @@ namespace G
             value = Openai;
             return IsOpenai;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.CreateOpenAICredentialDTO PickOpenai() => IsOpenai
+            ? Openai!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Openai' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -888,6 +1084,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.CreateOpenRouterCredentialDTO PickOpenrouter() => IsOpenrouter
+            ? Openrouter!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Openrouter' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CreatePerplexityAICredentialDTO? PerplexityAi { get; init; }
 #else
@@ -914,6 +1117,13 @@ namespace G
             value = PerplexityAi;
             return IsPerplexityAi;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.CreatePerplexityAICredentialDTO PickPerplexityAi() => IsPerplexityAi
+            ? PerplexityAi!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'PerplexityAi' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -948,6 +1158,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.CreatePlayHTCredentialDTO PickPlayht() => IsPlayht
+            ? Playht!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Playht' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CreateRimeAICredentialDTO? RimeAi { get; init; }
 #else
@@ -974,6 +1191,13 @@ namespace G
             value = RimeAi;
             return IsRimeAi;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.CreateRimeAICredentialDTO PickRimeAi() => IsRimeAi
+            ? RimeAi!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'RimeAi' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -1008,6 +1232,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.CreateRunpodCredentialDTO PickRunpod() => IsRunpod
+            ? Runpod!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Runpod' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CreateS3CredentialDTO? S3 { get; init; }
 #else
@@ -1034,6 +1265,13 @@ namespace G
             value = S3;
             return IsS3;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.CreateS3CredentialDTO PickS3() => IsS3
+            ? S3!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'S3' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -1068,6 +1306,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.CreateSmallestAICredentialDTO PickSmallestAi() => IsSmallestAi
+            ? SmallestAi!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SmallestAi' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CreateSpeechmaticsCredentialDTO? Speechmatics { get; init; }
 #else
@@ -1094,6 +1339,13 @@ namespace G
             value = Speechmatics;
             return IsSpeechmatics;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.CreateSpeechmaticsCredentialDTO PickSpeechmatics() => IsSpeechmatics
+            ? Speechmatics!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Speechmatics' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -1128,6 +1380,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.CreateSonioxCredentialDTO PickSoniox() => IsSoniox
+            ? Soniox!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Soniox' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CreateSupabaseCredentialDTO? Supabase { get; init; }
 #else
@@ -1154,6 +1413,13 @@ namespace G
             value = Supabase;
             return IsSupabase;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.CreateSupabaseCredentialDTO PickSupabase() => IsSupabase
+            ? Supabase!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Supabase' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -1188,6 +1454,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.CreateTavusCredentialDTO PickTavus() => IsTavus
+            ? Tavus!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Tavus' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CreateTogetherAICredentialDTO? TogetherAi { get; init; }
 #else
@@ -1214,6 +1487,13 @@ namespace G
             value = TogetherAi;
             return IsTogetherAi;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.CreateTogetherAICredentialDTO PickTogetherAi() => IsTogetherAi
+            ? TogetherAi!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'TogetherAi' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -1248,6 +1528,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.CreateTrieveCredentialDTO PickTrieve() => IsTrieve
+            ? Trieve!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Trieve' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CreateTwilioCredentialDTO? Twilio { get; init; }
 #else
@@ -1274,6 +1561,13 @@ namespace G
             value = Twilio;
             return IsTwilio;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.CreateTwilioCredentialDTO PickTwilio() => IsTwilio
+            ? Twilio!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Twilio' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -1308,6 +1602,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.CreateVonageCredentialDTO PickVonage() => IsVonage
+            ? Vonage!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Vonage' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CreateWebhookCredentialDTO? Webhook { get; init; }
 #else
@@ -1334,6 +1635,13 @@ namespace G
             value = Webhook;
             return IsWebhook;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.CreateWebhookCredentialDTO PickWebhook() => IsWebhook
+            ? Webhook!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Webhook' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -1368,6 +1676,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.CreateCustomCredentialDTO PickCustomCredential() => IsCustomCredential
+            ? CustomCredential!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CustomCredential' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CreateXAiCredentialDTO? Xai { get; init; }
 #else
@@ -1394,6 +1709,13 @@ namespace G
             value = Xai;
             return IsXai;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.CreateXAiCredentialDTO PickXai() => IsXai
+            ? Xai!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Xai' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -1428,6 +1750,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.CreateGoogleCalendarOAuth2ClientCredentialDTO PickGoogleCalendarOauth2Client() => IsGoogleCalendarOauth2Client
+            ? GoogleCalendarOauth2Client!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'GoogleCalendarOauth2Client' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CreateGoogleCalendarOAuth2AuthorizationCredentialDTO? GoogleCalendarOauth2Authorization { get; init; }
 #else
@@ -1454,6 +1783,13 @@ namespace G
             value = GoogleCalendarOauth2Authorization;
             return IsGoogleCalendarOauth2Authorization;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.CreateGoogleCalendarOAuth2AuthorizationCredentialDTO PickGoogleCalendarOauth2Authorization() => IsGoogleCalendarOauth2Authorization
+            ? GoogleCalendarOauth2Authorization!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'GoogleCalendarOauth2Authorization' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -1488,6 +1824,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.CreateGoogleSheetsOAuth2AuthorizationCredentialDTO PickGoogleSheetsOauth2Authorization() => IsGoogleSheetsOauth2Authorization
+            ? GoogleSheetsOauth2Authorization!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'GoogleSheetsOauth2Authorization' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CreateSlackOAuth2AuthorizationCredentialDTO? SlackOauth2Authorization { get; init; }
 #else
@@ -1514,6 +1857,13 @@ namespace G
             value = SlackOauth2Authorization;
             return IsSlackOauth2Authorization;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.CreateSlackOAuth2AuthorizationCredentialDTO PickSlackOauth2Authorization() => IsSlackOauth2Authorization
+            ? SlackOauth2Authorization!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SlackOauth2Authorization' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -1548,6 +1898,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.CreateGoHighLevelMCPCredentialDTO PickGhlOauth2Authorization() => IsGhlOauth2Authorization
+            ? GhlOauth2Authorization!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'GhlOauth2Authorization' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CreateInworldCredentialDTO? Inworld { get; init; }
 #else
@@ -1574,6 +1931,13 @@ namespace G
             value = Inworld;
             return IsInworld;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.CreateInworldCredentialDTO PickInworld() => IsInworld
+            ? Inworld!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Inworld' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -1608,6 +1972,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.CreateMinimaxCredentialDTO PickMinimax() => IsMinimax
+            ? Minimax!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Minimax' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CreateWellSaidCredentialDTO? Wellsaid { get; init; }
 #else
@@ -1634,6 +2005,13 @@ namespace G
             value = Wellsaid;
             return IsWellsaid;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.CreateWellSaidCredentialDTO PickWellsaid() => IsWellsaid
+            ? Wellsaid!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Wellsaid' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -1668,6 +2046,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.CreateEmailCredentialDTO PickEmail() => IsEmail
+            ? Email!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Email' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CreateSlackWebhookCredentialDTO? SlackWebhook { get; init; }
 #else
@@ -1694,6 +2079,13 @@ namespace G
             value = SlackWebhook;
             return IsSlackWebhook;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.CreateSlackWebhookCredentialDTO PickSlackWebhook() => IsSlackWebhook
+            ? SlackWebhook!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SlackWebhook' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

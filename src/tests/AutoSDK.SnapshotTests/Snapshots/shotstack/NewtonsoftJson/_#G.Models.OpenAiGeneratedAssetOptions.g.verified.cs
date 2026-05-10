@@ -47,6 +47,13 @@ namespace G
             value = TextGenerator;
             return IsTextGenerator;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.OpenAiTextGeneratorOptions PickTextGenerator() => IsTextGenerator
+            ? TextGenerator!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'TextGenerator' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

@@ -46,6 +46,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.SessionStartedPayload PickSessionStarted() => IsSessionStarted
+            ? SessionStarted!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SessionStarted' but the value was {ToString()}.");
+
+        /// <summary>
         /// Event sent when a partial transcript is available.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -74,6 +81,13 @@ namespace G
             value = PartialTranscript;
             return IsPartialTranscript;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.PartialTranscriptPayload PickPartialTranscript() => IsPartialTranscript
+            ? PartialTranscript!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'PartialTranscript' but the value was {ToString()}.");
 
         /// <summary>
         /// Event sent when a transcript is committed.
@@ -106,6 +120,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.CommittedTranscriptPayload PickCommittedTranscript() => IsCommittedTranscript
+            ? CommittedTranscript!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CommittedTranscript' but the value was {ToString()}.");
+
+        /// <summary>
         /// Error event.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -134,6 +155,13 @@ namespace G
             value = Error;
             return IsError;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ErrorPayload PickError() => IsError
+            ? Error!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Error' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

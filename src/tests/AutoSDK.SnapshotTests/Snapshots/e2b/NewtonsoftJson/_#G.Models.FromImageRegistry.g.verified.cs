@@ -48,6 +48,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.AWSRegistry PickAws() => IsAws
+            ? Aws!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Aws' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.GCPRegistry? Gcp { get; init; }
 #else
@@ -78,6 +85,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.GCPRegistry PickGcp() => IsGcp
+            ? Gcp!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Gcp' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.GeneralRegistry? Registry { get; init; }
 #else
@@ -104,6 +118,13 @@ namespace G
             value = Registry;
             return IsRegistry;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.GeneralRegistry PickRegistry() => IsRegistry
+            ? Registry!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Registry' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

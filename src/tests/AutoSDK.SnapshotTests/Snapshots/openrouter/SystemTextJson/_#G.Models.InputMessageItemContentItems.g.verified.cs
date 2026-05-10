@@ -41,6 +41,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.InputText PickInputText() => IsInputText
+            ? InputText!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'InputText' but the value was {ToString()}.");
+
+        /// <summary>
         /// Image input content item
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -69,6 +76,13 @@ namespace G
             value = InputMessageItemContentItems1;
             return IsInputMessageItemContentItems1;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.InputMessageItemContentItems1 PickInputMessageItemContentItems1() => IsInputMessageItemContentItems1
+            ? InputMessageItemContentItems1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'InputMessageItemContentItems1' but the value was {ToString()}.");
 
         /// <summary>
         /// File input content item
@@ -101,6 +115,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.InputFile PickInputFile() => IsInputFile
+            ? InputFile!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'InputFile' but the value was {ToString()}.");
+
+        /// <summary>
         /// Audio input content item
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -131,6 +152,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.InputAudio PickInputAudio() => IsInputAudio
+            ? InputAudio!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'InputAudio' but the value was {ToString()}.");
+
+        /// <summary>
         /// Video input content item
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -159,6 +187,13 @@ namespace G
             value = InputVideo;
             return IsInputVideo;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.InputVideo PickInputVideo() => IsInputVideo
+            ? InputVideo!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'InputVideo' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

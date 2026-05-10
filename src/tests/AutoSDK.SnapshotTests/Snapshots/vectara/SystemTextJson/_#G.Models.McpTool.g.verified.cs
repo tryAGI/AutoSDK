@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.ToolBase PickBase() => IsBase
+            ? Base!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Base' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.McpToolVariant2? McpToolVariant2 { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = McpToolVariant2;
             return IsMcpToolVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.McpToolVariant2 PickMcpToolVariant2() => IsMcpToolVariant2
+            ? McpToolVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'McpToolVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

@@ -41,6 +41,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.CreateDocumentDtoVariant1 PickCreateDocumentDtoVariant1() => IsCreateDocumentDtoVariant1
+            ? CreateDocumentDtoVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CreateDocumentDtoVariant1' but the value was {ToString()}.");
+
+        /// <summary>
         /// Construct a type with the properties of T except for those in type K.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -69,6 +76,13 @@ namespace G
             value = CreateDocumentDtoVariant2;
             return IsCreateDocumentDtoVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.CreateDocumentDtoVariant2 PickCreateDocumentDtoVariant2() => IsCreateDocumentDtoVariant2
+            ? CreateDocumentDtoVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CreateDocumentDtoVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.NodeBaseCommon PickCommon() => IsCommon
+            ? Common!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Common' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.NodeBaseVariant2? NodeBaseVariant2 { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = NodeBaseVariant2;
             return IsNodeBaseVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.NodeBaseVariant2 PickNodeBaseVariant2() => IsNodeBaseVariant2
+            ? NodeBaseVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'NodeBaseVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

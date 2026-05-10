@@ -46,6 +46,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.TranscriptTextDeltaEvent PickTranscriptTextDelta() => IsTranscriptTextDelta
+            ? TranscriptTextDelta!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'TranscriptTextDelta' but the value was {ToString()}.");
+
+        /// <summary>
         /// Emitted when the transcription is complete. Contains the complete transcription text. Only emitted when you [create a transcription](/docs/api-reference/audio/create-transcription) with the `Stream` parameter set to `true`.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -74,6 +81,13 @@ namespace G
             value = TranscriptTextDone;
             return IsTranscriptTextDone;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.TranscriptTextDoneEvent PickTranscriptTextDone() => IsTranscriptTextDone
+            ? TranscriptTextDone!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'TranscriptTextDone' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

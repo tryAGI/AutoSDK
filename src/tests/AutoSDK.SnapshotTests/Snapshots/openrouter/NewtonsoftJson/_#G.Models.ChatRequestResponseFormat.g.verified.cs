@@ -41,6 +41,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ChatFormatTextConfig PickChatFormatTextConfig() => IsChatFormatTextConfig
+            ? ChatFormatTextConfig!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ChatFormatTextConfig' but the value was {ToString()}.");
+
+        /// <summary>
         /// JSON object response format
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -69,6 +76,13 @@ namespace G
             value = FormatJsonObjectConfig;
             return IsFormatJsonObjectConfig;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.FormatJsonObjectConfig PickFormatJsonObjectConfig() => IsFormatJsonObjectConfig
+            ? FormatJsonObjectConfig!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FormatJsonObjectConfig' but the value was {ToString()}.");
 
         /// <summary>
         /// JSON Schema response format for structured outputs
@@ -101,6 +115,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ChatFormatJsonSchemaConfig PickChatFormatJsonSchemaConfig() => IsChatFormatJsonSchemaConfig
+            ? ChatFormatJsonSchemaConfig!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ChatFormatJsonSchemaConfig' but the value was {ToString()}.");
+
+        /// <summary>
         /// Custom grammar response format
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -131,6 +152,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ChatFormatGrammarConfig PickChatFormatGrammarConfig() => IsChatFormatGrammarConfig
+            ? ChatFormatGrammarConfig!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ChatFormatGrammarConfig' but the value was {ToString()}.");
+
+        /// <summary>
         /// Python code response format
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -159,6 +187,13 @@ namespace G
             value = ChatFormatPythonConfig;
             return IsChatFormatPythonConfig;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ChatFormatPythonConfig PickChatFormatPythonConfig() => IsChatFormatPythonConfig
+            ? ChatFormatPythonConfig!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ChatFormatPythonConfig' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

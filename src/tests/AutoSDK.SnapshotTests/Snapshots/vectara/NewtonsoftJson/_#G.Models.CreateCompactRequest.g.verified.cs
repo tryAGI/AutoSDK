@@ -44,6 +44,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.CreateInputRequestBase PickInputBase() => IsInputBase
+            ? InputBase!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'InputBase' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CreateCompactRequestVariant2? CreateCompactRequestVariant2 { get; init; }
 #else
@@ -70,6 +77,13 @@ namespace G
             value = CreateCompactRequestVariant2;
             return IsCreateCompactRequestVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.CreateCompactRequestVariant2 PickCreateCompactRequestVariant2() => IsCreateCompactRequestVariant2
+            ? CreateCompactRequestVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CreateCompactRequestVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

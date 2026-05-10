@@ -48,6 +48,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.ResearchEventDtoClassVariant2Variant1 PickPlanDefinition() => IsPlanDefinition
+            ? PlanDefinition!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'PlanDefinition' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ResearchEventDtoClassVariant2Variant2? PlanOperation { get; init; }
 #else
@@ -78,6 +85,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.ResearchEventDtoClassVariant2Variant2 PickPlanOperation() => IsPlanOperation
+            ? PlanOperation!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'PlanOperation' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ResearchEventDtoClassVariant2Variant3? PlanOutput { get; init; }
 #else
@@ -104,6 +118,13 @@ namespace G
             value = PlanOutput;
             return IsPlanOutput;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ResearchEventDtoClassVariant2Variant3 PickPlanOutput() => IsPlanOutput
+            ? PlanOutput!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'PlanOutput' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public string PickCreateModelStatusVariant1() => IsCreateModelStatusVariant1
+            ? CreateModelStatusVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CreateModelStatusVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CreateModelStatusEnum? Enum { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = Enum;
             return IsEnum;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.CreateModelStatusEnum PickEnum() => IsEnum
+            ? Enum!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Enum' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

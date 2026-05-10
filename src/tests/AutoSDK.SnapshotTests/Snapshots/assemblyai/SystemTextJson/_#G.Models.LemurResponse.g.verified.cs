@@ -42,6 +42,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.LemurStringResponse PickString() => IsString
+            ? String!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'String' but the value was {ToString()}.");
+
+        /// <summary>
         /// LeMUR question &amp; answer response<br/>
         /// Example: {"request_id":"5e1b27c2-691f-4414-8bc5-f14678442f9e","response":[{"answer":"CA, US","question":"Where are there wildfires?"},{"answer":"yes","question":"Is global warming affecting wildfires?"}],"usage":{"input_tokens":27,"output_tokens":3}}
         /// </summary>
@@ -71,6 +78,13 @@ namespace G
             value = QuestionAnswer;
             return IsQuestionAnswer;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.LemurQuestionAnswerResponse PickQuestionAnswer() => IsQuestionAnswer
+            ? QuestionAnswer!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'QuestionAnswer' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

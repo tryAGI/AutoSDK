@@ -47,6 +47,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.InlineDynamicVectaraToolConfiguration PickDynamicVectara() => IsDynamicVectara
+            ? DynamicVectara!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'DynamicVectara' but the value was {ToString()}.");
+
+        /// <summary>
         /// An MCP tool configuration defined inline in the agent.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -75,6 +82,13 @@ namespace G
             value = Mcp;
             return IsMcp;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.InlineMcpToolConfiguration PickMcp() => IsMcp
+            ? Mcp!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Mcp' but the value was {ToString()}.");
 
         /// <summary>
         /// A corpora search tool configuration defined inline in the agent.
@@ -107,6 +121,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.InlineCorporaSearchToolConfiguration PickCorporaSearch() => IsCorporaSearch
+            ? CorporaSearch!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CorporaSearch' but the value was {ToString()}.");
+
+        /// <summary>
         /// A web search tool configuration defined inline in the agent.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -135,6 +156,13 @@ namespace G
             value = WebSearch;
             return IsWebSearch;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.InlineWebSearchToolConfiguration PickWebSearch() => IsWebSearch
+            ? WebSearch!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'WebSearch' but the value was {ToString()}.");
 
         /// <summary>
         /// A web get tool configuration defined inline in the agent for fetching content from URLs.
@@ -167,6 +195,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.InlineWebGetToolConfiguration PickWebGet() => IsWebGet
+            ? WebGet!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'WebGet' but the value was {ToString()}.");
+
+        /// <summary>
         /// A lambda tool configuration defined inline in the agent for executing user-defined functions.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -195,6 +230,13 @@ namespace G
             value = Lambda;
             return IsLambda;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.InlineLambdaToolConfiguration PickLambda() => IsLambda
+            ? Lambda!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Lambda' but the value was {ToString()}.");
 
         /// <summary>
         /// A structured indexing tool configuration defined inline in the agent for indexing into the Vectara platform.
@@ -227,6 +269,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.InlineStructuredIndexingToolConfiguration PickStructuredIndexing() => IsStructuredIndexing
+            ? StructuredIndexing!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'StructuredIndexing' but the value was {ToString()}.");
+
+        /// <summary>
         /// A sub-agent tool configuration defined inline in the agent for invoking specialized sub-agents.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -255,6 +304,13 @@ namespace G
             value = SubAgent;
             return IsSubAgent;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.InlineSubAgentToolConfiguration PickSubAgent() => IsSubAgent
+            ? SubAgent!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SubAgent' but the value was {ToString()}.");
 
         /// <summary>
         /// An artifact read tool configuration defined inline in the agent for reading artifacts from the session workspace.
@@ -287,6 +343,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.InlineArtifactReadToolConfiguration PickArtifactRead() => IsArtifactRead
+            ? ArtifactRead!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ArtifactRead' but the value was {ToString()}.");
+
+        /// <summary>
         /// An artifact grep tool configuration defined inline in the agent for searching through artifact content.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -315,6 +378,13 @@ namespace G
             value = ArtifactGrep;
             return IsArtifactGrep;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.InlineArtifactGrepToolConfiguration PickArtifactGrep() => IsArtifactGrep
+            ? ArtifactGrep!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ArtifactGrep' but the value was {ToString()}.");
 
         /// <summary>
         /// An image read tool configuration defined inline in the agent for loading images into the conversation context.
@@ -347,6 +417,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.InlineImageReadToolConfiguration PickImageRead() => IsImageRead
+            ? ImageRead!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ImageRead' but the value was {ToString()}.");
+
+        /// <summary>
         /// A document conversion tool configuration defined inline in the agent for converting document artifacts to various formats.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -377,6 +454,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.InlineDocumentConversionToolConfiguration PickDocumentConversion() => IsDocumentConversion
+            ? DocumentConversion!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'DocumentConversion' but the value was {ToString()}.");
+
+        /// <summary>
         /// A get document text tool configuration defined inline in the agent for fetching document text content from a corpus.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -405,6 +489,13 @@ namespace G
             value = GetDocumentText;
             return IsGetDocumentText;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.InlineGetDocumentTextToolConfiguration PickGetDocumentText() => IsGetDocumentText
+            ? GetDocumentText!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'GetDocumentText' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

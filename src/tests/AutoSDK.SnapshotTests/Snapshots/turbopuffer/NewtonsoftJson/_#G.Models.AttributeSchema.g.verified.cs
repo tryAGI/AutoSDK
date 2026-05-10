@@ -41,6 +41,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public string PickAttributeTypeName() => IsAttributeTypeName
+            ? AttributeTypeName!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AttributeTypeName' but the value was {ToString()}.");
+
+        /// <summary>
         /// Detailed configuration for an attribute attached to a document.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -69,6 +76,13 @@ namespace G
             value = Config;
             return IsConfig;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.AttributeSchemaConfig PickConfig() => IsConfig
+            ? Config!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Config' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

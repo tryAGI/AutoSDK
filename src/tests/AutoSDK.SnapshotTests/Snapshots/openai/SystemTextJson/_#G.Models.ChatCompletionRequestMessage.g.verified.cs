@@ -43,6 +43,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ChatCompletionRequestDeveloperMessage PickDeveloperMessage() => IsDeveloperMessage
+            ? DeveloperMessage!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'DeveloperMessage' but the value was {ToString()}.");
+
+        /// <summary>
         /// Developer-provided instructions that the model should follow, regardless of<br/>
         /// messages sent by the user. With o1 models and newer, use `developer` messages<br/>
         /// for this purpose instead.
@@ -75,6 +82,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ChatCompletionRequestSystemMessage PickSystemMessage() => IsSystemMessage
+            ? SystemMessage!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SystemMessage' but the value was {ToString()}.");
+
+        /// <summary>
         /// Messages sent by an end user, containing prompts or additional context<br/>
         /// information.
         /// </summary>
@@ -104,6 +118,13 @@ namespace G
             value = UserMessage;
             return IsUserMessage;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ChatCompletionRequestUserMessage PickUserMessage() => IsUserMessage
+            ? UserMessage!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'UserMessage' but the value was {ToString()}.");
 
         /// <summary>
         /// Messages sent by the model in response to user messages.
@@ -138,6 +159,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.ChatCompletionRequestAssistantMessage PickAssistantMessage() => IsAssistantMessage
+            ? AssistantMessage!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AssistantMessage' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ChatCompletionRequestToolMessage? ToolMessage { get; init; }
 #else
@@ -168,6 +196,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.ChatCompletionRequestToolMessage PickToolMessage() => IsToolMessage
+            ? ToolMessage!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ToolMessage' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ChatCompletionRequestFunctionMessage? FunctionMessage { get; init; }
 #else
@@ -194,6 +229,13 @@ namespace G
             value = FunctionMessage;
             return IsFunctionMessage;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ChatCompletionRequestFunctionMessage PickFunctionMessage() => IsFunctionMessage
+            ? FunctionMessage!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FunctionMessage' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

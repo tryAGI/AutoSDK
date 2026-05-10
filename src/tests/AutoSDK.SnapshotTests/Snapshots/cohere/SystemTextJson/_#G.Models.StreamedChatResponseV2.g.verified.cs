@@ -46,6 +46,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ChatMessageStartEvent PickMessageStart() => IsMessageStart
+            ? MessageStart!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MessageStart' but the value was {ToString()}.");
+
+        /// <summary>
         /// A streamed delta event which signifies that a new content block has started.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -74,6 +81,13 @@ namespace G
             value = ContentStart;
             return IsContentStart;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ChatContentStartEvent PickContentStart() => IsContentStart
+            ? ContentStart!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ContentStart' but the value was {ToString()}.");
 
         /// <summary>
         /// A streamed delta event which contains a delta of chat text content.
@@ -106,6 +120,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ChatContentDeltaEvent PickContentDelta() => IsContentDelta
+            ? ContentDelta!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ContentDelta' but the value was {ToString()}.");
+
+        /// <summary>
         /// A streamed delta event which signifies that the content block has ended.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -134,6 +155,13 @@ namespace G
             value = ContentEnd;
             return IsContentEnd;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ChatContentEndEvent PickContentEnd() => IsContentEnd
+            ? ContentEnd!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ContentEnd' but the value was {ToString()}.");
 
         /// <summary>
         /// A streamed event which contains a delta of tool plan text.
@@ -166,6 +194,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ChatToolPlanDeltaEvent PickToolPlanDelta() => IsToolPlanDelta
+            ? ToolPlanDelta!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ToolPlanDelta' but the value was {ToString()}.");
+
+        /// <summary>
         /// A streamed event delta which signifies a tool call has started streaming.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -194,6 +229,13 @@ namespace G
             value = ToolCallStart;
             return IsToolCallStart;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ChatToolCallStartEvent PickToolCallStart() => IsToolCallStart
+            ? ToolCallStart!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ToolCallStart' but the value was {ToString()}.");
 
         /// <summary>
         /// A streamed event delta which signifies a delta in tool call arguments.
@@ -226,6 +268,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ChatToolCallDeltaEvent PickToolCallDelta() => IsToolCallDelta
+            ? ToolCallDelta!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ToolCallDelta' but the value was {ToString()}.");
+
+        /// <summary>
         /// A streamed event delta which signifies a tool call has finished streaming.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -254,6 +303,13 @@ namespace G
             value = ToolCallEnd;
             return IsToolCallEnd;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ChatToolCallEndEvent PickToolCallEnd() => IsToolCallEnd
+            ? ToolCallEnd!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ToolCallEnd' but the value was {ToString()}.");
 
         /// <summary>
         /// A streamed event which signifies that the chat message has ended.
@@ -288,6 +344,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.ChatMessageEndEvent PickMessageEnd() => IsMessageEnd
+            ? MessageEnd!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MessageEnd' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ChatDebugEvent? Debug { get; init; }
 #else
@@ -314,6 +377,13 @@ namespace G
             value = Debug;
             return IsDebug;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ChatDebugEvent PickDebug() => IsDebug
+            ? Debug!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Debug' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

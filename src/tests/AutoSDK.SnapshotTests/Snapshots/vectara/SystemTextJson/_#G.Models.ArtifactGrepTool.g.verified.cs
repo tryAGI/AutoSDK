@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.ToolBase PickBase() => IsBase
+            ? Base!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Base' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ArtifactGrepToolVariant2? ArtifactGrepToolVariant2 { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = ArtifactGrepToolVariant2;
             return IsArtifactGrepToolVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ArtifactGrepToolVariant2 PickArtifactGrepToolVariant2() => IsArtifactGrepToolVariant2
+            ? ArtifactGrepToolVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ArtifactGrepToolVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

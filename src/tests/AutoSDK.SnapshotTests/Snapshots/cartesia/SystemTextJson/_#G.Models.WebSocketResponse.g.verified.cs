@@ -48,6 +48,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.WebSocketResponseVariant1 PickChunk() => IsChunk
+            ? Chunk!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Chunk' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.WebSocketResponseVariant2? FlushDone { get; init; }
 #else
@@ -74,6 +81,13 @@ namespace G
             value = FlushDone;
             return IsFlushDone;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.WebSocketResponseVariant2 PickFlushDone() => IsFlushDone
+            ? FlushDone!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FlushDone' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -108,6 +122,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.WebSocketResponseVariant3 PickDone() => IsDone
+            ? Done!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Done' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.WebSocketResponseVariant4? Timestamps { get; init; }
 #else
@@ -134,6 +155,13 @@ namespace G
             value = Timestamps;
             return IsTimestamps;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.WebSocketResponseVariant4 PickTimestamps() => IsTimestamps
+            ? Timestamps!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Timestamps' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -168,6 +196,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.WebSocketResponseVariant5 PickError() => IsError
+            ? Error!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Error' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.WebSocketResponseVariant6? PhonemeTimestamps { get; init; }
 #else
@@ -194,6 +229,13 @@ namespace G
             value = PhonemeTimestamps;
             return IsPhonemeTimestamps;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.WebSocketResponseVariant6 PickPhonemeTimestamps() => IsPhonemeTimestamps
+            ? PhonemeTimestamps!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'PhonemeTimestamps' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

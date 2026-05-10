@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.AgentResponseDtoVariant1 PickAgentResponseDtoVariant1() => IsAgentResponseDtoVariant1
+            ? AgentResponseDtoVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AgentResponseDtoVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.AgentResponseDtoVariant2? AgentResponseDtoVariant2 { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = AgentResponseDtoVariant2;
             return IsAgentResponseDtoVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.AgentResponseDtoVariant2 PickAgentResponseDtoVariant2() => IsAgentResponseDtoVariant2
+            ? AgentResponseDtoVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AgentResponseDtoVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

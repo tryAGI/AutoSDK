@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.AllOf<global::G.PromptVariant12, global::G.ChatPrompt> PickPromptVariant1() => IsPromptVariant1
+            ? PromptVariant1!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'PromptVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.AllOf<global::G.PromptVariant22, global::G.TextPrompt>? PromptVariant2 { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = PromptVariant2;
             return IsPromptVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.AllOf<global::G.PromptVariant22, global::G.TextPrompt> PickPromptVariant2() => IsPromptVariant2
+            ? PromptVariant2!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'PromptVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

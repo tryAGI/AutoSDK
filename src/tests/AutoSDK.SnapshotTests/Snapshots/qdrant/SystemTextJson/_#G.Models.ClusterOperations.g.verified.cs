@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.MoveShardOperation PickMoveShardOperation() => IsMoveShardOperation
+            ? MoveShardOperation!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MoveShardOperation' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ReplicateShardOperation? ReplicateShardOperation { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = ReplicateShardOperation;
             return IsReplicateShardOperation;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ReplicateShardOperation PickReplicateShardOperation() => IsReplicateShardOperation
+            ? ReplicateShardOperation!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ReplicateShardOperation' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -103,6 +117,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.AbortTransferOperation PickAbortTransferOperation() => IsAbortTransferOperation
+            ? AbortTransferOperation!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AbortTransferOperation' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.DropReplicaOperation? DropReplicaOperation { get; init; }
 #else
@@ -129,6 +150,13 @@ namespace G
             value = DropReplicaOperation;
             return IsDropReplicaOperation;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.DropReplicaOperation PickDropReplicaOperation() => IsDropReplicaOperation
+            ? DropReplicaOperation!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'DropReplicaOperation' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -163,6 +191,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.CreateShardingKeyOperation PickCreateShardingKeyOperation() => IsCreateShardingKeyOperation
+            ? CreateShardingKeyOperation!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CreateShardingKeyOperation' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.DropShardingKeyOperation? DropShardingKeyOperation { get; init; }
 #else
@@ -189,6 +224,13 @@ namespace G
             value = DropShardingKeyOperation;
             return IsDropShardingKeyOperation;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.DropShardingKeyOperation PickDropShardingKeyOperation() => IsDropShardingKeyOperation
+            ? DropShardingKeyOperation!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'DropShardingKeyOperation' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -223,6 +265,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.RestartTransferOperation PickRestartTransferOperation() => IsRestartTransferOperation
+            ? RestartTransferOperation!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'RestartTransferOperation' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.StartReshardingOperation? StartReshardingOperation { get; init; }
 #else
@@ -249,6 +298,13 @@ namespace G
             value = StartReshardingOperation;
             return IsStartReshardingOperation;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.StartReshardingOperation PickStartReshardingOperation() => IsStartReshardingOperation
+            ? StartReshardingOperation!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'StartReshardingOperation' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -283,6 +339,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.AbortReshardingOperation PickAbortReshardingOperation() => IsAbortReshardingOperation
+            ? AbortReshardingOperation!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AbortReshardingOperation' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ReplicatePointsOperation? ReplicatePointsOperation { get; init; }
 #else
@@ -309,6 +372,13 @@ namespace G
             value = ReplicatePointsOperation;
             return IsReplicatePointsOperation;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ReplicatePointsOperation PickReplicatePointsOperation() => IsReplicatePointsOperation
+            ? ReplicatePointsOperation!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ReplicatePointsOperation' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

@@ -45,6 +45,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.ToolBase PickBase() => IsBase
+            ? Base!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Base' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.LambdaToolVariant2? LambdaToolVariant2 { get; init; }
 #else
@@ -71,6 +78,13 @@ namespace G
             value = LambdaToolVariant2;
             return IsLambdaToolVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.LambdaToolVariant2 PickLambdaToolVariant2() => IsLambdaToolVariant2
+            ? LambdaToolVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'LambdaToolVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

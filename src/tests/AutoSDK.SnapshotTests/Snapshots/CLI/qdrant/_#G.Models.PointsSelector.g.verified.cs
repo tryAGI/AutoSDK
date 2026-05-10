@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.PointIdsList PickPointIdsList() => IsPointIdsList
+            ? PointIdsList!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'PointIdsList' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.FilterSelector? Filter { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = Filter;
             return IsFilter;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.FilterSelector PickFilter() => IsFilter
+            ? Filter!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Filter' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

@@ -41,6 +41,13 @@ namespace G
             value = String;
             return IsString;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.LemurStringResponse PickString() => IsString
+            ? String!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'String' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

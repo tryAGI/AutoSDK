@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.NodeEdge PickNode() => IsNode
+            ? Node!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Node' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.SkipResponseEdgeVariant2? SkipResponseEdgeVariant2 { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = SkipResponseEdgeVariant2;
             return IsSkipResponseEdgeVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.SkipResponseEdgeVariant2 PickSkipResponseEdgeVariant2() => IsSkipResponseEdgeVariant2
+            ? SkipResponseEdgeVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SkipResponseEdgeVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

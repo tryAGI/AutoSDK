@@ -46,6 +46,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.BaseModelCard PickBase() => IsBase
+            ? Base!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Base' but the value was {ToString()}.");
+
+        /// <summary>
         /// Extra fields for fine-tuned models.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -74,6 +81,13 @@ namespace G
             value = FineTuned;
             return IsFineTuned;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.FTModelCard PickFineTuned() => IsFineTuned
+            ? FineTuned!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FineTuned' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

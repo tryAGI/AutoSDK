@@ -39,6 +39,13 @@ namespace G
             value = OpenAIParams;
             return IsOpenAIParams;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.OpenAIFinetuneJob PickOpenAIParams() => IsOpenAIParams
+            ? OpenAIParams!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OpenAIParams' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

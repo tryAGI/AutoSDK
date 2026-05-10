@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.MessagesRequestContextManagementEditsItems0 PickMessagesRequestContextManagementEditsItems0() => IsMessagesRequestContextManagementEditsItems0
+            ? MessagesRequestContextManagementEditsItems0!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesRequestContextManagementEditsItems0' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.MessagesRequestContextManagementEditsItems1? MessagesRequestContextManagementEditsItems1 { get; init; }
 #else
@@ -73,6 +80,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.MessagesRequestContextManagementEditsItems1 PickMessagesRequestContextManagementEditsItems1() => IsMessagesRequestContextManagementEditsItems1
+            ? MessagesRequestContextManagementEditsItems1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesRequestContextManagementEditsItems1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.MessagesRequestContextManagementEditsItems2? MessagesRequestContextManagementEditsItems2 { get; init; }
 #else
@@ -99,6 +113,13 @@ namespace G
             value = MessagesRequestContextManagementEditsItems2;
             return IsMessagesRequestContextManagementEditsItems2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.MessagesRequestContextManagementEditsItems2 PickMessagesRequestContextManagementEditsItems2() => IsMessagesRequestContextManagementEditsItems2
+            ? MessagesRequestContextManagementEditsItems2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesRequestContextManagementEditsItems2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

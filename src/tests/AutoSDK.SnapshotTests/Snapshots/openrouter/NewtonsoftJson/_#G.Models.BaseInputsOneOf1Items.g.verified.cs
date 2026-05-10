@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.BaseInputsOneOf1Items0 PickBaseInputsOneOf1Items0() => IsBaseInputsOneOf1Items0
+            ? BaseInputsOneOf1Items0!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BaseInputsOneOf1Items0' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.BaseInputsOneOf1Items1? BaseInputsOneOf1Items1 { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = BaseInputsOneOf1Items1;
             return IsBaseInputsOneOf1Items1;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.BaseInputsOneOf1Items1 PickBaseInputsOneOf1Items1() => IsBaseInputsOneOf1Items1
+            ? BaseInputsOneOf1Items1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BaseInputsOneOf1Items1' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -103,6 +117,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.BaseInputsOneOf1Items2 PickBaseInputsOneOf1Items2() => IsBaseInputsOneOf1Items2
+            ? BaseInputsOneOf1Items2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BaseInputsOneOf1Items2' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.BaseInputsOneOf1Items3? BaseInputsOneOf1Items3 { get; init; }
 #else
@@ -129,6 +150,13 @@ namespace G
             value = BaseInputsOneOf1Items3;
             return IsBaseInputsOneOf1Items3;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.BaseInputsOneOf1Items3 PickBaseInputsOneOf1Items3() => IsBaseInputsOneOf1Items3
+            ? BaseInputsOneOf1Items3!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BaseInputsOneOf1Items3' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -163,6 +191,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.OutputItemImageGenerationCall PickOutputItemImageGenerationCall() => IsOutputItemImageGenerationCall
+            ? OutputItemImageGenerationCall!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OutputItemImageGenerationCall' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.OutputMessage? OutputMessage { get; init; }
 #else
@@ -189,6 +224,13 @@ namespace G
             value = OutputMessage;
             return IsOutputMessage;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.OutputMessage PickOutputMessage() => IsOutputMessage
+            ? OutputMessage!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OutputMessage' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.CustomToolFormat0 PickCustomToolFormat0() => IsCustomToolFormat0
+            ? CustomToolFormat0!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CustomToolFormat0' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CustomToolFormat1? CustomToolFormat1 { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = CustomToolFormat1;
             return IsCustomToolFormat1;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.CustomToolFormat1 PickCustomToolFormat1() => IsCustomToolFormat1
+            ? CustomToolFormat1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CustomToolFormat1' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

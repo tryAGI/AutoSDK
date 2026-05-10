@@ -48,6 +48,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.WhatsAppTemplateHeaderComponentParams PickHeader() => IsHeader
+            ? Header!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Header' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.WhatsAppTemplateBodyComponentParams? Body { get; init; }
 #else
@@ -78,6 +85,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.WhatsAppTemplateBodyComponentParams PickBody() => IsBody
+            ? Body!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Body' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.WhatsAppTemplateButtonComponentParams? Button { get; init; }
 #else
@@ -104,6 +118,13 @@ namespace G
             value = Button;
             return IsButton;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.WhatsAppTemplateButtonComponentParams PickButton() => IsButton
+            ? Button!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Button' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

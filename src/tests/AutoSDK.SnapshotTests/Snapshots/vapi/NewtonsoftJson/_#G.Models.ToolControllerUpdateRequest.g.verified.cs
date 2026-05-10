@@ -48,6 +48,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.UpdateApiRequestToolDTO PickApiRequest() => IsApiRequest
+            ? ApiRequest!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ApiRequest' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.UpdateCodeToolDTO? Code { get; init; }
 #else
@@ -74,6 +81,13 @@ namespace G
             value = Code;
             return IsCode;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.UpdateCodeToolDTO PickCode() => IsCode
+            ? Code!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Code' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -108,6 +122,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.UpdateDtmfToolDTO PickDtmf() => IsDtmf
+            ? Dtmf!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Dtmf' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.UpdateEndCallToolDTO? EndCall { get; init; }
 #else
@@ -134,6 +155,13 @@ namespace G
             value = EndCall;
             return IsEndCall;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.UpdateEndCallToolDTO PickEndCall() => IsEndCall
+            ? EndCall!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'EndCall' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -168,6 +196,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.UpdateFunctionToolDTO PickFunction() => IsFunction
+            ? Function!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Function' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.UpdateTransferCallToolDTO? TransferCall { get; init; }
 #else
@@ -194,6 +229,13 @@ namespace G
             value = TransferCall;
             return IsTransferCall;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.UpdateTransferCallToolDTO PickTransferCall() => IsTransferCall
+            ? TransferCall!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'TransferCall' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -228,6 +270,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.UpdateHandoffToolDTO PickHandoff() => IsHandoff
+            ? Handoff!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Handoff' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.UpdateBashToolDTO? Bash { get; init; }
 #else
@@ -254,6 +303,13 @@ namespace G
             value = Bash;
             return IsBash;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.UpdateBashToolDTO PickBash() => IsBash
+            ? Bash!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Bash' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -288,6 +344,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.UpdateComputerToolDTO PickComputer() => IsComputer
+            ? Computer!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Computer' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.UpdateTextEditorToolDTO? TextEditor { get; init; }
 #else
@@ -314,6 +377,13 @@ namespace G
             value = TextEditor;
             return IsTextEditor;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.UpdateTextEditorToolDTO PickTextEditor() => IsTextEditor
+            ? TextEditor!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'TextEditor' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -348,6 +418,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.UpdateQueryToolDTO PickQuery() => IsQuery
+            ? Query!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Query' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.UpdateGoogleCalendarCreateEventToolDTO? GoogleCalendarEventCreate { get; init; }
 #else
@@ -374,6 +451,13 @@ namespace G
             value = GoogleCalendarEventCreate;
             return IsGoogleCalendarEventCreate;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.UpdateGoogleCalendarCreateEventToolDTO PickGoogleCalendarEventCreate() => IsGoogleCalendarEventCreate
+            ? GoogleCalendarEventCreate!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'GoogleCalendarEventCreate' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -408,6 +492,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.UpdateGoogleSheetsRowAppendToolDTO PickGoogleSheetsRowAppend() => IsGoogleSheetsRowAppend
+            ? GoogleSheetsRowAppend!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'GoogleSheetsRowAppend' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.UpdateGoogleCalendarCheckAvailabilityToolDTO? GoogleCalendarAvailabilityCheck { get; init; }
 #else
@@ -434,6 +525,13 @@ namespace G
             value = GoogleCalendarAvailabilityCheck;
             return IsGoogleCalendarAvailabilityCheck;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.UpdateGoogleCalendarCheckAvailabilityToolDTO PickGoogleCalendarAvailabilityCheck() => IsGoogleCalendarAvailabilityCheck
+            ? GoogleCalendarAvailabilityCheck!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'GoogleCalendarAvailabilityCheck' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -468,6 +566,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.UpdateSlackSendMessageToolDTO PickSlackMessageSend() => IsSlackMessageSend
+            ? SlackMessageSend!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SlackMessageSend' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.UpdateSmsToolDTO? Sms { get; init; }
 #else
@@ -494,6 +599,13 @@ namespace G
             value = Sms;
             return IsSms;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.UpdateSmsToolDTO PickSms() => IsSms
+            ? Sms!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Sms' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -528,6 +640,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.UpdateMcpToolDTO PickMcp() => IsMcp
+            ? Mcp!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Mcp' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.UpdateGoHighLevelCalendarAvailabilityToolDTO? GohighlevelCalendarAvailabilityCheck { get; init; }
 #else
@@ -554,6 +673,13 @@ namespace G
             value = GohighlevelCalendarAvailabilityCheck;
             return IsGohighlevelCalendarAvailabilityCheck;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.UpdateGoHighLevelCalendarAvailabilityToolDTO PickGohighlevelCalendarAvailabilityCheck() => IsGohighlevelCalendarAvailabilityCheck
+            ? GohighlevelCalendarAvailabilityCheck!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'GohighlevelCalendarAvailabilityCheck' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -588,6 +714,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.UpdateGoHighLevelCalendarEventCreateToolDTO PickGohighlevelCalendarEventCreate() => IsGohighlevelCalendarEventCreate
+            ? GohighlevelCalendarEventCreate!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'GohighlevelCalendarEventCreate' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.UpdateGoHighLevelContactCreateToolDTO? GohighlevelContactCreate { get; init; }
 #else
@@ -614,6 +747,13 @@ namespace G
             value = GohighlevelContactCreate;
             return IsGohighlevelContactCreate;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.UpdateGoHighLevelContactCreateToolDTO PickGohighlevelContactCreate() => IsGohighlevelContactCreate
+            ? GohighlevelContactCreate!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'GohighlevelContactCreate' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -648,6 +788,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.UpdateGoHighLevelContactGetToolDTO PickGohighlevelContactGet() => IsGohighlevelContactGet
+            ? GohighlevelContactGet!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'GohighlevelContactGet' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.UpdateSipRequestToolDTO? SipRequest { get; init; }
 #else
@@ -678,6 +825,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.UpdateSipRequestToolDTO PickSipRequest() => IsSipRequest
+            ? SipRequest!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SipRequest' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.UpdateVoicemailToolDTO? Voicemail { get; init; }
 #else
@@ -704,6 +858,13 @@ namespace G
             value = Voicemail;
             return IsVoicemail;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.UpdateVoicemailToolDTO PickVoicemail() => IsVoicemail
+            ? Voicemail!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Voicemail' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

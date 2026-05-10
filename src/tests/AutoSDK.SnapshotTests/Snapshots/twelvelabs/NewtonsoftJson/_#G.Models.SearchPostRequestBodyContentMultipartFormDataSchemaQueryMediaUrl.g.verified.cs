@@ -48,6 +48,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public string PickSearchPostRequestBodyContentMultipartFormDataSchemaQueryMediaUrlVariant1() => IsSearchPostRequestBodyContentMultipartFormDataSchemaQueryMediaUrlVariant1
+            ? SearchPostRequestBodyContentMultipartFormDataSchemaQueryMediaUrlVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SearchPostRequestBodyContentMultipartFormDataSchemaQueryMediaUrlVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<string>? SearchPostRequestBodyContentMultipartFormDataSchemaQueryMediaUrlVariant2 { get; init; }
 #else
@@ -74,6 +81,13 @@ namespace G
             value = SearchPostRequestBodyContentMultipartFormDataSchemaQueryMediaUrlVariant2;
             return IsSearchPostRequestBodyContentMultipartFormDataSchemaQueryMediaUrlVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<string> PickSearchPostRequestBodyContentMultipartFormDataSchemaQueryMediaUrlVariant2() => IsSearchPostRequestBodyContentMultipartFormDataSchemaQueryMediaUrlVariant2
+            ? SearchPostRequestBodyContentMultipartFormDataSchemaQueryMediaUrlVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SearchPostRequestBodyContentMultipartFormDataSchemaQueryMediaUrlVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

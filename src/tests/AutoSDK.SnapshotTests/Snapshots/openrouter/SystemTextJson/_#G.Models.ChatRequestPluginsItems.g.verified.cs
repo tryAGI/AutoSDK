@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.ChatRequestPluginsItems0 PickChatRequestPluginsItems0() => IsChatRequestPluginsItems0
+            ? ChatRequestPluginsItems0!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ChatRequestPluginsItems0' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ChatRequestPluginsItems1? ChatRequestPluginsItems1 { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = ChatRequestPluginsItems1;
             return IsChatRequestPluginsItems1;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ChatRequestPluginsItems1 PickChatRequestPluginsItems1() => IsChatRequestPluginsItems1
+            ? ChatRequestPluginsItems1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ChatRequestPluginsItems1' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -103,6 +117,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.ChatRequestPluginsItems2 PickChatRequestPluginsItems2() => IsChatRequestPluginsItems2
+            ? ChatRequestPluginsItems2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ChatRequestPluginsItems2' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ChatRequestPluginsItems3? ChatRequestPluginsItems3 { get; init; }
 #else
@@ -129,6 +150,13 @@ namespace G
             value = ChatRequestPluginsItems3;
             return IsChatRequestPluginsItems3;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ChatRequestPluginsItems3 PickChatRequestPluginsItems3() => IsChatRequestPluginsItems3
+            ? ChatRequestPluginsItems3!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ChatRequestPluginsItems3' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -163,6 +191,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.ChatRequestPluginsItems4 PickChatRequestPluginsItems4() => IsChatRequestPluginsItems4
+            ? ChatRequestPluginsItems4!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ChatRequestPluginsItems4' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ChatRequestPluginsItems5? ChatRequestPluginsItems5 { get; init; }
 #else
@@ -189,6 +224,13 @@ namespace G
             value = ChatRequestPluginsItems5;
             return IsChatRequestPluginsItems5;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ChatRequestPluginsItems5 PickChatRequestPluginsItems5() => IsChatRequestPluginsItems5
+            ? ChatRequestPluginsItems5!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ChatRequestPluginsItems5' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

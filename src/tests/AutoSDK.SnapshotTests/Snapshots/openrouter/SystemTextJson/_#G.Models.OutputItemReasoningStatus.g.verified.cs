@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.OutputItemReasoningStatus0 PickOutputItemReasoningStatus0() => IsOutputItemReasoningStatus0
+            ? OutputItemReasoningStatus0!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OutputItemReasoningStatus0' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.OutputItemReasoningStatus1? OutputItemReasoningStatus1 { get; init; }
 #else
@@ -73,6 +80,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.OutputItemReasoningStatus1 PickOutputItemReasoningStatus1() => IsOutputItemReasoningStatus1
+            ? OutputItemReasoningStatus1!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OutputItemReasoningStatus1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.OutputItemReasoningStatus2? OutputItemReasoningStatus2 { get; init; }
 #else
@@ -99,6 +113,13 @@ namespace G
             value = OutputItemReasoningStatus2;
             return IsOutputItemReasoningStatus2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.OutputItemReasoningStatus2 PickOutputItemReasoningStatus2() => IsOutputItemReasoningStatus2
+            ? OutputItemReasoningStatus2!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OutputItemReasoningStatus2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

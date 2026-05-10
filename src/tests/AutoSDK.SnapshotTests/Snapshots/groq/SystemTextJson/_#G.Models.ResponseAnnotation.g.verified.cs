@@ -46,6 +46,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ResponseFileCitation PickFileCitation() => IsFileCitation
+            ? FileCitation!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FileCitation' but the value was {ToString()}.");
+
+        /// <summary>
         /// A citation for a web resource.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -74,6 +81,13 @@ namespace G
             value = UrlCitation;
             return IsUrlCitation;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ResponseUrlCitation PickUrlCitation() => IsUrlCitation
+            ? UrlCitation!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'UrlCitation' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

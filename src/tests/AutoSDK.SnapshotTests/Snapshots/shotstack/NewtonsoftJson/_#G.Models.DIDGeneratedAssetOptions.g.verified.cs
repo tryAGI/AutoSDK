@@ -47,6 +47,13 @@ namespace G
             value = TextToAvatar;
             return IsTextToAvatar;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.DIDTextToAvatarOptions PickTextToAvatar() => IsTextToAvatar
+            ? TextToAvatar!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'TextToAvatar' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

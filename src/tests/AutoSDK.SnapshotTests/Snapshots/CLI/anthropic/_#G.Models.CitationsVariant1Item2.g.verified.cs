@@ -48,6 +48,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.BetaResponseCharLocationCitation PickCharLocation() => IsCharLocation
+            ? CharLocation!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CharLocation' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.BetaResponsePageLocationCitation? PageLocation { get; init; }
 #else
@@ -78,6 +85,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.BetaResponsePageLocationCitation PickPageLocation() => IsPageLocation
+            ? PageLocation!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'PageLocation' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.BetaResponseContentBlockLocationCitation? ContentBlockLocation { get; init; }
 #else
@@ -104,6 +118,13 @@ namespace G
             value = ContentBlockLocation;
             return IsContentBlockLocation;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.BetaResponseContentBlockLocationCitation PickContentBlockLocation() => IsContentBlockLocation
+            ? ContentBlockLocation!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ContentBlockLocation' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

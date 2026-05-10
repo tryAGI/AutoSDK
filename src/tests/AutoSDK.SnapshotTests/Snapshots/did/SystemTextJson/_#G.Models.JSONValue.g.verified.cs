@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public string PickJSONValueVariant1() => IsJSONValueVariant1
+            ? JSONValueVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'JSONValueVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public double? JSONValueVariant2 { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = JSONValueVariant2;
             return IsJSONValueVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public double PickJSONValueVariant2() => IsJSONValueVariant2
+            ? JSONValueVariant2!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'JSONValueVariant2' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -103,6 +117,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public bool PickJSONValueVariant3() => IsJSONValueVariant3
+            ? JSONValueVariant3!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'JSONValueVariant3' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<global::G.JSONValue>? JSONValueVariant4 { get; init; }
 #else
@@ -133,6 +154,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::System.Collections.Generic.IList<global::G.JSONValue> PickJSONValueVariant4() => IsJSONValueVariant4
+            ? JSONValueVariant4!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'JSONValueVariant4' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.Dictionary<string, global::G.JSONValue?>? JSONValueVariant5 { get; init; }
 #else
@@ -159,6 +187,13 @@ namespace G
             value = JSONValueVariant5;
             return IsJSONValueVariant5;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.Dictionary<string, global::G.JSONValue?> PickJSONValueVariant5() => IsJSONValueVariant5
+            ? JSONValueVariant5!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'JSONValueVariant5' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

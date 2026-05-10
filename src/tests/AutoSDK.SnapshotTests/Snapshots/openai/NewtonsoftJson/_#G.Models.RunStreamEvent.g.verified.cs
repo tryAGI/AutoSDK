@@ -41,6 +41,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.RunStreamEventVariant1 PickRunStreamEventVariant1() => IsRunStreamEventVariant1
+            ? RunStreamEventVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'RunStreamEventVariant1' but the value was {ToString()}.");
+
+        /// <summary>
         /// Occurs when a [run](/docs/api-reference/runs/object) moves to a `queued` status.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -69,6 +76,13 @@ namespace G
             value = RunStreamEventVariant2;
             return IsRunStreamEventVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.RunStreamEventVariant2 PickRunStreamEventVariant2() => IsRunStreamEventVariant2
+            ? RunStreamEventVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'RunStreamEventVariant2' but the value was {ToString()}.");
 
         /// <summary>
         /// Occurs when a [run](/docs/api-reference/runs/object) moves to an `in_progress` status.
@@ -101,6 +115,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.RunStreamEventVariant3 PickRunStreamEventVariant3() => IsRunStreamEventVariant3
+            ? RunStreamEventVariant3!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'RunStreamEventVariant3' but the value was {ToString()}.");
+
+        /// <summary>
         /// Occurs when a [run](/docs/api-reference/runs/object) moves to a `requires_action` status.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -129,6 +150,13 @@ namespace G
             value = RunStreamEventVariant4;
             return IsRunStreamEventVariant4;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.RunStreamEventVariant4 PickRunStreamEventVariant4() => IsRunStreamEventVariant4
+            ? RunStreamEventVariant4!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'RunStreamEventVariant4' but the value was {ToString()}.");
 
         /// <summary>
         /// Occurs when a [run](/docs/api-reference/runs/object) is completed.
@@ -161,6 +189,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.RunStreamEventVariant5 PickRunStreamEventVariant5() => IsRunStreamEventVariant5
+            ? RunStreamEventVariant5!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'RunStreamEventVariant5' but the value was {ToString()}.");
+
+        /// <summary>
         /// Occurs when a [run](/docs/api-reference/runs/object) ends with status `incomplete`.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -189,6 +224,13 @@ namespace G
             value = RunStreamEventVariant6;
             return IsRunStreamEventVariant6;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.RunStreamEventVariant6 PickRunStreamEventVariant6() => IsRunStreamEventVariant6
+            ? RunStreamEventVariant6!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'RunStreamEventVariant6' but the value was {ToString()}.");
 
         /// <summary>
         /// Occurs when a [run](/docs/api-reference/runs/object) fails.
@@ -221,6 +263,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.RunStreamEventVariant7 PickRunStreamEventVariant7() => IsRunStreamEventVariant7
+            ? RunStreamEventVariant7!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'RunStreamEventVariant7' but the value was {ToString()}.");
+
+        /// <summary>
         /// Occurs when a [run](/docs/api-reference/runs/object) moves to a `cancelling` status.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -249,6 +298,13 @@ namespace G
             value = RunStreamEventVariant8;
             return IsRunStreamEventVariant8;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.RunStreamEventVariant8 PickRunStreamEventVariant8() => IsRunStreamEventVariant8
+            ? RunStreamEventVariant8!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'RunStreamEventVariant8' but the value was {ToString()}.");
 
         /// <summary>
         /// Occurs when a [run](/docs/api-reference/runs/object) is cancelled.
@@ -281,6 +337,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.RunStreamEventVariant9 PickRunStreamEventVariant9() => IsRunStreamEventVariant9
+            ? RunStreamEventVariant9!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'RunStreamEventVariant9' but the value was {ToString()}.");
+
+        /// <summary>
         /// Occurs when a [run](/docs/api-reference/runs/object) expires.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -309,6 +372,13 @@ namespace G
             value = RunStreamEventVariant10;
             return IsRunStreamEventVariant10;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.RunStreamEventVariant10 PickRunStreamEventVariant10() => IsRunStreamEventVariant10
+            ? RunStreamEventVariant10!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'RunStreamEventVariant10' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

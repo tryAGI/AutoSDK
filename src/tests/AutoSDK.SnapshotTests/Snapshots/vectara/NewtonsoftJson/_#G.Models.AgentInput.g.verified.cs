@@ -46,6 +46,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.AgentTextInput PickText() => IsText
+            ? Text!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
+
+        /// <summary>
         /// An input that invokes a skill by name.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -74,6 +81,13 @@ namespace G
             value = Skill;
             return IsSkill;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.AgentSkillInput PickSkill() => IsSkill
+            ? Skill!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Skill' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

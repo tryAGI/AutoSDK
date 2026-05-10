@@ -50,6 +50,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.StreamStartResponse PickStreamStartResponse() => IsStreamStartResponse
+            ? StreamStartResponse!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'StreamStartResponse' but the value was {ToString()}.");
+
+        /// <summary>
         /// Contains a fragment of generated text. Note that text fragments may be split at arbitrary points, not necessarily at word or sentence boundaries.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -80,6 +87,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.StreamTextResponse PickStreamTextResponse() => IsStreamTextResponse
+            ? StreamTextResponse!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'StreamTextResponse' but the value was {ToString()}.");
+
+        /// <summary>
         /// Indicates the end of the stream.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -108,6 +122,13 @@ namespace G
             value = StreamEndResponse;
             return IsStreamEndResponse;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.StreamEndResponse PickStreamEndResponse() => IsStreamEndResponse
+            ? StreamEndResponse!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'StreamEndResponse' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

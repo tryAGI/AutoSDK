@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.GuardrailSummary PickSummary() => IsSummary
+            ? Summary!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Summary' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.GuardrailDetailsVariant2? GuardrailDetailsVariant2 { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = GuardrailDetailsVariant2;
             return IsGuardrailDetailsVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.GuardrailDetailsVariant2 PickGuardrailDetailsVariant2() => IsGuardrailDetailsVariant2
+            ? GuardrailDetailsVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'GuardrailDetailsVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

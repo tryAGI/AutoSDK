@@ -39,6 +39,13 @@ namespace G
             value = RefNew;
             return IsRefNew;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ExprRefNew PickRefNew() => IsRefNew
+            ? RefNew!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'RefNew' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

@@ -41,6 +41,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public string PickResponsesPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsContentVariant1() => IsResponsesPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsContentVariant1
+            ? ResponsesPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsContentVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResponsesPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsContentVariant1' but the value was {ToString()}.");
+
+        /// <summary>
         /// The content of the message, used for file inputs.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -69,6 +76,13 @@ namespace G
             value = ResponsesPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsContent1;
             return IsResponsesPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsContent1;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<global::G.ResponsesPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsContentOneOf1Items> PickResponsesPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsContent1() => IsResponsesPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsContent1
+            ? ResponsesPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsContent1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResponsesPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsContent1' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

@@ -57,6 +57,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.ThreadStreamEvent PickThread() => IsThread
+            ? Thread!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Thread' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.RunStreamEvent? Run { get; init; }
 #else
@@ -83,6 +90,13 @@ namespace G
             value = Run;
             return IsRun;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.RunStreamEvent PickRun() => IsRun
+            ? Run!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Run' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -117,6 +131,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.RunStepStreamEvent PickRunStep() => IsRunStep
+            ? RunStep!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'RunStep' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.MessageStreamEvent? Message { get; init; }
 #else
@@ -143,6 +164,13 @@ namespace G
             value = Message;
             return IsMessage;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.MessageStreamEvent PickMessage() => IsMessage
+            ? Message!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Message' but the value was {ToString()}.");
 
         /// <summary>
         /// Occurs when an [error](https://platform.openai.com/docs/guides/error-codes/api-errors) occurs. This can happen due to an internal server error or a timeout.
@@ -175,6 +203,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ErrorEvent PickError() => IsError
+            ? Error!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Error' but the value was {ToString()}.");
+
+        /// <summary>
         /// Occurs when a stream ends.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -203,6 +238,13 @@ namespace G
             value = Done;
             return IsDone;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.DoneEvent PickDone() => IsDone
+            ? Done!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Done' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

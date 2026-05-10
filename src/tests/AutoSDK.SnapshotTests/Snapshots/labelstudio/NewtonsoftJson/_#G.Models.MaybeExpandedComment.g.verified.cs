@@ -46,6 +46,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.Comment PickComment() => IsComment
+            ? Comment!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Comment' but the value was {ToString()}.");
+
+        /// <summary>
         /// Comment Serializer with FSM state support.<br/>
         /// Note: The 'state' field will be populated from the queryset annotation<br/>
         /// if present, preventing N+1 queries. Use .with_state() on your queryset.<br/>
@@ -79,6 +86,13 @@ namespace G
             value = SerializerWithUser;
             return IsSerializerWithUser;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.CommentSerializerWithExpandedUser PickSerializerWithUser() => IsSerializerWithUser
+            ? SerializerWithUser!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SerializerWithUser' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

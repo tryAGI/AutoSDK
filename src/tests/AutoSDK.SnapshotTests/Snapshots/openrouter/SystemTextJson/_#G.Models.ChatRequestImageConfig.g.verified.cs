@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public string PickChatRequestImageConfigVariant1() => IsChatRequestImageConfigVariant1
+            ? ChatRequestImageConfigVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ChatRequestImageConfigVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public double? ChatRequestImageConfigVariant2 { get; init; }
 #else
@@ -73,6 +80,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public double PickChatRequestImageConfigVariant2() => IsChatRequestImageConfigVariant2
+            ? ChatRequestImageConfigVariant2!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ChatRequestImageConfigVariant2' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<object>? ChatRequestImageConfigVariant3 { get; init; }
 #else
@@ -99,6 +113,13 @@ namespace G
             value = ChatRequestImageConfigVariant3;
             return IsChatRequestImageConfigVariant3;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<object> PickChatRequestImageConfigVariant3() => IsChatRequestImageConfigVariant3
+            ? ChatRequestImageConfigVariant3!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ChatRequestImageConfigVariant3' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

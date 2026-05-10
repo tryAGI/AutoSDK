@@ -48,6 +48,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.Base64PDFSource PickBase64() => IsBase64
+            ? Base64!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Base64' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.PlainTextSource? Text { get; init; }
 #else
@@ -74,6 +81,13 @@ namespace G
             value = Text;
             return IsText;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.PlainTextSource PickText() => IsText
+            ? Text!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -108,6 +122,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.ContentBlockSource PickContent() => IsContent
+            ? Content!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Content' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.URLPDFSource? Url { get; init; }
 #else
@@ -134,6 +155,13 @@ namespace G
             value = Url;
             return IsUrl;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.URLPDFSource PickUrl() => IsUrl
+            ? Url!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Url' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

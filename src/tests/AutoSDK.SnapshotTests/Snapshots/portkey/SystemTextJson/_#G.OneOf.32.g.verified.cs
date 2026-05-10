@@ -42,6 +42,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public T1 PickValue1() => IsValue1
+            ? Value1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Value1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public T2? Value2 { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace G
             value = Value2;
             return IsValue2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public T2 PickValue2() => IsValue2
+            ? Value2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Value2' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -102,6 +116,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public T3 PickValue3() => IsValue3
+            ? Value3!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Value3' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public T4? Value4 { get; init; }
 #else
@@ -128,6 +149,13 @@ namespace G
             value = Value4;
             return IsValue4;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public T4 PickValue4() => IsValue4
+            ? Value4!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Value4' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -162,6 +190,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public T5 PickValue5() => IsValue5
+            ? Value5!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Value5' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public T6? Value6 { get; init; }
 #else
@@ -188,6 +223,13 @@ namespace G
             value = Value6;
             return IsValue6;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public T6 PickValue6() => IsValue6
+            ? Value6!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Value6' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -222,6 +264,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public T7 PickValue7() => IsValue7
+            ? Value7!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Value7' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public T8? Value8 { get; init; }
 #else
@@ -248,6 +297,13 @@ namespace G
             value = Value8;
             return IsValue8;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public T8 PickValue8() => IsValue8
+            ? Value8!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Value8' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -282,6 +338,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public T9 PickValue9() => IsValue9
+            ? Value9!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Value9' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public T10? Value10 { get; init; }
 #else
@@ -308,6 +371,13 @@ namespace G
             value = Value10;
             return IsValue10;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public T10 PickValue10() => IsValue10
+            ? Value10!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Value10' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -342,6 +412,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public T11 PickValue11() => IsValue11
+            ? Value11!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Value11' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public T12? Value12 { get; init; }
 #else
@@ -368,6 +445,13 @@ namespace G
             value = Value12;
             return IsValue12;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public T12 PickValue12() => IsValue12
+            ? Value12!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Value12' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -402,6 +486,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public T13 PickValue13() => IsValue13
+            ? Value13!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Value13' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public T14? Value14 { get; init; }
 #else
@@ -428,6 +519,13 @@ namespace G
             value = Value14;
             return IsValue14;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public T14 PickValue14() => IsValue14
+            ? Value14!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Value14' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -462,6 +560,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public T15 PickValue15() => IsValue15
+            ? Value15!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Value15' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public T16? Value16 { get; init; }
 #else
@@ -488,6 +593,13 @@ namespace G
             value = Value16;
             return IsValue16;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public T16 PickValue16() => IsValue16
+            ? Value16!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Value16' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -522,6 +634,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public T17 PickValue17() => IsValue17
+            ? Value17!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Value17' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public T18? Value18 { get; init; }
 #else
@@ -548,6 +667,13 @@ namespace G
             value = Value18;
             return IsValue18;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public T18 PickValue18() => IsValue18
+            ? Value18!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Value18' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -582,6 +708,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public T19 PickValue19() => IsValue19
+            ? Value19!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Value19' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public T20? Value20 { get; init; }
 #else
@@ -608,6 +741,13 @@ namespace G
             value = Value20;
             return IsValue20;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public T20 PickValue20() => IsValue20
+            ? Value20!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Value20' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -642,6 +782,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public T21 PickValue21() => IsValue21
+            ? Value21!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Value21' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public T22? Value22 { get; init; }
 #else
@@ -668,6 +815,13 @@ namespace G
             value = Value22;
             return IsValue22;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public T22 PickValue22() => IsValue22
+            ? Value22!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Value22' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -702,6 +856,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public T23 PickValue23() => IsValue23
+            ? Value23!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Value23' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public T24? Value24 { get; init; }
 #else
@@ -728,6 +889,13 @@ namespace G
             value = Value24;
             return IsValue24;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public T24 PickValue24() => IsValue24
+            ? Value24!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Value24' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -762,6 +930,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public T25 PickValue25() => IsValue25
+            ? Value25!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Value25' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public T26? Value26 { get; init; }
 #else
@@ -788,6 +963,13 @@ namespace G
             value = Value26;
             return IsValue26;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public T26 PickValue26() => IsValue26
+            ? Value26!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Value26' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -822,6 +1004,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public T27 PickValue27() => IsValue27
+            ? Value27!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Value27' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public T28? Value28 { get; init; }
 #else
@@ -848,6 +1037,13 @@ namespace G
             value = Value28;
             return IsValue28;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public T28 PickValue28() => IsValue28
+            ? Value28!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Value28' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -882,6 +1078,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public T29 PickValue29() => IsValue29
+            ? Value29!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Value29' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public T30? Value30 { get; init; }
 #else
@@ -908,6 +1111,13 @@ namespace G
             value = Value30;
             return IsValue30;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public T30 PickValue30() => IsValue30
+            ? Value30!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Value30' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -942,6 +1152,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public T31 PickValue31() => IsValue31
+            ? Value31!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Value31' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public T32? Value32 { get; init; }
 #else
@@ -968,6 +1185,13 @@ namespace G
             value = Value32;
             return IsValue32;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public T32 PickValue32() => IsValue32
+            ? Value32!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Value32' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

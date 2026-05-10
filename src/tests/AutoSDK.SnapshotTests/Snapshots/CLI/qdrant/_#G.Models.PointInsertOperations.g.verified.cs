@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.PointsBatch PickPointsBatch() => IsPointsBatch
+            ? PointsBatch!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'PointsBatch' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.PointsList? PointsList { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = PointsList;
             return IsPointsList;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.PointsList PickPointsList() => IsPointsList
+            ? PointsList!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'PointsList' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

@@ -41,6 +41,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ChatContentText PickChatContentText() => IsChatContentText
+            ? ChatContentText!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ChatContentText' but the value was {ToString()}.");
+
+        /// <summary>
         /// Image content part for vision models
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -69,6 +76,13 @@ namespace G
             value = ChatContentImage;
             return IsChatContentImage;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ChatContentImage PickChatContentImage() => IsChatContentImage
+            ? ChatContentImage!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ChatContentImage' but the value was {ToString()}.");
 
         /// <summary>
         /// Audio input content part. Supported audio formats vary by provider.
@@ -103,6 +117,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.ChatContentAudio PickChatContentAudio() => IsChatContentAudio
+            ? ChatContentAudio!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ChatContentAudio' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ChatContentItems3? ChatContentItems3 { get; init; }
 #else
@@ -129,6 +150,13 @@ namespace G
             value = ChatContentItems3;
             return IsChatContentItems3;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ChatContentItems3 PickChatContentItems3() => IsChatContentItems3
+            ? ChatContentItems3!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ChatContentItems3' but the value was {ToString()}.");
 
         /// <summary>
         /// File content part for document processing
@@ -159,6 +187,13 @@ namespace G
             value = ChatContentFile;
             return IsChatContentFile;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ChatContentFile PickChatContentFile() => IsChatContentFile
+            ? ChatContentFile!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ChatContentFile' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

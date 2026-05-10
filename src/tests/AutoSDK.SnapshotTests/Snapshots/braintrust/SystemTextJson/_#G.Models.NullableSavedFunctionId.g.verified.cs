@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.NullableSavedFunctionIdFunction PickFunction() => IsFunction
+            ? Function!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Function' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.NullableSavedFunctionIdGlobal? Global { get; init; }
 #else
@@ -73,6 +80,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.NullableSavedFunctionIdGlobal PickGlobal() => IsGlobal
+            ? Global!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Global' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public object? NullableSavedFunctionIdVariant3 { get; init; }
 #else
@@ -99,6 +113,13 @@ namespace G
             value = NullableSavedFunctionIdVariant3;
             return IsNullableSavedFunctionIdVariant3;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public object PickNullableSavedFunctionIdVariant3() => IsNullableSavedFunctionIdVariant3
+            ? NullableSavedFunctionIdVariant3!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'NullableSavedFunctionIdVariant3' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

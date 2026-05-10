@@ -46,6 +46,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.VertexAiApiKeyAuth PickApiKey() => IsApiKey
+            ? ApiKey!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ApiKey' but the value was {ToString()}.");
+
+        /// <summary>
         /// Service account authentication for Vertex AI
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -74,6 +81,13 @@ namespace G
             value = ServiceAccount;
             return IsServiceAccount;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.VertexAiServiceAccountAuth PickServiceAccount() => IsServiceAccount
+            ? ServiceAccount!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ServiceAccount' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

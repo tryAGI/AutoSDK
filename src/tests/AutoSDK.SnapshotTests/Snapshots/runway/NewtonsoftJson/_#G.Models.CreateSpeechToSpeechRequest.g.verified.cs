@@ -44,6 +44,13 @@ namespace G
             value = ElevenMultilingualStsV2;
             return IsElevenMultilingualStsV2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.CreateSpeechToSpeechRequestElevenMultilingualStsV2 PickElevenMultilingualStsV2() => IsElevenMultilingualStsV2
+            ? ElevenMultilingualStsV2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ElevenMultilingualStsV2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

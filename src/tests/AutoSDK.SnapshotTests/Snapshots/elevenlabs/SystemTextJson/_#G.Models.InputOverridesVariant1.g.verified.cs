@@ -48,6 +48,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.ConstantSchemaOverride PickConstant() => IsConstant
+            ? Constant!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Constant' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.DynamicVariableSchemaOverride? DynamicVariable { get; init; }
 #else
@@ -78,6 +85,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.DynamicVariableSchemaOverride PickDynamicVariable() => IsDynamicVariable
+            ? DynamicVariable!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'DynamicVariable' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.LLMSchemaOverride? Llm { get; init; }
 #else
@@ -104,6 +118,13 @@ namespace G
             value = Llm;
             return IsLlm;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.LLMSchemaOverride PickLlm() => IsLlm
+            ? Llm!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Llm' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

@@ -46,6 +46,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ResearchTaskCompleted PickCompleted() => IsCompleted
+            ? Completed!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Completed' but the value was {ToString()}.");
+
+        /// <summary>
         /// Example: {"request_id":"123e4567-e89b-12d3-a456-426614174111","status":"failed"}
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -74,6 +81,13 @@ namespace G
             value = Failed;
             return IsFailed;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ResearchTaskFailed PickFailed() => IsFailed
+            ? Failed!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Failed' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

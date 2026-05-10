@@ -48,6 +48,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.ResearchEventDtoClassVariant1Variant2OutputVariant1 PickCompleted() => IsCompleted
+            ? Completed!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Completed' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ResearchEventDtoClassVariant1Variant2OutputVariant2? Failed { get; init; }
 #else
@@ -74,6 +81,13 @@ namespace G
             value = Failed;
             return IsFailed;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ResearchEventDtoClassVariant1Variant2OutputVariant2 PickFailed() => IsFailed
+            ? Failed!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Failed' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

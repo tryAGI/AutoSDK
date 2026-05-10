@@ -48,6 +48,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.CreateImageToVideoRequestGen4Turbo PickGen4Turbo() => IsGen4Turbo
+            ? Gen4Turbo!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Gen4Turbo' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CreateImageToVideoRequestVeo31? Veo31 { get; init; }
 #else
@@ -74,6 +81,13 @@ namespace G
             value = Veo31;
             return IsVeo31;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.CreateImageToVideoRequestVeo31 PickVeo31() => IsVeo31
+            ? Veo31!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Veo31' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -108,6 +122,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.CreateImageToVideoRequestGen3aTurbo PickGen3aTurbo() => IsGen3aTurbo
+            ? Gen3aTurbo!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Gen3aTurbo' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CreateImageToVideoRequestVeo31Fast? Veo31Fast { get; init; }
 #else
@@ -138,6 +159,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.CreateImageToVideoRequestVeo31Fast PickVeo31Fast() => IsVeo31Fast
+            ? Veo31Fast!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Veo31Fast' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CreateImageToVideoRequestVeo3? Veo3 { get; init; }
 #else
@@ -164,6 +192,13 @@ namespace G
             value = Veo3;
             return IsVeo3;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.CreateImageToVideoRequestVeo3 PickVeo3() => IsVeo3
+            ? Veo3!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Veo3' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

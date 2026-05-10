@@ -44,6 +44,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.AgentEventBase PickAgentBase() => IsAgentBase
+            ? AgentBase!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AgentBase' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ContextLimitExceededEventVariant2? ContextLimitExceededEventVariant2 { get; init; }
 #else
@@ -70,6 +77,13 @@ namespace G
             value = ContextLimitExceededEventVariant2;
             return IsContextLimitExceededEventVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ContextLimitExceededEventVariant2 PickContextLimitExceededEventVariant2() => IsContextLimitExceededEventVariant2
+            ? ContextLimitExceededEventVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ContextLimitExceededEventVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

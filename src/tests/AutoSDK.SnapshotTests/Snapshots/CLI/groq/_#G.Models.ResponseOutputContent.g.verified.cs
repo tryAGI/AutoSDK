@@ -44,6 +44,13 @@ namespace G
             value = OutputText;
             return IsOutputText;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ResponseOutputTextContent PickOutputText() => IsOutputText
+            ? OutputText!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OutputText' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

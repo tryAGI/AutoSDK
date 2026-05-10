@@ -42,6 +42,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.LemurStringResponseVariant1 PickLemurStringResponseVariant1() => IsLemurStringResponseVariant1
+            ? LemurStringResponseVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'LemurStringResponseVariant1' but the value was {ToString()}.");
+
+        /// <summary>
         /// LeMUR base response<br/>
         /// Example: {"request_id":"5e1b27c2-691f-4414-8bc5-f14678442f9e","usage":{"input_tokens":27,"output_tokens":3}}
         /// </summary>
@@ -71,6 +78,13 @@ namespace G
             value = Base;
             return IsBase;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.LemurBaseResponse PickBase() => IsBase
+            ? Base!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Base' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

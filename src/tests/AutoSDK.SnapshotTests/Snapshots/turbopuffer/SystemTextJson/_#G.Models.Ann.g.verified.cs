@@ -41,6 +41,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool PickAnnVariant1() => IsAnnVariant1
+            ? AnnVariant1!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AnnVariant1' but the value was {ToString()}.");
+
+        /// <summary>
         /// Configuration options for ANN (Approximate Nearest Neighbor) indexing.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -69,6 +76,13 @@ namespace G
             value = Config;
             return IsConfig;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.AnnConfig PickConfig() => IsConfig
+            ? Config!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Config' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

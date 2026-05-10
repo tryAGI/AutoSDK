@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.MessagesRequestThinking0 PickMessagesRequestThinking0() => IsMessagesRequestThinking0
+            ? MessagesRequestThinking0!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesRequestThinking0' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.MessagesRequestThinking1? MessagesRequestThinking1 { get; init; }
 #else
@@ -73,6 +80,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.MessagesRequestThinking1 PickMessagesRequestThinking1() => IsMessagesRequestThinking1
+            ? MessagesRequestThinking1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesRequestThinking1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.MessagesRequestThinking2? MessagesRequestThinking2 { get; init; }
 #else
@@ -99,6 +113,13 @@ namespace G
             value = MessagesRequestThinking2;
             return IsMessagesRequestThinking2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.MessagesRequestThinking2 PickMessagesRequestThinking2() => IsMessagesRequestThinking2
+            ? MessagesRequestThinking2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesRequestThinking2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

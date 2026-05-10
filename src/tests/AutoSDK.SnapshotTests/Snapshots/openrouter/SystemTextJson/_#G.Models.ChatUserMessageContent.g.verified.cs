@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public string PickChatUserMessageContentVariant1() => IsChatUserMessageContentVariant1
+            ? ChatUserMessageContentVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ChatUserMessageContentVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<global::G.ChatContentItems>? ChatUserMessageContent1 { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = ChatUserMessageContent1;
             return IsChatUserMessageContent1;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<global::G.ChatContentItems> PickChatUserMessageContent1() => IsChatUserMessageContent1
+            ? ChatUserMessageContent1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ChatUserMessageContent1' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

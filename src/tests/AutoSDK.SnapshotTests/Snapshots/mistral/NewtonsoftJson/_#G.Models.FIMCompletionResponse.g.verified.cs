@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.ChatCompletionResponse PickChat() => IsChat
+            ? Chat!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Chat' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.FIMCompletionResponseVariant2? FIMCompletionResponseVariant2 { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = FIMCompletionResponseVariant2;
             return IsFIMCompletionResponseVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.FIMCompletionResponseVariant2 PickFIMCompletionResponseVariant2() => IsFIMCompletionResponseVariant2
+            ? FIMCompletionResponseVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FIMCompletionResponseVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

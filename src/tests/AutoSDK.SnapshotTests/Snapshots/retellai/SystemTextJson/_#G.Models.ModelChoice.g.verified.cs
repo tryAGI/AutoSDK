@@ -39,6 +39,13 @@ namespace G
             value = Cascading;
             return IsCascading;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ModelChoiceCascading PickCascading() => IsCascading
+            ? Cascading!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Cascading' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

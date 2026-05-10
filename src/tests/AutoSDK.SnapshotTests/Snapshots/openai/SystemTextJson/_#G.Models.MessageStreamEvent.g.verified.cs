@@ -41,6 +41,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.MessageStreamEventVariant1 PickMessageStreamEventVariant1() => IsMessageStreamEventVariant1
+            ? MessageStreamEventVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MessageStreamEventVariant1' but the value was {ToString()}.");
+
+        /// <summary>
         /// Occurs when a [message](/docs/api-reference/messages/object) moves to an `in_progress` state.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -69,6 +76,13 @@ namespace G
             value = MessageStreamEventVariant2;
             return IsMessageStreamEventVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.MessageStreamEventVariant2 PickMessageStreamEventVariant2() => IsMessageStreamEventVariant2
+            ? MessageStreamEventVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MessageStreamEventVariant2' but the value was {ToString()}.");
 
         /// <summary>
         /// Occurs when parts of a [Message](/docs/api-reference/messages/object) are being streamed.
@@ -101,6 +115,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.MessageStreamEventVariant3 PickMessageStreamEventVariant3() => IsMessageStreamEventVariant3
+            ? MessageStreamEventVariant3!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MessageStreamEventVariant3' but the value was {ToString()}.");
+
+        /// <summary>
         /// Occurs when a [message](/docs/api-reference/messages/object) is completed.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -131,6 +152,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.MessageStreamEventVariant4 PickMessageStreamEventVariant4() => IsMessageStreamEventVariant4
+            ? MessageStreamEventVariant4!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MessageStreamEventVariant4' but the value was {ToString()}.");
+
+        /// <summary>
         /// Occurs when a [message](/docs/api-reference/messages/object) ends before it is completed.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -159,6 +187,13 @@ namespace G
             value = MessageStreamEventVariant5;
             return IsMessageStreamEventVariant5;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.MessageStreamEventVariant5 PickMessageStreamEventVariant5() => IsMessageStreamEventVariant5
+            ? MessageStreamEventVariant5!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MessageStreamEventVariant5' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

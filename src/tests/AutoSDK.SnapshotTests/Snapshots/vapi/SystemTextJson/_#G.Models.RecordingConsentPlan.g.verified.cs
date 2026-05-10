@@ -48,6 +48,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.RecordingConsentPlanStayOnLine PickStayOnLine() => IsStayOnLine
+            ? StayOnLine!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'StayOnLine' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.RecordingConsentPlanVerbal? Verbal { get; init; }
 #else
@@ -74,6 +81,13 @@ namespace G
             value = Verbal;
             return IsVerbal;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.RecordingConsentPlanVerbal PickVerbal() => IsVerbal
+            ? Verbal!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Verbal' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

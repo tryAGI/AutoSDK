@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.BaseMessagesResultContentItemsOneOf1Caller0 PickBaseMessagesResultContentItemsOneOf1Caller0() => IsBaseMessagesResultContentItemsOneOf1Caller0
+            ? BaseMessagesResultContentItemsOneOf1Caller0!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BaseMessagesResultContentItemsOneOf1Caller0' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.BaseMessagesResultContentItemsOneOf1Caller1? BaseMessagesResultContentItemsOneOf1Caller1 { get; init; }
 #else
@@ -73,6 +80,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.BaseMessagesResultContentItemsOneOf1Caller1 PickBaseMessagesResultContentItemsOneOf1Caller1() => IsBaseMessagesResultContentItemsOneOf1Caller1
+            ? BaseMessagesResultContentItemsOneOf1Caller1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BaseMessagesResultContentItemsOneOf1Caller1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.BaseMessagesResultContentItemsOneOf1Caller2? BaseMessagesResultContentItemsOneOf1Caller2 { get; init; }
 #else
@@ -99,6 +113,13 @@ namespace G
             value = BaseMessagesResultContentItemsOneOf1Caller2;
             return IsBaseMessagesResultContentItemsOneOf1Caller2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.BaseMessagesResultContentItemsOneOf1Caller2 PickBaseMessagesResultContentItemsOneOf1Caller2() => IsBaseMessagesResultContentItemsOneOf1Caller2
+            ? BaseMessagesResultContentItemsOneOf1Caller2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BaseMessagesResultContentItemsOneOf1Caller2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

@@ -41,6 +41,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public string PickEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant1() => IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant1
+            ? EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant1' but the value was {ToString()}.");
+
+        /// <summary>
         /// An array of strings or objects containing the text and/or images to be embedded.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -69,6 +76,13 @@ namespace G
             value = EmbeddingsPostRequestBodyContentApplicationJsonSchemaInput1;
             return IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInput1;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<global::G.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf1Items> PickEmbeddingsPostRequestBodyContentApplicationJsonSchemaInput1() => IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInput1
+            ? EmbeddingsPostRequestBodyContentApplicationJsonSchemaInput1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'EmbeddingsPostRequestBodyContentApplicationJsonSchemaInput1' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

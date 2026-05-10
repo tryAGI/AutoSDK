@@ -48,6 +48,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.PromptChatTemplate PickChat() => IsChat
+            ? Chat!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Chat' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.PromptStringTemplate? String { get; init; }
 #else
@@ -74,6 +81,13 @@ namespace G
             value = String;
             return IsString;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.PromptStringTemplate PickString() => IsString
+            ? String!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'String' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

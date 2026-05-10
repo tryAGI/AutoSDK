@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::System.Collections.Generic.IList<global::G.MessagesMessageParamContentOneOf1ItemsOneOf8ContentOneOf0Items> PickMessagesMessageParamContentOneOf1ItemsOneOf8Content0() => IsMessagesMessageParamContentOneOf1ItemsOneOf8Content0
+            ? MessagesMessageParamContentOneOf1ItemsOneOf8Content0!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesMessageParamContentOneOf1ItemsOneOf8Content0' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.MessagesMessageParamContentOneOf1ItemsOneOf8Content1? MessagesMessageParamContentOneOf1ItemsOneOf8Content1 { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = MessagesMessageParamContentOneOf1ItemsOneOf8Content1;
             return IsMessagesMessageParamContentOneOf1ItemsOneOf8Content1;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.MessagesMessageParamContentOneOf1ItemsOneOf8Content1 PickMessagesMessageParamContentOneOf1ItemsOneOf8Content1() => IsMessagesMessageParamContentOneOf1ItemsOneOf8Content1
+            ? MessagesMessageParamContentOneOf1ItemsOneOf8Content1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesMessageParamContentOneOf1ItemsOneOf8Content1' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

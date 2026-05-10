@@ -48,6 +48,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.ResearchEventDtoClassVariant2Variant3OutputVariant1 PickTasks() => IsTasks
+            ? Tasks!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Tasks' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ResearchEventDtoClassVariant2Variant3OutputVariant2? Stop { get; init; }
 #else
@@ -74,6 +81,13 @@ namespace G
             value = Stop;
             return IsStop;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ResearchEventDtoClassVariant2Variant3OutputVariant2 PickStop() => IsStop
+            ? Stop!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Stop' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

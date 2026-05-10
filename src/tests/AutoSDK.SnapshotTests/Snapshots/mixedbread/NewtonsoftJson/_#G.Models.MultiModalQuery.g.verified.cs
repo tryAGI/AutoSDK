@@ -41,6 +41,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public string PickMultiModalQueryVariant1() => IsMultiModalQueryVariant1
+            ? MultiModalQueryVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MultiModalQueryVariant1' but the value was {ToString()}.");
+
+        /// <summary>
         /// The input to create embeddings for.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -69,6 +76,13 @@ namespace G
             value = MultiModalQueryVariant2;
             return IsMultiModalQueryVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.MultiModalQueryVariant2 PickMultiModalQueryVariant2() => IsMultiModalQueryVariant2
+            ? MultiModalQueryVariant2!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MultiModalQueryVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

@@ -41,6 +41,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ChatReasoningSummaryVerbosityEnum PickChatReasoningSummaryVerbosityEnum() => IsChatReasoningSummaryVerbosityEnum
+            ? ChatReasoningSummaryVerbosityEnum!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ChatReasoningSummaryVerbosityEnum' but the value was {ToString()}.");
+
+        /// <summary>
         /// Any type
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -71,6 +78,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public object PickChatRequestReasoningSummaryVariant2() => IsChatRequestReasoningSummaryVariant2
+            ? ChatRequestReasoningSummaryVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ChatRequestReasoningSummaryVariant2' but the value was {ToString()}.");
+
+        /// <summary>
         /// Any type
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -99,6 +113,13 @@ namespace G
             value = ChatRequestReasoningSummaryVariant3;
             return IsChatRequestReasoningSummaryVariant3;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public object PickChatRequestReasoningSummaryVariant3() => IsChatRequestReasoningSummaryVariant3
+            ? ChatRequestReasoningSummaryVariant3!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ChatRequestReasoningSummaryVariant3' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

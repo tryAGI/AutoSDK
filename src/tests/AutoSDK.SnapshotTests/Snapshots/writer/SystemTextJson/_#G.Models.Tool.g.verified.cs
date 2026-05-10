@@ -48,6 +48,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.FunctionTool PickFunction() => IsFunction
+            ? Function!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Function' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.GraphTool? Graph { get; init; }
 #else
@@ -78,6 +85,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.GraphTool PickGraph() => IsGraph
+            ? Graph!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Graph' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.LlmTool? Llm { get; init; }
 #else
@@ -104,6 +118,13 @@ namespace G
             value = Llm;
             return IsLlm;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.LlmTool PickLlm() => IsLlm
+            ? Llm!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Llm' but the value was {ToString()}.");
 
         /// <summary>
         /// A tool that uses Palmyra Translate to translate text. Note that this tool does not stream results. The response is returned after the translation is complete.
@@ -138,6 +159,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.TranslationTool PickTranslation() => IsTranslation
+            ? Translation!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Translation' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.VisionTool? Vision { get; init; }
 #else
@@ -168,6 +196,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.VisionTool PickVision() => IsVision
+            ? Vision!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Vision' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.WebSearchTool? WebSearch { get; init; }
 #else
@@ -194,6 +229,13 @@ namespace G
             value = WebSearch;
             return IsWebSearch;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.WebSearchTool PickWebSearch() => IsWebSearch
+            ? WebSearch!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'WebSearch' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

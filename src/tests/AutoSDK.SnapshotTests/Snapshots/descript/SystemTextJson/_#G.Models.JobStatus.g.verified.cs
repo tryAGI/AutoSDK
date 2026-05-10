@@ -47,6 +47,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ImportJobStatus PickImportProjectMedia() => IsImportProjectMedia
+            ? ImportProjectMedia!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ImportProjectMedia' but the value was {ToString()}.");
+
+        /// <summary>
         /// Status of an Agent edit job
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -75,6 +82,13 @@ namespace G
             value = Agent;
             return IsAgent;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.AgentJobStatus PickAgent() => IsAgent
+            ? Agent!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Agent' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

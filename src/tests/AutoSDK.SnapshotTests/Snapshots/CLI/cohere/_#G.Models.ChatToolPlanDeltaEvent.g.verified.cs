@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.ChatStreamEventType PickStreamType() => IsStreamType
+            ? StreamType!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'StreamType' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ChatToolPlanDeltaEvent2obfex? Event2obfex { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = Event2obfex;
             return IsEvent2obfex;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ChatToolPlanDeltaEvent2obfex PickEvent2obfex() => IsEvent2obfex
+            ? Event2obfex!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Event2obfex' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.PartialTablesAndViews PickPartialTablesAndViews() => IsPartialTablesAndViews
+            ? PartialTablesAndViews!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'PartialTablesAndViews' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.FilterBranch? Branch { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = Branch;
             return IsBranch;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.FilterBranch PickBranch() => IsBranch
+            ? Branch!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Branch' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -103,6 +117,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public object PickEnum() => IsEnum
+            ? Enum!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Enum' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.FilterNodeEnum2? Enum2 { get; init; }
 #else
@@ -129,6 +150,13 @@ namespace G
             value = Enum2;
             return IsEnum2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.FilterNodeEnum2 PickEnum2() => IsEnum2
+            ? Enum2!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Enum2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

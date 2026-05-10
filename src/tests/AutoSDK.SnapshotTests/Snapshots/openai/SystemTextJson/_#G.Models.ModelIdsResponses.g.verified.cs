@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.ModelIdsShared PickShared() => IsShared
+            ? Shared!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Shared' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ModelIdsResponsesEnum? ResponsesOnlyModel { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = ResponsesOnlyModel;
             return IsResponsesOnlyModel;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ModelIdsResponsesEnum PickResponsesOnlyModel() => IsResponsesOnlyModel
+            ? ResponsesOnlyModel!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResponsesOnlyModel' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

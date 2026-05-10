@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.OutputMessage PickOutputMessage() => IsOutputMessage
+            ? OutputMessage!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OutputMessage' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.OutputItemReasoning? OutputItemReasoning { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = OutputItemReasoning;
             return IsOutputItemReasoning;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.OutputItemReasoning PickOutputItemReasoning() => IsOutputItemReasoning
+            ? OutputItemReasoning!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OutputItemReasoning' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -103,6 +117,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.OutputItemFunctionCall PickOutputItemFunctionCall() => IsOutputItemFunctionCall
+            ? OutputItemFunctionCall!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OutputItemFunctionCall' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.OutputItemWebSearchCall? OutputItemWebSearchCall { get; init; }
 #else
@@ -129,6 +150,13 @@ namespace G
             value = OutputItemWebSearchCall;
             return IsOutputItemWebSearchCall;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.OutputItemWebSearchCall PickOutputItemWebSearchCall() => IsOutputItemWebSearchCall
+            ? OutputItemWebSearchCall!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OutputItemWebSearchCall' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -163,6 +191,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.OutputItemFileSearchCall PickOutputItemFileSearchCall() => IsOutputItemFileSearchCall
+            ? OutputItemFileSearchCall!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OutputItemFileSearchCall' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.OutputItemImageGenerationCall? OutputItemImageGenerationCall { get; init; }
 #else
@@ -189,6 +224,13 @@ namespace G
             value = OutputItemImageGenerationCall;
             return IsOutputItemImageGenerationCall;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.OutputItemImageGenerationCall PickOutputItemImageGenerationCall() => IsOutputItemImageGenerationCall
+            ? OutputItemImageGenerationCall!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OutputItemImageGenerationCall' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

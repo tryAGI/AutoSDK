@@ -41,6 +41,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ResponsesRequestToolsItems0 PickResponsesRequestToolsItems0() => IsResponsesRequestToolsItems0
+            ? ResponsesRequestToolsItems0!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResponsesRequestToolsItems0' but the value was {ToString()}.");
+
+        /// <summary>
         /// Web search preview tool configuration
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -69,6 +76,13 @@ namespace G
             value = PreviewWebSearchServerTool;
             return IsPreviewWebSearchServerTool;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.PreviewWebSearchServerTool PickPreviewWebSearchServerTool() => IsPreviewWebSearchServerTool
+            ? PreviewWebSearchServerTool!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'PreviewWebSearchServerTool' but the value was {ToString()}.");
 
         /// <summary>
         /// Web search preview tool configuration (2025-03-11 version)
@@ -101,6 +115,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.Preview20250311WebSearchServerTool PickPreview20250311WebSearchServerTool() => IsPreview20250311WebSearchServerTool
+            ? Preview20250311WebSearchServerTool!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Preview20250311WebSearchServerTool' but the value was {ToString()}.");
+
+        /// <summary>
         /// Web search tool configuration
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -129,6 +150,13 @@ namespace G
             value = LegacyWebSearchServerTool;
             return IsLegacyWebSearchServerTool;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.LegacyWebSearchServerTool PickLegacyWebSearchServerTool() => IsLegacyWebSearchServerTool
+            ? LegacyWebSearchServerTool!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'LegacyWebSearchServerTool' but the value was {ToString()}.");
 
         /// <summary>
         /// Web search tool configuration (2025-08-26 version)
@@ -161,6 +189,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.WebSearchServerTool PickWebSearchServerTool() => IsWebSearchServerTool
+            ? WebSearchServerTool!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'WebSearchServerTool' but the value was {ToString()}.");
+
+        /// <summary>
         /// File search tool configuration
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -189,6 +224,13 @@ namespace G
             value = FileSearchServerTool;
             return IsFileSearchServerTool;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.FileSearchServerTool PickFileSearchServerTool() => IsFileSearchServerTool
+            ? FileSearchServerTool!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FileSearchServerTool' but the value was {ToString()}.");
 
         /// <summary>
         /// Computer use preview tool configuration
@@ -221,6 +263,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ComputerUseServerTool PickComputerUseServerTool() => IsComputerUseServerTool
+            ? ComputerUseServerTool!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ComputerUseServerTool' but the value was {ToString()}.");
+
+        /// <summary>
         /// Code interpreter tool configuration
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -249,6 +298,13 @@ namespace G
             value = CodeInterpreterServerTool;
             return IsCodeInterpreterServerTool;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.CodeInterpreterServerTool PickCodeInterpreterServerTool() => IsCodeInterpreterServerTool
+            ? CodeInterpreterServerTool!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CodeInterpreterServerTool' but the value was {ToString()}.");
 
         /// <summary>
         /// MCP (Model Context Protocol) tool configuration
@@ -281,6 +337,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.McpServerTool PickMcpServerTool() => IsMcpServerTool
+            ? McpServerTool!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'McpServerTool' but the value was {ToString()}.");
+
+        /// <summary>
         /// Image generation tool configuration
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -309,6 +372,13 @@ namespace G
             value = ImageGenerationServerTool;
             return IsImageGenerationServerTool;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ImageGenerationServerTool PickImageGenerationServerTool() => IsImageGenerationServerTool
+            ? ImageGenerationServerTool!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ImageGenerationServerTool' but the value was {ToString()}.");
 
         /// <summary>
         /// Local shell tool configuration
@@ -341,6 +411,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.CodexLocalShellTool PickCodexLocalShellTool() => IsCodexLocalShellTool
+            ? CodexLocalShellTool!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CodexLocalShellTool' but the value was {ToString()}.");
+
+        /// <summary>
         /// Shell tool configuration
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -369,6 +446,13 @@ namespace G
             value = ShellServerTool;
             return IsShellServerTool;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ShellServerTool PickShellServerTool() => IsShellServerTool
+            ? ShellServerTool!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ShellServerTool' but the value was {ToString()}.");
 
         /// <summary>
         /// Apply patch tool configuration
@@ -401,6 +485,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ApplyPatchServerTool PickApplyPatchServerTool() => IsApplyPatchServerTool
+            ? ApplyPatchServerTool!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ApplyPatchServerTool' but the value was {ToString()}.");
+
+        /// <summary>
         /// Custom tool configuration
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -429,6 +520,13 @@ namespace G
             value = CustomTool;
             return IsCustomTool;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.CustomTool PickCustomTool() => IsCustomTool
+            ? CustomTool!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CustomTool' but the value was {ToString()}.");
 
         /// <summary>
         /// OpenRouter built-in server tool: returns the current date and time
@@ -461,6 +559,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.DatetimeServerTool PickDatetimeServerTool() => IsDatetimeServerTool
+            ? DatetimeServerTool!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'DatetimeServerTool' but the value was {ToString()}.");
+
+        /// <summary>
         /// OpenRouter built-in server tool: searches the web for current information
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -489,6 +594,13 @@ namespace G
             value = WebSearchServerToolOpenRouter;
             return IsWebSearchServerToolOpenRouter;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.WebSearchServerToolOpenRouter PickWebSearchServerToolOpenRouter() => IsWebSearchServerToolOpenRouter
+            ? WebSearchServerToolOpenRouter!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'WebSearchServerToolOpenRouter' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

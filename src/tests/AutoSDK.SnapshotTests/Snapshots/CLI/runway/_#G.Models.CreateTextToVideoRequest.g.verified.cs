@@ -48,6 +48,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.CreateTextToVideoRequestVeo31 PickVeo31() => IsVeo31
+            ? Veo31!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Veo31' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CreateTextToVideoRequestVeo31Fast? Veo31Fast { get; init; }
 #else
@@ -78,6 +85,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.CreateTextToVideoRequestVeo31Fast PickVeo31Fast() => IsVeo31Fast
+            ? Veo31Fast!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Veo31Fast' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CreateTextToVideoRequestVeo3? Veo3 { get; init; }
 #else
@@ -104,6 +118,13 @@ namespace G
             value = Veo3;
             return IsVeo3;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.CreateTextToVideoRequestVeo3 PickVeo3() => IsVeo3
+            ? Veo3!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Veo3' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

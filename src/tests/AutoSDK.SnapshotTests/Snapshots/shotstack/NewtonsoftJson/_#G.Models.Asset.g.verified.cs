@@ -46,6 +46,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.VideoAsset PickVideo() => IsVideo
+            ? Video!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Video' but the value was {ToString()}.");
+
+        /// <summary>
         /// The ImageAsset is used to create video from images to compose an image. The src must be a publicly accessible URL to an image resource such as a jpg or png file.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -74,6 +81,13 @@ namespace G
             value = Image;
             return IsImage;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ImageAsset PickImage() => IsImage
+            ? Image!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Image' but the value was {ToString()}.");
 
         /// <summary>
         /// The TextAsset is used to add text and titles to a video. The text can be styled with built in and custom<br/>
@@ -107,6 +121,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.TextAsset PickText() => IsText
+            ? Text!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
+
+        /// <summary>
         /// The RichTextAsset provides advanced text rendering with support for custom fonts, gradients, shadows, strokes,<br/>
         /// animations, and styling options. It offers more flexibility and visual effects than the basic TextAsset.
         /// </summary>
@@ -136,6 +157,13 @@ namespace G
             value = RichText;
             return IsRichText;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.RichTextAsset PickRichText() => IsRichText
+            ? RichText!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'RichText' but the value was {ToString()}.");
 
         /// <summary>
         /// The AudioAsset is used to add sound effects and audio at specific intervals on the timeline. The src must be a publicly accessible URL to an audio resource such  as an mp3 file.
@@ -168,6 +196,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.AudioAsset PickAudio() => IsAudio
+            ? Audio!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Audio' but the value was {ToString()}.");
+
+        /// <summary>
         /// The LumaAsset is used to create luma matte masks, transitions and effects between other assets. A luma matte is a grey scale image or animated video where the black areas are transparent and the white areas solid. The luma matte animation should be provided as an mp4 video file. The src must be a publicly accessible URL to the file.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -196,6 +231,13 @@ namespace G
             value = Luma;
             return IsLuma;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.LumaAsset PickLuma() => IsLuma
+            ? Luma!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Luma' but the value was {ToString()}.");
 
         /// <summary>
         /// The CaptionAsset is used to add captions (subtitles) to a video. It uses a supplied SRT or VTT file which will<br/>
@@ -234,6 +276,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.CaptionAsset PickCaption() => IsCaption
+            ? Caption!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Caption' but the value was {ToString()}.");
+
+        /// <summary>
         /// The RichCaptionAsset provides word-level caption animations with rich-text styling. It supports<br/>
         /// karaoke-style highlighting, word-by-word animations, and advanced typography. Use with SRT/VTT<br/>
         /// files or auto-transcription via aliases.
@@ -264,6 +313,13 @@ namespace G
             value = RichCaption;
             return IsRichCaption;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.RichCaptionAsset PickRichCaption() => IsRichCaption
+            ? RichCaption!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'RichCaption' but the value was {ToString()}.");
 
         /// <summary>
         /// **Notice: The HtmlAsset is deprecated, use the [TextAsset](#tocs_textasset) instead.**<br/>
@@ -299,6 +355,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.HtmlAsset PickHtml() => IsHtml
+            ? Html!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Html' but the value was {ToString()}.");
+
+        /// <summary>
         /// **Notice: The TitleAsset is deprecated, use the [TextAsset](#tocs_textasset) instead.**<br/>
         /// The TitleAsset clip type lets you create video titles from a text string and apply styling and positioning.
         /// </summary>
@@ -330,6 +393,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.TitleAsset PickTitle() => IsTitle
+            ? Title!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Title' but the value was {ToString()}.");
+
+        /// <summary>
         /// The ShapeAsset is used to add shapes to a video. The shape can be styled with a fill and a stroke.<br/>
         /// You can manipulate properties such as rotation to create dynamic effects like a diamond shape or stripes.
         /// </summary>
@@ -359,6 +429,13 @@ namespace G
             value = Shape;
             return IsShape;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ShapeAsset PickShape() => IsShape
+            ? Shape!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Shape' but the value was {ToString()}.");
 
         /// <summary>
         /// The SvgAsset is used to add scalable vector graphics (SVG) shapes to a video.<br/>
@@ -427,6 +504,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.SvgAsset PickSvg() => IsSvg
+            ? Svg!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Svg' but the value was {ToString()}.");
+
+        /// <summary>
         /// The TextToImageAsset lets you create a dynamic image from a text prompt.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -455,6 +539,13 @@ namespace G
             value = TextToImage;
             return IsTextToImage;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.TextToImageAsset PickTextToImage() => IsTextToImage
+            ? TextToImage!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'TextToImage' but the value was {ToString()}.");
 
         /// <summary>
         /// The ImageToVideoAsset lets you create a video from an image and a text prompt.
@@ -487,6 +578,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ImageToVideoAsset PickImageToVideo() => IsImageToVideo
+            ? ImageToVideo!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ImageToVideo' but the value was {ToString()}.");
+
+        /// <summary>
         /// The TextToSpeechAsset lets you generate a voice over from text using a text-to-speech service. The generated audio can be trimmed, faded and have its volume and speed adjusted using the same properties available on the AudioAsset.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -515,6 +613,13 @@ namespace G
             value = TextToSpeech;
             return IsTextToSpeech;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.TextToSpeechAsset PickTextToSpeech() => IsTextToSpeech
+            ? TextToSpeech!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'TextToSpeech' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

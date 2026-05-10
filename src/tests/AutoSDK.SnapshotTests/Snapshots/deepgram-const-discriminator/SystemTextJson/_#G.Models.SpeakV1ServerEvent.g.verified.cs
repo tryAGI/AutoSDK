@@ -46,6 +46,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.AudioResponsePayload PickAudioResponse() => IsAudioResponse
+            ? AudioResponse!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AudioResponse' but the value was {ToString()}.");
+
+        /// <summary>
         /// Metadata for the speak session.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -74,6 +81,13 @@ namespace G
             value = SpeakMetadata;
             return IsSpeakMetadata;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.SpeakMetadataPayload PickSpeakMetadata() => IsSpeakMetadata
+            ? SpeakMetadata!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SpeakMetadata' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

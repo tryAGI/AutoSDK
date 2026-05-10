@@ -48,6 +48,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.SegmentedJsonExportOptions PickSegmentedJson() => IsSegmentedJson
+            ? SegmentedJson!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SegmentedJson' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.DocxExportOptions? Docx { get; init; }
 #else
@@ -74,6 +81,13 @@ namespace G
             value = Docx;
             return IsDocx;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.DocxExportOptions PickDocx() => IsDocx
+            ? Docx!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Docx' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -108,6 +122,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.PdfExportOptions PickPdf() => IsPdf
+            ? Pdf!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Pdf' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.TxtExportOptions? Txt { get; init; }
 #else
@@ -134,6 +155,13 @@ namespace G
             value = Txt;
             return IsTxt;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.TxtExportOptions PickTxt() => IsTxt
+            ? Txt!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Txt' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -168,6 +196,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.HtmlExportOptions PickHtml() => IsHtml
+            ? Html!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Html' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.SrtExportOptions? Srt { get; init; }
 #else
@@ -194,6 +229,13 @@ namespace G
             value = Srt;
             return IsSrt;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.SrtExportOptions PickSrt() => IsSrt
+            ? Srt!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Srt' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

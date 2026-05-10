@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.ChatMessage PickChatMessage() => IsChatMessage
+            ? ChatMessage!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ChatMessage' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.PlaceholderMessage? PlaceholderMessage { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = PlaceholderMessage;
             return IsPlaceholderMessage;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.PlaceholderMessage PickPlaceholderMessage() => IsPlaceholderMessage
+            ? PlaceholderMessage!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'PlaceholderMessage' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

@@ -46,6 +46,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.OutputMessage PickMessage() => IsMessage
+            ? Message!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Message' but the value was {ToString()}.");
+
+        /// <summary>
         /// The results of a file search tool call. See the <br/>
         /// [file search guide](/docs/guides/tools-file-search) for more information.
         /// </summary>
@@ -75,6 +82,13 @@ namespace G
             value = FileSearchCall;
             return IsFileSearchCall;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.FileSearchToolCall PickFileSearchCall() => IsFileSearchCall
+            ? FileSearchCall!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FileSearchCall' but the value was {ToString()}.");
 
         /// <summary>
         /// A tool call to run a function. See the <br/>
@@ -108,6 +122,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.FunctionToolCall PickFunctionCall() => IsFunctionCall
+            ? FunctionCall!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FunctionCall' but the value was {ToString()}.");
+
+        /// <summary>
         /// The results of a web search tool call. See the <br/>
         /// [web search guide](/docs/guides/tools-web-search) for more information.
         /// </summary>
@@ -139,6 +160,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.WebSearchToolCall PickWebSearchCall() => IsWebSearchCall
+            ? WebSearchCall!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'WebSearchCall' but the value was {ToString()}.");
+
+        /// <summary>
         /// A tool call to a computer use tool. See the <br/>
         /// [computer use guide](/docs/guides/tools-computer-use) for more information.
         /// </summary>
@@ -168,6 +196,13 @@ namespace G
             value = ComputerCall;
             return IsComputerCall;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ComputerToolCall PickComputerCall() => IsComputerCall
+            ? ComputerCall!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ComputerCall' but the value was {ToString()}.");
 
         /// <summary>
         /// A description of the chain of thought used by a reasoning model while generating<br/>
@@ -203,6 +238,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ReasoningItem PickReasoning() => IsReasoning
+            ? Reasoning!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Reasoning' but the value was {ToString()}.");
+
+        /// <summary>
         /// An image generation request made by the model.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -231,6 +273,13 @@ namespace G
             value = ImageGenerationCall;
             return IsImageGenerationCall;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ImageGenToolCall PickImageGenerationCall() => IsImageGenerationCall
+            ? ImageGenerationCall!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ImageGenerationCall' but the value was {ToString()}.");
 
         /// <summary>
         /// A tool call to run code.
@@ -263,6 +312,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.CodeInterpreterToolCall PickCodeInterpreterCall() => IsCodeInterpreterCall
+            ? CodeInterpreterCall!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CodeInterpreterCall' but the value was {ToString()}.");
+
+        /// <summary>
         /// A tool call to run a command on the local shell.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -291,6 +347,13 @@ namespace G
             value = LocalShellCall;
             return IsLocalShellCall;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.LocalShellToolCall PickLocalShellCall() => IsLocalShellCall
+            ? LocalShellCall!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'LocalShellCall' but the value was {ToString()}.");
 
         /// <summary>
         /// An invocation of a tool on an MCP server.
@@ -323,6 +386,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.MCPToolCall PickMcpCall() => IsMcpCall
+            ? McpCall!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'McpCall' but the value was {ToString()}.");
+
+        /// <summary>
         /// A list of tools available on an MCP server.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -353,6 +423,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.MCPListTools PickMcpListTools() => IsMcpListTools
+            ? McpListTools!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'McpListTools' but the value was {ToString()}.");
+
+        /// <summary>
         /// A request for human approval of a tool invocation.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -381,6 +458,13 @@ namespace G
             value = McpApprovalRequest;
             return IsMcpApprovalRequest;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.MCPApprovalRequest PickMcpApprovalRequest() => IsMcpApprovalRequest
+            ? McpApprovalRequest!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'McpApprovalRequest' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

@@ -48,6 +48,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.GenerateStreamText PickTextGeneration() => IsTextGeneration
+            ? TextGeneration!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'TextGeneration' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.GenerateStreamEnd? StreamEnd { get; init; }
 #else
@@ -78,6 +85,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.GenerateStreamEnd PickStreamEnd() => IsStreamEnd
+            ? StreamEnd!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'StreamEnd' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.GenerateStreamError? StreamError { get; init; }
 #else
@@ -104,6 +118,13 @@ namespace G
             value = StreamError;
             return IsStreamError;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.GenerateStreamError PickStreamError() => IsStreamError
+            ? StreamError!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'StreamError' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.ChatToolChoice0 PickChatToolChoice0() => IsChatToolChoice0
+            ? ChatToolChoice0!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ChatToolChoice0' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ChatToolChoice1? ChatToolChoice1 { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = ChatToolChoice1;
             return IsChatToolChoice1;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ChatToolChoice1 PickChatToolChoice1() => IsChatToolChoice1
+            ? ChatToolChoice1!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ChatToolChoice1' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -101,6 +115,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ChatToolChoice2 PickChatToolChoice2() => IsChatToolChoice2
+            ? ChatToolChoice2!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ChatToolChoice2' but the value was {ToString()}.");
+
+        /// <summary>
         /// Named tool choice for specific function
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -129,6 +150,13 @@ namespace G
             value = ChatNamedToolChoice;
             return IsChatNamedToolChoice;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ChatNamedToolChoice PickChatNamedToolChoice() => IsChatNamedToolChoice
+            ? ChatNamedToolChoice!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ChatNamedToolChoice' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

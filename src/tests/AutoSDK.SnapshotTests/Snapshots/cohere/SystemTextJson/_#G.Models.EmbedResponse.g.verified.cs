@@ -48,6 +48,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.EmbedFloatsResponse PickEmbeddingsFloats() => IsEmbeddingsFloats
+            ? EmbeddingsFloats!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'EmbeddingsFloats' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.EmbedByTypeResponse? EmbeddingsByType { get; init; }
 #else
@@ -74,6 +81,13 @@ namespace G
             value = EmbeddingsByType;
             return IsEmbeddingsByType;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.EmbedByTypeResponse PickEmbeddingsByType() => IsEmbeddingsByType
+            ? EmbeddingsByType!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'EmbeddingsByType' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

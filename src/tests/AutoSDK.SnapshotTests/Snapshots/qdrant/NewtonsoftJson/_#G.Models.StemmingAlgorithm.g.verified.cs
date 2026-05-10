@@ -39,6 +39,13 @@ namespace G
             value = SnowballParams;
             return IsSnowballParams;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.SnowballParams PickSnowballParams() => IsSnowballParams
+            ? SnowballParams!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SnowballParams' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

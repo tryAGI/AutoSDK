@@ -39,6 +39,13 @@ namespace G
             value = StringCheckGrader;
             return IsStringCheckGrader;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.GraderStringCheck PickStringCheckGrader() => IsStringCheckGrader
+            ? StringCheckGrader!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'StringCheckGrader' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

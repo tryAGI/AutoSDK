@@ -48,6 +48,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.RequestTextBlock PickText() => IsText
+            ? Text!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.RequestImageBlock? Image { get; init; }
 #else
@@ -74,6 +81,13 @@ namespace G
             value = Image;
             return IsImage;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.RequestImageBlock PickImage() => IsImage
+            ? Image!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Image' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -108,6 +122,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.RequestToolUseBlock PickToolUse() => IsToolUse
+            ? ToolUse!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ToolUse' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.RequestToolResultBlock? ToolResult { get; init; }
 #else
@@ -134,6 +155,13 @@ namespace G
             value = ToolResult;
             return IsToolResult;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.RequestToolResultBlock PickToolResult() => IsToolResult
+            ? ToolResult!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ToolResult' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -168,6 +196,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.RequestDocumentBlock PickDocument() => IsDocument
+            ? Document!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Document' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.RequestThinkingBlock? Thinking { get; init; }
 #else
@@ -198,6 +233,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.RequestThinkingBlock PickThinking() => IsThinking
+            ? Thinking!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Thinking' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.RequestRedactedThinkingBlock? RedactedThinking { get; init; }
 #else
@@ -224,6 +266,13 @@ namespace G
             value = RedactedThinking;
             return IsRedactedThinking;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.RequestRedactedThinkingBlock PickRedactedThinking() => IsRedactedThinking
+            ? RedactedThinking!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'RedactedThinking' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

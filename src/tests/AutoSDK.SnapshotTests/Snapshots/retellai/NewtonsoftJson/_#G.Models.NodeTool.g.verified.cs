@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.OneOf<global::G.CustomTool, global::G.CheckAvailabilityCalTool, global::G.BookAppointmentCalTool> PickNodeToolVariant1() => IsNodeToolVariant1
+            ? NodeToolVariant1!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'NodeToolVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.NodeToolVariant2? NodeToolVariant2 { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = NodeToolVariant2;
             return IsNodeToolVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.NodeToolVariant2 PickNodeToolVariant2() => IsNodeToolVariant2
+            ? NodeToolVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'NodeToolVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

@@ -41,6 +41,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.FineTuneChatCompletionRequestAssistantMessageAssistantMessage PickAssistantMessage1() => IsAssistantMessage1
+            ? AssistantMessage1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AssistantMessage1' but the value was {ToString()}.");
+
+        /// <summary>
         /// Messages sent by the model in response to user messages.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -69,6 +76,13 @@ namespace G
             value = AssistantMessage2;
             return IsAssistantMessage2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ChatCompletionRequestAssistantMessage PickAssistantMessage2() => IsAssistantMessage2
+            ? AssistantMessage2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AssistantMessage2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

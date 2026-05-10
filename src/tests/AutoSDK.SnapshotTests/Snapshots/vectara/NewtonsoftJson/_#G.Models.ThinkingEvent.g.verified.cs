@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.AgentEventBase PickAgentBase() => IsAgentBase
+            ? AgentBase!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AgentBase' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ThinkingEventVariant2? ThinkingEventVariant2 { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = ThinkingEventVariant2;
             return IsThinkingEventVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ThinkingEventVariant2 PickThinkingEventVariant2() => IsThinkingEventVariant2
+            ? ThinkingEventVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ThinkingEventVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

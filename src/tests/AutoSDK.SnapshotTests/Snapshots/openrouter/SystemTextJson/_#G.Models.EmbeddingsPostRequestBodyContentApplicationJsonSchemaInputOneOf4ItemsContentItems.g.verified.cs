@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems0 PickEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems0() => IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems0
+            ? EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems0!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems0' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems1? EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems1 { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems1;
             return IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems1;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems1 PickEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems1() => IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems1
+            ? EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems1' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

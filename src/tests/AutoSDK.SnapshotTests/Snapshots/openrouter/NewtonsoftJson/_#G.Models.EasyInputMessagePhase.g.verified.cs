@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.EasyInputMessagePhase0 PickEasyInputMessagePhase0() => IsEasyInputMessagePhase0
+            ? EasyInputMessagePhase0!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'EasyInputMessagePhase0' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.EasyInputMessagePhase1? EasyInputMessagePhase1 { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = EasyInputMessagePhase1;
             return IsEasyInputMessagePhase1;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.EasyInputMessagePhase1 PickEasyInputMessagePhase1() => IsEasyInputMessagePhase1
+            ? EasyInputMessagePhase1!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'EasyInputMessagePhase1' but the value was {ToString()}.");
 
         /// <summary>
         /// Any type
@@ -99,6 +113,13 @@ namespace G
             value = EasyInputMessagePhaseVariant3;
             return IsEasyInputMessagePhaseVariant3;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public object PickEasyInputMessagePhaseVariant3() => IsEasyInputMessagePhaseVariant3
+            ? EasyInputMessagePhaseVariant3!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'EasyInputMessagePhaseVariant3' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

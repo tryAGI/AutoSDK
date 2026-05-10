@@ -49,6 +49,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ResponseFormatText PickText() => IsText
+            ? Text!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
+
+        /// <summary>
         /// JSON Schema response format. Used to generate structured JSON responses.<br/>
         /// Learn more about [Structured Outputs](/docs/guides/structured-outputs).
         /// </summary>
@@ -78,6 +85,13 @@ namespace G
             value = JsonSchema;
             return IsJsonSchema;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.TextResponseFormatJsonSchema PickJsonSchema() => IsJsonSchema
+            ? JsonSchema!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'JsonSchema' but the value was {ToString()}.");
 
         /// <summary>
         /// JSON object response format. An older method of generating JSON responses.<br/>
@@ -111,6 +125,13 @@ namespace G
             value = JsonObject;
             return IsJsonObject;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ResponseFormatJsonObject PickJsonObject() => IsJsonObject
+            ? JsonObject!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'JsonObject' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

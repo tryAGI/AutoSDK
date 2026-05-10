@@ -47,6 +47,13 @@ namespace G
             value = TextToSpeech;
             return IsTextToSpeech;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ElevenLabsTextToSpeechOptions PickTextToSpeech() => IsTextToSpeech
+            ? TextToSpeech!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'TextToSpeech' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

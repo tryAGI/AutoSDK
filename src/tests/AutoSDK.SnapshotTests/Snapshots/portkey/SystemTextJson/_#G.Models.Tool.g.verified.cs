@@ -42,6 +42,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.FileSearchTool PickFileSearch() => IsFileSearch
+            ? FileSearch!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FileSearch' but the value was {ToString()}.");
+
+        /// <summary>
         /// Defines a function in your own code the model can choose to call. Learn more<br/>
         /// about [function calling](/docs/guides/function-calling).
         /// </summary>
@@ -71,6 +78,13 @@ namespace G
             value = Function;
             return IsFunction;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.FunctionTool PickFunction() => IsFunction
+            ? Function!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Function' but the value was {ToString()}.");
 
         /// <summary>
         /// A tool that controls a virtual computer. Learn more about the <br/>
@@ -104,6 +118,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ComputerTool PickComputerUse() => IsComputerUse
+            ? ComputerUse!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ComputerUse' but the value was {ToString()}.");
+
+        /// <summary>
         /// This tool searches the web for relevant results to use in a response.<br/>
         /// Learn more about the [web search tool](/docs/guides/tools-web-search).
         /// </summary>
@@ -133,6 +154,13 @@ namespace G
             value = WebSearch;
             return IsWebSearch;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.WebSearchTool PickWebSearch() => IsWebSearch
+            ? WebSearch!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'WebSearch' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

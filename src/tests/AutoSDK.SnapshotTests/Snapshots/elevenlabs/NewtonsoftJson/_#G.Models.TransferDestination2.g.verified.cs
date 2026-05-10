@@ -48,6 +48,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.PhoneNumberTransferDestination PickPhone() => IsPhone
+            ? Phone!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Phone' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.SIPUriTransferDestination? SipUri { get; init; }
 #else
@@ -74,6 +81,13 @@ namespace G
             value = SipUri;
             return IsSipUri;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.SIPUriTransferDestination PickSipUri() => IsSipUri
+            ? SipUri!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SipUri' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -108,6 +122,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.PhoneNumberDynamicVariableTransferDestination PickPhoneDynamicVariable() => IsPhoneDynamicVariable
+            ? PhoneDynamicVariable!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'PhoneDynamicVariable' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.SIPUriDynamicVariableTransferDestination? SipUriDynamicVariable { get; init; }
 #else
@@ -134,6 +155,13 @@ namespace G
             value = SipUriDynamicVariable;
             return IsSipUriDynamicVariable;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.SIPUriDynamicVariableTransferDestination PickSipUriDynamicVariable() => IsSipUriDynamicVariable
+            ? SipUriDynamicVariable!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SipUriDynamicVariable' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

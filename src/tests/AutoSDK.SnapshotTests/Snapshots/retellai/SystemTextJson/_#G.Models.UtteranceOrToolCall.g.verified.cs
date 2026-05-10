@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.Utterance PickUtterance() => IsUtterance
+            ? Utterance!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Utterance' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ToolCallInvocationUtterance? Invocation { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = Invocation;
             return IsInvocation;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ToolCallInvocationUtterance PickInvocation() => IsInvocation
+            ? Invocation!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Invocation' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -103,6 +117,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.ToolCallResultUtterance PickResult() => IsResult
+            ? Result!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Result' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.NodeTransitionUtterance? NodeTransition { get; init; }
 #else
@@ -133,6 +154,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.NodeTransitionUtterance PickNodeTransition() => IsNodeTransition
+            ? NodeTransition!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'NodeTransition' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.DTMFUtterance? Dtmf { get; init; }
 #else
@@ -159,6 +187,13 @@ namespace G
             value = Dtmf;
             return IsDtmf;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.DTMFUtterance PickDtmf() => IsDtmf
+            ? Dtmf!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Dtmf' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

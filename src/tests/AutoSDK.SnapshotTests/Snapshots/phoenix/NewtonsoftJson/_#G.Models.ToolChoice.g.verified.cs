@@ -48,6 +48,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.PromptToolChoiceNone PickNone() => IsNone
+            ? None!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'None' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.PromptToolChoiceZeroOrMore? ZeroOrMore { get; init; }
 #else
@@ -74,6 +81,13 @@ namespace G
             value = ZeroOrMore;
             return IsZeroOrMore;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.PromptToolChoiceZeroOrMore PickZeroOrMore() => IsZeroOrMore
+            ? ZeroOrMore!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ZeroOrMore' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -108,6 +122,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.PromptToolChoiceOneOrMore PickOneOrMore() => IsOneOrMore
+            ? OneOrMore!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OneOrMore' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.PromptToolChoiceSpecificFunctionTool? SpecificFunction { get; init; }
 #else
@@ -134,6 +155,13 @@ namespace G
             value = SpecificFunction;
             return IsSpecificFunction;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.PromptToolChoiceSpecificFunctionTool PickSpecificFunction() => IsSpecificFunction
+            ? SpecificFunction!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SpecificFunction' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

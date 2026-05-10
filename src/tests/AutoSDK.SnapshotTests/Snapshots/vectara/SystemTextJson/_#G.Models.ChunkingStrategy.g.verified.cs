@@ -46,6 +46,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.MaxCharsChunkingStrategy PickMaxCharsChunkingStrategy() => IsMaxCharsChunkingStrategy
+            ? MaxCharsChunkingStrategy!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MaxCharsChunkingStrategy' but the value was {ToString()}.");
+
+        /// <summary>
         /// Sets a chunking strategy that creates one chunk per sentence. This is the default strategy used when no chunking strategy is specified.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -74,6 +81,13 @@ namespace G
             value = SentenceChunkingStrategy;
             return IsSentenceChunkingStrategy;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.SentenceChunkingStrategy PickSentenceChunkingStrategy() => IsSentenceChunkingStrategy
+            ? SentenceChunkingStrategy!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SentenceChunkingStrategy' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

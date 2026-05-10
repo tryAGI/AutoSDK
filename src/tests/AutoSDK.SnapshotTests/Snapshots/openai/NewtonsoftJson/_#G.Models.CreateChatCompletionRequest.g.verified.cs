@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.CreateModelResponseProperties PickModelResponseProperties() => IsModelResponseProperties
+            ? ModelResponseProperties!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ModelResponseProperties' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CreateChatCompletionRequestVariant2? CreateChatCompletionRequestVariant2 { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = CreateChatCompletionRequestVariant2;
             return IsCreateChatCompletionRequestVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.CreateChatCompletionRequestVariant2 PickCreateChatCompletionRequestVariant2() => IsCreateChatCompletionRequestVariant2
+            ? CreateChatCompletionRequestVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CreateChatCompletionRequestVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

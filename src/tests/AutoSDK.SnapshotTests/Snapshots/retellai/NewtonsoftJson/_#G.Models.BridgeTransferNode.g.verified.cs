@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.NodeBase PickBase() => IsBase
+            ? Base!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Base' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.BridgeTransferNodeVariant2? BridgeTransferNodeVariant2 { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = BridgeTransferNodeVariant2;
             return IsBridgeTransferNodeVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.BridgeTransferNodeVariant2 PickBridgeTransferNodeVariant2() => IsBridgeTransferNodeVariant2
+            ? BridgeTransferNodeVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BridgeTransferNodeVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

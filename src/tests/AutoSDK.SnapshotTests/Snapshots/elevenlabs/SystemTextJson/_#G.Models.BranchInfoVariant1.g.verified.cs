@@ -48,6 +48,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.TransferBranchInfoTrafficSplit PickTrafficSplit() => IsTrafficSplit
+            ? TrafficSplit!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'TrafficSplit' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.TransferBranchInfoDefaultingToMain? DefaultingToMain { get; init; }
 #else
@@ -74,6 +81,13 @@ namespace G
             value = DefaultingToMain;
             return IsDefaultingToMain;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.TransferBranchInfoDefaultingToMain PickDefaultingToMain() => IsDefaultingToMain
+            ? DefaultingToMain!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'DefaultingToMain' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

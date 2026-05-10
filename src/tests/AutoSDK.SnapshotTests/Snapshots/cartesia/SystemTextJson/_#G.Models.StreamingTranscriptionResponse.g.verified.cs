@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.AllOf<global::G.StreamingTranscriptionResponseVariant12, global::G.TranscriptMessage> PickStreamingTranscriptionResponseVariant1() => IsStreamingTranscriptionResponseVariant1
+            ? StreamingTranscriptionResponseVariant1!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'StreamingTranscriptionResponseVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.AllOf<global::G.StreamingTranscriptionResponseVariant22, global::G.FlushDoneMessage>? StreamingTranscriptionResponseVariant2 { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = StreamingTranscriptionResponseVariant2;
             return IsStreamingTranscriptionResponseVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.AllOf<global::G.StreamingTranscriptionResponseVariant22, global::G.FlushDoneMessage> PickStreamingTranscriptionResponseVariant2() => IsStreamingTranscriptionResponseVariant2
+            ? StreamingTranscriptionResponseVariant2!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'StreamingTranscriptionResponseVariant2' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -103,6 +117,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.AllOf<global::G.StreamingTranscriptionResponseVariant32, global::G.DoneMessage> PickStreamingTranscriptionResponseVariant3() => IsStreamingTranscriptionResponseVariant3
+            ? StreamingTranscriptionResponseVariant3!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'StreamingTranscriptionResponseVariant3' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.AllOf<global::G.StreamingTranscriptionResponseVariant42, global::G.ErrorMessage>? StreamingTranscriptionResponseVariant4 { get; init; }
 #else
@@ -129,6 +150,13 @@ namespace G
             value = StreamingTranscriptionResponseVariant4;
             return IsStreamingTranscriptionResponseVariant4;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.AllOf<global::G.StreamingTranscriptionResponseVariant42, global::G.ErrorMessage> PickStreamingTranscriptionResponseVariant4() => IsStreamingTranscriptionResponseVariant4
+            ? StreamingTranscriptionResponseVariant4!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'StreamingTranscriptionResponseVariant4' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

@@ -41,6 +41,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.CreateAliasOperation PickCreateOperation() => IsCreateOperation
+            ? CreateOperation!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CreateOperation' but the value was {ToString()}.");
+
+        /// <summary>
         /// Delete alias if exists
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -71,6 +78,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.DeleteAliasOperation PickDeleteOperation() => IsDeleteOperation
+            ? DeleteOperation!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'DeleteOperation' but the value was {ToString()}.");
+
+        /// <summary>
         /// Change alias to a new one
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -99,6 +113,13 @@ namespace G
             value = RenameOperation;
             return IsRenameOperation;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.RenameAliasOperation PickRenameOperation() => IsRenameOperation
+            ? RenameOperation!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'RenameOperation' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

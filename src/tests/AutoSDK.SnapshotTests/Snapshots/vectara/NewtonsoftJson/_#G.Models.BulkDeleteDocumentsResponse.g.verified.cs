@@ -61,6 +61,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.BulkDeleteAsyncResponse PickAsync() => IsAsync
+            ? Async!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Async' but the value was {ToString()}.");
+
+        /// <summary>
         /// Response when async=false and operation completes successfully (HTTP 200).
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -89,6 +96,13 @@ namespace G
             value = Success;
             return IsSuccess;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.BulkDeleteSyncSuccessResponse PickSuccess() => IsSuccess
+            ? Success!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Success' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

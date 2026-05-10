@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::System.Collections.Generic.IList<string> PickMcpServerToolAllowedToolsVariant1() => IsMcpServerToolAllowedToolsVariant1
+            ? McpServerToolAllowedToolsVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'McpServerToolAllowedToolsVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.McpServerToolAllowedTools1? McpServerToolAllowedTools1 { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = McpServerToolAllowedTools1;
             return IsMcpServerToolAllowedTools1;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.McpServerToolAllowedTools1 PickMcpServerToolAllowedTools1() => IsMcpServerToolAllowedTools1
+            ? McpServerToolAllowedTools1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'McpServerToolAllowedTools1' but the value was {ToString()}.");
 
         /// <summary>
         /// Any type
@@ -101,6 +115,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public object PickMcpServerToolAllowedToolsVariant3() => IsMcpServerToolAllowedToolsVariant3
+            ? McpServerToolAllowedToolsVariant3!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'McpServerToolAllowedToolsVariant3' but the value was {ToString()}.");
+
+        /// <summary>
         /// Any type
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -129,6 +150,13 @@ namespace G
             value = McpServerToolAllowedToolsVariant4;
             return IsMcpServerToolAllowedToolsVariant4;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public object PickMcpServerToolAllowedToolsVariant4() => IsMcpServerToolAllowedToolsVariant4
+            ? McpServerToolAllowedToolsVariant4!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'McpServerToolAllowedToolsVariant4' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

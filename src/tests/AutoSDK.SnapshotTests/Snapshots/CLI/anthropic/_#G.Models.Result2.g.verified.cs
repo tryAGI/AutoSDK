@@ -49,6 +49,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.SucceededResult PickSucceeded() => IsSucceeded
+            ? Succeeded!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Succeeded' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ErroredResult? Errored { get; init; }
 #else
@@ -75,6 +82,13 @@ namespace G
             value = Errored;
             return IsErrored;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ErroredResult PickErrored() => IsErrored
+            ? Errored!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Errored' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -109,6 +123,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.CanceledResult PickCanceled() => IsCanceled
+            ? Canceled!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Canceled' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ExpiredResult? Expired { get; init; }
 #else
@@ -135,6 +156,13 @@ namespace G
             value = Expired;
             return IsExpired;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ExpiredResult PickExpired() => IsExpired
+            ? Expired!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Expired' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

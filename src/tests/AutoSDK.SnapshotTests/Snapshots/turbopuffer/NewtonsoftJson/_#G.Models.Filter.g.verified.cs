@@ -41,6 +41,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public byte[] PickFilterVariant1() => IsFilterVariant1
+            ? FilterVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FilterVariant1' but the value was {ToString()}.");
+
+        /// <summary>
         /// Inverse of `Eq`. If value is `null`, matches documents with the attribute.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -69,6 +76,13 @@ namespace G
             value = FilterVariant2;
             return IsFilterVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public byte[] PickFilterVariant2() => IsFilterVariant2
+            ? FilterVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FilterVariant2' but the value was {ToString()}.");
 
         /// <summary>
         /// Matches any attribute value contained in the provided list.
@@ -101,6 +115,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public byte[] PickFilterVariant3() => IsFilterVariant3
+            ? FilterVariant3!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FilterVariant3' but the value was {ToString()}.");
+
+        /// <summary>
         /// Inverse of `In`, matches any attributes values not contained in the provided list.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -129,6 +150,13 @@ namespace G
             value = FilterVariant4;
             return IsFilterVariant4;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public byte[] PickFilterVariant4() => IsFilterVariant4
+            ? FilterVariant4!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FilterVariant4' but the value was {ToString()}.");
 
         /// <summary>
         /// Checks whether the selected array attribute contains the provided value.
@@ -161,6 +189,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public byte[] PickFilterVariant5() => IsFilterVariant5
+            ? FilterVariant5!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FilterVariant5' but the value was {ToString()}.");
+
+        /// <summary>
         /// Inverse of Contains
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -189,6 +224,13 @@ namespace G
             value = FilterVariant6;
             return IsFilterVariant6;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public byte[] PickFilterVariant6() => IsFilterVariant6
+            ? FilterVariant6!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FilterVariant6' but the value was {ToString()}.");
 
         /// <summary>
         /// Checks whether the selected array attribute contains any of the values provided (intersection filter).
@@ -221,6 +263,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public byte[] PickFilterVariant7() => IsFilterVariant7
+            ? FilterVariant7!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FilterVariant7' but the value was {ToString()}.");
+
+        /// <summary>
         /// Inverse of ContainsAny.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -249,6 +298,13 @@ namespace G
             value = FilterVariant8;
             return IsFilterVariant8;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public byte[] PickFilterVariant8() => IsFilterVariant8
+            ? FilterVariant8!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FilterVariant8' but the value was {ToString()}.");
 
         /// <summary>
         /// For ints, this is a numeric less-than. For strings, lexicographic less-than. For datetimes, numeric less-than on millisecond representation.
@@ -281,6 +337,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public byte[] PickFilterVariant9() => IsFilterVariant9
+            ? FilterVariant9!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FilterVariant9' but the value was {ToString()}.");
+
+        /// <summary>
         /// For ints, this is a numeric less-than-or-equal. For strings, lexicographic less-than-or-equal. For datetimes, numeric less-than-or-equal on millisecond representation.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -309,6 +372,13 @@ namespace G
             value = FilterVariant10;
             return IsFilterVariant10;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public byte[] PickFilterVariant10() => IsFilterVariant10
+            ? FilterVariant10!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FilterVariant10' but the value was {ToString()}.");
 
         /// <summary>
         /// For ints, this is a numeric greater-than. For strings, lexicographic greater-than. For datetimes, numeric greater-than on millisecond representation.
@@ -341,6 +411,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public byte[] PickFilterVariant11() => IsFilterVariant11
+            ? FilterVariant11!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FilterVariant11' but the value was {ToString()}.");
+
+        /// <summary>
         /// For ints, this is a numeric greater-than-or-equal. For strings, lexicographic greater-than-or-equal. For datetimes, numeric greater-than-or-equal on millisecond representation.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -369,6 +446,13 @@ namespace G
             value = FilterVariant12;
             return IsFilterVariant12;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public byte[] PickFilterVariant12() => IsFilterVariant12
+            ? FilterVariant12!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FilterVariant12' but the value was {ToString()}.");
 
         /// <summary>
         /// Checks whether any element of an array attribute is less than the provided value, using the same rules as `Lt`.
@@ -401,6 +485,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public byte[] PickFilterVariant13() => IsFilterVariant13
+            ? FilterVariant13!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FilterVariant13' but the value was {ToString()}.");
+
+        /// <summary>
         /// Checks whether any element of an array attribute is less than or equal to the provided value, using the same rules as `Lte`.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -429,6 +520,13 @@ namespace G
             value = FilterVariant14;
             return IsFilterVariant14;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public byte[] PickFilterVariant14() => IsFilterVariant14
+            ? FilterVariant14!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FilterVariant14' but the value was {ToString()}.");
 
         /// <summary>
         /// Checks whether any element of an array attribute is greater than the provided value, using the same rules as `Gt`.
@@ -461,6 +559,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public byte[] PickFilterVariant15() => IsFilterVariant15
+            ? FilterVariant15!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FilterVariant15' but the value was {ToString()}.");
+
+        /// <summary>
         /// Checks whether any element of an array attribute is greater than or equal to the provided value, using the same rules as `Gte`.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -489,6 +594,13 @@ namespace G
             value = FilterVariant16;
             return IsFilterVariant16;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public byte[] PickFilterVariant16() => IsFilterVariant16
+            ? FilterVariant16!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FilterVariant16' but the value was {ToString()}.");
 
         /// <summary>
         /// Unix-style glob match against string values. The full syntax is described in the Rust `globset` crate documentation. Glob patterns with a concrete prefix like "foo*" internally compile to efficient range queries.
@@ -521,6 +633,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public byte[] PickFilterVariant17() => IsFilterVariant17
+            ? FilterVariant17!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FilterVariant17' but the value was {ToString()}.");
+
+        /// <summary>
         /// Inverse of `Glob`, Unix-style glob filters against string attributes values. The full syntax is described in the Rust `globset` crate documentation.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -549,6 +668,13 @@ namespace G
             value = FilterVariant18;
             return IsFilterVariant18;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public byte[] PickFilterVariant18() => IsFilterVariant18
+            ? FilterVariant18!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FilterVariant18' but the value was {ToString()}.");
 
         /// <summary>
         /// Case insensitive version of `Glob`.
@@ -581,6 +707,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public byte[] PickFilterVariant19() => IsFilterVariant19
+            ? FilterVariant19!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FilterVariant19' but the value was {ToString()}.");
+
+        /// <summary>
         /// Case insensitive version of `NotGlob`.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -609,6 +742,13 @@ namespace G
             value = FilterVariant20;
             return IsFilterVariant20;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public byte[] PickFilterVariant20() => IsFilterVariant20
+            ? FilterVariant20!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FilterVariant20' but the value was {ToString()}.");
 
         /// <summary>
         /// Regular expression match against string values. Requires the regex schema attribute to be enabled before use.
@@ -641,6 +781,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public byte[] PickFilterVariant21() => IsFilterVariant21
+            ? FilterVariant21!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FilterVariant21' but the value was {ToString()}.");
+
+        /// <summary>
         /// Matches if all tokens in the input string are present in the attributes value. Requires that the attribute is configured for full-text search.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -669,6 +816,13 @@ namespace G
             value = FilterVariant22;
             return IsFilterVariant22;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public byte[] PickFilterVariant22() => IsFilterVariant22
+            ? FilterVariant22!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FilterVariant22' but the value was {ToString()}.");
 
         /// <summary>
         /// Matches if all tokens in the input string are present in the attributes value. Requires that the attribute is configured for full-text search.
@@ -701,6 +855,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public byte[] PickFilterVariant23() => IsFilterVariant23
+            ? FilterVariant23!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FilterVariant23' but the value was {ToString()}.");
+
+        /// <summary>
         /// Matches if all tokens in the input string are present in the attributes value. Requires that the attribute is configured for full-text search.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -729,6 +890,13 @@ namespace G
             value = FilterVariant24;
             return IsFilterVariant24;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public byte[] PickFilterVariant24() => IsFilterVariant24
+            ? FilterVariant24!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FilterVariant24' but the value was {ToString()}.");
 
         /// <summary>
         /// Matches if all tokens in the input string are present in the attributes value. Requires that the attribute is configured for full-text search.
@@ -761,6 +929,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public byte[] PickFilterVariant25() => IsFilterVariant25
+            ? FilterVariant25!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FilterVariant25' but the value was {ToString()}.");
+
+        /// <summary>
         /// Matches if any of the tokens in the input string are present in the attribute value. Requires that the attribute is configured for full-text search.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -789,6 +964,13 @@ namespace G
             value = FilterVariant26;
             return IsFilterVariant26;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public byte[] PickFilterVariant26() => IsFilterVariant26
+            ? FilterVariant26!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FilterVariant26' but the value was {ToString()}.");
 
         /// <summary>
         /// Matches if any of the tokens in the input string array are present in the attribute value. Requires that the attribute is configured for full-text search.
@@ -821,6 +1003,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public byte[] PickFilterVariant27() => IsFilterVariant27
+            ? FilterVariant27!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FilterVariant27' but the value was {ToString()}.");
+
+        /// <summary>
         /// Matches if any of the tokens in the input string are present in the attribute value. Requires that the attribute is configured for full-text search.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -849,6 +1038,13 @@ namespace G
             value = FilterVariant28;
             return IsFilterVariant28;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public byte[] PickFilterVariant28() => IsFilterVariant28
+            ? FilterVariant28!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FilterVariant28' but the value was {ToString()}.");
 
         /// <summary>
         /// Matches if any of the tokens in the input string array are present in the attribute value. Requires that the attribute is configured for full-text search.
@@ -881,6 +1077,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public byte[] PickFilterVariant29() => IsFilterVariant29
+            ? FilterVariant29!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FilterVariant29' but the value was {ToString()}.");
+
+        /// <summary>
         /// Matches if all the tokens in the input string are present in the attribute value, in the correct order (i.e., as a phrase). Requires that the attribute is configured for full-text search.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -909,6 +1112,13 @@ namespace G
             value = FilterVariant30;
             return IsFilterVariant30;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public byte[] PickFilterVariant30() => IsFilterVariant30
+            ? FilterVariant30!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FilterVariant30' but the value was {ToString()}.");
 
         /// <summary>
         /// Matches if all the tokens in the input string are present in the attribute value, in the correct order (i.e., as a phrase). Requires that the attribute is configured for full-text search.
@@ -943,6 +1153,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public byte[] PickFilterVariant31() => IsFilterVariant31
+            ? FilterVariant31!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FilterVariant31' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public byte[]? FilterVariant32 { get; init; }
 #else
@@ -969,6 +1186,13 @@ namespace G
             value = FilterVariant32;
             return IsFilterVariant32;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public byte[] PickFilterVariant32() => IsFilterVariant32
+            ? FilterVariant32!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FilterVariant32' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -1003,6 +1227,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public byte[] PickFilterVariant33() => IsFilterVariant33
+            ? FilterVariant33!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FilterVariant33' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public byte[]? FilterVariant34 { get; init; }
 #else
@@ -1029,6 +1260,13 @@ namespace G
             value = FilterVariant34;
             return IsFilterVariant34;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public byte[] PickFilterVariant34() => IsFilterVariant34
+            ? FilterVariant34!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FilterVariant34' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

@@ -46,6 +46,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.BearerAuth PickBearer() => IsBearer
+            ? Bearer!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Bearer' but the value was {ToString()}.");
+
+        /// <summary>
         /// Custom header-based authentication
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -74,6 +81,13 @@ namespace G
             value = Header;
             return IsHeader;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.HeaderAuth PickHeader() => IsHeader
+            ? Header!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Header' but the value was {ToString()}.");
 
         /// <summary>
         /// AWS Bedrock authentication with explicit IAM credentials
@@ -106,6 +120,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.BedrockStaticIAMAuth PickBedrockStaticIam() => IsBedrockStaticIam
+            ? BedrockStaticIam!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BedrockStaticIam' but the value was {ToString()}.");
+
+        /// <summary>
         /// AWS Bedrock API key authentication
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -134,6 +155,13 @@ namespace G
             value = BedrockApiKey;
             return IsBedrockApiKey;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.BedrockApiKeyAuth PickBedrockApiKey() => IsBedrockApiKey
+            ? BedrockApiKey!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BedrockApiKey' but the value was {ToString()}.");
 
         /// <summary>
         /// Google Cloud Vertex AI service account authentication
@@ -166,6 +194,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.VertexServiceAccountAuth PickVertexServiceAccount() => IsVertexServiceAccount
+            ? VertexServiceAccount!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'VertexServiceAccount' but the value was {ToString()}.");
+
+        /// <summary>
         /// Google Cloud Vertex AI access token authentication
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -194,6 +229,13 @@ namespace G
             value = VertexAccessToken;
             return IsVertexAccessToken;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.VertexAccessTokenAuth PickVertexAccessToken() => IsVertexAccessToken
+            ? VertexAccessToken!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'VertexAccessToken' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

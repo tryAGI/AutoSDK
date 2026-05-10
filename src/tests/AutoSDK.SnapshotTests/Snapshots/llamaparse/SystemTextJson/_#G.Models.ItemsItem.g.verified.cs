@@ -48,6 +48,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.TextItem PickText() => IsText
+            ? Text!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.HeadingItem? Heading { get; init; }
 #else
@@ -74,6 +81,13 @@ namespace G
             value = Heading;
             return IsHeading;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.HeadingItem PickHeading() => IsHeading
+            ? Heading!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Heading' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -108,6 +122,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.ListItem PickList() => IsList
+            ? List!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'List' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.CodeItem? Code { get; init; }
 #else
@@ -134,6 +155,13 @@ namespace G
             value = Code;
             return IsCode;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.CodeItem PickCode() => IsCode
+            ? Code!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Code' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -168,6 +196,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.TableItem PickTable() => IsTable
+            ? Table!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Table' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ImageItem? Image { get; init; }
 #else
@@ -198,6 +233,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.ImageItem PickImage() => IsImage
+            ? Image!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Image' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.LinkItem? Link { get; init; }
 #else
@@ -224,6 +266,13 @@ namespace G
             value = Link;
             return IsLink;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.LinkItem PickLink() => IsLink
+            ? Link!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Link' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

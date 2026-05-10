@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.BatchReference PickBatchReference() => IsBatchReference
+            ? BatchReference!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BatchReference' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.BatchReferenceResponseVariant2? BatchReferenceResponseVariant2 { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = BatchReferenceResponseVariant2;
             return IsBatchReferenceResponseVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.BatchReferenceResponseVariant2 PickBatchReferenceResponseVariant2() => IsBatchReferenceResponseVariant2
+            ? BatchReferenceResponseVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BatchReferenceResponseVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

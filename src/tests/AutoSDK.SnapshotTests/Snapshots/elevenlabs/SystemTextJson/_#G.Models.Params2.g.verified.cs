@@ -48,6 +48,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.EndCallToolConfig PickEndCall() => IsEndCall
+            ? EndCall!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'EndCall' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.LanguageDetectionToolConfig? LanguageDetection { get; init; }
 #else
@@ -74,6 +81,13 @@ namespace G
             value = LanguageDetection;
             return IsLanguageDetection;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.LanguageDetectionToolConfig PickLanguageDetection() => IsLanguageDetection
+            ? LanguageDetection!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'LanguageDetection' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -108,6 +122,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.TransferToAgentToolConfig PickTransferToAgent() => IsTransferToAgent
+            ? TransferToAgent!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'TransferToAgent' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.TransferToNumberToolConfigInput? TransferToNumber { get; init; }
 #else
@@ -134,6 +155,13 @@ namespace G
             value = TransferToNumber;
             return IsTransferToNumber;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.TransferToNumberToolConfigInput PickTransferToNumber() => IsTransferToNumber
+            ? TransferToNumber!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'TransferToNumber' but the value was {ToString()}.");
 
         /// <summary>
         /// Allows the agent to explicitly skip its turn.<br/>
@@ -173,6 +201,13 @@ namespace G
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.SkipTurnToolConfig PickSkipTurn() => IsSkipTurn
+            ? SkipTurn!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SkipTurn' but the value was {ToString()}.");
+
+        /// <summary>
         /// Allows the agent to play DTMF tones during a phone call.<br/>
         /// This tool can be used to interact with automated phone systems, such as<br/>
         /// navigating phone menus, entering extensions, or inputting numeric codes.
@@ -203,6 +238,13 @@ namespace G
             value = PlayKeypadTouchTone;
             return IsPlayKeypadTouchTone;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.PlayDTMFToolConfig PickPlayKeypadTouchTone() => IsPlayKeypadTouchTone
+            ? PlayKeypadTouchTone!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'PlayKeypadTouchTone' but the value was {ToString()}.");
 
         /// <summary>
         /// Allows the agent to detect when a voicemail system is encountered.<br/>
@@ -240,6 +282,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.VoicemailDetectionToolConfig PickVoicemailDetection() => IsVoicemailDetection
+            ? VoicemailDetection!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'VoicemailDetection' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.MemoryEntrySearchToolConfig? MemoryEntrySearch { get; init; }
 #else
@@ -266,6 +315,13 @@ namespace G
             value = MemoryEntrySearch;
             return IsMemoryEntrySearch;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.MemoryEntrySearchToolConfig PickMemoryEntrySearch() => IsMemoryEntrySearch
+            ? MemoryEntrySearch!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MemoryEntrySearch' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -300,6 +356,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.MemoryEntryCreateToolConfig PickMemoryEntryCreate() => IsMemoryEntryCreate
+            ? MemoryEntryCreate!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MemoryEntryCreate' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.MemoryEntryUpdateToolConfig? MemoryEntryUpdate { get; init; }
 #else
@@ -326,6 +389,13 @@ namespace G
             value = MemoryEntryUpdate;
             return IsMemoryEntryUpdate;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.MemoryEntryUpdateToolConfig PickMemoryEntryUpdate() => IsMemoryEntryUpdate
+            ? MemoryEntryUpdate!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MemoryEntryUpdate' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -360,6 +430,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.MemoryEntryDeleteToolConfig PickMemoryEntryDelete() => IsMemoryEntryDelete
+            ? MemoryEntryDelete!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MemoryEntryDelete' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.AgentPromptChangeToolConfig? AgentPromptChange { get; init; }
 #else
@@ -386,6 +463,13 @@ namespace G
             value = AgentPromptChange;
             return IsAgentPromptChange;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.AgentPromptChangeToolConfig PickAgentPromptChange() => IsAgentPromptChange
+            ? AgentPromptChange!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AgentPromptChange' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

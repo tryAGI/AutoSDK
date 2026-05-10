@@ -43,6 +43,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.AllOf<global::G.IngestionEventVariant12, global::G.TraceEvent> PickIngestionEventVariant1() => IsIngestionEventVariant1
+            ? IngestionEventVariant1!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'IngestionEventVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.AllOf<global::G.IngestionEventVariant22, global::G.ScoreEvent>? IngestionEventVariant2 { get; init; }
 #else
@@ -69,6 +76,13 @@ namespace G
             value = IngestionEventVariant2;
             return IsIngestionEventVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.AllOf<global::G.IngestionEventVariant22, global::G.ScoreEvent> PickIngestionEventVariant2() => IsIngestionEventVariant2
+            ? IngestionEventVariant2!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'IngestionEventVariant2' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -103,6 +117,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.AllOf<global::G.IngestionEventVariant32, global::G.CreateSpanEvent> PickIngestionEventVariant3() => IsIngestionEventVariant3
+            ? IngestionEventVariant3!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'IngestionEventVariant3' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.AllOf<global::G.IngestionEventVariant42, global::G.UpdateSpanEvent>? IngestionEventVariant4 { get; init; }
 #else
@@ -129,6 +150,13 @@ namespace G
             value = IngestionEventVariant4;
             return IsIngestionEventVariant4;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.AllOf<global::G.IngestionEventVariant42, global::G.UpdateSpanEvent> PickIngestionEventVariant4() => IsIngestionEventVariant4
+            ? IngestionEventVariant4!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'IngestionEventVariant4' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -163,6 +191,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.AllOf<global::G.IngestionEventVariant52, global::G.CreateGenerationEvent> PickIngestionEventVariant5() => IsIngestionEventVariant5
+            ? IngestionEventVariant5!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'IngestionEventVariant5' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.AllOf<global::G.IngestionEventVariant62, global::G.UpdateGenerationEvent>? IngestionEventVariant6 { get; init; }
 #else
@@ -189,6 +224,13 @@ namespace G
             value = IngestionEventVariant6;
             return IsIngestionEventVariant6;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.AllOf<global::G.IngestionEventVariant62, global::G.UpdateGenerationEvent> PickIngestionEventVariant6() => IsIngestionEventVariant6
+            ? IngestionEventVariant6!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'IngestionEventVariant6' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -223,6 +265,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.AllOf<global::G.IngestionEventVariant72, global::G.CreateEventEvent> PickIngestionEventVariant7() => IsIngestionEventVariant7
+            ? IngestionEventVariant7!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'IngestionEventVariant7' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.AllOf<global::G.IngestionEventVariant82, global::G.SDKLogEvent>? IngestionEventVariant8 { get; init; }
 #else
@@ -249,6 +298,13 @@ namespace G
             value = IngestionEventVariant8;
             return IsIngestionEventVariant8;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.AllOf<global::G.IngestionEventVariant82, global::G.SDKLogEvent> PickIngestionEventVariant8() => IsIngestionEventVariant8
+            ? IngestionEventVariant8!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'IngestionEventVariant8' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -283,6 +339,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.AllOf<global::G.IngestionEventVariant92, global::G.CreateObservationEvent> PickIngestionEventVariant9() => IsIngestionEventVariant9
+            ? IngestionEventVariant9!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'IngestionEventVariant9' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.AllOf<global::G.IngestionEventVariant102, global::G.UpdateObservationEvent>? IngestionEventVariant10 { get; init; }
 #else
@@ -309,6 +372,13 @@ namespace G
             value = IngestionEventVariant10;
             return IsIngestionEventVariant10;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.AllOf<global::G.IngestionEventVariant102, global::G.UpdateObservationEvent> PickIngestionEventVariant10() => IsIngestionEventVariant10
+            ? IngestionEventVariant10!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'IngestionEventVariant10' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
