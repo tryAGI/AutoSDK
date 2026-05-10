@@ -292,6 +292,13 @@ internal sealed class GenerateCommand : Command
         Description = "Class name for the generated cloud signing helper factory.",
     };
 
+    private Option<bool> AutoDetectStatusPolling { get; } = new(
+        name: "--auto-detect-status-polling")
+    {
+        DefaultValueFactory = _ => Settings.Default.AutoDetectStatusPolling,
+        Description = "Auto-emit a polling helper for GET endpoints whose response shape exposes a status enum/const property with a terminal-success state (succeeded/completed/done/finished).",
+    };
+
     private Option<string[]> SecuritySchemes { get; } = new(
         name: "--security-scheme")
     {
@@ -441,6 +448,7 @@ internal sealed class GenerateCommand : Command
         Options.Add(EvaluationWorkflowHelperClassName);
         Options.Add(GenerateCloudSigningHelpers);
         Options.Add(CloudSigningHelperClassName);
+        Options.Add(AutoDetectStatusPolling);
         Options.Add(SecuritySchemes);
         Options.Add(AuthorizationEnvironmentVariables);
         Options.Add(BaseUrl);
@@ -553,6 +561,7 @@ internal sealed class GenerateCommand : Command
             EvaluationWorkflowHelperClassName = parseResult.GetRequiredValue(EvaluationWorkflowHelperClassName),
             GenerateCloudSigningHelpers = parseResult.GetRequiredValue(GenerateCloudSigningHelpers),
             CloudSigningHelperClassName = parseResult.GetRequiredValue(CloudSigningHelperClassName),
+            AutoDetectStatusPolling = parseResult.GetRequiredValue(AutoDetectStatusPolling),
             FromCli = true,
             GenerateCli = parseResult.GetRequiredValue(GenerateCli),
             SecuritySchemes = parseResult.GetRequiredValue(SecuritySchemes).ToImmutableArray(),

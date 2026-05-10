@@ -169,6 +169,13 @@ public static class CSharpEndPointFactory
             ? operation.Operation.GetPollingOperations()
             : ImmutableArray<PollingOperation>.Empty.AsEquatableArray();
 
+        if (streamFormat == StreamFormat.None &&
+            operation.Settings.AutoDetectStatusPolling &&
+            pollingOperations.IsEmpty)
+        {
+            pollingOperations = operation.Operation.AutoDetectStatusPollingOperations(operation.OperationType);
+        }
+
         var endPointId = string.IsNullOrWhiteSpace(methodNameSuffix)
             ? operation.MethodName
             : operation.MethodName + methodNameSuffix;

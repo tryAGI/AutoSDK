@@ -83,4 +83,108 @@ public class PollingGenerationTests
         supportSource.Should().Contain("public sealed class AutoSDKPollingException");
         supportSource.Should().Contain("internal static class AutoSDKPollingSupport");
     }
+
+    [TestMethod]
+    public void GenerateMethod_WithAutoDetectStatusPolling_EmitsWaitHelperFromOneOfDiscriminator()
+    {
+        const string yaml = """
+                            openapi: 3.0.3
+                            info:
+                              title: AutoStatusPolling
+                              version: 1.0.0
+                            paths:
+                              /v1/tasks/{id}:
+                                get:
+                                  operationId: getTask
+                                  parameters:
+                                    - in: path
+                                      name: id
+                                      required: true
+                                      schema:
+                                        type: string
+                                  responses:
+                                    '200':
+                                      description: OK
+                                      content:
+                                        application/json:
+                                          schema:
+                                            oneOf:
+                                              - type: object
+                                                required: [status]
+                                                properties:
+                                                  status:
+                                                    type: string
+                                                    enum: [PENDING]
+                                              - type: object
+                                                required: [status]
+                                                properties:
+                                                  status:
+                                                    type: string
+                                                    enum: [SUCCEEDED]
+                                                  output:
+                                                    type: array
+                                                    items:
+                                                      type: string
+                                              - type: object
+                                                required: [status]
+                                                properties:
+                                                  status:
+                                                    type: string
+                                                    enum: [FAILED]
+                                                  failure:
+                                                    type: string
+                                            discriminator:
+                                              propertyName: status
+                            """;
+
+        var settings = DefaultSettings with { AutoDetectStatusPolling = true };
+        var data = AutoSDK.Generation.Data.Prepare(((yaml, (CSharpSettings)settings), (CSharpSettings)settings));
+        var method = data.Methods.Single();
+        var methodSource = Sources.Method(method).Text;
+
+        methodSource.Should().Contain("GetTaskWaitAsync(");
+        methodSource.Should().Contain("AutoSDKPollingSupport.MatchesRegexCondition(");
+        methodSource.Should().Contain("/status");
+        methodSource.Should().Contain("SUCCEEDED");
+        methodSource.Should().Contain("FAILED");
+    }
+
+    [TestMethod]
+    public void AutoDetectStatusPolling_WithoutTerminalSuccessState_GeneratesNoWaitHelper()
+    {
+        const string yaml = """
+                            openapi: 3.0.3
+                            info:
+                              title: NoAutoDetect
+                              version: 1.0.0
+                            paths:
+                              /v1/jobs/{id}:
+                                get:
+                                  operationId: getJob
+                                  parameters:
+                                    - in: path
+                                      name: id
+                                      required: true
+                                      schema:
+                                        type: string
+                                  responses:
+                                    '200':
+                                      description: OK
+                                      content:
+                                        application/json:
+                                          schema:
+                                            type: object
+                                            properties:
+                                              status:
+                                                type: string
+                                                enum: [running, paused]
+                            """;
+
+        var settings = DefaultSettings with { AutoDetectStatusPolling = true };
+        var data = AutoSDK.Generation.Data.Prepare(((yaml, (CSharpSettings)settings), (CSharpSettings)settings));
+        var method = data.Methods.Single();
+        var methodSource = Sources.Method(method).Text;
+
+        methodSource.Should().NotContain("WaitAsync(");
+    }
 }

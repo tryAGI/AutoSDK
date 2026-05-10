@@ -92,6 +92,10 @@
     <CompilerVisibleProperty Include="AutoSDK_GenerateCloudSigningHelpers"/>
     <!-- Class name for generated cloud signing helper factory. Default: CloudRequestSigner -->
     <CompilerVisibleProperty Include="AutoSDK_CloudSigningHelperClassName"/>
+    <!-- true/false. Default: false. When true, GET endpoints whose response shape exposes a `status` enum/const property
+         with at least one terminal-success state (succeeded/completed/done/finished) get a synthesized polling helper
+         (`<Method>WaitAsync`) without needing an `x-speakeasy-polling` annotation in the spec. -->
+    <CompilerVisibleProperty Include="AutoSDK_AutoDetectStatusPolling"/>
     <!-- List of ids separated by ;. Default: Empty(all models) -->
     <CompilerVisibleProperty Include="AutoSDK_IncludeOperationIds"/>
     <!-- List of ids separated by ;. Default: Empty -->

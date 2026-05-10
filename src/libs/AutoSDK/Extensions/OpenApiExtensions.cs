@@ -2563,6 +2563,220 @@ info:
         return operations.ToImmutableArray().AsEquatableArray();
     }
 
+    private static readonly HashSet<string> SuccessTerminalStatusValues = new(StringComparer.OrdinalIgnoreCase)
+    {
+        "success", "succeeded", "complete", "completed", "done", "finished",
+    };
+
+    private static readonly HashSet<string> FailureTerminalStatusValues = new(StringComparer.OrdinalIgnoreCase)
+    {
+        "error", "errored", "failed", "failure",
+    };
+
+    private static readonly HashSet<string> CancelTerminalStatusValues = new(StringComparer.OrdinalIgnoreCase)
+    {
+        "aborted", "cancelled", "canceled",
+    };
+
+    /// <summary>
+    /// Detects status-based polling automatically when an operation returns a schema (or oneOf union of schemas)
+    /// with a discriminator-shaped <c>status</c> property whose values include at least one known terminal-success
+    /// state (succeeded/completed/done/finished). Terminal failures (failed/errored/canceled/...) become failure criteria.
+    /// </summary>
+    public static EquatableArray<PollingOperation> AutoDetectStatusPollingOperations(
+        this OpenApiOperation operation,
+        System.Net.Http.HttpMethod operationType)
+    {
+        operation = operation ?? throw new ArgumentNullException(nameof(operation));
+
+        if (operationType != System.Net.Http.HttpMethod.Get)
+        {
+            return ImmutableArray<PollingOperation>.Empty.AsEquatableArray();
+        }
+
+        var responses = operation.Responses;
+        if (responses == null || responses.Count == 0)
+        {
+            return ImmutableArray<PollingOperation>.Empty.AsEquatableArray();
+        }
+
+        IOpenApiResponse? successResponse = null;
+        foreach (var pair in responses)
+        {
+            if (string.Equals(pair.Key, "default", StringComparison.OrdinalIgnoreCase))
+            {
+                continue;
+            }
+
+            if (pair.Key is { Length: 3 } key && key[0] == '2')
+            {
+                successResponse = pair.Value;
+                break;
+            }
+        }
+
+        if (successResponse?.Content == null || successResponse.Content.Count == 0)
+        {
+            return ImmutableArray<PollingOperation>.Empty.AsEquatableArray();
+        }
+
+        IOpenApiSchema? schema = successResponse.Content.Values
+            .Select(static x => x?.Schema)
+            .FirstOrDefault(static s => s != null);
+        if (schema is null)
+        {
+            return ImmutableArray<PollingOperation>.Empty.AsEquatableArray();
+        }
+
+        var statusValues = CollectStatusValues(schema, depth: 0);
+        if (statusValues.Count == 0)
+        {
+            return ImmutableArray<PollingOperation>.Empty.AsEquatableArray();
+        }
+
+        var successHits = new List<string>();
+        var failureHits = new List<string>();
+        foreach (var value in statusValues)
+        {
+            if (SuccessTerminalStatusValues.Contains(value))
+            {
+                successHits.Add(value);
+            }
+            else if (FailureTerminalStatusValues.Contains(value) ||
+                     CancelTerminalStatusValues.Contains(value))
+            {
+                failureHits.Add(value);
+            }
+        }
+
+        if (successHits.Count == 0)
+        {
+            return ImmutableArray<PollingOperation>.Empty.AsEquatableArray();
+        }
+
+        static string BuildStatusPattern(IEnumerable<string> values)
+        {
+            var alternatives = string.Join("|", values.Select(System.Text.RegularExpressions.Regex.Escape));
+            return $"^(?i)({alternatives})$";
+        }
+
+        var successCriterion = new PollingCriterion(
+            Type: PollingCriterionType.Regex,
+            ContextType: PollingCriterionContextType.ResponseBody,
+            JsonPointer: "/status",
+            Operator: string.Empty,
+            ExpectedValue: string.Empty,
+            Pattern: BuildStatusPattern(successHits));
+
+        var operations = new List<PollingCriterion> { successCriterion }.ToImmutableArray().AsEquatableArray();
+        var failureOperations = failureHits.Count == 0
+            ? ImmutableArray<PollingCriterion>.Empty.AsEquatableArray()
+            : new List<PollingCriterion>
+            {
+                new(
+                    Type: PollingCriterionType.Regex,
+                    ContextType: PollingCriterionContextType.ResponseBody,
+                    JsonPointer: "/status",
+                    Operator: string.Empty,
+                    ExpectedValue: string.Empty,
+                    Pattern: BuildStatusPattern(failureHits)),
+            }.ToImmutableArray().AsEquatableArray();
+
+        var pollingOperation = PollingOperation.Default with
+        {
+            Name = "Wait",
+            DelaySeconds = 1,
+            IntervalSeconds = 2,
+            LimitCount = 60,
+            SuccessCriteria = operations,
+            FailureCriteria = failureOperations,
+        };
+
+        return new[] { pollingOperation }.ToImmutableArray().AsEquatableArray();
+    }
+
+    private static HashSet<string> CollectStatusValues(IOpenApiSchema schema, int depth)
+    {
+        var values = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+        CollectStatusValuesCore(schema, values, depth);
+        return values;
+    }
+
+    private static void CollectStatusValuesCore(
+        IOpenApiSchema? schema,
+        HashSet<string> values,
+        int depth)
+    {
+        if (schema == null || depth > 5)
+        {
+            return;
+        }
+
+        if ((schema.OneOf is { Count: > 0 } || schema.AnyOf is { Count: > 0 }) &&
+            schema.Discriminator?.PropertyName is { } discriminatorProperty &&
+            string.Equals(discriminatorProperty, "status", StringComparison.OrdinalIgnoreCase))
+        {
+            var unionVariants = (IEnumerable<IOpenApiSchema>?)schema.OneOf ?? schema.AnyOf;
+            if (unionVariants != null)
+            {
+                foreach (var variant in unionVariants)
+                {
+                    CollectStatusValuesCore(variant, values, depth + 1);
+                }
+            }
+
+            return;
+        }
+
+        if (schema.Properties is { } properties)
+        {
+            foreach (var pair in properties)
+            {
+                if (!string.Equals(pair.Key, "status", StringComparison.OrdinalIgnoreCase))
+                {
+                    continue;
+                }
+
+                CollectStatusFromProperty(pair.Value, values);
+                return;
+            }
+        }
+
+        if (schema.AllOf is { Count: > 0 } allOf)
+        {
+            foreach (var part in allOf)
+            {
+                CollectStatusValuesCore(part, values, depth + 1);
+            }
+        }
+    }
+
+    private static void CollectStatusFromProperty(IOpenApiSchema? schema, HashSet<string> values)
+    {
+        if (schema == null)
+        {
+            return;
+        }
+
+        if (!string.IsNullOrWhiteSpace(schema.Const))
+        {
+            values.Add(schema.Const!);
+            return;
+        }
+
+        if (schema.Enum is { Count: > 0 } enumValues)
+        {
+            foreach (var item in enumValues)
+            {
+                var enumString = item?.GetString();
+                if (!string.IsNullOrWhiteSpace(enumString))
+                {
+                    values.Add(enumString!);
+                }
+            }
+        }
+    }
+
     public static bool TryGetMethodNameOverride(
         IDictionary<string, IOpenApiExtension>? extensions,
         out string value)

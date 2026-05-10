@@ -70,6 +70,7 @@ public static class OptionsExtensions
             EvaluationWorkflowHelperClassName: options.GetGlobalOption(nameof(Settings.EvaluationWorkflowHelperClassName), prefix) ?? Settings.Default.EvaluationWorkflowHelperClassName,
             GenerateCloudSigningHelpers: options.GetBoolGlobalOption(nameof(Settings.GenerateCloudSigningHelpers), prefix, defaultValue: Settings.Default.GenerateCloudSigningHelpers),
             CloudSigningHelperClassName: options.GetGlobalOption(nameof(Settings.CloudSigningHelperClassName), prefix) ?? Settings.Default.CloudSigningHelperClassName,
+            AutoDetectStatusPolling: options.GetBoolGlobalOption(nameof(Settings.AutoDetectStatusPolling), prefix, defaultValue: Settings.Default.AutoDetectStatusPolling),
             IncludeOperationIds: (options.GetGlobalOption(nameof(Settings.IncludeOperationIds), prefix)?.Split(';') ??
                                    []).ToImmutableArray(),
             ExcludeOperationIds: (options.GetGlobalOption(nameof(Settings.ExcludeOperationIds), prefix)?.Split(';') ??

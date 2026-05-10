@@ -75,6 +75,9 @@ Prediction, job, and actor-run APIs often need a provider-style create, wait, po
 
 The generated runner composes raw create, reload, optional cancel, status selector, and result selector delegates. It supports configurable success/failure/canceled terminal states, timeout and poll interval handling, best-effort cancellation-link invocation when the caller cancels, metadata for Replicate-style `Prefer: wait` and Apify-style `waitForFinish` workflows, and result projection such as returning `output` while preserving the final envelope. The helper class name can be configured with `--prediction-workflow-helper-class-name` or `<AutoSDK_PredictionWorkflowHelperClassName>`.
 
+### Auto-detecting status polling
+`x-speakeasy-polling` annotations are not present in most public OpenAPI specs, but the same shape — a GET-by-id endpoint whose response is a `oneOf` discriminated by `status` (or a flat object with a `status` enum) and at least one terminal-success state (`succeeded`, `completed`, `done`, `finished`) — is common. Enable `--auto-detect-status-polling` in the CLI, or set `<AutoSDK_AutoDetectStatusPolling>true</AutoSDK_AutoDetectStatusPolling>` for the source generator, to synthesize a `<Method>WaitAsync` helper for every such endpoint without editing the spec. Detected failure terminals (`failed`, `error`, `errored`, `cancelled`, `canceled`, `aborted`) become failure criteria so the helper throws an `AutoSDKPollingException` instead of polling forever.
+
 ## Evaluation Workflow Helpers
 Dataset-backed evaluation APIs usually need an experiment loop around raw dataset, trace, score, and feedback endpoints. Enable `--generate-evaluation-workflow-helpers` in the CLI, or set `<AutoSDK_GenerateEvaluationWorkflowHelpers>true</AutoSDK_GenerateEvaluationWorkflowHelpers>` for the source generator, to emit a `DatasetEvaluationRunner` helper.
 
