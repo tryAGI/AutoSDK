@@ -38,5 +38,6 @@ namespace G
         public ModelResponseFormatVariant1Discriminator()
         {
         }
+
     }
 }

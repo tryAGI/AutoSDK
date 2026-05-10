@@ -47,5 +47,18 @@ namespace G
         public PromptTogetherInvocationParameters()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="PromptTogetherInvocationParameters"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static PromptTogetherInvocationParameters FromTogether(global::G.PromptTogetherInvocationParametersContent together)
+        {
+            return new PromptTogetherInvocationParameters
+            {
+                Together = together,
+            };
+        }
+
     }
 }

@@ -152,5 +152,6 @@ namespace G
         public WebhookIssueCommentDeletedIssueIssue1PerformedViaGithubApp()
         {
         }
+
     }
 }

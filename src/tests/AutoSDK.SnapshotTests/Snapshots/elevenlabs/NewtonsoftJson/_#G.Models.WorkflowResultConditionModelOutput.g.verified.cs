@@ -62,5 +62,18 @@ namespace G
         public WorkflowResultConditionModelOutput()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="WorkflowResultConditionModelOutput"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static WorkflowResultConditionModelOutput FromSuccessful(bool successful)
+        {
+            return new WorkflowResultConditionModelOutput
+            {
+                Successful = successful,
+            };
+        }
+
     }
 }

@@ -102,5 +102,6 @@ namespace G
         public ServerlessLogsHistoryResponseItem()
         {
         }
+
     }
 }

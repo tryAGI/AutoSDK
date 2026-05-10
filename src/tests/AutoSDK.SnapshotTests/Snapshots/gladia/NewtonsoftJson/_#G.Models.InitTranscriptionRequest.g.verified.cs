@@ -346,5 +346,6 @@ namespace G
         public InitTranscriptionRequest()
         {
         }
+
     }
 }

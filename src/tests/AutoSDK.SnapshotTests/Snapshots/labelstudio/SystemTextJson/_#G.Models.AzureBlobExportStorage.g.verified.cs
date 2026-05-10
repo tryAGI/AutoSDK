@@ -270,5 +270,18 @@ namespace G
         public AzureBlobExportStorage()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="AzureBlobExportStorage"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static AzureBlobExportStorage FromProject(int project)
+        {
+            return new AzureBlobExportStorage
+            {
+                Project = project,
+            };
+        }
+
     }
 }

@@ -91,5 +91,6 @@ namespace G
         public BedrockModelSettings()
         {
         }
+
     }
 }

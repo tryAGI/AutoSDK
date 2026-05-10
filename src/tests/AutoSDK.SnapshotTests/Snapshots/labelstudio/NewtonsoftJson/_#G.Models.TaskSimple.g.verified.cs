@@ -264,5 +264,18 @@ namespace G
         public TaskSimple()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="TaskSimple"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static TaskSimple FromData(object data)
+        {
+            return new TaskSimple
+            {
+                Data = data,
+            };
+        }
+
     }
 }

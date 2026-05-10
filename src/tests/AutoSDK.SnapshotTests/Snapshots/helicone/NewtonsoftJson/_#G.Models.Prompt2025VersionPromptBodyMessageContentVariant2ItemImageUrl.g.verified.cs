@@ -37,5 +37,6 @@ namespace G
         public Prompt2025VersionPromptBodyMessageContentVariant2ItemImageUrl()
         {
         }
+
     }
 }

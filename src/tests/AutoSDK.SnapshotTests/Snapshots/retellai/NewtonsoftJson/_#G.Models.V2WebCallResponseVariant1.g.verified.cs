@@ -57,5 +57,6 @@ namespace G
         public V2WebCallResponseVariant1()
         {
         }
+
     }
 }

@@ -174,5 +174,6 @@ namespace G
         public ServerMessageTransferUpdate()
         {
         }
+
     }
 }

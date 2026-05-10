@@ -394,5 +394,6 @@ namespace G
         public VoiceSharingResponseModel()
         {
         }
+
     }
 }

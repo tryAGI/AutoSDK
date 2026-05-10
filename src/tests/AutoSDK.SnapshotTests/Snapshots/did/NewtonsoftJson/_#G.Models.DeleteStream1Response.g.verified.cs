@@ -37,5 +37,6 @@ namespace G
         public DeleteStream1Response()
         {
         }
+
     }
 }

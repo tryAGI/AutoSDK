@@ -114,5 +114,6 @@ namespace G
         public UpdateByoSipTrunkCredentialDTO()
         {
         }
+
     }
 }

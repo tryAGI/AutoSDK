@@ -111,5 +111,6 @@ namespace G
         public WebhookPullRequestReviewRequestRemovedVariant1PullRequestLinks()
         {
         }
+
     }
 }

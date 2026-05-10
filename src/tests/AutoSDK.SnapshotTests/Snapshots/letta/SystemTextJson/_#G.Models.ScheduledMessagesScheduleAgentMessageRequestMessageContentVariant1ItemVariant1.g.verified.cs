@@ -60,5 +60,6 @@ namespace G
         public ScheduledMessagesScheduleAgentMessageRequestMessageContentVariant1ItemVariant1()
         {
         }
+
     }
 }

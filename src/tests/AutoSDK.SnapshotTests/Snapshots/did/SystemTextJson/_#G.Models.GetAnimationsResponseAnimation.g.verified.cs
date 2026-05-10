@@ -193,5 +193,6 @@ namespace G
         public GetAnimationsResponseAnimation()
         {
         }
+
     }
 }

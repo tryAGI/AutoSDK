@@ -77,5 +77,6 @@ namespace G
         public UpdateResponseVariant1PresenterExpressiveAvatarVoiceOpenAIVoiceConfig()
         {
         }
+
     }
 }

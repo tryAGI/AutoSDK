@@ -82,5 +82,6 @@ namespace G
         public MetadataSendTelemetryRequestEventVariant1Data()
         {
         }
+
     }
 }

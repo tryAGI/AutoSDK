@@ -108,5 +108,6 @@ namespace G
         public AuditLogOrganizationUpdatedChangesRequested()
         {
         }
+
     }
 }

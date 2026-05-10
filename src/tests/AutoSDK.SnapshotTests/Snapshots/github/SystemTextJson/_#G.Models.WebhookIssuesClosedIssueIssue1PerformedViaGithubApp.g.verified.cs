@@ -152,5 +152,6 @@ namespace G
         public WebhookIssuesClosedIssueIssue1PerformedViaGithubApp()
         {
         }
+
     }
 }

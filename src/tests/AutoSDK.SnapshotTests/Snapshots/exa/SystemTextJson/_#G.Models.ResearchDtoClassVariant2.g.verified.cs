@@ -100,5 +100,6 @@ namespace G
         public ResearchDtoClassVariant2()
         {
         }
+
     }
 }

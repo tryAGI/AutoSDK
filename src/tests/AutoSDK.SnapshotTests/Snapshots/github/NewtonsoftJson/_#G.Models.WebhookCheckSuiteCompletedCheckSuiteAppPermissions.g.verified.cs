@@ -378,5 +378,6 @@ namespace G
         public WebhookCheckSuiteCompletedCheckSuiteAppPermissions()
         {
         }
+
     }
 }

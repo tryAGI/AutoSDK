@@ -50,5 +50,18 @@ namespace G
         public BetaThinkingContentBlockDelta()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="BetaThinkingContentBlockDelta"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static BetaThinkingContentBlockDelta FromThinking(string thinking)
+        {
+            return new BetaThinkingContentBlockDelta
+            {
+                Thinking = thinking,
+            };
+        }
+
     }
 }

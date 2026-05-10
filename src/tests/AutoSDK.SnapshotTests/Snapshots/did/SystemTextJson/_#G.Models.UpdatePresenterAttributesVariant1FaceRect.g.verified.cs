@@ -71,5 +71,6 @@ namespace G
         public UpdatePresenterAttributesVariant1FaceRect()
         {
         }
+
     }
 }

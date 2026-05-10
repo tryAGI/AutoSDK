@@ -52,5 +52,6 @@ namespace G
         public CvssSeveritiesCvssV3()
         {
         }
+
     }
 }

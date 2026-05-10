@@ -58,5 +58,6 @@ namespace G
         public PromptDataNullishToolFunctionVariant2Function()
         {
         }
+
     }
 }

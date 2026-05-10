@@ -239,5 +239,6 @@ namespace G
         public PostConnectedAccountsRequestConnectionStateVariant5ValVariant2()
         {
         }
+
     }
 }

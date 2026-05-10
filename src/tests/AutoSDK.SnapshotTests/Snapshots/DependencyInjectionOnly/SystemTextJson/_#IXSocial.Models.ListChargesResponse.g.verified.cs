@@ -40,5 +40,6 @@ namespace IXSocial
         public ListChargesResponse()
         {
         }
+
     }
 }

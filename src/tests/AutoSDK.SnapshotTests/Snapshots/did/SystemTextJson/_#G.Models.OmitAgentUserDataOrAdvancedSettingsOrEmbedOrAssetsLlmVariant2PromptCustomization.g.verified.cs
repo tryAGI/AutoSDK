@@ -115,5 +115,6 @@ namespace G
         public OmitAgentUserDataOrAdvancedSettingsOrEmbedOrAssetsLlmVariant2PromptCustomization()
         {
         }
+
     }
 }

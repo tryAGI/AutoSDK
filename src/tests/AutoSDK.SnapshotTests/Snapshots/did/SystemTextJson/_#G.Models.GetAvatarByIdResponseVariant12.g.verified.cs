@@ -104,5 +104,6 @@ namespace G
         public GetAvatarByIdResponseVariant12()
         {
         }
+
     }
 }

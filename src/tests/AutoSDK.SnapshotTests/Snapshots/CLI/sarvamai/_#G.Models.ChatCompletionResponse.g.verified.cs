@@ -96,5 +96,6 @@ namespace G
         public ChatCompletionResponse()
         {
         }
+
     }
 }

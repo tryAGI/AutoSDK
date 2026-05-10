@@ -98,5 +98,6 @@ namespace G
         public UpdateResponseVariant1LlmVariant2()
         {
         }
+
     }
 }

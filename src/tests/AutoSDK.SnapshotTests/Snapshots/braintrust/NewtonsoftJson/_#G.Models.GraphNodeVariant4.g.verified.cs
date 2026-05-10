@@ -71,5 +71,6 @@ namespace G
         public GraphNodeVariant4()
         {
         }
+
     }
 }

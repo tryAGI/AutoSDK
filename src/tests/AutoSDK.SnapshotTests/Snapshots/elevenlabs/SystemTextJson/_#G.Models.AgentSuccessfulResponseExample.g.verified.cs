@@ -51,5 +51,18 @@ namespace G
         public AgentSuccessfulResponseExample()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="AgentSuccessfulResponseExample"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static AgentSuccessfulResponseExample FromResponse(string response)
+        {
+            return new AgentSuccessfulResponseExample
+            {
+                Response = response,
+            };
+        }
+
     }
 }

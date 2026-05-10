@@ -190,5 +190,6 @@ namespace G
         public WebhookIssuesClosedIssueVariant2User()
         {
         }
+
     }
 }

@@ -99,5 +99,6 @@ namespace G
         public ChatMessage()
         {
         }
+
     }
 }

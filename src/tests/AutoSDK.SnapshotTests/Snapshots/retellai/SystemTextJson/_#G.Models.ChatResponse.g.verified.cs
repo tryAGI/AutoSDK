@@ -253,5 +253,6 @@ namespace G
         public ChatResponse()
         {
         }
+
     }
 }

@@ -348,5 +348,6 @@ namespace G
         public RunSchemaComparisonView()
         {
         }
+
     }
 }

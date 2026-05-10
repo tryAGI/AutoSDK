@@ -465,5 +465,6 @@ namespace G
         public UpdateAssistantDTO()
         {
         }
+
     }
 }

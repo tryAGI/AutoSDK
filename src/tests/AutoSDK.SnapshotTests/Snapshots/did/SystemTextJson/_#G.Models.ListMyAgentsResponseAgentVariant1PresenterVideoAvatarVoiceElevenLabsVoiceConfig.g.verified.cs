@@ -129,5 +129,6 @@ namespace G
         public ListMyAgentsResponseAgentVariant1PresenterVideoAvatarVoiceElevenLabsVoiceConfig()
         {
         }
+
     }
 }

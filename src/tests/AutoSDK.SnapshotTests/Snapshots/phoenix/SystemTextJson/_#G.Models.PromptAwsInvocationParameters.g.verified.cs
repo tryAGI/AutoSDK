@@ -51,5 +51,18 @@ namespace G
         public PromptAwsInvocationParameters()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="PromptAwsInvocationParameters"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static PromptAwsInvocationParameters FromAws(global::G.PromptAwsInvocationParametersContent aws)
+        {
+            return new PromptAwsInvocationParameters
+            {
+                Aws = aws,
+            };
+        }
+
     }
 }

@@ -60,5 +60,18 @@ namespace G
         public HeyGenGeneratedAsset()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="HeyGenGeneratedAsset"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static HeyGenGeneratedAsset FromOptions(global::G.HeyGenTextToAvatarOptions options)
+        {
+            return new HeyGenGeneratedAsset
+            {
+                Options = options,
+            };
+        }
+
     }
 }

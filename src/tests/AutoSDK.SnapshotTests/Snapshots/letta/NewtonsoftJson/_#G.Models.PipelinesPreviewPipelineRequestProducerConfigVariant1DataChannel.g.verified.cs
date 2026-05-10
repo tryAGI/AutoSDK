@@ -55,5 +55,6 @@ namespace G
         public PipelinesPreviewPipelineRequestProducerConfigVariant1DataChannel()
         {
         }
+
     }
 }

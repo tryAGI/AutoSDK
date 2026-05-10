@@ -157,5 +157,6 @@ namespace G
         public Bm25Config()
         {
         }
+
     }
 }

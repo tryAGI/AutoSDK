@@ -64,5 +64,18 @@ namespace G
         public FileUpload()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="FileUpload"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static FileUpload FromFile(string file)
+        {
+            return new FileUpload
+            {
+                File = file,
+            };
+        }
+
     }
 }

@@ -38,5 +38,6 @@ namespace G
         public PatchProjectAutomationConfigVariant2ExportDefinitionVariant1()
         {
         }
+
     }
 }

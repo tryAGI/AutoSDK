@@ -100,5 +100,6 @@ namespace G
         public WebhookPullRequestReviewRequestedVariant1PullRequestLinks()
         {
         }
+
     }
 }

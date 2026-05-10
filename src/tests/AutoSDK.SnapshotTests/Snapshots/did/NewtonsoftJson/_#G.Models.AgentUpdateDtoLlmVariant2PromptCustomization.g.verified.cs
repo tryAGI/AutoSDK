@@ -112,5 +112,6 @@ namespace G
         public AgentUpdateDtoLlmVariant2PromptCustomization()
         {
         }
+
     }
 }

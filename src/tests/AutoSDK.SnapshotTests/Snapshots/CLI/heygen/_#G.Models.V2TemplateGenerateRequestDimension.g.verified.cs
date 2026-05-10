@@ -55,5 +55,6 @@ namespace G
         public V2TemplateGenerateRequestDimension()
         {
         }
+
     }
 }

@@ -54,5 +54,18 @@ namespace G
         public ResponseRedactedThinkingBlock()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="ResponseRedactedThinkingBlock"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static ResponseRedactedThinkingBlock FromData(string data)
+        {
+            return new ResponseRedactedThinkingBlock
+            {
+                Data = data,
+            };
+        }
+
     }
 }

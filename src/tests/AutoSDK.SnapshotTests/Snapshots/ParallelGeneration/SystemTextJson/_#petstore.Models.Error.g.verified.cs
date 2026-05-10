@@ -51,5 +51,6 @@ namespace petstore
         public Error()
         {
         }
+
     }
 }

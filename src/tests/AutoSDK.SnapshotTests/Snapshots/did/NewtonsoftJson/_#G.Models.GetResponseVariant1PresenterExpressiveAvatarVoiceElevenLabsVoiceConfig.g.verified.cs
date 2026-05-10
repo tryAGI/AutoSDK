@@ -126,5 +126,6 @@ namespace G
         public GetResponseVariant1PresenterExpressiveAvatarVoiceElevenLabsVoiceConfig()
         {
         }
+
     }
 }

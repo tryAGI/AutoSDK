@@ -156,5 +156,18 @@ namespace G
         public CallTombstone()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="CallTombstone"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static CallTombstone FromCreated(global::System.DateTime created)
+        {
+            return new CallTombstone
+            {
+                Created = created,
+            };
+        }
+
     }
 }

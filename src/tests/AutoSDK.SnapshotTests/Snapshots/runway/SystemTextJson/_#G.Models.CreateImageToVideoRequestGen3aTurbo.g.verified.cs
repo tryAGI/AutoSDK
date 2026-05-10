@@ -123,5 +123,6 @@ namespace G
         public CreateImageToVideoRequestGen3aTurbo()
         {
         }
+
     }
 }

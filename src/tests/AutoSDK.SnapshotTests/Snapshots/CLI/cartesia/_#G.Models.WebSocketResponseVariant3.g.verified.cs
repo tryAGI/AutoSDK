@@ -74,5 +74,6 @@ namespace G
         public WebSocketResponseVariant3()
         {
         }
+
     }
 }

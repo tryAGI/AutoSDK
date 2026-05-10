@@ -97,5 +97,6 @@ namespace G
         public WebhookPullRequestReviewRequestedVariant1PullRequestLabel()
         {
         }
+
     }
 }

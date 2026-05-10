@@ -38,5 +38,6 @@ namespace G
         public RequestToolResultBlockCacheControlVariant1Discriminator()
         {
         }
+
     }
 }

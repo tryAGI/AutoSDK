@@ -151,5 +151,6 @@ namespace G
         public Sam2EmbeddingRequest()
         {
         }
+
     }
 }

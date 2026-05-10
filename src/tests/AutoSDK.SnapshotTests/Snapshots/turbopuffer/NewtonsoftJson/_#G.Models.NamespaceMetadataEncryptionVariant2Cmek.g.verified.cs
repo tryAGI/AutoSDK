@@ -39,5 +39,6 @@ namespace G
         public NamespaceMetadataEncryptionVariant2Cmek()
         {
         }
+
     }
 }

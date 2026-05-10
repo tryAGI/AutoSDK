@@ -55,5 +55,6 @@ namespace G
         public MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsSearchRuleCreateParams()
         {
         }
+
     }
 }

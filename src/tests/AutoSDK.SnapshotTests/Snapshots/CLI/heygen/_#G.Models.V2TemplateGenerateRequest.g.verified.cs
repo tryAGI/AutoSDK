@@ -85,5 +85,6 @@ namespace G
         public V2TemplateGenerateRequest()
         {
         }
+
     }
 }

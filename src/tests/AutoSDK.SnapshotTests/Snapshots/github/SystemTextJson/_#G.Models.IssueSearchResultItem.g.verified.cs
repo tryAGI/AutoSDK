@@ -380,5 +380,6 @@ namespace G
         public IssueSearchResultItem()
         {
         }
+
     }
 }

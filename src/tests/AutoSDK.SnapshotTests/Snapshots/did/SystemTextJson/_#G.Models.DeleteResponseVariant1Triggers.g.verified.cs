@@ -42,5 +42,6 @@ namespace G
         public DeleteResponseVariant1Triggers()
         {
         }
+
     }
 }

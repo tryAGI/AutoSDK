@@ -81,5 +81,6 @@ namespace G
         public DeleteResponseVariant1PresenterVideoAvatarVoiceMicrosoft()
         {
         }
+
     }
 }

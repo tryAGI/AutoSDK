@@ -58,5 +58,6 @@ namespace G
         public TopicMapFunctionAutomationFunctionVariant2Function()
         {
         }
+
     }
 }

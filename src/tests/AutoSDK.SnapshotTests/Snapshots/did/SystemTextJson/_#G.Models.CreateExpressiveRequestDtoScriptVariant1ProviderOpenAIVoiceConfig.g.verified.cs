@@ -80,5 +80,6 @@ namespace G
         public CreateExpressiveRequestDtoScriptVariant1ProviderOpenAIVoiceConfig()
         {
         }
+
     }
 }

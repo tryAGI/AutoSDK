@@ -137,5 +137,6 @@ namespace G
         public CreateComputeInstanceResponse()
         {
         }
+
     }
 }

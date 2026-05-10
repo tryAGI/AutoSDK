@@ -39,5 +39,6 @@ namespace G
         public BodyRunPvcTrainingV1VoicesPvcVoiceIdTrainPost()
         {
         }
+
     }
 }

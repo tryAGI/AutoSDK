@@ -397,5 +397,6 @@ namespace G
         public CreateMessageParams()
         {
         }
+
     }
 }

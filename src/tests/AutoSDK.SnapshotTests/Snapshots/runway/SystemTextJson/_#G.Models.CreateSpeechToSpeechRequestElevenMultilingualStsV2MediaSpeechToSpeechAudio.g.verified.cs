@@ -56,5 +56,18 @@ namespace G
         public CreateSpeechToSpeechRequestElevenMultilingualStsV2MediaSpeechToSpeechAudio()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="CreateSpeechToSpeechRequestElevenMultilingualStsV2MediaSpeechToSpeechAudio"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static CreateSpeechToSpeechRequestElevenMultilingualStsV2MediaSpeechToSpeechAudio FromUri(string uri)
+        {
+            return new CreateSpeechToSpeechRequestElevenMultilingualStsV2MediaSpeechToSpeechAudio
+            {
+                Uri = uri,
+            };
+        }
+
     }
 }

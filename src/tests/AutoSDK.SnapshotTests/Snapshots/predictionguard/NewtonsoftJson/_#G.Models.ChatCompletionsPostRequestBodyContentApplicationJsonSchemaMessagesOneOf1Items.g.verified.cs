@@ -48,5 +48,6 @@ namespace G
         public ChatCompletionsPostRequestBodyContentApplicationJsonSchemaMessagesOneOf1Items()
         {
         }
+
     }
 }

@@ -234,5 +234,6 @@ namespace G
         public ClipDriverDto()
         {
         }
+
     }
 }

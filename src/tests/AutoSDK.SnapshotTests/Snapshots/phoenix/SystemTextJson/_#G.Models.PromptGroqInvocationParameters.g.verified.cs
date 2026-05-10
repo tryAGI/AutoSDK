@@ -51,5 +51,18 @@ namespace G
         public PromptGroqInvocationParameters()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="PromptGroqInvocationParameters"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static PromptGroqInvocationParameters FromGroq(global::G.PromptGroqInvocationParametersContent groq)
+        {
+            return new PromptGroqInvocationParameters
+            {
+                Groq = groq,
+            };
+        }
+
     }
 }

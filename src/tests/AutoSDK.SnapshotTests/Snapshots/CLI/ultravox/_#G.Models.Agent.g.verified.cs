@@ -76,5 +76,18 @@ namespace G
         public Agent()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="Agent"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static Agent FromName(string name)
+        {
+            return new Agent
+            {
+                Name = name,
+            };
+        }
+
     }
 }

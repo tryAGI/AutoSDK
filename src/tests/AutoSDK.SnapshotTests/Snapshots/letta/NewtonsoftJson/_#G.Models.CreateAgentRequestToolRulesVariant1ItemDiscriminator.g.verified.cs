@@ -38,5 +38,6 @@ namespace G
         public CreateAgentRequestToolRulesVariant1ItemDiscriminator()
         {
         }
+
     }
 }

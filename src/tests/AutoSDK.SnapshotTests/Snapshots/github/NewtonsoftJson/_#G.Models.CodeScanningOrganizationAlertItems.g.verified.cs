@@ -221,5 +221,6 @@ namespace G
         public CodeScanningOrganizationAlertItems()
         {
         }
+
     }
 }

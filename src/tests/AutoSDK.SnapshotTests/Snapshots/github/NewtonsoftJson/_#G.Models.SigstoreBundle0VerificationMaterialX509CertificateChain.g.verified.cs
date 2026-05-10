@@ -37,5 +37,6 @@ namespace G
         public SigstoreBundle0VerificationMaterialX509CertificateChain()
         {
         }
+
     }
 }

@@ -519,5 +519,6 @@ namespace G
         public InternalTemplateAgentCreate()
         {
         }
+
     }
 }

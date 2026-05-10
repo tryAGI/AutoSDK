@@ -37,5 +37,6 @@ namespace G
         public UpdateResponseVariant1TriggersChatEndWebhookAuth()
         {
         }
+
     }
 }

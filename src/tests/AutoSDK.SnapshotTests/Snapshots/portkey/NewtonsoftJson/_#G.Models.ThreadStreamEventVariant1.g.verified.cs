@@ -49,5 +49,6 @@ namespace G
         public ThreadStreamEventVariant1()
         {
         }
+
     }
 }

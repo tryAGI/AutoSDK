@@ -56,5 +56,18 @@ namespace G
         public Type()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="Type"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static Type FromText(string text)
+        {
+            return new Type
+            {
+                Text = text,
+            };
+        }
+
     }
 }

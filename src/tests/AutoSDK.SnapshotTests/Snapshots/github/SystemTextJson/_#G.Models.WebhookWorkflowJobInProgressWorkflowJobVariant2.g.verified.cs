@@ -247,5 +247,6 @@ namespace G
         public WebhookWorkflowJobInProgressWorkflowJobVariant2()
         {
         }
+
     }
 }

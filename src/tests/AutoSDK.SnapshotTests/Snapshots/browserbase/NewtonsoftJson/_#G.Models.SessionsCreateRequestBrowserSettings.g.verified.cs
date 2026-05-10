@@ -146,5 +146,6 @@ namespace G
         public SessionsCreateRequestBrowserSettings()
         {
         }
+
     }
 }

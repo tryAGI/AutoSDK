@@ -64,5 +64,6 @@ namespace G
         public BetaBashTool20241022()
         {
         }
+
     }
 }

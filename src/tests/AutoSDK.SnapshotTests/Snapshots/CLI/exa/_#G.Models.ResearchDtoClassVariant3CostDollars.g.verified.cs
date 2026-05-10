@@ -71,5 +71,6 @@ namespace G
         public ResearchDtoClassVariant3CostDollars()
         {
         }
+
     }
 }

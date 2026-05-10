@@ -72,5 +72,6 @@ namespace G
         public CreateTextToImageRequestGemini25Flash()
         {
         }
+
     }
 }

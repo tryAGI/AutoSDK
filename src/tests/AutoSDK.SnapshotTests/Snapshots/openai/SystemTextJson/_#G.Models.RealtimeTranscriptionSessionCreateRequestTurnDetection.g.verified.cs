@@ -132,5 +132,6 @@ namespace G
         public RealtimeTranscriptionSessionCreateRequestTurnDetection()
         {
         }
+
     }
 }

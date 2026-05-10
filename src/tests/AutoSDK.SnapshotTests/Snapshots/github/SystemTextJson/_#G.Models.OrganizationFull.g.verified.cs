@@ -712,5 +712,6 @@ namespace G
         public OrganizationFull()
         {
         }
+
     }
 }

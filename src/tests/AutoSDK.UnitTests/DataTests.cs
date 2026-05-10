@@ -1184,6 +1184,101 @@ public partial class DataTests
     }
 
     [TestMethod]
+    public void CascadingLeafFactory_EmittedOnVariantWithSingleNonConstRequiredField()
+    {
+        var settings = DefaultSettings with
+        {
+            GenerateModels = true,
+            GenerateConstructors = true,
+            JsonSerializerType = JsonSerializerType.SystemTextJson,
+            TargetFramework = "net8.0",
+        };
+        const string yaml = """
+                            openapi: 3.1.0
+                            info:
+                              title: CascadingFactory
+                              version: 1.0.0
+                            paths:
+                              /presets:
+                                post:
+                                  operationId: usePreset
+                                  requestBody:
+                                    content:
+                                      application/json:
+                                        schema:
+                                          $ref: '#/components/schemas/PresetVoice'
+                                  responses:
+                                    '204':
+                                      description: ok
+                            components:
+                              schemas:
+                                PresetVoice:
+                                  type: object
+                                  required: [presetId, type]
+                                  properties:
+                                    presetId:
+                                      $ref: '#/components/schemas/VoicePresetId'
+                                    type:
+                                      const: runway-preset
+                                      type: string
+                                VoicePresetId:
+                                  type: string
+                                  enum: [Clara, Maya]
+                            """;
+
+        var data = Data.Prepare(((yaml, settings), GlobalSettings: settings));
+        var presetVoiceClass = data.Classes.Single(x => x.ClassName == "PresetVoice");
+        var generated = Sources.GenerateModel(presetVoiceClass);
+
+        generated.Should().Contain("public static PresetVoice FromPresetId(");
+        generated.Should().Contain("PresetId = presetId");
+        generated.Should().Contain("return new PresetVoice");
+    }
+
+    [TestMethod]
+    public void CascadingLeafFactory_NotEmittedWhenZeroConstFields()
+    {
+        var settings = DefaultSettings with
+        {
+            GenerateModels = true,
+            GenerateConstructors = true,
+            JsonSerializerType = JsonSerializerType.SystemTextJson,
+            TargetFramework = "net8.0",
+        };
+        const string yaml = """
+                            openapi: 3.0.3
+                            info:
+                              title: NoCascade
+                              version: 1.0.0
+                            paths:
+                              /x:
+                                get:
+                                  operationId: getX
+                                  responses:
+                                    '200':
+                                      description: ok
+                                      content:
+                                        application/json:
+                                          schema:
+                                            $ref: '#/components/schemas/SingleRequired'
+                            components:
+                              schemas:
+                                SingleRequired:
+                                  type: object
+                                  required: [name]
+                                  properties:
+                                    name:
+                                      type: string
+                            """;
+
+        var data = Data.Prepare(((yaml, settings), GlobalSettings: settings));
+        var classData = data.Classes.Single(x => x.ClassName == "SingleRequired");
+        var generated = Sources.GenerateModel(classData);
+
+        generated.Should().NotContain("public static SingleRequired From");
+    }
+
+    [TestMethod]
     public void OpenAiOfficialSpec_CreateChatCompletionRequest_UsesNamedMixedAllOfMembers()
     {
         var settings = DefaultSettings with

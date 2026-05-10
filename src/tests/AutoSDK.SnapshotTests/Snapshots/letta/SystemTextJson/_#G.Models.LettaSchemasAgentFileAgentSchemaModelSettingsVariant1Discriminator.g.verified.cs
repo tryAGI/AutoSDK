@@ -41,5 +41,6 @@ namespace G
         public LettaSchemasAgentFileAgentSchemaModelSettingsVariant1Discriminator()
         {
         }
+
     }
 }

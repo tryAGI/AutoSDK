@@ -246,5 +246,6 @@ namespace G
         public PatchedLseTaskRequest()
         {
         }
+
     }
 }

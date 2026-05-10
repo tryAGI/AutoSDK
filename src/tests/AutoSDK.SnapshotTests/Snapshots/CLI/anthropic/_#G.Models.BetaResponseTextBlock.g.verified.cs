@@ -69,5 +69,18 @@ namespace G
         public BetaResponseTextBlock()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="BetaResponseTextBlock"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static BetaResponseTextBlock FromText(string text)
+        {
+            return new BetaResponseTextBlock
+            {
+                Text = text,
+            };
+        }
+
     }
 }

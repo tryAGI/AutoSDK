@@ -278,5 +278,6 @@ namespace G
         public ConversationHistoryMetadataCommonModel()
         {
         }
+
     }
 }

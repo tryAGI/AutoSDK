@@ -53,5 +53,6 @@ namespace G
         public ElseEdgeVariant2TransitionCondition()
         {
         }
+
     }
 }

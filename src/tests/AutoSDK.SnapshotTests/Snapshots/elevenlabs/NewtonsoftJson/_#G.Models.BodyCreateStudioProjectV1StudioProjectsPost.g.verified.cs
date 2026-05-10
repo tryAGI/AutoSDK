@@ -505,5 +505,6 @@ namespace G
         public BodyCreateStudioProjectV1StudioProjectsPost()
         {
         }
+
     }
 }

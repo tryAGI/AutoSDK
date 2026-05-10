@@ -487,5 +487,6 @@ namespace G
         public AssistantOverrides()
         {
         }
+
     }
 }

@@ -200,5 +200,6 @@ namespace G
         public ReviewSettingsRequest()
         {
         }
+
     }
 }

@@ -241,5 +241,6 @@ namespace G
         public GladiaTranscriber()
         {
         }
+
     }
 }

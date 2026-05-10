@@ -384,5 +384,6 @@ namespace G
         public ChatRequest()
         {
         }
+
     }
 }

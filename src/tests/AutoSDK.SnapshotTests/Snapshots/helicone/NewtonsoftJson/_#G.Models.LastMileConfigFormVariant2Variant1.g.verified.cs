@@ -38,5 +38,6 @@ namespace G
         public LastMileConfigFormVariant2Variant1()
         {
         }
+
     }
 }

@@ -42,5 +42,6 @@ namespace G
         public LettaServerRestApiRoutersV1AgentsCompactionRequest()
         {
         }
+
     }
 }

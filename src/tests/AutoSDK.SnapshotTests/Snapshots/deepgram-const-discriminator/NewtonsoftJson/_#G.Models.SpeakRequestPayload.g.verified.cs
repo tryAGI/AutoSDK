@@ -60,5 +60,18 @@ namespace G
         public SpeakRequestPayload()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="SpeakRequestPayload"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static SpeakRequestPayload FromText(string text)
+        {
+            return new SpeakRequestPayload
+            {
+                Text = text,
+            };
+        }
+
     }
 }

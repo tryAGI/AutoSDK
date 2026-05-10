@@ -572,5 +572,18 @@ namespace G
         public LseTask()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="LseTask"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static LseTask FromData(object data)
+        {
+            return new LseTask
+            {
+                Data = data,
+            };
+        }
+
     }
 }

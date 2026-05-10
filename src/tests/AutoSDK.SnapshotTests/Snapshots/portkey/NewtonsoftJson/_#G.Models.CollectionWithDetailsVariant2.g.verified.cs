@@ -37,5 +37,6 @@ namespace G
         public CollectionWithDetailsVariant2()
         {
         }
+
     }
 }

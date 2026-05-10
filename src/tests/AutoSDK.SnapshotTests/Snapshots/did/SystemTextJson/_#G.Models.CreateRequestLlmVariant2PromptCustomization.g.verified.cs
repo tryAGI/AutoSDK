@@ -115,5 +115,6 @@ namespace G
         public CreateRequestLlmVariant2PromptCustomization()
         {
         }
+
     }
 }

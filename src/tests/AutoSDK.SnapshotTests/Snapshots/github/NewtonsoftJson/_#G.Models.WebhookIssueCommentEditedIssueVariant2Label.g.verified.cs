@@ -97,5 +97,6 @@ namespace G
         public WebhookIssueCommentEditedIssueVariant2Label()
         {
         }
+
     }
 }

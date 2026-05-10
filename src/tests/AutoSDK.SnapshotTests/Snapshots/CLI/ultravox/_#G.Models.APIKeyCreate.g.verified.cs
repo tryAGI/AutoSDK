@@ -117,5 +117,18 @@ namespace G
         public APIKeyCreate()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="APIKeyCreate"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static APIKeyCreate FromName(string name)
+        {
+            return new APIKeyCreate
+            {
+                Name = name,
+            };
+        }
+
     }
 }

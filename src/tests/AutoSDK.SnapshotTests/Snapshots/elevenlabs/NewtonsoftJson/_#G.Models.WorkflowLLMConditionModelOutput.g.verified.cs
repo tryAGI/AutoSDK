@@ -62,5 +62,18 @@ namespace G
         public WorkflowLLMConditionModelOutput()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="WorkflowLLMConditionModelOutput"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static WorkflowLLMConditionModelOutput FromCondition(string condition)
+        {
+            return new WorkflowLLMConditionModelOutput
+            {
+                Condition = condition,
+            };
+        }
+
     }
 }

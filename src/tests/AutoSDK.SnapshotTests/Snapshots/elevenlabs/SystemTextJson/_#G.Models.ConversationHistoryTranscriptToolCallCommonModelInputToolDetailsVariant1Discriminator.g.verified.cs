@@ -41,5 +41,6 @@ namespace G
         public ConversationHistoryTranscriptToolCallCommonModelInputToolDetailsVariant1Discriminator()
         {
         }
+
     }
 }

@@ -54,5 +54,6 @@ namespace G
         public CreateClipRequestScriptVariant1ProviderGoogle()
         {
         }
+
     }
 }

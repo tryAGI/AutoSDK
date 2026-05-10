@@ -84,5 +84,6 @@ namespace G
         public SecurityAndAnalysis()
         {
         }
+
     }
 }

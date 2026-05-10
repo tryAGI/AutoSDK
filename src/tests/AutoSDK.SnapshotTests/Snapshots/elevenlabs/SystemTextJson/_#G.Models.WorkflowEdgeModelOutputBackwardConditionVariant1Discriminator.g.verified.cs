@@ -41,5 +41,6 @@ namespace G
         public WorkflowEdgeModelOutputBackwardConditionVariant1Discriminator()
         {
         }
+
     }
 }

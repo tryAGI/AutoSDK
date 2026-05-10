@@ -618,5 +618,6 @@ namespace G
         public WidgetConfigOutput()
         {
         }
+
     }
 }

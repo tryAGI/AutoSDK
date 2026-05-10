@@ -51,5 +51,18 @@ namespace G
         public PromptOpenAIInvocationParameters()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="PromptOpenAIInvocationParameters"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static PromptOpenAIInvocationParameters FromOpenai(global::G.PromptOpenAIInvocationParametersContent openai)
+        {
+            return new PromptOpenAIInvocationParameters
+            {
+                Openai = openai,
+            };
+        }
+
     }
 }

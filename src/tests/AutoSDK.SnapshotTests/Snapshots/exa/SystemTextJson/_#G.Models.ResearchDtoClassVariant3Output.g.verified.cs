@@ -50,5 +50,6 @@ namespace G
         public ResearchDtoClassVariant3Output()
         {
         }
+
     }
 }

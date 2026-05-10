@@ -37,5 +37,6 @@ namespace G
         public AccountDetailsV2Response2()
         {
         }
+
     }
 }

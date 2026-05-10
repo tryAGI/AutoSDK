@@ -646,5 +646,6 @@ namespace G
         public WidgetConfigResponseModel()
         {
         }
+
     }
 }

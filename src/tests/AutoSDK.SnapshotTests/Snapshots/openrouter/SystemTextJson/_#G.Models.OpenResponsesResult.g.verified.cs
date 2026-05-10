@@ -362,5 +362,6 @@ namespace G
         public OpenResponsesResult()
         {
         }
+
     }
 }

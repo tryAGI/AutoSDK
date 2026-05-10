@@ -225,5 +225,6 @@ namespace G
         public MCPServerConfigInput()
         {
         }
+
     }
 }

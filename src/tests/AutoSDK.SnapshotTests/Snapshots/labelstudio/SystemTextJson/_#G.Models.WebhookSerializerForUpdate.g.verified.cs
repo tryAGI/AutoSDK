@@ -162,5 +162,18 @@ namespace G
         public WebhookSerializerForUpdate()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="WebhookSerializerForUpdate"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static WebhookSerializerForUpdate FromUrl(string url)
+        {
+            return new WebhookSerializerForUpdate
+            {
+                Url = url,
+            };
+        }
+
     }
 }

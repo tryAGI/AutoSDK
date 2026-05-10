@@ -63,5 +63,6 @@ namespace G
         public PatchProjectAutomationConfigVariant3()
         {
         }
+
     }
 }

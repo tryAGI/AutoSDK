@@ -1307,5 +1307,6 @@ namespace G
         public BatchParseJobConfig()
         {
         }
+
     }
 }

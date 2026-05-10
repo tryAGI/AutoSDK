@@ -169,5 +169,18 @@ namespace G
         public AnnotationReview()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="AnnotationReview"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static AnnotationReview FromAnnotation(int annotation)
+        {
+            return new AnnotationReview
+            {
+                Annotation = annotation,
+            };
+        }
+
     }
 }

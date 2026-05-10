@@ -195,5 +195,18 @@ namespace G
         public ModelRun()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="ModelRun"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static ModelRun FromProject(int project)
+        {
+            return new ModelRun
+            {
+                Project = project,
+            };
+        }
+
     }
 }

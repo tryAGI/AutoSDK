@@ -78,5 +78,6 @@ namespace G
         public UpdateResponseVariant1PresenterExpressiveAvatar()
         {
         }
+
     }
 }

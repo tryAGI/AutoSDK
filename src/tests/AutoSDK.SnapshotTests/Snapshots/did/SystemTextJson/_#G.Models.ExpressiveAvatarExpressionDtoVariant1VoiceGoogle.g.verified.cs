@@ -57,5 +57,6 @@ namespace G
         public ExpressiveAvatarExpressionDtoVariant1VoiceGoogle()
         {
         }
+
     }
 }

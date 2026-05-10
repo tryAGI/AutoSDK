@@ -80,5 +80,6 @@ namespace G
         public ScriptVariant1ProviderOpenAIVoiceConfig()
         {
         }
+
     }
 }

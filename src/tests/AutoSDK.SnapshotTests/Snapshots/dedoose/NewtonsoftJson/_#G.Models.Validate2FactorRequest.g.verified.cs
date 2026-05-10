@@ -55,5 +55,6 @@ namespace G
         public Validate2FactorRequest()
         {
         }
+
     }
 }

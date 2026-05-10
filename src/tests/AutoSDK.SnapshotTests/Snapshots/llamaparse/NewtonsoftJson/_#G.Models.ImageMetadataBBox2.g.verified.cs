@@ -72,5 +72,6 @@ namespace G
         public ImageMetadataBBox2()
         {
         }
+
     }
 }

@@ -51,5 +51,18 @@ namespace G
         public SayNodeLiteralMessageOutput()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="SayNodeLiteralMessageOutput"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static SayNodeLiteralMessageOutput FromText(string text)
+        {
+            return new SayNodeLiteralMessageOutput
+            {
+                Text = text,
+            };
+        }
+
     }
 }

@@ -53,5 +53,6 @@ namespace G
         public UpdateGoogleCalendarOAuth2AuthorizationCredentialDTO()
         {
         }
+
     }
 }

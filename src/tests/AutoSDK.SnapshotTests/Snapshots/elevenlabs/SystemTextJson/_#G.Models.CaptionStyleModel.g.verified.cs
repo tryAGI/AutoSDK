@@ -256,5 +256,6 @@ namespace G
         public CaptionStyleModel()
         {
         }
+
     }
 }

@@ -56,5 +56,18 @@ namespace G
         public CreateVoiceIsolationRequestElevenVoiceIsolation()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="CreateVoiceIsolationRequestElevenVoiceIsolation"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static CreateVoiceIsolationRequestElevenVoiceIsolation FromAudioUri(string audioUri)
+        {
+            return new CreateVoiceIsolationRequestElevenVoiceIsolation
+            {
+                AudioUri = audioUri,
+            };
+        }
+
     }
 }

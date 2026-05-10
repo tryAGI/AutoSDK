@@ -198,5 +198,6 @@ namespace G
         public UpdateSmsToolDTO()
         {
         }
+
     }
 }

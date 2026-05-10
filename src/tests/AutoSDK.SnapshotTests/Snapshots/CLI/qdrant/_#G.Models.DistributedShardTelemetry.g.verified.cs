@@ -66,5 +66,6 @@ namespace G
         public DistributedShardTelemetry()
         {
         }
+
     }
 }

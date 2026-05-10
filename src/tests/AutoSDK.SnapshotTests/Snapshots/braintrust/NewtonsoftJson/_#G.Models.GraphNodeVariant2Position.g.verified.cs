@@ -50,5 +50,6 @@ namespace G
         public GraphNodeVariant2Position()
         {
         }
+
     }
 }

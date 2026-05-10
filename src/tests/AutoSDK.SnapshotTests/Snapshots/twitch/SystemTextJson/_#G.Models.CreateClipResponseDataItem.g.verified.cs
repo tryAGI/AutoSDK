@@ -59,5 +59,6 @@ namespace G
         public CreateClipResponseDataItem()
         {
         }
+
     }
 }

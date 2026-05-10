@@ -384,6 +384,13 @@ public sealed partial class {modelData.Parents[level].Unbox<ModelData>().ClassNa
                 forceRequired: true)))
             .Inject();
 
+        var leafFactory = TryGetCascadingLeafFactory(
+            modelData,
+            requiredConstructorProperties,
+            constructorBaseOnlyRequiredProperties,
+            optionalConstructorPropertiesWithDefaults,
+            optionalConstructorPropertiesWithoutDefaults);
+
         return $@" 
     {modelData.Summary.ToXmlDocumentationSummary(level: 4)}
     {(modelData.IsDeprecated ? $"[global::System.Obsolete(\"{(!string.IsNullOrWhiteSpace(modelData.DeprecationMessage) ? modelData.DeprecationMessage.ClearForCSharp() : "This model marked as deprecated.")}\")]" : TrimmedLine)}
@@ -430,7 +437,95 @@ public sealed partial class {modelData.Parents[level].Unbox<ModelData>().ClassNa
         {{
         }}
  " : TrimmedLine)}
+{leafFactory}
     }}".RemoveBlankLinesWhereOnlyWhitespaces();
+    }
+
+    private static string TryGetCascadingLeafFactory(
+        ModelData modelData,
+        PropertyData[] requiredConstructorProperties,
+        PropertyData[] constructorBaseOnlyRequiredProperties,
+        PropertyData[] optionalConstructorPropertiesWithDefaults,
+        PropertyData[] optionalConstructorPropertiesWithoutDefaults)
+    {
+        // Cascading leaf factory: if exactly one constructor parameter is "meaningful"
+        // (no const default — the leaf, typically an enum or scalar discriminator value)
+        // and at least one is a const-defaulted discriminator, emit a static factory
+        // taking only the leaf and hardcoding the discriminator(s). Saves the consumer
+        // from rewriting the const discriminator at every call site for nested oneOf
+        // wrappers (Runway-style).
+        if (modelData.IsBaseClass ||
+            modelData.IsDerivedClass ||
+            modelData.IsDeprecated)
+        {
+            return string.Empty;
+        }
+
+        // The "leaf" is a constructor parameter without a default value.
+        // Const-discriminator fields show up as either required-with-default (rare)
+        // or optional-with-default. Both are emitted with `param = default` in the
+        // generated constructor, so we treat them uniformly as the const-fields set.
+        var leafCandidates = requiredConstructorProperties
+            .Concat(constructorBaseOnlyRequiredProperties)
+            .Where(static x => !x.IsDeprecated && string.IsNullOrWhiteSpace(x.DefaultValue))
+            .ToArray();
+        if (leafCandidates.Length != 1)
+        {
+            return string.Empty;
+        }
+
+        var constFields = requiredConstructorProperties
+            .Concat(constructorBaseOnlyRequiredProperties)
+            .Concat(optionalConstructorPropertiesWithDefaults)
+            .Where(static x => !x.IsDeprecated && !string.IsNullOrWhiteSpace(x.DefaultValue))
+            .ToArray();
+        if (constFields.Length == 0)
+        {
+            return string.Empty;
+        }
+
+        var leaf = leafCandidates[0];
+
+        // Skip when the leaf is itself a complex collection or wrapper — the From
+        // factory adds no value over the constructor in those cases and risks
+        // colliding with factories at deeper nesting levels.
+        if (leaf.Type.IsAnyOfLike ||
+            leaf.Type.IsArray ||
+            leaf.Type.CSharpTypeWithoutNullability.StartsWith(
+                "global::System.Collections.Generic.IList",
+                StringComparison.Ordinal))
+        {
+            return string.Empty;
+        }
+
+        // Skip when const fields use the C# `required` keyword. The factory body
+        // uses an object initializer, which only sets the leaf — `required` const
+        // fields would still trigger CS9035 unless the initializer also assigns
+        // them. Forcing the consumer to override the discriminator defeats the
+        // factory's purpose, so we leave those classes alone.
+        if (constFields.Any(static x => x.IsRequired))
+        {
+            return string.Empty;
+        }
+
+        // Use object-initializer syntax instead of the positional constructor.
+        // This works whether or not the constructor has [SetsRequiredMembers]
+        // because the initializer itself satisfies any required-member contracts,
+        // and const-defaulted properties keep their inline default values from
+        // the property declarations.
+        return $@"
+        /// <summary>
+        /// Creates a new <see cref=""{modelData.ClassName}""/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static {modelData.ClassName} From{leaf.Name}({leaf.Type.CSharpType} {leaf.ParameterName})
+        {{
+            return new {modelData.ClassName}
+            {{
+                {leaf.Name} = {leaf.ParameterName},
+            }};
+        }}
+";
     }
 
     private static string GetAdditionalPropertiesValueType(

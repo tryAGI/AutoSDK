@@ -77,5 +77,6 @@ namespace G
         public CreateClipStreamRequestScriptVariant1ProviderMicrosoftVoiceConfig2()
         {
         }
+
     }
 }

@@ -227,5 +227,6 @@ namespace G
         public RenderResponseData()
         {
         }
+
     }
 }

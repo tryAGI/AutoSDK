@@ -129,5 +129,6 @@ namespace G
         public UpdatePresenterAttributesRequestVariant1VoiceElevenLabsVoiceConfig()
         {
         }
+
     }
 }

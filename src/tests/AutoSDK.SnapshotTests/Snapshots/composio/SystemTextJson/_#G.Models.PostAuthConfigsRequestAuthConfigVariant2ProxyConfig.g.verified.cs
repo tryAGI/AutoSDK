@@ -54,5 +54,6 @@ namespace G
         public PostAuthConfigsRequestAuthConfigVariant2ProxyConfig()
         {
         }
+
     }
 }

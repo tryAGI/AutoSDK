@@ -98,5 +98,6 @@ namespace G
         public CreateMapResponse()
         {
         }
+
     }
 }

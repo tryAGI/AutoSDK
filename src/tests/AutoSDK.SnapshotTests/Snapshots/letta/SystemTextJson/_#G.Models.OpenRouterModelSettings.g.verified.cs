@@ -94,5 +94,6 @@ namespace G
         public OpenRouterModelSettings()
         {
         }
+
     }
 }

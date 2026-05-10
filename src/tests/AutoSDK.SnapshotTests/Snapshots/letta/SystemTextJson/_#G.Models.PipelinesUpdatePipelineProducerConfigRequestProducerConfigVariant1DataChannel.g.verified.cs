@@ -59,5 +59,6 @@ namespace G
         public PipelinesUpdatePipelineProducerConfigRequestProducerConfigVariant1DataChannel()
         {
         }
+
     }
 }

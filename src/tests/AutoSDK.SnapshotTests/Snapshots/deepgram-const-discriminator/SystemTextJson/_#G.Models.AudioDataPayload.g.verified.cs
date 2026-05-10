@@ -64,5 +64,18 @@ namespace G
         public AudioDataPayload()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="AudioDataPayload"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static AudioDataPayload FromAudioBase64(string audioBase64)
+        {
+            return new AudioDataPayload
+            {
+                AudioBase64 = audioBase64,
+            };
+        }
+
     }
 }

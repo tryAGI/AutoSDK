@@ -481,5 +481,6 @@ namespace G
         public CreateChatCompletionRequest()
         {
         }
+
     }
 }

@@ -301,5 +301,6 @@ namespace G
         public GenerateRequest()
         {
         }
+
     }
 }

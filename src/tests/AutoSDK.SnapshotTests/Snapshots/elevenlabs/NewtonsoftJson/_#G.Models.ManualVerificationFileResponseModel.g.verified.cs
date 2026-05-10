@@ -83,5 +83,6 @@ namespace G
         public ManualVerificationFileResponseModel()
         {
         }
+
     }
 }

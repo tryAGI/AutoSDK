@@ -94,5 +94,6 @@ namespace G
         public ListMyAgentsResponseAgentVariant1PresenterPhotoAvatar()
         {
         }
+
     }
 }

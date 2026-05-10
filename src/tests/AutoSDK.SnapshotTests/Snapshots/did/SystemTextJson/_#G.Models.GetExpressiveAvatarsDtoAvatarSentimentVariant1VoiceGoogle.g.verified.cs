@@ -57,5 +57,6 @@ namespace G
         public GetExpressiveAvatarsDtoAvatarSentimentVariant1VoiceGoogle()
         {
         }
+
     }
 }

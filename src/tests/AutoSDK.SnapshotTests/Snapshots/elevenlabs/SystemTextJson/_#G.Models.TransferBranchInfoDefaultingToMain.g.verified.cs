@@ -51,5 +51,18 @@ namespace G
         public TransferBranchInfoDefaultingToMain()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="TransferBranchInfoDefaultingToMain"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static TransferBranchInfoDefaultingToMain FromBranchId(string branchId)
+        {
+            return new TransferBranchInfoDefaultingToMain
+            {
+                BranchId = branchId,
+            };
+        }
+
     }
 }

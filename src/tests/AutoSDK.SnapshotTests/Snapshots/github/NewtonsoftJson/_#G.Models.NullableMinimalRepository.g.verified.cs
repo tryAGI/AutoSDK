@@ -970,5 +970,6 @@ namespace G
         public NullableMinimalRepository()
         {
         }
+
     }
 }

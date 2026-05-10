@@ -145,5 +145,18 @@ namespace G
         public Dataset()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="Dataset"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static Dataset FromTitle(string title)
+        {
+            return new Dataset
+            {
+                Title = title,
+            };
+        }
+
     }
 }

@@ -59,5 +59,6 @@ namespace G
         public PipelinesCreatePipelineResponsePipelineConfigVariant1DataChannel()
         {
         }
+
     }
 }

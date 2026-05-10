@@ -45,5 +45,6 @@ namespace G
         public ArtifactCreateToolVariant2()
         {
         }
+
     }
 }

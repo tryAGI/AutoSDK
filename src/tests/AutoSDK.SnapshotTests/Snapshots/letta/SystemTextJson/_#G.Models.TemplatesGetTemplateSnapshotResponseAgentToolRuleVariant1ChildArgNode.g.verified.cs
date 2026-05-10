@@ -50,5 +50,6 @@ namespace G
         public TemplatesGetTemplateSnapshotResponseAgentToolRuleVariant1ChildArgNode()
         {
         }
+
     }
 }

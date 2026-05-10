@@ -88,5 +88,6 @@ namespace G
         public AgentResponseDtoVariant1PresenterPhotoAvatar()
         {
         }
+
     }
 }

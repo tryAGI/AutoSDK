@@ -216,5 +216,6 @@ namespace G
         public GenerateVideoToVideoResponse()
         {
         }
+
     }
 }

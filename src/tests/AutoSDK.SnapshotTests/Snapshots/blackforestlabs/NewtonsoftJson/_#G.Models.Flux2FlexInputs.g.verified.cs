@@ -272,5 +272,6 @@ namespace G
         public Flux2FlexInputs()
         {
         }
+
     }
 }

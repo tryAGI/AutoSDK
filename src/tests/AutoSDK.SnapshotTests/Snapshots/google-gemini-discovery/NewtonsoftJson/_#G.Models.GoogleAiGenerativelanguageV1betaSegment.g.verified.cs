@@ -72,5 +72,6 @@ namespace G
         public GoogleAiGenerativelanguageV1betaSegment()
         {
         }
+
     }
 }

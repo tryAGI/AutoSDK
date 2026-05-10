@@ -88,5 +88,6 @@ namespace G
         public UpdateResponseVariant1PresenterPhotoAvatar()
         {
         }
+
     }
 }

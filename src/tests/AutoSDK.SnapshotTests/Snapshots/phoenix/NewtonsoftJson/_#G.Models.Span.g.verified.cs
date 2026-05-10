@@ -149,5 +149,6 @@ namespace G
         public Span()
         {
         }
+
     }
 }

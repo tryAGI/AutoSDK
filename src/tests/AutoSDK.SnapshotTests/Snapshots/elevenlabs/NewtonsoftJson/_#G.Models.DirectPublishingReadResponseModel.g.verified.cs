@@ -473,5 +473,6 @@ namespace G
         public DirectPublishingReadResponseModel()
         {
         }
+
     }
 }

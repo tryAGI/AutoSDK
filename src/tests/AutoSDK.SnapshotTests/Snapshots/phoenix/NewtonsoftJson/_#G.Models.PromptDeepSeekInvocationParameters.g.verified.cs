@@ -47,5 +47,18 @@ namespace G
         public PromptDeepSeekInvocationParameters()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="PromptDeepSeekInvocationParameters"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static PromptDeepSeekInvocationParameters FromDeepseek(global::G.PromptDeepSeekInvocationParametersContent deepseek)
+        {
+            return new PromptDeepSeekInvocationParameters
+            {
+                Deepseek = deepseek,
+            };
+        }
+
     }
 }

@@ -40,5 +40,6 @@ namespace G
         public TooManyRequestsErrorBody7()
         {
         }
+
     }
 }

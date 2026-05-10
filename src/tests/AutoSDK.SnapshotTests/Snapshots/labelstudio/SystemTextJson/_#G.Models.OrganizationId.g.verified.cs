@@ -75,5 +75,18 @@ namespace G
         public OrganizationId()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="OrganizationId"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static OrganizationId FromTitle(string title)
+        {
+            return new OrganizationId
+            {
+                Title = title,
+            };
+        }
+
     }
 }

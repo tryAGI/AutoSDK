@@ -37,5 +37,6 @@ namespace G
         public EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItemsOneOf1ImageUrl()
         {
         }
+
     }
 }

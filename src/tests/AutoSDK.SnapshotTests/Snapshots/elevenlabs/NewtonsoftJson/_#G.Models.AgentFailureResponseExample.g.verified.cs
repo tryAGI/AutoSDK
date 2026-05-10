@@ -47,5 +47,18 @@ namespace G
         public AgentFailureResponseExample()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="AgentFailureResponseExample"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static AgentFailureResponseExample FromResponse(string response)
+        {
+            return new AgentFailureResponseExample
+            {
+                Response = response,
+            };
+        }
+
     }
 }

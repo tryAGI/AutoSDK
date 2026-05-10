@@ -70,5 +70,6 @@ namespace G
         public GetClipsResponseClipConfig2()
         {
         }
+
     }
 }

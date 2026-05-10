@@ -47,5 +47,18 @@ namespace G
         public ChatCompletionContentPartRefusalParam()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="ChatCompletionContentPartRefusalParam"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static ChatCompletionContentPartRefusalParam FromRefusal(string refusal)
+        {
+            return new ChatCompletionContentPartRefusalParam
+            {
+                Refusal = refusal,
+            };
+        }
+
     }
 }

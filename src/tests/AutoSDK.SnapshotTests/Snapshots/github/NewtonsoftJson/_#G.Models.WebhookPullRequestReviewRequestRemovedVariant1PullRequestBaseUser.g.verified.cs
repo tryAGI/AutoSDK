@@ -218,5 +218,6 @@ namespace G
         public WebhookPullRequestReviewRequestRemovedVariant1PullRequestBaseUser()
         {
         }
+
     }
 }

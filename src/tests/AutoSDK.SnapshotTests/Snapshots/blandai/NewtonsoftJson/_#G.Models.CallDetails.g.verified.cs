@@ -358,5 +358,6 @@ namespace G
         public CallDetails()
         {
         }
+
     }
 }

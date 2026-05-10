@@ -68,5 +68,18 @@ namespace G
         public ImageAsset()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="ImageAsset"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static ImageAsset FromSrc(string src)
+        {
+            return new ImageAsset
+            {
+                Src = src,
+            };
+        }
+
     }
 }

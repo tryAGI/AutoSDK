@@ -32,5 +32,6 @@ namespace G
         public AvgValueStatPublic()
         {
         }
+
     }
 }

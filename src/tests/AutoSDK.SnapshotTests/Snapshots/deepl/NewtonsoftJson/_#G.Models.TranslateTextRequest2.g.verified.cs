@@ -405,5 +405,6 @@ namespace G
         public TranslateTextRequest2()
         {
         }
+
     }
 }

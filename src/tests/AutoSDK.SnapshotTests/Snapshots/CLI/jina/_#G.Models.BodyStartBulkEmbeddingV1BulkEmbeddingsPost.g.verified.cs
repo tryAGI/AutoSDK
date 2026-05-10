@@ -70,5 +70,6 @@ namespace G
         public BodyStartBulkEmbeddingV1BulkEmbeddingsPost()
         {
         }
+
     }
 }

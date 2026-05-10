@@ -57,5 +57,6 @@ namespace G
         public AgentsCountDeployedAgentsSearchItemVariant4()
         {
         }
+
     }
 }

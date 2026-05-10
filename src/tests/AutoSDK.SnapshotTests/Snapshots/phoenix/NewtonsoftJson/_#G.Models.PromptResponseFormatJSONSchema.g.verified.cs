@@ -47,5 +47,18 @@ namespace G
         public PromptResponseFormatJSONSchema()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="PromptResponseFormatJSONSchema"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static PromptResponseFormatJSONSchema FromJsonSchema(global::G.PromptResponseFormatJSONSchemaDefinition jsonSchema)
+        {
+            return new PromptResponseFormatJSONSchema
+            {
+                JsonSchema = jsonSchema,
+            };
+        }
+
     }
 }

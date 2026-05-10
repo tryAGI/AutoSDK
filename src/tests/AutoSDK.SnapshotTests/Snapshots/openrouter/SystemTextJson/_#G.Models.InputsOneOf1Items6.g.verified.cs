@@ -111,5 +111,6 @@ namespace G
         public InputsOneOf1Items6()
         {
         }
+
     }
 }

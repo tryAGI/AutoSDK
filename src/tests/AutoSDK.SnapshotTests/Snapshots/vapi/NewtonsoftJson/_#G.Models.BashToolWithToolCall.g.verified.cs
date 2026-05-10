@@ -269,5 +269,18 @@ namespace G
         public BashToolWithToolCall()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="BashToolWithToolCall"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static BashToolWithToolCall FromToolCall(global::G.ToolCall toolCall)
+        {
+            return new BashToolWithToolCall
+            {
+                ToolCall = toolCall,
+            };
+        }
+
     }
 }

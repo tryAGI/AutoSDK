@@ -206,5 +206,6 @@ namespace G
         public AuditLogObjectListRecord()
         {
         }
+
     }
 }

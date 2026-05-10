@@ -54,5 +54,18 @@ namespace G
         public SignatureContentBlockDelta()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="SignatureContentBlockDelta"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static SignatureContentBlockDelta FromSignature(string signature)
+        {
+            return new SignatureContentBlockDelta
+            {
+                Signature = signature,
+            };
+        }
+
     }
 }

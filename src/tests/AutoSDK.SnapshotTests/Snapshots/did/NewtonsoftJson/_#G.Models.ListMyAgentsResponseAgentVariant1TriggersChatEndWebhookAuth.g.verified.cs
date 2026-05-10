@@ -37,5 +37,6 @@ namespace G
         public ListMyAgentsResponseAgentVariant1TriggersChatEndWebhookAuth()
         {
         }
+
     }
 }

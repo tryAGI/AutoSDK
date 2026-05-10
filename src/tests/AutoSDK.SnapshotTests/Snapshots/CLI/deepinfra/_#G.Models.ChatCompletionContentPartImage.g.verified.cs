@@ -51,5 +51,18 @@ namespace G
         public ChatCompletionContentPartImage()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="ChatCompletionContentPartImage"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static ChatCompletionContentPartImage FromImageUrl(global::G.ImageURL imageUrl)
+        {
+            return new ChatCompletionContentPartImage
+            {
+                ImageUrl = imageUrl,
+            };
+        }
+
     }
 }

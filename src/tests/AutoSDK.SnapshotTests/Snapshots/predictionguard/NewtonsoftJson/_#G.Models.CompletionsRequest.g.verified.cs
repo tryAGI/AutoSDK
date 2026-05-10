@@ -178,5 +178,6 @@ namespace G
         public CompletionsRequest()
         {
         }
+
     }
 }

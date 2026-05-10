@@ -38,5 +38,6 @@ namespace G
         public BetaRequestImageBlockCacheControlVariant1Discriminator()
         {
         }
+
     }
 }

@@ -38,5 +38,6 @@ namespace G
         public GroqModelSettingsResponseFormatVariant1Discriminator()
         {
         }
+
     }
 }

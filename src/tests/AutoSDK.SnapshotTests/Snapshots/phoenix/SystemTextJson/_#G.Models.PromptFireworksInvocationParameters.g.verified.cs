@@ -51,5 +51,18 @@ namespace G
         public PromptFireworksInvocationParameters()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="PromptFireworksInvocationParameters"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static PromptFireworksInvocationParameters FromFireworks(global::G.PromptFireworksInvocationParametersContent fireworks)
+        {
+            return new PromptFireworksInvocationParameters
+            {
+                Fireworks = fireworks,
+            };
+        }
+
     }
 }

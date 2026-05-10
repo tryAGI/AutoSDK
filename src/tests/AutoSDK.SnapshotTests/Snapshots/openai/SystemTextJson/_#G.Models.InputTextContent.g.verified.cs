@@ -58,5 +58,18 @@ namespace G
         public InputTextContent()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="InputTextContent"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static InputTextContent FromText(string text)
+        {
+            return new InputTextContent
+            {
+                Text = text,
+            };
+        }
+
     }
 }

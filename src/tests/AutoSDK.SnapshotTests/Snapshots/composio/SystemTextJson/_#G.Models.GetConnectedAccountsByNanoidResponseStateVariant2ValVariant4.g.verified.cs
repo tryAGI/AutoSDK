@@ -338,5 +338,6 @@ namespace G
         public GetConnectedAccountsByNanoidResponseStateVariant2ValVariant4()
         {
         }
+
     }
 }

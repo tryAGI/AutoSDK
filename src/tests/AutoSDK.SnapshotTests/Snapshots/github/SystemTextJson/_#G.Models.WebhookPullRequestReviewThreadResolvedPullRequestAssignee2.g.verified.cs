@@ -223,5 +223,6 @@ namespace G
         public WebhookPullRequestReviewThreadResolvedPullRequestAssignee2()
         {
         }
+
     }
 }

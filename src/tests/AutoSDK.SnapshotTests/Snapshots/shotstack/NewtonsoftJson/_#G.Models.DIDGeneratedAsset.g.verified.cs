@@ -60,5 +60,18 @@ namespace G
         public DIDGeneratedAsset()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="DIDGeneratedAsset"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static DIDGeneratedAsset FromOptions(global::G.DIDTextToAvatarOptions options)
+        {
+            return new DIDGeneratedAsset
+            {
+                Options = options,
+            };
+        }
+
     }
 }

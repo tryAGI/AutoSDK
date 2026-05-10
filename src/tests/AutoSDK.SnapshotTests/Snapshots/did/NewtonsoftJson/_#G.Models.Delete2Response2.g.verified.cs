@@ -64,5 +64,6 @@ namespace G
         public Delete2Response2()
         {
         }
+
     }
 }

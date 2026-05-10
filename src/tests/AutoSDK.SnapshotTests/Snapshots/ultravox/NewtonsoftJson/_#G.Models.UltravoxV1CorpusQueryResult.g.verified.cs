@@ -61,5 +61,6 @@ namespace G
         public UltravoxV1CorpusQueryResult()
         {
         }
+
     }
 }

@@ -115,5 +115,18 @@ namespace G
         public OrganizationMemberTag()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="OrganizationMemberTag"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static OrganizationMemberTag FromLabel(string label)
+        {
+            return new OrganizationMemberTag
+            {
+                Label = label,
+            };
+        }
+
     }
 }

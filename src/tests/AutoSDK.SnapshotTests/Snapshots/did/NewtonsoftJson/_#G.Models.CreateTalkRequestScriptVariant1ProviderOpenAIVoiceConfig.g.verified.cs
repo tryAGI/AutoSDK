@@ -77,5 +77,6 @@ namespace G
         public CreateTalkRequestScriptVariant1ProviderOpenAIVoiceConfig()
         {
         }
+
     }
 }

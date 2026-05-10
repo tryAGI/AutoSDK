@@ -269,5 +269,18 @@ namespace G
         public TextEditorToolWithToolCall()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="TextEditorToolWithToolCall"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static TextEditorToolWithToolCall FromToolCall(global::G.ToolCall toolCall)
+        {
+            return new TextEditorToolWithToolCall
+            {
+                ToolCall = toolCall,
+            };
+        }
+
     }
 }

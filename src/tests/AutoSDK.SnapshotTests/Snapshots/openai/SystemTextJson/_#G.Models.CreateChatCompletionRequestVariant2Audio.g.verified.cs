@@ -61,5 +61,6 @@ namespace G
         public CreateChatCompletionRequestVariant2Audio()
         {
         }
+
     }
 }

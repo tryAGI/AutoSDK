@@ -86,5 +86,6 @@ namespace G
         public TokenizeResponse200()
         {
         }
+
     }
 }

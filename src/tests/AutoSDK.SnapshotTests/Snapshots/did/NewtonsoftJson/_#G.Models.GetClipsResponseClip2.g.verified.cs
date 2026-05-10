@@ -208,5 +208,6 @@ namespace G
         public GetClipsResponseClip2()
         {
         }
+
     }
 }

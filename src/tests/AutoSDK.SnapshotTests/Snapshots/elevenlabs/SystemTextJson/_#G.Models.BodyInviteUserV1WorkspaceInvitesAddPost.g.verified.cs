@@ -74,5 +74,6 @@ namespace G
         public BodyInviteUserV1WorkspaceInvitesAddPost()
         {
         }
+
     }
 }

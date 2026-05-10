@@ -243,5 +243,18 @@ namespace G
         public DependabotAlertWithRepository()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="DependabotAlertWithRepository"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static DependabotAlertWithRepository FromRepository(global::G.SimpleRepository repository)
+        {
+            return new DependabotAlertWithRepository
+            {
+                Repository = repository,
+            };
+        }
+
     }
 }

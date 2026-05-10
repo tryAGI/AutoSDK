@@ -164,5 +164,6 @@ namespace G
         public GetDocumentResponse()
         {
         }
+
     }
 }

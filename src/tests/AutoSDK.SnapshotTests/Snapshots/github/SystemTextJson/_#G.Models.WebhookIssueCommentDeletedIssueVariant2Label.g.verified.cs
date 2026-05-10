@@ -106,5 +106,6 @@ namespace G
         public WebhookIssueCommentDeletedIssueVariant2Label()
         {
         }
+
     }
 }

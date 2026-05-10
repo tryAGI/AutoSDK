@@ -350,5 +350,6 @@ namespace G
         public RepositoryAdvisory()
         {
         }
+
     }
 }

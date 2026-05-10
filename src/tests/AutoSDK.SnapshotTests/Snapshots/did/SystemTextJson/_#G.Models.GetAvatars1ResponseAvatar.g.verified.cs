@@ -41,5 +41,6 @@ namespace G
         public GetAvatars1ResponseAvatar()
         {
         }
+
     }
 }

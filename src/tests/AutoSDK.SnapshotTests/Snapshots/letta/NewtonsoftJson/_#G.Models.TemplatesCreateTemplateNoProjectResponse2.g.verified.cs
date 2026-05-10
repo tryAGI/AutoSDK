@@ -37,5 +37,6 @@ namespace G
         public TemplatesCreateTemplateNoProjectResponse2()
         {
         }
+
     }
 }

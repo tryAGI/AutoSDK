@@ -129,5 +129,6 @@ namespace G
         public ExpressiveAvatarExpressionDtoVariant1VoiceElevenLabsVoiceConfig()
         {
         }
+
     }
 }

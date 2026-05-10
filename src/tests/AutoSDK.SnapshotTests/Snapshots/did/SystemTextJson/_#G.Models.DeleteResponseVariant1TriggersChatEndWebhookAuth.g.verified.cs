@@ -41,5 +41,6 @@ namespace G
         public DeleteResponseVariant1TriggersChatEndWebhookAuth()
         {
         }
+
     }
 }

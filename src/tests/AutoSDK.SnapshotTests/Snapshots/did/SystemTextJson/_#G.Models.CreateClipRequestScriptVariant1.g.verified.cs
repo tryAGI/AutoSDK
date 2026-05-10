@@ -101,5 +101,6 @@ namespace G
         public CreateClipRequestScriptVariant1()
         {
         }
+
     }
 }

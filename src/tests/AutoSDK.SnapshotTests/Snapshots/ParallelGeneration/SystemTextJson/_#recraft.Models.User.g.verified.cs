@@ -68,5 +68,6 @@ namespace recraft
         public User()
         {
         }
+
     }
 }

@@ -141,5 +141,6 @@ namespace G
         public WebhookPullRequestReviewRequestedVariant1()
         {
         }
+
     }
 }

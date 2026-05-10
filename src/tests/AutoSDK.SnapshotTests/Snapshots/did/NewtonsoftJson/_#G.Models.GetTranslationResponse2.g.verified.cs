@@ -161,5 +161,6 @@ namespace G
         public GetTranslationResponse2()
         {
         }
+
     }
 }

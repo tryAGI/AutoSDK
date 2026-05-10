@@ -39,5 +39,6 @@ namespace G
         public AgentResponseDtoVariant1TriggersChatEnd()
         {
         }
+
     }
 }

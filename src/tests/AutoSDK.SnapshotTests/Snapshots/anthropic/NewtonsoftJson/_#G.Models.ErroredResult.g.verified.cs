@@ -50,5 +50,18 @@ namespace G
         public ErroredResult()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="ErroredResult"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static ErroredResult FromError(global::G.ErrorResponse error)
+        {
+            return new ErroredResult
+            {
+                Error = error,
+            };
+        }
+
     }
 }

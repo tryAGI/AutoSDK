@@ -492,5 +492,6 @@ namespace G
         public CreateAgentRequest()
         {
         }
+
     }
 }

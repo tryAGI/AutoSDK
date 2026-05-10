@@ -59,5 +59,6 @@ namespace G
         public GenerateStreamTextYai5v6()
         {
         }
+
     }
 }

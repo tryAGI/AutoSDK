@@ -135,5 +135,18 @@ namespace G
         public CreateEmbeddingsRequest()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="CreateEmbeddingsRequest"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static CreateEmbeddingsRequest FromInputType(global::G.CreateEmbeddingsRequestInputType inputType)
+        {
+            return new CreateEmbeddingsRequest
+            {
+                InputType = inputType,
+            };
+        }
+
     }
 }

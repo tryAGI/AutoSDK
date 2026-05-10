@@ -86,5 +86,6 @@ namespace G
         public CreateClipStreamRequestPresenterConfigCropVariant2Rectangle2()
         {
         }
+
     }
 }

@@ -54,5 +54,18 @@ namespace G
         public ContentBlockStopEvent()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="ContentBlockStopEvent"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static ContentBlockStopEvent FromIndex(int index)
+        {
+            return new ContentBlockStopEvent
+            {
+                Index = index,
+            };
+        }
+
     }
 }

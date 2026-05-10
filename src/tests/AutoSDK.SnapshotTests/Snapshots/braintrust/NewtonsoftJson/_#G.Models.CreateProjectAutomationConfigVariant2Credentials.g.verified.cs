@@ -60,5 +60,6 @@ namespace G
         public CreateProjectAutomationConfigVariant2Credentials()
         {
         }
+
     }
 }

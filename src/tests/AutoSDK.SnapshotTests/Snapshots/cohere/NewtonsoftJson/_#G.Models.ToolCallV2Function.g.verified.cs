@@ -46,5 +46,6 @@ namespace G
         public ToolCallV2Function()
         {
         }
+
     }
 }

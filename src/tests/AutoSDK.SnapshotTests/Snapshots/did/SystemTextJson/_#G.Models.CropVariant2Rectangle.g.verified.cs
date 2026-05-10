@@ -93,5 +93,6 @@ namespace G
         public CropVariant2Rectangle()
         {
         }
+
     }
 }

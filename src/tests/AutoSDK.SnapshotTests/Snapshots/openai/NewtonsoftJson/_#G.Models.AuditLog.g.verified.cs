@@ -382,5 +382,6 @@ namespace G
         public AuditLog()
         {
         }
+
     }
 }

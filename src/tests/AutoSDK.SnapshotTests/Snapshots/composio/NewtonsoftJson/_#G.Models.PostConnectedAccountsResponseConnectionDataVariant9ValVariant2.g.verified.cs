@@ -245,5 +245,6 @@ namespace G
         public PostConnectedAccountsResponseConnectionDataVariant9ValVariant2()
         {
         }
+
     }
 }

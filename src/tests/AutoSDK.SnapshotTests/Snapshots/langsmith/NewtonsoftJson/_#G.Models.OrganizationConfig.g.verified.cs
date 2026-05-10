@@ -440,5 +440,6 @@ namespace G
         public OrganizationConfig()
         {
         }
+
     }
 }

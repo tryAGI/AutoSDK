@@ -80,5 +80,6 @@ namespace G
         public ListMyAgentsResponseAgentVariant1PresenterVideoAvatarVoiceMicrosoftVoiceConfig()
         {
         }
+
     }
 }

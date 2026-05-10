@@ -64,5 +64,18 @@ namespace G
         public AgentStarted()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="AgentStarted"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static AgentStarted FromAgentId(string agentId)
+        {
+            return new AgentStarted
+            {
+                AgentId = agentId,
+            };
+        }
+
     }
 }

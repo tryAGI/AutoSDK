@@ -166,5 +166,6 @@ namespace G
         public ApiStoragesAzureValidateCreateRequest()
         {
         }
+
     }
 }

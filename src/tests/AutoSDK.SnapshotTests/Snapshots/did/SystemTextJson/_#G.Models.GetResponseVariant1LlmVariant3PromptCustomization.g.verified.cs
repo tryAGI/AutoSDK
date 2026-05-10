@@ -115,5 +115,6 @@ namespace G
         public GetResponseVariant1LlmVariant3PromptCustomization()
         {
         }
+
     }
 }

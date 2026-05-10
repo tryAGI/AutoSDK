@@ -187,5 +187,6 @@ namespace G
         public ResponseVariant3()
         {
         }
+
     }
 }

@@ -184,5 +184,6 @@ namespace G
         public BodyComposeMusicWithADetailedResponseV1MusicDetailedPost()
         {
         }
+
     }
 }

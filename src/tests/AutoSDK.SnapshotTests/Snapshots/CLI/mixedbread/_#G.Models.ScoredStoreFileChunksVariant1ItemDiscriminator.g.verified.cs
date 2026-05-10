@@ -41,5 +41,6 @@ namespace G
         public ScoredStoreFileChunksVariant1ItemDiscriminator()
         {
         }
+
     }
 }

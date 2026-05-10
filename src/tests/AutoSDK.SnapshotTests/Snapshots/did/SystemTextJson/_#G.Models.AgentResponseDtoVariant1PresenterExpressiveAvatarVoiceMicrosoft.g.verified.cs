@@ -81,5 +81,6 @@ namespace G
         public AgentResponseDtoVariant1PresenterExpressiveAvatarVoiceMicrosoft()
         {
         }
+
     }
 }

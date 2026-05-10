@@ -64,5 +64,6 @@ namespace G
         public ResponsesPostRequestBodyContentApplicationJsonSchemaToolChoiceOneOf1ToolsItems()
         {
         }
+
     }
 }

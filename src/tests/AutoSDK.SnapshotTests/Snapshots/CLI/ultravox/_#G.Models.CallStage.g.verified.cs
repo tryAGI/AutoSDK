@@ -195,5 +195,18 @@ namespace G
         public CallStage()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="CallStage"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static CallStage FromInitialState(object initialState)
+        {
+            return new CallStage
+            {
+                InitialState = initialState,
+            };
+        }
+
     }
 }

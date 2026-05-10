@@ -49,5 +49,6 @@ namespace G
         public ResultSuccessScoreV2OrNull()
         {
         }
+
     }
 }

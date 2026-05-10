@@ -54,5 +54,18 @@ namespace G
         public SucceededResult()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="SucceededResult"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static SucceededResult FromMessage(global::G.Message message)
+        {
+            return new SucceededResult
+            {
+                Message = message,
+            };
+        }
+
     }
 }

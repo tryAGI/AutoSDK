@@ -70,5 +70,6 @@ namespace G
         public CreateStream1Response()
         {
         }
+
     }
 }

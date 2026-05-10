@@ -528,5 +528,6 @@ namespace G
         public AgentState()
         {
         }
+
     }
 }

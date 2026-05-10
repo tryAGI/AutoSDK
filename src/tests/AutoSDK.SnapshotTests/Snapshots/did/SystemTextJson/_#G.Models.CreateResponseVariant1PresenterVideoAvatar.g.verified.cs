@@ -78,5 +78,6 @@ namespace G
         public CreateResponseVariant1PresenterVideoAvatar()
         {
         }
+
     }
 }

@@ -51,5 +51,6 @@ namespace G
         public EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4ItemsContentItems1()
         {
         }
+
     }
 }

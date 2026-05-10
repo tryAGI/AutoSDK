@@ -69,5 +69,6 @@ namespace G
         public CreateTalkResponse5()
         {
         }
+
     }
 }

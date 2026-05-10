@@ -38,5 +38,6 @@ namespace G
         public ConversationMessageRequestInputVariant2ItemDiscriminator()
         {
         }
+
     }
 }

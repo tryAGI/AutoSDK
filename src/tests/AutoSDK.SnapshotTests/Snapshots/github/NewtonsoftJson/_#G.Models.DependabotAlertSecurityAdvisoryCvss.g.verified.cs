@@ -56,5 +56,6 @@ namespace G
         public DependabotAlertSecurityAdvisoryCvss()
         {
         }
+
     }
 }

@@ -195,5 +195,6 @@ namespace G
         public ClassifyV2JobResponse()
         {
         }
+
     }
 }

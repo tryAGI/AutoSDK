@@ -321,5 +321,18 @@ namespace G
         public AzureDatasetStorage()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="AzureDatasetStorage"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static AzureDatasetStorage FromDataset(int dataset)
+        {
+            return new AzureDatasetStorage
+            {
+                Dataset = dataset,
+            };
+        }
+
     }
 }

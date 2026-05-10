@@ -317,5 +317,6 @@ namespace G
         public Chatv2Request()
         {
         }
+
     }
 }

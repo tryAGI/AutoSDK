@@ -526,5 +526,6 @@ namespace G
         public InternalTemplateAgentCreate()
         {
         }
+
     }
 }

@@ -66,5 +66,6 @@ namespace G
         public ClassifyV2ParsingConfiguration()
         {
         }
+
     }
 }

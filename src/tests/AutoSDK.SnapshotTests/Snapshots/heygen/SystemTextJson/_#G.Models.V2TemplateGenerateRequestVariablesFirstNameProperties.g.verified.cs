@@ -43,5 +43,6 @@ namespace G
         public V2TemplateGenerateRequestVariablesFirstNameProperties()
         {
         }
+
     }
 }

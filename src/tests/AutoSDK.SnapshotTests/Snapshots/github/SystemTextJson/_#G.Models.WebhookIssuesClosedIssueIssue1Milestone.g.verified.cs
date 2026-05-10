@@ -194,5 +194,6 @@ namespace G
         public WebhookIssuesClosedIssueIssue1Milestone()
         {
         }
+
     }
 }

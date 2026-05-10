@@ -79,5 +79,6 @@ namespace G
         public ClassifyV2Parameters()
         {
         }
+
     }
 }

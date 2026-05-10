@@ -60,5 +60,18 @@ namespace G
         public OpenAiGeneratedAsset()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="OpenAiGeneratedAsset"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static OpenAiGeneratedAsset FromOptions(global::G.OpenAiTextGeneratorOptions options)
+        {
+            return new OpenAiGeneratedAsset
+            {
+                Options = options,
+            };
+        }
+
     }
 }

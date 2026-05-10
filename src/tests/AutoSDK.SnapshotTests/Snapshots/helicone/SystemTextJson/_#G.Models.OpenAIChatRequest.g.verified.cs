@@ -319,5 +319,6 @@ namespace G
         public OpenAIChatRequest()
         {
         }
+
     }
 }

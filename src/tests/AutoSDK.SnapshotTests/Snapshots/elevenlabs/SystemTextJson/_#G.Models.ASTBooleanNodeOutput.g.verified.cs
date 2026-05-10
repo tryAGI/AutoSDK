@@ -55,5 +55,18 @@ namespace G
         public ASTBooleanNodeOutput()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="ASTBooleanNodeOutput"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static ASTBooleanNodeOutput FromValue(bool value)
+        {
+            return new ASTBooleanNodeOutput
+            {
+                Value = value,
+            };
+        }
+
     }
 }

@@ -80,5 +80,6 @@ namespace G
         public CreateTalkStreamRequestScriptVariant1ProviderOpenAIVoiceConfig2()
         {
         }
+
     }
 }

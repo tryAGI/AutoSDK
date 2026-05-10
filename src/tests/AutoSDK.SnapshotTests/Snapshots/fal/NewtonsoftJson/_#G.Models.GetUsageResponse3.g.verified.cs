@@ -39,5 +39,6 @@ namespace G
         public GetUsageResponse3()
         {
         }
+
     }
 }

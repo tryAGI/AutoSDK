@@ -82,5 +82,18 @@ namespace G
         public EvalLogsDataSourceConfig()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="EvalLogsDataSourceConfig"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static EvalLogsDataSourceConfig FromSchema(object schema)
+        {
+            return new EvalLogsDataSourceConfig
+            {
+                Schema = schema,
+            };
+        }
+
     }
 }

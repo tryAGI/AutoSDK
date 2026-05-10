@@ -53,5 +53,18 @@ namespace G
         public GlobalAdvisoryCwe()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="GlobalAdvisoryCwe"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static GlobalAdvisoryCwe FromCweId(string cweId)
+        {
+            return new GlobalAdvisoryCwe
+            {
+                CweId = cweId,
+            };
+        }
+
     }
 }

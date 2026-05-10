@@ -113,5 +113,6 @@ namespace G
         public SearchCursorPagination()
         {
         }
+
     }
 }

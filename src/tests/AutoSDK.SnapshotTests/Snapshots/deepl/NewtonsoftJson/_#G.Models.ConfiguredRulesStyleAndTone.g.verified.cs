@@ -424,5 +424,6 @@ namespace G
         public ConfiguredRulesStyleAndTone()
         {
         }
+
     }
 }

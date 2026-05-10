@@ -454,5 +454,6 @@ namespace G
         public CreateChatCompletionRequestVariant2()
         {
         }
+
     }
 }

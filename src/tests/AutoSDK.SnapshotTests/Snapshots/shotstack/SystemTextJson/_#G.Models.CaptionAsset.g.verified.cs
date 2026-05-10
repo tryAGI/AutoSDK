@@ -128,5 +128,18 @@ namespace G
         public CaptionAsset()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="CaptionAsset"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static CaptionAsset FromSrc(string src)
+        {
+            return new CaptionAsset
+            {
+                Src = src,
+            };
+        }
+
     }
 }

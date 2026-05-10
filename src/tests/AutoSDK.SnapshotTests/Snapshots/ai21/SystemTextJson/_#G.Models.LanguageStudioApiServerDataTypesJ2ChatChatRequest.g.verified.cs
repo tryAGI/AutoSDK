@@ -163,5 +163,6 @@ namespace G
         public LanguageStudioApiServerDataTypesJ2ChatChatRequest()
         {
         }
+
     }
 }

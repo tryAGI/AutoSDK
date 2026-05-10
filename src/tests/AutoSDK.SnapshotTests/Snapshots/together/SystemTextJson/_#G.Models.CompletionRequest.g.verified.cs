@@ -252,5 +252,6 @@ namespace G
         public CompletionRequest()
         {
         }
+
     }
 }

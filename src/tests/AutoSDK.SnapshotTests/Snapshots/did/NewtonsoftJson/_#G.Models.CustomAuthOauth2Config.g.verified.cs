@@ -110,5 +110,6 @@ namespace G
         public CustomAuthOauth2Config()
         {
         }
+
     }
 }

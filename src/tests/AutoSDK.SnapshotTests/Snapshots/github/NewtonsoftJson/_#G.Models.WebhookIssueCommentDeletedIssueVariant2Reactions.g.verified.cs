@@ -118,5 +118,6 @@ namespace G
         public WebhookIssueCommentDeletedIssueVariant2Reactions()
         {
         }
+
     }
 }

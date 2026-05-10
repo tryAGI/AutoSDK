@@ -314,5 +314,18 @@ namespace G
         public S3ExportStorage()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="S3ExportStorage"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static S3ExportStorage FromProject(int project)
+        {
+            return new S3ExportStorage
+            {
+                Project = project,
+            };
+        }
+
     }
 }

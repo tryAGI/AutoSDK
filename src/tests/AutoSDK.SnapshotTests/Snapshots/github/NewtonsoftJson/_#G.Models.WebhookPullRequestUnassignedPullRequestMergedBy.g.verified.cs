@@ -218,5 +218,6 @@ namespace G
         public WebhookPullRequestUnassignedPullRequestMergedBy()
         {
         }
+
     }
 }

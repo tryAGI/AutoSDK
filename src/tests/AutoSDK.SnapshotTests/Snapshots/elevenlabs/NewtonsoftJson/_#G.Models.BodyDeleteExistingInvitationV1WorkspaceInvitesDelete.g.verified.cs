@@ -39,5 +39,6 @@ namespace G
         public BodyDeleteExistingInvitationV1WorkspaceInvitesDelete()
         {
         }
+
     }
 }

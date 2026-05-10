@@ -51,5 +51,18 @@ namespace G
         public PodcastTextSource()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="PodcastTextSource"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static PodcastTextSource FromText(string text)
+        {
+            return new PodcastTextSource
+            {
+                Text = text,
+            };
+        }
+
     }
 }

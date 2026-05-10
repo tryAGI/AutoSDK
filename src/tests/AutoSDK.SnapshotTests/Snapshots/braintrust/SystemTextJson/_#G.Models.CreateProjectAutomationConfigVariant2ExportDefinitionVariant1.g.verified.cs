@@ -41,5 +41,6 @@ namespace G
         public CreateProjectAutomationConfigVariant2ExportDefinitionVariant1()
         {
         }
+
     }
 }

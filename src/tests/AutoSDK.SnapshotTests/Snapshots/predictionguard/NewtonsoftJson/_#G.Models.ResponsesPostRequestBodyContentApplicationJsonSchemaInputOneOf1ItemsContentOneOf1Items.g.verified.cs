@@ -72,5 +72,6 @@ namespace G
         public ResponsesPostRequestBodyContentApplicationJsonSchemaInputOneOf1ItemsContentOneOf1Items()
         {
         }
+
     }
 }

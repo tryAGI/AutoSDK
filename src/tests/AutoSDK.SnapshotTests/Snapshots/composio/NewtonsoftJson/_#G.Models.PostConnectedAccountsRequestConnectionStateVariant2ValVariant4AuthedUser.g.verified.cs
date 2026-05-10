@@ -46,5 +46,6 @@ namespace G
         public PostConnectedAccountsRequestConnectionStateVariant2ValVariant4AuthedUser()
         {
         }
+
     }
 }

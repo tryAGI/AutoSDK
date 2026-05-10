@@ -38,5 +38,6 @@ namespace G
         public ScoreV1Variant22()
         {
         }
+
     }
 }

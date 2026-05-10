@@ -50,5 +50,6 @@ namespace G
         public PipelinesUpdatePipelineResponsePipelineConfigVariant1Data()
         {
         }
+
     }
 }

@@ -90,5 +90,6 @@ namespace G
         public GetAvatars1ResponseAvatarSentimentVariant1()
         {
         }
+
     }
 }

@@ -148,5 +148,6 @@ namespace G
         public TextTo3DRefineRequest()
         {
         }
+
     }
 }

@@ -68,5 +68,18 @@ namespace G
         public RerankResponseResultsItem()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="RerankResponseResultsItem"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static RerankResponseResultsItem FromIndex(int index)
+        {
+            return new RerankResponseResultsItem
+            {
+                Index = index,
+            };
+        }
+
     }
 }

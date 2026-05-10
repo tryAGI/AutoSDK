@@ -101,5 +101,18 @@ namespace G
         public PythonCode()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="PythonCode"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static PythonCode FromRunFunctionCode(string runFunctionCode)
+        {
+            return new PythonCode
+            {
+                RunFunctionCode = runFunctionCode,
+            };
+        }
+
     }
 }

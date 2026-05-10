@@ -223,5 +223,6 @@ namespace G
         public EditImageGetLayersVariant2Image()
         {
         }
+
     }
 }

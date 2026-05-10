@@ -42,5 +42,6 @@ namespace G
         public GetTopGamesResponsePagination()
         {
         }
+
     }
 }

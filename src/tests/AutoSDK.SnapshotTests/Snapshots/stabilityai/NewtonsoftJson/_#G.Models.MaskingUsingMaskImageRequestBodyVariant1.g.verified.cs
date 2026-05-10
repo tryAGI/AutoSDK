@@ -142,5 +142,6 @@ namespace G
         public MaskingUsingMaskImageRequestBodyVariant1()
         {
         }
+
     }
 }

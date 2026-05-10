@@ -74,5 +74,6 @@ namespace G
         public BaseMessagesResultContentItemsOneOf7Content2()
         {
         }
+
     }
 }

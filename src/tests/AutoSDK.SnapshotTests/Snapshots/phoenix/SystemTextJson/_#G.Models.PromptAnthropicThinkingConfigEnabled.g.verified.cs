@@ -51,5 +51,18 @@ namespace G
         public PromptAnthropicThinkingConfigEnabled()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="PromptAnthropicThinkingConfigEnabled"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static PromptAnthropicThinkingConfigEnabled FromBudgetTokens(int budgetTokens)
+        {
+            return new PromptAnthropicThinkingConfigEnabled
+            {
+                BudgetTokens = budgetTokens,
+            };
+        }
+
     }
 }

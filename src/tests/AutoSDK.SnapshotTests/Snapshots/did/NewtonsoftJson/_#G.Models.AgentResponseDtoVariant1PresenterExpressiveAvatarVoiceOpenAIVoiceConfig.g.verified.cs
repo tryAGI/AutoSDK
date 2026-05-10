@@ -77,5 +77,6 @@ namespace G
         public AgentResponseDtoVariant1PresenterExpressiveAvatarVoiceOpenAIVoiceConfig()
         {
         }
+
     }
 }

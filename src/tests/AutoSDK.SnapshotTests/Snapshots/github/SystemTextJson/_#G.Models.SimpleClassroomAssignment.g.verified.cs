@@ -296,5 +296,6 @@ namespace G
         public SimpleClassroomAssignment()
         {
         }
+
     }
 }

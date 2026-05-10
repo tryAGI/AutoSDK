@@ -52,5 +52,6 @@ namespace G
         public ResultSuccessRecordStringScoreV2()
         {
         }
+
     }
 }

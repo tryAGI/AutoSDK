@@ -40,5 +40,6 @@ namespace G
         public ChatDebugEvent352j0t()
         {
         }
+
     }
 }

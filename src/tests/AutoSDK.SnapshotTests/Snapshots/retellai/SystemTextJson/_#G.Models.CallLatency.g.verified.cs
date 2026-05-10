@@ -140,5 +140,6 @@ namespace G
         public CallLatency()
         {
         }
+
     }
 }

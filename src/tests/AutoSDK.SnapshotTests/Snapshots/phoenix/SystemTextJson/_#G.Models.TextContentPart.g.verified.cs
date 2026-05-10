@@ -51,5 +51,18 @@ namespace G
         public TextContentPart()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="TextContentPart"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static TextContentPart FromText(string text)
+        {
+            return new TextContentPart
+            {
+                Text = text,
+            };
+        }
+
     }
 }

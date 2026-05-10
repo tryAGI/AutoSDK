@@ -238,5 +238,6 @@ namespace G
         public FallbackDeepgramTranscriber()
         {
         }
+
     }
 }

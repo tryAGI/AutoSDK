@@ -291,5 +291,6 @@ namespace G
         public NullableSimpleUser()
         {
         }
+
     }
 }

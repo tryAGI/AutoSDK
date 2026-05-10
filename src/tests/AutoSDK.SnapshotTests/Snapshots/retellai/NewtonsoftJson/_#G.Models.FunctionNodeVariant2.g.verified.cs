@@ -121,5 +121,6 @@ namespace G
         public FunctionNodeVariant2()
         {
         }
+
     }
 }

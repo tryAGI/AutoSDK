@@ -175,5 +175,6 @@ namespace G
         public ClassifierFTModelOut()
         {
         }
+
     }
 }

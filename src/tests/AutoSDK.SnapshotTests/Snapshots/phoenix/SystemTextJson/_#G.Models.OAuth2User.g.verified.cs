@@ -129,5 +129,6 @@ namespace G
         public OAuth2User()
         {
         }
+
     }
 }

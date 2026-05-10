@@ -614,5 +614,6 @@ namespace G
         public WidgetConfigInput()
         {
         }
+
     }
 }

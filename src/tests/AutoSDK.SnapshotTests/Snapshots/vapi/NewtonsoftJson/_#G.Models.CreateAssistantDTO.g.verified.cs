@@ -457,5 +457,6 @@ namespace G
         public CreateAssistantDTO()
         {
         }
+
     }
 }

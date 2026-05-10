@@ -47,5 +47,18 @@ namespace G
         public PromptStringTemplate()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="PromptStringTemplate"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static PromptStringTemplate FromTemplate(string template)
+        {
+            return new PromptStringTemplate
+            {
+                Template = template,
+            };
+        }
+
     }
 }

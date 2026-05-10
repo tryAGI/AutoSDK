@@ -53,5 +53,18 @@ namespace G
         public RegexParameterEvaluationStrategy()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="RegexParameterEvaluationStrategy"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static RegexParameterEvaluationStrategy FromPattern(string pattern)
+        {
+            return new RegexParameterEvaluationStrategy
+            {
+                Pattern = pattern,
+            };
+        }
+
     }
 }

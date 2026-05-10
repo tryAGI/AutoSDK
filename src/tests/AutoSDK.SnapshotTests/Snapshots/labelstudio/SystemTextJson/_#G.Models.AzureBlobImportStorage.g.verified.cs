@@ -292,5 +292,18 @@ namespace G
         public AzureBlobImportStorage()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="AzureBlobImportStorage"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static AzureBlobImportStorage FromProject(int project)
+        {
+            return new AzureBlobImportStorage
+            {
+                Project = project,
+            };
+        }
+
     }
 }

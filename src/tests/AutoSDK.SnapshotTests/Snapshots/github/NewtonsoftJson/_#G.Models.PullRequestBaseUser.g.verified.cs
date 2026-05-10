@@ -190,5 +190,6 @@ namespace G
         public PullRequestBaseUser()
         {
         }
+
     }
 }

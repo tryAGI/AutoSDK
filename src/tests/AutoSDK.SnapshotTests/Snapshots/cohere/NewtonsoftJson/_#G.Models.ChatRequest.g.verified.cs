@@ -500,5 +500,6 @@ namespace G
         public ChatRequest()
         {
         }
+
     }
 }

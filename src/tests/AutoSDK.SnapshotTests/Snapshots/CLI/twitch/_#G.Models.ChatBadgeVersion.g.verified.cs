@@ -127,5 +127,6 @@ namespace G
         public ChatBadgeVersion()
         {
         }
+
     }
 }

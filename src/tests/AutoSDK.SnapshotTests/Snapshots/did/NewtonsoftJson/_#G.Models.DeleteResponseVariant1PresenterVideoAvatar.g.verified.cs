@@ -73,5 +73,6 @@ namespace G
         public DeleteResponseVariant1PresenterVideoAvatar()
         {
         }
+
     }
 }

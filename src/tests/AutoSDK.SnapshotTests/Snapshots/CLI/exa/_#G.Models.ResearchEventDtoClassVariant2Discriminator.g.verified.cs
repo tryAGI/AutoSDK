@@ -41,5 +41,6 @@ namespace G
         public ResearchEventDtoClassVariant2Discriminator()
         {
         }
+
     }
 }

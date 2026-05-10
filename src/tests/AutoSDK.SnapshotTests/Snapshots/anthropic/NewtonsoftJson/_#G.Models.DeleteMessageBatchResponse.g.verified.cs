@@ -56,5 +56,18 @@ namespace G
         public DeleteMessageBatchResponse()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="DeleteMessageBatchResponse"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static DeleteMessageBatchResponse FromId(string id)
+        {
+            return new DeleteMessageBatchResponse
+            {
+                Id = id,
+            };
+        }
+
     }
 }

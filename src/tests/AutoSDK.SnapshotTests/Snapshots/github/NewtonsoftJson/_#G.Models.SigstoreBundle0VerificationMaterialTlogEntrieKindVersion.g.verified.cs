@@ -46,5 +46,6 @@ namespace G
         public SigstoreBundle0VerificationMaterialTlogEntrieKindVersion()
         {
         }
+
     }
 }

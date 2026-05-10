@@ -52,5 +52,18 @@ namespace G
         public CreateCharacterPerformanceRequestActTwoReferenceCharacterReferenceVideo()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="CreateCharacterPerformanceRequestActTwoReferenceCharacterReferenceVideo"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static CreateCharacterPerformanceRequestActTwoReferenceCharacterReferenceVideo FromUri(string uri)
+        {
+            return new CreateCharacterPerformanceRequestActTwoReferenceCharacterReferenceVideo
+            {
+                Uri = uri,
+            };
+        }
+
     }
 }

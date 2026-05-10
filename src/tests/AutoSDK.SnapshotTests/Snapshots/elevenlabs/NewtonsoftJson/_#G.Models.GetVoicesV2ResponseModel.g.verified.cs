@@ -72,5 +72,6 @@ namespace G
         public GetVoicesV2ResponseModel()
         {
         }
+
     }
 }

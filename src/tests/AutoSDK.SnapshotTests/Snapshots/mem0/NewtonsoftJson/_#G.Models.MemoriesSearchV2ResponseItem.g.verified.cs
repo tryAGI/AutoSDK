@@ -131,5 +131,6 @@ namespace G
         public MemoriesSearchV2ResponseItem()
         {
         }
+
     }
 }

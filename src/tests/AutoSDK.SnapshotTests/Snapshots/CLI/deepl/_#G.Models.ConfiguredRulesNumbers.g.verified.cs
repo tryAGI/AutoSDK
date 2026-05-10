@@ -331,5 +331,6 @@ namespace G
         public ConfiguredRulesNumbers()
         {
         }
+
     }
 }

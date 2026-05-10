@@ -39,5 +39,6 @@ namespace G
         public GetResponseVariant1Triggers()
         {
         }
+
     }
 }

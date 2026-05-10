@@ -104,5 +104,18 @@ namespace G
         public EvalCustomDataSourceConfig()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="EvalCustomDataSourceConfig"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static EvalCustomDataSourceConfig FromSchema(object schema)
+        {
+            return new EvalCustomDataSourceConfig
+            {
+                Schema = schema,
+            };
+        }
+
     }
 }

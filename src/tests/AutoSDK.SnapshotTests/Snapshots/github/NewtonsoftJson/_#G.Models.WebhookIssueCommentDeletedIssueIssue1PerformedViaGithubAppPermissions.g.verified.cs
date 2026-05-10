@@ -378,5 +378,6 @@ namespace G
         public WebhookIssueCommentDeletedIssueIssue1PerformedViaGithubAppPermissions()
         {
         }
+
     }
 }

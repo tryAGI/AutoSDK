@@ -288,5 +288,18 @@ namespace G
         public GCSImportStorage()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="GCSImportStorage"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static GCSImportStorage FromProject(int project)
+        {
+            return new GCSImportStorage
+            {
+                Project = project,
+            };
+        }
+
     }
 }

@@ -182,5 +182,6 @@ namespace G
         public Sam3SegmentationRequest()
         {
         }
+
     }
 }

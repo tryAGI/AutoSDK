@@ -78,5 +78,6 @@ namespace G
         public Prompt2025VersionPromptBodyMessage()
         {
         }
+
     }
 }

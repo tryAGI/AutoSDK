@@ -85,5 +85,6 @@ namespace G
         public CreateVideoExtensionRequest()
         {
         }
+
     }
 }

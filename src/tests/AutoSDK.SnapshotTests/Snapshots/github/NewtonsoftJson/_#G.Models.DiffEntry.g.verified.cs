@@ -161,5 +161,6 @@ namespace G
         public DiffEntry()
         {
         }
+
     }
 }

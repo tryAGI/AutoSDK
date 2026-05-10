@@ -82,5 +82,6 @@ namespace G
         public CreateChatLogsRequestVariant1()
         {
         }
+
     }
 }

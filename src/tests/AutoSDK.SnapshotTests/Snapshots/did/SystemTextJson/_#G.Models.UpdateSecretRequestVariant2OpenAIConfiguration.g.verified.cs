@@ -113,5 +113,6 @@ namespace G
         public UpdateSecretRequestVariant2OpenAIConfiguration()
         {
         }
+
     }
 }

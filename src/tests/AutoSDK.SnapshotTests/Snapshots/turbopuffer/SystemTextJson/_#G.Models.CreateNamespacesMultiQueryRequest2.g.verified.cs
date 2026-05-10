@@ -41,5 +41,6 @@ namespace G
         public CreateNamespacesMultiQueryRequest2()
         {
         }
+
     }
 }

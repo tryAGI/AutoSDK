@@ -60,5 +60,6 @@ namespace G
         public CreateGoogleCalendarOAuth2AuthorizationCredentialDTO()
         {
         }
+
     }
 }

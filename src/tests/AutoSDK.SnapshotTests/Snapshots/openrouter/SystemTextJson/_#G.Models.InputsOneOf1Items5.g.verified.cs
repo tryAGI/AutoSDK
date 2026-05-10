@@ -94,5 +94,6 @@ namespace G
         public InputsOneOf1Items5()
         {
         }
+
     }
 }

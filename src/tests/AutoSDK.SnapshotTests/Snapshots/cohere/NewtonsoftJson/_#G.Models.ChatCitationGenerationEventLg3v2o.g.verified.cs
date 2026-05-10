@@ -39,5 +39,6 @@ namespace G
         public ChatCitationGenerationEventLg3v2o()
         {
         }
+
     }
 }

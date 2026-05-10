@@ -244,5 +244,6 @@ namespace G
         public ServiceTogglesConfig()
         {
         }
+
     }
 }

@@ -115,5 +115,6 @@ namespace G
         public AgentResponseDtoVariant1LlmVariant2PromptCustomization()
         {
         }
+
     }
 }

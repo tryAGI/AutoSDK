@@ -270,5 +270,18 @@ namespace G
         public GCSExportStorage()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="GCSExportStorage"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static GCSExportStorage FromProject(int project)
+        {
+            return new GCSExportStorage
+            {
+                Project = project,
+            };
+        }
+
     }
 }

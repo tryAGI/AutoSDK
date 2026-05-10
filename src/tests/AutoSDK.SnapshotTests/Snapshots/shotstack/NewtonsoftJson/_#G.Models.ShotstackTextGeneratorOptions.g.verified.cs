@@ -57,5 +57,18 @@ namespace G
         public ShotstackTextGeneratorOptions()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="ShotstackTextGeneratorOptions"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static ShotstackTextGeneratorOptions FromPrompt(string prompt)
+        {
+            return new ShotstackTextGeneratorOptions
+            {
+                Prompt = prompt,
+            };
+        }
+
     }
 }

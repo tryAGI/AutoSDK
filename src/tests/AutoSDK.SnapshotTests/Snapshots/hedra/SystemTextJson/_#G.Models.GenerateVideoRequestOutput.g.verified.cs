@@ -243,5 +243,6 @@ namespace G
         public GenerateVideoRequestOutput()
         {
         }
+
     }
 }

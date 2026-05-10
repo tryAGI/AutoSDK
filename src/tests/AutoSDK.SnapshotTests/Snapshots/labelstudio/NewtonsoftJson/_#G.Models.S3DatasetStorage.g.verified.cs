@@ -365,5 +365,18 @@ namespace G
         public S3DatasetStorage()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="S3DatasetStorage"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static S3DatasetStorage FromDataset(int dataset)
+        {
+            return new S3DatasetStorage
+            {
+                Dataset = dataset,
+            };
+        }
+
     }
 }

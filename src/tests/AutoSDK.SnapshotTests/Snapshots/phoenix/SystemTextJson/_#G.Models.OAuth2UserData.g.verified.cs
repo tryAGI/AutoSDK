@@ -90,5 +90,6 @@ namespace G
         public OAuth2UserData()
         {
         }
+
     }
 }

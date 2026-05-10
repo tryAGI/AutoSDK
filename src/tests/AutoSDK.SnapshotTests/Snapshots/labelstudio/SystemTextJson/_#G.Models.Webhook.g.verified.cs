@@ -159,5 +159,18 @@ namespace G
         public Webhook()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="Webhook"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static Webhook FromUrl(string url)
+        {
+            return new Webhook
+            {
+                Url = url,
+            };
+        }
+
     }
 }

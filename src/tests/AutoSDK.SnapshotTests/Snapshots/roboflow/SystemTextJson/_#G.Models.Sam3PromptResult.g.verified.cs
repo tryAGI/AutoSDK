@@ -61,5 +61,6 @@ namespace G
         public Sam3PromptResult()
         {
         }
+
     }
 }

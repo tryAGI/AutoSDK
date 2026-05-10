@@ -47,5 +47,18 @@ namespace G
         public ChatCompletionContentPartTextParam()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="ChatCompletionContentPartTextParam"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static ChatCompletionContentPartTextParam FromText(string text)
+        {
+            return new ChatCompletionContentPartTextParam
+            {
+                Text = text,
+            };
+        }
+
     }
 }

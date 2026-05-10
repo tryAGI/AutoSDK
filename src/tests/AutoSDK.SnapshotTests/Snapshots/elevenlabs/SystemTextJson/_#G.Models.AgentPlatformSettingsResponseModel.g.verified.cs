@@ -192,5 +192,6 @@ namespace G
         public AgentPlatformSettingsResponseModel()
         {
         }
+
     }
 }

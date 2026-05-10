@@ -182,5 +182,6 @@ namespace G
         public MarketplaceListingPlan()
         {
         }
+
     }
 }

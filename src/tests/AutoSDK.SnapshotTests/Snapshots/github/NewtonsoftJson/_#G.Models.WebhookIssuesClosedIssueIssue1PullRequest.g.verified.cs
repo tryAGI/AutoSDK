@@ -73,5 +73,6 @@ namespace G
         public WebhookIssuesClosedIssueIssue1PullRequest()
         {
         }
+
     }
 }

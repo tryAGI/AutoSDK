@@ -115,5 +115,18 @@ namespace G
         public ImageToVideoAsset()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="ImageToVideoAsset"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static ImageToVideoAsset FromSrc(string src)
+        {
+            return new ImageToVideoAsset
+            {
+                Src = src,
+            };
+        }
+
     }
 }

@@ -147,5 +147,6 @@ namespace G
         public JsonSchema()
         {
         }
+
     }
 }

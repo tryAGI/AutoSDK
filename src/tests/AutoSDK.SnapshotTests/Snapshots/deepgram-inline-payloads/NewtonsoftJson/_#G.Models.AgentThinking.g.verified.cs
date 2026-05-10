@@ -49,5 +49,18 @@ namespace G
         public AgentThinking()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="AgentThinking"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static AgentThinking FromContent(string content)
+        {
+            return new AgentThinking
+            {
+                Content = content,
+            };
+        }
+
     }
 }

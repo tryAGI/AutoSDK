@@ -43,5 +43,6 @@ namespace G
         public RateLimitsPolicyResponseVariant2()
         {
         }
+
     }
 }

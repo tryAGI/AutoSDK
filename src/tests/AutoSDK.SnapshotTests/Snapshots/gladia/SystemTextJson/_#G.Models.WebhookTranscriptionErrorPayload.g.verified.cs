@@ -57,5 +57,18 @@ namespace G
         public WebhookTranscriptionErrorPayload()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="WebhookTranscriptionErrorPayload"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static WebhookTranscriptionErrorPayload FromPayload(global::G.PreRecordedEventPayload payload)
+        {
+            return new WebhookTranscriptionErrorPayload
+            {
+                Payload = payload,
+            };
+        }
+
     }
 }

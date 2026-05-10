@@ -64,5 +64,18 @@ namespace G
         public SpeakMetadataPayload()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="SpeakMetadataPayload"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static SpeakMetadataPayload FromRequestId(string requestId)
+        {
+            return new SpeakMetadataPayload
+            {
+                RequestId = requestId,
+            };
+        }
+
     }
 }

@@ -209,5 +209,6 @@ namespace G
         public Sam33dObjectsInferenceRequest()
         {
         }
+
     }
 }

@@ -47,5 +47,6 @@ namespace G
         public BaseMessagesResultContentItemsOneOf10ContentOneOf1ToolReferencesItems()
         {
         }
+
     }
 }

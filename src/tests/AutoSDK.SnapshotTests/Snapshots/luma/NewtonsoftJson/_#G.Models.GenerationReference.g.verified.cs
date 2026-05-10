@@ -53,5 +53,18 @@ namespace G
         public GenerationReference()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="GenerationReference"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static GenerationReference FromId(global::System.Guid id)
+        {
+            return new GenerationReference
+            {
+                Id = id,
+            };
+        }
+
     }
 }

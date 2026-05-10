@@ -58,5 +58,6 @@ namespace G
         public ChatContentDeltaEvent3m0vqs()
         {
         }
+
     }
 }

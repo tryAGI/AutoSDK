@@ -51,5 +51,18 @@ namespace G
         public ASTNumberNodeOutput()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="ASTNumberNodeOutput"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static ASTNumberNodeOutput FromValue(double value)
+        {
+            return new ASTNumberNodeOutput
+            {
+                Value = value,
+            };
+        }
+
     }
 }

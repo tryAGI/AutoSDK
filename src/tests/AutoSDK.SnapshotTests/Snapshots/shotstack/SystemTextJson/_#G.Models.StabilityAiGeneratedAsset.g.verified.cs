@@ -64,5 +64,18 @@ namespace G
         public StabilityAiGeneratedAsset()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="StabilityAiGeneratedAsset"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static StabilityAiGeneratedAsset FromOptions(global::G.StabilityAiTextToImageOptions options)
+        {
+            return new StabilityAiGeneratedAsset
+            {
+                Options = options,
+            };
+        }
+
     }
 }

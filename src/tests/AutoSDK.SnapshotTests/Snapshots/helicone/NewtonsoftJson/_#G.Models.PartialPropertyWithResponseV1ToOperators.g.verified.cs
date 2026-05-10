@@ -83,5 +83,6 @@ namespace G
         public PartialPropertyWithResponseV1ToOperators()
         {
         }
+
     }
 }

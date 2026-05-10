@@ -55,5 +55,18 @@ namespace G
         public PodcastURLSource()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="PodcastURLSource"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static PodcastURLSource FromUrl(string url)
+        {
+            return new PodcastURLSource
+            {
+                Url = url,
+            };
+        }
+
     }
 }

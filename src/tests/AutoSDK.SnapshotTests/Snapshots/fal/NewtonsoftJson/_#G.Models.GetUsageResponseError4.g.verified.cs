@@ -73,5 +73,6 @@ namespace G
         public GetUsageResponseError4()
         {
         }
+
     }
 }

@@ -41,5 +41,6 @@ namespace G
         public BaseMessagesResultContentItemsOneOf6ContentOneOf1ContentCitations()
         {
         }
+
     }
 }

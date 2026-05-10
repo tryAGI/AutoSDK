@@ -237,5 +237,18 @@ namespace G
         public LocalFilesImportStorage()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="LocalFilesImportStorage"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static LocalFilesImportStorage FromProject(int project)
+        {
+            return new LocalFilesImportStorage
+            {
+                Project = project,
+            };
+        }
+
     }
 }

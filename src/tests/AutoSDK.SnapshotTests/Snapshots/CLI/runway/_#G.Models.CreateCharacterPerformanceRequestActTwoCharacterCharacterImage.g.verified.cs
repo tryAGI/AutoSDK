@@ -56,5 +56,18 @@ namespace G
         public CreateCharacterPerformanceRequestActTwoCharacterCharacterImage()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="CreateCharacterPerformanceRequestActTwoCharacterCharacterImage"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static CreateCharacterPerformanceRequestActTwoCharacterCharacterImage FromUri(string uri)
+        {
+            return new CreateCharacterPerformanceRequestActTwoCharacterCharacterImage
+            {
+                Uri = uri,
+            };
+        }
+
     }
 }

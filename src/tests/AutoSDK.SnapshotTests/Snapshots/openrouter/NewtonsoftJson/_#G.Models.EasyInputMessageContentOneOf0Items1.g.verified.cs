@@ -57,5 +57,6 @@ namespace G
         public EasyInputMessageContentOneOf0Items1()
         {
         }
+
     }
 }

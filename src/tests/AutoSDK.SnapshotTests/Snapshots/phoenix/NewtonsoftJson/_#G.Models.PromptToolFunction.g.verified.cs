@@ -47,5 +47,18 @@ namespace G
         public PromptToolFunction()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="PromptToolFunction"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static PromptToolFunction FromFunction(global::G.PromptToolFunctionDefinition function)
+        {
+            return new PromptToolFunction
+            {
+                Function = function,
+            };
+        }
+
     }
 }

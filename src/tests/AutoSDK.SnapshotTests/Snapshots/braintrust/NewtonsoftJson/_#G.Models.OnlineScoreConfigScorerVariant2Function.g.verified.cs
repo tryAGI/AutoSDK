@@ -58,5 +58,6 @@ namespace G
         public OnlineScoreConfigScorerVariant2Function()
         {
         }
+
     }
 }

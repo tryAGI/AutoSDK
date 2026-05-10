@@ -217,5 +217,6 @@ namespace G
         public VonagePhoneNumber()
         {
         }
+
     }
 }

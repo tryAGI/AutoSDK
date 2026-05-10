@@ -62,5 +62,6 @@ namespace G
         public SubmitLanguageIdentificationJobRequest2()
         {
         }
+
     }
 }

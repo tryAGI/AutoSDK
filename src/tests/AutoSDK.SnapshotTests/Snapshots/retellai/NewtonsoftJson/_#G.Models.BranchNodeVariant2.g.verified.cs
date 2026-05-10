@@ -67,5 +67,6 @@ namespace G
         public BranchNodeVariant2()
         {
         }
+
     }
 }

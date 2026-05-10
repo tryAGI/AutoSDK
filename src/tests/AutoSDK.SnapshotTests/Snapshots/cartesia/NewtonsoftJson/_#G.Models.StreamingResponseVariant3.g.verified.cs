@@ -78,5 +78,6 @@ namespace G
         public StreamingResponseVariant3()
         {
         }
+
     }
 }

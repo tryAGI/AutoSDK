@@ -99,5 +99,6 @@ namespace G
         public CreateTextToImageRequestGen4Image()
         {
         }
+
     }
 }

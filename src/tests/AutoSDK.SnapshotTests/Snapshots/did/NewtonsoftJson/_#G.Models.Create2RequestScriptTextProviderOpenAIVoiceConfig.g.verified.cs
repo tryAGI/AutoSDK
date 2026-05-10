@@ -77,5 +77,6 @@ namespace G
         public Create2RequestScriptTextProviderOpenAIVoiceConfig()
         {
         }
+
     }
 }

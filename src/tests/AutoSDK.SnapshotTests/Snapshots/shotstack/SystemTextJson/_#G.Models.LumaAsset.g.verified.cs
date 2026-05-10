@@ -72,5 +72,18 @@ namespace G
         public LumaAsset()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="LumaAsset"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static LumaAsset FromSrc(string src)
+        {
+            return new LumaAsset
+            {
+                Src = src,
+            };
+        }
+
     }
 }

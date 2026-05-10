@@ -54,5 +54,18 @@ namespace G
         public TextContentBlockDelta()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="TextContentBlockDelta"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static TextContentBlockDelta FromText(string text)
+        {
+            return new TextContentBlockDelta
+            {
+                Text = text,
+            };
+        }
+
     }
 }

@@ -158,5 +158,6 @@ namespace G
         public TranscriptionJobOptions()
         {
         }
+
     }
 }

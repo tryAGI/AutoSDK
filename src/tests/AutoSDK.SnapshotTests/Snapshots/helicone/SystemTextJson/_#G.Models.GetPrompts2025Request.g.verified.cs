@@ -71,5 +71,6 @@ namespace G
         public GetPrompts2025Request()
         {
         }
+
     }
 }

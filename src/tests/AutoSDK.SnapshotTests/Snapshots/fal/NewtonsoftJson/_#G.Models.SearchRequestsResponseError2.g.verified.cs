@@ -73,5 +73,6 @@ namespace G
         public SearchRequestsResponseError2()
         {
         }
+
     }
 }

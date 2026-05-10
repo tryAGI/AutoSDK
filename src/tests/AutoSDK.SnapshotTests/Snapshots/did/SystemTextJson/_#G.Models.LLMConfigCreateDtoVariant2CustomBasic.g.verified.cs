@@ -110,5 +110,6 @@ namespace G
         public LLMConfigCreateDtoVariant2CustomBasic()
         {
         }
+
     }
 }

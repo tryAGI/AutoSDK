@@ -509,5 +509,6 @@ namespace G
         public WebhookPullRequestReviewRequestedVariant2PullRequest()
         {
         }
+
     }
 }

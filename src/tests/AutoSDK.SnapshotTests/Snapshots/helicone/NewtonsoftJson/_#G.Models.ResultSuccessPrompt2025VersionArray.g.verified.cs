@@ -46,5 +46,6 @@ namespace G
         public ResultSuccessPrompt2025VersionArray()
         {
         }
+
     }
 }

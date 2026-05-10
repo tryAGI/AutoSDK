@@ -336,5 +336,18 @@ namespace G
         public GCSWIFImportStorage()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="GCSWIFImportStorage"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static GCSWIFImportStorage FromProject(int project)
+        {
+            return new GCSWIFImportStorage
+            {
+                Project = project,
+            };
+        }
+
     }
 }

@@ -188,5 +188,6 @@ namespace G
         public TranslateDocumentRequest()
         {
         }
+
     }
 }

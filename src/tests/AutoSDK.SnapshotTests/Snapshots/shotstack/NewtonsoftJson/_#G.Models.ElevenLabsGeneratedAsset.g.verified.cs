@@ -60,5 +60,18 @@ namespace G
         public ElevenLabsGeneratedAsset()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="ElevenLabsGeneratedAsset"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static ElevenLabsGeneratedAsset FromOptions(global::G.ElevenLabsTextToSpeechOptions options)
+        {
+            return new ElevenLabsGeneratedAsset
+            {
+                Options = options,
+            };
+        }
+
     }
 }

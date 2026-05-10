@@ -223,5 +223,6 @@ namespace G
         public WebhookPullRequestReviewRequestedVariant1RequestedReviewer()
         {
         }
+
     }
 }

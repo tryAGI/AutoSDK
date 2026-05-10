@@ -115,5 +115,18 @@ namespace G
         public DatasetView()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="DatasetView"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static DatasetView FromDataset(int dataset)
+        {
+            return new DatasetView
+            {
+                Dataset = dataset,
+            };
+        }
+
     }
 }

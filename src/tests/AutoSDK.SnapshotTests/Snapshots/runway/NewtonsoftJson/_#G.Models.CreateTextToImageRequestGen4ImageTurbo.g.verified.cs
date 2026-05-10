@@ -94,5 +94,6 @@ namespace G
         public CreateTextToImageRequestGen4ImageTurbo()
         {
         }
+
     }
 }

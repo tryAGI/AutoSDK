@@ -146,5 +146,6 @@ namespace G
         public WebhookIssuesTransferredChangesNewIssuePerformedViaGithubApp()
         {
         }
+
     }
 }

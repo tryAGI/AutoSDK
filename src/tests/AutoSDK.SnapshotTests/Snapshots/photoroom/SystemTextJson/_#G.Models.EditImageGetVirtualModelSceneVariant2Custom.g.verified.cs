@@ -64,5 +64,6 @@ namespace G
         public EditImageGetVirtualModelSceneVariant2Custom()
         {
         }
+
     }
 }

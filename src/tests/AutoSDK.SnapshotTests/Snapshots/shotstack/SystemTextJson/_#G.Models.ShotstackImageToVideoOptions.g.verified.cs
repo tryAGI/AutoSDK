@@ -93,5 +93,18 @@ namespace G
         public ShotstackImageToVideoOptions()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="ShotstackImageToVideoOptions"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static ShotstackImageToVideoOptions FromImageUrl(string imageUrl)
+        {
+            return new ShotstackImageToVideoOptions
+            {
+                ImageUrl = imageUrl,
+            };
+        }
+
     }
 }

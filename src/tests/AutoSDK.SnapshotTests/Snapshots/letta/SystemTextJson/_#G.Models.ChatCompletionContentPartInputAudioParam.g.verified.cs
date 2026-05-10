@@ -51,5 +51,18 @@ namespace G
         public ChatCompletionContentPartInputAudioParam()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="ChatCompletionContentPartInputAudioParam"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static ChatCompletionContentPartInputAudioParam FromInputAudio(global::G.InputAudio inputAudio)
+        {
+            return new ChatCompletionContentPartInputAudioParam
+            {
+                InputAudio = inputAudio,
+            };
+        }
+
     }
 }

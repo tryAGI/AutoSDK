@@ -40,5 +40,6 @@ namespace G
         public ListBatchTestsV2Response2()
         {
         }
+
     }
 }

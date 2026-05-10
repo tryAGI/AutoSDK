@@ -81,5 +81,6 @@ namespace G
         public CreateClipRequestScriptVariant1ProviderMicrosoft()
         {
         }
+
     }
 }

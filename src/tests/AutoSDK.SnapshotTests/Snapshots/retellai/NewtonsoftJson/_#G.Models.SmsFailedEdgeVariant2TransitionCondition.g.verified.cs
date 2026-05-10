@@ -50,5 +50,6 @@ namespace G
         public SmsFailedEdgeVariant2TransitionCondition()
         {
         }
+
     }
 }

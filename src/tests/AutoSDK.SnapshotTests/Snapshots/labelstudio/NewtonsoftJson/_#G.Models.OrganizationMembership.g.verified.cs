@@ -63,5 +63,18 @@ namespace G
         public OrganizationMembership()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="OrganizationMembership"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static OrganizationMembership FromRole(string role)
+        {
+            return new OrganizationMembership
+            {
+                Role = role,
+            };
+        }
+
     }
 }

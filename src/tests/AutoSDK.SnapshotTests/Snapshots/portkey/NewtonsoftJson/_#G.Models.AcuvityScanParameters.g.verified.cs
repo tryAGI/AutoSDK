@@ -298,5 +298,6 @@ namespace G
         public AcuvityScanParameters()
         {
         }
+
     }
 }

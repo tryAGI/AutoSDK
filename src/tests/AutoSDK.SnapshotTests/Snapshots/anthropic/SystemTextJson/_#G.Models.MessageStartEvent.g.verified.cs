@@ -54,5 +54,18 @@ namespace G
         public MessageStartEvent()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="MessageStartEvent"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static MessageStartEvent FromMessage(global::G.Message message)
+        {
+            return new MessageStartEvent
+            {
+                Message = message,
+            };
+        }
+
     }
 }

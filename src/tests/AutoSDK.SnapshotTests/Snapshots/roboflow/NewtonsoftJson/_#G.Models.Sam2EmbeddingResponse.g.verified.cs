@@ -53,5 +53,6 @@ namespace G
         public Sam2EmbeddingResponse()
         {
         }
+
     }
 }

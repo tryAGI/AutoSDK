@@ -55,5 +55,6 @@ namespace G
         public GetOrganizationResponseTierModels2()
         {
         }
+
     }
 }

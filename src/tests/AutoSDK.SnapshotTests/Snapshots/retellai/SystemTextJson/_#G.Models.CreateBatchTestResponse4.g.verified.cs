@@ -53,5 +53,6 @@ namespace G
         public CreateBatchTestResponse4()
         {
         }
+
     }
 }

@@ -240,5 +240,18 @@ namespace G
         public WhoAmIUser()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="WhoAmIUser"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static WhoAmIUser FromUsername(string username)
+        {
+            return new WhoAmIUser
+            {
+                Username = username,
+            };
+        }
+
     }
 }

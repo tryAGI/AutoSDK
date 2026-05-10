@@ -115,5 +115,6 @@ namespace G
         public HumanMessage()
         {
         }
+
     }
 }

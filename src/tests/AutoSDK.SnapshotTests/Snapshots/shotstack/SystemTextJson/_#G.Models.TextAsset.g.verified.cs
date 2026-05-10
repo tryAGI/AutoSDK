@@ -159,5 +159,18 @@ namespace G
         public TextAsset()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="TextAsset"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static TextAsset FromText(string text)
+        {
+            return new TextAsset
+            {
+                Text = text,
+            };
+        }
+
     }
 }

@@ -47,5 +47,6 @@ namespace G
         public ResearchEventDtoClassVariant2Variant3OutputVariant2()
         {
         }
+
     }
 }

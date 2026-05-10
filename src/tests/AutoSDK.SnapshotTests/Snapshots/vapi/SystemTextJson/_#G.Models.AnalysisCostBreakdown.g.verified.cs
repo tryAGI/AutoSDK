@@ -207,5 +207,6 @@ namespace G
         public AnalysisCostBreakdown()
         {
         }
+
     }
 }

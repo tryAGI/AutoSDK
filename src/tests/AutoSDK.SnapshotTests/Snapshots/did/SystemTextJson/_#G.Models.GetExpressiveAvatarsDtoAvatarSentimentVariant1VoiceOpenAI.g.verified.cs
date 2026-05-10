@@ -81,5 +81,6 @@ namespace G
         public GetExpressiveAvatarsDtoAvatarSentimentVariant1VoiceOpenAI()
         {
         }
+
     }
 }

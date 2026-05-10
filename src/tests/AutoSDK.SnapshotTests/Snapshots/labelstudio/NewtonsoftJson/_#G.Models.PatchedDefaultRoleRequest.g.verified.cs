@@ -162,5 +162,6 @@ namespace G
         public PatchedDefaultRoleRequest()
         {
         }
+
     }
 }

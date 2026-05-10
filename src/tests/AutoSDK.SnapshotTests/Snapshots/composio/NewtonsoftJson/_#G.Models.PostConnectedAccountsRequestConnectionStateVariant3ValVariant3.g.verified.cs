@@ -272,5 +272,6 @@ namespace G
         public PostConnectedAccountsRequestConnectionStateVariant3ValVariant3()
         {
         }
+
     }
 }

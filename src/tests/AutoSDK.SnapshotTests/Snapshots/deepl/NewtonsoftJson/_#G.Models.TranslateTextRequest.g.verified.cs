@@ -419,5 +419,6 @@ namespace G
         public TranslateTextRequest()
         {
         }
+
     }
 }

@@ -223,5 +223,6 @@ namespace G
         public WebhookIssueCommentDeletedIssueVariant2Assignee()
         {
         }
+
     }
 }

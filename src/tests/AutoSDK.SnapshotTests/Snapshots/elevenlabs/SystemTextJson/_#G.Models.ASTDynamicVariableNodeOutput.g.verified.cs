@@ -55,5 +55,18 @@ namespace G
         public ASTDynamicVariableNodeOutput()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="ASTDynamicVariableNodeOutput"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static ASTDynamicVariableNodeOutput FromName(string name)
+        {
+            return new ASTDynamicVariableNodeOutput
+            {
+                Name = name,
+            };
+        }
+
     }
 }

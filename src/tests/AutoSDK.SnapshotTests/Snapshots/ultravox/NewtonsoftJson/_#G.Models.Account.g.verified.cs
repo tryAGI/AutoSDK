@@ -133,5 +133,18 @@ namespace G
         public Account()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="Account"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static Account FromHasActiveSubscription(bool hasActiveSubscription)
+        {
+            return new Account
+            {
+                HasActiveSubscription = hasActiveSubscription,
+            };
+        }
+
     }
 }

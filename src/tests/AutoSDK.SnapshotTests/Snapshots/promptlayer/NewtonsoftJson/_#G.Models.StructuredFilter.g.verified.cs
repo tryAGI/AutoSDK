@@ -74,5 +74,6 @@ namespace G
         public StructuredFilter()
         {
         }
+
     }
 }

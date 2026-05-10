@@ -44,5 +44,6 @@ namespace G
         public CreateIceCandidateStreamRequestVariant2()
         {
         }
+
     }
 }

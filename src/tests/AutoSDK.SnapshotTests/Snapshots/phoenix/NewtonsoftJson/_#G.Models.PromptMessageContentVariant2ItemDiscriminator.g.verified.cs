@@ -38,5 +38,6 @@ namespace G
         public PromptMessageContentVariant2ItemDiscriminator()
         {
         }
+
     }
 }

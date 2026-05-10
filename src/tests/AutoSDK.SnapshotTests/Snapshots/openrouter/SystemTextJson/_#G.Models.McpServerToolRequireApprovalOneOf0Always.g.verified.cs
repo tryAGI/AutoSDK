@@ -40,5 +40,6 @@ namespace G
         public McpServerToolRequireApprovalOneOf0Always()
         {
         }
+
     }
 }

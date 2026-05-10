@@ -68,5 +68,6 @@ namespace G
         public SparseIndexParams()
         {
         }
+
     }
 }

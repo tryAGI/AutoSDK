@@ -40,5 +40,6 @@ namespace G
         public ChatToolCallEndEventT6ph9s()
         {
         }
+
     }
 }

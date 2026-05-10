@@ -60,5 +60,18 @@ namespace G
         public ChatCompletionFunctionMessageParam()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="ChatCompletionFunctionMessageParam"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static ChatCompletionFunctionMessageParam FromName(string name)
+        {
+            return new ChatCompletionFunctionMessageParam
+            {
+                Name = name,
+            };
+        }
+
     }
 }

@@ -79,5 +79,6 @@ namespace G
         public CollectionExistsResponse()
         {
         }
+
     }
 }

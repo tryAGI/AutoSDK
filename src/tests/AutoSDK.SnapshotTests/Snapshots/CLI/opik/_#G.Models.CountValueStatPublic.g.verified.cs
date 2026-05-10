@@ -35,5 +35,6 @@ namespace G
         public CountValueStatPublic()
         {
         }
+
     }
 }

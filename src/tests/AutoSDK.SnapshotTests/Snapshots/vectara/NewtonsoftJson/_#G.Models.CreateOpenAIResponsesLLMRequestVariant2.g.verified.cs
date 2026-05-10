@@ -53,5 +53,6 @@ namespace G
         public CreateOpenAIResponsesLLMRequestVariant2()
         {
         }
+
     }
 }

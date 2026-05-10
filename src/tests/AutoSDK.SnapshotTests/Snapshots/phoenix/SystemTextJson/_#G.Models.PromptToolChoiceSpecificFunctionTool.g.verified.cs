@@ -51,5 +51,18 @@ namespace G
         public PromptToolChoiceSpecificFunctionTool()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="PromptToolChoiceSpecificFunctionTool"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static PromptToolChoiceSpecificFunctionTool FromFunctionName(string functionName)
+        {
+            return new PromptToolChoiceSpecificFunctionTool
+            {
+                FunctionName = functionName,
+            };
+        }
+
     }
 }

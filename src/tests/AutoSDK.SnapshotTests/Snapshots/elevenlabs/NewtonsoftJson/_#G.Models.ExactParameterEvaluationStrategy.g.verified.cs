@@ -49,5 +49,18 @@ namespace G
         public ExactParameterEvaluationStrategy()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="ExactParameterEvaluationStrategy"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static ExactParameterEvaluationStrategy FromExpectedValue(string expectedValue)
+        {
+            return new ExactParameterEvaluationStrategy
+            {
+                ExpectedValue = expectedValue,
+            };
+        }
+
     }
 }

@@ -63,5 +63,6 @@ namespace G
         public BodyAudioIsolationStreamV1AudioIsolationStreamPost()
         {
         }
+
     }
 }

@@ -38,5 +38,6 @@ namespace G
         public VectorStoreFileChunksVariant1ItemDiscriminator()
         {
         }
+
     }
 }

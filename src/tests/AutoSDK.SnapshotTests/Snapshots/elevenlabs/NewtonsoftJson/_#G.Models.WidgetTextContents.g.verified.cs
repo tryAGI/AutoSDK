@@ -501,5 +501,6 @@ namespace G
         public WidgetTextContents()
         {
         }
+
     }
 }

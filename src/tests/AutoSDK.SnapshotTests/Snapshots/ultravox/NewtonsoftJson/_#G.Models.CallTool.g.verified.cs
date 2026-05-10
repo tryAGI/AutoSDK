@@ -76,5 +76,18 @@ namespace G
         public CallTool()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="CallTool"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static CallTool FromDefinition(global::G.UltravoxV1CallTool definition)
+        {
+            return new CallTool
+            {
+                Definition = definition,
+            };
+        }
+
     }
 }

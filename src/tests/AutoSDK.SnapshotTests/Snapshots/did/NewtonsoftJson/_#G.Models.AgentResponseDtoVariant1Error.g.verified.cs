@@ -55,5 +55,6 @@ namespace G
         public AgentResponseDtoVariant1Error()
         {
         }
+
     }
 }

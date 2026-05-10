@@ -55,5 +55,6 @@ namespace G
         public CategoricalScoreV1()
         {
         }
+
     }
 }

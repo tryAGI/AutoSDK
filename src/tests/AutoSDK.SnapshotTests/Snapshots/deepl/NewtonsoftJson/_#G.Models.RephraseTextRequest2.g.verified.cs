@@ -102,5 +102,6 @@ namespace G
         public RephraseTextRequest2()
         {
         }
+
     }
 }

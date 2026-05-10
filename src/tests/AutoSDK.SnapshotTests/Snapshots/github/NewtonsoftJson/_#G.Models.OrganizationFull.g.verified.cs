@@ -688,5 +688,6 @@ namespace G
         public OrganizationFull()
         {
         }
+
     }
 }

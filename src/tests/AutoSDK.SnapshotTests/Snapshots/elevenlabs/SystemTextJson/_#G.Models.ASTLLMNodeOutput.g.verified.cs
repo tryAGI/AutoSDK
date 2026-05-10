@@ -55,5 +55,18 @@ namespace G
         public ASTLLMNodeOutput()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="ASTLLMNodeOutput"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static ASTLLMNodeOutput FromPrompt(string prompt)
+        {
+            return new ASTLLMNodeOutput
+            {
+                Prompt = prompt,
+            };
+        }
+
     }
 }

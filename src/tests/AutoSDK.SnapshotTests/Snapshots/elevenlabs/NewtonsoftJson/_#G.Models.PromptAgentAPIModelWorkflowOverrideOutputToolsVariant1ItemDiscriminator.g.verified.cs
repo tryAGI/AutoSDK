@@ -38,5 +38,6 @@ namespace G
         public PromptAgentAPIModelWorkflowOverrideOutputToolsVariant1ItemDiscriminator()
         {
         }
+
     }
 }

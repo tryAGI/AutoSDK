@@ -172,5 +172,6 @@ namespace G
         public CustomRewardRedemption()
         {
         }
+
     }
 }

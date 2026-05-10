@@ -37,5 +37,6 @@ namespace G
         public GetPrompt2025VersionRequest2()
         {
         }
+
     }
 }

@@ -64,5 +64,6 @@ namespace G
         public BetaTextEditor20250124()
         {
         }
+
     }
 }

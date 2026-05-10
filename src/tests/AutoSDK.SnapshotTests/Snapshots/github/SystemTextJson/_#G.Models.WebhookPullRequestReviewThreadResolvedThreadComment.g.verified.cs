@@ -341,5 +341,6 @@ namespace G
         public WebhookPullRequestReviewThreadResolvedThreadComment()
         {
         }
+
     }
 }

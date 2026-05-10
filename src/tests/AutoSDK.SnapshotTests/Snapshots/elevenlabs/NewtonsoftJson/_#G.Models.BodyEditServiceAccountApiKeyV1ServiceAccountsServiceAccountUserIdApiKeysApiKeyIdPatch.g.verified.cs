@@ -72,5 +72,6 @@ namespace G
         public BodyEditServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysApiKeyIdPatch()
         {
         }
+
     }
 }

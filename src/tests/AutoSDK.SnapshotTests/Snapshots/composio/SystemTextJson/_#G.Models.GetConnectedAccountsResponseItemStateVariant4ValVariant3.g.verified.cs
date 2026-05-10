@@ -258,5 +258,6 @@ namespace G
         public GetConnectedAccountsResponseItemStateVariant4ValVariant3()
         {
         }
+
     }
 }

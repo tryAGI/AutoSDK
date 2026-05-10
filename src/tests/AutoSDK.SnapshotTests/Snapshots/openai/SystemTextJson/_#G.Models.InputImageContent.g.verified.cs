@@ -77,5 +77,18 @@ namespace G
         public InputImageContent()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="InputImageContent"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static InputImageContent FromDetail(global::G.InputImageContentDetail detail)
+        {
+            return new InputImageContent
+            {
+                Detail = detail,
+            };
+        }
+
     }
 }

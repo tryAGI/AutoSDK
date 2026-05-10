@@ -97,5 +97,6 @@ namespace G
         public GetExpressiveAvatarDtoVariant1Variant1()
         {
         }
+
     }
 }

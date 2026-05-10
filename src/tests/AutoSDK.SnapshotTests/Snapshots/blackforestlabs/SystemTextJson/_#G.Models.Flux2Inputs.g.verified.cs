@@ -246,5 +246,6 @@ namespace G
         public Flux2Inputs()
         {
         }
+
     }
 }

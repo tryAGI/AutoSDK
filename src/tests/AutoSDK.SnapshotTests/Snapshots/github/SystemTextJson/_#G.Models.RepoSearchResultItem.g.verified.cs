@@ -911,5 +911,6 @@ namespace G
         public RepoSearchResultItem()
         {
         }
+
     }
 }

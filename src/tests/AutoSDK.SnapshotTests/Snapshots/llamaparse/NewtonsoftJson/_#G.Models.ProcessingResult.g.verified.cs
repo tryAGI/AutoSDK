@@ -117,5 +117,6 @@ namespace G
         public ProcessingResult()
         {
         }
+
     }
 }

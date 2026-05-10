@@ -219,5 +219,6 @@ namespace G
         public Sam2SegmentationRequest()
         {
         }
+
     }
 }

@@ -133,5 +133,18 @@ namespace G
         public OrganizationPermission()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="OrganizationPermission"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static OrganizationPermission FromPermission(string permission)
+        {
+            return new OrganizationPermission
+            {
+                Permission = permission,
+            };
+        }
+
     }
 }

@@ -79,5 +79,6 @@ namespace G
         public WebhookPullRequestReviewRequestedVariant1PullRequestBaseRepoPermissions()
         {
         }
+
     }
 }

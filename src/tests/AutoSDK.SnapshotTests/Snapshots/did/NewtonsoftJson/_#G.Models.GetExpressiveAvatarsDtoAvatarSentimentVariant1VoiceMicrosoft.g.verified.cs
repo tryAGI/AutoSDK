@@ -77,5 +77,6 @@ namespace G
         public GetExpressiveAvatarsDtoAvatarSentimentVariant1VoiceMicrosoft()
         {
         }
+
     }
 }

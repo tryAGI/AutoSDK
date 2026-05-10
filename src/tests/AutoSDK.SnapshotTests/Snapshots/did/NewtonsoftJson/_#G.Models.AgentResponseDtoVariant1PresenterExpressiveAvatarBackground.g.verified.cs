@@ -56,5 +56,6 @@ namespace G
         public AgentResponseDtoVariant1PresenterExpressiveAvatarBackground()
         {
         }
+
     }
 }

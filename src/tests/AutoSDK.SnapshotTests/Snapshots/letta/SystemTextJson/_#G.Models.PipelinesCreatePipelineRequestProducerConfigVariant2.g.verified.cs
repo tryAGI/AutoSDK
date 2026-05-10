@@ -51,5 +51,6 @@ namespace G
         public PipelinesCreatePipelineRequestProducerConfigVariant2()
         {
         }
+
     }
 }

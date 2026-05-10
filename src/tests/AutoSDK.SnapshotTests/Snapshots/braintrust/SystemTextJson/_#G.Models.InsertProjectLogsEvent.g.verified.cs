@@ -297,5 +297,6 @@ namespace G
         public InsertProjectLogsEvent()
         {
         }
+
     }
 }

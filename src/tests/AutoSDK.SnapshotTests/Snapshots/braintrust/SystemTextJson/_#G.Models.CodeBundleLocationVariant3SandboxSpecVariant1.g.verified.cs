@@ -53,5 +53,6 @@ namespace G
         public CodeBundleLocationVariant3SandboxSpecVariant1()
         {
         }
+
     }
 }

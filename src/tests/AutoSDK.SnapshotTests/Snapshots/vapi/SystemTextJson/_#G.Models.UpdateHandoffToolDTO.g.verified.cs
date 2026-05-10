@@ -726,5 +726,6 @@ namespace G
         public UpdateHandoffToolDTO()
         {
         }
+
     }
 }

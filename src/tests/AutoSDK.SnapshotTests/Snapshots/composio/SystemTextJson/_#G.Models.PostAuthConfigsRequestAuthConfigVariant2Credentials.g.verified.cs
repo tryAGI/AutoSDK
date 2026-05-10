@@ -51,5 +51,6 @@ namespace G
         public PostAuthConfigsRequestAuthConfigVariant2Credentials()
         {
         }
+
     }
 }

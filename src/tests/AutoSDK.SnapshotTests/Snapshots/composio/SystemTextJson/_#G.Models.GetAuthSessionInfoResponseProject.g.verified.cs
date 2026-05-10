@@ -282,5 +282,6 @@ namespace G
         public GetAuthSessionInfoResponseProject()
         {
         }
+
     }
 }

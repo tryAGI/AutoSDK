@@ -63,5 +63,6 @@ namespace G
         public Create3ResponseVariant1()
         {
         }
+
     }
 }

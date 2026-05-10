@@ -41,5 +41,6 @@ namespace G
         public MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsScoredAudioUrlInputChunkGeneratedMetadataVariant1Discriminator()
         {
         }
+
     }
 }

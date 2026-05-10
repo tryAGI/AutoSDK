@@ -242,5 +242,6 @@ namespace G
         public WebhookWorkflowJobCompletedWorkflowJobVariant2()
         {
         }
+
     }
 }

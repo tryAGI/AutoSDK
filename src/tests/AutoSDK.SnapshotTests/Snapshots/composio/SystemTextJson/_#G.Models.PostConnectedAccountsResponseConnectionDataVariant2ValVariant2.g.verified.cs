@@ -307,5 +307,6 @@ namespace G
         public PostConnectedAccountsResponseConnectionDataVariant2ValVariant2()
         {
         }
+
     }
 }

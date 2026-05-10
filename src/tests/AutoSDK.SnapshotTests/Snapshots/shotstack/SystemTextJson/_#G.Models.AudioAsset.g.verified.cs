@@ -118,5 +118,18 @@ namespace G
         public AudioAsset()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="AudioAsset"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static AudioAsset FromSrc(string src)
+        {
+            return new AudioAsset
+            {
+                Src = src,
+            };
+        }
+
     }
 }

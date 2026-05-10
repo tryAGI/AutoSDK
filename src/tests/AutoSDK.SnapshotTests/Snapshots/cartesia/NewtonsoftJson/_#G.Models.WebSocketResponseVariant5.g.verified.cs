@@ -78,5 +78,6 @@ namespace G
         public WebSocketResponseVariant5()
         {
         }
+
     }
 }

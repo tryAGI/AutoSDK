@@ -89,5 +89,6 @@ namespace G
         public EnvironmentProtectionRuleVariant2()
         {
         }
+
     }
 }

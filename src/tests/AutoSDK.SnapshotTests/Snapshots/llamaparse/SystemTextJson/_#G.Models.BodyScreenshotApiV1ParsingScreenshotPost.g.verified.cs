@@ -179,5 +179,6 @@ namespace G
         public BodyScreenshotApiV1ParsingScreenshotPost()
         {
         }
+
     }
 }

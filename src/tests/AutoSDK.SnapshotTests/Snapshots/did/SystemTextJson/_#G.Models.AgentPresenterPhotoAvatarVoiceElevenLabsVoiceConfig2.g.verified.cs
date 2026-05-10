@@ -129,5 +129,6 @@ namespace G
         public AgentPresenterPhotoAvatarVoiceElevenLabsVoiceConfig2()
         {
         }
+
     }
 }

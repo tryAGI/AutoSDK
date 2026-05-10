@@ -177,5 +177,6 @@ namespace G
         public RecognitionMetadata()
         {
         }
+
     }
 }

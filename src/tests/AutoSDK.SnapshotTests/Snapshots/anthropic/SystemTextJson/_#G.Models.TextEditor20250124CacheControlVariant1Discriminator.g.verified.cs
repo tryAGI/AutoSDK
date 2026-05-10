@@ -41,5 +41,6 @@ namespace G
         public TextEditor20250124CacheControlVariant1Discriminator()
         {
         }
+
     }
 }

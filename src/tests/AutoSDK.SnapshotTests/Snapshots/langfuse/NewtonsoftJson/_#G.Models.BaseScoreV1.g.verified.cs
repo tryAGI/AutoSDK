@@ -169,5 +169,6 @@ namespace G
         public BaseScoreV1()
         {
         }
+
     }
 }

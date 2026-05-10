@@ -91,5 +91,6 @@ namespace G
         public EnvironmentsSendMessageRequestMessageVariant2ApprovalVariant1()
         {
         }
+
     }
 }

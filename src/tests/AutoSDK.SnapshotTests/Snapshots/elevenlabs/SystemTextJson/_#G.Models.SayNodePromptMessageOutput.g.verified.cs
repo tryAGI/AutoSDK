@@ -55,5 +55,18 @@ namespace G
         public SayNodePromptMessageOutput()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="SayNodePromptMessageOutput"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static SayNodePromptMessageOutput FromPrompt(string prompt)
+        {
+            return new SayNodePromptMessageOutput
+            {
+                Prompt = prompt,
+            };
+        }
+
     }
 }

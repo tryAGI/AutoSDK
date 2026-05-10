@@ -126,5 +126,6 @@ namespace G
         public ScriptVariant1ProviderElevenLabsVoiceConfig()
         {
         }
+
     }
 }

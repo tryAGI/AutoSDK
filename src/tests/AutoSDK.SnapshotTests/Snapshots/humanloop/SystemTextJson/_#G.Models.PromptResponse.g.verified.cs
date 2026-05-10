@@ -433,5 +433,6 @@ namespace G
         public PromptResponse()
         {
         }
+
     }
 }

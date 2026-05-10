@@ -45,5 +45,6 @@ namespace G
         public V2PhoneCallResponseVariant1TelephonyIdentifier()
         {
         }
+
     }
 }

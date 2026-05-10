@@ -41,5 +41,6 @@ namespace G
         public BetaComputerUseTool20250124CacheControlVariant1Discriminator()
         {
         }
+
     }
 }

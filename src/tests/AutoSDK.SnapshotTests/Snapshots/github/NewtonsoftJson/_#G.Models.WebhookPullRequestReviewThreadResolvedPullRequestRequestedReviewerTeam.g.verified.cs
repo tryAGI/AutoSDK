@@ -156,5 +156,6 @@ namespace G
         public WebhookPullRequestReviewThreadResolvedPullRequestRequestedReviewerTeam()
         {
         }
+
     }
 }

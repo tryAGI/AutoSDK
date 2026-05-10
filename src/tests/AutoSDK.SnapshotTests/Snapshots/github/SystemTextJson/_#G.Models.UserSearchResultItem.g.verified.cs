@@ -355,5 +355,6 @@ namespace G
         public UserSearchResultItem()
         {
         }
+
     }
 }

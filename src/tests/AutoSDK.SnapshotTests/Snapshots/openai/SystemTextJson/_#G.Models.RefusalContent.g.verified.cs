@@ -58,5 +58,18 @@ namespace G
         public RefusalContent()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="RefusalContent"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static RefusalContent FromRefusal(string refusal)
+        {
+            return new RefusalContent
+            {
+                Refusal = refusal,
+            };
+        }
+
     }
 }

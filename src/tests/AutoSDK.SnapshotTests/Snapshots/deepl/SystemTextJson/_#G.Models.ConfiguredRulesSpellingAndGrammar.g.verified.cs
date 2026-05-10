@@ -367,5 +367,6 @@ namespace G
         public ConfiguredRulesSpellingAndGrammar()
         {
         }
+
     }
 }

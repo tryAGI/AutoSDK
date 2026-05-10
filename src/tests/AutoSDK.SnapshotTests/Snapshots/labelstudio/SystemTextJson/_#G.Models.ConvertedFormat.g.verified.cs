@@ -82,5 +82,18 @@ namespace G
         public ConvertedFormat()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="ConvertedFormat"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static ConvertedFormat FromExportType(string exportType)
+        {
+            return new ConvertedFormat
+            {
+                ExportType = exportType,
+            };
+        }
+
     }
 }

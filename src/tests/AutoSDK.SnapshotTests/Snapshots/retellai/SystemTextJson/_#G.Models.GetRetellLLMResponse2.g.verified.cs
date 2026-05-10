@@ -53,5 +53,6 @@ namespace G
         public GetRetellLLMResponse2()
         {
         }
+
     }
 }

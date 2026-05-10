@@ -65,5 +65,6 @@ namespace G
         public PatchProjectAutomationConfigVariant2Credentials()
         {
         }
+
     }
 }

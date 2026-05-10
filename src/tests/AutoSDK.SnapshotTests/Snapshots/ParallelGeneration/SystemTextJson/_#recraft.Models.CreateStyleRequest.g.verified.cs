@@ -52,5 +52,6 @@ namespace recraft
         public CreateStyleRequest()
         {
         }
+
     }
 }

@@ -219,5 +219,18 @@ namespace G
         public Dimension()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="Dimension"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static Dimension FromName(string name)
+        {
+            return new Dimension
+            {
+                Name = name,
+            };
+        }
+
     }
 }

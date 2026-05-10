@@ -114,5 +114,6 @@ namespace G
         public CreateResponseVariant1LlmOpenAI()
         {
         }
+
     }
 }

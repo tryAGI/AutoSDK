@@ -387,5 +387,6 @@ namespace G
         public BetaCreateMessageParams()
         {
         }
+
     }
 }

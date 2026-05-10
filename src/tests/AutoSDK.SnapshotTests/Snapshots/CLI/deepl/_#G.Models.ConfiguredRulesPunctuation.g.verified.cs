@@ -655,5 +655,6 @@ namespace G
         public ConfiguredRulesPunctuation()
         {
         }
+
     }
 }

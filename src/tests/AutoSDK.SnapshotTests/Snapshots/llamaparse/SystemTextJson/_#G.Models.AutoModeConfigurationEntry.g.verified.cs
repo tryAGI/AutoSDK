@@ -453,5 +453,6 @@ namespace G
         public AutoModeConfigurationEntry()
         {
         }
+
     }
 }

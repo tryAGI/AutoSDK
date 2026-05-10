@@ -51,5 +51,18 @@ namespace G
         public PromptXAIInvocationParameters()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="PromptXAIInvocationParameters"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static PromptXAIInvocationParameters FromXai(global::G.PromptXAIInvocationParametersContent xai)
+        {
+            return new PromptXAIInvocationParameters
+            {
+                Xai = xai,
+            };
+        }
+
     }
 }

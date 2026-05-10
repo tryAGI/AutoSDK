@@ -75,5 +75,6 @@ namespace G
         public WebhooksPullRequest5AutoMerge()
         {
         }
+
     }
 }

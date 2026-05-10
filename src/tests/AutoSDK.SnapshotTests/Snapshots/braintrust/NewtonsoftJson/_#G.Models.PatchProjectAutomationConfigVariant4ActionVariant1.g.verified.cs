@@ -51,5 +51,6 @@ namespace G
         public PatchProjectAutomationConfigVariant4ActionVariant1()
         {
         }
+
     }
 }

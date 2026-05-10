@@ -104,5 +104,6 @@ namespace G
         public SlackOAuth2AuthorizationCredential()
         {
         }
+
     }
 }

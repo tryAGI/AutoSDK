@@ -176,5 +176,6 @@ namespace G
         public FluxUltraInput()
         {
         }
+
     }
 }

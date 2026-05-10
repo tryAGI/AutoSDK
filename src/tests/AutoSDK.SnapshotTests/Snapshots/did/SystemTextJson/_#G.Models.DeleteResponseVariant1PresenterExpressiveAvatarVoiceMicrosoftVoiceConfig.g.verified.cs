@@ -80,5 +80,6 @@ namespace G
         public DeleteResponseVariant1PresenterExpressiveAvatarVoiceMicrosoftVoiceConfig()
         {
         }
+
     }
 }

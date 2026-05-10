@@ -100,5 +100,18 @@ namespace G
         public CreateEvalCustomDataSourceConfig()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="CreateEvalCustomDataSourceConfig"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static CreateEvalCustomDataSourceConfig FromItemSchema(object itemSchema)
+        {
+            return new CreateEvalCustomDataSourceConfig
+            {
+                ItemSchema = itemSchema,
+            };
+        }
+
     }
 }

@@ -917,5 +917,6 @@ namespace G
         public WebhookIssuesTransferredChangesNewRepository()
         {
         }
+
     }
 }

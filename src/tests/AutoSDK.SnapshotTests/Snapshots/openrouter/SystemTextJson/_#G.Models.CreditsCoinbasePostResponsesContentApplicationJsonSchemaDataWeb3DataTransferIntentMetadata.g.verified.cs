@@ -61,5 +61,6 @@ namespace G
         public CreditsCoinbasePostResponsesContentApplicationJsonSchemaDataWeb3DataTransferIntentMetadata()
         {
         }
+
     }
 }

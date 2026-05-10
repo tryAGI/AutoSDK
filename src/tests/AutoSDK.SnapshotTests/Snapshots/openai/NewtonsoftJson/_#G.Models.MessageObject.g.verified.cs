@@ -196,5 +196,6 @@ namespace G
         public MessageObject()
         {
         }
+
     }
 }

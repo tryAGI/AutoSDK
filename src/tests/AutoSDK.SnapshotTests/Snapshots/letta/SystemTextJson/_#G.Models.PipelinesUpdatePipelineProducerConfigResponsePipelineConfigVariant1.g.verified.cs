@@ -51,5 +51,6 @@ namespace G
         public PipelinesUpdatePipelineProducerConfigResponsePipelineConfigVariant1()
         {
         }
+
     }
 }

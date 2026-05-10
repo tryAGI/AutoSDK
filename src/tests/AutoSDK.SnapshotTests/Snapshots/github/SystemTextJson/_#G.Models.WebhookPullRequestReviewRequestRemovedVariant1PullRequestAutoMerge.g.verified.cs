@@ -75,5 +75,6 @@ namespace G
         public WebhookPullRequestReviewRequestRemovedVariant1PullRequestAutoMerge()
         {
         }
+
     }
 }

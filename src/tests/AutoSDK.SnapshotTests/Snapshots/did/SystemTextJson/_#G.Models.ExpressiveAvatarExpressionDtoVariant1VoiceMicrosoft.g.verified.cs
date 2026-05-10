@@ -81,5 +81,6 @@ namespace G
         public ExpressiveAvatarExpressionDtoVariant1VoiceMicrosoft()
         {
         }
+
     }
 }

@@ -93,5 +93,6 @@ namespace G
         public UpdateSecretRequestUpdateSecretRequest1BasicAuthentication()
         {
         }
+
     }
 }

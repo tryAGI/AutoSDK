@@ -51,5 +51,6 @@ namespace G
         public PatchAuthConfigsByNanoidRequestVariant1Credentials()
         {
         }
+
     }
 }

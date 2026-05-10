@@ -229,5 +229,6 @@ namespace G
         public BatchJobResponse()
         {
         }
+
     }
 }

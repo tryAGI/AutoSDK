@@ -174,5 +174,18 @@ namespace G
         public RichCaptionAsset()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="RichCaptionAsset"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static RichCaptionAsset FromSrc(string src)
+        {
+            return new RichCaptionAsset
+            {
+                Src = src,
+            };
+        }
+
     }
 }

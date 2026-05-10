@@ -106,5 +106,6 @@ namespace G
         public CodespacesCreateForAuthenticatedUserRequestVariant2()
         {
         }
+
     }
 }

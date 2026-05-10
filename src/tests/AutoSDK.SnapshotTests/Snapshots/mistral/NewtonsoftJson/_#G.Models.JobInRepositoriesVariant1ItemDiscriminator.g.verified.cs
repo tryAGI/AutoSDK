@@ -38,5 +38,6 @@ namespace G
         public JobInRepositoriesVariant1ItemDiscriminator()
         {
         }
+
     }
 }

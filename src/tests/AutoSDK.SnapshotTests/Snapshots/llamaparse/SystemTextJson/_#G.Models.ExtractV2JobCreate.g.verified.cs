@@ -76,5 +76,6 @@ namespace G
         public ExtractV2JobCreate()
         {
         }
+
     }
 }

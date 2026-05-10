@@ -73,5 +73,6 @@ namespace G
         public TranslationSentence()
         {
         }
+
     }
 }

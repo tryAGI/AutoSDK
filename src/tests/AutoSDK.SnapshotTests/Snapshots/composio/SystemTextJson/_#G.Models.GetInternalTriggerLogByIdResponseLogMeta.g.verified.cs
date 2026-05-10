@@ -170,5 +170,6 @@ namespace G
         public GetInternalTriggerLogByIdResponseLogMeta()
         {
         }
+
     }
 }

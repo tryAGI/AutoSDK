@@ -52,5 +52,6 @@ namespace G
         public GetCreditUsageResponse3()
         {
         }
+
     }
 }

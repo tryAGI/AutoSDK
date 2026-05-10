@@ -321,5 +321,18 @@ namespace G
         public GCSDatasetStorage()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="GCSDatasetStorage"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static GCSDatasetStorage FromDataset(int dataset)
+        {
+            return new GCSDatasetStorage
+            {
+                Dataset = dataset,
+            };
+        }
+
     }
 }

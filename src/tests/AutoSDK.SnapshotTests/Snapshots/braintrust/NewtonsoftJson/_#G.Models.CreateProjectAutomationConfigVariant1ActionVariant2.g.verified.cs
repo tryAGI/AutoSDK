@@ -73,5 +73,6 @@ namespace G
         public CreateProjectAutomationConfigVariant1ActionVariant2()
         {
         }
+
     }
 }

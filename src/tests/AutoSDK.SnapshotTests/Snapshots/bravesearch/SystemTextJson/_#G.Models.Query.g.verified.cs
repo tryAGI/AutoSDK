@@ -306,5 +306,6 @@ namespace G
         public Query()
         {
         }
+
     }
 }

@@ -44,5 +44,6 @@ namespace G
         public UpdateOpenAIResponsesLLMRequestVariant2()
         {
         }
+
     }
 }

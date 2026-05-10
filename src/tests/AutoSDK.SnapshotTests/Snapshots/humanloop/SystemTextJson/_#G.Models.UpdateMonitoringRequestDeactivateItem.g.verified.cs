@@ -49,5 +49,6 @@ namespace G
         public UpdateMonitoringRequestDeactivateItem()
         {
         }
+
     }
 }

@@ -205,5 +205,6 @@ namespace G
         public ScoredStoreFile()
         {
         }
+
     }
 }

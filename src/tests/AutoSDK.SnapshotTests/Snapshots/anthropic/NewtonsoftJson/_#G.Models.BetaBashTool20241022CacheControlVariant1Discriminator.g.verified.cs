@@ -38,5 +38,6 @@ namespace G
         public BetaBashTool20241022CacheControlVariant1Discriminator()
         {
         }
+
     }
 }

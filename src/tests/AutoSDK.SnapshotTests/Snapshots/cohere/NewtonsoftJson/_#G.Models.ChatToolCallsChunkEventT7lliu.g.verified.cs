@@ -48,5 +48,6 @@ namespace G
         public ChatToolCallsChunkEventT7lliu()
         {
         }
+
     }
 }

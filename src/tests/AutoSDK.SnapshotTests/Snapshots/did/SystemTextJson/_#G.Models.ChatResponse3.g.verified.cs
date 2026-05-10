@@ -69,5 +69,6 @@ namespace G
         public ChatResponse3()
         {
         }
+
     }
 }

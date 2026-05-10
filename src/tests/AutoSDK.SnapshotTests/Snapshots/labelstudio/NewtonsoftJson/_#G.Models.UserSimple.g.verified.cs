@@ -91,5 +91,18 @@ namespace G
         public UserSimple()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="UserSimple"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static UserSimple FromUsername(string username)
+        {
+            return new UserSimple
+            {
+                Username = username,
+            };
+        }
+
     }
 }

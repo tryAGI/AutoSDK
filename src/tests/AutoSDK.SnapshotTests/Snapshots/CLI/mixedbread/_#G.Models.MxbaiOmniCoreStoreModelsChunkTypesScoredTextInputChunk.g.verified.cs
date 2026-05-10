@@ -185,5 +185,6 @@ namespace G
         public MxbaiOmniCoreStoreModelsChunkTypesScoredTextInputChunk()
         {
         }
+
     }
 }

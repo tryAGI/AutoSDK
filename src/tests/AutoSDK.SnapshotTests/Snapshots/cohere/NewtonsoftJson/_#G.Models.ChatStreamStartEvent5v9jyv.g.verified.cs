@@ -39,5 +39,6 @@ namespace G
         public ChatStreamStartEvent5v9jyv()
         {
         }
+
     }
 }

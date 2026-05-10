@@ -266,5 +266,6 @@ namespace G
         public ScrapeOptions()
         {
         }
+
     }
 }

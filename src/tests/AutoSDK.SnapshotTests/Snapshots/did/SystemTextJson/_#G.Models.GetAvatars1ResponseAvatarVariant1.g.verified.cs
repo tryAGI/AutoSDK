@@ -104,5 +104,6 @@ namespace G
         public GetAvatars1ResponseAvatarVariant1()
         {
         }
+
     }
 }

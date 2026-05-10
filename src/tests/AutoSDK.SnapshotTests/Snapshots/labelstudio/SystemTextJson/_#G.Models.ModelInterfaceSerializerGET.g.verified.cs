@@ -151,5 +151,18 @@ namespace G
         public ModelInterfaceSerializerGET()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="ModelInterfaceSerializerGET"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static ModelInterfaceSerializerGET FromTitle(string title)
+        {
+            return new ModelInterfaceSerializerGET
+            {
+                Title = title,
+            };
+        }
+
     }
 }

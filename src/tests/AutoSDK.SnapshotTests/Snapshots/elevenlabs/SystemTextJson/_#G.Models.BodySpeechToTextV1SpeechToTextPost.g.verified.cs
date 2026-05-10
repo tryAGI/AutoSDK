@@ -284,5 +284,6 @@ namespace G
         public BodySpeechToTextV1SpeechToTextPost()
         {
         }
+
     }
 }

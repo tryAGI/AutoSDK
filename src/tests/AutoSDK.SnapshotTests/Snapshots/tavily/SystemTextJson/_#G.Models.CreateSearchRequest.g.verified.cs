@@ -326,5 +326,6 @@ namespace G
         public CreateSearchRequest()
         {
         }
+
     }
 }

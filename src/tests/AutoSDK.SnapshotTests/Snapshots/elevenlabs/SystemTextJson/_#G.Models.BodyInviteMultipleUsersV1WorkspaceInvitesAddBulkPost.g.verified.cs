@@ -54,5 +54,6 @@ namespace G
         public BodyInviteMultipleUsersV1WorkspaceInvitesAddBulkPost()
         {
         }
+
     }
 }

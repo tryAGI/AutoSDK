@@ -75,5 +75,6 @@ namespace G
         public BaseInputsOneOf1Items2()
         {
         }
+
     }
 }

@@ -37,5 +37,6 @@ namespace G
         public RenamePrompt2025Request()
         {
         }
+
     }
 }

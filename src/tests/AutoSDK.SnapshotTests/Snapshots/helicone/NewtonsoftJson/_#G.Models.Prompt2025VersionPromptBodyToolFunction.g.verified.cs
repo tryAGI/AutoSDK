@@ -57,5 +57,6 @@ namespace G
         public Prompt2025VersionPromptBodyToolFunction()
         {
         }
+
     }
 }

@@ -336,5 +336,6 @@ namespace G
         public ProjectLogsEvent()
         {
         }
+
     }
 }

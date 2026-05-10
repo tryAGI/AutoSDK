@@ -60,5 +60,18 @@ namespace G
         public FreeformAnnotationConfigData()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="FreeformAnnotationConfigData"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static FreeformAnnotationConfigData FromName(string name)
+        {
+            return new FreeformAnnotationConfigData
+            {
+                Name = name,
+            };
+        }
+
     }
 }

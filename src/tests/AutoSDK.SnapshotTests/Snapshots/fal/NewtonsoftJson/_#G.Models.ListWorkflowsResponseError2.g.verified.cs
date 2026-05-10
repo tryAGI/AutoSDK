@@ -73,5 +73,6 @@ namespace G
         public ListWorkflowsResponseError2()
         {
         }
+
     }
 }

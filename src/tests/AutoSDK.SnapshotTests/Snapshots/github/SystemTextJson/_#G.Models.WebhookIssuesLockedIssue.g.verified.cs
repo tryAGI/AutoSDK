@@ -335,5 +335,6 @@ namespace G
         public WebhookIssuesLockedIssue()
         {
         }
+
     }
 }

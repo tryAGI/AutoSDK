@@ -64,5 +64,6 @@ namespace G
         public GetFaceDetectionResponse3()
         {
         }
+
     }
 }

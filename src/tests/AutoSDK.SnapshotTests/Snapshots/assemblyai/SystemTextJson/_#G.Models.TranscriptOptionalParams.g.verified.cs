@@ -507,5 +507,6 @@ namespace G
         public TranscriptOptionalParams()
         {
         }
+
     }
 }

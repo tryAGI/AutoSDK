@@ -321,5 +321,18 @@ namespace G
         public AzureServicePrincipalImportStorage()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="AzureServicePrincipalImportStorage"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static AzureServicePrincipalImportStorage FromProject(int project)
+        {
+            return new AzureServicePrincipalImportStorage
+            {
+                Project = project,
+            };
+        }
+
     }
 }

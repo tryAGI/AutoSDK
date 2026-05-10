@@ -236,5 +236,6 @@ namespace G
         public PostConnectedAccountsResponseConnectionDataVariant7ValVariant3()
         {
         }
+
     }
 }

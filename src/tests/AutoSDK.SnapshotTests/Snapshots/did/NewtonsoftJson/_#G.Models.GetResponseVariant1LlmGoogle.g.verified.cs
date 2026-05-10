@@ -111,5 +111,6 @@ namespace G
         public GetResponseVariant1LlmGoogle()
         {
         }
+
     }
 }

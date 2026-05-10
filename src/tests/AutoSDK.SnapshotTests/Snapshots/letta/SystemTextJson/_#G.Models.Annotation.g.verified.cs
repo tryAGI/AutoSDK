@@ -53,5 +53,18 @@ namespace G
         public Annotation()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="Annotation"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static Annotation FromUrlCitation(global::G.AnnotationURLCitation urlCitation)
+        {
+            return new Annotation
+            {
+                UrlCitation = urlCitation,
+            };
+        }
+
     }
 }

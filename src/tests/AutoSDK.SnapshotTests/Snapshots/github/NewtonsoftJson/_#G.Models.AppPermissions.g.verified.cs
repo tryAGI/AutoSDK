@@ -605,5 +605,6 @@ namespace G
         public AppPermissions()
         {
         }
+
     }
 }

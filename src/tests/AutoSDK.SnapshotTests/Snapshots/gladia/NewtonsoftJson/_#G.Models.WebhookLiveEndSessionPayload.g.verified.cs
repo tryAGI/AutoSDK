@@ -53,5 +53,18 @@ namespace G
         public WebhookLiveEndSessionPayload()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="WebhookLiveEndSessionPayload"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static WebhookLiveEndSessionPayload FromPayload(global::G.LiveEventPayload payload)
+        {
+            return new WebhookLiveEndSessionPayload
+            {
+                Payload = payload,
+            };
+        }
+
     }
 }

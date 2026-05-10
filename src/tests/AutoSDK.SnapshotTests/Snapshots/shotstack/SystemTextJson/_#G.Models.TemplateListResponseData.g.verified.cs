@@ -58,5 +58,6 @@ namespace G
         public TemplateListResponseData()
         {
         }
+
     }
 }

@@ -101,5 +101,6 @@ namespace G
         public AgentUpdateDtoLlmVariant3()
         {
         }
+
     }
 }

@@ -58,5 +58,18 @@ namespace G
         public ChatEvalToolResponseMessageMock()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="ChatEvalToolResponseMessageMock"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static ChatEvalToolResponseMessageMock FromContent(string content)
+        {
+            return new ChatEvalToolResponseMessageMock
+            {
+                Content = content,
+            };
+        }
+
     }
 }

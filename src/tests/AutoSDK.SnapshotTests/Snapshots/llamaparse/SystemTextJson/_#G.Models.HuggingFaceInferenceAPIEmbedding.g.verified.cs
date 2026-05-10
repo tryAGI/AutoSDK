@@ -168,5 +168,6 @@ namespace G
         public HuggingFaceInferenceAPIEmbedding()
         {
         }
+
     }
 }

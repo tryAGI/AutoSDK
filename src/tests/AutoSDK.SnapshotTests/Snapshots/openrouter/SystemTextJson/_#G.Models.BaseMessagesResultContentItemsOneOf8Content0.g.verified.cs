@@ -52,5 +52,6 @@ namespace G
         public BaseMessagesResultContentItemsOneOf8Content0()
         {
         }
+
     }
 }

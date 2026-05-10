@@ -92,5 +92,18 @@ namespace G
         public EmbedByTypeResponse()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="EmbedByTypeResponse"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static EmbedByTypeResponse FromId(string id)
+        {
+            return new EmbedByTypeResponse
+            {
+                Id = id,
+            };
+        }
+
     }
 }

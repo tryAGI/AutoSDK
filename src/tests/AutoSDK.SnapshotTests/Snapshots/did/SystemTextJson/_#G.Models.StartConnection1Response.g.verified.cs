@@ -41,5 +41,6 @@ namespace G
         public StartConnection1Response()
         {
         }
+
     }
 }

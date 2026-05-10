@@ -145,5 +145,6 @@ namespace G
         public ChatV3MessageDetail()
         {
         }
+
     }
 }

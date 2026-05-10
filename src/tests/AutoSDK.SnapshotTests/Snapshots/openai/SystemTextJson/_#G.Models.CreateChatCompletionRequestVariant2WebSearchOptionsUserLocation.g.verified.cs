@@ -55,5 +55,6 @@ namespace G
         public CreateChatCompletionRequestVariant2WebSearchOptionsUserLocation()
         {
         }
+
     }
 }

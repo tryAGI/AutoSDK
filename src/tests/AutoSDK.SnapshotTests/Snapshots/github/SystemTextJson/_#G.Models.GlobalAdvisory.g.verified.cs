@@ -310,5 +310,6 @@ namespace G
         public GlobalAdvisory()
         {
         }
+
     }
 }

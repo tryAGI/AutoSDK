@@ -115,5 +115,6 @@ namespace G
         public LLMConfigVariant2PromptCustomization()
         {
         }
+
     }
 }

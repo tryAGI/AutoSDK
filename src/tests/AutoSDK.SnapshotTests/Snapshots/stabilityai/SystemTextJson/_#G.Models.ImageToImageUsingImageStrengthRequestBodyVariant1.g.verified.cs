@@ -133,5 +133,6 @@ namespace G
         public ImageToImageUsingImageStrengthRequestBodyVariant1()
         {
         }
+
     }
 }

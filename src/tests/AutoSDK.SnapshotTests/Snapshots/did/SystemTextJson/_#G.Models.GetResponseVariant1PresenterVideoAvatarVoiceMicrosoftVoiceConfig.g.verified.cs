@@ -80,5 +80,6 @@ namespace G
         public GetResponseVariant1PresenterVideoAvatarVoiceMicrosoftVoiceConfig()
         {
         }
+
     }
 }

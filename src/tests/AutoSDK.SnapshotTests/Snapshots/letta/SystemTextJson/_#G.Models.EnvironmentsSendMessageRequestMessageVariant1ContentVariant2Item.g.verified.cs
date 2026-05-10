@@ -51,5 +51,6 @@ namespace G
         public EnvironmentsSendMessageRequestMessageVariant1ContentVariant2Item()
         {
         }
+
     }
 }

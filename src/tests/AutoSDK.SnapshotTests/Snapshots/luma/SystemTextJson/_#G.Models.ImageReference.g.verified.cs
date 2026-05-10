@@ -57,5 +57,18 @@ namespace G
         public ImageReference()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="ImageReference"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static ImageReference FromUrl(string url)
+        {
+            return new ImageReference
+            {
+                Url = url,
+            };
+        }
+
     }
 }

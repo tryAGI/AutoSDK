@@ -47,5 +47,6 @@ namespace G
         public ScheduledMessagesRetrieveScheduledMessageResponseScheduleVariant2()
         {
         }
+
     }
 }

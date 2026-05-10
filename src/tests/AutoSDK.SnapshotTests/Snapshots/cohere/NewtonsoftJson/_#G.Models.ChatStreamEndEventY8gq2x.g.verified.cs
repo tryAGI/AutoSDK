@@ -59,5 +59,6 @@ namespace G
         public ChatStreamEndEventY8gq2x()
         {
         }
+
     }
 }

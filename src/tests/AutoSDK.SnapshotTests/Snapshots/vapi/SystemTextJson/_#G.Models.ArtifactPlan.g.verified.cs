@@ -338,5 +338,6 @@ namespace G
         public ArtifactPlan()
         {
         }
+
     }
 }

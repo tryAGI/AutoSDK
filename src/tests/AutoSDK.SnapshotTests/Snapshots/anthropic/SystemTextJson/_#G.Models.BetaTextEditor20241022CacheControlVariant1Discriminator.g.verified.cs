@@ -41,5 +41,6 @@ namespace G
         public BetaTextEditor20241022CacheControlVariant1Discriminator()
         {
         }
+
     }
 }

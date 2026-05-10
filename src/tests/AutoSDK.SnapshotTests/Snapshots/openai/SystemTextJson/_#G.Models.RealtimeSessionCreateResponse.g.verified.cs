@@ -245,5 +245,6 @@ namespace G
         public RealtimeSessionCreateResponse()
         {
         }
+
     }
 }

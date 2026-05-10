@@ -97,5 +97,6 @@ namespace G
         public TextToImageRequestBodyVariant1()
         {
         }
+
     }
 }

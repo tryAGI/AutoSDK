@@ -98,5 +98,6 @@ namespace G
         public WebSocketResponseVariant2()
         {
         }
+
     }
 }

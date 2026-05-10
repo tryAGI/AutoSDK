@@ -840,5 +840,6 @@ namespace G
         public RepoSearchResultItem()
         {
         }
+
     }
 }

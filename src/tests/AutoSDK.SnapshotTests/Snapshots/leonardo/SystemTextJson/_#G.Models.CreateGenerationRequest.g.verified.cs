@@ -517,5 +517,6 @@ namespace G
         public CreateGenerationRequest()
         {
         }
+
     }
 }

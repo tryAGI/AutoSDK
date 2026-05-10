@@ -39,5 +39,6 @@ namespace G
         public Get1ResponseConfig()
         {
         }
+
     }
 }

@@ -336,5 +336,18 @@ namespace G
         public S3ImportStorage()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="S3ImportStorage"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static S3ImportStorage FromProject(int project)
+        {
+            return new S3ImportStorage
+            {
+                Project = project,
+            };
+        }
+
     }
 }

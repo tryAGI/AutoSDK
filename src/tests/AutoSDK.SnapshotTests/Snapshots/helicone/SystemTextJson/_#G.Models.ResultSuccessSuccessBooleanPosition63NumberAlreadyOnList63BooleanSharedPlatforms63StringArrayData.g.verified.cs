@@ -68,5 +68,6 @@ namespace G
         public ResultSuccessSuccessBooleanPosition63NumberAlreadyOnList63BooleanSharedPlatforms63StringArrayData()
         {
         }
+
     }
 }

@@ -41,5 +41,6 @@ namespace G
         public ApprovalCreateApprovalsVariant1ItemDiscriminator()
         {
         }
+
     }
 }

@@ -51,5 +51,6 @@ namespace recraft
         public GenerateImageResponse()
         {
         }
+
     }
 }

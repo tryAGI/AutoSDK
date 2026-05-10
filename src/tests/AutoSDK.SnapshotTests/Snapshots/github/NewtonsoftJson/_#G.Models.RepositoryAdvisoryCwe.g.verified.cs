@@ -53,5 +53,18 @@ namespace G
         public RepositoryAdvisoryCwe()
         {
         }
+
+        /// <summary>
+        /// Creates a new <see cref="RepositoryAdvisoryCwe"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static RepositoryAdvisoryCwe FromCweId(string cweId)
+        {
+            return new RepositoryAdvisoryCwe
+            {
+                CweId = cweId,
+            };
+        }
+
     }
 }

@@ -359,5 +359,6 @@ namespace G
         public UpdateWorkflowDTO()
         {
         }
+
     }
 }

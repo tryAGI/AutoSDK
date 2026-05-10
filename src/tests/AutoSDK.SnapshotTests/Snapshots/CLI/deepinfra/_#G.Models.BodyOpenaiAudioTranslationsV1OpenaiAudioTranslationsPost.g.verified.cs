@@ -92,5 +92,6 @@ namespace G
         public BodyOpenaiAudioTranslationsV1OpenaiAudioTranslationsPost()
         {
         }
+
     }
 }

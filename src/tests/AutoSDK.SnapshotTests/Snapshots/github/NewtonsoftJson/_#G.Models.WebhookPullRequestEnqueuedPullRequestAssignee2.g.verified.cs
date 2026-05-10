@@ -218,5 +218,6 @@ namespace G
         public WebhookPullRequestEnqueuedPullRequestAssignee2()
         {
         }
+
     }
 }

@@ -49,5 +49,6 @@ namespace G
         public ChatContentStartEvent6xvlq1()
         {
         }
+
     }
 }
