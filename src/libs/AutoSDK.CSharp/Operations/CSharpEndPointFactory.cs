@@ -261,6 +261,21 @@ public static class CSharpEndPointFactory
 
     private static bool HasCallScopedSecurityOverride(OperationContext operation)
     {
+        // Explicit opt-in via vendor extension. Useful for cases where the OpenAPI
+        // security model can't express the call-scoped distinction — e.g. two
+        // endpoints share the same security scheme reference but expect different
+        // runtime credentials (a session-scoped bearer returned by an upstream
+        // poll vs. the account default), so structural detection alone can't tell
+        // them apart. Setting `x-call-scoped-auth: true` on such an operation
+        // forces the marker without forcing the spec author to restructure the
+        // operation's `security` block.
+        if (OpenApiExtensions.GetExtensionBooleanValue(
+                operation.Operation.Extensions,
+                "x-call-scoped-auth"))
+        {
+            return true;
+        }
+
         var operationSecurity = operation.Operation.Security;
         if (operationSecurity == null)
         {

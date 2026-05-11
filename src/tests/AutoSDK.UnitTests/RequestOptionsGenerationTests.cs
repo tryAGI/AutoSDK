@@ -419,6 +419,56 @@ public class RequestOptionsGenerationTests
     }
 
     [TestMethod]
+    public void GenerateMethod_StampsAuthorizationOverride_OnXCallScopedAuthVendorExtension()
+    {
+        // Both operations share the SAME security scheme as the document default —
+        // structural detection alone would NOT flag either as call-scoped. The
+        // operation marked with `x-call-scoped-auth: true` opts into the marker
+        // explicitly because the spec model can't express that this endpoint
+        // expects a different runtime credential than its sibling.
+        const string yaml = """
+                            openapi: 3.0.3
+                            info:
+                              title: VendorExtensionAuth
+                              version: 1.0.0
+                            paths:
+                              /default-auth:
+                                get:
+                                  operationId: getWithDefaultAuth
+                                  responses:
+                                    '200':
+                                      description: ok
+                              /session-consume:
+                                post:
+                                  operationId: consumeWithSessionAuth
+                                  x-call-scoped-auth: true
+                                  responses:
+                                    '200':
+                                      description: ok
+                            components:
+                              securitySchemes:
+                                accountKey:
+                                  type: http
+                                  scheme: bearer
+                            security:
+                              - accountKey: []
+                            """;
+
+        var data = AutoSDK.Generation.Data.Prepare(((yaml, DefaultSettings), DefaultSettings));
+        var defaultOp = data.Methods.Single(m => m.NotAsyncMethodName == "GetWithDefaultAuth");
+        var optInOp = data.Methods.Single(m => m.NotAsyncMethodName == "ConsumeWithSessionAuth");
+
+        defaultOp.HasCallScopedSecurity.Should().BeFalse("the operation inherits document-level security and has no vendor extension");
+        optInOp.HasCallScopedSecurity.Should().BeTrue("the operation declares `x-call-scoped-auth: true` even though its security matches the document default");
+
+        var defaultSource = Sources.Method(defaultOp).Text;
+        var optInSource = Sources.Method(optInOp).Text;
+
+        defaultSource.Should().NotContain("AutoSDKHttpRequestOptions.StampAuthorizationOverride");
+        optInSource.Should().Contain("AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);");
+    }
+
+    [TestMethod]
     public void GenerateMethod_StampsAuthorizationOverride_OnPerOperationSecurityOverride()
     {
         // Document-level security uses one scheme; one operation inherits it (no

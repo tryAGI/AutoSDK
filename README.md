@@ -119,6 +119,8 @@ The helper uses `HttpRequestMessage.Options` on .NET 5+ and falls back to the le
 
 Operations whose OpenAPI `security` block overrides the document-level scheme — e.g. an endpoint that needs a session-scoped bearer distinct from the client-level account key — get the marker stamped automatically inside the generated method's request builder, so SDK authors don't have to remember the helper call for every override op. The marker is stamped after the `Prepare<Method>Request` partial hook runs, so authors customizing the request via `PrepareRequest` see the same final state a `DelegatingHandler` would.
 
+When the OpenAPI security model can't express the distinction — e.g. two endpoints share the same scheme reference but expect different runtime credentials at call time — set `x-call-scoped-auth: true` on the operation to force the marker without restructuring its `security` block. Auto-detection treats the vendor extension as an explicit opt-in even when the structural security check would have returned false.
+
 ## Cloud Request Signing Helpers
 Cloud-hosted APIs often describe only bearer or API-key auth in OpenAPI even when official clients require request signing. Enable `--generate-cloud-signing-helpers` in the CLI, or set `<AutoSDK_GenerateCloudSigningHelpers>true</AutoSDK_GenerateCloudSigningHelpers>` for the source generator, to emit a `CloudRequestSigner` helper factory.
 
