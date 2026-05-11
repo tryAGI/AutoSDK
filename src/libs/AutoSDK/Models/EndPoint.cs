@@ -59,19 +59,22 @@ public enum PageableStyle
 {
     None,
     Offset,
+    Cursor,
 }
 
 public record struct PageableMetadata(
     PageableStyle Style,
     string PageParameterName,
     string ItemsPropertyName,
-    TypeData ItemType)
+    TypeData ItemType,
+    string NextCursorPropertyName = "")
 {
     public static PageableMetadata Empty => new(
         Style: PageableStyle.None,
         PageParameterName: string.Empty,
         ItemsPropertyName: string.Empty,
-        ItemType: TypeData.Default);
+        ItemType: TypeData.Default,
+        NextCursorPropertyName: string.Empty);
 }
 
 public record struct LocationWaitCompanion(

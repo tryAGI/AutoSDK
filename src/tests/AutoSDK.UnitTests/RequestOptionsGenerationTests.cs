@@ -235,6 +235,74 @@ public class RequestOptionsGenerationTests
     }
 
     [TestMethod]
+    public void AutoPaging_CursorShape_EmitsAutoPagingCompanionUsingCursorAsync()
+    {
+        // OpenAI-style shape: `after` cursor query parameter plus a response with a
+        // `last_id`/`next_cursor` field and a single array property.
+        const string yaml = """
+                            openapi: 3.0.3
+                            info:
+                              title: PageableCursor
+                              version: 1.0.0
+                            paths:
+                              /assistants:
+                                get:
+                                  operationId: listAssistants
+                                  parameters:
+                                    - in: query
+                                      name: after
+                                      schema:
+                                        type: string
+                                    - in: query
+                                      name: limit
+                                      schema:
+                                        type: integer
+                                  responses:
+                                    '200':
+                                      description: OK
+                                      content:
+                                        application/json:
+                                          schema:
+                                            $ref: '#/components/schemas/ListAssistantsResponse'
+                            components:
+                              schemas:
+                                ListAssistantsResponse:
+                                  type: object
+                                  required: [data]
+                                  properties:
+                                    data:
+                                      type: array
+                                      items:
+                                        $ref: '#/components/schemas/Assistant'
+                                    next_cursor:
+                                      type: string
+                                Assistant:
+                                  type: object
+                                  properties:
+                                    id:
+                                      type: string
+                            """;
+
+        var settings = DefaultSettings with { GeneratePageableHelpers = true };
+        var data = AutoSDK.Generation.Data.Prepare(((yaml, (CSharpSettings)settings), (CSharpSettings)settings));
+        var endpoint = data.Methods.Single(m => m.NotAsyncMethodName == "ListAssistants");
+
+        endpoint.HasPageableHelper.Should().BeTrue();
+        endpoint.PageableMetadata.Style.Should().Be(PageableStyle.Cursor);
+        endpoint.PageableMetadata.PageParameterName.Should().Be("after");
+        endpoint.PageableMetadata.ItemsPropertyName.Should().Be("Data");
+        endpoint.PageableMetadata.NextCursorPropertyName.Should().Be("NextCursor");
+
+        var source = Sources.Method(endpoint).Text;
+        source.Should().Contain("ListAssistantsAutoPagingAsync(");
+        source.Should().Contain("AutoSDKPager.CursorAsync<");
+        source.Should().Contain("fetchPage: (__cursor, __ct) => ListAssistantsAsync(");
+        source.Should().Contain("extractNextCursor: static __response => __response is null ? null : __response.NextCursor");
+        source.Should().Contain("initialCursor: after");
+        source.Should().Contain("string? after = null,");
+    }
+
+    [TestMethod]
     public void GeneratePromptTemplateHelpers_NamesDtosWithAutoSDKPrefixToAvoidProviderCollisions()
     {
         var settings = (CSharpSettings)DefaultSettings;

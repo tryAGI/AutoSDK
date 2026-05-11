@@ -1243,21 +1243,14 @@ public static class Data
                     return method;
                 }
 
-                var pageParam = method.Parameters
-                    .FirstOrDefault(static p =>
-                        p.Location == Microsoft.OpenApi.ParameterLocation.Query &&
-                        IsOffsetPageParameter(p.Id));
-                if (string.IsNullOrEmpty(pageParam.ParameterName))
-                {
-                    return method;
-                }
-
                 var responseClassName = method.SuccessResponse.Type.CSharpTypeWithoutNullability;
                 if (!classByName.TryGetValue(responseClassName, out var responseClass))
                 {
                     return method;
                 }
 
+                // Locate the single array property on the response. Multiple array
+                // properties make the items field ambiguous and skip detection.
                 PropertyData? itemsProperty = null;
                 foreach (var property in responseClass.Properties)
                 {
@@ -1270,7 +1263,6 @@ public static class Data
 
                     if (itemsProperty != null)
                     {
-                        // Multiple array properties → ambiguous, skip detection.
                         return method;
                     }
 
@@ -1282,13 +1274,68 @@ public static class Data
                     return method;
                 }
 
+                var itemType = itemsProperty.Value.Type.SubTypes[0].Unbox<TypeData>();
+
+                // Offset style takes priority — it requires a known page-number query
+                // parameter, which is a stronger signal than a cursor-named param.
+                var pageParam = method.Parameters
+                    .FirstOrDefault(static p =>
+                        p.Location == Microsoft.OpenApi.ParameterLocation.Query &&
+                        IsOffsetPageParameter(p.Id));
+                if (!string.IsNullOrEmpty(pageParam.ParameterName))
+                {
+                    return method with
+                    {
+                        PageableMetadata = new PageableMetadata(
+                            Style: PageableStyle.Offset,
+                            PageParameterName: pageParam.ParameterName,
+                            ItemsPropertyName: itemsProperty.Value.Name,
+                            ItemType: itemType,
+                            NextCursorPropertyName: string.Empty),
+                    };
+                }
+
+                // Cursor style: known cursor-named query parameter (string-typed) plus
+                // a response property that exposes the next cursor / next page token.
+                var cursorParam = method.Parameters
+                    .FirstOrDefault(static p =>
+                        p.Location == Microsoft.OpenApi.ParameterLocation.Query &&
+                        IsCursorPageParameter(p.Id));
+                if (string.IsNullOrEmpty(cursorParam.ParameterName))
+                {
+                    return method;
+                }
+
+                PropertyData? nextCursorProperty = null;
+                foreach (var property in responseClass.Properties)
+                {
+                    if (!IsNextCursorProperty(property))
+                    {
+                        continue;
+                    }
+
+                    if (nextCursorProperty != null)
+                    {
+                        // Multiple plausible next-cursor properties → ambiguous, skip.
+                        return method;
+                    }
+
+                    nextCursorProperty = property;
+                }
+
+                if (nextCursorProperty is null)
+                {
+                    return method;
+                }
+
                 return method with
                 {
                     PageableMetadata = new PageableMetadata(
-                        Style: PageableStyle.Offset,
-                        PageParameterName: pageParam.ParameterName,
+                        Style: PageableStyle.Cursor,
+                        PageParameterName: cursorParam.ParameterName,
                         ItemsPropertyName: itemsProperty.Value.Name,
-                        ItemType: itemsProperty.Value.Type.SubTypes[0].Unbox<TypeData>()),
+                        ItemType: itemType,
+                        NextCursorPropertyName: nextCursorProperty.Value.Name),
                 };
             })
             .ToImmutableArray();
@@ -1306,6 +1353,47 @@ public static class Data
                string.Equals(parameterId, "pageNumber", StringComparison.OrdinalIgnoreCase) ||
                string.Equals(parameterId, "pageIndex", StringComparison.OrdinalIgnoreCase) ||
                string.Equals(parameterId, "page_index", StringComparison.OrdinalIgnoreCase);
+    }
+
+    private static bool IsCursorPageParameter(string parameterId)
+    {
+        if (string.IsNullOrEmpty(parameterId))
+        {
+            return false;
+        }
+
+        return string.Equals(parameterId, "cursor", StringComparison.OrdinalIgnoreCase) ||
+               string.Equals(parameterId, "after", StringComparison.OrdinalIgnoreCase) ||
+               string.Equals(parameterId, "page_token", StringComparison.OrdinalIgnoreCase) ||
+               string.Equals(parameterId, "pageToken", StringComparison.OrdinalIgnoreCase) ||
+               string.Equals(parameterId, "next_page", StringComparison.OrdinalIgnoreCase) ||
+               string.Equals(parameterId, "nextPage", StringComparison.OrdinalIgnoreCase) ||
+               string.Equals(parameterId, "next_page_token", StringComparison.OrdinalIgnoreCase) ||
+               string.Equals(parameterId, "nextPageToken", StringComparison.OrdinalIgnoreCase) ||
+               string.Equals(parameterId, "pagination_token", StringComparison.OrdinalIgnoreCase) ||
+               string.Equals(parameterId, "paginationToken", StringComparison.OrdinalIgnoreCase);
+    }
+
+    private static bool IsNextCursorProperty(PropertyData property)
+    {
+        if (string.IsNullOrEmpty(property.Id) ||
+            property.Type.IsArray ||
+            !string.Equals(property.Type.CSharpTypeWithoutNullability, "string", StringComparison.Ordinal))
+        {
+            return false;
+        }
+
+        return string.Equals(property.Id, "next_cursor", StringComparison.OrdinalIgnoreCase) ||
+               string.Equals(property.Id, "nextCursor", StringComparison.OrdinalIgnoreCase) ||
+               string.Equals(property.Id, "next_page", StringComparison.OrdinalIgnoreCase) ||
+               string.Equals(property.Id, "nextPage", StringComparison.OrdinalIgnoreCase) ||
+               string.Equals(property.Id, "next_page_token", StringComparison.OrdinalIgnoreCase) ||
+               string.Equals(property.Id, "nextPageToken", StringComparison.OrdinalIgnoreCase) ||
+               string.Equals(property.Id, "next_page_cursor", StringComparison.OrdinalIgnoreCase) ||
+               string.Equals(property.Id, "nextPageCursor", StringComparison.OrdinalIgnoreCase) ||
+               string.Equals(property.Id, "after", StringComparison.OrdinalIgnoreCase) ||
+               string.Equals(property.Id, "last_id", StringComparison.OrdinalIgnoreCase) ||
+               string.Equals(property.Id, "lastId", StringComparison.OrdinalIgnoreCase);
     }
 
     /// <summary>

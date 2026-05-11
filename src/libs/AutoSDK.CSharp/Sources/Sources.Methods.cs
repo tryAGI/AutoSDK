@@ -529,9 +529,8 @@ namespace {endPoint.Settings.Namespace}
         var responseType = endPoint.SuccessResponse.Type.CSharpTypeWithoutNullability;
         var namespacePrefix = $"global::{endPoint.Settings.Namespace}";
 
-        // Auto-paging only supports the offset shape today. Cursor-style endpoints
-        // can still use AutoSDKPager.CursorAsync directly from consumer code.
-        if (metadata.Style != PageableStyle.Offset)
+        if (metadata.Style != PageableStyle.Offset &&
+            metadata.Style != PageableStyle.Cursor)
         {
             return TrimmedLine;
         }
@@ -560,11 +559,14 @@ namespace {endPoint.Settings.Namespace}
             {endPoint.RequestType.CSharpTypeWithoutNullability} request,"
             : TrimmedLine;
 
+        var pagedArgPlaceholder = metadata.Style == PageableStyle.Offset
+            ? "__page"
+            : "__cursor";
         var underlyingArgs = new List<string>();
         foreach (var p in endPoint.Parameters.Where(static x => x.Location != null))
         {
             underlyingArgs.Add(string.Equals(p.ParameterName, metadata.PageParameterName, StringComparison.Ordinal)
-                ? $"{p.ParameterName}: __page"
+                ? $"{p.ParameterName}: {pagedArgPlaceholder}"
                 : $"{p.ParameterName}: {p.ParameterName}");
         }
 
@@ -576,18 +578,35 @@ namespace {endPoint.Settings.Namespace}
         underlyingArgs.Add("cancellationToken: __ct");
         var underlyingArgList = string.Join(",\n                    ", underlyingArgs);
 
-        var body = isInterface
-            ? ";"
-            : $@"
-        {{
-            return {namespacePrefix}.AutoSDKPager.OffsetAsync<{responseType}, {itemType}>(
+        var initialParamType = metadata.Style == PageableStyle.Offset ? "int?" : "string?";
+        var initialParamDoc = metadata.Style == PageableStyle.Offset
+            ? "Initial page number to start enumerating from. Defaults to 1."
+            : "Initial cursor to start enumerating from. Defaults to null (first page).";
+
+        var pagerCall = metadata.Style == PageableStyle.Offset
+            ? $@"            return {namespacePrefix}.AutoSDKPager.OffsetAsync<{responseType}, {itemType}>(
                 fetchPage: (__page, __ct) => {endPoint.MethodName}(
                     {underlyingArgList}),
                 extractItems: static __response => __response is null
                     ? null
                     : (global::System.Collections.Generic.IEnumerable<{itemType}>?)__response.{metadata.ItemsPropertyName},
                 initialPage: {pageParameter.ParameterName} ?? 1,
-                cancellationToken: cancellationToken);
+                cancellationToken: cancellationToken);"
+            : $@"            return {namespacePrefix}.AutoSDKPager.CursorAsync<{responseType}, {itemType}>(
+                fetchPage: (__cursor, __ct) => {endPoint.MethodName}(
+                    {underlyingArgList}),
+                extractItems: static __response => __response is null
+                    ? null
+                    : (global::System.Collections.Generic.IEnumerable<{itemType}>?)__response.{metadata.ItemsPropertyName},
+                extractNextCursor: static __response => __response is null ? null : __response.{metadata.NextCursorPropertyName},
+                initialCursor: {pageParameter.ParameterName},
+                cancellationToken: cancellationToken);";
+
+        var body = isInterface
+            ? ";"
+            : $@"
+        {{
+{pagerCall}
         }}";
 
         return $@"
@@ -595,11 +614,11 @@ namespace {endPoint.Settings.Namespace}
 {fixedParameters.Select(x => $@"
         {x.Summary.ToXmlDocumentationForParam(x.ParameterName, level: 8)}").Inject()}{(hasRequestBody ? @"
         /// <param name=""request""></param>" : TrimmedLine)}
-        /// <param name=""{pageParameter.ParameterName}"">Initial page number to start enumerating from. Defaults to 1.</param>
+        /// <param name=""{pageParameter.ParameterName}"">{initialParamDoc}</param>
         /// <param name=""cancellationToken""></param>
         {(isInterface ? "" : "public ")}global::System.Collections.Generic.IAsyncEnumerable<{itemType}> {methodName}(
 {fixedRequiredDecls}{requestBodyDecl}{fixedOptionalDecls}
-            int? {pageParameter.ParameterName} = null,
+            {initialParamType} {pageParameter.ParameterName} = null,
             global::System.Threading.CancellationToken cancellationToken = default){body}
 ".RemoveBlankLinesWhereOnlyWhitespaces();
     }
