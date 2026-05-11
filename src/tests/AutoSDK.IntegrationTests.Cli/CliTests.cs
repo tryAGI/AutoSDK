@@ -1873,15 +1873,15 @@ paths:
                         Require(request.Id == "support", "request id");
                         Require(request.Version == "v1", "request version");
 
-                        return Task.FromResult(new PromptTemplate(
+                        return Task.FromResult(new AutoSDKPromptTemplate(
                             id: request.Id,
                             version: request.Version,
                             environment: request.Environment,
                             body: "Hello {{name}}, {{>signature}} v" + resolverCalls,
                             messages:
                             [
-                                new PromptTemplateMessage("system", "You are {{role}}."),
-                                new PromptTemplateMessage("user", "Question: {{question}} {{>signature}}"),
+                                new AutoSDKPromptTemplateMessage("system", "You are {{role}}."),
+                                new AutoSDKPromptTemplateMessage("user", "Question: {{question}} {{>signature}}"),
                             ],
                             variables: new Dictionary<string, string>(StringComparer.Ordinal)
                             {
@@ -1945,7 +1945,7 @@ paths:
                         partials: partials,
                         refresh: true);
                 }
-                catch (PromptTemplateRenderException ex)
+                catch (AutoSDKPromptTemplateRenderException ex)
                 {
                     missingWasReported = ex.MissingVariables.Contains("name");
                 }
