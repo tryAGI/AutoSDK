@@ -218,6 +218,8 @@ namespace G
                     parentCommentId: parentCommentId!,
                     request: request);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

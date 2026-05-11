@@ -178,6 +178,8 @@ namespace G
                     clusterId: clusterId!,
                     nodePoolName: nodePoolName!);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

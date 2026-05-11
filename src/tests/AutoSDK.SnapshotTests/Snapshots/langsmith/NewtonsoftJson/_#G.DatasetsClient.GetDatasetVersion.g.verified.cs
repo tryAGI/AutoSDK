@@ -204,6 +204,8 @@ namespace G
                     asOf: asOf,
                     tag: tag);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

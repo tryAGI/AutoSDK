@@ -163,6 +163,8 @@ namespace G
                     limit: limit,
                     cursor: cursor);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

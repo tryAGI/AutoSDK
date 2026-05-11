@@ -157,6 +157,8 @@ namespace G
                     corpusId: corpusId!,
                     sourceId: sourceId!);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

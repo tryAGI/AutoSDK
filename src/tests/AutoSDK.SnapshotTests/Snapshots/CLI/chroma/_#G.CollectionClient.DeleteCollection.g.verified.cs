@@ -174,6 +174,8 @@ namespace G
                     database: database!,
                     collectionId: collectionId!);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

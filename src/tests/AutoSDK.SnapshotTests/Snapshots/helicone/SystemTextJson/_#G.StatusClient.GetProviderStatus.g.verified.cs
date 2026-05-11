@@ -175,6 +175,8 @@ namespace G
                     provider: provider!,
                     timeFrame: timeFrame!);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

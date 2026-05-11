@@ -194,6 +194,8 @@ namespace G
                     vectorStoreIdentifier: vectorStoreIdentifier!,
                     fileId: fileId!);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

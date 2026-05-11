@@ -184,6 +184,8 @@ namespace G
                     chatId: chatId!,
                     ratingId: ratingId!);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

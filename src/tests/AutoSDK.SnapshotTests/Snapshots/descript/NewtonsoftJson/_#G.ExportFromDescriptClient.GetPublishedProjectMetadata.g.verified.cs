@@ -156,6 +156,8 @@ namespace G
                     httpRequestMessage: __httpRequest,
                     publishedProjectSlug: publishedProjectSlug!);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

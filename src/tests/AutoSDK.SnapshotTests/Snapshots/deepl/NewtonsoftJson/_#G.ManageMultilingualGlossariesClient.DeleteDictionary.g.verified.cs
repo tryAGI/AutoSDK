@@ -264,6 +264,8 @@ namespace G
                     sourceLang: sourceLang!,
                     targetLang: targetLang!);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

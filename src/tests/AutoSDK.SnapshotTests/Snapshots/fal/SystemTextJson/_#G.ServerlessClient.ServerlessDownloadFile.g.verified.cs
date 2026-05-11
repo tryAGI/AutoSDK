@@ -156,6 +156,8 @@ namespace G
                     httpRequestMessage: __httpRequest,
                     file: file!);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 
@@ -627,6 +629,8 @@ namespace G
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
                     file: file!);
+
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
 
                 return __httpRequest;
             }

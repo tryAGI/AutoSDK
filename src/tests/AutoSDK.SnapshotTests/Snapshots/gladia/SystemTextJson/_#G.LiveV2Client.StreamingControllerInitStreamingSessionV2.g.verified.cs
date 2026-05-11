@@ -171,6 +171,8 @@ namespace G
                     region: region,
                     request: request);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

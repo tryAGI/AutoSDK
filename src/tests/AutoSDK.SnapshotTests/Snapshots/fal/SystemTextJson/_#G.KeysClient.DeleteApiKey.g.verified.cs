@@ -202,6 +202,8 @@ namespace G
                     keyId: keyId!,
                     idempotencyKey: idempotencyKey);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

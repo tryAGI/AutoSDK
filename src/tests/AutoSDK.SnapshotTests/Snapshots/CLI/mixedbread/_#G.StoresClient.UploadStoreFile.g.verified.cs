@@ -262,6 +262,8 @@ namespace G
                     storeIdentifier: storeIdentifier!,
                     request: request);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 
@@ -796,6 +798,8 @@ namespace G
                     storeIdentifier: storeIdentifier!,
                     request: request);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 
@@ -1275,6 +1279,8 @@ namespace G
                     httpRequestMessage: __httpRequest,
                     storeIdentifier: storeIdentifier!,
                     request: request);
+
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
 
                 return __httpRequest;
             }

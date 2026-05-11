@@ -131,6 +131,8 @@ namespace G
                     httpRequestMessage: __httpRequest,
                     taskId: taskId!);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

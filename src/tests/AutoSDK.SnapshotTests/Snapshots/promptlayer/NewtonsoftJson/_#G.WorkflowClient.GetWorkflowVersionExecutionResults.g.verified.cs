@@ -165,6 +165,8 @@ namespace G
                     workflowVersionExecutionId: workflowVersionExecutionId!,
                     returnAllOutputs: returnAllOutputs);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

@@ -302,6 +302,8 @@ namespace G
                     orderBy: orderBy,
                     orderDirection: orderDirection);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

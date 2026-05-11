@@ -187,6 +187,8 @@ namespace G
                     startedAt: startedAt,
                     userId: userId);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

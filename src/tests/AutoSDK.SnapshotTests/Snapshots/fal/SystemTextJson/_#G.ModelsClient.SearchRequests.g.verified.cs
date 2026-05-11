@@ -327,6 +327,8 @@ namespace G
                     onlyApiRequests: onlyApiRequests,
                     minSimilarity: minSimilarity);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

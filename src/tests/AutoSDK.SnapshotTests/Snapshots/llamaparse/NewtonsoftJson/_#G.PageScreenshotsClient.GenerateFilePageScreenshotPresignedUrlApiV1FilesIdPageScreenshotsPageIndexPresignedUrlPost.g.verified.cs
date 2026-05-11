@@ -206,6 +206,8 @@ namespace G
                     organizationId: organizationId,
                     session: session);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

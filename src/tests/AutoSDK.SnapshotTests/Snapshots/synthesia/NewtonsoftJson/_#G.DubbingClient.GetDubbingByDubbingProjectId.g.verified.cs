@@ -168,6 +168,8 @@ namespace G
                     dubbingProjectId: dubbingProjectId!,
                     targetLanguages: targetLanguages);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

@@ -192,6 +192,8 @@ namespace G
                     collectionId: collectionId!,
                     readLevel: readLevel);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

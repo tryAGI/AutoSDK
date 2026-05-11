@@ -251,6 +251,8 @@ namespace G
                     limit: limit,
                     orderBy: orderBy);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

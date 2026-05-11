@@ -237,6 +237,8 @@ namespace G
                     xLlmGatewayHeaders: xLlmGatewayHeaders,
                     request: request);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

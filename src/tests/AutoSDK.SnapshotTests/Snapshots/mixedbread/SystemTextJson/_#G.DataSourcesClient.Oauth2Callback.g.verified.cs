@@ -243,6 +243,8 @@ namespace G
                     error: error,
                     errorDescription: errorDescription);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

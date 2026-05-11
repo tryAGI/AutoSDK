@@ -249,6 +249,8 @@ namespace G
                     feedbackType: feedbackType,
                     hardDelete: hardDelete);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

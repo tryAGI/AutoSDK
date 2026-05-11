@@ -170,6 +170,8 @@ namespace G
                     moderatorId: moderatorId!,
                     messageId: messageId);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

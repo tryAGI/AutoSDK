@@ -165,6 +165,8 @@ namespace G
                     httpRequestMessage: __httpRequest,
                     volumeID: volumeID!);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

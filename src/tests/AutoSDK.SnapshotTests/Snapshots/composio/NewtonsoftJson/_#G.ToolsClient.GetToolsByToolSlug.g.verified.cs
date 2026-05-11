@@ -216,6 +216,8 @@ namespace G
                     version: version,
                     toolkitVersions: toolkitVersions);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

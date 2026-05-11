@@ -211,6 +211,8 @@ namespace G
                     nanoid: nanoid!,
                     status: status!);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

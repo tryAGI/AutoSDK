@@ -172,6 +172,8 @@ namespace G
                     evaluatorId: evaluatorId!,
                     onlineEvaluatorId: onlineEvaluatorId!);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

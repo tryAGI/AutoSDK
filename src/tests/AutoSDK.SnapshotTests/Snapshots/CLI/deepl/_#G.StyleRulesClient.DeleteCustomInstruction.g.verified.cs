@@ -165,6 +165,8 @@ namespace G
                     styleId: styleId!,
                     instructionId: instructionId!);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

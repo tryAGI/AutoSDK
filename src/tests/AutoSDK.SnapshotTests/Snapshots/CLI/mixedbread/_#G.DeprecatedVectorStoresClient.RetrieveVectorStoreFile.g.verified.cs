@@ -212,6 +212,8 @@ namespace G
                     fileId: fileId!,
                     returnChunks: returnChunks);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

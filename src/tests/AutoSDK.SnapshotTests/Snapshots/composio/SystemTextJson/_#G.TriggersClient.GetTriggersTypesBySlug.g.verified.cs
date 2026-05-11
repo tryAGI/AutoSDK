@@ -212,6 +212,8 @@ namespace G
                     slug: slug!,
                     toolkitVersions: toolkitVersions);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

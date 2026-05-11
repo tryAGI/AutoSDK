@@ -215,6 +215,8 @@ namespace G
                     offset: offset,
                     emails: emails);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

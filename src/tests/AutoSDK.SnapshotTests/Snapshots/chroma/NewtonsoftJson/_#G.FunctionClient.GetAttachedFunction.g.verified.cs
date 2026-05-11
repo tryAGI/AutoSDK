@@ -177,6 +177,8 @@ namespace G
                     collectionId: collectionId!,
                     functionName: functionName!);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

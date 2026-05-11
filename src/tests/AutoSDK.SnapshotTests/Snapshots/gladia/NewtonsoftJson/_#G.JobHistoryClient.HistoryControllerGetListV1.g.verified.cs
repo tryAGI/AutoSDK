@@ -253,6 +253,8 @@ namespace G
                     customMetadata: customMetadata,
                     kind: kind);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

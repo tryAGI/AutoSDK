@@ -183,6 +183,8 @@ namespace G
                     httpRequestMessage: __httpRequest,
                     tagValueId: tagValueId);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

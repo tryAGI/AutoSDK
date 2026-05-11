@@ -293,6 +293,8 @@ namespace G
                     filterAfter: filterAfter,
                     eventType: eventType!);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

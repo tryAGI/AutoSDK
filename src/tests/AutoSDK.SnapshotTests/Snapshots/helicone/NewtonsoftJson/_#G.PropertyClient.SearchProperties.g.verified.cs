@@ -183,6 +183,8 @@ namespace G
                     propertyKey: propertyKey!,
                     request: request);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

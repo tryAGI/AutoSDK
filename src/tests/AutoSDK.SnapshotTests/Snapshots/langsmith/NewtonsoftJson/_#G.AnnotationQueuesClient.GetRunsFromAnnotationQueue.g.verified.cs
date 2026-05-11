@@ -230,6 +230,8 @@ namespace G
                     archived: archived,
                     includeStats: includeStats);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

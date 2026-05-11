@@ -172,6 +172,8 @@ namespace G
                     experimentId: experimentId!,
                     promptVersionId: promptVersionId!);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

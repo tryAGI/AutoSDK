@@ -172,6 +172,8 @@ namespace G
                     moderatorId: moderatorId!,
                     userId: userId!);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

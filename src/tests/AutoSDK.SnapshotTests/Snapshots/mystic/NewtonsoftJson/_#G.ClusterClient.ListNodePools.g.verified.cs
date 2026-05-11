@@ -178,6 +178,8 @@ namespace G
                     httpRequestMessage: __httpRequest,
                     clusterId: clusterId!);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

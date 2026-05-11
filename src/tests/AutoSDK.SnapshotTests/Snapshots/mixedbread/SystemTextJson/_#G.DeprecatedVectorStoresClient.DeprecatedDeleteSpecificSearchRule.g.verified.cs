@@ -214,6 +214,8 @@ namespace G
                     ruleId: ruleId!,
                     request: request);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

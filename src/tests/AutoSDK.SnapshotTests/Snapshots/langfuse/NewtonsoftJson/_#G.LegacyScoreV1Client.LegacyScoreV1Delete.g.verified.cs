@@ -141,6 +141,8 @@ namespace G
                     httpRequestMessage: __httpRequest,
                     scoreId: scoreId!);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

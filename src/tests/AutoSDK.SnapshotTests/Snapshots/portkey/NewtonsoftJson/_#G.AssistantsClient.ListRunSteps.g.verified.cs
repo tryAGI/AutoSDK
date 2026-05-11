@@ -332,6 +332,8 @@ namespace G
                     after: after,
                     before: before);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

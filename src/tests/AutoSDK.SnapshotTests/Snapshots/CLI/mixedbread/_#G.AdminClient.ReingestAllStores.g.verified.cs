@@ -222,6 +222,8 @@ namespace G
                     statuses: statuses,
                     billable: billable);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

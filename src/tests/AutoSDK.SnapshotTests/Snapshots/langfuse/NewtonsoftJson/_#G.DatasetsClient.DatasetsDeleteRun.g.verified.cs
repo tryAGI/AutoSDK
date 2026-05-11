@@ -157,6 +157,8 @@ namespace G
                     datasetName: datasetName!,
                     runName: runName!);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

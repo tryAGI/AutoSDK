@@ -172,6 +172,8 @@ namespace G
                     requestId: requestId!,
                     assetId: assetId!);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

@@ -262,6 +262,8 @@ namespace G
                     pageToken: pageToken,
                     session: session);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

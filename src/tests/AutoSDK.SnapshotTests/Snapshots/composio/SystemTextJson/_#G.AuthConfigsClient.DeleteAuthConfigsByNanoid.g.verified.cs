@@ -198,6 +198,8 @@ namespace G
                     httpRequestMessage: __httpRequest,
                     nanoid: nanoid!);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

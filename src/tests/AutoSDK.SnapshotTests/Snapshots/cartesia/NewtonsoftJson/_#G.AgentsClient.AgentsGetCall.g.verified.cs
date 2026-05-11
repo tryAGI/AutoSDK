@@ -172,6 +172,8 @@ namespace G
                     cartesiaVersion: cartesiaVersion!,
                     callId: callId!);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

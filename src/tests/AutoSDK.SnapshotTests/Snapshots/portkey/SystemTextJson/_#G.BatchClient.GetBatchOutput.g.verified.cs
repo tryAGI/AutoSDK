@@ -267,6 +267,8 @@ namespace G
                     httpRequestMessage: __httpRequest,
                     batchId: batchId!);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 
@@ -584,6 +586,8 @@ namespace G
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
                     batchId: batchId!);
+
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
 
                 return __httpRequest;
             }

@@ -324,6 +324,8 @@ namespace G
                     select: select,
                     filter: filter);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

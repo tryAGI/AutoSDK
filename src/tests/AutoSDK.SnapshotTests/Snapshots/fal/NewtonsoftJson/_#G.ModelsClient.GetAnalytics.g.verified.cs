@@ -372,6 +372,8 @@ namespace G
                     endpointId: endpointId!,
                     expand: expand);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

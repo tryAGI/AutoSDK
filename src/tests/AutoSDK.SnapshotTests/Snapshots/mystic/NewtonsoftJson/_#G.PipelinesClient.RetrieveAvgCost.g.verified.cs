@@ -200,6 +200,8 @@ namespace G
                     pointer: pointer,
                     pipelineIdOrPointer: pipelineIdOrPointer);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

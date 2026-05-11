@@ -202,6 +202,8 @@ namespace G
                     startTime: startTime,
                     endTime: endTime);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

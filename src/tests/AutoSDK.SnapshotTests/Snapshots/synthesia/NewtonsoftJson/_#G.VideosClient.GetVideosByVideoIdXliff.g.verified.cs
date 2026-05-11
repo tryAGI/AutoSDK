@@ -177,6 +177,8 @@ namespace G
                     videoVersion: videoVersion,
                     xliffVersion: xliffVersion);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

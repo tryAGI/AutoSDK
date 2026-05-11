@@ -175,6 +175,8 @@ namespace G
                     xUserApiKey: xUserApiKey!,
                     xOrgId: xOrgId!);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

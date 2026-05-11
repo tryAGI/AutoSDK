@@ -183,6 +183,8 @@ namespace G
                     userDefinedId: userDefinedId!,
                     request: request);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

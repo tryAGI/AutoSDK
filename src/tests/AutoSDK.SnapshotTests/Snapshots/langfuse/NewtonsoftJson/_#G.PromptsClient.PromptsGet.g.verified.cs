@@ -180,6 +180,8 @@ namespace G
                     label: label,
                     resolve: resolve);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

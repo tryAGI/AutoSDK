@@ -183,6 +183,8 @@ namespace G
                     username: username!,
                     workflowName: workflowName!);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

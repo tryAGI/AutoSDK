@@ -337,6 +337,8 @@ namespace G
                     sortField: sortField,
                     sortDirection: sortDirection);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

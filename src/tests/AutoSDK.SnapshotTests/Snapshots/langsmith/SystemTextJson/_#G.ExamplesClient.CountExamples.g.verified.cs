@@ -251,6 +251,8 @@ namespace G
                     dataset: dataset,
                     filter: filter);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

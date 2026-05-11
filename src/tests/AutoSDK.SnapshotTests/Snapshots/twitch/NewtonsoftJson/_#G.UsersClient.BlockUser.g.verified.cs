@@ -185,6 +185,8 @@ namespace G
                     sourceContext: sourceContext,
                     reason: reason);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

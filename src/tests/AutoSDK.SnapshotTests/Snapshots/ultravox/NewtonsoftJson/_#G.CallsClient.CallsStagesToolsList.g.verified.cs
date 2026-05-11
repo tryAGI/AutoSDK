@@ -157,6 +157,8 @@ namespace G
                     callId: callId!,
                     callStageId: callStageId!);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

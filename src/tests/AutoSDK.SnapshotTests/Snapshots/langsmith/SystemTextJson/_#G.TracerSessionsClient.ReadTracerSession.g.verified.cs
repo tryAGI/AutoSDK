@@ -213,6 +213,8 @@ namespace G
                     includeStats: includeStats,
                     accept: accept);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

@@ -176,6 +176,8 @@ namespace G
                     templateID: templateID!,
                     buildID: buildID!);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

@@ -149,6 +149,8 @@ namespace G
                     taskId: taskId!,
                     wait: wait);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

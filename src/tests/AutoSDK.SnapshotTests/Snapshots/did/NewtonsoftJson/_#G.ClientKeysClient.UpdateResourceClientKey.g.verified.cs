@@ -188,6 +188,8 @@ namespace G
                     clientKey: clientKey!,
                     request: request);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

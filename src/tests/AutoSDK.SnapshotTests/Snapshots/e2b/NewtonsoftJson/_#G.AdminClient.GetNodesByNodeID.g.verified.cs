@@ -160,6 +160,8 @@ namespace G
                     nodeID: nodeID!,
                     clusterID: clusterID);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

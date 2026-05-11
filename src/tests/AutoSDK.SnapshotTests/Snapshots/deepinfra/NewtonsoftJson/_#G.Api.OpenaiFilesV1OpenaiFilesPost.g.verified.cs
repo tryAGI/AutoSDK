@@ -198,6 +198,8 @@ namespace G
                     xiApiKey: xiApiKey,
                     request: request);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 
@@ -711,6 +713,8 @@ namespace G
                     xiApiKey: xiApiKey,
                     request: request);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 
@@ -1186,6 +1190,8 @@ namespace G
                     httpRequestMessage: __httpRequest,
                     xiApiKey: xiApiKey,
                     request: request);
+
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
 
                 return __httpRequest;
             }

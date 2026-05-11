@@ -196,6 +196,8 @@ namespace G
                     endDate: endDate!,
                     groupBy: groupBy);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

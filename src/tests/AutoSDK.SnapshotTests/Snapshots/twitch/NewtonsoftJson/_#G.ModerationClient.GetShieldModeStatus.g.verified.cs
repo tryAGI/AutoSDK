@@ -169,6 +169,8 @@ namespace G
                     broadcasterId: broadcasterId!,
                     moderatorId: moderatorId!);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

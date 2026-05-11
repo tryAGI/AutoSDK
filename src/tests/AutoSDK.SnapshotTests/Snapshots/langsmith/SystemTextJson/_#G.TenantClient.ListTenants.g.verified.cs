@@ -171,6 +171,8 @@ namespace G
                     skipCreate: skipCreate,
                     includeDeleted: includeDeleted);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

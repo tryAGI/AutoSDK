@@ -163,6 +163,8 @@ namespace G
                     httpRequestMessage: __httpRequest,
                     providerKeyId: providerKeyId!);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

@@ -163,6 +163,8 @@ namespace G
                     label: label,
                     version: version);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

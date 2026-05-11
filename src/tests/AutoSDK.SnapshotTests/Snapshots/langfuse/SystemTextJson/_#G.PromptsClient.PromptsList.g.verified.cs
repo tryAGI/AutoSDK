@@ -211,6 +211,8 @@ namespace G
                     fromUpdatedAt: fromUpdatedAt,
                     toUpdatedAt: toUpdatedAt);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

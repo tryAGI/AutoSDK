@@ -214,6 +214,8 @@ namespace G
                     end: end,
                     metric: metric!);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

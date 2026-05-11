@@ -141,6 +141,8 @@ namespace G
                     httpRequestMessage: __httpRequest,
                     accessTokenID: accessTokenID!);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

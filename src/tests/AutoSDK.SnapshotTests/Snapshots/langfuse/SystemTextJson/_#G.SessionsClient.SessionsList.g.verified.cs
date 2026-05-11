@@ -191,6 +191,8 @@ namespace G
                     toTimestamp: toTimestamp,
                     environment: environment);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

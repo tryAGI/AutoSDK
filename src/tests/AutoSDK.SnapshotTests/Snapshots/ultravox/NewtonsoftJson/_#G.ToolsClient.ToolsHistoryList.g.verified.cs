@@ -170,6 +170,8 @@ namespace G
                     pageSize: pageSize,
                     toolId: toolId!);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

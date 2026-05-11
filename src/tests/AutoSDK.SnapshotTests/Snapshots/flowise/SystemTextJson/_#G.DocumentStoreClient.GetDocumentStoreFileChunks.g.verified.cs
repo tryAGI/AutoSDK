@@ -168,6 +168,8 @@ namespace G
                     loaderId: loaderId!,
                     pageNo: pageNo!);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

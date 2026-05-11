@@ -204,6 +204,8 @@ namespace G
                     fromVersion: fromVersion!,
                     toVersion: toVersion!);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

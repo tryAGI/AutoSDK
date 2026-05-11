@@ -163,6 +163,8 @@ namespace G
                     loraModelName: loraModelName!,
                     xiApiKey: xiApiKey);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

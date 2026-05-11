@@ -239,6 +239,8 @@ namespace G
                     session: session,
                     request: request);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 
@@ -759,6 +761,8 @@ namespace G
                     session: session,
                     request: request);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 
@@ -1237,6 +1241,8 @@ namespace G
                     pipelineId: pipelineId!,
                     session: session,
                     request: request);
+
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
 
                 return __httpRequest;
             }

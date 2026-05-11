@@ -227,6 +227,8 @@ namespace G
                     createdAfter: createdAfter,
                     createdBefore: createdBefore);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

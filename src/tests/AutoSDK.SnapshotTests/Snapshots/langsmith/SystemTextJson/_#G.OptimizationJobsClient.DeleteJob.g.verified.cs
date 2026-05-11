@@ -200,6 +200,8 @@ namespace G
                     owner: owner!,
                     repo: repo!);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

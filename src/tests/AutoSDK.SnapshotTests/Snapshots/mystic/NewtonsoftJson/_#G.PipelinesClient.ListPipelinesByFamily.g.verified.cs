@@ -290,6 +290,8 @@ namespace G
                     nodePool: nodePool,
                     createdAt: createdAt);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

@@ -197,6 +197,8 @@ namespace G
                     type: type!,
                     colorScheme: colorScheme);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

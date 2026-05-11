@@ -172,6 +172,8 @@ namespace G
                     status: status,
                     xiApiKey: xiApiKey);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

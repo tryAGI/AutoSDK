@@ -203,6 +203,8 @@ namespace G
                     limit: limit,
                     nextToken: nextToken);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

@@ -165,6 +165,8 @@ namespace G
                     tenant: tenant!,
                     database: database!);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

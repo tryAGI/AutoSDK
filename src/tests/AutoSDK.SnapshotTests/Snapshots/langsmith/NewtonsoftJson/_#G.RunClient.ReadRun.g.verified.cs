@@ -232,6 +232,8 @@ namespace G
                     excludeS3StoredAttributes: excludeS3StoredAttributes,
                     excludeSerialized: excludeSerialized);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

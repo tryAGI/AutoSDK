@@ -175,6 +175,8 @@ namespace G
                     fromBroadcasterId: fromBroadcasterId,
                     toBroadcasterId: toBroadcasterId);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

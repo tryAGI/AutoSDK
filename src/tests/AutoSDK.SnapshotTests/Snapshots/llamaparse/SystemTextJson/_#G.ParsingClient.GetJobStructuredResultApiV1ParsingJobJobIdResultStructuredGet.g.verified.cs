@@ -197,6 +197,8 @@ namespace G
                     projectId: projectId,
                     session: session);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

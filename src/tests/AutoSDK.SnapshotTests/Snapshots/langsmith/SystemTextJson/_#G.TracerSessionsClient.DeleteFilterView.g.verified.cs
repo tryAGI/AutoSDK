@@ -191,6 +191,8 @@ namespace G
                     sessionId: sessionId!,
                     viewId: viewId!);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

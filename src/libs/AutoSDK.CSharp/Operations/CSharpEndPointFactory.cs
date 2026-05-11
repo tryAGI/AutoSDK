@@ -248,7 +248,86 @@ public static class CSharpEndPointFactory
             PollingOperations: pollingOperations,
             Servers: servers,
             HasServerOverride: operation.HasServerOverride,
-            HasLocationHeaderOnSuccess: responses.Any(static r => r.Is2XX && r.HasLocationHeader));
+            HasLocationHeaderOnSuccess: responses.Any(static r => r.Is2XX && r.HasLocationHeader),
+            // An operation's `security` block overrides the document-level security entirely
+            // when its content differs from the document default. We only flag the override
+            // case to avoid stamping the AuthorizationOverride marker on every operation in
+            // specs that redundantly declare the global security per-op (e.g. specs with no
+            // global `security` where each operation lists the same single scheme). The
+            // marker signals to consumer DelegatingHandlers that the auth this op resolved
+            // is NOT the account default and should not be replaced by rotation logic.
+            HasCallScopedSecurity: HasCallScopedSecurityOverride(operation));
+    }
+
+    private static bool HasCallScopedSecurityOverride(OperationContext operation)
+    {
+        var operationSecurity = operation.Operation.Security;
+        if (operationSecurity == null)
+        {
+            return false;
+        }
+
+        var globalSecurity = operation.GlobalSecurityRequirements;
+        if (SecurityRequirementsEqual(operationSecurity, globalSecurity))
+        {
+            return false;
+        }
+
+        // Empty operation security disables auth for this op — definitionally not
+        // call-scoped, since "no auth" can't be a per-call override.
+        var hasAtLeastOneRequirement = false;
+        foreach (var requirement in operationSecurity)
+        {
+            if (requirement.Count > 0)
+            {
+                hasAtLeastOneRequirement = true;
+                break;
+            }
+        }
+
+        return hasAtLeastOneRequirement;
+    }
+
+    private static bool SecurityRequirementsEqual(
+        IList<Microsoft.OpenApi.OpenApiSecurityRequirement> first,
+        IList<Microsoft.OpenApi.OpenApiSecurityRequirement> second)
+    {
+        if (ReferenceEquals(first, second))
+        {
+            return true;
+        }
+
+        if (first.Count != second.Count)
+        {
+            return false;
+        }
+
+        var firstKeys = SerializeSecurityRequirementSet(first);
+        var secondKeys = SerializeSecurityRequirementSet(second);
+        return firstKeys.SetEquals(secondKeys);
+    }
+
+    private static HashSet<string> SerializeSecurityRequirementSet(
+        IEnumerable<Microsoft.OpenApi.OpenApiSecurityRequirement> requirements)
+    {
+        var serialized = new HashSet<string>(StringComparer.Ordinal);
+        foreach (var requirement in requirements)
+        {
+            var entries = requirement
+                .Select(pair =>
+                {
+                    var schemeKey = pair.Key.Reference?.Id
+                                    ?? pair.Key.Name
+                                    ?? pair.Key.Scheme
+                                    ?? string.Empty;
+                    var scopes = pair.Value is null ? string.Empty : string.Join(",", pair.Value);
+                    return $"{schemeKey}:{scopes}";
+                })
+                .OrderBy(static x => x, StringComparer.Ordinal);
+            serialized.Add(string.Join("|", entries));
+        }
+
+        return serialized;
     }
 
     private static void DeduplicateMethodParameterNames(List<MethodParameter> parameters)

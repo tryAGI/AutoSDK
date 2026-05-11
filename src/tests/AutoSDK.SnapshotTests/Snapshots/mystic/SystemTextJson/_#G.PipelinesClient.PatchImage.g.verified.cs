@@ -278,6 +278,8 @@ namespace G
                     pipelineIdOrPointer: pipelineIdOrPointer,
                     request: request);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 
@@ -819,6 +821,8 @@ namespace G
                     pipelineIdOrPointer: pipelineIdOrPointer,
                     request: request);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 
@@ -1314,6 +1318,8 @@ namespace G
                     pointer: pointer,
                     pipelineIdOrPointer: pipelineIdOrPointer,
                     request: request);
+
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
 
                 return __httpRequest;
             }

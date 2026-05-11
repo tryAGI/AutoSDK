@@ -266,6 +266,8 @@ namespace G
                     statuses: statuses,
                     q: q);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

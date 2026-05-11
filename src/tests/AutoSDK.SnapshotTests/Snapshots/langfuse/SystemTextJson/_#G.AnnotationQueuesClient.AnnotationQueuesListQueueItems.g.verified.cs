@@ -180,6 +180,8 @@ namespace G
                     page: page,
                     limit: limit);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

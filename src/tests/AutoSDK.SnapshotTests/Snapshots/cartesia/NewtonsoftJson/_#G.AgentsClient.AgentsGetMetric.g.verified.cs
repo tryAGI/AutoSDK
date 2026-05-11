@@ -174,6 +174,8 @@ namespace G
                     cartesiaVersion: cartesiaVersion!,
                     metricId: metricId!);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

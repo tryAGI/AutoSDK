@@ -207,6 +207,8 @@ namespace G
                     endingBefore: endingBefore!,
                     onCurrentPlan: onCurrentPlan);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

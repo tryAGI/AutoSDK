@@ -219,6 +219,8 @@ namespace G
                     startDate: startDate,
                     endDate: endDate);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 
@@ -638,6 +640,8 @@ namespace G
                     callId: callId,
                     startDate: startDate,
                     endDate: endDate);
+
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
 
                 return __httpRequest;
             }

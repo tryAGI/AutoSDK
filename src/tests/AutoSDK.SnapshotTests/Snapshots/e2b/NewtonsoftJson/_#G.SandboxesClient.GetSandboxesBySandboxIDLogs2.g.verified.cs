@@ -250,6 +250,8 @@ namespace G
                     level: level,
                     search: search);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

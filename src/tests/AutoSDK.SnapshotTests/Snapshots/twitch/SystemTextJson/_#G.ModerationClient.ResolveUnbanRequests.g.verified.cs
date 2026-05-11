@@ -199,6 +199,8 @@ namespace G
                     status: status!,
                     resolutionText: resolutionText);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

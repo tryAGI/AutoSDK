@@ -241,6 +241,8 @@ namespace G
                     toDate: toDate,
                     voiceId: voiceId);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

@@ -194,6 +194,8 @@ namespace G
                     feedbackId: feedbackId!,
                     includeUserNames: includeUserNames);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

@@ -190,6 +190,8 @@ namespace G
                     vacationEndTime: vacationEndTime,
                     timezone: timezone);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

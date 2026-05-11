@@ -227,6 +227,8 @@ namespace G
                     search: search,
                     usedEndpointIds: usedEndpointIds);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

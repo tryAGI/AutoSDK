@@ -201,6 +201,8 @@ namespace G
                     templateID: templateID!,
                     hash: hash!);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

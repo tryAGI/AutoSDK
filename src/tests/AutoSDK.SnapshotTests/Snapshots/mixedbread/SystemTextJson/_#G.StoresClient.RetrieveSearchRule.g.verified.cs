@@ -202,6 +202,8 @@ namespace G
                     storeIdentifier: storeIdentifier!,
                     ruleId: ruleId!);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

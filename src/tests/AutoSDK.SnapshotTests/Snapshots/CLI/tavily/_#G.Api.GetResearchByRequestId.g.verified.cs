@@ -162,6 +162,8 @@ namespace G
                     httpRequestMessage: __httpRequest,
                     requestId: requestId!);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

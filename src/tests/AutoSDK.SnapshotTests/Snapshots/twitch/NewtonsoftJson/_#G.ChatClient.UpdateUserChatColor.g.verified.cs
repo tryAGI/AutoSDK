@@ -179,6 +179,8 @@ namespace G
                     userId: userId!,
                     color: color!);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

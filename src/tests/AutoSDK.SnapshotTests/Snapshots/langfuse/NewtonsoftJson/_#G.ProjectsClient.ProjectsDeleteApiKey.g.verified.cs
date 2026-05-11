@@ -157,6 +157,8 @@ namespace G
                     projectId: projectId!,
                     apiKeyId: apiKeyId!);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

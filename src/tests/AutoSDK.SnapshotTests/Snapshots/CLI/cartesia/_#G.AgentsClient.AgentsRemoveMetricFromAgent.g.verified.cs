@@ -168,6 +168,8 @@ namespace G
                     agentId: agentId!,
                     metricId: metricId!);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

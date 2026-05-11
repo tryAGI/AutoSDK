@@ -176,6 +176,8 @@ namespace G
                     toBroadcasterId: toBroadcasterId!,
                     moderatorId: moderatorId!);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

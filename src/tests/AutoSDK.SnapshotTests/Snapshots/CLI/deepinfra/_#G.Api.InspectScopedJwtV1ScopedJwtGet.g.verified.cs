@@ -166,6 +166,8 @@ namespace G
                     jwtoken: jwtoken!,
                     xiApiKey: xiApiKey);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

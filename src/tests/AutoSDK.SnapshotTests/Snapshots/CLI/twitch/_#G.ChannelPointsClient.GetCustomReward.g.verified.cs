@@ -179,6 +179,8 @@ namespace G
                     id: id,
                     onlyManageableRewards: onlyManageableRewards);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

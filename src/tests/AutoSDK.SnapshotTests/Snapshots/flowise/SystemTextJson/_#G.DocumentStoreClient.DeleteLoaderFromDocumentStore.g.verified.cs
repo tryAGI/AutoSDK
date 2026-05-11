@@ -152,6 +152,8 @@ namespace G
                     storeId: storeId!,
                     loaderId: loaderId!);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

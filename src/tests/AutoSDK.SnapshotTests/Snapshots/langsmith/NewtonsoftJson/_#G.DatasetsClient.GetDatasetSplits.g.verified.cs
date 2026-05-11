@@ -198,6 +198,8 @@ namespace G
                     datasetId: datasetId!,
                     asOf: asOf);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

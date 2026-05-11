@@ -168,6 +168,8 @@ namespace G
                     checkFreeCredit: checkFreeCredit,
                     userId: userId);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

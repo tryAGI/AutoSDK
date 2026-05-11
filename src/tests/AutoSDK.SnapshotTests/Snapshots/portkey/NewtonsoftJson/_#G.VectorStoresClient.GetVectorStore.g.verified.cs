@@ -252,6 +252,8 @@ namespace G
                     httpRequestMessage: __httpRequest,
                     vectorStoreId: vectorStoreId!);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

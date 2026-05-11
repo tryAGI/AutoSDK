@@ -189,6 +189,8 @@ namespace G
                     queueId: queueId!,
                     index: index!);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

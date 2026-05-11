@@ -167,6 +167,8 @@ namespace G
                     extensionId: extensionId!,
                     extensionVersion: extensionVersion);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

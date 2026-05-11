@@ -175,6 +175,8 @@ namespace G
                     httpRequestMessage: __httpRequest,
                     sandboxIds: sandboxIds!);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

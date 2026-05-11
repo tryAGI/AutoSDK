@@ -177,6 +177,8 @@ namespace G
                     glossaryId: glossaryId!,
                     accept: accept);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

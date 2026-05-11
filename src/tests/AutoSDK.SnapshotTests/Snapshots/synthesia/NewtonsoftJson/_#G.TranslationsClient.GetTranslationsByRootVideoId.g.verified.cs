@@ -150,6 +150,8 @@ namespace G
                     httpRequestMessage: __httpRequest,
                     rootVideoId: rootVideoId!);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

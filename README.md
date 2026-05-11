@@ -117,6 +117,8 @@ protected override Task<HttpResponseMessage> SendAsync(
 
 The helper uses `HttpRequestMessage.Options` on .NET 5+ and falls back to the legacy `Properties` bag on older targets, so a single SDK build works for both. Hand-written SDK extensions that set a non-default `Authorization` header (e.g. a session-scoped bearer returned by an upstream poll) should call `AutoSDKHttpRequestOptions.StampAuthorizationOverride(request)` so downstream rotation handlers know to skip the overwrite.
 
+Operations whose OpenAPI `security` block overrides the document-level scheme — e.g. an endpoint that needs a session-scoped bearer distinct from the client-level account key — get the marker stamped automatically inside the generated method's request builder, so SDK authors don't have to remember the helper call for every override op. The marker is stamped after the `Prepare<Method>Request` partial hook runs, so authors customizing the request via `PrepareRequest` see the same final state a `DelegatingHandler` would.
+
 ## Cloud Request Signing Helpers
 Cloud-hosted APIs often describe only bearer or API-key auth in OpenAPI even when official clients require request signing. Enable `--generate-cloud-signing-helpers` in the CLI, or set `<AutoSDK_GenerateCloudSigningHelpers>true</AutoSDK_GenerateCloudSigningHelpers>` for the source generator, to emit a `CloudRequestSigner` helper factory.
 

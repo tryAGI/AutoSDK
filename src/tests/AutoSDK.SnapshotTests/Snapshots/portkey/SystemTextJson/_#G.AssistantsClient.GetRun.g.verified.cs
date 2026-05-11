@@ -276,6 +276,8 @@ namespace G
                     threadId: threadId!,
                     runId: runId!);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

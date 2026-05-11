@@ -244,6 +244,8 @@ namespace G
                     isView: isView,
                     includeModel: includeModel);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

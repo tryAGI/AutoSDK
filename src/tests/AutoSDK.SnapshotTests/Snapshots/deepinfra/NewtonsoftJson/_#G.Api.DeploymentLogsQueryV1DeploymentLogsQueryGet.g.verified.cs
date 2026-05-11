@@ -240,6 +240,8 @@ namespace G
                     limit: limit,
                     xiApiKey: xiApiKey);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

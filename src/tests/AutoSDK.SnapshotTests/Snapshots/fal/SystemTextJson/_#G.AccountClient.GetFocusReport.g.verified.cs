@@ -291,6 +291,8 @@ namespace G
                     timeframe: timeframe,
                     boundToTimeframe: boundToTimeframe);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

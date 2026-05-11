@@ -1220,7 +1220,9 @@ namespace {endPoint.Settings.Namespace}
                     .Select(x => $@",
                     {x.ParameterName}: {GeneratePrepareRequestParameterArgument(x)}").Inject(emptyValue: "")}{(string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType) ? "" : @",
                     request: request")});
-
+{(endPoint.HasCallScopedSecurity ? $@"
+                global::{endPoint.Settings.Namespace}.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+" : "")}
                 return __httpRequest;
             }}
 

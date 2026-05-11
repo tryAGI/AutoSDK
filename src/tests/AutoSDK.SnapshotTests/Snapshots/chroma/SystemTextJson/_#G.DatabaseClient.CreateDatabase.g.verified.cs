@@ -176,6 +176,8 @@ namespace G
                     tenant: tenant!,
                     request: request);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

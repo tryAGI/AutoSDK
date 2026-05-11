@@ -249,6 +249,8 @@ namespace G
                     fileId: fileId!,
                     request: request);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 
@@ -764,6 +766,8 @@ namespace G
                     fileId: fileId!,
                     request: request);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 
@@ -1229,6 +1233,8 @@ namespace G
                     httpRequestMessage: __httpRequest,
                     fileId: fileId!,
                     request: request);
+
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
 
                 return __httpRequest;
             }

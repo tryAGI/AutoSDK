@@ -199,6 +199,8 @@ namespace G
                     end: end!,
                     pipelineId: pipelineId);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

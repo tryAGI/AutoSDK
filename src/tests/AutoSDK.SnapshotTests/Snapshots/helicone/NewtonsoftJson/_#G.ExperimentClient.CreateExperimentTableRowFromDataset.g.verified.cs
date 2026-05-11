@@ -172,6 +172,8 @@ namespace G
                     experimentId: experimentId!,
                     datasetId: datasetId!);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

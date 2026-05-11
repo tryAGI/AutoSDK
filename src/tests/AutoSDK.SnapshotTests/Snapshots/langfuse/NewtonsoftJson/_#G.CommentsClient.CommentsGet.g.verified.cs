@@ -191,6 +191,8 @@ namespace G
                     objectId: objectId,
                     authorUserId: authorUserId);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

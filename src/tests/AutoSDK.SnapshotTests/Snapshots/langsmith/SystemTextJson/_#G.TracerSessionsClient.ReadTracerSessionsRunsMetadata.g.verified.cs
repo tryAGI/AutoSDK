@@ -232,6 +232,8 @@ namespace G
                     k: k,
                     rootRunsOnly: rootRunsOnly);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

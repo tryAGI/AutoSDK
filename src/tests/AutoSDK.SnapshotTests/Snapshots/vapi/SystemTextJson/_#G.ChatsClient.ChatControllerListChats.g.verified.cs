@@ -315,6 +315,8 @@ namespace G
                     updatedAtGe: updatedAtGe,
                     updatedAtLe: updatedAtLe);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

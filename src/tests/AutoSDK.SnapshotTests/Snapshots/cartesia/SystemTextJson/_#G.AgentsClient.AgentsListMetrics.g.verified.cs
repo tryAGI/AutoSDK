@@ -179,6 +179,8 @@ namespace G
                     startingAfter: startingAfter,
                     limit: limit);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

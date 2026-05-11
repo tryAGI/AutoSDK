@@ -259,6 +259,8 @@ namespace G
                     statusRefreshPolicy: statusRefreshPolicy,
                     session: session);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

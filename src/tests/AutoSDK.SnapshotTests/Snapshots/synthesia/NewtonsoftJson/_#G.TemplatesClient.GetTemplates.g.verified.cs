@@ -185,6 +185,8 @@ namespace G
                     offset: offset,
                     source: source);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

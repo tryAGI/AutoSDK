@@ -270,6 +270,8 @@ namespace G
                     isConnected: isConnected,
                     search: search);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

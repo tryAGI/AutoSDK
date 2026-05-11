@@ -419,6 +419,59 @@ public class RequestOptionsGenerationTests
     }
 
     [TestMethod]
+    public void GenerateMethod_StampsAuthorizationOverride_OnPerOperationSecurityOverride()
+    {
+        // Document-level security uses one scheme; one operation inherits it (no
+        // `security` block), the other overrides it with a different scheme. The
+        // overriding op should get the AutoSDKHttpRequestOptions.StampAuthorizationOverride
+        // call inside its __CreateHttpRequest body; the inheriting op should not.
+        const string yaml = """
+                            openapi: 3.0.3
+                            info:
+                              title: PerOpSecurity
+                              version: 1.0.0
+                            paths:
+                              /default-auth:
+                                get:
+                                  operationId: getWithDefaultAuth
+                                  responses:
+                                    '200':
+                                      description: ok
+                              /session-auth:
+                                post:
+                                  operationId: consumeWithSessionAuth
+                                  security:
+                                    - sessionToken: []
+                                  responses:
+                                    '200':
+                                      description: ok
+                            components:
+                              securitySchemes:
+                                accountKey:
+                                  type: http
+                                  scheme: bearer
+                                sessionToken:
+                                  type: http
+                                  scheme: bearer
+                            security:
+                              - accountKey: []
+                            """;
+
+        var data = AutoSDK.Generation.Data.Prepare(((yaml, DefaultSettings), DefaultSettings));
+        var defaultOp = data.Methods.Single(m => m.NotAsyncMethodName == "GetWithDefaultAuth");
+        var overrideOp = data.Methods.Single(m => m.NotAsyncMethodName == "ConsumeWithSessionAuth");
+
+        defaultOp.HasCallScopedSecurity.Should().BeFalse("the operation inherits document-level security");
+        overrideOp.HasCallScopedSecurity.Should().BeTrue("the operation declares its own `security` block");
+
+        var defaultSource = Sources.Method(defaultOp).Text;
+        var overrideSource = Sources.Method(overrideOp).Text;
+
+        defaultSource.Should().NotContain("AutoSDKHttpRequestOptions.StampAuthorizationOverride");
+        overrideSource.Should().Contain("AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);");
+    }
+
+    [TestMethod]
     public void GenerateOptionsSupport_EmitsAuthorizationOverrideMarkerAndStampingHelper()
     {
         var supportSource = Sources.OptionsSupport(DefaultSettings).Text;

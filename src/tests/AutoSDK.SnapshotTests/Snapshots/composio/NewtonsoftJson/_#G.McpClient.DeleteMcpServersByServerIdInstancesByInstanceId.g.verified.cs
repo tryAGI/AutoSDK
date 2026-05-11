@@ -215,6 +215,8 @@ namespace G
                     serverId: serverId!,
                     instanceId: instanceId!);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

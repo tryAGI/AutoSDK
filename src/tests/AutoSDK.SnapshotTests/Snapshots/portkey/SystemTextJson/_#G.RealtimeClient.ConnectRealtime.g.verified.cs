@@ -358,6 +358,8 @@ namespace G
                     xPortkeyCacheForceRefresh: xPortkeyCacheForceRefresh,
                     model: model);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

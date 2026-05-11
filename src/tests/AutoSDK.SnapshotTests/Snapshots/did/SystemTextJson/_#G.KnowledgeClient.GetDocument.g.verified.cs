@@ -175,6 +175,8 @@ namespace G
                     knowledgeId: knowledgeId!,
                     documentId: documentId!);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

@@ -148,6 +148,8 @@ namespace G
                     httpRequestMessage: __httpRequest,
                     generationId: generationId!);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

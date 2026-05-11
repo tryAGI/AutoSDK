@@ -253,6 +253,8 @@ namespace G
                     orderBy: orderBy,
                     session: session);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

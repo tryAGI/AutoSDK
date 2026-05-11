@@ -313,6 +313,8 @@ namespace G
                     minCreatedAt: minCreatedAt,
                     includeUserNames: includeUserNames);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

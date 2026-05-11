@@ -170,6 +170,8 @@ namespace G
                     datasetId: datasetId!,
                     summarizeData: summarizeData);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

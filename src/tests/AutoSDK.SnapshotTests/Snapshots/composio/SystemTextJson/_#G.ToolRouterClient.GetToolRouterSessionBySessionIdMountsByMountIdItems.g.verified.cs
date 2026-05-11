@@ -263,6 +263,8 @@ namespace G
                     limit: limit,
                     mountRelativePrefix: mountRelativePrefix);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 

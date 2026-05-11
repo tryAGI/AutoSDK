@@ -254,6 +254,8 @@ namespace G
                     feedback: feedback,
                     feedbackType: feedbackType);
 
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
                 return __httpRequest;
             }
 
