@@ -152,6 +152,84 @@ namespace IXSocial
     }
 
     /// <summary>
+    /// Marker keys stamped onto outgoing <see cref="global::System.Net.Http.HttpRequestMessage"/>
+    /// instances so consumer <see cref="global::System.Net.Http.DelegatingHandler"/>s — and any
+    /// other transport-layer code that runs after AutoSDK's send pipeline — can observe whether
+    /// the resolved Authorization is call-scoped and opt out of overwriting it with a
+    /// rotation-aware account-level credential.
+    /// </summary>
+    public static class AutoSDKHttpRequestOptions
+    {
+        /// <summary>
+        /// Key under which <see cref="StampAuthorizationOverride"/> records the marker. Exposed
+        /// for handlers that target frameworks older than .NET 5 and need to read the value
+        /// through the legacy <c>HttpRequestMessage.Properties</c> bag.
+        /// </summary>
+        public const string AuthorizationOverrideKey = "AutoSDK.AuthorizationOverride";
+
+#if NET5_0_OR_GREATER
+        /// <summary>
+        /// Strongly-typed <see cref="global::System.Net.Http.HttpRequestOptionsKey{TValue}"/> for
+        /// the call-scoped Authorization marker on .NET 5+ targets. Consumers should prefer this
+        /// over the legacy <c>HttpRequestMessage.Properties</c> bag where available.
+        /// </summary>
+        public static readonly global::System.Net.Http.HttpRequestOptionsKey<bool> AuthorizationOverride =
+            new global::System.Net.Http.HttpRequestOptionsKey<bool>(AuthorizationOverrideKey);
+#endif
+
+        /// <summary>
+        /// Stamps the call-scoped Authorization marker on <paramref name="request"/>. AutoSDK's
+        /// built-in <see cref="AutoSDKAuthorizationProviderHook"/> calls this whenever the
+        /// resolved auth came from a per-request override or a client-level
+        /// <see cref="IAutoSDKAuthorizationProvider"/>. Hand-written SDK extensions that set a
+        /// non-default <c>Authorization</c> header (e.g. a session-scoped bearer returned by an
+        /// upstream poll) should call this too so downstream rotation handlers know to skip the
+        /// overwrite.
+        /// </summary>
+        /// <param name="request"></param>
+        public static void StampAuthorizationOverride(
+            global::System.Net.Http.HttpRequestMessage? request)
+        {
+            if (request is null)
+            {
+                return;
+            }
+
+#if NET5_0_OR_GREATER
+            request.Options.Set(AuthorizationOverride, true);
+#else
+#pragma warning disable CS0618 // HttpRequestMessage.Properties is obsolete in NET5+, but the only option below it.
+            request.Properties[AuthorizationOverrideKey] = true;
+#pragma warning restore CS0618
+#endif
+        }
+
+        /// <summary>
+        /// Returns true when <see cref="StampAuthorizationOverride"/> previously marked the
+        /// request as carrying a call-scoped Authorization.
+        /// </summary>
+        /// <param name="request"></param>
+        public static bool HasAuthorizationOverride(
+            global::System.Net.Http.HttpRequestMessage? request)
+        {
+            if (request is null)
+            {
+                return false;
+            }
+
+#if NET5_0_OR_GREATER
+            return request.Options.TryGetValue(AuthorizationOverride, out var value) && value;
+#else
+#pragma warning disable CS0618
+            return request.Properties.TryGetValue(AuthorizationOverrideKey, out var raw) &&
+                   raw is bool flag &&
+                   flag;
+#pragma warning restore CS0618
+#endif
+        }
+    }
+
+    /// <summary>
     /// Built-in <see cref="IAutoSDKHook"/> that consults
     /// <see cref="AutoSDKClientOptions.AuthorizationProvider"/> before every outgoing
     /// request and stamps the resolved values onto the <see cref="global::System.Net.Http.HttpRequestMessage"/>.
@@ -177,6 +255,7 @@ namespace IXSocial
                     ApplyAuthorization(context.Request, perRequest[index]);
                 }
 
+                global::IXSocial.AutoSDKHttpRequestOptions.StampAuthorizationOverride(context.Request);
                 return;
             }
 
@@ -196,6 +275,8 @@ namespace IXSocial
             {
                 ApplyAuthorization(context.Request, resolved[index]);
             }
+
+            global::IXSocial.AutoSDKHttpRequestOptions.StampAuthorizationOverride(context.Request);
         }
 
         private static void ApplyAuthorization(

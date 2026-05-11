@@ -94,6 +94,29 @@ For one-off "act-as" / multi-tenant routing scenarios, `AutoSDKRequestOptions.Au
 
 When `GenerateDependencyInjection` is enabled, the generated `DependencyInjectionExtensions` class also emits `Add<Client>AuthorizationProvider<TProvider>()` (typed) and `Add<Client>AuthorizationProvider(resolver)` (delegate) extension methods. Both register an `IAutoSDKAuthorizationProvider` in the DI container; the typed `AddRunwayClient(...)` / `AddRunwayClient(configuration, ...)` helpers automatically resolve and wire it via `Options.UseAuthorizationProvider(provider)` so consumers don't have to chain configuration.
 
+### DelegatingHandler integration
+
+Consumers commonly wrap `HttpClient` with a rotation-aware `DelegatingHandler` that stamps the current account-level credential per request — the canonical pattern when credentials live in Azure Key Vault, AWS STS, or any source that refreshes on cadence. Such handlers run **after** AutoSDK's send pipeline, so without coordination they'd clobber the per-request value the hook just resolved.
+
+AutoSDK now stamps a marker on the outgoing `HttpRequestMessage` whenever the resolved `Authorization` is call-scoped (per-request `RequestOptions.Authorizations` or a client-level `IAutoSDKAuthorizationProvider`). The constructor-time `Authorizations` list — the account default — is NOT marked, so rotation handlers may freely overwrite it. The marker is exposed via `AutoSDKHttpRequestOptions`:
+
+```csharp
+// In your DelegatingHandler:
+protected override Task<HttpResponseMessage> SendAsync(
+    HttpRequestMessage request,
+    CancellationToken cancellationToken)
+{
+    if (!RunwayApi.AutoSDKHttpRequestOptions.HasAuthorizationOverride(request))
+    {
+        request.Headers.Authorization = new AuthenticationHeaderValue(
+            "Bearer", _rotatingTokenSource.GetCurrent());
+    }
+    return base.SendAsync(request, cancellationToken);
+}
+```
+
+The helper uses `HttpRequestMessage.Options` on .NET 5+ and falls back to the legacy `Properties` bag on older targets, so a single SDK build works for both. Hand-written SDK extensions that set a non-default `Authorization` header (e.g. a session-scoped bearer returned by an upstream poll) should call `AutoSDKHttpRequestOptions.StampAuthorizationOverride(request)` so downstream rotation handlers know to skip the overwrite.
+
 ## Cloud Request Signing Helpers
 Cloud-hosted APIs often describe only bearer or API-key auth in OpenAPI even when official clients require request signing. Enable `--generate-cloud-signing-helpers` in the CLI, or set `<AutoSDK_GenerateCloudSigningHelpers>true</AutoSDK_GenerateCloudSigningHelpers>` for the source generator, to emit a `CloudRequestSigner` helper factory.
 

@@ -419,6 +419,51 @@ public class RequestOptionsGenerationTests
     }
 
     [TestMethod]
+    public void GenerateOptionsSupport_EmitsAuthorizationOverrideMarkerAndStampingHelper()
+    {
+        var supportSource = Sources.OptionsSupport(DefaultSettings).Text;
+
+        // Marker key surface for #321.
+        supportSource.Should().Contain("public static class AutoSDKHttpRequestOptions");
+        supportSource.Should().Contain("public const string AuthorizationOverrideKey = \"AutoSDK.AuthorizationOverride\";");
+        supportSource.Should().Contain("public static readonly global::System.Net.Http.HttpRequestOptionsKey<bool> AuthorizationOverride");
+        supportSource.Should().Contain("public static void StampAuthorizationOverride(");
+        supportSource.Should().Contain("public static bool HasAuthorizationOverride(");
+
+        // Multi-target storage: HttpRequestMessage.Options on NET5+, Properties bag below.
+        supportSource.Should().Contain("#if NET5_0_OR_GREATER");
+        supportSource.Should().Contain("request.Options.Set(AuthorizationOverride, true);");
+        supportSource.Should().Contain("request.Properties[AuthorizationOverrideKey] = true;");
+    }
+
+    [TestMethod]
+    public void GenerateOptionsSupport_AuthorizationProviderHook_StampsOverrideMarkerOnCallScopedPaths()
+    {
+        var supportSource = Sources.OptionsSupport(DefaultSettings).Text;
+
+        // Per-request RequestOptions.Authorizations path stamps the marker.
+        supportSource.Should().Contain("if (perRequest != null && perRequest.Count > 0)");
+        var perRequestBlock = supportSource.Substring(
+            supportSource.IndexOf("if (perRequest != null && perRequest.Count > 0)", System.StringComparison.Ordinal));
+        perRequestBlock.Should().Contain("AutoSDKHttpRequestOptions.StampAuthorizationOverride(context.Request);");
+
+        // Provider path also stamps after applying.
+        var providerBlock = supportSource.Substring(
+            supportSource.IndexOf("var provider = context.ClientOptions?.AuthorizationProvider;", System.StringComparison.Ordinal));
+        providerBlock.Should().Contain("ApplyAuthorization(context.Request, resolved[index]);");
+        providerBlock.Should().Contain("AutoSDKHttpRequestOptions.StampAuthorizationOverride(context.Request);");
+
+        // Stamping happens exactly twice: once per precedence path. The constructor-time
+        // Authorizations fallback (handled by the per-method __authorizations resolver, not
+        // this hook) should remain unstamped so rotation handlers may overwrite the account
+        // default.
+        var stampCount = System.Text.RegularExpressions.Regex.Matches(
+            supportSource,
+            @"AutoSDKHttpRequestOptions\.StampAuthorizationOverride").Count;
+        stampCount.Should().Be(2);
+    }
+
+    [TestMethod]
     public void GenerateOptionsSupport_AuthorizationProviderHook_PrefersPerRequestAuthorizations()
     {
         var supportSource = Sources.OptionsSupport(DefaultSettings).Text;
