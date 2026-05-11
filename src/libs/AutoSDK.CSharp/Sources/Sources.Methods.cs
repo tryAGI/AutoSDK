@@ -583,13 +583,18 @@ namespace {endPoint.Settings.Namespace}
             ? "Initial page number to start enumerating from. Defaults to 1."
             : "Initial cursor to start enumerating from. Defaults to null (first page).";
 
+        var offsetHasMoreLine = !string.IsNullOrEmpty(metadata.HasMorePropertyName)
+            ? $@"
+                hasMore: static __response => __response is not null && (__response.{metadata.HasMorePropertyName} ?? false),"
+            : string.Empty;
+
         var pagerCall = metadata.Style == PageableStyle.Offset
             ? $@"            return {namespacePrefix}.AutoSDKPager.OffsetAsync<{responseType}, {itemType}>(
                 fetchPage: (__page, __ct) => {endPoint.MethodName}(
                     {underlyingArgList}),
                 extractItems: static __response => __response is null
                     ? null
-                    : (global::System.Collections.Generic.IEnumerable<{itemType}>?)__response.{metadata.ItemsPropertyName},
+                    : (global::System.Collections.Generic.IEnumerable<{itemType}>?)__response.{metadata.ItemsPropertyName},{offsetHasMoreLine}
                 initialPage: {pageParameter.ParameterName} ?? 1,
                 cancellationToken: cancellationToken);"
             : $@"            return {namespacePrefix}.AutoSDKPager.CursorAsync<{responseType}, {itemType}>(

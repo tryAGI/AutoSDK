@@ -1284,6 +1284,27 @@ public static class Data
                         IsOffsetPageParameter(p.Id));
                 if (!string.IsNullOrEmpty(pageParam.ParameterName))
                 {
+                    // Also pick up a sibling has_more/has_next bool so the generated
+                    // auto-paging helper stops on an explicit "no more pages" signal
+                    // rather than waiting for an empty page.
+                    PropertyData? hasMoreProperty = null;
+                    foreach (var property in responseClass.Properties)
+                    {
+                        if (!IsHasMoreProperty(property))
+                        {
+                            continue;
+                        }
+
+                        if (hasMoreProperty != null)
+                        {
+                            // Multiple has_more candidates → ambiguous, skip the predicate.
+                            hasMoreProperty = null;
+                            break;
+                        }
+
+                        hasMoreProperty = property;
+                    }
+
                     return method with
                     {
                         PageableMetadata = new PageableMetadata(
@@ -1291,7 +1312,8 @@ public static class Data
                             PageParameterName: pageParam.ParameterName,
                             ItemsPropertyName: itemsProperty.Value.Name,
                             ItemType: itemType,
-                            NextCursorPropertyName: string.Empty),
+                            NextCursorPropertyName: string.Empty,
+                            HasMorePropertyName: hasMoreProperty?.Name ?? string.Empty),
                     };
                 }
 
@@ -1372,6 +1394,24 @@ public static class Data
                string.Equals(parameterId, "nextPageToken", StringComparison.OrdinalIgnoreCase) ||
                string.Equals(parameterId, "pagination_token", StringComparison.OrdinalIgnoreCase) ||
                string.Equals(parameterId, "paginationToken", StringComparison.OrdinalIgnoreCase);
+    }
+
+    private static bool IsHasMoreProperty(PropertyData property)
+    {
+        if (string.IsNullOrEmpty(property.Id) ||
+            property.Type.IsArray ||
+            !string.Equals(property.Type.CSharpTypeWithoutNullability, "bool", StringComparison.Ordinal))
+        {
+            return false;
+        }
+
+        return string.Equals(property.Id, "has_more", StringComparison.OrdinalIgnoreCase) ||
+               string.Equals(property.Id, "hasMore", StringComparison.OrdinalIgnoreCase) ||
+               string.Equals(property.Id, "has_next", StringComparison.OrdinalIgnoreCase) ||
+               string.Equals(property.Id, "hasNext", StringComparison.OrdinalIgnoreCase) ||
+               string.Equals(property.Id, "more", StringComparison.OrdinalIgnoreCase) ||
+               string.Equals(property.Id, "has_next_page", StringComparison.OrdinalIgnoreCase) ||
+               string.Equals(property.Id, "hasNextPage", StringComparison.OrdinalIgnoreCase);
     }
 
     private static bool IsNextCursorProperty(PropertyData property)

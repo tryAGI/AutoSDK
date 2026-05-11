@@ -153,6 +153,20 @@ public class RequestOptionsGenerationTests
     }
 
     [TestMethod]
+    public void GeneratePageableHelpers_EmitsLinkHeaderPager()
+    {
+        var settings = DefaultSettings with { GeneratePageableHelpers = true };
+        var file = Sources.PageableHelpers(settings);
+
+        file.Text.Should().Contain("LinkHeaderAsync<TPage, TItem>(");
+        file.Text.Should().Contain("ParseLinkHeaderRel(");
+        file.Text.Should().Contain("private static bool MatchesLinkRel(");
+        // Default rel is "next" and the parser handles bracketed URLs and multi-value headers.
+        file.Text.Should().Contain("string linkRel = \"next\"");
+        file.Text.Should().Contain("var endBracket = part.IndexOf('>');");
+    }
+
+    [TestMethod]
     public void GeneratePageableHelpers_SuppressedWhenOptInFlagIsOff()
     {
         var settings = DefaultSettings with { GeneratePageableHelpers = false };
@@ -300,6 +314,60 @@ public class RequestOptionsGenerationTests
         source.Should().Contain("extractNextCursor: static __response => __response is null ? null : __response.NextCursor");
         source.Should().Contain("initialCursor: after");
         source.Should().Contain("string? after = null,");
+    }
+
+    [TestMethod]
+    public void AutoPaging_OffsetShapeWithHasMore_WiresHasMorePredicateIntoOffsetAsync()
+    {
+        const string yaml = """
+                            openapi: 3.0.3
+                            info:
+                              title: OffsetHasMore
+                              version: 1.0.0
+                            paths:
+                              /messages:
+                                get:
+                                  operationId: listMessages
+                                  parameters:
+                                    - in: query
+                                      name: page
+                                      schema:
+                                        type: integer
+                                  responses:
+                                    '200':
+                                      description: OK
+                                      content:
+                                        application/json:
+                                          schema:
+                                            $ref: '#/components/schemas/ListMessagesResponse'
+                            components:
+                              schemas:
+                                ListMessagesResponse:
+                                  type: object
+                                  required: [items]
+                                  properties:
+                                    items:
+                                      type: array
+                                      items:
+                                        $ref: '#/components/schemas/Message'
+                                    has_more:
+                                      type: boolean
+                                Message:
+                                  type: object
+                                  properties:
+                                    id:
+                                      type: string
+                            """;
+
+        var settings = DefaultSettings with { GeneratePageableHelpers = true };
+        var data = AutoSDK.Generation.Data.Prepare(((yaml, (CSharpSettings)settings), (CSharpSettings)settings));
+        var endpoint = data.Methods.Single(m => m.NotAsyncMethodName == "ListMessages");
+
+        endpoint.PageableMetadata.Style.Should().Be(PageableStyle.Offset);
+        endpoint.PageableMetadata.HasMorePropertyName.Should().Be("HasMore");
+
+        var source = Sources.Method(endpoint).Text;
+        source.Should().Contain("hasMore: static __response => __response is not null && (__response.HasMore ?? false)");
     }
 
     [TestMethod]

@@ -137,6 +137,167 @@ namespace {settings.Namespace}
                 cursor = next;
             }}
         }}
+
+        /// <summary>
+        /// Paginates through RFC 5988 <c>Link</c>-header-style endpoints (GitHub, Apify, etc.).
+        /// Calls <paramref name=""fetchPage""/> with the URL returned by the previous page's
+        /// <c>Link: &lt;url&gt;; rel=""next""</c> header until the header is missing.
+        /// </summary>
+        /// <typeparam name=""TPage""></typeparam>
+        /// <typeparam name=""TItem""></typeparam>
+        /// <param name=""fetchPage"">Async fetch for the page at the given URL (null for the first request).</param>
+        /// <param name=""extractItems"">Pulls the item collection from the response body.</param>
+        /// <param name=""extractLinkHeader"">Pulls the raw <c>Link</c> header values from the response. Typically <c>response =&gt; response.Headers.TryGetValue(""Link"", out var v) ? v : null</c>.</param>
+        /// <param name=""initialUrl"">First URL to send (defaults to null, meaning the underlying fetch should hit the base endpoint).</param>
+        /// <param name=""linkRel"">The <c>rel</c> attribute to match. Defaults to <c>""next""</c>.</param>
+        /// <param name=""cancellationToken""></param>
+        public static async global::System.Collections.Generic.IAsyncEnumerable<TItem> LinkHeaderAsync<TPage, TItem>(
+            global::System.Func<string?, global::System.Threading.CancellationToken, global::System.Threading.Tasks.Task<TPage>> fetchPage,
+            global::System.Func<TPage, global::System.Collections.Generic.IEnumerable<TItem>?> extractItems,
+            global::System.Func<TPage, global::System.Collections.Generic.IEnumerable<string>?> extractLinkHeader,
+            string? initialUrl = null,
+            string linkRel = ""next"",
+            [global::System.Runtime.CompilerServices.EnumeratorCancellation]
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {{
+            fetchPage = fetchPage ?? throw new global::System.ArgumentNullException(nameof(fetchPage));
+            extractItems = extractItems ?? throw new global::System.ArgumentNullException(nameof(extractItems));
+            extractLinkHeader = extractLinkHeader ?? throw new global::System.ArgumentNullException(nameof(extractLinkHeader));
+            if (string.IsNullOrWhiteSpace(linkRel))
+            {{
+                linkRel = ""next"";
+            }}
+
+            var url = initialUrl;
+            while (true)
+            {{
+                cancellationToken.ThrowIfCancellationRequested();
+
+                var response = await fetchPage(url, cancellationToken).ConfigureAwait(false);
+                if (response is null)
+                {{
+                    yield break;
+                }}
+
+                var items = extractItems(response);
+                if (items is not null)
+                {{
+                    foreach (var item in items)
+                    {{
+                        yield return item;
+                    }}
+                }}
+
+                var headerValues = extractLinkHeader(response);
+                var nextUrl = ParseLinkHeaderRel(headerValues, linkRel);
+                if (string.IsNullOrWhiteSpace(nextUrl) || string.Equals(nextUrl, url, global::System.StringComparison.Ordinal))
+                {{
+                    yield break;
+                }}
+
+                url = nextUrl;
+            }}
+        }}
+
+        /// <summary>
+        /// Parses RFC 5988 <c>Link</c> header values and returns the URL whose <c>rel</c>
+        /// attribute matches <paramref name=""linkRel""/>. Multiple link values may be passed
+        /// either as separate strings or comma-separated within a single string. Returns null
+        /// when no matching link is found.
+        /// </summary>
+        public static string? ParseLinkHeaderRel(
+            global::System.Collections.Generic.IEnumerable<string>? linkHeaderValues,
+            string linkRel)
+        {{
+            if (linkHeaderValues is null || string.IsNullOrWhiteSpace(linkRel))
+            {{
+                return null;
+            }}
+
+            foreach (var header in linkHeaderValues)
+            {{
+                if (string.IsNullOrWhiteSpace(header))
+                {{
+                    continue;
+                }}
+
+                // Split on commas that aren't inside <...> brackets. RFC 5988 allows multiple
+                // comma-separated link values per header, and HttpClient surfaces multi-value
+                // headers as separate enumerable entries too.
+                var depth = 0;
+                var partStart = 0;
+                for (var i = 0; i <= header.Length; i++)
+                {{
+                    if (i < header.Length && header[i] == '<')
+                    {{
+                        depth++;
+                        continue;
+                    }}
+
+                    if (i < header.Length && header[i] == '>')
+                    {{
+                        depth = global::System.Math.Max(0, depth - 1);
+                        continue;
+                    }}
+
+                    if (i == header.Length || (header[i] == ',' && depth == 0))
+                    {{
+                        var part = header.Substring(partStart, i - partStart).Trim();
+                        partStart = i + 1;
+
+                        if (part.Length == 0 || part[0] != '<')
+                        {{
+                            continue;
+                        }}
+
+                        var endBracket = part.IndexOf('>');
+                        if (endBracket <= 1)
+                        {{
+                            continue;
+                        }}
+
+                        var url = part.Substring(1, endBracket - 1);
+                        var attrs = part.Substring(endBracket + 1);
+                        if (MatchesLinkRel(attrs, linkRel))
+                        {{
+                            return url;
+                        }}
+                    }}
+                }}
+            }}
+
+            return null;
+        }}
+
+        private static bool MatchesLinkRel(string attrSection, string linkRel)
+        {{
+            foreach (var attr in attrSection.Split(';'))
+            {{
+                var trimmed = attr.Trim();
+                if (!trimmed.StartsWith(""rel"", global::System.StringComparison.OrdinalIgnoreCase))
+                {{
+                    continue;
+                }}
+
+                var equalsIndex = trimmed.IndexOf('=');
+                if (equalsIndex < 0)
+                {{
+                    continue;
+                }}
+
+                var value = trimmed.Substring(equalsIndex + 1).Trim().Trim('""');
+                // rel values can be space-separated (RFC 8288 allows multiple rel tokens).
+                foreach (var token in value.Split(' '))
+                {{
+                    if (string.Equals(token, linkRel, global::System.StringComparison.OrdinalIgnoreCase))
+                    {{
+                        return true;
+                    }}
+                }}
+            }}
+
+            return false;
+        }}
     }}
 }}
 ".RemoveBlankLinesWhereOnlyWhitespaces();

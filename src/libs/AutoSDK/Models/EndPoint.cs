@@ -67,14 +67,16 @@ public record struct PageableMetadata(
     string PageParameterName,
     string ItemsPropertyName,
     TypeData ItemType,
-    string NextCursorPropertyName = "")
+    string NextCursorPropertyName = "",
+    string HasMorePropertyName = "")
 {
     public static PageableMetadata Empty => new(
         Style: PageableStyle.None,
         PageParameterName: string.Empty,
         ItemsPropertyName: string.Empty,
         ItemType: TypeData.Default,
-        NextCursorPropertyName: string.Empty);
+        NextCursorPropertyName: string.Empty,
+        HasMorePropertyName: string.Empty);
 }
 
 public record struct LocationWaitCompanion(
