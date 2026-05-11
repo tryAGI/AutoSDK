@@ -164,6 +164,11 @@ public class RequestOptionsGenerationTests
         // Default rel is "next" and the parser handles bracketed URLs and multi-value headers.
         file.Text.Should().Contain("string linkRel = \"next\"");
         file.Text.Should().Contain("var endBracket = part.IndexOf('>');");
+
+        // Convenience overload that auto-reads the Link header from AutoSDKHttpResponse<T>
+        // so consumers don't have to write the extractLinkHeader lambda by hand.
+        file.Text.Should().Contain("global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<TPage>>");
+        file.Text.Should().Contain("response.Headers.TryGetValue(\"Link\", out var values)");
     }
 
     [TestMethod]

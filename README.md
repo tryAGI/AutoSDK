@@ -109,7 +109,12 @@ The generated `AutoSDKPager.OffsetAsync<TPage, TItem>(...)` overload takes a fet
 
 Offset takes precedence when both shapes match. Detection is conservative: skips multi-array responses, ambiguous next-cursor candidates, and any non-GET shape.
 
-For RFC 5988 `Link`-header pagination (GitHub, Apify, etc.) the runtime helper exposes `AutoSDKPager.LinkHeaderAsync<TPage, TItem>(fetchPage, extractItems, extractLinkHeader, initialUrl?, linkRel = "next")`. It parses `Link: <url>; rel="next"` from the supplied header values — handling comma-separated multi-link headers and space-separated `rel` tokens per RFC 8288 — and threads the next URL through to the next fetch. Auto-detection for this shape isn't wired yet because the spec rarely encodes which parameter corresponds to the link target; consumers wire it up by passing `response.Headers.TryGetValue("Link", out var values) ? values : null` to `extractLinkHeader`.
+For RFC 5988 `Link`-header pagination (GitHub, Apify, etc.) the runtime helper exposes two overloads of `AutoSDKPager.LinkHeaderAsync<TPage, TItem>(...)`:
+
+- A general form that takes `extractLinkHeader: Func<TPage, IEnumerable<string>?>` so callers can pull the header from any response shape.
+- A convenience overload where the fetch returns `AutoSDKHttpResponse<TPage>` and the helper auto-reads `Headers["Link"]` — removing the `extractLinkHeader` lambda boilerplate for the common case.
+
+Both parse `Link: <url>; rel="next"` from the supplied header values, handling comma-separated multi-link headers (bracket-aware scoping) and space-separated `rel` tokens per RFC 8288, then thread the next URL through to the next fetch. The exposed `ParseLinkHeaderRel(linkHeaderValues, linkRel)` is public so consumers can use the same parser without going through the full pager. Codegen-level auto-detection for Link pagination isn't wired because the spec rarely encodes which parameter corresponds to the link target — consumers wire `fetchPage` to call `<Method>AsResponseAsync(...)` on the first iteration and dispatch by URL afterwards.
 
 ## AWS EventStream Streaming Responses
 Bedrock-style APIs return chunked binary frames with `application/vnd.amazon.eventstream` content type — distinct from SSE or NDJSON. AutoSDK now detects this mime type alongside the existing SSE/NDJSON paths and generates an `IAsyncEnumerable<TEvent>` method backed by a generated `AutoSDKAwsEventStreamReader` frame parser. The reader exposes prelude/header/payload decoding for the AWS EventStream binary protocol (string, byte-array, bool, byte, short, int, long, timestamp, UUID header value types) without referencing the AWS SDK packages, so the path stays trim/AOT-friendly.

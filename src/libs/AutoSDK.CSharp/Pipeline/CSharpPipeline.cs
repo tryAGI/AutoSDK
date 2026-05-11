@@ -195,7 +195,8 @@ public static class CSharpPipeline
                     .Concat(!data.Authorizations.IsEmpty
                         ? [Sources.SecuritySupport(settings, cancellationToken)]
                         : [])
-                    .Concat(data.Methods.Any(static x => x.GenerateResponseWrapper && !x.EnumerableStream)
+                    .Concat(data.Methods.Any(static x => x.GenerateResponseWrapper && !x.EnumerableStream) ||
+                            settings.GeneratePageableHelpers
                         ? [Sources.HttpResponse(settings, cancellationToken)]
                         : [])
                     .Concat(data.Methods.Any(static x => Sources.ShouldGenerateResponseStreamSupport(x))

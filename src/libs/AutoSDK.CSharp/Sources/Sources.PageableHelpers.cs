@@ -200,6 +200,40 @@ namespace {settings.Namespace}
         }}
 
         /// <summary>
+        /// Convenience overload that pulls items from <see cref=""AutoSDKHttpResponse{{T}}.Body""/>
+        /// and reads <c>Link</c> headers from <see cref=""AutoSDKHttpResponse.Headers""/> without
+        /// requiring callers to pass an <c>extractLinkHeader</c> lambda.
+        /// </summary>
+        /// <typeparam name=""TPage""></typeparam>
+        /// <typeparam name=""TItem""></typeparam>
+        /// <param name=""fetchPage"">Async fetch that returns the response wrapper for the given URL.</param>
+        /// <param name=""extractItems"">Pulls the item collection from the response body.</param>
+        /// <param name=""initialUrl""></param>
+        /// <param name=""linkRel""></param>
+        /// <param name=""cancellationToken""></param>
+        public static global::System.Collections.Generic.IAsyncEnumerable<TItem> LinkHeaderAsync<TPage, TItem>(
+            global::System.Func<string?, global::System.Threading.CancellationToken, global::System.Threading.Tasks.Task<global::{settings.Namespace}.AutoSDKHttpResponse<TPage>>> fetchPage,
+            global::System.Func<TPage, global::System.Collections.Generic.IEnumerable<TItem>?> extractItems,
+            string? initialUrl = null,
+            string linkRel = ""next"",
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {{
+            extractItems = extractItems ?? throw new global::System.ArgumentNullException(nameof(extractItems));
+            return LinkHeaderAsync<global::{settings.Namespace}.AutoSDKHttpResponse<TPage>, TItem>(
+                fetchPage: fetchPage,
+                extractItems: response => response.Body is null
+                    ? null
+                    : extractItems(response.Body),
+                extractLinkHeader: response => response.Headers != null &&
+                    response.Headers.TryGetValue(""Link"", out var values)
+                        ? values
+                        : null,
+                initialUrl: initialUrl,
+                linkRel: linkRel,
+                cancellationToken: cancellationToken);
+        }}
+
+        /// <summary>
         /// Parses RFC 5988 <c>Link</c> header values and returns the URL whose <c>rel</c>
         /// attribute matches <paramref name=""linkRel""/>. Multiple link values may be passed
         /// either as separate strings or comma-separated within a single string. Returns null
