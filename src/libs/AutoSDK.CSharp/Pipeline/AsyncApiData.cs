@@ -526,25 +526,13 @@ public static class AsyncApiData
                 {
                     for (var i = 0; i < receiveOps.Count; i++)
                     {
-                        var receiveOp = receiveOps[i];
-                        var messageTypeName = receiveOp.MessageType.CSharpTypeWithoutNullability;
-                        if (string.IsNullOrEmpty(messageTypeName))
+                        var variantName = FindUnionVariantPropertyName(
+                            receiveOps[i].MessageType, anyOfData.Properties);
+                        if (!string.IsNullOrEmpty(variantName))
                         {
-                            continue;
-                        }
-
-                        foreach (var property in anyOfData.Properties)
-                        {
-                            if (string.Equals(
-                                    property.Type.CSharpTypeWithoutNullability,
-                                    messageTypeName,
-                                    StringComparison.Ordinal) &&
-                                !string.IsNullOrEmpty(property.Name))
-                            {
-                                receiveOp.UnionVariantPropertyName = property.Name;
-                                receiveOps[i] = receiveOp;
-                                break;
-                            }
+                            var receiveOp = receiveOps[i];
+                            receiveOp.UnionVariantPropertyName = variantName!;
+                            receiveOps[i] = receiveOp;
                         }
                     }
                 }
@@ -596,6 +584,81 @@ public static class AsyncApiData
         }
 
         return (wsClients, wsOperations);
+    }
+
+    /// <summary>
+    /// Finds the property on a synthetic oneOf union struct whose type matches
+    /// <paramref name="messageType"/>. Compares by fully-qualified C# type name
+    /// first, then by short name, then by raw type spelling — each fallback
+    /// guards against an upstream rename that would otherwise silently break the
+    /// dispatcher's variant-to-property mapping (AutoSDK #324).
+    /// </summary>
+    private static string? FindUnionVariantPropertyName(
+        TypeData messageType,
+        EquatableArray<PropertyData> unionVariants)
+    {
+        var fullName = messageType.CSharpTypeWithoutNullability;
+        var shortName = messageType.ShortCSharpTypeWithoutNullability;
+        var rawName = messageType.CSharpTypeRaw;
+
+        if (!string.IsNullOrEmpty(fullName))
+        {
+            foreach (var property in unionVariants)
+            {
+                if (string.IsNullOrEmpty(property.Name))
+                {
+                    continue;
+                }
+
+                if (string.Equals(
+                        property.Type.CSharpTypeWithoutNullability,
+                        fullName,
+                        StringComparison.Ordinal))
+                {
+                    return property.Name;
+                }
+            }
+        }
+
+        if (!string.IsNullOrEmpty(shortName))
+        {
+            foreach (var property in unionVariants)
+            {
+                if (string.IsNullOrEmpty(property.Name))
+                {
+                    continue;
+                }
+
+                if (string.Equals(
+                        property.Type.ShortCSharpTypeWithoutNullability,
+                        shortName,
+                        StringComparison.Ordinal))
+                {
+                    return property.Name;
+                }
+            }
+        }
+
+        if (!string.IsNullOrEmpty(rawName))
+        {
+            foreach (var property in unionVariants)
+            {
+                if (string.IsNullOrEmpty(property.Name))
+                {
+                    continue;
+                }
+
+                if (string.Equals(
+                        property.Type.CSharpTypeRaw,
+                        rawName,
+                        StringComparison.Ordinal))
+                {
+                    return property.Name;
+                }
+            }
+        }
+
+        return null;
     }
 
     private static ImmutableArray<MethodParameter> BuildServerVariableParameters(

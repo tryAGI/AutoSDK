@@ -402,6 +402,116 @@ components:
     }
 
     [TestMethod]
+    public void AsyncApiMultiReceiveOpsWithDottedDiscriminator_TagsReceiveOpsWithUnionVariantProperty()
+    {
+        // Reproduces the Voxtral repro from AutoSDK #324: multiple receive operations whose
+        // payload schemas carry a single-value enum discriminator with dotted values
+        // (transcription.language, session.created, error). The synthesized oneOf union's
+        // variant property names are derived from those discriminator values
+        // (TranscriptionLanguage, SessionCreated, Error) and therefore do not equal the
+        // AsyncAPI message names — the pipeline must tag each receive op with the actual
+        // union property name, otherwise the ReceiveUpdates dispatcher emits CS1061.
+        const string json = """
+        {
+          "asyncapi": "3.0.0",
+          "info": { "title": "Realtime API", "version": "1.0.0" },
+          "channels": {
+            "realtime": {
+              "address": "/realtime",
+              "messages": {
+                "TranscriptionStreamLanguage": { "$ref": "#/components/messages/TranscriptionStreamLanguage" },
+                "RealtimeTranscriptionSessionCreated": { "$ref": "#/components/messages/RealtimeTranscriptionSessionCreated" },
+                "RealtimeTranscriptionError": { "$ref": "#/components/messages/RealtimeTranscriptionError" }
+              }
+            }
+          },
+          "operations": {
+            "receiveTranscriptionStreamLanguage": {
+              "action": "receive",
+              "channel": { "$ref": "#/channels/realtime" },
+              "messages": [ { "$ref": "#/channels/realtime/messages/TranscriptionStreamLanguage" } ]
+            },
+            "receiveRealtimeTranscriptionSessionCreated": {
+              "action": "receive",
+              "channel": { "$ref": "#/channels/realtime" },
+              "messages": [ { "$ref": "#/channels/realtime/messages/RealtimeTranscriptionSessionCreated" } ]
+            },
+            "receiveRealtimeTranscriptionError": {
+              "action": "receive",
+              "channel": { "$ref": "#/channels/realtime" },
+              "messages": [ { "$ref": "#/channels/realtime/messages/RealtimeTranscriptionError" } ]
+            }
+          },
+          "components": {
+            "messages": {
+              "TranscriptionStreamLanguage": {
+                "name": "TranscriptionStreamLanguage",
+                "payload": { "$ref": "#/components/schemas/TranscriptionStreamLanguage" }
+              },
+              "RealtimeTranscriptionSessionCreated": {
+                "name": "RealtimeTranscriptionSessionCreated",
+                "payload": { "$ref": "#/components/schemas/RealtimeTranscriptionSessionCreated" }
+              },
+              "RealtimeTranscriptionError": {
+                "name": "RealtimeTranscriptionError",
+                "payload": { "$ref": "#/components/schemas/RealtimeTranscriptionError" }
+              }
+            },
+            "schemas": {
+              "TranscriptionStreamLanguage": {
+                "type": "object",
+                "required": ["type", "language"],
+                "properties": {
+                  "type": { "type": "string", "enum": ["transcription.language"] },
+                  "language": { "type": "string" }
+                }
+              },
+              "RealtimeTranscriptionSessionCreated": {
+                "type": "object",
+                "required": ["type"],
+                "properties": {
+                  "type": { "type": "string", "enum": ["session.created"] }
+                }
+              },
+              "RealtimeTranscriptionError": {
+                "type": "object",
+                "required": ["type"],
+                "properties": {
+                  "type": { "type": "string", "enum": ["error"] }
+                }
+              }
+            }
+          }
+        }
+        """;
+
+        var settings = Settings.Default with
+        {
+            Namespace = "G",
+            JsonSerializerContext = "G.SourceGenerationContext",
+        };
+
+        var data = AsyncApiData.Prepare(((json, settings), GlobalSettings: settings));
+        var client = data.WebSocketClients.Should().ContainSingle().Subject;
+
+        client.IsReceiveEventValueType.Should().BeTrue();
+        client.BaseReceiveEventType.CSharpTypeWithoutNullability.Should().Be("global::G.ServerEvent");
+
+        var tags = client.ReceiveOperations
+            .ToDictionary(x => x.MessageName, x => x.UnionVariantPropertyName, StringComparer.Ordinal);
+        tags["TranscriptionStreamLanguage"].Should().Be("TranscriptionLanguage");
+        tags["RealtimeTranscriptionSessionCreated"].Should().Be("SessionCreated");
+        tags["RealtimeTranscriptionError"].Should().Be("Error");
+
+        var receiveSource = Sources.WebSocketReceiveMethod(client).Text;
+        receiveSource.Should().Contain("if (@event.TranscriptionLanguage is { } __TranscriptionStreamLanguageReceived)");
+        receiveSource.Should().Contain("if (@event.SessionCreated is { } __RealtimeTranscriptionSessionCreatedReceived)");
+        receiveSource.Should().Contain("if (@event.Error is { } __RealtimeTranscriptionErrorReceived)");
+        receiveSource.Should().NotContain("@event.TranscriptionStreamLanguage");
+        receiveSource.Should().NotContain("@event.RealtimeTranscriptionSessionCreated");
+    }
+
+    [TestMethod]
     public void WebSocketBinaryPayloadHelpers_GenerateDecodedBytesProperty_AndConvenienceSendOverload()
     {
         var settings = Settings.Default with
