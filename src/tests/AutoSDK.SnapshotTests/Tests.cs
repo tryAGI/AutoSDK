@@ -91,6 +91,8 @@ public partial class Tests
     [DataRow("openai-realtime.json", JsonSerializerType.SystemTextJson)]
     [DataRow("elevenlabs-realtime-stt-xref.json", JsonSerializerType.NewtonsoftJson)]
     [DataRow("elevenlabs-realtime-stt-xref.json", JsonSerializerType.SystemTextJson)]
+    [DataRow("voxtral-realtime-multi-receive.json", JsonSerializerType.NewtonsoftJson)]
+    [DataRow("voxtral-realtime-multi-receive.json", JsonSerializerType.SystemTextJson)]
     [DataRow("xai-realtime.json", JsonSerializerType.NewtonsoftJson)]
     [DataRow("xai-realtime.json", JsonSerializerType.SystemTextJson)]
     [DataRow("deepgram-multichannel.json", JsonSerializerType.NewtonsoftJson)]
@@ -334,6 +336,12 @@ public partial class Tests
                     : string.Empty,
             },
             "xai-realtime.json" => new Dictionary<string, string>
+            {
+                ["build_property.AutoSDK_JsonSerializerContext"] = jsonSerializerType is JsonSerializerType.SystemTextJson
+                    ? "G.SourceGenerationContext"
+                    : string.Empty,
+            },
+            "voxtral-realtime-multi-receive.json" => new Dictionary<string, string>
             {
                 ["build_property.AutoSDK_JsonSerializerContext"] = jsonSerializerType is JsonSerializerType.SystemTextJson
                     ? "G.SourceGenerationContext"

@@ -516,6 +516,38 @@ public static class AsyncApiData
                 // Use the synthetic oneOf wrapper type for discriminated union deserialization
                 baseReceiveEventType = eventSchema.TypeData;
                 isReceiveEventValueType = true; // anyOf/oneOf types are generated as structs
+
+                // Tag each receive op with the property name it maps to on the union struct.
+                // The union variant property name is derived (discriminator value / title /
+                // smart-name fallback) and need not match the message name, so the dispatcher
+                // can't compute it from the message alone — see AutoSDK #324.
+                if (eventSchema.AnyOfData is { } anyOfData &&
+                    !anyOfData.Properties.IsEmpty)
+                {
+                    for (var i = 0; i < receiveOps.Count; i++)
+                    {
+                        var receiveOp = receiveOps[i];
+                        var messageTypeName = receiveOp.MessageType.CSharpTypeWithoutNullability;
+                        if (string.IsNullOrEmpty(messageTypeName))
+                        {
+                            continue;
+                        }
+
+                        foreach (var property in anyOfData.Properties)
+                        {
+                            if (string.Equals(
+                                    property.Type.CSharpTypeWithoutNullability,
+                                    messageTypeName,
+                                    StringComparison.Ordinal) &&
+                                !string.IsNullOrEmpty(property.Name))
+                            {
+                                receiveOp.UnionVariantPropertyName = property.Name;
+                                receiveOps[i] = receiveOp;
+                                break;
+                            }
+                        }
+                    }
+                }
             }
             else if (receiveOps.Count == 1)
             {

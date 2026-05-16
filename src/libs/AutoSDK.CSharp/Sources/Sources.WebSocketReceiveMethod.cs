@@ -269,10 +269,17 @@ namespace {wsClient.Settings.Namespace}
             var messageTypeWithoutPayloadPropertyName = messageTypePropertyName.EndsWith("Payload", StringComparison.Ordinal)
                 ? messageTypePropertyName.Substring(0, messageTypePropertyName.Length - "Payload".Length)
                 : messageTypePropertyName;
-            var propertyName = receiveEventProperties.FirstOrDefault(property =>
-                string.Equals(property, preferredPropertyName, StringComparison.Ordinal) ||
-                string.Equals(property, messageTypePropertyName, StringComparison.Ordinal) ||
-                string.Equals(property, messageTypeWithoutPayloadPropertyName, StringComparison.Ordinal));
+            // Per-op union-variant tag wins: when the AsyncAPI spec declares multiple
+            // receive operations whose payloads land in a synthetic oneOf, the union
+            // property names are derived (discriminator value / title / smart-name) and
+            // generally don't equal the message name. The pipeline resolved the actual
+            // property name by matching variant TypeData, so trust it. See AutoSDK #324.
+            var propertyName = !string.IsNullOrEmpty(operation.UnionVariantPropertyName)
+                ? operation.UnionVariantPropertyName
+                : receiveEventProperties.FirstOrDefault(property =>
+                    string.Equals(property, preferredPropertyName, StringComparison.Ordinal) ||
+                    string.Equals(property, messageTypePropertyName, StringComparison.Ordinal) ||
+                    string.Equals(property, messageTypeWithoutPayloadPropertyName, StringComparison.Ordinal));
 
             if (string.IsNullOrWhiteSpace(propertyName))
             {

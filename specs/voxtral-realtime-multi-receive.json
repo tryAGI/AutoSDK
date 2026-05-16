@@ -1,0 +1,261 @@
+{
+  "asyncapi": "3.0.0",
+  "info": {
+    "title": "Voxtral Realtime Multi-Receive",
+    "version": "1.0.0",
+    "description": "Reproduction of AutoSDK #324 — multiple receive operations whose payload schemas have a dotted-discriminator value (e.g. transcription.language). The discriminator-derived union property names (TranscriptionLanguage, SessionCreated, ...) differ from the AsyncAPI message names (TranscriptionStreamLanguage, RealtimeTranscriptionSessionCreated, ...), and the receive dispatcher must address the union variants by the property name the model layer chose."
+  },
+  "servers": {
+    "production": {
+      "host": "api.example.com",
+      "pathname": "/v1/realtime",
+      "protocol": "wss",
+      "description": "Production WebSocket server"
+    }
+  },
+  "channels": {
+    "realtime": {
+      "address": "/v1/realtime",
+      "messages": {
+        "InputAudioAppend": {
+          "$ref": "#/components/messages/InputAudioAppend"
+        },
+        "TranscriptionStreamLanguage": {
+          "$ref": "#/components/messages/TranscriptionStreamLanguage"
+        },
+        "TranscriptionStreamTextDelta": {
+          "$ref": "#/components/messages/TranscriptionStreamTextDelta"
+        },
+        "RealtimeTranscriptionSessionCreated": {
+          "$ref": "#/components/messages/RealtimeTranscriptionSessionCreated"
+        },
+        "RealtimeTranscriptionError": {
+          "$ref": "#/components/messages/RealtimeTranscriptionError"
+        }
+      }
+    }
+  },
+  "operations": {
+    "sendInputAudioAppend": {
+      "action": "send",
+      "channel": {
+        "$ref": "#/channels/realtime"
+      },
+      "summary": "Append audio bytes to the session buffer.",
+      "messages": [
+        {
+          "$ref": "#/channels/realtime/messages/InputAudioAppend"
+        }
+      ]
+    },
+    "receiveTranscriptionStreamLanguage": {
+      "action": "receive",
+      "channel": {
+        "$ref": "#/channels/realtime"
+      },
+      "summary": "Receive detected-language event.",
+      "messages": [
+        {
+          "$ref": "#/channels/realtime/messages/TranscriptionStreamLanguage"
+        }
+      ]
+    },
+    "receiveTranscriptionStreamTextDelta": {
+      "action": "receive",
+      "channel": {
+        "$ref": "#/channels/realtime"
+      },
+      "summary": "Receive a transcription text delta.",
+      "messages": [
+        {
+          "$ref": "#/channels/realtime/messages/TranscriptionStreamTextDelta"
+        }
+      ]
+    },
+    "receiveRealtimeTranscriptionSessionCreated": {
+      "action": "receive",
+      "channel": {
+        "$ref": "#/channels/realtime"
+      },
+      "summary": "Receive session.created event.",
+      "messages": [
+        {
+          "$ref": "#/channels/realtime/messages/RealtimeTranscriptionSessionCreated"
+        }
+      ]
+    },
+    "receiveRealtimeTranscriptionError": {
+      "action": "receive",
+      "channel": {
+        "$ref": "#/channels/realtime"
+      },
+      "summary": "Receive server error event.",
+      "messages": [
+        {
+          "$ref": "#/channels/realtime/messages/RealtimeTranscriptionError"
+        }
+      ]
+    }
+  },
+  "components": {
+    "schemas": {
+      "InputAudioAppend": {
+        "type": "object",
+        "description": "Append a chunk of base64-encoded PCM audio.",
+        "required": ["type", "data"],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Must be 'input_audio.append'.",
+            "enum": ["input_audio.append"]
+          },
+          "data": {
+            "type": "string",
+            "description": "Base64-encoded PCM audio."
+          }
+        }
+      },
+      "TranscriptionStreamLanguage": {
+        "type": "object",
+        "description": "Detected language event.",
+        "required": ["type", "language"],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Must be 'transcription.language'.",
+            "enum": ["transcription.language"]
+          },
+          "language": {
+            "type": "string",
+            "description": "ISO 639-1 language code."
+          }
+        }
+      },
+      "TranscriptionStreamTextDelta": {
+        "type": "object",
+        "description": "A delta of transcribed text.",
+        "required": ["type", "delta"],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Must be 'transcription.text.delta'.",
+            "enum": ["transcription.text.delta"]
+          },
+          "delta": {
+            "type": "string",
+            "description": "Text added to the running transcript."
+          }
+        }
+      },
+      "RealtimeTranscriptionSession": {
+        "type": "object",
+        "description": "Session description echoed by the server.",
+        "required": ["request_id", "model"],
+        "properties": {
+          "request_id": {
+            "type": "string",
+            "description": "Server-assigned session/request id."
+          },
+          "model": {
+            "type": "string",
+            "description": "Realtime transcription model id."
+          }
+        }
+      },
+      "RealtimeTranscriptionSessionCreated": {
+        "type": "object",
+        "description": "session.created server event.",
+        "required": ["type", "session"],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Must be 'session.created'.",
+            "enum": ["session.created"]
+          },
+          "session": {
+            "$ref": "#/components/schemas/RealtimeTranscriptionSession"
+          }
+        }
+      },
+      "RealtimeTranscriptionErrorDetail": {
+        "type": "object",
+        "description": "Error detail block.",
+        "required": ["message", "code"],
+        "properties": {
+          "message": {
+            "type": "string",
+            "description": "Human-readable error message."
+          },
+          "code": {
+            "type": "integer",
+            "description": "Internal error code."
+          }
+        }
+      },
+      "RealtimeTranscriptionError": {
+        "type": "object",
+        "description": "error server event.",
+        "required": ["type", "error"],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Must be 'error'.",
+            "enum": ["error"]
+          },
+          "error": {
+            "$ref": "#/components/schemas/RealtimeTranscriptionErrorDetail"
+          }
+        }
+      }
+    },
+    "messages": {
+      "InputAudioAppend": {
+        "name": "InputAudioAppend",
+        "summary": "Append audio bytes to the session buffer.",
+        "contentType": "application/json",
+        "payload": {
+          "$ref": "#/components/schemas/InputAudioAppend"
+        }
+      },
+      "TranscriptionStreamLanguage": {
+        "name": "TranscriptionStreamLanguage",
+        "summary": "Detected language event.",
+        "contentType": "application/json",
+        "payload": {
+          "$ref": "#/components/schemas/TranscriptionStreamLanguage"
+        }
+      },
+      "TranscriptionStreamTextDelta": {
+        "name": "TranscriptionStreamTextDelta",
+        "summary": "Transcription text delta event.",
+        "contentType": "application/json",
+        "payload": {
+          "$ref": "#/components/schemas/TranscriptionStreamTextDelta"
+        }
+      },
+      "RealtimeTranscriptionSessionCreated": {
+        "name": "RealtimeTranscriptionSessionCreated",
+        "summary": "session.created server event.",
+        "contentType": "application/json",
+        "payload": {
+          "$ref": "#/components/schemas/RealtimeTranscriptionSessionCreated"
+        }
+      },
+      "RealtimeTranscriptionError": {
+        "name": "RealtimeTranscriptionError",
+        "summary": "Server error event.",
+        "contentType": "application/json",
+        "payload": {
+          "$ref": "#/components/schemas/RealtimeTranscriptionError"
+        }
+      }
+    },
+    "securitySchemes": {
+      "bearer": {
+        "type": "http",
+        "scheme": "bearer",
+        "description": "API key as a Bearer token."
+      }
+    }
+  }
+}
