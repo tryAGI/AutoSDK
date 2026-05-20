@@ -177,7 +177,12 @@ namespace {client.Settings.Namespace}
                 HttpClient = httpClient;
             }" : @"
             HttpClient = httpClient ?? new global::System.Net.Http.HttpClient();")}
-            HttpClient.BaseAddress ??= baseUri ?? new global::System.Uri(DefaultBaseUrl);
+{(client.UsesServerSelectionSupport
+    ? @"            if (baseUri is not null)
+            {
+                HttpClient.BaseAddress ??= baseUri;
+            }"
+    : @"            HttpClient.BaseAddress ??= baseUri ?? new global::System.Uri(DefaultBaseUrl);")}
             Authorizations = authorizations ?? new global::System.Collections.Generic.List<global::{client.GlobalSettings.Namespace}.EndPointAuthorization>();
             Options = options ?? new global::{client.Settings.Namespace}.AutoSDKClientOptions();
             _disposeHttpClient = disposeHttpClient;
@@ -290,7 +295,7 @@ namespace {client.Settings.Namespace}
                 return explicitBaseUri;
             }}
 
-            return ResolveSelectedServer()?.Uri ?? HttpClient.BaseAddress;
+            return ResolveSelectedServer()?.Uri ?? (s_availableServers.Length > 0 ? s_availableServers[0].Uri : HttpClient.BaseAddress);
         }}
 
         private global::System.Uri? ResolveBaseUri(

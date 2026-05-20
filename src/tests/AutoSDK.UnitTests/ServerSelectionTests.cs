@@ -115,6 +115,9 @@ paths:
         clientCode.Should().Contain("TrySelectServer(string serverId)");
         clientCode.Should().Contain("SelectedServer");
         clientCode.Should().Contain("https://staging.example.com/v1");
+        clientCode.Should().Contain("if (baseUri is not null)");
+        clientCode.Should().NotContain("HttpClient.BaseAddress ??= baseUri ?? new global::System.Uri(DefaultBaseUrl);");
+        clientCode.Should().Contain("return ResolveSelectedServer()?.Uri ?? (s_availableServers.Length > 0 ? s_availableServers[0].Uri : HttpClient.BaseAddress);");
         fileNames.Should().Contain("G.ServerSelection.g.cs");
     }
 
