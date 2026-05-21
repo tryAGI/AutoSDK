@@ -7,8 +7,8 @@ on:
 jobs:
   test:
     name: Test
-    uses: tryAGI/workflows/.github/workflows/dotnet-sdk-build-test-publish.yml@main
+    if: github.event.pull_request.draft == false
+    uses: tryAGI/workflows/.github/workflows/generated-sdk-pull-request.yml@main
     with:
       project-path: AutoSDK.slnx
       additional-test-arguments: '--logger GitHubActions'
-      publish: false
