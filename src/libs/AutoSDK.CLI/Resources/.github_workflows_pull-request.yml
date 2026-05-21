@@ -8,9 +8,9 @@ jobs:
   test:
     name: Test
     if: github.event.pull_request.draft == false
-    uses: HavenDV/workflows/.github/workflows/dotnet_build-test-publish.yml@main
+    uses: tryAGI/workflows/.github/workflows/dotnet-sdk-build-test-publish.yml@main
     with:
-      generate-build-number: false
-      conventional-commits-publish-conditions: false
+      project-path: src/libs/$SolutionName$/$SolutionName$.csproj
       enable-caching: false
       additional-test-arguments: '--logger GitHubActions'
+      publish: false
