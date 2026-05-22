@@ -467,7 +467,7 @@ public sealed partial class {modelData.Parents[level].Unbox<ModelData>().ClassNa
         // generated constructor, so we treat them uniformly as the const-fields set.
         var leafCandidates = requiredConstructorProperties
             .Concat(constructorBaseOnlyRequiredProperties)
-            .Where(static x => !x.IsDeprecated && string.IsNullOrWhiteSpace(x.DefaultValue))
+            .Where(static x => string.IsNullOrWhiteSpace(x.DefaultValue))
             .ToArray();
         if (leafCandidates.Length != 1)
         {
@@ -477,7 +477,7 @@ public sealed partial class {modelData.Parents[level].Unbox<ModelData>().ClassNa
         var constFields = requiredConstructorProperties
             .Concat(constructorBaseOnlyRequiredProperties)
             .Concat(optionalConstructorPropertiesWithDefaults)
-            .Where(static x => !x.IsDeprecated && !string.IsNullOrWhiteSpace(x.DefaultValue))
+            .Where(static x => !string.IsNullOrWhiteSpace(x.DefaultValue))
             .ToArray();
         if (constFields.Length == 0)
         {

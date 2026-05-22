@@ -278,6 +278,7 @@ public static class CSharpSchemaDataFactory
 
         if (context.IsNamedAnyOfLike && !properties.IsEmpty)
         {
+            properties = AvoidDiscriminatorPropertyNameCollision(properties, discriminatorPropertyName);
             properties = DeduplicatePropertyNames(properties);
         }
 
@@ -478,6 +479,34 @@ public static class CSharpSchemaDataFactory
             builder.Add(properties[i].Name != names[i]
                 ? (properties[i] with { Name = names[i] }).WithCSharpParameterName()
                 : properties[i]);
+        }
+
+        return builder.MoveToImmutable().AsEquatableArray();
+    }
+
+    private static EquatableArray<PropertyData> AvoidDiscriminatorPropertyNameCollision(
+        EquatableArray<PropertyData> properties,
+        string? discriminatorPropertyName)
+    {
+        if (string.IsNullOrWhiteSpace(discriminatorPropertyName) ||
+            properties.All(x => !string.Equals(x.Name, discriminatorPropertyName, StringComparison.OrdinalIgnoreCase)))
+        {
+            return properties;
+        }
+
+        var builder = ImmutableArray.CreateBuilder<PropertyData>(properties.Length);
+        for (var i = 0; i < properties.Length; i++)
+        {
+            if (string.Equals(properties[i].Name, discriminatorPropertyName, StringComparison.OrdinalIgnoreCase))
+            {
+                builder.Add((properties[i] with
+                {
+                    Name = AvoidNamedAnyOfMemberNameCollision($"{properties[i].Name}Value"),
+                }).WithCSharpParameterName());
+                continue;
+            }
+
+            builder.Add(properties[i]);
         }
 
         return builder.MoveToImmutable().AsEquatableArray();

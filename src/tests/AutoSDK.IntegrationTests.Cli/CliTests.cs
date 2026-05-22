@@ -3881,6 +3881,7 @@ paths:
             "NewModerateModerateRequestPolicieCodeAbuse",
             "NewModerateModerateRequestPoliciePiiMasking",
             "NewModerateModerateRequestPolicieUrlMasking",
+            "NewModerateModerateRequestPolicieUrlRisk",
             "NewModerateModerateRequestPolicieGuideline",
         };
         var anyOfRefs = string.Join(
@@ -3957,6 +3958,12 @@ components:
                 var content = string.Join("\n\n", generatedContents);
 
                 content.Should().Contain("TypeInfoPropertyName =");
+                var typeInfoPropertyNames = Regex
+                    .Matches(content, @"TypeInfoPropertyName = ""([^""]+)""")
+                    .Select(match => match.Groups[1].Value)
+                    .ToArray();
+                typeInfoPropertyNames.Should().NotBeEmpty();
+                typeInfoPropertyNames.Should().OnlyContain(name => name.Length <= 120);
                 content.Should().Contain("JsonSerializerContext { get; set; } = global::HugeUnion.SourceGenerationContext.Default;");
             });
     }
@@ -3991,6 +3998,7 @@ components:
             "NewModerateModerateRequestPolicieCodeAbuse",
             "NewModerateModerateRequestPoliciePiiMasking",
             "NewModerateModerateRequestPolicieUrlMasking",
+            "NewModerateModerateRequestPolicieUrlRisk",
             "NewModerateModerateRequestPolicieGuideline",
         };
         var deprecatedPolicy = policyNames[0];
@@ -4072,6 +4080,69 @@ components:
                 content.Should().Contain("#pragma warning disable CS0618 // Type or member is obsolete");
                 content.Should().Contain(deprecatedPolicy);
                 content.Should().Contain("JsonSerializerContext { get; set; } = global::HugeUnionDeprecated.SourceGenerationContext.Default;");
+            });
+    }
+
+    [TestMethod]
+    public async Task Generate_WithRequiredDeprecatedLeafFactoryInputs_DoesNotEmitIncompleteFactory()
+    {
+        const string spec = """
+openapi: 3.0.3
+info:
+  title: DeprecatedLeafFactory
+  version: 1.0.0
+paths:
+  /outputs:
+    post:
+      operationId: createOutput
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LLMOutput'
+      responses:
+        '200':
+          description: OK
+components:
+  schemas:
+    LLMOutput:
+      type: object
+      required:
+        - value_schema
+        - prompt
+      properties:
+        type:
+          type: string
+          default: llm
+          enum:
+            - llm
+        value_schema:
+          $ref: '#/components/schemas/ValueSchema'
+        prompt:
+          type: string
+          deprecated: true
+    ValueSchema:
+      type: object
+      properties:
+        format:
+          type: string
+""";
+
+        await GenerateFromContentAsync(
+            fileName: "required-deprecated-leaf-factory.yaml",
+            specContent: spec,
+            targetFramework: "net10.0",
+            namespaceValue: "DeprecatedLeafFactory",
+            assertGeneratedOutput: async outputDirectory =>
+            {
+                var generatedContents = await Task.WhenAll(
+                    Directory.EnumerateFiles(outputDirectory, "*.g.cs", SearchOption.AllDirectories)
+                        .Select(path => File.ReadAllTextAsync(path)));
+                var content = string.Join("\n\n", generatedContents);
+
+                content.Should().NotContain("FromValueSchema(");
+                content.Should().Contain("public required string Prompt { get; set; }");
             });
     }
 
@@ -4610,6 +4681,80 @@ components:
                         }
                     }
                     """);
+            });
+    }
+
+    [TestMethod]
+    public async Task Generate_WithDiscriminatorOneOfVariantNamedLikeDiscriminator_RenamesVariantMember()
+    {
+        const string spec = """
+openapi: 3.0.3
+info:
+  title: DiscriminatorCollision
+  version: 1.0.0
+paths:
+  /actions:
+    get:
+      operationId: getAction
+      responses:
+        '200':
+          description: ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ComputerAction'
+components:
+  schemas:
+    ComputerAction:
+      discriminator:
+        propertyName: type
+        mapping:
+          click: '#/components/schemas/ClickAction'
+          type: '#/components/schemas/TypeAction'
+      oneOf:
+        - $ref: '#/components/schemas/ClickAction'
+        - $ref: '#/components/schemas/TypeAction'
+    ClickAction:
+      type: object
+      required:
+        - type
+        - x
+      properties:
+        type:
+          type: string
+          enum:
+            - click
+        x:
+          type: integer
+    TypeAction:
+      type: object
+      required:
+        - type
+        - text
+      properties:
+        type:
+          type: string
+          enum:
+            - type
+        text:
+          type: string
+""";
+
+        await GenerateFromContentAsync(
+            fileName: "discriminator-oneof-variant-discriminator-collision.yaml",
+            specContent: spec,
+            targetFramework: "net10.0",
+            namespaceValue: "DiscriminatorCollision",
+            assertGeneratedOutput: async outputDirectory =>
+            {
+                var generatedContents = await Task.WhenAll(
+                    Directory.EnumerateFiles(outputDirectory, "*.g.cs", SearchOption.AllDirectories)
+                        .Select(path => File.ReadAllTextAsync(path)));
+                var content = string.Join("\n\n", generatedContents);
+
+                content.Should().Contain("public bool TryPickTypeValue(");
+                content.Should().Contain("public static ComputerAction FromTypeValue(");
+                content.Should().NotContain("public bool TryPickType(");
             });
     }
 
