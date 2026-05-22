@@ -4,6 +4,9 @@
     <TargetFramework>net10.0</TargetFramework>
     <RunUnitBenchmarks Condition="'$(RunUnitBenchmarks)' == ''">false</RunUnitBenchmarks>
     <VSTestTestCaseFilter Condition="'$(RunUnitBenchmarks)' != 'true'">TestCategory!=Benchmark</VSTestTestCaseFilter>
+    <!-- Sign with the shared key so AutoSDK.CSharp's InternalsVisibleTo grant resolves. -->
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>$(MSBuildThisFileDirectory)../../key.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
 
   <ItemGroup Label="Base packages">

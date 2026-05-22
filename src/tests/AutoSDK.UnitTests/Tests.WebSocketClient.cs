@@ -512,6 +512,67 @@ components:
     }
 
     [TestMethod]
+    public void FindUnionVariantPropertyName_FallsBackThroughFullThenShortThenRaw()
+    {
+        var variant = (TypeData.Default with
+        {
+            CSharpTypeRaw = "global::G.SessionStartedPayload",
+            Namespace = "G",
+            GeneratedNamespace = "G",
+        }).WithCSharpComputedValues();
+        var variants = ImmutableArray.Create(PropertyData.Default with
+        {
+            Name = "SessionStarted",
+            Type = variant,
+        }).AsEquatableArray();
+
+        // 1. Full-name match (happy path).
+        var byFull = (TypeData.Default with
+        {
+            CSharpTypeRaw = "global::G.SessionStartedPayload",
+            Namespace = "G",
+            GeneratedNamespace = "G",
+        }).WithCSharpComputedValues();
+        AsyncApiData.FindUnionVariantPropertyName(byFull, variants).Should().Be("SessionStarted");
+
+        // 2. Short-name fallback: full-qualified name differs (e.g. consumer set TypesNamespace
+        //    so the receive op resolved into another namespace) but the unqualified type name
+        //    still matches. Without this fallback the dispatcher would silently fall back to
+        //    the message name and emit CS1061.
+        var byShort = (TypeData.Default with
+        {
+            CSharpTypeRaw = "global::ExternalTypes.SessionStartedPayload",
+            Namespace = "ExternalTypes",
+            GeneratedNamespace = "G",
+        }).WithCSharpComputedValues();
+        byShort.CSharpTypeWithoutNullability.Should().NotBe(variant.CSharpTypeWithoutNullability);
+        byShort.ShortCSharpTypeWithoutNullability.Should().Be(variant.ShortCSharpTypeWithoutNullability);
+        AsyncApiData.FindUnionVariantPropertyName(byShort, variants).Should().Be("SessionStarted");
+
+        // 3. Raw-spelling fallback: pre-WithCSharpComputedValues TypeData (Full/Short are empty)
+        //    still matches a variant whose CSharpTypeRaw lines up.
+        var byRaw = TypeData.Default with
+        {
+            CSharpTypeRaw = "global::G.SessionStartedPayload",
+            Namespace = "G",
+            GeneratedNamespace = "G",
+        };
+        byRaw.CSharpTypeWithoutNullability.Should().BeEmpty();
+        byRaw.ShortCSharpTypeWithoutNullability.Should().BeEmpty();
+        AsyncApiData.FindUnionVariantPropertyName(byRaw, variants).Should().Be("SessionStarted");
+
+        // 4. No-match returns null so the caller leaves UnionVariantPropertyName empty
+        //    and the existing message-name dispatch path stays in charge.
+        var unmatched = (TypeData.Default with
+        {
+            CSharpTypeRaw = "global::G.SomethingElsePayload",
+            Namespace = "G",
+            GeneratedNamespace = "G",
+        }).WithCSharpComputedValues();
+        AsyncApiData.FindUnionVariantPropertyName(unmatched, variants).Should().BeNull();
+    }
+
+    [TestMethod]
     public void WebSocketBinaryPayloadHelpers_GenerateDecodedBytesProperty_AndConvenienceSendOverload()
     {
         var settings = Settings.Default with

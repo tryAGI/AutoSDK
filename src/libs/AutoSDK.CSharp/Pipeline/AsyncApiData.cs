@@ -593,7 +593,7 @@ public static class AsyncApiData
     /// guards against an upstream rename that would otherwise silently break the
     /// dispatcher's variant-to-property mapping (AutoSDK #324).
     /// </summary>
-    private static string? FindUnionVariantPropertyName(
+    internal static string? FindUnionVariantPropertyName(
         TypeData messageType,
         EquatableArray<PropertyData> unionVariants)
     {
