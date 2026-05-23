@@ -4685,7 +4685,7 @@ components:
     }
 
     [TestMethod]
-    public async Task Generate_WithDiscriminatorOneOfVariantNamedLikeDiscriminator_RenamesVariantMember()
+    public async Task Generate_WithDiscriminatorOneOfVariantNamedLikeDiscriminatorWithoutMapping_RenamesVariantMember()
     {
         const string spec = """
 openapi: 3.0.3
@@ -4708,9 +4708,6 @@ components:
     ComputerAction:
       discriminator:
         propertyName: type
-        mapping:
-          click: '#/components/schemas/ClickAction'
-          type: '#/components/schemas/TypeAction'
       oneOf:
         - $ref: '#/components/schemas/ClickAction'
         - $ref: '#/components/schemas/TypeAction'
@@ -4724,6 +4721,8 @@ components:
           type: string
           enum:
             - click
+          default: click
+          x-stainless-const: true
         x:
           type: integer
     TypeAction:
@@ -4736,6 +4735,8 @@ components:
           type: string
           enum:
             - type
+          default: type
+          x-stainless-const: true
         text:
           type: string
 """;
