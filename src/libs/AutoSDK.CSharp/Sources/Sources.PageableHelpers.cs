@@ -234,6 +234,102 @@ namespace {settings.Namespace}
         }}
 
         /// <summary>
+        /// Paginates through APIs that embed an absolute <c>next</c> URL in the response body
+        /// (Firecrawl, Slack, Linear, Notion, HubSpot, etc.). Calls <paramref name=""fetchPage""/>
+        /// with the URL returned by <paramref name=""extractNextUrl""/> from the previous page
+        /// until the extractor returns null/whitespace.
+        ///
+        /// <para><b>Security:</b> when <paramref name=""baseAddress""/> is provided, every next-URL
+        /// origin must match it before the next fetch runs. An unchecked walker would let a
+        /// hostile server harvest the API key by returning a foreign URL in the body — a CVE
+        /// waiting to happen. Pass <c>HttpClient.BaseAddress</c> here.</para>
+        /// </summary>
+        /// <typeparam name=""TPage""></typeparam>
+        /// <typeparam name=""TItem""></typeparam>
+        /// <param name=""fetchPage"">Async fetch for the page at the given URL. <c>null</c> on the first call.</param>
+        /// <param name=""extractItems"">Pulls the item collection from the response body.</param>
+        /// <param name=""extractNextUrl"">Pulls the body-embedded next URL (e.g. <c>response.Next</c>). Return null/whitespace to stop paging.</param>
+        /// <param name=""baseAddress"">The client's base address. When non-null, the next-URL host must match before the next fetch runs.</param>
+        /// <param name=""initialUrl"">First URL to fetch (defaults to null, meaning the caller's fetch should hit its baseline endpoint).</param>
+        /// <param name=""cancellationToken""></param>
+        /// <exception cref=""global::System.InvalidOperationException"">Thrown when a next URL's origin doesn't match <paramref name=""baseAddress""/>.</exception>
+        public static async global::System.Collections.Generic.IAsyncEnumerable<TItem> NextUrlAsync<TPage, TItem>(
+            global::System.Func<string?, global::System.Threading.CancellationToken, global::System.Threading.Tasks.Task<TPage>> fetchPage,
+            global::System.Func<TPage, global::System.Collections.Generic.IEnumerable<TItem>?> extractItems,
+            global::System.Func<TPage, string?> extractNextUrl,
+            global::System.Uri? baseAddress = null,
+            string? initialUrl = null,
+            [global::System.Runtime.CompilerServices.EnumeratorCancellation]
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {{
+            fetchPage = fetchPage ?? throw new global::System.ArgumentNullException(nameof(fetchPage));
+            extractItems = extractItems ?? throw new global::System.ArgumentNullException(nameof(extractItems));
+            extractNextUrl = extractNextUrl ?? throw new global::System.ArgumentNullException(nameof(extractNextUrl));
+
+            var url = initialUrl;
+            while (true)
+            {{
+                cancellationToken.ThrowIfCancellationRequested();
+
+                if (!string.IsNullOrWhiteSpace(url))
+                {{
+                    EnsureSameOrigin(url!, baseAddress);
+                }}
+
+                var response = await fetchPage(url, cancellationToken).ConfigureAwait(false);
+                if (response is null)
+                {{
+                    yield break;
+                }}
+
+                var items = extractItems(response);
+                if (items is not null)
+                {{
+                    foreach (var item in items)
+                    {{
+                        yield return item;
+                    }}
+                }}
+
+                var nextUrl = extractNextUrl(response);
+                if (string.IsNullOrWhiteSpace(nextUrl) || string.Equals(nextUrl, url, global::System.StringComparison.Ordinal))
+                {{
+                    yield break;
+                }}
+
+                url = nextUrl;
+            }}
+        }}
+
+        /// <summary>
+        /// Validates that <paramref name=""nextUrl""/> shares an origin with <paramref name=""baseAddress""/>.
+        /// Throws when they differ so an embedded foreign URL can't redirect the SDK (and the
+        /// caller's <c>Authorization</c> header) to a hostile host. When <paramref name=""baseAddress""/>
+        /// is null, validation is skipped — callers should pass <c>HttpClient.BaseAddress</c>.
+        /// </summary>
+        public static void EnsureSameOrigin(string nextUrl, global::System.Uri? baseAddress)
+        {{
+            if (baseAddress is null || string.IsNullOrWhiteSpace(nextUrl))
+            {{
+                return;
+            }}
+
+            if (!global::System.Uri.TryCreate(nextUrl, global::System.UriKind.Absolute, out var absolute))
+            {{
+                // Relative URLs are safe — they're resolved against the client's BaseAddress on send.
+                return;
+            }}
+
+            if (!string.Equals(absolute.Scheme, baseAddress.Scheme, global::System.StringComparison.OrdinalIgnoreCase) ||
+                !string.Equals(absolute.Host, baseAddress.Host, global::System.StringComparison.OrdinalIgnoreCase) ||
+                absolute.Port != baseAddress.Port)
+            {{
+                throw new global::System.InvalidOperationException(
+                    $""Refusing to follow next-page URL '{{absolute}}' because its origin does not match the client's base address '{{baseAddress}}'. Cross-origin pagination is blocked to prevent leaking the Authorization header to a foreign host."");
+            }}
+        }}
+
+        /// <summary>
         /// Parses RFC 5988 <c>Link</c> header values and returns the URL whose <c>rel</c>
         /// attribute matches <paramref name=""linkRel""/>. Multiple link values may be passed
         /// either as separate strings or comma-separated within a single string. Returns null
