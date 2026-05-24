@@ -188,6 +188,7 @@ public static class CSharpPipeline
                     .Concat([Sources.WebhookVerifier(settings, cancellationToken)])
                     .Concat([Sources.DynamicMultipartHelpers(settings, cancellationToken)])
                     .Concat([Sources.MultipartUploadHelpers(settings, cancellationToken)])
+                    .Concat([Sources.PolymorphicArrayHelpers(settings, cancellationToken)])
                     .Concat([Sources.PromptTemplateHelpers(settings, cancellationToken)])
                     .Concat([Sources.ObservabilityLifecycleHelpers(settings, cancellationToken)])
                     .Concat([Sources.PredictionWorkflowHelpers(settings, cancellationToken)])

@@ -84,6 +84,8 @@
     <CompilerVisibleProperty Include="AutoSDK_GenerateMultipartUploadHelpers"/>
     <!-- Class name for generated UploadFile typed helper. Default: AutoSDKUploadFile -->
     <CompilerVisibleProperty Include="AutoSDK_MultipartUploadHelperClassName"/>
+    <!-- true/false. Default: false. Generates opt-in PolymorphicFormat base class + JsonConverter for array items shaped as oneOf{string-enum, object-with-type-const}. Consumers hand-write the variant subclasses; the generator emits the reusable converter infrastructure. -->
+    <CompilerVisibleProperty Include="AutoSDK_GeneratePolymorphicArrayHelpers"/>
     <!-- true/false. Default: false. Generates opt-in prompt template manager helpers. -->
     <CompilerVisibleProperty Include="AutoSDK_GeneratePromptTemplateHelpers"/>
     <!-- Class name for generated prompt template helper. Default: PromptTemplateManager -->

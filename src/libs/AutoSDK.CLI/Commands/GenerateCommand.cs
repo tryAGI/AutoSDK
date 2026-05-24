@@ -264,6 +264,13 @@ internal sealed class GenerateCommand : Command
         Description = "Class name for the generated typed multipart upload helper (default: AutoSDKUploadFile).",
     };
 
+    private Option<bool> GeneratePolymorphicArrayHelpers { get; } = new(
+        name: "--generate-polymorphic-array-helpers")
+    {
+        DefaultValueFactory = _ => Settings.Default.GeneratePolymorphicArrayHelpers,
+        Description = "Emit an AutoSDKPolymorphicFormat<TBase> base class plus a reusable JsonConverter that round-trips array items shaped as oneOf{string-enum, object-with-type-const}. Consumer code hand-models the variant subclasses and registers them via [AutoSDKPolymorphicFormatVariant(\"name\", typeof(...))].",
+    };
+
     private Option<bool> GeneratePromptTemplateHelpers { get; } = new(
         name: "--generate-prompt-template-helpers")
     {
@@ -493,6 +500,7 @@ internal sealed class GenerateCommand : Command
         Options.Add(DynamicMultipartHelperClassName);
         Options.Add(GenerateMultipartUploadHelpers);
         Options.Add(MultipartUploadHelperClassName);
+        Options.Add(GeneratePolymorphicArrayHelpers);
         Options.Add(GeneratePromptTemplateHelpers);
         Options.Add(PromptTemplateHelperClassName);
         Options.Add(GenerateObservabilityLifecycleHelpers);
@@ -613,6 +621,7 @@ internal sealed class GenerateCommand : Command
             DynamicMultipartHelperClassName = parseResult.GetRequiredValue(DynamicMultipartHelperClassName),
             GenerateMultipartUploadHelpers = parseResult.GetRequiredValue(GenerateMultipartUploadHelpers),
             MultipartUploadHelperClassName = parseResult.GetRequiredValue(MultipartUploadHelperClassName),
+            GeneratePolymorphicArrayHelpers = parseResult.GetRequiredValue(GeneratePolymorphicArrayHelpers),
             GeneratePromptTemplateHelpers = parseResult.GetRequiredValue(GeneratePromptTemplateHelpers),
             PromptTemplateHelperClassName = parseResult.GetRequiredValue(PromptTemplateHelperClassName),
             GenerateObservabilityLifecycleHelpers = parseResult.GetRequiredValue(GenerateObservabilityLifecycleHelpers),
