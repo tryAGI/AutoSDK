@@ -19,6 +19,146 @@ public static partial class Sources
             Text: GeneratePolymorphicArrayHelpers(settings, cancellationToken));
     }
 
+    /// <summary>
+    /// Emits one .g.cs per detected polymorphic-format match — the abstract base + sealed
+    /// bare-string variants + sealed typed-object variants — gated on
+    /// <see cref="CSharpSettings.GeneratePolymorphicArrayHelpers"/>.
+    /// </summary>
+    public static IEnumerable<FileWithName> PolymorphicArrayClasses(
+        CSharpSettings settings,
+        IReadOnlyList<SchemaContext> schemas,
+        CancellationToken cancellationToken = default)
+    {
+        if (!settings.GeneratePolymorphicArrayHelpers || schemas is null)
+        {
+            yield break;
+        }
+
+        foreach (var match in DetectPolymorphicFormatMatches(schemas))
+        {
+            cancellationToken.ThrowIfCancellationRequested();
+
+            yield return new FileWithName(
+                Name: $"{match.FileNameWithoutExtension}.g.cs",
+                Text: GeneratePolymorphicFormatClass(settings, match));
+        }
+    }
+
+    private static string GeneratePolymorphicFormatClass(
+        CSharpSettings settings,
+        PolymorphicFormatMatch match)
+    {
+        var ns = settings.Namespace;
+        var variantAttributes = string.Join(string.Empty,
+            match.StringVariants.Select(v =>
+                $@"    [global::{ns}.AutoSDKPolymorphicFormatVariant(""{EscapeStringLiteral(v.DiscriminatorValue)}"", typeof(global::{ns}.{v.ClassName}))]
+")
+            .Concat(match.ObjectVariants.Select(v =>
+                $@"    [global::{ns}.AutoSDKPolymorphicFormatVariant(""{EscapeStringLiteral(v.DiscriminatorValue)}"", typeof(global::{ns}.{v.ClassName}))]
+")));
+
+        var stringVariantClasses = string.Join("\n", match.StringVariants.Select(v => EmitStringVariantClass(ns, match.BaseClassName, v)));
+        var objectVariantClasses = string.Join("\n", match.ObjectVariants.Select(v => EmitObjectVariantClass(ns, match.BaseClassName, v)));
+
+        var summary = string.IsNullOrWhiteSpace(match.Summary)
+            ? $"Polymorphic-format hierarchy auto-detected from oneOf{{string-enum, object-with-type-const}} array items."
+            : match.Summary;
+
+        return $@"#pragma warning disable CS1591
+#nullable enable
+
+namespace {ns}
+{{
+    /// <summary>
+    /// {EscapeXmlDoc(summary)}
+    /// </summary>
+{variantAttributes}    [global::System.Text.Json.Serialization.JsonConverter(typeof(global::{ns}.AutoSDKPolymorphicFormatJsonConverter<global::{ns}.{match.BaseClassName}>))]
+    public abstract partial class {match.BaseClassName} : global::{ns}.AutoSDKPolymorphicFormat
+    {{
+    }}
+
+{stringVariantClasses}
+
+{objectVariantClasses}
+}}".RemoveBlankLinesWhereOnlyWhitespaces();
+    }
+
+    private static string EmitStringVariantClass(
+        string ns,
+        string baseClassName,
+        StringFormatVariant variant)
+    {
+        var doc = string.IsNullOrWhiteSpace(variant.Summary)
+            ? $"Bare-string format variant for <c>\"{EscapeXmlDoc(variant.DiscriminatorValue)}\"</c>."
+            : variant.Summary;
+
+        return $@"    /// <summary>
+    /// {EscapeXmlDoc(doc)}
+    /// </summary>
+    public sealed partial class {variant.ClassName} : global::{ns}.{baseClassName}
+    {{
+        /// <inheritdoc />
+        public override string Type => ""{EscapeStringLiteral(variant.DiscriminatorValue)}"";
+
+        /// <inheritdoc />
+        public override bool IsBareString => true;
+    }}";
+    }
+
+    private static string EmitObjectVariantClass(
+        string ns,
+        string baseClassName,
+        ObjectFormatVariant variant)
+    {
+        var doc = string.IsNullOrWhiteSpace(variant.Summary)
+            ? $"Typed object variant for <c>type: \"{EscapeXmlDoc(variant.DiscriminatorValue)}\"</c>."
+            : variant.Summary;
+
+        var properties = variant.Properties.Length == 0
+            ? string.Empty
+            : "\n" + string.Join("\n", variant.Properties.Select(p => EmitVariantProperty(p)));
+
+        return $@"    /// <summary>
+    /// {EscapeXmlDoc(doc)}
+    /// </summary>
+    public sealed partial class {variant.ClassName} : global::{ns}.{baseClassName}
+    {{
+        /// <inheritdoc />
+        public override string Type => ""{EscapeStringLiteral(variant.DiscriminatorValue)}"";
+
+        /// <summary>The discriminator value written into the <c>type</c> JSON property.</summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName(""type"")]
+        public string TypeValue {{ get; }} = ""{EscapeStringLiteral(variant.DiscriminatorValue)}"";
+{properties}
+    }}";
+    }
+
+    private static string EmitVariantProperty(FormatVariantProperty property)
+    {
+        var doc = string.IsNullOrWhiteSpace(property.Summary)
+            ? $"The <c>{EscapeXmlDoc(property.JsonName)}</c> field on this variant."
+            : property.Summary;
+
+        return $@"        /// <summary>
+        /// {EscapeXmlDoc(doc)}
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName(""{EscapeStringLiteral(property.JsonName)}"")]
+        public {property.CSharpType} {property.CSharpName} {{ get; set; }}";
+    }
+
+    private static string EscapeStringLiteral(string value)
+    {
+        return (value ?? string.Empty).Replace("\\", "\\\\").Replace("\"", "\\\"");
+    }
+
+    private static string EscapeXmlDoc(string value)
+    {
+        return (value ?? string.Empty)
+            .Replace("&", "&amp;")
+            .Replace("<", "&lt;")
+            .Replace(">", "&gt;");
+    }
+
     public static string GeneratePolymorphicArrayHelpers(
         CSharpSettings settings,
         CancellationToken cancellationToken = default)
