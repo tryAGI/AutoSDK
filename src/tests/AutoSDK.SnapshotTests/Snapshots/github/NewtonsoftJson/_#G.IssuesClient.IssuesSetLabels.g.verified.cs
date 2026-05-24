@@ -345,18 +345,17 @@ namespace G
                                     __exception_301 = __ex;
                                 }
 
-                                throw new global::G.ApiException<global::G.BasicError>(
+
+                                throw global::G.ApiException<global::G.BasicError>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_301 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_301,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_301,
-                                    ResponseObject = __value_301,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_301,
+                                    responseObject: __value_301,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
                             // Resource not found
                             if ((int)__response.StatusCode == 404)
@@ -383,18 +382,17 @@ namespace G
                                     __exception_404 = __ex;
                                 }
 
-                                throw new global::G.ApiException<global::G.BasicError>(
+
+                                throw global::G.ApiException<global::G.BasicError>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_404 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_404,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_404,
-                                    ResponseObject = __value_404,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_404,
+                                    responseObject: __value_404,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
                             // Gone
                             if ((int)__response.StatusCode == 410)
@@ -421,18 +419,17 @@ namespace G
                                     __exception_410 = __ex;
                                 }
 
-                                throw new global::G.ApiException<global::G.BasicError>(
+
+                                throw global::G.ApiException<global::G.BasicError>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_410 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_410,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_410,
-                                    ResponseObject = __value_410,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_410,
+                                    responseObject: __value_410,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
                             // Validation failed, or the endpoint has been spammed.
                             if ((int)__response.StatusCode == 422)
@@ -459,18 +456,17 @@ namespace G
                                     __exception_422 = __ex;
                                 }
 
-                                throw new global::G.ApiException<global::G.ValidationError>(
+
+                                throw global::G.ApiException<global::G.ValidationError>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_422 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_422,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_422,
-                                    ResponseObject = __value_422,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_422,
+                                    responseObject: __value_422,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
 
                             if (__effectiveReadResponseAsString)
@@ -504,17 +500,15 @@ namespace G
                                 }
                                 catch (global::System.Exception __ex)
                                 {
-                                    throw new global::G.ApiException(
+                                    throw global::G.ApiException.Create(
+                                        statusCode: __response.StatusCode,
                                         message: __content ?? __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
-                                        statusCode: __response.StatusCode)
-                                    {
-                                        ResponseBody = __content,
-                                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        responseBody: __content,
+                                        responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                             __response.Headers,
                                             h => h.Key,
-                                            h => h.Value),
-                                    };
+                                            h => h.Value));
                                 }
                             }
                             else
@@ -551,17 +545,15 @@ namespace G
                                     {
                                     }
 
-                                    throw new global::G.ApiException(
+                                    throw global::G.ApiException.Create(
+                                        statusCode: __response.StatusCode,
                                         message: __content ?? __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
-                                        statusCode: __response.StatusCode)
-                                    {
-                                        ResponseBody = __content,
-                                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        responseBody: __content,
+                                        responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                             __response.Headers,
                                             h => h.Key,
-                                            h => h.Value),
-                                    };
+                                            h => h.Value));
                                 }
                             }
 

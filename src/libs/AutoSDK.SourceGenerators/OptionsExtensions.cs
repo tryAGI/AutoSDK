@@ -51,6 +51,7 @@ public static class OptionsExtensions
             GenerateDependencyInjection: options.GetBoolGlobalOption(nameof(Settings.GenerateDependencyInjection), prefix, defaultValue: Settings.Default.GenerateDependencyInjection),
             GenerateConfigurationBinding: options.GetBoolGlobalOption(nameof(Settings.GenerateConfigurationBinding), prefix, defaultValue: Settings.Default.GenerateConfigurationBinding),
             GenerateHttpResilienceExtensions: options.GetBoolGlobalOption(nameof(Settings.GenerateHttpResilienceExtensions), prefix, defaultValue: Settings.Default.GenerateHttpResilienceExtensions),
+            GenerateHttpExceptionHierarchy: options.GetBoolGlobalOption(nameof(Settings.GenerateHttpExceptionHierarchy), prefix, defaultValue: Settings.Default.GenerateHttpExceptionHierarchy),
             GenerateWebhookVerifier: options.GetBoolGlobalOption(nameof(Settings.GenerateWebhookVerifier), prefix, defaultValue: Settings.Default.GenerateWebhookVerifier),
             WebhookVerifierClassName: options.GetGlobalOption(nameof(Settings.WebhookVerifierClassName), prefix) ?? Settings.Default.WebhookVerifierClassName,
             WebhookIdHeaderName: options.GetGlobalOption(nameof(Settings.WebhookIdHeaderName), prefix) ?? Settings.Default.WebhookIdHeaderName,

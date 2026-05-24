@@ -2188,17 +2188,15 @@ namespace {endPoint.Settings.Namespace}
                 {{
                 }}
 
-                throw new global::{endPoint.GlobalSettings.Namespace}.ApiException(
+                throw global::{endPoint.GlobalSettings.Namespace}.ApiException.Create(
+                    statusCode: __response.StatusCode,
                     message: __content ?? __response.ReasonPhrase ?? string.Empty,
                     innerException: __ex,
-                    statusCode: __response.StatusCode)
-                {{
-                    ResponseBody = __content,
-                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                    responseBody: __content,
+                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                         __response.Headers,
                         h => h.Key,
-                        h => h.Value),
-                }};
+                        h => h.Value));
             }}
 
             using var __stream = await __response.Content.ReadAsStreamAsync(
@@ -2219,16 +2217,15 @@ namespace {endPoint.Settings.Namespace}
     : TrimmedLine)}
 
                 var __streamedResponse = {jsonSerializer.GenerateDeserializeCall("__content", endPoint.SuccessResponse.Type, endPoint.Settings.JsonSerializerContext)} ??
-                                       throw new global::{endPoint.GlobalSettings.Namespace}.ApiException(
+                                       throw global::{endPoint.GlobalSettings.Namespace}.ApiException.Create(
+                                           statusCode: __response.StatusCode,
                                            message: $""Response deserialization failed for \""{{__content}}\"" "",
-                                           statusCode: __response.StatusCode)
-                                       {{
-                                           ResponseBody = __content,
-                                           ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                           innerException: null,
+                                           responseBody: __content,
+                                           responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                                __response.Headers,
                                                h => h.Key,
-                                               h => h.Value),
-                                       }};
+                                               h => h.Value));
 
                 yield return __streamedResponse;
             }}
@@ -2265,16 +2262,15 @@ namespace {endPoint.Settings.Namespace}
                         }}
 
                         var __streamedResponse = {jsonSerializer.GenerateDeserializeCall("__content", endPoint.SuccessResponse.Type, endPoint.Settings.JsonSerializerContext)} ??
-                                               throw new global::{endPoint.GlobalSettings.Namespace}.ApiException(
+                                               throw global::{endPoint.GlobalSettings.Namespace}.ApiException.Create(
+                                                   statusCode: __response.StatusCode,
                                                    message: $""Response deserialization failed for \""{{__content}}\"" "",
-                                                   statusCode: __response.StatusCode)
-                                               {{
-                                                   ResponseBody = __content,
-                                                   ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                                   innerException: null,
+                                                   responseBody: __content,
+                                                   responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                                        __response.Headers,
                                                        h => h.Key,
-                                                       h => h.Value),
-                                               }};
+                                                       h => h.Value));
 
                         yield return __streamedResponse;
                     }}
@@ -2291,16 +2287,15 @@ namespace {endPoint.Settings.Namespace}
                 if (!global::System.String.IsNullOrWhiteSpace(__content))
                 {{
                     var __streamedResponse = {jsonSerializer.GenerateDeserializeCall("__content", endPoint.SuccessResponse.Type, endPoint.Settings.JsonSerializerContext)} ??
-                                           throw new global::{endPoint.GlobalSettings.Namespace}.ApiException(
+                                           throw global::{endPoint.GlobalSettings.Namespace}.ApiException.Create(
+                                               statusCode: __response.StatusCode,
                                                message: $""Response deserialization failed for \""{{__content}}\"" "",
-                                               statusCode: __response.StatusCode)
-                                           {{
-                                               ResponseBody = __content,
-                                               ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                               innerException: null,
+                                               responseBody: __content,
+                                               responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                                    __response.Headers,
                                                    h => h.Key,
-                                                   h => h.Value),
-                                           }};
+                                                   h => h.Value));
 
                     yield return __streamedResponse;
                 }}
@@ -2317,16 +2312,15 @@ namespace {endPoint.Settings.Namespace}
                 }}
 
                 var __streamedResponse = {jsonSerializer.GenerateDeserializeCall("__content", endPoint.SuccessResponse.Type, endPoint.Settings.JsonSerializerContext)} ??
-                                       throw new global::{endPoint.GlobalSettings.Namespace}.ApiException(
+                                       throw global::{endPoint.GlobalSettings.Namespace}.ApiException.Create(
+                                           statusCode: __response.StatusCode,
                                            message: $""Response deserialization failed for \""{{__content}}\"" "",
-                                           statusCode: __response.StatusCode)
-                                       {{
-                                           ResponseBody = __content,
-                                           ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                           innerException: null,
+                                           responseBody: __content,
+                                           responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                                __response.Headers,
                                                h => h.Key,
-                                               h => h.Value),
-                                       }};
+                                               h => h.Value));
 
                 yield return __streamedResponse;
             }}";
@@ -2351,17 +2345,15 @@ namespace {endPoint.Settings.Namespace}
                 {{
                 }}
 
-                throw new global::{endPoint.GlobalSettings.Namespace}.ApiException(
+                throw global::{endPoint.GlobalSettings.Namespace}.ApiException.Create(
+                    statusCode: __response.StatusCode,
                     message: __content ?? __response.ReasonPhrase ?? string.Empty,
                     innerException: __ex,
-                    statusCode: __response.StatusCode)
-                {{
-                    ResponseBody = __content,
-                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                    responseBody: __content,
+                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                         __response.Headers,
                         h => h.Key,
-                        h => h.Value),
-                }};
+                        h => h.Value));
             }}
 
             using var __stream = await __response.Content.ReadAsStreamAsync(
@@ -2384,16 +2376,15 @@ namespace {endPoint.Settings.Namespace}
                 }}
 
                 var __streamedResponse = {jsonSerializer.GenerateDeserializeCall("__content", endPoint.SuccessResponse.Type, endPoint.Settings.JsonSerializerContext)} ??
-                                       throw new global::{endPoint.GlobalSettings.Namespace}.ApiException(
+                                       throw global::{endPoint.GlobalSettings.Namespace}.ApiException.Create(
+                                           statusCode: __response.StatusCode,
                                            message: $""Response deserialization failed for \""{{__content}}\"" "",
-                                           statusCode: __response.StatusCode)
-                                       {{
-                                           ResponseBody = __content,
-                                           ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                           innerException: null,
+                                           responseBody: __content,
+                                           responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                                __response.Headers,
                                                h => h.Key,
-                                               h => h.Value),
-                                       }};
+                                               h => h.Value));
 
                 yield return __streamedResponse;"
                 : @"                continue;";
@@ -2418,17 +2409,15 @@ namespace {endPoint.Settings.Namespace}
                 {{
                 }}
 
-                throw new global::{endPoint.GlobalSettings.Namespace}.ApiException(
+                throw global::{endPoint.GlobalSettings.Namespace}.ApiException.Create(
+                    statusCode: __response.StatusCode,
                     message: __content ?? __response.ReasonPhrase ?? string.Empty,
                     innerException: __ex,
-                    statusCode: __response.StatusCode)
-                {{
-                    ResponseBody = __content,
-                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                    responseBody: __content,
+                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                         __response.Headers,
                         h => h.Key,
-                        h => h.Value),
-                }};
+                        h => h.Value));
             }}
 
             using var __stream = await __response.Content.ReadAsStreamAsync(
@@ -2495,21 +2484,27 @@ namespace {endPoint.Settings.Namespace}
                     __exception_{x.StatusCode} = __ex;
                 }}
 
-{(!string.IsNullOrWhiteSpace(x.Type.CSharpTypeWithoutNullability) ? $@" 
-                throw new global::{endPoint.GlobalSettings.Namespace}.ApiException<{x.Type.CSharpTypeWithNullabilityForValueTypes}>(" : $@" 
-                throw new global::{endPoint.GlobalSettings.Namespace}.ApiException(")}
+{(!string.IsNullOrWhiteSpace(x.Type.CSharpTypeWithoutNullability) ? $@"
+                throw global::{endPoint.GlobalSettings.Namespace}.ApiException<{x.Type.CSharpTypeWithNullabilityForValueTypes}>.Create(
+                    statusCode: __response.StatusCode,
                     message: __content_{x.StatusCode} ?? __response.ReasonPhrase ?? string.Empty,
                     innerException: __exception_{x.StatusCode},
-                    statusCode: __response.StatusCode)
-                {{
-                    ResponseBody = __content_{x.StatusCode},
-{(!string.IsNullOrWhiteSpace(x.Type.CSharpTypeWithoutNullability) ? $@" 
-                    ResponseObject = __value_{x.StatusCode}," : TrimmedLine)}
-                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                    responseBody: __content_{x.StatusCode},
+                    responseObject: __value_{x.StatusCode},
+                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                         __response.Headers,
                         h => h.Key,
-                        h => h.Value),
-                }};
+                        h => h.Value));"
+    : $@"
+                throw global::{endPoint.GlobalSettings.Namespace}.ApiException.Create(
+                    statusCode: __response.StatusCode,
+                    message: __content_{x.StatusCode} ?? __response.ReasonPhrase ?? string.Empty,
+                    innerException: __exception_{x.StatusCode},
+                    responseBody: __content_{x.StatusCode},
+                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                        __response.Headers,
+                        h => h.Key,
+                        h => h.Value));")}
             }}").Inject() : TrimmedLine;
 
         if (endPoint.RawStream || returnStreamResponse)
@@ -2549,17 +2544,15 @@ namespace {endPoint.Settings.Namespace}
                 {{
                 }}
 
-                throw new global::{endPoint.GlobalSettings.Namespace}.ApiException(
+                throw global::{endPoint.GlobalSettings.Namespace}.ApiException.Create(
+                    statusCode: __response.StatusCode,
                     message: __content ?? __response.ReasonPhrase ?? string.Empty,
                     innerException: __ex,
-                    statusCode: __response.StatusCode)
-                {{
-                    ResponseBody = __content,
-                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                    responseBody: __content,
+                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                         __response.Headers,
                         h => h.Key,
-                        h => h.Value),
-                }};
+                        h => h.Value));
             }}
  ";
         }
@@ -2607,20 +2600,17 @@ namespace {endPoint.Settings.Namespace}
                 }}
                 catch (global::System.Exception __ex)
                 {{
-                    throw new global::{endPoint.GlobalSettings.Namespace}.ApiException(
-{(endPoint.ContentType == ContentType.String ? $@" 
-                        message: __content ?? __response.ReasonPhrase ?? string.Empty," : @" 
-                        message: __response.ReasonPhrase ?? string.Empty,")}
+                    throw global::{endPoint.GlobalSettings.Namespace}.ApiException.Create(
+                        statusCode: __response.StatusCode,
+                        message: {(endPoint.ContentType == ContentType.String
+                            ? "__content ?? __response.ReasonPhrase ?? string.Empty"
+                            : "__response.ReasonPhrase ?? string.Empty")},
                         innerException: __ex,
-                        statusCode: __response.StatusCode)
-                    {{
-{(endPoint.ContentType == ContentType.String ? $@" 
-                        ResponseBody = __content," : TrimmedLine)}
-                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                        responseBody: {(endPoint.ContentType == ContentType.String ? "__content" : "null")},
+                        responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                             __response.Headers,
                             h => h.Key,
-                            h => h.Value),
-                    }};
+                            h => h.Value));
                 }}
             }}
             else
@@ -2645,17 +2635,15 @@ namespace {endPoint.Settings.Namespace}
                     {{
                     }}
 
-                    throw new global::{endPoint.GlobalSettings.Namespace}.ApiException(
+                    throw global::{endPoint.GlobalSettings.Namespace}.ApiException.Create(
+                        statusCode: __response.StatusCode,
                         message: __content ?? __response.ReasonPhrase ?? string.Empty,
                         innerException: __ex,
-                        statusCode: __response.StatusCode)
-                    {{
-                        ResponseBody = __content,
-                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                        responseBody: __content,
+                        responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                             __response.Headers,
                             h => h.Key,
-                            h => h.Value),
-                    }};
+                            h => h.Value));
                 }}
             }}
  ";

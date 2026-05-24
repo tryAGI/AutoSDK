@@ -159,6 +159,13 @@ internal sealed class GenerateCommand : Command
         Description = "Generate System.Text.Json HTTP method bodies via System.Net.Http.Json helpers where safe.",
     };
 
+    private Option<bool> GenerateHttpExceptionHierarchy { get; } = new(
+        name: "--generate-http-exception-hierarchy")
+    {
+        DefaultValueFactory = _ => Settings.Default.GenerateHttpExceptionHierarchy,
+        Description = "Generate opt-in typed HTTP exception subclasses (AuthenticationException, RateLimitException, etc.) routed by status code so consumers can catch by intent instead of switching on StatusCode.",
+    };
+
     private Option<bool> GenerateWebhookVerifier { get; } = new(
         name: "--generate-webhook-verifier")
     {
@@ -436,6 +443,7 @@ internal sealed class GenerateCommand : Command
         Options.Add(ComputeDiscriminators);
         Options.Add(GenerateCli);
         Options.Add(UseSystemNetHttpJson);
+        Options.Add(GenerateHttpExceptionHierarchy);
         Options.Add(GenerateWebhookVerifier);
         Options.Add(WebhookVerifierClassName);
         Options.Add(WebhookIdHeaderName);
@@ -550,6 +558,7 @@ internal sealed class GenerateCommand : Command
             IgnoreOpenApiErrors = parseResult.GetRequiredValue(IgnoreOpenApiErrors),
             IgnoreOpenApiWarnings = parseResult.GetRequiredValue(IgnoreOpenApiWarnings),
             GenerateMethodsUsingSystemNetHttpJson = parseResult.GetRequiredValue(UseSystemNetHttpJson),
+            GenerateHttpExceptionHierarchy = parseResult.GetRequiredValue(GenerateHttpExceptionHierarchy),
             GenerateWebhookVerifier = parseResult.GetRequiredValue(GenerateWebhookVerifier),
             WebhookVerifierClassName = parseResult.GetRequiredValue(WebhookVerifierClassName),
             WebhookIdHeaderName = parseResult.GetRequiredValue(WebhookIdHeaderName),

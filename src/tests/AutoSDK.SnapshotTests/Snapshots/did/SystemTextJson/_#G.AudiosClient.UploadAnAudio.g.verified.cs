@@ -456,18 +456,17 @@ namespace G
                                     __exception_400 = __ex;
                                 }
 
-                                throw new global::G.ApiException<global::G.UploadAnAudioResponse2>(
+
+                                throw global::G.ApiException<global::G.UploadAnAudioResponse2>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_400 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_400,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_400,
-                                    ResponseObject = __value_400,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_400,
+                                    responseObject: __value_400,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
                             // AuthorizationError
                             if ((int)__response.StatusCode == 401)
@@ -494,18 +493,17 @@ namespace G
                                     __exception_401 = __ex;
                                 }
 
-                                throw new global::G.ApiException<global::G.UploadAnAudioResponse3>(
+
+                                throw global::G.ApiException<global::G.UploadAnAudioResponse3>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_401 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_401,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_401,
-                                    ResponseObject = __value_401,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_401,
+                                    responseObject: __value_401,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
                             // InsufficientCreditsError
                             if ((int)__response.StatusCode == 402)
@@ -532,18 +530,17 @@ namespace G
                                     __exception_402 = __ex;
                                 }
 
-                                throw new global::G.ApiException<global::G.UploadAnAudioResponse4>(
+
+                                throw global::G.ApiException<global::G.UploadAnAudioResponse4>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_402 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_402,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_402,
-                                    ResponseObject = __value_402,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_402,
+                                    responseObject: __value_402,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
                             // UnsupportedMimeTypeError
                             if ((int)__response.StatusCode == 415)
@@ -570,18 +567,17 @@ namespace G
                                     __exception_415 = __ex;
                                 }
 
-                                throw new global::G.ApiException<global::G.UploadAnAudioResponse5>(
+
+                                throw global::G.ApiException<global::G.UploadAnAudioResponse5>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_415 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_415,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_415,
-                                    ResponseObject = __value_415,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_415,
+                                    responseObject: __value_415,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
                             // AudioModerationError
                             if ((int)__response.StatusCode == 451)
@@ -608,18 +604,17 @@ namespace G
                                     __exception_451 = __ex;
                                 }
 
-                                throw new global::G.ApiException<global::G.UploadAnAudioResponse6>(
+
+                                throw global::G.ApiException<global::G.UploadAnAudioResponse6>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_451 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_451,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_451,
-                                    ResponseObject = __value_451,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_451,
+                                    responseObject: __value_451,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
 
                             if (__effectiveReadResponseAsString)
@@ -653,17 +648,15 @@ namespace G
                                 }
                                 catch (global::System.Exception __ex)
                                 {
-                                    throw new global::G.ApiException(
+                                    throw global::G.ApiException.Create(
+                                        statusCode: __response.StatusCode,
                                         message: __content ?? __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
-                                        statusCode: __response.StatusCode)
-                                    {
-                                        ResponseBody = __content,
-                                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        responseBody: __content,
+                                        responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                             __response.Headers,
                                             h => h.Key,
-                                            h => h.Value),
-                                    };
+                                            h => h.Value));
                                 }
                             }
                             else
@@ -700,17 +693,15 @@ namespace G
                                     {
                                     }
 
-                                    throw new global::G.ApiException(
+                                    throw global::G.ApiException.Create(
+                                        statusCode: __response.StatusCode,
                                         message: __content ?? __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
-                                        statusCode: __response.StatusCode)
-                                    {
-                                        ResponseBody = __content,
-                                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        responseBody: __content,
+                                        responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                             __response.Headers,
                                             h => h.Key,
-                                            h => h.Value),
-                                    };
+                                            h => h.Value));
                                 }
                             }
 

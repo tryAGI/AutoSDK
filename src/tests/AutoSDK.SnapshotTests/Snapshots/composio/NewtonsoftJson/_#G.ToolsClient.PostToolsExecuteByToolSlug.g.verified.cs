@@ -441,18 +441,17 @@ namespace G
                                     __exception_400 = __ex;
                                 }
 
-                                throw new global::G.ApiException<global::G.Error>(
+
+                                throw global::G.ApiException<global::G.Error>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_400 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_400,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_400,
-                                    ResponseObject = __value_400,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_400,
+                                    responseObject: __value_400,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
                             // Unauthorized - Authentication credentials are missing or invalid
                             if ((int)__response.StatusCode == 401)
@@ -479,18 +478,17 @@ namespace G
                                     __exception_401 = __ex;
                                 }
 
-                                throw new global::G.ApiException<global::G.Error>(
+
+                                throw global::G.ApiException<global::G.Error>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_401 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_401,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_401,
-                                    ResponseObject = __value_401,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_401,
+                                    responseObject: __value_401,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
                             // Forbidden - Connected account does not have permission to execute this tool or access the requested resource
                             if ((int)__response.StatusCode == 403)
@@ -517,18 +515,17 @@ namespace G
                                     __exception_403 = __ex;
                                 }
 
-                                throw new global::G.ApiException<global::G.Error>(
+
+                                throw global::G.ApiException<global::G.Error>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_403 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_403,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_403,
-                                    ResponseObject = __value_403,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_403,
+                                    responseObject: __value_403,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
                             // Not found - Tool or connected account not found
                             if ((int)__response.StatusCode == 404)
@@ -555,18 +552,17 @@ namespace G
                                     __exception_404 = __ex;
                                 }
 
-                                throw new global::G.ApiException<global::G.Error>(
+
+                                throw global::G.ApiException<global::G.Error>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_404 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_404,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_404,
-                                    ResponseObject = __value_404,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_404,
+                                    responseObject: __value_404,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
                             // Request timeout - Tool execution exceeded the maximum allowed time
                             if ((int)__response.StatusCode == 408)
@@ -593,18 +589,17 @@ namespace G
                                     __exception_408 = __ex;
                                 }
 
-                                throw new global::G.ApiException<global::G.Error>(
+
+                                throw global::G.ApiException<global::G.Error>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_408 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_408,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_408,
-                                    ResponseObject = __value_408,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_408,
+                                    responseObject: __value_408,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
                             // Gone - Tool has been deprecated and is no longer available
                             if ((int)__response.StatusCode == 410)
@@ -631,18 +626,17 @@ namespace G
                                     __exception_410 = __ex;
                                 }
 
-                                throw new global::G.ApiException<global::G.Error>(
+
+                                throw global::G.ApiException<global::G.Error>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_410 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_410,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_410,
-                                    ResponseObject = __value_410,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_410,
+                                    responseObject: __value_410,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
                             // Payload too large - Request or response payload exceeds size limits
                             if ((int)__response.StatusCode == 413)
@@ -669,18 +663,17 @@ namespace G
                                     __exception_413 = __ex;
                                 }
 
-                                throw new global::G.ApiException<global::G.Error>(
+
+                                throw global::G.ApiException<global::G.Error>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_413 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_413,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_413,
-                                    ResponseObject = __value_413,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_413,
+                                    responseObject: __value_413,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
                             // Unprocessable entity - Invalid state of the connected account
                             if ((int)__response.StatusCode == 422)
@@ -707,18 +700,17 @@ namespace G
                                     __exception_422 = __ex;
                                 }
 
-                                throw new global::G.ApiException<global::G.Error>(
+
+                                throw global::G.ApiException<global::G.Error>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_422 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_422,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_422,
-                                    ResponseObject = __value_422,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_422,
+                                    responseObject: __value_422,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
                             // Rate limit exceeded - Too many requests to the tool or underlying API
                             if ((int)__response.StatusCode == 429)
@@ -745,18 +737,17 @@ namespace G
                                     __exception_429 = __ex;
                                 }
 
-                                throw new global::G.ApiException<global::G.Error>(
+
+                                throw global::G.ApiException<global::G.Error>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_429 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_429,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_429,
-                                    ResponseObject = __value_429,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_429,
+                                    responseObject: __value_429,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
                             // Internal server error - Something went wrong on the server
                             if ((int)__response.StatusCode == 500)
@@ -783,18 +774,17 @@ namespace G
                                     __exception_500 = __ex;
                                 }
 
-                                throw new global::G.ApiException<global::G.Error>(
+
+                                throw global::G.ApiException<global::G.Error>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_500 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_500,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_500,
-                                    ResponseObject = __value_500,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_500,
+                                    responseObject: __value_500,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
                             // Not implemented
                             if ((int)__response.StatusCode == 501)
@@ -821,18 +811,17 @@ namespace G
                                     __exception_501 = __ex;
                                 }
 
-                                throw new global::G.ApiException<global::G.Error>(
+
+                                throw global::G.ApiException<global::G.Error>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_501 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_501,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_501,
-                                    ResponseObject = __value_501,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_501,
+                                    responseObject: __value_501,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
                             // Bad gateway - Error communicating with the tool provider API
                             if ((int)__response.StatusCode == 502)
@@ -859,18 +848,17 @@ namespace G
                                     __exception_502 = __ex;
                                 }
 
-                                throw new global::G.ApiException<global::G.Error>(
+
+                                throw global::G.ApiException<global::G.Error>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_502 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_502,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_502,
-                                    ResponseObject = __value_502,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_502,
+                                    responseObject: __value_502,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
                             // Upstream service unavailable - Tool provider API is currently down or unavailable
                             if ((int)__response.StatusCode == 503)
@@ -897,18 +885,17 @@ namespace G
                                     __exception_503 = __ex;
                                 }
 
-                                throw new global::G.ApiException<global::G.Error>(
+
+                                throw global::G.ApiException<global::G.Error>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_503 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_503,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_503,
-                                    ResponseObject = __value_503,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_503,
+                                    responseObject: __value_503,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
 
                             if (__effectiveReadResponseAsString)
@@ -942,17 +929,15 @@ namespace G
                                 }
                                 catch (global::System.Exception __ex)
                                 {
-                                    throw new global::G.ApiException(
+                                    throw global::G.ApiException.Create(
+                                        statusCode: __response.StatusCode,
                                         message: __content ?? __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
-                                        statusCode: __response.StatusCode)
-                                    {
-                                        ResponseBody = __content,
-                                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        responseBody: __content,
+                                        responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                             __response.Headers,
                                             h => h.Key,
-                                            h => h.Value),
-                                    };
+                                            h => h.Value));
                                 }
                             }
                             else
@@ -989,17 +974,15 @@ namespace G
                                     {
                                     }
 
-                                    throw new global::G.ApiException(
+                                    throw global::G.ApiException.Create(
+                                        statusCode: __response.StatusCode,
                                         message: __content ?? __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
-                                        statusCode: __response.StatusCode)
-                                    {
-                                        ResponseBody = __content,
-                                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        responseBody: __content,
+                                        responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                             __response.Headers,
                                             h => h.Key,
-                                            h => h.Value),
-                                    };
+                                            h => h.Value));
                                 }
                             }
 

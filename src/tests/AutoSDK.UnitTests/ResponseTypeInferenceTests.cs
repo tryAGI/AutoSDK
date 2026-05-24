@@ -412,7 +412,7 @@ paths:
         var generatedCode = Sources.GenerateEndPoint(endPoint);
 
         // Error handler else (stream) branch should read as string, not stream
-        generatedCode.Should().Contain("ResponseBody = __content_400");
+        generatedCode.Should().Contain("responseBody: __content_400");
         // The else branch should use ReadAsStringAsync for error responses
         generatedCode.Should().NotContain("__contentStream_400");
     }
@@ -443,7 +443,7 @@ paths:
 
         // The stream catch block should attempt to read response body
         // and populate ResponseBody in ApiException
-        generatedCode.Should().Contain("ResponseBody = __content,");
+        generatedCode.Should().Contain("responseBody: __content,");
     }
 
     [TestMethod]
@@ -471,7 +471,7 @@ paths:
         var generatedCode = Sources.GenerateEndPoint(endPoint);
 
         // RawStream catch block should populate ResponseBody
-        generatedCode.Should().Contain("ResponseBody = __content,");
+        generatedCode.Should().Contain("responseBody: __content,");
     }
 
     [TestMethod]
@@ -504,7 +504,7 @@ paths:
         var generatedCode = Sources.GenerateEndPoint(endPoint);
 
         // SSE catch block should populate ResponseBody
-        generatedCode.Should().Contain("ResponseBody = __content,");
+        generatedCode.Should().Contain("responseBody: __content,");
     }
 
     [TestMethod]
@@ -590,7 +590,7 @@ paths:
         var generatedCode = Sources.GenerateEndPoint(endPoint);
 
         // NDJSON catch block should populate ResponseBody
-        generatedCode.Should().Contain("ResponseBody = __content,");
+        generatedCode.Should().Contain("responseBody: __content,");
     }
 
     private static EndPoint LoadEndPoint(string yaml)

@@ -54,6 +54,8 @@
     <CompilerVisibleProperty Include="AutoSDK_GenerateConfigurationBinding"/>
     <!-- true/false. Default: false. Generates opt-in Microsoft.Extensions.Http.Resilience IHttpClientBuilder helpers. Requires the generated SDK project to reference Microsoft.Extensions.Http.Resilience. -->
     <CompilerVisibleProperty Include="AutoSDK_GenerateHttpResilienceExtensions"/>
+    <!-- true/false. Default: false. Generates opt-in typed HTTP exception subclasses (AuthenticationException, RateLimitException, etc.) routed by status code. -->
+    <CompilerVisibleProperty Include="AutoSDK_GenerateHttpExceptionHierarchy"/>
     <!-- true/false. Default: false. Generates opt-in Replicate/Svix-style HMAC webhook signature verifier helpers. -->
     <CompilerVisibleProperty Include="AutoSDK_GenerateWebhookVerifier"/>
     <!-- Class name for generated webhook verifier. Default: WebhookVerifier -->
