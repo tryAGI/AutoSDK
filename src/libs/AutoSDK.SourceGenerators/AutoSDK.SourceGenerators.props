@@ -80,6 +80,10 @@
     <CompilerVisibleProperty Include="AutoSDK_GenerateDynamicMultipartHelpers"/>
     <!-- Class name for generated dynamic multipart helper. Default: DynamicMultipartContentBuilder -->
     <CompilerVisibleProperty Include="AutoSDK_DynamicMultipartHelperClassName"/>
+    <!-- true/false. Default: false. Generates opt-in typed UploadFile / MimeTypeGuesser runtime helpers for file uploads (replaces hand-rolled MultipartFormDataContent in consumer code). -->
+    <CompilerVisibleProperty Include="AutoSDK_GenerateMultipartUploadHelpers"/>
+    <!-- Class name for generated UploadFile typed helper. Default: AutoSDKUploadFile -->
+    <CompilerVisibleProperty Include="AutoSDK_MultipartUploadHelperClassName"/>
     <!-- true/false. Default: false. Generates opt-in prompt template manager helpers. -->
     <CompilerVisibleProperty Include="AutoSDK_GeneratePromptTemplateHelpers"/>
     <!-- Class name for generated prompt template helper. Default: PromptTemplateManager -->

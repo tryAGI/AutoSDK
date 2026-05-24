@@ -250,6 +250,20 @@ internal sealed class GenerateCommand : Command
         Description = "Class name for the generated dynamic multipart helper.",
     };
 
+    private Option<bool> GenerateMultipartUploadHelpers { get; } = new(
+        name: "--generate-multipart-upload-helpers")
+    {
+        DefaultValueFactory = _ => Settings.Default.GenerateMultipartUploadHelpers,
+        Description = "Emit a typed AutoSDKUploadFile runtime helper (Filename + Content + ContentType) with FromBytes/FromStream/FromPath static factories and built-in MIME-type guessing. Used to replace hand-rolled MultipartFormDataContent in consumer code.",
+    };
+
+    private Option<string> MultipartUploadHelperClassName { get; } = new(
+        name: "--multipart-upload-helper-class-name")
+    {
+        DefaultValueFactory = _ => Settings.Default.MultipartUploadHelperClassName,
+        Description = "Class name for the generated typed multipart upload helper (default: AutoSDKUploadFile).",
+    };
+
     private Option<bool> GeneratePromptTemplateHelpers { get; } = new(
         name: "--generate-prompt-template-helpers")
     {
@@ -477,6 +491,8 @@ internal sealed class GenerateCommand : Command
         Options.Add(WebhookTimestampToleranceSeconds);
         Options.Add(GenerateDynamicMultipartHelpers);
         Options.Add(DynamicMultipartHelperClassName);
+        Options.Add(GenerateMultipartUploadHelpers);
+        Options.Add(MultipartUploadHelperClassName);
         Options.Add(GeneratePromptTemplateHelpers);
         Options.Add(PromptTemplateHelperClassName);
         Options.Add(GenerateObservabilityLifecycleHelpers);
@@ -595,6 +611,8 @@ internal sealed class GenerateCommand : Command
             WebhookTimestampToleranceSeconds = parseResult.GetRequiredValue(WebhookTimestampToleranceSeconds),
             GenerateDynamicMultipartHelpers = parseResult.GetRequiredValue(GenerateDynamicMultipartHelpers),
             DynamicMultipartHelperClassName = parseResult.GetRequiredValue(DynamicMultipartHelperClassName),
+            GenerateMultipartUploadHelpers = parseResult.GetRequiredValue(GenerateMultipartUploadHelpers),
+            MultipartUploadHelperClassName = parseResult.GetRequiredValue(MultipartUploadHelperClassName),
             GeneratePromptTemplateHelpers = parseResult.GetRequiredValue(GeneratePromptTemplateHelpers),
             PromptTemplateHelperClassName = parseResult.GetRequiredValue(PromptTemplateHelperClassName),
             GenerateObservabilityLifecycleHelpers = parseResult.GetRequiredValue(GenerateObservabilityLifecycleHelpers),

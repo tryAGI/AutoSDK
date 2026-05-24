@@ -64,6 +64,8 @@ public static class OptionsExtensions
             WebhookTimestampToleranceSeconds: options.GetIntGlobalOption(nameof(Settings.WebhookTimestampToleranceSeconds), prefix, defaultValue: Settings.Default.WebhookTimestampToleranceSeconds),
             GenerateDynamicMultipartHelpers: options.GetBoolGlobalOption(nameof(Settings.GenerateDynamicMultipartHelpers), prefix, defaultValue: Settings.Default.GenerateDynamicMultipartHelpers),
             DynamicMultipartHelperClassName: options.GetGlobalOption(nameof(Settings.DynamicMultipartHelperClassName), prefix) ?? Settings.Default.DynamicMultipartHelperClassName,
+            GenerateMultipartUploadHelpers: options.GetBoolGlobalOption(nameof(Settings.GenerateMultipartUploadHelpers), prefix, defaultValue: Settings.Default.GenerateMultipartUploadHelpers),
+            MultipartUploadHelperClassName: options.GetGlobalOption(nameof(Settings.MultipartUploadHelperClassName), prefix) ?? Settings.Default.MultipartUploadHelperClassName,
             GeneratePromptTemplateHelpers: options.GetBoolGlobalOption(nameof(Settings.GeneratePromptTemplateHelpers), prefix, defaultValue: Settings.Default.GeneratePromptTemplateHelpers),
             PromptTemplateHelperClassName: options.GetGlobalOption(nameof(Settings.PromptTemplateHelperClassName), prefix) ?? Settings.Default.PromptTemplateHelperClassName,
             GenerateObservabilityLifecycleHelpers: options.GetBoolGlobalOption(nameof(Settings.GenerateObservabilityLifecycleHelpers), prefix, defaultValue: Settings.Default.GenerateObservabilityLifecycleHelpers),
