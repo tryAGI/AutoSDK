@@ -366,7 +366,7 @@ namespace {settings.Namespace}
         /// Total number of attempts, including the initial request.
         /// Values less than 1 are normalized to 1.
         /// </summary>
-        public int MaxAttempts {{ get; set; }} = 1;
+        public int MaxAttempts {{ get; set; }} = {(settings.GenerateRetryHandler ? "3" : "1")};
 
         /// <summary>
         /// Optional fixed delay between retry attempts. When set, this takes precedence over exponential backoff.
@@ -376,7 +376,7 @@ namespace {settings.Namespace}
         /// <summary>
         /// Initial exponential backoff delay used when <see cref=""Delay""/> is not set.
         /// </summary>
-        public global::System.TimeSpan InitialDelay {{ get; set; }} = global::System.TimeSpan.FromSeconds(1);
+        public global::System.TimeSpan InitialDelay {{ get; set; }} = {(settings.GenerateRetryHandler ? "global::System.TimeSpan.FromMilliseconds(500)" : "global::System.TimeSpan.FromSeconds(1)")};
 
         /// <summary>
         /// Maximum retry delay after applying retry headers, backoff, and jitter.
@@ -848,6 +848,7 @@ namespace {settings.Namespace}
             return (int)statusCode switch
             {{
                 408 => true,
+{(settings.GenerateRetryHandler ? "                409 => true," : TrimmedLine)}
                 429 => true,
                 500 => true,
                 502 => true,

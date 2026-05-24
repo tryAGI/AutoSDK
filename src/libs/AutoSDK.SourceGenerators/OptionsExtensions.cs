@@ -54,6 +54,7 @@ public static class OptionsExtensions
             GenerateHttpExceptionHierarchy: options.GetBoolGlobalOption(nameof(Settings.GenerateHttpExceptionHierarchy), prefix, defaultValue: Settings.Default.GenerateHttpExceptionHierarchy),
             GenerateIdempotencyHelpers: options.GetBoolGlobalOption(nameof(Settings.GenerateIdempotencyHelpers), prefix, defaultValue: Settings.Default.GenerateIdempotencyHelpers),
             IdempotencyHeaderName: options.GetGlobalOption(nameof(Settings.IdempotencyHeaderName), prefix) ?? Settings.Default.IdempotencyHeaderName,
+            GenerateRetryHandler: options.GetBoolGlobalOption(nameof(Settings.GenerateRetryHandler), prefix, defaultValue: Settings.Default.GenerateRetryHandler),
             GenerateWebhookVerifier: options.GetBoolGlobalOption(nameof(Settings.GenerateWebhookVerifier), prefix, defaultValue: Settings.Default.GenerateWebhookVerifier),
             WebhookVerifierClassName: options.GetGlobalOption(nameof(Settings.WebhookVerifierClassName), prefix) ?? Settings.Default.WebhookVerifierClassName,
             WebhookIdHeaderName: options.GetGlobalOption(nameof(Settings.WebhookIdHeaderName), prefix) ?? Settings.Default.WebhookIdHeaderName,

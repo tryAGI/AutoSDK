@@ -180,6 +180,13 @@ internal sealed class GenerateCommand : Command
         Description = "Header name written when --generate-idempotency-helpers is on (or when the spec sets x-idempotency without naming a header). Default: Idempotency-Key.",
     };
 
+    private Option<bool> GenerateRetryHandler { get; } = new(
+        name: "--generate-retry-handler")
+    {
+        DefaultValueFactory = _ => Settings.Default.GenerateRetryHandler,
+        Description = "Default AutoSDKRetryOptions to vendor-SDK defaults (3 attempts, 500ms exponential backoff, retry on 408/409/429/5xx + HttpRequestException + SocketException, honor Retry-After). Consumers can still override per-call via AutoSDKRequestOptions.",
+    };
+
     private Option<bool> GenerateWebhookVerifier { get; } = new(
         name: "--generate-webhook-verifier")
     {
@@ -460,6 +467,7 @@ internal sealed class GenerateCommand : Command
         Options.Add(GenerateHttpExceptionHierarchy);
         Options.Add(GenerateIdempotencyHelpers);
         Options.Add(IdempotencyHeaderName);
+        Options.Add(GenerateRetryHandler);
         Options.Add(GenerateWebhookVerifier);
         Options.Add(WebhookVerifierClassName);
         Options.Add(WebhookIdHeaderName);
@@ -577,6 +585,7 @@ internal sealed class GenerateCommand : Command
             GenerateHttpExceptionHierarchy = parseResult.GetRequiredValue(GenerateHttpExceptionHierarchy),
             GenerateIdempotencyHelpers = parseResult.GetRequiredValue(GenerateIdempotencyHelpers),
             IdempotencyHeaderName = parseResult.GetRequiredValue(IdempotencyHeaderName),
+            GenerateRetryHandler = parseResult.GetRequiredValue(GenerateRetryHandler),
             GenerateWebhookVerifier = parseResult.GetRequiredValue(GenerateWebhookVerifier),
             WebhookVerifierClassName = parseResult.GetRequiredValue(WebhookVerifierClassName),
             WebhookIdHeaderName = parseResult.GetRequiredValue(WebhookIdHeaderName),
