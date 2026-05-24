@@ -2484,7 +2484,9 @@ info:
 
     public static bool IsIdempotentOperation(IDictionary<string, IOpenApiExtension>? extensions)
     {
-        return GetExtensionBooleanValue(extensions, "x-fern-idempotent");
+        // x-idempotency is the Stripe-style spec extension; x-fern-idempotent is the legacy Fern equivalent.
+        return GetExtensionBooleanValue(extensions, "x-fern-idempotent") ||
+               GetExtensionBooleanValue(extensions, "x-idempotency");
     }
 
     public static bool TryGetOperationGroupNameOverride(

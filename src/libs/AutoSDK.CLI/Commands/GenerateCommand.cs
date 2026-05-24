@@ -166,6 +166,20 @@ internal sealed class GenerateCommand : Command
         Description = "Generate opt-in typed HTTP exception subclasses (AuthenticationException, RateLimitException, etc.) routed by status code so consumers can catch by intent instead of switching on StatusCode.",
     };
 
+    private Option<bool> GenerateIdempotencyHelpers { get; } = new(
+        name: "--generate-idempotency-helpers")
+    {
+        DefaultValueFactory = _ => Settings.Default.GenerateIdempotencyHelpers,
+        Description = "Add an optional idempotencyKey parameter to every POST/PUT/PATCH/DELETE operation even when the spec doesn't declare x-fern-idempotent / x-idempotency. The SDK auto-generates a key when the caller passes null, via the configurable CreateIdempotencyKey delegate.",
+    };
+
+    private Option<string> IdempotencyHeaderName { get; } = new(
+        name: "--idempotency-header-name")
+    {
+        DefaultValueFactory = _ => Settings.Default.IdempotencyHeaderName,
+        Description = "Header name written when --generate-idempotency-helpers is on (or when the spec sets x-idempotency without naming a header). Default: Idempotency-Key.",
+    };
+
     private Option<bool> GenerateWebhookVerifier { get; } = new(
         name: "--generate-webhook-verifier")
     {
@@ -444,6 +458,8 @@ internal sealed class GenerateCommand : Command
         Options.Add(GenerateCli);
         Options.Add(UseSystemNetHttpJson);
         Options.Add(GenerateHttpExceptionHierarchy);
+        Options.Add(GenerateIdempotencyHelpers);
+        Options.Add(IdempotencyHeaderName);
         Options.Add(GenerateWebhookVerifier);
         Options.Add(WebhookVerifierClassName);
         Options.Add(WebhookIdHeaderName);
@@ -559,6 +575,8 @@ internal sealed class GenerateCommand : Command
             IgnoreOpenApiWarnings = parseResult.GetRequiredValue(IgnoreOpenApiWarnings),
             GenerateMethodsUsingSystemNetHttpJson = parseResult.GetRequiredValue(UseSystemNetHttpJson),
             GenerateHttpExceptionHierarchy = parseResult.GetRequiredValue(GenerateHttpExceptionHierarchy),
+            GenerateIdempotencyHelpers = parseResult.GetRequiredValue(GenerateIdempotencyHelpers),
+            IdempotencyHeaderName = parseResult.GetRequiredValue(IdempotencyHeaderName),
             GenerateWebhookVerifier = parseResult.GetRequiredValue(GenerateWebhookVerifier),
             WebhookVerifierClassName = parseResult.GetRequiredValue(WebhookVerifierClassName),
             WebhookIdHeaderName = parseResult.GetRequiredValue(WebhookIdHeaderName),

@@ -485,7 +485,11 @@ public static class CSharpEndPointFactory
     {
         PromoteKnownIdempotencyHeaderParameters(parameters, operation.Settings);
 
-        if (!OpenApiExtensions.IsIdempotentOperation(operation.Operation.Extensions))
+        var isExplicitlyIdempotent = OpenApiExtensions.IsIdempotentOperation(operation.Operation.Extensions);
+        var isCoveredByGlobalFlag = operation.Settings.GenerateIdempotencyHelpers &&
+                                    IsIdempotencyEligibleByMethod(operation.OperationType);
+
+        if (!isExplicitlyIdempotent && !isCoveredByGlobalFlag)
         {
             return;
         }
@@ -493,7 +497,10 @@ public static class CSharpEndPointFactory
         var configuredHeaders = operation.DocumentIdempotencyHeaders;
         if (configuredHeaders.Count == 0)
         {
-            configuredHeaders = [new IdempotencyHeader("Idempotency-Key", "idempotencyKey")];
+            var headerName = string.IsNullOrWhiteSpace(operation.Settings.IdempotencyHeaderName)
+                ? "Idempotency-Key"
+                : operation.Settings.IdempotencyHeaderName;
+            configuredHeaders = [new IdempotencyHeader(headerName, "idempotencyKey")];
         }
 
         foreach (var header in configuredHeaders)
@@ -510,6 +517,16 @@ public static class CSharpEndPointFactory
 
             parameters.Add(CreateSyntheticIdempotencyHeader(operation.Settings, header));
         }
+    }
+
+    private static bool IsIdempotencyEligibleByMethod(System.Net.Http.HttpMethod method)
+    {
+        // POST is the primary target (Stripe convention). PUT/PATCH/DELETE are state-changing
+        // verbs that can also benefit from idempotency keys when the API supports them.
+        return method == System.Net.Http.HttpMethod.Post ||
+               method == System.Net.Http.HttpMethod.Put ||
+               string.Equals(method.Method, "PATCH", StringComparison.OrdinalIgnoreCase) ||
+               method == System.Net.Http.HttpMethod.Delete;
     }
 
     private static void PromoteKnownIdempotencyHeaderParameters(

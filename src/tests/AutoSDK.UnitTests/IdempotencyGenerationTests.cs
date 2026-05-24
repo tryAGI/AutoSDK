@@ -85,6 +85,103 @@ public class IdempotencyGenerationTests
     }
 
     [TestMethod]
+    public void Prepare_XIdempotencyExtension_TreatedAsIdempotent()
+    {
+        // x-idempotency is the Stripe-style alias for x-fern-idempotent.
+        const string yaml = """
+                            openapi: 3.0.3
+                            info:
+                              title: Stripe-style
+                              version: 1.0.0
+                            paths:
+                              /charges:
+                                post:
+                                  operationId: createCharge
+                                  x-idempotency: true
+                                  responses:
+                                    '200':
+                                      description: OK
+                            """;
+
+        var data = AutoSDK.Generation.Data.Prepare(((yaml, (CSharpSettings)DefaultSettings), (CSharpSettings)DefaultSettings));
+        var method = data.Methods.Single();
+
+        method.Parameters.Should().ContainSingle(x => x.IsIdempotencyHeader);
+        method.Parameters.Single(x => x.IsIdempotencyHeader).Id.Should().Be("Idempotency-Key");
+    }
+
+    [TestMethod]
+    public void Prepare_GenerateIdempotencyHelpers_AppliesToAllPostsWithoutSpecAnnotation()
+    {
+        const string yaml = """
+                            openapi: 3.0.3
+                            info:
+                              title: Global Idempotency
+                              version: 1.0.0
+                            paths:
+                              /charges:
+                                post:
+                                  operationId: createCharge
+                                  responses:
+                                    '200':
+                                      description: OK
+                              /charges/{id}:
+                                get:
+                                  operationId: getCharge
+                                  parameters:
+                                    - name: id
+                                      in: path
+                                      required: true
+                                      schema:
+                                        type: string
+                                  responses:
+                                    '200':
+                                      description: OK
+                            """;
+
+        var settings = DefaultSettings with { GenerateIdempotencyHelpers = true };
+        var data = AutoSDK.Generation.Data.Prepare(((yaml, (CSharpSettings)settings), (CSharpSettings)settings));
+
+        var post = data.Methods.Single(m => m.MethodName == "CreateChargeAsync");
+        var get = data.Methods.Single(m => m.MethodName == "GetChargeAsync");
+
+        post.Parameters.Should().ContainSingle(x => x.IsIdempotencyHeader, "POST is eligible by HTTP method");
+        get.Parameters.Should().NotContain(x => x.IsIdempotencyHeader, "GET is safe/idempotent and should not get the header");
+    }
+
+    [TestMethod]
+    public void Prepare_GenerateIdempotencyHelpers_HonorsCustomHeaderName()
+    {
+        const string yaml = """
+                            openapi: 3.0.3
+                            info:
+                              title: Custom Header
+                              version: 1.0.0
+                            paths:
+                              /charges:
+                                post:
+                                  operationId: createCharge
+                                  responses:
+                                    '200':
+                                      description: OK
+                            """;
+
+        var settings = DefaultSettings with
+        {
+            GenerateIdempotencyHelpers = true,
+            IdempotencyHeaderName = "x-idempotency-key",
+        };
+
+        var data = AutoSDK.Generation.Data.Prepare(((yaml, (CSharpSettings)settings), (CSharpSettings)settings));
+        var method = data.Methods.Single();
+        var idempotencyParameter = method.Parameters.Single(x => x.IsIdempotencyHeader);
+
+        idempotencyParameter.Id.Should().Be("x-idempotency-key");
+        var methodSource = Sources.Method(method).Text;
+        methodSource.Should().Contain("__httpRequest.Headers.TryAddWithoutValidation(\"x-idempotency-key\", __idempotencyKey);");
+    }
+
+    [TestMethod]
     public void GenerateClient_WithIdempotencySupport_EmitsConfigurableKeyFactory()
     {
         const string yaml = """

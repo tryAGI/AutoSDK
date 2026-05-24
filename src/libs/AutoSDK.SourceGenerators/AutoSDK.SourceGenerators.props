@@ -56,6 +56,10 @@
     <CompilerVisibleProperty Include="AutoSDK_GenerateHttpResilienceExtensions"/>
     <!-- true/false. Default: false. Generates opt-in typed HTTP exception subclasses (AuthenticationException, RateLimitException, etc.) routed by status code. -->
     <CompilerVisibleProperty Include="AutoSDK_GenerateHttpExceptionHierarchy"/>
+    <!-- true/false. Default: false. When true, every POST operation (plus PUT/PATCH/DELETE) gains an opt-in `idempotencyKey` parameter even when the spec doesn't carry x-fern-idempotent/x-idempotency. The SDK uses the configured CreateIdempotencyKey delegate when the caller passes null. -->
+    <CompilerVisibleProperty Include="AutoSDK_GenerateIdempotencyHelpers"/>
+    <!-- Header name written when GenerateIdempotencyHelpers is on or when the spec sets x-idempotency without naming a header. Default: Idempotency-Key -->
+    <CompilerVisibleProperty Include="AutoSDK_IdempotencyHeaderName"/>
     <!-- true/false. Default: false. Generates opt-in Replicate/Svix-style HMAC webhook signature verifier helpers. -->
     <CompilerVisibleProperty Include="AutoSDK_GenerateWebhookVerifier"/>
     <!-- Class name for generated webhook verifier. Default: WebhookVerifier -->
