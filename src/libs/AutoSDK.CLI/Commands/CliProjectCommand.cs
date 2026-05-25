@@ -1559,7 +1559,7 @@ internal static class CliProjectScaffolder
                     ? $@"
                         var {parameter.ParameterName} = parseResult.GetValue({ParameterSymbolName(parameter)}) ?? __requestBase?.{CliProjectOperation.BaseBodyPropertyName(parameter)};"
                     : $@"
-                        var {parameter.ParameterName} = parseResult.{(parameter.HasSchemaDefault ? "GetRequiredValue" : "GetValue")}({ParameterSymbolName(parameter)});"))
+                        var {parameter.ParameterName} = parseResult.{((parameter.IsRequired || parameter.HasSchemaDefault) ? "GetRequiredValue" : "GetValue")}({ParameterSymbolName(parameter)});"))
             .Inject();
         var requestRead = operation.HasDirectRequestBody
             ? $@"

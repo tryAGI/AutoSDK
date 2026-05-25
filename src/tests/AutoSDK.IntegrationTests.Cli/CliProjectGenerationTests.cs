@@ -304,6 +304,10 @@ components:
             configureCommand.Should().Contain("Option<int> Count");
             configureCommand.Should().Contain("Required = true");
             configureCommand.Should().NotContain("Argument<");
+            // Required flags must be read with GetRequiredValue (non-null), not GetValue — passing a
+            // nullable to a non-nullable SDK parameter trips CS8604 in strict consumers (Firecrawl).
+            configureCommand.Should().Contain("var label = parseResult.GetRequiredValue(Label);");
+            configureCommand.Should().NotContain("parseResult.GetValue(Label)");
 
             // #339 regression: a composite (allOf/oneOf) request body does NOT flatten into per-field
             // parameters, so it must keep the --request-json/--request-file blob and bind via request:
