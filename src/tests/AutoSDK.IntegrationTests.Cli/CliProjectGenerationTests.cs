@@ -205,8 +205,15 @@ components:
             cliProject.Should().Contain("<PackAsTool>true</PackAsTool>");
             cliProject.Should().Contain("<ToolCommandName>tryagi-oag</ToolCommandName>");
 
+            // The ApiCommand aggregate is still generated (api-only consumers wire it), but ...
             var apiCommand = await File.ReadAllTextAsync(Path.Combine(cliDirectory, "Commands", "ApiCommand.g.cs")).ConfigureAwait(false);
             apiCommand.Should().Contain("new Command(\"api\"");
+
+            // #345: ... by default the full-project Program.cs adds tag groups to the root directly,
+            // dropping the redundant top-level "api" wrapper (restorable via --cli-keep-api-group).
+            var program = await File.ReadAllTextAsync(Path.Combine(cliDirectory, "Program.cs")).ConfigureAwait(false);
+            program.Should().Contain("rootCommand.Subcommands.Add(WidgetsApiGroupCommand.Create());");
+            program.Should().NotContain("rootCommand.Subcommands.Add(ApiCommand.Create());");
 
             // #339: an object request body is flattened into per-field flags that bind straight
             // to the SDK's convenience overload, instead of a single opaque --request-json blob.

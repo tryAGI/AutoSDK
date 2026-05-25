@@ -82,6 +82,12 @@ internal sealed class CliProjectCommand : Command
         Description = "Generate only self-contained generated api command sources for an existing manual CLI project.",
     };
 
+    private Option<bool> KeepApiGroup { get; } = new("--cli-keep-api-group")
+    {
+        DefaultValueFactory = _ => false,
+        Description = "Nest generated commands under a top-level 'api' group (legacy layout). By default tag groups are added to the root directly.",
+    };
+
     private Option<string[]> ApiKeyEnvVars { get; } = new("--api-key-env-var")
     {
         DefaultValueFactory = _ => Array.Empty<string>(),
@@ -154,6 +160,7 @@ internal sealed class CliProjectCommand : Command
         Options.Add(ToolCommandName);
         Options.Add(UserSecretsId);
         Options.Add(ApiOnly);
+        Options.Add(KeepApiGroup);
         Options.Add(ApiKeyEnvVars);
         Options.Add(BaseUrlEnvVar);
         Options.Add(ExcludeDeprecatedOperations);
@@ -289,7 +296,8 @@ internal sealed class CliProjectCommand : Command
             apiKeyEnvVars,
             baseUrlEnvVar,
             data,
-            parseResult.GetRequiredValue(ApiOnly));
+            parseResult.GetRequiredValue(ApiOnly),
+            parseResult.GetRequiredValue(KeepApiGroup));
 
         Console.WriteLine(model.ApiOnly
             ? $"Writing generated API command sources to {outputPath}..."
@@ -364,7 +372,8 @@ internal sealed record CliProjectModel(
     string BaseUrlEnvVar,
     ImmutableArray<CliProjectAuthorization> Authorizations,
     ImmutableArray<CliProjectTag> Tags,
-    bool ApiOnly)
+    bool ApiOnly,
+    bool KeepApiGroup)
 {
     public static CliProjectModel Create(
         string outputPath,
@@ -380,7 +389,8 @@ internal sealed record CliProjectModel(
         IReadOnlyList<string> apiKeyEnvVars,
         string baseUrlEnvVar,
         AutoSDK.Models.Data data,
-        bool apiOnly)
+        bool apiOnly,
+        bool keepApiGroup)
     {
         var projectName = SanitizeProjectName(packageId);
         var authorizations = data.Authorizations
@@ -412,7 +422,8 @@ internal sealed record CliProjectModel(
             baseUrlEnvVar,
             authorizations,
             tags,
-            apiOnly);
+            apiOnly,
+            keepApiGroup);
     }
 
     private static string SanitizeProjectName(string value)
@@ -861,6 +872,15 @@ internal static class CliProjectScaffolder
 
     private static string GenerateProgram(CliProjectModel model)
     {
+        // By default the tag groups are top-level subcommands (firecrawl crawl cancel ...). With
+        // --cli-keep-api-group they stay nested under a legacy "api" group (AutoSDK #345). The
+        // ApiCommand aggregate is generated either way, so api-only consumers can still wire it.
+        var endpointSubcommands = model.KeepApiGroup
+            ? "rootCommand.Subcommands.Add(ApiCommand.Create());"
+            : string.Join(
+                "\n",
+                model.Tags.Select(tag => $"rootCommand.Subcommands.Add({tag.ClassName}.Create());"));
+
         return $$"""
                  #nullable enable
 
@@ -873,7 +893,7 @@ internal static class CliProjectScaffolder
                  rootCommand.Options.Add(CliOptions.BaseUrl);
                  rootCommand.Options.Add(CliOptions.Output);
                  rootCommand.Subcommands.Add(AuthCommand.Create());
-                 rootCommand.Subcommands.Add(ApiCommand.Create());
+                 {{endpointSubcommands}}
 
                  return await rootCommand.Parse(args).InvokeAsync().ConfigureAwait(false);
                  """;
