@@ -53,9 +53,9 @@ namespace {settings.Namespace}
     /// <see cref=""global::System.Net.Http.MultipartFormDataContent""/> assemblies or
     /// repeated MIME-type guessing tables. The content is exposed as either a
     /// <see cref=""global::System.IO.Stream""/> (preferred for large files) or a
-    /// <see cref=""global::System.ReadOnlyMemory{{byte}}""/> (preferred for in-memory uploads).
+    /// <see cref=""global::System.ReadOnlyMemory{{T}}""/> (preferred for in-memory uploads).
     ///
-    /// Construct via the static factory methods <see cref=""FromBytes""/>,
+    /// Construct via the static factory methods <see cref=""FromBytes(string, byte[], string)""/>,
     /// <see cref=""FromStream""/>, or <see cref=""FromPath""/>.
     /// </summary>
     public sealed class {className} : global::System.IDisposable
@@ -172,7 +172,7 @@ namespace {settings.Namespace}
         }}
 
         /// <summary>
-        /// Constructs an upload from a <see cref=""global::System.ReadOnlyMemory{{byte}}""/> payload. Useful when
+        /// Constructs an upload from a <see cref=""global::System.ReadOnlyMemory{{T}}""/> payload. Useful when
         /// the caller already has a slice of a larger buffer.
         /// </summary>
         public static {className} FromBytes(

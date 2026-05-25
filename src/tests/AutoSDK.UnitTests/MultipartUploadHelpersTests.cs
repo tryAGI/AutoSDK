@@ -1,5 +1,7 @@
 using AutoSDK.Generation;
 using AutoSDK.Models;
+using Microsoft.CodeAnalysis;
+using Microsoft.CodeAnalysis.CSharp;
 
 namespace AutoSDK.UnitTests;
 
@@ -61,5 +63,52 @@ public class MultipartUploadHelpersTests
         file.Name.Should().Be("Demo.PortablesFile.g.cs");
         file.Text.Should().Contain("public sealed class PortablesFile");
         file.Text.Should().Contain("public static PortablesFile FromBytes(");
+    }
+
+    // Regression for tryAGI/AutoSDK#349: the generated XML doc crefs must compile cleanly
+    // under GenerateDocumentationFile=true. A cref like ReadOnlyMemory{byte} (C# keyword in the
+    // generic type-argument list) raised CS1584/CS1658, and the bare FromBytes cref raised CS0419
+    // (ambiguous overload). Compile the emitted helper with documentation diagnostics enabled and
+    // assert none of those doc-comment diagnostics appear.
+    [TestMethod]
+    public void Helpers_EmitDocCommentsThatCompileWithoutCrefErrors()
+    {
+        var settings = Settings.Default with
+        {
+            Namespace = "Demo",
+            GenerateMultipartUploadHelpers = true,
+        };
+
+        var file = Sources.MultipartUploadHelpers(settings);
+
+        var syntaxTree = CSharpSyntaxTree.ParseText(
+            file.Text,
+            new CSharpParseOptions(documentationMode: DocumentationMode.Diagnose));
+
+        var references = ((string)AppContext.GetData("TRUSTED_PLATFORM_ASSEMBLIES")!)
+            .Split(global::System.IO.Path.PathSeparator)
+            .Where(static path => !string.IsNullOrEmpty(path))
+            .Select(static path => MetadataReference.CreateFromFile(path))
+            .ToArray();
+
+        var compilation = CSharpCompilation.Create(
+            assemblyName: "AutoSDKUploadFileDocCheck",
+            syntaxTrees: [syntaxTree],
+            references: references,
+            options: new CSharpCompilationOptions(OutputKind.DynamicallyLinkedLibrary));
+
+        var docDiagnostics = compilation.GetDiagnostics()
+            .Where(static diagnostic =>
+                diagnostic.Severity == DiagnosticSeverity.Error ||
+                diagnostic.Severity == DiagnosticSeverity.Warning)
+            .Where(static diagnostic => diagnostic.Id is
+                "CS1584" or // XML comment has syntactically incorrect cref attribute
+                "CS1658" or // Type parameter declaration must be an identifier not a type
+                "CS0081" or // Type parameter declaration must be an identifier not a type
+                "CS0419")   // Ambiguous reference in cref attribute
+            .Select(static diagnostic => diagnostic.ToString())
+            .ToArray();
+
+        docDiagnostics.Should().BeEmpty();
     }
 }
