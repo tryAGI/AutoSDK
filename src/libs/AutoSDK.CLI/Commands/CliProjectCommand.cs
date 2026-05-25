@@ -1330,8 +1330,13 @@ internal static class CliProjectScaffolder
     {
         var endPoint = operation.EndPoint;
         var description = string.IsNullOrWhiteSpace(endPoint.Summary) ? endPoint.Description : endPoint.Summary;
-        var requiredFields = operation.RequiredParameters.Select(parameter => GenerateParameterField(parameter, required: true)).Inject();
-        var optionalFields = operation.OptionalParameters.Select(parameter => GenerateParameterField(parameter, required: false)).Inject();
+        // Emit all field declarations through a single Inject() so they're separated by a blank
+        // line. Injecting required and optional fields separately concatenated the two blocks with
+        // no newline (`};    private static ...`).
+        var fields = operation.RequiredParameters
+            .Select(parameter => GenerateParameterField(parameter, required: true))
+            .Concat(operation.OptionalParameters.Select(parameter => GenerateParameterField(parameter, required: false)))
+            .Inject();
         var addSymbols = operation.RequiredParameters
             .Select(parameter => $@"
                         command.Arguments.Add({ParameterSymbolName(parameter)});")
@@ -1394,7 +1399,7 @@ internal static class CliProjectScaffolder
 
                  internal static class {{operation.ClassName}}
                  {
-                 {{requiredFields}}{{optionalFields}}{{requestFields}}
+                 {{fields}}{{requestFields}}
 
                      public static Command Create()
                      {
