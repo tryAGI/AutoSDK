@@ -15,15 +15,32 @@ public static class ParameterSerializer
 
         foreach (var parameter in parameters.Where(x => x.Location == ParameterLocation.Path))
         {
-            path = path.Replace($"{{{parameter.Id}}}", $"{{{parameter.ArgumentName}}}");
-            path = path.Replace($"{{{parameter.Id}*}}", $"{{{parameter.ArgumentName}}}");
-            path = path.Replace($"{{.{parameter.Id}}}", $"{{.{parameter.ArgumentName}}}");
-            path = path.Replace($"{{.{parameter.Id}*}}", $"{{.{parameter.ArgumentName}}}");
-            path = path.Replace($"{{;{parameter.Id}}}", $"{{;{parameter.ArgumentName}}}");
-            path = path.Replace($"{{;{parameter.Id}*}}", $"{{;{parameter.ArgumentName}}}");
+            var valueExpression = GetPathParameterValueExpression(parameter);
+            path = path.Replace($"{{{parameter.Id}}}", $"{{{valueExpression}}}");
+            path = path.Replace($"{{{parameter.Id}*}}", $"{{{valueExpression}}}");
+            path = path.Replace($"{{.{parameter.Id}}}", $"{{.{valueExpression}}}");
+            path = path.Replace($"{{.{parameter.Id}*}}", $"{{.{valueExpression}}}");
+            path = path.Replace($"{{;{parameter.Id}}}", $"{{;{valueExpression}}}");
+            path = path.Replace($"{{;{parameter.Id}*}}", $"{{;{valueExpression}}}");
         }
 
         return path;
+    }
+
+    private static string GetPathParameterValueExpression(MethodParameter parameter)
+    {
+        if (!parameter.Type.IsEnum || parameter.Type.IsAnyOfLike)
+        {
+            return parameter.ArgumentName;
+        }
+
+        var valueExpression = $"{parameter.ParameterName}{(parameter.Type.CSharpTypeNullability ? "?" : string.Empty)}.ToValueString()";
+        if (parameter.Type.CSharpTypeNullability)
+        {
+            valueExpression = $"{valueExpression} ?? string.Empty";
+        }
+
+        return $"global::System.Uri.EscapeDataString({valueExpression})";
     }
 
     public static IList<MethodParameter> SerializeQueryParameters(IList<MethodParameter> parameters)

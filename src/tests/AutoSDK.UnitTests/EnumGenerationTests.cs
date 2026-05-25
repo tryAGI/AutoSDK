@@ -125,4 +125,55 @@ public class EnumGenerationTests
             generatedConverter.Should().NotContain("JsonTokenType.Number");
         }
     }
+
+    [TestMethod]
+    public void EnumPathParameters_UseWireValues()
+    {
+        var settings = DefaultSettings with
+        {
+            GenerateMethods = true,
+            GenerateModels = true,
+            GenerateSdk = true,
+        };
+
+        const string yaml = """
+                            openapi: 3.0.3
+                            info:
+                              title: EnumPath
+                              version: 1.0.0
+                            paths:
+                              /v1/single-use-token/{token_type}:
+                                get:
+                                  operationId: createSingleUseToken
+                                  parameters:
+                                    - in: path
+                                      name: token_type
+                                      required: true
+                                      schema:
+                                        type: string
+                                        enum:
+                                          - realtime_scribe
+                                          - text_to_speech
+                                  responses:
+                                    '200':
+                                      description: OK
+                                      content:
+                                        application/json:
+                                          schema:
+                                            type: object
+                                            properties:
+                                              token:
+                                                type: string
+                            """;
+
+        var data = AutoSDK.Generation.Data.Prepare(((yaml, settings), GlobalSettings: settings));
+        var method = data.Methods.Single();
+        var methodSource = Sources.GenerateEndPoint(method);
+
+        method.Path.Should()
+            .Contain("{global::System.Uri.EscapeDataString(tokenType.ToValueString())}");
+        methodSource.Should()
+            .Contain("path: $\"/v1/single-use-token/{global::System.Uri.EscapeDataString(tokenType.ToValueString())}\"");
+        methodSource.Should().NotContain("path: $\"/v1/single-use-token/{tokenType}\"");
+    }
 }
