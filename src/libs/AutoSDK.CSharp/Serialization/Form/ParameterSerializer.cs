@@ -40,7 +40,7 @@ public static class ParameterSerializer
             valueExpression = $"{valueExpression} ?? string.Empty";
         }
 
-        return $"global::System.Uri.EscapeDataString({valueExpression})";
+        return $"(global::System.Uri.EscapeDataString({valueExpression}))";
     }
 
     public static IList<MethodParameter> SerializeQueryParameters(IList<MethodParameter> parameters)

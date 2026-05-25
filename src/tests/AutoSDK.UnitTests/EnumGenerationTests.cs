@@ -171,9 +171,9 @@ public class EnumGenerationTests
         var methodSource = Sources.GenerateEndPoint(method);
 
         method.Path.Should()
-            .Contain("{global::System.Uri.EscapeDataString(tokenType.ToValueString())}");
+            .Contain("{(global::System.Uri.EscapeDataString(tokenType.ToValueString()))}");
         methodSource.Should()
-            .Contain("path: $\"/v1/single-use-token/{global::System.Uri.EscapeDataString(tokenType.ToValueString())}\"");
+            .Contain("path: $\"/v1/single-use-token/{(global::System.Uri.EscapeDataString(tokenType.ToValueString()))}\"");
         methodSource.Should().NotContain("path: $\"/v1/single-use-token/{tokenType}\"");
     }
 }

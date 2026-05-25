@@ -6,6 +6,55 @@ namespace AutoSDK.IntegrationTests;
 public class CliEnumValueEscapingTests
 {
     [TestMethod]
+    public async Task Generate_WithEnumPathParameter_UsesWireValue_AndBuilds()
+    {
+        const string spec = """
+openapi: 3.0.3
+info:
+  title: EnumPath
+  version: 1.0.0
+paths:
+  /v1/single-use-token/{token_type}:
+    get:
+      operationId: createSingleUseToken
+      parameters:
+        - in: path
+          name: token_type
+          required: true
+          schema:
+            type: string
+            enum:
+              - realtime_scribe
+              - text_to_speech
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  token:
+                    type: string
+""";
+
+        await GenerateFromContentAsync(
+            fileName: "enum-path.yaml",
+            specContent: spec,
+            targetFramework: "net10.0",
+            assertGeneratedOutput: async outputDirectory =>
+            {
+                var generatedContents = await Task.WhenAll(
+                    Directory.EnumerateFiles(outputDirectory, "*.g.cs", SearchOption.AllDirectories)
+                        .Select(path => File.ReadAllTextAsync(path)));
+                var content = string.Join("\n\n", generatedContents);
+
+                content.Should().Contain("path: $\"/v1/single-use-token/{(global::System.Uri.EscapeDataString(tokenType.ToValueString()))}\"");
+                content.Should().NotContain("path: $\"/v1/single-use-token/{tokenType}\"");
+            });
+    }
+
+    [TestMethod]
     public async Task Generate_WithQuotedEnumValues_EscapesGeneratedStringLiterals_AndBuilds()
     {
         const string spec = """
