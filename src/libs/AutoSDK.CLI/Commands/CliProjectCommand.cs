@@ -546,26 +546,24 @@ internal sealed record CliProjectOperation(
 
         var commandName = CliProjectScaffolder.MakeUniqueCommandName(baseName, usedNames);
 
-        // A "direct" request body (raw string/array/enum/binary) has no top-level fields to
-        // flatten, so it still needs the opaque --request-json/--request-file escape hatch.
-        var hasDirectRequestBody =
-            !string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType) &&
-            (endPoint.RequestType.IsArray ||
-             endPoint.RequestType.IsEnum ||
-             endPoint.RequestType.IsBase64 ||
-             endPoint.RequestType.IsBinary ||
-             endPoint.RequestType.CSharpTypeWithoutNullability is "string");
-
         // Mirror the source-generator CLI path (Sources.CLI.Command.cs): the SDK's flattened
-        // convenience overload already exposes each top-level request-body property as an
-        // individual parameter (Location == null). Including them here turns every scalar/enum/
-        // array body field into a per-field --flag instead of a single --request-json blob,
-        // and the command binds straight to that overload (AutoSDK #339). Object bodies are
-        // flattened this way; only the direct-body case above falls back to the JSON option.
+        // convenience overload exposes each top-level request-body property as an individual
+        // parameter (Location == null). Including them turns every scalar/enum/array body field
+        // into a per-field --flag instead of a single --request-json blob, and the command binds
+        // straight to that overload (AutoSDK #339).
         var cliParameters = endPoint.Parameters
             .Where(static x => x is { IsDeprecated: false } or { IsRequired: true } or { IsDeprecated: true, Location: not null })
             .ToArray();
         var responseType = GetResponseType(endPoint);
+
+        // A request body that did NOT flatten into individual parameters — a raw scalar/array/enum
+        // body, or a composite (allOf/oneOf) request type AutoSDK keeps as a single object — has no
+        // per-field flags, so it still needs the opaque --request-json/--request-file escape hatch
+        // and binds via `request:`. (Was: only the scalar/array/enum/binary case, which silently
+        // dropped composite object bodies like Firecrawl's scrape AllOf<...> request — AutoSDK #339.)
+        var hasRequestBody = !string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType);
+        var hasFlattenedBodyParameters = cliParameters.Any(static x => x.Location is null);
+        var hasDirectRequestBody = hasRequestBody && !hasFlattenedBodyParameters;
 
         // Choose which parameters read as positional arguments vs. flags (AutoSDK #340). Path
         // template parameters are the natural positionals; failing that, a single required string

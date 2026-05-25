@@ -108,6 +108,26 @@ paths:
       responses:
         '200':
           description: OK
+  /widgets/advanced:
+    post:
+      operationId: configureAdvancedWidget
+      tags:
+        - Widgets
+      summary: Configure advanced.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              allOf:
+                - $ref: '#/components/schemas/CreateWidgetRequest'
+                - type: object
+                  properties:
+                    advanced:
+                      type: boolean
+      responses:
+        '200':
+          description: OK
 components:
   securitySchemes:
     BearerAuth:
@@ -284,6 +304,17 @@ components:
             configureCommand.Should().Contain("Option<int> Count");
             configureCommand.Should().Contain("Required = true");
             configureCommand.Should().NotContain("Argument<");
+
+            // #339 regression: a composite (allOf/oneOf) request body does NOT flatten into per-field
+            // parameters, so it must keep the --request-json/--request-file blob and bind via request:
+            // rather than silently sending an empty body (the Firecrawl scrape AllOf<...> case).
+            var compositeBodyCommandPath = Directory
+                .EnumerateFiles(Path.Combine(cliDirectory, "Commands"), "*ConfigureAdvancedWidget*ApiCommand.g.cs")
+                .Single();
+            var compositeBodyCommand = await File.ReadAllTextAsync(compositeBodyCommandPath).ConfigureAwait(false);
+            compositeBodyCommand.Should().Contain("--request-json");
+            compositeBodyCommand.Should().Contain("ReadRequestAsync<global::Oag.AllOf<");
+            compositeBodyCommand.Should().Contain("request: request,");
 
             var runtime = await File.ReadAllTextAsync(Path.Combine(cliDirectory, "CliRuntime.cs")).ConfigureAwait(false);
             runtime.Should().Contain("\"OAG_API_KEY\"");
