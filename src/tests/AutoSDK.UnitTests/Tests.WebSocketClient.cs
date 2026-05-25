@@ -1,7 +1,9 @@
 using System.Collections.Immutable;
+using System.Text.Json.Nodes;
 using AutoSDK.Generation;
 using AutoSDK.Helpers;
 using AutoSDK.Models;
+using AutoSDK.Models.AsyncApi;
 using AutoSDK.Naming.Parameters;
 using AutoSDK.TypeMapping;
 using Microsoft.OpenApi;
@@ -663,5 +665,152 @@ components:
         sendSource.Should().Contain("string? eventId = default");
         sendSource.Should().Contain("Audio = global::System.Convert.ToBase64String(audio.Span),");
         sendSource.Should().Contain("EventId = eventId,");
+    }
+
+    [TestMethod]
+    public void FindDiscriminatorProperty_ReturnsNull_WhenNoPropertyIsCommonToAllReceiveSchemas()
+    {
+        // The two receive schemas each carry a single-value discriminator, but on *differently
+        // named* properties (kind vs category). No property is common to all variants, so the
+        // pipeline must not fabricate one. Previously it returned the literal "message_type",
+        // which stamped a discriminator.propertyName that no payload declares (AutoSDK #328).
+        var doc = new AsyncApiDocument();
+        doc.Components.Schemas["Alpha"] = new JsonObject
+        {
+            ["type"] = "object",
+            ["properties"] = new JsonObject
+            {
+                ["kind"] = new JsonObject { ["const"] = "alpha" },
+            },
+        };
+        doc.Components.Schemas["Beta"] = new JsonObject
+        {
+            ["type"] = "object",
+            ["properties"] = new JsonObject
+            {
+                ["category"] = new JsonObject { ["const"] = "beta" },
+            },
+        };
+
+        var result = AsyncApiData.FindDiscriminatorProperty(
+            doc,
+            new List<(string SchemaName, string DiscriminatorValue)>
+            {
+                ("Alpha", "alpha"),
+                ("Beta", "beta"),
+            });
+
+        result.Should().BeNull();
+    }
+
+    [TestMethod]
+    public void FindDiscriminatorProperty_ReturnsSharedProperty_WhenAllSchemasNarrowTheSameField()
+    {
+        // Both receive schemas narrow the same "type" field to a single enum value, so that
+        // shared name is the legitimate discriminator and must be returned.
+        var doc = new AsyncApiDocument();
+        doc.Components.Schemas["Alpha"] = new JsonObject
+        {
+            ["properties"] = new JsonObject
+            {
+                ["type"] = new JsonObject { ["enum"] = new JsonArray("alpha") },
+            },
+        };
+        doc.Components.Schemas["Beta"] = new JsonObject
+        {
+            ["properties"] = new JsonObject
+            {
+                ["type"] = new JsonObject { ["enum"] = new JsonArray("beta") },
+            },
+        };
+
+        var result = AsyncApiData.FindDiscriminatorProperty(
+            doc,
+            new List<(string SchemaName, string DiscriminatorValue)>
+            {
+                ("Alpha", "alpha"),
+                ("Beta", "beta"),
+            });
+
+        result.Should().Be("type");
+    }
+
+    [TestMethod]
+    public void AsyncApiMultiReceiveWithoutCommonDiscriminator_DropsBogusMessageTypeDiscriminator()
+    {
+        // End-to-end repro of AutoSDK #328: two receive operations whose payloads each carry a
+        // single-value const on a *different* property (kind vs reason). The synthesized
+        // ServerEvent union therefore has no honest discriminator. The pipeline must drop the
+        // discriminator (rather than stamping the literal "message_type") so the generated
+        // converter dispatches via oneOf-shape scoring instead of reading a field no payload has.
+        const string json = """
+        {
+          "asyncapi": "3.0.0",
+          "info": { "title": "Realtime API", "version": "1.0.0" },
+          "channels": {
+            "realtime": {
+              "address": "/realtime",
+              "messages": {
+                "Alpha": { "$ref": "#/components/messages/Alpha" },
+                "Beta": { "$ref": "#/components/messages/Beta" }
+              }
+            }
+          },
+          "operations": {
+            "receiveAlpha": {
+              "action": "receive",
+              "channel": { "$ref": "#/channels/realtime" },
+              "messages": [ { "$ref": "#/channels/realtime/messages/Alpha" } ]
+            },
+            "receiveBeta": {
+              "action": "receive",
+              "channel": { "$ref": "#/channels/realtime" },
+              "messages": [ { "$ref": "#/channels/realtime/messages/Beta" } ]
+            }
+          },
+          "components": {
+            "messages": {
+              "Alpha": { "name": "Alpha", "payload": { "$ref": "#/components/schemas/Alpha" } },
+              "Beta": { "name": "Beta", "payload": { "$ref": "#/components/schemas/Beta" } }
+            },
+            "schemas": {
+              "Alpha": {
+                "type": "object",
+                "required": ["kind", "language"],
+                "properties": {
+                  "kind": { "type": "string", "enum": ["alpha"] },
+                  "language": { "type": "string" }
+                }
+              },
+              "Beta": {
+                "type": "object",
+                "required": ["reason", "code"],
+                "properties": {
+                  "reason": { "type": "string", "enum": ["beta"] },
+                  "code": { "type": "integer" }
+                }
+              }
+            }
+          }
+        }
+        """;
+
+        var settings = Settings.Default with
+        {
+            Namespace = "G",
+            JsonSerializerContext = "G.SourceGenerationContext",
+        };
+
+        var data = AsyncApiData.Prepare(((json, settings), GlobalSettings: settings));
+        var anyOf = data.AnyOfs.Should().ContainSingle(x => x.Name == "ServerEvent").Subject;
+
+        // No discriminator was fabricated onto the synthetic union.
+        anyOf.DiscriminatorPropertyName.Should().BeNullOrEmpty();
+
+        // The generated converter must not reference the bogus "message_type" field and must
+        // fall back to oneOf-shape scoring to tell the variants apart.
+        var converter = Sources.GenerateAnyOfJsonConverter(anyOf);
+        converter.Should().NotContain("message_type");
+        converter.Should().Contain("__score");
     }
 }

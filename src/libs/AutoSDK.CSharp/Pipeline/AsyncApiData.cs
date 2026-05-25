@@ -1230,8 +1230,12 @@ public static class AsyncApiData
                 ["oneOf"] = oneOfArray,
             };
 
-            // Only add discriminator if we have mapping values
-            if (mapping.Count > 0)
+            // Only stamp a discriminator when a real property name common to all variants was
+            // found AND we have at least one value to map. A fabricated propertyName makes the
+            // generated converter dispatch on a field no variant declares (AutoSDK #328); dropping
+            // it lets the converter use oneOf-shape scoring, which is what happened in practice
+            // anyway since no payload carried the fallback "message_type" field.
+            if (discriminatorProperty is not null && mapping.Count > 0)
             {
                 syntheticSchema["discriminator"] = new JsonObject
                 {
@@ -1327,9 +1331,10 @@ public static class AsyncApiData
 
     /// <summary>
     /// Finds the common discriminator property name across all receive schemas.
-    /// Returns the property name that exists on all schemas with single-value enums or const values.
+    /// Returns the property name that exists on all schemas with single-value enums or const
+    /// values, or <see langword="null"/> when no such common property exists.
     /// </summary>
-    private static string FindDiscriminatorProperty(
+    internal static string? FindDiscriminatorProperty(
         AsyncApiDocument doc,
         List<(string SchemaName, string DiscriminatorValue)> receiveSchemas)
     {
@@ -1371,8 +1376,13 @@ public static class AsyncApiData
             }
         }
 
-        // Default fallback
-        return "message_type";
+        // No property is common to all receive schemas with a single-value enum/const, so we
+        // can't honestly nominate a discriminator. Previously this returned the literal
+        // "message_type", which stamped a discriminator.propertyName that no payload actually
+        // declares — forcing the generated converter to scan for a field that never exists and
+        // silently disagreeing with the spec (AutoSDK #328). Return null so the caller drops the
+        // discriminator and the converter falls back to oneOf-shape scoring instead.
+        return null;
     }
 
     /// <summary>
