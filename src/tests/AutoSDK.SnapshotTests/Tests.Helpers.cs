@@ -122,17 +122,29 @@ public partial class Tests : VerifyBase
             .ThenBy(x => x.Id)
             .ToImmutableArray();
 
+        var sourceVerification = Verify(driver)
+            .UseDirectory($"Snapshots/{callerName}/{jsonSerializerType:G}")
+            .UseFileName("_");
+        // Only auto-accept snapshots when explicitly opted in via AUTOSDK_AUTO_VERIFY.
+        // An unconditional .AutoVerify() here silently rewrites checked-in baselines on
+        // every local run, masking real codegen drift (AutoSDK #329).
+        if (AutoVerifyEnabled)
+        {
+            sourceVerification = sourceVerification.AutoVerify();
+        }
+
         await Task.WhenAll(
             VerifyNoDiagnosticsAsync(
                 diagnostics: diagnostics,
                 directory: $"Snapshots/{callerName}/{jsonSerializerType:G}"),
-            Verify(driver)
-                .UseDirectory($"Snapshots/{callerName}/{jsonSerializerType:G}")
-                .UseFileName("_")
-                .AutoVerify()
-                );
+            sourceVerification);
     }
-    
+
+    // Mirrors the gate in ModuleInitializer.Init so per-verification AutoVerify calls
+    // honor the same opt-in instead of bypassing it (AutoSDK #329).
+    private static bool AutoVerifyEnabled =>
+        Environment.GetEnvironmentVariable("AUTOSDK_AUTO_VERIFY") is "true" or "1";
+
     private async Task CheckCliSourceAsync<T>(
         IList<AdditionalText> additionalTexts,
         string callerName,
@@ -200,15 +212,19 @@ public partial class Tests : VerifyBase
             .ThenBy(x => x.Id)
             .ToImmutableArray();
 
+        var cliVerification = Verify(driver)
+            .UseDirectory($"Snapshots/CLI/{callerName}")
+            .UseFileName("_");
+        if (AutoVerifyEnabled)
+        {
+            cliVerification = cliVerification.AutoVerify();
+        }
+
         await Task.WhenAll(
             VerifyNoDiagnosticsAsync(
                 diagnostics: diagnostics,
                 directory: $"Snapshots/CLI/{callerName}"),
-            Verify(driver)
-                .UseDirectory($"Snapshots/CLI/{callerName}")
-                .UseFileName("_")
-                .AutoVerify()
-                );
+            cliVerification);
     }
 
     private Task VerifyNoDiagnosticsAsync(
