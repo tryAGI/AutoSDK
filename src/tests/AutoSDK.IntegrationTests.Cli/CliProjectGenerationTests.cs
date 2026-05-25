@@ -88,6 +88,7 @@ paths:
   /widgets/configure:
     post:
       operationId: configureWidget
+      x-cli-command-name: configure
       tags:
         - Widgets
       summary: Configure a widget.
@@ -300,6 +301,9 @@ components:
                 .EnumerateFiles(Path.Combine(cliDirectory, "Commands"), "*ConfigureWidget*ApiCommand.g.cs")
                 .Single();
             var configureCommand = await File.ReadAllTextAsync(configureCommandPath).ConfigureAwait(false);
+            // #345: x-cli-command-name overrides the derived command name verbatim.
+            configureCommand.Should().Contain("new Command(@\"configure\"");
+            configureCommand.Should().NotContain("new Command(@\"configure-widget\"");
             configureCommand.Should().Contain("Option<string> Label");
             configureCommand.Should().Contain("Option<int> Count");
             configureCommand.Should().Contain("Required = true");

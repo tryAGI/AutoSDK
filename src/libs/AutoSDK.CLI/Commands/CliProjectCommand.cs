@@ -535,14 +535,24 @@ internal sealed record CliProjectOperation(
 {
     public static CliProjectOperation Create(EndPoint endPoint, HashSet<string> usedNames)
     {
-        var baseName = CliProjectScaffolder.ToKebabCase(string.IsNullOrWhiteSpace(endPoint.Id) ? endPoint.NotAsyncMethodName : endPoint.Id);
+        string baseName;
+        if (!string.IsNullOrWhiteSpace(endPoint.CliCommandName))
+        {
+            // Explicit x-cli-command-name override wins verbatim (kebab-normalized), no tag-strip
+            // — the spec author chose this name deliberately (AutoSDK #345).
+            baseName = CliProjectScaffolder.ToKebabCase(endPoint.CliCommandName);
+        }
+        else
+        {
+            baseName = CliProjectScaffolder.ToKebabCase(string.IsNullOrWhiteSpace(endPoint.Id) ? endPoint.NotAsyncMethodName : endPoint.Id);
 
-        // The scaffolder always nests each operation command under its tag group (see the
-        // GroupBy on Tag.Name when building tags), so an operation id that repeats the tag
-        // (common with Fern/Stainless specs, e.g. tag "Crawling" + op "crawlingCancelCrawl")
-        // produces a redundant "crawling crawling-cancel-crawl" surface. Strip the leading tag
-        // token so it reads "crawling cancel-crawl" (AutoSDK #345).
-        baseName = CliProjectScaffolder.StripRedundantTagPrefix(baseName, endPoint.Tag);
+            // The scaffolder always nests each operation command under its tag group (see the
+            // GroupBy on Tag.Name when building tags), so an operation id that repeats the tag
+            // (common with Fern/Stainless specs, e.g. tag "Crawling" + op "crawlingCancelCrawl")
+            // produces a redundant "crawling crawling-cancel-crawl" surface. Strip the leading tag
+            // token so it reads "crawling cancel-crawl" (AutoSDK #345).
+            baseName = CliProjectScaffolder.StripRedundantTagPrefix(baseName, endPoint.Tag);
+        }
 
         var commandName = CliProjectScaffolder.MakeUniqueCommandName(baseName, usedNames);
 

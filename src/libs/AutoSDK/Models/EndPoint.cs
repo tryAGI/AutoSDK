@@ -27,6 +27,7 @@ public record struct EndPoint(
     string Description,
     string BaseUrlSummary,
     string CliAction,
+    string CliCommandName,
     Settings Settings,
     Settings GlobalSettings,
     bool IsDeprecated,

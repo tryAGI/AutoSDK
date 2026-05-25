@@ -228,10 +228,19 @@ public static class CSharpEndPointFactory
                 : string.Empty,
             CliAction:
                 (OpenApiExtensions.TryGetExtensionStringValue(
+                    operation.Operation.Extensions, "x-cli-command-name", out var cliCommandNameForAction)
+                    ? cliCommandNameForAction
+                    : null) ??
+                (OpenApiExtensions.TryGetExtensionStringValue(
                     operation.Operation.Extensions, "x-cli-action", out var cliActionStr)
                     ? cliActionStr
                     : null) ??
                 operation.MethodName.FirstWord().ToLowerInvariant(),
+            CliCommandName:
+                OpenApiExtensions.TryGetExtensionStringValue(
+                    operation.Operation.Extensions, "x-cli-command-name", out var cliCommandNameStr)
+                    ? cliCommandNameStr
+                    : string.Empty,
             Settings: operation.Settings,
             GlobalSettings: operation.GlobalSettings,
             IsDeprecated: operation.Operation.IsDeprecated(),
