@@ -70,6 +70,44 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/Widget'
+  /widgets/{id}/cancel:
+    post:
+      operationId: widgetsCancel
+      tags:
+        - Widgets
+      summary: Cancel a widget.
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+  /widgets/configure:
+    post:
+      operationId: configureWidget
+      tags:
+        - Widgets
+      summary: Configure a widget.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - label
+                - count
+              properties:
+                label:
+                  type: string
+                count:
+                  type: integer
+      responses:
+        '200':
+          description: OK
 components:
   securitySchemes:
     BearerAuth:
@@ -207,6 +245,27 @@ components:
             var listCommand = await File.ReadAllTextAsync(listCommandPath).ConfigureAwait(false);
             listCommand.Should().Contain("new Command(@\"list\"");
             listCommand.Should().NotContain("new Command(@\"widgets-list\"");
+
+            // #340: a path-template parameter is hoisted to a positional Argument, not a --flag.
+            var pathCommandPath = Directory
+                .EnumerateFiles(Path.Combine(cliDirectory, "Commands"), "*WidgetsCancel*ApiCommand.g.cs")
+                .Single();
+            var pathCommand = await File.ReadAllTextAsync(pathCommandPath).ConfigureAwait(false);
+            pathCommand.Should().Contain("new Command(@\"cancel\"");
+            pathCommand.Should().Contain("Argument<string> Id");
+            pathCommand.Should().Contain("command.Arguments.Add(Id);");
+            pathCommand.Should().NotContain("Option<string> Id");
+
+            // #340: with no path template and no resource-identifier string property, nothing is
+            // hoisted — required body fields stay as required flags rather than opaque positionals.
+            var configureCommandPath = Directory
+                .EnumerateFiles(Path.Combine(cliDirectory, "Commands"), "*ConfigureWidget*ApiCommand.g.cs")
+                .Single();
+            var configureCommand = await File.ReadAllTextAsync(configureCommandPath).ConfigureAwait(false);
+            configureCommand.Should().Contain("Option<string> Label");
+            configureCommand.Should().Contain("Option<int> Count");
+            configureCommand.Should().Contain("Required = true");
+            configureCommand.Should().NotContain("Argument<");
 
             var runtime = await File.ReadAllTextAsync(Path.Combine(cliDirectory, "CliRuntime.cs")).ConfigureAwait(false);
             runtime.Should().Contain("\"OAG_API_KEY\"");

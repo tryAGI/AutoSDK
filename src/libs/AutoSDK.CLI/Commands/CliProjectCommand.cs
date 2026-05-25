@@ -512,8 +512,8 @@ internal sealed record CliProjectOperation(
     EndPoint EndPoint,
     string CommandName,
     string ClassName,
-    ImmutableArray<MethodParameter> RequiredParameters,
-    ImmutableArray<MethodParameter> OptionalParameters,
+    ImmutableArray<MethodParameter> PositionalParameters,
+    ImmutableArray<MethodParameter> OptionParameters,
     bool HasDirectRequestBody,
     bool HasResponse,
     string ResponseType,
@@ -555,18 +555,72 @@ internal sealed record CliProjectOperation(
             .ToArray();
         var responseType = GetResponseType(endPoint);
 
+        // Choose which parameters read as positional arguments vs. flags (AutoSDK #340). Path
+        // template parameters are the natural positionals; failing that, a single required string
+        // body property that names a resource (id/name/slug/url/...) is hoisted so the surface
+        // reads `scrape <url>` / `get <id>`. Every other required parameter stays a flag (marked
+        // Required = true by GenerateParameterField) rather than an opaque positional, so commands
+        // don't degrade into `create <name> <quantity> <colour>` ordering puzzles.
+        var positionalParameters = SelectPositionalParameters(cliParameters);
+        var optionParameters = cliParameters
+            .Where(x => !positionalParameters.Contains(x))
+            .ToImmutableArray();
+
         return new CliProjectOperation(
             endPoint,
             commandName,
             CliProjectScaffolder.ToTypeName($"{endPoint.CliCommandClassName}ApiCommand"),
-            cliParameters.Where(static x => x.IsRequired && !x.HasSchemaDefault).ToImmutableArray(),
-            cliParameters.Where(static x => !x.IsRequired || x.HasSchemaDefault).ToImmutableArray(),
+            positionalParameters,
+            optionParameters,
             hasDirectRequestBody,
             !string.IsNullOrWhiteSpace(responseType),
             responseType,
             endPoint.RawStream,
             endPoint.EnumerableStream,
             endPoint.SuccessResponse.Type.CSharpTypeWithoutNullability == "byte[]");
+    }
+
+    // Common resource-identifier property names worth hoisting to a positional argument when an
+    // operation has no path template (AutoSDK #340 heuristics 4/5).
+    private static readonly HashSet<string> ResourceIdentifierNames = new(StringComparer.OrdinalIgnoreCase)
+    {
+        "id", "name", "slug", "key", "url", "uri",
+    };
+
+    private static ImmutableArray<MethodParameter> SelectPositionalParameters(MethodParameter[] cliParameters)
+    {
+        // Heuristics 2/3: path-template parameters become positional, in declaration order
+        // (`/parents/{parentId}/children/{childId}` -> `<parentId> <childId>`).
+        var pathParameters = cliParameters
+            .Where(static x => x.Location == ParameterLocation.Path)
+            .ToImmutableArray();
+        if (pathParameters.Length > 0)
+        {
+            return pathParameters;
+        }
+
+        // Heuristics 4/5: with no path templates, hoist a single required string body property that
+        // names a resource (id/name/slug/url/...). Only when exactly one qualifies — otherwise the
+        // choice is ambiguous and everything stays a flag.
+        var resourceCandidates = cliParameters
+            .Where(static x =>
+                x.Location is null &&
+                x.IsRequired &&
+                !x.HasSchemaDefault &&
+                x.Type.CSharpTypeWithoutNullability is "string" &&
+                IsResourceIdentifierParameter(x))
+            .ToImmutableArray();
+
+        return resourceCandidates.Length == 1
+            ? resourceCandidates
+            : ImmutableArray<MethodParameter>.Empty;
+    }
+
+    private static bool IsResourceIdentifierParameter(MethodParameter parameter)
+    {
+        return ResourceIdentifierNames.Contains(parameter.Id) ||
+               ResourceIdentifierNames.Contains(parameter.Name) ||
+               ResourceIdentifierNames.Contains(parameter.ParameterName);
     }
 
     private static string GetResponseType(EndPoint endPoint)
@@ -1365,14 +1419,14 @@ internal static class CliProjectScaffolder
         // Emit all field declarations through a single Inject() so they're separated by a blank
         // line. Injecting required and optional fields separately concatenated the two blocks with
         // no newline (`};    private static ...`).
-        var fields = operation.RequiredParameters
+        var fields = operation.PositionalParameters
             .Select(parameter => GenerateParameterField(parameter, required: true))
-            .Concat(operation.OptionalParameters.Select(parameter => GenerateParameterField(parameter, required: false)))
+            .Concat(operation.OptionParameters.Select(parameter => GenerateParameterField(parameter, required: false)))
             .Inject();
-        var addSymbols = operation.RequiredParameters
+        var addSymbols = operation.PositionalParameters
             .Select(parameter => $@"
                         command.Arguments.Add({ParameterSymbolName(parameter)});")
-            .Concat(operation.OptionalParameters.Select(parameter => $@"
+            .Concat(operation.OptionParameters.Select(parameter => $@"
                         command.Options.Add({ParameterSymbolName(parameter)});"))
             .Inject();
         var requestFields = operation.HasDirectRequestBody
@@ -1404,10 +1458,10 @@ internal static class CliProjectScaffolder
                         });
               """
             : string.Empty;
-        var parseParameters = operation.RequiredParameters
+        var parseParameters = operation.PositionalParameters
             .Select(parameter => $@"
                         var {parameter.ParameterName} = parseResult.GetRequiredValue({ParameterSymbolName(parameter)});")
-            .Concat(operation.OptionalParameters.Select(parameter => $@"
+            .Concat(operation.OptionParameters.Select(parameter => $@"
                         var {parameter.ParameterName} = parseResult.{(parameter.HasSchemaDefault ? "GetRequiredValue" : "GetValue")}({ParameterSymbolName(parameter)});"))
             .Inject();
         var requestRead = operation.HasDirectRequestBody
@@ -1478,8 +1532,8 @@ internal static class CliProjectScaffolder
         var target = endPoint.Settings.GroupByTags && !string.IsNullOrWhiteSpace(endPoint.Tag.SafeName)
             ? $"client.{endPoint.Tag.SafeName}.{endPoint.MethodName}"
             : $"client.{endPoint.MethodName}";
-        var arguments = operation.RequiredParameters
-            .Concat(operation.OptionalParameters)
+        var arguments = operation.PositionalParameters
+            .Concat(operation.OptionParameters)
             .Select(static parameter => $@"
                                     {parameter.ParameterName}: {parameter.ParameterName},")
             .Inject();
