@@ -55,6 +55,21 @@ paths:
       responses:
         '200':
           description: OK
+  /widgets/list:
+    get:
+      operationId: widgetsList
+      tags:
+        - Widgets
+      summary: List widgets.
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Widget'
 components:
   securitySchemes:
     BearerAuth:
@@ -183,6 +198,15 @@ components:
             directBodyCommand.Should().Contain("--request-file");
             directBodyCommand.Should().Contain("ReadRequestAsync<");
             directBodyCommand.Should().Contain("request: request,");
+
+            // #345: an operation id that repeats its tag (widgetsList under the Widgets tag) has the
+            // redundant tag prefix stripped from the nested command name -> "list", not "widgets-list".
+            var listCommandPath = Directory
+                .EnumerateFiles(Path.Combine(cliDirectory, "Commands"), "*WidgetsList*ApiCommand.g.cs")
+                .Single();
+            var listCommand = await File.ReadAllTextAsync(listCommandPath).ConfigureAwait(false);
+            listCommand.Should().Contain("new Command(@\"list\"");
+            listCommand.Should().NotContain("new Command(@\"widgets-list\"");
 
             var runtime = await File.ReadAllTextAsync(Path.Combine(cliDirectory, "CliRuntime.cs")).ConfigureAwait(false);
             runtime.Should().Contain("\"OAG_API_KEY\"");

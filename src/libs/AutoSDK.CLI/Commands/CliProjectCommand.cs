@@ -524,6 +524,14 @@ internal sealed record CliProjectOperation(
     public static CliProjectOperation Create(EndPoint endPoint, HashSet<string> usedNames)
     {
         var baseName = CliProjectScaffolder.ToKebabCase(string.IsNullOrWhiteSpace(endPoint.Id) ? endPoint.NotAsyncMethodName : endPoint.Id);
+
+        // The scaffolder always nests each operation command under its tag group (see the
+        // GroupBy on Tag.Name when building tags), so an operation id that repeats the tag
+        // (common with Fern/Stainless specs, e.g. tag "Crawling" + op "crawlingCancelCrawl")
+        // produces a redundant "crawling crawling-cancel-crawl" surface. Strip the leading tag
+        // token so it reads "crawling cancel-crawl" (AutoSDK #345).
+        baseName = CliProjectScaffolder.StripRedundantTagPrefix(baseName, endPoint.Tag);
+
         var commandName = CliProjectScaffolder.MakeUniqueCommandName(baseName, usedNames);
 
         // A "direct" request body (raw string/array/enum/binary) has no top-level fields to
@@ -644,6 +652,30 @@ internal static class CliProjectScaffolder
         }
 
         return builder.ToString().Trim('-') is { Length: > 0 } result ? result : "api";
+    }
+
+    // Removes a leading tag-name token from an already-kebab-cased command name when the command
+    // is nested under that tag group, so the tag isn't repeated in the CLI surface (AutoSDK #345).
+    // Matches the tag's name and its singularized form (case-insensitive, kebab-normalized).
+    public static string StripRedundantTagPrefix(string kebabName, Tag tag)
+    {
+        foreach (var candidate in new[] { tag.Name, tag.SingularizedName })
+        {
+            if (string.IsNullOrWhiteSpace(candidate))
+            {
+                continue;
+            }
+
+            var tagKebab = ToKebabCase(candidate);
+            if (tagKebab.Length > 0 &&
+                kebabName.Length > tagKebab.Length + 1 &&
+                kebabName.StartsWith(tagKebab + "-", StringComparison.Ordinal))
+            {
+                return kebabName.Substring(tagKebab.Length + 1);
+            }
+        }
+
+        return kebabName;
     }
 
     public static string ToTypeName(string value)
