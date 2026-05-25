@@ -38,6 +38,23 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Widget'
+  /widgets/batch:
+    post:
+      operationId: createWidgetsBatch
+      tags:
+        - Widgets
+      summary: Create widgets in batch.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/CreateWidgetRequest'
+      responses:
+        '200':
+          description: OK
 components:
   securitySchemes:
     BearerAuth:
@@ -51,6 +68,12 @@ components:
       properties:
         name:
           type: string
+        tags:
+          type: array
+          items:
+            type: string
+        priority:
+          type: integer
     Widget:
       type: object
       properties:
@@ -132,15 +155,34 @@ components:
             var apiCommand = await File.ReadAllTextAsync(Path.Combine(cliDirectory, "Commands", "ApiCommand.g.cs")).ConfigureAwait(false);
             apiCommand.Should().Contain("new Command(\"api\"");
 
+            // #339: an object request body is flattened into per-field flags that bind straight
+            // to the SDK's convenience overload, instead of a single opaque --request-json blob.
             var operationCommandPath = Directory
-                .EnumerateFiles(Path.Combine(cliDirectory, "Commands"), "*CreateWidget*ApiCommand.g.cs")
+                .EnumerateFiles(Path.Combine(cliDirectory, "Commands"), "*CreateWidgetCommand*ApiCommand.g.cs")
                 .Single();
             var operationCommand = await File.ReadAllTextAsync(operationCommandPath).ConfigureAwait(false);
             operationCommand.Should().Contain("new Command(@\"create-widget\"");
-            operationCommand.Should().Contain("--request-json");
-            operationCommand.Should().Contain("--request-file");
-            operationCommand.Should().Contain("ReadRequestAsync<global::Oag.CreateWidgetRequest>");
+            operationCommand.Should().NotContain("--request-json");
+            operationCommand.Should().NotContain("ReadRequestAsync<");
+            // Required scalar -> positional argument; array -> repeatable option; scalar -> option.
+            operationCommand.Should().Contain("Argument<string> NameOption");
+            operationCommand.Should().Contain("@\"--tags\"");
+            operationCommand.Should().Contain("@\"--priority\"");
+            operationCommand.Should().Contain("name: name,");
+            operationCommand.Should().Contain("tags: tags,");
+            operationCommand.Should().Contain("priority: priority,");
             operationCommand.Should().Contain("global::Oag.SourceGenerationContext.Default");
+
+            // #339: a "direct" body (raw array/string/enum/binary) has no fields to flatten, so it
+            // keeps the --request-json / --request-file escape hatch.
+            var directBodyCommandPath = Directory
+                .EnumerateFiles(Path.Combine(cliDirectory, "Commands"), "*CreateWidgetsBatch*ApiCommand.g.cs")
+                .Single();
+            var directBodyCommand = await File.ReadAllTextAsync(directBodyCommandPath).ConfigureAwait(false);
+            directBodyCommand.Should().Contain("--request-json");
+            directBodyCommand.Should().Contain("--request-file");
+            directBodyCommand.Should().Contain("ReadRequestAsync<");
+            directBodyCommand.Should().Contain("request: request,");
 
             var runtime = await File.ReadAllTextAsync(Path.Combine(cliDirectory, "CliRuntime.cs")).ConfigureAwait(false);
             runtime.Should().Contain("\"OAG_API_KEY\"");

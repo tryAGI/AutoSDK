@@ -514,7 +514,7 @@ internal sealed record CliProjectOperation(
     string ClassName,
     ImmutableArray<MethodParameter> RequiredParameters,
     ImmutableArray<MethodParameter> OptionalParameters,
-    bool HasRequestBody,
+    bool HasDirectRequestBody,
     bool HasResponse,
     string ResponseType,
     bool ResponseIsRawStream,
@@ -525,8 +525,24 @@ internal sealed record CliProjectOperation(
     {
         var baseName = CliProjectScaffolder.ToKebabCase(string.IsNullOrWhiteSpace(endPoint.Id) ? endPoint.NotAsyncMethodName : endPoint.Id);
         var commandName = CliProjectScaffolder.MakeUniqueCommandName(baseName, usedNames);
-        var locationParameters = endPoint.Parameters
-            .Where(static x => x.Location is not null)
+
+        // A "direct" request body (raw string/array/enum/binary) has no top-level fields to
+        // flatten, so it still needs the opaque --request-json/--request-file escape hatch.
+        var hasDirectRequestBody =
+            !string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType) &&
+            (endPoint.RequestType.IsArray ||
+             endPoint.RequestType.IsEnum ||
+             endPoint.RequestType.IsBase64 ||
+             endPoint.RequestType.IsBinary ||
+             endPoint.RequestType.CSharpTypeWithoutNullability is "string");
+
+        // Mirror the source-generator CLI path (Sources.CLI.Command.cs): the SDK's flattened
+        // convenience overload already exposes each top-level request-body property as an
+        // individual parameter (Location == null). Including them here turns every scalar/enum/
+        // array body field into a per-field --flag instead of a single --request-json blob,
+        // and the command binds straight to that overload (AutoSDK #339). Object bodies are
+        // flattened this way; only the direct-body case above falls back to the JSON option.
+        var cliParameters = endPoint.Parameters
             .Where(static x => x is { IsDeprecated: false } or { IsRequired: true } or { IsDeprecated: true, Location: not null })
             .ToArray();
         var responseType = GetResponseType(endPoint);
@@ -535,9 +551,9 @@ internal sealed record CliProjectOperation(
             endPoint,
             commandName,
             CliProjectScaffolder.ToTypeName($"{endPoint.CliCommandClassName}ApiCommand"),
-            locationParameters.Where(static x => x.IsRequired && !x.HasSchemaDefault).ToImmutableArray(),
-            locationParameters.Where(static x => !x.IsRequired || x.HasSchemaDefault).ToImmutableArray(),
-            !string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType),
+            cliParameters.Where(static x => x.IsRequired && !x.HasSchemaDefault).ToImmutableArray(),
+            cliParameters.Where(static x => !x.IsRequired || x.HasSchemaDefault).ToImmutableArray(),
+            hasDirectRequestBody,
             !string.IsNullOrWhiteSpace(responseType),
             responseType,
             endPoint.RawStream,
@@ -1322,7 +1338,7 @@ internal static class CliProjectScaffolder
             .Concat(operation.OptionalParameters.Select(parameter => $@"
                         command.Options.Add({ParameterSymbolName(parameter)});"))
             .Inject();
-        var requestFields = operation.HasRequestBody
+        var requestFields = operation.HasDirectRequestBody
             ? """
 
                     private static Option<string?> RequestJson { get; } = new("--request-json")
@@ -1336,7 +1352,7 @@ internal static class CliProjectScaffolder
                     };
               """
             : string.Empty;
-        var addRequestOptions = operation.HasRequestBody
+        var addRequestOptions = operation.HasDirectRequestBody
             ? """
                         command.Options.Add(RequestJson);
                         command.Options.Add(RequestFile);
@@ -1357,7 +1373,7 @@ internal static class CliProjectScaffolder
             .Concat(operation.OptionalParameters.Select(parameter => $@"
                         var {parameter.ParameterName} = parseResult.{(parameter.HasSchemaDefault ? "GetRequiredValue" : "GetValue")}({ParameterSymbolName(parameter)});"))
             .Inject();
-        var requestRead = operation.HasRequestBody
+        var requestRead = operation.HasDirectRequestBody
             ? $@"
                         var request = await CliRuntime.ReadRequestAsync<{endPoint.RequestType.CSharpTypeWithoutNullability}>(
                             parseResult,
@@ -1430,7 +1446,7 @@ internal static class CliProjectScaffolder
             .Select(static parameter => $@"
                                     {parameter.ParameterName}: {parameter.ParameterName},")
             .Inject();
-        var requestArgument = operation.HasRequestBody
+        var requestArgument = operation.HasDirectRequestBody
             ? @"
                                     request: request,"
             : string.Empty;
