@@ -222,7 +222,8 @@ components:
                 .Single();
             var operationCommand = await File.ReadAllTextAsync(operationCommandPath).ConfigureAwait(false);
             operationCommand.Should().Contain("new Command(@\"create-widget\"");
-            operationCommand.Should().NotContain("--request-json");
+            // Object body is flattened into per-field flags that bind straight to the convenience
+            // overload — no opaque non-nullable ReadRequestAsync<T> deserialization of the whole body.
             operationCommand.Should().NotContain("ReadRequestAsync<");
             // Required scalar -> positional argument; array -> repeatable option; scalar -> option.
             operationCommand.Should().Contain("Argument<string> NameOption");
@@ -232,6 +233,16 @@ components:
             operationCommand.Should().Contain("tags: tags,");
             operationCommand.Should().Contain("priority: priority,");
             operationCommand.Should().Contain("global::Oag.SourceGenerationContext.Default");
+
+            // #343: an object body with optional fields also accepts --request-json/--request-file as
+            // an optional base body. Per-field flags override it; the positional/required fields still
+            // come from CLI args. Optional fields merge as `flag ?? base?.Prop`.
+            operationCommand.Should().Contain("--request-json");
+            operationCommand.Should().Contain("ReadRequestOrDefaultAsync<global::Oag.CreateWidgetRequest>");
+            operationCommand.Should().Contain("parseResult.GetValue(Tags) ?? __requestBase?.Tags");
+            operationCommand.Should().Contain("parseResult.GetValue(Priority) ?? __requestBase?.Priority");
+            // The positional/required name is taken from the argument, never the base body.
+            operationCommand.Should().Contain("var name = parseResult.GetRequiredValue(NameOption);");
 
             // #339: a "direct" body (raw array/string/enum/binary) has no fields to flatten, so it
             // keeps the --request-json / --request-file escape hatch.

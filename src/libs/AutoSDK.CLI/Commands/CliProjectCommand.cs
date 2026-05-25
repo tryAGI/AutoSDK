@@ -526,6 +526,7 @@ internal sealed record CliProjectOperation(
     ImmutableArray<MethodParameter> PositionalParameters,
     ImmutableArray<MethodParameter> OptionParameters,
     bool HasDirectRequestBody,
+    bool SupportsBaseBody,
     bool HasResponse,
     string ResponseType,
     bool ResponseIsRawStream,
@@ -577,6 +578,13 @@ internal sealed record CliProjectOperation(
             .Where(x => !positionalParameters.Contains(x))
             .ToImmutableArray();
 
+        // When an object body has at least one plain-optional field, offer --request-json /
+        // --request-file as a base body whose values fill those fields unless a per-field flag
+        // overrides them (AutoSDK #343). Required and positional fields still come from CLI args,
+        // so this composes with the #340 positional hoisting rather than fighting it.
+        var supportsBaseBody = !hasDirectRequestBody &&
+            optionParameters.Any(IsMergeableBaseBodyField);
+
         return new CliProjectOperation(
             endPoint,
             commandName,
@@ -584,6 +592,7 @@ internal sealed record CliProjectOperation(
             positionalParameters,
             optionParameters,
             hasDirectRequestBody,
+            supportsBaseBody,
             !string.IsNullOrWhiteSpace(responseType),
             responseType,
             endPoint.RawStream,
@@ -632,6 +641,21 @@ internal sealed record CliProjectOperation(
         return ResourceIdentifierNames.Contains(parameter.Id) ||
                ResourceIdentifierNames.Contains(parameter.Name) ||
                ResourceIdentifierNames.Contains(parameter.ParameterName);
+    }
+
+    // A request-body field (Location == null) that is plain-optional (nullable option, no schema
+    // default) — the fields a base body can fill when no per-field flag is supplied (AutoSDK #343).
+    internal static bool IsMergeableBaseBodyField(MethodParameter parameter)
+    {
+        return parameter.Location is null && !parameter.IsRequired && !parameter.HasSchemaDefault;
+    }
+
+    // The request DTO property name for a body parameter (mirrors Sources.Methods.GetRequestPropertyName).
+    internal static string BaseBodyPropertyName(MethodParameter parameter)
+    {
+        return parameter.Name.StartsWith("request", StringComparison.Ordinal)
+            ? parameter.Name.Replace("request", string.Empty, StringComparison.Ordinal)
+            : parameter.Name;
     }
 
     private static string GetResponseType(EndPoint endPoint)
@@ -1142,6 +1166,28 @@ internal static class CliProjectScaffolder
                              : throw new CliException($"Unable to deserialize request JSON as {typeof(T).Name}.");
                      }
 
+                     public static async Task<T?> ReadRequestOrDefaultAsync<T>(ParseResult parseResult, Option<string?> requestJsonOption, Option<string?> requestFileOption, JsonSerializerContext context, CancellationToken cancellationToken = default)
+                     {
+                         var requestJson = parseResult.GetValue(requestJsonOption);
+                         if (string.IsNullOrWhiteSpace(requestJson))
+                         {
+                             var requestFile = parseResult.GetValue(requestFileOption);
+                             if (string.IsNullOrWhiteSpace(requestFile))
+                             {
+                                 return default;
+                             }
+
+                             requestJson = requestFile == "-"
+                                 ? await Console.In.ReadToEndAsync(cancellationToken).ConfigureAwait(false)
+                                 : await File.ReadAllTextAsync(requestFile, cancellationToken).ConfigureAwait(false);
+                         }
+
+                         var value = JsonSerializer.Deserialize(requestJson, typeof(T), context);
+                         return value is T typed
+                             ? typed
+                             : throw new CliException($"Unable to deserialize request JSON as {typeof(T).Name}.");
+                     }
+
                      public static async Task WriteJsonAsync<T>(ParseResult parseResult, T value, JsonSerializerContext context, CancellationToken cancellationToken = default)
                      {
                          var json = JsonSerializer.Serialize(value, typeof(T), context);
@@ -1449,7 +1495,7 @@ internal static class CliProjectScaffolder
             .Concat(operation.OptionParameters.Select(parameter => $@"
                         command.Options.Add({ParameterSymbolName(parameter)});"))
             .Inject();
-        var requestFields = operation.HasDirectRequestBody
+        var requestFields = operation.HasDirectRequestBody || operation.SupportsBaseBody
             ? """
 
                     private static Option<string?> RequestJson { get; } = new("--request-json")
@@ -1477,11 +1523,44 @@ internal static class CliProjectScaffolder
                             }
                         });
               """
-            : string.Empty;
-        var parseParameters = operation.PositionalParameters
-            .Select(parameter => $@"
-                        var {parameter.ParameterName} = parseResult.GetRequiredValue({ParameterSymbolName(parameter)});")
-            .Concat(operation.OptionParameters.Select(parameter => $@"
+            : operation.SupportsBaseBody
+                ? """
+                            command.Options.Add(RequestJson);
+                            command.Options.Add(RequestFile);
+                            command.Validators.Add(result =>
+                            {
+                                var hasRequestJson = result.GetResult(RequestJson) is not null;
+                                var hasRequestFile = result.GetResult(RequestFile) is not null;
+                                if (hasRequestJson && hasRequestFile)
+                                {
+                                    result.AddError("Specify at most one of --request-json or --request-file.");
+                                }
+                            });
+                  """
+                : string.Empty;
+        // The optional base body must be read before the per-field parse lines that merge into it,
+        // so it's emitted as the first parse statement (AutoSDK #343).
+        var baseBodyRead = operation.SupportsBaseBody
+            ? new[]
+            {
+                $@"
+                        var __requestBase = await CliRuntime.ReadRequestOrDefaultAsync<{endPoint.RequestType.CSharpTypeWithoutNullability}>(
+                            parseResult,
+                            RequestJson,
+                            RequestFile,
+                            global::{model.JsonSerializerContextFullName}.Default,
+                            cancellationToken).ConfigureAwait(false);",
+            }
+            : Array.Empty<string>();
+        var parseParameters = baseBodyRead
+            .Concat(operation.PositionalParameters
+                .Select(parameter => $@"
+                        var {parameter.ParameterName} = parseResult.GetRequiredValue({ParameterSymbolName(parameter)});"))
+            .Concat(operation.OptionParameters.Select(parameter =>
+                operation.SupportsBaseBody && CliProjectOperation.IsMergeableBaseBodyField(parameter)
+                    ? $@"
+                        var {parameter.ParameterName} = parseResult.GetValue({ParameterSymbolName(parameter)}) ?? __requestBase?.{CliProjectOperation.BaseBodyPropertyName(parameter)};"
+                    : $@"
                         var {parameter.ParameterName} = parseResult.{(parameter.HasSchemaDefault ? "GetRequiredValue" : "GetValue")}({ParameterSymbolName(parameter)});"))
             .Inject();
         var requestRead = operation.HasDirectRequestBody
