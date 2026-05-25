@@ -113,7 +113,7 @@ namespace G
             {
 
                             var __pathBuilder = new global::G.PathBuilder(
-                                path: $"/v2/entities/{entityTypeValue}/{entityId}/",
+                                path: $"/v2/entities/{(global::System.Uri.EscapeDataString(entityType.ToValueString()))}/{entityId}/",
                                 baseUri: HttpClient.BaseAddress);
                             var __path = __pathBuilder.ToString();
                 __path = global::G.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -175,7 +175,7 @@ namespace G
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "EntitiesRead",
                                 methodName: "EntitiesReadAsync",
-                                pathTemplate: "$\"/v2/entities/{entityTypeValue}/{entityId}/\"",
+                                pathTemplate: "$\"/v2/entities/{(global::System.Uri.EscapeDataString(entityType.ToValueString()))}/{entityId}/\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -209,7 +209,7 @@ namespace G
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "EntitiesRead",
                                 methodName: "EntitiesReadAsync",
-                                pathTemplate: "$\"/v2/entities/{entityTypeValue}/{entityId}/\"",
+                                pathTemplate: "$\"/v2/entities/{(global::System.Uri.EscapeDataString(entityType.ToValueString()))}/{entityId}/\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -250,7 +250,7 @@ namespace G
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "EntitiesRead",
                                 methodName: "EntitiesReadAsync",
-                                pathTemplate: "$\"/v2/entities/{entityTypeValue}/{entityId}/\"",
+                                pathTemplate: "$\"/v2/entities/{(global::System.Uri.EscapeDataString(entityType.ToValueString()))}/{entityId}/\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -298,7 +298,7 @@ namespace G
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "EntitiesRead",
                                 methodName: "EntitiesReadAsync",
-                                pathTemplate: "$\"/v2/entities/{entityTypeValue}/{entityId}/\"",
+                                pathTemplate: "$\"/v2/entities/{(global::System.Uri.EscapeDataString(entityType.ToValueString()))}/{entityId}/\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -320,7 +320,7 @@ namespace G
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "EntitiesRead",
                                 methodName: "EntitiesReadAsync",
-                                pathTemplate: "$\"/v2/entities/{entityTypeValue}/{entityId}/\"",
+                                pathTemplate: "$\"/v2/entities/{(global::System.Uri.EscapeDataString(entityType.ToValueString()))}/{entityId}/\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,

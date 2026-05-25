@@ -107,7 +107,7 @@ namespace G
             {
 
                             var __pathBuilder = new global::G.PathBuilder(
-                                path: $"/users/{username}/packages/{packageType}/{packageName}/restore",
+                                path: $"/users/{username}/packages/{(global::System.Uri.EscapeDataString(packageType.ToValueString()))}/{packageName}/restore",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
                                 .AddOptionalParameter("token", token)
@@ -157,7 +157,7 @@ namespace G
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "PackagesRestorePackageForUser",
                                 methodName: "PackagesRestorePackageForUserAsync",
-                                pathTemplate: "$\"/users/{username}/packages/{packageType}/{packageName}/restore\"",
+                                pathTemplate: "$\"/users/{username}/packages/{(global::System.Uri.EscapeDataString(packageType.ToValueString()))}/{packageName}/restore\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -191,7 +191,7 @@ namespace G
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "PackagesRestorePackageForUser",
                                 methodName: "PackagesRestorePackageForUserAsync",
-                                pathTemplate: "$\"/users/{username}/packages/{packageType}/{packageName}/restore\"",
+                                pathTemplate: "$\"/users/{username}/packages/{(global::System.Uri.EscapeDataString(packageType.ToValueString()))}/{packageName}/restore\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -232,7 +232,7 @@ namespace G
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "PackagesRestorePackageForUser",
                                 methodName: "PackagesRestorePackageForUserAsync",
-                                pathTemplate: "$\"/users/{username}/packages/{packageType}/{packageName}/restore\"",
+                                pathTemplate: "$\"/users/{username}/packages/{(global::System.Uri.EscapeDataString(packageType.ToValueString()))}/{packageName}/restore\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -280,7 +280,7 @@ namespace G
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "PackagesRestorePackageForUser",
                                 methodName: "PackagesRestorePackageForUserAsync",
-                                pathTemplate: "$\"/users/{username}/packages/{packageType}/{packageName}/restore\"",
+                                pathTemplate: "$\"/users/{username}/packages/{(global::System.Uri.EscapeDataString(packageType.ToValueString()))}/{packageName}/restore\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -302,7 +302,7 @@ namespace G
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "PackagesRestorePackageForUser",
                                 methodName: "PackagesRestorePackageForUserAsync",
-                                pathTemplate: "$\"/users/{username}/packages/{packageType}/{packageName}/restore\"",
+                                pathTemplate: "$\"/users/{username}/packages/{(global::System.Uri.EscapeDataString(packageType.ToValueString()))}/{packageName}/restore\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,

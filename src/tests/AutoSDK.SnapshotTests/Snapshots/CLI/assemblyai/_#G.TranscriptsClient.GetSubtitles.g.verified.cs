@@ -126,7 +126,7 @@ namespace G
             {
 
                             var __pathBuilder = new global::G.PathBuilder(
-                                path: $"/v2/transcript/{transcriptId}/{subtitleFormat}",
+                                path: $"/v2/transcript/{transcriptId}/{(global::System.Uri.EscapeDataString(subtitleFormat.ToValueString()))}",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
                                 .AddOptionalParameter("chars_per_caption", charsPerCaption?.ToString())
@@ -192,7 +192,7 @@ namespace G
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetSubtitles",
                                 methodName: "GetSubtitlesAsync",
-                                pathTemplate: "$\"/v2/transcript/{transcriptId}/{subtitleFormat}\"",
+                                pathTemplate: "$\"/v2/transcript/{transcriptId}/{(global::System.Uri.EscapeDataString(subtitleFormat.ToValueString()))}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -226,7 +226,7 @@ namespace G
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetSubtitles",
                                 methodName: "GetSubtitlesAsync",
-                                pathTemplate: "$\"/v2/transcript/{transcriptId}/{subtitleFormat}\"",
+                                pathTemplate: "$\"/v2/transcript/{transcriptId}/{(global::System.Uri.EscapeDataString(subtitleFormat.ToValueString()))}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -267,7 +267,7 @@ namespace G
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetSubtitles",
                                 methodName: "GetSubtitlesAsync",
-                                pathTemplate: "$\"/v2/transcript/{transcriptId}/{subtitleFormat}\"",
+                                pathTemplate: "$\"/v2/transcript/{transcriptId}/{(global::System.Uri.EscapeDataString(subtitleFormat.ToValueString()))}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -315,7 +315,7 @@ namespace G
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetSubtitles",
                                 methodName: "GetSubtitlesAsync",
-                                pathTemplate: "$\"/v2/transcript/{transcriptId}/{subtitleFormat}\"",
+                                pathTemplate: "$\"/v2/transcript/{transcriptId}/{(global::System.Uri.EscapeDataString(subtitleFormat.ToValueString()))}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -337,7 +337,7 @@ namespace G
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetSubtitles",
                                 methodName: "GetSubtitlesAsync",
-                                pathTemplate: "$\"/v2/transcript/{transcriptId}/{subtitleFormat}\"",
+                                pathTemplate: "$\"/v2/transcript/{transcriptId}/{(global::System.Uri.EscapeDataString(subtitleFormat.ToValueString()))}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,

@@ -154,7 +154,7 @@ namespace G
             {
 
                             var __pathBuilder = new global::G.PathBuilder(
-                                path: $"/api/v3/auth_configs/{nanoid}/{status}",
+                                path: $"/api/v3/auth_configs/{nanoid}/{(global::System.Uri.EscapeDataString(status.ToValueString()))}",
                                 baseUri: HttpClient.BaseAddress);
                             var __path = __pathBuilder.ToString();
                 __path = global::G.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -230,7 +230,7 @@ namespace G
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "PatchAuthConfigsByNanoidByStatus",
                                 methodName: "PatchAuthConfigsByNanoidByStatusAsync",
-                                pathTemplate: "$\"/api/v3/auth_configs/{nanoid}/{status}\"",
+                                pathTemplate: "$\"/api/v3/auth_configs/{nanoid}/{(global::System.Uri.EscapeDataString(status.ToValueString()))}\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -264,7 +264,7 @@ namespace G
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "PatchAuthConfigsByNanoidByStatus",
                                 methodName: "PatchAuthConfigsByNanoidByStatusAsync",
-                                pathTemplate: "$\"/api/v3/auth_configs/{nanoid}/{status}\"",
+                                pathTemplate: "$\"/api/v3/auth_configs/{nanoid}/{(global::System.Uri.EscapeDataString(status.ToValueString()))}\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -305,7 +305,7 @@ namespace G
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "PatchAuthConfigsByNanoidByStatus",
                                 methodName: "PatchAuthConfigsByNanoidByStatusAsync",
-                                pathTemplate: "$\"/api/v3/auth_configs/{nanoid}/{status}\"",
+                                pathTemplate: "$\"/api/v3/auth_configs/{nanoid}/{(global::System.Uri.EscapeDataString(status.ToValueString()))}\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -353,7 +353,7 @@ namespace G
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "PatchAuthConfigsByNanoidByStatus",
                                 methodName: "PatchAuthConfigsByNanoidByStatusAsync",
-                                pathTemplate: "$\"/api/v3/auth_configs/{nanoid}/{status}\"",
+                                pathTemplate: "$\"/api/v3/auth_configs/{nanoid}/{(global::System.Uri.EscapeDataString(status.ToValueString()))}\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -375,7 +375,7 @@ namespace G
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "PatchAuthConfigsByNanoidByStatus",
                                 methodName: "PatchAuthConfigsByNanoidByStatusAsync",
-                                pathTemplate: "$\"/api/v3/auth_configs/{nanoid}/{status}\"",
+                                pathTemplate: "$\"/api/v3/auth_configs/{nanoid}/{(global::System.Uri.EscapeDataString(status.ToValueString()))}\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,

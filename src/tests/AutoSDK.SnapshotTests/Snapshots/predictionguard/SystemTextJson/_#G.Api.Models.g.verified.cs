@@ -110,7 +110,7 @@ namespace G
             {
 
                             var __pathBuilder = new global::G.PathBuilder(
-                                path: $"/models/{capability}",
+                                path: $"/models/{(global::System.Uri.EscapeDataString(capability?.ToValueString() ?? string.Empty))}",
                                 baseUri: HttpClient.BaseAddress);
                             var __path = __pathBuilder.ToString();
                 __path = global::G.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -171,7 +171,7 @@ namespace G
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "Models",
                                 methodName: "ModelsAsync",
-                                pathTemplate: "$\"/models/{capability}\"",
+                                pathTemplate: "$\"/models/{(global::System.Uri.EscapeDataString(capability?.ToValueString() ?? string.Empty))}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -205,7 +205,7 @@ namespace G
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "Models",
                                 methodName: "ModelsAsync",
-                                pathTemplate: "$\"/models/{capability}\"",
+                                pathTemplate: "$\"/models/{(global::System.Uri.EscapeDataString(capability?.ToValueString() ?? string.Empty))}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -246,7 +246,7 @@ namespace G
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "Models",
                                 methodName: "ModelsAsync",
-                                pathTemplate: "$\"/models/{capability}\"",
+                                pathTemplate: "$\"/models/{(global::System.Uri.EscapeDataString(capability?.ToValueString() ?? string.Empty))}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -294,7 +294,7 @@ namespace G
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "Models",
                                 methodName: "ModelsAsync",
-                                pathTemplate: "$\"/models/{capability}\"",
+                                pathTemplate: "$\"/models/{(global::System.Uri.EscapeDataString(capability?.ToValueString() ?? string.Empty))}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -316,7 +316,7 @@ namespace G
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "Models",
                                 methodName: "ModelsAsync",
-                                pathTemplate: "$\"/models/{capability}\"",
+                                pathTemplate: "$\"/models/{(global::System.Uri.EscapeDataString(capability?.ToValueString() ?? string.Empty))}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,

@@ -163,7 +163,7 @@ namespace G
             {
 
                             var __pathBuilder = new global::G.PathBuilder(
-                                path: $"/api/v1/beta/sheets/jobs/{spreadsheetJobId}/regions/{regionId}/result/{regionTypeValue}",
+                                path: $"/api/v1/beta/sheets/jobs/{spreadsheetJobId}/regions/{regionId}/result/{(global::System.Uri.EscapeDataString(regionType.ToValueString()))}",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
                                 .AddOptionalParameter("expires_at_seconds", expiresAtSeconds?.ToString())
@@ -249,7 +249,7 @@ namespace G
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetResultRegionApiV1BetaSheetsJobsSpreadsheetJobIdRegionsRegionIdResultRegionTypeGet",
                                 methodName: "GetResultRegionApiV1BetaSheetsJobsSpreadsheetJobIdRegionsRegionIdResultRegionTypeGetAsync",
-                                pathTemplate: "$\"/api/v1/beta/sheets/jobs/{spreadsheetJobId}/regions/{regionId}/result/{regionTypeValue}\"",
+                                pathTemplate: "$\"/api/v1/beta/sheets/jobs/{spreadsheetJobId}/regions/{regionId}/result/{(global::System.Uri.EscapeDataString(regionType.ToValueString()))}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -283,7 +283,7 @@ namespace G
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetResultRegionApiV1BetaSheetsJobsSpreadsheetJobIdRegionsRegionIdResultRegionTypeGet",
                                 methodName: "GetResultRegionApiV1BetaSheetsJobsSpreadsheetJobIdRegionsRegionIdResultRegionTypeGetAsync",
-                                pathTemplate: "$\"/api/v1/beta/sheets/jobs/{spreadsheetJobId}/regions/{regionId}/result/{regionTypeValue}\"",
+                                pathTemplate: "$\"/api/v1/beta/sheets/jobs/{spreadsheetJobId}/regions/{regionId}/result/{(global::System.Uri.EscapeDataString(regionType.ToValueString()))}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -324,7 +324,7 @@ namespace G
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetResultRegionApiV1BetaSheetsJobsSpreadsheetJobIdRegionsRegionIdResultRegionTypeGet",
                                 methodName: "GetResultRegionApiV1BetaSheetsJobsSpreadsheetJobIdRegionsRegionIdResultRegionTypeGetAsync",
-                                pathTemplate: "$\"/api/v1/beta/sheets/jobs/{spreadsheetJobId}/regions/{regionId}/result/{regionTypeValue}\"",
+                                pathTemplate: "$\"/api/v1/beta/sheets/jobs/{spreadsheetJobId}/regions/{regionId}/result/{(global::System.Uri.EscapeDataString(regionType.ToValueString()))}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -372,7 +372,7 @@ namespace G
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetResultRegionApiV1BetaSheetsJobsSpreadsheetJobIdRegionsRegionIdResultRegionTypeGet",
                                 methodName: "GetResultRegionApiV1BetaSheetsJobsSpreadsheetJobIdRegionsRegionIdResultRegionTypeGetAsync",
-                                pathTemplate: "$\"/api/v1/beta/sheets/jobs/{spreadsheetJobId}/regions/{regionId}/result/{regionTypeValue}\"",
+                                pathTemplate: "$\"/api/v1/beta/sheets/jobs/{spreadsheetJobId}/regions/{regionId}/result/{(global::System.Uri.EscapeDataString(regionType.ToValueString()))}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -394,7 +394,7 @@ namespace G
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetResultRegionApiV1BetaSheetsJobsSpreadsheetJobIdRegionsRegionIdResultRegionTypeGet",
                                 methodName: "GetResultRegionApiV1BetaSheetsJobsSpreadsheetJobIdRegionsRegionIdResultRegionTypeGetAsync",
-                                pathTemplate: "$\"/api/v1/beta/sheets/jobs/{spreadsheetJobId}/regions/{regionId}/result/{regionTypeValue}\"",
+                                pathTemplate: "$\"/api/v1/beta/sheets/jobs/{spreadsheetJobId}/regions/{regionId}/result/{(global::System.Uri.EscapeDataString(regionType.ToValueString()))}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,

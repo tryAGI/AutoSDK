@@ -107,7 +107,7 @@ namespace G
             {
 
                             var __pathBuilder = new global::G.PathBuilder(
-                                path: $"/orgs/{org}/packages/{packageType}/{packageName}/versions/{packageVersionId}/restore",
+                                path: $"/orgs/{org}/packages/{(global::System.Uri.EscapeDataString(packageType.ToValueString()))}/{packageName}/versions/{packageVersionId}/restore",
                                 baseUri: HttpClient.BaseAddress);
                             var __path = __pathBuilder.ToString();
                 __path = global::G.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -154,7 +154,7 @@ namespace G
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "PackagesRestorePackageVersionForOrg",
                                 methodName: "PackagesRestorePackageVersionForOrgAsync",
-                                pathTemplate: "$\"/orgs/{org}/packages/{packageType}/{packageName}/versions/{packageVersionId}/restore\"",
+                                pathTemplate: "$\"/orgs/{org}/packages/{(global::System.Uri.EscapeDataString(packageType.ToValueString()))}/{packageName}/versions/{packageVersionId}/restore\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -188,7 +188,7 @@ namespace G
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "PackagesRestorePackageVersionForOrg",
                                 methodName: "PackagesRestorePackageVersionForOrgAsync",
-                                pathTemplate: "$\"/orgs/{org}/packages/{packageType}/{packageName}/versions/{packageVersionId}/restore\"",
+                                pathTemplate: "$\"/orgs/{org}/packages/{(global::System.Uri.EscapeDataString(packageType.ToValueString()))}/{packageName}/versions/{packageVersionId}/restore\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -229,7 +229,7 @@ namespace G
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "PackagesRestorePackageVersionForOrg",
                                 methodName: "PackagesRestorePackageVersionForOrgAsync",
-                                pathTemplate: "$\"/orgs/{org}/packages/{packageType}/{packageName}/versions/{packageVersionId}/restore\"",
+                                pathTemplate: "$\"/orgs/{org}/packages/{(global::System.Uri.EscapeDataString(packageType.ToValueString()))}/{packageName}/versions/{packageVersionId}/restore\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -277,7 +277,7 @@ namespace G
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "PackagesRestorePackageVersionForOrg",
                                 methodName: "PackagesRestorePackageVersionForOrgAsync",
-                                pathTemplate: "$\"/orgs/{org}/packages/{packageType}/{packageName}/versions/{packageVersionId}/restore\"",
+                                pathTemplate: "$\"/orgs/{org}/packages/{(global::System.Uri.EscapeDataString(packageType.ToValueString()))}/{packageName}/versions/{packageVersionId}/restore\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -299,7 +299,7 @@ namespace G
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "PackagesRestorePackageVersionForOrg",
                                 methodName: "PackagesRestorePackageVersionForOrgAsync",
-                                pathTemplate: "$\"/orgs/{org}/packages/{packageType}/{packageName}/versions/{packageVersionId}/restore\"",
+                                pathTemplate: "$\"/orgs/{org}/packages/{(global::System.Uri.EscapeDataString(packageType.ToValueString()))}/{packageName}/versions/{packageVersionId}/restore\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,

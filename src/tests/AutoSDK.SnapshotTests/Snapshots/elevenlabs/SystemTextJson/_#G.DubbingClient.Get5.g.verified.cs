@@ -120,7 +120,7 @@ namespace G
             {
 
                             var __pathBuilder = new global::G.PathBuilder(
-                                path: $"/v1/dubbing/{dubbingId}/transcripts/{languageCode}/format/{formatType}",
+                                path: $"/v1/dubbing/{dubbingId}/transcripts/{languageCode}/format/{(global::System.Uri.EscapeDataString(formatType.ToValueString()))}",
                                 baseUri: HttpClient.BaseAddress);
                             var __path = __pathBuilder.ToString();
                 __path = global::G.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -173,7 +173,7 @@ namespace G
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "Get5",
                                 methodName: "Get5Async",
-                                pathTemplate: "$\"/v1/dubbing/{dubbingId}/transcripts/{languageCode}/format/{formatType}\"",
+                                pathTemplate: "$\"/v1/dubbing/{dubbingId}/transcripts/{languageCode}/format/{(global::System.Uri.EscapeDataString(formatType.ToValueString()))}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -207,7 +207,7 @@ namespace G
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "Get5",
                                 methodName: "Get5Async",
-                                pathTemplate: "$\"/v1/dubbing/{dubbingId}/transcripts/{languageCode}/format/{formatType}\"",
+                                pathTemplate: "$\"/v1/dubbing/{dubbingId}/transcripts/{languageCode}/format/{(global::System.Uri.EscapeDataString(formatType.ToValueString()))}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -248,7 +248,7 @@ namespace G
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "Get5",
                                 methodName: "Get5Async",
-                                pathTemplate: "$\"/v1/dubbing/{dubbingId}/transcripts/{languageCode}/format/{formatType}\"",
+                                pathTemplate: "$\"/v1/dubbing/{dubbingId}/transcripts/{languageCode}/format/{(global::System.Uri.EscapeDataString(formatType.ToValueString()))}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -296,7 +296,7 @@ namespace G
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "Get5",
                                 methodName: "Get5Async",
-                                pathTemplate: "$\"/v1/dubbing/{dubbingId}/transcripts/{languageCode}/format/{formatType}\"",
+                                pathTemplate: "$\"/v1/dubbing/{dubbingId}/transcripts/{languageCode}/format/{(global::System.Uri.EscapeDataString(formatType.ToValueString()))}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -318,7 +318,7 @@ namespace G
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "Get5",
                                 methodName: "Get5Async",
-                                pathTemplate: "$\"/v1/dubbing/{dubbingId}/transcripts/{languageCode}/format/{formatType}\"",
+                                pathTemplate: "$\"/v1/dubbing/{dubbingId}/transcripts/{languageCode}/format/{(global::System.Uri.EscapeDataString(formatType.ToValueString()))}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,

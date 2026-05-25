@@ -83,7 +83,7 @@ namespace G
             {
 
                             var __pathBuilder = new global::G.PathBuilder(
-                                path: $"/api/v1/oauth/{providerValue}/logout",
+                                path: $"/api/v1/oauth/{(global::System.Uri.EscapeDataString(provider.ToValueString()))}/logout",
                                 baseUri: HttpClient.BaseAddress);
                             var __path = __pathBuilder.ToString();
                 __path = global::G.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -127,7 +127,7 @@ namespace G
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "OauthProviderLogout",
                                 methodName: "OauthProviderLogoutAsync",
-                                pathTemplate: "$\"/api/v1/oauth/{providerValue}/logout\"",
+                                pathTemplate: "$\"/api/v1/oauth/{(global::System.Uri.EscapeDataString(provider.ToValueString()))}/logout\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -161,7 +161,7 @@ namespace G
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "OauthProviderLogout",
                                 methodName: "OauthProviderLogoutAsync",
-                                pathTemplate: "$\"/api/v1/oauth/{providerValue}/logout\"",
+                                pathTemplate: "$\"/api/v1/oauth/{(global::System.Uri.EscapeDataString(provider.ToValueString()))}/logout\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -202,7 +202,7 @@ namespace G
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "OauthProviderLogout",
                                 methodName: "OauthProviderLogoutAsync",
-                                pathTemplate: "$\"/api/v1/oauth/{providerValue}/logout\"",
+                                pathTemplate: "$\"/api/v1/oauth/{(global::System.Uri.EscapeDataString(provider.ToValueString()))}/logout\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -250,7 +250,7 @@ namespace G
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "OauthProviderLogout",
                                 methodName: "OauthProviderLogoutAsync",
-                                pathTemplate: "$\"/api/v1/oauth/{providerValue}/logout\"",
+                                pathTemplate: "$\"/api/v1/oauth/{(global::System.Uri.EscapeDataString(provider.ToValueString()))}/logout\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -272,7 +272,7 @@ namespace G
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "OauthProviderLogout",
                                 methodName: "OauthProviderLogoutAsync",
-                                pathTemplate: "$\"/api/v1/oauth/{providerValue}/logout\"",
+                                pathTemplate: "$\"/api/v1/oauth/{(global::System.Uri.EscapeDataString(provider.ToValueString()))}/logout\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,

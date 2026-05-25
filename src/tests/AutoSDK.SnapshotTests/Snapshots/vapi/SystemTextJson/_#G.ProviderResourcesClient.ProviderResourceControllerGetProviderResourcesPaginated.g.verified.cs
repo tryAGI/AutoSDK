@@ -216,7 +216,7 @@ namespace G
             {
 
                             var __pathBuilder = new global::G.PathBuilder(
-                                path: $"/provider/{provider}/{resourceName}",
+                                path: $"/provider/{(global::System.Uri.EscapeDataString(provider.ToValueString()))}/{(global::System.Uri.EscapeDataString(resourceName.ToValueString()))}",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
                                 .AddOptionalParameter("id", id)
@@ -308,7 +308,7 @@ namespace G
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "ProviderResourceControllerGetProviderResourcesPaginated",
                                 methodName: "ProviderResourceControllerGetProviderResourcesPaginatedAsync",
-                                pathTemplate: "$\"/provider/{provider}/{resourceName}\"",
+                                pathTemplate: "$\"/provider/{(global::System.Uri.EscapeDataString(provider.ToValueString()))}/{(global::System.Uri.EscapeDataString(resourceName.ToValueString()))}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -342,7 +342,7 @@ namespace G
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "ProviderResourceControllerGetProviderResourcesPaginated",
                                 methodName: "ProviderResourceControllerGetProviderResourcesPaginatedAsync",
-                                pathTemplate: "$\"/provider/{provider}/{resourceName}\"",
+                                pathTemplate: "$\"/provider/{(global::System.Uri.EscapeDataString(provider.ToValueString()))}/{(global::System.Uri.EscapeDataString(resourceName.ToValueString()))}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -383,7 +383,7 @@ namespace G
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "ProviderResourceControllerGetProviderResourcesPaginated",
                                 methodName: "ProviderResourceControllerGetProviderResourcesPaginatedAsync",
-                                pathTemplate: "$\"/provider/{provider}/{resourceName}\"",
+                                pathTemplate: "$\"/provider/{(global::System.Uri.EscapeDataString(provider.ToValueString()))}/{(global::System.Uri.EscapeDataString(resourceName.ToValueString()))}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -431,7 +431,7 @@ namespace G
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "ProviderResourceControllerGetProviderResourcesPaginated",
                                 methodName: "ProviderResourceControllerGetProviderResourcesPaginatedAsync",
-                                pathTemplate: "$\"/provider/{provider}/{resourceName}\"",
+                                pathTemplate: "$\"/provider/{(global::System.Uri.EscapeDataString(provider.ToValueString()))}/{(global::System.Uri.EscapeDataString(resourceName.ToValueString()))}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -453,7 +453,7 @@ namespace G
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "ProviderResourceControllerGetProviderResourcesPaginated",
                                 methodName: "ProviderResourceControllerGetProviderResourcesPaginatedAsync",
-                                pathTemplate: "$\"/provider/{provider}/{resourceName}\"",
+                                pathTemplate: "$\"/provider/{(global::System.Uri.EscapeDataString(provider.ToValueString()))}/{(global::System.Uri.EscapeDataString(resourceName.ToValueString()))}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,

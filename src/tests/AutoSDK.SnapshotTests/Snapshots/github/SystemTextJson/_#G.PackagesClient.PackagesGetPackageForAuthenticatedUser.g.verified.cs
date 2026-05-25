@@ -90,7 +90,7 @@ namespace G
             {
 
                             var __pathBuilder = new global::G.PathBuilder(
-                                path: $"/user/packages/{packageType}/{packageName}",
+                                path: $"/user/packages/{(global::System.Uri.EscapeDataString(packageType.ToValueString()))}/{packageName}",
                                 baseUri: HttpClient.BaseAddress);
                             var __path = __pathBuilder.ToString();
                 __path = global::G.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -135,7 +135,7 @@ namespace G
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "PackagesGetPackageForAuthenticatedUser",
                                 methodName: "PackagesGetPackageForAuthenticatedUserAsync",
-                                pathTemplate: "$\"/user/packages/{packageType}/{packageName}\"",
+                                pathTemplate: "$\"/user/packages/{(global::System.Uri.EscapeDataString(packageType.ToValueString()))}/{packageName}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -169,7 +169,7 @@ namespace G
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "PackagesGetPackageForAuthenticatedUser",
                                 methodName: "PackagesGetPackageForAuthenticatedUserAsync",
-                                pathTemplate: "$\"/user/packages/{packageType}/{packageName}\"",
+                                pathTemplate: "$\"/user/packages/{(global::System.Uri.EscapeDataString(packageType.ToValueString()))}/{packageName}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -210,7 +210,7 @@ namespace G
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "PackagesGetPackageForAuthenticatedUser",
                                 methodName: "PackagesGetPackageForAuthenticatedUserAsync",
-                                pathTemplate: "$\"/user/packages/{packageType}/{packageName}\"",
+                                pathTemplate: "$\"/user/packages/{(global::System.Uri.EscapeDataString(packageType.ToValueString()))}/{packageName}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -258,7 +258,7 @@ namespace G
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "PackagesGetPackageForAuthenticatedUser",
                                 methodName: "PackagesGetPackageForAuthenticatedUserAsync",
-                                pathTemplate: "$\"/user/packages/{packageType}/{packageName}\"",
+                                pathTemplate: "$\"/user/packages/{(global::System.Uri.EscapeDataString(packageType.ToValueString()))}/{packageName}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -280,7 +280,7 @@ namespace G
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "PackagesGetPackageForAuthenticatedUser",
                                 methodName: "PackagesGetPackageForAuthenticatedUserAsync",
-                                pathTemplate: "$\"/user/packages/{packageType}/{packageName}\"",
+                                pathTemplate: "$\"/user/packages/{(global::System.Uri.EscapeDataString(packageType.ToValueString()))}/{packageName}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,

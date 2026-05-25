@@ -112,7 +112,7 @@ namespace G
             {
 
                             var __pathBuilder = new global::G.PathBuilder(
-                                path: $"/orgs/{org}/{securityProduct}/{enablement}",
+                                path: $"/orgs/{org}/{(global::System.Uri.EscapeDataString(securityProduct.ToValueString()))}/{(global::System.Uri.EscapeDataString(enablement.ToValueString()))}",
                                 baseUri: HttpClient.BaseAddress);
                             var __path = __pathBuilder.ToString();
                 __path = global::G.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -165,7 +165,7 @@ namespace G
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "OrgsEnableOrDisableSecurityProductOnAllOrgRepos",
                                 methodName: "OrgsEnableOrDisableSecurityProductOnAllOrgReposAsync",
-                                pathTemplate: "$\"/orgs/{org}/{securityProduct}/{enablement}\"",
+                                pathTemplate: "$\"/orgs/{org}/{(global::System.Uri.EscapeDataString(securityProduct.ToValueString()))}/{(global::System.Uri.EscapeDataString(enablement.ToValueString()))}\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -199,7 +199,7 @@ namespace G
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "OrgsEnableOrDisableSecurityProductOnAllOrgRepos",
                                 methodName: "OrgsEnableOrDisableSecurityProductOnAllOrgReposAsync",
-                                pathTemplate: "$\"/orgs/{org}/{securityProduct}/{enablement}\"",
+                                pathTemplate: "$\"/orgs/{org}/{(global::System.Uri.EscapeDataString(securityProduct.ToValueString()))}/{(global::System.Uri.EscapeDataString(enablement.ToValueString()))}\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -240,7 +240,7 @@ namespace G
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "OrgsEnableOrDisableSecurityProductOnAllOrgRepos",
                                 methodName: "OrgsEnableOrDisableSecurityProductOnAllOrgReposAsync",
-                                pathTemplate: "$\"/orgs/{org}/{securityProduct}/{enablement}\"",
+                                pathTemplate: "$\"/orgs/{org}/{(global::System.Uri.EscapeDataString(securityProduct.ToValueString()))}/{(global::System.Uri.EscapeDataString(enablement.ToValueString()))}\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -288,7 +288,7 @@ namespace G
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "OrgsEnableOrDisableSecurityProductOnAllOrgRepos",
                                 methodName: "OrgsEnableOrDisableSecurityProductOnAllOrgReposAsync",
-                                pathTemplate: "$\"/orgs/{org}/{securityProduct}/{enablement}\"",
+                                pathTemplate: "$\"/orgs/{org}/{(global::System.Uri.EscapeDataString(securityProduct.ToValueString()))}/{(global::System.Uri.EscapeDataString(enablement.ToValueString()))}\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -310,7 +310,7 @@ namespace G
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "OrgsEnableOrDisableSecurityProductOnAllOrgRepos",
                                 methodName: "OrgsEnableOrDisableSecurityProductOnAllOrgReposAsync",
-                                pathTemplate: "$\"/orgs/{org}/{securityProduct}/{enablement}\"",
+                                pathTemplate: "$\"/orgs/{org}/{(global::System.Uri.EscapeDataString(securityProduct.ToValueString()))}/{(global::System.Uri.EscapeDataString(enablement.ToValueString()))}\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,

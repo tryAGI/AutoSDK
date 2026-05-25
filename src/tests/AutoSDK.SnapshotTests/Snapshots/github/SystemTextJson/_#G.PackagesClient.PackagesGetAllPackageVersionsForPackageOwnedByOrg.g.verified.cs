@@ -134,7 +134,7 @@ namespace G
             {
 
                             var __pathBuilder = new global::G.PathBuilder(
-                                path: $"/orgs/{org}/packages/{packageType}/{packageName}/versions",
+                                path: $"/orgs/{org}/packages/{(global::System.Uri.EscapeDataString(packageType.ToValueString()))}/{packageName}/versions",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
                                 .AddOptionalParameter("page", page?.ToString())
@@ -188,7 +188,7 @@ namespace G
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "PackagesGetAllPackageVersionsForPackageOwnedByOrg",
                                 methodName: "PackagesGetAllPackageVersionsForPackageOwnedByOrgAsync",
-                                pathTemplate: "$\"/orgs/{org}/packages/{packageType}/{packageName}/versions\"",
+                                pathTemplate: "$\"/orgs/{org}/packages/{(global::System.Uri.EscapeDataString(packageType.ToValueString()))}/{packageName}/versions\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -222,7 +222,7 @@ namespace G
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "PackagesGetAllPackageVersionsForPackageOwnedByOrg",
                                 methodName: "PackagesGetAllPackageVersionsForPackageOwnedByOrgAsync",
-                                pathTemplate: "$\"/orgs/{org}/packages/{packageType}/{packageName}/versions\"",
+                                pathTemplate: "$\"/orgs/{org}/packages/{(global::System.Uri.EscapeDataString(packageType.ToValueString()))}/{packageName}/versions\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -263,7 +263,7 @@ namespace G
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "PackagesGetAllPackageVersionsForPackageOwnedByOrg",
                                 methodName: "PackagesGetAllPackageVersionsForPackageOwnedByOrgAsync",
-                                pathTemplate: "$\"/orgs/{org}/packages/{packageType}/{packageName}/versions\"",
+                                pathTemplate: "$\"/orgs/{org}/packages/{(global::System.Uri.EscapeDataString(packageType.ToValueString()))}/{packageName}/versions\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -311,7 +311,7 @@ namespace G
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "PackagesGetAllPackageVersionsForPackageOwnedByOrg",
                                 methodName: "PackagesGetAllPackageVersionsForPackageOwnedByOrgAsync",
-                                pathTemplate: "$\"/orgs/{org}/packages/{packageType}/{packageName}/versions\"",
+                                pathTemplate: "$\"/orgs/{org}/packages/{(global::System.Uri.EscapeDataString(packageType.ToValueString()))}/{packageName}/versions\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -333,7 +333,7 @@ namespace G
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "PackagesGetAllPackageVersionsForPackageOwnedByOrg",
                                 methodName: "PackagesGetAllPackageVersionsForPackageOwnedByOrgAsync",
-                                pathTemplate: "$\"/orgs/{org}/packages/{packageType}/{packageName}/versions\"",
+                                pathTemplate: "$\"/orgs/{org}/packages/{(global::System.Uri.EscapeDataString(packageType.ToValueString()))}/{packageName}/versions\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,

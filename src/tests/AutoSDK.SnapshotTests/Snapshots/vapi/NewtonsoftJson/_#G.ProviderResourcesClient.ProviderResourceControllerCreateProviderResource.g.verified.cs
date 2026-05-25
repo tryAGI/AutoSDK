@@ -131,7 +131,7 @@ namespace G
             {
 
                             var __pathBuilder = new global::G.PathBuilder(
-                                path: $"/provider/{providerValue}/{resourceNameValue}",
+                                path: $"/provider/{(global::System.Uri.EscapeDataString(provider.ToValueString()))}/{(global::System.Uri.EscapeDataString(resourceName.ToValueString()))}",
                                 baseUri: HttpClient.BaseAddress);
                             var __path = __pathBuilder.ToString();
                 __path = global::G.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -199,7 +199,7 @@ namespace G
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "ProviderResourceControllerCreateProviderResource",
                                 methodName: "ProviderResourceControllerCreateProviderResourceAsync",
-                                pathTemplate: "$\"/provider/{providerValue}/{resourceNameValue}\"",
+                                pathTemplate: "$\"/provider/{(global::System.Uri.EscapeDataString(provider.ToValueString()))}/{(global::System.Uri.EscapeDataString(resourceName.ToValueString()))}\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -233,7 +233,7 @@ namespace G
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "ProviderResourceControllerCreateProviderResource",
                                 methodName: "ProviderResourceControllerCreateProviderResourceAsync",
-                                pathTemplate: "$\"/provider/{providerValue}/{resourceNameValue}\"",
+                                pathTemplate: "$\"/provider/{(global::System.Uri.EscapeDataString(provider.ToValueString()))}/{(global::System.Uri.EscapeDataString(resourceName.ToValueString()))}\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -274,7 +274,7 @@ namespace G
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "ProviderResourceControllerCreateProviderResource",
                                 methodName: "ProviderResourceControllerCreateProviderResourceAsync",
-                                pathTemplate: "$\"/provider/{providerValue}/{resourceNameValue}\"",
+                                pathTemplate: "$\"/provider/{(global::System.Uri.EscapeDataString(provider.ToValueString()))}/{(global::System.Uri.EscapeDataString(resourceName.ToValueString()))}\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -322,7 +322,7 @@ namespace G
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "ProviderResourceControllerCreateProviderResource",
                                 methodName: "ProviderResourceControllerCreateProviderResourceAsync",
-                                pathTemplate: "$\"/provider/{providerValue}/{resourceNameValue}\"",
+                                pathTemplate: "$\"/provider/{(global::System.Uri.EscapeDataString(provider.ToValueString()))}/{(global::System.Uri.EscapeDataString(resourceName.ToValueString()))}\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -344,7 +344,7 @@ namespace G
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "ProviderResourceControllerCreateProviderResource",
                                 methodName: "ProviderResourceControllerCreateProviderResourceAsync",
-                                pathTemplate: "$\"/provider/{providerValue}/{resourceNameValue}\"",
+                                pathTemplate: "$\"/provider/{(global::System.Uri.EscapeDataString(provider.ToValueString()))}/{(global::System.Uri.EscapeDataString(resourceName.ToValueString()))}\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,

@@ -116,7 +116,7 @@ namespace G
             {
 
                             var __pathBuilder = new global::G.PathBuilder(
-                                path: $"/users/{username}/packages/{packageTypeValue}/{packageName}/versions/{packageVersionId}",
+                                path: $"/users/{username}/packages/{(global::System.Uri.EscapeDataString(packageType.ToValueString()))}/{packageName}/versions/{packageVersionId}",
                                 baseUri: HttpClient.BaseAddress);
                             var __path = __pathBuilder.ToString();
                 __path = global::G.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -163,7 +163,7 @@ namespace G
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "PackagesGetPackageVersionForUser",
                                 methodName: "PackagesGetPackageVersionForUserAsync",
-                                pathTemplate: "$\"/users/{username}/packages/{packageTypeValue}/{packageName}/versions/{packageVersionId}\"",
+                                pathTemplate: "$\"/users/{username}/packages/{(global::System.Uri.EscapeDataString(packageType.ToValueString()))}/{packageName}/versions/{packageVersionId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -197,7 +197,7 @@ namespace G
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "PackagesGetPackageVersionForUser",
                                 methodName: "PackagesGetPackageVersionForUserAsync",
-                                pathTemplate: "$\"/users/{username}/packages/{packageTypeValue}/{packageName}/versions/{packageVersionId}\"",
+                                pathTemplate: "$\"/users/{username}/packages/{(global::System.Uri.EscapeDataString(packageType.ToValueString()))}/{packageName}/versions/{packageVersionId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -238,7 +238,7 @@ namespace G
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "PackagesGetPackageVersionForUser",
                                 methodName: "PackagesGetPackageVersionForUserAsync",
-                                pathTemplate: "$\"/users/{username}/packages/{packageTypeValue}/{packageName}/versions/{packageVersionId}\"",
+                                pathTemplate: "$\"/users/{username}/packages/{(global::System.Uri.EscapeDataString(packageType.ToValueString()))}/{packageName}/versions/{packageVersionId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -286,7 +286,7 @@ namespace G
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "PackagesGetPackageVersionForUser",
                                 methodName: "PackagesGetPackageVersionForUserAsync",
-                                pathTemplate: "$\"/users/{username}/packages/{packageTypeValue}/{packageName}/versions/{packageVersionId}\"",
+                                pathTemplate: "$\"/users/{username}/packages/{(global::System.Uri.EscapeDataString(packageType.ToValueString()))}/{packageName}/versions/{packageVersionId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -308,7 +308,7 @@ namespace G
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "PackagesGetPackageVersionForUser",
                                 methodName: "PackagesGetPackageVersionForUserAsync",
-                                pathTemplate: "$\"/users/{username}/packages/{packageTypeValue}/{packageName}/versions/{packageVersionId}\"",
+                                pathTemplate: "$\"/users/{username}/packages/{(global::System.Uri.EscapeDataString(packageType.ToValueString()))}/{packageName}/versions/{packageVersionId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,

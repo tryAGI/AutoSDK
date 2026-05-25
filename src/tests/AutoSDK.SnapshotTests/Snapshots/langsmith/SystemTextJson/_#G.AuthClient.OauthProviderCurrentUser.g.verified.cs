@@ -78,7 +78,7 @@ namespace G
             {
 
                             var __pathBuilder = new global::G.PathBuilder(
-                                path: $"/api/v1/oauth/{provider}/current-user",
+                                path: $"/api/v1/oauth/{(global::System.Uri.EscapeDataString(provider.ToValueString()))}/current-user",
                                 baseUri: HttpClient.BaseAddress);
                             var __path = __pathBuilder.ToString();
                 __path = global::G.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -122,7 +122,7 @@ namespace G
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "OauthProviderCurrentUser",
                                 methodName: "OauthProviderCurrentUserAsync",
-                                pathTemplate: "$\"/api/v1/oauth/{provider}/current-user\"",
+                                pathTemplate: "$\"/api/v1/oauth/{(global::System.Uri.EscapeDataString(provider.ToValueString()))}/current-user\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -156,7 +156,7 @@ namespace G
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "OauthProviderCurrentUser",
                                 methodName: "OauthProviderCurrentUserAsync",
-                                pathTemplate: "$\"/api/v1/oauth/{provider}/current-user\"",
+                                pathTemplate: "$\"/api/v1/oauth/{(global::System.Uri.EscapeDataString(provider.ToValueString()))}/current-user\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -197,7 +197,7 @@ namespace G
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "OauthProviderCurrentUser",
                                 methodName: "OauthProviderCurrentUserAsync",
-                                pathTemplate: "$\"/api/v1/oauth/{provider}/current-user\"",
+                                pathTemplate: "$\"/api/v1/oauth/{(global::System.Uri.EscapeDataString(provider.ToValueString()))}/current-user\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -245,7 +245,7 @@ namespace G
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "OauthProviderCurrentUser",
                                 methodName: "OauthProviderCurrentUserAsync",
-                                pathTemplate: "$\"/api/v1/oauth/{provider}/current-user\"",
+                                pathTemplate: "$\"/api/v1/oauth/{(global::System.Uri.EscapeDataString(provider.ToValueString()))}/current-user\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -267,7 +267,7 @@ namespace G
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "OauthProviderCurrentUser",
                                 methodName: "OauthProviderCurrentUserAsync",
-                                pathTemplate: "$\"/api/v1/oauth/{provider}/current-user\"",
+                                pathTemplate: "$\"/api/v1/oauth/{(global::System.Uri.EscapeDataString(provider.ToValueString()))}/current-user\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,

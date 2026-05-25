@@ -101,7 +101,7 @@ namespace G
             {
 
                             var __pathBuilder = new global::G.PathBuilder(
-                                path: $"/orgs/{org}/packages/{packageType}/{packageName}/versions/{packageVersionId}",
+                                path: $"/orgs/{org}/packages/{(global::System.Uri.EscapeDataString(packageType.ToValueString()))}/{packageName}/versions/{packageVersionId}",
                                 baseUri: HttpClient.BaseAddress);
                             var __path = __pathBuilder.ToString();
                 __path = global::G.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -148,7 +148,7 @@ namespace G
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "PackagesDeletePackageVersionForOrg",
                                 methodName: "PackagesDeletePackageVersionForOrgAsync",
-                                pathTemplate: "$\"/orgs/{org}/packages/{packageType}/{packageName}/versions/{packageVersionId}\"",
+                                pathTemplate: "$\"/orgs/{org}/packages/{(global::System.Uri.EscapeDataString(packageType.ToValueString()))}/{packageName}/versions/{packageVersionId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -182,7 +182,7 @@ namespace G
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "PackagesDeletePackageVersionForOrg",
                                 methodName: "PackagesDeletePackageVersionForOrgAsync",
-                                pathTemplate: "$\"/orgs/{org}/packages/{packageType}/{packageName}/versions/{packageVersionId}\"",
+                                pathTemplate: "$\"/orgs/{org}/packages/{(global::System.Uri.EscapeDataString(packageType.ToValueString()))}/{packageName}/versions/{packageVersionId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -223,7 +223,7 @@ namespace G
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "PackagesDeletePackageVersionForOrg",
                                 methodName: "PackagesDeletePackageVersionForOrgAsync",
-                                pathTemplate: "$\"/orgs/{org}/packages/{packageType}/{packageName}/versions/{packageVersionId}\"",
+                                pathTemplate: "$\"/orgs/{org}/packages/{(global::System.Uri.EscapeDataString(packageType.ToValueString()))}/{packageName}/versions/{packageVersionId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -271,7 +271,7 @@ namespace G
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "PackagesDeletePackageVersionForOrg",
                                 methodName: "PackagesDeletePackageVersionForOrgAsync",
-                                pathTemplate: "$\"/orgs/{org}/packages/{packageType}/{packageName}/versions/{packageVersionId}\"",
+                                pathTemplate: "$\"/orgs/{org}/packages/{(global::System.Uri.EscapeDataString(packageType.ToValueString()))}/{packageName}/versions/{packageVersionId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -293,7 +293,7 @@ namespace G
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "PackagesDeletePackageVersionForOrg",
                                 methodName: "PackagesDeletePackageVersionForOrgAsync",
-                                pathTemplate: "$\"/orgs/{org}/packages/{packageType}/{packageName}/versions/{packageVersionId}\"",
+                                pathTemplate: "$\"/orgs/{org}/packages/{(global::System.Uri.EscapeDataString(packageType.ToValueString()))}/{packageName}/versions/{packageVersionId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,

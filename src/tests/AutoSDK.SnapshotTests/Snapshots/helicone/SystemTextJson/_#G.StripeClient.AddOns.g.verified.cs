@@ -117,7 +117,7 @@ namespace G
             {
 
                             var __pathBuilder = new global::G.PathBuilder(
-                                path: $"/v1/stripe/subscription/add-ons/{productType}",
+                                path: $"/v1/stripe/subscription/add-ons/{(global::System.Uri.EscapeDataString(productType.ToValueString()))}",
                                 baseUri: ResolveBaseUri(
                                 servers: s_AddOnsServers,
                                 defaultBaseUrl: "https://api.helicone.ai/"));
@@ -182,7 +182,7 @@ namespace G
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "AddOns",
                                 methodName: "AddOnsAsync",
-                                pathTemplate: "$\"/v1/stripe/subscription/add-ons/{productType}\"",
+                                pathTemplate: "$\"/v1/stripe/subscription/add-ons/{(global::System.Uri.EscapeDataString(productType.ToValueString()))}\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -216,7 +216,7 @@ namespace G
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "AddOns",
                                 methodName: "AddOnsAsync",
-                                pathTemplate: "$\"/v1/stripe/subscription/add-ons/{productType}\"",
+                                pathTemplate: "$\"/v1/stripe/subscription/add-ons/{(global::System.Uri.EscapeDataString(productType.ToValueString()))}\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -257,7 +257,7 @@ namespace G
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "AddOns",
                                 methodName: "AddOnsAsync",
-                                pathTemplate: "$\"/v1/stripe/subscription/add-ons/{productType}\"",
+                                pathTemplate: "$\"/v1/stripe/subscription/add-ons/{(global::System.Uri.EscapeDataString(productType.ToValueString()))}\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -305,7 +305,7 @@ namespace G
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "AddOns",
                                 methodName: "AddOnsAsync",
-                                pathTemplate: "$\"/v1/stripe/subscription/add-ons/{productType}\"",
+                                pathTemplate: "$\"/v1/stripe/subscription/add-ons/{(global::System.Uri.EscapeDataString(productType.ToValueString()))}\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -327,7 +327,7 @@ namespace G
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "AddOns",
                                 methodName: "AddOnsAsync",
-                                pathTemplate: "$\"/v1/stripe/subscription/add-ons/{productType}\"",
+                                pathTemplate: "$\"/v1/stripe/subscription/add-ons/{(global::System.Uri.EscapeDataString(productType.ToValueString()))}\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,

@@ -103,7 +103,7 @@ namespace G
             {
 
                             var __pathBuilder = new global::G.PathBuilder(
-                                path: $"/orgs/{org}/packages/{packageTypeValue}/{packageName}",
+                                path: $"/orgs/{org}/packages/{(global::System.Uri.EscapeDataString(packageType.ToValueString()))}/{packageName}",
                                 baseUri: HttpClient.BaseAddress);
                             var __path = __pathBuilder.ToString();
                 __path = global::G.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -149,7 +149,7 @@ namespace G
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "PackagesDeletePackageForOrg",
                                 methodName: "PackagesDeletePackageForOrgAsync",
-                                pathTemplate: "$\"/orgs/{org}/packages/{packageTypeValue}/{packageName}\"",
+                                pathTemplate: "$\"/orgs/{org}/packages/{(global::System.Uri.EscapeDataString(packageType.ToValueString()))}/{packageName}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -183,7 +183,7 @@ namespace G
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "PackagesDeletePackageForOrg",
                                 methodName: "PackagesDeletePackageForOrgAsync",
-                                pathTemplate: "$\"/orgs/{org}/packages/{packageTypeValue}/{packageName}\"",
+                                pathTemplate: "$\"/orgs/{org}/packages/{(global::System.Uri.EscapeDataString(packageType.ToValueString()))}/{packageName}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -224,7 +224,7 @@ namespace G
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "PackagesDeletePackageForOrg",
                                 methodName: "PackagesDeletePackageForOrgAsync",
-                                pathTemplate: "$\"/orgs/{org}/packages/{packageTypeValue}/{packageName}\"",
+                                pathTemplate: "$\"/orgs/{org}/packages/{(global::System.Uri.EscapeDataString(packageType.ToValueString()))}/{packageName}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -272,7 +272,7 @@ namespace G
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "PackagesDeletePackageForOrg",
                                 methodName: "PackagesDeletePackageForOrgAsync",
-                                pathTemplate: "$\"/orgs/{org}/packages/{packageTypeValue}/{packageName}\"",
+                                pathTemplate: "$\"/orgs/{org}/packages/{(global::System.Uri.EscapeDataString(packageType.ToValueString()))}/{packageName}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -294,7 +294,7 @@ namespace G
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "PackagesDeletePackageForOrg",
                                 methodName: "PackagesDeletePackageForOrgAsync",
-                                pathTemplate: "$\"/orgs/{org}/packages/{packageTypeValue}/{packageName}\"",
+                                pathTemplate: "$\"/orgs/{org}/packages/{(global::System.Uri.EscapeDataString(packageType.ToValueString()))}/{packageName}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,

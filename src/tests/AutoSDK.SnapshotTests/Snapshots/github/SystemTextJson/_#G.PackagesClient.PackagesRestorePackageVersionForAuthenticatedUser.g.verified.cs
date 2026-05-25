@@ -97,7 +97,7 @@ namespace G
             {
 
                             var __pathBuilder = new global::G.PathBuilder(
-                                path: $"/user/packages/{packageType}/{packageName}/versions/{packageVersionId}/restore",
+                                path: $"/user/packages/{(global::System.Uri.EscapeDataString(packageType.ToValueString()))}/{packageName}/versions/{packageVersionId}/restore",
                                 baseUri: HttpClient.BaseAddress);
                             var __path = __pathBuilder.ToString();
                 __path = global::G.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -143,7 +143,7 @@ namespace G
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "PackagesRestorePackageVersionForAuthenticatedUser",
                                 methodName: "PackagesRestorePackageVersionForAuthenticatedUserAsync",
-                                pathTemplate: "$\"/user/packages/{packageType}/{packageName}/versions/{packageVersionId}/restore\"",
+                                pathTemplate: "$\"/user/packages/{(global::System.Uri.EscapeDataString(packageType.ToValueString()))}/{packageName}/versions/{packageVersionId}/restore\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -177,7 +177,7 @@ namespace G
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "PackagesRestorePackageVersionForAuthenticatedUser",
                                 methodName: "PackagesRestorePackageVersionForAuthenticatedUserAsync",
-                                pathTemplate: "$\"/user/packages/{packageType}/{packageName}/versions/{packageVersionId}/restore\"",
+                                pathTemplate: "$\"/user/packages/{(global::System.Uri.EscapeDataString(packageType.ToValueString()))}/{packageName}/versions/{packageVersionId}/restore\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -218,7 +218,7 @@ namespace G
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "PackagesRestorePackageVersionForAuthenticatedUser",
                                 methodName: "PackagesRestorePackageVersionForAuthenticatedUserAsync",
-                                pathTemplate: "$\"/user/packages/{packageType}/{packageName}/versions/{packageVersionId}/restore\"",
+                                pathTemplate: "$\"/user/packages/{(global::System.Uri.EscapeDataString(packageType.ToValueString()))}/{packageName}/versions/{packageVersionId}/restore\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -266,7 +266,7 @@ namespace G
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "PackagesRestorePackageVersionForAuthenticatedUser",
                                 methodName: "PackagesRestorePackageVersionForAuthenticatedUserAsync",
-                                pathTemplate: "$\"/user/packages/{packageType}/{packageName}/versions/{packageVersionId}/restore\"",
+                                pathTemplate: "$\"/user/packages/{(global::System.Uri.EscapeDataString(packageType.ToValueString()))}/{packageName}/versions/{packageVersionId}/restore\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -288,7 +288,7 @@ namespace G
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "PackagesRestorePackageVersionForAuthenticatedUser",
                                 methodName: "PackagesRestorePackageVersionForAuthenticatedUserAsync",
-                                pathTemplate: "$\"/user/packages/{packageType}/{packageName}/versions/{packageVersionId}/restore\"",
+                                pathTemplate: "$\"/user/packages/{(global::System.Uri.EscapeDataString(packageType.ToValueString()))}/{packageName}/versions/{packageVersionId}/restore\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,

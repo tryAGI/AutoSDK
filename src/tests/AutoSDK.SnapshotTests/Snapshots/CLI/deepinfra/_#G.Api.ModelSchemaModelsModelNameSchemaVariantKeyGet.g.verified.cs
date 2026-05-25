@@ -128,7 +128,7 @@ namespace G
             {
 
                             var __pathBuilder = new global::G.PathBuilder(
-                                path: $"/models/{modelName}/schema/{variantKey}",
+                                path: $"/models/{modelName}/schema/{(global::System.Uri.EscapeDataString(variantKey.ToValueString()))}",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
                                 .AddOptionalParameter("version", version)
@@ -203,7 +203,7 @@ namespace G
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "ModelSchemaModelsModelNameSchemaVariantKeyGet",
                                 methodName: "ModelSchemaModelsModelNameSchemaVariantKeyGetAsync",
-                                pathTemplate: "$\"/models/{modelName}/schema/{variantKey}\"",
+                                pathTemplate: "$\"/models/{modelName}/schema/{(global::System.Uri.EscapeDataString(variantKey.ToValueString()))}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -237,7 +237,7 @@ namespace G
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "ModelSchemaModelsModelNameSchemaVariantKeyGet",
                                 methodName: "ModelSchemaModelsModelNameSchemaVariantKeyGetAsync",
-                                pathTemplate: "$\"/models/{modelName}/schema/{variantKey}\"",
+                                pathTemplate: "$\"/models/{modelName}/schema/{(global::System.Uri.EscapeDataString(variantKey.ToValueString()))}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -278,7 +278,7 @@ namespace G
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "ModelSchemaModelsModelNameSchemaVariantKeyGet",
                                 methodName: "ModelSchemaModelsModelNameSchemaVariantKeyGetAsync",
-                                pathTemplate: "$\"/models/{modelName}/schema/{variantKey}\"",
+                                pathTemplate: "$\"/models/{modelName}/schema/{(global::System.Uri.EscapeDataString(variantKey.ToValueString()))}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -326,7 +326,7 @@ namespace G
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "ModelSchemaModelsModelNameSchemaVariantKeyGet",
                                 methodName: "ModelSchemaModelsModelNameSchemaVariantKeyGetAsync",
-                                pathTemplate: "$\"/models/{modelName}/schema/{variantKey}\"",
+                                pathTemplate: "$\"/models/{modelName}/schema/{(global::System.Uri.EscapeDataString(variantKey.ToValueString()))}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -348,7 +348,7 @@ namespace G
                             context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "ModelSchemaModelsModelNameSchemaVariantKeyGet",
                                 methodName: "ModelSchemaModelsModelNameSchemaVariantKeyGetAsync",
-                                pathTemplate: "$\"/models/{modelName}/schema/{variantKey}\"",
+                                pathTemplate: "$\"/models/{modelName}/schema/{(global::System.Uri.EscapeDataString(variantKey.ToValueString()))}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
