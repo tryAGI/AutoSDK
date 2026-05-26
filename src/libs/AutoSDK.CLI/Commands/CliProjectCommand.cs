@@ -95,6 +95,12 @@ internal sealed class CliProjectCommand : Command
         AllowMultipleArgumentsPerToken = true,
     };
 
+    private Option<bool> CredentialFile { get; } = new("--cli-credential-file")
+    {
+        DefaultValueFactory = _ => false,
+        Description = "Enable ~/.<sdk>/apiKey.txt API key fallback in the generated auth runtime.",
+    };
+
     private Option<string> BaseUrlEnvVar { get; } = new("--base-url-env-var")
     {
         DefaultValueFactory = _ => string.Empty,
@@ -162,6 +168,7 @@ internal sealed class CliProjectCommand : Command
         Options.Add(ApiOnly);
         Options.Add(KeepApiGroup);
         Options.Add(ApiKeyEnvVars);
+        Options.Add(CredentialFile);
         Options.Add(BaseUrlEnvVar);
         Options.Add(ExcludeDeprecatedOperations);
         Options.Add(IgnoreOpenApiErrors);
@@ -276,6 +283,10 @@ internal sealed class CliProjectCommand : Command
             apiKeyEnvVars = GetDefaultApiKeyEnvVars(sdkSlug);
         }
 
+        var credentialFileDirectoryName = parseResult.GetRequiredValue(CredentialFile)
+            ? $".{sdkSlug}"
+            : string.Empty;
+
         var baseUrlEnvVar = parseResult.GetRequiredValue(BaseUrlEnvVar);
         if (string.IsNullOrWhiteSpace(baseUrlEnvVar))
         {
@@ -294,6 +305,7 @@ internal sealed class CliProjectCommand : Command
             contextFullName,
             userSecretsId,
             apiKeyEnvVars,
+            credentialFileDirectoryName,
             baseUrlEnvVar,
             data,
             parseResult.GetRequiredValue(ApiOnly),
@@ -369,6 +381,7 @@ internal sealed record CliProjectModel(
     string JsonSerializerContextFullName,
     string UserSecretsId,
     ImmutableArray<string> ApiKeyEnvVars,
+    string CredentialFileDirectoryName,
     string BaseUrlEnvVar,
     ImmutableArray<CliProjectAuthorization> Authorizations,
     ImmutableArray<CliProjectTag> Tags,
@@ -387,6 +400,7 @@ internal sealed record CliProjectModel(
         string jsonSerializerContextFullName,
         string userSecretsId,
         IReadOnlyList<string> apiKeyEnvVars,
+        string credentialFileDirectoryName,
         string baseUrlEnvVar,
         AutoSDK.Models.Data data,
         bool apiOnly,
@@ -419,6 +433,7 @@ internal sealed record CliProjectModel(
             jsonSerializerContextFullName,
             userSecretsId,
             apiKeyEnvVars.ToImmutableArray(),
+            credentialFileDirectoryName,
             baseUrlEnvVar,
             authorizations,
             tags,
@@ -933,6 +948,10 @@ internal static class CliProjectScaffolder
 
     private static string GenerateCliOptions(CliProjectModel model)
     {
+        var apiKeyDescription = string.IsNullOrWhiteSpace(model.CredentialFileDirectoryName)
+            ? "API key. Falls back to configured environment variables and dotnet user-secrets."
+            : "API key. Falls back to configured environment variables, dotnet user-secrets, and the optional credential file.";
+
         return $$"""
                  #nullable enable
 
@@ -944,7 +963,7 @@ internal static class CliProjectScaffolder
                  {
                      public static Option<string?> ApiKey { get; } = new("--api-key", ["-k"])
                      {
-                         Description = "API key. Falls back to configured environment variables and dotnet user-secrets.",
+                         Description = {{Literal(apiKeyDescription)}},
                          Recursive = true,
                      };
 
@@ -1017,6 +1036,7 @@ internal static class CliProjectScaffolder
                      private const string UserSecretsId = "{{model.UserSecretsId}}";
                      private const string UserSecretApiKeyName = "{{model.ApiKeyEnvVars.FirstOrDefault() ?? "API_KEY"}}";
                      private static readonly string[] ApiKeyEnvironmentVariables = [{{envVarArray}}];
+                     private const string CredentialFileDirectoryName = "{{model.CredentialFileDirectoryName}}";
 
                      public static async Task<global::{{model.SdkNamespace}}.{{model.ClientClassName}}> CreateClientAsync(ParseResult parseResult, CancellationToken cancellationToken = default)
                      {
@@ -1071,41 +1091,25 @@ internal static class CliProjectScaffolder
 
                      public static async Task<string?> TryResolveApiKeyAsync(ParseResult parseResult, CancellationToken cancellationToken = default)
                      {
-                         if (parseResult.GetValue(CliOptions.ApiKey) is { Length: > 0 } fromOption)
-                         {
-                             return fromOption;
-                         }
-
-                         foreach (var environmentVariable in ApiKeyEnvironmentVariables)
-                         {
-                             if (Environment.GetEnvironmentVariable(environmentVariable) is { Length: > 0 } fromEnvironment)
-                             {
-                                 return fromEnvironment;
-                             }
-                         }
-
-                         return await ReadUserSecretAsync(UserSecretApiKeyName, cancellationToken).ConfigureAwait(false);
+                         var probe = await ProbeAuthAsync(parseResult, cancellationToken).ConfigureAwait(false);
+                         return probe.Active?.RawValue;
                      }
 
                      public static async Task<AuthStatusInfo> GetAuthStatusAsync(ParseResult parseResult, CancellationToken cancellationToken = default)
                      {
-                         if (parseResult.GetValue(CliOptions.ApiKey) is { Length: > 0 } fromOption)
-                         {
-                             return new AuthStatusInfo(true, "option", MaskSecret(fromOption), null);
-                         }
-
-                         foreach (var environmentVariable in ApiKeyEnvironmentVariables)
-                         {
-                             if (Environment.GetEnvironmentVariable(environmentVariable) is { Length: > 0 } fromEnvironment)
-                             {
-                                 return new AuthStatusInfo(true, $"environment:{environmentVariable}", MaskSecret(fromEnvironment), null);
-                             }
-                         }
-
-                         var userSecret = await ReadUserSecretAsync(UserSecretApiKeyName, cancellationToken).ConfigureAwait(false);
-                         return string.IsNullOrWhiteSpace(userSecret)
-                             ? new AuthStatusInfo(false, "none", null, GetUserSecretsPath())
-                             : new AuthStatusInfo(true, "user-secrets", MaskSecret(userSecret), GetUserSecretsPath());
+                         var probe = await ProbeAuthAsync(parseResult, cancellationToken).ConfigureAwait(false);
+                         return new AuthStatusInfo(
+                             Authenticated: probe.Active is not null,
+                             Source: probe.Active?.DisplayName ?? "none",
+                             ApiKeyHint: probe.Active is { RawValue.Length: > 0 } active ? MaskSecret(active.RawValue) : null,
+                             Path: probe.Active?.Path,
+                             Sources: probe.Sources
+                                 .Select(static source => new AuthSourceStatus(
+                                     source.DisplayName,
+                                     source.Present,
+                                     source.Present ? CliRuntime.MaskSecret(source.RawValue!) : null,
+                                     source.Path))
+                                 .ToArray());
                      }
 
                      public static async Task WriteUserSecretAsync(string name, string value, CancellationToken cancellationToken = default)
@@ -1150,6 +1154,19 @@ internal static class CliProjectScaffolder
                              : Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), ".microsoft", "usersecrets");
 
                          return Path.Combine(userSecretsRoot, UserSecretsId, "secrets.json");
+                     }
+
+                     public static string? GetCredentialFilePath()
+                     {
+                         if (string.IsNullOrWhiteSpace(CredentialFileDirectoryName))
+                         {
+                             return null;
+                         }
+
+                         var userProfile = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
+                         return string.IsNullOrWhiteSpace(userProfile)
+                             ? null
+                             : Path.Combine(userProfile, CredentialFileDirectoryName, "apiKey.txt");
                      }
 
                      public static async Task<T> ReadRequestAsync<T>(ParseResult parseResult, Option<string?> requestJsonOption, Option<string?> requestFileOption, JsonSerializerContext context, CancellationToken cancellationToken = default)
@@ -1247,7 +1264,7 @@ internal static class CliProjectScaffolder
 
                      public static string MaskSecret(string secret)
                      {
-                         return secret.Length <= 8 ? new string('*', secret.Length) : $"{secret[..4]}...{secret[^4..]}";
+                         return secret.Length < 12 ? "***" : $"{secret[..4]}...{secret[^4..]}";
                      }
 
                      private static Uri? ResolveBaseUri(ParseResult parseResult)
@@ -1265,6 +1282,18 @@ internal static class CliProjectScaffolder
                      {
                          var values = await ReadUserSecretsAsync(cancellationToken).ConfigureAwait(false);
                          return values.TryGetValue(name, out var value) && !string.IsNullOrWhiteSpace(value) ? value : null;
+                     }
+
+                     private static async Task<string?> ReadCredentialFileAsync(CancellationToken cancellationToken = default)
+                     {
+                         var path = GetCredentialFilePath();
+                         if (string.IsNullOrWhiteSpace(path) || !File.Exists(path))
+                         {
+                             return null;
+                         }
+
+                         var value = await File.ReadAllTextAsync(path, cancellationToken).ConfigureAwait(false);
+                         return string.IsNullOrWhiteSpace(value) ? null : value.Trim();
                      }
 
                      private static async Task<Dictionary<string, string>> ReadUserSecretsAsync(CancellationToken cancellationToken = default)
@@ -1353,9 +1382,73 @@ internal static class CliProjectScaffolder
 
                          return Encoding.UTF8.GetString(stream.ToArray());
                      }
+
+                     private static async Task<AuthProbeResult> ProbeAuthAsync(ParseResult parseResult, CancellationToken cancellationToken = default)
+                     {
+                         var sources = new List<AuthSourceProbe>();
+                         AuthSourceProbe? active = null;
+
+                         var optionSource = new AuthSourceProbe(
+                             Source: "option",
+                             DisplayName: "flag (--api-key)",
+                             RawValue: parseResult.GetValue(CliOptions.ApiKey),
+                             Path: null);
+                         sources.Add(optionSource);
+                         if (active is null && optionSource.Present)
+                         {
+                             active = optionSource;
+                         }
+
+                         foreach (var environmentVariable in ApiKeyEnvironmentVariables)
+                         {
+                             var environmentSource = new AuthSourceProbe(
+                                 Source: $"environment:{environmentVariable}",
+                                 DisplayName: $"env var {environmentVariable}",
+                                 RawValue: Environment.GetEnvironmentVariable(environmentVariable),
+                                 Path: null);
+                             sources.Add(environmentSource);
+                             if (active is null && environmentSource.Present)
+                             {
+                                 active = environmentSource;
+                             }
+                         }
+
+                         var userSecretsSource = new AuthSourceProbe(
+                             Source: "user-secrets",
+                             DisplayName: "user-secrets",
+                             RawValue: await ReadUserSecretAsync(UserSecretApiKeyName, cancellationToken).ConfigureAwait(false),
+                             Path: GetUserSecretsPath());
+                         sources.Add(userSecretsSource);
+                         if (active is null && userSecretsSource.Present)
+                         {
+                             active = userSecretsSource;
+                         }
+
+                         if (GetCredentialFilePath() is { Length: > 0 } credentialFilePath)
+                         {
+                             var credentialFileSource = new AuthSourceProbe(
+                                 Source: "credential-file",
+                                 DisplayName: "credential file",
+                                 RawValue: await ReadCredentialFileAsync(cancellationToken).ConfigureAwait(false),
+                                 Path: credentialFilePath);
+                             sources.Add(credentialFileSource);
+                             if (active is null && credentialFileSource.Present)
+                             {
+                                 active = credentialFileSource;
+                             }
+                         }
+
+                         return new AuthProbeResult(active, [.. sources]);
+                     }
                  }
 
-                 internal sealed record AuthStatusInfo(bool Authenticated, string Source, string? ApiKeyHint, string? Path);
+                 internal sealed record AuthStatusInfo(bool Authenticated, string Source, string? ApiKeyHint, string? Path, AuthSourceStatus[] Sources);
+                 internal sealed record AuthSourceStatus(string DisplayName, bool Present, string? ApiKeyHint, string? Path);
+                 internal sealed record AuthProbeResult(AuthSourceProbe? Active, AuthSourceProbe[] Sources);
+                 internal sealed record AuthSourceProbe(string Source, string DisplayName, string? RawValue, string? Path)
+                 {
+                     public bool Present => !string.IsNullOrWhiteSpace(RawValue);
+                 }
 
                  [JsonSerializable(typeof(Dictionary<string, string>))]
                  internal sealed partial class UserSecretsJsonContext : JsonSerializerContext;
@@ -1375,7 +1468,7 @@ internal static class CliProjectScaffolder
                  {
                      public static Command Create()
                      {
-                         var command = new Command("auth", "Manage API credentials stored in dotnet user-secrets.");
+                         var command = new Command("auth", "Inspect and manage API credentials used by the generated CLI.");
                          command.Subcommands.Add(CreateSetCommand());
                          command.Subcommands.Add(CreateStatusCommand());
                          command.Subcommands.Add(CreateClearCommand());
@@ -1399,7 +1492,7 @@ internal static class CliProjectScaffolder
 
                      private static Command CreateStatusCommand()
                      {
-                         var command = new Command("status", "Show the authentication source the CLI will use.");
+                         var command = new Command("status", "Show the authentication source order the CLI will use.");
                          command.SetAction(async (ParseResult parseResult, CancellationToken cancellationToken) =>
                              await CliRuntime.RunAsync(async () =>
                              {
@@ -1413,6 +1506,21 @@ internal static class CliProjectScaffolder
                                  if (!string.IsNullOrWhiteSpace(status.Path))
                                  {
                                      await Console.Out.WriteLineAsync($"path: {status.Path}").ConfigureAwait(false);
+                                 }
+                                 await Console.Out.WriteLineAsync("sources:").ConfigureAwait(false);
+                                 foreach (var source in status.Sources)
+                                 {
+                                     var line = $"  - {source.DisplayName}: {(source.Present ? "set" : "not present")}";
+                                     if (!string.IsNullOrWhiteSpace(source.ApiKeyHint))
+                                     {
+                                         line += $" ({source.ApiKeyHint})";
+                                     }
+                                     if (!string.IsNullOrWhiteSpace(source.Path))
+                                     {
+                                         line += $" [{source.Path}]";
+                                     }
+
+                                     await Console.Out.WriteLineAsync(line).ConfigureAwait(false);
                                  }
                              }, cancellationToken).ConfigureAwait(false));
                          return command;

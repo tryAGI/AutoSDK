@@ -215,7 +215,8 @@ components:
                     "--output", cliDirectory,
                     "--package-id", "Oag.CLI",
                     "--tool-command-name", "tryagi-oag",
-                    "--api-key-env-var", "OAG_API_KEY")
+                    "--api-key-env-var", "OAG_API_KEY",
+                    "--cli-credential-file")
                 .ConfigureAwait(false);
 
             Console.WriteLine(cliProjectResult.StandardOutput);
@@ -326,7 +327,19 @@ components:
 
             var runtime = await File.ReadAllTextAsync(Path.Combine(cliDirectory, "CliRuntime.cs")).ConfigureAwait(false);
             runtime.Should().Contain("\"OAG_API_KEY\"");
+            runtime.Should().Contain("CredentialFileDirectoryName = \".oag\"");
+            runtime.Should().Contain("GetCredentialFilePath()");
+            runtime.Should().Contain("ReadCredentialFileAsync");
+            runtime.Should().Contain("flag (--api-key)");
+            runtime.Should().Contain("DisplayName: $\"env var {environmentVariable}\"");
+            runtime.Should().Contain("credential file");
+            runtime.Should().Contain("secret.Length < 12 ? \"***\"");
             runtime.Should().Contain("EndPointAuthorization");
+
+            var authCommand = await File.ReadAllTextAsync(Path.Combine(cliDirectory, "Commands", "AuthCommand.cs")).ConfigureAwait(false);
+            authCommand.Should().Contain("sources:");
+            authCommand.Should().Contain("source.DisplayName");
+            authCommand.Should().Contain("not present");
 
             var buildResult = await RunDotnetAsync(
                     cliDirectory,
