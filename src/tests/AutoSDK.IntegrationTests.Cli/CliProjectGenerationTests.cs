@@ -70,6 +70,93 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/Widget'
+  /tasks:
+    post:
+      operationId: createTask
+      x-cli-wait: always
+      tags:
+        - Tasks
+      summary: Create a task.
+      responses:
+        '202':
+          description: Accepted
+          headers:
+            Location:
+              schema:
+                type: string
+  /tasks/{id}:
+    get:
+      operationId: getTask
+      tags:
+        - Tasks
+      summary: Get task status.
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - type: object
+                    required:
+                      - status
+                    properties:
+                      status:
+                        type: string
+                        enum:
+                          - pending
+                  - type: object
+                    required:
+                      - status
+                    properties:
+                      status:
+                        type: string
+                        enum:
+                          - completed
+                      result:
+                        type: string
+                discriminator:
+                  propertyName: status
+  /scrape:
+    post:
+      operationId: scrape
+      tags:
+        - Scraping
+      summary: Scrape a page.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ScrapeOptions'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Widget'
+  /crawl:
+    post:
+      operationId: crawl
+      tags:
+        - Crawling
+      summary: Crawl a page.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CrawlRequest'
+      responses:
+        '200':
+          description: OK
   /widgets/{id}/cancel:
     post:
       operationId: widgetsCancel
@@ -146,15 +233,69 @@ components:
           type: array
           items:
             type: string
+        enabled:
+          type: boolean
         priority:
           type: integer
+    ScrapeOptions:
+      type: object
+      properties:
+        formats:
+          type: array
+          items:
+            type: string
+        onlyMainContent:
+          type: boolean
+        limit:
+          type: integer
+    CrawlRequest:
+      type: object
+      required:
+        - url
+      properties:
+        url:
+          type: string
+        scrapeOptions:
+          $ref: '#/components/schemas/ScrapeOptions'
+        webhook:
+          $ref: '#/components/schemas/WebhookConfig'
+    WebhookConfig:
+      type: object
+      required:
+        - url
+      properties:
+        url:
+          type: string
+          format: uri
+        headers:
+          type: object
+          additionalProperties:
+            type: string
+        metadata:
+          type: object
+        events:
+          type: array
+          items:
+            type: string
+            enum:
+              - completed
+              - errored
     Widget:
       type: object
       properties:
+        status:
+          type: string
+          x-cli-format: key
         id:
           type: string
         name:
           type: string
+        markdown:
+          type: string
+          x-cli-format: code
+        internalNote:
+          type: string
+          x-cli-format: hidden
 """;
 
         var rootDirectory = Path.Combine(Path.GetTempPath(), Path.GetRandomFileName());
@@ -178,6 +319,7 @@ components:
                     "generate", specPath,
                     "--namespace", "Oag",
                     "--clientClassName", "OagClient",
+                    "--auto-detect-status-polling",
                     "--targetFramework", "net10.0",
                     "--output", sdkDirectory)
                 .ConfigureAwait(false);
@@ -250,18 +392,29 @@ components:
             // Required scalar -> positional argument; array -> repeatable option; scalar -> option.
             operationCommand.Should().Contain("Argument<string> NameOption");
             operationCommand.Should().Contain("@\"--tags\"");
+            operationCommand.Should().Contain("CliRuntime.CreateNullableBoolOption");
+            operationCommand.Should().Contain("@\"--enabled\"");
             operationCommand.Should().Contain("@\"--priority\"");
             operationCommand.Should().Contain("name: name,");
             operationCommand.Should().Contain("tags: tags,");
+            operationCommand.Should().Contain("enabled: enabled,");
             operationCommand.Should().Contain("priority: priority,");
             operationCommand.Should().Contain("global::Oag.SourceGenerationContext.Default");
+            operationCommand.Should().Contain("private static string FormatResponse(");
+            operationCommand.Should().Contain("CustomizeResponseText");
+            operationCommand.Should().Contain("[\"status\"] = CliFormatHint.Key");
+            operationCommand.Should().Contain("[\"markdown\"] = CliFormatHint.Code");
+            operationCommand.Should().Contain("[\"internalNote\"] = CliFormatHint.Hidden");
 
             // #343: an object body with optional fields also accepts --request-json/--request-file as
             // an optional base body. Per-field flags override it; the positional/required fields still
             // come from CLI args. Optional fields merge as `flag ?? base?.Prop`.
+            operationCommand.Should().Contain("new(\"--input\")");
             operationCommand.Should().Contain("--request-json");
             operationCommand.Should().Contain("ReadRequestOrDefaultAsync<global::Oag.CreateWidgetRequest>");
+            operationCommand.Should().Contain("Input,");
             operationCommand.Should().Contain("parseResult.GetValue(Tags) ?? __requestBase?.Tags");
+            operationCommand.Should().Contain("parseResult.GetValue(Enabled) ?? __requestBase?.Enabled");
             operationCommand.Should().Contain("parseResult.GetValue(Priority) ?? __requestBase?.Priority");
             // The positional/required name is taken from the argument, never the base body.
             operationCommand.Should().Contain("var name = parseResult.GetRequiredValue(NameOption);");
@@ -285,6 +438,51 @@ components:
             var listCommand = await File.ReadAllTextAsync(listCommandPath).ConfigureAwait(false);
             listCommand.Should().Contain("new Command(@\"list\"");
             listCommand.Should().NotContain("new Command(@\"widgets-list\"");
+            listCommand.Should().Contain("TryWriteOutputDirectoryAsync");
+            listCommand.Should().Contain("@\"$self\"");
+
+            // #341: a create operation with a generated SDK wait companion emits --wait,
+            // --poll-interval, and --wait-timeout and dispatches to <Method>WaitAsync.
+            var createTaskCommandPath = Directory
+                .EnumerateFiles(Path.Combine(cliDirectory, "Commands"), "*CreateTask*ApiCommand.g.cs")
+                .Single();
+            var createTaskCommand = await File.ReadAllTextAsync(createTaskCommandPath).ConfigureAwait(false);
+            createTaskCommand.Should().Contain("new(\"--wait\")");
+            createTaskCommand.Should().Contain("new(\"--poll-interval\")");
+            createTaskCommand.Should().Contain("new(\"--wait-timeout\")");
+            createTaskCommand.Should().Contain("CliRuntime.CreatePollingOptions");
+            createTaskCommand.Should().Contain("client.Tasks.CreateTaskWaitAsync(");
+
+            // #346: a reused request schema emits a shared option-set that can be used bare or
+            // with a prefix in nested request objects.
+            var scrapeOptionSet = await File.ReadAllTextAsync(
+                    Path.Combine(cliDirectory, "Commands", "ScrapeOptionsOptionSet.g.cs"))
+                .ConfigureAwait(false);
+            scrapeOptionSet.Should().Contain("Create(string? prefix = null)");
+            scrapeOptionSet.Should().Contain("$\"--{normalizedPrefix}only-main-content\"");
+            scrapeOptionSet.Should().Contain("$\"--{normalizedPrefix}formats\"");
+
+            var scrapeCommandPath = Directory
+                .EnumerateFiles(Path.Combine(cliDirectory, "Commands"), "*Scrape*ApiCommand.g.cs")
+                .Single(path => Path.GetFileName(path).Contains("ScrapeCommandApiCommand", StringComparison.Ordinal));
+            var scrapeCommand = await File.ReadAllTextAsync(scrapeCommandPath).ConfigureAwait(false);
+            scrapeCommand.Should().Contain("ScrapeOptionsOptionSet.Create();");
+            scrapeCommand.Should().Contain("command.Options.Add(ScrapeOptionsOptionSetOptions.OnlyMainContent);");
+
+            // #348: webhook-shaped nested request objects emit a composite --webhook-* builder.
+            var crawlCommandPath = Directory
+                .EnumerateFiles(Path.Combine(cliDirectory, "Commands"), "*Crawl*ApiCommand.g.cs")
+                .Single(path => Path.GetFileName(path).Contains("CrawlCommandApiCommand", StringComparison.Ordinal));
+            var crawlCommand = await File.ReadAllTextAsync(crawlCommandPath).ConfigureAwait(false);
+            crawlCommand.Should().Contain("ScrapeOptionsOptionSet.Create(@\"scrape\")");
+            crawlCommand.Should().Contain("--webhook-url");
+            crawlCommand.Should().Contain("--webhook-header");
+            crawlCommand.Should().Contain("--webhook-metadata");
+            crawlCommand.Should().Contain("--webhook-event");
+            crawlCommand.Should().NotContain("--scrape-options-url");
+            crawlCommand.Should().Contain("new global::Oag.WebhookConfig");
+            crawlCommand.Should().Contain("CliRuntime.SerializeKeyValuePairs");
+            crawlCommand.Should().Contain("CliRuntime.SerializeStringArray");
 
             // #340: a path-template parameter is hoisted to a positional Argument, not a --flag.
             var pathCommandPath = Directory
@@ -328,6 +526,15 @@ components:
             var runtime = await File.ReadAllTextAsync(Path.Combine(cliDirectory, "CliRuntime.cs")).ConfigureAwait(false);
             runtime.Should().Contain("\"OAG_API_KEY\"");
             runtime.Should().Contain("CredentialFileDirectoryName = \".oag\"");
+            runtime.Should().Contain("CreateNullableBoolOption");
+            runtime.Should().Contain("ParseDuration");
+            runtime.Should().Contain("ReadInputAsync");
+            runtime.Should().Contain("DeserializeJsonValue");
+            runtime.Should().Contain("FormatHumanReadable");
+            runtime.Should().Contain("CliFormatHint");
+            runtime.Should().Contain("SerializeKeyValuePairs");
+            runtime.Should().Contain("SerializeStringArray");
+            runtime.Should().Contain("TryWriteOutputDirectoryAsync");
             runtime.Should().Contain("GetCredentialFilePath()");
             runtime.Should().Contain("ReadCredentialFileAsync");
             runtime.Should().Contain("flag (--api-key)");
@@ -340,6 +547,11 @@ components:
             authCommand.Should().Contain("sources:");
             authCommand.Should().Contain("source.DisplayName");
             authCommand.Should().Contain("not present");
+            authCommand.Should().Contain("CliOptions.Json");
+
+            var cliOptions = await File.ReadAllTextAsync(Path.Combine(cliDirectory, "CliOptions.cs")).ConfigureAwait(false);
+            cliOptions.Should().Contain("new(\"--json\")");
+            cliOptions.Should().Contain("new(\"--output-dir\")");
 
             var buildResult = await RunDotnetAsync(
                     cliDirectory,
