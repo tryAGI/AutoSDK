@@ -121,9 +121,19 @@ public static partial class Sources
         return matches;
     }
 
+    internal static bool TryGetPolymorphicFormatMatch(
+        SchemaContext schemaContext,
+        out PolymorphicFormatMatch? match)
+    {
+        return TryDetectPolymorphicFormatMatch(
+            schemaContext,
+            seenBaseNames: null,
+            out match);
+    }
+
     private static bool TryDetectPolymorphicFormatMatch(
         SchemaContext schemaContext,
-        HashSet<string> seenBaseNames,
+        HashSet<string>? seenBaseNames,
         out PolymorphicFormatMatch? match)
     {
         match = null;
@@ -136,7 +146,8 @@ public static partial class Sources
         }
 
         var itemsSchema = schemaContext.Schema.ResolveIfRequired();
-        if (itemsSchema.OneOf is not { Count: > 0 } variants)
+        if (itemsSchema.OneOf is not { Count: > 0 } ||
+            schemaContext.Children.Count == 0)
         {
             return false;
         }
@@ -145,15 +156,19 @@ public static partial class Sources
         // BOTH at least one bare-string variant AND at least one typed-object variant.
         var stringVariants = new List<StringFormatVariant>();
         var objectVariants = new List<ObjectFormatVariant>();
-        foreach (var variant in variants)
+        foreach (var variant in schemaContext.Children)
         {
-            var resolved = variant.ResolveIfRequired();
-            if (TryClassifyStringEnumVariant(resolved, stringVariants))
+            if (variant.Hint != Hint.OneOf)
             {
                 continue;
             }
 
-            if (TryClassifyObjectVariant(resolved, objectVariants))
+            if (TryClassifyStringEnumVariant(variant, stringVariants))
+            {
+                continue;
+            }
+
+            if (TryClassifyObjectVariant(variant, objectVariants))
             {
                 continue;
             }
@@ -169,7 +184,7 @@ public static partial class Sources
 
         var baseClassName = DerivePolymorphicFormatBaseName(schemaContext);
         if (string.IsNullOrWhiteSpace(baseClassName) ||
-            !seenBaseNames.Add(baseClassName))
+            (seenBaseNames != null && !seenBaseNames.Add(baseClassName)))
         {
             return false;
         }
@@ -190,9 +205,11 @@ public static partial class Sources
     }
 
     private static bool TryClassifyStringEnumVariant(
-        IOpenApiSchema variant,
+        SchemaContext variantContext,
         List<StringFormatVariant> stringVariants)
     {
+        var effectiveContext = variantContext.ResolvedReference ?? variantContext;
+        var variant = effectiveContext.Schema.ResolveIfRequired();
         if (!variant.IsEnum() ||
             variant.Enum is not { Count: > 0 } enumValues)
         {
@@ -217,9 +234,11 @@ public static partial class Sources
     }
 
     private static bool TryClassifyObjectVariant(
-        IOpenApiSchema variant,
+        SchemaContext variantContext,
         List<ObjectFormatVariant> objectVariants)
     {
+        var effectiveContext = variantContext.ResolvedReference ?? variantContext;
+        var variant = effectiveContext.Schema.ResolveIfRequired();
         if (variant.Properties is not { Count: > 0 } properties ||
             !properties.TryGetValue("type", out var typeProperty))
         {
@@ -234,20 +253,27 @@ public static partial class Sources
         }
 
         var variantProperties = new List<FormatVariantProperty>();
-        foreach (var entry in properties)
+        foreach (var propertyContext in effectiveContext.Children)
         {
-            if (string.Equals(entry.Key, "type", StringComparison.Ordinal))
+            if (propertyContext.Hint != Hint.Property ||
+                string.Equals(propertyContext.PropertyName, "type", StringComparison.Ordinal))
             {
                 continue;
             }
 
-            var resolvedProperty = entry.Value.ResolveIfRequired();
+            var resolvedProperty = propertyContext.Schema.ResolveIfRequired();
             variantProperties.Add(new FormatVariantProperty(
-                jsonName: entry.Key,
-                csharpName: ToPropertyIdentifier(entry.Key),
-                csharpType: ResolveScalarPropertyCSharpType(resolvedProperty),
-                isRequired: variant.Required?.Contains(entry.Key) == true,
-                summary: resolvedProperty.Description?.Trim() ?? string.Empty));
+                jsonName: propertyContext.PropertyName ?? string.Empty,
+                csharpName: propertyContext.PropertyData?.Name
+                    ?? ToPropertyIdentifier(propertyContext.PropertyName ?? string.Empty),
+                csharpType: !string.IsNullOrWhiteSpace(propertyContext.PropertyData?.Type.CSharpType)
+                    ? propertyContext.PropertyData!.Value.Type.CSharpType
+                    : !string.IsNullOrWhiteSpace(propertyContext.TypeData.CSharpType)
+                        ? propertyContext.TypeData.CSharpType
+                        : "object?",
+                isRequired: propertyContext.PropertyData?.IsRequired
+                    ?? (variant.Required?.Contains(propertyContext.PropertyName ?? string.Empty) == true),
+                summary: resolvedProperty.GetSummary()));
         }
 
         objectVariants.Add(new ObjectFormatVariant(
@@ -307,58 +333,6 @@ public static partial class Sources
         }
 
         return string.Empty;
-    }
-
-    private static string ResolveScalarPropertyCSharpType(IOpenApiSchema schema)
-    {
-        // Defensive: we only auto-emit scalar property types. Anything else (nested objects,
-        // arrays of objects, $refs, etc.) becomes object? so the consumer's hand-modeled
-        // subclass can refine it without us silently inventing a wrong type.
-        if (schema.IsArray() && schema.Items is { } items)
-        {
-            var elementType = ResolveScalarPrimitive(items.ResolveIfRequired());
-            return elementType is null
-                ? "global::System.Collections.Generic.IList<object?>?"
-                : $"global::System.Collections.Generic.IList<{elementType}>?";
-        }
-
-        return ResolveScalarPrimitive(schema) ?? "object?";
-    }
-
-    private static string? ResolveScalarPrimitive(IOpenApiSchema schema)
-    {
-        if (schema.IsEnum())
-        {
-            // Inline enums need full type plumbing; fall back to string for the MVP.
-            return "string?";
-        }
-
-        if (schema.Type == null)
-        {
-            return null;
-        }
-
-        if ((schema.Type & JsonSchemaType.String) == JsonSchemaType.String)
-        {
-            return "string?";
-        }
-
-        if ((schema.Type & JsonSchemaType.Boolean) == JsonSchemaType.Boolean)
-        {
-            return "bool?";
-        }
-
-        if ((schema.Type & JsonSchemaType.Integer) == JsonSchemaType.Integer)
-        {
-            return schema.Format == "int64" ? "long?" : "int?";
-        }
-
-        if ((schema.Type & JsonSchemaType.Number) == JsonSchemaType.Number)
-        {
-            return schema.Format == "float" ? "float?" : "double?";
-        }
-
-        return null;
     }
 
     private static string SanitizeVariantClassName(string raw)

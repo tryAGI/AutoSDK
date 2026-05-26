@@ -1,6 +1,7 @@
 using System.Collections.Immutable;
 using System.Text.Json.Nodes;
 using AutoSDK.Extensions;
+using AutoSDK.Generation;
 using AutoSDK.Helpers;
 using AutoSDK.Models;
 using AutoSDK.Naming.Models;
@@ -19,6 +20,41 @@ public static class CSharpTypeMapper
         if (context.IsReference && context.ResolvedReference != null)
         {
             return CreateReferenceTypeData(context);
+        }
+
+        if (context.Settings.GeneratePolymorphicArrayHelpers &&
+            Sources.TryGetPolymorphicFormatMatch(context, out var polymorphicMatch))
+        {
+            var polymorphicNamespace = context.GetGeneratedNamespace();
+            return (TypeData.Default with
+            {
+                CSharpTypeRaw = $"global::{polymorphicNamespace}.{polymorphicMatch!.BaseClassName}",
+                CSharpTypeNullability = GetCSharpNullability(context),
+                IsBaseClass = false,
+                IsDerivedClass = false,
+                IsValueType = false,
+                IsNullable = context.Schema.IsNullable() || context.Schema.IsNullableAnyOf(),
+                IsArray = false,
+                IsEnum = false,
+                IsOpenEnum = false,
+                IsBase64 = false,
+                IsDate = context.Schema.IsDate(),
+                IsDateTime = context.Schema.IsDateTime(),
+                IsBinary = false,
+                IsUnixTimestamp = context.Schema.IsUnixTimestamp(),
+                AnyOfCount = 0,
+                OneOfCount = 0,
+                AllOfCount = 0,
+                IsComponent = context.IsComponent,
+                HasDiscriminator = false,
+                Properties = ImmutableArray<string>.Empty,
+                EnumValues = ImmutableArray<string>.Empty,
+                SubTypes = ImmutableArray<Box>.Empty,
+                Namespace = polymorphicNamespace,
+                GeneratedNamespace = polymorphicNamespace,
+                IsDeprecated = context.Schema.IsDeprecated(),
+                UsesGeneratedJsonHelpers = false,
+            }).WithCSharpComputedValues();
         }
 
         var schema = context.Schema;

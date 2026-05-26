@@ -1,5 +1,6 @@
 using AutoSDK.Generation;
 using AutoSDK.Models;
+using System.Text.RegularExpressions;
 
 namespace AutoSDK.UnitTests;
 
@@ -59,6 +60,70 @@ public class PolymorphicArrayDetectionTests
                                                                   query:
                                                                     type: string
                                                 """;
+
+    private const string RichPropertyTypesSpec = """
+                                                 openapi: 3.1.0
+                                                 info:
+                                                   title: Polymorphic Demo
+                                                   version: 1.0.0
+                                                 paths:
+                                                   /scrape:
+                                                     post:
+                                                       operationId: scrape
+                                                       requestBody:
+                                                         required: true
+                                                         content:
+                                                           application/json:
+                                                             schema:
+                                                               $ref: '#/components/schemas/ScrapeRequest'
+                                                       responses:
+                                                         '200':
+                                                           description: ok
+                                                 components:
+                                                   schemas:
+                                                     ExtractionSchema:
+                                                       type: object
+                                                       properties:
+                                                         type:
+                                                           type: string
+                                                         enabled:
+                                                           type: boolean
+                                                     Rule:
+                                                       type: object
+                                                       properties:
+                                                         field:
+                                                           type: string
+                                                     ScrapeRequest:
+                                                       type: object
+                                                       properties:
+                                                         formats:
+                                                           type: array
+                                                           items:
+                                                             oneOf:
+                                                               - type: string
+                                                                 enum: [markdown]
+                                                               - type: object
+                                                                 properties:
+                                                                   type:
+                                                                     type: string
+                                                                     enum: [json]
+                                                                   schema:
+                                                                     $ref: '#/components/schemas/ExtractionSchema'
+                                                                   mode:
+                                                                     type: string
+                                                                     enum: [strict, lenient]
+                                                                   rules:
+                                                                     type: array
+                                                                     items:
+                                                                       $ref: '#/components/schemas/Rule'
+                                                                   settings:
+                                                                     type: object
+                                                                     properties:
+                                                                       minScore:
+                                                                         type: number
+                                                                       includeHidden:
+                                                                         type: boolean
+                                                 """;
 
     private static Settings BuildSettings(bool flag) => Settings.Default with
     {
@@ -126,6 +191,53 @@ public class PolymorphicArrayDetectionTests
         text.Should().Contain("public sealed partial class HighlightsFormat : global::Demo.ScrapeRequestFormatsItem");
         text.Should().Contain("public override string Type => \"highlights\";");
         text.Should().Contain("public string? Query { get; set; }");
+    }
+
+    [TestMethod]
+    public void Pipeline_WhenFlagOn_ReplacesConsumingPropertyTypeAndSkipsOneOfHelper()
+    {
+        var settings = BuildSettings(flag: true);
+        var data = AutoSDK.Generation.Data.Prepare(((FirecrawlShapedSpec, settings), GlobalSettings: settings));
+
+        data.AnyOfs.Should().BeEmpty("the matching array-items oneOf should resolve to the generated polymorphic base type instead of emitting a OneOf helper");
+
+        var request = data.Classes.Single(x => x.ClassName == "ScrapeRequest");
+        var formats = request.Properties.Single(x => x.Name == "Formats");
+
+        formats.Type.CSharpType.Should().Be("global::System.Collections.Generic.IList<global::Demo.ScrapeRequestFormatsItem>?");
+        formats.Type.CSharpTypeWithoutNullability.Should().Be("global::System.Collections.Generic.IList<global::Demo.ScrapeRequestFormatsItem>");
+    }
+
+    [TestMethod]
+    public void Pipeline_WhenFlagOn_EmitsResolvedVariantPropertyTypes()
+    {
+        var settings = BuildSettings(flag: true);
+        var data = AutoSDK.Generation.Data.Prepare(((RichPropertyTypesSpec, settings), GlobalSettings: settings));
+
+        var file = Sources.PolymorphicArrayClasses(settings, data.Schemas).Single();
+        var text = file.Text;
+
+        text.Should().Contain("public global::Demo.ExtractionSchema? Schema { get; set; }");
+        text.Should().Contain("public global::System.Collections.Generic.IList<global::Demo.Rule>? Rules { get; set; }");
+
+        Regex.IsMatch(
+                text,
+                @"public global::Demo\.[A-Za-z0-9_]+\? Mode \{ get; set; \}",
+                RegexOptions.CultureInvariant)
+            .Should()
+            .BeTrue("inline enum variant properties should use the generated enum type instead of object?");
+
+        Regex.IsMatch(
+                text,
+                @"public global::Demo\.[A-Za-z0-9_]+\? Settings \{ get; set; \}",
+                RegexOptions.CultureInvariant)
+            .Should()
+            .BeTrue("inline object variant properties should use the generated model type instead of object?");
+
+        text.Should().NotContain("public object? Schema { get; set; }");
+        text.Should().NotContain("public object? Mode { get; set; }");
+        text.Should().NotContain("public object? Rules { get; set; }");
+        text.Should().NotContain("public object? Settings { get; set; }");
     }
 
     [TestMethod]

@@ -158,6 +158,7 @@ public static class CSharpSettingsExtensions
             ValidateAnyOfs: settings.ValidateAnyOfs,
             GenerateRawModelData: settings.GenerateRawModelData,
             GenerateJsonSerializerContextTypes: settings.GenerateJsonSerializerContextTypes,
+            GeneratePolymorphicArrayHelpers: settings.GeneratePolymorphicArrayHelpers,
             UseNewtonsoftJson: settings.UsesNewtonsoftJson(),
             UseSystemTextJson: settings.UsesSystemTextJson(),
             UseExtensionNaming: settings.UseExtensionNaming,

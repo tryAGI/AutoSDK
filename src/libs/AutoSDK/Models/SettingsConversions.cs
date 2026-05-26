@@ -76,6 +76,7 @@ public static class SettingsConversions
             ValidateAnyOfs: settings.ValidateAnyOfs,
             GenerateRawModelData: settings.GenerateRawModelData,
             GenerateJsonSerializerContextTypes: settings.GenerateJsonSerializerContextTypes,
+            GeneratePolymorphicArrayHelpers: settings.GeneratePolymorphicArrayHelpers,
             UseNewtonsoftJson: settings.JsonSerializerType == Serialization.Json.JsonSerializerType.NewtonsoftJson,
             UseSystemTextJson: settings.JsonSerializerType == Serialization.Json.JsonSerializerType.SystemTextJson,
             UseExtensionNaming: settings.UseExtensionNaming,
