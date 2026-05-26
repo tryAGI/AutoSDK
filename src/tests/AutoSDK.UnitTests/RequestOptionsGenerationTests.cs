@@ -322,6 +322,138 @@ public class RequestOptionsGenerationTests
     }
 
     [TestMethod]
+    public void AutoPaging_StartingAfterShape_UsesCursorPagerAndEscapesSummaryXml()
+    {
+        const string yaml = """
+                            openapi: 3.0.3
+                            info:
+                              title: PageableStartingAfter
+                              version: 1.0.0
+                            paths:
+                              /assistants:
+                                get:
+                                  operationId: listAssistants
+                                  parameters:
+                                    - in: query
+                                      name: starting_after
+                                      schema:
+                                        type: string
+                                    - in: query
+                                      name: limit
+                                      schema:
+                                        type: integer
+                                  responses:
+                                    '200':
+                                      description: OK
+                                      content:
+                                        application/json:
+                                          schema:
+                                            $ref: '#/components/schemas/ListAssistantsResponse'
+                            components:
+                              schemas:
+                                ListAssistantsResponse:
+                                  type: object
+                                  required: [data, last_id, has_more]
+                                  properties:
+                                    data:
+                                      type: array
+                                      items:
+                                        $ref: '#/components/schemas/Assistant'
+                                    last_id:
+                                      type: string
+                                    has_more:
+                                      type: boolean
+                                Assistant:
+                                  type: object
+                                  properties:
+                                    id:
+                                      type: string
+                            """;
+
+        var settings = DefaultSettings with { GeneratePageableHelpers = true };
+        var data = AutoSDK.Generation.Data.Prepare(((yaml, (CSharpSettings)settings), (CSharpSettings)settings));
+        var endpoint = data.Methods.Single(m => m.NotAsyncMethodName == "ListAssistants");
+
+        endpoint.HasPageableHelper.Should().BeTrue();
+        endpoint.PageableMetadata.Style.Should().Be(PageableStyle.Cursor);
+        endpoint.PageableMetadata.PageParameterName.Should().Be("startingAfter");
+        endpoint.PageableMetadata.NextCursorPropertyName.Should().Be("LastId");
+
+        var source = Sources.Method(endpoint).Text;
+        source.Should().Contain("string? startingAfter = null,");
+        source.Should().Contain("initialCursor: startingAfter");
+        source.Should().Contain("extractNextCursor: static __response => __response is null ? null : __response.LastId");
+        source.Should().Contain("Wraps ListAssistantsAsync as an IAsyncEnumerable&lt;global::G.Assistant&gt; that auto-pages over the response.");
+        source.Should().NotContain("Wraps ListAssistantsAsync as an IAsyncEnumerable<global::G.Assistant> that auto-pages over the response.");
+    }
+
+    [TestMethod]
+    public void AutoPaging_StringPageTokenShape_UsesCursorPagerInsteadOfNumericOffset()
+    {
+        const string yaml = """
+                            openapi: 3.0.3
+                            info:
+                              title: PageableStringPage
+                              version: 1.0.0
+                            paths:
+                              /skills:
+                                get:
+                                  operationId: listSkills
+                                  parameters:
+                                    - in: query
+                                      name: page
+                                      schema:
+                                        type: string
+                                    - in: query
+                                      name: limit
+                                      schema:
+                                        type: integer
+                                  responses:
+                                    '200':
+                                      description: OK
+                                      content:
+                                        application/json:
+                                          schema:
+                                            $ref: '#/components/schemas/ListSkillsResponse'
+                            components:
+                              schemas:
+                                ListSkillsResponse:
+                                  type: object
+                                  required: [data, next_page]
+                                  properties:
+                                    data:
+                                      type: array
+                                      items:
+                                        $ref: '#/components/schemas/Skill'
+                                    next_page:
+                                      anyOf:
+                                        - type: string
+                                        - type: 'null'
+                                Skill:
+                                  type: object
+                                  properties:
+                                    id:
+                                      type: string
+                            """;
+
+        var settings = DefaultSettings with { GeneratePageableHelpers = true };
+        var data = AutoSDK.Generation.Data.Prepare(((yaml, (CSharpSettings)settings), (CSharpSettings)settings));
+        var endpoint = data.Methods.Single(m => m.NotAsyncMethodName == "ListSkills");
+
+        endpoint.HasPageableHelper.Should().BeTrue();
+        endpoint.PageableMetadata.Style.Should().Be(PageableStyle.Cursor);
+        endpoint.PageableMetadata.PageParameterName.Should().Be("page");
+        endpoint.PageableMetadata.NextCursorPropertyName.Should().Be("NextPage");
+
+        var source = Sources.Method(endpoint).Text;
+        source.Should().Contain("AutoSDKPager.CursorAsync<");
+        source.Should().Contain("fetchPage: (__cursor, __ct) => ListSkillsAsync(");
+        source.Should().Contain("page: __cursor");
+        source.Should().Contain("string? page = null,");
+        source.Should().Contain("initialCursor: page");
+    }
+
+    [TestMethod]
     public void AutoPaging_OffsetShapeWithHasMore_WiresHasMorePredicateIntoOffsetAsync()
     {
         const string yaml = """
@@ -373,6 +505,62 @@ public class RequestOptionsGenerationTests
 
         var source = Sources.Method(endpoint).Text;
         source.Should().Contain("hasMore: static __response => __response is not null && (__response.HasMore ?? false)");
+    }
+
+    [TestMethod]
+    public void AutoPaging_OffsetShapeWithRequiredHasMore_UsesBoolPredicateWithoutNullCoalescing()
+    {
+        const string yaml = """
+                            openapi: 3.0.3
+                            info:
+                              title: OffsetHasMoreRequired
+                              version: 1.0.0
+                            paths:
+                              /messages:
+                                get:
+                                  operationId: listMessages
+                                  parameters:
+                                    - in: query
+                                      name: page
+                                      schema:
+                                        type: integer
+                                  responses:
+                                    '200':
+                                      description: OK
+                                      content:
+                                        application/json:
+                                          schema:
+                                            $ref: '#/components/schemas/ListMessagesResponse'
+                            components:
+                              schemas:
+                                ListMessagesResponse:
+                                  type: object
+                                  required: [items, has_more]
+                                  properties:
+                                    items:
+                                      type: array
+                                      items:
+                                        $ref: '#/components/schemas/Message'
+                                    has_more:
+                                      type: boolean
+                                Message:
+                                  type: object
+                                  properties:
+                                    id:
+                                      type: string
+                            """;
+
+        var settings = DefaultSettings with { GeneratePageableHelpers = true };
+        var data = AutoSDK.Generation.Data.Prepare(((yaml, (CSharpSettings)settings), (CSharpSettings)settings));
+        var endpoint = data.Methods.Single(m => m.NotAsyncMethodName == "ListMessages");
+
+        endpoint.PageableMetadata.Style.Should().Be(PageableStyle.Offset);
+        endpoint.PageableMetadata.HasMorePropertyName.Should().Be("HasMore");
+        endpoint.PageableMetadata.HasMorePropertyIsNullable.Should().BeFalse();
+
+        var source = Sources.Method(endpoint).Text;
+        source.Should().Contain("hasMore: static __response => __response is not null && __response.HasMore");
+        source.Should().NotContain("(__response.HasMore ?? false)");
     }
 
     [TestMethod]

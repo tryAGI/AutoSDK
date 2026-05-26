@@ -1281,7 +1281,7 @@ public static class Data
                 var pageParam = method.Parameters
                     .FirstOrDefault(static p =>
                         p.Location == Microsoft.OpenApi.ParameterLocation.Query &&
-                        IsOffsetPageParameter(p.Id));
+                        IsOffsetPageParameter(p));
                 if (!string.IsNullOrEmpty(pageParam.ParameterName))
                 {
                     // Also pick up a sibling has_more/has_next bool so the generated
@@ -1313,16 +1313,19 @@ public static class Data
                             ItemsPropertyName: itemsProperty.Value.Name,
                             ItemType: itemType,
                             NextCursorPropertyName: string.Empty,
-                            HasMorePropertyName: hasMoreProperty?.Name ?? string.Empty),
+                            HasMorePropertyName: hasMoreProperty?.Name ?? string.Empty,
+                            HasMorePropertyIsNullable: hasMoreProperty?.Type.CSharpTypeNullability ?? false),
                     };
                 }
 
                 // Cursor style: known cursor-named query parameter (string-typed) plus
                 // a response property that exposes the next cursor / next page token.
                 var cursorParam = method.Parameters
-                    .FirstOrDefault(static p =>
+                    .Where(static p =>
                         p.Location == Microsoft.OpenApi.ParameterLocation.Query &&
-                        IsCursorPageParameter(p.Id));
+                        IsCursorPageParameter(p))
+                    .OrderByDescending(static p => GetCursorPageParameterPriority(p.Id))
+                    .FirstOrDefault();
                 if (string.IsNullOrEmpty(cursorParam.ParameterName))
                 {
                     return method;
@@ -1363,37 +1366,70 @@ public static class Data
             .ToImmutableArray();
     }
 
-    private static bool IsOffsetPageParameter(string parameterId)
+    private static bool IsOffsetPageParameter(MethodParameter parameter)
     {
-        if (string.IsNullOrEmpty(parameterId))
+        if (string.IsNullOrEmpty(parameter.Id) ||
+            !IsNumericPageParameterType(parameter.Type))
         {
             return false;
         }
 
-        return string.Equals(parameterId, "page", StringComparison.OrdinalIgnoreCase) ||
-               string.Equals(parameterId, "page_number", StringComparison.OrdinalIgnoreCase) ||
-               string.Equals(parameterId, "pageNumber", StringComparison.OrdinalIgnoreCase) ||
-               string.Equals(parameterId, "pageIndex", StringComparison.OrdinalIgnoreCase) ||
-               string.Equals(parameterId, "page_index", StringComparison.OrdinalIgnoreCase);
+        return string.Equals(parameter.Id, "page", StringComparison.OrdinalIgnoreCase) ||
+               string.Equals(parameter.Id, "page_number", StringComparison.OrdinalIgnoreCase) ||
+               string.Equals(parameter.Id, "pageNumber", StringComparison.OrdinalIgnoreCase) ||
+               string.Equals(parameter.Id, "pageIndex", StringComparison.OrdinalIgnoreCase) ||
+               string.Equals(parameter.Id, "page_index", StringComparison.OrdinalIgnoreCase);
     }
 
-    private static bool IsCursorPageParameter(string parameterId)
+    private static bool IsCursorPageParameter(MethodParameter parameter)
     {
-        if (string.IsNullOrEmpty(parameterId))
+        if (string.IsNullOrEmpty(parameter.Id) ||
+            parameter.Type.IsArray ||
+            !string.Equals(parameter.Type.CSharpTypeWithoutNullability, "string", StringComparison.Ordinal))
         {
             return false;
         }
 
-        return string.Equals(parameterId, "cursor", StringComparison.OrdinalIgnoreCase) ||
-               string.Equals(parameterId, "after", StringComparison.OrdinalIgnoreCase) ||
-               string.Equals(parameterId, "page_token", StringComparison.OrdinalIgnoreCase) ||
-               string.Equals(parameterId, "pageToken", StringComparison.OrdinalIgnoreCase) ||
-               string.Equals(parameterId, "next_page", StringComparison.OrdinalIgnoreCase) ||
-               string.Equals(parameterId, "nextPage", StringComparison.OrdinalIgnoreCase) ||
-               string.Equals(parameterId, "next_page_token", StringComparison.OrdinalIgnoreCase) ||
-               string.Equals(parameterId, "nextPageToken", StringComparison.OrdinalIgnoreCase) ||
-               string.Equals(parameterId, "pagination_token", StringComparison.OrdinalIgnoreCase) ||
-               string.Equals(parameterId, "paginationToken", StringComparison.OrdinalIgnoreCase);
+        return GetCursorPageParameterPriority(parameter.Id) > 0;
+    }
+
+    private static int GetCursorPageParameterPriority(string parameterId)
+    {
+        if (string.IsNullOrEmpty(parameterId))
+        {
+            return 0;
+        }
+
+        if (string.Equals(parameterId, "after", StringComparison.OrdinalIgnoreCase) ||
+            string.Equals(parameterId, "after_id", StringComparison.OrdinalIgnoreCase) ||
+            string.Equals(parameterId, "afterId", StringComparison.OrdinalIgnoreCase) ||
+            string.Equals(parameterId, "starting_after", StringComparison.OrdinalIgnoreCase) ||
+            string.Equals(parameterId, "startingAfter", StringComparison.OrdinalIgnoreCase))
+        {
+            return 3;
+        }
+
+        if (string.Equals(parameterId, "cursor", StringComparison.OrdinalIgnoreCase) ||
+            string.Equals(parameterId, "page", StringComparison.OrdinalIgnoreCase) ||
+            string.Equals(parameterId, "page_token", StringComparison.OrdinalIgnoreCase) ||
+            string.Equals(parameterId, "pageToken", StringComparison.OrdinalIgnoreCase) ||
+            string.Equals(parameterId, "next_page", StringComparison.OrdinalIgnoreCase) ||
+            string.Equals(parameterId, "nextPage", StringComparison.OrdinalIgnoreCase) ||
+            string.Equals(parameterId, "next_page_token", StringComparison.OrdinalIgnoreCase) ||
+            string.Equals(parameterId, "nextPageToken", StringComparison.OrdinalIgnoreCase) ||
+            string.Equals(parameterId, "pagination_token", StringComparison.OrdinalIgnoreCase) ||
+            string.Equals(parameterId, "paginationToken", StringComparison.OrdinalIgnoreCase))
+        {
+            return 2;
+        }
+
+        return 0;
+    }
+
+    private static bool IsNumericPageParameterType(TypeData type)
+    {
+        return string.Equals(type.CSharpTypeWithoutNullability, "int", StringComparison.Ordinal) ||
+               string.Equals(type.CSharpTypeWithoutNullability, "long", StringComparison.Ordinal);
     }
 
     private static bool IsHasMoreProperty(PropertyData property)

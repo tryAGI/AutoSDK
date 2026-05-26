@@ -583,9 +583,12 @@ namespace {endPoint.Settings.Namespace}
             ? "Initial page number to start enumerating from. Defaults to 1."
             : "Initial cursor to start enumerating from. Defaults to null (first page).";
 
+        var offsetHasMoreExpression = metadata.HasMorePropertyIsNullable
+            ? $"(__response.{metadata.HasMorePropertyName} ?? false)"
+            : $"__response.{metadata.HasMorePropertyName}";
         var offsetHasMoreLine = !string.IsNullOrEmpty(metadata.HasMorePropertyName)
             ? $@"
-                hasMore: static __response => __response is not null && (__response.{metadata.HasMorePropertyName} ?? false),"
+                hasMore: static __response => __response is not null && {offsetHasMoreExpression},"
             : string.Empty;
 
         var pagerCall = metadata.Style == PageableStyle.Offset
@@ -615,7 +618,7 @@ namespace {endPoint.Settings.Namespace}
         }}";
 
         return $@"
-        {$"Wraps {endPoint.MethodName} as an IAsyncEnumerable<{itemType}> that auto-pages over the response.".ToXmlDocumentationSummary(level: 8)}
+        {$"Wraps {endPoint.MethodName} as an IAsyncEnumerable<{itemType}> that auto-pages over the response.".ClearForXml().ToXmlDocumentationSummary(level: 8)}
 {fixedParameters.Select(x => $@"
         {x.Summary.ToXmlDocumentationForParam(x.ParameterName, level: 8)}").Inject()}{(hasRequestBody ? @"
         /// <param name=""request""></param>" : TrimmedLine)}
