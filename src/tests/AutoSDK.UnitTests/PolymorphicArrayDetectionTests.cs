@@ -170,6 +170,72 @@ public class PolymorphicArrayDetectionTests
                                                                      type: string
                                                  """;
 
+    private const string CollidingVariantNamesSpec = """
+                                                     openapi: 3.1.0
+                                                     info:
+                                                       title: Colliding Variant Demo
+                                                       version: 1.0.0
+                                                     paths:
+                                                       /first:
+                                                         post:
+                                                           operationId: first
+                                                           requestBody:
+                                                             required: true
+                                                             content:
+                                                               application/json:
+                                                                 schema:
+                                                                   $ref: '#/components/schemas/FirstRequest'
+                                                           responses:
+                                                             '200':
+                                                               description: ok
+                                                       /second:
+                                                         post:
+                                                           operationId: second
+                                                           requestBody:
+                                                             required: true
+                                                             content:
+                                                               application/json:
+                                                                 schema:
+                                                                   $ref: '#/components/schemas/SecondRequest'
+                                                           responses:
+                                                             '200':
+                                                               description: ok
+                                                     components:
+                                                       schemas:
+                                                         FirstRequest:
+                                                           type: object
+                                                           properties:
+                                                             formats:
+                                                               type: array
+                                                               items:
+                                                                 oneOf:
+                                                                   - type: string
+                                                                     enum: [markdown]
+                                                                   - type: object
+                                                                     properties:
+                                                                       type:
+                                                                         type: string
+                                                                         enum: [json]
+                                                                       prompt:
+                                                                         type: string
+                                                         SecondRequest:
+                                                           type: object
+                                                           properties:
+                                                             formats:
+                                                               type: array
+                                                               items:
+                                                                 oneOf:
+                                                                   - type: string
+                                                                     enum: [markdown]
+                                                                   - type: object
+                                                                     properties:
+                                                                       type:
+                                                                         type: string
+                                                                         enum: [json]
+                                                                       prompt:
+                                                                         type: string
+                                                     """;
+
     private static Settings BuildSettings(bool flag) => Settings.Default with
     {
         Namespace = "Demo",
@@ -435,6 +501,57 @@ public class PolymorphicArrayDetectionTests
         assembly.GetType("Demo.Provider.ScrapeRequestFormatsItem", throwOnError: true).Should().NotBeNull();
         assembly.GetType("Demo.Provider.MarkdownFormat", throwOnError: true).Should().NotBeNull();
         assembly.GetType("Demo.Provider.JsonFormat", throwOnError: true).Should().NotBeNull();
+    }
+
+    [TestMethod]
+    public void Pipeline_WhenVariantNamesCollideAcrossMatches_ScopesSubclassNamesPerBaseType()
+    {
+        var settings = BuildContextSettings(flag: true);
+        var data = CSharpPipeline.PrepareAndEnrich(((CollidingVariantNamesSpec, settings), settings));
+        var files = CSharpPipeline.GenerateFiles(data);
+
+        data.Types.Select(static type => type.CSharpTypeWithoutNullability)
+            .Should()
+            .Contain(
+            [
+                "global::Demo.FirstRequestFormatsItem",
+                "global::Demo.SecondRequestFormatsItem",
+                "global::Demo.FirstRequestFormatsItemMarkdownFormat",
+                "global::Demo.SecondRequestFormatsItemMarkdownFormat",
+                "global::Demo.FirstRequestFormatsItemJsonFormat",
+                "global::Demo.SecondRequestFormatsItemJsonFormat",
+            ]);
+        data.Types.Select(static type => type.CSharpTypeWithoutNullability)
+            .Should()
+            .NotContain(
+            [
+                "global::Demo.MarkdownFormat",
+                "global::Demo.JsonFormat",
+            ]);
+
+        var firstFile = files.Single(static file => file.Name == "Demo.Models.FirstRequestFormatsItem.g.cs");
+        firstFile.Text.Should().Contain("typeof(global::Demo.FirstRequestFormatsItemMarkdownFormat)");
+        firstFile.Text.Should().Contain("typeof(global::Demo.FirstRequestFormatsItemJsonFormat)");
+        firstFile.Text.Should().NotContain("typeof(global::Demo.MarkdownFormat)");
+        firstFile.Text.Should().NotContain("typeof(global::Demo.JsonFormat)");
+
+        var secondFile = files.Single(static file => file.Name == "Demo.Models.SecondRequestFormatsItem.g.cs");
+        secondFile.Text.Should().Contain("typeof(global::Demo.SecondRequestFormatsItemMarkdownFormat)");
+        secondFile.Text.Should().Contain("typeof(global::Demo.SecondRequestFormatsItemJsonFormat)");
+        secondFile.Text.Should().NotContain("typeof(global::Demo.MarkdownFormat)");
+        secondFile.Text.Should().NotContain("typeof(global::Demo.JsonFormat)");
+
+        var jsonSerializerContext = files.Single(static file => file.Name.EndsWith("JsonSerializerContext.g.cs", StringComparison.Ordinal));
+        jsonSerializerContext.Text.Should().Contain("typeof(global::Demo.FirstRequestFormatsItemMarkdownFormat)");
+        jsonSerializerContext.Text.Should().Contain("typeof(global::Demo.SecondRequestFormatsItemMarkdownFormat)");
+        jsonSerializerContext.Text.Should().Contain("typeof(global::Demo.FirstRequestFormatsItemJsonFormat)");
+        jsonSerializerContext.Text.Should().Contain("typeof(global::Demo.SecondRequestFormatsItemJsonFormat)");
+
+        var assembly = CompileGeneratedAssembly("DemoPolymorphicVariantCollisions", files);
+        assembly.GetType("Demo.FirstRequestFormatsItemMarkdownFormat", throwOnError: true).Should().NotBeNull();
+        assembly.GetType("Demo.SecondRequestFormatsItemMarkdownFormat", throwOnError: true).Should().NotBeNull();
+        assembly.GetType("Demo.FirstRequestFormatsItemJsonFormat", throwOnError: true).Should().NotBeNull();
+        assembly.GetType("Demo.SecondRequestFormatsItemJsonFormat", throwOnError: true).Should().NotBeNull();
     }
 
     [TestMethod]

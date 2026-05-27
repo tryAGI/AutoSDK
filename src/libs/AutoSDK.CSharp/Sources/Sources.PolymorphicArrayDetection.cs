@@ -141,7 +141,7 @@ public static partial class Sources
     {
         schemas = schemas ?? throw new ArgumentNullException(nameof(schemas));
 
-        var plans = new List<PolymorphicFormatEmissionPlan>();
+        var matches = new List<PolymorphicFormatMatch>();
         var seenQualifiedTypeNames = new HashSet<string>(StringComparer.Ordinal);
 
         foreach (var schemaContext in schemas)
@@ -151,10 +151,18 @@ public static partial class Sources
                 continue;
             }
 
+            matches.Add(match!);
+        }
+
+        matches = ResolveVariantNameCollisions(matches);
+
+        var plans = new List<PolymorphicFormatEmissionPlan>(matches.Count);
+        foreach (var match in matches)
+        {
             plans.Add(new PolymorphicFormatEmissionPlan(
-                match: match!,
-                suppressedSchemas: CollectSuppressedSchemas(schemaContext),
-                generatedTypes: CreateGeneratedTypes(match!)));
+                match: match,
+                suppressedSchemas: CollectSuppressedSchemas(FindMatchSchemaContext(schemas, match)),
+                generatedTypes: CreateGeneratedTypes(match)));
         }
 
         return plans;
@@ -417,6 +425,150 @@ public static partial class Sources
         }
 
         return builder.ToImmutable();
+    }
+
+    private static List<PolymorphicFormatMatch> ResolveVariantNameCollisions(
+        List<PolymorphicFormatMatch> matches)
+    {
+        if (matches.Count < 2)
+        {
+            return [..matches];
+        }
+
+        var resolvedMatches = new Dictionary<string, PolymorphicFormatMatch>(StringComparer.Ordinal);
+
+        foreach (var namespaceGroup in matches.GroupBy(
+                     static match => match.GeneratedNamespace,
+                     StringComparer.Ordinal))
+        {
+            var variantNameCounts = namespaceGroup
+                .SelectMany(GetVariantClassNames)
+                .GroupBy(static className => className, StringComparer.Ordinal)
+                .ToDictionary(static group => group.Key, static group => group.Count(), StringComparer.Ordinal);
+            var reservedClassNames = new HashSet<string>(
+                namespaceGroup.Select(static match => match.BaseClassName),
+                StringComparer.Ordinal);
+
+            foreach (var match in namespaceGroup)
+            {
+                var stringVariants = RenameStringVariants(match, variantNameCounts, reservedClassNames);
+                var objectVariants = RenameObjectVariants(match, variantNameCounts, reservedClassNames);
+                resolvedMatches.Add(
+                    GetMatchKey(match),
+                    new PolymorphicFormatMatch(
+                        baseClassName: match.BaseClassName,
+                        generatedNamespace: match.GeneratedNamespace,
+                        fileNameWithoutExtension: match.FileNameWithoutExtension,
+                        summary: match.Summary,
+                        stringVariants: stringVariants,
+                        objectVariants: objectVariants));
+            }
+        }
+
+        return matches.Select(match => resolvedMatches[GetMatchKey(match)]).ToList();
+    }
+
+    private static IEnumerable<string> GetVariantClassNames(PolymorphicFormatMatch match)
+    {
+        foreach (var variant in match.StringVariants)
+        {
+            yield return variant.ClassName;
+        }
+
+        foreach (var variant in match.ObjectVariants)
+        {
+            yield return variant.ClassName;
+        }
+    }
+
+    private static ImmutableArray<StringFormatVariant> RenameStringVariants(
+        PolymorphicFormatMatch match,
+        IReadOnlyDictionary<string, int> variantNameCounts,
+        HashSet<string> reservedClassNames)
+    {
+        if (match.StringVariants.IsDefaultOrEmpty)
+        {
+            return match.StringVariants;
+        }
+
+        var builder = ImmutableArray.CreateBuilder<StringFormatVariant>(match.StringVariants.Length);
+        foreach (var variant in match.StringVariants)
+        {
+            builder.Add(new StringFormatVariant(
+                discriminatorValue: variant.DiscriminatorValue,
+                className: ResolveVariantClassName(match, variant.ClassName, variantNameCounts, reservedClassNames),
+                summary: variant.Summary));
+        }
+
+        return builder.ToImmutable();
+    }
+
+    private static ImmutableArray<ObjectFormatVariant> RenameObjectVariants(
+        PolymorphicFormatMatch match,
+        IReadOnlyDictionary<string, int> variantNameCounts,
+        HashSet<string> reservedClassNames)
+    {
+        if (match.ObjectVariants.IsDefaultOrEmpty)
+        {
+            return match.ObjectVariants;
+        }
+
+        var builder = ImmutableArray.CreateBuilder<ObjectFormatVariant>(match.ObjectVariants.Length);
+        foreach (var variant in match.ObjectVariants)
+        {
+            builder.Add(new ObjectFormatVariant(
+                discriminatorValue: variant.DiscriminatorValue,
+                className: ResolveVariantClassName(match, variant.ClassName, variantNameCounts, reservedClassNames),
+                properties: variant.Properties,
+                summary: variant.Summary));
+        }
+
+        return builder.ToImmutable();
+    }
+
+    private static string ResolveVariantClassName(
+        PolymorphicFormatMatch match,
+        string className,
+        IReadOnlyDictionary<string, int> variantNameCounts,
+        HashSet<string> reservedClassNames)
+    {
+        var needsRenaming = reservedClassNames.Contains(className) ||
+                            variantNameCounts.TryGetValue(className, out var count) && count > 1;
+        if (!needsRenaming)
+        {
+            reservedClassNames.Add(className);
+            return className;
+        }
+
+        var baseCandidate = $"{match.BaseClassName}{className}";
+        if (reservedClassNames.Add(baseCandidate))
+        {
+            return baseCandidate;
+        }
+
+        for (var suffix = 2; ; suffix++)
+        {
+            var candidate = $"{baseCandidate}{suffix}";
+            if (reservedClassNames.Add(candidate))
+            {
+                return candidate;
+            }
+        }
+    }
+
+    private static string GetMatchKey(PolymorphicFormatMatch match)
+    {
+        return $"{match.GeneratedNamespace}.{match.BaseClassName}";
+    }
+
+    private static SchemaContext FindMatchSchemaContext(
+        IReadOnlyList<SchemaContext> schemas,
+        PolymorphicFormatMatch match)
+    {
+        return schemas.First(schema =>
+            schema.Hint == Hint.ArrayItem &&
+            string.Equals(schema.GetGeneratedNamespace(), match.GeneratedNamespace, StringComparison.Ordinal) &&
+            string.Equals(DerivePolymorphicFormatBaseName(schema), match.BaseClassName, StringComparison.Ordinal));
     }
 
     private static TypeData CreateGeneratedType(string @namespace, string className)
