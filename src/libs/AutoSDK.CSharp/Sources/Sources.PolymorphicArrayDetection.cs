@@ -3,6 +3,7 @@ using System.Text.Json.Nodes;
 using AutoSDK.Extensions;
 using AutoSDK.Helpers;
 using AutoSDK.Models;
+using AutoSDK.Naming.Models;
 using AutoSDK.TypeMapping;
 using Microsoft.OpenApi;
 
@@ -80,12 +81,14 @@ public static partial class Sources
     {
         public PolymorphicFormatMatch(
             string baseClassName,
+            string generatedNamespace,
             string fileNameWithoutExtension,
             string summary,
             ImmutableArray<StringFormatVariant> stringVariants,
             ImmutableArray<ObjectFormatVariant> objectVariants)
         {
             BaseClassName = baseClassName;
+            GeneratedNamespace = generatedNamespace;
             FileNameWithoutExtension = fileNameWithoutExtension;
             Summary = summary;
             StringVariants = stringVariants;
@@ -93,6 +96,7 @@ public static partial class Sources
         }
 
         public string BaseClassName { get; }
+        public string GeneratedNamespace { get; }
         public string FileNameWithoutExtension { get; }
         public string Summary { get; }
         public ImmutableArray<StringFormatVariant> StringVariants { get; }
@@ -138,11 +142,11 @@ public static partial class Sources
         schemas = schemas ?? throw new ArgumentNullException(nameof(schemas));
 
         var plans = new List<PolymorphicFormatEmissionPlan>();
-        var seenBaseNames = new HashSet<string>(StringComparer.Ordinal);
+        var seenQualifiedTypeNames = new HashSet<string>(StringComparer.Ordinal);
 
         foreach (var schemaContext in schemas)
         {
-            if (!TryDetectPolymorphicFormatMatch(schemaContext, seenBaseNames, out var match))
+            if (!TryDetectPolymorphicFormatMatch(schemaContext, seenQualifiedTypeNames, out var match))
             {
                 continue;
             }
@@ -150,7 +154,7 @@ public static partial class Sources
             plans.Add(new PolymorphicFormatEmissionPlan(
                 match: match!,
                 suppressedSchemas: CollectSuppressedSchemas(schemaContext),
-                generatedTypes: CreateGeneratedTypes(schemaContext.Settings.Namespace, match!)));
+                generatedTypes: CreateGeneratedTypes(match!)));
         }
 
         return plans;
@@ -162,13 +166,13 @@ public static partial class Sources
     {
         return TryDetectPolymorphicFormatMatch(
             schemaContext,
-            seenBaseNames: null,
+            seenQualifiedTypeNames: null,
             out match);
     }
 
     private static bool TryDetectPolymorphicFormatMatch(
         SchemaContext schemaContext,
-        HashSet<string>? seenBaseNames,
+        HashSet<string>? seenQualifiedTypeNames,
         out PolymorphicFormatMatch? match)
     {
         match = null;
@@ -218,8 +222,11 @@ public static partial class Sources
         }
 
         var baseClassName = DerivePolymorphicFormatBaseName(schemaContext);
+        var generatedNamespace = schemaContext.GetGeneratedNamespace();
+        var qualifiedBaseClassName = $"{generatedNamespace}.{baseClassName}";
         if (string.IsNullOrWhiteSpace(baseClassName) ||
-            (seenBaseNames != null && !seenBaseNames.Add(baseClassName)))
+            string.IsNullOrWhiteSpace(generatedNamespace) ||
+            (seenQualifiedTypeNames != null && !seenQualifiedTypeNames.Add(qualifiedBaseClassName)))
         {
             return false;
         }
@@ -231,7 +238,8 @@ public static partial class Sources
 
         match = new PolymorphicFormatMatch(
             baseClassName: baseClassName,
-            fileNameWithoutExtension: $"{schemaContext.Settings.Namespace}.Models.{baseClassName}",
+            generatedNamespace: generatedNamespace,
+            fileNameWithoutExtension: $"{generatedNamespace}.Models.{baseClassName}",
             summary: summary,
             stringVariants: stringVariants.ToImmutableArray(),
             objectVariants: objectVariants.ToImmutableArray());
@@ -391,23 +399,21 @@ public static partial class Sources
         builder.Add(schemaContext);
     }
 
-    private static ImmutableArray<TypeData> CreateGeneratedTypes(
-        string @namespace,
-        PolymorphicFormatMatch match)
+    private static ImmutableArray<TypeData> CreateGeneratedTypes(PolymorphicFormatMatch match)
     {
         var builder = ImmutableArray.CreateBuilder<TypeData>(
             1 + match.StringVariants.Length + match.ObjectVariants.Length);
 
-        builder.Add(CreateGeneratedType(@namespace, match.BaseClassName));
+        builder.Add(CreateGeneratedType(match.GeneratedNamespace, match.BaseClassName));
 
         foreach (var variant in match.StringVariants)
         {
-            builder.Add(CreateGeneratedType(@namespace, variant.ClassName));
+            builder.Add(CreateGeneratedType(match.GeneratedNamespace, variant.ClassName));
         }
 
         foreach (var variant in match.ObjectVariants)
         {
-            builder.Add(CreateGeneratedType(@namespace, variant.ClassName));
+            builder.Add(CreateGeneratedType(match.GeneratedNamespace, variant.ClassName));
         }
 
         return builder.ToImmutable();
@@ -441,22 +447,41 @@ public static partial class Sources
         // Component-level array: <ComponentName>Item
         if (!string.IsNullOrWhiteSpace(parent.ComponentId))
         {
-            return SanitizeVariantClassName(parent.ComponentId!) + "Item";
+            return GetOwningTypeName(parent) + "Item";
         }
 
         // Property-on-component: <ParentClassName><PropertyName>Item
         if (!string.IsNullOrWhiteSpace(parent.PropertyName))
         {
             var grandparent = parent.Parent;
-            var ownerName = grandparent?.ComponentId ?? grandparent?.ClassName ?? string.Empty;
+            var ownerName = grandparent is not null
+                ? GetOwningTypeName(grandparent)
+                : string.Empty;
             if (!string.IsNullOrWhiteSpace(ownerName))
             {
-                return SanitizeVariantClassName(ownerName) +
+                return ownerName +
                        SanitizeVariantClassName(parent.PropertyName!) + "Item";
             }
         }
 
         return string.Empty;
+    }
+
+    private static string GetOwningTypeName(SchemaContext schemaContext)
+    {
+        if (!string.IsNullOrWhiteSpace(schemaContext.ComponentId))
+        {
+            return CSharpNamespacedTypeNameResolver.GetComponentClassName(
+                schemaContext.ComponentId!,
+                schemaContext.Settings.ToSchemaNamingSettings());
+        }
+
+        if (!string.IsNullOrWhiteSpace(schemaContext.ClassName))
+        {
+            return schemaContext.ClassName!;
+        }
+
+        return SanitizeVariantClassName(schemaContext.Id);
     }
 
     private static string SanitizeVariantClassName(string raw)

@@ -132,6 +132,44 @@ public class PolymorphicArrayDetectionTests
                                                                          type: boolean
                                                  """;
 
+    private const string NamespaceDelimitedSpec = """
+                                                 openapi: 3.1.0
+                                                 info:
+                                                   title: Namespace Delimiter Demo
+                                                   version: 1.0.0
+                                                 paths:
+                                                   /scrape:
+                                                     post:
+                                                       operationId: scrape
+                                                       requestBody:
+                                                         required: true
+                                                         content:
+                                                           application/json:
+                                                             schema:
+                                                               $ref: '#/components/schemas/Provider.ScrapeRequest'
+                                                       responses:
+                                                         '200':
+                                                           description: ok
+                                                 components:
+                                                   schemas:
+                                                     Provider.ScrapeRequest:
+                                                       type: object
+                                                       properties:
+                                                         formats:
+                                                           type: array
+                                                           items:
+                                                             oneOf:
+                                                               - type: string
+                                                                 enum: [markdown]
+                                                               - type: object
+                                                                 properties:
+                                                                   type:
+                                                                     type: string
+                                                                     enum: [json]
+                                                                   prompt:
+                                                                     type: string
+                                                 """;
+
     private static Settings BuildSettings(bool flag) => Settings.Default with
     {
         Namespace = "Demo",
@@ -356,6 +394,47 @@ public class PolymorphicArrayDetectionTests
         GetPropertyValue(roundTrippedFormats[1], "Prompt").Should().Be("Extract entities");
         GetPropertyValue(roundTrippedFormats[1], "MaxItems").Should().Be(3);
         GetPropertyValue(roundTrippedFormats[2], "Query").Should().Be("key facts");
+    }
+
+    [TestMethod]
+    public void Pipeline_WithNamespaceDelimiter_EmitsPolymorphicTypesInGeneratedNamespace()
+    {
+        var settings = BuildContextSettings(flag: true) with
+        {
+            NamespaceDelimiter = ".",
+        };
+        var data = CSharpPipeline.PrepareAndEnrich(((NamespaceDelimitedSpec, settings), settings));
+        var files = CSharpPipeline.GenerateFiles(data);
+
+        var request = data.Classes.Single(x => x.GlobalClassName == "global::Demo.Provider.ScrapeRequest");
+        var formats = request.Properties.Single(x => x.Name == "Formats");
+        formats.Type.CSharpType.Should().Be("global::System.Collections.Generic.IList<global::Demo.Provider.ScrapeRequestFormatsItem>?");
+
+        var polymorphicFile = files.Single(static file => file.Name == "Demo.Provider.Models.ScrapeRequestFormatsItem.g.cs");
+        polymorphicFile.Text.Should().Contain("namespace Demo.Provider");
+        polymorphicFile.Text.Should().Contain("typeof(global::Demo.Provider.MarkdownFormat)");
+        polymorphicFile.Text.Should().Contain("typeof(global::Demo.Provider.JsonFormat)");
+        polymorphicFile.Text.Should().Contain("global::Demo.AutoSDKPolymorphicFormatJsonConverter<global::Demo.Provider.ScrapeRequestFormatsItem>");
+        polymorphicFile.Text.Should().Contain("public abstract partial class ScrapeRequestFormatsItem : global::Demo.AutoSDKPolymorphicFormat");
+
+        data.Types.Select(static type => type.CSharpTypeWithoutNullability)
+            .Should()
+            .Contain(
+            [
+                "global::Demo.Provider.ScrapeRequestFormatsItem",
+                "global::Demo.Provider.MarkdownFormat",
+                "global::Demo.Provider.JsonFormat",
+            ]);
+
+        var jsonSerializerContext = files.Single(static file => file.Name.EndsWith("JsonSerializerContext.g.cs", StringComparison.Ordinal));
+        jsonSerializerContext.Text.Should().Contain("typeof(global::Demo.Provider.ScrapeRequestFormatsItem)");
+        jsonSerializerContext.Text.Should().Contain("typeof(global::Demo.Provider.MarkdownFormat)");
+        jsonSerializerContext.Text.Should().Contain("typeof(global::Demo.Provider.JsonFormat)");
+
+        var assembly = CompileGeneratedAssembly("DemoPolymorphicNestedNamespace", files);
+        assembly.GetType("Demo.Provider.ScrapeRequestFormatsItem", throwOnError: true).Should().NotBeNull();
+        assembly.GetType("Demo.Provider.MarkdownFormat", throwOnError: true).Should().NotBeNull();
+        assembly.GetType("Demo.Provider.JsonFormat", throwOnError: true).Should().NotBeNull();
     }
 
     [TestMethod]

@@ -48,13 +48,14 @@ public static partial class Sources
         CSharpSettings settings,
         PolymorphicFormatMatch match)
     {
-        var ns = settings.Namespace;
+        var helperNamespace = settings.Namespace;
+        var ns = match.GeneratedNamespace;
         var variantAttributes = string.Join(string.Empty,
             match.StringVariants.Select(v =>
-                $@"    [global::{ns}.AutoSDKPolymorphicFormatVariant(""{EscapeStringLiteral(v.DiscriminatorValue)}"", typeof(global::{ns}.{v.ClassName}))]
+                $@"    [global::{helperNamespace}.AutoSDKPolymorphicFormatVariant(""{EscapeStringLiteral(v.DiscriminatorValue)}"", typeof(global::{ns}.{v.ClassName}))]
 ")
             .Concat(match.ObjectVariants.Select(v =>
-                $@"    [global::{ns}.AutoSDKPolymorphicFormatVariant(""{EscapeStringLiteral(v.DiscriminatorValue)}"", typeof(global::{ns}.{v.ClassName}))]
+                $@"    [global::{helperNamespace}.AutoSDKPolymorphicFormatVariant(""{EscapeStringLiteral(v.DiscriminatorValue)}"", typeof(global::{ns}.{v.ClassName}))]
 ")));
 
         var stringVariantClasses = string.Join("\n", match.StringVariants.Select(v => EmitStringVariantClass(ns, match.BaseClassName, v)));
@@ -72,8 +73,8 @@ namespace {ns}
     /// <summary>
     /// {EscapeXmlDoc(summary)}
     /// </summary>
-{variantAttributes}    [global::System.Text.Json.Serialization.JsonConverter(typeof(global::{ns}.AutoSDKPolymorphicFormatJsonConverter<global::{ns}.{match.BaseClassName}>))]
-    public abstract partial class {match.BaseClassName} : global::{ns}.AutoSDKPolymorphicFormat
+{variantAttributes}    [global::System.Text.Json.Serialization.JsonConverter(typeof(global::{helperNamespace}.AutoSDKPolymorphicFormatJsonConverter<global::{ns}.{match.BaseClassName}>))]
+    public abstract partial class {match.BaseClassName} : global::{helperNamespace}.AutoSDKPolymorphicFormat
     {{
     }}
 
