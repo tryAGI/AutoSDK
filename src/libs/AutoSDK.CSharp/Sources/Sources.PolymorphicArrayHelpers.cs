@@ -98,9 +98,11 @@ namespace {ns}
     public sealed partial class {variant.ClassName} : global::{ns}.{baseClassName}
     {{
         /// <inheritdoc />
+        [global::System.Text.Json.Serialization.JsonIgnore]
         public override string Type => ""{EscapeStringLiteral(variant.DiscriminatorValue)}"";
 
         /// <inheritdoc />
+        [global::System.Text.Json.Serialization.JsonIgnore]
         public override bool IsBareString => true;
     }}";
     }
@@ -124,6 +126,7 @@ namespace {ns}
     public sealed partial class {variant.ClassName} : global::{ns}.{baseClassName}
     {{
         /// <inheritdoc />
+        [global::System.Text.Json.Serialization.JsonIgnore]
         public override string Type => ""{EscapeStringLiteral(variant.DiscriminatorValue)}"";
 
         /// <summary>The discriminator value written into the <c>type</c> JSON property.</summary>
@@ -188,6 +191,7 @@ namespace {settings.Namespace}
         /// The variant discriminator value. Maps to the inline enum string when the wire form is a bare
         /// string, or to the <c>type</c> property when the wire form is an object.
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonIgnore]
         public abstract string Type {{ get; }}
 
         /// <summary>
@@ -195,6 +199,7 @@ namespace {settings.Namespace}
         /// instead of an object. Defaults to <c>false</c>. Override and return <c>true</c> for
         /// subclasses that represent the bare-string variants of the schema.
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonIgnore]
         public virtual bool IsBareString => false;
     }}
 

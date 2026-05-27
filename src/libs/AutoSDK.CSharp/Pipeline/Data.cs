@@ -441,6 +441,8 @@ public static class Data
 #endif
 
         var computeDataClassesTime = Stopwatch.StartNew();
+        var (suppressedLegacyPolymorphicSchemas, generatedPolymorphicTypes) =
+            CollectPolymorphicArrayGenerationState(filteredSchemas, csharpSettings);
         
         var classesBuilder = ImmutableArray.CreateBuilder<ModelData>();
         var enumsBuilder = ImmutableArray.CreateBuilder<ModelData>();
@@ -449,6 +451,10 @@ public static class Data
         foreach (var schema in filteredSchemas)
         {
             if (schema.IsReference)
+            {
+                continue;
+            }
+            if (IsSuppressedLegacyPolymorphicSchema(schema, suppressedLegacyPolymorphicSchemas))
             {
                 continue;
             }
@@ -672,16 +678,12 @@ public static class Data
         }
         
         var types =
-            !skipModels && settings.GenerateJsonSerializerContextTypes
-                ? filteredSchemas
-                    .Where(x =>
-                        x.TypeData != TypeData.Default &&
-                        !string.IsNullOrWhiteSpace(x.TypeData.CSharpType))
-                    .Select(x => x.TypeData)
-                    .GroupBy(x => x.CSharpTypeWithNullability)
-                    .Select(x => x.First())
-                    .ToImmutableArray()
-                : [];
+            CollectJsonSerializerContextTypes(
+                filteredSchemas,
+                generatedPolymorphicTypes,
+                suppressedLegacyPolymorphicSchemas,
+                skipModels,
+                settings);
 
         var outputClasses = skipModels
             ? ImmutableArray<ModelData>.Empty
@@ -821,6 +823,8 @@ public static class Data
 #endif
 
         var computeDataClassesTime = Stopwatch.StartNew();
+        var (suppressedLegacyPolymorphicSchemas, generatedPolymorphicTypes) =
+            CollectPolymorphicArrayGenerationState(filteredSchemas, settings);
 
         var classesBuilder = ImmutableArray.CreateBuilder<ModelData>();
         var enumsBuilder = ImmutableArray.CreateBuilder<ModelData>();
@@ -829,6 +833,10 @@ public static class Data
         foreach (var schema in filteredSchemas)
         {
             if (schema.IsReference)
+            {
+                continue;
+            }
+            if (IsSuppressedLegacyPolymorphicSchema(schema, suppressedLegacyPolymorphicSchemas))
             {
                 continue;
             }
@@ -1057,16 +1065,12 @@ public static class Data
                 .ToArray();
         }
 
-        var types = !skipModels && settings.GenerateJsonSerializerContextTypes
-            ? filteredSchemas
-                .Where(x =>
-                    x.TypeData != TypeData.Default &&
-                    !string.IsNullOrWhiteSpace(x.TypeData.CSharpType))
-                .Select(x => x.TypeData)
-                .GroupBy(x => x.CSharpTypeWithNullability)
-                .Select(x => x.First())
-                .ToImmutableArray()
-            : [];
+        var types = CollectJsonSerializerContextTypes(
+            filteredSchemas,
+            generatedPolymorphicTypes,
+            suppressedLegacyPolymorphicSchemas,
+            skipModels,
+            settings);
 
         var outputClasses = skipModels
             ? ImmutableArray<ModelData>.Empty
@@ -1795,6 +1799,71 @@ public static class Data
 
             schema.Children = [..schema.Children.Where(x => !unresolvedReferences.Contains(x))];
         }
+    }
+
+    private static (HashSet<SchemaContext> SuppressedSchemas, ImmutableArray<TypeData> GeneratedTypes)
+        CollectPolymorphicArrayGenerationState(
+            IReadOnlyList<SchemaContext> filteredSchemas,
+            CSharpSettings settings)
+    {
+        if (!settings.GeneratePolymorphicArrayHelpers)
+        {
+            return ([], []);
+        }
+
+        var plans = Sources.BuildPolymorphicFormatEmissionPlans(filteredSchemas);
+        if (plans.Count == 0)
+        {
+            return ([], []);
+        }
+
+        var suppressedSchemas = new HashSet<SchemaContext>();
+        var generatedTypes = ImmutableArray.CreateBuilder<TypeData>();
+
+        foreach (var plan in plans)
+        {
+            suppressedSchemas.UnionWith(plan.SuppressedSchemas);
+            generatedTypes.AddRange(plan.GeneratedTypes);
+        }
+
+        return (
+            suppressedSchemas,
+            generatedTypes
+                .GroupBy(static type => type.CSharpTypeWithNullability, StringComparer.Ordinal)
+                .Select(static group => group.First())
+                .ToImmutableArray());
+    }
+
+    private static bool IsSuppressedLegacyPolymorphicSchema(
+        SchemaContext schema,
+        HashSet<SchemaContext> suppressedSchemas)
+    {
+        return suppressedSchemas.Count > 0 &&
+               suppressedSchemas.Contains(schema);
+    }
+
+    private static ImmutableArray<TypeData> CollectJsonSerializerContextTypes(
+        IReadOnlyList<SchemaContext> filteredSchemas,
+        ImmutableArray<TypeData> generatedPolymorphicTypes,
+        HashSet<SchemaContext> suppressedSchemas,
+        bool skipModels,
+        CSharpSettings settings)
+    {
+        if (skipModels || !settings.GenerateJsonSerializerContextTypes)
+        {
+            return [];
+        }
+
+        return filteredSchemas
+            .Where(schema => !IsSuppressedLegacyPolymorphicSchema(schema, suppressedSchemas))
+            .Where(schema =>
+                schema.TypeData != TypeData.Default &&
+                !string.IsNullOrWhiteSpace(schema.TypeData.CSharpType))
+            .Select(schema => schema.TypeData)
+            .Concat(generatedPolymorphicTypes)
+            .GroupBy(static type => type.CSharpTypeWithNullability, StringComparer.Ordinal)
+            .Select(static group => group.First())
+            .ToImmutableArray();
     }
 
     private static EndPoint ResolveEndPointTag(

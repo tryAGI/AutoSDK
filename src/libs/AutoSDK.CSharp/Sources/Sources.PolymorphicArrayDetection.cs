@@ -3,6 +3,7 @@ using System.Text.Json.Nodes;
 using AutoSDK.Extensions;
 using AutoSDK.Helpers;
 using AutoSDK.Models;
+using AutoSDK.TypeMapping;
 using Microsoft.OpenApi;
 
 namespace AutoSDK.Generation;
@@ -99,26 +100,60 @@ public static partial class Sources
     }
 
     /// <summary>
+    /// Captures the additional runtime registrations and legacy inline schemas associated with one
+    /// detected polymorphic-format hierarchy.
+    /// </summary>
+    internal sealed class PolymorphicFormatEmissionPlan
+    {
+        public PolymorphicFormatEmissionPlan(
+            PolymorphicFormatMatch match,
+            ImmutableArray<SchemaContext> suppressedSchemas,
+            ImmutableArray<TypeData> generatedTypes)
+        {
+            Match = match;
+            SuppressedSchemas = suppressedSchemas;
+            GeneratedTypes = generatedTypes;
+        }
+
+        public PolymorphicFormatMatch Match { get; }
+        public ImmutableArray<SchemaContext> SuppressedSchemas { get; }
+        public ImmutableArray<TypeData> GeneratedTypes { get; }
+    }
+
+    /// <summary>
     /// Walks <paramref name="schemas"/>, returns one <see cref="PolymorphicFormatMatch"/> per
     /// schema whose shape matches the polymorphic-array pattern. Pure / side-effect free.
     /// </summary>
     internal static IReadOnlyList<PolymorphicFormatMatch> DetectPolymorphicFormatMatches(
         IReadOnlyList<SchemaContext> schemas)
     {
+        return BuildPolymorphicFormatEmissionPlans(schemas)
+            .Select(static plan => plan.Match)
+            .ToArray();
+    }
+
+    internal static IReadOnlyList<PolymorphicFormatEmissionPlan> BuildPolymorphicFormatEmissionPlans(
+        IReadOnlyList<SchemaContext> schemas)
+    {
         schemas = schemas ?? throw new ArgumentNullException(nameof(schemas));
 
-        var matches = new List<PolymorphicFormatMatch>();
+        var plans = new List<PolymorphicFormatEmissionPlan>();
         var seenBaseNames = new HashSet<string>(StringComparer.Ordinal);
 
         foreach (var schemaContext in schemas)
         {
-            if (TryDetectPolymorphicFormatMatch(schemaContext, seenBaseNames, out var match))
+            if (!TryDetectPolymorphicFormatMatch(schemaContext, seenBaseNames, out var match))
             {
-                matches.Add(match!);
+                continue;
             }
+
+            plans.Add(new PolymorphicFormatEmissionPlan(
+                match: match!,
+                suppressedSchemas: CollectSuppressedSchemas(schemaContext),
+                generatedTypes: CreateGeneratedTypes(schemaContext.Settings.Namespace, match!)));
         }
 
-        return matches;
+        return plans;
     }
 
     internal static bool TryGetPolymorphicFormatMatch(
@@ -299,6 +334,95 @@ public static partial class Sources
         }
 
         return null;
+    }
+
+    private static ImmutableArray<SchemaContext> CollectSuppressedSchemas(SchemaContext itemsContext)
+    {
+        var builder = ImmutableArray.CreateBuilder<SchemaContext>();
+        var seen = new HashSet<SchemaContext>();
+
+        foreach (var variantContext in itemsContext.Children)
+        {
+            if (variantContext.Hint != Hint.OneOf)
+            {
+                continue;
+            }
+
+            AddSuppressedSchema(builder, seen, variantContext);
+
+            var effectiveVariantContext = variantContext.ResolvedReference ?? variantContext;
+            if (!ReferenceEquals(effectiveVariantContext, variantContext))
+            {
+                AddSuppressedSchema(builder, seen, effectiveVariantContext);
+            }
+
+            foreach (var propertyContext in effectiveVariantContext.Children)
+            {
+                if (propertyContext.Hint != Hint.Property ||
+                    !string.Equals(propertyContext.PropertyName, "type", StringComparison.Ordinal))
+                {
+                    continue;
+                }
+
+                AddSuppressedSchema(builder, seen, propertyContext);
+
+                if (propertyContext.ResolvedReference is { } resolvedPropertyContext)
+                {
+                    AddSuppressedSchema(builder, seen, resolvedPropertyContext);
+                }
+            }
+        }
+
+        return builder.ToImmutable();
+    }
+
+    private static void AddSuppressedSchema(
+        ImmutableArray<SchemaContext>.Builder builder,
+        HashSet<SchemaContext> seen,
+        SchemaContext schemaContext)
+    {
+        if (schemaContext.IsComponent ||
+            schemaContext.IsReference ||
+            !seen.Add(schemaContext))
+        {
+            return;
+        }
+
+        builder.Add(schemaContext);
+    }
+
+    private static ImmutableArray<TypeData> CreateGeneratedTypes(
+        string @namespace,
+        PolymorphicFormatMatch match)
+    {
+        var builder = ImmutableArray.CreateBuilder<TypeData>(
+            1 + match.StringVariants.Length + match.ObjectVariants.Length);
+
+        builder.Add(CreateGeneratedType(@namespace, match.BaseClassName));
+
+        foreach (var variant in match.StringVariants)
+        {
+            builder.Add(CreateGeneratedType(@namespace, variant.ClassName));
+        }
+
+        foreach (var variant in match.ObjectVariants)
+        {
+            builder.Add(CreateGeneratedType(@namespace, variant.ClassName));
+        }
+
+        return builder.ToImmutable();
+    }
+
+    private static TypeData CreateGeneratedType(string @namespace, string className)
+    {
+        return (TypeData.Default with
+        {
+            CSharpTypeRaw = $"global::{@namespace}.{className}",
+            CSharpTypeNullability = false,
+            IsValueType = false,
+            Namespace = @namespace,
+            GeneratedNamespace = @namespace,
+        }).WithCSharpComputedValues();
     }
 
     /// <summary>

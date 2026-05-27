@@ -1,5 +1,12 @@
 using AutoSDK.Generation;
 using AutoSDK.Models;
+using AutoSDK.Serialization.Json;
+using Microsoft.CodeAnalysis;
+using Microsoft.CodeAnalysis.CSharp;
+using System.Collections;
+using System.Reflection;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 using System.Text.RegularExpressions;
 
 namespace AutoSDK.UnitTests;
@@ -136,6 +143,17 @@ public class PolymorphicArrayDetectionTests
         GeneratePolymorphicArrayHelpers = flag,
     };
 
+    private static Settings BuildContextSettings(bool flag) => BuildSettings(flag) with
+    {
+        FromCli = true,
+        GenerateMethods = false,
+        GenerateSdk = false,
+        GenerateJsonSerializerContextTypes = true,
+        JsonSerializerContext = "Demo.SourceGenerationContext",
+        JsonSerializerType = JsonSerializerType.SystemTextJson,
+        TargetFramework = "net10.0",
+    };
+
     [TestMethod]
     public void Pipeline_WhenFlagOff_EmitsNoPolymorphicFormatFiles()
     {
@@ -241,6 +259,106 @@ public class PolymorphicArrayDetectionTests
     }
 
     [TestMethod]
+    public void Pipeline_WhenFlagOn_RegistersGeneratedVariantsAndSuppressesLegacyArtifacts()
+    {
+        var settings = BuildContextSettings(flag: true);
+        var data = CSharpPipeline.PrepareAndEnrich(((FirecrawlShapedSpec, settings), settings));
+
+        data.Classes.Select(static model => model.ClassName)
+            .Should()
+            .Equal("ScrapeRequest");
+        data.Enums.Should().BeEmpty("the rewritten polymorphic-array variants should no longer emit inline enum wrappers");
+
+        var emittedTypeNames = data.Types
+            .Select(static type => type.CSharpTypeWithoutNullability)
+            .ToArray();
+
+        emittedTypeNames.Should().Contain(
+        [
+            "global::Demo.ScrapeRequestFormatsItem",
+            "global::Demo.MarkdownFormat",
+            "global::Demo.HtmlFormat",
+            "global::Demo.LinksFormat",
+            "global::Demo.JsonFormat",
+            "global::Demo.HighlightsFormat",
+        ]);
+        emittedTypeNames.Should().NotContain(
+            static typeName => typeName.Contains("FormatEnum", StringComparison.Ordinal),
+            "the old inline oneOf helper artifacts should disappear once the array is rewritten to the generated hierarchy");
+
+        var jsonSerializerContext = CSharpPipeline.GenerateFiles(data)
+            .Single(static file => file.Name.EndsWith("JsonSerializerContext.g.cs", StringComparison.Ordinal));
+
+        jsonSerializerContext.Text.Should().Contain("typeof(global::Demo.MarkdownFormat)");
+        jsonSerializerContext.Text.Should().Contain("typeof(global::Demo.HtmlFormat)");
+        jsonSerializerContext.Text.Should().Contain("typeof(global::Demo.LinksFormat)");
+        jsonSerializerContext.Text.Should().Contain("typeof(global::Demo.JsonFormat)");
+        jsonSerializerContext.Text.Should().Contain("typeof(global::Demo.HighlightsFormat)");
+    }
+
+    [TestMethod]
+    public void GeneratedFiles_WhenFlagOn_CompileAndRoundTripPolymorphicArraysWithSourceGeneratedContext()
+    {
+        var settings = BuildContextSettings(flag: true);
+        var data = CSharpPipeline.PrepareAndEnrich(((FirecrawlShapedSpec, settings), settings));
+        var files = CSharpPipeline.GenerateFiles(data);
+        var assembly = CompileGeneratedAssembly("DemoPolymorphicRoundTrip", files);
+
+        var requestType = assembly.GetType("Demo.ScrapeRequest", throwOnError: true)!;
+        var baseType = assembly.GetType("Demo.ScrapeRequestFormatsItem", throwOnError: true)!;
+        var markdownType = assembly.GetType("Demo.MarkdownFormat", throwOnError: true)!;
+        var jsonFormatType = assembly.GetType("Demo.JsonFormat", throwOnError: true)!;
+        var highlightsType = assembly.GetType("Demo.HighlightsFormat", throwOnError: true)!;
+        var contextType = assembly.GetType("Demo.SourceGenerationContext", throwOnError: true)!;
+
+        var request = Activator.CreateInstance(requestType)
+            ?? throw new InvalidOperationException("Failed to create ScrapeRequest instance.");
+        var formats = (IList)(Activator.CreateInstance(typeof(List<>).MakeGenericType(baseType))
+            ?? throw new InvalidOperationException("Failed to create formats list."));
+
+        formats.Add(Activator.CreateInstance(markdownType)
+            ?? throw new InvalidOperationException("Failed to create MarkdownFormat instance."));
+
+        var jsonFormat = Activator.CreateInstance(jsonFormatType)
+            ?? throw new InvalidOperationException("Failed to create JsonFormat instance.");
+        SetPropertyValue(jsonFormat, "Prompt", "Extract entities");
+        SetPropertyValue(jsonFormat, "MaxItems", 3);
+        formats.Add(jsonFormat);
+
+        var highlights = Activator.CreateInstance(highlightsType)
+            ?? throw new InvalidOperationException("Failed to create HighlightsFormat instance.");
+        SetPropertyValue(highlights, "Query", "key facts");
+        formats.Add(highlights);
+
+        SetPropertyValue(request, "Formats", formats);
+
+        var context = (JsonSerializerContext)(contextType
+            .GetProperty("Default", BindingFlags.Public | BindingFlags.Static)?
+            .GetValue(null)
+            ?? throw new InvalidOperationException("SourceGenerationContext.Default was not generated."));
+
+        var json = JsonSerializer.Serialize(request, requestType, context);
+
+        json.Should().Be(
+            "{\"formats\":[\"markdown\",{\"type\":\"json\",\"prompt\":\"Extract entities\",\"maxItems\":3},{\"type\":\"highlights\",\"query\":\"key facts\"}]}");
+
+        var roundTrippedRequest = JsonSerializer.Deserialize(json, requestType, context);
+        roundTrippedRequest.Should().NotBeNull();
+
+        var roundTrippedFormats = ((IEnumerable?)requestType.GetProperty("Formats")?.GetValue(roundTrippedRequest))
+            ?.Cast<object>()
+            .ToArray();
+
+        roundTrippedFormats.Should().NotBeNull();
+        roundTrippedFormats!.Select(static item => item.GetType().Name)
+            .Should()
+            .Equal("MarkdownFormat", "JsonFormat", "HighlightsFormat");
+        GetPropertyValue(roundTrippedFormats[1], "Prompt").Should().Be("Extract entities");
+        GetPropertyValue(roundTrippedFormats[1], "MaxItems").Should().Be(3);
+        GetPropertyValue(roundTrippedFormats[2], "Query").Should().Be("key facts");
+    }
+
+    [TestMethod]
     public void Pipeline_NonMatchingShape_EmitsNothing()
     {
         // Plain string array — not a polymorphic-format shape.
@@ -312,5 +430,125 @@ public class PolymorphicArrayDetectionTests
         var files = Sources.PolymorphicArrayClasses(settings, data.Schemas).ToArray();
 
         files.Should().BeEmpty();
+    }
+
+    private static Assembly CompileGeneratedAssembly(
+        string assemblyName,
+        IReadOnlyList<FileWithName> files)
+    {
+        var parseOptions = new CSharpParseOptions(documentationMode: DocumentationMode.Diagnose);
+        var syntaxTrees = files
+            .Select(file => CSharpSyntaxTree.ParseText(
+                file.Text,
+                parseOptions,
+                path: file.Name))
+            .ToArray();
+
+        var references = ((string)AppContext.GetData("TRUSTED_PLATFORM_ASSEMBLIES")!)
+            .Split(Path.PathSeparator)
+            .Where(static path => !string.IsNullOrWhiteSpace(path))
+            .Select(static path => MetadataReference.CreateFromFile(path))
+            .ToArray();
+
+        var compilation = CSharpCompilation.Create(
+            assemblyName,
+            syntaxTrees,
+            references,
+            new CSharpCompilationOptions(OutputKind.DynamicallyLinkedLibrary));
+
+        CSharpGeneratorDriver.Create(
+                generators: [CreateSystemTextJsonSourceGenerator()],
+                parseOptions: parseOptions)
+            .RunGeneratorsAndUpdateCompilation(compilation, out var updatedCompilation, out var generatorDiagnostics);
+
+        var compileDiagnostics = updatedCompilation.GetDiagnostics()
+            .Where(static diagnostic => diagnostic.Severity == DiagnosticSeverity.Error)
+            .Concat(generatorDiagnostics.Where(static diagnostic => diagnostic.Severity == DiagnosticSeverity.Error))
+            .Select(static diagnostic => diagnostic.ToString())
+            .ToArray();
+
+        compileDiagnostics.Should().BeEmpty(
+            "generated polymorphic-array files should compile together with the source-generated STJ context. Found:{0}{1}",
+            Environment.NewLine,
+            string.Join(Environment.NewLine + Environment.NewLine, compileDiagnostics));
+
+        using var peStream = new MemoryStream();
+        var emitResult = updatedCompilation.Emit(peStream);
+        emitResult.Success.Should().BeTrue(
+            "the emitted polymorphic-array assembly should succeed. Found:{0}{1}",
+            Environment.NewLine,
+            string.Join(
+                Environment.NewLine + Environment.NewLine,
+                emitResult.Diagnostics
+                    .Where(static diagnostic => diagnostic.Severity == DiagnosticSeverity.Error)
+                    .Select(static diagnostic => diagnostic.ToString())));
+
+        return Assembly.Load(peStream.ToArray());
+    }
+
+    private static ISourceGenerator CreateSystemTextJsonSourceGenerator()
+    {
+        var generatorAssembly = Assembly.LoadFrom(GetSystemTextJsonSourceGeneratorAssemblyPath());
+        var generatorType = generatorAssembly.GetType(
+            "System.Text.Json.SourceGeneration.JsonSourceGenerator",
+            throwOnError: true)
+            ?? throw new InvalidOperationException("System.Text.Json source generator type was not found.");
+        var generator = Activator.CreateInstance(generatorType)
+            ?? throw new InvalidOperationException("Failed to create the System.Text.Json source generator.");
+
+        return generator switch
+        {
+            ISourceGenerator sourceGenerator => sourceGenerator,
+            IIncrementalGenerator incrementalGenerator => incrementalGenerator.AsSourceGenerator(),
+            _ => throw new InvalidOperationException(
+                $"Unsupported System.Text.Json source generator shape: {generator.GetType().FullName}."),
+        };
+    }
+
+    private static string GetSystemTextJsonSourceGeneratorAssemblyPath()
+    {
+        var runtimeDirectory = Path.GetDirectoryName(typeof(object).Assembly.Location)
+            ?? throw new InvalidOperationException("Could not resolve the runtime directory.");
+        var dotnetRoot = Path.GetFullPath(Path.Combine(runtimeDirectory, "..", "..", ".."));
+        var runtimeVersion = new DirectoryInfo(runtimeDirectory).Name;
+        var exactMatch = Path.Combine(
+            dotnetRoot,
+            "packs",
+            "Microsoft.NETCore.App.Ref",
+            runtimeVersion,
+            "analyzers",
+            "dotnet",
+            "cs",
+            "System.Text.Json.SourceGeneration.dll");
+
+        if (File.Exists(exactMatch))
+        {
+            return exactMatch;
+        }
+
+        var fallback = Directory.GetFiles(
+                Path.Combine(dotnetRoot, "packs"),
+                "System.Text.Json.SourceGeneration.dll",
+                SearchOption.AllDirectories)
+            .Where(path => path.Contains(
+                $"{Path.DirectorySeparatorChar}Microsoft.NETCore.App.Ref{Path.DirectorySeparatorChar}",
+                StringComparison.Ordinal))
+            .OrderByDescending(static path => path, StringComparer.Ordinal)
+            .FirstOrDefault();
+
+        return fallback
+            ?? throw new InvalidOperationException("Could not locate System.Text.Json.SourceGeneration.dll.");
+    }
+
+    private static void SetPropertyValue(object instance, string propertyName, object? value)
+    {
+        instance.GetType().GetProperty(propertyName, BindingFlags.Instance | BindingFlags.Public)?
+            .SetValue(instance, value);
+    }
+
+    private static object? GetPropertyValue(object instance, string propertyName)
+    {
+        return instance.GetType().GetProperty(propertyName, BindingFlags.Instance | BindingFlags.Public)?
+            .GetValue(instance);
     }
 }
