@@ -125,6 +125,23 @@ public static partial class Sources
     }
 
     /// <summary>
+    /// Couples the detected polymorphic match with the source array-items context that produced it.
+    /// </summary>
+    internal sealed class PolymorphicFormatMatchCandidate
+    {
+        public PolymorphicFormatMatchCandidate(
+            SchemaContext sourceSchemaContext,
+            PolymorphicFormatMatch match)
+        {
+            SourceSchemaContext = sourceSchemaContext;
+            Match = match;
+        }
+
+        public SchemaContext SourceSchemaContext { get; }
+        public PolymorphicFormatMatch Match { get; }
+    }
+
+    /// <summary>
     /// Walks <paramref name="schemas"/>, returns one <see cref="PolymorphicFormatMatch"/> per
     /// schema whose shape matches the polymorphic-array pattern. Pure / side-effect free.
     /// </summary>
@@ -141,7 +158,7 @@ public static partial class Sources
     {
         schemas = schemas ?? throw new ArgumentNullException(nameof(schemas));
 
-        var matches = new List<PolymorphicFormatMatch>();
+        var matchCandidates = new List<PolymorphicFormatMatchCandidate>();
         var seenQualifiedTypeNames = new HashSet<string>(StringComparer.Ordinal);
 
         foreach (var schemaContext in schemas)
@@ -151,17 +168,33 @@ public static partial class Sources
                 continue;
             }
 
-            matches.Add(match!);
+            matchCandidates.Add(new PolymorphicFormatMatchCandidate(schemaContext, match!));
         }
 
-        matches = ResolveVariantNameCollisions(matches);
+        if (matchCandidates.Count == 0)
+        {
+            return [];
+        }
+
+        var suppressedSchemasByMatchKey = new Dictionary<string, ImmutableArray<SchemaContext>>(StringComparer.Ordinal);
+        var suppressedSchemas = new HashSet<SchemaContext>();
+        foreach (var matchCandidate in matchCandidates)
+        {
+            var matchKey = GetMatchKey(matchCandidate.Match);
+            var suppressed = CollectSuppressedSchemas(matchCandidate.SourceSchemaContext);
+            suppressedSchemasByMatchKey[matchKey] = suppressed;
+            suppressedSchemas.UnionWith(suppressed);
+        }
+
+        var reservedGeneratedTypeNames = CollectReservedGeneratedTypeNames(schemas, suppressedSchemas);
+        var matches = ResolveVariantNameCollisions(matchCandidates, reservedGeneratedTypeNames);
 
         var plans = new List<PolymorphicFormatEmissionPlan>(matches.Count);
         foreach (var match in matches)
         {
             plans.Add(new PolymorphicFormatEmissionPlan(
                 match: match,
-                suppressedSchemas: CollectSuppressedSchemas(FindMatchSchemaContext(schemas, match)),
+                suppressedSchemas: suppressedSchemasByMatchKey[GetMatchKey(match)],
                 generatedTypes: CreateGeneratedTypes(match)));
         }
 
@@ -427,30 +460,82 @@ public static partial class Sources
         return builder.ToImmutable();
     }
 
-    private static List<PolymorphicFormatMatch> ResolveVariantNameCollisions(
-        List<PolymorphicFormatMatch> matches)
+    private static Dictionary<string, ImmutableHashSet<string>> CollectReservedGeneratedTypeNames(
+        IReadOnlyList<SchemaContext> schemas,
+        HashSet<SchemaContext> suppressedSchemas)
     {
-        if (matches.Count < 2)
+        var reservedNamesByNamespace = new Dictionary<string, HashSet<string>>(StringComparer.Ordinal);
+
+        foreach (var schema in schemas)
         {
-            return [..matches];
+            if (schema.IsReference ||
+                suppressedSchemas.Contains(schema) ||
+                schema.IsAnyOfLikeStructure)
+            {
+                continue;
+            }
+
+            AddReservedGeneratedTypeName(reservedNamesByNamespace, schema.ClassData);
+            AddReservedGeneratedTypeName(reservedNamesByNamespace, schema.EnumData);
+        }
+
+        return reservedNamesByNamespace.ToDictionary(
+            static entry => entry.Key,
+            static entry => entry.Value.ToImmutableHashSet(StringComparer.Ordinal),
+            StringComparer.Ordinal);
+    }
+
+    private static void AddReservedGeneratedTypeName(
+        Dictionary<string, HashSet<string>> reservedNamesByNamespace,
+        ModelData? modelData)
+    {
+        if (modelData is not { } resolvedModelData ||
+            resolvedModelData.ClassName.Length == 0 ||
+            string.IsNullOrWhiteSpace(resolvedModelData.Namespace))
+        {
+            return;
+        }
+
+        if (!reservedNamesByNamespace.TryGetValue(resolvedModelData.Namespace, out var reservedNames))
+        {
+            reservedNames = new HashSet<string>(StringComparer.Ordinal);
+            reservedNamesByNamespace[resolvedModelData.Namespace] = reservedNames;
+        }
+
+        reservedNames.Add(resolvedModelData.ClassName);
+    }
+
+    private static List<PolymorphicFormatMatch> ResolveVariantNameCollisions(
+        List<PolymorphicFormatMatchCandidate> matchCandidates,
+        Dictionary<string, ImmutableHashSet<string>> reservedGeneratedTypeNames)
+    {
+        if (matchCandidates.Count == 0)
+        {
+            return [];
         }
 
         var resolvedMatches = new Dictionary<string, PolymorphicFormatMatch>(StringComparer.Ordinal);
 
-        foreach (var namespaceGroup in matches.GroupBy(
-                     static match => match.GeneratedNamespace,
+        foreach (var namespaceGroup in matchCandidates.GroupBy(
+                     static matchCandidate => matchCandidate.Match.GeneratedNamespace,
                      StringComparer.Ordinal))
         {
             var variantNameCounts = namespaceGroup
-                .SelectMany(GetVariantClassNames)
+                .SelectMany(static matchCandidate => GetVariantClassNames(matchCandidate.Match))
                 .GroupBy(static className => className, StringComparer.Ordinal)
                 .ToDictionary(static group => group.Key, static group => group.Count(), StringComparer.Ordinal);
-            var reservedClassNames = new HashSet<string>(
-                namespaceGroup.Select(static match => match.BaseClassName),
-                StringComparer.Ordinal);
+            var reservedClassNames = reservedGeneratedTypeNames.TryGetValue(namespaceGroup.Key, out var reservedNames)
+                ? new HashSet<string>(reservedNames, StringComparer.Ordinal)
+                : new HashSet<string>(StringComparer.Ordinal);
 
-            foreach (var match in namespaceGroup)
+            foreach (var matchCandidate in namespaceGroup)
             {
+                reservedClassNames.Add(matchCandidate.Match.BaseClassName);
+            }
+
+            foreach (var matchCandidate in namespaceGroup)
+            {
+                var match = matchCandidate.Match;
                 var stringVariants = RenameStringVariants(match, variantNameCounts, reservedClassNames);
                 var objectVariants = RenameObjectVariants(match, variantNameCounts, reservedClassNames);
                 resolvedMatches.Add(
@@ -465,7 +550,7 @@ public static partial class Sources
             }
         }
 
-        return matches.Select(match => resolvedMatches[GetMatchKey(match)]).ToList();
+        return matchCandidates.Select(matchCandidate => resolvedMatches[GetMatchKey(matchCandidate.Match)]).ToList();
     }
 
     private static IEnumerable<string> GetVariantClassNames(PolymorphicFormatMatch match)
@@ -559,16 +644,6 @@ public static partial class Sources
     private static string GetMatchKey(PolymorphicFormatMatch match)
     {
         return $"{match.GeneratedNamespace}.{match.BaseClassName}";
-    }
-
-    private static SchemaContext FindMatchSchemaContext(
-        IReadOnlyList<SchemaContext> schemas,
-        PolymorphicFormatMatch match)
-    {
-        return schemas.First(schema =>
-            schema.Hint == Hint.ArrayItem &&
-            string.Equals(schema.GetGeneratedNamespace(), match.GeneratedNamespace, StringComparison.Ordinal) &&
-            string.Equals(DerivePolymorphicFormatBaseName(schema), match.BaseClassName, StringComparison.Ordinal));
     }
 
     private static TypeData CreateGeneratedType(string @namespace, string className)

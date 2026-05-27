@@ -236,6 +236,52 @@ public class PolymorphicArrayDetectionTests
                                                                          type: string
                                                      """;
 
+    private const string ExistingGeneratedTypeCollisionSpec = """
+                                                              openapi: 3.1.0
+                                                              info:
+                                                                title: Existing Generated Type Collision Demo
+                                                                version: 1.0.0
+                                                              paths:
+                                                                /scrape:
+                                                                  post:
+                                                                    operationId: scrape
+                                                                    requestBody:
+                                                                      required: true
+                                                                      content:
+                                                                        application/json:
+                                                                          schema:
+                                                                            $ref: '#/components/schemas/ScrapeRequest'
+                                                                    responses:
+                                                                      '200':
+                                                                        description: ok
+                                                              components:
+                                                                schemas:
+                                                                  MarkdownFormat:
+                                                                    type: object
+                                                                    properties:
+                                                                      label:
+                                                                        type: string
+                                                                  JsonFormat:
+                                                                    type: string
+                                                                    enum: [strict, lenient]
+                                                                  ScrapeRequest:
+                                                                    type: object
+                                                                    properties:
+                                                                      formats:
+                                                                        type: array
+                                                                        items:
+                                                                          oneOf:
+                                                                            - type: string
+                                                                              enum: [markdown]
+                                                                            - type: object
+                                                                              properties:
+                                                                                type:
+                                                                                  type: string
+                                                                                  enum: [json]
+                                                                                mode:
+                                                                                  $ref: '#/components/schemas/JsonFormat'
+                                                              """;
+
     private static Settings BuildSettings(bool flag) => Settings.Default with
     {
         Namespace = "Demo",
@@ -552,6 +598,50 @@ public class PolymorphicArrayDetectionTests
         assembly.GetType("Demo.SecondRequestFormatsItemMarkdownFormat", throwOnError: true).Should().NotBeNull();
         assembly.GetType("Demo.FirstRequestFormatsItemJsonFormat", throwOnError: true).Should().NotBeNull();
         assembly.GetType("Demo.SecondRequestFormatsItemJsonFormat", throwOnError: true).Should().NotBeNull();
+    }
+
+    [TestMethod]
+    public void Pipeline_WhenVariantNamesCollideWithExistingGeneratedTypes_ScopesPolymorphicSubclassNames()
+    {
+        var settings = BuildContextSettings(flag: true);
+        var data = CSharpPipeline.PrepareAndEnrich(((ExistingGeneratedTypeCollisionSpec, settings), settings));
+        var files = CSharpPipeline.GenerateFiles(data);
+
+        data.Types.Select(static type => type.CSharpTypeWithoutNullability)
+            .Should()
+            .Contain(
+            [
+                "global::Demo.MarkdownFormat",
+                "global::Demo.JsonFormat",
+                "global::Demo.ScrapeRequestFormatsItem",
+                "global::Demo.ScrapeRequestFormatsItemMarkdownFormat",
+                "global::Demo.ScrapeRequestFormatsItemJsonFormat",
+            ]);
+
+        var polymorphicFile = files.Single(static file => file.Name == "Demo.Models.ScrapeRequestFormatsItem.g.cs");
+        polymorphicFile.Text.Should().Contain("typeof(global::Demo.ScrapeRequestFormatsItemMarkdownFormat)");
+        polymorphicFile.Text.Should().Contain("typeof(global::Demo.ScrapeRequestFormatsItemJsonFormat)");
+        polymorphicFile.Text.Should().Contain("public sealed partial class ScrapeRequestFormatsItemMarkdownFormat : global::Demo.ScrapeRequestFormatsItem");
+        polymorphicFile.Text.Should().Contain("public sealed partial class ScrapeRequestFormatsItemJsonFormat : global::Demo.ScrapeRequestFormatsItem");
+        polymorphicFile.Text.Should().Contain("public global::Demo.JsonFormat? Mode { get; set; }");
+        polymorphicFile.Text.Should().NotContain("[global::Demo.AutoSDKPolymorphicFormatVariant(\"markdown\", typeof(global::Demo.MarkdownFormat))]");
+        polymorphicFile.Text.Should().NotContain("[global::Demo.AutoSDKPolymorphicFormatVariant(\"json\", typeof(global::Demo.JsonFormat))]");
+
+        var jsonSerializerContext = files.Single(static file => file.Name.EndsWith("JsonSerializerContext.g.cs", StringComparison.Ordinal));
+        jsonSerializerContext.Text.Should().Contain("typeof(global::Demo.MarkdownFormat)");
+        jsonSerializerContext.Text.Should().Contain("typeof(global::Demo.JsonFormat)");
+        jsonSerializerContext.Text.Should().Contain("typeof(global::Demo.ScrapeRequestFormatsItemMarkdownFormat)");
+        jsonSerializerContext.Text.Should().Contain("typeof(global::Demo.ScrapeRequestFormatsItemJsonFormat)");
+
+        var assembly = CompileGeneratedAssembly("DemoPolymorphicGeneratedTypeCollisions", files);
+        assembly.GetType("Demo.MarkdownFormat", throwOnError: true).Should().NotBeNull();
+        assembly.GetType("Demo.JsonFormat", throwOnError: true).Should().NotBeNull();
+        assembly.GetType("Demo.ScrapeRequestFormatsItemMarkdownFormat", throwOnError: true)!.BaseType!.FullName
+            .Should().Be("Demo.ScrapeRequestFormatsItem");
+        Nullable.GetUnderlyingType(
+                assembly.GetType("Demo.ScrapeRequestFormatsItemJsonFormat", throwOnError: true)!.GetProperty("Mode")!.PropertyType)!
+            .FullName
+            .Should().Be("Demo.JsonFormat");
     }
 
     [TestMethod]
