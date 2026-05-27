@@ -1,5 +1,8 @@
 using AutoSDK.Generation;
 using AutoSDK.Models;
+using Microsoft.CodeAnalysis;
+using Microsoft.CodeAnalysis.CSharp;
+using System.Reflection;
 
 namespace AutoSDK.UnitTests;
 
@@ -564,6 +567,215 @@ public class RequestOptionsGenerationTests
     }
 
     [TestMethod]
+    public void AutoPaging_Companions_CompileWithoutXmlDocOrSignatureErrors()
+    {
+        var settings = DefaultSettings with { GeneratePageableHelpers = true };
+        var companionSource = $$"""
+#nullable enable
+
+namespace G
+{
+    public partial class Api
+    {
+        public global::System.Threading.Tasks.Task<ListAssistantsResponse> ListAssistantsAsync(
+            string? startingAfter = null,
+            int? limit = null,
+            global::System.Threading.CancellationToken cancellationToken = default)
+            => throw new global::System.NotImplementedException();
+{{GetGeneratedPageableCompanion(
+    """
+    openapi: 3.0.3
+    info:
+      title: PageableStartingAfterCompile
+      version: 1.0.0
+    paths:
+      /assistants:
+        get:
+          operationId: listAssistants
+          parameters:
+            - in: query
+              name: starting_after
+              schema:
+                type: string
+            - in: query
+              name: limit
+              schema:
+                type: integer
+          responses:
+            '200':
+              description: OK
+              content:
+                application/json:
+                  schema:
+                    $ref: '#/components/schemas/ListAssistantsResponse'
+    components:
+      schemas:
+        ListAssistantsResponse:
+          type: object
+          required: [data, last_id, has_more]
+          properties:
+            data:
+              type: array
+              items:
+                $ref: '#/components/schemas/Assistant'
+            last_id:
+              type: string
+            has_more:
+              type: boolean
+        Assistant:
+          type: object
+          properties:
+            id:
+              type: string
+    """,
+    settings)}}
+
+        public global::System.Threading.Tasks.Task<ListSkillsResponse> ListSkillsAsync(
+            string? page = null,
+            int? limit = null,
+            global::System.Threading.CancellationToken cancellationToken = default)
+            => throw new global::System.NotImplementedException();
+{{GetGeneratedPageableCompanion(
+    """
+    openapi: 3.0.3
+    info:
+      title: PageableStringPageCompile
+      version: 1.0.0
+    paths:
+      /skills:
+        get:
+          operationId: listSkills
+          parameters:
+            - in: query
+              name: page
+              schema:
+                type: string
+            - in: query
+              name: limit
+              schema:
+                type: integer
+          responses:
+            '200':
+              description: OK
+              content:
+                application/json:
+                  schema:
+                    $ref: '#/components/schemas/ListSkillsResponse'
+    components:
+      schemas:
+        ListSkillsResponse:
+          type: object
+          required: [data, next_page]
+          properties:
+            data:
+              type: array
+              items:
+                $ref: '#/components/schemas/Skill'
+            next_page:
+              anyOf:
+                - type: string
+                - type: 'null'
+        Skill:
+          type: object
+          properties:
+            id:
+              type: string
+    """,
+    settings)}}
+
+        public global::System.Threading.Tasks.Task<ListMessagesResponse> ListMessagesAsync(
+            int? page = null,
+            global::System.Threading.CancellationToken cancellationToken = default)
+            => throw new global::System.NotImplementedException();
+{{GetGeneratedPageableCompanion(
+    """
+    openapi: 3.0.3
+    info:
+      title: OffsetHasMoreRequiredCompile
+      version: 1.0.0
+    paths:
+      /messages:
+        get:
+          operationId: listMessages
+          parameters:
+            - in: query
+              name: page
+              schema:
+                type: integer
+          responses:
+            '200':
+              description: OK
+              content:
+                application/json:
+                  schema:
+                    $ref: '#/components/schemas/ListMessagesResponse'
+    components:
+      schemas:
+        ListMessagesResponse:
+          type: object
+          required: [items, has_more]
+          properties:
+            items:
+              type: array
+              items:
+                $ref: '#/components/schemas/Message'
+            has_more:
+              type: boolean
+        Message:
+          type: object
+          properties:
+            id:
+              type: string
+    """,
+    settings)}}
+    }
+
+    public sealed class AutoSDKHttpResponse<T>
+    {
+        public T Body { get; set; } = default!;
+        public global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IEnumerable<string>> Headers { get; } = new(global::System.StringComparer.OrdinalIgnoreCase);
+    }
+
+    public sealed class ListAssistantsResponse
+    {
+        public global::System.Collections.Generic.List<Assistant>? Data { get; set; }
+        public string? LastId { get; set; }
+        public bool HasMore { get; set; }
+    }
+
+    public sealed class Assistant
+    {
+    }
+
+    public sealed class ListSkillsResponse
+    {
+        public global::System.Collections.Generic.List<Skill>? Data { get; set; }
+        public string? NextPage { get; set; }
+    }
+
+    public sealed class Skill
+    {
+    }
+
+    public sealed class ListMessagesResponse
+    {
+        public global::System.Collections.Generic.List<Message>? Items { get; set; }
+        public bool HasMore { get; set; }
+    }
+
+    public sealed class Message
+    {
+    }
+}
+""";
+
+        var pageableHelpers = Sources.PageableHelpers(settings);
+        AssertCompilesWithoutPageableDiagnostics(
+            ("G.PageableCompanions.g.cs", companionSource),
+            (pageableHelpers.Name, pageableHelpers.Text));
+    }
+
+    [TestMethod]
     public void GeneratePromptTemplateHelpers_NamesDtosWithAutoSDKPrefixToAvoidProviderCollisions()
     {
         var settings = (CSharpSettings)DefaultSettings;
@@ -993,5 +1205,61 @@ public class RequestOptionsGenerationTests
         source.Should().Contain(".Validate(static options => options.ApiUrl is not null, \"IXSocial:ApiUrl is missing\")");
         source.Should().Contain("optionsBuilder.ValidateOnStart()");
         source.Should().Contain(".GetRequiredService<IOptions<global::IXSocial.IXSocialOptions>>()");
+    }
+
+    private static string GetGeneratedPageableCompanion(string yaml, CSharpSettings settings)
+    {
+        var data = AutoSDK.Generation.Data.Prepare(((yaml, settings), settings));
+        var endpoint = data.Methods.Single();
+        var method = typeof(Sources).GetMethod("GenerateAutoPagingCompanion", BindingFlags.NonPublic | BindingFlags.Static)
+            ?? throw new InvalidOperationException("GenerateAutoPagingCompanion source factory was not found.");
+
+        return (string)(method.Invoke(null, [endpoint, false])
+            ?? throw new InvalidOperationException("GenerateAutoPagingCompanion returned null."));
+    }
+
+    private static void AssertCompilesWithoutPageableDiagnostics(params (string Name, string Text)[] sources)
+    {
+        var syntaxTrees = sources
+            .Select(static source => CSharpSyntaxTree.ParseText(
+                source.Text,
+                new CSharpParseOptions(documentationMode: DocumentationMode.Diagnose),
+                path: source.Name))
+            .ToArray();
+
+        var references = ((string)AppContext.GetData("TRUSTED_PLATFORM_ASSEMBLIES")!)
+            .Split(global::System.IO.Path.PathSeparator)
+            .Where(static path => !string.IsNullOrEmpty(path))
+            .Select(static path => MetadataReference.CreateFromFile(path))
+            .ToArray();
+
+        var compilation = CSharpCompilation.Create(
+            assemblyName: "AutoSDKPageableDocCheck",
+            syntaxTrees: syntaxTrees,
+            references: references,
+            options: new CSharpCompilationOptions(OutputKind.DynamicallyLinkedLibrary));
+
+        var diagnostics = compilation.GetDiagnostics()
+            .Where(static diagnostic =>
+                diagnostic.Severity == DiagnosticSeverity.Error ||
+                diagnostic.Severity == DiagnosticSeverity.Warning)
+            .ToArray();
+
+        diagnostics
+            .Where(static diagnostic => diagnostic.Id is
+                "CS1570" or // XML comment has badly formed XML
+                "CS1584" or // XML comment has syntactically incorrect cref attribute
+                "CS1658" or // Type parameter declaration must be an identifier not a type
+                "CS0081" or // Type parameter declaration must be an identifier not a type
+                "CS0419")   // Ambiguous reference in cref attribute
+            .Select(static diagnostic => diagnostic.ToString())
+            .Should()
+            .BeEmpty();
+
+        diagnostics
+            .Where(static diagnostic => diagnostic.Severity == DiagnosticSeverity.Error)
+            .Select(static diagnostic => diagnostic.ToString())
+            .Should()
+            .BeEmpty();
     }
 }
