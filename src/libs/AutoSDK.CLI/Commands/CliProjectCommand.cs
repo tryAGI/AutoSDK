@@ -973,6 +973,7 @@ internal sealed record CliProjectWebhookUsage(
     string BasePropertyName,
     string ModelTypeName,
     string? UrlPropertyName,
+    bool UrlIsRequired,
     string? HeadersPropertyName,
     string? HeadersTypeName,
     string? MetadataPropertyName,
@@ -1316,6 +1317,7 @@ internal sealed record CliProjectOperation(
                     BasePropertyName: BaseBodyPropertyName(parameter),
                     ModelTypeName: parameter.Type.CSharpTypeWithoutNullability,
                     UrlPropertyName: HasProperty(urlProperty) ? urlProperty.Name : null,
+                    UrlIsRequired: HasProperty(urlProperty) && urlProperty.IsRequired,
                     HeadersPropertyName: HasProperty(headersProperty) ? headersProperty.Name : null,
                     HeadersTypeName: HasProperty(headersProperty) ? headersProperty.Type.CSharpType : null,
                     MetadataPropertyName: HasProperty(metadataProperty) ? metadataProperty.Name : null,
@@ -1487,7 +1489,14 @@ internal static class CliProjectScaffolder
                 kebabName.Length > tagKebab.Length + 1 &&
                 kebabName.StartsWith(tagKebab + "-", StringComparison.Ordinal))
             {
-                return kebabName.Substring(tagKebab.Length + 1);
+                var remainder = kebabName.Substring(tagKebab.Length + 1);
+                if (remainder.StartsWith("and-", StringComparison.Ordinal) ||
+                    remainder.StartsWith("or-", StringComparison.Ordinal))
+                {
+                    continue;
+                }
+
+                return remainder;
             }
         }
 
@@ -1943,17 +1952,17 @@ internal static class CliProjectScaffolder
                                      return boolValue;
                                  }
 
-                                 switch (raw.ToLowerInvariant())
+                                 switch (raw.ToUpperInvariant())
                                  {
                                      case "1":
-                                     case "yes":
-                                     case "y":
-                                     case "on":
+                                     case "YES":
+                                     case "Y":
+                                     case "ON":
                                          return true;
                                      case "0":
-                                     case "no":
-                                     case "n":
-                                     case "off":
+                                     case "NO":
+                                     case "N":
+                                     case "OFF":
                                          return false;
                                  }
                              }
@@ -2060,7 +2069,7 @@ internal static class CliProjectScaffolder
                              required: true,
                              cancellationToken).ConfigureAwait(false);
 
-                         var value = JsonSerializer.Deserialize(requestJson, typeof(T), context);
+                         var value = JsonSerializer.Deserialize(requestJson ?? throw new CliException("Request input is required."), typeof(T), context);
                          return value is T typed
                              ? typed
                              : throw new CliException($"Unable to deserialize request JSON as {typeof(T).Name}.");
@@ -2085,7 +2094,7 @@ internal static class CliProjectScaffolder
                              return default;
                          }
 
-                         var value = JsonSerializer.Deserialize(requestJson, typeof(T), context);
+                         var value = JsonSerializer.Deserialize(requestJson!, typeof(T), context);
                          return value is T typed
                              ? typed
                              : throw new CliException($"Unable to deserialize request JSON as {typeof(T).Name}.");
@@ -2103,7 +2112,7 @@ internal static class CliProjectScaffolder
                          var objectNode = new JsonObject();
                          foreach (var pair in pairs)
                          {
-                             var separatorIndex = pair.IndexOf('=');
+                             var separatorIndex = pair.IndexOf('=', StringComparison.Ordinal);
                              if (separatorIndex <= 0 || separatorIndex == pair.Length - 1)
                              {
                                  throw new CliException($"Expected KEY=VALUE but received '{pair}'.");
@@ -2736,19 +2745,14 @@ internal static class CliProjectScaffolder
 
                      private static async Task<AuthProbeResult> ProbeAuthAsync(ParseResult parseResult, CancellationToken cancellationToken = default)
                      {
-                         var sources = new List<AuthSourceProbe>();
-                         AuthSourceProbe? active = null;
-
                          var optionSource = new AuthSourceProbe(
                              Source: "option",
                              DisplayName: "flag (--api-key)",
                              RawValue: parseResult.GetValue(CliOptions.ApiKey),
                              Path: null);
+                         var sources = new List<AuthSourceProbe>();
                          sources.Add(optionSource);
-                         if (active is null && optionSource.Present)
-                         {
-                             active = optionSource;
-                         }
+                         AuthSourceProbe? active = optionSource.Present ? optionSource : null;
 
                          foreach (var environmentVariable in ApiKeyEnvironmentVariables)
                          {
@@ -2867,7 +2871,7 @@ internal static class CliProjectScaffolder
                                      return;
                                  }
 
-                                 await Console.Out.WriteLineAsync($"authenticated: {status.Authenticated.ToString().ToLowerInvariant()}").ConfigureAwait(false);
+                                 await Console.Out.WriteLineAsync($"authenticated: {(status.Authenticated ? "true" : "false")}").ConfigureAwait(false);
                                  await Console.Out.WriteLineAsync($"source: {status.Source}").ConfigureAwait(false);
                                  if (!string.IsNullOrWhiteSpace(status.ApiKeyHint))
                                  {
@@ -3466,7 +3470,10 @@ internal static class CliProjectScaffolder
         var assignments = new List<string>
         {
             $@"
-                                {usage.UrlPropertyName} = {usage.ParameterName}WebhookUrl,"
+                                {usage.UrlPropertyName} = {(
+                                    usage.UrlIsRequired
+                                        ? $"__{usage.ParameterName}WebhookUrlRequired"
+                                        : $"{usage.ParameterName}WebhookUrl")},"
         };
         if (!string.IsNullOrWhiteSpace(usage.HeadersPropertyName))
         {
@@ -3493,6 +3500,12 @@ internal static class CliProjectScaffolder
                         {{
                             throw new CliException(""Specify --{usage.Prefix}-url or include it in the base request body before using other --{usage.Prefix}-* options."");
                         }}
+{(usage.UrlIsRequired
+    ? $@"
+                        var __{usage.ParameterName}WebhookUrlRequired =
+                            {usage.ParameterName}WebhookUrl ??
+                            throw new CliException(""Specify --{usage.Prefix}-url or include it in the base request body before using other --{usage.Prefix}-* options."");"
+    : string.Empty)}
 
                         var {usage.ParameterName} =
                             __{usage.ParameterName}Specified || {baseAccessor} is not null

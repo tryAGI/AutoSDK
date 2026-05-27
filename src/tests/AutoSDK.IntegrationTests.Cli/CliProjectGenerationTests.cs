@@ -172,6 +172,15 @@ paths:
       responses:
         '200':
           description: OK
+  /search:
+    get:
+      operationId: searchAndScrape
+      tags:
+        - Search
+      summary: Search and scrape.
+      responses:
+        '200':
+          description: OK
   /widgets/configure:
     post:
       operationId: configureWidget
@@ -441,6 +450,15 @@ components:
             listCommand.Should().Contain("TryWriteOutputDirectoryAsync");
             listCommand.Should().Contain("@\"$self\"");
 
+            // Firecrawl regression: do not strip the tag token when it is part of the natural verb
+            // phrase ("search-and-scrape"), otherwise the generated command becomes "and-scrape".
+            var searchCommandPath = Directory
+                .EnumerateFiles(Path.Combine(cliDirectory, "Commands"), "*SearchAndScrape*ApiCommand.g.cs")
+                .Single(path => string.Equals(Path.GetFileName(path), "SearchSearchAndScrapeCommandApiCommand.g.cs", StringComparison.Ordinal));
+            var searchCommand = await File.ReadAllTextAsync(searchCommandPath).ConfigureAwait(false);
+            searchCommand.Should().Contain("new Command(@\"search-and-scrape\"");
+            searchCommand.Should().NotContain("new Command(@\"and-scrape\"");
+
             // #341: a create operation with a generated SDK wait companion emits --wait,
             // --poll-interval, and --wait-timeout and dispatches to <Method>WaitAsync.
             var createTaskCommandPath = Directory
@@ -464,7 +482,7 @@ components:
 
             var scrapeCommandPath = Directory
                 .EnumerateFiles(Path.Combine(cliDirectory, "Commands"), "*Scrape*ApiCommand.g.cs")
-                .Single(path => Path.GetFileName(path).Contains("ScrapeCommandApiCommand", StringComparison.Ordinal));
+                .Single(path => string.Equals(Path.GetFileName(path), "ScrapingScrapeCommandApiCommand.g.cs", StringComparison.Ordinal));
             var scrapeCommand = await File.ReadAllTextAsync(scrapeCommandPath).ConfigureAwait(false);
             scrapeCommand.Should().Contain("ScrapeOptionsOptionSet.Create();");
             scrapeCommand.Should().Contain("command.Options.Add(ScrapeOptionsOptionSetOptions.OnlyMainContent);");
@@ -483,6 +501,8 @@ components:
             crawlCommand.Should().Contain("new global::Oag.WebhookConfig");
             crawlCommand.Should().Contain("CliRuntime.SerializeKeyValuePairs");
             crawlCommand.Should().Contain("CliRuntime.SerializeStringArray");
+            crawlCommand.Should().Contain("var __webhookWebhookUrlRequired =");
+            crawlCommand.Should().Contain("Url = __webhookWebhookUrlRequired,");
 
             // #340: a path-template parameter is hoisted to a positional Argument, not a --flag.
             var pathCommandPath = Directory
@@ -533,6 +553,10 @@ components:
             runtime.Should().Contain("FormatHumanReadable");
             runtime.Should().Contain("CliFormatHint");
             runtime.Should().Contain("SerializeKeyValuePairs");
+            runtime.Should().Contain("switch (raw.ToUpperInvariant())");
+            runtime.Should().Contain("requestJson ?? throw new CliException(\"Request input is required.\")");
+            runtime.Should().Contain("requestJson!");
+            runtime.Should().Contain("pair.IndexOf('=', StringComparison.Ordinal)");
             runtime.Should().Contain("SerializeStringArray");
             runtime.Should().Contain("TryWriteOutputDirectoryAsync");
             runtime.Should().Contain("GetCredentialFilePath()");
@@ -548,6 +572,7 @@ components:
             authCommand.Should().Contain("source.DisplayName");
             authCommand.Should().Contain("not present");
             authCommand.Should().Contain("CliOptions.Json");
+            authCommand.Should().Contain("status.Authenticated ? \"true\" : \"false\"");
 
             var cliOptions = await File.ReadAllTextAsync(Path.Combine(cliDirectory, "CliOptions.cs")).ConfigureAwait(false);
             cliOptions.Should().Contain("new(\"--json\")");
