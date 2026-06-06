@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup Label="Base packages">
-    <PackageReference Include="CliWrap" Version="3.10.1" />
+    <PackageReference Include="CliWrap" Version="3.10.2" />
     <PackageReference Include="GitHubActionsTestLogger" Version="3.0.4">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -26,7 +26,7 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.8.0" />
-    <PackageReference Include="Microsoft.OpenApi" Version="3.5.5" />
+    <PackageReference Include="Microsoft.OpenApi" Version="3.6.0" />
     <PackageReference Include="Microsoft.OpenApi.Readers" Version="1.6.29" />
     <PackageReference Include="Google.Protobuf" Version="3.35.0" />
     <PackageReference Include="SharpYaml" Version="3.8.0" />
