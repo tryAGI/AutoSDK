@@ -238,6 +238,8 @@ components:
       properties:
         name:
           type: string
+        input:
+          type: string
         tags:
           type: array
           items:
@@ -418,10 +420,14 @@ components:
             // #343: an object body with optional fields also accepts --request-json/--request-file as
             // an optional base body. Per-field flags override it; the positional/required fields still
             // come from CLI args. Optional fields merge as `flag ?? base?.Prop`.
-            operationCommand.Should().Contain("new(\"--input\")");
+            operationCommand.Should().Contain("Option<string?> InputOption");
+            operationCommand.Should().Contain("name: @\"--input\"");
+            operationCommand.Should().Contain("Option<string?> RequestInput");
+            operationCommand.Should().Contain("new(@\"--request-input\")");
             operationCommand.Should().Contain("--request-json");
             operationCommand.Should().Contain("ReadRequestOrDefaultAsync<global::Oag.CreateWidgetRequest>");
-            operationCommand.Should().Contain("Input,");
+            operationCommand.Should().Contain("RequestInput,");
+            operationCommand.Should().Contain("parseResult.GetValue(InputOption) ?? __requestBase?.Input");
             operationCommand.Should().Contain("parseResult.GetValue(Tags) ?? __requestBase?.Tags");
             operationCommand.Should().Contain("parseResult.GetValue(Enabled) ?? __requestBase?.Enabled");
             operationCommand.Should().Contain("parseResult.GetValue(Priority) ?? __requestBase?.Priority");

@@ -3028,10 +3028,135 @@ internal static class CliProjectScaffolder
                 }}";
     }
 
+    private sealed record CliProjectRequestSourceOptions(
+        string InputSymbol,
+        string InputOptionName,
+        string RequestJsonSymbol,
+        string RequestJsonOptionName,
+        string RequestFileSymbol,
+        string RequestFileOptionName)
+    {
+        public static CliProjectRequestSourceOptions Create(CliProjectOperation operation)
+        {
+            var optionNames = GetGeneratedOptionNames(operation);
+            var input = ChooseRequestSourceOption(
+                defaultSymbol: "Input",
+                defaultOptionName: "--input",
+                alternatives:
+                [
+                    ("RequestInput", "--request-input"),
+                    ("BodyInput", "--body-input"),
+                ],
+                optionNames);
+            var requestJson = ChooseRequestSourceOption(
+                defaultSymbol: "RequestJson",
+                defaultOptionName: "--request-json",
+                alternatives:
+                [
+                    ("RequestBodyJson", "--request-body-json"),
+                    ("BodyJson", "--body-json"),
+                ],
+                optionNames);
+            var requestFile = ChooseRequestSourceOption(
+                defaultSymbol: "RequestFile",
+                defaultOptionName: "--request-file",
+                alternatives:
+                [
+                    ("RequestBodyFile", "--request-body-file"),
+                    ("BodyFile", "--body-file"),
+                ],
+                optionNames);
+
+            return new CliProjectRequestSourceOptions(
+                input.Symbol,
+                input.OptionName,
+                requestJson.Symbol,
+                requestJson.OptionName,
+                requestFile.Symbol,
+                requestFile.OptionName);
+        }
+
+        private static HashSet<string> GetGeneratedOptionNames(CliProjectOperation operation)
+        {
+            var optionNames = new HashSet<string>(StringComparer.Ordinal);
+            foreach (var parameter in operation.OptionParameters)
+            {
+                optionNames.Add($"--{ToKebabCase(parameter.Id)}");
+            }
+
+            foreach (var parameter in operation.DirectOptionSets.SelectMany(static usage => usage.Parameters))
+            {
+                optionNames.Add($"--{ToKebabCase(parameter.Id)}");
+            }
+
+            foreach (var usage in operation.NestedOptionSets)
+            {
+                foreach (var parameter in usage.Parameters)
+                {
+                    optionNames.Add($"--{usage.Prefix}-{ToKebabCase(parameter.Id)}");
+                }
+            }
+
+            foreach (var usage in operation.WebhookUsages)
+            {
+                optionNames.Add($"--{usage.Prefix}-url");
+                if (!string.IsNullOrWhiteSpace(usage.HeadersPropertyName))
+                {
+                    optionNames.Add($"--{usage.Prefix}-header");
+                }
+
+                if (!string.IsNullOrWhiteSpace(usage.MetadataPropertyName))
+                {
+                    optionNames.Add($"--{usage.Prefix}-metadata");
+                }
+
+                if (!string.IsNullOrWhiteSpace(usage.EventsPropertyName))
+                {
+                    optionNames.Add($"--{usage.Prefix}-event");
+                }
+            }
+
+            return optionNames;
+        }
+
+        private static (string Symbol, string OptionName) ChooseRequestSourceOption(
+            string defaultSymbol,
+            string defaultOptionName,
+            IReadOnlyList<(string Symbol, string OptionName)> alternatives,
+            HashSet<string> usedOptionNames)
+        {
+            if (!usedOptionNames.Contains(defaultOptionName))
+            {
+                return (defaultSymbol, defaultOptionName);
+            }
+
+            foreach (var alternative in alternatives)
+            {
+                if (!usedOptionNames.Contains(alternative.OptionName))
+                {
+                    return alternative;
+                }
+            }
+
+            var suffix = 2;
+            while (true)
+            {
+                var optionName = $"{defaultOptionName}-{suffix}";
+                if (!usedOptionNames.Contains(optionName))
+                {
+                    return ($"{defaultSymbol}{suffix}", optionName);
+                }
+
+                suffix++;
+            }
+        }
+    }
+
     private static string GenerateOperationCommand(CliProjectModel model, CliProjectOperation operation)
     {
         var endPoint = operation.EndPoint;
         var description = string.IsNullOrWhiteSpace(endPoint.Summary) ? endPoint.Description : endPoint.Summary;
+        var requestSourceOptions = CliProjectRequestSourceOptions.Create(operation);
         var reusableFields = operation.DirectOptionSets
             .Select(GenerateDirectOptionSetFieldDeclaration)
             .Concat(operation.NestedOptionSets.Select(GenerateNestedOptionSetFieldDeclaration))
@@ -3056,20 +3181,20 @@ internal static class CliProjectScaffolder
             .Concat(operation.WebhookUsages.Select(GenerateWebhookAddSymbols))
             .Inject();
         var requestFields = operation.HasDirectRequestBody || operation.SupportsBaseBody
-            ? """
+            ? $$"""
 
-                    private static Option<string?> Input { get; } = new("--input")
+                    private static Option<string?> {{requestSourceOptions.InputSymbol}} { get; } = new({{Literal(requestSourceOptions.InputOptionName)}})
                     {
                         Description = "Load request JSON from a file path, '-' for stdin, or an inline JSON object/array string.",
                     };
 
-                    private static Option<string?> RequestJson { get; } = new("--request-json")
+                    private static Option<string?> {{requestSourceOptions.RequestJsonSymbol}} { get; } = new({{Literal(requestSourceOptions.RequestJsonOptionName)}})
                     {
                         Description = "Request body as JSON.",
                         Hidden = true,
                     };
 
-                    private static Option<string?> RequestFile { get; } = new("--request-file")
+                    private static Option<string?> {{requestSourceOptions.RequestFileSymbol}} { get; } = new({{Literal(requestSourceOptions.RequestFileOptionName)}})
                     {
                         Description = "Path to a JSON request file, or '-' for stdin.",
                         Hidden = true,
@@ -3098,36 +3223,36 @@ internal static class CliProjectScaffolder
               """
             : string.Empty;
         var addRequestOptions = operation.HasDirectRequestBody
-            ? """
-                        command.Options.Add(Input);
-                        command.Options.Add(RequestJson);
-                        command.Options.Add(RequestFile);
+            ? $$"""
+                        command.Options.Add({{requestSourceOptions.InputSymbol}});
+                        command.Options.Add({{requestSourceOptions.RequestJsonSymbol}});
+                        command.Options.Add({{requestSourceOptions.RequestFileSymbol}});
                         command.Validators.Add(result =>
                         {
-                            var hasInput = result.GetResult(Input) is not null;
-                            var hasRequestJson = result.GetResult(RequestJson) is not null;
-                            var hasRequestFile = result.GetResult(RequestFile) is not null;
+                            var hasInput = result.GetResult({{requestSourceOptions.InputSymbol}}) is not null;
+                            var hasRequestJson = result.GetResult({{requestSourceOptions.RequestJsonSymbol}}) is not null;
+                            var hasRequestFile = result.GetResult({{requestSourceOptions.RequestFileSymbol}}) is not null;
                             var specifiedCount = (hasInput ? 1 : 0) + (hasRequestJson ? 1 : 0) + (hasRequestFile ? 1 : 0);
                             if (specifiedCount != 1)
                             {
-                                result.AddError("Specify exactly one of --input, --request-json, or --request-file.");
+                                result.AddError({{Literal($"Specify exactly one of {requestSourceOptions.InputOptionName}, {requestSourceOptions.RequestJsonOptionName}, or {requestSourceOptions.RequestFileOptionName}.")}});
                             }
                         });
               """
             : operation.SupportsBaseBody
-                ? """
-                            command.Options.Add(Input);
-                            command.Options.Add(RequestJson);
-                            command.Options.Add(RequestFile);
+                ? $$"""
+                            command.Options.Add({{requestSourceOptions.InputSymbol}});
+                            command.Options.Add({{requestSourceOptions.RequestJsonSymbol}});
+                            command.Options.Add({{requestSourceOptions.RequestFileSymbol}});
                             command.Validators.Add(result =>
                             {
-                                var hasInput = result.GetResult(Input) is not null;
-                                var hasRequestJson = result.GetResult(RequestJson) is not null;
-                                var hasRequestFile = result.GetResult(RequestFile) is not null;
+                                var hasInput = result.GetResult({{requestSourceOptions.InputSymbol}}) is not null;
+                                var hasRequestJson = result.GetResult({{requestSourceOptions.RequestJsonSymbol}}) is not null;
+                                var hasRequestFile = result.GetResult({{requestSourceOptions.RequestFileSymbol}}) is not null;
                                 var specifiedCount = (hasInput ? 1 : 0) + (hasRequestJson ? 1 : 0) + (hasRequestFile ? 1 : 0);
                                 if (specifiedCount > 1)
                                 {
-                                    result.AddError("Specify at most one of --input, --request-json, or --request-file.");
+                                    result.AddError({{Literal($"Specify at most one of {requestSourceOptions.InputOptionName}, {requestSourceOptions.RequestJsonOptionName}, or {requestSourceOptions.RequestFileOptionName}.")}});
                                 }
                             });
                   """
@@ -3147,9 +3272,9 @@ internal static class CliProjectScaffolder
                 $@"
                         var __requestBase = await CliRuntime.ReadRequestOrDefaultAsync<{endPoint.RequestType.CSharpTypeWithoutNullability}>(
                             parseResult,
-                            Input,
-                            RequestJson,
-                            RequestFile,
+                            {requestSourceOptions.InputSymbol},
+                            {requestSourceOptions.RequestJsonSymbol},
+                            {requestSourceOptions.RequestFileSymbol},
                             global::{model.JsonSerializerContextFullName}.Default,
                             cancellationToken).ConfigureAwait(false);",
             }
@@ -3172,9 +3297,9 @@ internal static class CliProjectScaffolder
             ? $@"
                         var request = await CliRuntime.ReadRequestAsync<{endPoint.RequestType.CSharpTypeWithoutNullability}>(
                             parseResult,
-                            Input,
-                            RequestJson,
-                            RequestFile,
+                            {requestSourceOptions.InputSymbol},
+                            {requestSourceOptions.RequestJsonSymbol},
+                            {requestSourceOptions.RequestFileSymbol},
                             global::{model.JsonSerializerContextFullName}.Default,
                             cancellationToken).ConfigureAwait(false);"
             : string.Empty;
@@ -3724,7 +3849,11 @@ internal static class CliProjectScaffolder
     {
         return parameter.Name.ToPropertyName() is
             "Name" or "Description" or "Action" or "Children" or "Arguments" or "Options" or "Subcommands" or "Validators" or "Aliases" or
-            "TreatUnmatchedTokensAsErrors" or "FirstParent" or "Hidden" or "Parents" or "Command"
+            "TreatUnmatchedTokensAsErrors" or "FirstParent" or "Hidden" or "Parents" or "Command" or
+            "Input" or "RequestInput" or "BodyInput" or
+            "RequestJson" or "RequestBodyJson" or "BodyJson" or
+            "RequestFile" or "RequestBodyFile" or "BodyFile" or
+            "Wait" or "PollInterval" or "WaitTimeout"
             ? $"{parameter.Name.ToPropertyName()}Option"
             : parameter.Name.ToPropertyName();
     }
