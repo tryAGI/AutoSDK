@@ -240,6 +240,11 @@ components:
           type: string
         input:
           type: string
+        mode:
+          type: string
+          enum:
+            - standard
+            - advanced
         tags:
           type: array
           items:
@@ -406,10 +411,12 @@ components:
             operationCommand.Should().Contain("CliRuntime.CreateNullableBoolOption");
             operationCommand.Should().Contain("@\"--enabled\"");
             operationCommand.Should().Contain("@\"--priority\"");
+            operationCommand.Should().Contain("Option<global::Oag.CreateWidgetRequestMode?> Mode");
             operationCommand.Should().Contain("name: name,");
             operationCommand.Should().Contain("tags: tags,");
             operationCommand.Should().Contain("enabled: enabled,");
             operationCommand.Should().Contain("priority: priority,");
+            operationCommand.Should().Contain("mode: mode,");
             operationCommand.Should().Contain("global::Oag.SourceGenerationContext.Default");
             operationCommand.Should().Contain("private static string FormatResponse(");
             operationCommand.Should().Contain("CustomizeResponseText");
@@ -427,10 +434,11 @@ components:
             operationCommand.Should().Contain("--request-json");
             operationCommand.Should().Contain("ReadRequestOrDefaultAsync<global::Oag.CreateWidgetRequest>");
             operationCommand.Should().Contain("RequestInput,");
-            operationCommand.Should().Contain("parseResult.GetValue(InputOption) ?? __requestBase?.Input");
-            operationCommand.Should().Contain("parseResult.GetValue(Tags) ?? __requestBase?.Tags");
-            operationCommand.Should().Contain("parseResult.GetValue(Enabled) ?? __requestBase?.Enabled");
-            operationCommand.Should().Contain("parseResult.GetValue(Priority) ?? __requestBase?.Priority");
+            operationCommand.Should().Contain("CliRuntime.WasSpecified(parseResult, InputOption) ? parseResult.GetValue(InputOption) : __requestBase is not null ? __requestBase.Input : default");
+            operationCommand.Should().Contain("CliRuntime.WasSpecified(parseResult, Mode) ? parseResult.GetValue(Mode) : __requestBase is not null ? __requestBase.Mode : default");
+            operationCommand.Should().Contain("CliRuntime.WasSpecified(parseResult, Tags) ? parseResult.GetValue(Tags) : __requestBase is not null ? __requestBase.Tags : default");
+            operationCommand.Should().Contain("CliRuntime.WasSpecified(parseResult, Enabled) ? parseResult.GetValue(Enabled) : __requestBase is not null ? __requestBase.Enabled : default");
+            operationCommand.Should().Contain("CliRuntime.WasSpecified(parseResult, Priority) ? parseResult.GetValue(Priority) : __requestBase is not null ? __requestBase.Priority : default");
             // The positional/required name is taken from the argument, never the base body.
             operationCommand.Should().Contain("var name = parseResult.GetRequiredValue(NameOption);");
 

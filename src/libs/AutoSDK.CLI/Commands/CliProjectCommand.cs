@@ -3286,7 +3286,7 @@ internal static class CliProjectScaffolder
             .Concat(operation.OptionParameters.Select(parameter =>
                 operation.SupportsBaseBody && CliProjectOperation.IsMergeableBaseBodyField(parameter)
                     ? $@"
-                        var {parameter.ParameterName} = parseResult.GetValue({ParameterSymbolName(parameter)}) ?? __requestBase?.{CliProjectOperation.BaseBodyPropertyName(parameter)};"
+                        var {parameter.ParameterName} = {GenerateBaseBodyMergeExpression(ParameterSymbolName(parameter), "__requestBase", CliProjectOperation.BaseBodyPropertyName(parameter))};"
                     : $@"
                         var {parameter.ParameterName} = parseResult.{((parameter.IsRequired || parameter.HasSchemaDefault) ? "GetRequiredValue" : "GetValue")}({ParameterSymbolName(parameter)});"))
             .Concat(operation.DirectOptionSets.Select(usage => GenerateDirectOptionSetParseLines(operation, usage)))
@@ -3500,10 +3500,18 @@ internal static class CliProjectScaffolder
             .Select(parameter =>
                 operation.SupportsBaseBody && CliProjectOperation.IsMergeableBaseBodyField(parameter)
                     ? $@"
-                        var {parameter.ParameterName} = parseResult.GetValue({usage.InstanceName}.{ParameterSymbolName(parameter)}) ?? __requestBase?.{CliProjectOperation.BaseBodyPropertyName(parameter)};"
+                        var {parameter.ParameterName} = {GenerateBaseBodyMergeExpression($"{usage.InstanceName}.{ParameterSymbolName(parameter)}", "__requestBase", CliProjectOperation.BaseBodyPropertyName(parameter))};"
                     : $@"
                         var {parameter.ParameterName} = parseResult.{((parameter.IsRequired || parameter.HasSchemaDefault) ? "GetRequiredValue" : "GetValue")}({usage.InstanceName}.{ParameterSymbolName(parameter)});")
             .Inject();
+    }
+
+    private static string GenerateBaseBodyMergeExpression(
+        string optionExpression,
+        string baseObjectExpression,
+        string basePropertyName)
+    {
+        return $"CliRuntime.WasSpecified(parseResult, {optionExpression}) ? parseResult.GetValue({optionExpression}) : {baseObjectExpression} is not null ? {baseObjectExpression}.{basePropertyName} : default";
     }
 
     private static string GenerateNestedOptionSetParseLines(CliProjectOperation operation, CliProjectNestedOptionSetUsage usage)
