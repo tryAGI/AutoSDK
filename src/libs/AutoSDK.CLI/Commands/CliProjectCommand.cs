@@ -965,6 +965,7 @@ internal sealed record CliProjectNestedOptionSetUsage(
     string ParameterName,
     string BasePropertyName,
     string ModelTypeName,
+    bool IsRequired,
     ImmutableArray<MethodParameter> Parameters);
 
 internal sealed record CliProjectWebhookUsage(
@@ -1077,6 +1078,7 @@ internal sealed record CliProjectOperation(
         // straight to that overload (AutoSDK #339).
         var cliParameters = endPoint.Parameters
             .Where(static x => x is { IsDeprecated: false } or { IsRequired: true } or { IsDeprecated: true, Location: not null })
+            .Where(x => !(endPoint.ForcedRequestStreamValue is not null && IsRequestStreamParameter(x)))
             .ToArray();
         var responseType = GetResponseType(endPoint);
 
@@ -1199,6 +1201,12 @@ internal sealed record CliProjectOperation(
         return parameter.Location is null && !parameter.IsRequired && !parameter.HasSchemaDefault;
     }
 
+    private static bool IsRequestStreamParameter(MethodParameter parameter)
+    {
+        return parameter.Location is null &&
+               string.Equals(parameter.Id, "stream", StringComparison.OrdinalIgnoreCase);
+    }
+
     // The request DTO property name for a body parameter (mirrors Sources.Methods.GetRequestPropertyName).
     internal static string BaseBodyPropertyName(MethodParameter parameter)
     {
@@ -1250,6 +1258,7 @@ internal sealed record CliProjectOperation(
                         ParameterName: parameter.ParameterName,
                         BasePropertyName: BaseBodyPropertyName(parameter),
                         ModelTypeName: parameter.Type.CSharpTypeWithoutNullability,
+                        IsRequired: parameter.IsRequired && !parameter.HasSchemaDefault,
                         Parameters: optionSet.Parameters)
                     : null;
             })
@@ -3316,6 +3325,7 @@ internal static class CliProjectScaffolder
 
         return $$"""
                  #nullable enable
+                 #pragma warning disable CS0618
 
                  using System.CommandLine;
 
@@ -3517,16 +3527,21 @@ internal static class CliProjectScaffolder
     private static string GenerateNestedOptionSetParseLines(CliProjectOperation operation, CliProjectNestedOptionSetUsage usage)
     {
         var baseAccessor = operation.SupportsBaseBody
-            ? $"__requestBase?.{usage.BasePropertyName}"
+            ? $"__{usage.ParameterName}Base"
             : "null";
+        var baseAccessorDeclaration = operation.SupportsBaseBody
+            ? $@"
+                        var {baseAccessor} = __requestBase?.{usage.BasePropertyName};"
+            : string.Empty;
         var valueLines = usage.Parameters
             .Select(parameter =>
             {
-                var mergedValue = operation.SupportsBaseBody && CliProjectOperation.IsMergeableBaseBodyField(parameter)
-                    ? $" ?? {baseAccessor}?.{CliProjectOperation.BaseBodyPropertyName(parameter)}"
-                    : string.Empty;
+                var optionExpression = $"{usage.InstanceName}.{ParameterSymbolName(parameter)}";
+                var valueExpression = operation.SupportsBaseBody && CliProjectOperation.IsMergeableBaseBodyField(parameter)
+                    ? GenerateBaseBodyMergeExpression(optionExpression, baseAccessor, CliProjectOperation.BaseBodyPropertyName(parameter))
+                    : $"parseResult.GetValue({optionExpression})";
                 return $@"
-                        var {usage.ParameterName}{ParameterSymbolName(parameter)} = parseResult.GetValue({usage.InstanceName}.{ParameterSymbolName(parameter)}){mergedValue};";
+                        var {usage.ParameterName}{ParameterSymbolName(parameter)} = {valueExpression};";
             })
             .Inject();
         var specifiedExpression = usage.Parameters
@@ -3534,11 +3549,11 @@ internal static class CliProjectScaffolder
             .ToArray();
         var assignments = usage.Parameters
             .Select(parameter => $@"
-                                {CliProjectOperation.BaseBodyPropertyName(parameter)} = {usage.ParameterName}{ParameterSymbolName(parameter)},")
+                                {CliProjectOperation.BaseBodyPropertyName(parameter)} = {usage.ParameterName}{ParameterSymbolName(parameter)}{(parameter.IsRequired && !parameter.HasSchemaDefault ? "!" : string.Empty)},")
             .Inject();
 
         return $@"
-{valueLines}
+{baseAccessorDeclaration}{valueLines}
                         var __{usage.ParameterName}Specified = {string.Join(" || ", specifiedExpression)};
                         var {usage.ParameterName} =
                             __{usage.ParameterName}Specified || {baseAccessor} is not null
@@ -3709,7 +3724,7 @@ internal static class CliProjectScaffolder
             .Select(static parameter => $@"
                                         {parameter.ParameterName}: {parameter.ParameterName},")
             .Concat(operation.NestedOptionSets.Select(static usage => $@"
-                                        {usage.ParameterName}: {usage.ParameterName},"))
+                                        {usage.ParameterName}: {usage.ParameterName}{(usage.IsRequired ? "!" : string.Empty)},"))
             .Concat(operation.WebhookUsages.Select(static usage => $@"
                                         {usage.ParameterName}: {usage.ParameterName},"))
             .Inject();
@@ -3762,7 +3777,7 @@ internal static class CliProjectScaffolder
             .Select(static parameter => $@"
                                     {parameter.ParameterName}: {parameter.ParameterName},")
             .Concat(operation.NestedOptionSets.Select(static usage => $@"
-                                    {usage.ParameterName}: {usage.ParameterName},"))
+                                    {usage.ParameterName}: {usage.ParameterName}{(usage.IsRequired ? "!" : string.Empty)},"))
             .Concat(operation.WebhookUsages.Select(static usage => $@"
                                     {usage.ParameterName}: {usage.ParameterName},"))
             .Inject();
