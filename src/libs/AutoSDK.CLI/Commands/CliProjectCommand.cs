@@ -70,7 +70,7 @@ internal sealed class CliProjectCommand : Command
     private Option<string> ToolCommandName { get; } = new("--tool-command-name")
     {
         DefaultValueFactory = _ => string.Empty,
-        Description = "dotnet tool command name. Defaults to tryagi-<sdk-kebab>.",
+        Description = "dotnet tool command name. Defaults to <sdk-kebab>.",
     };
 
     private Option<string> UserSecretsId { get; } = new("--user-secrets-id")
@@ -265,7 +265,7 @@ internal sealed class CliProjectCommand : Command
         var toolCommandName = parseResult.GetRequiredValue(ToolCommandName);
         if (string.IsNullOrWhiteSpace(toolCommandName))
         {
-            toolCommandName = $"tryagi-{sdkSlug}";
+            toolCommandName = sdkSlug;
         }
 
         var rootNamespace = parseResult.GetRequiredValue(RootNamespace);
@@ -1627,11 +1627,18 @@ internal static class CliProjectScaffolder
                     <Nullable>enable</Nullable>
                     <LangVersion>preview</LangVersion>
                     <PackAsTool>true</PackAsTool>
+                    <GeneratePackageOnBuild Condition=" '$(Configuration)' == 'Release' ">true</GeneratePackageOnBuild>
                     <PackageId>{XmlEscape(model.PackageId)}</PackageId>
                     <ToolCommandName>{XmlEscape(model.ToolCommandName)}</ToolCommandName>
                     <UserSecretsId>{XmlEscape(model.UserSecretsId)}</UserSecretsId>
+                    <MinVerTagPrefix>v</MinVerTagPrefix>
+                    <MinVerDefaultPreReleaseIdentifiers>dev</MinVerDefaultPreReleaseIdentifiers>
                   </PropertyGroup>
                   <ItemGroup>
+                    <PackageReference Include="MinVer" Version="7.0.0">
+                      <PrivateAssets>all</PrivateAssets>
+                      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+                    </PackageReference>
                     <PackageReference Include="System.CommandLine" Version="2.0.7" />
                     <ProjectReference Include="{XmlEscape(relativeSdkProject)}" />
                   </ItemGroup>

@@ -383,7 +383,10 @@ components:
 
             var cliProject = await File.ReadAllTextAsync(Path.Combine(cliDirectory, "Oag.CLI.csproj")).ConfigureAwait(false);
             cliProject.Should().Contain("<PackAsTool>true</PackAsTool>");
+            cliProject.Should().Contain("<GeneratePackageOnBuild Condition=\" '$(Configuration)' == 'Release' \">true</GeneratePackageOnBuild>");
             cliProject.Should().Contain("<ToolCommandName>tryagi-oag</ToolCommandName>");
+            cliProject.Should().Contain("<MinVerTagPrefix>v</MinVerTagPrefix>");
+            cliProject.Should().Contain("<PackageReference Include=\"MinVer\" Version=\"7.0.0\">");
 
             // The ApiCommand aggregate is still generated (api-only consumers wire it), but ...
             var apiCommand = await File.ReadAllTextAsync(Path.Combine(cliDirectory, "Commands", "ApiCommand.g.cs")).ConfigureAwait(false);
