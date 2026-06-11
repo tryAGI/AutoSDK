@@ -1437,6 +1437,7 @@ internal static class CliProjectScaffolder
         if (!model.ApiOnly)
         {
             await WriteFileAsync(model, $"{model.ProjectName}.csproj", GenerateProjectFile(model)).ConfigureAwait(false);
+            await WriteFileAsync(model, "README.md", GenerateReadme(model)).ConfigureAwait(false);
             await WriteFileAsync(model, "Program.cs", GenerateProgram(model)).ConfigureAwait(false);
         }
 
@@ -1649,11 +1650,15 @@ internal static class CliProjectScaffolder
                     <PackAsTool>true</PackAsTool>
                     <GeneratePackageOnBuild Condition=" '$(Configuration)' == 'Release' ">true</GeneratePackageOnBuild>
                     <PackageId>{XmlEscape(model.PackageId)}</PackageId>
+                    <PackageReadmeFile>README.md</PackageReadmeFile>
                     <ToolCommandName>{XmlEscape(model.ToolCommandName)}</ToolCommandName>
                     <UserSecretsId>{XmlEscape(model.UserSecretsId)}</UserSecretsId>
                     <MinVerTagPrefix>v</MinVerTagPrefix>
                     <MinVerDefaultPreReleaseIdentifiers>dev</MinVerDefaultPreReleaseIdentifiers>
                   </PropertyGroup>
+                  <ItemGroup>
+                    <None Include="README.md" Pack="true" PackagePath="\" />
+                  </ItemGroup>
                   <ItemGroup>
                     <PackageReference Include="MinVer" Version="7.0.0">
                       <PrivateAssets>all</PrivateAssets>
@@ -1663,6 +1668,28 @@ internal static class CliProjectScaffolder
                     <ProjectReference Include="{XmlEscape(relativeSdkProject)}" />
                   </ItemGroup>
                 </Project>
+                """;
+    }
+
+    private static string GenerateReadme(CliProjectModel model)
+    {
+        return $"""
+                # {model.PackageId}
+
+                Command-line interface for the {model.PackageId.Replace(".CLI", string.Empty, StringComparison.Ordinal)} SDK generated with AutoSDK.
+
+                ## Installation
+
+                ```bash
+                dotnet tool install --global {model.PackageId} --prerelease
+                ```
+
+                ## Usage
+
+                ```bash
+                {model.ToolCommandName} --help
+                {model.ToolCommandName} api --help
+                ```
                 """;
     }
 
