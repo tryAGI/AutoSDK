@@ -40,8 +40,7 @@ namespace G
         /// If `sentences` has been enabled, transcription as sentences.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("results")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<string> Results { get; set; }
+        public global::System.Collections.Generic.IList<string>? Results { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -61,11 +60,11 @@ namespace G
         /// <param name="execTime">
         /// Time audio intelligence model took to complete the task
         /// </param>
-        /// <param name="results">
-        /// If `sentences` has been enabled, transcription as sentences.
-        /// </param>
         /// <param name="error">
         /// `null` if `success` is `true`. Contains the error details of the failed model
+        /// </param>
+        /// <param name="results">
+        /// If `sentences` has been enabled, transcription as sentences.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -74,14 +73,14 @@ namespace G
             bool success,
             bool isEmpty,
             double execTime,
-            global::System.Collections.Generic.IList<string> results,
-            global::G.AddonErrorDTO? error)
+            global::G.AddonErrorDTO? error,
+            global::System.Collections.Generic.IList<string>? results)
         {
             this.Success = success;
             this.IsEmpty = isEmpty;
             this.ExecTime = execTime;
             this.Error = error;
-            this.Results = results ?? throw new global::System.ArgumentNullException(nameof(results));
+            this.Results = results;
         }
 
         /// <summary>

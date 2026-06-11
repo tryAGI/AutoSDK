@@ -36,8 +36,8 @@ namespace G
         /// <summary>
         /// List of translated transcriptions, one for each `target_languages`
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("results", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.TranslationResultDTO> Results { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("results")]
+        public global::System.Collections.Generic.IList<global::G.TranslationResultDTO>? Results { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -57,24 +57,24 @@ namespace G
         /// <param name="execTime">
         /// Time audio intelligence model took to complete the task
         /// </param>
-        /// <param name="results">
-        /// List of translated transcriptions, one for each `target_languages`
-        /// </param>
         /// <param name="error">
         /// `null` if `success` is `true`. Contains the error details of the failed model
+        /// </param>
+        /// <param name="results">
+        /// List of translated transcriptions, one for each `target_languages`
         /// </param>
         public TranslationDTO(
             bool success,
             bool isEmpty,
             double execTime,
-            global::System.Collections.Generic.IList<global::G.TranslationResultDTO> results,
-            global::G.AddonErrorDTO? error)
+            global::G.AddonErrorDTO? error,
+            global::System.Collections.Generic.IList<global::G.TranslationResultDTO>? results)
         {
             this.Success = success;
             this.IsEmpty = isEmpty;
             this.ExecTime = execTime;
             this.Error = error;
-            this.Results = results ?? throw new global::System.ArgumentNullException(nameof(results));
+            this.Results = results;
         }
 
         /// <summary>
