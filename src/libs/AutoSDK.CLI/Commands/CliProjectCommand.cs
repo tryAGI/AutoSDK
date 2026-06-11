@@ -815,7 +815,8 @@ internal sealed record CliProjectMetadata(
 internal sealed record CliProjectOptionSet(
     string ModelTypeName,
     string ClassName,
-    ImmutableArray<MethodParameter> Parameters)
+    ImmutableArray<MethodParameter> Parameters,
+    ImmutableArray<CliProjectRequiredBaseProperty> RequiredBaseProperties)
 {
     public static ImmutableArray<CliProjectOptionSet> CreateCandidates(
         AutoSDK.Models.Data data,
@@ -828,10 +829,23 @@ internal sealed record CliProjectOptionSet(
                     .Where(IsOptionSetEligibleProperty)
                     .Select(CreateParameter)
                     .ToImmutableArray();
+                var parameterPropertyNames = parameters
+                    .Select(static parameter => parameter.Name)
+                    .ToHashSet(StringComparer.Ordinal);
+                var requiredBaseProperties = model.Properties
+                    .Where(property =>
+                        property.IsRequired &&
+                        !property.IsReadOnly &&
+                        !parameterPropertyNames.Contains(property.Name))
+                    .Select(static property => new CliProjectRequiredBaseProperty(
+                        PropertyName: property.Name,
+                        PropertyId: property.Id))
+                    .ToImmutableArray();
                 return new CliProjectOptionSet(
                     model.GlobalClassName,
                     $"{model.ClassName}OptionSet",
-                    parameters);
+                    parameters,
+                    requiredBaseProperties);
             })
             .Where(optionSet =>
                 optionSet.Parameters.Length > 0 &&
@@ -953,6 +967,10 @@ internal sealed record CliProjectOptionSet(
     }
 }
 
+internal sealed record CliProjectRequiredBaseProperty(
+    string PropertyName,
+    string PropertyId);
+
 internal sealed record CliProjectDirectOptionSetUsage(
     string InstanceName,
     string ClassName,
@@ -966,6 +984,7 @@ internal sealed record CliProjectNestedOptionSetUsage(
     string BasePropertyName,
     string ModelTypeName,
     bool IsRequired,
+    ImmutableArray<CliProjectRequiredBaseProperty> RequiredBaseProperties,
     ImmutableArray<MethodParameter> Parameters);
 
 internal sealed record CliProjectWebhookUsage(
@@ -1259,6 +1278,7 @@ internal sealed record CliProjectOperation(
                         BasePropertyName: BaseBodyPropertyName(parameter),
                         ModelTypeName: parameter.Type.CSharpTypeWithoutNullability,
                         IsRequired: parameter.IsRequired && !parameter.HasSchemaDefault,
+                        RequiredBaseProperties: optionSet.RequiredBaseProperties,
                         Parameters: optionSet.Parameters)
                     : null;
             })
@@ -3558,15 +3578,27 @@ internal static class CliProjectScaffolder
             .Select(parameter => $@"
                                 {CliProjectOperation.BaseBodyPropertyName(parameter)} = {usage.ParameterName}{ParameterSymbolName(parameter)}{(parameter.IsRequired && !parameter.HasSchemaDefault ? "!" : string.Empty)},")
             .Inject();
+        var requiredBaseAssignments = usage.RequiredBaseProperties
+            .Select(property =>
+            {
+                var message = $"{usage.BasePropertyName}.{property.PropertyId} is required when using {usage.Prefix} options. Provide it with --request-json or --request-file.";
+                var valueExpression = operation.SupportsBaseBody
+                    ? $"{baseAccessor} is not null ? {baseAccessor}.{property.PropertyName} : throw new CliException({Literal(message)})"
+                    : $"throw new CliException({Literal(message)})";
+                return $@"
+                                {property.PropertyName} = {valueExpression},";
+            })
+            .Inject();
 
         return $@"
-{baseAccessorDeclaration}{valueLines}
+	{baseAccessorDeclaration}{valueLines}
                         var __{usage.ParameterName}Specified = {string.Join(" || ", specifiedExpression)};
                         var {usage.ParameterName} =
                             __{usage.ParameterName}Specified || {baseAccessor} is not null
                                 ? new {usage.ModelTypeName}
                                 {{
-{assignments}
+	{assignments}
+	{requiredBaseAssignments}
                                 }}
                                 : {baseAccessor};";
     }
