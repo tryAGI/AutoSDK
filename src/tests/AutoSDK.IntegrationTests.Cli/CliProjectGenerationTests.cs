@@ -225,6 +225,21 @@ paths:
       responses:
         '200':
           description: OK
+  /uploads:
+    post:
+      operationId: createUpload
+      tags:
+        - Uploads
+      summary: Create an upload.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateUploadRequest'
+      responses:
+        '200':
+          description: OK
 components:
   securitySchemes:
     BearerAuth:
@@ -253,6 +268,18 @@ components:
           type: boolean
         priority:
           type: integer
+    CreateUploadRequest:
+      type: object
+      required:
+        - filename
+        - type
+      properties:
+        filename:
+          type: string
+        type:
+          type: string
+          enum:
+            - ephemeral
     ScrapeOptions:
       type: object
       properties:
@@ -444,6 +471,18 @@ components:
             operationCommand.Should().Contain("CliRuntime.WasSpecified(parseResult, Priority) ? parseResult.GetValue(Priority) : __requestBase is not null ? __requestBase.Priority : default");
             // The positional/required name is taken from the argument, never the base body.
             operationCommand.Should().Contain("var name = parseResult.GetRequiredValue(NameOption);");
+
+            // AutoSDK #354: required enum request properties can still surface as optional SDK
+            // convenience parameters when they have a CLR default. Base-body fallback must gate on
+            // WasSpecified rather than coalescing a non-nullable enum with a nullable base value.
+            var uploadCommandPath = Directory
+                .EnumerateFiles(Path.Combine(cliDirectory, "Commands"), "*CreateUpload*ApiCommand.g.cs")
+                .Single();
+            var uploadCommand = await File.ReadAllTextAsync(uploadCommandPath).ConfigureAwait(false);
+            uploadCommand.Should().Contain("Option<global::Oag.CreateUploadRequestType> Type");
+            uploadCommand.Should().Contain("var type = CliRuntime.WasSpecified(parseResult, Type) ? parseResult.GetValue(Type) : __requestBase is not null ? __requestBase.Type : default");
+            uploadCommand.Should().NotContain("parseResult.GetValue(Type) ??");
+            uploadCommand.Should().NotContain("?? __requestBase?.Type");
 
             // #339: a "direct" body (raw array/string/enum/binary) has no fields to flatten, so it
             // keeps the --request-json / --request-file escape hatch.

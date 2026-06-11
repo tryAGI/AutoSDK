@@ -313,7 +313,7 @@ public static class CSharpTypeMapper
     {
         context = context ?? throw new ArgumentNullException(nameof(context));
 
-        return (context.Schema.Type.ToTypeString(), context.Schema.Format) switch
+        return GetSchemaTypeAndFormat(context.Schema) switch
         {
             (_, _) when context.IsAnyOfLikeStructure => true,
             (_, _) when context.IsEnum => true,
@@ -411,8 +411,9 @@ public static class CSharpTypeMapper
         context = context ?? throw new ArgumentNullException(nameof(context));
         var resolvedSchema = context.Schema.ResolveIfRequired();
         var generatedNamespace = context.GetGeneratedNamespace();
+        var schemaTypeAndFormat = GetSchemaTypeAndFormat(context.Schema);
 
-        return (context.Schema.Type.ToTypeString(), context.Schema.Format) switch
+        return schemaTypeAndFormat switch
         {
             (_, _) when context.Schema.IsUnixTimestamp() => "global::System.DateTimeOffset",
 
@@ -496,8 +497,28 @@ public static class CSharpTypeMapper
             (null, null) => "object",
             ("null", _) => "object",
             ("any", _) => "object",
-            _ => throw new NotSupportedException($"Type {context.Schema.Type} is not supported."),
+            _ => throw new NotSupportedException(
+                $"Type {context.Schema.Type} (normalized: {schemaTypeAndFormat.Type ?? "<null>"}, format: {schemaTypeAndFormat.Format ?? "<null>"}, id: {context.Id}, context type: {context.Type}) is not supported."),
         };
+    }
+
+    private static (string? Type, string? Format) GetSchemaTypeAndFormat(IOpenApiSchema schema)
+    {
+        var type = schema.Type.ToTypeString();
+        return (
+            string.IsNullOrWhiteSpace(type) ? null : type,
+            NormalizeSchemaFormat(schema.Format));
+    }
+
+    private static string? NormalizeSchemaFormat(string? format)
+    {
+        if (string.IsNullOrWhiteSpace(format))
+        {
+            return null;
+        }
+
+        var normalized = format!.Trim().TrimEnd(',').Trim();
+        return string.IsNullOrWhiteSpace(normalized) ? null : normalized;
     }
 
     private static string? FindChildType(IList<SchemaContext> children, Hint hint)
