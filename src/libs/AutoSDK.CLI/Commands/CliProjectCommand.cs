@@ -55,6 +55,12 @@ internal sealed class CliProjectCommand : Command
         Description = "SDK root client class name.",
     };
 
+    private Option<MethodNamingConvention> MethodNamingConvention { get; } = new("--methodNamingConvention", ["-m"])
+    {
+        DefaultValueFactory = _ => AutoSDK.Naming.Methods.MethodNamingConvention.OperationId,
+        Description = "Method naming convention used by the referenced SDK generation.",
+    };
+
     private Option<string> PackageId { get; } = new("--package-id")
     {
         DefaultValueFactory = _ => string.Empty,
@@ -164,6 +170,7 @@ internal sealed class CliProjectCommand : Command
         Options.Add(TargetFramework);
         Options.Add(Namespace);
         Options.Add(ClientClassName);
+        Options.Add(MethodNamingConvention);
         Options.Add(PackageId);
         Options.Add(RootNamespace);
         Options.Add(ToolCommandName);
@@ -235,7 +242,7 @@ internal sealed class CliProjectCommand : Command
             TargetFramework = parseResult.GetRequiredValue(TargetFramework),
             Namespace = namespaceValue,
             ClassName = clientClassName,
-            MethodNamingConvention = MethodNamingConvention.OperationId,
+            MethodNamingConvention = parseResult.GetRequiredValue(MethodNamingConvention),
             ExcludeDeprecatedOperations = parseResult.GetRequiredValue(ExcludeDeprecatedOperations),
             IgnoreOpenApiErrors = parseResult.GetRequiredValue(IgnoreOpenApiErrors),
             IgnoreOpenApiWarnings = parseResult.GetRequiredValue(IgnoreOpenApiWarnings),
@@ -1052,6 +1059,7 @@ internal sealed record CliProjectOperation(
     ImmutableArray<CliProjectWebhookUsage> WebhookUsages,
     bool HasDirectRequestBody,
     bool SupportsBaseBody,
+    string BaseBodyPropertyPathPrefix,
     bool SupportsWait,
     ImmutableDictionary<string, CliProjectFormatHint> ResponseFormatHints,
     bool HasResponse,
@@ -1144,7 +1152,9 @@ internal sealed record CliProjectOperation(
         // --request-file as a base body whose values fill those fields unless a per-field flag
         // overrides them (AutoSDK #343). Required and positional fields still come from CLI args,
         // so this composes with the #340 positional hoisting rather than fighting it.
+        var baseBodyPropertyPathPrefix = ResolveBaseBodyPropertyPathPrefix(endPoint, allOptionParameters, classesByName);
         var supportsBaseBody = !hasDirectRequestBody &&
+            baseBodyPropertyPathPrefix is not null &&
             allOptionParameters.Any(IsMergeableBaseBodyField);
         var (supportsOutputDirectory, outputDirectoryItemsPropertyName) = DetectOutputDirectorySupport(endPoint, classesByName);
 
@@ -1159,6 +1169,7 @@ internal sealed record CliProjectOperation(
             webhookUsages,
             hasDirectRequestBody,
             supportsBaseBody,
+            baseBodyPropertyPathPrefix ?? string.Empty,
             ResolveWaitSupport(endPoint, metadata.GetOperation(endPoint).WaitMode),
             metadata.GetOperation(endPoint).ResponseFormatHints,
             !string.IsNullOrWhiteSpace(responseType),
@@ -1232,6 +1243,87 @@ internal sealed record CliProjectOperation(
         return parameter.Name.StartsWith("request", StringComparison.Ordinal)
             ? parameter.Name.Replace("request", string.Empty, StringComparison.Ordinal)
             : parameter.Name;
+    }
+
+    internal string BaseBodyPropertyPath(MethodParameter parameter) => BaseBodyPropertyPath(BaseBodyPropertyName(parameter));
+
+    internal string BaseBodyPropertyPath(string propertyName) => $"{BaseBodyPropertyPathPrefix}{propertyName}";
+
+    private static string? ResolveBaseBodyPropertyPathPrefix(
+        EndPoint endPoint,
+        ImmutableArray<MethodParameter> optionParameters,
+        IReadOnlyDictionary<string, ModelData> classesByName)
+    {
+        var mergeablePropertyNames = optionParameters
+            .Where(IsMergeableBaseBodyField)
+            .Select(BaseBodyPropertyName)
+            .ToImmutableHashSet(StringComparer.Ordinal);
+        if (mergeablePropertyNames.Count == 0)
+        {
+            return string.Empty;
+        }
+
+        if (!TryGetClassByTypeName(classesByName, endPoint.RequestType.CSharpTypeWithoutNullability, out var requestModel))
+        {
+            return null;
+        }
+
+        static HashSet<string> GetPropertyNames(ModelData model) =>
+            model.Properties
+                .Select(static property => property.Name)
+                .Where(static name => !string.IsNullOrWhiteSpace(name))
+                .ToHashSet(StringComparer.Ordinal);
+
+        if (mergeablePropertyNames.IsSubsetOf(GetPropertyNames(requestModel)))
+        {
+            return string.Empty;
+        }
+
+        foreach (var wrapperProperty in requestModel.Properties)
+        {
+            if (!TryGetClassByTypeName(classesByName, wrapperProperty.Type.CSharpTypeWithoutNullability, out var wrappedModel))
+            {
+                continue;
+            }
+
+            if (!mergeablePropertyNames.IsSubsetOf(GetPropertyNames(wrappedModel)))
+            {
+                continue;
+            }
+
+            var separator = wrapperProperty.Type.CSharpType.Contains('?', StringComparison.Ordinal) ||
+                            wrapperProperty.Type.CSharpTypeNullability
+                ? "?."
+                : ".";
+            return $"{wrapperProperty.Name}{separator}";
+        }
+
+        return null;
+    }
+
+    private static bool TryGetClassByTypeName(
+        IReadOnlyDictionary<string, ModelData> classesByName,
+        string typeName,
+        out ModelData model)
+    {
+        if (classesByName.TryGetValue(typeName, out model!))
+        {
+            return true;
+        }
+
+        foreach (var candidate in classesByName.Values)
+        {
+            if (string.Equals(candidate.ClassName, typeName, StringComparison.Ordinal) ||
+                string.Equals(candidate.GlobalClassName, typeName, StringComparison.Ordinal) ||
+                candidate.GlobalClassName.EndsWith($".{typeName}", StringComparison.Ordinal))
+            {
+                model = candidate;
+                return true;
+            }
+        }
+
+        model = default;
+        return false;
     }
 
     private static ImmutableArray<CliProjectDirectOptionSetUsage> CreateDirectOptionSetUsages(
@@ -1856,7 +1948,7 @@ internal static class CliProjectScaffolder
                      private static readonly string[] ApiKeyEnvironmentVariables = [{{envVarArray}}];
                      private const string CredentialFileDirectoryName = "{{model.CredentialFileDirectoryName}}";
 
-                     public static async Task<global::{{model.SdkNamespace}}.{{model.ClientClassName}}> CreateClientAsync(ParseResult parseResult, CancellationToken cancellationToken = default)
+                     public static async global::System.Threading.Tasks.Task<global::{{model.SdkNamespace}}.{{model.ClientClassName}}> CreateClientAsync(ParseResult parseResult, CancellationToken cancellationToken = default)
                      {
                          var apiKey = await TryResolveApiKeyAsync(parseResult, cancellationToken).ConfigureAwait(false);
                          var authorizations = string.IsNullOrWhiteSpace(apiKey)
@@ -1878,7 +1970,7 @@ internal static class CliProjectScaffolder
                          "Design",
                          "CA1031:Do not catch general exception types",
                          Justification = "Generated CLI commands map unexpected failures to a stable exit code.")]
-                     public static async Task<int> RunAsync(Func<Task> action, CancellationToken cancellationToken = default)
+                     public static async global::System.Threading.Tasks.Task<int> RunAsync(Func<global::System.Threading.Tasks.Task> action, CancellationToken cancellationToken = default)
                      {
                          try
                          {
@@ -1907,13 +1999,13 @@ internal static class CliProjectScaffolder
                          }
                      }
 
-                     public static async Task<string?> TryResolveApiKeyAsync(ParseResult parseResult, CancellationToken cancellationToken = default)
+                     public static async global::System.Threading.Tasks.Task<string?> TryResolveApiKeyAsync(ParseResult parseResult, CancellationToken cancellationToken = default)
                      {
                          var probe = await ProbeAuthAsync(parseResult, cancellationToken).ConfigureAwait(false);
                          return probe.Active?.RawValue;
                      }
 
-                     public static async Task<AuthStatusInfo> GetAuthStatusAsync(ParseResult parseResult, CancellationToken cancellationToken = default)
+                     public static async global::System.Threading.Tasks.Task<AuthStatusInfo> GetAuthStatusAsync(ParseResult parseResult, CancellationToken cancellationToken = default)
                      {
                          var probe = await ProbeAuthAsync(parseResult, cancellationToken).ConfigureAwait(false);
                          return new AuthStatusInfo(
@@ -1930,7 +2022,7 @@ internal static class CliProjectScaffolder
                                  .ToArray());
                      }
 
-                     public static async Task WriteUserSecretAsync(string name, string value, CancellationToken cancellationToken = default)
+                     public static async global::System.Threading.Tasks.Task WriteUserSecretAsync(string name, string value, CancellationToken cancellationToken = default)
                      {
                          var path = GetUserSecretsPath();
                          var directory = Path.GetDirectoryName(path);
@@ -1945,7 +2037,7 @@ internal static class CliProjectScaffolder
                          await File.WriteAllTextAsync(path, json, cancellationToken).ConfigureAwait(false);
                      }
 
-                     public static async Task ClearUserSecretAsync(string name, CancellationToken cancellationToken = default)
+                     public static async global::System.Threading.Tasks.Task ClearUserSecretAsync(string name, CancellationToken cancellationToken = default)
                      {
                          var path = GetUserSecretsPath();
                          if (!File.Exists(path))
@@ -2073,7 +2165,7 @@ internal static class CliProjectScaffolder
 
                  {{createPollingOptionsMethod}}
 
-                     public static async Task<string?> ReadInputAsync(
+                     public static async global::System.Threading.Tasks.Task<string?> ReadInputAsync(
                          ParseResult parseResult,
                          Option<string?> inputOption,
                          Option<string?> requestJsonOption,
@@ -2116,7 +2208,7 @@ internal static class CliProjectScaffolder
                          return await ReadFlexibleInputAsync(parseResult.GetValue(inputOption)!, cancellationToken).ConfigureAwait(false);
                      }
 
-                     public static async Task<T> ReadRequestAsync<T>(
+                     public static async global::System.Threading.Tasks.Task<T> ReadRequestAsync<T>(
                          ParseResult parseResult,
                          Option<string?> inputOption,
                          Option<string?> requestJsonOption,
@@ -2138,7 +2230,7 @@ internal static class CliProjectScaffolder
                              : throw new CliException($"Unable to deserialize request JSON as {typeof(T).Name}.");
                      }
 
-                     public static async Task<T?> ReadRequestOrDefaultAsync<T>(
+                     public static async global::System.Threading.Tasks.Task<T?> ReadRequestOrDefaultAsync<T>(
                          ParseResult parseResult,
                          Option<string?> inputOption,
                          Option<string?> requestJsonOption,
@@ -2199,19 +2291,19 @@ internal static class CliProjectScaffolder
                          return JsonSerializer.Serialize(values.ToArray());
                      }
 
-                     public static async Task WriteJsonAsync<T>(ParseResult parseResult, T value, JsonSerializerContext context, CancellationToken cancellationToken = default)
+                     public static async global::System.Threading.Tasks.Task WriteJsonAsync<T>(ParseResult parseResult, T value, JsonSerializerContext context, CancellationToken cancellationToken = default)
                      {
                          var json = JsonSerializer.Serialize(value, typeof(T), context);
                          await WriteTextAsync(parseResult, PrettyJson(json), cancellationToken: cancellationToken).ConfigureAwait(false);
                      }
 
-                     public static async Task WriteJsonLineAsync<T>(ParseResult parseResult, T value, JsonSerializerContext context, CancellationToken cancellationToken = default)
+                     public static async global::System.Threading.Tasks.Task WriteJsonLineAsync<T>(ParseResult parseResult, T value, JsonSerializerContext context, CancellationToken cancellationToken = default)
                      {
                          var json = JsonSerializer.Serialize(value, typeof(T), context);
                          await WriteTextAsync(parseResult, json + Environment.NewLine, append: true, cancellationToken: cancellationToken).ConfigureAwait(false);
                      }
 
-                     public static async Task WriteResponseAsync<T>(
+                     public static async global::System.Threading.Tasks.Task WriteResponseAsync<T>(
                          ParseResult parseResult,
                          T value,
                          JsonSerializerContext context,
@@ -2231,7 +2323,7 @@ internal static class CliProjectScaffolder
                          await WriteTextAsync(parseResult, text, cancellationToken: cancellationToken).ConfigureAwait(false);
                      }
 
-                     public static async Task WriteResponseLineAsync<T>(
+                     public static async global::System.Threading.Tasks.Task WriteResponseLineAsync<T>(
                          ParseResult parseResult,
                          T value,
                          JsonSerializerContext context,
@@ -2251,7 +2343,7 @@ internal static class CliProjectScaffolder
                          await WriteTextAsync(parseResult, text + Environment.NewLine, append: true, cancellationToken: cancellationToken).ConfigureAwait(false);
                      }
 
-                     public static async Task<bool> TryWriteOutputDirectoryAsync<T>(
+                     public static async global::System.Threading.Tasks.Task<bool> TryWriteOutputDirectoryAsync<T>(
                          ParseResult parseResult,
                          T value,
                          JsonSerializerContext context,
@@ -2277,7 +2369,7 @@ internal static class CliProjectScaffolder
                          return true;
                      }
 
-                     public static async Task WriteSuccessAsync(ParseResult parseResult, CancellationToken cancellationToken = default)
+                     public static async global::System.Threading.Tasks.Task WriteSuccessAsync(ParseResult parseResult, CancellationToken cancellationToken = default)
                      {
                          if (parseResult.GetValue(CliOptions.Json))
                          {
@@ -2288,7 +2380,7 @@ internal static class CliProjectScaffolder
                          await WriteTextAsync(parseResult, "success: true", cancellationToken: cancellationToken).ConfigureAwait(false);
                      }
 
-                     public static async Task WriteBinaryAsync(ParseResult parseResult, byte[] bytes, CancellationToken cancellationToken = default)
+                     public static async global::System.Threading.Tasks.Task WriteBinaryAsync(ParseResult parseResult, byte[] bytes, CancellationToken cancellationToken = default)
                      {
                          var outputPath = parseResult.GetValue(CliOptions.Output);
                          if (string.IsNullOrWhiteSpace(outputPath))
@@ -2299,7 +2391,7 @@ internal static class CliProjectScaffolder
                          await WriteBytesAsync(outputPath, bytes, cancellationToken).ConfigureAwait(false);
                      }
 
-                     public static async Task WriteStreamAsync(ParseResult parseResult, Stream stream, CancellationToken cancellationToken = default)
+                     public static async global::System.Threading.Tasks.Task WriteStreamAsync(ParseResult parseResult, Stream stream, CancellationToken cancellationToken = default)
                      {
                          var outputPath = parseResult.GetValue(CliOptions.Output);
                          if (string.IsNullOrWhiteSpace(outputPath))
@@ -2336,13 +2428,13 @@ internal static class CliProjectScaffolder
                          return string.IsNullOrWhiteSpace(baseUrl) ? null : new Uri(baseUrl, UriKind.Absolute);
                      }
 
-                     private static async Task<string?> ReadUserSecretAsync(string name, CancellationToken cancellationToken = default)
+                     private static async global::System.Threading.Tasks.Task<string?> ReadUserSecretAsync(string name, CancellationToken cancellationToken = default)
                      {
                          var values = await ReadUserSecretsAsync(cancellationToken).ConfigureAwait(false);
                          return values.TryGetValue(name, out var value) && !string.IsNullOrWhiteSpace(value) ? value : null;
                      }
 
-                     private static async Task<string?> ReadCredentialFileAsync(CancellationToken cancellationToken = default)
+                     private static async global::System.Threading.Tasks.Task<string?> ReadCredentialFileAsync(CancellationToken cancellationToken = default)
                      {
                          var path = GetCredentialFilePath();
                          if (string.IsNullOrWhiteSpace(path) || !File.Exists(path))
@@ -2354,7 +2446,7 @@ internal static class CliProjectScaffolder
                          return string.IsNullOrWhiteSpace(value) ? null : value.Trim();
                      }
 
-                     private static async Task<Dictionary<string, string>> ReadUserSecretsAsync(CancellationToken cancellationToken = default)
+                     private static async global::System.Threading.Tasks.Task<Dictionary<string, string>> ReadUserSecretsAsync(CancellationToken cancellationToken = default)
                      {
                          var path = GetUserSecretsPath();
                          if (!File.Exists(path))
@@ -2372,7 +2464,7 @@ internal static class CliProjectScaffolder
                              new Dictionary<string, string>(StringComparer.Ordinal);
                      }
 
-                     private static async Task WriteTextAsync(ParseResult parseResult, string text, bool append = false, CancellationToken cancellationToken = default)
+                     private static async global::System.Threading.Tasks.Task WriteTextAsync(ParseResult parseResult, string text, bool append = false, CancellationToken cancellationToken = default)
                      {
                          var outputPath = parseResult.GetValue(CliOptions.Output);
                          if (string.IsNullOrWhiteSpace(outputPath))
@@ -2402,7 +2494,7 @@ internal static class CliProjectScaffolder
                          }
                      }
 
-                     private static async Task WriteBytesAsync(string outputPath, byte[] bytes, CancellationToken cancellationToken = default)
+                     private static async global::System.Threading.Tasks.Task WriteBytesAsync(string outputPath, byte[] bytes, CancellationToken cancellationToken = default)
                      {
                          var directory = Path.GetDirectoryName(outputPath);
                          if (!string.IsNullOrWhiteSpace(directory))
@@ -2418,12 +2510,12 @@ internal static class CliProjectScaffolder
                          return value.Length > 1 && value[^1] == unit;
                      }
 
-                     private static async Task WriteDeprecatedOptionWarningAsync(string oldOption, string replacement)
+                     private static async global::System.Threading.Tasks.Task WriteDeprecatedOptionWarningAsync(string oldOption, string replacement)
                      {
                          await Console.Error.WriteLineAsync($"Warning: {oldOption} is deprecated; use {replacement}.").ConfigureAwait(false);
                      }
 
-                     private static async Task<string> ReadFlexibleInputAsync(string input, CancellationToken cancellationToken = default)
+                     private static async global::System.Threading.Tasks.Task<string> ReadFlexibleInputAsync(string input, CancellationToken cancellationToken = default)
                      {
                          if (string.IsNullOrWhiteSpace(input))
                          {
@@ -2444,7 +2536,7 @@ internal static class CliProjectScaffolder
                          return await ReadFileOrStdinAsync(input, cancellationToken).ConfigureAwait(false);
                      }
 
-                     private static async Task<string> ReadFileOrStdinAsync(string pathOrDash, CancellationToken cancellationToken = default)
+                     private static async global::System.Threading.Tasks.Task<string> ReadFileOrStdinAsync(string pathOrDash, CancellationToken cancellationToken = default)
                      {
                          if (pathOrDash == "-")
                          {
@@ -2662,7 +2754,7 @@ internal static class CliProjectScaffolder
                          builder.AppendLine(value);
                      }
 
-                     private static async Task WriteItemFilesAsync(string outputDirectory, JsonArray items, CancellationToken cancellationToken = default)
+                     private static async global::System.Threading.Tasks.Task WriteItemFilesAsync(string outputDirectory, JsonArray items, CancellationToken cancellationToken = default)
                      {
                          Directory.CreateDirectory(outputDirectory);
 
@@ -2712,7 +2804,7 @@ internal static class CliProjectScaffolder
                          }
                      }
 
-                     private static async Task<bool> TryWriteTextPropertyAsync(
+                     private static async global::System.Threading.Tasks.Task<bool> TryWriteTextPropertyAsync(
                          JsonObject item,
                          string outputDirectory,
                          string baseName,
@@ -2778,7 +2870,7 @@ internal static class CliProjectScaffolder
                          return normalized;
                      }
 
-                     private static async Task WriteApiExceptionAsync(global::{{model.SdkNamespace}}.ApiException exception)
+                     private static async global::System.Threading.Tasks.Task WriteApiExceptionAsync(global::{{model.SdkNamespace}}.ApiException exception)
                      {
                          var builder = new StringBuilder();
                          builder.Append("API error ");
@@ -2806,7 +2898,7 @@ internal static class CliProjectScaffolder
                          return Encoding.UTF8.GetString(stream.ToArray());
                      }
 
-                     private static async Task<AuthProbeResult> ProbeAuthAsync(ParseResult parseResult, CancellationToken cancellationToken = default)
+                     private static async global::System.Threading.Tasks.Task<AuthProbeResult> ProbeAuthAsync(ParseResult parseResult, CancellationToken cancellationToken = default)
                      {
                          var optionSource = new AuthSourceProbe(
                              Source: "option",
@@ -3349,7 +3441,7 @@ internal static class CliProjectScaffolder
             .Concat(operation.OptionParameters.Select(parameter =>
                 operation.SupportsBaseBody && CliProjectOperation.IsMergeableBaseBodyField(parameter)
                     ? $@"
-                        var {parameter.ParameterName} = {GenerateBaseBodyMergeExpression(ParameterSymbolName(parameter), "__requestBase", CliProjectOperation.BaseBodyPropertyName(parameter))};"
+                        var {parameter.ParameterName} = {GenerateBaseBodyMergeExpression(ParameterSymbolName(parameter), "__requestBase", operation.BaseBodyPropertyPath(parameter), parameter.ParameterName)};"
                     : $@"
                         var {parameter.ParameterName} = parseResult.{((parameter.IsRequired || parameter.HasSchemaDefault) ? "GetRequiredValue" : "GetValue")}({ParameterSymbolName(parameter)});"))
             .Concat(operation.DirectOptionSets.Select(usage => GenerateDirectOptionSetParseLines(operation, usage)))
@@ -3564,7 +3656,7 @@ internal static class CliProjectScaffolder
             .Select(parameter =>
                 operation.SupportsBaseBody && CliProjectOperation.IsMergeableBaseBodyField(parameter)
                     ? $@"
-                        var {parameter.ParameterName} = {GenerateBaseBodyMergeExpression($"{usage.InstanceName}.{ParameterSymbolName(parameter)}", "__requestBase", CliProjectOperation.BaseBodyPropertyName(parameter))};"
+                        var {parameter.ParameterName} = {GenerateBaseBodyMergeExpression($"{usage.InstanceName}.{ParameterSymbolName(parameter)}", "__requestBase", operation.BaseBodyPropertyPath(parameter), parameter.ParameterName)};"
                     : $@"
                         var {parameter.ParameterName} = parseResult.{((parameter.IsRequired || parameter.HasSchemaDefault) ? "GetRequiredValue" : "GetValue")}({usage.InstanceName}.{ParameterSymbolName(parameter)});")
             .Inject();
@@ -3573,9 +3665,19 @@ internal static class CliProjectScaffolder
     private static string GenerateBaseBodyMergeExpression(
         string optionExpression,
         string baseObjectExpression,
-        string basePropertyName)
+        string basePropertyPath,
+        string baseValueNameHint)
     {
-        return $"CliRuntime.WasSpecified(parseResult, {optionExpression}) ? parseResult.GetValue({optionExpression}) : {baseObjectExpression} is not null ? {baseObjectExpression}.{basePropertyName} : default";
+        return $"CliRuntime.WasSpecified(parseResult, {optionExpression}) ? parseResult.GetValue({optionExpression}) : ({GenerateBaseBodyFallbackExpression(baseObjectExpression, basePropertyPath, baseValueNameHint)})";
+    }
+
+    private static string GenerateBaseBodyFallbackExpression(
+        string baseObjectExpression,
+        string basePropertyPath,
+        string baseValueNameHint)
+    {
+        var baseValueName = $"__{baseValueNameHint.ToPropertyName()}BaseValue";
+        return $"{baseObjectExpression} is {{ }} {baseValueName} ? {baseValueName}.{basePropertyPath} : default";
     }
 
     private static string GenerateNestedOptionSetParseLines(CliProjectOperation operation, CliProjectNestedOptionSetUsage usage)
@@ -3585,14 +3687,14 @@ internal static class CliProjectScaffolder
             : "null";
         var baseAccessorDeclaration = operation.SupportsBaseBody
             ? $@"
-                        var {baseAccessor} = __requestBase?.{usage.BasePropertyName};"
+                        var {baseAccessor} = {GenerateBaseBodyFallbackExpression("__requestBase", operation.BaseBodyPropertyPath(usage.BasePropertyName), usage.ParameterName)};"
             : string.Empty;
         var valueLines = usage.Parameters
             .Select(parameter =>
             {
                 var optionExpression = $"{usage.InstanceName}.{ParameterSymbolName(parameter)}";
                 var valueExpression = operation.SupportsBaseBody && CliProjectOperation.IsMergeableBaseBodyField(parameter)
-                    ? GenerateBaseBodyMergeExpression(optionExpression, baseAccessor, CliProjectOperation.BaseBodyPropertyName(parameter))
+                    ? GenerateBaseBodyMergeExpression(optionExpression, baseAccessor, CliProjectOperation.BaseBodyPropertyName(parameter), $"{usage.ParameterName}{parameter.ParameterName}")
                     : $"parseResult.GetValue({optionExpression})";
                 return $@"
                         var {usage.ParameterName}{ParameterSymbolName(parameter)} = {valueExpression};";
@@ -3636,11 +3738,16 @@ internal static class CliProjectScaffolder
         CliProjectWebhookUsage usage)
     {
         var baseAccessor = operation.SupportsBaseBody
-            ? $"__requestBase?.{usage.BasePropertyName}"
+            ? $"__{usage.ParameterName}Base"
             : "null";
+        var baseAccessorDeclaration = operation.SupportsBaseBody
+            ? $@"
+                        var {baseAccessor} = {GenerateBaseBodyFallbackExpression("__requestBase", operation.BaseBodyPropertyPath(usage.BasePropertyName), usage.ParameterName)};"
+            : string.Empty;
         var lines = new List<string>
         {
             $@"
+	{baseAccessorDeclaration}
                         var {usage.ParameterName}WebhookUrl = parseResult.GetValue({WebhookUrlSymbolName(usage)}){(operation.SupportsBaseBody ? $" ?? {baseAccessor}?.{usage.UrlPropertyName}" : string.Empty)};"
         };
         var specifiedExpressions = new List<string> { $"CliRuntime.WasSpecified(parseResult, {WebhookUrlSymbolName(usage)})" };

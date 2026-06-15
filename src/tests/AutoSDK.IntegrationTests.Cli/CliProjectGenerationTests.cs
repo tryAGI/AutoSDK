@@ -469,11 +469,11 @@ components:
             operationCommand.Should().Contain("--request-json");
             operationCommand.Should().Contain("ReadRequestOrDefaultAsync<global::Oag.CreateWidgetRequest>");
             operationCommand.Should().Contain("RequestInput,");
-            operationCommand.Should().Contain("CliRuntime.WasSpecified(parseResult, InputOption) ? parseResult.GetValue(InputOption) : __requestBase is not null ? __requestBase.Input : default");
-            operationCommand.Should().Contain("CliRuntime.WasSpecified(parseResult, Mode) ? parseResult.GetValue(Mode) : __requestBase is not null ? __requestBase.Mode : default");
-            operationCommand.Should().Contain("CliRuntime.WasSpecified(parseResult, Tags) ? parseResult.GetValue(Tags) : __requestBase is not null ? __requestBase.Tags : default");
-            operationCommand.Should().Contain("CliRuntime.WasSpecified(parseResult, Enabled) ? parseResult.GetValue(Enabled) : __requestBase is not null ? __requestBase.Enabled : default");
-            operationCommand.Should().Contain("CliRuntime.WasSpecified(parseResult, Priority) ? parseResult.GetValue(Priority) : __requestBase is not null ? __requestBase.Priority : default");
+            operationCommand.Should().Contain("CliRuntime.WasSpecified(parseResult, InputOption) ? parseResult.GetValue(InputOption) : (__requestBase is { } __InputBaseValue ? __InputBaseValue.Input : default)");
+            operationCommand.Should().Contain("CliRuntime.WasSpecified(parseResult, Mode) ? parseResult.GetValue(Mode) : (__requestBase is { } __ModeBaseValue ? __ModeBaseValue.Mode : default)");
+            operationCommand.Should().Contain("CliRuntime.WasSpecified(parseResult, Tags) ? parseResult.GetValue(Tags) : (__requestBase is { } __TagsBaseValue ? __TagsBaseValue.Tags : default)");
+            operationCommand.Should().Contain("CliRuntime.WasSpecified(parseResult, Enabled) ? parseResult.GetValue(Enabled) : (__requestBase is { } __EnabledBaseValue ? __EnabledBaseValue.Enabled : default)");
+            operationCommand.Should().Contain("CliRuntime.WasSpecified(parseResult, Priority) ? parseResult.GetValue(Priority) : (__requestBase is { } __PriorityBaseValue ? __PriorityBaseValue.Priority : default)");
             // The positional/required name is taken from the argument, never the base body.
             operationCommand.Should().Contain("var name = parseResult.GetRequiredValue(NameOption);");
 
@@ -485,7 +485,7 @@ components:
                 .Single();
             var uploadCommand = await File.ReadAllTextAsync(uploadCommandPath).ConfigureAwait(false);
             uploadCommand.Should().Contain("Option<global::Oag.CreateUploadRequestType> Type");
-            uploadCommand.Should().Contain("var type = CliRuntime.WasSpecified(parseResult, Type) ? parseResult.GetValue(Type) : __requestBase is not null ? __requestBase.Type : default");
+            uploadCommand.Should().Contain("var type = CliRuntime.WasSpecified(parseResult, Type) ? parseResult.GetValue(Type) : (__requestBase is { } __TypeBaseValue ? __TypeBaseValue.Type : default)");
             uploadCommand.Should().NotContain("parseResult.GetValue(Type) ??");
             uploadCommand.Should().NotContain("?? __requestBase?.Type");
 
@@ -742,6 +742,129 @@ components:
             Console.WriteLine(manualBuildResult.StandardOutput);
             Console.WriteLine(manualBuildResult.StandardError);
             manualBuildResult.ExitCode.Should().Be(0);
+        }
+        finally
+        {
+            TryDeleteDirectory(rootDirectory);
+        }
+    }
+
+    [TestMethod]
+    public async Task CliProject_RespectsMethodNamingConvention()
+    {
+        const string spec = """
+openapi: 3.0.1
+info:
+  title: Summary API
+  version: 1.0.0
+servers:
+  - url: https://api.example.test
+paths:
+  /widgets:
+    post:
+      operationId: widgetsCreateByOperationId
+      tags:
+        - Widgets
+      summary: Make a widget.
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Widget'
+components:
+  schemas:
+    Widget:
+      type: object
+      properties:
+        id:
+          type: string
+""";
+
+        var rootDirectory = Path.Combine(Path.GetTempPath(), Path.GetRandomFileName());
+        var sdkDirectory = Path.Combine(rootDirectory, "sdk");
+        var cliDirectory = Path.Combine(rootDirectory, "cli");
+        Directory.CreateDirectory(rootDirectory);
+
+        try
+        {
+            var specPath = Path.Combine(rootDirectory, "openapi.yaml");
+            await File.WriteAllTextAsync(specPath, spec).ConfigureAwait(false);
+
+            var repositoryDirectory = GetRepositoryDirectory();
+
+            var generateResult = await RunDotnetAsync(
+                    repositoryDirectory,
+                    "run",
+                    "--disable-build-servers",
+                    "--no-launch-profile",
+                    "--project", "src/libs/AutoSDK.CLI",
+                    "generate", specPath,
+                    "--namespace", "SummarySdk",
+                    "--clientClassName", "SummaryClient",
+                    "--methodNamingConvention", "Summary",
+                    "--targetFramework", "net10.0",
+                    "--output", sdkDirectory)
+                .ConfigureAwait(false);
+
+            Console.WriteLine(generateResult.StandardOutput);
+            Console.WriteLine(generateResult.StandardError);
+            generateResult.ExitCode.Should().Be(0);
+
+            var sdkProjectPath = Path.Combine(sdkDirectory, "SummarySdk.csproj");
+            await File.WriteAllTextAsync(
+                    sdkProjectPath,
+                    """
+                    <Project Sdk="Microsoft.NET.Sdk">
+                      <PropertyGroup>
+                        <TargetFramework>net10.0</TargetFramework>
+                        <LangVersion>preview</LangVersion>
+                        <Nullable>enable</Nullable>
+                        <ImplicitUsings>enable</ImplicitUsings>
+                      </PropertyGroup>
+                    </Project>
+                    """)
+                .ConfigureAwait(false);
+
+            var cliProjectResult = await RunDotnetAsync(
+                    repositoryDirectory,
+                    "run",
+                    "--disable-build-servers",
+                    "--no-launch-profile",
+                    "--project", "src/libs/AutoSDK.CLI",
+                    "cli-project", specPath,
+                    "--sdk-project", sdkProjectPath,
+                    "--namespace", "SummarySdk",
+                    "--clientClassName", "SummaryClient",
+                    "--methodNamingConvention", "Summary",
+                    "--targetFramework", "net10.0",
+                    "--output", cliDirectory,
+                    "--package-id", "SummarySdk.CLI",
+                    "--tool-command-name", "summary-sdk")
+                .ConfigureAwait(false);
+
+            Console.WriteLine(cliProjectResult.StandardOutput);
+            Console.WriteLine(cliProjectResult.StandardError);
+            cliProjectResult.ExitCode.Should().Be(0);
+
+            var operationCommandPath = Directory
+                .EnumerateFiles(Path.Combine(cliDirectory, "Commands"), "*MakeAWidget*ApiCommand.g.cs")
+                .Single();
+            var operationCommand = await File.ReadAllTextAsync(operationCommandPath).ConfigureAwait(false);
+            operationCommand.Should().Contain("client.MakeAWidgetAsync(");
+            operationCommand.Should().NotContain("client.WidgetsCreateByOperationIdAsync(");
+
+            var buildResult = await RunDotnetAsync(
+                    cliDirectory,
+                    "build",
+                    "--disable-build-servers",
+                    Path.Combine(cliDirectory, "SummarySdk.CLI.csproj"))
+                .ConfigureAwait(false);
+
+            Console.WriteLine(buildResult.StandardOutput);
+            Console.WriteLine(buildResult.StandardError);
+            buildResult.ExitCode.Should().Be(0);
         }
         finally
         {
