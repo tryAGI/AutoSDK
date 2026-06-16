@@ -3676,14 +3676,21 @@ internal static class CliProjectScaffolder
         string basePropertyPath,
         string baseValueNameHint)
     {
-        var baseValueName = $"__{baseValueNameHint.ToPropertyName()}BaseValue";
+        var baseValueName = $"__{ToInternalIdentifierPart(baseValueNameHint)}BaseValue";
         return $"{baseObjectExpression} is {{ }} {baseValueName} ? {baseValueName}.{basePropertyPath} : default";
+    }
+
+    private static string ToInternalIdentifierPart(string value)
+    {
+        var unescaped = value.StartsWith('@') ? value[1..] : value;
+        return unescaped.ToPropertyName();
     }
 
     private static string GenerateNestedOptionSetParseLines(CliProjectOperation operation, CliProjectNestedOptionSetUsage usage)
     {
+        var internalUsageName = ToInternalIdentifierPart(usage.ParameterName);
         var baseAccessor = operation.SupportsBaseBody
-            ? $"__{usage.ParameterName}Base"
+            ? $"__{internalUsageName}Base"
             : "null";
         var baseAccessorDeclaration = operation.SupportsBaseBody
             ? $@"
@@ -3721,9 +3728,9 @@ internal static class CliProjectScaffolder
 
         return $@"
 	{baseAccessorDeclaration}{valueLines}
-                        var __{usage.ParameterName}Specified = {string.Join(" || ", specifiedExpression)};
+                        var __{internalUsageName}Specified = {string.Join(" || ", specifiedExpression)};
                         var {usage.ParameterName} =
-                            __{usage.ParameterName}Specified || {baseAccessor} is not null
+                            __{internalUsageName}Specified || {baseAccessor} is not null
                                 ? new {usage.ModelTypeName}
                                 {{
 	{assignments}
@@ -3737,8 +3744,9 @@ internal static class CliProjectScaffolder
         CliProjectOperation operation,
         CliProjectWebhookUsage usage)
     {
+        var internalUsageName = ToInternalIdentifierPart(usage.ParameterName);
         var baseAccessor = operation.SupportsBaseBody
-            ? $"__{usage.ParameterName}Base"
+            ? $"__{internalUsageName}Base"
             : "null";
         var baseAccessorDeclaration = operation.SupportsBaseBody
             ? $@"
@@ -3755,37 +3763,37 @@ internal static class CliProjectScaffolder
         if (!string.IsNullOrWhiteSpace(usage.HeadersPropertyName))
         {
             lines.Add($@"
-                        var __{usage.ParameterName}HeadersSpecified = CliRuntime.WasSpecified(parseResult, {WebhookHeadersSymbolName(usage)});
-                        var {usage.ParameterName}WebhookHeaders = __{usage.ParameterName}HeadersSpecified
+                        var __{internalUsageName}HeadersSpecified = CliRuntime.WasSpecified(parseResult, {WebhookHeadersSymbolName(usage)});
+                        var {usage.ParameterName}WebhookHeaders = __{internalUsageName}HeadersSpecified
                             ? CliRuntime.DeserializeJsonValue<{usage.HeadersTypeName}>(
                                 CliRuntime.SerializeKeyValuePairs(parseResult.GetValue({WebhookHeadersSymbolName(usage)}) ?? Array.Empty<string>()),
                                 global::{model.JsonSerializerContextFullName}.Default)
                             : {baseAccessor}?.{usage.HeadersPropertyName};");
-            specifiedExpressions.Add($"__{usage.ParameterName}HeadersSpecified");
+            specifiedExpressions.Add($"__{internalUsageName}HeadersSpecified");
         }
 
         if (!string.IsNullOrWhiteSpace(usage.MetadataPropertyName))
         {
             lines.Add($@"
-                        var __{usage.ParameterName}MetadataSpecified = CliRuntime.WasSpecified(parseResult, {WebhookMetadataSymbolName(usage)});
-                        var {usage.ParameterName}WebhookMetadata = __{usage.ParameterName}MetadataSpecified
+                        var __{internalUsageName}MetadataSpecified = CliRuntime.WasSpecified(parseResult, {WebhookMetadataSymbolName(usage)});
+                        var {usage.ParameterName}WebhookMetadata = __{internalUsageName}MetadataSpecified
                             ? CliRuntime.DeserializeJsonValue<{usage.MetadataTypeName}>(
                                 CliRuntime.SerializeKeyValuePairs(parseResult.GetValue({WebhookMetadataSymbolName(usage)}) ?? Array.Empty<string>()),
                                 global::{model.JsonSerializerContextFullName}.Default)
                             : {baseAccessor}?.{usage.MetadataPropertyName};");
-            specifiedExpressions.Add($"__{usage.ParameterName}MetadataSpecified");
+            specifiedExpressions.Add($"__{internalUsageName}MetadataSpecified");
         }
 
         if (!string.IsNullOrWhiteSpace(usage.EventsPropertyName))
         {
             lines.Add($@"
-                        var __{usage.ParameterName}EventsSpecified = CliRuntime.WasSpecified(parseResult, {WebhookEventsSymbolName(usage)});
-                        var {usage.ParameterName}WebhookEvents = __{usage.ParameterName}EventsSpecified
+                        var __{internalUsageName}EventsSpecified = CliRuntime.WasSpecified(parseResult, {WebhookEventsSymbolName(usage)});
+                        var {usage.ParameterName}WebhookEvents = __{internalUsageName}EventsSpecified
                             ? CliRuntime.DeserializeJsonValue<{usage.EventsTypeName}>(
                                 CliRuntime.SerializeStringArray(parseResult.GetValue({WebhookEventsSymbolName(usage)}) ?? Array.Empty<string>()),
                                 global::{model.JsonSerializerContextFullName}.Default)
                             : {baseAccessor}?.{usage.EventsPropertyName};");
-            specifiedExpressions.Add($"__{usage.ParameterName}EventsSpecified");
+            specifiedExpressions.Add($"__{internalUsageName}EventsSpecified");
         }
 
         var assignments = new List<string>
@@ -3816,8 +3824,8 @@ internal static class CliProjectScaffolder
 
         return $@"
 {string.Concat(lines)}
-                        var __{usage.ParameterName}Specified = {string.Join(" || ", specifiedExpressions)};
-                        if (__{usage.ParameterName}Specified && string.IsNullOrWhiteSpace({usage.ParameterName}WebhookUrl))
+                        var __{internalUsageName}Specified = {string.Join(" || ", specifiedExpressions)};
+                        if (__{internalUsageName}Specified && string.IsNullOrWhiteSpace({usage.ParameterName}WebhookUrl))
                         {{
                             throw new CliException(""Specify --{usage.Prefix}-url or include it in the base request body before using other --{usage.Prefix}-* options."");
                         }}
@@ -3829,7 +3837,7 @@ internal static class CliProjectScaffolder
     : string.Empty)}
 
                         var {usage.ParameterName} =
-                            __{usage.ParameterName}Specified || {baseAccessor} is not null
+                            __{internalUsageName}Specified || {baseAccessor} is not null
                                 ? new {usage.ModelTypeName}
                                 {{
 {string.Concat(assignments)}

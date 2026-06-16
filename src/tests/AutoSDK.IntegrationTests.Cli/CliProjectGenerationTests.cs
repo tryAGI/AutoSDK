@@ -268,6 +268,8 @@ components:
           type: boolean
         priority:
           type: integer
+        params:
+          type: string
     CreateUploadRequest:
       type: object
       required:
@@ -451,6 +453,7 @@ components:
             operationCommand.Should().Contain("tags: tags,");
             operationCommand.Should().Contain("enabled: enabled,");
             operationCommand.Should().Contain("priority: priority,");
+            operationCommand.Should().Contain("@params: @params,");
             operationCommand.Should().Contain("mode: mode,");
             operationCommand.Should().Contain("global::Oag.SourceGenerationContext.Default");
             operationCommand.Should().Contain("private static string FormatResponse(");
@@ -474,6 +477,8 @@ components:
             operationCommand.Should().Contain("CliRuntime.WasSpecified(parseResult, Tags) ? parseResult.GetValue(Tags) : (__requestBase is { } __TagsBaseValue ? __TagsBaseValue.Tags : default)");
             operationCommand.Should().Contain("CliRuntime.WasSpecified(parseResult, Enabled) ? parseResult.GetValue(Enabled) : (__requestBase is { } __EnabledBaseValue ? __EnabledBaseValue.Enabled : default)");
             operationCommand.Should().Contain("CliRuntime.WasSpecified(parseResult, Priority) ? parseResult.GetValue(Priority) : (__requestBase is { } __PriorityBaseValue ? __PriorityBaseValue.Priority : default)");
+            operationCommand.Should().Contain("CliRuntime.WasSpecified(parseResult, Params) ? parseResult.GetValue(Params) : (__requestBase is { } __ParamsBaseValue ? __ParamsBaseValue.Params : default)");
+            operationCommand.Should().NotContain("__@paramsBaseValue");
             // The positional/required name is taken from the argument, never the base body.
             operationCommand.Should().Contain("var name = parseResult.GetRequiredValue(NameOption);");
 
