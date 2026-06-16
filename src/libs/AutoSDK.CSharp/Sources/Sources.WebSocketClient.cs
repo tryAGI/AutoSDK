@@ -921,16 +921,13 @@ namespace {wsClient.Settings.Namespace}
                     ? param.Summary.ClearForXml()
                     : string.Empty;
 
-            if (!string.IsNullOrWhiteSpace(xmlSummary))
-            {
-                xmlSummary = xmlSummary
-                    .Replace("\r\n", " ")
-                    .Replace("\r", " ")
-                    .Replace("\n", " ")
-                    .Trim();
-                var xmlParamDoc = $"        /// <param name=\"{param.ParameterName}\">{xmlSummary}</param>";
-                xmlDoc.AppendLine(xmlParamDoc);
-            }
+            xmlSummary = xmlSummary
+                .Replace("\r\n", " ")
+                .Replace("\r", " ")
+                .Replace("\n", " ")
+                .Trim();
+            var xmlParamDoc = $"        /// <param name=\"{param.ParameterName}\">{xmlSummary}</param>";
+            xmlDoc.AppendLine(xmlParamDoc);
 
             if (!isFirst)
             {
