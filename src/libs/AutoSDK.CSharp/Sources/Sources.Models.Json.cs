@@ -55,9 +55,13 @@ public static partial class Sources
         var modifiers = isValueType
             ? "readonly partial struct"
             : $"{(isBaseClass ? "" : "sealed ")}partial class";
+        var hasJsonSerializerContext = settings.HasJsonSerializerContext();
+        var defaultJsonSerializerContext = hasJsonSerializerContext
+            ? $"global::{settings.JsonSerializerContext}.Default"
+            : string.Empty;
         var rawModelDataMethods = settings.GenerateRawModelData && !isValueType
             ? settings.UsesSystemTextJson()
-                ? GenerateSystemTextJsonRawModelDataMethods(typeName, className, isBaseClass)
+                ? GenerateSystemTextJsonRawModelDataMethods(typeName, className, isBaseClass, defaultJsonSerializerContext)
                 : GenerateNewtonsoftRawModelDataMethods(typeName)
             : TrimmedLine;
         
@@ -78,6 +82,13 @@ namespace {@namespace}
                 jsonSerializerContext);
         }}
 
+{(hasJsonSerializerContext ? $@"
+        {"Serializes the current instance to a JSON string using the generated default JsonSerializerContext.".ToXmlDocumentationSummary(level: 8)}
+        public string ToJson()
+        {{
+            return ToJson({defaultJsonSerializerContext});
+        }}" : TrimmedLine)}
+
         {"Serializes the current instance to a JSON string using the provided JsonSerializerOptions.".ToXmlDocumentationSummary(level: 8)}
 #if NET8_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(""JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved."")]
@@ -86,6 +97,12 @@ namespace {@namespace}
         public string ToJson(
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {{
+{(hasJsonSerializerContext ? $@"            if (jsonSerializerOptions is null)
+            {{
+                return ToJson({defaultJsonSerializerContext});
+            }}
+
+" : TrimmedLine)}
             return global::System.Text.Json.JsonSerializer.Serialize(
                 this,
                 {(isBaseClass ? $"typeof({className})," : string.Empty)}
@@ -104,6 +121,17 @@ namespace {@namespace}
                 jsonSerializerContext) as {(isBaseClass ? "T" : typeName)}{(isValueType ? "?" : "")};
         }}
 
+{(hasJsonSerializerContext ? $@"
+        {"Deserializes a JSON string using the generated default JsonSerializerContext.".ToXmlDocumentationSummary(level: 8)}
+        public static {(isBaseClass ? "T" : typeName)}? FromJson{(isBaseClass ? "<T>" : string.Empty)}(
+            string json)
+            {(isBaseClass ? $"where T : {className}" : string.Empty)}
+        {{
+            return FromJson{(isBaseClass ? "<T>" : string.Empty)}(
+                json,
+                {defaultJsonSerializerContext});
+        }}" : TrimmedLine)}
+
         {"Deserializes a JSON string using the provided JsonSerializerOptions.".ToXmlDocumentationSummary(level: 8)}
 #if NET8_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(""JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved."")]
@@ -114,6 +142,14 @@ namespace {@namespace}
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
             {(isBaseClass ? $"where T : {className}" : string.Empty)}
         {{
+{(hasJsonSerializerContext ? $@"            if (jsonSerializerOptions is null)
+            {{
+                return FromJson{(isBaseClass ? "<T>" : string.Empty)}(
+                    json,
+                    {defaultJsonSerializerContext});
+            }}
+
+" : TrimmedLine)}
             return global::System.Text.Json.JsonSerializer.Deserialize<{(isBaseClass ? className : typeName)}>(
                 json,
                 jsonSerializerOptions){(isBaseClass ? " as T" : string.Empty)};
@@ -133,6 +169,19 @@ namespace {@namespace}
                 jsonSerializerContext).ConfigureAwait(false)) as {(isBaseClass ? "T" : typeName)}{(isValueType ? "?" : "")};
         }}
 
+{(hasJsonSerializerContext ? $@"
+        /// <summary>
+        /// Deserializes a JSON stream using the generated default JsonSerializerContext.
+        /// </summary>
+        public static global::System.Threading.Tasks.ValueTask<{(isBaseClass ? "T?" : $"{typeName}?")}> FromJsonStreamAsync{(isBaseClass ? "<T>" : string.Empty)}(
+            global::System.IO.Stream jsonStream)
+            {(isBaseClass ? $"where T : {className}" : string.Empty)}
+        {{
+            return FromJsonStreamAsync{(isBaseClass ? "<T>" : string.Empty)}(
+                jsonStream,
+                {defaultJsonSerializerContext});
+        }}" : TrimmedLine)}
+
 {(isBaseClass ? $@" 
         /// <summary>
         /// Deserializes a JSON stream using the provided JsonSerializerOptions.
@@ -146,6 +195,14 @@ namespace {@namespace}
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
             where T : {className}
         {{
+{(hasJsonSerializerContext ? $@"            if (jsonSerializerOptions is null)
+            {{
+                return await FromJsonStreamAsync<T>(
+                    jsonStream,
+                    {defaultJsonSerializerContext}).ConfigureAwait(false);
+            }}
+
+" : TrimmedLine)}
             return (await global::System.Text.Json.JsonSerializer.DeserializeAsync<{className}?>(
                 jsonStream,
                 jsonSerializerOptions).ConfigureAwait(false)) as T{(isValueType ? "?" : "")};
@@ -161,6 +218,14 @@ namespace {@namespace}
             global::System.IO.Stream jsonStream,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {{
+{(hasJsonSerializerContext ? $@"            if (jsonSerializerOptions is null)
+            {{
+                return FromJsonStreamAsync(
+                    jsonStream,
+                    {defaultJsonSerializerContext});
+            }}
+
+" : TrimmedLine)}
             return global::System.Text.Json.JsonSerializer.DeserializeAsync<{typeName}?>(
                 jsonStream,
                 jsonSerializerOptions);
@@ -227,11 +292,13 @@ namespace {@namespace}
     private static string GenerateSystemTextJsonRawModelDataMethods(
         string typeName,
         string className,
-        bool isBaseClass)
+        bool isBaseClass,
+        string defaultJsonSerializerContext)
     {
         var contextReturnType = isBaseClass ? "T" : typeName;
         var contextGenericSuffix = isBaseClass ? "<T>" : string.Empty;
         var contextWhereClause = isBaseClass ? $"where T : {className}" : string.Empty;
+        var hasJsonSerializerContext = !string.IsNullOrWhiteSpace(defaultJsonSerializerContext);
 
         return $@"
 
@@ -242,6 +309,13 @@ namespace {@namespace}
             return ToJson(jsonSerializerContext);
         }}
 
+{(hasJsonSerializerContext ? $@"
+        {("Serializes the current instance to raw JSON using the generated default JsonSerializerContext.").ToXmlDocumentationSummary(level: 8)}
+        public string ToRawJson()
+        {{
+            return ToRawJson({defaultJsonSerializerContext});
+        }}" : TrimmedLine)}
+
         {("Serializes the current instance to raw JSON using the provided JsonSerializerOptions.").ToXmlDocumentationSummary(level: 8)}
 #if NET8_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(""JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved."")]
@@ -250,6 +324,12 @@ namespace {@namespace}
         public string ToRawJson(
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {{
+{(hasJsonSerializerContext ? $@"            if (jsonSerializerOptions is null)
+            {{
+                return ToRawJson({defaultJsonSerializerContext});
+            }}
+
+" : TrimmedLine)}
             return ToJson(jsonSerializerOptions);
         }}
 
@@ -262,6 +342,17 @@ namespace {@namespace}
             return FromJson{contextGenericSuffix}(json, jsonSerializerContext);
         }}
 
+{(hasJsonSerializerContext ? $@"
+        {("Deserializes raw JSON while preserving unknown JSON properties using the generated default JsonSerializerContext.").ToXmlDocumentationSummary(level: 8)}
+        public static {contextReturnType}? FromRawUnchecked{contextGenericSuffix}(
+            string json)
+            {contextWhereClause}
+        {{
+            return FromRawUnchecked{contextGenericSuffix}(
+                json,
+                {defaultJsonSerializerContext});
+        }}" : TrimmedLine)}
+
         {("Deserializes raw JSON while preserving unknown JSON properties.").ToXmlDocumentationSummary(level: 8)}
 #if NET8_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(""JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved."")]
@@ -272,6 +363,14 @@ namespace {@namespace}
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
             {contextWhereClause}
         {{
+{(hasJsonSerializerContext ? $@"            if (jsonSerializerOptions is null)
+            {{
+                return FromRawUnchecked{contextGenericSuffix}(
+                    json,
+                    {defaultJsonSerializerContext});
+            }}
+
+" : TrimmedLine)}
             return FromJson{contextGenericSuffix}(json, jsonSerializerOptions);
         }}";
     }
