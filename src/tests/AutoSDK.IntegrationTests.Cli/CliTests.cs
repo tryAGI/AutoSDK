@@ -134,6 +134,53 @@ public class CliTests
     }
 
     [TestMethod]
+    public async Task Generate_WithNoEndpointsOrModels_WarnsAboutEmptyGeneratedSurface()
+    {
+        var tempDirectory = Path.Combine(Path.GetTempPath(), Path.GetRandomFileName());
+        try
+        {
+            Directory.CreateDirectory(tempDirectory);
+
+            var specPath = Path.Combine(tempDirectory, "empty.yaml");
+            await File.WriteAllTextAsync(
+                specPath,
+                """
+                openapi: 3.0.1
+                info:
+                  title: Empty Surface
+                  version: 1.0.0
+                paths: {}
+                """);
+
+            var currentDirectory = Directory.GetCurrentDirectory();
+            var repositoryDirectory = Path.GetFullPath(Path.Combine(currentDirectory, "../../../../../.."));
+            var outputDirectory = Path.Combine(tempDirectory, "Generated");
+
+            var generateResult = await RunDotnetAsync(
+                repositoryDirectory,
+                "run",
+                "--disable-build-servers",
+                "--no-launch-profile",
+                "--project", "src/libs/AutoSDK.CLI",
+                "generate", specPath,
+                "--namespace", "Empty",
+                "--clientClassName", "EmptyClient",
+                "--targetFramework", "net10.0",
+                "--output", outputDirectory);
+
+            Console.WriteLine(generateResult.StandardOutput);
+            Console.WriteLine(generateResult.StandardError);
+            generateResult.ExitCode.Should().Be(0);
+            generateResult.StandardOutput.Should().Contain(
+                "Warning: No endpoint or model files were generated. Check that the input specification contains supported paths/schemas and that any upstream fetch step succeeded.");
+        }
+        finally
+        {
+            TryDeleteDirectory(tempDirectory);
+        }
+    }
+
+    [TestMethod]
     public async Task Generate_ProtoInput_ScaffoldsGrpcClientProject()
     {
         var tempDirectory = Path.Combine(Path.GetTempPath(), Path.GetRandomFileName());

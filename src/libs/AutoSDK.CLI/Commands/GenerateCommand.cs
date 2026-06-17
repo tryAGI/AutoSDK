@@ -723,6 +723,11 @@ internal sealed class GenerateCommand : Command
             Console.WriteLine("Warning: Disabled generated System.Text.Json source-generation context because some union-heavy types exceeded compiler metadata limits.");
         }
 
+        if (ShouldWarnAboutEmptyGeneratedSurface(settings, data))
+        {
+            Console.WriteLine("Warning: No endpoint or model files were generated. Check that the input specification contains supported paths/schemas and that any upstream fetch step succeeded.");
+        }
+
         var files = CSharpLanguagePlugin.Instance
             .GenerateFiles(data)
             .Where(x => !x.IsEmpty)
@@ -788,6 +793,25 @@ internal sealed class GenerateCommand : Command
         }
         
         Console.WriteLine("Done.");
+    }
+
+    private static bool ShouldWarnAboutEmptyGeneratedSurface(
+        Settings settings,
+        AutoSDK.Models.Data data)
+    {
+        if (!settings.GenerateSdk &&
+            !settings.GenerateModels &&
+            !settings.GenerateMethods &&
+            !settings.GenerateWebSocketClient)
+        {
+            return false;
+        }
+
+        return data.Methods.IsEmpty &&
+               data.Classes.IsEmpty &&
+               data.Enums.IsEmpty &&
+               data.AnyOfs.IsEmpty &&
+               data.WebSocketOperations.IsEmpty;
     }
 
     private static async Task ScaffoldMixedModeGrpcInputsAsync(
