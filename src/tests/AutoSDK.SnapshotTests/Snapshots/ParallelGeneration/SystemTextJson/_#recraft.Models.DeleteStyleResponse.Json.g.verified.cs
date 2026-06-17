@@ -17,13 +17,6 @@ namespace recraft
                 jsonSerializerContext);
         }
 
-        /// <summary>
-        /// Serializes the current instance to a JSON string using the generated default JsonSerializerContext.
-        /// </summary>
-        public string ToJson()
-        {
-            return ToJson(global::recraft.SourceGenerationContext.Default);
-        }
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.
@@ -35,11 +28,6 @@ namespace recraft
         public string ToJson(
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
-            if (jsonSerializerOptions is null)
-            {
-                return ToJson(global::recraft.SourceGenerationContext.Default);
-            }
-
             return global::System.Text.Json.JsonSerializer.Serialize(
                 this,
                 jsonSerializerOptions);
@@ -58,16 +46,6 @@ namespace recraft
                 jsonSerializerContext) as global::recraft.DeleteStyleResponse;
         }
 
-        /// <summary>
-        /// Deserializes a JSON string using the generated default JsonSerializerContext.
-        /// </summary>
-        public static global::recraft.DeleteStyleResponse? FromJson(
-            string json)
-        {
-            return FromJson(
-                json,
-                global::recraft.SourceGenerationContext.Default);
-        }
 
         /// <summary>
         /// Deserializes a JSON string using the provided JsonSerializerOptions.
@@ -80,13 +58,6 @@ namespace recraft
             string json,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
-            if (jsonSerializerOptions is null)
-            {
-                return FromJson(
-                    json,
-                    global::recraft.SourceGenerationContext.Default);
-            }
-
             return global::System.Text.Json.JsonSerializer.Deserialize<global::recraft.DeleteStyleResponse>(
                 json,
                 jsonSerializerOptions);
@@ -105,16 +76,6 @@ namespace recraft
                 jsonSerializerContext).ConfigureAwait(false)) as global::recraft.DeleteStyleResponse;
         }
 
-        /// <summary>
-        /// Deserializes a JSON stream using the generated default JsonSerializerContext.
-        /// </summary>
-        public static global::System.Threading.Tasks.ValueTask<global::recraft.DeleteStyleResponse?> FromJsonStreamAsync(
-            global::System.IO.Stream jsonStream)
-        {
-            return FromJsonStreamAsync(
-                jsonStream,
-                global::recraft.SourceGenerationContext.Default);
-        }
 
         /// <summary>
         /// Deserializes a JSON stream using the provided JsonSerializerOptions.
@@ -127,13 +88,6 @@ namespace recraft
             global::System.IO.Stream jsonStream,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
-            if (jsonSerializerOptions is null)
-            {
-                return FromJsonStreamAsync(
-                    jsonStream,
-                    global::recraft.SourceGenerationContext.Default);
-            }
-
             return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::recraft.DeleteStyleResponse?>(
                 jsonStream,
                 jsonSerializerOptions);

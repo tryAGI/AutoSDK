@@ -17,13 +17,6 @@ namespace IXSocial
                 jsonSerializerContext);
         }
 
-        /// <summary>
-        /// Serializes the current instance to a JSON string using the generated default JsonSerializerContext.
-        /// </summary>
-        public string ToJson()
-        {
-            return ToJson(global::IXSocial.SourceGenerationContext.Default);
-        }
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.
@@ -35,11 +28,6 @@ namespace IXSocial
         public string ToJson(
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
-            if (jsonSerializerOptions is null)
-            {
-                return ToJson(global::IXSocial.SourceGenerationContext.Default);
-            }
-
             return global::System.Text.Json.JsonSerializer.Serialize(
                 this,
                 jsonSerializerOptions);
@@ -58,16 +46,6 @@ namespace IXSocial
                 jsonSerializerContext) as global::IXSocial.ListChargesResponse;
         }
 
-        /// <summary>
-        /// Deserializes a JSON string using the generated default JsonSerializerContext.
-        /// </summary>
-        public static global::IXSocial.ListChargesResponse? FromJson(
-            string json)
-        {
-            return FromJson(
-                json,
-                global::IXSocial.SourceGenerationContext.Default);
-        }
 
         /// <summary>
         /// Deserializes a JSON string using the provided JsonSerializerOptions.
@@ -80,13 +58,6 @@ namespace IXSocial
             string json,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
-            if (jsonSerializerOptions is null)
-            {
-                return FromJson(
-                    json,
-                    global::IXSocial.SourceGenerationContext.Default);
-            }
-
             return global::System.Text.Json.JsonSerializer.Deserialize<global::IXSocial.ListChargesResponse>(
                 json,
                 jsonSerializerOptions);
@@ -105,16 +76,6 @@ namespace IXSocial
                 jsonSerializerContext).ConfigureAwait(false)) as global::IXSocial.ListChargesResponse;
         }
 
-        /// <summary>
-        /// Deserializes a JSON stream using the generated default JsonSerializerContext.
-        /// </summary>
-        public static global::System.Threading.Tasks.ValueTask<global::IXSocial.ListChargesResponse?> FromJsonStreamAsync(
-            global::System.IO.Stream jsonStream)
-        {
-            return FromJsonStreamAsync(
-                jsonStream,
-                global::IXSocial.SourceGenerationContext.Default);
-        }
 
         /// <summary>
         /// Deserializes a JSON stream using the provided JsonSerializerOptions.
@@ -127,13 +88,6 @@ namespace IXSocial
             global::System.IO.Stream jsonStream,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
-            if (jsonSerializerOptions is null)
-            {
-                return FromJsonStreamAsync(
-                    jsonStream,
-                    global::IXSocial.SourceGenerationContext.Default);
-            }
-
             return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::IXSocial.ListChargesResponse?>(
                 jsonStream,
                 jsonSerializerOptions);

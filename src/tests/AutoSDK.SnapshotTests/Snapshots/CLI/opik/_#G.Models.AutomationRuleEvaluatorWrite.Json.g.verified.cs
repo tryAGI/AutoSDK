@@ -17,13 +17,6 @@ namespace G
                 jsonSerializerContext);
         }
 
-        /// <summary>
-        /// Serializes the current instance to a JSON string using the generated default JsonSerializerContext.
-        /// </summary>
-        public string ToJson()
-        {
-            return ToJson(global::G.SourceGenerationContext.Default);
-        }
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.
@@ -35,11 +28,6 @@ namespace G
         public string ToJson(
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
-            if (jsonSerializerOptions is null)
-            {
-                return ToJson(global::G.SourceGenerationContext.Default);
-            }
-
             return global::System.Text.Json.JsonSerializer.Serialize(
                 this,
                 typeof(AutomationRuleEvaluatorWrite),
@@ -60,17 +48,6 @@ namespace G
                 jsonSerializerContext) as T;
         }
 
-        /// <summary>
-        /// Deserializes a JSON string using the generated default JsonSerializerContext.
-        /// </summary>
-        public static T? FromJson<T>(
-            string json)
-            where T : AutomationRuleEvaluatorWrite
-        {
-            return FromJson<T>(
-                json,
-                global::G.SourceGenerationContext.Default);
-        }
 
         /// <summary>
         /// Deserializes a JSON string using the provided JsonSerializerOptions.
@@ -84,13 +61,6 @@ namespace G
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
             where T : AutomationRuleEvaluatorWrite
         {
-            if (jsonSerializerOptions is null)
-            {
-                return FromJson<T>(
-                    json,
-                    global::G.SourceGenerationContext.Default);
-            }
-
             return global::System.Text.Json.JsonSerializer.Deserialize<AutomationRuleEvaluatorWrite>(
                 json,
                 jsonSerializerOptions) as T;
@@ -110,17 +80,6 @@ namespace G
                 jsonSerializerContext).ConfigureAwait(false)) as T;
         }
 
-        /// <summary>
-        /// Deserializes a JSON stream using the generated default JsonSerializerContext.
-        /// </summary>
-        public static global::System.Threading.Tasks.ValueTask<T?> FromJsonStreamAsync<T>(
-            global::System.IO.Stream jsonStream)
-            where T : AutomationRuleEvaluatorWrite
-        {
-            return FromJsonStreamAsync<T>(
-                jsonStream,
-                global::G.SourceGenerationContext.Default);
-        }
 
         /// <summary>
         /// Deserializes a JSON stream using the provided JsonSerializerOptions.
@@ -134,13 +93,6 @@ namespace G
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
             where T : AutomationRuleEvaluatorWrite
         {
-            if (jsonSerializerOptions is null)
-            {
-                return await FromJsonStreamAsync<T>(
-                    jsonStream,
-                    global::G.SourceGenerationContext.Default).ConfigureAwait(false);
-            }
-
             return (await global::System.Text.Json.JsonSerializer.DeserializeAsync<AutomationRuleEvaluatorWrite?>(
                 jsonStream,
                 jsonSerializerOptions).ConfigureAwait(false)) as T;

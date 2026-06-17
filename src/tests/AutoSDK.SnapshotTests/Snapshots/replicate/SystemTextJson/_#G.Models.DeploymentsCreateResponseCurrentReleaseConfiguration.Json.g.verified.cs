@@ -17,13 +17,6 @@ namespace G
                 jsonSerializerContext);
         }
 
-        /// <summary>
-        /// Serializes the current instance to a JSON string using the generated default JsonSerializerContext.
-        /// </summary>
-        public string ToJson()
-        {
-            return ToJson(global::G.SourceGenerationContext.Default);
-        }
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.
@@ -35,11 +28,6 @@ namespace G
         public string ToJson(
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
-            if (jsonSerializerOptions is null)
-            {
-                return ToJson(global::G.SourceGenerationContext.Default);
-            }
-
             return global::System.Text.Json.JsonSerializer.Serialize(
                 this,
                 jsonSerializerOptions);
@@ -58,16 +46,6 @@ namespace G
                 jsonSerializerContext) as global::G.DeploymentsCreateResponseCurrentReleaseConfiguration;
         }
 
-        /// <summary>
-        /// Deserializes a JSON string using the generated default JsonSerializerContext.
-        /// </summary>
-        public static global::G.DeploymentsCreateResponseCurrentReleaseConfiguration? FromJson(
-            string json)
-        {
-            return FromJson(
-                json,
-                global::G.SourceGenerationContext.Default);
-        }
 
         /// <summary>
         /// Deserializes a JSON string using the provided JsonSerializerOptions.
@@ -80,13 +58,6 @@ namespace G
             string json,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
-            if (jsonSerializerOptions is null)
-            {
-                return FromJson(
-                    json,
-                    global::G.SourceGenerationContext.Default);
-            }
-
             return global::System.Text.Json.JsonSerializer.Deserialize<global::G.DeploymentsCreateResponseCurrentReleaseConfiguration>(
                 json,
                 jsonSerializerOptions);
@@ -105,16 +76,6 @@ namespace G
                 jsonSerializerContext).ConfigureAwait(false)) as global::G.DeploymentsCreateResponseCurrentReleaseConfiguration;
         }
 
-        /// <summary>
-        /// Deserializes a JSON stream using the generated default JsonSerializerContext.
-        /// </summary>
-        public static global::System.Threading.Tasks.ValueTask<global::G.DeploymentsCreateResponseCurrentReleaseConfiguration?> FromJsonStreamAsync(
-            global::System.IO.Stream jsonStream)
-        {
-            return FromJsonStreamAsync(
-                jsonStream,
-                global::G.SourceGenerationContext.Default);
-        }
 
         /// <summary>
         /// Deserializes a JSON stream using the provided JsonSerializerOptions.
@@ -127,13 +88,6 @@ namespace G
             global::System.IO.Stream jsonStream,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
-            if (jsonSerializerOptions is null)
-            {
-                return FromJsonStreamAsync(
-                    jsonStream,
-                    global::G.SourceGenerationContext.Default);
-            }
-
             return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::G.DeploymentsCreateResponseCurrentReleaseConfiguration?>(
                 jsonStream,
                 jsonSerializerOptions);
