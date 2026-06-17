@@ -17,7 +17,6 @@ namespace G
                 jsonSerializerContext);
         }
 
-
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.
         /// </summary>
@@ -47,7 +46,6 @@ namespace G
                 typeof(FeedbackPublic),
                 jsonSerializerContext) as T;
         }
-
 
         /// <summary>
         /// Deserializes a JSON string using the provided JsonSerializerOptions.
@@ -79,7 +77,6 @@ namespace G
                 typeof(FeedbackPublic),
                 jsonSerializerContext).ConfigureAwait(false)) as T;
         }
-
 
         /// <summary>
         /// Deserializes a JSON stream using the provided JsonSerializerOptions.

@@ -17,7 +17,6 @@ namespace G
                 jsonSerializerContext);
         }
 
-
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.
         /// </summary>
@@ -45,7 +44,6 @@ namespace G
                 typeof(global::G.ListDirectoryFilesApiV1BetaDirectoriesDirectoryIdFilesGetFileId),
                 jsonSerializerContext) as global::G.ListDirectoryFilesApiV1BetaDirectoriesDirectoryIdFilesGetFileId;
         }
-
 
         /// <summary>
         /// Deserializes a JSON string using the provided JsonSerializerOptions.
@@ -75,7 +73,6 @@ namespace G
                 typeof(global::G.ListDirectoryFilesApiV1BetaDirectoriesDirectoryIdFilesGetFileId),
                 jsonSerializerContext).ConfigureAwait(false)) as global::G.ListDirectoryFilesApiV1BetaDirectoriesDirectoryIdFilesGetFileId;
         }
-
 
         /// <summary>
         /// Deserializes a JSON stream using the provided JsonSerializerOptions.

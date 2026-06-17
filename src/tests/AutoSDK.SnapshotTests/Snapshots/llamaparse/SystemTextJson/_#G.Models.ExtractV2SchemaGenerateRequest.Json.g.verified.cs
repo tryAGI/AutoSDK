@@ -17,7 +17,6 @@ namespace G
                 jsonSerializerContext);
         }
 
-
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.
         /// </summary>
@@ -45,7 +44,6 @@ namespace G
                 typeof(global::G.ExtractV2SchemaGenerateRequest),
                 jsonSerializerContext) as global::G.ExtractV2SchemaGenerateRequest;
         }
-
 
         /// <summary>
         /// Deserializes a JSON string using the provided JsonSerializerOptions.
@@ -75,7 +73,6 @@ namespace G
                 typeof(global::G.ExtractV2SchemaGenerateRequest),
                 jsonSerializerContext).ConfigureAwait(false)) as global::G.ExtractV2SchemaGenerateRequest;
         }
-
 
         /// <summary>
         /// Deserializes a JSON stream using the provided JsonSerializerOptions.

@@ -17,7 +17,6 @@ namespace G
                 jsonSerializerContext);
         }
 
-
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.
         /// </summary>
@@ -45,7 +44,6 @@ namespace G
                 typeof(global::G.E2BSandboxConfigTemplate),
                 jsonSerializerContext) as global::G.E2BSandboxConfigTemplate;
         }
-
 
         /// <summary>
         /// Deserializes a JSON string using the provided JsonSerializerOptions.
@@ -75,7 +73,6 @@ namespace G
                 typeof(global::G.E2BSandboxConfigTemplate),
                 jsonSerializerContext).ConfigureAwait(false)) as global::G.E2BSandboxConfigTemplate;
         }
-
 
         /// <summary>
         /// Deserializes a JSON stream using the provided JsonSerializerOptions.

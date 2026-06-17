@@ -17,7 +17,6 @@ namespace IXSocial
                 jsonSerializerContext);
         }
 
-
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.
         /// </summary>
@@ -45,7 +44,6 @@ namespace IXSocial
                 typeof(global::IXSocial.ListChargesResponse),
                 jsonSerializerContext) as global::IXSocial.ListChargesResponse;
         }
-
 
         /// <summary>
         /// Deserializes a JSON string using the provided JsonSerializerOptions.
@@ -75,7 +73,6 @@ namespace IXSocial
                 typeof(global::IXSocial.ListChargesResponse),
                 jsonSerializerContext).ConfigureAwait(false)) as global::IXSocial.ListChargesResponse;
         }
-
 
         /// <summary>
         /// Deserializes a JSON stream using the provided JsonSerializerOptions.

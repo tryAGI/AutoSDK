@@ -17,7 +17,6 @@ namespace recraft
                 jsonSerializerContext);
         }
 
-
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.
         /// </summary>
@@ -45,7 +44,6 @@ namespace recraft
                 typeof(global::recraft.User),
                 jsonSerializerContext) as global::recraft.User;
         }
-
 
         /// <summary>
         /// Deserializes a JSON string using the provided JsonSerializerOptions.
@@ -75,7 +73,6 @@ namespace recraft
                 typeof(global::recraft.User),
                 jsonSerializerContext).ConfigureAwait(false)) as global::recraft.User;
         }
-
 
         /// <summary>
         /// Deserializes a JSON stream using the provided JsonSerializerOptions.

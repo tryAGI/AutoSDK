@@ -17,7 +17,6 @@ namespace petstore
                 jsonSerializerContext);
         }
 
-
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.
         /// </summary>
@@ -45,7 +44,6 @@ namespace petstore
                 typeof(global::petstore.Error),
                 jsonSerializerContext) as global::petstore.Error;
         }
-
 
         /// <summary>
         /// Deserializes a JSON string using the provided JsonSerializerOptions.
@@ -75,7 +73,6 @@ namespace petstore
                 typeof(global::petstore.Error),
                 jsonSerializerContext).ConfigureAwait(false)) as global::petstore.Error;
         }
-
 
         /// <summary>
         /// Deserializes a JSON stream using the provided JsonSerializerOptions.

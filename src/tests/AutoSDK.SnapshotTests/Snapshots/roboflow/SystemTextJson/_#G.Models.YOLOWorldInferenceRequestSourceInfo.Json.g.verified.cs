@@ -17,7 +17,6 @@ namespace G
                 jsonSerializerContext);
         }
 
-
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.
         /// </summary>
@@ -45,7 +44,6 @@ namespace G
                 typeof(global::G.YOLOWorldInferenceRequestSourceInfo),
                 jsonSerializerContext) as global::G.YOLOWorldInferenceRequestSourceInfo;
         }
-
 
         /// <summary>
         /// Deserializes a JSON string using the provided JsonSerializerOptions.
@@ -75,7 +73,6 @@ namespace G
                 typeof(global::G.YOLOWorldInferenceRequestSourceInfo),
                 jsonSerializerContext).ConfigureAwait(false)) as global::G.YOLOWorldInferenceRequestSourceInfo;
         }
-
 
         /// <summary>
         /// Deserializes a JSON stream using the provided JsonSerializerOptions.

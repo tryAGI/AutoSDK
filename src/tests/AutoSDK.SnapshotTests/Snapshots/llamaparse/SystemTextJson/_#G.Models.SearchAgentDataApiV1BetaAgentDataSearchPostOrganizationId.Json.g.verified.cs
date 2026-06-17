@@ -17,7 +17,6 @@ namespace G
                 jsonSerializerContext);
         }
 
-
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.
         /// </summary>
@@ -45,7 +44,6 @@ namespace G
                 typeof(global::G.SearchAgentDataApiV1BetaAgentDataSearchPostOrganizationId),
                 jsonSerializerContext) as global::G.SearchAgentDataApiV1BetaAgentDataSearchPostOrganizationId;
         }
-
 
         /// <summary>
         /// Deserializes a JSON string using the provided JsonSerializerOptions.
@@ -75,7 +73,6 @@ namespace G
                 typeof(global::G.SearchAgentDataApiV1BetaAgentDataSearchPostOrganizationId),
                 jsonSerializerContext).ConfigureAwait(false)) as global::G.SearchAgentDataApiV1BetaAgentDataSearchPostOrganizationId;
         }
-
 
         /// <summary>
         /// Deserializes a JSON stream using the provided JsonSerializerOptions.

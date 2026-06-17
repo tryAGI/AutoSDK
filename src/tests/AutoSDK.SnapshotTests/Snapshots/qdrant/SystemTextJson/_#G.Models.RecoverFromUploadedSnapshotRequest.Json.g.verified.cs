@@ -17,7 +17,6 @@ namespace G
                 jsonSerializerContext);
         }
 
-
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.
         /// </summary>
@@ -45,7 +44,6 @@ namespace G
                 typeof(global::G.RecoverFromUploadedSnapshotRequest),
                 jsonSerializerContext) as global::G.RecoverFromUploadedSnapshotRequest;
         }
-
 
         /// <summary>
         /// Deserializes a JSON string using the provided JsonSerializerOptions.
@@ -75,7 +73,6 @@ namespace G
                 typeof(global::G.RecoverFromUploadedSnapshotRequest),
                 jsonSerializerContext).ConfigureAwait(false)) as global::G.RecoverFromUploadedSnapshotRequest;
         }
-
 
         /// <summary>
         /// Deserializes a JSON stream using the provided JsonSerializerOptions.

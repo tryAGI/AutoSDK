@@ -17,7 +17,6 @@ namespace G
                 jsonSerializerContext);
         }
 
-
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.
         /// </summary>
@@ -45,7 +44,6 @@ namespace G
                 typeof(global::G.WebhookPullRequestAssignedPullRequestMilestoneCreator),
                 jsonSerializerContext) as global::G.WebhookPullRequestAssignedPullRequestMilestoneCreator;
         }
-
 
         /// <summary>
         /// Deserializes a JSON string using the provided JsonSerializerOptions.
@@ -75,7 +73,6 @@ namespace G
                 typeof(global::G.WebhookPullRequestAssignedPullRequestMilestoneCreator),
                 jsonSerializerContext).ConfigureAwait(false)) as global::G.WebhookPullRequestAssignedPullRequestMilestoneCreator;
         }
-
 
         /// <summary>
         /// Deserializes a JSON stream using the provided JsonSerializerOptions.
