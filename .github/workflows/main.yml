@@ -16,7 +16,7 @@ jobs:
     uses: tryAGI/workflows/.github/workflows/dotnet-sdk-build-test-publish.yml@main
     with:
       project-path: AutoSDK.slnx
-      additional-test-arguments: '--logger GitHubActions'
+      additional-test-arguments: '--logger GitHubActions --no-build'
     secrets:
       nuget-key: ${{ secrets.NUGET_KEY }}
 
