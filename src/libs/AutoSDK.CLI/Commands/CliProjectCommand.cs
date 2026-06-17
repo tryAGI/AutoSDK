@@ -978,10 +978,14 @@ internal sealed record CliProjectRequiredBaseProperty(
     string PropertyName,
     string PropertyId);
 
+internal sealed record CliProjectDirectOptionSetParameter(
+    MethodParameter OptionParameter,
+    MethodParameter MethodParameter);
+
 internal sealed record CliProjectDirectOptionSetUsage(
     string InstanceName,
     string ClassName,
-    ImmutableArray<MethodParameter> Parameters);
+    ImmutableArray<CliProjectDirectOptionSetParameter> Parameters);
 
 internal sealed record CliProjectNestedOptionSetUsage(
     string InstanceName,
@@ -1133,7 +1137,7 @@ internal sealed record CliProjectOperation(
         var webhookUsages = CreateWebhookUsages(allOptionParameters, classesByName);
         var consumedDirectParameterNames = directOptionSets
             .SelectMany(static usage => usage.Parameters)
-            .Select(static parameter => parameter.ParameterName)
+            .Select(static parameter => parameter.MethodParameter.ParameterName)
             .ToHashSet(StringComparer.Ordinal);
         var consumedNestedParameterNames = nestedOptionSets
             .Select(static usage => usage.ParameterName)
@@ -1337,7 +1341,11 @@ internal sealed record CliProjectOperation(
         }
 
         var parameters = optionSet.Parameters
-            .SelectMany(optionSetParameter => optionParameters.Where(parameter => parameter.ParameterName == optionSetParameter.ParameterName))
+            .SelectMany(optionSetParameter => optionParameters
+                .Where(parameter =>
+                    parameter.Location is null &&
+                    string.Equals(BaseBodyPropertyName(parameter), optionSetParameter.Name, StringComparison.OrdinalIgnoreCase))
+                .Select(parameter => new CliProjectDirectOptionSetParameter(optionSetParameter, parameter)))
             .ToImmutableArray();
         if (parameters.Length == 0)
         {
@@ -3263,7 +3271,7 @@ internal static class CliProjectScaffolder
 
             foreach (var parameter in operation.DirectOptionSets.SelectMany(static usage => usage.Parameters))
             {
-                optionNames.Add($"--{ToKebabCase(parameter.Id)}");
+                optionNames.Add($"--{ToKebabCase(parameter.OptionParameter.Id)}");
             }
 
             foreach (var usage in operation.NestedOptionSets)
@@ -3577,7 +3585,7 @@ internal static class CliProjectScaffolder
     {
         return usage.Parameters
             .Select(parameter => $@"
-                        command.Options.Add({usage.InstanceName}.{ParameterSymbolName(parameter)});")
+                        command.Options.Add({usage.InstanceName}.{ParameterSymbolName(parameter.OptionParameter)});")
             .Inject();
     }
 
@@ -3676,11 +3684,11 @@ internal static class CliProjectScaffolder
     {
         return usage.Parameters
             .Select(parameter =>
-                operation.SupportsBaseBody && CliProjectOperation.IsMergeableBaseBodyField(parameter)
+                operation.SupportsBaseBody && CliProjectOperation.IsMergeableBaseBodyField(parameter.MethodParameter)
                     ? $@"
-                        var {parameter.ParameterName} = {GenerateBaseBodyMergeExpression($"{usage.InstanceName}.{ParameterSymbolName(parameter)}", "__requestBase", operation.BaseBodyPropertyPath(parameter), parameter.ParameterName)};"
+                        var {parameter.MethodParameter.ParameterName} = {GenerateBaseBodyMergeExpression($"{usage.InstanceName}.{ParameterSymbolName(parameter.OptionParameter)}", "__requestBase", operation.BaseBodyPropertyPath(parameter.MethodParameter), parameter.MethodParameter.ParameterName)};"
                     : $@"
-                        var {parameter.ParameterName} = parseResult.{((parameter.IsRequired || parameter.HasSchemaDefault) ? "GetRequiredValue" : "GetValue")}({usage.InstanceName}.{ParameterSymbolName(parameter)});")
+                        var {parameter.MethodParameter.ParameterName} = parseResult.{((parameter.MethodParameter.IsRequired || parameter.MethodParameter.HasSchemaDefault) ? "GetRequiredValue" : "GetValue")}({usage.InstanceName}.{ParameterSymbolName(parameter.OptionParameter)});")
             .Inject();
     }
 
@@ -3929,7 +3937,7 @@ internal static class CliProjectScaffolder
             : $"client.{endPoint.NotAsyncMethodName}WaitAsync";
         var arguments = operation.PositionalParameters
             .Concat(operation.OptionParameters)
-            .Concat(operation.DirectOptionSets.SelectMany(static usage => usage.Parameters))
+            .Concat(operation.DirectOptionSets.SelectMany(static usage => usage.Parameters.Select(static parameter => parameter.MethodParameter)))
             .Select(static parameter => $@"
                                         {parameter.ParameterName}: {parameter.ParameterName},")
             .Concat(operation.NestedOptionSets.Select(static usage => $@"
@@ -3982,7 +3990,7 @@ internal static class CliProjectScaffolder
             : $"client.{endPoint.MethodName}";
         var arguments = operation.PositionalParameters
             .Concat(operation.OptionParameters)
-            .Concat(operation.DirectOptionSets.SelectMany(static usage => usage.Parameters))
+            .Concat(operation.DirectOptionSets.SelectMany(static usage => usage.Parameters.Select(static parameter => parameter.MethodParameter)))
             .Select(static parameter => $@"
                                     {parameter.ParameterName}: {parameter.ParameterName},")
             .Concat(operation.NestedOptionSets.Select(static usage => $@"
