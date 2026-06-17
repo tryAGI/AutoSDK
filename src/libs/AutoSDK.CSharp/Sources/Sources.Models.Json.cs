@@ -81,7 +81,6 @@ namespace {@namespace}
                 {(isBaseClass ? $"typeof({className})" : "this.GetType()")},
                 jsonSerializerContext);
         }}
-
 {(hasJsonSerializerContext ? $@"
         {"Serializes the current instance to a JSON string using the generated default JsonSerializerContext.".ToXmlDocumentationSummary(level: 8)}
         public string ToJson()
@@ -101,7 +100,6 @@ namespace {@namespace}
             {{
                 return ToJson({defaultJsonSerializerContext});
             }}
-
 " : TrimmedLine)}
             return global::System.Text.Json.JsonSerializer.Serialize(
                 this,
@@ -120,7 +118,6 @@ namespace {@namespace}
                 typeof({(isBaseClass ? className : typeName)}),
                 jsonSerializerContext) as {(isBaseClass ? "T" : typeName)}{(isValueType ? "?" : "")};
         }}
-
 {(hasJsonSerializerContext ? $@"
         {"Deserializes a JSON string using the generated default JsonSerializerContext.".ToXmlDocumentationSummary(level: 8)}
         public static {(isBaseClass ? "T" : typeName)}? FromJson{(isBaseClass ? "<T>" : string.Empty)}(
@@ -148,7 +145,6 @@ namespace {@namespace}
                     json,
                     {defaultJsonSerializerContext});
             }}
-
 " : TrimmedLine)}
             return global::System.Text.Json.JsonSerializer.Deserialize<{(isBaseClass ? className : typeName)}>(
                 json,
@@ -168,7 +164,6 @@ namespace {@namespace}
                 typeof({(isBaseClass ? className : typeName)}),
                 jsonSerializerContext).ConfigureAwait(false)) as {(isBaseClass ? "T" : typeName)}{(isValueType ? "?" : "")};
         }}
-
 {(hasJsonSerializerContext ? $@"
         /// <summary>
         /// Deserializes a JSON stream using the generated default JsonSerializerContext.
@@ -201,7 +196,6 @@ namespace {@namespace}
                     jsonStream,
                     {defaultJsonSerializerContext}).ConfigureAwait(false);
             }}
-
 " : TrimmedLine)}
             return (await global::System.Text.Json.JsonSerializer.DeserializeAsync<{className}?>(
                 jsonStream,
@@ -224,7 +218,6 @@ namespace {@namespace}
                     jsonStream,
                     {defaultJsonSerializerContext});
             }}
-
 " : TrimmedLine)}
             return global::System.Text.Json.JsonSerializer.DeserializeAsync<{typeName}?>(
                 jsonStream,
@@ -308,7 +301,6 @@ namespace {@namespace}
         {{
             return ToJson(jsonSerializerContext);
         }}
-
 {(hasJsonSerializerContext ? $@"
         {("Serializes the current instance to raw JSON using the generated default JsonSerializerContext.").ToXmlDocumentationSummary(level: 8)}
         public string ToRawJson()
@@ -328,7 +320,6 @@ namespace {@namespace}
             {{
                 return ToRawJson({defaultJsonSerializerContext});
             }}
-
 " : TrimmedLine)}
             return ToJson(jsonSerializerOptions);
         }}
@@ -341,7 +332,6 @@ namespace {@namespace}
         {{
             return FromJson{contextGenericSuffix}(json, jsonSerializerContext);
         }}
-
 {(hasJsonSerializerContext ? $@"
         {("Deserializes raw JSON while preserving unknown JSON properties using the generated default JsonSerializerContext.").ToXmlDocumentationSummary(level: 8)}
         public static {contextReturnType}? FromRawUnchecked{contextGenericSuffix}(
@@ -369,7 +359,6 @@ namespace {@namespace}
                     json,
                     {defaultJsonSerializerContext});
             }}
-
 " : TrimmedLine)}
             return FromJson{contextGenericSuffix}(json, jsonSerializerOptions);
         }}";
