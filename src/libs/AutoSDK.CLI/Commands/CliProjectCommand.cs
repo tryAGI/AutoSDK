@@ -1892,14 +1892,12 @@ internal static class CliProjectScaffolder
     {
         var envVarArray = string.Join(", ", model.ApiKeyEnvVars.Select(static x => Literal(x)));
         var authorizations = model.Authorizations.Select(authorization => $$"""
-                    new global::{{model.SdkNamespace}}.EndPointAuthorization
-                    {
-                        Type = "{{authorization.Type}}",
-                        SchemeId = "{{authorization.SchemeId}}",
-                        Location = "{{authorization.Location}}",
-                        Name = "{{authorization.Name}}",
-                        Value = apiKey,
-                    },
+                    CreateAuthorization(
+                        type: "{{authorization.Type}}",
+                        schemeId: "{{authorization.SchemeId}}",
+                        location: "{{authorization.Location}}",
+                        name: "{{authorization.Name}}",
+                        value: apiKey),
             """).Inject();
         var createPollingOptionsMethod = model.Tags
             .SelectMany(static tag => tag.Operations)
@@ -1964,6 +1962,30 @@ internal static class CliProjectScaffolder
                              baseUri: baseUri,
                              authorizations: authorizations,
                              disposeHttpClient: true);
+                     }
+
+                     private static global::{{model.SdkNamespace}}.EndPointAuthorization CreateAuthorization(
+                         string type,
+                         string schemeId,
+                         string location,
+                         string name,
+                         string value)
+                     {
+                         var authorization = new global::{{model.SdkNamespace}}.EndPointAuthorization
+                         {
+                             Type = type,
+                             Location = location,
+                             Name = name,
+                             Value = value,
+                         };
+
+                         var schemeIdProperty = typeof(global::{{model.SdkNamespace}}.EndPointAuthorization).GetProperty("SchemeId");
+                         if (schemeIdProperty?.CanWrite == true)
+                         {
+                             schemeIdProperty.SetValue(authorization, schemeId);
+                         }
+
+                         return authorization;
                      }
 
                      [System.Diagnostics.CodeAnalysis.SuppressMessage(
@@ -3725,12 +3747,15 @@ internal static class CliProjectScaffolder
                                 {property.PropertyName} = {valueExpression},";
             })
             .Inject();
+        var baseAccessorExistsExpression = operation.SupportsBaseBody
+            ? $"{baseAccessor} is not null"
+            : "false";
 
         return $@"
 	{baseAccessorDeclaration}{valueLines}
                         var __{internalUsageName}Specified = {string.Join(" || ", specifiedExpression)};
                         var {usage.ParameterName} =
-                            __{internalUsageName}Specified || {baseAccessor} is not null
+                            __{internalUsageName}Specified || {baseAccessorExistsExpression}
                                 ? new {usage.ModelTypeName}
                                 {{
 	{assignments}
@@ -3795,6 +3820,9 @@ internal static class CliProjectScaffolder
                             : {baseAccessor}?.{usage.EventsPropertyName};");
             specifiedExpressions.Add($"__{internalUsageName}EventsSpecified");
         }
+        var baseAccessorExistsExpression = operation.SupportsBaseBody
+            ? $"{baseAccessor} is not null"
+            : "false";
 
         var assignments = new List<string>
         {
@@ -3837,7 +3865,7 @@ internal static class CliProjectScaffolder
     : string.Empty)}
 
                         var {usage.ParameterName} =
-                            __{internalUsageName}Specified || {baseAccessor} is not null
+                            __{internalUsageName}Specified || {baseAccessorExistsExpression}
                                 ? new {usage.ModelTypeName}
                                 {{
 {string.Concat(assignments)}
