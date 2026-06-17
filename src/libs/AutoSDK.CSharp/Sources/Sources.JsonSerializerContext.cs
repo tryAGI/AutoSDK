@@ -27,6 +27,13 @@ public static partial class Sources
             ? (Lines: Array.Empty<string>(), GuardLines: Array.Empty<string>())
             : GenerateJsonSerializableAttributeLines(client, types);
 
+        if (jsonSerializableAttributes.Lines.Length == 0)
+        {
+            return GenerateEmptyJsonSerializerContext(
+                client,
+                contextClassName);
+        }
+
         if (jsonSerializableAttributes.Lines.Length > MaxJsonSerializableAttributesPerContext)
         {
             return GenerateChunkedJsonSerializerContext(
@@ -53,6 +60,63 @@ namespace {client.Settings.Namespace}
     }
 
     private const int MaxJsonSerializableAttributesPerContext = 500;
+
+    private static string GenerateEmptyJsonSerializerContext(
+        Client client,
+        string contextClassName)
+    {
+        return $@"
+#nullable enable
+
+#pragma warning disable CS0618 // Type or member is obsolete
+#pragma warning disable CS3016 // Arrays as attribute arguments is not CLS-compliant
+
+namespace {client.Settings.Namespace}
+{{
+    {string.Empty.ToXmlDocumentationSummary(level: 4)}
+{GenerateJsonSourceGenerationOptionsAttribute(client)}
+    public sealed partial class {contextClassName} : global::System.Text.Json.Serialization.JsonSerializerContext
+    {{
+        private static readonly global::System.Text.Json.JsonSerializerOptions DefaultOptions = CreateDefaultOptions();
+
+        {string.Empty.ToXmlDocumentationSummary(level: 8)}
+        public static {contextClassName} Default {{ get; }} = new(DefaultOptions);
+
+        {string.Empty.ToXmlDocumentationSummary(level: 8)}
+        public {contextClassName}()
+            : this(DefaultOptions)
+        {{
+        }}
+
+        {string.Empty.ToXmlDocumentationSummary(level: 8)}
+        public {contextClassName}(global::System.Text.Json.JsonSerializerOptions? options)
+            : base(options)
+        {{
+        }}
+
+        /// <inheritdoc />
+        protected override global::System.Text.Json.JsonSerializerOptions? GeneratedSerializerOptions => DefaultOptions;
+
+        /// <inheritdoc />
+        public override global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? GetTypeInfo(global::System.Type type)
+        {{
+            return null;
+        }}
+
+        private static global::System.Text.Json.JsonSerializerOptions CreateDefaultOptions()
+        {{
+            var options = new global::System.Text.Json.JsonSerializerOptions
+            {{
+                DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
+            }};
+{client.Converters.Select(x => $@"
+            options.Converters.Add(new {x}());").Inject()}
+
+            return options;
+        }}
+    }}
+}}".RemoveBlankLinesWhereOnlyWhitespaces();
+    }
 
     private static string GenerateChunkedJsonSerializerContext(
         Client client,

@@ -5,6 +5,8 @@ using AutoSDK.Helpers;
 using AutoSDK.Models;
 using AutoSDK.Serialization.Json;
 using AutoSDK.TypeMapping;
+using Microsoft.CodeAnalysis;
+using Microsoft.CodeAnalysis.CSharp;
 using static AutoSDK.Serialization.Json.SystemTextJsonSerializer;
 
 namespace AutoSDK.UnitTests;
@@ -12,6 +14,36 @@ namespace AutoSDK.UnitTests;
 public partial class JsonTests
 {
     private static TypeData T(TypeData type) => type.WithCSharpComputedValues();
+
+    private static void AssertGeneratedSourcesCompile(params FileWithName[] files)
+    {
+        var parseOptions = new CSharpParseOptions(documentationMode: DocumentationMode.Diagnose);
+        var syntaxTrees = files
+            .Select(file => CSharpSyntaxTree.ParseText(
+                file.Text,
+                parseOptions,
+                path: file.Name))
+            .ToArray();
+        var references = ((string)AppContext.GetData("TRUSTED_PLATFORM_ASSEMBLIES")!)
+            .Split(Path.PathSeparator)
+            .Where(static path => !string.IsNullOrWhiteSpace(path))
+            .Select(static path => MetadataReference.CreateFromFile(path))
+            .ToArray();
+        var compilation = CSharpCompilation.Create(
+            assemblyName: "AutoSDKGeneratedSources",
+            syntaxTrees: syntaxTrees,
+            references: references,
+            options: new CSharpCompilationOptions(OutputKind.DynamicallyLinkedLibrary));
+        var diagnostics = compilation.GetDiagnostics()
+            .Where(static diagnostic => diagnostic.Severity == DiagnosticSeverity.Error)
+            .Select(static diagnostic => diagnostic.ToString())
+            .ToArray();
+
+        diagnostics.Should().BeEmpty(
+            "generated sources should compile. Found:{0}{1}",
+            Environment.NewLine,
+            string.Join(Environment.NewLine + Environment.NewLine, diagnostics));
+    }
 
     [TestMethod]
     public void ContextTypes()
@@ -207,6 +239,45 @@ public partial class JsonTests
         file.Name.Should().Be("G.JsonSerializerContextTypes.g.cs");
         file.Text.Should().Contain("namespace G");
         file.Text.Should().NotContain("namespace System");
+    }
+
+    [TestMethod]
+    public void JsonSerializerContext_WithNoTypes_EmitsConcreteEmptyContext()
+    {
+        var settings = Settings.Default with
+        {
+            Namespace = "G",
+            JsonSerializerType = JsonSerializerType.SystemTextJson,
+            JsonSerializerContext = "G.SourceGenerationContext",
+            GenerateJsonSerializerContextTypes = true,
+            FromCli = true,
+        };
+        var client = new Client(
+            Id: "EmptyContext",
+            ClassName: "EmptyContextClient",
+            FileNameWithoutExtension: "G",
+            InterfaceFileNameWithoutExtension: "IG",
+            BaseUrl: string.Empty,
+            Clients: ImmutableArray<PropertyData>.Empty,
+            Summary: string.Empty,
+            BaseUrlSummary: string.Empty,
+            Settings: settings,
+            GlobalSettings: settings,
+            Converters: ImmutableArray<string>.Empty);
+
+        var file = Sources.JsonSerializerContext(
+            client,
+            ImmutableArray<TypeData>.Empty.AsEquatableArray());
+
+        file.Name.Should().Be("G.JsonSerializerContext.g.cs");
+        file.Text.Should().Contain(
+            "public sealed partial class SourceGenerationContext : global::System.Text.Json.Serialization.JsonSerializerContext");
+        file.Text.Should().Contain(
+            "protected override global::System.Text.Json.JsonSerializerOptions? GeneratedSerializerOptions => DefaultOptions;");
+        file.Text.Should().Contain(
+            "public override global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? GetTypeInfo(global::System.Type type)");
+        file.Text.Should().NotContain("JsonSerializable(typeof(");
+        AssertGeneratedSourcesCompile(file);
     }
 
     [TestMethod]
