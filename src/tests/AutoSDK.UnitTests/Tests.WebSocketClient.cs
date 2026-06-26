@@ -246,6 +246,52 @@ operations:
     }
 
     [TestMethod]
+    public void AsyncApiSingleChannel_UsesChannelAddressWhenServerHasNoPathname()
+    {
+        const string yaml = """
+asyncapi: 3.0.0
+info:
+  title: Soniox Realtime API
+  version: 1.0.0
+servers:
+  production:
+    host: stt-rt.soniox.com
+    protocol: wss
+channels:
+  speechToText:
+    address: /transcribe-websocket
+    messages:
+      Transcript:
+        payload:
+          type: object
+          properties:
+            text:
+              type: string
+operations:
+  receiveTranscript:
+    action: receive
+    channel:
+      $ref: '#/channels/speechToText'
+    messages:
+      - $ref: '#/channels/speechToText/messages/Transcript'
+""";
+
+        var settings = Settings.Default with
+        {
+            Namespace = "G",
+            JsonSerializerContext = "G.SourceGenerationContext",
+        };
+
+        var data = AsyncApiData.Prepare(((yaml, settings), GlobalSettings: settings));
+        var client = data.WebSocketClients.Should().ContainSingle().Subject;
+        var source = Sources.WebSocketClient(client).Text;
+
+        client.BaseUrl.Should().Be("wss://stt-rt.soniox.com/transcribe-websocket");
+        client.BaseUrlTemplate.Should().Be("wss://stt-rt.soniox.com/transcribe-websocket");
+        source.Should().Contain("public const string DefaultBaseUrl = \"wss://stt-rt.soniox.com/transcribe-websocket\";");
+    }
+
+    [TestMethod]
     public void AsyncApiSubprotocolAuthentication_GeneratesStoredAuth_AndRuntimeConnectSwitch()
     {
         const string yaml = """

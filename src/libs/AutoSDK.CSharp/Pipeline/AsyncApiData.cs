@@ -453,12 +453,8 @@ public static class AsyncApiData
                 : classNamePrefix;
 
             // Determine base URL for this channel
-            var baseUrlTemplate = isMultiChannel
-                ? (channelServer?.GetHostUrl(resolveVariables: false) ?? string.Empty) + (string.IsNullOrEmpty(channel.Address) ? string.Empty : "/" + channel.Address.TrimStart('/'))
-                : channelServer?.GetUrl(resolveVariables: false) ?? string.Empty;
-            var baseUrl = isMultiChannel
-                ? (channelServer?.GetHostUrl() ?? string.Empty) + (string.IsNullOrEmpty(channel.Address) ? string.Empty : "/" + channel.Address.TrimStart('/'))
-                : channelServer?.GetUrl() ?? string.Empty;
+            var baseUrlTemplate = BuildWebSocketBaseUrl(channelServer, channel, resolveVariables: false);
+            var baseUrl = BuildWebSocketBaseUrl(channelServer, channel, resolveVariables: true);
 
             var sendOps = new List<WebSocketEndPoint>();
             var receiveOps = new List<WebSocketEndPoint>();
@@ -584,6 +580,20 @@ public static class AsyncApiData
         }
 
         return (wsClients, wsOperations);
+    }
+
+    private static string BuildWebSocketBaseUrl(
+        AsyncApiServer? server,
+        AsyncApiChannel channel,
+        bool resolveVariables)
+    {
+        if (string.IsNullOrWhiteSpace(channel.Address))
+        {
+            return server?.GetUrl(resolveVariables) ?? string.Empty;
+        }
+
+        var hostUrl = server?.GetHostUrl(resolveVariables) ?? string.Empty;
+        return $"{hostUrl}/{channel.Address.TrimStart('/')}";
     }
 
     /// <summary>
