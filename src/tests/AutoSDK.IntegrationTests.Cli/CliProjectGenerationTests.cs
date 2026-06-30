@@ -297,6 +297,7 @@ components:
       type: object
       required:
         - url
+        - webhook
       properties:
         url:
           type: string
@@ -569,6 +570,8 @@ components:
             crawlCommand.Should().Contain("CliRuntime.SerializeStringArray");
             crawlCommand.Should().Contain("var __webhookWebhookUrlRequired =");
             crawlCommand.Should().Contain("Url = __webhookWebhookUrlRequired,");
+            crawlCommand.Should().Contain("throw new CliException(@\"Specify --webhook-url or include webhook in the base request body.\")");
+            crawlCommand.Should().Contain("webhook: webhook!,");
 
             // #340: a path-template parameter is hoisted to a positional Argument, not a --flag.
             var pathCommandPath = Directory
@@ -654,6 +657,8 @@ components:
             Console.WriteLine(buildResult.StandardOutput);
             Console.WriteLine(buildResult.StandardError);
             buildResult.ExitCode.Should().Be(0);
+            buildResult.StandardOutput.Should().NotContain("CS8604");
+            buildResult.StandardError.Should().NotContain("CS8604");
 
             var publishResult = await RunDotnetAsync(
                     cliDirectory,

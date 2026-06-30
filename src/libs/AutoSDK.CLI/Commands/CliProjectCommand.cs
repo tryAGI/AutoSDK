@@ -1003,6 +1003,7 @@ internal sealed record CliProjectWebhookUsage(
     string ParameterName,
     string BasePropertyName,
     string ModelTypeName,
+    bool IsRequired,
     string? UrlPropertyName,
     bool UrlIsRequired,
     string? HeadersPropertyName,
@@ -1445,6 +1446,7 @@ internal sealed record CliProjectOperation(
                     ParameterName: parameter.ParameterName,
                     BasePropertyName: BaseBodyPropertyName(parameter),
                     ModelTypeName: parameter.Type.CSharpTypeWithoutNullability,
+                    IsRequired: parameter.IsRequired && !parameter.HasSchemaDefault,
                     UrlPropertyName: HasProperty(urlProperty) ? urlProperty.Name : null,
                     UrlIsRequired: HasProperty(urlProperty) && urlProperty.IsRequired,
                     HeadersPropertyName: HasProperty(headersProperty) ? headersProperty.Name : null,
@@ -3831,6 +3833,15 @@ internal static class CliProjectScaffolder
         var baseAccessorExistsExpression = operation.SupportsBaseBody
             ? $"{baseAccessor} is not null"
             : "false";
+        var missingUrlMessage = operation.SupportsBaseBody
+            ? $"Specify --{usage.Prefix}-url or include it in the base request body before using other --{usage.Prefix}-* options."
+            : $"Specify --{usage.Prefix}-url before using other --{usage.Prefix}-* options.";
+        var missingRequiredMessage = operation.SupportsBaseBody
+            ? $"Specify --{usage.Prefix}-url or include {usage.Prefix} in the base request body."
+            : $"Specify --{usage.Prefix}-url.";
+        var missingValueExpression = usage.IsRequired
+            ? $"throw new CliException({Literal(missingRequiredMessage)})"
+            : baseAccessor;
 
         var assignments = new List<string>
         {
@@ -3863,13 +3874,13 @@ internal static class CliProjectScaffolder
                         var __{internalUsageName}Specified = {string.Join(" || ", specifiedExpressions)};
                         if (__{internalUsageName}Specified && string.IsNullOrWhiteSpace({usage.ParameterName}WebhookUrl))
                         {{
-                            throw new CliException(""Specify --{usage.Prefix}-url or include it in the base request body before using other --{usage.Prefix}-* options."");
+                            throw new CliException({Literal(missingUrlMessage)});
                         }}
 {(usage.UrlIsRequired
     ? $@"
                         var __{usage.ParameterName}WebhookUrlRequired =
                             {usage.ParameterName}WebhookUrl ??
-                            throw new CliException(""Specify --{usage.Prefix}-url or include it in the base request body before using other --{usage.Prefix}-* options."");"
+                            throw new CliException({Literal(missingUrlMessage)});"
     : string.Empty)}
 
                         var {usage.ParameterName} =
@@ -3878,7 +3889,7 @@ internal static class CliProjectScaffolder
                                 {{
 {string.Concat(assignments)}
                                 }}
-                                : {baseAccessor};";
+                                : {missingValueExpression};";
     }
 
     private static string GenerateResponseFormatterMembers(CliProjectOperation operation)
@@ -3943,7 +3954,7 @@ internal static class CliProjectScaffolder
             .Concat(operation.NestedOptionSets.Select(static usage => $@"
                                         {usage.ParameterName}: {usage.ParameterName}{(usage.IsRequired ? "!" : string.Empty)},"))
             .Concat(operation.WebhookUsages.Select(static usage => $@"
-                                        {usage.ParameterName}: {usage.ParameterName},"))
+                                        {usage.ParameterName}: {usage.ParameterName}{(usage.IsRequired ? "!" : string.Empty)},"))
             .Inject();
         var requestArgument = operation.HasDirectRequestBody
             ? @"
@@ -3996,7 +4007,7 @@ internal static class CliProjectScaffolder
             .Concat(operation.NestedOptionSets.Select(static usage => $@"
                                     {usage.ParameterName}: {usage.ParameterName}{(usage.IsRequired ? "!" : string.Empty)},"))
             .Concat(operation.WebhookUsages.Select(static usage => $@"
-                                    {usage.ParameterName}: {usage.ParameterName},"))
+                                    {usage.ParameterName}: {usage.ParameterName}{(usage.IsRequired ? "!" : string.Empty)},"))
             .Inject();
         var requestArgument = operation.HasDirectRequestBody
             ? @"
