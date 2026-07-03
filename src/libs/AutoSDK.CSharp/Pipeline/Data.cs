@@ -618,7 +618,7 @@ public static class Data
         var documentServers = CSharpServerFactory.CreateServerOptions(openApiDocument.Servers);
         var clientServersByClass = BuildClientServerMap(methods, rootClassName, documentServers);
         var usesServerSelectionSupport = clientServersByClass.Values.Any(static servers => servers.Length > 1);
-        methods = ApplyClientServerSelectionSupport(methods, clientServersByClass);
+        methods = ApplyClientServerSelectionSupport(methods, clientServersByClass, usesServerSelectionSupport);
         methods = ApplyLocationWaitCompanions(methods);
         methods = ApplyPageableMetadata(methods, classes, csharpSettings);
         var rootClientServers = GetClientServers(rootClassName, clientServersByClass, documentServers);
@@ -652,7 +652,8 @@ public static class Data
                 HasIdempotencySupport: hasIdempotencySupport,
                 HasMutualTlsSupport: hasMutualTlsSupport,
                 Servers: rootClientServers,
-                UsesServerSelectionSupport: usesServerSelectionSupport)] : [];
+                UsesServerSelectionSupport: usesServerSelectionSupport,
+                NeedsScopedServerResolver: NeedsScopedServerResolver(rootClassName, methods))] : [];
         if (settings.GroupByTags && (settings.GenerateSdk || settings.GenerateConstructors))
         {
             clients = clients.Concat(
@@ -673,7 +674,10 @@ public static class Data
                         HasIdempotencySupport: hasIdempotencySupport,
                         HasMutualTlsSupport: hasMutualTlsSupport,
                         Servers: GetClientServers(CSharpClientNameGenerator.Generate(tag), clientServersByClass, documentServers),
-                        UsesServerSelectionSupport: usesServerSelectionSupport)))
+                        UsesServerSelectionSupport: usesServerSelectionSupport,
+                        NeedsScopedServerResolver: NeedsScopedServerResolver(
+                            CSharpClientNameGenerator.Generate(tag),
+                            methods))))
                 .ToArray();
         }
         
@@ -1004,7 +1008,7 @@ public static class Data
         var documentServers = CSharpServerFactory.CreateServerOptions(openApiDocument.Servers);
         var clientServersByClass = BuildClientServerMap(methods, rootClassName, documentServers);
         var usesServerSelectionSupport = clientServersByClass.Values.Any(static servers => servers.Length > 1);
-        methods = ApplyClientServerSelectionSupport(methods, clientServersByClass);
+        methods = ApplyClientServerSelectionSupport(methods, clientServersByClass, usesServerSelectionSupport);
         methods = ApplyLocationWaitCompanions(methods);
         methods = ApplyPageableMetadata(methods, classes, settings);
         var rootClientServers = GetClientServers(rootClassName, clientServersByClass, documentServers);
@@ -1039,7 +1043,8 @@ public static class Data
                 HasIdempotencySupport: hasIdempotencySupport,
                 HasMutualTlsSupport: hasMutualTlsSupport,
                 Servers: rootClientServers,
-                UsesServerSelectionSupport: usesServerSelectionSupport)]
+                UsesServerSelectionSupport: usesServerSelectionSupport,
+                NeedsScopedServerResolver: NeedsScopedServerResolver(rootClassName, methods))]
             : [];
 
         if (settings.GroupByTags && (settings.GenerateSdk || settings.GenerateConstructors))
@@ -1061,7 +1066,10 @@ public static class Data
                         HasIdempotencySupport: hasIdempotencySupport,
                         HasMutualTlsSupport: hasMutualTlsSupport,
                         Servers: GetClientServers(CSharpClientNameGenerator.Generate(tag), clientServersByClass, documentServers),
-                        UsesServerSelectionSupport: usesServerSelectionSupport)))
+                        UsesServerSelectionSupport: usesServerSelectionSupport,
+                        NeedsScopedServerResolver: NeedsScopedServerResolver(
+                            CSharpClientNameGenerator.Generate(tag),
+                            methods))))
                 .ToArray();
         }
 
@@ -1203,16 +1211,30 @@ public static class Data
 
     private static ImmutableArray<EndPoint> ApplyClientServerSelectionSupport(
         IReadOnlyList<EndPoint> methods,
-        Dictionary<string, EquatableArray<ServerOption>> clientServersByClass)
+        Dictionary<string, EquatableArray<ServerOption>> clientServersByClass,
+        bool usesServerSelectionSupport)
     {
         return methods
             .Select(method => method with
             {
+                UsesServerSelectionSupport = usesServerSelectionSupport,
                 ClientUsesServerSelectionSupport =
                     clientServersByClass.TryGetValue(method.ClassName, out var servers) &&
                     servers.Length > 1,
             })
             .ToImmutableArray();
+    }
+
+    private static bool NeedsScopedServerResolver(
+        string className,
+        IReadOnlyList<EndPoint> methods)
+    {
+        return methods.Any(method =>
+            string.Equals(method.ClassName, className, StringComparison.Ordinal) &&
+            method.UsesServerSelectionSupport &&
+            method.HasServerOverride &&
+            !method.ClientUsesServerSelectionSupport &&
+            method.Servers.Length > 0);
     }
 
     /// <summary>

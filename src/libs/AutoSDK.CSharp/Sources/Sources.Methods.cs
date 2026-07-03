@@ -55,6 +55,9 @@ public static partial class Sources
             ContentType.Stream => "global::System.IO.Stream",
             _ => "byte[]",
         };
+        var generateScopedServerArray =
+            endPoint.ClientUsesServerSelectionSupport ||
+            endPoint.UsesServerSelectionSupport && endPoint.HasServerOverride && endPoint.Servers.Length > 0;
 
         return $@"
 #nullable enable{(
@@ -68,7 +71,7 @@ namespace {endPoint.Settings.Namespace}
 {{
     public partial class {endPoint.ClassName}
     {{
-{(endPoint.ClientUsesServerSelectionSupport ? $@"
+{(generateScopedServerArray ? $@"
         private static readonly global::{endPoint.Settings.Namespace}.AutoSDKServer[] s_{endPoint.NotAsyncMethodName}Servers = new global::{endPoint.Settings.Namespace}.AutoSDKServer[]
         {{{GenerateServerDeclarations(endPoint.Servers, endPoint.Settings.Namespace, 12)}
         }};" : TrimmedLine)}
@@ -1915,7 +1918,10 @@ namespace {endPoint.Settings.Namespace}
         string authorizationVariableName = "Authorizations")
     {
         var escapedBaseUrl = EscapeCSharpStringLiteral(endPoint.BaseUrl);
-        var baseUriExpression = endPoint.ClientUsesServerSelectionSupport
+        var useScopedServerResolver =
+            endPoint.ClientUsesServerSelectionSupport ||
+            endPoint.UsesServerSelectionSupport && endPoint.HasServerOverride && !string.IsNullOrWhiteSpace(endPoint.BaseUrl);
+        var baseUriExpression = useScopedServerResolver
             ? $@"ResolveBaseUri(
                 servers: s_{endPoint.NotAsyncMethodName}Servers,
                 defaultBaseUrl: ""{escapedBaseUrl}"")"

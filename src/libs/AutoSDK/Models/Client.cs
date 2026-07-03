@@ -18,5 +18,6 @@ public record struct Client(
     bool HasIdempotencySupport = false,
     bool HasMutualTlsSupport = false,
     EquatableArray<ServerOption> Servers = default,
-    bool UsesServerSelectionSupport = false
+    bool UsesServerSelectionSupport = false,
+    bool NeedsScopedServerResolver = false
 );

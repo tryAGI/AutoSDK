@@ -42,6 +42,7 @@ public record struct EndPoint(
     EquatableArray<PollingOperation> PollingOperations,
     EquatableArray<ServerOption> Servers = default,
     bool HasServerOverride = false,
+    bool UsesServerSelectionSupport = false,
     bool ClientUsesServerSelectionSupport = false,
     bool HasLocationHeaderOnSuccess = false,
     LocationWaitCompanion LocationWaitCompanion = default,

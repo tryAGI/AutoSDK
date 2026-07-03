@@ -122,6 +122,66 @@ paths:
     }
 
     [TestMethod]
+    public void GenerateEndPoint_GroupedSingleScopedServer_UsesScopedServerWithSharedConfiguration()
+    {
+        var data = PrepareData("""
+openapi: 3.0.3
+info:
+  title: Grouped Server Selection
+  version: 1.0.0
+servers:
+  - url: https://api.example.com/v1
+    description: Public API
+paths:
+  /transcriptions:
+    post:
+      operationId: createTranscription
+      tags:
+        - transcriptions
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+  /tts:
+    servers:
+      - url: https://tts.example.com/
+        description: TTS API
+    post:
+      operationId: generateTts
+      tags:
+        - tts
+      responses:
+        '200':
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+""");
+
+        var ttsClient = data.Clients.Single(x => x.ClassName == "TtsClient");
+        var ttsMethod = data.Methods.Single(x => x.NotAsyncMethodName == "GenerateTts");
+        var clientCode = Sources.GenerateClient(ttsClient);
+        var methodCode = Sources.GenerateEndPoint(ttsMethod);
+
+        ttsClient.Servers.Select(x => x.Url).Should().BeEquivalentTo("https://tts.example.com/");
+        ttsClient.UsesServerSelectionSupport.Should().BeTrue();
+        ttsClient.NeedsScopedServerResolver.Should().BeTrue();
+        ttsMethod.HasServerOverride.Should().BeTrue();
+        ttsMethod.UsesServerSelectionSupport.Should().BeTrue();
+        ttsMethod.ClientUsesServerSelectionSupport.Should().BeFalse();
+        clientCode.Should().Contain("private global::System.Uri? ResolveBaseUri(");
+        clientCode.Should().NotContain("AvailableServers => s_availableServers");
+        methodCode.Should().Contain("s_GenerateTtsServers");
+        methodCode.Should().Contain("baseUri: ResolveBaseUri(");
+        methodCode.Should().Contain("defaultBaseUrl: \"https://tts.example.com/\"");
+    }
+
+    [TestMethod]
     public void GenerateEndPoint_SingleScopedServer_UsesDirectFallbackWithoutSelectionSupport()
     {
         var data = PrepareData("""

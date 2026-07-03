@@ -6,6 +6,14 @@ namespace G
 {
     public partial class ModelPricingClient
     {
+
+        private static readonly global::G.AutoSDKServer[] s_GetModelPricingServers = new global::G.AutoSDKServer[]
+        {            new global::G.AutoSDKServer(
+                id: "https-api-portkey-ai",
+                name: "Portkey Public API (no auth required)",
+                url: "https://api.portkey.ai/",
+                description: "Portkey Public API (no auth required)"),
+        };
         partial void PrepareGetModelPricingArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string provider,
@@ -123,7 +131,9 @@ namespace G
 
                             var __pathBuilder = new global::G.PathBuilder(
                                 path: $"/model-configs/pricing/{provider}/{model}",
-                                baseUri: HttpClient.BaseAddress ?? new global::System.Uri("https://api.portkey.ai/", global::System.UriKind.RelativeOrAbsolute));
+                                baseUri: ResolveBaseUri(
+                                servers: s_GetModelPricingServers,
+                                defaultBaseUrl: "https://api.portkey.ai/"));
                             var __path = __pathBuilder.ToString();
                 __path = global::G.AutoSDKRequestOptionsSupport.AppendQueryParameters(
                     path: __path,
