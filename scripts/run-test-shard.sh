@@ -2,6 +2,8 @@
 
 set -euo pipefail
 
+shard_started_at=$SECONDS
+
 if [[ $# -lt 3 || $# -gt 4 ]]; then
   echo "Usage: $0 <project> <zero-based-shard-index> <shard-count> [configuration]" >&2
   exit 2
@@ -100,6 +102,7 @@ printf 'Running shard %d of %d with %d of %d tests.\n' \
   "${#filters[@]}" \
   "${#tests[@]}"
 
+set +e
 dotnet test "$project" \
   --configuration "$configuration" \
   --nologo \
@@ -108,3 +111,8 @@ dotnet test "$project" \
   --results-directory "$shard_artifacts" \
   --no-build \
   --filter "$filter"
+test_exit_code=$?
+set -e
+
+printf 'elapsed_seconds\t%s\n' "$((SECONDS - shard_started_at))" >> "$shard_artifacts/metadata.tsv"
+exit "$test_exit_code"

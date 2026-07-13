@@ -28,6 +28,7 @@ class ShardResult:
     index: int
     membership: tuple[str, ...]
     tests: tuple[TestResult, ...]
+    elapsed_seconds: float | None
 
 
 def parse_duration(value: str) -> float:
@@ -70,6 +71,19 @@ def read_trx(path: Path) -> tuple[TestResult, ...]:
     return tuple(results)
 
 
+def read_elapsed_seconds(path: Path) -> float | None:
+    if not path.exists():
+        return None
+
+    with path.open(encoding="utf-8", newline="") as stream:
+        metadata = {
+            row["key"]: row["value"]
+            for row in csv.DictReader(stream, delimiter="\t")
+        }
+    value = metadata.get("elapsed_seconds")
+    return float(value) if value is not None else None
+
+
 def load_shards(input_directory: Path) -> tuple[ShardResult, ...]:
     shards = []
     for membership_path in sorted(input_directory.rglob("membership.txt")):
@@ -81,7 +95,15 @@ def load_shards(input_directory: Path) -> tuple[ShardResult, ...]:
         )
         trx_path = membership_path.with_name("results.trx")
         tests = read_trx(trx_path) if trx_path.exists() else ()
-        shards.append(ShardResult(index=index, membership=membership, tests=tests))
+        elapsed_seconds = read_elapsed_seconds(membership_path.with_name("metadata.tsv"))
+        shards.append(
+            ShardResult(
+                index=index,
+                membership=membership,
+                tests=tests,
+                elapsed_seconds=elapsed_seconds,
+            )
+        )
     return tuple(sorted(shards, key=lambda shard: shard.index))
 
 
@@ -104,7 +126,15 @@ def write_summary(output_directory: Path, shards: tuple[ShardResult, ...], expec
         passed = sum(test.outcome == "Passed" for test in shard.tests)
         failed = sum(test.outcome == "Failed" for test in shard.tests)
         shard_rows.append(
-            (shard.index, len(shard.membership), len(shard.tests), passed, failed, f"{duration:.3f}")
+            (
+                shard.index,
+                len(shard.membership),
+                len(shard.tests),
+                passed,
+                failed,
+                f"{duration:.3f}",
+                f"{shard.elapsed_seconds:.3f}" if shard.elapsed_seconds is not None else "",
+            )
         )
         for name in shard.membership:
             result = result_by_name.get(name)
@@ -121,7 +151,15 @@ def write_summary(output_directory: Path, shards: tuple[ShardResult, ...], expec
 
     write_csv(
         output_directory / "shards.csv",
-        ("shard", "assigned", "reported", "passed", "failed", "duration_seconds"),
+        (
+            "shard",
+            "assigned",
+            "reported",
+            "passed",
+            "failed",
+            "duration_seconds",
+            "elapsed_seconds",
+        ),
         shard_rows,
     )
     write_csv(
@@ -144,12 +182,14 @@ def write_summary(output_directory: Path, shards: tuple[ShardResult, ...], expec
         f"Discovered artifacts for **{len(shards)} of {expected_shards}** shards. ",
         f"Assigned tests: **{total_assigned}**. Reported results: **{total_reported}**.",
         "",
-        "| Shard | Assigned | Reported | Passed | Failed | Test duration |",
-        "| ---: | ---: | ---: | ---: | ---: | ---: |",
+        "| Shard | Assigned | Reported | Passed | Failed | Test duration | Elapsed |",
+        "| ---: | ---: | ---: | ---: | ---: | ---: | ---: |",
     ]
-    for index, assigned, reported, passed, failed, duration in shard_rows:
+    for index, assigned, reported, passed, failed, duration, elapsed in shard_rows:
+        elapsed_display = f"{float(elapsed) / 60:.1f} min" if elapsed else "missing"
         lines.append(
-            f"| {index} | {assigned} | {reported} | {passed} | {failed} | {float(duration) / 60:.1f} min |"
+            f"| {index} | {assigned} | {reported} | {passed} | {failed} | "
+            f"{float(duration) / 60:.1f} min | {elapsed_display} |"
         )
     if missing_shards:
         lines.extend(("", f"Missing shard artifacts: {', '.join(map(str, missing_shards))}."))

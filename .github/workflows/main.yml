@@ -93,6 +93,12 @@ jobs:
           path: artifacts/test-shards-summary
           retention-days: 30
 
+      - name: Enforce shard SLA
+        run: python3 scripts/check-test-shard-sla.py
+          artifacts/test-shards-summary/shards.csv
+          --expected-shards 8
+          --max-elapsed-seconds 720
+
   test-cli:
     runs-on: ubuntu-latest
     strategy:
