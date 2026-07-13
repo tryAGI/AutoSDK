@@ -517,6 +517,61 @@ public partial class JsonTests
     }
 
     [TestMethod]
+    public void JsonSerializerContext_DoesNotRegisterCollapsedReferenceModelsAsNullableValueTypes()
+    {
+        var settings = Settings.Default with
+        {
+            Namespace = "G",
+            JsonSerializerType = JsonSerializerType.SystemTextJson,
+            JsonSerializerContext = "G.SourceGenerationContext",
+            GenerateJsonSerializerContextTypes = true,
+            FromCli = true,
+        };
+        var client = new Client(
+            Id: "CollapsedReferenceContext",
+            ClassName: "CollapsedReferenceContextClient",
+            FileNameWithoutExtension: "G",
+            InterfaceFileNameWithoutExtension: "IG",
+            BaseUrl: string.Empty,
+            Clients: ImmutableArray<PropertyData>.Empty,
+            Summary: string.Empty,
+            BaseUrlSummary: string.Empty,
+            Settings: settings,
+            GlobalSettings: settings,
+            Converters: ImmutableArray<string>.Empty);
+        var types = Enumerable.Range(0, 501)
+            .Select(index => T(TypeData.Default with
+            {
+                Namespace = "G",
+                GeneratedNamespace = "G",
+                CSharpTypeRaw = $"global::G.Model{index}",
+            }))
+            .Append(T(TypeData.Default with
+            {
+                Namespace = "G",
+                GeneratedNamespace = "G",
+                CSharpTypeRaw = "global::G.CollapsedReferenceModel",
+                CSharpTypeNullability = true,
+                IsValueType = true,
+                SubTypes = ImmutableArray.Create([
+                    T(TypeData.Default with
+                    {
+                        Namespace = "G",
+                        GeneratedNamespace = "G",
+                        CSharpTypeRaw = "global::G.CollapsedReferenceModel",
+                    }).Box(),
+                ]),
+            }))
+            .ToImmutableArray()
+            .AsEquatableArray();
+
+        var file = Sources.JsonSerializerContext(client, types);
+
+        file.Text.Should().Contain("JsonSerializable(typeof(global::G.CollapsedReferenceModel))");
+        file.Text.Should().NotContain("JsonSerializable(typeof(global::G.CollapsedReferenceModel?)");
+    }
+
+    [TestMethod]
     public void JsonSerializerContext_ChunksOversizedGuardSetsLinearly()
     {
         var settings = Settings.Default with

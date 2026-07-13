@@ -1,4 +1,5 @@
 using AutoSDK.Extensions;
+using AutoSDK.Helpers;
 using AutoSDK.Models;
 using System.Globalization;
 using System.Security.Cryptography;
@@ -285,13 +286,7 @@ namespace {client.Settings.Namespace}
             distinctTypes,
             concreteListTypes);
         var nullableValueTypes = expandContextTypes
-            ? types
-                .Where(static x => x.IsValueType &&
-                                   x.CSharpTypeWithNullability != x.CSharpTypeWithoutNullability &&
-                                   x.CSharpTypeWithNullability.EndsWith("?", StringComparison.Ordinal))
-                .Select(static x => x.CSharpTypeWithNullability)
-                .Distinct(StringComparer.Ordinal)
-                .ToArray()
+            ? GetNullableValueTypes(types)
             : explicitNullableValueTypes;
         var contextTypes = expandContextTypes
             ? new[]
@@ -317,12 +312,8 @@ namespace {client.Settings.Namespace}
         // Only value types cause this — reference type nullability (string?, byte[]?) doesn't
         // create Nullable<T> wrappers and thus doesn't trigger implicit discovery.
         var implicitlyDiscoveredTypes = new HashSet<string>(
-            types
-                .Where(x => x.IsValueType &&
-                            x.CSharpTypeWithNullability != x.CSharpTypeWithoutNullability &&
-                            x.CSharpTypeWithNullability.EndsWith("?", StringComparison.Ordinal))
-                .Select(x => x.CSharpTypeWithoutNullability)
-                .Distinct(),
+            GetNullableValueTypes(types)
+                .Select(static type => type.Substring(0, type.Length - 1)),
             StringComparer.Ordinal);
 
         var explicitTypeInfoPropertyNames = BuildExplicitTypeInfoPropertyNames(
@@ -517,13 +508,7 @@ namespace {client.Settings.Namespace}
                 .Concat(concreteListTypes)
                 .Select(GetGeneratedTypeInfoPropertyName),
             StringComparer.Ordinal);
-        var nullableValueTypes = types
-            .Where(static x => x.IsValueType &&
-                               x.CSharpTypeWithNullability != x.CSharpTypeWithoutNullability &&
-                               x.CSharpTypeWithNullability.EndsWith("?", StringComparison.Ordinal))
-            .Select(static x => x.CSharpTypeWithNullability)
-            .Distinct(StringComparer.Ordinal)
-            .ToArray();
+        var nullableValueTypes = GetNullableValueTypes(types);
         var nullableNameCounts = nullableValueTypes
             .GroupBy(GetGeneratedTypeInfoPropertyName, StringComparer.Ordinal)
             .ToDictionary(
@@ -539,6 +524,32 @@ namespace {client.Settings.Namespace}
                        explicitlyRegisteredNames.Contains(generatedName) ||
                        nullableNameCounts[generatedName] > 1;
             })
+            .ToArray();
+    }
+
+    private static string[] GetNullableValueTypes(EquatableArray<TypeData> types)
+    {
+        // A schema context can initially classify an anyOf/oneOf as a value type and later
+        // collapse it to a generated reference model with the same C# name. Treat the runtime
+        // type as a value type only when no occurrence identifies that name as a reference type;
+        // otherwise typeof(ReferenceType?) is invalid C#.
+        var referenceTypes = new HashSet<string>(
+            types
+                .Where(static x => !x.IsValueType)
+                .Select(static x => x.CSharpTypeWithoutNullability)
+                .Concat(types.SelectMany(static x => x.SubTypes)
+                    .Select(static x => x.Unbox<TypeData>())
+                    .Where(static x => !x.IsValueType)
+                    .Select(static x => x.CSharpTypeWithoutNullability)),
+            StringComparer.Ordinal);
+
+        return types
+            .Where(x => x.IsValueType &&
+                        !referenceTypes.Contains(x.CSharpTypeWithoutNullability) &&
+                        x.CSharpTypeWithNullability != x.CSharpTypeWithoutNullability &&
+                        x.CSharpTypeWithNullability.EndsWith("?", StringComparison.Ordinal))
+            .Select(static x => x.CSharpTypeWithNullability)
+            .Distinct(StringComparer.Ordinal)
             .ToArray();
     }
 
