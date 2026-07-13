@@ -11,6 +11,8 @@ project=$1
 shard_index=$2
 shard_count=$3
 configuration=${4:-Release}
+artifacts_root=${TEST_SHARD_ARTIFACTS_DIR:-artifacts/test-shards}
+shard_artifacts="$artifacts_root/shard-$shard_index"
 
 if ! [[ $shard_index =~ ^[0-9]+$ && $shard_count =~ ^[1-9][0-9]*$ ]]; then
   echo "Shard index and count must be non-negative integers, with a positive count." >&2
@@ -56,8 +58,10 @@ if [[ -n $duplicate_names ]]; then
 fi
 
 filters=()
+selected_tests=()
 for test_index in "${!tests[@]}"; do
   if (( test_index % shard_count == shard_index )); then
+    selected_tests+=("${tests[$test_index]}")
     filters+=("Name=${tests[$test_index]}")
   fi
 done
@@ -68,6 +72,18 @@ if (( ${#filters[@]} == 0 )); then
 fi
 
 filter=$(IFS='|'; printf '%s' "${filters[*]}")
+mkdir -p "$shard_artifacts"
+rm -f \
+  "$shard_artifacts/membership.txt" \
+  "$shard_artifacts/metadata.tsv" \
+  "$shard_artifacts/results.trx"
+printf '%s\n' "${selected_tests[@]}" > "$shard_artifacts/membership.txt"
+printf 'key\tvalue\nproject\t%s\nshard_index\t%s\nshard_count\t%s\ndiscovered_tests\t%s\nselected_tests\t%s\n' \
+  "$project" \
+  "$shard_index" \
+  "$shard_count" \
+  "${#tests[@]}" \
+  "${#selected_tests[@]}" > "$shard_artifacts/metadata.tsv"
 printf 'Running shard %d of %d with %d of %d tests.\n' \
   "$((shard_index + 1))" \
   "$shard_count" \
@@ -78,5 +94,7 @@ dotnet test "$project" \
   --configuration "$configuration" \
   --nologo \
   --logger GitHubActions \
+  --logger 'trx;LogFileName=results.trx' \
+  --results-directory "$shard_artifacts" \
   --no-build \
   --filter "$filter"

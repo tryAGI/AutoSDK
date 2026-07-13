@@ -36,12 +36,62 @@ jobs:
         with:
           dotnet-version: 10.0.x
 
+      - name: Cache NuGet packages
+        uses: actions/cache@v6
+        with:
+          path: ~/.nuget/packages
+          key: ${{ runner.os }}-nuget-cli-integration-${{ hashFiles('**/*.csproj', '**/Directory.Packages.props', '**/global.json') }}
+          restore-keys: |
+            ${{ runner.os }}-nuget-cli-integration-
+            ${{ runner.os }}-nuget-
+
       - name: Run integration test shard
         run: ./scripts/run-test-shard.sh
           src/tests/AutoSDK.IntegrationTests.Cli/AutoSDK.IntegrationTests.Cli.csproj
           ${{ matrix.shard }}
           4
           Release
+
+      - name: Upload shard diagnostics
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: cli-integration-shard-${{ matrix.shard }}
+          path: artifacts/test-shards
+          if-no-files-found: warn
+          retention-days: 14
+
+  test-cli-integration-summary:
+    name: test-cli-integration summary
+    runs-on: ubuntu-latest
+    needs: test-cli-integration
+    if: always()
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Download shard diagnostics
+        continue-on-error: true
+        uses: actions/download-artifact@v8
+        with:
+          pattern: cli-integration-shard-*
+          path: artifacts/test-shards-input
+
+      - name: Build shard summary
+        run: python3 scripts/summarize-test-shards.py
+          artifacts/test-shards-input
+          artifacts/test-shards-summary
+          --expected-shards 4
+
+      - name: Publish job summary
+        run: cat artifacts/test-shards-summary/summary.md >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload shard summary
+        uses: actions/upload-artifact@v7
+        with:
+          name: cli-integration-summary
+          path: artifacts/test-shards-summary
+          retention-days: 30
 
   test-cli:
     runs-on: ubuntu-latest
