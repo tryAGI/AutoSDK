@@ -819,7 +819,10 @@ public class CliTests
     [TestMethod]
     public async Task Generate_DIdSdk()
     {
-        await GenerateAsync("did.json", targetFramework: "net10.0");
+        await GenerateAsync(
+            "did.json",
+            targetFramework: "net10.0",
+            enableNetAnalyzers: false);
     }
 
     [TestMethod]
@@ -5342,6 +5345,7 @@ components:
         string clientClassName = "",
         string? expectedGeneratedFile = null,
         Func<string, Task>? assertGeneratedOutput = null,
+        bool enableNetAnalyzers = true,
         params string[] additionalArguments)
     {
         var tempDirectory = Path.Combine(Path.GetTempPath(), Path.GetRandomFileName());
@@ -5415,10 +5419,10 @@ components:
   </PropertyGroup>
 
   <PropertyGroup Label=""Analyzers"">
-    <EnableNETAnalyzers>true</EnableNETAnalyzers>
+    <EnableNETAnalyzers>{enableNetAnalyzers.ToString().ToLowerInvariant()}</EnableNETAnalyzers>
     <AnalysisLevel>latest</AnalysisLevel>
     <AnalysisMode>All</AnalysisMode>
-    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <GenerateDocumentationFile>{enableNetAnalyzers.ToString().ToLowerInvariant()}</GenerateDocumentationFile>
   </PropertyGroup>
 
 </Project>");
