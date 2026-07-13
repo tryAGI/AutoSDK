@@ -467,8 +467,53 @@ public partial class JsonTests
         file.Text.Should().Contain("internal sealed partial class SourceGenerationContextChunk1");
         file.Text.Should().Contain("global::System.Text.Json.Serialization.Metadata.JsonTypeInfoResolver.Combine(");
         file.Text.Should().Contain("public static SourceGenerationContext Default { get; } = new(DefaultOptions);");
+        file.Text.Should().NotContain("JsonSerializable(typeof(global::G.JsonSerializerContextTypes))");
+        file.Text.Should().Contain("JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, string>))");
+        file.Text.Should().Contain("JsonSerializable(typeof(global::System.Text.Json.JsonElement?))");
         Regex.Matches(file.Text, "\\[global::System.Text.Json.Serialization.JsonSerializable").Count
-            .Should().Be(521);
+            .Should().Be(523);
+    }
+
+    [TestMethod]
+    public void JsonSerializerContext_SplitsAdvantageSizedContextsWithoutAggregateRegistration()
+    {
+        var settings = Settings.Default with
+        {
+            Namespace = "G",
+            JsonSerializerType = JsonSerializerType.SystemTextJson,
+            JsonSerializerContext = "G.SourceGenerationContext",
+            GenerateJsonSerializerContextTypes = true,
+            FromCli = true,
+        };
+        var client = new Client(
+            Id: "AdvantageSizedContext",
+            ClassName: "AdvantageSizedContextClient",
+            FileNameWithoutExtension: "G",
+            InterfaceFileNameWithoutExtension: "IG",
+            BaseUrl: string.Empty,
+            Clients: ImmutableArray<PropertyData>.Empty,
+            Summary: string.Empty,
+            BaseUrlSummary: string.Empty,
+            Settings: settings,
+            GlobalSettings: settings,
+            Converters: ImmutableArray<string>.Empty);
+        var types = Enumerable.Range(0, 3347)
+            .Select(index => T(TypeData.Default with
+            {
+                Namespace = "G",
+                GeneratedNamespace = "G",
+                CSharpTypeRaw = $"global::G.Model{index}",
+            }))
+            .ToImmutableArray()
+            .AsEquatableArray();
+
+        var file = Sources.JsonSerializerContext(client, types);
+
+        Regex.Matches(file.Text, "internal sealed partial class SourceGenerationContextChunk").Count
+            .Should().Be(7);
+        Regex.Matches(file.Text, "\\[global::System.Text.Json.Serialization.JsonSerializable").Count
+            .Should().Be(3350);
+        file.Text.Should().NotContain("JsonSerializable(typeof(global::G.JsonSerializerContextTypes))");
     }
 
     [TestMethod]
@@ -528,7 +573,7 @@ public partial class JsonTests
         var file = Sources.JsonSerializerContext(client, types);
 
         Regex.Matches(file.Text, "\\[global::System.Text.Json.Serialization.JsonSerializable").Count
-            .Should().BeLessThan(3000);
+            .Should().BeLessThan(3100);
         Regex.Matches(file.Text, "internal sealed partial class SourceGenerationContextChunk").Count
             .Should().BeGreaterThan(1);
         file.Text.Should().Contain("global::System.Text.Json.Serialization.Metadata.JsonTypeInfoResolver.Combine(");

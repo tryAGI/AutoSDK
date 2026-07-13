@@ -36,6 +36,15 @@ public static partial class Sources
 
         if (jsonSerializableAttributes.Lines.Length > MaxJsonSerializableAttributesPerContext)
         {
+            // JsonSerializerContextTypes is an aggregate carrier whose properties reference
+            // every known type. Registering it in a chunk makes STJ recursively regenerate the
+            // complete metadata graph in that one context, defeating the split and potentially
+            // pushing its compiler-generated <>c type past the CLR method limit.
+            jsonSerializableAttributes = GenerateJsonSerializableAttributeLines(
+                client,
+                types,
+                expandContextTypes: true);
+
             return GenerateChunkedJsonSerializerContext(
                 client,
                 contextClassName,
@@ -262,7 +271,8 @@ namespace {client.Settings.Namespace}
 
     private static (string[] Lines, string[] GuardLines) GenerateJsonSerializableAttributeLines(
         Client client,
-        EquatableArray<TypeData> types)
+        EquatableArray<TypeData> types,
+        bool expandContextTypes = false)
     {
         var distinctTypes = types
             .Select(x => x.CSharpTypeWithoutNullability)
@@ -274,13 +284,31 @@ namespace {client.Settings.Namespace}
             types,
             distinctTypes,
             concreteListTypes);
-        var serializableTypes = new[]
-        {
-            $"global::{client.Settings.Namespace}.JsonSerializerContextTypes",
-        }
+        var nullableValueTypes = expandContextTypes
+            ? types
+                .Where(static x => x.IsValueType &&
+                                   x.CSharpTypeWithNullability != x.CSharpTypeWithoutNullability &&
+                                   x.CSharpTypeWithNullability.EndsWith("?", StringComparison.Ordinal))
+                .Select(static x => x.CSharpTypeWithNullability)
+                .Distinct(StringComparer.Ordinal)
+                .ToArray()
+            : explicitNullableValueTypes;
+        var contextTypes = expandContextTypes
+            ? new[]
+            {
+                "global::System.Collections.Generic.Dictionary<string, string>",
+                "global::System.Collections.Generic.Dictionary<string, object>",
+                "global::System.Text.Json.JsonElement?",
+            }
+            : new[]
+            {
+                $"global::{client.Settings.Namespace}.JsonSerializerContextTypes",
+            };
+        var serializableTypes = contextTypes
             .Concat(distinctTypes)
-            .Concat(explicitNullableValueTypes)
+            .Concat(nullableValueTypes)
             .Concat(concreteListTypes)
+            .Distinct(StringComparer.Ordinal)
             .ToArray();
 
         // Value types with nullable variants in JsonSerializerContextTypes will be
