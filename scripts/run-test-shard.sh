@@ -13,6 +13,7 @@ shard_count=$3
 configuration=${4:-Release}
 artifacts_root=${TEST_SHARD_ARTIFACTS_DIR:-artifacts/test-shards}
 shard_artifacts="$artifacts_root/shard-$shard_index"
+timings_file=${TEST_SHARD_TIMINGS_FILE:-"$(dirname "$project")/test-timings.tsv"}
 
 if ! [[ $shard_index =~ ^[0-9]+$ && $shard_count =~ ^[1-9][0-9]*$ ]]; then
   echo "Shard index and count must be non-negative integers, with a positive count." >&2
@@ -57,14 +58,28 @@ if [[ -n $duplicate_names ]]; then
   exit 1
 fi
 
+mkdir -p "$shard_artifacts"
+rm -f \
+  "$shard_artifacts/discovered-tests.txt" \
+  "$shard_artifacts/membership.txt" \
+  "$shard_artifacts/metadata.tsv" \
+  "$shard_artifacts/plan.tsv" \
+  "$shard_artifacts/results.trx"
+printf '%s\n' "${tests[@]}" > "$shard_artifacts/discovered-tests.txt"
+python3 scripts/plan-test-shards.py \
+  "$shard_artifacts/discovered-tests.txt" \
+  "$timings_file" \
+  "$shard_count" \
+  "$shard_artifacts/plan.tsv"
+
 filters=()
 selected_tests=()
-for test_index in "${!tests[@]}"; do
-  if (( test_index % shard_count == shard_index )); then
-    selected_tests+=("${tests[$test_index]}")
-    filters+=("Name=${tests[$test_index]}")
+while IFS=$'\t' read -r planned_shard _ test_name; do
+  if [[ $planned_shard == "$shard_index" ]]; then
+    selected_tests+=("$test_name")
+    filters+=("Name=$test_name")
   fi
-done
+done < <(sed '1d' "$shard_artifacts/plan.tsv")
 
 if (( ${#filters[@]} == 0 )); then
   echo "Shard $shard_index has no tests." >&2
@@ -72,11 +87,6 @@ if (( ${#filters[@]} == 0 )); then
 fi
 
 filter=$(IFS='|'; printf '%s' "${filters[*]}")
-mkdir -p "$shard_artifacts"
-rm -f \
-  "$shard_artifacts/membership.txt" \
-  "$shard_artifacts/metadata.tsv" \
-  "$shard_artifacts/results.trx"
 printf '%s\n' "${selected_tests[@]}" > "$shard_artifacts/membership.txt"
 printf 'key\tvalue\nproject\t%s\nshard_index\t%s\nshard_count\t%s\ndiscovered_tests\t%s\nselected_tests\t%s\n' \
   "$project" \
