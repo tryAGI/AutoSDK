@@ -26,7 +26,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        shard: [0, 1, 2, 3]
+        shard: [0, 1, 2, 3, 4, 5, 6, 7]
     steps:
       - name: Checkout
         uses: actions/checkout@v7
@@ -49,7 +49,7 @@ jobs:
         run: ./scripts/run-test-shard.sh
           src/tests/AutoSDK.IntegrationTests.Cli/AutoSDK.IntegrationTests.Cli.csproj
           ${{ matrix.shard }}
-          4
+          8
           Release
 
       - name: Upload shard diagnostics
@@ -81,7 +81,7 @@ jobs:
         run: python3 scripts/summarize-test-shards.py
           artifacts/test-shards-input
           artifacts/test-shards-summary
-          --expected-shards 4
+          --expected-shards 8
 
       - name: Publish job summary
         run: cat artifacts/test-shards-summary/summary.md >> "$GITHUB_STEP_SUMMARY"
