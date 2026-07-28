@@ -11,7 +11,7 @@
     </PackageReference>
     <PackageReference Include="H.Generators.Extensions" Version="1.24.2" />
     <PackageReference Include="H.Generators.Tests.Extensions" Version="1.24.2" />
-    <PackageReference Include="Microsoft.OpenApi" Version="3.7.0" />
+    <PackageReference Include="Microsoft.OpenApi" Version="$(MicrosoftOpenApiVersion)" />
     <PackageReference Include="MSTest" Version="4.3.2" />
     <PackageReference Include="AwesomeAssertions" Version="9.5.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.4" />

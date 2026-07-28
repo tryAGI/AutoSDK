@@ -1,0 +1,69 @@
+name: OpenAPI Upgrade Canary
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 5 * * 1"
+  push:
+    branches:
+      - main
+    paths:
+      - .github/workflows/openapi-upgrade-canary.yml
+      - src/Directory.Build.props
+      - src/libs/AutoSDK/**
+      - src/tests/AutoSDK.UnitTests/**
+  pull_request:
+    branches:
+      - main
+    paths:
+      - .github/workflows/openapi-upgrade-canary.yml
+      - src/Directory.Build.props
+      - src/libs/AutoSDK/**
+      - src/tests/AutoSDK.UnitTests/**
+
+permissions:
+  contents: read
+
+jobs:
+  generated-type-identity:
+    name: Generated type identity (${{ matrix.label }})
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - label: 3.8.0
+            version: 3.8.0
+          - label: latest-3.x
+            version: 3.*
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v6
+        with:
+          dotnet-version: 10.0.x
+
+      - name: Run generated type identity guards
+        id: canary
+        # Known-incompatible releases stay visible without blocking main.
+        continue-on-error: true
+        run: dotnet test
+          src/tests/AutoSDK.UnitTests/AutoSDK.UnitTests.csproj
+          --configuration Release
+          --nologo
+          --logger GitHubActions
+          --filter "TestCategory=OpenApiUpgradeCanary"
+          -p:MicrosoftOpenApiVersion="${{ matrix.version }}"
+
+      - name: Publish canary result
+        if: always()
+        env:
+          CANARY_LABEL: ${{ matrix.label }}
+          CANARY_OUTCOME: ${{ steps.canary.outcome }}
+        run: |
+          printf '### Microsoft.OpenApi %s\n\n' "$CANARY_LABEL" >> "$GITHUB_STEP_SUMMARY"
+          printf 'Generated type identity guard result: **%s**\n' "$CANARY_OUTCOME" >> "$GITHUB_STEP_SUMMARY"

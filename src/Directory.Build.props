@@ -14,5 +14,10 @@
     <NuGetAuditLevel>low</NuGetAuditLevel>
     <WarningsAsErrors>$(WarningsAsErrors);NU1900;NU1901;NU1902;NU1903;NU1904</WarningsAsErrors>
   </PropertyGroup>
+
+  <PropertyGroup Label="Dependency versions">
+    <!-- Overridable by the OpenAPI upgrade canary while production builds stay pinned. -->
+    <MicrosoftOpenApiVersion Condition="'$(MicrosoftOpenApiVersion)' == ''">3.7.0</MicrosoftOpenApiVersion>
+  </PropertyGroup>
   
 </Project>

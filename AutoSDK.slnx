@@ -144,6 +144,7 @@
     <File Path=".github/workflows/auto-merge.yml" />
     <File Path=".github/workflows/main.yml" />
     <File Path=".github/workflows/mkdocs.yml" />
+    <File Path=".github/workflows/openapi-upgrade-canary.yml" />
     <File Path=".github/workflows/pull-request.yml" />
   </Folder>
   <Folder Name="/tests/">
