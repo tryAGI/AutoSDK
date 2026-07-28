@@ -15,6 +15,10 @@ updates:
           - "*"
     ignore:
       - dependency-name: "Microsoft.CodeAnalysis.CSharp"
+      # Microsoft.OpenApi 3.8+ changes schema identity and duplicates generated
+      # models across large specifications. Keep 3.7 until compatibility is fixed.
+      - dependency-name: "Microsoft.OpenApi"
+      - dependency-name: "Microsoft.OpenApi.YamlReader"
 
   - package-ecosystem: "github-actions"
     directory: "/"
