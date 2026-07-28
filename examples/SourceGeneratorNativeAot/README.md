@@ -16,7 +16,9 @@ converters emitted by AutoSDK. Consumers do not need to duplicate the generated
 converter list in `JsonSourceGenerationOptions`.
 
 The source generator reports informational diagnostic `OAG003` with the
-generated converters composed into each wrapper context.
+generated converters composed into each wrapper context. See the
+[root diagnostic guidance](../../README.md#oag003-converter-composition-diagnostic)
+for project-level suppression and `.editorconfig` severity configuration.
 
 The models and client projects enable trimming and NativeAOT analyzers. All projects are
 included in `AutoSDK.slnx`, so the repository build continuously verifies this

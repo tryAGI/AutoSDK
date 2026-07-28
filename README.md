@@ -240,6 +240,33 @@ internal sealed partial class SourceGenerationContext : JsonSerializerContext;
 ```
 - It's all! Now you can build your project and use the generated code with full trimming/nativeAOT support.
 
+### OAG003 converter composition diagnostic
+
+When AutoSDK wraps a user-provided `JsonSerializerContext`, it reports
+informational diagnostic `OAG003`. The message names the wrapped context and
+the generated converters composed with it. This is an observability signal;
+suppressing it does not disable converter composition.
+
+To suppress `OAG003` for an entire project, append it to `NoWarn`:
+
+```xml
+<PropertyGroup>
+    <NoWarn>$(NoWarn);OAG003</NoWarn>
+</PropertyGroup>
+```
+
+For repository-wide or path-specific control, configure the diagnostic in
+`.editorconfig`:
+
+```ini
+[*.cs]
+# Valid values include none, suggestion, warning, and error.
+dotnet_diagnostic.OAG003.severity = none
+```
+
+Use `suggestion` to keep the informational IDE signal, or promote it to
+`warning`/`error` when converter composition must be audited in CI.
+
 ## Known Errors
 
 ### Generator error: "Could not write to output file 'Path/to/file'. Could not find part of the path"
