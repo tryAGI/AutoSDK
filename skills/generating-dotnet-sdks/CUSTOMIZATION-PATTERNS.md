@@ -306,6 +306,6 @@ using System.Text.Json.Serialization;
 namespace MyApi;
 
 [JsonSourceGenerationOptions(DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull)]
-[JsonSerializable(typeof(AutoSDKTrimmableSupport))]
+[JsonSerializable(typeof(JsonSerializerContextTypes))]
 internal sealed partial class SourceGenerationContext : JsonSerializerContext;
 ```

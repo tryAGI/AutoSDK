@@ -195,7 +195,7 @@ dotnet add package AutoSDK.SourceGenerators
 CLI generates Trimming/NativeAOT compatible code by default.
 
 ## Source generator
-Since there are two source generators involved, we will have to create a second project so that the generator for the JsonSerializerContext will “see” our models
+Since there are two source generators involved, create a second project so that the `JsonSerializerContext` generator can see the generated models.
 - Create new project for your models. And disable methods/constructors generation:
 ```xml
 <PropertyGroup Label="AutoSDK">
@@ -204,7 +204,7 @@ Since there are two source generators involved, we will have to create a second 
     <AutoSDK_GenerateJsonSerializerContextTypes>true</AutoSDK_GenerateJsonSerializerContextTypes>
 </PropertyGroup>
 ```
-- Reference this project in your main project.
+- Reference the models project from your main project. The models project generates the `JsonSerializerContextTypes` aggregation type used below.
 - Add `SourceGenerationContext.cs` file to your main project with the following content:
 ```csharp
 using System.Text.Json.Serialization;
@@ -212,7 +212,7 @@ using System.Text.Json.Serialization;
 namespace Namespace;
 
 [JsonSourceGenerationOptions(DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull)]
-[JsonSerializable(typeof(AutoSDKTrimmableSupport))]
+[JsonSerializable(typeof(JsonSerializerContextTypes))]
 internal sealed partial class SourceGenerationContext : JsonSerializerContext;
 ```
 - Add the following settings to your main csproj file:

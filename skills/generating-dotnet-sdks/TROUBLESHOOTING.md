@@ -95,7 +95,7 @@ If collisions persist, you can:
 
 1. Create a separate models project with `AutoSDK_GenerateJsonSerializerContextTypes=true`
 2. Reference it from your main project
-3. Add a `SourceGenerationContext.cs` with `[JsonSerializable(typeof(AutoSDKTrimmableSupport))]`
+3. Add a `SourceGenerationContext.cs` with `[JsonSerializable(typeof(JsonSerializerContextTypes))]`
 4. Set `AutoSDK_JsonSerializerContext` to point to your context class
 
 See [CUSTOMIZATION-PATTERNS.md](CUSTOMIZATION-PATTERNS.md) for the full two-project pattern.
