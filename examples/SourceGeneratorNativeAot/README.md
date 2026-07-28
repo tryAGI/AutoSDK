@@ -8,11 +8,15 @@ This example keeps generated models and methods in separate projects so that
 - `SourceGeneratorNativeAot.Client` references the models project, defines
   `SourceGenerationContext`, and generates the client methods and constructors.
 - `SourceGeneratorNativeAot.Tests` verifies that the generated client context
-  applies AutoSDK's generated converters to a top-level `oneOf` response.
+  applies AutoSDK's generated converters to top-level `oneOf`, `anyOf`, and
+  enum payloads.
 
 The client generator composes `SourceGenerationContext.Default` with the
 converters emitted by AutoSDK. Consumers do not need to duplicate the generated
 converter list in `JsonSourceGenerationOptions`.
+
+The source generator reports informational diagnostic `OAG003` with the
+generated converters composed into each wrapper context.
 
 The models and client projects enable trimming and NativeAOT analyzers. All projects are
 included in `AutoSDK.slnx`, so the repository build continuously verifies this

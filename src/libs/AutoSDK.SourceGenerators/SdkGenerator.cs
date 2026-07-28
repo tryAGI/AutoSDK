@@ -17,6 +17,13 @@ public class SdkGenerator : IIncrementalGenerator
         category: "Usage",
         defaultSeverity: DiagnosticSeverity.Error,
         isEnabledByDefault: true);
+    private static readonly DiagnosticDescriptor JsonSerializerContextCompositionDescriptor = new(
+        id: "OAG003",
+        title: "Generated converters composed with JSON serializer context",
+        messageFormat: "AutoSDK composed JSON serializer context '{0}' with {1} generated converter(s): {2}",
+        category: "Generation",
+        defaultSeverity: DiagnosticSeverity.Info,
+        isEnabledByDefault: true);
 
     #endregion
 
@@ -217,12 +224,16 @@ public class SdkGenerator : IIncrementalGenerator
             .SelectAndReportExceptions((x, c) => Sources.JsonSerializerContextConverters(x, c)
                 .AsFileWithName(), context, Id)
             .AddSource(context);
-        data
+        var jsonSerializerContextWrapperClients = data
             .Collect()
-            .SelectMany(static (x, _) => GetJsonSerializerContextWrapperClients(x))
+            .SelectMany(static (x, _) => GetJsonSerializerContextWrapperClients(x));
+        jsonSerializerContextWrapperClients
             .SelectAndReportExceptions((x, c) => Sources.JsonSerializerContextWrapper(x, c)
                 .AsFileWithName(), context, Id)
             .AddSource(context);
+        context.RegisterSourceOutput(
+            jsonSerializerContextWrapperClients,
+            ReportJsonSerializerContextComposition);
 
         // WebSocket client generation (from AsyncAPI specs)
         data
@@ -378,6 +389,18 @@ public class SdkGenerator : IIncrementalGenerator
                 Location.None));
         }
     }
-    
+
+    private static void ReportJsonSerializerContextComposition(
+        SourceProductionContext context,
+        Client client)
+    {
+        context.ReportDiagnostic(Diagnostic.Create(
+            JsonSerializerContextCompositionDescriptor,
+            Location.None,
+            client.Settings.JsonSerializerContext,
+            client.Converters.Length,
+            string.Join(", ", client.Converters)));
+    }
+
     #endregion
 }

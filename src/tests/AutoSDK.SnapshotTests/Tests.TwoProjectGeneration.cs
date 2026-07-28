@@ -55,6 +55,7 @@ public partial class Tests
             ["build_property.AutoSDK_GenerateMethods"] = "true",
             ["build_property.AutoSDK_GenerateConstructors"] = "true",
             ["build_property.AutoSDK_GenerateJsonSerializerContextTypes"] = "false",
+            ["build_property.AutoSDK_JsonSerializerContext"] = "G.SourceGenerationContext",
             ["build_property.AutoSDK_GenerateMethodsUsingSystemNetHttpJson"] = "true",
             ["build_property.AutoSDK_UseExperimentalAttributes"] = "InSupportedTargetFrameworks",
             ["build_property.AutoSDK_UseSetsRequiredMembersAttributes"] = "InSupportedTargetFrameworks",
@@ -90,6 +91,51 @@ public partial class Tests
                         {
                             public string? Name { get; set; }
                         }
+
+                        internal sealed class SourceGenerationContext :
+                            System.Text.Json.Serialization.JsonSerializerContext
+                        {
+                            private static readonly System.Text.Json.JsonSerializerOptions DefaultOptions = new();
+
+                            internal static SourceGenerationContext Default { get; } = new(DefaultOptions);
+
+                            private SourceGenerationContext(System.Text.Json.JsonSerializerOptions options)
+                                : base(options)
+                            {
+                            }
+
+                            protected override System.Text.Json.JsonSerializerOptions? GeneratedSerializerOptions =>
+                                DefaultOptions;
+
+                            public override System.Text.Json.Serialization.Metadata.JsonTypeInfo? GetTypeInfo(
+                                System.Type type)
+                            {
+                                return null;
+                            }
+                        }
+                    }
+
+                    namespace G.JsonConverters
+                    {
+                        internal sealed class UnixTimestampJsonConverter :
+                            System.Text.Json.Serialization.JsonConverter<System.DateTime>
+                        {
+                            public override System.DateTime Read(
+                                ref System.Text.Json.Utf8JsonReader reader,
+                                System.Type typeToConvert,
+                                System.Text.Json.JsonSerializerOptions options)
+                            {
+                                return default;
+                            }
+
+                            public override void Write(
+                                System.Text.Json.Utf8JsonWriter writer,
+                                System.DateTime value,
+                                System.Text.Json.JsonSerializerOptions options)
+                            {
+                                writer.WriteNumberValue(0);
+                            }
+                        }
                     }
                     """),
             ],
@@ -115,11 +161,14 @@ public partial class Tests
         var diagnostics = compilation.GetDiagnostics(CancellationToken.None)
             .Where(x => x.Id != "CS0618")
             .ToArray();
-        var generatedSources = driver.GetRunResult()
+        var runResult = driver.GetRunResult();
+        var generatedSources = runResult
             .Results
             .SelectMany(x => x.GeneratedSources)
             .Select(x => x.HintName)
             .ToArray();
+        var compositionDiagnostic = runResult.Diagnostics
+            .Single(x => x.Id == "OAG003");
 
         diagnostics.Should().BeEmpty(
             "methods-only generation should compile cleanly. Found:{0}{1}",
@@ -129,6 +178,10 @@ public partial class Tests
         generatedSources.Should().Contain("G.Exceptions.g.cs");
         generatedSources.Should().Contain("G.PathBuilder.g.cs");
         generatedSources.Should().Contain("G.OptionsSupport.g.cs");
-        generatedSources.Should().Contain("G.JsonConverters.UnixTimestamp.g.cs");
+        generatedSources.Should().NotContain("G.JsonConverters.UnixTimestamp.g.cs");
+        generatedSources.Should().Contain("G.SourceGenerationContextAutoSDKWrapper.g.cs");
+        compositionDiagnostic.Severity.Should().Be(DiagnosticSeverity.Info);
+        compositionDiagnostic.GetMessage().Should().Contain("G.SourceGenerationContext");
+        compositionDiagnostic.GetMessage().Should().Contain("UnixTimestampJsonConverter");
     }
 }

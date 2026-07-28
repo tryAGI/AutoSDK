@@ -21,29 +21,60 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/PetChoice'
+  /pet-matches/{petId}:
+    get:
+      operationId: getPetMatch
+      parameters:
+        - name: petId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Every pet representation that matches the payload
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PetMatch'
 components:
   schemas:
+    PetMood:
+      type: string
+      enum:
+        - playful
+        - sleepy
     Cat:
       type: object
       required:
         - name
         - lives
+        - mood
       properties:
         name:
           type: string
         lives:
           type: integer
+        mood:
+          $ref: '#/components/schemas/PetMood'
     Dog:
       type: object
       required:
         - name
         - bark
+        - mood
       properties:
         name:
           type: string
         bark:
           type: string
+        mood:
+          $ref: '#/components/schemas/PetMood'
     PetChoice:
       oneOf:
+        - $ref: '#/components/schemas/Cat'
+        - $ref: '#/components/schemas/Dog'
+    PetMatch:
+      anyOf:
         - $ref: '#/components/schemas/Cat'
         - $ref: '#/components/schemas/Dog'
