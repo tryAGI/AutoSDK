@@ -1,0 +1,40 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <LangVersion>preview</LangVersion>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <Import Project="$(MSBuildThisFileDirectory)../../../src/libs/AutoSDK.SourceGenerators/AutoSDK.SourceGenerators.props" />
+  <Import Project="$(MSBuildThisFileDirectory)../../../src/tests/AutoSDK.SourceGeneratorProjectReference.targets" />
+
+  <PropertyGroup Label="AutoSDK">
+    <AutoSDK_Namespace>SourceGeneratorNativeAot</AutoSDK_Namespace>
+    <AutoSDK_ClassName>PetsClient</AutoSDK_ClassName>
+    <AutoSDK_GenerateSdk>false</AutoSDK_GenerateSdk>
+    <AutoSDK_GenerateMethods>true</AutoSDK_GenerateMethods>
+    <AutoSDK_GenerateConstructors>true</AutoSDK_GenerateConstructors>
+    <AutoSDK_JsonSerializerContext>SourceGeneratorNativeAot.SourceGenerationContext</AutoSDK_JsonSerializerContext>
+  </PropertyGroup>
+
+  <PropertyGroup Label="Trimmable">
+    <IsAotCompatible>true</IsAotCompatible>
+    <EnableTrimAnalyzer>true</EnableTrimAnalyzer>
+    <IsTrimmable>true</IsTrimmable>
+    <SuppressTrimAnalysisWarnings>false</SuppressTrimAnalysisWarnings>
+    <TrimmerSingleWarn>false</TrimmerSingleWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <AdditionalFiles Include="$(MSBuildThisFileDirectory)../openapi.yaml" AutoSDK_OpenApiSpecification="true" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="$(MSBuildThisFileDirectory)../../../src/libs/AutoSDK/AutoSDK.csproj" OutputItemType="Analyzer" />
+    <ProjectReference Include="$(MSBuildThisFileDirectory)../../../src/libs/AutoSDK.SourceGenerators/AutoSDK.SourceGenerators.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
+    <ProjectReference Include="$(MSBuildThisFileDirectory)../SourceGeneratorNativeAot.Models/SourceGeneratorNativeAot.Models.csproj" />
+  </ItemGroup>
+
+</Project>

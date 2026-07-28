@@ -196,6 +196,9 @@ CLI generates Trimming/NativeAOT compatible code by default.
 
 ## Source generator
 Since there are two source generators involved, create a second project so that the `JsonSerializerContext` generator can see the generated models.
+
+See the [maintained two-project NativeAOT example](examples/SourceGeneratorNativeAot/) for complete, continuously compiled project files.
+
 - Create new project for your models. And disable methods/constructors generation:
 ```xml
 <PropertyGroup Label="AutoSDK">
