@@ -5,14 +5,14 @@
   </PropertyGroup>
 
   <ItemGroup Label="Base packages">
-    <PackageReference Include="GitHubActionsTestLogger" Version="3.0.4">
+    <PackageReference Include="GitHubActionsTestLogger" Version="3.0.5">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="H.Generators.Extensions" Version="1.24.2" />
     <PackageReference Include="H.Generators.Tests.Extensions" Version="1.24.2" />
     <PackageReference Include="Microsoft.OpenApi" Version="$(MicrosoftOpenApiVersion)" />
-    <PackageReference Include="MSTest" Version="4.3.2" />
+    <PackageReference Include="MSTest" Version="4.3.3" />
     <PackageReference Include="AwesomeAssertions" Version="9.5.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
   </ItemGroup>
