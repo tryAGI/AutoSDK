@@ -20,16 +20,30 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Pet'
+                $ref: '#/components/schemas/PetChoice'
 components:
   schemas:
-    Pet:
+    Cat:
       type: object
       required:
-        - id
         - name
+        - lives
       properties:
-        id:
-          type: string
         name:
           type: string
+        lives:
+          type: integer
+    Dog:
+      type: object
+      required:
+        - name
+        - bark
+      properties:
+        name:
+          type: string
+        bark:
+          type: string
+    PetChoice:
+      oneOf:
+        - $ref: '#/components/schemas/Cat'
+        - $ref: '#/components/schemas/Dog'

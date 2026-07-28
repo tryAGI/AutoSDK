@@ -10,6 +10,7 @@
   <Folder Name="/examples/">
     <Project Path="examples/SourceGeneratorNativeAot/SourceGeneratorNativeAot.Client/SourceGeneratorNativeAot.Client.csproj" />
     <Project Path="examples/SourceGeneratorNativeAot/SourceGeneratorNativeAot.Models/SourceGeneratorNativeAot.Models.csproj" />
+    <Project Path="examples/SourceGeneratorNativeAot/SourceGeneratorNativeAot.Tests/SourceGeneratorNativeAot.Tests.csproj" />
   </Folder>
   <Folder Name="/Solution Items/">
     <File Path=".github/dependabot.yml" />

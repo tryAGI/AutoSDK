@@ -70,7 +70,7 @@ namespace {client.Settings.Namespace}
                 ? $" = {serializer.CreateDefaultSettings(client.Converters)};"
                 : $" = new {serializer.GetOptionsType()}();")}
 {(suppressDeprecatedWarningsForJsonSerializerOptions ? "        #pragma warning restore CS0618 // Type or member is obsolete" : TrimmedLine)}" : $@" 
-        public global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext {{ get; set; }} = global::{client.Settings.JsonSerializerContext}.Default;")}
+        public global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext {{ get; set; }} = {GetDefaultJsonSerializerContextExpression(client.Settings)};")}
 
 {(client.Clients.Length != 0 ? "\n" + client.Clients.Select(x => $@"
         {x.Summary.ToXmlDocumentationSummary(level: 8)}

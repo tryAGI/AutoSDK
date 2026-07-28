@@ -218,6 +218,7 @@ namespace Namespace;
 [JsonSerializable(typeof(JsonSerializerContextTypes))]
 internal sealed partial class SourceGenerationContext : JsonSerializerContext;
 ```
+- AutoSDK composes `SourceGenerationContext.Default` with its generated JSON converters when initializing generated clients, including converters required by `oneOf`, `anyOf`, enums, and Unix timestamps.
 - Add the following settings to your main csproj file:
 ```xml
 <PropertyGroup Label="AutoSDK">

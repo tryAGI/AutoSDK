@@ -47,7 +47,7 @@ namespace {wsClient.Settings.Namespace}
         {string.Empty.ToXmlDocumentationSummary(level: 8)}
 {(hasOptions ? $@"
         public global::System.Text.Json.JsonSerializerOptions JsonSerializerOptions {{ get; set; }} = new global::System.Text.Json.JsonSerializerOptions();" : $@"
-        public global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext {{ get; set; }} = global::{wsClient.Settings.JsonSerializerContext}.Default;")}
+        public global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext {{ get; set; }} = {GetDefaultJsonSerializerContextExpression(wsClient.Settings)};")}
 
         /// <summary>
         /// Gets a value indicating whether the WebSocket connection is open.

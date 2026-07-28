@@ -242,6 +242,73 @@ public partial class JsonTests
     }
 
     [TestMethod]
+    public void JsonSerializerContextWrapper_ComposesUserContextWithGeneratedConverters()
+    {
+        var settings = Settings.Default with
+        {
+            Namespace = "G",
+            JsonSerializerType = JsonSerializerType.SystemTextJson,
+            JsonSerializerContext = "G.SourceGenerationContext",
+        };
+        var client = new Client(
+            Id: "Converters",
+            ClassName: "ApiClient",
+            FileNameWithoutExtension: "G.ApiClient",
+            InterfaceFileNameWithoutExtension: "G.IApiClient",
+            BaseUrl: string.Empty,
+            Clients: ImmutableArray<PropertyData>.Empty,
+            Summary: string.Empty,
+            BaseUrlSummary: string.Empty,
+            Settings: settings,
+            GlobalSettings: settings,
+            Converters:
+            [
+                "global::G.JsonConverters.OneOfJsonConverter<string, int?>",
+            ]);
+
+        var file = Sources.JsonSerializerContextWrapper(client);
+        var clientSource = Sources.GenerateClient(client);
+
+        file.Name.Should().Be("G.SourceGenerationContextAutoSDKWrapper.g.cs");
+        file.Text.Should().Contain(
+            "global::G.SourceGenerationContext.Default;");
+        file.Text.Should().Contain(
+            "TypeInfoResolver = Resolver,");
+        file.Text.Should().Contain(
+            "options.Converters.Add(new global::G.JsonConverters.OneOfJsonConverter<string, int?>());");
+        clientSource.Should().Contain(
+            "JsonSerializerContext { get; set; } = global::G.SourceGenerationContextAutoSDKWrapper.Default;");
+    }
+
+    [TestMethod]
+    public void JsonSerializerContextWrapper_IsNotGeneratedForCliContexts()
+    {
+        var settings = Settings.Default with
+        {
+            Namespace = "G",
+            JsonSerializerType = JsonSerializerType.SystemTextJson,
+            JsonSerializerContext = "G.SourceGenerationContext",
+            FromCli = true,
+        };
+        var client = new Client(
+            Id: "Converters",
+            ClassName: "ApiClient",
+            FileNameWithoutExtension: "G.ApiClient",
+            InterfaceFileNameWithoutExtension: "G.IApiClient",
+            BaseUrl: string.Empty,
+            Clients: ImmutableArray<PropertyData>.Empty,
+            Summary: string.Empty,
+            BaseUrlSummary: string.Empty,
+            Settings: settings,
+            GlobalSettings: settings,
+            Converters: ImmutableArray<string>.Empty);
+
+        Sources.JsonSerializerContextWrapper(client).Text.Should().BeEmpty();
+        Sources.GetDefaultJsonSerializerContextExpression(settings)
+            .Should().Be("global::G.SourceGenerationContext.Default");
+    }
+
+    [TestMethod]
     public void JsonSerializerContext_WithNoTypes_EmitsConcreteEmptyContext()
     {
         var settings = Settings.Default with

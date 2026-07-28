@@ -7,13 +7,19 @@ This example keeps generated models and methods in separate projects so that
   `JsonSerializerContextTypes` aggregation type.
 - `SourceGeneratorNativeAot.Client` references the models project, defines
   `SourceGenerationContext`, and generates the client methods and constructors.
+- `SourceGeneratorNativeAot.Tests` verifies that the generated client context
+  applies AutoSDK's generated converters to a top-level `oneOf` response.
 
-Both projects enable trimming and NativeAOT analyzers. Both projects are
+The client generator composes `SourceGenerationContext.Default` with the
+converters emitted by AutoSDK. Consumers do not need to duplicate the generated
+converter list in `JsonSourceGenerationOptions`.
+
+The models and client projects enable trimming and NativeAOT analyzers. All projects are
 included in `AutoSDK.slnx`, so the repository build continuously verifies this
 example:
 
 ```bash
-dotnet build examples/SourceGeneratorNativeAot/SourceGeneratorNativeAot.Client/SourceGeneratorNativeAot.Client.csproj
+dotnet test examples/SourceGeneratorNativeAot/SourceGeneratorNativeAot.Tests/SourceGeneratorNativeAot.Tests.csproj
 ```
 
 When copying this pattern outside the AutoSDK repository, replace the local

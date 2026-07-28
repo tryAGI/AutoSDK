@@ -217,6 +217,12 @@ public class SdkGenerator : IIncrementalGenerator
             .SelectAndReportExceptions((x, c) => Sources.JsonSerializerContextConverters(x, c)
                 .AsFileWithName(), context, Id)
             .AddSource(context);
+        data
+            .Collect()
+            .SelectMany(static (x, _) => GetJsonSerializerContextWrapperClients(x))
+            .SelectAndReportExceptions((x, c) => Sources.JsonSerializerContextWrapper(x, c)
+                .AsFileWithName(), context, Id)
+            .AddSource(context);
 
         // WebSocket client generation (from AsyncAPI specs)
         data
@@ -334,6 +340,32 @@ public class SdkGenerator : IIncrementalGenerator
             x.Converters.Settings.GenerateJsonSerializerContextTypes ||
             (!x.Clients.IsEmpty &&
              x.Clients.Any(client => !client.Settings.HasJsonSerializerContext())));
+    }
+
+    private static IEnumerable<Client> GetJsonSerializerContextWrapperClients(
+        ImmutableArray<AutoSDK.Models.Data> data)
+    {
+        return data
+            .Select(static x => x.Converters)
+            .Where(static x =>
+                !x.Settings.FromCli &&
+                !x.Settings.GenerateJsonSerializerContextTypes &&
+                x.Settings.HasJsonSerializerContext() &&
+                x.Settings.UsesSystemTextJson())
+            .GroupBy(
+                static x => $"{x.Settings.Namespace}\n{x.Settings.JsonSerializerContext}",
+                StringComparer.Ordinal)
+            .Select(static x =>
+            {
+                var client = x.First();
+                return client with
+                {
+                    Converters = x
+                        .SelectMany(static y => y.Converters)
+                        .Distinct(StringComparer.Ordinal)
+                        .ToImmutableArray(),
+                };
+            });
     }
 
     private static void ReportInvalidSettings(SourceProductionContext context, Settings settings)
