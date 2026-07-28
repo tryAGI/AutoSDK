@@ -8,6 +8,8 @@ public static class ModuleInitializer
     public static void Init()
     {
         VerifySourceGenerators.Initialize();
+        // Keep snapshots compatible with the repository's UTF-8 without BOM baselines.
+        VerifierSettings.UseUtf8NoBom();
 
         // Set AUTOSDK_AUTO_VERIFY=true to auto-accept all snapshot changes
         // (useful after ordering/formatting changes that cause expected churn).

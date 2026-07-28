@@ -238,7 +238,8 @@ public partial class Tests : VerifyBase
                 Environment.NewLine + Environment.NewLine,
                 diagnostics.NormalizeLocations().Select(x => x.ToString())));
 
-        return Verify("[]")
+        // Preserve the checked-in LF terminator for raw-string snapshots.
+        return Verify("[]\n")
             .UseDirectory(directory)
             .UseTextForParameters("Diagnostics");
     }
