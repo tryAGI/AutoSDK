@@ -127,6 +127,102 @@ public class EnumGenerationTests
     }
 
     [TestMethod]
+    [DataRow(JsonSerializerType.SystemTextJson)]
+    [DataRow(JsonSerializerType.NewtonsoftJson)]
+    public void DiscriminatorEnumGeneration_RejectsUnknownValues(JsonSerializerType jsonSerializerType)
+    {
+        var settings = DefaultSettings with
+        {
+            GenerateModels = true,
+            GenerateSdk = true,
+            JsonSerializerType = jsonSerializerType,
+            TargetFramework = jsonSerializerType is JsonSerializerType.SystemTextJson
+                ? "net8.0"
+                : "net6.0",
+        };
+
+        const string json = """
+                            {
+                              "asyncapi": "3.0.0",
+                              "info": { "title": "Realtime API", "version": "1.0.0" },
+                              "channels": {
+                                "realtime": {
+                                  "address": "/realtime",
+                                  "messages": {
+                                    "KnownEvent": { "$ref": "#/components/messages/KnownEvent" },
+                                    "OtherEvent": { "$ref": "#/components/messages/OtherEvent" }
+                                  }
+                                }
+                              },
+                              "operations": {
+                                "receiveKnown": {
+                                  "action": "receive",
+                                  "channel": { "$ref": "#/channels/realtime" },
+                                  "messages": [ { "$ref": "#/channels/realtime/messages/KnownEvent" } ]
+                                },
+                                "receiveOther": {
+                                  "action": "receive",
+                                  "channel": { "$ref": "#/channels/realtime" },
+                                  "messages": [ { "$ref": "#/channels/realtime/messages/OtherEvent" } ]
+                                }
+                              },
+                              "components": {
+                                "messages": {
+                                  "KnownEvent": {
+                                    "name": "KnownEvent",
+                                    "payload": { "$ref": "#/components/schemas/KnownEvent" }
+                                  },
+                                  "OtherEvent": {
+                                    "name": "OtherEvent",
+                                    "payload": { "$ref": "#/components/schemas/OtherEvent" }
+                                  }
+                                },
+                                "schemas": {
+                                  "KnownEvent": {
+                                    "type": "object",
+                                    "required": ["type"],
+                                    "properties": {
+                                      "type": { "type": "string", "enum": ["known"] }
+                                    }
+                                  },
+                                  "OtherEvent": {
+                                    "type": "object",
+                                    "required": ["type"],
+                                    "properties": {
+                                      "type": { "type": "string", "enum": ["other"] }
+                                    }
+                                  },
+                                  "OrdinaryStatus": {
+                                    "type": "string",
+                                    "enum": ["ready", "done"]
+                                  }
+                                }
+                              }
+                            }
+                            """;
+
+        var data = AsyncApiData.Prepare(((json, settings), GlobalSettings: settings));
+        var discriminatorModel = data.Enums.Single(x => x.ClassName == "ServerEventDiscriminatorType");
+        var ordinaryModel = data.Enums.Single(x => x.ClassName == "OrdinaryStatus");
+        var discriminatorConverter = Sources.GenerateEnumJsonConverter(discriminatorModel);
+        var ordinaryConverter = Sources.GenerateEnumJsonConverter(ordinaryModel);
+
+        discriminatorModel.RejectUnknownStringValues.Should().BeTrue();
+        ordinaryModel.RejectUnknownStringValues.Should().BeFalse();
+        discriminatorConverter.Should().Contain("Unknown discriminator value '{stringValue}'");
+        ordinaryConverter.Should().Contain("Extensions.ToEnum(stringValue) ?? default;");
+
+        if (jsonSerializerType is JsonSerializerType.NewtonsoftJson)
+        {
+            discriminatorConverter.Should().Contain("throw new global::Newtonsoft.Json.JsonSerializationException");
+        }
+        else
+        {
+            discriminatorConverter.Should().Contain("throw new global::System.Text.Json.JsonException");
+        }
+    }
+
+    [TestMethod]
     public void EnumPathParameters_UseWireValues()
     {
         var settings = DefaultSettings with

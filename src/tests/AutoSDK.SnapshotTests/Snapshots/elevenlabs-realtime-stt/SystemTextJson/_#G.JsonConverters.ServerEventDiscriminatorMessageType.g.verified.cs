@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.ServerEventDiscriminatorMessageType.g.cs
+//HintName: G.JsonConverters.ServerEventDiscriminatorMessageType.g.cs
 #nullable enable
 
 namespace G.JsonConverters
@@ -19,7 +19,7 @@ namespace G.JsonConverters
                     var stringValue = reader.GetString();
                     if (stringValue != null)
                     {
-                        return global::G.ServerEventDiscriminatorMessageTypeExtensions.ToEnum(stringValue) ?? default;
+                        return global::G.ServerEventDiscriminatorMessageTypeExtensions.ToEnum(stringValue) ?? throw new global::System.Text.Json.JsonException($"Unknown discriminator value '{stringValue}' for global::G.ServerEventDiscriminatorMessageType.");
                     }
                     
                     break;

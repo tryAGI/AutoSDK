@@ -113,6 +113,7 @@ public static class CSharpModelDataFactory
                 ? ToImmutablePropertyDataArray(context.ComputeEnum())
                 : [],
             IsOpenEnum: isOpenEnum,
+            RejectUnknownStringValues: false,
             Summary: context.Schema.GetSummary(),
             Description: context.Schema.Description ?? string.Empty,
             IsDeprecated: context.Schema.IsDeprecated(),

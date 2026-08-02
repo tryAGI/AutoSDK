@@ -668,6 +668,7 @@ components:
             ],
             EnumValues: [],
             IsOpenEnum: false,
+            RejectUnknownStringValues: false,
             Summary: "Append input audio.",
             Description: string.Empty,
             IsDeprecated: false,

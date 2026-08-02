@@ -7,6 +7,13 @@ public static partial class Sources
         ModelData model,
         CancellationToken cancellationToken = default)
     {
+        var newtonsoftUnknownStringValue = model.RejectUnknownStringValues
+            ? $"throw new global::Newtonsoft.Json.JsonSerializationException($\"Unknown discriminator value '{{stringValue}}' for {model.GlobalClassName}.\")"
+            : "default";
+        var systemTextJsonUnknownStringValue = model.RejectUnknownStringValues
+            ? $"throw new global::System.Text.Json.JsonException($\"Unknown discriminator value '{{stringValue}}' for {model.GlobalClassName}.\")"
+            : "default";
+
         if (model.Settings.UsesNewtonsoftJson())
         {
             return model.IsOpenEnum
@@ -39,7 +46,7 @@ namespace {model.Namespace}.JsonConverters
                     var stringValue = reader.Value as string ?? reader.ReadAsString();
                     if (stringValue != null)
                     {{
-                        return {model.GlobalClassName}Extensions.ToEnum(stringValue) ?? default;
+                        return {model.GlobalClassName}Extensions.ToEnum(stringValue) ?? {newtonsoftUnknownStringValue};
                     }}
 
                     break;
@@ -95,7 +102,7 @@ namespace {model.Namespace}.JsonConverters
                     var stringValue = reader.Value as string ?? reader.ReadAsString();
                     if (stringValue != null)
                     {{
-                        return {model.GlobalClassName}Extensions.ToEnum(stringValue) ?? default;
+                        return {model.GlobalClassName}Extensions.ToEnum(stringValue) ?? {newtonsoftUnknownStringValue};
                     }}
 
                     break;
@@ -155,7 +162,7 @@ namespace {model.Namespace}.JsonConverters
                     var stringValue = reader.GetString();
                     if (stringValue != null)
                     {{
-                        return {model.GlobalClassName}Extensions.ToEnum(stringValue) ?? default;
+                        return {model.GlobalClassName}Extensions.ToEnum(stringValue) ?? {systemTextJsonUnknownStringValue};
                     }}
 
                     break;
@@ -204,7 +211,7 @@ namespace {model.Namespace}.JsonConverters
                     var stringValue = reader.GetString();
                     if (stringValue != null)
                     {{
-                        return {model.GlobalClassName}Extensions.ToEnum(stringValue) ?? default;
+                        return {model.GlobalClassName}Extensions.ToEnum(stringValue) ?? {systemTextJsonUnknownStringValue};
                     }}
                     
                     break;

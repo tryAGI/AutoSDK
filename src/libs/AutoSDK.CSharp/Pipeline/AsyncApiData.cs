@@ -174,6 +174,7 @@ public static class AsyncApiData
                 .Select(x => x.EnumData)
                 .Where(x => x is not null)
                 .Select(x => x!.Value)
+                .Select(MarkDiscriminatorEnumAsStrict)
                 .ToImmutableArray();
         var anyOfDatas = skipModels
             ? ImmutableArray<AnyOfData>.Empty
@@ -313,6 +314,7 @@ public static class AsyncApiData
                 .Select(x => x.EnumData)
                 .Where(x => x is not null)
                 .Select(x => x!.Value)
+                .Select(MarkDiscriminatorEnumAsStrict)
                 .ToImmutableArray();
         var anyOfDatas = skipModels
             ? ImmutableArray<AnyOfData>.Empty
@@ -395,6 +397,14 @@ public static class AsyncApiData
                 Total: totalTime.Elapsed),
             WebSocketClients: webSocketClients.ToImmutableArray(),
             WebSocketOperations: webSocketOperations.ToImmutableArray());
+    }
+
+    private static ModelData MarkDiscriminatorEnumAsStrict(ModelData model)
+    {
+        return model with
+        {
+            RejectUnknownStringValues = model.SchemaContext.Parent?.Hint == Hint.Discriminator,
+        };
     }
 
     private static (List<WebSocketClient>, List<WebSocketEndPoint>) BuildWebSocketData(
