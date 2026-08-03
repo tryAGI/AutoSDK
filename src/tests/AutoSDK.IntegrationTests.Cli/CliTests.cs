@@ -5544,7 +5544,7 @@ components:
         }
     }
 
-    //[TestMethod]
+    [TestMethod]
     public async Task Initialize()
     {
         var tempDirectory = Path.Combine(Path.GetTempPath(), Path.GetRandomFileName());
@@ -5573,6 +5573,18 @@ components:
             Directory.EnumerateFiles(tempDirectory, "*", SearchOption.AllDirectories)
                 .Should()
                 .NotBeEmpty();
+            var issueTemplateDirectory = Path.Combine(tempDirectory, ".github", "ISSUE_TEMPLATE");
+            File.Exists(Path.Combine(issueTemplateDirectory, "bug-report.yml"))
+                .Should()
+                .BeTrue();
+            (await File.ReadAllTextAsync(Path.Combine(issueTemplateDirectory, "config.yml")))
+                .Should()
+                .Contain("blank_issues_enabled: true");
+            (await File.ReadAllTextAsync(Path.Combine(tempDirectory, "TestAPI.slnx")))
+                .Should()
+                .Contain(".github/ISSUE_TEMPLATE/bug-report.yml")
+                .And
+                .Contain(".github/ISSUE_TEMPLATE/config.yml");
         }
         finally
         {

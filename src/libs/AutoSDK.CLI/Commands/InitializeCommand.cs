@@ -96,6 +96,8 @@ internal sealed class InitializeCommand : Command
             H.Resources.__gitignore,
             H.Resources.__SolutionName__slnx,
             H.Resources.__github_dependabot_yml,
+            H.Resources.__github_ISSUE_TEMPLATE_bug_report_yml,
+            H.Resources.__github_ISSUE_TEMPLATE_config_yml,
             H.Resources.__github_workflows_auto_merge_yml,
             H.Resources.__github_workflows_auto_update_yml,
             H.Resources.__github_workflows_dotnet_yml,
@@ -141,8 +143,14 @@ internal sealed class InitializeCommand : Command
         
         foreach (var resource in resources)
         {
-            var path = Path.Combine(outputPath, Replace(resource.FileName)
-                .Replace("_", Path.DirectorySeparatorChar.ToString(), StringComparison.OrdinalIgnoreCase));
+            var directorySeparator = Path.DirectorySeparatorChar.ToString();
+            var relativePath = Replace(resource.FileName)
+                .Replace("_", directorySeparator, StringComparison.OrdinalIgnoreCase)
+                .Replace(
+                    $"ISSUE{directorySeparator}TEMPLATE",
+                    "ISSUE_TEMPLATE",
+                    StringComparison.OrdinalIgnoreCase);
+            var path = Path.Combine(outputPath, relativePath);
             var directory = Path.GetDirectoryName(path);
             if (!string.IsNullOrWhiteSpace(directory))
             {

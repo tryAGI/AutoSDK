@@ -16,6 +16,8 @@
     <File Path=".github/workflows/dotnet.yml" />
     <File Path=".github/workflows/mkdocs.yml" />
     <File Path=".github/workflows/pull-request.yml" />
+    <File Path=".github/ISSUE_TEMPLATE/bug-report.yml" />
+    <File Path=".github/ISSUE_TEMPLATE/config.yml" />
   </Folder>
   <Folder Name="/tests/">
     <Project Path="src/tests/IntegrationTests/$SolutionName$.IntegrationTests.csproj" />
