@@ -312,6 +312,135 @@ public class JsonGenerationModeTests
             "JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, string>))");
     }
 
+    [TestMethod]
+    public void CreateReport_CountsEachClassificationBucket()
+    {
+        var data = Prepare(CliSettings with { DirectionAwareJsonGenerationMode = true });
+
+        var report = JsonSerializationDirectionAnalyzer.CreateReport(data);
+
+        report.RequestOnly.Should().BeGreaterThan(0);
+        report.ResponseOnly.Should().BeGreaterThan(0);
+        report.Bidirectional.Should().BeGreaterThan(0);
+        report.Unclassified.Should().BeGreaterThan(0);
+        report.Total.Should().Be(
+            report.RequestOnly + report.ResponseOnly + report.Bidirectional + report.Unclassified);
+
+        // The generated unix timestamp converter is always registered.
+        report.FastPathAvailable.Should().BeFalse();
+        report.ToString().Should().StartWith("Direction-aware JSON generation modes: ");
+        report.ToString().Should().Contain("Registered converters disable source-generated fast-path serialization");
+    }
+
+    [TestMethod]
+    public void CreateReport_CountsEverythingUnclassifiedWhenTheOptionIsOff()
+    {
+        var data = Prepare(CliSettings);
+
+        var report = JsonSerializationDirectionAnalyzer.CreateReport(data);
+
+        report.Total.Should().BeGreaterThan(0);
+        report.Unclassified.Should().Be(report.Total);
+        report.RequestOnly.Should().Be(0);
+        report.ResponseOnly.Should().Be(0);
+        report.Bidirectional.Should().Be(0);
+    }
+
+    [TestMethod]
+    public void CreateReport_ReportsSerializationNarrowingWhenNoConvertersAreRegistered()
+    {
+        var report = new JsonSerializationDirectionReport(
+            requestOnly: 2,
+            responseOnly: 3,
+            bidirectional: 1,
+            unclassified: 0,
+            fastPathAvailable: true);
+
+        report.Total.Should().Be(6);
+        report.ToString().Should().Be(
+            "Direction-aware JSON generation modes: 2 request-only, 3 response-only, 1 bidirectional, 0 unclassified of 6 registered types. " +
+            "Request-only types without generated FromJson helpers use Serialization; response-only types use Metadata.");
+    }
+
+    private const string AsyncApiSpec = """
+asyncapi: 3.0.0
+info:
+  title: Realtime
+  version: 1.0.0
+servers:
+  production:
+    host: example.com
+    pathname: /v1/realtime
+    protocol: wss
+channels:
+  realtime:
+    address: /v1/realtime
+    messages:
+      SessionUpdate:
+        payload:
+          $ref: '#/components/schemas/SessionUpdate'
+      SessionCreated:
+        payload:
+          $ref: '#/components/schemas/SessionCreated'
+operations:
+  sendSessionUpdate:
+    action: send
+    channel:
+      $ref: '#/channels/realtime'
+    messages:
+      - $ref: '#/channels/realtime/messages/SessionUpdate'
+  receiveSessionCreated:
+    action: receive
+    channel:
+      $ref: '#/channels/realtime'
+    messages:
+      - $ref: '#/channels/realtime/messages/SessionCreated'
+components:
+  schemas:
+    SessionUpdate:
+      type: object
+      properties:
+        session:
+          $ref: '#/components/schemas/SessionConfig'
+    SessionConfig:
+      type: object
+      properties:
+        model:
+          type: string
+    SessionCreated:
+      type: object
+      properties:
+        session:
+          $ref: '#/components/schemas/SessionState'
+    SessionState:
+      type: object
+      properties:
+        id:
+          type: string
+""";
+
+    [TestMethod]
+    public void Analyze_MapsAsyncApiSendAndReceiveOperationsToDirections()
+    {
+        var settings = CliSettings with { DirectionAwareJsonGenerationMode = true };
+
+        var data = AsyncApiData.Prepare(((AsyncApiSpec, settings), GlobalSettings: settings));
+
+        DirectionOf(data, "global::G.SessionUpdate").Should().Be(JsonSerializationDirection.Request);
+        DirectionOf(data, "global::G.SessionConfig").Should().Be(JsonSerializationDirection.Request);
+        DirectionOf(data, "global::G.SessionCreated").Should().Be(JsonSerializationDirection.Response);
+        DirectionOf(data, "global::G.SessionState").Should().Be(JsonSerializationDirection.Response);
+    }
+
+    [TestMethod]
+    public void Analyze_IsSkippedForAsyncApiWhenTheOptionIsOff()
+    {
+        var data = AsyncApiData.Prepare(((AsyncApiSpec, CliSettings), GlobalSettings: CliSettings));
+
+        data.Types.Should().NotBeEmpty();
+        data.Types.Should().OnlyContain(x => x.JsonSerializationDirection == JsonSerializationDirection.None);
+    }
+
     private static Client CreateClient(Settings settings, ImmutableArray<string> converters)
     {
         return new Client(

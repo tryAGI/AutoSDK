@@ -1892,17 +1892,9 @@ public static class Data
             return types;
         }
 
-        var directions = JsonSerializationDirectionAnalyzer.Analyze(filteredSchemas);
-
-        return types
-            .Select(type => type with
-            {
-                JsonSerializationDirection =
-                    directions.TryGetValue(type.CSharpTypeWithoutNullability, out var direction)
-                        ? direction
-                        : JsonSerializationDirection.None,
-            })
-            .ToImmutableArray();
+        return JsonSerializationDirectionAnalyzer.ApplyDirections(
+            types,
+            JsonSerializationDirectionAnalyzer.Analyze(filteredSchemas));
     }
 
     private static EndPoint ResolveEndPointTag(

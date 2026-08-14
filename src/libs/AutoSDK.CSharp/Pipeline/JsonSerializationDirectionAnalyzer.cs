@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using System.Collections.Immutable;
+using System.Linq;
 using AutoSDK.Helpers;
 using AutoSDK.Models;
 using Microsoft.OpenApi;
@@ -24,16 +26,105 @@ public static class JsonSerializationDirectionAnalyzer
     {
         schemas = schemas ?? throw new ArgumentNullException(nameof(schemas));
 
+        var roots = new List<(SchemaContext Root, JsonSerializationDirection Direction)>();
+        for (var i = 0; i < schemas.Count; i++)
+        {
+            var direction = GetRootDirection(schemas[i]);
+            if (direction != JsonSerializationDirection.None)
+            {
+                roots.Add((schemas[i], direction));
+            }
+        }
+
+        return AnalyzeRoots(roots);
+    }
+
+    /// <summary>
+    /// Same analysis for pipelines whose direction is not encoded in the schema hints, such as
+    /// AsyncAPI where it comes from each operation's send/receive role.
+    /// </summary>
+    public static Dictionary<string, JsonSerializationDirection> AnalyzeRoots(
+        IReadOnlyList<(SchemaContext Root, JsonSerializationDirection Direction)> roots)
+    {
+        roots = roots ?? throw new ArgumentNullException(nameof(roots));
+
         var directions = new Dictionary<string, JsonSerializationDirection>(StringComparer.Ordinal);
 
-        Mark(schemas, JsonSerializationDirection.Request, directions);
-        Mark(schemas, JsonSerializationDirection.Response, directions);
+        Mark(roots, JsonSerializationDirection.Request, directions);
+        Mark(roots, JsonSerializationDirection.Response, directions);
 
         return directions;
     }
 
+    /// <summary>
+    /// Stamps the analyzed direction onto the types collected for the JsonSerializerContext.
+    /// Types that were never reached keep <see cref="JsonSerializationDirection.None"/>.
+    /// </summary>
+    public static ImmutableArray<TypeData> ApplyDirections(
+        ImmutableArray<TypeData> types,
+        Dictionary<string, JsonSerializationDirection> directions)
+    {
+        directions = directions ?? throw new ArgumentNullException(nameof(directions));
+
+        return types
+            .Select(type => type with
+            {
+                JsonSerializationDirection =
+                    directions.TryGetValue(type.CSharpTypeWithoutNullability, out var direction)
+                        ? direction
+                        : JsonSerializationDirection.None,
+            })
+            .ToImmutableArray();
+    }
+
+    /// <summary>
+    /// Summarizes how the analysis classified the types registered for
+    /// <paramref name="data"/>'s JsonSerializerContext.
+    /// </summary>
+    public static JsonSerializationDirectionReport CreateReport(Models.Data data)
+    {
+        var requestOnly = 0;
+        var responseOnly = 0;
+        var bidirectional = 0;
+        var unclassified = 0;
+        var counted = new HashSet<string>(StringComparer.Ordinal);
+
+        foreach (var type in data.Types)
+        {
+            var name = type.CSharpTypeWithoutNullability;
+            if (string.IsNullOrWhiteSpace(name) ||
+                !counted.Add(name))
+            {
+                continue;
+            }
+
+            switch (type.JsonSerializationDirection)
+            {
+                case JsonSerializationDirection.Request:
+                    requestOnly++;
+                    break;
+                case JsonSerializationDirection.Response:
+                    responseOnly++;
+                    break;
+                case JsonSerializationDirection.Both:
+                    bidirectional++;
+                    break;
+                default:
+                    unclassified++;
+                    break;
+            }
+        }
+
+        return new JsonSerializationDirectionReport(
+            requestOnly: requestOnly,
+            responseOnly: responseOnly,
+            bidirectional: bidirectional,
+            unclassified: unclassified,
+            fastPathAvailable: data.Converters.Converters.Length == 0);
+    }
+
     private static void Mark(
-        IReadOnlyList<SchemaContext> schemas,
+        IReadOnlyList<(SchemaContext Root, JsonSerializationDirection Direction)> roots,
         JsonSerializationDirection direction,
         Dictionary<string, JsonSerializationDirection> directions)
     {
@@ -42,15 +133,14 @@ public static class JsonSerializationDirectionAnalyzer
         var visited = new HashSet<SchemaContext>();
         var stack = new Stack<SchemaContext>();
 
-        for (var i = 0; i < schemas.Count; i++)
+        for (var i = 0; i < roots.Count; i++)
         {
-            var schema = schemas[i];
-            if (GetRootDirection(schema) != direction)
+            if ((roots[i].Direction & direction) != direction)
             {
                 continue;
             }
 
-            stack.Push(schema);
+            stack.Push(roots[i].Root);
             Walk(stack, visited, direction, directions);
         }
     }

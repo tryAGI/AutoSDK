@@ -151,7 +151,7 @@ Each decoded `AutoSDKAwsEventStreamFrame` exposes the standard `:message-type`, 
 ## Direction-Aware JSON Generation Modes
 By default every type in the generated `JsonSerializerContext` is registered with `JsonSourceGenerationMode.Default`, so `System.Text.Json` emits both property metadata and a fast-path serializer for it — even for models that the SDK only ever deserializes. Enable `--direction-aware-json-generation-mode` in the CLI, or set `<AutoSDK_DirectionAwareJsonGenerationMode>true</AutoSDK_DirectionAwareJsonGenerationMode>` for the source generator, to infer each type's direction from the operation graph and emit the narrowest safe mode instead.
 
-Direction is propagated from every operation's request bodies, parameters, and success/error responses through `$ref`s, properties, array items, dictionary values, `oneOf`/`anyOf` variants, inheritance, and discriminator mappings:
+Direction is propagated from every operation's request bodies, parameters, and success/error responses through `$ref`s, properties, array items, dictionary values, `oneOf`/`anyOf` variants, inheritance, and discriminator mappings. AsyncAPI specs are covered too: messages the client sends count as request usage, messages it receives (including the synthetic union wrappers generated for multi-message channels) count as response usage.
 
 | Classification | Emitted mode | Effect |
 | --- | --- | --- |
@@ -165,6 +165,12 @@ Two safety rules keep the narrowing wire-compatible:
 - Generated models expose public `FromJson`/`FromJsonStreamAsync` helpers, which need property metadata. Request-only models that generate those helpers therefore keep `Default` whenever the fast path is actually usable.
 
 Serialized and deserialized payloads are byte-identical with the option on or off; it only removes generated code that the runtime would never execute.
+
+With the option on, the CLI reports how the analysis landed, so a spec whose types mostly stay `Default` is visible without diffing generated output:
+
+```text
+Direction-aware JSON generation modes: 384 request-only, 704 response-only, 395 bidirectional, 311 unclassified of 1794 registered types. Registered converters disable source-generated fast-path serialization, so single-direction types use Metadata.
+```
 
 ## Vendor Extension Compatibility
 When `AutoSDK_UseExtensionNaming` or `--use-extension-naming` is enabled, AutoSDK consumes a curated set of third-party SDK metadata instead of treating every vendor extension as noise.

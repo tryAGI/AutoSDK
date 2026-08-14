@@ -212,18 +212,23 @@ public static class AsyncApiData
             GlobalSettings: csharpGlobalSettings,
             Converters: converters);
 
-        var types = skipModels
-            ? ImmutableArray<TypeData>.Empty
-            : settings.GenerateJsonSerializerContextTypes
-                ? filteredSchemas
-                    .Where(x =>
-                        x.TypeData != TypeData.Default &&
-                        !string.IsNullOrWhiteSpace(x.TypeData.CSharpType))
-                    .Select(x => x.TypeData)
-                    .GroupBy(x => x.CSharpTypeWithNullability)
-                    .Select(x => x.First())
-                    .ToImmutableArray()
-                : ImmutableArray<TypeData>.Empty;
+        var types = ApplyJsonSerializationDirections(
+            skipModels
+                ? ImmutableArray<TypeData>.Empty
+                : settings.GenerateJsonSerializerContextTypes
+                    ? filteredSchemas
+                        .Where(x =>
+                            x.TypeData != TypeData.Default &&
+                            !string.IsNullOrWhiteSpace(x.TypeData.CSharpType))
+                        .Select(x => x.TypeData)
+                        .GroupBy(x => x.CSharpTypeWithNullability)
+                        .Select(x => x.First())
+                        .ToImmutableArray()
+                    : ImmutableArray<TypeData>.Empty,
+            webSocketOperations,
+            componentSchemas,
+            syntheticEventSchemaNames,
+            csharpSettings);
 
         classes = classes
             .Select(x => x with { SchemaContext = default! })
@@ -352,18 +357,23 @@ public static class AsyncApiData
             GlobalSettings: globalSettings,
             Converters: converters);
 
-        var types = skipModels
-            ? ImmutableArray<TypeData>.Empty
-            : settings.GenerateJsonSerializerContextTypes
-                ? filteredSchemas
-                    .Where(x =>
-                        x.TypeData != TypeData.Default &&
-                        !string.IsNullOrWhiteSpace(x.TypeData.CSharpType))
-                    .Select(x => x.TypeData)
-                    .GroupBy(x => x.CSharpTypeWithNullability)
-                    .Select(x => x.First())
-                    .ToImmutableArray()
-                : ImmutableArray<TypeData>.Empty;
+        var types = ApplyJsonSerializationDirections(
+            skipModels
+                ? ImmutableArray<TypeData>.Empty
+                : settings.GenerateJsonSerializerContextTypes
+                    ? filteredSchemas
+                        .Where(x =>
+                            x.TypeData != TypeData.Default &&
+                            !string.IsNullOrWhiteSpace(x.TypeData.CSharpType))
+                        .Select(x => x.TypeData)
+                        .GroupBy(x => x.CSharpTypeWithNullability)
+                        .Select(x => x.First())
+                        .ToImmutableArray()
+                    : ImmutableArray<TypeData>.Empty,
+            webSocketOperations,
+            componentSchemas,
+            syntheticEventSchemaNames,
+            settings);
 
         classes = classes
             .Select(x => x with { SchemaContext = default! })
@@ -996,6 +1006,61 @@ public static class AsyncApiData
 
         var lastSlash = refPath.LastIndexOf('/');
         return lastSlash >= 0 ? refPath.Substring(lastSlash + 1) : refPath;
+    }
+
+    /// <summary>
+    /// Infers per-type serialization direction from the WebSocket operations: messages the client
+    /// sends are serialized, messages it receives are deserialized. The synthetic union wrappers
+    /// generated for multi-message channels only ever take part in receiving.
+    /// </summary>
+    private static ImmutableArray<TypeData> ApplyJsonSerializationDirections(
+        ImmutableArray<TypeData> types,
+        IReadOnlyList<WebSocketEndPoint> webSocketOperations,
+        Dictionary<string, SchemaContext> componentSchemas,
+        Dictionary<string, string> syntheticEventSchemaNames,
+        CSharpSettings settings)
+    {
+        if (!settings.DirectionAwareJsonGenerationMode ||
+            types.IsEmpty)
+        {
+            return types;
+        }
+
+        var schemasByType = new Dictionary<string, SchemaContext>(StringComparer.Ordinal);
+        foreach (var schema in componentSchemas.Values)
+        {
+            var name = schema.TypeData.CSharpTypeWithoutNullability;
+            if (!string.IsNullOrWhiteSpace(name))
+            {
+                schemasByType[name] = schema;
+            }
+        }
+
+        var roots = new List<(SchemaContext Root, JsonSerializationDirection Direction)>();
+
+        foreach (var operation in webSocketOperations)
+        {
+            if (schemasByType.TryGetValue(operation.MessageType.CSharpTypeWithoutNullability, out var root))
+            {
+                roots.Add((
+                    root,
+                    operation.Direction == WebSocketDirection.Send
+                        ? JsonSerializationDirection.Request
+                        : JsonSerializationDirection.Response));
+            }
+        }
+
+        foreach (var syntheticEventSchemaName in syntheticEventSchemaNames.Values)
+        {
+            if (componentSchemas.TryGetValue(syntheticEventSchemaName, out var eventSchema))
+            {
+                roots.Add((eventSchema, JsonSerializationDirection.Response));
+            }
+        }
+
+        return JsonSerializationDirectionAnalyzer.ApplyDirections(
+            types,
+            JsonSerializationDirectionAnalyzer.AnalyzeRoots(roots));
     }
 
     private static TypeData ResolveMessageType(

@@ -126,9 +126,15 @@ Console.WriteLine(shared.ToJson());
         narrowed.Output.Should().Contain("\"name\":\"abc\"");
         narrowed.Output.Should().Contain("\"id\":\"42\"");
         narrowed.Output.Should().Contain("\"value\":\"v\"");
+
+        baseline.GenerateOutput.Should().NotContain("Direction-aware JSON generation modes:");
+        narrowed.GenerateOutput.Should().Contain("Direction-aware JSON generation modes:");
+        narrowed.GenerateOutput.Should().Contain("request-only");
+        narrowed.GenerateOutput.Should().Contain("response-only");
+        narrowed.GenerateOutput.Should().Contain("bidirectional");
     }
 
-    private static async Task<(string Context, string Output)> GenerateRunAndReadAsync(bool directionAware)
+    private static async Task<(string Context, string Output, string GenerateOutput)> GenerateRunAndReadAsync(bool directionAware)
     {
         var tempSpecDirectory = Path.Combine(Path.GetTempPath(), Path.GetRandomFileName());
         var tempDirectory = Path.Combine(Path.GetTempPath(), Path.GetRandomFileName());
@@ -196,7 +202,10 @@ Console.WriteLine(shared.ToJson());
             Console.WriteLine(runResult.StandardError);
             runResult.ExitCode.Should().Be(0);
 
-            return (context, runResult.StandardOutput.Replace("\r\n", "\n", StringComparison.Ordinal));
+            return (
+                context,
+                runResult.StandardOutput.Replace("\r\n", "\n", StringComparison.Ordinal),
+                generateResult.StandardOutput);
         }
         finally
         {

@@ -738,6 +738,12 @@ internal sealed class GenerateCommand : Command
             Console.WriteLine("Warning: No endpoint or model files were generated. Check that the input specification contains supported paths/schemas and that any upstream fetch step succeeded.");
         }
 
+        if (settings.DirectionAwareJsonGenerationMode &&
+            !data.Types.IsEmpty)
+        {
+            Console.WriteLine(JsonSerializationDirectionAnalyzer.CreateReport(data).ToString());
+        }
+
         var files = CSharpLanguagePlugin.Instance
             .GenerateFiles(data)
             .Where(x => !x.IsEmpty)
