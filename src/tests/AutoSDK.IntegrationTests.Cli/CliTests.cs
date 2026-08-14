@@ -4014,7 +4014,8 @@ components:
                     .ToArray();
                 typeInfoPropertyNames.Should().NotBeEmpty();
                 typeInfoPropertyNames.Should().OnlyContain(name => name.Length <= 120);
-                content.Should().Contain("get => _jsonSerializerContext ??= global::HugeUnion.SourceGenerationContext.Default;");
+                content.Should().Contain("new(() => global::HugeUnion.SourceGenerationContext.Default);");
+                content.Should().Contain("get => JsonSerializerContextProvider.Value;");
             });
     }
 
@@ -4129,7 +4130,8 @@ components:
                 content.Should().Contain("TypeInfoPropertyName =");
                 content.Should().Contain("#pragma warning disable CS0618 // Type or member is obsolete");
                 content.Should().Contain(deprecatedPolicy);
-                content.Should().Contain("get => _jsonSerializerContext ??= global::HugeUnionDeprecated.SourceGenerationContext.Default;");
+                content.Should().Contain("new(() => global::HugeUnionDeprecated.SourceGenerationContext.Default);");
+                content.Should().Contain("get => JsonSerializerContextProvider.Value;");
             });
     }
 

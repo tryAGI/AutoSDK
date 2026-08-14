@@ -74,21 +74,19 @@ namespace {client.Settings.Namespace}
                 ? $" = {serializer.CreateDefaultSettings(client.Converters)};"
                 : $" = new {serializer.GetOptionsType()}();")}
 {(suppressDeprecatedWarningsForJsonSerializerOptions ? "        #pragma warning restore CS0618 // Type or member is obsolete" : TrimmedLine)}" : shouldDeferJsonSerializerContext ? $@"
-        private global::System.Text.Json.Serialization.JsonSerializerContext? _jsonSerializerContext;
+        internal global::System.Lazy<global::System.Text.Json.Serialization.JsonSerializerContext> JsonSerializerContextProvider {{ get; set; }} = new(() => {GetDefaultJsonSerializerContextExpression(client.Settings)});
 
         {string.Empty.ToXmlDocumentationSummary(level: 8)}
         public global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext
         {{
-            get => _jsonSerializerContext ??= {GetDefaultJsonSerializerContextExpression(client.Settings)};
-            set => _jsonSerializerContext = value;
+            get => JsonSerializerContextProvider.Value;
+            set => JsonSerializerContextProvider = new(() => value);
         }}" : $@"
         {string.Empty.ToXmlDocumentationSummary(level: 8)}
         public global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext {{ get; set; }} = {GetDefaultJsonSerializerContextExpression(client.Settings)};")}
 
 {(client.Clients.Length != 0
-    ? "\n" + client.Clients.Select(x => shouldDeferJsonSerializerContext
-        ? GenerateDeferredJsonSerializerContextSubClientProperty(client, x)
-        : $@"
+    ? "\n" + client.Clients.Select(x => $@"
         {x.Summary.ToXmlDocumentationSummary(level: 8)}
         public {x.Type.CSharpType} {x.Name} => new {x.Type.CSharpType}(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {{
@@ -96,7 +94,9 @@ namespace {client.Settings.Namespace}
             {(client.HasIdempotencySupport ? "CreateIdempotencyKey = CreateIdempotencyKey," : TrimmedLine)}
             {(hasOptions
                 ? "JsonSerializerOptions = JsonSerializerOptions,"
-                : "JsonSerializerContext = JsonSerializerContext,")}
+                : shouldDeferJsonSerializerContext
+                    ? "JsonSerializerContextProvider = JsonSerializerContextProvider,"
+                    : "JsonSerializerContext = JsonSerializerContext,")}
             {(client.HasOAuth2Support ? "AutoSDKOAuth2State = AutoSDKOAuth2State," : TrimmedLine)}
             {(client.UsesServerSelectionSupport ? "AutoSDKServerConfiguration = AutoSDKServerConfiguration," : TrimmedLine)}
         }};
@@ -379,41 +379,6 @@ namespace {client.Settings.Namespace}
 }}".RemoveBlankLinesWhereOnlyWhitespaces();
     }
 
-    private static string GenerateDeferredJsonSerializerContextSubClientProperty(
-        Client client,
-        PropertyData property)
-    {
-        var sharedInitializers = $@"
-                    ReadResponseAsString = ReadResponseAsString,
-                    {(client.HasIdempotencySupport ? "CreateIdempotencyKey = CreateIdempotencyKey," : TrimmedLine)}
-                    {(client.HasOAuth2Support ? "AutoSDKOAuth2State = AutoSDKOAuth2State," : TrimmedLine)}
-                    {(client.UsesServerSelectionSupport ? "AutoSDKServerConfiguration = AutoSDKServerConfiguration," : TrimmedLine)}";
-
-        return $@"
-        {property.Summary.ToXmlDocumentationSummary(level: 8)}
-        public {property.Type.CSharpType} {property.Name}
-        {{
-            get
-            {{
-                var client = new {property.Type.CSharpType}(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
-                {{
-{sharedInitializers}
-                }};
-
-                // Preserve an explicit context override without forcing the generated
-                // default context to initialize while navigating to a route client.
-                if (_jsonSerializerContext is not null)
-                {{
-                    client.JsonSerializerContext = _jsonSerializerContext;
-                }}
-
-                return client;
-            }}
-        }}
-";
-    }
-    
-    
     public static string GenerateClientInterface(
         Client client)
     {
