@@ -1,4 +1,4 @@
-﻿//HintName: G.EvalsClient.g.cs
+//HintName: G.EvalsClient.g.cs
 
 #nullable enable
 
@@ -35,6 +35,7 @@ namespace G
 
         /// <inheritdoc/>
         public global::G.AutoSDKClientOptions Options { get; }
+
         /// <summary>
         /// 
         /// </summary>

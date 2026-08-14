@@ -1,4 +1,4 @@
-﻿//HintName: G.ChatClient.g.cs
+//HintName: G.ChatClient.g.cs
 
 #nullable enable
 
@@ -35,6 +35,7 @@ namespace G
 
         /// <inheritdoc/>
         public global::G.AutoSDKClientOptions Options { get; }
+
         /// <summary>
         /// 
         /// </summary>

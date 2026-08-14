@@ -1,4 +1,4 @@
-﻿//HintName: G.ModelsClient.g.cs
+//HintName: G.ModelsClient.g.cs
 
 #nullable enable
 
@@ -35,6 +35,7 @@ namespace G
 
         /// <inheritdoc/>
         public global::G.AutoSDKClientOptions Options { get; }
+
         /// <summary>
         /// 
         /// </summary>

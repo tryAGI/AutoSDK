@@ -1,4 +1,4 @@
-﻿//HintName: G.RealtimeClient.g.cs
+//HintName: G.RealtimeClient.g.cs
 
 #nullable enable
 
@@ -34,6 +34,7 @@ namespace G
 
         /// <inheritdoc/>
         public global::G.AutoSDKClientOptions Options { get; }
+
         /// <summary>
         /// 
         /// </summary>
