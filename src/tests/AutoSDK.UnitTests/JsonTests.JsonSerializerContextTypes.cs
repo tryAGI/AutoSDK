@@ -532,7 +532,8 @@ public partial class JsonTests
 
         file.Text.Should().Contain("internal sealed partial class SourceGenerationContextChunk0");
         file.Text.Should().Contain("internal sealed partial class SourceGenerationContextChunk1");
-        file.Text.Should().Contain("global::System.Text.Json.Serialization.Metadata.JsonTypeInfoResolver.Combine(");
+        file.Text.Should().Contain("private sealed class LazyChunkResolver");
+        file.Text.Should().NotContain("global::System.Text.Json.Serialization.Metadata.JsonTypeInfoResolver.Combine(");
         file.Text.Should().Contain("public static SourceGenerationContext Default { get; } = new(DefaultOptions);");
         file.Text.Should().NotContain("JsonSerializable(typeof(global::G.JsonSerializerContextTypes))");
         file.Text.Should().Contain("JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, string>))");
@@ -698,6 +699,7 @@ public partial class JsonTests
             .Should().BeLessThan(3100);
         Regex.Matches(file.Text, "internal sealed partial class SourceGenerationContextChunk").Count
             .Should().BeGreaterThan(1);
-        file.Text.Should().Contain("global::System.Text.Json.Serialization.Metadata.JsonTypeInfoResolver.Combine(");
+        file.Text.Should().Contain("private sealed class LazyChunkResolver");
+        file.Text.Should().NotContain("global::System.Text.Json.Serialization.Metadata.JsonTypeInfoResolver.Combine(");
     }
 }

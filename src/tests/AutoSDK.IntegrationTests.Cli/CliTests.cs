@@ -4014,7 +4014,7 @@ components:
                     .ToArray();
                 typeInfoPropertyNames.Should().NotBeEmpty();
                 typeInfoPropertyNames.Should().OnlyContain(name => name.Length <= 120);
-                content.Should().Contain("JsonSerializerContext { get; set; } = global::HugeUnion.SourceGenerationContext.Default;");
+                content.Should().Contain("get => _jsonSerializerContext ??= global::HugeUnion.SourceGenerationContext.Default;");
             });
     }
 
@@ -4129,7 +4129,7 @@ components:
                 content.Should().Contain("TypeInfoPropertyName =");
                 content.Should().Contain("#pragma warning disable CS0618 // Type or member is obsolete");
                 content.Should().Contain(deprecatedPolicy);
-                content.Should().Contain("JsonSerializerContext { get; set; } = global::HugeUnionDeprecated.SourceGenerationContext.Default;");
+                content.Should().Contain("get => _jsonSerializerContext ??= global::HugeUnionDeprecated.SourceGenerationContext.Default;");
             });
     }
 
@@ -4279,6 +4279,14 @@ components:
 """);
         }
 
+        schemas.AppendLine("""
+    Status:
+      type: string
+      enum:
+        - ready
+        - running
+""");
+
         var spec = $$"""
 openapi: 3.0.3
 info:
@@ -4313,7 +4321,12 @@ components:
                 var contextContent = await File.ReadAllTextAsync(contextFile);
                 contextContent.Should().Contain("internal sealed partial class SourceGenerationContextChunk0");
                 contextContent.Should().Contain("internal sealed partial class SourceGenerationContextChunk1");
-                contextContent.Should().Contain("global::System.Text.Json.Serialization.Metadata.JsonTypeInfoResolver.Combine(");
+                contextContent.Should().Contain("private sealed class LazyChunkResolver");
+                contextContent.Should().Contain("var typeInfo = GetResolver(index).GetTypeInfo(type, options);");
+                contextContent.Should().NotContain("global::System.Text.Json.Serialization.Metadata.JsonTypeInfoResolver.Combine(");
+                contextContent.Should().Contain("private sealed class LazyEnumJsonConverterFactory");
+                contextContent.Should().Contain("return new global::LargeContext.JsonConverters.StatusJsonConverter();");
+                contextContent.Should().NotContain("options.Converters.Add(new global::LargeContext.JsonConverters.StatusJsonConverter());");
                 contextContent.Should().Contain("public static SourceGenerationContext Default { get; } = new(DefaultOptions);");
                 Regex.Matches(contextContent, "\\[global::System.Text.Json.Serialization.JsonSerializable").Count
                     .Should().BeGreaterThan(schemaCount);

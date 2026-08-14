@@ -140,7 +140,13 @@ namespace {client.Settings.Namespace}
         var chunkClassNames = chunks
             .Select((_, index) => $"{contextClassName}Chunk{index}")
             .ToArray();
-
+        var lazyConverterRegistrations = GetLazyEnumConverterRegistrations(client.Converters);
+        var lazyConverterTypes = new HashSet<string>(
+            lazyConverterRegistrations.Select(static registration => registration.ConverterType),
+            StringComparer.Ordinal);
+        var eagerConverters = client.Converters
+            .Where(converter => !lazyConverterTypes.Contains(converter))
+            .ToArray();
         return $@"
 #nullable enable
 
@@ -151,7 +157,7 @@ namespace {client.Settings.Namespace}
 {{
 {chunks.Select((chunk, index) => $@"
     {string.Empty.ToXmlDocumentationSummary(level: 4)}
-{GenerateJsonSourceGenerationOptionsAttribute(client)}
+{GenerateJsonSourceGenerationOptionsAttribute(client, includeConverters: false)}
 {string.Join("\n", chunk)}
     internal sealed partial class {chunkClassNames[index]} : global::System.Text.Json.Serialization.JsonSerializerContext
     {{
@@ -160,11 +166,7 @@ namespace {client.Settings.Namespace}
     {string.Empty.ToXmlDocumentationSummary(level: 4)}
     public sealed partial class {contextClassName} : global::System.Text.Json.Serialization.JsonSerializerContext
     {{
-        private static readonly global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver Resolver = global::System.Text.Json.Serialization.Metadata.JsonTypeInfoResolver.Combine(
-{chunkClassNames.Select(x => $@"
-            {x}.Default,
-").Inject().TrimEnd(',', '\n')}
-            );
+        private static readonly global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver Resolver = new LazyChunkResolver();
 
         private static readonly global::System.Text.Json.JsonSerializerOptions DefaultOptions = CreateDefaultOptions();
 
@@ -192,22 +194,161 @@ namespace {client.Settings.Namespace}
                 DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
                 TypeInfoResolver = Resolver,
             }};
-{client.Converters.Select(x => $@"
+{eagerConverters.Select(x => $@"
             options.Converters.Add(new {x}());").Inject()}
+{(lazyConverterRegistrations.Length == 0 ? TrimmedLine : @"
+            options.Converters.Add(new LazyEnumJsonConverterFactory());")}
 
             return options;
+        }}
+{(lazyConverterRegistrations.Length == 0 ? TrimmedLine : $@"
+
+        private sealed class LazyEnumJsonConverterFactory : global::System.Text.Json.Serialization.JsonConverterFactory
+        {{
+            public override bool CanConvert(global::System.Type typeToConvert)
+            {{
+                return
+{lazyConverterRegistrations.Select((registration, index) => $@"
+                    {(index == 0 ? "" : "|| ")}typeToConvert == typeof({registration.TargetType})
+").Inject().TrimEnd('\n')};
+            }}
+
+            public override global::System.Text.Json.Serialization.JsonConverter CreateConverter(
+                global::System.Type typeToConvert,
+                global::System.Text.Json.JsonSerializerOptions options)
+            {{
+{lazyConverterRegistrations.Select(registration => $@"
+                if (typeToConvert == typeof({registration.TargetType}))
+                {{
+                    return new {registration.ConverterType}();
+                }}
+").Inject()}
+                throw new global::System.NotSupportedException($""No generated enum converter is registered for '{{typeToConvert}}'."");
+            }}
+        }}")}
+
+        private sealed class LazyChunkResolver : global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver
+        {{
+            private readonly object _gate = new();
+            private readonly global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver?[] _resolvers = new global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver?[{chunkClassNames.Length}];
+
+            public global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? GetTypeInfo(
+                global::System.Type type,
+                global::System.Text.Json.JsonSerializerOptions options)
+            {{
+                for (var index = 0; index < _resolvers.Length; index++)
+                {{
+                    var typeInfo = GetResolver(index).GetTypeInfo(type, options);
+                    if (typeInfo is not null)
+                    {{
+                        return typeInfo;
+                    }}
+                }}
+
+                return null;
+            }}
+
+            private global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver GetResolver(int index)
+            {{
+                var resolver = global::System.Threading.Volatile.Read(ref _resolvers[index]);
+                if (resolver is not null)
+                {{
+                    return resolver;
+                }}
+
+                lock (_gate)
+                {{
+                    return _resolvers[index] ??= CreateResolver(index);
+                }}
+            }}
+
+            private static global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver CreateResolver(int index)
+            {{
+                return index switch
+                {{
+{chunkClassNames.Select((className, index) => $@"
+                    {index} => new {className}(new global::System.Text.Json.JsonSerializerOptions()),
+").Inject()}
+                    _ => throw new global::System.ArgumentOutOfRangeException(nameof(index)),
+                }};
+            }}
         }}
     }}
 }}".RemoveBlankLinesWhereOnlyWhitespaces();
     }
 
-    private static string GenerateJsonSourceGenerationOptionsAttribute(Client client)
+    private readonly struct LazyConverterRegistration
     {
+        public LazyConverterRegistration(
+            string targetType,
+            string converterType)
+        {
+            TargetType = targetType;
+            ConverterType = converterType;
+        }
+
+        public string TargetType { get; }
+
+        public string ConverterType { get; }
+    }
+
+    private static LazyConverterRegistration[] GetLazyEnumConverterRegistrations(
+        EquatableArray<string> converters)
+    {
+        const string converterNamespaceMarker = ".JsonConverters.";
+        const string converterSuffix = "JsonConverter";
+        const string nullableConverterSuffix = "NullableJsonConverter";
+
+        var converterSet = new HashSet<string>(converters, StringComparer.Ordinal);
+        var registrations = new List<LazyConverterRegistration>();
+
+        foreach (var nullableConverter in converters.Where(static converter =>
+                     converter.EndsWith(nullableConverterSuffix, StringComparison.Ordinal)))
+        {
+            var converterNamespaceIndex = nullableConverter.LastIndexOf(
+                converterNamespaceMarker,
+                StringComparison.Ordinal);
+            if (converterNamespaceIndex < 0)
+            {
+                continue;
+            }
+
+            var typeNameStart = converterNamespaceIndex + converterNamespaceMarker.Length;
+            var typeNameLength = nullableConverter.Length - typeNameStart - nullableConverterSuffix.Length;
+            if (typeNameLength <= 0)
+            {
+                continue;
+            }
+
+            var typeName = nullableConverter.Substring(typeNameStart, typeNameLength);
+            var converterNamespacePrefix = nullableConverter.Substring(0, converterNamespaceIndex);
+            var nonNullableConverter = $"{converterNamespacePrefix}{converterNamespaceMarker}{typeName}{converterSuffix}";
+            if (!converterSet.Contains(nonNullableConverter))
+            {
+                continue;
+            }
+
+            var targetType = $"{converterNamespacePrefix}.{typeName}";
+            registrations.Add(new LazyConverterRegistration(targetType, nonNullableConverter));
+            registrations.Add(new LazyConverterRegistration($"{targetType}?", nullableConverter));
+        }
+
+        return registrations.ToArray();
+    }
+
+    private static string GenerateJsonSourceGenerationOptionsAttribute(
+        Client client,
+        bool includeConverters = true)
+    {
+        IEnumerable<string> converters = includeConverters
+            ? client.Converters
+            : Array.Empty<string>();
+
         return $@"    [global::System.Text.Json.Serialization.JsonSourceGenerationOptions(
         DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
         Converters = new global::System.Type[]
         {{
-{client.Converters.Select(x => $@"
+{converters.Select(x => $@"
             typeof({x}),
 ").Inject()}
         }})]";

@@ -11,6 +11,10 @@ public static partial class Sources
     {
         var serializer = client.Settings.JsonSerializerType.GetSerializer();
         var hasOptions = !client.Settings.HasJsonSerializerContext();
+        var shouldDeferJsonSerializerContext =
+            !hasOptions &&
+            client.Settings.FromCli &&
+            client.Settings.ShouldGenerateJsonSerializerContextTypes();
         var rootClassName = client.Settings.ClassName.Replace(".", string.Empty);
         var hasServerSelection = client.Servers.Length > 1;
         var suppressDeprecatedWarningsForJsonSerializerOptions =
@@ -62,17 +66,29 @@ namespace {client.Settings.Namespace}
 
         internal global::{client.Settings.Namespace}.AutoSDKServerConfiguration AutoSDKServerConfiguration {{ get; set; }} = new global::{client.Settings.Namespace}.AutoSDKServerConfiguration();" : TrimmedLine)}
         
-        {string.Empty.ToXmlDocumentationSummary(level: 8)}
 {(hasOptions ? $@" 
+        {string.Empty.ToXmlDocumentationSummary(level: 8)}
 {(suppressDeprecatedWarningsForJsonSerializerOptions ? "        #pragma warning disable CS0618 // Type or member is obsolete" : TrimmedLine)}
         public {serializer.GetOptionsType()} JsonSerializerOptions {{ get; set; }}{(
             client.Id == "MainConstructor"
                 ? $" = {serializer.CreateDefaultSettings(client.Converters)};"
                 : $" = new {serializer.GetOptionsType()}();")}
-{(suppressDeprecatedWarningsForJsonSerializerOptions ? "        #pragma warning restore CS0618 // Type or member is obsolete" : TrimmedLine)}" : $@" 
+{(suppressDeprecatedWarningsForJsonSerializerOptions ? "        #pragma warning restore CS0618 // Type or member is obsolete" : TrimmedLine)}" : shouldDeferJsonSerializerContext ? $@"
+        private global::System.Text.Json.Serialization.JsonSerializerContext? _jsonSerializerContext;
+
+        {string.Empty.ToXmlDocumentationSummary(level: 8)}
+        public global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext
+        {{
+            get => _jsonSerializerContext ??= {GetDefaultJsonSerializerContextExpression(client.Settings)};
+            set => _jsonSerializerContext = value;
+        }}" : $@"
+        {string.Empty.ToXmlDocumentationSummary(level: 8)}
         public global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext {{ get; set; }} = {GetDefaultJsonSerializerContextExpression(client.Settings)};")}
 
-{(client.Clients.Length != 0 ? "\n" + client.Clients.Select(x => $@"
+{(client.Clients.Length != 0
+    ? "\n" + client.Clients.Select(x => shouldDeferJsonSerializerContext
+        ? GenerateDeferredJsonSerializerContextSubClientProperty(client, x)
+        : $@"
         {x.Summary.ToXmlDocumentationSummary(level: 8)}
         public {x.Type.CSharpType} {x.Name} => new {x.Type.CSharpType}(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {{
@@ -84,7 +100,8 @@ namespace {client.Settings.Namespace}
             {(client.HasOAuth2Support ? "AutoSDKOAuth2State = AutoSDKOAuth2State," : TrimmedLine)}
             {(client.UsesServerSelectionSupport ? "AutoSDKServerConfiguration = AutoSDKServerConfiguration," : TrimmedLine)}
         }};
-").Inject() : TrimmedLine)}
+").Inject()
+    : TrimmedLine)}
 {(hasServerSelection ? $@"
 
         private static readonly global::{client.Settings.Namespace}.AutoSDKServer[] s_availableServers = new global::{client.Settings.Namespace}.AutoSDKServer[]
@@ -360,6 +377,40 @@ namespace {client.Settings.Namespace}
         }}" : TrimmedLine)}
     }}
 }}".RemoveBlankLinesWhereOnlyWhitespaces();
+    }
+
+    private static string GenerateDeferredJsonSerializerContextSubClientProperty(
+        Client client,
+        PropertyData property)
+    {
+        var sharedInitializers = $@"
+                    ReadResponseAsString = ReadResponseAsString,
+                    {(client.HasIdempotencySupport ? "CreateIdempotencyKey = CreateIdempotencyKey," : TrimmedLine)}
+                    {(client.HasOAuth2Support ? "AutoSDKOAuth2State = AutoSDKOAuth2State," : TrimmedLine)}
+                    {(client.UsesServerSelectionSupport ? "AutoSDKServerConfiguration = AutoSDKServerConfiguration," : TrimmedLine)}";
+
+        return $@"
+        {property.Summary.ToXmlDocumentationSummary(level: 8)}
+        public {property.Type.CSharpType} {property.Name}
+        {{
+            get
+            {{
+                var client = new {property.Type.CSharpType}(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
+                {{
+{sharedInitializers}
+                }};
+
+                // Preserve an explicit context override without forcing the generated
+                // default context to initialize while navigating to a route client.
+                if (_jsonSerializerContext is not null)
+                {{
+                    client.JsonSerializerContext = _jsonSerializerContext;
+                }}
+
+                return client;
+            }}
+        }}
+";
     }
     
     
