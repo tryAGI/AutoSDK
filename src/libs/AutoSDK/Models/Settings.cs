@@ -62,6 +62,7 @@ public record struct Settings(
     bool UseExtensionNaming,
     string JsonSerializerContext,
     bool GenerateJsonSerializerContextTypes,
+    bool DirectionAwareJsonGenerationMode,
     bool ComputeDiscriminators,
     bool AddMissingPathParameters,
 
@@ -153,6 +154,7 @@ public record struct Settings(
         UseExtensionNaming: true,
         JsonSerializerContext: string.Empty,
         GenerateJsonSerializerContextTypes: false,
+        DirectionAwareJsonGenerationMode: false,
         ComputeDiscriminators: false,
         AddMissingPathParameters: true,
         GenerateModels: false,

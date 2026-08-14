@@ -148,6 +148,24 @@ Bedrock-style APIs return chunked binary frames with `application/vnd.amazon.eve
 
 Each decoded `AutoSDKAwsEventStreamFrame` exposes the standard `:message-type`, `:event-type`, `:content-type` headers plus `:exception-type` / `:error-code` / `:error-message` headers. Exception or error frames raise `AutoSDKAwsEventStreamException` (with the offending frame attached) before the consumer enumerates further, matching how the AWS SDKs surface modeled exceptions inline. The existing `<Method>AsStreamAsync` raw-stream method is preserved for callers who want to layer the AWS SDK's own EventStream decoder for CRC validation or unknown frame inspection.
 
+## Direction-Aware JSON Generation Modes
+By default every type in the generated `JsonSerializerContext` is registered with `JsonSourceGenerationMode.Default`, so `System.Text.Json` emits both property metadata and a fast-path serializer for it — even for models that the SDK only ever deserializes. Enable `--direction-aware-json-generation-mode` in the CLI, or set `<AutoSDK_DirectionAwareJsonGenerationMode>true</AutoSDK_DirectionAwareJsonGenerationMode>` for the source generator, to infer each type's direction from the operation graph and emit the narrowest safe mode instead.
+
+Direction is propagated from every operation's request bodies, parameters, and success/error responses through `$ref`s, properties, array items, dictionary values, `oneOf`/`anyOf` variants, inheritance, and discriminator mappings:
+
+| Classification | Emitted mode | Effect |
+| --- | --- | --- |
+| Response-only | `Metadata` | Drops the fast-path writer that the response path never runs. |
+| Request-only | `Serialization` | Drops property metadata. Only applied when the SDK registers no converters *and* the type has no generated `FromJson` helper (see below); otherwise `Metadata`. |
+| Used in both directions, or not reachable from any operation | `Default` | Unchanged — narrowing on an unclassified type is never attempted. |
+
+Two safety rules keep the narrowing wire-compatible:
+
+- `System.Text.Json` disables source-generated fast-path serialization for the whole context when its options carry custom converters, and a `Serialization`-only registration has no property metadata to fall back on. Since generated SDKs always register at least the unix-timestamp converter, request-only types normally narrow to `Metadata` (dropping the fast-path writer that could never run) rather than to `Serialization`.
+- Generated models expose public `FromJson`/`FromJsonStreamAsync` helpers, which need property metadata. Request-only models that generate those helpers therefore keep `Default` whenever the fast path is actually usable.
+
+Serialized and deserialized payloads are byte-identical with the option on or off; it only removes generated code that the runtime would never execute.
+
 ## Vendor Extension Compatibility
 When `AutoSDK_UseExtensionNaming` or `--use-extension-naming` is enabled, AutoSDK consumes a curated set of third-party SDK metadata instead of treating every vendor extension as noise.
 

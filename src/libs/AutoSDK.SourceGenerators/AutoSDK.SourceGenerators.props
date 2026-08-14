@@ -127,6 +127,8 @@
     <CompilerVisibleProperty Include="AutoSDK_JsonSerializerContext"/>
     <!-- Allow you to specify only one type for JsonSerializerContext to enable trimming support for System.Text.Json. true/false. Default: false -->
     <CompilerVisibleProperty Include="AutoSDK_GenerateJsonSerializerContextTypes"/>
+    <!-- Infer per-type serialization direction from the operation graph and emit the narrowest safe JsonSourceGenerationMode. true/false. Default: false -->
+    <CompilerVisibleProperty Include="AutoSDK_DirectionAwareJsonGenerationMode"/>
     <!-- true/false. Default: false -->
     <CompilerVisibleProperty Include="AutoSDK_ComputeDiscriminators"/>
     <!-- Adds missing path parameters. true/false. Default: false -->

@@ -462,6 +462,11 @@ namespace {client.Settings.Namespace}
         var guardTypes = GetJsonSerializableGuardTypes(
             serializableTypes,
             explicitNullableValueTypes);
+        var generationModes = BuildJsonSourceGenerationModes(
+            client,
+            types,
+            serializableTypes,
+            alwaysDefaultTypes: contextTypes);
 
         var attributes = new List<string>(serializableTypes.Length);
         var guardAttributes = new List<string>();
@@ -469,9 +474,12 @@ namespace {client.Settings.Namespace}
         foreach (var type in serializableTypes)
         {
             explicitTypeInfoPropertyNames.TryGetValue(type, out var typeInfoPropertyName);
+            string? generationMode = null;
+            generationModes?.TryGetValue(type, out generationMode);
             var attribute = GenerateJsonSerializableAttribute(
                 type,
-                typeInfoPropertyName);
+                typeInfoPropertyName,
+                generationMode);
             attributes.Add(attribute);
 
             if (guardTypes.Contains(type))
@@ -483,13 +491,132 @@ namespace {client.Settings.Namespace}
         return (attributes.ToArray(), guardAttributes.ToArray());
     }
 
+    /// <summary>
+    /// Maps every registered type to the narrowest <c>JsonSourceGenerationMode</c> that is safe
+    /// for the direction(s) it is used in:
+    /// <list type="bullet">
+    /// <item>request-only types drop their property metadata (<c>Serialization</c>),</item>
+    /// <item>response-only types drop their fast-path writer (<c>Metadata</c>),</item>
+    /// <item>types used in both directions, or not reachable from any operation, keep <c>Default</c>.</item>
+    /// </list>
+    /// Returns null when direction-aware modes are disabled; types absent from the result keep
+    /// the context default.
+    /// </summary>
+    private static Dictionary<string, string>? BuildJsonSourceGenerationModes(
+        Client client,
+        EquatableArray<TypeData> types,
+        string[] serializableTypes,
+        string[] alwaysDefaultTypes)
+    {
+        if (!client.Settings.DirectionAwareJsonGenerationMode ||
+            !client.Settings.UsesSystemTextJson())
+        {
+            return null;
+        }
+
+        // System.Text.Json disables source-generated fast-path serialization for every type in a
+        // context whose options carry custom converters, and a `Serialization`-only registration
+        // has no property metadata to fall back on. So `Serialization` is only usable when the
+        // SDK registers no converters, and when it does register them the generated fast-path
+        // writers are unreachable code that `Metadata` drops.
+        var fastPathAvailable = client.Converters.Length == 0;
+
+        var directions = new Dictionary<string, JsonSerializationDirection>(StringComparer.Ordinal);
+        var generatedJsonHelperTypes = new HashSet<string>(StringComparer.Ordinal);
+        foreach (var type in types)
+        {
+            var name = type.CSharpTypeWithoutNullability;
+            if (string.IsNullOrWhiteSpace(name))
+            {
+                continue;
+            }
+
+            directions[name] = directions.TryGetValue(name, out var existing)
+                ? existing | type.JsonSerializationDirection
+                : type.JsonSerializationDirection;
+
+            if (type.UsesGeneratedJsonHelpers)
+            {
+                generatedJsonHelperTypes.Add(name);
+            }
+        }
+
+        var alwaysDefault = new HashSet<string>(alwaysDefaultTypes, StringComparer.Ordinal);
+        var modes = new Dictionary<string, string>(StringComparer.Ordinal);
+
+        foreach (var type in serializableTypes)
+        {
+            if (alwaysDefault.Contains(type))
+            {
+                continue;
+            }
+
+            var lookupType = ResolveDirectionLookupType(NormalizeRuntimeTypeName(type), directions);
+            if (lookupType is null)
+            {
+                continue;
+            }
+
+            var mode = directions[lookupType] switch
+            {
+                // Response-only types are never written, so the fast-path writer is dead weight.
+                JsonSerializationDirection.Response => "Metadata",
+                // The generated FromJson helpers need property metadata, so types that expose
+                // them can only keep their fast path through the default mode.
+                JsonSerializationDirection.Request => fastPathAvailable && !generatedJsonHelperTypes.Contains(lookupType)
+                    ? "Serialization"
+                    // Without a reachable fast path the generated writer is dead weight too.
+                    : fastPathAvailable ? null : "Metadata",
+                _ => null,
+            };
+
+            if (mode is not null)
+            {
+                modes[type] = mode;
+            }
+        }
+
+        return modes;
+    }
+
+    /// <summary>
+    /// Finds the key under which <paramref name="type"/> was classified, mapping the concrete
+    /// List&lt;T&gt; registrations back onto the IList&lt;T&gt; types they were derived from.
+    /// </summary>
+    private static string? ResolveDirectionLookupType(
+        string type,
+        Dictionary<string, JsonSerializationDirection> directions)
+    {
+        if (directions.ContainsKey(type))
+        {
+            return type;
+        }
+
+        var interfaceType = type.Replace(
+            "System.Collections.Generic.List<",
+            "System.Collections.Generic.IList<");
+
+        return interfaceType != type && directions.ContainsKey(interfaceType)
+            ? interfaceType
+            : null;
+    }
+
     private static string GenerateJsonSerializableAttribute(
         string type,
-        string? typeInfoPropertyName)
+        string? typeInfoPropertyName,
+        string? generationMode = null)
     {
-        return typeInfoPropertyName is null
-            ? $"    [global::System.Text.Json.Serialization.JsonSerializable(typeof({type}))]"
-            : $"    [global::System.Text.Json.Serialization.JsonSerializable(typeof({type}), TypeInfoPropertyName = \"{typeInfoPropertyName}\")]";
+        var arguments = string.Empty;
+        if (typeInfoPropertyName is not null)
+        {
+            arguments += $", TypeInfoPropertyName = \"{typeInfoPropertyName}\"";
+        }
+        if (generationMode is not null)
+        {
+            arguments += $", GenerationMode = global::System.Text.Json.Serialization.JsonSourceGenerationMode.{generationMode}";
+        }
+
+        return $"    [global::System.Text.Json.Serialization.JsonSerializable(typeof({type}){arguments})]";
     }
 
     private static Dictionary<string, string> BuildExplicitTypeInfoPropertyNames(

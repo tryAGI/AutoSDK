@@ -412,6 +412,14 @@ internal sealed class GenerateCommand : Command
         Description = "Override the JsonSerializerContext class name (default: SourceGenerationContext). Useful when generating multiple specs to the same project.",
     };
 
+    private Option<bool> DirectionAwareJsonGenerationMode { get; } = new(
+        name: "--direction-aware-json-generation-mode")
+    {
+        DefaultValueFactory = _ => Settings.Default.DirectionAwareJsonGenerationMode,
+        Description = "Infer per-type serialization direction from the operation graph and emit the narrowest safe JsonSourceGenerationMode on each [JsonSerializable] registration. " +
+                      "Types reached only through responses drop their unused fast-path serializer; types reached in both directions keep the default mode.",
+    };
+
     private Option<string> TypesNamespace { get; } = new(
         name: "--types-namespace")
     {
@@ -520,6 +528,7 @@ internal sealed class GenerateCommand : Command
         Options.Add(OpenApiOverrides);
         Options.Add(WebSocketClientClassName);
         Options.Add(JsonSerializerContextName);
+        Options.Add(DirectionAwareJsonGenerationMode);
         Options.Add(TypesNamespace);
         Options.Add(NamespaceDelimiter);
         Options.Add(IncludeModels);
@@ -595,6 +604,7 @@ internal sealed class GenerateCommand : Command
             ExcludeDeprecatedOperations = parseResult.GetRequiredValue(ExcludeDeprecatedOperations),
             JsonSerializerContext = $"{namespaceValue}.{contextClassName}",
             GenerateJsonSerializerContextTypes = true,
+            DirectionAwareJsonGenerationMode = parseResult.GetRequiredValue(DirectionAwareJsonGenerationMode),
             GenerateModels = generateModels,
             IncludeModels = parseResult.GetRequiredValue(IncludeModels).ToImmutableArray(),
             ExcludeModels = parseResult.GetRequiredValue(ExcludeModels).ToImmutableArray(),

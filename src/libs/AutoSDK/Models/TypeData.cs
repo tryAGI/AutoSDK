@@ -43,6 +43,12 @@ public record struct TypeData(
 
     public bool UsesGeneratedJsonHelpers { get; set; }
 
+    /// <summary>
+    /// How this type is reached from the operation graph. Only computed for the types
+    /// collected for the generated JsonSerializerContext.
+    /// </summary>
+    public JsonSerializationDirection JsonSerializationDirection { get; set; }
+
     public static TypeData Default => new(
         CSharpTypeRaw: string.Empty,
         CSharpTypeNullability: false,
@@ -82,5 +88,6 @@ public record struct TypeData(
     {
         DependencyHash = 0,
         UsesGeneratedJsonHelpers = false,
+        JsonSerializationDirection = JsonSerializationDirection.None,
     };
 }

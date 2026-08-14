@@ -1876,7 +1876,7 @@ public static class Data
             return [];
         }
 
-        return filteredSchemas
+        var types = filteredSchemas
             .Where(schema => !IsSuppressedLegacyPolymorphicSchema(schema, suppressedSchemas))
             .Where(schema =>
                 schema.TypeData != TypeData.Default &&
@@ -1885,6 +1885,23 @@ public static class Data
             .Concat(generatedPolymorphicTypes)
             .GroupBy(static type => type.CSharpTypeWithNullability, StringComparer.Ordinal)
             .Select(static group => group.First())
+            .ToImmutableArray();
+
+        if (!settings.DirectionAwareJsonGenerationMode)
+        {
+            return types;
+        }
+
+        var directions = JsonSerializationDirectionAnalyzer.Analyze(filteredSchemas);
+
+        return types
+            .Select(type => type with
+            {
+                JsonSerializationDirection =
+                    directions.TryGetValue(type.CSharpTypeWithoutNullability, out var direction)
+                        ? direction
+                        : JsonSerializationDirection.None,
+            })
             .ToImmutableArray();
     }
 

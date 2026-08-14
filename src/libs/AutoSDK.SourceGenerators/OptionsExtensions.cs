@@ -91,6 +91,7 @@ public static class OptionsExtensions
             UseExtensionNaming: options.GetBoolGlobalOption(nameof(Settings.UseExtensionNaming), prefix, defaultValue: Settings.Default.UseExtensionNaming),
             JsonSerializerContext: options.GetGlobalOption(nameof(Settings.JsonSerializerContext), prefix) ?? string.Empty,
             GenerateJsonSerializerContextTypes: options.GetBoolGlobalOption(nameof(Settings.GenerateJsonSerializerContextTypes), prefix, defaultValue: Settings.Default.GenerateJsonSerializerContextTypes),
+            DirectionAwareJsonGenerationMode: options.GetBoolGlobalOption(nameof(Settings.DirectionAwareJsonGenerationMode), prefix, defaultValue: Settings.Default.DirectionAwareJsonGenerationMode),
             ComputeDiscriminators: options.GetBoolGlobalOption(nameof(Settings.ComputeDiscriminators), prefix, defaultValue: Settings.Default.ComputeDiscriminators),
             AddMissingPathParameters: options.GetBoolGlobalOption(nameof(Settings.AddMissingPathParameters), prefix, defaultValue: Settings.Default.AddMissingPathParameters),
             
