@@ -1,4 +1,4 @@
-﻿//HintName: G.SubpackageSearchClient.Create.g.cs
+//HintName: G.SubpackageSearchClient.Create.g.cs
 
 #nullable enable
 
@@ -148,10 +148,6 @@ namespace G
 
 
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
-                            __httpRequestContent.Add(
-                                content: new global::System.Net.Http.StringContent(xApiKey ?? string.Empty),
-                                name: "\"x-api-key\"");
-
                             if (request.QueryMediaType != default)
                             {
 

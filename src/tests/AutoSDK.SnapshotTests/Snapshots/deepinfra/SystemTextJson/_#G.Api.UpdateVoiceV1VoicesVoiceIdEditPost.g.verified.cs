@@ -1,4 +1,4 @@
-﻿//HintName: G.Api.UpdateVoiceV1VoicesVoiceIdEditPost.g.cs
+//HintName: G.Api.UpdateVoiceV1VoicesVoiceIdEditPost.g.cs
 
 #nullable enable
 
@@ -162,12 +162,16 @@ namespace G
                 __httpRequest.Headers.TryAddWithoutValidation("xi-api-key", xiApiKey.ToString());
             }
 
-                            var __httpRequestContentBody = request.ToJson(JsonSerializerOptions);
-                            var __httpRequestContent = new global::System.Net.Http.StringContent(
-                                content: __httpRequestContentBody,
-                                encoding: global::System.Text.Encoding.UTF8,
-                                mediaType: "application/x-www-form-urlencoded");
+                            var __formValues = new global::System.Collections.Generic.List<global::System.Collections.Generic.KeyValuePair<string, string>>();
+                            __formValues.Add(new global::System.Collections.Generic.KeyValuePair<string, string>(
+                                "name",
+                                request.Name ?? string.Empty));
+                            __formValues.Add(new global::System.Collections.Generic.KeyValuePair<string, string>(
+                                "description",
+                                request.Description ?? string.Empty));
+                            var __httpRequestContent = new global::System.Net.Http.FormUrlEncodedContent(__formValues);
                             __httpRequest.Content = __httpRequestContent;
+
                 global::G.AutoSDKRequestOptionsSupport.ApplyHeaders(
                     request: __httpRequest,
                     clientHeaders: Options.Headers,

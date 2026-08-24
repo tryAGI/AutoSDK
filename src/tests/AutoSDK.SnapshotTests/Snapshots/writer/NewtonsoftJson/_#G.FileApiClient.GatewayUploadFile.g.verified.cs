@@ -1,4 +1,4 @@
-﻿//HintName: G.FileApiClient.GatewayUploadFile.g.cs
+//HintName: G.FileApiClient.GatewayUploadFile.g.cs
 
 #nullable enable
 
@@ -202,7 +202,7 @@ namespace G
 
 
                             var __httpRequestContent = new global::System.Net.Http.ByteArrayContent(request);
-                            __httpRequestContent.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue("application/octet-stream");
+                            __httpRequestContent.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue("text/plain");
                             __httpRequest.Content = __httpRequestContent;
                 global::G.AutoSDKRequestOptionsSupport.ApplyHeaders(
                     request: __httpRequest,

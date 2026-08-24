@@ -1,4 +1,4 @@
-﻿//HintName: G.Commands.MessageBatchesBetaMessageBatchesResultsCommand.g.cs
+//HintName: G.Commands.MessageBatchesBetaMessageBatchesResultsCommand.g.cs
 
 #nullable enable
 
@@ -20,7 +20,7 @@ namespace G
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
 
-            global::G.BetaMessageBatchIndividualResponse response,
+            byte[] response,
             global::System.Threading.CancellationToken cancellationToken);
 
         private global::System.CommandLine.Argument<string> MessageBatchId { get; } = new(

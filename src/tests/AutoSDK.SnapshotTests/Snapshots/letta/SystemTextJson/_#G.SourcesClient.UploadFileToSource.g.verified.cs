@@ -1,4 +1,4 @@
-﻿//HintName: G.SourcesClient.UploadFileToSource.g.cs
+//HintName: G.SourcesClient.UploadFileToSource.g.cs
 
 #nullable enable
 
@@ -203,26 +203,6 @@ namespace G
             }
 
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
-                            __httpRequestContent.Add(
-                                content: new global::System.Net.Http.StringContent(sourceId ?? string.Empty),
-                                name: "\"source_id\"");
-
-                            if (duplicateHandling != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent((duplicateHandling).HasValue ? (duplicateHandling).GetValueOrDefault().ToValueString() : string.Empty),
-                                    name: "\"duplicate_handling\"");
-
-                            }
-                            if (name != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(name ?? string.Empty),
-                                    name: "\"name\"");
-
-                            }
                             var __contentFile = new global::System.Net.Http.ByteArrayContent(request.File ?? global::System.Array.Empty<byte>());
                             __contentFile.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue(
                                 request.Filename is null
@@ -743,26 +723,6 @@ namespace G
             }
 
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
-                            __httpRequestContent.Add(
-                                content: new global::System.Net.Http.StringContent(sourceId ?? string.Empty),
-                                name: "\"source_id\"");
-
-                            if (duplicateHandling != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent((duplicateHandling).HasValue ? (duplicateHandling).GetValueOrDefault().ToValueString() : string.Empty),
-                                    name: "\"duplicate_handling\"");
-
-                            }
-                            if (name != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(name ?? string.Empty),
-                                    name: "\"name\"");
-
-                            }
                             var __contentFile = new global::System.Net.Http.StreamContent(file);
                             __contentFile.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue(
                                 request.Filename is null
@@ -1231,26 +1191,6 @@ namespace G
             }
 
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
-                            __httpRequestContent.Add(
-                                content: new global::System.Net.Http.StringContent(sourceId ?? string.Empty),
-                                name: "\"source_id\"");
-
-                            if (duplicateHandling != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent((duplicateHandling).HasValue ? (duplicateHandling).GetValueOrDefault().ToValueString() : string.Empty),
-                                    name: "\"duplicate_handling\"");
-
-                            }
-                            if (name != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(name ?? string.Empty),
-                                    name: "\"name\"");
-
-                            }
                             var __contentFile = new global::System.Net.Http.StreamContent(file);
                             __contentFile.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue(
                                 request.Filename is null

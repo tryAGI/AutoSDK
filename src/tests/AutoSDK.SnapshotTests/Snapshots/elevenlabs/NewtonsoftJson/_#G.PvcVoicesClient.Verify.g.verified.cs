@@ -1,4 +1,4 @@
-﻿//HintName: G.PvcVoicesClient.Verify.g.cs
+//HintName: G.PvcVoicesClient.Verify.g.cs
 
 #nullable enable
 
@@ -131,18 +131,6 @@ namespace G
 
 
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
-                            __httpRequestContent.Add(
-                                content: new global::System.Net.Http.StringContent(voiceId ?? string.Empty),
-                                name: "\"voice_id\"");
-
-                            if (xiApiKey != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(xiApiKey ?? string.Empty),
-                                    name: "\"xi-api-key\"");
-
-                            }
                             var __contentRecording = new global::System.Net.Http.ByteArrayContent(request.Recording ?? global::System.Array.Empty<byte>());
                             __contentRecording.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue(
                                 request.Recordingname is null
@@ -631,18 +619,6 @@ namespace G
 
 
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
-                            __httpRequestContent.Add(
-                                content: new global::System.Net.Http.StringContent(voiceId ?? string.Empty),
-                                name: "\"voice_id\"");
-
-                            if (xiApiKey != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(xiApiKey ?? string.Empty),
-                                    name: "\"xi-api-key\"");
-
-                            }
                             var __contentRecording = new global::System.Net.Http.StreamContent(recording);
                             __contentRecording.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue(
                                 request.Recordingname is null
@@ -1082,18 +1058,6 @@ namespace G
 
 
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
-                            __httpRequestContent.Add(
-                                content: new global::System.Net.Http.StringContent(voiceId ?? string.Empty),
-                                name: "\"voice_id\"");
-
-                            if (xiApiKey != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(xiApiKey ?? string.Empty),
-                                    name: "\"xi-api-key\"");
-
-                            }
                             var __contentRecording = new global::System.Net.Http.StreamContent(recording);
                             __contentRecording.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue(
                                 request.Recordingname is null

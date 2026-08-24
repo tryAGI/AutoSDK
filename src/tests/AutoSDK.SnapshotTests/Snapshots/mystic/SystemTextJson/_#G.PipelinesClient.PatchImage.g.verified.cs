@@ -1,4 +1,4 @@
-﻿//HintName: G.PipelinesClient.PatchImage.g.cs
+//HintName: G.PipelinesClient.PatchImage.g.cs
 
 #nullable enable
 
@@ -202,26 +202,6 @@ namespace G
                             }
 
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
-                            __httpRequestContent.Add(
-                                content: new global::System.Net.Http.StringContent(pipelineId ?? string.Empty),
-                                name: "\"pipeline_id\"");
-
-                            if (pointer != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(pointer ?? string.Empty),
-                                    name: "\"pointer\"");
-
-                            }
-                            if (pipelineIdOrPointer != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(pipelineIdOrPointer ?? string.Empty),
-                                    name: "\"pipeline_id_or_pointer\"");
-
-                            }
                             var __contentImageFile = new global::System.Net.Http.ByteArrayContent(request.ImageFile ?? global::System.Array.Empty<byte>());
                             __contentImageFile.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue(
                                 request.ImageFilename is null
@@ -740,26 +720,6 @@ namespace G
                             }
 
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
-                            __httpRequestContent.Add(
-                                content: new global::System.Net.Http.StringContent(pipelineId ?? string.Empty),
-                                name: "\"pipeline_id\"");
-
-                            if (pointer != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(pointer ?? string.Empty),
-                                    name: "\"pointer\"");
-
-                            }
-                            if (pipelineIdOrPointer != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(pipelineIdOrPointer ?? string.Empty),
-                                    name: "\"pipeline_id_or_pointer\"");
-
-                            }
                             var __contentImageFile = new global::System.Net.Http.StreamContent(imageFile);
                             __contentImageFile.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue(
                                 request.ImageFilename is null
@@ -1233,26 +1193,6 @@ namespace G
                             }
 
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
-                            __httpRequestContent.Add(
-                                content: new global::System.Net.Http.StringContent(pipelineId ?? string.Empty),
-                                name: "\"pipeline_id\"");
-
-                            if (pointer != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(pointer ?? string.Empty),
-                                    name: "\"pointer\"");
-
-                            }
-                            if (pipelineIdOrPointer != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(pipelineIdOrPointer ?? string.Empty),
-                                    name: "\"pipeline_id_or_pointer\"");
-
-                            }
                             var __contentImageFile = new global::System.Net.Http.StreamContent(imageFile);
                             __contentImageFile.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue(
                                 request.ImageFilename is null

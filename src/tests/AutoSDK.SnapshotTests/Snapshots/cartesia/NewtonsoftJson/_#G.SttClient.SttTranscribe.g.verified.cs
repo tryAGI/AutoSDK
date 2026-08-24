@@ -1,4 +1,4 @@
-﻿//HintName: G.SttClient.SttTranscribe.g.cs
+//HintName: G.SttClient.SttTranscribe.g.cs
 
 #nullable enable
 
@@ -231,26 +231,6 @@ namespace G
 
 
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
-                            __httpRequestContent.Add(
-                                content: new global::System.Net.Http.StringContent(cartesiaVersion.ToValueString()),
-                                name: "\"Cartesia-Version\"");
-
-                            if (encoding != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent((encoding).HasValue ? (encoding).GetValueOrDefault().ToValueString() : string.Empty),
-                                    name: "\"encoding\"");
-
-                            }
-                            if (sampleRate != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(sampleRate, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
-                                    name: "\"sample_rate\"");
-
-                            }
                             if (request.File != default)
                             {
 

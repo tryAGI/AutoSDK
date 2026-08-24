@@ -1,4 +1,4 @@
-﻿//HintName: G.OcrUploadClient.OcrUploadFile.g.cs
+//HintName: G.OcrUploadClient.OcrUploadFile.g.cs
 
 #nullable enable
 
@@ -178,10 +178,6 @@ namespace G
             }
 
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
-                            __httpRequestContent.Add(
-                                content: new global::System.Net.Http.StringContent(modelId ?? string.Empty),
-                                name: "\"model_id\"");
-
                             __httpRequestContent.Add(
                                 content: new global::System.Net.Http.StringContent(request.Data ?? string.Empty),
                                 name: "\"data\"");
@@ -807,10 +803,6 @@ namespace G
 
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
                             __httpRequestContent.Add(
-                                content: new global::System.Net.Http.StringContent(modelId ?? string.Empty),
-                                name: "\"model_id\"");
-
-                            __httpRequestContent.Add(
                                 content: new global::System.Net.Http.StringContent(request.Data ?? string.Empty),
                                 name: "\"data\"");
 
@@ -1375,10 +1367,6 @@ namespace G
             }
 
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
-                            __httpRequestContent.Add(
-                                content: new global::System.Net.Http.StringContent(modelId ?? string.Empty),
-                                name: "\"model_id\"");
-
                             __httpRequestContent.Add(
                                 content: new global::System.Net.Http.StringContent(request.Data ?? string.Empty),
                                 name: "\"data\"");

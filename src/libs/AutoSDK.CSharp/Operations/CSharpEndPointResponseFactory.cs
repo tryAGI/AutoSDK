@@ -43,6 +43,15 @@ public static class CSharpEndPointResponseFactory
             {
                 responses = filtered;
             }
+            else if (responseWithStatusCode.Key.StartsWith("2", StringComparison.OrdinalIgnoreCase))
+            {
+                return EndPointResponse.Default with
+                {
+                    StatusCode = responseWithStatusCode.Key,
+                    HasHeaders = responseWithStatusCode.Value?.Headers?.Count > 0,
+                    HasLocationHeader = hasLocationHeader,
+                };
+            }
         }
 
         var response = responses.First();
@@ -58,7 +67,10 @@ public static class CSharpEndPointResponseFactory
                 x.Hint == Hint.Response &&
                 x.ResponseStatusCode == response.StatusCode &&
                 (x.ContentType == null || x.ContentType == response.MimeType));
-        var isBinaryResponse = response.MimeType.IsBinaryResponseMimeType() ||
+        var mediaTypeKind = MediaTypeCapabilities.Classify(response.MimeType);
+        var responseSupport = MediaTypeCapabilities.GetResponseSupport(response.MimeType);
+        var isRawTextResponse = mediaTypeKind == MediaTypeKind.Text;
+        var isBinaryResponse = responseSupport == MediaTypeTransportSupport.Raw && !isRawTextResponse ||
                                responseContext?.TypeData.CSharpTypeWithoutNullability == "byte[]" ||
                                responseContext?.TypeData.IsBinary == true;
         var contentType = isBinaryResponse
@@ -70,6 +82,11 @@ public static class CSharpEndPointResponseFactory
             {
                 CSharpTypeRaw = "byte[]",
                 IsBinary = true,
+                GeneratedNamespace = operation.Settings.Namespace,
+            }).WithCSharpComputedValues(),
+            _ when isRawTextResponse => (TypeData.Default with
+            {
+                CSharpTypeRaw = "string",
                 GeneratedNamespace = operation.Settings.Namespace,
             }).WithCSharpComputedValues(),
             _ => responseContext?.TypeData,

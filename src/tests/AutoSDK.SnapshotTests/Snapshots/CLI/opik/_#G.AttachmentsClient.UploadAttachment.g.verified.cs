@@ -1,4 +1,4 @@
-﻿//HintName: G.AttachmentsClient.UploadAttachment.g.cs
+//HintName: G.AttachmentsClient.UploadAttachment.g.cs
 
 #nullable enable
 
@@ -26,7 +26,7 @@ namespace G
             ref string? mimeType,
             ref global::G.UploadAttachmentEntityType entityType,
             ref global::System.Guid entityId,
-            object request);
+            byte[] request);
         partial void PrepareUploadAttachmentRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -35,7 +35,7 @@ namespace G
             string? mimeType,
             global::G.UploadAttachmentEntityType entityType,
             global::System.Guid entityId,
-            object request);
+            byte[] request);
         partial void ProcessUploadAttachmentResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -60,7 +60,7 @@ namespace G
             global::G.UploadAttachmentEntityType entityType,
             global::System.Guid entityId,
 
-            object request,
+            byte[] request,
             string? projectName = default,
             string? mimeType = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
@@ -98,7 +98,7 @@ namespace G
             global::G.UploadAttachmentEntityType entityType,
             global::System.Guid entityId,
 
-            object request,
+            byte[] request,
             string? projectName = default,
             string? mimeType = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
@@ -158,11 +158,9 @@ namespace G
                 __httpRequest.Version = global::System.Net.HttpVersion.Version11;
                 __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
-                            var __httpRequestContentBody = global::System.Text.Json.JsonSerializer.Serialize(request, JsonSerializerOptions);
-                            var __httpRequestContent = new global::System.Net.Http.StringContent(
-                                content: __httpRequestContentBody,
-                                encoding: global::System.Text.Encoding.UTF8,
-                                mediaType: "*/*");
+
+                            var __httpRequestContent = new global::System.Net.Http.ByteArrayContent(request);
+                            __httpRequestContent.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue("*/*");
                             __httpRequest.Content = __httpRequestContent;
                 global::G.AutoSDKRequestOptionsSupport.ApplyHeaders(
                     request: __httpRequest,
@@ -512,43 +510,6 @@ namespace G
             {
                 __httpRequest?.Dispose();
             }
-        }
-        /// <summary>
-        /// Upload attachment to MinIO<br/>
-        /// Upload attachment to MinIO
-        /// </summary>
-        /// <param name="fileName"></param>
-        /// <param name="projectName">
-        /// If null, the default project is used
-        /// </param>
-        /// <param name="mimeType"></param>
-        /// <param name="entityType"></param>
-        /// <param name="entityId"></param>
-        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
-        /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task UploadAttachmentAsync(
-            string fileName,
-            global::G.UploadAttachmentEntityType entityType,
-            global::System.Guid entityId,
-            string? projectName = default,
-            string? mimeType = default,
-            global::G.AutoSDKRequestOptions? requestOptions = default,
-            global::System.Threading.CancellationToken cancellationToken = default)
-        {
-            var __request = new object
-            {
-            };
-
-            await UploadAttachmentAsync(
-                fileName: fileName,
-                projectName: projectName,
-                mimeType: mimeType,
-                entityType: entityType,
-                entityId: entityId,
-                request: __request,
-                requestOptions: requestOptions,
-                cancellationToken: cancellationToken).ConfigureAwait(false);
         }
     }
 }

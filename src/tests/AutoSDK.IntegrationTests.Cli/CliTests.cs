@@ -10,6 +10,169 @@ namespace AutoSDK.IntegrationTests;
 public class CliTests
 {
     [TestMethod]
+    public async Task AuditRepresentations_WritesStableMachineReadableReportAndSummary()
+    {
+        var tempDirectory = Path.Combine(Path.GetTempPath(), Path.GetRandomFileName());
+        try
+        {
+            Directory.CreateDirectory(tempDirectory);
+            var specPath = Path.Combine(tempDirectory, "openapi.yaml");
+            var reportPath = Path.Combine(tempDirectory, "representations.tsv");
+            await File.WriteAllTextAsync(
+                specPath,
+                """
+                openapi: 3.0.3
+                info:
+                  title: Representation audit
+                  version: 1.0.0
+                paths:
+                  /run:
+                    post:
+                      operationId: run
+                      requestBody:
+                        content:
+                          application/msgpack:
+                            schema:
+                              type: object
+                              properties:
+                                prompt:
+                                  type: string
+                          application/json:
+                            schema:
+                              type: object
+                              properties:
+                                prompt:
+                                  type: string
+                      responses:
+                        '204':
+                          description: ok
+                """);
+
+            var repositoryDirectory = Path.GetFullPath(Path.Combine(
+                Directory.GetCurrentDirectory(),
+                "../../../../../.."));
+            var result = await RunDotnetAsync(
+                repositoryDirectory,
+                "run",
+                "--disable-build-servers",
+                "--no-launch-profile",
+                "--project", "src/libs/AutoSDK.CLI",
+                "audit-representations", specPath,
+                "--format", "tsv",
+                "--output", reportPath);
+
+            result.ExitCode.Should().Be(0);
+            result.StandardError.Should().Contain("Representation audit: files=1, findings=4");
+            var lines = await File.ReadAllLinesAsync(reportPath);
+            lines[0].Should().Be(
+                "source\toperation_id\tmethod\tpath\tdirection\tcode\tseverity\tselected_media_type\tmedia_types\tdetails");
+            lines.Should().Contain(line => line.Contains(
+                "\trun\tPOST\t/run\trequest\ttyped-encoder-mismatch\terror\tapplication/json\tapplication/msgpack\t",
+                StringComparison.Ordinal));
+            lines.Skip(1).Should().BeInAscendingOrder(StringComparer.Ordinal);
+        }
+        finally
+        {
+            TryDeleteDirectory(tempDirectory);
+        }
+    }
+
+    [TestMethod]
+    public async Task CliHttpOutput_UsesSharedMultipartRepresentationPlan()
+    {
+        var tempDirectory = Path.Combine(Path.GetTempPath(), Path.GetRandomFileName());
+        try
+        {
+            Directory.CreateDirectory(tempDirectory);
+            var specPath = Path.Combine(tempDirectory, "representations.yaml");
+            var outputDirectory = Path.Combine(tempDirectory, "Http");
+            await File.WriteAllTextAsync(
+                specPath,
+                """
+                openapi: 3.0.3
+                info:
+                  title: Representation CLI
+                  version: 1.0.0
+                paths:
+                  /uploads:
+                    post:
+                      operationId: upload
+                      tags: [files]
+                      requestBody:
+                        required: true
+                        content:
+                          application/json:
+                            schema:
+                              $ref: '#/components/schemas/Upload'
+                          multipart/form-data:
+                            schema:
+                              $ref: '#/components/schemas/Upload'
+                      responses:
+                        '204':
+                          description: ok
+                  /imports:
+                    post:
+                      operationId: import
+                      tags: [files]
+                      requestBody:
+                        required: true
+                        content:
+                          application/json:
+                            schema:
+                              type: object
+                              properties:
+                                source_url:
+                                  type: string
+                          multipart/form-data:
+                            schema:
+                              type: object
+                              properties:
+                                file:
+                                  type: string
+                                  format: binary
+                      responses:
+                        '204':
+                          description: ok
+                components:
+                  schemas:
+                    Upload:
+                      type: object
+                      properties:
+                        file:
+                          type: string
+                          format: binary
+                """);
+
+            var repositoryDirectory = Path.GetFullPath(Path.Combine(
+                Directory.GetCurrentDirectory(),
+                "../../../../../.."));
+            var result = await RunDotnetAsync(
+                repositoryDirectory,
+                "run",
+                "--disable-build-servers",
+                "--no-launch-profile",
+                "--project", "src/libs/AutoSDK.CLI",
+                "cli", specPath,
+                "--output", outputDirectory);
+
+            Console.WriteLine(result.StandardOutput);
+            Console.WriteLine(result.StandardError);
+            result.ExitCode.Should().Be(0);
+
+            var httpPath = Directory.EnumerateFiles(outputDirectory, "*.http").Should().ContainSingle().Subject;
+            var http = await File.ReadAllTextAsync(httpPath);
+            http.Should().Contain("Content-Type: multipart/form-data; boundary=AutoSDKBoundary");
+            http.Should().Contain("< ./file.bin");
+            http.Should().Contain("Content-Type: application/json");
+            http.Should().Contain("\"source_url\": \"string\"");
+        }
+        finally
+        {
+            TryDeleteDirectory(tempDirectory);
+        }
+    }
+
+    [TestMethod]
     public async Task Generate_ElevenLabsStreamingSdk()
     {
         await GenerateAsync("elevenlabs.json", expectResponseStream: true);

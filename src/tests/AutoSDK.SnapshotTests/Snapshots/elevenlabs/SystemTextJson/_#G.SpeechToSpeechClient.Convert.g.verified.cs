@@ -1,4 +1,4 @@
-﻿//HintName: G.SpeechToSpeechClient.Convert.g.cs
+//HintName: G.SpeechToSpeechClient.Convert.g.cs
 
 #nullable enable
 
@@ -190,42 +190,6 @@ namespace G
 
 
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
-                            __httpRequestContent.Add(
-                                content: new global::System.Net.Http.StringContent(voiceId ?? string.Empty),
-                                name: "\"voice_id\"");
-
-                            if (enableLogging != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(enableLogging, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
-                                    name: "\"enable_logging\"");
-
-                            }
-                            if (optimizeStreamingLatency != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(optimizeStreamingLatency, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
-                                    name: "\"optimize_streaming_latency\"");
-
-                            }
-                            if (outputFormat != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent((outputFormat).HasValue ? (outputFormat).GetValueOrDefault().ToValueString() : string.Empty),
-                                    name: "\"output_format\"");
-
-                            }
-                            if (xiApiKey != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(xiApiKey ?? string.Empty),
-                                    name: "\"xi-api-key\"");
-
-                            }
                             var __contentAudio = new global::System.Net.Http.ByteArrayContent(request.Audio ?? global::System.Array.Empty<byte>());
                             __contentAudio.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue(
                                 request.Audioname is null
@@ -690,42 +654,6 @@ namespace G
 
 
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
-                            __httpRequestContent.Add(
-                                content: new global::System.Net.Http.StringContent(voiceId ?? string.Empty),
-                                name: "\"voice_id\"");
-
-                            if (enableLogging != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(enableLogging, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
-                                    name: "\"enable_logging\"");
-
-                            }
-                            if (optimizeStreamingLatency != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(optimizeStreamingLatency, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
-                                    name: "\"optimize_streaming_latency\"");
-
-                            }
-                            if (outputFormat != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent((outputFormat).HasValue ? (outputFormat).GetValueOrDefault().ToValueString() : string.Empty),
-                                    name: "\"output_format\"");
-
-                            }
-                            if (xiApiKey != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(xiApiKey ?? string.Empty),
-                                    name: "\"xi-api-key\"");
-
-                            }
                             var __contentAudio = new global::System.Net.Http.ByteArrayContent(request.Audio ?? global::System.Array.Empty<byte>());
                             __contentAudio.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue(
                                 request.Audioname is null
@@ -1357,42 +1285,6 @@ namespace G
 
 
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
-                            __httpRequestContent.Add(
-                                content: new global::System.Net.Http.StringContent(voiceId ?? string.Empty),
-                                name: "\"voice_id\"");
-
-                            if (enableLogging != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(enableLogging, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
-                                    name: "\"enable_logging\"");
-
-                            }
-                            if (optimizeStreamingLatency != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(optimizeStreamingLatency, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
-                                    name: "\"optimize_streaming_latency\"");
-
-                            }
-                            if (outputFormat != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent((outputFormat).HasValue ? (outputFormat).GetValueOrDefault().ToValueString() : string.Empty),
-                                    name: "\"output_format\"");
-
-                            }
-                            if (xiApiKey != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(xiApiKey ?? string.Empty),
-                                    name: "\"xi-api-key\"");
-
-                            }
                             var __contentAudio = new global::System.Net.Http.StreamContent(audio);
                             __contentAudio.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue(
                                 request.Audioname is null
@@ -1924,42 +1816,6 @@ namespace G
 
 
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
-                            __httpRequestContent.Add(
-                                content: new global::System.Net.Http.StringContent(voiceId ?? string.Empty),
-                                name: "\"voice_id\"");
-
-                            if (enableLogging != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(enableLogging, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
-                                    name: "\"enable_logging\"");
-
-                            }
-                            if (optimizeStreamingLatency != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(optimizeStreamingLatency, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
-                                    name: "\"optimize_streaming_latency\"");
-
-                            }
-                            if (outputFormat != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent((outputFormat).HasValue ? (outputFormat).GetValueOrDefault().ToValueString() : string.Empty),
-                                    name: "\"output_format\"");
-
-                            }
-                            if (xiApiKey != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(xiApiKey ?? string.Empty),
-                                    name: "\"xi-api-key\"");
-
-                            }
                             var __contentAudio = new global::System.Net.Http.StreamContent(audio);
                             __contentAudio.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue(
                                 request.Audioname is null
@@ -2462,42 +2318,6 @@ namespace G
 
 
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
-                            __httpRequestContent.Add(
-                                content: new global::System.Net.Http.StringContent(voiceId ?? string.Empty),
-                                name: "\"voice_id\"");
-
-                            if (enableLogging != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(enableLogging, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
-                                    name: "\"enable_logging\"");
-
-                            }
-                            if (optimizeStreamingLatency != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(optimizeStreamingLatency, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
-                                    name: "\"optimize_streaming_latency\"");
-
-                            }
-                            if (outputFormat != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent((outputFormat).HasValue ? (outputFormat).GetValueOrDefault().ToValueString() : string.Empty),
-                                    name: "\"output_format\"");
-
-                            }
-                            if (xiApiKey != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(xiApiKey ?? string.Empty),
-                                    name: "\"xi-api-key\"");
-
-                            }
                             var __contentAudio = new global::System.Net.Http.StreamContent(audio);
                             __contentAudio.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue(
                                 request.Audioname is null

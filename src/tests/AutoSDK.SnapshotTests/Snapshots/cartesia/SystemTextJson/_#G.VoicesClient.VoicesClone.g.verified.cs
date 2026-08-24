@@ -1,4 +1,4 @@
-﻿//HintName: G.VoicesClient.VoicesClone.g.cs
+//HintName: G.VoicesClient.VoicesClone.g.cs
 
 #nullable enable
 
@@ -159,10 +159,6 @@ namespace G
 
 
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
-                            __httpRequestContent.Add(
-                                content: new global::System.Net.Http.StringContent(cartesiaVersion.ToValueString()),
-                                name: "\"Cartesia-Version\"");
-
                             if (request.Clip != default)
                             {
 

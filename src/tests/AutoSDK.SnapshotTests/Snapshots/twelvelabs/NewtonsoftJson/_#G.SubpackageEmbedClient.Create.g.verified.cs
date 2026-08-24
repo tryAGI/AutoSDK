@@ -1,4 +1,4 @@
-﻿//HintName: G.SubpackageEmbedClient.Create.g.cs
+//HintName: G.SubpackageEmbedClient.Create.g.cs
 
 #nullable enable
 
@@ -162,10 +162,6 @@ namespace G
 
 
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
-                            __httpRequestContent.Add(
-                                content: new global::System.Net.Http.StringContent(xApiKey ?? string.Empty),
-                                name: "\"x-api-key\"");
-
                             __httpRequestContent.Add(
                                 content: new global::System.Net.Http.StringContent(request.ModelName ?? string.Empty),
                                 name: "\"model_name\"");

@@ -1,4 +1,4 @@
-﻿//HintName: G.TracesClient.AddEvaluations.g.cs
+//HintName: G.TracesClient.AddEvaluations.g.cs
 
 #nullable enable
 
@@ -118,7 +118,7 @@ namespace G
 
 
                             var __httpRequestContent = new global::System.Net.Http.ByteArrayContent(request);
-                            __httpRequestContent.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue("application/octet-stream");
+                            __httpRequestContent.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue("application/x-protobuf");
                             __httpRequest.Content = __httpRequestContent;
                 global::G.AutoSDKRequestOptionsSupport.ApplyHeaders(
                     request: __httpRequest,

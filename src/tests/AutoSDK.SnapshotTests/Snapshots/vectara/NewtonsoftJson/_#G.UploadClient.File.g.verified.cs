@@ -1,4 +1,4 @@
-﻿//HintName: G.UploadClient.File.g.cs
+//HintName: G.UploadClient.File.g.cs
 
 #nullable enable
 
@@ -320,26 +320,6 @@ namespace G
 
 
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
-                            if (requestTimeout != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(requestTimeout, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
-                                    name: "\"Request-Timeout\"");
-
-                            }
-                            if (requestTimeoutMillis != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(requestTimeoutMillis, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
-                                    name: "\"Request-Timeout-Millis\"");
-
-                            }
-                            __httpRequestContent.Add(
-                                content: new global::System.Net.Http.StringContent(corpusKey ?? string.Empty),
-                                name: "\"corpus_key\"");
-
                             if (request.Metadata != default)
                             {
 
@@ -1160,26 +1140,6 @@ namespace G
 
 
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
-                            if (requestTimeout != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(requestTimeout, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
-                                    name: "\"Request-Timeout\"");
-
-                            }
-                            if (requestTimeoutMillis != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(requestTimeoutMillis, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
-                                    name: "\"Request-Timeout-Millis\"");
-
-                            }
-                            __httpRequestContent.Add(
-                                content: new global::System.Net.Http.StringContent(corpusKey ?? string.Empty),
-                                name: "\"corpus_key\"");
-
                             if (request.Metadata != default)
                             {
 
@@ -1872,26 +1832,6 @@ namespace G
 
 
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
-                            if (requestTimeout != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(requestTimeout, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
-                                    name: "\"Request-Timeout\"");
-
-                            }
-                            if (requestTimeoutMillis != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(requestTimeoutMillis, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
-                                    name: "\"Request-Timeout-Millis\"");
-
-                            }
-                            __httpRequestContent.Add(
-                                content: new global::System.Net.Http.StringContent(corpusKey ?? string.Empty),
-                                name: "\"corpus_key\"");
-
                             if (request.Metadata != default)
                             {
 

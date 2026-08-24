@@ -1,4 +1,4 @@
-﻿//HintName: G.ResponsesClient.CreateResponseAsStream.g.cs
+//HintName: G.ResponsesClient.CreateResponseAsStream.g.cs
 
 #nullable enable
 
@@ -109,6 +109,10 @@ namespace G
                 __httpRequest.Version = global::System.Net.HttpVersion.Version11;
                 __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
+
+                __httpRequest.Headers.TryAddWithoutValidation(
+                    "Accept",
+                    "text/event-stream");
 
             foreach (var __authorization in __authorizations)
             {

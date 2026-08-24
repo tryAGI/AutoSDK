@@ -168,6 +168,98 @@ paths:
     }
 
     [TestMethod]
+    public void JsonFirstBinaryUnion_SelectsMultipartBodyWithMatchingSchema()
+    {
+        var (operations, _) = LoadSpec(@"openapi: 3.0.3
+info:
+  title: Test
+  version: 1.0.0
+paths:
+  /uploads:
+    post:
+      operationId: upload
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Upload'
+          multipart/form-data:
+            encoding:
+              file:
+                contentType: audio/wav
+            schema:
+              $ref: '#/components/schemas/Upload'
+      responses:
+        '204':
+          description: ok
+components:
+  schemas:
+    Upload:
+      type: object
+      required: [file]
+      properties:
+        file:
+          anyOf:
+            - type: string
+              format: binary
+            - type: array
+              items:
+                type: string
+                format: binary
+        language:
+          type: string
+");
+
+        var result = Sources.GenerateHttpRequest(operations[0]);
+
+        result.Should().Contain("Content-Type: multipart/form-data; boundary=AutoSDKBoundary");
+        result.Should().Contain("Content-Disposition: form-data; name=\"file\"; filename=\"file.bin\"");
+        result.Should().Contain("Content-Type: audio/wav");
+        result.Should().Contain("< ./file.bin");
+        result.Should().NotContain("Content-Type: application/json");
+    }
+
+    [TestMethod]
+    public void DistinctNonBinaryJsonSchema_RemainsSelectedInHttpOutput()
+    {
+        var (operations, _) = LoadSpec(@"openapi: 3.0.3
+info:
+  title: Test
+  version: 1.0.0
+paths:
+  /imports:
+    post:
+      operationId: import
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                source_url:
+                  type: string
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                file:
+                  type: string
+                  format: binary
+      responses:
+        '204':
+          description: ok
+");
+
+        var result = Sources.GenerateHttpRequest(operations[0]);
+
+        result.Should().Contain("Content-Type: application/json");
+        result.Should().Contain("\"source_url\": \"string\"");
+        result.Should().NotContain("AutoSDKBoundary");
+    }
+
+    [TestMethod]
     public void OpenApi32Request_UsesPreferredExamplesAndResponseSummary()
     {
         var (operations, _) = LoadSpec(@"openapi: 3.2.0

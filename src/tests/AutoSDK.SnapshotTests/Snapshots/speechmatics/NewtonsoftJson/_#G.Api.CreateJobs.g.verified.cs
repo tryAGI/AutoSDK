@@ -1,4 +1,4 @@
-﻿//HintName: G.Api.CreateJobs.g.cs
+//HintName: G.Api.CreateJobs.g.cs
 
 #nullable enable
 
@@ -196,14 +196,6 @@ namespace G
 
 
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
-                            if (xSmProcessingData != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(xSmProcessingData ?? string.Empty),
-                                    name: "\"X-SM-Processing-Data\"");
-
-                            }
                             __httpRequestContent.Add(
                                 content: new global::System.Net.Http.StringContent(request.Config ?? string.Empty),
                                 name: "\"config\"");

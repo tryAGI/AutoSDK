@@ -1,4 +1,4 @@
-﻿//HintName: G.ParsingClient.ScreenshotApiV1ParsingScreenshotPost.g.cs
+//HintName: G.ParsingClient.ScreenshotApiV1ParsingScreenshotPost.g.cs
 
 #nullable enable
 
@@ -182,30 +182,6 @@ namespace G
                             }
 
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
-                            if (organizationId != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(organizationId.ToString() ?? string.Empty),
-                                    name: "\"organization_id\"");
-
-                            }
-                            if (projectId != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(projectId.ToString() ?? string.Empty),
-                                    name: "\"project_id\"");
-
-                            }
-                            if (session != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(session ?? string.Empty),
-                                    name: "\"session\"");
-
-                            }
                             if (request.File != default)
                             {
 

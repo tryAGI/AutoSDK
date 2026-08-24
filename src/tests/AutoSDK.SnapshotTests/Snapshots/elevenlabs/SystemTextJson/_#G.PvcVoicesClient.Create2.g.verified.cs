@@ -1,4 +1,4 @@
-﻿//HintName: G.PvcVoicesClient.Create2.g.cs
+//HintName: G.PvcVoicesClient.Create2.g.cs
 
 #nullable enable
 
@@ -131,18 +131,6 @@ namespace G
 
 
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
-                            __httpRequestContent.Add(
-                                content: new global::System.Net.Http.StringContent(voiceId ?? string.Empty),
-                                name: "\"voice_id\"");
-
-                            if (xiApiKey != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(xiApiKey ?? string.Empty),
-                                    name: "\"xi-api-key\"");
-
-                            }
                             for (var __iFiles = 0; __iFiles < request.Files.Count; __iFiles++)
                             {
                                 var __contentFiles = new global::System.Net.Http.ByteArrayContent(request.Files[__iFiles]);
@@ -622,18 +610,6 @@ namespace G
 
 
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
-                            __httpRequestContent.Add(
-                                content: new global::System.Net.Http.StringContent(voiceId ?? string.Empty),
-                                name: "\"voice_id\"");
-
-                            if (xiApiKey != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(xiApiKey ?? string.Empty),
-                                    name: "\"xi-api-key\"");
-
-                            }
                             for (var __iFiles = 0; __iFiles < files.Count; __iFiles++)
                             {
                                 var __fileNameFiles = filesFileNames != null &&
@@ -1095,18 +1071,6 @@ namespace G
 
 
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
-                            __httpRequestContent.Add(
-                                content: new global::System.Net.Http.StringContent(voiceId ?? string.Empty),
-                                name: "\"voice_id\"");
-
-                            if (xiApiKey != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(xiApiKey ?? string.Empty),
-                                    name: "\"xi-api-key\"");
-
-                            }
                             for (var __iFiles = 0; __iFiles < files.Count; __iFiles++)
                             {
                                 var __fileNameFiles = filesFileNames != null &&

@@ -1,4 +1,4 @@
-﻿//HintName: G.ServiceCollectionExtensions.AddCommands.g.cs
+//HintName: G.ServiceCollectionExtensions.AddCommands.g.cs
 
 #nullable enable
 
@@ -22,6 +22,8 @@ namespace G
                 AudioCreateSpeechCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
                 AudioCreateTranscriptionCommand>(services);
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
+                AudioCreateTranslationAsTextCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
                 AudioCreateTranslationCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<

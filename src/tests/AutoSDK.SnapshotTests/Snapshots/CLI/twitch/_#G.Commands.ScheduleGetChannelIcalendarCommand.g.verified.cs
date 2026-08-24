@@ -1,4 +1,4 @@
-﻿//HintName: G.Commands.ScheduleGetChannelIcalendarCommand.g.cs
+//HintName: G.Commands.ScheduleGetChannelIcalendarCommand.g.cs
 
 #nullable enable
 
@@ -16,6 +16,8 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
+            string response,
             global::System.Threading.CancellationToken cancellationToken);
 
         private global::System.CommandLine.Argument<string> BroadcasterId { get; } = new(
@@ -64,12 +66,14 @@ The Content-Type response header is set to `text/calendar`.")
                 cancellationToken: cancellationToken);
 
             // ReSharper disable once RedundantAssignment
-            await _client.Schedule.GetChannelIcalendarAsync(
+            var response = await _client.Schedule.GetChannelIcalendarAsync(
                 broadcasterId: broadcasterId,
                 cancellationToken: cancellationToken);
 
             Complete(
                 parseResult: parseResult,
+
+                response: response,
                 cancellationToken: cancellationToken);
         }
     }

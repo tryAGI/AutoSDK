@@ -1,4 +1,4 @@
-﻿//HintName: G.IStreamingApiClient.StreamingAvatarList.g.cs
+//HintName: G.IStreamingApiClient.StreamingAvatarList.g.cs
 #nullable enable
 
 namespace G
@@ -9,20 +9,26 @@ namespace G
         /// streaming/avatar.list<br/>
         /// streaming/avatar.list
         /// </summary>
+        /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task StreamingAvatarListAsync(
+
+            string request,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// streaming/avatar.list<br/>
         /// streaming/avatar.list
         /// </summary>
+        /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse> StreamingAvatarListAsResponseAsync(
+
+            string request,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

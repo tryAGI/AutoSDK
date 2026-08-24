@@ -1668,12 +1668,25 @@ public static class Data
                 .Select(content => content.Key))
             .Distinct(StringComparer.OrdinalIgnoreCase)
             .ToArray();
+        var supportedResponseContentTypes = responseContentTypes
+            .Where(static contentType =>
+                MediaTypeCapabilities.GetResponseSupport(contentType) != MediaTypeTransportSupport.Unsupported)
+            .ToArray();
 
-        var hasJson = responseContentTypes.Any(static contentType =>
+        if (responseContentTypes.Length > 0 && supportedResponseContentTypes.Length == 0)
+        {
+            throw new InvalidOperationException(
+                $"AutoSDK cannot decode any success response representation for " +
+                $"'{operation.OperationType.Method.ToUpperInvariant()} {operation.OperationPath}'. " +
+                $"Unsupported media types: {string.Join(", ", responseContentTypes)}. " +
+                "Add a JSON, text, binary, or supported streaming representation.");
+        }
+
+        var hasJson = supportedResponseContentTypes.Any(static contentType =>
             contentType.IsJsonMimeType() && !contentType.IsSequentialJsonMimeType());
-        var hasSequentialJson = responseContentTypes.Any(static contentType =>
+        var hasSequentialJson = supportedResponseContentTypes.Any(static contentType =>
             contentType.IsSequentialJsonMimeType());
-        var hasSse = responseContentTypes.Any(static contentType =>
+        var hasSse = supportedResponseContentTypes.Any(static contentType =>
             contentType.IsServerSentEventsMimeType());
 
         var endPoints = new List<EndPoint>();
@@ -1685,10 +1698,14 @@ public static class Data
                 preferredMimeType: "application/json",
                 forcedRequestStreamValue: false,
                 successResponseOverride: fernStreaming.RegularResponseOverride,
-                anyOfDatas: anyOfDatas));
+                anyOfDatas: anyOfDatas) with
+            {
+                AcceptMediaType = "application/json",
+            });
+            var fernStreamMediaType = GetPreferredStreamMimeType(supportedResponseContentTypes, fernStreaming.StreamFormat);
             endPoints.Add(CSharpEndPointFactory.CreateEndPoint(
                 operation,
-                preferredMimeType: GetPreferredStreamMimeType(responseContentTypes, fernStreaming.StreamFormat),
+                preferredMimeType: fernStreamMediaType,
                 methodNameSuffix: GetStreamMethodSuffix(
                     hasRegularJsonVariant: true,
                     hasAnotherStreamingVariant: false,
@@ -1697,7 +1714,10 @@ public static class Data
                 successResponseOverride: fernStreaming.StreamResponseOverride,
                 streamFormatOverride: fernStreaming.StreamFormat,
                 streamTerminator: fernStreaming.Terminator,
-                anyOfDatas: anyOfDatas));
+                anyOfDatas: anyOfDatas) with
+            {
+                AcceptMediaType = fernStreamMediaType ?? string.Empty,
+            });
             return endPoints;
         }
 
@@ -1707,7 +1727,7 @@ public static class Data
         {
             endPoints.Add(CSharpEndPointFactory.CreateEndPoint(
                 operation,
-                preferredMimeType: GetPreferredStreamMimeType(responseContentTypes, fernStreaming.StreamFormat),
+                preferredMimeType: GetPreferredStreamMimeType(supportedResponseContentTypes, fernStreaming.StreamFormat),
                 successResponseOverride: fernStreaming.StreamResponseOverride ?? fernStreaming.RegularResponseOverride,
                 streamFormatOverride: fernStreaming.StreamFormat,
                 streamTerminator: fernStreaming.Terminator,
@@ -1715,58 +1735,98 @@ public static class Data
             return endPoints;
         }
 
-        if (hasJson)
+        if (supportedResponseContentTypes.Length == 0)
         {
             endPoints.Add(CSharpEndPointFactory.CreateEndPoint(
                 operation,
-                preferredMimeType: "application/json",
-                forcedRequestStreamValue: hasSequentialJson || hasSse ? false : null,
                 successResponseOverride: fernStreaming?.RegularResponseOverride,
                 anyOfDatas: anyOfDatas));
+            return endPoints;
         }
 
-        if (hasSse)
-        {
-            endPoints.Add(CSharpEndPointFactory.CreateEndPoint(
+        var hasRegularResponse = supportedResponseContentTypes.Any(static contentType =>
+            MediaTypeCapabilities.GetResponseSupport(contentType) != MediaTypeTransportSupport.Streaming);
+        var hasStreamingResponse = supportedResponseContentTypes.Any(static contentType =>
+            MediaTypeCapabilities.GetResponseSupport(contentType) == MediaTypeTransportSupport.Streaming);
+        var orderedContentTypes = supportedResponseContentTypes
+            .OrderByDescending(static contentType =>
+                contentType.IsJsonMimeType() && !contentType.IsSequentialJsonMimeType())
+            .ThenByDescending(static contentType =>
+                MediaTypeCapabilities.GetResponseSupport(contentType) != MediaTypeTransportSupport.Streaming)
+            .ToArray();
+        var prototypes = orderedContentTypes
+            .Select(contentType => CSharpEndPointFactory.CreateEndPoint(
                 operation,
-                preferredMimeType: "text/event-stream",
-                methodNameSuffix: GetStreamMethodSuffix(
-                    hasRegularJsonVariant: hasJson,
-                    hasAnotherStreamingVariant: hasSequentialJson,
-                    streamFormat: StreamFormat.ServerSentEvents),
-                forcedRequestStreamValue: hasJson ? true : null,
-                successResponseOverride: fernStreaming?.StreamResponseOverride,
-                streamFormatOverride: fernStreaming?.StreamFormat == StreamFormat.ServerSentEvents
-                    ? fernStreaming.StreamFormat
+                preferredMimeType: contentType,
+                forcedRequestStreamValue: hasRegularResponse && hasStreamingResponse
+                    ? MediaTypeCapabilities.GetResponseSupport(contentType) == MediaTypeTransportSupport.Streaming
                     : null,
                 streamTerminator: fernStreaming?.Terminator,
-                anyOfDatas: anyOfDatas));
-        }
+                anyOfDatas: anyOfDatas))
+            .ToArray();
+        var distinctPrototypes = prototypes
+            .GroupBy(static endPoint => (
+                endPoint.StreamFormat,
+                endPoint.ContentType,
+                endPoint.SuccessResponse.Type.CSharpTypeWithoutNullability))
+            .Select(static group => group.First())
+            .ToArray();
 
-        if (hasSequentialJson)
+        for (var index = 0; index < distinctPrototypes.Length; index++)
         {
-            endPoints.Add(CSharpEndPointFactory.CreateEndPoint(
+            var prototype = distinctPrototypes[index];
+            var suffix = index == 0
+                ? null
+                : GetResponseMethodSuffix(
+                    prototype,
+                    hasRegularResponse,
+                    distinctPrototypes.Count(static candidate => candidate.EnumerableStream));
+            var candidate = CSharpEndPointFactory.CreateEndPoint(
                 operation,
-                preferredMimeType: "application/x-ndjson",
-                methodNameSuffix: GetStreamMethodSuffix(
-                    hasRegularJsonVariant: hasJson,
-                    hasAnotherStreamingVariant: hasSse,
-                    streamFormat: StreamFormat.Ndjson),
-                forcedRequestStreamValue: hasJson ? true : null,
-                successResponseOverride: fernStreaming?.StreamResponseOverride,
-                streamFormatOverride: fernStreaming?.StreamFormat == StreamFormat.Ndjson
-                    ? fernStreaming.StreamFormat
+                preferredMimeType: prototype.SuccessResponse.MimeType,
+                methodNameSuffix: suffix,
+                forcedRequestStreamValue: hasRegularResponse && hasStreamingResponse
+                    ? prototype.EnumerableStream
                     : null,
                 streamTerminator: fernStreaming?.Terminator,
-                anyOfDatas: anyOfDatas));
-        }
-
-        if (endPoints.Count == 0)
-        {
-            endPoints.Add(CSharpEndPointFactory.CreateEndPoint(operation, anyOfDatas: anyOfDatas));
+                anyOfDatas: anyOfDatas);
+            endPoints.Add(distinctPrototypes.Length > 1
+                ? candidate with { AcceptMediaType = candidate.SuccessResponse.MimeType }
+                : candidate);
         }
 
         return endPoints;
+    }
+
+    private static string GetResponseMethodSuffix(
+        EndPoint endPoint,
+        bool hasRegularResponse,
+        int streamingVariantCount)
+    {
+        if (endPoint.EnumerableStream)
+        {
+            return GetStreamMethodSuffix(
+                       hasRegularJsonVariant: hasRegularResponse,
+                       hasAnotherStreamingVariant: streamingVariantCount > 1,
+                       streamFormat: endPoint.StreamFormat) ??
+                   "AsStream";
+        }
+
+        return MediaTypeCapabilities.Classify(endPoint.SuccessResponse.MimeType) switch
+        {
+            MediaTypeKind.Json => "AsJson",
+            MediaTypeKind.Text => "AsText",
+            MediaTypeKind.Binary or
+            MediaTypeKind.MessagePack or
+            MediaTypeKind.Protobuf or
+            MediaTypeKind.VendorSpecific => "AsBytes",
+            _ => "As" + endPoint.SuccessResponse.MimeType
+                .NormalizeMimeType()
+                .Replace("application/", string.Empty)
+                .Replace("text/", string.Empty)
+                .Replace("+", "-")
+                .ToPropertyName(),
+        };
     }
 
     private static string? GetPreferredStreamMimeType(

@@ -11,13 +11,16 @@ public static class MimeTypeExtensions
 
     public static bool IsMimeType(this string? mimeType, string expectedMimeType)
     {
-        return mimeType.NormalizeMimeType().Equals(expectedMimeType, StringComparison.OrdinalIgnoreCase);
+        return mimeType.NormalizeMimeType().Equals(
+            expectedMimeType.NormalizeMimeType(),
+            StringComparison.OrdinalIgnoreCase);
     }
 
     public static bool IsJsonMimeType(this string? mimeType)
     {
         var normalizedMimeType = mimeType.NormalizeMimeType();
         return normalizedMimeType.Equals("application/json", StringComparison.OrdinalIgnoreCase) ||
+               normalizedMimeType.Equals("text/json", StringComparison.OrdinalIgnoreCase) ||
                normalizedMimeType.EndsWith("+json", StringComparison.OrdinalIgnoreCase);
     }
 
@@ -49,6 +52,10 @@ public static class MimeTypeExtensions
 
         return normalizedMimeType.Equals("application/octet-stream", StringComparison.OrdinalIgnoreCase) ||
                normalizedMimeType.Equals("application/zip", StringComparison.OrdinalIgnoreCase) ||
-               normalizedMimeType.StartsWith("audio/", StringComparison.OrdinalIgnoreCase);
+               normalizedMimeType.Equals("application/pdf", StringComparison.OrdinalIgnoreCase) ||
+               normalizedMimeType.StartsWith("image/", StringComparison.OrdinalIgnoreCase) ||
+               normalizedMimeType.StartsWith("audio/", StringComparison.OrdinalIgnoreCase) ||
+               normalizedMimeType.StartsWith("video/", StringComparison.OrdinalIgnoreCase) ||
+               normalizedMimeType.StartsWith("font/", StringComparison.OrdinalIgnoreCase);
     }
 }

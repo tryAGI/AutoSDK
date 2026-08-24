@@ -1,4 +1,4 @@
-﻿//HintName: G.Commands.AttachmentsUploadAttachmentCommand.g.cs
+//HintName: G.Commands.AttachmentsUploadAttachmentCommand.g.cs
 
 #nullable enable
 
@@ -17,6 +17,8 @@ namespace G
             string? mimeType,
             global::G.UploadAttachmentEntityType entityType,
             global::System.Guid entityId,
+
+            byte[] request,
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
@@ -53,6 +55,13 @@ namespace G
         };
 
 
+        private global::System.CommandLine.Argument<string> RequestBody { get; } = new(
+            name: "request-body")
+        {
+            Description = @"The request body as JSON.",
+        };
+
+
         public AttachmentsUploadAttachmentCommand(
             G.IApi client,
             global::System.IServiceProvider serviceProvider) : base(
@@ -67,6 +76,8 @@ namespace G
             Arguments.Add(EntityId);
             Options.Add(ProjectName);
             Options.Add(MimeType);
+
+            Arguments.Add(RequestBody);
 
             Initialize();
 
@@ -83,6 +94,10 @@ namespace G
             var entityType = parseResult.GetRequiredValue(EntityType);
             var entityId = parseResult.GetRequiredValue(EntityId);
 
+            var __requestBodyJson = parseResult.GetRequiredValue(RequestBody);
+            var request = global::System.Text.Json.JsonSerializer.Deserialize<byte[]>(__requestBodyJson) ??
+                throw new global::System.InvalidOperationException("Failed to deserialize request body.");
+
             Validate(
                 parseResult: parseResult,
                 fileName: fileName,
@@ -90,6 +105,8 @@ namespace G
                 mimeType: mimeType,
                 entityType: entityType,
                 entityId: entityId,
+
+                request: request,
                 cancellationToken: cancellationToken);
 
             // ReSharper disable once RedundantAssignment
@@ -99,6 +116,8 @@ namespace G
                 mimeType: mimeType,
                 entityType: entityType,
                 entityId: entityId,
+
+                request: request,
                 cancellationToken: cancellationToken);
 
             Complete(

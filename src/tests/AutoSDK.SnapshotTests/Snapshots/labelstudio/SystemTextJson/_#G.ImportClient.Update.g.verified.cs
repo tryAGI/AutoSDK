@@ -1,4 +1,4 @@
-﻿//HintName: G.ImportClient.Update.g.cs
+//HintName: G.ImportClient.Update.g.cs
 
 #nullable enable
 
@@ -152,10 +152,6 @@ namespace G
             }
 
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
-                            __httpRequestContent.Add(
-                                content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(id, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
-                                name: "\"id\"");
-
                             if (request.File != default)
                             {
 

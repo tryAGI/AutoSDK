@@ -1,4 +1,4 @@
-﻿//HintName: G.LlamaExtractClient.RunJobOnFileApiV1ExtractionJobsFilePost.g.cs
+//HintName: G.LlamaExtractClient.RunJobOnFileApiV1ExtractionJobsFilePost.g.cs
 
 #nullable enable
 
@@ -177,22 +177,6 @@ namespace G
                             }
 
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
-                            if (fromUi != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(fromUi, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
-                                    name: "\"from_ui\"");
-
-                            }
-                            if (session != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(session ?? string.Empty),
-                                    name: "\"session\"");
-
-                            }
                             __httpRequestContent.Add(
                                 content: new global::System.Net.Http.StringContent(request.ExtractionAgentId.ToString() ?? string.Empty),
                                 name: "\"extraction_agent_id\"");
@@ -760,22 +744,6 @@ namespace G
                             }
 
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
-                            if (fromUi != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(fromUi, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
-                                    name: "\"from_ui\"");
-
-                            }
-                            if (session != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(session ?? string.Empty),
-                                    name: "\"session\"");
-
-                            }
                             __httpRequestContent.Add(
                                 content: new global::System.Net.Http.StringContent(request.ExtractionAgentId.ToString() ?? string.Empty),
                                 name: "\"extraction_agent_id\"");
@@ -1282,22 +1250,6 @@ namespace G
                             }
 
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
-                            if (fromUi != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(fromUi, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
-                                    name: "\"from_ui\"");
-
-                            }
-                            if (session != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(session ?? string.Empty),
-                                    name: "\"session\"");
-
-                            }
                             __httpRequestContent.Add(
                                 content: new global::System.Net.Http.StringContent(request.ExtractionAgentId.ToString() ?? string.Empty),
                                 name: "\"extraction_agent_id\"");

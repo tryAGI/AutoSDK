@@ -48,7 +48,8 @@ public record struct EndPoint(
     bool HasLocationHeaderOnSuccess = false,
     LocationWaitCompanion LocationWaitCompanion = default,
     PageableMetadata PageableMetadata = default,
-    bool HasCallScopedSecurity = false
+    bool HasCallScopedSecurity = false,
+    string AcceptMediaType = ""
 )
 {
     public bool Stream => StreamFormat != StreamFormat.None;

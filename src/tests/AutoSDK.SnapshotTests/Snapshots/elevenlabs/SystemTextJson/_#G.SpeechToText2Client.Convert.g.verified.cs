@@ -1,4 +1,4 @@
-﻿//HintName: G.SpeechToText2Client.Convert.g.cs
+//HintName: G.SpeechToText2Client.Convert.g.cs
 
 #nullable enable
 
@@ -136,22 +136,6 @@ namespace G
 
 
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
-                            if (enableLogging != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(enableLogging, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
-                                    name: "\"enable_logging\"");
-
-                            }
-                            if (xiApiKey != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(xiApiKey ?? string.Empty),
-                                    name: "\"xi-api-key\"");
-
-                            }
                             __httpRequestContent.Add(
                                 content: new global::System.Net.Http.StringContent(request.ModelId.ToValueString()),
                                 name: "\"model_id\"");

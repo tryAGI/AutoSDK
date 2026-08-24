@@ -6,6 +6,7 @@ repo_name: tryAGI/AutoSDK
 edit_uri: edit/main/docs/
 nav:
 - Overview: index.md
+- Media type capabilities: media-type-capabilities.md
 # EXAMPLES:START
 
 # EXAMPLES:END

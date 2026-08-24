@@ -45,6 +45,31 @@ internal static class RequestRepresentationPlanner
         var candidates = content
             .Select(x => CreateCandidate(operation, x.Key, x.Value))
             .ToArray();
+        return Select(candidates);
+    }
+
+    public static RequestRepresentationPlan Select(OpenApiOperation operation)
+    {
+        operation = operation ?? throw new ArgumentNullException(nameof(operation));
+
+        var content = operation.RequestBody?.Content;
+        if (content == null || content.Count == 0)
+        {
+            return RequestRepresentationPlan.Default;
+        }
+
+        var candidates = content
+            .Select(static x => new RequestRepresentationPlan(
+                mediaType: x.Key,
+                mediaTypeData: x.Value,
+                schemaContext: null,
+                itemSchemaContext: null))
+            .ToArray();
+        return Select(candidates);
+    }
+
+    private static RequestRepresentationPlan Select(RequestRepresentationPlan[] candidates)
+    {
         var selected = candidates[0];
 
         // Preserve specification order unless the selected representation contains a
@@ -61,6 +86,36 @@ internal static class RequestRepresentationPlanner
             {
                 selected = multipart;
             }
+        }
+
+        if (!MediaTypeCapabilities.CanEncodeRequest(
+                selected.MediaType,
+                selected.MediaTypeData?.Schema))
+        {
+            var supported = candidates.FirstOrDefault(static candidate =>
+                MediaTypeCapabilities.CanEncodeRequest(
+                    candidate.MediaType,
+                    candidate.MediaTypeData?.Schema));
+            if (string.IsNullOrWhiteSpace(supported.MediaType))
+            {
+                if (MediaTypeCapabilities.GetRequestSupport(selected.MediaType) == MediaTypeTransportSupport.Raw)
+                {
+                    // Preserve the declared wire format without serializing its typed schema
+                    // as JSON. The representation audit reports the schema/encoder mismatch,
+                    // while the generated API remains usable through raw byte pass-through.
+                    return new RequestRepresentationPlan(
+                        selected.MediaType,
+                        selected.MediaTypeData,
+                        schemaContext: null,
+                        itemSchemaContext: null);
+                }
+
+                throw new InvalidOperationException(MediaTypeCapabilities.GetRequestLimitation(
+                    selected.MediaType,
+                    selected.MediaTypeData?.Schema));
+            }
+
+            selected = supported;
         }
 
         return selected;

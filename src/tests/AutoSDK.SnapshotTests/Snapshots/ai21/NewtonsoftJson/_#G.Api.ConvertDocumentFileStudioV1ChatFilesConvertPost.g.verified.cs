@@ -1,4 +1,4 @@
-﻿//HintName: G.Api.ConvertDocumentFileStudioV1ChatFilesConvertPost.g.cs
+//HintName: G.Api.ConvertDocumentFileStudioV1ChatFilesConvertPost.g.cs
 
 #nullable enable
 
@@ -114,14 +114,6 @@ namespace G
 #endif
 
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
-                            if (requestStartTime != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(requestStartTime, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
-                                    name: "\"request_start_time\"");
-
-                            }
                             for (var __iFiles = 0; __iFiles < request.Files.Count; __iFiles++)
                             {
                                 var __contentFiles = new global::System.Net.Http.ByteArrayContent(request.Files[__iFiles]);
@@ -558,14 +550,6 @@ namespace G
 #endif
 
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
-                            if (requestStartTime != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(requestStartTime, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
-                                    name: "\"request_start_time\"");
-
-                            }
                             for (var __iFiles = 0; __iFiles < files.Count; __iFiles++)
                             {
                                 var __fileNameFiles = filesFileNames != null &&
@@ -998,14 +982,6 @@ namespace G
 #endif
 
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
-                            if (requestStartTime != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(requestStartTime, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
-                                    name: "\"request_start_time\"");
-
-                            }
                             for (var __iFiles = 0; __iFiles < files.Count; __iFiles++)
                             {
                                 var __fileNameFiles = filesFileNames != null &&

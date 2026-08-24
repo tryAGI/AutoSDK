@@ -1,4 +1,4 @@
-﻿//HintName: G.AgentsClient.ImportAgent.g.cs
+//HintName: G.AgentsClient.ImportAgent.g.cs
 
 #nullable enable
 
@@ -177,14 +177,6 @@ namespace G
 
 
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
-                            if (xOverrideEmbeddingModel != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(xOverrideEmbeddingModel ?? string.Empty),
-                                    name: "\"x-override-embedding-model\"");
-
-                            }
                             var __contentFile = new global::System.Net.Http.ByteArrayContent(request.File ?? global::System.Array.Empty<byte>());
                             __contentFile.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue(
                                 request.Filename is null
@@ -840,14 +832,6 @@ namespace G
 
 
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
-                            if (xOverrideEmbeddingModel != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(xOverrideEmbeddingModel ?? string.Empty),
-                                    name: "\"x-override-embedding-model\"");
-
-                            }
                             var __contentFile = new global::System.Net.Http.StreamContent(file);
                             __contentFile.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue(
                                 request.Filename is null
@@ -1432,14 +1416,6 @@ namespace G
 
 
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
-                            if (xOverrideEmbeddingModel != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(xOverrideEmbeddingModel ?? string.Empty),
-                                    name: "\"x-override-embedding-model\"");
-
-                            }
                             var __contentFile = new global::System.Net.Http.StreamContent(file);
                             __contentFile.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue(
                                 request.Filename is null

@@ -1,4 +1,4 @@
-﻿//HintName: G.MusicClient.SeparateStems.g.cs
+//HintName: G.MusicClient.SeparateStems.g.cs
 
 #nullable enable
 
@@ -136,22 +136,6 @@ namespace G
 
 
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
-                            if (outputFormat != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent((outputFormat).HasValue ? (outputFormat).GetValueOrDefault().ToValueString() : string.Empty),
-                                    name: "\"output_format\"");
-
-                            }
-                            if (xiApiKey != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(xiApiKey ?? string.Empty),
-                                    name: "\"xi-api-key\"");
-
-                            }
                             var __contentFile = new global::System.Net.Http.ByteArrayContent(request.File ?? global::System.Array.Empty<byte>());
                             __contentFile.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue(
                                 request.Filename is null
@@ -565,22 +549,6 @@ namespace G
 
 
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
-                            if (outputFormat != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent((outputFormat).HasValue ? (outputFormat).GetValueOrDefault().ToValueString() : string.Empty),
-                                    name: "\"output_format\"");
-
-                            }
-                            if (xiApiKey != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(xiApiKey ?? string.Empty),
-                                    name: "\"xi-api-key\"");
-
-                            }
                             var __contentFile = new global::System.Net.Http.ByteArrayContent(request.File ?? global::System.Array.Empty<byte>());
                             __contentFile.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue(
                                 request.Filename is null
@@ -1107,22 +1075,6 @@ namespace G
 
 
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
-                            if (outputFormat != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent((outputFormat).HasValue ? (outputFormat).GetValueOrDefault().ToValueString() : string.Empty),
-                                    name: "\"output_format\"");
-
-                            }
-                            if (xiApiKey != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(xiApiKey ?? string.Empty),
-                                    name: "\"xi-api-key\"");
-
-                            }
                             var __contentFile = new global::System.Net.Http.StreamContent(file);
                             __contentFile.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue(
                                 request.Filename is null
@@ -1587,22 +1539,6 @@ namespace G
 
 
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
-                            if (outputFormat != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent((outputFormat).HasValue ? (outputFormat).GetValueOrDefault().ToValueString() : string.Empty),
-                                    name: "\"output_format\"");
-
-                            }
-                            if (xiApiKey != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(xiApiKey ?? string.Empty),
-                                    name: "\"xi-api-key\"");
-
-                            }
                             var __contentFile = new global::System.Net.Http.StreamContent(file);
                             __contentFile.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue(
                                 request.Filename is null
@@ -2038,22 +1974,6 @@ namespace G
 
 
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
-                            if (outputFormat != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent((outputFormat).HasValue ? (outputFormat).GetValueOrDefault().ToValueString() : string.Empty),
-                                    name: "\"output_format\"");
-
-                            }
-                            if (xiApiKey != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(xiApiKey ?? string.Empty),
-                                    name: "\"xi-api-key\"");
-
-                            }
                             var __contentFile = new global::System.Net.Http.StreamContent(file);
                             __contentFile.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue(
                                 request.Filename is null

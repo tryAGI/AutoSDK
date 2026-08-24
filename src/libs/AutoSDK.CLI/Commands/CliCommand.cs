@@ -92,48 +92,29 @@ internal sealed class CliCommand : Command
         var schemas = openApiDocument.GetSchemas(settings);
         var operations = openApiDocument.GetOperations(settings, globalSettings: settings, schemas);
         
+        var securitySchemes = (openApiDocument.Security ?? [])
+            .SelectMany(static requirement => requirement.Keys)
+            .GroupBy(static scheme => scheme.Reference?.Id ?? scheme.Name ?? scheme.Scheme ?? string.Empty)
+            .Select(static group => group.First())
+            .ToList();
         var files = new List<FileWithName>
         {
-            new("http-client.env.json", @$"{{
-{(openApiDocument.Servers ?? []).Select(x => @$"
-  ""{x.Description}"": {{
-    ""host"": ""{x.Url}"",
-    ""token"": """"
-  }},").Inject().TrimEnd(',')}
-}}")
+            new(
+                "http-client.env.json",
+                Sources.GenerateHttpEnvironmentFile(
+                    (openApiDocument.Servers ?? []).ToList(),
+                    securitySchemes)),
         };
 
         foreach (var group in operations
                      .SelectMany(x => x.Tags.Select(y => (Tag: y, x)))
                      .GroupBy(x => x.Tag))
         {
-            var content = string.Empty;
-
-            foreach (var (_, operation) in group)
-            {
-                //  "initialAmount": 1000.0,
-                // "numberOfMonths": 36,
-                // "startDate": "2025-02-25"
-                
-                var requestSchema = operation.Schemas.FirstOrDefault(y => y.Hint == Hint.Request);
-                content += $@"
-### {operation.OperationType.Method.ToUpperInvariant()} {operation.OperationPath}
-{operation.OperationType.Method.ToUpperInvariant()} {{{{host}}}}{operation.OperationPath}
-{(operation.GlobalSecurityRequirements.Any() || (operation.Operation.Security ?? []).Any() ? @"
-Authorization: Bearer {{token}}" : " ")}
-Content-Type: application/json
-
-{(requestSchema != null ? @$"
-{{
-{(requestSchema.Schema.Properties?.Select(x => @$"
-  ""{x.Key}"": {x.Value.Example?.ToString() ?? "\"1\""},") ?? []).Inject()}
-}}
-" : " ")}
-
-".RemoveBlankLinesWhereOnlyWhitespaces();
-            }
-
-            files.Add(new FileWithName(group.Key + ".http", content));
+            files.Add(new FileWithName(
+                group.Key + ".http",
+                Sources.GenerateHttpFile(
+                    group.Key.ToString(),
+                    group.Select(static item => item.x).ToList())));
         }
         
         Directory.CreateDirectory(output);

@@ -1163,6 +1163,10 @@ namespace {endPoint.Settings.Namespace}
                 __httpRequest.Version = global::System.Net.HttpVersion.Version11;
                 __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
+{(string.IsNullOrWhiteSpace(endPoint.AcceptMediaType) ? TrimmedLine : $@"
+                __httpRequest.Headers.TryAddWithoutValidation(
+                    ""Accept"",
+                    ""{EscapeCSharpStringLiteral(endPoint.AcceptMediaType.NormalizeMimeType())}"");")}
 {(RequiresCookieCollection(endPoint) ? @"
                 var __cookies = new global::System.Collections.Generic.List<string>();" : TrimmedLine)}
 {(endPoint.Authorizations.Any(x => x is
@@ -2937,7 +2941,7 @@ namespace {endPoint.Settings.Namespace}
             return $@"
             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
 {endPoint.Parameters
-    .Where(static x => !x.IsMultiPartFormDataFilename)
+    .Where(static x => x.Location == null && !x.IsMultiPartFormDataFilename)
     .Select(x =>
 {
     if (x.Location == null && RequiresMultipartUnionExpansion(x.Type))
@@ -3036,9 +3040,26 @@ namespace {endPoint.Settings.Namespace}
 
         if (endPoint.RequestType.IsBinary || endPoint.RequestMediaType == "application/octet-stream")
         {
-            return @"
+            return $@"
             var __httpRequestContent = new global::System.Net.Http.ByteArrayContent(request);
-            __httpRequestContent.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue(""application/octet-stream"");
+            __httpRequestContent.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue(""{EscapeCSharpStringLiteral(endPoint.RequestMediaType.NormalizeMimeType())}"");
+            __httpRequest.Content = __httpRequestContent;
+ ".RemoveBlankLinesWhereOnlyWhitespaces();
+        }
+
+        if (endPoint.RequestMediaType.IsMimeType("application/x-www-form-urlencoded"))
+        {
+            return GenerateFormUrlEncodedRequestData(endPoint);
+        }
+
+        if (MediaTypeCapabilities.GetRequestSupport(endPoint.RequestMediaType) == MediaTypeTransportSupport.Raw &&
+            endPoint.RequestType.CSharpTypeWithoutNullability == "string")
+        {
+            return $@"
+            var __httpRequestContent = new global::System.Net.Http.StringContent(
+                content: request,
+                encoding: global::System.Text.Encoding.UTF8,
+                mediaType: ""{EscapeCSharpStringLiteral(endPoint.RequestMediaType.NormalizeMimeType())}"");
             __httpRequest.Content = __httpRequestContent;
  ".RemoveBlankLinesWhereOnlyWhitespaces();
         }
@@ -3065,6 +3086,63 @@ namespace {endPoint.Settings.Namespace}
                 mediaType: ""{endPoint.RequestMediaType}"");
             __httpRequest.Content = __httpRequestContent;
  ".RemoveBlankLinesWhereOnlyWhitespaces();
+    }
+
+    private static string GenerateFormUrlEncodedRequestData(EndPoint endPoint)
+    {
+        var parameters = endPoint.Parameters
+            .Where(static parameter =>
+                parameter.Location == null &&
+                !parameter.IsMultiPartFormDataFilename)
+            .ToArray();
+        var builder = new global::System.Text.StringBuilder();
+        builder.AppendLine("            var __formValues = new global::System.Collections.Generic.List<global::System.Collections.Generic.KeyValuePair<string, string>>();");
+
+        foreach (var parameter in parameters)
+        {
+            var valueExpression = $"request.{parameter.Name}";
+            string add;
+            if (parameter.Type.IsArray && !parameter.Type.SubTypes.IsEmpty)
+            {
+                var itemType = parameter.Type.SubTypes[0].Unbox<TypeData>();
+                var itemExpression = GenerateSerializedValueExpression(
+                    itemType,
+                    "__formItem",
+                    isNullableLike: IsNullableLike(itemType),
+                    parameter.Settings);
+                add = $@"            foreach (var __formItem in {valueExpression})
+            {{
+                __formValues.Add(new global::System.Collections.Generic.KeyValuePair<string, string>(
+                    {parameter.Id.ToCSharpStringLiteral()},
+                    {itemExpression}));
+            }}";
+            }
+            else
+            {
+                var serialized = GenerateSerializedValueExpression(
+                    parameter.Type,
+                    valueExpression,
+                    IsNullableLike(parameter.Type),
+                    parameter.Settings);
+                add = $@"            __formValues.Add(new global::System.Collections.Generic.KeyValuePair<string, string>(
+                {parameter.Id.ToCSharpStringLiteral()},
+                {serialized}));";
+            }
+
+            if (!parameter.IsRequired)
+            {
+                add = $@"            if ({valueExpression} != {parameter.ParameterDefaultValue})
+            {{
+{add.AddIndent(1)}
+            }}";
+            }
+
+            builder.AppendLine(add);
+        }
+
+        builder.AppendLine("            var __httpRequestContent = new global::System.Net.Http.FormUrlEncodedContent(__formValues);");
+        builder.AppendLine("            __httpRequest.Content = __httpRequestContent;");
+        return builder.ToString().RemoveBlankLinesWhereOnlyWhitespaces();
     }
 
     private static string GenerateSequentialJsonRequestData(

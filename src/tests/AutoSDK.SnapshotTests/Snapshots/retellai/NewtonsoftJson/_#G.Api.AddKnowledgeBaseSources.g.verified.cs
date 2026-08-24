@@ -1,4 +1,4 @@
-﻿//HintName: G.Api.AddKnowledgeBaseSources.g.cs
+//HintName: G.Api.AddKnowledgeBaseSources.g.cs
 
 #nullable enable
 
@@ -154,10 +154,6 @@ namespace G
             }
 
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
-                            __httpRequestContent.Add(
-                                content: new global::System.Net.Http.StringContent(knowledgeBaseId ?? string.Empty),
-                                name: "\"knowledge_base_id\"");
-
                             if (request.KnowledgeBaseTexts != default)
                             {
 

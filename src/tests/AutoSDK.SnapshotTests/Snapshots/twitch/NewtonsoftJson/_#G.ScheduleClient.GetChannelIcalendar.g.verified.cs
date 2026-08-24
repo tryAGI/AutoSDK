@@ -1,4 +1,4 @@
-﻿//HintName: G.ScheduleClient.GetChannelIcalendar.g.cs
+//HintName: G.ScheduleClient.GetChannelIcalendar.g.cs
 
 #nullable enable
 
@@ -17,6 +17,11 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
+        partial void ProcessGetChannelIcalendarResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Gets the broadcaster’s streaming schedule as an iCalendar.<br/>
         /// Gets the broadcaster’s streaming schedule as an [iCalendar](https://datatracker.ietf.org/doc/html/rfc5545).<br/>
@@ -30,16 +35,18 @@ namespace G
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task GetChannelIcalendarAsync(
+        public async global::System.Threading.Tasks.Task<string> GetChannelIcalendarAsync(
             string broadcasterId,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            await GetChannelIcalendarAsResponseAsync(
+            var __response = await GetChannelIcalendarAsResponseAsync(
                 broadcasterId: broadcasterId,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
+
+            return __response.Body;
         }
         /// <summary>
         /// Gets the broadcaster’s streaming schedule as an iCalendar.<br/>
@@ -54,7 +61,7 @@ namespace G
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse> GetChannelIcalendarAsResponseAsync(
+        public async global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<string>> GetChannelIcalendarAsResponseAsync(
             string broadcasterId,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -335,15 +342,20 @@ namespace G
                                     client: HttpClient,
                                     response: __response,
                                     content: ref __content);
+                                ProcessGetChannelIcalendarResponseContent(
+                                    httpClient: HttpClient,
+                                    httpResponseMessage: __response,
+                                    content: ref __content);
 
                                 try
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                return new global::G.AutoSDKHttpResponse(
+                                    return new global::G.AutoSDKHttpResponse<string>(
                                         statusCode: __response.StatusCode,
                                         headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
-                                        requestUri: __response.RequestMessage?.RequestUri);
+                                        requestUri: __response.RequestMessage?.RequestUri,
+                                        body: __content);
                                 }
                                 catch (global::System.Exception __ex)
                                 {
@@ -363,10 +375,17 @@ namespace G
                                 try
                                 {
                                     __response.EnsureSuccessStatusCode();
-                                    return new global::G.AutoSDKHttpResponse(
+                                    var __content = await __response.Content.ReadAsStringAsync(
+                #if NET5_0_OR_GREATER
+                                        __effectiveCancellationToken
+                #endif
+                                    ).ConfigureAwait(false);
+
+                                    return new global::G.AutoSDKHttpResponse<string>(
                                         statusCode: __response.StatusCode,
                                         headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
-                                        requestUri: __response.RequestMessage?.RequestUri);
+                                        requestUri: __response.RequestMessage?.RequestUri,
+                                        body: __content);
                                 }
                                 catch (global::System.Exception __ex)
                                 {

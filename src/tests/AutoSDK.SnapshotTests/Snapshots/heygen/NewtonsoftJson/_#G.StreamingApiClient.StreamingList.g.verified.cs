@@ -1,4 +1,4 @@
-﻿//HintName: G.StreamingApiClient.StreamingList.g.cs
+//HintName: G.StreamingApiClient.StreamingList.g.cs
 
 #nullable enable
 
@@ -40,10 +40,12 @@ namespace G
             {                s_StreamingListSecurityRequirement0,
             };
         partial void PrepareStreamingListArguments(
-            global::System.Net.Http.HttpClient httpClient);
+            global::System.Net.Http.HttpClient httpClient,
+            string request);
         partial void PrepareStreamingListRequest(
             global::System.Net.Http.HttpClient httpClient,
-            global::System.Net.Http.HttpRequestMessage httpRequestMessage);
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string request);
         partial void ProcessStreamingListResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -52,14 +54,19 @@ namespace G
         /// streaming.list<br/>
         /// streaming.list
         /// </summary>
+        /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task StreamingListAsync(
+
+            string request,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             await StreamingListAsResponseAsync(
+
+                request: request,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -68,17 +75,23 @@ namespace G
         /// streaming.list<br/>
         /// streaming.list
         /// </summary>
+        /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse> StreamingListAsResponseAsync(
+
+            string request,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            request = request ?? throw new global::System.ArgumentNullException(nameof(request));
+
             PrepareArguments(
                 client: HttpClient);
             PrepareStreamingListArguments(
-                httpClient: HttpClient);
+                httpClient: HttpClient,
+                request: request);
 
 
             var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
@@ -137,6 +150,12 @@ namespace G
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
                 } 
             }
+
+                            var __httpRequestContent = new global::System.Net.Http.StringContent(
+                                content: request,
+                                encoding: global::System.Text.Encoding.UTF8,
+                                mediaType: "text/plain");
+                            __httpRequest.Content = __httpRequestContent;
                 global::G.AutoSDKRequestOptionsSupport.ApplyHeaders(
                     request: __httpRequest,
                     clientHeaders: Options.Headers,
@@ -147,7 +166,8 @@ namespace G
                     request: __httpRequest);
                 PrepareStreamingListRequest(
                     httpClient: HttpClient,
-                    httpRequestMessage: __httpRequest);
+                    httpRequestMessage: __httpRequest,
+                    request: request);
 
                 return __httpRequest;
             }

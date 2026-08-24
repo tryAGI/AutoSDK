@@ -1,4 +1,4 @@
-﻿//HintName: G.DubbingClient.Create3.g.cs
+//HintName: G.DubbingClient.Create3.g.cs
 
 #nullable enable
 
@@ -119,14 +119,6 @@ namespace G
 
 
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
-                            if (xiApiKey != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(xiApiKey ?? string.Empty),
-                                    name: "\"xi-api-key\"");
-
-                            }
                             if (request.File != default)
                             {
 

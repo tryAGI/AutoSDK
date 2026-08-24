@@ -11,6 +11,8 @@ namespace AutoSDK.Generation;
 
 public static partial class Sources
 {
+    private const string HttpMultipartBoundary = "AutoSDKBoundary";
+
     private static readonly JsonSerializerOptions HttpJsonOptions = new()
     {
         WriteIndented = true,
@@ -126,7 +128,7 @@ public static partial class Sources
         // Request body handling
         if (preferredContent is { } requestContent)
         {
-            sb.Append("Content-Type: ").AppendLine(requestContent.ContentType);
+            sb.Append("Content-Type: ").AppendLine(GetHttpContentTypeHeader(requestContent.ContentType));
         }
 
         // Accept header
@@ -233,24 +235,13 @@ public static partial class Sources
 
     private static (string ContentType, IOpenApiMediaType MediaType, IOpenApiSchema? Schema)? GetPreferredRequestContent(OpenApiOperation operation)
     {
-        var content = operation.RequestBody?.Content;
-        if (content is not { Count: > 0 })
+        var plan = RequestRepresentationPlanner.Select(operation);
+        if (plan.MediaTypeData == null)
         {
             return null;
         }
 
-        var jsonEntry = content
-            .OrderBy(x => x.Key, StringComparer.Ordinal)
-            .FirstOrDefault(x => IsJsonContentType(x.Key));
-        if (!string.IsNullOrWhiteSpace(jsonEntry.Key))
-        {
-            return (jsonEntry.Key, jsonEntry.Value, jsonEntry.Value.Schema);
-        }
-
-        var first = content
-            .OrderBy(x => x.Key, StringComparer.Ordinal)
-            .First();
-        return (first.Key, first.Value, first.Value.Schema);
+        return (plan.MediaType, plan.MediaTypeData, plan.MediaTypeData.Schema);
     }
 
     private static void AppendLinkDocumentation(StringBuilder sb, OpenApiOperation operation)
@@ -396,7 +387,7 @@ public static partial class Sources
         var preferredContent = GetPreferredRequestContent(operation);
         if (preferredContent is { } requestContent)
         {
-            sb.Append("# Content-Type: ").AppendLine(requestContent.ContentType);
+            sb.Append("# Content-Type: ").AppendLine(GetHttpContentTypeHeader(requestContent.ContentType));
         }
 
         var acceptTypes = GetHttpAcceptTypes(operation);
@@ -537,15 +528,34 @@ public static partial class Sources
         IOpenApiMediaType mediaType,
         IOpenApiSchema? schema)
     {
-        var exampleText = GetExampleText(mediaType.Examples, contentType, rawScalars: false);
-        if (exampleText != null)
+        var mediaTypeKind = MediaTypeCapabilities.Classify(contentType);
+        var declaredExample = GetExampleText(mediaType.Examples, contentType, rawScalars: false);
+        if (declaredExample != null &&
+            (mediaTypeKind != MediaTypeKind.MultipartFormData ||
+             declaredExample.TrimStart().StartsWith("--", StringComparison.Ordinal)))
         {
-            return exampleText;
+            return declaredExample;
         }
 
-        if (mediaType.Example != null)
+        if (mediaType.Example != null && mediaTypeKind != MediaTypeKind.MultipartFormData)
         {
             return FormatExampleNode(mediaType.Example, contentType, rawScalars: false);
+        }
+
+        if (mediaTypeKind == MediaTypeKind.MultipartFormData)
+        {
+            return GenerateMultipartBody(mediaType, schema);
+        }
+
+        if (mediaTypeKind == MediaTypeKind.FormUrlEncoded)
+        {
+            return GenerateFormUrlEncodedBody(schema);
+        }
+
+        if (MediaTypeCapabilities.GetRequestSupport(contentType) == MediaTypeTransportSupport.Raw &&
+            !MediaTypeCapabilities.IsRawTextSchema(schema))
+        {
+            return "< ./request.bin";
         }
 
         if (schema != null && IsJsonContentType(contentType))
@@ -553,7 +563,108 @@ public static partial class Sources
             return GenerateJsonBody(schema);
         }
 
+        if (schema != null &&
+            MediaTypeCapabilities.GetRequestSupport(contentType) == MediaTypeTransportSupport.Raw)
+        {
+            return GetSchemaScalarText(schema);
+        }
+
         return null;
+    }
+
+    private static string GetHttpContentTypeHeader(string contentType)
+    {
+        return contentType.IsMimeType("multipart/form-data")
+            ? $"{contentType.NormalizeMimeType()}; boundary={HttpMultipartBoundary}"
+            : contentType;
+    }
+
+    private static string? GenerateMultipartBody(
+        IOpenApiMediaType mediaType,
+        IOpenApiSchema? schema)
+    {
+        var resolved = schema?.ResolveIfRequired();
+        if (resolved?.Properties is not { Count: > 0 } properties)
+        {
+            return null;
+        }
+
+        var sb = new StringBuilder();
+        foreach (var property in properties)
+        {
+            var propertySchema = property.Value.ResolveIfRequired();
+            var itemSchema = propertySchema.Items?.ResolveIfRequired();
+            var isArray = (propertySchema.Type & JsonSchemaType.Array) == JsonSchemaType.Array;
+            var valueSchema = isArray && itemSchema != null ? itemSchema : propertySchema;
+            var isBinary = RequestRepresentationPlanner.ContainsBinary(valueSchema);
+
+            sb.Append("--").AppendLine(HttpMultipartBoundary);
+            sb.Append("Content-Disposition: form-data; name=\"").Append(property.Key).Append('"');
+            if (isBinary)
+            {
+                sb.Append("; filename=\"").Append(property.Key).AppendLine(".bin\"");
+                var partContentType = mediaType.Encoding != null &&
+                                      mediaType.Encoding.TryGetValue(property.Key, out var encoding) &&
+                                      !string.IsNullOrWhiteSpace(encoding.ContentType)
+                    ? encoding.ContentType
+                    : "application/octet-stream";
+                sb.Append("Content-Type: ").AppendLine(partContentType);
+                sb.AppendLine();
+                sb.Append("< ./").Append(property.Key).AppendLine(".bin");
+            }
+            else
+            {
+                sb.AppendLine();
+                sb.AppendLine();
+                sb.AppendLine(GetSchemaScalarText(valueSchema));
+            }
+        }
+
+        sb.Append("--").Append(HttpMultipartBoundary).Append("--");
+        return sb.ToString();
+    }
+
+    private static string? GenerateFormUrlEncodedBody(IOpenApiSchema? schema)
+    {
+        var resolved = schema?.ResolveIfRequired();
+        if (resolved?.Properties is not { Count: > 0 } properties)
+        {
+            return null;
+        }
+
+        return string.Join("&", properties.Select(property =>
+        {
+            var propertySchema = property.Value.ResolveIfRequired();
+            var valueSchema = propertySchema.Items?.ResolveIfRequired() ?? propertySchema;
+            return $"{Uri.EscapeDataString(property.Key)}={Uri.EscapeDataString(GetSchemaScalarText(valueSchema))}";
+        }));
+    }
+
+    private static string GetSchemaScalarText(IOpenApiSchema schema)
+    {
+        var resolved = schema.ResolveIfRequired();
+        if (resolved.Example != null)
+        {
+            return FormatExampleNode(resolved.Example, contentType: null, rawScalars: true);
+        }
+
+        if (resolved.Default != null)
+        {
+            return FormatExampleNode(resolved.Default, contentType: null, rawScalars: true);
+        }
+
+        if (resolved.Enum is { Count: > 0 })
+        {
+            return FormatExampleNode(resolved.Enum[0], contentType: null, rawScalars: true);
+        }
+
+        return (resolved.Type ?? 0) switch
+        {
+            var type when (type & JsonSchemaType.Boolean) == JsonSchemaType.Boolean => "true",
+            var type when (type & JsonSchemaType.Integer) == JsonSchemaType.Integer => "0",
+            var type when (type & JsonSchemaType.Number) == JsonSchemaType.Number => "0.0",
+            _ => "string",
+        };
     }
 
     private static string? GetExampleText(

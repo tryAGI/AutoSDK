@@ -1,4 +1,4 @@
-﻿//HintName: G.ModelClient.EditModelById.g.cs
+//HintName: G.ModelClient.EditModelById.g.cs
 
 #nullable enable
 
@@ -143,10 +143,6 @@ namespace G
             }
 
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
-                            __httpRequestContent.Add(
-                                content: new global::System.Net.Http.StringContent(id ?? string.Empty),
-                                name: "\"id\"");
-
                             if (request.Title != default)
                             {
 

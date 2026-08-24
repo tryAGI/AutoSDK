@@ -1,4 +1,4 @@
-﻿//HintName: G.Commands.AudioGroupCommand.g.cs
+//HintName: G.Commands.AudioGroupCommand.g.cs
 
 #nullable enable
 
@@ -9,13 +9,15 @@ namespace G
         public AudioGroupCommand(
             AudioCreateSpeechCommand command0,
             AudioCreateTranscriptionCommand command1,
-            AudioCreateTranslationCommand command2)
+            AudioCreateTranslationCommand command2,
+            AudioCreateTranslationAsTextCommand command3)
             : base(
                 name: "audio")
         {
             Subcommands.Add(command0);
             Subcommands.Add(command1);
             Subcommands.Add(command2);
+            Subcommands.Add(command3);
         }
     }
 }

@@ -13,5 +13,6 @@ rootCommand.Subcommands.Add(new ConvertCommand());
 rootCommand.Subcommands.Add(new InitializeCommand());
 rootCommand.Subcommands.Add(new TrimCommand());
 rootCommand.Subcommands.Add(new SkillCommand());
+rootCommand.Subcommands.Add(new RepresentationAuditCommand());
 
 return await rootCommand.Parse(args).InvokeAsync().ConfigureAwait(false);

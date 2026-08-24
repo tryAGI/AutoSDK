@@ -1,4 +1,4 @@
-﻿//HintName: G.Commands.OllieStateReplaceOllieStateCommand.g.cs
+//HintName: G.Commands.OllieStateReplaceOllieStateCommand.g.cs
 
 #nullable enable
 
@@ -13,6 +13,8 @@ namespace G
         partial void Validate(
             global::System.CommandLine.ParseResult parseResult,
             long? contentLength,
+
+            byte[] request,
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
@@ -23,6 +25,13 @@ namespace G
             name: "contentLength")
         {
             Description = @"",
+        };
+
+
+        private global::System.CommandLine.Argument<string> RequestBody { get; } = new(
+            name: "request-body")
+        {
+            Description = @"The request body as JSON.",
         };
 
 
@@ -37,6 +46,8 @@ namespace G
 
             Options.Add(ContentLength);
 
+            Arguments.Add(RequestBody);
+
             Initialize();
 
             SetAction(HandleAsync);
@@ -48,14 +59,22 @@ namespace G
         {
             var contentLength = parseResult.GetRequiredValue(ContentLength);
 
+            var __requestBodyJson = parseResult.GetRequiredValue(RequestBody);
+            var request = global::System.Text.Json.JsonSerializer.Deserialize<byte[]>(__requestBodyJson) ??
+                throw new global::System.InvalidOperationException("Failed to deserialize request body.");
+
             Validate(
                 parseResult: parseResult,
                 contentLength: contentLength,
+
+                request: request,
                 cancellationToken: cancellationToken);
 
             // ReSharper disable once RedundantAssignment
             await _client.OllieState.ReplaceOllieStateAsync(
                 contentLength: contentLength,
+
+                request: request,
                 cancellationToken: cancellationToken);
 
             Complete(

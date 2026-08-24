@@ -1,4 +1,4 @@
-﻿//HintName: G.ServiceCollectionExtensions.AddCommands.g.cs
+//HintName: G.ServiceCollectionExtensions.AddCommands.g.cs
 
 #nullable enable
 
@@ -114,6 +114,8 @@ namespace G
                 DeletedCallsDeletedCallsRetrieveCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
                 ModelsModelsListCommand>(services);
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
+                SchemaSchemaRetrieveAsBytesCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<
                 SchemaSchemaRetrieveCommand>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<

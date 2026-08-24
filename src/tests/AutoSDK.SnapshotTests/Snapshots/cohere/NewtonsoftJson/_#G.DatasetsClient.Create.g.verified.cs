@@ -1,4 +1,4 @@
-﻿//HintName: G.DatasetsClient.Create.g.cs
+//HintName: G.DatasetsClient.Create.g.cs
 
 #nullable enable
 
@@ -248,70 +248,6 @@ namespace G
 
 
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
-                            __httpRequestContent.Add(
-                                content: new global::System.Net.Http.StringContent(name ?? string.Empty),
-                                name: "\"name\"");
-
-                            __httpRequestContent.Add(
-                                content: new global::System.Net.Http.StringContent(type.ToValueString()),
-                                name: "\"type\"");
-
-                            if (keepOriginalFile != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(keepOriginalFile, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
-                                    name: "\"keep_original_file\"");
-
-                            }
-                            if (skipMalformedInput != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(skipMalformedInput, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
-                                    name: "\"skip_malformed_input\"");
-
-                            }
-                            if (keepFields != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(keepFields, x => x))}]"),
-                                    name: "\"keep_fields\"");
-
-                            }
-                            if (optionalFields != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(optionalFields, x => x))}]"),
-                                    name: "\"optional_fields\"");
-
-                            }
-                            if (textSeparator != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(textSeparator ?? string.Empty),
-                                    name: "\"text_separator\"");
-
-                            }
-                            if (csvDelimiter != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(csvDelimiter ?? string.Empty),
-                                    name: "\"csv_delimiter\"");
-
-                            }
-                            if (xClientName != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(xClientName ?? string.Empty),
-                                    name: "\"X-Client-Name\"");
-
-                            }
                             var __contentData = new global::System.Net.Http.ByteArrayContent(request.Data ?? global::System.Array.Empty<byte>());
                             __contentData.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue(
                                 request.Dataname is null
@@ -1360,70 +1296,6 @@ namespace G
 
 
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
-                            __httpRequestContent.Add(
-                                content: new global::System.Net.Http.StringContent(name ?? string.Empty),
-                                name: "\"name\"");
-
-                            __httpRequestContent.Add(
-                                content: new global::System.Net.Http.StringContent(type.ToValueString()),
-                                name: "\"type\"");
-
-                            if (keepOriginalFile != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(keepOriginalFile, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
-                                    name: "\"keep_original_file\"");
-
-                            }
-                            if (skipMalformedInput != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(skipMalformedInput, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
-                                    name: "\"skip_malformed_input\"");
-
-                            }
-                            if (keepFields != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(keepFields, x => x))}]"),
-                                    name: "\"keep_fields\"");
-
-                            }
-                            if (optionalFields != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(optionalFields, x => x))}]"),
-                                    name: "\"optional_fields\"");
-
-                            }
-                            if (textSeparator != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(textSeparator ?? string.Empty),
-                                    name: "\"text_separator\"");
-
-                            }
-                            if (csvDelimiter != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(csvDelimiter ?? string.Empty),
-                                    name: "\"csv_delimiter\"");
-
-                            }
-                            if (xClientName != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(xClientName ?? string.Empty),
-                                    name: "\"X-Client-Name\"");
-
-                            }
                             var __contentData = new global::System.Net.Http.StreamContent(data);
                             __contentData.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue(
                                 request.Dataname is null
@@ -2394,70 +2266,6 @@ namespace G
 
 
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
-                            __httpRequestContent.Add(
-                                content: new global::System.Net.Http.StringContent(name ?? string.Empty),
-                                name: "\"name\"");
-
-                            __httpRequestContent.Add(
-                                content: new global::System.Net.Http.StringContent(type.ToValueString()),
-                                name: "\"type\"");
-
-                            if (keepOriginalFile != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(keepOriginalFile, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
-                                    name: "\"keep_original_file\"");
-
-                            }
-                            if (skipMalformedInput != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(skipMalformedInput, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
-                                    name: "\"skip_malformed_input\"");
-
-                            }
-                            if (keepFields != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(keepFields, x => x))}]"),
-                                    name: "\"keep_fields\"");
-
-                            }
-                            if (optionalFields != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(optionalFields, x => x))}]"),
-                                    name: "\"optional_fields\"");
-
-                            }
-                            if (textSeparator != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(textSeparator ?? string.Empty),
-                                    name: "\"text_separator\"");
-
-                            }
-                            if (csvDelimiter != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(csvDelimiter ?? string.Empty),
-                                    name: "\"csv_delimiter\"");
-
-                            }
-                            if (xClientName != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(xClientName ?? string.Empty),
-                                    name: "\"X-Client-Name\"");
-
-                            }
                             var __contentData = new global::System.Net.Http.StreamContent(data);
                             __contentData.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue(
                                 request.Dataname is null

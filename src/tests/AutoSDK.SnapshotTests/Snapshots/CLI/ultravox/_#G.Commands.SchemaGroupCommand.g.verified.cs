@@ -1,4 +1,4 @@
-﻿//HintName: G.Commands.SchemaGroupCommand.g.cs
+//HintName: G.Commands.SchemaGroupCommand.g.cs
 
 #nullable enable
 
@@ -7,11 +7,13 @@ namespace G
     internal sealed partial class SchemaGroupCommand : global::System.CommandLine.Command
     {
         public SchemaGroupCommand(
-            SchemaSchemaRetrieveCommand command0)
+            SchemaSchemaRetrieveCommand command0,
+            SchemaSchemaRetrieveAsBytesCommand command1)
             : base(
                 name: "schema")
         {
             Subcommands.Add(command0);
+            Subcommands.Add(command1);
         }
     }
 }

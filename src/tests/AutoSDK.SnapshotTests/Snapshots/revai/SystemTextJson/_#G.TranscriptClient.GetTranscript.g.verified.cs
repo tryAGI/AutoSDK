@@ -1,4 +1,4 @@
-﻿//HintName: G.TranscriptClient.GetTranscript.g.cs
+//HintName: G.TranscriptClient.GetTranscript.g.cs
 
 #nullable enable
 
@@ -132,6 +132,10 @@ namespace G
                 __httpRequest.Version = global::System.Net.HttpVersion.Version11;
                 __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
+
+                __httpRequest.Headers.TryAddWithoutValidation(
+                    "Accept",
+                    "application/vnd.rev.transcript.v1.0+json");
 
             foreach (var __authorization in __authorizations)
             {

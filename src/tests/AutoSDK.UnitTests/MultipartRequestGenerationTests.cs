@@ -323,6 +323,8 @@ components:
         methodCode.Should().Contain("for (var __iTexts1 = 0; __iTexts1 < (__valueTexts1!).Count; __iTexts1++)");
         methodCode.Should().Contain("name: \"\\\"voices\\\"\"");
         methodCode.Should().NotContain("request.Voices.ToString()");
+        methodCode.Should().NotContain("name: \"\\\"model_id\\\"\"");
+        methodCode.Should().NotContain("name: \"\\\"X-API-Key\\\"\"");
     }
 
     [TestMethod]

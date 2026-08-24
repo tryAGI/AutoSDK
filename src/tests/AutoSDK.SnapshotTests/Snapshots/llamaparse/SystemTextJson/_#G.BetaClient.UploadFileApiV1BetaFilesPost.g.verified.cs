@@ -1,4 +1,4 @@
-﻿//HintName: G.BetaClient.UploadFileApiV1BetaFilesPost.g.cs
+//HintName: G.BetaClient.UploadFileApiV1BetaFilesPost.g.cs
 
 #nullable enable
 
@@ -194,30 +194,6 @@ namespace G
                             }
 
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
-                            if (projectId != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(projectId.ToString() ?? string.Empty),
-                                    name: "\"project_id\"");
-
-                            }
-                            if (organizationId != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(organizationId.ToString() ?? string.Empty),
-                                    name: "\"organization_id\"");
-
-                            }
-                            if (session != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(session ?? string.Empty),
-                                    name: "\"session\"");
-
-                            }
                             __httpRequestContent.Add(
                                 content: new global::System.Net.Http.StringContent(request.Purpose ?? string.Empty),
                                 name: "\"purpose\"");
@@ -783,30 +759,6 @@ namespace G
                             }
 
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
-                            if (projectId != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(projectId.ToString() ?? string.Empty),
-                                    name: "\"project_id\"");
-
-                            }
-                            if (organizationId != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(organizationId.ToString() ?? string.Empty),
-                                    name: "\"organization_id\"");
-
-                            }
-                            if (session != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(session ?? string.Empty),
-                                    name: "\"session\"");
-
-                            }
                             __httpRequestContent.Add(
                                 content: new global::System.Net.Http.StringContent(request.Purpose ?? string.Empty),
                                 name: "\"purpose\"");
@@ -1309,30 +1261,6 @@ namespace G
                             }
 
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
-                            if (projectId != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(projectId.ToString() ?? string.Empty),
-                                    name: "\"project_id\"");
-
-                            }
-                            if (organizationId != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(organizationId.ToString() ?? string.Empty),
-                                    name: "\"organization_id\"");
-
-                            }
-                            if (session != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(session ?? string.Empty),
-                                    name: "\"session\"");
-
-                            }
                             __httpRequestContent.Add(
                                 content: new global::System.Net.Http.StringContent(request.Purpose ?? string.Empty),
                                 name: "\"purpose\"");

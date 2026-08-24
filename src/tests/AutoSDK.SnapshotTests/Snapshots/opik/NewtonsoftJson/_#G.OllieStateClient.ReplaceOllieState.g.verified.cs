@@ -1,4 +1,4 @@
-﻿//HintName: G.OllieStateClient.ReplaceOllieState.g.cs
+//HintName: G.OllieStateClient.ReplaceOllieState.g.cs
 
 #nullable enable
 
@@ -22,12 +22,12 @@ namespace G
         partial void PrepareReplaceOllieStateArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref long? contentLength,
-            object request);
+            byte[] request);
         partial void PrepareReplaceOllieStateRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             long? contentLength,
-            object request);
+            byte[] request);
         partial void ProcessReplaceOllieStateResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -43,7 +43,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task ReplaceOllieStateAsync(
 
-            object request,
+            byte[] request,
             long? contentLength = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -67,7 +67,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse> ReplaceOllieStateAsResponseAsync(
 
-            object request,
+            byte[] request,
             long? contentLength = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -121,11 +121,9 @@ namespace G
                 __httpRequest.Headers.TryAddWithoutValidation("Content-Length", contentLength.ToString());
             }
 
-                            var __httpRequestContentBody = global::Newtonsoft.Json.JsonConvert.SerializeObject(request, JsonSerializerOptions);
-                            var __httpRequestContent = new global::System.Net.Http.StringContent(
-                                content: __httpRequestContentBody,
-                                encoding: global::System.Text.Encoding.UTF8,
-                                mediaType: "application/gzip");
+
+                            var __httpRequestContent = new global::System.Net.Http.ByteArrayContent(request);
+                            __httpRequestContent.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue("application/gzip");
                             __httpRequest.Content = __httpRequestContent;
                 global::G.AutoSDKRequestOptionsSupport.ApplyHeaders(
                     request: __httpRequest,
@@ -508,29 +506,6 @@ namespace G
             {
                 __httpRequest?.Dispose();
             }
-        }
-        /// <summary>
-        /// Replace ollie state<br/>
-        /// Upload gzip-compressed SQLite DB file, replacing any existing state
-        /// </summary>
-        /// <param name="contentLength"></param>
-        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
-        /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task ReplaceOllieStateAsync(
-            long? contentLength = default,
-            global::G.AutoSDKRequestOptions? requestOptions = default,
-            global::System.Threading.CancellationToken cancellationToken = default)
-        {
-            var __request = new object
-            {
-            };
-
-            await ReplaceOllieStateAsync(
-                contentLength: contentLength,
-                request: __request,
-                requestOptions: requestOptions,
-                cancellationToken: cancellationToken).ConfigureAwait(false);
         }
     }
 }

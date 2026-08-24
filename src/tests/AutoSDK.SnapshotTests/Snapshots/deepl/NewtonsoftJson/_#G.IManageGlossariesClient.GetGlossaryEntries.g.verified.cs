@@ -1,4 +1,4 @@
-﻿//HintName: G.IManageGlossariesClient.GetGlossaryEntries.g.cs
+//HintName: G.IManageGlossariesClient.GetGlossaryEntries.g.cs
 #nullable enable
 
 namespace G
@@ -16,7 +16,7 @@ namespace G
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-        global::System.Threading.Tasks.Task GetGlossaryEntriesAsync(
+        global::System.Threading.Tasks.Task<string> GetGlossaryEntriesAsync(
             string glossaryId,
             global::G.GetGlossaryEntriesAccept? accept = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
@@ -32,7 +32,7 @@ namespace G
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse> GetGlossaryEntriesAsResponseAsync(
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<string>> GetGlossaryEntriesAsResponseAsync(
             string glossaryId,
             global::G.GetGlossaryEntriesAccept? accept = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,

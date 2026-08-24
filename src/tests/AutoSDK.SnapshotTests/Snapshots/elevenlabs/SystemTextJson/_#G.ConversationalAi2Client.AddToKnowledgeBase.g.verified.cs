@@ -1,4 +1,4 @@
-﻿//HintName: G.ConversationalAi2Client.AddToKnowledgeBase.g.cs
+//HintName: G.ConversationalAi2Client.AddToKnowledgeBase.g.cs
 
 #nullable enable
 
@@ -132,22 +132,6 @@ namespace G
 
 
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
-                            if (agentId != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(agentId ?? string.Empty),
-                                    name: "\"agent_id\"");
-
-                            }
-                            if (xiApiKey != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(xiApiKey ?? string.Empty),
-                                    name: "\"xi-api-key\"");
-
-                            }
                             if (request.Name != default)
                             {
 

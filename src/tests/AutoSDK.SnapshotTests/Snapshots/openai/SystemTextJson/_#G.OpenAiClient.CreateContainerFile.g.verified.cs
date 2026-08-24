@@ -1,4 +1,4 @@
-﻿//HintName: G.OpenAiClient.CreateContainerFile.g.cs
+//HintName: G.OpenAiClient.CreateContainerFile.g.cs
 
 #nullable enable
 
@@ -154,10 +154,6 @@ namespace G
             }
 
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
-                            __httpRequestContent.Add(
-                                content: new global::System.Net.Http.StringContent(containerId ?? string.Empty),
-                                name: "\"container_id\"");
-
                             if (request.FileId != default)
                             {
 

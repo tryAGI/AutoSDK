@@ -1,4 +1,4 @@
-﻿//HintName: G.Commands.ManageGlossariesGetGlossaryEntriesCommand.g.cs
+//HintName: G.Commands.ManageGlossariesGetGlossaryEntriesCommand.g.cs
 
 #nullable enable
 
@@ -17,6 +17,8 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
+
+            string response,
             global::System.Threading.CancellationToken cancellationToken);
 
         private global::System.CommandLine.Argument<string> GlossaryId { get; } = new(
@@ -63,13 +65,15 @@ namespace G
                 cancellationToken: cancellationToken);
 
             // ReSharper disable once RedundantAssignment
-            await _client.ManageGlossaries.GetGlossaryEntriesAsync(
+            var response = await _client.ManageGlossaries.GetGlossaryEntriesAsync(
                 glossaryId: glossaryId,
                 accept: accept,
                 cancellationToken: cancellationToken);
 
             Complete(
                 parseResult: parseResult,
+
+                response: response,
                 cancellationToken: cancellationToken);
         }
     }

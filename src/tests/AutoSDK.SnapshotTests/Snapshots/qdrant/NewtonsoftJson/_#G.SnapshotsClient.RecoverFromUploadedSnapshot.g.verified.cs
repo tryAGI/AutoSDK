@@ -1,4 +1,4 @@
-﻿//HintName: G.SnapshotsClient.RecoverFromUploadedSnapshot.g.cs
+//HintName: G.SnapshotsClient.RecoverFromUploadedSnapshot.g.cs
 
 #nullable enable
 
@@ -219,34 +219,6 @@ namespace G
             }
 
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
-                            __httpRequestContent.Add(
-                                content: new global::System.Net.Http.StringContent(collectionName ?? string.Empty),
-                                name: "\"collection_name\"");
-
-                            if (wait != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(wait, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
-                                    name: "\"wait\"");
-
-                            }
-                            if (priority != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent((priority).HasValue ? (priority).GetValueOrDefault().ToValueString() : string.Empty),
-                                    name: "\"priority\"");
-
-                            }
-                            if (checksum != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(checksum ?? string.Empty),
-                                    name: "\"checksum\"");
-
-                            }
                             if (request.Snapshot != default)
                             {
 

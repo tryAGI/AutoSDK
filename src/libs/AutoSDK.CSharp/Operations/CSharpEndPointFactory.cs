@@ -66,12 +66,14 @@ public static class CSharpEndPointFactory
             requestType = CreateSequentialCollectionType(requestItemType, operation.Settings);
         }
 
-        if (requestType == null && requestMediaType == "application/octet-stream")
+        if (requestType == null &&
+            MediaTypeCapabilities.GetRequestSupport(requestMediaType) == MediaTypeTransportSupport.Raw)
         {
+            var rawText = MediaTypeCapabilities.Classify(requestMediaType) == MediaTypeKind.Text;
             requestType = (TypeData.Default with
             {
-                CSharpTypeRaw = "byte[]",
-                IsBinary = true,
+                CSharpTypeRaw = rawText ? "string" : "byte[]",
+                IsBinary = !rawText,
                 GeneratedNamespace = operation.Settings.Namespace,
             }).WithCSharpComputedValues();
         }
@@ -135,6 +137,8 @@ public static class CSharpEndPointFactory
 
         var successResponse = responses.Any(x => x.Is2XX && !string.IsNullOrWhiteSpace(x.Type.CSharpTypeRaw))
             ? responses.First(x => x.Is2XX && !string.IsNullOrWhiteSpace(x.Type.CSharpTypeRaw))
+            : responses.Any(x => x.Is2XX && !string.IsNullOrWhiteSpace(x.MimeType))
+                ? responses.First(x => x.Is2XX && !string.IsNullOrWhiteSpace(x.MimeType))
             : responses.Any(x => x.Is2XX)
                 ? responses.First(x => x.Is2XX)
                 : responses.Any(x => x.IsDefault)

@@ -1,4 +1,4 @@
-﻿//HintName: G.MarkdownClient.MarkdownRenderRaw.g.cs
+//HintName: G.MarkdownClient.MarkdownRenderRaw.g.cs
 
 #nullable enable
 
@@ -99,9 +99,9 @@ namespace G
                 __httpRequest.Version = global::System.Net.HttpVersion.Version11;
                 __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
-                            var __httpRequestContentBody = global::Newtonsoft.Json.JsonConvert.SerializeObject(request, JsonSerializerOptions);
+
                             var __httpRequestContent = new global::System.Net.Http.StringContent(
-                                content: __httpRequestContentBody,
+                                content: request,
                                 encoding: global::System.Text.Encoding.UTF8,
                                 mediaType: "text/plain");
                             __httpRequest.Content = __httpRequestContent;

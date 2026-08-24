@@ -1,4 +1,4 @@
-﻿//HintName: G.VoicesClient.Update2.g.cs
+//HintName: G.VoicesClient.Update2.g.cs
 
 #nullable enable
 
@@ -131,18 +131,6 @@ namespace G
 
 
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
-                            __httpRequestContent.Add(
-                                content: new global::System.Net.Http.StringContent(voiceId ?? string.Empty),
-                                name: "\"voice_id\"");
-
-                            if (xiApiKey != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(xiApiKey ?? string.Empty),
-                                    name: "\"xi-api-key\"");
-
-                            }
                             __httpRequestContent.Add(
                                 content: new global::System.Net.Http.StringContent(request.Name ?? string.Empty),
                                 name: "\"name\"");
