@@ -1386,10 +1386,274 @@ namespace {endPoint.Settings.Namespace}
             settings);
     }
 
+    private static string GenerateMultipartParameterContent(
+        EndPoint endPoint,
+        MethodParameter parameter,
+        bool multipartStreamRequest)
+    {
+        var valueExpression = multipartStreamRequest && IsMultipartBinaryParameter(parameter)
+            ? parameter.ParameterName
+            : $"request.{parameter.Name}";
+        var add = (parameter.Type.AnyOfCount > 0 || parameter.Type.OneOfCount > 0) &&
+                  !parameter.Type.SubTypes.IsEmpty
+            ? GenerateMultipartUnionContent(parameter, valueExpression)
+            : GenerateMultipartTypedContent(
+                endPoint,
+                parameter,
+                parameter.Type,
+                valueExpression,
+                suffix: string.Empty,
+                useStream: multipartStreamRequest && IsMultipartBinaryParameter(parameter),
+                isTopLevelParameter: true);
+
+        if (parameter.IsRequired)
+        {
+            return add + "\n";
+        }
+
+        return $@"
+            if ({valueExpression} != {parameter.ParameterDefaultValue})
+            {{
+{add.AddIndent(1)}
+            }}
+";
+    }
+
+    private static bool RequiresMultipartUnionExpansion(TypeData type)
+    {
+        return (type.AnyOfCount > 0 || type.OneOfCount > 0) &&
+               type.SubTypes.Any(static subType =>
+               {
+                   var value = subType.Unbox<TypeData>();
+                   return value.IsBinary || value.IsArray;
+               });
+    }
+
+    private static string GenerateMultipartUnionContent(
+        MethodParameter parameter,
+        string valueExpression)
+    {
+        var unionExpression = parameter.Type.CSharpTypeNullability
+            ? $"({valueExpression}).GetValueOrDefault()"
+            : valueExpression;
+        var variants = parameter.Type.SubTypes
+            .Select(static x => x.Unbox<TypeData>())
+            .ToArray();
+
+        return variants.Select((variant, index) =>
+        {
+            var variantNumber = index + 1;
+            var variantName = index < parameter.UnionVariantNames.Length &&
+                              !string.IsNullOrWhiteSpace(parameter.UnionVariantNames[index])
+                ? parameter.UnionVariantNames[index]
+                : $"Value{variantNumber}";
+            var localName = $"__value{parameter.Name}{variantNumber}";
+            var content = GenerateMultipartTypedContent(
+                endPoint: default,
+                parameter,
+                variant,
+                localName,
+                suffix: variantNumber.ToString(global::System.Globalization.CultureInfo.InvariantCulture),
+                useStream: false,
+                isTopLevelParameter: false);
+
+            return $@"
+            {(index == 0 ? "if" : "else if")} ({unionExpression}.TryPick{variantName}(out var {localName}))
+            {{
+{content.AddIndent(1)}
+            }}";
+        }).Inject();
+    }
+
+    private static string GenerateMultipartTypedContent(
+        EndPoint endPoint,
+        MethodParameter parameter,
+        TypeData type,
+        string valueExpression,
+        string suffix,
+        bool useStream,
+        bool isTopLevelParameter)
+    {
+        if (type.IsArray && !type.SubTypes.IsEmpty)
+        {
+            return GenerateMultipartArrayContent(
+                parameter,
+                type.SubTypes[0].Unbox<TypeData>(),
+                valueExpression,
+                suffix,
+                useStream,
+                isTopLevelParameter);
+        }
+
+        if (type.IsBinary)
+        {
+            string? suppliedFileNameExpression = null;
+            if (isTopLevelParameter)
+            {
+                var filenamePropertyName = endPoint.Parameters
+                    .Where(p => string.Equals(p.Name, parameter.Name + "name", StringComparison.OrdinalIgnoreCase))
+                    .Select(static p => p.Name)
+                    .FirstOrDefault() ?? (parameter.Name + "name");
+                suppliedFileNameExpression = $"request.{filenamePropertyName}";
+            }
+
+            return GenerateMultipartBinaryPart(
+                parameter,
+                valueExpression,
+                suffix,
+                useStream,
+                suppliedFileNameExpression);
+        }
+
+        return GenerateMultipartStringPart(
+            parameter,
+            type,
+            valueExpression,
+            suffix,
+            isNullableLike: IsNullableLike(type));
+    }
+
+    private static string GenerateMultipartArrayContent(
+        MethodParameter parameter,
+        TypeData itemType,
+        string valueExpression,
+        string suffix,
+        bool useStream,
+        bool isTopLevelParameter)
+    {
+        var indexName = $"__i{parameter.Name}{suffix}";
+        var collectionExpression = $"({valueExpression}!)";
+        var itemExpression = $"{collectionExpression}[{indexName}]";
+        string itemContent;
+        if (itemType.IsBinary)
+        {
+            var suppliedFileNameExpression = useStream && isTopLevelParameter
+                ? $"{parameter.ParameterName}FileNames != null && " +
+                  $"{indexName} < {parameter.ParameterName}FileNames.Count && " +
+                  $"{parameter.ParameterName}FileNames[{indexName}] != null " +
+                  $"? {parameter.ParameterName}FileNames[{indexName}] : null"
+                : null;
+            itemContent = GenerateMultipartBinaryPart(
+                parameter,
+                itemExpression,
+                suffix + "Item",
+                useStream,
+                suppliedFileNameExpression,
+                defaultFileNameExpression: $"$\"file{{{indexName}}}.bin\"");
+        }
+        else
+        {
+            itemContent = GenerateMultipartStringPart(
+                parameter,
+                itemType,
+                itemExpression,
+                suffix + "Item",
+                isNullableLike: !itemType.IsValueType && IsNullableLike(itemType));
+        }
+
+        return $@"
+            for (var {indexName} = 0; {indexName} < {collectionExpression}.Count; {indexName}++)
+            {{
+{itemContent.AddIndent(1)}
+            }}";
+    }
+
+    private static string GenerateMultipartBinaryPart(
+        MethodParameter parameter,
+        string valueExpression,
+        string suffix,
+        bool useStream,
+        string? suppliedFileNameExpression,
+        string defaultFileNameExpression = "\"file.bin\"")
+    {
+        var contentName = $"__content{parameter.Name}{suffix}";
+        var fileNameName = $"__fileName{parameter.Name}{suffix}";
+        var fileNameExpression = string.IsNullOrWhiteSpace(suppliedFileNameExpression)
+            ? defaultFileNameExpression
+            : $"({suppliedFileNameExpression}) ?? {defaultFileNameExpression}";
+        var contentConstructor = useStream
+            ? $"new global::System.Net.Http.StreamContent({valueExpression})"
+            : $"new global::System.Net.Http.ByteArrayContent({valueExpression} ?? global::System.Array.Empty<byte>())";
+        var partName = $"\"{parameter.Id}\"".ToCSharpStringLiteral();
+
+        return $@"
+            var {fileNameName} = {fileNameExpression};
+            var {contentName} = {contentConstructor};
+{GenerateMultipartBinaryContentTypeAssignment(contentName, fileNameName, parameter.ContentType)}
+            __httpRequestContent.Add(
+                content: {contentName},
+                name: {partName},
+                fileName: $""\""{{{fileNameName}}}\"""");
+            if ({contentName}.Headers.ContentDisposition != null)
+            {{
+                {contentName}.Headers.ContentDisposition.FileNameStar = null;
+            }}";
+    }
+
+    private static string GenerateMultipartStringPart(
+        MethodParameter parameter,
+        TypeData type,
+        string valueExpression,
+        string suffix,
+        bool isNullableLike)
+    {
+        var contentName = $"__content{parameter.Name}{suffix}";
+        var serializedValueExpression = !type.IsValueType &&
+                                        type.CSharpTypeWithoutNullability != "string"
+            ? $"({valueExpression}!)"
+            : valueExpression;
+        var jsonSerializedValueExpression = type.IsValueType && isNullableLike
+            ? $"({valueExpression}).GetValueOrDefault()"
+            : serializedValueExpression;
+        var serializedValue = type.AllOfCount > 0
+            ? GenerateMultipartJsonSerializeExpression(jsonSerializedValueExpression, parameter.Settings)
+            : GenerateSerializedValueExpression(
+                type,
+                serializedValueExpression,
+                isNullableLike,
+                parameter.Settings);
+        var contentType = !string.IsNullOrWhiteSpace(parameter.ContentType)
+            ? parameter.ContentType
+            : !type.IsEnum && type.Properties.Length > 0
+                ? "application/json"
+                : null;
+        var contentTypeAssignment = string.IsNullOrWhiteSpace(contentType)
+            ? TrimmedLine
+            : $@"            {contentName}.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue({contentType!.ToCSharpStringLiteral()});";
+        var partName = $"\"{parameter.Id}\"".ToCSharpStringLiteral();
+
+        return $@"
+            var {contentName} = new global::System.Net.Http.StringContent({serializedValue});
+{contentTypeAssignment}
+            __httpRequestContent.Add(
+                content: {contentName},
+                name: {partName});".RemoveBlankLinesWhereOnlyWhitespaces();
+    }
+
+    private static string GenerateMultipartJsonSerializeExpression(
+        string valueExpression,
+        EmitterSettings settings)
+    {
+        if (!settings.UsesSystemTextJson())
+        {
+            return $"global::Newtonsoft.Json.JsonConvert.SerializeObject({valueExpression}, JsonSerializerOptions)";
+        }
+
+        return settings.HasJsonSerializerContext()
+            ? $"global::System.Text.Json.JsonSerializer.Serialize({valueExpression}, {valueExpression}.GetType(), JsonSerializerContext)"
+            : $"global::System.Text.Json.JsonSerializer.Serialize({valueExpression}, JsonSerializerOptions)";
+    }
+
     private static string GenerateMultipartBinaryContentTypeAssignment(
         string contentVariableName,
-        string? fileNameExpression)
+        string? fileNameExpression,
+        string? explicitContentType = null)
     {
+        if (!string.IsNullOrWhiteSpace(explicitContentType))
+        {
+            return $@"            {contentVariableName}.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue({explicitContentType!.ToCSharpStringLiteral()});";
+        }
+
         if (string.IsNullOrWhiteSpace(fileNameExpression))
         {
             return $@"            {contentVariableName}.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue(""application/octet-stream"");";
@@ -2672,11 +2936,16 @@ namespace {endPoint.Settings.Namespace}
         {
             return $@"
             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
-{endPoint.Parameters.Where(x => !x.IsMultiPartFormDataFilename).Select(x =>
+{endPoint.Parameters
+    .Where(static x => !x.IsMultiPartFormDataFilename)
+    .Select(x =>
 {
+    if (x.Location == null && RequiresMultipartUnionExpansion(x.Type))
+    {
+        return GenerateMultipartParameterContent(endPoint, x, multipartStreamRequest);
+    }
+
     var isBinaryArray = IsBinaryArrayParameter(x);
-    // Resolve the actual filename property: prefer the synthetic companion, fall back to
-    // a case-insensitive match among siblings (e.g. FileName from file_name for binary file)
     var filenamePropName = x.Type.IsBinary
         ? endPoint.Parameters
             .Where(p => string.Equals(p.Name, x.Name + "name", StringComparison.OrdinalIgnoreCase))
@@ -2758,7 +3027,8 @@ namespace {endPoint.Settings.Namespace}
             {{
 {add.AddIndent(1)}
             }}";
-}).Inject()}
+})
+    .Inject()}
 
             __httpRequest.Content = __httpRequestContent;
 ".RemoveBlankLinesWhereOnlyWhitespaces();

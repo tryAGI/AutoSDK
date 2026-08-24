@@ -320,12 +320,36 @@ namespace G
                             }
                             if (request.EntityDetection != default)
                             {
+                                if ((request.EntityDetection).GetValueOrDefault().TryPickValue1(out var __valueEntityDetection1))
+                                {
 
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(request.EntityDetection.ToString() ?? string.Empty),
-                                    name: "\"entity_detection\"");
+                                    var __contentEntityDetection1 = new global::System.Net.Http.StringContent(__valueEntityDetection1 ?? string.Empty);
+                                    __httpRequestContent.Add(
+                                        content: __contentEntityDetection1,
+                                        name: "\"entity_detection\"");
+                                }
+                                else if ((request.EntityDetection).GetValueOrDefault().TryPickValue2(out var __valueEntityDetection2))
+                                {
 
+                                    for (var __iEntityDetection2 = 0; __iEntityDetection2 < (__valueEntityDetection2!).Count; __iEntityDetection2++)
+                                    {
+
+                                        var __contentEntityDetection2Item = new global::System.Net.Http.StringContent((__valueEntityDetection2!)[__iEntityDetection2] ?? string.Empty);
+                                        __httpRequestContent.Add(
+                                            content: __contentEntityDetection2Item,
+                                            name: "\"entity_detection\"");
+                                    }
+                                }
+                                else if ((request.EntityDetection).GetValueOrDefault().TryPickValue3(out var __valueEntityDetection3))
+                                {
+
+                                    var __contentEntityDetection3 = new global::System.Net.Http.StringContent((__valueEntityDetection3!).ToString() ?? string.Empty);
+                                    __httpRequestContent.Add(
+                                        content: __contentEntityDetection3,
+                                        name: "\"entity_detection\"");
+                                }
                             }
+
                             if (request.NoVerbatim != default)
                             {
 

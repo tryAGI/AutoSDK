@@ -1,4 +1,5 @@
 using System.Collections.Immutable;
+using AutoSDK.Extensions;
 
 namespace AutoSDK.Models;
 
@@ -53,7 +54,7 @@ public record struct EndPoint(
     public bool Stream => StreamFormat != StreamFormat.None;
     public bool RawStream => StreamFormat == StreamFormat.Binary;
     public bool EnumerableStream => Stream && !RawStream;
-    public bool IsMultipartFormData => RequestMediaType == "multipart/form-data";
+    public bool IsMultipartFormData => RequestMediaType.IsMimeType("multipart/form-data");
     public bool HasLocationWaitCompanion => !string.IsNullOrEmpty(LocationWaitCompanion.SiblingMethodName);
     public bool HasPageableHelper => PageableMetadata.Style != PageableStyle.None;
 }

@@ -37,7 +37,8 @@ public static class CSharpEndPointFactory
         bool? forcedRequestStreamValue = null,
         EndPointResponse? successResponseOverride = null,
         StreamFormat? streamFormatOverride = null,
-        string? streamTerminator = null)
+        string? streamTerminator = null,
+        IReadOnlyCollection<AnyOfData>? anyOfDatas = null)
     {
         operation = operation ?? throw new ArgumentNullException(nameof(operation));
 
@@ -53,27 +54,10 @@ public static class CSharpEndPointFactory
             .Select(x => x.ParameterData!.Value)
             .ToList();
 
-        var requestMediaTypes =
-            operation.Operation.RequestBody?.Content ??
-            new Dictionary<string, IOpenApiMediaType>();
-
-        var requestMediaType = requestMediaTypes
-            .Select(x => x.Key)
-            .FirstOrDefault() ?? "application/json";
-        var requestContext = operation.Schemas.FirstOrDefault(x =>
-                x.Hint == Hint.Request &&
-                x.ContentType == requestMediaType &&
-                !x.IsMediaTypeItemSchema) ??
-            operation.Schemas.FirstOrDefault(x =>
-                x.Hint == Hint.Request &&
-                !x.IsMediaTypeItemSchema);
-        var requestItemContext = operation.Schemas.FirstOrDefault(x =>
-                x.Hint == Hint.Request &&
-                x.ContentType == requestMediaType &&
-                x.IsMediaTypeItemSchema) ??
-            operation.Schemas.FirstOrDefault(x =>
-                x.Hint == Hint.Request &&
-                x.IsMediaTypeItemSchema);
+        var requestRepresentation = RequestRepresentationPlanner.Select(operation);
+        var requestMediaType = requestRepresentation.MediaType;
+        var requestContext = requestRepresentation.SchemaContext;
+        var requestItemContext = requestRepresentation.ItemSchemaContext;
         TypeData? requestType = requestContext?.TypeData;
         if (requestType == null &&
             requestItemContext?.TypeData is { CSharpTypeWithoutNullability.Length: > 0 } requestItemType &&
@@ -110,6 +94,12 @@ public static class CSharpEndPointFactory
                 continue;
             }
 
+            var encoding = requestRepresentation.MediaTypeData?.Encoding != null &&
+                           requestRepresentation.MediaTypeData.Encoding.TryGetValue(requestProperty.Id, out var propertyEncoding)
+                ? propertyEncoding
+                : null;
+            var unionVariantNames = GetUnionVariantNames(requestContext, requestProperty, anyOfDatas);
+
             parameters.Add((MethodParameter.Default with
             {
                 Id = requestProperty.Id,
@@ -130,6 +120,10 @@ public static class CSharpEndPointFactory
                 Summary = requestProperty.Summary,
                 ConverterType = requestProperty.ConverterType,
                 Description = requestProperty.Description,
+                ContentType = encoding?.ContentType,
+                Style = encoding?.Style,
+                Explode = encoding?.Explode ?? false,
+                UnionVariantNames = unionVariantNames,
             }).WithCSharpParameterNames().WithCSharpComputedValues());
         }
 
@@ -465,6 +459,131 @@ public static class CSharpEndPointFactory
         }
 
         return builder.ToImmutable();
+    }
+
+    private static EquatableArray<string> GetUnionVariantNames(
+        SchemaContext? requestContext,
+        PropertyData property,
+        IReadOnlyCollection<AnyOfData>? anyOfDatas)
+    {
+        if (!property.Type.IsAnyOfLike)
+        {
+            return [];
+        }
+
+        var propertyContext = FindPropertyContext(requestContext, property);
+        var anyOfData = propertyContext?.AnyOfData;
+        if (anyOfData is not { Properties.Length: > 0 })
+        {
+            anyOfData = propertyContext?.ResolvedReference?.AnyOfData;
+        }
+        if (anyOfData is not { Properties.Length: > 0 })
+        {
+            anyOfData = FindUnionData(requestContext, property.Type);
+        }
+        if (anyOfData is not { Properties.Length: > 0 })
+        {
+            anyOfData = anyOfDatas?.FirstOrDefault(x =>
+                            x.IsNamed &&
+                            string.Equals(
+                                x.Name,
+                                property.Type.ShortCSharpTypeWithoutNullability,
+                                StringComparison.Ordinal));
+        }
+        if (anyOfData is { Properties.Length: > 0 })
+        {
+            return anyOfData.Value.Properties
+                .Select(static x => x.Name)
+                .ToImmutableArray()
+                .AsEquatableArray();
+        }
+
+        var count = property.Type.AnyOfCount + property.Type.OneOfCount + property.Type.AllOfCount;
+        return Enumerable.Range(1, count)
+            .Select(static x => $"Value{x}")
+            .ToImmutableArray()
+            .AsEquatableArray();
+    }
+
+    private static AnyOfData? FindUnionData(
+        SchemaContext? requestContext,
+        TypeData type)
+    {
+        if (requestContext == null)
+        {
+            return null;
+        }
+
+        var pending = new Stack<SchemaContext>();
+        var visited = new HashSet<SchemaContext>();
+        pending.Push(requestContext);
+        while (pending.Count > 0)
+        {
+            var current = pending.Pop();
+            if (!visited.Add(current))
+            {
+                continue;
+            }
+
+            if (current.AnyOfData is { Properties.Length: > 0 } currentData &&
+                current.TypeData.CSharpTypeWithoutNullability == type.CSharpTypeWithoutNullability)
+            {
+                return currentData;
+            }
+
+            if (current.ResolvedReference != null)
+            {
+                pending.Push(current.ResolvedReference);
+            }
+
+            for (var i = current.Children.Count - 1; i >= 0; i--)
+            {
+                pending.Push(current.Children[i]);
+            }
+        }
+
+        return null;
+    }
+
+    private static SchemaContext? FindPropertyContext(
+        SchemaContext? requestContext,
+        PropertyData property)
+    {
+        if (requestContext == null)
+        {
+            return null;
+        }
+
+        var pending = new Stack<SchemaContext>();
+        var visited = new HashSet<SchemaContext>();
+        pending.Push(requestContext);
+        while (pending.Count > 0)
+        {
+            var current = pending.Pop();
+            if (!visited.Add(current))
+            {
+                continue;
+            }
+
+            if (current is { IsProperty: true, PropertyData: not null } &&
+                (current.PropertyData.Value.Id == property.Id ||
+                 current.PropertyData.Value.Name == property.Name))
+            {
+                return current;
+            }
+
+            if (current.ResolvedReference != null)
+            {
+                pending.Push(current.ResolvedReference);
+            }
+
+            for (var i = current.Children.Count - 1; i >= 0; i--)
+            {
+                pending.Push(current.Children[i]);
+            }
+        }
+
+        return null;
     }
 
     private static IList<SchemaContext>? GetPropertySource(SchemaContext context)

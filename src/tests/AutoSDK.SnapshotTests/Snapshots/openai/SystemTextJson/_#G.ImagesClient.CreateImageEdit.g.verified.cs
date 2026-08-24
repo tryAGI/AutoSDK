@@ -142,9 +142,94 @@ namespace G
             }
 
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
-                            __httpRequestContent.Add(
-                                content: new global::System.Net.Http.StringContent(request.Image.ToString() ?? string.Empty),
-                                name: "\"image\"");
+                            if (request.Image.TryPickValue1(out var __valueImage1))
+                            {
+
+                                var __fileNameImage1 = "file.bin";
+                                var __contentImage1 = new global::System.Net.Http.ByteArrayContent(__valueImage1 ?? global::System.Array.Empty<byte>());
+                                __contentImage1.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue(
+                                    __fileNameImage1 is null
+                                        ? "application/octet-stream"
+                                        : (global::System.IO.Path.GetExtension(__fileNameImage1) ?? string.Empty).ToLowerInvariant() switch
+                                        {
+                                            ".aac" => "audio/aac",
+                                            ".flac" => "audio/flac",
+                                            ".gif" => "image/gif",
+                                            ".jpeg" => "image/jpeg",
+                                            ".jpg" => "image/jpeg",
+                                            ".json" => "application/json",
+                                            ".m4a" => "audio/mp4",
+                                            ".mp3" => "audio/mpeg",
+                                            ".mp4" => "video/mp4",
+                                            ".mpeg" => "audio/mpeg",
+                                            ".mpga" => "audio/mpeg",
+                                            ".oga" => "audio/ogg",
+                                            ".ogg" => "audio/ogg",
+                                            ".opus" => "audio/ogg",
+                                            ".pdf" => "application/pdf",
+                                            ".png" => "image/png",
+                                            ".txt" => "text/plain",
+                                            ".wav" => "audio/wav",
+                                            ".weba" => "audio/webm",
+                                            ".webm" => "video/webm",
+                                            ".webp" => "image/webp",
+                                            _ => "application/octet-stream",
+                                        });
+                                __httpRequestContent.Add(
+                                    content: __contentImage1,
+                                    name: "\"image\"",
+                                    fileName: $"\"{__fileNameImage1}\"");
+                                if (__contentImage1.Headers.ContentDisposition != null)
+                                {
+                                    __contentImage1.Headers.ContentDisposition.FileNameStar = null;
+                                }
+                            }
+                            else if (request.Image.TryPickValue2(out var __valueImage2))
+                            {
+
+                                for (var __iImage2 = 0; __iImage2 < (__valueImage2!).Count; __iImage2++)
+                                {
+
+                                    var __fileNameImage2Item = $"file{__iImage2}.bin";
+                                    var __contentImage2Item = new global::System.Net.Http.ByteArrayContent((__valueImage2!)[__iImage2] ?? global::System.Array.Empty<byte>());
+                                    __contentImage2Item.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue(
+                                        __fileNameImage2Item is null
+                                            ? "application/octet-stream"
+                                            : (global::System.IO.Path.GetExtension(__fileNameImage2Item) ?? string.Empty).ToLowerInvariant() switch
+                                            {
+                                                ".aac" => "audio/aac",
+                                                ".flac" => "audio/flac",
+                                                ".gif" => "image/gif",
+                                                ".jpeg" => "image/jpeg",
+                                                ".jpg" => "image/jpeg",
+                                                ".json" => "application/json",
+                                                ".m4a" => "audio/mp4",
+                                                ".mp3" => "audio/mpeg",
+                                                ".mp4" => "video/mp4",
+                                                ".mpeg" => "audio/mpeg",
+                                                ".mpga" => "audio/mpeg",
+                                                ".oga" => "audio/ogg",
+                                                ".ogg" => "audio/ogg",
+                                                ".opus" => "audio/ogg",
+                                                ".pdf" => "application/pdf",
+                                                ".png" => "image/png",
+                                                ".txt" => "text/plain",
+                                                ".wav" => "audio/wav",
+                                                ".weba" => "audio/webm",
+                                                ".webm" => "video/webm",
+                                                ".webp" => "image/webp",
+                                                _ => "application/octet-stream",
+                                            });
+                                    __httpRequestContent.Add(
+                                        content: __contentImage2Item,
+                                        name: "\"image\"",
+                                        fileName: $"\"{__fileNameImage2Item}\"");
+                                    if (__contentImage2Item.Headers.ContentDisposition != null)
+                                    {
+                                        __contentImage2Item.Headers.ContentDisposition.FileNameStar = null;
+                                    }
+                                }
+                            }
 
                             __httpRequestContent.Add(
                                 content: new global::System.Net.Http.StringContent(request.Prompt ?? string.Empty),

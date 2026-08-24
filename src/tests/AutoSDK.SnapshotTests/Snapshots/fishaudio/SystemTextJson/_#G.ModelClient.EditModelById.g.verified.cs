@@ -29,12 +29,12 @@ namespace G
         partial void PrepareEditModelByIdArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string id,
-            global::G.PatchModelRequest request);
+            global::G.PatchModelRequest3 request);
         partial void PrepareEditModelByIdRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string id,
-            global::G.PatchModelRequest request);
+            global::G.PatchModelRequest3 request);
         partial void ProcessEditModelByIdResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -50,7 +50,7 @@ namespace G
         public async global::System.Threading.Tasks.Task EditModelByIdAsync(
             string id,
 
-            global::G.PatchModelRequest request,
+            global::G.PatchModelRequest3 request,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -73,7 +73,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse> EditModelByIdAsResponseAsync(
             string id,
 
-            global::G.PatchModelRequest request,
+            global::G.PatchModelRequest3 request,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -104,7 +104,7 @@ namespace G
             var __maxAttempts = global::G.AutoSDKRequestOptionsSupport.GetMaxAttempts(
                 clientOptions: Options,
                 requestOptions: requestOptions,
-                supportsRetry: true);
+                supportsRetry: false);
 
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
@@ -141,12 +141,104 @@ namespace G
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
                 } 
             }
-                            var __httpRequestContentBody = request.ToJson(JsonSerializerOptions);
-                            var __httpRequestContent = new global::System.Net.Http.StringContent(
-                                content: __httpRequestContentBody,
-                                encoding: global::System.Text.Encoding.UTF8,
-                                mediaType: "application/json");
+
+                            var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
+                            __httpRequestContent.Add(
+                                content: new global::System.Net.Http.StringContent(id ?? string.Empty),
+                                name: "\"id\"");
+
+                            if (request.Title != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(request.Title ?? string.Empty),
+                                    name: "\"title\"");
+
+                            }
+                            if (request.Description != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(request.Description ?? string.Empty),
+                                    name: "\"description\"");
+
+                            }
+                            if (request.CoverImage != default)
+                            {
+
+                                var __contentCoverImage = new global::System.Net.Http.ByteArrayContent(request.CoverImage ?? global::System.Array.Empty<byte>());
+                                __contentCoverImage.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue(
+                                    request.CoverImagename is null
+                                        ? "application/octet-stream"
+                                        : (global::System.IO.Path.GetExtension(request.CoverImagename) ?? string.Empty).ToLowerInvariant() switch
+                                        {
+                                            ".aac" => "audio/aac",
+                                            ".flac" => "audio/flac",
+                                            ".gif" => "image/gif",
+                                            ".jpeg" => "image/jpeg",
+                                            ".jpg" => "image/jpeg",
+                                            ".json" => "application/json",
+                                            ".m4a" => "audio/mp4",
+                                            ".mp3" => "audio/mpeg",
+                                            ".mp4" => "video/mp4",
+                                            ".mpeg" => "audio/mpeg",
+                                            ".mpga" => "audio/mpeg",
+                                            ".oga" => "audio/ogg",
+                                            ".ogg" => "audio/ogg",
+                                            ".opus" => "audio/ogg",
+                                            ".pdf" => "application/pdf",
+                                            ".png" => "image/png",
+                                            ".txt" => "text/plain",
+                                            ".wav" => "audio/wav",
+                                            ".weba" => "audio/webm",
+                                            ".webm" => "video/webm",
+                                            ".webp" => "image/webp",
+                                            _ => "application/octet-stream",
+                                        });
+                                __httpRequestContent.Add(
+                                    content: __contentCoverImage,
+                                    name: "\"cover_image\"",
+                                    fileName: request.CoverImagename != null ? $"\"{request.CoverImagename}\"" : string.Empty);
+                                if (__contentCoverImage.Headers.ContentDisposition != null)
+                                {
+                                    __contentCoverImage.Headers.ContentDisposition.FileNameStar = null;
+                                }
+
+                            }
+                            if (request.Visibility != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(request.Visibility.ToString() ?? string.Empty),
+                                    name: "\"visibility\"");
+
+                            }
+                            if (request.Tags != default)
+                            {
+                                if ((request.Tags).GetValueOrDefault().TryPickValue1(out var __valueTags1))
+                                {
+
+                                    for (var __iTags1 = 0; __iTags1 < (__valueTags1!).Count; __iTags1++)
+                                    {
+
+                                        var __contentTags1Item = new global::System.Net.Http.StringContent((__valueTags1!)[__iTags1] ?? string.Empty);
+                                        __httpRequestContent.Add(
+                                            content: __contentTags1Item,
+                                            name: "\"tags\"");
+                                    }
+                                }
+                                else if ((request.Tags).GetValueOrDefault().TryPickValue2(out var __valueTags2))
+                                {
+
+                                    var __contentTags2 = new global::System.Net.Http.StringContent(__valueTags2 ?? string.Empty);
+                                    __httpRequestContent.Add(
+                                        content: __contentTags2,
+                                        name: "\"tags\"");
+                                }
+                            }
+
                             __httpRequest.Content = __httpRequestContent;
+
                 global::G.AutoSDKRequestOptionsSupport.ApplyHeaders(
                     request: __httpRequest,
                     clientHeaders: Options.Headers,
@@ -523,12 +615,12 @@ namespace G
             string? description = default,
             byte[]? coverImage = default,
             string? coverImagename = default,
-            global::G.PatchModelRequestVisibility2? visibility = default,
+            global::G.PatchModelRequestVisibility6? visibility = default,
             global::G.AnyOf<global::System.Collections.Generic.IList<string>, string>? tags = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::G.PatchModelRequest
+            var __request = new global::G.PatchModelRequest3
             {
                 Title = title,
                 Description = description,

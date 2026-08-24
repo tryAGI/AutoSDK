@@ -219,27 +219,159 @@ namespace G
                                     content: new global::System.Net.Http.StringContent(request.TrainMode.ToValueString()),
                                     name: "\"train_mode\"");
 
+                            }            if (request.Voices.TryPickValue1(out var __valueVoices1))
+                            {
+
+                                for (var __iVoices1 = 0; __iVoices1 < (__valueVoices1!).Count; __iVoices1++)
+                                {
+
+                                    var __fileNameVoices1Item = $"file{__iVoices1}.bin";
+                                    var __contentVoices1Item = new global::System.Net.Http.ByteArrayContent((__valueVoices1!)[__iVoices1] ?? global::System.Array.Empty<byte>());
+                                    __contentVoices1Item.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue(
+                                        __fileNameVoices1Item is null
+                                            ? "application/octet-stream"
+                                            : (global::System.IO.Path.GetExtension(__fileNameVoices1Item) ?? string.Empty).ToLowerInvariant() switch
+                                            {
+                                                ".aac" => "audio/aac",
+                                                ".flac" => "audio/flac",
+                                                ".gif" => "image/gif",
+                                                ".jpeg" => "image/jpeg",
+                                                ".jpg" => "image/jpeg",
+                                                ".json" => "application/json",
+                                                ".m4a" => "audio/mp4",
+                                                ".mp3" => "audio/mpeg",
+                                                ".mp4" => "video/mp4",
+                                                ".mpeg" => "audio/mpeg",
+                                                ".mpga" => "audio/mpeg",
+                                                ".oga" => "audio/ogg",
+                                                ".ogg" => "audio/ogg",
+                                                ".opus" => "audio/ogg",
+                                                ".pdf" => "application/pdf",
+                                                ".png" => "image/png",
+                                                ".txt" => "text/plain",
+                                                ".wav" => "audio/wav",
+                                                ".weba" => "audio/webm",
+                                                ".webm" => "video/webm",
+                                                ".webp" => "image/webp",
+                                                _ => "application/octet-stream",
+                                            });
+                                    __httpRequestContent.Add(
+                                        content: __contentVoices1Item,
+                                        name: "\"voices\"",
+                                        fileName: $"\"{__fileNameVoices1Item}\"");
+                                    if (__contentVoices1Item.Headers.ContentDisposition != null)
+                                    {
+                                        __contentVoices1Item.Headers.ContentDisposition.FileNameStar = null;
+                                    }
+                                }
                             }
-                            __httpRequestContent.Add(
-                                content: new global::System.Net.Http.StringContent(request.Voices.ToString() ?? string.Empty),
-                                name: "\"voices\"");
+                            else if (request.Voices.TryPickValue2(out var __valueVoices2))
+                            {
+
+                                var __fileNameVoices2 = "file.bin";
+                                var __contentVoices2 = new global::System.Net.Http.ByteArrayContent(__valueVoices2 ?? global::System.Array.Empty<byte>());
+                                __contentVoices2.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue(
+                                    __fileNameVoices2 is null
+                                        ? "application/octet-stream"
+                                        : (global::System.IO.Path.GetExtension(__fileNameVoices2) ?? string.Empty).ToLowerInvariant() switch
+                                        {
+                                            ".aac" => "audio/aac",
+                                            ".flac" => "audio/flac",
+                                            ".gif" => "image/gif",
+                                            ".jpeg" => "image/jpeg",
+                                            ".jpg" => "image/jpeg",
+                                            ".json" => "application/json",
+                                            ".m4a" => "audio/mp4",
+                                            ".mp3" => "audio/mpeg",
+                                            ".mp4" => "video/mp4",
+                                            ".mpeg" => "audio/mpeg",
+                                            ".mpga" => "audio/mpeg",
+                                            ".oga" => "audio/ogg",
+                                            ".ogg" => "audio/ogg",
+                                            ".opus" => "audio/ogg",
+                                            ".pdf" => "application/pdf",
+                                            ".png" => "image/png",
+                                            ".txt" => "text/plain",
+                                            ".wav" => "audio/wav",
+                                            ".weba" => "audio/webm",
+                                            ".webm" => "video/webm",
+                                            ".webp" => "image/webp",
+                                            _ => "application/octet-stream",
+                                        });
+                                __httpRequestContent.Add(
+                                    content: __contentVoices2,
+                                    name: "\"voices\"",
+                                    fileName: $"\"{__fileNameVoices2}\"");
+                                if (__contentVoices2.Headers.ContentDisposition != null)
+                                {
+                                    __contentVoices2.Headers.ContentDisposition.FileNameStar = null;
+                                }
+                            }
 
                             if (request.Texts != default)
                             {
+                                if ((request.Texts).GetValueOrDefault().TryPickValue1(out var __valueTexts1))
+                                {
 
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(request.Texts.ToString() ?? string.Empty),
-                                    name: "\"texts\"");
+                                    for (var __iTexts1 = 0; __iTexts1 < (__valueTexts1!).Count; __iTexts1++)
+                                    {
 
+                                        var __contentTexts1Item = new global::System.Net.Http.StringContent((__valueTexts1!)[__iTexts1] ?? string.Empty);
+                                        __httpRequestContent.Add(
+                                            content: __contentTexts1Item,
+                                            name: "\"texts\"");
+                                    }
+                                }
+                                else if ((request.Texts).GetValueOrDefault().TryPickValue2(out var __valueTexts2))
+                                {
+
+                                    var __contentTexts2 = new global::System.Net.Http.StringContent(__valueTexts2 ?? string.Empty);
+                                    __httpRequestContent.Add(
+                                        content: __contentTexts2,
+                                        name: "\"texts\"");
+                                }
+                                else if ((request.Texts).GetValueOrDefault().TryPickValue3(out var __valueTexts3))
+                                {
+
+                                    var __contentTexts3 = new global::System.Net.Http.StringContent((__valueTexts3!).ToString() ?? string.Empty);
+                                    __httpRequestContent.Add(
+                                        content: __contentTexts3,
+                                        name: "\"texts\"");
+                                }
                             }
+
                             if (request.Tags != default)
                             {
+                                if ((request.Tags).GetValueOrDefault().TryPickValue1(out var __valueTags1))
+                                {
 
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(request.Tags.ToString() ?? string.Empty),
-                                    name: "\"tags\"");
+                                    for (var __iTags1 = 0; __iTags1 < (__valueTags1!).Count; __iTags1++)
+                                    {
 
+                                        var __contentTags1Item = new global::System.Net.Http.StringContent((__valueTags1!)[__iTags1] ?? string.Empty);
+                                        __httpRequestContent.Add(
+                                            content: __contentTags1Item,
+                                            name: "\"tags\"");
+                                    }
+                                }
+                                else if ((request.Tags).GetValueOrDefault().TryPickValue2(out var __valueTags2))
+                                {
+
+                                    var __contentTags2 = new global::System.Net.Http.StringContent(__valueTags2 ?? string.Empty);
+                                    __httpRequestContent.Add(
+                                        content: __contentTags2,
+                                        name: "\"tags\"");
+                                }
+                                else if ((request.Tags).GetValueOrDefault().TryPickValue3(out var __valueTags3))
+                                {
+
+                                    var __contentTags3 = new global::System.Net.Http.StringContent((__valueTags3!).ToString() ?? string.Empty);
+                                    __httpRequestContent.Add(
+                                        content: __contentTags3,
+                                        name: "\"tags\"");
+                                }
                             }
+
                             if (request.EnhanceAudioQuality != default)
                             {
 

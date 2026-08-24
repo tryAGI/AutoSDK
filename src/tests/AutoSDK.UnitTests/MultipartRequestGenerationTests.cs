@@ -237,4 +237,137 @@ paths:
         methodCode.Should().NotContain("global::System.IO.Stream? file = default");
         methodCode.Should().NotContain("global::System.IO.Stream file =");
     }
+
+    [TestMethod]
+    public void BinaryUnionWithJsonFirst_SelectsMultipartAndExpandsEverySupportedShape()
+    {
+        const string yaml = """
+openapi: 3.0.3
+info:
+  title: Multipart selection
+  version: 1.0.0
+paths:
+  /models/{model_id}:
+    post:
+      operationId: createModel
+      parameters:
+        - name: model_id
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: X-API-Key
+          in: header
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UploadRequest'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/UploadRequest'
+          multipart/form-data:
+            encoding:
+              voices:
+                contentType: audio/wav
+            schema:
+              $ref: '#/components/schemas/UploadRequest'
+          application/msgpack:
+            schema:
+              $ref: '#/components/schemas/UploadRequest'
+      responses:
+        '204':
+          description: ok
+components:
+  schemas:
+    UploadRequest:
+      type: object
+      required: [voices]
+      properties:
+        voices:
+          anyOf:
+            - type: array
+              items:
+                type: string
+                format: binary
+            - type: string
+              format: binary
+        texts:
+          anyOf:
+            - type: array
+              items:
+                type: string
+            - type: string
+        tags:
+          type: array
+          items:
+            type: string
+""";
+
+        var data = AutoSDK.Generation.Data.Prepare(((yaml, DefaultSettings), GlobalSettings: DefaultSettings));
+        var method = data.Methods.Single(x => x.NotAsyncMethodName == "CreateModel");
+        var methodCode = Sources.GenerateEndPoint(method);
+
+        method.RequestMediaType.Should().Be("multipart/form-data");
+        methodCode.Should().Contain("new global::System.Net.Http.MultipartFormDataContent()");
+        methodCode.Should().Contain("request.Voices.TryPickValue1(out var __valueVoices1)");
+        methodCode.Should().Contain("request.Voices.TryPickValue2(out var __valueVoices2)");
+        methodCode.Should().Contain("for (var __iVoices1 = 0; __iVoices1 < (__valueVoices1!).Count; __iVoices1++)");
+        methodCode.Should().Contain("new global::System.Net.Http.ByteArrayContent((__valueVoices1!)[__iVoices1]");
+        methodCode.Should().Contain("new global::System.Net.Http.ByteArrayContent(__valueVoices2");
+        methodCode.Should().Contain("new global::System.Net.Http.Headers.MediaTypeHeaderValue(\"audio/wav\")");
+        methodCode.Should().Contain("for (var __iTexts1 = 0; __iTexts1 < (__valueTexts1!).Count; __iTexts1++)");
+        methodCode.Should().Contain("name: \"\\\"voices\\\"\"");
+        methodCode.Should().NotContain("request.Voices.ToString()");
+    }
+
+    [TestMethod]
+    public void DistinctNonBinaryJsonSchema_RemainsPrimaryOverMultipartUploadAlternative()
+    {
+        const string yaml = """
+openapi: 3.0.3
+info:
+  title: Multipart selection counterexample
+  version: 1.0.0
+paths:
+  /imports:
+    post:
+      operationId: createImport
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [source_url]
+              properties:
+                source_url:
+                  type: string
+                  format: uri
+          multipart/form-data:
+            schema:
+              type: object
+              required: [file]
+              properties:
+                file:
+                  type: string
+                  format: binary
+      responses:
+        '204':
+          description: ok
+""";
+
+        var data = AutoSDK.Generation.Data.Prepare(((yaml, DefaultSettings), GlobalSettings: DefaultSettings));
+        var method = data.Methods.Single(x => x.NotAsyncMethodName == "CreateImport");
+        var methodCode = Sources.GenerateEndPoint(method);
+
+        method.RequestMediaType.Should().Be("application/json");
+        method.RequestType.Properties.Should().Contain("source_url");
+        methodCode.Should().Contain("mediaType: \"application/json\"");
+        methodCode.Should().NotContain("new global::System.Net.Http.MultipartFormDataContent()");
+    }
 }

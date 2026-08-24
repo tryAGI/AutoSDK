@@ -314,12 +314,28 @@ namespace G
                             }
                             if (request.TimestampsGranularities != default)
                             {
+                                if ((request.TimestampsGranularities).GetValueOrDefault().TryPickAudioTranscriptionsPostRequestBodyContentMultipartFormDataSchemaTimestampsGranularitiesVariant1(out var __valueTimestampsGranularities1))
+                                {
 
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(request.TimestampsGranularities.ToString() ?? string.Empty),
-                                    name: "\"timestamps_granularities[]\"");
+                                    var __contentTimestampsGranularities1 = new global::System.Net.Http.StringContent(__valueTimestampsGranularities1 ?? string.Empty);
+                                    __httpRequestContent.Add(
+                                        content: __contentTimestampsGranularities1,
+                                        name: "\"timestamps_granularities[]\"");
+                                }
+                                else if ((request.TimestampsGranularities).GetValueOrDefault().TryPickAudioTranscriptionsPostRequestBodyContentMultipartFormDataSchemaTimestampsGranularitiesVariant2(out var __valueTimestampsGranularities2))
+                                {
 
+                                    for (var __iTimestampsGranularities2 = 0; __iTimestampsGranularities2 < (__valueTimestampsGranularities2!).Count; __iTimestampsGranularities2++)
+                                    {
+
+                                        var __contentTimestampsGranularities2Item = new global::System.Net.Http.StringContent(((__valueTimestampsGranularities2!)[__iTimestampsGranularities2]!).ToString() ?? string.Empty);
+                                        __httpRequestContent.Add(
+                                            content: __contentTimestampsGranularities2Item,
+                                            name: "\"timestamps_granularities[]\"");
+                                    }
+                                }
                             }
+
                             if (request.Diarization != default)
                             {
 
@@ -1054,12 +1070,28 @@ namespace G
                             }
                             if (request.TimestampsGranularities != default)
                             {
+                                if ((request.TimestampsGranularities).GetValueOrDefault().TryPickAudioTranscriptionsPostRequestBodyContentMultipartFormDataSchemaTimestampsGranularitiesVariant1(out var __valueTimestampsGranularities1))
+                                {
 
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(request.TimestampsGranularities.ToString() ?? string.Empty),
-                                    name: "\"timestamps_granularities[]\"");
+                                    var __contentTimestampsGranularities1 = new global::System.Net.Http.StringContent(__valueTimestampsGranularities1 ?? string.Empty);
+                                    __httpRequestContent.Add(
+                                        content: __contentTimestampsGranularities1,
+                                        name: "\"timestamps_granularities[]\"");
+                                }
+                                else if ((request.TimestampsGranularities).GetValueOrDefault().TryPickAudioTranscriptionsPostRequestBodyContentMultipartFormDataSchemaTimestampsGranularitiesVariant2(out var __valueTimestampsGranularities2))
+                                {
 
+                                    for (var __iTimestampsGranularities2 = 0; __iTimestampsGranularities2 < (__valueTimestampsGranularities2!).Count; __iTimestampsGranularities2++)
+                                    {
+
+                                        var __contentTimestampsGranularities2Item = new global::System.Net.Http.StringContent(((__valueTimestampsGranularities2!)[__iTimestampsGranularities2]!).ToString() ?? string.Empty);
+                                        __httpRequestContent.Add(
+                                            content: __contentTimestampsGranularities2Item,
+                                            name: "\"timestamps_granularities[]\"");
+                                    }
+                                }
                             }
+
                             if (request.Diarization != default)
                             {
 
@@ -1705,12 +1737,28 @@ namespace G
                             }
                             if (request.TimestampsGranularities != default)
                             {
+                                if ((request.TimestampsGranularities).GetValueOrDefault().TryPickAudioTranscriptionsPostRequestBodyContentMultipartFormDataSchemaTimestampsGranularitiesVariant1(out var __valueTimestampsGranularities1))
+                                {
 
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(request.TimestampsGranularities.ToString() ?? string.Empty),
-                                    name: "\"timestamps_granularities[]\"");
+                                    var __contentTimestampsGranularities1 = new global::System.Net.Http.StringContent(__valueTimestampsGranularities1 ?? string.Empty);
+                                    __httpRequestContent.Add(
+                                        content: __contentTimestampsGranularities1,
+                                        name: "\"timestamps_granularities[]\"");
+                                }
+                                else if ((request.TimestampsGranularities).GetValueOrDefault().TryPickAudioTranscriptionsPostRequestBodyContentMultipartFormDataSchemaTimestampsGranularitiesVariant2(out var __valueTimestampsGranularities2))
+                                {
 
+                                    for (var __iTimestampsGranularities2 = 0; __iTimestampsGranularities2 < (__valueTimestampsGranularities2!).Count; __iTimestampsGranularities2++)
+                                    {
+
+                                        var __contentTimestampsGranularities2Item = new global::System.Net.Http.StringContent(((__valueTimestampsGranularities2!)[__iTimestampsGranularities2]!).ToString() ?? string.Empty);
+                                        __httpRequestContent.Add(
+                                            content: __contentTimestampsGranularities2Item,
+                                            name: "\"timestamps_granularities[]\"");
+                                    }
+                                }
                             }
+
                             if (request.Diarization != default)
                             {
 

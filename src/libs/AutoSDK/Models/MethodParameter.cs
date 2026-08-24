@@ -30,7 +30,8 @@ public record struct MethodParameter(
     string ParameterDefaultValue,
     bool ProducesDeprecationWarning,
     string DisableDeprecationWarningIfRequired,
-    bool IsIdempotencyHeader = false)
+    bool IsIdempotencyHeader = false,
+    EquatableArray<string> UnionVariantNames = default)
 {
     public static MethodParameter Default => new(
         Id: string.Empty,
@@ -58,5 +59,6 @@ public record struct MethodParameter(
         ParameterDefaultValue: "default",
         ProducesDeprecationWarning: false,
         DisableDeprecationWarningIfRequired: " ",
-        IsIdempotencyHeader: false);
+        IsIdempotencyHeader: false,
+        UnionVariantNames: []);
 }

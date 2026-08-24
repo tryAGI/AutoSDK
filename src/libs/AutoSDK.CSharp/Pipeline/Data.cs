@@ -508,7 +508,7 @@ public static class Data
                 : [];
         
         var methods = filteredOperations
-            .SelectMany(CreateEndPoints)
+            .SelectMany(operation => CreateEndPoints(operation, anyOfDatas))
             .ToImmutableArray();
 
         var authorizationsByIdentity = AuthorizationHelpers.CreateResolvedAuthorizationMap(
@@ -900,7 +900,7 @@ public static class Data
             : [];
 
         var methods = filteredOperations
-            .SelectMany(CreateEndPoints)
+            .SelectMany(operation => CreateEndPoints(operation, anyOfDatas))
             .ToImmutableArray();
 
         var authorizationsByIdentity = AuthorizationHelpers.CreateResolvedAuthorizationMap(
@@ -1657,7 +1657,9 @@ public static class Data
             : documentServers;
     }
 
-    private static IEnumerable<EndPoint> CreateEndPoints(OperationContext operation)
+    private static List<EndPoint> CreateEndPoints(
+        OperationContext operation,
+        IReadOnlyCollection<AnyOfData> anyOfDatas)
     {
         var fernStreaming = FernStreamingMetadata.TryCreate(operation);
         var responseContentTypes = (operation.Operation.Responses ?? new Dictionary<string, IOpenApiResponse>())
@@ -1682,7 +1684,8 @@ public static class Data
                 operation,
                 preferredMimeType: "application/json",
                 forcedRequestStreamValue: false,
-                successResponseOverride: fernStreaming.RegularResponseOverride));
+                successResponseOverride: fernStreaming.RegularResponseOverride,
+                anyOfDatas: anyOfDatas));
             endPoints.Add(CSharpEndPointFactory.CreateEndPoint(
                 operation,
                 preferredMimeType: GetPreferredStreamMimeType(responseContentTypes, fernStreaming.StreamFormat),
@@ -1693,7 +1696,8 @@ public static class Data
                 forcedRequestStreamValue: true,
                 successResponseOverride: fernStreaming.StreamResponseOverride,
                 streamFormatOverride: fernStreaming.StreamFormat,
-                streamTerminator: fernStreaming.Terminator));
+                streamTerminator: fernStreaming.Terminator,
+                anyOfDatas: anyOfDatas));
             return endPoints;
         }
 
@@ -1706,7 +1710,8 @@ public static class Data
                 preferredMimeType: GetPreferredStreamMimeType(responseContentTypes, fernStreaming.StreamFormat),
                 successResponseOverride: fernStreaming.StreamResponseOverride ?? fernStreaming.RegularResponseOverride,
                 streamFormatOverride: fernStreaming.StreamFormat,
-                streamTerminator: fernStreaming.Terminator));
+                streamTerminator: fernStreaming.Terminator,
+                anyOfDatas: anyOfDatas));
             return endPoints;
         }
 
@@ -1716,7 +1721,8 @@ public static class Data
                 operation,
                 preferredMimeType: "application/json",
                 forcedRequestStreamValue: hasSequentialJson || hasSse ? false : null,
-                successResponseOverride: fernStreaming?.RegularResponseOverride));
+                successResponseOverride: fernStreaming?.RegularResponseOverride,
+                anyOfDatas: anyOfDatas));
         }
 
         if (hasSse)
@@ -1733,7 +1739,8 @@ public static class Data
                 streamFormatOverride: fernStreaming?.StreamFormat == StreamFormat.ServerSentEvents
                     ? fernStreaming.StreamFormat
                     : null,
-                streamTerminator: fernStreaming?.Terminator));
+                streamTerminator: fernStreaming?.Terminator,
+                anyOfDatas: anyOfDatas));
         }
 
         if (hasSequentialJson)
@@ -1750,12 +1757,13 @@ public static class Data
                 streamFormatOverride: fernStreaming?.StreamFormat == StreamFormat.Ndjson
                     ? fernStreaming.StreamFormat
                     : null,
-                streamTerminator: fernStreaming?.Terminator));
+                streamTerminator: fernStreaming?.Terminator,
+                anyOfDatas: anyOfDatas));
         }
 
         if (endPoints.Count == 0)
         {
-            endPoints.Add(CSharpEndPointFactory.CreateEndPoint(operation));
+            endPoints.Add(CSharpEndPointFactory.CreateEndPoint(operation, anyOfDatas: anyOfDatas));
         }
 
         return endPoints;

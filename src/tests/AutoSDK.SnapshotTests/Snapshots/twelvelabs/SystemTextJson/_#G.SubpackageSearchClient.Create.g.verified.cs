@@ -162,20 +162,120 @@ namespace G
                             }
                             if (request.QueryMediaUrl != default)
                             {
+                                if ((request.QueryMediaUrl).GetValueOrDefault().TryPickSearchPostRequestBodyContentMultipartFormDataSchemaQueryMediaUrlVariant1(out var __valueQueryMediaUrl1))
+                                {
 
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(request.QueryMediaUrl.ToString() ?? string.Empty),
-                                    name: "\"query_media_url\"");
+                                    var __contentQueryMediaUrl1 = new global::System.Net.Http.StringContent(__valueQueryMediaUrl1 ?? string.Empty);
+                                    __httpRequestContent.Add(
+                                        content: __contentQueryMediaUrl1,
+                                        name: "\"query_media_url\"");
+                                }
+                                else if ((request.QueryMediaUrl).GetValueOrDefault().TryPickSearchPostRequestBodyContentMultipartFormDataSchemaQueryMediaUrlVariant2(out var __valueQueryMediaUrl2))
+                                {
 
+                                    for (var __iQueryMediaUrl2 = 0; __iQueryMediaUrl2 < (__valueQueryMediaUrl2!).Count; __iQueryMediaUrl2++)
+                                    {
+
+                                        var __contentQueryMediaUrl2Item = new global::System.Net.Http.StringContent((__valueQueryMediaUrl2!)[__iQueryMediaUrl2] ?? string.Empty);
+                                        __httpRequestContent.Add(
+                                            content: __contentQueryMediaUrl2Item,
+                                            name: "\"query_media_url\"");
+                                    }
+                                }
                             }
+
                             if (request.QueryMediaFile != default)
                             {
+                                if ((request.QueryMediaFile).GetValueOrDefault().TryPickSearchPostRequestBodyContentMultipartFormDataSchemaQueryMediaFileVariant1(out var __valueQueryMediaFile1))
+                                {
 
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(request.QueryMediaFile.ToString() ?? string.Empty),
-                                    name: "\"query_media_file\"");
+                                    var __fileNameQueryMediaFile1 = "file.bin";
+                                    var __contentQueryMediaFile1 = new global::System.Net.Http.ByteArrayContent(__valueQueryMediaFile1 ?? global::System.Array.Empty<byte>());
+                                    __contentQueryMediaFile1.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue(
+                                        __fileNameQueryMediaFile1 is null
+                                            ? "application/octet-stream"
+                                            : (global::System.IO.Path.GetExtension(__fileNameQueryMediaFile1) ?? string.Empty).ToLowerInvariant() switch
+                                            {
+                                                ".aac" => "audio/aac",
+                                                ".flac" => "audio/flac",
+                                                ".gif" => "image/gif",
+                                                ".jpeg" => "image/jpeg",
+                                                ".jpg" => "image/jpeg",
+                                                ".json" => "application/json",
+                                                ".m4a" => "audio/mp4",
+                                                ".mp3" => "audio/mpeg",
+                                                ".mp4" => "video/mp4",
+                                                ".mpeg" => "audio/mpeg",
+                                                ".mpga" => "audio/mpeg",
+                                                ".oga" => "audio/ogg",
+                                                ".ogg" => "audio/ogg",
+                                                ".opus" => "audio/ogg",
+                                                ".pdf" => "application/pdf",
+                                                ".png" => "image/png",
+                                                ".txt" => "text/plain",
+                                                ".wav" => "audio/wav",
+                                                ".weba" => "audio/webm",
+                                                ".webm" => "video/webm",
+                                                ".webp" => "image/webp",
+                                                _ => "application/octet-stream",
+                                            });
+                                    __httpRequestContent.Add(
+                                        content: __contentQueryMediaFile1,
+                                        name: "\"query_media_file\"",
+                                        fileName: $"\"{__fileNameQueryMediaFile1}\"");
+                                    if (__contentQueryMediaFile1.Headers.ContentDisposition != null)
+                                    {
+                                        __contentQueryMediaFile1.Headers.ContentDisposition.FileNameStar = null;
+                                    }
+                                }
+                                else if ((request.QueryMediaFile).GetValueOrDefault().TryPickSearchPostRequestBodyContentMultipartFormDataSchemaQueryMediaFileVariant2(out var __valueQueryMediaFile2))
+                                {
 
+                                    for (var __iQueryMediaFile2 = 0; __iQueryMediaFile2 < (__valueQueryMediaFile2!).Count; __iQueryMediaFile2++)
+                                    {
+
+                                        var __fileNameQueryMediaFile2Item = $"file{__iQueryMediaFile2}.bin";
+                                        var __contentQueryMediaFile2Item = new global::System.Net.Http.ByteArrayContent((__valueQueryMediaFile2!)[__iQueryMediaFile2] ?? global::System.Array.Empty<byte>());
+                                        __contentQueryMediaFile2Item.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue(
+                                            __fileNameQueryMediaFile2Item is null
+                                                ? "application/octet-stream"
+                                                : (global::System.IO.Path.GetExtension(__fileNameQueryMediaFile2Item) ?? string.Empty).ToLowerInvariant() switch
+                                                {
+                                                    ".aac" => "audio/aac",
+                                                    ".flac" => "audio/flac",
+                                                    ".gif" => "image/gif",
+                                                    ".jpeg" => "image/jpeg",
+                                                    ".jpg" => "image/jpeg",
+                                                    ".json" => "application/json",
+                                                    ".m4a" => "audio/mp4",
+                                                    ".mp3" => "audio/mpeg",
+                                                    ".mp4" => "video/mp4",
+                                                    ".mpeg" => "audio/mpeg",
+                                                    ".mpga" => "audio/mpeg",
+                                                    ".oga" => "audio/ogg",
+                                                    ".ogg" => "audio/ogg",
+                                                    ".opus" => "audio/ogg",
+                                                    ".pdf" => "application/pdf",
+                                                    ".png" => "image/png",
+                                                    ".txt" => "text/plain",
+                                                    ".wav" => "audio/wav",
+                                                    ".weba" => "audio/webm",
+                                                    ".webm" => "video/webm",
+                                                    ".webp" => "image/webp",
+                                                    _ => "application/octet-stream",
+                                                });
+                                        __httpRequestContent.Add(
+                                            content: __contentQueryMediaFile2Item,
+                                            name: "\"query_media_file\"",
+                                            fileName: $"\"{__fileNameQueryMediaFile2Item}\"");
+                                        if (__contentQueryMediaFile2Item.Headers.ContentDisposition != null)
+                                        {
+                                            __contentQueryMediaFile2Item.Headers.ContentDisposition.FileNameStar = null;
+                                        }
+                                    }
+                                }
                             }
+
                             if (request.QueryText != default)
                             {
 

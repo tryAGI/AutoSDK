@@ -16,7 +16,7 @@ namespace G
         global::System.Threading.Tasks.Task EditModelByIdAsync(
             string id,
 
-            global::G.PatchModelRequest request,
+            global::G.PatchModelRequest3 request,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
@@ -30,7 +30,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse> EditModelByIdAsResponseAsync(
             string id,
 
-            global::G.PatchModelRequest request,
+            global::G.PatchModelRequest3 request,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
@@ -62,7 +62,7 @@ namespace G
             string? description = default,
             byte[]? coverImage = default,
             string? coverImagename = default,
-            global::G.PatchModelRequestVisibility2? visibility = default,
+            global::G.PatchModelRequestVisibility6? visibility = default,
             global::G.AnyOf<global::System.Collections.Generic.IList<string>, string>? tags = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
