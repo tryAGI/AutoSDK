@@ -332,6 +332,15 @@ public class CliTests
             {
                 File =
                 {
+                    new FileDescriptorProto
+                    {
+                        Name = "google/protobuf/timestamp.proto",
+                        Package = "google.protobuf",
+                        Options = new Google.Protobuf.Reflection.FileOptions
+                        {
+                            CsharpNamespace = "Google.Protobuf.WellKnownTypes",
+                        },
+                    },
                     CreateGreeterFileDescriptorProto(),
                 },
             };
@@ -371,6 +380,61 @@ public class CliTests
                 "--disable-build-servers",
                 csprojPath);
             buildResult.ExitCode.Should().Be(0);
+        }
+        finally
+        {
+            TryDeleteDirectory(tempDirectory);
+        }
+    }
+
+    [TestMethod]
+    public async Task Generate_DescriptorSetInput_WithDuplicateFileNames_BuildsWithoutCollisions()
+    {
+        var tempDirectory = Path.Combine(Path.GetTempPath(), Path.GetRandomFileName());
+        try
+        {
+            Directory.CreateDirectory(tempDirectory);
+
+            var descriptorSetPath = Path.Combine(tempDirectory, "operations.binpb");
+            var descriptorSet = new FileDescriptorSet
+            {
+                File =
+                {
+                    CreateOperationFileDescriptorProto("one/operation.proto", "demo.one", "Demo.One", "FirstOperation"),
+                    CreateOperationFileDescriptorProto("two/operation.proto", "demo.two", "Demo.Two", "SecondOperation"),
+                },
+            };
+            await File.WriteAllBytesAsync(descriptorSetPath, descriptorSet.ToByteArray());
+
+            var currentDirectory = Directory.GetCurrentDirectory();
+            var repositoryDirectory = Path.GetFullPath(Path.Combine(currentDirectory, "../../../../../.."));
+            var outputDirectory = Path.Combine(tempDirectory, "Generated");
+            var result = await RunDotnetAsync(
+                repositoryDirectory,
+                "run",
+                "--disable-build-servers",
+                "--no-launch-profile",
+                "--project", "src/libs/AutoSDK.CLI",
+                "generate",
+                descriptorSetPath,
+                "--namespace", "Demo.Operations",
+                "--targetFramework", "net10.0",
+                "--output", outputDirectory);
+
+            result.ExitCode.Should().Be(0);
+            result.StandardError.Should().BeNullOrWhiteSpace();
+
+            var csprojPath = Path.Combine(outputDirectory, "Operations.Grpc.csproj");
+            var csprojText = await File.ReadAllTextAsync(csprojPath);
+            csprojText.Should().Contain("--csharp_opt=base_namespace=");
+            csprojText.Should().Contain("--grpc_opt=no_server,base_namespace=");
+
+            var buildResult = await RunDotnetAsync(
+                outputDirectory,
+                "build",
+                "--disable-build-servers",
+                csprojPath);
+            buildResult.ExitCode.Should().Be(0, buildResult.StandardError + buildResult.StandardOutput);
         }
         finally
         {
@@ -5852,6 +5916,8 @@ components:
                 <TargetFramework>net10.0</TargetFramework>
                 <ImplicitUsings>enable</ImplicitUsings>
                 <Nullable>enable</Nullable>
+                <EnableTrimAnalyzer>true</EnableTrimAnalyzer>
+                <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
               </PropertyGroup>
 
               <ItemGroup>
@@ -5868,23 +5934,27 @@ components:
             using Microsoft.Extensions.DependencyInjection;
 
             var services = new ServiceCollection();
-            services.AddAutoSdkGrpcClient<{{clientTypeName}}>(options =>
-            {
-                options.Address = "https://localhost:5001";
-                options.UseBearerToken("token");
-                options.AddHeader("x-correlation-id", "integration-test");
-                options.WithDefaultDeadline(TimeSpan.FromSeconds(5));
-                options.WithRetry(maxAttempts: 3);
-            });
+            services.AddAutoSdkGrpcClient<{{clientTypeName}}>(
+                options =>
+                {
+                    options.Address = "https://localhost:5001";
+                    options.UseBearerToken("token");
+                    options.AddHeader("x-correlation-id", "integration-test");
+                    options.WithDefaultDeadline(TimeSpan.FromSeconds(5));
+                    options.WithRetry(maxAttempts: 3);
+                },
+                static callInvoker => new {{clientTypeName}}(callInvoker));
 
             using var provider = services.BuildServiceProvider();
             var typedClient = provider.GetRequiredService<{{clientTypeName}}>();
 
-            using var directClient = AutoSdkGrpcClientFactory.Create<{{clientTypeName}}>(options =>
-            {
-                options.Address = "https://localhost:5001";
-                options.UseApiKey("secret", "x-api-key");
-            });
+            using var directClient = AutoSdkGrpcClientFactory.Create<{{clientTypeName}}>(
+                options =>
+                {
+                    options.Address = "https://localhost:5001";
+                    options.UseApiKey("secret", "x-api-key");
+                },
+                static callInvoker => new {{clientTypeName}}(callInvoker));
 
             return typedClient != null && directClient.Client != null ? 0 : 1;
             """);
@@ -5989,6 +6059,31 @@ components:
                             OutputType = ".demo.HelloReply",
                         },
                     },
+                },
+            },
+        };
+    }
+
+    private static FileDescriptorProto CreateOperationFileDescriptorProto(
+        string name,
+        string package,
+        string csharpNamespace,
+        string messageName)
+    {
+        return new FileDescriptorProto
+        {
+            Name = name,
+            Package = package,
+            Syntax = "proto3",
+            Options = new Google.Protobuf.Reflection.FileOptions
+            {
+                CsharpNamespace = csharpNamespace,
+            },
+            MessageType =
+            {
+                new DescriptorProto
+                {
+                    Name = messageName,
                 },
             },
         };

@@ -506,6 +506,7 @@ internal static class GrpcProjectScaffolder
             .ToArray();
 
         var csharpNamespaces = descriptorSet.File
+            .Where(static file => !IsWellKnownType(file.Name))
             .Select(static file => file.Options?.CsharpNamespace)
             .Where(static value => !string.IsNullOrWhiteSpace(value))
             .Select(static value => value!)
@@ -514,19 +515,27 @@ internal static class GrpcProjectScaffolder
             .ToArray();
 
         var packages = descriptorSet.File
+            .Where(static file => !IsWellKnownType(file.Name))
             .Select(static file => file.Package)
             .Where(static value => !string.IsNullOrWhiteSpace(value))
             .Distinct(StringComparer.Ordinal)
             .OrderBy(static value => value, StringComparer.Ordinal)
             .ToArray()!;
 
-        var serviceCount = descriptorSet.File.Sum(static file => file.Service.Count);
+        var serviceCount = descriptorSet.File
+            .Where(static file => !IsWellKnownType(file.Name))
+            .Sum(static file => file.Service.Count);
 
         return new DescriptorSetMetadata(
             ProtoFileNames: protoFileNames,
             CSharpNamespaces: csharpNamespaces,
             Packages: packages,
             ServiceCount: serviceCount);
+    }
+
+    private static bool IsWellKnownType(string? fileName)
+    {
+        return fileName?.StartsWith("google/protobuf/", StringComparison.Ordinal) == true;
     }
 
     private static string DetermineRootNamespace(
@@ -729,7 +738,7 @@ internal static class GrpcProjectScaffolder
                      <RemoveDir Directories="$(GrpcGeneratedOutputDir)" />
                      <MakeDir Directories="$(GrpcGeneratedOutputDir)" />
                      <Exec WorkingDirectory="$(MSBuildProjectDirectory)"
-                           Command='"$(Protobuf_ProtocFullPath)" --descriptor_set_in="$(MSBuildProjectDirectory)/{{descriptorPath}}" --csharp_out="$(GrpcGeneratedOutputDir)" --grpc_opt=no_server --grpc_out="$(GrpcGeneratedOutputDir)" --plugin=protoc-gen-grpc="$(gRPC_PluginFullPath)" {{protocFileArguments}}' />
+                           Command='"$(Protobuf_ProtocFullPath)" --descriptor_set_in="$(MSBuildProjectDirectory)/{{descriptorPath}}" --csharp_opt=base_namespace= --csharp_out="$(GrpcGeneratedOutputDir)" --grpc_opt=no_server,base_namespace= --grpc_out="$(GrpcGeneratedOutputDir)" --plugin=protoc-gen-grpc="$(gRPC_PluginFullPath)" {{protocFileArguments}}' />
                      <ItemGroup>
                        <Compile Include="$(GrpcGeneratedOutputDir)/**/*.cs" />
                      </ItemGroup>
@@ -750,11 +759,14 @@ internal static class GrpcProjectScaffolder
                  public sealed class AutoSdkGrpcClient<TClient> : IDisposable
                      where TClient : ClientBase<TClient>
                  {
-                     public AutoSdkGrpcClient(AutoSdkGrpcClientOptions options)
+                     public AutoSdkGrpcClient(
+                         AutoSdkGrpcClientOptions options,
+                         Func<CallInvoker, TClient> clientFactory)
                      {
                          Options = options ?? throw new ArgumentNullException(nameof(options));
+                         ArgumentNullException.ThrowIfNull(clientFactory);
                          Channel = GrpcChannelFactory.Create(Options);
-                         Client = AutoSdkGrpcClientFactory.CreateClient<TClient>(Channel, Options);
+                         Client = AutoSdkGrpcClientFactory.CreateClient(Channel, Options, clientFactory);
                      }
 
                      public AutoSdkGrpcClientOptions Options { get; }
@@ -783,42 +795,46 @@ internal static class GrpcProjectScaffolder
                  public static class AutoSdkGrpcClientFactory
                  {
                      public static AutoSdkGrpcClient<TClient> Create<TClient>(
-                         Action<AutoSdkGrpcClientOptions> configure)
+                         Action<AutoSdkGrpcClientOptions> configure,
+                         Func<CallInvoker, TClient> clientFactory)
                          where TClient : ClientBase<TClient>
                      {
                          ArgumentNullException.ThrowIfNull(configure);
+                         ArgumentNullException.ThrowIfNull(clientFactory);
 
                          var options = new AutoSdkGrpcClientOptions();
                          configure(options);
-                         return new AutoSdkGrpcClient<TClient>(options);
+                         return new AutoSdkGrpcClient<TClient>(options, clientFactory);
                      }
 
                      public static AutoSdkGrpcClient<TClient> Create<TClient>(
-                         AutoSdkGrpcClientOptions options)
+                         AutoSdkGrpcClientOptions options,
+                         Func<CallInvoker, TClient> clientFactory)
                          where TClient : ClientBase<TClient>
                      {
                          ArgumentNullException.ThrowIfNull(options);
+                         ArgumentNullException.ThrowIfNull(clientFactory);
 
-                         return new AutoSdkGrpcClient<TClient>(options.Clone());
+                         return new AutoSdkGrpcClient<TClient>(options.Clone(), clientFactory);
                      }
 
                      internal static TClient CreateClient<TClient>(
                          GrpcChannel channel,
-                         AutoSdkGrpcClientOptions options)
+                         AutoSdkGrpcClientOptions options,
+                         Func<CallInvoker, TClient> clientFactory)
                          where TClient : ClientBase<TClient>
                      {
                          ArgumentNullException.ThrowIfNull(channel);
                          ArgumentNullException.ThrowIfNull(options);
+                         ArgumentNullException.ThrowIfNull(clientFactory);
 
                          var callInvoker = channel
                              .CreateCallInvoker()
                              .Intercept(new AutoSdkGrpcCallOptionsInterceptor(options));
 
-                         return Activator.CreateInstance(typeof(TClient), callInvoker) is TClient client
-                             ? client
-                             : throw new InvalidOperationException(
-                                 $"Unable to create gRPC client '{typeof(TClient).FullName}'. " +
-                                 "Expected a public constructor that accepts Grpc.Core.CallInvoker.");
+                         return clientFactory(callInvoker) ??
+                             throw new InvalidOperationException(
+                                 $"The gRPC client factory for '{typeof(TClient).FullName}' returned null.");
                      }
                  }
                  """;
@@ -1091,27 +1107,31 @@ internal static class GrpcProjectScaffolder
                  {
                      public static IServiceCollection AddAutoSdkGrpcClient<TClient>(
                          this IServiceCollection services,
-                         Action<AutoSdkGrpcClientOptions> configure)
+                         Action<AutoSdkGrpcClientOptions> configure,
+                         Func<CallInvoker, TClient> clientFactory)
                          where TClient : ClientBase<TClient>
                      {
                          ArgumentNullException.ThrowIfNull(services);
                          ArgumentNullException.ThrowIfNull(configure);
+                         ArgumentNullException.ThrowIfNull(clientFactory);
 
                          var options = new AutoSdkGrpcClientOptions();
                          configure(options);
 
-                         return services.AddAutoSdkGrpcClient<TClient>(options);
+                         return services.AddAutoSdkGrpcClient(options, clientFactory);
                      }
 
                      public static IServiceCollection AddAutoSdkGrpcClient<TClient>(
                          this IServiceCollection services,
-                         AutoSdkGrpcClientOptions options)
+                         AutoSdkGrpcClientOptions options,
+                         Func<CallInvoker, TClient> clientFactory)
                          where TClient : ClientBase<TClient>
                      {
                          ArgumentNullException.ThrowIfNull(services);
                          ArgumentNullException.ThrowIfNull(options);
+                         ArgumentNullException.ThrowIfNull(clientFactory);
 
-                         services.AddSingleton(_ => new AutoSdkGrpcClient<TClient>(options.Clone()));
+                         services.AddSingleton(_ => new AutoSdkGrpcClient<TClient>(options.Clone(), clientFactory));
                          services.AddSingleton(static provider => provider.GetRequiredService<AutoSdkGrpcClient<TClient>>().Client);
 
                          return services;
@@ -1222,8 +1242,8 @@ internal static class GrpcProjectScaffolder
 
                  ## Usage
 
-                 1. Use `{{rootNamespace}}.AutoSdkGrpcClientFactory.Create<TClient>(options => ...)` for a disposable typed client wrapper with auth, headers, deadlines, and retries
-                 2. Or register generated clients in DI with `services.AddAutoSdkGrpcClient<TClient>(options => ...)`
+                 1. Use `{{rootNamespace}}.AutoSdkGrpcClientFactory.Create(options => ..., callInvoker => new TClient(callInvoker))` for a disposable typed client wrapper with auth, headers, deadlines, and retries
+                 2. Or register generated clients in DI with `services.AddAutoSdkGrpcClient(options => ..., callInvoker => new TClient(callInvoker))`
                  3. The lower-level `{{rootNamespace}}.GrpcChannelFactory.Create(...)` method remains available if you want to work with raw channels
 
                  ## Notes
@@ -1268,8 +1288,8 @@ internal static class GrpcProjectScaffolder
 
                  ## Usage
 
-                 1. Use `{{rootNamespace}}.AutoSdkGrpcClientFactory.Create<TClient>(options => ...)` for a disposable typed client wrapper with auth, headers, deadlines, and retries
-                 2. Or register generated clients in DI with `services.AddAutoSdkGrpcClient<TClient>(options => ...)`
+                 1. Use `{{rootNamespace}}.AutoSdkGrpcClientFactory.Create(options => ..., callInvoker => new TClient(callInvoker))` for a disposable typed client wrapper with auth, headers, deadlines, and retries
+                 2. Or register generated clients in DI with `services.AddAutoSdkGrpcClient(options => ..., callInvoker => new TClient(callInvoker))`
                  3. The lower-level `{{rootNamespace}}.GrpcChannelFactory.Create(...)` method remains available if you want to work with raw channels
 
                  ## Notes
@@ -1315,8 +1335,8 @@ internal static class GrpcProjectScaffolder
                  ## Usage
 
                  1. Build the project to materialize the generated `*Client` types from the descriptor set
-                 2. Use `{{rootNamespace}}.AutoSdkGrpcClientFactory.Create<TClient>(options => ...)` for a disposable typed client wrapper with auth, headers, deadlines, and retries
-                 3. Or register generated clients in DI with `services.AddAutoSdkGrpcClient<TClient>(options => ...)`
+                 2. Use `{{rootNamespace}}.AutoSdkGrpcClientFactory.Create(options => ..., callInvoker => new TClient(callInvoker))` for a disposable typed client wrapper with auth, headers, deadlines, and retries
+                 3. Or register generated clients in DI with `services.AddAutoSdkGrpcClient(options => ..., callInvoker => new TClient(callInvoker))`
 
                  ## Notes
 
