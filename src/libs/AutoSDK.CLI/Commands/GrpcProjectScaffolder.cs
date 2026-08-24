@@ -679,6 +679,8 @@ internal static class GrpcProjectScaffolder
                      <TargetFramework>{{targetFramework}}</TargetFramework>
                      <Nullable>enable</Nullable>
                      <ImplicitUsings>enable</ImplicitUsings>
+                     <CLSCompliant>false</CLSCompliant>
+                     <NoWarn>$(NoWarn);CS1591</NoWarn>
                      <RootNamespace>{{rootNamespace}}</RootNamespace>
                    </PropertyGroup>
 
@@ -718,6 +720,8 @@ internal static class GrpcProjectScaffolder
                      <TargetFramework>{{targetFramework}}</TargetFramework>
                      <Nullable>enable</Nullable>
                      <ImplicitUsings>enable</ImplicitUsings>
+                     <CLSCompliant>false</CLSCompliant>
+                     <NoWarn>$(NoWarn);CS1591</NoWarn>
                      <RootNamespace>{{rootNamespace}}</RootNamespace>
                      <GrpcGeneratedOutputDir>$(IntermediateOutputPath)GrpcGenerated</GrpcGeneratedOutputDir>
                    </PropertyGroup>

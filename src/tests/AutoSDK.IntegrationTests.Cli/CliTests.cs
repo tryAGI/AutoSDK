@@ -249,6 +249,8 @@ public class CliTests
 
             var csprojText = await File.ReadAllTextAsync(csprojPath);
             csprojText.Should().Contain("Grpc.Tools");
+            csprojText.Should().Contain("<CLSCompliant>false</CLSCompliant>");
+            csprojText.Should().Contain("<NoWarn>$(NoWarn);CS1591</NoWarn>");
             csprojText.Should().Contain("<RootNamespace>Demo.Grpc</RootNamespace>");
             csprojText.Should().Contain("Microsoft.Extensions.DependencyInjection.Abstractions");
 
@@ -371,6 +373,8 @@ public class CliTests
 
             var csprojText = await File.ReadAllTextAsync(csprojPath);
             csprojText.Should().Contain("GenerateGrpcFromDescriptorSet");
+            csprojText.Should().Contain("<CLSCompliant>false</CLSCompliant>");
+            csprojText.Should().Contain("<NoWarn>$(NoWarn);CS1591</NoWarn>");
             csprojText.Should().Contain("<RootNamespace>Demo.Grpc</RootNamespace>");
             csprojText.Should().Contain("Microsoft.Extensions.DependencyInjection.Abstractions");
 
