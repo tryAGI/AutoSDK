@@ -1,4 +1,4 @@
-﻿//HintName: G.IMlClient.TestPredict.g.cs
+//HintName: G.IMlClient.TestPredict.g.cs
 #nullable enable
 
 namespace G
@@ -93,11 +93,11 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task TestPredictAsync(
             int id,
-            string? basicAuthPass,
             int project,
             string url,
             global::G.AuthMethodEnum? authMethod = default,
             bool? autoUpdate = default,
+            string? basicAuthPass = default,
             string? basicAuthUser = default,
             string? description = default,
             string? errorMessage = default,

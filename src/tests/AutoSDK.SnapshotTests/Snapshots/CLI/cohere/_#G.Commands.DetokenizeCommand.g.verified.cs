@@ -1,4 +1,4 @@
-﻿//HintName: G.Commands.DetokenizeCommand.g.cs
+//HintName: G.Commands.DetokenizeCommand.g.cs
 
 #nullable enable
 
@@ -13,7 +13,7 @@ namespace G
         partial void Validate(
             global::System.CommandLine.ParseResult parseResult,
             string? xClientName,
-            global::System.Collections.Generic.IList<int> tokens,
+            global::System.Collections.Generic.IList<int>? tokens,
             string model,
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
@@ -21,12 +21,6 @@ namespace G
 
             global::G.DetokenizeResponse response,
             global::System.Threading.CancellationToken cancellationToken);
-
-        private global::System.CommandLine.Argument<global::System.Collections.Generic.IList<int>> Tokens { get; } = new(
-            name: "tokens")
-        {
-            Description = @"The list of tokens to be detokenized.",
-        };
 
         private global::System.CommandLine.Argument<string> Model { get; } = new(
             name: "model")
@@ -40,6 +34,12 @@ namespace G
             Description = @"The name of the project that is making the request.",
         };
 
+        private global::System.CommandLine.Option<global::System.Collections.Generic.IList<int>?> Tokens { get; } = new(
+            name: "tokens")
+        {
+            Description = @"The list of tokens to be detokenized.",
+        };
+
 
         public DetokenizeCommand(
             G.IApi client,
@@ -50,9 +50,9 @@ namespace G
             _client = client;
             _serviceProvider = serviceProvider;
 
-            Arguments.Add(Tokens);
             Arguments.Add(Model);
             Options.Add(XClientName);
+            Options.Add(Tokens);
 
             Initialize();
 

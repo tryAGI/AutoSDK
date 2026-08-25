@@ -1,4 +1,4 @@
-﻿//HintName: G.AnnotationReviews2Client.Update.g.cs
+//HintName: G.AnnotationReviews2Client.Update.g.cs
 
 #nullable enable
 
@@ -484,9 +484,9 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.AnnotationReview> UpdateAsync(
             int id,
-            string? comment,
             bool? accepted = default,
             int? annotation = default,
+            string? comment = default,
             int? lastAnnotationHistory = default,
             bool? removeFromQueue = default,
             object? result = default,

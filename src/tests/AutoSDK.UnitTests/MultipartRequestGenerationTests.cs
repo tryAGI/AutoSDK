@@ -394,10 +394,12 @@ paths:
               properties:
                 upload_file_order:
                   type: array
+                  writeOnly: true
                   items:
                     type: string
                 job_file_mapping:
                   type: array
+                  writeOnly: true
                   items:
                     type: array
                     items:
@@ -415,5 +417,7 @@ paths:
         methodCode.Should().Contain("Enumerable.Select(request.UploadFileOrder!, x =>");
         methodCode.Should().Contain("if (request.JobFileMapping != default)");
         methodCode.Should().Contain("Enumerable.Select(request.JobFileMapping!, x =>");
+        method.Parameters.Single(x => x.Name == "UploadFileOrder").IsRequired.Should().BeFalse();
+        method.Parameters.Single(x => x.Name == "JobFileMapping").IsRequired.Should().BeFalse();
     }
 }

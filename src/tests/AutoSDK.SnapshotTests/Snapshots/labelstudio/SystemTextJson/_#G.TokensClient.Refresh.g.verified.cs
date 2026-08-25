@@ -1,4 +1,4 @@
-﻿//HintName: G.TokensClient.Refresh.g.cs
+//HintName: G.TokensClient.Refresh.g.cs
 
 #nullable enable
 
@@ -445,7 +445,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.TokenRefreshResponse> RefreshAsync(
-            string refresh,
+            string? refresh = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

@@ -1,4 +1,4 @@
-﻿//HintName: G.IRetentionRulesClient.CreateRetentionRule.g.cs
+//HintName: G.IRetentionRulesClient.CreateRetentionRule.g.cs
 #nullable enable
 
 namespace G
@@ -46,9 +46,9 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.RetentionRulePublic> CreateRetentionRuleAsync(
-            bool organizationLevel,
             global::G.RetentionRuleWriteRetention retention,
             global::System.Guid? projectId = default,
+            bool? organizationLevel = default,
             bool? applyToPast = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);

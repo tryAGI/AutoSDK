@@ -1,4 +1,4 @@
-﻿//HintName: G.Api.Classify.g.cs
+//HintName: G.Api.Classify.g.cs
 
 #nullable enable
 
@@ -918,11 +918,6 @@ namespace G
         /// ID of a [Fine-tuned](https://docs.cohere.com/v2/docs/classify-starting-the-training) Classify model<br/>
         /// Included only in requests
         /// </param>
-        /// <param name="preset">
-        /// The ID of a custom playground preset. You can create presets in the [playground](https://dashboard.cohere.com/playground/classify?model=large). If you use a preset, all other parameters become optional, and any included parameters will override the preset's parameters.<br/>
-        /// Included only in requests<br/>
-        /// Example: my-preset-a58sbd
-        /// </param>
         /// <param name="truncate">
         /// One of `NONE|START|END` to specify how the API will handle inputs longer than the maximum token length.<br/>
         /// Passing `START` will discard the start of the input. `END` will discard the end of the input. In both cases, input is discarded until the remaining input is exactly the maximum input token length for the model.<br/>
@@ -934,12 +929,11 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.ClassifyResponse> ClassifyAsync(
-            global::System.Collections.Generic.IList<string> inputs,
-            global::System.Collections.Generic.IList<global::G.ClassifyExample> examples,
-            string model,
-            string preset,
-            global::G.ClassifyRequestTruncate truncate,
             string? xClientName = default,
+            global::System.Collections.Generic.IList<string>? inputs = default,
+            global::System.Collections.Generic.IList<global::G.ClassifyExample>? examples = default,
+            string? model = default,
+            global::G.ClassifyRequestTruncate? truncate = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -948,9 +942,6 @@ namespace G
                 Inputs = inputs,
                 Examples = examples,
                 Model = model,
-#pragma warning disable CS0618 // Type or member is obsolete
-                Preset = preset,
-#pragma warning restore CS0618 // Type or member is obsolete
                 Truncate = truncate,
             };
 

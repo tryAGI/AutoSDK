@@ -1,4 +1,4 @@
-﻿//HintName: G.ModelProviderConnectionClient.ApiModelProviderConnectionsUpdate.g.cs
+//HintName: G.ModelProviderConnectionClient.ApiModelProviderConnectionsUpdate.g.cs
 
 #nullable enable
 
@@ -518,13 +518,13 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.ModelProviderConnection> ApiModelProviderConnectionsUpdateAsync(
             string id,
-            string? apiKey,
-            string? authToken,
-            string? googleApplicationCredentials,
+            string? apiKey = default,
+            string? authToken = default,
             double? budgetAlertThreshold = default,
             string? cachedAvailableModels = default,
             string? deploymentName = default,
             string? endpoint = default,
+            string? googleApplicationCredentials = default,
             string? googleLocation = default,
             string? googleProjectId = default,
             bool? isInternal = default,

@@ -112,9 +112,9 @@ public static class CSharpEndPointFactory
                 {
                     CSharpTypeNullability =
                         requestProperty.Type.IsNullable ||
-                        (requestProperty.Type.CSharpTypeNullability && !requestProperty.IsRequired && !requestProperty.IsWriteOnly),
+                        (requestProperty.Type.CSharpTypeNullability && !requestProperty.IsRequired),
                 }).WithCSharpComputedValues(),
-                IsRequired = requestProperty.IsRequired || requestProperty.IsWriteOnly,
+                IsRequired = requestProperty.IsRequired,
                 IsMultiPartFormDataFilename = requestProperty.IsMultiPartFormDataFilename,
                 DefaultValue = requestProperty.DefaultValue,
                 IsDeprecated = requestProperty.IsDeprecated,

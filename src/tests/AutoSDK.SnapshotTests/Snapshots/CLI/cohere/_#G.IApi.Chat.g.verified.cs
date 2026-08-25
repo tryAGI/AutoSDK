@@ -1,4 +1,4 @@
-﻿//HintName: G.IApi.Chat.g.cs
+//HintName: G.IApi.Chat.g.cs
 #nullable enable
 
 namespace G
@@ -219,13 +219,6 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.NonStreamedChatResponse> ChatAsync(
             string message,
-            int maxTokens,
-            int maxInputTokens,
-            int k,
-            double p,
-            global::System.Collections.Generic.IList<string> stopSequences,
-            double frequencyPenalty,
-            double presencePenalty,
             string? xClientName = default,
             global::G.ChatAccepts? accepts = default,
             string? model = default,
@@ -238,7 +231,14 @@ namespace G
             global::System.Collections.Generic.IList<global::G.ChatDocument>? documents = default,
             global::G.ChatRequestCitationQuality? citationQuality = default,
             float? temperature = default,
+            int? maxTokens = default,
+            int? maxInputTokens = default,
+            int? k = default,
+            double? p = default,
             int? seed = default,
+            global::System.Collections.Generic.IList<string>? stopSequences = default,
+            double? frequencyPenalty = default,
+            double? presencePenalty = default,
             global::System.Collections.Generic.IList<global::G.Tool>? tools = default,
             global::System.Collections.Generic.IList<global::G.ToolResult>? toolResults = default,
             bool? forceSingleStep = default,

@@ -1,4 +1,4 @@
-﻿//HintName: G.Blueprints2Client.Create.g.cs
+//HintName: G.Blueprints2Client.Create.g.cs
 
 #nullable enable
 
@@ -457,10 +457,10 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.Blueprint> CreateAsync(
             int project,
-            global::System.Collections.Generic.IList<int> taskIds,
             int? createdBy = default,
             string? description = default,
             string? labelConfig = default,
+            global::System.Collections.Generic.IList<int>? taskIds = default,
             string? title = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)

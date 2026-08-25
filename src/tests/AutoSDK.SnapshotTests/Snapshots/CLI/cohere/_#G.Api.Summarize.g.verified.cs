@@ -1,4 +1,4 @@
-﻿//HintName: G.Api.Summarize.g.cs
+//HintName: G.Api.Summarize.g.cs
 
 #nullable enable
 
@@ -943,14 +943,14 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.SummarizeResponse> SummarizeAsync(
-            string text,
-            global::G.SummarizeRequestLength length,
-            global::G.SummarizeRequestFormat format,
-            string model,
-            global::G.SummarizeRequestExtractiveness extractiveness,
-            double temperature,
-            string additionalCommand,
             string? xClientName = default,
+            string? text = default,
+            global::G.SummarizeRequestLength? length = default,
+            global::G.SummarizeRequestFormat? format = default,
+            string? model = default,
+            global::G.SummarizeRequestExtractiveness? extractiveness = default,
+            double? temperature = default,
+            string? additionalCommand = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

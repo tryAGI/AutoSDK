@@ -1,4 +1,4 @@
-﻿//HintName: G.Commands.ChatAsStreamCommand.g.cs
+//HintName: G.Commands.ChatAsStreamCommand.g.cs
 
 #nullable enable
 
@@ -25,14 +25,14 @@ namespace G
             global::System.Collections.Generic.IList<global::G.ChatDocument>? documents,
             global::G.ChatRequestCitationQuality? citationQuality,
             float? temperature,
-            int maxTokens,
-            int maxInputTokens,
-            int k,
-            double p,
+            int? maxTokens,
+            int? maxInputTokens,
+            int? k,
+            double? p,
             int? seed,
-            global::System.Collections.Generic.IList<string> stopSequences,
-            double frequencyPenalty,
-            double presencePenalty,
+            global::System.Collections.Generic.IList<string>? stopSequences,
+            double? frequencyPenalty,
+            double? presencePenalty,
             global::System.Collections.Generic.IList<global::G.Tool>? tools,
             global::System.Collections.Generic.IList<global::G.ToolResult>? toolResults,
             bool? forceSingleStep,
@@ -49,70 +49,6 @@ namespace G
             name: "message")
         {
             Description = @"Text input for the model to respond to.
-
-Compatible Deployments: Cohere Platform, Azure, AWS Sagemaker/Bedrock, Private Deployments",
-        };
-
-        private global::System.CommandLine.Argument<int> MaxTokens { get; } = new(
-            name: "maxTokens")
-        {
-            Description = @"The maximum number of tokens the model will generate as part of the response. Note: Setting a low value may result in incomplete generations.
-
-Compatible Deployments: Cohere Platform, Azure, AWS Sagemaker/Bedrock, Private Deployments",
-        };
-
-        private global::System.CommandLine.Argument<int> MaxInputTokens { get; } = new(
-            name: "maxInputTokens")
-        {
-            Description = @"The maximum number of input tokens to send to the model. If not specified, `max_input_tokens` is the model's context length limit minus a small buffer.
-
-Input will be truncated according to the `prompt_truncation` parameter.
-
-Compatible Deployments: Cohere Platform",
-        };
-
-        private global::System.CommandLine.Argument<int> K { get; } = new(
-            name: "k")
-        {
-            Description = @"Ensures only the top `k` most likely tokens are considered for generation at each step.
-Defaults to `0`, min value of `0`, max value of `500`.
-
-Compatible Deployments: Cohere Platform, Azure, AWS Sagemaker/Bedrock, Private Deployments",
-        };
-
-        private global::System.CommandLine.Argument<double> P { get; } = new(
-            name: "p")
-        {
-            Description = @"Ensures that only the most likely tokens, with total probability mass of `p`, are considered for generation at each step. If both `k` and `p` are enabled, `p` acts after `k`.
-Defaults to `0.75`. min value of `0.01`, max value of `0.99`.
-
-Compatible Deployments: Cohere Platform, Azure, AWS Sagemaker/Bedrock, Private Deployments",
-        };
-
-        private global::System.CommandLine.Argument<global::System.Collections.Generic.IList<string>> StopSequences { get; } = new(
-            name: "stopSequences")
-        {
-            Description = @"A list of up to 5 strings that the model will use to stop generation. If the model generates a string that matches any of the strings in the list, it will stop generating tokens and return the generated text up to that point not including the stop sequence.
-
-Compatible Deployments: Cohere Platform, Azure, AWS Sagemaker/Bedrock, Private Deployments",
-        };
-
-        private global::System.CommandLine.Argument<double> FrequencyPenalty { get; } = new(
-            name: "frequencyPenalty")
-        {
-            Description = @"Defaults to `0.0`, min value of `0.0`, max value of `1.0`.
-
-Used to reduce repetitiveness of generated tokens. The higher the value, the stronger a penalty is applied to previously present tokens, proportional to how many times they have already appeared in the prompt or prior generation.
-
-Compatible Deployments: Cohere Platform, Azure, AWS Sagemaker/Bedrock, Private Deployments",
-        };
-
-        private global::System.CommandLine.Argument<double> PresencePenalty { get; } = new(
-            name: "presencePenalty")
-        {
-            Description = @"Defaults to `0.0`, min value of `0.0`, max value of `1.0`.
-
-Used to reduce repetitiveness of generated tokens. Similar to `frequency_penalty`, except that this penalty is applied equally to all tokens that have already appeared, regardless of their exact frequencies.
 
 Compatible Deployments: Cohere Platform, Azure, AWS Sagemaker/Bedrock, Private Deployments",
         };
@@ -255,6 +191,42 @@ Randomness can be further maximized by increasing the  value of the `p` paramete
 Compatible Deployments: Cohere Platform, Azure, AWS Sagemaker/Bedrock, Private Deployments",
         };
 
+        private global::System.CommandLine.Option<int?> MaxTokens { get; } = new(
+            name: "maxTokens")
+        {
+            Description = @"The maximum number of tokens the model will generate as part of the response. Note: Setting a low value may result in incomplete generations.
+
+Compatible Deployments: Cohere Platform, Azure, AWS Sagemaker/Bedrock, Private Deployments",
+        };
+
+        private global::System.CommandLine.Option<int?> MaxInputTokens { get; } = new(
+            name: "maxInputTokens")
+        {
+            Description = @"The maximum number of input tokens to send to the model. If not specified, `max_input_tokens` is the model's context length limit minus a small buffer.
+
+Input will be truncated according to the `prompt_truncation` parameter.
+
+Compatible Deployments: Cohere Platform",
+        };
+
+        private global::System.CommandLine.Option<int?> K { get; } = new(
+            name: "k")
+        {
+            Description = @"Ensures only the top `k` most likely tokens are considered for generation at each step.
+Defaults to `0`, min value of `0`, max value of `500`.
+
+Compatible Deployments: Cohere Platform, Azure, AWS Sagemaker/Bedrock, Private Deployments",
+        };
+
+        private global::System.CommandLine.Option<double?> P { get; } = new(
+            name: "p")
+        {
+            Description = @"Ensures that only the most likely tokens, with total probability mass of `p`, are considered for generation at each step. If both `k` and `p` are enabled, `p` acts after `k`.
+Defaults to `0.75`. min value of `0.01`, max value of `0.99`.
+
+Compatible Deployments: Cohere Platform, Azure, AWS Sagemaker/Bedrock, Private Deployments",
+        };
+
         private global::System.CommandLine.Option<int?> Seed { get; } = new(
             name: "seed")
         {
@@ -262,6 +234,34 @@ Compatible Deployments: Cohere Platform, Azure, AWS Sagemaker/Bedrock, Private D
 deterministically, such that repeated requests with the same
 seed and parameters should return the same result. However,
 determinism cannot be totally guaranteed.
+
+Compatible Deployments: Cohere Platform, Azure, AWS Sagemaker/Bedrock, Private Deployments",
+        };
+
+        private global::System.CommandLine.Option<global::System.Collections.Generic.IList<string>?> StopSequences { get; } = new(
+            name: "stopSequences")
+        {
+            Description = @"A list of up to 5 strings that the model will use to stop generation. If the model generates a string that matches any of the strings in the list, it will stop generating tokens and return the generated text up to that point not including the stop sequence.
+
+Compatible Deployments: Cohere Platform, Azure, AWS Sagemaker/Bedrock, Private Deployments",
+        };
+
+        private global::System.CommandLine.Option<double?> FrequencyPenalty { get; } = new(
+            name: "frequencyPenalty")
+        {
+            Description = @"Defaults to `0.0`, min value of `0.0`, max value of `1.0`.
+
+Used to reduce repetitiveness of generated tokens. The higher the value, the stronger a penalty is applied to previously present tokens, proportional to how many times they have already appeared in the prompt or prior generation.
+
+Compatible Deployments: Cohere Platform, Azure, AWS Sagemaker/Bedrock, Private Deployments",
+        };
+
+        private global::System.CommandLine.Option<double?> PresencePenalty { get; } = new(
+            name: "presencePenalty")
+        {
+            Description = @"Defaults to `0.0`, min value of `0.0`, max value of `1.0`.
+
+Used to reduce repetitiveness of generated tokens. Similar to `frequency_penalty`, except that this penalty is applied equally to all tokens that have already appeared, regardless of their exact frequencies.
 
 Compatible Deployments: Cohere Platform, Azure, AWS Sagemaker/Bedrock, Private Deployments",
         };
@@ -350,13 +350,6 @@ To learn how to use the Chat API and RAG follow our [Text Generation guides](htt
             _serviceProvider = serviceProvider;
 
             Arguments.Add(Message);
-            Arguments.Add(MaxTokens);
-            Arguments.Add(MaxInputTokens);
-            Arguments.Add(K);
-            Arguments.Add(P);
-            Arguments.Add(StopSequences);
-            Arguments.Add(FrequencyPenalty);
-            Arguments.Add(PresencePenalty);
             Options.Add(XClientName);
             Options.Add(Accepts);
             Options.Add(Model);
@@ -369,7 +362,14 @@ To learn how to use the Chat API and RAG follow our [Text Generation guides](htt
             Options.Add(Documents);
             Options.Add(CitationQuality);
             Options.Add(Temperature);
+            Options.Add(MaxTokens);
+            Options.Add(MaxInputTokens);
+            Options.Add(K);
+            Options.Add(P);
             Options.Add(Seed);
+            Options.Add(StopSequences);
+            Options.Add(FrequencyPenalty);
+            Options.Add(PresencePenalty);
             Options.Add(Tools);
             Options.Add(ToolResults);
             Options.Add(ForceSingleStep);

@@ -1,4 +1,4 @@
-﻿//HintName: G.IProjectTemplatesClient.Create.g.cs
+//HintName: G.IProjectTemplatesClient.Create.g.cs
 #nullable enable
 
 namespace G
@@ -82,12 +82,12 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.ProjectTemplate> CreateAsync(
             string name,
-            int projectId,
             object? assignmentSettings = default,
             int? createdBy = default,
             string? customScript = default,
             string? description = default,
             int? organization = default,
+            int? projectId = default,
             object? projectSettings = default,
             bool? requireCommentOnSkip = default,
             object? reviewSettings = default,

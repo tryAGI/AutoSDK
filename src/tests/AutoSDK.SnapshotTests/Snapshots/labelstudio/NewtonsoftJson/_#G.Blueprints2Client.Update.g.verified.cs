@@ -1,4 +1,4 @@
-﻿//HintName: G.Blueprints2Client.Update.g.cs
+//HintName: G.Blueprints2Client.Update.g.cs
 
 #nullable enable
 
@@ -462,8 +462,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.Blueprint> UpdateAsync(
             string id,
-            global::System.Collections.Generic.IList<int> taskIds,
             string? description = default,
+            global::System.Collections.Generic.IList<int>? taskIds = default,
             string? title = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)

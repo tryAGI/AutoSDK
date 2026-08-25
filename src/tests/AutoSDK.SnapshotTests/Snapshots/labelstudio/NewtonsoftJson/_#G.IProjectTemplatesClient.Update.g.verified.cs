@@ -1,4 +1,4 @@
-﻿//HintName: G.IProjectTemplatesClient.Update.g.cs
+//HintName: G.IProjectTemplatesClient.Update.g.cs
 #nullable enable
 
 namespace G
@@ -87,13 +87,13 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.ProjectTemplate> UpdateAsync(
             int id,
-            int projectId,
             object? assignmentSettings = default,
             int? createdBy = default,
             string? customScript = default,
             string? description = default,
             string? name = default,
             int? organization = default,
+            int? projectId = default,
             object? projectSettings = default,
             bool? requireCommentOnSkip = default,
             object? reviewSettings = default,

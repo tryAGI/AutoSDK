@@ -1,4 +1,4 @@
-﻿//HintName: G.IStorageDatabricksFilesClient.Update.g.cs
+//HintName: G.IStorageDatabricksFilesClient.Update.g.cs
 #nullable enable
 
 namespace G
@@ -154,11 +154,10 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.DatabricksImportStorage> UpdateAsync(
             int id,
-            string clientSecret,
-            string token,
             global::G.AuthTypeEnum? authType = default,
             string? catalog = default,
             string? clientId = default,
+            string? clientSecret = default,
             string? description = default,
             string? host = default,
             global::System.DateTime? lastSync = default,
@@ -178,6 +177,7 @@ namespace G
             bool? synchronizable = default,
             string? tenantId = default,
             string? title = default,
+            string? token = default,
             string? traceback = default,
             bool? useBlobUrls = default,
             bool? verifyTls = default,

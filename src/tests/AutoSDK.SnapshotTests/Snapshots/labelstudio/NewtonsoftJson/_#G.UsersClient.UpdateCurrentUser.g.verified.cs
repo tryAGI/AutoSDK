@@ -1,4 +1,4 @@
-﻿//HintName: G.UsersClient.UpdateCurrentUser.g.cs
+//HintName: G.UsersClient.UpdateCurrentUser.g.cs
 
 #nullable enable
 
@@ -484,16 +484,16 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.LseUserAPI> UpdateCurrentUserAsync(
-            object emailNotificationSettings,
-            bool? isEmailVerified,
-            string? onboardingState,
-            string password,
             int? activeOrganization = default,
             bool? allowNewsletters = default,
             object? customHotkeys = default,
             global::System.DateTime? dateJoined = default,
+            object? emailNotificationSettings = default,
             string? firstName = default,
+            bool? isEmailVerified = default,
             string? lastName = default,
+            string? onboardingState = default,
+            string? password = default,
             string? phone = default,
             string? username = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,

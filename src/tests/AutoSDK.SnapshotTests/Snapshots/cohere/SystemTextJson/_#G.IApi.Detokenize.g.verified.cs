@@ -1,4 +1,4 @@
-﻿//HintName: G.IApi.Detokenize.g.cs
+//HintName: G.IApi.Detokenize.g.cs
 #nullable enable
 
 namespace G
@@ -51,9 +51,9 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.DetokenizeResponse> DetokenizeAsync(
-            global::System.Collections.Generic.IList<int> tokens,
             string model,
             string? xClientName = default,
+            global::System.Collections.Generic.IList<int>? tokens = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

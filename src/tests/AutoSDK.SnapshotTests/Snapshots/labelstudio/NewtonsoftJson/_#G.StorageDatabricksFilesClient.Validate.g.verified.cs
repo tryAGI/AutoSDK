@@ -1,4 +1,4 @@
-﻿//HintName: G.StorageDatabricksFilesClient.Validate.g.cs
+//HintName: G.StorageDatabricksFilesClient.Validate.g.cs
 
 #nullable enable
 
@@ -529,14 +529,13 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task ValidateAsync(
             string catalog,
-            string clientSecret,
             string host,
             int project,
             string schema,
-            string token,
             string volume,
             global::G.AuthTypeEnum? authType = default,
             string? clientId = default,
+            string? clientSecret = default,
             string? description = default,
             global::System.DateTime? lastSync = default,
             int? lastSyncCount = default,
@@ -553,6 +552,7 @@ namespace G
             bool? synchronizable = default,
             string? tenantId = default,
             string? title = default,
+            string? token = default,
             string? traceback = default,
             bool? useBlobUrls = default,
             bool? verifyTls = default,

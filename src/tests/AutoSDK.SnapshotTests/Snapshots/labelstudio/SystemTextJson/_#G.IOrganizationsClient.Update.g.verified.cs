@@ -1,4 +1,4 @@
-﻿//HintName: G.IOrganizationsClient.Update.g.cs
+//HintName: G.IOrganizationsClient.Update.g.cs
 #nullable enable
 
 namespace G
@@ -86,13 +86,13 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.LseOrganization> UpdateAsync(
             int id,
-            bool? customScriptsEnabled,
-            object? emailNotificationSettings,
-            global::System.Collections.Generic.IList<global::System.Collections.Generic.Dictionary<string, string>>? embedDomains,
-            object? embedSettings,
-            string? title,
             string? contactInfo = default,
             int? createdBy = default,
+            bool? customScriptsEnabled = default,
+            object? emailNotificationSettings = default,
+            global::System.Collections.Generic.IList<global::System.Collections.Generic.Dictionary<string, string>>? embedDomains = default,
+            object? embedSettings = default,
+            string? title = default,
             string? token = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);

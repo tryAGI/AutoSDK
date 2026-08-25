@@ -1,4 +1,4 @@
-﻿//HintName: G.StorageDatabricksFilesClient.Update2.g.cs
+//HintName: G.StorageDatabricksFilesClient.Update2.g.cs
 
 #nullable enable
 
@@ -556,12 +556,11 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.DatabricksExportStorage> Update2Async(
             int id,
-            string clientSecret,
-            string token,
             global::G.AuthTypeEnum? authType = default,
             bool? canDeleteObjects = default,
             string? catalog = default,
             string? clientId = default,
+            string? clientSecret = default,
             string? description = default,
             string? host = default,
             global::System.DateTime? lastSync = default,
@@ -578,6 +577,7 @@ namespace G
             bool? synchronizable = default,
             string? tenantId = default,
             string? title = default,
+            string? token = default,
             string? traceback = default,
             bool? useBlobUrls = default,
             bool? verifyTls = default,

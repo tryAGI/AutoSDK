@@ -1,4 +1,4 @@
-﻿//HintName: G.IV2Client.Embed2.g.cs
+//HintName: G.IV2Client.Embed2.g.cs
 #nullable enable
 
 namespace G
@@ -98,16 +98,16 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.EmbedByTypeResponse> Embed2Async(
-            global::System.Collections.Generic.IList<string> texts,
-            string model,
             global::G.EmbedInputType inputType,
-            global::System.Collections.Generic.IList<global::G.EmbeddingType> embeddingTypes,
-            global::G.V2EmbedRequestTruncate truncate,
             string? xClientName = default,
+            global::System.Collections.Generic.IList<string>? texts = default,
             global::System.Collections.Generic.IList<string>? images = default,
+            string? model = default,
             global::System.Collections.Generic.IList<global::G.EmbedInput>? inputs = default,
             int? maxTokens = default,
             int? outputDimension = default,
+            global::System.Collections.Generic.IList<global::G.EmbeddingType>? embeddingTypes = default,
+            global::G.V2EmbedRequestTruncate? truncate = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

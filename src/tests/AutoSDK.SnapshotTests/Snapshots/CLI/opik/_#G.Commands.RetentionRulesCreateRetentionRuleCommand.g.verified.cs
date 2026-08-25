@@ -1,4 +1,4 @@
-﻿//HintName: G.Commands.RetentionRulesCreateRetentionRuleCommand.g.cs
+//HintName: G.Commands.RetentionRulesCreateRetentionRuleCommand.g.cs
 
 #nullable enable
 
@@ -13,7 +13,7 @@ namespace G
         partial void Validate(
             global::System.CommandLine.ParseResult parseResult,
             global::System.Guid? projectId,
-            bool organizationLevel,
+            bool? organizationLevel,
             global::G.RetentionRuleWriteRetention retention,
             bool? applyToPast,
             global::System.Threading.CancellationToken cancellationToken);
@@ -22,12 +22,6 @@ namespace G
 
             global::G.RetentionRulePublic response,
             global::System.Threading.CancellationToken cancellationToken);
-
-        private global::System.CommandLine.Argument<bool> OrganizationLevel { get; } = new(
-            name: "organizationLevel")
-        {
-            Description = @"Set to true to create an organization-level rule",
-        };
 
         private global::System.CommandLine.Argument<global::G.RetentionRuleWriteRetention> Retention { get; } = new(
             name: "retention")
@@ -39,6 +33,12 @@ namespace G
             name: "projectId")
         {
             Description = @"",
+        };
+
+        private global::System.CommandLine.Option<bool?> OrganizationLevel { get; } = new(
+            name: "organizationLevel")
+        {
+            Description = @"Set to true to create an organization-level rule",
         };
 
         private global::System.CommandLine.Option<bool?> ApplyToPast { get; } = new(
@@ -57,9 +57,9 @@ namespace G
             _client = client;
             _serviceProvider = serviceProvider;
 
-            Arguments.Add(OrganizationLevel);
             Arguments.Add(Retention);
             Options.Add(ProjectId);
+            Options.Add(OrganizationLevel);
             Options.Add(ApplyToPast);
 
             Initialize();

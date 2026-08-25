@@ -1,4 +1,4 @@
-﻿//HintName: G.AnnotationReviewsClient.ApiAnnotationReviewsUpdate.g.cs
+//HintName: G.AnnotationReviewsClient.ApiAnnotationReviewsUpdate.g.cs
 
 #nullable enable
 
@@ -485,8 +485,8 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.AnnotationReview> ApiAnnotationReviewsUpdateAsync(
             int id,
             int annotation,
-            string? comment,
             bool? accepted = default,
+            string? comment = default,
             int? lastAnnotationHistory = default,
             bool? removeFromQueue = default,
             object? result = default,

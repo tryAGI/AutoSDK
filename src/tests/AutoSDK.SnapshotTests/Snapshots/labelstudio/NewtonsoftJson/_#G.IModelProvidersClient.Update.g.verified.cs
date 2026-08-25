@@ -1,4 +1,4 @@
-﻿//HintName: G.IModelProvidersClient.Update.g.cs
+//HintName: G.IModelProvidersClient.Update.g.cs
 #nullable enable
 
 namespace G
@@ -110,13 +110,13 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.ModelProviderConnection> UpdateAsync(
             string id,
-            string? apiKey,
-            string? authToken,
-            string? googleApplicationCredentials,
+            string? apiKey = default,
+            string? authToken = default,
             double? budgetAlertThreshold = default,
             string? cachedAvailableModels = default,
             string? deploymentName = default,
             string? endpoint = default,
+            string? googleApplicationCredentials = default,
             string? googleLocation = default,
             string? googleProjectId = default,
             bool? isInternal = default,

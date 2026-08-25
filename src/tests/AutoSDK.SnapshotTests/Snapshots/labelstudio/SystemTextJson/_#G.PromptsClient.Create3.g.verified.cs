@@ -1,4 +1,4 @@
-﻿//HintName: G.PromptsClient.Create3.g.cs
+//HintName: G.PromptsClient.Create3.g.cs
 
 #nullable enable
 
@@ -501,9 +501,9 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.ModelRun> Create3Async(
             int promptId,
             int versionId,
-            bool onlyMissingPredictions,
             int project,
             string? jobId = default,
+            bool? onlyMissingPredictions = default,
             int? organization = default,
             global::System.DateTime? predictionsUpdatedAt = default,
             global::G.ProjectSubsetEnum? projectSubset = default,
