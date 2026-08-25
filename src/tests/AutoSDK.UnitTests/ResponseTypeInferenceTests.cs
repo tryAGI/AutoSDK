@@ -593,6 +593,45 @@ paths:
         generatedCode.Should().Contain("responseBody: __content,");
     }
 
+    [TestMethod]
+    public void BufferedBinaryAndSseResponses_GenerateUniqueStreamMethodNames()
+    {
+        var settings = DefaultSettings;
+        var data = AutoSDK.Generation.Data.Prepare(((@"openapi: 3.0.1
+info:
+  title: Speech
+  version: 1.0.0
+paths:
+  /audio/speech:
+    post:
+      operationId: createSpeech
+      responses:
+        '200':
+          description: OK
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+            text/event-stream:
+              schema:
+                type: object
+                properties:
+                  audio:
+                    type: string
+", settings), GlobalSettings: settings));
+
+        var binaryEndPoint = data.Methods.Single(x => !x.EnumerableStream);
+        var sseEndPoint = data.Methods.Single(x => x.EnumerableStream);
+        var binaryCode = Sources.GenerateEndPoint(binaryEndPoint);
+        var sseCode = Sources.GenerateEndPoint(sseEndPoint);
+
+        binaryCode.Should().Contain("Task<byte[]> CreateSpeechAsync(");
+        binaryCode.Should().Contain("Task<global::System.IO.Stream> CreateSpeechAsStreamAsync(");
+        sseCode.Should().Contain("IAsyncEnumerable<global::G.CreateSpeechResponse> CreateSpeechAsEventStreamAsync(");
+        sseCode.Should().NotContain("CreateSpeechAsStreamAsync(");
+    }
+
     private static EndPoint LoadEndPoint(string yaml)
     {
         var settings = DefaultSettings;

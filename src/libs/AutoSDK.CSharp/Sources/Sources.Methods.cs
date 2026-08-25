@@ -1368,7 +1368,10 @@ namespace {endPoint.Settings.Namespace}
         {
             var subType = property.Type.SubTypes.First();
             var subTypeData = subType.Unbox<TypeData>();
-            return $"$\"[{{string.Join(\",\", global::System.Linq.Enumerable.Select({name}, x => {GenerateSerializedArrayItemValueExpression(subTypeData, "x", property.Settings)}))}}]\"";
+            var arrayExpression = property.Type.CSharpTypeNullability
+                ? name + "!"
+                : name;
+            return $"$\"[{{string.Join(\",\", global::System.Linq.Enumerable.Select({arrayExpression}, x => {GenerateSerializedArrayItemValueExpression(subTypeData, "x", property.Settings)}))}}]\"";
         }
 
         return GenerateSerializedValueExpression(

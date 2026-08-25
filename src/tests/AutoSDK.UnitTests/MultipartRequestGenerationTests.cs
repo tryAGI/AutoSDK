@@ -372,4 +372,48 @@ paths:
         methodCode.Should().Contain("mediaType: \"application/json\"");
         methodCode.Should().NotContain("new global::System.Net.Http.MultipartFormDataContent()");
     }
+
+    [TestMethod]
+    public void OptionalMultipartArrays_AreNullForgivenInsideGuardedSerialization()
+    {
+        const string yaml = """
+openapi: 3.0.3
+info:
+  title: Optional multipart arrays
+  version: 1.0.0
+paths:
+  /jobs:
+    post:
+      operationId: createJob
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                upload_file_order:
+                  type: array
+                  items:
+                    type: string
+                job_file_mapping:
+                  type: array
+                  items:
+                    type: array
+                    items:
+                      type: string
+      responses:
+        '204':
+          description: ok
+""";
+
+        var data = AutoSDK.Generation.Data.Prepare(((yaml, DefaultSettings), GlobalSettings: DefaultSettings));
+        var method = data.Methods.Single(x => x.NotAsyncMethodName == "CreateJob");
+        var methodCode = Sources.GenerateEndPoint(method);
+
+        methodCode.Should().Contain("if (request.UploadFileOrder != default)");
+        methodCode.Should().Contain("Enumerable.Select(request.UploadFileOrder!, x =>");
+        methodCode.Should().Contain("if (request.JobFileMapping != default)");
+        methodCode.Should().Contain("Enumerable.Select(request.JobFileMapping!, x =>");
+    }
 }

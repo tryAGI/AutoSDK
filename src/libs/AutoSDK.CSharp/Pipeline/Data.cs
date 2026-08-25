@@ -1771,6 +1771,11 @@ public static class Data
                 endPoint.SuccessResponse.Type.CSharpTypeWithoutNullability))
             .Select(static group => group.First())
             .ToArray();
+        var hasBufferedBinaryStreamCompanion = distinctPrototypes.Any(static candidate =>
+            !candidate.EnumerableStream &&
+            candidate.ContentType == ContentType.ByteArray &&
+            candidate.SuccessResponse.Type.IsBinary &&
+            candidate.SuccessResponse.Type.CSharpTypeWithoutNullability == "byte[]");
 
         for (var index = 0; index < distinctPrototypes.Length; index++)
         {
@@ -1780,7 +1785,8 @@ public static class Data
                 : GetResponseMethodSuffix(
                     prototype,
                     hasRegularResponse,
-                    distinctPrototypes.Count(static candidate => candidate.EnumerableStream));
+                    distinctPrototypes.Count(static candidate => candidate.EnumerableStream),
+                    hasBufferedBinaryStreamCompanion);
             var candidate = CSharpEndPointFactory.CreateEndPoint(
                 operation,
                 preferredMimeType: prototype.SuccessResponse.MimeType,
@@ -1801,10 +1807,17 @@ public static class Data
     private static string GetResponseMethodSuffix(
         EndPoint endPoint,
         bool hasRegularResponse,
-        int streamingVariantCount)
+        int streamingVariantCount,
+        bool hasBufferedBinaryStreamCompanion)
     {
         if (endPoint.EnumerableStream)
         {
+            if (hasBufferedBinaryStreamCompanion &&
+                endPoint.StreamFormat == StreamFormat.ServerSentEvents)
+            {
+                return "AsEventStream";
+            }
+
             return GetStreamMethodSuffix(
                        hasRegularJsonVariant: hasRegularResponse,
                        hasAnotherStreamingVariant: streamingVariantCount > 1,
