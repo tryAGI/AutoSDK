@@ -1368,7 +1368,7 @@ namespace {endPoint.Settings.Namespace}
         {
             var subType = property.Type.SubTypes.First();
             var subTypeData = subType.Unbox<TypeData>();
-            var arrayExpression = property.Type.CSharpTypeNullability
+            var arrayExpression = !property.IsRequired || property.Type.CSharpTypeNullability
                 ? name + "!"
                 : name;
             return $"$\"[{{string.Join(\",\", global::System.Linq.Enumerable.Select({arrayExpression}, x => {GenerateSerializedArrayItemValueExpression(subTypeData, "x", property.Settings)}))}}]\"";
