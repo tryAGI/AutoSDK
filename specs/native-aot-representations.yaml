@@ -1,0 +1,19 @@
+openapi: 3.0.3
+info:
+  title: NativeAOT representation audit
+  version: 1.0.0
+paths:
+  /run:
+    post:
+      operationId: run
+      requestBody:
+        content:
+          application/msgpack:
+            schema:
+              type: object
+          application/json:
+            schema:
+              type: object
+      responses:
+        '204':
+          description: ok

@@ -785,29 +785,12 @@ internal sealed record CliProjectMetadata(
             return true;
         }
 
-        var valueProperty = extension.GetType().GetProperty("Value");
-        if (string.Equals(extension.GetType().FullName, "Microsoft.OpenApi.Any.OpenApiString", StringComparison.Ordinal) &&
-            valueProperty?.GetValue(extension) is string stringValue &&
-            !string.IsNullOrWhiteSpace(stringValue))
-        {
-            value = stringValue;
-            return true;
-        }
-
         return false;
     }
 
     private static bool TryReadExtensionBoolean(IOpenApiExtension extension, out bool value)
     {
         value = false;
-        var valueProperty = extension.GetType().GetProperty("Value");
-        if (string.Equals(extension.GetType().FullName, "Microsoft.OpenApi.Any.OpenApiBoolean", StringComparison.Ordinal) &&
-            valueProperty?.GetValue(extension) is bool boolValue)
-        {
-            value = boolValue;
-            return true;
-        }
-
         if (OpenApiExtensions.TryGetExtensionJsonNode(extension) is JsonValue jsonValue &&
             jsonValue.TryGetValue<bool>(out value))
         {

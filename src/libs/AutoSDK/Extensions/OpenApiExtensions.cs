@@ -480,8 +480,7 @@ info:
 
     private static string NormalizeOpenApi31CompatibilityKeywords(string text)
     {
-        if (TryNormalizeOpenApi31Json(text, out var normalizedText) ||
-            TryNormalizeOpenApi31Yaml(text, out normalizedText))
+        if (TryNormalizeOpenApi31Json(text, out var normalizedText))
         {
             return normalizedText;
         }
@@ -523,70 +522,6 @@ info:
         return true;
     }
 
-    private static bool TryNormalizeOpenApi31Yaml(
-        string text,
-        out string normalizedText)
-    {
-        normalizedText = string.Empty;
-
-        if (!TryDeserializeYamlAsJsonObject(text, out var rootObject) ||
-            rootObject == null ||
-            !IsOpenApi31Document(rootObject))
-        {
-            return false;
-        }
-
-        var unsupportedKeywords = new List<string>();
-        var changed = NormalizeOpenApi31Keywords(rootObject, "#", unsupportedKeywords);
-        ThrowOnUnsupportedOpenApi31Keywords(unsupportedKeywords);
-        if (!changed)
-        {
-            return false;
-        }
-
-        normalizedText = rootObject.ToJsonString();
-        return true;
-    }
-
-    private static bool TryDeserializeYamlAsJsonObject(
-        string text,
-        out JsonObject? rootObject)
-    {
-        rootObject = null;
-
-        try
-        {
-            var sharpYamlAssembly = AppDomain.CurrentDomain.GetAssemblies()
-                .FirstOrDefault(a => a.GetName().Name == "SharpYaml");
-
-            if (sharpYamlAssembly == null)
-            {
-                sharpYamlAssembly = System.Reflection.Assembly.Load("SharpYaml");
-            }
-
-            var serializerType = sharpYamlAssembly?.GetType("SharpYaml.Serialization.Serializer");
-            if (serializerType == null)
-            {
-                return false;
-            }
-
-            var serializer = Activator.CreateInstance(serializerType);
-            var deserializeMethod = serializerType.GetMethod("Deserialize", new[] { typeof(string) });
-            var result = deserializeMethod?.Invoke(serializer, new object[] { text });
-            if (result == null)
-            {
-                return false;
-            }
-
-            rootObject = JsonNode.Parse(JsonSerializer.Serialize(result)) as JsonObject;
-            return rootObject != null;
-        }
-        catch
-        {
-            return false;
-        }
-    }
-
     private static bool IsOpenApi31Document(JsonObject rootObject)
     {
         return rootObject["openapi"]?.ToString()?.StartsWith("3.1", StringComparison.Ordinal) == true;
@@ -620,9 +555,7 @@ info:
         string path,
         List<string> unsupportedKeywords)
     {
-        var changed = NormalizeExclusiveMinimum(jsonObject);
-        changed |= NormalizeExclusiveMaximum(jsonObject);
-        changed |= NormalizeOpenApi31SchemaKeywords(jsonObject, path, unsupportedKeywords);
+        var changed = NormalizeOpenApi31SchemaKeywords(jsonObject, path, unsupportedKeywords);
 
         foreach (var property in jsonObject.ToList())
         {
@@ -1076,60 +1009,6 @@ info:
         return node is JsonValue jsonValue &&
                jsonValue.TryGetValue(out value) &&
                !string.IsNullOrWhiteSpace(value);
-    }
-
-    private static bool NormalizeExclusiveMinimum(JsonObject jsonObject)
-    {
-        var exclusiveMinimumNode = jsonObject["exclusiveMinimum"];
-        if (!TryGetNumericValue(exclusiveMinimumNode, out var exclusiveMinimum))
-        {
-            return false;
-        }
-
-        if (TryGetNumericValue(jsonObject["minimum"], out var minimum) &&
-            exclusiveMinimum < minimum)
-        {
-            jsonObject["exclusiveMinimum"] = false;
-            return true;
-        }
-
-        jsonObject["minimum"] = exclusiveMinimumNode?.DeepClone();
-        jsonObject["exclusiveMinimum"] = true;
-        return true;
-    }
-
-    private static bool NormalizeExclusiveMaximum(JsonObject jsonObject)
-    {
-        var exclusiveMaximumNode = jsonObject["exclusiveMaximum"];
-        if (!TryGetNumericValue(exclusiveMaximumNode, out var exclusiveMaximum))
-        {
-            return false;
-        }
-
-        if (TryGetNumericValue(jsonObject["maximum"], out var maximum) &&
-            exclusiveMaximum > maximum)
-        {
-            jsonObject["exclusiveMaximum"] = false;
-            return true;
-        }
-
-        jsonObject["maximum"] = exclusiveMaximumNode?.DeepClone();
-        jsonObject["exclusiveMaximum"] = true;
-        return true;
-    }
-
-    private static bool TryGetNumericValue(
-        JsonNode? node,
-        out decimal value)
-    {
-        value = default;
-
-        return node is JsonValue &&
-               decimal.TryParse(
-                   node.ToJsonString(),
-                   NumberStyles.Float,
-                   CultureInfo.InvariantCulture,
-                   out value);
     }
 
     private static bool LooksLikeOpenApiFragment(JsonObject jsonObject)

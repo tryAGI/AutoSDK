@@ -9,11 +9,6 @@ namespace AutoSDK.Docs;
 
 public static class DocsSynchronizer
 {
-    private static readonly JsonSerializerOptions SerializerOptions = new()
-    {
-        PropertyNameCaseInsensitive = true,
-    };
-
     public static async Task<DocsSyncResult> SyncAsync(
         string solutionDirectory,
         string? configPath = null,
@@ -152,7 +147,9 @@ public static class DocsSynchronizer
         }
 
         var json = await File.ReadAllTextAsync(path, cancellationToken).ConfigureAwait(false);
-        var manifest = JsonSerializer.Deserialize<GeneratedSdkSnippetManifest>(json, SerializerOptions) ??
+        var manifest = JsonSerializer.Deserialize(
+                           json,
+                           DocsJsonSerializerContext.Default.GeneratedSdkSnippetManifest) ??
                        GeneratedSdkSnippetManifest.Empty;
 
         return manifest.Examples

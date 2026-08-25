@@ -11,11 +11,6 @@ namespace AutoSDK.Generation;
 
 public static partial class Sources
 {
-    private static readonly JsonSerializerOptions SnippetManifestJsonOptions = new()
-    {
-        WriteIndented = true,
-    };
-
     public static FileWithName SnippetManifest(
         IReadOnlyList<OperationContext> operations,
         IReadOnlyList<EndPoint> endPoints,
@@ -72,7 +67,7 @@ public static partial class Sources
 
         return JsonSerializer.Serialize(
             new GeneratedSdkSnippetManifest(snippets),
-            SnippetManifestJsonOptions);
+            CSharpJsonSerializerContext.Default.GeneratedSdkSnippetManifest);
     }
 
     private static GeneratedSdkSnippetDocument? CreateSnippetDocument(
@@ -573,7 +568,7 @@ public static partial class Sources
             return true;
         }
 
-        jsonText = JsonSerializer.Serialize(rawValue);
+        jsonText = JsonSerializer.Serialize(rawValue, CSharpJsonSerializerContext.Default.String);
         return true;
     }
 
@@ -693,7 +688,7 @@ public static partial class Sources
 
     private static string ToCSharpStringLiteral(string value)
     {
-        return JsonSerializer.Serialize(value);
+        return JsonSerializer.Serialize(value, CSharpJsonSerializerContext.Default.String);
     }
 
     private static string ToVerbatimStringLiteral(string value)

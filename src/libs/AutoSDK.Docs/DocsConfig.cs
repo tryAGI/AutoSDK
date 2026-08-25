@@ -4,11 +4,6 @@ namespace AutoSDK.Docs;
 
 public sealed record DocsConfig
 {
-    private static readonly JsonSerializerOptions SerializerOptions = new()
-    {
-        PropertyNameCaseInsensitive = true,
-    };
-
     public string? BrandName { get; init; }
 
     public string? Namespace { get; init; }
@@ -47,7 +42,7 @@ public sealed record DocsConfig
         }
 
         var json = await File.ReadAllTextAsync(resolvedPath, cancellationToken).ConfigureAwait(false);
-        var config = JsonSerializer.Deserialize<DocsConfig>(json, SerializerOptions);
+        var config = JsonSerializer.Deserialize(json, DocsJsonSerializerContext.Default.DocsConfig);
 
         return config ?? new DocsConfig();
     }

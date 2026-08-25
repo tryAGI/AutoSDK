@@ -9,11 +9,6 @@ namespace AutoSDK.CLI.Commands;
 
 internal sealed class RepresentationAuditCommand : Command
 {
-    private static readonly JsonSerializerOptions s_jsonOptions = new()
-    {
-        WriteIndented = true,
-    };
-
     private Argument<string> Input { get; } = new("input")
     {
         Description = "OpenAPI file, URL, or directory containing openapi.json/openapi.yaml files.",
@@ -153,9 +148,11 @@ internal sealed class RepresentationAuditCommand : Command
         }
     }
 
-    private static string ToJson(IReadOnlyList<RepresentationAuditFinding> findings)
+    private static string ToJson(RepresentationAuditFinding[] findings)
     {
-        return JsonSerializer.Serialize(findings, s_jsonOptions) + Environment.NewLine;
+        return JsonSerializer.Serialize(
+            findings,
+            CliJsonSerializerContext.Default.RepresentationAuditFindingArray) + Environment.NewLine;
     }
 
     private static string ToTsv(IEnumerable<RepresentationAuditFinding> findings)

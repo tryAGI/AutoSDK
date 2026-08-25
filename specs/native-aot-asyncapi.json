@@ -1,0 +1,39 @@
+{
+  "asyncapi": "3.0.0",
+  "info": { "title": "NativeAOT AsyncAPI JSON", "version": "1.0.0" },
+  "servers": {
+    "production": {
+      "host": "example.com",
+      "pathname": "/realtime",
+      "protocol": "wss"
+    }
+  },
+  "channels": {
+    "realtime": {
+      "address": "/realtime",
+      "messages": {
+        "Message": {
+          "payload": { "$ref": "#/components/schemas/Message" }
+        }
+      }
+    }
+  },
+  "operations": {
+    "receiveMessage": {
+      "action": "receive",
+      "channel": { "$ref": "#/channels/realtime" },
+      "messages": [
+        { "$ref": "#/channels/realtime/messages/Message" }
+      ]
+    }
+  },
+  "components": {
+    "schemas": {
+      "Message": {
+        "type": "object",
+        "required": ["text"],
+        "properties": { "text": { "type": "string" } }
+      }
+    }
+  }
+}

@@ -1299,7 +1299,7 @@ public static class AsyncApiData
 
             foreach (var entry in receiveSchemas)
             {
-                oneOfArray.Add(new JsonObject
+                oneOfArray.Add((JsonNode?)new JsonObject
                 {
                     ["$ref"] = $"#/components/schemas/{entry.SchemaName}",
                 });
