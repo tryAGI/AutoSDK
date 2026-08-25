@@ -548,7 +548,7 @@ namespace G
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.Language, x => x.ToValueString()))}]"),
+                                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.Language!, x => x.ToValueString()))}]"),
                                     name: "\"language\"");
 
                             }

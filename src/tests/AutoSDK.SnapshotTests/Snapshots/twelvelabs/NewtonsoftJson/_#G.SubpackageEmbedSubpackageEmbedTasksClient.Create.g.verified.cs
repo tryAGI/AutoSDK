@@ -226,7 +226,7 @@ namespace G
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.VideoEmbeddingScope, x => x.ToValueString()))}]"),
+                                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.VideoEmbeddingScope!, x => x.ToValueString()))}]"),
                                     name: "\"video_embedding_scope\"");
 
                             }

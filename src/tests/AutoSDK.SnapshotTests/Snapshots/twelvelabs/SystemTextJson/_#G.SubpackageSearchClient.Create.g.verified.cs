@@ -292,7 +292,7 @@ namespace G
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.TranscriptionOptions, x => x.ToValueString()))}]"),
+                                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.TranscriptionOptions!, x => x.ToValueString()))}]"),
                                     name: "\"transcription_options\"");
 
                             }

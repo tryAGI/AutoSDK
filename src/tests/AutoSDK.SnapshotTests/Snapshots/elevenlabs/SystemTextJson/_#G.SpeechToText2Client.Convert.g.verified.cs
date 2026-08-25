@@ -234,7 +234,7 @@ namespace G
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.AdditionalFormats, x => x.ToString() ?? string.Empty))}]"),
+                                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.AdditionalFormats!, x => x.ToString() ?? string.Empty))}]"),
                                     name: "\"additional_formats\"");
 
                             }
@@ -346,7 +346,7 @@ namespace G
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.Keyterms, x => x))}]"),
+                                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.Keyterms!, x => x))}]"),
                                     name: "\"keyterms\"");
 
                             }

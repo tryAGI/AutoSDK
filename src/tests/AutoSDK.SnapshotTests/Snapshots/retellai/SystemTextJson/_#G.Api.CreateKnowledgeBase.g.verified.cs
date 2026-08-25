@@ -1,4 +1,4 @@
-﻿//HintName: G.Api.CreateKnowledgeBase.g.cs
+//HintName: G.Api.CreateKnowledgeBase.g.cs
 
 #nullable enable
 
@@ -150,7 +150,7 @@ namespace G
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.KnowledgeBaseTexts, x => x.ToJson(JsonSerializerOptions)))}]"),
+                                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.KnowledgeBaseTexts!, x => x.ToJson(JsonSerializerOptions)))}]"),
                                     name: "\"knowledge_base_texts\"");
 
                             }
@@ -176,7 +176,7 @@ namespace G
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.KnowledgeBaseUrls, x => x))}]"),
+                                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.KnowledgeBaseUrls!, x => x))}]"),
                                     name: "\"knowledge_base_urls\"");
 
                             }

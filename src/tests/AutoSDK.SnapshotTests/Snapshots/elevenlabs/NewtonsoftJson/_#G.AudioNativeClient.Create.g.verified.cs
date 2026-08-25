@@ -259,7 +259,7 @@ namespace G
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.PronunciationDictionaryLocators, x => x))}]"),
+                                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.PronunciationDictionaryLocators!, x => x))}]"),
                                     name: "\"pronunciation_dictionary_locators\"");
 
                             }

@@ -1,4 +1,4 @@
-﻿//HintName: G.DatasetsClient.UploadCsvDataset.g.cs
+//HintName: G.DatasetsClient.UploadCsvDataset.g.cs
 
 #nullable enable
 
@@ -238,7 +238,7 @@ namespace G
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.OutputKeys, x => x))}]"),
+                                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.OutputKeys!, x => x))}]"),
                                     name: "\"output_keys\"");
 
                             }
@@ -794,7 +794,7 @@ namespace G
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.OutputKeys, x => x))}]"),
+                                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.OutputKeys!, x => x))}]"),
                                     name: "\"output_keys\"");
 
                             }
@@ -1295,7 +1295,7 @@ namespace G
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.OutputKeys, x => x))}]"),
+                                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.OutputKeys!, x => x))}]"),
                                     name: "\"output_keys\"");
 
                             }
