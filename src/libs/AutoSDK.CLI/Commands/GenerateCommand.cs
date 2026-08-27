@@ -754,6 +754,12 @@ internal sealed class GenerateCommand : Command
             : [];
         var generatorFingerprint = string.Empty;
         var cacheValidation = new GenerationCacheValidation(false, "mixed_mode_disabled", default);
+        var cacheLockTime = Stopwatch.StartNew();
+        await using var cacheLock = (await GenerationCache
+            .AcquireOutputLockAsync(output)
+            .ConfigureAwait(false))
+            .ConfigureAwait(false);
+        cacheLockTime.Stop();
         var cacheValidationTime = Stopwatch.StartNew();
         var allocationBeforeCache = GetAllocatedBytes(diagnosticsEnabled);
         if (grpcInputs.IsEmpty)
@@ -782,6 +788,7 @@ internal sealed class GenerateCommand : Command
                     Total: totalTime.Elapsed,
                     Setup: setupElapsed,
                     InputRead: inputReadTime.Elapsed,
+                    CacheLockWait: cacheLockTime.Elapsed,
                     CacheValidation: cacheValidationTime.Elapsed,
                     Pipeline: TimeSpan.Zero,
                     Render: TimeSpan.Zero,
@@ -933,6 +940,7 @@ internal sealed class GenerateCommand : Command
                 Total: totalTime.Elapsed,
                 Setup: setupElapsed,
                 InputRead: inputReadTime.Elapsed,
+                CacheLockWait: cacheLockTime.Elapsed,
                 CacheValidation: cacheValidationTime.Elapsed,
                 Pipeline: pipelineTime.Elapsed,
                 Render: renderTime.Elapsed,

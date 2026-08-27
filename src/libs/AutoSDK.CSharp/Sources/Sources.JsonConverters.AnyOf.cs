@@ -4,6 +4,8 @@ namespace AutoSDK.Generation;
 
 public static partial class Sources
 {
+    private const int AnyOfLinearFallbackGuardThreshold = 128;
+
     public static string GenerateAnyOfJsonConverter(
         AnyOfData anyOfData,
         CancellationToken cancellationToken = default)
@@ -27,6 +29,13 @@ public static partial class Sources
                                    : anyOfData.Properties.All(x => !string.IsNullOrWhiteSpace(x.DiscriminatorJsonValue)));
         var hasPropertyInfo = anyOfData.Properties.Any(x => !x.JsonPropertyNames.IsEmpty);
         var hasNestedPropertyInfo = anyOfData.Properties.Any(x => x.JsonPropertyNames.Any(propName => propName.Contains('.')));
+        var useLinearFallbackGuard = anyOfData.Properties.Length >= AnyOfLinearFallbackGuardThreshold;
+        var noValueGuard = useLinearFallbackGuard
+            ? "!__hasValue"
+            : string.Join(" && ", anyOfData.Properties.Select(x => $"{x.ParameterName} == null"));
+        var hasValueDeclaration = useLinearFallbackGuard
+            ? $"\n            var __hasValue = {string.Join(" || ", anyOfData.Properties.Select(x => $"{x.ParameterName} != null"))};\n"
+            : "\n";
 
         string read;
         if (hasDiscriminator)
@@ -127,9 +136,8 @@ public static partial class Sources
                 }}
 ").Inject().TrimEnd(',')}
             }}
-
-{anyOfData.Properties.Select(x => $@"
-            if ({string.Join(" && ", anyOfData.Properties.Select(y => $"{y.ParameterName} == null"))})
+{hasValueDeclaration}{anyOfData.Properties.Select(x => $@"
+            if ({noValueGuard})
             {{
                 try
                 {{
@@ -137,8 +145,10 @@ public static partial class Sources
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof({x.Type.CSharpTypeWithoutNullability}), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<{x.Type.CSharpTypeWithoutNullability}> ??
                                    throw new global::System.InvalidOperationException($""Cannot get type info for {{typeof({x.Type.CSharpTypeWithoutNullability}).Name}}"");
                     {x.ParameterName} = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+{(useLinearFallbackGuard ? $"                    __hasValue = {x.ParameterName} != null;" : TrimmedLine)}
  " : $@"
                     {x.ParameterName} = global::System.Text.Json.JsonSerializer.Deserialize<{x.Type.CSharpTypeWithoutNullability}>(__rawJson, options);
+{(useLinearFallbackGuard ? $"                    __hasValue = {x.ParameterName} != null;" : TrimmedLine)}
  ")}
                 }}
                 catch (global::System.Text.Json.JsonException)
@@ -218,9 +228,8 @@ public static partial class Sources
                 }}
 ").Inject().TrimEnd(',')}
             }}
-
-{anyOfData.Properties.Select(x => $@"
-            if ({string.Join(" && ", anyOfData.Properties.Select(y => $"{y.ParameterName} == null"))})
+{hasValueDeclaration}{anyOfData.Properties.Select(x => $@"
+            if ({noValueGuard})
             {{
                 try
                 {{
@@ -228,8 +237,10 @@ public static partial class Sources
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof({x.Type.CSharpTypeWithoutNullability}), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<{x.Type.CSharpTypeWithoutNullability}> ??
                                    throw new global::System.InvalidOperationException($""Cannot get type info for {{typeof({x.Type.CSharpTypeWithoutNullability}).Name}}"");
                     {x.ParameterName} = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+{(useLinearFallbackGuard ? $"                    __hasValue = {x.ParameterName} != null;" : TrimmedLine)}
  " : $@"
                     {x.ParameterName} = global::System.Text.Json.JsonSerializer.Deserialize<{x.Type.CSharpTypeWithoutNullability}>(__rawJson, options);
+{(useLinearFallbackGuard ? $"                    __hasValue = {x.ParameterName} != null;" : TrimmedLine)}
  ")}
                 }}
                 catch (global::System.Text.Json.JsonException)

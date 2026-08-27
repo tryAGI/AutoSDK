@@ -418,6 +418,113 @@ public class CliTests
     }
 
     [TestMethod]
+    public async Task Generate_ConcurrentlyToSameOutput_SerializesManifestAndReusesResult()
+    {
+        var tempDirectory = Path.Combine(Path.GetTempPath(), Path.GetRandomFileName());
+        try
+        {
+            Directory.CreateDirectory(tempDirectory);
+
+            var specPath = Path.Combine(tempDirectory, "concurrent.yaml");
+            var outputDirectory = Path.Combine(tempDirectory, "Generated");
+            await File.WriteAllTextAsync(
+                specPath,
+                """
+                openapi: 3.0.1
+                info:
+                  title: Concurrent generation
+                  version: 1.0.0
+                paths:
+                  /items:
+                    get:
+                      operationId: listItems
+                      responses:
+                        '200':
+                          description: OK
+                          content:
+                            application/json:
+                              schema:
+                                type: array
+                                items:
+                                  $ref: '#/components/schemas/Item'
+                components:
+                  schemas:
+                    Item:
+                      type: object
+                      required: [id]
+                      properties:
+                        id:
+                          type: string
+                        name:
+                          type: string
+                """);
+
+            var repositoryDirectory = Path.GetFullPath(Path.Combine(
+                Directory.GetCurrentDirectory(),
+                "../../../../../.."));
+            var cliProject = Path.Combine(repositoryDirectory, "src/libs/AutoSDK.CLI/AutoSDK.CLI.csproj");
+            var buildResult = await RunDotnetAsync(
+                repositoryDirectory,
+                "build",
+                "--disable-build-servers",
+                cliProject);
+            Console.WriteLine(buildResult.StandardOutput);
+            Console.WriteLine(buildResult.StandardError);
+            buildResult.ExitCode.Should().Be(0);
+
+            var cliAssembly = Path.Combine(
+                repositoryDirectory,
+                "src/libs/AutoSDK.CLI/bin/Debug/net10.0/AutoSDK.CLI.dll");
+            File.Exists(cliAssembly).Should().BeTrue();
+
+            Task<(int ExitCode, string StandardOutput, string StandardError)> GenerateAsync()
+            {
+                return RunDotnetAsync(
+                    repositoryDirectory,
+                    cliAssembly,
+                    "generate", specPath,
+                    "--namespace", "ConcurrentGeneration",
+                    "--clientClassName", "ConcurrentGenerationClient",
+                    "--targetFramework", "net10.0",
+                    "--output", outputDirectory,
+                    "--clean-stale-files",
+                    "--diagnostics");
+            }
+
+            var concurrentResults = await Task.WhenAll(GenerateAsync(), GenerateAsync());
+            foreach (var result in concurrentResults)
+            {
+                Console.WriteLine(result.StandardOutput);
+                Console.WriteLine(result.StandardError);
+                result.ExitCode.Should().Be(0);
+                result.StandardError.Should().Contain("cache_lock_wait_ms:");
+            }
+
+            concurrentResults.Count(static result => result.StandardError.Contains("cache_hit: false", StringComparison.Ordinal)).Should().Be(1);
+            concurrentResults.Count(static result => result.StandardError.Contains("cache_hit: true", StringComparison.Ordinal)).Should().Be(1);
+
+            var generatedFiles = Directory.GetFiles(outputDirectory, "*.cs", SearchOption.AllDirectories);
+            generatedFiles.Should().NotBeEmpty();
+            foreach (var generatedFile in generatedFiles)
+            {
+                new FileInfo(generatedFile).Length.Should().BeGreaterThan(0);
+            }
+
+            var validationResult = await GenerateAsync();
+            Console.WriteLine(validationResult.StandardOutput);
+            Console.WriteLine(validationResult.StandardError);
+            validationResult.ExitCode.Should().Be(0);
+            validationResult.StandardError.Should().Contain("cache_hit: true");
+            ReadDiagnosticValue(validationResult.StandardError, "files_written").Should().Be(0);
+            ReadDiagnosticValue(validationResult.StandardError, "files_unchanged").Should().Be(generatedFiles.Length);
+        }
+        finally
+        {
+            TryDeleteDirectory(tempDirectory);
+        }
+    }
+
+    [TestMethod]
     public async Task Generate_WithNoEndpointsOrModels_WarnsAboutEmptyGeneratedSurface()
     {
         var tempDirectory = Path.Combine(Path.GetTempPath(), Path.GetRandomFileName());

@@ -26,6 +26,47 @@ internal static class GenerationCache
 {
     private const int FormatVersion = 1;
     private const int MaxParallelism = 8;
+    private static readonly TimeSpan LockRetryDelay = TimeSpan.FromMilliseconds(25);
+
+    public static async Task<IAsyncDisposable> AcquireOutputLockAsync(
+        string outputDirectory,
+        CancellationToken cancellationToken = default)
+    {
+        var lockPath = $"{GetCachePath(Path.GetFullPath(outputDirectory))}.lock";
+        try
+        {
+            Directory.CreateDirectory(Path.GetDirectoryName(lockPath)!);
+        }
+        catch (Exception exception) when (exception is IOException or UnauthorizedAccessException)
+        {
+            return NoopAsyncDisposable.Instance;
+        }
+
+        while (true)
+        {
+            cancellationToken.ThrowIfCancellationRequested();
+            try
+            {
+                return new FileStream(
+                    lockPath,
+                    new FileStreamOptions
+                    {
+                        Access = FileAccess.ReadWrite,
+                        Mode = FileMode.OpenOrCreate,
+                        Options = FileOptions.Asynchronous,
+                        Share = FileShare.None,
+                    });
+            }
+            catch (IOException)
+            {
+                await Task.Delay(LockRetryDelay, cancellationToken).ConfigureAwait(false);
+            }
+            catch (UnauthorizedAccessException)
+            {
+                return NoopAsyncDisposable.Instance;
+            }
+        }
+    }
 
     public static string CreateGeneratorFingerprint(
         string inputText,
@@ -301,4 +342,14 @@ internal static class GenerationCache
         OperatingSystem.IsWindows() || OperatingSystem.IsMacOS()
             ? StringComparer.OrdinalIgnoreCase
             : StringComparer.Ordinal;
+
+    private sealed class NoopAsyncDisposable : IAsyncDisposable
+    {
+        public static NoopAsyncDisposable Instance { get; } = new();
+
+        public ValueTask DisposeAsync()
+        {
+            return ValueTask.CompletedTask;
+        }
+    }
 }

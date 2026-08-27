@@ -11,6 +11,7 @@ internal readonly record struct GenerationDiagnostics(
     TimeSpan Total,
     TimeSpan Setup,
     TimeSpan InputRead,
+    TimeSpan CacheLockWait,
     TimeSpan CacheValidation,
     TimeSpan Pipeline,
     TimeSpan Render,
@@ -37,6 +38,7 @@ internal readonly record struct GenerationDiagnostics(
         await WriteMillisecondsAsync(writer, "total_ms", Total).ConfigureAwait(false);
         await WriteMillisecondsAsync(writer, "setup_ms", Setup).ConfigureAwait(false);
         await WriteMillisecondsAsync(writer, "input_read_ms", InputRead).ConfigureAwait(false);
+        await WriteMillisecondsAsync(writer, "cache_lock_wait_ms", CacheLockWait).ConfigureAwait(false);
         await WriteMillisecondsAsync(writer, "cache_validation_ms", CacheValidation).ConfigureAwait(false);
         await WriteMillisecondsAsync(writer, "pipeline_ms", Pipeline).ConfigureAwait(false);
         await WriteMillisecondsAsync(writer, "core_parsing_ms", CoreTimes.Parsing).ConfigureAwait(false);
