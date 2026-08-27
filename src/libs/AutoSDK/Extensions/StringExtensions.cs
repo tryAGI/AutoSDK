@@ -121,8 +121,6 @@ public static class StringExtensions
         return newText;
     }
     
-    private static readonly char[] Separator = { '\n' };
-
     /// <summary>
     /// Removes blank lines where there are only spaces.
     /// Used to preserve formatting in code where lines of code may be missing based on conditions.
@@ -135,12 +133,79 @@ public static class StringExtensions
     {
         text = text ?? throw new ArgumentNullException(nameof(text));
 
-        return string.Join(
-            separator: "\n",
-            values: text
-                .NormalizeLineEndings()
-                .Split(Separator, StringSplitOptions.None)
-                .Where(static line => line.Length == 0 || !line.All(char.IsWhiteSpace)));
+        var requiresChanges = false;
+        var lineStart = 0;
+        for (var index = 0; index <= text.Length; index++)
+        {
+            if (index != text.Length && text[index] is not ('\r' or '\n'))
+            {
+                continue;
+            }
+
+            var lineLength = index - lineStart;
+            if (lineLength > 0 && IsAllWhitespace(text, lineStart, lineLength))
+            {
+                requiresChanges = true;
+                break;
+            }
+
+            if (index < text.Length && text[index] == '\r')
+            {
+                requiresChanges = true;
+                break;
+            }
+
+            lineStart = index + 1;
+        }
+
+        if (!requiresChanges)
+        {
+            return text;
+        }
+
+        var builder = new StringBuilder(text.Length);
+        var retainedLineCount = 0;
+        lineStart = 0;
+        for (var index = 0; index <= text.Length; index++)
+        {
+            if (index != text.Length && text[index] is not ('\r' or '\n'))
+            {
+                continue;
+            }
+
+            var lineLength = index - lineStart;
+            if (lineLength == 0 || !IsAllWhitespace(text, lineStart, lineLength))
+            {
+                if (retainedLineCount > 0)
+                {
+                    builder.Append('\n');
+                }
+                builder.Append(text, lineStart, lineLength);
+                retainedLineCount++;
+            }
+
+            if (index < text.Length && text[index] == '\r' && index + 1 < text.Length && text[index + 1] == '\n')
+            {
+                index++;
+            }
+            lineStart = index + 1;
+        }
+
+        return builder.ToString();
+    }
+
+    private static bool IsAllWhitespace(string value, int start, int length)
+    {
+        var end = start + length;
+        for (var index = start; index < end; index++)
+        {
+            if (!char.IsWhiteSpace(value[index]))
+            {
+                return false;
+            }
+        }
+
+        return true;
     }
     
     public static string AsArray(this string type)

@@ -746,6 +746,65 @@ internal sealed class GenerateCommand : Command
             return;
         }
 
+        var apiOutput = grpcInputs.Length > 0
+            ? Path.Combine(output, apiOutputSubdirectory)
+            : output;
+        var staleCandidates = cleanStaleFiles
+            ? CollectStaleGeneratedFiles(apiOutput, output, name).ToArray()
+            : [];
+        var generatorFingerprint = string.Empty;
+        var cacheValidation = new GenerationCacheValidation(false, "mixed_mode_disabled", default);
+        var cacheValidationTime = Stopwatch.StartNew();
+        var allocationBeforeCache = GetAllocatedBytes(diagnosticsEnabled);
+        if (grpcInputs.IsEmpty)
+        {
+            generatorFingerprint = GenerationCache.CreateGeneratorFingerprint(
+                yaml,
+                parseResult.Tokens.Select(static token => token.Value));
+            cacheValidation = await GenerationCache.TryValidateAsync(
+                output,
+                generatorFingerprint,
+                staleCandidates,
+                rejectUnexpectedGeneratedFiles: cleanStaleFiles).ConfigureAwait(false);
+        }
+        cacheValidationTime.Stop();
+        var allocationAfterCacheValidation = GetAllocatedBytes(diagnosticsEnabled);
+
+        if (cacheValidation.Hit)
+        {
+            totalTime.Stop();
+            var cacheHitAllocationEnd = GetAllocatedBytes(diagnosticsEnabled);
+            if (diagnosticsEnabled)
+            {
+                await new GenerationDiagnostics(
+                    CacheHit: true,
+                    CacheReason: cacheValidation.Reason,
+                    Total: totalTime.Elapsed,
+                    Setup: setupElapsed,
+                    InputRead: inputReadTime.Elapsed,
+                    CacheValidation: cacheValidationTime.Elapsed,
+                    Pipeline: TimeSpan.Zero,
+                    Render: TimeSpan.Zero,
+                    SnippetManifest: TimeSpan.Zero,
+                    NormalizeCompareWriteAndCleanup: TimeSpan.Zero,
+                    CacheWrite: TimeSpan.Zero,
+                    CoreTimes: default,
+                    RenderHotspots: [],
+                    Files: cacheValidation.Files,
+                    TotalAllocatedBytes: cacheHitAllocationEnd - allocationStart,
+                    CacheAllocatedBytes: cacheHitAllocationEnd - allocationBeforeCache,
+                    PipelineAllocatedBytes: 0,
+                    RenderAllocatedBytes: 0,
+                    SnippetAllocatedBytes: 0,
+                    WriteAllocatedBytes: 0)
+                    .WriteAsync(Console.Error).ConfigureAwait(false);
+            }
+
+            Console.WriteLine("Generation cache hit.");
+            Console.WriteLine("Done.");
+            return;
+        }
+
         Console.WriteLine("Generating...");
 
         var allocationBeforePipeline = GetAllocatedBytes(diagnosticsEnabled);
@@ -779,10 +838,14 @@ internal sealed class GenerateCommand : Command
             .ToArray();
         renderTime.Stop();
         var allocationAfterRender = GetAllocatedBytes(diagnosticsEnabled);
+        var renderHotspots = diagnosticsEnabled
+            ? files
+                .OrderByDescending(static file => file.Text.Length)
+                .Take(5)
+                .Select(static file => new RenderHotspot(file.Name, file.Text.Length))
+                .ToArray()
+            : [];
 
-        var apiOutput = grpcInputs.Length > 0
-            ? Path.Combine(output, apiOutputSubdirectory)
-            : output;
         var generatedOutputs = new List<GeneratedOutputFile>(files.Length + 2);
         if (singleFile)
         {
@@ -832,9 +895,6 @@ internal sealed class GenerateCommand : Command
                     grpcInputs)));
         }
 
-        var staleCandidates = cleanStaleFiles
-            ? CollectStaleGeneratedFiles(apiOutput, output, name).ToArray()
-            : [];
         var writeTime = Stopwatch.StartNew();
         var writeResult = await GeneratedFileWriter.WriteAsync(
             generatedOutputs,
@@ -842,6 +902,16 @@ internal sealed class GenerateCommand : Command
             deleteStaleFiles: cleanStaleFiles).ConfigureAwait(false);
         writeTime.Stop();
         var allocationAfterWrite = GetAllocatedBytes(diagnosticsEnabled);
+
+        var cacheWriteTime = Stopwatch.StartNew();
+        if (grpcInputs.IsEmpty)
+        {
+            await GenerationCache.SaveAsync(
+                output,
+                generatorFingerprint,
+                generatedOutputs.Select(static file => file.Path)).ConfigureAwait(false);
+        }
+        cacheWriteTime.Stop();
 
         if (grpcInputs.Length > 0)
         {
@@ -858,16 +928,24 @@ internal sealed class GenerateCommand : Command
         if (diagnosticsEnabled)
         {
             await new GenerationDiagnostics(
+                CacheHit: false,
+                CacheReason: cacheValidation.Reason,
                 Total: totalTime.Elapsed,
                 Setup: setupElapsed,
                 InputRead: inputReadTime.Elapsed,
+                CacheValidation: cacheValidationTime.Elapsed,
                 Pipeline: pipelineTime.Elapsed,
                 Render: renderTime.Elapsed,
                 SnippetManifest: snippetManifestTime.Elapsed,
                 NormalizeCompareWriteAndCleanup: writeTime.Elapsed,
+                CacheWrite: cacheWriteTime.Elapsed,
                 CoreTimes: data.Times,
+                RenderHotspots: renderHotspots,
                 Files: writeResult,
                 TotalAllocatedBytes: allocationEnd - allocationStart,
+                CacheAllocatedBytes:
+                    (allocationAfterCacheValidation - allocationBeforeCache) +
+                    (allocationEnd - allocationAfterWrite),
                 PipelineAllocatedBytes: allocationAfterPipeline - allocationBeforePipeline,
                 RenderAllocatedBytes: allocationAfterRender - allocationAfterPipeline,
                 SnippetAllocatedBytes: allocationAfterSnippet - allocationAfterRender,

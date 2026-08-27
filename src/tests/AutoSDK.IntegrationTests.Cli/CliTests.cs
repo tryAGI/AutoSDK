@@ -361,6 +361,7 @@ public class CliTests
             Console.WriteLine(firstResult.StandardError);
             firstResult.ExitCode.Should().Be(0);
             firstResult.StandardError.Should().Contain("AutoSDK generation diagnostics:");
+            firstResult.StandardError.Should().Contain("cache_hit: false");
             ReadDiagnosticValue(firstResult.StandardError, "files_written").Should().BeGreaterThan(0);
             ReadDiagnosticValue(firstResult.StandardError, "normalized_lines").Should().BeGreaterThan(0);
 
@@ -379,20 +380,34 @@ public class CliTests
             Console.WriteLine(secondResult.StandardOutput);
             Console.WriteLine(secondResult.StandardError);
             secondResult.ExitCode.Should().Be(0);
+            secondResult.StandardError.Should().Contain("cache_hit: true");
             ReadDiagnosticValue(secondResult.StandardError, "files_written").Should().Be(0);
             ReadDiagnosticValue(secondResult.StandardError, "files_unchanged").Should().Be(generatedFiles.Length);
             File.GetLastWriteTimeUtc(trackedGeneratedFile).Should().Be(trackedLastWriteTime);
+
+            var expectedTrackedContent = await File.ReadAllTextAsync(trackedGeneratedFile);
+            await File.AppendAllTextAsync(trackedGeneratedFile, "// manual edit");
+
+            var tamperedResult = await GenerateAsync();
+            Console.WriteLine(tamperedResult.StandardOutput);
+            Console.WriteLine(tamperedResult.StandardError);
+            tamperedResult.ExitCode.Should().Be(0);
+            tamperedResult.StandardError.Should().Contain("cache_hit: false");
+            tamperedResult.StandardError.Should().Contain("cache_reason: output_changed");
+            ReadDiagnosticValue(tamperedResult.StandardError, "files_written").Should().Be(1);
+            (await File.ReadAllTextAsync(trackedGeneratedFile)).Should().Be(expectedTrackedContent);
 
             var staleGeneratedFile = Path.Combine(outputDirectory, "Diagnostics.Stale.g.cs");
             var preservedFile = Path.Combine(outputDirectory, "Keep.cs");
             await File.WriteAllTextAsync(staleGeneratedFile, "// stale");
             await File.WriteAllTextAsync(preservedFile, "// keep");
 
-            var thirdResult = await GenerateAsync();
-            Console.WriteLine(thirdResult.StandardOutput);
-            Console.WriteLine(thirdResult.StandardError);
-            thirdResult.ExitCode.Should().Be(0);
-            ReadDiagnosticValue(thirdResult.StandardError, "files_deleted").Should().Be(1);
+            var staleResult = await GenerateAsync();
+            Console.WriteLine(staleResult.StandardOutput);
+            Console.WriteLine(staleResult.StandardError);
+            staleResult.ExitCode.Should().Be(0);
+            staleResult.StandardError.Should().Contain("cache_reason: stale_output_found");
+            ReadDiagnosticValue(staleResult.StandardError, "files_deleted").Should().Be(1);
             File.Exists(staleGeneratedFile).Should().BeFalse();
             File.Exists(preservedFile).Should().BeTrue();
         }

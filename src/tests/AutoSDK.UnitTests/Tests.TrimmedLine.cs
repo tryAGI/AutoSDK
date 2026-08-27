@@ -34,6 +34,26 @@ public class TrimmedLineTests
     }
 
     [TestMethod]
+    public void RemoveBlankLinesWhereOnlyWhitespaces_PreservesTrailingWhitespaceWithoutSplittingLines()
+    {
+        var input = "line1  \r\nline2\t\rline3";
+
+        var result = input.RemoveBlankLinesWhereOnlyWhitespaces();
+
+        result.Should().Be("line1  \nline2\t\nline3");
+    }
+
+    [TestMethod]
+    public void RemoveBlankLinesWhereOnlyWhitespaces_ReturnsOriginalInstanceWhenAlreadyNormalized()
+    {
+        var input = new string("line1  \nline2".ToCharArray());
+
+        var result = input.RemoveBlankLinesWhereOnlyWhitespaces();
+
+        ReferenceEquals(input, result).Should().BeTrue();
+    }
+
+    [TestMethod]
     public void Inject_ReturnsSpaceForEmptyInput()
     {
         // When Inject() receives only whitespace/empty strings, it returns " " (the TrimmedLine value).
