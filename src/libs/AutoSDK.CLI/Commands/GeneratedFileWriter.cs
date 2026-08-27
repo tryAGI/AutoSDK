@@ -59,6 +59,14 @@ internal static class GeneratedFileWriter
             pendingFiles[index] = (fullPath, file.Text);
         }
 
+        foreach (var directory in pendingFiles
+                     .Select(static file => Path.GetDirectoryName(file.FullPath))
+                     .Where(static directory => !string.IsNullOrEmpty(directory))
+                     .Distinct(pathComparer))
+        {
+            Directory.CreateDirectory(directory!);
+        }
+
         await Parallel.ForAsync(
             0,
             pendingFiles.Length,
@@ -71,44 +79,47 @@ internal static class GeneratedFileWriter
             {
                 var file = pendingFiles[index];
                 var normalizedText = NormalizeTrailingWhitespace(file.Text, out var normalizedLines);
-                var byteCount = Encoding.UTF8.GetByteCount(normalizedText);
-                var contentHash = ComputeTextHash(normalizedText, byteCount);
-                Interlocked.Add(ref normalizedLineCount, normalizedLines);
-                Interlocked.Add(ref generatedBytes, byteCount);
+                var byteCount = Utf8NoBom.GetByteCount(normalizedText);
+                var encodedContent = ArrayPool<byte>.Shared.Rent(byteCount);
+                try
+                {
+                    var encodedLength = Utf8NoBom.GetBytes(normalizedText.AsSpan(), encodedContent);
+                    var content = encodedContent.AsMemory(0, encodedLength);
+                    var contentHash = ComputeContentHash(content.Span);
+                    Interlocked.Add(ref normalizedLineCount, normalizedLines);
+                    Interlocked.Add(ref generatedBytes, encodedLength);
 
-                if (File.Exists(file.FullPath) &&
-                    await FileContentsEqualAsync(
-                        file.FullPath,
-                        normalizedText,
-                        byteCount,
-                        cachedFilesByPath.GetValueOrDefault(file.FullPath),
-                        contentHash,
-                        itemCancellationToken).ConfigureAwait(false))
-                {
-                    Interlocked.Increment(ref unchangedCount);
-                }
-                else
-                {
-                    var directory = Path.GetDirectoryName(file.FullPath);
-                    if (!string.IsNullOrEmpty(directory))
+                    if (File.Exists(file.FullPath) &&
+                        await FileContentsEqualAsync(
+                            file.FullPath,
+                            content,
+                            cachedFilesByPath.GetValueOrDefault(file.FullPath),
+                            contentHash,
+                            itemCancellationToken).ConfigureAwait(false))
                     {
-                        Directory.CreateDirectory(directory);
+                        Interlocked.Increment(ref unchangedCount);
+                    }
+                    else
+                    {
+                        await WriteAtomicallyAsync(
+                            file.FullPath,
+                            content,
+                            itemCancellationToken).ConfigureAwait(false);
+                        Interlocked.Increment(ref writtenCount);
+                        Interlocked.Add(ref writtenBytes, encodedLength);
                     }
 
-                    await WriteAtomicallyAsync(
+                    var fileInfo = new FileInfo(file.FullPath);
+                    outputCacheFiles[index] = new GeneratedFileCacheEntry(
                         file.FullPath,
-                        normalizedText,
-                        itemCancellationToken).ConfigureAwait(false);
-                    Interlocked.Increment(ref writtenCount);
-                    Interlocked.Add(ref writtenBytes, byteCount);
+                        fileInfo.Length,
+                        fileInfo.LastWriteTimeUtc.Ticks,
+                        contentHash);
                 }
-
-                var fileInfo = new FileInfo(file.FullPath);
-                outputCacheFiles[index] = new GeneratedFileCacheEntry(
-                    file.FullPath,
-                    fileInfo.Length,
-                    fileInfo.LastWriteTimeUtc.Ticks,
-                    contentHash);
+                finally
+                {
+                    ArrayPool<byte>.Shared.Return(encodedContent);
+                }
             }).ConfigureAwait(false);
 
         var deletedCount = 0;
@@ -142,20 +153,19 @@ internal static class GeneratedFileWriter
 
     private static async Task<bool> FileContentsEqualAsync(
         string path,
-        string expectedText,
-        int expectedByteCount,
+        ReadOnlyMemory<byte> expectedContent,
         GeneratedFileCacheEntry? cachedFile,
         string expectedHash,
         CancellationToken cancellationToken)
     {
         var fileInfo = new FileInfo(path);
-        if (fileInfo.Length != expectedByteCount)
+        if (fileInfo.Length != expectedContent.Length)
         {
             return false;
         }
 
         if (cachedFile is not null &&
-            cachedFile.Length == expectedByteCount &&
+            cachedFile.Length == expectedContent.Length &&
             cachedFile.LastWriteTimeUtcTicks == fileInfo.LastWriteTimeUtc.Ticks)
         {
             return string.Equals(
@@ -164,26 +174,49 @@ internal static class GeneratedFileWriter
                 StringComparison.Ordinal);
         }
 
-        return string.Equals(
-            await File.ReadAllTextAsync(path, cancellationToken).ConfigureAwait(false),
-            expectedText,
-            StringComparison.Ordinal);
-    }
-
-    private static string ComputeTextHash(string text, int byteCount)
-    {
-        var buffer = ArrayPool<byte>.Shared.Rent(byteCount);
+        using var stream = new FileStream(
+            path,
+            new FileStreamOptions
+            {
+                Access = FileAccess.Read,
+                Mode = FileMode.Open,
+                Options = FileOptions.Asynchronous | FileOptions.SequentialScan,
+                Share = FileShare.Read,
+            });
+        var comparisonBuffer = ArrayPool<byte>.Shared.Rent(Math.Min(expectedContent.Length, 64 * 1024));
         try
         {
-            var written = Utf8NoBom.GetBytes(text.AsSpan(), buffer);
-            Span<byte> hash = stackalloc byte[SHA256.HashSizeInBytes];
-            SHA256.HashData(buffer.AsSpan(0, written), hash);
-            return Convert.ToHexString(hash);
+            var comparedLength = 0;
+            while (comparedLength < expectedContent.Length)
+            {
+                var readLength = await stream.ReadAsync(
+                    comparisonBuffer.AsMemory(
+                        0,
+                        Math.Min(comparisonBuffer.Length, expectedContent.Length - comparedLength)),
+                    cancellationToken).ConfigureAwait(false);
+                if (readLength == 0 ||
+                    !comparisonBuffer.AsSpan(0, readLength).SequenceEqual(
+                        expectedContent.Span.Slice(comparedLength, readLength)))
+                {
+                    return false;
+                }
+
+                comparedLength += readLength;
+            }
+
+            return true;
         }
         finally
         {
-            ArrayPool<byte>.Shared.Return(buffer);
+            ArrayPool<byte>.Shared.Return(comparisonBuffer);
         }
+    }
+
+    private static string ComputeContentHash(ReadOnlySpan<byte> content)
+    {
+        Span<byte> hash = stackalloc byte[SHA256.HashSizeInBytes];
+        SHA256.HashData(content, hash);
+        return Convert.ToHexString(hash);
     }
 
     internal static async Task WriteAtomicallyAsync(
@@ -197,14 +230,52 @@ internal static class GeneratedFileWriter
         Directory.CreateDirectory(directory);
         cancellationToken.ThrowIfCancellationRequested();
 
+        var byteCount = Utf8NoBom.GetByteCount(text);
+        var encodedContent = ArrayPool<byte>.Shared.Rent(byteCount);
+        try
+        {
+            var encodedLength = Utf8NoBom.GetBytes(text.AsSpan(), encodedContent);
+            await WriteAtomicallyAsync(
+                path,
+                encodedContent.AsMemory(0, encodedLength),
+                cancellationToken).ConfigureAwait(false);
+        }
+        finally
+        {
+            ArrayPool<byte>.Shared.Return(encodedContent);
+        }
+    }
+
+    private static async Task WriteAtomicallyAsync(
+        string path,
+        ReadOnlyMemory<byte> content,
+        CancellationToken cancellationToken)
+    {
+        path = Path.GetFullPath(path);
+        var directory = Path.GetDirectoryName(path)
+            ?? throw new InvalidOperationException($"Generated output '{path}' has no parent directory.");
+        cancellationToken.ThrowIfCancellationRequested();
+
         var temporaryPath = Path.Combine(directory, $".autosdk-{Guid.NewGuid():N}.tmp");
         try
         {
-            await File.WriteAllTextAsync(
+            var stream = new FileStream(
                 temporaryPath,
-                text,
-                Utf8NoBom,
-                cancellationToken).ConfigureAwait(false);
+                new FileStreamOptions
+                {
+                    Access = FileAccess.Write,
+                    Mode = FileMode.CreateNew,
+                    Options = FileOptions.Asynchronous | FileOptions.SequentialScan,
+                    Share = FileShare.None,
+                });
+            try
+            {
+                await stream.WriteAsync(content, cancellationToken).ConfigureAwait(false);
+            }
+            finally
+            {
+                await stream.DisposeAsync().ConfigureAwait(false);
+            }
             cancellationToken.ThrowIfCancellationRequested();
             File.Move(temporaryPath, path, overwrite: true);
         }
@@ -221,13 +292,7 @@ internal static class GeneratedFileWriter
     {
         text = text ?? throw new ArgumentNullException(nameof(text));
         normalizedLineCount = 0;
-
-        if (!ContainsTrailingWhitespace(text))
-        {
-            return text;
-        }
-
-        var builder = new StringBuilder(text.Length);
+        var normalizedLength = 0;
         var lineStart = 0;
         for (var index = 0; index <= text.Length; index++)
         {
@@ -254,45 +319,62 @@ internal static class GeneratedFileWriter
                 normalizedLineCount++;
             }
 
-            builder.Append(text.AsSpan(lineStart, trimmedEnd - lineStart));
+            normalizedLength = checked(normalizedLength + trimmedEnd - lineStart);
             if (hasCarriageReturn)
             {
-                builder.Append('\r');
+                normalizedLength++;
             }
             if (index != text.Length)
             {
-                builder.Append('\n');
+                normalizedLength++;
             }
 
             lineStart = index + 1;
         }
 
-        return builder.ToString();
-    }
-
-    private static bool ContainsTrailingWhitespace(string text)
-    {
-        for (var index = 0; index < text.Length; index++)
+        if (normalizedLineCount == 0)
         {
-            if (text[index] is not (' ' or '\t'))
-            {
-                continue;
-            }
-
-            var next = index + 1;
-            while (next < text.Length && text[next] is ' ' or '\t')
-            {
-                next++;
-            }
-
-            if (next == text.Length || text[next] is '\r' or '\n')
-            {
-                return true;
-            }
-
-            index = next - 1;
+            return text;
         }
 
-        return false;
+        return string.Create(normalizedLength, text, static (destination, source) =>
+        {
+            var destinationOffset = 0;
+            var sourceLineStart = 0;
+            for (var index = 0; index <= source.Length; index++)
+            {
+                if (index != source.Length && source[index] != '\n')
+                {
+                    continue;
+                }
+
+                var contentEnd = index;
+                var hasCarriageReturn = contentEnd > sourceLineStart && source[contentEnd - 1] == '\r';
+                if (hasCarriageReturn)
+                {
+                    contentEnd--;
+                }
+
+                var trimmedEnd = contentEnd;
+                while (trimmedEnd > sourceLineStart && source[trimmedEnd - 1] is ' ' or '\t')
+                {
+                    trimmedEnd--;
+                }
+
+                source.AsSpan(sourceLineStart, trimmedEnd - sourceLineStart)
+                    .CopyTo(destination[destinationOffset..]);
+                destinationOffset += trimmedEnd - sourceLineStart;
+                if (hasCarriageReturn)
+                {
+                    destination[destinationOffset++] = '\r';
+                }
+                if (index != source.Length)
+                {
+                    destination[destinationOffset++] = '\n';
+                }
+
+                sourceLineStart = index + 1;
+            }
+        });
     }
 }

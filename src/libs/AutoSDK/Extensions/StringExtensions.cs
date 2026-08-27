@@ -14,6 +14,101 @@ public static class StringExtensions
     /// <returns></returns>
     public static string Inject(this IEnumerable<string> values, string emptyValue = " ")
     {
+#if NET6_0_OR_GREATER
+        values = values ?? throw new ArgumentNullException(nameof(values));
+        var items = values as string[] ?? values.ToArray();
+        var firstItem = 0;
+        var firstOffset = 0;
+        while (firstItem < items.Length)
+        {
+            var item = items[firstItem] ?? string.Empty;
+            while (firstOffset < item.Length && item[firstOffset] is '\r' or '\n')
+            {
+                firstOffset++;
+            }
+
+            if (firstOffset < item.Length)
+            {
+                break;
+            }
+
+            firstItem++;
+            firstOffset = 0;
+        }
+
+        if (firstItem == items.Length)
+        {
+            return emptyValue;
+        }
+
+        var lastItem = items.Length - 1;
+        var lastOffset = (items[lastItem] ?? string.Empty).Length;
+        while (lastItem >= firstItem)
+        {
+            var item = items[lastItem] ?? string.Empty;
+            while (lastOffset > 0 && item[lastOffset - 1] is '\r' or '\n')
+            {
+                lastOffset--;
+            }
+
+            if (lastOffset > 0)
+            {
+                break;
+            }
+
+            lastItem--;
+            lastOffset = lastItem >= 0 ? (items[lastItem] ?? string.Empty).Length : 0;
+        }
+
+        var outputLength = 0;
+        var hasNonWhitespace = false;
+        for (var index = firstItem; index <= lastItem; index++)
+        {
+            var item = items[index] ?? string.Empty;
+            var start = index == firstItem ? firstOffset : 0;
+            var end = index == lastItem ? lastOffset : item.Length;
+            outputLength = checked(outputLength + end - start);
+            if (!hasNonWhitespace)
+            {
+                for (var characterIndex = start; characterIndex < end; characterIndex++)
+                {
+                    if (!char.IsWhiteSpace(item[characterIndex]))
+                    {
+                        hasNonWhitespace = true;
+                        break;
+                    }
+                }
+            }
+        }
+
+        if (!hasNonWhitespace)
+        {
+            return emptyValue;
+        }
+
+        if (firstItem == lastItem &&
+            firstOffset == 0 &&
+            lastOffset == (items[firstItem] ?? string.Empty).Length)
+        {
+            return items[firstItem] ?? string.Empty;
+        }
+
+        return string.Create(
+            outputLength,
+            (Items: items, FirstItem: firstItem, FirstOffset: firstOffset, LastItem: lastItem, LastOffset: lastOffset),
+            static (destination, state) =>
+            {
+                var destinationOffset = 0;
+                for (var index = state.FirstItem; index <= state.LastItem; index++)
+                {
+                    var item = state.Items[index] ?? string.Empty;
+                    var start = index == state.FirstItem ? state.FirstOffset : 0;
+                    var end = index == state.LastItem ? state.LastOffset : item.Length;
+                    item.AsSpan(start, end - start).CopyTo(destination[destinationOffset..]);
+                    destinationOffset += end - start;
+                }
+            });
+#else
         var text = string.Concat(values)
             .TrimStart('\r', '\n')
             .TrimEnd('\r', '\n');
@@ -23,6 +118,7 @@ public static class StringExtensions
         }
 
         return text;
+#endif
     }
     
     /// <summary>
@@ -134,6 +230,8 @@ public static class StringExtensions
         text = text ?? throw new ArgumentNullException(nameof(text));
 
         var requiresChanges = false;
+        var outputLength = 0;
+        var retainedLineCount = 0;
         var lineStart = 0;
         for (var index = 0; index <= text.Length; index++)
         {
@@ -146,15 +244,25 @@ public static class StringExtensions
             if (lineLength > 0 && IsAllWhitespace(text, lineStart, lineLength))
             {
                 requiresChanges = true;
-                break;
+            }
+            else
+            {
+                if (retainedLineCount > 0)
+                {
+                    outputLength++;
+                }
+                outputLength = checked(outputLength + lineLength);
+                retainedLineCount++;
             }
 
             if (index < text.Length && text[index] == '\r')
             {
                 requiresChanges = true;
-                break;
+                if (index + 1 < text.Length && text[index + 1] == '\n')
+                {
+                    index++;
+                }
             }
-
             lineStart = index + 1;
         }
 
@@ -163,8 +271,41 @@ public static class StringExtensions
             return text;
         }
 
-        var builder = new StringBuilder(text.Length);
-        var retainedLineCount = 0;
+#if NET6_0_OR_GREATER
+        return string.Create(outputLength, text, static (destination, source) =>
+        {
+            var destinationOffset = 0;
+            var retainedLines = 0;
+            var sourceLineStart = 0;
+            for (var index = 0; index <= source.Length; index++)
+            {
+                if (index != source.Length && source[index] is not ('\r' or '\n'))
+                {
+                    continue;
+                }
+
+                var lineLength = index - sourceLineStart;
+                if (lineLength == 0 || !IsAllWhitespace(source, sourceLineStart, lineLength))
+                {
+                    if (retainedLines > 0)
+                    {
+                        destination[destinationOffset++] = '\n';
+                    }
+                    source.AsSpan(sourceLineStart, lineLength).CopyTo(destination[destinationOffset..]);
+                    destinationOffset += lineLength;
+                    retainedLines++;
+                }
+
+                if (index < source.Length && source[index] == '\r' && index + 1 < source.Length && source[index + 1] == '\n')
+                {
+                    index++;
+                }
+                sourceLineStart = index + 1;
+            }
+        });
+#else
+        var builder = new StringBuilder(outputLength);
+        retainedLineCount = 0;
         lineStart = 0;
         for (var index = 0; index <= text.Length; index++)
         {
@@ -192,6 +333,7 @@ public static class StringExtensions
         }
 
         return builder.ToString();
+#endif
     }
 
     private static bool IsAllWhitespace(string value, int start, int length)
@@ -437,12 +579,56 @@ public static class StringExtensions
         {
             return text;
         }
-        
+
+        var indentationLength = checked(level * 4);
+#if NET6_0_OR_GREATER
+        var nonEmptyLineCount = 0;
+        var atLineStart = true;
+        for (var index = 0; index < text.Length; index++)
+        {
+            if (atLineStart && text[index] != '\n')
+            {
+                nonEmptyLineCount++;
+                atLineStart = false;
+            }
+
+            if (text[index] == '\n')
+            {
+                atLineStart = true;
+            }
+        }
+
+        return string.Create(
+            checked(text.Length + (nonEmptyLineCount * indentationLength)),
+            (Text: text, IndentationLength: indentationLength),
+            static (destination, state) =>
+            {
+                var destinationOffset = 0;
+                var atLineStart = true;
+                for (var index = 0; index < state.Text.Length; index++)
+                {
+                    var character = state.Text[index];
+                    if (atLineStart && character != '\n')
+                    {
+                        destination.Slice(destinationOffset, state.IndentationLength).Fill(' ');
+                        destinationOffset += state.IndentationLength;
+                        atLineStart = false;
+                    }
+
+                    destination[destinationOffset++] = character;
+                    if (character == '\n')
+                    {
+                        atLineStart = true;
+                    }
+                }
+            });
+#else
         var lines = text.Split(NewLine, StringSplitOptions.None);
-        var spaces = new string(' ', level * 4);
+        var spaces = new string(' ', indentationLength);
         
         return string.Join("\n", lines
             .Select(line => string.IsNullOrEmpty(line) ? line : $"{spaces}{line}"));
+#endif
     }
     
     public static string FixPropertyName(

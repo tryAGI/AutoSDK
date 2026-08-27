@@ -88,6 +88,44 @@ public class GeneratedFileWriterTests
     }
 
     [TestMethod]
+    public async Task WriteAsync_WhenSameLengthUtf8ContentDiffers_ReplacesFile()
+    {
+        var tempDirectory = CreateTempDirectory();
+        try
+        {
+            var path = Path.Combine(tempDirectory, "nested", "Client.g.cs");
+            Directory.CreateDirectory(Path.GetDirectoryName(path)!);
+            const string oldText = "old café";
+            const string newText = "new café";
+            Encoding.UTF8.GetByteCount(oldText).Should().Be(Encoding.UTF8.GetByteCount(newText));
+            await File.WriteAllTextAsync(path, oldText);
+
+            var result = await GeneratedFileWriter.WriteAsync(
+                [new GeneratedOutputFile(path, newText)],
+                staleCandidates: [],
+                deleteStaleFiles: false);
+
+            result.WrittenCount.Should().Be(1);
+            (await File.ReadAllTextAsync(path)).Should().Be(newText);
+        }
+        finally
+        {
+            Directory.Delete(tempDirectory, recursive: true);
+        }
+    }
+
+    [TestMethod]
+    public void NormalizeTrailingWhitespace_PreservesLineEndingsAndReportsChangedLines()
+    {
+        const string text = "first  \r\nsecond\t\nthird  ";
+
+        var result = GeneratedFileWriter.NormalizeTrailingWhitespace(text, out var normalizedLines);
+
+        result.Should().Be("first\r\nsecond\nthird");
+        normalizedLines.Should().Be(3);
+    }
+
+    [TestMethod]
     public async Task WriteAtomicallyAsync_WhenAlreadyCancelled_PreservesExistingFile()
     {
         var tempDirectory = CreateTempDirectory();

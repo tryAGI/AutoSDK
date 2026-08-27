@@ -63,6 +63,22 @@ public class TrimmedLineTests
     }
 
     [TestMethod]
+    public void Inject_TrimsOnlyOuterLineBreaksAcrossValues()
+    {
+        var result = new[] { "\r\n", "first\n", "second", "\n\r" }.Inject();
+
+        result.Should().Be("first\nsecond");
+    }
+
+    [TestMethod]
+    public void AddIndent_PreservesEmptyAndTrailingLines()
+    {
+        var result = "first\n\nsecond\n".AddIndent(level: 1);
+
+        result.Should().Be("    first\n\n    second\n");
+    }
+
+    [TestMethod]
     public void TrimmedLine_InTernaryTemplate_SuppressesLine()
     {
         // Simulates the pattern used in Sources templates:
