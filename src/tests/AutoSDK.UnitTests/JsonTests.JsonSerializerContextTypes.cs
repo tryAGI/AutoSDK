@@ -523,7 +523,9 @@ public partial class JsonTests
             {
                 Namespace = "G",
                 GeneratedNamespace = "G",
-                CSharpTypeRaw = $"global::G.Model{index}",
+                CSharpTypeRaw = index == 0
+                    ? "global::G.JsonElement"
+                    : $"global::G.Model{index}",
             }))
             .ToImmutableArray()
             .AsEquatableArray();
@@ -538,6 +540,8 @@ public partial class JsonTests
         file.Text.Should().NotContain("JsonSerializable(typeof(global::G.JsonSerializerContextTypes))");
         file.Text.Should().Contain("JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, string>))");
         file.Text.Should().Contain("JsonSerializable(typeof(global::System.Text.Json.JsonElement?))");
+        file.Text.Should().Contain(
+            "JsonSerializable(typeof(global::G.JsonElement), TypeInfoPropertyName = \"GJsonElement\")");
         Regex.Matches(file.Text, "\\[global::System.Text.Json.Serialization.JsonSerializable").Count
             .Should().Be(523);
     }

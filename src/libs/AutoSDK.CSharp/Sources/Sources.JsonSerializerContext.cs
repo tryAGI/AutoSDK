@@ -454,7 +454,13 @@ namespace {client.Settings.Namespace}
         // create Nullable<T> wrappers and thus doesn't trigger implicit discovery.
         var implicitlyDiscoveredTypes = new HashSet<string>(
             GetNullableValueTypes(types)
-                .Select(static type => type.Substring(0, type.Length - 1)),
+                .Select(static type => type.Substring(0, type.Length - 1))
+                .Concat(contextTypes
+                    .Where(static type => string.Equals(
+                        type,
+                        "global::System.Text.Json.JsonElement?",
+                        StringComparison.Ordinal))
+                    .Select(static type => type.Substring(0, type.Length - 1))),
             StringComparer.Ordinal);
 
         var explicitTypeInfoPropertyNames = BuildExplicitTypeInfoPropertyNames(
@@ -697,6 +703,42 @@ namespace {client.Settings.Namespace}
 
             var implicitName = GetImplicitTypeInfoPropertyName(type);
             var baseName = $"{implicitName}2";
+            explicitNames[type] = ReserveExplicitTypeInfoPropertyName(
+                usedNames,
+                baseName,
+                type);
+        }
+
+        // Phase 2b: Nullable value types registered through an aggregate context cause STJ to
+        // discover both Nullable<T> and T. A generated model can share T's simple name even when
+        // its runtime type is in a different namespace (for example Advantage.JsonElement versus
+        // System.Text.Json.JsonElement), so disambiguate that explicit registration too.
+        var implicitlyDiscoveredRuntimeTypesByName = implicitlyDiscoveredTypes
+            .GroupBy(GetGeneratedTypeInfoPropertyName, StringComparer.Ordinal)
+            .ToDictionary(
+                static group => group.Key,
+                static group => new HashSet<string>(
+                    group.Select(NormalizeRuntimeTypeName),
+                    StringComparer.Ordinal),
+                StringComparer.Ordinal);
+
+        foreach (var type in types)
+        {
+            if (explicitNames.ContainsKey(type))
+            {
+                continue;
+            }
+
+            var implicitName = GetGeneratedTypeInfoPropertyName(type);
+            if (!implicitlyDiscoveredRuntimeTypesByName.TryGetValue(
+                    implicitName,
+                    out var implicitlyDiscoveredRuntimeTypes) ||
+                implicitlyDiscoveredRuntimeTypes.Contains(NormalizeRuntimeTypeName(type)))
+            {
+                continue;
+            }
+
+            var baseName = SanitizeTypeInfoPropertyName(type).Replace("_", string.Empty);
             explicitNames[type] = ReserveExplicitTypeInfoPropertyName(
                 usedNames,
                 baseName,
