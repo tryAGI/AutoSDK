@@ -362,6 +362,8 @@ public class CliTests
             firstResult.ExitCode.Should().Be(0);
             firstResult.StandardError.Should().Contain("AutoSDK generation diagnostics:");
             firstResult.StandardError.Should().Contain("cache_hit: false");
+            firstResult.StandardError.Should().Contain("cache_lock_acquired: true");
+            firstResult.StandardError.Should().Contain("cache_lock_reason: acquired");
             ReadDiagnosticValue(firstResult.StandardError, "files_written").Should().BeGreaterThan(0);
             ReadDiagnosticValue(firstResult.StandardError, "normalized_lines").Should().BeGreaterThan(0);
 
@@ -498,6 +500,8 @@ public class CliTests
                 Console.WriteLine(result.StandardError);
                 result.ExitCode.Should().Be(0);
                 result.StandardError.Should().Contain("cache_lock_wait_ms:");
+                result.StandardError.Should().Contain("cache_lock_acquired: true");
+                result.StandardError.Should().Contain("cache_lock_reason: acquired");
             }
 
             concurrentResults.Count(static result => result.StandardError.Contains("cache_hit: false", StringComparison.Ordinal)).Should().Be(1);

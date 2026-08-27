@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using System.Security.Cryptography;
 using System.Text;
 using System.Text.Json;
@@ -22,48 +23,107 @@ internal readonly record struct GenerationCacheValidation(
     string Reason,
     GeneratedFileWriteResult Files);
 
+internal sealed class GenerationCacheLock : IAsyncDisposable
+{
+    private readonly FileStream? handle;
+
+    public GenerationCacheLock(string lockPath)
+    {
+        handle = new FileStream(
+            lockPath,
+            new FileStreamOptions
+            {
+                Access = FileAccess.ReadWrite,
+                Mode = FileMode.OpenOrCreate,
+                Options = FileOptions.Asynchronous,
+                Share = FileShare.None,
+            });
+        Acquired = true;
+        Reason = "acquired";
+    }
+
+    private GenerationCacheLock(string reason, bool acquired)
+    {
+        Acquired = acquired;
+        Reason = reason;
+    }
+
+    public bool Acquired { get; }
+
+    public string Reason { get; }
+
+    public static GenerationCacheLock NotAcquired(string reason)
+    {
+        return new GenerationCacheLock(reason, acquired: false);
+    }
+
+    public ValueTask DisposeAsync()
+    {
+        return handle?.DisposeAsync() ?? ValueTask.CompletedTask;
+    }
+}
+
 internal static class GenerationCache
 {
     private const int FormatVersion = 1;
     private const int MaxParallelism = 8;
+    private static readonly TimeSpan DefaultLockTimeout = TimeSpan.FromSeconds(30);
     private static readonly TimeSpan LockRetryDelay = TimeSpan.FromMilliseconds(25);
 
-    public static async Task<IAsyncDisposable> AcquireOutputLockAsync(
+    public static Task<GenerationCacheLock> AcquireOutputLockAsync(
         string outputDirectory,
         CancellationToken cancellationToken = default)
     {
-        var lockPath = $"{GetCachePath(Path.GetFullPath(outputDirectory))}.lock";
+        return AcquireOutputLockAsync(
+            outputDirectory,
+            GetDefaultCacheRoot(),
+            DefaultLockTimeout,
+            cancellationToken);
+    }
+
+    internal static async Task<GenerationCacheLock> AcquireOutputLockAsync(
+        string outputDirectory,
+        string cacheRoot,
+        TimeSpan timeout,
+        CancellationToken cancellationToken = default)
+    {
+        outputDirectory = Path.GetFullPath(outputDirectory);
+        ArgumentOutOfRangeException.ThrowIfLessThan(timeout, TimeSpan.Zero);
+
+        cancellationToken.ThrowIfCancellationRequested();
+        var lockPath = $"{GetCachePath(outputDirectory, cacheRoot)}.lock";
         try
         {
             Directory.CreateDirectory(Path.GetDirectoryName(lockPath)!);
         }
         catch (Exception exception) when (exception is IOException or UnauthorizedAccessException)
         {
-            return NoopAsyncDisposable.Instance;
+            return GenerationCacheLock.NotAcquired("cache_unavailable");
         }
 
+        var waitTime = Stopwatch.StartNew();
         while (true)
         {
             cancellationToken.ThrowIfCancellationRequested();
             try
             {
-                return new FileStream(
-                    lockPath,
-                    new FileStreamOptions
-                    {
-                        Access = FileAccess.ReadWrite,
-                        Mode = FileMode.OpenOrCreate,
-                        Options = FileOptions.Asynchronous,
-                        Share = FileShare.None,
-                    });
+                return new GenerationCacheLock(lockPath);
             }
             catch (IOException)
             {
-                await Task.Delay(LockRetryDelay, cancellationToken).ConfigureAwait(false);
+                var remaining = timeout - waitTime.Elapsed;
+                if (remaining <= TimeSpan.Zero)
+                {
+                    return GenerationCacheLock.NotAcquired("timeout");
+                }
+
+                await Task.Delay(
+                    remaining < LockRetryDelay ? remaining : LockRetryDelay,
+                    cancellationToken).ConfigureAwait(false);
             }
             catch (UnauthorizedAccessException)
             {
-                return NoopAsyncDisposable.Instance;
+                return GenerationCacheLock.NotAcquired("cache_unavailable");
             }
         }
     }
@@ -283,18 +343,28 @@ internal static class GenerationCache
 
     private static string GetCachePath(string outputDirectory)
     {
+        return GetCachePath(outputDirectory, GetDefaultCacheRoot());
+    }
+
+    internal static string GetCachePath(string outputDirectory, string cacheRoot)
+    {
+        cacheRoot = Path.GetFullPath(cacheRoot);
+        var key = Convert.ToHexString(SHA256.HashData(Encoding.UTF8.GetBytes(outputDirectory)));
+        return Path.Combine(cacheRoot, $"{key}.json");
+    }
+
+    private static string GetDefaultCacheRoot()
+    {
         var localApplicationData = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
         if (string.IsNullOrWhiteSpace(localApplicationData))
         {
             localApplicationData = Path.GetTempPath();
         }
 
-        var cacheRoot = Path.Combine(
+        return Path.Combine(
             localApplicationData,
             "AutoSDK",
             "generation-cache");
-        var key = Convert.ToHexString(SHA256.HashData(Encoding.UTF8.GetBytes(outputDirectory)));
-        return Path.Combine(cacheRoot, $"{key}.json");
     }
 
     private static bool TryResolveOutputPath(
@@ -343,13 +413,4 @@ internal static class GenerationCache
             ? StringComparer.OrdinalIgnoreCase
             : StringComparer.Ordinal;
 
-    private sealed class NoopAsyncDisposable : IAsyncDisposable
-    {
-        public static NoopAsyncDisposable Instance { get; } = new();
-
-        public ValueTask DisposeAsync()
-        {
-            return ValueTask.CompletedTask;
-        }
-    }
 }

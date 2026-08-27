@@ -15,6 +15,7 @@ internal readonly record struct GeneratedFileWriteResult(
 
 internal static class GeneratedFileWriter
 {
+    private const int MaxParallelism = 8;
     private static readonly UTF8Encoding Utf8NoBom = new(encoderShouldEmitUTF8Identifier: false);
 
     public static async Task<GeneratedFileWriteResult> WriteAsync(
@@ -56,7 +57,7 @@ internal static class GeneratedFileWriter
             new ParallelOptions
             {
                 CancellationToken = cancellationToken,
-                MaxDegreeOfParallelism = Math.Min(Environment.ProcessorCount, 8),
+                MaxDegreeOfParallelism = Math.Min(Environment.ProcessorCount, MaxParallelism),
             },
             async (file, itemCancellationToken) =>
             {
@@ -82,10 +83,9 @@ internal static class GeneratedFileWriter
                     Directory.CreateDirectory(directory);
                 }
 
-                await File.WriteAllTextAsync(
+                await WriteAtomicallyAsync(
                     file.FullPath,
                     normalizedText,
-                    Utf8NoBom,
                     itemCancellationToken).ConfigureAwait(false);
                 Interlocked.Increment(ref writtenCount);
                 Interlocked.Add(ref writtenBytes, byteCount);
@@ -134,6 +134,37 @@ internal static class GeneratedFileWriter
             await File.ReadAllTextAsync(path, cancellationToken).ConfigureAwait(false),
             expectedText,
             StringComparison.Ordinal);
+    }
+
+    internal static async Task WriteAtomicallyAsync(
+        string path,
+        string text,
+        CancellationToken cancellationToken = default)
+    {
+        path = Path.GetFullPath(path);
+        var directory = Path.GetDirectoryName(path)
+            ?? throw new InvalidOperationException($"Generated output '{path}' has no parent directory.");
+        Directory.CreateDirectory(directory);
+        cancellationToken.ThrowIfCancellationRequested();
+
+        var temporaryPath = Path.Combine(directory, $".autosdk-{Guid.NewGuid():N}.tmp");
+        try
+        {
+            await File.WriteAllTextAsync(
+                temporaryPath,
+                text,
+                Utf8NoBom,
+                cancellationToken).ConfigureAwait(false);
+            cancellationToken.ThrowIfCancellationRequested();
+            File.Move(temporaryPath, path, overwrite: true);
+        }
+        finally
+        {
+            if (File.Exists(temporaryPath))
+            {
+                File.Delete(temporaryPath);
+            }
+        }
     }
 
     internal static string NormalizeTrailingWhitespace(string text, out int normalizedLineCount)

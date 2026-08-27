@@ -8,6 +8,8 @@ internal readonly record struct RenderHotspot(string Name, int Characters);
 internal readonly record struct GenerationDiagnostics(
     bool CacheHit,
     string CacheReason,
+    bool CacheLockAcquired,
+    string CacheLockReason,
     TimeSpan Total,
     TimeSpan Setup,
     TimeSpan InputRead,
@@ -35,6 +37,8 @@ internal readonly record struct GenerationDiagnostics(
         await writer.WriteLineAsync("AutoSDK generation diagnostics:").ConfigureAwait(false);
         await writer.WriteLineAsync($"  cache_hit: {(CacheHit ? "true" : "false")}").ConfigureAwait(false);
         await writer.WriteLineAsync($"  cache_reason: {CacheReason}").ConfigureAwait(false);
+        await writer.WriteLineAsync($"  cache_lock_acquired: {(CacheLockAcquired ? "true" : "false")}").ConfigureAwait(false);
+        await writer.WriteLineAsync($"  cache_lock_reason: {CacheLockReason}").ConfigureAwait(false);
         await WriteMillisecondsAsync(writer, "total_ms", Total).ConfigureAwait(false);
         await WriteMillisecondsAsync(writer, "setup_ms", Setup).ConfigureAwait(false);
         await WriteMillisecondsAsync(writer, "input_read_ms", InputRead).ConfigureAwait(false);

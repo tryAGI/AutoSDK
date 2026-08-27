@@ -43,6 +43,7 @@
     <ProjectReference Include="..\..\libs\AutoSDK\AutoSDK.csproj" />
     <ProjectReference Include="..\..\libs\AutoSDK.CSharp\AutoSDK.CSharp.csproj" />
     <ProjectReference Include="..\..\libs\AutoSDK.Docs\AutoSDK.Docs.csproj" />
+    <ProjectReference Include="..\..\libs\AutoSDK.CLI\AutoSDK.CLI.csproj" Aliases="AutoSdkCli" />
   </ItemGroup>
 
 </Project>
