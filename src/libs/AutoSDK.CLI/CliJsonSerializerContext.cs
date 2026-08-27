@@ -7,4 +7,5 @@ namespace AutoSDK.CLI;
 [JsonSourceGenerationOptions(WriteIndented = true)]
 [JsonSerializable(typeof(RepresentationAuditFinding[]))]
 [JsonSerializable(typeof(GenerationCacheManifest))]
+[JsonSerializable(typeof(GenerationFingerprint))]
 internal sealed partial class CliJsonSerializerContext : JsonSerializerContext;

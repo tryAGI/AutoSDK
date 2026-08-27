@@ -16,12 +16,25 @@ internal sealed record GenerationCacheManifest(
 internal sealed record GenerationCacheFile(
     string RelativePath,
     long Length,
+    long LastWriteTimeUtcTicks,
+    string Sha256);
+
+internal sealed record GenerationFingerprint(
+    Settings Settings,
+    bool SingleFile,
+    string SingleFileName);
+
+internal sealed record GeneratedFileCacheEntry(
+    string Path,
+    long Length,
+    long LastWriteTimeUtcTicks,
     string Sha256);
 
 internal readonly record struct GenerationCacheValidation(
     bool Hit,
     string Reason,
-    GeneratedFileWriteResult Files);
+    GeneratedFileWriteResult Files,
+    GeneratedFileCacheEntry[] KnownFiles);
 
 internal sealed class GenerationCacheLock : IAsyncDisposable
 {
@@ -65,7 +78,7 @@ internal sealed class GenerationCacheLock : IAsyncDisposable
 
 internal static class GenerationCache
 {
-    private const int FormatVersion = 1;
+    private const int FormatVersion = 2;
     private const int MaxParallelism = 8;
     private static readonly TimeSpan DefaultLockTimeout = TimeSpan.FromSeconds(30);
     private static readonly TimeSpan LockRetryDelay = TimeSpan.FromMilliseconds(25);
@@ -130,10 +143,12 @@ internal static class GenerationCache
 
     public static string CreateGeneratorFingerprint(
         string inputText,
-        IEnumerable<string> commandTokens)
+        Settings settings,
+        bool singleFile,
+        string inputName)
     {
         inputText = inputText ?? throw new ArgumentNullException(nameof(inputText));
-        commandTokens = commandTokens ?? throw new ArgumentNullException(nameof(commandTokens));
+        inputName = inputName ?? throw new ArgumentNullException(nameof(inputName));
 
         using var hash = IncrementalHash.CreateHash(HashAlgorithmName.SHA256);
         Append(hash, FormatVersion.ToString(System.Globalization.CultureInfo.InvariantCulture));
@@ -141,10 +156,15 @@ internal static class GenerationCache
         Append(hash, typeof(CSharpPipeline).Assembly.ManifestModule.ModuleVersionId.ToString("N"));
         Append(hash, typeof(Settings).Assembly.ManifestModule.ModuleVersionId.ToString("N"));
         Append(hash, inputText);
-        foreach (var token in commandTokens.Where(static token => token != "--diagnostics"))
-        {
-            Append(hash, token);
-        }
+        var fingerprint = new GenerationFingerprint(
+            settings,
+            singleFile,
+            singleFile ? inputName : string.Empty);
+        Append(
+            hash,
+            JsonSerializer.SerializeToUtf8Bytes(
+                fingerprint,
+                CliJsonSerializerContext.Default.GenerationFingerprint));
 
         return Convert.ToHexString(hash.GetHashAndReset());
     }
@@ -179,23 +199,34 @@ internal static class GenerationCache
 
         if (manifest is null ||
             manifest.FormatVersion != FormatVersion ||
-            !string.Equals(manifest.GeneratorFingerprint, generatorFingerprint, StringComparison.Ordinal) ||
             !PathEquals(manifest.OutputDirectory, outputDirectory))
         {
             return Miss("fingerprint_changed");
         }
 
         var expectedPaths = new HashSet<string>(PathComparer);
+        var knownFiles = new GeneratedFileCacheEntry[manifest.Files.Length];
         long generatedBytes = 0;
-        foreach (var file in manifest.Files)
+        for (var index = 0; index < manifest.Files.Length; index++)
         {
+            var file = manifest.Files[index];
             if (!TryResolveOutputPath(outputDirectory, file.RelativePath, out var fullPath) ||
                 !expectedPaths.Add(fullPath))
             {
                 return Miss("manifest_invalid");
             }
 
+            knownFiles[index] = new GeneratedFileCacheEntry(
+                fullPath,
+                file.Length,
+                file.LastWriteTimeUtcTicks,
+                file.Sha256);
             generatedBytes += file.Length;
+        }
+
+        if (!string.Equals(manifest.GeneratorFingerprint, generatorFingerprint, StringComparison.Ordinal))
+        {
+            return Miss("fingerprint_changed", knownFiles);
         }
 
         if (rejectUnexpectedGeneratedFiles)
@@ -205,14 +236,14 @@ internal static class GenerationCache
                 cancellationToken.ThrowIfCancellationRequested();
                 if (File.Exists(staleCandidate) && !expectedPaths.Contains(Path.GetFullPath(staleCandidate)))
                 {
-                    return Miss("stale_output_found");
+                    return Miss("stale_output_found", knownFiles);
                 }
             }
         }
 
         var valid = 1;
         await Parallel.ForEachAsync(
-            manifest.Files,
+            knownFiles,
             new ParallelOptions
             {
                 CancellationToken = cancellationToken,
@@ -221,20 +252,14 @@ internal static class GenerationCache
             async (file, itemCancellationToken) =>
             {
                 if (Volatile.Read(ref valid) == 0 ||
-                    !TryResolveOutputPath(outputDirectory, file.RelativePath, out var fullPath) ||
-                    !File.Exists(fullPath) ||
-                    new FileInfo(fullPath).Length != file.Length ||
-                    !string.Equals(
-                        await ComputeFileHashAsync(fullPath, itemCancellationToken).ConfigureAwait(false),
-                        file.Sha256,
-                        StringComparison.Ordinal))
+                    !await IsCacheEntryValidAsync(file, itemCancellationToken).ConfigureAwait(false))
                 {
                     Interlocked.Exchange(ref valid, 0);
                 }
             }).ConfigureAwait(false);
 
         return valid == 0
-            ? Miss("output_changed")
+            ? Miss("output_changed", knownFiles)
             : new GenerationCacheValidation(
                 Hit: true,
                 Reason: "hit",
@@ -245,13 +270,41 @@ internal static class GenerationCache
                     DeletedCount: 0,
                     NormalizedLineCount: 0,
                     GeneratedBytes: generatedBytes,
-                    WrittenBytes: 0));
+                    WrittenBytes: 0,
+                    CacheFiles: knownFiles),
+            KnownFiles: knownFiles);
+    }
+
+    internal static async Task<bool> IsCacheEntryValidAsync(
+        GeneratedFileCacheEntry file,
+        CancellationToken cancellationToken = default)
+    {
+        if (!File.Exists(file.Path))
+        {
+            return false;
+        }
+
+        var fileInfo = new FileInfo(file.Path);
+        if (fileInfo.Length != file.Length)
+        {
+            return false;
+        }
+
+        if (fileInfo.LastWriteTimeUtc.Ticks == file.LastWriteTimeUtcTicks)
+        {
+            return true;
+        }
+
+        return string.Equals(
+            await ComputeFileHashAsync(file.Path, cancellationToken).ConfigureAwait(false),
+            file.Sha256,
+            StringComparison.Ordinal);
     }
 
     public static async Task SaveAsync(
         string outputDirectory,
         string generatorFingerprint,
-        IEnumerable<string> generatedPaths,
+        IEnumerable<GeneratedFileCacheEntry> generatedFiles,
         CancellationToken cancellationToken = default)
     {
         try
@@ -259,7 +312,7 @@ internal static class GenerationCache
             await SaveCoreAsync(
                 outputDirectory,
                 generatorFingerprint,
-                generatedPaths,
+                generatedFiles,
                 cancellationToken).ConfigureAwait(false);
         }
         catch (Exception exception) when (exception is IOException or UnauthorizedAccessException)
@@ -271,40 +324,35 @@ internal static class GenerationCache
     private static async Task SaveCoreAsync(
         string outputDirectory,
         string generatorFingerprint,
-        IEnumerable<string> generatedPaths,
+        IEnumerable<GeneratedFileCacheEntry> generatedFiles,
         CancellationToken cancellationToken)
     {
         outputDirectory = Path.GetFullPath(outputDirectory);
-        var paths = generatedPaths
-            .Select(Path.GetFullPath)
-            .Distinct(PathComparer)
-            .OrderBy(static path => path, PathComparer)
+        var generatedFileEntries = generatedFiles
+            .GroupBy(static file => Path.GetFullPath(file.Path), PathComparer)
+            .Select(static group => group.First() with { Path = group.Key })
+            .OrderBy(static file => file.Path, PathComparer)
             .ToArray();
-        var files = new GenerationCacheFile[paths.Length];
+        var files = new GenerationCacheFile[generatedFileEntries.Length];
 
-        await Parallel.ForAsync(
-            0,
-            paths.Length,
-            new ParallelOptions
+        for (var index = 0; index < generatedFileEntries.Length; index++)
+        {
+            cancellationToken.ThrowIfCancellationRequested();
+            var generatedFile = generatedFileEntries[index];
+            var relativePath = Path.GetRelativePath(outputDirectory, generatedFile.Path);
+            if (!TryResolveOutputPath(outputDirectory, relativePath, out var resolvedPath) ||
+                !PathEquals(generatedFile.Path, resolvedPath))
             {
-                CancellationToken = cancellationToken,
-                MaxDegreeOfParallelism = Math.Min(Environment.ProcessorCount, MaxParallelism),
-            },
-            async (index, itemCancellationToken) =>
-            {
-                var path = paths[index];
-                var relativePath = Path.GetRelativePath(outputDirectory, path);
-                if (!TryResolveOutputPath(outputDirectory, relativePath, out var resolvedPath) ||
-                    !PathEquals(path, resolvedPath))
-                {
-                    throw new InvalidOperationException($"Generated output '{path}' is outside '{outputDirectory}'.");
-                }
+                throw new InvalidOperationException(
+                    $"Generated output '{generatedFile.Path}' is outside '{outputDirectory}'.");
+            }
 
-                files[index] = new GenerationCacheFile(
-                    RelativePath: relativePath,
-                    Length: new FileInfo(path).Length,
-                    Sha256: await ComputeFileHashAsync(path, itemCancellationToken).ConfigureAwait(false));
-            }).ConfigureAwait(false);
+            files[index] = new GenerationCacheFile(
+                RelativePath: relativePath,
+                Length: generatedFile.Length,
+                LastWriteTimeUtcTicks: generatedFile.LastWriteTimeUtcTicks,
+                Sha256: generatedFile.Sha256);
+        }
 
         var manifest = new GenerationCacheManifest(
             FormatVersion,
@@ -336,9 +384,11 @@ internal static class GenerationCache
         }
     }
 
-    private static GenerationCacheValidation Miss(string reason)
+    private static GenerationCacheValidation Miss(
+        string reason,
+        GeneratedFileCacheEntry[]? knownFiles = null)
     {
-        return new GenerationCacheValidation(false, reason, default);
+        return new GenerationCacheValidation(false, reason, default, knownFiles ?? []);
     }
 
     private static string GetCachePath(string outputDirectory)
@@ -401,6 +451,14 @@ internal static class GenerationCache
         System.Buffers.Binary.BinaryPrimitives.WriteInt32LittleEndian(length, Encoding.UTF8.GetByteCount(value));
         hash.AppendData(length);
         hash.AppendData(Encoding.UTF8.GetBytes(value));
+    }
+
+    private static void Append(IncrementalHash hash, ReadOnlySpan<byte> value)
+    {
+        Span<byte> length = stackalloc byte[sizeof(int)];
+        System.Buffers.Binary.BinaryPrimitives.WriteInt32LittleEndian(length, value.Length);
+        hash.AppendData(length);
+        hash.AppendData(value);
     }
 
     private static bool PathEquals(string left, string right)

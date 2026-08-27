@@ -753,7 +753,7 @@ internal sealed class GenerateCommand : Command
             ? CollectStaleGeneratedFiles(apiOutput, output, name).ToArray()
             : [];
         var generatorFingerprint = string.Empty;
-        var cacheValidation = new GenerationCacheValidation(false, "mixed_mode_disabled", default);
+        var cacheValidation = new GenerationCacheValidation(false, "mixed_mode_disabled", default, []);
         var cacheLockTime = Stopwatch.StartNew();
         var cacheLock = await GenerationCache
             .AcquireOutputLockAsync(output)
@@ -766,7 +766,9 @@ internal sealed class GenerateCommand : Command
         {
             generatorFingerprint = GenerationCache.CreateGeneratorFingerprint(
                 yaml,
-                parseResult.Tokens.Select(static token => token.Value));
+                settings,
+                singleFile,
+                name);
             cacheValidation = await GenerationCache.TryValidateAsync(
                 output,
                 generatorFingerprint,
@@ -908,7 +910,8 @@ internal sealed class GenerateCommand : Command
         var writeResult = await GeneratedFileWriter.WriteAsync(
             generatedOutputs,
             staleCandidates,
-            deleteStaleFiles: cleanStaleFiles).ConfigureAwait(false);
+            deleteStaleFiles: cleanStaleFiles,
+            cachedFiles: cacheValidation.KnownFiles).ConfigureAwait(false);
         writeTime.Stop();
         var allocationAfterWrite = GetAllocatedBytes(diagnosticsEnabled);
 
@@ -918,7 +921,7 @@ internal sealed class GenerateCommand : Command
             await GenerationCache.SaveAsync(
                 output,
                 generatorFingerprint,
-                generatedOutputs.Select(static file => file.Path)).ConfigureAwait(false);
+                writeResult.CacheFiles).ConfigureAwait(false);
         }
         cacheWriteTime.Stop();
 

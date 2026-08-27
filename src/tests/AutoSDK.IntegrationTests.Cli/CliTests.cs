@@ -356,6 +356,23 @@ public class CliTests
                     "--diagnostics");
             }
 
+            async Task<(int ExitCode, string StandardOutput, string StandardError)> GenerateWithReorderedOptionsAsync()
+            {
+                return await RunDotnetAsync(
+                    repositoryDirectory,
+                    "run",
+                    "--disable-build-servers",
+                    "--no-launch-profile",
+                    "--project", "src/libs/AutoSDK.CLI",
+                    "generate", specPath,
+                    "--output", outputDirectory,
+                    "--targetFramework", "net10.0",
+                    "--clientClassName", "DiagnosticsClient",
+                    "--namespace", "Diagnostics",
+                    "--diagnostics",
+                    "--clean-stale-files");
+            }
+
             var firstResult = await GenerateAsync();
             Console.WriteLine(firstResult.StandardOutput);
             Console.WriteLine(firstResult.StandardError);
@@ -386,6 +403,13 @@ public class CliTests
             ReadDiagnosticValue(secondResult.StandardError, "files_written").Should().Be(0);
             ReadDiagnosticValue(secondResult.StandardError, "files_unchanged").Should().Be(generatedFiles.Length);
             File.GetLastWriteTimeUtc(trackedGeneratedFile).Should().Be(trackedLastWriteTime);
+
+            var reorderedResult = await GenerateWithReorderedOptionsAsync();
+            Console.WriteLine(reorderedResult.StandardOutput);
+            Console.WriteLine(reorderedResult.StandardError);
+            reorderedResult.ExitCode.Should().Be(0);
+            reorderedResult.StandardError.Should().Contain("cache_hit: true");
+            ReadDiagnosticValue(reorderedResult.StandardError, "files_written").Should().Be(0);
 
             var expectedTrackedContent = await File.ReadAllTextAsync(trackedGeneratedFile);
             await File.AppendAllTextAsync(trackedGeneratedFile, "// manual edit");

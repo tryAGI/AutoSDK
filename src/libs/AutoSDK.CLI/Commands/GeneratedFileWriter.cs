@@ -1,3 +1,5 @@
+using System.Buffers;
+using System.Security.Cryptography;
 using System.Text;
 
 namespace AutoSDK.CLI.Commands;
@@ -11,7 +13,8 @@ internal readonly record struct GeneratedFileWriteResult(
     int DeletedCount,
     int NormalizedLineCount,
     long GeneratedBytes,
-    long WrittenBytes);
+    long WrittenBytes,
+    GeneratedFileCacheEntry[] CacheFiles);
 
 internal static class GeneratedFileWriter
 {
@@ -22,21 +25,25 @@ internal static class GeneratedFileWriter
         IReadOnlyList<GeneratedOutputFile> files,
         IEnumerable<string> staleCandidates,
         bool deleteStaleFiles,
+        IReadOnlyList<GeneratedFileCacheEntry>? cachedFiles = null,
         CancellationToken cancellationToken = default)
     {
         files = files ?? throw new ArgumentNullException(nameof(files));
         staleCandidates = staleCandidates ?? throw new ArgumentNullException(nameof(staleCandidates));
+        cachedFiles ??= [];
 
         var pathComparer = OperatingSystem.IsWindows() || OperatingSystem.IsMacOS()
             ? StringComparer.OrdinalIgnoreCase
             : StringComparer.Ordinal;
         var expectedPaths = new HashSet<string>(pathComparer);
+        var cachedFilesByPath = cachedFiles.ToDictionary(static file => file.Path, pathComparer);
         var writtenCount = 0;
         var unchangedCount = 0;
         var normalizedLineCount = 0;
         long generatedBytes = 0;
         long writtenBytes = 0;
         var pendingFiles = new (string FullPath, string Text)[files.Count];
+        var outputCacheFiles = new GeneratedFileCacheEntry[files.Count];
 
         for (var index = 0; index < files.Count; index++)
         {
@@ -52,17 +59,20 @@ internal static class GeneratedFileWriter
             pendingFiles[index] = (fullPath, file.Text);
         }
 
-        await Parallel.ForEachAsync(
-            pendingFiles,
+        await Parallel.ForAsync(
+            0,
+            pendingFiles.Length,
             new ParallelOptions
             {
                 CancellationToken = cancellationToken,
                 MaxDegreeOfParallelism = Math.Min(Environment.ProcessorCount, MaxParallelism),
             },
-            async (file, itemCancellationToken) =>
+            async (index, itemCancellationToken) =>
             {
+                var file = pendingFiles[index];
                 var normalizedText = NormalizeTrailingWhitespace(file.Text, out var normalizedLines);
                 var byteCount = Encoding.UTF8.GetByteCount(normalizedText);
+                var contentHash = ComputeTextHash(normalizedText, byteCount);
                 Interlocked.Add(ref normalizedLineCount, normalizedLines);
                 Interlocked.Add(ref generatedBytes, byteCount);
 
@@ -71,24 +81,34 @@ internal static class GeneratedFileWriter
                         file.FullPath,
                         normalizedText,
                         byteCount,
+                        cachedFilesByPath.GetValueOrDefault(file.FullPath),
+                        contentHash,
                         itemCancellationToken).ConfigureAwait(false))
                 {
                     Interlocked.Increment(ref unchangedCount);
-                    return;
                 }
-
-                var directory = Path.GetDirectoryName(file.FullPath);
-                if (!string.IsNullOrEmpty(directory))
+                else
                 {
-                    Directory.CreateDirectory(directory);
+                    var directory = Path.GetDirectoryName(file.FullPath);
+                    if (!string.IsNullOrEmpty(directory))
+                    {
+                        Directory.CreateDirectory(directory);
+                    }
+
+                    await WriteAtomicallyAsync(
+                        file.FullPath,
+                        normalizedText,
+                        itemCancellationToken).ConfigureAwait(false);
+                    Interlocked.Increment(ref writtenCount);
+                    Interlocked.Add(ref writtenBytes, byteCount);
                 }
 
-                await WriteAtomicallyAsync(
+                var fileInfo = new FileInfo(file.FullPath);
+                outputCacheFiles[index] = new GeneratedFileCacheEntry(
                     file.FullPath,
-                    normalizedText,
-                    itemCancellationToken).ConfigureAwait(false);
-                Interlocked.Increment(ref writtenCount);
-                Interlocked.Add(ref writtenBytes, byteCount);
+                    fileInfo.Length,
+                    fileInfo.LastWriteTimeUtc.Ticks,
+                    contentHash);
             }).ConfigureAwait(false);
 
         var deletedCount = 0;
@@ -116,24 +136,54 @@ internal static class GeneratedFileWriter
             DeletedCount: deletedCount,
             NormalizedLineCount: normalizedLineCount,
             GeneratedBytes: generatedBytes,
-            WrittenBytes: writtenBytes);
+            WrittenBytes: writtenBytes,
+            CacheFiles: outputCacheFiles);
     }
 
     private static async Task<bool> FileContentsEqualAsync(
         string path,
         string expectedText,
         int expectedByteCount,
+        GeneratedFileCacheEntry? cachedFile,
+        string expectedHash,
         CancellationToken cancellationToken)
     {
-        if (new FileInfo(path).Length != expectedByteCount)
+        var fileInfo = new FileInfo(path);
+        if (fileInfo.Length != expectedByteCount)
         {
             return false;
+        }
+
+        if (cachedFile is not null &&
+            cachedFile.Length == expectedByteCount &&
+            cachedFile.LastWriteTimeUtcTicks == fileInfo.LastWriteTimeUtc.Ticks)
+        {
+            return string.Equals(
+                expectedHash,
+                cachedFile.Sha256,
+                StringComparison.Ordinal);
         }
 
         return string.Equals(
             await File.ReadAllTextAsync(path, cancellationToken).ConfigureAwait(false),
             expectedText,
             StringComparison.Ordinal);
+    }
+
+    private static string ComputeTextHash(string text, int byteCount)
+    {
+        var buffer = ArrayPool<byte>.Shared.Rent(byteCount);
+        try
+        {
+            var written = Utf8NoBom.GetBytes(text.AsSpan(), buffer);
+            Span<byte> hash = stackalloc byte[SHA256.HashSizeInBytes];
+            SHA256.HashData(buffer.AsSpan(0, written), hash);
+            return Convert.ToHexString(hash);
+        }
+        finally
+        {
+            ArrayPool<byte>.Shared.Return(buffer);
+        }
     }
 
     internal static async Task WriteAtomicallyAsync(

@@ -11,6 +11,8 @@ namespace AutoSDK.Generation;
 
 public static class CSharpPipeline
 {
+    private const int MaxRenderParallelism = 4;
+
     public static Models.Data PrepareAndEnrich(
         ((string Text, Settings Settings) Context, Settings GlobalSettings) tuple,
         CancellationToken cancellationToken = default)
@@ -128,22 +130,8 @@ public static class CSharpPipeline
                         Sources.EnumJsonConverter(x, cancellationToken),
                         Sources.EnumNullableJsonConverter(x, cancellationToken),
                     })
-                    .Concat(data.Classes
-                        .SelectMany(x => new[]
-                        {
-                            Sources.Class(x, cancellationToken),
-                            webSocketMessageModels.ContainsKey(x.GlobalClassName)
-                                ? Sources.ClassWebSocketBinaryPayloadHelpers(x, cancellationToken)
-                                : FileWithName.Empty,
-                            Sources.ClassJsonExtensions(x, cancellationToken),
-                            Sources.ClassValidation(x, cancellationToken),
-                        }))
-                    .Concat(data.Methods
-                        .SelectMany(x => new[]
-                        {
-                            Sources.Method(x, cancellationToken),
-                            Sources.MethodInterface(x, cancellationToken),
-                        }))
+                    .Concat(GenerateClassFiles(data.Classes, webSocketMessageModels, cancellationToken))
+                    .Concat(GenerateMethodFiles(data.Methods, cancellationToken))
                     .Concat(data.Clients
                         .SelectMany(x => new[]
                         {
@@ -256,5 +244,52 @@ public static class CSharpPipeline
                             cancellationToken)))
                     .Where(x => !x.IsEmpty)
                     .ToArray();
+    }
+
+    private static FileWithName[] GenerateMethodFiles(
+        EquatableArray<EndPoint> methods,
+        CancellationToken cancellationToken)
+    {
+        var files = new FileWithName[methods.Length * 2];
+        var parallelOptions = new ParallelOptions
+        {
+            CancellationToken = cancellationToken,
+            MaxDegreeOfParallelism = Math.Min(Environment.ProcessorCount, MaxRenderParallelism),
+        };
+
+        Parallel.For(0, methods.Length, parallelOptions, index =>
+        {
+            var method = methods[index];
+            files[index * 2] = Sources.Method(method, cancellationToken);
+            files[(index * 2) + 1] = Sources.MethodInterface(method, cancellationToken);
+        });
+
+        return files;
+    }
+
+    private static FileWithName[] GenerateClassFiles(
+        EquatableArray<ModelData> classes,
+        Dictionary<string, ModelData> webSocketMessageModels,
+        CancellationToken cancellationToken)
+    {
+        var files = new FileWithName[classes.Length * 4];
+        var parallelOptions = new ParallelOptions
+        {
+            CancellationToken = cancellationToken,
+            MaxDegreeOfParallelism = Math.Min(Environment.ProcessorCount, MaxRenderParallelism),
+        };
+
+        Parallel.For(0, classes.Length, parallelOptions, index =>
+        {
+            var model = classes[index];
+            files[index * 4] = Sources.Class(model, cancellationToken);
+            files[(index * 4) + 1] = webSocketMessageModels.ContainsKey(model.GlobalClassName)
+                ? Sources.ClassWebSocketBinaryPayloadHelpers(model, cancellationToken)
+                : FileWithName.Empty;
+            files[(index * 4) + 2] = Sources.ClassJsonExtensions(model, cancellationToken);
+            files[(index * 4) + 3] = Sources.ClassValidation(model, cancellationToken);
+        });
+
+        return files;
     }
 }
