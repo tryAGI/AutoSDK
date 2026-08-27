@@ -1,6 +1,7 @@
 ﻿using AutoSDK.Models;
 using AutoSDK.Naming.AnyOfs;
 using AutoSDK.TypeMapping;
+using Microsoft.OpenApi;
 
 namespace AutoSDK.UnitTests;
 
@@ -38,6 +39,29 @@ public partial class Tests
                 CSharpTypeRaw = "CreateChatCompletionRequestVariant2",
             }).WithCSharpComputedValues(),
             className: "CreateChatCompletionRequest").Should().Be("CreateChatCompletionRequestVariant2");
+    }
+
+    [TestMethod]
+    public void SmartNamedAnyOfNames_BatchedNamesMatchIndividualNames()
+    {
+        var children = Enumerable.Range(1, 32)
+            .Select(index => new SchemaContext(
+                SchemaContextSettings.Default,
+                new OpenApiSchema(),
+                $"TextMessageVariant{index}",
+                "class")
+            {
+                TypeData = (TypeData.Default with
+                {
+                    CSharpTypeRaw = $"TextMessageVariant{index}",
+                }).WithCSharpComputedValues(),
+            })
+            .ToArray();
+
+        var batchedNames = SmartNamedAnyOfNames.ComputePropertyNames(children, "TextMessage");
+
+        batchedNames.Should().Equal(children.Select((_, index) =>
+            SmartNamedAnyOfNames.ComputePropertyName(children, "TextMessage", index)));
     }
     
     [TestMethod]

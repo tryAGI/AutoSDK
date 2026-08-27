@@ -1,5 +1,6 @@
 using System.Collections.Immutable;
 using System.CommandLine;
+using System.Diagnostics;
 using AutoSDK.Extensions;
 using AutoSDK.Generation;
 using AutoSDK.Helpers;
@@ -471,6 +472,20 @@ internal sealed class GenerateCommand : Command
         Description = "Generation backend. Currently supported: csharp.",
     };
 
+    private Option<bool> Diagnostics { get; } = new(
+        name: "--diagnostics")
+    {
+        DefaultValueFactory = _ => false,
+        Description = "Print generation phase timings, allocations, and generated-file write statistics to stderr.",
+    };
+
+    private Option<bool> CleanStaleFiles { get; } = new(
+        name: "--clean-stale-files")
+    {
+        DefaultValueFactory = _ => false,
+        Description = "Delete stale AutoSDK-generated .g.cs, single-file, and snippet-manifest outputs that are no longer produced. Use only with a dedicated generated output directory.",
+    };
+
     public GenerateCommand() : base(name: "generate", description: "Generates client SDK code from OpenAPI/AsyncAPI, or scaffolds a C# gRPC project from a local .proto, descriptor set, or Buf module input.")
     {
         Arguments.Add(Input);
@@ -536,15 +551,21 @@ internal sealed class GenerateCommand : Command
         Options.Add(ExcludedModelNamespaceMode);
         Options.Add(GenerateModels);
         Options.Add(Language);
+        Options.Add(Diagnostics);
+        Options.Add(CleanStaleFiles);
 
         SetAction(HandleAsync);
     }
 
     private async Task HandleAsync(ParseResult parseResult)
     {
+        var totalTime = Stopwatch.StartNew();
         string input = parseResult.GetRequiredValue(Input);
         string output = parseResult.GetRequiredValue(Output);
         bool singleFile = parseResult.GetRequiredValue(SingleFile);
+        bool diagnosticsEnabled = parseResult.GetRequiredValue(Diagnostics);
+        bool cleanStaleFiles = parseResult.GetRequiredValue(CleanStaleFiles);
+        var allocationStart = GetAllocatedBytes(diagnosticsEnabled);
         string language = parseResult.GetRequiredValue(Language);
         var grpcInputs = parseResult.GetRequiredValue(GrpcInputs).ToImmutableArray();
         var apiOutputSubdirectory = parseResult.GetRequiredValue(ApiOutputSubdirectory);
@@ -682,12 +703,15 @@ internal sealed class GenerateCommand : Command
             return;
         }
 
+        var setupElapsed = totalTime.Elapsed;
         Console.WriteLine($"Loading {input}...");
 
         using var client = new HttpClient();
+        var inputReadTime = Stopwatch.StartNew();
         var yaml = input.StartsWith("http", StringComparison.OrdinalIgnoreCase)
             ? await client.GetStringAsync(new Uri(input)).ConfigureAwait(false)
             : await File.ReadAllTextAsync(input).ConfigureAwait(false);
+        inputReadTime.Stop();
 
         var name = Path.GetFileNameWithoutExtension(input);
 
@@ -724,8 +748,12 @@ internal sealed class GenerateCommand : Command
 
         Console.WriteLine("Generating...");
 
-        var data = CSharpPipeline.PrepareAndEnrich(
+        var allocationBeforePipeline = GetAllocatedBytes(diagnosticsEnabled);
+        var pipelineTime = Stopwatch.StartNew();
+        var (data, coreResult) = CSharpPipeline.PrepareAndEnrichWithCoreResult(
             ((yaml, settings), GlobalSettings: settings));
+        pipelineTime.Stop();
+        var allocationAfterPipeline = GetAllocatedBytes(diagnosticsEnabled);
 
         if (settings.GenerateJsonSerializerContextTypes &&
             string.IsNullOrWhiteSpace(data.Converters.Settings.JsonSerializerContext))
@@ -744,35 +772,37 @@ internal sealed class GenerateCommand : Command
             Console.WriteLine(JsonSerializationDirectionAnalyzer.CreateReport(data).ToString());
         }
 
+        var renderTime = Stopwatch.StartNew();
         var files = CSharpLanguagePlugin.Instance
             .GenerateFiles(data)
             .Where(x => !x.IsEmpty)
             .ToArray();
+        renderTime.Stop();
+        var allocationAfterRender = GetAllocatedBytes(diagnosticsEnabled);
 
         var apiOutput = grpcInputs.Length > 0
             ? Path.Combine(output, apiOutputSubdirectory)
             : output;
-
-        Directory.CreateDirectory(apiOutput);
-        
+        var generatedOutputs = new List<GeneratedOutputFile>(files.Length + 2);
         if (singleFile)
         {
             var text = string.Join(Environment.NewLine, files.Select(x => x.Text));
-            await File.WriteAllTextAsync(Path.Combine(apiOutput, $"{name}.cs"), text).ConfigureAwait(false);
+            generatedOutputs.Add(new GeneratedOutputFile(Path.Combine(apiOutput, $"{name}.cs"), text));
         }
         else
         {
             foreach (var file in files)
             {
-                await File.WriteAllTextAsync(Path.Combine(apiOutput, file.Name), file.Text).ConfigureAwait(false);
+                generatedOutputs.Add(new GeneratedOutputFile(Path.Combine(apiOutput, file.Name), file.Text));
             }
         }
 
+        var snippetManifestTime = Stopwatch.StartNew();
         if (specFormat == SpecFormat.OpenApi)
         {
-            var document = yaml.GetOpenApiDocument(settings);
-            var schemas = document.GetSchemas(settings);
-            var operations = document.GetOperations(settings, settings, schemas);
+            var document = coreResult.OpenApiDocument ??
+                throw new InvalidOperationException("The OpenAPI pipeline did not retain its parsed document.");
+            var operations = document.GetOperations(settings, settings, coreResult.Schemas);
             if (settings.ExcludeDeprecatedOperations)
             {
                 operations = operations
@@ -783,11 +813,35 @@ internal sealed class GenerateCommand : Command
             var snippetManifest = Sources.SnippetManifest(operations, data.Methods.ToArray());
             if (!snippetManifest.IsEmpty)
             {
-                await File.WriteAllTextAsync(
+                generatedOutputs.Add(new GeneratedOutputFile(
                     Path.Combine(output, snippetManifest.Name),
-                    snippetManifest.Text).ConfigureAwait(false);
+                    snippetManifest.Text));
             }
         }
+        snippetManifestTime.Stop();
+        var allocationAfterSnippet = GetAllocatedBytes(diagnosticsEnabled);
+
+        if (grpcInputs.Length > 0)
+        {
+            generatedOutputs.Add(new GeneratedOutputFile(
+                Path.Combine(output, "README.md"),
+                RenderMixedModeReadme(
+                    input,
+                    apiOutputSubdirectory,
+                    grpcOutputSubdirectory,
+                    grpcInputs)));
+        }
+
+        var staleCandidates = cleanStaleFiles
+            ? CollectStaleGeneratedFiles(apiOutput, output, name).ToArray()
+            : [];
+        var writeTime = Stopwatch.StartNew();
+        var writeResult = await GeneratedFileWriter.WriteAsync(
+            generatedOutputs,
+            staleCandidates,
+            deleteStaleFiles: cleanStaleFiles).ConfigureAwait(false);
+        writeTime.Stop();
+        var allocationAfterWrite = GetAllocatedBytes(diagnosticsEnabled);
 
         if (grpcInputs.Length > 0)
         {
@@ -797,18 +851,62 @@ internal sealed class GenerateCommand : Command
                 grpcOutputSubdirectory,
                 settings.Namespace,
                 settings.TargetFramework).ConfigureAwait(false);
-
-            await File.WriteAllTextAsync(
-                Path.Combine(output, "README.md"),
-                RenderMixedModeReadme(
-                    input,
-                    apiOutputSubdirectory,
-                    grpcOutputSubdirectory,
-                    grpcInputs),
-                cancellationToken: default).ConfigureAwait(false);
         }
-        
+
+        totalTime.Stop();
+        var allocationEnd = GetAllocatedBytes(diagnosticsEnabled);
+        if (diagnosticsEnabled)
+        {
+            await new GenerationDiagnostics(
+                Total: totalTime.Elapsed,
+                Setup: setupElapsed,
+                InputRead: inputReadTime.Elapsed,
+                Pipeline: pipelineTime.Elapsed,
+                Render: renderTime.Elapsed,
+                SnippetManifest: snippetManifestTime.Elapsed,
+                NormalizeCompareWriteAndCleanup: writeTime.Elapsed,
+                CoreTimes: data.Times,
+                Files: writeResult,
+                TotalAllocatedBytes: allocationEnd - allocationStart,
+                PipelineAllocatedBytes: allocationAfterPipeline - allocationBeforePipeline,
+                RenderAllocatedBytes: allocationAfterRender - allocationAfterPipeline,
+                SnippetAllocatedBytes: allocationAfterSnippet - allocationAfterRender,
+                WriteAllocatedBytes: allocationAfterWrite - allocationAfterSnippet)
+                .WriteAsync(Console.Error).ConfigureAwait(false);
+        }
+
         Console.WriteLine("Done.");
+    }
+
+    private static long GetAllocatedBytes(bool diagnosticsEnabled)
+    {
+        return diagnosticsEnabled ? GC.GetTotalAllocatedBytes(precise: true) : 0;
+    }
+
+    private static IEnumerable<string> CollectStaleGeneratedFiles(
+        string apiOutput,
+        string output,
+        string inputName)
+    {
+        if (Directory.Exists(apiOutput))
+        {
+            foreach (var path in Directory.EnumerateFiles(apiOutput, "*.g.cs", SearchOption.AllDirectories))
+            {
+                yield return path;
+            }
+        }
+
+        var priorSingleFile = Path.Combine(apiOutput, $"{inputName}.cs");
+        if (File.Exists(priorSingleFile))
+        {
+            yield return priorSingleFile;
+        }
+
+        var priorSnippetManifest = Path.Combine(output, "autosdk.generated-examples.json");
+        if (File.Exists(priorSnippetManifest))
+        {
+            yield return priorSnippetManifest;
+        }
     }
 
     private static bool ShouldWarnAboutEmptyGeneratedSurface(

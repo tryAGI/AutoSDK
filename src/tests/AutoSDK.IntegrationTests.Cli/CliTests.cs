@@ -297,6 +297,112 @@ public class CliTests
     }
 
     [TestMethod]
+    public async Task Generate_WithDiagnostics_NormalizesAndWritesOnlyChanges()
+    {
+        var tempDirectory = Path.Combine(Path.GetTempPath(), Path.GetRandomFileName());
+        try
+        {
+            Directory.CreateDirectory(tempDirectory);
+
+            var specPath = Path.Combine(tempDirectory, "diagnostics.yaml");
+            var outputDirectory = Path.Combine(tempDirectory, "Generated");
+            await File.WriteAllTextAsync(
+                specPath,
+                """
+                openapi: 3.0.1
+                info:
+                  title: Diagnostics
+                  version: 1.0.0
+                paths:
+                  /items:
+                    get:
+                      operationId: listItems
+                      responses:
+                        '200':
+                          description: OK
+                          content:
+                            application/json:
+                              schema:
+                                type: array
+                                items:
+                                  $ref: '#/components/schemas/Item'
+                components:
+                  schemas:
+                    Item:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                """);
+
+            var repositoryDirectory = Path.GetFullPath(Path.Combine(
+                Directory.GetCurrentDirectory(),
+                "../../../../../.."));
+
+            async Task<(int ExitCode, string StandardOutput, string StandardError)> GenerateAsync()
+            {
+                return await RunDotnetAsync(
+                    repositoryDirectory,
+                    "run",
+                    "--disable-build-servers",
+                    "--no-launch-profile",
+                    "--project", "src/libs/AutoSDK.CLI",
+                    "generate", specPath,
+                    "--namespace", "Diagnostics",
+                    "--clientClassName", "DiagnosticsClient",
+                    "--targetFramework", "net10.0",
+                    "--output", outputDirectory,
+                    "--clean-stale-files",
+                    "--diagnostics");
+            }
+
+            var firstResult = await GenerateAsync();
+            Console.WriteLine(firstResult.StandardOutput);
+            Console.WriteLine(firstResult.StandardError);
+            firstResult.ExitCode.Should().Be(0);
+            firstResult.StandardError.Should().Contain("AutoSDK generation diagnostics:");
+            ReadDiagnosticValue(firstResult.StandardError, "files_written").Should().BeGreaterThan(0);
+            ReadDiagnosticValue(firstResult.StandardError, "normalized_lines").Should().BeGreaterThan(0);
+
+            var generatedFiles = Directory.GetFiles(outputDirectory, "*.cs", SearchOption.AllDirectories);
+            generatedFiles.Should().NotBeEmpty();
+            foreach (var generatedFile in generatedFiles)
+            {
+                var content = await File.ReadAllTextAsync(generatedFile);
+                Regex.IsMatch(content, @"[ \t]+$", RegexOptions.Multiline).Should().BeFalse();
+            }
+
+            var trackedGeneratedFile = generatedFiles[0];
+            var trackedLastWriteTime = File.GetLastWriteTimeUtc(trackedGeneratedFile);
+
+            var secondResult = await GenerateAsync();
+            Console.WriteLine(secondResult.StandardOutput);
+            Console.WriteLine(secondResult.StandardError);
+            secondResult.ExitCode.Should().Be(0);
+            ReadDiagnosticValue(secondResult.StandardError, "files_written").Should().Be(0);
+            ReadDiagnosticValue(secondResult.StandardError, "files_unchanged").Should().Be(generatedFiles.Length);
+            File.GetLastWriteTimeUtc(trackedGeneratedFile).Should().Be(trackedLastWriteTime);
+
+            var staleGeneratedFile = Path.Combine(outputDirectory, "Diagnostics.Stale.g.cs");
+            var preservedFile = Path.Combine(outputDirectory, "Keep.cs");
+            await File.WriteAllTextAsync(staleGeneratedFile, "// stale");
+            await File.WriteAllTextAsync(preservedFile, "// keep");
+
+            var thirdResult = await GenerateAsync();
+            Console.WriteLine(thirdResult.StandardOutput);
+            Console.WriteLine(thirdResult.StandardError);
+            thirdResult.ExitCode.Should().Be(0);
+            ReadDiagnosticValue(thirdResult.StandardError, "files_deleted").Should().Be(1);
+            File.Exists(staleGeneratedFile).Should().BeFalse();
+            File.Exists(preservedFile).Should().BeTrue();
+        }
+        finally
+        {
+            TryDeleteDirectory(tempDirectory);
+        }
+    }
+
+    [TestMethod]
     public async Task Generate_WithNoEndpointsOrModels_WarnsAboutEmptyGeneratedSurface()
     {
         var tempDirectory = Path.Combine(Path.GetTempPath(), Path.GetRandomFileName());
@@ -5686,6 +5792,16 @@ components:
         {
             TryDeleteDirectory(tempDirectory);
         }
+    }
+
+    private static int ReadDiagnosticValue(string diagnostics, string name)
+    {
+        var match = Regex.Match(
+            diagnostics,
+            $@"^\s*{Regex.Escape(name)}:\s*(\d+)\s*$",
+            RegexOptions.Multiline | RegexOptions.CultureInvariant);
+        match.Success.Should().BeTrue($"diagnostics should contain '{name}'");
+        return int.Parse(match.Groups[1].Value, System.Globalization.CultureInfo.InvariantCulture);
     }
 
     private static async Task<string> ReadRequiredGeneratedFileAsync(

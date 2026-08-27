@@ -223,6 +223,7 @@ public static class CSharpSchemaDataFactory
         EquatableArray<PropertyData> properties;
         if (context.IsNamedAnyOfLike)
         {
+            IReadOnlyList<string>? smartPropertyNames = null;
             var builder = ImmutableArray.CreateBuilder<PropertyData>(children.Count);
             for (var i = 0; i < children.Count; i++)
             {
@@ -237,7 +238,10 @@ public static class CSharpSchemaDataFactory
                     ? discriminatorValue
                     : titleName != null && !string.Equals(titleName, className, StringComparison.OrdinalIgnoreCase)
                         ? titleName
-                        : SmartNamedAnyOfNames.ComputePropertyName(children, className, i, context.Settings.IdentifierCharacterSet);
+                        : (smartPropertyNames ??= SmartNamedAnyOfNames.ComputePropertyNames(
+                            children,
+                            className,
+                            context.Settings.IdentifierCharacterSet))[i];
                 name = name.ToCSharpName(context.Settings, context.Parent);
                 name = CSharpPropertyNameGenerator.AvoidObjectMemberNameCollision(name);
                 name = AvoidNamedAnyOfMemberNameCollision(name);

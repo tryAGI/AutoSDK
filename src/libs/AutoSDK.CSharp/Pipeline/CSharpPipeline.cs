@@ -15,30 +15,36 @@ public static class CSharpPipeline
         ((string Text, Settings Settings) Context, Settings GlobalSettings) tuple,
         CancellationToken cancellationToken = default)
     {
+        return PrepareAndEnrichWithCoreResult(tuple, cancellationToken).Data;
+    }
+
+    public static (Models.Data Data, CorePipelineResult CoreResult) PrepareAndEnrichWithCoreResult(
+        ((string Text, Settings Settings) Context, Settings GlobalSettings) tuple,
+        CancellationToken cancellationToken = default)
+    {
         var totalTime = System.Diagnostics.Stopwatch.StartNew();
-        var data = PrepareAndEnrichCore(tuple, cancellationToken);
-        return data with
+        var coreResult = PrepareCore(tuple, cancellationToken);
+        var data = Enrich(coreResult, cancellationToken);
+        return (data with
         {
             Times = data.Times with
             {
                 Total = totalTime.Elapsed,
             },
-        };
+        }, coreResult);
     }
 
-    private static Models.Data PrepareAndEnrichCore(
+    private static CorePipelineResult PrepareCore(
         ((string Text, Settings Settings) Context, Settings GlobalSettings) tuple,
         CancellationToken cancellationToken)
     {
-        var coreResult = CorePipeline.Prepare(
+        return CorePipeline.Prepare(
             tuple,
             static (document, settings) => document.GetSchemas((CSharpSettings)settings),
             ApplyModelNaming,
             static text => text.ToClassName(),
             static text => text.ToPropertyName(),
             cancellationToken);
-
-        return Enrich(coreResult, cancellationToken);
     }
 
     public static void ApplyModelNaming(IReadOnlyList<SchemaContext> schemas)

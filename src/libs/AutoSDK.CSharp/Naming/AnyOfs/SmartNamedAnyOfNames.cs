@@ -19,6 +19,35 @@ public static class SmartNamedAnyOfNames
             : $"Value{i + 1}";
     }
 
+    internal static IReadOnlyList<string> ComputePropertyNames(
+        IList<SchemaContext> children,
+        string className,
+        IdentifierCharacterSet identifierCharacterSet = IdentifierCharacterSet.UnicodeLetters)
+    {
+        var names = new string[children.Count];
+        var useSmartNames = true;
+        for (var index = 0; index < children.Count; index++)
+        {
+            names[index] = ComputeSmartName(
+                GetCandidateName(children[index], identifierCharacterSet),
+                className);
+            if (string.IsNullOrWhiteSpace(names[index]))
+            {
+                useSmartNames = false;
+            }
+        }
+
+        if (!useSmartNames)
+        {
+            for (var index = 0; index < names.Length; index++)
+            {
+                names[index] = $"Value{index + 1}";
+            }
+        }
+
+        return names;
+    }
+
     public static bool ShouldUseSmartName(
         IList<SchemaContext> children,
         string className,
