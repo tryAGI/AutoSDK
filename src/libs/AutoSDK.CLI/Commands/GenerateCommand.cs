@@ -914,7 +914,8 @@ internal sealed class GenerateCommand : Command
             generatedOutputs,
             staleCandidates,
             deleteStaleFiles: cleanStaleFiles,
-            cachedFiles: cacheValidation.KnownFiles).ConfigureAwait(false);
+            cachedFiles: cacheValidation.KnownFiles,
+            collectDiagnostics: diagnosticsEnabled).ConfigureAwait(false);
         writeTime.Stop();
         var allocationAfterWrite = GetAllocatedBytes(diagnosticsEnabled);
 

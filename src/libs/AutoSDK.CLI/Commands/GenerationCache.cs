@@ -271,7 +271,8 @@ internal static class GenerationCache
                     NormalizedLineCount: 0,
                     GeneratedBytes: generatedBytes,
                     WrittenBytes: 0,
-                    CacheFiles: knownFiles),
+                    CacheFiles: knownFiles,
+                    Diagnostics: default),
             KnownFiles: knownFiles);
     }
 

@@ -59,7 +59,8 @@ public static partial class Sources
             endPoint.ClientUsesServerSelectionSupport ||
             endPoint.UsesServerSelectionSupport && endPoint.HasServerOverride && endPoint.Servers.Length > 0;
 
-        return NormalizedString.Create($@"
+        using var builder = new NormalizedPooledStringBuilder(8192);
+        builder.Append($@"
 #nullable enable{(
     endPoint.Parameters.Any(x => x is { IsDeprecated: true, Location: not null }) ||
     endPoint.IsMultipartFormData && endPoint.Parameters.Any(x => x.IsDeprecated) ||
@@ -98,16 +99,19 @@ namespace {endPoint.Settings.Namespace}
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref {contentType} content);")}
 
-{GenerateMethodCore(endPoint, normalizeOutput: false)}
-{(ShouldGenerateStreamResponseMethod(endPoint) ? GenerateMethodCore(endPoint, returnStreamResponse: true, normalizeOutput: false) : TrimmedLine)}
-{(ShouldGenerateResponseWrapperMethod(endPoint) ? GenerateMethodCore(endPoint, returnResponseWrapper: true, normalizeOutput: false) : TrimmedLine)}
+");
+        AppendMethodVariants(builder, endPoint);
+        builder.Append($@"
 {GeneratePollingMethods(endPoint)}
 {GenerateLocationWaitCompanion(endPoint)}
 {GenerateAutoPagingCompanion(endPoint)}
 {GenerateExtensionMethod(endPoint)}
-{GenerateMultipartStreamMethods(endPoint)}
-    }}
-}}");
+");
+        AppendMultipartStreamMethods(builder, endPoint);
+        builder.Append(@"
+    }
+}");
+        return builder.ToString();
     }
 
     public static string GenerateEndPointInterface(
@@ -119,7 +123,8 @@ namespace {endPoint.Settings.Namespace}
             return string.Empty;
         }
 
-        return NormalizedString.Create($@"#nullable enable{(RequiresDeprecatedTypeWarningSuppression(endPoint) ? @"
+        using var builder = new NormalizedPooledStringBuilder(4096);
+        builder.Append($@"#nullable enable{(RequiresDeprecatedTypeWarningSuppression(endPoint) ? @"
 
 #pragma warning disable CS0618 // Type or member is obsolete" : "")}
 
@@ -127,16 +132,19 @@ namespace {endPoint.Settings.Namespace}
 {{
     public partial interface I{endPoint.ClassName}
     {{
-{GenerateMethodCore(endPoint, isInterface: true, normalizeOutput: false)}
-{(ShouldGenerateStreamResponseMethod(endPoint) ? GenerateMethodCore(endPoint, isInterface: true, returnStreamResponse: true, normalizeOutput: false) : TrimmedLine)}
-{(ShouldGenerateResponseWrapperMethod(endPoint) ? GenerateMethodCore(endPoint, isInterface: true, returnResponseWrapper: true, normalizeOutput: false) : TrimmedLine)}
+");
+        AppendMethodVariants(builder, endPoint, isInterface: true);
+        builder.Append($@"
 {GeneratePollingMethods(endPoint, isInterface: true)}
 {GenerateLocationWaitCompanion(endPoint, isInterface: true)}
 {GenerateAutoPagingCompanion(endPoint, isInterface: true)}
 {GenerateExtensionMethod(endPoint, isInterface: true)}
-{GenerateMultipartStreamMethods(endPoint, isInterface: true)}
-    }}
-}}");
+");
+        AppendMultipartStreamMethods(builder, endPoint, isInterface: true);
+        builder.Append(@"
+    }
+}");
+        return builder.ToString();
     }
 
     public static string GetHttpMethod(System.Net.Http.HttpMethod operationType)
@@ -337,19 +345,19 @@ namespace {endPoint.Settings.Namespace}
         : x.ParameterName)}";
     }
 
-    private static string GenerateMultipartStreamMethods(
+    private static void AppendMultipartStreamMethods(
+        PooledStringBuilder builder,
         EndPoint endPoint,
         bool isInterface = false)
     {
         if (!ShouldGenerateMultipartStreamMethods(endPoint))
         {
-            return TrimmedLine;
+            builder.Append(TrimmedLine);
+            return;
         }
 
-        return $@"
-{GenerateMethodCore(endPoint, isInterface: isInterface, multipartStreamRequest: true, normalizeOutput: false)}
-{(ShouldGenerateStreamResponseMethod(endPoint) ? GenerateMethodCore(endPoint, isInterface: isInterface, returnStreamResponse: true, multipartStreamRequest: true, normalizeOutput: false) : TrimmedLine)}
-{(ShouldGenerateResponseWrapperMethod(endPoint) ? GenerateMethodCore(endPoint, isInterface: isInterface, returnResponseWrapper: true, multipartStreamRequest: true, normalizeOutput: false) : TrimmedLine)}".RemoveBlankLinesWhereOnlyWhitespaces();
+        builder.Append('\n');
+        AppendMethodVariants(builder, endPoint, isInterface, multipartStreamRequest: true);
     }
 
     private static string GetRequestPropertyName(MethodParameter parameter)
@@ -982,24 +990,7 @@ namespace {endPoint.Settings.Namespace}
         bool returnStreamResponse = false,
         bool multipartStreamRequest = false)
     {
-        return GenerateMethodCore(
-            endPoint,
-            isInterface,
-            returnResponseWrapper,
-            returnStreamResponse,
-            multipartStreamRequest,
-            normalizeOutput: true);
-    }
-
-    private static string GenerateMethodCore(
-        EndPoint endPoint,
-        bool isInterface = false,
-        bool returnResponseWrapper = false,
-        bool returnStreamResponse = false,
-        bool multipartStreamRequest = false,
-        bool normalizeOutput = true)
-    {
-        using var builder = new PooledStringBuilder(8192);
+        using var builder = new NormalizedPooledStringBuilder(8192);
         AppendMethodCore(
             builder,
             endPoint,
@@ -1007,10 +998,49 @@ namespace {endPoint.Settings.Namespace}
             returnResponseWrapper,
             returnStreamResponse,
             multipartStreamRequest);
-        var result = builder.ToString();
-        return normalizeOutput
-            ? result.RemoveBlankLinesWhereOnlyWhitespaces()
-            : result;
+        return builder.ToString();
+    }
+
+    private static void AppendMethodVariants(
+        PooledStringBuilder builder,
+        EndPoint endPoint,
+        bool isInterface = false,
+        bool multipartStreamRequest = false)
+    {
+        AppendMethodCore(
+            builder,
+            endPoint,
+            isInterface,
+            multipartStreamRequest: multipartStreamRequest);
+        builder.Append('\n');
+        if (ShouldGenerateStreamResponseMethod(endPoint))
+        {
+            AppendMethodCore(
+                builder,
+                endPoint,
+                isInterface,
+                returnStreamResponse: true,
+                multipartStreamRequest: multipartStreamRequest);
+        }
+        else
+        {
+            builder.Append(TrimmedLine);
+        }
+
+        builder.Append('\n');
+        if (ShouldGenerateResponseWrapperMethod(endPoint))
+        {
+            AppendMethodCore(
+                builder,
+                endPoint,
+                isInterface,
+                returnResponseWrapper: true,
+                multipartStreamRequest: multipartStreamRequest);
+        }
+        else
+        {
+            builder.Append(TrimmedLine);
+        }
     }
 
     private static void AppendMethodCore(

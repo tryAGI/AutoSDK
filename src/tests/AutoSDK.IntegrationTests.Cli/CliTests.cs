@@ -388,6 +388,9 @@ public class CliTests
             ReadDiagnosticValue(firstResult.StandardError, "render_model_types_allocated_bytes").Should().BeGreaterThan(0);
             ReadDiagnosticValue(firstResult.StandardError, "render_method_implementations_allocated_bytes").Should().BeGreaterThan(0);
             ReadDiagnosticValue(firstResult.StandardError, "render_model_types_files").Should().BeGreaterThan(0);
+            ReadDiagnosticMilliseconds(firstResult.StandardError, "output_parallel_processing_ms").Should().BeGreaterThan(0);
+            ReadDiagnosticMilliseconds(firstResult.StandardError, "output_normalize_encode_hash_worker_ms").Should().BeGreaterThan(0);
+            ReadDiagnosticMilliseconds(firstResult.StandardError, "output_physical_write_worker_ms").Should().BeGreaterThan(0);
 
             var generatedFiles = Directory.GetFiles(outputDirectory, "*.cs", SearchOption.AllDirectories);
             generatedFiles.Should().NotBeEmpty();
@@ -5957,6 +5960,16 @@ components:
             RegexOptions.Multiline | RegexOptions.CultureInvariant);
         match.Success.Should().BeTrue($"diagnostics should contain '{name}'");
         return int.Parse(match.Groups[1].Value, System.Globalization.CultureInfo.InvariantCulture);
+    }
+
+    private static double ReadDiagnosticMilliseconds(string diagnostics, string name)
+    {
+        var match = Regex.Match(
+            diagnostics,
+            $@"^\s*{Regex.Escape(name)}:\s*(\d+(?:\.\d+)?)\s*$",
+            RegexOptions.Multiline | RegexOptions.CultureInvariant);
+        match.Success.Should().BeTrue($"diagnostics should contain '{name}'");
+        return double.Parse(match.Groups[1].Value, System.Globalization.CultureInfo.InvariantCulture);
     }
 
     private static async Task<string> ReadRequiredGeneratedFileAsync(

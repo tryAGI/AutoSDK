@@ -151,4 +151,22 @@ value: {value:D3}
 
         result.Should().Be(expected);
     }
+
+    [TestMethod]
+    public void NormalizedPooledStringBuilder_MatchesNormalizationAcrossAppendBoundaries()
+    {
+        using var builder = new NormalizedPooledStringBuilder();
+        builder.Append("first\r");
+        builder.Append('\n');
+        builder.Append("   \n");
+        builder.Append("second");
+        builder.Append('\n', 2);
+        builder.Append("\t\nthird");
+
+        var result = builder.ToString();
+        var expected = "first\r\n   \nsecond\n\n\t\nthird"
+            .RemoveBlankLinesWhereOnlyWhitespaces();
+
+        result.Should().Be(expected);
+    }
 }

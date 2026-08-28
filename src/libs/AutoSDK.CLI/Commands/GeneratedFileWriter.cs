@@ -1,10 +1,20 @@
 using System.Buffers;
+using System.Diagnostics;
 using System.Security.Cryptography;
 using System.Text;
 
 namespace AutoSDK.CLI.Commands;
 
 internal readonly record struct GeneratedOutputFile(string Path, string Text);
+
+internal readonly record struct GeneratedFileWriteDiagnostics(
+    TimeSpan Preparation,
+    TimeSpan ParallelProcessing,
+    TimeSpan NormalizeEncodeHashWorker,
+    TimeSpan CompareWorker,
+    TimeSpan PhysicalWriteWorker,
+    TimeSpan CacheMetadataWorker,
+    TimeSpan StaleCleanup);
 
 internal readonly record struct GeneratedFileWriteResult(
     int GeneratedCount,
@@ -14,7 +24,8 @@ internal readonly record struct GeneratedFileWriteResult(
     int NormalizedLineCount,
     long GeneratedBytes,
     long WrittenBytes,
-    GeneratedFileCacheEntry[] CacheFiles);
+    GeneratedFileCacheEntry[] CacheFiles,
+    GeneratedFileWriteDiagnostics Diagnostics);
 
 internal static class GeneratedFileWriter
 {
@@ -26,6 +37,7 @@ internal static class GeneratedFileWriter
         IEnumerable<string> staleCandidates,
         bool deleteStaleFiles,
         IReadOnlyList<GeneratedFileCacheEntry>? cachedFiles = null,
+        bool collectDiagnostics = false,
         CancellationToken cancellationToken = default)
     {
         files = files ?? throw new ArgumentNullException(nameof(files));
@@ -35,6 +47,7 @@ internal static class GeneratedFileWriter
         var pathComparer = OperatingSystem.IsWindows() || OperatingSystem.IsMacOS()
             ? StringComparer.OrdinalIgnoreCase
             : StringComparer.Ordinal;
+        var preparationTime = collectDiagnostics ? Stopwatch.StartNew() : null;
         var expectedPaths = new HashSet<string>(pathComparer);
         var cachedFilesByPath = cachedFiles.ToDictionary(static file => file.Path, pathComparer);
         var writtenCount = 0;
@@ -66,7 +79,14 @@ internal static class GeneratedFileWriter
         {
             Directory.CreateDirectory(directory!);
         }
+        preparationTime?.Stop();
 
+        long normalizeEncodeHashWorkerTicks = 0;
+        long compareWorkerTicks = 0;
+        long physicalWriteWorkerTicks = 0;
+        long cacheMetadataWorkerTicks = 0;
+
+        var parallelProcessingTime = collectDiagnostics ? Stopwatch.StartNew() : null;
         await Parallel.ForAsync(
             0,
             pendingFiles.Length,
@@ -78,6 +98,7 @@ internal static class GeneratedFileWriter
             async (index, itemCancellationToken) =>
             {
                 var file = pendingFiles[index];
+                var normalizeStart = collectDiagnostics ? Stopwatch.GetTimestamp() : 0;
                 var normalizedText = NormalizeTrailingWhitespace(file.Text, out var normalizedLines);
                 var byteCount = Utf8NoBom.GetByteCount(normalizedText);
                 var encodedContent = ArrayPool<byte>.Shared.Rent(byteCount);
@@ -86,42 +107,72 @@ internal static class GeneratedFileWriter
                     var encodedLength = Utf8NoBom.GetBytes(normalizedText.AsSpan(), encodedContent);
                     var content = encodedContent.AsMemory(0, encodedLength);
                     var contentHash = ComputeContentHash(content.Span);
+                    if (collectDiagnostics)
+                    {
+                        Interlocked.Add(
+                            ref normalizeEncodeHashWorkerTicks,
+                            Stopwatch.GetTimestamp() - normalizeStart);
+                    }
                     Interlocked.Add(ref normalizedLineCount, normalizedLines);
                     Interlocked.Add(ref generatedBytes, encodedLength);
 
-                    if (File.Exists(file.FullPath) &&
+                    var compareStart = collectDiagnostics ? Stopwatch.GetTimestamp() : 0;
+                    var unchanged = File.Exists(file.FullPath) &&
                         await FileContentsEqualAsync(
                             file.FullPath,
                             content,
                             cachedFilesByPath.GetValueOrDefault(file.FullPath),
                             contentHash,
-                            itemCancellationToken).ConfigureAwait(false))
+                            itemCancellationToken).ConfigureAwait(false);
+                    if (collectDiagnostics)
+                    {
+                        Interlocked.Add(
+                            ref compareWorkerTicks,
+                            Stopwatch.GetTimestamp() - compareStart);
+                    }
+                    if (unchanged)
                     {
                         Interlocked.Increment(ref unchangedCount);
                     }
                     else
                     {
+                        var physicalWriteStart = collectDiagnostics ? Stopwatch.GetTimestamp() : 0;
                         await WriteAtomicallyAsync(
                             file.FullPath,
                             content,
                             itemCancellationToken).ConfigureAwait(false);
+                        if (collectDiagnostics)
+                        {
+                            Interlocked.Add(
+                                ref physicalWriteWorkerTicks,
+                                Stopwatch.GetTimestamp() - physicalWriteStart);
+                        }
                         Interlocked.Increment(ref writtenCount);
                         Interlocked.Add(ref writtenBytes, encodedLength);
                     }
 
+                    var cacheMetadataStart = collectDiagnostics ? Stopwatch.GetTimestamp() : 0;
                     var fileInfo = new FileInfo(file.FullPath);
                     outputCacheFiles[index] = new GeneratedFileCacheEntry(
                         file.FullPath,
                         fileInfo.Length,
                         fileInfo.LastWriteTimeUtc.Ticks,
                         contentHash);
+                    if (collectDiagnostics)
+                    {
+                        Interlocked.Add(
+                            ref cacheMetadataWorkerTicks,
+                            Stopwatch.GetTimestamp() - cacheMetadataStart);
+                    }
                 }
                 finally
                 {
                     ArrayPool<byte>.Shared.Return(encodedContent);
                 }
             }).ConfigureAwait(false);
+        parallelProcessingTime?.Stop();
 
+        var staleCleanupTime = collectDiagnostics ? Stopwatch.StartNew() : null;
         var deletedCount = 0;
         if (deleteStaleFiles)
         {
@@ -139,6 +190,7 @@ internal static class GeneratedFileWriter
                 deletedCount++;
             }
         }
+        staleCleanupTime?.Stop();
 
         return new GeneratedFileWriteResult(
             GeneratedCount: files.Count,
@@ -148,7 +200,20 @@ internal static class GeneratedFileWriter
             NormalizedLineCount: normalizedLineCount,
             GeneratedBytes: generatedBytes,
             WrittenBytes: writtenBytes,
-            CacheFiles: outputCacheFiles);
+            CacheFiles: outputCacheFiles,
+            Diagnostics: collectDiagnostics ? new GeneratedFileWriteDiagnostics(
+                Preparation: preparationTime!.Elapsed,
+                ParallelProcessing: parallelProcessingTime!.Elapsed,
+                NormalizeEncodeHashWorker: FromStopwatchTicks(normalizeEncodeHashWorkerTicks),
+                CompareWorker: FromStopwatchTicks(compareWorkerTicks),
+                PhysicalWriteWorker: FromStopwatchTicks(physicalWriteWorkerTicks),
+                CacheMetadataWorker: FromStopwatchTicks(cacheMetadataWorkerTicks),
+                StaleCleanup: staleCleanupTime!.Elapsed) : default);
+    }
+
+    private static TimeSpan FromStopwatchTicks(long ticks)
+    {
+        return TimeSpan.FromSeconds((double)ticks / Stopwatch.Frequency);
     }
 
     private static async Task<bool> FileContentsEqualAsync(

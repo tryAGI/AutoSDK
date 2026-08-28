@@ -3,8 +3,8 @@
   "workload": {
     "name": "Advantage CLI regeneration",
     "spec": "backend/Advantage.Backend/openapi.json",
-    "generatedFiles": 9957,
-    "generatedBytes": 84402180,
+    "generatedFiles": 10007,
+    "generatedBytes": 84531700,
     "targetFramework": "net10.0",
     "logicalProcessorCount": 16
   },
@@ -13,20 +13,25 @@
     "renderMilliseconds": 700,
     "cacheHitTotalMilliseconds": 400,
     "sameOutputCompareMilliseconds": 100,
-    "totalAllocatedBytes": 1425000000,
-    "pipelineAllocatedBytes": 525000000,
+    "totalAllocatedBytes": 1350000000,
+    "pipelineAllocatedBytes": 575000000,
     "coreParsingAllocatedBytes": 130000000,
     "coreTraversalAllocatedBytes": 35000000,
     "coreComputeDataAllocatedBytes": 105000000,
     "coreComputeClassesAllocatedBytes": 130000000,
-    "renderAllocatedBytes": 700000000,
+    "renderAllocatedBytes": 620000000,
     "renderModelTypesAllocatedBytes": 105000000,
     "renderModelJsonAllocatedBytes": 80000000,
-    "renderMethodImplementationsAllocatedBytes": 350000000,
-    "renderMethodInterfacesAllocatedBytes": 40000000,
+    "renderMethodImplementationsAllocatedBytes": 270000000,
+    "renderMethodInterfacesAllocatedBytes": 34000000,
     "renderSerializerContextAllocatedBytes": 50000000,
     "renderSerializerContextTypesAllocatedBytes": 30000000,
-    "writeAllocatedBytes": 115000000
+    "writeAllocatedBytes": 115000000,
+    "freshOutputParallelProcessingMilliseconds": 1500,
+    "freshOutputNormalizeEncodeHashWorkerMilliseconds": 550,
+    "freshOutputCompareWorkerMilliseconds": 400,
+    "freshOutputPhysicalWriteWorkerMilliseconds": 11000,
+    "freshOutputCacheMetadataWorkerMilliseconds": 550
   },
   "baselineBeforeAllocationAndWriterOptimizations": {
     "commit": "dee6114a2330457550a2d31b704e4ecf296fca4b",
@@ -162,10 +167,40 @@
     "renderModelTypeAllocationReductionPercent": 30.3,
     "renderMethodImplementationAllocationReductionPercent": 10.3
   },
+  "baselineBeforeCompleteMethodGraphStreaming": {
+    "commit": "18c3489f402514c3f6aca26ddbe39c486d58065b",
+    "cliVersion": "0.32.1-dev.13",
+    "totalAllocatedBytes": 1395930904,
+    "renderAllocatedBytes": 661287432,
+    "renderMethodImplementationsAllocatedBytes": 328201368,
+    "renderMethodInterfacesAllocatedBytes": 36029864
+  },
+  "observedAfterCompleteMethodGraphStreaming": {
+    "freshTotalMedianMilliseconds": 3468.867,
+    "renderMedianMilliseconds": 494.885,
+    "totalAllocatedBytesMedian": 1316551648,
+    "renderAllocatedBytesMedian": 581007904,
+    "renderMethodImplementationsAllocatedBytesMedian": 252765952,
+    "renderMethodInterfacesAllocatedBytesMedian": 31179744,
+    "totalAllocationReductionPercent": 5.7,
+    "renderAllocationReductionPercent": 12.1,
+    "renderMethodImplementationAllocationReductionPercent": 23.0,
+    "renderMethodInterfaceAllocationReductionPercent": 13.5,
+    "freshOutputParallelProcessingMedianMilliseconds": 1254.199,
+    "freshOutputNormalizeEncodeHashWorkerMedianMilliseconds": 424.546,
+    "freshOutputCompareWorkerMedianMilliseconds": 292.506,
+    "freshOutputPhysicalWriteWorkerMedianMilliseconds": 8834.424,
+    "freshOutputCacheMetadataWorkerMedianMilliseconds": 401.225,
+    "unchangedOutputWallMilliseconds": 89.976,
+    "unchangedOutputNormalizeEncodeHashWorkerMilliseconds": 355.386,
+    "unchangedOutputCompareWorkerMilliseconds": 110.308,
+    "unchangedOutputCacheMetadataWorkerMilliseconds": 46.251
+  },
   "notes": [
     "Reference budgets only; they are not currently enforced by CI.",
     "Timing comparisons require an otherwise idle Apple Silicon host.",
     "Allocation budgets are deterministic enough to compare under background CPU load.",
-    "The nested method and model streaming timing sample was CPU-contended, so timing budgets were intentionally left unchanged."
+    "The nested method and model streaming timing sample was CPU-contended, so timing budgets were intentionally left unchanged.",
+    "Output worker timings are aggregate work across up to eight workers and are not additive wall-clock phases."
   ]
 }

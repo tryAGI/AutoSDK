@@ -68,6 +68,13 @@ internal readonly record struct GenerationDiagnostics(
         }
         await WriteMillisecondsAsync(writer, "snippet_manifest_ms", SnippetManifest).ConfigureAwait(false);
         await WriteMillisecondsAsync(writer, "normalize_compare_write_cleanup_ms", NormalizeCompareWriteAndCleanup).ConfigureAwait(false);
+        await WriteMillisecondsAsync(writer, "output_prepare_ms", Files.Diagnostics.Preparation).ConfigureAwait(false);
+        await WriteMillisecondsAsync(writer, "output_parallel_processing_ms", Files.Diagnostics.ParallelProcessing).ConfigureAwait(false);
+        await WriteMillisecondsAsync(writer, "output_normalize_encode_hash_worker_ms", Files.Diagnostics.NormalizeEncodeHashWorker).ConfigureAwait(false);
+        await WriteMillisecondsAsync(writer, "output_compare_worker_ms", Files.Diagnostics.CompareWorker).ConfigureAwait(false);
+        await WriteMillisecondsAsync(writer, "output_physical_write_worker_ms", Files.Diagnostics.PhysicalWriteWorker).ConfigureAwait(false);
+        await WriteMillisecondsAsync(writer, "output_cache_metadata_worker_ms", Files.Diagnostics.CacheMetadataWorker).ConfigureAwait(false);
+        await WriteMillisecondsAsync(writer, "output_stale_cleanup_ms", Files.Diagnostics.StaleCleanup).ConfigureAwait(false);
         await WriteMillisecondsAsync(writer, "cache_write_ms", CacheWrite).ConfigureAwait(false);
         await writer.WriteLineAsync($"  files_generated: {Files.GeneratedCount.ToString(CultureInfo.InvariantCulture)}").ConfigureAwait(false);
         await writer.WriteLineAsync($"  files_written: {Files.WrittenCount.ToString(CultureInfo.InvariantCulture)}").ConfigureAwait(false);

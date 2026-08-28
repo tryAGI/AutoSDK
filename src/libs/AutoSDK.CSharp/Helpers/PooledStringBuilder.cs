@@ -4,7 +4,7 @@ using System.Runtime.CompilerServices;
 
 namespace AutoSDK.Generation;
 
-internal sealed class PooledStringBuilder : IDisposable
+internal class PooledStringBuilder : IDisposable
 {
     private char[] buffer;
     private int length;
@@ -16,13 +16,13 @@ internal sealed class PooledStringBuilder : IDisposable
 
     public int Length => length;
 
-    public void Append(char value)
+    public virtual void Append(char value)
     {
         EnsureCapacity(1);
         buffer[length++] = value;
     }
 
-    public void Append(char value, int count)
+    public virtual void Append(char value, int count)
     {
         if (count <= 0)
         {
@@ -37,7 +37,7 @@ internal sealed class PooledStringBuilder : IDisposable
         }
     }
 
-    public void Append(string? value)
+    public virtual void Append(string? value)
     {
         if (value is not { Length: > 0 })
         {
@@ -55,7 +55,7 @@ internal sealed class PooledStringBuilder : IDisposable
         _ = length;
     }
 
-    public void Append(string value, int startIndex, int count)
+    public virtual void Append(string value, int startIndex, int count)
     {
         if (count == 0)
         {
