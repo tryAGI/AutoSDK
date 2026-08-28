@@ -235,35 +235,65 @@ public static class OpenApiExtensions
 
     private static void NormalizeFernTypes(this OpenApiDocument openApiDocument)
     {
-        foreach (var schema in (openApiDocument.Components?.Schemas ?? new Dictionary<string, IOpenApiSchema>())
-                     .OrderBy(x => x.Key, StringComparer.Ordinal)
-                     .Select(x => x.Value))
+        if (openApiDocument.Components?.Schemas is { } componentSchemas)
         {
-            NormalizeFernTypeSchema(schema);
+            foreach (var schema in componentSchemas.Values)
+            {
+                NormalizeFernTypeSchema(schema);
+            }
         }
 
-        foreach (var path in openApiDocument.Paths ?? new OpenApiPaths())
+        if (openApiDocument.Paths == null)
         {
-            foreach (var parameter in path.Value.Parameters ?? [])
-            {
-                NormalizeFernTypeSchema(parameter.Schema);
-            }
+            return;
+        }
 
-            foreach (var operation in path.Value.Operations ?? new Dictionary<System.Net.Http.HttpMethod, OpenApiOperation>())
+        foreach (var path in openApiDocument.Paths)
+        {
+            if (path.Value.Parameters != null)
             {
-                foreach (var parameter in operation.Value.Parameters ?? [])
+                foreach (var parameter in path.Value.Parameters)
                 {
                     NormalizeFernTypeSchema(parameter.Schema);
                 }
+            }
 
-                foreach (var mediaType in operation.Value.RequestBody?.Content ?? new Dictionary<string, IOpenApiMediaType>())
+            if (path.Value.Operations == null)
+            {
+                continue;
+            }
+
+            foreach (var operation in path.Value.Operations)
+            {
+                if (operation.Value.Parameters != null)
                 {
-                    NormalizeFernTypeSchema(mediaType.Value.Schema);
+                    foreach (var parameter in operation.Value.Parameters)
+                    {
+                        NormalizeFernTypeSchema(parameter.Schema);
+                    }
                 }
 
-                foreach (var response in operation.Value.Responses ?? new OpenApiResponses())
+                if (operation.Value.RequestBody?.Content != null)
                 {
-                    foreach (var mediaType in response.Value.Content ?? new Dictionary<string, IOpenApiMediaType>())
+                    foreach (var mediaType in operation.Value.RequestBody.Content)
+                    {
+                        NormalizeFernTypeSchema(mediaType.Value.Schema);
+                    }
+                }
+
+                if (operation.Value.Responses == null)
+                {
+                    continue;
+                }
+
+                foreach (var response in operation.Value.Responses)
+                {
+                    if (response.Value.Content == null)
+                    {
+                        continue;
+                    }
+
+                    foreach (var mediaType in response.Value.Content)
                     {
                         NormalizeFernTypeSchema(mediaType.Value.Schema);
                     }
@@ -281,11 +311,12 @@ public static class OpenApiExtensions
 
         ApplyFernTypeNormalization(concreteSchema);
 
-        foreach (var property in (concreteSchema.Properties ?? new Dictionary<string, IOpenApiSchema>())
-                     .OrderBy(x => x.Key, StringComparer.Ordinal)
-                     .Select(x => x.Value))
+        if (concreteSchema.Properties != null)
         {
-            NormalizeFernTypeSchema(property);
+            foreach (var property in concreteSchema.Properties.Values)
+            {
+                NormalizeFernTypeSchema(property);
+            }
         }
 
         foreach (var child in concreteSchema.AnyOf ?? Enumerable.Empty<IOpenApiSchema>())
@@ -480,12 +511,74 @@ info:
 
     private static string NormalizeOpenApi31CompatibilityKeywords(string text)
     {
+        if (!MightContainOpenApi31CompatibilityKeyword(text))
+        {
+            return text;
+        }
+
         if (TryNormalizeOpenApi31Json(text, out var normalizedText))
         {
             return normalizedText;
         }
 
         return text;
+    }
+
+    [SuppressMessage("Usage", "CA2249:Consider using 'string.Contains' instead of 'string.IndexOf'", Justification = "StringComparison overloads must remain compatible with older target frameworks.")]
+    private static bool MightContainOpenApi31CompatibilityKeyword(string text)
+    {
+        return text.IndexOf("propertyNames", StringComparison.Ordinal) >= 0 ||
+               text.IndexOf("dependentRequired", StringComparison.Ordinal) >= 0 ||
+               text.IndexOf("dependentSchemas", StringComparison.Ordinal) >= 0 ||
+               text.IndexOf("contentEncoding", StringComparison.Ordinal) >= 0 ||
+               text.IndexOf("contentMediaType", StringComparison.Ordinal) >= 0 ||
+               text.IndexOf("contentSchema", StringComparison.Ordinal) >= 0 ||
+               text.IndexOf("unevaluatedProperties", StringComparison.Ordinal) >= 0 ||
+               text.IndexOf("unevaluatedItems", StringComparison.Ordinal) >= 0 ||
+               text.IndexOf("prefixItems", StringComparison.Ordinal) >= 0 ||
+               text.IndexOf("patternProperties", StringComparison.Ordinal) >= 0 ||
+               text.IndexOf("contains", StringComparison.Ordinal) >= 0 ||
+               text.IndexOf("minContains", StringComparison.Ordinal) >= 0 ||
+               text.IndexOf("maxContains", StringComparison.Ordinal) >= 0 ||
+               ContainsBooleanItemsKeyword(text);
+    }
+
+    private static bool ContainsBooleanItemsKeyword(string text)
+    {
+        const string keyword = "items";
+        var searchIndex = 0;
+        while ((searchIndex = text.IndexOf(keyword, searchIndex, StringComparison.Ordinal)) >= 0)
+        {
+            var valueIndex = searchIndex + keyword.Length;
+            if (valueIndex < text.Length && text[valueIndex] == '"')
+            {
+                valueIndex++;
+            }
+
+            while (valueIndex < text.Length && char.IsWhiteSpace(text[valueIndex]))
+            {
+                valueIndex++;
+            }
+
+            if (valueIndex < text.Length && text[valueIndex] == ':')
+            {
+                valueIndex++;
+                while (valueIndex < text.Length && char.IsWhiteSpace(text[valueIndex]))
+                {
+                    valueIndex++;
+                }
+
+                if (text.IndexOf("true", valueIndex, StringComparison.Ordinal) == valueIndex ||
+                    text.IndexOf("false", valueIndex, StringComparison.Ordinal) == valueIndex)
+                {
+                    return true;
+                }
+            }
+
+            searchIndex += keyword.Length;
+        }
+
+        return false;
     }
 
     private static bool TryNormalizeOpenApi31Json(
@@ -1030,7 +1123,12 @@ info:
     {
         document = document ?? throw new ArgumentNullException(nameof(document));
 
-        foreach (var schema in (document.Components?.Schemas ?? new Dictionary<string, IOpenApiSchema>()).OrderBy(x => x.Key, StringComparer.Ordinal).Select(x => x.Value))
+        if (document.Components?.Schemas == null)
+        {
+            return;
+        }
+
+        foreach (var schema in document.Components.Schemas.Values)
         {
             SanitizeSchemaNumericConstraints(schema);
         }
@@ -1040,7 +1138,12 @@ info:
     {
         document = document ?? throw new ArgumentNullException(nameof(document));
 
-        foreach (var schema in (document.Components?.Schemas ?? new Dictionary<string, IOpenApiSchema>()).OrderBy(x => x.Key, StringComparer.Ordinal).Select(x => x.Value))
+        if (document.Components?.Schemas == null)
+        {
+            return;
+        }
+
+        foreach (var schema in document.Components.Schemas.Values)
         {
             InferSchemaLargeIntegerFormats(
                 schema,
@@ -1371,9 +1474,12 @@ info:
             }
         }
 
-        foreach (var property in (concreteSchema.Properties ?? new Dictionary<string, IOpenApiSchema>()).OrderBy(x => x.Key, StringComparer.Ordinal).Select(x => x.Value))
+        if (concreteSchema.Properties != null)
         {
-            SanitizeSchemaNumericConstraints(property);
+            foreach (var property in concreteSchema.Properties.Values)
+            {
+                SanitizeSchemaNumericConstraints(property);
+            }
         }
         foreach (var child in concreteSchema.AnyOf ?? Enumerable.Empty<IOpenApiSchema>())
         {
@@ -1411,13 +1517,16 @@ info:
             concreteSchema.Format = "int64";
         }
 
-        foreach (var property in (concreteSchema.Properties ?? new Dictionary<string, IOpenApiSchema>()).OrderBy(x => x.Key, StringComparer.Ordinal))
+        if (concreteSchema.Properties != null)
         {
-            InferSchemaLargeIntegerFormats(
-                property.Value,
-                property.Key,
-                concreteSchema.Title,
-                concreteSchema.Description);
+            foreach (var property in concreteSchema.Properties)
+            {
+                InferSchemaLargeIntegerFormats(
+                    property.Value,
+                    property.Key,
+                    concreteSchema.Title,
+                    concreteSchema.Description);
+            }
         }
         foreach (var child in concreteSchema.AnyOf ?? Enumerable.Empty<IOpenApiSchema>())
         {
@@ -1585,7 +1694,12 @@ info:
             document.Components?.Schemas?.Keys ?? Enumerable.Empty<string>(),
             StringComparer.Ordinal);
 
-        foreach (var schema in (document.Components?.Schemas ?? new Dictionary<string, IOpenApiSchema>()).OrderBy(x => x.Key, StringComparer.Ordinal).Select(x => x.Value))
+        if (document.Components?.Schemas == null)
+        {
+            return;
+        }
+
+        foreach (var schema in document.Components.Schemas.Values)
         {
             SanitizeSchemaDiscriminators(schema, componentIds);
         }
@@ -1630,9 +1744,12 @@ info:
             }
         }
 
-        foreach (var property in (concreteSchema.Properties ?? new Dictionary<string, IOpenApiSchema>()).OrderBy(x => x.Key, StringComparer.Ordinal).Select(x => x.Value))
+        if (concreteSchema.Properties != null)
         {
-            SanitizeSchemaDiscriminators(property, componentIds);
+            foreach (var property in concreteSchema.Properties.Values)
+            {
+                SanitizeSchemaDiscriminators(property, componentIds);
+            }
         }
         foreach (var child in concreteSchema.AnyOf ?? Enumerable.Empty<IOpenApiSchema>())
         {

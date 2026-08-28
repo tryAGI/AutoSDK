@@ -11,6 +11,11 @@ public class SchemaContext(
     string id,
     string type)
 {
+    private sealed class ValueHolder<T>(T value) where T : struct
+    {
+        public T Value { get; set; } = value;
+    }
+
     public SchemaContext? Parent { get; set; }
     public IList<SchemaContext> Children { get; set; } = Array.Empty<SchemaContext>();
 
@@ -39,15 +44,29 @@ public class SchemaContext(
     
     public string? PropertyName { get; set; }
     public bool IsProperty => PropertyName != null;
-    private PropertyData? _propertyData;
+    private ValueHolder<PropertyData>? _propertyData;
     private ImmutableArray<PropertyData> _computedProperties;
     private bool _computedPropertiesCached;
     public PropertyData? PropertyData
     {
-        get => _propertyData;
+        get => _propertyData?.Value;
         set
         {
-            _propertyData = value;
+            if (value is { } propertyData)
+            {
+                if (_propertyData == null)
+                {
+                    _propertyData = new ValueHolder<PropertyData>(propertyData);
+                }
+                else
+                {
+                    _propertyData.Value = propertyData;
+                }
+            }
+            else
+            {
+                _propertyData = null;
+            }
             _computedProperties = default;
             _computedPropertiesCached = false;
         }
@@ -55,7 +74,29 @@ public class SchemaContext(
     
     public string? ParameterName => Parameter?.Name;
     public bool IsParameter => ParameterName != null;
-    public MethodParameter? ParameterData { get; set; }
+    private ValueHolder<MethodParameter>? _parameterData;
+    public MethodParameter? ParameterData
+    {
+        get => _parameterData?.Value;
+        set
+        {
+            if (value is { } parameterData)
+            {
+                if (_parameterData == null)
+                {
+                    _parameterData = new ValueHolder<MethodParameter>(parameterData);
+                }
+                else
+                {
+                    _parameterData.Value = parameterData;
+                }
+            }
+            else
+            {
+                _parameterData = null;
+            }
+        }
+    }
     
     public string? ComponentId { get; set; }
     public bool IsComponent => ComponentId != null || ResolvedReference?.IsComponent == true;
@@ -88,13 +129,24 @@ public class SchemaContext(
     /// Cached result of <see cref="OpenApiExtensions.HasAllOfTypeForMetadata(SchemaContext)"/>.
     /// Computed once to avoid repeated access to IOpenApiSchema property accessors.
     /// </summary>
-    private bool? _isAllOfForMetadata;
-    public bool IsAllOfForMetadata => _isAllOfForMetadata ??= this.HasAllOfTypeForMetadata();
+    private const byte IsAllOfForMetadataFlag = 1 << 0;
+    private const byte IsAnyOfFlag = 1 << 1;
+    private const byte IsOneOfFlag = 1 << 2;
+    private const byte HasAllOfFlag = 1 << 3;
+    private const byte IsDerivedClassFlag = 1 << 4;
+    private const byte IsNullableFlag = 1 << 5;
+    private const byte IsNullableAnyOfFlag = 1 << 6;
+    private const byte IsBinaryFlag = 1 << 7;
+    private byte _cachedSchemaBooleans;
+    private byte _cachedSchemaBooleanValues;
+    public bool IsAllOfForMetadata => IsSchemaBooleanCached(IsAllOfForMetadataFlag)
+        ? GetCachedSchemaBoolean(IsAllOfForMetadataFlag)
+        : CacheSchemaBoolean(IsAllOfForMetadataFlag, this.HasAllOfTypeForMetadata());
     
     public bool IsClass =>
         Type == "class" ||
         IsDerivedClass;// || ResolvedReference?.IsClass == true;
-    private ModelData? _classData;
+    private ValueHolder<ModelData>? _classData;
     private bool _classDataComputed;
     public Func<SchemaContext, ModelData>? ModelDataFactory { get; set; }
     public ModelData? ClassData
@@ -103,17 +155,19 @@ public class SchemaContext(
         {
             if (!_classDataComputed)
             {
-                _classData = IsClass
-                    ? ModelDataFactory?.Invoke(this) ?? throw new InvalidOperationException("ModelDataFactory is not initialized.")
-                    : null;
+                if (IsClass)
+                {
+                    _classData = new ValueHolder<ModelData>(
+                        ModelDataFactory?.Invoke(this) ?? throw new InvalidOperationException("ModelDataFactory is not initialized."));
+                }
                 _classDataComputed = true;
             }
-            return _classData;
+            return _classData?.Value;
         }
     }
 
     public bool IsEnum => Type == "enum";// || ResolvedReference?.IsEnum == true;
-    private ModelData? _enumData;
+    private ValueHolder<ModelData>? _enumData;
     private bool _enumDataComputed;
     public ModelData? EnumData
     {
@@ -121,12 +175,14 @@ public class SchemaContext(
         {
             if (!_enumDataComputed)
             {
-                _enumData = IsEnum
-                    ? ModelDataFactory?.Invoke(this) ?? throw new InvalidOperationException("ModelDataFactory is not initialized.")
-                    : null;
+                if (IsEnum)
+                {
+                    _enumData = new ValueHolder<ModelData>(
+                        ModelDataFactory?.Invoke(this) ?? throw new InvalidOperationException("ModelDataFactory is not initialized."));
+                }
                 _enumDataComputed = true;
             }
-            return _enumData;
+            return _enumData?.Value;
         }
     }
     public string? ClassName { get; set; }
@@ -137,32 +193,63 @@ public class SchemaContext(
     /// </summary>
     public string? CachedComputedClassName { get; set; }
 
-    public AnyOfData? AnyOfData { get; set; }
+    private ValueHolder<AnyOfData>? _anyOfData;
+    public AnyOfData? AnyOfData
+    {
+        get => _anyOfData?.Value;
+        set
+        {
+            if (value is { } anyOfData)
+            {
+                if (_anyOfData == null)
+                {
+                    _anyOfData = new ValueHolder<AnyOfData>(anyOfData);
+                }
+                else
+                {
+                    _anyOfData.Value = anyOfData;
+                }
+            }
+            else
+            {
+                _anyOfData = null;
+            }
+        }
+    }
     public string? VariantName { get; set; }
     
     public bool IsModel => IsClass || IsEnum || IsAnyOfLikeStructure && IsComponent;
     
-    private bool? _isAnyOf;
-    private bool? _isOneOf;
-    private bool? _hasAllOf;
-    private bool? _isDerivedClass;
-    private bool? _isNullable;
-    private bool? _isNullableAnyOf;
-    private bool? _isBinary;
-    public bool IsAnyOf => _isAnyOf ??= Schema.IsAnyOf();
-    public bool IsOneOf => _isOneOf ??= Schema.IsOneOf();
-    public bool HasAllOf => _hasAllOf ??= Schema.IsAllOf();
+    public bool IsAnyOf => IsSchemaBooleanCached(IsAnyOfFlag)
+        ? GetCachedSchemaBoolean(IsAnyOfFlag)
+        : CacheSchemaBoolean(IsAnyOfFlag, Schema.IsAnyOf());
+    public bool IsOneOf => IsSchemaBooleanCached(IsOneOfFlag)
+        ? GetCachedSchemaBoolean(IsOneOfFlag)
+        : CacheSchemaBoolean(IsOneOfFlag, Schema.IsOneOf());
+    public bool HasAllOf => IsSchemaBooleanCached(HasAllOfFlag)
+        ? GetCachedSchemaBoolean(HasAllOfFlag)
+        : CacheSchemaBoolean(HasAllOfFlag, Schema.IsAllOf());
     public bool IsAllOf => HasAllOf && !IsDerivedClass;
-    public bool IsNullable => _isNullable ??= Schema.IsNullable();
-    public bool IsNullableAnyOf => _isNullableAnyOf ??= Schema.IsNullableAnyOf();
-    public bool IsBinary => _isBinary ??= Schema.IsBinary();
+    public bool IsNullable => IsSchemaBooleanCached(IsNullableFlag)
+        ? GetCachedSchemaBoolean(IsNullableFlag)
+        : CacheSchemaBoolean(IsNullableFlag, Schema.IsNullable());
+    public bool IsNullableAnyOf => IsSchemaBooleanCached(IsNullableAnyOfFlag)
+        ? GetCachedSchemaBoolean(IsNullableAnyOfFlag)
+        : CacheSchemaBoolean(IsNullableAnyOfFlag, Schema.IsNullableAnyOf());
+    public bool IsBinary => IsSchemaBooleanCached(IsBinaryFlag)
+        ? GetCachedSchemaBoolean(IsBinaryFlag)
+        : CacheSchemaBoolean(IsBinaryFlag, Schema.IsBinary());
     public bool IsBaseClass => this is { IsComponent: true, Schema.Discriminator.Mapping: not null };
-    public bool IsDerivedClass => _isDerivedClass ??= HasAllOf &&
-        Schema.AllOf is { Count: 2 } allOf &&
-        (allOf[0].IsSchemaReference() &&
-         allOf[0].ResolveIfRequired().Discriminator?.Mapping != null ||
-         allOf[1].IsSchemaReference() &&
-         allOf[1].ResolveIfRequired().Discriminator?.Mapping != null);
+    public bool IsDerivedClass => IsSchemaBooleanCached(IsDerivedClassFlag)
+        ? GetCachedSchemaBoolean(IsDerivedClassFlag)
+        : CacheSchemaBoolean(
+            IsDerivedClassFlag,
+            HasAllOf &&
+            Schema.AllOf is { Count: 2 } allOf &&
+            (allOf[0].IsSchemaReference() &&
+             allOf[0].ResolveIfRequired().Discriminator?.Mapping != null ||
+             allOf[1].IsSchemaReference() &&
+             allOf[1].ResolveIfRequired().Discriminator?.Mapping != null));
     public SchemaContext DerivedClassContext =>
         HasAllOf &&
         Schema.AllOf is { Count: 2 } allOf
@@ -184,6 +271,30 @@ public class SchemaContext(
     public bool IsAnyOfLikeStructure => IsAnyOf || IsOneOf || IsAllOf;
     public bool IsNamedAnyOfLike => IsAnyOfLikeStructure &&
                                     (IsComponent || Schema.Discriminator != null);
+
+    private bool IsSchemaBooleanCached(byte flag)
+    {
+        return (_cachedSchemaBooleans & flag) != 0;
+    }
+
+    private bool GetCachedSchemaBoolean(byte flag)
+    {
+        return (_cachedSchemaBooleanValues & flag) != 0;
+    }
+
+    private bool CacheSchemaBoolean(byte flag, bool value)
+    {
+        _cachedSchemaBooleans |= flag;
+        if (value)
+        {
+            _cachedSchemaBooleanValues |= flag;
+        }
+        else
+        {
+            _cachedSchemaBooleanValues &= (byte)~flag;
+        }
+        return value;
+    }
     
     public ImmutableArray<PropertyData> ComputedProperties
     {

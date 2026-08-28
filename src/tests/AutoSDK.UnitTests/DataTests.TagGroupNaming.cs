@@ -5,7 +5,7 @@ public partial class DataTests
     [TestMethod]
     [DataRow(true)]
     [DataRow(false)]
-    public void ExtensionGroupTagCollision_DropsEmptyOriginalTagBeforeResolvingClientNames(bool useLegacyPrepare)
+    public void ExtensionGroupTagCollision_DropsEmptyOriginalTagBeforeResolvingClientNames(bool useDataPrepareFacade)
     {
         const string yaml = """
                             openapi: 3.0.1
@@ -26,7 +26,7 @@ public partial class DataTests
                                       description: ok
                             """;
 
-        var data = PrepareOpenApi(useLegacyPrepare, yaml, DefaultSettings);
+        var data = PrepareOpenApi(useDataPrepareFacade, yaml, DefaultSettings);
 
         data.Tags.Select(x => x.SafeName).Should().Equal("Corpora");
         data.Methods.Should().ContainSingle();

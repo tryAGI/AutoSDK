@@ -471,7 +471,7 @@ public partial class DataTests
     [TestMethod]
     [DataRow(true)]
     [DataRow(false)]
-    public void ExcludeModels_RemovesReferencedComponentModels(bool useLegacyPrepare)
+    public void ExcludeModels_RemovesReferencedComponentModels(bool useDataPrepareFacade)
     {
         var settings = DefaultSettings with
         {
@@ -481,7 +481,7 @@ public partial class DataTests
             ExcludeModels = ["Pet"],
         };
 
-        var data = PreparePetstoreWithExclusions(useLegacyPrepare, TestSpecCache.GetText("petstore.yaml"), settings);
+        var data = PreparePetstoreWithExclusions(useDataPrepareFacade, TestSpecCache.GetText("petstore.yaml"), settings);
 
         data.Classes.Select(x => x.ClassName).Should().NotContain("Pet");
         data.Classes.Select(x => x.ClassName).Should().Contain("Error");
@@ -493,7 +493,7 @@ public partial class DataTests
     [TestMethod]
     [DataRow(true)]
     [DataRow(false)]
-    public void ExcludeModels_RemovesReferencedComponentModels_WithDotsInComponentId(bool useLegacyPrepare)
+    public void ExcludeModels_RemovesReferencedComponentModels_WithDotsInComponentId(bool useDataPrepareFacade)
     {
         var settings = DefaultSettings with
         {
@@ -506,7 +506,7 @@ public partial class DataTests
             .Replace("#/components/schemas/Pet\"", "#/components/schemas/PetStore.Pet\"")
             .Replace("\n    Pet:\n", "\n    PetStore.Pet:\n");
 
-        var data = PreparePetstoreWithExclusions(useLegacyPrepare, yaml, settings);
+        var data = PreparePetstoreWithExclusions(useDataPrepareFacade, yaml, settings);
 
         data.Classes.Select(x => x.ClassName).Should().NotContain("PetStorePet");
         data.Classes.Select(x => x.ClassName).Should().Contain("Error");
@@ -548,7 +548,7 @@ public partial class DataTests
     [TestMethod]
     [DataRow(true)]
     [DataRow(false)]
-    public void NamespaceDelimiter_GeneratesNestedNamespaceForDottedComponentId(bool useLegacyPrepare)
+    public void NamespaceDelimiter_GeneratesNestedNamespaceForDottedComponentId(bool useDataPrepareFacade)
     {
         var settings = DefaultSettings with
         {
@@ -561,7 +561,7 @@ public partial class DataTests
             .Replace("#/components/schemas/Pet\"", "#/components/schemas/PetStore.Pet\"")
             .Replace("\n    Pet:\n", "\n    PetStore.Pet:\n");
 
-        var data = PrepareOpenApi(useLegacyPrepare, yaml, settings);
+        var data = PrepareOpenApi(useDataPrepareFacade, yaml, settings);
         var pet = data.Classes.Single(x => x.GlobalClassName == "global::TestNamespace.PetStore.Pet");
 
         pet.ClassName.Should().Be("Pet");
@@ -576,7 +576,7 @@ public partial class DataTests
     [TestMethod]
     [DataRow(true)]
     [DataRow(false)]
-    public void ExcludeModels_RemovesReferencedComponentModels_WithNamespaceDelimiter_ExternalMode(bool useLegacyPrepare)
+    public void ExcludeModels_RemovesReferencedComponentModels_WithNamespaceDelimiter_ExternalMode(bool useDataPrepareFacade)
     {
         var settings = DefaultSettings with
         {
@@ -590,7 +590,7 @@ public partial class DataTests
             .Replace("#/components/schemas/Pet\"", "#/components/schemas/PetStore.Pet\"")
             .Replace("\n    Pet:\n", "\n    PetStore.Pet:\n");
 
-        var data = PrepareOpenApi(useLegacyPrepare, yaml, settings);
+        var data = PrepareOpenApi(useDataPrepareFacade, yaml, settings);
 
         data.Classes.Select(x => x.GlobalClassName).Should().NotContain("global::TestNamespace.PetStore.Pet");
         data.Methods.First(x => x.MethodName == "GetPetsByPetIdAsync")
@@ -601,7 +601,7 @@ public partial class DataTests
     [TestMethod]
     [DataRow(true)]
     [DataRow(false)]
-    public void ExcludeModels_RemovesReferencedComponentModels_WithNamespaceDelimiter_SdkRootMode(bool useLegacyPrepare)
+    public void ExcludeModels_RemovesReferencedComponentModels_WithNamespaceDelimiter_SdkRootMode(bool useDataPrepareFacade)
     {
         var settings = DefaultSettings with
         {
@@ -616,7 +616,7 @@ public partial class DataTests
             .Replace("#/components/schemas/Pet\"", "#/components/schemas/PetStore.Pet\"")
             .Replace("\n    Pet:\n", "\n    PetStore.Pet:\n");
 
-        var data = PrepareOpenApi(useLegacyPrepare, yaml, settings);
+        var data = PrepareOpenApi(useDataPrepareFacade, yaml, settings);
 
         data.Classes.Select(x => x.GlobalClassName).Should().NotContain("global::TestNamespace.PetStore.Pet");
         data.Methods.First(x => x.MethodName == "GetPetsByPetIdAsync")
@@ -627,7 +627,7 @@ public partial class DataTests
     [TestMethod]
     [DataRow(true)]
     [DataRow(false)]
-    public void NamespaceDelimiter_ResolvesCollisionsPerQualifiedNamespace(bool useLegacyPrepare)
+    public void NamespaceDelimiter_ResolvesCollisionsPerQualifiedNamespace(bool useDataPrepareFacade)
     {
         var settings = DefaultSettings with
         {
@@ -676,7 +676,7 @@ public partial class DataTests
                                       type: string
                             """;
 
-        var data = PrepareOpenApi(useLegacyPrepare, yaml, settings);
+        var data = PrepareOpenApi(useDataPrepareFacade, yaml, settings);
         var users = data.Classes
             .Where(x => x.ClassName == "User")
             .OrderBy(x => x.Namespace, StringComparer.Ordinal)
@@ -1559,14 +1559,14 @@ public partial class DataTests
     [TestMethod]
     [DataRow(true)]
     [DataRow(false)]
-    public void PrepareCohereFernStreamingSpec_SplitsChatEndpoints(bool useLegacyPrepare)
+    public void PrepareCohereFernStreamingSpec_SplitsChatEndpoints(bool useDataPrepareFacade)
     {
         var settings = DefaultSettings with
         {
             IgnoreOpenApiErrors = true,
         };
         var yaml = TestSpecCache.GetText("cohere.yaml");
-        var data = useLegacyPrepare
+        var data = useDataPrepareFacade
             ? Data.Prepare(((yaml, settings), GlobalSettings: settings))
             : CSharpPipeline.PrepareAndEnrich(((yaml, settings), GlobalSettings: settings));
 
@@ -1589,7 +1589,7 @@ public partial class DataTests
     [TestMethod]
     [DataRow(true)]
     [DataRow(false)]
-    public void PrepareDerivedAllOfWithInheritedPropertyCollision_UsesNewAndInitializesBaseRequiredMembers(bool useLegacyPrepare)
+    public void PrepareDerivedAllOfWithInheritedPropertyCollision_UsesNewAndInitializesBaseRequiredMembers(bool useDataPrepareFacade)
     {
         const string yaml = """
                             openapi: 3.0.1
@@ -1647,7 +1647,7 @@ public partial class DataTests
                                       type: string
                             """;
 
-        var data = PrepareOpenApi(useLegacyPrepare, yaml, DefaultSettings);
+        var data = PrepareOpenApi(useDataPrepareFacade, yaml, DefaultSettings);
         var model = data.Classes.Single(x => x.ClassName == "BooleanFeedbackDefinition");
         var generated = Sources.GenerateClassModel(model);
 
@@ -1659,7 +1659,7 @@ public partial class DataTests
     [TestMethod]
     [DataRow(true)]
     [DataRow(false)]
-    public void TwoProjectMethodsGeneration_UsesReferencedModelsWithoutEmittingDuplicates(bool useLegacyPrepare)
+    public void TwoProjectMethodsGeneration_UsesReferencedModelsWithoutEmittingDuplicates(bool useDataPrepareFacade)
     {
         const string yaml = """
                             openapi: 3.0.1
@@ -1707,7 +1707,7 @@ public partial class DataTests
             JsonSerializerContext = "TestNamespace.SourceGenerationContext",
         };
 
-        var data = PrepareOpenApi(useLegacyPrepare, yaml, settings);
+        var data = PrepareOpenApi(useDataPrepareFacade, yaml, settings);
         var endpoint = data.Methods.Should().ContainSingle().Subject;
         var generatedMethod = Sources.GenerateEndPoint(endpoint);
 
@@ -1720,12 +1720,12 @@ public partial class DataTests
         generatedMethod.Should().Contain("global::System.Threading.Tasks.Task<global::TestNamespace.Pet>");
     }
 
-    private static AutoSDK.Models.Data PreparePetstoreWithExclusions(bool useLegacyPrepare, string yaml, AutoSDK.Models.Settings settings)
+    private static AutoSDK.Models.Data PreparePetstoreWithExclusions(bool useDataPrepareFacade, string yaml, AutoSDK.Models.Settings settings)
     {
-        return PrepareOpenApi(useLegacyPrepare, yaml, settings);
+        return PrepareOpenApi(useDataPrepareFacade, yaml, settings);
     }
 
-    private static AutoSDK.Models.Data PrepareOpenApi(bool useLegacyPrepare, string yaml, AutoSDK.Models.Settings settings)
+    private static AutoSDK.Models.Data PrepareOpenApi(bool useDataPrepareFacade, string yaml, AutoSDK.Models.Settings settings)
     {
         settings = settings with
         {
@@ -1737,7 +1737,7 @@ public partial class DataTests
             JsonSerializerType = JsonSerializerType.SystemTextJson,
         };
 
-        return useLegacyPrepare
+        return useDataPrepareFacade
             ? Data.Prepare(((yaml, settings), GlobalSettings: settings))
             : CSharpPipeline.PrepareAndEnrich(((yaml, settings), GlobalSettings: settings));
     }

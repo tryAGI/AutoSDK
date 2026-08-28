@@ -8,7 +8,7 @@ public partial class DataTests
     [TestMethod]
     [DataRow(true)]
     [DataRow(false)]
-    public void GenerateClassModel_WithRawModelData_UsesTypedJsonExtensionData(bool useLegacyPrepare)
+    public void GenerateClassModel_WithRawModelData_UsesTypedJsonExtensionData(bool useDataPrepareFacade)
     {
         const string yaml = """
                             openapi: 3.0.3
@@ -34,7 +34,7 @@ public partial class DataTests
             JsonSerializerContext = "TestNamespace.SourceGenerationContext",
         };
 
-        var data = PrepareOpenApi(useLegacyPrepare, yaml, settings);
+        var data = PrepareOpenApi(useDataPrepareFacade, yaml, settings);
         var model = data.Classes.Single(x => x.ClassName == "ClosedModel");
         var generatedModel = Sources.Class(model).Text;
         var generatedJson = Sources.ClassJsonExtensions(model).Text;
@@ -50,7 +50,7 @@ public partial class DataTests
     [TestMethod]
     [DataRow(true)]
     [DataRow(false)]
-    public void GenerateClassModel_WithRawModelData_AvoidsAdditionalPropertiesNameCollision(bool useLegacyPrepare)
+    public void GenerateClassModel_WithRawModelData_AvoidsAdditionalPropertiesNameCollision(bool useDataPrepareFacade)
     {
         const string yaml = """
                             openapi: 3.0.3
@@ -73,7 +73,7 @@ public partial class DataTests
             GenerateModels = true,
         };
 
-        var data = PrepareOpenApi(useLegacyPrepare, yaml, settings);
+        var data = PrepareOpenApi(useDataPrepareFacade, yaml, settings);
         var model = data.Classes.Single(x => x.ClassName == "CollisionModel");
         var generatedModel = Sources.Class(model).Text;
 

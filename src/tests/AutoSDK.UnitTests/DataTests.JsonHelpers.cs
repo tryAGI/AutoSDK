@@ -7,7 +7,7 @@ public partial class DataTests
     [TestMethod]
     [DataRow(true)]
     [DataRow(false)]
-    public void GenerateClassJsonExtensions_WithJsonSerializerContext_GeneratesAotSafeParameterlessHelpers(bool useLegacyPrepare)
+    public void GenerateClassJsonExtensions_WithJsonSerializerContext_GeneratesAotSafeParameterlessHelpers(bool useDataPrepareFacade)
     {
         const string yaml = """
                             openapi: 3.0.3
@@ -33,7 +33,7 @@ public partial class DataTests
             JsonSerializerContext = "TestNamespace.SourceGenerationContext",
         };
 
-        var data = PrepareOpenApi(useLegacyPrepare, yaml, settings);
+        var data = PrepareOpenApi(useDataPrepareFacade, yaml, settings);
         var model = data.Classes.Single(x => x.ClassName == "ContextModel");
         var generatedJson = Sources.ClassJsonExtensions(model).Text;
 
@@ -87,7 +87,7 @@ public partial class DataTests
     [TestMethod]
     [DataRow(true)]
     [DataRow(false)]
-    public void GenerateClassJsonExtensions_WithoutJsonSerializerContext_KeepsOptionsOnlyHelpers(bool useLegacyPrepare)
+    public void GenerateClassJsonExtensions_WithoutJsonSerializerContext_KeepsOptionsOnlyHelpers(bool useDataPrepareFacade)
     {
         const string yaml = """
                             openapi: 3.0.3
@@ -109,7 +109,7 @@ public partial class DataTests
             GenerateModels = true,
         };
 
-        var data = PrepareOpenApi(useLegacyPrepare, yaml, settings);
+        var data = PrepareOpenApi(useDataPrepareFacade, yaml, settings);
         var model = data.Classes.Single(x => x.ClassName == "OptionsModel");
         var generatedJson = Sources.ClassJsonExtensions(model).Text;
 

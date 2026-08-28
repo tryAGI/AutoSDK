@@ -13,9 +13,11 @@
     "renderMilliseconds": 850,
     "cacheHitTotalMilliseconds": 400,
     "sameOutputCompareMilliseconds": 100,
-    "totalAllocatedBytes": 2100000000,
-    "pipelineAllocatedBytes": 700000000,
-    "coreComputeDataAllocatedBytes": 100000000,
+    "totalAllocatedBytes": 1950000000,
+    "pipelineAllocatedBytes": 525000000,
+    "coreParsingAllocatedBytes": 130000000,
+    "coreTraversalAllocatedBytes": 35000000,
+    "coreComputeDataAllocatedBytes": 105000000,
     "coreComputeClassesAllocatedBytes": 130000000,
     "renderAllocatedBytes": 1250000000,
     "writeAllocatedBytes": 115000000
@@ -57,6 +59,29 @@
     "coreComputeDataAllocationReductionPercent": 56.4,
     "coreComputeClassesAllocationReductionPercent": 39.9,
     "totalAllocationReductionPercent": 9.4
+  },
+  "baselineBeforeParsingAndTraversalOptimizations": {
+    "commit": "53dbce1edb",
+    "coreParsingAllocatedBytesMedian": 212487864,
+    "coreTraversalAllocatedBytesMedian": 79337480,
+    "pipelineAllocatedBytesMedian": 617143192,
+    "totalAllocatedBytesMedian": 1997226272
+  },
+  "observedAfterParsingAndTraversalOptimizations": {
+    "freshTotalMedianMilliseconds": 3452.442,
+    "pipelineMedianMilliseconds": 1323.550,
+    "coreParsingMedianMilliseconds": 499.694,
+    "coreTraversalMedianMilliseconds": 114.841,
+    "coreParsingAllocatedBytesMedian": 114412592,
+    "coreTraversalAllocatedBytesMedian": 29853096,
+    "coreComputeDataAllocatedBytesMedian": 93526528,
+    "coreComputeClassesAllocatedBytesMedian": 115955056,
+    "pipelineAllocatedBytesMedian": 479186504,
+    "totalAllocatedBytesMedian": 1859789736,
+    "coreParsingAllocationReductionPercent": 46.2,
+    "coreTraversalAllocationReductionPercent": 62.4,
+    "pipelineAllocationReductionPercent": 22.4,
+    "totalAllocationReductionPercent": 6.9
   },
   "notes": [
     "Reference budgets only; they are not currently enforced by CI.",

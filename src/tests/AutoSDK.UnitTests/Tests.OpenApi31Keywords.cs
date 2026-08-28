@@ -56,4 +56,30 @@ public class OpenApi31KeywordTests
             message.Contains("contains", StringComparison.Ordinal) &&
             message.Contains("#/components/schemas/FilteredArray", StringComparison.Ordinal));
     }
+
+    [TestMethod]
+    public void NormalizesBooleanItemsWithoutAnotherCompatibilityKeyword()
+    {
+        const string json = """
+        {
+          "openapi": "3.1.0",
+          "info": { "title": "ClosedArray", "version": "1.0.0" },
+          "paths": {},
+          "components": {
+            "schemas": {
+              "ClosedArray": {
+                "type": "array",
+                "items": false
+              }
+            }
+          }
+        }
+        """;
+
+        var document = json.GetOpenApiDocument(Settings.Default);
+        var schema = document.Components!.Schemas!["ClosedArray"];
+
+        schema.Items.Should().BeNull();
+        schema.MaxItems.Should().Be(0);
+    }
 }
