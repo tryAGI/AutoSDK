@@ -225,40 +225,53 @@ public sealed partial class {modelData.Parents[level].Unbox<ModelData>().ClassNa
         }
     }
 
-    private static string GetConstructorParameter(
+    private static void AppendConstructorParameter(
+        PooledStringBuilder builder,
         PropertyData property,
         bool isRequiredKeywordSupported,
         bool forceRequired = false,
         string? parameterName = null)
     {
         parameterName ??= property.ParameterName;
-
-        if (forceRequired || property.IsRequired)
+        builder.Append("\n            ");
+        builder.Append(property.Type.CSharpType);
+        builder.Append(' ');
+        builder.Append(parameterName);
+        if (!forceRequired &&
+            !property.IsRequired &&
+            !property.Type.CSharpTypeNullability &&
+            !string.IsNullOrWhiteSpace(property.DefaultValue))
         {
-            return $@"
-            {property.Type.CSharpType} {parameterName}";
+            builder.Append(GetDefaultValue(property, isRequiredKeywordSupported).TrimEnd(';'));
         }
-
-        return property.Type.CSharpTypeNullability || string.IsNullOrWhiteSpace(property.DefaultValue)
-            ? $@"
-            {property.Type.CSharpType} {parameterName}"
-            : $@"
-            {property.Type.CSharpType} {parameterName}{GetDefaultValue(property, isRequiredKeywordSupported).TrimEnd(';')}";
     }
 
-    private static string GetConstructorAssignment(
+    private static void AppendConstructorAssignment(
+        PooledStringBuilder builder,
         string target,
         PropertyData property,
         string? parameterName = null,
-        bool forceRequired = false)
+        bool forceRequired = false,
+        bool prependNewLine = true)
     {
         parameterName ??= property.ParameterName;
-
-        return forceRequired || property.IsRequired
-            ? $@"
-            {target}.{property.Name} = {parameterName}{(property.Type.IsValueType ? string.Empty : $" ?? throw new global::System.ArgumentNullException(nameof({parameterName}))")};"
-            : $@"
-            {target}.{property.Name} = {parameterName};";
+        if (prependNewLine)
+        {
+            builder.Append('\n');
+        }
+        builder.Append("            ");
+        builder.Append(target);
+        builder.Append('.');
+        builder.Append(property.Name);
+        builder.Append(" = ");
+        builder.Append(parameterName);
+        if ((forceRequired || property.IsRequired) && !property.Type.IsValueType)
+        {
+            builder.Append(" ?? throw new global::System.ArgumentNullException(nameof(");
+            builder.Append(parameterName);
+            builder.Append("))");
+        }
+        builder.Append(';');
     }
 
     public static string GenerateClassModel(
@@ -312,35 +325,7 @@ public sealed partial class {modelData.Parents[level].Unbox<ModelData>().ClassNa
         var optionalConstructorPropertiesWithDefaults = optionalConstructorProperties
             .Where(x => !x.Type.CSharpTypeNullability && !string.IsNullOrWhiteSpace(x.DefaultValue))
             .ToArray();
-        var orderedConstructorProperties = requiredConstructorProperties
-            .Concat(optionalConstructorPropertiesWithoutDefaults)
-            .Concat(optionalConstructorPropertiesWithDefaults)
-            .ToArray();
         var hasConstructor = constructorProperties.Length > 0 || constructorBaseOnlyRequiredProperties.Length > 0;
-
-        var propertyDeclarations = GeneratePropertyDeclarations(
-            modelData,
-            jsonSerializer,
-            properties,
-            inheritedPropertyNames,
-            requiredKeyword,
-            isRequiredKeywordSupported);
-        var constructorParameterDocumentation = GenerateConstructorParameterDocumentation(
-            requiredConstructorProperties,
-            constructorBaseOnlyRequiredProperties,
-            optionalConstructorPropertiesWithoutDefaults,
-            optionalConstructorPropertiesWithDefaults);
-        var constructorParameters = GenerateConstructorParameters(
-            requiredConstructorProperties,
-            constructorBaseOnlyRequiredProperties,
-            optionalConstructorPropertiesWithoutDefaults,
-            optionalConstructorPropertiesWithDefaults,
-            inheritedRequiredPropertiesByName,
-            isRequiredKeywordSupported);
-        var constructorAssignments = GenerateConstructorAssignments(
-            constructorProperties,
-            constructorBaseOnlyRequiredProperties,
-            inheritedRequiredPropertiesByName);
 
         var leafFactory = TryGetCascadingLeafFactory(
             modelData,
@@ -349,7 +334,8 @@ public sealed partial class {modelData.Parents[level].Unbox<ModelData>().ClassNa
             optionalConstructorPropertiesWithDefaults,
             optionalConstructorPropertiesWithoutDefaults);
 
-        var result = $@"    {modelData.Summary.ToXmlDocumentationSummary(level: 4)}
+        using var resultBuilder = new PooledStringBuilder(Math.Max(4096, properties.Length * 256));
+        resultBuilder.Append($@"    {modelData.Summary.ToXmlDocumentationSummary(level: 4)}
     {(modelData.IsDeprecated ? $"[global::System.Obsolete(\"{(!string.IsNullOrWhiteSpace(modelData.DeprecationMessage) ? modelData.DeprecationMessage.ClearForCSharp() : "This model marked as deprecated.")}\")]" : TrimmedLine)}
     {(modelData.Settings.UsesSystemTextJson() && modelData.IsBaseClass ? @$" 
     [global::System.Text.Json.Serialization.JsonPolymorphic(
@@ -360,48 +346,91 @@ public sealed partial class {modelData.Parents[level].Unbox<ModelData>().ClassNa
     [global::System.Text.Json.Serialization.JsonDerivedType(typeof({x.GlobalClassName}), typeDiscriminator: ""{x.Discriminator}"")]").Inject()}" : TrimmedLine)}
     public{(modelData.IsBaseClass ? "" : " sealed")} partial class {modelData.ClassName}{(!string.IsNullOrWhiteSpace(modelData.BaseClass) ? $" : {modelData.BaseClass}" : string.Empty)}
     {{
-{propertyDeclarations}
-
-{(!modelData.IsDerivedClass ? $@" 
+");
+        AppendPropertyDeclarations(
+            resultBuilder,
+            modelData,
+            jsonSerializer,
+            properties,
+            inheritedPropertyNames,
+            requiredKeyword,
+            isRequiredKeywordSupported);
+        resultBuilder.Append("\n\n");
+        resultBuilder.Append(!modelData.IsDerivedClass ? $@"{TrimmedLine}
         {additionalPropertiesSummary.ToXmlDocumentationSummary(level: 8)}
         {jsonSerializer.GenerateExtensionDataAttribute()}
         public global::System.Collections.Generic.IDictionary<string, {additionalPropertiesValueType}> AdditionalProperties{additionalPropertiesPostfix} {{ get; set; }} = new global::System.Collections.Generic.Dictionary<string, {additionalPropertiesValueType}>();
- " : TrimmedLine)}
- 
-{(hasConstructor ? $@"
+ " : TrimmedLine);
+        resultBuilder.Append("\n \n");
+        if (hasConstructor)
+        {
+            resultBuilder.Append($@"
         /// <summary>
         /// Initializes a new instance of the <see cref=""{modelData.ClassName}"" /> class.
         /// </summary>
-{constructorParameterDocumentation}
-{(modelData.Settings.UseSetsRequiredMembersAttributes is SdkFeatureUsage.Always or SdkFeatureUsage.InSupportedTargetFrameworks ? @$" 
+");
+            AppendConstructorParameterDocumentation(
+                resultBuilder,
+                requiredConstructorProperties,
+                constructorBaseOnlyRequiredProperties,
+                optionalConstructorPropertiesWithoutDefaults,
+                optionalConstructorPropertiesWithDefaults);
+            resultBuilder.Append('\n');
+            resultBuilder.Append(modelData.Settings.UseSetsRequiredMembersAttributes is SdkFeatureUsage.Always or SdkFeatureUsage.InSupportedTargetFrameworks ? @$"{TrimmedLine}
 {(modelData.Settings.UseExperimentalAttributes is SdkFeatureUsage.InSupportedTargetFrameworks ? @" 
 #if NET7_0_OR_GREATER" : TrimmedLine)}
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 {(modelData.Settings.UseExperimentalAttributes is SdkFeatureUsage.InSupportedTargetFrameworks ? @" 
 #endif" : TrimmedLine)}
- " : TrimmedLine)}
+ " : TrimmedLine);
+            resultBuilder.Append($@"
         public {modelData.ClassName}(
- {constructorParameters})
-        {{
-{constructorAssignments}
-        }}
- " : TrimmedLine)}
-{(properties.Any(static x => !x.IsDeprecated) ? $@"
+ ");
+            AppendConstructorParameters(
+                resultBuilder,
+                requiredConstructorProperties,
+                constructorBaseOnlyRequiredProperties,
+                optionalConstructorPropertiesWithoutDefaults,
+                optionalConstructorPropertiesWithDefaults,
+                inheritedRequiredPropertiesByName,
+                isRequiredKeywordSupported);
+            resultBuilder.Append(@")
+        {
+");
+            AppendConstructorAssignments(
+                resultBuilder,
+                constructorProperties,
+                constructorBaseOnlyRequiredProperties,
+                inheritedRequiredPropertiesByName);
+            resultBuilder.Append(@"
+        }
+ ");
+        }
+        else
+        {
+            resultBuilder.Append(TrimmedLine);
+        }
+        resultBuilder.Append('\n');
+        resultBuilder.Append(properties.Any(static x => !x.IsDeprecated) ? $@"
         /// <summary>
         /// Initializes a new instance of the <see cref=""{modelData.ClassName}"" /> class.
         /// </summary>
         public {modelData.ClassName}()
         {{
         }}
- " : TrimmedLine)}
-{leafFactory}
-    }}";
+ " : TrimmedLine);
+        resultBuilder.Append('\n');
+        resultBuilder.Append(leafFactory);
+        resultBuilder.Append(@"
+    }");
+        var result = resultBuilder.ToString();
         return normalizeOutput
             ? result.RemoveBlankLinesWhereOnlyWhitespaces()
             : result;
     }
 
-    private static string GeneratePropertyDeclarations(
+    private static void AppendPropertyDeclarations(
+        PooledStringBuilder builder,
         ModelData modelData,
         IJsonSerializer jsonSerializer,
         IReadOnlyList<PropertyData> properties,
@@ -411,10 +440,10 @@ public sealed partial class {modelData.Parents[level].Unbox<ModelData>().ClassNa
     {
         if (properties.Count == 0)
         {
-            return TrimmedLine;
+            builder.Append(TrimmedLine);
+            return;
         }
 
-        using var builder = new PooledStringBuilder(properties.Count * 256);
         var firstProperty = true;
         foreach (var property in properties)
         {
@@ -454,22 +483,24 @@ public sealed partial class {modelData.Parents[level].Unbox<ModelData>().ClassNa
             builder.Append(GetDefaultValue(property, isRequiredKeywordSupported));
         }
 
-        return builder.ToString();
     }
 
-    private static string GenerateConstructorParameterDocumentation(
+    private static void AppendConstructorParameterDocumentation(
+        PooledStringBuilder builder,
         PropertyData[] requiredProperties,
         PropertyData[] baseOnlyRequiredProperties,
         PropertyData[] optionalPropertiesWithoutDefaults,
         PropertyData[] optionalPropertiesWithDefaults)
     {
-        using var builder = new PooledStringBuilder(256);
         var hasDocumentation = false;
         AppendDocumentation(requiredProperties);
         AppendDocumentation(baseOnlyRequiredProperties);
         AppendDocumentation(optionalPropertiesWithoutDefaults);
         AppendDocumentation(optionalPropertiesWithDefaults);
-        return builder.ToString() is { Length: > 0 } result ? result : TrimmedLine;
+        if (!hasDocumentation)
+        {
+            builder.Append(TrimmedLine);
+        }
 
         void AppendDocumentation(PropertyData[] values)
         {
@@ -489,7 +520,8 @@ public sealed partial class {modelData.Parents[level].Unbox<ModelData>().ClassNa
         }
     }
 
-    private static string GenerateConstructorParameters(
+    private static void AppendConstructorParameters(
+        PooledStringBuilder builder,
         PropertyData[] requiredProperties,
         PropertyData[] baseOnlyRequiredProperties,
         PropertyData[] optionalPropertiesWithoutDefaults,
@@ -497,30 +529,29 @@ public sealed partial class {modelData.Parents[level].Unbox<ModelData>().ClassNa
         Dictionary<string, PropertyData> inheritedRequiredPropertiesByName,
         bool isRequiredKeywordSupported)
     {
-        using var builder = new PooledStringBuilder(256);
         var hasParameter = false;
         foreach (var property in requiredProperties)
         {
             AppendSeparator();
             var shareParameterWithBase = inheritedRequiredPropertiesByName.TryGetValue(property.Name, out var inheritedRequiredProperty) &&
                                          string.Equals(inheritedRequiredProperty.Type.CSharpType, property.Type.CSharpType, StringComparison.Ordinal);
-            builder.Append(GetConstructorParameter(
+            AppendConstructorParameter(
+                builder,
                 property,
                 isRequiredKeywordSupported,
-                forceRequired: property.IsRequired || shareParameterWithBase));
+                forceRequired: property.IsRequired || shareParameterWithBase);
         }
 
         AppendParameters(baseOnlyRequiredProperties, forceRequired: true);
         AppendParameters(optionalPropertiesWithoutDefaults, forceRequired: false);
         AppendParameters(optionalPropertiesWithDefaults, forceRequired: false);
-        return builder.ToString();
 
         void AppendParameters(PropertyData[] values, bool forceRequired)
         {
             foreach (var property in values)
             {
                 AppendSeparator();
-                builder.Append(GetConstructorParameter(property, isRequiredKeywordSupported, forceRequired));
+                AppendConstructorParameter(builder, property, isRequiredKeywordSupported, forceRequired);
             }
         }
 
@@ -537,56 +568,58 @@ public sealed partial class {modelData.Parents[level].Unbox<ModelData>().ClassNa
         }
     }
 
-    private static string GenerateConstructorAssignments(
+    private static void AppendConstructorAssignments(
+        PooledStringBuilder builder,
         PropertyData[] constructorProperties,
         PropertyData[] baseOnlyRequiredProperties,
         Dictionary<string, PropertyData> inheritedRequiredPropertiesByName)
     {
-        using var builder = new PooledStringBuilder(256);
         var hasAssignment = false;
         foreach (var property in constructorProperties)
         {
-            AppendAssignment(GetConstructorAssignment(
+            AppendAssignment(
                 target: "this",
                 property,
-                forceRequired: property.IsRequired || inheritedRequiredPropertiesByName.ContainsKey(property.Name)));
+                forceRequired: property.IsRequired || inheritedRequiredPropertiesByName.ContainsKey(property.Name));
 
             if (inheritedRequiredPropertiesByName.TryGetValue(property.Name, out var inheritedRequiredProperty) &&
                 string.Equals(inheritedRequiredProperty.Type.CSharpType, property.Type.CSharpType, StringComparison.Ordinal))
             {
-                AppendAssignment(GetConstructorAssignment(
+                AppendAssignment(
                     target: "base",
                     inheritedRequiredProperty,
                     parameterName: property.ParameterName,
-                    forceRequired: true));
+                    forceRequired: true);
             }
         }
 
         foreach (var property in baseOnlyRequiredProperties)
         {
-            AppendAssignment(GetConstructorAssignment(
+            AppendAssignment(
                 target: "base",
                 property,
-                forceRequired: true));
+                forceRequired: true);
         }
 
-        return builder.ToString() is { Length: > 0 } result ? result : TrimmedLine;
-
-        void AppendAssignment(string assignment)
+        if (!hasAssignment)
         {
-            if (hasAssignment)
-            {
-                builder.Append(assignment);
-                return;
-            }
+            builder.Append(TrimmedLine);
+        }
 
+        void AppendAssignment(
+            string target,
+            PropertyData property,
+            string? parameterName = null,
+            bool forceRequired = false)
+        {
+            AppendConstructorAssignment(
+                builder,
+                target,
+                property,
+                parameterName,
+                forceRequired,
+                prependNewLine: hasAssignment);
             hasAssignment = true;
-            var startIndex = 0;
-            while (startIndex < assignment.Length && assignment[startIndex] is '\r' or '\n')
-            {
-                startIndex++;
-            }
-            builder.Append(assignment, startIndex, assignment.Length - startIndex);
         }
     }
 

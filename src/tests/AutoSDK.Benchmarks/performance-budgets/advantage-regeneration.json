@@ -13,16 +13,16 @@
     "renderMilliseconds": 700,
     "cacheHitTotalMilliseconds": 400,
     "sameOutputCompareMilliseconds": 100,
-    "totalAllocatedBytes": 1500000000,
+    "totalAllocatedBytes": 1425000000,
     "pipelineAllocatedBytes": 525000000,
     "coreParsingAllocatedBytes": 130000000,
     "coreTraversalAllocatedBytes": 35000000,
     "coreComputeDataAllocatedBytes": 105000000,
     "coreComputeClassesAllocatedBytes": 130000000,
-    "renderAllocatedBytes": 800000000,
-    "renderModelTypesAllocatedBytes": 150000000,
+    "renderAllocatedBytes": 700000000,
+    "renderModelTypesAllocatedBytes": 105000000,
     "renderModelJsonAllocatedBytes": 80000000,
-    "renderMethodImplementationsAllocatedBytes": 400000000,
+    "renderMethodImplementationsAllocatedBytes": 350000000,
     "renderMethodInterfacesAllocatedBytes": 40000000,
     "renderSerializerContextAllocatedBytes": 50000000,
     "renderSerializerContextTypesAllocatedBytes": 30000000,
@@ -150,9 +150,22 @@
     "renderMethodImplementationAllocationReductionPercent": 28.2,
     "renderMethodInterfaceAllocationReductionPercent": 14.3
   },
+  "observedAfterNestedMethodAndModelStreamingOptimizations": {
+    "totalAllocatedBytesMedian": 1346660112,
+    "renderAllocatedBytesMedian": 662197648,
+    "renderModelTypesAllocatedBytesMedian": 94608328,
+    "renderModelJsonAllocatedBytesMedian": 63457744,
+    "renderMethodImplementationsAllocatedBytesMedian": 328216144,
+    "renderMethodInterfacesAllocatedBytesMedian": 36059976,
+    "totalAllocationReductionPercent": 4.3,
+    "renderAllocationReductionPercent": 10.7,
+    "renderModelTypeAllocationReductionPercent": 30.3,
+    "renderMethodImplementationAllocationReductionPercent": 10.3
+  },
   "notes": [
     "Reference budgets only; they are not currently enforced by CI.",
     "Timing comparisons require an otherwise idle Apple Silicon host.",
-    "Allocation budgets are deterministic enough to compare under background CPU load."
+    "Allocation budgets are deterministic enough to compare under background CPU load.",
+    "The nested method and model streaming timing sample was CPU-contended, so timing budgets were intentionally left unchanged."
   ]
 }

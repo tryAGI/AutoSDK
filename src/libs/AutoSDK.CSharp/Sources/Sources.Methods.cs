@@ -999,6 +999,28 @@ namespace {endPoint.Settings.Namespace}
         bool multipartStreamRequest = false,
         bool normalizeOutput = true)
     {
+        using var builder = new PooledStringBuilder(8192);
+        AppendMethodCore(
+            builder,
+            endPoint,
+            isInterface,
+            returnResponseWrapper,
+            returnStreamResponse,
+            multipartStreamRequest);
+        var result = builder.ToString();
+        return normalizeOutput
+            ? result.RemoveBlankLinesWhereOnlyWhitespaces()
+            : result;
+    }
+
+    private static void AppendMethodCore(
+        PooledStringBuilder builder,
+        EndPoint endPoint,
+        bool isInterface = false,
+        bool returnResponseWrapper = false,
+        bool returnStreamResponse = false,
+        bool multipartStreamRequest = false)
+    {
         if (returnResponseWrapper && returnStreamResponse)
         {
             throw new ArgumentException("A method cannot return both a response wrapper and a stream response.");
@@ -1007,7 +1029,8 @@ namespace {endPoint.Settings.Namespace}
         var useMultipartStreamRequest = multipartStreamRequest && ShouldGenerateMultipartStreamMethods(endPoint);
         if (multipartStreamRequest && !useMultipartStreamRequest)
         {
-            return TrimmedLine;
+            builder.Append(TrimmedLine);
+            return;
         }
 
         var delegatesToResponseWrapper =
@@ -1105,7 +1128,7 @@ namespace {endPoint.Settings.Namespace}
         var multipartStreamParameters = useMultipartStreamRequest
             ? GetMultipartStreamMethodParameters(endPoint).ToArray()
             : Array.Empty<MethodParameter>();
-        var declaration = $@"        {endPoint.Summary.ToXmlDocumentationSummary(level: 8)}
+        builder.Append($@"        {endPoint.Summary.ToXmlDocumentationSummary(level: 8)}
 {(useMultipartStreamRequest ? multipartStreamParameters : endPoint.Parameters.Where(x => x.Location != null)).Select(x => $@"
         {x.Summary.ToXmlDocumentationForParam(x.ParameterName, level: 8)}").Inject()}
 {(useMultipartStreamRequest || string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType) ? TrimmedLine : $@"{TrimmedLine}
@@ -1123,38 +1146,39 @@ namespace {endPoint.Settings.Namespace}
 {endPoint.Parameters.Where(x => x is { Location: not null } && (!x.IsRequired || x.HasSchemaDefault)).Select(x => $@"
             {x.Type.CSharpType} {x.ParameterName} = {x.ParameterDefaultValue},").Inject()}")}
             global::{endPoint.Settings.Namespace}.AutoSDKRequestOptions? requestOptions = default,
-            {cancellationTokenAttribute}global::System.Threading.CancellationToken cancellationToken = default){(isInterface ? ";" : string.Empty)}";
+            {cancellationTokenAttribute}global::System.Threading.CancellationToken cancellationToken = default){(isInterface ? ";" : string.Empty)}");
 
         if (isInterface)
         {
-            return normalizeOutput
-                ? declaration.RemoveBlankLinesWhereOnlyWhitespaces()
-                : declaration;
+            return;
         }
 
         if (delegatesToResponseWrapper)
         {
-            var delegatingResult = string.IsNullOrWhiteSpace(endPoint.SuccessResponse.Type.CSharpType)
-                ? @$"{declaration}
+            if (string.IsNullOrWhiteSpace(endPoint.SuccessResponse.Type.CSharpType))
+            {
+                builder.Append(@$"
         {{
             await {GetResponseWrapperMethodName(endPoint)}(
 {GenerateMethodInvocationArguments(endPoint)}
             ).ConfigureAwait(false);
-        }}"
-                : @$"{declaration}
+        }}");
+            }
+            else
+            {
+                builder.Append(@$"
         {{
             var __response = await {GetResponseWrapperMethodName(endPoint)}(
 {GenerateMethodInvocationArguments(endPoint)}
             ).ConfigureAwait(false);
 
             return __response.Body;
-        }}";
-            return normalizeOutput
-                ? delegatingResult.RemoveBlankLinesWhereOnlyWhitespaces()
-                : delegatingResult;
+        }}");
+            }
+            return;
         }
 
-        var result = @$"{declaration}
+        builder.Append(@$"
         {{
 {(useMultipartStreamRequest
     ? GenerateMultipartStreamRequestInitialization(endPoint)
@@ -1204,7 +1228,7 @@ namespace {endPoint.Settings.Namespace}
 
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {{
-{GeneratePathAndQuery(endPoint, authorizationVariableName: endPoint.AuthorizationRequirements.IsEmpty ? "Authorizations" : "__authorizations").AddIndent(4)}
+{GeneratePathAndQueryCore(endPoint, authorizationVariableName: endPoint.AuthorizationRequirements.IsEmpty ? "Authorizations" : "__authorizations", indentationLevel: 4)}
                 __path = global::{endPoint.Settings.Namespace}.AutoSDKRequestOptionsSupport.AppendQueryParameters(
                     path: __path,
                     clientParameters: Options.QueryParameters,
@@ -1270,7 +1294,7 @@ namespace {endPoint.Settings.Namespace}
 {GenerateCookieParameterHandling(endPoint).AddIndent(4)}
 {GenerateCookieHeaderHandling(endPoint).AddIndent(4)}
  
-{GenerateRequestData(endPoint, multipartStreamRequest: useMultipartStreamRequest).AddIndent(4)}
+{GenerateRequestDataCore(endPoint, multipartStreamRequest: useMultipartStreamRequest, indentationLevel: 4)}
                 global::{endPoint.Settings.Namespace}.AutoSDKRequestOptionsSupport.ApplyHeaders(
                     request: __httpRequest,
                     clientHeaders: Options.Headers,
@@ -1375,7 +1399,7 @@ namespace {endPoint.Settings.Namespace}
                 {{
                     {afterErrorStatusHook}
                 }}
-{GenerateResponse(endPoint, wrapSuccessResponse: returnResponseWrapper, returnStreamResponse: returnStreamResponse, cancellationTokenVariableName: "__effectiveCancellationToken", readResponseAsStringExpression: "__effectiveReadResponseAsString").AddIndent(4)}
+{GenerateResponseCore(endPoint, wrapSuccessResponse: returnResponseWrapper, returnStreamResponse: returnStreamResponse, cancellationTokenVariableName: "__effectiveCancellationToken", readResponseAsStringExpression: "__effectiveReadResponseAsString", indentationLevel: 4)}
 {(methodReturnsResponseStream ? @"
                 }
                 catch
@@ -1389,10 +1413,7 @@ namespace {endPoint.Settings.Namespace}
             {{
                 __httpRequest?.Dispose();
             }}
-        }}";
-        return normalizeOutput
-            ? result.RemoveBlankLinesWhereOnlyWhitespaces()
-            : result;
+        }}");
     }
 
     public static string SerializePropertyAsString(
@@ -2225,6 +2246,14 @@ namespace {endPoint.Settings.Namespace}
         EndPoint endPoint,
         string authorizationVariableName = "Authorizations")
     {
+        return GeneratePathAndQueryCore(endPoint, authorizationVariableName, indentationLevel: 0);
+    }
+
+    private static string GeneratePathAndQueryCore(
+        EndPoint endPoint,
+        string authorizationVariableName,
+        int indentationLevel)
+    {
         var escapedBaseUrl = EscapeCSharpStringLiteral(endPoint.BaseUrl);
         var useScopedServerResolver =
             endPoint.ClientUsesServerSelectionSupport ||
@@ -2236,13 +2265,14 @@ namespace {endPoint.Settings.Namespace}
             : endPoint.HasServerOverride && !string.IsNullOrWhiteSpace(endPoint.BaseUrl)
                 ? $@"HttpClient.BaseAddress ?? new global::System.Uri(""{escapedBaseUrl}"", global::System.UriKind.RelativeOrAbsolute)"
                 : "HttpClient.BaseAddress";
-        var code = @$"
+        using var code = new PooledStringBuilder(1024);
+        code.Append(@$"
             var __pathBuilder = new global::{endPoint.GlobalSettings.Namespace}.PathBuilder(
                 path: {endPoint.Path},
-                baseUri: {baseUriExpression});";
+                baseUri: {baseUriExpression});");
         if (endPoint.Authorizations.Any(x => x is { Type: SecuritySchemeType.ApiKey, In: ParameterLocation.Query }))
         {
-            code += $@"
+            code.Append($@"
             foreach (var __authorization in {authorizationVariableName})
             {{
                 if (__authorization.Type == ""{SecuritySchemeType.ApiKey:G}"" &&
@@ -2250,15 +2280,15 @@ namespace {endPoint.Settings.Namespace}
                 {{
                     __pathBuilder = __pathBuilder.AddRequiredParameter(__authorization.Name, __authorization.Value);
                 }}
-            }}";
+            }}");
         }
 
         var queryParameters = endPoint.QueryParameters.ToArray();
 
         if (queryParameters.Length > 0)
         {
-            code += @"
-            __pathBuilder";
+            code.Append(@"
+            __pathBuilder");
         }
 
         foreach (var parameter in queryParameters)
@@ -2273,28 +2303,29 @@ namespace {endPoint.Settings.Namespace}
             // Use AddOptionalParameter for nullable types even if required (required + nullable = value can be null)
             if (parameter.IsRequired && !parameter.Type.IsNullable)
             {
-                code += $@"
-                .AddRequiredParameter(""{parameter.Id}"", {parameter.Value}{additionalArguments})";
+                code.Append($@"
+                .AddRequiredParameter(""{parameter.Id}"", {parameter.Value}{additionalArguments})");
             }
             else
             {
-                code += $@"
-                .AddOptionalParameter(""{parameter.Id}"", {parameter.Value}{additionalArguments})";
+                code.Append($@"
+                .AddOptionalParameter(""{parameter.Id}"", {parameter.Value}{additionalArguments})");
             }
         }
 
         if (queryParameters.Length > 0)
         {
-            code += @"
-                ;";
+            code.Append(@"
+                ;");
         }
 
-        code += "\n" + GenerateQueryStringParameterHandling(endPoint);
+        code.Append('\n');
+        code.Append(GenerateQueryStringParameterHandling(endPoint));
 
-        code += @"
-            var __path = __pathBuilder.ToString();";
+        code.Append(@"
+            var __path = __pathBuilder.ToString();");
 
-        return code.RemoveBlankLinesWhereOnlyWhitespaces();
+        return NormalizedString.Normalize(code.ToString(), indentationLevel);
     }
 
     private static string GetSuccessResponseHeadersExpression(EndPoint endPoint)
@@ -2481,11 +2512,28 @@ namespace {endPoint.Settings.Namespace}
         string cancellationTokenVariableName = "cancellationToken",
         string readResponseAsStringExpression = "ReadResponseAsString")
     {
+        return GenerateResponseCore(
+            endPoint,
+            wrapSuccessResponse,
+            returnStreamResponse,
+            cancellationTokenVariableName,
+            readResponseAsStringExpression,
+            indentationLevel: 0);
+    }
+
+    private static string GenerateResponseCore(
+        EndPoint endPoint,
+        bool wrapSuccessResponse,
+        bool returnStreamResponse,
+        string cancellationTokenVariableName,
+        string readResponseAsStringExpression,
+        int indentationLevel)
+    {
         var jsonSerializer = endPoint.Settings.JsonSerializerType.GetSerializer();
 
         if (endPoint.StreamFormat == StreamFormat.ServerSentEvents)
         {
-            return $@"
+            return IndentedString.Create(indentationLevel, $@"
             try
             {{
                 __response.EnsureSuccessStatusCode();
@@ -2546,7 +2594,7 @@ namespace {endPoint.Settings.Namespace}
 
                 yield return __streamedResponse;
             }}
- ";
+ ");
         }
 
         if (endPoint.StreamFormat == StreamFormat.Ndjson)
@@ -2642,7 +2690,7 @@ namespace {endPoint.Settings.Namespace}
                 yield return __streamedResponse;
             }}";
 
-            return $@"
+            return IndentedString.Create(indentationLevel, $@"
             try
             {{
                 __response.EnsureSuccessStatusCode();
@@ -2679,7 +2727,7 @@ namespace {endPoint.Settings.Namespace}
 #endif
             ).ConfigureAwait(false);
 {streamReadLoop}
- ";
+ ");
         }
 
         if (endPoint.StreamFormat == StreamFormat.AwsEventStream)
@@ -2706,7 +2754,7 @@ namespace {endPoint.Settings.Namespace}
                 yield return __streamedResponse;"
                 : @"                continue;";
 
-            return $@"
+            return IndentedString.Create(indentationLevel, $@"
             try
             {{
                 __response.EnsureSuccessStatusCode();
@@ -2758,7 +2806,7 @@ namespace {endPoint.Settings.Namespace}
 
 {deserializeBlock}
             }}
- ";
+ ");
         }
 
         // If a response range is defined using an explicit code, the explicit code definition takes precedence over the range definition for that code
@@ -2826,7 +2874,7 @@ namespace {endPoint.Settings.Namespace}
 
         if (endPoint.RawStream || returnStreamResponse)
         {
-            return @$"{errors}
+            return IndentedString.Create(indentationLevel, @$"{errors}
 
             try
             {{
@@ -2871,10 +2919,10 @@ namespace {endPoint.Settings.Namespace}
                         h => h.Key,
                         h => h.Value));
             }}
- ";
+ ");
         }
 
-        return @$"{errors}
+        return IndentedString.Create(indentationLevel, @$"{errors}
 
             if ({readResponseAsStringExpression})
             {{
@@ -2963,12 +3011,20 @@ namespace {endPoint.Settings.Namespace}
                             h => h.Value));
                 }}
             }}
- ";
+ ");
     }
 
     public static string GenerateRequestData(
         EndPoint endPoint,
         bool multipartStreamRequest = false)
+    {
+        return GenerateRequestDataCore(endPoint, multipartStreamRequest, indentationLevel: 0);
+    }
+
+    private static string GenerateRequestDataCore(
+        EndPoint endPoint,
+        bool multipartStreamRequest,
+        int indentationLevel)
     {
         if (string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType))
         {
@@ -2978,7 +3034,7 @@ namespace {endPoint.Settings.Namespace}
         var jsonSerializer = endPoint.Settings.JsonSerializerType.GetSerializer();
         if (endPoint.IsMultipartFormData)
         {
-            return $@"
+            return NormalizedString.Create(indentationLevel, $@"
             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
 {endPoint.Parameters
     .Where(static x => x.Location == null && !x.IsMultiPartFormDataFilename)
@@ -3075,57 +3131,57 @@ namespace {endPoint.Settings.Namespace}
     .Inject()}
 
             __httpRequest.Content = __httpRequestContent;
-".RemoveBlankLinesWhereOnlyWhitespaces();
+");
         }
 
         if (endPoint.RequestType.IsBinary || endPoint.RequestMediaType == "application/octet-stream")
         {
-            return $@"
+            return NormalizedString.Create(indentationLevel, $@"
             var __httpRequestContent = new global::System.Net.Http.ByteArrayContent(request);
             __httpRequestContent.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue(""{EscapeCSharpStringLiteral(endPoint.RequestMediaType.NormalizeMimeType())}"");
             __httpRequest.Content = __httpRequestContent;
- ".RemoveBlankLinesWhereOnlyWhitespaces();
+ ");
         }
 
         if (endPoint.RequestMediaType.IsMimeType("application/x-www-form-urlencoded"))
         {
-            return GenerateFormUrlEncodedRequestData(endPoint);
+            return GenerateFormUrlEncodedRequestData(endPoint).AddIndent(indentationLevel);
         }
 
         if (MediaTypeCapabilities.GetRequestSupport(endPoint.RequestMediaType) == MediaTypeTransportSupport.Raw &&
             endPoint.RequestType.CSharpTypeWithoutNullability == "string")
         {
-            return $@"
+            return NormalizedString.Create(indentationLevel, $@"
             var __httpRequestContent = new global::System.Net.Http.StringContent(
                 content: request,
                 encoding: global::System.Text.Encoding.UTF8,
                 mediaType: ""{EscapeCSharpStringLiteral(endPoint.RequestMediaType.NormalizeMimeType())}"");
             __httpRequest.Content = __httpRequestContent;
- ".RemoveBlankLinesWhereOnlyWhitespaces();
+ ");
         }
 
         if (endPoint.RequestMediaType.IsSequentialJsonMimeType())
         {
-            return GenerateSequentialJsonRequestData(endPoint);
+            return GenerateSequentialJsonRequestData(endPoint).AddIndent(indentationLevel);
         }
 
         if (ShouldUseSystemNetHttpJsonForRequest(endPoint))
         {
-            return GenerateSystemNetHttpJsonRequestData(endPoint);
+            return GenerateSystemNetHttpJsonRequestData(endPoint).AddIndent(indentationLevel);
         }
 
         var requestContent = endPoint.RequestType.IsBase64
             ? "global::System.Convert.ToBase64String(request)"
             : jsonSerializer.GenerateSerializeCall(endPoint.RequestType, endPoint.Settings.JsonSerializerContext);
 
-        return $@" 
+        return NormalizedString.Create(indentationLevel, $@"{TrimmedLine}
             var __httpRequestContentBody = {requestContent};
             var __httpRequestContent = new global::System.Net.Http.StringContent(
                 content: __httpRequestContentBody,
                 encoding: global::System.Text.Encoding.UTF8,
                 mediaType: ""{endPoint.RequestMediaType}"");
             __httpRequest.Content = __httpRequestContent;
- ".RemoveBlankLinesWhereOnlyWhitespaces();
+ ");
     }
 
     private static string GenerateFormUrlEncodedRequestData(EndPoint endPoint)

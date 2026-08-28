@@ -125,4 +125,30 @@ value: {value:D3}
 
         result.Should().Be(expected);
     }
+
+    [TestMethod]
+    public void IndentedString_MatchesAddIndentAcrossFormattedValueBoundaries()
+    {
+        var first = "first\n";
+        var emptyAndSecond = "\nsecond\r";
+
+        var result = IndentedString.Create(2, $"{first}{emptyAndSecond}\nthird\n");
+        var expected = $"{first}{emptyAndSecond}\nthird\n".AddIndent(level: 2);
+
+        result.Should().Be(expected);
+    }
+
+    [TestMethod]
+    public void NormalizedString_WithIndentationMatchesNormalizeThenAddIndent()
+    {
+        var first = "first\r";
+        var lineFeedAndWhitespace = "\n   \n";
+
+        var result = NormalizedString.Create(2, $"{first}{lineFeedAndWhitespace}\nsecond\n");
+        var expected = $"{first}{lineFeedAndWhitespace}\nsecond\n"
+            .RemoveBlankLinesWhereOnlyWhitespaces()
+            .AddIndent(level: 2);
+
+        result.Should().Be(expected);
+    }
 }

@@ -9,6 +9,18 @@ internal static class NormalizedString
     {
         return handler.GetFormattedText();
     }
+
+    public static string Create(
+        int indentationLevel,
+        [InterpolatedStringHandlerArgument(nameof(indentationLevel))] ref NormalizedStringHandler handler)
+    {
+        return handler.GetFormattedText();
+    }
+
+    public static string Normalize(string value, int indentationLevel = 0)
+    {
+        return Create(indentationLevel, $"{value}");
+    }
 }
 
 [InterpolatedStringHandler]
@@ -20,6 +32,7 @@ internal ref struct NormalizedStringHandler
     private bool lineHasNonWhitespace;
     private bool hasRetainedLine;
     private bool skipLineFeed;
+    private readonly int indentationLength;
 
     public NormalizedStringHandler(int literalLength, int formattedCount)
     {
@@ -29,6 +42,22 @@ internal ref struct NormalizedStringHandler
         lineHasNonWhitespace = false;
         hasRetainedLine = false;
         skipLineFeed = false;
+        indentationLength = 0;
+    }
+
+    public NormalizedStringHandler(int literalLength, int formattedCount, int indentationLevel)
+        : this(literalLength, formattedCount)
+    {
+#if NET8_0_OR_GREATER
+        ArgumentOutOfRangeException.ThrowIfNegative(indentationLevel);
+#else
+        if (indentationLevel < 0)
+        {
+            throw new ArgumentOutOfRangeException(nameof(indentationLevel));
+        }
+#endif
+
+        indentationLength = checked(indentationLevel * 4);
     }
 
     public void AppendLiteral(string value)
@@ -94,6 +123,11 @@ internal ref struct NormalizedStringHandler
             if (index > segmentStart)
             {
                 BeginLine();
+                var contentStart = lineStart + (hasRetainedLine ? 1 : 0);
+                if (builder.Length == contentStart && indentationLength > 0)
+                {
+                    builder.Append(' ', indentationLength);
+                }
                 builder.Append(value, segmentStart, index - segmentStart);
                 if (!lineHasNonWhitespace)
                 {

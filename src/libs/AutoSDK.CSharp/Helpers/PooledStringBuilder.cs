@@ -1,4 +1,6 @@
 using System.Buffers;
+using System.Globalization;
+using System.Runtime.CompilerServices;
 
 namespace AutoSDK.Generation;
 
@@ -20,6 +22,21 @@ internal sealed class PooledStringBuilder : IDisposable
         buffer[length++] = value;
     }
 
+    public void Append(char value, int count)
+    {
+        if (count <= 0)
+        {
+            return;
+        }
+
+        EnsureCapacity(count);
+        var end = length + count;
+        while (length < end)
+        {
+            buffer[length++] = value;
+        }
+    }
+
     public void Append(string? value)
     {
         if (value is not { Length: > 0 })
@@ -30,6 +47,12 @@ internal sealed class PooledStringBuilder : IDisposable
         EnsureCapacity(value.Length);
         value.CopyTo(0, buffer, length, value.Length);
         length += value.Length;
+    }
+
+    public void Append(
+        [InterpolatedStringHandlerArgument("")] ref PooledStringBuilderInterpolatedStringHandler handler)
+    {
+        _ = length;
     }
 
     public void Append(string value, int startIndex, int count)
@@ -84,5 +107,41 @@ internal sealed class PooledStringBuilder : IDisposable
         Array.Copy(buffer, newBuffer, length);
         ArrayPool<char>.Shared.Return(buffer);
         buffer = newBuffer;
+    }
+}
+
+[InterpolatedStringHandler]
+internal readonly ref struct PooledStringBuilderInterpolatedStringHandler
+{
+    private readonly PooledStringBuilder builder;
+
+    public PooledStringBuilderInterpolatedStringHandler(
+        int literalLength,
+        int formattedCount,
+        PooledStringBuilder builder)
+    {
+        this.builder = builder;
+    }
+
+    public void AppendLiteral(string value)
+    {
+        builder.Append(value);
+    }
+
+    public void AppendFormatted(string? value)
+    {
+        builder.Append(value);
+    }
+
+    public void AppendFormatted<T>(T value)
+    {
+        builder.Append(value?.ToString());
+    }
+
+    public void AppendFormatted<T>(T value, string? format)
+    {
+        builder.Append(value is IFormattable formattable
+            ? formattable.ToString(format, CultureInfo.CurrentCulture)
+            : value?.ToString());
     }
 }
