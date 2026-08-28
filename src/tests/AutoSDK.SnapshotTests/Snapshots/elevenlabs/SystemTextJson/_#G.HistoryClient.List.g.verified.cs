@@ -1,4 +1,4 @@
-﻿//HintName: G.HistoryClient.List.g.cs
+//HintName: G.HistoryClient.List.g.cs
 
 #nullable enable
 
@@ -14,9 +14,9 @@ namespace G
             ref string? modelId,
             int? dateBeforeUnix,
             int? dateAfterUnix,
-            global::G.GetSpeechHistorySortDirection2? sortDirection,
+            ref global::G.GetSpeechHistorySortDirection2? sortDirection,
             ref string? search,
-            global::G.GetSpeechHistorySource2? source,
+            ref global::G.GetSpeechHistorySource2? source,
             ref string? xiApiKey);
         partial void PrepareListRequest(
             global::System.Net.Http.HttpClient httpClient,
@@ -173,9 +173,9 @@ namespace G
                 modelId: ref modelId,
                 dateBeforeUnix: dateBeforeUnix,
                 dateAfterUnix: dateAfterUnix,
-                sortDirection: sortDirection,
+                sortDirection: ref sortDirection,
                 search: ref search,
-                source: source,
+                source: ref source,
                 xiApiKey: ref xiApiKey);
 
             using var __timeoutCancellationTokenSource = global::G.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(

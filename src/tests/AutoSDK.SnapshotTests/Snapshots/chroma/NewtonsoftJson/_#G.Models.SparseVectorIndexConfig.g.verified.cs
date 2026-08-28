@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.SparseVectorIndexConfig.g.cs
+//HintName: G.Models.SparseVectorIndexConfig.g.cs
 
 #nullable enable
 
@@ -19,7 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("embedding_function")]
-        public global::G.OneOf<object, global::G.EmbeddingFunctionConfiguration?>? EmbeddingFunction { get; set; }
+        public global::G.EmbeddingFunctionConfiguration? EmbeddingFunction { get; set; }
 
         /// <summary>
         /// Key to source the sparse vector from
@@ -45,7 +45,7 @@ namespace G
         /// </param>
         public SparseVectorIndexConfig(
             bool? bm25,
-            global::G.OneOf<object, global::G.EmbeddingFunctionConfiguration?>? embeddingFunction,
+            global::G.EmbeddingFunctionConfiguration? embeddingFunction,
             string? sourceKey)
         {
             this.Bm25 = bm25;

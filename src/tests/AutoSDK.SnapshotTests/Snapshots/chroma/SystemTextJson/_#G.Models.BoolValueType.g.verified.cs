@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.BoolValueType.g.cs
+//HintName: G.Models.BoolValueType.g.cs
 
 #nullable enable
 
@@ -13,8 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("bool_inverted_index")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<object, global::G.BoolInvertedIndexType>))]
-        public global::G.OneOf<object, global::G.BoolInvertedIndexType>? BoolInvertedIndex { get; set; }
+        public global::G.BoolInvertedIndexType? BoolInvertedIndex { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -30,7 +29,7 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BoolValueType(
-            global::G.OneOf<object, global::G.BoolInvertedIndexType>? boolInvertedIndex)
+            global::G.BoolInvertedIndexType? boolInvertedIndex)
         {
             this.BoolInvertedIndex = boolInvertedIndex;
         }

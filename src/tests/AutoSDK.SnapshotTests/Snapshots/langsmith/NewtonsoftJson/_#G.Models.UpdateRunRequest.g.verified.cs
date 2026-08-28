@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.UpdateRunRequest.g.cs
+//HintName: G.Models.UpdateRunRequest.g.cs
 
 #nullable enable
 
@@ -13,19 +13,19 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("trace_id")]
-        public global::G.OneOf<global::System.Guid?, object>? TraceId { get; set; }
+        public global::System.Guid? TraceId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("dotted_order")]
-        public global::G.OneOf<string, object>? DottedOrder { get; set; }
+        public string? DottedOrder { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("parent_run_id")]
-        public global::G.OneOf<global::System.Guid?, object>? ParentRunId { get; set; }
+        public global::System.Guid? ParentRunId { get; set; }
 
         /// <summary>
         /// 
@@ -37,7 +37,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("error")]
-        public global::G.OneOf<string, object>? Error { get; set; }
+        public string? Error { get; set; }
 
         /// <summary>
         /// 
@@ -55,13 +55,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("events")]
-        public global::G.OneOf<global::System.Collections.Generic.IList<object>, object>? Events { get; set; }
+        public global::System.Collections.Generic.IList<object>? Events { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tags")]
-        public global::G.OneOf<global::System.Collections.Generic.IList<string>, object>? Tags { get; set; }
+        public global::System.Collections.Generic.IList<string>? Tags { get; set; }
 
         /// <summary>
         /// 
@@ -85,13 +85,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("session_id")]
-        public global::G.OneOf<global::System.Guid?, object>? SessionId { get; set; }
+        public global::System.Guid? SessionId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("session_name")]
-        public global::G.OneOf<string, object>? SessionName { get; set; }
+        public string? SessionName { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -117,20 +117,20 @@ namespace G
         /// <param name="sessionId"></param>
         /// <param name="sessionName"></param>
         public UpdateRunRequest(
-            global::G.OneOf<global::System.Guid?, object>? traceId,
-            global::G.OneOf<string, object>? dottedOrder,
-            global::G.OneOf<global::System.Guid?, object>? parentRunId,
+            global::System.Guid? traceId,
+            string? dottedOrder,
+            global::System.Guid? parentRunId,
             global::G.OneOf<string, double?, object>? endTime,
-            global::G.OneOf<string, object>? error,
+            string? error,
             object? inputs,
             object? outputs,
-            global::G.OneOf<global::System.Collections.Generic.IList<object>, object>? events,
-            global::G.OneOf<global::System.Collections.Generic.IList<string>, object>? tags,
+            global::System.Collections.Generic.IList<object>? events,
+            global::System.Collections.Generic.IList<string>? tags,
             object? extra,
             object? inputAttachments,
             object? outputAttachments,
-            global::G.OneOf<global::System.Guid?, object>? sessionId,
-            global::G.OneOf<string, object>? sessionName)
+            global::System.Guid? sessionId,
+            string? sessionName)
         {
             this.TraceId = traceId;
             this.DottedOrder = dottedOrder;

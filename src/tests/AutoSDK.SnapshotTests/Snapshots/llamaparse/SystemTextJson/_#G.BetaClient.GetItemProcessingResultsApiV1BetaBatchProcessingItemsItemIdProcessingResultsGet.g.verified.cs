@@ -1,4 +1,4 @@
-﻿//HintName: G.BetaClient.GetItemProcessingResultsApiV1BetaBatchProcessingItemsItemIdProcessingResultsGet.g.cs
+//HintName: G.BetaClient.GetItemProcessingResultsApiV1BetaBatchProcessingItemsItemIdProcessingResultsGet.g.cs
 
 #nullable enable
 
@@ -29,7 +29,7 @@ namespace G
         partial void PrepareGetItemProcessingResultsApiV1BetaBatchProcessingItemsItemIdProcessingResultsGetArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string itemId,
-            global::G.BatchJobType? jobType,
+            ref global::G.BatchJobType? jobType,
             global::System.Guid? projectId,
             global::System.Guid? organizationId,
             ref string? session);
@@ -119,7 +119,7 @@ namespace G
             PrepareGetItemProcessingResultsApiV1BetaBatchProcessingItemsItemIdProcessingResultsGetArguments(
                 httpClient: HttpClient,
                 itemId: ref itemId,
-                jobType: jobType,
+                jobType: ref jobType,
                 projectId: projectId,
                 organizationId: organizationId,
                 session: ref session);

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.WebhookIssuesReopenedIssue.g.cs
+//HintName: G.Models.WebhookIssuesReopenedIssue.g.cs
 
 #nullable enable
 
@@ -26,7 +26,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("assignees", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.WebhookIssuesReopenedIssueAssignee2> Assignees { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.WebhookIssuesReopenedIssueAssignee2?> Assignees { get; set; } = default!;
 
         /// <summary>
         /// How the author is associated with the repository.
@@ -93,7 +93,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("labels")]
-        public global::System.Collections.Generic.IList<global::G.WebhookIssuesReopenedIssueLabel>? Labels { get; set; }
+        public global::System.Collections.Generic.IList<global::G.WebhookIssuesReopenedIssueLabel?>? Labels { get; set; }
 
         /// <summary>
         /// 
@@ -246,7 +246,7 @@ namespace G
         /// <param name="timelineUrl"></param>
         /// <param name="user"></param>
         public WebhookIssuesReopenedIssue(
-            global::System.Collections.Generic.IList<global::G.WebhookIssuesReopenedIssueAssignee2> assignees,
+            global::System.Collections.Generic.IList<global::G.WebhookIssuesReopenedIssueAssignee2?> assignees,
             global::G.WebhookIssuesReopenedIssueAuthorAssociation authorAssociation,
             int comments,
             string commentsUrl,
@@ -268,7 +268,7 @@ namespace G
             string? body,
             global::System.DateTime? closedAt,
             bool? draft,
-            global::System.Collections.Generic.IList<global::G.WebhookIssuesReopenedIssueLabel>? labels,
+            global::System.Collections.Generic.IList<global::G.WebhookIssuesReopenedIssueLabel?>? labels,
             bool? locked,
             global::G.WebhookIssuesReopenedIssueMilestone? milestone,
             global::G.WebhookIssuesReopenedIssuePerformedViaGithubApp? performedViaGithubApp,

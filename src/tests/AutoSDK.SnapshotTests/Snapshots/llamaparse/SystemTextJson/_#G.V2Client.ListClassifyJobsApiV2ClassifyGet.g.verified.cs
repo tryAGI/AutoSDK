@@ -1,4 +1,4 @@
-﻿//HintName: G.V2Client.ListClassifyJobsApiV2ClassifyGet.g.cs
+//HintName: G.V2Client.ListClassifyJobsApiV2ClassifyGet.g.cs
 
 #nullable enable
 
@@ -30,7 +30,7 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             int? pageSize,
             ref string? pageToken,
-            global::G.ListClassifyJobsApiV2ClassifyGetStatus2? status,
+            ref global::G.ListClassifyJobsApiV2ClassifyGetStatus2? status,
             global::System.Collections.Generic.IList<string>? jobIds,
             ref string? configurationId,
             global::System.DateTime? createdAtOnOrAfter,
@@ -177,7 +177,7 @@ namespace G
                 httpClient: HttpClient,
                 pageSize: pageSize,
                 pageToken: ref pageToken,
-                status: status,
+                status: ref status,
                 jobIds: jobIds,
                 configurationId: ref configurationId,
                 createdAtOnOrAfter: createdAtOnOrAfter,

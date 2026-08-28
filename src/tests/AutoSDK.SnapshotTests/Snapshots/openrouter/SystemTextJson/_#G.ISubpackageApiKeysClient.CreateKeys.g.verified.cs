@@ -1,4 +1,4 @@
-﻿//HintName: G.ISubpackageApiKeysClient.CreateKeys.g.cs
+//HintName: G.ISubpackageApiKeysClient.CreateKeys.g.cs
 #nullable enable
 
 namespace G
@@ -56,7 +56,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.ApiKeysCreateKeysResponse201> CreateKeysAsync(
             string name,
             double? limit = default,
-            global::G.OneOf<global::G.KeysPostRequestBodyContentApplicationJsonSchemaLimitReset?, object>? limitReset = default,
+            global::G.KeysPostRequestBodyContentApplicationJsonSchemaLimitReset? limitReset = default,
             bool? includeByokInLimit = default,
             global::System.DateTime? expiresAt = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,

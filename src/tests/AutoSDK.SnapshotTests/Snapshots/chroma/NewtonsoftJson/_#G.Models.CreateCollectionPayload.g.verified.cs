@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.CreateCollectionPayload.g.cs
+//HintName: G.Models.CreateCollectionPayload.g.cs
 
 #nullable enable
 
@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("configuration")]
-        public global::G.OneOf<object, global::G.CollectionConfiguration>? Configuration { get; set; }
+        public global::G.CollectionConfiguration? Configuration { get; set; }
 
         /// <summary>
         /// 
@@ -25,7 +25,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("metadata")]
-        public global::G.OneOf<object, global::G.HashMap>? Metadata { get; set; }
+        public global::G.HashMap? Metadata { get; set; }
 
         /// <summary>
         /// 
@@ -37,7 +37,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("schema")]
-        public global::G.OneOf<object, global::G.Schema3>? Schema { get; set; }
+        public global::G.Schema? Schema { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -55,10 +55,10 @@ namespace G
         /// <param name="schema"></param>
         public CreateCollectionPayload(
             string name,
-            global::G.OneOf<object, global::G.CollectionConfiguration>? configuration,
+            global::G.CollectionConfiguration? configuration,
             bool? getOrCreate,
-            global::G.OneOf<object, global::G.HashMap>? metadata,
-            global::G.OneOf<object, global::G.Schema3>? schema)
+            global::G.HashMap? metadata,
+            global::G.Schema? schema)
         {
             this.Configuration = configuration;
             this.GetOrCreate = getOrCreate;

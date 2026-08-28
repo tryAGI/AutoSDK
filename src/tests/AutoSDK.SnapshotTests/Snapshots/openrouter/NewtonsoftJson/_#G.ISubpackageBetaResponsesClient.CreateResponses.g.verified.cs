@@ -1,4 +1,4 @@
-﻿//HintName: G.ISubpackageBetaResponsesClient.CreateResponses.g.cs
+//HintName: G.ISubpackageBetaResponsesClient.CreateResponses.g.cs
 #nullable enable
 
 namespace G
@@ -125,10 +125,10 @@ namespace G
             bool? background = default,
             string? safetyIdentifier = default,
             bool? store = default,
-            global::G.OneOf<global::G.ResponsesRequestServiceTier?, object>? serviceTier = default,
+            global::G.ResponsesRequestServiceTier? serviceTier = default,
             global::G.OpenAIResponsesTruncation? truncation = default,
             bool? stream = default,
-            global::G.OneOf<global::G.ResponsesRequestProvider, object>? provider = default,
+            global::G.ResponsesRequestProvider? provider = default,
             global::System.Collections.Generic.IList<global::G.ResponsesRequestPluginsItems>? plugins = default,
             string? user = default,
             string? sessionId = default,

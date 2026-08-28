@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ProjectLogsEvent.g.cs
+//HintName: G.Models.ProjectLogsEvent.g.cs
 
 #nullable enable
 
@@ -146,13 +146,13 @@ namespace G
         /// Optional list of comments attached to this event
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("comments")]
-        public global::System.Collections.Generic.IList<object>? Comments { get; set; }
+        public global::System.Collections.Generic.IList<object?>? Comments { get; set; }
 
         /// <summary>
         /// Optional list of audit entries attached to this event
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("audit_data")]
-        public global::System.Collections.Generic.IList<object>? AuditData { get; set; }
+        public global::System.Collections.Generic.IList<object?>? AuditData { get; set; }
 
         /// <summary>
         /// The async scoring state for this event
@@ -285,8 +285,8 @@ namespace G
             bool? isRoot,
             global::G.SpanAttributes? spanAttributes,
             global::G.ObjectReferenceNullish? origin,
-            global::System.Collections.Generic.IList<object>? comments,
-            global::System.Collections.Generic.IList<object>? auditData,
+            global::System.Collections.Generic.IList<object?>? comments,
+            global::System.Collections.Generic.IList<object?>? auditData,
             object? asyncScoringState,
             global::System.Collections.Generic.Dictionary<string, object?>? facets,
             global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<global::G.ProjectLogsEventClassification>>? classifications)

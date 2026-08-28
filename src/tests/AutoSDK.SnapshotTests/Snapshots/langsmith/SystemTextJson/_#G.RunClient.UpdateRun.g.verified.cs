@@ -1,4 +1,4 @@
-﻿//HintName: G.RunClient.UpdateRun.g.cs
+//HintName: G.RunClient.UpdateRun.g.cs
 
 #nullable enable
 
@@ -534,20 +534,20 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<string> UpdateRunAsync(
             global::System.Guid runId,
-            global::G.OneOf<global::System.Guid?, object>? traceId = default,
-            global::G.OneOf<string, object>? dottedOrder = default,
-            global::G.OneOf<global::System.Guid?, object>? parentRunId = default,
+            global::System.Guid? traceId = default,
+            string? dottedOrder = default,
+            global::System.Guid? parentRunId = default,
             global::G.OneOf<string, double?, object>? endTime = default,
-            global::G.OneOf<string, object>? error = default,
+            string? error = default,
             object? inputs = default,
             object? outputs = default,
-            global::G.OneOf<global::System.Collections.Generic.IList<object>, object>? events = default,
-            global::G.OneOf<global::System.Collections.Generic.IList<string>, object>? tags = default,
+            global::System.Collections.Generic.IList<object>? events = default,
+            global::System.Collections.Generic.IList<string>? tags = default,
             object? extra = default,
             object? inputAttachments = default,
             object? outputAttachments = default,
-            global::G.OneOf<global::System.Guid?, object>? sessionId = default,
-            global::G.OneOf<string, object>? sessionName = default,
+            global::System.Guid? sessionId = default,
+            string? sessionName = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

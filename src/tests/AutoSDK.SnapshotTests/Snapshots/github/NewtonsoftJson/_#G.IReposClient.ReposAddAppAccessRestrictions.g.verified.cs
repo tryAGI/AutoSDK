@@ -1,4 +1,4 @@
-﻿//HintName: G.IReposClient.ReposAddAppAccessRestrictions.g.cs
+//HintName: G.IReposClient.ReposAddAppAccessRestrictions.g.cs
 #nullable enable
 
 namespace G
@@ -17,7 +17,7 @@ namespace G
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.Integration>> ReposAddAppAccessRestrictionsAsync(
+        global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.Integration?>> ReposAddAppAccessRestrictionsAsync(
             string owner,
             string repo,
             string branch,
@@ -37,7 +37,7 @@ namespace G
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::G.Integration>>> ReposAddAppAccessRestrictionsAsResponseAsync(
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::G.Integration?>>> ReposAddAppAccessRestrictionsAsResponseAsync(
             string owner,
             string repo,
             string branch,
@@ -59,7 +59,7 @@ namespace G
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.Integration>> ReposAddAppAccessRestrictionsAsync(
+        global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.Integration?>> ReposAddAppAccessRestrictionsAsync(
             string owner,
             string repo,
             string branch,

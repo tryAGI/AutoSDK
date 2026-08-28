@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.UpdateGuardrailRequest.g.cs
+//HintName: G.Models.UpdateGuardrailRequest.g.cs
 
 #nullable enable
 
@@ -31,8 +31,7 @@ namespace G
         /// Interval at which the limit resets (daily, weekly, monthly)
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("reset_interval")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.GuardrailsIdPatchRequestBodyContentApplicationJsonSchemaResetInterval?, object>))]
-        public global::G.OneOf<global::G.GuardrailsIdPatchRequestBodyContentApplicationJsonSchemaResetInterval?, object>? ResetInterval { get; set; }
+        public global::G.GuardrailsIdPatchRequestBodyContentApplicationJsonSchemaResetInterval? ResetInterval { get; set; }
 
         /// <summary>
         /// New list of allowed provider IDs
@@ -98,7 +97,7 @@ namespace G
             string? name,
             string? description,
             double? limitUsd,
-            global::G.OneOf<global::G.GuardrailsIdPatchRequestBodyContentApplicationJsonSchemaResetInterval?, object>? resetInterval,
+            global::G.GuardrailsIdPatchRequestBodyContentApplicationJsonSchemaResetInterval? resetInterval,
             global::System.Collections.Generic.IList<string>? allowedProviders,
             global::System.Collections.Generic.IList<string>? ignoredProviders,
             global::System.Collections.Generic.IList<string>? allowedModels,

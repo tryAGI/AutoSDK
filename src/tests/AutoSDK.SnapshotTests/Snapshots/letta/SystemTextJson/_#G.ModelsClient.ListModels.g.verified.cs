@@ -1,4 +1,4 @@
-﻿//HintName: G.ModelsClient.ListModels.g.cs
+//HintName: G.ModelsClient.ListModels.g.cs
 
 #nullable enable
 
@@ -43,7 +43,7 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             global::System.Collections.Generic.IList<global::G.ProviderCategory>? providerCategory,
             ref string? providerName,
-            global::G.ProviderType? providerType);
+            ref global::G.ProviderType? providerType);
         partial void PrepareListModelsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -113,7 +113,7 @@ namespace G
                 httpClient: HttpClient,
                 providerCategory: providerCategory,
                 providerName: ref providerName,
-                providerType: providerType);
+                providerType: ref providerType);
 
 
             var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(

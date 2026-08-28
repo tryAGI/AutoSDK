@@ -1,4 +1,4 @@
-﻿//HintName: G.IObservationsClient.ObservationsGetMany.g.cs
+//HintName: G.IObservationsClient.ObservationsGetMany.g.cs
 #nullable enable
 
 namespace G
@@ -58,7 +58,7 @@ namespace G
             string? traceId = default,
             global::G.ObservationLevel? level = default,
             string? parentObservationId = default,
-            global::System.Collections.Generic.IList<string>? environment = default,
+            global::System.Collections.Generic.IList<string?>? environment = default,
             global::System.DateTime? fromStartTime = default,
             global::System.DateTime? toStartTime = default,
             string? version = default,
@@ -118,7 +118,7 @@ namespace G
             string? traceId = default,
             global::G.ObservationLevel? level = default,
             string? parentObservationId = default,
-            global::System.Collections.Generic.IList<string>? environment = default,
+            global::System.Collections.Generic.IList<string?>? environment = default,
             global::System.DateTime? fromStartTime = default,
             global::System.DateTime? toStartTime = default,
             string? version = default,

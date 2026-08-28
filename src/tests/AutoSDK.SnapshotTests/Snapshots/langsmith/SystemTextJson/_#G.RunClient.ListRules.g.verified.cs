@@ -1,4 +1,4 @@
-﻿//HintName: G.RunClient.ListRules.g.cs
+//HintName: G.RunClient.ListRules.g.cs
 
 #nullable enable
 
@@ -62,7 +62,7 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             global::System.Guid? datasetId,
             global::System.Guid? sessionId,
-            global::G.ListRulesApiV1RunsRulesGetType2? type,
+            ref global::G.ListRulesApiV1RunsRulesGetType2? type,
             ref string? nameContains,
             global::System.Collections.Generic.IList<global::System.Guid>? id);
         partial void PrepareListRulesRequest(
@@ -142,7 +142,7 @@ namespace G
                 httpClient: HttpClient,
                 datasetId: datasetId,
                 sessionId: sessionId,
-                type: type,
+                type: ref type,
                 nameContains: ref nameContains,
                 id: id);
 

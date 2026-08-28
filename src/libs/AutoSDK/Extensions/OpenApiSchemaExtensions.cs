@@ -117,6 +117,13 @@ public static class OpenApiSchemaExtensions
     {
         schema = schema ?? throw new ArgumentNullException(nameof(schema));
 
+        // Don't treat oneOf: [X, {type: null}] as a true OneOf - the branches
+        // are disjoint and the schema is simply nullable X.
+        if (schema.IsNullableOneOf())
+        {
+            return false;
+        }
+
         return
             schema.OneOf is { Count: > 0 } &&
             ((schema.Properties?.Count ?? 0) == 0 || HasOnlySharedBaseDiscriminatorWrapperProperty(schema));
@@ -128,7 +135,7 @@ public static class OpenApiSchemaExtensions
         schema = schema ?? throw new ArgumentNullException(nameof(schema));
 
         // Don't treat anyOf: [X, {type: null}] as a true AnyOf - it's just nullable X
-        if (schema.IsNullableAnyOf())
+        if (schema.IsNullableAnyOfLike())
         {
             return false;
         }
@@ -226,9 +233,9 @@ public static class OpenApiSchemaExtensions
     {
         schema = schema ?? throw new ArgumentNullException(nameof(schema));
 
-        // Don't treat schemas with nullable anyOf pattern as enums
+        // Don't treat schemas with nullable anyOf/oneOf patterns as enums
         // Even if they have enum values, they're being used as nullable strings
-        if (schema.IsNullableAnyOf())
+        if (schema.IsNullableAnyOfLike())
         {
             return false;
         }
@@ -380,13 +387,37 @@ public static class OpenApiSchemaExtensions
     {
         schema = schema ?? throw new ArgumentNullException(nameof(schema));
 
-        if (schema.AnyOf is not { Count: 2 } anyOfItems)
+        return IsNullableUnion(schema.AnyOf);
+    }
+
+    /// <summary>
+    /// Checks if the oneOf is just expressing nullability (oneOf: [X, {type: null}]).
+    /// Because the null and non-null branches cannot overlap, this can be simplified
+    /// to nullable X rather than a OneOf containing an object placeholder.
+    /// </summary>
+    public static bool IsNullableOneOf(this IOpenApiSchema schema)
+    {
+        schema = schema ?? throw new ArgumentNullException(nameof(schema));
+
+        return IsNullableUnion(schema.OneOf);
+    }
+
+    public static bool IsNullableAnyOfLike(this IOpenApiSchema schema)
+    {
+        schema = schema ?? throw new ArgumentNullException(nameof(schema));
+
+        return schema.IsNullableAnyOf() || schema.IsNullableOneOf();
+    }
+
+    private static bool IsNullableUnion(IList<IOpenApiSchema>? variants)
+    {
+        if (variants is not { Count: 2 })
         {
             return false;
         }
 
         // Exactly one item must be null-type and the other non-null.
-        return anyOfItems[0].IsNullType() != anyOfItems[1].IsNullType();
+        return variants[0].IsNullType() != variants[1].IsNullType();
     }
 
     /// <summary>
@@ -463,10 +494,11 @@ public static class OpenApiSchemaExtensions
             return true;
         }
 
-        // Handle nullable anyOf pattern: anyOf: [{type: string, format: binary}, {type: null}]
-        if (schema.IsNullableAnyOf())
+        // Handle nullable anyOf/oneOf patterns whose concrete branch is binary.
+        if (schema.IsNullableAnyOfLike())
         {
-            var nonNullSchema = schema.AnyOf?.FirstOrDefault(x => !x.IsNullType());
+            var variants = schema.AnyOf is { Count: > 0 } ? schema.AnyOf : schema.OneOf;
+            var nonNullSchema = variants?.FirstOrDefault(x => !x.IsNullType());
             return nonNullSchema != null && nonNullSchema.IsBinary();
         }
 

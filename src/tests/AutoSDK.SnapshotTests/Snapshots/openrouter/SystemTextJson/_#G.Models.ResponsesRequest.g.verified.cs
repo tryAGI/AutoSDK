@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ResponsesRequest.g.cs
+//HintName: G.Models.ResponsesRequest.g.cs
 
 #nullable enable
 
@@ -177,8 +177,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("service_tier")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.ResponsesRequestServiceTier?, object>))]
-        public global::G.OneOf<global::G.ResponsesRequestServiceTier?, object>? ServiceTier { get; set; }
+        public global::G.ResponsesRequestServiceTier? ServiceTier { get; set; }
 
         /// <summary>
         /// 
@@ -197,8 +196,7 @@ namespace G
         /// When multiple model providers are available, optionally indicate your routing preference.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("provider")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.ResponsesRequestProvider, object>))]
-        public global::G.OneOf<global::G.ResponsesRequestProvider, object>? Provider { get; set; }
+        public global::G.ResponsesRequestProvider? Provider { get; set; }
 
         /// <summary>
         /// Plugins you want to enable for this request, including their settings.
@@ -323,10 +321,10 @@ namespace G
             bool? background,
             string? safetyIdentifier,
             bool? store,
-            global::G.OneOf<global::G.ResponsesRequestServiceTier?, object>? serviceTier,
+            global::G.ResponsesRequestServiceTier? serviceTier,
             global::G.OpenAIResponsesTruncation? truncation,
             bool? stream,
-            global::G.OneOf<global::G.ResponsesRequestProvider, object>? provider,
+            global::G.ResponsesRequestProvider? provider,
             global::System.Collections.Generic.IList<global::G.ResponsesRequestPluginsItems>? plugins,
             string? user,
             string? sessionId,

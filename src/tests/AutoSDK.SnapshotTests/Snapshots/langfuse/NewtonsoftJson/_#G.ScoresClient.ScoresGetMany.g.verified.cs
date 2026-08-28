@@ -1,4 +1,4 @@
-﻿//HintName: G.ScoresClient.ScoresGetMany.g.cs
+//HintName: G.ScoresClient.ScoresGetMany.g.cs
 
 #nullable enable
 
@@ -34,7 +34,7 @@ namespace G
             ref string? name,
             ref global::System.DateTime? fromTimestamp,
             ref global::System.DateTime? toTimestamp,
-            global::System.Collections.Generic.IList<string>? environment,
+            global::System.Collections.Generic.IList<string?>? environment,
             ref global::G.ScoreSource? source,
             ref string? @operator,
             ref double? value,
@@ -46,7 +46,7 @@ namespace G
             ref string? observationId,
             ref string? queueId,
             ref global::G.ScoreDataType? dataType,
-            global::System.Collections.Generic.IList<string>? traceTags,
+            global::System.Collections.Generic.IList<string?>? traceTags,
             ref string? fields,
             ref string? filter);
         partial void PrepareScoresGetManyRequest(
@@ -58,7 +58,7 @@ namespace G
             string? name,
             global::System.DateTime? fromTimestamp,
             global::System.DateTime? toTimestamp,
-            global::System.Collections.Generic.IList<string>? environment,
+            global::System.Collections.Generic.IList<string?>? environment,
             global::G.ScoreSource? source,
             string? @operator,
             double? value,
@@ -70,7 +70,7 @@ namespace G
             string? observationId,
             string? queueId,
             global::G.ScoreDataType? dataType,
-            global::System.Collections.Generic.IList<string>? traceTags,
+            global::System.Collections.Generic.IList<string?>? traceTags,
             string? fields,
             string? filter);
         partial void ProcessScoresGetManyResponse(
@@ -116,7 +116,7 @@ namespace G
             string? name = default,
             global::System.DateTime? fromTimestamp = default,
             global::System.DateTime? toTimestamp = default,
-            global::System.Collections.Generic.IList<string>? environment = default,
+            global::System.Collections.Generic.IList<string?>? environment = default,
             global::G.ScoreSource? source = default,
             string? @operator = default,
             double? value = default,
@@ -128,7 +128,7 @@ namespace G
             string? observationId = default,
             string? queueId = default,
             global::G.ScoreDataType? dataType = default,
-            global::System.Collections.Generic.IList<string>? traceTags = default,
+            global::System.Collections.Generic.IList<string?>? traceTags = default,
             string? fields = default,
             string? filter = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
@@ -196,7 +196,7 @@ namespace G
             string? name = default,
             global::System.DateTime? fromTimestamp = default,
             global::System.DateTime? toTimestamp = default,
-            global::System.Collections.Generic.IList<string>? environment = default,
+            global::System.Collections.Generic.IList<string?>? environment = default,
             global::G.ScoreSource? source = default,
             string? @operator = default,
             double? value = default,
@@ -208,7 +208,7 @@ namespace G
             string? observationId = default,
             string? queueId = default,
             global::G.ScoreDataType? dataType = default,
-            global::System.Collections.Generic.IList<string>? traceTags = default,
+            global::System.Collections.Generic.IList<string?>? traceTags = default,
             string? fields = default,
             string? filter = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,

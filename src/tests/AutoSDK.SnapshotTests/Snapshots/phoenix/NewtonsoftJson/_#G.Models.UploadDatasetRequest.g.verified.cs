@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.UploadDatasetRequest.g.cs
+//HintName: G.Models.UploadDatasetRequest.g.cs
 
 #nullable enable
 
@@ -56,7 +56,7 @@ namespace G
         /// Span IDs to link examples back to spans
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("span_ids")]
-        public global::System.Collections.Generic.IList<global::G.OneOf<string, object>>? SpanIds { get; set; }
+        public global::System.Collections.Generic.IList<string?>? SpanIds { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -87,7 +87,7 @@ namespace G
             global::System.Collections.Generic.IList<object>? outputs,
             global::System.Collections.Generic.IList<object>? metadata,
             global::System.Collections.Generic.IList<global::G.OneOf<string, global::System.Collections.Generic.IList<string>, object>>? splits,
-            global::System.Collections.Generic.IList<global::G.OneOf<string, object>>? spanIds)
+            global::System.Collections.Generic.IList<string?>? spanIds)
         {
             this.Action = action;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));

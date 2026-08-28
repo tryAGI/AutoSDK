@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ChatRequestReasoning.g.cs
+//HintName: G.Models.ChatRequestReasoning.g.cs
 
 #nullable enable
 
@@ -13,8 +13,7 @@ namespace G
         /// Constrains effort on reasoning for reasoning models
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("effort")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.ChatRequestReasoningEffort?, object>))]
-        public global::G.OneOf<global::G.ChatRequestReasoningEffort?, object>? Effort { get; set; }
+        public global::G.ChatRequestReasoningEffort? Effort { get; set; }
 
         /// <summary>
         /// 
@@ -40,7 +39,7 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ChatRequestReasoning(
-            global::G.OneOf<global::G.ChatRequestReasoningEffort?, object>? effort,
+            global::G.ChatRequestReasoningEffort? effort,
             global::G.ChatRequestReasoningSummary? summary)
         {
             this.Effort = effort;

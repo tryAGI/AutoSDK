@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ProviderSortConfig.g.cs
+//HintName: G.Models.ProviderSortConfig.g.cs
 
 #nullable enable
 
@@ -13,15 +13,13 @@ namespace G
         /// The provider sorting strategy (price, throughput, latency)
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("by")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.ProviderSortConfigBy?, object>))]
-        public global::G.OneOf<global::G.ProviderSortConfigBy?, object>? By { get; set; }
+        public global::G.ProviderSortConfigBy? By { get; set; }
 
         /// <summary>
         /// Partitioning strategy for sorting: "model" (default) groups endpoints by model before sorting (fallback models remain fallbacks), "none" sorts all endpoints together regardless of model.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("partition")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.ProviderSortConfigPartition?, object>))]
-        public global::G.OneOf<global::G.ProviderSortConfigPartition?, object>? Partition { get; set; }
+        public global::G.ProviderSortConfigPartition? Partition { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -42,8 +40,8 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ProviderSortConfig(
-            global::G.OneOf<global::G.ProviderSortConfigBy?, object>? by,
-            global::G.OneOf<global::G.ProviderSortConfigPartition?, object>? partition)
+            global::G.ProviderSortConfigBy? by,
+            global::G.ProviderSortConfigPartition? partition)
         {
             this.By = by;
             this.Partition = partition;

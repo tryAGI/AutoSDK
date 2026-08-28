@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ReasoningDetailText.g.cs
+//HintName: G.Models.ReasoningDetailText.g.cs
 
 #nullable enable
 
@@ -38,7 +38,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("format")]
-        public global::G.OneOf<global::G.ReasoningDetailTextFormat?, object>? Format { get; set; }
+        public global::G.ReasoningDetailTextFormat? Format { get; set; }
 
         /// <summary>
         /// 
@@ -66,7 +66,7 @@ namespace G
             string? text,
             string? signature,
             string? id,
-            global::G.OneOf<global::G.ReasoningDetailTextFormat?, object>? format,
+            global::G.ReasoningDetailTextFormat? format,
             double? index)
         {
             this.Type = type;

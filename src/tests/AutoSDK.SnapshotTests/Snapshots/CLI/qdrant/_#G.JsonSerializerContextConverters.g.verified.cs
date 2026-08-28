@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonSerializerContextConverters.g.cs
+//HintName: G.JsonSerializerContextConverters.g.cs
 
 #nullable enable
 
@@ -175,7 +175,7 @@ namespace G
             typeof(global::G.JsonConverters.PointInsertOperationsJsonConverter),
             typeof(global::G.JsonConverters.BatchVectorStructJsonConverter),
             typeof(global::G.JsonConverters.VectorJsonConverter),
-            typeof(global::G.JsonConverters.DocumentOptions2JsonConverter),
+            typeof(global::G.JsonConverters.DocumentOptionsJsonConverter),
             typeof(global::G.JsonConverters.VectorStructJsonConverter),
             typeof(global::G.JsonConverters.ClusterStatusJsonConverter),
             typeof(global::G.JsonConverters.ConsensusThreadStatusJsonConverter),

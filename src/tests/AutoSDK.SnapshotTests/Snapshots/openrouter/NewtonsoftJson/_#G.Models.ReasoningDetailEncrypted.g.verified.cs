@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ReasoningDetailEncrypted.g.cs
+//HintName: G.Models.ReasoningDetailEncrypted.g.cs
 
 #nullable enable
 
@@ -32,7 +32,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("format")]
-        public global::G.OneOf<global::G.ReasoningDetailEncryptedFormat?, object>? Format { get; set; }
+        public global::G.ReasoningDetailEncryptedFormat? Format { get; set; }
 
         /// <summary>
         /// 
@@ -58,7 +58,7 @@ namespace G
             string data,
             global::G.ReasoningDetailEncryptedType type,
             string? id,
-            global::G.OneOf<global::G.ReasoningDetailEncryptedFormat?, object>? format,
+            global::G.ReasoningDetailEncryptedFormat? format,
             double? index)
         {
             this.Type = type;

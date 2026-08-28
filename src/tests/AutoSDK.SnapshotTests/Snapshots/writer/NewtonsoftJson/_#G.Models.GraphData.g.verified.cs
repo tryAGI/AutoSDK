@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.GraphData.g.cs
+//HintName: G.Models.GraphData.g.cs
 
 #nullable enable
 
@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("sources")]
-        public global::System.Collections.Generic.IList<global::G.Source>? Sources { get; set; }
+        public global::System.Collections.Generic.IList<global::G.Source?>? Sources { get; set; }
 
         /// <summary>
         /// 
@@ -26,7 +26,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("subqueries")]
-        public global::System.Collections.Generic.IList<global::G.SubQuery>? Subqueries { get; set; }
+        public global::System.Collections.Generic.IList<global::G.SubQuery?>? Subqueries { get; set; }
 
         /// <summary>
         /// Detailed source information organized by reference type, providing comprehensive metadata about the sources used to generate the response.
@@ -50,9 +50,9 @@ namespace G
         /// Detailed source information organized by reference type, providing comprehensive metadata about the sources used to generate the response.
         /// </param>
         public GraphData(
-            global::System.Collections.Generic.IList<global::G.Source>? sources,
+            global::System.Collections.Generic.IList<global::G.Source?>? sources,
             global::G.GraphStageStatus? status,
-            global::System.Collections.Generic.IList<global::G.SubQuery>? subqueries,
+            global::System.Collections.Generic.IList<global::G.SubQuery?>? subqueries,
             global::G.References? references)
         {
             this.Sources = sources;

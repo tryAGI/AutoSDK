@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.WebhookRegistryPackageUpdatedRegistryPackagePackageVersion.g.cs
+//HintName: G.Models.WebhookRegistryPackageUpdatedRegistryPackagePackageVersion.g.cs
 
 #nullable enable
 
@@ -48,7 +48,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("docker_metadata")]
-        public global::System.Collections.Generic.IList<global::G.WebhookRegistryPackageUpdatedRegistryPackagePackageVersionDockerMetadataItem>? DockerMetadata { get; set; }
+        public global::System.Collections.Generic.IList<global::G.WebhookRegistryPackageUpdatedRegistryPackagePackageVersionDockerMetadataItem?>? DockerMetadata { get; set; }
 
         /// <summary>
         /// 
@@ -224,7 +224,7 @@ namespace G
             string targetOid,
             string updatedAt,
             string version,
-            global::System.Collections.Generic.IList<global::G.WebhookRegistryPackageUpdatedRegistryPackagePackageVersionDockerMetadataItem>? dockerMetadata,
+            global::System.Collections.Generic.IList<global::G.WebhookRegistryPackageUpdatedRegistryPackagePackageVersionDockerMetadataItem?>? dockerMetadata,
             bool? draft,
             string? manifest,
             bool? prerelease,

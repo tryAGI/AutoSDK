@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.UpsertCollectionRecordsPayload.g.cs
+//HintName: G.Models.UpsertCollectionRecordsPayload.g.cs
 
 #nullable enable
 
@@ -17,7 +17,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("documents")]
-        public global::System.Collections.Generic.IList<string>? Documents { get; set; }
+        public global::System.Collections.Generic.IList<string?>? Documents { get; set; }
 
         /// <summary>
         /// Embeddings for each record. Can contain the raw f32 arrays or base64 encoded strings.
@@ -38,13 +38,13 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadatas")]
-        public global::System.Collections.Generic.IList<global::G.OneOf<object, global::G.HashMap>>? Metadatas { get; set; }
+        public global::System.Collections.Generic.IList<global::G.HashMap?>? Metadatas { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("uris")]
-        public global::System.Collections.Generic.IList<string>? Uris { get; set; }
+        public global::System.Collections.Generic.IList<string?>? Uris { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -68,9 +68,9 @@ namespace G
         public UpsertCollectionRecordsPayload(
             global::G.EmbeddingsPayload embeddings,
             global::System.Collections.Generic.IList<string> ids,
-            global::System.Collections.Generic.IList<string>? documents,
-            global::System.Collections.Generic.IList<global::G.OneOf<object, global::G.HashMap>>? metadatas,
-            global::System.Collections.Generic.IList<string>? uris)
+            global::System.Collections.Generic.IList<string?>? documents,
+            global::System.Collections.Generic.IList<global::G.HashMap?>? metadatas,
+            global::System.Collections.Generic.IList<string?>? uris)
         {
             this.Documents = documents;
             this.Embeddings = embeddings;

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.UpdateCollectionConfiguration.g.cs
+//HintName: G.Models.UpdateCollectionConfiguration.g.cs
 
 #nullable enable
 
@@ -13,22 +13,19 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("embedding_function")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<object, global::G.EmbeddingFunctionConfiguration?>))]
-        public global::G.OneOf<object, global::G.EmbeddingFunctionConfiguration?>? EmbeddingFunction { get; set; }
+        public global::G.EmbeddingFunctionConfiguration? EmbeddingFunction { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("hnsw")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<object, global::G.UpdateHnswConfiguration>))]
-        public global::G.OneOf<object, global::G.UpdateHnswConfiguration>? Hnsw { get; set; }
+        public global::G.UpdateHnswConfiguration? Hnsw { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("spann")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<object, global::G.UpdateSpannConfiguration>))]
-        public global::G.OneOf<object, global::G.UpdateSpannConfiguration>? Spann { get; set; }
+        public global::G.UpdateSpannConfiguration? Spann { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -46,9 +43,9 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public UpdateCollectionConfiguration(
-            global::G.OneOf<object, global::G.EmbeddingFunctionConfiguration?>? embeddingFunction,
-            global::G.OneOf<object, global::G.UpdateHnswConfiguration>? hnsw,
-            global::G.OneOf<object, global::G.UpdateSpannConfiguration>? spann)
+            global::G.EmbeddingFunctionConfiguration? embeddingFunction,
+            global::G.UpdateHnswConfiguration? hnsw,
+            global::G.UpdateSpannConfiguration? spann)
         {
             this.EmbeddingFunction = embeddingFunction;
             this.Hnsw = hnsw;

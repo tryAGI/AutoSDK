@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.CodeScanningAlertInstance.g.cs
+//HintName: G.Models.CodeScanningAlertInstance.g.cs
 
 #nullable enable
 
@@ -70,7 +70,7 @@ namespace G
         /// For example identifying it as documentation, or a generated file.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("classifications")]
-        public global::System.Collections.Generic.IList<global::G.CodeScanningAlertClassification>? Classifications { get; set; }
+        public global::System.Collections.Generic.IList<global::G.CodeScanningAlertClassification?>? Classifications { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -120,7 +120,7 @@ namespace G
             global::G.CodeScanningAlertInstanceMessage? message,
             global::G.CodeScanningAlertLocation? location,
             string? htmlUrl,
-            global::System.Collections.Generic.IList<global::G.CodeScanningAlertClassification>? classifications)
+            global::System.Collections.Generic.IList<global::G.CodeScanningAlertClassification?>? classifications)
         {
             this.Ref = @ref;
             this.AnalysisKey = analysisKey;

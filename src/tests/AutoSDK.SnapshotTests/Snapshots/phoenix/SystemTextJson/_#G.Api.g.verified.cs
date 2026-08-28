@@ -1,4 +1,4 @@
-﻿//HintName: G.Api.g.cs
+//HintName: G.Api.g.cs
 
 #nullable enable
 
@@ -197,7 +197,6 @@ namespace G
                     new global::G.JsonConverters.AnyOfJsonConverter<bool?, int?, double?, string, object, global::System.Collections.Generic.IList<object>, object>(),
                     new global::G.JsonConverters.AnyOfJsonConverter<string, int?>(),
                     new global::G.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<string>, object>(),
-                    new global::G.JsonConverters.OneOfJsonConverter<string, object>(),
                     new global::G.JsonConverters.UnixTimestampJsonConverter(),
                 }
             };

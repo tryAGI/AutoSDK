@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.WebhookIssueCommentCreatedIssueVariant2.g.cs
+//HintName: G.Models.WebhookIssueCommentCreatedIssueVariant2.g.cs
 
 #nullable enable
 
@@ -25,7 +25,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("assignees")]
-        public global::System.Collections.Generic.IList<object>? Assignees { get; set; }
+        public global::System.Collections.Generic.IList<object?>? Assignees { get; set; }
 
         /// <summary>
         /// 
@@ -216,7 +216,7 @@ namespace G
             global::G.WebhookIssueCommentCreatedIssueVariant2State state,
             string? activeLockReason,
             global::G.WebhookIssueCommentCreatedIssueVariant2Assignee? assignee,
-            global::System.Collections.Generic.IList<object>? assignees,
+            global::System.Collections.Generic.IList<object?>? assignees,
             string? authorAssociation,
             string? body,
             string? closedAt,

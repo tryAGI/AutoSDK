@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.WebhookWorkflowRunInProgressWorkflowRun.g.cs
+//HintName: G.Models.WebhookWorkflowRunInProgressWorkflowRun.g.cs
 
 #nullable enable
 
@@ -157,7 +157,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("pull_requests")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.WebhookWorkflowRunInProgressWorkflowRunPullRequest> PullRequests { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.WebhookWorkflowRunInProgressWorkflowRunPullRequest?> PullRequests { get; set; }
 
         /// <summary>
         /// 
@@ -305,7 +305,7 @@ namespace G
             string logsUrl,
             string nodeId,
             string path,
-            global::System.Collections.Generic.IList<global::G.WebhookWorkflowRunInProgressWorkflowRunPullRequest> pullRequests,
+            global::System.Collections.Generic.IList<global::G.WebhookWorkflowRunInProgressWorkflowRunPullRequest?> pullRequests,
             global::G.WebhookWorkflowRunInProgressWorkflowRunRepository repository,
             string rerunUrl,
             int runAttempt,

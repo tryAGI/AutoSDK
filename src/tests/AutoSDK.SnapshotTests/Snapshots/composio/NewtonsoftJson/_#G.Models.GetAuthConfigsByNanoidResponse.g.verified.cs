@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.GetAuthConfigsByNanoidResponse.g.cs
+//HintName: G.Models.GetAuthConfigsByNanoidResponse.g.cs
 
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -102,7 +102,7 @@ namespace G
         /// Fields expected during connection initialization
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("expected_input_fields")]
-        public global::System.Collections.Generic.IList<object>? ExpectedInputFields { get; set; }
+        public global::System.Collections.Generic.IList<object?>? ExpectedInputFields { get; set; }
 
         /// <summary>
         /// Use tool_access_config instead. This field will be deprecated in the future.
@@ -211,7 +211,7 @@ namespace G
             string? createdBy,
             string? createdAt,
             string? lastUpdatedAt,
-            global::System.Collections.Generic.IList<object>? expectedInputFields,
+            global::System.Collections.Generic.IList<object?>? expectedInputFields,
             global::System.Collections.Generic.Dictionary<string, object?>? sharedCredentials,
             bool? isEnabledForToolRouter)
         {

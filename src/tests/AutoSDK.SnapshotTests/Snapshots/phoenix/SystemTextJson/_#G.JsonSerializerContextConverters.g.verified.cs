@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonSerializerContextConverters.g.cs
+//HintName: G.JsonSerializerContextConverters.g.cs
 
 #nullable enable
 
@@ -163,7 +163,6 @@ namespace G
             typeof(global::G.JsonConverters.AnyOfJsonConverter<bool?, int?, double?, string, object, global::System.Collections.Generic.IList<object>, object>),
             typeof(global::G.JsonConverters.AnyOfJsonConverter<string, int?>),
             typeof(global::G.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<string>, object>),
-            typeof(global::G.JsonConverters.OneOfJsonConverter<string, object>),
             typeof(global::G.JsonConverters.UnixTimestampJsonConverter),
         };
     }

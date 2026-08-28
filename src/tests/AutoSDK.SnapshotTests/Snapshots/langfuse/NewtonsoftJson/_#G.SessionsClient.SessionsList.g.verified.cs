@@ -1,4 +1,4 @@
-﻿//HintName: G.SessionsClient.SessionsList.g.cs
+//HintName: G.SessionsClient.SessionsList.g.cs
 
 #nullable enable
 
@@ -32,7 +32,7 @@ namespace G
             ref int? limit,
             ref global::System.DateTime? fromTimestamp,
             ref global::System.DateTime? toTimestamp,
-            global::System.Collections.Generic.IList<string>? environment);
+            global::System.Collections.Generic.IList<string?>? environment);
         partial void PrepareSessionsListRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -40,7 +40,7 @@ namespace G
             int? limit,
             global::System.DateTime? fromTimestamp,
             global::System.DateTime? toTimestamp,
-            global::System.Collections.Generic.IList<string>? environment);
+            global::System.Collections.Generic.IList<string?>? environment);
         partial void ProcessSessionsListResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -66,7 +66,7 @@ namespace G
             int? limit = default,
             global::System.DateTime? fromTimestamp = default,
             global::System.DateTime? toTimestamp = default,
-            global::System.Collections.Generic.IList<string>? environment = default,
+            global::System.Collections.Generic.IList<string?>? environment = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -98,7 +98,7 @@ namespace G
             int? limit = default,
             global::System.DateTime? fromTimestamp = default,
             global::System.DateTime? toTimestamp = default,
-            global::System.Collections.Generic.IList<string>? environment = default,
+            global::System.Collections.Generic.IList<string?>? environment = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

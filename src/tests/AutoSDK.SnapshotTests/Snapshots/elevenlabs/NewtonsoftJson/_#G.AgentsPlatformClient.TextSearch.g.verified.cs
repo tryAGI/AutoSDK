@@ -1,4 +1,4 @@
-﻿//HintName: G.AgentsPlatformClient.TextSearch.g.cs
+//HintName: G.AgentsPlatformClient.TextSearch.g.cs
 
 #nullable enable
 
@@ -10,7 +10,7 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             ref string textQuery,
             ref string? agentId,
-            global::G.EvaluationSuccessResult? callSuccessful,
+            ref global::G.EvaluationSuccessResult? callSuccessful,
             int? callStartBeforeUnix,
             int? callStartAfterUnix,
             int? callDurationMinSecs,
@@ -25,7 +25,7 @@ namespace G
             global::System.Collections.Generic.IList<string>? mainLanguages,
             ref int? pageSize,
             ref global::G.TextSearchConversationMessagesRouteSummaryMode? summaryMode,
-            global::G.ConversationInitiationSource? conversationInitiationSource,
+            ref global::G.ConversationInitiationSource? conversationInitiationSource,
             ref string? branchId,
             ref string? cursor,
             ref string? xiApiKey);
@@ -286,7 +286,7 @@ namespace G
                 httpClient: HttpClient,
                 textQuery: ref textQuery,
                 agentId: ref agentId,
-                callSuccessful: callSuccessful,
+                callSuccessful: ref callSuccessful,
                 callStartBeforeUnix: callStartBeforeUnix,
                 callStartAfterUnix: callStartAfterUnix,
                 callDurationMinSecs: callDurationMinSecs,
@@ -301,7 +301,7 @@ namespace G
                 mainLanguages: mainLanguages,
                 pageSize: ref pageSize,
                 summaryMode: ref summaryMode,
-                conversationInitiationSource: conversationInitiationSource,
+                conversationInitiationSource: ref conversationInitiationSource,
                 branchId: ref branchId,
                 cursor: ref cursor,
                 xiApiKey: ref xiApiKey);

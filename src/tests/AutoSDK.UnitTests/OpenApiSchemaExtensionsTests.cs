@@ -40,6 +40,42 @@ public sealed class OpenApiSchemaExtensionsTests
     }
 
     [TestMethod]
+    public void IsNullableOneOf_RequiresExactlyOneNullVariant()
+    {
+        var nullable = new OpenApiSchema
+        {
+            OneOf =
+            [
+                new OpenApiSchema { Type = JsonSchemaType.Null },
+                new OpenApiSchema { Type = JsonSchemaType.Object },
+            ],
+        };
+        var twoNulls = new OpenApiSchema
+        {
+            OneOf =
+            [
+                new OpenApiSchema { Type = JsonSchemaType.Null },
+                new OpenApiSchema { Type = JsonSchemaType.Null },
+            ],
+        };
+        var twoValues = new OpenApiSchema
+        {
+            OneOf =
+            [
+                new OpenApiSchema { Type = JsonSchemaType.String },
+                new OpenApiSchema { Type = JsonSchemaType.Integer },
+            ],
+        };
+
+        nullable.IsNullableOneOf().Should().BeTrue();
+        nullable.IsNullableAnyOfLike().Should().BeTrue();
+        nullable.IsOneOf().Should().BeFalse();
+        twoNulls.IsNullableOneOf().Should().BeFalse();
+        twoValues.IsNullableOneOf().Should().BeFalse();
+        twoValues.IsOneOf().Should().BeTrue();
+    }
+
+    [TestMethod]
     public void AnyOfOneOfAndAllOf_RequireNonEmptyVariants()
     {
         var anyOf = new OpenApiSchema { AnyOf = [new OpenApiSchema()] };

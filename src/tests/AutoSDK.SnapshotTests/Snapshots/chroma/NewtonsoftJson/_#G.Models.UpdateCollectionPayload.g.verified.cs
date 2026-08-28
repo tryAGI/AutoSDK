@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.UpdateCollectionPayload.g.cs
+//HintName: G.Models.UpdateCollectionPayload.g.cs
 
 #nullable enable
 
@@ -13,13 +13,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("new_configuration")]
-        public global::G.OneOf<object, global::G.UpdateCollectionConfiguration>? NewConfiguration { get; set; }
+        public global::G.UpdateCollectionConfiguration? NewConfiguration { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("new_metadata")]
-        public global::G.OneOf<object, global::G.HashMap>? NewMetadata { get; set; }
+        public global::G.HashMap? NewMetadata { get; set; }
 
         /// <summary>
         /// 
@@ -40,8 +40,8 @@ namespace G
         /// <param name="newMetadata"></param>
         /// <param name="newName"></param>
         public UpdateCollectionPayload(
-            global::G.OneOf<object, global::G.UpdateCollectionConfiguration>? newConfiguration,
-            global::G.OneOf<object, global::G.HashMap>? newMetadata,
+            global::G.UpdateCollectionConfiguration? newConfiguration,
+            global::G.HashMap? newMetadata,
             string? newName)
         {
             this.NewConfiguration = newConfiguration;

@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonSerializerContextTypes.g.cs
+//HintName: G.JsonSerializerContextTypes.g.cs
 
 #nullable enable
 
@@ -933,7 +933,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.Json>? Type226 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.Json?>? Type226 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -4422,7 +4422,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.Json>? ListType27 { get; set; }
+        public global::System.Collections.Generic.List<global::G.Json?>? ListType27 { get; set; }
         /// <summary>
         /// 
         /// </summary>

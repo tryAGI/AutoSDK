@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ResponsesRequest.g.cs
+//HintName: G.Models.ResponsesRequest.g.cs
 
 #nullable enable
 
@@ -175,7 +175,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("service_tier")]
-        public global::G.OneOf<global::G.ResponsesRequestServiceTier?, object>? ServiceTier { get; set; }
+        public global::G.ResponsesRequestServiceTier? ServiceTier { get; set; }
 
         /// <summary>
         /// 
@@ -194,7 +194,7 @@ namespace G
         /// When multiple model providers are available, optionally indicate your routing preference.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("provider")]
-        public global::G.OneOf<global::G.ResponsesRequestProvider, object>? Provider { get; set; }
+        public global::G.ResponsesRequestProvider? Provider { get; set; }
 
         /// <summary>
         /// Plugins you want to enable for this request, including their settings.
@@ -316,10 +316,10 @@ namespace G
             bool? background,
             string? safetyIdentifier,
             bool? store,
-            global::G.OneOf<global::G.ResponsesRequestServiceTier?, object>? serviceTier,
+            global::G.ResponsesRequestServiceTier? serviceTier,
             global::G.OpenAIResponsesTruncation? truncation,
             bool? stream,
-            global::G.OneOf<global::G.ResponsesRequestProvider, object>? provider,
+            global::G.ResponsesRequestProvider? provider,
             global::System.Collections.Generic.IList<global::G.ResponsesRequestPluginsItems>? plugins,
             string? user,
             string? sessionId,

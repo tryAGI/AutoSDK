@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.MessagesRequestContextManagementEditsItems0.g.cs
+//HintName: G.Models.MessagesRequestContextManagementEditsItems0.g.cs
 
 #nullable enable
 
@@ -20,8 +20,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("clear_at_least")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.MessagesRequestContextManagementEditsItemsOneOf0ClearAtLeast, object>))]
-        public global::G.OneOf<global::G.MessagesRequestContextManagementEditsItemsOneOf0ClearAtLeast, object>? ClearAtLeast { get; set; }
+        public global::G.MessagesRequestContextManagementEditsItemsOneOf0ClearAtLeast? ClearAtLeast { get; set; }
 
         /// <summary>
         /// 
@@ -69,7 +68,7 @@ namespace G
 #endif
         public MessagesRequestContextManagementEditsItems0(
             global::G.MessagesRequestContextManagementEditsItemsOneOf0Type type,
-            global::G.OneOf<global::G.MessagesRequestContextManagementEditsItemsOneOf0ClearAtLeast, object>? clearAtLeast,
+            global::G.MessagesRequestContextManagementEditsItemsOneOf0ClearAtLeast? clearAtLeast,
             global::G.MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputs? clearToolInputs,
             global::System.Collections.Generic.IList<string>? excludeTools,
             global::G.MessagesRequestContextManagementEditsItemsOneOf0Keep? keep,

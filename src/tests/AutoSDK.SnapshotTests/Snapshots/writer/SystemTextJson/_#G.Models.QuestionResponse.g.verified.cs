@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.QuestionResponse.g.cs
+//HintName: G.Models.QuestionResponse.g.cs
 
 #nullable enable
 
@@ -28,13 +28,13 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sources")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.Source> Sources { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.Source?> Sources { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("subqueries")]
-        public global::System.Collections.Generic.IList<global::G.SubQuery>? Subqueries { get; set; }
+        public global::System.Collections.Generic.IList<global::G.SubQuery?>? Subqueries { get; set; }
 
         /// <summary>
         /// Detailed source information organized by reference type, providing comprehensive metadata about the sources used to generate the response.
@@ -68,8 +68,8 @@ namespace G
         public QuestionResponse(
             string question,
             string answer,
-            global::System.Collections.Generic.IList<global::G.Source> sources,
-            global::System.Collections.Generic.IList<global::G.SubQuery>? subqueries,
+            global::System.Collections.Generic.IList<global::G.Source?> sources,
+            global::System.Collections.Generic.IList<global::G.SubQuery?>? subqueries,
             global::G.References? references)
         {
             this.Question = question ?? throw new global::System.ArgumentNullException(nameof(question));

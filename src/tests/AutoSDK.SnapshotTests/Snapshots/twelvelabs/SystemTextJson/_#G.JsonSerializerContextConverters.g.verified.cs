@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonSerializerContextConverters.g.cs
+//HintName: G.JsonSerializerContextConverters.g.cs
 
 #nullable enable
 
@@ -134,8 +134,6 @@ namespace G
             typeof(global::G.JsonConverters.EmbeddingTaskMediaMetadataJsonConverter),
             typeof(global::G.JsonConverters.StreamAnalyzeResponseJsonConverter),
             typeof(global::G.JsonConverters.AnalyzeResponse200JsonConverter),
-            typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.EmbeddingDataEmbeddingOption?, object>),
-            typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.EmbeddingDataEmbeddingScope?, object>),
             typeof(global::G.JsonConverters.UnixTimestampJsonConverter),
         };
     }

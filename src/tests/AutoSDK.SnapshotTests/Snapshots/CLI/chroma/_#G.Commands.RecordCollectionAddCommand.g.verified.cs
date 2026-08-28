@@ -1,4 +1,4 @@
-﻿//HintName: G.Commands.RecordCollectionAddCommand.g.cs
+//HintName: G.Commands.RecordCollectionAddCommand.g.cs
 
 #nullable enable
 
@@ -15,11 +15,11 @@ namespace G
             string tenant,
             string database,
             string collectionId,
-            global::System.Collections.Generic.IList<string>? documents,
+            global::System.Collections.Generic.IList<string?>? documents,
             global::G.EmbeddingsPayload embeddings,
             global::System.Collections.Generic.IList<string> ids,
-            global::System.Collections.Generic.IList<global::G.OneOf<object, global::G.HashMap>>? metadatas,
-            global::System.Collections.Generic.IList<string>? uris,
+            global::System.Collections.Generic.IList<global::G.HashMap?>? metadatas,
+            global::System.Collections.Generic.IList<string?>? uris,
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
@@ -57,19 +57,19 @@ namespace G
             Description = @"Unique identifiers for each record.",
         };
 
-        private global::System.CommandLine.Option<global::System.Collections.Generic.IList<string>?> Documents { get; } = new(
+        private global::System.CommandLine.Option<global::System.Collections.Generic.IList<string?>?> Documents { get; } = new(
             name: "documents")
         {
             Description = @"",
         };
 
-        private global::System.CommandLine.Option<global::System.Collections.Generic.IList<global::G.OneOf<object, global::G.HashMap>>?> Metadatas { get; } = new(
+        private global::System.CommandLine.Option<global::System.Collections.Generic.IList<global::G.HashMap?>?> Metadatas { get; } = new(
             name: "metadatas")
         {
             Description = @"",
         };
 
-        private global::System.CommandLine.Option<global::System.Collections.Generic.IList<string>?> Uris { get; } = new(
+        private global::System.CommandLine.Option<global::System.Collections.Generic.IList<string?>?> Uris { get; } = new(
             name: "uris")
         {
             Description = @"",

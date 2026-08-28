@@ -33,7 +33,7 @@ public static class CSharpTypeMapper
                 IsBaseClass = false,
                 IsDerivedClass = false,
                 IsValueType = false,
-                IsNullable = context.IsNullable || context.IsNullableAnyOf,
+                IsNullable = context.IsNullable || context.IsNullableAnyOfLike,
                 IsArray = false,
                 IsEnum = false,
                 IsOpenEnum = false,
@@ -86,7 +86,7 @@ public static class CSharpTypeMapper
                     IsBaseClass: false,
                     IsDerivedClass: false,
                     IsValueType: IsValueType(context),
-                    IsNullable: context.IsNullable || context.IsNullableAnyOf,
+                    IsNullable: context.IsNullable || context.IsNullableAnyOfLike,
                     IsArray: false,
                     IsEnum: false,
                     IsOpenEnum: false,
@@ -198,7 +198,7 @@ public static class CSharpTypeMapper
         }
 
         var type = cachedType ?? GetCSharpTypeCore(context, isArray, isAnyOf, isOneOf, isAllOf);
-        var isNullable = context.IsNullable || context.IsNullableAnyOf;
+        var isNullable = context.IsNullable || context.IsNullableAnyOfLike;
         var collapsed = (isAnyOf || isOneOf || isAllOf) && IsCollapsedAnyOfLike(context);
         var usesGeneratedJsonHelpers = ShouldUseGeneratedJsonHelpers(context, type, generatedNamespace);
 
@@ -353,7 +353,7 @@ public static class CSharpTypeMapper
         context = context ?? throw new ArgumentNullException(nameof(context));
 
         return context.IsNullable ||
-               context.IsNullableAnyOf ||
+               context.IsNullableAnyOfLike ||
                !context.IsRequired && additionalContext?.IsRequired != true;
     }
 
@@ -418,14 +418,14 @@ public static class CSharpTypeMapper
             (_, _) when context.Schema.IsUnixTimestamp() => "global::System.DateTimeOffset",
 
             (_, _) when isArray =>
-                $"{FindChildType(context.Children, Hint.ArrayItem)}".AsArray(),
+                $"{FindArrayItemType(context.Children)}".AsArray(),
             ("array", _) => "byte[]",
 
             (_, _) when context.IsNamedAnyOfLike => $"global::{generatedNamespace}.{context.Id}",
             (_, _) when context.IsDerivedClass => $"global::{generatedNamespace}.{context.Id}",
 
-            (_, _) when context.IsNullableAnyOf =>
-                FindNonNullAnyOfChildType(context.Children) ?? "object",
+            (_, _) when context.IsNullableAnyOfLike =>
+                FindNonNullAnyOfLikeChildType(context.Children) ?? "object",
 
             (_, _) when isAnyOf && !context.IsNamedAnyOfLike && GetDistinctChildTypes(context, Hint.AnyOf) is { Length: 1 } distinctAnyOf => distinctAnyOf[0],
             (_, _) when isOneOf && !context.IsNamedAnyOfLike && GetDistinctChildTypes(context, Hint.OneOf) is { Length: 1 } distinctOneOf => distinctOneOf[0],
@@ -521,20 +521,6 @@ public static class CSharpTypeMapper
         return string.IsNullOrWhiteSpace(normalized) ? null : normalized;
     }
 
-    private static string? FindChildType(IList<SchemaContext> children, Hint hint)
-    {
-        for (var i = 0; i < children.Count; i++)
-        {
-            var child = children[i];
-            if (child.Hint == hint && child.TypeData != TypeData.Default)
-            {
-                return child.TypeData.CSharpTypeWithoutNullability;
-            }
-        }
-
-        return null;
-    }
-
     private static string? FindChildCSharpType(IList<SchemaContext> children, Hint hint)
     {
         for (var i = 0; i < children.Count; i++)
@@ -548,12 +534,28 @@ public static class CSharpTypeMapper
         return null;
     }
 
-    private static string? FindNonNullAnyOfChildType(IList<SchemaContext> children)
+    private static string? FindArrayItemType(IList<SchemaContext> children)
     {
         for (var i = 0; i < children.Count; i++)
         {
             var child = children[i];
-            if (child.Hint == Hint.AnyOf && !child.Schema.IsNullType())
+            if (child.Hint == Hint.ArrayItem && child.TypeData != TypeData.Default)
+            {
+                return child.IsNullable || child.Schema.IsNullableOneOf()
+                    ? child.TypeData.CSharpTypeWithNullability
+                    : child.TypeData.CSharpTypeWithoutNullability;
+            }
+        }
+
+        return null;
+    }
+
+    private static string? FindNonNullAnyOfLikeChildType(IList<SchemaContext> children)
+    {
+        for (var i = 0; i < children.Count; i++)
+        {
+            var child = children[i];
+            if (child.Hint is (Hint.AnyOf or Hint.OneOf) && !child.Schema.IsNullType())
             {
                 return child.TypeData.CSharpTypeWithoutNullability;
             }

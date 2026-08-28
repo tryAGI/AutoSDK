@@ -1,4 +1,4 @@
-﻿//HintName: G.AgentsClient.CountAgents.g.cs
+//HintName: G.AgentsClient.CountAgents.g.cs
 
 #nullable enable
 
@@ -50,7 +50,7 @@ namespace G
             ref string? baseTemplateId,
             ref string? identityId,
             global::System.Collections.Generic.IList<string>? identifierKeys,
-            global::G.StopReasonType? lastStopReason);
+            ref global::G.StopReasonType? lastStopReason);
         partial void PrepareCountAgentsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -209,7 +209,7 @@ namespace G
                 baseTemplateId: ref baseTemplateId,
                 identityId: ref identityId,
                 identifierKeys: identifierKeys,
-                lastStopReason: lastStopReason);
+                lastStopReason: ref lastStopReason);
 
 
             var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(

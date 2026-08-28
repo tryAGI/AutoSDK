@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ProtectedBranchRequiredPullRequestReviewsDismissalRestrictions.g.cs
+//HintName: G.Models.ProtectedBranchRequiredPullRequestReviewsDismissalRestrictions.g.cs
 
 #nullable enable
 
@@ -48,7 +48,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("apps")]
-        public global::System.Collections.Generic.IList<global::G.Integration>? Apps { get; set; }
+        public global::System.Collections.Generic.IList<global::G.Integration?>? Apps { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -74,7 +74,7 @@ namespace G
             string teamsUrl,
             global::System.Collections.Generic.IList<global::G.SimpleUser> users,
             global::System.Collections.Generic.IList<global::G.Team> teams,
-            global::System.Collections.Generic.IList<global::G.Integration>? apps)
+            global::System.Collections.Generic.IList<global::G.Integration?>? apps)
         {
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
             this.UsersUrl = usersUrl ?? throw new global::System.ArgumentNullException(nameof(usersUrl));

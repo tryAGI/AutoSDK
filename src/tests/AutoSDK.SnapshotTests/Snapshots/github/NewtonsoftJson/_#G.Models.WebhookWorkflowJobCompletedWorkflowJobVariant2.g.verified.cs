@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.WebhookWorkflowJobCompletedWorkflowJobVariant2.g.cs
+//HintName: G.Models.WebhookWorkflowJobCompletedWorkflowJobVariant2.g.cs
 
 #nullable enable
 
@@ -56,7 +56,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("labels")]
-        public global::System.Collections.Generic.IList<string>? Labels { get; set; }
+        public global::System.Collections.Generic.IList<string?>? Labels { get; set; }
 
         /// <summary>
         /// 
@@ -140,7 +140,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("steps")]
-        public global::System.Collections.Generic.IList<object>? Steps { get; set; }
+        public global::System.Collections.Generic.IList<object?>? Steps { get; set; }
 
         /// <summary>
         /// 
@@ -194,7 +194,7 @@ namespace G
             string? headSha,
             string? htmlUrl,
             int? id,
-            global::System.Collections.Generic.IList<string>? labels,
+            global::System.Collections.Generic.IList<string?>? labels,
             string? name,
             string? nodeId,
             int? runAttempt,
@@ -208,7 +208,7 @@ namespace G
             string? status,
             string? headBranch,
             string? workflowName,
-            global::System.Collections.Generic.IList<object>? steps,
+            global::System.Collections.Generic.IList<object?>? steps,
             string? url)
         {
             this.CheckRunUrl = checkRunUrl;

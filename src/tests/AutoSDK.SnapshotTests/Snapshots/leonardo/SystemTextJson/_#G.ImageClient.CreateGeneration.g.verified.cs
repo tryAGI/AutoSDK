@@ -1,4 +1,4 @@
-﻿//HintName: G.ImageClient.CreateGeneration.g.cs
+//HintName: G.ImageClient.CreateGeneration.g.cs
 
 #nullable enable
 
@@ -574,7 +574,7 @@ namespace G
             int? height = default,
             bool? highContrast = default,
             bool? highResolution = default,
-            global::System.Collections.Generic.IList<string>? imagePrompts = default,
+            global::System.Collections.Generic.IList<string?>? imagePrompts = default,
             double? imagePromptWeight = default,
             string? initGenerationImageId = default,
             string? initImageId = default,

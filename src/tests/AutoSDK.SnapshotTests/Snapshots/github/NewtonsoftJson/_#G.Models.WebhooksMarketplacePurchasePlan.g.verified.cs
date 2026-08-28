@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.WebhooksMarketplacePurchasePlan.g.cs
+//HintName: G.Models.WebhooksMarketplacePurchasePlan.g.cs
 
 #nullable enable
 
@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("bullets", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<string> Bullets { get; set; } = default!;
+        public global::System.Collections.Generic.IList<string?> Bullets { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -83,7 +83,7 @@ namespace G
         /// <param name="yearlyPriceInCents"></param>
         /// <param name="unitName"></param>
         public WebhooksMarketplacePurchasePlan(
-            global::System.Collections.Generic.IList<string> bullets,
+            global::System.Collections.Generic.IList<string?> bullets,
             string description,
             bool hasFreeTrial,
             int id,

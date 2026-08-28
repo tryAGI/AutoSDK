@@ -1,4 +1,4 @@
-﻿//HintName: G.ISessionsClient.SessionsList.g.cs
+//HintName: G.ISessionsClient.SessionsList.g.cs
 #nullable enable
 
 namespace G
@@ -21,7 +21,7 @@ namespace G
             int? limit = default,
             global::System.DateTime? fromTimestamp = default,
             global::System.DateTime? toTimestamp = default,
-            global::System.Collections.Generic.IList<string>? environment = default,
+            global::System.Collections.Generic.IList<string?>? environment = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
@@ -40,7 +40,7 @@ namespace G
             int? limit = default,
             global::System.DateTime? fromTimestamp = default,
             global::System.DateTime? toTimestamp = default,
-            global::System.Collections.Generic.IList<string>? environment = default,
+            global::System.Collections.Generic.IList<string?>? environment = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

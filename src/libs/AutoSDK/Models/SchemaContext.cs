@@ -135,7 +135,7 @@ public class SchemaContext(
     private const byte HasAllOfFlag = 1 << 3;
     private const byte IsDerivedClassFlag = 1 << 4;
     private const byte IsNullableFlag = 1 << 5;
-    private const byte IsNullableAnyOfFlag = 1 << 6;
+    private const byte IsNullableAnyOfLikeFlag = 1 << 6;
     private const byte IsBinaryFlag = 1 << 7;
     private byte _cachedSchemaBooleans;
     private byte _cachedSchemaBooleanValues;
@@ -233,9 +233,9 @@ public class SchemaContext(
     public bool IsNullable => IsSchemaBooleanCached(IsNullableFlag)
         ? GetCachedSchemaBoolean(IsNullableFlag)
         : CacheSchemaBoolean(IsNullableFlag, Schema.IsNullable());
-    public bool IsNullableAnyOf => IsSchemaBooleanCached(IsNullableAnyOfFlag)
-        ? GetCachedSchemaBoolean(IsNullableAnyOfFlag)
-        : CacheSchemaBoolean(IsNullableAnyOfFlag, Schema.IsNullableAnyOf());
+    public bool IsNullableAnyOfLike => IsSchemaBooleanCached(IsNullableAnyOfLikeFlag)
+        ? GetCachedSchemaBoolean(IsNullableAnyOfLikeFlag)
+        : CacheSchemaBoolean(IsNullableAnyOfLikeFlag, Schema.IsNullableAnyOfLike());
     public bool IsBinary => IsSchemaBooleanCached(IsBinaryFlag)
         ? GetCachedSchemaBoolean(IsBinaryFlag)
         : CacheSchemaBoolean(IsBinaryFlag, Schema.IsBinary());
@@ -388,6 +388,16 @@ public class SchemaContext(
     
     private static string ComputeType(IOpenApiSchema schema, bool isComponent)
     {
+        if (schema.IsNullableAnyOfLike())
+        {
+            var variants = schema.AnyOf is { Count: > 0 } ? schema.AnyOf : schema.OneOf;
+            var nonNullSchema = variants?.First(x => !x.IsNullType()).ResolveIfRequired();
+            if (nonNullSchema is not null)
+            {
+                return ComputeType(nonNullSchema, isComponent: false);
+            }
+        }
+
         if (schema.IsEnum())
         {
             return "enum";

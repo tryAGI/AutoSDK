@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.SparseVectorValueType.g.cs
+//HintName: G.Models.SparseVectorValueType.g.cs
 
 #nullable enable
 
@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("sparse_vector_index")]
-        public global::G.OneOf<object, global::G.SparseVectorIndexType>? SparseVectorIndex { get; set; }
+        public global::G.SparseVectorIndexType? SparseVectorIndex { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -26,7 +26,7 @@ namespace G
         /// </summary>
         /// <param name="sparseVectorIndex"></param>
         public SparseVectorValueType(
-            global::G.OneOf<object, global::G.SparseVectorIndexType>? sparseVectorIndex)
+            global::G.SparseVectorIndexType? sparseVectorIndex)
         {
             this.SparseVectorIndex = sparseVectorIndex;
         }

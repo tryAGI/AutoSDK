@@ -1,4 +1,4 @@
-﻿//HintName: G.Api.g.cs
+//HintName: G.Api.g.cs
 
 #nullable enable
 
@@ -61,8 +61,8 @@ namespace G
                     new global::G.JsonConverters.RedactPiiAudioQualityNullableJsonConverter(),
                     new global::G.JsonConverters.PiiPolicyJsonConverter(),
                     new global::G.JsonConverters.PiiPolicyNullableJsonConverter(),
-                    new global::G.JsonConverters.SpeechModel2JsonConverter(),
-                    new global::G.JsonConverters.SpeechModel2NullableJsonConverter(),
+                    new global::G.JsonConverters.SpeechModelJsonConverter(),
+                    new global::G.JsonConverters.SpeechModelNullableJsonConverter(),
                     new global::G.JsonConverters.TranscriptLanguageCodeJsonConverter(),
                     new global::G.JsonConverters.TranscriptLanguageCodeNullableJsonConverter(),
                     new global::G.JsonConverters.TranscriptStatusJsonConverter(),
@@ -90,16 +90,8 @@ namespace G
                     new global::G.JsonConverters.LemurSummaryParamsJsonConverter(),
                     new global::G.JsonConverters.LemurQuestionAnswerParamsJsonConverter(),
                     new global::G.JsonConverters.LemurActionItemsParamsJsonConverter(),
-                    new global::G.JsonConverters.OneOfJsonConverter<global::G.AnyOf<global::G.TranscriptLanguageCode?, string>?, object>(),
                     new global::G.JsonConverters.AnyOfJsonConverter<global::G.TranscriptLanguageCode?, string>(),
-                    new global::G.JsonConverters.OneOfJsonConverter<global::G.SpeechModel2?, object>(),
-                    new global::G.JsonConverters.OneOfJsonConverter<global::G.SubstitutionPolicy?, object>(),
                     new global::G.JsonConverters.AnyOfJsonConverter<global::G.TranscriptLanguageCode?, string>(),
-                    new global::G.JsonConverters.OneOfJsonConverter<global::G.SpeechModel2?, object>(),
-                    new global::G.JsonConverters.OneOfJsonConverter<global::G.AutoHighlightsResult2, object>(),
-                    new global::G.JsonConverters.OneOfJsonConverter<global::G.RedactPiiAudioQuality?, object>(),
-                    new global::G.JsonConverters.OneOfJsonConverter<global::G.ContentSafetyLabelsResult, object>(),
-                    new global::G.JsonConverters.OneOfJsonConverter<global::G.TopicDetectionModelResult, object>(),
                     new global::G.JsonConverters.OneOfJsonConverter<string, object>(),
                     new global::G.JsonConverters.AnyOfJsonConverter<global::G.LemurModel?, string>(),
                     new global::G.JsonConverters.OneOfJsonConverter<string, object>(),

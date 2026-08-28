@@ -1,4 +1,4 @@
-﻿//HintName: G.BetaClient.ListBatchJobsApiV1BetaBatchProcessingGet.g.cs
+//HintName: G.BetaClient.ListBatchJobsApiV1BetaBatchProcessingGet.g.cs
 
 #nullable enable
 
@@ -29,8 +29,8 @@ namespace G
         partial void PrepareListBatchJobsApiV1BetaBatchProcessingGetArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? directoryId,
-            global::G.BatchJobType? jobType,
-            global::G.BatchJobStatus? status,
+            ref global::G.BatchJobType? jobType,
+            ref global::G.BatchJobStatus? status,
             ref int? limit,
             ref int? offset,
             global::System.Guid? projectId,
@@ -158,8 +158,8 @@ namespace G
             PrepareListBatchJobsApiV1BetaBatchProcessingGetArguments(
                 httpClient: HttpClient,
                 directoryId: ref directoryId,
-                jobType: jobType,
-                status: status,
+                jobType: ref jobType,
+                status: ref status,
                 limit: ref limit,
                 offset: ref offset,
                 projectId: projectId,

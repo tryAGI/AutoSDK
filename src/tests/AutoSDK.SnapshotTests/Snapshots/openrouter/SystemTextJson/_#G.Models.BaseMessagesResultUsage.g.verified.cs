@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.BaseMessagesResultUsage.g.cs
+//HintName: G.Models.BaseMessagesResultUsage.g.cs
 
 #nullable enable
 
@@ -39,9 +39,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_creation")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.BaseMessagesResultUsageCacheCreation, object>))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.OneOf<global::G.BaseMessagesResultUsageCacheCreation, object> CacheCreation { get; set; }
+        public global::G.BaseMessagesResultUsageCacheCreation? CacheCreation { get; set; }
 
         /// <summary>
         /// 
@@ -53,24 +51,19 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("server_tool_use")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.BaseMessagesResultUsageServerToolUse, object>))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.OneOf<global::G.BaseMessagesResultUsageServerToolUse, object> ServerToolUse { get; set; }
+        public global::G.BaseMessagesResultUsageServerToolUse? ServerToolUse { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("service_tier")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.BaseMessagesResultUsageServiceTier?, object>))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.OneOf<global::G.BaseMessagesResultUsageServiceTier?, object> ServiceTier { get; set; }
+        public global::G.BaseMessagesResultUsageServiceTier? ServiceTier { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("speed")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.BaseMessagesResultUsageSpeed?, object>))]
-        public global::G.OneOf<global::G.BaseMessagesResultUsageSpeed?, object>? Speed { get; set; }
+        public global::G.BaseMessagesResultUsageSpeed? Speed { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -83,12 +76,12 @@ namespace G
         /// </summary>
         /// <param name="inputTokens"></param>
         /// <param name="outputTokens"></param>
-        /// <param name="cacheCreation"></param>
-        /// <param name="serverToolUse"></param>
-        /// <param name="serviceTier"></param>
         /// <param name="cacheCreationInputTokens"></param>
         /// <param name="cacheReadInputTokens"></param>
+        /// <param name="cacheCreation"></param>
         /// <param name="inferenceGeo"></param>
+        /// <param name="serverToolUse"></param>
+        /// <param name="serviceTier"></param>
         /// <param name="speed"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -96,13 +89,13 @@ namespace G
         public BaseMessagesResultUsage(
             double inputTokens,
             double outputTokens,
-            global::G.OneOf<global::G.BaseMessagesResultUsageCacheCreation, object> cacheCreation,
-            global::G.OneOf<global::G.BaseMessagesResultUsageServerToolUse, object> serverToolUse,
-            global::G.OneOf<global::G.BaseMessagesResultUsageServiceTier?, object> serviceTier,
             double? cacheCreationInputTokens,
             double? cacheReadInputTokens,
+            global::G.BaseMessagesResultUsageCacheCreation? cacheCreation,
             string? inferenceGeo,
-            global::G.OneOf<global::G.BaseMessagesResultUsageSpeed?, object>? speed)
+            global::G.BaseMessagesResultUsageServerToolUse? serverToolUse,
+            global::G.BaseMessagesResultUsageServiceTier? serviceTier,
+            global::G.BaseMessagesResultUsageSpeed? speed)
         {
             this.InputTokens = inputTokens;
             this.OutputTokens = outputTokens;

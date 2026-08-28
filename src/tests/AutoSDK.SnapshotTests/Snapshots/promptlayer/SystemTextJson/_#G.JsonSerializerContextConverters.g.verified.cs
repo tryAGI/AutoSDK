@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonSerializerContextConverters.g.cs
+//HintName: G.JsonSerializerContextConverters.g.cs
 
 #nullable enable
 
@@ -192,7 +192,6 @@ namespace G
             typeof(global::G.JsonConverters.InputJsonConverter),
             typeof(global::G.JsonConverters.OutputJsonConverter),
             typeof(global::G.JsonConverters.PromptTemplate5JsonConverter),
-            typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.NodeUpdate, object>),
             typeof(global::G.JsonConverters.AnyOfJsonConverter<string, int?>),
             typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.WebAnnotation, global::G.FileAnnotation, global::G.MapAnnotation, global::G.ContainerFileAnnotation>),
             typeof(global::G.JsonConverters.AnyOfJsonConverter<string, object, object>),

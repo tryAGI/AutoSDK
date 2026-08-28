@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.MessagesRequestToolsItems4.g.cs
+//HintName: G.Models.MessagesRequestToolsItems4.g.cs
 
 #nullable enable
 
@@ -51,8 +51,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("user_location")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.MessagesRequestToolsItemsOneOf4UserLocation, object>))]
-        public global::G.OneOf<global::G.MessagesRequestToolsItemsOneOf4UserLocation, object>? UserLocation { get; set; }
+        public global::G.MessagesRequestToolsItemsOneOf4UserLocation? UserLocation { get; set; }
 
         /// <summary>
         /// 
@@ -87,7 +86,7 @@ namespace G
             global::System.Collections.Generic.IList<string>? allowedDomains,
             global::System.Collections.Generic.IList<string>? blockedDomains,
             double? maxUses,
-            global::G.OneOf<global::G.MessagesRequestToolsItemsOneOf4UserLocation, object>? userLocation,
+            global::G.MessagesRequestToolsItemsOneOf4UserLocation? userLocation,
             global::G.MessagesRequestToolsItemsOneOf4CacheControl? cacheControl)
         {
             this.Type = type;

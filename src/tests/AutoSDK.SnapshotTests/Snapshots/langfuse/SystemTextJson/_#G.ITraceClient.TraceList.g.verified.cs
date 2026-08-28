@@ -1,4 +1,4 @@
-﻿//HintName: G.ITraceClient.TraceList.g.cs
+//HintName: G.ITraceClient.TraceList.g.cs
 #nullable enable
 
 namespace G
@@ -34,10 +34,10 @@ namespace G
             global::System.DateTime? fromTimestamp = default,
             global::System.DateTime? toTimestamp = default,
             string? orderBy = default,
-            global::System.Collections.Generic.IList<string>? tags = default,
+            global::System.Collections.Generic.IList<string?>? tags = default,
             string? version = default,
             string? release = default,
-            global::System.Collections.Generic.IList<string>? environment = default,
+            global::System.Collections.Generic.IList<string?>? environment = default,
             string? fields = default,
             string? filter = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
@@ -71,10 +71,10 @@ namespace G
             global::System.DateTime? fromTimestamp = default,
             global::System.DateTime? toTimestamp = default,
             string? orderBy = default,
-            global::System.Collections.Generic.IList<string>? tags = default,
+            global::System.Collections.Generic.IList<string?>? tags = default,
             string? version = default,
             string? release = default,
-            global::System.Collections.Generic.IList<string>? environment = default,
+            global::System.Collections.Generic.IList<string?>? environment = default,
             string? fields = default,
             string? filter = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,

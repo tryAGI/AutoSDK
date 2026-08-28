@@ -1,4 +1,4 @@
-﻿//HintName: G.RunsClient.ListRuns.g.cs
+//HintName: G.RunsClient.ListRuns.g.cs
 
 #nullable enable
 
@@ -47,7 +47,7 @@ namespace G
             global::System.Collections.Generic.IList<string>? agentIds,
             global::System.Collections.Generic.IList<string>? statuses,
             bool? background,
-            global::G.StopReasonType? stopReason,
+            ref global::G.StopReasonType? stopReason,
             ref string? conversationId,
             ref string? before,
             ref string? after,
@@ -245,7 +245,7 @@ namespace G
                 agentIds: agentIds,
                 statuses: statuses,
                 background: background,
-                stopReason: stopReason,
+                stopReason: ref stopReason,
                 conversationId: ref conversationId,
                 before: ref before,
                 after: ref after,

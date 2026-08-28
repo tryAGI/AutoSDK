@@ -1,4 +1,4 @@
-﻿//HintName: G.ICollectionClient.CreateCollection.g.cs
+//HintName: G.ICollectionClient.CreateCollection.g.cs
 #nullable enable
 
 namespace G
@@ -63,10 +63,10 @@ namespace G
             string tenant,
             string database,
             string name,
-            global::G.OneOf<object, global::G.CollectionConfiguration>? configuration = default,
+            global::G.CollectionConfiguration? configuration = default,
             bool? getOrCreate = default,
-            global::G.OneOf<object, global::G.HashMap>? metadata = default,
-            global::G.OneOf<object, global::G.Schema3>? schema = default,
+            global::G.HashMap? metadata = default,
+            global::G.Schema? schema = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

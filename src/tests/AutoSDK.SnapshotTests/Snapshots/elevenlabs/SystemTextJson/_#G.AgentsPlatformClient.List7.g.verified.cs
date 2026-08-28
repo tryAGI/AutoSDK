@@ -1,4 +1,4 @@
-﻿//HintName: G.AgentsPlatformClient.List7.g.cs
+//HintName: G.AgentsPlatformClient.List7.g.cs
 
 #nullable enable
 
@@ -13,7 +13,7 @@ namespace G
             ref bool? showOnlyOwnedDocuments,
             global::System.Collections.Generic.IList<global::G.ToolTypeFilter>? types,
             ref global::G.SortDirection? sortDirection,
-            global::G.ToolSortBy? sortBy,
+            ref global::G.ToolSortBy? sortBy,
             ref string? cursor,
             ref string? xiApiKey);
         partial void PrepareList7Request(
@@ -150,7 +150,7 @@ namespace G
                 showOnlyOwnedDocuments: ref showOnlyOwnedDocuments,
                 types: types,
                 sortDirection: ref sortDirection,
-                sortBy: sortBy,
+                sortBy: ref sortBy,
                 cursor: ref cursor,
                 xiApiKey: ref xiApiKey);
 

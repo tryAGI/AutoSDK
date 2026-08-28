@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.WebhooksRelease1.g.cs
+//HintName: G.Models.WebhooksRelease1.g.cs
 
 #nullable enable
 
@@ -14,7 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("assets")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.WebhooksRelease1Asset> Assets { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.WebhooksRelease1Asset?> Assets { get; set; }
 
         /// <summary>
         /// 
@@ -181,7 +181,7 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public WebhooksRelease1(
-            global::System.Collections.Generic.IList<global::G.WebhooksRelease1Asset> assets,
+            global::System.Collections.Generic.IList<global::G.WebhooksRelease1Asset?> assets,
             string assetsUrl,
             bool draft,
             string htmlUrl,

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.DatasetEvent.g.cs
+//HintName: G.Models.DatasetEvent.g.cs
 
 #nullable enable
 
@@ -104,13 +104,13 @@ namespace G
         /// Optional list of comments attached to this event
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("comments")]
-        public global::System.Collections.Generic.IList<object>? Comments { get; set; }
+        public global::System.Collections.Generic.IList<object?>? Comments { get; set; }
 
         /// <summary>
         /// Optional list of audit entries attached to this event
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("audit_data")]
-        public global::System.Collections.Generic.IList<object>? AuditData { get; set; }
+        public global::System.Collections.Generic.IList<object?>? AuditData { get; set; }
 
         /// <summary>
         /// Facets for categorization (dictionary from facet id to value)
@@ -205,8 +205,8 @@ namespace G
             global::System.Collections.Generic.IList<string>? tags,
             bool? isRoot,
             global::G.ObjectReferenceNullish? origin,
-            global::System.Collections.Generic.IList<object>? comments,
-            global::System.Collections.Generic.IList<object>? auditData,
+            global::System.Collections.Generic.IList<object?>? comments,
+            global::System.Collections.Generic.IList<object?>? auditData,
             global::System.Collections.Generic.Dictionary<string, object?>? facets,
             global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<global::G.DatasetEventClassification>>? classifications)
         {

@@ -1,4 +1,4 @@
-﻿//HintName: G.SubpackageAnthropicMessagesClient.CreateMessages.g.cs
+//HintName: G.SubpackageAnthropicMessagesClient.CreateMessages.g.cs
 
 #nullable enable
 
@@ -755,8 +755,8 @@ namespace G
             global::G.MessagesOutputConfig? outputConfig = default,
             global::G.MessagesRequestCacheControl? cacheControl = default,
             bool? stream = default,
-            global::G.OneOf<global::G.MessagesRequestContextManagement, object>? contextManagement = default,
-            global::G.OneOf<global::G.MessagesRequestProvider, object>? provider = default,
+            global::G.MessagesRequestContextManagement? contextManagement = default,
+            global::G.MessagesRequestProvider? provider = default,
             global::System.Collections.Generic.IList<global::G.MessagesRequestPluginsItems>? plugins = default,
             string? user = default,
             string? sessionId = default,

@@ -1,4 +1,4 @@
-﻿//HintName: G.Api.g.cs
+//HintName: G.Api.g.cs
 
 #nullable enable
 
@@ -147,13 +147,6 @@ namespace G
                     new global::G.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<string>>(),
                     new global::G.JsonConverters.OneOfJsonConverter<bool?, global::G.ContentsRequestContext>(),
                     new global::G.JsonConverters.OneOfJsonConverter<bool?, global::G.CommonRequestContext>(),
-                    new global::G.JsonConverters.OneOfJsonConverter<global::G.EntityCompanyPropertiesFundingRound, object>(),
-                    new global::G.JsonConverters.OneOfJsonConverter<global::G.EntityCompanyPropertiesWorkforce, object>(),
-                    new global::G.JsonConverters.OneOfJsonConverter<global::G.EntityCompanyPropertiesHeadquarters, object>(),
-                    new global::G.JsonConverters.OneOfJsonConverter<global::G.EntityCompanyPropertiesFinancials, object>(),
-                    new global::G.JsonConverters.OneOfJsonConverter<global::G.EntityCompanyPropertiesWebTraffic, object>(),
-                    new global::G.JsonConverters.OneOfJsonConverter<global::G.EntityDateRange, object>(),
-                    new global::G.JsonConverters.OneOfJsonConverter<global::G.EntityPersonPropertiesCompanyRef, object>(),
                     new global::G.JsonConverters.AllOfJsonConverter<global::G.SearchRequest2, global::G.CommonRequest>(),
                     new global::G.JsonConverters.AllOfJsonConverter<global::G.FindSimilarRequest2, global::G.CommonRequest>(),
                     new global::G.JsonConverters.AllOfJsonConverter<global::G.GetContentsRequest2, global::G.ContentsRequest>(),

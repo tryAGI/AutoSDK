@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.HnswConfiguration.g.cs
+//HintName: G.Models.HnswConfiguration.g.cs
 
 #nullable enable
 
@@ -37,8 +37,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("space")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<object, global::G.Space2?>))]
-        public global::G.OneOf<object, global::G.Space2?>? Space { get; set; }
+        public global::G.Space? Space { get; set; }
 
         /// <summary>
         /// 
@@ -69,7 +68,7 @@ namespace G
             int? efSearch,
             int? maxNeighbors,
             double? resizeFactor,
-            global::G.OneOf<object, global::G.Space2?>? space,
+            global::G.Space? space,
             int? syncThreshold)
         {
             this.EfConstruction = efConstruction;

@@ -1,4 +1,4 @@
-﻿//HintName: G.GroupsClient.ListGroups.g.cs
+//HintName: G.GroupsClient.ListGroups.g.cs
 
 #nullable enable
 
@@ -41,7 +41,7 @@ namespace G
             };
         partial void PrepareListGroupsArguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::G.ManagerType? managerType,
+            ref global::G.ManagerType? managerType,
             ref string? before,
             ref string? after,
             int? limit,
@@ -171,7 +171,7 @@ namespace G
                 client: HttpClient);
             PrepareListGroupsArguments(
                 httpClient: HttpClient,
-                managerType: managerType,
+                managerType: ref managerType,
                 before: ref before,
                 after: ref after,
                 limit: limit,

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.FloatListValueType.g.cs
+//HintName: G.Models.FloatListValueType.g.cs
 
 #nullable enable
 
@@ -13,8 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("vector_index")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<object, global::G.VectorIndexType>))]
-        public global::G.OneOf<object, global::G.VectorIndexType>? VectorIndex { get; set; }
+        public global::G.VectorIndexType? VectorIndex { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -30,7 +29,7 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public FloatListValueType(
-            global::G.OneOf<object, global::G.VectorIndexType>? vectorIndex)
+            global::G.VectorIndexType? vectorIndex)
         {
             this.VectorIndex = vectorIndex;
         }

@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonSerializerContextTypes.g.cs
+//HintName: G.JsonSerializerContextTypes.g.cs
 
 #nullable enable
 
@@ -873,7 +873,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DocumentOptions2? Type211 { get; set; }
+        public global::G.DocumentOptions? Type211 { get; set; }
         /// <summary>
         /// 
         /// </summary>

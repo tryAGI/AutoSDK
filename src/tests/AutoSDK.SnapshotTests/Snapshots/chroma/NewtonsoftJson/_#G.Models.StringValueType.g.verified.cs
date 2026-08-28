@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.StringValueType.g.cs
+//HintName: G.Models.StringValueType.g.cs
 
 #nullable enable
 
@@ -13,13 +13,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("fts_index")]
-        public global::G.OneOf<object, global::G.FtsIndexType>? FtsIndex { get; set; }
+        public global::G.FtsIndexType? FtsIndex { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("string_inverted_index")]
-        public global::G.OneOf<object, global::G.StringInvertedIndexType>? StringInvertedIndex { get; set; }
+        public global::G.StringInvertedIndexType? StringInvertedIndex { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -33,8 +33,8 @@ namespace G
         /// <param name="ftsIndex"></param>
         /// <param name="stringInvertedIndex"></param>
         public StringValueType(
-            global::G.OneOf<object, global::G.FtsIndexType>? ftsIndex,
-            global::G.OneOf<object, global::G.StringInvertedIndexType>? stringInvertedIndex)
+            global::G.FtsIndexType? ftsIndex,
+            global::G.StringInvertedIndexType? stringInvertedIndex)
         {
             this.FtsIndex = ftsIndex;
             this.StringInvertedIndex = stringInvertedIndex;

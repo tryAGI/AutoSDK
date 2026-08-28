@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ModelArchitecture.g.cs
+//HintName: G.Models.ModelArchitecture.g.cs
 
 #nullable enable
 
@@ -20,8 +20,7 @@ namespace G
         /// Instruction format type
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("instruct_type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.ModelArchitectureInstructType?, object>))]
-        public global::G.OneOf<global::G.ModelArchitectureInstructType?, object>? InstructType { get; set; }
+        public global::G.ModelArchitectureInstructType? InstructType { get; set; }
 
         /// <summary>
         /// Primary modality of the model
@@ -74,7 +73,7 @@ namespace G
             global::System.Collections.Generic.IList<global::G.InputModality> inputModalities,
             global::System.Collections.Generic.IList<global::G.OutputModality> outputModalities,
             global::G.ModelGroup? tokenizer,
-            global::G.OneOf<global::G.ModelArchitectureInstructType?, object>? instructType,
+            global::G.ModelArchitectureInstructType? instructType,
             string? modality)
         {
             this.Tokenizer = tokenizer;

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.WebhooksMarketplacePurchasePlan.g.cs
+//HintName: G.Models.WebhooksMarketplacePurchasePlan.g.cs
 
 #nullable enable
 
@@ -14,7 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("bullets")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<string> Bullets { get; set; }
+        public required global::System.Collections.Generic.IList<string?> Bullets { get; set; }
 
         /// <summary>
         /// 
@@ -94,7 +94,7 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public WebhooksMarketplacePurchasePlan(
-            global::System.Collections.Generic.IList<string> bullets,
+            global::System.Collections.Generic.IList<string?> bullets,
             string description,
             bool hasFreeTrial,
             int id,

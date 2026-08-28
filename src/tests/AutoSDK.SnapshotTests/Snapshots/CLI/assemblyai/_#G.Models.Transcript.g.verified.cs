@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.Transcript.g.cs
+//HintName: G.Models.Transcript.g.cs
 
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -68,9 +68,7 @@ namespace G
         /// The speech model used for the transcription. When `null`, the default model is used.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("speech_model")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.SpeechModel2?, object>))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.OneOf<global::G.SpeechModel2?, object> SpeechModel { get; set; }
+        public global::G.SpeechModel? SpeechModel { get; set; }
 
         /// <summary>
         /// The textual transcript of your media file
@@ -174,8 +172,7 @@ namespace G
         /// See [Key Phrases](https://www.assemblyai.com/docs/models/key-phrases) for more information.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("auto_highlights_result")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.AutoHighlightsResult2, object>))]
-        public global::G.OneOf<global::G.AutoHighlightsResult2, object>? AutoHighlightsResult { get; set; }
+        public global::G.AutoHighlightsResult? AutoHighlightsResult { get; set; }
 
         /// <summary>
         /// The point in time, in milliseconds, in the file at which the transcription was started
@@ -226,8 +223,7 @@ namespace G
         /// See [PII redaction](https://www.assemblyai.com/docs/models/pii-redaction) for more information.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("redact_pii_audio_quality")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.RedactPiiAudioQuality?, object>))]
-        public global::G.OneOf<global::G.RedactPiiAudioQuality?, object>? RedactPiiAudioQuality { get; set; }
+        public global::G.RedactPiiAudioQuality? RedactPiiAudioQuality { get; set; }
 
         /// <summary>
         /// The list of PII Redaction policies that were enabled, if PII Redaction is enabled.<br/>
@@ -266,8 +262,7 @@ namespace G
         /// See [Content moderation](https://www.assemblyai.com/docs/models/content-moderation) for more information.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content_safety_labels")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.ContentSafetyLabelsResult, object>))]
-        public global::G.OneOf<global::G.ContentSafetyLabelsResult, object>? ContentSafetyLabels { get; set; }
+        public global::G.ContentSafetyLabelsResult? ContentSafetyLabels { get; set; }
 
         /// <summary>
         /// Whether [Topic Detection](https://www.assemblyai.com/docs/models/topic-detection) is enabled, can be true or false
@@ -280,8 +275,7 @@ namespace G
         /// See [Topic Detection](https://www.assemblyai.com/docs/models/topic-detection) for more information.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("iab_categories_result")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.TopicDetectionModelResult, object>))]
-        public global::G.OneOf<global::G.TopicDetectionModelResult, object>? IabCategoriesResult { get; set; }
+        public global::G.TopicDetectionModelResult? IabCategoriesResult { get; set; }
 
         /// <summary>
         /// Customize how words are spelled and formatted using to and from values
@@ -423,9 +417,6 @@ namespace G
         /// <param name="languageConfidence">
         /// The confidence score for the detected language, between 0.0 (low confidence) and 1.0 (high confidence)
         /// </param>
-        /// <param name="speechModel">
-        /// The speech model used for the transcription. When `null`, the default model is used.
-        /// </param>
         /// <param name="webhookAuth">
         /// Whether webhook authentication details were provided
         /// </param>
@@ -451,6 +442,9 @@ namespace G
         /// </param>
         /// <param name="languageDetection">
         /// Whether [Automatic language detection](https://www.assemblyai.com/docs/models/speech-recognition#automatic-language-detection) is enabled, either true or false
+        /// </param>
+        /// <param name="speechModel">
+        /// The speech model used for the transcription. When `null`, the default model is used.
         /// </param>
         /// <param name="text">
         /// The textual transcript of your media file
@@ -604,7 +598,6 @@ namespace G
             global::G.TranscriptStatus status,
             float languageConfidenceThreshold,
             double languageConfidence,
-            global::G.OneOf<global::G.SpeechModel2?, object> speechModel,
             bool webhookAuth,
             bool autoHighlights,
             bool redactPii,
@@ -613,6 +606,7 @@ namespace G
             string acousticModel,
             global::G.AnyOf<global::G.TranscriptLanguageCode?, string>? languageCode,
             object? languageDetection,
+            global::G.SpeechModel? speechModel,
             object? text,
             global::System.Collections.Generic.IList<global::G.TranscriptWord>? words,
             global::System.Collections.Generic.IList<global::G.TranscriptUtterance>? utterances,
@@ -625,22 +619,22 @@ namespace G
             string? webhookUrl,
             object? webhookStatusCode,
             object? webhookAuthHeaderName,
-            global::G.OneOf<global::G.AutoHighlightsResult2, object>? autoHighlightsResult,
+            global::G.AutoHighlightsResult? autoHighlightsResult,
             object? audioStartFrom,
             object? audioEndAt,
             global::System.Collections.Generic.IList<string>? wordBoost,
             object? boostParam,
             object? filterProfanity,
             object? redactPiiAudio,
-            global::G.OneOf<global::G.RedactPiiAudioQuality?, object>? redactPiiAudioQuality,
+            global::G.RedactPiiAudioQuality? redactPiiAudioQuality,
             global::System.Collections.Generic.IList<global::G.PiiPolicy>? redactPiiPolicies,
             global::G.SubstitutionPolicy? redactPiiSub,
             object? speakerLabels,
             object? speakersExpected,
             object? contentSafety,
-            global::G.OneOf<global::G.ContentSafetyLabelsResult, object>? contentSafetyLabels,
+            global::G.ContentSafetyLabelsResult? contentSafetyLabels,
             object? iabCategories,
-            global::G.OneOf<global::G.TopicDetectionModelResult, object>? iabCategoriesResult,
+            global::G.TopicDetectionModelResult? iabCategoriesResult,
             global::System.Collections.Generic.IList<global::G.TranscriptCustomSpelling>? customSpelling,
             object? autoChapters,
             global::System.Collections.Generic.IList<global::G.Chapter>? chapters,

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.WebSearchServerTool.g.cs
+//HintName: G.Models.WebSearchServerTool.g.cs
 
 #nullable enable
 
@@ -20,7 +20,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("filters")]
-        public global::G.OneOf<global::G.WebSearchServerToolFilters, object>? Filters { get; set; }
+        public global::G.WebSearchServerToolFilters? Filters { get; set; }
 
         /// <summary>
         /// Size of the search context for web search tools
@@ -73,7 +73,7 @@ namespace G
         /// </param>
         public WebSearchServerTool(
             global::G.WebSearchServerToolType type,
-            global::G.OneOf<global::G.WebSearchServerToolFilters, object>? filters,
+            global::G.WebSearchServerToolFilters? filters,
             global::G.SearchContextSizeEnum? searchContextSize,
             global::G.WebSearchUserLocation? userLocation,
             global::G.WebSearchServerToolEngine? engine,

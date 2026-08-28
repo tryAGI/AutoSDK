@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.BatchIngestRunsRequestPostItem.g.cs
+//HintName: G.Models.BatchIngestRunsRequestPostItem.g.cs
 
 #nullable enable
 
@@ -55,8 +55,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("error")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<string, object>))]
-        public global::G.OneOf<string, object>? Error { get; set; }
+        public string? Error { get; set; }
 
         /// <summary>
         /// 
@@ -74,22 +73,19 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("parent_run_id")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<global::System.Guid?, object>))]
-        public global::G.OneOf<global::System.Guid?, object>? ParentRunId { get; set; }
+        public global::System.Guid? ParentRunId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("events")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<global::System.Collections.Generic.IList<object>, object>))]
-        public global::G.OneOf<global::System.Collections.Generic.IList<object>, object>? Events { get; set; }
+        public global::System.Collections.Generic.IList<object>? Events { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tags")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<global::System.Collections.Generic.IList<string>, object>))]
-        public global::G.OneOf<global::System.Collections.Generic.IList<string>, object>? Tags { get; set; }
+        public global::System.Collections.Generic.IList<string>? Tags { get; set; }
 
         /// <summary>
         /// 
@@ -116,22 +112,19 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("session_id")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<global::System.Guid?, object>))]
-        public global::G.OneOf<global::System.Guid?, object>? SessionId { get; set; }
+        public global::System.Guid? SessionId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("session_name")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<string, object>))]
-        public global::G.OneOf<string, object>? SessionName { get; set; }
+        public string? SessionName { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("reference_example_id")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<global::System.Guid?, object>))]
-        public global::G.OneOf<global::System.Guid?, object>? ReferenceExampleId { get; set; }
+        public global::System.Guid? ReferenceExampleId { get; set; }
 
         /// <summary>
         /// 
@@ -187,15 +180,15 @@ namespace G
             object? inputs,
             global::G.OneOf<string, double?, object>? endTime,
             object? extra,
-            global::G.OneOf<string, object>? error,
+            string? error,
             object? serialized,
             object? outputs,
-            global::G.OneOf<global::System.Guid?, object>? parentRunId,
-            global::G.OneOf<global::System.Collections.Generic.IList<object>, object>? events,
-            global::G.OneOf<global::System.Collections.Generic.IList<string>, object>? tags,
-            global::G.OneOf<global::System.Guid?, object>? sessionId,
-            global::G.OneOf<string, object>? sessionName,
-            global::G.OneOf<global::System.Guid?, object>? referenceExampleId,
+            global::System.Guid? parentRunId,
+            global::System.Collections.Generic.IList<object>? events,
+            global::System.Collections.Generic.IList<string>? tags,
+            global::System.Guid? sessionId,
+            string? sessionName,
+            global::System.Guid? referenceExampleId,
             object? inputAttachments,
             object? outputAttachments)
         {

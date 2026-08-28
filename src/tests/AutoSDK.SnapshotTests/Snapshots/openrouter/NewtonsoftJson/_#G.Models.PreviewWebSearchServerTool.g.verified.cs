@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.PreviewWebSearchServerTool.g.cs
+//HintName: G.Models.PreviewWebSearchServerTool.g.cs
 
 #nullable enable
 
@@ -46,7 +46,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("filters")]
-        public global::G.OneOf<global::G.PreviewWebSearchServerToolFilters, object>? Filters { get; set; }
+        public global::G.PreviewWebSearchServerToolFilters? Filters { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -75,7 +75,7 @@ namespace G
             global::G.PreviewWebSearchUserLocation? userLocation,
             global::G.PreviewWebSearchServerToolEngine? engine,
             double? maxResults,
-            global::G.OneOf<global::G.PreviewWebSearchServerToolFilters, object>? filters)
+            global::G.PreviewWebSearchServerToolFilters? filters)
         {
             this.Type = type;
             this.SearchContextSize = searchContextSize;

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items4.g.cs
+//HintName: G.Models.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items4.g.cs
 
 #nullable enable
 
@@ -28,8 +28,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("citations")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1ItemsOneOf4Citations, object>))]
-        public global::G.OneOf<global::G.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1ItemsOneOf4Citations, object>? Citations { get; set; }
+        public global::G.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1ItemsOneOf4Citations? Citations { get; set; }
 
         /// <summary>
         /// 
@@ -70,7 +69,7 @@ namespace G
         public MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1Items4(
             global::G.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1ItemsOneOf4Source source,
             global::G.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1ItemsOneOf4Type type,
-            global::G.OneOf<global::G.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1ItemsOneOf4Citations, object>? citations,
+            global::G.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1ItemsOneOf4Citations? citations,
             string? context,
             string? title,
             global::G.MessagesMessageParamContentOneOf1ItemsOneOf4ContentOneOf1ItemsOneOf4CacheControl? cacheControl)

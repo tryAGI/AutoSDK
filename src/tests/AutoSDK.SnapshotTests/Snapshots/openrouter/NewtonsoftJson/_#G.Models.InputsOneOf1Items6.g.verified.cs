@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.InputsOneOf1Items6.g.cs
+//HintName: G.Models.InputsOneOf1Items6.g.cs
 
 #nullable enable
 
@@ -56,7 +56,7 @@ namespace G
         /// The format of the reasoning content
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("format")]
-        public global::G.OneOf<global::G.OutputReasoningItemFormat?, object>? Format { get; set; }
+        public global::G.OutputReasoningItemFormat? Format { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -87,7 +87,7 @@ namespace G
             string? encryptedContent,
             global::G.OutputItemReasoningStatus? status,
             string? signature,
-            global::G.OneOf<global::G.OutputReasoningItemFormat?, object>? format)
+            global::G.OutputReasoningItemFormat? format)
         {
             this.Type = type;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));

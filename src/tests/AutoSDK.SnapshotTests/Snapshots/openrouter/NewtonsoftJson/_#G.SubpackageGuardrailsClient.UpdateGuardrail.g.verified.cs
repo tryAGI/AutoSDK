@@ -1,4 +1,4 @@
-﻿//HintName: G.SubpackageGuardrailsClient.UpdateGuardrail.g.cs
+//HintName: G.SubpackageGuardrailsClient.UpdateGuardrail.g.cs
 
 #nullable enable
 
@@ -628,7 +628,7 @@ namespace G
             string? name = default,
             string? description = default,
             double? limitUsd = default,
-            global::G.OneOf<global::G.GuardrailsIdPatchRequestBodyContentApplicationJsonSchemaResetInterval?, object>? resetInterval = default,
+            global::G.GuardrailsIdPatchRequestBodyContentApplicationJsonSchemaResetInterval? resetInterval = default,
             global::System.Collections.Generic.IList<string>? allowedProviders = default,
             global::System.Collections.Generic.IList<string>? ignoredProviders = default,
             global::System.Collections.Generic.IList<string>? allowedModels = default,

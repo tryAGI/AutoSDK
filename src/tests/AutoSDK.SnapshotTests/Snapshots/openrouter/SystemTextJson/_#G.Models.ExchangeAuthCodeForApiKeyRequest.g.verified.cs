@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ExchangeAuthCodeForApiKeyRequest.g.cs
+//HintName: G.Models.ExchangeAuthCodeForApiKeyRequest.g.cs
 
 #nullable enable
 
@@ -26,8 +26,7 @@ namespace G
         /// The method used to generate the code challenge
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("code_challenge_method")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.AuthKeysPostRequestBodyContentApplicationJsonSchemaCodeChallengeMethod?, object>))]
-        public global::G.OneOf<global::G.AuthKeysPostRequestBodyContentApplicationJsonSchemaCodeChallengeMethod?, object>? CodeChallengeMethod { get; set; }
+        public global::G.AuthKeysPostRequestBodyContentApplicationJsonSchemaCodeChallengeMethod? CodeChallengeMethod { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -53,7 +52,7 @@ namespace G
         public ExchangeAuthCodeForApiKeyRequest(
             string code,
             string? codeVerifier,
-            global::G.OneOf<global::G.AuthKeysPostRequestBodyContentApplicationJsonSchemaCodeChallengeMethod?, object>? codeChallengeMethod)
+            global::G.AuthKeysPostRequestBodyContentApplicationJsonSchemaCodeChallengeMethod? codeChallengeMethod)
         {
             this.Code = code ?? throw new global::System.ArgumentNullException(nameof(code));
             this.CodeVerifier = codeVerifier;

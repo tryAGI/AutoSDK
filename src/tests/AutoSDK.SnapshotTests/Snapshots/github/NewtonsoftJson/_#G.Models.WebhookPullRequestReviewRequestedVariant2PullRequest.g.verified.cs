@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.WebhookPullRequestReviewRequestedVariant2PullRequest.g.cs
+//HintName: G.Models.WebhookPullRequestReviewRequestedVariant2PullRequest.g.cs
 
 #nullable enable
 
@@ -38,7 +38,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("assignees", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.WebhookPullRequestReviewRequestedVariant2PullRequestAssignee2> Assignees { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.WebhookPullRequestReviewRequestedVariant2PullRequestAssignee2?> Assignees { get; set; } = default!;
 
         /// <summary>
         /// How the author is associated with the repository.
@@ -375,7 +375,7 @@ namespace G
         /// <param name="user"></param>
         public WebhookPullRequestReviewRequestedVariant2PullRequest(
             global::G.WebhookPullRequestReviewRequestedVariant2PullRequestLinks links,
-            global::System.Collections.Generic.IList<global::G.WebhookPullRequestReviewRequestedVariant2PullRequestAssignee2> assignees,
+            global::System.Collections.Generic.IList<global::G.WebhookPullRequestReviewRequestedVariant2PullRequestAssignee2?> assignees,
             global::G.WebhookPullRequestReviewRequestedVariant2PullRequestAuthorAssociation authorAssociation,
             global::G.WebhookPullRequestReviewRequestedVariant2PullRequestBase @base,
             string commentsUrl,

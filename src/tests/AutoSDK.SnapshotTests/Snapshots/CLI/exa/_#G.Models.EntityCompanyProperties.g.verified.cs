@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.EntityCompanyProperties.g.cs
+//HintName: G.Models.EntityCompanyProperties.g.cs
 
 #nullable enable
 
@@ -37,29 +37,25 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("workforce")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.EntityCompanyPropertiesWorkforce, object>))]
-        public global::G.OneOf<global::G.EntityCompanyPropertiesWorkforce, object>? Workforce { get; set; }
+        public global::G.EntityCompanyPropertiesWorkforce? Workforce { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("headquarters")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.EntityCompanyPropertiesHeadquarters, object>))]
-        public global::G.OneOf<global::G.EntityCompanyPropertiesHeadquarters, object>? Headquarters { get; set; }
+        public global::G.EntityCompanyPropertiesHeadquarters? Headquarters { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("financials")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.EntityCompanyPropertiesFinancials, object>))]
-        public global::G.OneOf<global::G.EntityCompanyPropertiesFinancials, object>? Financials { get; set; }
+        public global::G.EntityCompanyPropertiesFinancials? Financials { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("webTraffic")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.EntityCompanyPropertiesWebTraffic, object>))]
-        public global::G.OneOf<global::G.EntityCompanyPropertiesWebTraffic, object>? WebTraffic { get; set; }
+        public global::G.EntityCompanyPropertiesWebTraffic? WebTraffic { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -93,10 +89,10 @@ namespace G
             string? name,
             int? foundedYear,
             string? description,
-            global::G.OneOf<global::G.EntityCompanyPropertiesWorkforce, object>? workforce,
-            global::G.OneOf<global::G.EntityCompanyPropertiesHeadquarters, object>? headquarters,
-            global::G.OneOf<global::G.EntityCompanyPropertiesFinancials, object>? financials,
-            global::G.OneOf<global::G.EntityCompanyPropertiesWebTraffic, object>? webTraffic)
+            global::G.EntityCompanyPropertiesWorkforce? workforce,
+            global::G.EntityCompanyPropertiesHeadquarters? headquarters,
+            global::G.EntityCompanyPropertiesFinancials? financials,
+            global::G.EntityCompanyPropertiesWebTraffic? webTraffic)
         {
             this.Name = name;
             this.FoundedYear = foundedYear;

@@ -1,4 +1,4 @@
-﻿//HintName: G.OrgsClient.GetDashboard.g.cs
+//HintName: G.OrgsClient.GetDashboard.g.cs
 
 #nullable enable
 
@@ -61,7 +61,7 @@ namespace G
         partial void PrepareGetDashboardArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::G.OrganizationDashboardType type,
-            global::G.OrganizationDashboardColorScheme? colorScheme);
+            ref global::G.OrganizationDashboardColorScheme? colorScheme);
         partial void PrepareGetDashboardRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -122,7 +122,7 @@ namespace G
             PrepareGetDashboardArguments(
                 httpClient: HttpClient,
                 type: ref type,
-                colorScheme: colorScheme);
+                colorScheme: ref colorScheme);
 
 
             var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(

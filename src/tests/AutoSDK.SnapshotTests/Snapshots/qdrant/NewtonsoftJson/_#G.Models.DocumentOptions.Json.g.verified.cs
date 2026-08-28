@@ -1,9 +1,9 @@
-﻿//HintName: G.Models.DocumentOptions.Json.g.cs
+//HintName: G.Models.DocumentOptions.Json.g.cs
 #nullable enable
 
 namespace G
 {
-    public sealed partial class DocumentOptions
+    public readonly partial struct DocumentOptions
     {
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

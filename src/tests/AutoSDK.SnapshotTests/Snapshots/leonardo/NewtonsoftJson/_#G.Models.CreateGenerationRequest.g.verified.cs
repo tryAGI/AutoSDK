@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.CreateGenerationRequest.g.cs
+//HintName: G.Models.CreateGenerationRequest.g.cs
 
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -77,7 +77,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("imagePrompts")]
-        public global::System.Collections.Generic.IList<string>? ImagePrompts { get; set; }
+        public global::System.Collections.Generic.IList<string?>? ImagePrompts { get; set; }
 
         /// <summary>
         /// 
@@ -433,7 +433,7 @@ namespace G
             int? height,
             bool? highContrast,
             bool? highResolution,
-            global::System.Collections.Generic.IList<string>? imagePrompts,
+            global::System.Collections.Generic.IList<string?>? imagePrompts,
             double? imagePromptWeight,
             string? initGenerationImageId,
             string? initImageId,

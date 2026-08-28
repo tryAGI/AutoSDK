@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.RunEvalDataDatasetRows.g.cs
+//HintName: G.Models.RunEvalDataDatasetRows.g.cs
 
 #nullable enable
 
@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("data", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<object> Data { get; set; } = default!;
+        public global::System.Collections.Generic.IList<object?> Data { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -26,7 +26,7 @@ namespace G
         /// </summary>
         /// <param name="data"></param>
         public RunEvalDataDatasetRows(
-            global::System.Collections.Generic.IList<object> data)
+            global::System.Collections.Generic.IList<object?> data)
         {
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
         }

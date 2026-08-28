@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.SubQuery.g.cs
+//HintName: G.Models.SubQuery.g.cs
 
 #nullable enable
 
@@ -25,7 +25,7 @@ namespace G
         /// Array of source snippets that were used to answer this subquery.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("sources", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.Source> Sources { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.Source?> Sources { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -48,7 +48,7 @@ namespace G
         public SubQuery(
             string query,
             string answer,
-            global::System.Collections.Generic.IList<global::G.Source> sources)
+            global::System.Collections.Generic.IList<global::G.Source?> sources)
         {
             this.Query = query ?? throw new global::System.ArgumentNullException(nameof(query));
             this.Answer = answer ?? throw new global::System.ArgumentNullException(nameof(answer));

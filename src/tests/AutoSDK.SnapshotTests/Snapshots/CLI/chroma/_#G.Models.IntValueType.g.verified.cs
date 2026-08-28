@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.IntValueType.g.cs
+//HintName: G.Models.IntValueType.g.cs
 
 #nullable enable
 
@@ -13,8 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("int_inverted_index")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<object, global::G.IntInvertedIndexType>))]
-        public global::G.OneOf<object, global::G.IntInvertedIndexType>? IntInvertedIndex { get; set; }
+        public global::G.IntInvertedIndexType? IntInvertedIndex { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -30,7 +29,7 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public IntValueType(
-            global::G.OneOf<object, global::G.IntInvertedIndexType>? intInvertedIndex)
+            global::G.IntInvertedIndexType? intInvertedIndex)
         {
             this.IntInvertedIndex = intInvertedIndex;
         }

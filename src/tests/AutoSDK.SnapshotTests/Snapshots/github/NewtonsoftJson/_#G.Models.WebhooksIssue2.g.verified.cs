@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.WebhooksIssue2.g.cs
+//HintName: G.Models.WebhooksIssue2.g.cs
 
 #nullable enable
 
@@ -26,7 +26,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("assignees", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.WebhooksIssue2Assignee2> Assignees { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.WebhooksIssue2Assignee2?> Assignees { get; set; } = default!;
 
         /// <summary>
         /// How the author is associated with the repository.
@@ -246,7 +246,7 @@ namespace G
         /// <param name="timelineUrl"></param>
         /// <param name="user"></param>
         public WebhooksIssue2(
-            global::System.Collections.Generic.IList<global::G.WebhooksIssue2Assignee2> assignees,
+            global::System.Collections.Generic.IList<global::G.WebhooksIssue2Assignee2?> assignees,
             global::G.WebhooksIssue2AuthorAssociation authorAssociation,
             int comments,
             string commentsUrl,

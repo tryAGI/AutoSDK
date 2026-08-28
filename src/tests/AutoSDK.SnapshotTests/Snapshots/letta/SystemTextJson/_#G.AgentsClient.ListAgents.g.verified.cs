@@ -1,4 +1,4 @@
-﻿//HintName: G.AgentsClient.ListAgents.g.cs
+//HintName: G.AgentsClient.ListAgents.g.cs
 
 #nullable enable
 
@@ -61,7 +61,7 @@ namespace G
             ref global::G.ListAgentsOrderBy? orderBy,
             ref bool? ascending,
             ref string? sortBy,
-            global::G.StopReasonType? lastStopReason);
+            ref global::G.StopReasonType? lastStopReason);
         partial void PrepareListAgentsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -329,7 +329,7 @@ namespace G
                 orderBy: ref orderBy,
                 ascending: ref ascending,
                 sortBy: ref sortBy,
-                lastStopReason: lastStopReason);
+                lastStopReason: ref lastStopReason);
 
 
             var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(

@@ -1,9 +1,9 @@
-﻿//HintName: G.Models.DocumentOptions.Json.g.cs
+//HintName: G.Models.DocumentOptions.Json.g.cs
 #nullable enable
 
 namespace G
 {
-    public sealed partial class DocumentOptions
+    public readonly partial struct DocumentOptions
     {
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
@@ -42,7 +42,7 @@ namespace G
             return global::System.Text.Json.JsonSerializer.Deserialize(
                 json,
                 typeof(global::G.DocumentOptions),
-                jsonSerializerContext) as global::G.DocumentOptions;
+                jsonSerializerContext) as global::G.DocumentOptions?;
         }
 
         /// <summary>
@@ -71,7 +71,7 @@ namespace G
             return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
                 jsonStream,
                 typeof(global::G.DocumentOptions),
-                jsonSerializerContext).ConfigureAwait(false)) as global::G.DocumentOptions;
+                jsonSerializerContext).ConfigureAwait(false)) as global::G.DocumentOptions?;
         }
 
         /// <summary>

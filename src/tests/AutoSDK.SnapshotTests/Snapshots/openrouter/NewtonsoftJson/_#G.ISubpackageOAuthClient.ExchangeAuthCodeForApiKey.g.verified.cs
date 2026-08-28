@@ -1,4 +1,4 @@
-﻿//HintName: G.ISubpackageOAuthClient.ExchangeAuthCodeForApiKey.g.cs
+//HintName: G.ISubpackageOAuthClient.ExchangeAuthCodeForApiKey.g.cs
 #nullable enable
 
 namespace G
@@ -50,7 +50,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.OAuthExchangeAuthCodeForAPIKeyResponse200> ExchangeAuthCodeForApiKeyAsync(
             string code,
             string? codeVerifier = default,
-            global::G.OneOf<global::G.AuthKeysPostRequestBodyContentApplicationJsonSchemaCodeChallengeMethod?, object>? codeChallengeMethod = default,
+            global::G.AuthKeysPostRequestBodyContentApplicationJsonSchemaCodeChallengeMethod? codeChallengeMethod = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.UpdateEmbeddingsPayload.g.cs
+//HintName: G.Models.UpdateEmbeddingsPayload.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -14,9 +14,9 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>? UpdateEmbeddingsPayloadVariant1 { get; init; }
+        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>?>? UpdateEmbeddingsPayloadVariant1 { get; init; }
 #else
-        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>? UpdateEmbeddingsPayloadVariant1 { get; }
+        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>?>? UpdateEmbeddingsPayloadVariant1 { get; }
 #endif
 
         /// <summary>
@@ -34,7 +34,7 @@ namespace G
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>? value)
+            out global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>?>? value)
         {
             value = UpdateEmbeddingsPayloadVariant1;
             return IsUpdateEmbeddingsPayloadVariant1;
@@ -43,7 +43,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>> PickUpdateEmbeddingsPayloadVariant1() => IsUpdateEmbeddingsPayloadVariant1
+        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>?> PickUpdateEmbeddingsPayloadVariant1() => IsUpdateEmbeddingsPayloadVariant1
             ? UpdateEmbeddingsPayloadVariant1!
             : throw new global::System.InvalidOperationException($"Expected union variant 'UpdateEmbeddingsPayloadVariant1' but the value was {ToString()}.");
 
@@ -51,9 +51,9 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::System.Collections.Generic.IList<string>? UpdateEmbeddingsPayloadVariant2 { get; init; }
+        public global::System.Collections.Generic.IList<string?>? UpdateEmbeddingsPayloadVariant2 { get; init; }
 #else
-        public global::System.Collections.Generic.IList<string>? UpdateEmbeddingsPayloadVariant2 { get; }
+        public global::System.Collections.Generic.IList<string?>? UpdateEmbeddingsPayloadVariant2 { get; }
 #endif
 
         /// <summary>
@@ -71,7 +71,7 @@ namespace G
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::System.Collections.Generic.IList<string>? value)
+            out global::System.Collections.Generic.IList<string?>? value)
         {
             value = UpdateEmbeddingsPayloadVariant2;
             return IsUpdateEmbeddingsPayloadVariant2;
@@ -80,7 +80,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<string> PickUpdateEmbeddingsPayloadVariant2() => IsUpdateEmbeddingsPayloadVariant2
+        public global::System.Collections.Generic.IList<string?> PickUpdateEmbeddingsPayloadVariant2() => IsUpdateEmbeddingsPayloadVariant2
             ? UpdateEmbeddingsPayloadVariant2!
             : throw new global::System.InvalidOperationException($"Expected union variant 'UpdateEmbeddingsPayloadVariant2' but the value was {ToString()}.");
 
@@ -88,8 +88,8 @@ namespace G
         /// 
         /// </summary>
         public UpdateEmbeddingsPayload(
-            global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>? updateEmbeddingsPayloadVariant1,
-            global::System.Collections.Generic.IList<string>? updateEmbeddingsPayloadVariant2
+            global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>?>? updateEmbeddingsPayloadVariant1,
+            global::System.Collections.Generic.IList<string?>? updateEmbeddingsPayloadVariant2
             )
         {
             UpdateEmbeddingsPayloadVariant1 = updateEmbeddingsPayloadVariant1;
@@ -124,8 +124,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>, TResult>? updateEmbeddingsPayloadVariant1 = null,
-            global::System.Func<global::System.Collections.Generic.IList<string>, TResult>? updateEmbeddingsPayloadVariant2 = null,
+            global::System.Func<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>?>, TResult>? updateEmbeddingsPayloadVariant1 = null,
+            global::System.Func<global::System.Collections.Generic.IList<string?>, TResult>? updateEmbeddingsPayloadVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -149,9 +149,9 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>>? updateEmbeddingsPayloadVariant1 = null,
+            global::System.Action<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>?>>? updateEmbeddingsPayloadVariant1 = null,
 
-            global::System.Action<global::System.Collections.Generic.IList<string>>? updateEmbeddingsPayloadVariant2 = null,
+            global::System.Action<global::System.Collections.Generic.IList<string?>>? updateEmbeddingsPayloadVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -173,8 +173,8 @@ namespace G
         /// 
         /// </summary>
         public void Switch(
-            global::System.Action<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>>? updateEmbeddingsPayloadVariant1 = null,
-            global::System.Action<global::System.Collections.Generic.IList<string>>? updateEmbeddingsPayloadVariant2 = null,
+            global::System.Action<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>?>>? updateEmbeddingsPayloadVariant1 = null,
+            global::System.Action<global::System.Collections.Generic.IList<string?>>? updateEmbeddingsPayloadVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -200,9 +200,9 @@ namespace G
             var fields = new object?[]
             {
                 UpdateEmbeddingsPayloadVariant1,
-                typeof(global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>),
+                typeof(global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>?>),
                 UpdateEmbeddingsPayloadVariant2,
-                typeof(global::System.Collections.Generic.IList<string>),
+                typeof(global::System.Collections.Generic.IList<string?>),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -219,8 +219,8 @@ namespace G
         public bool Equals(UpdateEmbeddingsPayload other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>?>.Default.Equals(UpdateEmbeddingsPayloadVariant1, other.UpdateEmbeddingsPayloadVariant1) &&
-                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<string>?>.Default.Equals(UpdateEmbeddingsPayloadVariant2, other.UpdateEmbeddingsPayloadVariant2) 
+                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>?>?>.Default.Equals(UpdateEmbeddingsPayloadVariant1, other.UpdateEmbeddingsPayloadVariant1) &&
+                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<string?>?>.Default.Equals(UpdateEmbeddingsPayloadVariant2, other.UpdateEmbeddingsPayloadVariant2) 
                 ;
         }
 

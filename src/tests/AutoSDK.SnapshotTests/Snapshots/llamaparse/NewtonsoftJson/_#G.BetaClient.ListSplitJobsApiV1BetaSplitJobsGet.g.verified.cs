@@ -1,4 +1,4 @@
-﻿//HintName: G.BetaClient.ListSplitJobsApiV1BetaSplitJobsGet.g.cs
+//HintName: G.BetaClient.ListSplitJobsApiV1BetaSplitJobsGet.g.cs
 
 #nullable enable
 
@@ -28,7 +28,7 @@ namespace G
             };
         partial void PrepareListSplitJobsApiV1BetaSplitJobsGetArguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::G.ListSplitJobsApiV1BetaSplitJobsGetStatus2? status,
+            ref global::G.ListSplitJobsApiV1BetaSplitJobsGetStatus2? status,
             global::System.Collections.Generic.IList<string>? jobIds,
             global::System.DateTime? createdAtOnOrAfter,
             global::System.DateTime? createdAtOnOrBefore,
@@ -154,7 +154,7 @@ namespace G
                 client: HttpClient);
             PrepareListSplitJobsApiV1BetaSplitJobsGetArguments(
                 httpClient: HttpClient,
-                status: status,
+                status: ref status,
                 jobIds: jobIds,
                 createdAtOnOrAfter: createdAtOnOrAfter,
                 createdAtOnOrBefore: createdAtOnOrBefore,

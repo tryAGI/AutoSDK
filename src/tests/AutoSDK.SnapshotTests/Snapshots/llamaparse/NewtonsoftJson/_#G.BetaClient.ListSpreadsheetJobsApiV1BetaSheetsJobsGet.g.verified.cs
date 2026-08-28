@@ -1,4 +1,4 @@
-﻿//HintName: G.BetaClient.ListSpreadsheetJobsApiV1BetaSheetsJobsGet.g.cs
+//HintName: G.BetaClient.ListSpreadsheetJobsApiV1BetaSheetsJobsGet.g.cs
 
 #nullable enable
 
@@ -29,7 +29,7 @@ namespace G
         partial void PrepareListSpreadsheetJobsApiV1BetaSheetsJobsGetArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref bool? includeResults,
-            global::G.StatusEnum? status,
+            ref global::G.StatusEnum? status,
             global::System.DateTime? createdAtOnOrAfter,
             global::System.DateTime? createdAtOnOrBefore,
             global::System.Collections.Generic.IList<string>? jobIds,
@@ -166,7 +166,7 @@ namespace G
             PrepareListSpreadsheetJobsApiV1BetaSheetsJobsGetArguments(
                 httpClient: HttpClient,
                 includeResults: ref includeResults,
-                status: status,
+                status: ref status,
                 createdAtOnOrAfter: createdAtOnOrAfter,
                 createdAtOnOrBefore: createdAtOnOrBefore,
                 jobIds: jobIds,

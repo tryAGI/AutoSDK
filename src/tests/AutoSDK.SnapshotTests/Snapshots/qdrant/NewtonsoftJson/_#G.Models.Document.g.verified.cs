@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.Document.g.cs
+//HintName: G.Models.Document.g.cs
 
 #nullable enable
 
@@ -30,7 +30,7 @@ namespace G
         /// Additional options for the model, will be passed to the inference service as-is. See model cards for available options.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("options")]
-        public global::G.DocumentOptions2? Options { get; set; }
+        public global::G.DocumentOptions? Options { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -55,7 +55,7 @@ namespace G
         public Document(
             string text,
             string model,
-            global::G.DocumentOptions2? options)
+            global::G.DocumentOptions? options)
         {
             this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
             this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));

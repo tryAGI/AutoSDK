@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.LegacyWebSearchServerTool.g.cs
+//HintName: G.Models.LegacyWebSearchServerTool.g.cs
 
 #nullable enable
 
@@ -20,8 +20,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("filters")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.LegacyWebSearchServerToolFilters, object>))]
-        public global::G.OneOf<global::G.LegacyWebSearchServerToolFilters, object>? Filters { get; set; }
+        public global::G.LegacyWebSearchServerToolFilters? Filters { get; set; }
 
         /// <summary>
         /// Size of the search context for web search tools
@@ -77,7 +76,7 @@ namespace G
 #endif
         public LegacyWebSearchServerTool(
             global::G.LegacyWebSearchServerToolType type,
-            global::G.OneOf<global::G.LegacyWebSearchServerToolFilters, object>? filters,
+            global::G.LegacyWebSearchServerToolFilters? filters,
             global::G.SearchContextSizeEnum? searchContextSize,
             global::G.WebSearchUserLocation? userLocation,
             global::G.LegacyWebSearchServerToolEngine? engine,

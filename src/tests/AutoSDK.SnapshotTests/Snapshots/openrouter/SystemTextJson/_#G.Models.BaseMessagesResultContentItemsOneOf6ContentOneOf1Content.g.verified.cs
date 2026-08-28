@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.BaseMessagesResultContentItemsOneOf6ContentOneOf1Content.g.cs
+//HintName: G.Models.BaseMessagesResultContentItemsOneOf6ContentOneOf1Content.g.cs
 
 #nullable enable
 
@@ -13,9 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("citations")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.BaseMessagesResultContentItemsOneOf6ContentOneOf1ContentCitations, object>))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.OneOf<global::G.BaseMessagesResultContentItemsOneOf6ContentOneOf1ContentCitations, object> Citations { get; set; }
+        public global::G.BaseMessagesResultContentItemsOneOf6ContentOneOf1ContentCitations? Citations { get; set; }
 
         /// <summary>
         /// 
@@ -47,16 +45,16 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="BaseMessagesResultContentItemsOneOf6ContentOneOf1Content" /> class.
         /// </summary>
-        /// <param name="citations"></param>
         /// <param name="source"></param>
+        /// <param name="citations"></param>
         /// <param name="title"></param>
         /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BaseMessagesResultContentItemsOneOf6ContentOneOf1Content(
-            global::G.OneOf<global::G.BaseMessagesResultContentItemsOneOf6ContentOneOf1ContentCitations, object> citations,
             global::G.BaseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource source,
+            global::G.BaseMessagesResultContentItemsOneOf6ContentOneOf1ContentCitations? citations,
             string? title,
             global::G.BaseMessagesResultContentItemsOneOf6ContentOneOf1ContentType type)
         {

@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonSerializerContextTypes.g.cs
+//HintName: G.JsonSerializerContextTypes.g.cs
 
 #nullable enable
 
@@ -929,435 +929,427 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OneOf<global::G.EmbeddingDataEmbeddingOption?, object>? Type225 { get; set; }
+        public global::G.EmbeddingImageMetadataInputType? Type225 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OneOf<global::G.EmbeddingDataEmbeddingScope?, object>? Type226 { get; set; }
+        public global::G.EmbeddingImageMetadata? Type226 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.EmbeddingImageMetadataInputType? Type227 { get; set; }
+        public global::G.EmbeddingTextImageMetadataInputType? Type227 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.EmbeddingImageMetadata? Type228 { get; set; }
+        public global::G.EmbeddingTextImageMetadata? Type228 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.EmbeddingTextImageMetadataInputType? Type229 { get; set; }
+        public global::G.EmbeddingAudioMetadataInputType? Type229 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.EmbeddingTextImageMetadata? Type230 { get; set; }
+        public global::G.EmbeddingAudioMetadataEmbeddingScopesItems? Type230 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.EmbeddingAudioMetadataInputType? Type231 { get; set; }
+        public global::G.EmbeddingAudioMetadata? Type231 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.EmbeddingAudioMetadataEmbeddingScopesItems? Type232 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.EmbeddingAudioMetadataEmbeddingScopesItems>? Type232 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.EmbeddingAudioMetadata? Type233 { get; set; }
+        public global::G.EmbeddingVideoMetadataInputType? Type233 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.EmbeddingAudioMetadataEmbeddingScopesItems>? Type234 { get; set; }
+        public global::G.EmbeddingVideoMetadataEmbeddingScopesItems? Type234 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.EmbeddingVideoMetadataInputType? Type235 { get; set; }
+        public global::G.EmbeddingVideoMetadata? Type235 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.EmbeddingVideoMetadataEmbeddingScopesItems? Type236 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.EmbeddingVideoMetadataEmbeddingScopesItems>? Type236 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.EmbeddingVideoMetadata? Type237 { get; set; }
+        public global::G.EmbeddingMultiInputMetadataInputType? Type237 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.EmbeddingVideoMetadataEmbeddingScopesItems>? Type238 { get; set; }
+        public global::G.EmbeddingMultiInputMetadata? Type238 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.EmbeddingMultiInputMetadataInputType? Type239 { get; set; }
+        public global::G.EmbeddingMediaMetadata? Type239 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.EmbeddingMultiInputMetadata? Type240 { get; set; }
+        public global::G.EmbeddingSuccessResponse? Type240 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.EmbeddingMediaMetadata? Type241 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.EmbeddingData>? Type241 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.EmbeddingSuccessResponse? Type242 { get; set; }
+        public global::G.ErrorResponseError? Type242 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.EmbeddingData>? Type243 { get; set; }
+        public global::G.ErrorResponse? Type243 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ErrorResponseError? Type244 { get; set; }
+        public global::G.CreateAsyncEmbeddingRequestInputType? Type244 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ErrorResponse? Type245 { get; set; }
+        public global::G.CreateAsyncEmbeddingRequestModelName? Type245 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateAsyncEmbeddingRequestInputType? Type246 { get; set; }
+        public global::G.CreateAsyncEmbeddingRequest? Type246 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateAsyncEmbeddingRequestModelName? Type247 { get; set; }
+        public global::G.EmbedV2TasksPostResponsesContentApplicationJsonSchemaStatus? Type247 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateAsyncEmbeddingRequest? Type248 { get; set; }
+        public global::G.EmbedV2TasksCreateResponse202? Type248 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.EmbedV2TasksPostResponsesContentApplicationJsonSchemaStatus? Type249 { get; set; }
+        public global::G.VideoEmbeddingMetadata? Type249 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.EmbedV2TasksCreateResponse202? Type250 { get; set; }
+        public global::G.MediaEmbeddingTaskVideoEmbedding? Type250 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.VideoEmbeddingMetadata? Type251 { get; set; }
+        public global::G.AudioEmbeddingMetadata? Type251 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MediaEmbeddingTaskVideoEmbedding? Type252 { get; set; }
+        public global::G.MediaEmbeddingTaskAudioEmbedding? Type252 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AudioEmbeddingMetadata? Type253 { get; set; }
+        public global::G.MediaEmbeddingTask? Type253 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MediaEmbeddingTaskAudioEmbedding? Type254 { get; set; }
+        public global::G.EmbedV2TasksGetResponsesContentApplicationJsonSchemaPageInfo? Type254 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MediaEmbeddingTask? Type255 { get; set; }
+        public global::G.EmbedV2TasksListResponse200? Type255 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.EmbedV2TasksGetResponsesContentApplicationJsonSchemaPageInfo? Type256 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.MediaEmbeddingTask>? Type256 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.EmbedV2TasksListResponse200? Type257 { get; set; }
+        public global::G.ListAsyncEmbeddingTasksRequestBadRequestError? Type257 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.MediaEmbeddingTask>? Type258 { get; set; }
+        public global::G.EmbeddingTaskResponseStatus? Type258 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ListAsyncEmbeddingTasksRequestBadRequestError? Type259 { get; set; }
+        public global::G.EmbeddingTaskMediaMetadata? Type259 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.EmbeddingTaskResponseStatus? Type260 { get; set; }
+        public global::G.EmbeddingTaskResponse? Type260 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.EmbeddingTaskMediaMetadata? Type261 { get; set; }
+        public global::G.EmbedTasksPostRequestBodyContentMultipartFormDataSchemaVideoEmbeddingScopeItems? Type261 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.EmbeddingTaskResponse? Type262 { get; set; }
+        public global::G.EmbedTasksCreateResponse200? Type262 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.EmbedTasksPostRequestBodyContentMultipartFormDataSchemaVideoEmbeddingScopeItems? Type263 { get; set; }
+        public global::G.CreateVideoEmbeddingTaskRequestBadRequestError? Type263 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.EmbedTasksCreateResponse200? Type264 { get; set; }
+        public global::G.EmbedTasksGetResponsesContentApplicationJsonSchemaPageInfo? Type264 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateVideoEmbeddingTaskRequestBadRequestError? Type265 { get; set; }
+        public global::G.EmbedTasksListResponse200? Type265 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.EmbedTasksGetResponsesContentApplicationJsonSchemaPageInfo? Type266 { get; set; }
+        public global::G.ListVideoEmbeddingTasksRequestBadRequestError? Type266 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.EmbedTasksListResponse200? Type267 { get; set; }
+        public global::G.EmbedTasksTaskIdStatusGetResponsesContentApplicationJsonSchemaVideoEmbedding? Type267 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ListVideoEmbeddingTasksRequestBadRequestError? Type268 { get; set; }
+        public global::G.EmbedTasksStatusResponse200? Type268 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.EmbedTasksTaskIdStatusGetResponsesContentApplicationJsonSchemaVideoEmbedding? Type269 { get; set; }
+        public global::G.RetrieveVideoEmbeddingTaskRequestBadRequestError? Type269 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.EmbedTasksStatusResponse200? Type270 { get; set; }
+        public global::G.EmbedTasksTaskIdGetParametersEmbeddingOptionSchemaItems? Type270 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RetrieveVideoEmbeddingTaskRequestBadRequestError? Type271 { get; set; }
+        public global::G.VideoEmbeddingTaskVideoEmbedding? Type271 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.EmbedTasksTaskIdGetParametersEmbeddingOptionSchemaItems? Type272 { get; set; }
+        public global::G.EmbedTasksTaskIdGetResponsesContentApplicationJsonSchemaVideoEmbedding? Type272 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.VideoEmbeddingTaskVideoEmbedding? Type273 { get; set; }
+        public global::G.EmbedTasksRetrieveResponse200? Type273 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.EmbedTasksTaskIdGetResponsesContentApplicationJsonSchemaVideoEmbedding? Type274 { get; set; }
+        public global::G.RetrieveVideoEmbeddingRequestBadRequestError? Type274 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.EmbedTasksRetrieveResponse200? Type275 { get; set; }
+        public global::G.BaseSegment? Type275 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RetrieveVideoEmbeddingRequestBadRequestError? Type276 { get; set; }
+        public global::G.TextEmbeddingResult? Type276 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BaseSegment? Type277 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.BaseSegment>? Type277 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TextEmbeddingResult? Type278 { get; set; }
+        public global::G.BaseEmbeddingMetadata? Type278 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.BaseSegment>? Type279 { get; set; }
+        public global::G.ImageEmbeddingResult? Type279 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BaseEmbeddingMetadata? Type280 { get; set; }
+        public global::G.AudioSegment? Type280 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ImageEmbeddingResult? Type281 { get; set; }
+        public global::G.AudioEmbeddingResult? Type281 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AudioSegment? Type282 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.AudioSegment>? Type282 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AudioEmbeddingResult? Type283 { get; set; }
+        public global::G.EmbeddingResponse? Type283 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.AudioSegment>? Type284 { get; set; }
+        public global::G.CreateTextImageAudioEmbeddingRequestBadRequestError? Type284 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.EmbeddingResponse? Type285 { get; set; }
+        public global::G.ResponseFormatType? Type285 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateTextImageAudioEmbeddingRequestBadRequestError? Type286 { get; set; }
+        public global::G.ResponseFormatJsonSchema? Type286 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponseFormatType? Type287 { get; set; }
+        public global::G.ResponseFormat? Type287 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponseFormatJsonSchema? Type288 { get; set; }
+        public global::G.StreamStartResponseEventType? Type288 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponseFormat? Type289 { get; set; }
+        public global::G.StreamStartResponseMetadata? Type289 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.StreamStartResponseEventType? Type290 { get; set; }
+        public global::G.StreamStartResponse? Type290 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.StreamStartResponseMetadata? Type291 { get; set; }
+        public global::G.StreamTextResponseEventType? Type291 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.StreamStartResponse? Type292 { get; set; }
+        public global::G.StreamTextResponse? Type292 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.StreamTextResponseEventType? Type293 { get; set; }
+        public global::G.StreamEndResponseEventType? Type293 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.StreamTextResponse? Type294 { get; set; }
+        public global::G.FinishReason? Type294 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.StreamEndResponseEventType? Type295 { get; set; }
+        public global::G.TokenUsage? Type295 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.FinishReason? Type296 { get; set; }
+        public global::G.StreamEndResponseMetadata? Type296 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TokenUsage? Type297 { get; set; }
+        public global::G.StreamEndResponse? Type297 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.StreamEndResponseMetadata? Type298 { get; set; }
+        public global::G.StreamAnalyzeResponse? Type298 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.StreamEndResponse? Type299 { get; set; }
+        public global::G.NonStreamAnalyzeResponse? Type299 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.StreamAnalyzeResponse? Type300 { get; set; }
+        public global::G.AnalyzeResponse200? Type300 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.NonStreamAnalyzeResponse? Type301 { get; set; }
+        public global::G.GenerateTextRepresentationRequestBadRequestError? Type301 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnalyzeResponse200? Type302 { get; set; }
+        public global::G.CreateRequest? Type302 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GenerateTextRepresentationRequestBadRequestError? Type303 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.IndexesPostRequestBodyContentApplicationJsonSchemaModelsItems>? Type303 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateRequest? Type304 { get; set; }
+        public global::G.UpdateRequest? Type304 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.IndexesPostRequestBodyContentApplicationJsonSchemaModelsItems>? Type305 { get; set; }
+        public global::G.CreateRequest2? Type305 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.UpdateRequest? Type306 { get; set; }
+        public global::G.CreateRequest3? Type306 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateRequest2? Type307 { get; set; }
+        public global::G.CreateRequest4? Type307 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateRequest3? Type308 { get; set; }
+        public global::G.UpdateRequest2? Type308 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateRequest4? Type309 { get; set; }
+        public global::G.UpdateRequest3? Type309 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.UpdateRequest2? Type310 { get; set; }
+        public global::G.CreateRequest5? Type310 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.UpdateRequest3? Type311 { get; set; }
+        public global::G.UpdateRequest4? Type311 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateRequest5? Type312 { get; set; }
+        public global::G.CreateRequest6? Type312 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.UpdateRequest4? Type313 { get; set; }
+        public global::G.CreateBulkRequest? Type313 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateRequest6? Type314 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.EntityCollectionsEntityCollectionIdEntitiesBulkPostRequestBodyContentApplicationJsonSchemaEntitiesItems>? Type314 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateBulkRequest? Type315 { get; set; }
+        public global::G.UpdateRequest5? Type315 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.EntityCollectionsEntityCollectionIdEntitiesBulkPostRequestBodyContentApplicationJsonSchemaEntitiesItems>? Type316 { get; set; }
+        public global::G.CreateAssetsRequest? Type316 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.UpdateRequest5? Type317 { get; set; }
+        public global::G.DeleteAssetsRequest? Type317 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateAssetsRequest? Type318 { get; set; }
+        public global::G.CreateRequest7? Type318 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DeleteAssetsRequest? Type319 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.SearchPostRequestBodyContentMultipartFormDataSchemaSearchOptionsItems>? Type319 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateRequest7? Type320 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.SearchPostRequestBodyContentMultipartFormDataSchemaTranscriptionOptionsItems>? Type320 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.SearchPostRequestBodyContentMultipartFormDataSchemaSearchOptionsItems>? Type321 { get; set; }
+        public global::G.CreateRequest8? Type321 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.SearchPostRequestBodyContentMultipartFormDataSchemaTranscriptionOptionsItems>? Type322 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.EmbedTasksPostRequestBodyContentMultipartFormDataSchemaVideoEmbeddingScopeItems>? Type322 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateRequest8? Type323 { get; set; }
+        public global::G.CreateRequest9? Type323 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.EmbedTasksPostRequestBodyContentMultipartFormDataSchemaVideoEmbeddingScopeItems>? Type324 { get; set; }
+        public global::G.AnalyzeRequest? Type324 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateRequest9? Type325 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.AssetsGetParametersAssetTypesSchemaItems>? Type325 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnalyzeRequest? Type326 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.TasksGetParametersStatusSchemaItems>? Type326 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.AssetsGetParametersAssetTypesSchemaItems>? Type327 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.IndexesIndexIdIndexedAssetsGetParametersStatusSchemaItems>? Type327 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.TasksGetParametersStatusSchemaItems>? Type328 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.IndexesIndexIdIndexedAssetsIndexedAssetIdGetParametersEmbeddingOptionSchemaItems>? Type328 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.IndexesIndexIdIndexedAssetsGetParametersStatusSchemaItems>? Type329 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.IndexesIndexIdVideosVideoIdGetParametersEmbeddingOptionSchemaItems>? Type329 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.IndexesIndexIdIndexedAssetsIndexedAssetIdGetParametersEmbeddingOptionSchemaItems>? Type330 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::System.Collections.Generic.IList<global::G.IndexesIndexIdVideosVideoIdGetParametersEmbeddingOptionSchemaItems>? Type331 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::System.Collections.Generic.IList<global::G.EmbedTasksTaskIdGetParametersEmbeddingOptionSchemaItems>? Type332 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.EmbedTasksTaskIdGetParametersEmbeddingOptionSchemaItems>? Type330 { get; set; }
 
         /// <summary>
         /// 

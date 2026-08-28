@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.WebhookPullRequestReviewCommentDeletedPullRequest.g.cs
+//HintName: G.Models.WebhookPullRequestReviewCommentDeletedPullRequest.g.cs
 
 #nullable enable
 
@@ -34,7 +34,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("assignees")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.WebhookPullRequestReviewCommentDeletedPullRequestAssignee2> Assignees { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.WebhookPullRequestReviewCommentDeletedPullRequestAssignee2?> Assignees { get; set; }
 
         /// <summary>
         /// How the author is associated with the repository.
@@ -310,7 +310,7 @@ namespace G
 #endif
         public WebhookPullRequestReviewCommentDeletedPullRequest(
             global::G.WebhookPullRequestReviewCommentDeletedPullRequestLinks links,
-            global::System.Collections.Generic.IList<global::G.WebhookPullRequestReviewCommentDeletedPullRequestAssignee2> assignees,
+            global::System.Collections.Generic.IList<global::G.WebhookPullRequestReviewCommentDeletedPullRequestAssignee2?> assignees,
             global::G.WebhookPullRequestReviewCommentDeletedPullRequestAuthorAssociation authorAssociation,
             global::G.WebhookPullRequestReviewCommentDeletedPullRequestBase @base,
             string commentsUrl,

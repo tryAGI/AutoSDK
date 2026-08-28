@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.QuestionResponse.g.cs
+//HintName: G.Models.QuestionResponse.g.cs
 
 #nullable enable
 
@@ -25,13 +25,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("sources", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.Source> Sources { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.Source?> Sources { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("subqueries")]
-        public global::System.Collections.Generic.IList<global::G.SubQuery>? Subqueries { get; set; }
+        public global::System.Collections.Generic.IList<global::G.SubQuery?>? Subqueries { get; set; }
 
         /// <summary>
         /// Detailed source information organized by reference type, providing comprehensive metadata about the sources used to generate the response.
@@ -62,8 +62,8 @@ namespace G
         public QuestionResponse(
             string question,
             string answer,
-            global::System.Collections.Generic.IList<global::G.Source> sources,
-            global::System.Collections.Generic.IList<global::G.SubQuery>? subqueries,
+            global::System.Collections.Generic.IList<global::G.Source?> sources,
+            global::System.Collections.Generic.IList<global::G.SubQuery?>? subqueries,
             global::G.References? references)
         {
             this.Question = question ?? throw new global::System.ArgumentNullException(nameof(question));

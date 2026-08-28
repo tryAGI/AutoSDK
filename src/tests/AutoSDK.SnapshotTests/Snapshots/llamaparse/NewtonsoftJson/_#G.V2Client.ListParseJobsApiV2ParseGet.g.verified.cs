@@ -1,4 +1,4 @@
-﻿//HintName: G.V2Client.ListParseJobsApiV2ParseGet.g.cs
+//HintName: G.V2Client.ListParseJobsApiV2ParseGet.g.cs
 
 #nullable enable
 
@@ -30,7 +30,7 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             int? pageSize,
             ref string? pageToken,
-            global::G.ListParseJobsApiV2ParseGetStatus2? status,
+            ref global::G.ListParseJobsApiV2ParseGetStatus2? status,
             global::System.DateTime? createdAtOnOrAfter,
             global::System.DateTime? createdAtOnOrBefore,
             global::System.Collections.Generic.IList<string>? jobIds,
@@ -168,7 +168,7 @@ namespace G
                 httpClient: HttpClient,
                 pageSize: pageSize,
                 pageToken: ref pageToken,
-                status: status,
+                status: ref status,
                 createdAtOnOrAfter: createdAtOnOrAfter,
                 createdAtOnOrBefore: createdAtOnOrBefore,
                 jobIds: jobIds,

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.KPIProjectSegment.g.cs
+//HintName: G.Models.KPIProjectSegment.g.cs
 
 #nullable enable
 
@@ -22,7 +22,7 @@ namespace G
         /// Array of KPI values, one per project (parallel to projects array). Can be numbers or strings depending on KPI type.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("values", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<string> Values { get; set; } = default!;
+        public global::System.Collections.Generic.IList<string?> Values { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -41,7 +41,7 @@ namespace G
         /// </param>
         public KPIProjectSegment(
             global::System.Collections.Generic.IList<global::G.KPIProjectInfo> projects,
-            global::System.Collections.Generic.IList<string> values)
+            global::System.Collections.Generic.IList<string?> values)
         {
             this.Projects = projects ?? throw new global::System.ArgumentNullException(nameof(projects));
             this.Values = values ?? throw new global::System.ArgumentNullException(nameof(values));

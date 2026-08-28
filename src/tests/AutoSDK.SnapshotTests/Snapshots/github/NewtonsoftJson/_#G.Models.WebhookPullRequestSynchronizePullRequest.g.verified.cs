@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.WebhookPullRequestSynchronizePullRequest.g.cs
+//HintName: G.Models.WebhookPullRequestSynchronizePullRequest.g.cs
 
 #nullable enable
 
@@ -38,7 +38,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("assignees", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.WebhookPullRequestSynchronizePullRequestAssignee2> Assignees { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.WebhookPullRequestSynchronizePullRequestAssignee2?> Assignees { get; set; } = default!;
 
         /// <summary>
         /// How the author is associated with the repository.
@@ -375,7 +375,7 @@ namespace G
         /// <param name="user"></param>
         public WebhookPullRequestSynchronizePullRequest(
             global::G.WebhookPullRequestSynchronizePullRequestLinks links,
-            global::System.Collections.Generic.IList<global::G.WebhookPullRequestSynchronizePullRequestAssignee2> assignees,
+            global::System.Collections.Generic.IList<global::G.WebhookPullRequestSynchronizePullRequestAssignee2?> assignees,
             global::G.WebhookPullRequestSynchronizePullRequestAuthorAssociation authorAssociation,
             global::G.WebhookPullRequestSynchronizePullRequestBase @base,
             string commentsUrl,

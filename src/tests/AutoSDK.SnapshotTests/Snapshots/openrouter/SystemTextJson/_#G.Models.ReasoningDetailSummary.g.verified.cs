@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ReasoningDetailSummary.g.cs
+//HintName: G.Models.ReasoningDetailSummary.g.cs
 
 #nullable enable
 
@@ -33,8 +33,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("format")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.ReasoningDetailSummaryFormat?, object>))]
-        public global::G.OneOf<global::G.ReasoningDetailSummaryFormat?, object>? Format { get; set; }
+        public global::G.ReasoningDetailSummaryFormat? Format { get; set; }
 
         /// <summary>
         /// 
@@ -63,7 +62,7 @@ namespace G
             string summary,
             global::G.ReasoningDetailSummaryType type,
             string? id,
-            global::G.OneOf<global::G.ReasoningDetailSummaryFormat?, object>? format,
+            global::G.ReasoningDetailSummaryFormat? format,
             double? index)
         {
             this.Type = type;

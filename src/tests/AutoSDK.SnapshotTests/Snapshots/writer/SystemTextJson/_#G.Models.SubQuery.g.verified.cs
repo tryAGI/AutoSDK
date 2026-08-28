@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.SubQuery.g.cs
+//HintName: G.Models.SubQuery.g.cs
 
 #nullable enable
 
@@ -28,7 +28,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sources")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.Source> Sources { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.Source?> Sources { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -54,7 +54,7 @@ namespace G
         public SubQuery(
             string query,
             string answer,
-            global::System.Collections.Generic.IList<global::G.Source> sources)
+            global::System.Collections.Generic.IList<global::G.Source?> sources)
         {
             this.Query = query ?? throw new global::System.ArgumentNullException(nameof(query));
             this.Answer = answer ?? throw new global::System.ArgumentNullException(nameof(answer));

@@ -1,4 +1,4 @@
-﻿//HintName: G.FilesClient.FilesApiRoutesListFiles.g.cs
+//HintName: G.FilesClient.FilesApiRoutesListFiles.g.cs
 
 #nullable enable
 
@@ -33,7 +33,7 @@ namespace G
             global::System.Collections.Generic.IList<global::G.SampleType>? sampleType,
             global::System.Collections.Generic.IList<global::G.Source>? source,
             ref string? search,
-            global::G.FilePurpose? purpose);
+            ref global::G.FilePurpose? purpose);
         partial void PrepareFilesApiRoutesListFilesRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -128,7 +128,7 @@ namespace G
                 sampleType: sampleType,
                 source: source,
                 search: ref search,
-                purpose: purpose);
+                purpose: ref purpose);
 
 
             var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(

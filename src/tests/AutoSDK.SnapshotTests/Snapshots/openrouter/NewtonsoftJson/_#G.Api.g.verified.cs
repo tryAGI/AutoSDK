@@ -1,4 +1,4 @@
-﻿//HintName: G.Api.g.cs
+//HintName: G.Api.g.cs
 
 #nullable enable
 
@@ -1925,9 +1925,9 @@ namespace G
 
                     new global::G.JsonConverters.ModelsGetParametersCategoryNullableJsonConverter(),
 
-                    new global::G.JsonConverters.InstructType2JsonConverter(),
+                    new global::G.JsonConverters.InstructTypeJsonConverter(),
 
-                    new global::G.JsonConverters.InstructType2NullableJsonConverter(),
+                    new global::G.JsonConverters.InstructTypeNullableJsonConverter(),
 
                     new global::G.JsonConverters.EndpointStatusJsonConverter(),
 

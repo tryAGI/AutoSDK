@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ChatUsage.g.cs
+//HintName: G.Models.ChatUsage.g.cs
 
 #nullable enable
 
@@ -34,15 +34,13 @@ namespace G
         /// Detailed completion token usage
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("completion_tokens_details")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.ChatUsageCompletionTokensDetails, object>))]
-        public global::G.OneOf<global::G.ChatUsageCompletionTokensDetails, object>? CompletionTokensDetails { get; set; }
+        public global::G.ChatUsageCompletionTokensDetails? CompletionTokensDetails { get; set; }
 
         /// <summary>
         /// Detailed prompt token usage
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt_tokens_details")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.ChatUsagePromptTokensDetails, object>))]
-        public global::G.OneOf<global::G.ChatUsagePromptTokensDetails, object>? PromptTokensDetails { get; set; }
+        public global::G.ChatUsagePromptTokensDetails? PromptTokensDetails { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -75,8 +73,8 @@ namespace G
             double completionTokens,
             double promptTokens,
             double totalTokens,
-            global::G.OneOf<global::G.ChatUsageCompletionTokensDetails, object>? completionTokensDetails,
-            global::G.OneOf<global::G.ChatUsagePromptTokensDetails, object>? promptTokensDetails)
+            global::G.ChatUsageCompletionTokensDetails? completionTokensDetails,
+            global::G.ChatUsagePromptTokensDetails? promptTokensDetails)
         {
             this.CompletionTokens = completionTokens;
             this.PromptTokens = promptTokens;

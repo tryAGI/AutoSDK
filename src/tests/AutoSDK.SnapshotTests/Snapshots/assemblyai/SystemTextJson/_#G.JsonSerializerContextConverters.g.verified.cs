@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonSerializerContextConverters.g.cs
+//HintName: G.JsonSerializerContextConverters.g.cs
 
 #nullable enable
 
@@ -27,8 +27,8 @@ namespace G
             typeof(global::G.JsonConverters.RedactPiiAudioQualityNullableJsonConverter),
             typeof(global::G.JsonConverters.PiiPolicyJsonConverter),
             typeof(global::G.JsonConverters.PiiPolicyNullableJsonConverter),
-            typeof(global::G.JsonConverters.SpeechModel2JsonConverter),
-            typeof(global::G.JsonConverters.SpeechModel2NullableJsonConverter),
+            typeof(global::G.JsonConverters.SpeechModelJsonConverter),
+            typeof(global::G.JsonConverters.SpeechModelNullableJsonConverter),
             typeof(global::G.JsonConverters.TranscriptLanguageCodeJsonConverter),
             typeof(global::G.JsonConverters.TranscriptLanguageCodeNullableJsonConverter),
             typeof(global::G.JsonConverters.TranscriptStatusJsonConverter),
@@ -56,16 +56,8 @@ namespace G
             typeof(global::G.JsonConverters.LemurSummaryParamsJsonConverter),
             typeof(global::G.JsonConverters.LemurQuestionAnswerParamsJsonConverter),
             typeof(global::G.JsonConverters.LemurActionItemsParamsJsonConverter),
-            typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.AnyOf<global::G.TranscriptLanguageCode?, string>?, object>),
             typeof(global::G.JsonConverters.AnyOfJsonConverter<global::G.TranscriptLanguageCode?, string>),
-            typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.SpeechModel2?, object>),
-            typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.SubstitutionPolicy?, object>),
             typeof(global::G.JsonConverters.AnyOfJsonConverter<global::G.TranscriptLanguageCode?, string>),
-            typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.SpeechModel2?, object>),
-            typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.AutoHighlightsResult2, object>),
-            typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.RedactPiiAudioQuality?, object>),
-            typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.ContentSafetyLabelsResult, object>),
-            typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.TopicDetectionModelResult, object>),
             typeof(global::G.JsonConverters.OneOfJsonConverter<string, object>),
             typeof(global::G.JsonConverters.AnyOfJsonConverter<global::G.LemurModel?, string>),
             typeof(global::G.JsonConverters.OneOfJsonConverter<string, object>),

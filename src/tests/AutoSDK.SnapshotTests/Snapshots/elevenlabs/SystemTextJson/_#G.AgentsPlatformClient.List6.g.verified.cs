@@ -1,4 +1,4 @@
-﻿//HintName: G.AgentsPlatformClient.List6.g.cs
+//HintName: G.AgentsPlatformClient.List6.g.cs
 
 #nullable enable
 
@@ -16,7 +16,7 @@ namespace G
             ref string? ancestorFolderId,
             ref bool? foldersFirst,
             ref global::G.SortDirection? sortDirection,
-            global::G.KnowledgeBaseSortBy? sortBy,
+            ref global::G.KnowledgeBaseSortBy? sortBy,
             ref string? cursor,
             ref string? xiApiKey);
         partial void PrepareList6Request(
@@ -190,7 +190,7 @@ namespace G
                 ancestorFolderId: ref ancestorFolderId,
                 foldersFirst: ref foldersFirst,
                 sortDirection: ref sortDirection,
-                sortBy: sortBy,
+                sortBy: ref sortBy,
                 cursor: ref cursor,
                 xiApiKey: ref xiApiKey);
 

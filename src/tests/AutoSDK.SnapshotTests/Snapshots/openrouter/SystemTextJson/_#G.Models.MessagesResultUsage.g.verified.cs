@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.MessagesResultUsage.g.cs
+//HintName: G.Models.MessagesResultUsage.g.cs
 
 #nullable enable
 
@@ -39,9 +39,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_creation")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.MessagesResultUsageCacheCreation, object>))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.OneOf<global::G.MessagesResultUsageCacheCreation, object> CacheCreation { get; set; }
+        public global::G.MessagesResultUsageCacheCreation? CacheCreation { get; set; }
 
         /// <summary>
         /// 
@@ -53,9 +51,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("server_tool_use")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.MessagesResultUsageServerToolUse, object>))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.OneOf<global::G.MessagesResultUsageServerToolUse, object> ServerToolUse { get; set; }
+        public global::G.MessagesResultUsageServerToolUse? ServerToolUse { get; set; }
 
         /// <summary>
         /// 
@@ -67,8 +63,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("speed")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.MessagesResultUsageSpeed?, object>))]
-        public global::G.OneOf<global::G.MessagesResultUsageSpeed?, object>? Speed { get; set; }
+        public global::G.MessagesResultUsageSpeed? Speed { get; set; }
 
         /// <summary>
         /// 
@@ -86,8 +81,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cost_details")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.MessagesResultUsageCostDetails, object>))]
-        public global::G.OneOf<global::G.MessagesResultUsageCostDetails, object>? CostDetails { get; set; }
+        public global::G.MessagesResultUsageCostDetails? CostDetails { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -100,11 +94,11 @@ namespace G
         /// </summary>
         /// <param name="inputTokens"></param>
         /// <param name="outputTokens"></param>
-        /// <param name="cacheCreation"></param>
-        /// <param name="serverToolUse"></param>
         /// <param name="cacheCreationInputTokens"></param>
         /// <param name="cacheReadInputTokens"></param>
+        /// <param name="cacheCreation"></param>
         /// <param name="inferenceGeo"></param>
+        /// <param name="serverToolUse"></param>
         /// <param name="serviceTier"></param>
         /// <param name="speed"></param>
         /// <param name="cost"></param>
@@ -116,16 +110,16 @@ namespace G
         public MessagesResultUsage(
             double inputTokens,
             double outputTokens,
-            global::G.OneOf<global::G.MessagesResultUsageCacheCreation, object> cacheCreation,
-            global::G.OneOf<global::G.MessagesResultUsageServerToolUse, object> serverToolUse,
             double? cacheCreationInputTokens,
             double? cacheReadInputTokens,
+            global::G.MessagesResultUsageCacheCreation? cacheCreation,
             string? inferenceGeo,
+            global::G.MessagesResultUsageServerToolUse? serverToolUse,
             string? serviceTier,
-            global::G.OneOf<global::G.MessagesResultUsageSpeed?, object>? speed,
+            global::G.MessagesResultUsageSpeed? speed,
             double? cost,
             bool? isByok,
-            global::G.OneOf<global::G.MessagesResultUsageCostDetails, object>? costDetails)
+            global::G.MessagesResultUsageCostDetails? costDetails)
         {
             this.InputTokens = inputTokens;
             this.OutputTokens = outputTokens;

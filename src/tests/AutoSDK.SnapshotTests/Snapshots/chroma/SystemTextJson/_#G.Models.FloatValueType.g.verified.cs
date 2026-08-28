@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.FloatValueType.g.cs
+//HintName: G.Models.FloatValueType.g.cs
 
 #nullable enable
 
@@ -13,8 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("float_inverted_index")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<object, global::G.FloatInvertedIndexType>))]
-        public global::G.OneOf<object, global::G.FloatInvertedIndexType>? FloatInvertedIndex { get; set; }
+        public global::G.FloatInvertedIndexType? FloatInvertedIndex { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -30,7 +29,7 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public FloatValueType(
-            global::G.OneOf<object, global::G.FloatInvertedIndexType>? floatInvertedIndex)
+            global::G.FloatInvertedIndexType? floatInvertedIndex)
         {
             this.FloatInvertedIndex = floatInvertedIndex;
         }

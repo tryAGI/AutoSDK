@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.UpdateCollectionPayload.g.cs
+//HintName: G.Models.UpdateCollectionPayload.g.cs
 
 #nullable enable
 
@@ -13,15 +13,13 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("new_configuration")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<object, global::G.UpdateCollectionConfiguration>))]
-        public global::G.OneOf<object, global::G.UpdateCollectionConfiguration>? NewConfiguration { get; set; }
+        public global::G.UpdateCollectionConfiguration? NewConfiguration { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("new_metadata")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<object, global::G.HashMap>))]
-        public global::G.OneOf<object, global::G.HashMap>? NewMetadata { get; set; }
+        public global::G.HashMap? NewMetadata { get; set; }
 
         /// <summary>
         /// 
@@ -45,8 +43,8 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public UpdateCollectionPayload(
-            global::G.OneOf<object, global::G.UpdateCollectionConfiguration>? newConfiguration,
-            global::G.OneOf<object, global::G.HashMap>? newMetadata,
+            global::G.UpdateCollectionConfiguration? newConfiguration,
+            global::G.HashMap? newMetadata,
             string? newName)
         {
             this.NewConfiguration = newConfiguration;

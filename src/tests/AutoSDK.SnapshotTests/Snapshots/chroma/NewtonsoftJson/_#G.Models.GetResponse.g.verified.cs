@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.GetResponse.g.cs
+//HintName: G.Models.GetResponse.g.cs
 
 #nullable enable
 
@@ -14,7 +14,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("documents")]
-        public global::System.Collections.Generic.IList<string>? Documents { get; set; }
+        public global::System.Collections.Generic.IList<string?>? Documents { get; set; }
 
         /// <summary>
         /// 
@@ -38,13 +38,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("metadatas")]
-        public global::System.Collections.Generic.IList<global::G.OneOf<object, global::G.HashMap>>? Metadatas { get; set; }
+        public global::System.Collections.Generic.IList<global::G.HashMap?>? Metadatas { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("uris")]
-        public global::System.Collections.Generic.IList<string>? Uris { get; set; }
+        public global::System.Collections.Generic.IList<string?>? Uris { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -66,10 +66,10 @@ namespace G
         public GetResponse(
             global::System.Collections.Generic.IList<string> ids,
             global::System.Collections.Generic.IList<global::G.Include> include,
-            global::System.Collections.Generic.IList<string>? documents,
+            global::System.Collections.Generic.IList<string?>? documents,
             global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>? embeddings,
-            global::System.Collections.Generic.IList<global::G.OneOf<object, global::G.HashMap>>? metadatas,
-            global::System.Collections.Generic.IList<string>? uris)
+            global::System.Collections.Generic.IList<global::G.HashMap?>? metadatas,
+            global::System.Collections.Generic.IList<string?>? uris)
         {
             this.Documents = documents;
             this.Embeddings = embeddings;

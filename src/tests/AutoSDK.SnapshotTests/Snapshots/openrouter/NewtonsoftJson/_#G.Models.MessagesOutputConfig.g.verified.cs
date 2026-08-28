@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.MessagesOutputConfig.g.cs
+//HintName: G.Models.MessagesOutputConfig.g.cs
 
 #nullable enable
 
@@ -13,13 +13,13 @@ namespace G
         /// How much effort the model should put into its response. Higher effort levels may result in more thorough analysis but take longer. Valid values are `low`, `medium`, `high`, or `max`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("effort")]
-        public global::G.OneOf<global::G.MessagesOutputConfigEffort?, object>? Effort { get; set; }
+        public global::G.MessagesOutputConfigEffort? Effort { get; set; }
 
         /// <summary>
         /// A schema to specify Claude's output format in responses. See [structured outputs](https://platform.claude.com/docs/en/build-with-claude/structured-outputs).
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("format")]
-        public global::G.OneOf<global::G.MessagesOutputConfigFormat, object>? Format { get; set; }
+        public global::G.MessagesOutputConfigFormat? Format { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -37,8 +37,8 @@ namespace G
         /// A schema to specify Claude's output format in responses. See [structured outputs](https://platform.claude.com/docs/en/build-with-claude/structured-outputs).
         /// </param>
         public MessagesOutputConfig(
-            global::G.OneOf<global::G.MessagesOutputConfigEffort?, object>? effort,
-            global::G.OneOf<global::G.MessagesOutputConfigFormat, object>? format)
+            global::G.MessagesOutputConfigEffort? effort,
+            global::G.MessagesOutputConfigFormat? format)
         {
             this.Effort = effort;
             this.Format = format;

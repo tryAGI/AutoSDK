@@ -1,4 +1,4 @@
-﻿//HintName: G.PathBuilder.g.cs
+//HintName: G.PathBuilder.g.cs
 #nullable enable
 
 namespace G
@@ -66,13 +66,14 @@ namespace G
         /// <returns>The current <see cref="PathBuilder"/> instance.</returns>
         public PathBuilder AddRequiredParameter(
             string name,
-            global::System.Collections.Generic.IEnumerable<string> value,
+            global::System.Collections.Generic.IEnumerable<string?> value,
             string delimiter = ",",
             bool explode = false)
         {
+            var nonNullValues = global::System.Linq.Enumerable.OfType<string>(value);
             if (explode)
             {
-                foreach (var item in value)
+                foreach (var item in nonNullValues)
                 {
                     AddRequiredParameter($"{name}", item);
                 }
@@ -80,7 +81,7 @@ namespace G
                 return this;
             }
 
-            AddRequiredParameter(name, string.Join(delimiter, value));
+            AddRequiredParameter(name, string.Join(delimiter, nonNullValues));
 
             return this;
         }
@@ -139,7 +140,7 @@ namespace G
         /// <returns>The current <see cref="PathBuilder"/> instance.</returns>
         public PathBuilder AddOptionalParameter(
             string name,
-            global::System.Collections.Generic.IEnumerable<string>? value,
+            global::System.Collections.Generic.IEnumerable<string?>? value,
             string delimiter = ",",
             bool explode = false)
         {

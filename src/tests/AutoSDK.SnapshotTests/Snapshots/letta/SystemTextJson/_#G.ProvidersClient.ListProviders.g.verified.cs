@@ -1,4 +1,4 @@
-﻿//HintName: G.ProvidersClient.ListProviders.g.cs
+//HintName: G.ProvidersClient.ListProviders.g.cs
 
 #nullable enable
 
@@ -47,7 +47,7 @@ namespace G
             ref global::G.ListProvidersOrder? order,
             ref string? orderBy,
             ref string? name,
-            global::G.ProviderType? providerType);
+            ref global::G.ProviderType? providerType);
         partial void PrepareListProvidersRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -175,7 +175,7 @@ namespace G
                 order: ref order,
                 orderBy: ref orderBy,
                 name: ref name,
-                providerType: providerType);
+                providerType: ref providerType);
 
 
             var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(

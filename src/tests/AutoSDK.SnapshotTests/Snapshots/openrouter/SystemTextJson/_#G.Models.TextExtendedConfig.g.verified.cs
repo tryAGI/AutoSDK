@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.TextExtendedConfig.g.cs
+//HintName: G.Models.TextExtendedConfig.g.cs
 
 #nullable enable
 
@@ -20,8 +20,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("verbosity")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.TextConfigVerbosity?, object>))]
-        public global::G.OneOf<global::G.TextConfigVerbosity?, object>? Verbosity { get; set; }
+        public global::G.TextConfigVerbosity? Verbosity { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -41,7 +40,7 @@ namespace G
 #endif
         public TextExtendedConfig(
             global::G.Formats? format,
-            global::G.OneOf<global::G.TextConfigVerbosity?, object>? verbosity)
+            global::G.TextConfigVerbosity? verbosity)
         {
             this.Format = format;
             this.Verbosity = verbosity;

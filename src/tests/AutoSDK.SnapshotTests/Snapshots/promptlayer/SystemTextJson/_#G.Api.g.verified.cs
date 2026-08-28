@@ -1,4 +1,4 @@
-﻿//HintName: G.Api.g.cs
+//HintName: G.Api.g.cs
 
 #nullable enable
 
@@ -225,7 +225,6 @@ namespace G
                     new global::G.JsonConverters.InputJsonConverter(),
                     new global::G.JsonConverters.OutputJsonConverter(),
                     new global::G.JsonConverters.PromptTemplate5JsonConverter(),
-                    new global::G.JsonConverters.OneOfJsonConverter<global::G.NodeUpdate, object>(),
                     new global::G.JsonConverters.AnyOfJsonConverter<string, int?>(),
                     new global::G.JsonConverters.OneOfJsonConverter<global::G.WebAnnotation, global::G.FileAnnotation, global::G.MapAnnotation, global::G.ContainerFileAnnotation>(),
                     new global::G.JsonConverters.AnyOfJsonConverter<string, object, object>(),

@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonSerializerContextConverters.g.cs
+//HintName: G.JsonSerializerContextConverters.g.cs
 
 #nullable enable
 
@@ -113,13 +113,6 @@ namespace G
             typeof(global::G.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<string>>),
             typeof(global::G.JsonConverters.OneOfJsonConverter<bool?, global::G.ContentsRequestContext>),
             typeof(global::G.JsonConverters.OneOfJsonConverter<bool?, global::G.CommonRequestContext>),
-            typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.EntityCompanyPropertiesFundingRound, object>),
-            typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.EntityCompanyPropertiesWorkforce, object>),
-            typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.EntityCompanyPropertiesHeadquarters, object>),
-            typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.EntityCompanyPropertiesFinancials, object>),
-            typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.EntityCompanyPropertiesWebTraffic, object>),
-            typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.EntityDateRange, object>),
-            typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.EntityPersonPropertiesCompanyRef, object>),
             typeof(global::G.JsonConverters.AllOfJsonConverter<global::G.SearchRequest2, global::G.CommonRequest>),
             typeof(global::G.JsonConverters.AllOfJsonConverter<global::G.FindSimilarRequest2, global::G.CommonRequest>),
             typeof(global::G.JsonConverters.AllOfJsonConverter<global::G.GetContentsRequest2, global::G.ContentsRequest>),

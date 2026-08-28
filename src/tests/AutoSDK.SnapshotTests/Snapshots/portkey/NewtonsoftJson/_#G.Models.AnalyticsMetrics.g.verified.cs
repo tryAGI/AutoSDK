@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.AnalyticsMetrics.g.cs
+//HintName: G.Models.AnalyticsMetrics.g.cs
 
 #nullable enable
 
@@ -344,7 +344,7 @@ namespace G
         /// </summary>
         /// <example>[key1, key2]</example>
         [global::Newtonsoft.Json.JsonProperty("metadata.key")]
-        public global::System.Collections.Generic.IList<string>? MetadataKey { get; set; }
+        public global::System.Collections.Generic.IList<string?>? MetadataKey { get; set; }
 
         /// <summary>
         /// Array of metadata values<br/>
@@ -352,7 +352,7 @@ namespace G
         /// </summary>
         /// <example>[value1, value2]</example>
         [global::Newtonsoft.Json.JsonProperty("metadata.value")]
-        public global::System.Collections.Generic.IList<string>? MetadataValue { get; set; }
+        public global::System.Collections.Generic.IList<string?>? MetadataValue { get; set; }
 
         /// <summary>
         /// API key identifier<br/>
@@ -662,8 +662,8 @@ namespace G
             string? promptSlug,
             string? workspaceSlug,
             string? logStoreFilePathFormat,
-            global::System.Collections.Generic.IList<string>? metadataKey,
-            global::System.Collections.Generic.IList<string>? metadataValue,
+            global::System.Collections.Generic.IList<string?>? metadataKey,
+            global::System.Collections.Generic.IList<string?>? metadataValue,
             string? apiKeyId,
             long? requestParsingTime,
             long? preProcessingTime,

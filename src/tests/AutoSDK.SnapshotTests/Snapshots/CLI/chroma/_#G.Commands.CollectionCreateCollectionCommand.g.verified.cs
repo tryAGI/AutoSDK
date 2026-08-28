@@ -1,4 +1,4 @@
-﻿//HintName: G.Commands.CollectionCreateCollectionCommand.g.cs
+//HintName: G.Commands.CollectionCreateCollectionCommand.g.cs
 
 #nullable enable
 
@@ -14,11 +14,11 @@ namespace G
             global::System.CommandLine.ParseResult parseResult,
             string tenant,
             string database,
-            global::G.OneOf<object, global::G.CollectionConfiguration>? configuration,
+            global::G.CollectionConfiguration? configuration,
             bool? getOrCreate,
-            global::G.OneOf<object, global::G.HashMap>? metadata,
+            global::G.HashMap? metadata,
             string name,
-            global::G.OneOf<object, global::G.Schema3>? schema,
+            global::G.Schema? schema,
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
@@ -44,7 +44,7 @@ namespace G
             Description = @"",
         };
 
-        private global::System.CommandLine.Option<global::G.OneOf<object, global::G.CollectionConfiguration>?> Configuration { get; } = new(
+        private global::System.CommandLine.Option<global::G.CollectionConfiguration?> Configuration { get; } = new(
             name: "configuration")
         {
             Description = @"",
@@ -56,13 +56,13 @@ namespace G
             Description = @"",
         };
 
-        private global::System.CommandLine.Option<global::G.OneOf<object, global::G.HashMap>?> Metadata { get; } = new(
+        private global::System.CommandLine.Option<global::G.HashMap?> Metadata { get; } = new(
             name: "metadata")
         {
             Description = @"",
         };
 
-        private global::System.CommandLine.Option<global::G.OneOf<object, global::G.Schema3>?> Schema { get; } = new(
+        private global::System.CommandLine.Option<global::G.Schema?> Schema { get; } = new(
             name: "schema")
         {
             Description = @"",

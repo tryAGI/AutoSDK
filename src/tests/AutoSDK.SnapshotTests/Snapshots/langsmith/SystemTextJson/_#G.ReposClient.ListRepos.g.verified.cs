@@ -1,4 +1,4 @@
-﻿//HintName: G.ReposClient.ListRepos.g.cs
+//HintName: G.ReposClient.ListRepos.g.cs
 
 #nullable enable
 
@@ -68,8 +68,8 @@ namespace G
             ref string? query,
             bool? hasCommits,
             global::System.Collections.Generic.IList<string>? tags,
-            global::G.ListReposApiV1ReposGetIsArchived2? isArchived,
-            global::G.ListReposApiV1ReposGetIsPublic2? isPublic,
+            ref global::G.ListReposApiV1ReposGetIsArchived2? isArchived,
+            ref global::G.ListReposApiV1ReposGetIsPublic2? isPublic,
             ref string? upstreamRepoOwner,
             ref string? upstreamRepoHandle,
             global::System.Collections.Generic.IList<global::System.Guid>? tagValueId,
@@ -230,8 +230,8 @@ namespace G
                 query: ref query,
                 hasCommits: hasCommits,
                 tags: tags,
-                isArchived: isArchived,
-                isPublic: isPublic,
+                isArchived: ref isArchived,
+                isPublic: ref isPublic,
                 upstreamRepoOwner: ref upstreamRepoOwner,
                 upstreamRepoHandle: ref upstreamRepoHandle,
                 tagValueId: tagValueId,

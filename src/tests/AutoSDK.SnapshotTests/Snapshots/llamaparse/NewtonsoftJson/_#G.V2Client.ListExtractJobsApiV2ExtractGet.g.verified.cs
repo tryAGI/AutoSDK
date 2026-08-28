@@ -1,4 +1,4 @@
-﻿//HintName: G.V2Client.ListExtractJobsApiV2ExtractGet.g.cs
+//HintName: G.V2Client.ListExtractJobsApiV2ExtractGet.g.cs
 
 #nullable enable
 
@@ -31,7 +31,7 @@ namespace G
             ref string? configurationId,
             ref string? documentInputType,
             ref string? documentInputValue,
-            global::G.ListExtractJobsApiV2ExtractGetStatus2? status,
+            ref global::G.ListExtractJobsApiV2ExtractGetStatus2? status,
             int? pageSize,
             ref string? pageToken,
             global::System.DateTime? createdAtOnOrAfter,
@@ -215,7 +215,7 @@ namespace G
                 configurationId: ref configurationId,
                 documentInputType: ref documentInputType,
                 documentInputValue: ref documentInputValue,
-                status: status,
+                status: ref status,
                 pageSize: pageSize,
                 pageToken: ref pageToken,
                 createdAtOnOrAfter: createdAtOnOrAfter,

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.MessagesRequestContextManagementEditsItems2.g.cs
+//HintName: G.Models.MessagesRequestContextManagementEditsItems2.g.cs
 
 #nullable enable
 
@@ -32,7 +32,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("trigger")]
-        public global::G.OneOf<global::G.MessagesRequestContextManagementEditsItemsOneOf2Trigger, object>? Trigger { get; set; }
+        public global::G.MessagesRequestContextManagementEditsItemsOneOf2Trigger? Trigger { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -51,7 +51,7 @@ namespace G
             global::G.MessagesRequestContextManagementEditsItemsOneOf2Type type,
             string? instructions,
             bool? pauseAfterCompaction,
-            global::G.OneOf<global::G.MessagesRequestContextManagementEditsItemsOneOf2Trigger, object>? trigger)
+            global::G.MessagesRequestContextManagementEditsItemsOneOf2Trigger? trigger)
         {
             this.Type = type;
             this.Instructions = instructions;

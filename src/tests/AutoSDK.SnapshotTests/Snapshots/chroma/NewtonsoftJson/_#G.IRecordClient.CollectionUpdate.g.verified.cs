@@ -1,4 +1,4 @@
-﻿//HintName: G.IRecordClient.CollectionUpdate.g.cs
+//HintName: G.IRecordClient.CollectionUpdate.g.cs
 #nullable enable
 
 namespace G
@@ -69,10 +69,10 @@ namespace G
             string database,
             string collectionId,
             global::System.Collections.Generic.IList<string> ids,
-            global::System.Collections.Generic.IList<string>? documents = default,
-            global::G.OneOf<object, global::G.UpdateEmbeddingsPayload?>? embeddings = default,
-            global::System.Collections.Generic.IList<global::G.OneOf<object, global::G.HashMap>>? metadatas = default,
-            global::System.Collections.Generic.IList<string>? uris = default,
+            global::System.Collections.Generic.IList<string?>? documents = default,
+            global::G.UpdateEmbeddingsPayload? embeddings = default,
+            global::System.Collections.Generic.IList<global::G.HashMap?>? metadatas = default,
+            global::System.Collections.Generic.IList<string?>? uris = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

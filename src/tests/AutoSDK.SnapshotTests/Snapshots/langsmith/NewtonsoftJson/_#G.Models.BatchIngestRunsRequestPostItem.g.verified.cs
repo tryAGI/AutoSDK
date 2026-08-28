@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.BatchIngestRunsRequestPostItem.g.cs
+//HintName: G.Models.BatchIngestRunsRequestPostItem.g.cs
 
 #nullable enable
 
@@ -50,7 +50,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("error")]
-        public global::G.OneOf<string, object>? Error { get; set; }
+        public string? Error { get; set; }
 
         /// <summary>
         /// 
@@ -68,19 +68,19 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("parent_run_id")]
-        public global::G.OneOf<global::System.Guid?, object>? ParentRunId { get; set; }
+        public global::System.Guid? ParentRunId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("events")]
-        public global::G.OneOf<global::System.Collections.Generic.IList<object>, object>? Events { get; set; }
+        public global::System.Collections.Generic.IList<object>? Events { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tags")]
-        public global::G.OneOf<global::System.Collections.Generic.IList<string>, object>? Tags { get; set; }
+        public global::System.Collections.Generic.IList<string>? Tags { get; set; }
 
         /// <summary>
         /// 
@@ -104,19 +104,19 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("session_id")]
-        public global::G.OneOf<global::System.Guid?, object>? SessionId { get; set; }
+        public global::System.Guid? SessionId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("session_name")]
-        public global::G.OneOf<string, object>? SessionName { get; set; }
+        public string? SessionName { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("reference_example_id")]
-        public global::G.OneOf<global::System.Guid?, object>? ReferenceExampleId { get; set; }
+        public global::System.Guid? ReferenceExampleId { get; set; }
 
         /// <summary>
         /// 
@@ -169,15 +169,15 @@ namespace G
             object? inputs,
             global::G.OneOf<string, double?, object>? endTime,
             object? extra,
-            global::G.OneOf<string, object>? error,
+            string? error,
             object? serialized,
             object? outputs,
-            global::G.OneOf<global::System.Guid?, object>? parentRunId,
-            global::G.OneOf<global::System.Collections.Generic.IList<object>, object>? events,
-            global::G.OneOf<global::System.Collections.Generic.IList<string>, object>? tags,
-            global::G.OneOf<global::System.Guid?, object>? sessionId,
-            global::G.OneOf<string, object>? sessionName,
-            global::G.OneOf<global::System.Guid?, object>? referenceExampleId,
+            global::System.Guid? parentRunId,
+            global::System.Collections.Generic.IList<object>? events,
+            global::System.Collections.Generic.IList<string>? tags,
+            global::System.Guid? sessionId,
+            string? sessionName,
+            global::System.Guid? referenceExampleId,
             object? inputAttachments,
             object? outputAttachments)
         {

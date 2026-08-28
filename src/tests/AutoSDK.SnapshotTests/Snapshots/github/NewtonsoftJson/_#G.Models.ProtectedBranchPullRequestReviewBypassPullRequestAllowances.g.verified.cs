@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ProtectedBranchPullRequestReviewBypassPullRequestAllowances.g.cs
+//HintName: G.Models.ProtectedBranchPullRequestReviewBypassPullRequestAllowances.g.cs
 
 #nullable enable
 
@@ -25,7 +25,7 @@ namespace G
         /// The list of apps allowed to bypass pull request requirements.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("apps")]
-        public global::System.Collections.Generic.IList<global::G.Integration>? Apps { get; set; }
+        public global::System.Collections.Generic.IList<global::G.Integration?>? Apps { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -48,7 +48,7 @@ namespace G
         public ProtectedBranchPullRequestReviewBypassPullRequestAllowances(
             global::System.Collections.Generic.IList<global::G.SimpleUser>? users,
             global::System.Collections.Generic.IList<global::G.Team>? teams,
-            global::System.Collections.Generic.IList<global::G.Integration>? apps)
+            global::System.Collections.Generic.IList<global::G.Integration?>? apps)
         {
             this.Users = users;
             this.Teams = teams;

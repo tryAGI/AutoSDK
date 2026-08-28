@@ -1,4 +1,4 @@
-﻿//HintName: G.Commands.CollectionUpdateCollectionCommand.g.cs
+//HintName: G.Commands.CollectionUpdateCollectionCommand.g.cs
 
 #nullable enable
 
@@ -15,8 +15,8 @@ namespace G
             string tenant,
             string database,
             string collectionId,
-            global::G.OneOf<object, global::G.UpdateCollectionConfiguration>? newConfiguration,
-            global::G.OneOf<object, global::G.HashMap>? newMetadata,
+            global::G.UpdateCollectionConfiguration? newConfiguration,
+            global::G.HashMap? newMetadata,
             string? newName,
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
@@ -43,13 +43,13 @@ namespace G
             Description = @"Collection UUID",
         };
 
-        private global::System.CommandLine.Option<global::G.OneOf<object, global::G.UpdateCollectionConfiguration>?> NewConfiguration { get; } = new(
+        private global::System.CommandLine.Option<global::G.UpdateCollectionConfiguration?> NewConfiguration { get; } = new(
             name: "newConfiguration")
         {
             Description = @"",
         };
 
-        private global::System.CommandLine.Option<global::G.OneOf<object, global::G.HashMap>?> NewMetadata { get; } = new(
+        private global::System.CommandLine.Option<global::G.HashMap?> NewMetadata { get; } = new(
             name: "newMetadata")
         {
             Description = @"",

@@ -1,4 +1,4 @@
-﻿//HintName: G.PipelinesClient.SearchPipelinesApiV1PipelinesGet.g.cs
+//HintName: G.PipelinesClient.SearchPipelinesApiV1PipelinesGet.g.cs
 
 #nullable enable
 
@@ -31,7 +31,7 @@ namespace G
             global::System.Guid? projectId,
             ref string? projectName,
             ref string? pipelineName,
-            global::G.PipelineType? pipelineType,
+            ref global::G.PipelineType? pipelineType,
             global::System.Guid? organizationId,
             ref string? session);
         partial void PrepareSearchPipelinesApiV1PipelinesGetRequest(
@@ -118,7 +118,7 @@ namespace G
                 projectId: projectId,
                 projectName: ref projectName,
                 pipelineName: ref pipelineName,
-                pipelineType: pipelineType,
+                pipelineType: ref pipelineType,
                 organizationId: organizationId,
                 session: ref session);
 

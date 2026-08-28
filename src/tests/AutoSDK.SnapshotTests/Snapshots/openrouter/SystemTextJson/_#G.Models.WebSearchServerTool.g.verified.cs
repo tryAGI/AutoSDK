@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.WebSearchServerTool.g.cs
+//HintName: G.Models.WebSearchServerTool.g.cs
 
 #nullable enable
 
@@ -20,8 +20,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("filters")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.WebSearchServerToolFilters, object>))]
-        public global::G.OneOf<global::G.WebSearchServerToolFilters, object>? Filters { get; set; }
+        public global::G.WebSearchServerToolFilters? Filters { get; set; }
 
         /// <summary>
         /// Size of the search context for web search tools
@@ -77,7 +76,7 @@ namespace G
 #endif
         public WebSearchServerTool(
             global::G.WebSearchServerToolType type,
-            global::G.OneOf<global::G.WebSearchServerToolFilters, object>? filters,
+            global::G.WebSearchServerToolFilters? filters,
             global::G.SearchContextSizeEnum? searchContextSize,
             global::G.WebSearchUserLocation? userLocation,
             global::G.WebSearchServerToolEngine? engine,

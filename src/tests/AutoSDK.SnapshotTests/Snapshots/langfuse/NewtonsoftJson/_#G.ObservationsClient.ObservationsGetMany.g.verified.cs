@@ -1,4 +1,4 @@
-﻿//HintName: G.ObservationsClient.ObservationsGetMany.g.cs
+//HintName: G.ObservationsClient.ObservationsGetMany.g.cs
 
 #nullable enable
 
@@ -39,7 +39,7 @@ namespace G
             ref string? traceId,
             ref global::G.ObservationLevel? level,
             ref string? parentObservationId,
-            global::System.Collections.Generic.IList<string>? environment,
+            global::System.Collections.Generic.IList<string?>? environment,
             ref global::System.DateTime? fromStartTime,
             ref global::System.DateTime? toStartTime,
             ref string? version,
@@ -58,7 +58,7 @@ namespace G
             string? traceId,
             global::G.ObservationLevel? level,
             string? parentObservationId,
-            global::System.Collections.Generic.IList<string>? environment,
+            global::System.Collections.Generic.IList<string?>? environment,
             global::System.DateTime? fromStartTime,
             global::System.DateTime? toStartTime,
             string? version,
@@ -125,7 +125,7 @@ namespace G
             string? traceId = default,
             global::G.ObservationLevel? level = default,
             string? parentObservationId = default,
-            global::System.Collections.Generic.IList<string>? environment = default,
+            global::System.Collections.Generic.IList<string?>? environment = default,
             global::System.DateTime? fromStartTime = default,
             global::System.DateTime? toStartTime = default,
             string? version = default,
@@ -209,7 +209,7 @@ namespace G
             string? traceId = default,
             global::G.ObservationLevel? level = default,
             string? parentObservationId = default,
-            global::System.Collections.Generic.IList<string>? environment = default,
+            global::System.Collections.Generic.IList<string?>? environment = default,
             global::System.DateTime? fromStartTime = default,
             global::System.DateTime? toStartTime = default,
             string? version = default,

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.InsertExperimentEventArrayDeleteItem.g.cs
+//HintName: G.Models.InsertExperimentEventArrayDeleteItem.g.cs
 
 #nullable enable
 
@@ -21,7 +21,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("delete")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<object> Delete { get; set; }
+        public required global::System.Collections.Generic.IList<object?> Delete { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -39,7 +39,7 @@ namespace G
 #endif
         public InsertExperimentEventArrayDeleteItem(
             global::System.Collections.Generic.IList<string> path,
-            global::System.Collections.Generic.IList<object> delete)
+            global::System.Collections.Generic.IList<object?> delete)
         {
             this.Path = path ?? throw new global::System.ArgumentNullException(nameof(path));
             this.Delete = delete ?? throw new global::System.ArgumentNullException(nameof(delete));

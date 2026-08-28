@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.EmbeddingData.g.cs
+//HintName: G.Models.EmbeddingData.g.cs
 
 #nullable enable
 
@@ -25,7 +25,7 @@ namespace G
         ///  - `null`: For text and image embeddings
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("embedding_option")]
-        public global::G.OneOf<global::G.EmbeddingDataEmbeddingOption?, object>? EmbeddingOption { get; set; }
+        public global::G.EmbeddingDataEmbeddingOption? EmbeddingOption { get; set; }
 
         /// <summary>
         /// The scope for which the embedding was generated.<br/>
@@ -35,7 +35,7 @@ namespace G
         /// - `null`: For text and image embeddings
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("embedding_scope")]
-        public global::G.OneOf<global::G.EmbeddingDataEmbeddingScope?, object>? EmbeddingScope { get; set; }
+        public global::G.EmbeddingDataEmbeddingScope? EmbeddingScope { get; set; }
 
         /// <summary>
         /// The start time in seconds for this segment. This field is `null` for text and image embeddings.
@@ -85,8 +85,8 @@ namespace G
         /// </param>
         public EmbeddingData(
             global::System.Collections.Generic.IList<double> embedding,
-            global::G.OneOf<global::G.EmbeddingDataEmbeddingOption?, object>? embeddingOption,
-            global::G.OneOf<global::G.EmbeddingDataEmbeddingScope?, object>? embeddingScope,
+            global::G.EmbeddingDataEmbeddingOption? embeddingOption,
+            global::G.EmbeddingDataEmbeddingScope? embeddingScope,
             double? startSec,
             double? endSec)
         {

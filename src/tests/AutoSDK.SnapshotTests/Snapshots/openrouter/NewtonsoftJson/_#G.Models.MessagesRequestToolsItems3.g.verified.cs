@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.MessagesRequestToolsItems3.g.cs
+//HintName: G.Models.MessagesRequestToolsItems3.g.cs
 
 #nullable enable
 
@@ -45,7 +45,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("user_location")]
-        public global::G.OneOf<global::G.MessagesRequestToolsItemsOneOf3UserLocation, object>? UserLocation { get; set; }
+        public global::G.MessagesRequestToolsItemsOneOf3UserLocation? UserLocation { get; set; }
 
         /// <summary>
         /// 
@@ -75,7 +75,7 @@ namespace G
             global::System.Collections.Generic.IList<string>? allowedDomains,
             global::System.Collections.Generic.IList<string>? blockedDomains,
             double? maxUses,
-            global::G.OneOf<global::G.MessagesRequestToolsItemsOneOf3UserLocation, object>? userLocation,
+            global::G.MessagesRequestToolsItemsOneOf3UserLocation? userLocation,
             global::G.MessagesRequestToolsItemsOneOf3CacheControl? cacheControl)
         {
             this.Type = type;

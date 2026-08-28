@@ -1,4 +1,4 @@
-﻿//HintName: G.TraceClient.TraceList.g.cs
+//HintName: G.TraceClient.TraceList.g.cs
 
 #nullable enable
 
@@ -36,10 +36,10 @@ namespace G
             ref global::System.DateTime? fromTimestamp,
             ref global::System.DateTime? toTimestamp,
             ref string? orderBy,
-            global::System.Collections.Generic.IList<string>? tags,
+            global::System.Collections.Generic.IList<string?>? tags,
             ref string? version,
             ref string? release,
-            global::System.Collections.Generic.IList<string>? environment,
+            global::System.Collections.Generic.IList<string?>? environment,
             ref string? fields,
             ref string? filter);
         partial void PrepareTraceListRequest(
@@ -53,10 +53,10 @@ namespace G
             global::System.DateTime? fromTimestamp,
             global::System.DateTime? toTimestamp,
             string? orderBy,
-            global::System.Collections.Generic.IList<string>? tags,
+            global::System.Collections.Generic.IList<string?>? tags,
             string? version,
             string? release,
-            global::System.Collections.Generic.IList<string>? environment,
+            global::System.Collections.Generic.IList<string?>? environment,
             string? fields,
             string? filter);
         partial void ProcessTraceListResponse(
@@ -97,10 +97,10 @@ namespace G
             global::System.DateTime? fromTimestamp = default,
             global::System.DateTime? toTimestamp = default,
             string? orderBy = default,
-            global::System.Collections.Generic.IList<string>? tags = default,
+            global::System.Collections.Generic.IList<string?>? tags = default,
             string? version = default,
             string? release = default,
-            global::System.Collections.Generic.IList<string>? environment = default,
+            global::System.Collections.Generic.IList<string?>? environment = default,
             string? fields = default,
             string? filter = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
@@ -156,10 +156,10 @@ namespace G
             global::System.DateTime? fromTimestamp = default,
             global::System.DateTime? toTimestamp = default,
             string? orderBy = default,
-            global::System.Collections.Generic.IList<string>? tags = default,
+            global::System.Collections.Generic.IList<string?>? tags = default,
             string? version = default,
             string? release = default,
-            global::System.Collections.Generic.IList<string>? environment = default,
+            global::System.Collections.Generic.IList<string?>? environment = default,
             string? fields = default,
             string? filter = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,

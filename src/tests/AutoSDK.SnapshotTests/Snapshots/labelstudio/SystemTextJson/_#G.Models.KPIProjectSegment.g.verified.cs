@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.KPIProjectSegment.g.cs
+//HintName: G.Models.KPIProjectSegment.g.cs
 
 #nullable enable
 
@@ -24,7 +24,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("values")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<string> Values { get; set; }
+        public required global::System.Collections.Generic.IList<string?> Values { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -46,7 +46,7 @@ namespace G
 #endif
         public KPIProjectSegment(
             global::System.Collections.Generic.IList<global::G.KPIProjectInfo> projects,
-            global::System.Collections.Generic.IList<string> values)
+            global::System.Collections.Generic.IList<string?> values)
         {
             this.Projects = projects ?? throw new global::System.ArgumentNullException(nameof(projects));
             this.Values = values ?? throw new global::System.ArgumentNullException(nameof(values));

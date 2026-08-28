@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.WebhookIssuesOpenedIssue.g.cs
+//HintName: G.Models.WebhookIssuesOpenedIssue.g.cs
 
 #nullable enable
 
@@ -27,7 +27,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("assignees")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.WebhookIssuesOpenedIssueAssignee2> Assignees { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.WebhookIssuesOpenedIssueAssignee2?> Assignees { get; set; }
 
         /// <summary>
         /// How the author is associated with the repository.
@@ -265,7 +265,7 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public WebhookIssuesOpenedIssue(
-            global::System.Collections.Generic.IList<global::G.WebhookIssuesOpenedIssueAssignee2> assignees,
+            global::System.Collections.Generic.IList<global::G.WebhookIssuesOpenedIssueAssignee2?> assignees,
             global::G.WebhookIssuesOpenedIssueAuthorAssociation authorAssociation,
             int comments,
             string commentsUrl,

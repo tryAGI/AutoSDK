@@ -1,4 +1,4 @@
-﻿//HintName: G.DatasetsClient.UploadDataset.g.cs
+//HintName: G.DatasetsClient.UploadDataset.g.cs
 
 #nullable enable
 
@@ -549,7 +549,7 @@ namespace G
             global::System.Collections.Generic.IList<object>? outputs = default,
             global::System.Collections.Generic.IList<object>? metadata = default,
             global::System.Collections.Generic.IList<global::G.OneOf<string, global::System.Collections.Generic.IList<string>, object>>? splits = default,
-            global::System.Collections.Generic.IList<global::G.OneOf<string, object>>? spanIds = default,
+            global::System.Collections.Generic.IList<string?>? spanIds = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

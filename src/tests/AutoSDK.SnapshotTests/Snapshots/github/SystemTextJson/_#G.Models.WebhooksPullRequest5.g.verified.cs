@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.WebhooksPullRequest5.g.cs
+//HintName: G.Models.WebhooksPullRequest5.g.cs
 
 #nullable enable
 
@@ -40,7 +40,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("assignees")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.WebhooksPullRequest5Assignee2> Assignees { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.WebhooksPullRequest5Assignee2?> Assignees { get; set; }
 
         /// <summary>
         /// How the author is associated with the repository.
@@ -405,7 +405,7 @@ namespace G
 #endif
         public WebhooksPullRequest5(
             global::G.WebhooksPullRequest5Links links,
-            global::System.Collections.Generic.IList<global::G.WebhooksPullRequest5Assignee2> assignees,
+            global::System.Collections.Generic.IList<global::G.WebhooksPullRequest5Assignee2?> assignees,
             global::G.WebhooksPullRequest5AuthorAssociation authorAssociation,
             global::G.WebhooksPullRequest5Base @base,
             string commentsUrl,

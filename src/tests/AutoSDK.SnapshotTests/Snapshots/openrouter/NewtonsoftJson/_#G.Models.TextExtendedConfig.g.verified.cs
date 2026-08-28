@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.TextExtendedConfig.g.cs
+//HintName: G.Models.TextExtendedConfig.g.cs
 
 #nullable enable
 
@@ -19,7 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("verbosity")]
-        public global::G.OneOf<global::G.TextConfigVerbosity?, object>? Verbosity { get; set; }
+        public global::G.TextConfigVerbosity? Verbosity { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -36,7 +36,7 @@ namespace G
         /// <param name="verbosity"></param>
         public TextExtendedConfig(
             global::G.Formats? format,
-            global::G.OneOf<global::G.TextConfigVerbosity?, object>? verbosity)
+            global::G.TextConfigVerbosity? verbosity)
         {
             this.Format = format;
             this.Verbosity = verbosity;

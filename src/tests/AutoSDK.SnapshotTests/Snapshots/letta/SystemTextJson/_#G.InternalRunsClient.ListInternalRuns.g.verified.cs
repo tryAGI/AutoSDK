@@ -1,4 +1,4 @@
-﻿//HintName: G.InternalRunsClient.ListInternalRuns.g.cs
+//HintName: G.InternalRunsClient.ListInternalRuns.g.cs
 
 #nullable enable
 
@@ -48,7 +48,7 @@ namespace G
             global::System.Collections.Generic.IList<string>? agentIds,
             global::System.Collections.Generic.IList<string>? statuses,
             bool? background,
-            global::G.StopReasonType? stopReason,
+            ref global::G.StopReasonType? stopReason,
             ref string? templateFamily,
             int? stepCount,
             ref global::G.ComparisonOperator? stepCountOperator,
@@ -64,7 +64,7 @@ namespace G
             ref string? conversationId,
             int? durationPercentile,
             int? durationValue,
-            global::G.ListInternalRunsDurationOperator2? durationOperator,
+            ref global::G.ListInternalRunsDurationOperator2? durationOperator,
             global::System.DateTime? startDate,
             global::System.DateTime? endDate);
         partial void PrepareListInternalRunsRequest(
@@ -369,7 +369,7 @@ namespace G
                 agentIds: agentIds,
                 statuses: statuses,
                 background: background,
-                stopReason: stopReason,
+                stopReason: ref stopReason,
                 templateFamily: ref templateFamily,
                 stepCount: stepCount,
                 stepCountOperator: ref stepCountOperator,
@@ -385,7 +385,7 @@ namespace G
                 conversationId: ref conversationId,
                 durationPercentile: durationPercentile,
                 durationValue: durationValue,
-                durationOperator: durationOperator,
+                durationOperator: ref durationOperator,
                 startDate: startDate,
                 endDate: endDate);
 

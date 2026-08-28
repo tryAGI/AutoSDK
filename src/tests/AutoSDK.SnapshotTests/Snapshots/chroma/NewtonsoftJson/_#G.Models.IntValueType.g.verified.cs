@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.IntValueType.g.cs
+//HintName: G.Models.IntValueType.g.cs
 
 #nullable enable
 
@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("int_inverted_index")]
-        public global::G.OneOf<object, global::G.IntInvertedIndexType>? IntInvertedIndex { get; set; }
+        public global::G.IntInvertedIndexType? IntInvertedIndex { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -26,7 +26,7 @@ namespace G
         /// </summary>
         /// <param name="intInvertedIndex"></param>
         public IntValueType(
-            global::G.OneOf<object, global::G.IntInvertedIndexType>? intInvertedIndex)
+            global::G.IntInvertedIndexType? intInvertedIndex)
         {
             this.IntInvertedIndex = intInvertedIndex;
         }

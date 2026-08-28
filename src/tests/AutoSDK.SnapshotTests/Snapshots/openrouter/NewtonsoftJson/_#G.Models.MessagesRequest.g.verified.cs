@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.MessagesRequest.g.cs
+//HintName: G.Models.MessagesRequest.g.cs
 
 #nullable enable
 
@@ -110,13 +110,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("context_management")]
-        public global::G.OneOf<global::G.MessagesRequestContextManagement, object>? ContextManagement { get; set; }
+        public global::G.MessagesRequestContextManagement? ContextManagement { get; set; }
 
         /// <summary>
         /// When multiple model providers are available, optionally indicate your routing preference.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("provider")]
-        public global::G.OneOf<global::G.MessagesRequestProvider, object>? Provider { get; set; }
+        public global::G.MessagesRequestProvider? Provider { get; set; }
 
         /// <summary>
         /// Plugins you want to enable for this request, including their settings.
@@ -219,8 +219,8 @@ namespace G
             global::G.MessagesOutputConfig? outputConfig,
             global::G.MessagesRequestCacheControl? cacheControl,
             bool? stream,
-            global::G.OneOf<global::G.MessagesRequestContextManagement, object>? contextManagement,
-            global::G.OneOf<global::G.MessagesRequestProvider, object>? provider,
+            global::G.MessagesRequestContextManagement? contextManagement,
+            global::G.MessagesRequestProvider? provider,
             global::System.Collections.Generic.IList<global::G.MessagesRequestPluginsItems>? plugins,
             string? user,
             string? sessionId,

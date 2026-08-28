@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.EntityCompanyProperties.g.cs
+//HintName: G.Models.EntityCompanyProperties.g.cs
 
 #nullable enable
 
@@ -37,25 +37,25 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("workforce")]
-        public global::G.OneOf<global::G.EntityCompanyPropertiesWorkforce, object>? Workforce { get; set; }
+        public global::G.EntityCompanyPropertiesWorkforce? Workforce { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("headquarters")]
-        public global::G.OneOf<global::G.EntityCompanyPropertiesHeadquarters, object>? Headquarters { get; set; }
+        public global::G.EntityCompanyPropertiesHeadquarters? Headquarters { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("financials")]
-        public global::G.OneOf<global::G.EntityCompanyPropertiesFinancials, object>? Financials { get; set; }
+        public global::G.EntityCompanyPropertiesFinancials? Financials { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("webTraffic")]
-        public global::G.OneOf<global::G.EntityCompanyPropertiesWebTraffic, object>? WebTraffic { get; set; }
+        public global::G.EntityCompanyPropertiesWebTraffic? WebTraffic { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -86,10 +86,10 @@ namespace G
             string? name,
             int? foundedYear,
             string? description,
-            global::G.OneOf<global::G.EntityCompanyPropertiesWorkforce, object>? workforce,
-            global::G.OneOf<global::G.EntityCompanyPropertiesHeadquarters, object>? headquarters,
-            global::G.OneOf<global::G.EntityCompanyPropertiesFinancials, object>? financials,
-            global::G.OneOf<global::G.EntityCompanyPropertiesWebTraffic, object>? webTraffic)
+            global::G.EntityCompanyPropertiesWorkforce? workforce,
+            global::G.EntityCompanyPropertiesHeadquarters? headquarters,
+            global::G.EntityCompanyPropertiesFinancials? financials,
+            global::G.EntityCompanyPropertiesWebTraffic? webTraffic)
         {
             this.Name = name;
             this.FoundedYear = foundedYear;

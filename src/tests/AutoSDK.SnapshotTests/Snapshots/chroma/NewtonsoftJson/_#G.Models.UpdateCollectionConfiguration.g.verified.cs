@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.UpdateCollectionConfiguration.g.cs
+//HintName: G.Models.UpdateCollectionConfiguration.g.cs
 
 #nullable enable
 
@@ -13,19 +13,19 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("embedding_function")]
-        public global::G.OneOf<object, global::G.EmbeddingFunctionConfiguration?>? EmbeddingFunction { get; set; }
+        public global::G.EmbeddingFunctionConfiguration? EmbeddingFunction { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("hnsw")]
-        public global::G.OneOf<object, global::G.UpdateHnswConfiguration>? Hnsw { get; set; }
+        public global::G.UpdateHnswConfiguration? Hnsw { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("spann")]
-        public global::G.OneOf<object, global::G.UpdateSpannConfiguration>? Spann { get; set; }
+        public global::G.UpdateSpannConfiguration? Spann { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -40,9 +40,9 @@ namespace G
         /// <param name="hnsw"></param>
         /// <param name="spann"></param>
         public UpdateCollectionConfiguration(
-            global::G.OneOf<object, global::G.EmbeddingFunctionConfiguration?>? embeddingFunction,
-            global::G.OneOf<object, global::G.UpdateHnswConfiguration>? hnsw,
-            global::G.OneOf<object, global::G.UpdateSpannConfiguration>? spann)
+            global::G.EmbeddingFunctionConfiguration? embeddingFunction,
+            global::G.UpdateHnswConfiguration? hnsw,
+            global::G.UpdateSpannConfiguration? spann)
         {
             this.EmbeddingFunction = embeddingFunction;
             this.Hnsw = hnsw;

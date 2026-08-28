@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ReasoningItem.g.cs
+//HintName: G.Models.ReasoningItem.g.cs
 
 #nullable enable
 
@@ -59,8 +59,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("format")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.ReasoningItemFormat?, object>))]
-        public global::G.OneOf<global::G.ReasoningItemFormat?, object>? Format { get; set; }
+        public global::G.ReasoningItemFormat? Format { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -90,7 +89,7 @@ namespace G
             string? encryptedContent,
             global::G.OutputItemReasoningStatus? status,
             string? signature,
-            global::G.OneOf<global::G.ReasoningItemFormat?, object>? format)
+            global::G.ReasoningItemFormat? format)
         {
             this.Type = type;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));

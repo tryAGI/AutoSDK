@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.CodeInterpreterServerToolContainer1.g.cs
+//HintName: G.Models.CodeInterpreterServerToolContainer1.g.cs
 
 #nullable enable
 
@@ -26,8 +26,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("memory_limit")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.CodeInterpreterServerToolContainerOneOf1MemoryLimit?, object>))]
-        public global::G.OneOf<global::G.CodeInterpreterServerToolContainerOneOf1MemoryLimit?, object>? MemoryLimit { get; set; }
+        public global::G.CodeInterpreterServerToolContainerOneOf1MemoryLimit? MemoryLimit { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -47,7 +46,7 @@ namespace G
         public CodeInterpreterServerToolContainer1(
             global::G.CodeInterpreterServerToolContainerOneOf1Type type,
             global::System.Collections.Generic.IList<string>? fileIds,
-            global::G.OneOf<global::G.CodeInterpreterServerToolContainerOneOf1MemoryLimit?, object>? memoryLimit)
+            global::G.CodeInterpreterServerToolContainerOneOf1MemoryLimit? memoryLimit)
         {
             this.Type = type;
             this.FileIds = fileIds;

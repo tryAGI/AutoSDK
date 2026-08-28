@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ChatRequest.g.cs
+//HintName: G.Models.ChatRequest.g.cs
 
 #nullable enable
 
@@ -13,8 +13,7 @@ namespace G
         /// When multiple model providers are available, optionally indicate your routing preference.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("provider")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.ChatRequestProvider, object>))]
-        public global::G.OneOf<global::G.ChatRequestProvider, object>? Provider { get; set; }
+        public global::G.ChatRequestProvider? Provider { get; set; }
 
         /// <summary>
         /// Plugins you want to enable for this request, including their settings.
@@ -207,8 +206,7 @@ namespace G
         /// The service tier to use for processing this request.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("service_tier")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.ChatRequestServiceTier?, object>))]
-        public global::G.OneOf<global::G.ChatRequestServiceTier?, object>? ServiceTier { get; set; }
+        public global::G.ChatRequestServiceTier? ServiceTier { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -321,7 +319,7 @@ namespace G
 #endif
         public ChatRequest(
             global::System.Collections.Generic.IList<global::G.ChatMessages> messages,
-            global::G.OneOf<global::G.ChatRequestProvider, object>? provider,
+            global::G.ChatRequestProvider? provider,
             global::System.Collections.Generic.IList<global::G.ChatRequestPluginsItems>? plugins,
             string? user,
             string? sessionId,
@@ -351,7 +349,7 @@ namespace G
             object? imageConfig,
             global::System.Collections.Generic.IList<global::G.ChatRequestModalitiesItems>? modalities,
             global::G.ChatRequestCacheControl? cacheControl,
-            global::G.OneOf<global::G.ChatRequestServiceTier?, object>? serviceTier)
+            global::G.ChatRequestServiceTier? serviceTier)
         {
             this.Provider = provider;
             this.Plugins = plugins;

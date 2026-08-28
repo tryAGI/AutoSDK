@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ProtectedBranchPullRequestReviewDismissalRestrictions.g.cs
+//HintName: G.Models.ProtectedBranchPullRequestReviewDismissalRestrictions.g.cs
 
 #nullable enable
 
@@ -25,7 +25,7 @@ namespace G
         /// The list of apps with review dismissal access.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("apps")]
-        public global::System.Collections.Generic.IList<global::G.Integration>? Apps { get; set; }
+        public global::System.Collections.Generic.IList<global::G.Integration?>? Apps { get; set; }
 
         /// <summary>
         /// Example: "https://api.github.com/repos/the-org/an-org-repo/branches/master/protection/dismissal_restrictions"
@@ -81,7 +81,7 @@ namespace G
         public ProtectedBranchPullRequestReviewDismissalRestrictions(
             global::System.Collections.Generic.IList<global::G.SimpleUser>? users,
             global::System.Collections.Generic.IList<global::G.Team>? teams,
-            global::System.Collections.Generic.IList<global::G.Integration>? apps,
+            global::System.Collections.Generic.IList<global::G.Integration?>? apps,
             string? url,
             string? usersUrl,
             string? teamsUrl)

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ProvidersGetResponsesContentApplicationJsonSchemaDataItems.g.cs
+//HintName: G.Models.ProvidersGetResponsesContentApplicationJsonSchemaDataItems.g.cs
 
 #nullable enable
 
@@ -43,7 +43,7 @@ namespace G
         /// ISO 3166-1 Alpha-2 country code of the provider headquarters
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("headquarters")]
-        public global::G.OneOf<global::G.ProvidersGetResponsesContentApplicationJsonSchemaDataItemsHeadquarters?, object>? Headquarters { get; set; }
+        public global::G.ProvidersGetResponsesContentApplicationJsonSchemaDataItemsHeadquarters? Headquarters { get; set; }
 
         /// <summary>
         /// ISO 3166-1 Alpha-2 country codes of the provider datacenter locations
@@ -87,7 +87,7 @@ namespace G
             string? privacyPolicyUrl,
             string? termsOfServiceUrl,
             string? statusPageUrl,
-            global::G.OneOf<global::G.ProvidersGetResponsesContentApplicationJsonSchemaDataItemsHeadquarters?, object>? headquarters,
+            global::G.ProvidersGetResponsesContentApplicationJsonSchemaDataItemsHeadquarters? headquarters,
             global::System.Collections.Generic.IList<global::G.ProvidersGetResponsesContentApplicationJsonSchemaDataItemsDatacentersItems>? datacenters)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));

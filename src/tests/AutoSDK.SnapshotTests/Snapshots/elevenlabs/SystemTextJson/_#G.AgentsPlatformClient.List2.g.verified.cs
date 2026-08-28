@@ -1,4 +1,4 @@
-﻿//HintName: G.AgentsPlatformClient.List2.g.cs
+//HintName: G.AgentsPlatformClient.List2.g.cs
 
 #nullable enable
 
@@ -12,7 +12,7 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             ref string? cursor,
             ref string? agentId,
-            global::G.EvaluationSuccessResult? callSuccessful,
+            ref global::G.EvaluationSuccessResult? callSuccessful,
             int? callStartBeforeUnix,
             int? callStartAfterUnix,
             int? callDurationMinSecs,
@@ -28,7 +28,7 @@ namespace G
             ref int? pageSize,
             ref global::G.GetConversationHistoriesRouteSummaryMode? summaryMode,
             ref string? search,
-            global::G.ConversationInitiationSource? conversationInitiationSource,
+            ref global::G.ConversationInitiationSource? conversationInitiationSource,
             ref string? branchId,
             ref string? xiApiKey);
         partial void PrepareList2Request(
@@ -288,7 +288,7 @@ namespace G
                 httpClient: HttpClient,
                 cursor: ref cursor,
                 agentId: ref agentId,
-                callSuccessful: callSuccessful,
+                callSuccessful: ref callSuccessful,
                 callStartBeforeUnix: callStartBeforeUnix,
                 callStartAfterUnix: callStartAfterUnix,
                 callDurationMinSecs: callDurationMinSecs,
@@ -304,7 +304,7 @@ namespace G
                 pageSize: ref pageSize,
                 summaryMode: ref summaryMode,
                 search: ref search,
-                conversationInitiationSource: conversationInitiationSource,
+                conversationInitiationSource: ref conversationInitiationSource,
                 branchId: ref branchId,
                 xiApiKey: ref xiApiKey);
 

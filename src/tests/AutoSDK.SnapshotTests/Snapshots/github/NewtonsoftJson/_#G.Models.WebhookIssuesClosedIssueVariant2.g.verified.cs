@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.WebhookIssuesClosedIssueVariant2.g.cs
+//HintName: G.Models.WebhookIssuesClosedIssueVariant2.g.cs
 
 #nullable enable
 
@@ -25,7 +25,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("assignees")]
-        public global::System.Collections.Generic.IList<object>? Assignees { get; set; }
+        public global::System.Collections.Generic.IList<object?>? Assignees { get; set; }
 
         /// <summary>
         /// 
@@ -85,7 +85,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("labels")]
-        public global::System.Collections.Generic.IList<object>? Labels { get; set; }
+        public global::System.Collections.Generic.IList<object?>? Labels { get; set; }
 
         /// <summary>
         /// 
@@ -212,7 +212,7 @@ namespace G
             global::G.WebhookIssuesClosedIssueVariant2State state,
             string? activeLockReason,
             object? assignee,
-            global::System.Collections.Generic.IList<object>? assignees,
+            global::System.Collections.Generic.IList<object?>? assignees,
             string? authorAssociation,
             string? body,
             string? closedAt,
@@ -222,7 +222,7 @@ namespace G
             string? eventsUrl,
             string? htmlUrl,
             int? id,
-            global::System.Collections.Generic.IList<object>? labels,
+            global::System.Collections.Generic.IList<object?>? labels,
             string? labelsUrl,
             bool? locked,
             object? milestone,

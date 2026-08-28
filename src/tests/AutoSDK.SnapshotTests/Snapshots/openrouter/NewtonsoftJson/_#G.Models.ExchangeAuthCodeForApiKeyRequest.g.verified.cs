@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ExchangeAuthCodeForApiKeyRequest.g.cs
+//HintName: G.Models.ExchangeAuthCodeForApiKeyRequest.g.cs
 
 #nullable enable
 
@@ -25,7 +25,7 @@ namespace G
         /// The method used to generate the code challenge
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("code_challenge_method")]
-        public global::G.OneOf<global::G.AuthKeysPostRequestBodyContentApplicationJsonSchemaCodeChallengeMethod?, object>? CodeChallengeMethod { get; set; }
+        public global::G.AuthKeysPostRequestBodyContentApplicationJsonSchemaCodeChallengeMethod? CodeChallengeMethod { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -48,7 +48,7 @@ namespace G
         public ExchangeAuthCodeForApiKeyRequest(
             string code,
             string? codeVerifier,
-            global::G.OneOf<global::G.AuthKeysPostRequestBodyContentApplicationJsonSchemaCodeChallengeMethod?, object>? codeChallengeMethod)
+            global::G.AuthKeysPostRequestBodyContentApplicationJsonSchemaCodeChallengeMethod? codeChallengeMethod)
         {
             this.Code = code ?? throw new global::System.ArgumentNullException(nameof(code));
             this.CodeVerifier = codeVerifier;

@@ -1,4 +1,4 @@
-﻿//HintName: G.ICollectionClient.UpdateCollection.g.cs
+//HintName: G.ICollectionClient.UpdateCollection.g.cs
 #nullable enable
 
 namespace G
@@ -66,8 +66,8 @@ namespace G
             string tenant,
             string database,
             string collectionId,
-            global::G.OneOf<object, global::G.UpdateCollectionConfiguration>? newConfiguration = default,
-            global::G.OneOf<object, global::G.HashMap>? newMetadata = default,
+            global::G.UpdateCollectionConfiguration? newConfiguration = default,
+            global::G.HashMap? newMetadata = default,
             string? newName = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);

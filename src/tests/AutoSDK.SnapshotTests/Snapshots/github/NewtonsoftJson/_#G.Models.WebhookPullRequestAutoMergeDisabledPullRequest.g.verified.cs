@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.WebhookPullRequestAutoMergeDisabledPullRequest.g.cs
+//HintName: G.Models.WebhookPullRequestAutoMergeDisabledPullRequest.g.cs
 
 #nullable enable
 
@@ -38,7 +38,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("assignees", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.WebhookPullRequestAutoMergeDisabledPullRequestAssignee2> Assignees { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.WebhookPullRequestAutoMergeDisabledPullRequestAssignee2?> Assignees { get; set; } = default!;
 
         /// <summary>
         /// How the author is associated with the repository.
@@ -375,7 +375,7 @@ namespace G
         /// <param name="user"></param>
         public WebhookPullRequestAutoMergeDisabledPullRequest(
             global::G.WebhookPullRequestAutoMergeDisabledPullRequestLinks links,
-            global::System.Collections.Generic.IList<global::G.WebhookPullRequestAutoMergeDisabledPullRequestAssignee2> assignees,
+            global::System.Collections.Generic.IList<global::G.WebhookPullRequestAutoMergeDisabledPullRequestAssignee2?> assignees,
             global::G.WebhookPullRequestAutoMergeDisabledPullRequestAuthorAssociation authorAssociation,
             global::G.WebhookPullRequestAutoMergeDisabledPullRequestBase @base,
             string commentsUrl,

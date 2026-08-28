@@ -1,11 +1,11 @@
-﻿//HintName: G.Models.MessagesRequestToolsItemsOneOf0InputSchemaProperties.g.cs
+//HintName: G.Models.MessagesRequestToolsItemsOneOf0InputSchemaProperties.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// Any type
+    /// 
     /// </summary>
     public sealed partial class MessagesRequestToolsItemsOneOf0InputSchemaProperties
     {

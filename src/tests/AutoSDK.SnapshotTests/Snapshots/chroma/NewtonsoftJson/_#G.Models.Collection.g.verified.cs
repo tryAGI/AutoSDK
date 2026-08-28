@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.Collection.g.cs
+//HintName: G.Models.Collection.g.cs
 
 #nullable enable
 
@@ -43,7 +43,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("metadata")]
-        public global::G.OneOf<object, global::G.HashMap>? Metadata { get; set; }
+        public global::G.HashMap? Metadata { get; set; }
 
         /// <summary>
         /// 
@@ -55,7 +55,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("schema")]
-        public global::G.OneOf<object, global::G.Schema3>? Schema { get; set; }
+        public global::G.Schema? Schema { get; set; }
 
         /// <summary>
         /// 
@@ -97,8 +97,8 @@ namespace G
             string tenant,
             int version,
             int? dimension,
-            global::G.OneOf<object, global::G.HashMap>? metadata,
-            global::G.OneOf<object, global::G.Schema3>? schema)
+            global::G.HashMap? metadata,
+            global::G.Schema? schema)
         {
             this.ConfigurationJson = configurationJson ?? throw new global::System.ArgumentNullException(nameof(configurationJson));
             this.Database = database ?? throw new global::System.ArgumentNullException(nameof(database));

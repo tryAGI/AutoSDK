@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.MessagesMessageParamContentOneOf1Items2.g.cs
+//HintName: G.Models.MessagesMessageParamContentOneOf1Items2.g.cs
 
 #nullable enable
 
@@ -26,7 +26,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("citations")]
-        public global::G.OneOf<global::G.MessagesMessageParamContentOneOf1ItemsOneOf2Citations, object>? Citations { get; set; }
+        public global::G.MessagesMessageParamContentOneOf1ItemsOneOf2Citations? Citations { get; set; }
 
         /// <summary>
         /// 
@@ -64,7 +64,7 @@ namespace G
         public MessagesMessageParamContentOneOf1Items2(
             global::G.MessagesMessageParamContentOneOf1ItemsOneOf2Source source,
             global::G.MessagesMessageParamContentOneOf1ItemsOneOf2Type type,
-            global::G.OneOf<global::G.MessagesMessageParamContentOneOf1ItemsOneOf2Citations, object>? citations,
+            global::G.MessagesMessageParamContentOneOf1ItemsOneOf2Citations? citations,
             string? context,
             string? title,
             global::G.MessagesMessageParamContentOneOf1ItemsOneOf2CacheControl? cacheControl)

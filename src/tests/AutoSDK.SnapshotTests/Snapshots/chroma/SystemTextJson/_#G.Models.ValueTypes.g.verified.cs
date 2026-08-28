@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ValueTypes.g.cs
+//HintName: G.Models.ValueTypes.g.cs
 
 #nullable enable
 
@@ -14,43 +14,37 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("bool")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<object, global::G.BoolValueType>))]
-        public global::G.OneOf<object, global::G.BoolValueType>? Bool { get; set; }
+        public global::G.BoolValueType? Bool { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("float")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<object, global::G.FloatValueType>))]
-        public global::G.OneOf<object, global::G.FloatValueType>? Float { get; set; }
+        public global::G.FloatValueType? Float { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("float_list")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<object, global::G.FloatListValueType>))]
-        public global::G.OneOf<object, global::G.FloatListValueType>? FloatList { get; set; }
+        public global::G.FloatListValueType? FloatList { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("int")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<object, global::G.IntValueType>))]
-        public global::G.OneOf<object, global::G.IntValueType>? Int { get; set; }
+        public global::G.IntValueType? Int { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sparse_vector")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<object, global::G.SparseVectorValueType>))]
-        public global::G.OneOf<object, global::G.SparseVectorValueType>? SparseVector { get; set; }
+        public global::G.SparseVectorValueType? SparseVector { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("string")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<object, global::G.StringValueType>))]
-        public global::G.OneOf<object, global::G.StringValueType>? String { get; set; }
+        public global::G.StringValueType? String { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -71,12 +65,12 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ValueTypes(
-            global::G.OneOf<object, global::G.BoolValueType>? @bool,
-            global::G.OneOf<object, global::G.FloatValueType>? @float,
-            global::G.OneOf<object, global::G.FloatListValueType>? floatList,
-            global::G.OneOf<object, global::G.IntValueType>? @int,
-            global::G.OneOf<object, global::G.SparseVectorValueType>? sparseVector,
-            global::G.OneOf<object, global::G.StringValueType>? @string)
+            global::G.BoolValueType? @bool,
+            global::G.FloatValueType? @float,
+            global::G.FloatListValueType? floatList,
+            global::G.IntValueType? @int,
+            global::G.SparseVectorValueType? sparseVector,
+            global::G.StringValueType? @string)
         {
             this.Bool = @bool;
             this.Float = @float;

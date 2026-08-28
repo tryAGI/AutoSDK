@@ -1,4 +1,4 @@
-﻿//HintName: G.FeedbackClient.ReadFeedbacks.g.cs
+//HintName: G.FeedbackClient.ReadFeedbacks.g.cs
 
 #nullable enable
 
@@ -69,7 +69,7 @@ namespace G
             global::System.Collections.Generic.IList<global::System.Guid>? user,
             bool? hasComment,
             bool? hasScore,
-            global::G.FeedbackLevel? level,
+            ref global::G.FeedbackLevel? level,
             global::System.DateTime? maxCreatedAt,
             global::System.DateTime? minCreatedAt,
             bool? includeUserNames);
@@ -213,7 +213,7 @@ namespace G
                 user: user,
                 hasComment: hasComment,
                 hasScore: hasScore,
-                level: level,
+                level: ref level,
                 maxCreatedAt: maxCreatedAt,
                 minCreatedAt: minCreatedAt,
                 includeUserNames: includeUserNames);

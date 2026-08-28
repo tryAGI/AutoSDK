@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.WebhookReleasePrereleasedRelease.g.cs
+//HintName: G.Models.WebhookReleasePrereleasedRelease.g.cs
 
 #nullable enable
 
@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("assets", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.WebhookReleasePrereleasedReleaseAsset> Assets { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.WebhookReleasePrereleasedReleaseAsset?> Assets { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -167,7 +167,7 @@ namespace G
         /// <param name="tarballUrl"></param>
         /// <param name="zipballUrl"></param>
         public WebhookReleasePrereleasedRelease(
-            global::System.Collections.Generic.IList<global::G.WebhookReleasePrereleasedReleaseAsset> assets,
+            global::System.Collections.Generic.IList<global::G.WebhookReleasePrereleasedReleaseAsset?> assets,
             string assetsUrl,
             bool draft,
             string htmlUrl,

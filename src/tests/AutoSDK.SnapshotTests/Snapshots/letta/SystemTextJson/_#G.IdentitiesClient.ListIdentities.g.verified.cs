@@ -1,4 +1,4 @@
-﻿//HintName: G.IdentitiesClient.ListIdentities.g.cs
+//HintName: G.IdentitiesClient.ListIdentities.g.cs
 
 #nullable enable
 
@@ -46,7 +46,7 @@ namespace G
             ref string? name,
             ref string? projectId,
             ref string? identifierKey,
-            global::G.IdentityType? identityType,
+            ref global::G.IdentityType? identityType,
             ref string? before,
             ref string? after,
             int? limit,
@@ -186,7 +186,7 @@ namespace G
                 name: ref name,
                 projectId: ref projectId,
                 identifierKey: ref identifierKey,
-                identityType: identityType,
+                identityType: ref identityType,
                 before: ref before,
                 after: ref after,
                 limit: limit,

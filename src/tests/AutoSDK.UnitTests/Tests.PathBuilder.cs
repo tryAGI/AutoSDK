@@ -87,6 +87,18 @@ public partial class Tests
         path.Should()
             .Be("https://api.openai.com/v1/threads/123/runs/456/steps?limit=20&after=2023-01-01&before=2023-01-31");
     }
+
+    [TestMethod]
+    public void PathBuilder_NullCollectionItems_AreOmitted()
+    {
+        var pathBuilder = new PathBuilder("/items", new Uri("https://example.com"));
+
+        pathBuilder
+            .AddOptionalParameter("joined", new string?[] { "a", null, "b" })
+            .AddOptionalParameter("exploded", new string?[] { "c", null, "d" }, explode: true);
+
+        pathBuilder.ToString().Should().Be("https://example.com/items?joined=a%2Cb&exploded=c&exploded=d");
+    }
 }
 
 /// <summary>

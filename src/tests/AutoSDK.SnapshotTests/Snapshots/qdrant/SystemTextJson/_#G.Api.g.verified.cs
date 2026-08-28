@@ -1,4 +1,4 @@
-﻿//HintName: G.Api.g.cs
+//HintName: G.Api.g.cs
 
 #nullable enable
 
@@ -350,7 +350,7 @@ namespace G
                     new global::G.JsonConverters.PointInsertOperationsJsonConverter(),
                     new global::G.JsonConverters.BatchVectorStructJsonConverter(),
                     new global::G.JsonConverters.VectorJsonConverter(),
-                    new global::G.JsonConverters.DocumentOptions2JsonConverter(),
+                    new global::G.JsonConverters.DocumentOptionsJsonConverter(),
                     new global::G.JsonConverters.VectorStructJsonConverter(),
                     new global::G.JsonConverters.ClusterStatusJsonConverter(),
                     new global::G.JsonConverters.ConsensusThreadStatusJsonConverter(),

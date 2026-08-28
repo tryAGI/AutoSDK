@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.MessagesResult.g.cs
+//HintName: G.Models.MessagesResult.g.cs
 
 #nullable enable
 
@@ -32,8 +32,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("container", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.OneOf<global::G.BaseMessagesResultContainer, object> Container { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("container")]
+        public global::G.BaseMessagesResultContainer? Container { get; set; }
 
         /// <summary>
         /// 
@@ -50,8 +50,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("stop_reason", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.OneOf<global::G.BaseMessagesResultStopReason?, object> StopReason { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("stop_reason")]
+        public global::G.BaseMessagesResultStopReason? StopReason { get; set; }
 
         /// <summary>
         /// 
@@ -82,24 +82,24 @@ namespace G
         /// Initializes a new instance of the <see cref="MessagesResult" /> class.
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="container"></param>
         /// <param name="content"></param>
         /// <param name="model"></param>
-        /// <param name="stopReason"></param>
         /// <param name="usage"></param>
         /// <param name="type"></param>
         /// <param name="role"></param>
+        /// <param name="container"></param>
+        /// <param name="stopReason"></param>
         /// <param name="stopSequence"></param>
         /// <param name="provider"></param>
         public MessagesResult(
             string id,
-            global::G.OneOf<global::G.BaseMessagesResultContainer, object> container,
             global::System.Collections.Generic.IList<global::G.BaseMessagesResultContentItems> content,
             string model,
-            global::G.OneOf<global::G.BaseMessagesResultStopReason?, object> stopReason,
             global::G.MessagesResultUsage usage,
             global::G.BaseMessagesResultType type,
             global::G.BaseMessagesResultRole role,
+            global::G.BaseMessagesResultContainer? container,
+            global::G.BaseMessagesResultStopReason? stopReason,
             string? stopSequence,
             global::G.MessagesResultProvider? provider)
         {

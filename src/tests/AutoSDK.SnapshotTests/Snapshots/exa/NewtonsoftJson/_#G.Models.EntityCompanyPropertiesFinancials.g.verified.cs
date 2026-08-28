@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.EntityCompanyPropertiesFinancials.g.cs
+//HintName: G.Models.EntityCompanyPropertiesFinancials.g.cs
 
 #nullable enable
 
@@ -29,7 +29,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("fundingLatestRound")]
-        public global::G.OneOf<global::G.EntityCompanyPropertiesFundingRound, object>? FundingLatestRound { get; set; }
+        public global::G.EntityCompanyPropertiesFundingRound? FundingLatestRound { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -52,7 +52,7 @@ namespace G
         public EntityCompanyPropertiesFinancials(
             int? revenueAnnual,
             int? fundingTotal,
-            global::G.OneOf<global::G.EntityCompanyPropertiesFundingRound, object>? fundingLatestRound)
+            global::G.EntityCompanyPropertiesFundingRound? fundingLatestRound)
         {
             this.RevenueAnnual = revenueAnnual;
             this.FundingTotal = fundingTotal;

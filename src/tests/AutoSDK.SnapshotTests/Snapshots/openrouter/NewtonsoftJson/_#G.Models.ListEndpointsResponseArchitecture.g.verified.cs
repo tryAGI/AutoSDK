@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ListEndpointsResponseArchitecture.g.cs
+//HintName: G.Models.ListEndpointsResponseArchitecture.g.cs
 
 #nullable enable
 
@@ -19,8 +19,8 @@ namespace G
         /// Instruction format type
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("instruct_type", Required = global::Newtonsoft.Json.Required.Always)]
-        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.InstructType2JsonConverter))]
-        public global::G.InstructType2 InstructType { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.InstructTypeJsonConverter))]
+        public global::G.InstructType InstructType { get; set; } = default!;
 
         /// <summary>
         /// Primary modality of the model
@@ -64,7 +64,7 @@ namespace G
         /// </param>
         public ListEndpointsResponseArchitecture(
             global::G.ListEndpointsResponseArchitectureTokenizer tokenizer,
-            global::G.InstructType2 instructType,
+            global::G.InstructType instructType,
             global::System.Collections.Generic.IList<global::G.InputModality> inputModalities,
             global::System.Collections.Generic.IList<global::G.OutputModality> outputModalities,
             string? modality)

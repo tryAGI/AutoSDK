@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.MessagesRequest.g.cs
+//HintName: G.Models.MessagesRequest.g.cs
 
 #nullable enable
 
@@ -114,15 +114,13 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("context_management")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.MessagesRequestContextManagement, object>))]
-        public global::G.OneOf<global::G.MessagesRequestContextManagement, object>? ContextManagement { get; set; }
+        public global::G.MessagesRequestContextManagement? ContextManagement { get; set; }
 
         /// <summary>
         /// When multiple model providers are available, optionally indicate your routing preference.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("provider")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.MessagesRequestProvider, object>))]
-        public global::G.OneOf<global::G.MessagesRequestProvider, object>? Provider { get; set; }
+        public global::G.MessagesRequestProvider? Provider { get; set; }
 
         /// <summary>
         /// Plugins you want to enable for this request, including their settings.
@@ -228,8 +226,8 @@ namespace G
             global::G.MessagesOutputConfig? outputConfig,
             global::G.MessagesRequestCacheControl? cacheControl,
             bool? stream,
-            global::G.OneOf<global::G.MessagesRequestContextManagement, object>? contextManagement,
-            global::G.OneOf<global::G.MessagesRequestProvider, object>? provider,
+            global::G.MessagesRequestContextManagement? contextManagement,
+            global::G.MessagesRequestProvider? provider,
             global::System.Collections.Generic.IList<global::G.MessagesRequestPluginsItems>? plugins,
             string? user,
             string? sessionId,

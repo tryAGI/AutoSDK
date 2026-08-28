@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.UpdateRunRequest.g.cs
+//HintName: G.Models.UpdateRunRequest.g.cs
 
 #nullable enable
 
@@ -13,22 +13,19 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("trace_id")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<global::System.Guid?, object>))]
-        public global::G.OneOf<global::System.Guid?, object>? TraceId { get; set; }
+        public global::System.Guid? TraceId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dotted_order")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<string, object>))]
-        public global::G.OneOf<string, object>? DottedOrder { get; set; }
+        public string? DottedOrder { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("parent_run_id")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<global::System.Guid?, object>))]
-        public global::G.OneOf<global::System.Guid?, object>? ParentRunId { get; set; }
+        public global::System.Guid? ParentRunId { get; set; }
 
         /// <summary>
         /// 
@@ -41,8 +38,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("error")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<string, object>))]
-        public global::G.OneOf<string, object>? Error { get; set; }
+        public string? Error { get; set; }
 
         /// <summary>
         /// 
@@ -60,15 +56,13 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("events")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<global::System.Collections.Generic.IList<object>, object>))]
-        public global::G.OneOf<global::System.Collections.Generic.IList<object>, object>? Events { get; set; }
+        public global::System.Collections.Generic.IList<object>? Events { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tags")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<global::System.Collections.Generic.IList<string>, object>))]
-        public global::G.OneOf<global::System.Collections.Generic.IList<string>, object>? Tags { get; set; }
+        public global::System.Collections.Generic.IList<string>? Tags { get; set; }
 
         /// <summary>
         /// 
@@ -92,15 +86,13 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("session_id")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<global::System.Guid?, object>))]
-        public global::G.OneOf<global::System.Guid?, object>? SessionId { get; set; }
+        public global::System.Guid? SessionId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("session_name")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<string, object>))]
-        public global::G.OneOf<string, object>? SessionName { get; set; }
+        public string? SessionName { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -129,20 +121,20 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public UpdateRunRequest(
-            global::G.OneOf<global::System.Guid?, object>? traceId,
-            global::G.OneOf<string, object>? dottedOrder,
-            global::G.OneOf<global::System.Guid?, object>? parentRunId,
+            global::System.Guid? traceId,
+            string? dottedOrder,
+            global::System.Guid? parentRunId,
             global::G.OneOf<string, double?, object>? endTime,
-            global::G.OneOf<string, object>? error,
+            string? error,
             object? inputs,
             object? outputs,
-            global::G.OneOf<global::System.Collections.Generic.IList<object>, object>? events,
-            global::G.OneOf<global::System.Collections.Generic.IList<string>, object>? tags,
+            global::System.Collections.Generic.IList<object>? events,
+            global::System.Collections.Generic.IList<string>? tags,
             object? extra,
             object? inputAttachments,
             object? outputAttachments,
-            global::G.OneOf<global::System.Guid?, object>? sessionId,
-            global::G.OneOf<string, object>? sessionName)
+            global::System.Guid? sessionId,
+            string? sessionName)
         {
             this.TraceId = traceId;
             this.DottedOrder = dottedOrder;

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.UpdateCollectionRecordsPayload.g.cs
+//HintName: G.Models.UpdateCollectionRecordsPayload.g.cs
 
 #nullable enable
 
@@ -16,14 +16,13 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("documents")]
-        public global::System.Collections.Generic.IList<string>? Documents { get; set; }
+        public global::System.Collections.Generic.IList<string?>? Documents { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("embeddings")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<object, global::G.UpdateEmbeddingsPayload?>))]
-        public global::G.OneOf<object, global::G.UpdateEmbeddingsPayload?>? Embeddings { get; set; }
+        public global::G.UpdateEmbeddingsPayload? Embeddings { get; set; }
 
         /// <summary>
         /// 
@@ -36,13 +35,13 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadatas")]
-        public global::System.Collections.Generic.IList<global::G.OneOf<object, global::G.HashMap>>? Metadatas { get; set; }
+        public global::System.Collections.Generic.IList<global::G.HashMap?>? Metadatas { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("uris")]
-        public global::System.Collections.Generic.IList<string>? Uris { get; set; }
+        public global::System.Collections.Generic.IList<string?>? Uris { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -63,10 +62,10 @@ namespace G
 #endif
         public UpdateCollectionRecordsPayload(
             global::System.Collections.Generic.IList<string> ids,
-            global::System.Collections.Generic.IList<string>? documents,
-            global::G.OneOf<object, global::G.UpdateEmbeddingsPayload?>? embeddings,
-            global::System.Collections.Generic.IList<global::G.OneOf<object, global::G.HashMap>>? metadatas,
-            global::System.Collections.Generic.IList<string>? uris)
+            global::System.Collections.Generic.IList<string?>? documents,
+            global::G.UpdateEmbeddingsPayload? embeddings,
+            global::System.Collections.Generic.IList<global::G.HashMap?>? metadatas,
+            global::System.Collections.Generic.IList<string?>? uris)
         {
             this.Documents = documents;
             this.Embeddings = embeddings;

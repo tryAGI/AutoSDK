@@ -1,4 +1,4 @@
-﻿//HintName: G.SubpackageChatClient.SendChatCompletionRequest.g.cs
+//HintName: G.SubpackageChatClient.SendChatCompletionRequest.g.cs
 
 #nullable enable
 
@@ -947,7 +947,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.ChatResult> SendChatCompletionRequestAsync(
             global::System.Collections.Generic.IList<global::G.ChatMessages> messages,
-            global::G.OneOf<global::G.ChatRequestProvider, object>? provider = default,
+            global::G.ChatRequestProvider? provider = default,
             global::System.Collections.Generic.IList<global::G.ChatRequestPluginsItems>? plugins = default,
             string? user = default,
             string? sessionId = default,
@@ -977,7 +977,7 @@ namespace G
             object? imageConfig = default,
             global::System.Collections.Generic.IList<global::G.ChatRequestModalitiesItems>? modalities = default,
             global::G.ChatRequestCacheControl? cacheControl = default,
-            global::G.OneOf<global::G.ChatRequestServiceTier?, object>? serviceTier = default,
+            global::G.ChatRequestServiceTier? serviceTier = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

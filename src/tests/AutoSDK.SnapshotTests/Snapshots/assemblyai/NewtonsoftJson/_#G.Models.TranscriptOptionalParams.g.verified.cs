@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.TranscriptOptionalParams.g.cs
+//HintName: G.Models.TranscriptOptionalParams.g.cs
 
 #nullable enable
 
@@ -16,7 +16,7 @@ namespace G
         /// Default Value: en_us
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("language_code")]
-        public global::G.OneOf<global::G.AnyOf<global::G.TranscriptLanguageCode?, string>?, object>? LanguageCode { get; set; }
+        public global::G.AnyOf<global::G.TranscriptLanguageCode?, string>? LanguageCode { get; set; }
 
         /// <summary>
         /// Enable [Automatic language detection](https://www.assemblyai.com/docs/models/speech-recognition#automatic-language-detection), either true or false.<br/>
@@ -39,7 +39,7 @@ namespace G
         /// Default Value: best
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("speech_model")]
-        public global::G.OneOf<global::G.SpeechModel2?, object>? SpeechModel { get; set; }
+        public global::G.SpeechModel? SpeechModel { get; set; }
 
         /// <summary>
         /// Enable Automatic Punctuation, can be true or false<br/>
@@ -162,7 +162,7 @@ namespace G
         /// Default Value: hash
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("redact_pii_sub")]
-        public global::G.OneOf<global::G.SubstitutionPolicy?, object>? RedactPiiSub { get; set; }
+        public global::G.SubstitutionPolicy? RedactPiiSub { get; set; }
 
         /// <summary>
         /// Enable [Speaker diarization](https://www.assemblyai.com/docs/models/speaker-diarization), can be true or false<br/>
@@ -418,10 +418,10 @@ namespace G
         /// The list of custom topics
         /// </param>
         public TranscriptOptionalParams(
-            global::G.OneOf<global::G.AnyOf<global::G.TranscriptLanguageCode?, string>?, object>? languageCode,
+            global::G.AnyOf<global::G.TranscriptLanguageCode?, string>? languageCode,
             bool? languageDetection,
             float? languageConfidenceThreshold,
-            global::G.OneOf<global::G.SpeechModel2?, object>? speechModel,
+            global::G.SpeechModel? speechModel,
             bool? punctuate,
             bool? formatText,
             bool? disfluencies,
@@ -439,7 +439,7 @@ namespace G
             bool? redactPiiAudio,
             global::G.RedactPiiAudioQuality? redactPiiAudioQuality,
             global::System.Collections.Generic.IList<global::G.PiiPolicy>? redactPiiPolicies,
-            global::G.OneOf<global::G.SubstitutionPolicy?, object>? redactPiiSub,
+            global::G.SubstitutionPolicy? redactPiiSub,
             bool? speakerLabels,
             object? speakersExpected,
             bool? contentSafety,

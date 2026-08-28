@@ -1,4 +1,4 @@
-﻿//HintName: G.Api.g.cs
+//HintName: G.Api.g.cs
 
 #nullable enable
 
@@ -74,9 +74,9 @@ namespace G
 
                     new global::G.JsonConverters.PiiPolicyNullableJsonConverter(),
 
-                    new global::G.JsonConverters.SpeechModel2JsonConverter(),
+                    new global::G.JsonConverters.SpeechModelJsonConverter(),
 
-                    new global::G.JsonConverters.SpeechModel2NullableJsonConverter(),
+                    new global::G.JsonConverters.SpeechModelNullableJsonConverter(),
 
                     new global::G.JsonConverters.TranscriptLanguageCodeJsonConverter(),
 

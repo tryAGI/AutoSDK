@@ -1,11 +1,11 @@
-﻿//HintName: G.Models.BaseMessagesResultContentItems1Input.g.cs
+//HintName: G.Models.BaseMessagesResultContentItems1Input.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// Any type
+    /// 
     /// </summary>
     public sealed partial class BaseMessagesResultContentItems1Input
     {

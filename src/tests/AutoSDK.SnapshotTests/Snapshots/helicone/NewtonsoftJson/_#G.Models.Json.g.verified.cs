@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.Json.g.cs
+//HintName: G.Models.Json.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -162,9 +162,9 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::System.Collections.Generic.IList<global::G.Json>? JsonVariant5 { get; init; }
+        public global::System.Collections.Generic.IList<global::G.Json?>? JsonVariant5 { get; init; }
 #else
-        public global::System.Collections.Generic.IList<global::G.Json>? JsonVariant5 { get; }
+        public global::System.Collections.Generic.IList<global::G.Json?>? JsonVariant5 { get; }
 #endif
 
         /// <summary>
@@ -182,7 +182,7 @@ namespace G
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::System.Collections.Generic.IList<global::G.Json>? value)
+            out global::System.Collections.Generic.IList<global::G.Json?>? value)
         {
             value = JsonVariant5;
             return IsJsonVariant5;
@@ -191,7 +191,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.Json> PickJsonVariant5() => IsJsonVariant5
+        public global::System.Collections.Generic.IList<global::G.Json?> PickJsonVariant5() => IsJsonVariant5
             ? JsonVariant5!
             : throw new global::System.InvalidOperationException($"Expected union variant 'JsonVariant5' but the value was {ToString()}.");
         /// <summary>
@@ -294,7 +294,7 @@ namespace G
             double? jsonVariant2,
             bool? jsonVariant3,
             global::System.Collections.Generic.Dictionary<string, global::G.Json?>? jsonVariant4,
-            global::System.Collections.Generic.IList<global::G.Json>? jsonVariant5
+            global::System.Collections.Generic.IList<global::G.Json?>? jsonVariant5
             )
         {
             JsonVariant1 = jsonVariant1;
@@ -342,7 +342,7 @@ namespace G
             global::System.Func<double?, TResult>? jsonVariant2 = null,
             global::System.Func<bool?, TResult>? jsonVariant3 = null,
             global::System.Func<global::System.Collections.Generic.Dictionary<string, global::G.Json?>, TResult>? jsonVariant4 = null,
-            global::System.Func<global::System.Collections.Generic.IList<global::G.Json>, TResult>? jsonVariant5 = null,
+            global::System.Func<global::System.Collections.Generic.IList<global::G.Json?>, TResult>? jsonVariant5 = null,
             bool validate = true)
         {
             if (validate)
@@ -386,7 +386,7 @@ namespace G
 
             global::System.Action<global::System.Collections.Generic.Dictionary<string, global::G.Json?>>? jsonVariant4 = null,
 
-            global::System.Action<global::System.Collections.Generic.IList<global::G.Json>>? jsonVariant5 = null,
+            global::System.Action<global::System.Collections.Generic.IList<global::G.Json?>>? jsonVariant5 = null,
             bool validate = true)
         {
             if (validate)
@@ -424,7 +424,7 @@ namespace G
             global::System.Action<double?>? jsonVariant2 = null,
             global::System.Action<bool?>? jsonVariant3 = null,
             global::System.Action<global::System.Collections.Generic.Dictionary<string, global::G.Json?>>? jsonVariant4 = null,
-            global::System.Action<global::System.Collections.Generic.IList<global::G.Json>>? jsonVariant5 = null,
+            global::System.Action<global::System.Collections.Generic.IList<global::G.Json?>>? jsonVariant5 = null,
             bool validate = true)
         {
             if (validate)
@@ -470,7 +470,7 @@ namespace G
                 JsonVariant4,
                 typeof(global::System.Collections.Generic.Dictionary<string, global::G.Json?>),
                 JsonVariant5,
-                typeof(global::System.Collections.Generic.IList<global::G.Json>),
+                typeof(global::System.Collections.Generic.IList<global::G.Json?>),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -491,7 +491,7 @@ namespace G
                 global::System.Collections.Generic.EqualityComparer<double?>.Default.Equals(JsonVariant2, other.JsonVariant2) &&
                 global::System.Collections.Generic.EqualityComparer<bool?>.Default.Equals(JsonVariant3, other.JsonVariant3) &&
                 global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.Dictionary<string, global::G.Json?>?>.Default.Equals(JsonVariant4, other.JsonVariant4) &&
-                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::G.Json>?>.Default.Equals(JsonVariant5, other.JsonVariant5) 
+                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::G.Json?>?>.Default.Equals(JsonVariant5, other.JsonVariant5) 
                 ;
         }
 

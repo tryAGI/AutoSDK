@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.AttachedFunctionApiResponse.g.cs
+//HintName: G.Models.AttachedFunctionApiResponse.g.cs
 
 #nullable enable
 
@@ -61,7 +61,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("output_collection_id")]
-        public global::G.OneOf<object, global::System.Guid?>? OutputCollectionId { get; set; }
+        public global::System.Guid? OutputCollectionId { get; set; }
 
         /// <summary>
         /// Optional JSON parameters for the function
@@ -125,7 +125,7 @@ namespace G
             string name,
             string outputCollection,
             string tenantId,
-            global::G.OneOf<object, global::System.Guid?>? outputCollectionId,
+            global::System.Guid? outputCollectionId,
             string? @params)
         {
             this.CompletionOffset = completionOffset;

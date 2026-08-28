@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.FloatListValueType.g.cs
+//HintName: G.Models.FloatListValueType.g.cs
 
 #nullable enable
 
@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("vector_index")]
-        public global::G.OneOf<object, global::G.VectorIndexType>? VectorIndex { get; set; }
+        public global::G.VectorIndexType? VectorIndex { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -26,7 +26,7 @@ namespace G
         /// </summary>
         /// <param name="vectorIndex"></param>
         public FloatListValueType(
-            global::G.OneOf<object, global::G.VectorIndexType>? vectorIndex)
+            global::G.VectorIndexType? vectorIndex)
         {
             this.VectorIndex = vectorIndex;
         }

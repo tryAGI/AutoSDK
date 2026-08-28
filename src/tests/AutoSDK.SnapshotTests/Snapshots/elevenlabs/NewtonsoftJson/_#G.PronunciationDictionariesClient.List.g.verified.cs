@@ -1,4 +1,4 @@
-﻿//HintName: G.PronunciationDictionariesClient.List.g.cs
+//HintName: G.PronunciationDictionariesClient.List.g.cs
 
 #nullable enable
 
@@ -10,7 +10,7 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             ref string? cursor,
             ref int? pageSize,
-            global::G.GetPronunciationDictionariesMetadataSort2? sort,
+            ref global::G.GetPronunciationDictionariesMetadataSort2? sort,
             ref string? sortDirection,
             ref string? xiApiKey);
         partial void PrepareListRequest(
@@ -116,7 +116,7 @@ namespace G
                 httpClient: HttpClient,
                 cursor: ref cursor,
                 pageSize: ref pageSize,
-                sort: sort,
+                sort: ref sort,
                 sortDirection: ref sortDirection,
                 xiApiKey: ref xiApiKey);
 

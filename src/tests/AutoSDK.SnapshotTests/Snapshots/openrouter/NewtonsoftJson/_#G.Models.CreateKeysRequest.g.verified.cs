@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.CreateKeysRequest.g.cs
+//HintName: G.Models.CreateKeysRequest.g.cs
 
 #nullable enable
 
@@ -25,7 +25,7 @@ namespace G
         /// Type of limit reset for the API key (daily, weekly, monthly, or null for no reset). Resets happen automatically at midnight UTC, and weeks are Monday through Sunday.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("limit_reset")]
-        public global::G.OneOf<global::G.KeysPostRequestBodyContentApplicationJsonSchemaLimitReset?, object>? LimitReset { get; set; }
+        public global::G.KeysPostRequestBodyContentApplicationJsonSchemaLimitReset? LimitReset { get; set; }
 
         /// <summary>
         /// Whether to include BYOK usage in the limit
@@ -66,7 +66,7 @@ namespace G
         public CreateKeysRequest(
             string name,
             double? limit,
-            global::G.OneOf<global::G.KeysPostRequestBodyContentApplicationJsonSchemaLimitReset?, object>? limitReset,
+            global::G.KeysPostRequestBodyContentApplicationJsonSchemaLimitReset? limitReset,
             bool? includeByokInLimit,
             global::System.DateTime? expiresAt)
         {

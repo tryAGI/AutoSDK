@@ -1,4 +1,4 @@
-﻿//HintName: G.Api.g.cs
+//HintName: G.Api.g.cs
 
 #nullable enable
 
@@ -81,9 +81,9 @@ namespace G
 
                     new global::G.JsonConverters.ReadLevelNullableJsonConverter(),
 
-                    new global::G.JsonConverters.Space2JsonConverter(),
+                    new global::G.JsonConverters.SpaceJsonConverter(),
 
-                    new global::G.JsonConverters.Space2NullableJsonConverter(),
+                    new global::G.JsonConverters.SpaceNullableJsonConverter(),
 
                     new global::G.JsonConverters.UnixTimestampJsonConverter(),
                 }

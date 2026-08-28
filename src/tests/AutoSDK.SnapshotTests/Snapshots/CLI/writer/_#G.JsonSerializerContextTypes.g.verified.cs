@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonSerializerContextTypes.g.cs
+//HintName: G.JsonSerializerContextTypes.g.cs
 
 #nullable enable
 
@@ -329,7 +329,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.Source>? Type75 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.Source?>? Type75 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -341,7 +341,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.SubQuery>? Type78 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.SubQuery?>? Type78 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -998,11 +998,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.Source>? ListType18 { get; set; }
+        public global::System.Collections.Generic.List<global::G.Source?>? ListType18 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.SubQuery>? ListType19 { get; set; }
+        public global::System.Collections.Generic.List<global::G.SubQuery?>? ListType19 { get; set; }
         /// <summary>
         /// 
         /// </summary>

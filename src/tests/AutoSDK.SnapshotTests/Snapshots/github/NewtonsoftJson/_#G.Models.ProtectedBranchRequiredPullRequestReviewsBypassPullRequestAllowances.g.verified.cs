@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ProtectedBranchRequiredPullRequestReviewsBypassPullRequestAllowances.g.cs
+//HintName: G.Models.ProtectedBranchRequiredPullRequestReviewsBypassPullRequestAllowances.g.cs
 
 #nullable enable
 
@@ -25,7 +25,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("apps")]
-        public global::System.Collections.Generic.IList<global::G.Integration>? Apps { get; set; }
+        public global::System.Collections.Generic.IList<global::G.Integration?>? Apps { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -42,7 +42,7 @@ namespace G
         public ProtectedBranchRequiredPullRequestReviewsBypassPullRequestAllowances(
             global::System.Collections.Generic.IList<global::G.SimpleUser> users,
             global::System.Collections.Generic.IList<global::G.Team> teams,
-            global::System.Collections.Generic.IList<global::G.Integration>? apps)
+            global::System.Collections.Generic.IList<global::G.Integration?>? apps)
         {
             this.Users = users ?? throw new global::System.ArgumentNullException(nameof(users));
             this.Teams = teams ?? throw new global::System.ArgumentNullException(nameof(teams));

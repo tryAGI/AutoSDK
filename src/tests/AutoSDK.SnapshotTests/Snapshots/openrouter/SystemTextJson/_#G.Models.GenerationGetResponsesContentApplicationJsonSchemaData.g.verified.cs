@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.GenerationGetResponsesContentApplicationJsonSchemaData.g.cs
+//HintName: G.Models.GenerationGetResponsesContentApplicationJsonSchemaData.g.cs
 
 #nullable enable
 
@@ -206,9 +206,7 @@ namespace G
         /// Type of API used for the generation
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("api_type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.GenerationGetResponsesContentApplicationJsonSchemaDataApiType?, object>))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.OneOf<global::G.GenerationGetResponsesContentApplicationJsonSchemaDataApiType?, object> ApiType { get; set; }
+        public global::G.GenerationGetResponsesContentApplicationJsonSchemaDataApiType? ApiType { get; set; }
 
         /// <summary>
         /// Router used for the request (e.g., openrouter/auto)
@@ -263,9 +261,6 @@ namespace G
         /// </param>
         /// <param name="isByok">
         /// Whether this used bring-your-own-key
-        /// </param>
-        /// <param name="apiType">
-        /// Type of API used for the generation
         /// </param>
         /// <param name="upstreamId">
         /// Upstream provider's identifier for this generation
@@ -339,6 +334,9 @@ namespace G
         /// <param name="externalUser">
         /// External user identifier
         /// </param>
+        /// <param name="apiType">
+        /// Type of API used for the generation
+        /// </param>
         /// <param name="router">
         /// Router used for the request (e.g., openrouter/auto)
         /// </param>
@@ -362,7 +360,6 @@ namespace G
             string origin,
             double usage,
             bool isByok,
-            global::G.OneOf<global::G.GenerationGetResponsesContentApplicationJsonSchemaDataApiType?, object> apiType,
             string? upstreamId,
             double? cacheDiscount,
             double? upstreamInferenceCost,
@@ -387,6 +384,7 @@ namespace G
             double? numSearchResults,
             string? nativeFinishReason,
             string? externalUser,
+            global::G.GenerationGetResponsesContentApplicationJsonSchemaDataApiType? apiType,
             string? router,
             global::System.Collections.Generic.IList<global::G.GenerationGetResponsesContentApplicationJsonSchemaDataProviderResponsesItems>? providerResponses,
             string? userAgent,

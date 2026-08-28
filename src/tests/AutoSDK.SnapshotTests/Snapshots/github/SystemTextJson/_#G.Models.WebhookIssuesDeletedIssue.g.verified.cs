@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.WebhookIssuesDeletedIssue.g.cs
+//HintName: G.Models.WebhookIssuesDeletedIssue.g.cs
 
 #nullable enable
 
@@ -27,7 +27,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("assignees")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.WebhookIssuesDeletedIssueAssignee2> Assignees { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.WebhookIssuesDeletedIssueAssignee2?> Assignees { get; set; }
 
         /// <summary>
         /// How the author is associated with the repository.
@@ -265,7 +265,7 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public WebhookIssuesDeletedIssue(
-            global::System.Collections.Generic.IList<global::G.WebhookIssuesDeletedIssueAssignee2> assignees,
+            global::System.Collections.Generic.IList<global::G.WebhookIssuesDeletedIssueAssignee2?> assignees,
             global::G.WebhookIssuesDeletedIssueAuthorAssociation authorAssociation,
             int comments,
             string commentsUrl,

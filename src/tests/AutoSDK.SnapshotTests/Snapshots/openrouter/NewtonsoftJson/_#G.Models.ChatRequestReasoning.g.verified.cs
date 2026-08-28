@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ChatRequestReasoning.g.cs
+//HintName: G.Models.ChatRequestReasoning.g.cs
 
 #nullable enable
 
@@ -13,7 +13,7 @@ namespace G
         /// Constrains effort on reasoning for reasoning models
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("effort")]
-        public global::G.OneOf<global::G.ChatRequestReasoningEffort?, object>? Effort { get; set; }
+        public global::G.ChatRequestReasoningEffort? Effort { get; set; }
 
         /// <summary>
         /// 
@@ -35,7 +35,7 @@ namespace G
         /// </param>
         /// <param name="summary"></param>
         public ChatRequestReasoning(
-            global::G.OneOf<global::G.ChatRequestReasoningEffort?, object>? effort,
+            global::G.ChatRequestReasoningEffort? effort,
             global::G.ChatRequestReasoningSummary? summary)
         {
             this.Effort = effort;

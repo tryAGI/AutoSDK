@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.KPIProjectMatrixSegment.g.cs
+//HintName: G.Models.KPIProjectMatrixSegment.g.cs
 
 #nullable enable
 
@@ -27,7 +27,7 @@ namespace G
         /// 2D array of values: values[project_index][time_index]
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("values", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>> Values { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double?>> Values { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -50,7 +50,7 @@ namespace G
         public KPIProjectMatrixSegment(
             global::System.Collections.Generic.IList<global::System.DateTime> intervalStart,
             global::System.Collections.Generic.IList<global::G.KPIProjectInfo> projects,
-            global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>> values)
+            global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double?>> values)
         {
             this.IntervalStart = intervalStart ?? throw new global::System.ArgumentNullException(nameof(intervalStart));
             this.Projects = projects ?? throw new global::System.ArgumentNullException(nameof(projects));

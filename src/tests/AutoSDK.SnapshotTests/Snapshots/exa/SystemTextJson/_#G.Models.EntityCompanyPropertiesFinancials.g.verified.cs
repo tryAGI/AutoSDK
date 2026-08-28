@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.EntityCompanyPropertiesFinancials.g.cs
+//HintName: G.Models.EntityCompanyPropertiesFinancials.g.cs
 
 #nullable enable
 
@@ -29,8 +29,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("fundingLatestRound")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.EntityCompanyPropertiesFundingRound, object>))]
-        public global::G.OneOf<global::G.EntityCompanyPropertiesFundingRound, object>? FundingLatestRound { get; set; }
+        public global::G.EntityCompanyPropertiesFundingRound? FundingLatestRound { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -56,7 +55,7 @@ namespace G
         public EntityCompanyPropertiesFinancials(
             int? revenueAnnual,
             int? fundingTotal,
-            global::G.OneOf<global::G.EntityCompanyPropertiesFundingRound, object>? fundingLatestRound)
+            global::G.EntityCompanyPropertiesFundingRound? fundingLatestRound)
         {
             this.RevenueAnnual = revenueAnnual;
             this.FundingTotal = fundingTotal;

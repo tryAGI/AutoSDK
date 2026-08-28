@@ -1,4 +1,4 @@
-﻿//HintName: G.StepsClient.ListSteps.g.cs
+//HintName: G.StepsClient.ListSteps.g.cs
 
 #nullable enable
 
@@ -51,7 +51,7 @@ namespace G
             ref string? model,
             ref string? agentId,
             global::System.Collections.Generic.IList<string>? traceIds,
-            global::G.ListStepsFeedback2? feedback,
+            ref global::G.ListStepsFeedback2? feedback,
             bool? hasFeedback,
             global::System.Collections.Generic.IList<string>? tags,
             ref string? projectId,
@@ -267,7 +267,7 @@ namespace G
                 model: ref model,
                 agentId: ref agentId,
                 traceIds: traceIds,
-                feedback: feedback,
+                feedback: ref feedback,
                 hasFeedback: hasFeedback,
                 tags: tags,
                 projectId: ref projectId,

@@ -1,4 +1,4 @@
-﻿//HintName: G.SubpackageApiKeysClient.UpdateKeys.g.cs
+//HintName: G.SubpackageApiKeysClient.UpdateKeys.g.cs
 
 #nullable enable
 
@@ -656,7 +656,7 @@ namespace G
             string? name = default,
             bool? disabled = default,
             double? limit = default,
-            global::G.OneOf<global::G.KeysHashPatchRequestBodyContentApplicationJsonSchemaLimitReset?, object>? limitReset = default,
+            global::G.KeysHashPatchRequestBodyContentApplicationJsonSchemaLimitReset? limitReset = default,
             bool? includeByokInLimit = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)

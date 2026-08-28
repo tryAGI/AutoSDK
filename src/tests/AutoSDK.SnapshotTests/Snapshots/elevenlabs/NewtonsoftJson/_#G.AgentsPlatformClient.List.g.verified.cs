@@ -1,4 +1,4 @@
-﻿//HintName: G.AgentsPlatformClient.List.g.cs
+//HintName: G.AgentsPlatformClient.List.g.cs
 
 #nullable enable
 
@@ -13,7 +13,7 @@ namespace G
             bool? archived,
             ref bool? showOnlyOwnedAgents,
             ref global::G.SortDirection? sortDirection,
-            global::G.AgentSortBy? sortBy,
+            ref global::G.AgentSortBy? sortBy,
             ref string? cursor,
             ref string? xiApiKey);
         partial void PrepareListRequest(
@@ -154,7 +154,7 @@ namespace G
                 archived: archived,
                 showOnlyOwnedAgents: ref showOnlyOwnedAgents,
                 sortDirection: ref sortDirection,
-                sortBy: sortBy,
+                sortBy: ref sortBy,
                 cursor: ref cursor,
                 xiApiKey: ref xiApiKey);
 

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.EntityPersonPropertiesWorkHistoryEntry.g.cs
+//HintName: G.Models.EntityPersonPropertiesWorkHistoryEntry.g.cs
 
 #nullable enable
 
@@ -29,15 +29,13 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dates")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.EntityDateRange, object>))]
-        public global::G.OneOf<global::G.EntityDateRange, object>? Dates { get; set; }
+        public global::G.EntityDateRange? Dates { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("company")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.EntityPersonPropertiesCompanyRef, object>))]
-        public global::G.OneOf<global::G.EntityPersonPropertiesCompanyRef, object>? Company { get; set; }
+        public global::G.EntityPersonPropertiesCompanyRef? Company { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -64,8 +62,8 @@ namespace G
         public EntityPersonPropertiesWorkHistoryEntry(
             string? title,
             string? location,
-            global::G.OneOf<global::G.EntityDateRange, object>? dates,
-            global::G.OneOf<global::G.EntityPersonPropertiesCompanyRef, object>? company)
+            global::G.EntityDateRange? dates,
+            global::G.EntityPersonPropertiesCompanyRef? company)
         {
             this.Title = title;
             this.Location = location;

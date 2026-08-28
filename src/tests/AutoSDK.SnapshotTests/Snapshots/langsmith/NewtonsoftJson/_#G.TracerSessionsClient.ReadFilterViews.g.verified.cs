@@ -1,4 +1,4 @@
-﻿//HintName: G.TracerSessionsClient.ReadFilterViews.g.cs
+//HintName: G.TracerSessionsClient.ReadFilterViews.g.cs
 
 #nullable enable
 
@@ -61,7 +61,7 @@ namespace G
         partial void PrepareReadFilterViewsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid sessionId,
-            global::G.FilterViewType? type);
+            ref global::G.FilterViewType? type);
         partial void PrepareReadFilterViewsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -120,7 +120,7 @@ namespace G
             PrepareReadFilterViewsArguments(
                 httpClient: HttpClient,
                 sessionId: ref sessionId,
-                type: type);
+                type: ref type);
 
 
             var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(

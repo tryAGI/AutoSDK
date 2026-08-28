@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.MessagesResultUsage.g.cs
+//HintName: G.Models.MessagesResultUsage.g.cs
 
 #nullable enable
 
@@ -36,8 +36,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("cache_creation", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.OneOf<global::G.MessagesResultUsageCacheCreation, object> CacheCreation { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("cache_creation")]
+        public global::G.MessagesResultUsageCacheCreation? CacheCreation { get; set; }
 
         /// <summary>
         /// 
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("server_tool_use", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.OneOf<global::G.MessagesResultUsageServerToolUse, object> ServerToolUse { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("server_tool_use")]
+        public global::G.MessagesResultUsageServerToolUse? ServerToolUse { get; set; }
 
         /// <summary>
         /// 
@@ -61,7 +61,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("speed")]
-        public global::G.OneOf<global::G.MessagesResultUsageSpeed?, object>? Speed { get; set; }
+        public global::G.MessagesResultUsageSpeed? Speed { get; set; }
 
         /// <summary>
         /// 
@@ -79,7 +79,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("cost_details")]
-        public global::G.OneOf<global::G.MessagesResultUsageCostDetails, object>? CostDetails { get; set; }
+        public global::G.MessagesResultUsageCostDetails? CostDetails { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -92,11 +92,11 @@ namespace G
         /// </summary>
         /// <param name="inputTokens"></param>
         /// <param name="outputTokens"></param>
-        /// <param name="cacheCreation"></param>
-        /// <param name="serverToolUse"></param>
         /// <param name="cacheCreationInputTokens"></param>
         /// <param name="cacheReadInputTokens"></param>
+        /// <param name="cacheCreation"></param>
         /// <param name="inferenceGeo"></param>
+        /// <param name="serverToolUse"></param>
         /// <param name="serviceTier"></param>
         /// <param name="speed"></param>
         /// <param name="cost"></param>
@@ -105,16 +105,16 @@ namespace G
         public MessagesResultUsage(
             double inputTokens,
             double outputTokens,
-            global::G.OneOf<global::G.MessagesResultUsageCacheCreation, object> cacheCreation,
-            global::G.OneOf<global::G.MessagesResultUsageServerToolUse, object> serverToolUse,
             double? cacheCreationInputTokens,
             double? cacheReadInputTokens,
+            global::G.MessagesResultUsageCacheCreation? cacheCreation,
             string? inferenceGeo,
+            global::G.MessagesResultUsageServerToolUse? serverToolUse,
             string? serviceTier,
-            global::G.OneOf<global::G.MessagesResultUsageSpeed?, object>? speed,
+            global::G.MessagesResultUsageSpeed? speed,
             double? cost,
             bool? isByok,
-            global::G.OneOf<global::G.MessagesResultUsageCostDetails, object>? costDetails)
+            global::G.MessagesResultUsageCostDetails? costDetails)
         {
             this.InputTokens = inputTokens;
             this.OutputTokens = outputTokens;

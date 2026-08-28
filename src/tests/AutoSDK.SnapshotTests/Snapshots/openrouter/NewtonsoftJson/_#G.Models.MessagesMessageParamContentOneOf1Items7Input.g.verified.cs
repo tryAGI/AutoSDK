@@ -1,11 +1,11 @@
-﻿//HintName: G.Models.MessagesMessageParamContentOneOf1Items7Input.g.cs
+//HintName: G.Models.MessagesMessageParamContentOneOf1Items7Input.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// Any type
+    /// 
     /// </summary>
     public sealed partial class MessagesMessageParamContentOneOf1Items7Input
     {

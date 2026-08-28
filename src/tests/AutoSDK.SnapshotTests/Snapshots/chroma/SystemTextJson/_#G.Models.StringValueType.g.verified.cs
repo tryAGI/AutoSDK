@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.StringValueType.g.cs
+//HintName: G.Models.StringValueType.g.cs
 
 #nullable enable
 
@@ -13,15 +13,13 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("fts_index")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<object, global::G.FtsIndexType>))]
-        public global::G.OneOf<object, global::G.FtsIndexType>? FtsIndex { get; set; }
+        public global::G.FtsIndexType? FtsIndex { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("string_inverted_index")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<object, global::G.StringInvertedIndexType>))]
-        public global::G.OneOf<object, global::G.StringInvertedIndexType>? StringInvertedIndex { get; set; }
+        public global::G.StringInvertedIndexType? StringInvertedIndex { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -38,8 +36,8 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public StringValueType(
-            global::G.OneOf<object, global::G.FtsIndexType>? ftsIndex,
-            global::G.OneOf<object, global::G.StringInvertedIndexType>? stringInvertedIndex)
+            global::G.FtsIndexType? ftsIndex,
+            global::G.StringInvertedIndexType? stringInvertedIndex)
         {
             this.FtsIndex = ftsIndex;
             this.StringInvertedIndex = stringInvertedIndex;

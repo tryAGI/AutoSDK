@@ -1,4 +1,4 @@
-﻿//HintName: G.ISubpackageGuardrailsClient.CreateGuardrail.g.cs
+//HintName: G.ISubpackageGuardrailsClient.CreateGuardrail.g.cs
 #nullable enable
 
 namespace G
@@ -66,7 +66,7 @@ namespace G
             string name,
             string? description = default,
             double? limitUsd = default,
-            global::G.OneOf<global::G.GuardrailsPostRequestBodyContentApplicationJsonSchemaResetInterval?, object>? resetInterval = default,
+            global::G.GuardrailsPostRequestBodyContentApplicationJsonSchemaResetInterval? resetInterval = default,
             global::System.Collections.Generic.IList<string>? allowedProviders = default,
             global::System.Collections.Generic.IList<string>? ignoredProviders = default,
             global::System.Collections.Generic.IList<string>? allowedModels = default,

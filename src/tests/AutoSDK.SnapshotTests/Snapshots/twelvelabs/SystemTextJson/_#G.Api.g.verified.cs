@@ -1,4 +1,4 @@
-﻿//HintName: G.Api.g.cs
+//HintName: G.Api.g.cs
 
 #nullable enable
 
@@ -167,8 +167,6 @@ namespace G
                     new global::G.JsonConverters.EmbeddingTaskMediaMetadataJsonConverter(),
                     new global::G.JsonConverters.StreamAnalyzeResponseJsonConverter(),
                     new global::G.JsonConverters.AnalyzeResponse200JsonConverter(),
-                    new global::G.JsonConverters.OneOfJsonConverter<global::G.EmbeddingDataEmbeddingOption?, object>(),
-                    new global::G.JsonConverters.OneOfJsonConverter<global::G.EmbeddingDataEmbeddingScope?, object>(),
                     new global::G.JsonConverters.UnixTimestampJsonConverter(),
                 }
             };

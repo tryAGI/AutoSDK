@@ -1,4 +1,4 @@
-﻿//HintName: G.IImageClient.CreateGeneration.g.cs
+//HintName: G.IImageClient.CreateGeneration.g.cs
 #nullable enable
 
 #pragma warning disable CS0618 // Type or member is obsolete
@@ -171,7 +171,7 @@ namespace G
             int? height = default,
             bool? highContrast = default,
             bool? highResolution = default,
-            global::System.Collections.Generic.IList<string>? imagePrompts = default,
+            global::System.Collections.Generic.IList<string?>? imagePrompts = default,
             double? imagePromptWeight = default,
             string? initGenerationImageId = default,
             string? initImageId = default,

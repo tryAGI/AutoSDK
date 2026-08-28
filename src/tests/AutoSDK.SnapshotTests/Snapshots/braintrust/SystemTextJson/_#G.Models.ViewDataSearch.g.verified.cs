@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ViewDataSearch.g.cs
+//HintName: G.Models.ViewDataSearch.g.cs
 
 #nullable enable
 
@@ -13,25 +13,25 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("filter")]
-        public global::System.Collections.Generic.IList<object>? Filter { get; set; }
+        public global::System.Collections.Generic.IList<object?>? Filter { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tag")]
-        public global::System.Collections.Generic.IList<object>? Tag { get; set; }
+        public global::System.Collections.Generic.IList<object?>? Tag { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("match")]
-        public global::System.Collections.Generic.IList<object>? Match { get; set; }
+        public global::System.Collections.Generic.IList<object?>? Match { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sort")]
-        public global::System.Collections.Generic.IList<object>? Sort { get; set; }
+        public global::System.Collections.Generic.IList<object?>? Sort { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -50,10 +50,10 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ViewDataSearch(
-            global::System.Collections.Generic.IList<object>? filter,
-            global::System.Collections.Generic.IList<object>? tag,
-            global::System.Collections.Generic.IList<object>? match,
-            global::System.Collections.Generic.IList<object>? sort)
+            global::System.Collections.Generic.IList<object?>? filter,
+            global::System.Collections.Generic.IList<object?>? tag,
+            global::System.Collections.Generic.IList<object?>? match,
+            global::System.Collections.Generic.IList<object?>? sort)
         {
             this.Filter = filter;
             this.Tag = tag;

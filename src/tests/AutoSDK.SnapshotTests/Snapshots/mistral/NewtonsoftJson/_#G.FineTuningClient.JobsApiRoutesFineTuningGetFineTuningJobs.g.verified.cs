@@ -1,4 +1,4 @@
-﻿//HintName: G.FineTuningClient.JobsApiRoutesFineTuningGetFineTuningJobs.g.cs
+//HintName: G.FineTuningClient.JobsApiRoutesFineTuningGetFineTuningJobs.g.cs
 
 #nullable enable
 
@@ -34,7 +34,7 @@ namespace G
             global::System.DateTime? createdAfter,
             global::System.DateTime? createdBefore,
             ref bool? createdByMe,
-            global::G.JobsApiRoutesFineTuningGetFineTuningJobsStatus2? status,
+            ref global::G.JobsApiRoutesFineTuningGetFineTuningJobsStatus2? status,
             ref string? wandbProject,
             ref string? wandbName,
             ref string? suffix);
@@ -161,7 +161,7 @@ namespace G
                 createdAfter: createdAfter,
                 createdBefore: createdBefore,
                 createdByMe: ref createdByMe,
-                status: status,
+                status: ref status,
                 wandbProject: ref wandbProject,
                 wandbName: ref wandbName,
                 suffix: ref suffix);

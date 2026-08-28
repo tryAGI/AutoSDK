@@ -1,4 +1,4 @@
-﻿//HintName: G.IScoresClient.ScoresGetMany.g.cs
+//HintName: G.IScoresClient.ScoresGetMany.g.cs
 #nullable enable
 
 namespace G
@@ -39,7 +39,7 @@ namespace G
             string? name = default,
             global::System.DateTime? fromTimestamp = default,
             global::System.DateTime? toTimestamp = default,
-            global::System.Collections.Generic.IList<string>? environment = default,
+            global::System.Collections.Generic.IList<string?>? environment = default,
             global::G.ScoreSource? source = default,
             string? @operator = default,
             double? value = default,
@@ -51,7 +51,7 @@ namespace G
             string? observationId = default,
             string? queueId = default,
             global::G.ScoreDataType? dataType = default,
-            global::System.Collections.Generic.IList<string>? traceTags = default,
+            global::System.Collections.Generic.IList<string?>? traceTags = default,
             string? fields = default,
             string? filter = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
@@ -90,7 +90,7 @@ namespace G
             string? name = default,
             global::System.DateTime? fromTimestamp = default,
             global::System.DateTime? toTimestamp = default,
-            global::System.Collections.Generic.IList<string>? environment = default,
+            global::System.Collections.Generic.IList<string?>? environment = default,
             global::G.ScoreSource? source = default,
             string? @operator = default,
             double? value = default,
@@ -102,7 +102,7 @@ namespace G
             string? observationId = default,
             string? queueId = default,
             global::G.ScoreDataType? dataType = default,
-            global::System.Collections.Generic.IList<string>? traceTags = default,
+            global::System.Collections.Generic.IList<string?>? traceTags = default,
             string? fields = default,
             string? filter = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,

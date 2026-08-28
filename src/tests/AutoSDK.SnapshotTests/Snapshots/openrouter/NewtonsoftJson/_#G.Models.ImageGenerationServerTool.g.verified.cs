@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ImageGenerationServerTool.g.cs
+//HintName: G.Models.ImageGenerationServerTool.g.cs
 
 #nullable enable
 
@@ -27,7 +27,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("input_fidelity")]
-        public global::G.OneOf<global::G.ImageGenerationServerToolInputFidelity?, object>? InputFidelity { get; set; }
+        public global::G.ImageGenerationServerToolInputFidelity? InputFidelity { get; set; }
 
         /// <summary>
         /// 
@@ -105,7 +105,7 @@ namespace G
         public ImageGenerationServerTool(
             global::G.ImageGenerationServerToolType type,
             global::G.ImageGenerationServerToolBackground? background,
-            global::G.OneOf<global::G.ImageGenerationServerToolInputFidelity?, object>? inputFidelity,
+            global::G.ImageGenerationServerToolInputFidelity? inputFidelity,
             global::G.ImageGenerationServerToolInputImageMask? inputImageMask,
             global::G.ImageGenerationServerToolModel? model,
             global::G.ImageGenerationServerToolModeration? moderation,

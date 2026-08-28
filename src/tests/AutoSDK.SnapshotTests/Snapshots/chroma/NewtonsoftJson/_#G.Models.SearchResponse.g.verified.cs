@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.SearchResponse.g.cs
+//HintName: G.Models.SearchResponse.g.cs
 
 #nullable enable
 
@@ -13,13 +13,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("documents", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<string>> Documents { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<string?>?> Documents { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("embeddings", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>> Embeddings { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>?>?> Embeddings { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -31,13 +31,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("metadatas", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::G.OneOf<object, global::G.HashMap>>> Metadatas { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::G.HashMap?>?> Metadatas { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("scores", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>> Scores { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float?>?> Scores { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -61,11 +61,11 @@ namespace G
         /// <param name="scores"></param>
         /// <param name="select"></param>
         public SearchResponse(
-            global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<string>> documents,
-            global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>> embeddings,
+            global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<string?>?> documents,
+            global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>?>?> embeddings,
             global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<string>> ids,
-            global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::G.OneOf<object, global::G.HashMap>>> metadatas,
-            global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>> scores,
+            global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::G.HashMap?>?> metadatas,
+            global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float?>?> scores,
             global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::G.Key>> select)
         {
             this.Documents = documents ?? throw new global::System.ArgumentNullException(nameof(documents));

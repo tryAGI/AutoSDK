@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.WebhookForkForkeeVariant2.g.cs
+//HintName: G.Models.WebhookForkForkeeVariant2.g.cs
 
 #nullable enable
 
@@ -439,7 +439,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("topics")]
-        public global::System.Collections.Generic.IList<object>? Topics { get; set; }
+        public global::System.Collections.Generic.IList<object?>? Topics { get; set; }
 
         /// <summary>
         /// 
@@ -639,7 +639,7 @@ namespace G
             string? svnUrl,
             string? tagsUrl,
             string? teamsUrl,
-            global::System.Collections.Generic.IList<object>? topics,
+            global::System.Collections.Generic.IList<object?>? topics,
             string? treesUrl,
             string? updatedAt,
             string? url,

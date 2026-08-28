@@ -1,4 +1,4 @@
-﻿//HintName: G.PublicClient.ReadSharedDatasetFeedback.g.cs
+//HintName: G.PublicClient.ReadSharedDatasetFeedback.g.cs
 
 #nullable enable
 
@@ -18,7 +18,7 @@ namespace G
             global::System.Collections.Generic.IList<global::System.Guid>? user,
             bool? hasComment,
             bool? hasScore,
-            global::G.FeedbackLevel? level);
+            ref global::G.FeedbackLevel? level);
         partial void PrepareReadSharedDatasetFeedbackRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -148,7 +148,7 @@ namespace G
                 user: user,
                 hasComment: hasComment,
                 hasScore: hasScore,
-                level: level);
+                level: ref level);
 
             using var __timeoutCancellationTokenSource = global::G.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ReasoningDetailEncrypted.g.cs
+//HintName: G.Models.ReasoningDetailEncrypted.g.cs
 
 #nullable enable
 
@@ -33,8 +33,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("format")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.ReasoningDetailEncryptedFormat?, object>))]
-        public global::G.OneOf<global::G.ReasoningDetailEncryptedFormat?, object>? Format { get; set; }
+        public global::G.ReasoningDetailEncryptedFormat? Format { get; set; }
 
         /// <summary>
         /// 
@@ -63,7 +62,7 @@ namespace G
             string data,
             global::G.ReasoningDetailEncryptedType type,
             string? id,
-            global::G.OneOf<global::G.ReasoningDetailEncryptedFormat?, object>? format,
+            global::G.ReasoningDetailEncryptedFormat? format,
             double? index)
         {
             this.Type = type;
