@@ -130,9 +130,13 @@ public class CompositeObjectConverterTests
         var anyOf = data.AnyOfs.Single(x => x.Name == "Message");
 
         var converter = Sources.GenerateAnyOfJsonConverter(anyOf);
+        var model = Sources.GenerateAnyOf(anyOf);
 
         converter.Should().Contain("var __hasValue =");
         System.Text.RegularExpressions.Regex.Matches(converter, @"if \(!__hasValue\)").Should().HaveCount(variantCount);
         converter.Length.Should().BeLessThan(2_000_000);
+        model.Should().Contain("var __matchCount = 0;");
+        System.Text.RegularExpressions.Regex.Matches(model, @"if \(IsVariant\d+\) __matchCount\+\+;").Should().HaveCount(variantCount);
+        model.Length.Should().BeLessThan(1_000_000);
     }
 }

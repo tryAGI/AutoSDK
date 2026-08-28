@@ -24,7 +24,12 @@ public static partial class Sources
                 ? $"{anyOfData.DiscriminatorType.Value.CSharpTypeWithoutNullability}{anyOfData.DiscriminatorPropertyName}"
                 : "string")
             : "string";
-        var validation = anyOfData.SubType switch
+        var useLinearOneOfValidation =
+            anyOfData.SubType == "OneOf" &&
+            anyOfData.Properties.Length >= AnyOfLinearFallbackGuardThreshold;
+        var validation = useLinearOneOfValidation
+            ? string.Empty
+            : anyOfData.SubType switch
         {
             "AnyOf" => string.Join(" || ", anyOfData.Properties.Select(x => $"Is{x.Name}")),
             "OneOf" => string.Join(" || ", anyOfData.Properties.Select((x, xi) =>
@@ -34,6 +39,12 @@ public static partial class Sources
                 : string.Join(" && ", anyOfData.Properties.Select(x => $"(!RequiresValue<{x.Type.CSharpTypeWithoutNullability}>() || Is{x.Name})")),
             _ => throw new NotImplementedException(),
         };
+        var validationBody = useLinearOneOfValidation
+            ? $@"            var __matchCount = 0;
+{anyOfData.Properties.Select(x => $@"            if (Is{x.Name}) __matchCount++;
+").Inject()}
+            return __matchCount == 1;"
+            : $"            return {validation};";
         var constructorWithAllValues =
             anyOfData.Count > 1 ||
             (anyOfData.IsNamed &&
@@ -174,7 +185,7 @@ namespace {anyOfData.Namespace}
         {string.Empty.ToXmlDocumentationSummary(level: 8)}
         public bool Validate()
         {{
-            return {validation};
+{validationBody}
         }}
 
         {string.Empty.ToXmlDocumentationSummary(level: 8)}

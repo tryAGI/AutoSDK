@@ -1,4 +1,5 @@
 using System.Globalization;
+using AutoSDK.Generation;
 using AutoSDK.Models;
 
 namespace AutoSDK.CLI.Commands;
@@ -21,6 +22,7 @@ internal readonly record struct GenerationDiagnostics(
     TimeSpan NormalizeCompareWriteAndCleanup,
     TimeSpan CacheWrite,
     Times CoreTimes,
+    IReadOnlyList<CSharpRenderPhase> RenderPhases,
     IReadOnlyList<RenderHotspot> RenderHotspots,
     GeneratedFileWriteResult Files,
     long TotalAllocatedBytes,
@@ -53,6 +55,13 @@ internal readonly record struct GenerationDiagnostics(
         await WriteMillisecondsAsync(writer, "core_compute_data_ms", CoreTimes.ComputeData).ConfigureAwait(false);
         await WriteMillisecondsAsync(writer, "core_compute_classes_ms", CoreTimes.ComputeDataClasses).ConfigureAwait(false);
         await WriteMillisecondsAsync(writer, "render_ms", Render).ConfigureAwait(false);
+        foreach (var phase in RenderPhases)
+        {
+            await WriteMillisecondsAsync(writer, $"render_{phase.Name}_ms", phase.Elapsed).ConfigureAwait(false);
+            await writer.WriteLineAsync($"  render_{phase.Name}_allocated_bytes: {phase.AllocatedBytes.ToString(CultureInfo.InvariantCulture)}").ConfigureAwait(false);
+            await writer.WriteLineAsync($"  render_{phase.Name}_files: {phase.FileCount.ToString(CultureInfo.InvariantCulture)}").ConfigureAwait(false);
+            await writer.WriteLineAsync($"  render_{phase.Name}_characters: {phase.CharacterCount.ToString(CultureInfo.InvariantCulture)}").ConfigureAwait(false);
+        }
         foreach (var hotspot in RenderHotspots)
         {
             await writer.WriteLineAsync($"  render_hotspot: {hotspot.Characters.ToString(CultureInfo.InvariantCulture)} {hotspot.Name}").ConfigureAwait(false);

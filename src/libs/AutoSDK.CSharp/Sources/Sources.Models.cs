@@ -36,7 +36,7 @@ namespace {modelData.Namespace}
         {
             return modelData.Style switch
             {
-                ModelStyle.Class => GenerateClassModel(modelData, cancellationToken),
+                ModelStyle.Class => GenerateClassModelCore(modelData, normalizeOutput: false, cancellationToken),
                 ModelStyle.Enumeration =>
                     GenerateEnumerationModel(modelData, cancellationToken) + "\n\n" +
                     GenerateEnumExtensions(modelData, cancellationToken),
@@ -265,6 +265,14 @@ public sealed partial class {modelData.Parents[level].Unbox<ModelData>().ClassNa
         ModelData modelData,
         CancellationToken cancellationToken = default)
     {
+        return GenerateClassModelCore(modelData, normalizeOutput: true, cancellationToken);
+    }
+
+    private static string GenerateClassModelCore(
+        ModelData modelData,
+        bool normalizeOutput,
+        CancellationToken cancellationToken)
+    {
         var jsonSerializer = modelData.Settings.GetSerializer();
         var isRequiredKeywordSupported = IsSupported(modelData.Settings.UseRequiredKeyword, modelData.Settings.TargetFramework);
         var requiredKeyword = isRequiredKeywordSupported
@@ -391,8 +399,7 @@ public sealed partial class {modelData.Parents[level].Unbox<ModelData>().ClassNa
             optionalConstructorPropertiesWithDefaults,
             optionalConstructorPropertiesWithoutDefaults);
 
-        return $@" 
-    {modelData.Summary.ToXmlDocumentationSummary(level: 4)}
+        var result = $@"    {modelData.Summary.ToXmlDocumentationSummary(level: 4)}
     {(modelData.IsDeprecated ? $"[global::System.Obsolete(\"{(!string.IsNullOrWhiteSpace(modelData.DeprecationMessage) ? modelData.DeprecationMessage.ClearForCSharp() : "This model marked as deprecated.")}\")]" : TrimmedLine)}
     {(modelData.Settings.UsesSystemTextJson() && modelData.IsBaseClass ? @$" 
     [global::System.Text.Json.Serialization.JsonPolymorphic(
@@ -438,7 +445,10 @@ public sealed partial class {modelData.Parents[level].Unbox<ModelData>().ClassNa
         }}
  " : TrimmedLine)}
 {leafFactory}
-    }}".RemoveBlankLinesWhereOnlyWhitespaces();
+    }}";
+        return normalizeOutput
+            ? result.RemoveBlankLinesWhereOnlyWhitespaces()
+            : result;
     }
 
     private static string TryGetCascadingLeafFactory(

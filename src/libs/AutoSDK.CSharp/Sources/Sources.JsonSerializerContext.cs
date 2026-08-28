@@ -24,9 +24,18 @@ public static partial class Sources
             ? client.Settings.JsonSerializerContext.Substring(client.Settings.JsonSerializerContext.LastIndexOf('.') + 1)
             : "SourceGenerationContext";
 
+        var serializableTypeSet = types.IsEmpty
+            ? default
+            : BuildJsonSerializableTypeSet(client, types, expandContextTypes: false);
+        var useChunkedContext = serializableTypeSet.SerializableTypes is { Length: > MaxJsonSerializableAttributesPerContext };
+        if (useChunkedContext)
+        {
+            serializableTypeSet = BuildJsonSerializableTypeSet(client, types, expandContextTypes: true);
+        }
+
         var jsonSerializableAttributes = types.IsEmpty
             ? (Lines: Array.Empty<string>(), GuardLines: Array.Empty<string>())
-            : GenerateJsonSerializableAttributeLines(client, types);
+            : GenerateJsonSerializableAttributeLines(client, types, serializableTypeSet);
 
         if (jsonSerializableAttributes.Lines.Length == 0)
         {
@@ -35,17 +44,12 @@ public static partial class Sources
                 contextClassName);
         }
 
-        if (jsonSerializableAttributes.Lines.Length > MaxJsonSerializableAttributesPerContext)
+        if (useChunkedContext)
         {
             // JsonSerializerContextTypes is an aggregate carrier whose properties reference
             // every known type. Registering it in a chunk makes STJ recursively regenerate the
             // complete metadata graph in that one context, defeating the split and potentially
             // pushing its compiler-generated <>c type past the CLR method limit.
-            jsonSerializableAttributes = GenerateJsonSerializableAttributeLines(
-                client,
-                types,
-                expandContextTypes: true);
-
             return GenerateChunkedJsonSerializerContext(
                 client,
                 contextClassName,
@@ -413,8 +417,21 @@ namespace {client.Settings.Namespace}
 
     private static (string[] Lines, string[] GuardLines) GenerateJsonSerializableAttributeLines(
         Client client,
+        EquatableArray<TypeData> types)
+    {
+        return GenerateJsonSerializableAttributeLines(
+            client,
+            types,
+            BuildJsonSerializableTypeSet(client, types, expandContextTypes: false));
+    }
+
+    private static (
+        string[] SerializableTypes,
+        string[] ExplicitNullableValueTypes,
+        string[] ContextTypes) BuildJsonSerializableTypeSet(
+        Client client,
         EquatableArray<TypeData> types,
-        bool expandContextTypes = false)
+        bool expandContextTypes)
     {
         var distinctTypes = types
             .Select(x => x.CSharpTypeWithoutNullability)
@@ -446,6 +463,18 @@ namespace {client.Settings.Namespace}
             .Concat(concreteListTypes)
             .Distinct(StringComparer.Ordinal)
             .ToArray();
+
+        return (serializableTypes, explicitNullableValueTypes, contextTypes);
+    }
+
+    private static (string[] Lines, string[] GuardLines) GenerateJsonSerializableAttributeLines(
+        Client client,
+        EquatableArray<TypeData> types,
+        (string[] SerializableTypes, string[] ExplicitNullableValueTypes, string[] ContextTypes) typeSet)
+    {
+        var serializableTypes = typeSet.SerializableTypes;
+        var explicitNullableValueTypes = typeSet.ExplicitNullableValueTypes;
+        var contextTypes = typeSet.ContextTypes;
 
         // Value types with nullable variants in JsonSerializerContextTypes will be
         // implicitly discovered by STJ through the nullable property (T? → Nullable<T> → T).

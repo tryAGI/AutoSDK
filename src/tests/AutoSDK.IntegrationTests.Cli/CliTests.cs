@@ -385,6 +385,9 @@ public class CliTests
             ReadDiagnosticValue(firstResult.StandardError, "normalized_lines").Should().BeGreaterThan(0);
             ReadDiagnosticValue(firstResult.StandardError, "core_compute_data_allocated_bytes").Should().BeGreaterThan(0);
             ReadDiagnosticValue(firstResult.StandardError, "core_compute_classes_allocated_bytes").Should().BeGreaterThan(0);
+            ReadDiagnosticValue(firstResult.StandardError, "render_model_types_allocated_bytes").Should().BeGreaterThan(0);
+            ReadDiagnosticValue(firstResult.StandardError, "render_method_implementations_allocated_bytes").Should().BeGreaterThan(0);
+            ReadDiagnosticValue(firstResult.StandardError, "render_model_types_files").Should().BeGreaterThan(0);
 
             var generatedFiles = Directory.GetFiles(outputDirectory, "*.cs", SearchOption.AllDirectories);
             generatedFiles.Should().NotBeEmpty();

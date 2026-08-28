@@ -371,6 +371,16 @@ public static class StringExtensions
         bool returnIfSingleLine = false)
     {
         text = text ?? throw new ArgumentNullException(nameof(text));
+
+        if (text.IndexOf('\n') < 0)
+        {
+            if (returnIfSingleLine)
+            {
+                return text;
+            }
+
+            return string.Concat(new string(' ', level), "/// ", text);
+        }
         
         var lines = text.Split(NewLine, StringSplitOptions.RemoveEmptyEntries);
         if (lines.Length == 0)
@@ -397,6 +407,13 @@ public static class StringExtensions
         text = text ?? throw new ArgumentNullException(nameof(text));
         
         var spaces = new string(' ', level);
+        if (text.IndexOf('\n') < 0)
+        {
+            return $@"/// <summary>
+{spaces}/// {text}
+{spaces}/// </summary>";
+        }
+
         var value = ToXmlDocumentation(text, level);
         
         return $@"/// <summary>
@@ -459,13 +476,23 @@ public static class StringExtensions
     {
         text = text ?? throw new ArgumentNullException(nameof(text));
         parameterName = parameterName ?? throw new ArgumentNullException(nameof(parameterName));
-        
+
+        var normalizedParameterName = parameterName.TrimStart('@');
+        if (string.IsNullOrWhiteSpace(text))
+        {
+            return $@"/// <param name=""{normalizedParameterName}""></param>";
+        }
+
         var spaces = new string(' ', level);
+        if (text.IndexOf('\n') < 0)
+        {
+            return $@"/// <param name=""{normalizedParameterName}"">
+{spaces}/// {text}
+{spaces}/// </param>";
+        }
+
         var value = ToXmlDocumentation(text, level);
-        
-        return string.IsNullOrWhiteSpace(text)
-            ? $@"/// <param name=""{parameterName.TrimStart('@')}""></param>"
-            : $@"/// <param name=""{parameterName.TrimStart('@')}"">
+        return $@"/// <param name=""{normalizedParameterName}"">
 {value}
 {spaces}/// </param>";
     }
@@ -482,6 +509,13 @@ public static class StringExtensions
         }
 
         var spaces = new string(' ', level);
+        if (text.IndexOf('\n') < 0)
+        {
+            return $@"/// <remarks>
+{spaces}/// {text}
+{spaces}/// </remarks>";
+        }
+
         var value = ToXmlDocumentation(text, level);
 
         return $@"/// <remarks>

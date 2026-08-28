@@ -98,9 +98,9 @@ namespace {endPoint.Settings.Namespace}
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref {contentType} content);")}
 
-{GenerateMethod(endPoint)}
-{(ShouldGenerateStreamResponseMethod(endPoint) ? GenerateMethod(endPoint, returnStreamResponse: true) : TrimmedLine)}
-{(ShouldGenerateResponseWrapperMethod(endPoint) ? GenerateMethod(endPoint, returnResponseWrapper: true) : TrimmedLine)}
+{GenerateMethodCore(endPoint, normalizeOutput: false)}
+{(ShouldGenerateStreamResponseMethod(endPoint) ? GenerateMethodCore(endPoint, returnStreamResponse: true, normalizeOutput: false) : TrimmedLine)}
+{(ShouldGenerateResponseWrapperMethod(endPoint) ? GenerateMethodCore(endPoint, returnResponseWrapper: true, normalizeOutput: false) : TrimmedLine)}
 {GeneratePollingMethods(endPoint)}
 {GenerateLocationWaitCompanion(endPoint)}
 {GenerateAutoPagingCompanion(endPoint)}
@@ -127,9 +127,9 @@ namespace {endPoint.Settings.Namespace}
 {{
     public partial interface I{endPoint.ClassName}
     {{
-{GenerateMethod(endPoint, isInterface: true)}
-{(ShouldGenerateStreamResponseMethod(endPoint) ? GenerateMethod(endPoint, isInterface: true, returnStreamResponse: true) : TrimmedLine)}
-{(ShouldGenerateResponseWrapperMethod(endPoint) ? GenerateMethod(endPoint, isInterface: true, returnResponseWrapper: true) : TrimmedLine)}
+{GenerateMethodCore(endPoint, isInterface: true, normalizeOutput: false)}
+{(ShouldGenerateStreamResponseMethod(endPoint) ? GenerateMethodCore(endPoint, isInterface: true, returnStreamResponse: true, normalizeOutput: false) : TrimmedLine)}
+{(ShouldGenerateResponseWrapperMethod(endPoint) ? GenerateMethodCore(endPoint, isInterface: true, returnResponseWrapper: true, normalizeOutput: false) : TrimmedLine)}
 {GeneratePollingMethods(endPoint, isInterface: true)}
 {GenerateLocationWaitCompanion(endPoint, isInterface: true)}
 {GenerateAutoPagingCompanion(endPoint, isInterface: true)}
@@ -347,9 +347,9 @@ namespace {endPoint.Settings.Namespace}
         }
 
         return $@"
-{GenerateMethod(endPoint, isInterface: isInterface, multipartStreamRequest: true)}
-{(ShouldGenerateStreamResponseMethod(endPoint) ? GenerateMethod(endPoint, isInterface: isInterface, returnStreamResponse: true, multipartStreamRequest: true) : TrimmedLine)}
-{(ShouldGenerateResponseWrapperMethod(endPoint) ? GenerateMethod(endPoint, isInterface: isInterface, returnResponseWrapper: true, multipartStreamRequest: true) : TrimmedLine)}".RemoveBlankLinesWhereOnlyWhitespaces();
+{GenerateMethodCore(endPoint, isInterface: isInterface, multipartStreamRequest: true, normalizeOutput: false)}
+{(ShouldGenerateStreamResponseMethod(endPoint) ? GenerateMethodCore(endPoint, isInterface: isInterface, returnStreamResponse: true, multipartStreamRequest: true, normalizeOutput: false) : TrimmedLine)}
+{(ShouldGenerateResponseWrapperMethod(endPoint) ? GenerateMethodCore(endPoint, isInterface: isInterface, returnResponseWrapper: true, multipartStreamRequest: true, normalizeOutput: false) : TrimmedLine)}".RemoveBlankLinesWhereOnlyWhitespaces();
     }
 
     private static string GetRequestPropertyName(MethodParameter parameter)
@@ -982,6 +982,23 @@ namespace {endPoint.Settings.Namespace}
         bool returnStreamResponse = false,
         bool multipartStreamRequest = false)
     {
+        return GenerateMethodCore(
+            endPoint,
+            isInterface,
+            returnResponseWrapper,
+            returnStreamResponse,
+            multipartStreamRequest,
+            normalizeOutput: true);
+    }
+
+    private static string GenerateMethodCore(
+        EndPoint endPoint,
+        bool isInterface = false,
+        bool returnResponseWrapper = false,
+        bool returnStreamResponse = false,
+        bool multipartStreamRequest = false,
+        bool normalizeOutput = true)
+    {
         if (returnResponseWrapper && returnStreamResponse)
         {
             throw new ArgumentException("A method cannot return both a response wrapper and a stream response.");
@@ -993,11 +1010,19 @@ namespace {endPoint.Settings.Namespace}
             return TrimmedLine;
         }
 
-        var sendExpression = GetSendExpression(
-            endPoint,
-            "__httpRequest",
-            "__effectiveCancellationToken",
-            forceResponseHeadersRead: returnStreamResponse);
+        var delegatesToResponseWrapper =
+            !useMultipartStreamRequest &&
+            !returnStreamResponse &&
+            !returnResponseWrapper &&
+            ShouldGenerateResponseWrapperMethod(endPoint);
+        var requiresImplementationBody = !isInterface && !delegatesToResponseWrapper;
+        var sendExpression = !requiresImplementationBody
+            ? string.Empty
+            : GetSendExpression(
+                endPoint,
+                "__httpRequest",
+                "__effectiveCancellationToken",
+                forceResponseHeadersRead: returnStreamResponse);
         var methodReturnsResponseStream = endPoint.RawStream || returnStreamResponse;
         var taskType = returnResponseWrapper
             ? $"global::System.Threading.Tasks.Task<{GetResponseWrapperType(endPoint)}>"
@@ -1018,7 +1043,7 @@ namespace {endPoint.Settings.Namespace}
         var cancellationTokenAttribute = endPoint.EnumerableStream && !isInterface
             ? "[global::System.Runtime.CompilerServices.EnumeratorCancellation] "
             : string.Empty;
-        var beforeRequestHook = GenerateHookInvocation(
+        var beforeRequestHook = !requiresImplementationBody ? string.Empty : GenerateHookInvocation(
             endPoint,
             endPoint.MethodName,
             helperMethodName: "OnBeforeRequest",
@@ -1029,7 +1054,7 @@ namespace {endPoint.Settings.Namespace}
             maxAttemptsExpression: "__maxAttempts",
             willRetryExpression: "false",
             cancellationTokenVariableName: "__effectiveCancellationToken");
-        var afterSuccessHook = GenerateHookInvocation(
+        var afterSuccessHook = !requiresImplementationBody ? string.Empty : GenerateHookInvocation(
             endPoint,
             endPoint.MethodName,
             helperMethodName: "OnAfterSuccess",
@@ -1040,7 +1065,7 @@ namespace {endPoint.Settings.Namespace}
             maxAttemptsExpression: "__maxAttempts",
             willRetryExpression: "false",
             cancellationTokenVariableName: "__effectiveCancellationToken");
-        var afterRetryableStatusHook = GenerateHookInvocation(
+        var afterRetryableStatusHook = !requiresImplementationBody ? string.Empty : GenerateHookInvocation(
             endPoint,
             endPoint.MethodName,
             helperMethodName: "OnAfterError",
@@ -1053,7 +1078,7 @@ namespace {endPoint.Settings.Namespace}
             cancellationTokenVariableName: "__effectiveCancellationToken",
             retryDelayExpression: "__retryDelay",
             retryReasonExpression: "\"status:\" + ((int)__response.StatusCode).ToString(global::System.Globalization.CultureInfo.InvariantCulture)");
-        var afterErrorStatusHook = GenerateHookInvocation(
+        var afterErrorStatusHook = !requiresImplementationBody ? string.Empty : GenerateHookInvocation(
             endPoint,
             endPoint.MethodName,
             helperMethodName: "OnAfterError",
@@ -1064,7 +1089,7 @@ namespace {endPoint.Settings.Namespace}
             maxAttemptsExpression: "__maxAttempts",
             willRetryExpression: "false",
             cancellationTokenVariableName: "__effectiveCancellationToken");
-        var afterExceptionHook = GenerateHookInvocation(
+        var afterExceptionHook = !requiresImplementationBody ? string.Empty : GenerateHookInvocation(
             endPoint,
             endPoint.MethodName,
             helperMethodName: "OnAfterError",
@@ -1082,7 +1107,7 @@ namespace {endPoint.Settings.Namespace}
             : Array.Empty<MethodParameter>();
         var body = isInterface
             ? ";"
-            : !useMultipartStreamRequest && !returnStreamResponse && !returnResponseWrapper && ShouldGenerateResponseWrapperMethod(endPoint)
+            : delegatesToResponseWrapper
             ? string.IsNullOrWhiteSpace(endPoint.SuccessResponse.Type.CSharpType)
             ? @$"
         {{
@@ -1335,8 +1360,7 @@ namespace {endPoint.Settings.Namespace}
             }}
         }}";
 
-        return $@" 
-        {endPoint.Summary.ToXmlDocumentationSummary(level: 8)}
+        var result = $@"        {endPoint.Summary.ToXmlDocumentationSummary(level: 8)}
 {(useMultipartStreamRequest ? multipartStreamParameters : endPoint.Parameters.Where(x => x.Location != null)).Select(x => $@"
         {x.Summary.ToXmlDocumentationForParam(x.ParameterName, level: 8)}").Inject()}
 {(useMultipartStreamRequest || string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType) ? TrimmedLine : $@"{TrimmedLine}
@@ -1354,8 +1378,10 @@ namespace {endPoint.Settings.Namespace}
 {endPoint.Parameters.Where(x => x is { Location: not null } && (!x.IsRequired || x.HasSchemaDefault)).Select(x => $@"
             {x.Type.CSharpType} {x.ParameterName} = {x.ParameterDefaultValue},").Inject()}")}
             global::{endPoint.Settings.Namespace}.AutoSDKRequestOptions? requestOptions = default,
-            {cancellationTokenAttribute}global::System.Threading.CancellationToken cancellationToken = default){body}
- ".RemoveBlankLinesWhereOnlyWhitespaces();
+            {cancellationTokenAttribute}global::System.Threading.CancellationToken cancellationToken = default){body}";
+        return normalizeOutput
+            ? result.RemoveBlankLinesWhereOnlyWhitespaces()
+            : result;
     }
 
     public static string SerializePropertyAsString(

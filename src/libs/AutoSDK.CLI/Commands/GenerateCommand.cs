@@ -800,6 +800,7 @@ internal sealed class GenerateCommand : Command
                     NormalizeCompareWriteAndCleanup: TimeSpan.Zero,
                     CacheWrite: TimeSpan.Zero,
                     CoreTimes: default,
+                    RenderPhases: [],
                     RenderHotspots: [],
                     Files: cacheValidation.Files,
                     TotalAllocatedBytes: cacheHitAllocationEnd - allocationStart,
@@ -843,10 +844,12 @@ internal sealed class GenerateCommand : Command
         }
 
         var renderTime = Stopwatch.StartNew();
-        var files = CSharpLanguagePlugin.Instance
-            .GenerateFiles(data)
-            .Where(x => !x.IsEmpty)
-            .ToArray();
+        var renderResult = diagnosticsEnabled
+            ? CSharpPipeline.GenerateFilesWithDiagnostics(data)
+            : new CSharpRenderResult(
+                CSharpLanguagePlugin.Instance.GenerateFiles(data).Where(x => !x.IsEmpty).ToArray(),
+                []);
+        var files = renderResult.Files;
         renderTime.Stop();
         var allocationAfterRender = GetAllocatedBytes(diagnosticsEnabled);
         var renderHotspots = diagnosticsEnabled
@@ -857,7 +860,7 @@ internal sealed class GenerateCommand : Command
                 .ToArray()
             : [];
 
-        var generatedOutputs = new List<GeneratedOutputFile>(files.Length + 2);
+        var generatedOutputs = new List<GeneratedOutputFile>(files.Count + 2);
         if (singleFile)
         {
             var text = string.Join(Environment.NewLine, files.Select(x => x.Text));
@@ -955,6 +958,7 @@ internal sealed class GenerateCommand : Command
                 NormalizeCompareWriteAndCleanup: writeTime.Elapsed,
                 CacheWrite: cacheWriteTime.Elapsed,
                 CoreTimes: data.Times,
+                RenderPhases: renderResult.Phases,
                 RenderHotspots: renderHotspots,
                 Files: writeResult,
                 TotalAllocatedBytes: allocationEnd - allocationStart,
