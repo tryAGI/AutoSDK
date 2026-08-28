@@ -383,6 +383,8 @@ public class CliTests
             firstResult.StandardError.Should().Contain("cache_lock_reason: acquired");
             ReadDiagnosticValue(firstResult.StandardError, "files_written").Should().BeGreaterThan(0);
             ReadDiagnosticValue(firstResult.StandardError, "normalized_lines").Should().BeGreaterThan(0);
+            ReadDiagnosticValue(firstResult.StandardError, "core_compute_data_allocated_bytes").Should().BeGreaterThan(0);
+            ReadDiagnosticValue(firstResult.StandardError, "core_compute_classes_allocated_bytes").Should().BeGreaterThan(0);
 
             var generatedFiles = Directory.GetFiles(outputDirectory, "*.cs", SearchOption.AllDirectories);
             generatedFiles.Should().NotBeEmpty();

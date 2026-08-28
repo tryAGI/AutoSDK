@@ -118,7 +118,7 @@ public static class OpenApiSchemaExtensions
         schema = schema ?? throw new ArgumentNullException(nameof(schema));
 
         return
-            (schema.OneOf?.Any() ?? false) &&
+            schema.OneOf is { Count: > 0 } &&
             ((schema.Properties?.Count ?? 0) == 0 || HasOnlySharedBaseDiscriminatorWrapperProperty(schema));
     }
 
@@ -134,7 +134,7 @@ public static class OpenApiSchemaExtensions
         }
 
         return
-            (schema.AnyOf?.Any() ?? false) &&
+            schema.AnyOf is { Count: > 0 } &&
             (schema.Properties?.Count ?? 0) == 0; // AnyOf with properties is not supported
     }
 
@@ -144,7 +144,7 @@ public static class OpenApiSchemaExtensions
         schema = schema ?? throw new ArgumentNullException(nameof(schema));
 
         return
-            (schema.AllOf?.Any() ?? false) &&
+            schema.AllOf is { Count: > 0 } &&
             (schema.Properties?.Count ?? 0) == 0; // AllOf with properties is not supported
     }
 
@@ -159,28 +159,56 @@ public static class OpenApiSchemaExtensions
             return false;
         }
 
-        var sharedBaseReferenceIds = (schema.OneOf ?? [])
-            .Select(GetSharedBaseReferenceId)
-            .Where(static x => !string.IsNullOrWhiteSpace(x))
-            .Distinct(StringComparer.Ordinal)
-            .ToArray();
+        string? sharedBaseReferenceId = null;
+        foreach (var variant in schema.OneOf ?? [])
+        {
+            var candidate = GetSharedBaseReferenceId(variant);
+            if (string.IsNullOrWhiteSpace(candidate))
+            {
+                continue;
+            }
 
-        return sharedBaseReferenceIds.Length == 1;
+            if (sharedBaseReferenceId is null)
+            {
+                sharedBaseReferenceId = candidate;
+            }
+            else if (!string.Equals(sharedBaseReferenceId, candidate, StringComparison.Ordinal))
+            {
+                return false;
+            }
+        }
+
+        return sharedBaseReferenceId is not null;
     }
 
     private static string? GetSharedBaseReferenceId(IOpenApiSchema schema)
     {
         var resolvedSchema = schema.ResolveIfRequired();
-        var baseReferenceIds = (resolvedSchema.AllOf ?? [])
-            .Where(static x => x.IsSchemaReference())
-            .Select(static x => x.GetReferenceId())
-            .Where(static x => !string.IsNullOrWhiteSpace(x))
-            .Distinct(StringComparer.Ordinal)
-            .ToArray();
+        string? baseReferenceId = null;
+        foreach (var candidateSchema in resolvedSchema.AllOf ?? [])
+        {
+            if (!candidateSchema.IsSchemaReference())
+            {
+                continue;
+            }
 
-        return baseReferenceIds.Length == 1
-            ? baseReferenceIds[0]
-            : null;
+            var candidate = candidateSchema.GetReferenceId();
+            if (string.IsNullOrWhiteSpace(candidate))
+            {
+                continue;
+            }
+
+            if (baseReferenceId is null)
+            {
+                baseReferenceId = candidate;
+            }
+            else if (!string.Equals(baseReferenceId, candidate, StringComparison.Ordinal))
+            {
+                return null;
+            }
+        }
+
+        return baseReferenceId;
     }
     
     public static bool IsArray(
@@ -206,7 +234,7 @@ public static class OpenApiSchemaExtensions
         }
 
         // Check if String flag is set (handles nullable types like ["string", "null"])
-        return (schema.Enum?.Any() ?? false) &&
+        return schema.Enum is { Count: > 0 } &&
                (schema.Type == null || (schema.Type & JsonSchemaType.String) == JsonSchemaType.String);
     }
 
@@ -352,17 +380,13 @@ public static class OpenApiSchemaExtensions
     {
         schema = schema ?? throw new ArgumentNullException(nameof(schema));
 
-        var anyOfItems = schema.AnyOf?.ToList();
-        if (anyOfItems == null || anyOfItems.Count != 2)
+        if (schema.AnyOf is not { Count: 2 } anyOfItems)
         {
             return false;
         }
 
-        // Check if exactly one item is null-type and one is not
-        var hasNullType = anyOfItems.Any(x => x.IsNullType());
-        var hasNonNullType = anyOfItems.Any(x => !x.IsNullType());
-
-        return hasNullType && hasNonNullType;
+        // Exactly one item must be null-type and the other non-null.
+        return anyOfItems[0].IsNullType() != anyOfItems[1].IsNullType();
     }
 
     /// <summary>

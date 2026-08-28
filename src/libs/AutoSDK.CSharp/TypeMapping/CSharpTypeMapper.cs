@@ -33,7 +33,7 @@ public static class CSharpTypeMapper
                 IsBaseClass = false,
                 IsDerivedClass = false,
                 IsValueType = false,
-                IsNullable = context.Schema.IsNullable() || context.Schema.IsNullableAnyOf(),
+                IsNullable = context.IsNullable || context.IsNullableAnyOf,
                 IsArray = false,
                 IsEnum = false,
                 IsOpenEnum = false,
@@ -60,11 +60,11 @@ public static class CSharpTypeMapper
         var schema = context.Schema;
         var isEnum = schema.IsEnum();
         var isOpenEnum = isEnum && schema.IsOpenEnum();
-        var isAnyOf = schema.IsAnyOf();
-        var isOneOf = schema.IsOneOf();
-        var isAllOf = schema.IsAllOf();
+        var isAnyOf = context.IsAnyOf;
+        var isOneOf = context.IsOneOf;
+        var isAllOf = context.HasAllOf;
         var isArray = schema.IsArray();
-        var isBinary = schema.IsBinary();
+        var isBinary = context.IsBinary;
         var isBase64 = schema.IsBase64();
         var generatedNamespace = context.GetGeneratedNamespace();
 
@@ -86,7 +86,7 @@ public static class CSharpTypeMapper
                     IsBaseClass: false,
                     IsDerivedClass: false,
                     IsValueType: IsValueType(context),
-                    IsNullable: schema.IsNullable() || schema.IsNullableAnyOf(),
+                    IsNullable: context.IsNullable || context.IsNullableAnyOf,
                     IsArray: false,
                     IsEnum: false,
                     IsOpenEnum: false,
@@ -198,7 +198,7 @@ public static class CSharpTypeMapper
         }
 
         var type = cachedType ?? GetCSharpTypeCore(context, isArray, isAnyOf, isOneOf, isAllOf);
-        var isNullable = schema.IsNullable() || schema.IsNullableAnyOf();
+        var isNullable = context.IsNullable || context.IsNullableAnyOf;
         var collapsed = (isAnyOf || isOneOf || isAllOf) && IsCollapsedAnyOfLike(context);
         var usesGeneratedJsonHelpers = ShouldUseGeneratedJsonHelpers(context, type, generatedNamespace);
 
@@ -341,9 +341,9 @@ public static class CSharpTypeMapper
         return GetCSharpTypeCore(
             context,
             isArray: context.Schema.IsArray(),
-            isAnyOf: context.Schema.IsAnyOf(),
-            isOneOf: context.Schema.IsOneOf(),
-            isAllOf: context.Schema.IsAllOf());
+            isAnyOf: context.IsAnyOf,
+            isOneOf: context.IsOneOf,
+            isAllOf: context.HasAllOf);
     }
 
     public static bool GetCSharpNullability(
@@ -352,8 +352,8 @@ public static class CSharpTypeMapper
     {
         context = context ?? throw new ArgumentNullException(nameof(context));
 
-        return context.Schema.IsNullable() ||
-               context.Schema.IsNullableAnyOf() ||
+        return context.IsNullable ||
+               context.IsNullableAnyOf ||
                !context.IsRequired && additionalContext?.IsRequired != true;
     }
 
@@ -424,7 +424,7 @@ public static class CSharpTypeMapper
             (_, _) when context.IsNamedAnyOfLike => $"global::{generatedNamespace}.{context.Id}",
             (_, _) when context.IsDerivedClass => $"global::{generatedNamespace}.{context.Id}",
 
-            (_, _) when context.Schema.IsNullableAnyOf() =>
+            (_, _) when context.IsNullableAnyOf =>
                 FindNonNullAnyOfChildType(context.Children) ?? "object",
 
             (_, _) when isAnyOf && !context.IsNamedAnyOfLike && GetDistinctChildTypes(context, Hint.AnyOf) is { Length: 1 } distinctAnyOf => distinctAnyOf[0],

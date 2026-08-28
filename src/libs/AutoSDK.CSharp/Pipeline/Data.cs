@@ -518,9 +518,12 @@ public static class Data
                 StringComparer.Ordinal))
             .Select(x => CSharpAuthorizationFactory.FromOpenApiSecurityScheme(x.Key, csharpSettings, csharpGlobalSettings))
             .Concat(methods.SelectMany(x => x.Authorizations)));
-        methods = methods
-            .Select(method => AuthorizationHelpers.NormalizeEndPoint(method, authorizationsByIdentity))
-            .ToImmutableArray();
+        var normalizedMethodsBuilder = ImmutableArray.CreateBuilder<EndPoint>(methods.Length);
+        foreach (var method in methods)
+        {
+            normalizedMethodsBuilder.Add(AuthorizationHelpers.NormalizeEndPoint(method, authorizationsByIdentity));
+        }
+        methods = normalizedMethodsBuilder.MoveToImmutable();
 
         if (settings.GenerateCli)
         {
@@ -604,11 +607,19 @@ public static class Data
             .Where(tag => tag.Name != null && activeTagNames.Contains(tag.Name))
             .ToArray();
         var resolvedIncludedTagsMap = CSharpClientNameGenerator.ResolveTags(csharpSettings, activeIncludedTags);
-        methods = methods
-            .Select(method => ResolveEndPointTag(method, resolvedIncludedTagsMap))
-            .OrderBy(m => m.Tag.SafeName, StringComparer.Ordinal)
-            .ThenBy(m => m.NotAsyncMethodName, StringComparer.Ordinal)
-            .ToImmutableArray();
+        var resolvedMethodsBuilder = ImmutableArray.CreateBuilder<EndPoint>(methods.Length);
+        foreach (var method in methods)
+        {
+            resolvedMethodsBuilder.Add(ResolveEndPointTag(method, resolvedIncludedTagsMap));
+        }
+        resolvedMethodsBuilder.Sort(static (left, right) =>
+        {
+            var tagComparison = StringComparer.Ordinal.Compare(left.Tag.SafeName, right.Tag.SafeName);
+            return tagComparison != 0
+                ? tagComparison
+                : StringComparer.Ordinal.Compare(left.NotAsyncMethodName, right.NotAsyncMethodName);
+        });
+        methods = resolvedMethodsBuilder.MoveToImmutable();
         var hasIdempotencySupport = methods.Any(static method => method.Parameters.Any(static parameter => parameter.IsIdempotencyHeader));
         var resolvedIncludedTags = activeIncludedTags
             .Select(tag => resolvedIncludedTagsMap[tag.Name!])
@@ -910,9 +921,12 @@ public static class Data
                 StringComparer.Ordinal))
             .Select(x => CSharpAuthorizationFactory.FromOpenApiSecurityScheme(x.Key, settings, globalSettings))
             .Concat(methods.SelectMany(x => x.Authorizations)));
-        methods = methods
-            .Select(method => AuthorizationHelpers.NormalizeEndPoint(method, authorizationsByIdentity))
-            .ToImmutableArray();
+        var normalizedMethodsBuilder = ImmutableArray.CreateBuilder<EndPoint>(methods.Length);
+        foreach (var method in methods)
+        {
+            normalizedMethodsBuilder.Add(AuthorizationHelpers.NormalizeEndPoint(method, authorizationsByIdentity));
+        }
+        methods = normalizedMethodsBuilder.MoveToImmutable();
 
         if (settings.GenerateCli)
         {
@@ -994,11 +1008,19 @@ public static class Data
             .Where(tag => tag.Name != null && activeTagNames.Contains(tag.Name))
             .ToArray();
         var resolvedIncludedTagsMap = CSharpClientNameGenerator.ResolveTags(settings, activeIncludedTags);
-        methods = methods
-            .Select(method => ResolveEndPointTag(method, resolvedIncludedTagsMap))
-            .OrderBy(m => m.Tag.SafeName, StringComparer.Ordinal)
-            .ThenBy(m => m.NotAsyncMethodName, StringComparer.Ordinal)
-            .ToImmutableArray();
+        var resolvedMethodsBuilder = ImmutableArray.CreateBuilder<EndPoint>(methods.Length);
+        foreach (var method in methods)
+        {
+            resolvedMethodsBuilder.Add(ResolveEndPointTag(method, resolvedIncludedTagsMap));
+        }
+        resolvedMethodsBuilder.Sort(static (left, right) =>
+        {
+            var tagComparison = StringComparer.Ordinal.Compare(left.Tag.SafeName, right.Tag.SafeName);
+            return tagComparison != 0
+                ? tagComparison
+                : StringComparer.Ordinal.Compare(left.NotAsyncMethodName, right.NotAsyncMethodName);
+        });
+        methods = resolvedMethodsBuilder.MoveToImmutable();
         var resolvedIncludedTags = activeIncludedTags
             .Select(tag => resolvedIncludedTagsMap[tag.Name!])
             .OrderBy(tag => tag.SafeName, StringComparer.Ordinal)
@@ -1210,19 +1232,27 @@ public static class Data
     }
 
     private static ImmutableArray<EndPoint> ApplyClientServerSelectionSupport(
-        IReadOnlyList<EndPoint> methods,
+        ImmutableArray<EndPoint> methods,
         Dictionary<string, EquatableArray<ServerOption>> clientServersByClass,
         bool usesServerSelectionSupport)
     {
-        return methods
-            .Select(method => method with
+        if (!usesServerSelectionSupport || methods.IsEmpty)
+        {
+            return methods;
+        }
+
+        var builder = ImmutableArray.CreateBuilder<EndPoint>(methods.Length);
+        foreach (var method in methods)
+        {
+            builder.Add(method with
             {
                 UsesServerSelectionSupport = usesServerSelectionSupport,
                 ClientUsesServerSelectionSupport =
                     clientServersByClass.TryGetValue(method.ClassName, out var servers) &&
                     servers.Length > 1,
-            })
-            .ToImmutableArray();
+            });
+        }
+        return builder.MoveToImmutable();
     }
 
     private static bool NeedsScopedServerResolver(
@@ -1246,13 +1276,13 @@ public static class Data
     /// <c>AutoSDKPager.OffsetAsync</c>.
     /// </summary>
     private static ImmutableArray<EndPoint> ApplyPageableMetadata(
-        IReadOnlyList<EndPoint> methods,
+        ImmutableArray<EndPoint> methods,
         ImmutableArray<ModelData> classes,
         CSharpSettings settings)
     {
-        if (!settings.GeneratePageableHelpers || methods.Count == 0)
+        if (!settings.GeneratePageableHelpers || methods.IsEmpty)
         {
-            return methods.ToImmutableArray();
+            return methods;
         }
 
         var classByName = classes
@@ -1508,13 +1538,13 @@ public static class Data
     /// <c>Location</c> header, and dispatches to the sibling's polling helper.
     /// </summary>
     private static ImmutableArray<EndPoint> ApplyLocationWaitCompanions(
-        IReadOnlyList<EndPoint> methods)
+        ImmutableArray<EndPoint> methods)
     {
         if (!methods.Any(static m =>
                 m.HasLocationHeaderOnSuccess &&
                 m.HttpMethod != System.Net.Http.HttpMethod.Get))
         {
-            return methods.ToImmutableArray();
+            return methods;
         }
 
         var pollingHelpersByPath = methods
@@ -1525,7 +1555,7 @@ public static class Data
             .ToDictionary(static m => UnwrapPreparedPath(m.Path), static m => m, StringComparer.Ordinal);
         if (pollingHelpersByPath.Count == 0)
         {
-            return methods.ToImmutableArray();
+            return methods;
         }
 
         return methods
@@ -1777,6 +1807,12 @@ public static class Data
             candidate.SuccessResponse.Type.IsBinary &&
             candidate.SuccessResponse.Type.CSharpTypeWithoutNullability == "byte[]");
 
+        if (distinctPrototypes.Length == 1)
+        {
+            endPoints.Add(distinctPrototypes[0]);
+            return endPoints;
+        }
+
         for (var index = 0; index < distinctPrototypes.Length; index++)
         {
             var prototype = distinctPrototypes[index];
@@ -1787,18 +1823,18 @@ public static class Data
                     hasRegularResponse,
                     distinctPrototypes.Count(static candidate => candidate.EnumerableStream),
                     hasBufferedBinaryStreamCompanion);
-            var candidate = CSharpEndPointFactory.CreateEndPoint(
-                operation,
-                preferredMimeType: prototype.SuccessResponse.MimeType,
-                methodNameSuffix: suffix,
-                forcedRequestStreamValue: hasRegularResponse && hasStreamingResponse
-                    ? prototype.EnumerableStream
-                    : null,
-                streamTerminator: fernStreaming?.Terminator,
-                anyOfDatas: anyOfDatas);
-            endPoints.Add(distinctPrototypes.Length > 1
-                ? candidate with { AcceptMediaType = candidate.SuccessResponse.MimeType }
-                : candidate);
+            var candidate = index == 0
+                ? prototype
+                : CSharpEndPointFactory.CreateEndPoint(
+                    operation,
+                    preferredMimeType: prototype.SuccessResponse.MimeType,
+                    methodNameSuffix: suffix,
+                    forcedRequestStreamValue: hasRegularResponse && hasStreamingResponse
+                        ? prototype.EnumerableStream
+                        : null,
+                    streamTerminator: fernStreaming?.Terminator,
+                    anyOfDatas: anyOfDatas);
+            endPoints.Add(candidate with { AcceptMediaType = candidate.SuccessResponse.MimeType });
         }
 
         return endPoints;
@@ -1957,16 +1993,44 @@ public static class Data
             return [];
         }
 
-        var types = filteredSchemas
-            .Where(schema => !IsSuppressedLegacyPolymorphicSchema(schema, suppressedSchemas))
-            .Where(schema =>
+        var seenTypes = new HashSet<string>(StringComparer.Ordinal);
+        for (var index = 0; index < filteredSchemas.Count; index++)
+        {
+            var schema = filteredSchemas[index];
+            if (!IsSuppressedLegacyPolymorphicSchema(schema, suppressedSchemas) &&
                 schema.TypeData != TypeData.Default &&
                 !string.IsNullOrWhiteSpace(schema.TypeData.CSharpType))
-            .Select(schema => schema.TypeData)
-            .Concat(generatedPolymorphicTypes)
-            .GroupBy(static type => type.CSharpTypeWithNullability, StringComparer.Ordinal)
-            .Select(static group => group.First())
-            .ToImmutableArray();
+            {
+                seenTypes.Add(schema.TypeData.CSharpTypeWithNullability);
+            }
+        }
+        for (var index = 0; index < generatedPolymorphicTypes.Length; index++)
+        {
+            seenTypes.Add(generatedPolymorphicTypes[index].CSharpTypeWithNullability);
+        }
+
+        var typesBuilder = ImmutableArray.CreateBuilder<TypeData>(seenTypes.Count);
+        seenTypes.Clear();
+        for (var index = 0; index < filteredSchemas.Count; index++)
+        {
+            var schema = filteredSchemas[index];
+            if (!IsSuppressedLegacyPolymorphicSchema(schema, suppressedSchemas) &&
+                schema.TypeData != TypeData.Default &&
+                !string.IsNullOrWhiteSpace(schema.TypeData.CSharpType) &&
+                seenTypes.Add(schema.TypeData.CSharpTypeWithNullability))
+            {
+                typesBuilder.Add(schema.TypeData);
+            }
+        }
+        for (var index = 0; index < generatedPolymorphicTypes.Length; index++)
+        {
+            var type = generatedPolymorphicTypes[index];
+            if (seenTypes.Add(type.CSharpTypeWithNullability))
+            {
+                typesBuilder.Add(type);
+            }
+        }
+        var types = typesBuilder.MoveToImmutable();
 
         if (!settings.DirectionAwareJsonGenerationMode)
         {

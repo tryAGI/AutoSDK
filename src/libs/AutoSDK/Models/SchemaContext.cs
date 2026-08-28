@@ -1,3 +1,4 @@
+using System.Collections.Immutable;
 using System.Text.Json.Nodes;
 using AutoSDK.Extensions;
 using Microsoft.OpenApi;
@@ -38,7 +39,19 @@ public class SchemaContext(
     
     public string? PropertyName { get; set; }
     public bool IsProperty => PropertyName != null;
-    public PropertyData? PropertyData { get; set; }
+    private PropertyData? _propertyData;
+    private ImmutableArray<PropertyData> _computedProperties;
+    private bool _computedPropertiesCached;
+    public PropertyData? PropertyData
+    {
+        get => _propertyData;
+        set
+        {
+            _propertyData = value;
+            _computedProperties = default;
+            _computedPropertiesCached = false;
+        }
+    }
     
     public string? ParameterName => Parameter?.Name;
     public bool IsParameter => ParameterName != null;
@@ -129,18 +142,29 @@ public class SchemaContext(
     
     public bool IsModel => IsClass || IsEnum || IsAnyOfLikeStructure && IsComponent;
     
-    public bool IsAnyOf => Schema.IsAnyOf();
-    public bool IsOneOf => Schema.IsOneOf();
-    public bool IsAllOf => Schema.IsAllOf() && !IsDerivedClass;
+    private bool? _isAnyOf;
+    private bool? _isOneOf;
+    private bool? _hasAllOf;
+    private bool? _isDerivedClass;
+    private bool? _isNullable;
+    private bool? _isNullableAnyOf;
+    private bool? _isBinary;
+    public bool IsAnyOf => _isAnyOf ??= Schema.IsAnyOf();
+    public bool IsOneOf => _isOneOf ??= Schema.IsOneOf();
+    public bool HasAllOf => _hasAllOf ??= Schema.IsAllOf();
+    public bool IsAllOf => HasAllOf && !IsDerivedClass;
+    public bool IsNullable => _isNullable ??= Schema.IsNullable();
+    public bool IsNullableAnyOf => _isNullableAnyOf ??= Schema.IsNullableAnyOf();
+    public bool IsBinary => _isBinary ??= Schema.IsBinary();
     public bool IsBaseClass => this is { IsComponent: true, Schema.Discriminator.Mapping: not null };
-    public bool IsDerivedClass => Schema.IsAllOf() &&
-                                  Schema.AllOf is { Count: 2 } allOf &&
-                                  (allOf[0].IsSchemaReference() &&
-                                  allOf[0].ResolveIfRequired().Discriminator?.Mapping != null ||
-                                  allOf[1].IsSchemaReference() &&
-                                  allOf[1].ResolveIfRequired().Discriminator?.Mapping != null);
+    public bool IsDerivedClass => _isDerivedClass ??= HasAllOf &&
+        Schema.AllOf is { Count: 2 } allOf &&
+        (allOf[0].IsSchemaReference() &&
+         allOf[0].ResolveIfRequired().Discriminator?.Mapping != null ||
+         allOf[1].IsSchemaReference() &&
+         allOf[1].ResolveIfRequired().Discriminator?.Mapping != null);
     public SchemaContext DerivedClassContext =>
-        Schema.IsAllOf() &&
+        HasAllOf &&
         Schema.AllOf is { Count: 2 } allOf
         ? allOf[0].IsSchemaReference() &&
           allOf[0].ResolveIfRequired().Discriminator?.Mapping != null
@@ -149,7 +173,7 @@ public class SchemaContext(
             : throw new InvalidOperationException("Schema is not derived class.");
 
     public SchemaContext BaseClassContext =>
-        Schema.IsAllOf() &&
+        HasAllOf &&
         Schema.AllOf is { Count: 2 } allOf
         ? allOf[0].IsSchemaReference() &&
           allOf[0].ResolveIfRequired().Discriminator?.Mapping != null
@@ -161,19 +185,23 @@ public class SchemaContext(
     public bool IsNamedAnyOfLike => IsAnyOfLikeStructure &&
                                     (IsComponent || Schema.Discriminator != null);
     
-    public IReadOnlyList<PropertyData> ComputedProperties
+    public ImmutableArray<PropertyData> ComputedProperties
     {
         get
         {
-            if (PropertyData == null)
+            if (_computedPropertiesCached)
             {
-                return [];
+                return _computedProperties;
             }
 
-            if (Schema.IsBinary() &&
-                !HasSiblingPropertyWithSuffix("name"))
+            if (PropertyData == null)
             {
-                return
+                _computedProperties = [];
+            }
+            else if (IsBinary &&
+                     !HasSiblingPropertyWithSuffix("name"))
+            {
+                _computedProperties =
                 [
                     PropertyData.Value,
                     PropertyData.Value with
@@ -203,8 +231,13 @@ public class SchemaContext(
                     }
                 ];
             }
+            else
+            {
+                _computedProperties = [PropertyData.Value];
+            }
 
-            return [PropertyData.Value];
+            _computedPropertiesCached = true;
+            return _computedProperties;
         }
     }
 

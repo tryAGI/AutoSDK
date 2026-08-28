@@ -70,6 +70,13 @@ internal readonly record struct GenerationDiagnostics(
         await writer.WriteLineAsync($"  allocated_bytes: {TotalAllocatedBytes.ToString(CultureInfo.InvariantCulture)}").ConfigureAwait(false);
         await writer.WriteLineAsync($"  cache_allocated_bytes: {CacheAllocatedBytes.ToString(CultureInfo.InvariantCulture)}").ConfigureAwait(false);
         await writer.WriteLineAsync($"  pipeline_allocated_bytes: {PipelineAllocatedBytes.ToString(CultureInfo.InvariantCulture)}").ConfigureAwait(false);
+        await writer.WriteLineAsync($"  core_parsing_allocated_bytes: {CoreTimes.AllocParsing.ToString(CultureInfo.InvariantCulture)}").ConfigureAwait(false);
+        await writer.WriteLineAsync($"  core_traversal_allocated_bytes: {CoreTimes.AllocTraversalTree.ToString(CultureInfo.InvariantCulture)}").ConfigureAwait(false);
+        await writer.WriteLineAsync($"  core_naming_allocated_bytes: {CoreTimes.AllocNaming.ToString(CultureInfo.InvariantCulture)}").ConfigureAwait(false);
+        await writer.WriteLineAsync($"  core_resolve_references_allocated_bytes: {CoreTimes.AllocResolveReferences.ToString(CultureInfo.InvariantCulture)}").ConfigureAwait(false);
+        await writer.WriteLineAsync($"  core_filtering_allocated_bytes: {CoreTimes.AllocFiltering.ToString(CultureInfo.InvariantCulture)}").ConfigureAwait(false);
+        await writer.WriteLineAsync($"  core_compute_data_allocated_bytes: {CoreTimes.AllocComputeData.ToString(CultureInfo.InvariantCulture)}").ConfigureAwait(false);
+        await writer.WriteLineAsync($"  core_compute_classes_allocated_bytes: {CoreTimes.AllocComputeDataClasses.ToString(CultureInfo.InvariantCulture)}").ConfigureAwait(false);
         await writer.WriteLineAsync($"  render_allocated_bytes: {RenderAllocatedBytes.ToString(CultureInfo.InvariantCulture)}").ConfigureAwait(false);
         await writer.WriteLineAsync($"  snippet_allocated_bytes: {SnippetAllocatedBytes.ToString(CultureInfo.InvariantCulture)}").ConfigureAwait(false);
         await writer.WriteLineAsync($"  write_allocated_bytes: {WriteAllocatedBytes.ToString(CultureInfo.InvariantCulture)}").ConfigureAwait(false);

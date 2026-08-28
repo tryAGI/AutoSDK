@@ -13,7 +13,10 @@
     "renderMilliseconds": 850,
     "cacheHitTotalMilliseconds": 400,
     "sameOutputCompareMilliseconds": 100,
-    "totalAllocatedBytes": 2300000000,
+    "totalAllocatedBytes": 2100000000,
+    "pipelineAllocatedBytes": 700000000,
+    "coreComputeDataAllocatedBytes": 100000000,
+    "coreComputeClassesAllocatedBytes": 130000000,
     "renderAllocatedBytes": 1250000000,
     "writeAllocatedBytes": 115000000
   },
@@ -37,6 +40,23 @@
     "sameLoadFreshWriterBeforeMedianMilliseconds": 1579.293,
     "sameLoadFreshWriterAfterMedianMilliseconds": 1209.116,
     "freshWriterReductionPercent": 23.4
+  },
+  "baselineBeforePipelineOptimizations": {
+    "commit": "70e5b8f743",
+    "pipelineAllocatedBytes": 826266104,
+    "coreComputeDataAllocatedBytes": 194221144,
+    "coreComputeClassesAllocatedBytes": 191818560,
+    "totalAllocatedBytes": 2205538728
+  },
+  "observedAfterPipelineOptimizations": {
+    "pipelineAllocatedBytesMedian": 617143192,
+    "coreComputeDataAllocatedBytesMedian": 84682080,
+    "coreComputeClassesAllocatedBytesMedian": 115199488,
+    "totalAllocatedBytesMedian": 1997226272,
+    "pipelineAllocationReductionPercent": 25.3,
+    "coreComputeDataAllocationReductionPercent": 56.4,
+    "coreComputeClassesAllocationReductionPercent": 39.9,
+    "totalAllocationReductionPercent": 9.4
   },
   "notes": [
     "Reference budgets only; they are not currently enforced by CI.",

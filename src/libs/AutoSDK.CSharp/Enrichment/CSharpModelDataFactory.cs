@@ -193,7 +193,30 @@ public static class CSharpModelDataFactory
             : null;
         var hasDiscriminator = !string.IsNullOrWhiteSpace(discriminatorPropertyName);
 
-        var builder = ImmutableArray.CreateBuilder<PropertyData>(source.Count);
+        var visiblePropertyCount = 0;
+        for (var i = 0; i < source.Count; i++)
+        {
+            var child = source[i];
+            if (child is not { IsProperty: true, PropertyData: not null })
+            {
+                continue;
+            }
+
+            foreach (var prop in child.ComputedProperties)
+            {
+                if (!hasDiscriminator || prop.Id != discriminatorPropertyName)
+                {
+                    visiblePropertyCount++;
+                }
+            }
+        }
+
+        if (visiblePropertyCount == 0)
+        {
+            return [];
+        }
+
+        var builder = ImmutableArray.CreateBuilder<PropertyData>(visiblePropertyCount);
         for (var i = 0; i < source.Count; i++)
         {
             var child = source[i];
@@ -211,7 +234,7 @@ public static class CSharpModelDataFactory
             }
         }
 
-        return DeduplicatePropertyNamesCaseInsensitive(builder.ToImmutable());
+        return DeduplicatePropertyNamesCaseInsensitive(builder.MoveToImmutable());
     }
 
     private static ImmutableArray<PropertyData> DeduplicatePropertyNamesCaseInsensitive(
