@@ -155,7 +155,7 @@ public class SchemaContext(
         {
             if (!_classDataComputed)
             {
-                if (IsClass)
+                if (IsClass && !Schema.IsNullableOneOf())
                 {
                     _classData = new ValueHolder<ModelData>(
                         ModelDataFactory?.Invoke(this) ?? throw new InvalidOperationException("ModelDataFactory is not initialized."));
