@@ -1,4 +1,5 @@
 using AutoSDK.Extensions;
+using AutoSDK.Generation;
 
 namespace AutoSDK.UnitTests;
 
@@ -104,5 +105,24 @@ after";
 
         var result = template.RemoveBlankLinesWhereOnlyWhitespaces();
         result.Should().Be("before\n    [SomeAttribute]\nafter");
+    }
+
+    [TestMethod]
+    public void NormalizedString_MatchesPostGenerationNormalizationAcrossFormattedValues()
+    {
+        var first = "first\r";
+        var lineFeedAndWhitespace = "\n   \n";
+        var value = 42;
+
+        var result = NormalizedString.Create($@"{first}{lineFeedAndWhitespace}
+value: {value:D3}
+
+ ");
+        var expected = $@"{first}{lineFeedAndWhitespace}
+value: {value:D3}
+
+ ".RemoveBlankLinesWhereOnlyWhitespaces();
+
+        result.Should().Be(expected);
     }
 }

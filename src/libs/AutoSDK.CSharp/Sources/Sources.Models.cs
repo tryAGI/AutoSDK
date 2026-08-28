@@ -15,7 +15,7 @@ public static partial class Sources
             HasDeprecatedTypeReferences(modelData) ||
             HasDeprecatedBaseClass(modelData);
 
-        return $@"
+        return NormalizedString.Create($@"
 {(suppressObsoleteWarnings ? @"#pragma warning disable CS0618 // Type or member is obsolete
 " : TrimmedLine)}
 #nullable enable
@@ -23,7 +23,7 @@ public static partial class Sources
 namespace {modelData.Namespace}
 {{
 {GenerateModel(modelData, level: 0, cancellationToken: cancellationToken)}
-}}".RemoveBlankLinesWhereOnlyWhitespaces();
+}}");
     }
 
     private static string GenerateModel(
@@ -44,11 +44,11 @@ namespace {modelData.Namespace}
             };
         }
 
-        return $@" 
+        return NormalizedString.Create($@"{TrimmedLine}
 public sealed partial class {modelData.Parents[level].Unbox<ModelData>().ClassName}
 {{
 {GenerateModel(modelData, level + 1, cancellationToken: cancellationToken)}
-}}".RemoveBlankLinesWhereOnlyWhitespaces().AddIndent(level: 1);
+}}").AddIndent(level: 1);
     }
 
     private static bool IsSupported(SdkFeatureUsage usage, string targetFramework)
@@ -318,79 +318,29 @@ public sealed partial class {modelData.Parents[level].Unbox<ModelData>().ClassNa
             .ToArray();
         var hasConstructor = constructorProperties.Length > 0 || constructorBaseOnlyRequiredProperties.Length > 0;
 
-        var propertyDeclarations = properties.Select(property => @$"
-        {property.Summary.ToXmlDocumentationSummary(level: 8)}
-        {property.DefaultValue?.ClearForXml().ToXmlDocumentationDefault(level: 8)}
-        {property.Example?.ToXmlDocumentationExample(level: 8)}
-        {GenerateValidationAttributes(modelData, property)}
-        {jsonSerializer.GeneratePropertyAttribute(property.Id, property.IsRequired)}
-        {GeneratePropertyConverterAttribute(jsonSerializer, modelData.Settings, property)}
-        {(property.IsRequired ? jsonSerializer.GenerateRequiredAttribute() : string.Empty)}
-        {(modelData.IsDeprecated || (property.Type is { IsDeprecated: true, IsAnyOfLike: false } && !property.IsRequired) ? $"[global::System.Obsolete(\"{(!string.IsNullOrWhiteSpace(modelData.DeprecationMessage) ? modelData.DeprecationMessage.ClearForCSharp() : "This property marked as deprecated.")}\")]" : TrimmedLine)}
-        public{(inheritedPropertyNames.Contains(property.Name) ? " new" : string.Empty)}{(property.IsRequired ? requiredKeyword : string.Empty)} {property.Type.CSharpType} {property.Name} {{ get; set; }}{GetDefaultValue(property, isRequiredKeywordSupported)}
-").Inject();
-
-        var constructorParameterDocumentation = requiredConstructorProperties
-            .Select(x => $@"
-        {x.Summary.ToXmlDocumentationForParam(x.ParameterName, level: 8)}")
-            .Concat(constructorBaseOnlyRequiredProperties.Select(x => $@"
-        {x.Summary.ToXmlDocumentationForParam(x.ParameterName, level: 8)}"))
-            .Concat(optionalConstructorPropertiesWithoutDefaults.Select(x => $@"
-        {x.Summary.ToXmlDocumentationForParam(x.ParameterName, level: 8)}"))
-            .Concat(optionalConstructorPropertiesWithDefaults.Select(x => $@"
-        {x.Summary.ToXmlDocumentationForParam(x.ParameterName, level: 8)}"))
-            .Inject();
-
-        var constructorParameters = string.Join(
-            ",",
-            requiredConstructorProperties.Select(x =>
-            {
-                var shareParameterWithBase = inheritedRequiredPropertiesByName.TryGetValue(x.Name, out var inheritedRequiredProperty) &&
-                                             string.Equals(inheritedRequiredProperty.Type.CSharpType, x.Type.CSharpType, StringComparison.Ordinal);
-
-                return GetConstructorParameter(
-                    x,
-                    isRequiredKeywordSupported,
-                    forceRequired: x.IsRequired || shareParameterWithBase);
-            }).Concat(
-                constructorBaseOnlyRequiredProperties.Select(x => GetConstructorParameter(
-                    x,
-                    isRequiredKeywordSupported,
-                    forceRequired: true)))
-            .Concat(optionalConstructorPropertiesWithoutDefaults.Select(x => GetConstructorParameter(
-                x,
-                isRequiredKeywordSupported)))
-            .Concat(optionalConstructorPropertiesWithDefaults.Select(x => GetConstructorParameter(
-                x,
-                isRequiredKeywordSupported))));
-
-        var constructorAssignments = constructorProperties.Select(x =>
-        {
-            var assignments = new List<string>(capacity: 2)
-            {
-                GetConstructorAssignment(
-                    target: "this",
-                    property: x,
-                    forceRequired: x.IsRequired || inheritedRequiredPropertiesByName.ContainsKey(x.Name)),
-            };
-
-            if (inheritedRequiredPropertiesByName.TryGetValue(x.Name, out var inheritedRequiredProperty) &&
-                string.Equals(inheritedRequiredProperty.Type.CSharpType, x.Type.CSharpType, StringComparison.Ordinal))
-            {
-                assignments.Add(GetConstructorAssignment(
-                    target: "base",
-                    property: inheritedRequiredProperty,
-                    parameterName: x.ParameterName,
-                    forceRequired: true));
-            }
-
-            return string.Concat(assignments);
-        }).Concat(
-            constructorBaseOnlyRequiredProperties.Select(x => GetConstructorAssignment(
-                target: "base",
-                property: x,
-                forceRequired: true)))
-            .Inject();
+        var propertyDeclarations = GeneratePropertyDeclarations(
+            modelData,
+            jsonSerializer,
+            properties,
+            inheritedPropertyNames,
+            requiredKeyword,
+            isRequiredKeywordSupported);
+        var constructorParameterDocumentation = GenerateConstructorParameterDocumentation(
+            requiredConstructorProperties,
+            constructorBaseOnlyRequiredProperties,
+            optionalConstructorPropertiesWithoutDefaults,
+            optionalConstructorPropertiesWithDefaults);
+        var constructorParameters = GenerateConstructorParameters(
+            requiredConstructorProperties,
+            constructorBaseOnlyRequiredProperties,
+            optionalConstructorPropertiesWithoutDefaults,
+            optionalConstructorPropertiesWithDefaults,
+            inheritedRequiredPropertiesByName,
+            isRequiredKeywordSupported);
+        var constructorAssignments = GenerateConstructorAssignments(
+            constructorProperties,
+            constructorBaseOnlyRequiredProperties,
+            inheritedRequiredPropertiesByName);
 
         var leafFactory = TryGetCascadingLeafFactory(
             modelData,
@@ -449,6 +399,195 @@ public sealed partial class {modelData.Parents[level].Unbox<ModelData>().ClassNa
         return normalizeOutput
             ? result.RemoveBlankLinesWhereOnlyWhitespaces()
             : result;
+    }
+
+    private static string GeneratePropertyDeclarations(
+        ModelData modelData,
+        IJsonSerializer jsonSerializer,
+        IReadOnlyList<PropertyData> properties,
+        HashSet<string> inheritedPropertyNames,
+        string requiredKeyword,
+        bool isRequiredKeywordSupported)
+    {
+        if (properties.Count == 0)
+        {
+            return TrimmedLine;
+        }
+
+        using var builder = new PooledStringBuilder(properties.Count * 256);
+        var firstProperty = true;
+        foreach (var property in properties)
+        {
+            if (!firstProperty)
+            {
+                builder.Append("\n\n");
+            }
+            firstProperty = false;
+
+            builder.Append("        ");
+            builder.Append(property.Summary.ToXmlDocumentationSummary(level: 8));
+            builder.Append("\n        ");
+            builder.Append(property.DefaultValue?.ClearForXml().ToXmlDocumentationDefault(level: 8));
+            builder.Append("\n        ");
+            builder.Append(property.Example?.ToXmlDocumentationExample(level: 8));
+            builder.Append("\n        ");
+            builder.Append(GenerateValidationAttributes(modelData, property));
+            builder.Append("\n        ");
+            builder.Append(jsonSerializer.GeneratePropertyAttribute(property.Id, property.IsRequired));
+            builder.Append("\n        ");
+            builder.Append(GeneratePropertyConverterAttribute(jsonSerializer, modelData.Settings, property));
+            builder.Append("\n        ");
+            builder.Append(property.IsRequired ? jsonSerializer.GenerateRequiredAttribute() : string.Empty);
+            builder.Append("\n        ");
+            builder.Append(modelData.IsDeprecated ||
+                           property.Type is { IsDeprecated: true, IsAnyOfLike: false } && !property.IsRequired
+                ? $"[global::System.Obsolete(\"{(!string.IsNullOrWhiteSpace(modelData.DeprecationMessage) ? modelData.DeprecationMessage.ClearForCSharp() : "This property marked as deprecated.")}\")]"
+                : TrimmedLine);
+            builder.Append("\n        public");
+            builder.Append(inheritedPropertyNames.Contains(property.Name) ? " new" : string.Empty);
+            builder.Append(property.IsRequired ? requiredKeyword : string.Empty);
+            builder.Append(' ');
+            builder.Append(property.Type.CSharpType);
+            builder.Append(' ');
+            builder.Append(property.Name);
+            builder.Append(" { get; set; }");
+            builder.Append(GetDefaultValue(property, isRequiredKeywordSupported));
+        }
+
+        return builder.ToString();
+    }
+
+    private static string GenerateConstructorParameterDocumentation(
+        PropertyData[] requiredProperties,
+        PropertyData[] baseOnlyRequiredProperties,
+        PropertyData[] optionalPropertiesWithoutDefaults,
+        PropertyData[] optionalPropertiesWithDefaults)
+    {
+        using var builder = new PooledStringBuilder(256);
+        var hasDocumentation = false;
+        AppendDocumentation(requiredProperties);
+        AppendDocumentation(baseOnlyRequiredProperties);
+        AppendDocumentation(optionalPropertiesWithoutDefaults);
+        AppendDocumentation(optionalPropertiesWithDefaults);
+        return builder.ToString() is { Length: > 0 } result ? result : TrimmedLine;
+
+        void AppendDocumentation(PropertyData[] values)
+        {
+            foreach (var property in values)
+            {
+                if (hasDocumentation)
+                {
+                    builder.Append('\n');
+                }
+                else
+                {
+                    hasDocumentation = true;
+                }
+                builder.Append("        ");
+                builder.Append(property.Summary.ToXmlDocumentationForParam(property.ParameterName, level: 8));
+            }
+        }
+    }
+
+    private static string GenerateConstructorParameters(
+        PropertyData[] requiredProperties,
+        PropertyData[] baseOnlyRequiredProperties,
+        PropertyData[] optionalPropertiesWithoutDefaults,
+        PropertyData[] optionalPropertiesWithDefaults,
+        Dictionary<string, PropertyData> inheritedRequiredPropertiesByName,
+        bool isRequiredKeywordSupported)
+    {
+        using var builder = new PooledStringBuilder(256);
+        var hasParameter = false;
+        foreach (var property in requiredProperties)
+        {
+            AppendSeparator();
+            var shareParameterWithBase = inheritedRequiredPropertiesByName.TryGetValue(property.Name, out var inheritedRequiredProperty) &&
+                                         string.Equals(inheritedRequiredProperty.Type.CSharpType, property.Type.CSharpType, StringComparison.Ordinal);
+            builder.Append(GetConstructorParameter(
+                property,
+                isRequiredKeywordSupported,
+                forceRequired: property.IsRequired || shareParameterWithBase));
+        }
+
+        AppendParameters(baseOnlyRequiredProperties, forceRequired: true);
+        AppendParameters(optionalPropertiesWithoutDefaults, forceRequired: false);
+        AppendParameters(optionalPropertiesWithDefaults, forceRequired: false);
+        return builder.ToString();
+
+        void AppendParameters(PropertyData[] values, bool forceRequired)
+        {
+            foreach (var property in values)
+            {
+                AppendSeparator();
+                builder.Append(GetConstructorParameter(property, isRequiredKeywordSupported, forceRequired));
+            }
+        }
+
+        void AppendSeparator()
+        {
+            if (hasParameter)
+            {
+                builder.Append(',');
+            }
+            else
+            {
+                hasParameter = true;
+            }
+        }
+    }
+
+    private static string GenerateConstructorAssignments(
+        PropertyData[] constructorProperties,
+        PropertyData[] baseOnlyRequiredProperties,
+        Dictionary<string, PropertyData> inheritedRequiredPropertiesByName)
+    {
+        using var builder = new PooledStringBuilder(256);
+        var hasAssignment = false;
+        foreach (var property in constructorProperties)
+        {
+            AppendAssignment(GetConstructorAssignment(
+                target: "this",
+                property,
+                forceRequired: property.IsRequired || inheritedRequiredPropertiesByName.ContainsKey(property.Name)));
+
+            if (inheritedRequiredPropertiesByName.TryGetValue(property.Name, out var inheritedRequiredProperty) &&
+                string.Equals(inheritedRequiredProperty.Type.CSharpType, property.Type.CSharpType, StringComparison.Ordinal))
+            {
+                AppendAssignment(GetConstructorAssignment(
+                    target: "base",
+                    inheritedRequiredProperty,
+                    parameterName: property.ParameterName,
+                    forceRequired: true));
+            }
+        }
+
+        foreach (var property in baseOnlyRequiredProperties)
+        {
+            AppendAssignment(GetConstructorAssignment(
+                target: "base",
+                property,
+                forceRequired: true));
+        }
+
+        return builder.ToString() is { Length: > 0 } result ? result : TrimmedLine;
+
+        void AppendAssignment(string assignment)
+        {
+            if (hasAssignment)
+            {
+                builder.Append(assignment);
+                return;
+            }
+
+            hasAssignment = true;
+            var startIndex = 0;
+            while (startIndex < assignment.Length && assignment[startIndex] is '\r' or '\n')
+            {
+                startIndex++;
+            }
+            builder.Append(assignment, startIndex, assignment.Length - startIndex);
+        }
     }
 
     private static string TryGetCascadingLeafFactory(

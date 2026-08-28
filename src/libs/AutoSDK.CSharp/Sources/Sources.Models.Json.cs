@@ -4,6 +4,40 @@ namespace AutoSDK.Generation;
 
 public static partial class Sources
 {
+    private static readonly string SerializeWithJsonContextSummary =
+        "Serializes the current instance to a JSON string using the provided JsonSerializerContext."
+            .ToXmlDocumentationSummary(level: 8);
+    private static readonly string SerializeWithDefaultJsonContextSummary =
+        "Serializes the current instance to a JSON string using the generated default JsonSerializerContext."
+            .ToXmlDocumentationSummary(level: 8);
+    private static readonly string SerializeWithJsonOptionsSummary =
+        "Serializes the current instance to a JSON string using the provided JsonSerializerOptions."
+            .ToXmlDocumentationSummary(level: 8);
+    private static readonly string DeserializeWithJsonContextSummary =
+        "Deserializes a JSON string using the provided JsonSerializerContext."
+            .ToXmlDocumentationSummary(level: 8);
+    private static readonly string DeserializeWithDefaultJsonContextSummary =
+        "Deserializes a JSON string using the generated default JsonSerializerContext."
+            .ToXmlDocumentationSummary(level: 8);
+    private static readonly string DeserializeWithJsonOptionsSummary =
+        "Deserializes a JSON string using the provided JsonSerializerOptions."
+            .ToXmlDocumentationSummary(level: 8);
+    private static readonly string SerializeRawWithJsonContextSummary =
+        "Serializes the current instance to raw JSON using the provided JsonSerializerContext."
+            .ToXmlDocumentationSummary(level: 8);
+    private static readonly string SerializeRawWithDefaultJsonContextSummary =
+        "Serializes the current instance to raw JSON using the generated default JsonSerializerContext."
+            .ToXmlDocumentationSummary(level: 8);
+    private static readonly string SerializeRawWithJsonOptionsSummary =
+        "Serializes the current instance to raw JSON using the provided JsonSerializerOptions."
+            .ToXmlDocumentationSummary(level: 8);
+    private static readonly string DeserializeRawSummary =
+        "Deserializes raw JSON while preserving unknown JSON properties."
+            .ToXmlDocumentationSummary(level: 8);
+    private static readonly string DeserializeRawWithDefaultJsonContextSummary =
+        "Deserializes raw JSON while preserving unknown JSON properties using the generated default JsonSerializerContext."
+            .ToXmlDocumentationSummary(level: 8);
+
     public static string GenerateClassFromToJsonMethods(
         ModelData modelData,
         CancellationToken cancellationToken = default)
@@ -66,13 +100,13 @@ public static partial class Sources
             : TrimmedLine;
         
         return settings.UsesSystemTextJson()
-            ? @$"#nullable enable
+            ? NormalizedString.Create(@$"#nullable enable
 
 namespace {@namespace}
 {{
     public {modifiers} {className}
     {{
-        {"Serializes the current instance to a JSON string using the provided JsonSerializerContext.".ToXmlDocumentationSummary(level: 8)}
+        {SerializeWithJsonContextSummary}
         public string ToJson(
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {{
@@ -82,13 +116,13 @@ namespace {@namespace}
                 jsonSerializerContext);
         }}
 {(hasJsonSerializerContext ? $@"
-        {"Serializes the current instance to a JSON string using the generated default JsonSerializerContext.".ToXmlDocumentationSummary(level: 8)}
+        {SerializeWithDefaultJsonContextSummary}
         public string ToJson()
         {{
             return ToJson({defaultJsonSerializerContext});
         }}" : TrimmedLine)}
 
-        {"Serializes the current instance to a JSON string using the provided JsonSerializerOptions.".ToXmlDocumentationSummary(level: 8)}
+        {SerializeWithJsonOptionsSummary}
 #if NET8_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(""JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved."")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode(""JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications."")]
@@ -107,7 +141,7 @@ namespace {@namespace}
                 jsonSerializerOptions);
         }}
 
-        {"Deserializes a JSON string using the provided JsonSerializerContext.".ToXmlDocumentationSummary(level: 8)}
+        {DeserializeWithJsonContextSummary}
         public static {(isBaseClass ? "T" : typeName)}? FromJson{(isBaseClass ? "<T>" : string.Empty)}(
             string json,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
@@ -119,7 +153,7 @@ namespace {@namespace}
                 jsonSerializerContext) as {(isBaseClass ? "T" : typeName)}{(isValueType ? "?" : "")};
         }}
 {(hasJsonSerializerContext ? $@"
-        {"Deserializes a JSON string using the generated default JsonSerializerContext.".ToXmlDocumentationSummary(level: 8)}
+        {DeserializeWithDefaultJsonContextSummary}
         public static {(isBaseClass ? "T" : typeName)}? FromJson{(isBaseClass ? "<T>" : string.Empty)}(
             string json)
             {(isBaseClass ? $"where T : {className}" : string.Empty)}
@@ -129,7 +163,7 @@ namespace {@namespace}
                 {defaultJsonSerializerContext});
         }}" : TrimmedLine)}
 
-        {"Deserializes a JSON string using the provided JsonSerializerOptions.".ToXmlDocumentationSummary(level: 8)}
+        {DeserializeWithJsonOptionsSummary}
 #if NET8_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(""JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved."")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode(""JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications."")]
@@ -226,14 +260,14 @@ namespace {@namespace}
 {rawModelDataMethods}
     }}
 }}
-".RemoveBlankLinesWhereOnlyWhitespaces()
-            : @$"#nullable enable
+")
+            : NormalizedString.Create(@$"#nullable enable
 
 namespace {@namespace}
 {{
     public {modifiers} {className}
     {{
-        {"Serializes the current instance to a JSON string using the provided JsonSerializerOptions.".ToXmlDocumentationSummary(level: 8)}
+        {SerializeWithJsonOptionsSummary}
 #if NET8_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(""JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved."")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode(""JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications."")]
@@ -246,7 +280,7 @@ namespace {@namespace}
                 jsonSerializerOptions);
         }}
 
-        {"Deserializes a JSON string using the provided JsonSerializerOptions.".ToXmlDocumentationSummary(level: 8)}
+        {DeserializeWithJsonOptionsSummary}
 #if NET8_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(""JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved."")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode(""JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications."")]
@@ -279,7 +313,7 @@ namespace {@namespace}
 {rawModelDataMethods}
     }}
 }}
-".RemoveBlankLinesWhereOnlyWhitespaces();
+");
     }
 
     private static string GenerateSystemTextJsonRawModelDataMethods(
@@ -295,20 +329,20 @@ namespace {@namespace}
 
         return $@"
 
-        {("Serializes the current instance to raw JSON using the provided JsonSerializerContext.").ToXmlDocumentationSummary(level: 8)}
+        {SerializeRawWithJsonContextSummary}
         public string ToRawJson(
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {{
             return ToJson(jsonSerializerContext);
         }}
 {(hasJsonSerializerContext ? $@"
-        {("Serializes the current instance to raw JSON using the generated default JsonSerializerContext.").ToXmlDocumentationSummary(level: 8)}
+        {SerializeRawWithDefaultJsonContextSummary}
         public string ToRawJson()
         {{
             return ToRawJson({defaultJsonSerializerContext});
         }}" : TrimmedLine)}
 
-        {("Serializes the current instance to raw JSON using the provided JsonSerializerOptions.").ToXmlDocumentationSummary(level: 8)}
+        {SerializeRawWithJsonOptionsSummary}
 #if NET8_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(""JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved."")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode(""JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications."")]
@@ -324,7 +358,7 @@ namespace {@namespace}
             return ToJson(jsonSerializerOptions);
         }}
 
-        {("Deserializes raw JSON while preserving unknown JSON properties.").ToXmlDocumentationSummary(level: 8)}
+        {DeserializeRawSummary}
         public static {contextReturnType}? FromRawUnchecked{contextGenericSuffix}(
             string json,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
@@ -333,7 +367,7 @@ namespace {@namespace}
             return FromJson{contextGenericSuffix}(json, jsonSerializerContext);
         }}
 {(hasJsonSerializerContext ? $@"
-        {("Deserializes raw JSON while preserving unknown JSON properties using the generated default JsonSerializerContext.").ToXmlDocumentationSummary(level: 8)}
+        {DeserializeRawWithDefaultJsonContextSummary}
         public static {contextReturnType}? FromRawUnchecked{contextGenericSuffix}(
             string json)
             {contextWhereClause}
@@ -343,7 +377,7 @@ namespace {@namespace}
                 {defaultJsonSerializerContext});
         }}" : TrimmedLine)}
 
-        {("Deserializes raw JSON while preserving unknown JSON properties.").ToXmlDocumentationSummary(level: 8)}
+        {DeserializeRawSummary}
 #if NET8_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(""JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved."")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode(""JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications."")]
@@ -369,7 +403,7 @@ namespace {@namespace}
     {
         return $@"
 
-        {("Serializes the current instance to raw JSON using the provided JsonSerializerOptions.").ToXmlDocumentationSummary(level: 8)}
+        {SerializeRawWithJsonOptionsSummary}
 #if NET8_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(""JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved."")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode(""JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications."")]
@@ -380,7 +414,7 @@ namespace {@namespace}
             return ToJson(jsonSerializerOptions);
         }}
 
-        {("Deserializes raw JSON while preserving unknown JSON properties.").ToXmlDocumentationSummary(level: 8)}
+        {DeserializeRawSummary}
 #if NET8_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(""JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved."")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode(""JSON serialization and deserialization might require types that cannot be statically analyzed. Use System.Text.Json source generation for native AOT applications."")]

@@ -59,7 +59,7 @@ public static partial class Sources
             endPoint.ClientUsesServerSelectionSupport ||
             endPoint.UsesServerSelectionSupport && endPoint.HasServerOverride && endPoint.Servers.Length > 0;
 
-        return $@"
+        return NormalizedString.Create($@"
 #nullable enable{(
     endPoint.Parameters.Any(x => x is { IsDeprecated: true, Location: not null }) ||
     endPoint.IsMultipartFormData && endPoint.Parameters.Any(x => x.IsDeprecated) ||
@@ -107,7 +107,7 @@ namespace {endPoint.Settings.Namespace}
 {GenerateExtensionMethod(endPoint)}
 {GenerateMultipartStreamMethods(endPoint)}
     }}
-}}".RemoveBlankLinesWhereOnlyWhitespaces();
+}}");
     }
 
     public static string GenerateEndPointInterface(
@@ -119,7 +119,7 @@ namespace {endPoint.Settings.Namespace}
             return string.Empty;
         }
 
-        return $@"#nullable enable{(RequiresDeprecatedTypeWarningSuppression(endPoint) ? @"
+        return NormalizedString.Create($@"#nullable enable{(RequiresDeprecatedTypeWarningSuppression(endPoint) ? @"
 
 #pragma warning disable CS0618 // Type or member is obsolete" : "")}
 
@@ -136,7 +136,7 @@ namespace {endPoint.Settings.Namespace}
 {GenerateExtensionMethod(endPoint, isInterface: true)}
 {GenerateMultipartStreamMethods(endPoint, isInterface: true)}
     }}
-}}".RemoveBlankLinesWhereOnlyWhitespaces();
+}}");
     }
 
     public static string GetHttpMethod(System.Net.Http.HttpMethod operationType)
@@ -1105,25 +1105,56 @@ namespace {endPoint.Settings.Namespace}
         var multipartStreamParameters = useMultipartStreamRequest
             ? GetMultipartStreamMethodParameters(endPoint).ToArray()
             : Array.Empty<MethodParameter>();
-        var body = isInterface
-            ? ";"
-            : delegatesToResponseWrapper
-            ? string.IsNullOrWhiteSpace(endPoint.SuccessResponse.Type.CSharpType)
-            ? @$"
+        var declaration = $@"        {endPoint.Summary.ToXmlDocumentationSummary(level: 8)}
+{(useMultipartStreamRequest ? multipartStreamParameters : endPoint.Parameters.Where(x => x.Location != null)).Select(x => $@"
+        {x.Summary.ToXmlDocumentationForParam(x.ParameterName, level: 8)}").Inject()}
+{(useMultipartStreamRequest || string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType) ? TrimmedLine : $@"{TrimmedLine}
+        /// <param name=""request""></param>")}
+        /// <param name=""requestOptions"">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name=""cancellationToken"">The token to cancel the operation with</param>
+        /// <exception cref=""global::{endPoint.Settings.Namespace}.ApiException""></exception>{(string.IsNullOrWhiteSpace(endPoint.Remarks) ? "" : $@"
+        {endPoint.Remarks.ToXmlDocumentationRemarks(level: 8)}")}
+        {GenerateEndPointAttributes(endPoint)}
+        {(isInterface ? "" : "public async ")}{taskType} {methodName}(
+{(useMultipartStreamRequest ? GenerateMultipartStreamParameterDeclarations(multipartStreamParameters) : $@"{endPoint.Parameters.Where(x => x is { Location: not null, IsRequired: true } && !x.HasSchemaDefault).Select(x => $@"
+            {x.Type.CSharpType} {x.ParameterName},").Inject()}
+{(string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType) ? TrimmedLine : @$"
+            {endPoint.RequestType.CSharpTypeWithoutNullability} request,")}
+{endPoint.Parameters.Where(x => x is { Location: not null } && (!x.IsRequired || x.HasSchemaDefault)).Select(x => $@"
+            {x.Type.CSharpType} {x.ParameterName} = {x.ParameterDefaultValue},").Inject()}")}
+            global::{endPoint.Settings.Namespace}.AutoSDKRequestOptions? requestOptions = default,
+            {cancellationTokenAttribute}global::System.Threading.CancellationToken cancellationToken = default){(isInterface ? ";" : string.Empty)}";
+
+        if (isInterface)
+        {
+            return normalizeOutput
+                ? declaration.RemoveBlankLinesWhereOnlyWhitespaces()
+                : declaration;
+        }
+
+        if (delegatesToResponseWrapper)
+        {
+            var delegatingResult = string.IsNullOrWhiteSpace(endPoint.SuccessResponse.Type.CSharpType)
+                ? @$"{declaration}
         {{
             await {GetResponseWrapperMethodName(endPoint)}(
 {GenerateMethodInvocationArguments(endPoint)}
             ).ConfigureAwait(false);
         }}"
-                : @$"
+                : @$"{declaration}
         {{
             var __response = await {GetResponseWrapperMethodName(endPoint)}(
 {GenerateMethodInvocationArguments(endPoint)}
             ).ConfigureAwait(false);
 
             return __response.Body;
-        }}"
-            : @$"
+        }}";
+            return normalizeOutput
+                ? delegatingResult.RemoveBlankLinesWhereOnlyWhitespaces()
+                : delegatingResult;
+        }
+
+        var result = @$"{declaration}
         {{
 {(useMultipartStreamRequest
     ? GenerateMultipartStreamRequestInitialization(endPoint)
@@ -1359,26 +1390,6 @@ namespace {endPoint.Settings.Namespace}
                 __httpRequest?.Dispose();
             }}
         }}";
-
-        var result = $@"        {endPoint.Summary.ToXmlDocumentationSummary(level: 8)}
-{(useMultipartStreamRequest ? multipartStreamParameters : endPoint.Parameters.Where(x => x.Location != null)).Select(x => $@"
-        {x.Summary.ToXmlDocumentationForParam(x.ParameterName, level: 8)}").Inject()}
-{(useMultipartStreamRequest || string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType) ? TrimmedLine : $@"{TrimmedLine}
-        /// <param name=""request""></param>")}
-        /// <param name=""requestOptions"">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
-        /// <param name=""cancellationToken"">The token to cancel the operation with</param>
-        /// <exception cref=""global::{endPoint.Settings.Namespace}.ApiException""></exception>{(string.IsNullOrWhiteSpace(endPoint.Remarks) ? "" : $@"
-        {endPoint.Remarks.ToXmlDocumentationRemarks(level: 8)}")}
-        {GenerateEndPointAttributes(endPoint)}
-        {(isInterface ? "" : "public async ")}{taskType} {methodName}(
-{(useMultipartStreamRequest ? GenerateMultipartStreamParameterDeclarations(multipartStreamParameters) : $@"{endPoint.Parameters.Where(x => x is { Location: not null, IsRequired: true } && !x.HasSchemaDefault).Select(x => $@"
-            {x.Type.CSharpType} {x.ParameterName},").Inject()}
-{(string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType) ? TrimmedLine : @$"
-            {endPoint.RequestType.CSharpTypeWithoutNullability} request,")}
-{endPoint.Parameters.Where(x => x is { Location: not null } && (!x.IsRequired || x.HasSchemaDefault)).Select(x => $@"
-            {x.Type.CSharpType} {x.ParameterName} = {x.ParameterDefaultValue},").Inject()}")}
-            global::{endPoint.Settings.Namespace}.AutoSDKRequestOptions? requestOptions = default,
-            {cancellationTokenAttribute}global::System.Threading.CancellationToken cancellationToken = default){body}";
         return normalizeOutput
             ? result.RemoveBlankLinesWhereOnlyWhitespaces()
             : result;
