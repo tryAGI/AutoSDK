@@ -7,6 +7,7 @@ edit_uri: edit/main/docs/
 nav:
 - Overview: index.md
 - Media type capabilities: media-type-capabilities.md
+- OpenAPI parsing performance: openapi-parsing-performance.md
 # EXAMPLES:START
 
 # EXAMPLES:END

@@ -432,7 +432,8 @@ public static class Data
                 AllocFiltering: coreTimes.AllocFiltering,
                 AllocComputeData: allocAfterData - allocAfterNaming,
                 AllocComputeDataClasses: allocAfterClasses - allocAfterData,
-                AllocFilterTags: coreTimes.AllocFilterTags
+                AllocFilterTags: coreTimes.AllocFilterTags,
+                OpenApiParsing: coreTimes.OpenApiParsing
 #endif
             ));
     }

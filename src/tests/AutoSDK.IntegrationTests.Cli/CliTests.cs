@@ -386,6 +386,14 @@ public class CliTests
                 .Should().Be(ReadDiagnosticValue(firstResult.StandardError, "files_written"));
             ReadDiagnosticValue(firstResult.StandardError, "files_replaced").Should().Be(0);
             ReadDiagnosticValue(firstResult.StandardError, "normalized_lines").Should().BeGreaterThan(0);
+            ReadDiagnosticMilliseconds(firstResult.StandardError, "core_parsing_json_syntax_ms").Should().BeGreaterThanOrEqualTo(0);
+            ReadDiagnosticMilliseconds(firstResult.StandardError, "core_parsing_compat_normalization_ms").Should().BeGreaterThanOrEqualTo(0);
+            ReadDiagnosticMilliseconds(firstResult.StandardError, "core_parsing_microsoft_reader_ms").Should().BeGreaterThan(0);
+            ReadDiagnosticMilliseconds(firstResult.StandardError, "core_parsing_compat_walker_ms").Should().BeGreaterThan(0);
+            ReadDiagnosticMilliseconds(firstResult.StandardError, "core_parsing_postprocess_ms").Should().BeGreaterThan(0);
+            ReadDiagnosticValue(firstResult.StandardError, "core_parsing_microsoft_reader_allocated_bytes").Should().BeGreaterThan(0);
+            ReadDiagnosticValue(firstResult.StandardError, "core_parsing_compat_walker_allocated_bytes").Should().BeGreaterThan(0);
+            ReadDiagnosticValue(firstResult.StandardError, "core_parsing_postprocess_allocated_bytes").Should().BeGreaterThan(0);
             ReadDiagnosticValue(firstResult.StandardError, "core_compute_data_allocated_bytes").Should().BeGreaterThan(0);
             ReadDiagnosticValue(firstResult.StandardError, "core_compute_classes_allocated_bytes").Should().BeGreaterThan(0);
             ReadDiagnosticValue(firstResult.StandardError, "render_model_types_allocated_bytes").Should().BeGreaterThan(0);

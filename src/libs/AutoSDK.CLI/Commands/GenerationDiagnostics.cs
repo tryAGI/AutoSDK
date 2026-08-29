@@ -48,6 +48,11 @@ internal readonly record struct GenerationDiagnostics(
         await WriteMillisecondsAsync(writer, "cache_validation_ms", CacheValidation).ConfigureAwait(false);
         await WriteMillisecondsAsync(writer, "pipeline_ms", Pipeline).ConfigureAwait(false);
         await WriteMillisecondsAsync(writer, "core_parsing_ms", CoreTimes.Parsing).ConfigureAwait(false);
+        await WriteMillisecondsAsync(writer, "core_parsing_json_syntax_ms", CoreTimes.OpenApiParsing.JsonSyntax).ConfigureAwait(false);
+        await WriteMillisecondsAsync(writer, "core_parsing_compat_normalization_ms", CoreTimes.OpenApiParsing.CompatibilityNormalization).ConfigureAwait(false);
+        await WriteMillisecondsAsync(writer, "core_parsing_microsoft_reader_ms", CoreTimes.OpenApiParsing.MicrosoftReader).ConfigureAwait(false);
+        await WriteMillisecondsAsync(writer, "core_parsing_compat_walker_ms", CoreTimes.OpenApiParsing.CompatibilityWalker).ConfigureAwait(false);
+        await WriteMillisecondsAsync(writer, "core_parsing_postprocess_ms", CoreTimes.OpenApiParsing.PostProcessing).ConfigureAwait(false);
         await WriteMillisecondsAsync(writer, "core_traversal_ms", CoreTimes.TraversalTree).ConfigureAwait(false);
         await WriteMillisecondsAsync(writer, "core_naming_ms", CoreTimes.Naming).ConfigureAwait(false);
         await WriteMillisecondsAsync(writer, "core_resolve_references_ms", CoreTimes.ResolveReferences).ConfigureAwait(false);
@@ -89,6 +94,11 @@ internal readonly record struct GenerationDiagnostics(
         await writer.WriteLineAsync($"  cache_allocated_bytes: {CacheAllocatedBytes.ToString(CultureInfo.InvariantCulture)}").ConfigureAwait(false);
         await writer.WriteLineAsync($"  pipeline_allocated_bytes: {PipelineAllocatedBytes.ToString(CultureInfo.InvariantCulture)}").ConfigureAwait(false);
         await writer.WriteLineAsync($"  core_parsing_allocated_bytes: {CoreTimes.AllocParsing.ToString(CultureInfo.InvariantCulture)}").ConfigureAwait(false);
+        await writer.WriteLineAsync($"  core_parsing_json_syntax_allocated_bytes: {CoreTimes.OpenApiParsing.AllocJsonSyntax.ToString(CultureInfo.InvariantCulture)}").ConfigureAwait(false);
+        await writer.WriteLineAsync($"  core_parsing_compat_normalization_allocated_bytes: {CoreTimes.OpenApiParsing.AllocCompatibilityNormalization.ToString(CultureInfo.InvariantCulture)}").ConfigureAwait(false);
+        await writer.WriteLineAsync($"  core_parsing_microsoft_reader_allocated_bytes: {CoreTimes.OpenApiParsing.AllocMicrosoftReader.ToString(CultureInfo.InvariantCulture)}").ConfigureAwait(false);
+        await writer.WriteLineAsync($"  core_parsing_compat_walker_allocated_bytes: {CoreTimes.OpenApiParsing.AllocCompatibilityWalker.ToString(CultureInfo.InvariantCulture)}").ConfigureAwait(false);
+        await writer.WriteLineAsync($"  core_parsing_postprocess_allocated_bytes: {CoreTimes.OpenApiParsing.AllocPostProcessing.ToString(CultureInfo.InvariantCulture)}").ConfigureAwait(false);
         await writer.WriteLineAsync($"  core_traversal_allocated_bytes: {CoreTimes.AllocTraversalTree.ToString(CultureInfo.InvariantCulture)}").ConfigureAwait(false);
         await writer.WriteLineAsync($"  core_naming_allocated_bytes: {CoreTimes.AllocNaming.ToString(CultureInfo.InvariantCulture)}").ConfigureAwait(false);
         await writer.WriteLineAsync($"  core_resolve_references_allocated_bytes: {CoreTimes.AllocResolveReferences.ToString(CultureInfo.InvariantCulture)}").ConfigureAwait(false);
