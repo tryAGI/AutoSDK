@@ -1,0 +1,152 @@
+{
+  "schemaVersion": 1,
+  "environment": {
+    "platform": "Apple Silicon macOS",
+    "logicalProcessorCount": 16,
+    "writerParallelism": 8
+  },
+  "workloads": {
+    "github": {
+      "source": {
+        "path": "specs/github.yaml",
+        "sha256": "346e217b342a4a5b1d1f1b3d6118c4e47bc4778a9b505b90b6f4227914733fc0"
+      },
+      "arguments": [
+        "--namespace", "GitHub",
+        "--clientClassName", "GitHubClient",
+        "--targetFramework", "net10.0",
+        "--exclude-deprecated-operations",
+        "--compute-discriminators",
+        "--clean-stale-files",
+        "--diagnostics"
+      ],
+      "generatedFiles": 16942,
+      "generatedBytes": 99215523,
+      "maximum": {
+        "freshTotalMilliseconds": 6000,
+        "freshOutputMilliseconds": 1600,
+        "freshOutputPhysicalWriteWorkerMilliseconds": 10000,
+        "cacheHitTotalMilliseconds": 750,
+        "cacheValidationMilliseconds": 650,
+        "totalAllocatedBytes": 2250000000,
+        "renderAllocatedBytes": 800000000,
+        "writeAllocatedBytes": 210000000
+      },
+      "baselineBeforeFreshFileDirectWrites": {
+        "commit": "ff38ca9a1647b2acae2f27eaf4fc0baa014a6fd9",
+        "cliVersion": "0.32.1-dev.16",
+        "freshTotalMedianMilliseconds": 5353.756,
+        "freshOutputMedianMilliseconds": 1740.934,
+        "freshOutputPhysicalWriteWorkerMedianMilliseconds": 11534.061,
+        "totalAllocatedBytesMedian": 2190069320,
+        "writeAllocatedBytesMedian": 199909944
+      },
+      "observedAfterFreshFileDirectWrites": {
+        "commit": "2bb6c38e27180724bdb3fab9a785d6a4cca83791",
+        "cliVersion": "0.32.1-dev.19",
+        "freshTotalMedianMilliseconds": 4488.604,
+        "freshOutputMedianMilliseconds": 1144.761,
+        "freshOutputPhysicalWriteWorkerMedianMilliseconds": 6968.731,
+        "totalAllocatedBytesMedian": 2184710616,
+        "writeAllocatedBytesMedian": 192867412,
+        "freshTotalReductionPercent": 16.2,
+        "freshOutputReductionPercent": 34.2,
+        "physicalWriteWorkerReductionPercent": 39.6
+      },
+      "warmCacheMetadataSamples": {
+        "beforeDuplicateStatRemovalTotalMedianMilliseconds": 225.700,
+        "afterDuplicateStatRemovalTotalMedianMilliseconds": 206.163,
+        "beforeDuplicateStatRemovalValidationMedianMilliseconds": 161.171,
+        "afterDuplicateStatRemovalValidationMedianMilliseconds": 143.215
+      },
+      "finalCiArtifactVerification": {
+        "commit": "4c3a92bbdb2c75bea258d84a3805448f9f817b62",
+        "cliVersion": "0.32.1-dev.21",
+        "freshTotalMilliseconds": 4511.518,
+        "freshOutputMilliseconds": 1136.704,
+        "cacheHitTotalMilliseconds": 213.722,
+        "cacheValidationMilliseconds": 152.022,
+        "filesCreatedOnFreshRun": 16942,
+        "filesUnchangedOnCacheHit": 16942
+      }
+    },
+    "appStoreConnect": {
+      "source": {
+        "repository": "tryAGI/AppStoreConnect",
+        "repositoryCommit": "b13f7ceccd6037cafaee24c22a1e4f65c44b9877",
+        "path": "src/libs/AppStoreConnect/openapi.json",
+        "sha256": "ed0202ef37155b9334772482d2ea0be688c3046b284c895bcbea5455fbe54fd8"
+      },
+      "arguments": [
+        "--namespace", "AppStoreConnect",
+        "--clientClassName", "AppStoreConnectClient",
+        "--targetFramework", "net10.0",
+        "--exclude-deprecated-operations",
+        "--generate-http-exception-hierarchy",
+        "--generate-retry-handler",
+        "--generate-pageable-helpers",
+        "--auto-detect-status-polling",
+        "--security-scheme", "Http:Header:Bearer",
+        "--clean-stale-files",
+        "--diagnostics"
+      ],
+      "generatedFiles": 24895,
+      "generatedBytes": 143473560,
+      "maximum": {
+        "freshTotalMilliseconds": 6500,
+        "freshOutputMilliseconds": 2300,
+        "freshOutputPhysicalWriteWorkerMilliseconds": 15000,
+        "cacheHitTotalMilliseconds": 900,
+        "cacheValidationMilliseconds": 750,
+        "totalAllocatedBytes": 2750000000,
+        "renderAllocatedBytes": 1250000000,
+        "writeAllocatedBytes": 380000000
+      },
+      "baselineBeforeFreshFileDirectWrites": {
+        "commit": "ff38ca9a1647b2acae2f27eaf4fc0baa014a6fd9",
+        "cliVersion": "0.32.1-dev.16",
+        "freshTotalMedianMilliseconds": 6633.830,
+        "freshOutputMedianMilliseconds": 2963.619,
+        "freshOutputPhysicalWriteWorkerMedianMilliseconds": 19562.403,
+        "totalAllocatedBytesMedian": 2666950904,
+        "writeAllocatedBytesMedian": 367444936
+      },
+      "observedAfterFreshFileDirectWrites": {
+        "commit": "2bb6c38e27180724bdb3fab9a785d6a4cca83791",
+        "cliVersion": "0.32.1-dev.19",
+        "freshTotalMedianMilliseconds": 4905.933,
+        "freshOutputMedianMilliseconds": 1766.195,
+        "freshOutputPhysicalWriteWorkerMedianMilliseconds": 11330.758,
+        "totalAllocatedBytesMedian": 2657387836,
+        "writeAllocatedBytesMedian": 357518756,
+        "freshTotalReductionPercent": 26.0,
+        "freshOutputReductionPercent": 40.4,
+        "physicalWriteWorkerReductionPercent": 42.1
+      },
+      "warmCacheMetadataSamples": {
+        "beforeDuplicateStatRemovalTotalMedianMilliseconds": 298.570,
+        "afterDuplicateStatRemovalTotalMedianMilliseconds": 275.264,
+        "beforeDuplicateStatRemovalValidationMedianMilliseconds": 223.913,
+        "afterDuplicateStatRemovalValidationMedianMilliseconds": 201.712
+      },
+      "finalCiArtifactVerification": {
+        "commit": "4c3a92bbdb2c75bea258d84a3805448f9f817b62",
+        "cliVersion": "0.32.1-dev.21",
+        "freshTotalMilliseconds": 5100.475,
+        "freshOutputMilliseconds": 1700.312,
+        "cacheHitTotalMilliseconds": 292.387,
+        "cacheValidationMilliseconds": 215.580,
+        "filesCreatedOnFreshRun": 24895,
+        "filesUnchangedOnCacheHit": 24895
+      }
+    }
+  },
+  "notes": [
+    "Reference budgets only; they are not currently enforced by CI.",
+    "Fresh timings use isolated empty output directories and allocations are more stable than wall time.",
+    "Cache-hit timing is sensitive to filesystem metadata cache state and concurrent disk activity; maximum values intentionally cover the observed noisy range.",
+    "Worker timings are aggregate work across up to eight workers and are not additive wall-clock phases.",
+    "GitHub is the durable in-repository large-spec workload; App Store Connect is an external comparative workload pinned by repository commit and spec hash.",
+    "Both optimized outputs were byte-for-byte identical to CLI 0.32.1-dev.16 for all 41837 generated files."
+  ]
+}
