@@ -221,13 +221,13 @@ public static class CSharpPipeline
         }
         else if (settings.GenerateModels)
         {
-            AddPhase("enums", () => data.Enums
-                    .SelectMany(x => new[]
-                    {
-                        Sources.Enum(x, cancellationToken),
-                        Sources.EnumJsonConverter(x, cancellationToken),
-                        Sources.EnumNullableJsonConverter(x, cancellationToken),
-                    }));
+            var enumFiles = MeasurePhase(
+                "enums",
+                () => GenerateEnumFiles(data.Enums, cancellationToken));
+            for (var index = 0; index < enumFiles.Length; index++)
+            {
+                AddIfNotEmpty(enumFiles[index]);
+            }
             var modelTypeFiles = MeasurePhase(
                 "model_types",
                 () => GenerateClassTypeFiles(data.Classes, webSocketMessageModels, cancellationToken));
@@ -412,6 +412,24 @@ public static class CSharpPipeline
         {
             var method = methods[index];
             files[index] = Sources.Method(method, cancellationToken);
+        });
+
+        return files;
+    }
+
+    private static FileWithName[] GenerateEnumFiles(
+        EquatableArray<ModelData> enums,
+        CancellationToken cancellationToken)
+    {
+        var files = new FileWithName[enums.Length * 3];
+        var parallelOptions = CreateRenderParallelOptions(cancellationToken);
+
+        Parallel.For(0, enums.Length, parallelOptions, index =>
+        {
+            var model = enums[index];
+            files[index * 3] = Sources.Enum(model, cancellationToken);
+            files[(index * 3) + 1] = Sources.EnumJsonConverter(model, cancellationToken);
+            files[(index * 3) + 2] = Sources.EnumNullableJsonConverter(model, cancellationToken);
         });
 
         return files;
