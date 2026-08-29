@@ -29,7 +29,6 @@
     <PackageReference Include="Microsoft.OpenApi" Version="$(MicrosoftOpenApiVersion)" />
     <PackageReference Include="Microsoft.OpenApi.Readers" Version="1.6.31" />
     <PackageReference Include="Google.Protobuf" Version="3.36.0" />
-    <PackageReference Include="SharpYaml" Version="3.13.0" />
   </ItemGroup>
 
 </Project>

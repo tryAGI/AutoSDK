@@ -17,7 +17,6 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.OpenApi" Version="$(MicrosoftOpenApiVersion)" />
     <PackageReference Include="Microsoft.OpenApi.YamlReader" Version="$(MicrosoftOpenApiVersion)" />
-    <PackageReference Include="SharpYaml" Version="3.13.0" />
   </ItemGroup>
 
   <ItemGroup Condition="!$([MSBuild]::IsTargetFrameworkCompatible('$(TargetFramework)', 'net10.0'))">
