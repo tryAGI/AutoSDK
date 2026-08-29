@@ -14,6 +14,11 @@ diagnostics checks, retry setup, and measurement overhead stay only in the aggre
 
 ## Microsoft.OpenApi 3.10.2 investigation
 
+`Microsoft.OpenApi.YamlReader` currently resolves its compatible SharpYaml 2.1.5
+dependency transitively. Do not override it with SharpYaml 3.x: version 3.13.0 removes
+the `Parser<T>(T, int)` ABI used by YamlReader 3.10.2 and causes YAML parsing to fail
+with `MissingMethodException`.
+
 The in-repository `specs/github.yaml` benchmark produced this warm three-run average
 on Apple Silicon macOS:
 
