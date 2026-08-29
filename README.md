@@ -53,6 +53,12 @@ AutoSDK normalizes the OpenAPI 3.1 / JSON Schema 2020-12 keywords it can transla
 
 Keywords that are still not representable in the current .NET model pipeline, such as `patternProperties` and `contains`/`minContains`/`maxContains`, now fail fast with a targeted error instead of being silently ignored.
 
+### Nullable unions
+
+An OpenAPI 3.1 schema shaped as `oneOf: [{ "type": "null" }, T]` is normalized to the nullable form of `T`; it does not generate a two-branch union wrapper. For example, `null | integer` becomes `int?`, while an array whose items are `null | integer` becomes a collection of `int?`. An optional property remains nullable independently of whether its value schema also permits null.
+
+For query arrays, null elements are omitted because they cannot be represented consistently in URI encoding. Request bodies preserve explicit null values according to the generated model and serializer options.
+
 ## Raw Model Data
 Fast-moving APIs can return fields that are not present in the OpenAPI schema yet. Enable `--generate-raw-model-data` in the CLI, or set `<AutoSDK_GenerateRawModelData>true</AutoSDK_GenerateRawModelData>` for the source generator, to emit typed raw JSON extension data on generated models.
 
