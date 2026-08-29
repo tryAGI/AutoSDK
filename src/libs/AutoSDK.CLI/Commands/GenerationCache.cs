@@ -282,13 +282,8 @@ internal static class GenerationCache
         GeneratedFileCacheEntry file,
         CancellationToken cancellationToken = default)
     {
-        if (!File.Exists(file.Path))
-        {
-            return false;
-        }
-
         var fileInfo = new FileInfo(file.Path);
-        if (fileInfo.Length != file.Length)
+        if (!fileInfo.Exists || fileInfo.Length != file.Length)
         {
             return false;
         }
