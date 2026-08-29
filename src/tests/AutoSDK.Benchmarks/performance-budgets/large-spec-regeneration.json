@@ -68,6 +68,46 @@
         "cacheValidationMilliseconds": 152.022,
         "filesCreatedOnFreshRun": 16942,
         "filesUnchangedOnCacheHit": 16942
+      },
+      "microsoftOpenApi310Verification": {
+        "generatorCommit": "9c770ffad3e89c93eefb886a0723fcdbba542a74",
+        "microsoftOpenApiVersion": "3.10.2",
+        "microsoftOpenApiYamlReaderVersion": "3.10.2",
+        "sharpYamlVersion": "2.1.5",
+        "source": {
+          "url": "https://raw.githubusercontent.com/github/rest-api-description/main/descriptions/api.github.com/api.github.com.yaml",
+          "retrievedUtcDate": "2026-08-29",
+          "sha256": "654804a2abdf92dd0c692505344bb7787662a834b409f1ab27fe81f7b768e27f",
+          "bytes": 9841898
+        },
+        "generatedFiles": 20687,
+        "generatedBytes": 123645550,
+        "maximum": {
+          "freshTotalMilliseconds": 7500,
+          "parsingMilliseconds": 1700,
+          "renderMilliseconds": 1000,
+          "renderEnumsMilliseconds": 200,
+          "renderMethodImplementationsMilliseconds": 250,
+          "totalAllocatedBytes": 3000000000,
+          "parsingAllocatedBytes": 700000000,
+          "renderAllocatedBytes": 900000000,
+          "writeAllocatedBytes": 260000000
+        },
+        "observed": {
+          "freshTotalMilliseconds": 4785.113,
+          "parsingMilliseconds": 1391.612,
+          "renderMilliseconds": 664.347,
+          "renderEnumsMilliseconds": 96.375,
+          "renderMethodImplementationsMilliseconds": 137.337,
+          "totalAllocatedBytes": 2712173544,
+          "parsingAllocatedBytes": 662353088,
+          "renderAllocatedBytes": 842902480,
+          "writeAllocatedBytes": 229131736
+        },
+        "parity": {
+          "baselineCliVersion": "0.32.1-dev.27+7060812acf88cbbf8ad47076a1d8171cfa93820d",
+          "differentFiles": 0
+        }
       }
     },
     "appStoreConnect": {
@@ -144,6 +184,40 @@
         "cacheHitTotalMilliseconds": 985.620,
         "cacheValidationMilliseconds": 757.942,
         "filesUnchanged": 24895
+      },
+      "microsoftOpenApi310Verification": {
+        "generatorCommit": "9c770ffad3e89c93eefb886a0723fcdbba542a74",
+        "microsoftOpenApiVersion": "3.10.2",
+        "microsoftOpenApiYamlReaderVersion": "3.10.2",
+        "sharpYamlVersion": "2.1.5",
+        "generatedFiles": 24895,
+        "generatedBytes": 143473963,
+        "maximum": {
+          "freshTotalMilliseconds": 6500,
+          "parsingMilliseconds": 500,
+          "renderMilliseconds": 1200,
+          "renderEnumsMilliseconds": 250,
+          "renderMethodImplementationsMilliseconds": 250,
+          "totalAllocatedBytes": 2850000000,
+          "parsingAllocatedBytes": 175000000,
+          "renderAllocatedBytes": 1150000000,
+          "writeAllocatedBytes": 380000000
+        },
+        "observed": {
+          "freshTotalMilliseconds": 4025.647,
+          "parsingMilliseconds": 332.147,
+          "renderMilliseconds": 863.025,
+          "renderEnumsMilliseconds": 129.003,
+          "renderMethodImplementationsMilliseconds": 160.080,
+          "totalAllocatedBytes": 2604187264,
+          "parsingAllocatedBytes": 140760832,
+          "renderAllocatedBytes": 1040198248,
+          "writeAllocatedBytes": 357537728
+        },
+        "parity": {
+          "baselineCliVersion": "0.32.1-dev.27+7060812acf88cbbf8ad47076a1d8171cfa93820d",
+          "differentFiles": 0
+        }
       }
     }
   },
@@ -153,6 +227,8 @@
     "Cache-hit timing is sensitive to filesystem metadata cache state and concurrent disk activity; maximum values intentionally cover the observed noisy range.",
     "Worker timings are aggregate work across up to eight workers and are not additive wall-clock phases.",
     "GitHub is the durable in-repository large-spec workload; App Store Connect is an external comparative workload pinned by repository commit and spec hash.",
-    "Both optimized outputs were byte-for-byte identical to CLI 0.32.1-dev.16 for all 41837 generated files."
+    "Both optimized outputs were byte-for-byte identical to CLI 0.32.1-dev.16 for all 41837 generated files.",
+    "The Microsoft.OpenApi 3.10.2 verification generated 45582 files byte-for-byte identical to public CLI 0.32.1-dev.27.",
+    "The current GitHub verification uses an externally pinned official specification because it is newer and larger than specs/github.yaml."
   ]
 }
