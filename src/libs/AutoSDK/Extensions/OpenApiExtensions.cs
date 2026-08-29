@@ -1,4 +1,5 @@
 using System.Collections.Immutable;
+using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.Text;
@@ -199,6 +200,19 @@ public static class OpenApiExtensions
         CoreSettings settings,
         CancellationToken cancellationToken = default)
     {
+        return GetOpenApiDocumentWithMetrics(
+            yamlOrJson,
+            settings,
+            out _,
+            cancellationToken);
+    }
+
+    internal static OpenApiDocument GetOpenApiDocumentWithMetrics(
+        this string yamlOrJson,
+        CoreSettings settings,
+        out OpenApiParsingTimes parsingTimes,
+        CancellationToken cancellationToken = default)
+    {
         yamlOrJson = yamlOrJson ?? throw new ArgumentNullException(nameof(yamlOrJson));
 
         if (SpecFormatDetector.DetectFormat(yamlOrJson) == SpecFormat.GrpcProto)
@@ -210,18 +224,18 @@ public static class OpenApiExtensions
         {
             RuleSet = ValidationRuleSet.GetEmptyRuleSet(),
         };
-        // Add YAML reader support via extension method from Microsoft.OpenApi.YamlReader
         readerSettings.AddYamlReader();
 
         var normalizeJsonNullEnumValues = LooksLikeJson(yamlOrJson);
-        var readResult = ParseOpenApiDocument(yamlOrJson, readerSettings);
+        var readResult = ParseOpenApiDocument(yamlOrJson, readerSettings, out parsingTimes);
         var openApiDocument = readResult.Document;
         var diagnostics = readResult.Diagnostic;
         if (openApiDocument == null &&
             TryPromoteOpenApiFragment(yamlOrJson, out var promotedText))
         {
             Console.WriteLine("Detected OpenAPI fragment without header. Retrying with synthesized metadata.");
-            readResult = ParseOpenApiDocument(promotedText, readerSettings);
+            readResult = ParseOpenApiDocument(promotedText, readerSettings, out var retryParsingTimes);
+            parsingTimes += retryParsingTimes;
             openApiDocument = readResult.Document;
             diagnostics = readResult.Diagnostic;
             normalizeJsonNullEnumValues = LooksLikeJson(promotedText);
@@ -243,11 +257,25 @@ public static class OpenApiExtensions
             throw new AggregateException(diagnostics.Warnings.Select(x => new InvalidOperationException(x.Message)));
         }
 
+        var compatibilityWalkerTime = Stopwatch.StartNew();
+#if NET
+        var allocBeforeCompatibilityWalker = GC.GetTotalAllocatedBytes(precise: true);
+#endif
         new OpenApiWalker(new OpenApiCompatibilityVisitor(
             restoreCollapsedPrimitiveUnions:
                 diagnostics?.SpecificationVersion == OpenApiSpecVersion.OpenApi3_0,
             normalizeNullEnumValues: normalizeJsonNullEnumValues)).Walk(openApiDocument);
+        compatibilityWalkerTime.Stop();
+#if NET
+        var allocCompatibilityWalker = GC.GetTotalAllocatedBytes(precise: true) - allocBeforeCompatibilityWalker;
+#else
+        const long allocCompatibilityWalker = 0;
+#endif
 
+        var postProcessingTime = Stopwatch.StartNew();
+#if NET
+        var allocBeforePostProcessing = GC.GetTotalAllocatedBytes(precise: true);
+#endif
         openApiDocument.Components ??= new OpenApiComponents();
         openApiDocument.Components.Schemas ??= new Dictionary<string, IOpenApiSchema>();
         openApiDocument.Paths ??= new OpenApiPaths();
@@ -285,15 +313,45 @@ public static class OpenApiExtensions
         openApiDocument.InferLargeIntegerFormats();
         openApiDocument.SanitizeDiscriminators();
 
+        postProcessingTime.Stop();
+#if NET
+        var allocPostProcessing = GC.GetTotalAllocatedBytes(precise: true) - allocBeforePostProcessing;
+#else
+        const long allocPostProcessing = 0;
+#endif
+        parsingTimes += new OpenApiParsingTimes(
+            JsonSyntax: TimeSpan.Zero,
+            CompatibilityNormalization: TimeSpan.Zero,
+            MicrosoftReader: TimeSpan.Zero,
+            CompatibilityWalker: compatibilityWalkerTime.Elapsed,
+            PostProcessing: postProcessingTime.Elapsed,
+            AllocCompatibilityWalker: allocCompatibilityWalker,
+            AllocPostProcessing: allocPostProcessing);
+
         return openApiDocument;
     }
 
     private static ReadResult ParseOpenApiDocument(
         string text,
-        OpenApiReaderSettings readerSettings)
+        OpenApiReaderSettings readerSettings,
+        out OpenApiParsingTimes parsingTimes)
     {
+        var jsonSyntaxTime = Stopwatch.StartNew();
+#if NET
+        var allocBeforeJsonSyntax = GC.GetTotalAllocatedBytes(precise: true);
+#endif
         if (TryParseJsonNode(text, out var jsonNode))
         {
+            jsonSyntaxTime.Stop();
+#if NET
+            var allocJsonSyntax = GC.GetTotalAllocatedBytes(precise: true) - allocBeforeJsonSyntax;
+#else
+            const long allocJsonSyntax = 0;
+#endif
+            var compatibilityNormalizationTime = Stopwatch.StartNew();
+#if NET
+            var allocBeforeCompatibilityNormalization = GC.GetTotalAllocatedBytes(precise: true);
+#endif
             if (jsonNode is JsonObject rootObject)
             {
                 if (IsOpenApi31Document(rootObject))
@@ -312,16 +370,79 @@ public static class OpenApiExtensions
                 }
             }
 
-            return new OpenApiJsonReader().Read(
+            compatibilityNormalizationTime.Stop();
+#if NET
+            var allocCompatibilityNormalization = GC.GetTotalAllocatedBytes(precise: true) - allocBeforeCompatibilityNormalization;
+#else
+            const long allocCompatibilityNormalization = 0;
+#endif
+            var microsoftReaderTime = Stopwatch.StartNew();
+#if NET
+            var allocBeforeMicrosoftReader = GC.GetTotalAllocatedBytes(precise: true);
+#endif
+            var result = new OpenApiJsonReader().Read(
                 jsonNode!,
                 readerSettings.BaseUrl ?? new Uri("https://openapi.net/"),
                 readerSettings);
+            microsoftReaderTime.Stop();
+#if NET
+            var allocMicrosoftReader = GC.GetTotalAllocatedBytes(precise: true) - allocBeforeMicrosoftReader;
+#else
+            const long allocMicrosoftReader = 0;
+#endif
+            parsingTimes = new OpenApiParsingTimes(
+                JsonSyntax: jsonSyntaxTime.Elapsed,
+                CompatibilityNormalization: compatibilityNormalizationTime.Elapsed,
+                MicrosoftReader: microsoftReaderTime.Elapsed,
+                CompatibilityWalker: TimeSpan.Zero,
+                PostProcessing: TimeSpan.Zero,
+                AllocJsonSyntax: allocJsonSyntax,
+                AllocCompatibilityNormalization: allocCompatibilityNormalization,
+                AllocMicrosoftReader: allocMicrosoftReader);
+            return result;
         }
 
-        return OpenApiDocument.Parse(
-            NormalizeOpenApi3YamlCompatibilityKeywords(text),
+        jsonSyntaxTime.Stop();
+#if NET
+        var yamlAllocJsonSyntax = GC.GetTotalAllocatedBytes(precise: true) - allocBeforeJsonSyntax;
+#else
+        const long yamlAllocJsonSyntax = 0;
+#endif
+        var yamlCompatibilityNormalizationTime = Stopwatch.StartNew();
+#if NET
+        var allocBeforeYamlCompatibilityNormalization = GC.GetTotalAllocatedBytes(precise: true);
+#endif
+        var normalizedText = NormalizeOpenApi3YamlCompatibilityKeywords(text);
+        yamlCompatibilityNormalizationTime.Stop();
+#if NET
+        var yamlAllocCompatibilityNormalization = GC.GetTotalAllocatedBytes(precise: true) - allocBeforeYamlCompatibilityNormalization;
+#else
+        const long yamlAllocCompatibilityNormalization = 0;
+#endif
+        var yamlMicrosoftReaderTime = Stopwatch.StartNew();
+#if NET
+        var allocBeforeYamlMicrosoftReader = GC.GetTotalAllocatedBytes(precise: true);
+#endif
+        var yamlResult = OpenApiDocument.Parse(
+            normalizedText,
             format: "yaml",
             settings: readerSettings);
+        yamlMicrosoftReaderTime.Stop();
+#if NET
+        var yamlAllocMicrosoftReader = GC.GetTotalAllocatedBytes(precise: true) - allocBeforeYamlMicrosoftReader;
+#else
+        const long yamlAllocMicrosoftReader = 0;
+#endif
+        parsingTimes = new OpenApiParsingTimes(
+            JsonSyntax: jsonSyntaxTime.Elapsed,
+            CompatibilityNormalization: yamlCompatibilityNormalizationTime.Elapsed,
+            MicrosoftReader: yamlMicrosoftReaderTime.Elapsed,
+            CompatibilityWalker: TimeSpan.Zero,
+            PostProcessing: TimeSpan.Zero,
+            AllocJsonSyntax: yamlAllocJsonSyntax,
+            AllocCompatibilityNormalization: yamlAllocCompatibilityNormalization,
+            AllocMicrosoftReader: yamlAllocMicrosoftReader);
+        return yamlResult;
     }
 
     private static bool TryParseJsonNode(string text, out JsonNode? jsonNode)

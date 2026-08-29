@@ -63,7 +63,10 @@ public static class CorePipeline
 #endif
         var parsingTime = Stopwatch.StartNew();
 
-        var openApiDocument = text.GetOpenApiDocument(settings.ToCoreSettings(), cancellationToken);
+        var openApiDocument = text.GetOpenApiDocumentWithMetrics(
+            settings.ToCoreSettings(),
+            out var openApiParsingTimes,
+            cancellationToken);
 
         parsingTime.Stop();
 #if NET
@@ -401,7 +404,8 @@ public static class CorePipeline
                 AllocFiltering: allocAfterFilter - allocAfterResolve,
                 AllocComputeData: 0,
                 AllocComputeDataClasses: 0,
-                AllocFilterTags: allocAfterTags - allocBeforeTags
+                AllocFilterTags: allocAfterTags - allocBeforeTags,
+                OpenApiParsing: openApiParsingTimes
 #endif
             ));
     }

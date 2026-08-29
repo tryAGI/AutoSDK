@@ -42,6 +42,30 @@ internal static class BenchmarkProfileRunner
         }
 
         Console.WriteLine();
+        Console.WriteLine("OpenAPI parsing detail (average of 3 measured runs):");
+        Console.WriteLine(
+            "{0,-12} {1,10} {2,10} {3,10} {4,10} {5,10} {6,11} {7,11} {8,11} {9,11} {10,11}",
+            "Spec", "JSON", "Normalize", "MSReader", "Walker", "Post", "JSON MB", "Norm MB", "Reader MB", "Walker MB", "Post MB");
+        Console.WriteLine(new string('-', 135));
+
+        foreach (var profile in profiles)
+        {
+            Console.WriteLine(
+                "{0,-12} {1,9:F1}ms {2,9:F1}ms {3,9:F1}ms {4,9:F1}ms {5,9:F1}ms {6,10:F1} {7,10:F1} {8,10:F1} {9,10:F1} {10,10:F1}",
+                profile.Name,
+                profile.JsonSyntaxMs,
+                profile.CompatibilityNormalizationMs,
+                profile.MicrosoftReaderMs,
+                profile.CompatibilityWalkerMs,
+                profile.PostProcessingMs,
+                profile.JsonSyntaxAllocMb,
+                profile.CompatibilityNormalizationAllocMb,
+                profile.MicrosoftReaderAllocMb,
+                profile.CompatibilityWalkerAllocMb,
+                profile.PostProcessingAllocMb);
+        }
+
+        Console.WriteLine();
         Console.WriteLine("Allocations and output (average of 3 measured runs):");
         Console.WriteLine(
             "{0,-12} {1,10} {2,10} {3,10} {4,10} {5,8} {6,8} {7,8} {8,8} {9,8} {10,10}",
@@ -83,6 +107,16 @@ internal static class BenchmarkProfileRunner
         var coreAllocMb = 0.0;
         var csharpAllocMb = 0.0;
         var emitAllocMb = 0.0;
+        var jsonSyntaxMs = 0.0;
+        var compatibilityNormalizationMs = 0.0;
+        var microsoftReaderMs = 0.0;
+        var compatibilityWalkerMs = 0.0;
+        var postProcessingMs = 0.0;
+        var jsonSyntaxAllocMb = 0.0;
+        var compatibilityNormalizationAllocMb = 0.0;
+        var microsoftReaderAllocMb = 0.0;
+        var compatibilityWalkerAllocMb = 0.0;
+        var postProcessingAllocMb = 0.0;
 
         var schemaCount = 0;
         var filteredSchemaCount = 0;
@@ -105,6 +139,16 @@ internal static class BenchmarkProfileRunner
             filterMs += coreTimes.Filtering.TotalMilliseconds;
             coreMs += coreStage.Elapsed.TotalMilliseconds;
             coreAllocMb += BytesToMb(coreStage.AllocBytes);
+            jsonSyntaxMs += coreTimes.OpenApiParsing.JsonSyntax.TotalMilliseconds;
+            compatibilityNormalizationMs += coreTimes.OpenApiParsing.CompatibilityNormalization.TotalMilliseconds;
+            microsoftReaderMs += coreTimes.OpenApiParsing.MicrosoftReader.TotalMilliseconds;
+            compatibilityWalkerMs += coreTimes.OpenApiParsing.CompatibilityWalker.TotalMilliseconds;
+            postProcessingMs += coreTimes.OpenApiParsing.PostProcessing.TotalMilliseconds;
+            jsonSyntaxAllocMb += BytesToMb(coreTimes.OpenApiParsing.AllocJsonSyntax);
+            compatibilityNormalizationAllocMb += BytesToMb(coreTimes.OpenApiParsing.AllocCompatibilityNormalization);
+            microsoftReaderAllocMb += BytesToMb(coreTimes.OpenApiParsing.AllocMicrosoftReader);
+            compatibilityWalkerAllocMb += BytesToMb(coreTimes.OpenApiParsing.AllocCompatibilityWalker);
+            postProcessingAllocMb += BytesToMb(coreTimes.OpenApiParsing.AllocPostProcessing);
 
             var enrichStage = Measure(() => CSharpPipeline.Enrich(core));
             var data = enrichStage.Result;
@@ -151,6 +195,16 @@ internal static class BenchmarkProfileRunner
             CSharpAllocMb: csharpAllocMb / iterations,
             EmitAllocMb: emitAllocMb / iterations,
             TotalAllocMb: (coreAllocMb + csharpAllocMb + emitAllocMb) / iterations,
+            JsonSyntaxMs: jsonSyntaxMs / iterations,
+            CompatibilityNormalizationMs: compatibilityNormalizationMs / iterations,
+            MicrosoftReaderMs: microsoftReaderMs / iterations,
+            CompatibilityWalkerMs: compatibilityWalkerMs / iterations,
+            PostProcessingMs: postProcessingMs / iterations,
+            JsonSyntaxAllocMb: jsonSyntaxAllocMb / iterations,
+            CompatibilityNormalizationAllocMb: compatibilityNormalizationAllocMb / iterations,
+            MicrosoftReaderAllocMb: microsoftReaderAllocMb / iterations,
+            CompatibilityWalkerAllocMb: compatibilityWalkerAllocMb / iterations,
+            PostProcessingAllocMb: postProcessingAllocMb / iterations,
             SchemaCount: schemaCount,
             FilteredSchemaCount: filteredSchemaCount,
             ClassCount: classCount,
@@ -223,6 +277,16 @@ internal static class BenchmarkProfileRunner
         double CSharpAllocMb,
         double EmitAllocMb,
         double TotalAllocMb,
+        double JsonSyntaxMs,
+        double CompatibilityNormalizationMs,
+        double MicrosoftReaderMs,
+        double CompatibilityWalkerMs,
+        double PostProcessingMs,
+        double JsonSyntaxAllocMb,
+        double CompatibilityNormalizationAllocMb,
+        double MicrosoftReaderAllocMb,
+        double CompatibilityWalkerAllocMb,
+        double PostProcessingAllocMb,
         int SchemaCount,
         int FilteredSchemaCount,
         int ClassCount,
