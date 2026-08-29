@@ -1,6 +1,8 @@
+using AutoSDK.Extensions;
 using AutoSDK.Generation;
 using AutoSDK.Models;
 using AutoSDK.Serialization.Json;
+using Microsoft.OpenApi;
 using PreparedData = AutoSDK.Models.Data;
 
 namespace AutoSDK.UnitTests;
@@ -44,6 +46,61 @@ public sealed class OpenApiUpgradeCanaryTests
         generatedDependency.Should()
             .Contain("Dictionary<string, global::G.AnyOf<string, double?, bool?>?>? Metadata");
         generatedDependency.Should().NotContain("global::G.Metadata? Metadata");
+    }
+
+    [TestMethod]
+    [TestCategory("OpenApiUpgradeCanary")]
+    public void OpenApi30_LegacyNullAndPrimitiveUnionShapesRemainStable()
+    {
+        const string specification = """
+openapi: 3.0.3
+info:
+  title: Compatibility canary
+  version: 1.0.0
+paths: {}
+components:
+  schemas:
+    Choice:
+      oneOf:
+        - type: object
+        - type: string
+    NullEnum:
+      enum:
+        - null
+""";
+
+        var document = specification.GetOpenApiDocument(CanarySettings);
+        var choice = document.Components!.Schemas!["Choice"];
+        var nullEnum = document.Components.Schemas["NullEnum"];
+
+        choice.OneOf.Should().HaveCount(2);
+        choice.OneOf![0].Type.Should().Be(JsonSchemaType.Object);
+        choice.OneOf[1].Type.Should().Be(JsonSchemaType.String);
+        nullEnum.Type.Should().BeNull();
+        nullEnum.Enum.Should().ContainSingle(x => x.IsJsonNullSentinel());
+    }
+
+    [TestMethod]
+    [TestCategory("OpenApiUpgradeCanary")]
+    public void OpenApi31_LegacyNullableKeywordUsesTypeArraySemantics()
+    {
+        const string specification = """
+{
+  "openapi": "3.1.0",
+  "info": { "title": "Compatibility canary", "version": "1.0.0" },
+  "paths": {},
+  "components": {
+    "schemas": {
+      "NullableText": { "type": "string", "nullable": true }
+    }
+  }
+}
+""";
+
+        var document = specification.GetOpenApiDocument(CanarySettings);
+        var nullableText = document.Components!.Schemas!["NullableText"];
+
+        nullableText.Type.Should().Be(JsonSchemaType.String | JsonSchemaType.Null);
     }
 
     private static PreparedData Prepare(string specificationName)

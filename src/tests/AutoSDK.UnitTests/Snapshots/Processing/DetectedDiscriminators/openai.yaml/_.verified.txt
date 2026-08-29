@@ -8920,7 +8920,6 @@ components:
       type: object
       properties:
         content:
-          type: 'null'
           oneOf:
             - title: Text content
               type: string
@@ -9684,10 +9683,10 @@ components:
           type: string
           description: The key to compare against the value.
         value:
-          oneOf:
-            - type: string
-            - type: number
-            - type: boolean
+          type:
+            - boolean
+            - number
+            - string
           description: 'The value to compare against the attribute key; supports string, number, or boolean types.'
       additionalProperties: false
       description: "A filter used to compare a specified attribute key to a given value using a defined comparison operation.\n"
@@ -10411,7 +10410,6 @@ components:
               default: 1
               example: 1
             prediction:
-              type: 'null'
               oneOf:
                 - $ref: '#/components/schemas/PredictionContent'
               description: "Configuration for a [Predicted Output](/docs/guides/predicted-outputs),\nwhich can greatly improve response times when large parts of the model\nresponse are known ahead of time. This is most common when you are\nregenerating a file with only minor changes to most of the content.\n"
@@ -10639,7 +10637,6 @@ components:
           description: "ID of the model to use. You can use the [List models](/docs/api-reference/models/list) API to see all of your available models, or see our [Model overview](/docs/models) for descriptions of them.\n"
           x-oaiTypeLabel: string
         prompt:
-          type: 'null'
           oneOf:
             - type: string
               default: ''
@@ -11607,7 +11604,6 @@ components:
           default: auto
           example: transparent
         model:
-          type: 'null'
           anyOf:
             - type: string
             - enum:
@@ -11697,7 +11693,6 @@ components:
           description: 'A text description of the desired image(s). The maximum length is 32000 characters for `gpt-image-1`, 1000 characters for `dall-e-2` and 4000 characters for `dall-e-3`.'
           example: A cute baby sea otter
         model:
-          type: 'null'
           anyOf:
             - type: string
             - enum:
@@ -11821,7 +11816,6 @@ components:
           description: 'The image to use as the basis for the variation(s). Must be a valid PNG file, less than 4MB, and square.'
           format: binary
         model:
-          type: 'null'
           anyOf:
             - type: string
             - enum:
@@ -12329,7 +12323,6 @@ components:
           type: string
           description: 'The ID of the [assistant](/docs/api-reference/assistants) to use to execute this run.'
         model:
-          type: 'null'
           anyOf:
             - type: string
             - $ref: '#/components/schemas/AssistantSupportedModels'
@@ -12408,11 +12401,11 @@ components:
         truncation_strategy:
           allOf:
             - $ref: '#/components/schemas/TruncationObject'
-            - type: 'null'
+            - { }
         tool_choice:
           allOf:
             - $ref: '#/components/schemas/AssistantsApiToolChoiceOption'
-            - type: 'null'
+            - { }
         parallel_tool_calls:
           $ref: '#/components/schemas/ParallelToolCalls'
         response_format:
@@ -12474,7 +12467,6 @@ components:
         thread:
           $ref: '#/components/schemas/CreateThreadRequest'
         model:
-          type: 'null'
           anyOf:
             - type: string
             - enum:
@@ -12597,11 +12589,11 @@ components:
         truncation_strategy:
           allOf:
             - $ref: '#/components/schemas/TruncationObject'
-            - type: 'null'
+            - { }
         tool_choice:
           allOf:
             - $ref: '#/components/schemas/AssistantsApiToolChoiceOption'
-            - type: 'null'
+            - { }
         parallel_tool_calls:
           $ref: '#/components/schemas/ParallelToolCalls'
         response_format:
@@ -12768,7 +12760,6 @@ components:
           description: "If set to true, the model response data will be streamed to the client\nas it is generated using [server-sent events](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events#Event_stream_format). \nSee the [Streaming section of the Speech-to-Text guide](/docs/guides/speech-to-text?lang=curl#streaming-transcriptions)\nfor more information.\n\nNote: Streaming is not supported for the `whisper-1` model and will be ignored.\n"
           default: false
         chunking_strategy:
-          type: 'null'
           anyOf:
             - enum:
                 - auto
@@ -14617,7 +14608,6 @@ components:
           type: object
           properties:
             batch_size:
-              type: 'null'
               oneOf:
                 - enum:
                     - auto
@@ -16305,7 +16295,6 @@ components:
             type: string
           description: "Optional HTTP headers to send to the MCP server. Use for authentication\nor other purposes.\n"
         allowed_tools:
-          type: 'null'
           oneOf:
             - title: MCP allowed tools
               type: array
@@ -16325,7 +16314,6 @@ components:
               description: "A filter object to specify which tools are allowed.\n"
           description: "List of allowed tool names or a filter object.\n"
         require_approval:
-          type: 'null'
           oneOf:
             - title: MCP tool approval filter
               type: object
@@ -20623,7 +20611,6 @@ components:
                 $ref: '#/components/schemas/OutputItem'
               description: "An array of content items generated by the model.\n\n- The length and order of items in the `output` array is dependent\n  on the model's response.\n- Rather than accessing the first item in the `output` array and \n  assuming it's an `assistant` message with the content generated by\n  the model, you might consider using the `output_text` property where\n  supported in SDKs.\n"
             instructions:
-              type: 'null'
               oneOf:
                 - type: string
                   description: "A text input to the model, equivalent to a text input with the \n`developer` role.\n"
@@ -22915,11 +22902,11 @@ components:
         truncation_strategy:
           allOf:
             - $ref: '#/components/schemas/TruncationObject'
-            - type: 'null'
+            - { }
         tool_choice:
           allOf:
             - $ref: '#/components/schemas/AssistantsApiToolChoiceOption'
-            - type: 'null'
+            - { }
         parallel_tool_calls:
           $ref: '#/components/schemas/ParallelToolCalls'
         response_format:
@@ -23908,7 +23895,6 @@ components:
           $ref: '#/components/schemas/StaticChunkingStrategy'
       additionalProperties: false
     StopConfiguration:
-      type: 'null'
       oneOf:
         - type:
             - 'null'
@@ -24344,7 +24330,7 @@ components:
         expires_after:
           allOf:
             - $ref: '#/components/schemas/VectorStoreExpirationAfter'
-            - type: 'null'
+            - { }
         metadata:
           $ref: '#/components/schemas/Metadata'
       additionalProperties: false
@@ -24395,8 +24381,7 @@ components:
         file:
           allOf:
             - $ref: '#/components/schemas/OpenAIFile'
-            - type: 'null'
-              description: The ready File object after the Upload is completed.
+            - description: The ready File object after the Upload is completed.
       description: "The Upload object can accept byte chunks in the form of Parts.\n"
       x-oaiMeta:
         name: The upload object

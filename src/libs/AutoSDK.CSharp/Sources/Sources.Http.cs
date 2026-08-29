@@ -643,9 +643,9 @@ public static partial class Sources
     private static string GetSchemaScalarText(IOpenApiSchema schema)
     {
         var resolved = schema.ResolveIfRequired();
-        if (resolved.Example != null)
+        if (resolved.GetLegacyExample() is { } example)
         {
-            return FormatExampleNode(resolved.Example, contentType: null, rawScalars: true);
+            return FormatExampleNode(example, contentType: null, rawScalars: true);
         }
 
         if (resolved.Default != null)
@@ -813,9 +813,9 @@ public static partial class Sources
         }
 
         // Use example if available
-        if (schema.Example != null)
+        if (schema.GetLegacyExample() is { } example)
         {
-            return JsonNode.Parse(schema.Example.ToJsonString());
+            return JsonNode.Parse(example.ToJsonString());
         }
 
         // Use default if available

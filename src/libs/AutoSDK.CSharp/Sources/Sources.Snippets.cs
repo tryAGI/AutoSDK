@@ -446,9 +446,9 @@ public static partial class Sources
             return true;
         }
 
-        if (mediaType.Schema?.Example != null)
+        if (mediaType.Schema?.GetLegacyExample() is { } schemaExample)
         {
-            exampleText = mediaType.Schema.Example.ToJsonString(HttpJsonOptions);
+            exampleText = schemaExample.ToJsonString(HttpJsonOptions);
             return true;
         }
 
@@ -608,7 +608,7 @@ public static partial class Sources
         if ((operation.RequestBody?.Content ?? new Dictionary<string, IOpenApiMediaType>()).Any(static x =>
                 (x.Value.Examples?.Count ?? 0) > 0 ||
                 x.Value.Example != null ||
-                x.Value.Schema?.Example != null))
+                x.Value.Schema?.GetLegacyExample() != null))
         {
             return true;
         }
@@ -617,7 +617,7 @@ public static partial class Sources
             (x.Value.Content ?? new Dictionary<string, IOpenApiMediaType>()).Any(static y =>
                 (y.Value.Examples?.Count ?? 0) > 0 ||
                 y.Value.Example != null ||
-                y.Value.Schema?.Example != null));
+                y.Value.Schema?.GetLegacyExample() != null));
     }
 
     private static bool TryGetPreferredCodeSample(

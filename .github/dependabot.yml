@@ -15,11 +15,6 @@ updates:
           - "*"
     ignore:
       - dependency-name: "Microsoft.CodeAnalysis.CSharp"
-      # Microsoft.OpenApi 3.9+ changes schema identity and duplicates generated
-      # models across large specifications. Keep 3.7 until compatibility is fixed;
-      # the OpenAPI Upgrade Canary covers 3.8 and the latest 3.x release.
-      - dependency-name: "Microsoft.OpenApi"
-      - dependency-name: "Microsoft.OpenApi.YamlReader"
 
   - package-ecosystem: "github-actions"
     directory: "/"

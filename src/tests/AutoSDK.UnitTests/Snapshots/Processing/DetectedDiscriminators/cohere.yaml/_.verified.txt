@@ -10868,6 +10868,8 @@ paths:
         content:
           application/json:
             schema:
+              required:
+                - finetuned_model
               $ref: '#/components/schemas/FinetunedModel'
             example:
               name: api-test
@@ -13041,6 +13043,7 @@ components:
         generations:
           type: array
           items:
+            type: object
             x-fern-audiences:
               - public
             x-fern-type-name: Generation-9h264n
@@ -17178,6 +17181,7 @@ components:
         finetuned_models:
           type: array
           items:
+            type: object
             $ref: '#/components/schemas/FinetunedModel'
           description: List of fine-tuned models matching the request.
         next_page_token:
@@ -17260,6 +17264,7 @@ components:
         events:
           type: array
           items:
+            type: object
             $ref: '#/components/schemas/Event'
           description: List of events for the fine-tuned model.
         next_page_token:
@@ -17300,6 +17305,7 @@ components:
         step_metrics:
           type: array
           items:
+            type: object
             $ref: '#/components/schemas/TrainingStepMetrics'
           description: The metrics for each step the evaluation was run on.
         next_page_token:

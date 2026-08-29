@@ -1,6 +1,7 @@
 using System.Collections.Immutable;
 using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
+using System.Text;
 using System.Text.Json;
 using System.Text.Json.Nodes;
 using System.Text.RegularExpressions;
@@ -14,6 +15,144 @@ namespace AutoSDK.Extensions;
 
 public static class OpenApiExtensions
 {
+    private const string PreservePrimitiveUnionExtension = "x-autosdk-preserve-primitive-union";
+
+    private readonly struct YamlLine
+    {
+        public YamlLine(int start, int end, int rawIndent, int keyStart, bool hasSequenceMarker, string? key)
+        {
+            Start = start;
+            End = end;
+            RawIndent = rawIndent;
+            KeyStart = keyStart;
+            HasSequenceMarker = hasSequenceMarker;
+            Key = key;
+        }
+
+        public int Start { get; }
+        public int End { get; }
+        public int RawIndent { get; }
+        public int KeyStart { get; }
+        public int KeyIndent => KeyStart - Start;
+        public bool HasSequenceMarker { get; }
+        public string? Key { get; }
+    }
+
+    private readonly struct TextReplacement
+    {
+        public TextReplacement(int start, int length, string value)
+        {
+            Start = start;
+            Length = length;
+            Value = value;
+        }
+
+        public int Start { get; }
+        public int Length { get; }
+        public string Value { get; }
+    }
+
+    private sealed class OpenApiCompatibilityVisitor : OpenApiVisitorBase
+    {
+        private static readonly JsonSchemaType[] NonNullSchemaTypes =
+        [
+            JsonSchemaType.String,
+            JsonSchemaType.Number,
+            JsonSchemaType.Integer,
+            JsonSchemaType.Boolean,
+            JsonSchemaType.Array,
+            JsonSchemaType.Object,
+        ];
+
+        private readonly bool restoreCollapsedPrimitiveUnions;
+        private readonly bool normalizeNullEnumValues;
+
+        public OpenApiCompatibilityVisitor(
+            bool restoreCollapsedPrimitiveUnions,
+            bool normalizeNullEnumValues)
+        {
+            this.restoreCollapsedPrimitiveUnions = restoreCollapsedPrimitiveUnions;
+            this.normalizeNullEnumValues = normalizeNullEnumValues;
+        }
+
+        public override void Visit(IOpenApiSchema schema)
+        {
+            if (schema is OpenApiSchemaReference)
+            {
+                return;
+            }
+
+            if (schema is not OpenApiSchema concreteSchema)
+            {
+                return;
+            }
+
+            concreteSchema.Extensions?.Remove(PreservePrimitiveUnionExtension);
+            if (normalizeNullEnumValues && concreteSchema.Enum is { } enumValuesToNormalize)
+            {
+                for (var index = 0; index < enumValuesToNormalize.Count; index++)
+                {
+                    if (enumValuesToNormalize[index].IsJsonNullSentinel())
+                    {
+                        enumValuesToNormalize[index] = null!;
+                    }
+                }
+            }
+
+            if (concreteSchema.Type == JsonSchemaType.Null &&
+                concreteSchema.Enum is { Count: 1 } enumValues &&
+                (enumValues[0] is null || enumValues[0].IsJsonNullSentinel()))
+            {
+                // Preserve AutoSDK's established identity for the OpenAPI 3.0
+                // legacy `enum: [null]` form while 3.10 requires an explicit
+                // null type to retain the enum during parsing.
+                concreteSchema.Type = null;
+            }
+
+            if (!restoreCollapsedPrimitiveUnions)
+            {
+                return;
+            }
+
+            if (
+                schema.AnyOf is { Count: > 0 } ||
+                schema.OneOf is { Count: > 0 } ||
+                schema.Type is not { } combinedType)
+            {
+                return;
+            }
+
+            var variants = new List<IOpenApiSchema>(NonNullSchemaTypes.Length);
+            foreach (var schemaType in NonNullSchemaTypes)
+            {
+                if ((combinedType & schemaType) == schemaType)
+                {
+                    variants.Add(new OpenApiSchema { Type = schemaType });
+                }
+            }
+
+            if (variants.Count <= 1)
+            {
+                return;
+            }
+
+            concreteSchema.AnyOf = variants;
+            concreteSchema.Type = (combinedType & JsonSchemaType.Null) == JsonSchemaType.Null
+                ? JsonSchemaType.Null
+                : null;
+        }
+    }
+
+    public static JsonNode? GetLegacyExample(this IOpenApiSchema schema)
+    {
+        schema = schema ?? throw new ArgumentNullException(nameof(schema));
+#pragma warning disable CS0618 // Preserve established OpenAPI 3.0 `example` behavior on Microsoft.OpenApi 3.10.
+        return schema is OpenApiSchemaReference schemaReference
+            ? schemaReference.Target?.Example
+            : schema.Example;
+#pragma warning restore CS0618
+    }
+
     private readonly struct SecurityParameterMatcher : IEquatable<SecurityParameterMatcher>
     {
         public SecurityParameterMatcher(
@@ -67,8 +206,6 @@ public static class OpenApiExtensions
             throw new NotSupportedException(SpecFormatDetector.GrpcProtoPipelineNotSupportedMessage);
         }
 
-        yamlOrJson = NormalizeOpenApi31CompatibilityKeywords(yamlOrJson);
-
         var readerSettings = new OpenApiReaderSettings
         {
             RuleSet = ValidationRuleSet.GetEmptyRuleSet(),
@@ -76,16 +213,26 @@ public static class OpenApiExtensions
         // Add YAML reader support via extension method from Microsoft.OpenApi.YamlReader
         readerSettings.AddYamlReader();
 
-        var (openApiDocument, diagnostics) = OpenApiDocument.Parse(yamlOrJson, settings: readerSettings);
+        var normalizeJsonNullEnumValues = LooksLikeJson(yamlOrJson);
+        var readResult = ParseOpenApiDocument(yamlOrJson, readerSettings);
+        var openApiDocument = readResult.Document;
+        var diagnostics = readResult.Diagnostic;
         if (openApiDocument == null &&
             TryPromoteOpenApiFragment(yamlOrJson, out var promotedText))
         {
             Console.WriteLine("Detected OpenAPI fragment without header. Retrying with synthesized metadata.");
-            (openApiDocument, diagnostics) = OpenApiDocument.Parse(promotedText, settings: readerSettings);
+            readResult = ParseOpenApiDocument(promotedText, readerSettings);
+            openApiDocument = readResult.Document;
+            diagnostics = readResult.Diagnostic;
+            normalizeJsonNullEnumValues = LooksLikeJson(promotedText);
         }
         if (openApiDocument == null)
         {
-            throw new InvalidOperationException("Document is null");
+            var diagnosticMessages = diagnostics?.Errors.Select(static error => error.Message).ToArray() ?? [];
+            throw new InvalidOperationException(
+                diagnosticMessages.Length == 0
+                    ? "Document is null"
+                    : "Document is null: " + string.Join("; ", diagnosticMessages));
         }
         if (!settings.IgnoreOpenApiErrors && diagnostics?.Errors.Any() == true)
         {
@@ -95,6 +242,11 @@ public static class OpenApiExtensions
         {
             throw new AggregateException(diagnostics.Warnings.Select(x => new InvalidOperationException(x.Message)));
         }
+
+        new OpenApiWalker(new OpenApiCompatibilityVisitor(
+            restoreCollapsedPrimitiveUnions:
+                diagnostics?.SpecificationVersion == OpenApiSpecVersion.OpenApi3_0,
+            normalizeNullEnumValues: normalizeJsonNullEnumValues)).Walk(openApiDocument);
 
         openApiDocument.Components ??= new OpenApiComponents();
         openApiDocument.Components.Schemas ??= new Dictionary<string, IOpenApiSchema>();
@@ -134,6 +286,655 @@ public static class OpenApiExtensions
         openApiDocument.SanitizeDiscriminators();
 
         return openApiDocument;
+    }
+
+    private static ReadResult ParseOpenApiDocument(
+        string text,
+        OpenApiReaderSettings readerSettings)
+    {
+        if (TryParseJsonNode(text, out var jsonNode))
+        {
+            if (jsonNode is JsonObject rootObject)
+            {
+                if (IsOpenApi31Document(rootObject))
+                {
+                    var unsupportedKeywords = new List<string>();
+                    NormalizeOpenApi31Keywords(rootObject, "#", unsupportedKeywords);
+                    ThrowOnUnsupportedOpenApi31Keywords(unsupportedKeywords);
+                }
+
+                if (TryGetOpenApi3CompatibilityMode(rootObject, out var isOpenApi30))
+                {
+                    NormalizeOpenApi3CompatibilityKeywords(
+                        rootObject,
+                        isSchemaPosition: false,
+                        isOpenApi30);
+                }
+            }
+
+            return new OpenApiJsonReader().Read(
+                jsonNode!,
+                readerSettings.BaseUrl ?? new Uri("https://openapi.net/"),
+                readerSettings);
+        }
+
+        return OpenApiDocument.Parse(
+            NormalizeOpenApi3YamlCompatibilityKeywords(text),
+            format: "yaml",
+            settings: readerSettings);
+    }
+
+    private static bool TryParseJsonNode(string text, out JsonNode? jsonNode)
+    {
+        jsonNode = null;
+        if (!LooksLikeJson(text))
+        {
+            return false;
+        }
+
+        try
+        {
+            jsonNode = JsonNode.Parse(text);
+            return jsonNode != null;
+        }
+        catch (JsonException)
+        {
+            return false;
+        }
+    }
+
+    private static bool LooksLikeJson(string text)
+    {
+        var firstNonWhitespace = 0;
+        while (firstNonWhitespace < text.Length && char.IsWhiteSpace(text[firstNonWhitespace]))
+        {
+            firstNonWhitespace++;
+        }
+
+        return firstNonWhitespace < text.Length &&
+               text[firstNonWhitespace] is '{' or '[';
+    }
+
+    private static bool TryGetOpenApi3CompatibilityMode(
+        JsonObject rootObject,
+        out bool isOpenApi30)
+    {
+        var version = rootObject["openapi"]?.ToString();
+        isOpenApi30 = version?.StartsWith("3.0", StringComparison.Ordinal) == true;
+        return version?.StartsWith("3.", StringComparison.Ordinal) == true;
+    }
+
+    private static void NormalizeOpenApi3CompatibilityKeywords(
+        JsonNode? node,
+        bool isSchemaPosition,
+        bool isOpenApi30)
+    {
+        switch (node)
+        {
+            case JsonObject jsonObject:
+                if (isSchemaPosition &&
+                    TryGetBooleanValue(jsonObject["nullable"], out var nullable) &&
+                    nullable)
+                {
+                    if (!jsonObject.TryGetPropertyValue("type", out var declaredType) ||
+                        declaredType == null)
+                    {
+                        jsonObject.Remove("nullable");
+                        jsonObject["type"] = "null";
+                    }
+                    else if (!isOpenApi30 && declaredType is JsonValue)
+                    {
+                        jsonObject["type"] = new JsonArray(declaredType.DeepClone(), "null");
+                        jsonObject.Remove("nullable");
+                    }
+                }
+
+                if (isSchemaPosition &&
+                    !jsonObject.ContainsKey("type") &&
+                    jsonObject["enum"] is JsonArray { Count: 1 } enumValues &&
+                    enumValues[0] is null)
+                {
+                    jsonObject["type"] = "null";
+                }
+
+                foreach (var property in jsonObject)
+                {
+                    if (property.Key.StartsWith("x-", StringComparison.OrdinalIgnoreCase))
+                    {
+                        continue;
+                    }
+
+                    if (property.Value is JsonObject schemaMap &&
+                        property.Key is "schemas" or "properties" or "patternProperties")
+                    {
+                        foreach (var schema in schemaMap)
+                        {
+                            NormalizeOpenApi3CompatibilityKeywords(schema.Value, isSchemaPosition: true, isOpenApi30);
+                        }
+                        continue;
+                    }
+
+                    if (property.Value is JsonArray schemaArray &&
+                        property.Key is "allOf" or "anyOf" or "oneOf" or "prefixItems")
+                    {
+                        for (var index = 0; index < schemaArray.Count; index++)
+                        {
+                            var schema = schemaArray[index];
+                            if (index == 0 &&
+                                property.Key is "anyOf" or "oneOf" &&
+                                schema is JsonObject primitiveVariant &&
+                                primitiveVariant["type"] != null)
+                            {
+                                primitiveVariant[PreservePrimitiveUnionExtension] = true;
+                            }
+                            NormalizeOpenApi3CompatibilityKeywords(schema, isSchemaPosition: true, isOpenApi30);
+                        }
+                        continue;
+                    }
+
+                    var childIsSchema = property.Key is
+                        "schema" or "items" or "additionalProperties" or "not" or
+                        "contains" or "propertyNames" or "contentSchema";
+                    NormalizeOpenApi3CompatibilityKeywords(property.Value, childIsSchema, isOpenApi30);
+                }
+                break;
+            case JsonArray jsonArray:
+                foreach (var item in jsonArray)
+                {
+                    NormalizeOpenApi3CompatibilityKeywords(item, isSchemaPosition: false, isOpenApi30);
+                }
+                break;
+        }
+    }
+
+    private static string NormalizeOpenApi3YamlCompatibilityKeywords(string text)
+    {
+        if ((text.IndexOf("nullable", StringComparison.Ordinal) < 0 &&
+             text.IndexOf("anyOf", StringComparison.Ordinal) < 0 &&
+             text.IndexOf("oneOf", StringComparison.Ordinal) < 0 &&
+             text.IndexOf("enum", StringComparison.Ordinal) < 0))
+        {
+            return text;
+        }
+
+        var versionMatch = Regex.Match(
+            text,
+            @"(?m)^\s*(?:[""']?openapi[""']?)\s*:\s*[""']?(?<version>3\.[0-9]+)",
+            RegexOptions.CultureInvariant);
+        if (!versionMatch.Success)
+        {
+            return text;
+        }
+        var isOpenApi30 = versionMatch.Groups["version"].Value.StartsWith("3.0", StringComparison.Ordinal);
+
+        var lines = ParseYamlLines(text);
+        var replacements = new List<TextReplacement>();
+        var normalizedTypeLines = new HashSet<int>();
+        var newline = text.Contains("\r\n", StringComparison.Ordinal) ? "\r\n" : "\n";
+        for (var i = 0; i < lines.Count; i++)
+        {
+            var line = lines[i];
+            if (string.Equals(line.Key, "nullable", StringComparison.Ordinal) &&
+                TryGetYamlBooleanTrue(text, line, out var valueEnd))
+            {
+                if (!TryFindYamlSiblingType(lines, i, out var typeLineIndex))
+                {
+                    var quotedKey = line.KeyStart < line.End &&
+                                    text[line.KeyStart] is '\'' or '"';
+                    replacements.Add(new TextReplacement(
+                        line.KeyStart,
+                        valueEnd - line.KeyStart,
+                        quotedKey ? "\"type\": \"null\"" : "type: \"null\""));
+                }
+                else if (!isOpenApi30 &&
+                         normalizedTypeLines.Add(typeLineIndex) &&
+                         TryGetYamlScalarValue(text, lines[typeLineIndex], out var typeValueStart, out var typeValueEnd))
+                {
+                    var typeLine = lines[typeLineIndex];
+                    var quotedKey = typeLine.KeyStart < typeLine.End &&
+                                    text[typeLine.KeyStart] is '\'' or '"';
+                    var originalType = text.Substring(typeValueStart, typeValueEnd - typeValueStart);
+                    replacements.Add(new TextReplacement(
+                        typeLine.KeyStart,
+                        typeValueEnd - typeLine.KeyStart,
+                        (quotedKey ? "\"type\": [" : "type: [") + originalType + ", \"null\"]"));
+                    replacements.Add(new TextReplacement(line.Start, line.End - line.Start, string.Empty));
+                }
+            }
+
+            if (IsYamlNullOnlyEnum(text, lines, i) &&
+                !TryFindYamlSiblingType(lines, i, out _))
+            {
+                replacements.Add(new TextReplacement(
+                    line.Start,
+                    0,
+                    new string(' ', line.KeyIndent) + "type: \"null\"" + newline));
+            }
+
+            if (IsFirstDirectYamlPrimitiveUnionVariant(lines, i))
+            {
+                var insertionStart = line.End < text.Length ? line.End + 1 : line.End;
+                var marker = new string(' ', line.KeyIndent) +
+                             PreservePrimitiveUnionExtension + ": true" + newline;
+                if (insertionStart == text.Length &&
+                    (text.Length == 0 || text[text.Length - 1] != '\n'))
+                {
+                    marker = newline + marker;
+                }
+                replacements.Add(new TextReplacement(insertionStart, 0, marker));
+            }
+        }
+
+        if (replacements.Count == 0)
+        {
+            return text;
+        }
+
+        replacements.Sort(static (left, right) => left.Start.CompareTo(right.Start));
+        var normalizedLength = text.Length;
+        foreach (var replacement in replacements)
+        {
+            normalizedLength += replacement.Value.Length - replacement.Length;
+        }
+
+#if NET6_0_OR_GREATER
+        return string.Create(
+            normalizedLength,
+            (Text: text, Replacements: replacements),
+            static (destination, state) =>
+            {
+                var sourcePosition = 0;
+                var destinationPosition = 0;
+                foreach (var replacement in state.Replacements)
+                {
+                    var unchangedLength = replacement.Start - sourcePosition;
+                    state.Text.AsSpan(sourcePosition, unchangedLength)
+                        .CopyTo(destination.Slice(destinationPosition, unchangedLength));
+                    destinationPosition += unchangedLength;
+
+                    replacement.Value.AsSpan().CopyTo(destination.Slice(destinationPosition));
+                    destinationPosition += replacement.Value.Length;
+                    sourcePosition = replacement.Start + replacement.Length;
+                }
+
+                state.Text.AsSpan(sourcePosition)
+                    .CopyTo(destination.Slice(destinationPosition));
+            });
+#else
+        var builder = new StringBuilder(normalizedLength);
+        var position = 0;
+        foreach (var replacement in replacements)
+        {
+            builder.Append(text, position, replacement.Start - position);
+            builder.Append(replacement.Value);
+            position = replacement.Start + replacement.Length;
+        }
+        builder.Append(text, position, text.Length - position);
+        return builder.ToString();
+#endif
+    }
+
+    private static bool IsFirstDirectYamlPrimitiveUnionVariant(
+        IReadOnlyList<YamlLine> lines,
+        int lineIndex)
+    {
+        var line = lines[lineIndex];
+        if (!line.HasSequenceMarker ||
+            !string.Equals(line.Key, "type", StringComparison.Ordinal))
+        {
+            return false;
+        }
+
+        for (var i = lineIndex - 1; i >= 0; i--)
+        {
+            var parent = lines[i];
+            if (parent.Key == null)
+            {
+                continue;
+            }
+            if (parent.KeyIndent >= line.KeyIndent)
+            {
+                continue;
+            }
+
+            if (parent.Key is not ("anyOf" or "oneOf"))
+            {
+                return false;
+            }
+
+            for (var siblingIndex = i + 1; siblingIndex < lineIndex; siblingIndex++)
+            {
+                var sibling = lines[siblingIndex];
+                if (sibling.HasSequenceMarker && sibling.RawIndent == line.RawIndent)
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+        return false;
+    }
+
+    private static List<YamlLine> ParseYamlLines(string text)
+    {
+        var lineCount = 1;
+        for (var index = 0; index < text.Length; index++)
+        {
+            if (text[index] == '\n')
+            {
+                lineCount++;
+            }
+        }
+
+        var lines = new List<YamlLine>(lineCount);
+        var lineStart = 0;
+        while (lineStart < text.Length)
+        {
+            var lineEnd = text.IndexOf('\n', lineStart);
+            if (lineEnd < 0)
+            {
+                lineEnd = text.Length;
+            }
+
+            var position = lineStart;
+            while (position < lineEnd && text[position] is ' ' or '\t')
+            {
+                position++;
+            }
+            var rawIndent = position - lineStart;
+            var hasSequenceMarker = position < lineEnd && text[position] == '-';
+            if (hasSequenceMarker)
+            {
+                position++;
+                while (position < lineEnd && text[position] is ' ' or '\t')
+                {
+                    position++;
+                }
+            }
+
+            var keyStart = position;
+            var key = TryReadYamlKey(text, ref position, lineEnd);
+            lines.Add(new YamlLine(
+                lineStart,
+                lineEnd,
+                rawIndent,
+                keyStart,
+                hasSequenceMarker,
+                key));
+            lineStart = lineEnd + 1;
+        }
+
+        return lines;
+    }
+
+    private static string? TryReadYamlKey(string text, ref int position, int lineEnd)
+    {
+        if (position >= lineEnd || text[position] == '#')
+        {
+            return null;
+        }
+
+        var quote = text[position] is '\'' or '"' ? text[position++] : '\0';
+        var keyStart = position;
+        if (quote != '\0')
+        {
+            while (position < lineEnd && text[position] != quote)
+            {
+                position++;
+            }
+            if (position >= lineEnd)
+            {
+                return null;
+            }
+
+            var key = GetTrackedYamlKey(text, keyStart, position - keyStart);
+            position++;
+            while (position < lineEnd && char.IsWhiteSpace(text[position]))
+            {
+                position++;
+            }
+            return position < lineEnd && text[position] == ':' ? key : null;
+        }
+
+        while (position < lineEnd &&
+               text[position] != ':' &&
+               !char.IsWhiteSpace(text[position]))
+        {
+            position++;
+        }
+        var keyEnd = position;
+        while (position < lineEnd && char.IsWhiteSpace(text[position]))
+        {
+            position++;
+        }
+        return position < lineEnd && text[position] == ':'
+            ? GetTrackedYamlKey(text, keyStart, keyEnd - keyStart)
+            : null;
+    }
+
+    private static string GetTrackedYamlKey(string text, int start, int length)
+    {
+        return length switch
+        {
+            4 when string.CompareOrdinal(text, start, "type", 0, 4) == 0 => "type",
+            4 when string.CompareOrdinal(text, start, "enum", 0, 4) == 0 => "enum",
+            5 when string.CompareOrdinal(text, start, "anyOf", 0, 5) == 0 => "anyOf",
+            5 when string.CompareOrdinal(text, start, "oneOf", 0, 5) == 0 => "oneOf",
+            8 when string.CompareOrdinal(text, start, "nullable", 0, 8) == 0 => "nullable",
+            _ => string.Empty,
+        };
+    }
+
+    private static bool TryGetYamlBooleanTrue(
+        string text,
+        YamlLine line,
+        out int valueEnd)
+    {
+        valueEnd = line.KeyStart;
+        var colon = text.IndexOf(':', line.KeyStart, line.End - line.KeyStart);
+        if (colon < 0)
+        {
+            return false;
+        }
+
+        var position = colon + 1;
+        while (position < line.End && char.IsWhiteSpace(text[position]))
+        {
+            position++;
+        }
+
+        const string value = "true";
+        if (position + value.Length > line.End ||
+            string.Compare(text, position, value, 0, value.Length, StringComparison.OrdinalIgnoreCase) != 0)
+        {
+            return false;
+        }
+
+        valueEnd = position + value.Length;
+        return valueEnd == line.End ||
+               char.IsWhiteSpace(text[valueEnd]) ||
+               text[valueEnd] == '#';
+    }
+
+    private static bool TryFindYamlSiblingType(
+        IReadOnlyList<YamlLine> lines,
+        int schemaKeywordLineIndex,
+        out int typeLineIndex)
+    {
+        typeLineIndex = -1;
+        var schemaKeywordLine = lines[schemaKeywordLineIndex];
+        for (var i = schemaKeywordLineIndex - 1; i >= 0; i--)
+        {
+            var candidate = lines[i];
+            if (candidate.Key == null)
+            {
+                continue;
+            }
+            if (candidate.KeyIndent < schemaKeywordLine.KeyIndent)
+            {
+                break;
+            }
+            if (candidate.HasSequenceMarker && candidate.RawIndent < schemaKeywordLine.KeyIndent)
+            {
+                if (!schemaKeywordLine.HasSequenceMarker &&
+                    candidate.KeyIndent == schemaKeywordLine.KeyIndent &&
+                    string.Equals(candidate.Key, "type", StringComparison.Ordinal))
+                {
+                    typeLineIndex = i;
+                    return true;
+                }
+                break;
+            }
+            if (candidate.KeyIndent == schemaKeywordLine.KeyIndent &&
+                string.Equals(candidate.Key, "type", StringComparison.Ordinal))
+            {
+                typeLineIndex = i;
+                return true;
+            }
+        }
+
+        for (var i = schemaKeywordLineIndex + 1; i < lines.Count; i++)
+        {
+            var candidate = lines[i];
+            if (candidate.Key == null)
+            {
+                continue;
+            }
+            if (candidate.KeyIndent < schemaKeywordLine.KeyIndent ||
+                candidate.HasSequenceMarker && candidate.RawIndent < schemaKeywordLine.KeyIndent)
+            {
+                break;
+            }
+            if (candidate.KeyIndent == schemaKeywordLine.KeyIndent &&
+                string.Equals(candidate.Key, "type", StringComparison.Ordinal))
+            {
+                typeLineIndex = i;
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    private static bool TryGetYamlScalarValue(
+        string text,
+        YamlLine line,
+        out int valueStart,
+        out int valueEnd)
+    {
+        valueStart = line.KeyStart;
+        valueEnd = line.KeyStart;
+        var colon = text.IndexOf(':', line.KeyStart, line.End - line.KeyStart);
+        if (colon < 0)
+        {
+            return false;
+        }
+
+        valueStart = colon + 1;
+        while (valueStart < line.End && char.IsWhiteSpace(text[valueStart]))
+        {
+            valueStart++;
+        }
+        if (valueStart >= line.End || text[valueStart] is '[' or '{')
+        {
+            return false;
+        }
+
+        valueEnd = valueStart;
+        var quote = text[valueStart] is '\'' or '"' ? text[valueStart] : '\0';
+        if (quote != '\0')
+        {
+            valueEnd++;
+            while (valueEnd < line.End && text[valueEnd] != quote)
+            {
+                valueEnd++;
+            }
+            if (valueEnd < line.End)
+            {
+                valueEnd++;
+            }
+            return valueEnd > valueStart + 1;
+        }
+
+        while (valueEnd < line.End &&
+               !char.IsWhiteSpace(text[valueEnd]) &&
+               text[valueEnd] != '#')
+        {
+            valueEnd++;
+        }
+        return valueEnd > valueStart;
+    }
+
+    private static bool IsYamlNullOnlyEnum(
+        string text,
+        IReadOnlyList<YamlLine> lines,
+        int enumLineIndex)
+    {
+        var enumLine = lines[enumLineIndex];
+        if (!string.Equals(enumLine.Key, "enum", StringComparison.Ordinal))
+        {
+            return false;
+        }
+
+        var itemIndex = enumLineIndex + 1;
+        while (itemIndex < lines.Count && lines[itemIndex].Key == null &&
+               lines[itemIndex].KeyStart >= lines[itemIndex].End)
+        {
+            itemIndex++;
+        }
+        if (itemIndex >= lines.Count)
+        {
+            return false;
+        }
+
+        var item = lines[itemIndex];
+        if (!item.HasSequenceMarker ||
+            item.RawIndent < enumLine.KeyIndent ||
+            !IsYamlNullScalar(text, item))
+        {
+            return false;
+        }
+
+        for (var i = itemIndex + 1; i < lines.Count; i++)
+        {
+            var candidate = lines[i];
+            if (candidate.Key == null && candidate.KeyStart >= candidate.End)
+            {
+                continue;
+            }
+            if (candidate.HasSequenceMarker && candidate.RawIndent == item.RawIndent)
+            {
+                return false;
+            }
+            if (candidate.KeyIndent <= enumLine.KeyIndent)
+            {
+                break;
+            }
+        }
+
+        return true;
+    }
+
+    private static bool IsYamlNullScalar(string text, YamlLine line)
+    {
+        var start = line.KeyStart;
+        var end = line.End;
+        while (end > start && char.IsWhiteSpace(text[end - 1]))
+        {
+            end--;
+        }
+        if (end - start == 4 &&
+            string.Equals(text.Substring(start, 4), "null", StringComparison.OrdinalIgnoreCase))
+        {
+            return true;
+        }
+
+        return end - start == 6 &&
+               text[start] is '\'' or '"' &&
+               text[end - 1] == text[start] &&
+               string.Equals(text.Substring(start + 1, 4), "null", StringComparison.OrdinalIgnoreCase);
     }
 
     private static void ApplyFernRequestNames(this OpenApiDocument openApiDocument)
@@ -506,112 +1307,6 @@ info:
   version: 1.0.0
 
 """ + text;
-        return true;
-    }
-
-    private static string NormalizeOpenApi31CompatibilityKeywords(string text)
-    {
-        if (!MightContainOpenApi31CompatibilityKeyword(text))
-        {
-            return text;
-        }
-
-        if (TryNormalizeOpenApi31Json(text, out var normalizedText))
-        {
-            return normalizedText;
-        }
-
-        return text;
-    }
-
-    [SuppressMessage("Usage", "CA2249:Consider using 'string.Contains' instead of 'string.IndexOf'", Justification = "StringComparison overloads must remain compatible with older target frameworks.")]
-    private static bool MightContainOpenApi31CompatibilityKeyword(string text)
-    {
-        return text.IndexOf("propertyNames", StringComparison.Ordinal) >= 0 ||
-               text.IndexOf("dependentRequired", StringComparison.Ordinal) >= 0 ||
-               text.IndexOf("dependentSchemas", StringComparison.Ordinal) >= 0 ||
-               text.IndexOf("contentEncoding", StringComparison.Ordinal) >= 0 ||
-               text.IndexOf("contentMediaType", StringComparison.Ordinal) >= 0 ||
-               text.IndexOf("contentSchema", StringComparison.Ordinal) >= 0 ||
-               text.IndexOf("unevaluatedProperties", StringComparison.Ordinal) >= 0 ||
-               text.IndexOf("unevaluatedItems", StringComparison.Ordinal) >= 0 ||
-               text.IndexOf("prefixItems", StringComparison.Ordinal) >= 0 ||
-               text.IndexOf("patternProperties", StringComparison.Ordinal) >= 0 ||
-               text.IndexOf("contains", StringComparison.Ordinal) >= 0 ||
-               text.IndexOf("minContains", StringComparison.Ordinal) >= 0 ||
-               text.IndexOf("maxContains", StringComparison.Ordinal) >= 0 ||
-               ContainsBooleanItemsKeyword(text);
-    }
-
-    private static bool ContainsBooleanItemsKeyword(string text)
-    {
-        const string keyword = "items";
-        var searchIndex = 0;
-        while ((searchIndex = text.IndexOf(keyword, searchIndex, StringComparison.Ordinal)) >= 0)
-        {
-            var valueIndex = searchIndex + keyword.Length;
-            if (valueIndex < text.Length && text[valueIndex] == '"')
-            {
-                valueIndex++;
-            }
-
-            while (valueIndex < text.Length && char.IsWhiteSpace(text[valueIndex]))
-            {
-                valueIndex++;
-            }
-
-            if (valueIndex < text.Length && text[valueIndex] == ':')
-            {
-                valueIndex++;
-                while (valueIndex < text.Length && char.IsWhiteSpace(text[valueIndex]))
-                {
-                    valueIndex++;
-                }
-
-                if (text.IndexOf("true", valueIndex, StringComparison.Ordinal) == valueIndex ||
-                    text.IndexOf("false", valueIndex, StringComparison.Ordinal) == valueIndex)
-                {
-                    return true;
-                }
-            }
-
-            searchIndex += keyword.Length;
-        }
-
-        return false;
-    }
-
-    private static bool TryNormalizeOpenApi31Json(
-        string text,
-        out string normalizedText)
-    {
-        normalizedText = string.Empty;
-
-        JsonNode? root;
-        try
-        {
-            root = JsonNode.Parse(text);
-        }
-        catch
-        {
-            return false;
-        }
-
-        if (root is not JsonObject rootObject ||
-            !IsOpenApi31Document(rootObject))
-        {
-            return false;
-        }
-
-        var unsupportedKeywords = new List<string>();
-        var changed = NormalizeOpenApi31Keywords(rootObject, "#", unsupportedKeywords);
-        ThrowOnUnsupportedOpenApi31Keywords(unsupportedKeywords);
-        if (!changed)
-        {
-            return false;
-        }
-
-        normalizedText = rootObject.ToJsonString();
         return true;
     }
 
@@ -1385,7 +2080,9 @@ info:
                     Title = schema.Title,
                     Description = schema.Description,
                     Default = schema.Default,
-                    Example = schema.Example,
+#pragma warning disable CS0618 // Preserve OpenAPI 3.0 `example` during override normalization.
+                    Example = schema.GetLegacyExample(),
+#pragma warning restore CS0618
                 },
                 OpenApiOverrideAction.Dictionary => new OpenApiSchema
                 {
@@ -1393,7 +2090,9 @@ info:
                     Title = schema.Title,
                     Description = schema.Description,
                     Default = schema.Default,
-                    Example = schema.Example,
+#pragma warning disable CS0618 // Preserve OpenAPI 3.0 `example` during override normalization.
+                    Example = schema.GetLegacyExample(),
+#pragma warning restore CS0618
                     AdditionalProperties = new OpenApiSchema
                     {
                         Type = JsonSchemaType.Object,
@@ -1581,7 +2280,7 @@ info:
                ExceedsInt32Range(schema.ExclusiveMinimum) ||
                ExceedsInt32Range(schema.ExclusiveMaximum) ||
                ExceedsInt32Range(schema.Default) ||
-               ExceedsInt32Range(schema.Example) ||
+               ExceedsInt32Range(schema.GetLegacyExample()) ||
                HasLargeIntegerHint(
                    propertyName,
                    schema.Title ?? inheritedTitle,
@@ -2379,7 +3078,7 @@ info:
             summary += "Included only in requests";
         }
 
-        var example = schema.Example.GetString()?.ClearForXml();
+        var example = schema.GetLegacyExample().GetString()?.ClearForXml();
         if (!string.IsNullOrWhiteSpace(example))
         {
             if (!string.IsNullOrWhiteSpace(summary))

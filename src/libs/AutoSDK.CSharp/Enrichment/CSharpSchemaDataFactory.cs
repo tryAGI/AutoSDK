@@ -66,7 +66,7 @@ public static class CSharpSchemaDataFactory
             DefaultValue: context.Schema is { ReadOnly: true } && !type.CSharpTypeNullability
                 ? "default!"
                 : context.GetDefaultValue(),
-            Example: context.Schema.Example?.GetString() is { } example &&
+            Example: context.Schema.GetLegacyExample()?.GetString() is { } example &&
                      !string.IsNullOrWhiteSpace(example)
                 ? example.ClearForXml()
                 : null,

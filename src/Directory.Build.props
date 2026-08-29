@@ -17,7 +17,7 @@
 
   <PropertyGroup Label="Dependency versions">
     <!-- Overridable by the OpenAPI upgrade canary while production builds stay pinned. -->
-    <MicrosoftOpenApiVersion Condition="'$(MicrosoftOpenApiVersion)' == ''">3.7.0</MicrosoftOpenApiVersion>
+    <MicrosoftOpenApiVersion Condition="'$(MicrosoftOpenApiVersion)' == ''">3.10.2</MicrosoftOpenApiVersion>
   </PropertyGroup>
   
 </Project>
