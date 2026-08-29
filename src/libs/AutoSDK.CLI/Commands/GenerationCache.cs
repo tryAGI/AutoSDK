@@ -266,6 +266,8 @@ internal static class GenerationCache
                 Files: new GeneratedFileWriteResult(
                     GeneratedCount: manifest.Files.Length,
                     WrittenCount: 0,
+                    CreatedCount: 0,
+                    ReplacedCount: 0,
                     UnchangedCount: manifest.Files.Length,
                     DeletedCount: 0,
                     NormalizedLineCount: 0,

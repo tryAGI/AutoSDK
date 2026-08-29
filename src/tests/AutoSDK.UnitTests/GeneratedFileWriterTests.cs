@@ -39,8 +39,36 @@ public class GeneratedFileWriterTests
                 cachedFiles: [cachedFile]);
 
             result.WrittenCount.Should().Be(0);
+            result.CreatedCount.Should().Be(0);
+            result.ReplacedCount.Should().Be(0);
             result.UnchangedCount.Should().Be(1);
             result.CacheFiles.Should().ContainSingle().Which.Should().Be(cachedFile);
+        }
+        finally
+        {
+            Directory.Delete(tempDirectory, recursive: true);
+        }
+    }
+
+    [TestMethod]
+    public async Task WriteAsync_WhenTargetDoesNotExist_CreatesFileDirectly()
+    {
+        var tempDirectory = CreateTempDirectory();
+        try
+        {
+            var path = Path.Combine(tempDirectory, "Client.g.cs");
+            const string text = "new generated content";
+
+            var result = await GeneratedFileWriter.WriteAsync(
+                [new GeneratedOutputFile(path, text)],
+                staleCandidates: [],
+                deleteStaleFiles: false);
+
+            (await File.ReadAllTextAsync(path)).Should().Be(text);
+            result.WrittenCount.Should().Be(1);
+            result.CreatedCount.Should().Be(1);
+            result.ReplacedCount.Should().Be(0);
+            Directory.GetFiles(tempDirectory, ".autosdk-*.tmp").Should().BeEmpty();
         }
         finally
         {
@@ -73,6 +101,8 @@ public class GeneratedFileWriterTests
             (await reader.ReadToEndAsync()).Should().Be(oldText);
             (await File.ReadAllTextAsync(path)).Should().Be(newText);
             result.WrittenCount.Should().Be(1);
+            result.CreatedCount.Should().Be(0);
+            result.ReplacedCount.Should().Be(1);
             var writtenFileInfo = new FileInfo(path);
             result.CacheFiles.Should().ContainSingle().Which.Should().Be(new GeneratedFileCacheEntry(
                 Path.GetFullPath(path),
@@ -106,6 +136,8 @@ public class GeneratedFileWriterTests
                 deleteStaleFiles: false);
 
             result.WrittenCount.Should().Be(1);
+            result.CreatedCount.Should().Be(0);
+            result.ReplacedCount.Should().Be(1);
             (await File.ReadAllTextAsync(path)).Should().Be(newText);
         }
         finally

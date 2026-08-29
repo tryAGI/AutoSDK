@@ -382,6 +382,9 @@ public class CliTests
             firstResult.StandardError.Should().Contain("cache_lock_acquired: true");
             firstResult.StandardError.Should().Contain("cache_lock_reason: acquired");
             ReadDiagnosticValue(firstResult.StandardError, "files_written").Should().BeGreaterThan(0);
+            ReadDiagnosticValue(firstResult.StandardError, "files_created")
+                .Should().Be(ReadDiagnosticValue(firstResult.StandardError, "files_written"));
+            ReadDiagnosticValue(firstResult.StandardError, "files_replaced").Should().Be(0);
             ReadDiagnosticValue(firstResult.StandardError, "normalized_lines").Should().BeGreaterThan(0);
             ReadDiagnosticValue(firstResult.StandardError, "core_compute_data_allocated_bytes").Should().BeGreaterThan(0);
             ReadDiagnosticValue(firstResult.StandardError, "core_compute_classes_allocated_bytes").Should().BeGreaterThan(0);
@@ -429,6 +432,8 @@ public class CliTests
             tamperedResult.StandardError.Should().Contain("cache_hit: false");
             tamperedResult.StandardError.Should().Contain("cache_reason: output_changed");
             ReadDiagnosticValue(tamperedResult.StandardError, "files_written").Should().Be(1);
+            ReadDiagnosticValue(tamperedResult.StandardError, "files_created").Should().Be(0);
+            ReadDiagnosticValue(tamperedResult.StandardError, "files_replaced").Should().Be(1);
             (await File.ReadAllTextAsync(trackedGeneratedFile)).Should().Be(expectedTrackedContent);
 
             var staleGeneratedFile = Path.Combine(outputDirectory, "Diagnostics.Stale.g.cs");

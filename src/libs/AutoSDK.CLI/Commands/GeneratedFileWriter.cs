@@ -19,6 +19,8 @@ internal readonly record struct GeneratedFileWriteDiagnostics(
 internal readonly record struct GeneratedFileWriteResult(
     int GeneratedCount,
     int WrittenCount,
+    int CreatedCount,
+    int ReplacedCount,
     int UnchangedCount,
     int DeletedCount,
     int NormalizedLineCount,
@@ -51,6 +53,8 @@ internal static class GeneratedFileWriter
         var expectedPaths = new HashSet<string>(pathComparer);
         var cachedFilesByPath = cachedFiles.ToDictionary(static file => file.Path, pathComparer);
         var writtenCount = 0;
+        var createdCount = 0;
+        var replacedCount = 0;
         var unchangedCount = 0;
         var normalizedLineCount = 0;
         long generatedBytes = 0;
@@ -117,7 +121,8 @@ internal static class GeneratedFileWriter
                     Interlocked.Add(ref generatedBytes, encodedLength);
 
                     var compareStart = collectDiagnostics ? Stopwatch.GetTimestamp() : 0;
-                    var unchanged = File.Exists(file.FullPath) &&
+                    var targetExists = File.Exists(file.FullPath);
+                    var unchanged = targetExists &&
                         await FileContentsEqualAsync(
                             file.FullPath,
                             content,
@@ -137,10 +142,25 @@ internal static class GeneratedFileWriter
                     else
                     {
                         var physicalWriteStart = collectDiagnostics ? Stopwatch.GetTimestamp() : 0;
-                        await WriteAtomicallyAsync(
-                            file.FullPath,
-                            content,
-                            itemCancellationToken).ConfigureAwait(false);
+                        if (targetExists)
+                        {
+                            await WriteAtomicallyAsync(
+                                file.FullPath,
+                                content,
+                                itemCancellationToken).ConfigureAwait(false);
+                            Interlocked.Increment(ref replacedCount);
+                        }
+                        else
+                        {
+                            // A fresh target has no prior complete version to preserve, so avoid
+                            // a temporary-file rename for every generated file. FileShare.None
+                            // keeps readers from observing the file until the write is complete.
+                            await WriteNewFileAsync(
+                                file.FullPath,
+                                content,
+                                itemCancellationToken).ConfigureAwait(false);
+                            Interlocked.Increment(ref createdCount);
+                        }
                         if (collectDiagnostics)
                         {
                             Interlocked.Add(
@@ -195,6 +215,8 @@ internal static class GeneratedFileWriter
         return new GeneratedFileWriteResult(
             GeneratedCount: files.Count,
             WrittenCount: writtenCount,
+            CreatedCount: createdCount,
+            ReplacedCount: replacedCount,
             UnchangedCount: unchangedCount,
             DeletedCount: deletedCount,
             NormalizedLineCount: normalizedLineCount,
@@ -282,6 +304,43 @@ internal static class GeneratedFileWriter
         Span<byte> hash = stackalloc byte[SHA256.HashSizeInBytes];
         SHA256.HashData(content, hash);
         return Convert.ToHexString(hash);
+    }
+
+    private static async Task WriteNewFileAsync(
+        string path,
+        ReadOnlyMemory<byte> content,
+        CancellationToken cancellationToken)
+    {
+        var created = false;
+        try
+        {
+            var stream = new FileStream(
+                path,
+                new FileStreamOptions
+                {
+                    Access = FileAccess.Write,
+                    Mode = FileMode.CreateNew,
+                    Options = FileOptions.Asynchronous | FileOptions.SequentialScan,
+                    Share = FileShare.None,
+                });
+            created = true;
+            try
+            {
+                await stream.WriteAsync(content, cancellationToken).ConfigureAwait(false);
+            }
+            finally
+            {
+                await stream.DisposeAsync().ConfigureAwait(false);
+            }
+        }
+        catch
+        {
+            if (created)
+            {
+                File.Delete(path);
+            }
+            throw;
+        }
     }
 
     internal static async Task WriteAtomicallyAsync(

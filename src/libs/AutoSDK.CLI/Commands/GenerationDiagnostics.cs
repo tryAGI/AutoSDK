@@ -78,6 +78,8 @@ internal readonly record struct GenerationDiagnostics(
         await WriteMillisecondsAsync(writer, "cache_write_ms", CacheWrite).ConfigureAwait(false);
         await writer.WriteLineAsync($"  files_generated: {Files.GeneratedCount.ToString(CultureInfo.InvariantCulture)}").ConfigureAwait(false);
         await writer.WriteLineAsync($"  files_written: {Files.WrittenCount.ToString(CultureInfo.InvariantCulture)}").ConfigureAwait(false);
+        await writer.WriteLineAsync($"  files_created: {Files.CreatedCount.ToString(CultureInfo.InvariantCulture)}").ConfigureAwait(false);
+        await writer.WriteLineAsync($"  files_replaced: {Files.ReplacedCount.ToString(CultureInfo.InvariantCulture)}").ConfigureAwait(false);
         await writer.WriteLineAsync($"  files_unchanged: {Files.UnchangedCount.ToString(CultureInfo.InvariantCulture)}").ConfigureAwait(false);
         await writer.WriteLineAsync($"  files_deleted: {Files.DeletedCount.ToString(CultureInfo.InvariantCulture)}").ConfigureAwait(false);
         await writer.WriteLineAsync($"  normalized_lines: {Files.NormalizedLineCount.ToString(CultureInfo.InvariantCulture)}").ConfigureAwait(false);
