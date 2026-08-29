@@ -17,6 +17,9 @@ public class RequiredValueTypeRequestBodyTests
             GenerateMethods = true,
             GenerateModels = true,
             GenerateSdk = true,
+            FromCli = true,
+            JsonSerializerContext = "G.SourceGenerationContext",
+            GenerateJsonSerializerContextTypes = true,
             JsonSerializerType = JsonSerializerType.SystemTextJson,
             TargetFramework = "net10.0",
         };
@@ -30,11 +33,12 @@ public class RequiredValueTypeRequestBodyTests
                                 post:
                                   operationId: createVideo
                                   requestBody:
-                                    required: true
                                     content:
                                       application/json:
                                         schema:
-                                          $ref: '#/components/schemas/VideoRequest'
+                                          oneOf:
+                                            - title: Video v1
+                                              $ref: '#/components/schemas/VideoRequest'
                                   responses:
                                     '200':
                                       description: ok
