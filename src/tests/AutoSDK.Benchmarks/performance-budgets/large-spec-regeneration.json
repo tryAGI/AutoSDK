@@ -108,6 +108,47 @@
           "baselineCliVersion": "0.32.1-dev.27+7060812acf88cbbf8ad47076a1d8171cfa93820d",
           "differentFiles": 0
         }
+      },
+      "parsingSubphaseVerification": {
+        "generatorCommit": "b4937f0e67",
+        "microsoftOpenApiVersion": "3.10.2",
+        "source": "specs/github.yaml",
+        "maximum": {
+          "jsonSyntaxMilliseconds": 5,
+          "compatibilityNormalizationMilliseconds": 75,
+          "microsoftReaderMilliseconds": 1300,
+          "compatibilityWalkerMilliseconds": 75,
+          "postProcessingMilliseconds": 400,
+          "jsonSyntaxAllocatedBytes": 1000000,
+          "compatibilityNormalizationAllocatedBytes": 50000000,
+          "microsoftReaderAllocatedBytes": 250000000,
+          "compatibilityWalkerAllocatedBytes": 40000000,
+          "postProcessingAllocatedBytes": 300000000
+        },
+        "observedFreshCli": {
+          "jsonSyntaxMilliseconds": 0.126,
+          "compatibilityNormalizationMilliseconds": 26.100,
+          "microsoftReaderMilliseconds": 1065.331,
+          "compatibilityWalkerMilliseconds": 26.349,
+          "postProcessingMilliseconds": 221.515,
+          "jsonSyntaxAllocatedBytes": 0,
+          "compatibilityNormalizationAllocatedBytes": 23809064,
+          "microsoftReaderAllocatedBytes": 219297288,
+          "compatibilityWalkerAllocatedBytes": 22089760,
+          "postProcessingAllocatedBytes": 249396128
+        },
+        "observedWarmBenchmarkThreeRunAverage": {
+          "jsonSyntaxMilliseconds": 0.1,
+          "compatibilityNormalizationMilliseconds": 19.0,
+          "microsoftReaderMilliseconds": 294.6,
+          "compatibilityWalkerMilliseconds": 18.5,
+          "postProcessingMilliseconds": 37.0,
+          "jsonSyntaxAllocatedMegabytes": 0.0,
+          "compatibilityNormalizationAllocatedMegabytes": 22.7,
+          "microsoftReaderAllocatedMegabytes": 208.1,
+          "compatibilityWalkerAllocatedMegabytes": 21.1,
+          "postProcessingAllocatedMegabytes": 16.2
+        }
       }
     },
     "appStoreConnect": {
@@ -218,6 +259,34 @@
           "baselineCliVersion": "0.32.1-dev.27+7060812acf88cbbf8ad47076a1d8171cfa93820d",
           "differentFiles": 0
         }
+      },
+      "parsingSubphaseVerification": {
+        "generatorCommit": "b4937f0e67",
+        "microsoftOpenApiVersion": "3.10.2",
+        "maximum": {
+          "jsonSyntaxMilliseconds": 60,
+          "compatibilityNormalizationMilliseconds": 100,
+          "microsoftReaderMilliseconds": 250,
+          "compatibilityWalkerMilliseconds": 60,
+          "postProcessingMilliseconds": 75,
+          "jsonSyntaxAllocatedBytes": 30000000,
+          "compatibilityNormalizationAllocatedBytes": 50000000,
+          "microsoftReaderAllocatedBytes": 85000000,
+          "compatibilityWalkerAllocatedBytes": 25000000,
+          "postProcessingAllocatedBytes": 10000000
+        },
+        "observedFreshCliThreeRunMedian": {
+          "jsonSyntaxMilliseconds": 31.276,
+          "compatibilityNormalizationMilliseconds": 60.262,
+          "microsoftReaderMilliseconds": 127.671,
+          "compatibilityWalkerMilliseconds": 27.345,
+          "postProcessingMilliseconds": 26.501,
+          "jsonSyntaxAllocatedBytes": 20157896,
+          "compatibilityNormalizationAllocatedBytes": 36046752,
+          "microsoftReaderAllocatedBytes": 66114424,
+          "compatibilityWalkerAllocatedBytes": 14027056,
+          "postProcessingAllocatedBytes": 4347944
+        }
       }
     }
   },
@@ -229,6 +298,7 @@
     "GitHub is the durable in-repository large-spec workload; App Store Connect is an external comparative workload pinned by repository commit and spec hash.",
     "Both optimized outputs were byte-for-byte identical to CLI 0.32.1-dev.16 for all 41837 generated files.",
     "The Microsoft.OpenApi 3.10.2 verification generated 45582 files byte-for-byte identical to public CLI 0.32.1-dev.27.",
-    "The current GitHub verification uses an externally pinned official specification because it is newer and larger than specs/github.yaml."
+    "The current GitHub verification uses an externally pinned official specification because it is newer and larger than specs/github.yaml.",
+    "Parsing subphase budgets use the durable in-repository GitHub workload and the pinned App Store Connect workload; CLI values include cold-process startup and workload-specific post-processing options."
   ]
 }
