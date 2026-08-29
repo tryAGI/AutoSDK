@@ -96,8 +96,8 @@
         "freshTotalMilliseconds": 6500,
         "freshOutputMilliseconds": 2300,
         "freshOutputPhysicalWriteWorkerMilliseconds": 15000,
-        "cacheHitTotalMilliseconds": 900,
-        "cacheValidationMilliseconds": 750,
+        "cacheHitTotalMilliseconds": 1100,
+        "cacheValidationMilliseconds": 850,
         "totalAllocatedBytes": 2750000000,
         "renderAllocatedBytes": 1250000000,
         "writeAllocatedBytes": 380000000
@@ -138,6 +138,12 @@
         "cacheValidationMilliseconds": 215.580,
         "filesCreatedOnFreshRun": 24895,
         "filesUnchangedOnCacheHit": 24895
+      },
+      "publicNugetColdCacheVerification": {
+        "cliVersion": "0.32.1-dev.21+4c3a92bbdb2c75bea258d84a3805448f9f817b62",
+        "cacheHitTotalMilliseconds": 985.620,
+        "cacheValidationMilliseconds": 757.942,
+        "filesUnchanged": 24895
       }
     }
   },
