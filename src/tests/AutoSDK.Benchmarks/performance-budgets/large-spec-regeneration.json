@@ -110,7 +110,7 @@
         }
       },
       "parsingSubphaseVerification": {
-        "generatorCommit": "841e1cb296",
+        "generatorCommit": "499c0c51b0",
         "microsoftOpenApiVersion": "3.10.2",
         "source": "specs/github.yaml",
         "maximum": {
@@ -261,7 +261,7 @@
         }
       },
       "parsingSubphaseVerification": {
-        "generatorCommit": "841e1cb296",
+        "generatorCommit": "499c0c51b0",
         "microsoftOpenApiVersion": "3.10.2",
         "maximum": {
           "jsonSyntaxMilliseconds": 60,
