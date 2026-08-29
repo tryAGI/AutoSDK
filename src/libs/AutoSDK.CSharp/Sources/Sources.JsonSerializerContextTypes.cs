@@ -9,6 +9,19 @@ public static partial class Sources
         EquatableArray<TypeData> types,
         CancellationToken cancellationToken = default)
     {
+        return GenerateJsonSerializerContextTypes(
+            @namespace,
+            types,
+            new JsonSerializerContextGenerationState(),
+            cancellationToken);
+    }
+
+    internal static string GenerateJsonSerializerContextTypes(
+        string @namespace,
+        EquatableArray<TypeData> types,
+        JsonSerializerContextGenerationState generationState,
+        CancellationToken cancellationToken = default)
+    {
         if (types.IsEmpty)
         {
             return string.Empty;
@@ -18,13 +31,21 @@ public static partial class Sources
             .Select(x => x.CSharpTypeWithNullability)
             .Distinct()
             .ToArray();
-        var skippedContextTypes = GetCollidingJsonSerializerContextTypes(types, allDistinctTypes);
+        var typeInfoNames = generationState.TypeInfoNames;
+        var concreteListTypes = GetConcreteListTypes(allDistinctTypes);
+        var nullableValueTypes = generationState.GetNullableValueTypes(types);
+        var skippedContextTypes = GetCollidingJsonSerializerContextTypes(
+            types,
+            allDistinctTypes,
+            concreteListTypes,
+            nullableValueTypes,
+            typeInfoNames);
         var distinctTypes = allDistinctTypes
             .Where(ShouldIncludeInJsonSerializerContextTypes)
             .Where(x => !skippedContextTypes.Contains(x))
             .ToArray();
 
-        var concreteListTypes = GetConcreteListTypes(allDistinctTypes)
+        concreteListTypes = concreteListTypes
             .Where(ShouldIncludeInJsonSerializerContextTypes)
             .Where(x => !skippedContextTypes.Contains(x))
             .ToArray();

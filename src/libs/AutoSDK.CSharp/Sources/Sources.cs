@@ -264,6 +264,19 @@ public static partial class Sources
         EquatableArray<TypeData> types,
         CancellationToken cancellationToken = default)
     {
+        return JsonSerializerContextTypes(
+            client,
+            types,
+            new JsonSerializerContextGenerationState(),
+            cancellationToken);
+    }
+
+    internal static FileWithName JsonSerializerContextTypes(
+        Client client,
+        EquatableArray<TypeData> types,
+        JsonSerializerContextGenerationState generationState,
+        CancellationToken cancellationToken = default)
+    {
         if (types.IsEmpty)
         {
             return FileWithName.Empty;
@@ -271,12 +284,29 @@ public static partial class Sources
         
         return new FileWithName(
             Name: $"{client.Settings.Namespace}.JsonSerializerContextTypes.g.cs",
-            Text: GenerateJsonSerializerContextTypes(client.Settings.Namespace, types, cancellationToken: cancellationToken));
+            Text: GenerateJsonSerializerContextTypes(
+                client.Settings.Namespace,
+                types,
+                generationState,
+                cancellationToken));
     }
     
     public static FileWithName JsonSerializerContext(
         Client client,
         EquatableArray<TypeData> types,
+        CancellationToken cancellationToken = default)
+    {
+        return JsonSerializerContext(
+            client,
+            types,
+            new JsonSerializerContextGenerationState(),
+            cancellationToken);
+    }
+
+    internal static FileWithName JsonSerializerContext(
+        Client client,
+        EquatableArray<TypeData> types,
+        JsonSerializerContextGenerationState generationState,
         CancellationToken cancellationToken = default)
     {
         if (!client.Settings.FromCli ||
@@ -293,7 +323,7 @@ public static partial class Sources
         
         return new FileWithName(
             Name: $"{fileNameWithoutExtension}.JsonSerializerContext.g.cs",
-            Text: GenerateJsonSerializerContext(client, types, cancellationToken: cancellationToken));
+            Text: GenerateJsonSerializerContext(client, types, generationState, cancellationToken));
     }
     
     public static FileWithName JsonSerializerContextConverters(

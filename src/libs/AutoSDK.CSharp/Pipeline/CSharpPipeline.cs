@@ -277,12 +277,21 @@ public static class CSharpPipeline
                             Sources.AnyOfJsonConverter(x, cancellationToken),
                             Sources.AnyOfValidation(x, cancellationToken),
                         }));
+            var serializerContextGenerationState = new Sources.JsonSerializerContextGenerationState();
             var serializerContextFile = MeasurePhase(
                 "serializer_context",
-                () => [Sources.JsonSerializerContext(data.Converters, data.Types, cancellationToken)]);
+                () => [Sources.JsonSerializerContext(
+                    data.Converters,
+                    data.Types,
+                    serializerContextGenerationState,
+                    cancellationToken)]);
             var serializerContextTypesFile = MeasurePhase(
                 "serializer_context_types",
-                () => [Sources.JsonSerializerContextTypes(data.Converters, data.Types, cancellationToken)]);
+                () => [Sources.JsonSerializerContextTypes(
+                    data.Converters,
+                    data.Types,
+                    serializerContextGenerationState,
+                    cancellationToken)]);
             AddIfNotEmpty(serializerContextFile[0]);
             AddIfNotEmpty(serializerContextTypesFile[0]);
             AddPhase("support", () => new[] { Sources.Polyfills(settings, cancellationToken) }

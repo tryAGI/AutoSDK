@@ -13,6 +13,19 @@ public static partial class Sources
         EquatableArray<TypeData> types,
         CancellationToken cancellationToken = default)
     {
+        return GenerateJsonSerializerContext(
+            client,
+            types,
+            new JsonSerializerContextGenerationState(),
+            cancellationToken);
+    }
+
+    internal static string GenerateJsonSerializerContext(
+        Client client,
+        EquatableArray<TypeData> types,
+        JsonSerializerContextGenerationState generationState,
+        CancellationToken cancellationToken = default)
+    {
         if (!client.Settings.FromCli ||
             !client.Settings.ShouldGenerateJsonSerializerContextTypes())
         {
@@ -23,19 +36,36 @@ public static partial class Sources
         var contextClassName = client.Settings.JsonSerializerContext.Contains(".")
             ? client.Settings.JsonSerializerContext.Substring(client.Settings.JsonSerializerContext.LastIndexOf('.') + 1)
             : "SourceGenerationContext";
+        var typeInfoNames = generationState.TypeInfoNames;
+        var nullableValueTypes = generationState.GetNullableValueTypes(types);
 
         var serializableTypeSet = types.IsEmpty
             ? default
-            : BuildJsonSerializableTypeSet(client, types, expandContextTypes: false);
+            : BuildJsonSerializableTypeSet(
+                client,
+                types,
+                expandContextTypes: false,
+                typeInfoNames,
+                nullableValueTypes);
         var useChunkedContext = serializableTypeSet.SerializableTypes is { Length: > MaxJsonSerializableAttributesPerContext };
         if (useChunkedContext)
         {
-            serializableTypeSet = BuildJsonSerializableTypeSet(client, types, expandContextTypes: true);
+            serializableTypeSet = BuildJsonSerializableTypeSet(
+                client,
+                types,
+                expandContextTypes: true,
+                typeInfoNames,
+                nullableValueTypes);
         }
 
         var jsonSerializableAttributes = types.IsEmpty
             ? (Lines: Array.Empty<string>(), GuardLines: Array.Empty<string>())
-            : GenerateJsonSerializableAttributeLines(client, types, serializableTypeSet);
+            : GenerateJsonSerializableAttributeLines(
+                client,
+                types,
+                serializableTypeSet,
+                typeInfoNames,
+                nullableValueTypes);
 
         if (jsonSerializableAttributes.Lines.Length == 0)
         {
@@ -419,10 +449,19 @@ namespace {client.Settings.Namespace}
         Client client,
         EquatableArray<TypeData> types)
     {
+        var typeInfoNames = new JsonTypeInfoNameCache();
+        var nullableValueTypes = GetNullableValueTypes(types);
         return GenerateJsonSerializableAttributeLines(
             client,
             types,
-            BuildJsonSerializableTypeSet(client, types, expandContextTypes: false));
+            BuildJsonSerializableTypeSet(
+                client,
+                types,
+                expandContextTypes: false,
+                typeInfoNames,
+                nullableValueTypes),
+            typeInfoNames,
+            nullableValueTypes);
     }
 
     private static (
@@ -431,7 +470,9 @@ namespace {client.Settings.Namespace}
         string[] ContextTypes) BuildJsonSerializableTypeSet(
         Client client,
         EquatableArray<TypeData> types,
-        bool expandContextTypes)
+        bool expandContextTypes,
+        JsonTypeInfoNameCache typeInfoNames,
+        string[] nullableValueTypes)
     {
         var distinctTypes = types
             .Select(x => x.CSharpTypeWithoutNullability)
@@ -440,11 +481,12 @@ namespace {client.Settings.Namespace}
 
         var concreteListTypes = GetConcreteListTypes(distinctTypes);
         var explicitNullableValueTypes = GetExplicitNullableValueTypes(
-            types,
             distinctTypes,
-            concreteListTypes);
-        var nullableValueTypes = expandContextTypes
-            ? GetNullableValueTypes(types)
+            concreteListTypes,
+            nullableValueTypes,
+            typeInfoNames);
+        var contextNullableValueTypes = expandContextTypes
+            ? nullableValueTypes
             : explicitNullableValueTypes;
         var contextTypes = expandContextTypes
             ? new[]
@@ -461,7 +503,7 @@ namespace {client.Settings.Namespace}
             };
         var serializableTypes = contextTypes
             .Concat(distinctTypes)
-            .Concat(nullableValueTypes)
+            .Concat(contextNullableValueTypes)
             .Concat(concreteListTypes)
             .Distinct(StringComparer.Ordinal)
             .ToArray();
@@ -472,7 +514,9 @@ namespace {client.Settings.Namespace}
     private static (string[] Lines, string[] GuardLines) GenerateJsonSerializableAttributeLines(
         Client client,
         EquatableArray<TypeData> types,
-        (string[] SerializableTypes, string[] ExplicitNullableValueTypes, string[] ContextTypes) typeSet)
+        (string[] SerializableTypes, string[] ExplicitNullableValueTypes, string[] ContextTypes) typeSet,
+        JsonTypeInfoNameCache typeInfoNames,
+        string[] nullableValueTypes)
     {
         var serializableTypes = typeSet.SerializableTypes;
         var explicitNullableValueTypes = typeSet.ExplicitNullableValueTypes;
@@ -484,7 +528,7 @@ namespace {client.Settings.Namespace}
         // Only value types cause this — reference type nullability (string?, byte[]?) doesn't
         // create Nullable<T> wrappers and thus doesn't trigger implicit discovery.
         var implicitlyDiscoveredTypes = new HashSet<string>(
-            GetNullableValueTypes(types)
+            nullableValueTypes
                 .Select(static type => type.Substring(0, type.Length - 1))
                 .Concat(contextTypes
                     .Where(static type => string.Equals(
@@ -495,13 +539,15 @@ namespace {client.Settings.Namespace}
             StringComparer.Ordinal);
 
         var explicitTypeInfoPropertyNames = BuildExplicitTypeInfoPropertyNames(
-            serializableTypes, implicitlyDiscoveredTypes);
+            serializableTypes,
+            implicitlyDiscoveredTypes,
+            typeInfoNames);
         const string objectListType = "global::System.Collections.Generic.List<object>";
         if (serializableTypes.Contains(objectListType, StringComparer.Ordinal) &&
             !explicitTypeInfoPropertyNames.ContainsKey(objectListType))
         {
             var usedTypeInfoPropertyNames = new HashSet<string>(
-                serializableTypes.Select(GetGeneratedTypeInfoPropertyName)
+                serializableTypes.Select(typeInfoNames.GetGenerated)
                     .Concat(explicitTypeInfoPropertyNames.Values),
                 StringComparer.Ordinal);
             explicitTypeInfoPropertyNames[objectListType] = ReserveExplicitTypeInfoPropertyName(
@@ -511,7 +557,8 @@ namespace {client.Settings.Namespace}
         }
         var guardTypes = GetJsonSerializableGuardTypes(
             serializableTypes,
-            explicitNullableValueTypes);
+            explicitNullableValueTypes,
+            typeInfoNames);
         var generationModes = BuildJsonSourceGenerationModes(
             client,
             types,
@@ -671,15 +718,16 @@ namespace {client.Settings.Namespace}
 
     private static Dictionary<string, string> BuildExplicitTypeInfoPropertyNames(
         string[] types,
-        HashSet<string> implicitlyDiscoveredTypes)
+        HashSet<string> implicitlyDiscoveredTypes,
+        JsonTypeInfoNameCache typeInfoNames)
     {
         var explicitNames = new Dictionary<string, string>(StringComparer.Ordinal);
         var usedNames = new HashSet<string>(
-            types.Select(GetGeneratedTypeInfoPropertyName),
+            types.Select(typeInfoNames.GetGenerated),
             StringComparer.Ordinal);
 
         // Phase 1: Handle collisions among explicitly registered types
-        foreach (var group in types.GroupBy(GetGeneratedTypeInfoPropertyName).Where(group => group.Count() > 1))
+        foreach (var group in types.GroupBy(typeInfoNames.GetGenerated).Where(group => group.Count() > 1))
         {
             var defaultType = group.FirstOrDefault(static type =>
                 ShouldKeepDefaultTypeInfoPropertyName(type) &&
@@ -693,7 +741,7 @@ namespace {client.Settings.Namespace}
                     continue;
                 }
 
-                var baseName = $"{GetGeneratedTypeInfoPropertyName(type)}_{SanitizeTypeInfoPropertyName(type)}";
+                var baseName = $"{typeInfoNames.GetGenerated(type)}_{SanitizeTypeInfoPropertyName(type)}";
                 explicitNames[type] = ReserveExplicitTypeInfoPropertyName(
                     usedNames,
                     baseName,
@@ -711,7 +759,7 @@ namespace {client.Settings.Namespace}
                 continue;
             }
 
-            var implicitName = GetGeneratedTypeInfoPropertyName(type);
+            var implicitName = typeInfoNames.GetGenerated(type);
             if (implicitName.Length <= MaxGeneratedTypeInfoNameLength)
             {
                 continue;
@@ -745,7 +793,7 @@ namespace {client.Settings.Namespace}
                 continue;
             }
 
-            var implicitName = GetImplicitTypeInfoPropertyName(type);
+            var implicitName = typeInfoNames.GetImplicit(type);
             var baseName = $"{implicitName}2";
             explicitNames[type] = ReserveExplicitTypeInfoPropertyName(
                 usedNames,
@@ -758,7 +806,7 @@ namespace {client.Settings.Namespace}
         // its runtime type is in a different namespace (for example Advantage.JsonElement versus
         // System.Text.Json.JsonElement), so disambiguate that explicit registration too.
         var implicitlyDiscoveredRuntimeTypesByName = implicitlyDiscoveredTypes
-            .GroupBy(GetGeneratedTypeInfoPropertyName, StringComparer.Ordinal)
+            .GroupBy(typeInfoNames.GetGenerated, StringComparer.Ordinal)
             .ToDictionary(
                 static group => group.Key,
                 static group => new HashSet<string>(
@@ -773,7 +821,7 @@ namespace {client.Settings.Namespace}
                 continue;
             }
 
-            var implicitName = GetGeneratedTypeInfoPropertyName(type);
+            var implicitName = typeInfoNames.GetGenerated(type);
             if (!implicitlyDiscoveredRuntimeTypesByName.TryGetValue(
                     implicitName,
                     out var implicitlyDiscoveredRuntimeTypes) ||
@@ -796,7 +844,7 @@ namespace {client.Settings.Namespace}
         var implicitNullableNames = new HashSet<string>(
             implicitlyDiscoveredTypes
                 .Where(type => !ShouldKeepDefaultTypeInfoPropertyName(type))
-                .Select(type => $"Nullable{GetImplicitTypeInfoPropertyName(type)}"),
+                .Select(type => $"Nullable{typeInfoNames.GetImplicit(type)}"),
             StringComparer.Ordinal);
 
         foreach (var type in types)
@@ -806,7 +854,7 @@ namespace {client.Settings.Namespace}
                 continue;
             }
 
-            var implicitName = GetGeneratedTypeInfoPropertyName(type);
+            var implicitName = typeInfoNames.GetGenerated(type);
             if (!implicitNullableNames.Contains(implicitName))
             {
                 continue;
@@ -824,14 +872,15 @@ namespace {client.Settings.Namespace}
 
     private static HashSet<string> GetJsonSerializableGuardTypes(
         string[] serializableTypes,
-        string[] explicitNullableValueTypes)
+        string[] explicitNullableValueTypes,
+        JsonTypeInfoNameCache typeInfoNames)
     {
         var explicitNullableValueTypeSet = new HashSet<string>(
             explicitNullableValueTypes,
             StringComparer.Ordinal);
         var guardedGeneratedNames = new HashSet<string>(
             serializableTypes
-                .GroupBy(GetGeneratedTypeInfoPropertyName, StringComparer.Ordinal)
+                .GroupBy(typeInfoNames.GetGenerated, StringComparer.Ordinal)
                 .Where(static group =>
                     group.Count() > 1 &&
                     group.Any(static type =>
@@ -844,8 +893,8 @@ namespace {client.Settings.Namespace}
         return new HashSet<string>(
             serializableTypes.Where(type =>
                 explicitNullableValueTypeSet.Contains(type) ||
-                guardedGeneratedNames.Contains(GetGeneratedTypeInfoPropertyName(type)) ||
-                GetGeneratedTypeInfoPropertyName(type).Length > MaxGeneratedTypeInfoNameLength),
+                guardedGeneratedNames.Contains(typeInfoNames.GetGenerated(type)) ||
+                typeInfoNames.GetGenerated(type).Length > MaxGeneratedTypeInfoNameLength),
             StringComparer.Ordinal);
     }
 
@@ -853,18 +902,18 @@ namespace {client.Settings.Namespace}
     private const int MaxGeneratedTypeInfoNameLength = 120;
 
     private static string[] GetExplicitNullableValueTypes(
-        EquatableArray<TypeData> types,
         string[] distinctTypes,
-        string[] concreteListTypes)
+        string[] concreteListTypes,
+        string[] nullableValueTypes,
+        JsonTypeInfoNameCache typeInfoNames)
     {
         var explicitlyRegisteredNames = new HashSet<string>(
             distinctTypes
                 .Concat(concreteListTypes)
-                .Select(GetGeneratedTypeInfoPropertyName),
+                .Select(typeInfoNames.GetGenerated),
             StringComparer.Ordinal);
-        var nullableValueTypes = GetNullableValueTypes(types);
         var nullableNameCounts = nullableValueTypes
-            .GroupBy(GetGeneratedTypeInfoPropertyName, StringComparer.Ordinal)
+            .GroupBy(typeInfoNames.GetGenerated, StringComparer.Ordinal)
             .ToDictionary(
                 static group => group.Key,
                 static group => group.Count(),
@@ -873,7 +922,7 @@ namespace {client.Settings.Namespace}
         return nullableValueTypes
             .Where(type =>
             {
-                var generatedName = GetGeneratedTypeInfoPropertyName(type);
+                var generatedName = typeInfoNames.GetGenerated(type);
                 return generatedName.Length > MaxGeneratedTypeInfoNameLength ||
                        explicitlyRegisteredNames.Contains(generatedName) ||
                        nullableNameCounts[generatedName] > 1;
@@ -941,7 +990,10 @@ namespace {client.Settings.Namespace}
 
     private static HashSet<string> GetCollidingJsonSerializerContextTypes(
         EquatableArray<TypeData> types,
-        string[] allDistinctTypes)
+        string[] allDistinctTypes,
+        string[] concreteListTypes,
+        string[] nullableValueTypes,
+        JsonTypeInfoNameCache typeInfoNames)
     {
         var typeDataByNullableType = types
             .GroupBy(static x => x.CSharpTypeWithNullability, StringComparer.Ordinal)
@@ -949,7 +1001,6 @@ namespace {client.Settings.Namespace}
                 static group => group.Key,
                 static group => group.First(),
                 StringComparer.Ordinal);
-        var concreteListTypes = GetConcreteListTypes(allDistinctTypes);
         var contextCandidates = allDistinctTypes
             .Concat(concreteListTypes)
             .Select(type =>
@@ -958,7 +1009,7 @@ namespace {client.Settings.Namespace}
                 return (
                     Type: type,
                     RuntimeType: NormalizeRuntimeTypeName(type),
-                    GeneratedNames: GetContextGeneratedTypeInfoPropertyNames(type, typeData));
+                    GeneratedNames: GetContextGeneratedTypeInfoPropertyNames(type, typeData, typeInfoNames));
             })
             .ToArray();
         var duplicateContextNames = new HashSet<string>(
@@ -974,13 +1025,14 @@ namespace {client.Settings.Namespace}
             .ToArray();
         var registeredConcreteListTypes = GetConcreteListTypes(registeredTypes);
         var explicitNullableValueTypes = GetExplicitNullableValueTypes(
-            types,
             registeredTypes,
-            registeredConcreteListTypes);
+            registeredConcreteListTypes,
+            nullableValueTypes,
+            typeInfoNames);
         var registeredRuntimeTypesByName = registeredTypes
             .Concat(explicitNullableValueTypes)
             .Concat(registeredConcreteListTypes)
-            .GroupBy(GetGeneratedTypeInfoPropertyName, StringComparer.Ordinal)
+            .GroupBy(typeInfoNames.GetGenerated, StringComparer.Ordinal)
             .ToDictionary(
                 static group => group.Key,
                 static group => new HashSet<string>(
@@ -1010,16 +1062,17 @@ namespace {client.Settings.Namespace}
 
     private static string[] GetContextGeneratedTypeInfoPropertyNames(
         string type,
-        TypeData? typeData)
+        TypeData? typeData,
+        JsonTypeInfoNameCache typeInfoNames)
     {
         if (typeData is { IsValueType: true } &&
             type.EndsWith("?", StringComparison.Ordinal))
         {
-            var nonNullableName = GetImplicitTypeInfoPropertyName(type.Substring(0, type.Length - 1));
+            var nonNullableName = typeInfoNames.GetImplicit(type.Substring(0, type.Length - 1));
             return [$"Nullable{nonNullableName}", nonNullableName];
         }
 
-        return [GetImplicitTypeInfoPropertyName(type)];
+        return [typeInfoNames.GetImplicit(type)];
     }
 
     private static string GetGeneratedTypeInfoPropertyName(string type)
@@ -1030,6 +1083,87 @@ namespace {client.Settings.Namespace}
         }
 
         return GetImplicitTypeInfoPropertyName(type);
+    }
+
+    internal sealed class JsonSerializerContextGenerationState
+    {
+        private string[]? _nullableValueTypes;
+
+        public JsonTypeInfoNameCache TypeInfoNames { get; } = new();
+
+        public string[] GetNullableValueTypes(EquatableArray<TypeData> types)
+        {
+            return _nullableValueTypes ??= types.IsEmpty
+                ? Array.Empty<string>()
+                : Sources.GetNullableValueTypes(types);
+        }
+    }
+
+    internal sealed class JsonTypeInfoNameCache
+    {
+        private readonly Dictionary<string, string> _generatedNames = new(StringComparer.Ordinal);
+        private readonly Dictionary<string, string> _implicitNames = new(StringComparer.Ordinal);
+
+        public string GetGenerated(string type)
+        {
+            if (_generatedNames.TryGetValue(type, out var name))
+            {
+                return name;
+            }
+
+            name = type.EndsWith("?", StringComparison.Ordinal)
+                ? $"Nullable{GetImplicit(type.Substring(0, type.Length - 1))}"
+                : GetImplicit(type);
+            _generatedNames.Add(type, name);
+
+            return name;
+        }
+
+        public string GetImplicit(string type)
+        {
+            if (_implicitNames.TryGetValue(type, out var name))
+            {
+                return name;
+            }
+
+            name = CreateImplicit(type);
+            _implicitNames.Add(type, name);
+
+            return name;
+        }
+
+        private string CreateImplicit(string type)
+        {
+            if (type.StartsWith("global::", StringComparison.Ordinal))
+            {
+                type = type.Substring("global::".Length);
+            }
+
+            if (CSharpAliasTypeInfoPropertyNames.TryGetValue(type, out var aliasName))
+            {
+                return aliasName;
+            }
+
+            if (type.EndsWith("[]", StringComparison.Ordinal))
+            {
+                return $"{GetImplicit(type.Substring(0, type.Length - 2))}Array";
+            }
+
+            if (type.EndsWith("?", StringComparison.Ordinal))
+            {
+                return GetImplicit(type.Substring(0, type.Length - 1));
+            }
+
+            var genericStart = type.IndexOf('<');
+            if (genericStart >= 0 && type.EndsWith(">", StringComparison.Ordinal))
+            {
+                var typeName = GetSimpleTypeName(type.Substring(0, genericStart));
+                var genericArguments = type.Substring(genericStart + 1, type.Length - genericStart - 2);
+                return typeName + string.Concat(SplitGenericArguments(genericArguments).Select(GetImplicit));
+            }
+
+            return GetSimpleTypeName(type);
+        }
     }
 
     private static string NormalizeRuntimeTypeName(string type)
