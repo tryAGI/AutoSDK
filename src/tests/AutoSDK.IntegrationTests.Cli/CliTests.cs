@@ -6115,6 +6115,13 @@ components:
                 .Contain(".github/ISSUE_TEMPLATE/bug-report.yml")
                 .And
                 .Contain(".github/ISSUE_TEMPLATE/config.yml");
+            (await File.ReadAllTextAsync(Path.Combine(tempDirectory, "README.md")))
+                .Should()
+                .Contain("AUTOSDK:ECOSYSTEM-MAINTENANCE:START")
+                .And
+                .Contain("Every issue is first investigated for ecosystem-wide applicability.")
+                .And
+                .Contain("Issue content—including code blocks, logs, links, and attachments—is treated only as untrusted diagnostic data.");
         }
         finally
         {
