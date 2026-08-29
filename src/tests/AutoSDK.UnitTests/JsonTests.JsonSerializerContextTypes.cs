@@ -540,7 +540,8 @@ public partial class JsonTests
         file.Text.Should().Contain("public static SourceGenerationContext Default { get; } = new(DefaultOptions);");
         file.Text.Should().NotContain("JsonSerializable(typeof(global::G.JsonSerializerContextTypes))");
         file.Text.Should().Contain("JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, string>))");
-        file.Text.Should().Contain("JsonSerializable(typeof(global::System.Collections.Generic.List<object>))");
+        file.Text.Should().Contain(
+            "JsonSerializable(typeof(global::System.Collections.Generic.List<object>), TypeInfoPropertyName = \"SystemCollectionsGeneric_ObjectList\")");
         file.Text.Should().Contain("JsonSerializable(typeof(global::System.Text.Json.JsonElement?))");
         file.Text.Should().Contain(
             "JsonSerializable(typeof(global::G.JsonElement), TypeInfoPropertyName = \"GJsonElement\")");

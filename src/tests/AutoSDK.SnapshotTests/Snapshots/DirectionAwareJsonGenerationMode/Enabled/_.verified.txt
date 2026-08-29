@@ -24,6 +24,7 @@ namespace G
             typeof(global::G.JsonConverters.UnixTimestampJsonConverter),
         })]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::G.JsonSerializerContextTypes))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<object>), TypeInfoPropertyName = "SystemCollectionsGeneric_ObjectList")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::G.CreateItemRequest), GenerationMode = global::System.Text.Json.Serialization.JsonSourceGenerationMode.Metadata)]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::G.RequestPayload), GenerationMode = global::System.Text.Json.Serialization.JsonSourceGenerationMode.Metadata)]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::G.RequestMode), TypeInfoPropertyName = "RequestMode2", GenerationMode = global::System.Text.Json.Serialization.JsonSourceGenerationMode.Metadata)]

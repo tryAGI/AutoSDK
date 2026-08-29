@@ -457,6 +457,7 @@ namespace {client.Settings.Namespace}
             : new[]
             {
                 $"global::{client.Settings.Namespace}.JsonSerializerContextTypes",
+                "global::System.Collections.Generic.List<object>",
             };
         var serializableTypes = contextTypes
             .Concat(distinctTypes)
@@ -495,6 +496,19 @@ namespace {client.Settings.Namespace}
 
         var explicitTypeInfoPropertyNames = BuildExplicitTypeInfoPropertyNames(
             serializableTypes, implicitlyDiscoveredTypes);
+        const string objectListType = "global::System.Collections.Generic.List<object>";
+        if (serializableTypes.Contains(objectListType, StringComparer.Ordinal) &&
+            !explicitTypeInfoPropertyNames.ContainsKey(objectListType))
+        {
+            var usedTypeInfoPropertyNames = new HashSet<string>(
+                serializableTypes.Select(GetGeneratedTypeInfoPropertyName)
+                    .Concat(explicitTypeInfoPropertyNames.Values),
+                StringComparer.Ordinal);
+            explicitTypeInfoPropertyNames[objectListType] = ReserveExplicitTypeInfoPropertyName(
+                usedTypeInfoPropertyNames,
+                "SystemCollectionsGeneric_ObjectList",
+                objectListType);
+        }
         var guardTypes = GetJsonSerializableGuardTypes(
             serializableTypes,
             explicitNullableValueTypes);
