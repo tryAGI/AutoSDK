@@ -94,8 +94,13 @@ public class CompositeObjectConverterTests
 
         generatedAllOf.Should().Contain("JsonTypeInfo<T1?>");
         generatedAllOf.Should().Contain("JsonTypeInfo<T2?>");
-        generatedAllOf.Should().Contain("JsonSerializer.Serialize(writer, value.Value1!, typeInfo);");
-        generatedAllOf.Should().Contain("JsonSerializer.Serialize(writer, value.Value2!, typeInfo);");
+        generatedAllOf.Should().Contain("JsonSerializer.SerializeToElement(value.Value1!, typeInfo);");
+        generatedAllOf.Should().Contain("JsonSerializer.SerializeToElement(value.Value2!, typeInfo);");
+        generatedAllOf.Should().Contain("writer.WriteStartObject();");
+        generatedAllOf.Should().Contain("__writtenPropertyNames.Add(__property.Name)");
+        generatedAllOf.Should().NotContain("else if (value.IsValue2)");
+        generatedAllOf.Should().Contain("value1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);");
+        generatedAllOf.Should().Contain("value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);");
     }
 
     [TestMethod]

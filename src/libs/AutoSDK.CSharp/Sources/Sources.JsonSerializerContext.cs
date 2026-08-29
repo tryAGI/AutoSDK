@@ -451,6 +451,7 @@ namespace {client.Settings.Namespace}
             {
                 "global::System.Collections.Generic.Dictionary<string, string>",
                 "global::System.Collections.Generic.Dictionary<string, object>",
+                "global::System.Collections.Generic.List<object>",
                 "global::System.Text.Json.JsonElement?",
             }
             : new[]

@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.QueryRequestPayload.g.cs
+//HintName: G.JsonConverters.QueryRequestPayload.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -18,99 +18,34 @@ namespace G.JsonConverters
 
             using var __jsonDocument = global::System.Text.Json.JsonDocument.ParseValue(ref reader);
             var __rawJson = __jsonDocument.RootElement.GetRawText();
-            var __jsonProps = new global::System.Collections.Generic.HashSet<string>();
-            if (__jsonDocument.RootElement.ValueKind == global::System.Text.Json.JsonValueKind.Object)
-            {
-                foreach (var __jsonProp in __jsonDocument.RootElement.EnumerateObject())
-                {
-                    __jsonProps.Add(__jsonProp.Name);
-
-                }
-            }
-
-            var __score0 = 0;
-            if (__jsonProps.Contains("where")) __score0++;
-            if (__jsonProps.Contains("where_document")) __score0++;
-            var __score1 = 0;
-            if (__jsonProps.Contains("ids")) __score1++;
-            if (__jsonProps.Contains("include")) __score1++;
-            if (__jsonProps.Contains("n_results")) __score1++;
-            if (__jsonProps.Contains("query_embeddings")) __score1++;
-            var __bestScore = 0;
-            var __bestIndex = -1;
-            if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }
-            if (__score1 > __bestScore) { __bestScore = __score1; __bestIndex = 1; }
 
             global::G.RawWhereFields? rawWhereFields = default;
+            try
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RawWhereFields), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RawWhereFields> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RawWhereFields).Name}");
+                rawWhereFields = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+            }
+            catch (global::System.Text.Json.JsonException)
+            {
+            }
+            catch (global::System.InvalidOperationException)
+            {
+            }
+
             global::G.QueryRequestPayloadVariant2? queryRequestPayloadVariant2 = default;
-            if (__bestIndex >= 0)
+            try
             {
-                if (__bestIndex == 0)
-                {
-                    try
-                    {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RawWhereFields), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RawWhereFields> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RawWhereFields).Name}");
-                        rawWhereFields = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
-                    }
-                    catch (global::System.Text.Json.JsonException)
-                    {
-                    }
-                    catch (global::System.InvalidOperationException)
-                    {
-                    }
-                }
-                else if (__bestIndex == 1)
-                {
-                    try
-                    {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.QueryRequestPayloadVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.QueryRequestPayloadVariant2> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.QueryRequestPayloadVariant2).Name}");
-                        queryRequestPayloadVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
-                    }
-                    catch (global::System.Text.Json.JsonException)
-                    {
-                    }
-                    catch (global::System.InvalidOperationException)
-                    {
-                    }
-                }
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.QueryRequestPayloadVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.QueryRequestPayloadVariant2> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.QueryRequestPayloadVariant2).Name}");
+                queryRequestPayloadVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
             }
-
-            if (rawWhereFields == null && queryRequestPayloadVariant2 == null)
+            catch (global::System.Text.Json.JsonException)
             {
-                try
-                {
-
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RawWhereFields), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RawWhereFields> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RawWhereFields).Name}");
-                    rawWhereFields = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
-                }
-                catch (global::System.Text.Json.JsonException)
-                {
-                }
-                catch (global::System.InvalidOperationException)
-                {
-                }
             }
-
-            if (rawWhereFields == null && queryRequestPayloadVariant2 == null)
+            catch (global::System.InvalidOperationException)
             {
-                try
-                {
-
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.QueryRequestPayloadVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.QueryRequestPayloadVariant2> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.QueryRequestPayloadVariant2).Name}");
-                    queryRequestPayloadVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
-                }
-                catch (global::System.Text.Json.JsonException)
-                {
-                }
-                catch (global::System.InvalidOperationException)
-                {
-                }
             }
-
             var __value = new global::G.QueryRequestPayload(
                 rawWhereFields,
 
@@ -129,18 +64,46 @@ namespace G.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
+
+            writer.WriteStartObject();
+            var __writtenPropertyNames = new global::System.Collections.Generic.HashSet<string>(global::System.StringComparer.Ordinal);
             if (value.IsRawWhereFields)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RawWhereFields), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RawWhereFields?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RawWhereFields).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.RawWhereFields!, typeInfo);
+                var __element0 = global::System.Text.Json.JsonSerializer.SerializeToElement(value.RawWhereFields!, typeInfo);
+                if (__element0.ValueKind != global::System.Text.Json.JsonValueKind.Object)
+                {
+                    throw new global::System.Text.Json.JsonException("AllOf values must serialize as JSON objects.");
+                }
+
+                foreach (var __property in __element0.EnumerateObject())
+                {
+                    if (__writtenPropertyNames.Add(__property.Name))
+                    {
+                        __property.WriteTo(writer);
+                    }
+                }
             }
-            else if (value.IsQueryRequestPayloadVariant2)
+            if (value.IsQueryRequestPayloadVariant2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.QueryRequestPayloadVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.QueryRequestPayloadVariant2?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.QueryRequestPayloadVariant2).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.QueryRequestPayloadVariant2!, typeInfo);
+                var __element1 = global::System.Text.Json.JsonSerializer.SerializeToElement(value.QueryRequestPayloadVariant2!, typeInfo);
+                if (__element1.ValueKind != global::System.Text.Json.JsonValueKind.Object)
+                {
+                    throw new global::System.Text.Json.JsonException("AllOf values must serialize as JSON objects.");
+                }
+
+                foreach (var __property in __element1.EnumerateObject())
+                {
+                    if (__writtenPropertyNames.Add(__property.Name))
+                    {
+                        __property.WriteTo(writer);
+                    }
+                }
             }
+            writer.WriteEndObject();
         }
     }
 }

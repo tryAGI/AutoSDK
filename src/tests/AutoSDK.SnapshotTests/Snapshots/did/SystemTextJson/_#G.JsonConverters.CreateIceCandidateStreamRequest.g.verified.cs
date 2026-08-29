@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.CreateIceCandidateStreamRequest.g.cs
+//HintName: G.JsonConverters.CreateIceCandidateStreamRequest.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -18,94 +18,34 @@ namespace G.JsonConverters
 
             using var __jsonDocument = global::System.Text.Json.JsonDocument.ParseValue(ref reader);
             var __rawJson = __jsonDocument.RootElement.GetRawText();
-            var __jsonProps = new global::System.Collections.Generic.HashSet<string>();
-            if (__jsonDocument.RootElement.ValueKind == global::System.Text.Json.JsonValueKind.Object)
-            {
-                foreach (var __jsonProp in __jsonDocument.RootElement.EnumerateObject())
-                {
-                    __jsonProps.Add(__jsonProp.Name);
-
-                }
-            }
-
-            var __score0 = 0;
-            var __score1 = 0;
-            if (__jsonProps.Contains("session_id")) __score1++;
-            var __bestScore = 0;
-            var __bestIndex = -1;
-            if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }
-            if (__score1 > __bestScore) { __bestScore = __score1; __bestIndex = 1; }
 
             global::G.AnyOf<global::G.CreateIceCandidateStreamRequestVariant1Variant1, object>? createIceCandidateStreamRequestVariant1 = default;
+            try
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AnyOf<global::G.CreateIceCandidateStreamRequestVariant1Variant1, object>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AnyOf<global::G.CreateIceCandidateStreamRequestVariant1Variant1, object>> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AnyOf<global::G.CreateIceCandidateStreamRequestVariant1Variant1, object>).Name}");
+                createIceCandidateStreamRequestVariant1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+            }
+            catch (global::System.Text.Json.JsonException)
+            {
+            }
+            catch (global::System.InvalidOperationException)
+            {
+            }
+
             global::G.CreateIceCandidateStreamRequestVariant2? createIceCandidateStreamRequestVariant2 = default;
-            if (__bestIndex >= 0)
+            try
             {
-                if (__bestIndex == 0)
-                {
-                    try
-                    {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AnyOf<global::G.CreateIceCandidateStreamRequestVariant1Variant1, object>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AnyOf<global::G.CreateIceCandidateStreamRequestVariant1Variant1, object>> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AnyOf<global::G.CreateIceCandidateStreamRequestVariant1Variant1, object>).Name}");
-                        createIceCandidateStreamRequestVariant1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
-                    }
-                    catch (global::System.Text.Json.JsonException)
-                    {
-                    }
-                    catch (global::System.InvalidOperationException)
-                    {
-                    }
-                }
-                else if (__bestIndex == 1)
-                {
-                    try
-                    {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CreateIceCandidateStreamRequestVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CreateIceCandidateStreamRequestVariant2> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CreateIceCandidateStreamRequestVariant2).Name}");
-                        createIceCandidateStreamRequestVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
-                    }
-                    catch (global::System.Text.Json.JsonException)
-                    {
-                    }
-                    catch (global::System.InvalidOperationException)
-                    {
-                    }
-                }
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CreateIceCandidateStreamRequestVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CreateIceCandidateStreamRequestVariant2> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CreateIceCandidateStreamRequestVariant2).Name}");
+                createIceCandidateStreamRequestVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
             }
-
-            if (createIceCandidateStreamRequestVariant1 == null && createIceCandidateStreamRequestVariant2 == null)
+            catch (global::System.Text.Json.JsonException)
             {
-                try
-                {
-
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AnyOf<global::G.CreateIceCandidateStreamRequestVariant1Variant1, object>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AnyOf<global::G.CreateIceCandidateStreamRequestVariant1Variant1, object>> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AnyOf<global::G.CreateIceCandidateStreamRequestVariant1Variant1, object>).Name}");
-                    createIceCandidateStreamRequestVariant1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
-                }
-                catch (global::System.Text.Json.JsonException)
-                {
-                }
-                catch (global::System.InvalidOperationException)
-                {
-                }
             }
-
-            if (createIceCandidateStreamRequestVariant1 == null && createIceCandidateStreamRequestVariant2 == null)
+            catch (global::System.InvalidOperationException)
             {
-                try
-                {
-
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CreateIceCandidateStreamRequestVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CreateIceCandidateStreamRequestVariant2> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CreateIceCandidateStreamRequestVariant2).Name}");
-                    createIceCandidateStreamRequestVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
-                }
-                catch (global::System.Text.Json.JsonException)
-                {
-                }
-                catch (global::System.InvalidOperationException)
-                {
-                }
             }
-
             var __value = new global::G.CreateIceCandidateStreamRequest(
                 createIceCandidateStreamRequestVariant1,
 
@@ -124,18 +64,46 @@ namespace G.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
+
+            writer.WriteStartObject();
+            var __writtenPropertyNames = new global::System.Collections.Generic.HashSet<string>(global::System.StringComparer.Ordinal);
             if (value.IsCreateIceCandidateStreamRequestVariant1)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AnyOf<global::G.CreateIceCandidateStreamRequestVariant1Variant1, object>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AnyOf<global::G.CreateIceCandidateStreamRequestVariant1Variant1, object>> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AnyOf<global::G.CreateIceCandidateStreamRequestVariant1Variant1, object>).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CreateIceCandidateStreamRequestVariant1!.Value, typeInfo);
+                var __element0 = global::System.Text.Json.JsonSerializer.SerializeToElement(value.CreateIceCandidateStreamRequestVariant1!.Value, typeInfo);
+                if (__element0.ValueKind != global::System.Text.Json.JsonValueKind.Object)
+                {
+                    throw new global::System.Text.Json.JsonException("AllOf values must serialize as JSON objects.");
+                }
+
+                foreach (var __property in __element0.EnumerateObject())
+                {
+                    if (__writtenPropertyNames.Add(__property.Name))
+                    {
+                        __property.WriteTo(writer);
+                    }
+                }
             }
-            else if (value.IsCreateIceCandidateStreamRequestVariant2)
+            if (value.IsCreateIceCandidateStreamRequestVariant2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CreateIceCandidateStreamRequestVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CreateIceCandidateStreamRequestVariant2?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CreateIceCandidateStreamRequestVariant2).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CreateIceCandidateStreamRequestVariant2!, typeInfo);
+                var __element1 = global::System.Text.Json.JsonSerializer.SerializeToElement(value.CreateIceCandidateStreamRequestVariant2!, typeInfo);
+                if (__element1.ValueKind != global::System.Text.Json.JsonValueKind.Object)
+                {
+                    throw new global::System.Text.Json.JsonException("AllOf values must serialize as JSON objects.");
+                }
+
+                foreach (var __property in __element1.EnumerateObject())
+                {
+                    if (__writtenPropertyNames.Add(__property.Name))
+                    {
+                        __property.WriteTo(writer);
+                    }
+                }
             }
+            writer.WriteEndObject();
         }
     }
 }

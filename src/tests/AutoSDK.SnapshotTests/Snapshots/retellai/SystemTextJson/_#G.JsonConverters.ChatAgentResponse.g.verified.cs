@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.ChatAgentResponse.g.cs
+//HintName: G.JsonConverters.ChatAgentResponse.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -18,163 +18,48 @@ namespace G.JsonConverters
 
             using var __jsonDocument = global::System.Text.Json.JsonDocument.ParseValue(ref reader);
             var __rawJson = __jsonDocument.RootElement.GetRawText();
-            var __jsonProps = new global::System.Collections.Generic.HashSet<string>();
-            if (__jsonDocument.RootElement.ValueKind == global::System.Text.Json.JsonValueKind.Object)
-            {
-                foreach (var __jsonProp in __jsonDocument.RootElement.EnumerateObject())
-                {
-                    __jsonProps.Add(__jsonProp.Name);
-                    if (__jsonProp.Value.ValueKind == global::System.Text.Json.JsonValueKind.Object)
-                    {
-                        foreach (var __nestedJsonProp in __jsonProp.Value.EnumerateObject())
-                        {
-                            __jsonProps.Add(__jsonProp.Name + "." + __nestedJsonProp.Name);
-                        }
-                    }
-
-                }
-            }
-
-            var __score0 = 0;
-            if (__jsonProps.Contains("agent_id")) __score0++;
-            if (__jsonProps.Contains("is_published")) __score0++;
-            if (__jsonProps.Contains("version")) __score0++;
-            var __score1 = 0;
-            if (__jsonProps.Contains("agent_name")) __score1++;
-            if (__jsonProps.Contains("analysis_successful_prompt")) __score1++;
-            if (__jsonProps.Contains("analysis_summary_prompt")) __score1++;
-            if (__jsonProps.Contains("analysis_user_sentiment_prompt")) __score1++;
-            if (__jsonProps.Contains("auto_close_message")) __score1++;
-            if (__jsonProps.Contains("data_storage_retention_days")) __score1++;
-            if (__jsonProps.Contains("data_storage_setting")) __score1++;
-            if (__jsonProps.Contains("end_chat_after_silence_ms")) __score1++;
-            if (__jsonProps.Contains("guardrail_config")) __score1++;
-            if (__jsonProps.Contains("guardrail_config.input_topics")) __score1++;
-            if (__jsonProps.Contains("guardrail_config.output_topics")) __score1++;
-            if (__jsonProps.Contains("is_public")) __score1++;
-            if (__jsonProps.Contains("language")) __score1++;
-            if (__jsonProps.Contains("opt_in_signed_url")) __score1++;
-            if (__jsonProps.Contains("pii_config")) __score1++;
-            if (__jsonProps.Contains("pii_config.categories")) __score1++;
-            if (__jsonProps.Contains("pii_config.mode")) __score1++;
-            if (__jsonProps.Contains("post_chat_analysis_data")) __score1++;
-            if (__jsonProps.Contains("post_chat_analysis_model")) __score1++;
-            if (__jsonProps.Contains("response_engine")) __score1++;
-            if (__jsonProps.Contains("signed_url_expiration_ms")) __score1++;
-            if (__jsonProps.Contains("webhook_events")) __score1++;
-            if (__jsonProps.Contains("webhook_timeout_ms")) __score1++;
-            if (__jsonProps.Contains("webhook_url")) __score1++;
-            var __score2 = 0;
-            if (__jsonProps.Contains("last_modification_timestamp")) __score2++;
-            var __bestScore = 0;
-            var __bestIndex = -1;
-            if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }
-            if (__score1 > __bestScore) { __bestScore = __score1; __bestIndex = 1; }
-            if (__score2 > __bestScore) { __bestScore = __score2; __bestIndex = 2; }
 
             global::G.ChatAgentResponseVariant1? chatAgentResponseVariant1 = default;
+            try
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatAgentResponseVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatAgentResponseVariant1> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatAgentResponseVariant1).Name}");
+                chatAgentResponseVariant1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+            }
+            catch (global::System.Text.Json.JsonException)
+            {
+            }
+            catch (global::System.InvalidOperationException)
+            {
+            }
+
             global::G.ChatAgentRequest? request = default;
+            try
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatAgentRequest), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatAgentRequest> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatAgentRequest).Name}");
+                request = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+            }
+            catch (global::System.Text.Json.JsonException)
+            {
+            }
+            catch (global::System.InvalidOperationException)
+            {
+            }
+
             global::G.ChatAgentResponseVariant3? chatAgentResponseVariant3 = default;
-            if (__bestIndex >= 0)
+            try
             {
-                if (__bestIndex == 0)
-                {
-                    try
-                    {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatAgentResponseVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatAgentResponseVariant1> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatAgentResponseVariant1).Name}");
-                        chatAgentResponseVariant1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
-                    }
-                    catch (global::System.Text.Json.JsonException)
-                    {
-                    }
-                    catch (global::System.InvalidOperationException)
-                    {
-                    }
-                }
-                else if (__bestIndex == 1)
-                {
-                    try
-                    {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatAgentRequest), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatAgentRequest> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatAgentRequest).Name}");
-                        request = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
-                    }
-                    catch (global::System.Text.Json.JsonException)
-                    {
-                    }
-                    catch (global::System.InvalidOperationException)
-                    {
-                    }
-                }
-                else if (__bestIndex == 2)
-                {
-                    try
-                    {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatAgentResponseVariant3), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatAgentResponseVariant3> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatAgentResponseVariant3).Name}");
-                        chatAgentResponseVariant3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
-                    }
-                    catch (global::System.Text.Json.JsonException)
-                    {
-                    }
-                    catch (global::System.InvalidOperationException)
-                    {
-                    }
-                }
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatAgentResponseVariant3), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatAgentResponseVariant3> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatAgentResponseVariant3).Name}");
+                chatAgentResponseVariant3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
             }
-
-            if (chatAgentResponseVariant1 == null && request == null && chatAgentResponseVariant3 == null)
+            catch (global::System.Text.Json.JsonException)
             {
-                try
-                {
-
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatAgentResponseVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatAgentResponseVariant1> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatAgentResponseVariant1).Name}");
-                    chatAgentResponseVariant1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
-                }
-                catch (global::System.Text.Json.JsonException)
-                {
-                }
-                catch (global::System.InvalidOperationException)
-                {
-                }
             }
-
-            if (chatAgentResponseVariant1 == null && request == null && chatAgentResponseVariant3 == null)
+            catch (global::System.InvalidOperationException)
             {
-                try
-                {
-
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatAgentRequest), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatAgentRequest> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatAgentRequest).Name}");
-                    request = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
-                }
-                catch (global::System.Text.Json.JsonException)
-                {
-                }
-                catch (global::System.InvalidOperationException)
-                {
-                }
             }
-
-            if (chatAgentResponseVariant1 == null && request == null && chatAgentResponseVariant3 == null)
-            {
-                try
-                {
-
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatAgentResponseVariant3), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatAgentResponseVariant3> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatAgentResponseVariant3).Name}");
-                    chatAgentResponseVariant3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
-                }
-                catch (global::System.Text.Json.JsonException)
-                {
-                }
-                catch (global::System.InvalidOperationException)
-                {
-                }
-            }
-
             var __value = new global::G.ChatAgentResponse(
                 chatAgentResponseVariant1,
 
@@ -195,24 +80,64 @@ namespace G.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
+
+            writer.WriteStartObject();
+            var __writtenPropertyNames = new global::System.Collections.Generic.HashSet<string>(global::System.StringComparer.Ordinal);
             if (value.IsChatAgentResponseVariant1)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatAgentResponseVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatAgentResponseVariant1?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatAgentResponseVariant1).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ChatAgentResponseVariant1!, typeInfo);
+                var __element0 = global::System.Text.Json.JsonSerializer.SerializeToElement(value.ChatAgentResponseVariant1!, typeInfo);
+                if (__element0.ValueKind != global::System.Text.Json.JsonValueKind.Object)
+                {
+                    throw new global::System.Text.Json.JsonException("AllOf values must serialize as JSON objects.");
+                }
+
+                foreach (var __property in __element0.EnumerateObject())
+                {
+                    if (__writtenPropertyNames.Add(__property.Name))
+                    {
+                        __property.WriteTo(writer);
+                    }
+                }
             }
-            else if (value.IsRequest)
+            if (value.IsRequest)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatAgentRequest), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatAgentRequest?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatAgentRequest).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Request!, typeInfo);
+                var __element1 = global::System.Text.Json.JsonSerializer.SerializeToElement(value.Request!, typeInfo);
+                if (__element1.ValueKind != global::System.Text.Json.JsonValueKind.Object)
+                {
+                    throw new global::System.Text.Json.JsonException("AllOf values must serialize as JSON objects.");
+                }
+
+                foreach (var __property in __element1.EnumerateObject())
+                {
+                    if (__writtenPropertyNames.Add(__property.Name))
+                    {
+                        __property.WriteTo(writer);
+                    }
+                }
             }
-            else if (value.IsChatAgentResponseVariant3)
+            if (value.IsChatAgentResponseVariant3)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatAgentResponseVariant3), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatAgentResponseVariant3?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatAgentResponseVariant3).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ChatAgentResponseVariant3!, typeInfo);
+                var __element2 = global::System.Text.Json.JsonSerializer.SerializeToElement(value.ChatAgentResponseVariant3!, typeInfo);
+                if (__element2.ValueKind != global::System.Text.Json.JsonValueKind.Object)
+                {
+                    throw new global::System.Text.Json.JsonException("AllOf values must serialize as JSON objects.");
+                }
+
+                foreach (var __property in __element2.EnumerateObject())
+                {
+                    if (__writtenPropertyNames.Add(__property.Name))
+                    {
+                        __property.WriteTo(writer);
+                    }
+                }
             }
+            writer.WriteEndObject();
         }
     }
 }
