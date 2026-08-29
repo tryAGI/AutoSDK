@@ -1212,7 +1212,9 @@ namespace {endPoint.Settings.Namespace}
         {{
 {(useMultipartStreamRequest
     ? GenerateMultipartStreamRequestInitialization(endPoint)
-    : string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType) || endPoint.RequestType.IsAnyOfLike ? TrimmedLine : $@"{TrimmedLine}
+    : string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType) ||
+      endPoint.RequestType.IsAnyOfLike ||
+      endPoint.RequestType.IsValueType ? TrimmedLine : $@"{TrimmedLine}
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 ")}
 {(useMultipartStreamRequest || string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType) || endPoint.RequestType.IsAnyOfLike ? TrimmedLine : GeneratePinnedRequestCopy(endPoint, "request"))}

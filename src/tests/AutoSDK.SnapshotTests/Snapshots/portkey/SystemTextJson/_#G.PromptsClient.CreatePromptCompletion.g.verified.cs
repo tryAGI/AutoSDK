@@ -1,4 +1,4 @@
-﻿//HintName: G.PromptsClient.CreatePromptCompletion.g.cs
+//HintName: G.PromptsClient.CreatePromptCompletion.g.cs
 
 #nullable enable
 
@@ -99,8 +99,6 @@ namespace G
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            request = request ?? throw new global::System.ArgumentNullException(nameof(request));
-
             PrepareArguments(
                 client: HttpClient);
             PrepareCreatePromptCompletionArguments(
