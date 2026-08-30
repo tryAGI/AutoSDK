@@ -66,6 +66,30 @@ internal static class BenchmarkProfileRunner
         }
 
         Console.WriteLine();
+        Console.WriteLine("OpenAPI post-processing detail (average of 3 measured runs):");
+        Console.WriteLine(
+            "{0,-12} {1,10} {2,10} {3,10} {4,10} {5,10} {6,11} {7,11} {8,11} {9,11} {10,11}",
+            "Spec", "Setup", "Discrim", "PathParams", "Overrides", "Sanitize", "Setup MB", "Discrim MB", "Path MB", "Over MB", "San MB");
+        Console.WriteLine(new string('-', 135));
+
+        foreach (var profile in profiles)
+        {
+            Console.WriteLine(
+                "{0,-12} {1,9:F1}ms {2,9:F1}ms {3,9:F1}ms {4,9:F1}ms {5,9:F1}ms {6,10:F1} {7,10:F1} {8,10:F1} {9,10:F1} {10,10:F1}",
+                profile.Name,
+                profile.PostSetupAndInjectionMs,
+                profile.PostDiscriminatorsMs,
+                profile.PostMissingPathParametersMs,
+                profile.PostOverridesAndNamingMs,
+                profile.PostSchemaSanitizersMs,
+                profile.PostSetupAndInjectionAllocMb,
+                profile.PostDiscriminatorsAllocMb,
+                profile.PostMissingPathParametersAllocMb,
+                profile.PostOverridesAndNamingAllocMb,
+                profile.PostSchemaSanitizersAllocMb);
+        }
+
+        Console.WriteLine();
         Console.WriteLine("Allocations and output (average of 3 measured runs):");
         Console.WriteLine(
             "{0,-12} {1,10} {2,10} {3,10} {4,10} {5,8} {6,8} {7,8} {8,8} {9,8} {10,10}",
@@ -117,6 +141,16 @@ internal static class BenchmarkProfileRunner
         var microsoftReaderAllocMb = 0.0;
         var compatibilityWalkerAllocMb = 0.0;
         var postProcessingAllocMb = 0.0;
+        var postSetupAndInjectionMs = 0.0;
+        var postDiscriminatorsMs = 0.0;
+        var postMissingPathParametersMs = 0.0;
+        var postOverridesAndNamingMs = 0.0;
+        var postSchemaSanitizersMs = 0.0;
+        var postSetupAndInjectionAllocMb = 0.0;
+        var postDiscriminatorsAllocMb = 0.0;
+        var postMissingPathParametersAllocMb = 0.0;
+        var postOverridesAndNamingAllocMb = 0.0;
+        var postSchemaSanitizersAllocMb = 0.0;
 
         var schemaCount = 0;
         var filteredSchemaCount = 0;
@@ -149,6 +183,16 @@ internal static class BenchmarkProfileRunner
             microsoftReaderAllocMb += BytesToMb(coreTimes.OpenApiParsing.AllocMicrosoftReader);
             compatibilityWalkerAllocMb += BytesToMb(coreTimes.OpenApiParsing.AllocCompatibilityWalker);
             postProcessingAllocMb += BytesToMb(coreTimes.OpenApiParsing.AllocPostProcessing);
+            postSetupAndInjectionMs += coreTimes.OpenApiParsing.PostSetupAndInjection.TotalMilliseconds;
+            postDiscriminatorsMs += coreTimes.OpenApiParsing.PostDiscriminators.TotalMilliseconds;
+            postMissingPathParametersMs += coreTimes.OpenApiParsing.PostMissingPathParameters.TotalMilliseconds;
+            postOverridesAndNamingMs += coreTimes.OpenApiParsing.PostOverridesAndNaming.TotalMilliseconds;
+            postSchemaSanitizersMs += coreTimes.OpenApiParsing.PostSchemaSanitizers.TotalMilliseconds;
+            postSetupAndInjectionAllocMb += BytesToMb(coreTimes.OpenApiParsing.AllocPostSetupAndInjection);
+            postDiscriminatorsAllocMb += BytesToMb(coreTimes.OpenApiParsing.AllocPostDiscriminators);
+            postMissingPathParametersAllocMb += BytesToMb(coreTimes.OpenApiParsing.AllocPostMissingPathParameters);
+            postOverridesAndNamingAllocMb += BytesToMb(coreTimes.OpenApiParsing.AllocPostOverridesAndNaming);
+            postSchemaSanitizersAllocMb += BytesToMb(coreTimes.OpenApiParsing.AllocPostSchemaSanitizers);
 
             var enrichStage = Measure(() => CSharpPipeline.Enrich(core));
             var data = enrichStage.Result;
@@ -205,6 +249,16 @@ internal static class BenchmarkProfileRunner
             MicrosoftReaderAllocMb: microsoftReaderAllocMb / iterations,
             CompatibilityWalkerAllocMb: compatibilityWalkerAllocMb / iterations,
             PostProcessingAllocMb: postProcessingAllocMb / iterations,
+            PostSetupAndInjectionMs: postSetupAndInjectionMs / iterations,
+            PostDiscriminatorsMs: postDiscriminatorsMs / iterations,
+            PostMissingPathParametersMs: postMissingPathParametersMs / iterations,
+            PostOverridesAndNamingMs: postOverridesAndNamingMs / iterations,
+            PostSchemaSanitizersMs: postSchemaSanitizersMs / iterations,
+            PostSetupAndInjectionAllocMb: postSetupAndInjectionAllocMb / iterations,
+            PostDiscriminatorsAllocMb: postDiscriminatorsAllocMb / iterations,
+            PostMissingPathParametersAllocMb: postMissingPathParametersAllocMb / iterations,
+            PostOverridesAndNamingAllocMb: postOverridesAndNamingAllocMb / iterations,
+            PostSchemaSanitizersAllocMb: postSchemaSanitizersAllocMb / iterations,
             SchemaCount: schemaCount,
             FilteredSchemaCount: filteredSchemaCount,
             ClassCount: classCount,
@@ -287,6 +341,16 @@ internal static class BenchmarkProfileRunner
         double MicrosoftReaderAllocMb,
         double CompatibilityWalkerAllocMb,
         double PostProcessingAllocMb,
+        double PostSetupAndInjectionMs,
+        double PostDiscriminatorsMs,
+        double PostMissingPathParametersMs,
+        double PostOverridesAndNamingMs,
+        double PostSchemaSanitizersMs,
+        double PostSetupAndInjectionAllocMb,
+        double PostDiscriminatorsAllocMb,
+        double PostMissingPathParametersAllocMb,
+        double PostOverridesAndNamingAllocMb,
+        double PostSchemaSanitizersAllocMb,
         int SchemaCount,
         int FilteredSchemaCount,
         int ClassCount,

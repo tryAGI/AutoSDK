@@ -2,6 +2,7 @@ using System.Collections.Immutable;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Text.Json;
 using System.Text.Json.Nodes;
@@ -17,6 +18,21 @@ namespace AutoSDK.Extensions;
 public static class OpenApiExtensions
 {
     private const string PreservePrimitiveUnionExtension = "x-autosdk-preserve-primitive-union";
+
+    private sealed class SchemaReferenceEqualityComparer : IEqualityComparer<IOpenApiSchema>
+    {
+        public static SchemaReferenceEqualityComparer Instance { get; } = new();
+
+        public bool Equals(IOpenApiSchema? x, IOpenApiSchema? y)
+        {
+            return ReferenceEquals(x, y);
+        }
+
+        public int GetHashCode(IOpenApiSchema obj)
+        {
+            return RuntimeHelpers.GetHashCode(obj);
+        }
+    }
 
     private readonly struct YamlLine
     {
@@ -276,6 +292,8 @@ public static class OpenApiExtensions
 #if NET
         var allocBeforePostProcessing = GC.GetTotalAllocatedBytes(precise: true);
 #endif
+        var postSetupAndInjectionTime = Stopwatch.StartNew();
+        var allocBeforePostSetupAndInjection = GetParsingAllocatedBytes();
         openApiDocument.Components ??= new OpenApiComponents();
         openApiDocument.Components.Schemas ??= new Dictionary<string, IOpenApiSchema>();
         openApiDocument.Paths ??= new OpenApiPaths();
@@ -291,14 +309,29 @@ public static class OpenApiExtensions
         {
             openApiDocument.InjectSecuritySchemes(settings);
         }
+        postSetupAndInjectionTime.Stop();
+        var allocPostSetupAndInjection = GetParsingAllocatedBytes() - allocBeforePostSetupAndInjection;
+
+        var postDiscriminatorsTime = Stopwatch.StartNew();
+        var allocBeforePostDiscriminators = GetParsingAllocatedBytes();
         if (settings.ComputeDiscriminators)
         {
             openApiDocument = openApiDocument.ComputeDiscriminators();
         }
+        postDiscriminatorsTime.Stop();
+        var allocPostDiscriminators = GetParsingAllocatedBytes() - allocBeforePostDiscriminators;
+
+        var postMissingPathParametersTime = Stopwatch.StartNew();
+        var allocBeforePostMissingPathParameters = GetParsingAllocatedBytes();
         if (settings.AddMissingPathParameters)
         {
             openApiDocument = openApiDocument.AddMissingPathParameters();
         }
+        postMissingPathParametersTime.Stop();
+        var allocPostMissingPathParameters = GetParsingAllocatedBytes() - allocBeforePostMissingPathParameters;
+
+        var postOverridesAndNamingTime = Stopwatch.StartNew();
+        var allocBeforePostOverridesAndNaming = GetParsingAllocatedBytes();
         if (settings.OpenApiOverrides.Length > 0)
         {
             openApiDocument.ApplyOpenApiOverrides(settings);
@@ -307,11 +340,17 @@ public static class OpenApiExtensions
         {
             openApiDocument.ApplyFernRequestNames();
         }
+        postOverridesAndNamingTime.Stop();
+        var allocPostOverridesAndNaming = GetParsingAllocatedBytes() - allocBeforePostOverridesAndNaming;
 
+        var postSchemaSanitizersTime = Stopwatch.StartNew();
+        var allocBeforePostSchemaSanitizers = GetParsingAllocatedBytes();
         openApiDocument.NormalizeFernTypes();
         openApiDocument.SanitizeNumericConstraints();
         openApiDocument.InferLargeIntegerFormats();
         openApiDocument.SanitizeDiscriminators();
+        postSchemaSanitizersTime.Stop();
+        var allocPostSchemaSanitizers = GetParsingAllocatedBytes() - allocBeforePostSchemaSanitizers;
 
         postProcessingTime.Stop();
 #if NET
@@ -326,9 +365,30 @@ public static class OpenApiExtensions
             CompatibilityWalker: compatibilityWalkerTime.Elapsed,
             PostProcessing: postProcessingTime.Elapsed,
             AllocCompatibilityWalker: allocCompatibilityWalker,
-            AllocPostProcessing: allocPostProcessing);
+            AllocPostProcessing: allocPostProcessing)
+        {
+            PostSetupAndInjection = postSetupAndInjectionTime.Elapsed,
+            PostDiscriminators = postDiscriminatorsTime.Elapsed,
+            PostMissingPathParameters = postMissingPathParametersTime.Elapsed,
+            PostOverridesAndNaming = postOverridesAndNamingTime.Elapsed,
+            PostSchemaSanitizers = postSchemaSanitizersTime.Elapsed,
+            AllocPostSetupAndInjection = allocPostSetupAndInjection,
+            AllocPostDiscriminators = allocPostDiscriminators,
+            AllocPostMissingPathParameters = allocPostMissingPathParameters,
+            AllocPostOverridesAndNaming = allocPostOverridesAndNaming,
+            AllocPostSchemaSanitizers = allocPostSchemaSanitizers,
+        };
 
         return openApiDocument;
+    }
+
+    private static long GetParsingAllocatedBytes()
+    {
+#if NET
+        return GC.GetTotalAllocatedBytes(precise: true);
+#else
+        return 0;
+#endif
     }
 
     private static ReadResult ParseOpenApiDocument(
@@ -2969,9 +3029,19 @@ info:
     {
         openApiDocument = openApiDocument ?? throw new ArgumentNullException(nameof(openApiDocument));
         
-        foreach (var schema in (openApiDocument.Components?.Schemas ?? new Dictionary<string, IOpenApiSchema>()).OrderBy(x => x.Key, StringComparer.Ordinal))
+        var componentSchemas = (openApiDocument.Components?.Schemas ?? new Dictionary<string, IOpenApiSchema>())
+            .OrderBy(x => x.Key, StringComparer.Ordinal)
+            .ToArray();
+        var componentSchemaIdentities = new HashSet<IOpenApiSchema>(SchemaReferenceEqualityComparer.Instance);
+        foreach (var schema in componentSchemas)
         {
-            ProcessSchema(schema.Value, path: $"#/components/schemas/{schema.Key}", depth: 0);
+            componentSchemaIdentities.Add((IOpenApiSchema?)schema.Value.ResolveSchema() ?? schema.Value);
+        }
+
+        var visitedSchemas = new HashSet<IOpenApiSchema>(SchemaReferenceEqualityComparer.Instance);
+        foreach (var schema in componentSchemas)
+        {
+            ProcessSchema(schema.Value, depth: 0, componentSchemaIdentities, visitedSchemas);
         }
         
         return openApiDocument;
@@ -3016,68 +3086,82 @@ info:
         return openApiDocument;
     }
 
-    private static void ProcessSchema(IOpenApiSchema schema, string path, int depth)
+    private static void ProcessSchema(
+        IOpenApiSchema schema,
+        int depth,
+        ISet<IOpenApiSchema> componentSchemaIdentities,
+        HashSet<IOpenApiSchema> visitedSchemas)
     {
         if (depth > 10)
         {
             return;
         }
 
-        var refId = schema.GetReferenceId();
-        if (refId != null)
+        var schemaIdentity = schema is OpenApiSchemaReference schemaReference &&
+                             !HasDiscriminatorTraversalOverrides(schemaReference)
+            ? (IOpenApiSchema?)schema.ResolveSchema() ?? schema
+            : schema;
+        if (depth > 0 && componentSchemaIdentities.Contains(schemaIdentity))
         {
-            path = $"#/components/schemas/{refId}";
+            return;
+        }
+        if (!visitedSchemas.Add(schemaIdentity))
+        {
+            return;
         }
 
-        foreach (var property in (schema.Properties ?? new Dictionary<string, IOpenApiSchema>()).OrderBy(x => x.Key, StringComparer.Ordinal))
+        if (schema.Properties is { } properties)
         {
-            ProcessSchema(property.Value, path: path + "/properties/" + property.Key, depth: depth + 1);
+            foreach (var property in properties)
+            {
+                ProcessSchema(property.Value, depth: depth + 1, componentSchemaIdentities, visitedSchemas);
+            }
         }
 
         // Remove any nested OneOfs
-        var schemasToRemove = new List<IOpenApiSchema>();
-        var schemasToAdd = new List<IOpenApiSchema>();
-        foreach (var value in (schema.OneOf ?? []).Where(x => (x.OneOf?.Count ?? 0) > 0))
+        List<IOpenApiSchema>? schemasToRemove = null;
+        List<IOpenApiSchema>? schemasToAdd = null;
+        foreach (var value in schema.OneOf ?? [])
         {
-            foreach (var child in value.OneOf ?? [])
+            if (value.OneOf is not { Count: > 0 } nestedOneOf)
             {
-                schemasToAdd.Add(child);
+                continue;
             }
-            schemasToRemove.Add(value);
+
+            schemasToAdd ??= [];
+            schemasToAdd.AddRange(nestedOneOf);
+            (schemasToRemove ??= []).Add(value);
         }
-        schemasToRemove.ForEach(x =>
+        if (schemasToRemove != null)
         {
-            schema.OneOf?.Remove(x);
-
-            // Old Code for Microsoft.OpenApi 1.x
-            // if (x.Reference?.Id != null)
-            // {
-            //     x.Reference?.HostDocument?.Components.Schemas.Remove(x.Reference.Id);
-            // }
-
-            // For reference cleanup, we need to handle differently in new API
-            if (x is OpenApiSchemaReference schemaRef && schemaRef.Reference?.Id != null)
+            foreach (var schemaToRemove in schemasToRemove)
             {
-                // Note: Direct document manipulation is different in new API
+                schema.OneOf?.Remove(schemaToRemove);
             }
-        });
-        schemasToAdd.ForEach(x => schema.OneOf?.Add(x));
+        }
+        if (schemasToAdd != null)
+        {
+            foreach (var schemaToAdd in schemasToAdd)
+            {
+                schema.OneOf?.Add(schemaToAdd);
+            }
+        }
 
         foreach (var value in schema.OneOf ?? [])
         {
-            ProcessSchema(value, path: path + "/oneOf", depth: depth + 1);
+            ProcessSchema(value, depth: depth + 1, componentSchemaIdentities, visitedSchemas);
         }
         foreach (var value in schema.AllOf ?? [])
         {
-            ProcessSchema(value, path: path + "/allOf", depth: depth + 1);
+            ProcessSchema(value, depth: depth + 1, componentSchemaIdentities, visitedSchemas);
         }
         foreach (var value in schema.AnyOf ?? [])
         {
-            ProcessSchema(value, path: path + "/anyOf", depth: depth + 1);
+            ProcessSchema(value, depth: depth + 1, componentSchemaIdentities, visitedSchemas);
         }
         if (schema.Items != null)
         {
-            ProcessSchema(schema.Items, path: path + "/items", depth: depth + 1);
+            ProcessSchema(schema.Items, depth: depth + 1, componentSchemaIdentities, visitedSchemas);
         }
 
         // Auto-detection in OpenAI-like specs
@@ -3118,6 +3202,17 @@ info:
                 }
             }
         }
+    }
+
+    private static bool HasDiscriminatorTraversalOverrides(OpenApiSchemaReference schemaReference)
+    {
+        var reference = schemaReference.Reference;
+        return reference?.Properties != null ||
+               reference?.OneOf != null ||
+               reference?.AllOf != null ||
+               reference?.AnyOf != null ||
+               reference?.Items != null ||
+               reference?.Discriminator != null;
     }
 
     /// <summary>
