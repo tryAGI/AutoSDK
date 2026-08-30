@@ -149,6 +149,53 @@
           "compatibilityWalkerAllocatedMegabytes": 21.1,
           "postProcessingAllocatedMegabytes": 16.2
         }
+      },
+      "postProcessingDetailVerification": {
+        "generatorCommit": "3f61770bac",
+        "source": "specs/github.yaml",
+        "argumentsInclude": [
+          "--compute-discriminators"
+        ],
+        "maximum": {
+          "setupAndInjectionMilliseconds": 5,
+          "discriminatorsMilliseconds": 100,
+          "missingPathParametersMilliseconds": 30,
+          "overridesAndNamingMilliseconds": 10,
+          "schemaSanitizersMilliseconds": 100,
+          "setupAndInjectionAllocatedBytes": 1000000,
+          "discriminatorsAllocatedBytes": 30000000,
+          "missingPathParametersAllocatedBytes": 10000000,
+          "overridesAndNamingAllocatedBytes": 1000000,
+          "schemaSanitizersAllocatedBytes": 20000000
+        },
+        "observedBeforeDiscriminatorMemoization": {
+          "postProcessingMilliseconds": 230.203,
+          "postProcessingAllocatedBytes": 249396328,
+          "discriminatorsMilliseconds": 179.821,
+          "discriminatorsAllocatedBytes": 232392104
+        },
+        "observedAfterDiscriminatorMemoizationThreeRunMedian": {
+          "postProcessingMilliseconds": 76.904,
+          "postProcessingAllocatedBytes": 29970672,
+          "setupAndInjectionMilliseconds": 0.227,
+          "discriminatorsMilliseconds": 24.550,
+          "missingPathParametersMilliseconds": 8.872,
+          "overridesAndNamingMilliseconds": 0.711,
+          "schemaSanitizersMilliseconds": 42.642,
+          "setupAndInjectionAllocatedBytes": 56,
+          "discriminatorsAllocatedBytes": 12966448,
+          "missingPathParametersAllocatedBytes": 6530168,
+          "overridesAndNamingAllocatedBytes": 80,
+          "schemaSanitizersAllocatedBytes": 10473720,
+          "postProcessingTimeReductionPercent": 66.6,
+          "postProcessingAllocationReductionPercent": 88.0,
+          "discriminatorTimeReductionPercent": 86.3,
+          "discriminatorAllocationReductionPercent": 94.4
+        },
+        "parity": {
+          "generatedFiles": 16942,
+          "differentFiles": 0
+        }
       }
     },
     "appStoreConnect": {
@@ -287,6 +334,36 @@
           "compatibilityWalkerAllocatedBytes": 14027056,
           "postProcessingAllocatedBytes": 4347944
         }
+      },
+      "postProcessingDetailVerification": {
+        "generatorCommit": "3f61770bac",
+        "sourceSha256": "ed0202ef37155b9334772482d2ea0be688c3046b284c895bcbea5455fbe54fd8",
+        "maximum": {
+          "setupAndInjectionMilliseconds": 15,
+          "discriminatorsMilliseconds": 2,
+          "missingPathParametersMilliseconds": 15,
+          "overridesAndNamingMilliseconds": 5,
+          "schemaSanitizersMilliseconds": 50,
+          "setupAndInjectionAllocatedBytes": 2000000,
+          "discriminatorsAllocatedBytes": 100000,
+          "missingPathParametersAllocatedBytes": 3000000,
+          "overridesAndNamingAllocatedBytes": 1000000,
+          "schemaSanitizersAllocatedBytes": 5000000
+        },
+        "observedFreshCli": {
+          "postProcessingMilliseconds": 30.594,
+          "postProcessingAllocatedBytes": 4348144,
+          "setupAndInjectionMilliseconds": 5.754,
+          "discriminatorsMilliseconds": 0.082,
+          "missingPathParametersMilliseconds": 4.129,
+          "overridesAndNamingMilliseconds": 0.606,
+          "schemaSanitizersMilliseconds": 19.527,
+          "setupAndInjectionAllocatedBytes": 636376,
+          "discriminatorsAllocatedBytes": 0,
+          "missingPathParametersAllocatedBytes": 1390456,
+          "overridesAndNamingAllocatedBytes": 80,
+          "schemaSanitizersAllocatedBytes": 2321032
+        }
       }
     }
   },
@@ -299,6 +376,7 @@
     "Both optimized outputs were byte-for-byte identical to CLI 0.32.1-dev.16 for all 41837 generated files.",
     "The Microsoft.OpenApi 3.10.2 verification generated 45582 files byte-for-byte identical to public CLI 0.32.1-dev.27.",
     "The current GitHub verification uses an externally pinned official specification because it is newer and larger than specs/github.yaml.",
-    "Parsing subphase budgets use the durable in-repository GitHub workload and the pinned App Store Connect workload; CLI values include cold-process startup and workload-specific post-processing options."
+    "Parsing subphase budgets use the durable in-repository GitHub workload and the pinned App Store Connect workload; CLI values include cold-process startup and workload-specific post-processing options.",
+    "Post-processing detail keeps its aggregate metric for compatibility and records nested phases whose wall times include a small amount of measurement overhead."
   ]
 }

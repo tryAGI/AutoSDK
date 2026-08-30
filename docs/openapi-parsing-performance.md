@@ -9,6 +9,14 @@ and `core_parsing_allocated_bytes` totals into these subphases:
 - `core_parsing_compat_walker_*`: the compatibility visitor over the parsed document.
 - `core_parsing_postprocess_*`: defaults, overrides, discriminators, path parameters, and schema sanitizers.
 
+The post-processing aggregate is split again into:
+
+- `core_parsing_postprocess_setup_injection_*`: document defaults plus base URL and security injection.
+- `core_parsing_postprocess_discriminators_*`: discriminator discovery and nested `oneOf` normalization.
+- `core_parsing_postprocess_missing_path_parameters_*`: path-template reconciliation.
+- `core_parsing_postprocess_overrides_naming_*`: configured overrides and Fern request naming.
+- `core_parsing_postprocess_schema_sanitizers_*`: Fern type, numeric, integer-format, and discriminator sanitizers.
+
 The aggregate remains authoritative. Subphase totals can be slightly lower because setup,
 diagnostics checks, retry setup, and measurement overhead stay only in the aggregate.
 
@@ -33,6 +41,27 @@ on Apple Silicon macOS:
 The CLI workload with `--compute-discriminators` has substantially more AutoSDK
 post-processing work, so compare package-reader changes using the dedicated parsing
 subphase rather than the aggregate.
+
+## Discriminator traversal optimization
+
+On the CLI GitHub workload, the nested metrics showed that discriminator discovery
+accounted for 179.8 ms and 232.4 MB of the 230.2 ms and 249.4 MB post-processing
+aggregate. The graph walk revisited the same resolved component schemas through many
+`$ref` instances and also allocated path strings that were no longer consumed after
+the Microsoft.OpenApi 3.x migration.
+
+The walk now visits component roots at depth zero, memoizes schema identity, defers
+component references to their root pass, and avoids unused recursive path construction.
+The root-first rule preserves `$ref` sibling overrides and the existing depth-limit
+semantics. A three-process median measured 24.6 ms and 13.0 MB for discriminator
+discovery, while the post-processing aggregate fell to 76.9 ms and 30.0 MB. That is
+an 86.3% time and 94.4% allocation reduction for discriminator discovery, with all
+16,942 generated GitHub files and the OpenAI/Cohere discriminator snapshots unchanged.
+
+The App Store Connect JSON control, where discriminator discovery is disabled,
+measured 30.6 ms and 4.35 MB for all post-processing. Its largest nested phase was
+schema sanitization at 19.5 ms and 2.32 MB, confirming that the GitHub optimization
+targets reference-heavy discriminator workloads rather than shifting cost elsewhere.
 
 `dotnet-trace` identifies the YAML package path as
 `OpenApiYamlReader.ReadCore -> YamlJsonParser.Parse`. The sampled descendants are
