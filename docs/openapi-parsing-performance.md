@@ -49,6 +49,28 @@ The CLI workload with `--compute-discriminators` has substantially more AutoSDK
 post-processing work, so compare package-reader changes using the dedicated parsing
 subphase rather than the aggregate.
 
+## OpenAPI 3.1 compatibility boundary
+
+The compatibility layer cannot yet be removed after the Microsoft.OpenApi 3.10.2
+upgrade. A direct reader probe shows that the package now retains substantially more
+JSON Schema 2020-12 vocabulary than older releases, but not the complete OpenAPI 3.1
+surface:
+
+| Microsoft.OpenApi 3.10.2 behavior | Keywords and compatibility cases |
+| --- | --- |
+| Retained natively | `propertyNames`, `dependentRequired`, `dependentSchemas`, `contentEncoding`, `contentMediaType`, `unevaluatedProperties`, `patternProperties`, `contains`, `minContains`, `maxContains` |
+| Still lost or changed by the reader | `prefixItems`, boolean `items`, `unevaluatedItems` |
+| Still normalized for real-world hybrid documents | OpenAPI 3.1 documents using legacy `nullable`, null-only enums, and primitive union shapes |
+| Still rejected by AutoSDK when generation would be lossy | Non-match-all `patternProperties` and array `contains` constraints |
+
+AutoSDK therefore keeps the compatibility boundary, but the OpenAPI 3.1 keyword
+normalization and general compatibility normalization now share a single JSON tree
+walk. JSON Pointer paths are accumulated as segments and materialized only for an
+actual diagnostic. On the in-repository ElevenLabs OpenAPI 3.1 workload, the warm
+normalization phase fell from 23.5 ms and 21.2 MB to 15.1 ms and 10.3 MB. A fresh CLI
+comparison fell from 28.511 ms and 22,203,248 bytes to 19.528 ms and 10,792,920 bytes.
+All 4,884 generated files remained byte-identical.
+
 ## Discriminator traversal optimization
 
 On the CLI GitHub workload, the nested metrics showed that discriminator discovery
@@ -91,6 +113,22 @@ Reference thresholds and the observed three-run medians are stored in
 `src/tests/AutoSDK.Benchmarks/performance-budgets/large-spec-regeneration.json`.
 The benchmark `--profile` output also includes an `OpenAPI schema sanitizer detail`
 table for quick local hotspot checks.
+
+## Enum rendering optimization
+
+Closed enum model and extension rendering was the largest directly controlled render
+hotspot on App Store Connect. It previously built a large graph of per-value strings,
+LINQ iterators, injected separators, and whitespace-cleanup intermediates. The renderer
+now writes directly into pre-sized `StringBuilder` instances and computes each escaped
+wire value once for both conversion directions.
+
+On App Store Connect, the three-run median enum phase fell from 129.003 ms and
+191,589,264 allocated bytes to 107.939 ms and 167,435,904 bytes. Total rendering fell
+from 863.025 ms and 1,040,198,248 bytes to 828.947 ms and 1,016,094,224 bytes. The
+GitHub control reduced enum allocations from 91,488,192 to 84,736,568 bytes and its
+enum phase from 60.255 ms to 35.854 ms; total render wall time remained within normal
+run-to-run noise. Across ElevenLabs, GitHub, and App Store Connect, all 46,721 generated
+files remained byte-identical to the public CLI baseline.
 
 `dotnet-trace` identifies the YAML package path as
 `OpenApiYamlReader.ReadCore -> YamlJsonParser.Parse`. The sampled descendants are

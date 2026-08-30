@@ -235,6 +235,32 @@
           "generatedFiles": 16942,
           "differentFiles": 0
         }
+      },
+      "enumRenderVerification": {
+        "generatorCommit": "157aab8af8",
+        "maximum": {
+          "renderMilliseconds": 800,
+          "enumMilliseconds": 100,
+          "renderAllocatedBytes": 800000000,
+          "enumAllocatedBytes": 100000000
+        },
+        "observedPublicCliBefore": {
+          "renderMilliseconds": 525.883,
+          "enumMilliseconds": 60.255,
+          "renderAllocatedBytes": 684345896,
+          "enumAllocatedBytes": 91488192
+        },
+        "observedAfterThreeRunMedian": {
+          "renderMilliseconds": 533.401,
+          "enumMilliseconds": 35.854,
+          "renderAllocatedBytes": 677601488,
+          "enumAllocatedBytes": 84736568
+        },
+        "parity": {
+          "generatedFiles": 16942,
+          "differentFiles": 0,
+          "baselineCliVersion": "0.32.1-dev.40"
+        }
       }
     },
     "appStoreConnect": {
@@ -443,6 +469,95 @@
           "generatedFiles": 24895,
           "differentFiles": 0
         }
+      },
+      "enumRenderVerification": {
+        "generatorCommit": "157aab8af8",
+        "maximum": {
+          "renderMilliseconds": 1100,
+          "enumMilliseconds": 180,
+          "renderAllocatedBytes": 1100000000,
+          "enumAllocatedBytes": 180000000
+        },
+        "observedPublicCliBefore": {
+          "renderMilliseconds": 863.025,
+          "enumMilliseconds": 129.003,
+          "renderAllocatedBytes": 1040198248,
+          "enumAllocatedBytes": 191589264
+        },
+        "observedAfterThreeRunMedian": {
+          "renderMilliseconds": 828.947,
+          "enumMilliseconds": 107.939,
+          "renderAllocatedBytes": 1016094224,
+          "enumAllocatedBytes": 167435904,
+          "enumTimeReductionPercent": 16.3,
+          "enumAllocationReductionPercent": 12.6,
+          "renderTimeReductionPercent": 3.9,
+          "renderAllocationReductionPercent": 2.3
+        },
+        "parity": {
+          "generatedFiles": 24895,
+          "differentFiles": 0,
+          "baselineCliVersion": "0.32.1-dev.40"
+        }
+      }
+    },
+    "elevenLabsOpenApi31": {
+      "source": {
+        "path": "specs/elevenlabs.json",
+        "openApiVersion": "3.1.0",
+        "sha256": "75c18aefeb7d00b6473571029520f5d0ee2f2e1f1210c001c0f73ff794ef12d5"
+      },
+      "compatibilityBoundary": {
+        "microsoftOpenApiVersion": "3.10.2",
+        "nativeKeywordsRetained": [
+          "propertyNames",
+          "dependentRequired",
+          "dependentSchemas",
+          "contentEncoding",
+          "contentMediaType",
+          "unevaluatedProperties",
+          "patternProperties",
+          "contains",
+          "minContains",
+          "maxContains"
+        ],
+        "compatibilityStillRequiredFor": [
+          "prefixItems",
+          "boolean items",
+          "unevaluatedItems",
+          "legacy nullable in OpenAPI 3.1",
+          "null-only enums",
+          "primitive union shape preservation",
+          "rejecting unsupported patternProperties and contains semantics"
+        ]
+      },
+      "compatibilityNormalizationVerification": {
+        "generatorCommit": "157aab8af8",
+        "maximum": {
+          "warmBenchmarkMilliseconds": 30,
+          "warmBenchmarkAllocatedBytes": 15000000,
+          "freshCliMilliseconds": 40,
+          "freshCliAllocatedBytes": 15000000
+        },
+        "observedBefore": {
+          "warmBenchmarkMilliseconds": 23.5,
+          "warmBenchmarkAllocatedMegabytes": 21.2,
+          "freshCliMilliseconds": 28.511,
+          "freshCliAllocatedBytes": 22203248
+        },
+        "observedAfter": {
+          "warmBenchmarkMilliseconds": 15.1,
+          "warmBenchmarkAllocatedMegabytes": 10.3,
+          "freshCliMilliseconds": 19.528,
+          "freshCliAllocatedBytes": 10792920,
+          "warmTimeReductionPercent": 35.7,
+          "warmAllocationReductionPercent": 51.4
+        },
+        "parity": {
+          "generatedFiles": 4884,
+          "differentFiles": 0,
+          "baselineCliVersion": "0.32.1-dev.40"
+        }
       }
     }
   },
@@ -456,6 +571,8 @@
     "The Microsoft.OpenApi 3.10.2 verification generated 45582 files byte-for-byte identical to public CLI 0.32.1-dev.27.",
     "The current GitHub verification uses an externally pinned official specification because it is newer and larger than specs/github.yaml.",
     "Parsing subphase budgets use the durable in-repository GitHub workload and the pinned App Store Connect workload; CLI values include cold-process startup and workload-specific post-processing options.",
-    "Post-processing detail keeps its aggregate metric for compatibility and records nested phases whose wall times include a small amount of measurement overhead."
+    "Post-processing detail keeps its aggregate metric for compatibility and records nested phases whose wall times include a small amount of measurement overhead.",
+    "The OpenAPI 3.1 compatibility boundary is based on direct Microsoft.OpenApi 3.10.2 reader probes and should be reevaluated on every major reader upgrade.",
+    "The enum-render thresholds use three-run medians for the optimized CLI; the public baseline is retained for comparison and wall time remains sensitive to concurrent machine load."
   ]
 }
