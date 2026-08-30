@@ -1,6 +1,8 @@
 name: Auto-approve and auto-merge bot pull requests
 on:
-  pull_request:
+  # This workflow never checks out or executes pull-request code. Using the
+  # base-branch definition makes PERSONAL_TOKEN available for Dependabot PRs.
+  pull_request_target:
     branches:
       - main
 
