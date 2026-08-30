@@ -196,6 +196,45 @@
           "generatedFiles": 16942,
           "differentFiles": 0
         }
+      },
+      "schemaSanitizerDetailVerification": {
+        "generatorCommit": "ce1d72eca6",
+        "maximum": {
+          "fernTypeNormalizationMilliseconds": 40,
+          "numericConstraintSanitizationMilliseconds": 20,
+          "largeIntegerFormatInferenceMilliseconds": 25,
+          "discriminatorSanitizationMilliseconds": 20,
+          "fernTypeNormalizationAllocatedBytes": 10000000,
+          "numericConstraintSanitizationAllocatedBytes": 500000,
+          "largeIntegerFormatInferenceAllocatedBytes": 500000,
+          "discriminatorSanitizationAllocatedBytes": 500000
+        },
+        "observedBeforeLazyDiscriminatorMappingFiltering": {
+          "schemaSanitizersMilliseconds": 39.519,
+          "schemaSanitizersAllocatedBytes": 10473880,
+          "discriminatorSanitizationMilliseconds": 7.439,
+          "discriminatorSanitizationAllocatedBytes": 2535336
+        },
+        "observedAfterLazyDiscriminatorMappingFilteringThreeRunMedian": {
+          "postProcessingMilliseconds": 75.393,
+          "postProcessingAllocatedBytes": 27570736,
+          "schemaSanitizersMilliseconds": 39.995,
+          "schemaSanitizersAllocatedBytes": 8073784,
+          "fernTypeNormalizationMilliseconds": 15.627,
+          "numericConstraintSanitizationMilliseconds": 7.188,
+          "largeIntegerFormatInferenceMilliseconds": 9.202,
+          "discriminatorSanitizationMilliseconds": 7.951,
+          "fernTypeNormalizationAllocatedBytes": 7661792,
+          "numericConstraintSanitizationAllocatedBytes": 116680,
+          "largeIntegerFormatInferenceAllocatedBytes": 159912,
+          "discriminatorSanitizationAllocatedBytes": 135240,
+          "schemaSanitizerAllocationReductionPercent": 22.9,
+          "discriminatorSanitizerAllocationReductionPercent": 94.7
+        },
+        "parity": {
+          "generatedFiles": 16942,
+          "differentFiles": 0
+        }
       }
     },
     "appStoreConnect": {
@@ -363,6 +402,46 @@
           "missingPathParametersAllocatedBytes": 1390456,
           "overridesAndNamingAllocatedBytes": 80,
           "schemaSanitizersAllocatedBytes": 2321032
+        }
+      },
+      "schemaSanitizerDetailVerification": {
+        "generatorCommit": "ce1d72eca6",
+        "sourceSha256": "ed0202ef37155b9334772482d2ea0be688c3046b284c895bcbea5455fbe54fd8",
+        "maximum": {
+          "fernTypeNormalizationMilliseconds": 25,
+          "numericConstraintSanitizationMilliseconds": 10,
+          "largeIntegerFormatInferenceMilliseconds": 10,
+          "discriminatorSanitizationMilliseconds": 10,
+          "fernTypeNormalizationAllocatedBytes": 2000000,
+          "numericConstraintSanitizationAllocatedBytes": 500000,
+          "largeIntegerFormatInferenceAllocatedBytes": 600000,
+          "discriminatorSanitizationAllocatedBytes": 600000
+        },
+        "observedBeforeLazyDiscriminatorMappingFiltering": {
+          "schemaSanitizersMilliseconds": 19.160,
+          "schemaSanitizersAllocatedBytes": 2321192,
+          "discriminatorSanitizationMilliseconds": 3.976,
+          "discriminatorSanitizationAllocatedBytes": 1150928
+        },
+        "observedAfterLazyDiscriminatorMappingFilteringThreeRunMedian": {
+          "postProcessingMilliseconds": 29.762,
+          "postProcessingAllocatedBytes": 3425800,
+          "schemaSanitizersMilliseconds": 19.110,
+          "schemaSanitizersAllocatedBytes": 1398688,
+          "fernTypeNormalizationMilliseconds": 8.977,
+          "numericConstraintSanitizationMilliseconds": 3.183,
+          "largeIntegerFormatInferenceMilliseconds": 3.131,
+          "discriminatorSanitizationMilliseconds": 3.300,
+          "fernTypeNormalizationAllocatedBytes": 724824,
+          "numericConstraintSanitizationAllocatedBytes": 187008,
+          "largeIntegerFormatInferenceAllocatedBytes": 258272,
+          "discriminatorSanitizationAllocatedBytes": 228424,
+          "schemaSanitizerAllocationReductionPercent": 39.7,
+          "discriminatorSanitizerAllocationReductionPercent": 80.2
+        },
+        "parity": {
+          "generatedFiles": 24895,
+          "differentFiles": 0
         }
       }
     }

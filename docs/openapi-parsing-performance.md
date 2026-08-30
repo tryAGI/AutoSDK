@@ -17,6 +17,13 @@ The post-processing aggregate is split again into:
 - `core_parsing_postprocess_overrides_naming_*`: configured overrides and Fern request naming.
 - `core_parsing_postprocess_schema_sanitizers_*`: Fern type, numeric, integer-format, and discriminator sanitizers.
 
+Schema sanitization is split one level further into:
+
+- `core_parsing_postprocess_schema_sanitizers_fern_types_*`.
+- `core_parsing_postprocess_schema_sanitizers_numeric_constraints_*`.
+- `core_parsing_postprocess_schema_sanitizers_large_integer_formats_*`.
+- `core_parsing_postprocess_schema_sanitizers_discriminators_*`.
+
 The aggregate remains authoritative. Subphase totals can be slightly lower because setup,
 diagnostics checks, retry setup, and measurement overhead stay only in the aggregate.
 
@@ -62,6 +69,28 @@ The App Store Connect JSON control, where discriminator discovery is disabled,
 measured 30.6 ms and 4.35 MB for all post-processing. Its largest nested phase was
 schema sanitization at 19.5 ms and 2.32 MB, confirming that the GitHub optimization
 targets reference-heavy discriminator workloads rather than shifting cost elsewhere.
+
+## Schema sanitizer investigation
+
+The sanitizer split identified Fern normalization as the largest remaining traversal:
+the three-run GitHub median was 15.6 ms and 7.66 MB, while App Store Connect measured
+9.0 ms and 0.72 MB. Neither specification contains `x-fern-type`, so this is traversal
+cost rather than extension parsing. A shared visited-schema set was tested, but its
+hash-table storage raised GitHub Fern allocations from 7.66 MB to 9.06 MB and was not
+retained.
+
+Discriminator sanitation had a different allocation hotspot. It rebuilt every mapping
+with LINQ even when every target was valid. The sanitizer now scans for invalid entries
+first and allocates a replacement dictionary only when a mapping actually needs repair.
+On GitHub this reduced discriminator-sanitizer allocations from 2.54 MB to 0.14 MB
+(94.7%); on App Store Connect they fell from 1.15 MB to 0.23 MB (80.2%). Total sanitizer
+allocations fell by 22.9% and 39.7%, respectively. The three fresh CLI runs were stable,
+and all 16,942 GitHub plus 24,895 App Store Connect generated files remained byte-identical.
+
+Reference thresholds and the observed three-run medians are stored in
+`src/tests/AutoSDK.Benchmarks/performance-budgets/large-spec-regeneration.json`.
+The benchmark `--profile` output also includes an `OpenAPI schema sanitizer detail`
+table for quick local hotspot checks.
 
 `dotnet-trace` identifies the YAML package path as
 `OpenApiYamlReader.ReadCore -> YamlJsonParser.Parse`. The sampled descendants are
